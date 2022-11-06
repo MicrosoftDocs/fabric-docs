@@ -3,36 +3,35 @@ title:
 description: 
 ms.reviewer: 
 ms.topic: how-to
-ms.date: 10/02/2022
+ms.date: 11/06/2022
 ---
-## Query data in the KQL Query set
+## Query data in the KQL queryset
 
-The KQL Query set is the item you'll use to run queries, and view and manipulate query results. Use the KQL Query set to save, export, and share queries with others.
+The KQL queryset is the item you'll use to run queries, and view and manipulate query results. Use the KQL queryset to save, export, and share queries with others.
 
-In this article, you'll learn how to create and use a new KQL Query set.
+In this article, you'll learn how to create and use a new KQL queryset.
 
-For more information about Kusto Query Language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/).
+For more information about the query language you'll use in the query set, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/).
 
 ## Prerequisites
 
-* Something about a PowerBI type of premium subscription
+* PowerBI premium subscription
 * Workspace
-* Kusto database XXX IS THIS TRULY A PREREQ?
-
-> [!NOTE]
-> The query set not the same as the query window within a database. The following image shows the query window within a database:
-> :::image type="content" source="media/kusto-query-set/query-window-databases.png" alt-text="Screenshot of query window within a database item.":::
+* Kusto database with data
 
 ## Create a new query set
 
-A query set exists within the context of a workspace. A new KQL Query set is associated with whichever workspace is open at the time of creation.
+A query set exists within the context of a workspace. A new KQL queryset is associated with whichever workspace is open at the time of creation.
 
-1. Browse to the workspace you'll use as context for the query set. Notice the icon on the left menu representing this workspace.
-1. Select **+New** > **KQL Query set**
+1. Browse to the workspace you'll use as context for the query set.
+1. Select **+New** > **KQL queryset**
 
     :::image type="content" source="media/kusto-query-set/create-query-set.png" alt-text="Screenshot of creating new query set.":::
 
 1. Enter a unique name.
+
+> [!NOTE]
+> There is no limit to the number of KQL querysets that can be created in a given workspace.
 
 ### Open an existing query set
 
@@ -42,15 +41,61 @@ To access an existing query set, browse to your workspace and select the desired
 
 ## Connect to a database
 
+Queries run in the context of a database. To connect to a database, select a database from the dropdown menu or search for your database in the search window.
+
+:::image type="content" source="media/kusto-query-set/connect-database.png" alt-text="Screenshot of connecting to a database.":::
+
+A list of tables contained within a particular database will appear below the name of the database.
+
 ## Write a query
 
+Now that you're connected to your data source, you can run queries on this data. The KQL queryset uses the Kusto Query Language (KQL) to query data from your workspace. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/).
 
+1. Write or copy a query in the top pane of the KQL queryset. 
+1. Select the **Run** button, or press **Shift**+**Enter** to run the query.
+
+    The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query has finished successfully, and the amount of time used to compute the query results.
+
+    :::image type="content" source="media/kusto-query-set/query-window.png" alt-text="Screenshot of the query window with a query in it.":::
+
+### Manipulate results in the results grid
+
+The results grid can be used to customize results and do further analysis. For more information, see [work with the results grid](/azure/data-explorer/web-query-data#work-with-the-results-grid).
+
+## Copy query
+
+You may want to share the queries you create.
+
+1. At the top of the query window, select **Manage**.
+1. Select **Copy**
+
+    :::image type="content" source="media/kusto-query-set/copy-query-results.png" alt-text="Screenshot to copy query results.":::
+
+1. You can either select **Query** to copy the text of the most recent query, or select **Results** to copy the output table.
+1. You can now paste this information into any editor, such as Microsoft Word.
 
 ## Export query data
 
-## Recall
+Instead of simply copy-pasting the query output, you can export the query results in different ways.
 
-## Share
+### Export as CSV
+
+This is a one-time method to export a CSV file containing the query results.
+1. At the top of the query window, select **Manage**.
+
+    :::image type="content" source="media/kusto-query-set/export-csv.png" alt-text="Screenshot of export to CSV.":::
+
+1. Select **Export results**>**Export results to CSV**.
+1. Save the CSV file locally.
+
+### Export to Microsoft Excel
+
+This is a method to create a dynamically-linked Microsoft Excel file containing the query results.
+1. At the top of the query window, select **Manage**.
+1. Select **Export results**>**Export results to Excel**.
+1. Save the Excel file locally and open in Microsoft Excel.
+1. If prompted, enable editing and content.
+1. Sign in with your organizational account.
 
 ## Delete query set
 
