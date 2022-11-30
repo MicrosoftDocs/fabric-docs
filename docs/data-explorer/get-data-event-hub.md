@@ -2,9 +2,14 @@
 title: Use an event hub connection to stream data to your Kusto database
 description: Learn how to create a connection to Event Hubs and get data into your Kusto database in Trident.
 ms.reviewer: guregini
+ms.author: yaschust
+author: YaelSchuster
+ms.prod: analytics
+ms.technology: data-explorer 
 ms.topic: how-to
-ms.date: 10/02/2022
+ms.date: 11/30/2022
 ---
+# Get data from Azure Event Hubs
 
 In this article, you'll learn how to get data from event hub into your Kusto database in Trident. [Azure Event Hubs](/azure/event-hubs/event-hubs-about) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
 
@@ -21,6 +26,7 @@ In the second step, you'll connect this Trident-based data connection to a Kusto
 ## Create data connection in Trident
 
 In Trident: 
+
 :::image type="content" source="media/get-data-event-hub/sas-policy-portal.png" alt-text="Screenshot of creating an SAS policy in the Azure portal.":::
 
 :::image type="content" source="media/get-data-event-hub/fill-out-connection.png" alt-text="Screenshot showing how to fill out connection with data from Azure portal.":::
