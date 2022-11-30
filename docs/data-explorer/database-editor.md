@@ -8,46 +8,20 @@ ms.prod: analytics
 ms.technology: data-explorer
 ms.topic: how-to
 ms.date: 11/30/2022
+
+Customer intent: I want to learn how to create a database and get data into a table.
 ---
 
-# [H1 heading]
-TODO: Add your heading
+# Create a database
 
-<!-- 2. Introductory paragraph ----------------------------------------------------------
-
-Required: Lead with a light intro that describes, in customer-friendly language, what the 
-customer will do. Answer the fundamental “why would I want to do this?” question. Keep it 
-short.
-Readers should have a clear idea of what they will do in this article after reading the 
-introduction.
--->
-[Add your introductory paragraph]
-TODO: Add your introductory paragraph
-
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Optional: If there are prerequisites for the task covered by the how-to guide, make 
-**Prerequisites** your first H2 in the guide. The prerequisites H2 is never numbered.
-Use clear and unambiguous language and use a unordered list format.
-If there are specific versions of software a user needs, call out those versions (for example: 
-Visual Studio 2019 or later).
--->
-
+This article shows you how to create a database in Real-Time Analytics so that you can use data in other Trident apps.
 ## Prerequisites
-TODO: Determine if prerequisites are appropriate
-TODO: List the prerequisites if appropriate
 
-<!-- 4. Task H2s ------------------------------------------------------------------------------
-
-Required: Each major step in completing a task should be represented as an H2 in the article.
-These steps should be numbered.
-The procedure should be introduced with a brief sentence or two.
-Multiple procedures should be organized in H2 level sections.
-Procedure steps use ordered lists.
--->
+* Power BI Premium subscription. For more information on Power BI Premium subscriptions, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
+* A workspace. For more information on how to create a workspace, see [How to create a workspace in Power BI](/power-bi/collaborate-share/service-create-the-new-workspaces).
+* A data source.
 
 ## Create database
-
 
 :::image type="content" source="media/database-editor/create-database.png" alt-text="create database":::
 
@@ -93,6 +67,8 @@ CSV and JSON.
 ### Summary tab
 
 ## Quick query
+
+When to do it? verify that your data is there. CAn't share, can't export, can't save. For those actions, use the KQL queryset.
 
 ## Manage
 
