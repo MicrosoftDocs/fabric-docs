@@ -28,7 +28,7 @@ landingContent:
             url: file1.md
           - text: linktext2
             url: file2.md
-      - linkListType: linkListType
+      - linkListType: overview
         links:
           - text: linktext1
             url: file1.md
@@ -38,13 +38,13 @@ landingContent:
   # Card 
   - title: Get started
     linkLists:
-      - linkListType: linkListType
+      - linkListType: get-started
         links:
           - text: linktext1
             url: file1.md
           - text: linktext2
             url: file2.md
-      - linkListType: linkListType
+      - linkListType: get-started
         links:
           - text: linktext1
             url: file1.md
@@ -54,29 +54,13 @@ landingContent:
   # Card
   - title: cardtitle3
     linkLists:
-      - linkListType: linkListType
+      - linkListType: quickstart
         links:
           - text: linktext1
             url: file1.md
           - text: linktext2
             url: file2.md
-      - linkListType: linkListType
-        links:
-          - text: linktext1
-            url: file1.md
-          - text: linktext2
-            url: file2.md
-
-  # Card (Optional; Remove if not applicable.)
-  - title: cardtitle4
-    linkLists:
-      - linkListType: linkListType
-        links:
-          - text: linktext1
-            url: file1.md
-          - text: linktext2
-            url: file2.md
-      - linkListType: linkListType
+      - linkListType: tutorial
         links:
           - text: linktext1
             url: file1.md
