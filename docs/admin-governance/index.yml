@@ -50,19 +50,3 @@ landingContent:
             url: file1.md
           - text: linktext2
             url: file2.md
-
-  # Card
-  - title: cardtitle3
-    linkLists:
-      - linkListType: quickstart
-        links:
-          - text: linktext1
-            url: file1.md
-          - text: linktext2
-            url: file2.md
-      - linkListType: tutorial
-        links:
-          - text: linktext1
-            url: file1.md
-          - text: linktext2
-            url: file2.md
