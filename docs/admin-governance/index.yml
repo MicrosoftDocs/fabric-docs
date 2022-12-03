@@ -1,0 +1,13 @@
+### YamlMime:Landing
+
+title: Administration and governance  # < 60 chars
+summary: Administration and governance # < 160 chars
+metadata:
+  title: Administration and governance # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Administration and governance# Required; article description that is displayed in search results. < 160 chars.
+  ms.service: azure #Required; service per approved list. service slug assigned to your service by ACOM.
+  ms.topic: landing-page # Required
+  ms.collection: collection
+  author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
+  ms.author: sngun #Required; microsoft alias of author; optional team alias.
+  ms.date: 12/02/2022 #Required; mm/dd/yyyy format.
