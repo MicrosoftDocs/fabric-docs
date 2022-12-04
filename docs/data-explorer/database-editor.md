@@ -30,8 +30,6 @@ There are multiple ways you can create a new database in Kusto. After you have c
 
     :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Kusto workspace that shows the dropdown menu of the ribbon button titled New. Both the New tab and the entry titled Kusto Databse are highlighted":::
 
-     ![title.](media/database-editor/create-database.png)
-
 1. Enter your database name, then select **Create**. You can use alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
     :::image type="content" source="media/database-editor/new-database.png" alt-text="alt text tbd":::
@@ -85,7 +83,7 @@ Show on CSV or JSON, mention other formats and things they need to know about it
 
 1.On the **Home** tab, select **Get Data** then select **Get data from blob**.
 
-:::image type="content" source="media/database-editor/get-data.png" alt-text="Get data.":::
+    :::image type="content" source="media/database-editor/get-data.png" alt-text="Get data.":::
 
 In the **Link to storage** field, add the [SAS URL](kusto/api/connection-strings/generate-sas-token.md) of the container and optionally enter the sample size.
 
@@ -94,15 +92,15 @@ In the **Link to storage** field, add the [SAS URL](kusto/api/connection-strings
     > [!TIP]
     >  Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
-:::image type="content" source="media/database-editor/table-name.png" alt-text="table name.":::
+    :::image type="content" source="media/database-editor/table-name.png" alt-text="table name.":::
 
 1. source. SAS token. The following StormEvents blob for example: `https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv`
 
-:::image type="content" source="media/database-editor/ingest-new-data.png" alt-text="Ingest new data.":::
+    :::image type="content" source="media/database-editor/ingest-new-data.png" alt-text="Ingest new data.":::
 
 1. Azure blob schema
 
-:::image type="content" source="media/database-editor/azure-blob-schema.png" alt-text="Azure blob schema.":::
+    :::image type="content" source="media/database-editor/azure-blob-schema.png" alt-text="Azure blob schema.":::
 
 # [Blob container](#tab/blob-container/)
 
@@ -135,18 +133,18 @@ In the **Schema** tab, your [data format](./ingest-data-wizard.md#file-formats) 
 * If your data format is JSON, you must also select JSON levels, from 1 to 10. The levels determine the table column data division.
 * If your data format is CSV, select the check box **Ignore the first record** to ignore the heading row of the file.
 
-:::image type="content" source="media/create-table-wizard/schema-tab-plug-in-selected.png" alt-text="Screenshot of table schema in create table wizard of the Azure Data Explorer web UI.":::
+    :::image type="content" source="media/create-table-wizard/schema-tab-plug-in-selected.png" alt-text="Screenshot of table schema in create table wizard of the Azure Data Explorer web UI.":::
 
 * If **Ingest data** is selected, in addition to creating the table, the wizard also ingests the data from the source selected in the **Source** tab.
 
-:::image type="content" source="media/create-table-wizard/ingest-data-checkbox.png" alt-text="Screenshot of the ingest data checkbox selected to ingest data into table created from the wizard.":::
+    :::image type="content" source="media/create-table-wizard/ingest-data-checkbox.png" alt-text="Screenshot of the ingest data checkbox selected to ingest data into table created from the wizard.":::
 
 * In **Mapping**, enter a name for this table's schema mapping.
 
     > [!TIP]
     > The mapping name should start with a letter. It can contain numbers, underscores, periods, or hyphens.
 
-:::image type="content" source="media/database-editor/azure-blob-schema.png" alt-text="Azure blob schema.":::
+    :::image type="content" source="media/database-editor/azure-blob-schema.png" alt-text="Azure blob schema.":::
 
 1. To add a new column, select the `+` icon on the column ribbon under **Partial data preview**:
 
@@ -156,6 +154,7 @@ In the **Schema** tab, your [data format](./ingest-data-wizard.md#file-formats) 
 * Source: For table formats (CSV, TSV, etc.), each column can be linked to only one source columns. For other formats (such as JSON, Parquet, etc.), multiple columns can use the same source.
 
     :::image type="content" source="media/database-editor/azure-blob-summary-pane.png" alt-text="Azure blob summary pane.":::
+
 ## Quick query
 
 To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the the database dashboard.
@@ -170,10 +169,10 @@ To manage your data, select **Manage** on the **home** tab.
 You can alter your Data retention policy, Continuous export, and configure Data connections.
 ### Data Retention policy
 
-:::image type="content" source="media/database-editor/data-retention-policy.png" alt-text="Screenshot of data retention policy pane.":::
+    :::image type="content" source="media/database-editor/data-retention-policy.png" alt-text="Screenshot of data retention policy pane.":::
 ### Continuous export
 
-:::image type="content" source="media/database-editor/continuous-export.png" alt-text="Screenshot of Continuous Export dropdown pane.":::
+    :::image type="content" source="media/database-editor/continuous-export.png" alt-text="Screenshot of Continuous Export dropdown pane.":::
 
 ### Data connections
 
