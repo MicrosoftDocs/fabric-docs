@@ -43,7 +43,16 @@
       "extendBreadcrumb": true,
       "feedback_system": "None"
     },
-    "fileMetadata": {},
+    "fileMetadata": {
+      "ms.service": {
+        "docs/data-explorer/**/*.md": "azure",
+        "docs/data-science/**/*.md": "azure",
+        "docs/data-engineering/**/*.md": "azure",
+        "docs/data-warehousing/**/*.md": "azure",
+        "docs/data-factory/**/*.md": "azure",
+        "docs/power-bi/**/*.md": "azure"
+      }
+    },
     "template": [],
     "dest": "trident-docs"
   }
