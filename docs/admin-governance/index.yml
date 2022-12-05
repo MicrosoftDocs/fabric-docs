@@ -25,15 +25,15 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is [service]?
-            url: ../index.md
+            url: ../index.md # Placeholder file. Replace with the actual file name.
           - text: linktext2
-            url: file2.md
+            url: ../index.md # Placeholder file. Replace with the actual file name.
       - linkListType: overview
         links:
           - text: linktext1
-            url: file1.md
+            url: ../index.md # Placeholder file. Replace with the actual file name.
           - text: linktext2
-            url: file2.md
+            url: ../index.md # Placeholder file. Replace with the actual file name.
 
   # Card 
   - title: Get started
@@ -41,12 +41,12 @@ landingContent:
       - linkListType: get-started
         links:
           - text: linktext1
-            url: file1.md
+            url: ../index.md # Placeholder file. Replace with the actual file name.
           - text: linktext2
-            url: file2.md
+            url: ../index.md # Placeholder file. Replace with the actual file name.
       - linkListType: get-started
         links:
           - text: linktext1
-            url: file1.md
+            url: ../index.md # Placeholder file. Replace with the actual file name.
           - text: linktext2
-            url: file2.md
+            url: ../index.md # Placeholder file. Replace with the actual file name.
