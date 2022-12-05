@@ -81,7 +81,7 @@ Show on CSV or JSON, mention other formats and things they need to know about it
 
 # [Azure blob](#tab/azure-blob/)
 
-1.On the **Home** tab, select **Get Data** then select **Get data from blob**.
+1. On the **Home** tab, select **Get Data** then select **Get data from blob**.
 
     :::image type="content" source="media/database-editor/get-data.png" alt-text="Get data.":::
 
@@ -106,7 +106,7 @@ In the **Link to storage** field, add the [SAS URL](kusto/api/connection-strings
 
 1.On the **Home** tab, select **Get Data** then select **Get data from blob**.
 
-:::image type="content" source="media/database-editor/get-data.png" alt-text="Get data.":::
+    :::image type="content" source="media/database-editor/get-data.png" alt-text="Get data.":::
 
 To generate a SAS token, see [Generate a SAS token](generate-sas-token.md).
 
