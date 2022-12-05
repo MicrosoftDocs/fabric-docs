@@ -25,7 +25,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is [service]?
-            url: file1.md
+            url: ../index.md
           - text: linktext2
             url: file2.md
       - linkListType: overview
