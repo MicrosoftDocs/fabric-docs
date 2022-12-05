@@ -137,7 +137,7 @@ Show on CSV or JSON, mention other formats and things they need to know about it
 
 # [Blob container](#tab/blob-container/)
 
-1.On the **Home** tab, select **Get Data** then select **Get data from blob**.
+1. On the **Home** tab, select **Get Data** then select **Get data from blob**.
 
     :::image type="content" source="media/database-editor/get-data.png" alt-text="Get data.":::
 
@@ -145,11 +145,11 @@ To generate a SAS token, see [Generate a SAS token](generate-sas-token.md).
 
 If you're using **From blob container**:
 
-        * Enter the storage url of your blob, and optionally enter the sample size.
-        * Filter your files using the **File Filters**.
-        * Select a file that will be used in the next step to define the schema.
+    * Enter the storage url of your blob, and optionally enter the sample size.
+    * Filter your files using the **File Filters**.
+    * Select a file that will be used in the next step to define the schema.
 
-        :::image type="content" source="media/create-table-wizard/source-blob-container-storage-select.png" alt-text="Screenshot of wizard to create table using blob to create schema mapping.":::
+    :::image type="content" source="media/create-table-wizard/source-blob-container-storage-select.png" alt-text="Screenshot of wizard to create table using blob to create schema mapping.":::
 ---
 
 1. Select **Next: Schema** to continue to the **Schema** tab.
@@ -168,16 +168,17 @@ To manage your data, select **Manage** on the **home** tab.
 You can alter your Data retention policy, Continuous export, and configure Data connections.
 ### Data Retention policy
 
-    :::image type="content" source="media/database-editor/data-retention-policy.png" alt-text="Screenshot of data retention policy pane.":::
+:::image type="content" source="media/database-editor/data-retention-policy.png" alt-text="Screenshot of data retention policy pane.":::
+
 ### Continuous export
 
-    :::image type="content" source="media/database-editor/continuous-export.png" alt-text="Screenshot of Continuous Export dropdown pane.":::
+:::image type="content" source="media/database-editor/continuous-export.png" alt-text="Screenshot of Continuous Export dropdown pane.":::
 
 ### Data connections
 
 Ingestion can be done as a one-time operation, or as a continuous method using Event Hub. To establish a continuous data connection, see [Event Hub- Link TBD]().
 
-    :::image type="content" source="media/database-editor/data-connections.png" alt-text="Screenshot of Data Connections pane.":::
+:::image type="content" source="media/database-editor/data-connections.png" alt-text="Screenshot of Data Connections pane.":::
 
 ## Next steps
 
