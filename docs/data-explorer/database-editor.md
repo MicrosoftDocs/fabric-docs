@@ -160,6 +160,8 @@ To open the command viewer, select the **v** button on the right side of the com
 
 To add a new column, select the **+** button on the right-hand column under **Partial data preview**.
 
+:::image type="content" source="media/database-editor/partial-data-preview.png" alt-text="Screenshot of Partial data preview pane.":::
+
 * The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
 * The default column type is `string` but can be altered in the drop-down menu of the Column type field.
 * Source: for table formats (CSV, TSV, etc.), each column can be linked to only one source column. For other formats (such as JSON, Parquet, etc.), multiple columns can use the same source.
