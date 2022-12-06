@@ -66,7 +66,7 @@ There are multiple ways you can create a new database in Kusto. After you've cre
 
 ## Access an existing database
 
-To access existing databases:
+To access your existing databases:
 
 1. Select the **Workspaces** icon on the left menu of the Trident UI > choose a workspace.
 
