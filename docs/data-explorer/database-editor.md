@@ -1,6 +1,6 @@
 ---
 title: Create a database and get data
-description:
+description: Learn how to create a database and get data in Kusto for Trident.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -35,6 +35,8 @@ There are multiple ways you can create a new database in Kusto. After you've cre
     :::image type="content" source="media/database-editor/new-database.png" alt-text="alt text tbd":::
 
 ## Database dashboard
+
+:::image type="content" source="media/database-editor/database-dashboard.png" alt-text="Screenshot of database dashboard. ":::
 
 |Card | Item| Description|
 |---|---|---|
