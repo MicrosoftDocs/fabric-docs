@@ -107,7 +107,7 @@ To add a blob URI, you need to generate an Account Key/ SAS token. To generate a
 
 # [Azure Blob](#tab/blob/)
 
-4. In **Source type** select Azure blob.
+1. In **Source type** select Azure blob.
 1. In the **Link to source** field, add the Account Key/SAS URI.
 
    You can add up to 10 items of up to 1GB uncompressed size each. If you upload more than 1 item, you can change the selection by selecting the star icon on the right side of the source link field.
@@ -116,7 +116,7 @@ To add a blob URI, you need to generate an Account Key/ SAS token. To generate a
 
 # [Blob container](#tab/blob-container/)
 
-4. In **Source type**, select Blob container.
+1. In **Source type**, select Blob container.
 1. In **Link to source** field, add the Account Key/SAS URI.
 
     :::image type="content" source="media/database-editor/ingest-new-data-blob-container.png" alt-text="Screenshot of data ingestion pane for blob containers.":::
@@ -133,60 +133,46 @@ Optionally, you can filter data to be ingested with **File filters**. You can fi
 
 ---
 
-## Schema
+### Schema
 
-Select **Next: Schema** to view and edit your table column configuration. The service automatically identifies if the schema is compressed by looking at the name of the source.
+1. Select **Next: Schema** to view and edit your table column configuration.
 
-Your data format and compression are automatically identified in the left-hand pane. If incorrectly identified, use the **Data format** drop-down menu to select the correct format.
+    Your data format and compression are automatically identified in the left-hand pane. If incorrectly identified, use the **Data format** drop-down menu to select the correct format.
 
-* If your data format is JSON, you must also select JSON levels, from 1 to 10. The levels determine the table column data division.
-* If your data format is CSV, select the check box **Ignore the first record** to ignore the heading row of the file.
+    * If your data format is JSON, you must also select JSON levels, from 1 to 10. The levels determine the table column data division.
+    * If your data format is CSV, select the check box **Ignore the first record** to ignore the heading row of the file.
 
-For more information on data formats, see [Data formats supported by Azure Data Explorer for ingestion](ingestion-supported-formats.md).
-
-* If **Ingest data** is selected, in addition to creating the table, the wizard also ingests the data from the source selected in the **Source** tab.
-
-1. Confirm the format selected in **Data format**:
-
-    In this case, the data format is **CSV**
-
-    > [!TIP]
-    > If you want to use **JSON** files, see [Use the ingestion wizard to ingest JSON data from a local file to an existing table in Azure Data Explorer](./ingestion-wizard-existing-table.md#edit-the-schema).
-
-1. You can select the check box **Ignore the first record** to ignore the heading row of the file.
-
-    :::image type="content" source="media/ingestion-wizard-new-table/non-json-format.png" alt-text="Screenshot showing how to select the option not to include column names in the ingestion wizard.":::
+    For more information on data formats, see [Data formats supported by Azure Data Explorer for ingestion](ingestion-supported-formats.md).
 
 1. In the **Mapping name** field, enter a mapping name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 
-:::image type="content" source="media/database-editor/azure-blob-schema.png" alt-text="Azure blob schema.":::
+    :::image type="content" source="media/database-editor/azure-blob-schema.png" alt-text="Azure blob schema.":::
 
-## Command editor
+### Command viewer
 
-Above the **Editor** pane, select the **v** button to open the editor. In the editor, you can view and copy the automatic commands generated from your inputs.
+To open the command viewer, select the **v** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
 
 :::image type="content" source="media/database-editor/question-command-viewer.png" alt-text="Screenshot of command editor.":::
 
+### Partial data preview
+
+To add a new column, select the **+** button on the right-hand column under **Partial data preview**.
+
+* The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
+* The default column type is `string` but can be altered in the drop-down menu of the Column type field.
+* Source: for table formats (CSV, TSV, etc.), each column can be linked to only one source column. For other formats (such as JSON, Parquet, etc.), multiple columns can use the same source.
+
+:::image type="content" source="media/database-editor/azure-blob-new-column.png" alt-text="Screenshot of new column pane in schema window.":::
+
 Select **Next: Summary** to create a table and mapping and to begin data ingestion.
 
-## Complete data ingestion
+### Complete data ingestion
 
 In the **Data ingestion completed** window, all three steps will be marked with green check marks when data ingestion finishes successfully.
 
-:::image type="content" source="media/ingestion-wizard-new-table/one-click-data-ingestion-complete.png" alt-text="Screenshot showing ingested complete dialog box with data preview.":::
+:::image type="content" source="media/database-editor/azure-blob-summary-pane.png" alt-text="Screenshot of ingested complete dialog box with data preview.":::
 
-1. To add a new column, select the `+` icon on the column under **Partial data preview**:
-
-    * Enter a column name.
-    * Name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
-    * The default column type is `string` but can be altered in the dropdown menu.
-    * Source: For table formats (CSV, TSV, etc.), each column can be linked to only one source column. For other formats (such as JSON, Parquet, etc.), multiple columns can use the same source.
-
-1. In the **Data ingestion completed** window, all three steps will be marked with green check marks when data ingestion finishes successfully.
-
-    :::image type="content" source="media/database-editor/azure-blob-summary-pane.png" alt-text="Azure blob summary pane.":::
-
-## Quick query
+### Quick query
 
 To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database dashboard.
 
@@ -198,6 +184,7 @@ To verify that you have ingested data into your database, select **Quick query**
 
 To manage your data, select **Manage** on the **home** tab.
 You can alter your Data retention policy, Continuous export, and configure Data connections.
+
 ### Data Retention policy
 
 :::image type="content" source="media/database-editor/data-retention-policy.png" alt-text="Screenshot of data retention policy pane.":::
