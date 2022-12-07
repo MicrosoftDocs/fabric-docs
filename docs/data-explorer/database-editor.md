@@ -7,14 +7,14 @@ author: YaelSchuster
 ms.prod: analytics
 ms.technology: data-explorer
 ms.topic: how-to
-ms.date: 12/06/2022
+ms.date: 12/07/2022
 
 # Customer intent: I want to learn how to create a database and get data into a table.
 ---
 
 # Create a database and get data
 
-This article shows you how to create a new database in Kusto, or access an existing database and teach you how to get data that you can either query in Kusto or use in other Trident apps.
+In this article you'll learn you how to get data in a new or an existing database. Once your database has data, you can proceed to query your data in Kusto, or begin to use other Trident apps.
 
 ## Prerequisites
 
