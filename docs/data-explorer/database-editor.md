@@ -34,7 +34,7 @@ There are multiple ways you can create a new database in Kusto. After you've cre
 
     :::image type="content" source="media/database-editor/new-database.png" alt-text="alt text tbd":::
 
-## Database dashboard
+## Database details
 
 :::image type="content" source="media/database-editor/database-dashboard.png" alt-text="Screenshot of database dashboard. ":::
 
