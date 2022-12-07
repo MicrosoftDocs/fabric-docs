@@ -14,17 +14,17 @@ ms.date: 12/07/2022
 
 # Create a database and get data
 
-In this article you'll learn you how to get data in a new or an existing database. Once your database has data, you can proceed to query your data in Kusto, or begin to use other Trident apps.
+In this article you'll learn you how to get data in a new or an existing database. Once your database has data, you can proceed to query your data using Kusto Query language in a KQL queryset.
 
 ## Prerequisites
 
 * Power BI Premium subscription. For more information on Power BI Premium subscriptions, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A workspace. For more information on how to create a workspace, see [How to create a workspace in Power BI](/power-bi/collaborate-share/service-create-the-new-workspaces).
+* A workspace. For more information on how to create a workspace, see [TODO- Trident specific workspace]().
 * A data source.
 
 ## Create a new database
 
-There are multiple ways you can create a new database in Kusto. After you've created your workspace, you can either select **Kusto Database** in the items on Kusto's dashboard, or you can create it within your selected workspace. To create a new database within your workspace:
+After you've created your workspace, you're now going to create a new database within your selected workspace. To create a new database within your workspace:
 
 1. Select **New** on the ribbon then select the entry titled **Kusto Database**.
 
@@ -34,7 +34,11 @@ There are multiple ways you can create a new database in Kusto. After you've cre
 
     :::image type="content" source="media/database-editor/new-database.png" alt-text="alt text tbd":::
 
+You've now created your database within the context of the selected workspace.
+
 ## Database details
+
+[TODO-Explain,overview]
 
 :::image type="content" source="media/database-editor/database-dashboard.png" alt-text="Screenshot of database dashboard. ":::
 
@@ -85,7 +89,14 @@ Once you've created your database, you can get data in four ways:
 * Blob container.
 * Event Hub. For more information on how to bring data using Event Hub, see [Event Hub- Link TBD]().
 
-The following steps show you how to ingest data from a blob.
+### Ingest data from a blob
+
+There are two supported types of blobs:
+
+* Azure blobs/ Amazon S3: [Information].
+* Blob containers: [Information].
+
+To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see [Generate a SAS token](generate-sas-token.md).
 
 1. On the **Home** tab, select **Get Data** > select **Get data from blob**.
 
@@ -100,12 +111,7 @@ The following steps show you how to ingest data from a blob.
 
 1. Select **Next: Source**.
 
-In the following tabs we'll show you two types of blobs:
-
-* Azure blobs/ Amazon S3: [Information].
-* Blob containers: [Information].
-
-To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see [Generate a SAS token](generate-sas-token.md).
+Choose the tab corresponding to the type of blob you want to ingest.
 
 # [Azure Blob](#tab/blob/)
 
@@ -150,13 +156,18 @@ Optionally, you can filter data to be ingested with **File filters**. You can fi
 
     :::image type="content" source="media/database-editor/azure-blob-schema.png" alt-text="Azure blob schema.":::
 
-### Command viewer
+    >[!Note]
+    >you can optionally use the command viewer (link) or edit the columns using the partial data preview (link).
+
+1. Select Next: (link to summary)
+
+#### Command viewer
 
 To open the command viewer, select the **v** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
 
 :::image type="content" source="media/database-editor/question-command-viewer.png" alt-text="Screenshot of command editor.":::
 
-### Partial data preview
+#### Partial data preview
 
 To add a new column, select the **+** button on the right-hand column under **Partial data preview**.
 
@@ -184,25 +195,12 @@ To verify that you have ingested data into your database, select **Quick query**
 >
 > `Quick query` is for temporary querying only. You can't store, share, or export your queries. For those actions, create a KQL Query set.
 
-## Manage
-
-To manage your data, select **Manage** on the **home** tab.
-You can alter your Data retention policy, Continuous export, and configure Data connections.
-
-### Data Retention policy
-
-:::image type="content" source="media/database-editor/data-retention-policy.png" alt-text="Screenshot of data retention policy pane.":::
-
-### Continuous export
-
-:::image type="content" source="media/database-editor/continuous-export.png" alt-text="Screenshot of Continuous Export dropdown pane.":::
-
-### Data connections
-
-Ingestion can be done as a one-time operation, or as a continuous method using Event Hub. To establish a continuous data connection, see [Event Hub- Link TBD]().
-
-:::image type="content" source="media/database-editor/data-connections.png" alt-text="Screenshot of Data Connections pane.":::
-
+TODO- conclusion.
+You now know how-to
 ## Next steps
 
-Create empty table [if it's going to be a different doc].
+* Create empty table [if it's going to be a different doc].
+
+* To manage your database, see [Manage](link).
+
+* [KQL query editor](link).
