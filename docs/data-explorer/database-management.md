@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.prod: analytics
 ms.technology: data-explorer
 ms.topic: how-to
-ms.date: 12/07/2022
+ms.date: 12/08/2022
 ---
 
 # Manage
@@ -17,9 +17,15 @@ You can alter your Data retention policy, Continuous export, and configure Data 
 
 ## Data Retention policy
 
+To control the mechanism that automatically removes data from your database, see [Retention policy](#data-retention-policy).By default, your data is stored for 100 years.
+
 :::image type="content" source="media/database-management/data-retention-policy.png" alt-text="Screenshot of data retention policy pane.":::
 
 ## Continuous export
+
+To enable continuous data export, you need to have database admin permissions.
+
+To learn more about continuous export, see [Continuous data export overview](#continuous-export).
 
 :::image type="content" source="media/database-management/continuous-export.png" alt-text="Screenshot of Continuous Export dropdown pane.":::
 

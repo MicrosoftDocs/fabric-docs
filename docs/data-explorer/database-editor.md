@@ -38,7 +38,7 @@ You've now created your database within the context of the selected workspace.
 
 ## Database details
 
-[TODO-Explain,overview]
+Once your database has data, you can see an overview of your database. The following table lists the information you'll be able to see.
 
 :::image type="content" source="media/database-editor/database-dashboard.png" alt-text="Screenshot of database dashboard. ":::
 
@@ -47,26 +47,26 @@ You've now created your database within the context of the selected workspace.
 |**Database details**|
 | | Created by | User name of person who created the database.
 | | Created on | Date of database creation.
-| | Query endpoint URI | URI that can be used for programmatic ingestion
-| | Region | TBD
-| | Last ingestion | TBD
-| | Ingestion endpoint URI | TBD
+| | Query endpoint URI | URI that can be used for sending/ running queries.
+| | Region | Shows the region of the data and services.
+| | Last ingestion | Shows when data was ingested last into the database.
+| | Ingestion endpoint URI | URI that can be used for programmatic ingestion.
 | **Size**|
-| | Compressed| Shows size of compressed data, uncompressed data, and compression ratio.
-| | Uncompressed
-| | Compression ratio
+| | Compressed| Shows the size of compressed data.
+| | Uncompressed | Shows the size of uncompressed data.
+| | Compression ratio | Shows the compression ratio of the data.
 |**Top tables**|  
 | | Name | Lists the names of tables in your database. You can select a table to see more information.
 | | Size | Shows the size of your database. The tables are listed in a descending order according to the data size.
 |**Most active users**|
 | | Name | User name of most active users in the database.
-| | Queries run last month | TBD
+| | Queries run last month | The number of queries run per user in the last month.
 |**Recently updated functions**
-| | TBD |  content TBD
-|**Recently used queries**|
-| | TBD | Coming soon
+| | |  Lists the function name and the time of its creation.
+|**Recently used query sets**|
+| | TBD | Lists the recently used queryset.
 |**Recently created data connections**
-| | TBD | Coming soon|
+| | TBD | Lists the data connection and the date of its creation.
 
 ## Access an existing database
 
@@ -84,7 +84,7 @@ To access your existing databases:
 
 Once you've created your database, you can get data in four ways:
 
-* Azure blob/ Amazon S3.
+* Azure blob.
 * Files.
 * Blob container.
 * Event Hub. For more information on how to bring data using Event Hub, see [Event Hub- Link TBD]().
@@ -93,8 +93,8 @@ Once you've created your database, you can get data in four ways:
 
 There are two supported types of blobs:
 
-* Azure blobs/ Amazon S3: [Information].
-* Blob containers: [Information].
+* Azure blob: [Information].
+* Blob container: [Information].
 
 To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see [Generate a SAS token](generate-sas-token.md).
 
@@ -104,16 +104,16 @@ To add a blob URI, you need to generate an Account Key/ SAS token. To generate a
 
 1. In **Table**, enter a name for your table.
 
+    :::image type="content" source="media/database-editor/table-name.png" alt-text="table name.":::
+
     > [!TIP]
     >  Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
-
-    :::image type="content" source="media/database-editor/table-name.png" alt-text="table name.":::
 
 1. Select **Next: Source**.
 
 Choose the tab corresponding to the type of blob you want to ingest.
 
-# [Azure Blob](#tab/blob/)
+# [Azure Blob](#tab/azure-blob/)
 
 1. In **Source type** select Azure blob.
 1. In the **Link to source** field, add the Account Key/SAS URI.
@@ -122,6 +122,8 @@ Choose the tab corresponding to the type of blob you want to ingest.
 
     :::image type="content" source="media/database-editor/ingest-new-data.png" alt-text="Ingest new data.":::
 
+1. Select **Next: Schema** to view and edit your table column configuration.
+
 # [Blob container](#tab/blob-container/)
 
 1. In **Source type**, select Blob container.
@@ -129,37 +131,37 @@ Choose the tab corresponding to the type of blob you want to ingest.
 
     :::image type="content" source="media/database-editor/ingest-new-data-blob-container.png" alt-text="Screenshot of data ingestion pane for blob containers.":::
 
-## Filter data
+    >[!NOTE]
+    >
+    >Filter data
+    >
+    >Optionally, you can filter data to be ingested with **File filters**. You can filter by file extension, folder path, or both.
+    >**Filter by file extension**: for example, filter for all files with a CSV extension.
+    >**Filter by folder path**: you can either enter a full or partial folder path, or folder name.
 
-Optionally, you can filter data to be ingested with **File filters**. You can filter by file extension, folder path, or both.
+    :::image type="content" source="media/database-editor/file-filters-blob-container.png" alt-text="Screenshot of file filters for blob container.":::
 
-**Filter by file extension**: for example, filter for all files with a CSV extension.
-
-**Filter by folder path**: you can either enter a full or partial folder path, or folder name.
-
-:::image type="content" source="media/database-editor/file-filters-blob-container.png" alt-text="Screenshot of file filters for blob container.":::
+1. Select **Next: Schema** to view and edit your table column configuration.
 
 ---
 
 ### Schema
 
-1. Select **Next: Schema** to view and edit your table column configuration.
+Your data format and compression are automatically identified in the left-hand pane. If incorrectly identified, use the **Data format** drop-down menu to select the correct format.
 
-    Your data format and compression are automatically identified in the left-hand pane. If incorrectly identified, use the **Data format** drop-down menu to select the correct format.
+* If your data format is JSON, you must also select JSON levels, from 1 to 10. The levels determine the table column data division.
+* If your data format is CSV, select the check box **Ignore the first record** to ignore the heading row of the file.
 
-    * If your data format is JSON, you must also select JSON levels, from 1 to 10. The levels determine the table column data division.
-    * If your data format is CSV, select the check box **Ignore the first record** to ignore the heading row of the file.
-
-    For more information on data formats, see [Data formats supported by Azure Data Explorer for ingestion](ingestion-supported-formats.md).
+For more information on data formats, see [Data formats supported by Azure Data Explorer for ingestion](ingestion-supported-formats.md).
 
 1. In the **Mapping name** field, enter a mapping name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 
     :::image type="content" source="media/database-editor/azure-blob-schema.png" alt-text="Azure blob schema.":::
 
-    >[!Note]
-    >you can optionally use the command viewer (link) or edit the columns using the partial data preview (link).
+    >[!NOTE]
+    >you can optionally use the [Command viewer](#command-viewer) or add and edit the columns using the [Partial data preview](#partial-data-preview).
 
-1. Select Next: (link to summary)
+1. Select **Next: Summary**. To skip to the summary pane explanation, select [Complete data ingestion](#complete-data-ingestion).
 
 #### Command viewer
 
@@ -187,20 +189,15 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 :::image type="content" source="media/database-editor/azure-blob-summary-pane.png" alt-text="Screenshot of ingested complete dialog box with data preview.":::
 
+You now know how to get data to your database in your selected workspace.
 ### Quick query
 
-To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database dashboard.
+To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database dashboard. You can then save your query as a KQL queryset (save feature coming soon).
 
->[!Note]
->
-> `Quick query` is for temporary querying only. You can't store, share, or export your queries. For those actions, create a KQL Query set.
+For more information on KQL queryset, see [KQL queryset]().
 
-TODO- conclusion.
-You now know how-to
 ## Next steps
 
-* Create empty table [if it's going to be a different doc].
-
-* To manage your database, see [Manage](link).
-
-* [KQL query editor](link).
+* To create an empty table, see [Create table]().
+* To manage your database, see [Manage](database-management.md).
+* To create, store, and export queries, see [KQL query editor]().
