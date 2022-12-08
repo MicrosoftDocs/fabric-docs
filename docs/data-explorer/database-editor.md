@@ -87,7 +87,7 @@ Once you've created your database, you can get data in four ways:
 * Azure blob.
 * Files.
 * Blob container.
-* Event Hub. For more information on how to bring data using Event Hub, see [Event Hub- Link TBD]().
+* Event Hub. For more information on how to bring data using Event Hub, see [TODO- Event Hub- Link TBD]().
 
 ### Ingest data from a blob
 
@@ -196,10 +196,10 @@ To verify that you have ingested data into your database, select **Quick query**
 
 :::image type="content" source="media/database-editor/quick-query.png" alt-text="Screenshot of the Quick query button.":::
 
-For more information on KQL queryset, see [KQL queryset]().
+For more information on KQL queryset, see [TODO- KQL queryset]().
 
 ## Next steps
 
-* To create an empty table, see [Create table]().
+* To create an empty table, see [TODO- Create table]().
 * To manage your database, see [Manage](database-management.md).
-* To create, store, and export queries, see [KQL query editor]().
+* To create, store, and export queries, see [TODO- KQL query editor]().
