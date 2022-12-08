@@ -14,7 +14,7 @@ ms.date: 12/07/2022
 
 # Create a database and get data
 
-In this article you'll learn you how to get data in a new or an existing database. Once your database has data, you can proceed to query your data using Kusto Query language in a KQL queryset.
+In this article, you'll learn you how to get data in a new or an existing database. Once your database has data, you can proceed to query your data using Kusto Query language in a KQL queryset.
 
 ## Prerequisites
 
@@ -72,11 +72,11 @@ Once your database has data, you can see an overview of your database. The follo
 
 To access your existing databases:
 
-1. Select the **Workspaces** icon on the left menu of the Trident UI > choose a workspace.
+1. Select the **Workspaces** icon on the side navigation on the left > choose a workspace.
 
     :::image type="content" source="media/database-editor/access-existing-database-1.png" alt-text="Screenshot of the left menu of Trident UI that shows the dropdown menu of the icon titled workspaces. The workspaces icon is highlighted.":::
 
-1. Select **Filter** on the **New** tab > select the entry titled **Kusto Database** to filter out other types of items and select the desired database.
+1. Select **Filter** on the right side of the ribbon> select the entry titled **Kusto Database** to filter out other types of items and select the desired database.
 
     :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace pane that shows the dropdown menu of the workspace ribbon option titled Filter. The dropdown entry titled Kusto Database is selected. Both the Filter option and Kusto Database are highlighted.":::
 
@@ -98,7 +98,7 @@ There are two supported types of blobs:
 
 To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see [Generate a SAS token](generate-sas-token.md).
 
-1. On the **Home** tab, select **Get Data** > select **Get data from blob**.
+1. On the lower ribbon, select **Get Data** > select **Get data from blob**.
 
     :::image type="content" source="media/database-editor/get-data.png" alt-text="Get data.":::
 
@@ -192,7 +192,9 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 You now know how to get data to your database in your selected workspace.
 ### Quick query
 
-To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database dashboard. You can then save your query as a KQL queryset (save feature coming soon).
+To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database details window . You can then save your query as a KQL queryset (save feature coming soon).
+
+:::image type="content" source="media/database-editor/quick-query.png" alt-text="Screenshot of the Quick query button.":::
 
 For more information on KQL queryset, see [KQL queryset]().
 
