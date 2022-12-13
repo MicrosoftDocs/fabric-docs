@@ -101,18 +101,22 @@ Your selected database is autopopulated in the **Database** field.
 
 ### Source tab
 
-TODO add steps
+In the source tab, the **Source type** is autopopulated with **Event Hub**
 
-:::image type="content" source="media/get-data-event-hub/source-tab.png" alt-text="Screenshot of source tab.":::
+1. Fill out the remaining fields according to the following table:
 
-|**Setting** | **Suggested value** | **Field description**
-|---|---|---|
-| Data connection | *TestDataConnection*  | The name that identifies your data connection.
-| Event hub data source |  | The name that identifies your namespace. |
-| Data connection name |  | This defines the name of the database-specific Kusto EventHubDataConnection. The default is \<tablename>\<EventHubname>. |
-| Consumer group | **Add consumer group** | The consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups)
-| Compression | | Data compression: None (default), or GZip compression.
-| Event system properties | Select relevant properties. | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations). If there are multiple records per event message, the system properties will be added to the first one. See [event system properties](#event-system-properties).|
+    :::image type="content" source="media/get-data-event-hub/source-tab.png" alt-text="Screenshot of source tab.":::
+
+    |**Setting** | **Suggested value** | **Field description**
+    |---|---|---|
+    | Data connection | *TestDataConnection*  | The name that identifies your data connection.
+    | Event hub data source |  | The name that identifies your namespace. |
+    | Data connection name |  | This defines the name of the database-specific Kusto EventHubDataConnection. The default is \<tablename>\<EventHubname>. |
+    | Consumer group | **Add consumer group** | The consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups)
+    | Compression | | Data compression: None (default), or GZip compression.
+    | Event system properties | Select relevant properties. | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations). If there are multiple records per event message, the system properties will be added to the first one. See [event system properties](#event-system-properties).|
+
+1. Select **Next: Schema** to continue to the [Schema tab](#schema-tab).
 
 #### Event system properties
 
@@ -132,11 +136,10 @@ Data is read from the event hub in form of [EventData](/dotnet/api/microsoft.ser
 
 :::image type="content" source="media/get-data-event-hub/schema-tab.png" alt-text="Screenshot of schema tab.":::
 
-1. Data batching latency TODO
-1. Data format TODO
+1. The Data batching latency determines how long the system waits to fetch data from the event hub. Set to a value that will allow you to see data in the preview.
+1. The data format is automatically inferred from the incoming data. If this format is incorrect, select the correct format.
 1. If you select Ignore data format errors, the data will be ingested in JSON format. If you leave this check box unselected, the data will be ingested in multijson format. 
 1. When you select JSON, you must also select **Nested levels**, from 1 to 100. The levels determine the table column data division.
-    
 1. In the **Mapping name** field, enter a mapping name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 1. If the data you see in the preview window isn't complete, you may need more data to create a table with all necessary data fields. Use the following commands to fetch new data from your Event hub:
 
@@ -144,11 +147,16 @@ Data is read from the event hub in form of [EventData](/dotnet/api/microsoft.ser
     * **Fetch more data**: Searches for more events in addition to the events already found.
 1. Select **Next: Summary**.
 
+
+## TODO: ADD TAB ABOUT MODIFYING THE AUTOMATICALLY CREATED SCHEMA WITHIN THE PREVIEW WINDOW
+
 ### Summary tab
+
+In the Continuous ingestion frp, Event Hub established window, all steps will be marked with green check marks when data ingestion finishes successfully.
 
 :::image type="content" source="media/get-data-event-hub/summary-tab.png" alt-text="Screenshot of summary tab.":::
 
-### View new Kusto EventHubDataConnection
+Note the name of the data connection that was created. This connection will be visible in your workspace as a new item, and is specific to the chosen table and data connection.
 
 :::image type="content" source="media/get-data-event-hub/view-kusto-event-hub-data-connection.png" alt-text="Screenshot of workspace with new data connection.":::
 
