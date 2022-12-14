@@ -10,11 +10,9 @@ ms.date: 12/14/2022
 ---
 # Query data in the KQL queryset
 
-The KQL queryset is the item you'll use to run queries, and view and manipulate query results. Use the KQL queryset to save, export, and share queries with others.
-
 In this article, you'll learn how to create and use a new KQL queryset.
 
-For more information about the query language you'll use in the query set, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/).
+The KQL queryset is used to run queries, and view and manipulate query results on data from your Kusto database. Use the KQL queryset to save, export, and share queries with others. This queryset uses Kusto Query language for query creation, and also supports some SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/).
 
 ## Prerequisites
 
@@ -24,9 +22,9 @@ For more information about the query language you'll use in the query set, see [
 
 ## Create a new query set
 
-A query set exists within the context of a workspace. A new KQL queryset is associated with whichever workspace is open at the time of creation.
+A query set exists within the context of a workspace. A new KQL queryset is associated with the workspace is open at the time of creation.
 
-1. Browse to the workspace you'll use as context for the query set.
+1. Browse to the desired workspace.
 1. Select **+New** > **KQL queryset**
 
     :::image type="content" source="media/kusto-query-set/create-query-set.png" alt-text="Screenshot of creating new query set.":::
@@ -48,7 +46,7 @@ Queries run in the context of a database. To connect to a database, select a dat
 
 :::image type="content" source="media/kusto-query-set/connect-database.png" alt-text="Screenshot of connecting to a database.":::
 
-A list of tables contained within a particular database will appear below the name of the database.
+A list of tables associated with this database will appear below the database name.
 
 ## Write a query
 
@@ -77,11 +75,9 @@ You may want to copy or share the queries you create.
 1. You can either select **Query** to copy the text of the most recent query, or select **Results** to copy the output table.
 1. You can now paste this information into any editor, such as Microsoft Word.
 
-## Export query data
+## Export query data as CSV
 
 Instead of simply copy-pasting the query output, you can also export the query results.
-
-### Export as CSV
 
 This is a one-time method to export a CSV file containing the query results.
 1. At the top of the query window, select **Manage**.
@@ -102,3 +98,4 @@ This is a one-time method to export a CSV file containing the query results.
 
 * TODO Link to KQL overview
 * TODO Link to KQL quick reference
+
