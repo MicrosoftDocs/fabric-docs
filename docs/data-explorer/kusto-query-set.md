@@ -2,6 +2,9 @@
 title: Query data in the KQL queryset
 description: Learn how to use the KQL queryset to query your data explorer data.
 ms.reviewer: tzgitlin
+author: YaelSchuster
+ms.author: yaschust
+ms.service: analytics
 ms.topic: how-to
 ms.date: 12/14/2022
 ---
