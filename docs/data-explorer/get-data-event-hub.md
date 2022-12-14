@@ -21,7 +21,7 @@ In the second step, you'll connect this Trident-based cloud connection to a Kust
 
 * An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/free/)
 * [An Event Hubs instance](/azure/event-hubs/event-hubs-create)
-* A PowerBI premium subscription
+* A Power BI premium subscription
 * A Trident workspace and Kusto database (TODO: ADD LINK TO DOC)
 
 ## Set a shared access policy on your event hub
@@ -48,7 +48,7 @@ Within the SAS policy pane, take note of the following four fields. You may want
 | a | **Event Hubs instance** | The name of the specific Event Hubs instance | *iotdata*
 | b |  **SAS Policy** | The SAS policy name created in the previous step | *DocsTest*
 | c |**Primary key** | The key associated with the SAS policy | Starts with *PGGIISb009*...
-| d | **Connection string-primary key** | In this field you only want to copy the Event Hub namespace, which can be found as part of the connection string. | *eventhubpm15910.servicebus.windows.net*
+| d | **Connection string-primary key** | In this field you only want to copy the event hub namespace, which can be found as part of the connection string. | *eventhubpm15910.servicebus.windows.net*
 
 ## Create a data connection in Trident
 
@@ -69,7 +69,7 @@ Now that your SAS policy is set up, you can configure a connection to this event
     | Connection type | Type of resource to connect to | EventHub
     | Event Hub namespace | Field reference **d** from the above [table](#gather-information-for-the-data-connection). | *eventhubpm15910.servicebus.windows.net*
     | Event Hub | Field reference **a** from the above [table](#gather-information-for-the-data-connection). | *iotdata*
-    | Consumer Group | User-defined name for the unique stream view. Use a name of an existing consumer group. If the Event Hub doesn't have a consumer group, use "$Default", which is the Event Hub's default consumer group. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups). 
+    | Consumer Group | User-defined name for the unique stream view. Use a name of an existing consumer group. If the event hub doesn't have a consumer group, use "$Default", which is the Event Hub's default consumer group. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups). 
     | Authentication method | Type of authentication | Basic
     | Username | Field reference **b** from the above [table](#gather-information-for-the-data-connection).  <br><br> The SAS policy name | *DocsTest*
     | Password | Field reference **c** from the above [table](#gather-information-for-the-data-connection). <br><br> The SAS primary key.
@@ -81,7 +81,7 @@ Now that your SAS policy is set up, you can configure a connection to this event
 
 ## Create a Kusto-specific connection to your data connection
 
-In the following step, you'll create a data connection in your Kusto database, which connects a table in your database to the Event Hub cloud connection that you created. This connection will allow you to use your Event Hubs instance and get data into the specified table using specified data mapping.
+In the following step, you'll create a data connection in your Kusto database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your Event Hubs instance and get data into the specified table using specified data mapping.
 
 1. Navigate to your Kusto database. 
 1. Select **Get data** > **Get data from Event Hub**.
@@ -110,10 +110,10 @@ In the source tab, the **Source type** is autopopulated with **Event Hub**
     |**Setting** | **Suggested value** | **Field description**
     |---|---|---|
     | Data connection | *TestDataConnection*  | The name that identifies your data connection.
-    | Event hub data source |  | The name that identifies your Event Hub cloud connection. |
-    | Data connection name |  | This defines the name of the database-specific Kusto Event Hub Data Connection. The default is \<tablename>\<EventHubname>. |
+    | Event hub data source |  | The name that identifies your event hub cloud connection. |
+    | Data connection name |  | This defines the name of the database-specific Kusto event hub Data Connection. The default is \<tablename>\<EventHubname>. |
     | Consumer group | **Add consumer group** | The consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups)
-    | Compression | | Data compression of the events, as coming from the Event Hub. Options are None (default), or GZip compression.
+    | Compression | | Data compression of the events, as coming from the event hub. Options are None (default), or GZip compression.
     | Event system properties | Select relevant properties. | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations). If there are multiple records per event message, the system properties will be added to the first one. See [event system properties](#event-system-properties).|
 
 1. Select **Next: Schema** to continue to the [Schema tab](#schema-tab).
