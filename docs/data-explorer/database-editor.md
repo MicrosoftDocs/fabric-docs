@@ -7,20 +7,24 @@ author: YaelSchuster
 ms.prod: analytics
 ms.technology: data-explorer
 ms.topic: how-to
-ms.date: 12/07/2022
+ms.date: 12/14/2022
 
 # Customer intent: I want to learn how to create a database and get data into a table.
 ---
 
 # Create a database and get data
 
-In this article, you'll learn you how to get data in a new or an existing database. Once your database has data, you can proceed to query your data using Kusto Query language in a KQL queryset.
+In Kusto (TODO- service name), you can create workspaces. In those workspaces you can create databases, tables, queries, etc.
+
+In this article, you'll learn you how to get data in a new or an existing database. Once your database has data, you can proceed to query your data using Kusto Query language in a KQL query set.
 
 ## Prerequisites
 
 * Power BI Premium subscription. For more information on Power BI Premium subscriptions, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
 * A workspace. For more information on how to create a workspace, see [TODO- Trident specific workspace]().
 * A data source.
+
+To get data in your database, you can either [Create a new database](#create-a-new-database) or [Access an existing database](#access-an-existing-database).
 
 ## Create a new database
 
@@ -38,7 +42,7 @@ You've now created your database within the context of the selected workspace.
 
 ## Database details
 
-Once your database has data, you can see an overview of your database. The following table lists the information you'll be able to see.
+The landing page of your database shows an overview of your database. The following table lists the information you'll see.
 
 :::image type="content" source="media/database-editor/database-dashboard.png" alt-text="Screenshot of database dashboard. ":::
 
@@ -64,7 +68,7 @@ Once your database has data, you can see an overview of your database. The follo
 |**Recently updated functions**
 | | |  Lists the function name and the time of its creation.
 |**Recently used query sets**|
-| | TBD | Lists the recently used queryset.
+| | TBD | Lists the recently used query set.
 |**Recently created data connections**
 | | TBD | Lists the data connection and the date of its creation.
 
@@ -84,19 +88,17 @@ To access your existing databases:
 
 Once you've created your database, you can get data in four ways:
 
-* Azure blob.
-* Files.
-* Blob container.
-* Event Hub. For more information on how to bring data using Event Hub, see [TODO- Event Hub- Link TBD]().
+* Azure blob
+* Files
+* Blob container
+* Event Hub - For more information on how to bring data using Event Hub, see [TODO- Event Hub- Link TBD]().
 
 ### Ingest data from a blob
 
-There are two supported types of blobs:
+There are two supported types of blobs in Trident:
 
-* Azure blob: [Information].
-* Blob container: [Information].
-
-To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see [Generate a SAS token](generate-sas-token.md).
+* Azure blob: Blob Storage is optimized for storing massive amounts of unstructured data. Unstructured data is data that doesn't adhere to a particular data model or definition, such as text or binary data. For more information on Azure blob storage, see [Introduction to Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
+* Blob container: A container organizes a set of blobs, similar to a directory in a file system. A storage account can include an unlimited number of containers, and a container can store an unlimited number of blobs. For more information on blob containers, see [Manage blob containers using Azure portal](/azure/storage/blobs/blob-containers-portal).
 
 1. On the lower ribbon, select **Get Data** > select **Get data from blob**.
 
@@ -113,31 +115,33 @@ To add a blob URI, you need to generate an Account Key/ SAS token. To generate a
 
 Choose the tab corresponding to the type of blob you want to ingest.
 
-# [Azure Blob](#tab/azure-blob/)
+### [Azure Blob](#tab/azure-blob/)
 
 1. In **Source type** select Azure blob.
 1. In the **Link to source** field, add the Account Key/SAS URI.
 
-   You can add up to 10 items of up to 1GB uncompressed size each. If you upload more than 1 item, you can change the selection by selecting the star icon on the right side of the source link field.
+    To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see [Generate a SAS token](generate-sas-token.md).
+
+    The blob you add will be the basis for the schema tab. You can add up to 10 items of up to 1GB uncompressed size each. If you upload more than 1 item, you can change the blob by selecting the star icon on the right side of the source link field.
 
     :::image type="content" source="media/database-editor/ingest-new-data.png" alt-text="Ingest new data.":::
 
 1. Select **Next: Schema** to view and edit your table column configuration.
 
-# [Blob container](#tab/blob-container/)
+### [Blob container](#tab/blob-container/)
 
 1. In **Source type**, select Blob container.
 1. In **Link to source** field, add the Account Key/SAS URI.
 
+    To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see [Generate a SAS token](generate-sas-token.md).
+
     :::image type="content" source="media/database-editor/ingest-new-data-blob-container.png" alt-text="Screenshot of data ingestion pane for blob containers.":::
 
-    >[!NOTE]
-    >
-    >Filter data
-    >
-    >Optionally, you can filter data to be ingested with **File filters**. You can filter by file extension, folder path, or both.
-    >**Filter by file extension**: for example, filter for all files with a CSV extension.
-    >**Filter by folder path**: you can either enter a full or partial folder path, or folder name.
+1. Optionally, you can filter data to be ingested with **File filters**. You can filter by file extension, folder path, or both.
+
+    **Filter by file extension**: for example, filter for all files with a CSV extension.
+
+    **Filter by folder path**: you can either enter a full or partial folder path, or folder name.
 
     :::image type="content" source="media/database-editor/file-filters-blob-container.png" alt-text="Screenshot of file filters for blob container.":::
 
@@ -159,17 +163,24 @@ For more information on data formats, see [Data formats supported by Azure Data 
     :::image type="content" source="media/database-editor/azure-blob-schema.png" alt-text="Azure blob schema.":::
 
     >[!NOTE]
-    >you can optionally use the [Command viewer](#command-viewer) or add and edit the columns using the [Partial data preview](#partial-data-preview).
+    >
+    > The tool automatically infers the schema based on your data. If you want to change the schema to add and edit columns, you can do so under [Partial data preview](#partial-data-preview).
+    >
+    >You can optionally use the [Command viewer](#command-viewer) to view and copy the automatic commands generated from your inputs.
 
 1. Select **Next: Summary**. To skip to the summary pane explanation, select [Complete data ingestion](#complete-data-ingestion).
 
 #### Command viewer
+
+The command viewer shows the commands for creating tables, mapping, and ingesting data in tables.
 
 To open the command viewer, select the **v** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
 
 :::image type="content" source="media/database-editor/question-command-viewer.png" alt-text="Screenshot of command editor.":::
 
 #### Partial data preview
+
+The partial data preview is automatically inferred based on your data. You can change the data preview by editing and adding new columns.
 
 To add a new column, select the **+** button on the right-hand column under **Partial data preview**.
 
@@ -192,11 +203,11 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 You now know how to get data to your database in your selected workspace.
 ### Quick query
 
-To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database details window . You can then save your query as a KQL queryset (save feature coming soon).
+To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database landing page. You can then save your query as a KQL Query Set by selecting **Save as Query Set**.
 
 :::image type="content" source="media/database-editor/quick-query.png" alt-text="Screenshot of the Quick query button.":::
 
-For more information on KQL queryset, see [TODO- KQL queryset]().
+For more information on KQL Query Set, see [TODO- KQL query set]().
 
 ## Next steps
 
