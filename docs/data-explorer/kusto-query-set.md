@@ -1,11 +1,11 @@
 ---
-title: 
-description: 
-ms.reviewer: 
+title: Query data in the KQL queryset
+description: Learn how to use the KQL queryset to query your data explorer data.
+ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.date: 12/14/2022
 ---
-## Query data in the KQL queryset
+# Query data in the KQL queryset
 
 The KQL queryset is the item you'll use to run queries, and view and manipulate query results. Use the KQL queryset to save, export, and share queries with others.
 
