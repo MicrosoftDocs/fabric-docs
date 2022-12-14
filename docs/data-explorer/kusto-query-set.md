@@ -3,7 +3,7 @@ title:
 description: 
 ms.reviewer: 
 ms.topic: how-to
-ms.date: 11/06/2022
+ms.date: 12/14/2022
 ---
 ## Query data in the KQL queryset
 
@@ -15,9 +15,9 @@ For more information about the query language you'll use in the query set, see [
 
 ## Prerequisites
 
-* PowerBI premium subscription
+* Power BI premium subscription
 * Workspace
-* Kusto database with data
+* Kusto table with data
 
 ## Create a new query set
 
@@ -54,7 +54,7 @@ Now that you're connected to your data source, you can run queries on this data.
 1. Write or copy a query in the top pane of the KQL queryset. 
 1. Select the **Run** button, or press **Shift**+**Enter** to run the query.
 
-    The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query has finished successfully, and the amount of time used to compute the query results.
+    The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query has finished successfully, and time used to compute the query results.
 
     :::image type="content" source="media/kusto-query-set/query-window.png" alt-text="Screenshot of the query window with a query in it.":::
 
@@ -64,7 +64,7 @@ The results grid can be used to customize results and do further analysis. For m
 
 ## Copy query
 
-You may want to share the queries you create.
+You may want to copy or share the queries you create.
 
 1. At the top of the query window, select **Manage**.
 1. Select **Copy**
@@ -76,7 +76,7 @@ You may want to share the queries you create.
 
 ## Export query data
 
-Instead of simply copy-pasting the query output, you can export the query results in different ways.
+Instead of simply copy-pasting the query output, you can also export the query results.
 
 ### Export as CSV
 
@@ -85,17 +85,8 @@ This is a one-time method to export a CSV file containing the query results.
 
     :::image type="content" source="media/kusto-query-set/export-csv.png" alt-text="Screenshot of export to CSV.":::
 
-1. Select **Export results**>**Export results to CSV**.
+1. Select **Export results to CSV**.
 1. Save the CSV file locally.
-
-### Export to Microsoft Excel
-
-This is a method to create a dynamically-linked Microsoft Excel file containing the query results.
-1. At the top of the query window, select **Manage**.
-1. Select **Export results**>**Export results to Excel**.
-1. Save the Excel file locally and open in Microsoft Excel.
-1. If prompted, enable editing and content.
-1. Sign in with your organizational account.
 
 ## Delete query set
 
@@ -105,3 +96,6 @@ This is a method to create a dynamically-linked Microsoft Excel file containing 
 :::image type="content" source="media/kusto-query-set/clean-up-query-set.png" alt-text="Screenshot of how to delete a query set.":::
 
 ## Next steps
+
+* TODO Link to KQL overview
+* TODO Link to KQL quick reference
