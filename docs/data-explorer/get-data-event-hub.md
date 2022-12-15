@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.prod: analytics
 ms.technology: data-explorer 
 ms.topic: how-to
-ms.date: 12/13/2022
+ms.date: 12/15/2022
 ---
 # Get data from Azure Event Hubs
 
@@ -22,7 +22,7 @@ In the second step, you'll connect this Trident-based cloud connection to a Kust
 * An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/free/)
 * [An Event Hubs instance](/azure/event-hubs/event-hubs-create)
 * A Power BI premium subscription
-* A Trident workspace and Kusto database (TODO: ADD LINK TO DOC)
+* A Trident workspace and Kusto database <!--(TODO: ADD LINK TO DOC)-->
 
 ## Set a shared access policy on your event hub
 
@@ -147,7 +147,7 @@ Data is read from the event hub in form of [EventData](/dotnet/api/microsoft.ser
 1. Select **Next: Summary**.
 
 
-## TODO: ADD TAB ABOUT MODIFYING THE AUTOMATICALLY CREATED SCHEMA WITHIN THE PREVIEW WINDOW
+<!-- ## TODO: ADD TAB ABOUT MODIFYING THE AUTOMATICALLY CREATED SCHEMA WITHIN THE PREVIEW WINDOW -->
 
 ### Summary tab
 
@@ -160,6 +160,3 @@ Note the name of the data connection that was created. This connection will be v
 :::image type="content" source="media/get-data-event-hub/view-kusto-event-hub-data-connection.png" alt-text="Screenshot of workspace with new data connection.":::
 
 ## Next steps
-
-* TODO Link to KQL queryset
-* TODO Link to KQL docs
