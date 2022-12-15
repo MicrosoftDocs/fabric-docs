@@ -43,6 +43,9 @@
       "extendBreadcrumb": true,
       "feedback_system": "None"
     },
+    "globalMetadata": {
+      "ms.service": "azure"
+   },
     "fileMetadata": {
       "ms.service": {
         "docs/**/*.md": "azure"
