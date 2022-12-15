@@ -4,7 +4,6 @@ description: Learn how to create a connection to Event Hubs and get data into yo
 ms.reviewer: guregini
 ms.author: yaschust
 author: YaelSchuster
-ms.prod: analytics
 ms.technology: data-explorer 
 ms.topic: how-to
 ms.date: 12/15/2022
