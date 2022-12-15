@@ -46,11 +46,6 @@
     "globalMetadata": {
       "ms.service": "azure"
    },
-    "fileMetadata": {
-      "ms.service": {
-        "docs/**/*.md": "azure"
-      }
-    },
     "template": [],
     "dest": "trident-docs"
   }
