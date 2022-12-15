@@ -45,6 +45,7 @@
     },
     "fileMetadata": {
       "ms.service": {
+        "docs/**/*.md": "azure",
         "docs/data-explorer/**/*.md": "azure",
         "docs/data-science/**/*.md": "azure",
         "docs/data-engineering/**/*.md": "azure",
