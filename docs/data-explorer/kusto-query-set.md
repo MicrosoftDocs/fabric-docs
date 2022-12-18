@@ -11,13 +11,13 @@ ms.date: 12/15/2022
 
 In this article, you'll learn how to create and use a new KQL queryset.
 
-The KQL queryset is the item used to run queries, and view and manipulate query results on data from your Kusto database. You can save your queries for future use, or export and share queries with others. This queryset uses the Kusto Query language for query creation, and also supports some SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/). <!-- Add link to contextual item -->
+The KQL queryset is the item used to run queries, and view and manipulate query results on data from your Data Explorer database. You can save your queries for future use, or export and share queries with others. This queryset uses the Kusto Query language for query creation, and also supports some SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/). <!-- Add link to contextual item -->
 
 ## Prerequisites
 
 * Power BI premium subscription
 * Workspace
-* Kusto table with dataset
+* Data Explorer table with dataset
 
 ## Create a new query set
 
@@ -241,8 +241,9 @@ This is a one-time method to export a CSV file containing the query results.
 
 :::image type="content" source="media/kusto-query-set/clean-up-query-set.png" alt-text="Screenshot of how to delete a query set.":::
 
+<!---
 ## Next steps
 
 * TODO Link to KQL overview
 * TODO Link to KQL quick reference
-
+-->
