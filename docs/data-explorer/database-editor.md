@@ -21,7 +21,7 @@ In this article, you'll learn you how to get data in a new or an existing databa
 ## Prerequisites
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A workspace. For more information, see [TODO- Trident specific workspace]().
+* A workspace. For more information, see <!-- [TODO- Trident specific workspace](). -->
 * A data source.
 
 To get data in your database, you can either [Create a new database](#create-a-new-database) or [Access an existing database](#access-an-existing-database).
@@ -89,7 +89,7 @@ Once you've created your database, you can get data in four ways:
 * Azure blob
 * Files
 * Blob container
-* Event Hub - For more information on how to bring data using Event Hub, see [TODO- Event Hub- Link TBD]().
+* Event Hubs - For more information on how to bring data using Event Hubs, see <!--[TODO- Event Hub- Link TBD](). -->
 
 ### Ingest data from a blob
 
@@ -118,9 +118,9 @@ In the next section of this document, choose the tab corresponding to the type o
 1. In **Source type** select Azure blob.
 1. In the **Link to source** field, add the Account Key/SAS URI.
 
-    To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see [Generate a SAS token](generate-sas-token.md).
+    To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see <!-- [TODO- Generate a SAS token](generate-sas-token.md). -->
 
-    The blob you add will be the basis for the schema tab. You can add up to 10 items of up to 1GB uncompressed size each. If you upload more than 1 item, you can change the schema-defining blob by selecting the star icon on the right side of the source link field.
+    The blob you add will be the basis for the schema tab. You can add up to 10 items of up to 1-GB uncompressed size each. If you upload more than one item, you can change the schema-defining blob by selecting the star icon on the right side of the source link field.
 
     :::image type="content" source="media/database-editor/ingest-new-data.png" alt-text="Ingest new data.":::
 
@@ -131,7 +131,7 @@ In the next section of this document, choose the tab corresponding to the type o
 1. In **Source type**, select Blob container.
 1. In **Link to source** field, add the Account Key/SAS URI.
 
-    To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see [Generate a SAS token](generate-sas-token.md).
+    To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see <!-- [TODO- Generate a SAS token](generate-sas-token.md). -->
 
     :::image type="content" source="media/database-editor/ingest-new-data-blob-container.png" alt-text="Screenshot of data ingestion pane for blob containers.":::
 
@@ -154,7 +154,7 @@ Your data format and compression are automatically identified in the left-hand p
 * If your data format is JSON, you must also select JSON levels, from 1 to 10. The levels determine the table column data division.
 * If your data format is CSV, select the check box **Ignore the first record** to ignore the heading row of the file.
 
-For more information on data formats, see [Data formats supported by Azure Data Explorer for ingestion](ingestion-supported-formats.md).
+For more information on data formats, see <!-- [TODO- Data formats supported by Azure Data Explorer for ingestion](ingestion-supported-formats.md).-->
 
 1. In the **Mapping name** field, enter a mapping name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 
@@ -204,10 +204,10 @@ To verify that you have ingested data into your database, select **Quick query**
 
 :::image type="content" source="media/database-editor/quick-query.png" alt-text="Screenshot of the Quick query button.":::
 
-For more information on KQL Query Set, see [TODO- KQL query set]().
+For more information on KQL Query Set, see <!-- [TODO- KQL query set]().-->
 
 ## Next steps
 
-* To create an empty table, see [TODO- Create table]().
+* To create an empty table, see <!--[TODO- Create table]().-->
 * To manage your database, see [Manage](database-management.md).
-* To create, store, and export queries, see [TODO- KQL query editor]().
+* To create, store, and export queries, see <!--[TODO- KQL query editor]().-->
