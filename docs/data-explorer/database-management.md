@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.prod: analytics
 ms.technology: data-explorer
 ms.topic: how-to
-ms.date: 12/14/2022
+ms.date: 12/18/2022
 ---
 
 # Manage
@@ -31,7 +31,7 @@ To learn more about continuous export, see [Continuous data export overview](#co
 
 ## Data connections
 
-Ingestion can be done as a one-time operation, or as a continuous method using Event Hub. To establish a continuous data connection, see [TODO-Event Hub- Link TBD]().
+Ingestion can be done as a one-time operation, or as a continuous method using Event Hub. To establish a continuous data connection, see [TODO-Event Hubs- Link TBD]().
 
 (TODO- Yael to add information here.)
 

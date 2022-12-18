@@ -118,7 +118,7 @@ In the next section of this document, choose the tab corresponding to the type o
 1. In **Source type** select Azure blob.
 1. In the **Link to source** field, add the Account Key/SAS URI.
 
-    To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see <!-- [TODO- Generate a SAS token](generate-sas-token.md). -->
+    To add a blob URI, you need to generate an Account Key/ SAS token with both List and Read permissions. To generate an Account Key/SAS token, see <!-- [TODO- Generate a SAS token](generate-sas-token.md). -->
 
     The blob you add will be the basis for the schema tab. You can add up to 10 items of up to 1-GB uncompressed size each. If you upload more than one item, you can change the schema-defining blob by selecting the star icon on the right side of the source link field.
 
@@ -131,7 +131,7 @@ In the next section of this document, choose the tab corresponding to the type o
 1. In **Source type**, select Blob container.
 1. In **Link to source** field, add the Account Key/SAS URI.
 
-    To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see <!-- [TODO- Generate a SAS token](generate-sas-token.md). -->
+    To add a blob URI, you need to generate an Account Key/ SAS token with both List and Read permissions. To generate an Account Key/SAS token, see <!-- [TODO- Generate a SAS token](generate-sas-token.md). -->
 
     :::image type="content" source="media/database-editor/ingest-new-data-blob-container.png" alt-text="Screenshot of data ingestion pane for blob containers.":::
 
