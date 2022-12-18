@@ -28,7 +28,6 @@ To get data in your database, you can either [Create a new database](#create-a-n
 
 ## Create a new database
 
-
 1. Select **New** on the ribbon then select the entry titled **Kusto Database**.
 
     :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Kusto workspace that shows the dropdown menu of the ribbon button titled New. Both the New tab and the entry titled Kusto Database are highlighted":::
@@ -60,7 +59,7 @@ The landing page of your database shows an overview of your database. The follow
 | | Compression ratio | Compression ratio of the data.
 |**Top tables**|  
 | | Name | Lists the names of tables in your database. You can select a table to see more information.
-| | Size | Shows the size of your database. The tables are listed in a descending order according to the data size.
+| | Size | Database size in megabytes. The tables are listed in a descending order according to the data size.
 |**Most active users**|
 | | Name | User name of most active users in the database.
 | | Queries run last month | The number of queries run per user in the last month.
