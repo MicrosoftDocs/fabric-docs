@@ -14,21 +14,20 @@ ms.date: 12/14/2022
 
 # Create a database and get data
 
-In Kusto (TODO- service name), you can create workspaces. In those workspaces you can create databases, tables, queries, etc.
+In Data Explorer, you'll interact with your data in the context of databases. A single workspace can hold multiple databases, and each database can hold multiple tables.
 
 In this article, you'll learn you how to get data in a new or an existing database. Once your database has data, you can proceed to query your data using Kusto Query language in a KQL query set.
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information on Power BI Premium subscriptions, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A workspace. For more information on how to create a workspace, see [TODO- Trident specific workspace]().
+* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
+* A workspace. For more information, see [TODO- Trident specific workspace]().
 * A data source.
 
 To get data in your database, you can either [Create a new database](#create-a-new-database) or [Access an existing database](#access-an-existing-database).
 
 ## Create a new database
 
-After you've created your workspace, you're now going to create a new database within your selected workspace. To create a new database within your workspace:
 
 1. Select **New** on the ribbon then select the entry titled **Kusto Database**.
 
@@ -53,12 +52,12 @@ The landing page of your database shows an overview of your database. The follow
 | | Created on | Date of database creation.
 | | Query endpoint URI | URI that can be used for sending/ running queries.
 | | Region | Shows the region of the data and services.
-| | Last ingestion | Shows when data was ingested last into the database.
+| | Last ingestion | Date on which data was ingested last into the database.
 | | Ingestion endpoint URI | URI that can be used for programmatic ingestion.
 | **Size**|
-| | Compressed| Shows the size of compressed data.
-| | Uncompressed | Shows the size of uncompressed data.
-| | Compression ratio | Shows the compression ratio of the data.
+| | Compressed| Total size of compressed data.
+| | Uncompressed | Total size of uncompressed data.
+| | Compression ratio | Compression ratio of the data.
 |**Top tables**|  
 | | Name | Lists the names of tables in your database. You can select a table to see more information.
 | | Size | Shows the size of your database. The tables are listed in a descending order according to the data size.
@@ -76,11 +75,11 @@ The landing page of your database shows an overview of your database. The follow
 
 To access your existing databases:
 
-1. Select the **Workspaces** icon on the side navigation on the left > choose a workspace.
+1. Select the **Workspaces** icon on the side navigation on the left. Then choose a workspace.
 
     :::image type="content" source="media/database-editor/access-existing-database-1.png" alt-text="Screenshot of the left menu of Trident UI that shows the dropdown menu of the icon titled workspaces. The workspaces icon is highlighted.":::
 
-1. Select **Filter** on the right side of the ribbon> select the entry titled **Kusto Database** to filter out other types of items and select the desired database.
+1. Select **Filter** on the right side of the ribbon > **Kusto Database**.
 
     :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace pane that shows the dropdown menu of the workspace ribbon option titled Filter. The dropdown entry titled Kusto Database is selected. Both the Filter option and Kusto Database are highlighted.":::
 
@@ -100,7 +99,7 @@ There are two supported types of blobs in Trident:
 * Azure blob: Blob Storage is optimized for storing massive amounts of unstructured data. Unstructured data is data that doesn't adhere to a particular data model or definition, such as text or binary data. For more information on Azure blob storage, see [Introduction to Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
 * Blob container: A container organizes a set of blobs, similar to a directory in a file system. A storage account can include an unlimited number of containers, and a container can store an unlimited number of blobs. For more information on blob containers, see [Manage blob containers using Azure portal](/azure/storage/blobs/blob-containers-portal).
 
-1. On the lower ribbon, select **Get Data** > select **Get data from blob**.
+1. On the lower ribbon, select **Get Data** > **Get data from blob**.
 
     :::image type="content" source="media/database-editor/get-data.png" alt-text="Get data.":::
 
@@ -113,7 +112,7 @@ There are two supported types of blobs in Trident:
 
 1. Select **Next: Source**.
 
-Choose the tab corresponding to the type of blob you want to ingest.
+In the next section of this document, choose the tab corresponding to the type of blob you want to ingest.
 
 ### [Azure Blob](#tab/azure-blob/)
 
@@ -122,7 +121,7 @@ Choose the tab corresponding to the type of blob you want to ingest.
 
     To add a blob URI, you need to generate an Account Key/ SAS token. To generate an Account Key/SAS token, see [Generate a SAS token](generate-sas-token.md).
 
-    The blob you add will be the basis for the schema tab. You can add up to 10 items of up to 1GB uncompressed size each. If you upload more than 1 item, you can change the blob by selecting the star icon on the right side of the source link field.
+    The blob you add will be the basis for the schema tab. You can add up to 10 items of up to 1GB uncompressed size each. If you upload more than 1 item, you can change the schema-defining blob by selecting the star icon on the right side of the source link field.
 
     :::image type="content" source="media/database-editor/ingest-new-data.png" alt-text="Ingest new data.":::
 
@@ -200,7 +199,6 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 :::image type="content" source="media/database-editor/azure-blob-summary-pane.png" alt-text="Screenshot of ingested complete dialog box with data preview.":::
 
-You now know how to get data to your database in your selected workspace.
 ### Quick query
 
 To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database landing page. You can then save your query as a KQL Query Set by selecting **Save as Query Set**.
