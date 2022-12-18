@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.prod: analytics
 ms.technology: data-explorer
 ms.topic: how-to
-ms.date: 12/14/2022
+ms.date: 12/18/2022
 
 # Customer intent: I want to learn how to create a database and get data into a table.
 ---
