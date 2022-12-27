@@ -4,9 +4,8 @@ description: Learn how to create a connection to Event Hubs and get data into yo
 ms.reviewer: guregini
 ms.author: yaschust
 author: YaelSchuster
-ms.technology: data-explorer 
 ms.topic: how-to
-ms.date: 12/15/2022
+ms.date: 12/27/2022
 ---
 # Get data from Azure Event Hubs
 
