@@ -52,7 +52,7 @@ A list of tables associated with this database will appear below the database na
 
 ## Manage tabs
 
-:::image type="content" source="media/kusto-query-set/manage-tabs.png" alt-text="":::
+:::image type="content" source="media/kusto-query-set/manage-tabs.png" alt-text="Screenshot of the options for editing tabs in the KQL queryset.":::
 
 * **Rename a tab**: Select the **pencil icon** next to the tab name.
 * **Add a new tab**: Select the plus **+** to the right of the existing tabs. Different tabs can be connected to different databases.
