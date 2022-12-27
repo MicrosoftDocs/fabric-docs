@@ -5,19 +5,22 @@ ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
-ms.date: 12/15/2022
+ms.date: 12/27/2022
 ---
 # Query data in the KQL queryset
 
 In this article, you'll learn how to create and use a new KQL queryset.
 
-The KQL queryset is the item used to run queries, and view and manipulate query results on data from your Data Explorer database. You can save your queries for future use, or export and share queries with others. This queryset uses the Kusto Query language for query creation, and also supports some SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/). <!-- Add link to contextual item -->
+The KQL queryset is the item used to run queries, and view and manipulate query results on data from your Data Explorer database. The KQL queryset allows you to save queries for future use, or export and share queries with others.
+
+The KQL queryset uses the Kusto Query language for query creation, and also supports some SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/). <!-- Add link to contextual item -->
 
 ## Prerequisites
 
 * Power BI premium subscription
 * Workspace
-* Data Explorer table with dataset
+* A Data Explorer database 
+* A Data Explorer table with dataset
 
 ## Create a new query set
 
@@ -41,11 +44,19 @@ To access an existing query set, browse to your workspace and select the desired
 
 ## Connect to a database
 
-Queries run in the context of a database. To connect to a database, select a database from the dropdown or search for your database in the search window.
+Queries run in the context of a database. To connect to a database or switch the database associated with any tab in the KQL queryset, select a database from the dropdown.
 
 :::image type="content" source="media/kusto-query-set/connect-database.png" alt-text="Screenshot of connecting to a database.":::
 
 A list of tables associated with this database will appear below the database name.
+
+## Manage tabs
+
+:::image type="content" source="media/kusto-query-set/manage-tabs.png" alt-text="":::
+
+* **Rename a tab**: Select the **pencil icon** next to the tab name.
+* **Add a new tab**: Select the plus **+** to the right of the existing tabs. Different tabs can be connected to different databases.
+* **Change the existing database connection**: In the **Database** dropdown, select a different database.
 
 ## Write a query
 
