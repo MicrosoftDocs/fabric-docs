@@ -3,4 +3,4 @@
 - name: Data Explorer
   items:
   - name: Get data from Event Hubs
-    href: data-explorer/get-data-event-hubs.md
+    href: data-explorer/get-data-event-hub.md
