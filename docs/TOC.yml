@@ -18,6 +18,8 @@
     items:
   - name: Query
     items:
+    - name: KQL queryset
+      items: data-explorer/kusto-query-set.md
   - name: Visualize
     items:
   - name: Monitor
