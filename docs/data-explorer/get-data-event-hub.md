@@ -157,4 +157,3 @@ Note the name of the data connection that was created. This connection will be v
 
 :::image type="content" source="media/get-data-event-hub/view-kusto-event-hub-data-connection.png" alt-text="Screenshot of workspace with new data connection.":::
 
-## Next steps
