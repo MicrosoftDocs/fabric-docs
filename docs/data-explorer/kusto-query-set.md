@@ -81,7 +81,7 @@ Expanding cells are useful to view long strings or dynamic fields such as JSON.
 
 1. Double-click a cell to open an expanded view. This view allows you to read long strings, and provides a JSON formatting for dynamic data.
 
-    :::image type="content" source="media/kusto-query-set/expand-cell.png" alt-text="Screenshot of the Azure Data Explorer web U I expanded cell to show long strings.":::
+    :::image type="content" source="media/kusto-query-set/expand-cell.png" alt-text="Screenshot of the Azure Data Explorer web UI expanded cell to show long strings.":::
 
 1. Select on the icon on the top right of the result grid to switch reading pane modes. Choose between the following reading pane modes for expanded view: inline, below pane, and right pane.
 
@@ -115,7 +115,7 @@ Within the results, you can group results by any column.
 
 1. In the grid, double-click on **California** to expand and see records for that state. This type of grouping can be helpful when doing exploratory analysis.
 
-    :::image type="content" source="media/kusto-query-set/group-expanded.png" alt-text="Screenshot of a query results grid with California group expanded in the Azure Data Explorer web U I." border="false":::
+    :::image type="content" source="media/kusto-query-set/group-expanded.png" alt-text="Screenshot of a query results grid with California group expanded in the Azure Data Explorer web UI." border="false":::
 
 1. Mouse-over the **Group** column, then select **Reset columns**. This setting returns the grid to its original state.
 
@@ -128,13 +128,13 @@ After you've grouped by a column, you can then use the value aggregation functio
 1. Select the menu for the column you want to evaluate.
 1. Select **Value Aggregation**, and then select the type of function you want to do on this column.
 
-    :::image type="content" source="media/kusto-query-set/aggregate.png" alt-text="Screenshot of aggregate results when grouping column by results in the Azure Data Explorer web U I. ":::
+    :::image type="content" source="media/kusto-query-set/aggregate.png" alt-text="Screenshot of aggregate results when grouping column by results in the Azure Data Explorer web UI. ":::
 
 #### Hide empty columns
 
 You can hide/unhide empty columns by toggling the **eye** icon on the results grid menu.
 
-:::image type="content" source="media/kusto-query-set/hide-empty-columns.png" alt-text="Screenshot of eye icon to hide results grid in the Azure Data Explorer web U I.":::
+:::image type="content" source="media/kusto-query-set/hide-empty-columns.png" alt-text="Screenshot of eye icon to hide results grid in the Azure Data Explorer web UI.":::
 
 #### Filter columns
 
@@ -151,7 +151,7 @@ You can use one or more operators to filter the results of a column.
 1. To create a multi-condition filter, select a boolean operator to add another condition
 1. To remove the filter, delete the text from your first filter condition.
 
-    :::image type="content" source="media/kusto-query-set/filter-column.gif" alt-text="GIF showing how to filter on a column in the Azure Data Explorer web U I.":::
+    :::image type="content" source="media/kusto-query-set/filter-column.gif" alt-text="GIF showing how to filter on a column in the Azure Data Explorer web UI.":::
 
 #### Run cell statistics
 
@@ -181,7 +181,7 @@ Another easy way to filter the grid is to add a filter operator to the query dir
 
 1. A query clause will be added to your query in the query editor:
 
-    :::image type="content" source="media/kusto-query-set/add-query-from-filter.png" alt-text="Screenshot of the query editor showing query clause added from filtering on the grid in Azure Data Explorer web U I.":::
+    :::image type="content" source="media/kusto-query-set/add-query-from-filter.png" alt-text="Screenshot of the query editor showing query clause added from filtering on the grid in Azure Data Explorer web UI.":::
 
 ### Pivot
 
