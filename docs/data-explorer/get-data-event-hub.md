@@ -5,7 +5,7 @@ ms.reviewer: guregini
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 12/27/2022
+ms.date: 12/29/2022
 ---
 # Get data from Azure Event Hubs
 
@@ -157,3 +157,6 @@ Note the name of the data connection that was created. This connection will be v
 
 :::image type="content" source="media/get-data-event-hub/view-kusto-event-hub-data-connection.png" alt-text="Screenshot of workspace with new data connection.":::
 
+## Next steps
+
+* [Query data in the KQL queryset](kusto-query-set.md)
