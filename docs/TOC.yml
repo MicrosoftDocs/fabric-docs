@@ -8,12 +8,18 @@
     items:
   - name: Databases
     items:
+    - name: Create a database
+      href: data-explorer/create-database.md
+    - name: Database Management
+      href: data-explorer/database-management.md
   - name: Tables
     items:
   - name: Get data
     items:
     - name: Get data from Event Hubs
       href: data-explorer/get-data-event-hub.md
+    - name: Get data from a blob
+      href: data-explorer/get-data-blob.md
   - name: Export data
     items:
   - name: Query

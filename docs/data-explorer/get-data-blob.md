@@ -1,5 +1,5 @@
 ---
-title: Create a database and get data
+title: Get data from a blob
 description: Learn how to create a database and get data in Kusto for Trident.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -7,93 +7,23 @@ author: YaelSchuster
 ms.prod: analytics
 ms.technology: data-explorer
 ms.topic: how-to
-ms.date: 12/18/2022
-
-# Customer intent: I want to learn how to create a database and get data into a table.
+ms.date: 01/01/2023
 ---
 
-# Create a database and get data
+# Get data from a blob
 
-In Data Explorer, you'll interact with your data in the context of databases. A single workspace can hold multiple databases, and each database can hold multiple tables.
-
-In this article, you'll learn you how to get data in a new or an existing database. Once your database has data, you can proceed to query your data using Kusto Query language in a KQL query set.
+In this article, you'll learn you how to get data from an Azure blob or blob container into an existing database. 
 
 ## Prerequisites
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A workspace. For more information, see <!-- [TODO- Trident specific workspace](). -->
-* A data source.
+* Workspace
+* [Kusto database](create-database.md)
+* An Azure blob or blob container with data
 
-To get data in your database, you can either [Create a new database](#create-a-new-database) or [Access an existing database](#access-an-existing-database).
+## Get data from a blob
 
-## Create a new database
-
-1. Select **New** on the ribbon then select the entry titled **Kusto Database**.
-
-    :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Kusto workspace that shows the dropdown menu of the ribbon button titled New. Both the New tab and the entry titled Kusto Database are highlighted":::
-
-1. Enter your database name, then select **Create**. You can use alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
-
-    :::image type="content" source="media/database-editor/new-database.png" alt-text="alt text tbd":::
-
-You've now created your database within the context of the selected workspace.
-
-## Database details
-
-The landing page of your database shows an overview of your database. The following table lists the information you'll see.
-
-:::image type="content" source="media/database-editor/database-dashboard.png" alt-text="Screenshot of database dashboard. ":::
-
-|Card | Item| Description|
-|---|---|---|
-|**Database details**|
-| | Created by | User name of person who created the database.
-| | Created on | Date of database creation.
-| | Query endpoint URI | URI that can be used for sending/ running queries.
-| | Region | Shows the region of the data and services.
-| | Last ingestion | Date on which data was ingested last into the database.
-| | Ingestion endpoint URI | URI that can be used for programmatic ingestion.
-| **Size**|
-| | Compressed| Total size of compressed data.
-| | Uncompressed | Total size of uncompressed data.
-| | Compression ratio | Compression ratio of the data.
-|**Top tables**|  
-| | Name | Lists the names of tables in your database. You can select a table to see more information.
-| | Size | Database size in megabytes. The tables are listed in a descending order according to the data size.
-|**Most active users**|
-| | Name | User name of most active users in the database.
-| | Queries run last month | The number of queries run per user in the last month.
-|**Recently updated functions**
-| | |  Lists the function name and the time of its creation.
-|**Recently used query sets**|
-| | TBD | Lists the recently used query set.
-|**Recently created data connections**
-| | TBD | Lists the data connection and the date of its creation.
-
-## Access an existing database
-
-To access your existing databases:
-
-1. Select the **Workspaces** icon on the side navigation on the left. Then choose a workspace.
-
-    :::image type="content" source="media/database-editor/access-existing-database-1.png" alt-text="Screenshot of the left menu of Trident UI that shows the dropdown menu of the icon titled workspaces. The workspaces icon is highlighted.":::
-
-1. Select **Filter** on the right side of the ribbon > **Kusto Database**.
-
-    :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace pane that shows the dropdown menu of the workspace ribbon option titled Filter. The dropdown entry titled Kusto Database is selected. Both the Filter option and Kusto Database are highlighted.":::
-
-## Get data
-
-Once you've created your database, you can get data in four ways:
-
-* Azure blob
-* Files
-* Blob container
-* Event Hubs - For more information on how to bring data using Event Hubs, see <!--[TODO- Event Hub- Link TBD](). -->
-
-### Ingest data from a blob
-
-There are two supported types of blobs in Trident:
+You can get data from two types of blobs:
 
 * Azure blob: Blob Storage is optimized for storing massive amounts of unstructured data. Unstructured data is data that doesn't adhere to a particular data model or definition, such as text or binary data. For more information on Azure blob storage, see [Introduction to Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
 * Blob container: A container organizes a set of blobs, similar to a directory in a file system. A storage account can include an unlimited number of containers, and a container can store an unlimited number of blobs. For more information on blob containers, see [Manage blob containers using Azure portal](/azure/storage/blobs/blob-containers-portal).
@@ -111,7 +41,7 @@ There are two supported types of blobs in Trident:
 
 1. Select **Next: Source**.
 
-In the next section of this document, choose the tab corresponding to the type of blob you want to ingest.
+In the next section of this document, choose the tab that corresponds to the type of blob you want to ingest.
 
 ### [Azure Blob](#tab/azure-blob/)
 
@@ -198,7 +128,7 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 :::image type="content" source="media/database-editor/azure-blob-summary-pane.png" alt-text="Screenshot of ingested complete dialog box with data preview.":::
 
-### Quick query
+## Quick query
 
 To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database landing page. You can then save your query as a KQL Query Set by selecting **Save as Query Set**.
 
@@ -210,4 +140,4 @@ For more information on KQL Query Set, see <!-- [TODO- KQL query set]().-->
 
 * To create an empty table, see <!--[TODO- Create table]().-->
 * To manage your database, see [Manage](database-management.md).
-* To create, store, and export queries, see <!--[TODO- KQL query editor]().-->
+* To create, store, and export queries, see [Query data in the KQL queryset](kusto-query-set.md)
