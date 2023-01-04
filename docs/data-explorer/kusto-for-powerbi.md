@@ -7,13 +7,13 @@ author: YaelSchuster
 ms.prod: analytics
 ms.technology: data-explorer
 ms.topic: how-to
-ms.date: 12/28/2022
+ms.date: 01/04/2023
 
 ---
 
-# Visualize data in a report
+# Visualize data in a Power Bi report
 
-There are multiple ways you can build a Power BI report to visualize your data. In this article you'll learn how to build a report using a KQL queryset.
+There are multiple ways you can build a Power BI report to visualize your data. In this article, you'll learn how to build a report using a KQL queryset.
 
 ## Prerequisites
 
@@ -35,30 +35,31 @@ There are multiple ways you can build a Power BI report to visualize your data. 
 
     >[!NOTE]
     > When you build a report, a dataset is created and saved in your workspace. You can create multiple reports from a single dataset.
+    >
     > If you delete the dataset, your reports will also be removed.
 
-### Power BI (preview)
+### Report preview
 
-In the report's preview, you'll see a summary of your query, and query results visualized in frames. you can edit the selected data on the data pane on the right.
+In the report's preview, you'll see a summary of your query, and query results visualized in tiles on your canvas. You can manipulate the visualizations in the **Your data** pane on the right.
 
 :::image type="content" source="media/kusto-for-powerbi/report-preview.png" alt-text="Screenshot of Power BI report preview window showing a preview of the dataset visualization. The Save button is highlighted.":::
-
-Visualizations pane - Where you can change visualizations, customize colors or axes, apply filters, drag fields, and more.
-
-Fields pane - Where query elements and filters can be dragged onto the Report view or dragged to the Filters area of the Visualizations pane.
-
-Once you've created your report, your dataset will be visualized and arranged in tiles within a canvas.
-
-Show data table- See the data you added to this report as a table at the bottom of the canvas. if you've added multiple tables, you'll have to view them one at a time.
 
 ### Report details
 
 1. Name your report.
-1. Save your report in a workspace. It can be a different workspace than the one you started out in.
+1. Save your report in a workspace. It can be a different workspace than the one you started in.
 
     :::image type="content" source="media/kusto-for-powerbi/report-details.png" alt-text="Screenshot of report details showing the report's name and the workspace it will be saved in. The button titled Continue is highlighted.":::
 
-1. Select **Continue** to see save your report.
+1. Select **Continue** to save your report.
+
+You've now created your report.
+
+### Manage report
+
+To view and edit your report, select **Open the file in Power BI to view, edit, and get a shareable link**.
+
+:::image type="content" source="media/kusto-for-powerbi/open-report.png" alt-text="Screenshort of report preview showing that the report has been saved. The link to open the report in Power BI is highlighted.":::
 
 ## Next steps
 
