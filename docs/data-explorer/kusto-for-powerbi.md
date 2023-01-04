@@ -11,7 +11,7 @@ ms.date: 01/04/2023
 
 ---
 
-# Visualize data in a Power Bi report
+# Visualize data in a Power BI report
 
 There are multiple ways you can build a Power BI report to visualize your data. In this article, you'll learn how to build a report using a KQL queryset.
 
@@ -24,7 +24,7 @@ There are multiple ways you can build a Power BI report to visualize your data. 
 
 ## Create a report
 
-1. Open a an existing KQL queryset from your workspace or create a new one.
+1. Open an existing KQL queryset from your workspace or create a new one.
     you can switch the associated database in the drop-down menu on the database pane.
 
     :::image type="content" source="media/kusto-for-powerbi/select-database.png" alt-text="Screenshot of database pane in a KQL queryset":::
