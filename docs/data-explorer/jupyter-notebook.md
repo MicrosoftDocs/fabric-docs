@@ -119,7 +119,7 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
 1. Paste the code in the window that appears, then select **Next**
 
-    :::image type="content" source="media/jupyter-notebook/paste-code.png" alt-text="Screenshot of the past code window. The Next button is highlighted.":::
+    :::image type="content" source="media/jupyter-notebook/paste-code.jpg" alt-text="Screenshot of the past code window. The Next button is highlighted.":::
 
 1. Enter your details in the sign-in window, then select **Next** to sign into KustoClient.
 
@@ -127,7 +127,7 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
 1. Close the sign-in confirmation window.
 
-    :::image type="content" source="media/jupyter-notebook/kustoclient-confirmation.png" alt-text="Screenshot of KustoClient sign-in confirmation page.":::
+    :::image type="content" source="media/jupyter-notebook/kustoclient-confirmation.jpg" alt-text="Screenshot of KustoClient sign-in confirmation page.":::
 
 1. Run the next cell to check if your sign-in was successful. It should return a row count.
 
@@ -145,7 +145,7 @@ Run the following cell to draw a map by plotting a heatmap over a scatter plot.
 
 The heatmap will look like this:
 
-:::image type="content" source="media/jupyter-notebook/heat-map.png" alt-text="Image showing a heatmap of NYC taxi pickups.":::
+:::image type="content" source="media/jupyter-notebook/heat-map.jpg" alt-text="Image showing a heatmap of NYC taxi pickups.":::
 
 You can also mark the map to show the results of a clustering function using the following query.
 
@@ -153,7 +153,7 @@ You can also mark the map to show the results of a clustering function using the
 
 The heatmap will look like this:
 
-:::image type="content" source="media/jupyter-notebook/starred-map.png" alt-text="Image of map showing different sized stars that signify the results of a clustering function.":::
+:::image type="content" source="media/jupyter-notebook/starred-map.jpg" alt-text="Image of map showing different sized stars that signify the results of a clustering function.":::
 
 ## Clean up resources
 
