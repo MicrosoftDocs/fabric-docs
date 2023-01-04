@@ -4,8 +4,6 @@ description: Learn how to visualize data using the Kusto connector for Power BI 
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
-ms.prod: analytics
-ms.technology: data-explorer
 ms.topic: how-to
 ms.date: 01/04/2023
 
