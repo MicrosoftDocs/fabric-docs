@@ -4,10 +4,8 @@ description: Learn how to import the NYCtaxicab notebook into your trident envir
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
-ms.prod: analytics
-ms.technology: data-explorer
 ms.topic: Tutorial
-ms.date: 01/03/2023
+ms.date: 01/04/2023
 
 ---
 
@@ -103,7 +101,8 @@ Before we import the NYC Taxi notebook, we need to create a database and get dat
 
 Select the **play** button to run each cell, or select the cell and press **Shift+ Enter**. Repeat this step for each package.
 
->[!NOTE] Wait for the completion check mark to appear before running the next cell.
+>[!NOTE]
+>Wait for the completion check mark to appear before running the next cell.
 
 :::image type="content" source="media/jupyter-notebook/run-cell.png" alt-text="Screenshot of cell block showing import command. The Play button is highlighted.":::
 
@@ -116,7 +115,7 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 1. Run the cell.
 1. Copy the code that appears to activate the sign-in window.
 
-    :::image type="content" source="media/jupyter-notebook/copy-code.jpg" alt-text="Screenshot of code cell showing authentication code. The Copy to clipboard button is highlighted.":::
+    :::image type="content" source="media/jupyter-notebook/copy-code.png" alt-text="Screenshot of code cell showing authentication code. The Copy to clipboard button is highlighted.":::
 
 1. Paste the code in the window that appears, then select **Next**
 
