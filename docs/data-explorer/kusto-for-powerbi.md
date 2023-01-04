@@ -49,7 +49,7 @@ When you're satisfied with the visualizations, select **Save** to name and save 
 ### Report details
 
 1. Name your report.
-1. Save your report in a workspace. It can be a different workspace than the one you started in.
+1. Save your report to a workspace. It can be a different workspace than the one you started in.
 
     :::image type="content" source="media/kusto-for-powerbi/report-details.png" alt-text="Screenshot of report details showing the report's name and the workspace it will be saved in. The button titled Continue is highlighted.":::
 
