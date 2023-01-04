@@ -42,6 +42,8 @@ There are multiple ways you can build a Power BI report to visualize your data. 
 
 In the report's preview, you'll see a summary of your query, and query results visualized in tiles on your canvas. You can manipulate the visualizations in the **Your data** pane on the right.
 
+When you're satisfied with the visualizations, select **Save** to name and save your report in a workspace.
+
 :::image type="content" source="media/kusto-for-powerbi/report-preview.png" alt-text="Screenshot of Power BI report preview window showing a preview of the dataset visualization. The Save button is highlighted.":::
 
 ### Report details
