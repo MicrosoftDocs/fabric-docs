@@ -133,7 +133,7 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
 ## Run the notebook
 
-Run the remaining cells to see how render commands work through KQL magic and to begin creating a heatmap of taxi pickups in NYC.
+Run the remaining cells to see how render commands work through KQL magic and begin creating a heatmap of taxi pickups in NYC.
 
 The following cell aggregates all pickups within the specified geographic boundary.
 
