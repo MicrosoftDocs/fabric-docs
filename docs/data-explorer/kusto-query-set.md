@@ -19,8 +19,7 @@ The KQL queryset uses the Kusto Query language for query creation, and also supp
 
 * Power BI premium subscription
 * Workspace
-* A Data Explorer database 
-* A Data Explorer table with dataset
+* A [Kusto database](create-database.md) with a populated data table
 
 ## Create a new query set
 

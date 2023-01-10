@@ -1,11 +1,11 @@
 ---
 title: Use an event hub connection to stream data to your Kusto database
-description: Learn how to create a connection to Event Hubs and get data into your Kusto database in Trident.
+description: Learn how to create a connection to Event Hubs and get data into your Kusto database.
 ms.reviewer: guregini
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 12/29/2022
+ms.date: 01/10/2023
 ---
 # Get data from Azure Event Hubs
 
@@ -20,7 +20,7 @@ In the second step, you'll connect this Trident-based cloud connection to a Kust
 * An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/free/)
 * [An Event Hubs instance](/azure/event-hubs/event-hubs-create)
 * A Power BI premium subscription
-* A Trident workspace and Kusto database <!--(TODO: ADD LINK TO DOC)-->
+* A Trident workspace and [Kusto database](create-database.md)
 
 ## Set a shared access policy on your event hub
 
