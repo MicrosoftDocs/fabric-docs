@@ -1,13 +1,11 @@
 ---
 title: Manage 
-description: Learn how to use the manage ribbon to manage your database.
+description: Learn how to manage your Kusto database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
-ms.prod: analytics
-ms.technology: data-explorer
 ms.topic: how-to
-ms.date: 12/18/2022
+ms.date: 01/10/2023
 ---
 
 # Manage
@@ -20,22 +18,14 @@ You can modify the following database settings:
 * [Continuous export](#continuous-export)
 * [Data connections](#data-connections)
 
-## Data Retention policy
+## Data retention policy
 
-To control the mechanism that automatically removes data from your database, see [Retention policy](#data-retention-policy). By default, your data is stored for 100 years.
-
-:::image type="content" source="media/database-management/data-retention-policy.png" alt-text="Screenshot of data retention policy pane.":::
+For more information about the retention policy, see [Retention policy](#data-retention-policy).  To change the data retention policy, enter a time period and select **Done**. By default, your data is stored for 36500 days.
 
 ## Continuous export
 
 To enable continuous data export, you need to have database admin permissions.
 
-To learn more about continuous export, see [Continuous data export overview](#continuous-export).
-
-:::image type="content" source="media/database-management/continuous-export.png" alt-text="Screenshot of Continuous Export dropdown pane.":::
-
 ## Data connections
 
-Ingestion can be done as a one-time operation, or as a continuous method using Event Hub. To establish a continuous data connection, [Create a data connection in Trident](get-data-event-hub.md#create-a-data-connection-in-trident).
-
-:::image type="content" source="media/database-management/data-connections.png" alt-text="Screenshot of Data Connections pane.":::
+The **Data connections** pane opens to show available connections to Azure Event Hubs. To establish a new cloud data connection, see [Create a data connection in Trident](get-data-event-hub.md#create-a-data-connection-in-trident).

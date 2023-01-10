@@ -1,13 +1,13 @@
 ---
 title: Get data from a blob
-description: Learn how to create a database and get data in Kusto for Trident.
+description: Learn get blob data in a Kusto database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.prod: analytics
 ms.technology: data-explorer
 ms.topic: how-to
-ms.date: 01/01/2023
+ms.date: 01/10/2023
 ---
 
 # Get data from a blob

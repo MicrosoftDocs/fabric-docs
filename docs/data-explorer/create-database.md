@@ -1,15 +1,12 @@
 ---
-title: Create a database and get data
-description: Learn how to create a database and get data in Kusto for Trident.
+title: Create a Kusto database
+description: Learn how to create a Kusto database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
-ms.prod: analytics
-ms.technology: data-explorer
 ms.topic: how-to
-ms.date: 1/3/2023
+ms.date: 01/10/2023
 
-# Customer intent: I want to learn how to create a database and get data into a table.
 ---
 
 # Create a database
@@ -25,19 +22,22 @@ In this article, you'll learn you how to create a new database. Once your databa
 
 ## Create a new database
 
-1. Select **New** on the ribbon then select the entry titled **Kusto Database**.
+1. Select **New** > **Kusto Database**.
 
     :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Kusto workspace that shows the dropdown menu of the ribbon button titled New. Both the New tab and the entry titled Kusto Database are highlighted":::
 
-1. Enter your database name, then select **Create**. You can use alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
+1. Enter your database name, then select **Create**. 
+
+    > [!NOTE]
+    > The database name can contain alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
     :::image type="content" source="media/database-editor/new-database.png" alt-text="alt text tbd":::
 
-You've now created your database within the context of the selected workspace.
+The Kusto database has now been created within the context of the selected workspace.
 
 ## Database details
 
-The landing page of your database shows an overview of your database. The following table lists the information you'll see.
+The main page of your database shows an overview of the contents in your database. The following table lists the information you'll see.
 
 :::image type="content" source="media/database-editor/database-dashboard.png" alt-text="Screenshot of database dashboard. ":::
 
@@ -78,6 +78,8 @@ To access your existing databases:
 1. Select **Filter** on the right side of the ribbon > **Kusto Database**.
 
     :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace pane that shows the dropdown menu of the workspace ribbon option titled Filter. The dropdown entry titled Kusto Database is selected. Both the Filter option and Kusto Database are highlighted.":::
+
+1. Select the desired database.
 
 ## Next steps
 
