@@ -4,8 +4,6 @@ description: Learn get blob data in a Kusto database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
-ms.prod: analytics
-ms.technology: data-explorer
 ms.topic: how-to
 ms.date: 01/10/2023
 ---
