@@ -24,7 +24,7 @@
     items:
   - name: Query
     items:
-    - name: KQL queryset
+    - name: Query data in the KQL queryset
       href: data-explorer/kusto-query-set.md
   - name: Visualize
     items:
