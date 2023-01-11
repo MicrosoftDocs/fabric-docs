@@ -40,19 +40,17 @@ In this step, you'll use a script to first create a table with specified mapping
 1. Select **Quick query** on the top right corner of the database summary page.
 1. Paste the KQL script from step 1.
 
-    :::image type="content" source="media/jupyter-notebook/paste-script.png" alt-text="Screenshot of Quick query showing the KQL script copied from the GitHub repository. ":::
+1. Place your cursor somewhere within the first query, and select the **Run** button. 
 
-1. Place your cursor somewhere within the first query, and select the **Run** button. The first query will run and create the table and schema mapping. The output of this query will show the table and mapping creation information, including the type of command and the result of *Completed* when finished.
+    The first query will run and create the table and schema mapping. The output of this query will show the table and mapping creation information, including the type of command and the result of *Completed* when finished.
 
-    :::image type="content" source="media/jupyter-notebook/mapping-query.png" alt-text="Screenshot of Quick query showing the results of the table and schema mapping query.":::
+1. Place your cursor somewhere within the second query, and select the **Run** button. 
 
-1. Place your cursor somewhere within the second query, and select the **Run** button. The second query will load your data. It might take a few minutes for the data loading to be complete.
-
-    :::image type="content" source="media/jupyter-notebook/ingestion-query.png" alt-text="Screenshot of Quick query showing the results of the ingestion query.":::
+    The second query will load your data. It might take a few minutes for the data loading to be complete.
 
 ## Download the NYC Taxi demo notebook
 
-We have created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your Kusto Database.
+We have created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your Kusto Database. 
 
 1. Open the Customer Success Engineering code sample repository on GitHub to download the [NYC Taxi demo Notebook and KQL.](https://github.com/Azure/kusto-adx-cse/blob/30e36d1c92f09d2bbb9d080f78789b9bd7829176/KQLDemos/JupiterNotebook/NYC%20Taxi%20KQL%20demo.ipynb).
 1. Select **Raw** to view the unprocessed version of the notebook.
@@ -61,10 +59,12 @@ We have created a sample Jupyter notebook that will take you through all the nec
 
 1. Save the notebook locally to your device.
 
-    >[!NOTE]
+    > [!NOTE]
     > The notebook must be saved in the `.ipynb` file format. 
 
 ## Import the Jupyter notebook
+
+The rest of this workflow occurs in the **Data Engineering** section of the product, and uses a Jupyter notebook to query and visualize the data in your Kusto Database.
 
 1. Open the app switcher on the bottom of the navigation pane and select **Data Engineering**.
 
@@ -141,7 +141,7 @@ Run the remaining cells sequentially to see how render commands work through KQL
 
 ## Clean up resources
 
-If you don't want to keep the NYC Taxi demo notebook, go to your workspace to delete it.
+Clean up the items created by navigating to the workspace in which they were created.
 
 1. In your workspace, hover over the notebook you want to delete, select the **More menu** > **Delete**.
 
