@@ -92,12 +92,12 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
 ## Device Code authentication
 
-1. Paste the **Query endpoint URI** that you copied in [Create a Kusto database](#create-a-kusto-database). Use this instead of the placeholder cluster URL. Change the placeholder database name to **NYCtaxi**.
+1. Paste the **Query endpoint URI** of your database. This can be found in the [Database details](create-database.md#database-details) page. Use this URI instead of the placeholder cluster text. Change the placeholder database name to **NYCtaxi**.
 
     :::image type="content" source="media/jupyter-notebook/paste-query-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted.":::
 
 1. Run the cell.
-1. Copy the code that appears.
+1. Copy the authentication code.
 
     :::image type="content" source="media/jupyter-notebook/copy-code.png" alt-text="Screenshot of code cell showing authentication code. The Copy to clipboard button is highlighted.":::
 
