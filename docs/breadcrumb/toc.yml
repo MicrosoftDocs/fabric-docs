@@ -1,3 +1,11 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+items:
+- name: Analytics
+  tocHref: /analytics/
+  topicHref: /analytics/index
+  items:
+  - name: Data Explorer
+    tocHref: /analytics/data-explorer
+    topicHref: /analytics/index
+  # - name: Sub area
+  #   tocHref: /analytics/sub-area/
+  #   topicHref: /analytics/sub-area/index
