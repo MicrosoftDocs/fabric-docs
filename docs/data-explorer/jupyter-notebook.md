@@ -5,13 +5,15 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 01/04/2023
+ms.date: 01/16/2023
 
 ---
 
 # Tutorial: Query a Kusto database using a Jupyter notebook
 
-In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations. This tutorial uses pre-created dataset and notebooks in both the Kusto and the Data Engineering environments in Trident.
+Jupyter notebooks are both readable documents containing data analysis description and the results as well as executable documents which can be run to perform data analysis.
+
+In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a Kusto Database. This tutorial uses pre-created dataset and notebooks in both the Kusto and the Data Engineering environments in Trident.
 
 In this tutorial you'll learn how to:
 
@@ -52,8 +54,7 @@ In this step, you'll use a script to first create a table with specified mapping
 
 We have created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your Kusto Database. 
 
-1. Open the Customer Success Engineering code sample repository on GitHub to download the [NYC Taxi demo Notebook and KQL.](https://github.com/Azure/kusto-adx-cse/blob/30e36d1c92f09d2bbb9d080f78789b9bd7829176/KQLDemos/JupiterNotebook/NYC%20Taxi%20KQL%20demo.ipynb).
-1. Select **Raw** to view the unprocessed version of the notebook.
+1. Open the Customer Success Engineering code sample repository on GitHub to download the [NYC Taxi demo Notebook.](https://github.com/Azure/kusto-adx-cse/blob/30e36d1c92f09d2bbb9d080f78789b9bd7829176/KQLDemos/JupiterNotebook/NYC%20Taxi%20KQL%20demo.ipynb).
     
     :::image type="content" source="media/jupyter-notebook/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC Taxi demo notebook. The option titled Raw is highlighted.":::
 
@@ -92,12 +93,13 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
 ## Device Code authentication
 
-1. Paste the **Query endpoint URI** of your database. This can be found in the [Database details](create-database.md#database-details) page. Use this URI instead of the placeholder cluster text. Change the placeholder database name to **NYCtaxi**.
+1. Paste the **Query endpoint URI** of the database in which you placed the sample data. This URI can be found in the [Database details](create-database.md#database-details) page. Use this URI instead of the placeholder cluster text. 
+1. Change the placeholder database name to **NYCtaxi**.
 
     :::image type="content" source="media/jupyter-notebook/paste-query-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted.":::
 
 1. Run the cell.
-1. Copy the authentication code.
+1. An authentication code appears below the cell. Copy this authentication code.
 
     :::image type="content" source="media/jupyter-notebook/copy-code.png" alt-text="Screenshot of code cell showing authentication code. The Copy to clipboard button is highlighted.":::
 
@@ -127,7 +129,7 @@ Run the remaining cells sequentially to see how render commands work through KQL
 
     :::image type="content" source="media/jupyter-notebook/draw-heatmap.png" alt-text="Screenshot of code cell showing query to create heatmap.":::
 
-    The heatmap will look like the following image:
+    The heatmap should look like the following image:
 
     :::image type="content" source="media/jupyter-notebook/heat-map.jpg" alt-text="Image showing a heatmap of NYC taxi pickups.":::
 
@@ -148,8 +150,6 @@ Clean up the items created by navigating to the workspace in which they were cre
     :::image type="content" source="media/jupyter-notebook/cleanup-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC Taxi notebook. The option titled Delete is highlighted.":::
 
 1. Select **Delete**. You can't recover your notebook once you delete it.
-
-    :::image type="content" source="media/jupyter-notebook/delete-notebook.png" alt-text="Screenshot of Delete window showing a confirmation message. The button titled Delete is highlighted.":::
 
 ## See also
 
