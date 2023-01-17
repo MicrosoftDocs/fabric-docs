@@ -131,7 +131,7 @@ Run the remaining cells sequentially to see how render commands work through KQL
 
     The heatmap should look like the following image:
 
-    :::image type="content" source="media/jupyter-notebook/heat-map.jpg" alt-text="Image showing a heatmap of NYC taxi pickups.":::
+    :::image type="content" source="media/jupyter-notebook/heat-map.jpg" alt-text="Screenshot of notebook showing a heatmap of NYC taxi pickups.":::
 
 1. You can also mark the map to show the results of a clustering function using the following query.
 
@@ -139,7 +139,7 @@ Run the remaining cells sequentially to see how render commands work through KQL
 
     The heatmap will look like the following image:
 
-    :::image type="content" source="media/jupyter-notebook/starred-map.jpg" alt-text="Image of map showing different sized stars that signify the results of a clustering function.":::
+    :::image type="content" source="media/jupyter-notebook/starred-map.jpg" alt-text="Screenshot of map showing different sized stars that signify the results of a clustering function.":::
 
 ## Clean up resources
 
