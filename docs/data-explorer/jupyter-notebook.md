@@ -5,21 +5,19 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 01/04/2023
+ms.date: 01/16/2023
 
 ---
 
-# Tutorial: Import a Jupyter Notebook
+# Tutorial: Query a Kusto database using a Jupyter notebook
 
-In this article, you'll learn how to build the NYC taxi notebook in your Trident environment.
+Jupyter notebooks are both readable documents containing data analysis description and the results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a Kusto Database. This tutorial uses pre-created dataset and notebooks in both the Kusto and the Data Engineering environments in Trident.
 
-This tutorial uses the NYCtaxicab sample demo to run you through creating a Jupyter notebook.
-
-In this tutorial you'll learn how to:
+Specifically, you'll learn how to:
 
 > [!div class="checklist"]
 >
-> * Create a database and get data
+> * Get data
 > * Import a Jupyter notebook
 > * Authenticate access to your notebook
 > * Run the notebook
@@ -27,60 +25,45 @@ In this tutorial you'll learn how to:
 ## Prerequisites
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A workspace.
+* Workspace
+* [Kusto database](create-database.md)
 
-Before we import the NYC Taxi notebook, we need to create a database and get data.
+## Get data
 
-## Create a Kusto database
-
-1. Open the app switcher on the bottom of the navigation pane and select **Data Explorer**.
-
-    :::image type="content" source="media/jupyter-notebook/app-switcher-kusto.png" alt-text="Screenshot of app switcher showing Trident apps. The app titled Data Explorer is highlighted.":::
-
-1. Select **Kusto Database**.
-
-    :::image type="content" source="media/jupyter-notebook/kusto-database.png" alt-text="Screenshot of Kusto items. The item titled Kusto database is highlighted.":::
-
-1. Name your database, then select **Create**.
-
-    :::image type="content" source="media/jupyter-notebook/nyctaxi-database.png" alt-text="Screenshot of New Database naming window. The name bar and the create button are highlighted.":::
-
-1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere to use in [Device Code authentication](#device-code-authentication).
-
-    :::image type="content" source="media/jupyter-notebook/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
-
-### Get data
+In this step, you'll use a script to first create a table with specified mapping, and then get data from a public blob into this table.
 
 1. Copy the KQL script from the [Customer Success Engineering GitHub repository](https://github.com/Azure/kusto-adx-cse/blob/30e36d1c92f09d2bbb9d080f78789b9bd7829176/KQLDemos/SampleData/IngestNYCTaxi2014.kql.)
 
     :::image type="content" source="media/jupyter-notebook/copy-kql-script.png" alt-text="Screenshot of GitHub repository showing the KQL script for the NYC Taxi demo notebook. The copy icon is highlighted.":::
 
-1. Select **Quick query** in your database, then paste the KQL script.  
+1. Navigate to your Kusto Database.
+1. Select **Quick query** on the top right corner of the database summary page.
+1. Paste the KQL script from step 1.
 
-    :::image type="content" source="media/jupyter-notebook/paste-script.png" alt-text="Screenshot of Quick query showing the KQL script copied from the GitHub repository. ":::
+1. Place your cursor somewhere within the first query, and select the **Run** button. 
 
-1. Run the first query to create the table and schema mapping.
+    The first query will run and create the table and schema mapping. The output of this query will show the table and mapping creation information, including the type of command and the result of *Completed* when finished.
 
-    :::image type="content" source="media/jupyter-notebook/mapping-query.png" alt-text="Screenshot of Quick query showing the results of the table and schema mapping query.":::
+1. Place your cursor somewhere within the second query, and select the **Run** button. 
 
-1. Run the second query to load your data. It might take a few minutes for the ingestion to be complete.
-
-:::image type="content" source="media/jupyter-notebook/ingestion-query.png" alt-text="Screenshot of Quick query showing the results of the ingestion query.":::
+    The second query will load your data. It might take a few minutes for the data loading to be complete.
 
 ## Download the NYC Taxi demo notebook
 
-1. Open the Customer Success Engineering code sample repository on GitHub to download the [NYC Taxi demo Notebook and KQL.](https://github.com/Azure/kusto-adx-cse/blob/30e36d1c92f09d2bbb9d080f78789b9bd7829176/KQLDemos/JupiterNotebook/NYC%20Taxi%20KQL%20demo.ipynb).
-1. Select **Raw** to view the unprocessed version of the notebook.
+We have created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your Kusto Database. 
+
+1. Open the Customer Success Engineering code sample repository on GitHub to download the [NYC Taxi demo Notebook.](https://github.com/Azure/kusto-adx-cse/blob/30e36d1c92f09d2bbb9d080f78789b9bd7829176/KQLDemos/JupiterNotebook/NYC%20Taxi%20KQL%20demo.ipynb).
+    
     :::image type="content" source="media/jupyter-notebook/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC Taxi demo notebook. The option titled Raw is highlighted.":::
-1. Press **Ctrl+S** to save the notebook locally to your device.
 
-    >[!NOTE]
-    >The notebook should be an `.ipynb` file. To save your notebook as an `.ipynb` file, select **All files** under **Save as Type**, or remove `.txt` from the file name.
-1. Select **Save**.
+1. Save the notebook locally to your device.
 
-:::image type="content" source="media/jupyter-notebook/download-notebook.png" alt-text="Screenshot of Download window showing the NYC Taxi notebook demo as the file name. The file type and the save button are highlighted.":::
+    > [!NOTE]
+    > The notebook must be saved in the `.ipynb` file format. 
 
 ## Import the Jupyter notebook
+
+The rest of this workflow occurs in the **Data Engineering** section of the product, and uses a Jupyter notebook to query and visualize the data in your Kusto Database.
 
 1. Open the app switcher on the bottom of the navigation pane and select **Data Engineering**.
 
@@ -90,34 +73,35 @@ Before we import the NYC Taxi notebook, we need to create a database and get dat
 
     :::image type="content" source="media/jupyter-notebook/import-notebook.png" alt-text="Screenshot of artifact options in Data Engineering. The artifact titled Import notebook is highlighted.":::
 
-1. Select **Upload** on the **Import status** window.
+1. In the **Import status** window, select **Upload**.
 
     :::image type="content" source="media/jupyter-notebook/upload-notebook.png" alt-text="Screenshot of Import status window. The button titled Upload is highlighted.":::
 
-1. Select the NYCTaxi Notebook you downloaded earlier.
-1. Once the import is complete, return to your workspace to open your notebook.
+1. Select the NYCTaxi Notebook you downloaded in a previous step.
+1. Once the import is complete, return to your workspace to open this notebook.
 
 ## Load packages
 
 Select the **play** button to run each cell, or select the cell and press **Shift+ Enter**. Repeat this step for each package.
 
->[!NOTE]
->Wait for the completion check mark to appear before running the next cell.
+> [!NOTE]
+> Wait for the completion check mark to appear before running the next cell.
 
 :::image type="content" source="media/jupyter-notebook/run-cell.png" alt-text="Screenshot of cell block showing import command. The Play button is highlighted.":::
 
 ## Device Code authentication
 
-1. Paste the **Query endpoint URI** that you copied in [Create a Kusto database](#create-a-kusto-database) instead of the cluster URL, then change the database name to **NYCtaxi**.
+1. Paste the **Query endpoint URI** of the database in which you placed the sample data. This URI can be found in the [Database details](create-database.md#database-details) page. Use this URI instead of the placeholder cluster text. 
+1. Change the placeholder database name to **NYCtaxi**.
 
-     :::image type="content" source="media/jupyter-notebook/paste-query-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted.":::
+    :::image type="content" source="media/jupyter-notebook/paste-query-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted.":::
 
 1. Run the cell.
-1. Copy the code that appears to activate the sign-in window.
+1. An authentication code appears below the cell. Copy this authentication code.
 
     :::image type="content" source="media/jupyter-notebook/copy-code.png" alt-text="Screenshot of code cell showing authentication code. The Copy to clipboard button is highlighted.":::
 
-1. Paste the code in the window that appears, then select **Next**
+1. Paste the code in the popup window, then select **Next**
 
     :::image type="content" source="media/jupyter-notebook/paste-code.jpg" alt-text="Screenshot of the past code window. The Next button is highlighted.":::
 
@@ -129,44 +113,42 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
     :::image type="content" source="media/jupyter-notebook/kustoclient-confirmation.jpg" alt-text="Screenshot of KustoClient sign-in confirmation page.":::
 
-1. Run the next cell to check if your sign-in was successful. It should return a row count.
+1. Run the next cell to check if your sign-in was successful. If successful, the query will return a row count.
 
 ## Run the notebook
 
-Run the remaining cells to see how render commands work through KQL magic and begin creating a heatmap of taxi pickups in NYC.
+Run the remaining cells sequentially to see how render commands work through KQL magic and begin creating a heatmap of taxi pickups in NYC.
 
-The following cell aggregates all pickups within the specified geographic boundary.
+1. The following cell aggregates all pickups within the specified geographic boundary.
 
-:::image type="content" source="media/jupyter-notebook/aggregate-pickups.png" alt-text="Screenshot of code cell showing aggregation query.":::
+    :::image type="content" source="media/jupyter-notebook/aggregate-pickups.png" alt-text="Screenshot of code cell showing aggregation query.":::
 
-Run the following cell to draw a map by plotting a heatmap over a scatter plot.
+1. Run the following cell to draw a map by plotting a heatmap over a scatter plot.
 
-:::image type="content" source="media/jupyter-notebook/draw-heatmap.png" alt-text="Screenshot of code cell showing query to create heatmap.":::
+    :::image type="content" source="media/jupyter-notebook/draw-heatmap.png" alt-text="Screenshot of code cell showing query to create heatmap.":::
 
-The heatmap will look like this:
+    The heatmap should look like the following image:
 
-:::image type="content" source="media/jupyter-notebook/heat-map.jpg" alt-text="Image showing a heatmap of NYC taxi pickups.":::
+    :::image type="content" source="media/jupyter-notebook/heat-map.jpg" alt-text="Screenshot of notebook showing a heatmap of NYC taxi pickups.":::
 
-You can also mark the map to show the results of a clustering function using the following query.
+1. You can also mark the map to show the results of a clustering function using the following query.
 
-:::image type="content" source="media/jupyter-notebook/starred-query.png" alt-text="Screenshot of code cell showing query for starring data.":::
+    :::image type="content" source="media/jupyter-notebook/starred-query.png" alt-text="Screenshot of code cell showing query for starring data.":::
 
-The heatmap will look like this:
+    The heatmap will look like the following image:
 
-:::image type="content" source="media/jupyter-notebook/starred-map.jpg" alt-text="Image of map showing different sized stars that signify the results of a clustering function.":::
+    :::image type="content" source="media/jupyter-notebook/starred-map.jpg" alt-text="Screenshot of map showing different sized stars that signify the results of a clustering function.":::
 
 ## Clean up resources
 
-If you don't want to keep the NYC Taxi demo notebook, go to your workspace to delete it.
+Clean up the items created by navigating to the workspace in which they were created.
 
 1. In your workspace, hover over the notebook you want to delete, select the **More menu** > **Delete**.
 
     :::image type="content" source="media/jupyter-notebook/cleanup-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC Taxi notebook. The option titled Delete is highlighted.":::
 
-1. Select **Delete** if you're sure you want to delete the notebook. You can't recover your notebook once you delete it.
+1. Select **Delete**. You can't recover your notebook once you delete it.
 
-:::image type="content" source="media/jupyter-notebook/delete-notebook.png" alt-text="Screenshot of Delete window showing a confirmation message. The button titled Delete is highlighted.":::
+## See also
 
-## Next steps
-
-<!-- TODO- Find out which page to link to-->
+* [Query data in the KQL queryset](kusto-query-set.md)
