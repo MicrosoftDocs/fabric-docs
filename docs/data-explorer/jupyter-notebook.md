@@ -11,11 +11,9 @@ ms.date: 01/16/2023
 
 # Tutorial: Query a Kusto database using a Jupyter notebook
 
-Jupyter notebooks are both readable documents containing data analysis description and the results as well as executable documents which can be run to perform data analysis.
+Jupyter notebooks are both readable documents containing data analysis description and the results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a Kusto Database. This tutorial uses pre-created dataset and notebooks in both the Kusto and the Data Engineering environments in Trident.
 
-In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a Kusto Database. This tutorial uses pre-created dataset and notebooks in both the Kusto and the Data Engineering environments in Trident.
-
-In this tutorial you'll learn how to:
+Specifically, you'll learn how to:
 
 > [!div class="checklist"]
 >
