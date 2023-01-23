@@ -73,7 +73,7 @@ To access your existing databases:
 
 1. Select the **Workspaces** icon on the side navigation on the left. Then choose a workspace.
 
-    :::image type="content" source="media/database-editor/access-existing-database-1.png" alt-text="Screenshot of the left menu of Trident UI that shows the dropdown menu of the icon titled workspaces. The workspaces icon is highlighted.":::
+    :::image type="content" source="media/database-editor/access-existing-database-1.png" alt-text="Screenshot of the left menu of UI that shows the dropdown menu of the icon titled workspaces. The workspaces icon is highlighted.":::
 
 1. Select **Filter** on the right side of the ribbon > **Kusto Database**.
 

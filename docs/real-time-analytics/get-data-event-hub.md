@@ -9,22 +9,22 @@ ms.date: 01/10/2023
 ---
 # Get data from Azure Event Hubs
 
-In this article, you'll learn how to get data from event hub into your Kusto database in Trident. [Azure Event Hubs](/azure/event-hubs/event-hubs-about) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
+In this article, you'll learn how to get data from event hub into your Kusto database in [!INCLUDE [product-name](../includes/product-name.md)]. [Azure Event Hubs](/azure/event-hubs/event-hubs-about) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
 
-To stream data from Azure Event Hubs into Kusto, you'll go through two main steps. The first step is to create a Trident platform-based cloud connection to a specific event hub instance. This data connection can be used across all Trident workspaces and is managed centrally.
+To stream data from Azure Event Hubs into Kusto, you'll go through two main steps. The first step is to create a [!INCLUDE [product-name](../includes/product-name.md)] platform-based cloud connection to a specific event hub instance. This data connection can be used across all [!INCLUDE [product-name](../includes/product-name.md)] workspaces and is managed centrally.
 
-In the second step, you'll connect this Trident-based cloud connection to a Kusto database. This process creates a database-specific Kusto Event Hub Data Connection. The connection will stream data into the table you specified during setup, and the data will then be available to query using the KQL queryset.
+In the second step, you'll connect this [!INCLUDE [product-name](../includes/product-name.md)]-based cloud connection to a Kusto database. This process creates a database-specific Kusto Event Hub Data Connection. The connection will stream data into the table you specified during setup, and the data will then be available to query using the KQL queryset.
 
 ## Prerequisites
 
 * An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/free/)
 * [An Event Hubs instance](/azure/event-hubs/event-hubs-create)
 * A Power BI premium subscription
-* A Trident workspace and [Kusto database](create-database.md)
+* A [!INCLUDE [product-name](../includes/product-name.md)] workspace and [Kusto database](create-database.md)
 
 ## Set a shared access policy on your event hub
 
-Before you can create a cloud connection in Trident, you'll need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the data connection. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature).
+Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you'll need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the data connection. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature).
 
 1. In the [Azure portal](https://ms.portal.azure.com/), browse to the specific Event Hubs instance you want to connect.
 1. Under **Settings**, select **Shared access policies**
@@ -48,7 +48,7 @@ Within the SAS policy pane, take note of the following four fields. You may want
 | c |**Primary key** | The key associated with the SAS policy | Starts with *PGGIISb009*...
 | d | **Connection string-primary key** | In this field you only want to copy the event hub namespace, which can be found as part of the connection string. | *eventhubpm15910.servicebus.windows.net*
 
-## Create a data connection in Trident
+## Create a data connection
 
 Now that your SAS policy is set up, you can configure a connection to this event hub.
 

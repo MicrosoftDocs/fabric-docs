@@ -1,17 +1,17 @@
 ---
 title: Tutorial- Import a Jupyter notebook
-description: Learn how to import the NYCtaxicab notebook into your trident environment.
+description: Learn how to import the NYCtaxicab notebook into your [!INCLUDE [product-name](../includes/product-name.md)] environment.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 01/16/2023
+ms.date: 01/23/2023
 
 ---
 
 # Tutorial: Query a Kusto database using a Jupyter notebook
 
-Jupyter notebooks are both readable documents containing data analysis description and the results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a Kusto Database. This tutorial uses pre-created dataset and notebooks in both the Kusto and the Data Engineering environments in Trident.
+Jupyter notebooks are both readable documents containing data analysis description and the results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a Kusto Database. This tutorial uses pre-created dataset and notebooks in both the Kusto and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)].
 
 Specifically, you'll learn how to:
 
@@ -67,7 +67,7 @@ The rest of this workflow occurs in the **Data Engineering** section of the prod
 
 1. Open the app switcher on the bottom of the navigation pane and select **Data Engineering**.
 
-    :::image type="content" source="media/jupyter-notebook/app-switcher-dataengineering.png" alt-text="Screenshot of app switcher showing Trident apps. The app titled Data Engineering is highlighted.":::
+    :::image type="content" source="media/jupyter-notebook/app-switcher-dataengineering.png" alt-text="Screenshot of app switcher showing available apps. The app titled Data Engineering is highlighted.":::
 
 1. In the Data Engineering homepage, select **Import notebook**.
 
