@@ -16,11 +16,11 @@ ms.date: 01/27/2023
 
 Dataflows provide a low-code interface for ingesting data from hundreds of data sources, transforming your data using 300+ data transformations and loading the resulting data into multiple destinations such as Azure SQL Databases and more. Dataflows can be run repeatedly via manual or scheduled refresh, or as part of a data pipeline orchestration.
 
-Dataflows are built using the familiar [Power Query](https://docs.microsoft.com/en-us/power-query/power-query-what-is-power-query) experience that is available today across several Microsoft products and services such as Excel, Power BI, Power Platform, Dynamics 365 Insights Applications and more. Power Query empowers all users, ranging from Citizen to Pro, to perform data ingestion and data transformations across their data estate. Perform joins, aggregations, data cleansing, custom transformations, and much more all from an easy-to-use, highly visual, low-code UI.
+Dataflows are built using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that is available today across several Microsoft products and services such as Excel, Power BI, Power Platform, Dynamics 365 Insights Applications and more. Power Query empowers all users, ranging from Citizen to Pro, to perform data ingestion and data transformations across their data estate. Perform joins, aggregations, data cleansing, custom transformations, and much more all from an easy-to-use, highly visual, low-code UI.
 
 ![Power BI user interface showing dataflow experience.](media/data-factory-overview/dataflow-experience-01.png)
 
-## Data Pipelines
+## Data pipelines
 
 Data pipelines enable powerful workflow capabilities at cloud-scale. With data pipelines, you can build complex workflows that can refresh your dataflow, move PB-size data, and define sophisticated control flow pipelines.
 

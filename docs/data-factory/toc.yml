@@ -1,10 +1,12 @@
+items:
 - name: Data Factory
+  href: index.yml
   items:
   - name: Overview
     items: 
     - name: What is Data Factory
-      href: data-factory/data-factory-overview.md
+      href: data-factory-overview.md
   - name: Get started
     items:
     - name: Create a dataflow
-      href: data-factory/create-first-dataflow-gen2.md
+      href: create-first-dataflow-gen2.md
