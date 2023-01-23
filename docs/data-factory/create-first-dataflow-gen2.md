@@ -2,7 +2,7 @@
 title: Create your first Dataflow​ Gen2 
 description: Steps for creating dataflows and transforming data.
 ms.reviewer: DougKlopfenstein
-ms.author: xupzhou
+ms.author: jeluitwi
 author: luitwieler
 ms.topic: quickstart 
 ms.date: 01/27/2023
