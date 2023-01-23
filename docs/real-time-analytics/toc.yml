@@ -26,7 +26,8 @@
     href: jupyter-notebook.md
 - name: Visualize
   items:
-
+  - name: Visualize data in a Power BI report
+    href: create-powerbi-report.md
 - name: Monitor
   items:
 - name: KQL reference
