@@ -18,7 +18,7 @@ Dataflows provide a low-code interface for ingesting data from hundreds of data 
 
 Dataflows are built using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that is available today across several Microsoft products and services such as Excel, Power BI, Power Platform, Dynamics 365 Insights Applications and more. Power Query empowers all users, ranging from Citizen to Pro, to perform data ingestion and data transformations across their data estate. Perform joins, aggregations, data cleansing, custom transformations, and much more all from an easy-to-use, highly visual, low-code UI.
 
-![Power BI user interface showing dataflow experience.](media/data-factory-overview/dataflow-experience-01.png)
+:::image type="content" source="media/data-factory-overview/dataflow-experience-01.png" alt-text="Power BI user interface showing dataflow experience.":::
 
 ## Data pipelines
 
@@ -28,7 +28,7 @@ Use data pipelines to build complex ETL and Data factory workflows that can perf
 
 Add a configuration-driven copy activity together with your low-code dataflow refresh in a single pipeline for an end-to-end ETL data pipeline. You can even add code-first activities as well for Spark Notebooks, SQL scripts, store procs, and more.
 
-![User interface showing copy activity.](media/data-factory-overview/data-pipelines-02.png)
+:::image type="content" source="media/data-factory-overview/data-pipelines-02.png" alt-text="User interface showing copy activity.":::
 
 ## Next steps
 
