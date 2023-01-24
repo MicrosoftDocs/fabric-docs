@@ -18,8 +18,8 @@ To get started, you must complete the following prerequisites: 
 
 - A tenant account with an active subscription. Create an account for free.
 - A workspace is created.
-- [An Azure SQL database with table data](/azure/azure-sql/database/single-database-create-quickstart?view=azuresql&tabs=azure-portal).
-- [A Blob Storage account](/azure/storage/common/storage-account-create?tabs=azure-portal).
+- [An Azure SQL database with table data](/azure/azure-sql/database/single-database-create-quickstart).
+- [A Blob Storage account](/azure/storage/common/storage-account-create).
 
 ## Transform data with dataflows
 
@@ -131,7 +131,7 @@ Follow these steps to create your pipeline.
 
 3. After you click **New Connection**, a new browser will open with the connection creation page. Fill in the required connection information on the panel and then click **Create**.  
 
-   :::image type="content" source="media/transform-data/new-connection-page-77.png" alt-text="User interface for the connection creation screen.":::
+   :::image type="content" source="media/transform-data/new-connection-page-77.png" alt-text="User interface for the New connection screen.":::
 
 4. Once your connection is successfully created, you'll be brought back to the copy assistant page. Click **Refresh** to fetch your newly created connection. You can also choose an existing connection from the drop-down directly if you already created one.
 
