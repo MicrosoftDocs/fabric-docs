@@ -16,8 +16,8 @@ In this tutorial, you'll learn how to show how the dataflow and pipeline experie
 
 To get started, you must complete the following prerequisites:  
 
-- A tenant account with an active subscription. Create an account for free.
-- A workspace is created.
+- A tenant account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a Project Trident enabled Workspace.pdf (sharepoint.com)](https://microsofteur.sharepoint.com/teams/TridentPrivatePreview/Shared%20Documents/Documentation/Private%20Preview%20Documentation/Enabling%20Trident/Create%20a%20Project%20Trident%20enabled%20Workspace.pdf).
 - [An Azure SQL database with table data](/azure/azure-sql/database/single-database-create-quickstart).
 - [A Blob Storage account](/azure/storage/common/storage-account-create).
 
