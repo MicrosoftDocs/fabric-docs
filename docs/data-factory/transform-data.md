@@ -16,7 +16,7 @@ In this tutorial, you'll seew how the dataflow and pipeline experience can creat
 
 To get started, you must complete the following prerequisites:  
 
-- A tenant account with an active subscription. Create an account for free.
+- A tenant account with an active subscription. Create a [free account](https://azure.microsoft.com/en-us/free/).
 - A workspace is created.
 - [An Azure SQL database with table data](/azure/azure-sql/database/single-database-create-quickstart).
 - [A Blob Storage account](/azure/storage/common/storage-account-create).
