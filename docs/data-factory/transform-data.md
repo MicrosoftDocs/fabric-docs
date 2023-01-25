@@ -10,7 +10,7 @@ ms.date: 01/27/2023
 
 # QuickStart: Move and transform data with dataflows and pipelines
 
-In this tutorial, you'll learn how to show how the dataflow and pipeline experience can create a powerful and comprehensive Data factory solution.  
+In this tutorial, you'll seew how the dataflow and pipeline experience can create a powerful and comprehensive Data factory solution.  
 
 ## Prerequisites
 
