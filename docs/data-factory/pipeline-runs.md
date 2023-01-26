@@ -56,7 +56,7 @@ Set your interval and select the granularity. You can choose between Minute(s), 
 
 Then, choose your start date either by typing the date in manually or using the date picker.
 
-:::image type="content" source="media/pipeline-runs/run-start-date-95.png" alt-text="Screenshot showing where to enter run start time.":::
+:::image type="content" source="media/pipeline-runs/run-start-date-95.png" alt-text="Screenshot showing where to enter run start date.":::
 
 You can also set a start time. For example, if you wanted your pipeline to run at 9:00 AM every morning, you can update the time to 09:00:00.
 
