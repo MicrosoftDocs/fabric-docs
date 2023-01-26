@@ -12,7 +12,7 @@ ms.date: 01/27/2023
 
 A pipeline run occurs when a pipeline is executed. This means that the activities in your pipeline will run and be executed to completion. For example, running a pipeline with a **Copy data** activity will perform that action and copy your data. Each pipeline run will have its own unique pipeline run ID.
 
-:::image type="content" source="media/pipeline-runs/copy-data-activity-85.png" alt-text="Screen shot showing a copy data activity pipeline run.":::
+:::image type="content" source="media/pipeline-runs/copy-data-activity-85.png" alt-text="Screenshot showing a copy data activity pipeline run.":::
 
 A pipeline run can be triggered one of two ways, either on-demand or by setting up a schedule. A scheduled pipeline will be able to run based on the time and frequency that you set.
 

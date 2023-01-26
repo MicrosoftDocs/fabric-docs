@@ -84,8 +84,8 @@ Click on the **glasses** icon to view the details for each copy activity run
 
 :::image type="content" source="media/move-data-lakehouse-copy-assistant/view-table-output-13.png" alt-text="Screenshot showing where to switch to Table view.":::
 
-[!Note]
-Currently data can be landed into Lakehouse Tables folder (managed area) in Delta format only. Those files will be automatically registered as a table and be visible under Table view from Lakehouse portal.<br>Only first layer folders under Tables will be registered as delta table.<br>Browsing or Preview from Lakehouse Table isn't supported yet.<br>Data that gets loaded into the same table will be appended. Delete or Update to tables is not supported yet.
+> [!Note]
+> Currently data can be landed into Lakehouse Tables folder (managed area) in Delta format only. Those files will be automatically registered as a table and be visible under Table view from Lakehouse portal.<br>Only first layer folders under Tables will be registered as delta table.<br>Browsing or Preview from Lakehouse Table isn't supported yet.<br>Data that gets loaded into the same table will be appended. Delete or Update to tables is not supported yet.
 
 ## Move files into Lakehouse as files via Copy assistant
 
