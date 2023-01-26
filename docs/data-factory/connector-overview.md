@@ -37,4 +37,4 @@ You can find a comprehensive list of all connectors supported via our [public Po
 ## Next steps
 
 - How to copy data using Copy activity (Preview)
-- [Data Source Management](data-source-managment.md)
+- [Data Source Management](data-source-management.md)
