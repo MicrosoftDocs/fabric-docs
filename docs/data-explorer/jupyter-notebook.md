@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 01/16/2023
+ms.date: 01/26/2023
 
 ---
 
 # Tutorial: Query a Kusto database using a Jupyter notebook
 
-Jupyter notebooks are both readable documents containing data analysis description and the results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a Kusto Database. This tutorial uses pre-created dataset and notebooks in both the Kusto and the Data Engineering environments in Trident.
+Jupyter notebooks are both readable documents containing data analysis descriptions and results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a Kusto Database. This tutorial uses pre-created datasets and notebooks in both the Kusto and the Data Engineering environments in Trident.
 
 Specifically, you'll learn how to:
 
@@ -40,26 +40,26 @@ In this step, you'll use a script to first create a table with specified mapping
 1. Select **Quick query** on the top right corner of the database summary page.
 1. Paste the KQL script from step 1.
 
-1. Place your cursor somewhere within the first query, and select the **Run** button. 
+1. Place your cursor somewhere within the first query, and select the **Run** button.
 
     The first query will run and create the table and schema mapping. The output of this query will show the table and mapping creation information, including the type of command and the result of *Completed* when finished.
 
-1. Place your cursor somewhere within the second query, and select the **Run** button. 
+1. Place your cursor somewhere within the second query, and select the **Run** button.
 
     The second query will load your data. It might take a few minutes for the data loading to be complete.
 
 ## Download the NYC Taxi demo notebook
 
-We have created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your Kusto Database. 
+We've created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your Kusto Database.
 
 1. Open the Customer Success Engineering code sample repository on GitHub to download the [NYC Taxi demo Notebook.](https://github.com/Azure/kusto-adx-cse/blob/30e36d1c92f09d2bbb9d080f78789b9bd7829176/KQLDemos/JupiterNotebook/NYC%20Taxi%20KQL%20demo.ipynb).
-    
+
     :::image type="content" source="media/jupyter-notebook/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC Taxi demo notebook. The option titled Raw is highlighted.":::
 
 1. Save the notebook locally to your device.
 
     > [!NOTE]
-    > The notebook must be saved in the `.ipynb` file format. 
+    > The notebook must be saved in the `.ipynb` file format.
 
 ## Import the Jupyter notebook
 
@@ -91,7 +91,7 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
 ## Device Code authentication
 
-1. Paste the **Query endpoint URI** of the database in which you placed the sample data. This URI can be found in the [Database details](create-database.md#database-details) page. Use this URI instead of the placeholder cluster text. 
+1. Paste the **Query endpoint URI** of the database in which you placed the sample data. This URI can be found in the [Database details](create-database.md#database-details) page. Use this URI instead of the placeholder cluster text.
 1. Change the placeholder database name to **NYCtaxi**.
 
     :::image type="content" source="media/jupyter-notebook/paste-query-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted.":::
