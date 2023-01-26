@@ -15,7 +15,7 @@ Learn how to add a copy activity directly or via the copy assistant.
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](https://review.docs.microsoft.com/trident-docs-private-preview/synapse-data-integration/url).
+- A tenant account with an active subscription. [Create an account for free](/trident-docs-private-preview/synapse-data-integration/url).
 - A workspace is created.
 
 ## Add a copy activity via copy assistant
@@ -96,7 +96,7 @@ Follow these steps to add a copy activity directly.
 
 1. Create a connection to your data source by clicking on **+ New** besides **Connection**.
 
-   :::image type="content" source="media/copy-data-activity/configure-source-connection-in-pipeline-15.png" alt-text="Graphical user interface, text, application, email  Description automatically generated":::
+   :::image type="content" source="media/copy-data-activity/configure-source-connection-in-pipeline-15.png" alt-text="Screenshot showing where to select New.":::
 
 Choose the data source type from the pop-up window after clicking on **+ New**. In this tutorial, we'll use Azure Blob Storage as an example. Click on **Azure Blob Storage** and then click **Continue**.
 
@@ -112,7 +112,7 @@ Once your connection is created successfully, it will take you back to the previ
 
 2. Set up the file path to define the file or folder to be copied. You can click on **File settings** for more settings such as file format, compression type.
 
-   :::image type="content" source="media/copy-data-activity/configure-source-file-settings-in-pipeline-19.png" alt-text="Graphical user interface, text, application, email  Description automatically generated":::
+   :::image type="content" source="media/copy-data-activity/configure-source-file-settings-in-pipeline-19.png" alt-text="Screenshot showing source file settings options.":::
 
 3. Expand **Advanced** for more advanced settings.
 
