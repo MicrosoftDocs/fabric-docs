@@ -14,3 +14,9 @@ items:
       href: create-first-pipeline.md
     - name: Move and transform data
       href: transform-data.md
+    - name: Move data -- copy assistant
+      href: move-data-lakehouse-copy-assistant.md
+  - name: Pipelines
+    items:
+    - name: Pipeline runs
+      href: pipeline-runs.md     
