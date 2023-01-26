@@ -3,10 +3,14 @@ items:
   href: index.yml
   items:
   - name: Overview
-    items: 
+    items:
     - name: What is Data Factory
       href: data-factory-overview.md
   - name: Get started
     items:
     - name: Create a dataflow
       href: create-first-dataflow-gen2.md
+    - name: Create a pipeline
+      href: create-first-pipeline.md
+    - name: Move and transform data
+      href: transform-data.md
