@@ -43,7 +43,7 @@ Then Azure Blob storage will be created and [moviesDB2.csv](https://github.com/k
 
 ## Copy data via copy assistant
 
-In this session, you'll start to build your first pipeline by following below steps about copying CSV file from input to output of the same Azure Blob storage via copy assistant. If you have two different Azure Blob storage, you're encouraged to use different one as target.
+In this session, you'll start to build your first pipeline by following below steps about copying CSV file from input to output of the same Azure Blob storage via copy assistant. If you have two different Azure Blob storage, you're encouraged to use a different one as a target.
 
 ### Step 1: Start with copy assistant
 
@@ -79,7 +79,7 @@ Once your connection is created successfully, it will take you back to the previ
 
    :::image type="content" source="media/create-first-pipeline/select-azure-blob-storage-2-46.png" alt-text="Screenshot showing where to select data destination.":::
 
-2. Use an existing Azure Blob connection from the connection drop down list. The capabilities of **Test connection** and **Edit** are available to each selected connection.
+2. Use an existing Azure Blob connection from the connection drop-down list. The capabilities of **Test connection** and **Edit** are available to each selected connection.
 
    :::image type="content" source="media/create-first-pipeline/existing-blob-connetion-47.png" alt-text="Screenshot showing how to select existing connection.":::
 
