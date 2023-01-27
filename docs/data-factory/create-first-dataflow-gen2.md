@@ -1,5 +1,5 @@
 ---
-title: Create your first Dataflow​ Gen2 
+title: Create your first [!INCLUDE [product-name](../includes/product-name.md)] dataflow​ 
 description: Steps for creating dataflows and transforming data.
 ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
@@ -8,7 +8,9 @@ ms.topic: quickstart
 ms.date: 01/25/2023
 ---
 
-# Quickstart: Create your first Dataflows Gen2 to get and transform data (Preview)
+# Create your first dataflow to get and transform data (Preview)
+
+Dataflows are a self-service, cloud-based, data preparation technology. In this article, you'll create your first dataflow, get data for your dataflow, then transform the data and publish the dataflow.
 
 ## Prerequisites
 
