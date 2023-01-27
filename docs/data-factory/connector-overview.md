@@ -8,7 +8,7 @@ ms.topic: overview
 ms.date: 01/27/2023
 ---
 
-# Connector Overview
+# Connector overview
 
 [!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory offers a rich set of connectors that allow you to connect to different types of data stores. You can leverage those connectors to transform data in Dataflow Gen2 or move PB-level of dataset with high-scale in Data pipeline.
 
@@ -32,9 +32,9 @@ You can find a comprehensive list of all connectors supported via our [public Po
 |  | Azure Cosmos DB (SQL API) | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Data Lake Storage Gen2 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure SQL Database | ✓/✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-|  | Azure SQL Database Managed Instance | ✓/✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+|  | Azure SQL Managed Instance | ✓/✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 
 ## Next steps
 
-- How to copy data using Copy activity (Preview)
+- [How to copy data using Copy activity (Preview)](copy-data-activity.md)
 - [Data Source Management](data-source-management.md)

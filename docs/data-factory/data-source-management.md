@@ -29,7 +29,7 @@ ms.date: 01/27/2023
 
 6. Select an **Authentication method** to use when connecting to the data source, **Basic**, **OAuth2**.or **Service Principal** For example, choose **OAuth2** and log in with your account.
 
-   :::image type="content" source="media/data-source-management/authentication-method-03.png" alt-text="Screenshot showing where to select an authentication method":::
+   :::image type="content" source="media/data-source-management/authentication-method-03.png" alt-text="Screenshot showing where to select an authentication method.":::
 
 If you selected **OAuth2** authentication method:
 
@@ -61,7 +61,7 @@ After you add a cloud data source, you give users and security groups access to 
 ## Add users to a data source
 
 1. From the page header in the Power BI service, select the **Settings** icon, and then select **Manage connections and gateways**.
-1. Select the data source where you want to add users.<br>To easily find all cloud connection, use the top ribbon to filter or search.
+1. Select the data source where you want to add users. To easily find all cloud connection, use the top ribbon to filter or search.
 
    :::image type="content" source="media/data-source-management/add-users-data-source-07.png" alt-text="Screenshot showing where to find all cloud connections.":::
 
