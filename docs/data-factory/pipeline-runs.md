@@ -76,5 +76,5 @@ You'll see a schedule set on your pipeline editing canvas, detailing how often y
 
 ## Next steps
 
-- How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)
-- Quickstart: Create your first pipeline to copy data (Preview)
+- [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)](monitor-pipeline-runs.md)
+- [Quickstart: Create your first pipeline to copy data (Preview)](create-first-pipeline.md)

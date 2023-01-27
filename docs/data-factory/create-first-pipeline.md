@@ -115,4 +115,4 @@ Once your connection is created successfully, it will take you back to the previ
 
 ## Next steps
 
-- How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)
+- [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)](monitor-pipeline-runs.md)
