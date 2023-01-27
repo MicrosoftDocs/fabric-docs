@@ -24,3 +24,11 @@ items:
       href: copy-data-activity.md
     - name: Monitor pipeline runs
       href: monitor-pipeline-runs.md
+    - name: Script activity
+      href: script-activity.md
+  - name: Dataflows
+    items:
+    - name: Connectors
+      href: connector-overview.md
+    - name: Data source management
+      href: data-source-management.md
