@@ -172,8 +172,6 @@ The following properties in the table are the supported authentication type.
 
 ## Next Steps
 
-[How to copy data using Copy activity in Data pipeline](howto-copy-activity.md)
-
 [Copy data in Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)
 
 [Data Source Management](placeholder-update-later.md)

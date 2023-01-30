@@ -153,8 +153,6 @@ To learn more information about copy activity in Azure Blob Storage, see the fol
 
 ## Next Steps
 
-[How to copy data using Copy activity in Data pipeline](howto-copy-activity.md)
-
 [How to create Azure Blob connection](connector-azure-blob-storage.md)
 
 [Data Source Management](placeholder-update-later.md)

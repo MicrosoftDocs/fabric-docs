@@ -26,8 +26,6 @@ This Azure Blob Storage connector is supported in [!INCLUDE [product-name](../in
 
 ## Next Steps
 
-[How to copy data using Copy activity in Data pipeline](howto-copy-activity.md)
-
 [How to create Azure Blob connection](connector-azure-blob-storage.md)
 
 [Copy data in Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)
