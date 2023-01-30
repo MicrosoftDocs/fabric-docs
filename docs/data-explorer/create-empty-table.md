@@ -10,16 +10,19 @@ ms.date: 01/29/2023
 
 # Create an empty table
 
-In this article, you'll learn how to create an empty table.
+Tables are named entities that hold data. A table has an ordered set of columns, and zero or more rows of data. Each row holds one data value for each of the columns of the table. The order of rows in the table is unknown, and doesn't in general affect queries, except for some tabular operators (such as the top operator) that are inherently undetermined.
+
+You can create an empty table without a data source to use as a testing environment, or for ingesting data in a later stage. In this article, you'll learn how to create an empty table within the context of a database.
 
 ## Prerequisites
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
 * A Workspace
-* A [Kusto database](create-database.md)
+* A [KQL database](create-database.md)
 
 ## Create an empty table
 
+1. Browse to the KQL database editor of your database of choice.
 1. Select **New** > **Table**.
 
     :::image type="content" source="media/empty-table/new-table.png" alt-text="Screenshot of lower ribbon that shows the dropdown menu of the New button. The dropdown option titled Table is highlighted.":::
@@ -67,12 +70,13 @@ To add a new column, select **Add new column** under **Partial data preview**.
 1. Select **Add column** to add more columns.
 1. Select **Save** to add the columns to your table.
 
-:::image type="content" source="media/empty-table/edit-columns.png" alt-text="Screenshot of  the Edit columns window showing filled column names and their data type.":::
+    :::image type="content" source="media/empty-table/edit-columns.png" alt-text="Screenshot of  the Edit columns window showing filled column names and their data type.":::
 
-The Partial data preview  will reflect the added columns:
-    :::image type="content" source="media/empty-table/added-columns.png" alt-text="Screenshot of Schema tab showing the added columns under the Partial data preview.":::
+    The Partial data preview  will reflect the added columns:
+    :::image type="content" source="media/empty-table/added-columns.png" alt-text="Screenshot of Schema tab showing the added columns under the Partial data preview. The column names are highlighted.":::
 
-1. Optionally, you can edit existing columns and  add new columns by selecting **Edit columns** or the **+** button on the right-hand column under **Partial data preview**.
+    > [!NOTE]
+    > Optionally, you can edit existing columns and  add new columns by selecting **Edit columns** or the **+** button on the right-hand column under **Partial data preview**.
 
 1. Select **Next: Summary** to create the table mapping.
 
@@ -85,3 +89,4 @@ In the **Create table completed** window, the empty table will be marked with a 
 ## Next steps
 
 [Get data from a blob](get-data-blob.md)
+[Get data from Azure Event Hubs](get-data-event-hub.md)
