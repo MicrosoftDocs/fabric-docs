@@ -21,9 +21,12 @@ In this article, you'll learn how to create an empty table.
 ## Create an empty table
 
 1. Select **New** > **Table**.
+
     :::image type="content" source="media/empty-table/new-table.png" alt-text="Screenshot of lower ribbon that shows the dropdown menu of the New button. The dropdown option titled Table is highlighted.":::
+
 1. Enter a name for your table.
-    :::image type="content" source="media/database-editor/table-name.png" alt-text="Screenshot of the Destination tab. The table name is highlighted.":::
+
+    :::image type="content" source="media/empty-table/table-name.png" alt-text="Screenshot of the Destination tab. The table name is highlighted.":::
 
     > [!TIP]
     > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
