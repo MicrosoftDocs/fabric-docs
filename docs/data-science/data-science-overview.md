@@ -1,0 +1,104 @@
+---
+title: Data science overview
+description: Overview of machine learning.
+ms.reviewer: msakande
+ms.author: negust
+author: NelGson
+ms.topic: overview
+ms.date: 02/10/2023
+---
+
+# Data Science Overview
+
+Project Trident is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+
+Users in Trident will have access to a Data Science Home Page, from which they can discover and access a variety of relevant resources. For example, you can start creating machine learning Experiments, Models and Notebooks. You can also import existing Notebooks on the Data Science Home Page.
+
+![](media/image1.png)
+
+Trident offers various data science capabilities.  
+
+You may be familiar with how a typical data science process looks. It's a well-known process, which most machine learning projects follow.
+
+At a high level, the process contains the following steps:
+
+Business understanding  
+
+Data acquisition
+
+Data preparation, cleansing and visualization
+
+Model training and experiment tracking
+
+Model scoring
+
+This article describes the Trident Data Science capabilities from a data science process perspective. For each step in the data science process, the Trident capabilities that can help are summarized.
+
+## Business understanding
+
+Data Science users are working on the same platform as business users and analysts. This means that sharing data and collaboration will be more seamless across different roles. More details about collaboration features that help this phase of the data science lifecycle will come soon.
+
+## Data acquisition
+
+Users in Trident can interact with data in One Lake using the Lakehouse item. You can easily attach Lakehouse to a Notebook and browse and interact with data.
+
+We have also made it easy to read data from a Lakehouse directly into a Pandas dataframe. This experience should make it seamless to read data from One Lake for exploration.  
+
+Thanks to data integration pipelines, a natively integrated part of Trident, there is a powerful set of tools available for data ingestion and data orchestration pipelines. This allows you to easily build data pipelines to access and transform the data into a format that can be consumed for machine learning. Learn more about data pipelines in Synapse.
+
+## Data preparation, cleansing and visualization
+
+An important part of the machine learning process is to understand data by exploration and visualization.
+
+Depending on where the data is stored, Trident offers a set of different tools to explore and prepare it for analytics and machine learning. One of the quickest ways to get started with data exploration is using Notebooks.
+
+## Apache Spark for preparation and visualization
+
+Apache Spark offers capabilities to transform, prepare, and explore your data at scale. These spark pools offer tools like PySpark/Python, Scala, and SparkR/SparklyR for data processing at scale. Using powerful open-source visualization libraries, the data exploration experience can be enhanced to help understand the data better. Learn more about how to explore and visualize data in Synapse using Spark.
+
+## Data Wrangler for seamless data cleansing
+
+In the Notebook experience in Trident, we have also added an experience to leverage Data Wrangler, a tool for code users to prepare data and get Python code generated. This experience makes it easy to accelerate tedious and mundane tasks like data cleansing, and get repeatability and automation thanks to the generated code. Learn more about Data Wrangler in the Data Wrangler section of this document.
+
+## Model training and experiment tracking
+
+Training machine learning models can be performed in the Notebooks with tools like PySpark/Python or Scala.
+
+Machine learning models can be trained with help from various algorithms and libraries that can be installed using library management capabilities. [SynapseML](https://aka.ms/spark) scalable machine learning algorithms that can help solving most classical machine learning problems. SynapseML is an open-source library including a rich ecosystem of ML tools and this library is owned and maintained by Microsoft. [Spark MLlib](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Data%20Science%20Consolidated%20Documentation.docx) is another option for building scalable ML Models in trident.
+
+In addition to the above, popular libraries such as Scikit Learn can also be used to develop models.  
+
+Model training can be tracked using MLFlow experiments. Trident will have a native MlFlow endpoint that users can interact with to log experiments and models. Learn more about using MLFlow for tracking experiments and managing models in the sections below.
+
+## SynapseML
+
+SynapseML (previously known as MMLSpark), is an open-source library that simplifies the creation of massively scalable machine learning (ML) pipelines. It is an ecosystem of tools used to expand the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API that’s usable across Python, R, Scala, .NET, and Java. Learn more about [SynapseML](https://aka.ms/spark).
+
+## Model scoring
+
+Batch scoring machine learning models can be done in Notebooks using open-source libraries for prediction or the scalable universal Predict function in Trident which supports mlflow packaged models in the Trident model registry.  
+
+Predicted values can be written to OneLake and consumed from PowerBI reports seamlessly using the PowerBI “see-through”-mode.
+
+You can learn more about model scoring in Trident in sections below.
+
+## Data Exploration with SemPy
+
+Data scientists and business analysts spend a significant portion of their time trying to understand, clean and transform their data before they can even start performing any meaningful analysis. SemPy simplifies data analytics by capturing and exploiting the semantics of the data as the users perform various transformations on their datasets. By exploiting data semantics, SemPy can simplify various tedious tasks such as automatically transforming data while joining heterogeneous datasets, handling underlying schema changes, enforcing semantic constraints and identifying data that violates them, and enriching the data with new knowledge. SemPy users can register new information about the data and share it with other users allowing faster collaboration across teams operating on the same datasets and increasing productivity. SemPy explores data semantics to simplify data science analytics. Through SemPy we expect to:
+
+- Reduce the time needed to pre-process and validate the data before starting to perform any meaningful analysis.
+- Increase productivity across teams that operate on same datasets through registering and sharing data semantics and transformations, reducing the time needed to extract value from a dataset.
+- Increase cross org collaboration bringing the BI and AI teams together
+- Decrease ambiguity and learning curve when onboarding onto a new model/dataset.
+
+You can learn more about SemPy in Trident in sections below.
+
+## Next steps
+
+- Get started with end-to-end data science samples (See How-to use AI Samples section)
+- Learn more about data preparation and cleansing with Data Wrangler (See Data Wrangler Section)
+- Learn more about tracking experiments (See Machine Learning Experiment section)
+- Learn more about managing models (See Machine Learning model section)
+- Learn more about batch scoring with Predict (See model scoring section)
+- Learn more about exploring and validating data with SemPy (See SemPy section)
+- Learn more about connecting to Power BI Datasets with SemPy (See PBI Connector section)
