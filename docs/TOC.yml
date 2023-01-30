@@ -14,6 +14,8 @@
       href: data-explorer/database-management.md
   - name: Tables
     items:
+    - name: Create an empty table
+      href: create-empty-table.md
   - name: Get data
     items:
     - name: Get data from Event Hubs
