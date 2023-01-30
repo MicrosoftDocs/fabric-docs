@@ -23,7 +23,7 @@ In this article, you'll learn how to create an empty table.
 1. Select **New** > **Table**.
     :::image type="content" source="media/empty-table/new-table.png" alt-text="Screenshot of lower ribbon that shows the dropdown menu of the New button. The dropdown option titled Table is highlighted.":::
 1. Enter a name for your table.
-    :::image type="content" source="media/database-editor/table-name.png" alt-text="Screenshot of Destination tab. The table name is highlighted.":::
+    :::image type="content" source="media/database-editor/table-name.png" alt-text="Screenshot of the Destination tab. The table name is highlighted.":::
 
     > [!TIP]
     > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
@@ -35,7 +35,7 @@ In this article, you'll learn how to create an empty table.
 1. By default, the **Source type** is set to **None**. If you select **None**, you'll need to manually define the table schema.
 1. Select **Next: Schema**.
 
-:::image type="content" source="media/empty-table/table-source.png" alt-text="Screenshot of Source tab that shows that the source type is set to None.":::
+:::image type="content" source="media/empty-table/table-source.png" alt-text="Screenshot of the Source tab that shows that the source type is set to None.":::
 
 ### Schema
 
@@ -51,11 +51,11 @@ To open the command viewer, select the **v** button on the right side of the com
 
 #### Partial data preview
 
-The Partial data preview is automatically inferred based on your data.
+The partial data preview is automatically inferred based on your data.
 
 To add a new column, select **Add new column** under **Partial data preview**.
 
-:::image type="content" source="media/empty-table/schema-new-column.png" alt-text="Screenshot of Schema tab. The Add new column button is highlighted.":::
+:::image type="content" source="media/empty-table/schema-new-column.png" alt-text="Screenshot of the Schema tab. The Add new column button is highlighted.":::
 
 ##### Edit columns
 
@@ -69,15 +69,15 @@ To add a new column, select **Add new column** under **Partial data preview**.
 The Partial data preview  will reflect the added columns:
     :::image type="content" source="media/empty-table/added-columns.png" alt-text="Screenshot of Schema tab showing the added columns under the Partial data preview.":::
 
-1. Optionally, you can edit and new columns by selecting **Edit columns** or the **+** button on the right-hand column under **Partial data preview**.
+1. Optionally, you can edit existing columns and  add new columns by selecting **Edit columns** or the **+** button on the right-hand column under **Partial data preview**.
 
-1. Select **Next: Summary** to create a table mapping.
+1. Select **Next: Summary** to create the table mapping.
 
 ### Create table completed
 
-In the **Create table completed** window, the empty table will be marked with a green check mark to indicate that it was successfully created.
+In the **Create table completed** window, the empty table will be marked with a green check mark to indicate that it was created successfully.
 
-[image]
+:::image type="content" source="media/empty-table/table-summary.png" alt-text="Screenshot of the Summary tab that shows that the table was created successfully.":::
 
 ## Next steps
 
