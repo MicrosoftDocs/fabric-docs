@@ -14,7 +14,7 @@ items:
       href: create-first-pipeline.md
     - name: Move and transform data
       href: transform-data.md
-    - name: Move data -- copy assistant
+    - name: Move data with copy assistant
       href: move-data-lakehouse-copy-assistant.md
   - name: Pipelines
     items:
@@ -30,5 +30,13 @@ items:
     items:
     - name: Connectors
       href: connector-overview.md
+    - name: Azure Blob Storage connector
+      items:
+      - name: Overview
+        href: connector-azure-blob-storage-overview.md
+      - name: Create an Azure Blob Storage connection
+        href: connector-azure-blob-storage.md
+      - name: Configure Azure Blob Storage in copy activity
+        href: connector-azure-blob-storage-copy-activity.md
     - name: Data source management
       href: data-source-management.md
