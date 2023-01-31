@@ -5,3 +5,8 @@ items:
   - name: Overview
     items:
     - name: DS in [!INCLUDE [product-name](../includes/product-name.md)]
+      href: data-science-overview.md
+  - name: Machine learning
+    items:
+    - name: Machine learning experiment
+      href: machine-learning-experiment.md
