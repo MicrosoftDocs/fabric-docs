@@ -10,7 +10,12 @@ ms.date: 01/27/2023
 
 # Tutorial: Move data into Lakehouse via copy assistant
 
-This Tutorial describes how to move data into Lakehouse. Two approaches are provided using the copy assistant: the first moves data into fables in delta format, and the second moves data into files.
+This Tutorial describes the steps to move data into Lakehouse.
+
+Two approaches are provided using the copy assistant:
+
+1. The first approach moves source data into destination tables with delta format.
+2. The second approach moves source data into destination files.
 
 ## Prerequisites
 
