@@ -10,6 +10,8 @@ ms.date: 01/27/2023
 
 # Tutorial: Move data into Lakehouse via copy assistant
 
+This Tutorial describes how to move data into Lakehouse. Two approaches are provided using the copy assistant: the first moves data into fables in delta format, and the second moves data into files.
+
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
@@ -72,9 +74,11 @@ Follow these steps to set up your copy activity.
 
 ### Step 4: Save your pipeline and run it to load data
 
+1. Select **Save**. Then, select **Run**
+
    :::image type="content" source="media/move-data-lakehouse-copy-assistant/save-pipeline-and-run-11.png" alt-text="Screenshot showing where to select Run.":::
 
-   Select the **glasses** icon to view the details for each copy activity run:
+2. Select the **glasses** icon to view the details for each copy activity run:
 
    :::image type="content" source="media/move-data-lakehouse-copy-assistant/view-run-details-12.png" alt-text="Screenshot showing where to select the glasses icon and the resulting detail screen.":::
 
