@@ -8,9 +8,9 @@ ms.date: 12/27/2022
 ms.custom: template-how-to 
 ---
 
-# Azure Blob Storage Connector Overview
+# Azure Blob Storage connector overview
 
-This Azure Blob Storage connector is supported in [!INCLUDE [product-name](../includes/product-name.md)] Project  – Data Factory with the following capabilities. 
+This Azure Blob Storage connector is supported in [!INCLUDE [product-name](../includes/product-name.md)] Project – Data Factory with the following capabilities. 
 
 
 ## Supported capabilities
@@ -24,10 +24,9 @@ This Azure Blob Storage connector is supported in [!INCLUDE [product-name](../in
 </table>
 
 
-## Next Steps
+## Next steps
 
 [How to create Azure Blob connection](connector-azure-blob-storage.md)
 
 [Copy data in Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)
 
-[Data Source Management](placeholder-update-later.md)

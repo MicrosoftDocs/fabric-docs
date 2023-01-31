@@ -27,7 +27,7 @@ For the configuration of each tab under copy activity, see the following section
 
 ### General
 
-For **General** tab configuration, see [General](placeholder-update-later.md).
+For **General** tab configuration, see General.
 
 ### Source
 
@@ -120,7 +120,7 @@ Under **Advanced**, you can specify the following fields:
 
 ### Settings
 
-For **Settings** tab configuration, see [Settings](placeholder-update-later.md).
+For **Settings** tab configuration, see Settings.
 
 ## Table summary 
 
@@ -151,8 +151,7 @@ To learn more information about copy activity in Azure Blob Storage, see the fol
 |**Metadata**|Set custom metadata when copy to sink.| - `$$LASTMODIFIED`<br> - Expression<br>- Static value|No |metadata|
 
 
-## Next Steps
+## Next steps
 
 [How to create Azure Blob connection](connector-azure-blob-storage.md)
 
-[Data Source Management](placeholder-update-later.md)

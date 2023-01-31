@@ -26,13 +26,13 @@ This Azure Blob Storage connector supports the following authentication types fo
 |Organizational account||√|
 
 >[!Note]
->For the Azure Blob Storage connection of Dataflow Gen2, see this [article](placeholder-update-later.md).
+>For the Azure Blob Storage connection of Dataflow Gen2, see this article.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:  
 
-* A tenant account with an active subscription. [Create an account for free](placeholder-update-later.md).  
+* A tenant account with an active subscription. Create an account for free.  
 
 * A workspace is created and isn’t the default My Workspace.
 
@@ -40,7 +40,7 @@ To get started, you must complete the following prerequisites:  
 
 1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAHoSURBVDhPfVI9SEJRFH5q9idRghhRBoH5hgz62QyKRAqHhiZraqogMBoKgiyQnLK1IYPWFCopIY20JbSWTNOh1xL0clAqK7A0M/ue91kG0ccZzvnud+4959wjyOfzVBEBJuEI3Nw+pJyzWoTD1uNmmcSgadHQciIAfhKs+1F36G5CRyNNragDE2WfIAU/qVOBJzIKCQT+q/jC1jmcp1RGadyGwUFo3Dw7CLIFCQcuYWUv4mfiONaaPYQtRb/ZHbl9xHU2L4NQNDA6ZfMx6ffcqiuKd9UKKf90ERVikWU3nM7m7IGbHlouwIsodETTwp9TlMke9IRicPSdTcuGTkICSEB7wiibPGUSz6/vhIX65S3rWxqEgUTHhIfPy1AWekCLhYLz370SlPLrR1dwhMiurRaTa/4H+/CKF0RhSW/m49M+01cpFoFNPKcPQzFUDx/lYQZadQP8sT6lOxSz7F4KFTIJmq6tLucuoSjLSFdNlbh73gUjIeEhgEzf0SjAgE2OYA9djwmM61Sl4yLAcDa811C7L+6cc1q+afwlfgd/VOjwF0DiUmII/16N1ukdGBkXyNLVKOMf5lYtif9qb5b6mcTsUBuYRccFKgGJnSUa4Nd6I8fmvWbvU1ytmMzaCXqd0Kl+9oWivgAsYHfccfep7QAAAABJRU5ErkJggg==) > **Manage connections and gateways.** 
 
-   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway":::
+   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
 2. Select **New** at the top of the ribbon to add a new data source. 
 
@@ -131,7 +131,7 @@ To use service principal authentication, follow these steps:
 
 ### Step 3: Specify the privacy level that you want to apply
 
-In the General tab, under select the privacy level that you want apply in Privacy level drop-down list. Three privacy levels are supported. For more information, see [privacy levels](placeholder-update-later.md).
+In the General tab, under select the privacy level that you want apply in Privacy level drop-down list. Three privacy levels are supported. For more information, see privacy levels.
 
 ### Step 4: Create your connection
 
@@ -170,8 +170,7 @@ The following properties in the table are the supported authentication type.
 |- Service Principal key|The application's key.|Yes |||
 |**Organizational account**||||-/✓|
 
-## Next Steps
+## Next steps
 
 [Copy data in Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)
 
-[Data Source Management](placeholder-update-later.md)
