@@ -14,7 +14,7 @@ Project [!INCLUDE [product-name](../includes/product-name.md)] is currently in P
 
 Users in [!INCLUDE [product-name](../includes/product-name.md)] will have access to a Data Science Home page, from which they can discover and access a variety of relevant resources. For example, you can start creating machine learning Experiments, Models and Notebooks. You can also import existing Notebooks on the Data Science Home page.
 
-:::image type="content" source="media/data-science-overview/data-science-home-page.png" alt-text="Screenshot of the Data science home page." lightbox="data-science-home-page.png":::
+:::image type="content" source="media/data-science-overview/data-science-home-page.png" alt-text="Screenshot of the Data science home page." lightbox="media/data-science-overview/data-science-home-page.png":::
 
 [!INCLUDE [product-name](../includes/product-name.md)] offers various data science capabilities.  
 
