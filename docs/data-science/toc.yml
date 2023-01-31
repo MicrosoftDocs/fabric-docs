@@ -1,10 +1,10 @@
 items:
-- name: Data Science
+- name: Data science
   href: index.yml
   items:
   - name: Overview
     items:
-    - name: DS in [!INCLUDE [product-name](../includes/product-name.md)]
+    - name: Data science
       href: data-science-overview.md
   - name: Machine learning
     items:
