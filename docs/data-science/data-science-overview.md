@@ -1,9 +1,10 @@
 ---
 title: Data science overview
 description: Overview of machine learning.
-ms.reviewer: msakande
+ms.reviewer: mopeakande
+reviewer: msakande
 ms.author: negust
-author: NelGson
+author: nelgson
 ms.topic: overview
 ms.date: 02/10/2023
 ---
