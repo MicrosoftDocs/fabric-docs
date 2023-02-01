@@ -3,7 +3,7 @@ title: Model scoring with PREDICT
 description: Learn how to use the PREDICT function in supported models.
 ms.reviewer: msakande
 ms.author: negust
-author: NelGson
+author: nelgson
 ms.topic: <how-to, conceptual, tutorial, quickstart, overview> 
 ms.date: 02/10/2023
 ---

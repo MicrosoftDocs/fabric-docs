@@ -3,7 +3,7 @@ title: Read and write data with Pandas
 description: Learn how to read and write data with Pandas from Lakehouse.
 ms.reviewer: msakande
 ms.author: negust
-author: NelGson
+author: nelgson
 ms.topic: how-to
 ms.date: 02/10/2023
 ---
