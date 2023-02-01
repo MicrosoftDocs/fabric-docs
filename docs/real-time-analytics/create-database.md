@@ -1,5 +1,5 @@
 ---
-title: Create a Kusto database
+title: Create a Kusto database in Real-time Analytics
 description: Learn how to create a Kusto database.
 ms.reviewer: tzgitlin
 ms.author: yaschust

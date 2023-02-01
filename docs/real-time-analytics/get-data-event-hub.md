@@ -1,6 +1,6 @@
 ---
-title: Use an event hub connection to stream data to your Kusto database
-description: Learn how to create a connection to Event Hubs and get data into your Kusto database.
+title: Use an event hub connection to stream data to your KQL Database in Real-time Analytics
+description: Learn how to create a connection to Event Hubs and get data into your KQL Database.
 ms.reviewer: guregini
 ms.author: yaschust
 author: YaelSchuster

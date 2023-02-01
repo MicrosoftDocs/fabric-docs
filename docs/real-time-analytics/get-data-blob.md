@@ -1,6 +1,6 @@
 ---
-title: Get data from a blob
-description: Learn get blob data in a Kusto database.
+title: Get data from a blob in Real-time Analytics
+description: Learn get blob data in a KQL Database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
