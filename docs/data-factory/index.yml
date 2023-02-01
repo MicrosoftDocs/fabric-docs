@@ -19,18 +19,16 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About [Data Factory]
+  - title: About Data Factory
     linkLists:
       - linkListType: overview
         links:
-          - text: What is [Data Factory]?
-            url: ../index.md # Placeholder file. Replace with the actual file name.
-      - linkListType: overview
-        links:
+          - text: What is Data Factory?
+            url: data-factory-overview.md
           - text: Connector overview
-            url: ../index.md # Placeholder file. Replace with the actual file name.
-#          - text: linktext2
-#            url: ../index.md # Placeholder file. Replace with the actual file name.
+            url: connector-overview.md
+          - text: Azure Blob Storage connector overview
+            url: connector-azure-blob-storage-overview.md
 
   # Card 
   - title: Get started
@@ -38,12 +36,35 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Create your first gen2 dataflow
-            url: ../index.md # Placeholder file. Replace with the actual file name.
+            url: create-first-dataflow-gen2.md
           - text: Create your first pipeline
-            url: ../index.md # Placeholder file. Replace with the actual file name.
-#      - linkListType: get-started
-#        links:
-#          - text: linktext1
-#            url: ../index.md # Placeholder file. Replace with the actual file name.
-#          - text: linktext2
-#            url: ../index.md # Placeholder file. Replace with the actual file name.
+            url: create-first-pipeline.md
+          - text: Move and transform data
+            url: transform-data.md
+          - text: Move data with copy assistant
+            url: move-data-lakehouse-copy-assistant.md
+  
+  # Card 
+  - title: Working with pipelines
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Pipeline runs
+            url: pipeline-runs.md
+          - text: Copy data - copy activity
+            url: copy-data-activity.md
+          - text: Monitor pipeline runs
+            url: monitor-pipeline-runs.md
+          - text: Script activity
+            url: script-activity.md
+
+  # Card 
+  - title: Working with dataflows
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Connectors
+            url: connector-overview.md
+          - text: Data source management
+            url: data-source-management.md
+
