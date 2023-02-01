@@ -2,7 +2,6 @@
 title: Machine learning experiment
 description: Learn how to create an experiment and track runs, and review examples of using mlflow.
 ms.reviewer: mopeakande
-reviewer: msakande
 ms.author: negust
 author: nelgson
 ms.topic: conceptual
