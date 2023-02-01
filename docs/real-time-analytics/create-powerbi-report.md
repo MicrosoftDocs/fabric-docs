@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 01/23/2023
+ms.date: 02/01/2023
 ---
 
 # Visualize data in a Power BI report
@@ -15,18 +15,16 @@ In this article, you'll learn how to build a report using a KQL queryset.
 ## Prerequisites
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A workspace.
+* A workspace
 * A database. For more information, see [Create a database](create-database.md).
-* A KQL Query set. For more information, see [Query data in the KQL queryset](kusto-query-set.md).
+* A KQL queryset. For more information, see [Query data in the KQL queryset](kusto-query-set.md).
 
 ## Create a report
 
-1. Open an existing KQL queryset from your workspace or create a new one.
-    You can switch the associated database in the drop-down menu on the database pane.
+1. Open a KQL queryset from your workspace or create a new one.
 
-    :::image type="content" source="media/create-powerbi-report/select-database.png" alt-text="Screenshot of database pane in a KQL queryset":::
-
-1. Write and select the query you want to build into a Power BI report. Then, select **Build Power BI report** on the ribbon.
+1. Write and select the query you want to build into a Power BI report. The output of this query will be used as the dataset for building the Power BI report.
+1. On the ribbon, select **Build Power BI report**.
 
     :::image type="content" source="media/create-powerbi-report/build-report.png" alt-text="Screenshot of query editor showing an example query. The Build Power BI report option on the ribbon is highlighted.":::
 
@@ -37,7 +35,7 @@ In this article, you'll learn how to build a report using a KQL queryset.
 
 ### Report preview
 
-In the report's preview, you'll see a summary of your query, and query results visualized in tiles on your canvas. You can manipulate the visualizations in the **Your data** pane on the right.
+In the report's preview, you'll see a summary of your query, and query results visualized in tiles on your canvas. You can manipulate the visualizations in the **Your data** pane on the right. For more information, see [Power BI visualizations](/power-bi/visuals/power-bi-report-visualizations).
 
 When you're satisfied with the visualizations, select **Save** to name and save your report in a workspace.
 
@@ -45,21 +43,16 @@ When you're satisfied with the visualizations, select **Save** to name and save 
 
 ### Report details
 
-1. Name your report.
-1. Save your report to a workspace. It can be a different workspace than the one you started in.
+1. In **Name your file in Power BI**, give your file a name.
+1. Select the workspace in which to save this report. The report can be a different workspace than the one you started in.
 
     :::image type="content" source="media/create-powerbi-report/report-details.png" alt-text="Screenshot of report details showing the report's name and the workspace it will be saved in. The button titled Continue is highlighted.":::
 
-1. Select **Continue** to save your report.
-
-You've now created your report.
+1. Select the sensitivity label to apply to the report. For more information, see [sensitivity labels](/power-bi/enterprise/service-security-apply-data-sensitivity-labels).
+1. Select **Continue**.
 
 ### Manage report
 
 To view and edit your report, select **Open the file in Power BI to view, edit, and get a shareable link**.
 
 :::image type="content" source="media/create-powerbi-report/open-report.png" alt-text="Screenshort of report preview showing that the report has been saved. The link to open the report in Power BI is highlighted.":::
-
-## Next steps
-
-<!-- TODO- Power BI doc that discusses the report. -->
