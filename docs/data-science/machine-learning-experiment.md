@@ -11,7 +11,8 @@ ms.date: 02/10/2023
 
 # Machine learning experiment
 
-Project [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> [!IMPORTANT]
+> Project [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 Machine learning experiments allow data scientists to log parameters, code versions, metrics, and output files when running their machine learning code. In [MLFlow](https://mlflow.org/), tracking is based on experiments and runs.
 
