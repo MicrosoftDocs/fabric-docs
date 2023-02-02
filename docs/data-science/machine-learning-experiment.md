@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 02/10/2023
 ---
 
-# Machine learning experiment
+# Machine learning experiments in [!INCLUDE [product-name](../includes/product-name.md)]
 
 > [!IMPORTANT]
 > Project [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
@@ -116,8 +116,6 @@ Once a run yields the desired result, you can save the run as a model for enhanc
 :::image type="content" source="media/machine-learning-experiment/create-model-select-new.png" alt-text="Screenshot showing where to select Create a new model." lightbox="media/machine-learning-experiment/create-model-select-new.png":::
 
 ## Next Steps
-
-[Learn about MLFlow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
 
 - [Learn about MLFlow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
 - Track and manage machine learning models
