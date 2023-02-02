@@ -1,0 +1,12 @@
+items:
+- name: Data science
+  href: index.yml
+  items:
+  - name: Overview
+    items:
+    - name: Data science
+      href: data-science-overview.md
+  - name: Machine learning
+    items:
+    - name: Machine learning experiment
+      href: machine-learning-experiment.md
