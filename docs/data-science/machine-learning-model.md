@@ -1,7 +1,7 @@
 ---
 title: Machine learning model
 description: Learn about creating models and managing versions; review examples of MLflow.
-ms.reviewer: msakande
+ms.reviewer: mopeakande
 ms.author: negust
 author: nelgson
 ms.topic: conceptual

@@ -6,7 +6,17 @@ items:
     items:
     - name: Data science
       href: data-science-overview.md
+  - name: Get started
+    items:
+    - name: How to read and write data with Pandas
+      href: read-write-pandas.md
+    - name: How to accelerate data prep with Data Wrangler
+      href: data-wrangler.md
   - name: Machine learning
     items:
     - name: Machine learning experiment
       href: machine-learning-experiment.md
+    - name: Machine learning model
+      href: machine-learning-model.md
+    - name: Model scoring with PREDICT
+      href: model-scoring-predict.md

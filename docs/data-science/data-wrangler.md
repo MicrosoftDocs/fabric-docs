@@ -1,7 +1,7 @@
 ---
 title: Accelerate data prep with Data Wrangler
 description: Learn how to use the Data Wrangler tool.
-ms.reviewer: msakande
+ms.reviewer: mopeakande
 ms.author: negust
 author: nelgson
 ms.topic: how-to
