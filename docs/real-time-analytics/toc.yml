@@ -16,7 +16,7 @@
   items:
   - name: Get data from a blob
     href: get-data-blob.md
-  - name: Get data from Event Hubsg
+  - name: Get data from Event Hubs
     href: get-data-event-hub.md
   - name: Get data from OneLake
     href: get-data-onelake.md  
