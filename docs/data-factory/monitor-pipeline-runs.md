@@ -58,7 +58,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
 8. Select **Update pipeline** to make changes to your pipeline. This selection will land you back in the pipeline canvas.
 
-   :::image type="content" lightbox="media/monitor-pipeline-runs/update-pipeline-on-canvas-14.png" source="media/monitor-pipeline-runs/update-pipeline-on-canvas.png" alt-text="Screenshot showing where to select Update pipeline.":::
+   :::image type="content" lightbox="media/monitor-pipeline-runs/update-pipeline-on-canvas.png" source="media/monitor-pipeline-runs/update-pipeline-on-canvas.png" alt-text="Screenshot showing where to select Update pipeline.":::
 
 9. You can also **Rerun** your pipeline. You can choose to rerun the entire pipeline or only rerun the pipeline from the failed activity.  
 
