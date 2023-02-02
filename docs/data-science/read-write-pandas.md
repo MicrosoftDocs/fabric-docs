@@ -32,11 +32,11 @@ The below examples show how you can read and write various file formats with Pan
 
 Once you've attached a Lakehouse to your Notebook, you can explore the data in the Lakehouse. This allows you to select a file in your Lakehouse, for example a CSV file, and choose to “Load data” into a Pandas dataframe.
 
-:::image type="content" source="media/read-write-pandas/load-data-pandas-dataframe.png" alt-text="Screenshot showing where to select options to load data into a Pandas dataframe." lightbox "media/read-write-pandas/load-data-pandas-dataframe.png":::
+:::image type="content" source="media/read-write-pandas/load-data-pandas-dataframe.png" alt-text="Screenshot showing where to select options to load data into a Pandas dataframe." lightbox="media/read-write-pandas/load-data-pandas-dataframe.png":::
 
 This will add a code cell to the Notebook with generated Python code for loading the data from the file into a Pandas dataframe:
 
-:::image type="content" source="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png" alt-text="Screenshot of the code cell added to the Notebook." lightbox "media/read-write-pandas/code-cell-load-data-pandas-dataframe.png":::
+:::image type="content" source="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png" alt-text="Screenshot of the code cell added to the Notebook." lightbox="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png":::
 
 ## Read CSV file from Lakehouse with Pandas
 
