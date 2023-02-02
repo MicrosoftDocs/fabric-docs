@@ -1,6 +1,6 @@
 ---
-title: Manage 
-description: Learn how to manage your Kusto database.
+title: Manage KQL Databases in Real-time Analytics
+description: Learn how to manage your KQL Database
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -28,4 +28,4 @@ To enable continuous data export, you need to have database admin permissions.
 
 ## Data connections
 
-The **Data connections** pane opens to show available connections to Azure Event Hubs. To establish a new cloud data connection, see [Create a data connection in Trident](get-data-event-hub.md#create-a-data-connection-in-trident).
+The **Data connections** pane opens to show available connections to Azure Event Hubs. To establish a new cloud data connection, see [Create a data connection](get-data-event-hub.md#create-a-data-connection).

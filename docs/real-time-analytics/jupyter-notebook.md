@@ -1,11 +1,11 @@
 ---
-title: Tutorial- Import a Jupyter notebook
-description: Learn how to import the NYCtaxicab notebook into your trident environment.
+title: Tutorial- Import a Jupyter notebook in Real-time Analytics
+description: Learn how to import the NYCtaxicab notebook into your [!INCLUDE [product-name](../includes/product-name.md)] environment.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 01/26/2023
+ms.date: 02/01/2023
 
 ---
 
@@ -67,7 +67,7 @@ The rest of this workflow occurs in the **Data Engineering** section of the prod
 
 1. Open the app switcher on the bottom of the navigation pane and select **Data Engineering**.
 
-    :::image type="content" source="media/jupyter-notebook/app-switcher-dataengineering.png" alt-text="Screenshot of app switcher showing Trident apps. The app titled Data Engineering is highlighted.":::
+    :::image type="content" source="media/jupyter-notebook/app-switcher-dataengineering.png" alt-text="Screenshot of app switcher showing available apps. The app titled Data Engineering is highlighted.":::
 
 1. In the Data Engineering homepage, select **Import notebook**.
 
