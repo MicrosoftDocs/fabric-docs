@@ -10,6 +10,9 @@ ms.date: 02/10/2023
 
 # How to train models
 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 ## Train models with PyTorch
 
 PyTorch ([https://pytorch.org](https://pytorch.org/)) is a machine learning framework based on the Torch library. It's frequently used for applications such as computer vision and natural language processing. In this article, we'll go through an example of how you can train and track the iterations of your PyTorch model.
@@ -22,7 +25,7 @@ To get started with PyTorch, you must ensure that it's installed within your not
 
 ### Set up the machine learning experiment
 
-Next, we'll create a machine learning experiment using the MLFLow API. The MLFlow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
+Next, we'll create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
 
 ```python
 import mlflow
@@ -137,9 +140,9 @@ for epoch in range(1):
 torch.save(model.state_dict(), model.name())
 ```
 
-### Log Model with MLFlow
+### Log Model with MLflow
 
-Now, we'll start an MLFlow run and track the results within our machine learning experiment.
+Now, we'll start an MLflow run and track the results within our machine learning experiment.
 
 ```python
 with mlflow.start_run() as run:
@@ -199,7 +202,7 @@ To get started with scikit-learn, you must ensure that it's installed within you
 
 ### Create the machine learning experiment
 
-Next, we'll create a machine learning experiment using the MLFLow API. The MLFlow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
+Next, we'll create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
 
 ```python
 import mlflow
@@ -250,11 +253,11 @@ Once the model is saved, it can also be loaded for inferencing. To do this, we'l
 
 ```python
 # Inference with loading the logged model
-from synapse.ml.predict import MLFlowTransformer
+from synapse.ml.predict import MLflowTransformer
 
 spark.conf.set("spark.synapse.ml.predict.enabled", "true")
 
-model = MLFlowTransformer(
+model = MLflowTransformer(
     inputCols=["x"],
     outputCol="prediction",
     modelName="sample-sklearn",

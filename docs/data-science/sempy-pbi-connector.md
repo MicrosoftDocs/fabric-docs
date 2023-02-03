@@ -10,6 +10,9 @@ ms.date: 02/10/2023
 
 # How to explore and validate data with SemPy and PBI Connector
 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 SemPy is Python library that decreases the time spent by users to understand, clean and transform their data by simplifying common tasks in addition to increasing collaboration between the AI and BI worlds. SemPy is tackling the gap that currently exists between PBI/Analysis Services and Spark/Data Science, users of each space have their own semantic layer for the same data model. We want to decrease the recreation of this layer and have both leverage one source of truth using SemPy. For example, Daisy can access not just the data but also have access to the structure of the data.
 
 Reasons why SemPy is crucial:
