@@ -12,7 +12,7 @@ ms.date: 02/10/2023
 
 A machine learning model is a file that has been trained to recognize certain types of patterns. You train a model over a set of data, providing it an algorithm that it can use to reason over and learn from those data. Once you've trained the model, you can use it to reason over data that it hasn't seen before, and make predictions about that data.
 
-In [MLFlow](https://mlflow.org/), a machine learning model can include multiple model versions. Here, each version can represent an iteration of the model. In this article, you'll learn how to interact with machine learning models to track and compare versions of a model.
+In [MLflow](https://mlflow.org/), a machine learning model can include multiple model versions. Here, each version can represent an iteration of the model. In this article, you'll learn how to interact with machine learning models to track and compare versions of a model.
 
 ## Create a model
 
