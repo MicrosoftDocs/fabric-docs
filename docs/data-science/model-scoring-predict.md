@@ -21,31 +21,30 @@ PREDICT supports MLFlow-packaged models in the [!INCLUDE [product-name](../inclu
 
 1. **Train a model and register it with** **MLFlow**. The following code sample uses the MLFlow API to create a machine learning experiment and start an MLFlow run for a simple Scikit-Learn logistic regression model, tracking its metrics and parameters. The model version is then registered for prediction. (For more in-depth instructions about the training process, see our how-to guide on training models.)
 
-```Python
-import mlflow
-import numpy as np 
-from sklearn.linear_model import LogisticRegression 
-from mlflow.models.signature import infer_signature 
-
-lr = LogisticRegression() 
-X = np.array([-2, -1, 0, 1, 2, 1]).reshape(-1, 1) 
-y = np.array([0, 0, 1, 1, 1, 0]) 
-lr.fit(X, y) 
-score = lr.score(X, y) 
-signature = infer_signature(X, y) 
-
-mlflow.set_experiment("sample-sklearn")
-with mlflow.start_run() as run: 
-    mlflow.log_metric("score", score)  
-    mlflow.log_param("alpha", "alpha")
-
-    mlflow.sklearn.log_model(lr, "sklearn-model", signature=signature) 
-    print("Model saved in run_id=%s" % run.info.run_id)
-    
-    mlflow.register_model( 
-        "runs:/{}/sklearn-model".format(run.info.run_id), "sample-sklearn"
-    )
-```
+  ```Python
+  import mlflow
+  import numpy as np 
+  from sklearn.linear_model import LogisticRegression 
+  from mlflow.models.signature import infer_signature 
+  
+  lr = LogisticRegression() 
+  X = np.array([-2, -1, 0, 1, 2, 1]).reshape(-1, 1) 
+  y = np.array([0, 0, 1, 1, 1, 0]) 
+  lr.fit(X, y) 
+  score = lr.score(X, y) 
+  signature = infer_signature(X, y) 
+  
+  mlflow.set_experiment("sample-sklearn")
+  with mlflow.start_run() as run: 
+      mlflow.log_metric("score", score)  
+      mlflow.log_param("alpha", "alpha")
+  
+      mlflow.sklearn.log_model(lr, "sklearn-model", signature=signature) 
+      print("Model saved in run_id=%s" % run.info.run_id)
+      
+      mlflow.register_model( 
+          "runs:/{}/sklearn-model".format(run.info.run_id), "sample-sklearn"
+      )
 
 2. **Load in a test dataset and convert it into a Spark DataFrame.** To generate predictions using the model trained in the previous example, we can create a simple test dataset. Substituting the indicated variables in the following example allows you to change this data for testing your own model.
 
@@ -135,8 +134,8 @@ To use the scoring wizard, navigate to the artifact page for a given model versi
 1. **Select input table.** Browse the provided dropdown menus to select an input table from among the Lakehouses in your current Workspace. In the next step, the columns from this table will be mapped to the model’s inputs to generate predictions.
 1. **Map input columns.** Use the provided dropdowns to match columns from the selected table to each of the model’s listed input fields, which have been pulled from the model’s signature. Note that an input column must be provided for all the model’s required fields—and that the data types for the selected columns must match the model’s expected data types.
 
-> [!TIP]
-> The wizard will prepopulate the mapping if the names of the input table’s columns match those logged in the model signature.
+  > [!TIP]
+  > The wizard will prepopulate the mapping if the names of the input table’s columns match those logged in the model signature.
 
 3. **Create output table.** Provide a name for a new table within your current Workspace’s selected Lakehouse where the model’s predictions will be stored. By default, this table will be created in the same Lakehouse as the input table, but the option to change the destination Lakehouse is also available.
 1. **Map output column(s).** Use the provided text field(s) to name the column(s) in the output table where the model’s predictions will be stored.
