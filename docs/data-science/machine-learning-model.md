@@ -10,15 +10,18 @@ ms.date: 02/10/2023
 
 # Machine learning model
 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 A machine learning model is a file that has been trained to recognize certain types of patterns. You train a model over a set of data, providing it an algorithm that it can use to reason over and learn from those data. Once you've trained the model, you can use it to reason over data that it hasn't seen before, and make predictions about that data.
 
 In [MLflow](https://mlflow.org/), a machine learning model can include multiple model versions. Here, each version can represent an iteration of the model. In this article, you'll learn how to interact with machine learning models to track and compare versions of a model.
 
 ## Create a model
 
-In MLFlow, machine learning models include a standard packaging format. This format allows models to be used in various downstream tools, including batch inferencing on Apache Spark. The format defines a convention that lets you save a model in different “flavors” that can be understood by different downstream tools.
+In MLflow, machine learning models include a standard packaging format. This format allows models to be used in various downstream tools, including batch inferencing on Apache Spark. The format defines a convention that lets you save a model in different “flavors” that can be understood by different downstream tools.
 
-A machine learning model can be created directly from the user experience or from code using the MLFlow API.
+A machine learning model can be created directly from the user experience or from code using the MLflow API.
 
 To create a machine learning model from the user experience, you can:
 
@@ -77,9 +80,9 @@ To compare runs, you can:
 1. You can customize the columns within the table by expanding the **Customize columns** pane. From here, you can select the properties, metrics, and hyperparameters that you would like to see.
 1. Last, you can select multiple versions to compare their results in the metrics comparison pane. From this pane, you can customize the charts by changing the chart title, visualization type, X-axis, Y-axis, and more.
 
-#### Compare models using the MLFlow API
+#### Compare models using the MLflow API
 
-Data scientists can also use MLflow to search among multiple models that have been saved within the workspace. You can explore additional MLFlow APIs for interacting with models by visiting the [MLflow documentation](https://www.mlflow.org/docs/latest/python_api/mlflow.html).
+Data scientists can also use MLflow to search among multiple models that have been saved within the workspace. You can explore additional MLflow APIs for interacting with models by visiting the [MLflow documentation](https://www.mlflow.org/docs/latest/python_api/mlflow.html).
 
 ```Python
 from pprint import pprint
@@ -95,4 +98,4 @@ Once a model has been trained on a data set, it can be applied to data it has ne
 
 ## Next steps
 
-- [Learn about MLFlow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
+- [Learn about MLflow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)

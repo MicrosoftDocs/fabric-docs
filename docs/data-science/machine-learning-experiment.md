@@ -1,6 +1,6 @@
 ---
 title: Machine learning experiment
-description: Learn how to create an experiment and track runs, and review examples of using mlflow.
+description: Learn how to create an experiment and track runs, and review examples of using MLflow.
 ms.reviewer: mopeakande
 ms.author: negust
 author: nelgson
@@ -11,9 +11,9 @@ ms.date: 02/10/2023
 # Machine learning experiments in [!INCLUDE [product-name](../includes/product-name.md)]
 
 > [!IMPORTANT]
-> Project [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Machine learning experiments allow data scientists to log parameters, code versions, metrics, and output files when running their machine learning code. In [MLFlow](https://mlflow.org/), tracking is based on experiments and runs.
+Machine learning experiments allow data scientists to log parameters, code versions, metrics, and output files when running their machine learning code. In [MLflow](https://mlflow.org/), tracking is based on experiments and runs.
 
 A machine learning experiment is the primary unit of organization and control for all related machine learning runs. Experiments let you visualize, search for, and compare runs, as well as download run files and metadata for analysis in other tools. A \*run* corresponds to a single execution of model code.
 
@@ -21,14 +21,14 @@ In this article, you will learn more about how data scientists can interact with
 
 ## Create an experiment
 
-A machine learning experiment can be created directly from the user experience or from code using the MLFlow API.
+A machine learning experiment can be created directly from the user experience or from code using the MLflow API.
 
 To create a machine learning experiment from the user experience, you can:
 
 1. Create a new or select an existing data science workspace.
 1. From the **+ New** dropdown, select **Experiment**. This will create an empty **experiment** within your data science workspace.
 
-:::image type="content" source="media/machine-learning-experiment/new-menu-experiment-option.png" alt-text="Screenshot showing where to select Experiment in the New menu." lightbox="media/machine-learning-experiment/new-menu-experiment-option.png":::
+   :::image type="content" source="media/machine-learning-experiment/new-menu-experiment-option.png" alt-text="Screenshot showing where to select Experiment in the New menu." lightbox="media/machine-learning-experiment/new-menu-experiment-option.png":::
 
 3. Once the experiment is created, you can start adding runs to track run metrics and parameters.
 
@@ -82,9 +82,9 @@ To compare runs, you can:
 1. You can also expand the **Filter** pane to narrow your results based on the selected criteria.
 1. Last, you can select multiple runs to compare their results in the metrics comparison pane. From this pane, you can customize the charts by changing the chart title, visualization type, X-axis, Y-axis, and more.
 
-### Compare runs using the MLFlow API
+### Compare runs using the MLflow API
 
-Data scientists can also use MLflow to query and search among runs within an experiment. You can explore additional MLFlow APIs for searching, filtering, and comparing runs by visiting the [MLflow documentation](https://www.mlflow.org/docs/latest/python_api/mlflow.html).
+Data scientists can also use MLflow to query and search among runs within an experiment. You can explore additional MLflow APIs for searching, filtering, and comparing runs by visiting the [MLflow documentation](https://www.mlflow.org/docs/latest/python_api/mlflow.html).
 
 #### Get all runs
 
@@ -117,5 +117,5 @@ Once a run yields the desired result, you can save the run as a model for enhanc
 
 ## Next Steps
 
-- [Learn about MLFlow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
-- Track and manage machine learning models
+- [Learn about MLflow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
+- [Track and manage machine learning models](machine-learning-model.md)

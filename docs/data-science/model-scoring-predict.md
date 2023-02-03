@@ -10,6 +10,9 @@ ms.date: 02/10/2023
 
 # Model scoring with PREDICT
 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 [!INCLUDE [product-name](../includes/product-name.md)] empowers users to operationalize machine learning models from the secure boundaries of a notebook with a function called PREDICT. Users can get started directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook or from a given model item page. An end-to-end prediction example using a fraud detection model can be found in the “Sample Notebooks” folder.
 
 > [!NOTE]
@@ -17,62 +20,63 @@ ms.date: 02/10/2023
 
 ## Calling PREDICT from a notebook
 
-PREDICT supports MLFlow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you’ve already trained and registered a model, you can skip to Step 2 in the following procedure. If not, Step 1 provides a code sample to guide you through the creation and training of a simple logistic regression model. This is the model that will be used to generate predictions in the last step if you don’t use your own.
+PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you’ve already trained and registered a model, you can skip to Step 2 in the following procedure. If not, Step 1 provides a code sample to guide you through the creation and training of a simple logistic regression model. This is the model that will be used to generate predictions in the last step if you don’t use your own.
 
-1. **Train a model and register it with** **MLFlow**. The following code sample uses the MLFlow API to create a machine learning experiment and start an MLFlow run for a simple Scikit-Learn logistic regression model, tracking its metrics and parameters. The model version is then registered for prediction. (For more in-depth instructions about the training process, see our how-to guide on training models.)
+1. **Train a model and register it with MLflow**. The following code sample uses the MLflow API to create a machine learning experiment and start an MLflow run for a simple Scikit-Learn logistic regression model, tracking its metrics and parameters. The model version is then registered for prediction. (For more in-depth instructions about the training process, see our how-to guide on training models.)
 
-  ```Python
-  import mlflow
-  import numpy as np 
-  from sklearn.linear_model import LogisticRegression 
-  from mlflow.models.signature import infer_signature 
+   ```Python
+   import mlflow
+   import numpy as np 
+   from sklearn.linear_model import LogisticRegression 
+   from mlflow.models.signature import infer_signature 
   
-  lr = LogisticRegression() 
-  X = np.array([-2, -1, 0, 1, 2, 1]).reshape(-1, 1) 
-  y = np.array([0, 0, 1, 1, 1, 0]) 
-  lr.fit(X, y) 
-  score = lr.score(X, y) 
-  signature = infer_signature(X, y) 
+   lr = LogisticRegression() 
+   X = np.array([-2, -1, 0, 1, 2, 1]).reshape(-1, 1) 
+   y = np.array([0, 0, 1, 1, 1, 0]) 
+   lr.fit(X, y) 
+   score = lr.score(X, y) 
+   signature = infer_signature(X, y) 
   
-  mlflow.set_experiment("sample-sklearn")
-  with mlflow.start_run() as run: 
-      mlflow.log_metric("score", score)  
-      mlflow.log_param("alpha", "alpha")
+   mlflow.set_experiment("sample-sklearn")
+   with mlflow.start_run() as run: 
+       mlflow.log_metric("score", score)  
+       mlflow.log_param("alpha", "alpha")
   
-      mlflow.sklearn.log_model(lr, "sklearn-model", signature=signature) 
-      print("Model saved in run_id=%s" % run.info.run_id)
+       mlflow.sklearn.log_model(lr, "sklearn-model", signature=signature) 
+       print("Model saved in run_id=%s" % run.info.run_id)
       
-      mlflow.register_model( 
+       mlflow.register_model( 
           "runs:/{}/sklearn-model".format(run.info.run_id), "sample-sklearn"
-      )
+       )
+    ```
 
 2. **Load in a test dataset and convert it into a Spark DataFrame.** To generate predictions using the model trained in the previous example, we can create a simple test dataset. Substituting the indicated variables in the following example allows you to change this data for testing your own model.
 
-```Python
-import pandas as pd
+   ```Python
+   import pandas as pd
 
-# Create a simple test dataset from a dictionary of x values
-# You can substitute “test" below with your own dataset
-test = pd.DataFrame({'x': [-2, -1, 0, 1, 2, -1]})
+   # Create a simple test dataset from a dictionary of x values
+   # You can substitute “test" below with your own dataset
+   test = pd.DataFrame({'x': [-2, -1, 0, 1, 2, -1]})
 
-# Convert the test dataset into a Spark DataFrame
-test_spark = spark.createDataFrame(data=[(test.values.tolist(),)], schema=test.columns.to_list())
-```
+   # Convert the test dataset into a Spark DataFrame
+   test_spark = spark.createDataFrame(data=[(test.values.tolist(),)], schema=test.columns.to_list())
+   ```
 
-3. **Create an** **MLFlow Transformer to load the model for inferencing.** The following code sample can be modified—with substitutions for the indicated parameters—to create a Transformer for generating predictions. In this case, we’re specifying all the columns from the test dataset as model inputs, naming the output column “predictions,” and generating our predictions with the model version trained earlier.
+3. **Create an MLflow Transformer to load the model for inferencing.** The following code sample can be modified—with substitutions for the indicated parameters—to create a Transformer for generating predictions. In this case, we’re specifying all the columns from the test dataset as model inputs, naming the output column “predictions,” and generating our predictions with the model version trained earlier.
 
-```Python
-from synapse.ml.predict import MLFlowTransformer
+   ```Python
+   from synapse.ml.predict import MLflowTransformer
 
-# You can substitute values below for your own input columns
-# output column name, model name, and model version
-model = MLFlowTransformer(
-    inputCols=test_spark.columns,
-    outputCol='predictions',
-    modelName='sample-sklearn',
-    modelVersion=1
-)
-```
+   # You can substitute values below for your own input columns
+   # output column name, model name, and model version
+   model = MLflowTransformer(
+       inputCols=test_spark.columns,
+       outputCol='predictions',
+       modelName='sample-sklearn',
+       modelVersion=1
+   )
+   ```
 
 4. **Generate predictions using the PREDICT function.** The PREDICT function can be invoked with the Transformer API, the Spark SQL API, or user-defined functions (UDFs). The following code snippets generate predictions using the test data and model defined in the preview steps.
 
@@ -104,7 +108,7 @@ predictions.show()
 ```
 
 > [!NOTE]
-> Using the Spark SQL API to generate predictions still requires you to create an MLFlow Transformer (as in Step 3). This registers the model for use with the PREDICT keyword.
+> Using the Spark SQL API to generate predictions still requires you to create an MLflow Transformer (as in Step 3). This registers the model for use with the PREDICT keyword.
 
 ### PREDICT with a user-defined function (UDF)
 
@@ -127,7 +131,7 @@ Users can generate code to call PREDICT for a specific model by navigating to th
 The “Apply model” prompt includes an option to generate PREDICT code with prepopulated parameters using an interactive scoring wizard. The wizard walks users through a series of steps to select the source data for scoring, map it correctly to the model’s inputs, specify the destination for the model’s outputs, and create a notebook that will generate scores using PREDICT.
 
 > [!NOTE]
-> The scoring wizard is currently supported only for models that have been saved in the MLFlow format with their model signatures populated. For other models, please use the customizable code template provided on the model version’s page, or consult documentation for calling PREDICT directly from a notebook.
+> The scoring wizard is currently supported only for models that have been saved in the MLflow format with their model signatures populated. For other models, please use the customizable code template provided on the model version’s page, or consult documentation for calling PREDICT directly from a notebook.
 
 To use the scoring wizard, navigate to the artifact page for a given model version and click “Apply this model in wizard” from the “Apply model” dropdown. The interface will guide you through the following steps.
 
@@ -156,7 +160,7 @@ The “Apply model” prompt also includes an option to copy a customizable code
 ```Python
 import mlflow 
 from trident.mlflow import get_sds_url 
-from synapse.ml.predict import MLFlowTransformer 
+from synapse.ml.predict import MLflowTransformer 
  
 spark.conf.set("spark.synapse.ml.predict.enabled", "true") 
 mlflow.set_tracking_uri(get_sds_url()) 
@@ -165,7 +169,7 @@ df = spark.read.format("delta").load(
     <INPUT_TABLE> 
 ) 
  
-model = MLFlowTransformer( 
+model = MLflowTransformer( 
     inputCols=<INPUT_COLS>, 
     outputCol=<OUTPUT_COLS>, 
     modelName=<MODEL_NAME>, 
@@ -177,3 +181,7 @@ df.write.format('delta').mode("overwrite").save(
     <OUTPUT_TABLE> 
 )  
 ```
+
+## Next steps
+
+- How-to: Apply model for batch scoring (PREDICT)

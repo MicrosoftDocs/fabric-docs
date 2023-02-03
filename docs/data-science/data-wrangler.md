@@ -10,6 +10,9 @@ ms.date: 02/10/2023
 
 # How-to accelerate data prep with Data Wrangler
 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 Data Wrangler is a notebook-based tool that provides users with an immersive experience for conducting exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics and a set of common data-cleansing operations that can be applied in a matter of clicks. Each operation generates code that can be saved back to the notebook as a reusable script.
 
 ## Launching Data Wrangler
