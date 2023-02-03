@@ -21,31 +21,30 @@ PREDICT supports MLFlow-packaged models in the [!INCLUDE [product-name](../inclu
 
 1. **Train a model and register it with** **MLFlow**. The following code sample uses the MLFlow API to create a machine learning experiment and start an MLFlow run for a simple Scikit-Learn logistic regression model, tracking its metrics and parameters. The model version is then registered for prediction. (For more in-depth instructions about the training process, see our how-to guide on training models.)
 
-```Python
-import mlflow
-import numpy as np 
-from sklearn.linear_model import LogisticRegression 
-from mlflow.models.signature import infer_signature 
-
-lr = LogisticRegression() 
-X = np.array([-2, -1, 0, 1, 2, 1]).reshape(-1, 1) 
-y = np.array([0, 0, 1, 1, 1, 0]) 
-lr.fit(X, y) 
-score = lr.score(X, y) 
-signature = infer_signature(X, y) 
-
-mlflow.set_experiment("sample-sklearn")
-with mlflow.start_run() as run: 
-    mlflow.log_metric("score", score)  
-    mlflow.log_param("alpha", "alpha")
-
-    mlflow.sklearn.log_model(lr, "sklearn-model", signature=signature) 
-    print("Model saved in run_id=%s" % run.info.run_id)
-    
-    mlflow.register_model( 
-        "runs:/{}/sklearn-model".format(run.info.run_id), "sample-sklearn"
-    )
-```
+  ```Python
+  import mlflow
+  import numpy as np 
+  from sklearn.linear_model import LogisticRegression 
+  from mlflow.models.signature import infer_signature 
+  
+  lr = LogisticRegression() 
+  X = np.array([-2, -1, 0, 1, 2, 1]).reshape(-1, 1) 
+  y = np.array([0, 0, 1, 1, 1, 0]) 
+  lr.fit(X, y) 
+  score = lr.score(X, y) 
+  signature = infer_signature(X, y) 
+  
+  mlflow.set_experiment("sample-sklearn")
+  with mlflow.start_run() as run: 
+      mlflow.log_metric("score", score)  
+      mlflow.log_param("alpha", "alpha")
+  
+      mlflow.sklearn.log_model(lr, "sklearn-model", signature=signature) 
+      print("Model saved in run_id=%s" % run.info.run_id)
+      
+      mlflow.register_model( 
+          "runs:/{}/sklearn-model".format(run.info.run_id), "sample-sklearn"
+      )
 
 2. **Load in a test dataset and convert it into a Spark DataFrame.** To generate predictions using the model trained in the previous example, we can create a simple test dataset. Substituting the indicated variables in the following example allows you to change this data for testing your own model.
 
