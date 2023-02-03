@@ -12,6 +12,12 @@ items:
       href: read-write-pandas.md
     - name: How to accelerate data prep with Data Wrangler
       href: data-wrangler.md
+    - name: Explore and validate data with SemPy and PBI connector
+      href: sempy-pbi-connector.md
+  - name: Tutorials
+    items:
+    - name: How to use end-to-end AI samples
+      href: use-ai-samples.md
   - name: Machine learning
     items:
     - name: Machine learning experiment
@@ -20,3 +26,9 @@ items:
       href: machine-learning-model.md
     - name: Model scoring with PREDICT
       href: model-scoring-predict.md
+    - name: Train models
+      href: train-models.md
+  - name: Use R
+    items:
+    - name: How to use the R language
+      href: use-r-language.md
