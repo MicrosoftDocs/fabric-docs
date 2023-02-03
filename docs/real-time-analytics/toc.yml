@@ -1,0 +1,40 @@
+- name: Overview
+  items:
+- name: Get started
+  items:
+- name: Databases
+  items:
+  - name: Create a database
+    href: create-database.md
+  - name: Database Management
+    href: database-management.md
+- name: Tables
+  items:
+  - name: Create an empty table
+    href: create-empty-table.md
+- name: Get data
+  items:
+  - name: Get data from Event Hubs
+    href: get-data-event-hub.md
+  - name: Get data from a blob
+    href: get-data-blob.md
+- name: Export data
+  items:
+- name: Query
+  items:
+  - name: Query data in the KQL queryset
+    href: kusto-query-set.md
+  - name: Query a Kusto database using a Jupyter notebook
+    href: jupyter-notebook.md
+- name: Visualize
+  items:
+  - name: Visualize data in a Power BI report
+    href: create-powerbi-report.md
+- name: Monitor
+  items:
+- name: KQL reference
+  items:
+- name: Management reference
+  items:
+- name: Reference and resources
+  items:
