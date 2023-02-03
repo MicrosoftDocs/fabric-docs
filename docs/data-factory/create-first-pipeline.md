@@ -10,6 +10,10 @@ ms.date: 01/27/2023
 
 # Quickstart: Create your first pipeline to copy data (Preview)
 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 In this tutorial, you'll build a data pipeline to move a CSV file from an input folder of source Azure Blob Storage to the output folder of the target Azure Blob storage. This experience is like copying data from raw storage to enterprise-scoped Storage.
 
 ## Prerequisites
