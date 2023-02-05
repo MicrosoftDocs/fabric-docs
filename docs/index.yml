@@ -25,23 +25,27 @@ highlightedContent:
     # Card
     - title: What is Trident ?
       itemType: overview
-      url: fundamentals/desktop-get-the-desktop.md
+      url: fundamentals/.md
+    # Card
+    - title: Understand Trident architecture
+      itemType: concept
+      url: developer/embedded/export-to.md
     # Card
     - title: Try Trident Trial for free
       itemType: get-started
-      url: fundamentals/desktop-get-the-desktop.md
+      url: fundamentals/.md
     # Card
-    - title: Get started with creating resources in Trident
+    - title: Get started with creating resources
       itemType: tutorial
-      url: fundamentals/service-get-started.md
+      url: fundamentals/.md
     # Card
-    - title: Understand workloads in Trident
-      itemType: concept
-      url: transform-model/datamarts/datamarts-overview.md
+    - title: end-to-end tutorials
+      itemType: tutorial
+      url: fundamentals/.md
     # Card
-    - title: Choose a workload based on your requirement
+    - title: Choose a workload for your scenario
       itemType: concept
-      url: developer/embedded/export-to.md
+      url: fundamentals/.md
 
 # conceptualContent section (optional)
 conceptualContent:
@@ -50,16 +54,16 @@ conceptualContent:
     # Card
     - title: "Trident: Fundamentals"
       links:
-        - url: fundamentals/power-bi-overview.md
+        - url: fundamentals/.md
           itemType: overview
           text: What is Trident?
-        - url: fundamentals/desktop-getting-started.md
+        - url: fundamentals/.md
           itemType: get-started
           text: Trident workloads and artifacts
-        - url: fundamentals/service-get-started.md
+        - url: fundamentals/.md
           itemType: tutorial
-          text: Get started with creating resources in Trident
-        - url: fundamentals/service-get-started.md
+          text: Get started with creating resources
+        - url: fundamentals/.md
           itemType: concept
           text: Understand the billing and consumption model
       # footerLink (optional)
@@ -67,52 +71,71 @@ conceptualContent:
         url: fundamentals/index.yml
         text: See more
     # Card
-    - title: "Trident: Data Factory"
+    - title: OneLake
       links:
-        - url: consumer/end-user-consumer.md
-          itemType: get-started
-          text: Am I a Power BI business user?
-        - url: consumer/end-user-experience.md
-          itemType: get-started
-          text: Get around in the Power BI service
-        - url: consumer/end-user-dashboards.md
+        - url: fundamentals/.md
           itemType: concept
-          text: What is a dashboard?
+          text: What is Onelake?
+        - url: fundamentals/.md
+          itemType: concept
+          text: What are shortcuts?
+        - url: fundamentals/.md
+          itemType: get-started
+          text: Get started with OneLake
       # footerLink (optional)
       footerLink:
-        url: consumer/index.yml
+        url: fundamentals/index.yml
         text: See more
     # Card
-    - title: "Trident: Data Science"
+    - title: "Trident: Data Factory"
       links:
-        - url: consumer/end-user-consumer.md
-          itemType: get-started
-          text: Am I a Power BI business user?
-        - url: consumer/end-user-experience.md
-          itemType: get-started
-          text: Get around in the Power BI service
-        - url: consumer/end-user-dashboards.md
+        - url: data-factory/.md
           itemType: concept
-          text: What is a dashboard?
+          text: What is Data Factory?
+        - url: data-factory/.md
+          itemType: get-started
+          text: Create your first pipeline
+        - url: data-factory/.md
+          itemType: get-started
+          text: Create your first dataflow?
       # footerLink (optional)
       footerLink:
-        url: consumer/index.yml
+        url: data-factory/index.yml
+        text: See more
+    # Card
+    - title: "Trident: Data science"
+      links:
+        - url: data-science/.md
+          itemType: concept
+          text: What is Data science?
+        - url: data-science/.md
+          itemType: concept
+          text: Machine learning experiment
+        - url: data-science/.md
+          itemType: how-to-guide
+          text: Read and write data with Pandas
+        - url: data-science/.md
+          itemType: how-to-guide
+          text: Use SemPy library for faster analytics
+      # footerLink (optional)
+      footerLink:
+        url: data-science/index.yml
         text: See more
     # Card
     - title: "Trident: Data Engineering"
       links:
-        - url: consumer/end-user-consumer.md
+        - url: data-engineering/.md
           itemType: get-started
           text: Am I a Power BI business user?
-        - url: consumer/end-user-experience.md
+        - url: data-engineering/.md
           itemType: get-started
           text: Get around in the Power BI service
-        - url: consumer/end-user-dashboards.md
+        - url: data-engineering/.md
           itemType: concept
           text: What is a dashboard?
       # footerLink (optional)
       footerLink:
-        url: consumer/index.yml
+        url: data-engineering/index.yml
         text: See more
     # Card
     - title: "Trident: Data Warehousing"
@@ -128,23 +151,23 @@ conceptualContent:
           text: Data protection
       # footerLink (optional)
       footerLink:
-        url: enterprise/index.yml
+        url: data-warehousing/index.yml
         text: See more        
     # Card
     - title: "Trident: Real-time analytics"
       links:
-        - url: admin/service-admin-administering-power-bi-in-your-organization.md
+        - url: data-explorer/.md
           itemType: overview
-          text: What is Power BI administration?
-        - url: admin/service-admin-portal.md
+          text: What is Real-time analytics?
+        - url: data-explorer/.md
+          itemType: get-started
+          text: Create a database
+        - url: data-explorer/.md
           itemType: how-to-guide
-          text: Admin portal settings
-        - url: /power-bi/admin/service-admin-how-to-use-the-same-account-as-azure
-          itemType: how-to-guide
-          text: Use the same account for Power BI and Azure
+          text: Get data from a blob container
       # footerLink (optional)
       footerLink:
-        url: admin/index.yml
+        url: data-explorer/index.yml
         text: See more
     # Card
     - title: "Trident: Reflex"
@@ -160,7 +183,7 @@ conceptualContent:
           text: Develop your own Power BI visual
       # footerLink (optional)
       footerLink:
-        url: developer/index.yml
+        url: reflex/index.yml
         text: See more
     # Card
     - title: Administer your resources
@@ -176,7 +199,7 @@ conceptualContent:
           text: Discover data on the data hub
       # footerLink (optional)
       footerLink:
-        url: connect-data/index.yml
+        url: fundamentals/admin/index.yml
         text: See more
     # Card
     - title: Secure your resources
@@ -192,10 +215,10 @@ conceptualContent:
           text: Get started with datamarts (preview)
       # footerLink (optional)
       footerLink:
-        url: transform-model/index.yml
+        url: fundamentals/security/index.yml
         text: See more
     # Card
-    - title: Model data
+    - title: Governance and compliance
       links:
         - url: create-reports/desktop-add-custom-column.md
           itemType: how-to-guide
@@ -211,7 +234,7 @@ conceptualContent:
         url: transform-model/index.yml
         text: See more
     # Card
-    - title: Create reports and dashboards
+    - title: Enterprise
       links:
         - url: create-reports/desktop-accessibility-creating-reports.md
           itemType: how-to-guide
@@ -227,7 +250,7 @@ conceptualContent:
         url: create-reports/index.yml
         text: See more
     # Card
-    - title: Collaborate and share
+    - title: Continuous integration and continuous deployment (CICD)
       links:
         - url: collaborate-share/service-share-dashboards.md
           itemType: concept
@@ -242,102 +265,6 @@ conceptualContent:
       footerLink:
         url: collaborate-share/index.yml
         text: See more
-    # Card
-    - title: Integrate across products 
-      links:
-        - url: connect-data/service-azure-and-power-bi.md
-          itemType: concept
-          text: Azure and Power BI
-        - url: collaborate-share/service-analyze-in-excel.md
-          itemType: concept
-          text: Analyze in Excel
-        - url: collaborate-share/service-automate-power-bi-report-export.md
-          itemType: concept
-          text: Export and email with Power Automate
-      # footerLink (optional)
-      footerLink:
-        url: collaborate-share/index.yml
-        text: See more
-    # Card
-    - title: Power BI in the mobile apps
-      links:
-        - url: consumer/mobile/mobile-apps-for-mobile-devices.md
-          itemType: get-started
-          text: What are the mobile apps?
-        - url: consumer/mobile/mobile-apps-quickstart-view-dashboard-report.md
-          itemType: quickstart
-          text: Explore dashboards and reports
-        - url: /training/modules/explore-power-bi-mobile-apps
-          itemType: learn
-          text: Get data on the go with the mobile apps
-      # footerLink (optional)
-      footerLink:
-        url: consumer/mobile/index.yml
-        text: See more
-    # Card
-    - title: Best practices guidance
-      links:
-        - url: guidance/powerbi-adoption-roadmap-overview.md
-          itemType: concept
-          text: Power BI adoption roadmap
-        - url: guidance/powerbi-implementation-planning-introduction.md
-          itemType: concept
-          text: Power BI implementation planning
-        - url: guidance/power-bi-optimization.md
-          itemType: concept
-          text: Optimization guide for Power BI
-      # footerLink (optional)
-      footerLink:
-        url: guidance/index.yml
-        text: See more
-    # Card
-    - title: Learning catalog
-      links:
-        - url: learning-catalog/learning-catalog-bdm.md
-          itemType: learn
-          text: Business decision makers
-        - url: /training/paths/dax-power-bi/
-          itemType: learn
-          text: Get started with DAX
-        - url: learning-catalog/learning-catalog-solution-architect.md
-          itemType: learn
-          text: Solution architects
-      # footerLink (optional)
-      footerLink:
-        url: learning-catalog/index.yml
-        text: See more
-    # Card
-    - title: Troubleshooting
-      links:
-        - url: troubleshoot/known-issues/power-bi-known-issues.md
-          itemType: overview
-          text: Known issues for Power BI features
-        - url: connect-data/refresh-troubleshooting-refresh-scenarios.md
-          itemType: how-to-guide
-          text: Troubleshoot refresh scenarios
-        - url: collaborate-share/service-troubleshoot-subscribe.yml
-          itemType: how-to-guide
-          text: Troubleshoot subscribing to reports and dashboards
-      # footerLink (optional)
-      footerLink:
-        url: troubleshoot/index.yml
-        text: See more        
-    # Card
-    - title: Support
-      links:
-        - url: support/service-support-options.md
-          itemType: how-to-guide
-          text: Power BI Pro and Power BI Premium support options
-        - url: support/service-admin-health.md
-          itemType: how-to-guide
-          text: Track Power BI service health in Microsoft 365
-        - url: support/service-admin-region-move.md
-          itemType: how-to-guide
-          text:  Move Power BI to another region
-      # footerLink (optional)
-      footerLink:
-        url: support/index.yml
-        text: See more        
 
 # additionalContent section (optional)
 # Card with summary style
