@@ -1,6 +1,6 @@
 ---
-title: Azure Data Lake Gen2 Storage connector overview
-description: This article explains the overview of using Azure Data Lake Gen2 Storage.
+title: Azure Data Lake Storage Gen2 connector overview
+description: This article explains the overview of using Azure Data Lake Storage Gen2.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -8,9 +8,9 @@ ms.date: 12/27/2022
 ms.custom: template-how-to 
 ---
 
-# Azure Data Lake Gen2 Storage Connector Overview
+# Azure Data Lake Storage Gen2 Connector Overview
 
-This Azure Data Lake Gen2 Storage connector is supported in Trident Project  – Data Factory with the following capabilities.
+This Azure Data Lake Storage Gen2 connector is supported in Trident Project  – Data Factory with the following capabilities.
 
 ## Supported capabilities
 
@@ -23,6 +23,6 @@ This Azure Data Lake Gen2 Storage connector is supported in Trident Project  –
 
 ## Next Steps
 
-[How to create Azure Data Lake Gen2 Storage connection](connector-azure-data-lake-storage-gen2.md)
+[How to create Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md)
 
-[How to configure Azure Data Lake Gen2 Storage in copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md)
+[How to configure Azure Data Lake Storage Gen2 in copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md)

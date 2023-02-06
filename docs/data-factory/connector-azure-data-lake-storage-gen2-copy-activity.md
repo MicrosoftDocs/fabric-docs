@@ -1,6 +1,6 @@
 ---
-title: How to configure Azure Data Lake Gen2 Storage in copy activity
-description: This article explains how to copy data using Azure Data Lake Gen2 Storage.
+title: How to configure Azure Data Lake Storage Gen2 in copy activity
+description: This article explains how to copy data using Azure Data Lake Storage Gen2.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -8,13 +8,13 @@ ms.date: 12/27/2022
 ms.custom: template-how-to 
 ---
 
-# How to configure Azure Data Lake Gen2 Storage in copy activity
+# How to configure Azure Data Lake Storage Gen2 in copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Data Lake Gen2 Storage.
+This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Data Lake Storage Gen2.
 
 ## Supported format
 
-Azure Data Lake Gen2 Storage supports the following file formats.
+Azure Data Lake Storage Gen2 supports the following file formats.
 
 ## Supported configuration
 
@@ -31,13 +31,13 @@ For **General** tab configuration, see General
 
 ### Source
 
-The following properties are supported for Azure Data Lake Gen2 Storage under **Source** tab of a copy activity.
+The following properties are supported for Azure Data Lake Storage Gen2 under **Source** tab of a copy activity.
 
 :::image type="content" source="./media/connectors-adlsgen2/source.png" alt-text="Screenshot showing source tab.":::
 
 The following properties are **required**:
 - **Data store type:** Select **External**.
-- **Connection:**  Select an Azure Data Lake Gen2 Storage connection from the connection list.
+- **Connection:**  Select an Azure Data Lake Storage Gen2 connection from the connection list.
 - **File path:** Select **Browse** to choose the file that you want to copy, or fill in the path manually.
 - **File settings**: Click on **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
@@ -74,14 +74,14 @@ Under **Advanced**, you can specify the following fields:
 
 ## Destination
 
-The following properties are supported for Azure Data Lake Gen2 Storage under **Destination** tab of a copy activity.
+The following properties are supported for Azure Data Lake Storage Gen2 under **Destination** tab of a copy activity.
 
 :::image type="content" source="./media/connectors-adlsgen2/destination.png" alt-text="Screenshot showing destination tab.":::
 
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**: Select an Azure Data Lake Gen2 Storage connection from the connection list.
+- **Connection**: Select an Azure Data Lake Storage Gen2 connection from the connection list.
 - **File path**: Select **Browse** to choose the file that you want to copy or fill in the path manually.
 - **File settings**: Click on **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
@@ -115,7 +115,7 @@ For **Settings** tab configuration, see Settings
 
 ## Table summary
 
-To learn more information about copy activity in Azure Data Lake Gen2 Storage, see the following table.
+To learn more information about copy activity in Azure Data Lake Storage Gen2, see the following table.
 
 ### Source
 
@@ -143,4 +143,4 @@ To learn more information about copy activity in Azure Data Lake Gen2 Storage, s
 
 ## Next Steps
 
-[How to create Azure Data Lake Gen2 Storage connection](connector-azure-data-lake-storage-gen2.md)
+[How to create Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md)

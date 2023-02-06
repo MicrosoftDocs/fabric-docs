@@ -89,7 +89,7 @@ Open **Edit credentials**. You will see log in interface. Enter your account and
 
 * **SAS token**: Specify the shared access signature token for your Azure Data Lake Storage Gen2 container.  
 
-If you don’t have a SAS token, switch to **Shared access signature** in your Azure Data Lake Gen2 Storage account interface. Under **Allowed resource types**, select **Container**, and then select **Generate SAS and connection string**. You can get your SAS token in the content shown up.
+If you don’t have a SAS token, switch to **Shared access signature** in your Azure Data Lake Storage Gen2 account interface. Under **Allowed resource types**, select **Container**, and then select **Generate SAS and connection string**. You can get your SAS token in the content shown up.
 The shared access signature is a URI that encompasses in its query parameters all the information necessary for authenticated access to a storage resource. To access storage resources with the shared access signature, the client only needs to pass in the shared access signature to the appropriate constructor or method.
 For more information about shared access signatures, see [Shared access signatures: Understand the shared access signature model](/azure/storage/common/storage-sas-overview).
 
@@ -139,7 +139,7 @@ The following connector properties in the table are supported in pipeline copy a
 |**Server**|Enter the server of Azure Data Lake Storage Gen2: `https://contosoadlscdm.dfs.core.windows.net`.|Yes||✓/✓|
 |**Full path**|Enter the full path of Azure Data Lake Storage Gen2: Your container name.
 |Yes||✓/✓|
-|**Authentication**|See Authentication |Yes|See [Authentication](#authentication)|See Authentication|
+|**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are Organizational, Privacy, Public|Yes||✓/✓|
 
 ### Authentication
@@ -149,7 +149,7 @@ The following properties in the table are the supported authentication type.
 |Name|Description|Required|Property|Copy/Dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Key**||||✓/✓|
-|- Account key|The account key of the Azure Data Lake Gen2 Storage|Yes |||
+|- Account key|The account key of the Azure Data Lake Storage Gen2 |Yes |||
 |**Shared Access Signature (SAS)**||||✓/✓|
 |- SAS token|Specify the shared access signature token for your Azure Data Lake Storage Gen2 container.|Yes |||
 |**Service Principal**||||✓/✓|
@@ -159,4 +159,4 @@ The following properties in the table are the supported authentication type.
 
 ## Next steps
 
-- [How to create Azure Data Lake Gen2 Storage connection](connector-azure-data-lake-storage-gen2.md)
+- [How to create Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md)
