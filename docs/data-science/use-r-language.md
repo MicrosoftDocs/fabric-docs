@@ -21,13 +21,13 @@ In this article, you'll learn how to use R for Apache Spark with Azure Synapse A
 
 Azure Synapse Analytics supports an R runtime which features many popular open-source R packages, including TidyVerse.  
 
-To learn more about the libraries installed on each runtime, you can visit the following page: Azure Synapse Analytics Runtimes.
+To learn more about the libraries installed on each runtime, you can visit the following page: Azure Synapse Analytics Runtimes.
 
 ## Create and run notebook sessions
 
 An Azure Synapse notebook is a web interface for you to create files that contain live code, visualizations, and narrative text. Notebooks are a good place to validate ideas and use quick experiments to get insights from your data. Notebooks are also widely used in data preparation, data visualization, machine learning, and other big data scenarios.
 
-To get started with R in Synapse notebooks, you can change the primary language by setting the **language option** to **SparkR (R)**.
+To get started with R in Synapse notebooks, you can change the primary language by setting the **language option** to **SparkR (R)**.
 
 In addition, you can use multiple languages in one notebook by specifying the language magic command at the beginning of a cell.
 
@@ -48,7 +48,7 @@ When doing interactive data analysis or machine learning, you might try newer pa
 - Session-scoped R libraries don't persist across sessions. These libraries will be installed at the start of each session when the related installation commands are executed.
 - Session-scoped R libraries are automatically installed across both the driver and worker nodes.
 
-For example, users can install an R library from CRAN and CRAN snapshots. In the following example, **Highcharter** is a popular package for R visualizations. I can install this package on all nodes within my Apache Spark pool using the following command:
+For example, users can install an R library from CRAN and CRAN snapshots. In the following example, **Highcharter** is a popular package for R visualizations. I can install this package on all nodes within my Apache Spark pool using the following command:
 
 `install.packages("highcharter", repos = "https://cran.microsoft.com/snapshot/2021-07-16/") `
 
@@ -65,11 +65,11 @@ mssparkutils.fs.help()
 
 ## Use SparkR
 
-[SparkR](https://spark.apache.org/docs/latest/sparkr.html) is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation etc. SparkR also supports distributed machine learning using MLlib.
+[SparkR](https://spark.apache.org/docs/latest/sparkr.html) is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation etc. SparkR also supports distributed machine learning using MLlib.
 
 ### Create a SparkR DataFrame from a local R data.frame
 
-The simplest way to create a DataFrame is to convert a local R data.frame into a SparkDataFrame. In this example, we use `as.DataFrame` and pass in the local R dataframe to create the SparkDataFrame.
+The simplest way to create a DataFrame is to convert a local R data.frame into a SparkDataFrame. In this example, we use `as.DataFrame` and pass in the local R dataframe to create the SparkDataFrame.
 
 ```r
 df <- as.DataFrame(faithful)
@@ -86,7 +86,7 @@ head(df)
 SparkR supports operating on a variety of data sources through the SparkDataFrame interface. The general method for creating a DataFrame from a data source is `read.df`. This method takes the path for the file to load and the type of data source. SparkR supports reading CSV, JSON, text, and Parquet files natively.
 
 ```r
-df <- read.df('Files/<file name>.csv', 'csv', header="true")
+df <- read.df('Files/<file name>.csv', 'csv', header="true")
 head(df)
 ```
 
@@ -105,7 +105,7 @@ head(sql_df)
 
 ### Machine learning
 
-SparkR exposes most of MLLib algorithms. Under the hood, SparkR uses MLlib to train the model. To learn more about which machine learning algorithms are supported, you can visit the [documentation for SparkR and MLlib](https://spark.apache.org/docs/latest/sparkr.html).
+SparkR exposes most of MLLib algorithms. Under the hood, SparkR uses MLlib to train the model. To learn more about which machine learning algorithms are supported, you can visit the [documentation for SparkR and MLlib](https://spark.apache.org/docs/latest/sparkr.html).
 
 ```r
 # Create the DataFrame
@@ -121,9 +121,9 @@ summary(model)
 
 ## Use SparklyR
 
-[SparklyR](https://spark.rstudio.com/) is an R interface to Apache Spark. It provides a mechanism to interact with Spark using familiar R interfaces.
+[SparklyR](https://spark.rstudio.com/) is an R interface to Apache Spark. It provides a mechanism to interact with Spark using familiar R interfaces.
 
-To establish a `sparklyr` connection, you can use the following connection method in `spark_connect()`.
+To establish a `sparklyr` connection, you can use the following connection method in `spark_connect()`.
 
 :::image type="content" source="media/use-r-language/establish-sparklyr-connection.png" alt-text="Screenshot showing code for connection method." lightbox="media/use-r-language/establish-sparklyr-connection.png":::
 

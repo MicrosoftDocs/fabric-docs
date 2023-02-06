@@ -57,7 +57,7 @@ A machine learning run corresponds to a single execution of model code.
 Each run includes the following information:
 
 - **Source**: Name of the notebook that created the run.
-- **Registered Version**: Indicates if the run was saved as a machine learning model.
+- **Registered Version**: Indicates if the run was saved as a machine learning model.
 - **Start date**: Start time of a run.
 - **Status**: Progress of the run.
 - **Hyperparameters**: Hyperparameters are saved as key-value pairs. Both keys and values are strings.
@@ -77,14 +77,14 @@ You can visually compare and filter runs within an existing experiment. This all
 To compare runs, you can:
 
 1. Select an existing machine learning experiment which contains multiple runs.
-1. Select the **View** tab and then navigate to the **Run list** view. You can also select the option to **View run list** directly from the details view.
-1. You can customize the columns within the table by expanding the **Customize columns** pane. From here, you can select the properties, metrics, and hyperparameters that you would like to see.
-1. You can also expand the **Filter** pane to narrow your results based on the selected criteria.
+1. Select the **View** tab and then navigate to the**Run list** view. You can also select the option to **View run list** directly from the details view.
+1. You can customize the columns within the table by expanding the **Customize columns** pane. From here, you can select the properties, metrics, and hyperparameters that you would like to see.
+1. You can also expand the **Filter** pane to narrow your results based on the selected criteria.
 1. Last, you can select multiple runs to compare their results in the metrics comparison pane. From this pane, you can customize the charts by changing the chart title, visualization type, X-axis, Y-axis, and more.
 
 ### Compare runs using the MLflow API
 
-Data scientists can also use MLflow to query and search among runs within an experiment. You can explore additional MLflow APIs for searching, filtering, and comparing runs by visiting the [MLflow documentation](https://www.mlflow.org/docs/latest/python_api/mlflow.html).
+Data scientists can also use MLflow to query and search among runs within an experiment. You can explore additional MLflow APIs for searching, filtering, and comparing runs by visiting the [MLflow documentation](https://www.mlflow.org/docs/latest/python_api/mlflow.html).
 
 #### Get all runs
 
@@ -99,11 +99,11 @@ mlflow.search_runs(experiment_ids=[ "1234-5678-90AB-CDEFG"])
 ```
 
 > [!TIP]
-> You can provide multiple `experiment_ids` to search across multiple experiments. This is useful if you want to compare across runs within different experiments.
+> You can provide multiple `experiment_ids` to search across multiple experiments. This is useful if you want to compare across runs within different experiments.
 
 #### Order runs
 
-Use the `max_results` argument from `search_runs` to limit the number of runs returned. For instance, the following example returns the last run of the experiment.
+Use the `max_results` argument from `search_runs` to limit the number of runs returned. For instance, the following example returns the last run of the experiment.
 
 ```python
 mlflow.search_runs(experiment_ids=[ "1234-5678-90AB-CDEFG" ], max_results=1, order_by=["start_time DESC"])
