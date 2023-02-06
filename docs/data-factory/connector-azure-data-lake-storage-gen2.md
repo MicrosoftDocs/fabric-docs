@@ -64,10 +64,10 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 
 Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. This Azure Data Lake Storage connector supports the following authentication types.  
 
-[Key](connector-azure-data-lake-storage-gen2.md#key-authentication).<br>
-[OAuth2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication).<br>
-[Shared Access Signature](connector-azure-data-lake-storage-gen2.md#shared-access-signature-authentication).<br>
-[Service Principal](connector-azure-data-lake-storage-gen2.md#service-principal-authentication).
+[Key](connector-azure-data-lake-storage-gen2.md#key-authentication)<br>
+[OAuth2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication)<br>
+[Shared Access Signature](connector-azure-data-lake-storage-gen2.md#shared-access-signature-authentication)<br>
+[Service Principal](connector-azure-data-lake-storage-gen2.md#service-principal-authentication)
 
 :::image type="content" source="media/connectors-adlsgen2/authentication-method.png" alt-text="Screenshot showing that authentication method of data lake gen2":::
 
@@ -89,7 +89,7 @@ Open **Edit credentials**. You will see log in interface. Enter your account and
 
 * **SAS token**: Specify the shared access signature token to the Storage resources such as blob or container.  
 
-If you don’t have a SAS token, switch to **Shared access signature** in your Azure Blob Storage account interface. Under **Allowed resource types**, select **Service**, and then select **Generate SAS and connection string**. You can get your SAS token in the content shown up.
+If you don’t have a SAS token, switch to **Shared access signature** in your Azure Data Lake Gen2 Storage account interface. Under **Allowed resource types**, select **Container**, and then select **Generate SAS and connection string**. You can get your SAS token in the content shown up.
 The shared access signature is a URI that encompasses in its query parameters all the information necessary for authenticated access to a storage resource. To access storage resources with the shared access signature, the client only needs to pass in the shared access signature to the appropriate constructor or method.
 For more information about shared access signatures, see [Shared access signatures: Understand the shared access signature model](/azure/storage/common/storage-sas-overview).
 
@@ -135,7 +135,7 @@ The following connector properties in the table are supported in pipeline copy a
 |**Server**|Enter the server of Azure Data Lake Storage Gen2: `https://contosoadlscdm.dfs.core.windows.net`.|Yes||✓/✓|
 |**Full path**|Enter the full path of Azure Data Lake Storage Gen2: Your container name.
 |Yes||✓/✓|
-|**Authentication**|See Authentication |Yes|See Authentication|See Authentication|
+|**Authentication**|See Authentication |Yes|See [Authentication](#authentication)|See Authentication|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are Organizational, Privacy, Public|Yes||✓/✓|
 
 ### Authentication

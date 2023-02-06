@@ -1,5 +1,5 @@
 ---
-title: Copy data in Azure Data Lake Gen2 Storage
+title: How to configure Azure Data Lake Gen2 Storage in copy activity
 description: This article explains how to copy data using Azure Data Lake Gen2 Storage.
 author: jianleishen
 ms.author: jianleishen
@@ -8,22 +8,13 @@ ms.date: 12/27/2022
 ms.custom: template-how-to 
 ---
 
-# Copy data in Azure Data Lake Gen2 Storage
+# How to configure Azure Data Lake Gen2 Storage in copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Data Lake Gen2 Storage.
 
 ## Supported format
 
-Azure Data Lake Gen2 Storage supports the following file formats. Refer to each article for format-based settings.
-
-- [Avro format](/azure/data-factory/format-avro)
-- [Binary format](/azure/data-factory/format-binary)
-- [Delimited text format](/azure/data-factory/format-delimited-text)
-- [Excel format](/azure/data-factory/format-excel)
-- [JSON format](/azure/data-factory/format-json)
-- [ORC format](/azure/data-factory/format-orc)
-- [Parquet format](/en-us/azure/data-factory/format-parquet)
-- [XML format](/azure/data-factory/format-xml)
+Azure Data Lake Gen2 Storage supports the following file formats.
 
 ## Supported configuration
 
@@ -44,10 +35,11 @@ The following properties are supported for Azure Data Lake Gen2 Storage under **
 
 :::image type="content" source="./media/connectors-adlsgen2/source.png" alt-text="Screenshot showing source tab.":::
 
-The following three properties are **required**:
+The following properties are **required**:
 - **Data store type:** Select **External**.
 - **Connection:**  Select an Azure Data Lake Gen2 Storage connection from the connection list.
-- **File path:** Select **Browse** to choose the file that you want to copy, or fill in the path manually. 
+- **File path:** Select **Browse** to choose the file that you want to copy, or fill in the path manually.
+- **File settings**: Click on **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -75,14 +67,14 @@ Under **Advanced**, you can specify the following fields:
 
     When you're using this option, do not specify a file name. See more examples in [File list examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#file-list-examples).
 
-:::image type="content" source="./media/connector-azure-blob-storage/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
+    :::image type="content" source="./media/connector-azure-blob-storage/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
         
 - **Recursively**:  If this checkbox is selected, all files in the input folder and its subfolders will be processed recursively. If you unselect the checkbox, just the ones in the selected folder will be processed. This setting is disabled when a single file is selected.
 
 - **Delete files after completion**:  If this checkbox is selected, the binary files will be deleted from source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you will see some files have already been copied to the destination and deleted from source, while others are still remaining on source store.
 
-> [!NOTE]
-> This property is only valid in binary files copy scenario.
+    > [!NOTE]
+    > This property is only valid in binary files copy scenario.
 
 - **Max concurrent connections**: This property indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
@@ -92,19 +84,20 @@ The following properties are supported for Azure Data Lake Gen2 Storage under **
 
 :::image type="content" source="./media/connectors-adlsgen2/destination.png" alt-text="Screenshot showing destination tab.":::
 
-The following three properties are **required**:
+The following properties are **required**:
 
 - **Data store type**: Select **External**.
 - **Connection**: Select an Azure Data Lake Gen2 Storage connection from the connection list.
 - **File path**: Select **Browse** to choose the file that you want to copy or fill in the path manually.
+- **File settings**: Click on **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
 Under **Advanced**, you can specify the following fields:
 
-- **Copy behavior**: Defines the copy behavior when the source is files from a file-based data store. You can choose **Add dynamic content**, **None**, **Flatten hierarchy** ,**Merge files** or **Preserve hierarchy** from the drop-down list.
+- **Copy behavior**: Defines the copy behavior when the source is files from a file-based data store. You can choose **Add dynamic content**, **None**, **Flatten hierarchy**  or **Preserve hierarchy** from the drop-down list.
 
     - **Add dynamic content**: Open the **Add dynamic content** pane. This opens the expression builder where you can build expressions from supported system variables, activity output, functions, and user-specified variables or parameters. For information about the expression language, see [Expressions and functions](/azure/data-factory/control-flow-expression-language-functions).
+    - **None**: Choose this to not use any copy behavior.
     - **Flatten hierarchy**: All files from the source folder are in the first level of the destination folder. The destination files have autogenerated names.
-    - **Merge files**: Merges all files from the source folder to one file. If the file name is specified, the merged file name is the specified name. Otherwise, it's an autogenerated file name.
     - **Preserve hierarchy**: Preserves the file hierarchy in the target folder. The relative path of source file to source folder is identical to the relative path of target file to target folder.
 
     :::image type="content" source="./media/connector-azure-blob-storage/copy-behavior.png" alt-text="Screenshot showing copy behavior.":::
