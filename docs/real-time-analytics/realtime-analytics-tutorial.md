@@ -75,7 +75,7 @@ Within the SAS policy pane, take note of the following four fields. You may want
 | c |**Primary key** | The key associated with the SAS policy | Starts with *PGGIISb009*...
 | d | **Connection string-primary key** | In this field you only want to copy the event hub namespace, which can be found as part of the connection string. | *eventhubpm15910.servicebus.windows.net*
 
-### Create a data connection
+### Create cloud connection
 
 Now that your SAS policy is set up, you can configure a connection to this event hub.
 
@@ -98,13 +98,13 @@ Now that your SAS policy is set up, you can configure a connection to this event
     | Authentication method | Type of authentication | Basic
     | Username | Field reference **b** from the above [table](#gather-information-for-the-data-connection).  <br><br> The SAS policy name | *DocsTest*
     | Password | Field reference **c** from the above [table](#gather-information-for-the-data-connection). <br><br> The SAS primary key.
-    | Privacy level | Kusto doesn't use the Privacy level. You can use Organizational as a default value. | Organizational
+    | Privacy level | Privacy levels aren't used in this item. You can use Organizational as a default value. | Organizational
 
     <!--- :::image type="content" source="media/get-data-event-hub/fill-out-connection-portal.png" alt-text="Screenshot of filling out event hub information in the Azure portal."::: --->
 
 1. Select **Create**.
 
-## Create a Real-time Analytics-specific connection to your data connection
+## Connect the cloud connection to your Real-time Analytics database
 
 In the following step, you'll create a data connection in your  database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your Event Hubs instance and get data into the specified table using specified data mapping.
 
