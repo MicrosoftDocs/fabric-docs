@@ -21,23 +21,23 @@ In this notebook, we'll demonstrate how to create, train and evaluate uplift mod
 
     It's a family of causal inference technology that uses machine learning models to estimate the causal impact of some treatment on an individual's behavior.
 
-    - **Persuadables** will only respond positive to the treatment
-    - **Sleeping-dogs** have a strong negative response to the treatment
-    - **Lost Causes** will never reach the outcome even with the treatment
-    - **Sure Things** will always reach the outcome with or without the treatment
+  - **Persuadables** will only respond positive to the treatment
+  - **Sleeping-dogs** have a strong negative response to the treatment
+  - **Lost Causes** will never reach the outcome even with the treatment
+  - **Sure Things** will always reach the outcome with or without the treatment
 
-    The goal of uplift modelling is to identify the "persuadables", not waste efforts on "sure things" and "lost causes", and avoid bothering "sleeping dogs"
+  The goal of uplift modelling is to identify the "persuadables", not waste efforts on "sure things" and "lost causes", and avoid bothering "sleeping dogs"
 
 - How does uplift modelling work?
-    - **Meta Learner**: predicts the difference between an individual's behavior when there's a treatment and when there's no treatment
 
-    - **Uplift Tree**: a tree-based algorithm where the splitting criterion is based on differences in uplift
-
-    - **NN-based Model**：a neural network model that usually works with observational data
+  - **Meta Learner**: predicts the difference between an individual's behavior when there's a treatment and when there's no treatment
+  - **Uplift Tree**: a tree-based algorithm where the splitting criterion is based on differences in uplift
+  - **NN-based Model**：a neural network model that usually works with observational data
 
 - Where can uplift modelling work?
-    - Marketing: help to identify persuadables to apply a treatment such as a coupon or an online advertisement
-    - Medical Treatment: help to understand how a treatment can impact certain groups differently
+
+  - Marketing: help to identify persuadables to apply a treatment such as a coupon or an online advertisement
+  - Medical Treatment: help to understand how a treatment can impact certain groups differently
 
 ## Step 1: Load the data
 
@@ -92,10 +92,10 @@ import mlflow
 **Please add a Lakehouse to the notebook before running it.**
 
 - Dataset description: This dataset was created by The Criteo AI Lab. The dataset consists of 13M rows, each one representing a user with 12 features, a treatment indicator and 2 binary labels (visits and conversions).
-    - f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11: feature values (dense, float)
-    - treatment: treatment group (1 = treated, 0 = control) which indicates if a customer was targeted by advertising randomly
-    - conversion: whether a conversion occurred for this user (binary, label)
-    - visit: whether a visit occurred for this user (binary, label)
+  - f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11: feature values (dense, float)
+  - treatment: treatment group (1 = treated, 0 = control) which indicates if a customer was targeted by advertising randomly
+  - conversion: whether a conversion occurred for this user (binary, label)
+  - visit: whether a visit occurred for this user (binary, label)
 
 - Dataset homepage: [https://ailab.criteo.com/criteo-uplift-prediction-dataset/](https://ailab.criteo.com/criteo-uplift-prediction-dataset/)
 
@@ -335,7 +335,7 @@ test_ranked_pd_df = test_ranked_df.select(
 uplift_plot(test_ranked_pd_df)
 ```
 
-![criteo_uplift_curve.jpeg](https://mmlspark.blob.core.windows.net/graphics/notebooks/criteo_uplift_curve.jpeg)
+:::image type="content" source="media\uplift-modelling\criteo_uplift_curve.png" alt-text="Chart showing a normalized uplift model curve versus random treatment." lightbox="media\uplift-modelling\criteo_uplift_curve.png":::
 
 From the uplift curve in the previous example, we notice that the top 20% population ranked by our prediction have a large gain if they were given the treatment, which means they're the **persuadables**. Therefore, we can print the cutoff score at 20% percentage to identify the target customers.
 
