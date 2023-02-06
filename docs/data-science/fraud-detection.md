@@ -58,9 +58,9 @@ DATA_FILE = "creditcard.csv"  # data file name
 EXPERIMENT_NAME = "aisample-fraud"  # mlflow experiment name
 ```
 
-### Download dataset and upload to lakehouse
+### Download dataset and upload to Lakehouse
 
-**Please add a lakehouse to the notebook before running it.**
+**Please add a Lakehouse to the notebook before running it.**
 
 ```python
 if not IS_CUSTOM_DATA:
@@ -90,7 +90,7 @@ import time
 ts = time.time()
 ```
 
-### Read data from lakehouse
+### Read data from Lakehouse
 
 ```python
 df = (

@@ -54,8 +54,8 @@ The general approach is iterative. During each iteration, one of the factor matr
 
 | User-ID | Location | Age |
 |---|---|---|
-| 1 | "nyc | new york | usa" |  |
-| 2 | "stockton | california | usa" | 18.0 |
+| 1 | "nyc | new york | usa" |
+| 2 | "stockton | california | usa" |
 
 **By defining below parameters, we can apply this notebook on different datasets easily.**
 
@@ -81,9 +81,9 @@ RATINGS_FILE = "Ratings.csv"  # file containing the ratings information
 EXPERIMENT_NAME = "aisample-recommendation"  # mlflow experiment name
 ```
 
-### Download dataset and upload to lakehouse
+### Download dataset and upload to Lakehouse
 
-**Please add a lakehouse to the notebook before running it.**
+**Please add a Lakehouse to the notebook before running it.**
 
 ```python
 if not IS_CUSTOM_DATA:
@@ -114,7 +114,7 @@ import time
 ts = time.time()
 ```
 
-### Read data from lakehouse
+### Read data from Lakehouse
 
 ```python
 df_items = (
@@ -287,7 +287,7 @@ plt.show()
 
 ## Step 3. Model development and deploy
 
-So far, we've explored the dataset, added unique ids to our users and items, and plotted top items. Next, we'll train an Alternating Least Squares (ALS) recommender to give users personalized recommendations
+So far, we've explored the dataset, added unique IDs to our users and items, and plotted top items. Next, we'll train an Alternating Least Squares (ALS) recommender to give users personalized recommendations
 
 ### Prepare training and testing data
 
@@ -520,7 +520,7 @@ _, (rmse, mae, r2, var) = evaluate(model, test)
 
 ### Log and load model with MLflow
 
-Now we get a pretty good model, we can save it for later use. Here we use mlflow to log metrics/models, and load models back for prediction.
+Now we get a good model, we can save it for later use. Here we use MLflow to log metrics/models, and load models back for prediction.
 
 ```python
 # setup mlflow
