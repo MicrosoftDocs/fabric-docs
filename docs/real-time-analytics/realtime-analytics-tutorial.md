@@ -70,7 +70,7 @@ In the source tab, the **Source type** is autopopulated with **Event Hub**
 
 1. Fill out the remaining fields according to the following table:
   
-|**Setting** | **Suggested value** | **Field description**
+    |**Setting** | **Suggested value** | **Field description**
     |---|---|---|
     | Event hub data source | *rta-tutorial-eh-data-connection* | The name that identifies your event hub cloud connection. |
     | Data connection name | *rta-tutorial-db-rta-tutorial-eh-data-con* | This defines the name of the database-specific Real-time Analytics event hub Data Connection. The default is \<tablename>\<EventHubname>. |
@@ -97,11 +97,16 @@ In the **Continuous ingestion from Event Hub established** window, all steps wil
 
 Now that you've ingested your data, you're going to learn how to query it using the Quick query tool in your database editor.
 
+:::image type="content" source="media/realtime-analytics-tutorial/summary-tab.png" alt-text="Screenshot of the Summary tab.":::
+
 ## Query data
 
 Let's say you want to create a timechart of the average temperature over time for one of the devices.
 
 1. Select **Quick query** on the right-hand side of your database-editor.
+
+    :::image type="content" source="media/realtime-analytics-tutorial/quick-query.png" alt-text="Screenshot of the Quick query button.":::
+
 1. To find a device ID that starts with "x", paste the following query in your query editor and select **Run**.  
 
     ```kusto
@@ -130,11 +135,11 @@ Let's say you want to create a timechart of the average temperature over time fo
 
 Clean up the items created by navigating to the workspace in which they were created.
 
-1. In your workspace, hover over the notebook you want to delete, select the **More menu** > **Delete**.
+1. In your workspace, hover over the data connection you want to delete, select the **More menu** > **Delete**.
 
-   <!--  :::image type="content" source="media/jupyter-notebook/cleanup-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC Taxi notebook. The option titled Delete is highlighted."::: >
+   :::image type="content" source="media/realtime-analytics-tutorial/cleanup-resources.png" alt-text="Screenshot of workspace showing the dropdown menu of the Event Hub connection. The option titled Delete is highlighted.":::
 
-1. Select **Delete**. You can't recover your notebook once you delete it.
+1. Select **Delete**. You can't recover the connection once you delete it. You'll have to reestablish the connection.
 
 ## See also
 
