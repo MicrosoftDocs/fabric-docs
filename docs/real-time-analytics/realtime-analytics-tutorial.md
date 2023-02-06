@@ -165,6 +165,9 @@ Now that you've ingested your data, you're going to learn how to query it using 
 
 ## Query data
 
+Now we're going to use queries to do xyz which will show us abc. 
+Recall that in our scenario that  blah blah blah. you're going to use a series of queries to find out XX
+
 Let's say you're an importer working for WWI who wants to sell a variety of edible novelties such as chilly chocolates. The company previously didn't have to handle chilled items. Now, to meet food handling requirements, they must monitor the temperature in their chiller room and any of their trucks that have chiller sections.
 
 <!-- Let's say you want to create a timechart of the average temperature over time for one of the devices. -->
@@ -215,4 +218,4 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 ## See also
 
-<!-- TODO -->
+[Create reports and dashboards in Power BI](/power-bi/create-reports/).
