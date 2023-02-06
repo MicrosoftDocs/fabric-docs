@@ -10,6 +10,10 @@ ms.date: 01/27/2023
 
 # How to use Script activity (Preview)
 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 In this guide, you'll learn how to add a new Script activity, add a new connection, and configure script content.
 
 ## Prerequisites
