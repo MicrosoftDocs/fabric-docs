@@ -117,7 +117,7 @@ Follow these steps to create your pipeline.
 
 4. Once your connection is created successfully, you'll be brought back to the copy assistant page. Select **Refresh** to fetch your newly created connection. You can also choose an existing connection from the drop-down directly if you've already created one.
 
-   :::image type="content" source="media/transform-data/copy-assistant-refresh.png" alt-text="Screenshot showing how to select Refresh." lightbox"media/transform-data/copy-assistant-refresh.png":::
+   :::image type="content" source="media/transform-data/copy-assistant-refresh.png" alt-text="Screenshot showing how to select Refresh." lightbox="media/transform-data/copy-assistant-refresh.png":::
 
 5. Select the table(s) you want to move, and then select **Next**.
 
