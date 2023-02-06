@@ -1,5 +1,5 @@
 ---
-title: Create your first pipeline ​to copy data
+title: Create your first pipeline ​to copy data
 description: Steps to build and schedule a new data pipeline.
 ms.reviewer: jonburchel
 ms.author: xupzhou
@@ -33,15 +33,15 @@ Then Azure Blob Storage will be created and [moviesDB2.csv](https://github.com/k
 
 ## Create a data pipeline
 
-1. Switch to **Data factory** in the app.powerbi.com page.  
+1. Switch to **Data factory** in the app.powerbi.com page.  
 
    :::image type="content" source="media/create-first-pipeline/switch-data-factory.png" alt-text="Screenshot of menu in which Data factory option appears.":::
 
-2. Create a new workspace for this demo.  
+2. Create a new workspace for this demo.  
 
    :::image type="content" source="media/create-first-pipeline/create-new-workspace.png" alt-text="Screenshot of Workspace screen." lightbox="media/create-first-pipeline/create-new-workspace.png":::
 
-3. Select **New**, and then select **Data Pipeline**.  
+3. Select **New**, and then select **Data Pipeline**.  
 
    :::image type="content" source="media/create-first-pipeline/select-data-pipeline.png" alt-text="Screenshot of the New menu.":::
 
@@ -51,49 +51,49 @@ In this session, you'll start to build your first pipeline by using the followin
 
 ### Step 1: Start with copy assistant
 
-1. Select **Copy data** on the canvas to open the **copy assistant** tool to get started. Or Select **Use copy assistant** from the **Copy data** drop down list under the **Activities** tab on the ribbon.
+1. Select **Copy data** on the canvas to open the **copy assistant** tool to get started. Or Select **Use copy assistant** from the **Copy data** drop down list under the **Activities** tab on the ribbon.
 
    :::image type="content" source="media/create-first-pipeline/open-copy-assistant.png" alt-text="Screenshot of two options to select copy assistant." lightbox="media/create-first-pipeline/open-copy-assistant.png":::
 
 ### Step 2: Configure your source
 
-1. Select **Azure Blob Storage**, and then select **Next**.
+1. Select **Azure Blob Storage**, and then select **Next**.
 
    :::image type="content" source="media/create-first-pipeline/select-azure-blob-storage.png" alt-text="Screenshot showing where to choose Azure Blob Storage as data source." lightbox="media/create-first-pipeline/select-azure-blob-storage.png":::
 
-2. Create a connection to your data source by selecting **New connection**.
+2. Create a connection to your data source by selecting **New connection**.
 
    :::image type="content" source="media/create-first-pipeline/create-connection-to-data.png" alt-text="Screenshot showing where to select New connection." lightbox="media/create-first-pipeline/create-connection-to-data.png":::
 
-   1. After you select **New connection**, it will navigate to the connection creation page in a new browser. The domain of the Azure Blob is **blob.core.windows.net**, and you can choose **Key** authentication to connect. Then select **Create**.
+   1. After you select **New connection**, it will navigate to the connection creation page in a new browser. The domain of the Azure Blob is **blob.core.windows.net**, and you can choose **Key** authentication to connect. Then select **Create**.
 
       :::image type="content" source="media/create-first-pipeline/connection-creation-page.png" alt-text="Screenshot of the connection creation page.":::
 
-   1. Once your connection is created successfully, it will take you back to the previous page. Then select **Refresh** to fetch your connection that was just created and go to the next step.
+   1. Once your connection is created successfully, it will take you back to the previous page. Then select **Refresh** to fetch your connection that was just created and go to the next step.
 
       :::image type="content" source="media/create-first-pipeline/fetch-your-connection.png" alt-text="Screenshot showing where to select Refresh." lightbox="media/create-first-pipeline/fetch-your-connection.png":::
 
-3. Choose the file moviesDB2.csv in the source configuration to preview, and then select **Next**.
+3. Choose the file moviesDB2.csv in the source configuration to preview, and then select **Next**.
 
    :::image type="content" source="media/create-first-pipeline/choose-your-file.png" alt-text="Screenshot showing how to choose data source." lightbox="media/create-first-pipeline/choose-your-file.png":::
 
 ### Step 3: Configure your destination
 
-1. Select **Azure Blob Storage**, and then select **Next**.
+1. Select **Azure Blob Storage**, and then select **Next**.
 
    :::image type="content" source="media/create-first-pipeline/select-azure-blob-storage.png" alt-text="Screenshot showing where to select data destination." lightbox="media/create-first-pipeline/select-azure-blob-storage.png":::
 
-2. Use an existing Azure Blob connection from the connection drop-down list. The capabilities of **Test connection** and **Edit** are available to each selected connection.
+2. Use an existing Azure Blob connection from the connection drop-down list. The capabilities of **Test connection** and **Edit** are available to each selected connection.
 
    :::image type="content" source="media/create-first-pipeline/existing-blob-connection.png" alt-text="Screenshot showing how to select existing connection." lightbox="media/create-first-pipeline/existing-blob-connection.png":::
 
-3. Configure and map your source data to your destination. Then select **Next** to finish your destination configurations.
+3. Configure and map your source data to your destination. Then select **Next** to finish your destination configurations.
 
    :::image type="content" source="media/create-first-pipeline/configure-map-source.png" alt-text="Screenshot of last screen of mapping destination." lightbox="media/create-first-pipeline/configure-map-source.png":::
 
 ### Step 4: Review and create your copy activity
 
-1. Review your copy activity settings in the previous steps and select **OK** to finish. Or you can go back to the previous steps to edit your settings if needed in the tool.
+1. Review your copy activity settings in the previous steps and select **OK** to finish. Or you can go back to the previous steps to edit your settings if needed in the tool.
 
    :::image type="content" source="media/create-first-pipeline/review-copy-settings.png" alt-text="Screenshot showing where to review copy activity settings." lightbox="media/create-first-pipeline/review-copy-settings.png":::
 
@@ -103,7 +103,7 @@ In this session, you'll start to build your first pipeline by using the followin
 
 ## Run and schedule your data pipeline
 
-1. Switch to the **Home** tab and select **Run**. Then select **Save and Run**. You can now monitor the running process and check the results.
+1. Switch to the **Home** tab and select **Run**. Then select **Save and Run**. You can now monitor the running process and check the results.
 
    :::image type="content" source="media/create-first-pipeline/run-data-pipeline.png" alt-text="Screenshot showing steps to save and run a pipeline." lightbox="media/create-first-pipeline/run-data-pipeline.png":::
 
@@ -111,7 +111,7 @@ In this session, you'll start to build your first pipeline by using the followin
 
    :::image type="content" source="media/create-first-pipeline/run-pipeline-results.png" alt-text="Screenshot of copy activity details." lightbox="media/create-first-pipeline/run-pipeline-results.png":::
 
-2. You can also schedule the pipeline to run under a specific frequency as required. For example, the following image shows how to schedule the pipeline to run every 15 minutes.  
+2. You can also schedule the pipeline to run under a specific frequency as required. For example, the following image shows how to schedule the pipeline to run every 15 minutes.  
 
    :::image type="content" source="media/create-first-pipeline/data-pipeline-schedule.png" alt-text="Screenshot of the pipeline schedule configuration." lightbox="media/create-first-pipeline/data-pipeline-schedule.png":::
 

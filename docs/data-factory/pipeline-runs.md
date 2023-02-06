@@ -14,7 +14,7 @@ ms.date: 01/27/2023
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-A pipeline run occurs when a pipeline is executed. This means that the activities in your pipeline will run and be executed to completion. For example, running a pipeline with a **Copy data** activity will perform that action and copy your data. Each pipeline run will have its own unique pipeline run ID.
+A pipeline run occurs when a pipeline is executed. This means that the activities in your pipeline will run and be executed to completion. For example, running a pipeline with a **Copy data** activity will perform that action and copy your data. Each pipeline run will have its own unique pipeline run ID.
 
 :::image type="content" source="media/pipeline-runs/copy-data-activity-85.png" alt-text="Screenshot showing a copy data activity pipeline run.":::
 
@@ -22,11 +22,11 @@ A pipeline run can be triggered one of two ways, either on-demand or by setting 
 
 ## On-demand pipeline run
 
-To manually trigger a pipeline run, simply click **Run** found in the top banner of the **Home** tab.
+To manually trigger a pipeline run, simply click **Run** found in the top banner of the **Home** tab.
 
 :::image type="content" source="media/pipeline-runs/trigger-pipeline-run-86.png" alt-text="Screenshot showing where to select Run on the Home tab.":::
 
-You'll be prompted to save your changes before triggering the pipeline run. Click **Save and run** to continue.
+You'll be prompted to save your changes before triggering the pipeline run. Click **Save and run** to continue.
 
 :::image type="content" source="media/pipeline-runs/save-run-pipeline-87.png" alt-text="Screenshot showing the Save and run prompt.":::
 
@@ -38,13 +38,13 @@ Once an activity has completed in a run, you'll see a green check mark in the co
 
 :::image type="content" source="media/pipeline-runs/copy-activity-complete-89.png" alt-text="Screenshot showing where the green check mark is displayed.":::
 
-Once the entire pipeline has been executed and the output status updates to **Succeeded**, you'll have had a successful pipeline run!
+Once the entire pipeline has been executed and the output status updates to **Succeeded**, you'll have had a successful pipeline run!
 
 :::image type="content" source="media/pipeline-runs/output-status-90.png" alt-text="Screenshot showing where Succeeded status shows in Output tab.":::
 
 ## Scheduled pipeline runs
 
-When you schedule a pipeline run, you can choose the frequency that your pipeline runs. Click **Schedule** found in the top banner of the **Home** tab to see your options. By default, your pipeline won't be set on a schedule.
+When you schedule a pipeline run, you can choose the frequency that your pipeline runs. Click **Schedule** found in the top banner of the **Home** tab to see your options. By default, your pipeline won't be set on a schedule.
 
 :::image type="content" source="media/pipeline-runs/schedule-pipeline-run-91.png" alt-text="Screenshot showing where to select Schedule on the Home tab.":::
 
@@ -70,7 +70,7 @@ You also have the option to update the time zone. Use the drop-down list and fil
 
 :::image type="content" source="media/pipeline-runs/run-time-zone-97.png" alt-text="Screenshot showing where to select your preferred time zone.":::
 
-Once configured, click **Ok** to set your schedule.
+Once configured, click **Ok** to set your schedule.
 
 :::image type="content" source="media/pipeline-runs/set-schedule-configuration-98.png" alt-text="Screenshot showing where to click OK.":::
 
