@@ -51,7 +51,7 @@ To get started, you must complete the following prerequisites:
 
    :::image type="content" source="media/connectors-adlsgen2/connection-details.png" alt-text="Screenshot showing how to set new connection":::
 
-   **Server**: Specify the server of your Azure Data Lake Storage Gen2. Go to your Azure Blob Storage account interface, browse to **Endpoints** section and get your Data Lake Storage Gen2.
+   **Server**: Specify the server of your Azure Data Lake Storage Gen2. Go to your Azure Data Lake Storage Gen2 account interface, browse to **Endpoints** section and get your Data Lake Storage Gen2.
 
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
@@ -73,7 +73,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 #### Key authentication
 
-* **Account key**: Specify the account key of your Azure Blob Storage. Go to your Azure Blob Storage account interface, browse to **Access key** section and get your account key.
+* **Account key**: Specify the account key of your Azure Data Lake Storage Gen2. Go to your Azure Data Lake Storage Gen2 account interface, browse to **Access key** section and get your account key.
 
     :::image type="content" source="media/connectors-adlsgen2/key-authentication.png" alt-text="Screenshot showing that key authentication method of data lake gen2":::
 
@@ -87,7 +87,7 @@ Open **Edit credentials**. You will see log in interface. Enter your account and
 
 :::image type="content" source="media/connectors-adlsgen2/sas-authentication.png" alt-text="Screenshot showing that Shared Access Signature authentication method of data lake gen2":::
 
-* **SAS token**: Specify the shared access signature token to the Storage resources such as blob or container.  
+* **SAS token**: Specify the shared access signature token for your Azure Data Lake Storage Gen2 container.  
 
 If you don’t have a SAS token, switch to **Shared access signature** in your Azure Data Lake Gen2 Storage account interface. Under **Allowed resource types**, select **Container**, and then select **Generate SAS and connection string**. You can get your SAS token in the content shown up.
 The shared access signature is a URI that encompasses in its query parameters all the information necessary for authenticated access to a storage resource. To access storage resources with the shared access signature, the client only needs to pass in the shared access signature to the appropriate constructor or method.
@@ -108,9 +108,13 @@ To use service principal authentication, follow these steps:
       - Application ID
       - Application key
 
-1. Grant the service principal proper permission in Azure Blob Storage. For more information on the roles, see [Use the Azure portal to assign an Azure role for access to blob and queue data](/azure/storage/blobs/assign-azure-role-data-access?tabs=portal).
-      - **As source**, in **Access control (IAM)**, grant at least the **Storage Blob Data Reader** role.
-      - **As sink**, in **Access control (IAM)**, grant at least the **Storage Blob Data Contributor** role.
+1. Grant the service principal proper permission. See examples on how permission works in Data Lake Storage Gen2 from [Access control lists on files and directories](/azure/storage/blobs/data-lake-storage-access-control#access-control-lists-on-files-and-directories)
+      - **As source**, in Storage Explorer, grant at least **Execute** permission for ALL upstream folders and the file system, along with **Read** permission for the files to copy. Alternatively, in Access control (IAM), grant at least the **Storage Blob Data Reader** role.
+      - **As sink**, in Storage Explorer, grant at least **Execute** permission for ALL upstream folders and the file system, along with **Write** permission for the sink folder. Alternatively, in Access control (IAM), grant at least the **Storage Blob Data Contributor** role.
+    
+    > [!NOTE]
+    > If you use UI to author and the service principal is not set with "Storage Blob Data Reader/Contributor" role in IAM, when doing test connection or browsing/navigating folders, choose "Test connection to file path" or "Browse from specified path", and specify a path with **Read + Execute** permission to continue.
+
 
 ### Step 3: Specify the privacy level that you want to apply.
 
@@ -147,7 +151,7 @@ The following properties in the table are the supported authentication type.
 |**Key**||||✓/✓|
 |- Account key|The account key of the Azure Data Lake Gen2 Storage|Yes |||
 |**Shared Access Signature (SAS)**||||✓/✓|
-|- SAS token|The shared access signature URI to the Storage resources such as blob or container.|Yes |||
+|- SAS token|Specify the shared access signature token for your Azure Data Lake Storage Gen2 container.|Yes |||
 |**Service Principal**||||✓/✓|
 |- Tenant ID|The tenant information (domain name or tenant ID)|Yes |||
 |- Service Principal ID|The application's client ID.|Yes |||

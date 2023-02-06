@@ -43,15 +43,9 @@ The following properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, **List of files** as your file path type. See the configuration of each settings below：
+- **File path type**: You can choose **File path**, **Wildcard file path**, **List of files** as your file path type. See the configuration of each settings below：
 
     - **File path**: If you choose this type, the data can be copied from the given container or folder/file path specified previously.
-
-    - **Prefix**:  Prefix for the blob name under the given container configured to filter source blobs. Blobs whose names start with `container/this_prefix` are selected. It utilizes the service-side filter for Blob storage.
-
-        When you use prefix and choose to copy to file-based sink with preserving hierarchy, note the sub-path after the last "/" in prefix will be preserved. For example, you have source `container/folder/subfolder/file.txt`, and configure prefix as `folder/sub`, then the preserved file path is `subfolder/file.txt`.
-
-        :::image type="content" source="./media/connector-azure-blob-storage/prefix.png" alt-text="Screenshot showing prefix file path type.":::
 
     - **Wildcard file path**: Specify the folder or file path with wildcard characters under your given Blob container to filter your source folders or files.
 
@@ -142,9 +136,9 @@ To learn more information about copy activity in Azure Data Lake Gen2 Storage, s
 |**Data store type**|Your data store type.|**Workspace** or **External** |Yes|type|
 |**Connection** |Your connection to destination data store.|< your connection >|Yes|connection|
 |**File path**|The file path of your destination data.|File path of source |Yes |container <br> fileName|
-|**Copy behavior** |Defines behavior when copying files from one file system like storage to the other (e.g. from one blob storage to the other).|- None<br>- Add dynamic content<br>- Flatten hierarchy<br>- Preserve hierarchy|No |copyBehavior|
+|**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store.|- None<br>- Add dynamic content<br>- Flatten hierarchy<br>- Preserve hierarchy|No |copyBehavior|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
-|**Block size (MB)** |Specify the block size in MB when writing data to Azure Blob Storage. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
+|**Block size (MB)** |Specify the block size in MB when writing data to Azure Data Lake Storage Gen2. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
 |**Metadata**|Set custom metadata when copy to sink.| - `$$LASTMODIFIED`<br> - Expression<br>- Static value|No |metadata|
 
 ## Next Steps
