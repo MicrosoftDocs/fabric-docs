@@ -10,6 +10,10 @@ ms.date: 01/27/2023
 
 # Concept: Pipeline Runs
 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 A pipeline run occurs when a pipeline is executed. This means that the activities in your pipeline will run and be executed to completion. For example, running a pipeline with a **Copy data** activity will perform that action and copy your data. Each pipeline run will have its own unique pipeline run ID.
 
 :::image type="content" source="media/pipeline-runs/copy-data-activity-85.png" alt-text="Screenshot showing a copy data activity pipeline run.":::
