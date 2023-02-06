@@ -64,10 +64,10 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 
 Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. This Azure Data Lake Storage connector supports the following authentication types.  
 
-[Key](connector-azure-data-lake-gen2-storage.md#key-authentication).<br>
-[OAuth2](connector-azure-data-lake-gen2-storage.md#oauth2-authentication).<br>
-[Shared Access Signature](connector-azure-data-lake-gen2-storage.md#shared-access-signature-authentication).<br>
-[Service Principal](connector-azure-data-lake-gen2-storage.md#service-principal-authentication).
+[Key](connector-azure-data-lake-storage-gen2.md#key-authentication).<br>
+[OAuth2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication).<br>
+[Shared Access Signature](connector-azure-data-lake-storage-gen2.md#shared-access-signature-authentication).<br>
+[Service Principal](connector-azure-data-lake-storage-gen2.md#service-principal-authentication).
 
 :::image type="content" source="media/connectors-adlsgen2/authentication-method.png" alt-text="Screenshot showing that authentication method of data lake gen2":::
 
@@ -155,6 +155,4 @@ The following properties in the table are the supported authentication type.
 
 ## Next steps
 
-- [How to copy data using copy activity in Data pipeline](howto-copy-activity.md)
-
-- [How to create Azure Data Lake Gen2 Storage connection](connector-azure-data-lake-gen2-storage.md)
+- [How to create Azure Data Lake Gen2 Storage connection](connector-azure-data-lake-storage-gen2.md)

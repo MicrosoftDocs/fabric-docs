@@ -23,6 +23,6 @@ This Azure Data Lake Gen2 Storage connector is supported in Trident Project  –
 
 ## Next Steps
 
-[How to create Azure Data Lake Gen2 Storage connection](connector-azure-data-lake-gen2-storage.md)
+[How to create Azure Data Lake Gen2 Storage connection](connector-azure-data-lake-storage-gen2.md)
 
-[Copy data in Azure Data Lake Gen2 Storage](connector-azure-data-lake-gen2-storage-copy-activity.md)
+[Copy data in Azure Data Lake Gen2 Storage](connector-azure-data-lake-storage-gen2-copy-activity.md)

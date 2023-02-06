@@ -156,4 +156,4 @@ To learn more information about copy activity in Azure Data Lake Gen2 Storage, s
 
 ## Next Steps
 
-[How to create Azure Data Lake Gen2 Storage connection](connector-azure-data-lake-gen2-storage.md)
+[How to create Azure Data Lake Gen2 Storage connection](connector-azure-data-lake-storage-gen2.md)
