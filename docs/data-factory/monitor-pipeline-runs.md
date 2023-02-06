@@ -22,7 +22,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
    :::image type="content" lightbox="media/monitor-pipeline-runs/more-options-for-pipeline.png" source="media/monitor-pipeline-runs/more-options-for-pipeline.png" alt-text="Screenshot showing where to find more pipeline options.":::
 
-2. Select the three dots to find a list of options. Then select **View run history**. This action opens a fly-out on the right side of your screen with all your recent runs and run statuses.
+2. Select the three dots to find a list of options. Then select **View run history**. This action opens a fly-out on the right side of your screen with all your recent runs and run statuses.
 
    :::image type="content" lightbox="media/monitor-pipeline-runs/pipeline-recent-runs.png" source="media/monitor-pipeline-runs/pipeline-recent-runs.png" alt-text="Screenshot showing where to select View run history.":::
 
@@ -38,7 +38,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
    :::image type="content" lightbox="media/monitor-pipeline-runs/view-recent-run-additional-details.png" source="media/monitor-pipeline-runs/view-recent-run-additional-details.png" alt-text="Screenshot of recent run details.":::
 
-5. To find additional information on your pipeline runs **Input** and **Output**, hover over an activity row and select either the **Input** or **Output** icon. Details will be shown in a pop-up.
+5. To find additional information on your pipeline runs **Input** and **Output**, hover over an activity row and select either the **Input** or **Output** icon. Details will be shown in a pop-up.
 
    :::image type="content" lightbox="media/monitor-pipeline-runs/view-input-output-details.png" source="media/monitor-pipeline-runs/view-input-output-details.png" alt-text="Screenshot showing how input and output options appear.":::
 
@@ -60,7 +60,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
    :::image type="content" lightbox="media/monitor-pipeline-runs/error-details.png" source="media/monitor-pipeline-runs/error-details.png" alt-text="Screenshot of error details.":::
 
-8. Select **Update pipeline** to make changes to your pipeline. This selection will land you back in the pipeline canvas.
+8. Select **Update pipeline** to make changes to your pipeline. This selection will land you back in the pipeline canvas.
 
    :::image type="content" lightbox="media/monitor-pipeline-runs/update-pipeline-on-canvas.png" source="media/monitor-pipeline-runs/update-pipeline-on-canvas.png" alt-text="Screenshot showing where to select Update pipeline.":::
 
