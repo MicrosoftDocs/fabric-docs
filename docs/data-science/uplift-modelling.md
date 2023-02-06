@@ -101,39 +101,39 @@ import mlflow
 
 - Citation:
 
-    ```
-    @inproceedings{Diemert2018,
-    author = {{Diemert Eustache, Betlei Artem} and Renaudin, Christophe and Massih-Reza, Amini},
-    title={A Large Scale Benchmark for Uplift Modeling},
-    publisher = {ACM},
-    booktitle = {Proceedings of the AdKDD and TargetAd Workshop, KDD, London,United Kingdom, August, 20, 2018},
-    year = {2018}
-    }
-    ```
+   ```
+   @inproceedings{Diemert2018,
+   author = {{Diemert Eustache, Betlei Artem} and Renaudin, Christophe and Massih-Reza, Amini},
+   title={A Large Scale Benchmark for Uplift Modeling},
+   publisher = {ACM},
+   booktitle = {Proceedings of the AdKDD and TargetAd Workshop, KDD, London,United Kingdom, August, 20, 2018},
+   year = {2018}
+   }
+   ```
 
-```python
-if not IS_CUSTOM_DATA:
-    # Download demo data files into lakehouse if not exist
-    import os, requests
+   ```python
+   if not IS_CUSTOM_DATA:
+       # Download demo data files into lakehouse if not exist
+       import os, requests
 
-    remote_url = "http://go.criteo.net/criteo-research-uplift-v2.1.csv.gz"
-    download_file = "criteo-research-uplift-v2.1.csv.gz"
-    download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
+       remote_url = "http://go.criteo.net/criteo-research-uplift-v2.1.csv.gz"
+       download_file = "criteo-research-uplift-v2.1.csv.gz"
+       download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
 
-    if not os.path.exists("/lakehouse/default"):
-        raise FileNotFoundError(
-            "Default lakehouse not found, please add a lakehouse and restart the session."
-        )
-    os.makedirs(download_path, exist_ok=True)
-    if not os.path.exists(f"{download_path}/{DATA_FILE}"):
-        r = requests.get(f"{remote_url}", timeout=30)
-        with open(f"{download_path}/{download_file}", "wb") as f:
-            f.write(r.content)
-        with gzip.open(f"{download_path}/{download_file}", "rb") as fin:
-            with open(f"{download_path}/{DATA_FILE}", "wb") as fout:
-                fout.write(fin.read())
-    print("Downloaded demo data files into lakehouse.")
-```
+       if not os.path.exists("/lakehouse/default"):
+           raise FileNotFoundError(
+               "Default lakehouse not found, please add a lakehouse and restart the session."
+           )
+       os.makedirs(download_path, exist_ok=True)
+       if not os.path.exists(f"{download_path}/{DATA_FILE}"):
+           r = requests.get(f"{remote_url}", timeout=30)
+           with open(f"{download_path}/{download_file}", "wb") as f:
+               f.write(r.content)
+           with gzip.open(f"{download_path}/{download_file}", "rb") as fin:
+               with open(f"{download_path}/{DATA_FILE}", "wb") as fout:
+                   fout.write(fin.read())
+       print("Downloaded demo data files into lakehouse.")
+   ```
 
 ### Read data from Lakehouse
 
@@ -151,33 +151,33 @@ display(raw_df.limit(20))
 
 - **The overall rate of users that visit/convert**
 
-```python
-raw_df.select(
-    F.mean("visit").alias("Percentage of users that visit"),
-    F.mean("conversion").alias("Percentage of users that convert"),
-    (F.sum("conversion") / F.sum("visit")).alias("Percentage of visitors that convert"),
-).show()
-```
+   ```python
+   raw_df.select(
+       F.mean("visit").alias("Percentage of users that visit"),
+       F.mean("conversion").alias("Percentage of users that convert"),
+       (F.sum("conversion") / F.sum("visit")).alias("Percentage of visitors that convert"),
+   ).show()
+   ```
 
 - **The overall average treatment effect on visit**
 
-```python
-raw_df.groupby("treatment").agg(
-    F.mean("visit").alias("Mean of visit"),
-    F.sum("visit").alias("Sum of visit"),
-    F.count("visit").alias("Count"),
-).show()
-```
+   ```python
+   raw_df.groupby("treatment").agg(
+       F.mean("visit").alias("Mean of visit"),
+       F.sum("visit").alias("Sum of visit"),
+       F.count("visit").alias("Count"),
+   ).show()
+   ```
 
 - **The overall average treatment effect on conversion**
 
-```python
-raw_df.groupby("treatment").agg(
-    F.mean("conversion").alias("Mean of conversion"),
-    F.sum("conversion").alias("Sum of conversion"),
-    F.count("conversion").alias("Count"),
-).show()
-```
+   ```python
+   raw_df.groupby("treatment").agg(
+       F.mean("conversion").alias("Mean of conversion"),
+       F.sum("conversion").alias("Sum of conversion"),
+       F.count("conversion").alias("Count"),
+   ).show()
+   ```
 
 ### Split train-test dataset
 
