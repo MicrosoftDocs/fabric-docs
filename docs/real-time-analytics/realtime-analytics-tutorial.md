@@ -11,9 +11,11 @@ ms.date: 02/06/2023
 
 # Tutorial: Real-time Analytics tutorial
 
-Real-time Analytics is a portfolio of capabilities that provides an end-to-end solution for real-time analytics across Trident workloads. It supports many scenarios, such as IoT analytics, log analytics, manufacturing operations, and more. It can also query different data sources and data formats, whether it's unstructured, semi-structured, structured data, as small as 1GB or even as large as 1PB. Real-time Analytics provides high velocity, low latency data analysis, with automatic partitioning and indexing of your data.
+Real-time Analytics is a portfolio of capabilities that provides an end-to-end analytics solution across Trident experiences. Real-time Analytics provides high velocity, low latency data analysis. It's optimized for time-series data, with automatic partitioning and indexing of your data. Use Real-time Analytics to explore data from different sources and in a variety of data formats.  whether it's unstructured, semi-structured, or structured data,
 
-This tutorial uses the [Wide World Importers (WWI) sample database](learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) to run you through an automotive scenario to show you an end to end run of Real-time Analytics.
+You can keep using RTA as your business grows, as it is high performing with datasets as small as 1GB or even as large as 1PB. 
+
+You can use Real-time Analytics in a variety of scenarios, such as IoT analytics, log analytics, manufacturing operations, and more. In this tutorial, you'll stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16). Then you'll use the advanced data analysis capabilities of Kusto Query language to query the telemetry data and find out XXX TODO - add based on scenario. Finally, these insights will be displayed in a PowerBI report for communicating with others. 
 
 In this tutorial, you learn how to:
 
