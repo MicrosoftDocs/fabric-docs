@@ -11,9 +11,11 @@ ms.date: 02/06/2023
 
 # Tutorial: Real-time Analytics tutorial
 
-Real-time Analytics is a portfolio of capabilities that provides an end-to-end solution for real-time analytics across Trident workloads. It supports many scenarios, such as IoT analytics, log analytics, manufacturing operations, and more. It can also query different data sources and data formats, whether it's unstructured, semi-structured, structured data, as small as 1GB or even as large as 1PB. Real-time Analytics provides high velocity, low latency data analysis, with automatic partitioning and indexing of your data.
+Real-time Analytics is a portfolio of capabilities that provides an end-to-end analytics solution across Trident experiences. Real-time Analytics provides high velocity, low latency data analysis. It's optimized for time-series data, with automatic partitioning and indexing of your data. Use Real-time Analytics to explore data from different sources and in a variety of data formats.  whether it's unstructured, semi-structured, or structured data,
 
-This tutorial uses the [Wide World Importers (WWI) sample database](learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) to run you through an automotive scenario to show you an end to end run of Real-time Analytics.
+You can keep using RTA as your business grows, as it is high performing with datasets as small as 1GB or even as large as 1PB. 
+
+You can use Real-time Analytics in a variety of scenarios, such as IoT analytics, log analytics, manufacturing operations, and more. In this tutorial, you'll stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16). Then you'll use the advanced data analysis capabilities of Kusto Query language to query the telemetry data and find out XXX TODO - add based on scenario. Finally, these insights will be displayed in a PowerBI report for communicating with others. 
 
 In this tutorial, you learn how to:
 
@@ -75,7 +77,7 @@ Within the SAS policy pane, take note of the following four fields. You may want
 | c |**Primary key** | The key associated with the SAS policy | Starts with *PGGIISb009*...
 | d | **Connection string-primary key** | In this field you only want to copy the event hub namespace, which can be found as part of the connection string. | *eventhubpm15910.servicebus.windows.net*
 
-### Create a data connection
+### Create cloud connection
 
 Now that your SAS policy is set up, you can configure a connection to this event hub.
 
@@ -98,13 +100,13 @@ Now that your SAS policy is set up, you can configure a connection to this event
     | Authentication method | Type of authentication | Basic
     | Username | Field reference **b** from the above [table](#gather-information-for-the-data-connection).  <br><br> The SAS policy name | *DocsTest*
     | Password | Field reference **c** from the above [table](#gather-information-for-the-data-connection). <br><br> The SAS primary key.
-    | Privacy level | Kusto doesn't use the Privacy level. You can use Organizational as a default value. | Organizational
+    | Privacy level | Privacy levels aren't used in this item. You can use Organizational as a default value. | Organizational
 
     <!--- :::image type="content" source="media/get-data-event-hub/fill-out-connection-portal.png" alt-text="Screenshot of filling out event hub information in the Azure portal."::: --->
 
 1. Select **Create**.
 
-## Create a Real-time Analytics-specific connection to your data connection
+## Connect the cloud connection to your Real-time Analytics database
 
 In the following step, you'll create a data connection in your  database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your Event Hubs instance and get data into the specified table using specified data mapping.
 
