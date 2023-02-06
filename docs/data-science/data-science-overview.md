@@ -11,7 +11,7 @@ ms.date: 02/10/2023
 # Data science overview
 
 > [!IMPORTANT]
-> Project [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 Users in [!INCLUDE [product-name](../includes/product-name.md)] will have access to a Data Science Home page, from which they can discover and access a variety of relevant resources. For example, you can start creating machine learning Experiments, Models and Notebooks. You can also import existing Notebooks on the Data Science Home page.
 
@@ -65,7 +65,7 @@ Machine learning models can be trained with help from various algorithms and lib
 
 In addition to the above, popular libraries such as Scikit Learn can also be used to develop models.  
 
-Model training can be tracked using MLFlow experiments. [!INCLUDE [product-name](../includes/product-name.md)] will have a native MlFlow endpoint that users can interact with to log experiments and models. Learn more about using MLFlow for tracking experiments and managing models in the following sections.
+Model training can be tracked using MLflow experiments. [!INCLUDE [product-name](../includes/product-name.md)] will have a native MlFlow endpoint that users can interact with to log experiments and models. Learn more about using MLflow for tracking experiments and managing models in the following sections.
 
 ## SynapseML
 
@@ -93,9 +93,9 @@ You can learn more about SemPy in [!INCLUDE [product-name](../includes/product-n
 ## Next steps
 
 - Get started with end-to-end data science samples (See How to use AI samples section)
-- Learn more about data preparation and cleansing with Data Wrangler (See Data Wrangler section)
+- Learn more about data preparation and cleansing with Data Wrangler (See [Data Wrangler](data-wrangler.md) section)
 - Learn more about tracking experiments (See [Machine learning experiment section](machine-learning-experiment.md))
-- Learn more about managing models (See Machine learning model section)
-- Learn more about batch scoring with Predict (See model scoring section)
+- Learn more about managing models (See [Machine learning model](machine-learning-model.md) section)
+- Learn more about batch scoring with Predict (See [model scoring](model-scoring-predict.md) section)
 - Learn more about exploring and validating data with SemPy (See SemPy section)
 - Learn more about connecting to Power BI Datasets with SemPy (See PBI Connector section)
