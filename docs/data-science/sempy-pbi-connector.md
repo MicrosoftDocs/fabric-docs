@@ -77,7 +77,7 @@ Learn more about [Data Cleaning with Functional Dependencies](https://enyaprod.a
 
 ### Support your findings with visualizations
 
-SemPy provides many out of the box visuals to showcase and share your insights – the following code will take a look at a regression plot.
+SemPy provides many out of the box visuals to showcase and share your insights; the following code will take a look at a regression plot.
 
 `sdf.plot.regression(target_column='name of column')sdf.plot.regression(target_column='name of column')`
 

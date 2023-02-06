@@ -145,15 +145,15 @@ torch.save(model.state_dict(), model.name())
 Now, we'll start an MLflow run and track the results within our machine learning experiment.
 
 ```python
-with mlflow.start_run() as run:
-    print("log pytorch model:")
-    mlflow.pytorch.log_model(
-        model, "pytorch-model", registered_model_name="sample-pytorch"
-    )
+with mlflow.start_run() as run:
+    print("log pytorch model:")
+    mlflow.pytorch.log_model(
+        model, "pytorch-model", registered_model_name="sample-pytorch"
+    )
 
-    model_uri = "runs:/{}/pytorch-model".format(run.info.run_id)
-    print("Model saved in run %s" % run.info.run_id)
-    print(f"Model URI: {model_uri}")
+    model_uri = "runs:/{}/pytorch-model".format(run.info.run_id)
+    print("Model saved in run %s" % run.info.run_id)
+    print(f"Model URI: {model_uri}")
 ```
 
 This will create a run with the specified parameters and log the run within the sample-pytorch experiment. This snippet will also create a new model called sample-pytorch.  
@@ -250,22 +250,22 @@ Once the model is saved, it can also be loaded for inferencing. To do this, we'l
 
 ```python
 # Inference with loading the logged model
-from synapse.ml.predict import MLflowTransformer
+from synapse.ml.predict import MLflowTransformer
 
-spark.conf.set("spark.synapse.ml.predict.enabled", "true")
+spark.conf.set("spark.synapse.ml.predict.enabled", "true")
 
-model = MLflowTransformer(
-    inputCols=["x"],
-    outputCol="prediction",
-    modelName="sample-sklearn",
-    modelVersion=1,
+model = MLflowTransformer(
+    inputCols=["x"],
+    outputCol="prediction",
+    modelName="sample-sklearn",
+    modelVersion=1,
 )
 
-test_spark = spark.createDataFrame(
-    data=np.array([-2, -1, 0, 1, 2, 1]).reshape(-1, 1).tolist(), schema=["x"]
+test_spark = spark.createDataFrame(
+    data=np.array([-2, -1, 0, 1, 2, 1]).reshape(-1, 1).tolist(), schema=["x"]
 )
 
-batch_predictions = model.transform(test_spark)
+batch_predictions = model.transform(test_spark)
 
 batch_predictions.show()
 ```
