@@ -10,6 +10,10 @@ ms.date: 01/27/2023
 
 # Tutorial: Move data into Lakehouse via copy assistant
 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 This Tutorial describes the steps to move data into Lakehouse.
 
 Two approaches are provided using the copy assistant:

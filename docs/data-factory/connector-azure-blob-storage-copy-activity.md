@@ -10,7 +10,11 @@ ms.custom: template-how-to
 
 # How to configure Azure Blob Storage in copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Blob Storage.
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
+This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Blob Storage.
 
 ## Supported format
 
@@ -139,15 +143,15 @@ The following tables contain more information about the copy activity in Azure B
 
 ### Destination information
 
-|Name |Description |Value|Required |JSON script property |
+|Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**Workspace** or **External** |Yes|type|
-|**Connection** |Your connection to the destination data store.|\<your connection>|Yes|connection|
-|**File path**|The file path of your destination data.|File path of the source |Yes |container <br> fileName|
-|**Copy behavior** |Defines the behavior when copying files from one file system, like storage, to the other (for example, from one blob storage to another).|• None<br>• Add dynamic content<br>• Flatten hierarchy<br>• Preserve hierarchy|No |copyBehavior|
-|**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
-|**Block size (MB)** |Specify the block size in MB when writing data to Azure Blob Storage. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
-|**Metadata**|Set the custom metadata when copy to sink.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
+|**Data store type**|Your data store type.|**Workspace** or **External** |Yes|type|
+|**Connection** |Your connection to the destination data store.|\<your connection>|Yes|connection|
+|**File path**|The file path of your destination data.|File path of the source |Yes |container <br> fileName|
+|**Copy behavior** |Defines the behavior when copying files from one file system, like storage, to the other (for example, from one blob storage to another).|• None<br>• Add dynamic content<br>• Flatten hierarchy<br>• Preserve hierarchy|No |copyBehavior|
+|**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
+|**Block size (MB)** |Specify the block size in MB when writing data to Azure Blob Storage. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
+|**Metadata**|Set the custom metadata when copy to sink.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
 ## Next steps
 
