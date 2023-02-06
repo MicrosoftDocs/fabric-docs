@@ -187,9 +187,6 @@ for batch_idx, (x, target) in enumerate(test_loader):
 
 ## Train models with scikit-learn
 
-> [!IMPORTANT]
-> Project [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
-
 Scikit-learn ([scikit-learn.org](https://scikit-learn.org)) is a popular, open-source machine learning framework. It's frequently used for supervised and unsupervised learning. It also provides various tools for model fitting, data preprocessing, model selection, model evaluation, and more.  
 
 In this section, we'll go through an example of how you can train and track the iterations of your Scikit-Learn model.
