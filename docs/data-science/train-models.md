@@ -21,7 +21,9 @@ PyTorch ([https://pytorch.org](https://pytorch.org/)) is a machine learning fram
 
 To get started with PyTorch, you must ensure that it's installed within your notebook. You can install or upgrade the version of PyTorch on your environment using the following command:
 
-`%pip install torch`
+```python
+%pip install torch
+```
 
 ### Set up the machine learning experiment
 
@@ -272,4 +274,5 @@ batch_predictions.show()
 
 ## Next Steps
 
-- Learn about machine learning models and experiments: [Data Science - Concept Documents.docx](https://microsoft.sharepoint.com/:w:/t/TridentOnboardingCoreTeam/EYN76fEOt2pKkzVUS9eXp2UBUop2DNku_cDXHdX6U7CeaA?e=KFgC0X).
+- Learn about [machine learning models](machine-learning-model.md).
+- Learn about [machine learning experiments](machine-learning-experiment.md).

@@ -50,7 +50,9 @@ When doing interactive data analysis or machine learning, you might try newer pa
 
 For example, users can install an R library from CRAN and CRAN snapshots. In the following example, **Highcharter** is a popular package for R visualizations. I can install this package on all nodes within my Apache Spark pool using the following command:
 
-`install.packages("highcharter", repos = "https://cran.microsoft.com/snapshot/2021-07-16/") `
+```r
+install.packages("highcharter", repos = "https://cran.microsoft.com/snapshot/2021-07-16/")
+```
 
 ## Notebook Utilities
 

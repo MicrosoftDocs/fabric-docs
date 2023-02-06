@@ -20,14 +20,14 @@ items:
       href: use-ai-samples.md
   - name: Machine learning
     items:
-    - name: Machine learning experiment
-      href: machine-learning-experiment.md
     - name: Machine learning model
       href: machine-learning-model.md
+    - name: Machine learning experiment
+      href: machine-learning-experiment.md
+    - name: Train models
+      href: train-models.md  
     - name: Model scoring with PREDICT
       href: model-scoring-predict.md
-    - name: Train models
-      href: train-models.md
   - name: Use R
     items:
     - name: How to use the R language
