@@ -93,7 +93,7 @@ Select **Anonymous** under **Authentication method**.
 
 #### OAuth2 authentication
 
-Open **Edit credentials**. You will see the sign in interface. Enter your account and password to sign in your account. After signed in, you will come back to the **New connection** page. 
+Open **Edit credentials**. You will see the sign-in interface. Enter your account and password to sign in your account. After signed in, you will come back to the **New connection** page. 
 
 :::image type="content" source="./media/connector-azure-blob-storage/authentication-oauth2.png" alt-text="Screenshot showing OAuth2 authentication method.":::
 
