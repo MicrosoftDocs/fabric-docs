@@ -28,15 +28,17 @@ items:
       href: script-activity.md
   - name: Dataflows
     items:
-    - name: Connectors
+    - name: Data source management
+      href: data-source-management.md
+  - name: Connectors
+    items:
+    - name: Connector overview
       href: connector-overview.md
-    - name: Azure Blob Storage connector
+    - name: Azure Blob Storage
       items:
       - name: Overview
         href: connector-azure-blob-storage-overview.md
-      - name: Create an Azure Blob Storage connection
+      - name: Set up connection
         href: connector-azure-blob-storage.md
-      - name: Configure Azure Blob Storage in copy activity
+      - name: Configure in copy activity
         href: connector-azure-blob-storage-copy-activity.md
-    - name: Data source management
-      href: data-source-management.md

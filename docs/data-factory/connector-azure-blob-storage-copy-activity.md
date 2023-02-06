@@ -132,7 +132,7 @@ The following tables contain more information about the copy activity in Azure B
 |**Data store type**|Your data store type.| **Workspace** or **External**|Yes|type|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**File path** | The file path of your source data.|\<file path of your source>|Yes |container <br> fileName|
-|**File path type** |The file path type that you want to use.|&#8226; File path <br>&#8226; Prefix<br>&#8226; Wildcard folder path, Wildcard file name<br>&#8226; List of files|No |<br>&#8226; prefix<br>&#8226; wildcardFolderPath, wildcardFileName<br>&#8226; fileListPath|
+|**File path type** |The file path type that you want to use.|• File path <br>• Prefix<br>• Wildcard folder path, Wildcard file name<br>• List of files|No |<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
 |**Recursively** |Process all files in the input folder and its subfolders recursively or just the ones in the selected folder. This setting is disabled when a single file is selected.|Selected or unselect|No |recursive|
 |**Delete files after completion** |The files in the source data store will be deleted right after being moved to the destination store. The file deletion is per file, so when a copy activity fails, you'll notice that some files have already been copied to the destination and deleted from source, while others are still in the source store.|Selected or unselect|No |deleteFilesAfterCompletion|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| \<max concurrent connections\>|No |maxConcurrentConnections|
@@ -144,10 +144,10 @@ The following tables contain more information about the copy activity in Azure B
 |**Data store type**|Your data store type.|**Workspace** or **External** |Yes|type|
 |**Connection** |Your connection to the destination data store.|\<your connection>|Yes|connection|
 |**File path**|The file path of your destination data.|File path of the source |Yes |container <br> fileName|
-|**Copy behavior** |Defines the behavior when copying files from one file system, like storage, to the other (for example, from one blob storage to another).|&#8226; None<br>&#8226; Add dynamic content<br>&#8226; Flatten hierarchy<br>&#8226; Preserve hierarchy|No |copyBehavior|
+|**Copy behavior** |Defines the behavior when copying files from one file system, like storage, to the other (for example, from one blob storage to another).|• None<br>• Add dynamic content<br>• Flatten hierarchy<br>• Preserve hierarchy|No |copyBehavior|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 |**Block size (MB)** |Specify the block size in MB when writing data to Azure Blob Storage. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
-|**Metadata**|Set the custom metadata when copy to sink.| &#8226; `$$LASTMODIFIED`<br>&#8226; Expression<br>&#8226; Static value|No |metadata|
+|**Metadata**|Set the custom metadata when copy to sink.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
 ## Next steps
 
