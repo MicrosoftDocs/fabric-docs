@@ -18,9 +18,9 @@ This Azure Date Lake Storage Gen2 connector supports the following authenticatio
 
 |Authentication type |Copy  |Dataflow Gen2 |
 |:---|:---|:---|
-|Key| √| √|
+|Key| √| |
 |OAuth2| √||
-|Shared Access Signature (SAS)| √| √|
+|Shared Access Signature (SAS)| √| |
 |Service Principal|√||
 
 ## Prerequisites
@@ -134,13 +134,13 @@ The following connector properties in the table are supported in pipeline copy a
 
 |Name|Description|Required|Property|Copy/Dataflow gen2|
 |:---|:---|:---|:---|:---|
-|**Connection name**|A name for your connection.|Yes||✓/✓|
-|**Connection type**|Select a type for your connection.|Yes||✓/✓|
-|**Server**|Enter the server of Azure Data Lake Storage Gen2: `https://contosoadlscdm.dfs.core.windows.net`.|Yes||✓/✓|
+|**Connection name**|A name for your connection.|Yes||✓/|
+|**Connection type**|Select a type for your connection.|Yes||✓/|
+|**Server**|Enter the server of Azure Data Lake Storage Gen2: `https://contosoadlscdm.dfs.core.windows.net`.|Yes||✓/|
 |**Full path**|Enter the full path of Azure Data Lake Storage Gen2: Your container name.
-|Yes||✓/✓|
+|Yes||✓/|
 |**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
-|**Privacy Level**|The privacy level that you want to apply. Allowed values are Organizational, Privacy, Public|Yes||✓/✓|
+|**Privacy Level**|The privacy level that you want to apply. Allowed values are Organizational, Privacy, Public|Yes||✓/|
 
 ### Authentication
 
@@ -148,11 +148,11 @@ The following properties in the table are the supported authentication type.
 
 |Name|Description|Required|Property|Copy/Dataflow gen2|
 |:---|:---|:---|:---|:---|
-|**Key**||||✓/✓|
+|**Key**||||✓/|
 |- Account key|The account key of the Azure Data Lake Storage Gen2 |Yes |||
-|**Shared Access Signature (SAS)**||||✓/✓|
+|**Shared Access Signature (SAS)**||||✓/|
 |- SAS token|Specify the shared access signature token for your Azure Data Lake Storage Gen2 container.|Yes |||
-|**Service Principal**||||✓/✓|
+|**Service Principal**||||✓/|
 |- Tenant ID|The tenant information (domain name or tenant ID)|Yes |||
 |- Service Principal ID|The application's client ID.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
