@@ -36,7 +36,7 @@ For the configuration of each tab under copy activity, see the following section
 
 ### General
 
-For **General** tab configuration, see [General](../placeholder-update-later.md).
+For **General** tab configuration, see General
 
 ### Source
 
@@ -75,7 +75,7 @@ Under **Advanced**, you can specify the following fields:
 
     When you're using this option, do not specify a file name. See more examples in [File list examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#file-list-examples).
 
-        :::image type="content" source="./media/connector-azure-blob-storage/path-to-file-list.png" alt-text="Screenshot showing path to file list."::: 
+:::image type="content" source="./media/connector-azure-blob-storage/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
         
 - **Recursively**:  If this checkbox is selected, all files in the input folder and its subfolders will be processed recursively. If you unselect the checkbox, just the ones in the selected folder will be processed. This setting is disabled when a single file is selected.
 
@@ -90,7 +90,7 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for Azure Data Lake Gen2 Storage under **Destination** tab of a copy activity.
 
-    :::image type="content" source="./media/connectors-adlsgen2/destination.png" alt-text="Screenshot showing destination tab.":::
+:::image type="content" source="./media/connectors-adlsgen2/destination.png" alt-text="Screenshot showing destination tab.":::
 
 The following three properties are **required**:
 
@@ -118,17 +118,13 @@ Under **Advanced**, you can specify the following fields:
     Allowed data values are:
     <br>\- `$$LASTMODIFIED`: a reserved variable indicates to store the source files' last modified time. Apply to file-based source with binary format only.
     <br>\- **Expression**
-    <br>\- **Static value** 
+    <br>\- **Static value**
 
     :::image type="content" source="./media/connector-azure-blob-storage/metadata.png" alt-text="Screenshot showing metadata.":::
 
-- **Quote all text**:
-- **File extension**: The file extension used to name the output files. It will be ignored when file name is configured in the sink dataset.
-- **Max rows per file**: When writing data into a folder, you can choose to write to multiple files and specify the max rows per file.
-
 ### Settings
 
-For **Settings** tab configuration, see [Settings](../placeholder-update-later.md).
+For **Settings** tab configuration, see Settings
 
 ## Table summary
 
@@ -158,9 +154,6 @@ To learn more information about copy activity in Azure Data Lake Gen2 Storage, s
 |**Block size (MB)** |Specify the block size in MB when writing data to Azure Blob Storage. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
 |**Metadata**|Set custom metadata when copy to sink.| - `$$LASTMODIFIED`<br> - Expression<br>- Static value|No |metadata|
 
-
 ## Next Steps
-
-[How to copy data using Copy activity in Data pipeline](howto-copy-activity.md)
 
 [How to create Azure Data Lake Gen2 Storage connection](connector-azure-data-lake-gen2-storage.md)

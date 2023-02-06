@@ -47,20 +47,20 @@ To get started, you must complete the following prerequisites:
 
 ## Setup your connection
 
-### Step1: Specify the new connection name, type, server and full path.  
+### Step 1: Specify the new connection name, type, server and full path.  
 
    :::image type="content" source="media/connectors-adlsgen2/connection-details.png" alt-text="Screenshot showing how to set new connection":::
 
-   **Server**: Specify the server of your Azure Data Lake Storage Gen2. Go to your Azure Blob Storage account interface, browse to **Endpoints** section and get your Data Lake Storage.
+   **Server**: Specify the server of your Azure Data Lake Storage Gen2. Go to your Azure Blob Storage account interface, browse to **Endpoints** section and get your Data Lake Storage Gen2.
 
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
 **Connection name**: Specify a name for your connection.<br>
 **Connection type**: Select a type for your connection.<br>
-**Server**: Enter the server of Azure Data Lake Storage : `https://lhgen2test0907.z31.dfs.storage.azure.net`.<br>
-**Full path**: Enter the full path of Azure Data Lake Storage: Your container name.
+**Server**: Enter the server of Azure Data Lake Storage Gen2: `https://contosoadlscdm.dfs.core.windows.net`.<br>
+**Full path**: Enter the full path of Azure Data Lake Storage Gen2: Your container name.
 
-### Step2:  Select and set your authentication
+### Step 2:  Select and set your authentication
 
 Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. This Azure Data Lake Storage connector supports the following authentication types.  
 
@@ -69,7 +69,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 [Shared Access Signature](connector-azure-data-lake-gen2-storage.md#shared-access-signature-authentication).<br>
 [Service Principal](connector-azure-data-lake-gen2-storage.md#service-principal-authentication).
 
-    :::image type="content" source="media/connectors-adlsgen2/authentication-method.png" alt-text="Screenshot showing that authentication method of data lake gen2":::
+:::image type="content" source="media/connectors-adlsgen2/authentication-method.png" alt-text="Screenshot showing that authentication method of data lake gen2":::
 
 #### Key authentication
 
@@ -79,13 +79,13 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 #### OAuth2 authentication
 
-    :::image type="content" source="media/connectors-adlsgen2/oauth2-authentication.png" alt-text="Screenshot showing that OAuth2 authentication method of data lake gen2":::
+:::image type="content" source="media/connectors-adlsgen2/oauth2-authentication.png" alt-text="Screenshot showing that OAuth2 authentication method of data lake gen2":::
 
 Open **Edit credentials**. You will see log in interface. Enter your account and password to log in your account. After logged in, you will come back to the **New connection** page.
 
 #### Shared Access Signature authentication
 
-    :::image type="content" source="media/connectors-adlsgen2/sas-authentication.png" alt-text="Screenshot showing that Shared Access Signature authentication method of data lake gen2":::
+:::image type="content" source="media/connectors-adlsgen2/sas-authentication.png" alt-text="Screenshot showing that Shared Access Signature authentication method of data lake gen2":::
 
 * **SAS token**: Specify the shared access signature token to the Storage resources such as blob or container.  
 
@@ -95,7 +95,7 @@ For more information about shared access signatures, see [Shared access signat
 
 #### Service Principal authentication
 
-    :::image type="content" source="media/connectors-adlsgen2/service-principal.png" alt-text="Screenshot showing that Service Principal authentication method of data lake gen2":::
+:::image type="content" source="media/connectors-adlsgen2/service-principal.png" alt-text="Screenshot showing that Service Principal authentication method of data lake gen2":::
 
 * **Tenant Id**: Specify the tenant information (domain name or tenant ID) under which your application resides. Retrieve it by hovering over the upper-right corner of the Azure portal.
 * **Service principal ID**: Specify the application (client) ID.
@@ -112,25 +112,28 @@ To use service principal authentication, follow these steps:
       - **As source**, in **Access control (IAM)**, grant at least the **Storage Blob Data Reader** role.
       - **As sink**, in **Access control (IAM)**, grant at least the **Storage Blob Data Contributor** role.
 
-### Step3: Specify the privacy level that you want to apply.
+### Step 3: Specify the privacy level that you want to apply.
 
-In the **General** tab, under select the privacy level that you want apply in **Privacy level** drop-down list. Three privacy levels are supported. For more information, see [privacy levels](../placeholder-update-later.md).
+In the **General** tab, under select the privacy level that you want apply in **Privacy level** drop-down list. Three privacy levels are supported. For more information, see General.
 
-    :::image type="content" source="media/connectors-adlsgen2/privacy-level.png" alt-text="Screenshot showing that Privacy Level of data lake gen2":::
+:::image type="content" source="media/connectors-adlsgen2/privacy-level.png" alt-text="Screenshot showing that Privacy Level of data lake gen2":::
 
 ### Step 4: Create your connection
 
-Select **Create**. Your creation will be successfully tested and saved if all the credentials are correct. If not correct, the creation will fail with errors. 
+Select **Create**. Your creation will be successfully tested and saved if all the credentials are correct. If not correct, the creation will fail with errors.
+
+:::image type="content" source="./media/connectors-adlsgen2/connection.png" alt-text="Screenshot showing connection page.":::
 
 ## Table summary
 
-The following connector properties in the table are supported in pipeline copy and Dataflow gen2: 
+The following connector properties in the table are supported in pipeline copy and Dataflow gen2:
+
 |Name|Description|Required|Property|Copy/Dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/✓|
 |**Connection type**|Select a type for your connection.|Yes||✓/✓|
-|**Server**|Enter the server of Azure Data Lake Storage : `https://lhgen2test0907.z31.dfs.storage.azure.net`.|Yes||✓/✓|
-|**Full path**|Enter the full path of Azure Data Lake Storage: Your container name.
+|**Server**|Enter the server of Azure Data Lake Storage Gen2: `https://contosoadlscdm.dfs.core.windows.net`.|Yes||✓/✓|
+|**Full path**|Enter the full path of Azure Data Lake Storage Gen2: Your container name.
 |Yes||✓/✓|
 |**Authentication**|See Authentication |Yes|See Authentication|See Authentication|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are Organizational, Privacy, Public|Yes||✓/✓|
@@ -138,6 +141,7 @@ The following connector properties in the table are supported in pipeline copy a
 ### Authentication
 
 The following properties in the table are the supported authentication type.
+
 |Name|Description|Required|Property|Copy/Dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Key**||||✓/✓|
@@ -148,7 +152,6 @@ The following properties in the table are the supported authentication type.
 |- Tenant ID|The tenant information (domain name or tenant ID)|Yes |||
 |- Service Principal ID|The application's client ID.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
-
 
 ## Next steps
 
