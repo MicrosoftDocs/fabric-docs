@@ -10,7 +10,7 @@ ms.custom: template-how-to
 
 # How to create Azure SQL Database connection 
 
-[Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresql) is Microsoft's object storage solution for the cloud. Azure SQL Database is optimized for storing massive amounts of unstructured data. This article outlines the steps to create Azure SQL Database connection. 
+[Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview) is Microsoft's object storage solution for the cloud. Azure SQL Database is optimized for storing massive amounts of unstructured data. This article outlines the steps to create Azure SQL Database connection. 
 
 ## Supported authentication types
 
@@ -23,7 +23,7 @@ This Azure SQL Database connector supports the following authentication types fo
 |Service Principal|√||
 
 >[!Note]
->For the Azure SQL Database connection of Dataflow Gen2, see this [article](../placeholder-update-later.md).
+>For the Azure SQL Database connection of Dataflow Gen2, see this article.
 
 ## Prerequisites
 
@@ -103,9 +103,9 @@ To use service principal authentication, follow these steps:
     - Application key
 
 
-2. [Provision an Azure Active Directory administrator](/azure/azure-sql/database/authentication-aad-configure?view=azuresql&tabs=azure-powershell#provision-azure-ad-admin-sql-database) for your server on the Azure portal if you haven't already done so. The Azure AD administrator must be an Azure AD user or Azure AD group, but it can't be a service principal. This step is done so that, in the next step, you can use an Azure AD identity to create a contained database user for the service principal.
+2. [Provision an Azure Active Directory administrator](/azure/azure-sql/database/authentication-aad-configure#provision-azure-ad-admin-sql-database) for your server on the Azure portal if you haven't already done so. The Azure AD administrator must be an Azure AD user or Azure AD group, but it can't be a service principal. This step is done so that, in the next step, you can use an Azure AD identity to create a contained database user for the service principal.
 
-3. [Create contained database users](/azure/azure-sql/database/authentication-aad-configure?view=azuresql&tabs=azure-powershell#create-contained-users-mapped-to-azure-ad-identities) for the service principal. Connect to the database from or to which you want to copy data by using tools like SQL Server Management Studio, with an Azure AD identity that has at least ALTER ANY USER permission. Log in your Azure SQL Database through Active Directory authentication and run the following T-SQL:
+3. [Create contained database users](/azure/azure-sql/database/authentication-aad-configure#create-contained-users-mapped-to-azure-ad-identities) for the service principal. Connect to the database from or to which you want to copy data by using tools like SQL Server Management Studio, with an Azure AD identity that has at least ALTER ANY USER permission. Log in your Azure SQL Database through Active Directory authentication and run the following T-SQL:
   
     ```sql
     CREATE USER [your application name] FROM EXTERNAL PROVIDER;
@@ -122,7 +122,7 @@ To use service principal authentication, follow these steps:
 
 ### Step 3: Specify the privacy level that you want to apply
 
-In the General tab, under select the privacy level that you want apply in Privacy level drop-down list. Three privacy levels are supported. For more information, see [privacy levels](../placeholder-update-later.md).
+In the General tab, under select the privacy level that you want apply in Privacy level drop-down list. Three privacy levels are supported. For more information, see privacy levels.
 
 ### Step 4: Create your connection
 
@@ -162,5 +162,3 @@ The following properties in the table are the supported authentication type.
 ## Next Steps
 
 [How to configure Azure SQL Database in copy activity](connector-azure-sql-database-copy-activity.md)
-
-[Data Source Management](../placeholder-update-later.md)

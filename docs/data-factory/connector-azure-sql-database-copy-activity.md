@@ -61,13 +61,13 @@ Under **Advanced**, you can specify the following fields:
 
     :::image type="content" source="./media/connector-azure-sql-database/query-timeout.png" alt-text="Screenshot showing Query timeout settings."::: 
 
-- **Isolation level**: Specifies the transaction locking behavior for the SQL source. The allowed values are: **None**, **ReadCommitted**, **ReadUncommitted**, **RepeatableRead**, **Serializable**, **Snapshot**. If not specified, **None** isolation level is used. Refer to this [doc](/dotnet/api/system.data.isolationlevel?view=net-7.0) for more details.
+- **Isolation level**: Specifies the transaction locking behavior for the SQL source. The allowed values are: **None**, **ReadCommitted**, **ReadUncommitted**, **RepeatableRead**, **Serializable**, **Snapshot**. If not specified, **None** isolation level is used. Refer to this [doc](/dotnet/api/system.data.isolationlevel) for more details.
 
     :::image type="content" source="./media/connector-azure-sql-database/isolation-level.png" alt-text="Screenshot showing Isolation level settings."::: 
 
 - **Partition option**: Specify the data partitioning options used to load data from Azure SQL Database. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not None), the degree of parallelism to concurrently load data from an Azure SQL Database is controlled by the [parallel copy](/azure/data-factory/copy-activity-performance-features#parallel-copy) setting on the copy activity.
 
-    :::image type="content" source="./media/connector-azure-sql-database/partition-option-1.png" alt-text="Screenshot showing Query timeout settings."::: 
+    :::image type="content" source="./media/connector-azure-sql-database/partition-option-1.png" alt-text="Screenshot showing Partition option settings."::: 
     
     - **None**: Choose this to not use partition.
     - **Physical partitions of table**: When using physical partition, Trident will auto determine the partition column and mechanism based on your physical table definition.
@@ -122,7 +122,7 @@ Under **Advanced**, you can specify the following fields:
             :::image type="content" source="./media/connector-azure-sql-database/stored-procedure.png" alt-text="Screenshot showing stored procedure settings."::: 
 
     
-- **Bulk insert table lock**: Choose **Yes** or **No**. Use this to improve copy performance during bulk insert operation on table with no index from multiple clients. For more information, see [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15)
+- **Bulk insert table lock**: Choose **Yes** or **No**. Use this to improve copy performance during bulk insert operation on table with no index from multiple clients. For more information, see [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql)
 
 - **Table option**: Specifies whether to [automatically create the destination table](/azure/data-factory/copy-activity-overview#auto-create-sink-tables) if not exists based on the source schema. Choose **None** or **Auto create table**. Auto table creation is not supported when destination specifies stored procedure. 
 
