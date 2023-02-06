@@ -15,7 +15,7 @@ ms.date: 02/10/2023
 
 ## Train models with PyTorch
 
-PyTorch ([https://pytorch.org](https://pytorch.org/)) is a machine learning framework based on the Torch library. It's frequently used for applications such as computer vision and natural language processing. In this article, we'll go through an example of how you can train and track the iterations of your PyTorch model.
+[PyTorch](https://pytorch.org/) is a machine learning framework based on the Torch library. It's frequently used for applications such as computer vision and natural language processing. In this article, we'll go through an example of how you can train and track the iterations of your PyTorch model.
 
 ### Install PyTorch
 
