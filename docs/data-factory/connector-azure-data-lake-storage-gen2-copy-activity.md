@@ -51,7 +51,7 @@ Under **Advanced**, you can specify the following fields:
 
         Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. See more examples in [Folder and file filter examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#folder-and-file-filter-examples).
 
-        :::image type="content" source="./media/connector-azure-blob-storage/wildcard-file-path.png" alt-text="Screenshot showing wildcard file path.":::
+        :::image type="content" source="./media/connectors-adlsgen2/wildcard-file-path.png" alt-text="Screenshot showing wildcard file path.":::
 
     *Wildcard folder path*: Specify the folder path with wildcard characters under your given container to filter source folders.
 
@@ -61,7 +61,7 @@ Under **Advanced**, you can specify the following fields:
 
     When you're using this option, do not specify a file name. See more examples in [File list examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#file-list-examples).
 
-    :::image type="content" source="./media/connector-azure-blob-storage/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
+    :::image type="content" source="./media/connectors-adlsgen2/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
         
 - **Recursively**:  If this checkbox is selected, all files in the input folder and its subfolders will be processed recursively. If you unselect the checkbox, just the ones in the selected folder will be processed. This setting is disabled when a single file is selected.
 
