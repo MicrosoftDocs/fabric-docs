@@ -136,7 +136,7 @@ The “Apply model” prompt includes an option to generate PREDICT code with pr
 To use the scoring wizard, navigate to the artifact page for a given model version and click “Apply this model in wizard” from the “Apply model” dropdown. The interface will guide you through the following steps.
 
 1. **Select input table.** Browse the provided dropdown menus to select an input table from among the Lakehouses in your current Workspace. In the next step, the columns from this table will be mapped to the model’s inputs to generate predictions.
-1. **Map input columns.** Use the provided dropdowns to match columns from the selected table to each of the model’s listed input fields, which have been pulled from the model’s signature. Note that an input column must be provided for all the model’s required fields—and that the data types for the selected columns must match the model’s expected data types.
+1. **Map input columns.** Use the provided dropdowns to match columns from the selected table to each of the model’s listed input fields, which have been pulled from the model’s signature. Note that an input column must be provided for all the model’s required fields and that the data types for the selected columns must match the model’s expected data types.
 
   > [!TIP]
   > The wizard will prepopulate the mapping if the names of the input table’s columns match those logged in the model signature.
