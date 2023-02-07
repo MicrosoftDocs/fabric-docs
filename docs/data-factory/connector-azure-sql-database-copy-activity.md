@@ -23,6 +23,7 @@ For the configuration of each tab under copy activity, go to the following secti
 - [General](#general)  
 - [Source](#source)
 - [Destination](#destination)
+- [Mapping](#mapping)
 - [Settings](#settings)
 
 ### General
@@ -141,6 +142,10 @@ Under **Advanced**, you can specify the following fields:
 ### Settings
 
 For **Settings** tab configuration, see Settings.
+
+### Mapping
+
+For **Mapping** tab configuration, see Mapping.
 
 ## Table summary 
 
