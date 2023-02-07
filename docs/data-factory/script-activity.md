@@ -20,7 +20,7 @@ In this guide, you'll learn how to add a new Script activity, add a new connecti
 
 To get started, you must complete the following prerequisites:  
 
-- A tenant account with an active subscription. Create an account for free.
+- A tenant account with an active subscription. Create an account for free.
 - A workspace is created.
 
 ## Step 1: Add a new Script activity in Pipeline canvas
