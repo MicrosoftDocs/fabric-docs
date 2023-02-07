@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 02/10/2023
 ---
 
-# Overview
+# SemPy overview
 
 We introduce new ways for data scientists and ML engineers to structure their code and collaborate while performing common data science tasks by making use of the data semantics. SemPy is a new library in Azure Synapse vNext for working with tabular data. With SemPy, you can preserve subject matter experts' knowledge about data semantics in a standardized form to help make the analysis faster and with fewer errors.
 
