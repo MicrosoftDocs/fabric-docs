@@ -21,9 +21,8 @@ ms.date: 02/10/2023
 
 To get started with PyTorch, you must ensure that it's installed within your notebook. You can install or upgrade the version of PyTorch on your environment using the following command:
 
-```python
+```shell
 %pip install torch
-```
 
 ### Set up the machine learning experiment
 
