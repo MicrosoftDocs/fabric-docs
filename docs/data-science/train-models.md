@@ -196,9 +196,8 @@ In this section, we'll go through an example of how you can train and track the 
 
 To get started with scikit-learn, you must ensure that it's installed within your notebook. You can install or upgrade the version of scikit-learn on your environment using the following command:
 
-`%pip install scikit-learn`
-
-### Create the machine learning experiment
+```shell
+%pip install scikit-learn
 
 Next, we'll create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
 
