@@ -10,7 +10,7 @@ ms.custom: template-how-to
 
 # How to configure Azure SQL Database in copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure SQL Database. 
+This article outlines how to use the copy activity in data pipeline to copy data from and to Azure SQL Database.
 
 ## Supported format
 
@@ -18,7 +18,7 @@ Azure SQL Database supports the following file formats.
 
 ## Supported configuration
 
-For the configuration of each tab under copy activity, see the following sections respectively.
+For the configuration of each tab under copy activity, go to the following sections respectively.
 
 - [General](#general)  
 - [Source](#source)
@@ -27,23 +27,24 @@ For the configuration of each tab under copy activity, see the following section
 
 ### General
 
-For **General** tab configuration, see General.
+For **General** tab configuration, go to General.
 
 ### Source
 
-The following properties are supported for Azure SQL Database under **Source** tab of a copy activity.
+The following properties are supported for Azure SQL Database under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-sql-database/source.png" alt-text="Screenshot showing source tab.":::
+:::image type="content" source="./media/connector-azure-sql-database/source.png" alt-text="Screenshot showing the source tab and the list of properties." lightbox="./media/connector-azure-sql-database/source.png":::
 
 The following properties are **required**:
 - **Data store type**: Select **External**.
 - **Connection**:  Select an Azure SQL Database connection from the connection list. If not exist, then create a new Azure SQL Database connection by clicking on **New**.
+- **Connection type**: Select **Azure SQL Database**.
 - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
 - **Preview data**: Select on **Preview data** to preview the data in your table.
 
 Under **Advanced**, you can specify the following fields:
 
-- **Use query**: You can choose **Table**, **Query** or **Stored procedure**. See the configuration of each setting below：
+- **Use query**: You can choose **Table**, **Query** or **Stored procedure**. Go to the configuration of each setting below：
 
     - **Table**: Read data from the table you specified in **Table** above if you select this button.
 
@@ -70,7 +71,7 @@ Under **Advanced**, you can specify the following fields:
     :::image type="content" source="./media/connector-azure-sql-database/partition-option-1.png" alt-text="Screenshot showing Partition option settings."::: 
     
     - **None**: Choose this to not use partition.
-    - **Physical partitions of table**: When using physical partition, Trident will auto determine the partition column and mechanism based on your physical table definition.
+    - **Physical partitions of table**: When using physical partition, the partition column and mechanism will be auto determined based on your physical table definition.
     - **Dynamic range**: When using query with parallel enabled, range partition parameter(?AdfDynamicRangePartitionCondition) is needed. Sample query: `SELECT * FROM <TableName> WHERE ?AdfDynamicRangePartitionCondition`.
 
         - **Partition column name**: Specify the name of the source column in **integer or date/datetime** type (`int`, `smallint`, `bigint`, `date`, `smalldatetime`, `datetime`, `datetime2`, or `datetimeoffset`) that will be used by range partitioning for parallel copy. If not specified, the index or the primary key of the table is autodetected and used as the partition column.
@@ -88,6 +89,7 @@ The following properties are supported for Azure SQL Database under **Destinatio
 The following properties are **required**:
 - **Data store type**: Select **External**.
 - **Connection**:  Select an Azure SQL Database connection from the connection list. If not exist, then create a new Azure SQL Database connection by clicking on **New**.
+- **Connection type**: Select **Azure SQL Database**.
 - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
 - **Preview data**: Select on **Preview data** to preview the data in your table.
 
@@ -150,6 +152,7 @@ To learn more information about copy activity in Azure SQL Database, see the fol
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.| **Workspace** or **External**|Yes|type|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
+|**Connection type** |Your connection type. Select **Azure SQL Database**.|< your connection type> |Yes|type|
 |**Table** | Your source data table. |< name of your destination table>|Yes |schema <br> table|
 |**Use query** |The custom SQL query to read data.|- None <br>- Query<br>- Stored procedure |No |<br><br>- sqlReaderQuery <br>- sqlReaderStoredProcedureName, storedProcedureParameters|
 |**Query timeout** |The timeout for query command execution, default is 120 minutes. |timespan |No |queryTimeout|
@@ -163,6 +166,7 @@ To learn more information about copy activity in Azure SQL Database, see the fol
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**Workspace** or **External** |Yes|type|
 |**Connection** |Your connection to destination data store.|< your connection >|Yes|connection|
+|**Connection type** |Your connection type. Select **Azure SQL Database**.|< your connection type> |Yes|type|
 |**Table**|Your destination data table.| \<name of your destination table\> |Yes |schema <br> table|
 |**Write behavior** |Defines the write behavior when the source is files from a file-based data store.|- Insert<br>- Upsert<br>- Stored procedure|No |writeBehavior:<br> - insert<br>- upsert<br>- sqlWriterStoredProcedureName, sqlWriterTableType, storedProcedureParameters|
 |**Bulk insert table lock** |Use this to improve copy performance during bulk insert operation on table with no index from multiple clients.|Yes or No |No |sqlWriterUseTableLock:<br>true or false|
@@ -176,5 +180,5 @@ To learn more information about copy activity in Azure SQL Database, see the fol
 
 ## Next Steps
 
-[How to create Azure SQL Database connection](connector-azure-blob-storage.md)
+[How to create Azure SQL Database connection](connector-azure-sql-database.md)
 

@@ -10,11 +10,11 @@ ms.custom: template-how-to
 
 # How to create Azure SQL Database connection 
 
-[Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview) is Microsoft's object storage solution for the cloud. Azure SQL Database is optimized for storing massive amounts of unstructured data. This article outlines the steps to create Azure SQL Database connection. 
+[Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview) is Microsoft's object storage solution for the cloud. Azure SQL Database is optimized for storing massive amounts of unstructured data. This article outlines the steps to create an Azure SQL Database connection. 
 
 ## Supported authentication types
 
-This Azure SQL Database connector supports the following authentication types for copy and dataflow Gen2 respectively.  
+The Azure SQL Database connector supports the following authentication types for copy and Dataflow gen2 respectively.  
 
 |Authentication type |Copy  |Dataflow Gen2 |
 |:---|:---|:---|
@@ -27,15 +27,15 @@ This Azure SQL Database connector supports the following authentication types fo
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:  
+To get started, you must have following prerequisites:  
 
 * A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).  
 
-* A workspace is created and isn’t the default My Workspace.
+* A workspace is created and that isn’t the default **My Workspace**.
 
 ## Go to Manage gateways to create a new connection
 
-1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAHoSURBVDhPfVI9SEJRFH5q9idRghhRBoH5hgz62QyKRAqHhiZraqogMBoKgiyQnLK1IYPWFCopIY20JbSWTNOh1xL0clAqK7A0M/ue91kG0ccZzvnud+4959wjyOfzVBEBJuEI3Nw+pJyzWoTD1uNmmcSgadHQciIAfhKs+1F36G5CRyNNragDE2WfIAU/qVOBJzIKCQT+q/jC1jmcp1RGadyGwUFo3Dw7CLIFCQcuYWUv4mfiONaaPYQtRb/ZHbl9xHU2L4NQNDA6ZfMx6ffcqiuKd9UKKf90ERVikWU3nM7m7IGbHlouwIsodETTwp9TlMke9IRicPSdTcuGTkICSEB7wiibPGUSz6/vhIX65S3rWxqEgUTHhIfPy1AWekCLhYLz370SlPLrR1dwhMiurRaTa/4H+/CKF0RhSW/m49M+01cpFoFNPKcPQzFUDx/lYQZadQP8sT6lOxSz7F4KFTIJmq6tLucuoSjLSFdNlbh73gUjIeEhgEzf0SjAgE2OYA9djwmM61Sl4yLAcDa811C7L+6cc1q+afwlfgd/VOjwF0DiUmII/16N1ukdGBkXyNLVKOMf5lYtif9qb5b6mcTsUBuYRccFKgGJnSUa4Nd6I8fmvWbvU1ytmMzaCXqd0Kl+9oWivgAsYHfccfep7QAAAABJRU5ErkJggg==) > **Manage connections and gateways.** 
+1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAHoSURBVDhPfVI9SEJRFH5q9idRghhRBoH5hgz62QyKRAqHhiZraqogMBoKgiyQnLK1IYPWFCopIY20JbSWTNOh1xL0clAqK7A0M/ue91kG0ccZzvnud+4959wjyOfzVBEBJuEI3Nw+pJyzWoTD1uNmmcSgadHQciIAfhKs+1F36G5CRyNNragDE2WfIAU/qVOBJzIKCQT+q/jC1jmcp1RGadyGwUFo3Dw7CLIFCQcuYWUv4mfiONaaPYQtRb/ZHbl9xHU2L4NQNDA6ZfMx6ffcqiuKd9UKKf90ERVikWU3nM7m7IGbHlouwIsodETTwp9TlMke9IRicPSdTcuGTkICSEB7wiibPGUSz6/vhIX65S3rWxqEgUTHhIfPy1AWekCLhYLz370SlPLrR1dwhMiurRaTa/4H+/CKF0RhSW/m49M+01cpFoFNPKcPQzFUDx/lYQZadQP8sT6lOxSz7F4KFTIJmq6tLucuoSjLSFdNlbh73gUjIeEhgEzf0SjAgE2OYA9djwmM61Sl4yLAcDa811C7L+6cc1q+afwlfgd/VOjwF0DiUmII/16N1ukdGBkXyNLVKOMf5lYtif9qb5b6mcTsUBuYRccFKgGJnSUa4Nd6I8fmvWbvU1ytmMzaCXqd0Kl+9oWivgAsYHfccfep7QAAAABJRU5ErkJggg==) > **Manage connections and gateways.**
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway":::
 
@@ -45,11 +45,11 @@ To get started, you must complete the following prerequisites:  
     
     The **New connection** pane will show up on the left side of the page.
        
-    :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the 'New connection' pane.":::
+    :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the 'New connection' pane." lightbox="./media/connector-common/new-connection-pane.png":::
 
 ## Set up your connection
 
-### Step 1: Specify the connection name, connection type, account and domain
+### Step 1: Specify the connection name, connection type, account, and domain
 
 :::image type="content" source="./media/connector-azure-sql-database/configure-azure-sql-database-connection-common.png" alt-text="Screenshot showing new connection page.":::
 
@@ -61,7 +61,7 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 
 ### Step 2: Select and set your authentication
 
-Under **Authentication** method, select your authentication from the drop-down list and complete the related configuration. This Blob storage connector supports the following authentication types.
+Under **Authentication** method, select your authentication from the drop-down list and complete the related configuration. The Azure SQL Database connector supports the following authentication types.
 
 - [Basic](#basic-authentication)
 - [OAuth2](#oauth2-authentication)
@@ -81,7 +81,7 @@ Select **Basic** under **Authentication method**.
 
 #### OAuth2 authentication
 
-Open **Edit credentials**. You will see the sign-in interface. Enter your account and password to sign in your account. After signing in, you will come back to the **New connection** page. 
+Open **Edit credentials**. You'll'see the sign in interface. Enter your account and password to sign in your account. After signing in, go back to the **New connection** page. 
 
 :::image type="content" source="./media/connector-azure-sql-database/authentication-oauth2.png" alt-text="Screenshot showing OAuth2 authentication method.":::
 
@@ -122,30 +122,30 @@ To use service principal authentication, follow these steps:
 
 ### Step 3: Specify the privacy level that you want to apply
 
-In the General tab, under select the privacy level that you want apply in Privacy level drop-down list. Three privacy levels are supported. For more information, see privacy levels.
+In the **General** tab, select the privacy level that you want apply in **Privacy level** drop-down list. Three privacy levels are supported. For more information, go to privacy levels.
 
 ### Step 4: Create your connection
 
-Select **Create**. Your creation will be successfully tested and saved if all the credentials are correct. If not correct, the creation will fail with errors. 
+Select **Create**. Your creation will be successfully tested and saved if all the credentials are correct. If not correct, the creation will fail with errors.
 
 :::image type="content" source="./media/connector-azure-sql-database/connection.png" alt-text="Screenshot showing connection page.":::
 
 ## Table summary
 
-The following connector properties in the table are supported in pipeline copy and Dataflow gen2.
+The following connector properties in the table are supported in pipeline copy and dataflow gen2.
 
 |Name|Description|Required|Property|Copy/Dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes| |✓/|
-|**Connection type**|Select a type for your connection. Here select **SQL Server**.|Yes| |✓/|
+|**Connection type**|Select a type for your connection. Select **SQL Server**.|Yes| |✓/|
 |**Server**|Azure SQL server name.|Yes||✓/|
 |**Database**|Azure SQL Database name.|Yes| |✓/|
-|**Authentication**|See [Authentication](#authentication) |Yes||See [Authentication](#authentication)|
+|**Authentication**|Go to [Authentication](#authentication) |Yes||Go to [Authentication](#authentication)|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
 
 ### Authentication
 
-The following properties in the table are the supported authentication type.
+The following properties in the table are the supported authentication types.
 
 |Name |Description |Required |Property |Copy/Dataflow gen2 |
 |-----|-----|-----|-----|-----|
