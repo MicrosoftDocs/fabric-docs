@@ -5,17 +5,17 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 02/06/2023
+ms.date: 02/07/2023
 
 ---
 
 # Tutorial: Real-time Analytics tutorial
 
-Real-time Analytics is a portfolio of capabilities that provides an end-to-end analytics solution across Trident experiences. Real-time Analytics provides high velocity, low latency data analysis. It's optimized for time-series data, with automatic partitioning and indexing of your data. Use Real-time Analytics to explore data from different sources and in a variety of data formats.  whether it's unstructured, semi-structured, or structured data,
+Real-time Analytics is a portfolio of capabilities that provides an end-to-end analytics solution across Trident experiences. It supplies high velocity, low latency data analysis, and is optimized for time-series data, including automatic partitioning and indexing of your data.
 
-You can keep using RTA as your business grows, as it is high performing with datasets as small as 1GB or even as large as 1PB. 
+Real-time Analytics delivers with high performance when it comes to your increasing data. It accommodates datasets both as small as 1GB or as large as 1PB, and allows you to explore data from different sources and a variety of data formats.
 
-You can use Real-time Analytics in a variety of scenarios, such as IoT analytics, log analytics, manufacturing operations, and more. In this tutorial, you'll stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16). Then you'll use the advanced data analysis capabilities of Kusto Query language to query the telemetry data and find out XXX TODO - add based on scenario. Finally, these insights will be displayed in a PowerBI report for communicating with others. 
+You can use Real-time Analytics in a range of scenarios, such as IoT analytics, log analytics, manufacturing operations, and more. In this tutorial, you'll stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16). Then you'll use the advanced data analysis capabilities of Kusto Query language to query the telemetry data and find out [TODO - add based on scenario]. Finally, these insights will be displayed in a Power BI report for communicating with others.
 
 In this tutorial, you learn how to:
 
@@ -27,6 +27,7 @@ In this tutorial, you learn how to:
 > * Query data in a Quick query
 > * Save query in a KQL Queryset
 > * Create a Power BI report
+> * Create a OneLake shortcut
 
 ## Prerequisites
 
@@ -110,7 +111,7 @@ Now that your SAS policy is set up, you can configure a connection to this event
 
 In the following step, you'll create a data connection in your  database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your Event Hubs instance and get data into the specified table using specified data mapping.
 
-#### Destination tab
+### Destination tab
 
 1. Navigate to your KQL Database.
 1. Select **Get Data** > **Event Hub**.
@@ -126,7 +127,7 @@ In the following step, you'll create a data connection in your  database, which 
 
 1. Select **Next: Source**.
 
-#### Source tab
+### Source tab
 
 In the source tab, the **Source type** is autopopulated with **Event Hub**
 
@@ -143,7 +144,7 @@ In the source tab, the **Source type** is autopopulated with **Event Hub**
 
 1. Select **Next: Schema**.
 
-#### Schema tab
+### Schema tab
 
 :::image type="content" source="media/realtime-analytics-tutorial/schema-tab.png" alt-text="Screensht of Schema tab showing the sshema mapping. The Data format, Nested levels, and a column titled ActiveTags are highlighted.":::
 
@@ -153,7 +154,7 @@ In the source tab, the **Source type** is autopopulated with **Event Hub**
 1. In **Column name**, change the name to **ActiveTags** and select **Update**. The change will be reflected in the **Partial data preview** and the **Table mapping**.
 1. Select **Next: Summary**.
 
-#### Summary tab
+### Summary tab
 
 In the **Continuous ingestion from Event Hub established** window, all steps will be marked with green check marks when data ingestion finishes successfully.
 
@@ -161,13 +162,9 @@ Now that you've ingested your data, you're going to learn how to query it using 
 
 :::image type="content" source="media/realtime-analytics-tutorial/summary-tab.png" alt-text="Screenshot of the Summary tab.":::
 
-## Get OneLake link
-
-<!-- TODO for educational purposes only- now that you have your data, you can access it directly from the onelake (e.g. you wanted to create a power BI report or run a notebook on the underlying data and not go through Kusto) -->
-
 ## Query data
 
-Now we're going to use queries to do xyz which will show us abc. 
+TODO- based on scenario- Now we're going to use queries to do xyz which will show us abc. 
 Recall that in our scenario that  blah blah blah. you're going to use a series of queries to find out XX
 
 Let's say you're an importer working for WWI who wants to sell a variety of edible novelties such as chilly chocolates. The company previously didn't have to handle chilled items. Now, to meet food handling requirements, they must monitor the temperature in their chiller room and any of their trucks that have chiller sections.
@@ -208,6 +205,9 @@ TODO: add scenario-specific info
 
 TODO
 
+## Create OneLake shortcut
+
+<!-- TODO for educational purposes only- now that you have your data, you can access it directly from the onelake (e.g. you wanted to create a power BI report or run a notebook on the underlying data and not go through Kusto) -->
 ## Clean up resources
 
 Clean up the items created by navigating to the workspace in which they were created.
