@@ -17,17 +17,17 @@ In providing the Data Science SaaS experience we want to enable ML professionals
 
 | **Scenario** | **ML Solution** | **Link** |
 |---|---|---|
-| [**Recommendation of Books**](#recommender) | Recommendation Modeling (ALS) | [Book Recommendation Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-book-recommendation.ipynb) |
-| [**Credit Card Fraud Detection**](#fraud-detection) | Binary Classification | [Fraud Detection Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-fraud-detection.ipynb) |
-| [**Forecasting Property Trade**](#forecasting) | Forecasting | [Time Series Forecasting Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-time-series-forecasting.ipynb) |
-| [**Book Genre Classification**](#text-classification) | Text Classification | [Text Classification Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-title-genre-classification.ipynb) |
-| [**Impact of Medical Treatment**](#uplift-model) | Uplift Modeling | [Uplift Model Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-uplift-modelling.ipynb) |
+| [**Recommendation of Books**](#recommender) | Recommendation Modeling (ALS) | [Book Recommendation Notebook](retail-recommend-model.md) |
+| [**Credit Card Fraud Detection**](#fraud-detection) | Binary Classification | [Fraud Detection Notebook](fraud-detection.md) |
+| [**Forecasting Property Trade**](#forecasting) | Forecasting | [Time Series Forecasting Notebook](time-series-forecasting.md) |
+| [**Book Genre Classification**](#text-classification) | Text Classification | [Text Classification Notebook](title-genre-classification.md) |
+| [**Impact of Medical Treatment**](#uplift-model) | Uplift Modeling | [Uplift Model Notebook](uplift-modelling.md) |
 
 ## Recommender
 
 An online bookstore is looking to increase sales by providing customized recommendations. Using customer book rating data in this sample you'll see how to clean, explore the data leading to developing and deploying a recommendation to provide predictions.
 
-Notebook: [Book Recommendation Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-book-recommendation.ipynb)
+Notebook: [Book Recommendation Notebook](retail-recommend-model.md)
 
 Industry: Retail
 
@@ -37,7 +37,7 @@ Dataset: [Kaggle Book Recommendation Dataset](https://www.kaggle.com/datasets/ar
 
 As unauthorized transactions increase, detecting credit card fraud in real time will support financial institutions to provide their customers faster turnaround time on resolution. This end to end sample will include preprocessing, training, model storage and inferencing. The training section will review implementing multiple models and methods that address challenges like imbalanced examples and trade-offs between false positives and false negatives.
 
-Notebook: [Fraud Detection Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-fraud-detection.ipynb)
+Notebook: [Fraud Detection Notebook](fraud-detection.md)
 
 Industry: Financial
 
@@ -47,7 +47,7 @@ Dataset: [Kaggle Credit Card Fraud Detection](https://www.kaggle.com/datasets/ml
 
 Using historical New York City Property Sales data and Facebook Prophet in this sample, we'll build a time series model with the trend, seasonality and holiday information to forecast what sales will look like in future cycles.
 
-Notebook: [Time Series Forecasting Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-time-series-forecasting.ipynb)
+Notebook: [Time Series Forecasting Notebook](time-series-forecasting.md)
 
 Industry: Real Estate
 
@@ -57,7 +57,7 @@ Dataset: [NYC Property Sales Data](https://www1.nyc.gov/site/finance/about/open-
 
 In this sample, we'll predict whether a book in the British Library is fiction or non-fiction based on book metadata. This will be accomplished by applying text classification with word2vec and linear-regression model on Spark.
 
-Notebook: [Text Classification Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-title-genre-classification.ipynb)
+Notebook: [Text Classification Notebook](title-genre-classification.md)
 
 Industry: Information
 
@@ -72,7 +72,7 @@ In this sample, we'll estimate the causal impact of certain treatments on an ind
 - Prediction module: calls the uplift model to predict on test data.
 - Evaluation module: evaluates the effect of the uplift model on test data.
 
-Notebook: [Uplift Model Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-uplift-modelling.ipynb)
+Notebook: [Uplift Model Notebook](uplift-modelling.md)
 
 Industry: Healthcare
 
