@@ -23,7 +23,6 @@ To get started with PyTorch, you must ensure that it's installed within your not
 
 ```shell
 %pip install torch
-
 ### Set up the machine learning experiment
 
 Next, we'll create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
