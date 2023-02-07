@@ -34,7 +34,7 @@ After your changes are saved, your pipeline will run. You can view the progress 
 
 :::image type="content" source="media/pipeline-runs/view-run-progress.png" alt-text="Screenshot showing where the run status displays on the Output tab." lightbox="media/pipeline-runs/view-run-progress.png":::
 
-Once an activity has completed in a run, you'll see a green check mark in the corner of the activity.
+Once an activity has completed in a run, a green check mark appears in the corner of the activity.
 
 :::image type="content" source="media/pipeline-runs/copy-activity-complete.png" alt-text="Screenshot showing where the green check mark is displayed.":::
 
@@ -44,7 +44,7 @@ Once the entire pipeline has been executed and the output status updates to **Su
 
 ## Scheduled pipeline runs
 
-When you schedule a pipeline run, you can choose the frequency that your pipeline runs. Select **Schedule**, found in the top banner of the **Home** tab, to see your options. By default, your pipeline won't be set on a schedule.
+When you schedule a pipeline run, you can choose the frequency that your pipeline runs. Select **Schedule**, found in the top banner of the **Home** tab, to view your options. By default, your pipeline won't be set on a schedule.
 
 :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab.":::
 
@@ -74,7 +74,7 @@ Once configured, select **Ok** to set your schedule.
 
 :::image type="content" source="media/pipeline-runs/set-schedule-configuration.png" alt-text="Screenshot showing where to select OK.":::
 
-You'll see a schedule set on your pipeline editing canvas, detailing how often your pipeline is set to run.
+A schedule is now set on your pipeline editing canvas, detailing how often your pipeline is set to run.
 
 :::image type="content" source="media/pipeline-runs/pipeline-schedule.png" alt-text="Screenshot showing where your schedule runs appear on the pipeline editing canvas.":::
 
