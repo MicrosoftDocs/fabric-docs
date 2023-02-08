@@ -250,21 +250,30 @@ To view and edit your report, select **Open the file in Power BI to view, edit, 
 You can use shortcuts to quickly pull data from internal and external locations into your Lakehouse, Warehouse, or datasets. Shortcuts can be updated or removed from your item, but these changes will not affect the original data and its source.
 
 1. Select the **Create** button in the **Navigation pane**.
+
     :::image type="content" source="media/realtime-analytics-tutorial/navigation-pane.png" alt-text="Screenshot of the Navigation pane. The option titled Create is highlighted.":::
+
 1. Under **Data engineering**, select **Lakehouse**.
+
     :::image type="content" source="media/realtime-analytics-tutorial/create-lakehouse.png" alt-text="Screenshot of Data engineering items. The item titled Lakehouse is highlighted.":::
+
 1. Enter your Lakehouse name, then select **Create**.
 1. Select **New Shortcut** on the right-hand side of the Lakehouse.
 1. Under **Internal sources**, select OneLake.
+
     :::image type="content" source="media/realtime-analytics-tutorial/new-shortcut.png" alt-text="Screenshot of New Shortcut window. The option under Internal sources titled OneLake is highlighted.":::
+
 1. In **Select a data source type**, select the KQL Database with the Event Hub data source type you created earlier.
+
     :::image type="content" source="media/realtime-analytics-tutorial/onelake-shortcut-data-source.png" alt-text="Screenshot of data source type window showing all of the data sources in your workspace.":::
+
 1. Select **Next** to find the data you want to use with your shortcut.
 1. To connect the table with the data from Event Hub, select **>** to expand the tables in the left-hand pane, then select the table titled **Telemetry**.
+
     :::image type="content" source="media/realtime-analytics-tutorial/shortcut-data-connection.png" alt-text="Screenshot of New shortcut window showing the tables in the selected database. The table titled Telemetry is highlighted.":::
 1. Select **Create** to create the shortcut. The Lakehouse will automatically refresh.
 
-The Lakehouse shortcut has been created. You can now use this data in other environments without returning to Real-time Analytics.
+    The Lakehouse shortcut has been created. You can now use this data in other environments without returning to Real-time Analytics.
 
 ## Clean up resources
 
