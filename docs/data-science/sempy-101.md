@@ -2,13 +2,16 @@
 title: SemPy 101
 description: Learn the basics of how SemPy works and is organized.
 ms.reviewer: mopeakande
-ms.author: mopeakande
-author: sdakande
+ms.author: narsam
+author: narmeens
 ms.topic: conceptual
 ms.date: 02/10/2023
 ---
 
 # SemPy "101"
+
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## What kind of data does SemPy handle?
 
