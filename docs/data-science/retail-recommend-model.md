@@ -38,7 +38,7 @@ The general approach is iterative. During each iteration, one of the factor matr
 
 - Books.csv
 
-| ISBN | Book-Title | Book-Author | Year-Of-Publication | Publisher | Image-URL-S | Image-URL-M | Image-URL-L |
+| ISBN | Book-Title | Book-Author | Year-Of-Publication | Publisher | Image-URL-S | Image-URL-M | Image-URL-l |
 |---|---|---|---|---|---|---|---|
 | 0195153448 | Classical Mythology | Mark P. O. Morford | 2002 | Oxford University Press | [http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg) | [http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg) | [http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg) |
 | 0002005018 | Clara Callan | Richard Bruce Wright | 2001 | HarperFlamingo Canada | [http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg) | [http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg) | [http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg) |
@@ -54,8 +54,8 @@ The general approach is iterative. During each iteration, one of the factor matr
 
 | User-ID | Location | Age |
 |---|---|---|
-| 1 | "nyc | new york | usa" |
-| 2 | "stockton | california | usa" |
+| 1 | "nyc new york usa" |  |
+| 2 | "stockton california usa" | 18.0 |
 
 **By defining below parameters, we can apply this notebook on different datasets easily.**
 
@@ -512,7 +512,7 @@ _ = evaluate(model, train)
 
 Evaluation on test data.
 
-If R2 is negative, it means the trained model is actually worse than a horizontal straight line.
+If R2 is negative, it means the trained model is worse than a horizontal straight line.
 
 ```python
 _, (rmse, mae, r2, var) = evaluate(model, test)
