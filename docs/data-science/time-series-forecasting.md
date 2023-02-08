@@ -26,7 +26,7 @@ The dataset is a record of every building sold in New York City property market 
 
 We'll build up a model to forecast monthly volume of property trade based on history data. In order to forecast, we'll use [Facebook Prophet](https://facebook.github.io/prophet/), which provides fast and automated forecast procedure and handles seasonality well.
 
-## Install prophet
+## Install Prophet
 
 Let's first install [Facebook Prophet](https://facebook.github.io/prophet/). It uses a decomposable time series model that consists of three main components: trend, seasonality, and holidays.
 
