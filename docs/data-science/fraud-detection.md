@@ -165,7 +165,7 @@ test_data = featurizer.transform(test)[TARGET_COL, "features"]
 display(train_data.groupBy(TARGET_COL).count())
 ```
 
-### Handle imbalance data
+### Handle imbalanced data
 
 We'll apply [SMOTE](https://arxiv.org/abs/1106.1813) (Synthetic Minority Over-sampling Technique) to automatically handle imbalance data. A dataset is imbalanced if the classification categories aren't approximately equally represented. Often real-world data sets are predominately composed of "normal" examples with only a small percentage of "abnormal" or "interesting" examples. It's also the case that the cost of misclassifying an abnormal (interesting) example as a normal example is often much higher than the cost of the reverse error. Under-sampling of the majority (normal) class has been proposed as a good means of increasing the sensitivity of a classifier to the minority class. This paper shows that a combination of our method of over-sampling the minority (abnormal) class and under-sampling the majority (normal) class can achieve better classifier performance (in ROC space) than only under-sampling the majority class.
 
