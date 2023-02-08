@@ -122,7 +122,7 @@ raw_df = spark.read.csv(f"{DATA_FOLDER}/raw/{DATA_FILE}", header=True, inferSche
 display(raw_df.limit(20))
 ```
 
-## Step 2: Data preprocess
+## Step 2: Preprocess data
 
 ### Data clean
 
