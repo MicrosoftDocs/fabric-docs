@@ -81,7 +81,7 @@ Follow these steps to set up your copy activity using copy assistant.
 
 Once finished, the copy activity will then be added to your data pipeline canvas. All settings, including advanced settings to this copy activity, are available under the tabs when it’s selected.
 
-:::image type="content" source="media/copy-data-activity/pipeline-with-copy-activity.png" alt-text="Screenshot showing a copy activity on the pipeline canvas." lightbox="media/copy-data-activity/pipeline-with-copy-activity.png":::
+:::image type="content" source="media/copy-data-activity/pipeline-with-copy-activity.png" alt-text="Screenshot showing a copy activity on the data pipeline canvas." lightbox="media/copy-data-activity/pipeline-with-copy-activity.png":::
 
 Now you can either save your data pipeline with this single copy activity or continue to design your data pipeline.
 
