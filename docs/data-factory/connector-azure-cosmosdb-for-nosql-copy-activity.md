@@ -41,7 +41,6 @@ The following three properties are **required**:
 - **Data store type**: Select **External**.
 - **Connection**:  Select an Azure Cosmos DB for NOSQL connection from the connection list.
 - **Container**: Select the container that you want to use.
-- **File settings**: Click on **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -66,7 +65,6 @@ The following three properties are **required**:
 - **Data store type**: Select **External**.
 - **Connection**: Select an Azure Cosmos DB for NOSQL connection from the connection list.
 - **Container**: Select **Browse** to choose the file that you want to copy or fill in the path manually.
-- **File settings**: Click on **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
 Under **Advanced**, you can specify the following fields:
 
