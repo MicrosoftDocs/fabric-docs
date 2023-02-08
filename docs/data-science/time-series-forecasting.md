@@ -34,7 +34,7 @@ For the trend part, Prophet assumes piece-wise constant rate of growth with auto
 
 For seasonality part, Prophet models weekly and yearly seasonality using Fourier Series. Since we're using monthly data, so we won't have weekly seasonality and won't considering holidays.
 
-```python
+```shell
 !pip install prophet
 ```
 
