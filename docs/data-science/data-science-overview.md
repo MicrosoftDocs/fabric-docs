@@ -69,7 +69,7 @@ Model training can be tracked using MLflow experiments. [!INCLUDE [product-name]
 
 ## SynapseML
 
-SynapseML (previously known as MMLSpark), is an open-source library that simplifies the creation of massively scalable machine learning (ML) data pipelines. It's an ecosystem of tools used to expand the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API that’s usable across Python, R, Scala, .NET, and Java. Learn more about [SynapseML](https://aka.ms/spark).
+SynapseML (previously known as MMLSpark), is an open-source library that simplifies the creation of massively scalable machine learning (ML) pipelines. It's an ecosystem of tools used to expand the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API that’s usable across Python, R, Scala, .NET, and Java. Learn more about [SynapseML](https://aka.ms/spark).
 
 ## Model scoring
 
