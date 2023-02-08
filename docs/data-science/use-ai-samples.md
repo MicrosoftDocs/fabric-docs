@@ -15,13 +15,13 @@ ms.date: 02/10/2023
 
 In providing the Data Science SaaS experience we want to enable ML professionals to easily and frictionlessly build, deploy and operationalize their machine learning models, in a single analytics platform, while collaborating with other key roles. Begin here to understand the various capabilities the DS workload has to offer and examples of how ML models can address your common business problems.
 
-| **Scenario** | **ML Solution** | **Link** |
+| **Scenario** | **ML solution** | **Link** |
 |---|---|---|
-| [**Recommendation of Books**](#recommender) | Recommendation Modeling (ALS) | [Book Recommendation Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-book-recommendation.ipynb) |
-| [**Credit Card Fraud Detection**](#fraud-detection) | Binary Classification | [Fraud Detection Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-fraud-detection.ipynb) |
-| [**Forecasting Property Trade**](#forecasting) | Forecasting | [Time Series Forecasting Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-time-series-forecasting.ipynb) |
-| [**Book Genre Classification**](#text-classification) | Text Classification | [Text Classification Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-title-genre-classification.ipynb) |
-| [**Impact of Medical Treatment**](#uplift-model) | Uplift Modeling | [Uplift Model Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-uplift-modelling.ipynb) |
+| [**Recommendation of books**](#recommender) | Recommendation Modeling (ALS) | [Book Recommendation Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-book-recommendation.ipynb) |
+| [**Credit card fraud detection**](#fraud-detection) | Binary Classification | [Fraud Detection Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-fraud-detection.ipynb) |
+| [**Forecasting property trade**](#forecasting) | Forecasting | [Time Series Forecasting Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-time-series-forecasting.ipynb) |
+| [**Book genre classification**](#text-classification) | Text Classification | [Text Classification Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-title-genre-classification.ipynb) |
+| [**Impact of medical rreatment**](#uplift-model) | Uplift Modeling | [Uplift Model Notebook](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Sample%20Notebooks/bug-bash-aisample-uplift-modelling.ipynb) |
 
 ## Recommender
 
@@ -33,7 +33,7 @@ Industry: Retail
 
 Dataset: [Kaggle Book Recommendation Dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset)
 
-## Fraud Detection
+## Fraud detection
 
 As unauthorized transactions increase, detecting credit card fraud in real time will support financial institutions to provide their customers faster turnaround time on resolution. This end to end sample will include preprocessing, training, model storage and inferencing. The training section will review implementing multiple models and methods that address challenges like imbalanced examples and trade-offs between false positives and false negatives.
 
@@ -53,7 +53,7 @@ Industry: Real Estate
 
 Dataset: [NYC Property Sales Data](https://www1.nyc.gov/site/finance/about/open-portal.page)
 
-## Text Classification
+## Text classification
 
 In this sample, we'll predict whether a book in the British Library is fiction or non-fiction based on book metadata. This will be accomplished by applying text classification with word2vec and linear-regression model on Spark.
 
@@ -63,7 +63,7 @@ Industry: Information
 
 Dataset:
 
-## Uplift Model
+## Uplift model
 
 In this sample, we'll estimate the causal impact of certain treatments on an individual’s behavior by using an Uplift model. We'll walk through step by step how to create, train and evaluate the model touching on four core learnings:
 
