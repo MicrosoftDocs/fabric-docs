@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 02/07/2023
+ms.date: 02/08/2023
 
 ---
 
@@ -25,7 +25,7 @@ In this tutorial, you learn how to:
 > * Create a [!INCLUDE [product-name](../includes/product-name.md)] platform-based cloud connection to a specific event hub instance
 > * Get data from Azure Event Hubs
 > * Query data in a Quick query
-> * Save query in a KQL Queryset
+> * Save query as a KQL Queryset
 > * Create a Power BI report
 > * Create a OneLake shortcut
 
@@ -207,17 +207,17 @@ Let's say you're an importer working for WWI who wants to sell a variety of edib
 
     :::image type="content" source="media/realtime-analytics-tutorial/timechart-render.png" alt-text="Screenshot of Quick query window showing the results of the query.":::
 
-1. To save your query as a KQL Queryset, select **Save as Query Set**.
+1. To save your query as a KQL Queryset, select **Save as Query Set**. This will automatically open your **KQL Queryset** with the queries that you wrote in the query editor.
 
-TODO: add scenario-specific info
+Now that you've created your Queryset, you can proceed to build a Power BI report.
 
 ## Build Power BI report
 
-You can visualize your report by creating a Power BI report.
+TODO: Info about PBI report.
 
-1. Navigate to your **KQL Database**.
-1. In the **Object tree**, select the **More menu** in the table titled **Telemetry** > **Build Power BI report**.
-    :::image type="content" source="media/realtime-analytics-tutorial/build-pbi-report.png" alt-text="Screenshot of the database object tree showing the Telemetry table's More menu. The menu option titled Build Power Bi report is highlighted.":::
+1. Select the query you want to build into a Power BI report. The output of this query will be used as the dataset for building the Power BI report.
+1. Select **Build Power BI report**.
+    :::image type="content" source="media/realtime-analytics-tutorial/build-pbi-report.png" alt-text="Screenshot of the KQL Queryset showing the saved query. The Home tab option titled Build Power BI report is highlighted.":::
 
     >[!NOTE]
     > When you build a report, a dataset is created and saved in your workspace. You can create multiple reports from a single dataset.
