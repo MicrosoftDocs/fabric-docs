@@ -37,7 +37,7 @@ In addition, you can use multiple languages in one notebook by specifying the la
 # Enter your R code here
 ```
 
-## Install Packages
+## Install packages
 
 When doing interactive data analysis or machine learning, you might try newer packages or you might need packages that are currently unavailable on your Apache Spark pool. Instead of updating the pool configuration, users can now use session-scoped packages to add, manage, and update session dependencies.
 
@@ -54,7 +54,7 @@ For example, users can install an R library from CRAN and CRAN snapshots. In the
 install.packages("highcharter", repos = "https://cran.microsoft.com/snapshot/2021-07-16/")
 ```
 
-## Notebook Utilities
+## Notebook utilities
 
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can use MSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. MSSparkUtils is supported for R notebooks.
 
@@ -69,7 +69,7 @@ mssparkutils.fs.help()
 
 [SparkR](https://spark.apache.org/docs/latest/sparkr.html) is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation etc. SparkR also supports distributed machine learning using MLlib.
 
-### Create a SparkR DataFrame from a local R data.frame
+### Create a SparkR dataframe from a local R data.frame
 
 The simplest way to create a DataFrame is to convert a local R data.frame into a SparkDataFrame. In this example, we use `as.DataFrame` and pass in the local R dataframe to create the SparkDataFrame.
 
