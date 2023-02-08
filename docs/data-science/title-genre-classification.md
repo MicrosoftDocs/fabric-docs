@@ -32,7 +32,7 @@ The sample dataset we used here consists of metadata relating to books digitized
 
 In this notebook, we'll use `wordcloud`, which first needs to be installed. The PySpark kernel will be restarted after `%pip install`, thus we need to install it before we run any other cells.
 
-```python
+```shell
 # install wordcloud for text visualization
 %pip install wordcloud
 ```
