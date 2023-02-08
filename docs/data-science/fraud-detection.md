@@ -38,7 +38,7 @@ Given the class imbalance ratio, we recommend measuring the accuracy using the A
 
 In this notebook, we'll use `imblearn` that first needs to be installed. The PySpark kernel will be restarted after `%pip install`, thus we need to install it before we run any other cells.
 
-```python
+```shell
 # install imblearn for SMOTE
 %pip install imblearn
 ```
