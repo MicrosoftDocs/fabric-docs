@@ -9,7 +9,7 @@ ms.date: 02/07/2023
 
 ---
 
-# Tutorial: Real-time Analytics tutorial
+# Tutorial: Real-time Analytics
 
 Real-time Analytics is a portfolio of capabilities that provides an end-to-end analytics solution across Trident experiences. It supplies high velocity, low latency data analysis, and is optimized for time-series data, including automatic partitioning and indexing of any data format and structure,such as structured data, semi-structures (JSON) and free text.
 
