@@ -41,7 +41,6 @@ The following three properties are **required**:
 - **Connection**:  Select an REST connection from the connection list.
 - **Connection type**: Select REST.
 - **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the linked service definition is used. The HTTP connector copies data from the combined URL: `[URL specified in linked service]/[relative URL specified in dataset]`.
-- **File settings**: Click on **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -64,7 +63,6 @@ The following three properties are **required**:
 - **Connection**:  Select an REST connection from the connection list.
 - **Connection type**: Select REST.
 - **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the linked service definition is used. The HTTP connector copies data from the combined URL: `[URL specified in linked service]/[relative URL specified in dataset]`.
-- **File settings**: Click on **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
 Under **Advanced**, you can specify the following fields:
 
