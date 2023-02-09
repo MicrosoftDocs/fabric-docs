@@ -156,18 +156,18 @@ conceptualContent:
     # Card
     - title: "Perform data analysis with Real-time analytics"
       links:
-        - url: data-explorer/.md
+        - url: real-time-analytics/.md
           itemType: overview
           text: What is Real-time analytics?
-        - url: data-explorer/create-database.md
+        - url: real-time-analytics/create-database.md
           itemType: get-started
           text: Create a database
-        - url: data-explorer/get-data-blob.md
+        - url: real-time-analytics/get-data-blob.md
           itemType: how-to-guide
           text: Get data from a blob container
       # footerLink (optional)
       footerLink:
-        url: data-explorer/index.yml
+        url: real-time-analytics/index.yml
         text: See more
     # Card
     - title: Administer your resources
