@@ -1,18 +1,17 @@
 ### YamlMime:Landing
 
-title: service documentation # < 60 chars
-summary: summary # < 160 chars
+title: Data Factory documentation # < 60 chars
+summary: Data factory provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade. # < 160 chars
 
 metadata:
-  title: title # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: description # Required; article description that is displayed in search results. < 160 chars.
+  title: Data Factory documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Summary of the Data Factory documentation # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
 #   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
   ms.topic: landing-page # Required
-  ms.collection: collection # Optional; Remove if no collection is used.
-  author: githubauthor #Required; your GitHub user alias, with correct capitalization.
-  ms.author: msauthor #Required; microsoft alias of author; optional team alias.
-  ms.date: 01/27/2020 #Required; mm/dd/yyyy format.
+  author: DougKlopfenstein #Required; your GitHub user alias, with correct capitalization.
+  ms.author: dougklo #Required; microsoft alias of author; optional team alias.
+  ms.date: 1/10/2023 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -20,33 +19,52 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About [service]
+  - title: About Data Factory
     linkLists:
       - linkListType: overview
         links:
-          - text: What is [service]?
-            url: ../index.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../index.md # Placeholder file. Replace with the actual file name.
-      - linkListType: overview
-        links:
-          - text: linktext1
-            url: ../index.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../index.md # Placeholder file. Replace with the actual file name.
+          - text: What is Data Factory?
+            url: data-factory-overview.md
+          - text: Connector overview
+            url: connector-overview.md
+          - text: Azure Blob Storage connector overview
+            url: connector-azure-blob-storage-overview.md
 
   # Card 
   - title: Get started
     linkLists:
       - linkListType: get-started
         links:
-          - text: linktext1
-            url: ../index.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../index.md # Placeholder file. Replace with the actual file name.
-      - linkListType: get-started
+          - text: Create your first gen2 dataflow
+            url: create-first-dataflow-gen2.md
+          - text: Create your first data pipeline
+            url: create-first-pipeline.md
+          - text: Move and transform data
+            url: transform-data.md
+          - text: Move data with copy assistant
+            url: move-data-lakehouse-copy-assistant.md
+  
+  # Card 
+  - title: Working with data pipelines
+    linkLists:
+      - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../index.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../index.md # Placeholder file. Replace with the actual file name.
+          - text: Data pipeline runs
+            url: pipeline-runs.md
+          - text: Copy data - copy activity
+            url: copy-data-activity.md
+          - text: Monitor data pipeline runs
+            url: monitor-pipeline-runs.md
+          - text: Script activity
+            url: script-activity.md
+
+  # Card 
+  - title: Working with dataflows
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Connectors
+            url: connector-overview.md
+          - text: Data source management
+            url: data-source-management.md
+
