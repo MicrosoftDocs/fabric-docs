@@ -242,7 +242,7 @@ Now that you've created your Queryset, you can proceed to build a Power BI repor
 
 ## Build Power BI report
 
-TODO: Info about PBI report.
+A Power BI report is a multi-perspective view into a dataset, with visuals that represent findings and insights from that dataset.
 
 1. Select the query you want to build into a Power BI report. The output of this query will be used as the dataset for building the Power BI report.
 1. Select **Build Power BI report**.
