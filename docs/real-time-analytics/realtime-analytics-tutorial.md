@@ -244,7 +244,7 @@ Now that you've created your Queryset, you can proceed to build a Power BI repor
 
 A Power BI report is a multi-perspective view into a dataset, with visuals that represent findings and insights from that dataset.
 
-1. Select the query you want to build into a Power BI report. The output of this query will be used as the dataset for building the Power BI report.
+1. In your Queryset, select the query you want to build into a Power BI report. The output of this query will be used as the dataset for building the Power BI report.
 1. Select **Build Power BI report**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/build-pbi-report-qs.png" alt-text="Screenshot of the KQL Queryset showing the saved query. The Home tab option titled Build Power BI report is highlighted.":::
