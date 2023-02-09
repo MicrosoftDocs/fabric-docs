@@ -45,13 +45,13 @@ In this tutorial, you learn how to:
 
    :::image type="content" source="media/realtime-analytics-tutorial/create-database.png" alt-text="Screenshot of the Real-time Analytics homepage that shows the items that can be created. The item titled KQL Database is highlighted.":::
 
-1. Enter your database name, then select **Create**.
+1. Enter *rta-tutorial-db* as your database name, then select **Create**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/new-database.png" alt-text="alt text Screenshot of New Database window showing the database name. The Create button is highlighted. ":::
 
 The KQL database has now been created within the context of the selected workspace. Next, you'll get create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)].
 
-## Create cloud connection
+## Create a cloud connection
 
 Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you'll need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the data connection. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature).
 
@@ -79,7 +79,7 @@ Within the SAS policy pane, take note of the following four fields. You may want
 | c |**Primary key** | The key associated with the SAS policy | Starts with *PGGIISb009*...
 | d | **Connection string-primary key** | In this field you only want to copy the event hub namespace, which can be found as part of the connection string. | *eventhubpm15910.servicebus.windows.net*
 
-### Create cloud connection
+### Create a cloud connection
 
 Now that your SAS policy is set up, you can configure a connection to this event hub.
 
@@ -94,7 +94,7 @@ Now that your SAS policy is set up, you can configure a connection to this event
     | Field | Description | Suggested value |
     |---|---|---|
     | Icon | Type of connection | Cloud
-    | Connection name | rta-tutorial-eh-data-connection
+    | Connection name | daily-mh-eh-data-connection
     | Connection type | Type of resource to connect to | EventHub
     | Event Hub namespace | Field reference **d** from the above [table](#gather-information-for-the-data-connection). | *eventhubpm15910.servicebus.windows.net*
     | Event Hub | Field reference **a** from the above [table](#gather-information-for-the-data-connection). | *iotdata*
@@ -104,13 +104,13 @@ Now that your SAS policy is set up, you can configure a connection to this event
     | Password | Field reference **c** from the above [table](#gather-information-for-the-data-connection). <br><br> The SAS primary key.
     | Privacy level | Privacy levels aren't used in this item. You can use Organizational as a default value. | Organizational
 
-    <!--- :::image type="content" source="media/get-data-event-hub/fill-out-connection-portal.png" alt-text="Screenshot of filling out event hub information in the Azure portal."::: --->
+   :::image type="content" source="media/get-data-event-hub/fill-out-connection-portal.png" alt-text="Screenshot of filling out event hub information in the Azure portal.":::
 
 1. Select **Create**.
 
 ## Connect the cloud connection to your Real-time Analytics database
 
-In the following step, you'll create a data connection in your database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your event hub and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) into the target table using a specified data mapping.
+In the following step, you'll create a data connection in your database. This connects a table in your database to the Event Hubs cloud connection that you created. The connection will allow you to use your Event Hubs and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) into the target table using a specified data mapping.
 
 ### Get data from Event Hubs
 
@@ -140,8 +140,8 @@ In the **Source** tab, **Source type** is auto-populated with **Event Hub**.
   
     |**Setting** | **Suggested value** | **Field description**|
     |---|---|---|
-    | Event hub data source | *rta-tutorial-eh-data-connection* | The name that identifies your Event Hubs cloud connection. |
-    | Data connection name | *rta-tutorial-db-rta-tutorial-eh-data-con* | This defines the name of the database-specific Real-time Analytics event hub Data Connection. The default is \<tablename>\<EventHubname>. |
+    | Event hub data source | *daily-mh-eh-data-connection* | The name that identifies your Event Hubs cloud connection. |
+    | Data connection name | *rta-tutorial-db-daily-mh-eh-data-con* | This defines the name of the database-specific Real-time Analytics Event Hubs Data Connection. The default is \<tablename>\<EventHubname>. |
     | Consumer group | **Add consumer group** | The consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups)
     | Compression | *None* | Data compression of the events, as coming from the event hub. Options are None (default), or GZip compression.
     | Event system properties |Leave blank | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations). If there are multiple records per event message, the system properties will be added to the first one. See [event system properties](#event-system-properties).|
@@ -169,7 +169,7 @@ The tool automatically infers the schema based on your data.
 
 ### Summary tab
 
-In the **Continuous ingestion from Event Hub established** window, all steps will be marked with green check marks when the data connection is successfully created. The data from Event Hub will begin streaming automatically into your table.
+In the **Continuous ingestion from Event Hub established** window, all steps will be marked with green check marks when the data connection is successfully created. The data from Event Hubs will begin streaming automatically into your table.
 
 Now that you've got data in your database, you're going to learn how to query it using the **Quick query** tool in your database editor.
 
@@ -177,7 +177,7 @@ Now that you've got data in your database, you're going to learn how to query it
 
 ## Query data
 
- In this section you'll use the advanced data analysis capabilities of Kusto Query language to query your telemetry data and find out [TODO - add based on scenario].
+ In the following step, you'll use the advanced data analysis capabilities of Kusto Query language to query your telemetry data and find out [TODO - add based on scenario].
 
 <!--TODO- based on scenario- Now we're going to use queries to do xyz which will show us abc.
 Recall that in our scenario that  blah blah blah. you're going to use a series of queries to find out XX
