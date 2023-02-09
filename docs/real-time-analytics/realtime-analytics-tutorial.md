@@ -256,11 +256,9 @@ TODO: Info about PBI report.
 1. Review the visualizations, then select **Save**.
 1. In **Name your file in Power BI**, enter *rta-pbi-report* for your report name.
 1. Select the workspace in which you want to save this report. The report can be saved to a different workspace than the one you started in.
-
-    :::image type="content" source="media/realtime-analytics-tutorial/report-details.png" alt-text="Screenshot of report details showing the report's details. The button titled Continue is highlighted.":::
-
 1. Select the sensitivity label to apply to the report. For more information, see [sensitivity labels](/power-bi/enterprise/service-security-apply-data-sensitivity-labels).
 1. Select **Continue**.
+    :::image type="content" source="media/realtime-analytics-tutorial/report-details.png" alt-text="Screenshot of report details showing the report's details. The button titled Continue is highlighted.":::
 1. Select **Open the file in Power BI to view, edit, and get a shareable link** to view and edit your report.
 
     :::image type="content" source="media/realtime-analytics-tutorial/open-report.png" alt-text="Screenshort of report preview showing that the report has been saved. The link to open the report in Power BI is highlighted.":::
