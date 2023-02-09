@@ -13,8 +13,6 @@ ms.date: 02/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-## Introduction
-
 In this notebook, we'll demonstrate how to solve a text classification task with word2vec + linear-regression model on Spark.
 
 The sample dataset we used here consists of metadata relating to books digitized by the British Library in partnership with Microsoft. It includes human generated labels for whether a book is 'fiction' or 'non-fiction'. We use this dataset to train a model for genre classification that predicts whether a book is 'fiction' or 'non-fiction' based on its title.

@@ -13,28 +13,26 @@ ms.date: 02/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-## Introduction
+In this notebook, we demonstrate how to create, train and evaluate uplift models and apply uplift modeling technique.
 
-In this notebook, we'll demonstrate how to create, train and evaluate uplift models and apply uplift modelling technique.
-
-- What is uplift modelling?
+- What is uplift modeling?
 
     It's a family of causal inference technology that uses machine learning models to estimate the causal impact of some treatment on an individual's behavior.
 
-  - **Persuadables** will only respond positive to the treatment
+  - **Persuadables** only respond positive to the treatment
   - **Sleeping-dogs** have a strong negative response to the treatment
-  - **Lost Causes** will never reach the outcome even with the treatment
-  - **Sure Things** will always reach the outcome with or without the treatment
+  - **Lost Causes** never reach the outcome even with the treatment
+  - **Sure Things** always reach the outcome with or without the treatment
 
-  The goal of uplift modelling is to identify the "persuadables", not waste efforts on "sure things" and "lost causes", and avoid bothering "sleeping dogs"
+  The goal of uplift modeling is to identify the "persuadables", not waste efforts on "sure things" and "lost causes", and avoid bothering "sleeping dogs"
 
-- How does uplift modelling work?
+- How does uplift modeling work?
 
   - **Meta Learner**: predicts the difference between an individual's behavior when there's a treatment and when there's no treatment
   - **Uplift Tree**: a tree-based algorithm where the splitting criterion is based on differences in uplift
   - **NN-based Model**：a neural network model that usually works with observational data
 
-- Where can uplift modelling work?
+- Where can uplift modeling work?
 
   - Marketing: help to identify persuadables to apply a treatment such as a coupon or an online advertisement
   - Medical Treatment: help to understand how a treatment can impact certain groups differently
@@ -207,7 +205,7 @@ control_train_df = train_df.where(f"{TREATMENT_COLUMN} = 0")
 
 ## Step 3: Model training and evaluation
 
-### Uplift modelling: T-Learner with LightGBM
+### Uplift modeling: T-Learner with LightGBM
 
 ```python
 classifier = (
@@ -335,7 +333,7 @@ test_ranked_pd_df = test_ranked_df.select(
 uplift_plot(test_ranked_pd_df)
 ```
 
-:::image type="content" source="media\uplift-modelling\criteo_uplift_curve.png" alt-text="Chart showing a normalized uplift model curve versus random treatment." lightbox="media\uplift-modelling\criteo_uplift_curve.png":::
+:::image type="content" source="media\uplift-modeling\criteo-uplift-curve.png" alt-text="Chart showing a normalized uplift model curve versus random treatment." lightbox="media\uplift-modeling\criteo-uplift-curve.png":::
 
 From the uplift curve in the previous example, we notice that the top 20% population ranked by our prediction have a large gain if they were given the treatment, which means they're the **persuadables**. Therefore, we can print the cutoff score at 20% percentage to identify the target customers.
 

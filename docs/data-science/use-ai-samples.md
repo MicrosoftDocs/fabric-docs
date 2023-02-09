@@ -21,7 +21,7 @@ In providing the Data Science SaaS experience we want to enable ML professionals
 | [**Credit Card Fraud Detection**](#fraud-detection) | Binary Classification | [Fraud Detection Notebook](fraud-detection.md) |
 | [**Forecasting Property Trade**](#forecasting) | Forecasting | [Time Series Forecasting Notebook](time-series-forecasting.md) |
 | [**Book Genre Classification**](#text-classification) | Text Classification | [Text Classification Notebook](title-genre-classification.md) |
-| [**Impact of Medical Treatment**](#uplift-model) | Uplift Modeling | [Uplift Model Notebook](uplift-modelling.md) |
+| [**Impact of Medical Treatment**](#uplift-model) | Uplift Modeling | [Uplift Model Notebook](uplift-modeling.md) |
 
 ## Recommender
 
@@ -72,7 +72,7 @@ In this sample, we'll estimate the causal impact of certain treatments on an ind
 - Prediction module: calls the uplift model to predict on test data.
 - Evaluation module: evaluates the effect of the uplift model on test data.
 
-Notebook: [Uplift Model Notebook](uplift-modelling.md)
+Notebook: [Uplift Model Notebook](uplift-modeling.md)
 
 Industry: Healthcare
 

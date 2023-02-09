@@ -27,7 +27,7 @@ items:
     - name: Text classification
       href: title-genre-classification.md
     - name: Healthcare causal impact of treatments
-      href: uplift-modelling.md
+      href: uplift-modeling.md
   - name: Machine learning
     items:
     - name: Machine learning model

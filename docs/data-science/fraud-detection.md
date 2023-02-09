@@ -13,8 +13,6 @@ ms.date: 02/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-## Introduction
-
 In this notebook, we'll demonstrate data engineering and data science work flow with an e2e sample. The scenario is to build a model for detecting fraud credit card transactions.
 
 ## Step 1: Load the data
