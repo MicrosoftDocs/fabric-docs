@@ -37,7 +37,7 @@ landingContent:
         links:
           - text: Create your first gen2 dataflow
             url: create-first-dataflow-gen2.md
-          - text: Create your first pipeline
+          - text: Create your first data pipeline
             url: create-first-pipeline.md
           - text: Move and transform data
             url: transform-data.md
@@ -45,15 +45,15 @@ landingContent:
             url: move-data-lakehouse-copy-assistant.md
   
   # Card 
-  - title: Working with pipelines
+  - title: Working with data pipelines
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Pipeline runs
+          - text: Data pipeline runs
             url: pipeline-runs.md
           - text: Copy data - copy activity
             url: copy-data-activity.md
-          - text: Monitor pipeline runs
+          - text: Monitor data pipeline runs
             url: monitor-pipeline-runs.md
           - text: Script activity
             url: script-activity.md

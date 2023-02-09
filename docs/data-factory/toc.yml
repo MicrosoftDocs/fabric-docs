@@ -10,19 +10,19 @@ items:
     items:
     - name: Create a dataflow
       href: create-first-dataflow-gen2.md
-    - name: Create a pipeline
+    - name: Create a data pipeline
       href: create-first-pipeline.md
     - name: Move and transform data
       href: transform-data.md
     - name: Move data - copy assistant
       href: move-data-lakehouse-copy-assistant.md
-  - name: Pipelines
+  - name: Data pipelines
     items:
-    - name: Pipeline runs
+    - name: Data pipeline runs
       href: pipeline-runs.md
     - name: Copy data - copy activity
       href: copy-data-activity.md
-    - name: Monitor pipeline runs
+    - name: Monitor data pipeline runs
       href: monitor-pipeline-runs.md
     - name: Script activity
       href: script-activity.md
