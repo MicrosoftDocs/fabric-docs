@@ -45,7 +45,7 @@ In this tutorial, you learn how to:
 
    :::image type="content" source="media/realtime-analytics-tutorial/create-database.png" alt-text="Screenshot of the Real-time Analytics homepage that shows the items that can be created. The item titled KQL Database is highlighted.":::
 
-1. Enter *rta-tutorial-db* as your database name, then select **Create**.
+1. Under **Database name**, enter *rta-tutorial-db*, then select **Create**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/new-database.png" alt-text="alt text Screenshot of New Database window showing the database name. The Create button is highlighted. ":::
 
@@ -232,7 +232,7 @@ Let's say you're an importer working for WWI who wants to sell a variety of edib
     > The pictured chart might render differently than yours. -->
 
 1. Select **Save as Queryset**.
-1. Enter *rtaQS* for your **KQL Queryset name**, then select **Create**.
+1. Under **KQL Queryset name**, enter *rtaQS*, then select **Create**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/rta-qs.png" alt-text="Screenshot of Save as Queryset window showing the Queryset name.":::
 
@@ -257,7 +257,7 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
     > If you delete the dataset, your reports will also be removed.
 
 1. Review the visualizations, then select **Save**.
-1. In **Name your file in Power BI**, enter *rta-pbi-report* for your report name.
+1. Under **Name your file in Power BI**, enter *rta-pbi-report*.
 1. Select the workspace in which you want to save this report. The report can be saved to a different workspace than the one you started in.
 1. Select the sensitivity label to apply to the report. For more information, see [sensitivity labels](/power-bi/enterprise/service-security-apply-data-sensitivity-labels).
 1. Select **Continue**.
