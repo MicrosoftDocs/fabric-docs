@@ -1,6 +1,6 @@
 ---
-title: Move and transform data with dataflow and pipelines
-description: Steps for moving and transforming data with dataflows and pipelines.
+title: Move and transform data with dataflow and data pipelines
+description: Steps for moving and transforming data with dataflows and data pipelines.
 ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
@@ -8,13 +8,13 @@ ms.topic: quickstart
 ms.date: 01/27/2023
 ---
 
-# QuickStart: Move and transform data with dataflows and pipelines
+# QuickStart: Move and transform data with dataflows and data pipelines
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-In this tutorial, you'll see how the dataflow and pipeline experience can create a powerful and comprehensive Data factory solution.  
+In this tutorial, you'll see how the dataflow and data pipeline experience can create a powerful and comprehensive Data factory solution.  
 
 ## Prerequisites
 
@@ -85,11 +85,11 @@ Follow these steps to set up your dataflow.
 
    :::image type="content" source="media/transform-data/review-and-publish.png" alt-text="Screenshot showing where to review queries." lightbox="media/transform-data/review-and-publish.png":::
 
-## Move data with pipelines
+## Move data with data pipelines
 
-Follow these steps to create your pipeline.
+Follow these steps to create your data pipeline.
 
-### Step 1: Create a new pipeline
+### Step 1: Create a new data pipeline
 
 1. From your workspace, select **New**, and then select **Data pipeline**.  
 
@@ -149,9 +149,9 @@ Follow these steps to create your pipeline.
 
    :::image type="content" source="media/transform-data/finalize-and-review.png" alt-text="Screenshot showing how to review copy data settings." lightbox="media/transform-data/finalize-and-review.png":::
 
-### Step 5: Design your pipeline and save to run and load data
+### Step 5: Design your data pipeline and save to run and load data
 
-1. Add a **Dataflow** activity to your pipeline by selecting **Dataflow** in the **Activities** tab.  
+1. Add a **Dataflow** activity to your data pipeline by selecting **Dataflow** in the **Activities** tab.  
 
    :::image type="content" source="media/transform-data/add-dataflow-activity.png" alt-text="Screenshot showing where to select the Dataflow option." lightbox="media/transform-data/add-dataflow-activity.png":::
 
@@ -163,6 +163,6 @@ Follow these steps to create your pipeline.
 
    :::image type="content" source="media/transform-data/copy-dataflow-activity.png" alt-text="Screenshot showing how to make the dataflow run take place after the copy activity." lightbox="media/transform-data/copy-dataflow-activity.png":::
 
-4. Select **Save** to save your pipeline. Then select **Run** to run your pipeline and load your data.  
+4. Select **Save** to save your data pipeline. Then select **Run** to run your data pipeline and load your data.  
 
    :::image type="content" source="media/transform-data/save-run-pipeline.png" alt-text="Screenshot showing where to select Run." lightbox="media/transform-data/save-run-pipeline.png":::
