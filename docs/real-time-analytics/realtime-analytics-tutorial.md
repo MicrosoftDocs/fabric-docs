@@ -38,8 +38,7 @@ In this tutorial, you learn how to:
 ## Create a new database
 
 1. Open the app switchers on the bottom of the navigation pane and select **Real-time Analytics**.
-
-    :::image type="content" source="media/realtime-analytics-tutorial/app-switcher-kusto.png" alt-text="Screenshot of app switcher showing available apps. The app titled Kusto is highlighted. ":::
+    :::image type="content" source="media/realtime-analytics-tutorial/app-switcher-kusto.png" alt-text="Screenshot of app switcher showing available apps. The Real time Analytics experience is highlighted.":::
 
 1. Select **KQL Database**.
 
