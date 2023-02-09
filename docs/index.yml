@@ -170,100 +170,100 @@ conceptualContent:
         url: data-explorer/index.yml
         text: See more
     # Card
-    - title: "Trident: Reflex"
-      links:
-        - url: developer/embedded/embedded-analytics-power-bi.md
-          itemType: overview
-          text: What is Power BI embedded analytics?
-        - url: /power-bi/developer/embedded/embedded-analytics-power-bi
-          itemType: overview
-          text: Power BI Embedded Generation 2
-        - url: developer/visuals/develop-power-bi-visuals.md
-          itemType: overview
-          text: Develop your own Power BI visual
-      # footerLink (optional)
-      footerLink:
-        url: reflex/index.yml
-        text: See more
-    # Card
     - title: Administer your resources
       links:
-        - url: connect-data/desktop-quickstart-connect-to-data.md
-          itemType: tutorial
-          text: Connect to data
-        - url: connect-data/service-gateway-onprem.md
+        - url: admin/.md
+          itemType: overview
+          text: What is administration?
+        - url: admin/.md
           itemType: concept
-          text: On-premises data gateways
-        - url: connect-data/service-data-hub.md
-          itemType: concept
-          text: Discover data on the data hub
+          text: Understand administration roles
+        - url: admin/.md
+          itemType: how-to-guide
+          text: Delegate settings
       # footerLink (optional)
       footerLink:
-        url: fundamentals/admin/index.yml
+        url: admin/index.yml
         text: See more
     # Card
     - title: Secure your resources
       links:
-        - url: transform-model/datamarts/datamarts-overview.md
+        - url: security/.md
           itemType: overview
-          text: Datamarts overview (preview)
-        - url: transform-model/datamarts/datamarts-understand.md
+          text: What is security?
+        - url: security/.md
           itemType: concept
-          text: Understand datamarts (preview)
-        - url: transform-model/datamarts/datamarts-get-started.md
-          itemType: tutorial
-          text: Get started with datamarts (preview)
+          text: Bring your own encryption keys
+        - url: security/.md
+          itemType: how-to-guide
+          text: How does B2B work?
       # footerLink (optional)
       footerLink:
-        url: fundamentals/security/index.yml
+        url: security/index.yml
         text: See more
     # Card
     - title: Governance and compliance
       links:
-        - url: create-reports/desktop-add-custom-column.md
+        - url: governance-compliance/.md
+          itemType: overview
+          text: What is information protection?
+        - url: governance-compliance/.md
+          itemType: overview
+          text: Working with Purview
+        - url: governance-compliance/.md
           itemType: how-to-guide
-          text: Add a custom column
-        - url: transform-model/desktop-tutorial-create-calculated-columns.md
-          itemType: tutorial
-          text: Create calculated columns
-        - url: transform-model/desktop-create-and-manage-relationships.md
-          itemType: how-to-guide
-          text: Create and manage relationships
+          text: Set up certifications
       # footerLink (optional)
       footerLink:
-        url: transform-model/index.yml
+        url: governance-compliance/index.yml
         text: See more
     # Card
     - title: Enterprise
       links:
-        - url: create-reports/desktop-accessibility-creating-reports.md
+        - url: enterprise/.md
+          itemType: overview
+          text: Capacity and SKUs
+        - url: enterprise/.md
           itemType: how-to-guide
-          text: Design reports for accessibility
-        - url: paginated-reports/report-builder-shared-datasets.md
-          itemType: concept
-          text: Create a paginated report based on a shared dataset
-        - url: create-reports/power-bi-customize-button.md
+          text: Scale your SKU size
+        - url: enterprise/.md
           itemType: how-to-guide
-          text: Customize buttons in reports
+          text: Create billing reports
       # footerLink (optional)
       footerLink:
-        url: create-reports/index.yml
+        url: enterprise/index.yml
         text: See more
     # Card
     - title: Continuous integration and continuous deployment (CICD)
       links:
-        - url: collaborate-share/service-share-dashboards.md
-          itemType: concept
-          text: Share dashboards and reports
-        - url: collaborate-share/service-create-the-new-workspaces.md
+        - url: cicd/.md
+          itemType: overview
+          text: What are deployment pipelines?
+        - url: cicd/.md
+          itemType: get-started
+          text: Create deployment rules
+        - url: cicd/.md
           itemType: how-to-guide
-          text: Create workspaces
-        - url: collaborate-share/service-microsoft-teams-app.md
-          itemType: how-to-guide
-          text: Add the Power BI app to Microsoft Teams
+          text: Automate deployment pipelines
       # footerLink (optional)
       footerLink:
-        url: collaborate-share/index.yml
+        url: cicd/index.yml
+        text: See more
+    # Card
+    - title: "Monitor changing data with Reflex"
+      links:
+        - url: reflex/.md
+          itemType: overview
+          text: What is Reflex?
+        - url: reflex/
+          itemType: get-started
+          text: Use Reflex from Power BI
+        - url: reflex/.md
+          itemType: tutorial
+          text: End-to-end scenario for the reflex simulator
+      # footerLink (optional)
+      footerLink:
+        url: reflex/index.yml
         text: See more
 
 # additionalContent section (optional)
