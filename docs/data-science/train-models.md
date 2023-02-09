@@ -142,7 +142,7 @@ for epoch in range(1):
 torch.save(model.state_dict(), model.name())
 ```
 
-### Log Model with MLflow
+### Log model with MLflow
 
 Now, we'll start an MLflow run and track the results within our machine learning experiment.
 
@@ -272,7 +272,7 @@ batch_predictions = model.transform(test_spark)
 batch_predictions.show()
 ```
 
-## Next Steps
+## Next steps
 
 - Learn about [machine learning models](machine-learning-model.md).
 - Learn about [machine learning experiments](machine-learning-experiment.md).
