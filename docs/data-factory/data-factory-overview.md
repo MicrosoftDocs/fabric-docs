@@ -1,6 +1,6 @@
 ---
 title: What is Data Factory
-description: Overview of Data Factory dataflows and pipelines.
+description: Overview of Data Factory dataflows and data pipelines.
 ms.reviewer: DougKlopfenstein
 ms.author: makromer
 author: kromerm
@@ -28,7 +28,7 @@ Dataflows are built using the familiar [Power Query](/power-query/power-query-wh
 
 Data pipelines enable powerful workflow capabilities at cloud-scale. With data pipelines, you can build complex workflows that can refresh your dataflow, move PB-size data, and define sophisticated control flow pipelines.
 
-Use data pipelines to build complex ETL and data factory workflows that can perform many different tasks at scale. Control flow capabilities are built into pipelines that will allow you to build workflow logic, which provides loops and conditionals.
+Use data pipelines to build complex ETL and data factory workflows that can perform many different tasks at scale. Control flow capabilities are built into data pipelines that will allow you to build workflow logic, which provides loops and conditionals.
 
 Add a configuration-driven copy activity together with your low-code dataflow refresh in a single pipeline for an end-to-end ETL data pipeline. You can even add code-first activities for Spark Notebooks, SQL scripts, store procs, and more.
 
