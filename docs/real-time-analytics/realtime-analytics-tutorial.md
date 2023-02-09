@@ -15,7 +15,7 @@ Real-time Analytics is a portfolio of capabilities that provides an end-to-end a
 
 Real-time Analytics delivers high performance when it comes to your increasing volume of data. It accommodates datasets as small as a few gigabytes or as large as several petabytes, and allows you to explore data from different sources and a variety of data formats.
 
-You can use Real-time Analytics for a range of solutions, such as IoT analytics and log analytics, and in a number of scenarios including manufacturing operations, oil and gas, automotive, and more. In this tutorial, you'll stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16). Then you'll use the advanced data analysis capabilities of Kusto Query language to query the telemetry data and find out [TODO - add based on scenario]. Finally, these insights will be displayed in a Power BI report for communicating with others.
+You can use Real-time Analytics for a range of solutions, such as IoT analytics and log analytics, and in a number of scenarios including manufacturing operations, oil and gas, automotive, and more.
 
 In this tutorial, you learn how to:
 
@@ -38,7 +38,8 @@ In this tutorial, you learn how to:
 ## Create a new database
 
 1. Open the app switchers on the bottom of the navigation pane and select **Real-time Analytics**.
-    :::image type="content" source="media/realtime-analytics-tutorial/app-switcher-kusto.png" alt-text="Screenshot of app switcher showing available apps. The Real time Analytics experience is highlighted.":::
+
+    :::image type="content" source="media/realtime-analytics-tutorial/experience-switcher-rta.png" alt-text="Screenshot of app switcher showing available apps. The Real time Analytics experience is highlighted.":::
 
 1. Select **KQL Database**.
 
@@ -58,12 +59,12 @@ Before you can create a cloud connection in [!INCLUDE [product-name](../includes
 
 1. In the [Azure portal](https://ms.portal.azure.com/), browse to the specific Event Hubs instance you want to connect.
 1. Under **Settings**, select **Shared access policies**.
-1. Select **+Add** to add a new SAS policy, or select an existing policy with *Manage* permissions.
+1. Select **+Add** to add a new SAS policy.
 
     :::image type="content" source="media/get-data-event-hub/sas-policy-portal.png" alt-text="Screenshot of creating an SAS policy in the Azure portal.":::
 
 1. Enter a **Policy name**.
-1. Select **Manage**, and then **Create**.
+1. Select **Manage**, then **Create**.
 
 ### Gather information for the data connection
 
@@ -89,7 +90,7 @@ Now that your SAS policy is set up, you can configure a connection to this event
     The **New connection** pane opens.
 
 1. Fill out the fields according to the following table:
-   
+
     | Field | Description | Suggested value |
     |---|---|---|
     | Icon | Type of connection | Cloud
@@ -97,7 +98,7 @@ Now that your SAS policy is set up, you can configure a connection to this event
     | Connection type | Type of resource to connect to | EventHub
     | Event Hub namespace | Field reference **d** from the above [table](#gather-information-for-the-data-connection). | *eventhubpm15910.servicebus.windows.net*
     | Event Hub | Field reference **a** from the above [table](#gather-information-for-the-data-connection). | *iotdata*
-    | Consumer Group | User-defined name for the unique stream view. Use a name of an existing consumer group. If the event hub doesn't have a consumer group, use "$Default", which is the Event Hub's default consumer group. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups).
+    | Consumer Group | User-defined name for the unique stream view. Use a name of an existing consumer group. If the event hub doesn't have a consumer group, use "$Default", which is the Event Hubs' default consumer group. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups).
     | Authentication method | Type of authentication | Basic
     | Username | Field reference **b** from the above [table](#gather-information-for-the-data-connection).  <br><br> The SAS policy name | *DocsTest*
     | Password | Field reference **c** from the above [table](#gather-information-for-the-data-connection). <br><br> The SAS primary key.
@@ -109,7 +110,7 @@ Now that your SAS policy is set up, you can configure a connection to this event
 
 ## Connect the cloud connection to your Real-time Analytics database
 
-In the following step, you'll create a data connection in your database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your event hub and get data into the target table using a specified data mapping.
+In the following step, you'll create a data connection in your database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your event hub and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) into the target table using a specified data mapping.
 
 ### Get data from Event Hubs
 
@@ -139,7 +140,7 @@ In the **Source** tab, **Source type** is auto-populated with **Event Hub**.
   
     |**Setting** | **Suggested value** | **Field description**|
     |---|---|---|
-    | Event hub data source | *rta-tutorial-eh-data-connection* | The name that identifies your event hub cloud connection. |
+    | Event hub data source | *rta-tutorial-eh-data-connection* | The name that identifies your Event Hubs cloud connection. |
     | Data connection name | *rta-tutorial-db-rta-tutorial-eh-data-con* | This defines the name of the database-specific Real-time Analytics event hub Data Connection. The default is \<tablename>\<EventHubname>. |
     | Consumer group | **Add consumer group** | The consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups)
     | Compression | *None* | Data compression of the events, as coming from the event hub. Options are None (default), or GZip compression.
@@ -176,10 +177,12 @@ Now that you've got data in your database, you're going to learn how to query it
 
 ## Query data
 
-TODO- based on scenario- Now we're going to use queries to do xyz which will show us abc.
+ In this section you'll use the advanced data analysis capabilities of Kusto Query language to query your telemetry data and find out [TODO - add based on scenario].
+
+<!--TODO- based on scenario- Now we're going to use queries to do xyz which will show us abc.
 Recall that in our scenario that  blah blah blah. you're going to use a series of queries to find out XX
 
-Let's say you're an importer working for WWI who wants to sell a variety of edible novelties such as chilly chocolates. The company previously didn't have to handle chilled items. Now, to meet food handling requirements, they must monitor the temperature in their chiller room and any of their trucks that have chiller sections.
+Let's say you're an importer working for WWI who wants to sell a variety of edible novelties such as chilly chocolates. The company previously didn't have to handle chilled items. Now, to meet food handling requirements, they must monitor the temperature in their chiller room and any of their trucks that have chiller sections.-->
 
 <!-- Let's say you want to create a timechart of the average temperature over time for one of the devices. -->
 
@@ -187,7 +190,8 @@ Let's say you're an importer working for WWI who wants to sell a variety of edib
 
     :::image type="content" source="media/realtime-analytics-tutorial/quick-query.png" alt-text="Screenshot of the Quick query button.":::
 
-1. To find a device ID that starts with "x", paste the following query in your query editor and select **Run**.  
+    [TODO based on scenario.]
+<!-- 1. To find a device ID that starts with "x", paste the following query in your query editor and select **Run**.  
 
     ```kusto
     Telemetry
@@ -209,7 +213,6 @@ Let's say you're an importer working for WWI who wants to sell a variety of edib
 
     :::image type="content" source="media/realtime-analytics-tutorial/timechart-render.png" alt-text="Screenshot of Quick query window showing the results of the query.":::
 
-
 1. Write a query to detect anomalies in the temperature reported by a certain device over the last 7 days.
 
     ```kusto
@@ -226,9 +229,9 @@ Let's say you're an importer working for WWI who wants to sell a variety of edib
     The red dots in the chart indicate anomalies in the reported temperature.
 
     > [!NOTE]
-    > The pictured chart might render differently than yours.
+    > The pictured chart might render differently than yours. -->
 
-1. Select **Save as Query Set**.
+1. Select **Save as Queryset**.
 1. Enter *rtaQS* for your **KQL Queryset name**, then select **Create**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/rta-qs.png" alt-text="Screenshot of Save as Queryset window showing the Queryset name.":::
@@ -252,21 +255,24 @@ TODO: Info about PBI report.
     > When you build a report, a dataset is created and saved in your workspace. You can create multiple reports from a single dataset.
     >
     > If you delete the dataset, your reports will also be removed.
+
 1. Review the visualizations, then select **Save**.
 1. In **Name your file in Power BI**, enter *rta-pbi-report* for your report name.
 1. Select the workspace in which you want to save this report. The report can be saved to a different workspace than the one you started in.
 1. Select the sensitivity label to apply to the report. For more information, see [sensitivity labels](/power-bi/enterprise/service-security-apply-data-sensitivity-labels).
 1. Select **Continue**.
+
     :::image type="content" source="media/realtime-analytics-tutorial/report-details.png" alt-text="Screenshot of report details showing the report's details. The button titled Continue is highlighted.":::
+
 1. Select **Open the file in Power BI to view, edit, and get a shareable link** to view and edit your report.
 
     :::image type="content" source="media/realtime-analytics-tutorial/open-report.png" alt-text="Screenshort of report preview showing that the report has been saved. The link to open the report in Power BI is highlighted.":::
 
 ## Create OneLake shortcut
 
-You can use shortcuts to quickly pull data from internal and external locations into your Lakehouse, Warehouse, or datasets. Shortcuts can be updated or removed from your item, but these changes won't affect the original data and its source.
+You can use shortcuts to quickly pull data from internal and external locations into your Lakehouse, Warehouse, or datasets. Shortcuts can be updated or removed from your item, but these changes won't affect the original data and its source. Once you create a shortcut, you can access your data in all of Trident's experiences.
 
-1. Select the **Create** button in the **Navigation pane**.
+1. Select **Create** in the **Navigation pane**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/navigation-pane.png" alt-text="Screenshot of the Navigation pane. The option titled Create is highlighted.":::
 
@@ -274,23 +280,29 @@ You can use shortcuts to quickly pull data from internal and external locations 
 
     :::image type="content" source="media/realtime-analytics-tutorial/create-lakehouse.png" alt-text="Screenshot of Data engineering items. The item titled Lakehouse is highlighted.":::
 
-1. Enter your Lakehouse name, then select **Create**.
+1. Enter *rtatutorial* as your Lakehouse name, then select **Create**.
+
+:::image type="content" source="media/realtime-analytics-tutorial/lakehouse-name.png" alt-text="Screenshot of new Lakehouse window showing the Lakehouse name.":::
+
 1. Select **New Shortcut** on the right-hand side of the Lakehouse.
+
+:::image type="content" source="media/realtime-analytics-tutorial/load-lakehouse.png" alt-text="Screenshot of empty Lakehouse. The option titled New shortcut is highlighted.":::
+
 1. Under **Internal sources**, select **OneLake**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/new-shortcut.png" alt-text="Screenshot of New Shortcut window. The option under Internal sources titled OneLake is highlighted.":::
 
-1. In **Select a data source type**, select the KQL Database with the Event Hubs data source type you created earlier.
+1. In **Select a data source type**, select *rta-tutorial-db*, then select **Next** to connect the data to your shortcut.
 
     :::image type="content" source="media/realtime-analytics-tutorial/onelake-shortcut-data-source.png" alt-text="Screenshot of data source type window showing all of the data sources in your workspace.":::
 
-1. Select **Next** to find the data you want to use with your shortcut.
 1. To connect the table with the data from Event Hubs, select **>** to expand the tables in the left-hand pane, then select the table titled **Telemetry**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/shortcut-data-connection.png" alt-text="Screenshot of New shortcut window showing the tables in the selected database. The table titled Telemetry is highlighted.":::
+
 1. Select **Create** to create the shortcut. The Lakehouse will automatically refresh.
 
-    The Lakehouse shortcut has been created. You can now use this data in other environments without returning to Real-time Analytics.
+    The Lakehouse shortcut has been created. You can now use this data in other Trident experiences without returning to Real-time Analytics.
 
 ## Clean up resources
 
