@@ -202,7 +202,7 @@ conceptualContent:
         url: security/index.yml
         text: See more
     # Card
-    - title: Governance and compliance
+    - title: Protect your data with Governance and compliance
       links:
         - url: governance-compliance/.md
           itemType: overview
