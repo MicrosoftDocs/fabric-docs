@@ -19,12 +19,12 @@ This Azure Blob Storage connector is supported in [!INCLUDE [product-name](../in
 
 ## Supported capabilities
 
-|  | Supported capabilities | Gateway | Authentication |
-| --- | --- | --- | ---|
-| **Copy activity (source/destination)** | Yes | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
-| **Lookup activity** | Yes | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
-| **GetMetadata activity** | Yes | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
-| **Dataflow Gen2 (source/destination)** | Yes | On-premises data gateway<br/>Virtual network data gateway | Anonymous<br/>Key<br/>Shared Access Signature (SAS)<br/>Organizational account |
+| Supported capabilities | Gateway | Authentication |
+| --- | --- | ---|
+| **Copy activity (source/destination)** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
+| **Lookup activity** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
+| **GetMetadata activity** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
+| **Dataflow Gen2 (source/destination)** | On-premises data gateway<br/>Virtual network data gateway | Anonymous<br/>Key<br/>Shared Access Signature (SAS)<br/>Organizational account |
 
 ## Next steps
 
