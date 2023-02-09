@@ -11,9 +11,9 @@ ms.date: 02/08/2023
 
 # Tutorial: Real-time Analytics
 
-Real-time Analytics is a portfolio of capabilities that provides an end-to-end analytics solution across Trident experiences. It supplies high velocity, low latency data analysis, and is optimized for time-series data, including automatic partitioning and indexing of any data format and structure,such as structured data, semi-structures (JSON) and free text.
+Real-time Analytics is a portfolio of capabilities that provides an end-to-end analytics solution across Trident experiences. It supplies high velocity, low latency data analysis, and is optimized for time-series data, including automatic partitioning and indexing of any data format and structure, such as structured data, semi-structured (JSON), and free text.
 
-Real-time Analytics delivers with high performance when it comes to your increasing data. It accommodates datasets both as small as a few gigabytes or as large as a number of petabytes, and allows you to explore data from different sources and a variety of data formats.
+Real-time Analytics delivers high performance when it comes to your increasing volume of data. It accommodates datasets as small as a few gigabytes or as large as several petabytes, and allows you to explore data from different sources and a variety of data formats.
 
 You can use Real-time Analytics for a range of solutions, such as IoT analytics and log analytics, and in a number of scenarios including manufacturing operations, oil and gas, automotive, and more. In this tutorial, you'll stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16). Then you'll use the advanced data analysis capabilities of Kusto Query language to query the telemetry data and find out [TODO - add based on scenario]. Finally, these insights will be displayed in a Power BI report for communicating with others.
 
@@ -32,6 +32,7 @@ In this tutorial, you learn how to:
 ## Prerequisites
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
+* An Event Hubs instance
 * Workspace
 
 ## Create a new database
@@ -57,7 +58,7 @@ Before you can create a cloud connection in [!INCLUDE [product-name](../includes
 ### Set a shared access policy on your event hub
 
 1. In the [Azure portal](https://ms.portal.azure.com/), browse to the specific Event Hubs instance you want to connect.
-1. Under **Settings**, select **Shared access policies**
+1. Under **Settings**, select **Shared access policies**.
 1. Select **+Add** to add a new SAS policy, or select an existing policy with *Manage* permissions.
 
     :::image type="content" source="media/get-data-event-hub/sas-policy-portal.png" alt-text="Screenshot of creating an SAS policy in the Azure portal.":::
@@ -109,9 +110,9 @@ Now that your SAS policy is set up, you can configure a connection to this event
 
 ## Connect the cloud connection to your Real-time Analytics database
 
-In the following step, you'll create a data connection in your  database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your Event Hubs instance and get data into the specified table using specified data mapping.
+In the following step, you'll create a data connection in your database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your event hub and get data into the target table using a specified data mapping.
 
-### Destination tab
+### Get data from Event Hubs
 
 1. Navigate to your KQL Database.
 
@@ -121,43 +122,45 @@ In the following step, you'll create a data connection in your  database, which 
 
     :::image type="content" source="media/realtime-analytics-tutorial/get-data-eh.png" alt-text="Screenshot of the Get data dropdown. The option titled Event Hub is highlighted.":::
 
-1. In **Table**, enter a name for your table. ou can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
+### Destination tab
+
+In the **Destination** tab, **Database** is auto-populated with the name of the selected database.
+
+1. Under **Table**, make sure that **New table** is selected, and enter *Telemetry* as your table name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 
     :::image type="content" source="media/realtime-analytics-tutorial/table-name.png" alt-text="Screenshot of Destination window showing the table name.":::
-
-    > [!NOTE]
-    > Your selected database is auto-populated in the **Database** field.
 
 1. Select **Next: Source**.
 
 ### Source tab
 
-In the source tab, the **Source type** is autopopulated with **Event Hub**
+In the **Source** tab, **Source type** is auto-populated with **Event Hub**.
 
 1. Fill out the remaining fields according to the following table:
   
-    |**Setting** | **Suggested value** | **Field description**
+    |**Setting** | **Suggested value** | **Field description**|
     |---|---|---|
     | Event hub data source | *rta-tutorial-eh-data-connection* | The name that identifies your event hub cloud connection. |
     | Data connection name | *rta-tutorial-db-rta-tutorial-eh-data-con* | This defines the name of the database-specific Real-time Analytics event hub Data Connection. The default is \<tablename>\<EventHubname>. |
     | Consumer group | **Add consumer group** | The consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups)
     | Compression | *None* | Data compression of the events, as coming from the event hub. Options are None (default), or GZip compression.
-    | Event system properties | don't fill | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations). If there are multiple records per event message, the system properties will be added to the first one. See [event system properties](#event-system-properties).|
-    |Event retrieval start dat| don't fil | The data connection retrieves existing Event hub events created since the Event retrieval start date. It can only retrieve events retained by the Event hub, based on its retention period. Note that the time zone is UTC. If no time is specified, the default time is the time at which the data connection is created. |
+    | Event system properties |Leave blank | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations). If there are multiple records per event message, the system properties will be added to the first one. See [event system properties](#event-system-properties).|
+    |Event retrieval start date| Leave blank | The data connection retrieves existing Event hub events created since the Event retrieval start date. It can only retrieve events retained by the Event hub, based on its retention period. Note that the time zone is UTC. If no time is specified, the default time is the time at which the data connection is created. |
 
 1. Select **Next: Schema**.
 
 ### Schema tab
 
-:::image type="content" source="media/realtime-analytics-tutorial/schema-tab.png" alt-text="Screenshot of Schema tab showing the schema mapping. The Data format, Nested levels, and a column titled ActiveTags are highlighted.":::
+The tool automatically infers the schema based on your data.
+:::image type="content" source="media/realtime-analytics-tutorial/schema-tab.png" alt-text="Screenshot of Schema tab showing the schema mapping. The data format, nested levels, and a column titled active tags are highlighted.":::
 
-1. Your data format and compression are automatically identified in the left-hand pane. In **Data format**, select **JSON**. This will automatically refresh the **Partial data preview**.
-1. If your data format is JSON, you must also select JSON levels to determine the table column data division. Under **Nested levels**, raise the level from 1 to 2 to expand the levels of nested data in dynamic type columns into separate columns.
-1. The tool automatically infers the schema based on your data. You can change the schema to add and edit columns in **Partial data preview**. Find the column titled **telemetry_ActiveTags** and select **V**. Then select **Update column**.
-1. In **Column name**, change the name to **ActiveTags** and select **Update**. The change will be reflected in the **Partial data preview** and the **Table mapping**.
+1. Your data format and compression are automatically identified in the left-hand pane. In **Data format**, select **JSON**. This will automatically refresh the partial data preview.
+1. Under **Nested levels**, change the level from 1 to 2. If your data format is of type JSON, you must also expand the levels of nested data to determine the table column data division.
+1. Under **Partial data preview**, search for the column titled **telemetry_ActiveTags**, and from the dropdown menu select **Update column** to edit the column name.
+1. In **Column name**, change the name to **ActiveTags** and select **Update**. The change will be reflected in the partial data preview and the table mapping.
 
     > [!NOTE]
-    > If the data you see in the preview window isn't complete, you may need more data to create a table with all necessary data fields. Use the following commands to fetch new data from your Event hub:
+    > If the data you see in the preview window isn't complete, you may need more data to create a table with all necessary data fields. Use the following commands to fetch new data from your event hub:
     >
     > * **Discard and fetch new data**: discards the data presented and searches for new events.
     > * **Fetch more data**: Searches for more events in addition to the events already found.
@@ -207,9 +210,33 @@ Let's say you're an importer working for WWI who wants to sell a variety of edib
 
     :::image type="content" source="media/realtime-analytics-tutorial/timechart-render.png" alt-text="Screenshot of Quick query window showing the results of the query.":::
 
-1. To save your query as a KQL Queryset, select **Save as Query Set**. This will automatically open your **KQL Queryset** with the queries that you wrote in the query editor.
 
-Now that you've created your Queryset, you can proceed to build a Power BI report.
+1. Write a query to detect anomalies in the temperature reported by a certain device over the last 7 days.
+
+    ```kusto
+    Telemetry 
+    | where enqueuedTime >= ago(7d) 
+    | where deviceId == "e19jdw3l" 
+    | where telemetry_TransportationMode == "Air" 
+    | make-series avg_temperature = avg(telemetry_Temp) on enqueuedTime from datetime(2023-02-02) to now() step 5m by telemetry_TransportationMode 
+    | extend anomalies = series_decompose_anomalies(avg_temperature) 
+    | render anomalychart with (anomalycolumns=anomalies)
+
+    ```
+
+    The red dots in the chart indicate anomalies in the reported temperature.
+
+    > [!NOTE]
+    > The pictured chart might render differently than yours.
+
+1. Select **Save as Query Set**.
+1. Enter *rtaQS* for your **KQL Queryset name**, then select **Create**.
+
+    :::image type="content" source="media/realtime-analytics-tutorial/rta-qs.png" alt-text="Screenshot of Save as Queryset window showing the Queryset name.":::
+
+    This will automatically open your **KQL Queryset** with the queries that you wrote in the query editor.
+
+Now that you've created your Queryset, you can proceed to build a Power BI report and visualize your data.
 
 ## Build Power BI report
 
@@ -220,35 +247,27 @@ TODO: Info about PBI report.
 
     :::image type="content" source="media/realtime-analytics-tutorial/build-pbi-report-qs.png" alt-text="Screenshot of the KQL Queryset showing the saved query. The Home tab option titled Build Power BI report is highlighted.":::
 
+    In the report's preview, you'll see a summary of your query, and query results visualized in tiles on your canvas. You can manipulate the visualizations in the **Your data** pane on the right. For more information, see [Power BI visualizations](/power-bi/visuals/power-bi-report-visualizations).
+
     >[!NOTE]
     > When you build a report, a dataset is created and saved in your workspace. You can create multiple reports from a single dataset.
     >
     > If you delete the dataset, your reports will also be removed.
+1. Review the visualizations, then select **Save**.
+1. In **Name your file in Power BI**, enter *rta-pbi-report* for your report name.
+1. Select the workspace in which you want to save this report. The report can be saved to a different workspace than the one you started in.
 
-### Report preview
+    :::image type="content" source="media/realtime-analytics-tutorial/report-details.png" alt-text="Screenshot of report details showing the report's details. The button titled Continue is highlighted.":::
 
-In the report's preview, you'll see a summary of your query, and query results visualized in tiles on your canvas. You can manipulate the visualizations in the **Your data** pane on the right. For more information, see [Power BI visualizations](/power-bi/visuals/power-bi-report-visualizations).
-
-When you're satisfied with the visualizations, select **Save** to name and save your report in a workspace.
-
-### Report details
-
-1. In **Name your file in Power BI**, give your file a name.
-1. Select the workspace in which to save this report. The report can be a different workspace than the one you started in.
-
-    :::image type="content" source="media/realtime-analytics-tutorial/report-details.png" alt-text="Screenshot of report details showing the report's name and the workspace it will be saved in. The button titled Continue is highlighted.":::
 1. Select the sensitivity label to apply to the report. For more information, see [sensitivity labels](/power-bi/enterprise/service-security-apply-data-sensitivity-labels).
 1. Select **Continue**.
+1. Select **Open the file in Power BI to view, edit, and get a shareable link** to view and edit your report.
 
-### Manage report
-
-To view and edit your report, select **Open the file in Power BI to view, edit, and get a shareable link**.
-
-:::image type="content" source="media/realtime-analytics-tutorial/open-report.png" alt-text="Screenshort of report preview showing that the report has been saved. The link to open the report in Power BI is highlighted.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/open-report.png" alt-text="Screenshort of report preview showing that the report has been saved. The link to open the report in Power BI is highlighted.":::
 
 ## Create OneLake shortcut
 
-You can use shortcuts to quickly pull data from internal and external locations into your Lakehouse, Warehouse, or datasets. Shortcuts can be updated or removed from your item, but these changes will not affect the original data and its source.
+You can use shortcuts to quickly pull data from internal and external locations into your Lakehouse, Warehouse, or datasets. Shortcuts can be updated or removed from your item, but these changes won't affect the original data and its source.
 
 1. Select the **Create** button in the **Navigation pane**.
 
@@ -260,16 +279,16 @@ You can use shortcuts to quickly pull data from internal and external locations 
 
 1. Enter your Lakehouse name, then select **Create**.
 1. Select **New Shortcut** on the right-hand side of the Lakehouse.
-1. Under **Internal sources**, select OneLake.
+1. Under **Internal sources**, select **OneLake**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/new-shortcut.png" alt-text="Screenshot of New Shortcut window. The option under Internal sources titled OneLake is highlighted.":::
 
-1. In **Select a data source type**, select the KQL Database with the Event Hub data source type you created earlier.
+1. In **Select a data source type**, select the KQL Database with the Event Hubs data source type you created earlier.
 
     :::image type="content" source="media/realtime-analytics-tutorial/onelake-shortcut-data-source.png" alt-text="Screenshot of data source type window showing all of the data sources in your workspace.":::
 
 1. Select **Next** to find the data you want to use with your shortcut.
-1. To connect the table with the data from Event Hub, select **>** to expand the tables in the left-hand pane, then select the table titled **Telemetry**.
+1. To connect the table with the data from Event Hubs, select **>** to expand the tables in the left-hand pane, then select the table titled **Telemetry**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/shortcut-data-connection.png" alt-text="Screenshot of New shortcut window showing the tables in the selected database. The table titled Telemetry is highlighted.":::
 1. Select **Create** to create the shortcut. The Lakehouse will automatically refresh.
@@ -282,7 +301,7 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 1. In your workspace, hover over the item you want to delete, select the **More menu** > **Delete**.
 
-   :::image type="content" source="media/realtime-analytics-tutorial/cleanup-resources.png" alt-text="Screenshot of workspace showing the dropdown menu of the Event Hub connection. The option titled Delete is highlighted.":::
+   :::image type="content" source="media/realtime-analytics-tutorial/cleanup-resources.png" alt-text="Screenshot of workspace showing the dropdown menu of the Event Hubs connection. The option titled Delete is highlighted.":::
 
 1. Select **Delete**. You can't recover the item once you delete it.
 
