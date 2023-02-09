@@ -52,7 +52,7 @@ conceptualContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   items:
     # Card
-    - title: "Trident: Fundamentals"
+    - title: "Get started with Trident"
       links:
         - url: fundamentals/.md
           itemType: overview
@@ -71,7 +71,7 @@ conceptualContent:
         url: fundamentals/index.yml
         text: See more
     # Card
-    - title: OneLake
+    - title: Unify your data storage with OnLake
       links:
         - url: fundamentals/.md
           itemType: concept
@@ -87,15 +87,15 @@ conceptualContent:
         url: fundamentals/index.yml
         text: See more
     # Card
-    - title: "Trident: Data Factory"
+    - title: "Integrate and transform data with Data Factory"
       links:
-        - url: data-factory/.md
+        - url: data-factory/data-factory-overview.md
           itemType: concept
           text: What is Data Factory?
-        - url: data-factory/.md
+        - url: data-factory/create-first-pipeline.md
           itemType: get-started
           text: Create your first pipeline
-        - url: data-factory/.md
+        - url: data-factory/create-first-dataflow-gen2.md
           itemType: get-started
           text: Create your first dataflow?
       # footerLink (optional)
@@ -103,15 +103,15 @@ conceptualContent:
         url: data-factory/index.yml
         text: See more
     # Card
-    - title: "Trident: Data science"
+    - title: "Build machine learning models with Data science"
       links:
-        - url: data-science/.md
+        - url: data-science/data-science-overview.md
           itemType: concept
           text: What is Data science?
-        - url: data-science/.md
+        - url: data-science/machine-learning-experiment.md
           itemType: concept
           text: Machine learning experiment
-        - url: data-science/.md
+        - url: data-science/read-write-pandas.md
           itemType: how-to-guide
           text: Read and write data with Pandas
         - url: data-science/.md
@@ -122,47 +122,47 @@ conceptualContent:
         url: data-science/index.yml
         text: See more
     # Card
-    - title: "Trident: Data Engineering"
+    - title: "Create Lakehouse and run Spark jobs with Data Engineering"
       links:
         - url: data-engineering/.md
-          itemType: get-started
-          text: Am I a Power BI business user?
+          itemType: overview
+          text: What is Data Engineering?
         - url: data-engineering/.md
           itemType: get-started
-          text: Get around in the Power BI service
+          text: Create a Lakehouse
         - url: data-engineering/.md
-          itemType: concept
-          text: What is a dashboard?
+          itemType: get-started
+          text: Create a Spark job definition
       # footerLink (optional)
       footerLink:
         url: data-engineering/index.yml
         text: See more
     # Card
-    - title: "Trident: Data Warehousing"
+    - title: "Build a relational layer with Data Warehousing"
       links:
-        - url: enterprise/service-premium-features.md
+        - url: data-warehouse/.md
           itemType: overview
-          text: Power BI Premium features
-        - url: enterprise/service-admin-power-bi-security.md
-          itemType: concept
-          text: Security
-        - url: enterprise/service-security-data-protection-overview.md
-          itemType: concept
-          text: Data protection
+          text: What is Data Warehousing?
+        - url: data-warehouse/.md
+          itemType: get-started
+          text: Create a Warehous
+        - url: data-warehouse/.md
+          itemType: how-to-guide
+          text: Query using SQL query editor
       # footerLink (optional)
       footerLink:
         url: data-warehousing/index.yml
-        text: See more        
+        text: See more
     # Card
-    - title: "Trident: Real-time analytics"
+    - title: "Perform data analysis with Real-time analytics"
       links:
         - url: data-explorer/.md
           itemType: overview
           text: What is Real-time analytics?
-        - url: data-explorer/.md
+        - url: data-explorer/create-database.md
           itemType: get-started
           text: Create a database
-        - url: data-explorer/.md
+        - url: data-explorer/get-data-blob.md
           itemType: how-to-guide
           text: Get data from a blob container
       # footerLink (optional)
@@ -271,30 +271,15 @@ conceptualContent:
 additionalContent:
   # Supports up to 3 sections
   sections:
-    - title: Related tools # < 60 chars (optional)
+    - title: Related products # < 60 chars (optional)
       items:
         # Card
-        - title: Power BI Report Server
-          summary: Explore Power BI Report Server, an on-premises report server with a web portal in which you display and manage Power BI reports, paginated reports, and KPIs.
-          url: report-server/index.yml
-        - title: Power BI REST APIs
-          summary: The Power BI REST APIs provide service endpoints for embedding, administration, and user resources.
-          url: /rest/api/power-bi/
-        - title: Power BI embedded analytics client APIs
-          summary: A client-side library for embedding Power BI using JavaScript or TypeScript.
-          url: /javascript/api/overview/powerbi/
-    - title: Other Microsoft Power Platform products # < 60 chars (optional)
-      items:
-        # Card
-        - title: Power Apps
-          summary: Quickly build low-code apps that modernize precesses and solve tough business challenges in your organization.
-          url: /powerapps/
-        - title: Power Automate
-          summary: Create automated workflows between your favorite apps and services to synchronize files, get notifications, and more.
-          url: /power-automate/
-        - title: Power Pages
-          summary: Design, host, and administer secure, modern, and low-code business websites.
-          url: /power-pages
-        - title: Power Virtual Agents
-          summary: Create powerful bots using a guided, no-code graphical interface with no need for data scientists or developers.
-          url: /power-virtual-agents/
+        - title: Power BI
+          summary: Power BI amplifies your insights and the value of your data. 
+          url: /power-bi/
+        - title: Azure Synapse analytics
+          summary: Azure Synapse is a limitless analytics service that brings together enterprise data warehousing and Big Data analytics.
+          url: /azure/synapse-analytics/
+        - title: Azure Data Factory
+          summary: Azure Data Factory is Azure's cloud ETL service for scale-out serverless data integration and data transformation.
+          url: /azure/data-factory/
