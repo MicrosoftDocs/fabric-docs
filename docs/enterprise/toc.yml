@@ -1,5 +1,5 @@
 items:
-- name: Service documentation
+- name: Enterprise documentation
   href: index.yml
 - name: Overview
   items:
