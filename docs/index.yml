@@ -25,27 +25,27 @@ highlightedContent:
     # Card
     - title: What is Trident ?
       itemType: overview
-      url: fundamentals/placeholder.md
+      url: placeholder.md
     # Card
     - title: Understand Trident architecture
       itemType: concept
-      url: fundamentals/placeholder.md
+      url: placeholder.md
     # Card
     - title: Try Trident Trial for free
       itemType: get-started
-      url: fundamentals/placeholder.md
+      url: placeholder.md
     # Card
     - title: Get started with creating resources
       itemType: tutorial
-      url: fundamentals/placeholder.md
+      url: placeholder.md
     # Card
     - title: end-to-end tutorials
       itemType: tutorial
-      url: fundamentals/placeholder.md
+      url: placeholder.md
     # Card
     - title: Choose a workload for your scenario
       itemType: concept
-      url: fundamentals/placeholder.md
+      url: placeholder.md
 
 # conceptualContent section (optional)
 conceptualContent:
