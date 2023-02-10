@@ -1,34 +1,33 @@
 items:
-- name: Data Factory
+- name: Data Factory documentation
   href: index.yml
+- name: Overview
   items:
-  - name: Overview
-    items:
-    - name: What is Data Factory
-      href: data-factory-overview.md
-  - name: Get started
-    items:
-    - name: Create a dataflow
-      href: create-first-dataflow-gen2.md
-    - name: Create a data pipeline
-      href: create-first-pipeline.md
-    - name: Move and transform data
-      href: transform-data.md
-    - name: Move data - copy assistant
-      href: move-data-lakehouse-copy-assistant.md
-  - name: Data pipelines
-    items:
-    - name: Data pipeline runs
-      href: pipeline-runs.md
-    - name: Copy data - copy activity
-      href: copy-data-activity.md
-    - name: Monitor data pipeline runs
-      href: monitor-pipeline-runs.md
-    - name: Script activity
-      href: script-activity.md
-  - name: Dataflows
-    items:
-    - name: Connectors
-      href: connector-overview.md
-    - name: Data source management
-      href: data-source-management.md
+  - name: What is Data Factory?
+    href: data-factory-overview.md
+- name: Get started
+  items:
+  - name: Create a dataflow
+    href: create-first-dataflow-gen2.md
+  - name: Create a data pipeline
+    href: create-first-pipeline.md
+  - name: Move and transform data
+    href: transform-data.md
+  - name: Move data - copy assistant
+    href: move-data-lakehouse-copy-assistant.md
+- name: Data pipelines
+  items:
+  - name: Data pipeline runs
+    href: pipeline-runs.md
+  - name: Copy data - copy activity
+    href: copy-data-activity.md
+  - name: Monitor data pipeline runs
+    href: monitor-pipeline-runs.md
+  - name: Script activity
+    href: script-activity.md
+- name: Dataflows
+  items:
+  - name: Connectors
+    href: connector-overview.md
+  - name: Data source management
+    href: data-source-management.md
