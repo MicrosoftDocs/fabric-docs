@@ -1,6 +1,7 @@
 items:
-- name: Data Factory
+- name: Data Factory documentation
   href: index.yml
+- name: Overview
   items:
   - name: Overview
     items:
