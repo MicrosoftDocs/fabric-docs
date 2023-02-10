@@ -25,27 +25,27 @@ highlightedContent:
     # Card
     - title: What is Trident ?
       itemType: overview
-      url: fundamentals/.md
+      url: fundamentals/placeholder.md
     # Card
     - title: Understand Trident architecture
       itemType: concept
-      url: developer/embedded/export-to.md
+      url: fundamentals/placeholder.md
     # Card
     - title: Try Trident Trial for free
       itemType: get-started
-      url: fundamentals/.md
+      url: fundamentals/placeholder.md
     # Card
     - title: Get started with creating resources
       itemType: tutorial
-      url: fundamentals/.md
+      url: fundamentals/placeholder.md
     # Card
     - title: end-to-end tutorials
       itemType: tutorial
-      url: fundamentals/.md
+      url: fundamentals/placeholder.md
     # Card
     - title: Choose a workload for your scenario
       itemType: concept
-      url: fundamentals/.md
+      url: fundamentals/placeholder.md
 
 # conceptualContent section (optional)
 conceptualContent:
@@ -54,37 +54,37 @@ conceptualContent:
     # Card
     - title: "Get started with Trident"
       links:
-        - url: fundamentals/.md
+        - url: placeholder.md
           itemType: overview
           text: What is Trident?
-        - url: fundamentals/.md
+        - url: placeholder.md
           itemType: get-started
           text: Trident workloads and artifacts
-        - url: fundamentals/.md
+        - url: placeholder.md
           itemType: tutorial
           text: Get started with creating resources
-        - url: fundamentals/.md
+        - url: placeholder.md
           itemType: concept
           text: Understand the billing and consumption model
       # footerLink (optional)
       footerLink:
-        url: fundamentals/index.yml
+        url: get-started/index.yml
         text: See more
     # Card
     - title: Unify your data storage with OnLake
       links:
-        - url: fundamentals/.md
+        - url: placeholder.md
           itemType: concept
           text: What is Onelake?
-        - url: fundamentals/.md
+        - url: placeholder.md
           itemType: concept
           text: What are shortcuts?
-        - url: fundamentals/.md
+        - url: placeholder.md
           itemType: get-started
           text: Get started with OneLake
       # footerLink (optional)
       footerLink:
-        url: fundamentals/index.yml
+        url: get-started/index.yml
         text: See more
     # Card
     - title: "Integrate and transform data with Data Factory"
@@ -124,13 +124,13 @@ conceptualContent:
     # Card
     - title: "Create Lakehouse and run Spark jobs with Data Engineering"
       links:
-        - url: data-engineering/.md
+        - url: placeholder.md
           itemType: overview
           text: What is Data Engineering?
-        - url: data-engineering/.md
+        - url: placeholder.md
           itemType: get-started
           text: Create a Lakehouse
-        - url: data-engineering/.md
+        - url: placeholder.md
           itemType: get-started
           text: Create a Spark job definition
       # footerLink (optional)
@@ -140,13 +140,13 @@ conceptualContent:
     # Card
     - title: "Build a relational layer with Data Warehousing"
       links:
-        - url: data-warehouse/.md
+        - url: placeholder.md
           itemType: overview
           text: What is Data Warehousing?
-        - url: data-warehouse/.md
+        - url: placeholder.md
           itemType: get-started
           text: Create a Warehous
-        - url: data-warehouse/.md
+        - url: placeholder.md
           itemType: how-to-guide
           text: Query using SQL query editor
       # footerLink (optional)
@@ -156,7 +156,7 @@ conceptualContent:
     # Card
     - title: "Perform data analysis with Real-time analytics"
       links:
-        - url: real-time-analytics/.md
+        - url: placeholder.md
           itemType: overview
           text: What is Real-time analytics?
         - url: real-time-analytics/create-database.md
@@ -172,13 +172,13 @@ conceptualContent:
     # Card
     - title: Administer your resources
       links:
-        - url: admin/.md
+        - url: placeholder.md
           itemType: overview
           text: What is administration?
-        - url: admin/.md
+        - url: placeholder.md
           itemType: concept
           text: Understand administration roles
-        - url: admin/.md
+        - url: placeholder.md
           itemType: how-to-guide
           text: Delegate settings
       # footerLink (optional)
@@ -188,13 +188,13 @@ conceptualContent:
     # Card
     - title: Secure your resources
       links:
-        - url: security/.md
+        - url: placeholder.md
           itemType: overview
           text: What is security?
-        - url: security/.md
+        - url: placeholder.md
           itemType: concept
           text: Bring your own encryption keys
-        - url: security/.md
+        - url: placeholder.md
           itemType: how-to-guide
           text: How does B2B work?
       # footerLink (optional)
@@ -204,13 +204,13 @@ conceptualContent:
     # Card
     - title: Protect your data with Governance and compliance
       links:
-        - url: governance-compliance/.md
+        - url: placeholder.md
           itemType: overview
           text: What is information protection?
-        - url: governance-compliance/.md
+        - url: placeholder.md
           itemType: overview
           text: Working with Purview
-        - url: governance-compliance/.md
+        - url: placeholder.md
           itemType: how-to-guide
           text: Set up certifications
       # footerLink (optional)
@@ -220,13 +220,13 @@ conceptualContent:
     # Card
     - title: Enterprise
       links:
-        - url: enterprise/.md
+        - url: placeholder.md
           itemType: overview
           text: Capacity and SKUs
-        - url: enterprise/.md
+        - url: placeholder.md
           itemType: how-to-guide
           text: Scale your SKU size
-        - url: enterprise/.md
+        - url: placeholder.md
           itemType: how-to-guide
           text: Create billing reports
       # footerLink (optional)
@@ -236,13 +236,13 @@ conceptualContent:
     # Card
     - title: Continuous integration and continuous deployment (CICD)
       links:
-        - url: cicd/.md
+        - url: placeholder.md
           itemType: overview
           text: What are deployment pipelines?
-        - url: cicd/.md
+        - url: placeholder.md
           itemType: get-started
           text: Create deployment rules
-        - url: cicd/.md
+        - url: placeholder.md
           itemType: how-to-guide
           text: Automate deployment pipelines
       # footerLink (optional)
@@ -252,13 +252,13 @@ conceptualContent:
     # Card
     - title: "Monitor changing data with Reflex"
       links:
-        - url: reflex/.md
+        - url: placeholder.md
           itemType: overview
           text: What is Reflex?
-        - url: reflex/
+        - url: placeholder.md
           itemType: get-started
           text: Use Reflex from Power BI
-        - url: reflex/.md
+        - url: placeholder.md
           itemType: tutorial
           text: End-to-end scenario for the reflex simulator
       # footerLink (optional)
