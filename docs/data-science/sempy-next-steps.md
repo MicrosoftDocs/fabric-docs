@@ -13,6 +13,8 @@ ms.date: 02/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+This article provides pointers for doing more with SemPy.
+
 ## I want to dive deeper. Any pointers to help in my journey?
 
 Sure, our collection of feature-specific notebooks can help you get more thorough understanding of the concepts of SemPy and the capabilities that it enables:
