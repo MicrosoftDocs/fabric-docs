@@ -13,6 +13,8 @@ ms.date: 02/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+This article covers the basics of how to get started using SemPy.
+
 ## What kind of data does SemPy handle?
 
 SemPy is designed for working with tabular data as a wrapper around pandas with extended notions of "semantic data frame" and specialized types that facilitate the usage of semantic knowledge as part of new capabilities for automating common data science tasks.
