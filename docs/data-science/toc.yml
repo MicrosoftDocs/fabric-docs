@@ -54,7 +54,7 @@ items:
     - name: Hello world
       href: sempy-hello-world.md
     - name: SemPy 101
-      href: wempy-101.md
+      href: sempy-101.md
     - name: Semantic modeling
       href: sempy-semantic-modeling.md
     - name: Knowledge base
