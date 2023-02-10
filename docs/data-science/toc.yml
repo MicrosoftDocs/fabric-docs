@@ -17,6 +17,16 @@ items:
   items:
   - name: How to use end-to-end AI samples
     href: use-ai-samples.md
+  - name: Train a retail recommendation model
+    href: retail-recommend-model.md
+  - name: Fraud detection
+    href: fraud-detection.md
+  - name: Forecasting
+    href: time-series-forecasting.md
+  - name: Text classification
+    href: title-genre-classification.md
+  - name: Healthcare causal impact of treatments
+    href: uplift-modeling.md
 - name: Machine learning
   items:
   - name: Machine learning model
