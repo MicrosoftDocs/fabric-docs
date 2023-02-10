@@ -19,13 +19,13 @@ This article covers the basics of how to get started using SemPy.
 
 SemPy is designed for working with tabular data as a wrapper around pandas with extended notions of "semantic data frame" and specialized types that facilitate the usage of semantic knowledge as part of new capabilities for automating common data science tasks.
 
-:::image type="content" source="media\sempy-101\frame1.png" alt-text="Screenshot of visual representation of semantic data frame table with columns and groups of columns." lightbox="media\sempy-101\frame1.png":::
+:::image type="content" source="media\sempy-101\semantic-data-frame.png" alt-text="Screenshot of visual representation of semantic data frame table with columns and groups of columns." lightbox="media\sempy-101\semantic-data-frame.png":::
 
 ## How is SemPy organized?
 
 Here's high-level view of SemPy architecture:
 
-:::image type="content" source="media\sempy-101\core-om.png" alt-text="Screenshot of visual representation of the SemPy core object model organization." lightbox="media\sempy-101\core-om.png":::
+:::image type="content" source="media\sempy-101\core-object-model.png" alt-text="Screenshot of visual representation of the SemPy core object model organization." lightbox="media\sempy-101\core-object-model.png":::
 
 ## How to migrate my code from pandas to SemPy?
 
