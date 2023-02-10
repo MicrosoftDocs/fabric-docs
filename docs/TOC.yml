@@ -1,5 +1,5 @@
-- name: Index
-  href: placeholder.md
+- name: Trident documentation
+  href: index.yml
 - name: Get started
   href: get-started/toc.yml
 - name: OneLake
@@ -14,10 +14,10 @@
   href: data-warehousing/toc.yml
 - name: Real-time Analytics
   href: real-time-analytics/toc.yml
-- name: Administrator
-  href: administrator/toc.yml
+- name: Administration
+  href: admin/toc.yml
 - name: Governance and compliance
-  href: governance-compliance/toc.yml
+  href: governance/toc.yml
 - name: Enterprise
   href: enterprise/toc.yml
 - name: Security
