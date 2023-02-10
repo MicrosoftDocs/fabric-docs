@@ -36,6 +36,22 @@ landingContent:
             url: ../placeholder.md # Placeholder file. Replace with the actual file name.
 
   # Card 
+  - title: About Event streams
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is [service]?
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: linktext2
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+      - linkListType: overview
+        links:
+          - text: linktext1
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: linktext2
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+
+  # Card 
   - title: Get started
     linkLists:
       - linkListType: get-started
@@ -45,22 +61,6 @@ landingContent:
           - text: linktext2
             url: ../placeholder.md # Placeholder file. Replace with the actual file name.
       - linkListType: get-started
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-
-  # Card 
-  - title: how-to-guide
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: how-to-guide
         links:
           - text: linktext1
             url: ../placeholder.md # Placeholder file. Replace with the actual file name.

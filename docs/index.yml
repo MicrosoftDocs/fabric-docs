@@ -159,6 +159,9 @@ conceptualContent:
         - url: placeholder.md
           itemType: overview
           text: What is Real-time analytics?
+        - url: placeholder.md
+          itemType: overview
+          text: What is Event stream?
         - url: real-time-analytics/create-database.md
           itemType: get-started
           text: Create a database
