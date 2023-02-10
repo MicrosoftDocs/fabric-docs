@@ -16,9 +16,9 @@ This HTTP connector is supported in Trident Project  - Data Factory with the fol
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None |  -Basic |
-| **Lookup activity** | None |  -Basic |
-| **GetMetadata activity** | None |  -Basic |
+| **Copy activity (source/destination)** | None | Basic |
+| **Lookup activity** | None | Basic |
+| **GetMetadata activity** | None | Basic |
 | **Dataflow Gen2 (source/destination)** |  |  |
 
 ## Next Steps

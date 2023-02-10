@@ -1,6 +1,6 @@
 ---
-title: How to create HTTP connection
-description: This article provides information about how to do create HTTP connection in Trident.
+title: How to create an HTTP connection
+description: This article provides information about how to do create an HTTP connection in Trident.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
@@ -14,20 +14,20 @@ This article outlines the steps to create HTTP connection.
 
 ## Supported authentication types
 
-This HTTP connector supports the following authentication types for copy and dataflow Gen2 respectively.  
+The HTTP connector supports the following authentication types for copy and dataflow gen2 respectively.  
 
-|Authentication type |Copy |Dataflow Gen2 |
+|Authentication type |Copy |Dataflow gen2 |
 |:---|:---|:---|
 |Anonymous| √| |
 |Basic| √| |
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+To get started, you must have the following prerequisites:
 
 - A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).
 
-- A workspace is created and isn't the default My Workspace
+- A workspace is created and that isn't the default **My Workspace**.
 
 ## Go to Manage gateways to create connection
 
@@ -52,12 +52,12 @@ To get started, you must complete the following prerequisites:
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
 **Connection name**: Specify a name for your connection.<br>
-**Connection type**: Select a type for your connection.<br>
+**Connection type**: Select HTTP for your connection type.<br>
 **URL**: The base URL of the HTTP service.
 
 ### Step 2:  Select and set your authentication
 
-Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. This HTTP connector supports the following authentication types.
+Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. This HTTP connector supports the following authentication types:
 
 [Basic](#basic-authentication)
 
@@ -72,7 +72,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 ### Step 3: Specify the privacy level that you want to apply
 
-In the **General** tab, under select the privacy level that you want apply in **Privacy level** drop-down list. Three privacy levels are supported. For more information, see privacy levels.
+In the **General** tab, select the privacy level that you want apply in **Privacy level** drop-down list. Three privacy levels are supported. For more information, go to privacy levels.
 
 ### Step 4: Create your connection
 
@@ -82,21 +82,21 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The following connector properties in the table are supported in pipeline copy and Dataflow gen2:
+The following connector properties in the table are supported in pipeline copy and dataflow gen2:
 
 |Name|Description|Required|Property|Copy/Dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/|
-|**Connection type**|Select a type for your connection.|Yes||✓/|
+|**Connection type**|Select a type for your connection. Select **HTTP**.|Yes||✓/|
 |**URL**|The base URL of the HTTP service.|Yes||✓/|
-|**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
+|**Authentication**|Go to [Authentication](#authentication) |Yes|See Authentication|Go to  [Authentication](#authentication)|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are Organizational, Privacy, Public|Yes||✓/|
 
 ### Authentication
 
-The following properties in the table are the supported authentication type.
+The following properties in the table are the supported authentication types.
 
-|Name|Description|Required|Property|Copy/Dataflow gen2|
+|Name|Description|Required|Property|Copy/dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Basic**||||✓/|
 |- Username|The user name to use to access the HTTP endpoint.|Yes |||
