@@ -1,5 +1,5 @@
 items:
-- name: Data science documentation
+- name: Data Science documentation
   href: index.yml
 - name: Overview
   items:
