@@ -1,5 +1,5 @@
 ---
-title: Pipeline runs
+title: Data pipeline runs
 description: Explanation of what a pipeline run is, including on-demand and scheduled runs.
 ms.reviewer: jonburchel
 ms.author: noelleli
@@ -8,21 +8,21 @@ ms.topic: conceptual
 ms.date: 01/27/2023
 ---
 
-# Concept: Pipeline Runs
+# Concept: Data pipeline Runs
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-A pipeline run occurs when a pipeline is executed. This means that the activities in your pipeline will run and be executed to completion. For example, running a pipeline with a **Copy data** activity will perform that action and copy your data. Each pipeline run will have its own unique pipeline run ID.
+A data pipeline run occurs when a data pipeline is executed. This means that the activities in your data pipeline will run and be executed to completion. For example, running a data pipeline with a **Copy data** activity will perform that action and copy your data. Each data pipeline run will have its own unique pipeline run ID.
 
 :::image type="content" source="media/pipeline-runs/copy-data-activity.png" alt-text="Screenshot showing a copy data activity pipeline run.":::
 
-A pipeline run can be triggered one of two ways, either on-demand or by setting up a schedule. A scheduled pipeline will be able to run based on the time and frequency that you set.
+A data pipeline run can be triggered one of two ways, either on-demand or by setting up a schedule. A scheduled pipeline will be able to run based on the time and frequency that you set.
 
-## On-demand pipeline run
+## On-demand data pipeline run
 
-To manually trigger a pipeline run, select **Run** found in the top banner of the **Home** tab.
+To manually trigger a data pipeline run, select **Run** found in the top banner of the **Home** tab.
 
 :::image type="content" source="media/pipeline-runs/trigger-pipeline-run.png" alt-text="Screenshot showing where to select Run on the Home tab.":::
 
@@ -42,9 +42,9 @@ Once the entire pipeline has been executed and the output status updates to **Su
 
 :::image type="content" source="media/pipeline-runs/output-status.png" alt-text="Screenshot showing where Succeeded status shows in Output tab." lightbox="media/pipeline-runs/output-status.png":::
 
-## Scheduled pipeline runs
+## Scheduled data pipeline runs
 
-When you schedule a pipeline run, you can choose the frequency that your pipeline runs. Select **Schedule**, found in the top banner of the **Home** tab, to view your options. By default, your pipeline won't be set on a schedule.
+When you schedule a data pipeline run, you can choose the frequency that your pipeline runs. Select **Schedule**, found in the top banner of the **Home** tab, to view your options. By default, your data pipeline won't be set on a schedule.
 
 :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab.":::
 
@@ -80,5 +80,5 @@ A schedule is now set on your pipeline editing canvas, detailing how often your 
 
 ## Next steps
 
-- [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)](monitor-pipeline-runs.md)
-- [Quickstart: Create your first pipeline to copy data (Preview)](create-first-pipeline.md)
+- [How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)](monitor-pipeline-runs.md)
+- [Quickstart: Create your first data pipeline to copy data (Preview)](create-first-pipeline.md)
