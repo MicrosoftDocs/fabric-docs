@@ -1,6 +1,6 @@
 ---
-title: How to create REST connection
-description: This article provides information about how to do create REST connection in Trident.
+title: How to create a REST connection
+description: This article provides information about how to do create a REST connection in Trident.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
@@ -52,7 +52,7 @@ To get started, you must complete the following prerequisites:
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
 **Connection name**: Specify a name for your connection.<br>
-**Connection type**: Select a type for your connection.<br>
+**Connection type**: Select REST(Data pipeline) for your connection type.<br>
 **URL**: The base URL of the REST service.
 
 ### Step 2:  Select and set your authentication
@@ -79,7 +79,7 @@ Select **Anonymous** under **Authentication method**.
 
 ### Step 3: Specify the privacy level that you want to apply
 
-In the **General** tab, under select the privacy level that you want apply in **Privacy level** drop-down list. Three privacy levels are supported. For more information, see privacy levels.
+In the **General** tab, under select the privacy level that you want apply in the **Privacy level** drop-down list. Three privacy levels are supported. For more information, go to privacy levels.
 
 ### Step 4: Create your connection
 
@@ -89,21 +89,21 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The following connector properties in the table are supported in pipeline copy and Dataflow gen2:
+The following connector properties in the table are supported in pipeline copy and dataflow gen2:
 
 |Name|Description|Required|Property|Copy/Dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/|
-|**Connection type**|Select a type for your connection.|Yes||✓/|
+|**Connection type**|Select a type for your connection. Select **REST**.|Yes||✓/|
 |**URL**|The base URL of the REST service.|Yes||✓/|
-|**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
-|**Privacy Level**|The privacy level that you want to apply. Allowed values are Organizational, Privacy, Public|Yes||✓/|
+|**Authentication**|Go to [Authentication](#authentication) |Yes|Go to Authentication|See [Authentication](#authentication)|
+|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
 
 ### Authentication
 
-The following properties in the table are the supported authentication type.
+The following properties in the table are the supported authentication types.
 
-|Name|Description|Required|Property|Copy/Dataflow gen2|
+|Name|Description|Required|Property|Copy/dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Anonymous**||||✓/|
 |**Basic**||||✓/|
