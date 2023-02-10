@@ -1,5 +1,5 @@
 items:
-- name: Administrator documentation
+- name: Administration documentation
   href: index.yml
 - name: Overview
   items:

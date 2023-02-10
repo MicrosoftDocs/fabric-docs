@@ -1,5 +1,5 @@
 items:
-- name: service documentation
+- name: CICD documentation
   href: index.yml
 - name: Overview
   items:
