@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is Data Factory
+  - name: What is Data Factory?
     href: data-factory-overview.md
 - name: Get started
   items:
