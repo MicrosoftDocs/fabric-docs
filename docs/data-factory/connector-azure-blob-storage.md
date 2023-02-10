@@ -42,7 +42,7 @@ To get started, you must have following prerequisites:
 
 ## Go to Manage gateways to create a new connection
 
-1. From the page header in Data Integration service, select **Settings** ![Settings gear icon.](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAHoSURBVDhPfVI9SEJRFH5q9idRghhRBoH5hgz62QyKRAqHhiZraqogMBoKgiyQnLK1IYPWFCopIY20JbSWTNOh1xL0clAqK7A0M/ue91kG0ccZzvnud+4959wjyOfzVBEBJuEI3Nw+pJyzWoTD1uNmmcSgadHQciIAfhKs+1F36G5CRyNNragDE2WfIAU/qVOBJzIKCQT+q/jC1jmcp1RGadyGwUFo3Dw7CLIFCQcuYWUv4mfiONaaPYQtRb/ZHbl9xHU2L4NQNDA6ZfMx6ffcqiuKd9UKKf90ERVikWU3nM7m7IGbHlouwIsodETTwp9TlMke9IRicPSdTcuGTkICSEB7wiibPGUSz6/vhIX65S3rWxqEgUTHhIfPy1AWekCLhYLz370SlPLrR1dwhMiurRaTa/4H+/CKF0RhSW/m49M+01cpFoFNPKcPQzFUDx/lYQZadQP8sT6lOxSz7F4KFTIJmq6tLucuoSjLSFdNlbh73gUjIeEhgEzf0SjAgE2OYA9djwmM61Sl4yLAcDa811C7L+6cc1q+afwlfgd/VOjwF0DiUmII/16N1ukdGBkXyNLVKOMf5lYtif9qb5b6mcTsUBuYRccFKgGJnSUa4Nd6I8fmvWbvU1ytmMzaCXqd0Kl+9oWivgAsYHfccfep7QAAAABJRU5ErkJggg==) > **Manage connections and gateways.**
+1. From the page header in Data Integration service, select **Settings** ![Settings gear icon.](./media/connector-common/settings.png) > **Manage connections and gateways.**
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
@@ -144,20 +144,20 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 The following connector properties in the table are supported in data pipeline copy and dataflow gen2.
 
-|Name|Description|Required|Property|Copy/Dataflow gen2|
+|Name|Description|Required|Property|Copy/<br/>Dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes| |✓/✓|
 |**Connection type**|Select a type for your connection. Select **Azure Blob Storage**.|Yes| |✓/✓|
 |**Account**|Azure Blob Storage account name.|Yes||✓/✓|
 |**Domain**|The domain of Azure Blob Storage: `blob.core.windows.net`.|Yes| |✓/✓|
-|**Authentication**|Go to [Authentication](#authentication) |Yes||Go to [Authentication](#authentication)|
-|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/✓|
+|**Authentication**|Go to [Authentication](#authentication). |Yes||Go to [Authentication](#authentication).|
+|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**.|Yes||✓/✓|
 
 ### Authentication
 
 The following properties in the table are the supported authentication types.
 
-|Name |Description |Required |Property |Copy/dataflow gen2 |
+|Name |Description |Required |Property |Copy/<br/>Dataflow gen2 |
 |-----|-----|-----|-----|-----|
 |**Anonymous**||||✓/✓|
 |**Key**||||✓/✓|
