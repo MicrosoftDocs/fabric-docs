@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is Data Warehousing?
+  - name: Get started with Trident
     href: ../placeholder.md
 - name: Get started
   items:
