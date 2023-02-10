@@ -3,7 +3,7 @@ title: SemPy glossary
 description: Learn SemPy terms and definitions.
 ms.reviewer: mopeakande
 ms.author: narsam
-author: narmeems
+author: narmeens
 ms.topic: conceptual
 ms.date: 02/10/2023
 ---
