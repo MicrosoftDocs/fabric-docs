@@ -50,3 +50,19 @@ landingContent:
             url: ../placeholder.md # Placeholder file. Replace with the actual file name.
           - text: linktext2
             url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+
+  # Card 
+  - title: how-to-guide
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: linktext1
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: linktext2
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+      - linkListType: how-to-guide
+        links:
+          - text: linktext1
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: linktext2
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
