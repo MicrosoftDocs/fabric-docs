@@ -22,7 +22,7 @@
   href: enterprise/toc.yml
 - name: Security
   href: security/toc.yml
-- name: CICD
+- name: Continuous Integration Continuous Deployment
   href: cicd/toc.yml
 - name: Reflex
   href: reflex/toc.yml
