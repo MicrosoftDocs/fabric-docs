@@ -114,7 +114,7 @@ conceptualContent:
         - url: data-science/read-write-pandas.md
           itemType: how-to-guide
           text: Read and write data with Pandas
-        - url: data-science/.md
+        - url: data-science/read-write-pandas.md
           itemType: how-to-guide
           text: Use SemPy library for faster analytics
       # footerLink (optional)
@@ -215,7 +215,7 @@ conceptualContent:
           text: Set up certifications
       # footerLink (optional)
       footerLink:
-        url: governance-compliance/index.yml
+        url: governance/index.yml
         text: See more
     # Card
     - title: Enterprise
