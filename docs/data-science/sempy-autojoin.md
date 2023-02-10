@@ -1,6 +1,6 @@
 ---
 title: SemPy autojoin
-description:
+description: Follow an example of how to use SemPy to infer how to flatten or join a set of entities.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -15,9 +15,7 @@ ms.date: 2/10/2023
 
 ## Inferring merge paths
 
-A common task in data science is to denormalize or flatten relational schemas.
-Databases are often stored in third normal form to avoid redundancies, but this isn't a convenient format for analysis or machine learning.
-SemPy has some functionality to infer how to flatten or join a set of entities.
+A common task in data science is to denormalize or flatten relational schemas. Databases are often stored in third normal form to avoid redundancies, but this isn't a convenient format for analysis or machine learning. SemPy has some functionality to infer how to flatten or join a set of entities.
 
 A common form of schema is a star schema, such as the following.
 
@@ -54,7 +52,7 @@ customer_df = kb.get_data("Customer")
 merged_df = sale_df.merge(customer_df, left_on="Customer_id", right_on="id")
 ```
 
-With semantic dataframes in SemPy, you can omit the ``on`` keyword(s) if there's a relationship connecting the two in the knowledge base, so you can write:
+With semantic dataframes in SemPy, you can omit the `on` keyword(s) if there's a relationship connecting the two in the knowledge base, so you can write:
 
 ```python
 # inferred merge key with sempy
@@ -155,13 +153,11 @@ len(paths)
 
 ## Technical details
 
-We've talked about merge paths previously without really defining what they are.
-Technically, we consider as a merge any undirected tree for which all leaves are in the set of requested entities. The order of entities in the requested list doesn't matter for which paths are returned (though their order might change).
+We've talked about merge paths previously without really defining what they are. Technically, we consider as a merge any undirected tree for which all leaves are in the set of requested entities. The order of entities in the requested list doesn't matter for which paths are returned (though their order might change).
 
 Some of the requested entities can be internal nodes, so requested entities can be internal or leaves, but all leaves must be requested nodes, i.e. there are no extra merges that aren't required to connect the requested entities.
 
-The option `allow_cartesian_products=False` finds only those paths that are directed rooted trees; the path finding algorithm uses the direction of relationships (which are assumed to go from foreign keys to primary keys),
-to determine likely merge paths. For example, the attribute `Store_id` is a foreign key in the entity `Sale`, and the primary key in the entity `Store` is `id` and the relationship goes "from" `Sale` to `Store`.
+The option `allow_cartesian_products=False` finds only those paths that are directed rooted trees; the path finding algorithm uses the direction of relationships (which are assumed to go from foreign keys to primary keys), to determine likely merge paths. For example, the attribute `Store_id` is a foreign key in the entity `Sale`, and the primary key in the entity `Store` is `id` and the relationship goes "from" `Sale` to `Store`.
 
 Using only directed trees has the benefit that it limits the size of the dataframe resulting from the merge, and that the result usually has a natural explanation, as it shares a primary key with the root of the tree.
 
@@ -187,8 +183,7 @@ mg.add_frame("Encounter", columns=["Patient_id", "Provider_id"])
 kb.plot_relationships()
 ```
 
-It's currently not possible to automatically flatten the whole schema, even though there's an intuitive interpretation, which would be to merge the `Gender` into both `Patient` and `Provider`.
-Currently, the user could express the intent to merge `Gender`, `Patient` and `Provider` using `kb.get_data("Gender").merge(["Patient", "Provider"])` but the intention of this is ambiguous. The tables could be connected by merging `Gender` into `Patient` or by `Gender` into `Provider` or by merging `Gender` into both.
+It's currently not possible to automatically flatten the whole schema, even though there's an intuitive interpretation, which would be to merge the `Gender` into both `Patient` and `Provider`. Currently, the user could express the intent to merge `Gender`, `Patient` and `Provider` using `kb.get_data("Gender").merge(["Patient", "Provider"])` but the intention of this is ambiguous. The tables could be connected by merging `Gender` into `Patient` or by `Gender` into `Provider` or by merging `Gender` into both.
 
 If the intent is to flatten the full schema, the last one is likely the most intuitive, but it's not currently possible to achieve with SemPy:
 
