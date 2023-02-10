@@ -13,6 +13,8 @@ ms.date: 02/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+In this article, you'll learn how SemPy uses data semantics to simplify data science analytics during the data exploration and transformation stages.
+
 ## Why is SemPy focused on semantics?
 
 Data scientists and business analysts spend much time trying to understand, clean and transform their data before they can produce valuable and reliable insights. By exploiting data semantics, SemPy can simplify these tedious tasks, such as automatically transforming data while joining heterogeneous datasets, handling underlying schema changes, enforcing context-specific constraints and identifying data that violate them, and enriching the data with new knowledge. SemPy users can register semantics of the data and share them with other users as part of code, allowing faster collaboration across teams operating on the same datasets and increasing productivity. To summarize, SemPy explores data semantics to simplify data science analytics across different stages of the process.

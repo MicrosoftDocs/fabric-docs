@@ -13,6 +13,8 @@ ms.date: 02/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+This article covers how to explore and process data in SemPy.
+
 ## How do I read and write tabular data with SemPy?
 
 SemPy supports the integration with the file formats or data sources as pandas out of the box (csv, excel, sql, json, parquet, etc.). Importing data from each of these data sources is provided by function with the prefix read_\*. Similarly, the to_\* methods are used to store data.  

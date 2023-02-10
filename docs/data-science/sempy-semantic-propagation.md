@@ -13,6 +13,8 @@ ms.date: 02/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+This article covers how SemPy preserves annotations that are attached to tables and columns in datasets that you are manipulating.
+
 ## How do I reshape tables?
 
 Whatever can be done with pandas, is supported in SemPy, and more. Semantic propagation enables preserving annotations that are attached to tables and columns in the dataset when you're manipulating them, such as stacking/unstacking, merging,  etc. Check out the [Semantic propagation for unstack](https://enyaprod.azurewebsites.net/notebooks/unstack_semantic_propagation.html) notebook for more details.

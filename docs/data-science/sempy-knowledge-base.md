@@ -13,6 +13,8 @@ ms.date: 02/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+This article covers the SemPy knowledge base and how to leverage it.
+
 ## What is "Knowledge Base" and where can I initialize it from?
 
 The [Knowledge Base](sempy-glossary.md#knowledge-base) (KB) is a central component of Enya as it captures the semantic model and enables better collaboration between data scientists. Internally, the KB consists of in-memory registries that capture different aspects of the semantic model (for example, type registry, relationship registry, semantic function and grounding  registry). SemPy provides APIs to add and retrieve components of the semantic model and to visualize it within a Python notebook. The KB can be serialized to disk as a JSON file capturing the various components of the semantic model. There are two ways to populate KB, which you can use separately or in combination: manually (annotating each column, table, and relationship) and automatically (by either pulling predefined model from Power BI or using SemPy's automatic capabilities to infer semantic information about the data).
