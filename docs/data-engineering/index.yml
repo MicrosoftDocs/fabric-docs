@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 
-title: service documentation # < 60 chars
+title: Data Engineering documentation # < 60 chars
 summary: summary # < 160 chars
 
 metadata:
@@ -20,20 +20,20 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About [service]
+  - title: About Data Engineering
     linkLists:
       - linkListType: overview
         links:
           - text: What is [service]?
-            url: ../index.md # Placeholder file. Replace with the actual file name.
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
           - text: linktext2
-            url: ../index.md # Placeholder file. Replace with the actual file name.
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
       - linkListType: overview
         links:
           - text: linktext1
-            url: ../index.md # Placeholder file. Replace with the actual file name.
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
           - text: linktext2
-            url: ../index.md # Placeholder file. Replace with the actual file name.
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
 
   # Card 
   - title: Get started
@@ -41,12 +41,12 @@ landingContent:
       - linkListType: get-started
         links:
           - text: linktext1
-            url: ../index.md # Placeholder file. Replace with the actual file name.
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
           - text: linktext2
-            url: ../index.md # Placeholder file. Replace with the actual file name.
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
       - linkListType: get-started
         links:
           - text: linktext1
-            url: ../index.md # Placeholder file. Replace with the actual file name.
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
           - text: linktext2
-            url: ../index.md # Placeholder file. Replace with the actual file name.
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
