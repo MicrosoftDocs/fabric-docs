@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: linktext1
+  - name: What is Administration?
     href: ../placeholder.md
 - name: Get started
   items:
