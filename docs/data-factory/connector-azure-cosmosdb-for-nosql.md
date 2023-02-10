@@ -51,9 +51,9 @@ To get started, you must complete the following prerequisites:
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
 **Connection name**: Specify a name for your connection.<br>
-**Connection type**: Select a type for your connection.<br>
-**Account Endpoint**: Enter your Azure Cosmos DB for NOSQL: your account endpoint.<br>
-**Database**: Enter the database of Azure Cosmos DB for NOSQL: your database.
+**Connection type**: Select Azure CosmosDB (Data pipeline) for your connection type.<br>
+**Account Endpoint**: Enter your account endpoint URL of your Azure Cosmos DB for NOSQL.<br>
+**Database**: Enter the database id of your Azure Cosmos DB for NOSQL.
 
 ### Step 2:  Select and set your authentication
 
@@ -65,7 +65,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 #### Key authentication
 
-**Account key**: Specify the account key of your Azure Cosmos DB. Go to your Azure Cosmos DB for NOSQL account interface, browse to **Account key** section and get your account key.  
+**Account key**: Specify the account key of your Azure Cosmos DB. Go to your Azure Cosmos DB for NOSQL account interface, browse to **Keys** section and get your account key.  
 
 :::image type="content" source="media/connector-cosmosdbnosql/key-authentication.png" alt-text="Screenshot showing that key authentication method of Cosmos DB for NOSQL":::
 
@@ -86,9 +86,9 @@ The following connector properties in the table are supported in pipeline copy a
 |Name|Description|Required|Property|Copy/Dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/|
-|**Connection type**|Select a type for your connection.|Yes||✓/|
-|**Account Endpoint**|Enter the server of Azure Cosmos DB for NOSQL.|Yes||✓/|
-|**Database**|Enter the database of Azure Cosmos DB for NOSQL.|Yes||✓/|
+|**Connection type**|Select Azure CosmosDB (Data pipeline) for your connection type.|Yes||✓/|
+|**Account Endpoint**|Enter your account endpoint URL of your Azure Cosmos DB for NOSQL.|Yes||✓/|
+|**Database**|Enter the database id of your Azure Cosmos DB for NOSQL.|Yes||✓/|
 |**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are Organizational, Privacy, Public|Yes||✓/|
 
@@ -99,6 +99,7 @@ The following properties in the table are the supported authentication type.
 |Name|Description|Required|Property|Copy/Dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Key**||||✓/|
+|- Account key|The account key of the Azure Cosmos DB for NOSQL.|Yes |||
 
 ## Next steps
 

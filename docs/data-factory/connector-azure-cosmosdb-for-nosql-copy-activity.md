@@ -40,19 +40,25 @@ The following three properties are **required**:
 
 - **Data store type**: Select **External**.
 - **Connection**:  Select an Azure Cosmos DB for NOSQL connection from the connection list.
-- **Container**: Select the container that you want to use.
+- **Container**: Select the container that you want to use. Select Edit to enter the container name manually.
 
 Under **Advanced**, you can specify the following fields:
 
 - **Use query**: You can choose **Table**, **Query** as your use query. See the configuration of each settings below.
-
+     - **Table**: Read data from the table you specified in **Table** above if you select this button.
      - **Query**: Specify the Azure Cosmos DB query to read data.
+
+:::image type="content" source="./media/connector-cosmosdbnosql/query.png" alt-text="Screenshot showing query.":::
 
 - **Page size**: The number of documents per page of the query result.Default is "-1" which means uses the service side dynamic page size up to 1000.
 - **Detect datetime**: Whether to detect datetime from the string values in the documents. Allowed values are: true (default), false.
 - **Preferred regions**: The preferred list of regions to connect to when retrieving data from Azure Cosmos DB.
-- **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
+:::image type="content" source="./media/connector-cosmosdbnosql/preferredregions.png" alt-text="Screenshot showing preferred regions.":::
+
+- **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. For more information, see [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).
+
+:::image type="content" source="./media/connector-cosmosdbnosql/additionalcolumns.png" alt-text="Screenshot showing additional columns.":::
 
 ## Destination
 
@@ -71,7 +77,7 @@ Under **Advanced**, you can specify the following fields:
 - **Write behavior**: Defines the write behavior when the destination is files from a file-based data store. You can choose **Add dynamic content**, **Insert** or **Upsert** from the drop-down list.
 
     - **Add dynamic content**: Open the **Add dynamic content** pane. This opens the expression builder where you can build expressions from supported system variables, activity output, functions, and user-specified variables or parameters. For information about the expression language, see [Expressions and functions](/azure/data-factory/control-flow-expression-language-functions).
-    - **Insert**: the default is insert
+    - **Insert**: Choose this option if your source data has inserts.
     - **Upsert**: The behavior of upsert is to replace the document if a document with the same ID already exists; otherwise, insert the document.
 
     :::image type="content" source="./media/connector-cosmosdbnosql/write-behavios.png" alt-text="Screenshot showing write behavior.":::
@@ -79,7 +85,7 @@ Under **Advanced**, you can specify the following fields:
 - **Write batch timeout**: Wait time for the batch insert operation to complete before it times out.
 Allowed values are Timespan. An example is 00:30:00 (30 minutes).
 
-- **Write batch size**: The service uses the [Azure Cosmos DB bulk executor library](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started) to write data to Azure Cosmos DB. The writeBatchSize property controls the size of documents the service provides to the library. You can try increasing the value for **writeBatchSize** to improve performance and decreasing the value if your document size being large - see below tips.
+- **Write batch size**: Specify the number of rows to insert into the SQL table per batch. The allowed value is integer (number of rows). By default, the service dynamically determines the appropriate batch size based on the row size.
 
 - **Max concurrent connections**:  The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
@@ -108,7 +114,7 @@ To learn more information about copy activity in Azure Data Lake Gen2 Storage, s
 |**Page size** |The number of documents per page of the query result.Default is "-1" which means uses the service side dynamic page size up to 1000.|< your Page size >|No |pageSize|
 |**Delete datetime** |The files on source data store will be deleted right after being moved to the destination store. The file deletion is per file, so when copy activity fails, you will see some files have already been copied to the destination and deleted from source while others are still on source store.|Selected or unselect|No |detectDatetime|
 |**Preferred regions** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| Australia Central|No |preferredRegions|
-|**Additional columns** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| \<max concurrent connections\>|No |additionalColumns|
+|**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. For more information, see [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).| \<max concurrent connections\>|No |additionalColumns|
 
 ### Destination
 
@@ -119,7 +125,7 @@ To learn more information about copy activity in Azure Data Lake Gen2 Storage, s
 |**Container**|The container of your destination data.|container of source |Yes |container <br> fileName|
 |**Write behavior** |Describes how to write data to Azure Cosmos DB. Allowed values: insert and upsert. The behavior of upsert is to replace the document if a document with the same ID already exists; otherwise, insert the document.|- **Add dynamic content**<br>- **Insert**<br>- **Upsert**|No |writeBehavior|
 |**Write batch timeout** |Wait time for the batch insert operation to complete before it times out. Allowed values are Timespan. An example is 00:30:00 (30 minutes).| timespan |No |writeBatchTimeout|
-|**Write batch size**|The writeBatchSize property controls the size of documents the service provides to the library.|size|No |writeBatchSize|
+|**Write batch size**|The number of rows to insert into the SQL table per batch. The allowed value is integer (number of rows). By default, the service dynamically determines the appropriate batch size based on the row size.|< number of rows ><br>(integer) |No |writeBatchSize|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 |**Disable performance metrics analytics**|The is to collect metrics such as DTU, DWU, RU, etc. for copy performance optimization and recommendations. If you are concerned with this behavior, please turn off this feature.|Selected or unselect|No |disableMetricsCollection|
 
