@@ -1,6 +1,6 @@
 ---
 title: Sempy semantic propagation for unstack
-description:
+description: Learn about the unstack operation in pandas.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
