@@ -10,7 +10,7 @@
   href: data-factory/toc.yml
 - name: Data Science
   href: data-science/toc.yml
-- name: Data Warehousing
+- name: Data Warehouse
   href: data-warehousing/toc.yml
 - name: Real-time Analytics
   href: real-time-analytics/toc.yml
@@ -22,7 +22,7 @@
   href: enterprise/toc.yml
 - name: Security
   href: security/toc.yml
-- name: Continuous Integration Continuous Deployment
+- name: Continuous Integration / Continuous Delivery
   href: cicd/toc.yml
 - name: Reflex
   href: reflex/toc.yml

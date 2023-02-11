@@ -1,9 +1,9 @@
 items:
-- name: Data Warehousing documentation
+- name: Data Warehouse documentation
   href: index.yml
 - name: Overview
   items:
-  - name: What is Data Warehousing?
+  - name: What is Data Warehouse?
     href: ../placeholder.md
 - name: Get started
   items:

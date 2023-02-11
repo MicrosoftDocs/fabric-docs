@@ -39,7 +39,7 @@ highlightedContent:
       itemType: tutorial
       url: placeholder.md
     # Card
-    - title: end-to-end tutorials
+    - title: End-to-end tutorials
       itemType: tutorial
       url: placeholder.md
     # Card
@@ -71,11 +71,11 @@ conceptualContent:
         url: get-started/index.yml
         text: See more
     # Card
-    - title: Unify your data storage with OnLake
+    - title: Unify your data storage with OneLake
       links:
         - url: placeholder.md
           itemType: concept
-          text: What is Onelake?
+          text: What is OneLake?
         - url: placeholder.md
           itemType: concept
           text: What are shortcuts?
@@ -103,7 +103,7 @@ conceptualContent:
         url: data-factory/index.yml
         text: See more
     # Card
-    - title: "Build machine learning models with Data science"
+    - title: "Build machine learning models with Synapse Data Science"
       links:
         - url: data-science/data-science-overview.md
           itemType: concept
@@ -122,7 +122,7 @@ conceptualContent:
         url: data-science/index.yml
         text: See more
     # Card
-    - title: "Create Lakehouse and run Spark jobs with Data Engineering"
+    - title: "Create a Lakehouse and run Spark jobs with Synapse Data Engineering"
       links:
         - url: placeholder.md
           itemType: overview
@@ -138,11 +138,11 @@ conceptualContent:
         url: data-engineering/index.yml
         text: See more
     # Card
-    - title: "Build a relational layer with Data Warehousing"
+    - title: "Build a relational layer with Synapse Data Warehouse"
       links:
         - url: placeholder.md
           itemType: overview
-          text: What is Data Warehousing?
+          text: What is Data Warehouse?
         - url: placeholder.md
           itemType: get-started
           text: Create a Warehous
@@ -154,11 +154,11 @@ conceptualContent:
         url: data-warehousing/index.yml
         text: See more
     # Card
-    - title: "Perform data analysis with Real-time analytics"
+    - title: "Perform data analysis with Synapse Real-time Analytics"
       links:
         - url: placeholder.md
           itemType: overview
-          text: What is Real-time analytics?
+          text: What is Real-time Analytics?
         - url: placeholder.md
           itemType: overview
           text: What is Event stream?
@@ -237,7 +237,7 @@ conceptualContent:
         url: enterprise/index.yml
         text: See more
     # Card
-    - title: Continuous integration and continuous deployment (CICD)
+    - title: Continuous Integration / Continuous Delivery (CI/CD)
       links:
         - url: placeholder.md
           itemType: overview
