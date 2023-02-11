@@ -1,6 +1,6 @@
 ---
 title: SemPy relationship detection
-description:
+description: Learn about relationship detection in SemPy.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -178,52 +178,49 @@ By default, SemPy will consider as matches only attributes that show name simila
 
 SemPy looks at a similarity between column names and table names. The matching is approximate and case insensitive. It ignores the most frequently encountered "decorator" substrings such as "id", "code", "name", "key", "pk", "fk". As a result the most typical match cases are:
 
-   * an attribute 'column' in entity 'foo' will be matched with an attribute called 'column'
-     (also 'COLUMN' or 'Column') in 'bar'.
-   * an attribute 'column' in entity 'foo' will be matched with an attribute called 'column_id' in 'bar'.
-   * an attribute 'bar' in entity 'foo' will be matched with an attribute called 'code' in 'bar'
+- an attribute 'column' in entity 'foo' will be matched with an attribute called 'column' (also 'COLUMN' or 'Column') in 'bar'.
+- an attribute 'column' in entity 'foo' will be matched with an attribute called 'column_id' in 'bar'.
+- an attribute 'bar' in entity 'foo' will be matched with an attribute called 'code' in 'bar'.
 
 As a positive side effect, matching columns name first helps the detection run faster.
 
-To understand which columns are selected for further evaluation, use ``verbose=2`` option
-(``verbose=1`` lists only the entities being processed).
+To understand which columns are selected for further evaluation, use `verbose=2` option (`verbose=1` lists only the entities being processed).
 
-``attribute_similarity_threshold`` determines which columns will be compared.
-Choosing the threshold of 1 indicates that we are interested in 100% match only:
+`attribute_similarity_threshold` determines which columns will be compared. Choosing the threshold of 1 indicates that we are interested in 100% match only:
 
 ```python
 kb.find_relationships(verbose=2, attribute_similarity_threshold=1.0);
 ```
 
-Running at 100% similarity sometimes fails to account for small differences between names. In our example, the tables have a plural form with "s" suffix, which results in no exact match. This is handled very well with our default ``attribute_similarity_threshold=0.8``. Notice that the Id for plural form 'patients' is now compared to singular 'patient' without adding too many other spurious comparisons to our execution time:
+Running at 100% similarity sometimes fails to account for small differences between names. In our example, the tables have a plural form with "s" suffix, which results in no exact match. This is handled very well with our default `attribute_similarity_threshold=0.8`. Notice that the Id for plural form 'patients' is now compared to singular 'patient' without adding too many other spurious comparisons to our execution time:
 
 ```python
 kb.find_relationships(verbose=2, attribute_similarity_threshold=0.8);
 ```
 
-Changing ``attribute_similarity_threshold`` to 0 is the other extreme, and it indicates that we want to compare all columns. This is rarely necessary and will result in increased execution time and spurious matches that will need to be reviewed. Observe the amount of comparisons in the verbose output:
+Changing `attribute_similarity_threshold` to 0 is the other extreme, and it indicates that we want to compare all columns. This is rarely necessary and will result in increased execution time and spurious matches that will need to be reviewed. Observe the amount of comparisons in the verbose output:
 
 ```python
 kb.find_relationships(verbose=2, attribute_similarity_threshold=0);
 ```
 
-### Troubleshooting Tips
+### Troubleshooting tips
 
-1. Start from exact match for "many to one" relationships (i.e. the default ``include_many_to_many=False`` and ``coverage_threshold=1.0`). This is usually what you want. 
-2. Use a narrow focus on smaller subsets of tables. Create a small troubleshooting Knowledge Base.
-3. Use validation to detect data quality issues
-4. Use ``verbose=2`` if you want to understand which columns are considered for relationship. This can result in a large amount of output
-5. Be aware of tradeoffs of search arguments. ``include_many_to_many=True`` and ``coverage_threshold<1.0`` may produce spurious relationships that may be harder to analyze and will need to be filtered.
+1. Start from exact match for "many to one" relationships (i.e. the default `include_many_to_many=False` and `coverage_threshold=1.0`). This is usually what you want.
+1. Use a narrow focus on smaller subsets of tables. Create a small troubleshooting Knowledge Base.
+1. Use validation to detect data quality issues.
+1. Use `verbose=2` if you want to understand which columns are considered for relationship. This can result in a large amount of output
+1. Be aware of tradeoffs of search arguments. `include_many_to_many=True` and `coverage_threshold<1.0` may produce spurious relationships that may be harder to analyze and will need to be filtered.
 
-## Complex Schema Example
+## Complex schema example
 
 The simple baseline example above serves as a convenient learning and troubleshooting tool.
 
 In practice the dataset you will start from may be a lot larger. Let's see what that is going to look like.
 
-### Load All Tables
+### Load all tables
 
-``load_files`` will populate the Knowledge Base with all files from the 'synthea/csv' directory
+`load_files` will populate the Knowledge Base with all files from the 'synthea/csv' directory.
 
 ```python
 kb = sempy.KB()
@@ -235,9 +232,9 @@ suggested_relationships = kb.find_relationships()
 suggested_relationships
 ```
 
-### Visualize Relationships
+### Visualize relationships
 
-Relationships are best visualized in a graph form. ``plot_relationships`` function lays out the hierarchy from left to right, which corresponds to "from" and "to" entities in our detection output (and Relationship definition). In other words, the dependent "from" entities on the left point with their foreign keys to their "to" dependency entities on the right.
+Relationships are best visualized in a graph form. `plot_relationships` function lays out the hierarchy from left to right, which corresponds to "from" and "to" entities in our detection output (and Relationship definition). In other words, the dependent "from" entities on the left point with their foreign keys to their "to" dependency entities on the right.
 
 Each entity box shows columns that participate on either "from" or "to" side of a relationship.
 
@@ -246,14 +243,14 @@ kb.add_relationships(suggested_relationships)
 kb.plot_relationships()
 ```
 
-Let's see how many new "N:M" relationships we will discover with ``include_many_to_many=True``. These will be in addition to the previously shown "N:1" relationships, so we will do filtering on 'multiplicity'
+Let's see how many new "N:M" relationships we will discover with `include_many_to_many=True`. These will be in addition to the previously shown "N:1" relationships, so we will do filtering on 'multiplicity'.
 
 ```python
 suggested_relationships = kb.find_relationships(coverage_threshold=1.0, include_many_to_many=True) 
 suggested_relationships[suggested_relationships['multiplicity']=='N:M']
 ```
 
-You can sort the relationship data by various columns to gain a deeper understanding of their nature. For example, you could choose to order the output by 'n_rows_from', 'n_rows_to', which will help identify the largest tables. In a different dataset, maybe it will be inportant to focus on number of nulls 'n_nulls_from' or 'coverage_to'.
+You can sort the relationship data by various columns to gain a deeper understanding of their nature. For example, you could choose to order the output by 'n_rows_from', 'n_rows_to', which will help identify the largest tables. In a different dataset, maybe it will be important to focus on number of nulls 'n_nulls_from' or 'coverage_to'.
 
 This analysis can help understand if any of the relationships could be invalid, and if you need to remove them from the list of candidates.
 
