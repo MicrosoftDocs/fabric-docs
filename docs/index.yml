@@ -151,7 +151,7 @@ conceptualContent:
           text: Query using SQL query editor
       # footerLink (optional)
       footerLink:
-        url: data-warehousing/index.yml
+        url: data-warehouse/index.yml
         text: See more
     # Card
     - title: "Perform data analysis with Synapse Real-time Analytics"
