@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: Data science
+  - name: What is Data Science?
     href: data-science-overview.md
 - name: Get started
   items:
