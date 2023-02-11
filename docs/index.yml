@@ -1,13 +1,13 @@
 ### YamlMime:Hub
 
 title: Trident documentation # < 60 chars
-summary: Trident is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehousing, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more. With Trident documentation, you get expert information and answers to address your needs. # < 160 chars
+summary: Trident is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more. With Trident documentation, you get expert information and answers to address your needs. # < 160 chars
 # brand: aspnet | azure | dotnet | dynamics | m365 | ms-graph | office | power-platform | sql | sql-server | vs | visual-studio | windows | xamarin
 brand: power-bi
 
 metadata:
   title: Trident documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description:  Trident is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehousing, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more.
+  description:  Trident is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more.
   services: service
   ms.service: powerbi #Required; service per approved list. service slug assigned to your service by ACOM.
   ms.subservice: powerbi-service
@@ -281,7 +281,7 @@ additionalContent:
           summary: Power BI amplifies your insights and the value of your data. 
           url: /power-bi/
         - title: Azure Synapse analytics
-          summary: Azure Synapse is a limitless analytics service that brings together enterprise data warehousing and Big Data analytics.
+          summary: Azure Synapse is a limitless analytics service that brings together enterprise data warehouse and Big Data analytics.
           url: /azure/synapse-analytics/
         - title: Azure Data Factory
           summary: Azure Data Factory is Azure's cloud ETL service for scale-out serverless data integration and data transformation.
