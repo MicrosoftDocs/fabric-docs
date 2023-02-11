@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 
-title: Data Warehousing documentation # < 60 chars
+title: Data Warehouse documentation # < 60 chars
 summary: summary # < 160 chars
 
 metadata:
@@ -20,7 +20,7 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About Data Warehousing
+  - title: About Data Warehouse
     linkLists:
       - linkListType: overview
         links:
