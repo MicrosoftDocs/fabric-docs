@@ -1,3 +1,4 @@
+items:
 - name: Overview
   items:
 - name: Get started
@@ -34,6 +35,24 @@
     href: create-powerbi-report.md
 - name: Monitor
   items:
+- name: Event streams
+  items:
+  - name: Overview
+    items:
+    - name: What is Event streams?
+      href: ../placeholder.md
+  - name: Get started
+    items:
+    - name: linktext1
+      href: ../placeholder.md
+  - name: Feature 1
+    items:
+    - name: linktext1
+      href: ../placeholder.md
+  - name: Feature 2
+    items:
+    - name: linktext2
+      href: ../placeholder.md
 - name: KQL reference
   items:
 - name: Management reference

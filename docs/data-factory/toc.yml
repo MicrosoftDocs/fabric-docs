@@ -1,6 +1,7 @@
 items:
-- name: Data Factory
+- name: Data Factory documentation
   href: index.yml
+- name: Overview
   items:
   - name: Overview
     items:
@@ -28,7 +29,17 @@ items:
       href: script-activity.md
   - name: Dataflows
     items:
-    - name: Connectors
-      href: connector-overview.md
     - name: Data source management
       href: data-source-management.md
+  - name: Connectors
+    items:
+    - name: Connector overview
+      href: connector-overview.md
+    - name: Azure Blob Storage
+      items:
+      - name: Overview
+        href: connector-azure-blob-storage-overview.md
+      - name: Set up connection
+        href: connector-azure-blob-storage.md
+      - name: Configure in copy activity
+        href: connector-azure-blob-storage-copy-activity.md
