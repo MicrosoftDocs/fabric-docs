@@ -41,3 +41,27 @@ items:
   items:
   - name: How to use the R language
     href: use-r-language.md
+- name: SemPy
+  items:
+  - name: SemPy overview
+    href: sempy-overview.md
+  - name: Glossary
+    href: sempy-glossary.md
+  - name: Get started
+    items:
+    - name: Setup
+      href: sempy-setup.md
+    - name: Hello world
+      href: sempy-hello-world.md
+    - name: SemPy 101
+      href: sempy-101.md
+    - name: Semantic modeling
+      href: sempy-semantic-modeling.md
+    - name: Knowledge base
+      href: sempy-knowledge-base.md
+    - name: Data processing
+      href: sempy-data-processing.md
+    - name: Semantic propagation
+      href: sempy-semantic-propagation.md
+    - name: Next steps
+      href: sempy-next-steps.md
