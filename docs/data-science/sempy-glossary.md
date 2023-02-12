@@ -17,7 +17,7 @@ These terms are introduced in SemPy.
 
 ## Knowledge Base
 
-The Knowledge Base (KB) is a central component of SemPy as it captures the semantic model and enables better collaboration between data scientists. Internally, KB consists of in-memory collections that capture different aspects of the semantic model (Stypes, relationships, semantic functions, and groundings). SemPy provides APIs to add and retrieve components of the semantic model and to visualize it within a Python notebook. The KB can be serialized to disk as a JSON file capturing the various components of the semantic model.
+The Knowledge Base (KB) is a central component of SemPy as it captures the semantic model and enables better collaboration between data scientists. Internally, KB consists of in-memory collections that capture different aspects of the semantic model (STypes, relationships, semantic functions, and groundings). SemPy provides APIs to add and retrieve components of the semantic model and to visualize it within a Python notebook. The KB can be serialized to disk as a JSON file capturing the various components of the semantic model.
 
 ## SType
 
