@@ -55,7 +55,7 @@ In the following step, you'll create a data connection in your database. This co
 1. Select **+New**. The **New connection** pane opens.
 
 1. Fill out the fields according to the following table:
-   
+
     :::image type="content" source="media/realtime-analytics-tutorial/cloud-connection.png" alt-text="Screenshot of cloud connection.":::
 
     | Field | Description | Suggested value |
