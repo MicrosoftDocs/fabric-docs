@@ -41,7 +41,7 @@ You'll use the streaming and query capabilities of Real-time Analytics to answer
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
 * Workspace
 
-## Connect the cloud connection to your Real-time Analytics database
+## Connect the cloud connection 
 
 > [!NOTE]
 > In this tutorial, we use Event Hubs to demonstrate the capabilities of Real-time Analytics in [!INCLUDE [product-name](../includes/product-name.md)]. To allow for mass consumption of the event hub, this part will be replaced by a script by EOM February.
@@ -71,7 +71,7 @@ In the following step, you'll create a data connection in your database. This co
     | Password |  The SAS primary key | I8R0EbeWC8rsupal/holAGimb4Dwv4454SHQBcrDhiM=
     | Privacy level | Real-time Analytics doesn't use the Privacy level. You can use Organizational as a default value. | Organizational
 
-1. Select **Create**
+1. Select **Create**.
 
     The cloud connection between [!INCLUDE [product-name](../includes/product-name.md)] and the event hub has been established. After creating a target database, you'll use this cloud connection to get data.
 
