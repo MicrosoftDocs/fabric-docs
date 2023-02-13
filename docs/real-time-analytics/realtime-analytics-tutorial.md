@@ -188,6 +188,10 @@ Run the following queries in the new KQL Queryset you have created. Copy/paste e
     | render timechart 
     ```
 
+    :::image type="content" source="media/realtime-analytics-tutorial/temp-by-mode-time.png" alt-text="Screenshot of results.":::
+
+    It appears from these results that all modes of transport have the same temperature fluctuations, and therefore may be equally suited to transport the chocolates.
+
 1. To check the statistic distribution of the temperature, run the following query.
 
     ```kusto
