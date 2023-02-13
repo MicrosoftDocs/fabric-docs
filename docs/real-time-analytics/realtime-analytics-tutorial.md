@@ -44,7 +44,7 @@ You'll use the streaming and query capabilities of Real-time Analytics to answer
 ## Connect the cloud connection to your Real-time Analytics database
 
 > [!NOTE]
-> In this tutorial, we use Event Hubs to demonstrate the capabilities of Real-time Analytics in [!INCLUDE [product-name](../includes/product-name.md)]. Due to the limited number of subscriptions to an event hub, the method used will be changed to a pipeline in the next version of this tutorial.
+> In this tutorial, we use Event Hubs to demonstrate the capabilities of Real-time Analytics in [!INCLUDE [product-name](../includes/product-name.md)]. To allow for mass consumption of the event hub, this part will be replaced by a script by EOM February.
 
 In the following step, you'll create a data connection in your database. This connects a table in your database to your Event Hubs cloud connection. The connection allows you to use your event hub and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) into the target table using a specified data mapping.
 
