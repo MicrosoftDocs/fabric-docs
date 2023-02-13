@@ -111,7 +111,7 @@ The tool automatically infers the schema based on your data.
 :::image type="content" source="media/realtime-analytics-tutorial/schema-tab.png" alt-text="Screenshot of Schema tab showing the schema mapping. The data format, nested levels, and a column titled active tags are highlighted.":::
 
 1. Your data format and compression are automatically identified in the left-hand pane. In **Data format**, select **JSON**. This will automatically refresh the partial data preview.
-1. Under **Nested levels**, change the level from 1 to 2. If your data format is of type JSON, you must also expand the levels of nested data to determine the table column data division.
+1. Under **Nested levels**, change the level from 1 to 2. When your data format is of type JSON, you must also expand the levels of nested data to determine the table column data division.
 
     > [!NOTE]
     > If the data you see in the preview window isn't complete, you may need more data to create a table with all necessary data fields. Use the following commands to fetch new data from your event hub:
