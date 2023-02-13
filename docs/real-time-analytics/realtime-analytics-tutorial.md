@@ -52,11 +52,11 @@ In this tutorial, you learn how to:
 
     :::image type="content" source="media/realtime-analytics-tutorial/new-database.png" alt-text="alt text Screenshot of New Database window showing the database name. The Create button is highlighted.":::
 
-The KQL database has now been created within the context of the selected workspace. Next, you'll get create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)].
+The KQL database has now been created within the context of the selected workspace. Next, you'll create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Connect the cloud connection to your Real-time Analytics database
 
-In the following step, you'll create a data connection in your database. This connects a table in your database to the Event Hubs cloud connection that you created. The connection will allow you to use your Event Hubs and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) into the target table using a specified data mapping.
+In the following step, you'll create a data connection in your database. This connects a table in your database to the Event Hubs cloud connection that you created. The connection allows you to use your event hub and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) into the target table using a specified data mapping.
 
 ### Get data from Event Hubs
 
@@ -64,9 +64,9 @@ In the following step, you'll create a data connection in your database. This co
 
     :::image type="content" source="media/realtime-analytics-tutorial/database-empty-state.png" alt-text="Screenshot of the Database landing page showing the empty state without data.":::
 
-1. Select **Get Data** > **Event Hub**.
+1. Select **Get Data** > **Event Hubs**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/get-data-eh.png" alt-text="Screenshot of the Get data dropdown. The option titled Event Hub is highlighted.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/get-data-eh.png" alt-text="Screenshot of the Get data dropdown. The option titled Event Hubs is highlighted.":::
 
 ### Destination tab
 
@@ -82,6 +82,8 @@ In the **Destination** tab, **Database** is auto-populated with the name of the 
 
 In the **Source** tab, **Source type** is auto-populated with **Event Hubs**.
 
+:::image type="content" source="media/realtime-analytics-tutorial/source-tab.png" alt-text="Screenshot of the source tab showing the source details.":::
+
 1. Fill out the remaining fields according to the following table:
   
     |**Setting** | **Suggested value** | **Field description**|
@@ -93,8 +95,6 @@ In the **Source** tab, **Source type** is auto-populated with **Event Hubs**.
     | Event system properties |Leave blank | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations). If there are multiple records per event message, the system properties will be added to the first one. See [event system properties](#event-system-properties).|
     |Event retrieval start date| Leave blank | The data connection retrieves existing Event hub events created since the Event retrieval start date. It can only retrieve events retained by the Event hub, based on its retention period. Note that the time zone is UTC. If no time is specified, the default time is the time at which the data connection is created. |
 
-    :::image type="content" source="media/realtime-analytics-tutorial/source-tab.png" alt-text="Screenshot of the source tab showing the source details.":::
-
 1. Select **Next: Schema**.
 
 ### Schema tab
@@ -105,7 +105,7 @@ The tool automatically infers the schema based on your data.
 1. Your data format and compression are automatically identified in the left-hand pane. In **Data format**, select **JSON**. This will automatically refresh the partial data preview.
 1. Under **Nested levels**, change the level from 1 to 2. If your data format is of type JSON, you must also expand the levels of nested data to determine the table column data division.
 1. Under **Partial data preview**, search for the column titled **telemetry_ActiveTags**, and from the dropdown menu select **Update column** to edit the column name.
-1. In **Column name**, change the name to **ActiveTags** and select **Update**. The change will be reflected in the partial data preview and the table mapping.
+1. In **Column name**, change the name to **ActiveTags** and select **Update**. The change is reflected in the partial data preview and the table mapping.
 
     > [!NOTE]
     > If the data you see in the preview window isn't complete, you may need more data to create a table with all necessary data fields. Use the following commands to fetch new data from your event hub:
@@ -117,9 +117,9 @@ The tool automatically infers the schema based on your data.
 
 ### Summary tab
 
-In the **Continuous ingestion from Event Hub established** window, all steps will be marked with green check marks when the data connection is successfully created. The data from Event Hubs will begin streaming automatically into your table.
+In the **Continuous ingestion from Event Hubs established** window, all steps will be marked with green check marks when the data connection is successfully created. The data from Event Hubs will begin streaming automatically into your table.
 
-Now that you've got data in your database, you're going to learn how to query it using the **Quick query** tool in your database editor.
+Now that you've got data in your database, you're going to check your data with sample queries.
 
 :::image type="content" source="media/realtime-analytics-tutorial/summary-tab.png" alt-text="Screenshot of the Summary tab.":::
 
@@ -224,9 +224,9 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
 
 ## Create OneLake shortcut
 
-Now that you've finished exploring your data, you may want to access the underlying data from other [!INCLUDE [product-name](../includes/product-name.md)].
+Now that you've finished exploring your data, you may want to access the underlying data from other [!INCLUDE [product-name](../includes/product-name.md)] experiences.
 
-OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files’ store locations.  The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Once you create a shortcut, you can access your data in all of [!INCLUDE [product-name](../includes/product-name.md)]'s experiences. Shortcuts can be updated or removed from your item, but these changes won't affect the original data and its source.
+OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files’ store locations.  The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Once you create a shortcut, you can access your data in all of [!INCLUDE [product-name](../includes/product-name.md)]'s experiences. Shortcuts can be updated or removed from your items, but these changes won't affect the original data and its source.
 
 1. Select **Create** in the **Navigation pane**.
 
@@ -258,23 +258,23 @@ OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../
 
 1. Select **Create** to create the shortcut. The Lakehouse will automatically refresh.
 
-    The Lakehouse shortcut has been created. You now have one logical copy of your data that you can use in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without additional management.
+The Lakehouse shortcut has been created. You now have one logical copy of your data that you can use in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without additional management.
 
 ## Clean up resources
 
 Clean up the items you created in this tutorial by navigating to the workspace in which they were created.
 
-:::image type="content" source="media/realtime-analytics-tutorial/cleanup-resources.png" alt-text="Screenshot of workspace showing the dropdown menu of the Event Hubs connection. The option titled Delete is highlighted.":::
-
 Hover over the following items individually, then select the **More menu** > **Delete**. You can't recover deleted items.
+
+:::image type="content" source="media/realtime-analytics-tutorial/cleanup-resources.png" alt-text="Screenshot of workspace showing the dropdown menu of the Event Hubs connection. The option titled Delete is highlighted.":::
 
 |**Item**  |**Name** |**Description**  |
 |---------|---------|---------|
-|Real-time Analytics Event Hubs cloud connection| *rta-tutorial-db-daily-mh-eh-data-con*|  The data in your table will also be deleted. To get data from this Event Hubs you'll need to [reconnect the Event Hubs cloud connection to your Real-time Analytics database](#connect-the-cloud-connection-to-your-real-time-analytics-database) |
-|KQL Database| *rta-tutorial-db* | Deleting the database will remove the cloud connection          |
+|Real-time Analytics Event Hubs cloud connection| *rta-tutorial-db-daily-mh-eh-data-con*|  The data in your table will also be deleted. To get data from this Event Hubs,, you'll need to [reconnect the Event Hubs cloud connection to your Real-time Analytics database](#connect-the-cloud-connection-to-your-real-time-analytics-database) |
+|KQL Database| *rta-tutorial-db* | Deleting the database will remove the cloud connection    |
 |KQL Queryset| *rtaQS* | The queries you saved will be removed. Deleting the KQL Queryset won't delete the data from your database |
 |Power BI report|*rta-pbi-report* | The dataset that was consequentially created with your report will also be deleted  |
-|Lakehouse | *rtatutorial* | Deleting the Lakehouse will delete the OneLake shortcut, and also the warehouse and dataset that were created consequentially |
+|Lakehouse | *rtatutorial* | Deleting the Lakehouse deletes the OneLake shortcut, and also the warehouse and dataset that were created consequentially |
 
 ## See also
 
