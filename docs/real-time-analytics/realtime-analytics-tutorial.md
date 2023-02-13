@@ -39,8 +39,41 @@ You'll use the streaming and query capabilities of Real-time Analytics to answer
 ## Prerequisites
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* An Event Hubs cloud connection with active sample scenario data
 * Workspace
+
+## Connect the cloud connection to your Real-time Analytics database
+
+> [!NOTE]
+> In this tutorial, we use Event Hubs to demonstrate the capabilities of Real-time Analytics in [!INCLUDE [product-name](../includes/product-name.md)]. Due to the limited number of subscriptions to an event hub, the method used will be changed to a pipeline in the next version of this tutorial.
+
+In the following step, you'll create a data connection in your database. This connects a table in your database to your Event Hubs cloud connection. The connection allows you to use your event hub and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) into the target table using a specified data mapping.
+
+1. On the menu bar, select the settings icon > **Manage connections and gateways**.
+
+    :::image type="content" source="media/get-data-event-hub/manage-connections.png" alt-text="Screenshot of adding a new connection.":::
+
+    The **New connection** pane opens.
+
+1. Fill out the fields according to the following table:
+   
+    :::image type="content" source="media/realtime-analytics-tutorial/cloud-connection.png" alt-text="Screenshot of cloud connection.":::
+
+    | Field | Description | Suggested value |
+    |---|---|---|
+    | Icon | Type of connection | Cloud
+    | Connection name | User-defined name for this connection | daily-mh-eh-data-connection
+    | Connection type | Type of resource to connect to | EventHub
+    | Event Hub namespace | | trident-rta-tutorial-eh-ns
+    | Event Hub |  | trident-rta-tutorial-eh1
+    | Consumer Group | User-defined name for the unique stream view. Use a name of an existing consumer group. If the event hub doesn't have a consumer group, use "$Default", which is the Event Hub's default consumer group. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups). 
+    | Authentication method | Type of authentication | Basic
+    | Username | The SAS policy name | trident-rta-tutorial-eh-1-listener-sas
+    | Password |  The SAS primary key | I8R0EbeWC8rsupal/holAGimb4Dwv4454SHQBcrDhiM=
+    | Privacy level | Real-time Analytics doesn't use the Privacy level. You can use Organizational as a default value. | Organizational
+
+1. Select **Create**
+
+    The cloud connection between [!INCLUDE [product-name](../includes/product-name.md)] and the event hub has been established. After creating a target database, you'll use this cloud connection to get data.
 
 ## Create a new database
 
@@ -58,20 +91,9 @@ You'll use the streaming and query capabilities of Real-time Analytics to answer
 
 The KQL database has now been created within the context of the selected workspace. 
 
-## Connect the cloud connection to your Real-time Analytics database
+## Get data from Event Hubs
 
-> [!NOTE]
-> In this tutorial, we use Event Hubs to demonstrate the capabilities of Real-time Analytics in [!INCLUDE [product-name](../includes/product-name.md)]. Due to the limited number of subscriptions to Event Hubs, the method used will be changed to a pipeline in the next version of this tutorial.
-
-In the following step, you'll create a data connection in your database. This connects a table in your database to your Event Hubs cloud connection. The connection allows you to use your event hub and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) into the target table using a specified data mapping.
-
-### Get data from Event Hubs
-
-1. Navigate to your KQL Database.
-
-    :::image type="content" source="media/realtime-analytics-tutorial/database-empty-state.png" alt-text="Screenshot of the Database landing page showing the empty state without data.":::
-
-1. Select **Get Data** > **Event Hubs**.
+1. From within the new KQL Database, select **Get Data** > **Event Hubs**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/get-data-eh.png" alt-text="Screenshot of the Get data dropdown. The option titled Event Hubs is highlighted.":::
 
@@ -97,7 +119,7 @@ In the **Source** tab, **Source type** is auto-populated with **Event Hubs**.
     |---|---|---|
     | Event hub data source | *daily-mh-eh-data-connection* | The name that identifies your Event Hubs cloud connection. |
     | Data connection name | *rta-tutorial-db-daily-mh-eh-data-con* | This defines the name of the database-specific Real-time Analytics Event Hubs Data Connection.|
-    | Consumer group | *hptutorial* | The consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups)
+    | Consumer group | *$Default* | The consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups)
     | Compression | *None* | Data compression of the events, as coming from the event hub. Options are None (default), or GZip compression.
     | Event system properties |Leave blank | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations). If there are multiple records per event message, the system properties will be added to the first one. |
     |Event retrieval start date| Leave blank | The data connection retrieves existing Event hub events created since the Event retrieval start date. It can only retrieve events retained by the Event hub, based on its retention period. Note that the time zone is UTC. If no time is specified, the default time is the time at which the data connection is created. |
