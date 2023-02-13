@@ -89,7 +89,7 @@ In the **Destination** tab, **Database** is auto-populated with the name of the 
 
 In the **Source** tab, **Source type** is auto-populated with **Event Hubs**.
 
-:::image type="content" source="media/realtime-analytics-tutorial/source-tab.png" alt-text="Screenshot of the source tab showing the source details.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/source-tab.png" alt-text="Screenshot of the source tab showing the source details.":::
 
 1. Fill out the remaining fields according to the following table:
   
