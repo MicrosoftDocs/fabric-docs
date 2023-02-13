@@ -52,7 +52,7 @@ In the following step, you'll create a data connection in your database. This co
 
     :::image type="content" source="media/get-data-event-hub/manage-connections.png" alt-text="Screenshot of adding a new connection.":::
 
-    The **New connection** pane opens.
+1. Select **+New**. The **New connection** pane opens.
 
 1. Fill out the fields according to the following table:
    
