@@ -202,7 +202,7 @@ Recall that in the sample scenario, you want to sell chilled chocolates. The com
     | where telemetry_Temp < 20
     | extend d=parsejson(telemetry_Location) 
     | extend lat =toreal(d["lat"]), lon =toreal(Longitude=d["lon"])
-    | where geo_distance_2points(lon, lat, Minneapolis_lon, Minneapolis_lat) < 10000
+    | where geo_distance_2points(lon, lat, Minneapolis_lon, Minneapolis_lat) < 30000
     | project lon, lat, telemetry_TransportationMode, deviceId
     | render scatterchart with (kind = map)
     ```
