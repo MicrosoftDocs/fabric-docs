@@ -270,7 +270,10 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
 
 ## Create OneLake shortcut
 
-You can use shortcuts to quickly pull data from internal and external locations into your Lakehouse, Warehouse, or datasets. Shortcuts can be updated or removed from your item, but these changes won't affect the original data and its source. Once you create a shortcut, you can access your data in all of Trident's experiences.
+Now that you've finished data exploration, you may want to access the underlying data from other [!INCLUDE [product-name](../includes/product-name.md)] experiences. 
+
+OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files’ store locations.  The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Once you create a shortcut, you can access your data in all of Trident's experiences. Shortcuts can be updated or removed from your item, but these changes won't affect the original data and its source. 
+
 
 1. Select **Create** in the **Navigation pane**.
 
