@@ -73,7 +73,7 @@ Select **Anonymous** under **Authentication method**.
 #### Basic authentication
 
 - **Username**: The user name to use to access the REST endpoint.
-- **Password**: The password for the user (the userName value). Mark this field as a SecureString type to store it securely in Data Factory. You can also [reference a secret stored in Azure Key Vault](/azure/data-factory/store-credentials-in-key-vault).
+- **Password**: The password for the Username.
 
 :::image type="content" source="media/connector-rest/authentication-basic.png" alt-text="Screenshot showing that basic authentication method":::
 
@@ -108,7 +108,7 @@ The following properties in the table are the supported authentication types.
 |**Anonymous**||||✓/|
 |**Basic**||||✓/|
 |- Username|The user name to use to access the REST endpoint.|Yes |||
-|- Password|The password for the user (the userName value). Mark this field as a SecureString type to store it securely in Data Factory. You can also [reference a secret stored in Azure Key Vault](/azure/data-factory/store-credentials-in-key-vault).|Yes |||
+|- Password|The password for the Username.|Yes |||
 
 ## Next steps
 
