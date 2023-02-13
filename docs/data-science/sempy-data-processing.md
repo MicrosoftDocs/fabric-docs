@@ -23,9 +23,9 @@ SemPy supports the integration with the file formats or data sources as pandas o
 
 Any data source that Azure Synapse vNext supports in the notebooks! You can find code samples in the following list:
 
-- The [E2E Power BI Example](https://enyaprod.azurewebsites.net/notebooks/synapse/e2e_powerbi_example.html) notebook shows how to fetch data from a PBIX file using a "connector".
-- The [Knowledge Base Hydration from a Lakehouse](https://enyaprod.azurewebsites.net/notebooks/synapse/knowledge_base_hydration_from_a_lakehouse.html) notebook shows how to fetch data from Azure Lakehouse.
-- The [Built-in Visualizations](https://enyaprod.azurewebsites.net/notebooks/built_in_visualization.html) notebook shows how you can fetch external sklearn datasets.
+- The [E2E Power BI Example](e2e-powerbi-example.md) notebook shows how to fetch data from a PBIX file using a "connector".
+- The [Knowledge Base Hydration from a Lakehouse](sempy-kb-hydration-lakehouse.md) notebook shows how to fetch data from Azure Lakehouse.
+- The [Built-in Visualizations](sempy-built-in-visualizations.md) notebook shows how you can fetch external sklearn datasets.
 
 ## How do I populate a semantic data frame via initialized KB?
 
@@ -96,12 +96,12 @@ You may do it in the same way as in pandas. But SemPy greatly simplifies the pro
 
 :::image type="content" source="media\sempy-data-processing\plot-complete.png" alt-text="screenshot of list showing available plotting options." lightbox="media\sempy-data-processing\plot-complete.png":::
 
-Check out the [Built-in Visualizations](https://enyaprod.azurewebsites.net/notebooks/built_in_visualization.html) notebook to see how you can get visualizations of data for EDA and enjoy bypassing figuring out parameters in plotting functions. If you deal with categorical data, you can take advantage of rich auto-generated visualizations including Principal Component Analysis and Linear Discriminant Analysis provided by \<semantic data frame>.plot.classification(target_column=\<column of interest>). An example of leveraging this functionality is available in [E2E Power BI Example](https://enyaprod.azurewebsites.net/notebooks/synapse/e2e_powerbi_example.html) Part 3 "Data Exploration and Cleaning".
+Check out the [Built-in Visualizations](sempy-built-in-visualizations.md) notebook to see how you can get visualizations of data for EDA and enjoy bypassing figuring out parameters in plotting functions. If you deal with categorical data, you can take advantage of rich auto-generated visualizations including Principal Component Analysis and Linear Discriminant Analysis provided by \<semantic data frame>.plot.classification(target_column=\<column of interest>). An example of leveraging this functionality is available in [E2E Power BI Example](e2e-powerbi-example.md) Part 3 "Data Exploration and Cleaning".
 
 ## How to calculate summary statistics?
 
-Firstly, with SemPy you can do all you can do with pandas. On top of that, there are some new advanced features designed to handle certain types of data better. For example, if you deal with categorical data, you can take advantage of rich auto-generated visualizations including Principal Component Analysis and Linear Discriminant Analysis provided by \<semantic data frame>.plot.classification(target_column=\<column of interest>). Check out [E2E Power BI Example](https://enyaprod.azurewebsites.net/notebooks/synapse/e2e_powerbi_example.html) Part 3 "Data Exploration and Cleaning".
+Firstly, with SemPy you can do all you can do with pandas. On top of that, there are some new advanced features designed to handle certain types of data better. For example, if you deal with categorical data, you can take advantage of rich auto-generated visualizations including Principal Component Analysis and Linear Discriminant Analysis provided by \<semantic data frame>.plot.classification(target_column=\<column of interest>). Check out [E2E Power BI Example](e2e-powerbi-example.md) Part 3 "Data Exploration and Cleaning".
 
 ## How to handle time series data?
 
-SemPy inherits all the great functionality of pandas for time series with an extensive set of tools for working with dates, times, and time-indexed data. It also supports rich visualization for semantic data frames allowing to render time series, saving a lot of effort for data scientist on parameterizing the plots. Check out [Built-in Visualizations](https://enyaprod.azurewebsites.net/notebooks/built_in_visualization.html) "A more complex dataset now" for an example.
+SemPy inherits all the great functionality of pandas for time series with an extensive set of tools for working with dates, times, and time-indexed data. It also supports rich visualization for semantic data frames allowing to render time series, saving a lot of effort for data scientist on parameterizing the plots. Check out [Built-in Visualizations](sempy-built-in-visualizations.md) "A more complex dataset now" for an example.

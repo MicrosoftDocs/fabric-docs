@@ -19,13 +19,13 @@ This article provides pointers for doing more with SemPy.
 
 Sure, our collection of feature-specific notebooks can help you get more thorough understanding of the concepts of SemPy and the capabilities that it enables:
 
-- The [Knowledge Base Hydration from a Lakehouse](https://enyaprod.azurewebsites.net/notebooks/synapse/knowledge_base_hydration_from_a_lakehouse.html) notebook shows how to populate KB for data fetched from Azure Lakehouse.
-- Check out the [Column groups](https://enyaprod.azurewebsites.net/notebooks/column_groups.html) and [Semantic propagation for unstack](https://enyaprod.azurewebsites.net/notebooks/unstack_semantic_propagation.html) notebooks for a better understanding of [SType](sempy-glossary.md#stype), [ColumnSType](sempy-glossary.md#columnstype), and [CompoundSType](sempy-glossary.md#compoundstype) concepts and implementation.
-- The [Built-in Visualizations](https://enyaprod.azurewebsites.net/notebooks/built_in_visualization.html) notebook shows how you can get visualizations of data for EDA and enjoy bypassing figuring out parameters in plotting functions.
-- The [Relationship Detection](https://enyaprod.azurewebsites.net/notebooks/relationship_detection.html) notebook demonstrates how relationships can be added to the [Knowledge Base](sempy-glossary.md#knowledge-base) manually if they're known in advance or discovered automatically.
-- The [Autojoin](https://enyaprod.azurewebsites.net/notebooks/autojoin.html) notebook shows how to detect primary and foreign keys of tables in the dataset and denormalize tables.
-- The [Data Cleaning with Functional Dependencies](https://enyaprod.azurewebsites.net/notebooks/data_cleaning_functional_dependencies.html) notebook demonstrates how we can use approximate functional dependencies for data quality analysis.
-- The [Power BI metrics integration](https://enyaprod.azurewebsites.net/notebooks/synapse/power_bi_metrics_integration.html) notebook shows how we can access Power BI metrics from Synapse notebooks.
+- The [Knowledge Base Hydration from a Lakehouse](sempy-kb-hydration-lakehouse.md) notebook shows how to populate KB for data fetched from Azure Lakehouse.
+- Check out the [Column groups](sempy-column-groups.md) and [Semantic propagation for unstack](sempy-unstack-semantic-propagation.md) notebooks for a better understanding of [SType](sempy-glossary.md#stype), [ColumnSType](sempy-glossary.md#columnstype), and [CompoundSType](sempy-glossary.md#compoundstype) concepts and implementation.
+- The [Built-in Visualizations](sempy-built-in-visualizations.md) notebook shows how you can get visualizations of data for EDA and enjoy bypassing figuring out parameters in plotting functions.
+- The [Relationship Detection](sempy-relationship-detection.md) notebook demonstrates how relationships can be added to the [Knowledge Base](sempy-glossary.md#knowledge-base) manually if they're known in advance or discovered automatically.
+- The [Autojoin](sempy-autojoin.md) notebook shows how to detect primary and foreign keys of tables in the dataset and denormalize tables.
+- The [Data Cleaning with Functional Dependencies](sempy-data-cleaning.md) notebook demonstrates how we can use approximate functional dependencies for data quality analysis.
+- The [Power BI metrics integration](sempy-powerbi-metrics.md) notebook shows how we can access Power BI metrics from Synapse notebooks.
   
 ## How do I discover capabilities of SemPy?
 

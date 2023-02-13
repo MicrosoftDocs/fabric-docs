@@ -60,7 +60,7 @@ Expected output of executing this code block looks as follows:
 ['Item', 'Product', 'Order']
 ```
 
-See the [E2E Power BI example](https://enyaprod.azurewebsites.net/notebooks/synapse/e2e_powerbi_example.html) and [Knowledge Base Hydration from a Lakehouse](https://enyaprod.azurewebsites.net/notebooks/synapse/knowledge_base_hydration_from_a_lakehouse.html) notebooks for more details on the scenarios discussed in the previous sections. Also, check out the [Built-in Visualizations](https://enyaprod.azurewebsites.net/notebooks/built_in_visualization.html) notebook to see how you can populate KB for data fetched from an external source, with sklearn datasets used as examples.
+See the [E2E Power BI example](e2e-powerbi-example.md) and [Knowledge Base Hydration from a Lakehouse](sempy-kb-hydration-lakehouse.md) notebooks for more details on the scenarios discussed in the previous sections. Also, check out the [Built-in Visualizations](sempy-built-in-visualizations.md) notebook to see how you can populate KB for data fetched from an external source, with sklearn datasets used as examples.
 
 ## How many Knowledge Base instances can I create?
 
@@ -98,6 +98,6 @@ Each of the entities has multiple attributes, and they join on the `ProductId` a
 
 For more details, check out the following materials and other notebook-based tutorial provided in the documentation:
 
-- See the [E2E Power BI Example](https://enyaprod.azurewebsites.net/notebooks/synapse/e2e_powerbi_example.html) notebook for how to populate KB from a PBIX file.
-- See the [Knowledge Base Hydration from a Lakehouse](https://enyaprod.azurewebsites.net/notebooks/synapse/knowledge_base_hydration_from_a_lakehouse.html) notebook for how to populate KB for data fetched from Azure Lakehouse.
-- See the [Built-in Visualizations](https://enyaprod.azurewebsites.net/notebooks/built_in_visualization.html) notebook to see how you can populate KB for data fetched from an external source, with sklearn datasets used as examples.
+- See the [E2E Power BI Example](e2e-powerbi-example.md) notebook for how to populate KB from a PBIX file.
+- See the [Knowledge Base Hydration from a Lakehouse](sempy-kb-hydration-lakehouse.md) notebook for how to populate KB for data fetched from Azure Lakehouse.
+- See the [Built-in Visualizations](sempy-built-in-visualizations.md) notebook to see how you can populate KB for data fetched from an external source, with sklearn datasets used as examples.

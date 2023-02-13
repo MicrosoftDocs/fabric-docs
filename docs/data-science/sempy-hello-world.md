@@ -58,7 +58,7 @@ Shopper
 |---RecentPurchaseDate: RecentPurchaseDate_st[SemPy.Time]
 ```
 
-Both [ColumnSType](sempy-glossary.md#columnstype) and [CompoundSType](sempy-glossary.md#compoundstype) extend [SType](sempy-glossary.md#stype) - a basic semantic unit in SemPy. While the above example is simple and has flat structure, * [Column groups notebook](https://enyaprod.azurewebsites.net/notebooks/column_groups.html) demonstrates how to describe and visualize more complex nested data types with SemPy.
+Both [ColumnSType](sempy-glossary.md#columnstype) and [CompoundSType](sempy-glossary.md#compoundstype) extend [SType](sempy-glossary.md#stype) - a basic semantic unit in SemPy. While the above example is simple and has flat structure, * [Column groups notebook](sempy-column-groups.md) demonstrates how to describe and visualize more complex nested data types with SemPy.
 
 Now you can start exploring SemPy's capabilities - for example, automatically discover relationship between two tables that we loaded:
 

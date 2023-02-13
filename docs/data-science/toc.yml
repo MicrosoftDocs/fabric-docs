@@ -65,3 +65,25 @@ items:
       href: sempy-semantic-propagation.md
     - name: Next steps
       href: sempy-next-steps.md
+  - name: End-to-end Power BI example
+    href: e2e-powerbi-example.md
+  - name: How-to guides
+    items:   
+    - name: Autojoin entities
+      href: sempy-autojoin.md
+    - name: View built-in visualizations
+      href: sempy-built-in-visualizations.md
+    - name: Create column groups
+      href: sempy-column-groups.md
+    - name: Clean data with functional dependencies
+      href: sempy-data-cleaning.md
+    - name: Create geo location plots
+      href: sempy-geo-location.md
+    - name: Detect relationships between tables
+      href: sempy-relationship-detection.md
+    - name: Propagate dataframe semantics for unstack operation
+      href: sempy-unstack-semantic-propagation.md
+    - name: Knowledge base hydration from a Lakehouse
+      href: sempy-kb-hydration-lakehouse.md
+    - name: Power BI metrics integration
+      href: sempy-powerbi-metrics.md      

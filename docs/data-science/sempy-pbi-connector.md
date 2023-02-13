@@ -58,7 +58,7 @@ conn.get_databases()
 > [!NOTE]
 > If you do not have access to a workspace and run the code an error will be returned.
 
-Learn more about what the Power BI connector from this [E2E Example](https://enyaprod.azurewebsites.net/notebooks/synapse/e2e_powerbi_example.html).
+Learn more about what the Power BI connector from this [E2E Example](e2e-powerbi-example.md).
 
 ## Discover and validate relationships
 
@@ -71,9 +71,9 @@ kb1.show_relationships()
 
 :::image type="content" source="media/sempy-pbi-connector/mapped-relationships.png" alt-text="Screenshot showing a mapped visual of dataset relationships." lightbox="media/sempy-pbi-connector/mapped-relationships.png":::
 
-Learn more about [Relationship Detection](https://enyaprod.azurewebsites.net/notebooks/relationship_detection.html).
+Learn more about [Relationship Detection](sempy-relationship-detection.md).
 
-Learn more about [Data Cleaning with Functional Dependencies](https://enyaprod.azurewebsites.net/notebooks/data_cleaning_functional_dependencies.html)
+Learn more about [Data Cleaning with Functional Dependencies](sempy-data-cleaning.md)
 
 ### Support your findings with visualizations
 
@@ -87,12 +87,12 @@ In this example, the resulting visual is using data on diamonds and plotting for
 
 :::image type="content" source="media/sempy-pbi-connector/categorical-feature.png" alt-text="Screenshot of three categorical feature versus target regression plots." lightbox="media/sempy-pbi-connector/categorical-feature.png":::
 
-Learn more about how SemPy can plot geographical locations: [Creating Geo Location Plots](https://enyaprod.azurewebsites.net/notebooks/geo_location.html).
+Learn more about how SemPy can plot geographical locations: [Creating Geo Location Plots](sempy-geo-location.md).
 
 ### Next steps
 
 Learn more about the functionality SemPy offers:
 
 - [API reference documentation](https://enyaprod.azurewebsites.net/index.html)
-- [Getting Started with SemPy](https://enyaprod.azurewebsites.net/getting_started.html)
-- [End to end Scenario Notebook](https://enyaprod.azurewebsites.net/notebooks/synapse/e2e_powerbi_example.html)
+- [Getting Started with SemPy](sempy-setup.md)
+- [End to end Scenario Notebook](e2e-powerbi-example.md)
