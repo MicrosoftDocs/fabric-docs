@@ -69,8 +69,8 @@ To learn more information about copy activity in OData, see the following table.
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|-**Workspace**<br> -**External**<br>  -**Sample dataset**<br>|Yes|type|
-|**Connection** |Your connection to the source data store.|< your connection> |Yes|connection|
-|**Path** | Select the container that you want to use.|< connection of your source >|Yes |path|
+|**Connection** |Your connection to the source data store.|\<your connection\> |Yes|connection|
+|**Path** | Select the container that you want to use.|\<connection of your source\>|Yes |path|
 |**Use query** |You can choose **Table**, **Query** as your use query.|-**Table** <br>-**Query**|No |query|
 |**Request timeout** |Timeout for the HTTP request to get a response. Format is in TimeSpan. This value is the timeout to get a response, not the timeout to read response data. The default value is 00:05:00.| timeSpan |No |requestTimeout|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|- Name<br>- Value|No |additionalColumns:<br>- name<br>- value|
