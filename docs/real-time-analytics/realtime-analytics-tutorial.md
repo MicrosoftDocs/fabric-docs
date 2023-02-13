@@ -148,6 +148,17 @@ Recall that in the sample scenario, you want to sell chilled chocolates. The com
 
     :::image type="content" source="media/realtime-analytics-tutorial/query1.png" alt-text="Screenshot of the query editor showing the results of a take query. ":::
 
+1. Select **Save as Queryset** to save this and future queries for later use.
+1. Under **KQL Queryset name**, enter *rtaQS*, then select **Create**.
+
+    :::image type="content" source="media/realtime-analytics-tutorial/rta-qs.png" alt-text="Screenshot of Save as Queryset window showing the Queryset name.":::
+
+    This will automatically open your **KQL Queryset** with the queries that you wrote in the query editor.
+
+## Explore data further in the KQL Queryset
+
+Run the following queries in the new KQL Queryset you have created. Copy/paste each query into your environment, then select **Run**.
+
 1. The following query returns a count of the different devices in each transport mode.
 
     ```kusto
@@ -216,14 +227,7 @@ Recall that in the sample scenario, you want to sell chilled chocolates. The com
 
     :::image type="content" source="media/realtime-analytics-tutorial/map-headquarters.png" alt-text="Screenshot of map results.":::
 
-1. Select **Save as Queryset** to save these queries for later use.
-1. Under **KQL Queryset name**, enter *rtaQS*, then select **Create**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/rta-qs.png" alt-text="Screenshot of Save as Queryset window showing the Queryset name.":::
-
-    This will automatically open your **KQL Queryset** with the queries that you wrote in the query editor.
-
-Now that you've created your Queryset, you can proceed to build a Power BI report and visualize your data.
 
 ## Build Power BI report
 
