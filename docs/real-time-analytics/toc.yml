@@ -5,6 +5,8 @@ items:
     href: ../placeholder.md
 - name: Get started
   items:
+  - name: Real-time Analytics tutorial
+    href: realtime-analytics-tutorial.md
 - name: Databases
   items:
   - name: Create a database

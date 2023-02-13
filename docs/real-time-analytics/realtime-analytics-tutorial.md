@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 02/12/2023
+ms.date: 02/13/2023
 
 ---
 
@@ -147,6 +147,7 @@ Recall that in the sample scenario, you want to sell chilled chocolates. The com
     ```
 
     :::image type="content" source="media/realtime-analytics-tutorial/query1.png" alt-text="Screenshot of the query editor showing the results of a take query. ":::
+
 1. The following query returns a count of the different devices in each transport mode.
 
     ```kusto
@@ -155,6 +156,7 @@ Recall that in the sample scenario, you want to sell chilled chocolates. The com
     ```
 
     :::image type="content" source="media/realtime-analytics-tutorial/query2.png" alt-text="Screenshot of the query editor showing the results of the second query.":::
+
 1. Run the following query to check which of those four available methods is the most suitable for transporting our containers based on the containers' average temperature.
 
     ```kusto
@@ -163,9 +165,10 @@ Recall that in the sample scenario, you want to sell chilled chocolates. The com
     | render columnchart 
     ```
 
-    The results show that all transportation methods have the same average temperature.
+    The results show that all transportation methods have approximately the same average temperature, around 15 degrees.
 
     :::image type="content" source="media/realtime-analytics-tutorial/query3.png" alt-text="Screenshot of the query editor showing the results of the third query.":::
+
 1. Let's check the temperature fluctuation over time per transportation mode. Hover over one trace to see a selected mode.
 
     ```kusto
@@ -181,8 +184,10 @@ Recall that in the sample scenario, you want to sell chilled chocolates. The com
     | summarize percentiles(telemetry_Temp, 90, 50, 10)
     ```
 
-    The median is close to an average of 15 degrees fahrenheit.
-1. Next, let's look at the distribution of the temperature and battery life for a specific deviceId
+    :::image type="content" source="media/realtime-analytics-tutorial/percentiles.png" alt-text="Screenshot of percentiles.":::
+
+    As you can see from the results, the median is close to the average of 15 degrees fahrenheit.
+1. Next, let's look at the distribution of the temperature and battery life for a specific device. While on average the temperature may be acceptable, fluctuations on individual devices will result in melted chocolate and unhappy customers.
 
     ```kusto
     Telemetry
@@ -191,7 +196,9 @@ Recall that in the sample scenario, you want to sell chilled chocolates. The com
     | render timechart 
     ```
 
-1. Using a Let statment, we can find which containers were near our headquarters in Minneapolis in the past day that'll be able to transport the chilly chocolates without heating up too much or running out of battery.
+    :::image type="content" source="media/realtime-analytics-tutorial/temp-battery-life.png" alt-text="Screenshot of temp and battery mode.":::
+
+1. Using a Let statement to define the coordinates of the headquarters, we can find which containers were recently near our headquarters and are in acceptable ranges of battery and heat so as to be able to transport the chilly chocolates without heating up too much or running out of battery.
 
     ```kusto
     let Minneapolis_lat = 44.4671;
@@ -207,6 +214,8 @@ Recall that in the sample scenario, you want to sell chilled chocolates. The com
     | render scatterchart with (kind = map)
     ```
 
+    :::image type="content" source="media/realtime-analytics-tutorial/map-headquarters.png" alt-text="Screenshot of map results.":::
+
 1. Select **Save as Queryset** to save these queries for later use.
 1. Under **KQL Queryset name**, enter *rtaQS*, then select **Create**.
 
@@ -221,6 +230,7 @@ Now that you've created your Queryset, you can proceed to build a Power BI repor
 A Power BI report is a multi-perspective view into a dataset, with visuals that represent findings and insights from that dataset.
 
 1. In your Queryset, select the query you want to build into a Power BI report. The output of this query will be used as the dataset for building the Power BI report.
+
 1. Select **Build Power BI report**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/pbi-report-qs.png" alt-text="Screenshot of the KQL Queryset showing the saved query. The Home tab option titled Build Power BI report is highlighted.":::
