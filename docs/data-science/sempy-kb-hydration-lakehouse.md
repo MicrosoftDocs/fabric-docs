@@ -34,7 +34,7 @@ Next we load data from the lake. In order to do so, we use the relative path to 
 
 You can use it as a reference and replace with file names and paths with what you have created in your settings.
 
-Select three tables from a larger set. The practical meaning of these tables is that 'encounters' (e.g. a medical appointment, procedure) specifies the 'patients' that these encounters were for, which includes 'immunizations' received by patients. In other words, 'encounters' resolves a many-to-many relationship between 'patients' and 'immunizations' and can be thought of as an [Associative Entity](https://sempy.wikipedia.org/wiki/Associative_entity):
+Select three tables from a larger set. The practical meaning of these tables is that 'encounters' (e.g. a medical appointment, procedure) specifies the 'patients' that these encounters were for, which includes 'immunizations' received by patients. In other words, 'encounters' resolves a many-to-many relationship between 'patients' and 'immunizations' and can be thought of as an Associative Entity:
 
 We can use `load_file` utility as a fast shortcut to populate the Knowledge Base with selected tables.
 
