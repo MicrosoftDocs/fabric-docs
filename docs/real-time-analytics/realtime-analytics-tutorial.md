@@ -233,6 +233,9 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
     > If you delete the dataset, your reports will also be removed.
 
 1. Review the visualizations, then select **Save**.
+
+    :::image type="content" source="media/realtime-analytics-tutorial/pbi-report.png" alt-text="Screenshot of Power BI report showing the visualization of the selected query.":::
+
 1. Under **Name your file in Power BI**, enter *rta-pbi-report*.
 1. Select the workspace in which you want to save this report. The report can be saved to a different workspace than the one you started in.
 1. Select the sensitivity label to apply to the report. For more information, see [sensitivity labels](/power-bi/enterprise/service-security-apply-data-sensitivity-labels).
