@@ -198,7 +198,7 @@ Recall that in the sample scenario, you want to sell chilled chocolates. The com
 
     :::image type="content" source="media/realtime-analytics-tutorial/temp-battery-life.png" alt-text="Screenshot of temp and battery mode.":::
 
-1. Using a Let statement to define the coordinates of the headquarters, we can find which containers were recently near our headquarters and are in acceptable ranges of battery and heat so as to be able to transport the chilly chocolates without heating up too much or running out of battery.
+1. Using a `let` statement to define the coordinates of the headquarters, we can find which containers were recently near our headquarters and are in acceptable ranges of battery and heat so as to be able to transport the chilly chocolates without heating up too much or running out of battery.
 
     ```kusto
     let Minneapolis_lat = 44.4671;
