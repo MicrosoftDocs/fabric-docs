@@ -13,6 +13,8 @@ ms.date: 02/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+In this article, you'll learn to create column groups for a dataframe.
+
 ## Creating SDFs and column groups
 
 Column groups are the underlying data structure that stores the stypes associated with the columns in a SemanticDataFrame. In many cases, the user doesn't directly interact with it. Let's look at an example with built-in `ColumnSType`s. We take a "top-down" approach and specify the `CompoundSType` of a dataframe of interest:

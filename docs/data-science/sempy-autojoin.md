@@ -13,6 +13,8 @@ ms.date: 2/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+In this article, you'll learn about SemPy's functionality for inferring how to flatten or join a set of entities.
+
 ## Inferring merge paths
 
 A common task in data science is to denormalize or flatten relational schemas. Databases are often stored in third normal form to avoid redundancies, but this isn't a convenient format for analysis or machine learning. SemPy has some functionality to infer how to flatten or join a set of entities.

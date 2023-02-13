@@ -13,6 +13,8 @@ ms.date: 02/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+In this article, learn to use Power BI metrics on dataframes in SemPy.
+
 ## Access to Power BI metrics via XMLA and DAX
 
 ```python
