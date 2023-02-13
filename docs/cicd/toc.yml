@@ -1,9 +1,9 @@
 items:
-- name: CICD documentation
+- name: CI/CD documentation
   href: index.yml
 - name: Overview
   items:
-  - name: linktext1
+  - name: What is CI/CD? 
     href: ../placeholder.md
 - name: Get started
   items:
