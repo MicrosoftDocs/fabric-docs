@@ -40,7 +40,7 @@ In this tutorial, you learn how to:
 
 ## Create a new database
 
-1. Open the app switchers on the bottom of the navigation pane and select **Real-time Analytics**.
+1. Open the experience switcher on the bottom of the navigation pane and select **Real-time Analytics**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/experience-switcher-rta.png" alt-text="Screenshot of app switcher showing available apps. The Real time Analytics experience is highlighted.":::
 
@@ -104,8 +104,6 @@ The tool automatically infers the schema based on your data.
 
 1. Your data format and compression are automatically identified in the left-hand pane. In **Data format**, select **JSON**. This will automatically refresh the partial data preview.
 1. Under **Nested levels**, change the level from 1 to 2. If your data format is of type JSON, you must also expand the levels of nested data to determine the table column data division.
-1. Under **Partial data preview**, search for the column titled **telemetry_ActiveTags**, and from the dropdown menu select **Update column** to edit the column name.
-1. In **Column name**, change the name to **ActiveTags** and select **Update**. The change is reflected in the partial data preview and the table mapping.
 
     > [!NOTE]
     > If the data you see in the preview window isn't complete, you may need more data to create a table with all necessary data fields. Use the following commands to fetch new data from your event hub:
@@ -125,65 +123,15 @@ Now that you've got data in your database, you're going to check your data with 
 
 ## Query data
 
- In the following step, you'll use the advanced data analysis capabilities of Kusto Query language to query your telemetry data and find out [TODO - add based on scenario].
+Let's say you're an importer working for WWI who wants to sell a variety of edible novelties such as chilly chocolates. The company previously didn't have to handle chilled items. Now, to meet food handling requirements, they must monitor the temperature in their chiller room and any of their trucks that have chiller sections.
 
-<!--TODO- based on scenario- Now we're going to use queries to do xyz which will show us abc.
-Recall that in our scenario that  blah blah blah. you're going to use a series of queries to find out XX
-
-Let's say you're an importer working for WWI who wants to sell a variety of edible novelties such as chilly chocolates. The company previously didn't have to handle chilled items. Now, to meet food handling requirements, they must monitor the temperature in their chiller room and any of their trucks that have chiller sections.-->
-
-<!-- Let's say you want to create a timechart of the average temperature over time for one of the devices. -->
+ In the following step, you'll use the advanced data analysis capabilities of Kusto Query language to query your telemetry data and find out which containers are near the headquarters in Minneapolis that will be able to transport chocolate without heating up too much or running out of battery.
 
 1. Select **Check your data** on the right-hand side of your database-editor.
 
     :::image type="content" source="media/realtime-analytics-tutorial/check-data.png" alt-text="Screenshot of the Check your data button.":::
 
     [TODO based on scenario.]
-<!-- Recall that in our scenario, you've come across a new dataset that contains information about xyz. Let's take a look at the data itself. 
-1. Run the following query to count the number of records in your data.
-    ```kusto
-    Telemetry 
-    | count
-    ```
-1. To find a device ID that starts with "x", paste the following query in your query editor and select **Run**.  
-
-    ```kusto
-    Telemetry
-    | where deviceId startswith "x"
-    | summarize count () by deviceId
-    ```
-
-1. Copy a device ID from the results and run it in the following query:
-
-    ```kusto
-    Telemetry 
-    | where deviceId == "<specify deviceId from your data>" 
-    | summarize avg(telemetry_Temp) by bin(enqueuedTime, 10m) 
-    | render timechart 
-
-    ```
-
-    The rendering of your chart depends on the device ID that you select. For 'xp161da8', the chart will be rendered as follows:
-
-    :::image type="content" source="media/realtime-analytics-tutorial/timechart-render.png" alt-text="Screenshot of Quick query window showing the results of the query.":::
-
-1. Write a query to detect anomalies in the temperature reported by a certain device over the last 7 days.
-
-    ```kusto
-    Telemetry 
-    | where enqueuedTime >= ago(7d) 
-    | where deviceId == "e19jdw3l" 
-    | where telemetry_TransportationMode == "Air" 
-    | make-series avg_temperature = avg(telemetry_Temp) on enqueuedTime from datetime(2023-02-02) to now() step 5m by telemetry_TransportationMode 
-    | extend anomalies = series_decompose_anomalies(avg_temperature) 
-    | render anomalychart with (anomalycolumns=anomalies)
-
-    ```
-
-    The red dots in the chart indicate anomalies in the reported temperature.
-
-    > [!NOTE]
-    > The pictured chart might render differently than yours. -->
 
 1. Select **Save as Queryset**.
 1. Under **KQL Queryset name**, enter *rtaQS*, then select **Create**.
