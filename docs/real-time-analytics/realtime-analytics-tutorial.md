@@ -65,7 +65,7 @@ In the following step, you'll create a data connection in your database. This co
     | Connection type | Type of resource to connect to | EventHub
     | Event Hub namespace | | trident-rta-tutorial-eh-ns
     | Event Hub |  | trident-rta-tutorial-eh1
-    | Consumer Group | User-defined name for the unique stream view. Use a name of an existing consumer group. If the event hub doesn't have a consumer group, use "$Default", which is the Event Hub's default consumer group. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups). 
+    | Consumer Group | User-defined name for the unique stream view. Use a name of an existing consumer group. | If the event hub doesn't have a consumer group, use "$Default", which is the Event Hub's default consumer group. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups). 
     | Authentication method | Type of authentication | Basic
     | Username | The SAS policy name | trident-rta-tutorial-eh-1-listener-sas
     | Password |  The SAS primary key | I8R0EbeWC8rsupal/holAGimb4Dwv4454SHQBcrDhiM=
