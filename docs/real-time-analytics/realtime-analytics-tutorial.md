@@ -38,7 +38,7 @@ You'll use the streaming and query capabilities of Real-time Analytics to answer
 ## Prerequisites
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* An Event Hubs cloud connection
+* An Event Hubs cloud connection with active sample scenario data
 * Workspace
 
 ## Create a new database
@@ -55,11 +55,11 @@ You'll use the streaming and query capabilities of Real-time Analytics to answer
 
     :::image type="content" source="media/realtime-analytics-tutorial/new-database.png" alt-text="alt text Screenshot of New Database window showing the database name. The Create button is highlighted.":::
 
-The KQL database has now been created within the context of the selected workspace. Next, you'll create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)].
+The KQL database has now been created within the context of the selected workspace. 
 
 ## Connect the cloud connection to your Real-time Analytics database
 
-In the following step, you'll create a data connection in your database. This connects a table in your database to the Event Hubs cloud connection that you created. The connection allows you to use your event hub and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) into the target table using a specified data mapping.
+In the following step, you'll create a data connection in your database. This connects a table in your database to your Event Hubs cloud connection. The connection allows you to use your event hub and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) into the target table using a specified data mapping.
 
 ### Get data from Event Hubs
 
@@ -103,6 +103,7 @@ In the **Source** tab, **Source type** is auto-populated with **Event Hubs**.
 ### Schema tab
 
 The tool automatically infers the schema based on your data.
+
 :::image type="content" source="media/realtime-analytics-tutorial/schema-tab.png" alt-text="Screenshot of Schema tab showing the schema mapping. The data format, nested levels, and a column titled active tags are highlighted.":::
 
 1. Your data format and compression are automatically identified in the left-hand pane. In **Data format**, select **JSON**. This will automatically refresh the partial data preview.
@@ -126,7 +127,7 @@ Now that you've got data in your database, you're going to check your data with 
 
 ## Query data
 
-Let's say you're an importer working for WWI who wants to sell a variety of edible novelties such as chilly chocolates. The company previously didn't have to handle chilled items. Now, to meet food handling requirements, they must monitor the temperature in their chiller room and any of their trucks that have chiller sections.
+Recall that in the sample scenario, you want to sell chilled chocolates. The company previously didn't have to handle chilled items but now must monitor the temperature in their chiller room and any transportation method with chiller sections.
 
  In the following step, you'll use the advanced data analysis capabilities of Kusto Query language to query your telemetry data and find out which containers are near the headquarters in Minneapolis that will be able to transport chocolate without heating up too much or running out of battery.
 
