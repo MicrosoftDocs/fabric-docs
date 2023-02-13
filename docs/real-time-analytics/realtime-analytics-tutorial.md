@@ -135,7 +135,7 @@ Recall that in the sample scenario, you want to sell chilled chocolates. The com
 
  In the following step, you'll use the advanced data analysis capabilities of Kusto Query language to query your telemetry data and find out which containers are near the headquarters in Minneapolis that will be able to transport chocolate without heating up too much or running out of battery.
 
-1. elect **Check your data** on the right-hand side of your database-editor.
+1. Select **Check your data** on the right-hand side of your database-editor.
 
     :::image type="content" source="media/realtime-analytics-tutorial/check-data.png" alt-text="Screenshot of the Check your data button.":::
 
