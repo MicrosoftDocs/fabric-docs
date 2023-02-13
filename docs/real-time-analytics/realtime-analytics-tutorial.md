@@ -5,13 +5,16 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 02/08/2023
+ms.date: 02/12/2023
 
 ---
 
 # Tutorial: Real-time Analytics
 
-Real-time Analytics is a portfolio of capabilities that provides an end-to-end analytics solution across Trident experiences. It supplies high velocity, low latency data analysis, and is optimized for time-series data, including automatic partitioning and indexing of any data format and structure, such as structured data, semi-structured (JSON), and free text.
+> [!NOTE]
+> In this tutorial we use Event Hubs to demonstrate the capabilities of Real-time Analytics in [!INCLUDE [product-name](../includes/product-name.md)]. Due to the limited number of subscriptions to Event Hubs, the method used will be changed to a pipeline in the next version of this tutorial.
+
+Real-time Analytics is a portfolio of capabilities that provides an end-to-end analytics streaming solution across [!INCLUDE [product-name](../includes/product-name.md)] experiences. It supplies high velocity, low latency data analysis, and is optimized for time-series data, including automatic partitioning and indexing of any data format and structure, such as structured data, semi-structured (JSON), and free text.
 
 Real-time Analytics delivers high performance when it comes to your increasing volume of data. It accommodates datasets as small as a few gigabytes or as large as several petabytes, and allows you to explore data from different sources and a variety of data formats.
 
@@ -24,15 +27,15 @@ In this tutorial, you learn how to:
 > * Create a KQL Database
 > * Create a [!INCLUDE [product-name](../includes/product-name.md)] platform-based cloud connection to a specific event hub instance
 > * Get data from Azure Event Hubs
-> * Query data in a Quick query
-> * Save query as a KQL Queryset
+> * Check your data with sample queries
+> * Save queries as a KQL Queryset
 > * Create a Power BI report
 > * Create a OneLake shortcut
 
 ## Prerequisites
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* An Event Hubs instance
+* An Event Hubs cloud connection
 * Workspace
 
 ## Create a new database
@@ -47,66 +50,9 @@ In this tutorial, you learn how to:
 
 1. Under **Database name**, enter *rta-tutorial-db*, then select **Create**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/new-database.png" alt-text="alt text Screenshot of New Database window showing the database name. The Create button is highlighted. ":::
+    :::image type="content" source="media/realtime-analytics-tutorial/new-database.png" alt-text="alt text Screenshot of New Database window showing the database name. The Create button is highlighted.":::
 
 The KQL database has now been created within the context of the selected workspace. Next, you'll get create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)].
-
-## Create a cloud connection
-
-Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you'll need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the data connection. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature).
-
-### Set a shared access policy on your event hub
-
-1. In the [Azure portal](https://ms.portal.azure.com/), browse to the specific Event Hubs instance you want to connect.
-1. Under **Settings**, select **Shared access policies**.
-1. Select **+Add** to add a new SAS policy.
-
-    :::image type="content" source="media/get-data-event-hub/sas-policy-portal.png" alt-text="Screenshot of creating an SAS policy in the Azure portal.":::
-
-1. Enter a **Policy name**.
-1. Select **Manage**, then **Create**.
-
-### Gather information for the data connection
-
-Within the SAS policy pane, take note of the following four fields. You may want to copy/paste these fields to a note pad for later use.
-
-:::image type="content" source="media/get-data-event-hub/fill-out-connection.png" alt-text="Screenshot showing how to fill out connection with data from Azure portal.":::
-
-| Field reference | Field | Description |Example |
-|---|---|---|---|
-| a | **Event Hubs instance** | The name of the specific Event Hubs instance | *iotdata*
-| b |  **SAS Policy** | The SAS policy name created in the previous step | *DocsTest*
-| c |**Primary key** | The key associated with the SAS policy | Starts with *PGGIISb009*...
-| d | **Connection string-primary key** | In this field you only want to copy the event hub namespace, which can be found as part of the connection string. | *eventhubpm15910.servicebus.windows.net*
-
-### Create a cloud connection
-
-Now that your SAS policy is set up, you can configure a connection to this event hub.
-
-1. On the menu bar, select the settings icon > **Manage connections and gateways**.
-
-    :::image type="content" source="media/get-data-event-hub/manage-connections.png" alt-text="Screenshot of adding a new connection.":::
-
-    The **New connection** pane opens.
-
-1. Fill out the fields according to the following table:
-
-    | Field | Description | Suggested value |
-    |---|---|---|
-    | Icon | Type of connection | Cloud
-    | Connection name | daily-mh-eh-data-connection
-    | Connection type | Type of resource to connect to | EventHub
-    | Event Hub namespace | Field reference **d** from the above [table](#gather-information-for-the-data-connection). | *eventhubpm15910.servicebus.windows.net*
-    | Event Hub | Field reference **a** from the above [table](#gather-information-for-the-data-connection). | *iotdata*
-    | Consumer Group | User-defined name for the unique stream view. Use a name of an existing consumer group. If the event hub doesn't have a consumer group, use "$Default", which is the Event Hubs' default consumer group. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups).
-    | Authentication method | Type of authentication | Basic
-    | Username | Field reference **b** from the above [table](#gather-information-for-the-data-connection).  <br><br> The SAS policy name | *DocsTest*
-    | Password | Field reference **c** from the above [table](#gather-information-for-the-data-connection). <br><br> The SAS primary key.
-    | Privacy level | Privacy levels aren't used in this item. You can use Organizational as a default value. | Organizational
-
-   :::image type="content" source="media/get-data-event-hub/fill-out-connection-portal.png" alt-text="Screenshot of filling out event hub information in the Azure portal.":::
-
-1. Select **Create**.
 
 ## Connect the cloud connection to your Real-time Analytics database
 
@@ -134,18 +80,20 @@ In the **Destination** tab, **Database** is auto-populated with the name of the 
 
 ### Source tab
 
-In the **Source** tab, **Source type** is auto-populated with **Event Hub**.
+In the **Source** tab, **Source type** is auto-populated with **Event Hubs**.
 
 1. Fill out the remaining fields according to the following table:
   
     |**Setting** | **Suggested value** | **Field description**|
     |---|---|---|
     | Event hub data source | *daily-mh-eh-data-connection* | The name that identifies your Event Hubs cloud connection. |
-    | Data connection name | *rta-tutorial-db-daily-mh-eh-data-con* | This defines the name of the database-specific Real-time Analytics Event Hubs Data Connection. The default is \<tablename>\<EventHubname>. |
-    | Consumer group | **Add consumer group** | The consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups)
+    | Data connection name | *rta-tutorial-db-daily-mh-eh-data-con* | This defines the name of the database-specific Real-time Analytics Event Hubs Data Connection.|
+    | Consumer group | *hptutorial* | The consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups)
     | Compression | *None* | Data compression of the events, as coming from the event hub. Options are None (default), or GZip compression.
     | Event system properties |Leave blank | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations). If there are multiple records per event message, the system properties will be added to the first one. See [event system properties](#event-system-properties).|
     |Event retrieval start date| Leave blank | The data connection retrieves existing Event hub events created since the Event retrieval start date. It can only retrieve events retained by the Event hub, based on its retention period. Note that the time zone is UTC. If no time is specified, the default time is the time at which the data connection is created. |
+
+    :::image type="content" source="media/realtime-analytics-tutorial/source-tab.png" alt-text="Screenshot of the source tab showing the source details.":::
 
 1. Select **Next: Schema**.
 
@@ -186,12 +134,18 @@ Let's say you're an importer working for WWI who wants to sell a variety of edib
 
 <!-- Let's say you want to create a timechart of the average temperature over time for one of the devices. -->
 
-1. Select **Quick query** on the right-hand side of your database-editor.
+1. Select **Check your data** on the right-hand side of your database-editor.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/quick-query.png" alt-text="Screenshot of the Quick query button.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/check-data.png" alt-text="Screenshot of the Check your data button.":::
 
     [TODO based on scenario.]
-<!-- 1. To find a device ID that starts with "x", paste the following query in your query editor and select **Run**.  
+<!-- Recall that in our scenario, you've come across a new dataset that contains information about xyz. Let's take a look at the data itself. 
+1. Run the following query to count the number of records in your data.
+    ```kusto
+    Telemetry 
+    | count
+    ```
+1. To find a device ID that starts with "x", paste the following query in your query editor and select **Run**.  
 
     ```kusto
     Telemetry
@@ -266,11 +220,13 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
 
 1. Select **Open the file in Power BI to view, edit, and get a shareable link** to view and edit your report.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/open-report.png" alt-text="Screenshort of report preview showing that the report has been saved. The link to open the report in Power BI is highlighted.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/open-report.png" alt-text="Screenshot of report preview showing that the report has been saved. The link to open the report in Power BI is highlighted.":::
 
 ## Create OneLake shortcut
 
-You can use shortcuts to quickly pull data from internal and external locations into your Lakehouse, Warehouse, or datasets. Shortcuts can be updated or removed from your item, but these changes won't affect the original data and its source. Once you create a shortcut, you can access your data in all of Trident's experiences.
+Now that you've finished exploring your data, you may want to access the underlying data from other [!INCLUDE [product-name](../includes/product-name.md)].
+
+OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files’ store locations.  The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Once you create a shortcut, you can access your data in all of [!INCLUDE [product-name](../includes/product-name.md)]'s experiences. Shortcuts can be updated or removed from your item, but these changes won't affect the original data and its source.
 
 1. Select **Create** in the **Navigation pane**.
 
@@ -302,17 +258,23 @@ You can use shortcuts to quickly pull data from internal and external locations 
 
 1. Select **Create** to create the shortcut. The Lakehouse will automatically refresh.
 
-    The Lakehouse shortcut has been created. You can now use this data in other Trident experiences without returning to Real-time Analytics.
+    The Lakehouse shortcut has been created. You now have one logical copy of your data that you can use in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without additional management.
 
 ## Clean up resources
 
-Clean up the items created by navigating to the workspace in which they were created.
+Clean up the items you created in this tutorial by navigating to the workspace in which they were created.
 
-1. In your workspace, hover over the item you want to delete, select the **More menu** > **Delete**.
+:::image type="content" source="media/realtime-analytics-tutorial/cleanup-resources.png" alt-text="Screenshot of workspace showing the dropdown menu of the Event Hubs connection. The option titled Delete is highlighted.":::
 
-   :::image type="content" source="media/realtime-analytics-tutorial/cleanup-resources.png" alt-text="Screenshot of workspace showing the dropdown menu of the Event Hubs connection. The option titled Delete is highlighted.":::
+Hover over the following items individually, then select the **More menu** > **Delete**. You can't recover deleted items.
 
-1. Select **Delete**. You can't recover the item once you delete it.
+|**Item**  |**Name** |**Description**  |
+|---------|---------|---------|
+|Real-time Analytics Event Hubs cloud connection| *rta-tutorial-db-daily-mh-eh-data-con*|  The data in your table will also be deleted. To get data from this Event Hubs you'll need to [reconnect the Event Hubs cloud connection to your Real-time Analytics database](#connect-the-cloud-connection-to-your-real-time-analytics-database) |
+|KQL Database| *rta-tutorial-db* | Deleting the database will remove the cloud connection          |
+|KQL Queryset| *rtaQS* | The queries you saved will be removed. Deleting the KQL Queryset won't delete the data from your database |
+|Power BI report|*rta-pbi-report* | The dataset that was consequentially created with your report will also be deleted  |
+|Lakehouse | *rtatutorial* | Deleting the Lakehouse will delete the OneLake shortcut, and also the warehouse and dataset that were created consequentially |
 
 ## See also
 
