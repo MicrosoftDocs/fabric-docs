@@ -16,9 +16,9 @@ This OData connector is supported in Trident Project  - Data Factory with the fo
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | -Anonymous<br> -Basic |
-| **Lookup activity** | None | -Anonymous<br> -Basic |
-| **GetMetadata activity** | None | -Anonymous<br> -Basic |
+| **Copy activity (source/destination)** | None | Anonymous<br> Basic |
+| **Lookup activity** | None | Anonymous<br> Basic |
+| **GetMetadata activity** | None | Anonymous<br> Basic |
 | **Dataflow Gen2 (source/destination)** |  |  |
 
 ## Next Steps

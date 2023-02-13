@@ -44,11 +44,13 @@ The following three properties are **required**:
 Under **Advanced**, you can specify the following fields:
 
 - **Use query**: You can choose **Table**, **Query** as your use query. See the configuration of each settings below.
-
+     - **Table**: Read data from the table you specified in **Table** above if you select this button.
      - **Query**: OData query options for filtering data. Example: `"$select=Name,Description&$top=5"`.
 
 - **Request timeout**: Timeout for the HTTP request to get a response. Format is in TimeSpan. This value is the timeout to get a response, not the timeout to read response data. The default value is 00:05:00.
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
+
+    :::image type="content" source="./media/connector-odata/additionalcolumns.png" alt-text="Screenshot showing additional columns.":::
 
 ### Mapping
 
@@ -70,8 +72,8 @@ To learn more information about copy activity in OData, see the following table.
 |**Connection** |Your connection to the source data store.|< your connection> |Yes|connection|
 |**Path** | Select the container that you want to use.|< connection of your source >|Yes |path|
 |**Use query** |You can choose **Table**, **Query** as your use query.|-**Table** <br>-**Query**|No |query|
-|**Request timeout** |Timeout for the HTTP request to get a response. Format is in TimeSpan. This value is the timeout to get a response, not the timeout to read response data. The default value is 00:05:00.| TimeSpan |No |requestTimeout|
-|**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.| \<$$COLUMN:\>|No |additionalColumns|
+|**Request timeout** |Timeout for the HTTP request to get a response. Format is in TimeSpan. This value is the timeout to get a response, not the timeout to read response data. The default value is 00:05:00.| timeSpan |No |requestTimeout|
+|**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|- Name<br>- Value|No |additionalColumns:<br>- name<br>- value|
 
 ## Next Steps
 
