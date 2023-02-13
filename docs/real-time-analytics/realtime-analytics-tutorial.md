@@ -127,13 +127,79 @@ Let's say you're an importer working for WWI who wants to sell a variety of edib
 
  In the following step, you'll use the advanced data analysis capabilities of Kusto Query language to query your telemetry data and find out which containers are near the headquarters in Minneapolis that will be able to transport chocolate without heating up too much or running out of battery.
 
-1. Select **Check your data** on the right-hand side of your database-editor.
+1. elect **Check your data** on the right-hand side of your database-editor.
 
     :::image type="content" source="media/realtime-analytics-tutorial/check-data.png" alt-text="Screenshot of the Check your data button.":::
 
-    [TODO based on scenario.]
+1. Let's take a look at the data itself. Run the following query to take 10 random records from your data.
 
-1. Select **Save as Queryset**.
+    ```kusto
+    Telemetry
+    | take 10
+    ```
+
+    :::image type="content" source="media/realtime-analytics-tutorial/query1.png" alt-text="Screenshot of the query editor showing the results of a take query. ":::
+1. The following query returns a count of the different devices in each transport mode.
+
+    ```kusto
+    Telemetry
+    | summarize DeviceCount=dcount(deviceId) by Mode=telemetry_TransportationMode
+    ```
+
+    :::image type="content" source="media/realtime-analytics-tutorial/query2.png" alt-text="Screenshot of the query editor showing the results of the second query.":::
+1. Run the following query to check which of those four available methods is the most suitable for transporting our containers based on the containers' average temperature.
+
+    ```kusto
+    Telemetry
+    | summarize avg(telemetry_Temp) by telemetry_TransportationMode
+    | render columnchart 
+    ```
+
+    The results show that all transportation methods have the same average temperature.
+
+    :::image type="content" source="media/realtime-analytics-tutorial/query3.png" alt-text="Screenshot of the query editor showing the results of the third query.":::
+1. Let's check the temperature fluctuation over time per transportation mode. Hover over one trace to see a selected mode.
+
+    ```kusto
+    Telemetry
+    | summarize Temp=avg(telemetry_Temp) by bin(enqueuedTime, 10m), Mode=telemetry_TransportationMode 
+    | render timechart 
+    ```
+
+1. To check the statistic distribution of the temperature, run the following query.
+
+    ```kusto
+    Telemetry
+    | summarize percentiles(telemetry_Temp, 90, 50, 10)
+    ```
+
+    The median is close to an average of 15 degrees fahrenheit.
+1. Next, let's look at the distribution of the temperature and battery life for a specific deviceId
+
+    ```kusto
+    Telemetry
+    | where deviceId == "c2zev4mf" 
+    | summarize avg(telemetry_Temp), avg(telemetry_BatteryLife) by bin(enqueuedTime, 10m) 
+    | render timechart 
+    ```
+
+1. Using a Let statment, we can find which containers were near our headquarters in Minneapolis in the past day that'll be able to transport the chilly chocolates without heating up too much or running out of battery.
+
+    ```kusto
+    let Minneapolis_lat = 44.4671;
+    let Minneapolis_lon = -92.9447;
+    Telemetry
+    | where enqueuedTime > ago(1d)
+    | where telemetry_BatteryLife > 50
+    | where telemetry_Temp < 20
+    | extend d=parsejson(telemetry_Location) 
+    | extend lat =toreal(d["lat"]), lon =toreal(Longitude=d["lon"])
+    | where geo_distance_2points(lon, lat, Minneapolis_lon, Minneapolis_lat) < 10000
+    | project lon, lat, telemetry_TransportationMode, deviceId
+    | render scatterchart with (kind = map)
+    ```
+
+1. Select **Save as Queryset** to save these queries for later use.
 1. Under **KQL Queryset name**, enter *rtaQS*, then select **Create**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/rta-qs.png" alt-text="Screenshot of Save as Queryset window showing the Queryset name.":::
