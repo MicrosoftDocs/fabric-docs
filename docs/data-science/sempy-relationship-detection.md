@@ -40,7 +40,7 @@ from sempy.utils.datasets import download_synthea
 download_synthea(which='small')
 ```
 
-Select three tables from a larger set. The practical meaning of these tables is that 'encounters' (e.g. a medical appointment, procedure) specifies the 'patients' that these encounters were for, as well as the 'providers' who attended the patients. In other words, 'encounters' resolves a many-to-many relationship between 'patients' and 'providers' and can be thought of as an Associative Entity:
+Select three tables from a larger set. The practical meaning of these tables is that 'encounters' (e.g. a medical appointment, procedure) specifies the 'patients' that these encounters were for, as well as the 'providers' who attended the patients. In other words, 'encounters' resolves a many-to-many relationship between 'patients' and 'providers' and can be thought of as an [Associative Entity](https://en.wikipedia.org/wiki/Associative_entity):
 
 ```python
 patients = pd.read_csv('synthea/csv/patients.csv')
