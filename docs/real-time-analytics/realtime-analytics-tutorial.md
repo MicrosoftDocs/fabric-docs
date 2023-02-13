@@ -32,9 +32,13 @@ In this tutorial, you learn how to:
 > * Create a Power BI report
 > * Create a OneLake shortcut
 
-This tutorial is based on a set of [sample streaming IoT data](/sql/samples/wide-world-importers-what-is?view=sql-server-2017). In this scenario, you're exploring data from containers that have chiller sections, and are transported by ocean, land, and air to ship goods to its global customer base. Depending on the products that are shipped, you're monitoring temperature, pressure, humidity inside the containers to ensure that the products do not get contaminated and that the shipping equipment is not malfunctioning. 
+
+## Scenario 
+
+This tutorial is based on a set of [sample streaming IoT data](/sql/samples/wide-world-importers-what-is?view=sql-server-2017). The dataset contains traces from containers that have chiller sections, and are transported by ocean, land, and air to ship goods to its global customer base. Depending on the products that are shipped, you'll be monitoring temperature, pressure, humidity inside the containers to ensure that the products do not get contaminated and that the shipping equipment is not malfunctioning. 
 
 You'll use the streaming and query capabilities of Real-time Analytics to answer key questions about how your devices are performing, and which containers are available for shipping in certain regions.
+
 ## Prerequisites
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
