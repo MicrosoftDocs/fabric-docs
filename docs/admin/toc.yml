@@ -1,25 +1,39 @@
 items:
-- name: Administration documentation
+- name: What is trident administration?
   href: index.yml
 - name: Overview
   items:
-  - name: What is Administration?
-    href: ../placeholder.md
+  - name: What is trident administration?
+    href: admin-overview.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 1
+  - name: Understand [!INCLUDE [product-name](../includes/product-name.md)] roles
+    href: admin-roles.md
+  - name: Enable [!INCLUDE [product-name](../includes/product-name.md)] for your organization
+    href: admin-switch.md
+- name: [!INCLUDE [product-name](../includes/product-name.md)] admin features
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 2
+  - name: Delegate admin rights
+    href: admin-delegate.md
+- name: Power BI admin portal
   items:
-  - name: linktext2
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Power BI admin portal
+    href: admin-power-bi.md
+- name: Spark
+  items:
+  - name: Spark
+    href: admin-spark.md
+- name: Monitoring workspace
+  items:
+  - name: Admin monitoring
+    href: admin-monitoring.md  
+  - name: Audit log report
+    href: admin-audit-log.md
+  - name: Activity log report
+    href: admin-activity-log.md 
+- name: Considerations and limitations
+  items:
+  - name: Admin troubleshooting
+    href: admin-troubleshoot.md  
+  - name: Limitations
+    href: admin-limitations.md       

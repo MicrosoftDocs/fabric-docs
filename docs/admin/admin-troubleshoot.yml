@@ -1,0 +1,25 @@
+---
+title: Admin troubleshooting
+description: Troubleshoot admin issues in [!INCLUDE [product-name](../includes/product-name.md)].
+author: KesemSharabi
+ms.author: kesharab
+ms.topic: troubleshoot
+ms.date: 12/27/2022
+---
+
+# Admin troubleshooting
+
+Troubleshoot admin issues in [!INCLUDE [product-name](../includes/product-name.md)].
+
+## Issue one
+
+Troubleshoot issue one
+
+## Issue two
+
+Troubleshoot issue two
+
+## Next steps
+
+>[!div class="nextstepaction"]
+>[Admin overview](admin-overview.md)
