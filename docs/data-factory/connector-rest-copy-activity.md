@@ -35,7 +35,7 @@ The following properties are supported for REST under the **Source** tab of a co
 
 :::image type="content" source="./media/connector-rest/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
 
-The following three properties are **required**:
+The following some properties are **required**:
 
 - **Data store type**: Select **External**.
 - **Connection**:  Select an REST connection from the connection list. If no connection exists, then create a new REST connection by selecting **New**.
@@ -64,7 +64,7 @@ Under **Advanced**, you can specify the following fields:
 
 ## Destination
 
-The following properties are supported for REST under the **Destination** tab of a copy activity.
+The following some properties are supported for REST under the **Destination** tab of a copy activity.
 
 :::image type="content" source="./media/connector-rest/destination.png" alt-text="Screenshot showing destination tab.":::
 
