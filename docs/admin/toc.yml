@@ -35,5 +35,5 @@ items:
   items:
   - name: Admin troubleshooting
     href: admin-troubleshoot.yml  
-  - name: Admin limitations in [!INCLUDE [product-name](../includes/product-name.md)]
+  - name: Admin limitations in TRIDENT
     href: admin-limitations.md       
