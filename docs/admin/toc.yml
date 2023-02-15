@@ -7,11 +7,11 @@ items:
     href: admin-overview.md
 - name: Get started
   items:
-  - name: Understand [!INCLUDE [product-name](../includes/product-name.md)] roles
+  - name: Understand TRIDENT roles
     href: admin-roles.md
-  - name: Enable [!INCLUDE [product-name](../includes/product-name.md)] for your organization
+  - name: Enable TRIDENT for your organization
     href: admin-switch.md
-- name: Admin features in [!INCLUDE [product-name](../includes/product-name.md)]
+- name: Admin features in TRIDENT
   items:
   - name: Delegate admin rights
     href: admin-delegate.md
