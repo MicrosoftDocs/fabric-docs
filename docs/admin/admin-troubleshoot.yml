@@ -1,25 +1,51 @@
----
+### YamlMime:FAQ
+metadata:
+  title: Admin troubleshooting
+  description: Troubleshoot admin issues in [!INCLUDE [product-name](../includes/product-name.md)].
+  author: KesemSharabi
+  ms.author: kesharab
+  ms.topic: troubleshoot
+  ms.date: 12/27/2022
+
+
 title: Admin troubleshooting
-description: Troubleshoot admin issues in [!INCLUDE [product-name](../includes/product-name.md)].
-author: KesemSharabi
-ms.author: kesharab
-ms.topic: troubleshoot
-ms.date: 12/27/2022
----
+summary: |
+  Troubleshoot admin issues in [!INCLUDE [product-name](../includes/product-name.md)].
 
-# Admin troubleshooting
+sections:
+  - name: Section one
+    questions:
+      - question: |
+          Question one.
+        answer:
+          Answer to question one.
+      - question: |
+          Question two.
+        answer:
+          Answer to question two.
+      - question: |
+          Question three.
+        answer:
+          Answer to question three.              
 
-Troubleshoot admin issues in [!INCLUDE [product-name](../includes/product-name.md)].
+  - name: Section two
+    questions:
+      - question: |
+          Question one.
+        answer:
+          Answer to question one.
+      - question: |
+          Question two.
+        answer:
+          Answer to question two.
+      - question: |
+          Question three.
+        answer:
+          Answer to question three.     
 
-## Issue one
+additionalContent: |
 
-Troubleshoot issue one
+  ## Next steps
 
-## Issue two
-
-Troubleshoot issue two
-
-## Next steps
-
->[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+  >[!div class="nextstepaction"]
+  >[Admin overview](admin-overview.md)

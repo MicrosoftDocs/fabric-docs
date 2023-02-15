@@ -9,7 +9,7 @@ ms.date: 12/27/2022
 
 # Understand TRIDENT roles
 
-Understand admin roles - first part of [Understanding Power BI administrator roles](https://learn.microsoft.com/power-bi/admin/service-admin-role) + **expand** with [!INCLUDE [product-name](../includes/product-name.md)] roles.
+Understand admin roles - first part of [Understanding Power BI administrator roles](/power-bi/admin/service-admin-role) + **expand** with [!INCLUDE [product-name](../includes/product-name.md)] roles.
 
 ## Expand
 

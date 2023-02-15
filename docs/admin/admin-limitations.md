@@ -1,5 +1,5 @@
 ---
-title: [!INCLUDE [product-name](../includes/product-name.md)] admin limitations
+title: Admin limitations in [!INCLUDE [product-name](../includes/product-name.md)] 
 description: Learn how to enable [!INCLUDE [product-name](../includes/product-name.md)] for your organization.
 author: KesemSharabi
 ms.author: kesharab
@@ -7,7 +7,7 @@ ms.topic: overview
 ms.date: 12/27/2022
 ---
 
-# TRIDENT admin limitations
+# Admin limitations in TRIDENT
 
 A list of [!INCLUDE [product-name](../includes/product-name.md)] admin limitations.
 

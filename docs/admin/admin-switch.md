@@ -1,5 +1,5 @@
 ---
-title: [!INCLUDE [product-name](../includes/product-name.md)] switch
+title: Enable [!INCLUDE [product-name](../includes/product-name.md)] for your organization
 description: Learn how to enable [!INCLUDE [product-name](../includes/product-name.md)] for your organization.
 author: KesemSharabi
 ms.author: kesharab

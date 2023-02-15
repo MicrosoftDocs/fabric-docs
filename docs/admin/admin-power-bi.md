@@ -9,7 +9,7 @@ ms.date: 12/27/2022
 
 # Power BI admin portal
 
-An overview article for the Power BI admin portal with a link to the [Power BI admin documentation](https://learn.microsoft.com/power-bi/admin/).
+An overview article for the Power BI admin portal with a link to the [Power BI admin documentation](/power-bi/admin/).
 
 ## Power BI settings
 

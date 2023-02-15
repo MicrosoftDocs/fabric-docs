@@ -11,7 +11,7 @@ items:
     href: admin-roles.md
   - name: Enable [!INCLUDE [product-name](../includes/product-name.md)] for your organization
     href: admin-switch.md
-- name: [!INCLUDE [product-name](../includes/product-name.md)] admin features
+- name: Admin features in [!INCLUDE [product-name](../includes/product-name.md)]
   items:
   - name: Delegate admin rights
     href: admin-delegate.md
@@ -34,6 +34,6 @@ items:
 - name: Considerations and limitations
   items:
   - name: Admin troubleshooting
-    href: admin-troubleshoot.md  
-  - name: Limitations
+    href: admin-troubleshoot.yml  
+  - name: Admin limitations in [!INCLUDE [product-name](../includes/product-name.md)]
     href: admin-limitations.md       
