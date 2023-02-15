@@ -79,7 +79,7 @@ Open the notebook or SJD's recent runs, then select Apache Spark applications wh
 
 Open the notebook or SJD's recent runs, then select Apache Spark applications whose status is Cancelled. To view the details about the Apache Spark applications that are cancelled.
 
-:::image type="content" source="media\spark-detail-monitoring\job-canceled.png" alt-text="Screenshot showing the details screen for a stopped job." lightbox="media\spark-detail-monitoring\job-canceled.png":::
+:::image type="content" source="media\spark-detail-monitoring\job-canceled.png" alt-text="Screenshot showing where the canceled status is displayed." lightbox="media\spark-detail-monitoring\job-canceled.png":::
 
 1. **Refresh** the application.
 2. When the status of the application is cancelled, the **cancel** button is disabled.
@@ -97,7 +97,7 @@ Open the notebook or SJD's recent runs, then select Apache Spark applications wh
 
 Open the notebook or SJD's recent runs, then select Apache Spark applications whose status is Failed. To view the details about the Apache Spark applications that are **Failed**.
 
-:::image type="content" source="media\spark-detail-monitoring\job-failed.png" alt-text="Screenshot showing the details screen for a stopped job." lightbox="media\spark-detail-monitoring\job-failed.png":::
+:::image type="content" source="media\spark-detail-monitoring\job-failed.png" alt-text="Screenshot showing where the Failed status appears." lightbox="media\spark-detail-monitoring\job-failed.png":::
 
 1. **Refresh** the application.
 2. When the status of the application is **Failed**, the cancel button is disabled.
