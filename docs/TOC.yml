@@ -1,38 +1,29 @@
-- name: Index
-  href: index.md
-- name: Data Explorer
-  items:
-  - name: Overview
-    items:
-  - name: Get started
-    items:
-  - name: Databases
-    items:
-    - name: Create a database
-      href: data-explorer/create-database.md
-    - name: Database Management
-      href: data-explorer/database-management.md
-  - name: Tables
-    items:
-  - name: Get data
-    items:
-    - name: Get data from Event Hubs
-      href: data-explorer/get-data-event-hub.md
-    - name: Get data from a blob
-      href: data-explorer/get-data-blob.md
-  - name: Export data
-    items:
-  - name: Query
-    items:
-    - name: Query data in the KQL queryset
-      href: data-explorer/kusto-query-set.md
-  - name: Visualize
-    items:
-  - name: Monitor
-    items:
-  - name: KQL reference
-    items:
-  - name: Management reference
-    items:
-  - name: Reference and resources
-    items:
+- name: Trident documentation
+  href: index.yml
+- name: Get started
+  href: get-started/toc.yml
+- name: OneLake
+  href: onelake/toc.yml
+- name: Data Engineering
+  href: data-engineering/toc.yml
+- name: Data Factory
+  href: data-factory/toc.yml
+- name: Data Science
+  href: data-science/toc.yml
+- name: Data Warehouse
+  href: data-warehouse/toc.yml
+- name: Real-time Analytics
+  href: real-time-analytics/toc.yml
+- name: Administration
+  href: admin/toc.yml
+- name: Governance and compliance
+  href: governance/toc.yml
+- name: Enterprise
+  href: enterprise/toc.yml
+- name: Security
+  href: security/toc.yml
+- name: Continuous Integration / Continuous Delivery
+  href: cicd/toc.yml
+- name: Reflex
+  href: reflex/toc.yml
+
