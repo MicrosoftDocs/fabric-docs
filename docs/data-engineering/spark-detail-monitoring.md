@@ -25,7 +25,7 @@ You can click the name of the application you want to view in the application li
 
 ## View a successful application
 
-Open the notebook or SJD's recent runs, then select Apache Spark applications whose status is Success. To view the details about the Apache Spark applications that are **Success**.
+Open the notebook or SJD's recent runs, then select **Apache Spark applications** whose status is **Success**. To view the details about the Apache Spark applications that are **Success**.
 
 :::image type="content" source="media\spark-detail-monitoring\job-succeeded.png" alt-text="Screenshot showing where Succeeded status appears." lightbox="media\spark-detail-monitoring\job-succeeded.png":::
 
