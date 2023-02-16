@@ -13,9 +13,9 @@ ms.date: 02/16/2023
 
 Real-time Analytics is a portfolio of capabilities that provides an end-to-end analytics streaming solution across [!INCLUDE [product-name](../includes/product-name.md)] experiences. It supplies high velocity, low latency data analysis, and is optimized for time-series data, including automatic partitioning and indexing of any data format and structure, such as structured data, semi-structured (JSON), and free text.
 
-Real-time Analytics delivers high performance when it comes to your increasing volume of data. It accommodates datasets as small as a few gigabytes or as large as several petabytes, and allows you to explore data from different sources and a variety of data formats.
+Real-time Analytics delivers high performance when it comes to your increasing volume of data. It accommodates datasets as small as a few gigabytes or as large as several petabytes, and allows you to explore data from different sources and various data formats.
 
-You can use Real-time Analytics for a range of solutions, such as IoT analytics and log analytics, and in a number of scenarios including manufacturing operations, oil and gas, automotive, and more.
+You can use Real-time Analytics for a range of solutions, such as IoT analytics and log analytics, and in many scenarios including manufacturing operations, oil and gas, automotive, and more.
 
 In this tutorial, you learn how to:
 
@@ -46,7 +46,7 @@ You'll use the streaming and query capabilities of Real-time Analytics to answer
 > [!NOTE]
 > In this tutorial, we use Event Hubs to demonstrate the capabilities of Real-time Analytics in [!INCLUDE [product-name](../includes/product-name.md)]. To allow for mass consumption of the event hub, this part will be replaced by a script by EOM February.
 
-In the following step, you'll create a data connection in your database. This connects a table in your database to your Event Hubs cloud connection. The connection allows you to use your event hub and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is) into the target table using a specified data mapping.
+In the following step, you create a data connection in your database. This data connection connects a table in your database to your Event Hubs cloud connection and allows you to use your event hub and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is) into the target table using a specified data mapping.
 
 1. On the menu bar, select the settings icon > **Manage connections and gateways**.
 
@@ -73,7 +73,7 @@ In the following step, you'll create a data connection in your database. This co
 
 1. Select **Create**.
 
-    The cloud connection between [!INCLUDE [product-name](../includes/product-name.md)] and the event hub has been established. After creating a target database, you'll use this cloud connection to get data.
+    The cloud connection between [!INCLUDE [product-name](../includes/product-name.md)] and the event hub has been established. After creating a target database, use this cloud connection to get data.
 
 ## Create a new database
 
@@ -122,7 +122,7 @@ In the **Source** tab, **Source type** is auto-populated with **Event Hubs**.
     | Consumer group | *$Default* | The consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups)
     | Compression | *None* | Data compression of the events, as coming from the event hub. Options are None (default), or GZip compression.
     | Event system properties |Leave blank | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations). If there are multiple records per event message, the system properties will be added to the first one. |
-    |Event retrieval start date| Leave blank | The data connection retrieves existing Event hub events created since the Event retrieval start date. It can only retrieve events retained by the Event hub, based on its retention period. Note that the time zone is UTC. If no time is specified, the default time is the time at which the data connection is created. |
+    |Event retrieval start date| Leave blank | The data connection retrieves existing Event hub events created since the Event retrieval start date. It can only retrieve events retained by the Event hub, based on its retention period. The time zone is UTC. If no time is specified, the default time is the time at which the data connection is created. |
 
 1. Select **Next: Schema**.
 
@@ -155,7 +155,7 @@ Now that you've got data in your database, you're going to check your data with 
 
 Recall that in the sample scenario, you want to sell chilled chocolates. The company previously didn't have to handle chilled items but now must monitor the temperature in their chiller room and any transportation method with chiller sections.
 
- In the following step, you'll use the advanced data analysis capabilities of Kusto Query language to query your telemetry data and find out which containers are near the headquarters in Minneapolis that will be able to transport chocolate without heating up too much or running out of battery.
+ In the following step, use the advanced data analysis capabilities of Kusto Query language to query your telemetry data and find out which containers are near the headquarters in Minneapolis that will be able to transport chocolate without heating up too much or running out of battery.
 
 1. Select **Check your data** on the right-hand side of your database-editor.
 
@@ -323,7 +323,7 @@ OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../
 
 1. Select **Create** to create the shortcut. The Lakehouse will automatically refresh.
 
-The Lakehouse shortcut has been created. You now have one logical copy of your data that you can use in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without additional management.
+The Lakehouse shortcut has been created. You now have one logical copy of your data that you can use in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management.
 
 ## Clean up resources
 
