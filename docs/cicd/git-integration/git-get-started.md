@@ -20,7 +20,7 @@ This article explains how to perform the following tasks:
 
 ## Prerequisites
 
-To integrate git hub with your [!INCLUDE[Trident](../../includes/product-name.md)] workspace you need the following to be set up in both Azure DevOpes and [!INCLUDE[Trident](../../includes/product-name.md)].
+To integrate git hub with your [!INCLUDE[Trident](../../includes/product-name.md)] workspace, you need to set up the following in both Azure DevOps and [!INCLUDE[Trident](../../includes/product-name.md)].
 
 ### Azure DevOps prerequisites
 
@@ -34,7 +34,7 @@ To integrate git hub with your [!INCLUDE[Trident](../../includes/product-name.md
 
 ## Connect a workspace to an Azure repo
 
-Only a workspace admin can connect a workspace to Azure repos, but once connected, anyone with permissions can work in the workspace. If you're not an admin, ask your admin for help connecting. To connect a workspace to Azure repos, follow these steps:
+Only a workspace admin can connect a workspace to Azure Repos, but once connected, anyone with permissions can work in the workspace. If you're not an admin, ask your admin for help with connecting. To connect a workspace to Azure repos, follow these steps:
 
 1. Sign into Power BI and navigate to the workspace you want to connect with.
 
@@ -55,14 +55,14 @@ Only a workspace admin can connect a workspace to Azure repos, but once connecte
     - Organization
     - Project
     - Git repository
-    - Branch (Select an existing branch using the drop down menu, or select **+ New Branch** to create a new branch)
-    - Folder (Select an existing folder in that branch. If no folder is selected, content will be created in the root folder.)
+    - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch)
+    - Folder (Select an existing folder in that branch. If you don't select a folder, content will be created in the root folder.)
 
 1. Select **Connect and sync**.
 
-During the initial sync, if either the workspace or git branch is empty, content will be copied from the non-empty location to the empty one. If both the workspace and git branch have content, you’ll be asked which direction the sync should go. For more information this initial sync see [Connect and sync](git-integration-process.md#connect-and-sync).
+During the initial sync, if either the workspace or git branch is empty, content will be copied from the non-empty location to the empty one. If both the workspace and git branch have content, you’ll be asked which direction the sync should go. For more information on this initial sync, see [Connect and sync](git-integration-process.md#connect-and-sync).
 
-After connecting, the Workspace will have new information specific to source control, that will allow the user to view the connected branch, the status of each artifact and a 'Source control' Pane to take actions related to git.
+After you connect, the workspace will have new information specific to source control that will allow you to view the connected branch, the status of each artifact and a **Source control** Pane to take actions related to git.
 
 :::image type="content" source="./media/git-get-started/source-control-panel.png" alt-text="Screenshot of source control icon and other git information.":::
 
@@ -74,9 +74,9 @@ Once you're connected to a git folder, you can edit your workspace as usual. Whe
 
 1. Go to the workspace.
 1. Select the **Source control** icon. The number of uncommitted changes is indicated on the icon.
-    :::image type="content" source="./media/git-get-started/source-control-number.png" alt-text="Screenshot of source control icon with the number 2 indicating that there are 2 changes to commit.":::
+    :::image type="content" source="./media/git-get-started/source-control-number.png" alt-text="Screenshot of source control icon with the number 2 indicating that there are two changes to commit.":::
 1. Select the **Changes** tab of the **Source control** pane.
-   You'll se a list of all the changes you made, with an icon indicating if the changed item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png" ::: , *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
+   You'll see a list of all the changes you made, with an icon indicating if the changed item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
 1. Select the changes you want to commit.
 1. Add a comment in the box. If you don't add a comment, a default message will be added automatically.
 1. Select **Commit**.
@@ -87,14 +87,14 @@ To revert to previous status, select **Undo**.
 
 ## Update workspace from git
 
-Whenever a new commit is made to the connected git branch, a notification will shows up for the user on the relevant workspace. Pull latest changes, merges or reverts into the workspace and update live artifacts through the **Source control** pane.
+Whenever a new commit is made to the connected git branch, a notification will appear on the relevant workspace. Pull latest changes, merges or reverts into the workspace and update live artifacts through the **Source control** pane.
 
 1. Go to the workspace.
 1. Select the **Source control** icon.
 1. Select the **Updates** tab of the **Source control** pane. You’ll see a list of all changed that were made to the branch since the last update.
 1. Select **Update all**.
 
-:::image type="content" source="./media/git-get-started/source-control-update.png" alt-text="Screenshot of source control pane with the with the update tab open and the updating all button selected.":::
+:::image type="content" source="./media/git-get-started/source-control-update.png" alt-text="Screenshot of source control pane with the update tab open and the updating all button selected.":::
 
 ## Disconnect a workspace from git
 
