@@ -27,13 +27,13 @@ When working on specific artifacts, the Artifact Recent Runs feature allows you 
 
 Notebook Contextual Monitoring offers the capability of authoring, monitoring, and debugging Spark jobs within a single place. You can monitor Spark job progress, view Spark execution tasks and executors, and access Spark logs within a Notebook at the Notebook cell level. The Spark Advisor is also built into Notebook to offer real-time advice on code and cell Spark execution and perform error analysis.
 
-## SJD inline monitoring
+## Spark job definition inline monitoring
 
-The SJD Inline Monitoring feature allows you to view SJD submission and run status in real-time, as well as view the SJD's past runs and configurations. You can navigate to the Spark application detail page to view more details.
+The Spark job definition Inline Monitoring feature allows you to view Spark job definition submission and run status in real-time, as well as view the Spark job definition's past runs and configurations. You can navigate to the Spark application detail page to view more details.
 
 ## Pipeline Spark activity inline monitoring
 
-For Pipeline Spark Activity Inline Monitoring, deep links have been built into the Notebook and SJD activities within the Pipeline. You can view Spark application execution details, the respective Notebook and SJD snapshot, and access Spark logs for troubleshooting. If the Spark activities fail, the inline error message is also available within Pipeline Spark activities.
+For Pipeline Spark Activity Inline Monitoring, deep links have been built into the Notebook and Spark job definition activities within the Pipeline. You can view Spark application execution details, the respective Notebook and Spark job definition snapshot, and access Spark logs for troubleshooting. If the Spark activities fail, the inline error message is also available within Pipeline Spark activities.
 
 ## How to: Follow step-by-step instructions to get started
 

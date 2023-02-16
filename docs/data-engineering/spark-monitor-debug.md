@@ -34,9 +34,9 @@ The number of tasks per each job or stage helps you to identify the parallel lev
 
 :::image type="content" source="media\spark-monitor-debug\spark-monitor-details.png" alt-text="Screenshot showing where to access detailed information about a Spark job." lightbox="media\spark-monitor-debug\spark-monitor-details.png":::
 
-## Spark advisor info advice
+## Spark Advisor info advice
 
-Also supports viewing Spark Advisor info advice, after applying the advice, you would have chance to improve your execution performance, decrease cost and fix the execution failures. Run the following sample code and validate the Spark advisor info message below the Notebook cell.
+Also supports viewing Spark Advisor info advice, after applying the advice, you would have chance to improve your execution performance, decrease cost and fix the execution failures. Run the following sample code and validate the Spark Advisor info message below the Notebook cell.
 
 ```Python
 %%spark
