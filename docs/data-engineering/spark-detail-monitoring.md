@@ -30,7 +30,7 @@ Open the notebook or SJD's recent runs, then select **Apache Spark applications*
 :::image type="content" source="media\spark-detail-monitoring\job-succeeded.png" alt-text="Screenshot showing where Succeeded status appears." lightbox="media\spark-detail-monitoring\job-succeeded.png":::
 
 1. Refresh the application.
-2. When the status of the application is Success, the cancel button is disabled.
+2. When the status of the application is **Success**, the cancel button is disabled.
 3. Open Apache history server link by clicking Spark history server.
 4. You can view the details for this application in Details.
 5. The job runs list is displayed in the Job tab, you can view the details of each job here, including job ID, Description, Status, Stages, Tasks, Duration and Code snippet.
