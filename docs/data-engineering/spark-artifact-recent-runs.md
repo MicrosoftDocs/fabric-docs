@@ -17,7 +17,7 @@ With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache 
 
 ## View the recent runs pane
 
-We can open Recent runs pane with the following steps:
+We can open **Recent runs** pane with the following steps:
 
 1. Open the Trident homepage and select a workspace where you want to run the job.
 2. Clicking on SJD or notebook artifact context menu shows the recent run option.
