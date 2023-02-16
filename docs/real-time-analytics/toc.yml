@@ -31,7 +31,7 @@ items:
   items:
   - name: Query data in the KQL queryset
     href: kusto-query-set.md
-  - name: Query a Kusto database using a Jupyter notebook
+  - name: Query a KQL Database with kqlmagic using a Jupyter notebook
     href: jupyter-notebook.md
 - name: Visualize data
   items:

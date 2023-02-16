@@ -9,9 +9,9 @@ ms.date: 02/01/2023
 
 ---
 
-# Tutorial: Query a Kusto database using a Jupyter notebook
+# Tutorial: Query a KQL Database with kqlmagic using a Jupyter notebook
 
-Jupyter notebooks are both readable documents containing data analysis descriptions and results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a Kusto Database. This tutorial uses pre-created datasets and notebooks in both the Kusto and the Data Engineering environments in Trident.
+Jupyter notebooks are both readable documents containing data analysis descriptions and results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a KQL Database. This tutorial uses pre-created datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in Trident.
 
 Specifically, you'll learn how to:
 
@@ -26,7 +26,7 @@ Specifically, you'll learn how to:
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
 * Workspace
-* [Kusto database](create-database.md)
+* [KQL Database](create-database.md)
 
 ## Get data
 
@@ -36,7 +36,7 @@ In this step, you'll use a script to first create a table with specified mapping
 
     :::image type="content" source="media/jupyter-notebook/copy-kql-script.png" alt-text="Screenshot of GitHub repository showing the KQL script for the NYC Taxi demo notebook. The copy icon is highlighted.":::
 
-1. Navigate to your Kusto Database.
+1. Navigate to your KQL Database.
 1. Select **Quick query** on the top right corner of the database summary page.
 1. Paste the KQL script from step 1.
 
@@ -50,7 +50,7 @@ In this step, you'll use a script to first create a table with specified mapping
 
 ## Download the NYC Taxi demo notebook
 
-We've created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your Kusto Database.
+We've created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your KQL Database.
 
 1. Open the Customer Success Engineering code sample repository on GitHub to download the [NYC Taxi demo Notebook.](https://github.com/Azure/kusto-adx-cse/blob/30e36d1c92f09d2bbb9d080f78789b9bd7829176/KQLDemos/JupiterNotebook/NYC%20Taxi%20KQL%20demo.ipynb).
 
@@ -63,7 +63,7 @@ We've created a sample Jupyter notebook that will take you through all the neces
 
 ## Import the Jupyter notebook
 
-The rest of this workflow occurs in the **Data Engineering** section of the product, and uses a Jupyter notebook to query and visualize the data in your Kusto Database.
+The rest of this workflow occurs in the **Data Engineering** section of the product, and uses a Jupyter notebook to query and visualize the data in your KQL Database.
 
 1. Open the app switcher on the bottom of the navigation pane and select **Data Engineering**.
 
@@ -117,7 +117,8 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
 ## Run the notebook
 
-Run the remaining cells sequentially to see how render commands work through KQL magic and begin creating a heatmap of taxi pickups in NYC.
+Run the remaining cells sequentially to see how render commands work through kqlmagic and begin creating a heatmap of taxi pickups in NYC.
+For more information on kqlmagic, see [Use a Jupyter Notebook and kqlmagic extension to analyze data ](/azure/data-explorer/kqlmagic).
 
 1. The following cell aggregates all pickups within the specified geographic boundary.
 
@@ -151,4 +152,4 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 ## See also
 
-* [Query data in the KQL queryset](kusto-query-set.md)
+* [Query data in the KQL Queryset](kusto-query-set.md)
