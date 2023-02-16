@@ -1,22 +1,26 @@
 items:
+- name: Real-time Analytics documentation
+  href: index.yml
 - name: Overview
   items:
   - name: What is Real-time Analytics?
     href: ../placeholder.md
 - name: Get started
   items:
-  - name: Real-time Analytics tutorial
+  - name: Real-time Analytics happy path
     href: realtime-analytics-tutorial.md
-- name: Databases
+- name: Create entities
   items:
-  - name: Create a database
-    href: create-database.md
-  - name: Database Management
-    href: database-management.md
-- name: Tables
-  items:
-  - name: Create an empty table
-    href: create-empty-table.md
+  - name: Databases
+    items:
+    - name: Create a database
+      href: create-database.md
+    - name: Database Management
+      href: database-management.md
+  - name: Tables
+    items:
+    - name: Create an empty table
+      href: create-empty-table.md
 - name: Get data
   items:
   - name: Get data from a blob
@@ -25,20 +29,16 @@ items:
     href: get-data-event-hub.md
   - name: Get data from OneLake
     href: get-data-onelake.md  
-- name: Export data
-  items:
-- name: Query
+- name: Query data
   items:
   - name: Query data in the KQL queryset
     href: kusto-query-set.md
   - name: Query a Kusto database using a Jupyter notebook
     href: jupyter-notebook.md
-- name: Visualize
+- name: Visualize data
   items:
   - name: Visualize data in a Power BI report
     href: create-powerbi-report.md
-- name: Monitor
-  items:
 - name: Event streams
   items:
   - name: Overview
@@ -58,8 +58,8 @@ items:
     - name: linktext2
       href: ../placeholder.md
 - name: KQL reference
-  items:
+  href: ../placeholder.md
 - name: Management reference
-  items:
+  href: ../placeholder.md
 - name: Reference and resources
-  items:
+  href: ../placeholder.md

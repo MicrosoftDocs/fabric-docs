@@ -13,7 +13,7 @@ ms.date: 02/10/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-In this article, you'll learn how SemPy uses data semantics to simplify data science analytics during the data exploration and transformation stages.
+In this article, learn how SemPy uses data semantics to simplify data science analytics during the data exploration and transformation stages.
 
 ## Why is SemPy focused on semantics?
 
@@ -55,7 +55,7 @@ CompoundSType: Fact   {
 		}
 ```
 
-You may also check out [Column groups notebook](https://enyaprod.azurewebsites.net/notebooks/column_groups.html) for a better understanding of [SType](sempy-glossary.md#stype), [ColumnSType](sempy-glossary.md#columnstype) and [CompoundSType](sempy-glossary.md#compoundstype) concepts and implementation.
+You may also check out [Column groups notebook](sempy-column-groups.md) for a better understanding of [SType](sempy-glossary.md#stype), [ColumnSType](sempy-glossary.md#columnstype) and [CompoundSType](sempy-glossary.md#compoundstype) concepts and implementation.
 
 ## How do I create semantic model for a dataset?
 

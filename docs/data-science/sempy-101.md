@@ -33,7 +33,7 @@ We designed our library so that it supports all functions of pandas via same API
 
 ## What's the easiest way to get started?
 
-The easiest is always to look at some working code. Here's an e2e example scenario that showcases most important SemPy capabilities in Azure Synapse vNext: [E2E Power BI Example](https://enyaprod.azurewebsites.net/notebooks/synapse/e2e_powerbi_example.html). The data we use in this scenario may be familiar to you as a Power BI sample from [Customer Profitability sample for Power BI](/power-bi/create-reports/sample-customer-profitability).  
+The easiest is always to look at some working code. Here's an e2e example scenario that showcases most important SemPy capabilities in Azure Synapse vNext: [E2E Power BI Example](e2e-powerbi-example.md). The data we use in this scenario may be familiar to you as a Power BI sample from [Customer Profitability sample for Power BI](/power-bi/create-reports/sample-customer-profitability).  
 
 ## How do I install SemPy?
 
