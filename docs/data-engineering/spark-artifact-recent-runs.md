@@ -15,7 +15,7 @@ ms.date: 02/24/2023
 
 With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache Spark to run notebooks, SJD, jobs, and other types of applications in your workspace. This article explains how to view your running Apache Spark applications, making it easier to keep an eye on the latest running status.
 
-## View Recent runs pane
+## View the recent runs pane
 
 We can open Recent runs pane with the following steps:
 
