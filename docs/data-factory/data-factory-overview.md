@@ -1,7 +1,7 @@
 ---
 title: What is Data Factory
-description: Overview of Data Factory dataflows and pipelines.
-ms.reviewer: DougKlopfenstein 
+description: Overview of Data Factory dataflows and data pipelines.
+ms.reviewer: DougKlopfenstein
 ms.author: makromer
 author: kromerm
 ms.topic: overview
@@ -9,6 +9,10 @@ ms.date: 01/25/2023
 ---
 
 # Overview: What is [!INCLUDE [product-name](../includes/product-name.md)] Data Factory
+
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 [!INCLUDE [product-name](../includes/product-name.md)] Project - Data factory provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade.
 
@@ -24,7 +28,7 @@ Dataflows are built using the familiar [Power Query](/power-query/power-query-wh
 
 Data pipelines enable powerful workflow capabilities at cloud-scale. With data pipelines, you can build complex workflows that can refresh your dataflow, move PB-size data, and define sophisticated control flow pipelines.
 
-Use data pipelines to build complex ETL and data factory workflows that can perform many different tasks at scale. Control flow capabilities are built into pipelines that will allow you to build workflow logic, which provides loops and conditionals.
+Use data pipelines to build complex ETL and data factory workflows that can perform many different tasks at scale. Control flow capabilities are built into data pipelines that will allow you to build workflow logic, which provides loops and conditionals.
 
 Add a configuration-driven copy activity together with your low-code dataflow refresh in a single pipeline for an end-to-end ETL data pipeline. You can even add code-first activities for Spark Notebooks, SQL scripts, store procs, and more.
 

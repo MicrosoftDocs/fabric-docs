@@ -10,6 +10,10 @@ ms.date: 01/27/2023
 
 # Create your first dataflow to get and transform data (Preview)
 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 Dataflows are a self-service, cloud-based, data preparation technology. In this article, you'll create your first dataflow, get data for your dataflow, then transform the data and publish the dataflow.
 
 ## Prerequisites
@@ -167,4 +171,4 @@ If you're not going to continue to use this dataflow, delete the dataflow using 
 
 ## Next steps
 
-Advance to the next article to learn how to create your first pipeline: [Quickstart: Create your first pipeline to copy data (Preview)](create-first-pipeline.md).
+Advance to the next article to learn how to create your first data pipeline: [Quickstart: Create your first data pipeline to copy data (Preview)](create-first-pipeline.md).
