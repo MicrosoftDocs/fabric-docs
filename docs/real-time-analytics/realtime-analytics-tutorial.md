@@ -32,7 +32,7 @@ In this tutorial, you learn how to:
 
 ## Scenario 
 
-This tutorial is based on a set of [sample streaming IoT data](/sql/samples/wide-world-importers-what-is?view=sql-server-2017). The dataset contains traces from containers that have chiller sections, and are transported by ocean, land, and air to ship goods to its global customer base. Depending on the products that are shipped, you'll be monitoring temperature, pressure, humidity inside the containers to ensure that the products do not get contaminated and that the shipping equipment is not malfunctioning. 
+This tutorial is based on a set of [sample streaming IoT data](/sql/samples/wide-world-importers-what-is). The dataset contains traces from containers that have chiller sections, and are transported by ocean, land, and air to ship goods to its global customer base. Depending on the products that are shipped, you'll be monitoring temperature, pressure, humidity inside the containers to ensure that the products do not get contaminated and that the shipping equipment is not malfunctioning. 
 
 You'll use the streaming and query capabilities of Real-time Analytics to answer key questions about how your devices are performing, and which containers are available for shipping in certain regions.
 
@@ -46,7 +46,7 @@ You'll use the streaming and query capabilities of Real-time Analytics to answer
 > [!NOTE]
 > In this tutorial, we use Event Hubs to demonstrate the capabilities of Real-time Analytics in [!INCLUDE [product-name](../includes/product-name.md)]. To allow for mass consumption of the event hub, this part will be replaced by a script by EOM February.
 
-In the following step, you'll create a data connection in your database. This connects a table in your database to your Event Hubs cloud connection. The connection allows you to use your event hub and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16) into the target table using a specified data mapping.
+In the following step, you'll create a data connection in your database. This connects a table in your database to your Event Hubs cloud connection. The connection allows you to use your event hub and stream data from the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is) into the target table using a specified data mapping.
 
 1. On the menu bar, select the settings icon > **Manage connections and gateways**.
 
@@ -335,7 +335,7 @@ Hover over the following items individually, then select the **More menu** > **D
 
 |**Item**  |**Name** |**Description**  |
 |---------|---------|---------|
-|Real-time Analytics Event Hubs cloud connection| *rta-tutorial-db-daily-mh-eh-data-con*|  The data in your table will also be deleted. To get data from this Event Hubs,, you'll need to [reconnect the Event Hubs cloud connection to your Real-time Analytics database](#connect-the-cloud-connection-to-your-real-time-analytics-database) |
+|Real-time Analytics Event Hubs cloud connection| *rta-tutorial-db-daily-mh-eh-data-con*|  The data in your table will also be deleted. To get data from this Event Hubs, you'll need to [reconnect the Event Hubs cloud connection to your Real-time Analytics database](#connect-the-cloud-connection). |
 |KQL Database| *rta-tutorial-db* | Deleting the database will remove the cloud connection    |
 |KQL Queryset| *rtaQS* | The queries you saved will be removed. Deleting the KQL Queryset won't delete the data from your database |
 |Power BI report|*rta-pbi-report* | The dataset that was consequentially created with your report will also be deleted  |
