@@ -3,7 +3,6 @@ title: Manage a workspace with git
 description: Learn how to connect a workspace to a git repo and branch, commit changes and sync.
 author: mberdugo
 ms.author: monaberdugo
-ms.service: #Required; service per approved list. slug assigned by ACOM.
 ms.topic: how-to #Required; leave this attribute/value as-is.
 ms.date: 01/17/2023
 ms.custom: 
