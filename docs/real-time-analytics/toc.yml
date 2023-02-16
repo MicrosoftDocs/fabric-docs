@@ -6,7 +6,7 @@ items:
   - name: What is Real-time Analytics?
     href: ../placeholder.md
 - name: Get started
-  items:
+  href: ../placeholder.md
 - name: Create items
   items:
   - name: Databases
