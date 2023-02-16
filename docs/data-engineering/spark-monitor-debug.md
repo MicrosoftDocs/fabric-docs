@@ -34,9 +34,9 @@ The number of tasks per each job or stage helps you to identify the parallel lev
 
 :::image type="content" source="media\spark-monitor-debug\spark-monitor-details.png" alt-text="Screenshot showing where to access detailed information about a Spark job." lightbox="media\spark-monitor-debug\spark-monitor-details.png":::
 
-## Spark Advisor info advice
+## Spark advisor info advice
 
-Also supports viewing Spark Advisor info advice, after applying the advice, you would have chance to improve your execution performance, decrease cost and fix the execution failures. Run the following sample code and validate the Spark Advisor info message below the Notebook cell.
+Also supports viewing Spark advisor info advice, after applying the advice, you would have chance to improve your execution performance, decrease cost and fix the execution failures. Run the following sample code and validate the Spark advisor info message below the Notebook cell.
 
 ```Python
 %%spark
@@ -46,11 +46,11 @@ val Array(train, test) = rdd2.randomSplit(Array(70, 30), 1)
 train.takeOrdered(10)
 ```
 
-:::image type="content" source="media\spark-monitor-debug\spark-advisor-info-advice.png" alt-text="Screenshot showing Notebook cell and Spark Advisor advice." lightbox="media\spark-monitor-debug\spark-advisor-info-advice.png":::
+:::image type="content" source="media\spark-monitor-debug\spark-advisor-info-advice.png" alt-text="Screenshot showing Notebook cell and Spark advisor advice." lightbox="media\spark-monitor-debug\spark-advisor-info-advice.png":::
 
-## Spark Advisor skew detection
+## Spark advisor skew detection
 
-It also supports viewing Spark Advisor skew detection. Run the following sample code and view the Data skew + time skew warning message below the Notebook cell.
+It also supports viewing Spark advisor skew detection. Run the following sample code and view the Data skew + time skew warning message below the Notebook cell.
 
 ```Python
 %%spark
@@ -88,5 +88,5 @@ def testDataSkew(sc: SparkContext): Unit = {
 
 ## Next steps
 
-- Spark Advisor
+- Spark advisor
 - [Spark application detail monitoring](spark-detail-monitoring.md)

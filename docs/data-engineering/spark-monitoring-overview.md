@@ -25,7 +25,7 @@ When working on specific artifacts, the Artifact Recent Runs feature allows you 
 
 ## Notebook contextual monitoring
 
-Notebook Contextual Monitoring offers the capability of authoring, monitoring, and debugging Spark jobs within a single place. You can monitor Spark job progress, view Spark execution tasks and executors, and access Spark logs within a Notebook at the Notebook cell level. The Spark Advisor is also built into Notebook to offer real-time advice on code and cell Spark execution and perform error analysis.
+Notebook Contextual Monitoring offers the capability of authoring, monitoring, and debugging Spark jobs within a single place. You can monitor Spark job progress, view Spark execution tasks and executors, and access Spark logs within a Notebook at the Notebook cell level. The Spark advisor is also built into Notebook to offer real-time advice on code and cell Spark execution and perform error analysis.
 
 ## Spark job definition inline monitoring
 
