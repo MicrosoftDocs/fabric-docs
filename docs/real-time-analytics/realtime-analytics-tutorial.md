@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 02/13/2023
+ms.date: 02/16/2023
 
 ---
 
@@ -168,7 +168,7 @@ Recall that in the sample scenario, you want to sell chilled chocolates. The com
     | take 10
     ```
 
-    :::image type="content" source="media/realtime-analytics-tutorial/query1.png" alt-text="Screenshot of the query editor showing the results of a take query. ":::
+    :::image type="content" source="media/realtime-analytics-tutorial/query-1.png" alt-text="Screenshot of the query editor showing the results of a take query. ":::
 
 1. Select **Save as Queryset** to save this and future queries for later use.
 1. Under **KQL Queryset name**, enter *rtaQS*, then select **Create**.
@@ -188,7 +188,7 @@ Run the following queries in the new KQL Queryset you have created. Copy/paste e
     | summarize DeviceCount=dcount(deviceId) by Mode=telemetry_TransportationMode
     ```
 
-    :::image type="content" source="media/realtime-analytics-tutorial/query2.png" alt-text="Screenshot of the query editor showing the results of the second query.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/query-2.png" alt-text="Screenshot of the query editor showing the results of the second query.":::
 
 1. Run the following query to check which of those four available methods is the most suitable for transporting our containers based on the containers' average temperature.
 
@@ -200,7 +200,7 @@ Run the following queries in the new KQL Queryset you have created. Copy/paste e
 
     The results show that all transportation methods have approximately the same average temperature, around 15 degrees.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/query3.png" alt-text="Screenshot of the query editor showing the results of the third query.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/query-3.png" alt-text="Screenshot of the query editor showing the results of the third query.":::
 
 1. Let's check the temperature fluctuation over time per transportation mode. Hover over one trace to see a selected mode.
 
