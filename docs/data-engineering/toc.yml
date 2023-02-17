@@ -11,13 +11,35 @@ items:
     href: ../placeholder.md
   - name: linktext2
     href: ../placeholder.md
-- name: Feature 1
+- name: Lakehouse
   items:
   - name: linktext1
     href: ../placeholder.md
   - name: linktext2
     href: ../placeholder.md
-- name: Feature 2
+- name: Spark
+  items:
+  - name: linktext2
+    href: ../placeholder.md
+  - name: linktext2
+    href: ../placeholder.md
+- name: Spark monitoring
+  items:
+  - name: Spark monitoring overview
+    href: spark-monitoring-overview.md
+  - name: Browse Artifacts’ recent runs 
+    href: spark-artifact-recent-runs.md
+  - name: Monitor Spark jobs within a Notebook 
+    href: spark-monitor-debug.md
+  - name: Monitor Spark application details 
+    href: spark-detail-monitoring.md
+- name: Notebooks
+  items:
+  - name: linktext2
+    href: ../placeholder.md
+  - name: linktext2
+    href: ../placeholder.md
+- name: Spark administration settings
   items:
   - name: linktext2
     href: ../placeholder.md
