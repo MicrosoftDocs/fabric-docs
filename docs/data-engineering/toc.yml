@@ -31,11 +31,11 @@ items:
   items:
   - name: Spark monitoring overview
     href: spark-monitoring-overview.md
-  - name: Browse Artifacts’ recent runs 
+  - name: View Spark application status
     href: spark-artifact-recent-runs.md
-  - name: Monitor Spark jobs within a Notebook 
+  - name: Monitor Spark jobs in a Notebook 
     href: spark-monitor-debug.md
-  - name: Monitor Spark application details 
+  - name: Monitor Spark application
     href: spark-detail-monitoring.md
 - name: Notebooks
   items:
