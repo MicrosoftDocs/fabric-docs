@@ -1,0 +1,29 @@
+---
+title: Lakehouse connector overview
+description: This article explains the overview of using Lakehouse.
+author: jianleishen
+ms.author: jianleishen
+ms.topic: how-to
+ms.date: 02/14/2023
+ms.custom: template-how-to 
+---
+
+# Lakehouse connector Overview
+
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
+This Lakehouse connector is supported in Trident Project - Data Factory with the following capabilities.
+
+## Supported capabilities
+
+| Supported capabilities | Gateway | Authentication |
+| --- | --- | ---|
+| **Copy activity (source/destination)** | None | User Auth |
+| **Delete activity** | None | User Auth |
+| **Dataflow Gen2 (source/destination)** |  | Placeholder |
+
+## Next Steps
+
+[How to configure Lakehouse in copy activity](connector-lakehouse-copy-activity.md)
