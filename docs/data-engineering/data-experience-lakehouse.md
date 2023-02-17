@@ -1,6 +1,6 @@
 ---
 title: Get data experience for Lakehouse
-description: Learn more .
+description: Learn more about loading data into a Lakehouse.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
@@ -33,11 +33,11 @@ You can also upload data stored on your local machine. You can do this directly 
 
 ### Notebook code
 
-You can use available spark libraries to connect to a data source directly, load data to data frame and then save it in a Lakehouse. This is the most open way to land data in the Lakehouse that is fully managed by the user code.
+You can use available Spark libraries to connect to a data source directly, load data to data frame and then save it in a Lakehouse. This is the most open way to land data in the Lakehouse that is fully managed by the user code.
 
 ### Copy tool in pipelines
 
-This is a highly scalable Data Integration solution that allows you to connect to different data sources and land the data either in original format or convert it to a delta table. Copy tool is a part of pipelines activities that can be orchestrated in multiple ways, such as scheduling or triggering based on event.
+The Copy tool is a highly scalable Data Integration solution that allows you to connect to different data sources and land the data either in original format or convert it to a delta table. Copy tool is a part of pipelines activities that can be orchestrated in multiple ways, such as scheduling or triggering based on event.
 
 ## Considerations when choosing approach to land data
 

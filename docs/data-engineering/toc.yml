@@ -4,7 +4,7 @@ items:
 - name: Overview
   items:
   - name: What is Data Engineering?
-    href: ../placeholder.md
+    href: data-engineering-overview.md
 - name: Get started
   items:
   - name: linktext1
@@ -13,14 +13,18 @@ items:
     href: ../placeholder.md
 - name: Lakehouse
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: What is a Lakehouse?
+    href: lakehouse-overview.md
+  - name: Get data into a Lakehouse
+    href: data-experience-lakehouse.md
+  - name: Navigate the Lakehouse explorer
+    href: navigate-lakehouse-explorer.md
+  - name: Create a Lakehouse
+    href: create-lakehouse.md
 - name: Spark
   items:
-  - name: linktext2
-    href: ../placeholder.md
+  - name: What is a Spark job definition?
+    href: spark-job-definition.md
   - name: linktext2
     href: ../placeholder.md
 - name: Spark monitoring
