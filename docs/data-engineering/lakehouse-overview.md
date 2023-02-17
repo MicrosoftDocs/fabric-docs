@@ -59,7 +59,7 @@ There are several ways to load data into your Lakehouse:
 
 1. **Copy tool in pipelines**: Connect to different data sources and land the data either in original format or convert it to a delta table.
 
-Learn more about the different use cases: [Get data experience for Lakehouse](data-experience-lakehouse.md).
+Learn more about the different use cases: [Get data experience for Lakehouse](load-data-lakehouse.md).
 
 ## Next steps
 

@@ -16,7 +16,7 @@ items:
   - name: What is a Lakehouse?
     href: lakehouse-overview.md
   - name: Get data into a Lakehouse
-    href: data-experience-lakehouse.md
+    href: load-data-lakehouse.md
   - name: Navigate the Lakehouse explorer
     href: navigate-lakehouse-explorer.md
   - name: Create a Lakehouse

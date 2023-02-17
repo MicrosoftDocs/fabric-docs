@@ -19,7 +19,7 @@ Get data experience covers all user scenarios for bringing data into the Lakehou
 - Uploading files from your computer.
 - Copying and merging multiple tables from other Lakehouses into a new delta table.
 
-## Different ways to land data in Lakehouse
+## Different ways to load data in Lakehouse
 
 For Private Preview, there are a few ways you can get data into a Lakehouse:
 
@@ -33,13 +33,13 @@ You can also upload data stored on your local machine. You can do this directly 
 
 ### Notebook code
 
-You can use available Spark libraries to connect to a data source directly, load data to data frame and then save it in a Lakehouse. This is the most open way to land data in the Lakehouse that is fully managed by the user code.
+You can use available Spark libraries to connect to a data source directly, load data to data frame and then save it in a Lakehouse. This is the most open way to load data in the Lakehouse that is fully managed by the user code.
 
 ### Copy tool in pipelines
 
-The Copy tool is a highly scalable Data Integration solution that allows you to connect to different data sources and land the data either in original format or convert it to a delta table. Copy tool is a part of pipelines activities that can be orchestrated in multiple ways, such as scheduling or triggering based on event.
+The Copy tool is a highly scalable Data Integration solution that allows you to connect to different data sources and load the data either in original format or convert it to a delta table. Copy tool is a part of pipelines activities that can be orchestrated in multiple ways, such as scheduling or triggering based on event.
 
-## Considerations when choosing approach to land data
+## Considerations when choosing approach to load data
 
 | **Use case** | **Recommendation** |
 |---|---|
