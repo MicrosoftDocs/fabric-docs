@@ -2,8 +2,8 @@
 title: Data Engineering overview
 description: Read an introduction to Data Engineering.
 ms.reviewer: snehagunda
-ms.author: snehagunda
-author: snehagunda
+ms.author: avinandac
+author: avinandaMS
 ms.topic: overview
 ms.date: 02/24/2023
 ---
