@@ -21,11 +21,14 @@ The Lakehouse object explorer is a graphical interface that provides a focused v
 
 The explorer has two main views: the **Lake** view and the **Table** view.
 
-The **Lake** view displays all folders and files in the Lakehouse and is the default view when you open the **Lakehouse editor** page. The screen has two sections: the **Tables** section, which is the managed area and the **Files** section, which is the unmanaged area.
-
-The main purpose of the **Table** section is to hold data files for all tables available in the table view, although it can also hold miscellaneous file types but this is strongly discouraged. On the other hand, the **Files** section can hold any file types but no tables are stored there. The main difference between these two sections is the auto-discovery feature. This feature ensures that any supported Delta file formats uploaded in the **Tables** section are immediately scanned and the system adds an entry into the metastore.
-
-The **Table** view displays tables registered in the metastore in your Lakehouse. You can browse through the tables and preview the data.
+- **Lake** view:
+  - Displays all folders and files in the Lakehouse and is the default view when you open the **Lakehouse editor** page.
+  - The screen has two sections: the **Tables** section, which is the managed area and the **Files** section, which is the unmanaged area.
+- **Table** view:
+  - The main purpose of the **Table** section is to hold data files for all tables available in the table view, although it can also hold miscellaneous file types but this is strongly discouraged.
+  - The **Files** section can hold any file types but no tables are stored there.
+  - The main difference between these two sections is the auto-discovery feature. This feature ensures that any supported Delta file formats uploaded in the **Tables** section are immediately scanned and the system adds an entry into the metastore.
+  - The **Table** view displays tables registered in the metastore in your Lakehouse. You can browse through the tables and preview the data.
 
 ## Main view area
 

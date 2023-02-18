@@ -40,14 +40,10 @@ Lakehouse Table Automatic discovery and registration is a feature of the Lakehou
 
 A data engineer can interact with the Lakehouse and the data within the Lakehouse in several ways:
 
-1. The Lakehouse explorer
-    - The explorer is the main Lakehouse interaction page. You can load data in your Lakehouse, explore data in the Lakehouse using the object explorer, set MIP labels & various other things. Learn more about the explorer experience: [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md).
-1. Notebooks
-    - Data engineers can use the notebook to write code to read, transform and write directly to the Lakehouse as tables and/or folders. You can learn more about how to leverage notebooks for lakehouses here.
-1. Pipelines
-    - Data engineers can use data integration tools such as pipeline copy tool to pull data from other sources and land into the Lakehouse. Find more information on how to use the copy activity: [How to copy data using copy activity](../data-factory/copy-data-activity.md).
-1. Spark job definitions
-    - Data engineers can develop robust applications and orchestrate the execution of compiled Spark jobs in Java, Scala, and Python. Learn more about Spark jobs: [What is a Spark job definition?](spark-job-definition.md).
+1. **The Lakehouse explorer**: The explorer is the main Lakehouse interaction page. You can load data in your Lakehouse, explore data in the Lakehouse using the object explorer, set MIP labels & various other things. Learn more about the explorer experience: [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md).
+1. **Notebooks**: Data engineers can use the notebook to write code to read, transform and write directly to the Lakehouse as tables and/or folders. You can learn more about how to leverage notebooks for lakehouses here.
+1. **Pipelines**: Data engineers can use data integration tools such as pipeline copy tool to pull data from other sources and land into the Lakehouse. Find more information on how to use the copy activity: [How to copy data using copy activity](../data-factory/copy-data-activity.md).
+1. **Spark job definitions**: Data engineers can develop robust applications and orchestrate the execution of compiled Spark jobs in Java, Scala, and Python. Learn more about Spark jobs: [What is a Spark job definition?](spark-job-definition.md).
 
 ## Different ways to load data into a Lakehouse
 
