@@ -1,0 +1,661 @@
+items:
+- name: Control commands overview
+  displayName: Management
+  href: /azure/data-explorer/kusto/management/index?context=/trident/context/analytics-context
+- name: Workload groups
+  items:
+  - name: Workload groups overview
+    href: /azure/data-explorer/kusto/management/workload-groups?context=/trident/context/analytics-context
+  - name: Workload group commands
+    items:
+    - name: .alter-merge workload group command
+      href: /azure/data-explorer/kusto/management/alter-merge-workload-group-command?context=/trident/context/analytics-context
+    - name: .create or alter workload group command
+      href: /azure/data-explorer/kusto/management/create-or-alter-workload-group-command?context=/trident/context/analytics-context
+    - name: .drop workload group command
+      href: /azure/data-explorer/kusto/management/drop-workload-group-command?context=/trident/context/analytics-context
+    - name: .show workload group command
+      href: /azure/data-explorer/kusto/management/show-workload-group-command?context=/trident/context/analytics-context
+  - name: Request classification policy
+    items:
+    - name: Request classification policy
+      href: /azure/data-explorer/kusto/management/request-classification-policy?context=/trident/context/analytics-context
+    - name: .alter cluster request classification policy commands
+      href: /azure/data-explorer/kusto/management/alter-cluster-policy-request-classification-command?context=/trident/context/analytics-context
+    - name: .alter-merge cluster request classification policy commands
+      href: /azure/data-explorer/kusto/management/alter-merge-cluster-policy-request-classification-command?context=/trident/context/analytics-context
+    - name: .delete cluster request classification policy commands
+      href: /azure/data-explorer/kusto/management/delete-cluster-policy-request-classification-command?context=/trident/context/analytics-context
+    - name: .show cluster request classification policy commands
+      href: /azure/data-explorer/kusto/management/show-cluster-policy-request-classification-command?context=/trident/context/analytics-context
+  - name: Request limits policy
+    href: /azure/data-explorer/kusto/management/request-limits-policy?context=/trident/context/analytics-context
+  - name: Request rate limit policy
+    href: /azure/data-explorer/kusto/management/request-rate-limit-policy?context=/trident/context/analytics-context
+  - name: Request rate limits enforcement policy
+    href: /azure/data-explorer/kusto/management/request-rate-limits-enforcement-policy?context=/trident/context/analytics-context
+  - name: Request queuing policy
+    href: /azure/data-explorer/kusto/management/request-queuing-policy?context=/trident/context/analytics-context
+  - name: Query consistency policy
+    href: /azure/data-explorer/kusto/management/query-consistency-policy?context=/trident/context/analytics-context
+- name: Schema
+  items:
+  - name: Best practices for schema management
+    href: /azure/data-explorer/kusto/management/management-best-practices?context=/trident/context/analytics-context
+  - name: Databases
+    href: /azure/data-explorer/kusto/management/databases?context=/trident/context/analytics-context
+    items:
+    - name: .show databases
+      href: /azure/data-explorer/kusto/management/show-databases?context=/trident/context/analytics-context
+    - name: .show database
+      href: /azure/data-explorer/kusto/management/show-database?context=/trident/context/analytics-context
+    - name: .show cluster databases
+      href: /azure/data-explorer/kusto/management/show-cluster-database?context=/trident/context/analytics-context
+    - name: .alter database prettyname
+      href: /azure/data-explorer/kusto/management/alter-database?context=/trident/context/analytics-context
+    - name: .show database(s) schema
+      href: /azure/data-explorer/kusto/management/show-schema-database?context=/trident/context/analytics-context
+    - name: .execute database script
+      href: /azure/data-explorer/kusto/management/execute-database-script?context=/trident/context/analytics-context
+  - name: Tables
+    items:
+    - name: Tables management
+      href: /azure/data-explorer/kusto/management/tables?context=/trident/context/analytics-context
+    - name: .alter-merge table
+      href: /azure/data-explorer/kusto/management/alter-merge-table-command?context=/trident/context/analytics-context
+    - name: .alter table
+      href: /azure/data-explorer/kusto/management/alter-table-command?context=/trident/context/analytics-context
+    - name: .alter table docstring
+      href: /azure/data-explorer/kusto/management/alter-table-docstring-command?context=/trident/context/analytics-context
+    - name: .alter table folder
+      href: /azure/data-explorer/kusto/management/alter-table-folder-command?context=/trident/context/analytics-context
+    - name: .alter ingestion mapping
+      href: /azure/data-explorer/kusto/management/alter-ingestion-mapping-command?context=/trident/context/analytics-context
+    - name: .create ingestion mapping
+      href: /azure/data-explorer/kusto/management/create-ingestion-mapping-command?context=/trident/context/analytics-context
+    - name: .drop ingestion mapping
+      href: /azure/data-explorer/kusto/management/drop-ingestion-mapping-command?context=/trident/context/analytics-context
+    - name: .show ingestion mapping
+      href: /azure/data-explorer/kusto/management/show-ingestion-mapping-command?context=/trident/context/analytics-context
+    - name: .create table
+      href: /azure/data-explorer/kusto/management/create-table-command?context=/trident/context/analytics-context
+    - name: .create table based-on
+      href: /azure/data-explorer/kusto/management/create-table-based-on-command?context=/trident/context/analytics-context
+    - name: .create tables
+      href: /azure/data-explorer/kusto/management/create-tables-command?context=/trident/context/analytics-context
+    - name: .create-merge table
+      href: /azure/data-explorer/kusto/management/create-merge-table-command?context=/trident/context/analytics-context
+    - name: .create-merge tables
+      href: /azure/data-explorer/kusto/management/create-merge-tables-command?context=/trident/context/analytics-context
+    - name: .drop tables
+      href: /azure/data-explorer/kusto/management/drop-table-command?context=/trident/context/analytics-context
+    - name: .rename tables
+      href: /azure/data-explorer/kusto/management/rename-table-command?context=/trident/context/analytics-context
+    - name: .show tables
+      href: /azure/data-explorer/kusto/management/show-tables-command?context=/trident/context/analytics-context
+    - name: .undo drop table
+      href: /azure/data-explorer/kusto/management/undo-drop-table-command?context=/trident/context/analytics-context
+    - name: .show table details
+      href: /azure/data-explorer/kusto/management/show-table-details-command?context=/trident/context/analytics-context
+    - name: .show table schema
+      href: /azure/data-explorer/kusto/management/show-table-schema-command?context=/trident/context/analytics-context
+    - name: .clear table data
+      href: /azure/data-explorer/kusto/management/clear-table-data-command?context=/trident/context/analytics-context
+  - name: External tables
+    items:
+    - name: Create and alter Azure Storage external tables
+      href: /azure/data-explorer/kusto/management/external-tables-azurestorage-azuredatalake?context=/trident/context/analytics-context
+    - name: Create and alter SQL Server external tables
+      href: /azure/data-explorer/kusto/management/external-sql-tables?context=/trident/context/analytics-context
+    - name: .drop external table
+      href: /azure/data-explorer/kusto/management/drop-external-table?context=/trident/context/analytics-context
+    - name: .show external table
+      href: /azure/data-explorer/kusto/management/show-external-tables?context=/trident/context/analytics-context
+    - name: .show external table schema
+      href: /azure/data-explorer/kusto/management/show-external-table-schema?context=/trident/context/analytics-context
+  - name: Materialized views
+    items:
+    - name: Materialized views overview
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-overview?context=/trident/context/analytics-context
+    - name: Materialized views limitations
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-views-limitations?context=/trident/context/analytics-context
+    - name: Monitor materialized views
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-views-monitoring?context=/trident/context/analytics-context
+    - name: Materialized views policies
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-policies?context=/trident/context/analytics-context
+    - name: Materialized views data purge
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-purge?context=/trident/context/analytics-context
+    - name: .alter materialized-view
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-alter?context=/trident/context/analytics-context
+    - name: .alter materialized-view autoUpdateSchema
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-alter-autoUpdateSchema?context=/trident/context/analytics-context
+    - name: .alter materialized-view docstring
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-alter-docstring?context=/trident/context/analytics-context
+    - name: .alter materialized-view folder
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-alter-folder?context=/trident/context/analytics-context
+    - name: .alter materialized-view lookback
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-alter-lookback?context=/trident/context/analytics-context
+    - name: .clear materialized-view data
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-clear-data?context=/trident/context/analytics-context
+    - name: .create materialized-view
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-create?context=/trident/context/analytics-context
+    - name: .create-or-alter materialized-view
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-create-or-alter?context=/trident/context/analytics-context
+    - name: .disable | .enable materialized-view
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-enable-disable?context=/trident/context/analytics-context
+    - name: .drop materialized-view
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-drop?context=/trident/context/analytics-context
+    - name: .rename materialized-view
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-rename?context=/trident/context/analytics-context
+    - name: .show materialized-views
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-show-commands?context=/trident/context/analytics-context
+    - name: .show materialized-views details
+      href: /azure/data-explorer/kusto/management/materialized-views/materialized-view-show-details-command?context=/trident/context/analytics-context
+  - name: Stored query results
+    displayName: .set stored query, .show stored query, .drop stored query
+    href: /azure/data-explorer/kusto/management/stored-query-results?context=/trident/context/analytics-context
+  - name: Columns
+    items:
+    - name: Columns management
+      href: /azure/data-explorer/kusto/management/columns?context=/trident/context/analytics-context
+    - name: .alter column
+      href: /azure/data-explorer/kusto/management/alter-column?context=/trident/context/analytics-context
+    - name: .drop column
+      href: /azure/data-explorer/kusto/management/drop-column?context=/trident/context/analytics-context
+    - name: .rename column
+      href: /azure/data-explorer/kusto/management/rename-column?context=/trident/context/analytics-context
+    - name: .alter column-docstrings
+      href: /azure/data-explorer/kusto/management/alter-column-docstrings?context=/trident/context/analytics-context
+    - name: .alter-merge column-docstrings
+      href: /azure/data-explorer/kusto/management/alter-merge-table-column?context=/trident/context/analytics-context
+  - name: Data mappings
+    items:
+    - name: Data mappings overview
+      href: /azure/data-explorer/kusto/management/mappings?context=/trident/context/analytics-context
+    - name: CSV mapping
+      href: /azure/data-explorer/kusto/management/csv-mapping?context=/trident/context/analytics-context
+    - name: JSON mapping
+      href: /azure/data-explorer/kusto/management/json-mapping?context=/trident/context/analytics-context
+    - name: ARVO mapping
+      href: /azure/data-explorer/kusto/management/avro-mapping?context=/trident/context/analytics-context
+    - name: Parquet mapping
+      href: /azure/data-explorer/kusto/management/parquet-mapping?context=/trident/context/analytics-context
+    - name: ORC mapping
+      href: /azure/data-explorer/kusto/management/orc-mapping?context=/trident/context/analytics-context
+    - name: W3CLOGFILE mapping
+      href: /azure/data-explorer/kusto/management/w3c-log-file-mapping?context=/trident/context/analytics-context
+  - name: Functions
+    items:
+    - name: Stored functions management overview
+      href: /azure/data-explorer/kusto/management/functions?context=/trident/context/analytics-context
+    - name: .alter function
+      href: /azure/data-explorer/kusto/management/alter-function?context=/trident/context/analytics-context
+    - name: .alter function docstring
+      href: /azure/data-explorer/kusto/management/alter-docstring-function?context=/trident/context/analytics-context
+    - name: .alter function folder
+      href: /azure/data-explorer/kusto/management/alter-folder-function?context=/trident/context/analytics-context
+    - name: .create function
+      href: /azure/data-explorer/kusto/management/create-function?context=/trident/context/analytics-context
+    - name: .create-or-alter function
+      href: /azure/data-explorer/kusto/management/create-alter-function?context=/trident/context/analytics-context
+    - name: .drop function
+      href: /azure/data-explorer/kusto/management/drop-function?context=/trident/context/analytics-context
+    - name: .show functions
+      href: /azure/data-explorer/kusto/management/show-function?context=/trident/context/analytics-context
+- name: Policies
+  items:
+  - name: Auto delete
+    items:
+    - name: Auto delete policy
+      href: /azure/data-explorer/kusto/management/auto-delete-policy?context=/trident/context/analytics-context
+    - name: .alter auto delete policy command
+      href: /azure/data-explorer/kusto/management/alter-auto-delete-policy-command?context=/trident/context/analytics-context
+    - name: .delete auto delete policy command
+      href: /azure/data-explorer/kusto/management/delete-auto-delete-policy-command?context=/trident/context/analytics-context
+    - name: .show auto delete policy command
+      href: /azure/data-explorer/kusto/management/show-auto-delete-policy-command?context=/trident/context/analytics-context
+  - name: Cache
+    items:
+    - name: Cache policy (hot and cold cache)
+      href: /azure/data-explorer/kusto/management/cachepolicy?context=/trident/context/analytics-context
+    - name: .alter cluster cache policy command
+      href: /azure/data-explorer/kusto/management/alter-cluster-cache-policy-command?context=/trident/context/analytics-context
+    - name: .alter database cache policy command
+      href: /azure/data-explorer/kusto/management/alter-database-cache-policy-command?context=/trident/context/analytics-context
+    - name: .alter materialized view cache policy command
+      href: /azure/data-explorer/kusto/management/alter-materialized-view-cache-policy-command?context=/trident/context/analytics-context
+    - name: .alter table cache policy command
+      href: /azure/data-explorer/kusto/management/alter-table-cache-policy-command?context=/trident/context/analytics-context
+    - name: .delete database cache policy command
+      href: /azure/data-explorer/kusto/management/delete-database-cache-policy-command?context=/trident/context/analytics-context
+    - name: .delete materialized view cache policy command
+      href: /azure/data-explorer/kusto/management/delete-materialized-view-cache-policy-command?context=/trident/context/analytics-context
+    - name: .delete table cache policy command
+      href: /azure/data-explorer/kusto/management/delete-table-cache-policy-command?context=/trident/context/analytics-context
+    - name: .show database cache policy command
+      href: /azure/data-explorer/kusto/management/show-database-cache-policy-command?context=/trident/context/analytics-context
+    - name: .show materialized view cache policy command
+      href: /azure/data-explorer/kusto/management/show-materialized-view-cache-policy-command?context=/trident/context/analytics-context
+    - name: .show table cache policy command
+      href: /azure/data-explorer/kusto/management/show-table-cache-policy-command?context=/trident/context/analytics-context
+  - name: Callout
+    items:
+    - name: Callout policy
+      href: /azure/data-explorer/kusto/management/calloutpolicy?context=/trident/context/analytics-context
+    - name: .alter callout policy command
+      href: /azure/data-explorer/kusto/management/alter-callout-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge callout policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-callout-policy-command?context=/trident/context/analytics-context
+    - name: .delete callout policy command
+      href: /azure/data-explorer/kusto/management/delete-callout-policy-command?context=/trident/context/analytics-context
+    - name: .show callout policy command
+      href: /azure/data-explorer/kusto/management/show-cluster-callout-policy-command?context=/trident/context/analytics-context
+  - name: Capacity
+    items:
+    - name: Capacity policy
+      href: /azure/data-explorer/kusto/management/capacitypolicy?context=/trident/context/analytics-context
+    - name: .alter capacity policy command
+      href: /azure/data-explorer/kusto/management/alter-capacity-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge capacity policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-capacity-policy-command?context=/trident/context/analytics-context
+    - name: .show capacity policy command
+      href: /azure/data-explorer/kusto/management/show-cluster-capacity-policy-command?context=/trident/context/analytics-context
+  - name: Encoding policy
+    items:
+    - name: Encoding policy
+      href: /azure/data-explorer/kusto/management/encoding-policy?context=/trident/context/analytics-context
+    - name: .alter encoding policy command
+      href: /azure/data-explorer/kusto/management/alter-encoding-policy?context=/trident/context/analytics-context
+    - name: .show encoding policy command
+      href: /azure/data-explorer/kusto/management/show-encoding-policy?context=/trident/context/analytics-context
+  - name: Ingestion batching
+    items:
+    - name: Ingestion batching policy
+      href: /azure/data-explorer/kusto/management/batchingpolicy?context=/trident/context/analytics-context
+    - name: .alter database ingestion batching policy command
+      href: /azure/data-explorer/kusto/management/alter-database-ingestion-batching-policy?context=/trident/context/analytics-context
+    - name: .alter table ingestion batching policy command
+      href: /azure/data-explorer/kusto/management/alter-table-ingestion-batching-policy?context=/trident/context/analytics-context
+    - name: .delete database ingestion batching policy command
+      href: /azure/data-explorer/kusto/management/delete-database-ingestion-batching-policy?context=/trident/context/analytics-context
+    - name: .delete table ingestion batching policy command
+      href: /azure/data-explorer/kusto/management/delete-table-ingestion-batching-policy?context=/trident/context/analytics-context
+    - name: .show database ingestion batching policy command
+      href: /azure/data-explorer/kusto/management/show-database-ingestion-batching-policy?context=/trident/context/analytics-context
+    - name: .show table ingestion batching policy command
+      href: /azure/data-explorer/kusto/management/show-table-ingestion-batching-policy?context=/trident/context/analytics-context
+  - name: Ingestiontime
+    items:
+    - name: Ingestion time policy
+      href: /azure/data-explorer/kusto/management/ingestiontimepolicy?context=/trident/context/analytics-context
+    - name: .alter ingestion time policy command
+      href: /azure/data-explorer/kusto/management/alter-ingestion-time-policy-command?context=/trident/context/analytics-context
+    - name: .delete ingestion time policy command
+      href: /azure/data-explorer/kusto/management/delete-ingestion-time-policy-command?context=/trident/context/analytics-context
+    - name: .show ingestion time policy command
+      href: /azure/data-explorer/kusto/management/show-table-ingestion-time-policy-command?context=/trident/context/analytics-context
+  - name: ManagedIdentity
+    items:
+    - name: ManagedIdentity policy
+      href: /azure/data-explorer/kusto/management/managed-identity-policy?context=/trident/context/analytics-context
+    - name: .alter managed identity policy command
+      href: /azure/data-explorer/kusto/management/alter-managed-identity-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge managed identity policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-managed-identity-policy-command?context=/trident/context/analytics-context
+    - name: .delete managed identity policy command
+      href: /azure/data-explorer/kusto/management/delete-managed-identity-policy-command?context=/trident/context/analytics-context
+    - name: .show managed identity policy command
+      href: /azure/data-explorer/kusto/management/show-managed-identity-policy-command?context=/trident/context/analytics-context
+  - name: Merge
+    items:
+    - name: Merge policy
+      href: /azure/data-explorer/kusto/management/mergepolicy?context=/trident/context/analytics-context
+    - name: .alter database merge policy command
+      href: /azure/data-explorer/kusto/management/alter-database-merge-policy-command?context=/trident/context/analytics-context
+    - name: .alter materialized view merge policy command
+      href: /azure/data-explorer/kusto/management/alter-materialized-view-merge-policy-command?context=/trident/context/analytics-context
+    - name: .alter table merge policy command
+      href: /azure/data-explorer/kusto/management/alter-table-merge-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge database merge policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-database-merge-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge table merge policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-table-merge-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge materialized-view merge policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-materialized-view-merge-policy-command?context=/trident/context/analytics-context
+    - name: .delete database merge policy command
+      href: /azure/data-explorer/kusto/management/delete-database-merge-policy-command?context=/trident/context/analytics-context
+    - name: .delete table merge policy command
+      href: /azure/data-explorer/kusto/management/delete-table-merge-policy-command?context=/trident/context/analytics-context
+    - name: .show database merge policy command
+      href: /azure/data-explorer/kusto/management/show-database-merge-policy-command?context=/trident/context/analytics-context
+    - name: .show table merge policy command
+      href: /azure/data-explorer/kusto/management/show-table-merge-policy-command?context=/trident/context/analytics-context
+  - name: Partitioning
+    items:
+    - name: Partitioning policy
+      href: /azure/data-explorer/kusto/management/partitioningpolicy?context=/trident/context/analytics-context
+    - name: .alter materialized view partitioning policy command
+      href: /azure/data-explorer/kusto/management/alter-materialized-view-partitioning-policy-command?context=/trident/context/analytics-context
+    - name: .alter table partitioning policy command
+      href: /azure/data-explorer/kusto/management/alter-table-partitioning-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge materialized view partitioning policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-materialized-view-partitioning-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge table partitioning policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-table-partitioning-policy-command?context=/trident/context/analytics-context
+    - name: .delete materialized view partitioning policy command
+      href: /azure/data-explorer/kusto/management/delete-materialized-view-partitioning-policy-command?context=/trident/context/analytics-context
+    - name: .delete table partitioning policy command
+      href: /azure/data-explorer/kusto/management/delete-table-partitioning-policy-command?context=/trident/context/analytics-context
+    - name: .show materialized view partitioning policy command
+      href: /azure/data-explorer/kusto/management/show-materialized-view-partitioning-policy-command?context=/trident/context/analytics-context
+    - name: .show table partitioning policy command
+      href: /azure/data-explorer/kusto/management/show-table-partitioning-policy-command?context=/trident/context/analytics-context
+  - name: Retention
+    items:
+    - name: Retention policy
+      href: /azure/data-explorer/kusto/management/retentionpolicy?context=/trident/context/analytics-context
+    - name: .alter database retention policy command
+      href: /azure/data-explorer/kusto/management/alter-database-retention-policy-command?context=/trident/context/analytics-context
+    - name: .alter materialized view retention policy command
+      href: /azure/data-explorer/kusto/management/alter-materialized-view-retention-policy-command?context=/trident/context/analytics-context
+    - name: .alter table retention policy command
+      href: /azure/data-explorer/kusto/management/alter-table-retention-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge database retention policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-database-retention-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge materialized view retention policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-materialized-view-retention-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge table retention policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-table-retention-policy-command?context=/trident/context/analytics-context
+    - name: .delete database retention policy command
+      href: /azure/data-explorer/kusto/management/delete-database-retention-policy-command?context=/trident/context/analytics-context
+    - name: .delete materialized view retention policy command
+      href: /azure/data-explorer/kusto/management/delete-materialized-view-retention-policy-command?context=/trident/context/analytics-context
+    - name: .delete table retention policy command
+      href: /azure/data-explorer/kusto/management/delete-table-retention-policy-command?context=/trident/context/analytics-context
+    - name: .show database retention policy command
+      href: /azure/data-explorer/kusto/management/show-database-retention-policy-command?context=/trident/context/analytics-context
+    - name: .show materialized view retention policy command
+      href: /azure/data-explorer/kusto/management/show-materialized-view-retention-policy-command?context=/trident/context/analytics-context
+    - name: .show table retention policy command
+      href: /azure/data-explorer/kusto/management/show-table-retention-policy-command?context=/trident/context/analytics-context
+  - name: Extent tags retention
+    items:
+    - name: Extent tags retention policy
+      href: /azure/data-explorer/kusto/management/extent-tags-retention-policy?context=/trident/context/analytics-context
+    - name: .alter database extent tags retention policy
+      href: /azure/data-explorer/kusto/management/alter-extent-tags-retention-policy?context=/trident/context/analytics-context
+    - name: .alter table extent tags retention policy
+      href: /azure/data-explorer/kusto/management/alter-table-extent-tags-retention-policy?context=/trident/context/analytics-context
+    - name: .delete extent tags retention policy
+      href: /azure/data-explorer/kusto/management/delete-extent-tags-retention-policy?context=/trident/context/analytics-context
+    - name: .show extent tags retention policy
+      href: /azure/data-explorer/kusto/management/show-extent-tags-retention-policy?context=/trident/context/analytics-context
+  - name: Restricted view access
+    items:
+    - name: Restricted view access policy
+      href: /azure/data-explorer/kusto/management/restrictedviewaccesspolicy?context=/trident/context/analytics-context
+    - name: .alter table restricted view access policy
+      href: /azure/data-explorer/kusto/management/alter-table-restricted-view-access-policy-command?context=/trident/context/analytics-context
+    - name: .delete table restricted view access policy
+      href: /azure/data-explorer/kusto/management/delete-table-restricted-view-access-policy-command?context=/trident/context/analytics-context
+    - name: .show table restricted view access policy
+      href: /azure/data-explorer/kusto/management/show-table-restricted-view-access-policy-command?context=/trident/context/analytics-context
+  - name: Row level security
+    items:
+    - name: Row level security policy
+      href: /azure/data-explorer/kusto/management/rowlevelsecuritypolicy?context=/trident/context/analytics-context
+    - name: .alter materialized view row level security policy command
+      href: /azure/data-explorer/kusto/management/alter-materialized-view-row-level-security-policy-command?context=/trident/context/analytics-context
+    - name: .alter table row level security policy command
+      href: /azure/data-explorer/kusto/management/alter-table-row-level-security-policy-command?context=/trident/context/analytics-context
+    - name: .show materialized view row level security policy command
+      href: /azure/data-explorer/kusto/management/show-materialized-view-row-level-security-policy-command?context=/trident/context/analytics-context
+    - name: .show table row level security policy command
+      href: /azure/data-explorer/kusto/management/show-table-row-level-security-policy-command?context=/trident/context/analytics-context
+  - name: Row order
+    items:
+    - name: Row order policy
+      href: /azure/data-explorer/kusto/management/roworderpolicy?context=/trident/context/analytics-context
+    - name: .alter table row order policy command
+      href: /azure/data-explorer/kusto/management/alter-table-row-order-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge table row order policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-table-row-order-policy-command?context=/trident/context/analytics-context
+    - name: .delete table row order policy command
+      href: /azure/data-explorer/kusto/management/delete-table-row-order-policy-command?context=/trident/context/analytics-context
+    - name: .show table row order policy command
+      href: /azure/data-explorer/kusto/management/show-table-row-order-policy-command?context=/trident/context/analytics-context
+  - name: Sandbox
+    items:
+    - name: Using sandboxes
+      href: /azure/data-explorer/kusto/management/../concepts/sandboxes?context=/trident/context/analytics-context
+    - name: Using sandboxes in non-modern sku
+      href: /azure/data-explorer/kusto/management/../concepts/sandboxes-in-non-modern-skus?context=/trident/context/analytics-context
+    - name: Sandbox policy
+      href: /azure/data-explorer/kusto/management/sandboxpolicy?context=/trident/context/analytics-context
+    - name: .alter cluster sandbox policy command
+      href: /azure/data-explorer/kusto/management/alter-cluster-sandbox-policy-command?context=/trident/context/analytics-context
+    - name: .delete cluster sandbox policy command
+      href: /azure/data-explorer/kusto/management/delete-cluster-sandbox-policy-command?context=/trident/context/analytics-context
+    - name: .show cluster sandbox policy command
+      href: /azure/data-explorer/kusto/management/show-cluster-sandbox-policy-command?context=/trident/context/analytics-context
+  - name: Sharding
+    items:
+    - name: Sharding policy
+      href: /azure/data-explorer/kusto/management/shardingpolicy?context=/trident/context/analytics-context
+    - name: .alter database sharding policy command
+      href: /azure/data-explorer/kusto/management/alter-database-sharding-policy-command?context=/trident/context/analytics-context
+    - name: .alter table sharding policy command
+      href: /azure/data-explorer/kusto/management/alter-table-sharding-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge database sharding policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-database-sharding-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge table sharding policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-table-sharding-policy-command?context=/trident/context/analytics-context
+    - name: .delete database sharding policy command
+      href: /azure/data-explorer/kusto/management/delete-database-sharding-policy-command?context=/trident/context/analytics-context
+    - name: .delete table sharding policy command
+      href: /azure/data-explorer/kusto/management/delete-table-sharding-policy-command?context=/trident/context/analytics-context
+    - name: .show database sharding policy command
+      href: /azure/data-explorer/kusto/management/show-database-sharding-policy-command?context=/trident/context/analytics-context
+    - name: .show table sharding policy command
+      href: /azure/data-explorer/kusto/management/show-table-sharding-policy-command?context=/trident/context/analytics-context
+  - name: Streaming ingestion
+    items:
+    - name: Streaming ingestion policy
+      href: /azure/data-explorer/kusto/management/streamingingestionpolicy?context=/trident/context/analytics-context
+    - name: .alter database streaming ingestion policy command
+      href: /azure/data-explorer/kusto/management/alter-database-streaming-ingestion-policy-command?context=/trident/context/analytics-context
+    - name: .alter table streaming ingestion policy command
+      href: /azure/data-explorer/kusto/management/alter-table-streaming-ingestion-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge database streaming ingestion policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-database-streaming-ingestion-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge table streaming ingestion policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-table-streaming-ingestion-policy-command?context=/trident/context/analytics-context
+    - name: .delete database streaming ingestion policy command
+      href: /azure/data-explorer/kusto/management/delete-database-streaming-ingestion-policy-command?context=/trident/context/analytics-context
+    - name: .delete table streaming ingestion policy command
+      href: /azure/data-explorer/kusto/management/delete-table-streaming-ingestion-policy-command?context=/trident/context/analytics-context
+    - name: .show database streaming ingestion policy command
+      href: /azure/data-explorer/kusto/management/show-database-streaming-ingestion-policy-command?context=/trident/context/analytics-context
+    - name: .show table streaming ingestion policy command
+      href: /azure/data-explorer/kusto/management/show-table-streaming-ingestion-policy-command?context=/trident/context/analytics-context
+  - name: Update
+    items:
+    - name: Update policy
+      displayName: SQL triggers
+      href: /azure/data-explorer/kusto/management/updatepolicy?context=/trident/context/analytics-context
+    - name: .alter table update policy command
+      href: /azure/data-explorer/kusto/management/alter-table-update-policy-command?context=/trident/context/analytics-context
+    - name: .alter-merge table update policy command
+      href: /azure/data-explorer/kusto/management/alter-merge-table-update-policy-command?context=/trident/context/analytics-context
+    - name: .delete table update policy command
+      href: /azure/data-explorer/kusto/management/delete-table-update-policy-command?context=/trident/context/analytics-context
+    - name: .show table update policy command
+      href: /azure/data-explorer/kusto/management/show-table-update-policy-command?context=/trident/context/analytics-context
+  - name: Query weak consistency
+    items:
+    - name: Query weak consistency policy
+      href: /azure/data-explorer/kusto/management/query-weak-consistency-policy?context=/trident/context/analytics-context
+    - name: .alter cluster policy query_weak_consistency
+      href: /azure/data-explorer/kusto/management/alter-query-weak-consistency-policy?context=/trident/context/analytics-context
+    - name: .show cluster policy query_weak_consistency
+      href: /azure/data-explorer/kusto/management/show-query-weak-consistency-policy?context=/trident/context/analytics-context
+- name: Security roles
+  items:
+  - name: Security roles overview
+    href: /azure/data-explorer/kusto/management/security-roles?context=/trident/context/analytics-context
+  - name: Manage database roles
+    href: /azure/data-explorer/kusto/management/manage-database-security-roles?context=/trident/context/analytics-context
+  - name: Manage table roles
+    href: /azure/data-explorer/kusto/management/manage-table-security-roles?context=/trident/context/analytics-context
+  - name: Manage external table roles
+    href: /azure/data-explorer/kusto/management/manage-external-table-security-roles?context=/trident/context/analytics-context
+  - name: Manage materialized view roles
+    href: /azure/data-explorer/kusto/management/manage-materialized-view-security-roles?context=/trident/context/analytics-context
+  - name: Manage function roles
+    href: /azure/data-explorer/kusto/management/manage-function-security-roles?context=/trident/context/analytics-context
+- name: Data ingestion
+  items:
+  - name: Ingest from storage
+    displayName: .ingest into, pull data, pulling ingestion
+    href: /azure/data-explorer/kusto/management/data-ingestion/ingest-from-storage?context=/trident/context/analytics-context
+  - name: Ingest from query
+    items:
+    - name: Ingest from query
+      displayName: .set, .append, .set-or-append, .set-or-replace
+      href: /azure/data-explorer/kusto/management/data-ingestion/ingest-from-query?context=/trident/context/analytics-context
+    - name: cancel operation command
+      href: /azure/data-explorer/kusto/management/cancel-operation-command?context=/trident/context/analytics-context
+  - name: Inline ingestion
+    displayName: .ingest inline
+    href: /azure/data-explorer/kusto/management/data-ingestion/ingest-inline?context=/trident/context/analytics-context
+  - name: Streaming ingestion
+    items:
+    - name: Streaming ingestion and schema changes
+      href: /azure/data-explorer/kusto/management/data-ingestion/streaming-ingestion-schema-changes?context=/trident/context/analytics-context
+    - name: Clear schema cache for streaming ingestion
+      href: /azure/data-explorer/kusto/management/data-ingestion/clear-schema-cache-command?context=/trident/context/analytics-context
+  - name: .dup-next-ingest
+    href: /azure/data-explorer/kusto/management/dup-next-ingest?context=/trident/context/analytics-context
+    displayName: duplicate, ingestion, troubleshoot
+  - name: .dup-next-failed-ingest
+    displayName: duplicate, failure, ingestion, troubleshoot
+    href: /azure/data-explorer/kusto/management/dup-next-failed-ingest?context=/trident/context/analytics-context
+  - name: .show ingestion failures
+    href: /azure/data-explorer/kusto/management/ingestionfailures?context=/trident/context/analytics-context
+  - name: .show streaming ingestion failures
+    href: /azure/data-explorer/kusto/management/streamingingestionfailures?context=/trident/context/analytics-context
+- name: Data export
+  href: /azure/data-explorer/kusto/management/data-export/index?context=/trident/context/analytics-context
+  items:
+  - name: To cloud storage
+    href: /azure/data-explorer/kusto/management/data-export/export-data-to-storage?context=/trident/context/analytics-context
+  - name: To a SQL table
+    href: /azure/data-explorer/kusto/management/data-export/export-data-to-sql?context=/trident/context/analytics-context
+  - name: To an external table
+    href: /azure/data-explorer/kusto/management/data-export/export-data-to-an-external-table?context=/trident/context/analytics-context
+  - name: Continuous data export
+    items:
+    - name: Continuous data export overview
+      href: /azure/data-explorer/kusto/management/data-export/continuous-data-export?context=/trident/context/analytics-context
+    - name: Create or alter continuous export
+      href: /azure/data-explorer/kusto/management/data-export/create-alter-continuous?context=/trident/context/analytics-context
+    - name: Disable or enable continuous export
+      href: /azure/data-explorer/kusto/management/data-export/disable-enable-continuous?context=/trident/context/analytics-context
+    - name: Drop continuous export
+      href: /azure/data-explorer/kusto/management/data-export/drop-continuous-export?context=/trident/context/analytics-context
+    - name: Show continuous export
+      href: /azure/data-explorer/kusto/management/data-export/show-continuous-export?context=/trident/context/analytics-context
+    - name: Show continuous export artifacts
+      href: /azure/data-explorer/kusto/management/data-export/show-continuous-artifacts?context=/trident/context/analytics-context
+    - name: Show continuous export failures
+      href: /azure/data-explorer/kusto/management/data-export/show-continuous-failures?context=/trident/context/analytics-context
+- name: Database cursors
+  href: /azure/data-explorer/kusto/management/databasecursor?context=/trident/context/analytics-context
+- name: Plugin commands
+  items:
+  - name: .show plugins
+    href: /azure/data-explorer/kusto/management/show-plugins?context=/trident/context/analytics-context
+  - name: .enable plugin
+    href: /azure/data-explorer/kusto/management/enable-plugin?context=/trident/context/analytics-context
+  - name: .disable plugin
+    href: /azure/data-explorer/kusto/management/disable-plugin?context=/trident/context/analytics-context
+- name: Query results cache
+  href: /azure/data-explorer/kusto/management/query-results-cache-commands?context=/trident/context/analytics-context
+  items:
+  - name: Show cache
+    displayName: show database cache query results
+    href: /azure/data-explorer/kusto/management/show-query-results-cache-command?context=/trident/context/analytics-context
+  - name: Clear cache
+    displayName: clear query results cache
+    href: /azure/data-explorer/kusto/management/clear-query-results-cache-command?context=/trident/context/analytics-context
+- name: Cross-cluster schema
+  items:
+  - name: .clear cache remote-schema command
+    displayName: clear query schema cache
+    href: /azure/data-explorer/kusto/management/clear-cross-cluster-schema-cache?context=/trident/context/analytics-context
+- name: System information
+  href: /azure/data-explorer/kusto/management/systeminfo?context=/trident/context/analytics-context
+  items:
+  - name: Commands
+    href: /azure/data-explorer/kusto/management/commands?context=/trident/context/analytics-context
+  - name: Commands and queries
+    href: /azure/data-explorer/kusto/management/commands-and-queries?context=/trident/context/analytics-context
+  - name: Data statistics
+    href: /azure/data-explorer/kusto/management/show-table-data-statistics?context=/trident/context/analytics-context
+  - name: Diagnostics
+    href: /azure/data-explorer/kusto/management/diagnostics?context=/trident/context/analytics-context
+  - name: Journal
+    href: /azure/data-explorer/kusto/management/journal?context=/trident/context/analytics-context
+  - name: Operations
+    href: /azure/data-explorer/kusto/management/operations?context=/trident/context/analytics-context
+  - name: Queries
+    href: /azure/data-explorer/kusto/management/queries?context=/trident/context/analytics-context
+  - name: Streaming ingestion statistics
+    href: /azure/data-explorer/kusto/management/streamingingestionstatistics?context=/trident/context/analytics-context
+- name: Access control
+  href: /azure/data-explorer/kusto/management/access-control/index?context=/trident/context/analytics-context
+  items:
+  - name: Azure Active Directory
+    displayName: AAD, Azure AD
+    href: /azure/data-explorer/kusto/management/access-control/aad?context=/trident/context/analytics-context
+  - name: Role-based access control
+    href: /azure/data-explorer/kusto/management/access-control/role-based-access-control?context=/trident/context/analytics-context
+    displayName: RBAC, security roles, principals
+  - name: How-To Azure Active Directory authentication
+    displayName: AAD, Azure AD
+    href: /azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad?context=/trident/context/analytics-context
+  - name: Referencing security principals
+    displayName: Security group, Identity providers, IdPs, SG, Azure AD tenants
+    href: /azure/data-explorer/kusto/management/access-control/referencing-security-principals?context=/trident/context/analytics-context
+  - name: Allow cross-tenant queries and commands
+    href: /azure/data-explorer/kusto/management/../../cross-tenant-query-and-commands?context=/trident/context/analytics-context
+- name: Advanced data management
+  items:
+  - name: Extents (data shards)
+    items:
+    - name: Extents overview
+      href: /azure/data-explorer/kusto/management/extents-overview?context=/trident/context/analytics-context
+    - name: Extents commands
+      items:
+      - name: .alter extent
+        href: /azure/data-explorer/kusto/management/alter-extent?context=/trident/context/analytics-context
+      - name: .drop extents
+        href: /azure/data-explorer/kusto/management/drop-extents?context=/trident/context/analytics-context
+      - name: .drop extent tags
+        href: /azure/data-explorer/kusto/management/drop-extent-tags?context=/trident/context/analytics-context
+      - name: .move extents
+        href: /azure/data-explorer/kusto/management/move-extents?context=/trident/context/analytics-context
+      - name: .replace extents
+        href: /azure/data-explorer/kusto/management/replace-extents?context=/trident/context/analytics-context
+      - name: .show extents
+        href: /azure/data-explorer/kusto/management/show-extents?context=/trident/context/analytics-context
+    - name: Extent containers clean commands
+      href: /azure/data-explorer/kusto/management/clean-extent-containers?context=/trident/context/analytics-context
+  - name: Follower commands
+    displayName: Cluster commands, database commands, materialized view commands,
+      table commands
+    href: /azure/data-explorer/kusto/management/cluster-follower?context=/trident/context/analytics-context
+  - name: Data purge
+    href: /azure/data-explorer/kusto/management/../concepts/data-purge?context=/trident/context/analytics-context
+  - name: Data soft delete
+    href: /azure/data-explorer/kusto/management/../concepts/data-soft-delete?context=/trident/context/analytics-context
