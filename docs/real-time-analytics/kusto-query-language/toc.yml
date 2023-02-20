@@ -1,0 +1,1359 @@
+items:
+- name: Kusto query overview
+  href: /azure/data-explorer/kusto/query/index?context=/trident/context/analytics-context
+- name: Quick reference guide
+  href: /azure/data-explorer/kusto/../kql-quick-reference?context=/trident/context/analytics-context
+- name: Tutorial
+  href: /azure/data-explorer/kusto/query/tutorial?context=/trident/context/analytics-context
+- name: Samples
+  href: /azure/data-explorer/kusto/query/samples?context=/trident/context/analytics-context
+- name: Query best practices
+  items:
+  - name: Best practices
+    href: /azure/data-explorer/kusto/query/best-practices?context=/trident/context/analytics-context
+  - name: Optimize queries that use named expressions
+    displayName: let statement, user defined functions, as operator, calculated
+    href: /azure/data-explorer/kusto/../named-expressions?context=/trident/context/analytics-context
+- name: Cross-cluster queries
+  items:
+  - name: Cross-cluster queries and schema changes
+    href: /azure/data-explorer/kusto/concepts/cross-cluster-and-schema-changes?context=/trident/context/analytics-context
+  - name: Cross-database and cross-cluster queries
+    href: /azure/data-explorer/kusto/query/cross-cluster-or-database-queries?context=/trident/context/analytics-context
+- name: Entities
+  items:
+  - name: Entity types
+    href: /azure/data-explorer/kusto/query/schema-entities/index?context=/trident/context/analytics-context
+  - name: Entity names
+    href: /azure/data-explorer/kusto/query/schema-entities/entity-names?context=/trident/context/analytics-context
+  - name: Entity references
+    href: /azure/data-explorer/kusto/query/schema-entities/entity-references?context=/trident/context/analytics-context
+  - name: Databases
+    href: /azure/data-explorer/kusto/query/schema-entities/databases?context=/trident/context/analytics-context
+  - name: Tables
+    href: /azure/data-explorer/kusto/query/schema-entities/tables?context=/trident/context/analytics-context
+  - name: Columns
+    href: /azure/data-explorer/kusto/query/schema-entities/columns?context=/trident/context/analytics-context
+  - name: Stored functions
+    href: /azure/data-explorer/kusto/query/schema-entities/stored-functions?context=/trident/context/analytics-context
+  - name: Views
+    href: /azure/data-explorer/kusto/query/schema-entities/views?context=/trident/context/analytics-context
+  - name: External tables
+    href: /azure/data-explorer/kusto/query/schema-entities/externaltables?context=/trident/context/analytics-context
+  - name: Fact and dimension tables
+    href: /azure/data-explorer/kusto/concepts/fact-and-dimension-tables?context=/trident/context/analytics-context
+- name: Data types
+  items:
+  - name: Scalar data types
+    href: /azure/data-explorer/kusto/query/scalar-data-types/index?context=/trident/context/analytics-context
+  - name: bool
+    href: /azure/data-explorer/kusto/query/scalar-data-types/bool?context=/trident/context/analytics-context
+  - name: datetime
+    href: /azure/data-explorer/kusto/query/scalar-data-types/datetime?context=/trident/context/analytics-context
+  - name: decimal
+    href: /azure/data-explorer/kusto/query/scalar-data-types/decimal?context=/trident/context/analytics-context
+  - name: dynamic
+    href: /azure/data-explorer/kusto/query/scalar-data-types/dynamic?context=/trident/context/analytics-context
+  - name: guid
+    href: /azure/data-explorer/kusto/query/scalar-data-types/guid?context=/trident/context/analytics-context
+  - name: int
+    href: /azure/data-explorer/kusto/query/scalar-data-types/int?context=/trident/context/analytics-context
+  - name: long
+    href: /azure/data-explorer/kusto/query/scalar-data-types/long?context=/trident/context/analytics-context
+  - name: real
+    href: /azure/data-explorer/kusto/query/scalar-data-types/real?context=/trident/context/analytics-context
+  - name: string
+    href: /azure/data-explorer/kusto/query/scalar-data-types/string?context=/trident/context/analytics-context
+  - name: timespan
+    href: /azure/data-explorer/kusto/query/scalar-data-types/timespan?context=/trident/context/analytics-context
+  - name: Null values
+    href: /azure/data-explorer/kusto/query/scalar-data-types/null-values?context=/trident/context/analytics-context
+  - name: Unsupported scalar data types
+    href: /azure/data-explorer/kusto/query/scalar-data-types/unsupported-data-types?context=/trident/context/analytics-context
+- name: Functions
+  items:
+  - name: Function types
+    href: /azure/data-explorer/kusto/query/functions/index?context=/trident/context/analytics-context
+  - name: User-defined functions
+    displayName: Kusto view, views, Kusto function
+    href: /azure/data-explorer/kusto/query/functions/user-defined-functions?context=/trident/context/analytics-context
+- name: Query statements
+  items:
+  - name: Query statement types
+    href: /azure/data-explorer/kusto/query/statements?context=/trident/context/analytics-context
+  - name: Alias statement
+    href: /azure/data-explorer/kusto/query/aliasstatement?context=/trident/context/analytics-context
+  - name: Let statement
+    href: /azure/data-explorer/kusto/query/letstatement?context=/trident/context/analytics-context
+  - name: Pattern statement
+    href: /azure/data-explorer/kusto/query/patternstatement?context=/trident/context/analytics-context
+  - name: Query parameters statement
+    href: /azure/data-explorer/kusto/query/queryparametersstatement?context=/trident/context/analytics-context
+  - name: Restrict statement
+    href: /azure/data-explorer/kusto/query/restrictstatement?context=/trident/context/analytics-context
+  - name: Set statement
+    href: /azure/data-explorer/kusto/query/setstatement?context=/trident/context/analytics-context
+  - name: Tabular expression statements
+    displayName: views
+    href: /azure/data-explorer/kusto/query/tabularexpressionstatements?context=/trident/context/analytics-context
+  - name: Batches
+    href: /azure/data-explorer/kusto/query/batches?context=/trident/context/analytics-context
+- name: Tabular operators
+  items:
+  - name: Query operators
+    href: /azure/data-explorer/kusto/query/queries?context=/trident/context/analytics-context
+  - name: as operator
+    href: /azure/data-explorer/kusto/query/asoperator?context=/trident/context/analytics-context
+  - name: consume operator
+    href: /azure/data-explorer/kusto/query/consumeoperator?context=/trident/context/analytics-context
+  - name: count operator
+    href: /azure/data-explorer/kusto/query/countoperator?context=/trident/context/analytics-context
+  - name: datatable operator
+    href: /azure/data-explorer/kusto/query/datatableoperator?context=/trident/context/analytics-context
+  - name: distinct operator
+    href: /azure/data-explorer/kusto/query/distinctoperator?context=/trident/context/analytics-context
+  - name: evaluate operator
+    href: /azure/data-explorer/kusto/query/evaluateoperator?context=/trident/context/analytics-context
+  - name: extend operator
+    href: /azure/data-explorer/kusto/query/extendoperator?context=/trident/context/analytics-context
+  - name: externaldata operator
+    href: /azure/data-explorer/kusto/query/externaldata-operator?context=/trident/context/analytics-context
+  - name: facet operator
+    href: /azure/data-explorer/kusto/query/facetoperator?context=/trident/context/analytics-context
+  - name: find operator
+    href: /azure/data-explorer/kusto/query/findoperator?context=/trident/context/analytics-context
+  - name: fork operator
+    href: /azure/data-explorer/kusto/query/forkoperator?context=/trident/context/analytics-context
+  - name: getschema operator
+    href: /azure/data-explorer/kusto/query/getschemaoperator?context=/trident/context/analytics-context
+  - name: invoke operator
+    href: /azure/data-explorer/kusto/query/invokeoperator?context=/trident/context/analytics-context
+  - name: join operator
+    items:
+    - name: join operator
+      href: /azure/data-explorer/kusto/query/joinoperator?context=/trident/context/analytics-context
+    - name: Cross-cluster join
+      href: /azure/data-explorer/kusto/query/joincrosscluster?context=/trident/context/analytics-context
+    - name: Broadcast join
+      href: /azure/data-explorer/kusto/query/broadcastjoin?context=/trident/context/analytics-context
+    - name: Time window join
+      href: /azure/data-explorer/kusto/query/join-timewindow?context=/trident/context/analytics-context
+  - name: lookup operator
+    href: /azure/data-explorer/kusto/query/lookupoperator?context=/trident/context/analytics-context
+  - name: mv-apply operator
+    href: /azure/data-explorer/kusto/query/mv-applyoperator?context=/trident/context/analytics-context
+  - name: mv-expand operator
+    href: /azure/data-explorer/kusto/query/mvexpandoperator?context=/trident/context/analytics-context
+  - name: sort operator
+    displayName: order operator
+    href: /azure/data-explorer/kusto/query/sort-operator?context=/trident/context/analytics-context
+  - name: project operator
+    href: /azure/data-explorer/kusto/query/projectoperator?context=/trident/context/analytics-context
+  - name: project-away operator
+    href: /azure/data-explorer/kusto/query/projectawayoperator?context=/trident/context/analytics-context
+  - name: project-keep operator
+    href: /azure/data-explorer/kusto/query/project-keep-operator?context=/trident/context/analytics-context
+  - name: project-rename operator
+    href: /azure/data-explorer/kusto/query/projectrenameoperator?context=/trident/context/analytics-context
+  - name: project-reorder operator
+    href: /azure/data-explorer/kusto/query/projectreorderoperator?context=/trident/context/analytics-context
+  - name: parse operator
+    href: /azure/data-explorer/kusto/query/parseoperator?context=/trident/context/analytics-context
+  - name: parse-where operator
+    href: /azure/data-explorer/kusto/query/parsewhereoperator?context=/trident/context/analytics-context
+  - name: parse-kv operator
+    href: /azure/data-explorer/kusto/query/parse-kv-operator?context=/trident/context/analytics-context
+  - name: partition operator
+    href: /azure/data-explorer/kusto/query/partitionoperator?context=/trident/context/analytics-context
+  - name: print operator
+    href: /azure/data-explorer/kusto/query/printoperator?context=/trident/context/analytics-context
+  - name: range operator
+    href: /azure/data-explorer/kusto/query/rangeoperator?context=/trident/context/analytics-context
+  - name: reduce operator
+    href: /azure/data-explorer/kusto/query/reduceoperator?context=/trident/context/analytics-context
+  - name: render operator
+    items:
+    - name: render operator
+      href: /azure/data-explorer/kusto/query/renderoperator?context=/trident/context/analytics-context
+    - name: visualizations
+      items:
+      - name: anomalychart
+        href: /azure/data-explorer/kusto/query/visualization-anomalychart?context=/trident/context/analytics-context
+      - name: areachart
+        href: /azure/data-explorer/kusto/query/visualization-areachart?context=/trident/context/analytics-context
+      - name: barchart
+        href: /azure/data-explorer/kusto/query/visualization-barchart?context=/trident/context/analytics-context
+      - name: card
+        href: /azure/data-explorer/kusto/query/visualization-card?context=/trident/context/analytics-context
+      - name: columnchart
+        href: /azure/data-explorer/kusto/query/visualization-columnchart?context=/trident/context/analytics-context
+      - name: ladderchart
+        href: /azure/data-explorer/kusto/query/visualization-ladderchart?context=/trident/context/analytics-context
+      - name: linechart
+        href: /azure/data-explorer/kusto/query/visualization-linechart?context=/trident/context/analytics-context
+      - name: piechart
+        href: /azure/data-explorer/kusto/query/visualization-piechart?context=/trident/context/analytics-context
+      - name: pivotchart
+        href: /azure/data-explorer/kusto/query/visualization-pivotchart?context=/trident/context/analytics-context
+      - name: scatterchart
+        href: /azure/data-explorer/kusto/query/visualization-scatterchart?context=/trident/context/analytics-context
+      - name: stackedareachart
+        href: /azure/data-explorer/kusto/query/visualization-stackedareachart?context=/trident/context/analytics-context
+      - name: table
+        href: /azure/data-explorer/kusto/query/visualization-table?context=/trident/context/analytics-context
+      - name: timechart
+        href: /azure/data-explorer/kusto/query/visualization-timechart?context=/trident/context/analytics-context
+      - name: timepivot
+        href: /azure/data-explorer/kusto/query/visualization-timepivot?context=/trident/context/analytics-context
+  - name: sample operator
+    href: /azure/data-explorer/kusto/query/sampleoperator?context=/trident/context/analytics-context
+  - name: sample-distinct operator
+    href: /azure/data-explorer/kusto/query/sampledistinctoperator?context=/trident/context/analytics-context
+  - name: scan operator
+    href: /azure/data-explorer/kusto/query/scan-operator?context=/trident/context/analytics-context
+  - name: search operator
+    href: /azure/data-explorer/kusto/query/searchoperator?context=/trident/context/analytics-context
+  - name: serialize operator
+    href: /azure/data-explorer/kusto/query/serializeoperator?context=/trident/context/analytics-context
+  - name: shuffle query
+    displayName: hint.shufflekey, hint.strategy, shufflekey, hint, strategy
+    href: /azure/data-explorer/kusto/query/shufflequery?context=/trident/context/analytics-context
+  - name: summarize operator
+    items:
+    - name: summarize operator overview
+      href: /azure/data-explorer/kusto/query/summarizeoperator?context=/trident/context/analytics-context
+    - name: Using hll() and tdigest()
+      href: /azure/data-explorer/kusto/query/usinghlltdigest?context=/trident/context/analytics-context
+  - name: take operator
+    displayName: limit operator
+    href: /azure/data-explorer/kusto/query/takeoperator?context=/trident/context/analytics-context
+  - name: top operator
+    href: /azure/data-explorer/kusto/query/topoperator?context=/trident/context/analytics-context
+  - name: top-nested operator
+    href: /azure/data-explorer/kusto/query/topnestedoperator?context=/trident/context/analytics-context
+  - name: top-hitters operator
+    href: /azure/data-explorer/kusto/query/tophittersoperator?context=/trident/context/analytics-context
+  - name: union operator
+    href: /azure/data-explorer/kusto/query/unionoperator?context=/trident/context/analytics-context
+  - name: where operator
+    displayName: filter operator
+    href: /azure/data-explorer/kusto/query/whereoperator?context=/trident/context/analytics-context
+- name: Special functions
+  items:
+  - name: cluster()
+    href: /azure/data-explorer/kusto/query/clusterfunction?context=/trident/context/analytics-context
+  - name: database()
+    href: /azure/data-explorer/kusto/query/databasefunction?context=/trident/context/analytics-context
+  - name: external_table()
+    href: /azure/data-explorer/kusto/query/externaltablefunction?context=/trident/context/analytics-context
+  - name: materialize()
+    href: /azure/data-explorer/kusto/query/materializefunction?context=/trident/context/analytics-context
+  - name: materialized_view()
+    href: /azure/data-explorer/kusto/query/materialized-view-function?context=/trident/context/analytics-context
+  - name: Query results cache
+    href: /azure/data-explorer/kusto/query/query-results-cache?context=/trident/context/analytics-context
+  - name: table()
+    href: /azure/data-explorer/kusto/query/tablefunction?context=/trident/context/analytics-context
+  - name: toscalar()
+    href: /azure/data-explorer/kusto/query/toscalarfunction?context=/trident/context/analytics-context
+- name: Scalar operators
+  items:
+  - name: between operators
+    items:
+    - name: between operator
+      href: /azure/data-explorer/kusto/query/betweenoperator?context=/trident/context/analytics-context
+    - name: '!between operator'
+      href: /azure/data-explorer/kusto/query/notbetweenoperator?context=/trident/context/analytics-context
+  - name: Bitwise binary operators
+    href: /azure/data-explorer/kusto/query/binoperators?context=/trident/context/analytics-context
+  - name: Datetime/timespan arithmetic
+    href: /azure/data-explorer/kusto/query/datetime-timespan-arithmetic?context=/trident/context/analytics-context
+  - name: in operators
+    items:
+    - name: in operator
+      href: /azure/data-explorer/kusto/query/in-cs-operator?context=/trident/context/analytics-context
+    - name: in~ operator
+      href: /azure/data-explorer/kusto/query/inoperator?context=/trident/context/analytics-context
+    - name: '!in operator'
+      href: /azure/data-explorer/kusto/query/not-in-cs-operator?context=/trident/context/analytics-context
+    - name: '!in~ operator'
+      href: /azure/data-explorer/kusto/query/not-in-operator?context=/trident/context/analytics-context
+  - name: Logical or binary operators
+    href: /azure/data-explorer/kusto/query/logicaloperators?context=/trident/context/analytics-context
+  - name: Numerical operators
+    href: /azure/data-explorer/kusto/query/numoperators?context=/trident/context/analytics-context
+  - name: String operators
+    items:
+    - name: String operators overview
+      href: /azure/data-explorer/kusto/query/datatypes-string-operators?context=/trident/context/analytics-context
+    - name: contains operator
+      href: /azure/data-explorer/kusto/query/contains-operator?context=/trident/context/analytics-context
+    - name: contains_cs operator
+      href: /azure/data-explorer/kusto/query/contains-cs-operator?context=/trident/context/analytics-context
+    - name: '!contains operator'
+      href: /azure/data-explorer/kusto/query/not-contains-operator?context=/trident/context/analytics-context
+    - name: '!contains_cs operator'
+      href: /azure/data-explorer/kusto/query/not-contains-cs-operator?context=/trident/context/analytics-context
+    - name: endswith operator
+      href: /azure/data-explorer/kusto/query/endswith-operator?context=/trident/context/analytics-context
+    - name: endswith_cs operator
+      href: /azure/data-explorer/kusto/query/endswith-cs-operator?context=/trident/context/analytics-context
+    - name: '!endswith operator'
+      href: /azure/data-explorer/kusto/query/not-endswith-operator?context=/trident/context/analytics-context
+    - name: '!endswith_cs operator'
+      href: /azure/data-explorer/kusto/query/not-endswith-cs-operator?context=/trident/context/analytics-context
+    - name: == (equals) operator
+      displayName: equals
+      href: /azure/data-explorer/kusto/query/equals-cs-operator?context=/trident/context/analytics-context
+    - name: =~ (equals) operator
+      href: /azure/data-explorer/kusto/query/equals-operator?context=/trident/context/analytics-context
+    - name: '!= (not equals) operator'
+      href: /azure/data-explorer/kusto/query/not-equals-cs-operator?context=/trident/context/analytics-context
+    - name: '!~ (not equals) operator'
+      href: /azure/data-explorer/kusto/query/not-equals-operator?context=/trident/context/analytics-context
+    - name: has operator
+      href: /azure/data-explorer/kusto/query/has-operator?context=/trident/context/analytics-context
+    - name: has_cs operator
+      href: /azure/data-explorer/kusto/query/has-cs-operator?context=/trident/context/analytics-context
+    - name: '!has operator'
+      href: /azure/data-explorer/kusto/query/not-has-operator?context=/trident/context/analytics-context
+    - name: '!has_cs operator'
+      href: /azure/data-explorer/kusto/query/not-has-cs-operator?context=/trident/context/analytics-context
+    - name: hasprefix operator
+      href: /azure/data-explorer/kusto/query/hasprefix-operator?context=/trident/context/analytics-context
+    - name: hasprefix_cs operator
+      href: /azure/data-explorer/kusto/query/hasprefix-cs-operator?context=/trident/context/analytics-context
+    - name: '!hasprefix operator'
+      href: /azure/data-explorer/kusto/query/not-hasprefix-operator?context=/trident/context/analytics-context
+    - name: '!hasprefix_cs operator'
+      href: /azure/data-explorer/kusto/query/not-hasprefix-cs-operator?context=/trident/context/analytics-context
+    - name: hassuffix operator
+      href: /azure/data-explorer/kusto/query/hassuffix-operator?context=/trident/context/analytics-context
+    - name: hassuffix_cs operator
+      href: /azure/data-explorer/kusto/query/hassuffix-cs-operator?context=/trident/context/analytics-context
+    - name: '!hassuffix operator'
+      href: /azure/data-explorer/kusto/query/not-hassuffix-operator?context=/trident/context/analytics-context
+    - name: '!hassuffix_cs operator'
+      href: /azure/data-explorer/kusto/query/not-hassuffix-cs-operator?context=/trident/context/analytics-context
+    - name: has_all operator
+      href: /azure/data-explorer/kusto/query/has-all-operator?context=/trident/context/analytics-context
+    - name: has_any operator
+      href: /azure/data-explorer/kusto/query/has-anyoperator?context=/trident/context/analytics-context
+    - name: in operator
+      href: /azure/data-explorer/kusto/query/in-cs-operator?context=/trident/context/analytics-context
+    - name: in~ operator
+      href: /azure/data-explorer/kusto/query/inoperator?context=/trident/context/analytics-context
+    - name: '!in operator'
+      href: /azure/data-explorer/kusto/query/not-in-cs-operator?context=/trident/context/analytics-context
+    - name: '!in~ operator'
+      href: /azure/data-explorer/kusto/query/not-in-operator?context=/trident/context/analytics-context
+    - name: match regex operator
+      href: /azure/data-explorer/kusto/query/regex-operator?context=/trident/context/analytics-context
+    - name: startswith operator
+      href: /azure/data-explorer/kusto/query/startswith-operator?context=/trident/context/analytics-context
+    - name: startswith_cs operator
+      href: /azure/data-explorer/kusto/query/startswith-cs-operator?context=/trident/context/analytics-context
+    - name: '!startswith operator'
+      href: /azure/data-explorer/kusto/query/not-startswith-operator?context=/trident/context/analytics-context
+    - name: '!startswith_cs operator'
+      href: /azure/data-explorer/kusto/query/not-startswith-cs-operator?context=/trident/context/analytics-context
+- name: Scalar functions
+  items:
+  - name: Scalar function types
+    displayName: stored procedures
+    href: /azure/data-explorer/kusto/query/scalarfunctions?context=/trident/context/analytics-context
+  - name: abs()
+    href: /azure/data-explorer/kusto/query/abs-function?context=/trident/context/analytics-context
+  - name: acos()
+    href: /azure/data-explorer/kusto/query/acosfunction?context=/trident/context/analytics-context
+  - name: ago()
+    href: /azure/data-explorer/kusto/query/agofunction?context=/trident/context/analytics-context
+  - name: around()
+    href: /azure/data-explorer/kusto/query/around-function?context=/trident/context/analytics-context
+  - name: array_concat()
+    href: /azure/data-explorer/kusto/query/arrayconcatfunction?context=/trident/context/analytics-context
+  - name: array_iff()
+    displayName: array_iif()
+    href: /azure/data-explorer/kusto/query/arrayifffunction?context=/trident/context/analytics-context
+  - name: array_index_of()
+    href: /azure/data-explorer/kusto/query/arrayindexoffunction?context=/trident/context/analytics-context
+  - name: array_length()
+    displayName: arraylength()
+    href: /azure/data-explorer/kusto/query/arraylengthfunction?context=/trident/context/analytics-context
+  - name: array_reverse()
+    href: /azure/data-explorer/kusto/query/array-reverse-function?context=/trident/context/analytics-context
+  - name: array_rotate_left()
+    href: /azure/data-explorer/kusto/query/array_rotate_leftfunction?context=/trident/context/analytics-context
+  - name: array_rotate_right()
+    href: /azure/data-explorer/kusto/query/array_rotate_rightfunction?context=/trident/context/analytics-context
+  - name: array_shift_left()
+    href: /azure/data-explorer/kusto/query/array_shift_leftfunction?context=/trident/context/analytics-context
+  - name: array_shift_right()
+    href: /azure/data-explorer/kusto/query/array_shift_rightfunction?context=/trident/context/analytics-context
+  - name: array_slice()
+    href: /azure/data-explorer/kusto/query/arrayslicefunction?context=/trident/context/analytics-context
+  - name: array_sort_asc()
+    href: /azure/data-explorer/kusto/query/arraysortascfunction?context=/trident/context/analytics-context
+  - name: array_sort_desc()
+    href: /azure/data-explorer/kusto/query/arraysortdescfunction?context=/trident/context/analytics-context
+  - name: array_split()
+    href: /azure/data-explorer/kusto/query/arraysplitfunction?context=/trident/context/analytics-context
+  - name: array_sum()
+    href: /azure/data-explorer/kusto/query/array-sum-function?context=/trident/context/analytics-context
+  - name: asin()
+    href: /azure/data-explorer/kusto/query/asinfunction?context=/trident/context/analytics-context
+  - name: assert()
+    href: /azure/data-explorer/kusto/query/assert-function?context=/trident/context/analytics-context
+  - name: atan()
+    href: /azure/data-explorer/kusto/query/atanfunction?context=/trident/context/analytics-context
+  - name: atan2()
+    href: /azure/data-explorer/kusto/query/atan2function?context=/trident/context/analytics-context
+  - name: bag_has_key()
+    href: /azure/data-explorer/kusto/query/bag-has-key-function?context=/trident/context/analytics-context
+  - name: bag_keys()
+    href: /azure/data-explorer/kusto/query/bagkeysfunction?context=/trident/context/analytics-context
+  - name: bag_merge()
+    href: /azure/data-explorer/kusto/query/bag-merge-function?context=/trident/context/analytics-context
+  - name: bag_pack()
+    displayName: pack(), pack_dictionary()
+    href: /azure/data-explorer/kusto/query/packfunction?context=/trident/context/analytics-context
+  - name: bag_remove_keys()
+    href: /azure/data-explorer/kusto/query/bag-remove-keys-function?context=/trident/context/analytics-context
+  - name: bag_set_key()
+    href: /azure/data-explorer/kusto/query/bag-set-key-function?context=/trident/context/analytics-context
+  - name: base64_decode_toarray()
+    href: /azure/data-explorer/kusto/query/base64_decode_toarrayfunction?context=/trident/context/analytics-context
+  - name: base64_decode_tostring()
+    displayName: base64_decodestring()
+    href: /azure/data-explorer/kusto/query/base64_decode_tostringfunction?context=/trident/context/analytics-context
+  - name: base64_decode_toguid()
+    href: /azure/data-explorer/kusto/query/base64-decode-toguid-function?context=/trident/context/analytics-context
+  - name: base64_encode_fromarray()
+    href: /azure/data-explorer/kusto/query/base64_encode_fromarrayfunction?context=/trident/context/analytics-context
+  - name: base64_encode_tostring()
+    displayName: base64_encodestring()
+    href: /azure/data-explorer/kusto/query/base64_encode_tostringfunction?context=/trident/context/analytics-context
+  - name: base64_encode_fromguid()
+    href: /azure/data-explorer/kusto/query/base64-encode-fromguid-function?context=/trident/context/analytics-context
+  - name: beta_cdf()
+    href: /azure/data-explorer/kusto/query/beta-cdffunction?context=/trident/context/analytics-context
+  - name: beta_inv()
+    href: /azure/data-explorer/kusto/query/beta-invfunction?context=/trident/context/analytics-context
+  - name: beta_pdf()
+    href: /azure/data-explorer/kusto/query/beta-pdffunction?context=/trident/context/analytics-context
+  - name: bin()
+    displayName: floor()
+    href: /azure/data-explorer/kusto/query/binfunction?context=/trident/context/analytics-context
+  - name: bin_at()
+    href: /azure/data-explorer/kusto/query/binatfunction?context=/trident/context/analytics-context
+  - name: bin_auto()
+    href: /azure/data-explorer/kusto/query/bin-autofunction?context=/trident/context/analytics-context
+  - name: binary_and()
+    href: /azure/data-explorer/kusto/query/binary-andfunction?context=/trident/context/analytics-context
+  - name: binary_not()
+    href: /azure/data-explorer/kusto/query/binary-notfunction?context=/trident/context/analytics-context
+  - name: binary_or()
+    href: /azure/data-explorer/kusto/query/binary-orfunction?context=/trident/context/analytics-context
+  - name: binary_shift_left()
+    href: /azure/data-explorer/kusto/query/binary-shift-leftfunction?context=/trident/context/analytics-context
+  - name: binary_shift_right()
+    href: /azure/data-explorer/kusto/query/binary-shift-rightfunction?context=/trident/context/analytics-context
+  - name: binary_xor()
+    href: /azure/data-explorer/kusto/query/binary-xorfunction?context=/trident/context/analytics-context
+  - name: bitset_count_ones()
+    href: /azure/data-explorer/kusto/query/bitset-count-onesfunction?context=/trident/context/analytics-context
+  - name: case()
+    href: /azure/data-explorer/kusto/query/casefunction?context=/trident/context/analytics-context
+  - name: ceiling()
+    href: /azure/data-explorer/kusto/query/ceilingfunction?context=/trident/context/analytics-context
+  - name: coalesce()
+    href: /azure/data-explorer/kusto/query/coalescefunction?context=/trident/context/analytics-context
+  - name: column_ifexists()
+    displayName: columnifexists()
+    href: /azure/data-explorer/kusto/query/columnifexists?context=/trident/context/analytics-context
+  - name: convert_angle()
+    href: /azure/data-explorer/kusto/query/convert-angle-function?context=/trident/context/analytics-context
+  - name: convert_energy()
+    href: /azure/data-explorer/kusto/query/convert-energy-function?context=/trident/context/analytics-context
+  - name: convert_force()
+    href: /azure/data-explorer/kusto/query/convert-force-function?context=/trident/context/analytics-context
+  - name: convert_length()
+    href: /azure/data-explorer/kusto/query/convert-length-function?context=/trident/context/analytics-context
+  - name: convert_mass()
+    href: /azure/data-explorer/kusto/query/convert-mass-function?context=/trident/context/analytics-context
+  - name: convert_speed()
+    href: /azure/data-explorer/kusto/query/convert-speed-function?context=/trident/context/analytics-context
+  - name: convert_temperature()
+    href: /azure/data-explorer/kusto/query/convert-temperature-function?context=/trident/context/analytics-context
+  - name: convert_volume()
+    href: /azure/data-explorer/kusto/query/convert-volume-function?context=/trident/context/analytics-context
+  - name: cos()
+    href: /azure/data-explorer/kusto/query/cosfunction?context=/trident/context/analytics-context
+  - name: cot()
+    href: /azure/data-explorer/kusto/query/cotfunction?context=/trident/context/analytics-context
+  - name: countof()
+    href: /azure/data-explorer/kusto/query/countoffunction?context=/trident/context/analytics-context
+  - name: current_cluster_endpoint()
+    href: /azure/data-explorer/kusto/query/current-cluster-endpoint-function?context=/trident/context/analytics-context
+  - name: current_database()
+    href: /azure/data-explorer/kusto/query/current-database-function?context=/trident/context/analytics-context
+  - name: current_principal()
+    href: /azure/data-explorer/kusto/query/current-principalfunction?context=/trident/context/analytics-context
+  - name: current_principal_details()
+    href: /azure/data-explorer/kusto/query/current-principal-detailsfunction?context=/trident/context/analytics-context
+  - name: current_principal_is_member_of()
+    href: /azure/data-explorer/kusto/query/current-principal-ismemberoffunction?context=/trident/context/analytics-context
+  - name: cursor_after()
+    href: /azure/data-explorer/kusto/query/cursorafterfunction?context=/trident/context/analytics-context
+  - name: cursor_before_or_at()
+    href: /azure/data-explorer/kusto/query/cursorbeforeoratfunction?context=/trident/context/analytics-context
+  - name: cursor_current()
+    displayName: current_cursor()
+    href: /azure/data-explorer/kusto/query/cursorcurrent?context=/trident/context/analytics-context
+  - name: datetime_add()
+    href: /azure/data-explorer/kusto/query/datetime-addfunction?context=/trident/context/analytics-context
+  - name: datetime_diff()
+    href: /azure/data-explorer/kusto/query/datetime-difffunction?context=/trident/context/analytics-context
+  - name: datetime_local_to_utc()
+    href: /azure/data-explorer/kusto/query/datetime-local-to-utc-function?context=/trident/context/analytics-context
+  - name: datetime_part()
+    displayName: datepart()
+    href: /azure/data-explorer/kusto/query/datetime-partfunction?context=/trident/context/analytics-context
+  - name: datetime_utc_to_local()
+    href: /azure/data-explorer/kusto/query/datetime-utc-to-local-function?context=/trident/context/analytics-context
+  - name: dayofmonth()
+    href: /azure/data-explorer/kusto/query/dayofmonthfunction?context=/trident/context/analytics-context
+  - name: dayofweek()
+    href: /azure/data-explorer/kusto/query/dayofweekfunction?context=/trident/context/analytics-context
+  - name: dayofyear()
+    href: /azure/data-explorer/kusto/query/dayofyearfunction?context=/trident/context/analytics-context
+  - name: dcount_hll()
+    href: /azure/data-explorer/kusto/query/dcount-hllfunction?context=/trident/context/analytics-context
+  - name: degrees()
+    href: /azure/data-explorer/kusto/query/degreesfunction?context=/trident/context/analytics-context
+  - name: dynamic_to_json()
+    href: /azure/data-explorer/kusto/query/dynamic-to-json-function?context=/trident/context/analytics-context
+  - name: endofday()
+    href: /azure/data-explorer/kusto/query/endofdayfunction?context=/trident/context/analytics-context
+  - name: endofmonth()
+    href: /azure/data-explorer/kusto/query/endofmonthfunction?context=/trident/context/analytics-context
+  - name: endofweek()
+    href: /azure/data-explorer/kusto/query/endofweekfunction?context=/trident/context/analytics-context
+  - name: endofyear()
+    href: /azure/data-explorer/kusto/query/endofyearfunction?context=/trident/context/analytics-context
+  - name: estimate_data_size()
+    href: /azure/data-explorer/kusto/query/estimate-data-sizefunction?context=/trident/context/analytics-context
+  - name: exp()
+    href: /azure/data-explorer/kusto/query/exp-function?context=/trident/context/analytics-context
+  - name: exp10()
+    href: /azure/data-explorer/kusto/query/exp10-function?context=/trident/context/analytics-context
+  - name: exp2()
+    href: /azure/data-explorer/kusto/query/exp2-function?context=/trident/context/analytics-context
+  - name: extent_id()
+    displayName: extentid()
+    href: /azure/data-explorer/kusto/query/extentidfunction?context=/trident/context/analytics-context
+  - name: extent_tags()
+    href: /azure/data-explorer/kusto/query/extenttagsfunction?context=/trident/context/analytics-context
+  - name: extract()
+    href: /azure/data-explorer/kusto/query/extractfunction?context=/trident/context/analytics-context
+  - name: extract_all()
+    displayName: extractall()
+    href: /azure/data-explorer/kusto/query/extractallfunction?context=/trident/context/analytics-context
+  - name: extract_json()
+    displayName: extractjson()
+    href: /azure/data-explorer/kusto/query/extractjsonfunction?context=/trident/context/analytics-context
+  - name: format_bytes()
+    href: /azure/data-explorer/kusto/query/format-bytesfunction?context=/trident/context/analytics-context
+  - name: format_datetime()
+    href: /azure/data-explorer/kusto/query/format-datetimefunction?context=/trident/context/analytics-context
+  - name: format_ipv4()
+    href: /azure/data-explorer/kusto/query/format-ipv4-function?context=/trident/context/analytics-context
+  - name: format_ipv4_mask()
+    href: /azure/data-explorer/kusto/query/format-ipv4-mask-function?context=/trident/context/analytics-context
+  - name: format_timespan()
+    href: /azure/data-explorer/kusto/query/format-timespanfunction?context=/trident/context/analytics-context
+  - name: gamma()
+    href: /azure/data-explorer/kusto/query/gammafunction?context=/trident/context/analytics-context
+  - name: gettype()
+    href: /azure/data-explorer/kusto/query/gettypefunction?context=/trident/context/analytics-context
+  - name: getyear()
+    href: /azure/data-explorer/kusto/query/getyearfunction?context=/trident/context/analytics-context
+  - name: gzip_compress_to_base64_string()
+    href: /azure/data-explorer/kusto/query/gzip-base64-compress?context=/trident/context/analytics-context
+  - name: gzip_decompress_from_base64_string()
+    href: /azure/data-explorer/kusto/query/gzip-base64-decompress?context=/trident/context/analytics-context
+  - name: has_any_index()
+    href: /azure/data-explorer/kusto/query/has-any-index-function?context=/trident/context/analytics-context
+  - name: has_any_ipv4()
+    href: /azure/data-explorer/kusto/query/has-any-ipv4-function?context=/trident/context/analytics-context
+  - name: has_ipv4()
+    href: /azure/data-explorer/kusto/query/has-ipv4-function?context=/trident/context/analytics-context
+  - name: has_any_ipv4_prefix()
+    href: /azure/data-explorer/kusto/query/has-any-ipv4-prefix-function?context=/trident/context/analytics-context
+  - name: has_ipv4_prefix()
+    href: /azure/data-explorer/kusto/query/has-ipv4-prefix-function?context=/trident/context/analytics-context
+  - name: hash()
+    href: /azure/data-explorer/kusto/query/hashfunction?context=/trident/context/analytics-context
+  - name: hash_combine()
+    href: /azure/data-explorer/kusto/query/hash_combinefunction?context=/trident/context/analytics-context
+  - name: hash_many()
+    href: /azure/data-explorer/kusto/query/hash_manyfunction?context=/trident/context/analytics-context
+  - name: hash_md5()
+    href: /azure/data-explorer/kusto/query/md5hashfunction?context=/trident/context/analytics-context
+  - name: hash_sha1()
+    href: /azure/data-explorer/kusto/query/sha1-hash-function?context=/trident/context/analytics-context
+  - name: hash_sha256()
+    href: /azure/data-explorer/kusto/query/sha256hashfunction?context=/trident/context/analytics-context
+  - name: hash_xxhash64()
+    href: /azure/data-explorer/kusto/query/hash-xxhash64-function?context=/trident/context/analytics-context
+  - name: hll_merge()
+    href: /azure/data-explorer/kusto/query/hllmergefunction?context=/trident/context/analytics-context
+  - name: hourofday()
+    href: /azure/data-explorer/kusto/query/hourofdayfunction?context=/trident/context/analytics-context
+  - name: iff()
+    displayName: iif()
+    href: /azure/data-explorer/kusto/query/ifffunction?context=/trident/context/analytics-context
+  - name: indexof()
+    href: /azure/data-explorer/kusto/query/indexoffunction?context=/trident/context/analytics-context
+  - name: indexof_regex()
+    href: /azure/data-explorer/kusto/query/indexofregexfunction?context=/trident/context/analytics-context
+  - name: ingestion_time()
+    href: /azure/data-explorer/kusto/query/ingestiontimefunction?context=/trident/context/analytics-context
+  - name: ipv4_compare()
+    href: /azure/data-explorer/kusto/query/ipv4-comparefunction?context=/trident/context/analytics-context
+  - name: ipv4_is_in_range()
+    href: /azure/data-explorer/kusto/query/ipv4-is-in-range-function?context=/trident/context/analytics-context
+  - name: ipv4_is_in_any_range()
+    href: /azure/data-explorer/kusto/query/ipv4-is-in-any-range-function?context=/trident/context/analytics-context
+  - name: ipv4_is_match()
+    href: /azure/data-explorer/kusto/query/ipv4-is-matchfunction?context=/trident/context/analytics-context
+  - name: ipv4_is_private()
+    href: /azure/data-explorer/kusto/query/ipv4-is-privatefunction?context=/trident/context/analytics-context
+  - name: ipv4_netmask_suffix()
+    href: /azure/data-explorer/kusto/query/ipv4-netmask-suffix-function?context=/trident/context/analytics-context
+  - name: ipv6_compare()
+    href: /azure/data-explorer/kusto/query/ipv6-comparefunction?context=/trident/context/analytics-context
+  - name: ipv6_is_in_range()
+    href: /azure/data-explorer/kusto/query/ipv6-is-in-range-function?context=/trident/context/analytics-context
+  - name: ipv6_is_in_any_range()
+    href: /azure/data-explorer/kusto/query/ipv6-is-in-any-range-function?context=/trident/context/analytics-context
+  - name: ipv6_is_match()
+    href: /azure/data-explorer/kusto/query/ipv6-is-matchfunction?context=/trident/context/analytics-context
+  - name: isascii()
+    href: /azure/data-explorer/kusto/query/isascii?context=/trident/context/analytics-context
+  - name: isempty()
+    href: /azure/data-explorer/kusto/query/isemptyfunction?context=/trident/context/analytics-context
+  - name: isfinite()
+    href: /azure/data-explorer/kusto/query/isfinitefunction?context=/trident/context/analytics-context
+  - name: isinf()
+    href: /azure/data-explorer/kusto/query/isinffunction?context=/trident/context/analytics-context
+  - name: isnan()
+    href: /azure/data-explorer/kusto/query/isnanfunction?context=/trident/context/analytics-context
+  - name: isnotempty()
+    displayName: notempty()
+    href: /azure/data-explorer/kusto/query/isnotemptyfunction?context=/trident/context/analytics-context
+  - name: isnotnull()
+    displayName: notnull()
+    href: /azure/data-explorer/kusto/query/isnotnullfunction?context=/trident/context/analytics-context
+  - name: isnull()
+    href: /azure/data-explorer/kusto/query/isnullfunction?context=/trident/context/analytics-context
+  - name: isutf8()
+    href: /azure/data-explorer/kusto/query/isutf8?context=/trident/context/analytics-context
+  - name: jaccard_index()
+    href: /azure/data-explorer/kusto/query/jaccard-index-function?context=/trident/context/analytics-context
+  - name: log()
+    href: /azure/data-explorer/kusto/query/log-function?context=/trident/context/analytics-context
+  - name: log10()
+    href: /azure/data-explorer/kusto/query/log10-function?context=/trident/context/analytics-context
+  - name: log2()
+    href: /azure/data-explorer/kusto/query/log2-function?context=/trident/context/analytics-context
+  - name: loggamma()
+    href: /azure/data-explorer/kusto/query/loggammafunction?context=/trident/context/analytics-context
+  - name: make_datetime()
+    href: /azure/data-explorer/kusto/query/make-datetimefunction?context=/trident/context/analytics-context
+  - name: make_timespan()
+    href: /azure/data-explorer/kusto/query/make-timespanfunction?context=/trident/context/analytics-context
+  - name: max_of()
+    href: /azure/data-explorer/kusto/query/max-offunction?context=/trident/context/analytics-context
+  - name: min_of()
+    href: /azure/data-explorer/kusto/query/min-offunction?context=/trident/context/analytics-context
+  - name: monthofyear()
+    displayName: getmonth()
+    href: /azure/data-explorer/kusto/query/monthofyearfunction?context=/trident/context/analytics-context
+  - name: new_guid()
+    href: /azure/data-explorer/kusto/query/newguidfunction?context=/trident/context/analytics-context
+  - name: not()
+    href: /azure/data-explorer/kusto/query/notfunction?context=/trident/context/analytics-context
+  - name: now()
+    href: /azure/data-explorer/kusto/query/nowfunction?context=/trident/context/analytics-context
+  - name: pack_all()
+    href: /azure/data-explorer/kusto/query/packallfunction?context=/trident/context/analytics-context
+  - name: pack_array()
+    href: /azure/data-explorer/kusto/query/packarrayfunction?context=/trident/context/analytics-context
+  - name: parse_command_line()
+    href: /azure/data-explorer/kusto/query/parse-command-line?context=/trident/context/analytics-context
+  - name: parse_csv()
+    href: /azure/data-explorer/kusto/query/parsecsvfunction?context=/trident/context/analytics-context
+  - name: parse_ipv4()
+    href: /azure/data-explorer/kusto/query/parse-ipv4function?context=/trident/context/analytics-context
+  - name: parse_ipv4_mask()
+    href: /azure/data-explorer/kusto/query/parse-ipv4-maskfunction?context=/trident/context/analytics-context
+  - name: parse_ipv6()
+    href: /azure/data-explorer/kusto/query/parse-ipv6function?context=/trident/context/analytics-context
+  - name: parse_ipv6_mask()
+    href: /azure/data-explorer/kusto/query/parse-ipv6-maskfunction?context=/trident/context/analytics-context
+  - name: parse_path()
+    href: /azure/data-explorer/kusto/query/parsepathfunction?context=/trident/context/analytics-context
+  - name: parse_url()
+    displayName: parseurl()
+    href: /azure/data-explorer/kusto/query/parseurlfunction?context=/trident/context/analytics-context
+  - name: parse_urlquery()
+    displayName: parseurlquery()
+    href: /azure/data-explorer/kusto/query/parseurlqueryfunction?context=/trident/context/analytics-context
+  - name: parse_user_agent()
+    href: /azure/data-explorer/kusto/query/parse-useragentfunction?context=/trident/context/analytics-context
+  - name: parse_version()
+    href: /azure/data-explorer/kusto/query/parse-versionfunction?context=/trident/context/analytics-context
+  - name: parse_xml()
+    href: /azure/data-explorer/kusto/query/parse-xmlfunction?context=/trident/context/analytics-context
+  - name: percentile_tdigest()
+    href: /azure/data-explorer/kusto/query/percentile-tdigestfunction?context=/trident/context/analytics-context
+  - name: percentile_array_tdigest()
+    href: /azure/data-explorer/kusto/query/percentile-array-tdigestfunction?context=/trident/context/analytics-context
+  - name: percentrank_tdigest()
+    href: /azure/data-explorer/kusto/query/percentrank-tdigestfunction?context=/trident/context/analytics-context
+  - name: pi()
+    href: /azure/data-explorer/kusto/query/pifunction?context=/trident/context/analytics-context
+  - name: pow()
+    href: /azure/data-explorer/kusto/query/powfunction?context=/trident/context/analytics-context
+  - name: radians()
+    href: /azure/data-explorer/kusto/query/radiansfunction?context=/trident/context/analytics-context
+  - name: rand()
+    href: /azure/data-explorer/kusto/query/randfunction?context=/trident/context/analytics-context
+  - name: range()
+    href: /azure/data-explorer/kusto/query/rangefunction?context=/trident/context/analytics-context
+  - name: rank_tdigest()
+    href: /azure/data-explorer/kusto/query/rank-tdigest?context=/trident/context/analytics-context
+  - name: regex_quote()
+    href: /azure/data-explorer/kusto/query/regexquotefunction?context=/trident/context/analytics-context
+  - name: repeat()
+    href: /azure/data-explorer/kusto/query/repeatfunction?context=/trident/context/analytics-context
+  - name: replace_regex()
+    displayName: replace()
+    href: /azure/data-explorer/kusto/query/replace-regex-function?context=/trident/context/analytics-context
+  - name: replace_string()
+    displayName: replace()
+    href: /azure/data-explorer/kusto/query/replace-string-function?context=/trident/context/analytics-context
+  - name: reverse()
+    href: /azure/data-explorer/kusto/query/reversefunction?context=/trident/context/analytics-context
+  - name: round()
+    href: /azure/data-explorer/kusto/query/roundfunction?context=/trident/context/analytics-context
+  - name: set_difference()
+    href: /azure/data-explorer/kusto/query/setdifferencefunction?context=/trident/context/analytics-context
+  - name: set_has_element()
+    href: /azure/data-explorer/kusto/query/sethaselementfunction?context=/trident/context/analytics-context
+  - name: set_intersect()
+    href: /azure/data-explorer/kusto/query/setintersectfunction?context=/trident/context/analytics-context
+  - name: set_union()
+    href: /azure/data-explorer/kusto/query/setunionfunction?context=/trident/context/analytics-context
+  - name: sign()
+    href: /azure/data-explorer/kusto/query/signfunction?context=/trident/context/analytics-context
+  - name: sin()
+    href: /azure/data-explorer/kusto/query/sinfunction?context=/trident/context/analytics-context
+  - name: split()
+    href: /azure/data-explorer/kusto/query/splitfunction?context=/trident/context/analytics-context
+  - name: sqrt()
+    href: /azure/data-explorer/kusto/query/sqrtfunction?context=/trident/context/analytics-context
+  - name: startofday()
+    href: /azure/data-explorer/kusto/query/startofdayfunction?context=/trident/context/analytics-context
+  - name: startofmonth()
+    href: /azure/data-explorer/kusto/query/startofmonthfunction?context=/trident/context/analytics-context
+  - name: startofweek()
+    href: /azure/data-explorer/kusto/query/startofweekfunction?context=/trident/context/analytics-context
+  - name: startofyear()
+    href: /azure/data-explorer/kusto/query/startofyearfunction?context=/trident/context/analytics-context
+  - name: strcat()
+    href: /azure/data-explorer/kusto/query/strcatfunction?context=/trident/context/analytics-context
+  - name: strcat_array()
+    href: /azure/data-explorer/kusto/query/strcat-arrayfunction?context=/trident/context/analytics-context
+  - name: strcat_delim()
+    href: /azure/data-explorer/kusto/query/strcat-delimfunction?context=/trident/context/analytics-context
+  - name: strcmp()
+    href: /azure/data-explorer/kusto/query/strcmpfunction?context=/trident/context/analytics-context
+  - name: string_size()
+    href: /azure/data-explorer/kusto/query/stringsizefunction?context=/trident/context/analytics-context
+  - name: strlen()
+    href: /azure/data-explorer/kusto/query/strlenfunction?context=/trident/context/analytics-context
+  - name: strrep()
+    href: /azure/data-explorer/kusto/query/strrepfunction?context=/trident/context/analytics-context
+  - name: substring()
+    href: /azure/data-explorer/kusto/query/substringfunction?context=/trident/context/analytics-context
+  - name: tan()
+    href: /azure/data-explorer/kusto/query/tanfunction?context=/trident/context/analytics-context
+  - name: merge_tdigest()
+    displayName: tdigest_merge()
+    href: /azure/data-explorer/kusto/query/merge-tdigest-function?context=/trident/context/analytics-context
+  - name: tobool()
+    displayName: toboolean()
+    href: /azure/data-explorer/kusto/query/toboolfunction?context=/trident/context/analytics-context
+  - name: todatetime()
+    href: /azure/data-explorer/kusto/query/todatetimefunction?context=/trident/context/analytics-context
+  - name: todecimal()
+    href: /azure/data-explorer/kusto/query/todecimalfunction?context=/trident/context/analytics-context
+  - name: todouble(), toreal()
+    href: /azure/data-explorer/kusto/query/todoublefunction?context=/trident/context/analytics-context
+  - name: parse_json()
+    displayName: toobject(), parsejson(), todynamic()
+    href: /azure/data-explorer/kusto/query/parsejsonfunction?context=/trident/context/analytics-context
+  - name: toguid()
+    href: /azure/data-explorer/kusto/query/toguidfunction?context=/trident/context/analytics-context
+  - name: tohex()
+    href: /azure/data-explorer/kusto/query/tohexfunction?context=/trident/context/analytics-context
+  - name: toint()
+    href: /azure/data-explorer/kusto/query/tointfunction?context=/trident/context/analytics-context
+  - name: tolong()
+    href: /azure/data-explorer/kusto/query/tolongfunction?context=/trident/context/analytics-context
+  - name: tolower()
+    href: /azure/data-explorer/kusto/query/tolowerfunction?context=/trident/context/analytics-context
+  - name: tostring()
+    href: /azure/data-explorer/kusto/query/tostringfunction?context=/trident/context/analytics-context
+  - name: totimespan()
+    displayName: totime()
+    href: /azure/data-explorer/kusto/query/totimespanfunction?context=/trident/context/analytics-context
+  - name: toupper()
+    href: /azure/data-explorer/kusto/query/toupperfunction?context=/trident/context/analytics-context
+  - name: translate()
+    href: /azure/data-explorer/kusto/query/translatefunction?context=/trident/context/analytics-context
+  - name: treepath()
+    href: /azure/data-explorer/kusto/query/treepathfunction?context=/trident/context/analytics-context
+  - name: trim()
+    href: /azure/data-explorer/kusto/query/trimfunction?context=/trident/context/analytics-context
+  - name: trim_end()
+    href: /azure/data-explorer/kusto/query/trimendfunction?context=/trident/context/analytics-context
+  - name: trim_start()
+    href: /azure/data-explorer/kusto/query/trimstartfunction?context=/trident/context/analytics-context
+  - name: unicode_codepoints_from_string()
+    href: /azure/data-explorer/kusto/query/unicode-codepoints-from-string-function?context=/trident/context/analytics-context
+  - name: unicode_codepoints_to_string()
+    href: /azure/data-explorer/kusto/query/unicode-codepoints-to-string-function?context=/trident/context/analytics-context
+  - name: unixtime_microseconds_todatetime()
+    href: /azure/data-explorer/kusto/query/unixtime-microseconds-todatetimefunction?context=/trident/context/analytics-context
+  - name: unixtime_milliseconds_todatetime()
+    href: /azure/data-explorer/kusto/query/unixtime-milliseconds-todatetimefunction?context=/trident/context/analytics-context
+  - name: unixtime_nanoseconds_todatetime()
+    href: /azure/data-explorer/kusto/query/unixtime-nanoseconds-todatetimefunction?context=/trident/context/analytics-context
+  - name: unixtime_seconds_todatetime()
+    href: /azure/data-explorer/kusto/query/unixtime-seconds-todatetimefunction?context=/trident/context/analytics-context
+  - name: url_decode()
+    href: /azure/data-explorer/kusto/query/urldecodefunction?context=/trident/context/analytics-context
+  - name: url_encode()
+    href: /azure/data-explorer/kusto/query/urlencodefunction?context=/trident/context/analytics-context
+  - name: url_encode_component()
+    href: /azure/data-explorer/kusto/query/urlencodecomponentfunction?context=/trident/context/analytics-context
+  - name: week_of_year()
+    displayName: weekofyear()
+    href: /azure/data-explorer/kusto/query/weekofyearfunction?context=/trident/context/analytics-context
+  - name: welch_test()
+    href: /azure/data-explorer/kusto/query/welch-testfunction?context=/trident/context/analytics-context
+  - name: zip()
+    href: /azure/data-explorer/kusto/query/zipfunction?context=/trident/context/analytics-context
+  - name: zlib_compress_to_base64_string()
+    href: /azure/data-explorer/kusto/query/zlib-base64-compress?context=/trident/context/analytics-context
+  - name: zlib_decompress_from_base64_string()
+    href: /azure/data-explorer/kusto/query/zlib-base64-decompress?context=/trident/context/analytics-context
+- name: Aggregation functions
+  displayName: aggregation
+  items:
+  - name: Aggregation function types
+    href: /azure/data-explorer/kusto/query/aggregation-functions?context=/trident/context/analytics-context
+  - name: arg_max()
+    displayName: argmax()
+    href: /azure/data-explorer/kusto/query/arg-max-aggfunction?context=/trident/context/analytics-context
+  - name: arg_min()
+    displayName: argmin()
+    href: /azure/data-explorer/kusto/query/arg-min-aggfunction?context=/trident/context/analytics-context
+  - name: avg()
+    href: /azure/data-explorer/kusto/query/avg-aggfunction?context=/trident/context/analytics-context
+  - name: avgif()
+    href: /azure/data-explorer/kusto/query/avgif-aggfunction?context=/trident/context/analytics-context
+  - name: binary_all_and
+    href: /azure/data-explorer/kusto/query/binary-all-and-aggfunction?context=/trident/context/analytics-context
+  - name: binary_all_or
+    href: /azure/data-explorer/kusto/query/binary-all-or-aggfunction?context=/trident/context/analytics-context
+  - name: binary_all_xor
+    href: /azure/data-explorer/kusto/query/binary-all-xor-aggfunction?context=/trident/context/analytics-context
+  - name: buildschema()
+    href: /azure/data-explorer/kusto/query/buildschema-aggfunction?context=/trident/context/analytics-context
+  - name: count()
+    displayName: cnt()
+    href: /azure/data-explorer/kusto/query/count-aggfunction?context=/trident/context/analytics-context
+  - name: count_distinct()
+    href: /azure/data-explorer/kusto/query/count-distinct-aggfunction?context=/trident/context/analytics-context
+  - name: count_distinctif()
+    href: /azure/data-explorer/kusto/query/count-distinctif-aggfunction?context=/trident/context/analytics-context
+  - name: countif()
+    displayName: count(predicate)
+    href: /azure/data-explorer/kusto/query/countif-aggfunction?context=/trident/context/analytics-context
+  - name: dcount()
+    href: /azure/data-explorer/kusto/query/dcount-aggfunction?context=/trident/context/analytics-context
+  - name: dcountif()
+    href: /azure/data-explorer/kusto/query/dcountif-aggfunction?context=/trident/context/analytics-context
+  - name: hll()
+    href: /azure/data-explorer/kusto/query/hll-aggfunction?context=/trident/context/analytics-context
+  - name: hll_if()
+    href: /azure/data-explorer/kusto/query/hll-if-aggregation-function?context=/trident/context/analytics-context
+  - name: hll_merge()
+    href: /azure/data-explorer/kusto/query/hll-merge-aggfunction?context=/trident/context/analytics-context
+  - name: make_bag()
+    href: /azure/data-explorer/kusto/query/make-bag-aggfunction?context=/trident/context/analytics-context
+  - name: make_bag_if()
+    href: /azure/data-explorer/kusto/query/make-bag-if-aggfunction?context=/trident/context/analytics-context
+  - name: make_list()
+    displayName: makelist()
+    href: /azure/data-explorer/kusto/query/makelist-aggfunction?context=/trident/context/analytics-context
+  - name: make_list_if()
+    href: /azure/data-explorer/kusto/query/makelistif-aggfunction?context=/trident/context/analytics-context
+  - name: make_list_with_nulls()
+    href: /azure/data-explorer/kusto/query/make-list-with-nulls-aggfunction?context=/trident/context/analytics-context
+  - name: make_set()
+    displayName: makeset()
+    href: /azure/data-explorer/kusto/query/makeset-aggfunction?context=/trident/context/analytics-context
+  - name: make_set_if()
+    href: /azure/data-explorer/kusto/query/makesetif-aggfunction?context=/trident/context/analytics-context
+  - name: max()
+    href: /azure/data-explorer/kusto/query/max-aggfunction?context=/trident/context/analytics-context
+  - name: maxif()
+    href: /azure/data-explorer/kusto/query/maxif-aggfunction?context=/trident/context/analytics-context
+  - name: min()
+    href: /azure/data-explorer/kusto/query/min-aggfunction?context=/trident/context/analytics-context
+  - name: minif()
+    href: /azure/data-explorer/kusto/query/minif-aggfunction?context=/trident/context/analytics-context
+  - name: percentile(), percentiles()
+    displayName: percentiles_array(), percentilew(), percentilesw(), percentilesw_array()
+    href: /azure/data-explorer/kusto/query/percentiles-aggfunction?context=/trident/context/analytics-context
+  - name: stdev()
+    href: /azure/data-explorer/kusto/query/stdev-aggfunction?context=/trident/context/analytics-context
+  - name: stdevif()
+    href: /azure/data-explorer/kusto/query/stdevif-aggfunction?context=/trident/context/analytics-context
+  - name: stdevp()
+    href: /azure/data-explorer/kusto/query/stdevp-aggfunction?context=/trident/context/analytics-context
+  - name: sum()
+    href: /azure/data-explorer/kusto/query/sum-aggfunction?context=/trident/context/analytics-context
+  - name: sumif()
+    href: /azure/data-explorer/kusto/query/sumif-aggfunction?context=/trident/context/analytics-context
+  - name: take_any()
+    displayName: any()
+    href: /azure/data-explorer/kusto/query/take-any-aggfunction?context=/trident/context/analytics-context
+  - name: take_anyif()
+    displayName: anyif()
+    href: /azure/data-explorer/kusto/query/take-anyif-aggfunction?context=/trident/context/analytics-context
+  - name: tdigest()
+    href: /azure/data-explorer/kusto/query/tdigest-aggfunction?context=/trident/context/analytics-context
+  - name: tdigest_merge(), merge_tdigest()
+    href: /azure/data-explorer/kusto/query/tdigest-merge-aggfunction?context=/trident/context/analytics-context
+  - name: variance()
+    href: /azure/data-explorer/kusto/query/variance-aggfunction?context=/trident/context/analytics-context
+  - name: varianceif()
+    href: /azure/data-explorer/kusto/query/varianceif-aggfunction?context=/trident/context/analytics-context
+  - name: variancep()
+    href: /azure/data-explorer/kusto/query/variancep-aggfunction?context=/trident/context/analytics-context
+- name: Geospatial
+  items:
+  - name: Geospatial clustering overview
+    displayName: H3, S2, Geohash
+    href: /azure/data-explorer/kusto/query/geospatial-grid-systems?context=/trident/context/analytics-context
+  - name: Geospatial visualizations
+    displayName: Geospatial visualizations
+    href: /azure/data-explorer/kusto/query/geospatial-visualizations?context=/trident/context/analytics-context
+  - name: geo_distance_2points()
+    href: /azure/data-explorer/kusto/query/geo-distance-2points-function?context=/trident/context/analytics-context
+  - name: geo_distance_point_to_line()
+    href: /azure/data-explorer/kusto/query/geo-distance-point-to-line-function?context=/trident/context/analytics-context
+  - name: geo_distance_point_to_polygon()
+    href: /azure/data-explorer/kusto/query/geo-distance-point-to-polygon-function?context=/trident/context/analytics-context
+  - name: geo_intersects_2lines()
+    href: /azure/data-explorer/kusto/query/geo-intersects-2lines-function?context=/trident/context/analytics-context
+  - name: geo_intersects_2polygons()
+    href: /azure/data-explorer/kusto/query/geo-intersects-2polygons-function?context=/trident/context/analytics-context
+  - name: geo_intersects_line_with_polygon()
+    href: /azure/data-explorer/kusto/query/geo-intersects-line-with-polygon-function?context=/trident/context/analytics-context
+  - name: geo_intersection_2lines()
+    href: /azure/data-explorer/kusto/query/geo-intersection-2lines-function?context=/trident/context/analytics-context
+  - name: geo_intersection_2polygons()
+    href: /azure/data-explorer/kusto/query/geo-intersection-2polygons-function?context=/trident/context/analytics-context
+  - name: geo_intersection_line_with_polygon()
+    href: /azure/data-explorer/kusto/query/geo-intersection-line-with-polygon-function?context=/trident/context/analytics-context
+  - name: geo_line_centroid()
+    href: /azure/data-explorer/kusto/query/geo-line-centroid-function?context=/trident/context/analytics-context
+  - name: geo_line_densify()
+    href: /azure/data-explorer/kusto/query/geo-line-densify-function?context=/trident/context/analytics-context
+  - name: geo_line_length()
+    href: /azure/data-explorer/kusto/query/geo-line-length-function?context=/trident/context/analytics-context
+  - name: geo_line_simplify()
+    href: /azure/data-explorer/kusto/query/geo-line-simplify-function?context=/trident/context/analytics-context
+  - name: geo_polygon_area()
+    href: /azure/data-explorer/kusto/query/geo-polygon-area-function?context=/trident/context/analytics-context
+  - name: geo_polygon_centroid()
+    href: /azure/data-explorer/kusto/query/geo-polygon-centroid-function?context=/trident/context/analytics-context
+  - name: geo_polygon_densify()
+    href: /azure/data-explorer/kusto/query/geo-polygon-densify-function?context=/trident/context/analytics-context
+  - name: geo_polygon_perimeter()
+    href: /azure/data-explorer/kusto/query/geo-polygon-perimeter-function?context=/trident/context/analytics-context
+  - name: geo_polygon_simplify()
+    href: /azure/data-explorer/kusto/query/geo-polygon-simplify-function?context=/trident/context/analytics-context
+  - name: geo_polygon_to_s2cells()
+    href: /azure/data-explorer/kusto/query/geo-polygon-to-s2cells-function?context=/trident/context/analytics-context
+  - name: geo_point_in_circle()
+    href: /azure/data-explorer/kusto/query/geo-point-in-circle-function?context=/trident/context/analytics-context
+  - name: geo_point_in_polygon()
+    href: /azure/data-explorer/kusto/query/geo-point-in-polygon-function?context=/trident/context/analytics-context
+  - name: geo_point_to_geohash()
+    href: /azure/data-explorer/kusto/query/geo-point-to-geohash-function?context=/trident/context/analytics-context
+  - name: geo_point_to_h3cell()
+    href: /azure/data-explorer/kusto/query/geo-point-to-h3cell-function?context=/trident/context/analytics-context
+  - name: geo_point_to_s2cell()
+    href: /azure/data-explorer/kusto/query/geo-point-to-s2cell-function?context=/trident/context/analytics-context
+  - name: geo_geohash_to_central_point()
+    href: /azure/data-explorer/kusto/query/geo-geohash-to-central-point-function?context=/trident/context/analytics-context
+  - name: geo_geohash_neighbors()
+    href: /azure/data-explorer/kusto/query/geo-geohash-neighbors-function?context=/trident/context/analytics-context
+  - name: geo_geohash_to_polygon()
+    href: /azure/data-explorer/kusto/query/geo-geohash-to-polygon-function?context=/trident/context/analytics-context
+  - name: geo_s2cell_to_central_point()
+    href: /azure/data-explorer/kusto/query/geo-s2cell-to-central-point-function?context=/trident/context/analytics-context
+  - name: geo_s2cell_neighbors()
+    href: /azure/data-explorer/kusto/query/geo-s2cell-neighbors-function?context=/trident/context/analytics-context
+  - name: geo_s2cell_to_polygon()
+    href: /azure/data-explorer/kusto/query/geo-s2cell-to-polygon-function?context=/trident/context/analytics-context
+  - name: geo_h3cell_to_central_point()
+    href: /azure/data-explorer/kusto/query/geo-h3cell-to-central-point-function?context=/trident/context/analytics-context
+  - name: geo_h3cell_neighbors()
+    href: /azure/data-explorer/kusto/query/geo-h3cell-neighbors-function?context=/trident/context/analytics-context
+  - name: geo_h3cell_to_polygon()
+    href: /azure/data-explorer/kusto/query/geo-h3cell-to-polygon-function?context=/trident/context/analytics-context
+  - name: geo_h3cell_parent()
+    href: /azure/data-explorer/kusto/query/geo-h3cell-parent-function?context=/trident/context/analytics-context
+  - name: geo_h3cell_children()
+    href: /azure/data-explorer/kusto/query/geo-h3cell-children-function?context=/trident/context/analytics-context
+  - name: geo_h3cell_level()
+    href: /azure/data-explorer/kusto/query/geo-h3cell-level-function?context=/trident/context/analytics-context
+  - name: geo_h3cell_rings()
+    href: /azure/data-explorer/kusto/query/geo-h3cell-rings-function?context=/trident/context/analytics-context
+  - name: geo_simplify_polygons_array()
+    href: /azure/data-explorer/kusto/query/geo-simplify-polygons-array-function?context=/trident/context/analytics-context
+  - name: geo_union_lines_array()
+    href: /azure/data-explorer/kusto/query/geo-union-lines-array-function?context=/trident/context/analytics-context
+  - name: geo_union_polygons_array()
+    href: /azure/data-explorer/kusto/query/geo-union-polygons-array-function?context=/trident/context/analytics-context
+- name: Time series analysis
+  items:
+  - name: Example use cases
+    items:
+    - name: Time series analysis
+      href: /azure/data-explorer/kusto/query/time-series-analysis?context=/trident/context/analytics-context
+    - name: Anomaly detection and forecasting
+      href: /azure/data-explorer/kusto/query/anomaly-detection?context=/trident/context/analytics-context
+    - name: Machine learning
+      href: /azure/data-explorer/kusto/query/machine-learning-clustering?context=/trident/context/analytics-context
+  - name: make-series operator
+    href: /azure/data-explorer/kusto/query/make-seriesoperator?context=/trident/context/analytics-context
+  - name: series_abs()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-absfunction?context=/trident/context/analytics-context
+  - name: series_acos()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-acosfunction?context=/trident/context/analytics-context
+  - name: series_add()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-addfunction?context=/trident/context/analytics-context
+  - name: series_asin()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-asinfunction?context=/trident/context/analytics-context
+  - name: series_atan()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-atanfunction?context=/trident/context/analytics-context
+  - name: series_ceiling()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-ceiling-function?context=/trident/context/analytics-context
+  - name: series_cos()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-cosfunction?context=/trident/context/analytics-context
+  - name: series_decompose()
+    displayName: seasonal, trend, baseline
+    href: /azure/data-explorer/kusto/query/series-decomposefunction?context=/trident/context/analytics-context
+  - name: series_decompose_anomalies()
+    displayName: seasonal, trend, baseline
+    href: /azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?context=/trident/context/analytics-context
+  - name: series_decompose_forecast()
+    displayName: seasonal, trend, baseline
+    href: /azure/data-explorer/kusto/query/series-decompose-forecastfunction?context=/trident/context/analytics-context
+  - name: series_divide()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-dividefunction?context=/trident/context/analytics-context
+  - name: series_dot_product()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-dot-productfunction?context=/trident/context/analytics-context
+  - name: series_equals()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-equalsfunction?context=/trident/context/analytics-context
+  - name: series_exp()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-expfunction?context=/trident/context/analytics-context
+  - name: series_fft()
+    displayName: spectral, frequency, seasonality, transform, Fourier
+    href: /azure/data-explorer/kusto/query/series-fft-function?context=/trident/context/analytics-context
+  - name: series_fill_backward()
+    displayName: missing values
+    href: /azure/data-explorer/kusto/query/series-fill-backwardfunction?context=/trident/context/analytics-context
+  - name: series_fill_const()
+    displayName: missing values
+    href: /azure/data-explorer/kusto/query/series-fill-constfunction?context=/trident/context/analytics-context
+  - name: series_fill_forward()
+    displayName: missing values
+    href: /azure/data-explorer/kusto/query/series-fill-forwardfunction?context=/trident/context/analytics-context
+  - name: series_fill_linear()
+    displayName: missing values
+    href: /azure/data-explorer/kusto/query/series-fill-linearfunction?context=/trident/context/analytics-context
+  - name: series_fir()
+    displayName: filter, finite impulse response
+    href: /azure/data-explorer/kusto/query/series-firfunction?context=/trident/context/analytics-context
+  - name: series_fit_2lines()
+    displayName: regression
+    href: /azure/data-explorer/kusto/query/series-fit-2linesfunction?context=/trident/context/analytics-context
+  - name: series_fit_2lines_dynamic()
+    displayName: regression
+    href: /azure/data-explorer/kusto/query/series-fit-2lines-dynamicfunction?context=/trident/context/analytics-context
+  - name: series_fit_line()
+    displayName: regression
+    href: /azure/data-explorer/kusto/query/series-fit-linefunction?context=/trident/context/analytics-context
+  - name: series_fit_line_dynamic()
+    displayName: regression
+    href: /azure/data-explorer/kusto/query/series-fit-line-dynamicfunction?context=/trident/context/analytics-context
+  - name: series_fit_poly()
+    displayName: regression, polynomial
+    href: /azure/data-explorer/kusto/query/series-fit-poly-function?context=/trident/context/analytics-context
+  - name: series_floor()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-floor-function?context=/trident/context/analytics-context
+  - name: series_greater()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-greaterfunction?context=/trident/context/analytics-context
+  - name: series_greater_equals()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-greater-equalsfunction?context=/trident/context/analytics-context
+  - name: series_ifft()
+    displayName: spectral, frequency, seasonality, transform, Fourier
+    href: /azure/data-explorer/kusto/query/series-ifft-function?context=/trident/context/analytics-context
+  - name: series_iir()
+    displayName: filter, infinite impulse response
+    href: /azure/data-explorer/kusto/query/series-iirfunction?context=/trident/context/analytics-context
+  - name: series_less()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-lessfunction?context=/trident/context/analytics-context
+  - name: series_less_equals()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-less-equalsfunction?context=/trident/context/analytics-context
+  - name: series_log()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-log-function?context=/trident/context/analytics-context
+  - name: series_multiply()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-multiplyfunction?context=/trident/context/analytics-context
+  - name: series_not_equals()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-not-equalsfunction?context=/trident/context/analytics-context
+  - name: series_outliers()
+    displayName: anomaly detection, Tukey
+    href: /azure/data-explorer/kusto/query/series-outliersfunction?context=/trident/context/analytics-context
+  - name: series_pearson_correlation()
+    href: /azure/data-explorer/kusto/query/series-pearson-correlationfunction?context=/trident/context/analytics-context
+  - name: series_periods_detect()
+    displayName: spectral, fft, frequency, seasonality
+    href: /azure/data-explorer/kusto/query/series-periods-detectfunction?context=/trident/context/analytics-context
+  - name: series_periods_validate()
+    displayName: spectral, fft, frequency, seasonality
+    href: /azure/data-explorer/kusto/query/series-periods-validatefunction?context=/trident/context/analytics-context
+  - name: series_pow()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-powfunction?context=/trident/context/analytics-context
+  - name: series_seasonal()
+    displayName: periods
+    href: /azure/data-explorer/kusto/query/series-seasonalfunction?context=/trident/context/analytics-context
+  - name: series_sign()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-signfunction?context=/trident/context/analytics-context
+  - name: series_sin()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-sinfunction?context=/trident/context/analytics-context
+  - name: series_stats()
+    displayName: statistics, average, standard deviation, variance
+    href: /azure/data-explorer/kusto/query/series-statsfunction?context=/trident/context/analytics-context
+  - name: series_stats_dynamic()
+    displayName: statistics, average, standard deviation, variance
+    href: /azure/data-explorer/kusto/query/series-stats-dynamicfunction?context=/trident/context/analytics-context
+  - name: series_subtract()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-subtractfunction?context=/trident/context/analytics-context
+  - name: series_tan()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-tanfunction?context=/trident/context/analytics-context
+- name: Plugins
+  items:
+  - name: General plugins
+    items:
+    - name: dcount_intersect plugin
+      href: /azure/data-explorer/kusto/query/dcount-intersect-plugin?context=/trident/context/analytics-context
+    - name: infer_storage_schema plugin
+      href: /azure/data-explorer/kusto/query/inferstorageschemaplugin?context=/trident/context/analytics-context
+    - name: ipv4_lookup plugin
+      href: /azure/data-explorer/kusto/query/ipv4-lookup-plugin?context=/trident/context/analytics-context
+    - name: preview plugin
+      href: /azure/data-explorer/kusto/query/previewplugin?context=/trident/context/analytics-context
+    - name: schema_merge plugin
+      href: /azure/data-explorer/kusto/query/schemamergeplugin?context=/trident/context/analytics-context
+  - name: Data reshaping plugins
+    items:
+    - name: bag_unpack plugin
+      href: /azure/data-explorer/kusto/query/bag-unpackplugin?context=/trident/context/analytics-context
+    - name: narrow plugin
+      href: /azure/data-explorer/kusto/query/narrowplugin?context=/trident/context/analytics-context
+    - name: pivot plugin
+      href: /azure/data-explorer/kusto/query/pivotplugin?context=/trident/context/analytics-context
+  - name: Language plugins
+    items:
+    - name: python plugin
+      href: /azure/data-explorer/kusto/query/pythonplugin?context=/trident/context/analytics-context
+    - name: r plugin
+      href: /azure/data-explorer/kusto/query/rplugin?context=/trident/context/analytics-context
+  - name: Machine learning plugins
+    items:
+    - name: autocluster plugin
+      displayName: clustering, diagnostics, RCA, root cause
+      href: /azure/data-explorer/kusto/query/autoclusterplugin?context=/trident/context/analytics-context
+    - name: basket plugin
+      displayName: clustering, diagnostics, RCA, root cause
+      href: /azure/data-explorer/kusto/query/basketplugin?context=/trident/context/analytics-context
+    - name: diffpatterns plugin
+      displayName: clustering, diagnostics, RCA, root cause
+      href: /azure/data-explorer/kusto/query/diffpatternsplugin?context=/trident/context/analytics-context
+    - name: diffpatterns_text plugin
+      displayName: clustering, diagnostics, RCA, root cause
+      href: /azure/data-explorer/kusto/query/diffpatterns-textplugin?context=/trident/context/analytics-context
+  - name: Query connectivity plugins
+    items:
+    - name: azure_digital_twins_query_request plugin
+      href: /azure/data-explorer/kusto/query/azure-digital-twins-query-request-plugin?context=/trident/context/analytics-context
+    - name: cosmosdb_sql_request plugin
+      href: /azure/data-explorer/kusto/query/cosmosdb-plugin?context=/trident/context/analytics-context
+    - name: http_request plugin
+      href: /azure/data-explorer/kusto/query/http-request-plugin?context=/trident/context/analytics-context
+    - name: http_request_post plugin
+      href: /azure/data-explorer/kusto/query/http-request-plugin?context=/trident/context/analytics-context
+    - name: mysql_request plugin
+      href: /azure/data-explorer/kusto/query/mysqlrequest-plugin?context=/trident/context/analytics-context
+    - name: sql_request plugin
+      href: /azure/data-explorer/kusto/query/sqlrequestplugin?context=/trident/context/analytics-context
+  - name: User and sequence analytics plugins
+    items:
+    - name: User analytics plugins overview
+      href: /azure/data-explorer/kusto/query/useranalytics?context=/trident/context/analytics-context
+    - name: active_users_count plugin
+      href: /azure/data-explorer/kusto/query/active-users-count-plugin?context=/trident/context/analytics-context
+    - name: activity_counts_metrics plugin
+      href: /azure/data-explorer/kusto/query/activity-counts-metrics-plugin?context=/trident/context/analytics-context
+    - name: activity_engagement plugin
+      href: /azure/data-explorer/kusto/query/activity-engagement-plugin?context=/trident/context/analytics-context
+    - name: activity_metrics plugin
+      href: /azure/data-explorer/kusto/query/activity-metrics-plugin?context=/trident/context/analytics-context
+    - name: new_activity_metrics plugin
+      href: /azure/data-explorer/kusto/query/new-activity-metrics-plugin?context=/trident/context/analytics-context
+    - name: funnel_sequence_completion plugin
+      href: /azure/data-explorer/kusto/query/funnel-sequence-completion-plugin?context=/trident/context/analytics-context
+    - name: funnel_sequence plugin
+      href: /azure/data-explorer/kusto/query/funnel-sequence-plugin?context=/trident/context/analytics-context
+    - name: rolling_percentile plugin
+      href: /azure/data-explorer/kusto/query/rolling-percentile-plugin?context=/trident/context/analytics-context
+    - name: rows_near plugin
+      href: /azure/data-explorer/kusto/query/rows-near-plugin?context=/trident/context/analytics-context
+    - name: sequence_detect plugin
+      href: /azure/data-explorer/kusto/query/sequence-detect-plugin?context=/trident/context/analytics-context
+    - name: session_count plugin
+      href: /azure/data-explorer/kusto/query/session-count-plugin?context=/trident/context/analytics-context
+    - name: sliding_window_counts plugin
+      href: /azure/data-explorer/kusto/query/sliding-window-counts-plugin?context=/trident/context/analytics-context
+- name: Window functions
+  items:
+  - name: Window functions overview
+    href: /azure/data-explorer/kusto/query/windowsfunctions?context=/trident/context/analytics-context
+  - name: next()
+    href: /azure/data-explorer/kusto/query/nextfunction?context=/trident/context/analytics-context
+  - name: prev()
+    href: /azure/data-explorer/kusto/query/prevfunction?context=/trident/context/analytics-context
+  - name: row_cumsum()
+    href: /azure/data-explorer/kusto/query/rowcumsumfunction?context=/trident/context/analytics-context
+  - name: row_number()
+    href: /azure/data-explorer/kusto/query/rownumberfunction?context=/trident/context/analytics-context
+  - name: row_rank_dense()
+    href: /azure/data-explorer/kusto/query/rowrankdensefunction?context=/trident/context/analytics-context
+  - name: row_rank_min()
+    href: /azure/data-explorer/kusto/query/rowrankminfunction?context=/trident/context/analytics-context
+  - name: row_window_session()
+    href: /azure/data-explorer/kusto/query/row-window-session-function?context=/trident/context/analytics-context
+- name: Limits and Errors
+  items:
+  - name: Query consistency
+    href: /azure/data-explorer/kusto/concepts/queryconsistency?context=/trident/context/analytics-context
+  - name: Query limits
+    href: /azure/data-explorer/kusto/concepts/querylimits?context=/trident/context/analytics-context
+  - name: Partial query failures
+    href: /azure/data-explorer/kusto/concepts/partialqueryfailures?context=/trident/context/analytics-context
+    items:
+    - name: Result truncation
+      href: /azure/data-explorer/kusto/concepts/resulttruncation?context=/trident/context/analytics-context
+    - name: Runaway queries
+      href: /azure/data-explorer/kusto/concepts/runawayqueries?context=/trident/context/analytics-context
+    - name: Overflows
+      href: /azure/data-explorer/kusto/concepts/overflow?context=/trident/context/analytics-context
+- name: Reference material for Kusto Query Language
+  items:
+  - name: RE2 syntax
+    href: /azure/data-explorer/kusto/query/re2?context=/trident/context/analytics-context
+  - name: RE2 library
+    href: /azure/data-explorer/kusto/query/re2-library?context=/trident/context/analytics-context
+  - name: JSONPath syntax
+    href: /azure/data-explorer/kusto/query/jsonpath?context=/trident/context/analytics-context
+  - name: SQL to Kusto cheat sheet
+    displayName: Kusto
+    href: /azure/data-explorer/kusto/query/sqlcheatsheet?context=/trident/context/analytics-context
+  - name: Splunk to Kusto cheat sheet
+    href: /azure/data-explorer/kusto/query/splunk-cheat-sheet?context=/trident/context/analytics-context
+  - name: Timezones
+    href: /azure/data-explorer/kusto/query/timezone?context=/trident/context/analytics-context
+- name: Query tools
+  items:
+  - name: Kusto.Explorer
+    items:
+    - name: Kusto.Explorer installation and user interface
+      href: /azure/data-explorer/kusto/tools/kusto-explorer?context=/trident/context/analytics-context
+    - name: Using Kusto.Explorer
+      href: /azure/data-explorer/kusto/tools/kusto-explorer-using?context=/trident/context/analytics-context
+    - name: Kusto.Explorer options
+      href: /azure/data-explorer/kusto/tools/kusto-explorer-options?context=/trident/context/analytics-context
+    - name: Keyboard shortcuts
+      href: /azure/data-explorer/kusto/tools/kusto-explorer-shortcuts?context=/trident/context/analytics-context
+    - name: Code Refactoring
+      href: /azure/data-explorer/kusto/tools/kusto-explorer-refactor?context=/trident/context/analytics-context
+    - name: Code Navigation
+      href: /azure/data-explorer/kusto/tools/kusto-explorer-codenav?context=/trident/context/analytics-context
+    - name: Code Analyzer
+      href: /azure/data-explorer/kusto/tools/kusto-explorer-code-analyzer?context=/trident/context/analytics-context
+    - name: Troubleshooting Kusto.Explorer
+      href: /azure/data-explorer/kusto/tools/kusto-explorer-troubleshooting?context=/trident/context/analytics-context
+  - name: Kusto.Cli
+    href: /azure/data-explorer/kusto/tools/kusto-cli?context=/trident/context/analytics-context
+  - name: Kusto emulator
+    items:
+    - name: Kusto emulator overview
+      href: /azure/data-explorer/kusto/../kusto-emulator-overview?context=/trident/context/analytics-context
+    - name: Install the Kusto emulator
+      href: /azure/data-explorer/kusto/../kusto-emulator-install?context=/trident/context/analytics-context
