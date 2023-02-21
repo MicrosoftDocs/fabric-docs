@@ -1,6 +1,6 @@
 ---
-title: How to configure Azure Cosmos DB for NOSQL in copy activity
-description: This article explains how to copy data using Azure Cosmos DB for NOSQL.
+title: How to configure Azure Cosmos DB for NoSQL in copy activity
+description: This article explains how to copy data using Azure Cosmos DB for NoSQL.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -8,17 +8,17 @@ ms.date: 01/10/2023
 ms.custom: template-how-to 
 ---
 
-# How to configure Azure Cosmos DB for NOSQL in copy activity
+# How to configure Azure Cosmos DB for NoSQL in copy activity
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Cosmos DB for NOSQL.
+This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Cosmos DB for NoSQL.
 
 ## Supported format
 
-Azure Cosmos DB for NOSQL supports the following file formats.
+Azure Cosmos DB for NoSQL supports the following file formats.
 
 ## Supported configuration
 
@@ -36,15 +36,15 @@ For **General** tab configuration, see General.
 
 ### Source
 
-The following properties are supported for Azure Cosmos DB for NOSQL under **Source** tab of a copy activity.
+The following properties are supported for Azure Cosmos DB for NoSQL under **Source** tab of a copy activity.
 
 :::image type="content" source="./media/connector-cosmosdbnosql/source.png" alt-text="Screenshot showing source tab.":::
 
 The following three properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an Azure Cosmos DB for NOSQL connection from the connection list.
-- **Container**: Select the container that you want to use. Select Edit to enter the container name manually.
+- **Connection**:  Select an Azure Cosmos DB for NoSQL connection from the connection list.
+- **Container**: Select the container that you want to use. Select **Edit** to enter the container name manually.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -56,7 +56,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Page size**: The number of documents per page of the query result.Default is "-1" which means uses the service side dynamic page size up to 1000.
 - **Detect datetime**: Whether to detect datetime from the string values in the documents. Allowed values are: true (default), false.
-- **Preferred regions**: The preferred list of regions to connect to when retrieving data from Azure Cosmos DB. Select one preferred regions from the drop-down list after selecting +New.
+- **Preferred regions**: The preferred list of regions to connect to when retrieving data from Azure Cosmos DB. Select one preferred regions from the drop-down list after selecting **+New**.
 
     :::image type="content" source="./media/connector-cosmosdbnosql/preferredregions.png" alt-text="Screenshot showing preferred regions.":::
 
@@ -66,14 +66,14 @@ Under **Advanced**, you can specify the following fields:
 
 ## Destination
 
-The following properties are supported for Azure Cosmos DB for NOSQL under **Destination** tab of a copy activity.
+The following properties are supported for Azure Cosmos DB for NoSQL under **Destination** tab of a copy activity.
 
 :::image type="content" source="./media/connector-cosmosdbnosql/destination.png" alt-text="Screenshot showing destination tab.":::
 
 The following three properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**: Select an Azure Cosmos DB for NOSQL connection from the connection list.
+- **Connection**: Select an Azure Cosmos DB for NoSQL connection from the connection list.
 - **Container**: Select **Browse** to choose the file that you want to copy or fill in the path manually.
 
 Under **Advanced**, you can specify the following fields:
@@ -135,4 +135,4 @@ To learn more information about copy activity in Azure Data Lake Gen2 Storage, s
 
 ## Next Steps
 
-[How to create Azure Cosmos DB for NOSQL connection](connector-azure-cosmosdb-for-nosql.md)
+[How to create Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md)
