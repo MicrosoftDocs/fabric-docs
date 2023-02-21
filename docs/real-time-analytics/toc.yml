@@ -57,9 +57,13 @@ items:
     items:
     - name: linktext2
       href: ../placeholder.md
-- name: KQL reference
-  href: ../placeholder.md
-- name: Management reference
-  href: ../placeholder.md
+- name: Kusto Query Language
+  href: kusto-query-language/toc.yml
+- name: Management commands
+  href: management/toc.yml
 - name: Reference and resources
-  href: ../placeholder.md
+  items:
+  - name: API
+    href: api/toc.yml
+  - name: Functions library
+    href: functions-library/toc.yml
