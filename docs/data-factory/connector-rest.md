@@ -18,7 +18,7 @@ This article outlines the steps to create REST connection.
 
 ## Supported authentication types
 
-This REST connector supports the following authentication types for copy and dataflow Gen2 respectively.  
+This REST connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -47,7 +47,7 @@ To get started, you must complete the following prerequisites:
        
     :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the 'New connection' pane.":::
 
-## Setup your connection
+## Setup connection
 
 ### Step 1: Specify the new connection name, type, and URL.
 
@@ -56,8 +56,8 @@ To get started, you must complete the following prerequisites:
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
 **Connection name**: Specify a name for your connection.<br>
-**Connection type**: Select REST(Data pipeline) for your connection type.<br>
-**URL**: The base URL of the REST service.
+**Connection type**: Select **Web** for your connection type.<br>
+**URL**: The base URL to the web server.
 
 ### Step 2:  Select and set your authentication
 
@@ -77,7 +77,7 @@ Select **Anonymous** under **Authentication method**.
 #### Basic authentication
 
 - **Username**: The user name to use to access the REST endpoint.
-- **Password**: The password for the Username.
+- **Password**: The password for the specified username.
 
 :::image type="content" source="media/connector-rest/authentication-basic.png" alt-text="Screenshot showing that basic authentication method":::
 
@@ -93,26 +93,24 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The following connector properties in the table are supported in pipeline copy and dataflow gen2:
+The following connector properties in the table are supported in pipeline copy and Dataflow Gen2:
 
-|Name|Description|Required|Property|Copy/Dataflow gen2|
+|Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/|
-|**Connection type**|Select a type for your connection. Select **REST**.|Yes||✓/|
 |**URL**|The base URL of the REST service.|Yes||✓/|
 |**Authentication**|Go to [Authentication](#authentication) |Yes|Go to Authentication|See [Authentication](#authentication)|
-|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
 
 ### Authentication
 
 The following properties in the table are the supported authentication types.
 
-|Name|Description|Required|Property|Copy/dataflow gen2|
+|Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Anonymous**||||✓/|
 |**Basic**||||✓/|
 |- Username|The user name to use to access the REST endpoint.|Yes |||
-|- Password|The password for the Username.|Yes |||
+|- Password|The password for the specified username.|Yes |||
 
 ## Next steps
 
