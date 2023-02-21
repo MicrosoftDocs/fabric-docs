@@ -22,7 +22,6 @@ This Azure Cosmos DB for NOSQL connector is supported in Trident Project  - Data
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | Key |
 | **Lookup activity** | None | Key |
-| **GetMetadata activity** | None | Key |
 | **Dataflow Gen2 (source/destination)** |  |  |
 
 ## Next Steps

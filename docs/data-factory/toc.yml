@@ -32,3 +32,15 @@ items:
       href: connector-overview.md
     - name: Data source management
       href: data-source-management.md
+  - name: Connectors
+    items:
+    - name: Connector overview
+      href: connector-overview.md
+    - name: Azure Cosmos DB for NoSQL
+      items:
+      - name: Overview
+        href: connector-azure-cosmosdb-for-nosql-overview.md
+      - name: Set up connection
+        href: connector-azure-cosmosdb-for-nosql.md
+      - name: Configure in copy activity
+        href: connector-azure-cosmosdb-for-nosql-copy-activity.md
