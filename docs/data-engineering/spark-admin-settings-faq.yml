@@ -1,17 +1,17 @@
 ### YamlMime:FAQ
 metadata:
-  title: Spark workplace administration settings FAQ
-  description: Answers to frequently asked questions about Spark workplace administration settings.
+  title: Spark workspace administration settings FAQ
+  description: Answers to frequently asked questions about Spark workspace administration settings.
   author: santhoshravindran7
   ms.author: saravi
   ms.topic: faq
   ms.date: 02/24/2023
-title: Spark workplace administration settings FAQ
+title: Spark workspace administration settings FAQ
 summary: |
-  Find answers to frequently asked questions about Spark workplace administration settings.
+  Find answers to frequently asked questions about Spark workspace administration settings.
 
 sections:
-  - name: Workplace administration settings
+  - name: Workspace administration settings
     questions:
       - question: How do I use the RBAC roles to configure my workspace Spark settings? 
         answer: Use the Manage Access menu to add “Admin” permissions for specific users, distribution or security groups, and to make changes to the workspace, to enable the access to add, modify or delete the workspace Spark settings.

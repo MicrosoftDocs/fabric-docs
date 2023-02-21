@@ -45,7 +45,7 @@ items:
     href: ../placeholder.md
 - name: Spark administration settings
   items:
-  - name: linktext2
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Workspace settings
+    href: spark-workspace-admin-settings.md
+  - name: FAQ
+    href: spark-admin-settings-faq.md
