@@ -1,22 +1,89 @@
 items:
-- name: Data science
+- name: Data Science documentation
   href: index.yml
+- name: Overview
   items:
-  - name: Overview
-    items:
-    - name: Data science
-      href: data-science-overview.md
+  - name: What is Data Science?
+    href: data-science-overview.md
+- name: Get started
+  items:
+  - name: How to read and write data with Pandas
+    href: read-write-pandas.md
+  - name: How to accelerate data prep with Data Wrangler
+    href: data-wrangler.md
+  - name: Explore and validate data with SemPy and PBI connector
+    href: sempy-pbi-connector.md
+- name: Tutorials
+  items:
+  - name: How to use end-to-end AI samples
+    href: use-ai-samples.md
+  - name: Train a retail recommendation model
+    href: retail-recommend-model.md
+  - name: Fraud detection
+    href: fraud-detection.md
+  - name: Forecasting
+    href: time-series-forecasting.md
+  - name: Text classification
+    href: title-genre-classification.md
+  - name: Healthcare causal impact of treatments
+    href: uplift-modeling.md
+- name: Machine learning
+  items:
+  - name: Machine learning model
+    href: machine-learning-model.md
+  - name: Machine learning experiment
+    href: machine-learning-experiment.md
+  - name: Train models
+    href: train-models.md  
+  - name: Model scoring with PREDICT
+    href: model-scoring-predict.md
+- name: Use R
+  items:
+  - name: How to use the R language
+    href: use-r-language.md
+- name: SemPy
+  items:
+  - name: SemPy overview
+    href: sempy-overview.md
+  - name: Glossary
+    href: sempy-glossary.md
   - name: Get started
     items:
-    - name: How to read and write data with Pandas
-      href: read-write-pandas.md
-    - name: How to accelerate data prep with Data Wrangler
-      href: data-wrangler.md
-  - name: Machine learning
-    items:
-    - name: Machine learning experiment
-      href: machine-learning-experiment.md
-    - name: Machine learning model
-      href: machine-learning-model.md
-    - name: Model scoring with PREDICT
-      href: model-scoring-predict.md
+    - name: Setup
+      href: sempy-setup.md
+    - name: Hello world
+      href: sempy-hello-world.md
+    - name: SemPy 101
+      href: sempy-101.md
+    - name: Semantic modeling
+      href: sempy-semantic-modeling.md
+    - name: Knowledge base
+      href: sempy-knowledge-base.md
+    - name: Data processing
+      href: sempy-data-processing.md
+    - name: Semantic propagation
+      href: sempy-semantic-propagation.md
+    - name: Next steps
+      href: sempy-next-steps.md
+  - name: End-to-end Power BI example
+    href: e2e-powerbi-example.md
+  - name: How-to guides
+    items:   
+    - name: Autojoin entities
+      href: sempy-autojoin.md
+    - name: View built-in visualizations
+      href: sempy-built-in-visualizations.md
+    - name: Create column groups
+      href: sempy-column-groups.md
+    - name: Clean data with functional dependencies
+      href: sempy-data-cleaning.md
+    - name: Create geo location plots
+      href: sempy-geo-location.md
+    - name: Detect relationships between tables
+      href: sempy-relationship-detection.md
+    - name: Propagate dataframe semantics for unstack operation
+      href: sempy-unstack-semantic-propagation.md
+    - name: Knowledge base hydration from a Lakehouse
+      href: sempy-kb-hydration-lakehouse.md
+    - name: Power BI metrics integration
+      href: sempy-powerbi-metrics.md      

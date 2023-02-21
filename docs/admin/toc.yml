@@ -1,0 +1,39 @@
+items:
+- name: What is trident administration?
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is trident administration?
+    href: admin-overview.md
+- name: Get started
+  items:
+  - name: Understand TRIDENT roles
+    href: admin-roles.md
+  - name: Enable TRIDENT for your organization
+    href: admin-switch.md
+- name: Admin features in TRIDENT
+  items:
+  - name: Delegate admin rights
+    href: admin-delegate.md
+- name: Power BI admin portal
+  items:
+  - name: Power BI admin portal
+    href: admin-power-bi.md
+- name: Spark
+  items:
+  - name: Spark
+    href: admin-spark.md
+- name: Monitoring workspace
+  items:
+  - name: What is the monitoring workspace?
+    href: admin-monitoring.md  
+  - name: Audit log report
+    href: admin-audit-log.md
+  - name: Activity log report
+    href: admin-activity-log.md 
+- name: Considerations and limitations
+  items:
+  - name: Admin troubleshooting
+    href: admin-troubleshoot.yml  
+  - name: Admin limitations in TRIDENT
+    href: admin-limitations.md       

@@ -1,5 +1,5 @@
 ---
-title: Create your first pipeline ​to copy data
+title: Create your first data pipeline ​to copy data
 description: Steps to build and schedule a new data pipeline.
 ms.reviewer: jonburchel
 ms.author: xupzhou
@@ -8,7 +8,7 @@ ms.topic: quickstart
 ms.date: 01/27/2023
 ---
 
-# Quickstart: Create your first pipeline to copy data (Preview)
+# Quickstart: Create your first data pipeline to copy data (Preview)
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
@@ -47,7 +47,7 @@ Then Azure Blob Storage will be created and [moviesDB2.csv](https://github.com/k
 
 ## Copy data using copy assistant
 
-In this session, you'll start to build your first pipeline by using the following steps. These steps copy a CSV file from the input to the output of the same Azure Blob Storage using copy assistant. If you have two different Azure Blob Storage areas, you're encouraged to use a different one as a target.
+In this session, you'll start to build your first data pipeline by using the following steps. These steps copy a CSV file from the input to the output of the same Azure Blob Storage using copy assistant. If you have two different Azure Blob Storage areas, you're encouraged to use a different one as a target.
 
 ### Step 1: Start with copy assistant
 
@@ -105,7 +105,7 @@ In this session, you'll start to build your first pipeline by using the followin
 
 1. Switch to the **Home** tab and select **Run**. Then select **Save and Run**. You can now monitor the running process and check the results.
 
-   :::image type="content" source="media/create-first-pipeline/run-data-pipeline.png" alt-text="Screenshot showing steps to save and run a pipeline." lightbox="media/create-first-pipeline/run-data-pipeline.png":::
+   :::image type="content" source="media/create-first-pipeline/run-data-pipeline.png" alt-text="Screenshot showing steps to save and run a data pipeline." lightbox="media/create-first-pipeline/run-data-pipeline.png":::
 
    :::image type="content" source="media/create-first-pipeline/pipeline-running.png" alt-text="Screenshot showing how to see run status." lightbox="media/create-first-pipeline/pipeline-running.png":::
 
@@ -113,10 +113,10 @@ In this session, you'll start to build your first pipeline by using the followin
 
 2. You can also schedule the pipeline to run under a specific frequency as required. For example, the following image shows how to schedule the pipeline to run every 15 minutes.  
 
-   :::image type="content" source="media/create-first-pipeline/data-pipeline-schedule.png" alt-text="Screenshot of the pipeline schedule configuration." lightbox="media/create-first-pipeline/data-pipeline-schedule.png":::
+   :::image type="content" source="media/create-first-pipeline/data-pipeline-schedule.png" alt-text="Screenshot of the data pipeline schedule configuration." lightbox="media/create-first-pipeline/data-pipeline-schedule.png":::
 
    :::image type="content" source="media/create-first-pipeline/data-pipeline-scheduled.png" alt-text="Screenshot showing the scheduled run.":::
 
 ## Next steps
 
-- [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)](monitor-pipeline-runs.md)
+- [How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)](monitor-pipeline-runs.md)

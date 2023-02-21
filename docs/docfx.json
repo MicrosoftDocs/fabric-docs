@@ -25,7 +25,10 @@
       {
         "files": [
           "**/*.png",
-          "**/*.jpg"
+          "**/*.jpg",
+          "**/*.gif",
+          "**/*.svg",
+          "**/includes/media/**"
         ],
         "exclude": [
           "**/obj/**",
@@ -41,10 +44,14 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/trident/breadcrumb/toc.json",
+      "uhfHeaderId": "MSDocsHeader-MSPowerBI",
       "extendBreadcrumb": true,
       "feedback_system": "None",
       "ms.service": "azure"
    },
+   "searchScope": [
+    ""
+  ],
     "template": [],
     "dest": "trident-docs"
   }
