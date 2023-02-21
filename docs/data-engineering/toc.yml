@@ -48,4 +48,4 @@ items:
   - name: Workspace settings
     href: spark-workspace-admin-settings.md
   - name: FAQ
-    href: spark-admin-settings-faq.md
+    href: spark-admin-settings-faq.yml
