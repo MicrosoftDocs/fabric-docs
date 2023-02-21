@@ -14,25 +14,28 @@ sections:
   - name: Workspace administration settings
     questions:
       - question: How do I use the RBAC roles to configure my workspace Spark settings? 
-        answer: Use the Manage Access menu to add “Admin” permissions for specific users, distribution or security groups, and to make changes to the workspace, to enable the access to add, modify or delete the workspace Spark settings.
+        answer: Use the Manage Access menu to add “Admin” permissions for specific users, distribution groups, or security groups. You can also use this menu to make changes to the workspace, to provide access to add, modify, or delete the workspace Spark settings.
 
-      - question: How do I ensure the changes made at the workspace level for the Spark properties don't impact active notebook sessions, or scheduled Spark jobs?
-        answer: Every time you make a configuration change at the workspace level, it doesn't affect active Spark sessions (batch or notebook based). You must start a new notebook or batch session after the saving the new configuration settings for the settings to take effect.
+      - question: Do the changes made at the workspace level for Spark properties affect active notebook sessions or scheduled Spark jobs?
+        answer: When you make a configuration change at the workspace level, it doesn't affect active Spark sessions (batch or notebook based). You must start a new notebook or batch session after the saving the new configuration settings for the settings to take effect.
 
-      - question: Can I configure the Node Family, Spark Runtime and Spark Properties at a Capacity level?
-        answer: For Private preview, Spark Administration settings are only available at the workspace level.
+      - question: Can I configure the Node Family, Spark Runtime, and Spark Properties at a Capacity level?
+        answer: Currently, Spark Administration settings are only available at the workspace level.
 
       - question: Can I choose different node families for different notebooks and Spark job definitions in my workspace?
-        answer: For private preview, you can only select either a Memory Optimized (Default) or a Hardware Accelerated GPU based node family for the entire workspace. You aren't able to select Hardware Accelerated GPU based pools for specific notebooks in a workspace; you need to create a new workspace or modify node family settings for the current workspace  to “Hardware Accelerated GPU” based pools for compute intensive workloads.
+        answer: Currently, you can only select either a Memory Optimized (Default) or a Hardware Accelerated GPU based node family for the entire workspace. You aren't able to select Hardware Accelerated GPU based pools for specific notebooks in a workspace. You must create a new workspace or modify node family settings for the current workspace  to “Hardware Accelerated GPU” based pools for compute intensive workloads.
 
       - question: What versions of Spark are supported?
-        answer: Currently, Spark version 3.2 is the only version that's supported. In the upcoming release, support for more versions of Spark will be available.
+        answer: Currently, Spark version 3.2 is the only supported version. In the upcoming release, more versions of Spark will be available.
 
       - question: Can I configure these settings at a notebook level?
-        answer: Currently, for Private preview, the Spark Administration settings are only available at the workspace level.
+        answer: Currently, the Spark Administration settings are only available at the workspace level.
 
-      - question: Can I configure the minimum and maximum number of nodes for the selected node family? How do I enable Autoscaling for the Spark Pools in a memory optimized or hardware accelerated GPU based Node Family?
-        answer: For the private preview version, node limit configuration and autoscaling aren't available. These capabilities will be enabled as part of the future releases.
+      - question: Can I configure the minimum and maximum number of nodes for the selected node family?
+        answer: Currently, node limit configuration isn't available. This capability will be enabled in future releases.
+
+      - question: Can I enable Autoscaling for the Spark Pools in a memory optimized or hardware accelerated GPU based Node Family?
+        answer: Autoscaling isn't currently available. This capability will be enabled in future releases.
 
       - question: Is Intelligent Caching for the Spark Pools supported or enabled by default for a workspace?
-        answer: Intelligent Caching is enabled by default for the Spark pools for all workspaces as part of private preview.
+        answer: Intelligent Caching is enabled by default for the Spark pools for all workspaces.
