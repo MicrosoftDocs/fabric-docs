@@ -9,8 +9,8 @@ items:
   items:
   - name: Get started with git integration
     href: git-integration/git-get-started.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: "Git integration process"
+    href: git-integration/git-integration-process.md
 - name: Feature 1
   items:
   - name: linktext1

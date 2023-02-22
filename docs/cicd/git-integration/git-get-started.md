@@ -3,12 +3,12 @@ title: Manage a workspace with git
 description: Learn how to connect a workspace to a git repo and branch, commit changes and sync.
 author: mberdugo
 ms.author: monaberdugo
-ms.topic: how-to #Required; leave this attribute/value as-is.
+ms.topic: how-to
 ms.date: 01/17/2023
 ms.custom: 
 ---
 
-# Manage a workspace through git
+# Manage a workspace with git
 
 This article explains how to perform the following tasks:
 
@@ -33,7 +33,7 @@ To integrate git hub with your [!INCLUDE[Trident](../../includes/product-name.md
 
 ## Connect a workspace to an Azure repo
 
-Only a workspace admin can connect a workspace to Azure Repos, but once connected, anyone with permissions can work in the workspace. If you're not an admin, ask your admin for help with connecting. To connect a workspace to Azure repos, follow these steps:
+Only a workspace admin can connect a workspace to Azure Repos, but once connected, anyone with permissions can work in the workspace. If you're not an admin, ask your admin for help with connecting. To connect a workspace to Azure Repos, follow these steps:
 
 1. Sign into Power BI and navigate to the workspace you want to connect with.
 
@@ -69,15 +69,15 @@ To keep your workspace synced with the git branch, [commit any changes](#commit-
 
 ## Commit changes to git
 
-Once you're connected to a git folder, you can edit your workspace as usual. When you're ready to commit your changes to the git branch, follow these steps:
+Once you successfully connect to a git folder, edit your workspace as usual. When you're ready to commit your changes to the git branch, follow these steps:
 
 1. Go to the workspace.
-1. Select the **Source control** icon. The number of uncommitted changes is indicated on the icon.
+1. Select the **Source control** button. This button also indicates the number of uncommitted changes.
     :::image type="content" source="./media/git-get-started/source-control-number.png" alt-text="Screenshot of source control icon with the number 2 indicating that there are two changes to commit.":::
 1. Select the **Changes** tab of the **Source control** pane.
-   You'll see a list of all the changes you made, with an icon indicating if the changed item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
+   You'll see a list of all the items you changed, with an icon indicating if the changed item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
 1. Select the changes you want to commit.
-1. Add a comment in the box. If you don't add a comment, a default message will be added automatically.
+1. Add a comment in the box. If you don't add a comment, a default message is added automatically.
 1. Select **Commit**.
 
    :::image type="content" source="./media/git-get-started/save-changes.png" alt-text="Screenshot of source control window with two changes selected to commit.":::
@@ -86,11 +86,11 @@ To revert to previous status, select **Undo**.
 
 ## Update workspace from git
 
-Whenever a new commit is made to the connected git branch, a notification will appear on the relevant workspace. Pull latest changes, merges or reverts into the workspace and update live artifacts through the **Source control** pane.
+Whenever a new commit is made to the connected git branch, a notification appears on the relevant workspace. Pull latest changes, merges or reverts into the workspace and update live artifacts through the **Source control** pane.
 
 1. Go to the workspace.
 1. Select the **Source control** icon.
-1. Select the **Updates** tab of the **Source control** pane. You’ll see a list of all changed that were made to the branch since the last update.
+1. Select the **Updates** tab of the **Source control** pane. You’ll see a list of all the items that were changed in the branch since the last update.
 1. Select **Update all**.
 
 :::image type="content" source="./media/git-get-started/source-control-update.png" alt-text="Screenshot of source control pane with the update tab open and the updating all button selected.":::
@@ -111,5 +111,3 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 - You can only sync in one direction at a time. You can't do both commit and update at the same time.
 - You need write permission to the workspace to update it.
-
-## Next steps
