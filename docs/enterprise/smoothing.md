@@ -18,4 +18,4 @@ A few examples of smoothing.
 ## Next steps
 
 >[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+>[Autoscale](autoscale.md)

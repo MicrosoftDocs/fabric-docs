@@ -22,4 +22,4 @@ A few examples of autoscale and its benefits (can be in overview).
 ## Next steps
 
 >[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+>[What is capacity?](what-is-capacity.md)

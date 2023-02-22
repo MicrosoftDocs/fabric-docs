@@ -22,4 +22,4 @@ A few examples of pay go and its benefits (can be in overview).
 ## Next steps
 
 >[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+>[Autoscale](autoscale.md)

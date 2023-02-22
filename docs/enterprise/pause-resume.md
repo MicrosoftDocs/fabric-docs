@@ -18,4 +18,4 @@ Info from PMs.
 ## Next steps
 
 >[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+>[Autoscale](autoscale.md)

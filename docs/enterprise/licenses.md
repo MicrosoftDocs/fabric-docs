@@ -18,4 +18,4 @@ Explain how to buy [!INCLUDE [product-name](../includes/product-name.md)].
 ## Next steps
 
 >[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+>[Autoscale](autoscale.md)

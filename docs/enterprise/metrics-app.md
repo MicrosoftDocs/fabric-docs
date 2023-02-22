@@ -22,4 +22,4 @@ A few examples of throttling and what you can do in such cases.
 ## Next steps
 
 >[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+>[Autoscale](autoscale.md)

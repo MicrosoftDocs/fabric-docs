@@ -18,4 +18,4 @@ Insert info currently in progress with PM input.
 ## Next steps
 
 >[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+>[Autoscale](autoscale.md)

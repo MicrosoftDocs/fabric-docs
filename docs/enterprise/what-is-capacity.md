@@ -18,4 +18,4 @@ Listing the different workloads and giving an overview for each one. With info f
 ## Next steps
 
 >[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+>[Autoscale](autoscale.md)

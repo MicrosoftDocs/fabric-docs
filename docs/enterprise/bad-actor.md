@@ -22,4 +22,4 @@ Explain how to deal with items that consume too much CPU.
 ## Next steps
 
 >[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+>[Autoscale](autoscale.md)
