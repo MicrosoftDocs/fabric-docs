@@ -49,7 +49,7 @@ Only a workspace admin can connect a workspace to an Azure Repo, but once connec
 
     :::image type="content" source="./media/git-get-started/workspace-settings.png" alt-text="Screenshot of workspace settings window with git integration selected.":::
 
-1. From the dropdown menu, specify the following details about the branch you want to connect to. A workspace can only be connected to one branch and folder at a time:
+1. From the dropdown menu, specify the following details about the branch you want to connect to. You can only connect a workspace to one branch and folder at a time:
 
     - Organization
     - Project
@@ -65,7 +65,7 @@ After you connect, the workspace will display information about source control t
 
 :::image type="content" source="./media/git-get-started/source-control-panel.png" alt-text="Screenshot of source control icon and other git information.":::
 
-To keep your workspace synced with the git branch, [commit any changes](#commit-changes-to-git) you make in the workspace to the git branch, and [update your workspace](#update-workspace-from-git) whenever new commits are made to the git branch.
+To keep your workspace synced with the git branch, [commit any changes](#commit-changes-to-git) you make in the workspace to the git branch, and [update your workspace](#update-workspace-from-git) whenever anyone creates new commits to the git branch.
 
 ## Commit changes to git
 
@@ -82,7 +82,7 @@ Once you successfully connect to a git folder, edit your workspace as usual. Any
 
    :::image type="content" source="./media/git-get-started/save-changes.png" alt-text="Screenshot of source control window with two changes selected to commit.":::
 
-After the changes are committed, the content items that were committed are removed, and the workspace will point to the new commit that it is synced to.
+After the changes are committed, the content items that were committed are removed, and the workspace will point to the new commit that it's synced to.
 
 :::image type="content" source="./media/git-get-started/no-changes.png" alt-text="Screenshot of source control window stating that there are no changes to commit.":::
 
@@ -90,18 +90,18 @@ To revert to previous status, select **Undo**.
 
 ## Update workspace from git
 
-Whenever a new commit is made to the connected git branch, a notification appears in the relevant workspace. Pull latest changes, merges or reverts into the workspace and update live items through the **Source control** pane.
+Whenever anyone commits a new change to the connected git branch, a notification appears in the relevant workspace. Pull latest changes, merges or reverts into the workspace and update live items through the **Source control** pane.
 
 1. Go to the workspace.
 1. Select the **Source control** icon.
-1. Select the **Updates** tab of the **Source control** pane. You’ll see a list of all the items that were changed in the branch since the last update.
+1. Select the **Updates** tab of the **Source control** pane. You’ll see a list of all the changed items in the branch since the last update.
 1. Select **Update all**.
 
 :::image type="content" source="./media/git-get-started/source-control-update.png" alt-text="Screenshot of source control pane with the update tab open and the updating all button selected.":::
 
-After it updates successfully, the list of items that need to be updated is removed, and the workspace will point to the new commit that it is synced to.
+After it updates successfully, the list of items is removed, and the workspace will point to the new commit that it's synced to.
 
-:::image type="content" source="./media/git-get-started/no-updates.png" alt-text="Screenshot of source control window stating that the workspace is updated.":::
+:::image type="content" source="./media/git-get-started/no-updates.png" alt-text="Screenshot of source control window stating that you successfully updated the workspace.":::
 
 ## Disconnect a workspace from git
 
