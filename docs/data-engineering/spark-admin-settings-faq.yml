@@ -20,7 +20,7 @@ sections:
         answer: When you make a configuration change at the workspace level, it's not applied to active Spark sessions. This includes batch or notebook based sessions. You must start a new notebook or a batch session after saving the new configuration settings for the settings to take effect.
 
       - question: Can I configure the node family, Spark runtime, and Spark properties at a capacity level?
-        answer: Currently, Spark Administration settings are only available at the workspace level.
+        answer: Currently, the Spark administration settings are only available at the workspace level.
 
       - question: Can I choose different node families for different notebooks and Spark job definitions in my workspace?
         answer: Currently, you can only select either a Memory Optimized (Default) or a Hardware Accelerated GPU based node family for the entire workspace. You aren't able to select Hardware Accelerated GPU based pools for specific notebooks in a workspace. You must create a new workspace or modify node family settings for the current workspace  to “Hardware Accelerated GPU” based pools for compute intensive workloads.
