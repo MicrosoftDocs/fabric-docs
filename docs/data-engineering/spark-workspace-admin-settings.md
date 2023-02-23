@@ -34,7 +34,7 @@ You see the **Spark Settings** option in your left-hand menu:
 You have three options you can change on this page: **Node Family**, **Runtime version**, and **Spark Properties**.
 
 > [!NOTE]
-> If you change any of the defaults on this page, a new pool will be created and you may see reduced performance in this case. Going forward, we expect to have more flexibility and to see similar performance in more scenarios.
+> If you change any of the defaults on this page, a new pool will be created and you may see reduced performance in this case. In the future, we expect to have more flexibility and to see similar performance in more scenarios.
 
 ## Node Family
 
