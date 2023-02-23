@@ -52,7 +52,7 @@ You may choose which version of Spark you’d like to use for the workspace. The
 
 ## Spark Properties
 
-Apache Spark has many settings you can provide to optimize the experience for your scenarios. You may set those properties through the UI by selecting the **Add** option, selecting an item from the dropdown menu, and entering the value.
+Apache Spark has many settings you can provide to optimize the experience for your scenarios. You may set those properties through the UI by selecting the **Add** option. Select an item from the dropdown menu, and enter the value.
 
 :::image type="content" source="media\spark-workspace-admin-settings\spark-properties-add.png" alt-text="Screenshot showing where to select Add." lightbox="media\spark-workspace-admin-settings\spark-properties-add.png":::
 
