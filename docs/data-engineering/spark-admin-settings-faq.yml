@@ -19,7 +19,7 @@ sections:
       - question: Are the changes made to the Spark properties at the workspace level apply to the active notebook sessions or scheduled Spark jobs?
         answer: When you make a configuration change at the workspace level, it's not applied to active Spark sessions. This includes batch or notebook based sessions. You must start a new notebook or a batch session after saving the new configuration settings for the settings to take effect.
 
-      - question: Can I configure the Node Family, Spark Runtime, and Spark Properties at a Capacity level?
+      - question: Can I configure the node family, Spark runtime, and Spark properties at a capacity level?
         answer: Currently, Spark Administration settings are only available at the workspace level.
 
       - question: Can I choose different node families for different notebooks and Spark job definitions in my workspace?
