@@ -22,8 +22,6 @@ This HTTP connector is supported in Trident Project  - Data Factory with the fol
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | Basic |
 | **Lookup activity** | None | Basic |
-| **GetMetadata activity** | None | Basic |
-| **Dataflow Gen2 (source/destination)** |  |  |
 
 ## Next Steps
 
