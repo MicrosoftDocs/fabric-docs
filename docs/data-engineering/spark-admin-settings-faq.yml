@@ -1,38 +1,38 @@
 ### YamlMime:FAQ
 metadata:
   title: Spark workspace administration settings FAQ
-  description: Answers to frequently asked questions about Spark workspace administration settings.
+  description: This article lists answers to frequently asked questions about Spark workspace administration settings.
   author: santhoshravindran7
   ms.author: saravi
   ms.topic: faq
   ms.date: 02/24/2023
 title: Spark workspace administration settings FAQ
 summary: |
-  Find answers to frequently asked questions about Spark workspace administration settings.
-   
+  This article lists answers to frequently asked questions about Spark workspace administration settings.
+
   Important
   Trident is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 sections:
   - name: Workspace administration settings
     questions:
-      - question: How do I use the RBAC roles to configure my workspace Spark settings? 
-        answer: Use the Manage Access menu to add “Admin” permissions for specific users, distribution groups, or security groups. You can also use this menu to make changes to the workspace, to provide access to add, modify, or delete the workspace Spark settings.
+      - question: How do I use the RBAC roles to configure my Spark workspace settings? 
+        answer: Use the **Manage Access** menu to add **Admin** permissions for specific users, distribution groups, or security groups. You can also use this menu to make changes to the workspace and to grant access to add, modify, or delete the Spark workspace settings.
 
-      - question: Do the changes made at the workspace level for Spark properties affect active notebook sessions or scheduled Spark jobs?
-        answer: When you make a configuration change at the workspace level, it doesn't affect active Spark sessions (batch or notebook based). You must start a new notebook or batch session after the saving the new configuration settings for the settings to take effect.
+      - question: Are the changes made to the Spark properties at the workspace level apply to the active notebook sessions or scheduled Spark jobs?
+        answer: When you make a configuration change at the workspace level, it's not applied to active Spark sessions. This includes batch or notebook based sessions. You must start a new notebook or a batch session after saving the new configuration settings for the settings to take effect.
 
-      - question: Can I configure the Node Family, Spark Runtime, and Spark Properties at a Capacity level?
-        answer: Currently, Spark Administration settings are only available at the workspace level.
+      - question: Can I configure the node family, Spark runtime, and Spark properties at a capacity level?
+        answer: Currently, the Spark administration settings are only available at the workspace level.
 
       - question: Can I choose different node families for different notebooks and Spark job definitions in my workspace?
-        answer: Currently, you can only select either a Memory Optimized (Default) or a Hardware Accelerated GPU based node family for the entire workspace. You aren't able to select Hardware Accelerated GPU based pools for specific notebooks in a workspace. You must create a new workspace or modify node family settings for the current workspace  to “Hardware Accelerated GPU” based pools for compute intensive workloads.
+        answer: Currently, you can only select either a Memory Optimized (Default) or a Hardware Accelerated GPU based node family for the entire workspace. You can't select Hardware Accelerated GPU based pools for specific notebooks in a workspace. You must create a new workspace or modify node family settings for the workspace to “Hardware Accelerated GPU” based pools for compute intensive workloads.
 
       - question: What versions of Spark are supported?
-        answer: Currently, Spark version 3.2 is the only supported version. In the upcoming release, more versions of Spark will be available.
+        answer: Currently, Spark version 3.2 is the only supported version. Additional versions will be available in the upcoming release.
 
       - question: Can I configure these settings at a notebook level?
-        answer: Currently, the Spark Administration settings are only available at the workspace level.
+        answer: Currently, the Spark administration settings are only available at the workspace level.
 
       - question: Can I configure the minimum and maximum number of nodes for the selected node family?
         answer: Currently, node limit configuration isn't available. This capability will be enabled in future releases.
