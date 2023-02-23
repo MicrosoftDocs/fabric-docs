@@ -19,8 +19,8 @@ In this tutorial, learn how to create a Spark job definition in [!INCLUDE [produ
 
 To get started, you need the following prerequisites:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. Create an account for free.
-- Access to the Data Engineering Workload. Onboard onto the data engineering workload.
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create an account for free](../placeholder.md).
+- Access to the Data Engineering Workload. [Onboard onto the data engineering workload](../placeholder.md).
 
 > [!TIP]
 > For the following scenarios, main definition file and default Lakehouse context are required:

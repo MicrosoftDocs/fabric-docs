@@ -19,8 +19,8 @@ In this tutorial, learn how to explore the data in your Lakehouse with a noteboo
 
 To get started, you need the following prerequisites:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. Create an account for free.
-- Access to the Data Engineering Workload. Onboard onto the data engineering workload.
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create an account for free](../placeholder.md).
+- Access to the Data Engineering Workload. [Onboard onto the data engineering workload](../placeholder.md).
 - Read the [Lakehouse overview](lakehouse-overview.md).
 
 ## Open or create a notebook from a Lakehouse

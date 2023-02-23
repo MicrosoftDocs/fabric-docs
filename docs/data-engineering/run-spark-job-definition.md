@@ -19,8 +19,8 @@ In this tutorial, learn how to run a [!INCLUDE [product-name](../includes/produc
 
 To get started, you must have the following prerequisites:
 
-- A Trident tenant account with an active subscription. Create an account for free.
-- Access to the Data Engineering Workload. Onboard onto the data engineering workload.
+- A Trident tenant account with an active subscription. [Create an account for free](../placeholder.md).
+- Access to the Data Engineering Workload. [Onboard onto the data engineering workload](../placeholder.md).
 - Understand the Spark job definition: [Spark job definition overview](spark-job-definition.md).
 - Create a Spark job definition: [How to create a Spark job definition](create-spark-job-definition.md).
 
