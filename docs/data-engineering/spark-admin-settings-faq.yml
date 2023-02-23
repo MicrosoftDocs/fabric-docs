@@ -9,6 +9,9 @@ metadata:
 title: Spark workspace administration settings FAQ
 summary: |
   Find answers to frequently asked questions about Spark workspace administration settings.
+   
+  Important
+  Trident is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 sections:
   - name: Workspace administration settings

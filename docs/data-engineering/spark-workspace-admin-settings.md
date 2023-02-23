@@ -17,19 +17,21 @@ When you create a workspace in [!INCLUDE [product-name](../includes/product-name
 
 To make changes to the Spark settings in a workspace, you need to be assigned the admin role for that workspace. Learn more about the roles you can assign users in a workspace: [Roles in workspaces in Power BI](/power-bi/collaborate-share/service-roles-new-workspaces).
 
-To manage the Spark settings for the pool associated with your workspace, go to the **Workspace settings** in your workspace:
+To manage the Spark settings for the pool associated with your workspace:
 
-:::image type="content" source="media\spark-workspace-admin-settings\workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings." lightbox="media\spark-workspace-admin-settings\workspace-settings.png":::
+1. Go to the **Workspace settings** in your workspace:
 
-Then, choose the **Data Engineering** option to expand the menu:
+   :::image type="content" source="media\spark-workspace-admin-settings\workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings." lightbox="media\spark-workspace-admin-settings\workspace-settings.png":::
 
-:::image type="content" source="media\spark-workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\spark-workspace-admin-settings\data-engineering-menu.png":::
+1. Then, choose the **Data Engineering** option to expand the menu:
 
-You see the **Spark Settings** option in your left-hand menu:
+   :::image type="content" source="media\spark-workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\spark-workspace-admin-settings\data-engineering-menu.png":::
 
-:::image type="content" source="media\spark-workspace-admin-settings\select-spark-settings.png" alt-text="Screenshot showing where to select Spark settings." lightbox="media\spark-workspace-admin-settings\select-spark-settings.png":::
+1. You see the **Spark Settings** option in your left-hand menu:
 
-You have three options you can change on this page: **Node Family**, **Runtime version**, and **Spark Properties**.
+   :::image type="content" source="media\spark-workspace-admin-settings\select-spark-settings.png" alt-text="Screenshot showing where to select Spark settings." lightbox="media\spark-workspace-admin-settings\select-spark-settings.png":::
+
+1. You have three options you can change on this page: **Node Family**, **Runtime version**, and **Spark Properties**.
 
 > [!NOTE]
 > If you change any of the defaults on this page, a new pool will be created and you may see reduced performance in this case. Going forward, we expect to have more flexibility and to see similar performance in more scenarios.
