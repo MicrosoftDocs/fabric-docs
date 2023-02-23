@@ -1,5 +1,5 @@
 ---
-title: How to create a Google Cloud Storage connection
+title: How to create Google Cloud Storage connection
 description: This article provides information about how to do create a Google Cloud Storage connection in Trident.
 author: pennyzhou-msft
 ms.author: xupzhou
@@ -56,7 +56,7 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 
 **Connection name**: Specify a name for your connection.<br>
 **Connection type**: Select Google Cloud Storage(Data pipeline) for your connection type.<br>
-**URL**: The base URL of the Google Cloud Storage service.
+**URL**: The base URL to the Google Cloud Storage server.
 
 ### Step 2:  Select and set your authentication
 
@@ -91,9 +91,8 @@ The following connector properties in the table are supported in pipeline copy a
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/|
 |**Connection type**|Select a type for your connection. Select **Google Cloud Storage**.|Yes||✓/|
-|**URL**|The base URL of the Google Cloud Storage service.|Yes||✓/|
+|**URL**|The base URL to the Google Cloud Storage service.|Yes||✓/|
 |**Authentication**|Go to [Authentication](#authentication) |Yes|Go to Authentication|See [Authentication](#authentication)|
-|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
 
 ### Authentication
 
