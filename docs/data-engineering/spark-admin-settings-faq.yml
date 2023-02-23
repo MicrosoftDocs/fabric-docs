@@ -13,7 +13,7 @@ summary: |
 sections:
   - name: Workspace administration settings
     questions:
-      - question: How do I use the RBAC roles to configure my workspace Spark settings? 
+      - question: How do I use the RBAC roles to configure my Spark workspace settings? 
         answer: Use the Manage Access menu to add “Admin” permissions for specific users, distribution groups, or security groups. You can also use this menu to make changes to the workspace, to provide access to add, modify, or delete the workspace Spark settings.
 
       - question: Do the changes made at the workspace level for Spark properties affect active notebook sessions or scheduled Spark jobs?
