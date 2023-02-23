@@ -55,13 +55,11 @@ To get started, you must complete the following prerequisites:
 
    :::image type="content" source="media/connectors-adlsgen2/connection-details.png" alt-text="Screenshot showing how to set a new connection.":::
 
-   **Server**: Specify your Azure Data Lake Storage Gen2 server name. Go to your Azure Data Lake Storage Gen2 account interface, browse to the **Endpoints** section, and get your Data Lake Storage Gen2.
-
 In the **New connection** pane, choose **Cloud**, and specify the following fields:
 
 * **Connection name**: Specify a name for your connection.
 * **Connection type**: Select a type for your connection.
-* **Server**: Enter your Azure Data Lake Storage Gen2 server name. For example, `https://contosoadlscdm.dfs.core.windows.net`.
+* **Server**: Enter your Azure Data Lake Storage Gen2 server name. For example, `https://contosoadlscdm.dfs.core.windows.net`. Specify your Azure Data Lake Storage Gen2 server name. Go to your Azure Data Lake Storage Gen2 account interface, browse to the **Endpoints** section, and get your Azure Data Lake Storage Gen2.
 * **Full path**: Enter the full path to your Azure Data Lake Storage Gen2 container name.
 
 ### Step 2:  Select and set your authentication
@@ -107,12 +105,12 @@ For more information about shared access signatures, go to [Shared access sign
 
 To use service principal authentication, follow these steps:
 
-1.	Register an application entity in Azure Active Directory (Azure AD) by following [Register your application with an Azure AD tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the linked service:
+1. Register an application entity in Azure Active Directory (Azure AD) by following [Register your application with an Azure AD tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the linked service:
    * Tenant ID
    * Application ID
    * Application key
 
-1. Grant the service principal proper permission. For examples of how permission works in Azure Data Lake Storage Gen2, go to [Access control lists on files and directories](/azure/storage/blobs/data-lake-storage-access-control#access-control-lists-on-files-and-directories).
+2. Grant the service principal proper permission. For examples of how permission works in Azure Data Lake Storage Gen2, go to [Access control lists on files and directories](/azure/storage/blobs/data-lake-storage-access-control#access-control-lists-on-files-and-directories).
 
    * **As source**, in Storage Explorer, grant at least **Execute** permission for all upstream folders and the file system, along with **Read** permission for the files to copy. Alternatively, in Access control (IAM), grant at least the **Storage Blob Data Reader** role.
    * **As sink**, in Storage Explorer, grant at least **Execute** permission for all upstream folders and the file system, along with **Write** permission for the sink folder. Alternatively, in Access control (IAM), grant at least the **Storage Blob Data Contributor** role.

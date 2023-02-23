@@ -66,7 +66,7 @@ Under **Advanced**, you can specify the following fields:
 
        When you're using this option, don't specify a file name. For more examples, go to [File list examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#file-list-examples).
 
-    :::image type="content" source="./media/connectors-adlsgen2/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
+        :::image type="content" source="./media/connectors-adlsgen2/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
         
 - **Recursively**:  If this checkbox is selected, all files in the input folder and its subfolders will be processed recursively. If you unselect the checkbox, just the ones in the selected folder will be processed. This setting is disabled when a single file is selected.
 
