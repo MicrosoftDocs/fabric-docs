@@ -13,7 +13,7 @@ ms.date: 02/24/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-When you create a workspace in [!INCLUDE [product-name](../includes/product-name.md)], an [Apache Spark Pool](/azure/synapse-analytics/spark/apache-spark-pool-configurations) that is associated with that workspace is automatically created. With the simplified setup in [!INCLUDE [product-name](../includes/product-name.md)], there's no need to choose the node or machine sizes, as this is handled for you behind the scenes. This configuration provides a faster experience to start and run your Spark jobs in many common scenarios.
+When you create a workspace in [!INCLUDE [product-name](../includes/product-name.md)], an [Apache Spark pool](/azure/synapse-analytics/spark/apache-spark-pool-configurations) that is associated with that workspace is automatically created. With the simplified setup in [!INCLUDE [product-name](../includes/product-name.md)], there's no need to choose the node or machine sizes, as this is handled for you behind the scenes. This configuration provides a faster experience to start and run your Spark jobs in many common scenarios.
 
 To make changes to the Spark settings in a workspace, you should have the admin role for that workspace. To learn more about the roles you can assign users in a workspace, see [Roles in workspaces in Power BI](/power-bi/collaborate-share/service-roles-new-workspaces).
 
@@ -31,16 +31,16 @@ To manage the Spark settings for the pool associated with your workspace:
 
    :::image type="content" source="media\spark-workspace-admin-settings\select-spark-settings.png" alt-text="Screenshot showing where to select Spark settings." lightbox="media\spark-workspace-admin-settings\select-spark-settings.png":::
 
-1. You have three options you can change on this page: **Node Family**, **Runtime version**, and **Spark Properties**.
+1. You have three options you can change on this page: **Node family**, **Runtime version**, and **Spark properties**.
 
 > [!NOTE]
 > If you change any of the defaults on this page, a new pool will be created and you may see reduced performance in this case. In the future, we expect to have more flexibility and to see similar performance in more scenarios.
 
-## Node Family
+## Node family
 
 There are two options for machines you can select to use in your pool.
 
-:::image type="content" source="media\spark-workspace-admin-settings\node-family-options.png" alt-text="Screenshot showing the Node family options." lightbox="media\spark-workspace-admin-settings\node-family-options.png":::
+:::image type="content" source="media\spark-workspace-admin-settings\node-family-options.png" alt-text="Screenshot showing the node family options." lightbox="media\spark-workspace-admin-settings\node-family-options.png":::
 
 By default, your pool uses **Memory Optimized** machines. This is the most common machine type used for Spark and is recommended for most Spark workloads. In addition, you can select GPU-optimized machines for your pool to use. Learn more: [GPU-accelerated Apache Spark pools in Azure Synapse Analytics](/azure/synapse-analytics/spark/apache-spark-gpu-concept)
 
