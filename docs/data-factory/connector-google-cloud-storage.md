@@ -46,7 +46,7 @@ To get started, you must complete the following prerequisites:
        
     :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the 'New connection' pane.":::
 
-## Setup your connection
+## Setup connection
 
 ### Step 1: Specify the new connection name, type, and URL.
 
@@ -69,7 +69,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 #### Basic authentication
 
 - **Username**: The user name to use to access the Google Cloud Storage endpoint.
-- **Password**: The password for the Username.
+- **Password**: The password for the username.
 
 :::image type="content" source="media/connector-google-cloud/authentication-basic.png" alt-text="Screenshot showing that basic authentication method":::
 
@@ -103,7 +103,7 @@ The following properties in the table are the supported authentication types.
 |:---|:---|:---|:---|:---|
 |**Basic**||||✓/|
 |- Username|The user name to use to access the Google Cloud Storage endpoint.|Yes |||
-|- Password|The password for the Username.|Yes |||
+|- Password|The password for the username.|Yes |||
 
 ## Next steps
 
