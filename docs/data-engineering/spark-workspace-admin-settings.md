@@ -17,7 +17,7 @@ ms.date: 02/24/2023
 
 When you create a workspace in [!INCLUDE [product-name](../includes/product-name.md)], an [Apache Spark Pool](/azure/synapse-analytics/spark/apache-spark-pool-configurations) that is associated with that workspace is automatically created. With the simplified setup in [!INCLUDE [product-name](../includes/product-name.md)], there's no need to choose the node or machine sizes, as this is handled for you behind the scenes. This configuration provides a faster experience to start and run your Spark jobs in many common scenarios.
 
-To make changes to the Spark settings in a workspace, you need to be assigned the admin role for that workspace. Learn more about the roles you can assign users in a workspace: [Roles in workspaces in Power BI](/power-bi/collaborate-share/service-roles-new-workspaces).
+To make changes to the Spark settings in a workspace, you should have the admin role for that workspace. To learn more about the roles you can assign users in a workspace, see [Roles in workspaces in Power BI](/power-bi/collaborate-share/service-roles-new-workspaces).
 
 To manage the Spark settings for the pool associated with your workspace, go to the **Workspace settings** in your workspace:
 
