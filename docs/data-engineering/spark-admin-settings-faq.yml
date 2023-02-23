@@ -16,7 +16,7 @@ sections:
       - question: How do I use the RBAC roles to configure my Spark workspace settings? 
         answer: Use the **Manage Access** menu to add **Admin** permissions for specific users, distribution groups, or security groups. You can also use this menu to make changes to the workspace and to grant access to add, modify, or delete the Spark workspace settings.
 
-      - question: Do the changes made at the workspace level for Spark properties affect active notebook sessions or scheduled Spark jobs?
+      - question: Are the changes made to the Spark properties at the workspace level apply to the active notebook sessions or scheduled Spark jobs?
         answer: When you make a configuration change at the workspace level, it doesn't affect active Spark sessions (batch or notebook based). You must start a new notebook or batch session after the saving the new configuration settings for the settings to take effect.
 
       - question: Can I configure the Node Family, Spark Runtime, and Spark Properties at a Capacity level?
