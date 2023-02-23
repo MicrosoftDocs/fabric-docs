@@ -56,7 +56,7 @@ Apache Spark has many settings you can provide to optimize the experience for yo
 
 :::image type="content" source="media\spark-workspace-admin-settings\spark-properties-add.png" alt-text="Screenshot showing where to select Add." lightbox="media\spark-workspace-admin-settings\spark-properties-add.png":::
 
-You can delete items by selecting the item(s) and then clicking the **Delete** button, or simply select the delete icon after each item you wish you to delete.
+You can delete items by selecting the item(s) and then select the **Delete** button, or simply select the delete icon after each item you wish you to delete.
 
 :::image type="content" source="media\spark-workspace-admin-settings\spark-properties-delete.png" alt-text="Screenshot showing where to select Delete." lightbox="media\spark-workspace-admin-settings\spark-properties-delete.png":::
 
