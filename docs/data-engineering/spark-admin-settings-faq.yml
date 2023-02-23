@@ -29,7 +29,7 @@ sections:
         answer: Currently, Spark version 3.2 is the only supported version. Additional versions will be available in the upcoming release.
 
       - question: Can I configure these settings at a notebook level?
-        answer: Currently, the Spark Administration settings are only available at the workspace level.
+        answer: Currently, the Spark administration settings are only available at the workspace level.
 
       - question: Can I configure the minimum and maximum number of nodes for the selected node family?
         answer: Currently, node limit configuration isn't available. This capability will be enabled in future releases.
