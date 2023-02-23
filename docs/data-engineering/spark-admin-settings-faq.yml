@@ -26,7 +26,7 @@ sections:
         answer: Currently, you can only select either a Memory Optimized (Default) or a Hardware Accelerated GPU based node family for the entire workspace. You can't select Hardware Accelerated GPU based pools for specific notebooks in a workspace. You must create a new workspace or modify node family settings for the workspace to “Hardware Accelerated GPU” based pools for compute intensive workloads.
 
       - question: What versions of Spark are supported?
-        answer: Currently, Spark version 3.2 is the only supported version. In the upcoming release, more versions of Spark will be available.
+        answer: Currently, Spark version 3.2 is the only supported version. Additional versions will be available in the upcoming release.
 
       - question: Can I configure these settings at a notebook level?
         answer: Currently, the Spark Administration settings are only available at the workspace level.
