@@ -1,6 +1,6 @@
 ---
 title: Run an Apache Spark job definition
-description: Learn how to run Apache Spark job definitions.
+description: Learn how to run an Apache Spark job definition in your workspace.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
