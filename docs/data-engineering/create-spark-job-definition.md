@@ -60,7 +60,7 @@ To create a Spark job definition for PySpark, follow these steps:
 
 1. Upload Reference files as .py/.whl file. the Reference files are the files that are referenced/imported by the main definition file.
 
-1. Provides command line arguments to the job if needed.
+1. Provide command line arguments to the job if needed.
 
 1. Add the Lakehouse reference to the job. You must have at least one Lakehouse reference added to the job. This Lakehouse is the default Lakehouse context for the job.
 
