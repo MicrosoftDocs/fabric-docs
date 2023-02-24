@@ -56,7 +56,7 @@ To create a Spark job definition for PySpark, follow these steps:
 
 1. Select **PySpark (Python)** from the **Language** dropdown.
 
-1. Upload the main definition file as .py file. The main definition file is the file that contains the application logic of this job.Main definition file is mandatory to run a Spark job.
+1. Upload the main definition file as *.py* file. The main definition file is the file that contains the application logic of this *job.Main* definition file is mandatory to run a Spark job.
 
 1. Upload Reference files as .py/.whl file. the Reference files are the files that are referenced/imported by the main definition file.
 
