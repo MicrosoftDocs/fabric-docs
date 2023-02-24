@@ -91,8 +91,10 @@ The following connector properties in the table are supported in pipeline copy a
 |Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/|
-|**URL**|The base URL of the HTTP service.|Yes||✓/|
+|**Connection type**|Select **Web** for your connection type.|Yes||✓/|
+|**URL**|The base URL to the HTTP server.|Yes||✓/|
 |**Authentication**|Go to [Authentication](#authentication) |Yes|See Authentication|Go to  [Authentication](#authentication)|
+|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
 
 
 ### Authentication
