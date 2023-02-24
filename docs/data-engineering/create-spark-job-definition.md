@@ -34,7 +34,7 @@ To get started, you need the following prerequisites:
 
 The Spark job definition creation process is quick and simple and there are several ways to get started.
 
-### Entries to create a Spark job definition
+### Options to create a Spark job definition
 
 There are a few ways you can get started with the creation process:
 
