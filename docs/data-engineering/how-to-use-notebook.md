@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 02/24/2023
 ---
 
-# How to use notebooks
+# How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-[!INCLUDE [product-name](../includes/product-name.md)] Notebook is a primary code artifact for developing Apache Spark jobs and machine learning experiments, it is a web-based interactive surface used by data scientist and data engineers to write code benefiting from rich visualizations and markdown. Data engineers write code for data ingestion, data preparation, and data transformation. Data scientists also use notebooks to build machine learning solutions, including creating experiments and models, model tracking, and deployment.
+[!INCLUDE [product-name](../includes/product-name.md)] notebook is a primary code artifact for developing Apache Spark jobs and machine learning experiments, it's a web-based interactive surface used by data scientist and data engineers to write code benefiting from rich visualizations and markdown. Data engineers write code for data ingestion, data preparation, and data transformation. Data scientists also use notebooks to build machine learning solutions, including creating experiments and models, model tracking, and deployment.
 
 With a [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can:
 
@@ -23,7 +23,7 @@ With a [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can:
 - Analyze data across raw formats (CSV, txt, JSON, etc.), processed file formats (parquet, Delta Lake, etc.), leveraging powerful Spark capabilities.
 - Be productive with enhanced authoring capabilities and built-in data visualization.
 
-This article describes how to use notebooks in data science and data engineering workload.
+This article describes how to use notebooks in data science and data engineering workloads.
 
 ## Create notebooks
 
@@ -31,51 +31,65 @@ You can either create a new notebook or import an existing notebook.
 
 ### Create a new notebook
 
-Similar with other standard [!INCLUDE [product-name](../includes/product-name.md)] artifact creation, you can easily create a new notebook from [!INCLUDE [product-name](../includes/product-name.md)] Data Engineering homepage, workspace New button, and the Create hub.
+Similar with other standard [!INCLUDE [product-name](../includes/product-name.md)] artifact creation, you can easily create a new notebook from the [!INCLUDE [product-name](../includes/product-name.md)] **Data Engineering** homepage, the workspace **New** button, or the **Create Hub**.
 
 ### Import existing notebooks
 
-You can import one or more existing notebooks from your local computer to a [!INCLUDE [product-name](../includes/product-name.md)] workspace from the **Data Engineering/Data Science homepage**. Trident notebooks can recognize standard Jupyter Notebook .ipynb files, as well as source files like .py, .scala. sql, etc, and create new notebook artifacts accordingly.
+You can import one or more existing notebooks from your local computer to a [!INCLUDE [product-name](../includes/product-name.md)] workspace from the **Data Engineering/Data Science** homepage. [!INCLUDE [product-name](../includes/product-name.md)] notebooks can recognize standard Jupyter Notebook .ipynb files, and source files like .py, .scala, and .sql, and create new notebook artifacts accordingly.
+
+:::image type="content" source="media\how-to-use-notebook\new-menu-notebook-options.png" alt-text="Screenshot showing where to find notebook options on the New menu." lightbox="media\how-to-use-notebook\new-menu-notebook-options.png":::
 
 ## Save a notebook
 
-In [!INCLUDE [product-name](../includes/product-name.md)], a notebook will save automatically after you open and edit it, you don't need to worry about losing code changes. Besides, you can use **save a copy** to clone another copy in the current workspace.
+In [!INCLUDE [product-name](../includes/product-name.md)], a notebook will save automatically after you open and edit it; you don't need to worry about losing code changes. You can also use **Save a copy** to clone another copy in the current workspace.
 
-## Connect Lakehouse and notebooks
+## Connect Lakehouses and notebooks
 
-In Trident notebook now supports interacting with Lakehouse closely, you can easily add a **New** or **Existing** Lakehouse from the Lakehouse explorer.
+[!INCLUDE [product-name](../includes/product-name.md)] notebook now supports interacting with Lakehouse closely; you can easily add a **New** or **Existing** Lakehouse from the Lakehouse explorer.
 
-You can navigate to different Lakehouses in the Lakehouse explorer and set one Lakehouse as the default by pinning it, then it will be mounted to the runtime working directory and you can read/write to the default Lakehouse using local path.
+You can navigate to different Lakehouses in the Lakehouse explorer and set one Lakehouse as the default by pinning it. It will then be mounted to the runtime working directory and you can read/write to the default Lakehouse using a local path.
+
+:::image type="content" source="media\how-to-use-notebook\pin-default-lakehouse.png" alt-text="Screenshot showing where to pin a default Lakehouse." lightbox="media\how-to-use-notebook\pin-default-lakehouse.png":::
 
 > [!NOTE]
 > You need to restart the session after moving the pin to a new Lakehouse.
 
-**Add/Remove** **lakehouse**
+### Add or remove a Lakehouse
 
-By clicking the "X" icon beside the lakehouse name, the lakehouse will be removed from the notebook UX, but the lakehouse artifact is still existing in the workspace.
+Selecting the **X** icon beside a Lakehouse name removes it from the notebook UX, but the Lakehouse artifact still exists in the workspace.
 
-By clicking "Add lakehouse", user could add more lakehouse into the notebook, either by adding existing one or create a new lakehouse
+Select **Add lakehouse** to add more Lakehouses to the notebook, either by adding an existing one or creating a new Lakehouse
 
-**Explore** **lakehouse file**
+### Explore a Lakehouse file
 
-The sub-folder and file under the Tables/Files section of the lake view will be listed in a content area between lakehouse list and the notebook content. By selecting different folders within the Tables/Files section, the content area will be refreshed to show the corresponding content.
+The subfolder and file under the **Tables** and **Files** section of the **Lake** view appear in a content area between the Lakehouse list and the notebook content. Select different folders in the **Tables** and **Files** section to refresh the content area.
 
-## **Generate code cell via context menu**
+## Generate a code cell via the context menu
 
-By selecting the file (. csv,. parquet) with Right-Mouse-Click, both Spark and Pandas API are both supported to load the data. A new code cell will be generated and insert into the end of the notebook
+If you select a file(.csv, .parquet) with a right mouse click, both Spark and Pandas API are supported to load the data. A new code cell is generated and inserted into the end of the notebook.
+
+:::image type="content" source="media\how-to-use-notebook\generate-code-cell.gif" alt-text="Animated GIF showing how to insert a new code cell." lightbox="media\how-to-use-notebook\generate-code-cell.gif":::
 
 ## Collaborate in a notebook
 
-Trident Notebook is a collaborative artifact and will support multiple users to co-edit the same Notebook, it is a highly request feature during customer interview.  
+The [!INCLUDE [product-name](../includes/product-name.md)] notebook is a collaborative artifact that supports multiple users editing the same notebook, which is a highly requested feature during customer interviews.  
 
-When you open a notebook, you will enter the co-editing mode by default. If your colleagues open the same notebook artifact at the same time, you will see their profile, run output, cursor indicator, selection indicator and editing trace. By leveraging the collaborating features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
+When you open a notebook, you enter the co-editing mode by default. If your colleagues open the same notebook at the same time, you see their profile, run output, cursor indicator, selection indicator and editing trace. By leveraging the collaborating features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
+
+:::image type="content" source="media\how-to-use-notebook\collaborate-code-cell.png" alt-text="Screenshot showing a code cell with another user editing." lightbox="media\how-to-use-notebook\collaborate-code-cell.png":::
 
 ### Comment a code cell
 
-Comment is another useful feature during collaborative scenarios, we are aiming to deliver the word like comment experience in notebook. Currently we support adding the cell level comments, the @mention feature is also on the way.
+Commenting is another useful feature during collaborative scenarios; we're aiming to deliver a Word-like comment experience in notebook. Currently, we support adding cell-level comments; The @mention feature will be available in the future.
 
-1. Select **Comments** button on the notebook toolbar to open **Comments** pane.
+1. Select the **Comments** button on the notebook toolbar to open the **Comments** pane.
 
-2. Select code in the code cell, click **New** in the **Comments** pane, add comments then click **Post comment** button to save.
+   :::image type="content" source="media\how-to-use-notebook\comment-code-cell.png" alt-text="Screenshot showing where to select Comment." lightbox="media\how-to-use-notebook\comment-code-cell.png":::
 
-3. You could perform **Edit comment**, **Resolve thread**, or **Delete thread** by clicking the **More** button besides your comment.
+1. Select code in the code cell, select **New** in the **Comments** pane, add comments, and then select the post comment button to save.
+
+   :::image type="content" source="media\how-to-use-notebook\new-comment.png" alt-text="Screenshot showing where to select New." lightbox="media\how-to-use-notebook\new-comment.png":::
+
+1. You could perform **Edit comment**, **Resolve thread**, or **Delete thread** by selecting the More button besides your comment.
+
+   :::image type="content" source="media\how-to-use-notebook\comment-options.png" alt-text="Screenshot showing the comment options menu." lightbox="media\how-to-use-notebook\comment-options.png":::
