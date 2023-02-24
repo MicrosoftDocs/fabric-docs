@@ -47,7 +47,7 @@ You can add multiple Lakehouses to the same notebook. By switching the available
 
 :::image type="content" source="media\lakehouse-notebook-explore\select-different-lakehouse.png" alt-text="Screenshot showing a list of available files in the Lake view." lightbox="media\lakehouse-notebook-explore\select-different-lakehouse.png":::
 
-In the Lakehouse list, the pin icon beside the name of a Lakehouse indicates that it's the default in your current notebook. In notebook code, if only a relative path is provided to access the data on the [!INCLUDE [product-name](../includes/product-name.md)] OneLake, then the default Lakehouse is served as the root folder at run time.
+In the Lakehouse list, the pin icon next to the name of a Lakehouse indicates that it's the default in your current notebook. In the notebook code, if only a relative path is provided to access the data from the [!INCLUDE [product-name](../includes/product-name.md)] OneLake, then the default Lakehouse is served as the root folder at run time.
 
 To switch to a different default Lakehouse, move the pin icon.
 
