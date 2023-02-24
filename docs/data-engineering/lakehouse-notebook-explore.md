@@ -35,7 +35,7 @@ Select the notebook from the notebook list and then select **Add**. The notebook
 
 :::image type="content" source="media\lakehouse-notebook-explore\add-lakehouse-to-notebook.png" alt-text="Screenshot showing the Select Notebook screen." lightbox="media\lakehouse-notebook-explore\add-lakehouse-to-notebook.png":::
 
-### Open a Lakehouse with a new notebook
+### Open a Lakehouse from a new notebook
 
 You can create a new notebook in the same workspace and the current Lakehouse appears in that notebook.
 
