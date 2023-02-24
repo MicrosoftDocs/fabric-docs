@@ -1,5 +1,5 @@
 ---
-title: Explore data with a Lakehouse notebook
+title: explore the data in your Lakehouse with a notebook
 description: Learn how to use a notebook to explore your Lakehouse data.
 ms.reviewer: snehagunda
 ms.author: qixwang
