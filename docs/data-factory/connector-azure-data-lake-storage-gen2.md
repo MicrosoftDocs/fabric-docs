@@ -18,7 +18,7 @@ This article outlines the steps to create an Azure Date Lake Storage Gen2 connec
 
 ## Supported authentication types
 
-The Azure Date Lake Storage Gen2 connector supports the following authentication types for copy and dataflow Gen2 respectively.  
+The Azure Date Lake Storage Gen2 connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
 |Authentication type |Copy  |Dataflow Gen2 |
 |:---|:---|:---|
@@ -140,8 +140,7 @@ The connector properties in the following table are supported in pipeline copy a
 |**Connection name**|A name for your connection.|Yes||✓/|
 |**Connection type**|Select a type for your connection.|Yes||✓/|
 |**Server**|Enter the name of Azure Data Lake Storage Gen2 server, for example, `https://contosoadlscdm.dfs.core.windows.net`.|Yes||✓/|
-|**Full path**|Enter the full path of your Azure Data Lake Storage Gen2 container name.
-|Yes||✓/|
+|**Full path**|Enter the full path of your Azure Data Lake Storage Gen2 container name.|Yes||✓/|
 |**Authentication**|Go to [Authentication](#authentication). |Yes|Go to [Authentication](#authentication).|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are Organizational, Privacy, and Public.|Yes||✓/|
 
