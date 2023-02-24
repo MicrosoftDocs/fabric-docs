@@ -1,6 +1,6 @@
 ---
 title: How to create an Apache Spark job definition
-description: Learn how to create an Apache Spark job definition.
+description: Learn how to create an Apache Spark job definition in your workspace.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
