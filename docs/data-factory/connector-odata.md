@@ -18,7 +18,7 @@ This article outlines the steps to create OData connection.
 
 ## Supported authentication types
 
-This OData connector supports the following authentication types for copy and dataflow Gen2 respectively.  
+This OData connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -47,7 +47,7 @@ To get started, you must complete the following prerequisites:
        
     :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the 'New connection' pane.":::
 
-## Setup your connection
+## Setup connection
 
 ### Step 1: Specify the new connection name, type, and URL.
 
@@ -57,7 +57,7 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 
 **Connection name**: Specify a name for your connection.<br>
 **Connection type**: Select OData for your connection type.<br>
-**URL**: The base URL of the OData service.
+**URL**: The base URL to the OData server.
 
 ### Step 2:  Select and set your authentication
 
@@ -77,7 +77,7 @@ Select **Anonymous** under **Authentication method**.
 #### Basic authentication
 
 - **Username**: The user name to use to access the OData endpoint.
-- **Password**: The password for the user (the userName value). Mark this field as a SecureString type to store it securely in Data Factory. You can also [reference a secret stored in Azure Key Vault](/azure/data-factory/store-credentials-in-key-vault).
+- **Password**: The password for the specified username.
 
 :::image type="content" source="media/connector-odata/authentication-basic.png" alt-text="Screenshot showing that basic authentication method":::
 
@@ -95,24 +95,24 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 The following connector properties in the table are supported in pipeline copy and Dataflow gen2:
 
-|Name|Description|Required|Property|Copy/Dataflow gen2|
+|Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/|
-|**Connection type**|Select a type for your connection.|Yes||✓/|
-|**URL**|The base URL of the OData service.|Yes||✓/|
+|**Connection type**|Select OData for your connection type.|Yes||✓/|
+|**URL**|The base URL to the OData server.|Yes||✓/|
 |**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
-|**Privacy Level**|The privacy level that you want to apply. Allowed values are Organizational, Privacy, Public|Yes||✓/|
+|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
 
 ### Authentication
 
 The following properties in the table are the supported authentication type.
 
-|Name|Description|Required|Property|Copy/Dataflow gen2|
+|Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Anonymous**||||✓/|
 |**Basic**||||✓/|
 |- Username|The user name to use to access the OData endpoint.|Yes |||
-|- Password|The password for the user (the userName value). Mark this field as a SecureString type to store it securely in Data Factory. You can also [reference a secret stored in Azure Key Vault](/azure/data-factory/store-credentials-in-key-vault).|Yes |||
+|- Password|The password for the specified username.|Yes |||
 
 ## Next steps
 
