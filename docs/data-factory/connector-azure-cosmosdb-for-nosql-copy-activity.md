@@ -105,7 +105,7 @@ For **Settings** tab configuration, see Settings
 
 ## Table summary
 
-To learn more information about copy activity in Azure Data Lake Gen2 Storage, see the following table.
+To learn more information about copy activity in Azure Cosmos DB for NoSQL, see the following table.
 
 ### Source
 
@@ -117,7 +117,7 @@ To learn more information about copy activity in Azure Data Lake Gen2 Storage, s
 |**Use query** |You can choose **Table**, **Query** as your use query.|-**Table** <br>-**Query**|No |type|
 |**Page size** |The number of documents per page of the query result.Default is "-1" which means uses the service side dynamic page size up to 1000.|\<your Page size\>|No |pageSize|
 |**Delete datetime** |The files on source data store will be deleted right after being moved to the destination store. The file deletion is per file, so when copy activity fails, you will see some files have already been copied to the destination and deleted from source while others are still on source store.|Selected or unselect|No |detectDatetime|
-|**Preferred regions** |The preferred list of regions to connect to when retrieving data from Azure Cosmos DB. Select one preferred regions from the drop-down list after selecting +New.| \<your preferred regions\>|No |preferredRegions|
+|**Preferred regions** |The preferred list of regions to connect to when retrieving data from Azure Cosmos DB. Select one preferred regions from the drop-down list after selecting **+New**.| \<your preferred regions\>|No |preferredRegions|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. For more information, see [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).| \<max concurrent connections\>|No |additionalColumns|
 
 ### Destination

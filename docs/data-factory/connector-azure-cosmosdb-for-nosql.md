@@ -18,7 +18,7 @@ This article outlines the steps to create Azure Cosmos DB for NoSQL connection.
 
 ## Supported authentication types
 
-This Azure Cosmos DB for NoSQL connector supports the following authentication types for copy and dataflow Gen2 respectively.  
+This Azure Cosmos DB for NoSQL connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -49,7 +49,7 @@ To get started, you must complete the following prerequisites:
        
     :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the 'New connection' pane.":::
 
-## Setup your connection
+## Setup connection
 
 ### Step 1: Specify the new connection name, type, account endpoint and database.
 
@@ -88,26 +88,26 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The following connector properties in the table are supported in pipeline copy and Dataflow gen2:
+The following connector properties in the table are supported in pipeline copy and Dataflow Gen2:
 
-|Name|Description|Required|Property|Copy/Dataflow gen2|
+|Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/|
 |**Connection type**|Select Azure CosmosDB (Data pipeline) for your connection type.|Yes||✓/|
 |**Account Endpoint**|Enter your account endpoint URL of your Azure Cosmos DB for NoSQL.|Yes||✓/|
 |**Database**|Enter the database id of your Azure Cosmos DB for NoSQL.|Yes||✓/|
 |**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
-|**Privacy Level**|The privacy level that you want to apply. Allowed values are Organizational, Privacy, Public|Yes||✓/|
+|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
 
 ### Authentication
 
 The following properties in the table are the supported authentication type.
 
-|Name|Description|Required|Property|Copy/Dataflow gen2|
+|Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Key**||||✓/|
 |- Account key|The account key of the Azure Cosmos DB for NoSQL.|Yes |||
 
 ## Next steps
 
-- [How to create Azure Cosmos DB for NoSQL no SQL connection](connector-azure-cosmosdb-for-nosql.md)
+- [How to create Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md)
