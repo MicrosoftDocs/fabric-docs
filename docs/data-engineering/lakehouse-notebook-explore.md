@@ -27,7 +27,7 @@ To get started, you need the following prerequisites:
 
 To explore your Lakehouse data, you can add the Lakehouse to an existing notebook or create a new notebook from the Lakehouse.
 
-### Open a Lakehouse with an existing notebook
+### Open a Lakehouse from an existing notebook
 
 :::image type="content" source="media\lakehouse-notebook-explore\open-existing-notebook.png" alt-text="Screenshot showing where to select Existing notebook." lightbox="media\lakehouse-notebook-explore\open-existing-notebook.png":::
 
