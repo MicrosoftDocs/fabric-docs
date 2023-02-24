@@ -43,7 +43,7 @@ You can create a new notebook in the same workspace and the current Lakehouse ap
 
 ## Switch Lakehouses and set a default
 
-You can add multiple Lakehouses to the same notebook. By switching the visible Lakehouse in the left panel, you can explore the structure and data from different Lakehouses.
+You can add multiple Lakehouses to the same notebook. By switching the available Lakehouse in the left panel, you can explore the structure and the data from different Lakehouses.
 
 :::image type="content" source="media\lakehouse-notebook-explore\select-different-lakehouse.png" alt-text="Screenshot showing a list of available files in the Lake view." lightbox="media\lakehouse-notebook-explore\select-different-lakehouse.png":::
 
