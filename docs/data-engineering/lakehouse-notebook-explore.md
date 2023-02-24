@@ -69,7 +69,7 @@ The subfolder and file under the **Tables** and **Files** section of the **Lake*
 
 :::image type="content" source="media\lakehouse-notebook-explore\content-area.png" alt-text="Screenshot showing the location of the content area." lightbox="media\lakehouse-notebook-explore\content-area.png":::
 
-## Insert a code cell into notebook from Lakehouse data
+## Insert a code cell into notebook 
 
 You can generate or insert code cells in two different ways, depending on your data or file type.
 
