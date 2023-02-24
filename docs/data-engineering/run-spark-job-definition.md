@@ -39,6 +39,6 @@ There are two ways a user could run a Spark job definition:
 > [!IMPORTANT]
 > To run a Spark job definition, it must have the main definition file and the default Lakehouse context.
 
-Once you've submitted the run, after three to five seconds, a new row appears under the **Runs** tab. The row shows details about your new run: the **Status** column shows the near real time status of the job and the **Run Kind** column shows if the job is manual or scheduled.
+Once you've submitted the run, after three to five seconds, a new row appears under the **Runs** tab. The row shows details about your new run. The **Status** column shows the near real-time status of the job and the **Run Kind** column shows if the job is manual or scheduled.
 
 :::image type="content" source="media\run-spark-job-definition\runs-tab-details.png" alt-text="Screenshot of Runs list details." lightbox="media\run-spark-job-definition\runs-tab-details.png":::
