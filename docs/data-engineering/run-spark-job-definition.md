@@ -32,7 +32,7 @@ There are two ways a user could run a Spark job definition:
 
   :::image type="content" source="media\run-spark-job-definition\select-run.png" alt-text="Screenshot showing where to select Run." lightbox="media\run-spark-job-definition\select-run.png":::
 
-- Schedule a Spark job definition artifact by setting up the schedule plan in the **Settings** -> **Schedule** tab. Select **Settings** on the toolbar, then select the **Schedule** tab.
+- Schedule a Spark job definition artifact by setting up the schedule plan under the **Settings** tab.  Select **Settings** on the toolbar, then select the **Schedule** tab.
 
   :::image type="content" source="media\run-spark-job-definition\schedule-spark-job-definition.png" alt-text="Screenshot where to select Schedule on the Settings tab." lightbox="media\run-spark-job-definition\schedule-spark-job-definition.png":::
 
