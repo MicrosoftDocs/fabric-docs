@@ -73,7 +73,7 @@ The subfolder and file under the **Tables** and **Files** section of the **Lake 
 
 You can generate or insert code cells in two different ways, depending on your data or file type.
 
-### Generate a code cell via the context menu
+### Generate a code cell from the context menu
 
 If you select a file(.csv, .parquet) with a right mouse click, both Apache Spark and Pandas API are supported to load the data. A new code cell is generated and inserted into the end of the notebook.
 
