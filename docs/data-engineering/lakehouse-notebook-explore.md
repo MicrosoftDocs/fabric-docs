@@ -75,7 +75,7 @@ You can generate or insert code cells in two different ways, depending on your d
 
 ### Generate a code cell from the context menu
 
-If you select a file(.csv, .parquet) with a right mouse click, both Apache Spark and Pandas API are supported to load the data. A new code cell is generated and inserted into the end of the notebook.
+Right-click on a file and select the CSV or Parquet file. Both Apache Spark and Pandas API are supported to load the data. A new code cell is generated and inserted at the end of the notebook.
 
 :::image type="content" source="media\lakehouse-notebook-explore\add-code-cell.png" alt-text="Screenshot showing inserted code cell." lightbox="media\lakehouse-notebook-explore\add-code-cell.png":::
 
