@@ -81,7 +81,7 @@ Right-click on a file and select the CSV or Parquet file. Both Apache Spark and 
 
 ### Generate a code cell via drag and drop
 
-You can also drag and drop the supported file (.csv or .parquet) into the notebook to insert a code cell. By default, the Spark API is used to generate the code.
+You can also drag and drop the supported CSV or Parquet file into the notebook to insert a code cell. By default, the Spark API is used to generate the code.
 
 :::image type="content" source="media\lakehouse-notebook-explore\drag-drop-code-cell.png" alt-text="Screenshot showing where to drag and drop a code cell." lightbox="media\lakehouse-notebook-explore\drag-drop-code-cell.png":::
 
