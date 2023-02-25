@@ -65,7 +65,7 @@ Select **Add Lakehouse** to add more Lakehouses to the notebook. You can either 
 
 ## Explore the Lakehouse file
 
-The subfolder and file under the **Tables** and **Files** section of the **Lake** view appear in a content area between Lakehouse list and the notebook content. Select a different folder in the **Tables** and **Files** section to change what appears in the content area.
+The subfolder and file under the **Tables** and **Files** section of the **Lake view** appear in a content area between the Lakehouse list and the notebook content. Select a different folder in the **Tables** and **Files** sections to change what appears in the content area.
 
 :::image type="content" source="media\lakehouse-notebook-explore\content-area.png" alt-text="Screenshot showing the location of the content area." lightbox="media\lakehouse-notebook-explore\content-area.png":::
 
