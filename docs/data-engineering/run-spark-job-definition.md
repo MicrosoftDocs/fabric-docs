@@ -1,6 +1,6 @@
 ---
 title: Run an Apache Spark job definition
-description: Learn how to run Apache Spark job definitions.
+description: Learn how to run an Apache Spark job definition in your workspace.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
@@ -32,13 +32,13 @@ There are two ways a user could run a Spark job definition:
 
   :::image type="content" source="media\run-spark-job-definition\select-run.png" alt-text="Screenshot showing where to select Run." lightbox="media\run-spark-job-definition\select-run.png":::
 
-- Schedule a Spark job definition artifact by setting up the schedule plan in the **Settings** -> **Schedule** tab. Select **Settings** on the toolbar, then select the **Schedule** tab.
+- Schedule a Spark job definition artifact by setting up the schedule plan under the **Settings** tab.  Select **Settings** on the toolbar, then select the **Schedule** tab.
 
   :::image type="content" source="media\run-spark-job-definition\schedule-spark-job-definition.png" alt-text="Screenshot where to select Schedule on the Settings tab." lightbox="media\run-spark-job-definition\schedule-spark-job-definition.png":::
 
 > [!IMPORTANT]
 > To run a Spark job definition, it must have the main definition file and the default Lakehouse context.
 
-Once you've submitted the run, after three to five seconds, a new row appears under the **Runs** tab. The row shows details about your new run: the **Status** column shows the near real time status of the job and the **Run Kind** column shows if the job is manual or scheduled.
+Once you've submitted the run, after three to five seconds, a new row appears under the **Runs** tab. The row shows details about your new run. The **Status** column shows the near real-time status of the job and the **Run Kind** column shows if the job is manual or scheduled.
 
 :::image type="content" source="media\run-spark-job-definition\runs-tab-details.png" alt-text="Screenshot of Runs list details." lightbox="media\run-spark-job-definition\runs-tab-details.png":::

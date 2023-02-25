@@ -1,6 +1,6 @@
 ---
 title: How to create an Apache Spark job definition
-description: Learn how to create an Apache Spark job definition.
+description: Learn how to create an Apache Spark job definition in your workspace.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
@@ -34,7 +34,7 @@ To get started, you need the following prerequisites:
 
 The Spark job definition creation process is quick and simple and there are several ways to get started.
 
-### Entries to create a Spark job definition
+### Options to create a Spark job definition
 
 There are a few ways you can get started with the creation process:
 
@@ -56,17 +56,17 @@ To create a Spark job definition for PySpark, follow these steps:
 
 1. Select **PySpark (Python)** from the **Language** dropdown.
 
-1. Upload the main definition file as .py file. The main definition file is the file that contains the application logic of this job.Main definition file is mandatory to run a Spark job.
+1. Upload the main definition file as *.py* file. The main definition file is the file that contains the application logic of this *job.Main* definition file is mandatory to run a Spark job.
 
 1. Upload Reference files as .py/.whl file. the Reference files are the files that are referenced/imported by the main definition file.
 
-1. Provides command line arguments to the job if needed.
+1. Provide command line arguments to the job if needed.
 
 1. Add the Lakehouse reference to the job. You must have at least one Lakehouse reference added to the job. This Lakehouse is the default Lakehouse context for the job.
 
 :::image type="content" source="media\create-spark-job-definition\main-definition-file-example.png" alt-text="Screenshot showing an example of a populated main definition file screen." lightbox="media\create-spark-job-definition\main-definition-file-example.png":::
 
-In this example, we've created a Spark job definition named sjd005 for PySpark, uploaded the .py file (createTablefromCSVwithdependency.py) as the main definition file, uploaded the .py file(Constant.py) as reference file, and added the Lakehouse reference(LH001 and LH002) to the job. LH001 is the default Lakehouse context.
+In this example, we've created a Spark job definition named **sjd005** for PySpark.  Uploaded the *createTablefromCSVwithdependency.py* file as the main definition file, the *Constant.py* file as the reference file, and added the Lakehouse references *LH001* and *LH002* to the job. *LH001* is the default Lakehouse context.
 
 ### Create a Spark job definition for Scala/Java
 

@@ -1,5 +1,5 @@
 ---
-title: Load data with a Lakehouse notebook
+title: Load data into your Lakehouse with a notebook
 description: Learn how to use a notebook to load data into your Lakehouse.
 ms.reviewer: snehagunda
 ms.author: qixwang
@@ -15,11 +15,11 @@ ms.date: 02/24/2023
 
 In this tutorial, learn how to load data into your Lakehouse with a notebook.
 
-## Load data into a Lakehouse with an Apache Spark notebook
+## Load data with an Apache Spark notebook
 
 To load data into a Lakehouse, you can write Spark code either in an existing notebook or create a new notebook. In the code cell of the notebook, use the following code example to read data from the source and load it into **Files**, **Tables**, or both sections of your Lakehouse.
 
-```
+```python
 df = spark.read.parquet("location to read from") 
 
 # Keep it if you want to save dataframe as CSV files
