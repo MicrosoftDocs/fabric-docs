@@ -59,7 +59,7 @@ Selecting the **X** icon next to a Lakehouse name removes it from the notebook, 
 
 :::image type="content" source="media\lakehouse-notebook-explore\remove-lakehouse.png" alt-text="Screenshot showing where to remove a Lakehouse." lightbox="media\lakehouse-notebook-explore\remove-lakehouse.png":::
 
-Select **Add Lakehouse** to add more Lakehouses into the notebook, either by adding an existing one or creating a new one.
+Select **Add Lakehouse** to add more Lakehouses to the notebook. You can either add an existing one or creat a new one.
 
 :::image type="content" source="media\lakehouse-notebook-explore\add-lakehouse-in-menu.png" alt-text="Screenshot showing where to find the Add Lakehouse option." lightbox="media\lakehouse-notebook-explore\add-lakehouse-in-menu.png":::
 
