@@ -45,7 +45,7 @@ Only a workspace admin can connect a workspace to an Azure Repo, but once connec
     > If you don't see the Workspace settings icon, select the ellipsis (three dots) the then workspace settings.
     > :::image type="content" source="./media/git-get-started/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed from ellipsis.":::
 
-1. Select Git integration
+1. Select Git integration. You’ll automatically be signed into the Azure Repo registered to the Azure AD user signed into the workspace.
 
     :::image type="content" source="./media/git-get-started/workspace-settings.png" alt-text="Screenshot of workspace settings window with git integration selected.":::
 
@@ -117,5 +117,6 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
+- The Azure AD user you're using in Trident is the same user you need to use in Azure Repos. There’s no way to edit or change users in Azure Repos.
 - You can only sync in one direction at a time. You can't do both commit and update at the same time.
 - You need write permission to the workspace to update it.
