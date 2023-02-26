@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
 ms.date: 02/01/2023
-
+ms.search.form: product-kusto
 ---
 
 # Tutorial: Use a Jupyter notebook and kqlmagic to query a KQL Database
