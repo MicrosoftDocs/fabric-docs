@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.date: 01/10/2023
-
+ms.search.form: product-kusto
 ---
 
 # Create a database
