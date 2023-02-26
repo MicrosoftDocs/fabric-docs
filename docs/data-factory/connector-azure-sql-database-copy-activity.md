@@ -16,10 +16,6 @@ ms.custom: template-how-to
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure SQL Database.
 
-## Supported format
-
-Azure SQL Database supports the following file formats. 
-
 ## Supported configuration
 
 For the configuration of each tab under copy activity, go to the following sections respectively.
