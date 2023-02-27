@@ -43,7 +43,7 @@ The following properties are supported for Azure Cosmos DB for NoSQL under **Sou
 The following three properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an Azure Cosmos DB for NoSQL connection from the connection list.
+- **Connection**:  Select an Azure Cosmos DB for NoSQL connection from the connection list. If no connection exists, then create a new Azure Cosmos DB for NoSQL connection by selecting **New**.
 - **Container**: Select the container that you want to use. Select **Edit** to enter the container name manually.
 
 Under **Advanced**, you can specify the following fields:
@@ -111,7 +111,7 @@ To learn more information about copy activity in Azure Cosmos DB for NoSQL, see 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|-**Workspace**<br> -**External**<br>  -**Sample dataset**<br>|Yes|type|
+|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection\> |Yes|connection|
 |**Container** | The container of your source data.|\<container of your source\>|Yes |container <br> fileName|
 |**Use query** |You can choose **Table**, **Query** as your use query.|-**Table** <br>-**Query**|No |type|
@@ -124,7 +124,7 @@ To learn more information about copy activity in Azure Cosmos DB for NoSQL, see 
 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|-**Workspace**<br> -**External** |Yes|type|
+|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to destination data store.|\<your connection\>|Yes|connection|
 |**Container**|The container of your destination data.|\<container of source\> |Yes |container <br> fileName|
 |**Write behavior** |Describes how to write data to Azure Cosmos DB. Allowed values: insert and upsert. The behavior of upsert is to replace the document if a document with the same ID already exists; otherwise, insert the document.|- **Add dynamic content**<br>- **Insert**<br>- **Upsert**|No |writeBehavior|
