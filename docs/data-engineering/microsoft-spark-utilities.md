@@ -17,7 +17,7 @@ Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easil
 
 ## File system utilities
 
-_mssparkutils.fs_ provides utilities for working with various file systems, including Azure Data Lake Storage Gen2 (ADLS Gen2) and Azure Blob Storage. Make sure you configure access to [Azure Data Lake Storage Gen2](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) and [Azure Blob Storage](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) appropriately.
+*mssparkutils.fs* provides utilities for working with various file systems, including Azure Data Lake Storage Gen2 (ADLS Gen2) and Azure Blob Storage. Make sure you configure access to [Azure Data Lake Storage Gen2](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) and [Azure Blob Storage](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) appropriately.
 
 Run the following commands for an overview of the available methods:
 
@@ -157,9 +157,9 @@ mssparkutils.notebook.run("Sample1", 90, {"input": 20 })
 
 Exits a notebook with a value. You can run nesting function calls in a notebook interactively or in a pipeline.
 
-- When you call an _exit()_ function a notebook interactively, Azure Synapse throws an exception, skip running subsequence cells, and keep the Spark session alive.
-- When you orchestrate a notebook that calls an _exit()_ function in a Synapse pipeline, Azure Synapse returns an exit value, complete the pipeline run, and stop the Spark session.
-- When you call an _exit()_ function in a notebook being referenced, Azure Synapse will stop the further execution in the notebook being referenced, and continue to run next cells in the notebook that call the _run()_ function. For example: Notebook1 has three cells and calls an _exit()_ function in the second cell. Notebook2 has five cells and calls _run(notebook1)_ in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the _exit()_ function. Notebook2 continues to run its fourth cell and fifth cell.
+- When you call an *exit()* function a notebook interactively, Azure Synapse throws an exception, skip running subsequence cells, and keep the Spark session alive.
+- When you orchestrate a notebook that calls an *exit()* function in a Synapse pipeline, Azure Synapse returns an exit value, complete the pipeline run, and stop the Spark session.
+- When you call an *exit()* function in a notebook being referenced, Azure Synapse will stop the further execution in the notebook being referenced, and continue to run next cells in the notebook that call the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
 
 ```
 mssparkutils.notebook.exit("value string")
@@ -203,16 +203,16 @@ Sample1 run success with input is 20
 
 ## Session management - stop an interactive session
 
-Instead of manually selecting the stop button, sometimes it's more convenient to stop an interactive session by calling an API in the code. For such cases, we provide an API _mssparkutils.session.stop()_ to support stopping the interactive session via code, it's available for Scala and Python.
+Instead of manually selecting the stop button, sometimes it's more convenient to stop an interactive session by calling an API in the code. For such cases, we provide an API *mssparkutils.session.stop()* to support stopping the interactive session via code, it's available for Scala and Python.
 
 ```
 mssparkutils.session.stop()
 ```
 
-_mssparkutils.session.stop()_ API stops the current interactive session asynchronously in the background, it stops the Spark session and release resources occupied by the session so they're available to other sessions in the same pool.
+*mssparkutils.session.stop()* API stops the current interactive session asynchronously in the background, it stops the Spark session and release resources occupied by the session so they're available to other sessions in the same pool.
 
 > [!NOTE]
-> We don't recommend call language built-in APIs like _sys.exit_ in Scala or _sys.exit()_ in Python in your code, because such APIs just kill the interpreter process, leaving the Spark session alive and the resources not released.
+> We don't recommend call language built-in APIs like *sys.exit* in Scala or *sys.exit()* in Python in your code, because such APIs just kill the interpreter process, leaving the Spark session alive and the resources not released.
 
 ## File mount and unmount
 
@@ -222,11 +222,11 @@ The [!INCLUDE [product-name](../includes/product-name.md)] notebook team has bui
 
 This section illustrates how to mount Azure Data Lake Storage Gen2 step by step as an example. Mounting Blob Storage works similarly.
 
-The example assumes that you have one Data Lake Storage Gen2 account named _storegen2_. The account has one container named _mycontainer_ that you want to mount to _/test_ in your Spark pool.
+The example assumes that you have one Data Lake Storage Gen2 account named *storegen2*. The account has one container named *mycontainer* that you want to mount to */test* in your Spark pool.
 
-:::image type="content" source="media\microsoft-spark-utilities\" alt-text="" lightbox="":::
+:::image type="content" source="media\microsoft-spark-utilities\mount-container-example.png" alt-text="Screenshot showing where to select a container to mount." lightbox="media\microsoft-spark-utilities\mount-container-example.png":::
 
-To mount the container called _mycontainer_, _mssparkutils_ first needs to check whether you have the permission to access the container. Currently, [!INCLUDE [product-name](../includes/product-name.md)] supports two authentication methods for the trigger mount operation: _accountKey_ and _sastoken_.
+To mount the container called *mycontainer*, *mssparkutils* first needs to check whether you have the permission to access the container. Currently, [!INCLUDE [product-name](../includes/product-name.md)] supports two authentication methods for the trigger mount operation: *accountKey* and *sastoken*.
 
 ### Mount via shared access signature token or account key
 
@@ -252,7 +252,7 @@ mssparkutils.fs.mount(
 )
 ```
 
-For sastoken, reference the following sample code:
+For *sastoken*, reference the following sample code:
 
 ```
 from notebookutils import mssparkutils  
@@ -274,7 +274,7 @@ mssparkutils.fs.mount(
 
 ### How to mount a lakehouse
 
-Here's the sample code of mounting a Lakehouse to _/test_.
+Here's the sample code of mounting a Lakehouse to */test*.
 
 ```
 from notebookutils import mssparkutils 
@@ -284,24 +284,24 @@ mssparkutils.fs.mount(
 )
 ```
 
-### Access files under the mount point by using the mssparktuils fs API
+### Access files under the mount point by using the *mssparktuils fs* API
 
-The main purpose of the mount operation is to let customers access the data stored in a remote storage account by using a local file system API. You can also access the data by using the _mssparkutils fs_ API with a mounted path as a parameter. The path format used here is a little different.
+The main purpose of the mount operation is to let customers access the data stored in a remote storage account by using a local file system API. You can also access the data by using the *mssparkutils fs* API with a mounted path as a parameter. The path format used here's a little different.
 
-Assume that you mounted the Data Lake Storage Gen2 container _mycontainer_ to _/test_ by using the mount API. When you access the data by using a local file system API, the path format is like this:
+Assume that you mounted the Data Lake Storage Gen2 container *mycontainer* to */test* by using the mount API. When you access the data by using a local file system API, the path format is like this:
 
 ```
 /trident/test/{filename}
 ```
 
-When you want to access the data by using the mssparkutils fs API, we recommend using a _getMountPath()_ to get the accurate path:
+When you want to access the data by using the mssparkutils fs API, we recommend using a *getMountPath()* to get the accurate path:
 
 ```
 path = mssparkutils.fs.getMountPath("/test")
 ```
 
 > [!NOTE]
-> The “/” of mount point is necessary in _mssparkutils.fs.getMountPath(_), and it doesn’t verify the validity of the mount point now.
+> The “/” of mount point is necessary in *mssparkutils.fs.getMountPath()*, and it doesn’t verify the validity of the mount point now.
 
 - List directories:
 
@@ -336,7 +336,7 @@ with open(mssparkutils.fs.getMountPath('/test2') + "/myFile.txt", "w") as f:
 
 ### How to check existing mount points
 
-You can use _mssparkutils.fs.mounts_ API to check all existing mount point info:
+You can use *mssparkutils.fs.mounts* API to check all existing mount point info:
 
 ```
 mssparkutils.fs.mounts()
@@ -344,7 +344,7 @@ mssparkutils.fs.mounts()
 
 ### How to unmount the mount point
 
-Use the following code to unmount your mount point _(/test_ in this example):
+Use the following code to unmount your mount point *(/test* in this example):
 
 ```
 mssparkutils.fs.unmount("/test")
@@ -352,10 +352,14 @@ mssparkutils.fs.unmount("/test")
 
 ### Known limitations
 
-The _mssparkutils fs help_ function hasn't added the description about the mount/unmount part yet.
+The *mssparkutils fs help* function hasn't added the description about the mount/unmount part yet.
 
-The current mount is a job level configuration; notebook level and workspace level design work will be available soon. So, always use _mounts_ API to check if mount point exists or not available.
+The current mount is a job level configuration; notebook level and workspace level design work will be available soon. So, always use *mounts* API to check if mount point exists or not available.
 
 The unmount mechanism isn't automatic. When the application run finishes, to unmount the mount point to release the disk space, you need to explicitly call an unmount API in your code. Otherwise, the mount point will still exist in the node after the application run finishes.
 
 Mounting an ADLS Gen1 storage account isn't supported.
+
+## Next steps
+
+- [Library management](library-management.md)

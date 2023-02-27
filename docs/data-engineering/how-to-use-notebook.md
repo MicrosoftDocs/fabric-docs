@@ -93,3 +93,7 @@ Commenting is another useful feature during collaborative scenarios; we're aimin
 1. You could perform **Edit comment**, **Resolve thread**, or **Delete thread** by selecting the More button besides your comment.
 
    :::image type="content" source="media\how-to-use-notebook\comment-options.png" alt-text="Screenshot showing the comment options menu." lightbox="media\how-to-use-notebook\comment-options.png":::
+
+## Next steps
+
+- [Author and execute the notebook](author-execute-notebook.md)

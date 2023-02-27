@@ -392,3 +392,7 @@ Using the following keystroke shortcuts, you can more easily navigate and run co
 | **Indent** | Ctrl + ] |
 | **Dedent** | Ctrl + [ |
 | **Switch to command mode** | Esc |
+
+## Next steps
+
+- [Notebook visualization](notebook-visualization.md)
