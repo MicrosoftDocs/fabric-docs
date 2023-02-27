@@ -16,10 +16,6 @@ ms.custom: template-how-to
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to OData.
 
-## Supported format
-
-OData supports the following file formats.
-
 ## Supported configuration
 
 For the configuration of each tab under copy activity, see the following sections respectively.
@@ -75,7 +71,7 @@ To learn more information about copy activity in OData, see the following table.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|-**Workspace**<br> -**External**<br>  -**Sample dataset**<br>|Yes|type|
+|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection\> |Yes|connection|
 |**Path** | Select the container that you want to use.|\<connection of your source\>|Yes |path|
 |**Use query** |You can choose **Table**, **Query** as your use query.|-**Table** <br>-**Query**|No |query|

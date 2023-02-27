@@ -56,7 +56,7 @@ To get started, you must complete the following prerequisites:
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
 **Connection name**: Specify a name for your connection.<br>
-**Connection type**: Select OData for your connection type.<br>
+**Connection type**: Select OData(bold) for your connection type.<br>
 **URL**: The base URL to the OData server.
 
 ### Step 2:  Select and set your authentication
@@ -93,7 +93,7 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The following connector properties in the table are supported in pipeline copy and Dataflow gen2:
+The following connector properties in the table are supported in pipeline copy and Dataflow Gen2:
 
 |Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
