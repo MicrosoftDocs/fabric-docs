@@ -133,7 +133,7 @@ The following tables contain more information about the copy activity in Azure B
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|  **External**|Yes|type *(under `typeProperties` -> `source` ->`storeSettings`)*:<br> AzureBlobStorageReadSettings|
+|**Data store type**|Your data store type.|  **External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**File path** | The file path of your source data.|\<file path of your source>|Yes |container <br> fileName|
 |**File path type** |The file path type that you want to use.|• File path <br>• Prefix<br>• Wildcard folder path, Wildcard file name<br>• List of files|No |<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
@@ -145,7 +145,7 @@ The following tables contain more information about the copy activity in Azure B
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External** |Yes|type *(under `typeProperties` -> `sink` ->`storeSettings`)*:<br> AzureBlobStorageWriteSettings|
+|**Data store type**|Your data store type.|**External** |Yes|/|
 |**Connection** |Your connection to the destination data store.|\<your connection>|Yes|connection|
 |**File path**|The file path of your destination data.|File path of the source |Yes |container <br> fileName|
 |**Copy behavior** |Defines the behavior when copying files from one file system, like storage, to the other (for example, from one blob storage to another).|• None<br>• Add dynamic content<br>• Flatten hierarchy<br>• Preserve hierarchy|No |copyBehavior|
