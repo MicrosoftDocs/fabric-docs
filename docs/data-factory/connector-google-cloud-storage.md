@@ -56,7 +56,7 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 
 **Connection name**: Specify a name for your connection.<br>
 **Connection type**: Select Google Cloud Storage(Data pipeline) for your connection type.<br>
-**URL**: The base URL to the Google Cloud Storage server.
+**URL**: Specify the custom GCS endpoint as `https://storage.googleapis.com`.
 
 ### Step 2:  Select and set your authentication
 
