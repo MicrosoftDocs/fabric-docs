@@ -18,7 +18,16 @@ This article outlines how to use the copy activity in data pipeline to copy data
 
 ## Supported format
 
-Google Cloud Storage supports the following file formats.
+Google Cloud Storage supports the following file formats. Refer to each article for format-based settings.
+
+- Avro format
+- Binary format
+- Delimited text format
+- Excel format
+- JSON format
+- ORC format
+- Parquet format
+- XML format
 
 ## Supported configuration
 
@@ -92,7 +101,7 @@ The following tables contain more information about the copy activity in Google 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|•**Workspace**<br> •**External**<br>  •**Sample dataset**<br>|Yes|type|
+|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**File path** | The file path of your source data.|\<file path of your source >|Yes |container <br> fileName|
 |**File path type** |The file path type that you want to use.|• File path <br>• Prefix<br>• Wildcard folder path<br>•List of files|No |<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• path to file list|
