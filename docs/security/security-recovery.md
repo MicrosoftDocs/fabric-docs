@@ -4,7 +4,7 @@ description: Learn how high availability, failover, and disaster recovery work i
 author: paulinbar
 ms.author: painbar
 ms.topic: concept
-ms.date: 12/27/2022
+ms.date: 02/27/2023
 ---
 
 # High availability, failover, and disaster recovery
