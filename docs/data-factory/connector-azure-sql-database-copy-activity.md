@@ -155,7 +155,7 @@ To learn more information about copy activity in Azure SQL Database, see the fol
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|type *(under `typeProperties` -> `source`)*:<br> AzureSqlSource|
+|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
 |**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|type *(under `typeProperties` -> `source` -> `datasetSettings`)*: <br> AzureSqlTable|
 |**Table** | Your source data table. |< name of your destination table>|Yes |schema <br> table|
@@ -169,7 +169,7 @@ To learn more information about copy activity in Azure SQL Database, see the fol
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|type *(under `typeProperties` -> `sink`)*:<br> AzureSqlSink|
+|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to destination data store.|< your connection >|Yes|connection|
 |**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|type *(under `typeProperties` -> `sink` -> `datasetSettings`)*: <br> AzureSqlTable|
 |**Table**|Your destination data table.| \<name of your destination table\> |Yes |schema <br> table|
