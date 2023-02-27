@@ -18,7 +18,16 @@ This article outlines how to use the copy activity in data pipeline to copy data
 
 ## Supported format
 
-HTTP supports the following file formats.
+HTTP supports the following file formats. Refer to each article for format-based settings.
+
+- Avro format
+- Binary format
+- Delimited text format
+- Excel format
+- JSON format
+- ORC format
+- Parquet format
+- XML format
 
 ## Supported configuration
 
@@ -73,9 +82,9 @@ To learn more information about copy activity in HTTP, see the following table.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|•**Workspace**<br> •**External**<br>  •**Sample dataset**<br>|Yes|type|
+|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
-|**Connection type** | The connection of your source data.|\<connection of your source>|Yes |connection type|
+|**Connection type** | The connection of your source data.|\<connection of your source>|Yes |/|
 |**Relative URL** |A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the linked service definition is used. The HTTP connector copies data from the combined URL: `/[relative URL specified]`.| \<your relative url> |No |relativeUrl|
 |**Request method** |The HTTP method. Allowed values are **Get** (default) and **Post**.|•**GET**<br> •**POST**|No |requestMethod|
 |**Additional headers** |Additional HTTP request headers.| \<your additional headers\>|No |additionalHeaders|
