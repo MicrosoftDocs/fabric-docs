@@ -5,7 +5,23 @@ items:
   items:
   - name: What is CI/CD? 
     href: ../placeholder.md
-- name: Get started
+- name: Deployment pipelines
+  items:
+  - name: Introduction to deployment pipelines
+    href: deployment-pipelines/deployment-pipelines-overview.md
+  - name: Understand the deployment process
+    href: deployment-pipelines/deployment-pipelines-process.md
+  - name: Get started with deployment pipelines
+    href: deployment-pipelines/deployment-pipelines-get-started.md
+  - name: Assigning a workspace
+    href: deployment-pipelines/deployment-pipelines-assign.md
+  - name: Deployment history
+    href: deployment-pipelines/deployment-pipelines-assign.md
+  - name: Create deployment rules
+    href: deployment-pipelines/deployment-pipelines-create-rules.md
+  - name: Automate deployment pipelines
+    href: deployment-pipelines/deployment-pipelines-automation.md
+- name: Git integration
   items:
   - name: Get started with git integration
     href: git-integration/git-get-started.md
