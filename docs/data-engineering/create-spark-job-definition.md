@@ -54,6 +54,8 @@ There are a few ways you can get started with the creation process:
 
 To create a Spark job definition for PySpark, follow these steps:
 
+1. Create a new Spark job definition.
+
 1. Select **PySpark (Python)** from the **Language** dropdown.
 
 1. Upload the main definition file as *.py* file. The main definition file is the file that contains the application logic of this *job.Main* definition file is mandatory to run a Spark job.
@@ -84,3 +86,7 @@ To create a Spark job definition for Scala/Java, follow these steps:
 
 > [!NOTE]
 > The Spark job definition will be created under the current workspace you are in.
+
+Next steps
+
+- [Run a Spark job definition](run-spark-job-definition.md)

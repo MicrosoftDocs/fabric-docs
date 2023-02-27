@@ -69,7 +69,7 @@ The subfolder and file under the **Tables** and **Files** section of the **Lake 
 
 :::image type="content" source="media\lakehouse-notebook-explore\content-area.png" alt-text="Screenshot showing the location of the content area." lightbox="media\lakehouse-notebook-explore\content-area.png":::
 
-## Insert a code cell into notebook 
+## Insert a code cell into notebook
 
 You can generate or insert code cells in two different ways, depending on your data or file type.
 
@@ -87,3 +87,7 @@ You can also drag and drop the supported CSV or Parquet file into the notebook t
 
 > [!NOTE]
 > The notebook will be created under your current workspace.
+
+Next steps
+
+- [How to use a notebook to load data into your Lakehouse](lakehouse-notebook-load-data.md)

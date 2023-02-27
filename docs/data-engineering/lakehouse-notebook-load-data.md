@@ -34,3 +34,7 @@ df.write.mode("overwrite").format("parquet").save("Files/" + parquettableName)
 
 df.write.mode("overwrite").format("delta").save("Tables/" + deltatableName)
 ```
+
+Next steps
+
+- [Explore the data in your Lakehouse with a notebook](lakehouse-notebook-explore.md)
