@@ -52,7 +52,7 @@ In this article, you'll learn how to create a OneLake shortcut in the context of
 
 1. Select **Refresh** to refresh your database. The shortcut will appear under **Shortcuts** in the **Object tree**.
 
-:::image type="content" source="media/onelake-shortcut/object-tree.png" alt-text="Screenshot of the object tree showing the new shortcut.":::
+    :::image type="content" source="media/onelake-shortcut/object-tree.png" alt-text="Screenshot of the object tree showing the new shortcut.":::
 
 The Lakehouse shortcut has been created. You can now query this data in a KQL Queryset.
 
