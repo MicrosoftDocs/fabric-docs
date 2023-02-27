@@ -1,6 +1,6 @@
 ---
 title: Business to business
-description: Learn how high availability, failover, and disaster recovery work in [!INCLUDE [product-name](../includes/product-name.md)].
+description: Learn how the business to business feature in [!INCLUDE [product-name](../includes/product-name.md)] works.
 author: paulinbar
 ms.author: painbar
 ms.topic: concept
