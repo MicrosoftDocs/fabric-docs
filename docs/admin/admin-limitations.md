@@ -1,6 +1,6 @@
 ---
 title: Admin limitations in [!INCLUDE [product-name](../includes/product-name.md)] 
-description: Learn how to enable [!INCLUDE [product-name](../includes/product-name.md)] for your organization.
+description: Learn about the [!INCLUDE [product-name](../includes/product-name.md)] limitations.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
