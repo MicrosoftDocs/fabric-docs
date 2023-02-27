@@ -6,6 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.date: 02/26/2023
+ms.search.form: product-kusto
 ---
 
 # Create a OneLake shortcut
