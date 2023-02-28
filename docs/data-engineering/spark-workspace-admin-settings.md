@@ -4,6 +4,7 @@ description: Learn about the workspace administration settings such as Apache Sp
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
+ms.subservice: data-engineering
 ms.topic: conceptual
 ms.date: 02/24/2023
 ---
