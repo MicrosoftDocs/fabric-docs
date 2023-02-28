@@ -34,7 +34,7 @@ items:
   - name: Spark utilities
     href: microsoft-spark-utilities.md
   - name: Library management
-    href: library-management
+    href: library-management.md
   - name: Spark administration settings
     items:
     - name: Workspace settings

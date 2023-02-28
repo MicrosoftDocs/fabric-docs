@@ -1,6 +1,6 @@
 ---
 title: Author and execute the notebook
-description: 
+description: Learn how to develop and run notebooks.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
