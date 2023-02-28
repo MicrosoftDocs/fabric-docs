@@ -1,6 +1,6 @@
 ---
 title: Business to business
-description: Learn how the business to business feature in [!INCLUDE [product-name](../includes/product-name.md)] works.
+description: Learn how the business to business feature in Microsoft Fabric works.
 author: paulinbar
 ms.author: painbar
 ms.topic: concept

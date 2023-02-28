@@ -1,19 +1,19 @@
 ---
-title: Lockbox for [!INCLUDE [product-name](../includes/product-name.md)]
-description: Customer Lockbox for [!INCLUDE [product-name](../includes/product-name.md)] is a service that allows customers to control how Microsoft engineers access their data.
+title: Lockbox for Microsoft Fabric
+description: Customer Lockbox for Microsoft Fabric is a service that allows customers to control how Microsoft engineers access their data.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.date: 01/29/2023
 ---
 
-# Customer Lockbox for TRIDENT
+# Customer Lockbox for Microsoft Fabric
 
 Use [Customer Lockbox for Microsoft Azure](/azure/security/fundamentals/customer-lockbox-overview) to control how Microsoft engineers access your data. In this article you'll learn how Customer Lockbox requests are initiated, tracked, and stored for later reviews and audits.
 
 Typically, Customer Lockbox is used to help Microsoft engineers troubleshoot a [!INCLUDE [product-name](../includes/product-name.md)] service support request. Customer Lockbox can also be used when Microsoft identifies a problem, and a Microsoft-initiated event is opened to investigate the issue.
 
-## Enable Customer Lockbox for TRIDENT
+## Enable Customer Lockbox for Microsoft Fabric
 
 To enable Customer Lockbox for [!INCLUDE [product-name](../includes/product-name.md)], you must be an Azure AD Global Administrator. To assign roles in Azure AD, see [Assign Azure AD roles to users](/azure/active-directory/roles/manage-roles-portal).
 
