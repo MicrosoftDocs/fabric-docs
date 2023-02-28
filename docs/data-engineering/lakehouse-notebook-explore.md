@@ -59,7 +59,7 @@ Selecting the **X** icon next to a Lakehouse name removes it from the notebook, 
 
 :::image type="content" source="media\lakehouse-notebook-explore\remove-lakehouse.png" alt-text="Screenshot showing where to remove a Lakehouse." lightbox="media\lakehouse-notebook-explore\remove-lakehouse.png":::
 
-Select **Add Lakehouse** to add more Lakehouses to the notebook. You can either add an existing one or creat a new one.
+Select **Add Lakehouse** to add more Lakehouses to the notebook. You can either add an existing one or create a new one.
 
 :::image type="content" source="media\lakehouse-notebook-explore\add-lakehouse-in-menu.png" alt-text="Screenshot showing where to find the Add Lakehouse option." lightbox="media\lakehouse-notebook-explore\add-lakehouse-in-menu.png":::
 
@@ -79,7 +79,7 @@ Right-click on a file and select the CSV or Parquet file. Both Apache Spark and 
 
 :::image type="content" source="media\lakehouse-notebook-explore\add-code-cell.png" alt-text="Screenshot showing inserted code cell." lightbox="media\lakehouse-notebook-explore\add-code-cell.png":::
 
-### Generate a code cell via drag and drop
+### Generate a code cell via Drag & Drop
 
 You can also drag and drop the supported CSV or Parquet file into the notebook to insert a code cell. By default, the Spark API is used to generate the code.
 
@@ -88,6 +88,6 @@ You can also drag and drop the supported CSV or Parquet file into the notebook t
 > [!NOTE]
 > The notebook will be created under your current workspace.
 
-Next steps
+## Next steps
 
 - [How to use a notebook to load data into your Lakehouse](lakehouse-notebook-load-data.md)

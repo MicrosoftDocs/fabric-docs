@@ -21,8 +21,8 @@ To get started, you must have the following prerequisites:
 
 - A Trident tenant account with an active subscription. [Create an account for free](../placeholder.md).
 - Access to the Data Engineering Workload. [Onboard onto the data engineering workload](../placeholder.md).
-- Understand the Spark job definition: [Spark job definition overview](spark-job-definition.md).
-- Create a Spark job definition: [How to create a Spark job definition](create-spark-job-definition.md).
+- Understand the Spark job definition: [What is an Apache Spark job definition?](spark-job-definition.md).
+- Create a Spark job definition: [How to create an Apache Spark job definition](create-spark-job-definition.md).
 
 ## How to run a Spark job definition
 
@@ -43,6 +43,6 @@ Once you've submitted the run, after three to five seconds, a new row appears un
 
 :::image type="content" source="media\run-spark-job-definition\runs-tab-details.png" alt-text="Screenshot of Runs list details." lightbox="media\run-spark-job-definition\runs-tab-details.png":::
 
-Next steps
+## Next steps
 
-- [Advanced capabilities: Microsoft Spark utilities](../placeholder.md)
+- [Advanced capabilities: Microsoft Apache Spark utilities](microsoft-spark-utilities.md)

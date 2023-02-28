@@ -1,6 +1,6 @@
 ---
-title: Spark monitoring overview
-description: Learn about the components of Spark monitoring.
+title: Apache Spark monitoring overview
+description: Learn about the components of Apache Spark monitoring.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
@@ -8,7 +8,7 @@ ms.topic: overview
 ms.date: 02/24/2023
 ---
 
-# Spark monitoring overview
+# Apache Spark monitoring overview
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
@@ -37,9 +37,7 @@ For Pipeline Spark Activity Inline Monitoring, deep links have been built into t
 
 ## How to: Follow step-by-step instructions to get started
 
-- Browse Spark applications in Monitoring Hub
-- [Browse Artifacts’ recent runs](spark-artifact-recent-runs.md)
-- [Monitor Spark jobs within Notebooks](spark-monitor-debug.md)
-- Monitor Spark Job Definitions
-- Monitor Pipeline Spark activities
-- [Monitor Spark application details](spark-detail-monitoring.md)
+- [Workspace artifact recent runs](spark-artifact-recent-runs.md)
+- [Notebook contextual monitoring and debugging](spark-monitor-debug.md)
+- [Run an Apache Spark job definition](run-spark-job-definition.md)
+- [Apache Spark application detail monitoring](spark-detail-monitoring.md)

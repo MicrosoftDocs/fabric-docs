@@ -62,4 +62,4 @@ You can delete items by selecting the item(s) and then select the **Delete** but
 
 ## Learn more
 
-Learn more about the Spark properties from the [public documentation](https://spark.apache.org/docs/latest/configuration.html) for Apache Spark.
+Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).

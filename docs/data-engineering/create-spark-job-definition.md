@@ -87,6 +87,6 @@ To create a Spark job definition for Scala/Java, follow these steps:
 > [!NOTE]
 > The Spark job definition will be created under the current workspace you are in.
 
-Next steps
+## Next steps
 
-- [Run a Spark job definition](run-spark-job-definition.md)
+- [Run an Apache Spark job definition](run-spark-job-definition.md)

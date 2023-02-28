@@ -13,7 +13,7 @@ ms.date: 02/24/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-A Lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by the Spark engine and SQL engine for big data processing. A Lakehouse includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables. The Lakehouse artifact is hosted within a unique workspace folder in the [!INCLUDE [product-name](../includes/product-name.md)] lake. It contains files in various formats (structured and unstructured) organized in folders and subfolder structures.
+A Lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by the Apache Spark engine and SQL engine for big data processing. A Lakehouse includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables. The Lakehouse artifact is hosted within a unique workspace folder in the [!INCLUDE [product-name](../includes/product-name.md)] lake. It contains files in various formats (structured and unstructured) organized in folders and subfolder structures.
 
 ## Lakehouse structure
 
@@ -41,9 +41,9 @@ Lakehouse Table Automatic discovery and registration is a feature of the Lakehou
 A data engineer can interact with the Lakehouse and the data within the Lakehouse in several ways:
 
 1. **The Lakehouse explorer**: The explorer is the main Lakehouse interaction page. You can load data in your Lakehouse, explore data in the Lakehouse using the object explorer, set MIP labels & various other things. Learn more about the explorer experience: [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md).
-1. **Notebooks**: Data engineers can use the notebook to write code to read, transform and write directly to the Lakehouse as tables and/or folders. You can learn more about how to leverage notebooks for lakehouses here.
+1. **Notebooks**: Data engineers can use the notebook to write code to read, transform and write directly to the Lakehouse as tables and/or folders. You can learn more about how to leverage notebooks for Lakehouses: [Explore the data in your Lakehouse with a notebook](lakehouse-notebook-explore.md) and [How to use a notebook to load data into your Lakehouse](lakehouse-notebook-load-data.md).
 1. **Pipelines**: Data engineers can use data integration tools such as pipeline copy tool to pull data from other sources and land into the Lakehouse. Find more information on how to use the copy activity: [How to copy data using copy activity](../data-factory/copy-data-activity.md).
-1. **Spark job definitions**: Data engineers can develop robust applications and orchestrate the execution of compiled Spark jobs in Java, Scala, and Python. Learn more about Spark jobs: [What is a Spark job definition?](spark-job-definition.md).
+1. **Apache Spark job definitions**: Data engineers can develop robust applications and orchestrate the execution of compiled Spark jobs in Java, Scala, and Python. Learn more about Spark jobs: [What is an Apache Spark job definition?](spark-job-definition.md).
 
 ## Different ways to load data into a Lakehouse
 
