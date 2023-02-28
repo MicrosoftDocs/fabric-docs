@@ -68,7 +68,13 @@ To create a Spark job definition for PySpark, follow these steps:
 
 :::image type="content" source="media\create-spark-job-definition\main-definition-file-example.png" alt-text="Screenshot showing an example of a populated main definition file screen." lightbox="media\create-spark-job-definition\main-definition-file-example.png":::
 
-In this example, we've created a Spark job definition named **sjd005** for PySpark.  Uploaded the *createTablefromCSVwithdependency.py* file as the main definition file, the *Constant.py* file as the reference file, and added the Lakehouse references *LH001* and *LH002* to the job. *LH001* is the default Lakehouse context.
+In this example, we've done the following:
+
+- Created a Spark job definition named **sjd005** for PySpark
+- Uploaded the *createTablefromCSVwithdependency.py* file as the main definition file
+- Uploaded the *Constant.py* file as the reference file
+- Added the Lakehouse references *LH001* and *LH002* to the job
+- Made *LH001* the default Lakehouse context
 
 ### Create a Spark job definition for Scala/Java
 
