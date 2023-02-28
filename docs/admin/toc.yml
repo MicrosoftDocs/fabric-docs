@@ -11,6 +11,8 @@ items:
     href: admin-roles.md
   - name: Enable TRIDENT for your organization
     href: admin-switch.md
+  - name: Compliance feature switch
+    href: admin-compliance.md    
 - name: Admin features in TRIDENT
   items:
   - name: Delegate admin rights

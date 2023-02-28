@@ -16,4 +16,6 @@ items:
   - name: Customer lockbox
     href: security-lockbox.md
   - name: Bring your own encryption keys
-    href: security-byok.md        
+    href: security-byok.md
+  - name: Service tags
+    href: security-service-tags.md                
