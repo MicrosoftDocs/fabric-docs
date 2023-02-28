@@ -158,3 +158,7 @@ caesar(x)
 }
 spark.lapply(c("hello world", "good morning", "good evening"), hello)
 ```
+
+## Next steps
+
+- [Apache Spark workspace administration settings](spark-workspace-admin-settings.md)
