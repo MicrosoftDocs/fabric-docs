@@ -111,7 +111,7 @@ You can use Drag & Drop to insert images from browser/local computer to a markdo
 
 :::image type="content" source="media\author-execute-notebook\drag-and-drop-image.png" alt-text="Screenshot showing a markdown cell." lightbox="media\author-execute-notebook\drag-and-drop-image.png":::
 
-![Animated GIF of drag and drop to insert images.](media/author-execute-notebook/drap-drop-insert-image.gif)
+![Animated GIF of drag and drop to insert images.](media/author-execute-notebook/drag-drop-insert-image.gif)
 
 ### Format text cell with toolbar buttons
 
