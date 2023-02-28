@@ -95,7 +95,7 @@ Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellis
 
 :::image type="content" source="media\author-execute-notebook\cell-editor.png" alt-text="Screenshot showing a cell editing screen at the beginning of an Apache Spark session." lightbox="media\author-execute-notebook\cell-editor.png":::
 
-![Animated GIF of code snippets.](./media/apache-spark-development-using-notebooks2/trident-code-snippets.gif#lightbox)
+![Animated GIF of code snippets.](media/author-execute-notebook/code-snippet.gif)
 
 ### Drag & Drop to insert snippets
 
@@ -103,7 +103,7 @@ You can use Drag & Drop to read data from LakeHouse explorer conveniently, multi
 
 :::image type="content" source="media\author-execute-notebook\test-drag-and-drop.png" alt-text="Screenshot showing an empty cell." lightbox="media\author-execute-notebook\test-drag-and-drop.png":::
 
-![Animated GIF of drag and drop to insert snippets.](./media/apache-spark-development-using-notebooks2/drag-n-drop.gif#lightbox)
+![Animated GIF of drag and drop to insert snippets.](media/author-execute-notebook/drag-drop-insert-snippet.gif)
 
 ### Drag & Drop to insert images
 
@@ -111,7 +111,7 @@ You can use Drag & Drop to insert images from browser/local computer to a markdo
 
 :::image type="content" source="media\author-execute-notebook\drag-and-drop-image.png" alt-text="Screenshot showing a markdown cell." lightbox="media\author-execute-notebook\drag-and-drop-image.png":::
 
-![Animated GIF of drag and drop to insert images.](./media/apache-spark-development-using-notebooks2/drag-n-drop-insert-image.gif)
+![Animated GIF of drag and drop to insert images.](media/author-execute-notebook/drap-drop-insert-image.gif)
 
 ### Format text cell with toolbar buttons
 
@@ -141,7 +141,7 @@ You can drag from the empty part of a cell and drop it to the desired position, 
 
 :::image type="content" source="media\author-execute-notebook\move-cell-options.png" alt-text="Screenshot showing the options for moving a cell." lightbox="media\author-execute-notebook\move-cell-options.png":::
 
-![Animated GIF of drag and drop to move a cell.](./media/apache-spark-development-using-notebooks2/trident-azure-notebook-drag-drop-cell.gif)
+![Animated GIF of drag and drop to move a cell.](media/author-execute-notebook/drag-drop-move-cell.gif)
 
 ### Delete a cell
 
@@ -155,7 +155,7 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide input
 
 :::image type="content" source="media\author-execute-notebook\show-hide-input.png" alt-text="Screenshot showing where to find the show and hide input options." lightbox="media\author-execute-notebook\show-hide-input.png":::
 
-![Animated GIF of azure-notebook-collapse-cell-input.](./media/apache-spark-development-using-notebooks2/trident-azure-notebook-collapse-cell-input.gif)
+![Animated GIF of collapsing cell input.](media/author-execute-notebook/collapse-cell-input.gif)
 
 ### Collapse a cell output
 
@@ -163,7 +163,7 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide outpu
 
 :::image type="content" source="media\author-execute-notebook\show-hide-output.png" alt-text="Screenshot showing where to find the show and hide output options" lightbox="media\author-execute-notebook\show-hide-output.png":::
 
-![Animated GIF of azure-notebook-collapse-cell-output.](./media/apache-spark-development-using-notebooks2/trident-azure-notebook-collapse-cell-output.gif)
+![Animated GIF of collapsing cell output.](media/author-execute-notebook/collapse-cell-output.gif)
 
 ### Notebook outline
 

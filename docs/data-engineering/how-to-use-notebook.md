@@ -68,7 +68,7 @@ The subfolder and file under the **Tables** and **Files** section of the **Lake*
 
 If you select a file(.csv, .parquet) with a right mouse click, both Spark and Pandas API are supported to load the data. A new code cell is generated and inserted into the end of the notebook.
 
-ADD GIF LINK
+![Animated GIF of generating a code cell through the context menu.](media/how-to-use-notebook/generate-cell-context-menu.gif)
 
 ## Collaborate in a notebook
 
