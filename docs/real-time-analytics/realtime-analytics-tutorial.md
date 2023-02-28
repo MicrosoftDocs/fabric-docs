@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
 ms.date: 02/16/2023
-
+ms.search.form: product-kusto
 ---
 
 # Tutorial: Real-time Analytics
