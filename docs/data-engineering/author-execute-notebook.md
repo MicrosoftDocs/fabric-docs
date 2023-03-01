@@ -26,7 +26,7 @@ We provide rich operations to develop notebooks:
 - [Use multiple languages](#use-multiple-languages)
 - [IDE-style IntelliSense](#ide-style-intellisense)
 - [Code snippets](#code-snippets)
-- [Drag and drop to insert snippets](#drag--drop-to-insert-snippets)
+- [Drag and drop to insert snippets](#drag-and-drop-to-insert-snippets)
 - [Format text cell with toolbar buttons](#format-text-cell-with-toolbar-buttons)
 - [Undo or redo cell operation](#undo-or-redo-cell-operation)
 - Code cell commenting
@@ -101,17 +101,17 @@ Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellis
 
 ![Animated GIF of code snippets.](media/author-execute-notebook/code-snippet.gif)
 
-### Drag & Drop to insert snippets
+### Drag and drop to insert snippets
 
-You can use drag & drop to read data from Lakehouse explorer conveniently. Multiple file types are supported here, you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell. The notebook generates the code snippet accordingly to preview the data.
+You can use drag and drop to read data from Lakehouse explorer conveniently. Multiple file types are supported here, you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell. The notebook generates the code snippet accordingly to preview the data.
 
 :::image type="content" source="media\author-execute-notebook\test-drag-and-drop.png" alt-text="Screenshot showing an empty cell." lightbox="media\author-execute-notebook\test-drag-and-drop.png":::
 
 ![Animated GIF of drag and drop to insert snippets.](media/author-execute-notebook/drag-drop-insert-snippet.gif)
 
-### Drag & drop to insert images
+### Drag and drop to insert images
 
-You can use drag & drop to insert images from your browser or local computer to a markdown cell conveniently.
+You can use drag and drop to insert images from your browser or local computer to a markdown cell conveniently.
 
 :::image type="content" source="media\author-execute-notebook\drag-and-drop-image.png" alt-text="Screenshot showing a markdown cell." lightbox="media\author-execute-notebook\drag-and-drop-image.png":::
 
