@@ -12,8 +12,6 @@ ms.date: 01/18/2023
 
 # Get started with deployment pipelines
 
-[!INCLUDE [applies-no-desktop-yes-service](../includes/applies-no-desktop-yes-service.md)]
-
 This article walks you through the basic settings required for using deployment pipelines in Power BI service. It's recommended to read the [deployment pipelines introduction](deployment-pipelines-overview.md), before you proceed.
 
 You can also complete the [Create and manage a Power BI deployment pipeline](/training/modules/power-bi-deployment-pipelines) Learn module, which shows how to create a deployment pipeline.
@@ -27,11 +25,11 @@ You'll be able to access the deployment pipelines feature, if the following cond
 
 * You have one of the following Premium licenses:
 
-  * You're a Power BI [Pro user](../enterprise/service-admin-purchasing-power-bi-pro.md), and you belong to an organization that has Premium capacity.
+  * You're a Power BI [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md), and you belong to an organization that has Premium capacity.
 
-  * [Premium Per User (PPU)](../enterprise/service-premium-per-user-faq.yml).
+  * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
 
-* You're an admin of a Premium [workspace](../collaborate-share/service-create-the-new-workspaces.md).
+* You're an admin of a Premium [workspace](/power-bi/collaborate-share/service-create-the-new-workspaces.md).
 
 >[!NOTE]
 > You'll also be able to see the deployment pipelines button, if you previously created a pipeline, or if a pipeline was shared with you.
@@ -54,17 +52,16 @@ To create a pipeline from the deployment pipelines tab, do the following:
 
 ### Create a pipeline from a workspace
 
-You can create a pipeline from an existing workspace, providing you're the admin of a [workspace](../collaborate-share/service-create-the-new-workspaces.md).
+You can create a pipeline from an existing workspace, providing you're the admin of a [workspace](/power-bi/collaborate-share/service-create-the-new-workspaces.md).
 
 1. From the workspace, select **Create a pipeline**.
 
-    > [!div class="mx-imgBorder"]
-    > ![A screenshot of the create a pipeline button in a workspace.](media/deployment-pipelines-get-started/workspace-deploy.png)
+    :::image type="content" source="media/deployment-pipelines-get-started/workspace-deploy.png" alt-text="A screenshot of the create a pipeline button in a workspace.":::
 
 2. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Create**.
 
 >[!NOTE]
->If the workspace isn't assigned to your organization's Premium capacity, or to your PPU capacity, you'll get a notification to [assign it to a capacity](../enterprise/service-admin-premium-manage.md#assign-a-workspace-to-a-capacity).  
+>If the workspace isn't assigned to your organization's Premium capacity, or to your PPU capacity, you'll get a notification to [assign it to a capacity](/power-bi/enterprise/service-admin-premium-manage.md#assign-a-workspace-to-a-capacity).  
 
 ## Step 2 - Assign a workspace
 

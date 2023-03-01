@@ -59,7 +59,7 @@ Here's a list of the different deployment types the APIs support:
 
 Before you use the deployment pipelines APIs, make sure you have the following:
 
-* The [*service principal*](./../developer/embedded/embed-service-principal.md), or the *user* that will call the APIs, needs [pipeline and workspace permissions](deployment-pipelines-process.md#permissions) and access to an [Azure AD application](/azure/active-directory/develop/active-directory-how-applications-are-added).
+* The [*service principal*](/power-bi/developer/embedded/embed-service-principal.md), or the *user* that will call the APIs, needs [pipeline and workspace permissions](deployment-pipelines-process.md#permissions) and access to an [Azure AD application](/azure/active-directory/develop/active-directory-how-applications-are-added).
 
 * If you're going to use PowerShell scripts, install the Power BI PowerShell cmdlets [Install-Module MicrosoftPowerBIMgmt](/powershell/power-bi/overview).
 
@@ -69,7 +69,7 @@ To automate the Power BI deployment processes from within your [release pipeline
 
 * **PowerShell** - The script signs into Power BI by using a *service principal* or a *user*.
 
-* **Power BI automation tools** - This extension works with a [*service principal*](./../developer/embedded/embed-service-principal.md) or a *user*.
+* **Power BI automation tools** - This extension works with a [*service principal*](/poewr-bi/developer/embedded/embed-service-principal.md) or a *user*.
 
 You can also use other [Power BI REST API](/rest/api/power-bi/) calls, to complete related operations such as importing a *.pbix* into the pipeline, updating data sources and parameters.
 
