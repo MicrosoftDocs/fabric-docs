@@ -21,14 +21,14 @@ Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easil
 
 Run the following commands for an overview of the available methods:
 
-```
+```python
 from notebookutils import mssparkutils
 mssparkutils.fs.help()
 ```
 
-Results in:
+**Output**
 
-```
+```console
 mssparkutils.fs provides utilities for working with various FileSystems.
 
 Below is overview about the available methods:
@@ -127,9 +127,9 @@ Use the MSSparkUtils Notebook Utilities to run a notebook or exit a notebook wit
 mssparkutils.notebook.help()
 ```
 
-Get results:
+**Output**
 
-```
+```console
 The notebook module.
 
 exit(value: String): void -> This method lets you exit a notebook with a value.
@@ -182,9 +182,9 @@ exitVal = mssparkutils.notebook.run("folder/Sample1")
 print (exitVal)
 ```
 
-Results in:
+**Output**
 
-```
+```console
 Sample1 run success with input is 10
 ```
 
@@ -195,9 +195,9 @@ exitVal = mssparkutils.notebook.run("mssparkutils/folder/Sample1", 90, {"input":
 print (exitVal)
 ```
 
-Results in:
+**Output**
 
-```
+```console
 Sample1 run success with input is 20
 ```
 

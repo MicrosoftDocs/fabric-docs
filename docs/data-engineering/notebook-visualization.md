@@ -63,7 +63,7 @@ The following image is an example of creating visualizations using [D3.js](https
 
 Run the following code to create this visualization.
 
-```
+```python
 displayHTML("""<!DOCTYPE html>
 <meta charset="utf-8">
 
