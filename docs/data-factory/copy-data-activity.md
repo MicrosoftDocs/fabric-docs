@@ -4,6 +4,7 @@ description: Learn how to add a copy activity directly or through the copy assis
 ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
 author: jianleishen
+ms.subservice: data-factory
 ms.topic: how-to
 ms.date: 01/27/2023
 ---

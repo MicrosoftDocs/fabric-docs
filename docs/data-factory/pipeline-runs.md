@@ -4,6 +4,7 @@ description: Explanation of what a pipeline run is, including on-demand and sche
 ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
+ms.subservice: data-factory
 ms.topic: conceptual
 ms.date: 01/27/2023
 ---

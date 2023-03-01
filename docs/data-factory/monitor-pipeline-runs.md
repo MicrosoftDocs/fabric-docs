@@ -4,6 +4,7 @@ description: Learn how to monitor pipeline runs.
 ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
+ms.subservice: data-factory
 ms.topic: how-to 
 ms.date: 01/27/2023
 ---
