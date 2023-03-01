@@ -1,13 +1,13 @@
 ---
-title: Security in [!INCLUDE [product-name](../includes/product-name.md)]
-description: Learn how [!INCLUDE [product-name](../includes/product-name.md)] security works, and what features are available.
+title: Security in Microsoft Fabric
+description: Learn how Microsoft Fabric security works, and what features are available.
 author: paulinbar
 ms.author: painbar
 ms.topic: overview
 ms.date: 12/27/2022
 ---
 
-# Security in TRIDENT
+# Security in Microsoft Fabric
 
 Learn how security in [!INCLUDE [product-name](../includes/product-name.md)] works.
 
@@ -17,7 +17,7 @@ List the [!INCLUDE [product-name](../includes/product-name.md)] security feature
 
 ## Use cases
 
-A few examples of using the trident security features in specific scenarios.
+A few examples of using the Microsoft Fabric security features in specific scenarios.
 
 ## Next steps
 

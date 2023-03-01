@@ -1,6 +1,6 @@
 ---
 title: High availability, failover, and disaster recovery
-description: Learn how high availability, failover, and disaster recovery work in [!INCLUDE [product-name](../includes/product-name.md)].
+description: Learn how high availability, failover, and disaster recovery work in Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: concept
