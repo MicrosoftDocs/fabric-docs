@@ -37,7 +37,7 @@ You can manage all the previously mentioned types of libraries via two different
    > [!NOTE]
    > In-line installation affects the current Notebook session only, which means a new session will not include the packages installed in previous sessions.
    >
-   > We strongly suggest putting all adding/deleting/updating Python package in-line commands in the first cell of your Notebook. The change of Python packages will be effective after the restarting of Python interpreter, your variables defined before running the commands cell will be lost.
+   > We recommend placing all the in-line commands that add, delete, or update the Python packages in the first cell of your Notebook. The change of Python packages will be effective after you restart the Python interpreter. The variables defined before running the command cell will be lost.
 
 Summarizing all library management behaviors currently available in [!INCLUDE [product-name](../includes/product-name.md)]:
 
@@ -56,8 +56,8 @@ Under the **Workspace settings**, you find the Workspace level library managemen
 
 In this section, we introduce how to manage feed library, which resides in PyPI or Conda, through Workspace library management portal.
 
-- **View and search feed library**: The installed library list appears when you open the library management portal. You can view the name, version and dependencies of the library. Use the search box on the upper right corner to find the library if you want to retrieve the information quickly.
-- **Add new feed library**: The default source of installing Python feed library is PyPI, you can also choose "Conda" by choosing from the drop-down button next to the add button. Once the installation source is selected, you can select the **+** button and a new line appears. Put in the library name, select or specify the version in the new line, and you're good to go.
+- **View and search feed library**: The installed library list appears when you open the **library management portal**. You can view the name, version, and dependencies of the library. Use the search box on the upper right corner to find the library if you want to retrieve the information quickly.
+- **Add new feed library**: The default source for installing the Python feed library is PyPI. You can also choose "Conda" by choosing from the drop-down button next to the add button. Once the installation source is selected, you can select the **+** button and a new line appears. Enter the library name, select or specify the version in the new line, and you're good to go.
 
   Except for adding new feed library one by one, you can upload a .yml file to install the required feed libraries in a batch.
 - **Remove existing feed library**: Select the Trash button on the line of the library you want to remove, and this package is removed from your environment.
@@ -70,9 +70,9 @@ In this section, we show how to manage your custom packages, like *.jar* and *.w
 
 - **Upload new custom library**: If you want to bring your custom codes in [!INCLUDE [product-name](../includes/product-name.md)] runtime, uploading them as custom packages through the portal is a good option. The library management module helps you handle potential conflicts and required dependencies in your custom libraries.
 
-  Under the “Custom libraries" panel, you see the **Upload** button. Select it and upload the packages through a local directory.
-- **Remove existing custom library**: If the custom libraries are no longer useful for your Spark applications, you can use the trash button to remove it from Spark runtime under the "Custom libraries" panel.
-- **Review and apply changes**: Same as feed libraries, you can go to the "Pending changes" panel to review the changes you made for the updates of custom libraries and apply these changes to your [!INCLUDE [product-name](../includes/product-name.md)] Spark environment of the Workspace or Notebook.
+  Under the **Custom libraries** panel, you see the **Upload** button. Select it and upload the packages through a local directory.
+- **Remove existing custom library**: If the custom libraries are no longer useful for your Spark applications, you can use the trash button to remove it from Spark runtime under the **Custom libraries** panel.
+- **Review and apply changes**: Same as feed libraries, you can go to the **Pending changes** panel to review the changes you made for the updates of custom libraries and apply these changes to your [!INCLUDE [product-name](../includes/product-name.md)] Spark environment of the Workspace or Notebook.
 
 ## In-line installation
 
@@ -90,7 +90,7 @@ Here's an example to walk you through the library management abilities using in-
 
 Now, you can use inline commands to help you enable *altair* on your Notebook session without interrupting other sessions of the Notebook or other artifacts.
 
-**Step 1**: Run the following commands in a Notebook code cell to install the *altair* library and *vega_datasets*, which contains dataset you can use to visualize:
+1. Run the following commands in a Notebook code cell to install the *altair* library and *vega_datasets*, which contains dataset you can use to visualize:
 
 ```
 %conda install altair          # install latest version through conda command
