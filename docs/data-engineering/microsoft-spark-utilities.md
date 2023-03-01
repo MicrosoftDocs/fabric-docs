@@ -49,7 +49,7 @@ Use mssparkutils.fs.help("methodName") for more info about a method.
 
 List the content of a directory.
 
-```
+```python
 mssparkutils.fs.ls('Your directory path')
 ```
 
@@ -57,7 +57,7 @@ mssparkutils.fs.ls('Your directory path')
 
 Returns file properties including file name, file path, file size, and whether it's a directory and a file.
 
-```
+```python
 files = mssparkutils.fs.ls('Your directory path')
 for file in files:
     print(file.name, file.isDir, file.isFile, file.path, file.size)
@@ -67,7 +67,7 @@ for file in files:
 
 Creates the given directory if it doesn't exist and any necessary parent directories.
 
-```
+```python
 mssparkutils.fs.mkdirs('new directory name')
 ```
 
@@ -75,7 +75,7 @@ mssparkutils.fs.mkdirs('new directory name')
 
 Copies a file or directory. Supports copy across file systems.
 
-```
+```python
 mssparkutils.fs.cp('source file or directory', 'destination file or directory', True)# Set the third parameter as True to copy all files and directories recursively
 ```
 
@@ -83,7 +83,7 @@ mssparkutils.fs.cp('source file or directory', 'destination file or directory', 
 
 Returns up to the first 'maxBytes' bytes of the given file as a String encoded in UTF-8.
 
-```
+```python
 mssparkutils.fs.head('file path', maxBytes to read)
 ```
 
@@ -91,7 +91,7 @@ mssparkutils.fs.head('file path', maxBytes to read)
 
 Moves a file or directory. Supports move across file systems.
 
-```
+```python
 mssparkutils.fs.mv('source file or directory', 'destination directory', True) # Set the last parameter as True to firstly create the parent directory if it does not exist
 ```
 
@@ -99,7 +99,7 @@ mssparkutils.fs.mv('source file or directory', 'destination directory', True) # 
 
 Writes the given string out to a file, encoded in UTF-8. Writes the given string out to a file, encoded in UTF-8.
 
-```
+```python
 mssparkutils.fs.put("file path", "content to write", True) # Set the last parameter as True to overwrite the file if it existed already
 ```
 
@@ -107,7 +107,7 @@ mssparkutils.fs.put("file path", "content to write", True) # Set the last parame
 
 Appends the given string to a file, encoded in UTF-8.
 
-```
+```python
 mssparkutils.fs.append("file path", "content to append", True) # Set the last parameter as True to create the file if it does not exist
 ```
 
@@ -115,7 +115,7 @@ mssparkutils.fs.append("file path", "content to append", True) # Set the last pa
 
 Removes a file or directory.
 
-```
+```python
 mssparkutils.fs.rm('file path', True) # Set the last parameter as True to remove all files and directories recursively
 ```
 
@@ -123,7 +123,7 @@ mssparkutils.fs.rm('file path', True) # Set the last parameter as True to remove
 
 Use the MSSparkUtils Notebook Utilities to run a notebook or exit a notebook with a value. Run the following command to get an overview of the available methods:
 
-```
+```python
 mssparkutils.notebook.help()
 ```
 
@@ -140,13 +140,13 @@ run(path: String, timeoutSeconds: int, arguments: Map): String -> This method ru
 
 Reference a notebook and returns its exit value. You can run nesting function calls in a notebook interactively or in a pipeline. The notebook being referenced runs on the Spark pool of which notebook calls this function.
 
-```
+```python
 mssparkutils.notebook.run("notebook name", <timeoutSeconds>, <parameterMap>)
 ```
 
 For example:
 
-```
+```python
 mssparkutils.notebook.run("Sample1", 90, {"input": 20 })
 ```
 
@@ -161,7 +161,7 @@ Exits a notebook with a value. You can run nesting function calls in a notebook 
 - When you orchestrate a notebook that calls an *exit()* function in a Synapse pipeline, Azure Synapse returns an exit value, complete the pipeline run, and stop the Spark session.
 - When you call an *exit()* function in a notebook being referenced, Azure Synapse will stop the further execution in the notebook being referenced, and continue to run next cells in the notebook that call the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
 
-```
+```python
 mssparkutils.notebook.exit("value string")
 ```
 
@@ -177,7 +177,7 @@ For example:
 
 You can run the **Sample1** in another notebook with default values:
 
-```
+```python
 exitVal = mssparkutils.notebook.run("folder/Sample1")
 print (exitVal)
 ```
@@ -190,7 +190,7 @@ Sample1 run success with input is 10
 
 You can run the **Sample1** in another notebook and set the **input** value as 20:
 
-```
+```python
 exitVal = mssparkutils.notebook.run("mssparkutils/folder/Sample1", 90, {"input": 20 })
 print (exitVal)
 ```
@@ -205,7 +205,7 @@ Sample1 run success with input is 20
 
 Instead of manually selecting the stop button, sometimes it's more convenient to stop an interactive session by calling an API in the code. For such cases, we provide an API *mssparkutils.session.stop()* to support stopping the interactive session via code, it's available for Scala and Python.
 
-```
+```python
 mssparkutils.session.stop()
 ```
 
@@ -238,7 +238,7 @@ For security reasons, we recommend that you store account keys or SAS tokens in 
 
 Here's the sample code of using accountKey method:
 
-```
+```python
 from notebookutils import mssparkutils  
 from trident_token_library_wrapper import PyTridentTokenLibrary
 # get access token for keyvault resource
@@ -254,7 +254,7 @@ mssparkutils.fs.mount(
 
 For *sastoken*, reference the following sample code:
 
-```
+```python
 from notebookutils import mssparkutils  
 from trident_token_library_wrapper import PyTridentTokenLibrary
 # get access token for keyvault resource
@@ -276,7 +276,7 @@ mssparkutils.fs.mount(
 
 Here's the sample code of mounting a Lakehouse to */test*.
 
-```
+```python
 from notebookutils import mssparkutils 
 mssparkutils.fs.mount( 
  "abfss://<workspace_id>@msit-onelake.pbidedicated.windows.net/<lakehouse_id>", 
@@ -290,13 +290,13 @@ The main purpose of the mount operation is to let customers access the data stor
 
 Assume that you mounted the Data Lake Storage Gen2 container *mycontainer* to */test* by using the mount API. When you access the data by using a local file system API, the path format is like this:
 
-```
+```python
 /trident/test/{filename}
 ```
 
 When you want to access the data by using the mssparkutils fs API, we recommend using a *getMountPath()* to get the accurate path:
 
-```
+```python
 path = mssparkutils.fs.getMountPath("/test")
 ```
 
@@ -305,19 +305,19 @@ path = mssparkutils.fs.getMountPath("/test")
 
 - List directories:
 
-   ```
+   ```python
    mssparkutils.fs.ls(f"file://{mssparkutils.fs.getMountPath('/test')}")
    ```
 
 - Read file content:
 
-   ```
+   ```python
    mssparkutils.fs.head(f"file://{mssparkutils.fs.getMountPath('/test')}/myFile.txt")
    ```
 
 - Create a directory:
 
-   ```
+   ```python
    mssparkutils.fs.mkdirs(f"file://{mssparkutils.fs.getMountPath('/test')}/newdir")
    ```
 
@@ -325,7 +325,7 @@ path = mssparkutils.fs.getMountPath("/test")
 
 You can easily read and write the files in mount point using standard file system way, use Python as an example:
 
-```
+```python
 #File read
 with open(mssparkutils.fs.getMountPath('/test2') + "/myFile.txt", "r") as f:
 print(f.read())
@@ -338,7 +338,7 @@ with open(mssparkutils.fs.getMountPath('/test2') + "/myFile.txt", "w") as f:
 
 You can use *mssparkutils.fs.mounts* API to check all existing mount point info:
 
-```
+```python
 mssparkutils.fs.mounts()
 ```
 
@@ -346,19 +346,16 @@ mssparkutils.fs.mounts()
 
 Use the following code to unmount your mount point *(/test* in this example):
 
-```
+```python
 mssparkutils.fs.unmount("/test")
 ```
 
 ### Known limitations
 
-The *mssparkutils fs help* function hasn't added the description about the mount/unmount part yet.
-
-The current mount is a job level configuration; notebook level and workspace level design work will be available soon. So, always use *mounts* API to check if mount point exists or not available.
-
-The unmount mechanism isn't automatic. When the application run finishes, to unmount the mount point to release the disk space, you need to explicitly call an unmount API in your code. Otherwise, the mount point will still exist in the node after the application run finishes.
-
-Mounting an ADLS Gen1 storage account isn't supported.
+- The *mssparkutils fs help* function hasn't added the description about the mount/unmount part yet.
+- The current mount is a job level configuration; notebook level and workspace level design work will be available soon. So, always use *mounts* API to check if mount point exists or not available.
+- The unmount mechanism isn't automatic. When the application run finishes, to unmount the mount point to release the disk space, you need to explicitly call an unmount API in your code. Otherwise, the mount point will still exist in the node after the application run finishes.
+- Mounting an ADLS Gen1 storage account isn't supported.
 
 ## Next steps
 

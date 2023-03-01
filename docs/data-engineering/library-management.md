@@ -92,7 +92,7 @@ Now, you can use inline commands to help you enable *altair* on your Notebook se
 
 1. Run the following commands in a Notebook code cell to install the *altair* library and *vega_datasets*, which contains dataset you can use to visualize:
 
-```
+```python
 %conda install altair          # install latest version through conda command
 %conda install vega_datasets   # install latest version through conda command
 ```
@@ -101,14 +101,14 @@ The log in the cell output indicates the result of installation.
 
 **Step 2**: Import the package and dataset by running the following codes in another Notebook cell:
 
-```
+```python
 import altair as alt
 from vega_datasets import data
 ```
 
 **Step 3**: Now you can play around with the session-scoped *altair* library:
 
-```
+```python
 # load a simple dataset as a pandas DataFrame
 cars = data.cars()
 alt.Chart(cars).mark_point().encode(
@@ -120,11 +120,11 @@ color='Origin',
 
 ### Manage Python custom libraries through in-line installation
 
-You can upload your Python custom libraries to the Notebook attached Lakehouse File folder. Navigate to Lakehouse, select “…” on the “File” folder, then upload the custom library.
+You can upload your Python custom libraries to the Notebook-attached Lakehouse **File** folder. Navigate to your Lakehouse, select **…** on the **File** folder, then upload the custom library.
 
 After uploading, you can use the following command to install the custom library to your Notebook session:
 
-```
+```python
 # install the .whl through pip command
 %pip install /lakehouse/default/Files/wheel_file_name.whl             
 ```
@@ -142,13 +142,13 @@ Follow this example to walk through the steps of installing an R feed library:
 
 **Step 2**: Run the following command in a Notebook cell to install *caesar* library:
 
-```
+```python
 install.packages("caesar")
 ```
 
 **Step 3**: Now you can play around with the session-scoped *caesar* library with Spark job
 
-```
+```python
 library(SparkR)
 sparkR.session()
 
