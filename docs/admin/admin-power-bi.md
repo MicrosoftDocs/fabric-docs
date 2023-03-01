@@ -1,6 +1,6 @@
 ---
 title: Power BI admin portal
-description: Learn about the Power BI admin portal, its settings and its integration with [!INCLUDE [product-name](../includes/product-name.md)].
+description: Learn about the Power BI admin portal, its settings and its integration with Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
@@ -13,7 +13,7 @@ An overview article for the Power BI admin portal with a link to the [Power BI a
 
 ## Power BI settings
 
-More info about the Power BI admin portal and it's integration with trident.
+More info about the Power BI admin portal and it's integration with Microsoft Fabric.
 
 ## Next steps
 

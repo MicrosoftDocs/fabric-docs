@@ -1,13 +1,13 @@
 ---
-title: Understand [!INCLUDE [product-name](../includes/product-name.md)] roles
-description: This article explains the [!INCLUDE [product-name](../includes/product-name.md)] admin roles.
+title: Understand Microsoft Fabric roles
+description: This article explains the Microsoft Fabric admin roles.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
 ms.date: 12/27/2022
 ---
 
-# Understand TRIDENT roles
+# Understand Microsoft Fabric roles
 
 Understand admin roles - first part of [Understanding Power BI administrator roles](/power-bi/admin/service-admin-role) + **expand** with [!INCLUDE [product-name](../includes/product-name.md)] roles.
 

@@ -1,6 +1,6 @@
 ---
 title: What is the monitoring workspace?
-description: Understand the [!INCLUDE [product-name](../includes/product-name.md)] monitoring workspace and the reports it holds.
+description: Understand the Microsoft Fabric monitoring workspace and the reports it holds.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview

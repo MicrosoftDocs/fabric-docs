@@ -1,13 +1,13 @@
 ---
-title: Admin limitations in [!INCLUDE [product-name](../includes/product-name.md)] 
-description: Learn how to enable [!INCLUDE [product-name](../includes/product-name.md)] for your organization.
+title: Admin limitations in Microsoft Fabric 
+description: Learn about the Microsoft Fabric limitations.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 12/27/2022
+ms.date: 02/27/2023
 ---
 
-# Admin limitations in TRIDENT
+# Admin limitations in Microsoft Fabric
 
 A list of [!INCLUDE [product-name](../includes/product-name.md)] admin limitations.
 
