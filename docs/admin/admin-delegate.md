@@ -1,6 +1,6 @@
 ---
 title: Delegate admin rights
-description: Learn how to delegate admin rights from the tenant to the capacity in [!INCLUDE [product-name](../includes/product-name.md)].
+description: Learn how to delegate admin rights from the tenant to the capacity in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to

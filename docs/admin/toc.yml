@@ -1,19 +1,19 @@
 items:
-- name: What is trident administration?
+- name: What is Microsoft Fabric administration?
   href: index.yml
 - name: Overview
   items:
-  - name: What is trident administration?
+  - name: What is Microsoft Fabric administration?
     href: admin-overview.md
 - name: Get started
   items:
-  - name: Understand TRIDENT roles
+  - name: Understand Microsoft Fabric roles
     href: admin-roles.md
-  - name: Enable TRIDENT for your organization
+  - name: Enable Microsoft Fabric for your organization
     href: admin-switch.md
   - name: Compliance feature switch
     href: admin-compliance.md    
-- name: Admin features in TRIDENT
+- name: Admin features in Microsoft Fabric
   items:
   - name: Delegate admin rights
     href: admin-delegate.md
@@ -37,5 +37,5 @@ items:
   items:
   - name: Admin troubleshooting
     href: admin-troubleshoot.yml  
-  - name: Admin limitations in TRIDENT
+  - name: Admin limitations in Microsoft Fabric
     href: admin-limitations.md       

@@ -1,6 +1,6 @@
 ---
 title: How does throttling work?
-description: Learn how throttling in [!INCLUDE [product-name](../includes/product-name.md)] works, and how to avoid it.
+description: Learn how throttling in Microsoft Fabric works, and how to avoid it.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
