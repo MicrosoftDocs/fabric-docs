@@ -35,7 +35,7 @@ Then Azure Blob Storage will be created and [moviesDB2.csv](https://github.com/k
 
 1. Switch to **Data factory** on the app.powerbi.com page.  
 
-   :::image type="content" source="media/create-first-pipeline/switch-data-factory.png" alt-text="Screenshot of menu in which Data factory option appears.":::
+   :::image type="content" source="media/pipeline-copy-from-azure-blob-storage-to-lakehouse/switch-data-factory.png" alt-text="Screenshot of menu in which Data factory option appears.":::
 
 2. Create a new workspace for this demo.  
 
