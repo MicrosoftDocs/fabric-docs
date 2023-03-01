@@ -18,7 +18,16 @@ This article outlines how to use the copy activity in data pipeline to copy data
 
 ## Supported format
 
-Trident Lakehouse supports the following file formats.
+Trident Lakehouse supports the following file formats. Refer to each article for format-based settings.
+
+- Avro format
+- Binary format
+- Delimited text format
+- Excel format
+- JSON format
+- ORC format
+- Parquet format
+- XML format
 
 ## Supported configuration
 
@@ -136,9 +145,9 @@ To learn more information about copy activity in Lakehouse, see the following ta
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|•**Workspace**<br> •**External**<br>  •**Sample dataset**|Yes|type|
-|**Workspace data store type** |Select **Lakehouse** from the data store type list.|\<your workspace data store type > |Yes|workspaceld<br>artifactld|
-|**Lakehouse** | Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.|\<your Lakehouse>|Yes |type|
+|**Data store type**|Your data store type.|**Workspace**|Yes|/|
+|**Workspace data store type** |Select **Lakehouse** from the data store type list.|**Lakehouse**|Yes|/|
+|**Lakehouse** | Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.|\<your Lakehouse>|Yes |/|
 |**Root folder** |Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](/trident-docs-private-preview/synapse-data-engineering/concepts-lakehouse?branch=main).| •**Tables**<br>  •**Files** |No|rootFolder|
 |**Table name** |Specify your table name.|\<your table name> |Yes when you select **Tables** in **Root folder** | folderPath|
 |**File path** |Select **Browse** to choose the file that you want to copy or fill in the path manually.|\<file path> |No | •folderPath<br>•fileName|
@@ -151,9 +160,9 @@ To learn more information about copy activity in Lakehouse, see the following ta
 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|•**Workspace**<br> •**External** |Yes|type|
-|**Workspace data store type** |Select **Lakehouse** from the data store type list.|\<your workspace data store type > |Yes|workspaceld<br>artifactld|
-|**Lakehouse** | Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.|\<your Lakehouse>|Yes |type|
+|**Data store type**|Your data store type.|**Workspace**|Yes|/|
+|**Workspace data store type** |Select **Lakehouse** from the data store type list.|**Lakehouse**|Yes|/|
+|**Lakehouse** | Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.|\<your Lakehouse>|Yes |/|
 |**Root folder** |Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](/trident-docs-private-preview/synapse-data-engineering/concepts-lakehouse?branch=main).| •**Tables**<br>  •**Files** |Yes | rootFolder|
 |**Table name** |Specify your table name.|\<your table name> |Yes when you select **Tables** in **Root folder** | folderPath|
 |**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store. You can choose Add Dynamic content, none, Flatten hierarchy or Preserve hierarchy as your copy behavior.| • **Add dynamic content**<br>• **None**<br>• **Flatten hierarchy**<br>• **Preserve hierarchy**|No |copyBehavior:<br><br><br>FlattenHierarchy<br>PreserveHierarchy|
