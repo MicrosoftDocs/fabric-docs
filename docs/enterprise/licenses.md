@@ -1,6 +1,6 @@
 ---
 title: Licenses
-description: Understand how licenses in [!INCLUDE [product-name](../includes/product-name.md)] work, and how you can buy them.
+description: Understand how licenses in Microsoft Fabric work, and how you can buy them.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept

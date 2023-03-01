@@ -1,6 +1,6 @@
 ---
 title: Create billing reports
-description: Learn how to create [!INCLUDE [product-name](../includes/product-name.md)] billing reports.
+description: Learn how to create Microsoft Fabric billing reports.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
