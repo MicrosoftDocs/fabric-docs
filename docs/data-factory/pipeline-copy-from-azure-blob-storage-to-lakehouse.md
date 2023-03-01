@@ -5,13 +5,14 @@ ms.reviewer: jonburchel
 ms.author: jburchel
 author: jonburchel
 ms.topic: quickstart 
+ms.subservice: data-factory
 ms.date: 03/01/2023
 ---
 
 # Quickstart: Copy from Azure Blob Storage to Lakehouse (Preview)
 
 > [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> Microsoft Fabric is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 In this tutorial, you'll build a data pipeline to move a CSV file from an input folder of an Azure Blob Storage source to a Lakehouse destination. 
@@ -20,7 +21,7 @@ In this tutorial, you'll build a data pipeline to move a CSV file from an input 
 
 To get started, you must complete the following prerequisites:
 
-- Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a Project Trident enabled Workspace.pdf (sharepoint.com)](https://microsofteur.sharepoint.com/teams/TridentPrivatePreview/Shared%20Documents/Documentation/Private%20Preview%20Documentation/Enabling%20Trident/Create%20a%20Project%20Trident%20enabled%20Workspace.pdf) that isn’t the default My Workspace.
+- Make sure you have a Microsoft Fabric enabled Workspace: [Create a Project Microsoft Fabric enabled Workspace](../placeholder.md) that isn’t the default My Workspace.
 - Select the **Click to Prepare Data** button to prepare the data source of the Copy with one-click button. Create a new resource group for this Azure Blob storage and select **Review + Create** > **Create**.
 
   :::image type="content" source="media/create-first-pipeline/select-prepare-data.png" alt-text="Screenshot of Click to Prepare Data button.":::
@@ -123,4 +124,4 @@ In this session, you'll start to build a data pipeline by using the following st
 
 ## Next steps
 
-[How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)](monitor-pipeline-runs.md)
+[How to monitor pipeline runs in Microsoft Fabric (Preview)](monitor-pipeline-runs.md)
