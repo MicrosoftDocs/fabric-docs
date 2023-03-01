@@ -53,7 +53,7 @@ items:
       href: spark-detail-monitoring.md
 - name: Notebooks
   items:
-  - name: Create a notebook
+  - name: Create and use notebooks
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
     href: author-execute-notebook.md
