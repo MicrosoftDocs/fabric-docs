@@ -71,11 +71,11 @@ You can use multiple languages in one notebook by specifying the correct languag
 
 The following image is an example of how you can write a PySpark query using the **%%pyspark** magic command in a **Spark(Scala)** notebook. Notice that the primary language for the notebook is set to PySpark.
 
-### IDE-style IntelliSense
+### IDE-style Intellisense
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebooks are integrated with the Monaco editor to bring IDE-style IntelliSense to the cell editor. Syntax highlight, error marker, and automatic code completions help you to write code and identify issues quicker.
 
-The IntelliSense features are at different levels of maturity for different languages. Use the following table to see what's supported.
+The IntelliSense features are at different levels of maturity for different languages. The following table shows what's supported:
 
 | **Languages** | **Syntax Highlight** | **Syntax Error Marker** | **Syntax Code Completion** | **Variable Code Completion** | **System Function Code Completion** | **User Function Code Completion** | **Smart Indent** | **Code Folding** |
 |---|---|---|---|---|---|---|---|---|
@@ -85,11 +85,14 @@ The IntelliSense features are at different levels of maturity for different lang
 | SparkR | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 
 > [!NOTE]
-> An active Spark session is required to benefit the Variable Code Completion.
+> An active Spark session is required to make use of the Intellisense code completion.
 
 ### Code snippets
 
-[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide code snippets that make it easier to enter commonly used code patterns like code for the following: configuring your Spark session, reading data as a Spark DataFrame, or drawing charts with matplotlib.
+[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide code snippets that make it easier to enter commonly used code patterns like code for the following: 
+* Configuring your Spark session
+* Reading data as a Spark DataFrame, or
+* Drawing charts with Matplotlib.
 
 Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellisense) mixed with other suggestions. The code snippets contents align with the code cell language. You can see available snippets by typing **Snippet** or any keywords appear in the snippet title in the code cell editor. For example, by typing **read** you can see the list of snippets to read data from various data sources.
 
@@ -99,15 +102,15 @@ Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellis
 
 ### Drag & Drop to insert snippets
 
-You can use Drag & Drop to read data from LakeHouse explorer conveniently, multiple file types are supported here, you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell, notebook generates the code snippet accordingly to preview the data.
+You can use drag & drop to read data from Lakehouse explorer conveniently. Multiple file types are supported here, you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell. The notebook generates the code snippet accordingly to preview the data.
 
 :::image type="content" source="media\author-execute-notebook\test-drag-and-drop.png" alt-text="Screenshot showing an empty cell." lightbox="media\author-execute-notebook\test-drag-and-drop.png":::
 
 ![Animated GIF of drag and drop to insert snippets.](media/author-execute-notebook/drag-drop-insert-snippet.gif)
 
-### Drag & Drop to insert images
+### Drag & drop to insert images
 
-You can use Drag & Drop to insert images from browser/local computer to a markdown cell conveniently.
+You can use drag & drop to insert images from your browser or local computer to a markdown cell conveniently.
 
 :::image type="content" source="media\author-execute-notebook\drag-and-drop-image.png" alt-text="Screenshot showing a markdown cell." lightbox="media\author-execute-notebook\drag-and-drop-image.png":::
 
@@ -121,19 +124,19 @@ You can use the format buttons in the text cells toolbar to do common markdown a
 
 ### Undo or redo cell operation
 
-Select the **Undo** / **Redo** button or press **Z** / **Shift+Z** to revoke the most recent cell operations. Now you can undo/redo up to the latest 10 historical cell operations.
+Select the **Undo** or **Redo** button or press **Z** or **Shift+Z** to revoke the most recent cell operations. Yu can undo or redo up to the latest 10 historical cell operations.
 
 :::image type="content" source="media\author-execute-notebook\undo-redo.png" alt-text="Screenshot showing the undo and redo menu options." lightbox="media\author-execute-notebook\undo-redo.png":::
 
 Supported undo cell operations:
 
-- Insert/Delete cell: You could revoke the delete operations by selecting **Undo**, the text content is kept along with the cell.
+- Insert or delete cell: You could revoke the delete operations by selecting **Undo**, the text content is kept along with the cell.
 - Reorder cell.
 - Toggle parameter.
-- Convert between Code cell and Markdown cell.
+- Convert between code cell and Markdown cell.
 
 > [!NOTE]
-> In-cell text operations and code cell commenting operations are not undoable. Now you can undo/redo up to the latest 10 historical cell operations.
+> In-cell text operations and code cell commenting operations can't be undone. You can undo or redo up to the latest 10 historical cell operations.
 
 ### Move a cell
 
@@ -167,7 +170,7 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide outpu
 
 ### Notebook outline
 
-The Outlines (Table of Contents) presents the first markdown header of any markdown cell in a sidebar window for quick navigation. The Outlines sidebar is resizable and collapsible to fit the screen in the best ways possible. You can select the **Outline** button on the notebook command bar to open or hide sidebar.
+The Outlines or Table of Contents presents the first markdown header of any markdown cell in a sidebar window for quick navigation. The Outlines sidebar is resizable and collapsible to fit the screen in the best ways possible. You can select the **Outline** button on the notebook command bar to open or hide the sidebar.
 
 :::image type="content" source="media\author-execute-notebook\outline-option.png" alt-text="Screenshot showing where to select the Contents option." lightbox="media\author-execute-notebook\outline-option.png":::
 
@@ -210,7 +213,7 @@ You can select the **Variables** button on the notebook ribbon “View” tab to
 
 ### Cell status indicator
 
-A step-by-step cell execution status is displayed beneath the cell to help you see its current progress. Once the cell run is complete, an execution summary with the total duration and end time is shown and kept there for future reference.
+A step-by-step cell execution status is displayed beneath the cell to help you see its current progress. Once the cell run is complete, an execution summary with the total duration and end time is shown and stored there for future reference.
 
 :::image type="content" source="media\author-execute-notebook\cell-run-status.png" alt-text="Screenshot showing an example of cell run status details." lightbox="media\author-execute-notebook\cell-run-status.png":::
 
@@ -228,11 +231,11 @@ Widgets are eventful python objects that have a representation in the browser, o
 
 1. You need to import *ipywidgets* module first to use the Jupyter Widget framework.
 
-   ```
+   ```python
    import ipywidgets as widgets
    ```
 
-1. You can use top-level *display* function to render a widget, or leave an expression of **widget** type at the last line of code cell.
+1. You can use top-level *display* function to render a widget, or leave an expression of *widget* type at the last line of code cell.
 
    ```
    slider = widgets.IntSlider()
