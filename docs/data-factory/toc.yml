@@ -1,7 +1,6 @@
-items:
-- name: Data factory documentation
-  href: index.yml
   items:
+  - name: Data factory documentation
+    href: index.yml
   - name: Overview
     items:
     - name: What is Data Factory
