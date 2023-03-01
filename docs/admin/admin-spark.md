@@ -1,6 +1,6 @@
 ---
 title: Spark
-description: Learn about the admin Spark settings in [!INCLUDE [product-name](../includes/product-name.md)].
+description: Learn about the admin Spark settings in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview

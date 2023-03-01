@@ -1,6 +1,6 @@
 ---
 title: How does autoscale work?
-description: Learn how autoscale in [!INCLUDE [product-name](../includes/product-name.md)] works, and how to enable it.
+description: Learn how autoscale in Microsoft Fabric works, and how to enable it.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
