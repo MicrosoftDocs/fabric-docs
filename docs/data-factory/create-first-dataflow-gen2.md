@@ -105,7 +105,7 @@ Follow these steps to apply transformations and publish:
 
     :::image type="content" source="media/create-first-dataflow-gen2/enable-schema-view.png" alt-text="Screenshot of the dataflows editor with the schema view button emphasized in the bottom-right corner." lightbox="media/create-first-dataflow-gen2/enable-schema-view.png":::
 
-9. The schema view provides a focused view into a table’s schema information, including column names and data types. Schema view has a set of schema tools available through a contextual ribbon tab. In this scenario, you'll select the **CustomerID**, **CompanyName**, and **Orders (2)** columns, then select click **Remove columns** button and then select **Remove other columns** in the **Schema tools** tab.
+9. The schema view provides a focused view into a table’s schema information, including column names and data types. Schema view has a set of schema tools available through a contextual ribbon tab. In this scenario, you'll select the **CustomerID**, **CompanyName**, and **Orders (2)** columns, then select the **Remove columns** button, and then select **Remove other columns** in the **Schema tools** tab.
 
    :::image type="content" source="media/create-first-dataflow-gen2/remove-columns-result.png" alt-text="Screenshot of the schema view showing all of the available column names, with the CustomerID, CompanyName, and Orders (2) columns emphasized." lightbox="media/create-first-dataflow-gen2/remove-columns-result.png":::
 
