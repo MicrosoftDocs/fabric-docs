@@ -56,8 +56,8 @@ To get started, you must complete the following prerequisites:
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
 **Connection name**: Specify a name for your connection.<br>
-**Connection type**: Select OData for your connection type.<br>
-**URL**: The root URL of the OData service.
+**Connection type**: Select **OData** for your connection type.<br>
+**URL**: The root URL of the **OData** service.
 
 ### Step 2:  Select and set your authentication
 
