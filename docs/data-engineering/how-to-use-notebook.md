@@ -47,7 +47,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], a notebook will save 
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebook now supports interacting with Lakehouse closely; you can easily add a new or existing Lakehouse from the Lakehouse explorer.
 
-You can navigate to different Lakehouses in the Lakehouse explorer and set one Lakehouse as the default by pinning it. It will then be mounted to the runtime working directory and you can read/write to the default Lakehouse using a local path.
+You can navigate to different Lakehouses in the Lakehouse explorer and set one Lakehouse as the default by pinning it. It will then be mounted to the runtime working directory and you can read or write to the default Lakehouse using a local path.
 
 :::image type="content" source="media\how-to-use-notebook\pin-default-lakehouse.png" alt-text="Screenshot showing where to pin a default Lakehouse." lightbox="media\how-to-use-notebook\pin-default-lakehouse.png":::
 

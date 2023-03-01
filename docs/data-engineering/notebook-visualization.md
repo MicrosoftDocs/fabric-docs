@@ -162,7 +162,7 @@ The following image is an example of creating a bar chart using **Matplotlib**.
 
 Run the following sample code to draw this bar chart.
 
-```
+```python
 # Bar chart
 
 import matplotlib.pyplot as plt
@@ -194,7 +194,7 @@ The following image is an example of plotting glyphs over a map using **bokeh**.
 
 Run the following sample code to draw this image.
 
-```
+```python
 from bokeh.plotting import figure, output_file
 from bokeh.tile_providers import get_provider, Vendors
 from bokeh.embed import file_html
@@ -231,7 +231,7 @@ Run the following sample code to draw this image:
 
 :::image type="content" source="media\notebook-visualization\plotly-map.png" alt-text="Screenshot of a map of the United States created with plotly." lightbox="media\notebook-visualization\plotly-map.png":::
 
-```
+```python
 from urllib.request import urlopen
 import json
 with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
@@ -265,7 +265,7 @@ You can view html output of pandas dataframe as the default output, notebook aut
 
 :::image type="content" source="media\notebook-visualization\pandas-table.png" alt-text="Screenshot of a table created with pandas." lightbox="media\notebook-visualization\pandas-table.png":::
 
-```
+```python
 import pandas as pd 
 import numpy as np 
 

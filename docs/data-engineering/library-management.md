@@ -19,7 +19,7 @@ Each workspace comes with a pre-installed set of libraries available in the Spar
 
 Based on the user scenarios and specific needs, you can include other libraries. There are two types of libraries you may want to include:
 
-- **Feed library**: Feed libraries refer to the ones residing in public sources/repositories. We currently support Python feed libraries from PyPI and Conda, one can specify the source in Library Management portals.
+- **Feed library**: Feed libraries refer to the ones residing in public sources or repositories. We currently support Python feed libraries from PyPI and Conda, one can specify the source in Library Management portals.
 
 - **Custom library**: Custom libraries are the code built by you or your organization. *.whl* and *.jar* can be managed through Library Management portals.
 
@@ -92,31 +92,31 @@ Now, you can use inline commands to help you enable *altair* on your Notebook se
 
 1. Run the following commands in a Notebook code cell to install the *altair* library and *vega_datasets*, which contains dataset you can use to visualize:
 
-```python
-%conda install altair          # install latest version through conda command
-%conda install vega_datasets   # install latest version through conda command
-```
+   ```python
+   %conda install altair          # install latest version through conda command
+   %conda install vega_datasets   # install latest version through conda command
+   ```
 
-The log in the cell output indicates the result of installation.
+   The log in the cell output indicates the result of installation.
 
-**Step 2**: Import the package and dataset by running the following codes in another Notebook cell:
+1. Import the package and dataset by running the following codes in another Notebook cell:
 
-```python
-import altair as alt
-from vega_datasets import data
-```
+   ```python
+   import altair as alt
+   from vega_datasets import data
+   ```
 
-**Step 3**: Now you can play around with the session-scoped *altair* library:
+1. Now you can play around with the session-scoped *altair* library:
 
-```python
-# load a simple dataset as a pandas DataFrame
-cars = data.cars()
-alt.Chart(cars).mark_point().encode(
-x='Horsepower',
-y='Miles_per_Gallon',
-color='Origin',
-).interactive()
-```
+   ```python
+   # load a simple dataset as a pandas DataFrame
+   cars = data.cars()
+   alt.Chart(cars).mark_point().encode(
+   x='Horsepower',
+   y='Miles_per_Gallon',
+   color='Origin',
+   ).interactive()
+   ```
 
 ### Manage Python custom libraries through in-line installation
 
@@ -138,26 +138,26 @@ After uploading, you can use the following command to install the custom library
 
 Follow this example to walk through the steps of installing an R feed library:
 
-**Step 1**: Switch working language to “SparkR(R)” in Notebook ribbon.
+1. Switch working language to “SparkR(R)” in Notebook ribbon.
 
-**Step 2**: Run the following command in a Notebook cell to install *caesar* library:
+1. Run the following command in a Notebook cell to install *caesar* library:
 
-```python
-install.packages("caesar")
-```
+   ```python
+   install.packages("caesar")
+   ```
 
-**Step 3**: Now you can play around with the session-scoped *caesar* library with Spark job
+1. Now you can play around with the session-scoped *caesar* library with Spark job
 
-```python
-library(SparkR)
-sparkR.session()
+   ```python
+   library(SparkR)
+   sparkR.session()
 
-hello <- function(x) {
-library(caesar)
-caesar(x)
-}
-spark.lapply(c("hello world", "good morning", "good evening"), hello)
-```
+   hello <- function(x) {
+   library(caesar)
+   caesar(x)
+   }
+   spark.lapply(c("hello world", "good morning", "good evening"), hello)
+   ```
 
 ## Next steps
 

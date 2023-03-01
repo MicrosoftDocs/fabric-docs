@@ -71,7 +71,7 @@ You can use multiple languages in one notebook by specifying the correct languag
 
 The following image is an example of how you can write a PySpark query using the **%%pyspark** magic command in a **Spark(Scala)** notebook. Notice that the primary language for the notebook is set to PySpark.
 
-### IDE-style Intellisense
+### IDE-style IntelliSense
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebooks are integrated with the Monaco editor to bring IDE-style IntelliSense to the cell editor. Syntax highlight, error marker, and automatic code completions help you to write code and identify issues quicker.
 
@@ -85,14 +85,15 @@ The IntelliSense features are at different levels of maturity for different lang
 | SparkR | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 
 > [!NOTE]
-> An active Spark session is required to make use of the Intellisense code completion.
+> An active Spark session is required to make use of the IntelliSense code completion.
 
 ### Code snippets
 
-[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide code snippets that make it easier to enter commonly used code patterns like code for the following: 
-* Configuring your Spark session
-* Reading data as a Spark DataFrame, or
-* Drawing charts with Matplotlib.
+[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide code snippets that make it easier to enter commonly used code patterns like code for the following:
+
+- Configuring your Spark session
+- Reading data as a Spark DataFrame, or
+- Drawing charts with Matplotlib.
 
 Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellisense) mixed with other suggestions. The code snippets contents align with the code cell language. You can see available snippets by typing **Snippet** or any keywords appear in the snippet title in the code cell editor. For example, by typing **read** you can see the list of snippets to read data from various data sources.
 
@@ -124,7 +125,7 @@ You can use the format buttons in the text cells toolbar to do common markdown a
 
 ### Undo or redo cell operation
 
-Select the **Undo** or **Redo** button or press **Z** or **Shift+Z** to revoke the most recent cell operations. Yu can undo or redo up to the latest 10 historical cell operations.
+Select the **Undo** or **Redo** button, or press **Z** or **Shift+Z** to revoke the most recent cell operations. You can undo or redo up to the latest 10 historical cell operations.
 
 :::image type="content" source="media\author-execute-notebook\undo-redo.png" alt-text="Screenshot showing the undo and redo menu options." lightbox="media\author-execute-notebook\undo-redo.png":::
 
@@ -237,12 +238,12 @@ Widgets are eventful python objects that have a representation in the browser, o
 
 1. You can use top-level *display* function to render a widget, or leave an expression of *widget* type at the last line of code cell.
 
-   ```
+   ```python
    slider = widgets.IntSlider()
    display(slider)
    ```
 
-   ```
+   ```python
    slider = widgets.IntSlider()
    slider
    ```
@@ -251,9 +252,9 @@ Widgets are eventful python objects that have a representation in the browser, o
 
    :::image type="content" source="media\author-execute-notebook\widget-in-output.png" alt-text="Screenshot of widget displayed in the output area." lightbox="media\author-execute-notebook\widget-in-output.png":::
 
-1. You can use multiple *display()* calls to render the same widget instance multiple times, but they'll remain in sync with each other.
+1. You can use multiple *display()* calls to render the same widget instance multiple times, but they remain in sync with each other.
 
-   ```
+   ```python
    slider = widgets.IntSlider()
    display(slider)
    display(slider)
@@ -263,7 +264,7 @@ Widgets are eventful python objects that have a representation in the browser, o
 
 1. To render two widgets independent of each other, create two widget instances:
 
-   ```
+   ```python
    slider1 = widgets.IntSlider()
    slider2 = widgets.IntSlider()
    display(slider1)
@@ -279,7 +280,7 @@ Widgets are eventful python objects that have a representation in the browser, o
 | Selection widgets | Dropdown, RadioButtons, Select, SelectionSlider, SelectionRangeSlider, ToggleButtons, SelectMultiple |
 | String Widgets | Text, Text area, Combobox, Password, Label, HTML, HTML Math, Image, Button |
 | Play (Animation) widgets | Date picker, Color picker, Controller |
-| Container/Layout widgets | Box, HBox, VBox, GridBox, Accordion, Tabs, Stacked |
+| Container or Layout widgets | Box, HBox, VBox, GridBox, Accordion, Tabs, Stacked |
 
 ### Known limitations
 
@@ -298,7 +299,7 @@ Widgets are eventful python objects that have a representation in the browser, o
 
 You can find Python logs and set different log levels and format like the sample code shown here:
 
-```
+```python
 import logging
 
 # Customize the logging format for all loggers
@@ -378,7 +379,7 @@ Using the following keystroke shortcuts, you can more easily navigate and run co
 | Move cursor down | Down |
 | Undo | Ctrl + Z |
 | Redo | Ctrl + Y |
-| Comment/Uncomment | Ctrl + / |
+| Comment or Uncomment | Ctrl + / |
 | Delete word before | Ctrl + Backspace |
 | Delete word after | Ctrl + Delete |
 | Go to cell start | Ctrl + Home |

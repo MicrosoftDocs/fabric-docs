@@ -216,7 +216,7 @@ mssparkutils.session.stop()
 
 ## File mount and unmount
 
-The [!INCLUDE [product-name](../includes/product-name.md)] notebook team has built three new APIs to support mount scenarios in the Microsoft Spark Utilities package, they are: mount/unmount/mounts. You can use these APIs to attach remote storage (Azure Data Lake Storage Gen2) to all working nodes (driver node and worker nodes). After the storage mount point is in place, use the local file API to access data as if it's stored in the local file system.
+The [!INCLUDE [product-name](../includes/product-name.md)] notebook team has built three new APIs to support mount scenarios in the Microsoft Spark Utilities package, they are: mount, unmount, and mounts. You can use these APIs to attach remote storage (Azure Data Lake Storage Gen2) to all working nodes (driver node and worker nodes). After the storage mount point is in place, use the local file API to access data as if it's stored in the local file system.
 
 ### How to mount an ADLS Gen2 account
 
@@ -352,7 +352,7 @@ mssparkutils.fs.unmount("/test")
 
 ### Known limitations
 
-- The *mssparkutils fs help* function hasn't added the description about the mount/unmount part yet.
+- The *mssparkutils fs help* function hasn't added the description about the mount and unmount part yet.
 - The current mount is a job level configuration; notebook level and workspace level design work will be available soon. So, always use *mounts* API to check if mount point exists or not available.
 - The unmount mechanism isn't automatic. When the application run finishes, to unmount the mount point to release the disk space, you need to explicitly call an unmount API in your code. Otherwise, the mount point will still exist in the node after the application run finishes.
 - Mounting an ADLS Gen1 storage account isn't supported.
