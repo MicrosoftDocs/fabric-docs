@@ -1,6 +1,6 @@
 ---
 title: Metrics app
-description: Learn how to evaluate your [!INCLUDE [product-name](../includes/product-name.md)] capacity's health, by reading the metrics app.
+description: Learn how to evaluate your Microsoft Fabric capacity's health, by reading the metrics app.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
