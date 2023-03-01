@@ -41,4 +41,4 @@ The Lakehouse ribbon is a quick go-to action bar for you to quickly load data in
 
 ## Next steps
 
-To get started with Lakehouses, see [Creating a Lakehouse](create-lakehouse.md).
+To get started with Lakehouse, see [Creating a Lakehouse](create-lakehouse.md).
