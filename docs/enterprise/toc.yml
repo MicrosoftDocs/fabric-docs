@@ -7,10 +7,12 @@ items:
     href: what-is-capacity.md
 - name: Get started
   items:
+  - name: Licenses
+    href: licenses.md  
   - name: Capacities and SKUs
     href: capacity-and-skus.md
-  - name: Licenses
-    href: licenses.md
+  - name: Buy a Microsoft Fabric license
+    href: licenses-buy.md     
 - name: Capacity operations
   items:
   - name: Pause and resume your capacity
