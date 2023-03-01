@@ -41,7 +41,7 @@ You can manage all the previously mentioned types of libraries via two different
 
 Summarizing all library management behaviors currently available in [!INCLUDE [product-name](../includes/product-name.md)]:
 
-| | **Workspace update** | **In-line installation** |
+| **Library name** | **Workspace update** | **In-line installation** |
 |---|---|---|
 | **Python Feed (PyPI & Conda)** | Supported | Supported |
 | **Python Custom** | Supported | Supported |
