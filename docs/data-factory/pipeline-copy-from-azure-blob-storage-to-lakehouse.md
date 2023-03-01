@@ -123,4 +123,4 @@ In this session, you'll start to build a data pipeline by using the following st
 
 ## Next steps
 
-[How to monitor pipeline runs in Trident (Preview)](monitor-pipeline-runs.md)
+[How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)](monitor-pipeline-runs.md)
