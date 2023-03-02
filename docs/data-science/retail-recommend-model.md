@@ -4,6 +4,7 @@ description: An e2e sample for building a retail book recommender.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
+ms.subservice: data-science
 ms.topic: tutorial
 ms.date: 02/10/2023
 ---
