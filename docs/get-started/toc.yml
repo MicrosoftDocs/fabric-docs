@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: Get started with Trident
+  - name: Get started with Microsoft Fabric
     href: ../placeholder.md
 - name: Get started
   items:
