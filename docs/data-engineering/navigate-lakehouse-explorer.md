@@ -4,6 +4,7 @@ description: Learn about the components of the Lakehouse explorer.
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
+ms.subservice: data-engineering
 ms.topic: conceptual
 ms.date: 02/24/2023
 ---

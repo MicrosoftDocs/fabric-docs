@@ -6,7 +6,7 @@ ms.author: noelleli
 author: n0elleli
 ms.subservice: data-factory
 ms.topic: quickstart
-ms.date: 01/27/2023
+ms.date: 2/10/2023
 ---
 
 # QuickStart: Move and transform data with dataflows and data pipelines
@@ -128,7 +128,7 @@ Follow these steps to create your data pipeline.
 
 1. Choose **Azure Blob Storage** as your destination, and then select **Next**.
 
-   :::image type="content" source="media/transform-data/choose-storate-destination.png" alt-text="Screenshot showing where to select data destination." lightbox="media/transform-data/choose-storate-destination.png":::
+   :::image type="content" source="media/transform-data/choose-storage-destination.png" alt-text="Screenshot showing where to select data destination." lightbox="media/transform-data/choose-storage-destination.png":::
 
 2. Create a connection to your destination by selecting **New Connection.**
 
