@@ -15,20 +15,118 @@
       href: transform-data.md
     - name: Move data - copy assistant
       href: move-data-lakehouse-copy-assistant.md
-    - name: Parameterization
+  - name: Connectors
+    items:
+    - name: Connector overview
+      href: connector-overview.md
+    - name: Connectors feature summary
       href: ../placeholder.md
+    - name: Amazon S3
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Azure Blob Storage
+      items:
+      - name: Overview
+        href: connector-azure-blob-storage-overview.md
+      - name: Set up connection
+        href: connector-azure-blob-storage.md
+      - name: Configure in copy activity
+        href: connector-azure-blob-storage-copy-activity.md
+    - name: Binary format
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Data warehouse
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Excel format
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Google cloud Storage
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: HTTP
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Kusto
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Microsoft 365
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Parquet format
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: OData
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: SharePoint online list
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: REST
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md      
   - name: Data pipelines
     items:
-    - name: Concepts in data factory for Fabric
-      href: ../placeholder.md
-    - name: Billing with data pipelines
-      href: ../placeholder.md
-    - name: Data pipeline runs
-      href: pipeline-runs.md
-    - name: How to use pipeline sample templates
-      href: ../placeholder.md
-    - name: Monitor data pipeline runs
-      href: monitor-pipeline-runs.md
     - name: Activities
       items:
       - name: Activity overview
@@ -46,6 +144,20 @@
       - name: Script activity
         href: script-activity.md
       - name: Use dataflow and email activities to transform data and report status
+        href: ../placeholder.md    
+    - name: Concepts
+      items:
+      - name: Concepts in data factory for Fabric
+        href: ../placeholder.md
+      - name: Billing with data pipelines
+        href: ../placeholder.md
+      - name: Data pipeline runs
+        href: pipeline-runs.md
+      - name: How to use pipeline sample templates
+        href: ../placeholder.md
+      - name: Monitor data pipeline runs
+        href: monitor-pipeline-runs.md
+      - name: Parameterization
         href: ../placeholder.md
     - name: Tutorials
       items:
@@ -63,126 +175,20 @@
         href: ../placeholder.md
   - name: Dataflows
     items:
-    - name: Data source management
-      href: data-source-management.md
-    - name: How to use key dataflow features
-      href: ../placeholder.md
-    - name: Introduction to dataflows at scale
-      href: ../placeholder.md
-    - name: Introduction to output destination in Fabric
-      href: ../placeholder.md
-    - name: Templates
-      href: ../placeholder.md
-    - name: Connectors
+    - name: Concepts
       items:
-      - name: Connector overview
-        href: connector-overview.md
-      - name: Connectors feature summary
+      - name: Data source management
+        href: data-source-management.md
+      - name: Introduction to dataflows at scale
         href: ../placeholder.md
-      - name: Amazon S3
-        items:
-        - name: Overview
-          href: ../placeholder.md
-        - name: Set up connection
-          href: ../placeholder.md
-        - name: Configure in copy activity
-          href: ../placeholder.md
-      - name: Azure Blob Storage
-        items:
-        - name: Overview
-          href: connector-azure-blob-storage-overview.md
-        - name: Set up connection
-          href: connector-azure-blob-storage.md
-        - name: Configure in copy activity
-          href: connector-azure-blob-storage-copy-activity.md
-      - name: Binary format
-        items:
-        - name: Overview
-          href: ../placeholder.md
-        - name: Set up connection
-          href: ../placeholder.md
-        - name: Configure in copy activity
-          href: ../placeholder.md
-      - name: Data warehouse
-        items:
-        - name: Overview
-          href: ../placeholder.md
-        - name: Set up connection
-          href: ../placeholder.md
-        - name: Configure in copy activity
-          href: ../placeholder.md
-      - name: Excel format
-        items:
-        - name: Overview
-          href: ../placeholder.md
-        - name: Set up connection
-          href: ../placeholder.md
-        - name: Configure in copy activity
-          href: ../placeholder.md
-      - name: Google cloud Storage
-        items:
-        - name: Overview
-          href: ../placeholder.md
-        - name: Set up connection
-          href: ../placeholder.md
-        - name: Configure in copy activity
-          href: ../placeholder.md
-      - name: HTTP
-        items:
-        - name: Overview
-          href: ../placeholder.md
-        - name: Set up connection
-          href: ../placeholder.md
-        - name: Configure in copy activity
-          href: ../placeholder.md
-      - name: Kusto
-        items:
-        - name: Overview
-          href: ../placeholder.md
-        - name: Set up connection
-          href: ../placeholder.md
-        - name: Configure in copy activity
-          href: ../placeholder.md
-      - name: Microsoft 365
-        items:
-        - name: Overview
-          href: ../placeholder.md
-        - name: Set up connection
-          href: ../placeholder.md
-        - name: Configure in copy activity
-          href: ../placeholder.md
-      - name: Parquet format
-        items:
-        - name: Overview
-          href: ../placeholder.md
-        - name: Set up connection
-          href: ../placeholder.md
-        - name: Configure in copy activity
-          href: ../placeholder.md
-      - name: OData
-        items:
-        - name: Overview
-          href: ../placeholder.md
-        - name: Set up connection
-          href: ../placeholder.md
-        - name: Configure in copy activity
-          href: ../placeholder.md
-      - name: SharePoint online list
-        items:
-        - name: Overview
-          href: ../placeholder.md
-        - name: Set up connection
-          href: ../placeholder.md
-        - name: Configure in copy activity
-          href: ../placeholder.md
-      - name: REST
-        items:
-        - name: Overview
-          href: ../placeholder.md
-        - name: Set up connection
-          href: ../placeholder.md
-        - name: Configure in copy activity
-          href: ../placeholder.md
+      - name: Introduction to output destination in Fabric
+        href: ../placeholder.md
+      - name: Templates
+        href: ../placeholder.md
+    - name: How-to
+      items:
+      - name: How to use key dataflow features
+        href: ../placeholder.md
     - name: Tutorials
       items:
       - name: Load OData into Lakehouse with dataflows
