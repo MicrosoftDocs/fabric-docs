@@ -1,14 +1,15 @@
 ---
-title: Spark application detail monitoring
+title: Apache Spark application detail monitoring
 description: Learn how to view detailed monitoring of an application.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
+ms.subservice: data-engineering
 ms.topic: how-to
 ms.date: 02/24/2023
 ---
 
-# Spark application detail monitoring
+# Apache Spark application detail monitoring
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
@@ -111,7 +112,7 @@ To view the details about the Apache Spark applications that are cancelled:
 
 1. The job runs list is displayed in the **Job** tab, you can view the details of each job here, including **Job ID**, **Description**, **Status**, **Stages**, **Tasks**, **Duration** and **Code snippet**.
     - Selecting **Job ID** can expand/collapse the job.
-    - Select the job **Description**, you can jump to job or stage page in spark UI.
+    - Select the job **Description**, you can jump to job or stage page in Spark UI.
     - Select the job **Code snippet**, you can check code related to this job.
 1. For the **Logs** tab, you can view the full log of Livy, Prelaunch, Driver log with different options selected in the left panel. And you can directly retrieve the required log information by searching keywords and view the logs by filtering the log status. Select **Download Log** to download the log information to the local.
 
