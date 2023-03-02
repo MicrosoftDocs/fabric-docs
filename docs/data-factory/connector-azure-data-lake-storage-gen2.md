@@ -1,6 +1,6 @@
 ---
 title: How to create an Azure Data Lake Storage Gen2 connection
-description: This article provides information about how to do create an Azure Data Lake Storage Gen2 connection in [!INCLUDE [product-name](../includes/product-name.md)].
+description: This article provides information about how to do create an Azure Data Lake Storage Gen2 connection
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
@@ -31,7 +31,7 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).  
+- A tenant account with an active subscription. Create an account for free.
 
 - A workspace is created that isn't the default My Workspace.
 
@@ -53,7 +53,7 @@ To get started, you must complete the following prerequisites:
 
 ### Step 1: Specify the new connection name, type, server and full path
 
-   :::image type="content" source="media/connectors-adlsgen2/connection-details.png" alt-text="Screenshot showing how to set a new connection.":::
+   :::image type="content" source="media/connector-azure-data-lake-storage-gen2/connection-details.png" alt-text="Screenshot showing how to set a new connection.":::
 
 In the **New connection** pane, choose **Cloud**, and specify the following fields:
 
@@ -71,25 +71,25 @@ Under **Authentication method**, select your authentication from the drop-down l
 * [Shared Access Signature](connector-azure-data-lake-storage-gen2.md#shared-access-signature-authentication)
 * [Service Principal](connector-azure-data-lake-storage-gen2.md#service-principal-authentication)
 
-:::image type="content" source="media/connectors-adlsgen2/authentication-method.png" alt-text="Screenshot showing the authentication method for Azure Data Lake Storage Gen2.":::
+:::image type="content" source="media/connector-azure-data-lake-storage-gen2/authentication-method.png" alt-text="Screenshot showing the authentication method for Azure Data Lake Storage Gen2.":::
 
 #### Key authentication
 
-* **Account key**: Specify your Azure Data Lake Storage Gen2 account key. Go to your Azure Data Lake Storage Gen2 account interface, browse to the **Access key** section, and get your account key.
+**Account key**: Specify your Azure Data Lake Storage Gen2 account key. Go to your Azure Data Lake Storage Gen2 account interface, browse to the **Access key** section, and get your account key.
 
-    :::image type="content" source="media/connectors-adlsgen2/key-authentication.png" alt-text="Screenshot showing that key authentication method for Azure Data Lake Storage Gen2.":::
+   :::image type="content" source="media/connector-azure-data-lake-storage-gen2/key-authentication.png" alt-text="Screenshot showing that key authentication method for Azure Data Lake Storage Gen2.":::
 
 #### OAuth2 authentication
 
-:::image type="content" source="media/connectors-adlsgen2/oauth2-authentication.png" alt-text="Screenshot showing that OAuth2 authentication method for Azure Data Lake Storage Gen2.":::
+:::image type="content" source="media/connector-azure-data-lake-storage-gen2/oauth2-authentication.png" alt-text="Screenshot showing that OAuth2 authentication method for Azure Data Lake Storage Gen2.":::
 
 Open **Edit credentials**. The sign-in interface opens. Enter your account and password to sign in to your account. After signing in, you'll come back to the **New connection** page.
 
 #### Shared access signature authentication
 
-:::image type="content" source="media/connectors-adlsgen2/sas-authentication.png" alt-text="Screenshot showing that shared access signature authentication method for Azure Data Lake Storage Gen2.":::
+:::image type="content" source="media/connector-azure-data-lake-storage-gen2/sas-authentication.png" alt-text="Screenshot showing that shared access signature authentication method for Azure Data Lake Storage Gen2.":::
 
-* **SAS token**: Specify the shared access signature token for your Azure Data Lake Storage Gen2 container.  
+**SAS token**: Specify the shared access signature token for your Azure Data Lake Storage Gen2 container.  
 
 If you don’t have a SAS token, switch to **Shared access signature** in your Azure Data Lake Storage Gen2 account interface. Under **Allowed resource types**, select **Container**, and then select **Generate SAS and connection string**. You can get your SAS token from the generated content that appears.
 The shared access signature is a URI that encompasses in its query parameters all the information necessary for authenticated access to a storage resource. To access storage resources with the shared access signature, the client only needs to pass in the shared access signature to the appropriate constructor or method.
@@ -97,7 +97,7 @@ For more information about shared access signatures, go to [Shared access sign
 
 #### Service principal authentication
 
-:::image type="content" source="media/connectors-adlsgen2/service-principal.png" alt-text="Screenshot showing that service principal authentication method for Azure Data Lake Storage Gen2.":::
+:::image type="content" source="media/connector-azure-data-lake-storage-gen2/service-principal.png" alt-text="Screenshot showing that service principal authentication method for Azure Data Lake Storage Gen2.":::
 
 * **Tenant Id**: Specify the tenant information (domain name or tenant ID) under which your application resides. Retrieve it by hovering over the upper-right corner of the Azure portal.
 * **Service principal ID**: Specify the application (client) ID.
@@ -123,13 +123,13 @@ To use service principal authentication, follow these steps:
 
 In the **General** tab, select the privacy level that you want apply in the **Privacy level** drop-down list. Three privacy levels are supported. For more information, go to General.
 
-:::image type="content" source="media/connectors-adlsgen2/privacy-level.png" alt-text="Screenshot showing that Privacy Level of data lake gen2":::
+:::image type="content" source="media/connector-azure-data-lake-storage-gen2/privacy-level.png" alt-text="Screenshot showing that Privacy Level of data lake gen2":::
 
 ### Step 4: Create your connection
 
 Select **Create**. Your creation will be successfully tested and saved if all the credentials are correct. If not correct, the creation will fail with errors.
 
-:::image type="content" source="./media/connectors-adlsgen2/connection.png" alt-text="Screenshot showing connection page." lightbox="./media/connectors-adlsgen2/connection.png":::
+:::image type="content" source="./media/connector-azure-data-lake-storage-gen2/connection.png" alt-text="Screenshot showing connection page." lightbox="./media/connector-azure-data-lake-storage-gen2/connection.png":::
 
 ## Table summary
 

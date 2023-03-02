@@ -25,7 +25,7 @@ The Azure Data Lake Storage Gen2 connector is supported in [!INCLUDE [product-na
 | **GetMetadata activity** | None | Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
 | **Dataflow Gen2 (Source/Destination)** | | |
 
-## Next Steps
+## Next steps
 
 [How to create a Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md)
 

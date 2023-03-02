@@ -46,7 +46,7 @@ For **General** tab configuration, go to General.
 
 The following properties are supported for Azure Data Lake Storage Gen2 under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connectors-adlsgen2/source.png" alt-text="Screenshot showing source tab." lightbox="./media/connectors-adlsgen2/source.png":::
+:::image type="content" source="./media/connector-azure-data-lake-storage-gen2/source.png" alt-text="Screenshot showing source tab." lightbox="./media/connector-azure-data-lake-storage-gen2/source.png":::
 
 The following properties are **required**:
 
@@ -65,7 +65,7 @@ Under **Advanced**, you can specify the following fields:
 
         Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, got to [Folder and file filter examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#folder-and-file-filter-examples).
 
-        :::image type="content" source="./media/connectors-adlsgen2/wildcard-file-path.png" alt-text="Screenshot showing wildcard file path." lightbox="./media/connectors-adlsgen2/wildcard-file-path.png":::
+        :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/wildcard-file-path.png" alt-text="Screenshot showing wildcard file path." lightbox="./media/connector-azure-data-lake-storage-gen2/wildcard-file-path.png":::
 
         *Wildcard folder path*: Specify the folder path with wildcard characters under your given container to filter source folders.
 
@@ -75,7 +75,7 @@ Under **Advanced**, you can specify the following fields:
 
        When you're using this option, don't specify a file name. For more examples, go to [File list examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#file-list-examples).
 
-        :::image type="content" source="./media/connectors-adlsgen2/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
+        :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
         
 - **Recursively**:  If this checkbox is selected, all files in the input folder and its subfolders will be processed recursively. If you unselect the checkbox, just the ones in the selected folder will be processed. This setting is disabled when a single file is selected.
 
@@ -90,7 +90,7 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for Azure Data Lake Storage Gen2 under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connectors-adlsgen2/destination.png" alt-text="Screenshot showing destination tab." lightbox="./media/connectors-adlsgen2/destination.png":::
+:::image type="content" source="./media/connector-azure-data-lake-storage-gen2/destination.png" alt-text="Screenshot showing destination tab." lightbox="./media/connector-azure-data-lake-storage-gen2/destination.png":::
 
 The following properties are **required**:
 
@@ -102,6 +102,8 @@ The following properties are **required**:
 Under **Advanced**, you can specify the following fields:
 
 - **Copy behavior**: Defines the copy behavior when the source is files from a file-based data store. You can choose **Add dynamic content**, **None**, **Flatten hierarchy**, or **Preserve hierarchy** from the drop-down list.
+
+    :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/copy-behavior.png" alt-text="Screenshot showing copy behavior.":::
 
     - **Add dynamic content**: Open the **Add dynamic content** pane. This opens the expression builder where you can build expressions from supported system variables, activity output, functions, and user-specified variables or parameters. For information about the expression language, go to [Expressions and functions](/azure/data-factory/control-flow-expression-language-functions).
     - **None**: Choose this option to not use any copy behavior.
@@ -115,6 +117,8 @@ Under **Advanced**, you can specify the following fields:
 - **Block size (MB)**: Specify the block size, in megabytes, used to write data to block blobs. More information: [Block Blobs](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-block-blobs)
 
 - **Metadata**: Set custom metadata when copying to a destination. Each object under the `metadata` array represents an extra column. The `name` defines the metadata key name, and the `value` indicates the data value of that key. If the [preserve attributes feature](/azure/data-factory/copy-activity-preserve-metadata#preserve-metadata) is used, the specified metadata will union/overwrite with the source file metadata.
+
+    :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/metadata.png" alt-text="Screenshot showing metadata.":::
 
     Allowed data values are:
     
@@ -156,6 +160,6 @@ The following tables contain more information about the copy activity in Azure D
 |**Block size (MB)** |Specify the block size in MB when writing data to Azure Data Lake Storage Gen2. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
 |**Metadata**|Set custom metadata when copy to sink.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
-## Next Steps
+## Next steps
 
 [How to create Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md)
