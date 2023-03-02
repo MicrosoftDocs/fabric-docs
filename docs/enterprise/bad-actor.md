@@ -1,6 +1,6 @@
 ---
 title: Identify items that consume a lot of CPU
-description: Learn how to identify [!INCLUDE [product-name](../includes/product-name.md)] items that use a lot of CPU, and how to deal with these items.
+description: Learn how to identify Microsoft Fabric items that use a lot of CPU, and how to deal with these items.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
