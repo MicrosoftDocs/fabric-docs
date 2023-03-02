@@ -15,10 +15,20 @@ items:
     href: deployment-pipelines/deployment-pipelines-get-started.md
   - name: Assigning a workspace
     href: deployment-pipelines/deployment-pipelines-assign.md
+  - name: Compare content in different stages
+    href: deployment-pipelines/deployment-pipelines-compare.md  
+  - name: Deploy content to the next stage
+    href: deployment-pipelines/deployment-pipelines-deploy.md
   - name: Deployment history
-    href: deployment-pipelines/deployment-pipelines-assign.md
+    href: deployment-pipelines/deployment-pipelines-history.md
   - name: Create deployment rules
     href: deployment-pipelines/deployment-pipelines-create-rules.md
+  - name: Automate deployment pipelines
+    href: deployment-pipelines/deployment-pipelines-automation.md
+  - name: Best practices
+    href: deployment-pipelines/deployment-pipelines-best-practices.md
+  - name: Troubleshooting
+    href: deployment-pipelines/deployment-pipelines-troubleshooting.yml
   - name: Automate deployment pipelines
     href: deployment-pipelines/deployment-pipelines-automation.md
 - name: Git integration
