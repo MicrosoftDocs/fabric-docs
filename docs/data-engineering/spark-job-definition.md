@@ -13,7 +13,7 @@ ms.date: 02/24/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Spark Job Definition is a Trident code artifact that allows you to submit batch/streaming job to Spark cluster. By uploading the binary files from compilation output of different languages, .jar from Java for example, you can apply different transformation logic to the data hosted on Lakehouse. Besides the binary file, you can further customize the behavior of the job by uploading additional libraries and command line arguments.
+Spark Job Definition is a Microsoft Fabric code artifact that allows you to submit batch/streaming job to Spark cluster. By uploading the binary files from compilation output of different languages, .jar from Java for example, you can apply different transformation logic to the data hosted on Lakehouse. Besides the binary file, you can further customize the behavior of the job by uploading additional libraries and command line arguments.
 
 To run a Spark job definition, you must have at least one Lakehouse associated with it. This default Lakehouse context serves as the default file system for Spark runtime. For any Spark code using relative path to read/write data, the data is served from the default Lakehouse.
 

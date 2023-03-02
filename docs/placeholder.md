@@ -1,6 +1,6 @@
 ---
-title: Trident documentation
-description: Trident is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more.
+title: Microsoft Fabric documentation
+description: Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more.
 ms.reviewer: SnehaGunda
 ms.author: sngun
 author: SnehaGunda
@@ -8,6 +8,6 @@ ms.topic: overview
 ms.date: 02/09/2023
 ---
 
-# Welcome to trident-docs!
+# Welcome to Microsoft Fabric docs!
 
-This is a placeholder file for Trident documentation. Content will be updated soon!
+This is a placeholder file for Microsoft Fabric documentation. Content will be updated soon!
