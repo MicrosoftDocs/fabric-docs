@@ -57,7 +57,7 @@ In this article, you'll learn how to create a OneLake shortcut in your KQL Datab
 The OneLake shortcut has been created. You can now query this data in a KQL Queryset.
 
 > [!IMPORTANT]
-> To query the data in the OneLake shortcut, you need to use the external table function `external_table()`.
+> To query the data in the OneLake shortcut, use the `external_table()` function .
 
 ## Next steps
 
