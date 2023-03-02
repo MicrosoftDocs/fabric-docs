@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 02/26/2023
+ms.date: 03/02/2023
 ms.search.form: product-kusto
 ---
 
@@ -19,11 +19,11 @@ Shortcuts can be updated or removed from your items, but these changes won't aff
 
 There are two types of shortcuts:
 
-* OneLake shortcut linking your KQL Database to OneLake. This shortcut creates one logical copy of the data in your database that you can access in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management.
+* OneLake shortcut linking data in your KQL Database to OneLake. This shortcut creates one logical copy of the data in your database that you can access in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management.
 
-* OneLake shortcut linking data in OneLake to your KQL Database. This shortcut references data from OneLake as an external table. It's useful for querying large amounts of data that you don't want to store locally.
+* OneLake shortcut linking data in OneLake to your KQL Database. This shortcut defines the data from OneLake as an external table. Create this shortcut when you want to infrequently run queries on historical data. If you want to run queries frequently and accelerate performance, see [Get data from OneLake](get-data-onelake.md).
 
-In this article, you'll learn how to create a OneLake shortcut in the context of your KQL Database.
+In this article, you'll learn how to create a OneLake shortcut in your KQL Database.
 
 ## Prerequisites
 
@@ -54,7 +54,10 @@ In this article, you'll learn how to create a OneLake shortcut in the context of
 
     :::image type="content" source="media/onelake-shortcut/object-tree.png" alt-text="Screenshot of the object tree showing the new shortcut.":::
 
-The Lakehouse shortcut has been created. You can now query this data in a KQL Queryset.
+The OneLake shortcut has been created. You can now query this data in a KQL Queryset.
+
+> [!IMPORTANT]
+> To query the data in the OneLake shortcut, you need to use the external table function `external_table()`.
 
 ## Next steps
 
