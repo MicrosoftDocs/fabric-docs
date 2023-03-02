@@ -122,7 +122,7 @@ Under **Advanced**, you can specify the following fields:
     * **Expression**
     * **Static value**
 
-    :::image type="content" source="./media/connector-azure-blob-storage/metadata.png" alt-text="Screenshot showing metadata." lightbox="./media/connector-azure-blob-storage/metadata.png":::
+    :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/metadata.png" alt-text="Screenshot showing metadata." lightbox="./media/connector-azure-blob-storage/metadata.png":::
 
 ### Settings
 
