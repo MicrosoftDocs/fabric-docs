@@ -165,7 +165,7 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide input
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide output** to collapse current cell's output. To expand it, select the **Show output** while the cell's output is hidden.
 
-:::image type="content" source="media\author-execute-notebook\show-hide-output.png" alt-text="Screenshot showing where to find the show and hide output options" lightbox="media\author-execute-notebook\show-hide-output.png":::
+:::image type="content" source="media\author-execute-notebook\show-hide-output.png" alt-text="Screenshot showing where to find the show and hide output options." lightbox="media\author-execute-notebook\show-hide-output.png":::
 
 ![Animated GIF of collapsing cell output.](media/author-execute-notebook/collapse-cell-output.gif)
 
