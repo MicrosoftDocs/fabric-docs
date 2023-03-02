@@ -20,10 +20,10 @@ You can configure data source rules and parameter rules. The following table lis
 
 ||Data source rule  |Parameter rule  |Details  |
 |---------|---------|---------|---------|
-|**Dataflow**         |![Applies to.](../media/yes.png) |![Applies to.](../media/yes.png) |Use to determine the values of the data sources or parameters for a specific dataflow. |
-|**Dataset**          |![Applies to.](../media/yes.png) |![Applies to.](../media/yes.png) |Use to determine the values of the data sources or parameters for a specific dataset.         |
-|**Datamart**          |![Applies to.](../media/yes.png) |![Applies to.](../media/yes.png) |Use to determine the values of the data sources or parameters for a specific datamart.         |
-|**Paginated report** |![Applies to.](../media/yes.png) |![Does not apply to.](../media/no.png) |Defined for the data sources of each paginated report. You can use these rules to determine the data sources of the paginated report. |
+|**Dataflow**         |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |Use to determine the values of the data sources or parameters for a specific dataflow. |
+|**Dataset**          |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |Use to determine the values of the data sources or parameters for a specific dataset.         |
+|**Datamart**          |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |Use to determine the values of the data sources or parameters for a specific datamart.         |
+|**Paginated report** |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |![Does not apply to.](./media/deployment-pipelines-create-rules/no.png) |Defined for the data sources of each paginated report. You can use these rules to determine the data sources of the paginated report. |
 
 >[!NOTE]
 > Data source rules only work when you change data sources from the same type.

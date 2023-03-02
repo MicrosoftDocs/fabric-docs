@@ -79,7 +79,7 @@ The Power BI automation tools extension is an [open source](https://github.com/m
 
 After you add the [Power BI automation tools](https://marketplace.visualstudio.com/items?itemName=ms-pbi-api.pbi-automation-tools) extension to DevOps, you need to create a service connection. The following connections are available:
 
-* **Service principal** (recommended) - This connection authenticates by using a [service principal](./../developer/embedded/embed-service-principal.md) and requires the Azure AD app’s secret and application ID. When you use this option, verify that the [Power BI service admin settings](./../developer/embedded/embed-service-principal.md#step-3---enable-the-power-bi-service-admin-settings) for the service principal are enabled.
+* **Service principal** (recommended) - This connection authenticates by using a [service principal](/power-bi/developer/embedded/embed-service-principal.md) and requires the Azure AD app’s secret and application ID. When you use this option, verify that the [Power BI service admin settings](/power-bi/developer/embedded/embed-service-principal#step-3---enable-the-power-bi-service-admin-settings) for the service principal are enabled.
 
 * **Username and password** – Configured as a generic service connection with a username and a password. This connection method doesn’t support multi-factor authentication. We recommend that you use the service principal connection method because it doesn’t require storing user credentials on Azure DevOps.
 
