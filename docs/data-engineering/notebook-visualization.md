@@ -30,7 +30,7 @@ To access the chart options:
 1. The output of _%%sql_ magic commands appear in the rendered table view by default. You can also call _display(df)_ on Spark DataFrames or Resilient Distributed Datasets (RDD) function to produce the rendered table view.
 1. Once you have a rendered table view, switch to the **Chart** view.
 
-   :::image type="content" source="media\notebook-visualization\chart-view.png" alt-text="Screenshot showing the Chart view" lightbox="media\notebook-visualization\chart-view.png":::
+   :::image type="content" source="media\notebook-visualization\chart-view.png" alt-text="Screenshot showing the Chart view." lightbox="media\notebook-visualization\chart-view.png":::
 
 1. You can now customize your visualization by specifying the following values:
 
@@ -158,7 +158,7 @@ The following image is an example of creating a bar chart using **Matplotlib**.
 
 :::image type="content" source="media\notebook-visualization\line-graph-example.png" alt-text="Screenshot of a line graph created with Matplotlib." lightbox="media\notebook-visualization\line-graph-example.png":::
 
-:::image type="content" source="media\notebook-visualization\bar-chart-example.png" alt-text="Screenshot of a bar chart created with Matplotlib" lightbox="media\notebook-visualization\bar-chart-example.png":::
+:::image type="content" source="media\notebook-visualization\bar-chart-example.png" alt-text="Screenshot of a bar chart created with Matplotlib." lightbox="media\notebook-visualization\bar-chart-example.png":::
 
 Run the following sample code to draw this bar chart.
 
