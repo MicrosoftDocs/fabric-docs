@@ -4,6 +4,7 @@ description: Learn how to create an Apache Spark job definition in your workspac
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
+ms.subservice: data-engineering
 ms.topic: how-to
 ms.date: 02/24/2023
 ---
@@ -68,7 +69,13 @@ To create a Spark job definition for PySpark, follow these steps:
 
 :::image type="content" source="media\create-spark-job-definition\main-definition-file-example.png" alt-text="Screenshot showing an example of a populated main definition file screen." lightbox="media\create-spark-job-definition\main-definition-file-example.png":::
 
-In this example, we've created a Spark job definition named **sjd005** for PySpark.  Uploaded the *createTablefromCSVwithdependency.py* file as the main definition file, the *Constant.py* file as the reference file, and added the Lakehouse references *LH001* and *LH002* to the job. *LH001* is the default Lakehouse context.
+In this example, we've done the following:
+
+- Created a Spark job definition named **sjd005** for PySpark
+- Uploaded the *createTablefromCSVwithdependency.py* file as the main definition file
+- Uploaded the *Constant.py* file as the reference file
+- Added the Lakehouse references *LH001* and *LH002* to the job
+- Made *LH001* the default Lakehouse context
 
 ### Create a Spark job definition for Scala/Java
 
@@ -87,6 +94,6 @@ To create a Spark job definition for Scala/Java, follow these steps:
 > [!NOTE]
 > The Spark job definition will be created under the current workspace you are in.
 
-Next steps
+## Next steps
 
-- [Run a Spark job definition](run-spark-job-definition.md)
+- [Run an Apache Spark job definition](run-spark-job-definition.md)
