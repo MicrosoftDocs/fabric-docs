@@ -15,7 +15,7 @@ ms.date: 03/02/2023
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-In this tutorial, you'll build a data pipeline to move a Sample dataset to the Lakehouse. This experience will show you a quick demo about how to use pipeline copy activity and how to load data into Lakehouse.
+In this tutorial, you build a data pipeline to move a Sample dataset to the Lakehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Lakehouse.
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.m
 
 ## Copy data using pipeline
 
-In this session, you will start to build your first pipeline by following below steps about copying form a sample dataset provided by pipeline into Lakehouse.
+In this session, you start to build your first pipeline by following below steps about copying from a sample dataset provided by pipeline into Lakehouse.
 
 ### Step 1: Start with the Copy assistant
 
@@ -79,7 +79,7 @@ In this session, you will start to build your first pipeline by following below 
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/review-create-activity.png" alt-text="Screenshot of the Review + create page of the Copy data assistant highlighting source and destination.":::
 
-1. The Copy activity will then be added to your new data pipeline canvas. All settings including advanced settings for the activity are available in the tabs below the pipeline canvas when the activity is selected.
+1. The Copy activity is added to your new data pipeline canvas. All settings including advanced settings for the activity are available in the tabs below the pipeline canvas when the activity is selected.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/completed-activity.png" alt-text="Screenshot showing the completed Copy activity with the Copy activity settings tabs highlighted.":::
 
@@ -89,7 +89,7 @@ In this session, you will start to build your first pipeline by following below 
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Run button on the Home tab, and the Save and run prompt displayed.":::
 
-1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas.  Select the run details button (with the glasses icon highlighted below) to view the run details.
+1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas.  Select the run details button (with the glasses icon highlighted) to view the run details.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/run-details-button.png" alt-text="Screenshot showing the Output tab of the pipeline run in-progress with the Details button highlighted in the run status.":::
 
@@ -99,7 +99,7 @@ In this session, you will start to build your first pipeline by following below 
 
 1. You can also schedule the pipeline to run with a specific frequency as required. Below is an example scheduling the pipeline to run every 15 minutes.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15m recurring schedule.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15 minute recurring schedule.":::
 
 ## Next steps
 
