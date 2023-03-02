@@ -25,7 +25,7 @@ Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.m
 
 1. Switch to **Data factory** on the [app.powerbi.com](https://app.powerbi.com) page.
 
-   :::image type="content" source="media/pipeline-copy-from-azure-blob-storage-to-lakehouse/switch-data-factory.png" alt-text="Screenshot of menu in which Data factory option appears.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/switch-data-factory.png" alt-text="Screenshot of menu in which Data factory option appears.":::
 
 1. Create a new workspace or choose another workspace besides **My workspace** for this demo.
 
