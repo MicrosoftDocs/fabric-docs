@@ -159,7 +159,7 @@ with mlflow.start_run() as run:
     print(f"Model URI: {model_uri}")
 ```
 
-This will create a run with the specified parameters and log the run within the sample-pytorch experiment. This snippet will also create a new model called sample-pytorch.  
+This creates a run with the specified parameters and log the run within the sample-pytorch experiment. This snippet will also create a new model called sample-pytorch.  
 
 ### Load and evaluate the model
 
