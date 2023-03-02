@@ -36,7 +36,7 @@ If you have Premium permissions, the content of the workspace is copied to the s
 
 If you don't have Premium permissions, the workspace is created but the content isn’t copied. You can ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. Later, when the workspace is assigned to a capacity, you can deploy content to this workspace.
 
-If you're using [Premium Per User (PPU)](../enterprise/service-premium-per-user-faq.yml), your workspace is automatically associated with your PPU. In such cases, Premium permissions aren't required. However, workspaces created by a PPU user, can only be accessed by other PPU users. In addition, content created in such workspaces can only be consumed by PPU users.
+If you're using [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml), your workspace is automatically associated with your PPU. In such cases, Premium permissions aren't required. However, workspaces created by a PPU user, can only be accessed by other PPU users. In addition, content created in such workspaces can only be consumed by PPU users.
 
 ### Workspace and content ownership
 
@@ -127,7 +127,7 @@ In many cases, when you have a small change such as adding or removing a table, 
 
 ### Requirements for deploying to a stage with an existing workspace
 
-A user with a [Pro license](../enterprise/service-admin-purchasing-power-bi-pro.md) or a [PPU user](../enterprise/service-premium-per-user-faq.yml) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [Premium capacity](../enterprise/service-premium-what-is.md) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
+A user with a [Pro license](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md) or a [PPU user](/power-bi/enterprise/service-premium-per-user-faq.yml) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
 
 ## Deployed items
 
@@ -157,7 +157,7 @@ Deployment pipelines doesn't support the following items:
 
 * Reports based on unsupported datasets
 
-* [Template app workspaces](../connect-data/service-template-apps-create.md#create-the-template-workspace)
+* [Template app workspaces](/power-bi/connect-data/service-template-apps-create.md#create-the-template-workspace)
 
 * Workbooks
 
@@ -181,7 +181,7 @@ During deployment, the following item properties are copied and overwrite the it
 
 * Item relationships
 
-[Sensitivity labels](../enterprise/service-security-sensitivity-label-overview.md) are copied *only* when one of the conditions listed below is met. If these conditions aren't met, sensitivity labels *won't* be copied during deployment.
+[Sensitivity labels](/power-bi/enterprise/service-security-sensitivity-label-overview.md) are copied *only* when one of the conditions listed below is met. If these conditions aren't met, sensitivity labels *won't* be copied during deployment.
 
 * A new item is deployed, or an existing item is deployed to an empty stage.
 
@@ -206,7 +206,7 @@ The following item properties aren't copied during deployment:
 
 * App content and settings - To update your apps, see [Update content to Power BI apps](#update-content-to-power-bi-apps)
 
-* [Personal bookmarks](./../consumer/end-user-bookmarks.md#create-personal-bookmarks-in-the-power-bi-service)
+* [Personal bookmarks](/power-bi/consumer/end-user-bookmarks.md#create-personal-bookmarks-in-the-power-bi-service)
 
 The following dataset properties are also not copied during deployment:
 
@@ -230,15 +230,15 @@ Deployment pipelines supports many Power BI dataset features. This section lists
 
 ### Incremental refresh
 
-Deployment pipelines supports [incremental refresh](../connect-data/incremental-refresh-overview.md), a feature that allows large datasets faster and more reliable refreshes, with lower consumption.
+Deployment pipelines supports [incremental refresh](/power-bi/connect-data/incremental-refresh-overview.md), a feature that allows large datasets faster and more reliable refreshes, with lower consumption.
 
 With deployment pipelines, you can make updates to a dataset with incremental refresh while retaining both data and partitions. When you deploy the dataset, the policy is copied along.
 
-To understand how incremental refresh behaves with dataflows, see [why do I see two data sources connected to my dataflow after using dataflow rules?](../create-reports/deployment-pipelines-troubleshooting.yml#why-do-i-see-two-data-sources-connected-to-my-dataflow-after-using-dataflow-rules-)
+To understand how incremental refresh behaves with dataflows, see [why do I see two data sources connected to my dataflow after using dataflow rules?](/power-bi/create-reports/deployment-pipelines-troubleshooting.yml#why-do-i-see-two-data-sources-connected-to-my-dataflow-after-using-dataflow-rules-)
 
 #### Activating incremental refresh in a pipeline
 
-To enable incremental refresh, [configure it in Power BI Desktop](../connect-data/incremental-refresh-overview.md), and then publish your dataset. After you publish, the incremental refresh policy is similar across the pipeline, and can be authored only in Power BI Desktop.
+To enable incremental refresh, [configure it in Power BI Desktop](/power-bi/connect-data/incremental-refresh-overview.md), and then publish your dataset. After you publish, the incremental refresh policy is similar across the pipeline, and can be authored only in Power BI Desktop.
 
 Once your pipeline is configured with incremental refresh, we recommend that you use the following flow:
 
@@ -264,7 +264,7 @@ Below are a few examples of how you may integrate incremental refresh with deplo
 
 #### Incremental refresh limitations
 
-For incremental refresh, deployment pipelines only supports datasets that use [enhanced dataset metadata](../connect-data/desktop-enhanced-dataset-metadata.md). All datasets created or modified with Power BI Desktop automatically implement enhanced dataset metadata.
+For incremental refresh, deployment pipelines only supports datasets that use [enhanced dataset metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata.md). All datasets created or modified with Power BI Desktop automatically implement enhanced dataset metadata.
 
 When republishing a dataset to an active pipeline with incremental refresh enabled, the following changes will result in deployment failure due to data loss potential:
 
@@ -278,27 +278,27 @@ Other changes such as adding a column, removing a column, and renaming a calcula
 
 ### Composite models
 
-Using [composite models](../transform-model/desktop-composite-models.md) you can set up a report with multiple data connections.
+Using [composite models](/power-bi/transform-model/desktop-composite-models.md) you can set up a report with multiple data connections.
 
-You can use the composite models functionality to connect a Power BI dataset to an external dataset such as Azure Analysis Services. For more information, see [Using DirectQuery for Power BI datasets and Azure Analysis Services](../connect-data/desktop-directquery-datasets-azure-analysis-services.md).
+You can use the composite models functionality to connect a Power BI dataset to an external dataset such as Azure Analysis Services. For more information, see [Using DirectQuery for Power BI datasets and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services.md).
 
 In a deployment pipeline, you can use composite models to connect a dataset to another Power BI dataset external to the pipeline.
 
 ### Automatic aggregations
 
-[Automatic aggregations](./../enterprise/aggregations-auto.md) are built on top of user defined aggregations and use machine learning to continuously optimize DirectQuery datasets for maximum report query performance.
+[Automatic aggregations](/power-bi/enterprise/aggregations-auto.md) are built on top of user defined aggregations and use machine learning to continuously optimize DirectQuery datasets for maximum report query performance.
 
 Each dataset keeps its automatic aggregations after deployment. Deployment pipelines doesn't change a dataset's automatic aggregation. This means that if you deploy a dataset with an automatic aggregation, the automatic aggregation in the target stage will remain as is, and won't be overwritten by the automatic aggregation deployed from the source stage.
 
-To enable automatic aggregations, follow the instructions in [configure the automatic aggregation](./../enterprise/aggregations-auto-configure.md).
+To enable automatic aggregations, follow the instructions in [configure the automatic aggregation](/power-bi/enterprise/aggregations-auto-configure.md).
 
 ### Hybrid tables
 
-Hybrid tables are tables with [incremental refresh](../connect-data/incremental-refresh-overview.md) that can have both import and direct query partitions. During a clean deployment, both the refresh policy and the hybrid table partitions are copied. When deploying to a pipeline stage that already has hybrid table partitions, only the refresh policy is copied. To update the partitions, refresh the table.
+Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview.md) that can have both import and direct query partitions. During a clean deployment, both the refresh policy and the hybrid table partitions are copied. When deploying to a pipeline stage that already has hybrid table partitions, only the refresh policy is copied. To update the partitions, refresh the table.
 
 ## Update content to Power BI apps
 
-[Power BI apps](../consumer/end-user-apps.md) are the recommended way of distributing content to free Power BI consumers. You can update the content of your Power BI apps using a deployment pipeline, giving you more control and flexibility when it comes to your app's lifecycle.
+[Power BI apps](/power-bi/consumer/end-user-apps.md) are the recommended way of distributing content to free Power BI consumers. You can update the content of your Power BI apps using a deployment pipeline, giving you more control and flexibility when it comes to your app's lifecycle.
 
 Create an app for each deployment pipeline stage, so that you can test each update from an end user's point of view. Use the **publish** or **view** button in the workspace card to publish or view the app in a specific pipeline stage.
 
@@ -317,7 +317,7 @@ Permissions are required for the pipeline, and for the workspaces that are assig
 
 * Pipelines only have one permission, *Admin*, which is required for sharing, editing and deleting a pipeline.
 
-* Workspaces have different permissions, also called [roles](../collaborate-share/service-roles-new-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
+* Workspaces have different permissions, also called [roles](/power-bi/collaborate-share/service-roles-new-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
 
 To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a member or an admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, will be able to view the pipeline and share it with others. However, this user won't be able to view the content of the workspace in the pipeline, or in Power BI service, and won't be able to perform deployments.
 
@@ -371,7 +371,7 @@ The table below lists required permissions for popular deployment pipeline actio
 
 This section lists most of the limitations in deployment pipelines.
 
-* The workspace must reside on a [Premium capacity](../enterprise/service-premium-what-is.md).
+* The workspace must reside on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
 
 * The maximum number of Power BI items that can be deployed in a single deployment is 300.
 
@@ -387,9 +387,9 @@ This section lists most of the limitations in deployment pipelines.
 
 * Datasets that use real-time data connectivity can't be deployed.
 
-* A dataset with DirectQuery or Composite connectivity mode that uses variation or [auto date/time](../transform-model/desktop-auto-date-time.md) tables, isn’t supported. For more information see [What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or calendar tables?](deployment-pipelines-troubleshooting.yml#what-can-i-do-if-i-have-a-dataset-with-directquery-or-composite-connectivity-mode--that-uses-variation-or-auto-date-time-tables-)
+* A dataset with DirectQuery or Composite connectivity mode that uses variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables, isn’t supported. For more information see [What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or calendar tables?](deployment-pipelines-troubleshooting.yml#what-can-i-do-if-i-have-a-dataset-with-directquery-or-composite-connectivity-mode--that-uses-variation-or-auto-date-time-tables-)
 
-* During deployment, if the target dataset is using a [live connection](../connect-data/desktop-report-lifecycle-datasets.md), the source dataset must use this connection mode too.
+* During deployment, if the target dataset is using a [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets.md), the source dataset must use this connection mode too.
 
 * After deployment, downloading a dataset (from the stage it's been deployed to) isn't supported.
 

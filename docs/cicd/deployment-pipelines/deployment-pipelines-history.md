@@ -18,13 +18,13 @@ You can use the deployment history log, to check the health of your pipeline, an
 
 When you perform a deployment, you can use the built-in option to [leave notes](deployment-pipelines-deploy.md#review-your-deployment-and-leave-a-note), to add additional information to each deployment. Later, when you're looking back at your deployment history, the notes can help you understand what happened during each deployment.
 
-:::image type="content" source="media/deployment-pipelies-history/deployment-history.png" alt-text="A screenshot of the deployment pipelines history pane.":::
+:::image type="content" source="media/deployment-pipelines-history/deployment-history.png" alt-text="A screenshot of the deployment pipelines history pane.":::
 
 ## Deployment information
 
 To view the pipeline's deployment history, select **Deployment history**.
 
-:::image type="content" source="media/deployment-pipelies-history/deployment-history-button.png" alt-text="A screenshot of the deployment pipelines history button.":::
+:::image type="content" source="media/deployment-pipelines-history/deployment-history-button.png" alt-text="A screenshot of the deployment pipelines history button.":::
 
 The deployment history log is formatted as a table. Each row represents a single deployment, and the columns list the following information per deployment:
 
@@ -38,14 +38,14 @@ The deployment history log is formatted as a table. Each row represents a single
 
     | Label | Name            | Description | Expanded view |
     |-------|-----------------|-------------|---------------|
-    | :::image type="content" source="media/deployment-pipelies-history/new-item.png" alt-text="A screenshot of the deployment pipelines history new item icon.":::    | New items       | A new item that was deployed | :::image type="content" source="media/deployment-pipelies-history/expanded-new-itemS.png" alt-text="A screenshot of the deployment pipelines history new item icon selected, with the list of new items for this deployment expanded."::: |
-    | :::image type="content" source="media/deployment-pipelies-history/different-item.png" alt-text="A screenshot of the deployment pipelines history different item icon.":::      | Different items | A deployed item that's different in the source and target stages | :::image type="content" source="media/deployment-pipelies-history/expanded-different-items.png" alt-text="A screenshot of the deployment pipelines history different item icon selected, with the list of different items for this deployment expanded."::: |
-    | :::image type="content" source="media/deployment-pipelies-history/unchanged-item.png" alt-text="A screenshot of the deployment pipelines history unchanged item icon.":::      | Unchanged items | A deployment item that's identical to the one in the target stage | :::image type="content" source="media/deployment-pipelies-history/expanded-unchanged-items.png" alt-text="A screenshot of the deployment pipelines history unchanged item icon selected, with the list of unchanged items for this deployment expanded."::: |
-    | :::image type="content" source="media/deployment-pipelies-history/failed-deployment.png" alt-text="A screenshot of the deployment pipelines history failed deployment icon."::: | Items failed to deploy            | Indicates a failed deployment | :::image type="content" source="media/deployment-pipelies-history/expanded-failed-deployment.png" alt-text="A screenshot of the deployment pipelines history failed deployment icon selected."::: |
+    | :::image type="content" source="media/deployment-pipelines-history/new-item.png" alt-text="A screenshot of the deployment pipelines history new item icon.":::    | New items       | A new item that was deployed | :::image type="content" source="media/deployment-pipelines-history/expanded-new-itemS.png" alt-text="A screenshot of the deployment pipelines history new item icon selected, with the list of new items for this deployment expanded."::: |
+    | :::image type="content" source="media/deployment-pipelines-history/different-item.png" alt-text="A screenshot of the deployment pipelines history different item icon.":::      | Different items | A deployed item that's different in the source and target stages | :::image type="content" source="media/deployment-pipelines-history/expanded-different-items.png" alt-text="A screenshot of the deployment pipelines history different item icon selected, with the list of different items for this deployment expanded."::: |
+    | :::image type="content" source="media/deployment-pipelines-history/unchanged-item.png" alt-text="A screenshot of the deployment pipelines history unchanged item icon.":::      | Unchanged items | A deployment item that's identical to the one in the target stage | :::image type="content" source="media/deployment-pipelines-history/expanded-unchanged-items.png" alt-text="A screenshot of the deployment pipelines history unchanged item icon selected, with the list of unchanged items for this deployment expanded."::: |
+    | :::image type="content" source="media/deployment-pipelines-history/failed-deployment.png" alt-text="A screenshot of the deployment pipelines history failed deployment icon."::: | Items failed to deploy            | Indicates a failed deployment | :::image type="content" source="media/deployment-pipelines-history/expanded-failed-deployment.png" alt-text="A screenshot of the deployment pipelines history failed deployment icon selected."::: |
 
 * **Note** - A note, if exists. Select the note's icon to display its content.
 
-    :::image type="content" source="media/deployment-pipelies-history/expanded-note.png" alt-text="A screenshot of the deployment pipelines history note icon selected, with the expanded note displayed.":::
+    :::image type="content" source="media/deployment-pipelines-history/expanded-note.png" alt-text="A screenshot of the deployment pipelines history note icon selected, with the expanded note displayed.":::
 
 * **ID** - The deployment ID. Use as a reference when troubleshooting your latest deployment if it fails.
 
@@ -53,8 +53,8 @@ The deployment history log is formatted as a table. Each row represents a single
 
     | Icon     | Deployment status |
     |----------|-------------------|
-    | :::image type="content" source="media/deployment-pipelies-history/successful-deployment.png" alt-text="A screenshot of the deployment pipelines history successful deployment status icon.":::         | Successful        |
-    | :::image type="content" source="media/deployment-pipelies-history/unsuccessful-deployment.png" alt-text="A screenshot of the deployment pipelines history unsuccessful deployment status icon.":::         | Unsuccessful      |
+    | :::image type="content" source="media/deployment-pipelines-history/successful-deployment.png" alt-text="A screenshot of the deployment pipelines history successful deployment status icon.":::         | Successful        |
+    | :::image type="content" source="media/deployment-pipelines-history/unsuccessful-deployment.png" alt-text="A screenshot of the deployment pipelines history unsuccessful deployment status icon.":::         | Unsuccessful      |
 
 ## Considerations and limitations
 
