@@ -19,7 +19,7 @@ In this tutorial, you'll build a data pipeline to move a Sample dataset to the L
 
 ## Prerequisites
 
-Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](placeholder.md) that isn’t the default My Workspace.
+Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../placeholder.md) that isn’t the default My Workspace.
 
 ## Create a data pipeline
 
@@ -91,7 +91,7 @@ In this session, you will start to build your first pipeline by following below 
 
 1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas.  Select the run details button (with the glasses icon highlighted below) to view the run details.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/run-details-button.png" alt-text="":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/run-details-button.png" alt-text="Screenshot showing the Output tab of the pipeline run in-progress with the Details button highlighted in the run status.":::
 
 1. The run details show how much data was read and written and various other details about the run.
 
