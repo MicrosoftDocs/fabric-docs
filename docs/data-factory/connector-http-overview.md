@@ -8,7 +8,7 @@ ms.date: 02/08/2022
 ms.custom: template-how-to 
 ---
 
-# HTTP connector Overview
+# HTTP connector overview
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
@@ -24,7 +24,7 @@ This HTTP connector is supported in Trident Project  - Data Factory with the fol
 | **Lookup activity** | None | Basic |
 | **Dataflow Gen2 (source/destination)** |  |  |
 
-## Next Steps
+## Next steps
 
 [How to create HTTP connection](connector-http.md)
 

@@ -68,7 +68,7 @@ Under **Advanced**, you can specify the following fields:
 - **Skip line count**: The number of non-empty rows to skip when reading data from input files.
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
-    :::image type="content" source="./media/connector-http/additionalcolumns.png" alt-text="Screenshot showing additional columns.":::
+    :::image type="content" source="./media/connector-http/additional-columns.png" alt-text="Screenshot showing additional columns.":::
 
 ### Settings
 
@@ -94,6 +94,6 @@ To learn more information about copy activity in HTTP, see the following table.
 |**Skip line count** |The number of non-empty rows to skip when reading data from input files.| \<your skip line count> |No |skipLineCount|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.| •Name<br>•Value|No |additionalColumns:<br>- name<br>- value |
 
-## Next Steps
+## Next steps
 
 [How to create HTTP connection](connector-http.md)

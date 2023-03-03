@@ -49,7 +49,7 @@ To get started, you must have the following prerequisites:
 
 ## Setup connection
 
-### Step 1: Specify the new connection name, type, and URL.
+### Step 1: Specify the new connection name, type, and URL
 
    :::image type="content" source="media/connector-http/connection-details.png" alt-text="Screenshot showing how to set new connection":::
 
@@ -65,14 +65,14 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 [Basic](#basic-authentication)
 
-:::image type="content" source="media/connector-http/authentication-method.png" alt-text="Screenshot showing that authentication method of HTTP":::
+:::image type="content" source="media/connector-http/authentication-method.png" alt-text="Screenshot showing that authentication method of HTTP.":::
 
 #### Basic authentication
 
 - **Username**: The user name to use to access the HTTP endpoint.
 - **Password**: The password for specified username.
 
-:::image type="content" source="media/connector-http/authentication-basic.png" alt-text="Screenshot showing that basic authentication method":::
+:::image type="content" source="media/connector-http/authentication-basic.png" alt-text="Screenshot showing that basic authentication method.":::
 
 ### Step 3: Specify the privacy level that you want to apply
 
