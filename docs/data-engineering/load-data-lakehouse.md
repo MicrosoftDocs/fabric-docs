@@ -51,6 +51,6 @@ The Copy tool is a highly scalable Data Integration solution that allows you to 
 ## Next steps
 
 - Overview: How to use notebook together with Lakehouse
-- [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline.md).
+- [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md).
 - [How to: How to copy data using Copy activity in Data pipeline](../data-factory/copy-data-activity.md).
 - [Tutorial: Move data into Lakehouse via Copy assistant](../data-factory/move-data-lakehouse-copy-assistant.md).
