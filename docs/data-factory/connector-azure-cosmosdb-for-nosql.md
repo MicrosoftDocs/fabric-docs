@@ -58,7 +58,7 @@ To get started, you must complete the following prerequisites:
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
 **Connection name**: Specify a name for your connection.<br>
-**Connection type**: Select Azure CosmosDB (Data pipeline) for your connection type.<br>
+**Connection type**: Select **Azure CosmosDB (Data pipeline)** for your connection type.<br>
 **Account Endpoint**: Enter your account endpoint URL of your Azure Cosmos DB for NoSQL.<br>
 **Database**: Enter the database id of your Azure Cosmos DB for NoSQL.
 
@@ -93,7 +93,7 @@ The following connector properties in the table are supported in pipeline copy a
 |Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/|
-|**Connection type**|Select Azure CosmosDB (Data pipeline) for your connection type.|Yes||✓/|
+|**Connection type**|Select **Azure CosmosDB (Data pipeline)** for your connection type.|Yes||✓/|
 |**Account Endpoint**|Enter your account endpoint URL of your Azure Cosmos DB for NoSQL.|Yes||✓/|
 |**Database**|Enter the database id of your Azure Cosmos DB for NoSQL.|Yes||✓/|
 |**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
