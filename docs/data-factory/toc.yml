@@ -10,7 +10,7 @@
     - name: Create a dataflow
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
-      href: create-first-pipeline.md
+      href: create-first-pipeline-with-sample-data.md
     - name: Move and transform data
       href: transform-data.md
     - name: Move data - copy assistant
