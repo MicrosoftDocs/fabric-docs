@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.date: 01/27/2023
 ---
 
-# How to use Script activity (Preview)
+# How to use Script activity
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.

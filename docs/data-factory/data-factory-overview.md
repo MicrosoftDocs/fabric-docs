@@ -37,4 +37,4 @@ Add a configuration-driven copy activity together with your low-code dataflow re
 
 ## Next steps
 
-To get started with [!INCLUDE [product-name](../includes/product-name.md)], go to [Quickstart: Create your first Dataflows Gen2 to get and transform data (Preview)](create-first-dataflow-gen2.md).
+To get started with [!INCLUDE [product-name](../includes/product-name.md)], go to [Quickstart: Create your first Dataflows Gen2 to get and transform data](create-first-dataflow-gen2.md).

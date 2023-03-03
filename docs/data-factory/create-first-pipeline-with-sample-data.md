@@ -9,7 +9,7 @@ ms.topic: quickstart
 ms.date: 03/02/2023
 ---
 
-# Quickstart: Create your first pipeline to copy data (Preview)
+# Quickstart: Create your first pipeline to copy data
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.

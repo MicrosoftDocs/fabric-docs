@@ -1,5 +1,5 @@
 ---
-title: Copy from Azure Blob Storage to Lakehouse (Preview)
+title: Copy from Azure Blob Storage to Lakehouse
 description: Learn how to use a data pipeline to copy data from an Azure Blob Storage source to a Lakehouse destination.
 ms.reviewer: jonburchel
 ms.author: jburchel
@@ -9,7 +9,7 @@ ms.subservice: data-factory
 ms.date: 03/01/2023
 ---
 
-# Quickstart: Copy from Azure Blob Storage to Lakehouse (Preview)
+# Quickstart: Copy from Azure Blob Storage to Lakehouse
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
@@ -124,4 +124,4 @@ In this session, you'll start to build a data pipeline by using the following st
 
 ## Next steps
 
-[How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)](monitor-pipeline-runs.md)
+[How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
