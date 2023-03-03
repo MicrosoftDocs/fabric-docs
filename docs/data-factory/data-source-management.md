@@ -4,6 +4,7 @@ description: Learn how to add and remove data sources, and how to manage users.
 ms.reviewer: DougKlopfenstein
 ms.author: mideboer
 author: miquelladeboer
+ms.subservice: data-factory
 ms.topic: how-to
 ms.date: 01/27/2023
 ---

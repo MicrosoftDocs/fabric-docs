@@ -3,6 +3,7 @@ title: How to create Azure SQL Database connection
 description: This article provides information about how to How to create Azure SQL Database  connection.
 author: jianleishen
 ms.author: jianleishen
+ms.subservice: data-factory
 ms.topic: how-to
 ms.date: 01/08/2023
 ms.custom: template-how-to

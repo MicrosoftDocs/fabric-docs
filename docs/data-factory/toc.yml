@@ -37,6 +37,14 @@
         href: connector-azure-blob-storage.md
       - name: Configure in copy activity
         href: connector-azure-blob-storage-copy-activity.md
+    - name: Azure Cosmos DB for NoSQL
+      items:
+      - name: Overview
+        href: connector-azure-cosmosdb-for-nosql-overview.md
+      - name: Set up connection
+        href: connector-azure-cosmosdb-for-nosql.md
+      - name: Configure in copy activity
+        href: connector-azure-cosmosdb-for-nosql-copy-activity.md
     - name: Binary format
       items:
       - name: Overview

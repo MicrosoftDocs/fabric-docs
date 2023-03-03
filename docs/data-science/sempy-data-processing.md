@@ -4,6 +4,7 @@ description: Learn how SemPy works with data.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
+ms.subservice: data-science
 ms.topic: conceptual
 ms.date: 02/10/2023
 ---

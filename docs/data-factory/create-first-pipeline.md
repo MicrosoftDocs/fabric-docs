@@ -4,6 +4,7 @@ description: Steps to build and schedule a new data pipeline.
 ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
+ms.subservice: data-factory
 ms.topic: quickstart
 ms.date: 01/27/2023
 ---

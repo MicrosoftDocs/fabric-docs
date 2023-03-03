@@ -4,6 +4,7 @@ description: Learn how to explore and validate data with SemPy and PBI Connector
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
+ms.subservice: data-science
 ms.topic: how-to
 ms.date: 02/10/2023
 ---

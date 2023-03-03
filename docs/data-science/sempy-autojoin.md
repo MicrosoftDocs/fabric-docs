@@ -4,6 +4,7 @@ description: Follow an example of how to use SemPy to infer how to flatten or jo
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
+ms.subservice: data-science
 ms.topic: how-to 
 ms.date: 2/10/2023
 ---

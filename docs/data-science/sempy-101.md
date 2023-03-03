@@ -4,6 +4,7 @@ description: Learn the basics of how SemPy works and is organized.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
+ms.subservice: data-science
 ms.topic: conceptual
 ms.date: 02/10/2023
 ---

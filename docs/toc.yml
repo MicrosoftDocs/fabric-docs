@@ -1,4 +1,4 @@
-- name: Trident documentation
+- name: Microsoft Fabric documentation
   href: index.yml
 - name: Get started
   href: get-started/toc.yml
