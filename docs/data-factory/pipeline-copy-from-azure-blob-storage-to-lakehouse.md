@@ -82,7 +82,7 @@ In this session, you'll start to build a data pipeline by using the following st
 
    :::image type="content" source="media/pipeline-copy-from-azure-blob-storage-to-lakehouse/choose-destination-lakehouse.png" lightbox="media/pipeline-copy-from-azure-blob-storage-to-lakehouse/choose-destination-lakehouse.png" alt-text="Screenshot showing the Choose data destination dialog with Lakehouse selected.":::
 
-1. Create a new Lakehouse and input the Lakhehouse name. Then select **Next**.
+1. Create a new Lakehouse and input the Lakehouse name. Then select **Next**.
 
    :::image type="content" source="media/pipeline-copy-from-azure-blob-storage-to-lakehouse/select-lakehouse.png" lightbox="media/pipeline-copy-from-azure-blob-storage-to-lakehouse/select-lakehouse.png" alt-text="Screenshot showing the Choose data destination dialog with the new lakehouse option selected.":::
 
