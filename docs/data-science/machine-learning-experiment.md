@@ -15,7 +15,7 @@ ms.date: 02/10/2023
 
 Machine learning experiments allow data scientists to log parameters, code versions, metrics, and output files when running their machine learning code. In [MLflow](https://mlflow.org/), tracking is based on experiments and runs.
 
-A machine learning experiment is the primary unit of organization and control for all related machine learning runs. Experiments let you visualize, search for, and compare runs, as well as download run files and metadata for analysis in other tools. A \*run* corresponds to a single execution of model code.
+A machine learning experiment is the primary unit of organization and control for all related machine learning runs. Experiments let you visualize, search for, and compare runs, as well as download run files and metadata for analysis in other tools. A *run* corresponds to a single execution of model code.
 
 In this article, you will learn more about how data scientists can interact with and leverage machine learning experiments to organize their development process and to track multiple runs.
 
