@@ -81,5 +81,5 @@ A schedule is now set on your pipeline editing canvas, detailing how often your 
 
 ## Next steps
 
-- [How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)](monitor-pipeline-runs.md)
-- [Quickstart: Create your first data pipeline to copy data (Preview)](create-first-pipeline-with-sample-data.md)
+- [How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
+- [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)

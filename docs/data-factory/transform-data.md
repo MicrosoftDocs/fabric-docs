@@ -32,7 +32,7 @@ Follow these steps to set up your dataflow.
 
 ### Step 1: Create a dataflow
 
-1. From your workspace, select **New**. Then select **Dataflow Gen2 (Preview)**.
+1. From your workspace, select **New**. Then select **Dataflow Gen2**.
 
    :::image type="content" source="media/transform-data/select-dataflow.png" alt-text="Screenshot showing where to start creating a dataflow." lightbox="media/transform-data/select-dataflow.png":::
 

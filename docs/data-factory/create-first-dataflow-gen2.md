@@ -9,7 +9,7 @@ ms.topic: quickstart
 ms.date: 01/27/2023
 ---
 
-# Create your first dataflow to get and transform data (Preview)
+# Create your first dataflow to get and transform data
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
@@ -36,7 +36,7 @@ In this section, you'll be creating your first dataflow.
 
    :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
 
-3. Select **New**, and then select **Dataflow Gen2 (Preview)**.
+3. Select **New**, and then select **Dataflow Gen2**.
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-dataflow-gen2.png" alt-text="Screenshot with the Dataflow Gen2 selection emphasized.":::
 
@@ -172,4 +172,4 @@ If you're not going to continue to use this dataflow, delete the dataflow using 
 
 ## Next steps
 
-Advance to the next article to learn how to create your first data pipeline: [Quickstart: Create your first data pipeline to copy data (Preview)](create-first-pipeline-with-sample-data.md).
+Advance to the next article to learn how to create your first data pipeline: [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md).
