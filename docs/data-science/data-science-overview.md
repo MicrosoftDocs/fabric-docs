@@ -4,6 +4,7 @@ description: Overview of machine learning.
 ms.reviewer: mopeakande
 ms.author: negust
 author: nelgson
+ms.subservice: data-science
 ms.topic: overview
 ms.date: 02/10/2023
 ---

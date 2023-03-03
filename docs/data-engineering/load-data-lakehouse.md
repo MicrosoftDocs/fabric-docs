@@ -4,6 +4,7 @@ description: Learn more about loading data into a Lakehouse.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
+ms.subservice: data-engineering
 ms.topic: conceptual
 ms.date: 02/24/2023
 ---
@@ -24,7 +25,7 @@ Get data experience covers all user scenarios for bringing data into the Lakehou
 For Private Preview, there are a few ways you can get data into a Lakehouse:
 
 - file upload
-- Spark libraries in notebook code
+- Apache Spark libraries in notebook code
 - Copy tool in pipelines
 
 ### Local file upload

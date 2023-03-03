@@ -4,6 +4,7 @@ description: Learn about SemPy's built-in visualizations on public datasets.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
+ms.subservice: data-science
 ms.topic: how-to
 ms.date: 02/10/2023
 ---
