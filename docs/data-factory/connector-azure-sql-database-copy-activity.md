@@ -157,7 +157,7 @@ To learn more information about copy activity in Azure SQL Database, see the fol
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
-|**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|type *(under `typeProperties` -> `source` -> `datasetSettings`)*: <br> AzureSqlTable|
+|**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|/|
 |**Table** | Your source data table. |< name of your destination table>|Yes |schema <br> table|
 |**Use query** |The custom SQL query to read data.|- None <br>- Query<br>- Stored procedure |No |<br><br>- sqlReaderQuery <br>- sqlReaderStoredProcedureName, storedProcedureParameters|
 |**Query timeout** |The timeout for query command execution, default is 120 minutes. |timespan |No |queryTimeout|
@@ -171,7 +171,7 @@ To learn more information about copy activity in Azure SQL Database, see the fol
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to destination data store.|< your connection >|Yes|connection|
-|**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|type *(under `typeProperties` -> `sink` -> `datasetSettings`)*: <br> AzureSqlTable|
+|**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|/|
 |**Table**|Your destination data table.| \<name of your destination table\> |Yes |schema <br> table|
 |**Write behavior** |Defines the write behavior when the source is files from a file-based data store.|- Insert<br>- Upsert<br>- Stored procedure|No |writeBehavior:<br> - insert<br>- upsert<br>- sqlWriterStoredProcedureName, sqlWriterTableType, storedProcedureParameters|
 |**Bulk insert table lock** |Use this to improve copy performance during bulk insert operation on table with no index from multiple clients.|Yes or No |No |sqlWriterUseTableLock:<br>true or false|

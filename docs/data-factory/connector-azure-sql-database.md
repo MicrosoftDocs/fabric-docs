@@ -14,7 +14,7 @@ ms.custom: template-how-to
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-[Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview) is Microsoft's object storage solution for the cloud. Azure SQL Database is optimized for storing massive amounts of unstructured data. This article outlines the steps to create an Azure SQL Database connection. 
+This article outlines how to set up connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview). 
 
 ## Supported authentication types
 
