@@ -81,4 +81,4 @@ Connections between items are only established when you assign a workspace to a 
 
 ## Next steps
 
-[Compare content in different stages](deployment-pipelines/deployment-pipelines-compare.md)
+[Compare content in different stages](deployment-pipelines-compare.md)

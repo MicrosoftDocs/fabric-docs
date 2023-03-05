@@ -185,4 +185,4 @@ To run a PowerShell script that performs a deployment, you'll need the following
 
 * [Get started with deployment pipelines](deployment-pipelines-get-started.md)
 * [Deployment pipelines best practices](deployment-pipelines-best-practices.md)
-* [Troubleshooting deployment pipelines](deployment-pipelines-troubleshooting.md)
+* [Troubleshooting deployment pipelines](deployment-pipelines-troubleshooting.yml)
