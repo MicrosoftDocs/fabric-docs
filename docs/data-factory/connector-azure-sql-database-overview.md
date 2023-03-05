@@ -3,6 +3,7 @@ title: Azure SQL Database connector overview
 description: This article explains the overview of using Azure SQL Database.
 author: jianleishen
 ms.author: jianleishen
+ms.subservice: data-factory
 ms.topic: how-to
 ms.date: 01/08/2023
 ms.custom: template-how-to 

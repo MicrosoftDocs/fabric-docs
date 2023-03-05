@@ -4,6 +4,7 @@ description: Learn about data connectors.
 ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
 author: jianleishen
+ms.subservice: data-factory
 ms.topic: overview 
 ms.date: 01/27/2023
 ---
@@ -38,5 +39,5 @@ You can find a comprehensive list of all connectors supported through our [publi
 
 ## Next steps
 
-- [How to copy data using copy activity (Preview)](copy-data-activity.md)
+- [How to copy data using copy activity](copy-data-activity.md)
 - [Data source management](data-source-management.md)
