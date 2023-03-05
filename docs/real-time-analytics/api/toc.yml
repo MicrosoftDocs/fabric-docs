@@ -1,104 +1,89 @@
 items:
 - name: Client libraries
-  href: /azure/data-explorer/kusto/api/client-libraries?context=/trident/context/analytics-context
+  href: /azure/data-explorer/kusto/api/client-libraries?context=/fabric/context/fabric-context
 - name: REST API
   items:
   - name: REST API overview
-    href: /azure/data-explorer/kusto/api/rest/index?context=/trident/context/analytics-context
+    href: /azure/data-explorer/kusto/api/rest/index?context=/fabric/context/fabric-context
   - name: Authentication
-    href: /azure/data-explorer/kusto/api/rest/authentication?context=/trident/context/analytics-context
-  - name: Query/management HTTP request
-    href: /azure/data-explorer/kusto/api/rest/request?context=/trident/context/analytics-context
-  - name: Query/management HTTP response
-    href: /azure/data-explorer/kusto/api/rest/response?context=/trident/context/analytics-context
+    href: /azure/data-explorer/kusto/api/rest/authentication?context=/fabric/context/fabric-context
+  - name: Query HTTP request
+    href: /azure/data-explorer/kusto/api/rest/request?context=/fabric/context/fabric-context
+  - name: Query HTTP response
+    href: /azure/data-explorer/kusto/api/rest/response?context=/fabric/context/fabric-context
   - name: Query v2 HTTP response
-    href: /azure/data-explorer/kusto/api/rest/response2?context=/trident/context/analytics-context
+    href: /azure/data-explorer/kusto/api/rest/response2?context=/fabric/context/fabric-context
   - name: UI (Deep Links)
-    href: /azure/data-explorer/kusto/api/rest/deeplink?context=/trident/context/analytics-context
+    href: /azure/data-explorer/kusto/api/rest/deeplink?context=/fabric/context/fabric-context
   - name: Streaming ingest
-    href: /azure/data-explorer/kusto/api/rest/streaming-ingest?context=/trident/context/analytics-context
-- name: MS-TDS
-  displayName: SQL, ADO.NET, JDBC, ODBC
-  items:
-  - name: MS-TDS overview
-    displayName: SQL, ADO.NET, JDBC, ODBC
-    href: /azure/data-explorer/kusto/api/tds/index?context=/trident/context/analytics-context
-  - name: KQL over TDS
-    href: /azure/data-explorer/kusto/api/tds/tdskql?context=/trident/context/analytics-context
-  - name: Clients
-    href: /azure/data-explorer/kusto/api/tds/clients?context=/trident/context/analytics-context
-  - name: Linked server
-    href: /azure/data-explorer/kusto/api/tds/linkedserver?context=/trident/context/analytics-context
-  - name: Azure Active Directory
-    displayName: AAD, Azure AD
-    href: /azure/data-explorer/kusto/api/tds/aad?context=/trident/context/analytics-context
-  - name: Known issues
-    href: /azure/data-explorer/kusto/api/tds/sqlknownissues?context=/trident/context/analytics-context
+    href: /azure/data-explorer/kusto/api/rest/streaming-ingest?context=/fabric/context/fabric-context
+  - name: Query with T-SQL
+    href: /azure/data-explorer/kusto/api/rest/t-sql?context=/fabric/context/fabric-context
 - name: .NET SDK
   items:
   - name: General
     items:
     - name: About the SDK
-      href: /azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/fabric/context/fabric-context
     - name: Controlling tracing
-      href: /azure/data-explorer/kusto/api/netfx/controlling-tracing?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/controlling-tracing?context=/fabric/context/fabric-context
   - name: Kusto.Data
     items:
     - name: Kusto.Data overview
-      href: /azure/data-explorer/kusto/api/netfx/about-kusto-data?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/about-kusto-data?context=/fabric/context/fabric-context
     - name: Request properties, ClientRequestProperties
-      href: /azure/data-explorer/kusto/api/netfx/request-properties?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/request-properties?context=/fabric/context/fabric-context
     - name: Kusto.Data errors and exceptions
-      href: /azure/data-explorer/kusto/api/netfx/kusto-data-client-errors?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/kusto-data-client-errors?context=/fabric/context/fabric-context
   - name: Kusto.Ingest
     items:
     - name: Kusto.Ingest overview
-      href: /azure/data-explorer/kusto/api/netfx/about-kusto-ingest?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/about-kusto-ingest?context=/fabric/context/fabric-context
     - name: Permissions
       displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-permissions?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-permissions?context=/fabric/context/fabric-context
     - name: Client reference
       displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-reference?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-reference?context=/fabric/context/fabric-context
     - name: Errors and exceptions
       displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-errors?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-errors?context=/fabric/context/fabric-context
     - name: Operation status
       displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-status?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-status?context=/fabric/context/fabric-context
     - name: Kusto.Ingest best practices
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-best-practices?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-best-practices?context=/fabric/context/fabric-context
     - name: Code samples
       displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-examples?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-examples?context=/fabric/context/fabric-context
     - name: HowTo Data Ingestion with REST API
       displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-rest?context=/trident/context/analytics-context
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-rest?context=/fabric/context/fabric-context
 - name: Bicep and ARM template resource types
-  href: /azure/templates/microsoft.kusto/allversions?context=/trident/context/analytics-context
+  href: /azure/templates/microsoft.kusto/allversions?context=/fabric/context/fabric-context
 - name: Resource provider operations
-  href: /azure/role-based-access-control/resource-provider-operations#microsoftkusto?context=/trident/context/analytics-context
+  href: /azure/role-based-access-control/resource-provider-operations#microsoftkusto?context=/fabric/context/fabric-context
 - name: Python SDK
   items:
   - name: azure-kusto-python
-    href: /azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/trident/context/analytics-context
+    href: /azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/fabric-context
 - name: R SDK
   items:
   - name: azure-kusto-r
-    href: /azure/data-explorer/kusto/api/r/kusto-r-client-library?context=/trident/context/analytics-context
+    href: /azure/data-explorer/kusto/api/r/kusto-r-client-library?context=/fabric/context/fabric-context
 - name: Java SDK
   items:
   - name: azure-kusto-java
-    href: /azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/trident/context/analytics-context
+    href: /azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/fabric-context
 - name: Node SDK
   items:
   - name: azure-kusto-node
-    href: /azure/data-explorer/kusto/api/node/kusto-node-client-library?context=/trident/context/analytics-context
+    href: /azure/data-explorer/kusto/api/node/kusto-node-client-library?context=/fabric/context/fabric-context
 - name: Go SDK
   items:
   - name: azure-kusto-go
-    href: /azure/data-explorer/kusto/api/golang/kusto-golang-client-library?context=/trident/context/analytics-context
+    href: /azure/data-explorer/kusto/api/golang/kusto-golang-client-library?context=/fabric/context/fabric-context
 - name: PowerShell
   items:
   - name: Calling Kusto from PowerShell
-    href: /azure/data-explorer/kusto/api/powershell/powershell?context=/trident/context/analytics-context
+    href: /azure/data-explorer/kusto/api/powershell/powershell?context=/fabric/context/fabric-context
