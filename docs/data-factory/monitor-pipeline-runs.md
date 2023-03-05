@@ -4,11 +4,12 @@ description: Learn how to monitor pipeline runs.
 ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
+ms.subservice: data-factory
 ms.topic: how-to 
 ms.date: 01/27/2023
 ---
 
-# How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)
+# How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
@@ -84,5 +85,5 @@ The length of the bar relates to the duration of the pipeline. You can select th
 
 ## Next steps
 
-- [Quickstart: Create your first data pipeline to copy data (Preview)](create-first-pipeline.md)
-- [Quickstart: Create your first Dataflows Gen2 to get and transform data (Preview)](create-first-dataflow-gen2.md)
+- [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
+- [Quickstart: Create your first Dataflows Gen2 to get and transform data](create-first-dataflow-gen2.md)

@@ -111,7 +111,7 @@ conceptualContent:
         - url: data-factory/data-factory-overview.md
           itemType: concept
           text: What is Data Factory?
-        - url: data-factory/create-first-pipeline.md
+        - url: data-factory/create-first-pipeline-with-sample-data.md
           itemType: get-started
           text: Create your first pipeline
         - url: data-factory/create-first-dataflow-gen2.md

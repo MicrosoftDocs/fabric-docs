@@ -4,6 +4,7 @@ description: Learn how to use a notebook to load data into your Lakehouse.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
+ms.subservice: data-engineering
 ms.topic: how-to
 ms.date: 02/24/2023
 ---
@@ -35,6 +36,6 @@ df.write.mode("overwrite").format("parquet").save("Files/" + parquettableName)
 df.write.mode("overwrite").format("delta").save("Tables/" + deltatableName)
 ```
 
-Next steps
+## Next steps
 
 - [Explore the data in your Lakehouse with a notebook](lakehouse-notebook-explore.md)

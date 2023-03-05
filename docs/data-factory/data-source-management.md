@@ -4,6 +4,7 @@ description: Learn how to add and remove data sources, and how to manage users.
 ms.reviewer: DougKlopfenstein
 ms.author: mideboer
 author: miquelladeboer
+ms.subservice: data-factory
 ms.topic: how-to
 ms.date: 01/27/2023
 ---
@@ -56,7 +57,7 @@ You can now use this data source to include data from Azure SQL in the supported
 
 You can remove a data source if you no longer use it. If you remove a data source, any artifacts that rely on that data source no longer work.
 
-To remove a data source, select the data source from the **Data (preview)** screen in **Manage connections and gateways**, and then select **Remove** from the top ribbon.
+To remove a data source, select the data source from the **Data** screen in **Manage connections and gateways**, and then select **Remove** from the top ribbon.
 
 :::image type="content" source="media/data-source-management/remove-data-source.png" alt-text="Screenshot of where to select Remove.":::
 

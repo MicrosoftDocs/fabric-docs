@@ -4,6 +4,7 @@ description: Explanation of what a pipeline run is, including on-demand and sche
 ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
+ms.subservice: data-factory
 ms.topic: conceptual
 ms.date: 01/27/2023
 ---
@@ -80,5 +81,5 @@ A schedule is now set on your pipeline editing canvas, detailing how often your 
 
 ## Next steps
 
-- [How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)](monitor-pipeline-runs.md)
-- [Quickstart: Create your first data pipeline to copy data (Preview)](create-first-pipeline.md)
+- [How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
+- [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
