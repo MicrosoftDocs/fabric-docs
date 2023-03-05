@@ -66,23 +66,5 @@ The following section lists the deployment history limitations.
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Introduction to deployment pipelines](deployment-pipelines-overview.md)
-
->[!div class="nextstepaction"]
->[Get started with deployment pipelines](deployment-pipelines-get-started.md)
-
->[!div class="nextstepaction"]
->[Assign a workspace to a pipeline stage](deployment-pipelines-assign.md)
-
->[!div class="nextstepaction"]
->[Understand the deployment pipelines process](deployment-pipelines-process.md)
-
->[!div class="nextstepaction"]
->[Automate your deployment pipeline using APIs and DevOps](deployment-pipelines-automation.md)
-
->[!div class="nextstepaction"]
->[Deployment pipelines troubleshooting](deployment-pipelines-troubleshooting.yml)
-
->[!div class="nextstepaction"]
->[Deployment pipelines best practices](deployment-pipelines-best-practices.md)
+* [Get started with deployment pipelines](deployment-pipelines-get-started.md)
+* [Create deployment rules](deployment-pipelines-create-rules.md)

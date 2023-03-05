@@ -29,8 +29,6 @@ items:
     href: deployment-pipelines/deployment-pipelines-best-practices.md
   - name: Troubleshooting
     href: deployment-pipelines/deployment-pipelines-troubleshooting.yml
-  - name: Automate deployment pipelines
-    href: deployment-pipelines/deployment-pipelines-automation.md
 - name: Git integration
   items:
   - name: Get started with git integration

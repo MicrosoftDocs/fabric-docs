@@ -58,23 +58,5 @@ You can learn more about [which items are copied to the next stage](deployment-p
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Get started with deployment pipelines](deployment-pipelines-get-started.md)
-
->[!div class="nextstepaction"]
->[Assign a workspace to a pipeline stage](deployment-pipelines-assign.md)
-
->[!div class="nextstepaction"]
->[Deployment history](deployment-pipelines-history.md)
-
->[!div class="nextstepaction"]
->[Understand the deployment pipelines process](deployment-pipelines-process.md)
-
->[!div class="nextstepaction"]
->[Automate your deployment pipeline using APIs and DevOps](deployment-pipelines-automation.md)
-
->[!div class="nextstepaction"]
->[Deployment pipelines troubleshooting](deployment-pipelines-troubleshooting.yml)
-
->[!div class="nextstepaction"]
->[Deployment pipelines best practices](deployment-pipelines-best-practices.md)
+* [Understand the deployment pipelines process](deployment-pipelines-process.md)
+* [Get started with deployment pipelines](deployment-pipelines-get-started.md)
