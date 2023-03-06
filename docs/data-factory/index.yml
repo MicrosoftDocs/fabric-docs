@@ -7,7 +7,7 @@ metadata:
   title: Data Factory documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Summary of the Data Factory documentation # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
-#   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
+  ms.subservice: data-factory
   ms.topic: landing-page # Required
   author: DougKlopfenstein #Required; your GitHub user alias, with correct capitalization.
   ms.author: dougklo #Required; microsoft alias of author; optional team alias.
@@ -38,7 +38,7 @@ landingContent:
           - text: Create your first gen2 dataflow
             url: create-first-dataflow-gen2.md
           - text: Create your first data pipeline
-            url: create-first-pipeline.md
+            url: create-first-pipeline-with-sample-data.md
           - text: Move and transform data
             url: transform-data.md
           - text: Move data with copy assistant

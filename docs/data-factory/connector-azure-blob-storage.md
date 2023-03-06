@@ -3,8 +3,9 @@ title: How to create an Azure Blob Storage connection
 description: This article provides information about how to create an Azure Blob Storage connection.
 author: lrtoyou1223
 ms.author: lle
+ms.subservice: data-factory
 ms.topic: how-to
-ms.date: 1/27/2023
+ms.date: 02/26/2023
 ms.custom: template-how-to
 ---
 
@@ -18,9 +19,9 @@ ms.custom: template-how-to
 
 ## Supported authentication types
 
-The Azure Blob Storage connector supports the following authentication types for copy and dataflow gen2 respectively.  
+The Azure Blob Storage connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
-|Authentication type |Copy |Dataflow gen2 |
+|Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Anonymous | √| √|
 |Key| √| √|
@@ -30,7 +31,7 @@ The Azure Blob Storage connector supports the following authentication types for
 |Organizational account||√|
 
 >[!Note]
->For the Azure Blob Storage connection of gen2 dataflows, go to this article.
+>For the Azure Blob Storage connection of Dataflow Gen2, go to this article.
 
 ## Prerequisites
 
@@ -142,9 +143,9 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The following connector properties in the table are supported in data pipeline copy and dataflow gen2.
+The following connector properties in the table are supported in data pipeline copy and Dataflow Gen2.
 
-|Name|Description|Required|Property|Copy/<br/>Dataflow gen2|
+|Name|Description|Required|Property|Copy/<br/>Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes| |✓/✓|
 |**Connection type**|Select a type for your connection. Select **Azure Blob Storage**.|Yes| |✓/✓|
@@ -157,7 +158,7 @@ The following connector properties in the table are supported in data pipeline c
 
 The following properties in the table are the supported authentication types.
 
-|Name |Description |Required |Property |Copy/<br/>Dataflow gen2 |
+|Name |Description |Required |Property |Copy/<br/>Dataflow Gen2 |
 |-----|-----|-----|-----|-----|
 |**Anonymous**||||✓/✓|
 |**Key**||||✓/✓|

@@ -4,6 +4,7 @@ description: Learn how to view artifact recent runs.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
+ms.subservice: data-engineering
 ms.topic: how-to
 ms.date: 02/24/2023
 ---
@@ -13,7 +14,7 @@ ms.date: 02/24/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache Spark to run notebooks, Spark job definitions, jobs, and other types of applications in your workspace. This article explains how to view your running Apache Spark applications, making it easier to keep an eye on the latest running status.
+With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache Spark to run notebooks, Apache Spark job definitions, jobs, and other types of applications in your workspace. This article explains how to view your running Apache Spark applications, making it easier to keep an eye on the latest running status.
 
 ## View the recent runs pane
 
@@ -43,4 +44,4 @@ Selecting the application name link navigates to spark application details where
 
 The next step after viewing the list of running Apache Spark applications is to view the application details. You can refer to:
 
-- [Spark application detail monitoring](spark-detail-monitoring.md)
+- [Apache Spark application detail monitoring](spark-detail-monitoring.md)

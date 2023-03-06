@@ -4,6 +4,7 @@ description: Learn about the workspace administration settings such as Apache Sp
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
+ms.subservice: data-engineering
 ms.topic: conceptual
 ms.date: 02/24/2023
 ---
@@ -62,4 +63,4 @@ You can delete items by selecting the item(s) and then select the **Delete** but
 
 ## Learn more
 
-Learn more about the Spark properties from the [public documentation](https://spark.apache.org/docs/latest/configuration.html) for Apache Spark.
+Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).

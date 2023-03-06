@@ -4,11 +4,12 @@ description: Learn how to use Script activity.
 ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
+ms.subservice: data-factory
 ms.topic: how-to 
 ms.date: 01/27/2023
 ---
 
-# How to use Script activity (Preview)
+# How to use Script activity
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
