@@ -77,7 +77,7 @@ kb1.show_relationships()
 
 The following image shows an example visualization of the relationships within a dataset:
 
-:::image type="content" source="media/sempy-Power BI-connector/mapped-relationships.png" alt-text="Screenshot showing a mapped visual of dataset relationships." lightbox="media/sempy-pbi-connector/mapped-relationships.png":::
+:::image type="content" source="media/sempy-pbi-connector/mapped-relationships.png" alt-text="Screenshot showing a mapped visual of dataset relationships." lightbox="media/sempy-pbi-connector/mapped-relationships.png":::
 
 For more information on how SemPy detects the relationship, see [Relationship Detection](sempy-relationship-detection.md).
 
