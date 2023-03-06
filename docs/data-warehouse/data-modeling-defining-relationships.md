@@ -108,4 +108,5 @@ To remove objects, a user can use the manually select button in the ribbon and:
 - Filter for tables or views
 - Un-select specific objects
 
-We recommend reviewing the objects enabled for BI and ensuring they have the correct logical relationships to ensure a smooth downstream reporting experience.
+> [!TIP]
+> We recommend reviewing the objects enabled for BI and ensuring they have the correct logical relationships to ensure a smooth downstream reporting experience.

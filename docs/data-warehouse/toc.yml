@@ -1,25 +1,41 @@
 items:
-- name: Data Warehouse documentation
+- name: Data Warehousing
   href: index.yml
 - name: Overview
   items:
-  - name: What is Data Warehouse?
-    href: ../placeholder.md
-- name: Get started
+  - name: Data warehousing overview
+    href: data-warehousing.md
+  - name: Warehouses and warehouse mode
+    href: warehouses-warehouse-mode.md
+  - name: Datasets
+    href: datasets.md
+- name: Data warehouses
   items:
-  - name: linktext1
+  - name: Create a warehouse
+    href: create-warehouse.md
+  - name: link text
     href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 1
+- name: Datasets
   items:
-  - name: linktext1
+  - name: Data modeling and defining relationships
+    href: data-modeling-defining-relationships.md
+  - name: link text
     href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 2
+- name: Load data
   items:
-  - name: linktext2
+  - name: link text
     href: ../placeholder.md
-  - name: linktext2
+  - name: link text
+    href: ../placeholder.md
+- name: Develop
+  items:
+  - name: link text
+    href: ../placeholder.md
+  - name: link text
+    href: ../placeholder.md
+- name: Monitor
+  items:
+  - name: link text
+    href: ../placeholder.md
+  - name: link text
     href: ../placeholder.md
