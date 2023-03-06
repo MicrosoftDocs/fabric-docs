@@ -1,7 +1,6 @@
 items:
 - name: Data Warehousing
   href: index.yml
-- name: Overview
   items:
   - name: Data warehousing overview
     href: data-warehousing.md
