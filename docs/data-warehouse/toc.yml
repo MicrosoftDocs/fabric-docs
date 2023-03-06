@@ -1,9 +1,12 @@
 items:
-- name: Data Warehousing
+- name: Data Warehousing documentation
   href: index.yml
-  items:
-  - name: Data warehousing overview
+- name: Overview
+  items: 
+  - name: Data warehousing
     href: data-warehousing.md
+- name: Get started
+  items: 
   - name: Warehouses and warehouse mode
     href: warehouses-warehouse-mode.md
   - name: Datasets
