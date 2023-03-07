@@ -60,7 +60,7 @@ For more information, see [Tutorial: Real-time Analytics](realtime-analytics-tut
 
 ## How does it integrate with other workloads?
 
-:::image type="content" source="../../schematic-architecture.png" alt-text="Schematic image of architecture of Real-time Analytics integration with other workloads.":::
+:::image type="content" source="media/real-time-analytics-overview/schematic-architecture.png" alt-text="Schematic image of architecture of Real-time Analytics integration with other workloads.":::
 
 PBI quick create
 PBI for Kusto DB
