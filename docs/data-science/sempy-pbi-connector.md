@@ -48,6 +48,8 @@ SemPy offers the ability to connect to Power BI Datasets available in your works
 To view the datasets available in your workspace, use the `PowerBIConnector` to create a connection, and then call `get_datasets`. The following code returns a list of datasets for your workspace:
 
 ```Python
+from sempy.connectors.powerbi import PowerBIConnector
+
 conn = PowerBIConnector()
 conn.get_datasets()
 ```
@@ -62,7 +64,7 @@ The `PowerBIConnector` defaults to your current workspace. If you would like to 
 > You must have access to the workspace, otherwise an error will be returned.
 
 ```Python
-conn = PowerBIConnector(workspace=“workspace name”)
+conn = PowerBIConnector(workspace="workspace name")
 conn.get_datasets()
 ```
 
@@ -72,7 +74,7 @@ To load a dataset and view relationships as a mapped visual, use `load_dataset` 
 
 ```Python
 kb1 = conn.load_dataset("dataset name")
-kb1.show_relationships()
+kb1.plot_relationships()
 ```
 
 The following image shows an example visualization of the relationships within a dataset:
