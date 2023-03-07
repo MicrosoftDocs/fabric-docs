@@ -41,9 +41,9 @@
     "globalMetadata": {
       "breadcrumb_path": "/trident/breadcrumb/toc.json",
       "extendBreadcrumb": true,
-      "feedback_system": "None"
-    },
-    "fileMetadata": {},
+      "feedback_system": "None",
+      "ms.service": "azure"
+   },
     "template": [],
     "dest": "trident-docs"
   }
