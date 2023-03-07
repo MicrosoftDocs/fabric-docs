@@ -126,3 +126,7 @@ Warehouse mode in the Lakehouse allows a user to transition from the “Lake” 
 - Manage permissions on the objects.
 
 Warehouse mode is primarily oriented towards designing your warehouse and BI needs and serving data.
+
+## Next steps
+
+- [Datasets](datasets.md)

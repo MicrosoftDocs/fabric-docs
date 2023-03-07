@@ -51,3 +51,7 @@ Default Datasets follow the current limitations for datasets in Power BI. Learn 
 - [Data types in Power BI Desktop - Power BI | Microsoft Learn](/power-bi/connect-data/desktop-data-types)
 
 If the parquet, Apache Spark, or SQL data types can't be mapped to one of the above types, they are dropped as part of the sync process. This is in line with current Power BI behavior. For these columns, we recommend that you add explicit type conversions in their ETL processes to convert it to a type that is supported. If there are data types that are needed upstream, users can optionally specify a view in SQL with the explicit type conversion desired. This will then be picked up by the sync or can be added manually as previously indicated.
+
+## Next steps
+
+- [Data modeling and defining relationships](data-modeling-defining-relationships.md)

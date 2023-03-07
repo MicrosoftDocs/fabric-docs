@@ -28,11 +28,11 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
    1. If you're loading parquet files generated from Apache Spark 2.x, data pipelines aren't gracefully handling the upgrade for datetime fields discussed here and Lakehouse tables will be corrupt. For this scenario, as a workaround, use notebooks to load Spark 2.x generated parquet files.
 
-   ```python
-   spark.conf.set("spark.sql.parquet.int96RebaseModeInWrite","LEGACY")
-   df = spark.read.parquet(wasbs_path)
-   df.write.format("delta").save("Tables/" + tableName)
-   ```
+      ```python
+      spark.conf.set("spark.sql.parquet.int96RebaseModeInWrite","LEGACY")
+      df = spark.read.parquet(wasbs_path)
+      df.write.format("delta").save("Tables/" + tableName)
+      ```
 
    1. If you're loading partitioned data, partition discovery in data pipelines isn't properly creating delta format Lakehouse tables. Tables may appear to work in Spark but during metadata synchronization, to warehouse they'll be corrupt. For this scenario, as a workaround, use notebooks as mentioned in (1b) to load partitioned source data.
 
@@ -104,3 +104,7 @@ At this time, the following list of commands is NOT supported in private preview
 - TRUNCATE
 
 There's a known issue with creating foreign and primary keys. For now, you can create them as though they're enforceable but they won't be enforced by the engine.
+
+## Next steps
+
+- [Creating reports](../placeholder.md)

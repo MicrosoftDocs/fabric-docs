@@ -48,3 +48,7 @@ To create a warehouse, navigate to your workspace, select **+ New** and then sel
 :::image type="content" source="media\create-warehouse\new-warehouse-workspace-list.png" alt-text="Screenshot showing where to select New and Warehouse in the workspace list view." lightbox="media\create-warehouse\new-warehouse-workspace-list.png":::
 
 It usually takes approximately 10 seconds to provision a new warehouse. Once initialized, you can load data into your warehouse. For more information about getting data into a warehouse, see [Get and transform data](../placeholder.md).
+
+## Next steps
+
+- [Rename a warehouse](../placeholder.md)

@@ -40,12 +40,11 @@ Modeling the warehouse is possible by setting primary and foreign key constraint
 
 1. To create a logical relationship between entities in a warehouse and the resulting primary and foreign key constraints, select the **Model view** and select your warehouse, then drag the column from one table to the column on the other table to initiate the relationship. In the window that appears, configure the relationship properties.
 
-:::image type="content" source="media\data-modeling-defining-relationships\create-relationship.png" alt-text="Screenshot of the Create Relationship screen." lightbox="media\data-modeling-defining-relationships\create-relationship.png":::
+   :::image type="content" source="media\data-modeling-defining-relationships\create-relationship.png" alt-text="Screenshot of the Create Relationship screen." lightbox="media\data-modeling-defining-relationships\create-relationship.png":::
 
-Select the **Confirm** button when your relationship is complete to save the relationship information. The relationship set will effectively:
-
-1. Set the physical relationships - primary and foreign key constraints in the database (coming soon)
-1. Set the logical relationships - primary and foreign key constraints in the default dataset
+1. Select the **Confirm** button when your relationship is complete to save the relationship information. The relationship set will effectively:
+   1. Set the physical relationships - primary and foreign key constraints in the database (coming soon)
+   1. Set the logical relationships - primary and foreign key constraints in the default dataset
 
 ### Editing relationships using different methods
 
@@ -110,3 +109,7 @@ To remove objects, a user can use the manually select button in the ribbon and:
 
 > [!TIP]
 > We recommend reviewing the objects enabled for BI and ensuring they have the correct logical relationships to ensure a smooth downstream reporting experience.
+
+## Next steps
+
+- [Create a measure](../placeholder.md)
