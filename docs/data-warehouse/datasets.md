@@ -35,7 +35,7 @@ The background sync that includes objects (tables and views) waits for the downs
 
 Once there are objects in the default dataset, there are two ways to validate or visually inspect the tables:
 
-1. Select the manually update dataset button in the ribbon
+1. Select the **Manually update** dataset button in the ribbon
 
 1. Review the default layout for the default dataset objects
 

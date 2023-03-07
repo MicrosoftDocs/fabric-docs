@@ -28,13 +28,13 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
    1. If you're loading parquet files generated from Apache Spark 2.x, data pipelines aren't gracefully handling the upgrade for datetime fields discussed here and Lakehouse tables will be corrupt. For this scenario, as a workaround, use notebooks to load Spark 2.x generated parquet files.
 
-   ```
+   ```python
    spark.conf.set("spark.sql.parquet.int96RebaseModeInWrite","LEGACY")
    df = spark.read.parquet(wasbs_path)
    df.write.format("delta").save("Tables/" + tableName)
    ```
 
-   3. If you're loading partitioned data, partition discovery in data pipelines isn't properly creating delta format Lakehouse tables. Tables may appear to work in Spark but during metadata synchronization to warehouse they'll be corrupt. For this scenario, as a workaround, use notebooks as mentioned in (1b) to load partitioned source data.
+   1. If you're loading partitioned data, partition discovery in data pipelines isn't properly creating delta format Lakehouse tables. Tables may appear to work in Spark but during metadata synchronization, to warehouse they'll be corrupt. For this scenario, as a workaround, use notebooks as mentioned in (1b) to load partitioned source data.
 
    1. Unlike (1c), if a data engineering team has already loaded data into your Lakehouse and they explicitly partitioned the data with code like `df.write.partitionBy("FiscalMonthID").format("delta").save("Tables/" + tableName)`, a folder structure is introduced into your Lakehouse and columns in the partitionBy function won't be present in the warehouse. To avoid this issue, load data as shown previously in (1b) without the partitionBy function.
 

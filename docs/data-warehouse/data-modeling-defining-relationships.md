@@ -38,7 +38,7 @@ Modeling the warehouse is possible by setting primary and foreign key constraint
 
 ### Define physical and logical relationships
 
-To create a logical relationship between entities in a warehouse and the resulting primary and foreign key constraints, select the **Model view** and select your warehouse, then drag the column from one table to the column on the other table to initiate the relationship. In the window that appears, configure the relationship properties.
+1. To create a logical relationship between entities in a warehouse and the resulting primary and foreign key constraints, select the **Model view** and select your warehouse, then drag the column from one table to the column on the other table to initiate the relationship. In the window that appears, configure the relationship properties.
 
 :::image type="content" source="media\data-modeling-defining-relationships\create-relationship.png" alt-text="Screenshot of the Create Relationship screen." lightbox="media\data-modeling-defining-relationships\create-relationship.png":::
 
