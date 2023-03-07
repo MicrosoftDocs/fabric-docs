@@ -4,7 +4,7 @@ items:
 - name: Overview
   items:
   - name: What is Real-time Analytics?
-    href: real-time-analytics-overview.md
+    href: overview.md
 - name: Get started
   items:
   - name: Real-time Analytics happy path
