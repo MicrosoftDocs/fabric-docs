@@ -53,6 +53,14 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
+    - name: HTTP
+      items:
+      - name: Overview
+        href: connector-http-overview.md
+      - name: Set up connection
+        href: connector-http.md
+      - name: Configure in copy activity
+        href: connector-http-copy-activity.md
     - name: Binary format
       items:
       - name: Overview
