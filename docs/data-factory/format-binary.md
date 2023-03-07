@@ -1,6 +1,6 @@
 ---
 title: How to configure Binary format in copy activity
-description: This article explains how configure Binary format in copy activity.
+description: This article explains how to configure Binary format in copy activity.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -118,5 +118,3 @@ The following properties are supported in the copy activity **Destination** sect
 |**Compression type**| The compression codec used to read/write binary files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
 |**Compression level** | The compression ratio. Apply when dataset is used in Copy activity sink. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
 
-
-## Next steps
