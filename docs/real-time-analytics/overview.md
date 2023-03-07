@@ -1,3 +1,13 @@
+---
+title: Overview of Real-time Analytics in Microsoft Fabric
+description: Learn about Real-time Analytics in Microsoft Fabric
+ms.reviewer: tzgitlin
+ms.author: yaschust
+author: YaelSchuster
+ms.topic: conceptual
+ms.date: 03/07/2023
+ms.search.form: product-kusto
+---
 # What is Real-time Analytics in Fabric?
 
 Real-time Analytics is the Microsoft Fabric solution for managing logs, observability, telemetry, and IoT data. Real-time Analytics is optimized for the capture and analysis of real-time or batch data that includes a time-series element, using the intuitive and powerful Kusto Query Language (KQL) to explore and visualize data, while seamlessly integrating with other Fabric workloads.
