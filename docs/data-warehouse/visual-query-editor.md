@@ -26,15 +26,15 @@ There are two ways to get to the Visual query editor:
 
 In the **Data grid** view, create a new query using the **+ New Query** button on the ribbon, as shown in the following image.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
 
 Alternatively, you can use the **Design view** icon found along the bottom of the Warehouse editor window, shown in the following image.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
 
 To create a query, drag and drop tables from the Object explorer on the left onto the canvas.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
 
 Once you drag one or more tables onto the canvas, you can use the visual experience to design your queries. The warehouse editor uses the similar Power Query diagram view experience to enable you to easily query and analyze your data. Learn more about [Power Query diagram view](/power-query/diagram-view).
 
@@ -42,9 +42,13 @@ As you work on your Visual query, the queries are automatically saved every few 
 
 The following image shows a sample query created using the no-code Visual Query editor to retrieve the **Top customers by Orders**.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
 
 ## Known limitations with Visual Query editor
 
 - You can only write DQL (not DDL or DML).
 - You can't currently open the visual query in Excel.
+
+## Next steps
+
+- [Query using the SQL Query editor](sql-query-editor.md)

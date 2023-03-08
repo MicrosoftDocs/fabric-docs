@@ -17,20 +17,24 @@ You can query the data in your warehouse with multiple tools, including the [Vis
 
 The SQL Query editor provides a text editor to write queries using T-SQL. To access the built-in SQL query editor, select the **SQL query editor view** icon located at the bottom of the warehouse editor window.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
 
 Alternatively, in the **Data grid** view, create a new query using the **+ New Query** button on the ribbon, as shown in the following image.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
 
 You can write your SQL query in the query editor window, which includes intellisense support. Once complete, select the **Run** button to execute the query. Query results appear in the results section. You can open the results in Excel for further analysis by selecting the **Open in Excel** button.
 
 As you work on your SQL query, the queries are automatically saved every few seconds. A “saving indicator” appears in your query tab at the bottom to indicate that your query is being saved.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
 
 The SQL Query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing and validation. Once you’ve written the T-SQL query, select **Run** to execute the query. The **Results** preview is displayed in the **Results** section. The **Open in Excel** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to view the results in Excel.
 
 ## Known limitations with warehouse editor
 
 Currently, you can only write DQL. To write DDL/DML statements, see [Connectivity](../placeholder.md) and [how to use SSMS to query your data warehouse](../placeholder.md).
+
+## Nest steps
+
+- [Query using the Visual Query editor](visual-query-editor.md)

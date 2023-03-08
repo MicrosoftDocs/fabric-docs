@@ -43,4 +43,8 @@ To find the warehouse, you begin with the **Data hub**. The following image show
 
 1. Select **Open** to open the warehouse.
 
-   :::image type="content" source="" alt-text="" lightbox="":::
+   IMAGE
+
+## Next steps
+
+- [Connectivity](../placeholder.md)

@@ -24,7 +24,7 @@ This section describes and explains the settings options available based on the 
 
 The following image shows the warehouse settings menu.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
 
 The following table is a list of settings available for each warehouse.
 
@@ -40,7 +40,7 @@ The following table is a list of settings available for each warehouse.
 > [!TIP]
 > Applies to: Dataset (default)
 
-The following table shows settings for Dataset(default).
+The following table shows settings for Dataset (default).
 
 | **Setting** | **Details** |
 |---|---|
@@ -55,7 +55,7 @@ The following table shows settings for Dataset(default).
 
 Warehouse offers an easy experience to create reports and access supported actions using its context menus.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
 
 The following table describes the warehouse context menu options:
 
@@ -71,3 +71,7 @@ The following table describes the warehouse context menu options:
 | **Manage permissions** | Enables users to add other recipients with specified permissions, similar to allowing the sharing of an underlying dataset or allowing to build content with the data associated with the underlying dataset. |
 | **Settings** | Learn more about [warehouse settings](#settings) |
 | **View lineage** | This option shows the end-to-end lineage of warehouse from the data sources to the warehouse, the default dataset, and other datasets (if any) that were built on top of the warehouse, all the way to deports, dashboards and apps. |
+
+## Next steps
+
+- [Query using the SQL Query editor](sql-query-editor.md)
