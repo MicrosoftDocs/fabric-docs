@@ -13,7 +13,7 @@ ms.date: 03/15/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-INTRO SENTENCE to connect all sections.
+This article describes warehouse and default warehouse functionality in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Warehouse
 
@@ -115,7 +115,7 @@ The Warehouse (default) artifact is linked to its parent Lakehouse when it's aut
 
 ### Known limitations
 
-1. Once deleted, you can't recover a deleted Lakehouse, you'll have to recreate.
+Once deleted, you can't recover a deleted Lakehouse, you'll have to recreate.
 
 ## What is warehouse mode
 
