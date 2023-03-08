@@ -138,7 +138,7 @@
     - name: Activities
       items:
       - name: Activity overview
-        href: ../placeholder.md
+        href: activity-overview.md
       - name: Copy activity
         href: copy-data-activity.md
       - name: For-each activity
