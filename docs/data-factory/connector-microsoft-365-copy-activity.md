@@ -54,7 +54,7 @@ The following some properties are **required**:
 
 - **Data store type**: Select **External**.
 - **Connection**:  Select an **Microsoft365** connection from the connection list. If no connection exists, then create a new Amazon S3 connection by selecting **New**.
-- **Table**: Name of the dataset to extract from **Microsoft 365**. Refer [here](https://learn.microsoft.com/en-us/graph/data-connect-datasets#datasets) for the list of Microsoft 365 (Office 365) datasets available for extraction.
+- **Table**: Name of the dataset to extract from **Microsoft 365**.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -82,7 +82,7 @@ The following tables contain more information about the copy activity in Microso
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.| **External**|Yes|type|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
-|**Table**|Name of the dataset to extract from Microsoft 365 (Office 365). Refer [here](https://learn.microsoft.com/en-us/graph/data-connect-datasets#datasets) for the list of Microsoft 365 (Office 365) datasets available for extraction.||Yes||
+|**Table**|Name of the dataset to extract from Microsoft 365 (Office 365).||Yes||
 |**Scope**|When `allowedGroups` property is not specified, you can use a predicate expression that is applied on the entire tenant to filter the specific rows to extract from Microsoft 365 (Office 365). The predicate format should match the query format of Microsoft Graph APIs, e.g. `https://graph.microsoft.com/v1.0/users?$filter=Department eq 'Finance'`.|:---|Yes|:---|
 |**Date filter**|Name of the DateTime filter column. Use this property to limit the time range for which Microsoft 365 (Office 365) data is extracted.|:---|Yes|:---|
 |**Output columns**|Array of the columns to copy to sink.|:---|Yes|:---|
