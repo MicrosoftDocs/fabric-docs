@@ -4,7 +4,8 @@
       {
         "files": [
           "**/*.md",
-          "**/*.yml"
+          "**/*.yml",
+          "**/*.gif"
         ],
         "exclude": [
           "**/obj/**",
@@ -43,10 +44,15 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/trident/breadcrumb/toc.json",
+      "uhfHeaderId": "MSDocsHeader-MSPowerBI",
       "extendBreadcrumb": true,
       "feedback_system": "None",
-      "ms.service": "azure"
+      "ms.service": "analytics",
+      "titleSuffix": "Microsoft Fabric"
    },
+   "searchScope": [
+    ""
+  ],
     "template": [],
     "dest": "trident-docs"
   }

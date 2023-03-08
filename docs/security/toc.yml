@@ -1,0 +1,21 @@
+items:
+- name: Security documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: Security overview
+    href: security-overview.md
+- name: Security features
+  items:
+  - name: Business to business
+    href: security-b2b.md  
+  - name: Recovery
+    href: security-recovery.md
+  - name: Private links
+    href: security-private-links.md
+  - name: Customer lockbox
+    href: security-lockbox.md
+  - name: Bring your own encryption keys
+    href: security-byok.md
+  - name: Service tags
+    href: security-service-tags.md                

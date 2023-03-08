@@ -1,3 +1,44 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+items:
+- name: Analytics
+  tocHref: /analytics/
+  topicHref: /analytics/index
+  items:
+  - name: Admin
+    tocHref: /analytics/admin
+    topicHref: /analytics/admin/index
+  - name: CICD
+    tocHref: /analytics/cicd
+    topicHref: /analytics/cicd/index
+  - name: Data Engineering
+    tocHref: /analytics/data-engineering
+    topicHref: /analytics/data-engineering/index
+  - name: Data Factory
+    tocHref: /analytics/data-factory
+    topicHref: /analytics/data-factory/index
+  - name: Data Science
+    tocHref: /analytics/data-science
+    topicHref: /analytics/data-science/index
+  - name: Data Warehouse
+    tocHref: /analytics/data-warehouse
+    topicHref: /analytics/data-warehouse/index
+  - name: Enterprise
+    tocHref: /analytics/enterprise
+    topicHref: /analytics/enterprise/index
+  - name: Get started
+    tocHref: /analytics/get-started
+    topicHref: /analytics/get-started/index
+  - name: Governance
+    tocHref: /analytics/governance
+    topicHref: /analytics/governance/index
+  - name: OneLake
+    tocHref: /analytics/onelake
+    topicHref: /analytics/onelake/index
+  - name: Real-time Analytics
+    tocHref: /analytics/real-time-analytics
+    topicHref: /analytics/real-time-analytics/index
+  - name: Reflex
+    tocHref: /analytics/reflex
+    topicHref: /analytics/reflex/index
+  - name: Security
+    tocHref: /analytics/security
+    topicHref: /analytics/security/index
