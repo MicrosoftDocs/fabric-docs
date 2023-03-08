@@ -15,11 +15,6 @@ Learn how to use the [!INCLUDE [product-name](../includes/product-name.md)] acti
 
 TBD with info from PMs
 
-
-## Sample Heading
-
-Demo text.
-
 ## Next steps
 
 >[!div class="nextstepaction"]
