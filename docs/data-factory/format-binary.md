@@ -1,6 +1,6 @@
 ---
-title: How to configure Binary format in copy activity
-description: This article explains how to configure Binary format in copy activity.
+title: How to configure Binary format in Data Factory
+description: This article explains how to configure Binary format in Data Factory.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -8,7 +8,7 @@ ms.date: 03/07/2023
 ms.custom: template-how-to 
 ---
 
-# Binary format in [!INCLUDE [product-name](../includes/product-name.md)]
+# Binary format in Data Factory
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
@@ -21,10 +21,10 @@ Binary format is supported for the following connectors and activities.
 |**Supported connector**|
 |:---|
 |Amazon S3|
-|[Azure Blob Storage](connector-azure-blob-storage-copy-activity)|
-|[Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity)|
+|[Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)|
+|[Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
 |Google Cloud Storage|
-|[HTTP](connector-http-copy-activity)|
+|[HTTP](connector-http-copy-activity.md)|
 |REST|
 |**Supported activity**|
 |Copy activity|
@@ -56,7 +56,7 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
 - **Compression level**: The compression ratio. Apply when you are using Copy activity destination. You can choose from **Optimal** or **Fastest**.
 
     - **Fastest**: The compression operation should complete as quickly as possible, even if the resulting file is not optimally compressed.
-    - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, see [Compression Level topic](/dotnet/api/system.io.compression.compressionlevel?view=net-7.0).
+    - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, see [Compression Level topic](/dotnet/api/system.io.compression.compressionlevel).
 
     :::image type="content" source="./media/format-binary/select-compression-level.png" alt-text="Screenshot showing selecting compression level.":::
 
@@ -101,8 +101,8 @@ The following properties are supported in the copy activity **Source** section w
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 | **File format**|The file format that you want to use.| **Binary**|Yes|type (*under `formatSettings`*):<br>BinaryReadSettings|
-|**Compression type**| The compression codec used to read/write binary files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
-|**Compression level** | The compression ratio. Apply when dataset is used in Copy activity sink. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
+|**Compression type**|The compression codec used to read/write binary files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
+|**Compression level** |The compression ratio. Apply when dataset is used in Copy activity sink. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
 |**Delete files after completion** |Indicates whether the binary files will be deleted from source store after successfully moving to the destination store. | Selected or unselect|No | deleteFilesAfterCompletion: <br>true or false|
 |**Preserve zip file name as folder**|Indicates whether to preserve the source zip file name as folder structure during copy.| Selected or unselect|No |preserveZipFileNameAsFolder <br> (*under `compressionProperties`->`type` as `ZipDeflateReadSettings`*)|
 |**Preserve compression file name as folder**|Indicates whether to preserve the source compressed file name as folder structure during copy.| Selected or unselect|No|preserveCompressionFileNameAsFolder  <br> (*under `compressionProperties`->`type` as `TarGZipReadSettings` or `TarReadSettings`*)|
@@ -115,6 +115,6 @@ The following properties are supported in the copy activity **Destination** sect
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 | **File format**|The file format that you want to use.| **Binary**|Yes|type (*under `formatSettings`*):<br>BinaryReadSettings|
-|**Compression type**| The compression codec used to read/write binary files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
-|**Compression level** | The compression ratio. Apply when dataset is used in Copy activity sink. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
+|**Compression type**|The compression codec used to read/write binary files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
+|**Compression level** |The compression ratio. Apply when dataset is used in Copy activity sink. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
 
