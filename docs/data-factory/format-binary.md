@@ -51,14 +51,10 @@ After selecting **File settings** under **Source** tab, you can see the followin
 - **Compression type**: The compression codec used to read/write binary files.
 You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, **TarGzip** or **tar** type in the drop-down list.
 
-    :::image type="content" source="./media/format-binary/select-compression-type.png" alt-text="Screenshot showing selecting compression type.":::
-
 - **Compression level**: The compression ratio. Apply when you are using Copy activity destination. You can choose from **Optimal** or **Fastest**.
 
     - **Fastest**: The compression operation should complete as quickly as possible, even if the resulting file is not optimally compressed.
     - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, see [Compression Level topic](/dotnet/api/system.io.compression.compressionlevel).
-
-    :::image type="content" source="./media/format-binary/select-compression-level.png" alt-text="Screenshot showing selecting compression level.":::
 
 **Delete files after completion**: Indicates whether the binary files will be deleted from source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you will see some files have already been copied to the destination and deleted from source, while others are still remaining on source store.
 
@@ -82,15 +78,10 @@ After selecting **File settings** under **Destination** tab, you can see the fol
 - **Compression type**: The compression codec used to read/write binary files.
 You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, **TarGzip** or **tar** type in the drop-down list.
 
-    :::image type="content" source="./media/format-binary/select-compression-type.png" alt-text="Screenshot showing selecting compression type.":::
-
 - **Compression level**: The compression ratio. Apply when you are using Copy activity destination. You can choose from **Optimal** or **Fastest**.
 
     - **Fastest**: The compression operation should complete as quickly as possible, even if the resulting file is not optimally compressed.
     - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, see [Compression Level topic](/dotnet/api/system.io.compression.compressionlevel).
-
-    :::image type="content" source="./media/format-binary/select-compression-level.png" alt-text="Screenshot showing selecting compression level.":::
-
 
 ## Table summary
 
