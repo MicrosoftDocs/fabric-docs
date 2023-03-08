@@ -1,6 +1,6 @@
 ---
 title: How to configure Excel format in Data Factory
-description: This article explains how to configure Binary format in Data Factory.
+description: This article explains how to configure Excel format in Data Factory.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -60,11 +60,11 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
 
     - **Name**: When you choose **Name**, in **Sheet name** section, select the Excel worksheet name to read data, or select **Edit** to specify the worksheet name manually. If you point to a folder or multiple files, make sure this particular worksheet exists in all those files.
     
-        :::image type="content" source="./media/format-excel/worksheet-mode-name.png" alt-text="Screenshot showing selecting compression level.":::
+        :::image type="content" source="./media/format-excel/worksheet-mode-name.png" alt-text="Screenshot showing selecting Name under Worksheet mode.":::
 
     - **Index**: When you choose **Index**, in **Sheet index** section, select the Excel worksheet index to read data, or select **Edit** to specify the worksheet name manually. The data read start from 0. If there is worksheet added or deleted from excel file, the index of existed worksheets will change automatically.
     
-        :::image type="content" source="./media/format-excel/worksheet-mode-index.png" alt-text="Screenshot showing selecting compression level.":::
+        :::image type="content" source="./media/format-excel/worksheet-mode-index.png" alt-text="Screenshot showing selecting Index under Worksheet mode.":::
 
 - **Range**: The cell range in the given worksheet to locate the selective data, e.g.:
     - Not specified: reads the whole worksheet as a table from the first non-empty row and column.
