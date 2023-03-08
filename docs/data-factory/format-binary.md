@@ -18,13 +18,13 @@ ms.custom: template-how-to
 
 Binary format is supported for the following connectors and activities.
 
-|Supported connector|
+|**Supported connector**|
 |:---|
 |Amazon S3|
-|Azure Blob Storage|
-|Azure Data Lake Storage Gen2|
+|[Azure Blob Storage](connector-azure-blob-storage-copy-activity)|
+|[Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity)|
 |Google Cloud Storage|
-|HTTP|
+|[HTTP](connector-http-copy-activity)|
 |REST|
 |**Supported activity**|
 |Copy activity|
@@ -87,7 +87,7 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
 - **Compression level**: The compression ratio. Apply when you are using Copy activity destination. You can choose from **Optimal** or **Fastest**.
 
     - **Fastest**: The compression operation should complete as quickly as possible, even if the resulting file is not optimally compressed.
-    - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, see [Compression Level topic](/dotnet/api/system.io.compression.compressionlevel?view=net-7.0).
+    - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, see [Compression Level topic](/dotnet/api/system.io.compression.compressionlevel).
 
     :::image type="content" source="./media/format-binary/select-compression-level.png" alt-text="Screenshot showing selecting compression level.":::
 
@@ -110,7 +110,7 @@ The following properties are supported in the copy activity **Source** section w
 
 ### Binary as destination
 
-The following properties are supported in the copy activity **Destination** section.
+The following properties are supported in the copy activity **Destination** section when using Binary format.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
