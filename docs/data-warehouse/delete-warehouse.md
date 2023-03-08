@@ -18,4 +18,8 @@ ms.date: 03/15/2023
 
 To delete a warehouse, navigate to the workspace and find the warehouse you want to delete. Select the more menu (**...**) and select **Delete** from the menu that appears.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
+
+## Next steps
+
+- [Warehouse settings and context menus](../placeholder.md)

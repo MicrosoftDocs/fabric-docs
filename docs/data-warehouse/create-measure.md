@@ -18,12 +18,16 @@ A [measure](/power-bi/transform-model/desktop-measures) is a collection of stand
 ## How to create a measure
 
 > [!TIP]
-> Applies to: Warehouse (default) and Warehouse
+> Applies to: Warehouse (default) and warehouse
 
 To create a measure, select the table in the **Table Explorer** and select the **New Measure** button in the ribbon, as shown in the following image.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
 
 Enter the measure into the formula bar and specify the table and the column to which it applies. The formula bar lets you enter your measure.
 
 You can expand the table to find the measure in the table.
+
+## Next steps
+
+- [Hide elements from downstream reporting](hide-elements-downstream-reporting.md)

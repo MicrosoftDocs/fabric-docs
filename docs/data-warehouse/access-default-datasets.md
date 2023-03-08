@@ -18,8 +18,12 @@ ms.date: 03/15/2023
 
 To access default datasets, go to your workspace and find the dataset that matches the name of the warehouse.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
 
 To load the dataset, select the name of the dataset.
 
-:::image type="content" source="" alt-text="" lightbox="":::
+IMAGE
+
+## Next steps
+
+- [Ingesting data](../placeholder.md)
