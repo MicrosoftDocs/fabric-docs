@@ -2,7 +2,7 @@
 title: Activity overview
 description: Learn about activities.
 ms.reviewer: pennyzhou-msft
-ms.author: jonburchel
+ms.author: jburchel
 author: jonburchel
 ms.subservice: data-factory
 ms.topic: overview 
@@ -37,12 +37,12 @@ For more information, see [How to copy data using the copy activity](copy-data-a
 
 Click a data store to learn how to copy data to and from that store.
 
-| Category | Data store | Supported as a source | Supported as a sink | Supported by [Azure IR](../concepts-integration-runtime.md#azure-integration-runtime) | Supported by [self-hosted IR](../concepts-integration-runtime.md#self-hosted-integration-runtime) |
+| Category | Data store | Supported as a source | Supported as a sink | Supported by [Azure IR](../placeholder) | Supported by [self-hosted IR](../placeholder.md) |
 |:--- |:--- |:--- |:--- |:--- |:--- |
 | **Workspace** |[Data Warehouse](../placeholder.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Lakehouse](../placeholder.md) |✓ |✓ |✓ |✓  |
 | **Azure** |[Azure Blob storage](connector-azure-blob-storage.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Azure Cosmos DB for NoSQL](connector-azure-cosmos-db-for-no-sql.md) |✓ |✓ |✓ |✓  |
+| &nbsp; |[Azure Cosmos DB for NoSQL](connector-azure-cosmosdb-for-no-sql.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Azure Data Explorer (Kusto)](../placeholder.md) |✓ |✓ |✓ |✓ |
 | &nbsp; |[Azure Data Lake Storage Gen1](../placeholder.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md) |✓ |✓ |✓ |✓  |
@@ -75,7 +75,7 @@ For more information, see the [data transformation activities](transform-data.md
 Data transformation activity | Compute environment
 ---------------------------- | -------------------
 [Copy data](copy-data-activity.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-[Dataflow](control-flow-execute-data-flow-activity.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+[Dataflow](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Delete data](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Spark Notebook](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Stored Procedure](../placeholder.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
