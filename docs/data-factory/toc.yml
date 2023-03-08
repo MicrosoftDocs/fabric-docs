@@ -46,13 +46,7 @@
       - name: Configure in copy activity
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
     - name: Binary format
-      items:
-      - name: Overview
-        href: ../placeholder.md
-      - name: Set up connection
-        href: ../placeholder.md
-      - name: Configure in copy activity
-        href: ../placeholder.md
+      href: format-binary.md
     - name: Data warehouse
       items:
       - name: Overview
