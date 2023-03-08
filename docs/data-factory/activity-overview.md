@@ -37,7 +37,7 @@ For more information, see [How to copy data using the copy activity](copy-data-a
 
 Click a data store to learn how to copy data to and from that store.
 
-| Category | Data store | Supported as a source | Supported as a sink | Supported by [Azure IR](../placeholder,md) | Supported by [self-hosted IR](../placeholder.md) |
+| Category | Data store | Supported as a source | Supported as a sink | Supported by [Azure IR](../placeholder.md) | Supported by [self-hosted IR](../placeholder.md) |
 |:--- |:--- |:--- |:--- |:--- |:--- |
 | **Workspace** |[Data Warehouse](../placeholder.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Lakehouse](../placeholder.md) |✓ |✓ |✓ |✓  |
