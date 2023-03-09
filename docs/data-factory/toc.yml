@@ -169,8 +169,6 @@
         href: ../placeholder.md
     - name: Tutorials
       items:
-      - name: Copy from Azure Blob Storage to Lakehouse
-        href: pipeline-copy-from-azure-blob-storage-to-lakehouse.md
       - name: Copy sample data into Lakehouse and transform with dataflow
         href: ../placeholder.md
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
@@ -201,6 +199,8 @@
         href: ../placeholder.md
     - name: Tutorials
       items:
+      - name: Copy from Azure Blob Storage to Lakehouse
+        href: pipeline-copy-from-azure-blob-storage-to-lakehouse.md      
       - name: Load OData into Lakehouse with dataflows
         href: ../placeholder.md
       - name: Use dataflows to transform data and load to data warehouse

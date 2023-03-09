@@ -26,9 +26,9 @@
         "files": [
           "**/*.png",
           "**/*.jpg",
-          "**/*.gif",
           "**/*.svg",
-          "**/includes/media/**"
+          "**/*.gif"
+
         ],
         "exclude": [
           "**/obj/**",
@@ -47,7 +47,8 @@
       "uhfHeaderId": "MSDocsHeader-MSPowerBI",
       "extendBreadcrumb": true,
       "feedback_system": "None",
-      "ms.service": "analytics"
+      "ms.service": "analytics",
+      "titleSuffix": "Microsoft Fabric"
    },
    "searchScope": [
     ""
