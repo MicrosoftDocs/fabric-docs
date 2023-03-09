@@ -16,7 +16,7 @@ ms.date: 03/15/2023
 The data warehouse experience in [!INCLUDE [product-name](../includes/product-name.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using T-SQL/TDS end-point. Data analysts use T-SQL language to access Lakehouse data artifacts using the warehouse experience that exposes underlying files, folders, and Cosmos DB containers as tables or views.
 
 > [!IMPORTANT]
-> This document provides a comprehensive overview of two distinct data warehousing experiences and not all capabilities are available at this time. We have noted the functionality that is not currently available with coming soon.
+> This document provides a comprehensive overview of two distinct data warehousing experiences.
 
 ## Prerequisites and known limitations
 
@@ -46,17 +46,17 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
 1. The following limitations are regarding query lifecycle DMVs:
 
-   - When running “sys.dm_exec_connections”, you may encounter the following error even if you're an Admin of your workspace. This issue will be fixed in a future release.
+   - When running “sys.dm_exec_connections”, you may encounter the following error even if you're an Admin of your workspace.
 
       ***Error Message:*** *The user doesn't have the external policy action 'Microsoft.Sql/Sqlservers/SystemViewsAndFunctions/ServerPerformanceState/Rows/Select' or permission 'VIEW SERVER PERFORMANCE STATE' to perform this action.*
 
-   - “sys.dm_exec_sessions” provides a limited view as not all active query results will display. This issue will be fixed in a future release.
+   - “sys.dm_exec_sessions” provides a limited view as not all active query results will display.
 
 1. Permissions:
 
    - The user who created the Lakehouse will have “dbo” permissions, everyone else will be limited to “Select”.
 
-   - GRANT, REVOKE, DENY commands are currently not supported. This issue will be fixed in a future release.
+   - GRANT, REVOKE, DENY commands are currently not supported.
 
 ## Connectivity
 
@@ -67,7 +67,7 @@ As mentioned previously, the full [!INCLUDE [product-name](../includes/product-n
 
 In this tutorial, you'll learn how to find your TDS end-point and use it to connect to SSMS for running SQL queries over either your warehouse (default) or warehouse data.
 
-While not described in this document, we also support Azure Data Services (ADS) if that is your preferred SQL tool and you can use the same TDS end-point to connect via ADS. Support for other SQL based query tools will be added in the future.
+While not described in this document, we also support Azure Data Services (ADS) if that is your preferred SQL tool and you can use the same TDS end-point to connect via ADS.
 
 ## T-SQL surface area
 

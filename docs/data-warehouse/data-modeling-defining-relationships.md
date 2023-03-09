@@ -32,7 +32,7 @@ In the model view, users can model their warehouse and the canonical autogenerat
 
 Modeling automatically keeps these definitions in sync, enabling powerful warehouse and semantic layer development simultaneously.
 
-### Model the warehouse (coming soon)
+### Model the warehouse
 
 Modeling the warehouse is possible by setting primary and foreign key constraints as well as setting identity columns on the model view within the data warehouse UX. After navigating to the model view, this can be done in a visual entity relationship diagram that allows a user to drag and drop tables to infer how the objects relate to one another. Lines visually connecting the entities infer the type of physical relationships that exist.
 
@@ -43,7 +43,7 @@ Modeling the warehouse is possible by setting primary and foreign key constraint
    :::image type="content" source="media\data-modeling-defining-relationships\create-relationship.png" alt-text="Screenshot of the Create Relationship screen." lightbox="media\data-modeling-defining-relationships\create-relationship.png":::
 
 1. Select the **Confirm** button when your relationship is complete to save the relationship information. The relationship set will effectively:
-   1. Set the physical relationships - primary and foreign key constraints in the database (coming soon)
+   1. Set the physical relationships - primary and foreign key constraints in the database
    1. Set the logical relationships - primary and foreign key constraints in the default dataset
 
 ### Editing relationships using different methods
@@ -79,9 +79,6 @@ The following table provides a description of the properties available when usin
 ## Using model view layouts
 
 During the session, users may create multiple tabs in the model view to depict say, data warehouse schemas or further assist with database design. Currently the model view layouts are only persisted in session. However the database changes are persisted. Users can use the auto-layout whenever a new tab is created to visually inspect the database design and understand the modeling.
-
-> [!NOTE]
-> In future releases, descriptions and other metadata will also be stored in the warehouse as extended properties within their respective objects. This will enable consumers to be able to better understand the semantics of their warehouse objects.
 
 ## Adding or removing objects to the default dataset
 
