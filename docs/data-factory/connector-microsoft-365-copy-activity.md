@@ -80,12 +80,12 @@ The following tables contain more information about the copy activity in Microso
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External**|Yes|type|
+|**Data store type**|Your data store type.| **External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
-|**Table**|Name of the dataset to extract from Microsoft 365 (Office 365).||Yes||
-|**Scope**|When `allowedGroups` property is not specified, you can use a predicate expression that is applied on the entire tenant to filter the specific rows to extract from Microsoft 365 (Office 365). The predicate format should match the query format of Microsoft Graph APIs, e.g. `https://graph.microsoft.com/v1.0/users?$filter=Department eq 'Finance'`.|:---|Yes|:---|
-|**Date filter**|Name of the DateTime filter column. Use this property to limit the time range for which Microsoft 365 (Office 365) data is extracted.|:---|Yes|:---|
-|**Output columns**|Array of the columns to copy to sink.|:---|Yes|:---|
+|**Table**|Name of the dataset to extract from Microsoft 365 (Office 365).|\<table>|Yes|table|
+|**Scope**|When `allowedGroups` property is not specified, you can use a predicate expression that is applied on the entire tenant to filter the specific rows to extract from Microsoft 365 (Office 365). The predicate format should match the query format of Microsoft Graph APIs, e.g. `https://graph.microsoft.com/v1.0/users?$filter=Department eq 'Finance'`.|\<your scope>|Yes|scope|
+|**Date filter**|Name of the DateTime filter column. Use this property to limit the time range for which Microsoft 365 (Office 365) data is extracted.|\<date filter>|Yes|dateFilter|
+|**Output columns**|Array of the columns to copy to sink.|\<output columns>|Yes|outputColumns|
 
 ## Next steps
 
