@@ -148,7 +148,7 @@
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
       - name: Notebook activity
-        href: ../placeholder.md
+        href: notebook-activity.md
       - name: Script activity
         href: script-activity.md
       - name: Use dataflow and email activities to transform data and report status
