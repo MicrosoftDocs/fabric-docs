@@ -52,19 +52,20 @@ Click a data store to learn how to copy data to and from that store.
 | &nbsp; |[Azure Synapse Analytics](../placeholder.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Azure Table storage](../placeholder.md) |✓ |✓ |✓ |✓  |
 | **Database** |[Amazon Redshift](../placeholder.md) |✓ | |✓ |✓  |
-| &nbsp; |[Hive](../placeholder.md) |✓ | |✓ |✓  |
 | &nbsp; |[Apache Impala](../placeholder.md) |✓ | |✓ |✓  |
+| &nbsp; |[Google Cloud Storage (S3 API)](../placeholder.md) |✓ | |✓ |✓  |
+| &nbsp; |[Hive](../placeholder.md) |✓ | |✓ |✓  |
 | &nbsp; |[PostgreSQL](../placeholder.md) |✓ | |✓ |✓  |
 | &nbsp; |[Spark](../placeholder.md) |✓ | |✓ |✓  |
 | &nbsp; |[SQL Server](../placeholder.md) |✓ |✓ |✓ |✓  |
 | **File** |[Amazon S3](../placeholder.md) |✓ | |✓ |✓  |
-| &nbsp; |[Google Cloud Storage (S3 API)](../placeholder.md) |✓ | |✓ |✓  |
-[Generic HTTP](connector-http.md) |✓ | |✓ |✓  |
-| **Generic protocol** |OData](../placeholder.md) |✓ | |✓ |✓  |
+| **Generic protocol** |[HTTP](connector-http.md) |✓ | |✓ |✓  |
+| &nbsp; |[OData](../placeholder.md) |✓ | |✓ |✓  |
 | &nbsp; |[REST](../placeholder.md) |✓ | ✓ |✓ |✓  |
 | **Services and apps** |[Dataverse](../placeholder.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[REST](../placeholder.md) |✓ | ✓ |✓ |✓  |
+| &nbsp; |[Office 365 Outlook](../placeholder.md) |✓ | |✓ |✓  |
 | &nbsp; |[Snowflake](../placeholder.md) |✓ | ✓ |✓ |✓  |
+| &nbsp; |[Teams](../placeholder.md) |✓ | |✓ |✓  |
 
 ## Data transformation activities
 
@@ -76,8 +77,9 @@ Data transformation activity | Compute environment
 ---------------------------- | -------------------
 [Copy data](copy-data-activity.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Dataflow](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+[Dataflow Gen2](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Delete data](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-[Spark Notebook](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+[Fabric Notebook](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Stored Procedure](../placeholder.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 [SQL script](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Switch](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
@@ -99,6 +101,16 @@ Control activity | Description
 [Wait Activity](../placeholder.md) | When you use a Wait activity in a pipeline, the pipeline waits for the specified time before continuing with execution of subsequent activities.
 [Web Activity](../placeholder.md) | Web Activity can be used to call a custom REST endpoint from a pipeline. You can pass datasets and linked services to be consumed and accessed by the activity.
 [Webhook Activity](../placeholder.md) | Using the webhook activity, call an endpoint, and pass a callback URL. The pipeline run waits for the callback to be invoked before proceeding to the next activity.
+
+## Adding activities to a pipeline with the [!INCLUDE [product-name](../includes/product-name.md)] UI
+Use these steps to add and configure activities in a [!INCLUDE [product-name](../includes/product-name.md)] pipeline:
+
+1. Create a new pipeline in your workspace.
+1. On the Activities tab for the pipeline, browse the activities displayed, scrolling to the right if necessary to see all activities. Select an activity to add it to the pipeline editor.
+1. When you add an activity and select it in the pipeline editor canvas, its **General** settings will appear in the properties pane below the canvas.
+1. Each activity also contains custom properties specific to its configuration on other tabs in the properties pane.
+
+:::image type="content" source="media/activity-overview/activity-ui.png" alt-text="Screenshot showing the pipeline editor with the Activities tab, toolbar, a copy activity, and the General tab of its properties, all highlighted.":::
 
 ## Next steps
 
