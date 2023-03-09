@@ -104,7 +104,7 @@ The following tables contain more information about the copy activity in Amazon 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External**|Yes|type|
+|**Data store type**|Your data store type.| **External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**File path** | The file path of your source data.|\<file path of your source >|Yes |container <br> fileName|
 |**File path type** |The file path type that you want to use.|• File path <br>• Prefix<br>• Wildcard folder path<br>•List of files|No |<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• path to file list|
