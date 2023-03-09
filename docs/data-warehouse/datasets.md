@@ -1,7 +1,7 @@
 ---
 title: Datasets
 description: Learn more about default datasets.
-ms.reviewer: WilliamDAssafMSFT
+ms.reviewer: wiassaf
 ms.author: chweb
 author: chuckles22
 ms.topic: conceptual
@@ -13,7 +13,7 @@ ms.date: 03/15/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-In [!INCLUDE [product-name](../includes/product-name.md)], Datasets are a semantic model with metrics; a logical description of an analytical domain, with business friendly terminology and representation, to enable deeper analysis. This semantic model is typically a star schema with facts that represent a domain, and dimensions that allow you to analyze, or slice and dice the domain to drill down, filter, and calculate different analyses. With the default dataset, the Dataset is created automatically for you, and the aforementioned business logic gets inherited from the parent Lakehouse or warehouse respectively, jump-starting the downstream analytics experience for business intelligence and analysis with an artifact in [!INCLUDE [product-name](../includes/product-name.md)] that is managed, optimized, and kept in sync with no user intervention. Visualizations and analyses in **Power BI reports** can now be built completely in the web - or in just a few clicks in Power BI desktop - saving users time, resources, and by default, providing a seamless consumption experience for end-users. **Power BI datasets** represent a source of data ready for reporting, visualization, discovery and consumption including:
+In [!INCLUDE [product-name](../includes/product-name.md)], Datasets are a semantic model with metrics; a logical description of an analytical domain, with business friendly terminology and representation, to enable deeper analysis. This semantic model is typically a star schema with facts that represent a domain, and dimensions that allow you to analyze, or slice and dice the domain to drill down, filter, and calculate different analyses. With the default dataset, the Dataset is created automatically for you, and the aforementioned business logic gets inherited from the parent Lakehouse or warehouse respectively, jump-starting the downstream analytics experience for business intelligence and analysis with an item in [!INCLUDE [product-name](../includes/product-name.md)] that is managed, optimized, and kept in sync with no user intervention. Visualizations and analyses in **Power BI reports** can now be built completely in the web - or in just a few clicks in Power BI desktop - saving users time, resources, and by default, providing a seamless consumption experience for end-users. **Power BI datasets** represent a source of data ready for reporting, visualization, discovery and consumption including:
 
 - The ability to expand warehousing constructs to include hierarchies, descriptions, relationships and allows deeper semantic understanding of a domain.
 - The ability to catalog, search and find dataset information in the Data Hub.

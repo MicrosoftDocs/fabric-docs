@@ -1,7 +1,7 @@
 ---
 title: Rename a warehouse
 description: Learn how to rename a warehouse.
-ms.reviewer: WilliamDAssafMSFT
+ms.reviewer: wiassaf
 ms.author: prlangad
 author: prlangad
 ms.topic: how-to
@@ -16,25 +16,25 @@ ms.date: 03/15/2023
 > [!TIP]
 > Applies to: Warehouse
 
-This functionality isn't supported on default warehouse, you can only rename the **warehouse** artifact.
+This functionality isn't supported for a default warehouse, you can only rename the **warehouse** item.
 
 From within the **Settings**, select the Settings icon in the ribbon. The **Settings** panel displays on the right side of the screen; you can edit the name of the warehouse to provide a new name and close the panel.
 
-IMAGE
+:::image type="content" source="media\rename-warehouse\settings-icon-panel.png" alt-text="Screenshot showing the Settings icon in the ribbon and the Settings panel." lightbox="media\rename-warehouse\settings-icon-panel.png":::
 
 You can also get to the **Settings** panel from the more menu (**...**), next to the warehouse name in the workspace view.
 
-IMAGE
+:::image type="content" source="media\rename-warehouse\more-menu-settings-option.png" alt-text="Screenshot showing where the Settings option appears in the more menu." lightbox="media\rename-warehouse\more-menu-settings-option.png":::
 
 You can also rename a warehouse using header.
 
-IMAGE
+:::image type="content" source="media\rename-warehouse\rename-header.png" alt-text="Screenshot showing where you can rename using the header." lightbox="media\rename-warehouse\rename-header.png":::
 
 Alternatively, you can change the warehouse name from the workspace list view. Select the more menu (**...**) next to the warehouse name in the workspace view.
 
 From the menu that appears, select **Rename**.
 
-IMAGE
+:::image type="content" source="media\rename-warehouse\more-menu-rename.png" alt-text="Screenshot showing where Rename appears in the workspace list more menu." lightbox="media\rename-warehouse\more-menu-rename.png":::
 
 Provide a new name in the dialog and select **Rename** to apply.
 

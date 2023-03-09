@@ -1,7 +1,7 @@
 ---
 title: Data modeling and defining relationships
 description: Learn how to model your data and define physical and logical relationships.
-ms.reviewer: WilliamDAssafMSFT
+ms.reviewer: wiassaf
 ms.author: salilkanade
 author: cynotebo
 ms.topic: conceptual

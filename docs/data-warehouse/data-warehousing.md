@@ -1,7 +1,7 @@
 ---
 title: Data warehousing overview
 description: Learn more about the data warehousing experience.
-ms.reviewer: WilliamDAssafMSFT
+ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
 ms.topic: overview
@@ -40,7 +40,7 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
 1. You can't query tables that are partitioned or the tables with renamed columns.
 
-1. You can't load case sensitive tables to data warehouse (i.e.., Cat, cat and CAT are all read as the same table name by SQL) and will cause the data warehouse to fail. Use unique table and file names for all artifacts you'll be using in warehouse mode.
+1. You can't load case sensitive tables to data warehouse (i.e.., Cat, cat and CAT are all read as the same table name by SQL); doing so causes the data warehouse to fail. Use unique table and file names for all artifacts you use in warehouse mode.
 
 1. Data should be in parquet, delta or .csv format.
 
@@ -54,7 +54,7 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
 1. Permissions:
 
-   - The user who created the Lakehouse will have “dbo” permissions, everyone else will be limited to “Select”.
+   - The user who created the Lakehouse will have “dbo” permissions, everyone else is limited to “Select”.
 
    - GRANT, REVOKE, DENY commands are currently not supported.
 
@@ -65,7 +65,7 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
 As mentioned previously, the full [!INCLUDE [product-name](../includes/product-name.md)] portal experience isn't available at this time, so for some activities you will be use a TDS end-point to connect to and query your warehouse (default) and/or warehouse via SSMS or ADS.
 
-In this tutorial, you'll learn how to find your TDS end-point and use it to connect to SSMS for running SQL queries over either your warehouse (default) or warehouse data.
+In this tutorial, you learn how to find your TDS end-point and use it to connect to SSMS for running SQL queries over either your warehouse (default) or warehouse data.
 
 While not described in this document, we also support Azure Data Services (ADS) if that is your preferred SQL tool and you can use the same TDS end-point to connect via ADS.
 
@@ -104,6 +104,42 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - TRUNCATE
 
 There's a known issue with creating foreign and primary keys. For now, you can create them as though they're enforceable but they won't be enforced by the engine.
+
+## Warehouse mode
+
+Warehouse mode in the Lakehouse allows a user to transition from the “Lake” view of the Lakehouse (which supports data engineering and Apache Spark) to the “SQL” experiences that a data warehouse would provide, supporting T-SQL. In warehouse mode the user has a subset of SQL commands that can define and query data objects but not manipulate the data. You can perform the following actions in your warehouse(default):
+
+- Query the tables that reference data in your Delta Lake folders in the lake.
+- Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
+- Manage permissions on the objects.
+
+Warehouse mode is primarily oriented towards designing your warehouse and BI needs and serving data.
+
+## Keyboard shortcuts
+
+Keyboard shortcuts provide a quick way to navigate and allow users to work more efficiently in SQL query editor. The table in this article lists all the shortcuts available in SQL query editor.
+
+SQL query editor:
+
+| **Function** | **Shortcut** |
+|---|---|
+| New SQL query | Ctrl + Q |
+| Close current tab | Ctrl + Shift + F4 |
+| Run SQL script | Ctrl + Enter, Shift +Enter |
+| Cancel running SQL script | Alt+Break |
+| Search string | Ctrl + F |
+| Replace string | Ctrl + H |
+| Undo | Ctrl + Z |
+| Redo | Ctrl + Y |
+| Go one word left | Ctrl + Left arrow key |
+| Go one word right*| Ctrl + Right arrow key |
+| Indent increase | Tab |
+| Indent decrease | Shift + Tab |
+| Comment | Ctrl + K, Ctrl + C |
+| Uncomment | Ctrl + K, Ctrl + U |
+| Move cursor up | ↑ |
+| Move cursor down | ↓ |
+|Select All | Ctrl + A |
 
 ## Next steps
 

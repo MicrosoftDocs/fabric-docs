@@ -1,7 +1,7 @@
 ---
 title: Create a measure
 description: Learn about measures and how to create them.
-ms.reviewer: WilliamDAssafMSFT
+ms.reviewer: wiassaf
 ms.author: chweb
 author: chuckles22
 ms.topic: how-to
@@ -22,7 +22,7 @@ A [measure](/power-bi/transform-model/desktop-measures) is a collection of stand
 
 To create a measure, select the table in the **Table Explorer** and select the **New Measure** button in the ribbon, as shown in the following image.
 
-IMAGE
+:::image type="content" source="media\create-measure\table-explorer-ribbon.png" alt-text="Screenshot showing the table explorer and where the new measure button appears on the ribbon." lightbox="media\create-measure\table-explorer-ribbon.png":::
 
 Enter the measure into the formula bar and specify the table and the column to which it applies. The formula bar lets you enter your measure.
 
