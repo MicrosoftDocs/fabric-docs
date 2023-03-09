@@ -69,7 +69,7 @@ Under **Advanced**, you can specify the following fields:
 
     - **Wildcard file path**: Specify the folder or file path with wildcard characters under your given blob container to filter your source folders or files.
 
-      Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, got to [Folder and file filter examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#folder-and-file-filter-examples).
+      Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside.
 
         * Wildcard folder path: The folder path with wildcard characters under the given bucket configured in a dataset to filter source folders.
 
@@ -79,7 +79,7 @@ Under **Advanced**, you can specify the following fields:
 
     - **List of files**: Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured in the dataset.
 
-       When you're using this option, don't specify a file name. For more examples, go to [File list examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#file-list-examples).
+       When you're using this option, don't specify a file name.
 
     :::image type="content" source="./media/connector-amazons3/path-to-file-list.png" alt-text="Screenshot showing list of files.":::
 
