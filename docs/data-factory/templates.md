@@ -21,7 +21,7 @@ Templates are pre-defined pipelines that allow you to get started quickly with D
 
    :::image type="content" source="media/templates/new-data-pipeline.png" alt-text="Screenshot showing the new data pipeline button.":::
 
-1. Set a name for your new pipeline and click **Create**.  This will open the pipeline editor window.
+1. Set a name for your new pipeline and select **Create**.  The pipeline editor window opens.
 1. Select **Choose a task to start**.
 
    :::image type="content" source="media/templates/choose-task-to-start.png" alt-text="Screenshot showing the pipeline editor window with the Choose a task to start button highlighted.":::
@@ -44,7 +44,7 @@ Templates are pre-defined pipelines that allow you to get started quickly with D
 
    :::image type="content" source="media/templates/pipeline-properties.png" alt-text="Screenshot showing the pipeline properties with the Parameters tab selected and several parameters added.":::
 
-1. When you are done, save your edits by selecting the save button on the toolbar of the **Home** tab.
+1. When you're done, save your edits by selecting the save button on the toolbar of the **Home** tab.
 
    :::image type="content" source="media/templates/save-button.png" alt-text="Screenshot of the Home tab of the pipeline editor with the Save button selected.":::
 
@@ -54,4 +54,4 @@ Templates are pre-defined pipelines that allow you to get started quickly with D
 
 ## Next steps
 
-[How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline.runs.md)
+[How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
