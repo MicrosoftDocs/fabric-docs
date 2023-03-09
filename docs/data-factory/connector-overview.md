@@ -6,7 +6,7 @@ ms.author: jianleishen
 author: jianleishen
 ms.subservice: data-factory
 ms.topic: overview 
-ms.date: 01/27/2023
+ms.date: 03/09/2023
 ---
 
 # Connector overview
@@ -31,11 +31,31 @@ You can find a comprehensive list of all connectors supported through our [publi
 
 | **Category** | **Data store** | **Copy activity (source/destination)** | **Lookup activity** | **Get metadata activity** | **Delete activity** | **Script activity** | **Stored procedure activity** |
 |---|---|---|---|---|---|---|---|
+| **Workspace** | Lakehouse | ✓/✓ | - | - | ✓ | - | - |
+|  | Data Warehouse | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
 | **Azure** | Azure Blob Storage | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Cosmos DB (SQL API) | ✓/✓ | ✓ | ✓ | ✓ | - | - |
+|  | Azure Data Lake Storage Gen1 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Data Lake Storage Gen2 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure SQL Database | ✓/✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-|  | Azure SQL Managed Instance | ✓/✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+|  | Azure SQL Managed Instance | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
+|  | Azure SQL Explorer | ✓/✓ | ✓ | - | - | - | - |
+|  | Azure Database for PostgreSQL  | ✓/✓ | ✓ | - | - | - | - |
+|  | Azure Synapse Analytics | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
+|  | Azure Table Storage | ✓/✓ | ✓ | - | - | - | - |
+| **Database** | Amazon Redshift | ✓/-  | ✓ | - | - | - | - |
+|  | Apache Impala | ✓/-  | ✓ | - | - | - | - |
+|  | Hive  | ✓/-  | ✓ | - | - | - | - |
+|  | PostgreSQL | ✓/-  | ✓ | - | - | - | - |
+|  | Spark | ✓/-  | ✓ | - | - | - | - |
+|  | SQL Server | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
+| **File** | Amazon S3 | ✓/-  | ✓ | ✓ | ✓ | - | - |
+|  | Google Cloud Storage | ✓/-  | ✓ | ✓ | ✓ | - | - |
+|  | HTTP | ✓/-  | ✓ | - | - | - | - |
+| **Generic** | OData | ✓/-  | ✓ | - | - | - | - |
+|  | REST | ✓/✓ | - | - | - | - | - |
+| **Services and apps** | Snowflake | ✓/✓ | ✓ | - | - | ✓ | - |
+|  | Dataverse(Common Data Service for Apps) | ✓/✓ | ✓ | - | - | - | - |
 
 ## Next steps
 
