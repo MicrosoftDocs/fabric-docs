@@ -109,4 +109,4 @@ The following properties in the table are the supported authentication type.
 
 ## Next steps
 
-- [How to create Amazon S3 connection](connector-amason-s3.md)
+- [How to create Amazon S3 connection](connector-amazon-s3.md)
