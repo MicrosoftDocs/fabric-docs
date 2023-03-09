@@ -15,7 +15,7 @@ ms.date: 03/09/2023
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-The Fabric Notebook activity runs a Synapse notebook in your Fabric pipeline. You can create a Notebook activity directly through the [!INCLUDE [product-name](../includes/product-name.md)] user interface. For a step-by-step walkthrough of how to create a Synapse Notebook activity using the user interface, you can refer to the following.
+The Fabric Notebook activity runs a notebook in your Fabric pipeline. You can create a Notebook activity directly through the [!INCLUDE [product-name](../includes/product-name.md)] user interface. For a step-by-step walkthrough of how to create a Notebook activity using the user interface, you can refer to the following.
 
 ## Prerequisites
 
@@ -25,9 +25,9 @@ To get started, you must complete the following prerequisites:
 - A workspace is created.
 - A notebook is created in your workspace. To create a new notebook refer to [How to create [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
-## Add a notebook activity for Synapse to a pipeline with UI
+## Add a notebook activity to a pipeline with UI
 
-To use a Notebook activity for Synapse in a pipeline, complete the following steps:
+To use a Notebook activity for in a pipeline, complete the following steps:
 
 ### General settings
 
