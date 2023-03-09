@@ -13,7 +13,7 @@ ms.date: 01/27/2023
 
 Templates are pre-defined pipelines that allow you to get started quickly with Data Integration. These templates help to reduce development time by providing an easy way to create pipelines for common data integration scenarios.  
 
-:::image type="content" source="media/templates/templates-list.png" alt-text="Screenshot showing the templates browser in [!INCLUDE [product-name](../includes/product-name.md)].":::
+:::image type="content" source="media/templates/templates-list.png" lightbox="media/templates/templates-list.png" alt-text="Screenshot showing the templates browser in [!INCLUDE [product-name](../includes/product-name.md)].":::
 
 ## How to build a pipeline from a template
 
@@ -28,16 +28,16 @@ Templates are pre-defined pipelines that allow you to get started quickly with D
 
 1. The template browser appears.  Select the **Copy data from ADLS Gen2 to Lakehouse Table** template, and then select Next.
 
-   :::image type="content" source="media/templates/templates-list-with-template-selected.png" alt-text="Screenshot showing the templates browser and the Copy data from ADLS Gen2 to Lakehouse Table template selected.":::
+   :::image type="content" source="media/templates/templates-list-with-template-selected.png" lightbox="media/templates/templates-list-with-template-selected.png" alt-text="Screenshot showing the templates browser and the Copy data from ADLS Gen2 to Lakehouse Table template selected.":::
 
 1. Select from the drop-down list your source and destination connections or use **+ New** to create a new connection.
 
-   :::image type="content" source="media/templates/source-destination-configuration-in-template.png" alt-text="Screenshot showing the template source and destination connections configuration and the New button to create a new connection.":::
+   :::image type="content" source="media/templates/source-destination-configuration-in-template.png" lightbox="media/templates/source-destination-configuration-in-template.png" alt-text="Screenshot showing the template source and destination connections configuration and the New button to create a new connection.":::
 
 1. After making your selections or creating new connections, select the **Use this template** button to generate a new pipeline directly.
 1. The pipeline is created using the connections you set.  You can view the newly created pipeline in the pipeline editor, where you can use the **Run** and **Schedule** buttons to control its execution.
 
-   :::image type="content" source="media/templates/pipeline-editor.png" alt-text="Screenshot showing the pipeline editor with the Run and Schedule buttons highlighted in the toolbar of the Home tab.":::
+   :::image type="content" source="media/templates/pipeline-editor.png" lightbox="media/templates/pipeline-editor.png" alt-text="Screenshot showing the pipeline editor with the Run and Schedule buttons highlighted in the toolbar of the Home tab.":::
 
 1. Initially the new Copy activity is highlighted on the editor canvas, and its properties shown in the properties pane at the bottom of the editor.
 1. When you select the background of the pipeline canvas, you can see the general pipeline properties in the properties pane, where you can add or edit existing parameters.
@@ -50,7 +50,7 @@ Templates are pre-defined pipelines that allow you to get started quickly with D
 
 1. Now you can run your pipeline, providing values for any parameters as required.
 
-   :::image type="content" source="media/templates/run-with-parameters.png" alt-text="Screenshot showing the Pipeline run dialog with parameters specified.":::
+   :::image type="content" source="media/templates/run-with-parameters.png" lightbox="media/templates/run-with-parameters.png" alt-text="Screenshot showing the Pipeline run dialog with parameters specified.":::
 
 ## Next steps
 
