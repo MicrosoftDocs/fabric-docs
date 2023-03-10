@@ -31,41 +31,9 @@ An input dataset represents the input for an activity in the pipeline, and an ou
 
 ## Data movement activities
 
-Copy activity in [!INCLUDE [product-name](../includes/product-name.md)] copies data from a source data store to a sink data store. Fabric supports the data stores listed in the table in this section. Data from any source can be written to any sink.
+Copy activity in [!INCLUDE [product-name](../includes/product-name.md)] copies data from a source data store to a sink data store. Fabric supports the data stores listed in the [Connector overview](connector-overview.md) article. Data from any source can be written to any sink.
 
 For more information, see [How to copy data using the copy activity](copy-data-activity.md).
-
-Click a data store to learn how to copy data to and from that store.
-
-| Category | Data store | Supported as a source | Supported as a sink | Supported by [Azure IR](../placeholder.md) | Supported by [self-hosted IR](../placeholder.md) |
-|:--- |:--- |:--- |:--- |:--- |:--- |
-| **Workspace** |[Data Warehouse](../placeholder.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Lakehouse](../placeholder.md) |✓ |✓ |✓ |✓  |
-| **Azure** |[Azure Blob storage](connector-azure-blob-storage.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Azure Cosmos DB for NoSQL](connector-azure-cosmosdb-for-nosql.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Azure Data Explorer (Kusto)](../placeholder.md) |✓ |✓ |✓ |✓ |
-| &nbsp; |[Azure Data Lake Storage Gen1](../placeholder.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Azure Database for PostgreSQL](../placeholder.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Azure SQL Database](connector-azure-sql-database.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Azure SQL Managed Instance](../placeholder.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Azure Synapse Analytics](../placeholder.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Azure Table storage](../placeholder.md) |✓ |✓ |✓ |✓  |
-| **Database** |[Amazon Redshift](../placeholder.md) |✓ | |✓ |✓  |
-| &nbsp; |[Apache Impala](../placeholder.md) |✓ | |✓ |✓  |
-| &nbsp; |[Google Cloud Storage (S3 API)](../placeholder.md) |✓ | |✓ |✓  |
-| &nbsp; |[Hive](../placeholder.md) |✓ | |✓ |✓  |
-| &nbsp; |[PostgreSQL](../placeholder.md) |✓ | |✓ |✓  |
-| &nbsp; |[Spark](../placeholder.md) |✓ | |✓ |✓  |
-| &nbsp; |[SQL Server](../placeholder.md) |✓ |✓ |✓ |✓  |
-| **File** |[Amazon S3](../placeholder.md) |✓ | |✓ |✓  |
-| **Generic protocol** |[HTTP](connector-http.md) |✓ | |✓ |✓  |
-| &nbsp; |[OData](../placeholder.md) |✓ | |✓ |✓  |
-| &nbsp; |[REST](../placeholder.md) |✓ | ✓ |✓ |✓  |
-| **Services and apps** |[Dataverse](../placeholder.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Office 365 Outlook](../placeholder.md) |✓ | |✓ |✓  |
-| &nbsp; |[Snowflake](../placeholder.md) |✓ | ✓ |✓ |✓  |
-| &nbsp; |[Teams](../placeholder.md) |✓ | |✓ |✓  |
 
 ## Data transformation activities
 
