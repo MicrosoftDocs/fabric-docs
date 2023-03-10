@@ -4,7 +4,6 @@ description: Learn how to use notebooks.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
-ms.subservice: data-engineering
 ms.topic: how-to
 ms.date: 02/24/2023
 ---
