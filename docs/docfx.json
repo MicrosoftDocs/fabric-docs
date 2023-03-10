@@ -47,7 +47,7 @@
       "uhfHeaderId": "MSDocsHeader-MSPowerBI",
       "extendBreadcrumb": true,
       "feedback_system": "None",
-      "ms.service": "analytics",
+      "ms.service": "azure",
       "titleSuffix": "Microsoft Fabric"
    },
    "searchScope": [
