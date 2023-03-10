@@ -15,10 +15,12 @@ items:
     href: datasets.md
 - name: Data warehouses
   items:
+  - name: Warehouse
+    href: warehouse.md
+  - name: Default warehouse
+    href: default-warehouse.md
   - name: Create a warehouse
     href: create-warehouse.md
-  - name: Rename a warehouse
-    href: rename-warehouse.md
 - name: Datasets
   items:
   - name: Data modeling and defining relationships
