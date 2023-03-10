@@ -1,7 +1,7 @@
 ---
 title: Manage user access
 description: Follow steps to manage user access within a workspace.
-ms.reviewer: WilliamDAssafMSFT
+ms.reviewer: wiassaf
 ms.author: kedodd
 author: kedodd
 ms.topic: quickstart
@@ -22,18 +22,19 @@ Through the workspace, you can add members to, and remove them from, workspace r
 
 1. Browse to the workspace.
 
-   IMAGE
+   :::image type="content" source="media\manage-user-access\workspace-example.png" alt-text="Screenshot of a workspace." lightbox="media\manage-user-access\workspace-example.png":::
 
 1. Select **Manage Access**.
 
-   IMAGE
+   :::image type="content" source="media\manage-user-access\select-manage-access.png" alt-text="Screnshot showing where to select Manage access." lightbox="media\manage-user-access\select-manage-access.png":::
 
 1. Select **+Add people or groups**.
 
-   IMAGE
+   :::image type="content" source="media\manage-user-access\select-add-people.png" alt-text="Screenshot showing where to select Add people or groups." lightbox="media\manage-user-access\select-add-people.png":::
+
 1. Enter the user's email address and select which role you want to assign.
 
-   IMAGE
+   :::image type="content" source="media\manage-user-access\assign-role-menu.png" alt-text="Screenshot showing the Add people pane with the role choices you can select." lightbox="media\manage-user-access\assign-role-menu.png":::
 
 ## View my permissions
 
@@ -43,7 +44,7 @@ Once you're assigned to a workspace role, you can connect to the warehouse (see 
 
 1. Open a new query window.
 
-   IMAGE
+   :::image type="content" source="media\manage-user-access\new-query-context-menu.png" alt-text="Screenshot showing where to select New Query in the Object Explorer context menu." lightbox="media\manage-user-access\new-query-context-menu.png":::
 
 1. To see the permissions granted to the user, execute:
 
@@ -52,7 +53,7 @@ Once you're assigned to a workspace role, you can connect to the warehouse (see 
    FROM sys.fn_my_permissions(NULL, “Database”)
    ```
 
-   IMAGE
+   :::image type="content" source="media\manage-user-access\execute-view-permissions.png" alt-text="Screenshot showing where to execute the command to see permissions." lightbox="media\manage-user-access\execute-view-permissions.png":::
 
 ## Next steps
 

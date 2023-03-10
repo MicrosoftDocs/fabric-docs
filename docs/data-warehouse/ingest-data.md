@@ -1,7 +1,7 @@
 ---
 title: Ingesting data into the warehouse
 description: Learn about the features that allow you to ingest data into your warehouse.
-ms.reviewer: WilliamDAssafMSFT
+ms.reviewer: wiassaf
 ms.author: kecona
 author: KevinConanMSFT
 ms.topic: conceptual

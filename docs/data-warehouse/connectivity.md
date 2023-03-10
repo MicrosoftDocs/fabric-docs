@@ -1,7 +1,7 @@
 ---
 title: Connectivity
 description: Follow steps to connect SSMS to a warehouse in your workspace.
-ms.reviewer: WilliamDAssafMSFT
+ms.reviewer: wiassaf
 ms.author: salilkanade
 author: cynotebo
 ms.topic: how-to
@@ -16,7 +16,7 @@ ms.date: 03/15/2023
 To get started, you must complete the following prerequisites:
 
 - For best performance, you must be using SQL Server Management Studio (SSMS) version 18.0+.
-- You need access to a Lakehouse artifact within a premium per capacity workspace with contributor or above permissions.
+- You need access to a Lakehouse item within a premium per capacity workspace with contributor or above permissions.
 
 ## Connect SSMS to a warehouse in the workspace
 
@@ -24,44 +24,43 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
 ### Get end-point
 
-1. Navigate to your workspace and select the warehouse artifact you would like to connect to.
+1. Navigate to your workspace and select the warehouse item you would like to connect to.
 
-   IMAGE
+   :::image type="content" source="media\connectivity\workspace-more-menu.png" alt-text="Screenshot of the workspace screen with the context menu open." lightbox="media\connectivity\workspace-more-menu.png":::
 
 1. Navigate to the warehouse’s **Settings** page. From there:
    1. Navigate to the **Warehouse mode** tab.
    1. Select the **Copy** button next to the SQL connection string to copy it to your clipboard.
 
-   IMAGE
+   :::image type="content" source="media\connectivity\warehouse-mode.png" alt-text="Screenshot of the warehouse mode tab." lightbox="media\connectivity\warehouse-mode.png":::
 
 ### Get started with SSMS
 
 1. When you open SQL Server Management Studio (SSMS), the Connect to Server window appears. If already open, you can connect manually by selecting **Object Explorer** > **Connect** > **Database Engine**.
 
-   IMAGE
+   :::image type="content" source="media\connectivity\object-explorer-connect-menu.png" alt-text="Screenshot showing where to select Database Engine on the Connect menu." lightbox="media\connectivity\object-explorer-connect-menu.png":::
 
 1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication. Remember that only **Azure Active Directory - MFA** authentication is supported.
 
-   IMAGE
+   :::image type="content" source="media\connectivity\connect-server-window.png" alt-text="Screenshot showing the Connect to server window." lightbox="media\connectivity\connect-server-window.png":::
 
 1. Once the connection is established, Object Explorer displays the connected warehouse from the workspace and its respective tables and views, all of which are ready to be queried.
 
-   IMAGE
+   :::image type="content" source="media\connectivity\object-explorer-example.png" alt-text="Screenshot showing where the connected server name appears in the Object Explorer pane." lightbox="media\connectivity\object-explorer-example.png":::
 
-> [!TIP]
-> When connecting via SSMS (or ADS) you will see both warehouse (default) and warehouse artifacts listed as warehouses and it will be difficult to differentiate between the two artifact types and their functionality. For this reason, we strongly encourage you to adopt a naming convention which allows you to easily distinguish between the two artifact types when you are working in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience.
+When connecting via SSMS (or ADS), you see both warehouse (default) and warehouse artifacts listed as warehouses and it's difficult to differentiate between the two item types and their functionality. For this reason, we strongly encourage you to adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience.
 
 ### Connecting to SQL server endpoint using JDBC driver
 
 If you're receiving an error when attempting to connect to a SQL Server endpoint using a SQL client that uses a Java database connectivity (JDBC) driver, like DBeaver, check for the following dependencies:
 
-1. Add artifacts, choose Add artifact and add the below four dependencies in the window like this, then select **Download/Update** to load all dependencies.
+1. Add artifacts, choose **Add Artifact** and add the following four dependencies in the window like this, then select **Download/Update** to load all dependencies.
 
 1. Select **Test connection**, and **Finish**.
 
-IMAGE
+:::image type="content" source="media\connectivity\download-update.png" alt-text="Screenshot showing where to select Download/Update." lightbox="media\connectivity\download-update.png":::
 
-IMAGE
+:::image type="content" source="media\connectivity\dependency-declaration.png" alt-text="Screenshot of the Dependency Declaration tab." lightbox="media\connectivity\dependency-declaration.png":::
 
 ```
 <dependency>
@@ -94,7 +93,7 @@ IMAGE
 
 - Warning on new query. When you open a new query in SSMS, you might see the following error:
 
-   IMAGE
+   :::image type="content" source="media\connectivity\new-query-error.png" alt-text="Screenshot of the new query error." lightbox="media\connectivity\new-query-error.png":::
 
    **Workaround**: Ignore the message by selecting **OK**, and continue with your query.
 

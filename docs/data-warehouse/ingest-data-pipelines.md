@@ -1,7 +1,7 @@
 ---
 title: Ingest data into your warehouse using Data pipelines
 description: Follow steps to ingest data with Data pipelines.
-ms.reviewer: WilliamDAssafMSFT
+ms.reviewer: wiassaf
 ms.author: procha
 author: periclesrocha
 ms.topic: how-to
@@ -20,11 +20,11 @@ Data pipelines offer an alternative to using the COPY command through a graphica
 
 To create a new Data pipeline go to your workspace, select the **+ New** button, and select **Show all**. Find Data pipeline under the Data factory section of the **New** page.
 
-IMAGE
+:::image type="content" source="media\ingest-data-pipelines\new-page-data-pipeline.png" alt-text="Screenshot of a New Power BI page showing where to select Data pipeline." lightbox="media\ingest-data-pipelines\new-page-data-pipeline.png":::
 
 Once you select Data pipeline and give your pipeline a name, you see three options to start ingesting data: **Add a pipeline activity**, **Copy data** (wizard), and **Choose a task to start**.
 
-IMAGE
+:::image type="content" source="media\ingest-data-pipelines\start-building-data-pipeline.png" alt-text="Screenshot showing the three options to select for starting ingestion." lightbox="media\ingest-data-pipelines\start-building-data-pipeline.png":::
 
 Here's a brief description of these options:
 
@@ -34,19 +34,19 @@ Here's a brief description of these options:
   - The pipeline configurations pane, including parameters, variables, general settings, and output.
   - The pipeline properties pane, where the pipeline name, optional description, and annotations can be configured.
 - **Copy data**: this option launches a step-by-step wizard that helps you select a source, a destination, and configure data load options, such as the column mapping between source and destination. On completion, it creates a new pipeline activity with the copy data task already configured for you.
-- **Choose a task to start**: a set of pre-defined templates to help get you started with pipelines.
+- **Choose a task to start**: a set of predefined templates to help get you started with pipelines.
 
 Once you finish preparing your pipeline, you need to validate it and run it. These options can be found on the Home tab of the pipeline editor:
 
-IMAGE
+:::image type="content" source="media\ingest-data-pipelines\validate-run.png" alt-text="Screenshot showing where to find the Validate and Run options." lightbox="media\ingest-data-pipelines\validate-run.png":::
 
 Once you run a pipeline, you can monitor its status in the **Output** tab of the pipeline’s configuration pane.
 
-IMAGE
+:::image type="content" source="media\ingest-data-pipelines\output-pane.png" alt-text="Screenshot showing where to find the Output tab." lightbox="media\ingest-data-pipelines\output-pane.png":::
 
 ## Known limitations
 
-At this time, when reading from Azure Blob Storage, you can only use SAS tokens to authenticate to Azure Storage accounts. Support for more authentication methods is coming soon. You can still connect to a source using a different authentication method, but you'll then be required to enable Staging, and the storage account that is configured for Staging must use a SAS token for authentication.
+At this time, when reading from Azure Blob Storage, you can only use SAS tokens to authenticate to Azure Storage accounts. You can still connect to a source using a different authentication method, but you're then required to enable Staging, and the storage account that is configured for Staging must use a SAS token for authentication.
 
 ## Next steps
 

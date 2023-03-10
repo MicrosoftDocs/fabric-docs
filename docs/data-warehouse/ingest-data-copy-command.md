@@ -1,7 +1,7 @@
 ---
 title: Ingest data into your warehouse using the COPY command
 description: Follow steps to ingest data using the COPY command.
-ms.reviewer: WilliamDAssafMSFT
+ms.reviewer: wiassaf
 ms.author: kecona
 author: KevinConanMSFT
 ms.topic: how-to
@@ -95,7 +95,7 @@ FROM 'https://mystorageaccountxxx.blob.core.windows.net/private/mydirectorywithC
 
 ## Known limitations
 
-The below syntax will be available at Public Preview/GA timeframe but isn't currently available.
+The below syntax isn't currently available.
 
 ```
 [,MAXERRORS = max_errors ]
@@ -108,7 +108,7 @@ The below syntax will be available at Public Preview/GA timeframe but isn't curr
 
 Other known limitations:
 
-- When you load PARQUET files, column names must match exactly in the source and destination. If the name of the column in target table is different than that of the column name in the parquet file, that column is filled with NULL.
+- When you load PARQUET files, column names must match exactly in the source and destination. If the name of the column in target table is different than that of the column name in the parquet file, the target table column is filled with NULL.
 - Identity enforcement isn't currently supported.
 - Auto create table isn't currently supported. If using the COPY command, you must create your table in advance.
 
