@@ -26,9 +26,9 @@
         "files": [
           "**/*.png",
           "**/*.jpg",
-          "**/*.gif",
           "**/*.svg",
-          "**/includes/media/**"
+          "**/*.gif"
+
         ],
         "exclude": [
           "**/obj/**",
