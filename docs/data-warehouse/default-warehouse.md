@@ -17,6 +17,13 @@ When you load data into a [!INCLUDE [product-name](../includes/product-name.md)]
 
 :::image type="content" source="media\default-warehouse\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and Delta Lake tables." lightbox="media\default-warehouse\lakehouse-delta-tables.png":::
 
+
+## Understand the Warehouse (default)
+
+The distinction between Warehouse (default) and [Warehouse](warehouse.md) is an important one as transactional T-SQL statements fail if you attempt to run them against the Warehouse (default) item. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
+
+## Automatically generated schema
+
 The table columns in automatically generated warehouses are derived from the source Delta types.
 
 | **Delta Data Type** | **SQL Data** **Type (Mapped)** |
