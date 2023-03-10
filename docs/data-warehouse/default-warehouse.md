@@ -47,6 +47,9 @@ In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-
 
 :::image type="content" source="media\default-warehouse\warehouse-default-list.png" alt-text="Screenshot showing a Warehouse(default) in a portal list." lightbox="media\default-warehouse\warehouse-default-list.png":::
 
+
+## Connectivity
+
 For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your warehouse (default). There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later in this document, but we generally expect that the majority of the testing and interaction for warehouse (default) will be via SQL end-point connection to a tool such as SQL Server Management Studio (SSMS) or Azure Data Studio (ADS).
 
 ### Known issues and limitations in the default warehouse
@@ -54,6 +57,8 @@ For the current version, you'll primarily be using a TDS end point and SSMS or A
 1. Lakehouse tables in the warehouse (default) are created with a delay.
 
    Once you create or update Delta Lake folder/table in the lake, the warehouse table that references the lake data won't be immediately created/refreshed. The changes will be applied in the warehouse after 5-10 seconds.
+
+## Limitations 
 
 1. Non-delta tables (Parquet, CSV, AVRO) aren't supported.
 

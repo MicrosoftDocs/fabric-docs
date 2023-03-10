@@ -15,8 +15,8 @@ ms.date: 03/15/2023
 
 In [!INCLUDE [product-name](../includes/product-name.md)], datasets are a semantic model with metrics; a logical description of an analytical domain, with business friendly terminology and representation, to enable deeper analysis. This semantic model is typically a star schema with facts that represent a domain, and dimensions that allow you to analyze, or slice and dice the domain to drill down, filter, and calculate different analyses. With the default dataset, the dataset is created automatically for you, and the aforementioned business logic gets inherited from the parent lakehouse or warehouse respectively, jump-starting the downstream analytics experience for business intelligence and analysis with an item in [!INCLUDE [product-name](../includes/product-name.md)] that is managed, optimized, and kept in sync with no user intervention. Visualizations and analyses in **Power BI reports** can now be built completely in the web - or in just a few steps in Power BI desktop - saving users time, resources, and by default, providing a seamless consumption experience for end-users. **Power BI datasets** represent a source of data ready for reporting, visualization, discovery and consumption including:
 
-- The ability to expand warehousing constructs to include hierarchies, descriptions, relationships and allows deeper semantic understanding of a domain.
-- The ability to catalog, search and find dataset information in the Data Hub.
+- Datasets provide the ability to expand warehousing constructs to include hierarchies, descriptions, relationships. This allows deeper semantic understanding of a domain.
+- Datasets provide the ability to catalog, search, and find dataset information in the Data Hub.
 - The ability to set bespoke permissions for workload isolation and security.
 - The ability to create measures, standardized metrics for repeatable analysis.
 - The ability to create Power BI reports for visual analysis.
