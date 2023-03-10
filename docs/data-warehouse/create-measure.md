@@ -17,7 +17,11 @@ A [measure](/power-bi/transform-model/desktop-measures) is a collection of stand
 
 ## How to create a measure
 
+<<<<<<< HEAD
 **Applies to**: Warehouse (default) and warehouse
+=======
+*Applies to:* Warehouse (default) and warehouse
+>>>>>>> 1724007a087ea3c77549af9f1ebb410e7e554782
 
 To create a measure, select the table in the **Table Explorer** and select the **New Measure** button in the ribbon, as shown in the following image.
 

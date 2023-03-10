@@ -18,13 +18,13 @@ The Warehouse functionality is a ‘traditional’ data warehouse and supports t
 :::image type="content" source="media\warehouse\multiple-warehouse-list.png" alt-text="Screenshot of a warehouse list that shows distinction between warehouse and warehouse (default)." lightbox="media\warehouse\multiple-warehouse-list.png":::
 
 > [!IMPORTANT]
-> The distinction between Warehouse (default) and Warehouse is an important one as transactional T-SQL statements fail if you attempt to run them against the Warehouse (default) item. Throughout this document, we've called out specific features and functionality to align with the differing functionality of these two artifacts.
+> The distinction between the [Warehouse (default)](default-warehouse.md) and Warehouse is an important one as transactional T-SQL statements fail if you attempt to run them against the Warehouse (default) item. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
 
 When you create a Lakehouse or a warehouse, a default Power BI dataset is created. This is represented with the (default) suffix. For more information, see [Default datasets](datasets.md).
 
-## Known limitations with Warehouse
+## Limitations
 
-Model view layouts aren't currently saved.
+1. Model view layouts aren't currently saved.
 
 ## Rename a warehouse
 
