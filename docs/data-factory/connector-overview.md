@@ -29,7 +29,7 @@ You can find a comprehensive list of all connectors supported through our [publi
 
 [!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory supports the following data stores in a data pipeline via Copy, Lookup, Get Metadata, and Delete Data activities. Go to each data store to learn the supported capabilities and the corresponding configurations in detail.
 
-| **Category** | **Data store** | **Copy activity (source/destination)** | **Lookup activity** | **Get Metadata activity** | **Delete activity** | **Script activity** | **Stored procedure activity** |
+| **Category** | **Data store** | **Copy activity (source/destination)** | **Lookup activity** | **Get Metadata activity** | **Delete activity** | **Script activity** | **Stored Procedure activity** |
 |---|---|---|---|---|---|---|---|
 | **Workspace** | Lakehouse | ✓/✓ | - | - | ✓ | - | - |
 |  | Data Warehouse | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
