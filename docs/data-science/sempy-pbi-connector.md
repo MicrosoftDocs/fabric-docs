@@ -6,7 +6,7 @@ ms.author: narsam
 author: narmeens
 ms.subservice: data-science
 ms.topic: how-to
-ms.date: 02/10/2023
+ms.date: 03/10/2023
 ---
 
 # How to explore and validate data with SemPy and Power BI Connector
@@ -53,6 +53,12 @@ from sempy.connectors.powerbi import PowerBIConnector
 conn = PowerBIConnector()
 conn.get_datasets()
 ```
+
+> [!TIP]
+> If no datasets are returned, you can use the following steps to install the __Customer profitability Sample PBIX__ example dataset:
+>
+> 1. Download the [.pbix file](https://download.microsoft.com/download/6/A/9/6A93FD6E-CBA5-40BD-B42E-4DCAE8CDD059/Customer%20Profitability%20Sample%20PBIX.pbix).
+> 1. To upload the file, go to your workspace and select __Upload__, then __Browse__. Select the .pbix file downloaded in the previous step, and then select __Open__.
 
 The following image shows an example of the data returned:
 
