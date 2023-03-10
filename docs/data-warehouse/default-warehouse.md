@@ -78,9 +78,6 @@ For the current version, you'll primarily be using a TDS end point and SSMS or A
 
 ## How to delete a default warehouse
 
-> [!TIP]
-> Applies to Warehouse (default)
-
 The Warehouse (default) item is linked to its parent Lakehouse when it's automatically created and can't be directly deleted. If you need to delete the warehouse (default) item, you must delete the parent Lakehouse.
 
 Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
