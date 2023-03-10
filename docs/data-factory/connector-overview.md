@@ -27,9 +27,9 @@ You can find a comprehensive list of all connectors supported through our [publi
 
 ## Supported data stores in data pipeline
 
-[!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory supports the following data stores in a data pipeline. The support for various activities in a data pipeline, such as copy, look up, get metadata, delete, script, and store procedures, is slightly different. Go to each data store to learn the supported capabilities and the corresponding configurations in detail.
+[!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory supports the following data stores in a data pipeline via Copy, Lookup, Get Metadata, and Delete Data activities. Go to each data store to learn the supported capabilities and the corresponding configurations in detail.
 
-| **Category** | **Data store** | **Copy activity (source/destination)** | **Lookup activity** | **Get metadata activity** | **Delete activity** | **Script activity** | **Stored procedure activity** |
+| **Category** | **Data store** | **Copy activity (source/destination)** | **Lookup activity** | **Get Metadata activity** | **Delete activity** | **Script activity** | **Stored procedure activity** |
 |---|---|---|---|---|---|---|---|
 | **Workspace** | Lakehouse | ✓/✓ | - | - | ✓ | - | - |
 |  | Data Warehouse | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
@@ -55,7 +55,7 @@ You can find a comprehensive list of all connectors supported through our [publi
 | **Generic** | OData | ✓/-  | ✓ | - | - | - | - |
 |  | REST | ✓/✓ | - | - | - | - | - |
 | **Services and apps** | Snowflake | ✓/✓ | ✓ | - | - | ✓ | - |
-|  | Dataverse(Common Data Service for Apps) | ✓/✓ | ✓ | - | - | - | - |
+|  | Dataverse | ✓/✓ | ✓ | - | - | - | - |
 
 ## Next steps
 
