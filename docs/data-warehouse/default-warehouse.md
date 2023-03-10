@@ -42,7 +42,13 @@ In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-
 
 For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your warehouse (default). There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later in this document, but we generally expect that the majority of the testing and interaction for warehouse (default) will be via SQL end-point connection to a tool such as SQL Server Management Studio (SSMS) or Azure Data Studio (ADS).
 
-### Known issues and limitations in the default warehouse
+## How to delete a default warehouse
+
+The Warehouse (default) item is linked to its parent Lakehouse when it's automatically created and can't be directly deleted. If you need to delete the warehouse (default) item, you must delete the parent Lakehouse.
+
+Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
+
+## Known issues and limitations in the default warehouse
 
 1. Lakehouse tables in the warehouse (default) are created with a delay.
 
@@ -75,12 +81,6 @@ For the current version, you'll primarily be using a TDS end point and SSMS or A
    - Complex types (arrays, struct, maps)
    - Binary/BSON
    - Long string (longer than 8 KB). All strings are limited to varchar(8000).
-
-## How to delete a default warehouse
-
-The Warehouse (default) item is linked to its parent Lakehouse when it's automatically created and can't be directly deleted. If you need to delete the warehouse (default) item, you must delete the parent Lakehouse.
-
-Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
 
 ## Next steps
 

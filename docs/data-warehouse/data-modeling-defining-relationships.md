@@ -17,8 +17,7 @@ A well-defined data model is instrumental in driving your analytics and reportin
 
 ## How to model data and define relationships
 
-> [!TIP]
-> Applies to: Warehouse (default) and warehouse
+**Applies to**: Warehouse (default) and warehouse
 
 To model your data, navigate to **Model view** by selecting the **Model view** icon at the bottom left of the window, as shown in the following image.
 

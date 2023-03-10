@@ -20,8 +20,7 @@ This article describes how to get started with warehouse using the [!INCLUDE [pr
 
 ## How to create a warehouse
 
-> [!TIP]
-> Applies to: Warehouse
+**Applies to**: Warehouse
 
 In this section, we walk you through three distinct experiences available for creating a warehouse from scratch in the [!INCLUDE [product-name](../includes/product-name.md)] portal.
 
