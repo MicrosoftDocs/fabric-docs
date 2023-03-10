@@ -4,7 +4,6 @@ description: Learn how to create geo location plots with SemPy.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
-ms.subservice: data-science
 ms.topic: how-to 
 ms.date: 02/10/2023
 ---
