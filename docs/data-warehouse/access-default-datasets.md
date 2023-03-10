@@ -10,10 +10,9 @@ ms.date: 03/15/2023
 
 # Access default datasets
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
 **Applies to:** Synapse Warehouse (default) in Microsoft Fabric
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 To access default datasets, go to your workspace and find the dataset that matches the name of the warehouse.
 

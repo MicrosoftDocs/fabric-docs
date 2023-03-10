@@ -10,13 +10,11 @@ ms.date: 03/15/2023
 
 # Default warehouse
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse workspace as Delta tables, a SQL based warehouse containing tables that reference your Delta Lake data is automatically created in that workspace for you. Every Delta Lake table from a Lakehouse is represented as one table in this automatically generated warehouse.
 
 :::image type="content" source="media\default-warehouse\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and Delta Lake tables." lightbox="media\default-warehouse\lakehouse-delta-tables.png":::
-
 
 ## Understand the Warehouse (default)
 
@@ -47,7 +45,6 @@ In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-
 
 :::image type="content" source="media\default-warehouse\warehouse-default-list.png" alt-text="Screenshot showing a Warehouse(default) in a portal list." lightbox="media\default-warehouse\warehouse-default-list.png":::
 
-
 ## Connectivity
 
 For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your warehouse (default). There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later, but we generally expect that the majority of the testing and interaction for warehouse (default) will be via SQL end-point connection to a tool such as SQL Server Management Studio (SSMS) or Azure Data Studio (ADS).
@@ -64,7 +61,7 @@ Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
 
    Once you create or update Delta Lake folder/table in the lake, the warehouse table that references the lake data won't be immediately created/refreshed. The changes will be applied in the warehouse after 5-10 seconds.
 
-## Limitations 
+## Limitations
 
 1. Non-delta tables (Parquet, CSV, AVRO) aren't supported.
 

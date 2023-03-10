@@ -10,8 +10,7 @@ ms.date: 03/15/2023
 
 # Data warehousing overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The data warehouse experience in [!INCLUDE [product-name](../includes/product-name.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using T-SQL/TDS end-point. Data analysts use T-SQL language to access Lakehouse data artifacts using the warehouse experience that exposes underlying files, folders, and Cosmos DB containers as tables or views.
 
@@ -60,7 +59,7 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
 ## Connectivity
 
-**Applies to**: Warehouse (default) and Warehouse
+*Applies to:* Warehouse (default) and Warehouse
 
 As mentioned previously, the full [!INCLUDE [product-name](../includes/product-name.md)] portal experience isn't available at this time, so for some activities you will be use a TDS end-point to connect to and query your warehouse (default) and/or warehouse via SSMS or ADS.
 

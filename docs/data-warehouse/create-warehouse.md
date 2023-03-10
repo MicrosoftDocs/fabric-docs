@@ -10,8 +10,7 @@ ms.date: 03/15/2023
 
 # Create a warehouse
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article describes how to get started with warehouse using the [!INCLUDE [product-name](../includes/product-name.md)] portal, including discovering creation and consumption of the warehouse. You’ll learn how to create your warehouse from scratch, how to load data, how to rename or delete a warehouse, and other helpful information to get you acquainted and proficient with warehouse capabilities offered through the [!INCLUDE [product-name](../includes/product-name.md)] portal.
 
@@ -20,7 +19,7 @@ This article describes how to get started with warehouse using the [!INCLUDE [pr
 
 ## How to create a warehouse
 
-**Applies to**: Warehouse
+*Applies to:* Warehouse
 
 In this section, we walk you through three distinct experiences available for creating a warehouse from scratch in the [!INCLUDE [product-name](../includes/product-name.md)] portal.
 
