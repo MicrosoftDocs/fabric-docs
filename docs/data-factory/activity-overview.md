@@ -48,6 +48,7 @@ Data transformation activity | Compute environment
 [Dataflow Gen2](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Delete data](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Fabric Notebook](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+[Spark job definition](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Stored Procedure](../placeholder.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
 [SQL script](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Switch](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
