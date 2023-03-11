@@ -4,7 +4,6 @@ description: Learn how to create an experiment and track runs, and review exampl
 ms.reviewer: mopeakande
 ms.author: negust
 author: nelgson
-ms.subservice: data-science
 ms.topic: conceptual
 ms.date: 02/10/2023
 ---

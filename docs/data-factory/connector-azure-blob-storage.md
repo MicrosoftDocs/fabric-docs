@@ -3,7 +3,6 @@ title: How to create an Azure Blob Storage connection
 description: This article provides information about how to create an Azure Blob Storage connection.
 author: lrtoyou1223
 ms.author: lle
-ms.subservice: data-factory
 ms.topic: how-to
 ms.date: 02/26/2023
 ms.custom: template-how-to
