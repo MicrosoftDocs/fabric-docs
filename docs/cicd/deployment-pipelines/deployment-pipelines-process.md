@@ -4,8 +4,8 @@ description: Understand how deployment pipelines, the Power BI Application lifec
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
+ms.service: fabric
+ms.subservice: cicd
 ms.custom: contperf-fy21q1, intro-deployment
 ms.date: 12/28/2022
 ---

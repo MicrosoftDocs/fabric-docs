@@ -4,8 +4,8 @@ description: Learn how to automate your deployment pipeline, the Power BI Applic
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
+ms.service: fabric
+ms.subservice: cicd
 ms.date: 12/27/2022
 ---
 

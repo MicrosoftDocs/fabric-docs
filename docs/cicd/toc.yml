@@ -4,7 +4,7 @@ items:
 - name: Overview
   items:
   - name: What is CI/CD? 
-    href: ../placeholder.md
+    href: cicd-overview.md
 - name: Deployment pipelines
   items:
   - name: Introduction to deployment pipelines

@@ -4,9 +4,8 @@ description: Learn how to create rules to simplify deploying content with the Po
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
-ms.custom: contperf-fy21q1
+ms.service: fabric
+ms.subservice: cicd
 ms.date: 12/31/2022
 ---
 

@@ -4,8 +4,8 @@ description: Learn how to use deployment pipelines, the Power BI Application lif
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
+ms.service: fabric
+ms.subservice: cicd
 ms.custom: contperf-fy21q1, intro-get-started
 ms.date: 01/18/2023
 ---
