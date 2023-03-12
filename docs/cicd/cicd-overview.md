@@ -3,8 +3,8 @@ title: Introduction to the CI/CD process in Microsoft Fabric
 description: Overview of the CI/CD continuous integration, continuous deployment process in Microsoft Fabric.
 author: mberdugo
 ms.author: monaberdugo
-ms.service: fabric
-ms.subservice: cicd
+ms.service: 
+ms.subservice: 
 ms.topic: conceptual
 ms.date: 01/05/2023
 ---
