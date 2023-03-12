@@ -4,8 +4,8 @@ description: An introduction to deployment pipelines the Power BI Application li
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.service: fabric
-ms.subservice: cicd
+ms.service: powerbi
+ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1
 ms.date: 07/31/2022
 ---

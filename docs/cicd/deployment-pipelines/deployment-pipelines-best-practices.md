@@ -4,8 +4,8 @@ description: Learn about the best practices for deployment pipelines, the Power 
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.service: fabric
-ms.subservice: cicd
+ms.service: powerbi
+ms.subservice: pbi-deployment-pipeline
 ms.date: 01/04/2023
 ms.custom: intro-deployment
 ---

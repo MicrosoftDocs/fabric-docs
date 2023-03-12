@@ -4,8 +4,8 @@ description: Learn how to assign and unassign a workspace to a deployment pipeli
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.service: fabric
-ms.subservice: cicd
+ms.service: powerbi
+ms.custom: contperf-fy21q1
 ms.date: 01/05/2023
 ---
 

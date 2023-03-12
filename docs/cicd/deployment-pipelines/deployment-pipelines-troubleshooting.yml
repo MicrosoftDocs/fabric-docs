@@ -5,8 +5,8 @@ metadata:
   author: mberdugo
   ms.author: monaberdugo
   ms.topic: troubleshooting
-  ms.service: fabric
-  ms.subservice: cicd
+  ms.service: powerbi
+  ms.subservice: pbi-deployment-pipeline
   ms.date: 01/18/2023
   
 title: Deployment pipelines troubleshooting
