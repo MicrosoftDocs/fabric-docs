@@ -4,7 +4,6 @@ description: Learn about the unstack operation in pandas.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
-ms.subservice: data-science
 ms.topic: how-to 
 ms.date: 02/10/2023
 ---

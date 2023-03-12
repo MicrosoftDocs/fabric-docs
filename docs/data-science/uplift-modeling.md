@@ -4,7 +4,6 @@ description: AI sample for creating, training, and evaluating an uplift model.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
-ms.subservice: data-science
 ms.topic: tutorial
 ms.date: 02/10/2023
 ---

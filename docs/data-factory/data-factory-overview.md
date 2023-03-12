@@ -4,7 +4,6 @@ description: Overview of Data Factory dataflows and data pipelines.
 ms.reviewer: DougKlopfenstein
 ms.author: makromer
 author: kromerm
-ms.subservice: data-factory
 ms.topic: overview
 ms.date: 01/25/2023
 ---

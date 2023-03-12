@@ -4,7 +4,6 @@ description: Learn how to use Script activity.
 ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
-ms.subservice: data-factory
 ms.topic: how-to 
 ms.date: 01/27/2023
 ---
