@@ -1,6 +1,6 @@
 ---
-title: Assign a workspace to a Power BI Application lifecycle management (ALM) deployment pipeline 
-description: Learn how to assign and unassign a workspace to a deployment pipeline, the Power BI Application lifecycle management (ALM) tool.
+title: Introduction to the CI/CD process in Microsoft Fabric 
+description: Overview of the CI/CD continuous integration, continuous deployment process in Microsoft Fabric.
 author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
