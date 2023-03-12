@@ -4,7 +4,6 @@ description: Steps for moving and transforming data with dataflows and data pipe
 ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
-ms.subservice: data-factory
 ms.topic: quickstart
 ms.date: 2/10/2023
 ---

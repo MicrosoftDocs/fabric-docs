@@ -4,7 +4,6 @@ description: Learn more about loading data into a Lakehouse.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
-ms.subservice: data-engineering
 ms.topic: conceptual
 ms.date: 02/24/2023
 ---

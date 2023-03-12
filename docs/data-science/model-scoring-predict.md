@@ -4,7 +4,6 @@ description: Learn how to use the PREDICT function in supported models.
 ms.reviewer: mopeakande
 ms.author: negust
 author: nelgson
-ms.subservice: data-science
 ms.topic: how-to
 ms.date: 02/10/2023
 ---

@@ -1,7 +1,7 @@
 ---
 title: Data modeling and defining relationships
 description: Learn how to model your data and define physical and logical relationships.
-ms.reviewer: WilliamDAssafMSFT
+ms.reviewer: wiassaf
 ms.author: salilkanade
 author: cynotebo
 ms.topic: conceptual
@@ -10,15 +10,13 @@ ms.date: 03/15/2023
 
 # Data modeling and defining relationships
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 A well-defined data model is instrumental in driving your analytics and reporting experiences. In [!INCLUDE [product-name](../includes/product-name.md)] warehouse, we’re providing you with a way to easily build and change your data model with a few simple clicks in our visual editor. You need to have at least a small sample of data loaded before you can explore these concepts further; tables may be empty, but the schemas (their structures) need to be defined.
 
 ## How to model data and define relationships
 
-> [!TIP]
-> Applies to: Warehouse (default) and warehouse
+*Applies to:* Warehouse (default) and warehouse
 
 To model your data, navigate to **Model view** by selecting the **Model view** icon at the bottom left of the window, as shown in the following image.
 

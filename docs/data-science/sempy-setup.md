@@ -4,7 +4,6 @@ description: Learn how to set up SemPy.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
-ms.subservice: data-science
 ms.topic: quickstart
 ms.date: 02/10/2023
 ---
