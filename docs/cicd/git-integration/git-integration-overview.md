@@ -1,6 +1,6 @@
 ---
 title: Overview of git integration in Microsoft Fabric
-description: Introduction to git integration in Microsoft Fabric. How it works and why to use it.
+description: Introduction to git integration in Microsoft Fabric. Learn how it works and why to use it.
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
