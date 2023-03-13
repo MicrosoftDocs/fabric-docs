@@ -10,10 +10,9 @@ ms.date: 03/15/2023
 
 # Query using the SQL Query editor
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-You can query the data in your warehouse with multiple tools, including the [Visual Query editor](visual-query-editor.md) and the SQL Query Editor among others. This article describes how to use the SQL Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+You can query the data in your warehouse with multiple tools, including the [Visual Query editor](visual-query-editor.md) and the SQL Query editor among others. This article describes how to use the SQL Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
 
 The SQL Query editor provides a text editor to write queries using T-SQL. To access the built-in SQL query editor, select the **SQL query editor view** icon located at the bottom of the warehouse editor window.
 
@@ -35,6 +34,6 @@ The SQL Query editor provides support for IntelliSense, code completion, syntax 
 
 Currently, you can only write DQL. To write DDL/DML statements, see [Connectivity](../placeholder.md) and [how to use SSMS to query your data warehouse](../placeholder.md).
 
-## Nest steps
+## Next steps
 
 - [Query using the Visual Query editor](visual-query-editor.md)

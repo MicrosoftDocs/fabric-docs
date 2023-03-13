@@ -10,11 +10,9 @@ ms.date: 03/15/2023
 
 # Creating reports
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-> [!TIP]
-> Applies to: Warehouse (default) and warehouse
+**Applies to:** Warehouse (default) and warehouse
 
 Warehouse lets you create reusable and default datasets to create reports in various ways in Power BI. This article describes the various ways you can use your warehouses, and their default datasets, to create reports.
 
@@ -26,4 +24,4 @@ Reports that use warehouse can currently be created with the the Power BI servic
 
 ## Next steps
 
-- [Data warehouses and warehouse mode](../placeholder.md)
+- [Warehouse settings and context menus](settings-context-menus.md)

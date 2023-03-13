@@ -10,13 +10,9 @@ ms.date: 03/15/2023
 
 # Warehouse settings and context menus
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Settings
-
-> [!TIP]
-> Applies to: Warehouse (default) and warehouse
+**Applies to:** Warehouse (default) and warehouse
 
 Settings are accessible from the context menu or from the Settings icon in the ribbon when you open the item. There are some key differences in the actions you can take in settings depending on if you're interacting with the warehouse (default) or warehouse item.
 
@@ -37,8 +33,7 @@ The following table is a list of settings available for each warehouse.
 | **Last modified by** | Name of the user who modified the warehouse recently. | |
 | **Location** | Workspace name where the warehouse is created. | |
 
-> [!TIP]
-> Applies to: Dataset (default)
+*Applies to:* Dataset (default)
 
 The following table shows settings for Dataset (default).
 
@@ -50,8 +45,7 @@ The following table shows settings for Dataset (default).
 
 ## Context menus
 
-> [!TIP]
-> Applies to: Warehouse
+*Applies to:* Warehouse
 
 Warehouse offers an easy experience to create reports and access supported actions using its context menus.
 
@@ -69,7 +63,7 @@ The following table describes the warehouse context menu options:
 | **Rename** | Updates the warehouse with the new name. |
 | **Delete** | Delete warehouse from workspace. A confirmation dialog notifies you of the impact of the delete action. If the Delete action is confirmed, then the warehouse and related downstream items are deleted. |
 | **Manage permissions** | Enables users to add other recipients with specified permissions, similar to allowing the sharing of an underlying dataset or allowing to build content with the data associated with the underlying dataset. |
-| **Settings** | Learn more about [warehouse settings](#settings) |
+| **Settings** | Learn more about warehouse settings in the previous section. |
 | **View lineage** | This option shows the end-to-end lineage of warehouse from the data sources to the warehouse, the default dataset, and other datasets (if any) that were built on top of the warehouse, all the way to deports, dashboards and apps. |
 
 ## Next steps

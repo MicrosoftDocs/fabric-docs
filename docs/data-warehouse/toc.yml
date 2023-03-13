@@ -13,6 +13,8 @@ items:
     href: default-warehouse.md
   - name: Datasets
     href: datasets.md
+  - name: Creating reports
+    href: create-reports.md
 - name: Data warehouses
   items:
   - name: Warehouse
@@ -21,6 +23,14 @@ items:
     href: default-warehouse.md
   - name: Create a warehouse
     href: create-warehouse.md
+  - name: Create reports in the Power BI service
+    href: reports-power-bi-service.md
+  - name: Warehouse settings and context menus
+    href: settings-content-menus.md
+  - name: Query using Visual Query editor
+    href: visual-query-editor.md
+  - name: Query using SQL Query editor
+    href: sql-query-editor.md
 - name: Datasets
   items:
   - name: Data modeling and defining relationships
