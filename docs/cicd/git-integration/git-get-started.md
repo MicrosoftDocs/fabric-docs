@@ -19,14 +19,14 @@ This article explains how to perform the following tasks:
 
 ## Prerequisites
 
-To integrate git hub with your [!INCLUDE[Trident](../../includes/product-name.md)] workspace, you need to set up the following in both Azure DevOps and [!INCLUDE[Trident](../../includes/product-name.md)].
+To integrate git hub with your Microsoft Fabric workspace, you need to set up the following in both Azure DevOps and Fabric.
 
 ### Azure DevOps prerequisites
 
-- An active Azure DevOps account registered to the same user that is using the [!INCLUDE[Trident](../../includes/product-name.md)] workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
+- An active Azure DevOps account registered to the same user that is using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
 - Access to an existing repository
 
-### [!INCLUDE[Trident](../../includes/product-name.md)] prerequisites
+### Fabric prerequisites
 
 - Premium license
 - Premium capacity workspace
@@ -45,7 +45,7 @@ Only a workspace admin can connect a workspace to an Azure Repo, but once connec
     > If you don't see the Workspace settings icon, select the ellipsis (three dots) the then workspace settings.
     > :::image type="content" source="./media/git-get-started/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed from ellipsis.":::
 
-1. Select Git integration. You’ll automatically be signed into the Azure Repo registered to the Azure AD user signed into the workspace.
+1. Select Git integration. You’re automatically signed into the Azure Repo registered to the Azure AD user signed into the workspace.
 
     :::image type="content" source="./media/git-get-started/workspace-settings.png" alt-text="Screenshot of workspace settings window with git integration selected.":::
 
@@ -59,7 +59,7 @@ Only a workspace admin can connect a workspace to an Azure Repo, but once connec
 
 1. Select **Connect and sync**.
 
-During the initial sync, if either the workspace or git branch is empty, content is copied from the non-empty location to the empty one. If both the workspace and git branch have content, you’ll be asked which direction the sync should go. For more information on this initial sync, see [Connect and sync](git-integration-process.md#connect-and-sync).
+During the initial sync, if either the workspace or git branch is empty, content is copied from the nonempty location to the empty one. If both the workspace and git branch have content, you’re asked which direction the sync should go. For more information on this initial sync, see [Connect and sync](git-integration-process.md#connect-and-sync).
 
 After you connect, the workspace will display information about source control that allows you to view the connected branch, the status of each item in the branch, and a **Source control** Pane where you can take actions related to git.
 
@@ -75,7 +75,7 @@ Once you successfully connect to a git folder, edit your workspace as usual. Any
 1. Select the **Source control** button. This button also shows the number of uncommitted changes.
     :::image type="content" source="./media/git-get-started/source-control-number.png" alt-text="Screenshot of source control icon with the number 2 indicating that there are two changes to commit.":::
 1. Select the **Changes** tab of the **Source control** pane.
-   You'll see a list of all the items you changed, with an icon indicating if the changed item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
+   A list appears with all the items you changed, and an icon indicating if the changed item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
 1. Select the changes you want to commit.
 1. Add a comment in the box. If you don't add a comment, a default message is added automatically.
 1. Select **Commit**.
@@ -94,7 +94,7 @@ Whenever anyone commits a new change to the connected git branch, a notification
 
 1. Go to the workspace.
 1. Select the **Source control** icon.
-1. Select the **Updates** tab of the **Source control** pane. You’ll see a list of all the changed items in the branch since the last update.
+1. Select the **Updates** tab of the **Source control** pane. A list appears with all the changed items in the branch since the last update.
 1. Select **Update all**.
 
 :::image type="content" source="./media/git-get-started/source-control-update.png" alt-text="Screenshot of source control pane with the update tab open and the updating all button selected.":::

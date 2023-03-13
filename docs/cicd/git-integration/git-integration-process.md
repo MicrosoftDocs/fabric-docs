@@ -10,7 +10,7 @@ ms.custom:
 
 # The git integration process
 
-This article explains basic git concepts and the process of integrating git with your [!INCLUDE[Trident](../../includes/product-name.md)] workspace.
+This article explains basic git concepts and the process of integrating git with your Microsoft Fabric workspace.
 
 ## Permissions
 
@@ -24,5 +24,5 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 Only a workspace admin can connect a workspace to Azure Repos, but once connected, anyone with permissions can work in the workspace. If you're not an admin, ask your admin for help with connecting. To connect a workspace to Azure Repos, follow these steps:
 
-1. Sign into [!INCLUDE[Trident](../../includes/product-name.md)] and navigate to the workspace you want to connect with.
+1. Sign into Fabric and navigate to the workspace you want to connect with.
 1. Go to Workspace settings.
