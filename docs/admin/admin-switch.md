@@ -18,11 +18,11 @@ The **Microsoft Fabric** admin switch lets organizations that use Power BI opt i
 
 In the admin portal's [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings#how-to-get-to-the-tenant-settings), expand **Microsoft Fabric** and enable the switch.
 
-Microsoft Fabric will be available for the entire organization by default. You can also enable Microsoft Fabric for specific users, by using the *security groups* options. When security groups are enabled and Microsoft Fabric is only available to some of the users in the organization, users that don't have access to Microsoft Fabric will have view permissions for Microsoft Fabric items.
+Microsoft Fabric will be available for the entire organization by default. You can also enable Microsoft Fabric for specific users, by using the *security groups* options. When security groups are enabled, users that don't have access to Microsoft Fabric will have view permissions for Microsoft Fabric items.
 
 ## Can I disable Microsoft Fabric?
 
-To disable Microsoft Fabric you can turn off the Microsoft Fabric admin switch. After disabling Microsoft Fabric, users will only have view permissions for Microsoft Fabric items.
+To disable Microsoft Fabric you can turn off the Microsoft Fabric admin switch. After disabling Microsoft Fabric, users will have view permissions for Microsoft Fabric items.
 
 ## Next steps
 
