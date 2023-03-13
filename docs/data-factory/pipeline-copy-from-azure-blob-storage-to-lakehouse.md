@@ -5,7 +5,6 @@ ms.reviewer: jonburchel
 ms.author: jburchel
 author: jonburchel
 ms.topic: quickstart 
-ms.subservice: data-factory
 ms.date: 03/01/2023
 ---
 

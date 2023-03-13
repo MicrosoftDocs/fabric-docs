@@ -7,22 +7,30 @@ items:
     href: data-warehousing.md
 - name: Get started
   items: 
-  - name: Warehouses and warehouse mode
-    href: warehouses-warehouse-mode.md
+  - name: Warehouse
+    href: warehouse.md
+  - name: Default warehouse
+    href: default-warehouse.md
   - name: Datasets
     href: datasets.md
 - name: Data warehouses
   items:
+  - name: Warehouse
+    href: warehouse.md
+  - name: Default warehouse
+    href: default-warehouse.md
   - name: Create a warehouse
     href: create-warehouse.md
-  - name: link text
-    href: ../placeholder.md
 - name: Datasets
   items:
   - name: Data modeling and defining relationships
     href: data-modeling-defining-relationships.md
-  - name: link text
-    href: ../placeholder.md
+  - name: Create a measure
+    href: create-measure.md
+  - name: Hide elements from downstream reporting
+    href: hide-elements-downstream-reporting.md
+  - name: Access default datasets
+    href: access-default-datasets.md
 - name: Load data
   items:
   - name: link text

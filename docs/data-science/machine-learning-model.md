@@ -4,7 +4,6 @@ description: Learn about creating models and managing versions; review examples 
 ms.reviewer: mopeakande
 ms.author: negust
 author: nelgson
-ms.subservice: data-science
 ms.topic: conceptual
 ms.date: 02/10/2023
 ---
