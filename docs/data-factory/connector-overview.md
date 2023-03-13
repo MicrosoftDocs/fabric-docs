@@ -4,7 +4,6 @@ description: Learn about data connectors.
 ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
 author: jianleishen
-ms.subservice: data-factory
 ms.topic: overview 
 ms.date: 01/27/2023
 ---

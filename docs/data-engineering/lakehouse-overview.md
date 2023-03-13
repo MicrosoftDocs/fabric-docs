@@ -4,7 +4,6 @@ description: Learn about Lakehouses.
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
-ms.subservice: data-engineering
 ms.topic: overview
 ms.date: 02/24/2023
 ---

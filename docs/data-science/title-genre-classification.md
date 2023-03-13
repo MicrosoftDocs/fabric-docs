@@ -4,7 +4,6 @@ description: AI sample for training and evaluating a text classification model.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
-ms.subservice: data-science
 ms.topic: tutorial
 ms.date: 02/10/2023
 ---

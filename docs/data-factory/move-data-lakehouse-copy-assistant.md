@@ -4,7 +4,6 @@ description: Learn steps to move data as files or tables into Lakehouse.
 ms.reviewer: jonburchel
 ms.author: jianleishen
 author: jianleishen
-ms.subservice: data-factory
 ms.topic: tutorial
 ms.date: 01/27/2023
 ---

@@ -4,7 +4,6 @@ description: Learn how to build and schedule a new data pipeline to copy sample 
 ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
-ms.subservice: data-factory
 ms.topic: quickstart
 ms.date: 03/02/2023
 ---
