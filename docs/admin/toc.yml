@@ -31,8 +31,8 @@ items:
     href: admin-monitoring.md  
   - name: Audit log report
     href: admin-audit-log.md
-  - name: Activity log report
-    href: admin-activity-log.md 
+  - name: Feature usage and adoption report
+    href: admin-feature-usage-adoption.md 
 - name: Considerations and limitations
   items:
   - name: Admin troubleshooting
