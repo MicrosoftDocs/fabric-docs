@@ -1,6 +1,6 @@
 ---
 title: Introduction to the CI/CD process in Microsoft Fabric 
-description: Overview of the CI/CD continuous integration, continuous deployment process in Microsoft Fabric.
+description: An overview of the CI/CD continuous integration, continuous deployment process in Microsoft Fabric.
 author: mberdugo
 ms.author: monaberdugo
 ms.service: powerbi
@@ -14,7 +14,7 @@ CI/CD, or continuous integration and continuous deployment allows organizations 
 
 ## Continuous integration
 
-With Microsoft Fabric's [Git integration](./git-integration/git-integration-overview.md) process, incremental code changes can be made frequently and reliably by multiple developers working in the same workspace. Automated build-and-test steps triggered by CI ensure that the code changes merged into the repository are reliable. The CD process can then deliver the code quickly and seamlessly.
+With Microsoft Fabric's [Git integration](./git-integration/git-get-started.md) process, incremental code changes can be made frequently and reliably by multiple developers working in the same workspace. Automated build-and-test steps triggered by CI ensure that the code changes merged into the repository are reliable. The CD process can then deliver the code quickly and seamlessly.
 
 ## Continuous deployment
 
@@ -23,4 +23,4 @@ Microsoft Fabric's [deployment pipelines](./deployment-pipelines/deployment-pipe
 ## Next steps
 
 * [Deployment pipelines](./deployment-pipelines/deployment-pipelines-overview.md)
-* [Git integration](./git-integration/git-integration-overview.md)
+* [Git integration](./git-integration/git-get-started.md)
