@@ -28,6 +28,8 @@ In this article, you'll learn more about how data scientists can interact with a
 
 You can create a machine learning experiment directly from the Data science home page in the Power BI user interface (UI) or by writing code that uses the MLflow API.
 
+### Create an experiment using the UI
+
 To create a machine learning experiment from the UI:
 
 1. Create a new data science workspace or select an existing one.
@@ -38,17 +40,19 @@ To create a machine learning experiment from the UI:
 
 Once you've created the experiment, you can start adding runs to track run metrics and parameters.
 
-You can also create a machine learning experiment directly from your authoring experience using the `mlflow.create_experiment()` or `mlflow.set_experiment()` APIs.
+### Create an experiment using the MLflow API
+
+You can also create a machine learning experiment directly from your authoring experience using the `mlflow.create_experiment()` or `mlflow.set_experiment()` APIs. In the following code, replace `<EXPERIMENT_NAME>` with your experiment's name.
 
 ```python
 import mlflow
  
 # This will create a new experiment with the provided name.
-mlflow.create_experiment("experiment name")
+mlflow.create_experiment("<EXPERIMENT_NAME>")
 
 # This will set the given experiment as the active experiment. 
 # If an experiment with this name does not exist, a new experiment with this name is created.
-mlflow.set_experiment("experiment name")
+mlflow.set_experiment("<EXPERIMENT_NAME>")
 ```
 
 ## Manage runs within an experiment
@@ -95,7 +99,7 @@ Data scientists can also use MLflow to query and search among runs within an exp
 
 #### Get all runs
 
-You can use the MLflow search API `mlflow.search_runs()` to get all runs in an experiment by entering your experiment name or experiment ID as follows:
+You can use the MLflow search API `mlflow.search_runs()` to get all runs in an experiment by replacing `<EXPERIMENT_NAME>` with your experiment name or `<EXPERIMENT_ID>` with your experiment ID in the following code:
 
 ```python
 import mlflow
@@ -108,7 +112,7 @@ mlflow.search_runs(experiment_ids=["<EXPERIMENT_ID>"])
 ```
 
 > [!TIP]
-> You can provide multiple values for the `experiment_ids` parameter to search across multiple experiments. This is useful if you want to compare across runs within different experiments.
+> You can search across multiple experiments by providing a list of experiment IDs to the `experiment_ids` parameter. Similarly, providing a list of experiment names to the `experiment_names` parameter will allow MLflow to search across multiple experiments. This can be useful if you want to compare across runs within different experiments.
 
 #### Order and limit runs
 
