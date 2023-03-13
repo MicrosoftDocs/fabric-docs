@@ -10,11 +10,9 @@ ms.date: 03/15/2023
 
 # Manage user access
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-> [!TIP]
-> Applies to: Warehouse (default) and warehouse
+**Applies to:** Warehouse (default) and warehouse
 
 Through the workspace, you can add members to, and remove them from, workspace roles.
 
@@ -57,4 +55,4 @@ Once you're assigned to a workspace role, you can connect to the warehouse (see 
 
 ## Next steps
 
-- Warehouse and deployment pipelines
+- [Data modeling and defining relationships](data-modeling-defining-relationships.md)

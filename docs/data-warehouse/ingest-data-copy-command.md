@@ -10,11 +10,9 @@ ms.date: 03/15/2023
 
 # Ingest data into your warehouse using the COPY command
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-> [!TIP]
-> Applies to: Warehouse
+**Applies to:** Warehouse
 
 The goal of the COPY statement is to allow customers to ingest data into a [!INCLUDE [product-name](../includes/product-name.md)] warehouse from storage accounts of types:
 

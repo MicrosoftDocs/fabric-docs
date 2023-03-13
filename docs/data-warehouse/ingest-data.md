@@ -10,11 +10,9 @@ ms.date: 03/15/2023
 
 # Ingesting data into the warehouse
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-> [!TIP]
-> Applies to: Warehouse
+**Applies to:** Warehouse
 
 In order to really use your data warehouse, you first need to bring data into it! In this article, we cover the features you need to know about to bring data into your data warehouse.
 
@@ -26,7 +24,7 @@ Those key features include:
 - Explicit transactions
 - ADF and pipelines
 
-The COPY command feature in [!INCLUDE [product-name](../includes/product-name.md)] Warehouse uses a simple, flexible, and fast interface for high-throughput data ingestion for SQL workloads. In the current version of [!INCLUDE [product-name](../includes/product-name.md)] Warehouse, we support loading data from external storage accounts only. Loading data directly from a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse artifact or shortcut using the COPY command will be supported in a future version.
+The COPY command feature in [!INCLUDE [product-name](../includes/product-name.md)] Warehouse uses a simple, flexible, and fast interface for high-throughput data ingestion for SQL workloads. In the current version of [!INCLUDE [product-name](../includes/product-name.md)] Warehouse, we support loading data from external storage accounts only. Loading data directly from a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse item or shortcut using the COPY command will be supported in a future version.
 
 You can also use TSQL to create a new table and then insert into it, and then update and delete rows of data. Data can be inserted from any database within the [!INCLUDE [product-name](../includes/product-name.md)] workspace using cross-database queries. If you want to ingest data from a Lakehouse to a warehouse, you can do this with a cross database query. For example:
 

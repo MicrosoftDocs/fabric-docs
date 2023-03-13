@@ -10,11 +10,9 @@ ms.date: 03/15/2023
 
 # Workspace roles
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-> [!TIP]
-> Applies to: Warehouse (default) and warehouse
+**Applies to:** Warehouse (default) and warehouse
 
 Workspace roles allow you to manage user access within the workspace. For more information on Workspace roles, see Workspace roles in [!INCLUDE [product-name](../includes/product-name.md)]. There are four roles within [!INCLUDE [product-name](../includes/product-name.md)] workspaces: Admin, Member, Contributor, and Viewer. Adding users to these workspace roles provides the user with different intrinsic permissions when connected to a warehouse. For the current version, the Admin, Member and Contributor workspace roles all receive db_owner role permissions, within the warehouse, while a viewer receives read-only access (as shown in the following table).
 
