@@ -16,10 +16,6 @@ ms.custom: template-how-to
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to REST.
 
-## Supported format
-
-REST supports the following file formats.
-
 ## Supported configuration
 
 For the configuration of each tab under copy activity, see the following sections respectively.
