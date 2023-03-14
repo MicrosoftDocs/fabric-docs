@@ -10,11 +10,13 @@ ms.date: 03/15/2023
 
 # Query using the Visual Query editor
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** Warehouse (default) and warehouse
 
 You can query the data in your warehouse with multiple tools, including the Visual query editor and the [SQL Query editor](sql-query-editor.md) among others. This article describes how to use the Visual Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
 
-**Applies to:** Warehouse (default) and warehouse
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
+## Visual Query editor in the Azure portal
 
 The Visual Query editor provides an easy visual interface to write queries against the data in your warehouse.
 

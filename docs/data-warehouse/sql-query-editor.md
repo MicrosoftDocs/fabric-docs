@@ -10,10 +10,12 @@ ms.date: 03/15/2023
 
 # Query using the SQL Query editor
 
+
+You can query the data in your warehouse with multiple tools, including the [Visual Query editor](visual-query-editor.md) and the SQL Query editor in the Azure portal. This article describes how to use the SQL Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-You can query the data in your warehouse with multiple tools, including the [Visual Query editor](visual-query-editor.md) and the SQL Query editor among others. This article describes how to use the SQL Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
-
+## SQL Query editor in the Azure portal
 The SQL Query editor provides a text editor to write queries using T-SQL. To access the built-in SQL query editor, select the **SQL query editor view** icon located at the bottom of the warehouse editor window.
 
 :::image type="content" source="media\sql-query-editor\sql-query-editor-icon.png" alt-text="Screenshot showing the SQL query editor view icon." lightbox="media\sql-query-editor\sql-query-editor-icon.png":::
@@ -22,7 +24,7 @@ Alternatively, in the **Data grid** view, create a new query using the **+ New Q
 
 :::image type="content" source="media\sql-query-editor\data-grid-new-query.png" alt-text="Screenshot showing where to find the New query menu on the Data grid view ribbon." lightbox="media\sql-query-editor\data-grid-new-query.png":::
 
-You can write your SQL query in the query editor window, which includes intellisense support. Once complete, select the **Run** button to execute the query. Query results appear in the results section. You can open the results in Excel for further analysis by selecting the **Open in Excel** button.
+You can write your SQL query in the query editor window, which includes IntelliSense support. Once complete, select the **Run** button to execute the query. Query results appear in the results section. You can open the results in Excel for further analysis by selecting the **Open in Excel** button.
 
 As you work on your SQL query, the queries are automatically saved every few seconds. A “saving indicator” appears in your query tab at the bottom to indicate that your query is being saved.
 
@@ -32,7 +34,7 @@ The SQL Query editor provides support for IntelliSense, code completion, syntax 
 
 ## Known limitations with warehouse editor
 
-Currently, you can only write DQL. To write DDL/DML statements, see [Connectivity](../placeholder.md) and [how to use SSMS to query your data warehouse](../placeholder.md).
+Currently, you can only write data queries. To write statements to update data (DML) or modify schemas (DDL), see [Connectivity](../placeholder.md) and [how to use SSMS to query your data warehouse](../placeholder.md).
 
 ## Next steps
 
