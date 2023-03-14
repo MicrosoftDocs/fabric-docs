@@ -10,7 +10,7 @@ ms.date: 01/05/2023
 
 # What is CI/CD in Microsoft Fabric?
 
-Continuous integration (CI) and continuous deployment (CD) allow organizations to maintain software quickly and efficiently. CI/CD facilitates an effective process for releasing products quickly by continuously delivering updated code into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method.
+Continuous integration (CI) and continuous delivery (CD) allow organizations to maintain software quickly and efficiently. CI/CD facilitates an effective process for releasing products quickly by continuously delivering updated code into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method.
 
 ## Continuous integration
 
