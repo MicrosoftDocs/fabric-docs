@@ -47,7 +47,7 @@ WITH
 > [!NOTE]
 > At the moment, the only supported authentication type is Shared Access Signature (SAS). You can also load data from public storage accounts that allow anonymous access.
 
-Find an explanation for each supported option: [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest).
+Find an explanation for each supported option: [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true).
 
 ## Examples
 

@@ -31,6 +31,12 @@ items:
     href: visual-query-editor.md
   - name: Query using SQL Query editor
     href: sql-query-editor.md
+  - name: Connectivity
+    href: connectivity.md
+  - name: Workspace roles
+    href: workspace-roles.md
+  - name: Manage user access
+    href: manage-user-access.md
 - name: Datasets
   items:
   - name: Data modeling and defining relationships
@@ -43,10 +49,12 @@ items:
     href: access-default-datasets.md
 - name: Load data
   items:
-  - name: link text
-    href: ../placeholder.md
-  - name: link text
-    href: ../placeholder.md
+  - name: Ingesting data into the warehouse
+    href: ingest-data.md
+  - name: Ingest data with COPY command
+    href: ingest-data-copy-command.md
+  - name: Ingest data with Data pipelines
+    href: ingest-data-pipelines.md
 - name: Develop
   items:
   - name: link text
