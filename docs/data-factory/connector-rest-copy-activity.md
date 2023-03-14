@@ -14,7 +14,13 @@ ms.custom: template-how-to
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to REST.
+This article outlines how to use the copy activity in data pipeline to copy data from and to a REST endpoint.
+
+Specifically, this generic REST connector supports:
+
+- Copying data from a REST endpoint by using the **GET** or **POST** methods and copying data to a REST endpoint by using the **POST**, **PUT** or **PATCH** methods.
+- **Pagination** in the REST APIs.
+- For REST as source, copying the REST JSON response as-is or parse it by using schema mapping. Only response payload in **JSON** is supported.
 
 ## Supported configuration
 
