@@ -22,7 +22,6 @@ This Microsoft 365 connector supports the following authentication types for cop
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|OAuth2| √| |
 |Service Principal| √| |
 
 >[!Note]
@@ -65,14 +64,9 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 
 Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. This Microsoft 365 connector supports the following authentication types.
 
-[OAuth2](#oauth2-authentication)
 [Service Principal](#service-principal-authentication)
 
 :::image type="content" source="media/connector-microsoft-365/authentication-method.png" alt-text="Screenshot showing that authentication method of Microsoft 365":::
-
-#### OAuth2 authentication
-
-:::image type="content" source="media/connector-microsoft-365/oauth2-authentication.png" alt-text="Screenshot showing that OAuth2 authentication method of Microsoft 365":::
 
 #### Service Principal authentication
 
@@ -108,7 +102,6 @@ The following properties in the table are the supported authentication type.
 
 |Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
-|**OAuth2**||||✓/|
 |**Service Principal**||||✓/|
 |- Tenant ID|Specify the tenant information under which your Azure AD web application resides.|Yes |||
 |- Service Principal ID|Specify the application's client ID.|Yes |||
