@@ -46,6 +46,10 @@ highlightedContent:
     - title: Choose a workload for your scenario
       itemType: concept
       url: placeholder.md
+    # Card
+    - title: Join the Microsoft Fabric Community
+      itemType: reference
+      url: https://fabric.microsoft.com
 
 # conceptualContent section (optional)
 conceptualContent:
