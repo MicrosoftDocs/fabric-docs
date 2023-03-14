@@ -38,7 +38,7 @@ Through the workspace, you can add members to, and remove them from, workspace r
 
 Once you're assigned to a workspace role, you can connect to the warehouse (see [Connectivity](connectivity.md) for more information), with the permissions detailed previously. Once connected, you can check your permissions.
 
-1. Connect to the warehouse using SSMS.
+1. Connect to the warehouse using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms).
 
 1. Open a new query window.
 
@@ -46,7 +46,7 @@ Once you're assigned to a workspace role, you can connect to the warehouse (see 
 
 1. To see the permissions granted to the user, execute:
 
-   ```
+   ```sql
    SELECT *
    FROM sys.fn_my_permissions(NULL, “Database”)
    ```

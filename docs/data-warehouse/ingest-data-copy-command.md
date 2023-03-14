@@ -28,7 +28,7 @@ COPY can load files from public containers or from private containers with authe
 
 This is the currently supported syntax for DW [!INCLUDE [product-name](../includes/product-name.md)] COPY:
 
-```
+```sql
 COPY INTO [schema.]table_name
 [(Column_list)] 
 FROM ‘<external_location>’ [,...n]
@@ -53,7 +53,7 @@ Find an explanation for each supported option: [COPY (Transact-SQL)](/sql/t-sql/
 
 Ingesting a CSV file from a public container:
 
-```
+```sql
 CREATE TABLE dbo.Region
     (
      [Country] nvarchar(4000),
@@ -72,7 +72,7 @@ GO
 
 Ingesting a CSV file from a private container:
 
-```
+```sql
 COPY INTO dbo.Region
 FROM 'https://mystorageaccountxxx.blob.core.windows.net/private/Region.csv'
 WITH
@@ -86,7 +86,7 @@ GO
 
 To ingest multiple files in a directory, specify only the container name. For example:
 
-```
+```sql
 ...
 FROM 'https://mystorageaccountxxx.blob.core.windows.net/private/mydirectorywithCSVs’)
 ```
@@ -95,7 +95,7 @@ FROM 'https://mystorageaccountxxx.blob.core.windows.net/private/mydirectorywithC
 
 The below syntax isn't currently available.
 
-```
+```sql
 [,MAXERRORS = max_errors ]
 [,ERRORFILE = '[http(s)://storageaccount/container]/errorfile_directory[/]'] 
 [,ERRORFILE_CREDENTIAL = (AZURE CREDENTIAL) ]

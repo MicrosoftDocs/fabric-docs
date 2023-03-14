@@ -28,7 +28,7 @@ The COPY command feature in [!INCLUDE [product-name](../includes/product-name.md
 
 You can also use TSQL to create a new table and then insert into it, and then update and delete rows of data. Data can be inserted from any database within the [!INCLUDE [product-name](../includes/product-name.md)] workspace using cross-database queries. If you want to ingest data from a Lakehouse to a warehouse, you can do this with a cross database query. For example:
 
-```
+```sql
 INSERT INTO MyWarehouseTable
 SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 ```

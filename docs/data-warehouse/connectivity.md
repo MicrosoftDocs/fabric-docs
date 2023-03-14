@@ -14,7 +14,7 @@ ms.date: 03/15/2023
 
 To get started, you must complete the following prerequisites:
 
-- For best performance, you must be using SQL Server Management Studio (SSMS) version 18.0+.
+- For best performance, you must be using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) version 18.0+.
 - You need access to a Lakehouse item within a premium per capacity workspace with contributor or above permissions.
 
 ## Connect SSMS to a warehouse in the workspace
@@ -27,15 +27,15 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
    :::image type="content" source="media\connectivity\workspace-more-menu.png" alt-text="Screenshot of the workspace screen with the context menu open." lightbox="media\connectivity\workspace-more-menu.png":::
 
-1. Navigate to the warehouse’s **Settings** page. From there:
-   1. Navigate to the **Warehouse mode** tab.
-   1. Select the **Copy** button next to the SQL connection string to copy it to your clipboard.
+1. Navigate to the warehouse’s **Settings** page.
+1. Navigate to the **Warehouse mode** tab.
+1. Select the **Copy** button next to the SQL connection string to copy it to your clipboard.
 
    :::image type="content" source="media\connectivity\warehouse-mode.png" alt-text="Screenshot of the warehouse mode tab." lightbox="media\connectivity\warehouse-mode.png":::
 
 ### Get started with SSMS
 
-1. When you open SQL Server Management Studio (SSMS), the Connect to Server window appears. If already open, you can connect manually by selecting **Object Explorer** > **Connect** > **Database Engine**.
+1. When you open SQL Server Management Studio (SSMS), the **Connect to Server** window appears. If already open, you can connect manually by selecting **Object Explorer** > **Connect** > **Database Engine**.
 
    :::image type="content" source="media\connectivity\object-explorer-connect-menu.png" alt-text="Screenshot showing where to select Database Engine on the Connect menu." lightbox="media\connectivity\object-explorer-connect-menu.png":::
 
@@ -61,7 +61,7 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
 
 :::image type="content" source="media\connectivity\dependency-declaration.png" alt-text="Screenshot of the Dependency Declaration tab." lightbox="media\connectivity\dependency-declaration.png":::
 
-```
+```xml
 <dependency>
    <groupId>com.microsoft.azure</groupId>
    <artifactId>msal4j</artifactId>
