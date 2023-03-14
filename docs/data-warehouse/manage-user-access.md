@@ -12,7 +12,7 @@ ms.date: 03/15/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-**Applies to:** Warehouse (default) and warehouse
+**Applies to:** Warehouse and SQL Endpoint
 
 Through the workspace, you can add members to, and remove them from, workspace roles.
 

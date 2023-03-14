@@ -12,7 +12,7 @@ ms.date: 03/15/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-**Applies to:** Warehouse (default) and warehouse
+**Applies to:** Warehouse and SQL Endpoint
 
 Workspace roles allow you to manage user access within the workspace. For more information on Workspace roles, see Workspace roles in [!INCLUDE [product-name](../includes/product-name.md)]. There are four roles within [!INCLUDE [product-name](../includes/product-name.md)] workspaces: Admin, Member, Contributor, and Viewer. Adding users to these workspace roles provides the user with different intrinsic permissions when connected to a warehouse. For the current version, the Admin, Member and Contributor workspace roles all receive db_owner role permissions, within the warehouse, while a viewer receives read-only access (as shown in the following table).
 
