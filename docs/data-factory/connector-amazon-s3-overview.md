@@ -24,7 +24,6 @@ This Amazon S3 connector is supported in Trident Project  - Data Factory with th
 | **Lookup activity** | None | Basic |
 | **GetMetadata activity** | None | Basic |
 | **Delete activity** | None | Basic |
-| **Dataflow Gen2 (source/destination)** |  |  |
 
 ## Next steps
 
