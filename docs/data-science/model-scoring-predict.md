@@ -142,7 +142,7 @@ To generate code that calls PREDICT for a specific model:
 
 - Go to the item page for the desired model version.
 - Select the **Apply model** prompt. This prompt includes options to:
-    - Generate PREDICT code with prepopulated parameters using an interactive scoring wizard, and
+    - Generate PREDICT code with prepopulated parameters using an interactive scoring wizard, or
     - Copy a customizable code template to use in generating model predictions.
 
 ### Use an interactive scoring wizard
