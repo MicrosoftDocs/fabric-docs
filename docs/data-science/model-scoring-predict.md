@@ -6,6 +6,7 @@ ms.author: negust
 author: nelgson
 ms.topic: how-to
 ms.date: 02/10/2023
+ms.search.form: Predict
 ---
 
 # Model scoring with PREDICT
