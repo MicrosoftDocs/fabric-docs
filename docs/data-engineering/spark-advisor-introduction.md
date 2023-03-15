@@ -9,7 +9,7 @@ ms.custom: template-howto
 ms.search.form: View Spark advisor within a notebook 
 ---
 
-# Apache Spark advisor in Fabric
+# Apache Spark advisor
 
 The Apache Spark advisor analyzes commands and code run by Apache Spark and displays real-time advice for Notebook runs. The Apache Spark advisor has built-in patterns to help users avoid common mistakes. It offer recommendations for code optimization, performs error analysis, and locates the root cause of failures.
 

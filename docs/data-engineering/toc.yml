@@ -53,7 +53,7 @@ items:
       href: spark-artifact-recent-runs.md
     - name: Monitor Spark jobs in a notebook 
       href: spark-monitor-debug.md
-    - name: Monitor Spark fob definitions
+    - name: Monitor Spark job definitions
       href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
