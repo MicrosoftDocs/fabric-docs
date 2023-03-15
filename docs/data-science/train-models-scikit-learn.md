@@ -6,6 +6,7 @@ ms.author: negust
 author: nelgson
 ms.topic: how-to
 ms.date: 02/10/2023
+ms.search.form: Train models with scikit-learn
 ---
 
 # How to train models with scikit-learn
