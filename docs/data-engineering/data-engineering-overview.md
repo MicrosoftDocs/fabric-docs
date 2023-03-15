@@ -17,3 +17,7 @@ Create a Lakehouse and operationalize your workflow to build, transform, and sha
 
 - Learn more about data engineering core concepts and artifacts by reading these “Concept” sections in this document.
 - Follow step-by-step instructions to get started with the “HowTo” sections in this document.
+
+## Next steps
+
+- [What is a Lakehouse?](lakehouse-overview.md)

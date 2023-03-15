@@ -8,7 +8,7 @@ ms.topic: quickstart
 ms.date: 01/27/2023
 ---
 
-# Create your first dataflow to get and transform data (Preview)
+# Create your first dataflow to get and transform data
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
@@ -35,7 +35,7 @@ In this section, you'll be creating your first dataflow.
 
    :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
 
-3. Select **New**, and then select **Dataflow Gen2 (Preview)**.
+3. Select **New**, and then select **Dataflow Gen2**.
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-dataflow-gen2.png" alt-text="Screenshot with the Dataflow Gen2 selection emphasized.":::
 
@@ -87,7 +87,7 @@ Follow these steps to apply transformations and publish:
 
    :::image type="content" source="media/create-first-dataflow-gen2/customerid-count-rows.png" alt-text="Screenshot of the two column table." lightbox="media/create-first-dataflow-gen2/customerid-count-rows.png":::
 
-5. Next, you want to combine data from the Customers table with the Count of Orders per customer. To do combine data, select the Customers query in the Diagram View and use the "⋮" menu to access the **Merge queries as new** transformation.
+5. Next, you want to combine data from the Customers table with the Count of Orders per customer. To combine data, select the Customers query in the Diagram View and use the "⋮" menu to access the **Merge queries as new** transformation.
 
    :::image type="content" source="media/create-first-dataflow-gen2/combine-customers-orders.png" alt-text="Screenshot of the dataflow editor, with the vertical ellipsis of the Customers table and Merge queries as new emphasized." lightbox="media/create-first-dataflow-gen2/combine-customers-orders.png":::
 
@@ -97,7 +97,7 @@ Follow these steps to apply transformations and publish:
    Screenshot of the Merge window, with the Left table for merge set to the Customers table and the Right table for merge set to the Orders table. The CustomerID column is selected for both the Customers and Orders tables. Also, the Join Kind is set to Left outer. All other selections are set to their default value.
 :::image-end:::
 
-7. Upon performing the **Merge as new** operation, you'll obtain a new query with all columns from the Customers table and one column with nested data from the Orders table.
+7. Upon performing the **Merge queries as new** operation, you'll obtain a new query with all columns from the Customers table and one column with nested data from the Orders table.
 
    :::image type="content" source="media/create-first-dataflow-gen2/new-merge-query.png" alt-text="Screenshot of the dataflows editor with the new Merge query added to the right of the Customers and Orders tables." lightbox="media/create-first-dataflow-gen2/new-merge-query.png":::
 
@@ -105,7 +105,7 @@ Follow these steps to apply transformations and publish:
 
     :::image type="content" source="media/create-first-dataflow-gen2/enable-schema-view.png" alt-text="Screenshot of the dataflows editor with the schema view button emphasized in the bottom-right corner." lightbox="media/create-first-dataflow-gen2/enable-schema-view.png":::
 
-9. The schema view provides a focused view into a table’s schema information, including column names and data types. Schema view has a set of schema tools available through a contextual ribbon tab. In this scenario, you'll select the **CustomerID**, **CompanyName**, and **Orders (2)** columns, then select the **Remove other columns** button in the **Schema tools** tab.
+9. The schema view provides a focused view into a table’s schema information, including column names and data types. Schema view has a set of schema tools available through a contextual ribbon tab. In this scenario, you'll select the **CustomerID**, **CompanyName**, and **Orders (2)** columns, then select the **Remove columns** button, and then select **Remove other columns** in the **Schema tools** tab.
 
    :::image type="content" source="media/create-first-dataflow-gen2/remove-columns-result.png" alt-text="Screenshot of the schema view showing all of the available column names, with the CustomerID, CompanyName, and Orders (2) columns emphasized." lightbox="media/create-first-dataflow-gen2/remove-columns-result.png":::
 
@@ -133,7 +133,7 @@ Follow these steps to apply transformations and publish:
 
     :::image type="content" source="media/create-first-dataflow-gen2/choose-data-destination.png" alt-text="Screenshot of the dataflows editor with the location of the Data destination selection emphasized." lightbox="media/create-first-dataflow-gen2/choose-data-destination.png":::
 
-15. At the moment, Azure SQL database is available as an output destination. We'll be expanding the list of available destinations over the next few months. For this step, you can configure an output to your Azure SQL database if you've one available, or skip this step if you don't. Within this experience, you're able to configure the destination server, database, and table for your query results, in addition to the update method (Append or Replace).
+15. At the moment, Azure SQL database is available as an output destination. We'll be expanding the list of available destinations over the next few months. For this step, you can configure an output to your Azure SQL database if you have one available, or skip this step if you don't. Within this experience, you're able to configure the destination server, database, and table for your query results, in addition to the update method (Append or Replace).
 
     :::image type="content" source="media/create-first-dataflow-gen2/configure-output.png" alt-text="Screenshot of the Connect to data destination window with Azure SQL database selected." lightbox="media/create-first-dataflow-gen2/configure-output.png":::
 
@@ -171,4 +171,4 @@ If you're not going to continue to use this dataflow, delete the dataflow using 
 
 ## Next steps
 
-Advance to the next article to learn how to create your first data pipeline: [Quickstart: Create your first data pipeline to copy data (Preview)](create-first-pipeline.md).
+Advance to the next article to learn how to create your first data pipeline: [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md).

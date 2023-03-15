@@ -29,6 +29,8 @@ items:
     href: get-data-event-hub.md
   - name: Get data from OneLake
     href: get-data-onelake.md  
+  - name: OneLake shortcut
+    href: onelake-shortcut.md
 - name: Query data
   items:
   - name: Query data in the KQL queryset

@@ -1,6 +1,6 @@
 ---
 title: How does pay go work?
-description: Learn how the pay go feature in [!INCLUDE [product-name](../includes/product-name.md)] works, and how to enable it.
+description: Learn how the pay go feature in Microsoft Fabric works, and how to enable it.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to

@@ -1,13 +1,13 @@
 ### YamlMime:Hub
 
-title: Trident documentation # < 60 chars
-summary: Trident is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more. With Trident documentation, you get expert information and answers to address your needs. # < 160 chars
+title: Microsoft Fabric documentation # < 60 chars
+summary: Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more. With Microsoft Fabric documentation, you get expert information and answers to address your needs. # < 160 chars
 # brand: aspnet | azure | dotnet | dynamics | m365 | ms-graph | office | power-platform | sql | sql-server | vs | visual-studio | windows | xamarin
 brand: power-bi
 
 metadata:
-  title: Trident documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description:  Trident is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more.
+  title: Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description:  Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more.
   services: service
   ms.service: powerbi #Required; service per approved list. service slug assigned to your service by ACOM.
   ms.subservice: powerbi-service
@@ -15,7 +15,7 @@ metadata:
   ms.collection: collection
   author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
   ms.author: sngun #Required; microsoft alias of author; optional team alias.
-  ms.date: 1/31/2022
+  ms.date: 03/07/2023
 
 # highlightedContent section (optional)
 # Maximum of 8 items 
@@ -23,15 +23,15 @@ highlightedContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   items:
     # Card
-    - title: What is Trident ?
+    - title: What is Microsoft Fabric ?
       itemType: overview
       url: placeholder.md
     # Card
-    - title: Understand Trident architecture
+    - title: Understand Microsoft Fabric architecture
       itemType: concept
       url: placeholder.md
     # Card
-    - title: Try Trident Trial for free
+    - title: Try Microsoft Fabric for free
       itemType: get-started
       url: placeholder.md
     # Card
@@ -46,20 +46,24 @@ highlightedContent:
     - title: Choose a workload for your scenario
       itemType: concept
       url: placeholder.md
+    # Card
+    - title: Join the Microsoft Fabric Community
+      itemType: reference
+      url: https://fabric.microsoft.com
 
 # conceptualContent section (optional)
 conceptualContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   items:
     # Card
-    - title: "Get started with Trident"
+    - title: "Get started with Microsoft Fabric"
       links:
         - url: placeholder.md
           itemType: overview
-          text: What is Trident?
+          text: What is Microsoft Fabric?
         - url: placeholder.md
           itemType: get-started
-          text: Trident workloads and artifacts
+          text: Fabric workloads and artifacts
         - url: placeholder.md
           itemType: tutorial
           text: Get started with creating resources
@@ -87,12 +91,31 @@ conceptualContent:
         url: get-started/index.yml
         text: See more
     # Card
+    - title: Power BI and Microsoft Fabric integration 
+      links:
+        - url: /power-bi/fundamentals/power-bi-overview
+          itemType: concept
+          text: What is Power BI?
+        - url: placeholder.md
+          itemType: concept
+          text: Enable Microsoft Fabric from Power BI tenant
+        - url: placeholder.md
+          itemType: get-started
+          text: Get data into Power BI with DirectLake
+        - url: /power-bi/transform-model/datamarts/datamarts-get-started
+          itemType: get-started
+          text: Get started with Datamarts
+      # footerLink (optional)
+      footerLink:
+        url: get-started/index.yml
+        text: See more
+    # Card
     - title: "Integrate and transform data with Data Factory"
       links:
         - url: data-factory/data-factory-overview.md
           itemType: concept
           text: What is Data Factory?
-        - url: data-factory/create-first-pipeline.md
+        - url: data-factory/create-first-pipeline-with-sample-data.md
           itemType: get-started
           text: Create your first pipeline
         - url: data-factory/create-first-dataflow-gen2.md

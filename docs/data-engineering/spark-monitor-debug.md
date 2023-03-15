@@ -1,6 +1,6 @@
 ---
 title: Notebook contextual monitoring and debugging
-description: Learn how to view Spark job progress below the Notebook cell.
+description: Learn how to view Apache Spark job progress below the Notebook cell.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
@@ -13,7 +13,7 @@ ms.date: 02/24/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Notebook is purely Spark based. Code cells are executed on the serverless remotely. A Spark job progress indicator is provided with a real-time progress bar appears to help you understand the job execution status.
+Notebook is purely Apache Spark based. Code cells are executed on the serverless remotely. A Spark job progress indicator is provided with a real-time progress bar appears to help you understand the job execution status.
 
 ## Monitor job progress
 
@@ -89,4 +89,4 @@ def testDataSkew(sc: SparkContext): Unit = {
 ## Next steps
 
 - Spark advisor
-- [Spark application detail monitoring](spark-detail-monitoring.md)
+- [Apache Spark application detail monitoring](spark-detail-monitoring.md)

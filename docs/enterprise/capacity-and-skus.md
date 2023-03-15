@@ -1,6 +1,6 @@
 ---
 title: Capacity and SKUs
-description: Understand the [!INCLUDE [product-name](../includes/product-name.md)] capacity and SKU model.
+description: Understand the Microsoft Fabric capacity and SKU model.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
