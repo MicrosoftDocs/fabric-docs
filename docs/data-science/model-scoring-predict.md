@@ -15,7 +15,7 @@ ms.date: 02/10/2023
 
 [!INCLUDE [product-name](../includes/product-name.md)] empowers users to operationalize machine learning models from the secure boundaries of a notebook by using a function called PREDICT. Users can get started directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook or from a given model item page.
 
-In this article, you learn to call PREDICT from a notebook and generate code to call PREDICT for a given model from the model's item page.
+In this article, you'll learn to call PREDICT from a notebook and generate code to call PREDICT for a given model from the model's item page.
 
 > [!NOTE]
 > The PREDICT function is currently supported for a limited set of model types, including LightGBM and scikit-learn.
