@@ -1,6 +1,6 @@
 ---
 title: What is smoothing?
-description: Learn about performance smoothing in [!INCLUDE [product-name](../includes/product-name.md)].
+description: Learn about performance smoothing in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept

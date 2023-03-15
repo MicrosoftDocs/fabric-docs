@@ -1,25 +1,61 @@
 items:
-- name: Data Warehouse documentation
+- name: Data Warehousing documentation
   href: index.yml
 - name: Overview
-  items:
-  - name: What is Data Warehouse?
-    href: ../placeholder.md
+  items: 
+  - name: Data warehousing
+    href: data-warehousing.md
 - name: Get started
+  items: 
+  - name: Warehouse
+    href: warehouse.md
+  - name: Default warehouse
+    href: default-warehouse.md
+  - name: Datasets
+    href: datasets.md
+  - name: Creating reports
+    href: create-reports.md
+- name: Data warehouses
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 1
+  - name: Warehouse
+    href: warehouse.md
+  - name: Default warehouse
+    href: default-warehouse.md
+  - name: Create a warehouse
+    href: create-warehouse.md
+  - name: Create reports in the Power BI service
+    href: reports-power-bi-service.md
+  - name: Warehouse settings and context menus
+    href: settings-context-menus.md
+  - name: Query using Visual Query editor
+    href: visual-query-editor.md
+  - name: Query using SQL Query editor
+    href: sql-query-editor.md
+- name: Datasets
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 2
+  - name: Data modeling and defining relationships
+    href: data-modeling-defining-relationships.md
+  - name: Create a measure
+    href: create-measure.md
+  - name: Hide elements from downstream reporting
+    href: hide-elements-downstream-reporting.md
+  - name: Access default datasets
+    href: access-default-datasets.md
+- name: Load data
   items:
-  - name: linktext2
+  - name: link text
     href: ../placeholder.md
-  - name: linktext2
+  - name: link text
+    href: ../placeholder.md
+- name: Develop
+  items:
+  - name: link text
+    href: ../placeholder.md
+  - name: link text
+    href: ../placeholder.md
+- name: Monitor
+  items:
+  - name: link text
+    href: ../placeholder.md
+  - name: link text
     href: ../placeholder.md

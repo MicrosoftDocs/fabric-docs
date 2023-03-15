@@ -1,14 +1,14 @@
 ### YamlMime:FAQ
 metadata:
-  title: Spark workspace administration settings FAQ
-  description: This article lists answers to frequently asked questions about Spark workspace administration settings.
+  title: Apache Spark workspace administration settings FAQ
+  description: This article lists answers to frequently asked questions about Apache Spark workspace administration settings.
   author: santhoshravindran7
   ms.author: saravi
   ms.topic: faq
   ms.date: 02/24/2023
-title: Spark workspace administration settings FAQ
+title: Apache Spark workspace administration settings FAQ
 summary: |
-  This article lists answers to frequently asked questions about Spark workspace administration settings.
+  This article lists answers to frequently asked questions about Apache Spark workspace administration settings.
 
   > [!IMPORTANT]
   > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.

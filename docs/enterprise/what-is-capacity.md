@@ -1,6 +1,6 @@
 ---
 title: What is capacity
-description: Learn about [!INCLUDE [product-name](../includes/product-name.md)] capacities.
+description: Learn about Microsoft Fabric capacities.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview

@@ -28,9 +28,13 @@ items:
     - name: What is a Spark job definition?
       href: spark-job-definition.md
     - name: Create a Spark job definition
-      href: ../placeholder.md
+      href: create-spark-job-definition.md
     - name: Run a Spark job definition
-      href: ../placeholder.md
+      href: run-spark-job-definition.md
+  - name: Spark utilities
+    href: microsoft-spark-utilities.md
+  - name: Library management
+    href: library-management.md
   - name: Spark administration settings
     items:
     - name: Workspace settings
@@ -49,7 +53,13 @@ items:
       href: spark-detail-monitoring.md
 - name: Notebooks
   items:
-  - name: linktext2
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Create and use notebooks
+    href: how-to-use-notebook.md
+  - name: Develop and run notebooks
+    href: author-execute-notebook.md
+  - name: Notebook visualization
+    href: notebook-visualization.md
+  - name: Explore data in Lakehouse
+    href: lakehouse-notebook-explore.md
+  - name: Load data in Lakehouse
+    href: lakehouse-notebook-load-data.md

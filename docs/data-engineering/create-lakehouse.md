@@ -65,5 +65,5 @@ There are a few ways you can get started with the creation process:
 After you create your Lakehouse, your next step is to get data in it. Here are a few ways you can do that:
 
 - [How to copy data into your Lakehouse](../data-factory/copy-data-activity.md)
-- How to use a notebook to land data in your Lakehouse
+- [How to use a notebook to load data in your Lakehouse](lakehouse-notebook-load-data.md)
 - [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md)
