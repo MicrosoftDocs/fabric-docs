@@ -124,7 +124,7 @@ predictions.show()
 
 ### PREDICT with a user-defined function
 
-To invoke the PREDICT function with a user defined function (UDF), use the model and the test dataset defined previously. If you've been using your own model, substitute the values for the features and model with the corresponding values for your model and feature columns.
+To invoke the PREDICT function with a user-defined function (UDF), use the model and the test dataset defined previously. If you've been using your own model, substitute the values for the features and model with the corresponding values for your feature columns and model.
 
 ```Python
 from pyspark.sql.functions import col, pandas_udf, udf, lit
