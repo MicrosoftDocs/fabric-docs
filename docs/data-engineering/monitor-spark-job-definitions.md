@@ -1,6 +1,6 @@
 ---
 title: Monitor Spark job definition
-description: This article provides you instructions on how to monitor Spark job definition in Fabric.
+description: This article provides you instructions on how to monitor Spark job definition in Microsoft Fabric.
 author: jejiang
 ms.author: jejiang
 ms.topic: overview 
@@ -13,7 +13,7 @@ ms.search.form: Monitor Spark job definitions
 
 Using the Spark job definition artifact inline monitoring, you can track the following: 
 
-* Monitor the progress and status of a running Spark Job Definition. 
+* Monitor the progress and status of a running Spark job definition. 
 * View the status and duration of previous Spark job definition runs. 
 
 You can get this information from the **Recent Runs** contextual menu in the workspace or by browsing the Spark job definition activities in the monitoring hub.
@@ -33,7 +33,7 @@ You can access the job runs associated with specific Spark job definition artifa
 
 ## Spark job definition runs in the Monitoring hub
 
-To view all the Spark applications related to a Spark job definition, go to the **Monitoring Hub**.  Sort or filter the **Item Type** column to view all the run activities associated with the Spark Job Definitions. 
+To view all the Spark applications related to a Spark job definition, go to the **Monitoring hub**.  Sort or filter the **Item Type** column to view all the run activities associated with the Spark job definitions. 
 
 :::image type="content" source="media\monitor-spark-job-definitions\spark-job-definition-runs-in-monitoring-hub.png" alt-text="Screenshot showing the spark job definition runs in Monitoring hub." lightbox="media\monitor-spark-job-definitions\spark-job-definition-runs-in-monitoring-hub.png":::
 

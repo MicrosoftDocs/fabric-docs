@@ -1,12 +1,12 @@
 ---
 title: Browse the Apache Spark applications in Monitoring hub
-description: This article provides you with instructions on how to browse Spark applications in the Monitoring Hub.
+description: This article provides you with instructions on how to browse Spark applications in the Monitoring hub.
 author: jejiang
 ms.author: jejiang
 ms.topic: overview 
 ms.date: 02/24/2023
 ms.custom: template-howto
-ms.search.form: Browse Spark applications in Monitoring Hub 
+ms.search.form: Browse Spark applications in Monitoring hub 
 ---
 
 # Browse the Apache Spark applications in Monitoring hub
@@ -15,7 +15,7 @@ The Monitoring hub serves as a centralized portal for browsing Apache Spark acti
 
 ## Access to Monitoring hub
 
-You can access the Monitoring hub to view various Apache Spark activities by slecting **Monitoring hub** in the left-side navigation links.
+You can access the Monitoring hub to view various Apache Spark activities by selecting **Monitoring hub** in the left-side navigation links.
 
 :::image type="content" source="media\browse-spark-applications-in-monitoring-hub\monitoring-hub-in-the-left-side-navigation-bar.png" alt-text="Screenshot showing the monitoring hub in the left side navigation bar." lightbox="media\browse-spark-applications-in-monitoring-hub\monitoring-hub-in-the-left-side-navigation-bar.png":::
 
