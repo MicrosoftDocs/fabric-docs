@@ -96,4 +96,4 @@ At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL s
 
 ## Next steps
 
-- Transactions and modify tables with SSMS
+- [Transactions and modify tables with SSMS](transactions-insert-modify-ssms.md)

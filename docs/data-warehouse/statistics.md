@@ -164,4 +164,4 @@ Likewise, the following T-SQL constructs exist and can be used to check both man
 
 ## Next steps
 
-- Monitoring connections and sessions using DMVs
+- [Monitoring connections, sessions, and requests using DMVs](monitor-using-dmv.md)

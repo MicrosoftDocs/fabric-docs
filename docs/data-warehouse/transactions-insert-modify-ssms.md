@@ -38,4 +38,4 @@ In [!INCLUDE [product-name](../includes/product-name.md)], you can write cross-d
 
 ## Next steps
 
-- Query a Warehouse using SSMS
+- [Query a warehouse using SSMS](query-warehouse-ssms.md)

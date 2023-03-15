@@ -67,4 +67,4 @@ The following steps detail how to get the OneLake path from a Lakehouse:
 
 ## Next steps
 
-- Workspace roles
+- [Workspace roles](workspace-roles.md)
