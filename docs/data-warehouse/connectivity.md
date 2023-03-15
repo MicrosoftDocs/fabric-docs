@@ -17,7 +17,7 @@ To get started, you must complete the following prerequisites:
 - For best performance, you must be using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) version 18.0+.
 - You need access to a Lakehouse item within a premium per capacity workspace with contributor or above permissions.
 
-## Connect SSMS to a warehouse in the workspace
+## Connect SSMS to the SQL Endpoint or warehouse in the workspace
 
 The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to SSMS.
 
