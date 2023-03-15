@@ -12,7 +12,7 @@ ms.date: 03/15/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-**Applies to:** Warehouse (default), warehouse
+**Applies to:** Warehouse and SQL Endpoint
 
 To get started, you must complete the following prerequisites:
 
@@ -96,4 +96,4 @@ There are several ways you can write cross-database queries within the same [!IN
 
 ## Next steps
 
-- Statistics
+- [Statistics](statistics.md)

@@ -12,7 +12,7 @@ ms.date: 03/15/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-**Applies to:** Warehouse (default), warehouse
+**Applies to:** Warehouse and SQL Endpoint
 
 Like any other data warehouse, the [!INCLUDE [product-name](../includes/product-name.md)] warehouse uses a query engine to create an execution plan for any given SQL query.
 
