@@ -75,19 +75,19 @@ Displays the CPU usage of the selected capacity over time. Filters applied to th
 * *Filters are applied* -  The visuals displays every 30 second timepoint.
 
 >[!NOTE]
->Peak is calculated as the highest number of seconds from both [*interactive* and *background*](service-premium-interactive-background-operations.md) operations.
+>Peak is calculated as the highest number of seconds from both [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations.
 
-To access the [Timepoint](#metrics-app-timepiont-page) page from this visual, select a timepoint you want to explore and then select **Explore**.
+To access the [Timepoint](metrics-app-timepiont-page.md) page from this visual, select a timepoint you want to explore and then select **Explore**.
 
 The CPU over time chart displays the following elements:
 
 * **Interactive CPU** - Red columns represent the number of CPU seconds used during interactive operations in a 30 second period.
 
-    [*Interactive*](service-premium-interactive-background-operations.md#interactive-operations) operations cover a wide range of resources triggered by users. These operations are associated with interactive page loads.
+    [*Interactive*](/power-bi/enterprise/service-premium-interactive-background-operations#interactive-operations) operations cover a wide range of resources triggered by users. These operations are associated with interactive page loads.
 
 * **Background** - Blue columns represent the number of CPU seconds used during background operations in a 30 second period.
 
-    [*Background*](service-premium-interactive-background-operations.md#background-operations) operations cover backend processes that are not directly triggered by users, such as data refreshes.
+    [*Background*](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) operations cover backend processes that are not directly triggered by users, such as data refreshes.
 
 * **CPU Limit** - A yellow dotted line that shows the threshold of the allowed number of CPU seconds for the selected capacity. Columns that stretch above this line, represent timepoints where the capacity is overloaded.
 
@@ -134,4 +134,4 @@ Displays the number of cores used by the capacity in the past four weeks. Each d
 ## Next steps
 
 >[!div class="nextstepaction"]
->[Understand the metrics app explore page?](metrics-app-explore-page.md)
+>[Understand the metrics app timepoint page](metrics-app-timepoint-page.md)

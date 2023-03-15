@@ -9,21 +9,21 @@ ms.date: 12/27/2022
 
 # Understand the metrics app timepoint page
 
-All the activities in the capacity are ranked according to their compute impact. The timepoint page shows the top 100,000 impactful activities in the capacity. Use this page to understand which [*interactive* and *background*](service-premium-interactive-background-operations.md) operations contributed the most to CPU usage.
+All the activities in the capacity are ranked according to their compute impact. The timepoint page shows the top 100,000 impactful activities in the capacity. Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to CPU usage.
 
 >[!NOTE]
->Start and end times may occur before or after the displayed time period, due to [background](service-premium-interactive-background-operations.md#background-operations) [smoothing](service-premium-smoothing.md) operations.  
+>Start and end times may occur before or after the displayed time period, due to [background](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) [smoothing](/power-bi/enterprise/service-premium-smoothing) operations.  
 
 >[!IMPORTANT]
 >You can only get to this page by using the drill through feature in an overloaded timepoint in one of these visuals:
 >
-> * [CPU over time](#cpu-over-time) in the *Overview* page
+> * [CPU over time](metrics-app-overview-page.md#cpu-over-time) in the *Overview* page
 >
-> * [Overloading windows](#overloading-windows) in the *Evidence* page
+> * [Overloading windows](metrics-app-overview-page.md#overloading-windows) in the *Evidence* page
 
 When the total combined CPU for *interactive* and *background* operations exceeds the 30 second timepoint allowance, the capacity is overloaded and depending on whether autoscale is enabled or not, throttling is applied.
 
-* **Autoscale is enabled** - If the capacity has autoscale enabled, a new v-core will get added for the next 24 hours and will be shown as an increased value in the *CPU Limit* line in the [CPU over time](#cpu-over-time) chart.
+* **Autoscale is enabled** - If the capacity has autoscale enabled, a new v-core will get added for the next 24 hours and will be shown as an increased value in the *CPU Limit* line in the [CPU over time](metrics-app-overview-page.md#cpu-over-time) chart.
 
     >[!NOTE]
     >When autoscale is enabled, if the capacity reaches the maximum number of v-cores allowed by the autoscale operation, throttling is applied.
@@ -57,7 +57,7 @@ This section describes the operations of the visuals in the top row of the timep
 
 ## Interactive Operations
 
-A table showing every [interactive operation](service-premium-interactive-background-operations.md) that contributed CPU usage in the timepoint used to drill through to this page. Once an interactive operation completes, all of the CPU seconds used by it get attributed to the timepoint window.
+A table showing every [interactive operation](/power-bi/enterprise/service-premium-interactive-background-operations) that contributed CPU usage in the timepoint used to drill through to this page. Once an interactive operation completes, all of the CPU seconds used by it get attributed to the timepoint window.
 
 * **Items** - The name of the item, its type, and its workspace details.
 
@@ -88,7 +88,7 @@ A table showing every [interactive operation](service-premium-interactive-backgr
 
 ## Background Operations
 
-A table showing every background operation that contributed CPU usage to the timepoint window used to drill through to this page. Every background operation that completed in the prior 24 hours (defined as a 2,880 x 30 second timepoint window), contributes a small portion of its total usage to the CPU value. This means that a background operation that completed the previous day can contribute some CPU activity to determine if the capacity is in overload. For more information see [performance smoothing](service-premium-smoothing.md).
+A table showing every background operation that contributed CPU usage to the timepoint window used to drill through to this page. Every background operation that completed in the prior 24 hours (defined as a 2,880 x 30 second timepoint window), contributes a small portion of its total usage to the CPU value. This means that a background operation that completed the previous day can contribute some CPU activity to determine if the capacity is in overload. For more information see [performance smoothing](/power-bi/enterprise/service-premium-smoothing.md).
 
 All the columns in the background operations table are similar to the ones in the [interactive operations](#interactive-operations) table. However, the background operations table doesn't have a *users* column.
 
