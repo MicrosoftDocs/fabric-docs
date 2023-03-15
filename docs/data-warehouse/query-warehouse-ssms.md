@@ -16,11 +16,11 @@ ms.date: 03/15/2023
 
 To get started, you must complete the following prerequisites:
 
-- [Download SSMS Version 18.0+](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)
+- [Download SSMS Version 18.0+](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16&preserve-view=true)
 - Have access to a warehouse item within a premium per capacity workspace with contributor or above permissions
 - Have a warehouse connected to SSMS via T-SQL Connection String (see Connectivity)
 
-The following steps detail how to execute a variety of simple and complex SQL queries in SSMS when connected to a warehouse. See [T-SQL surface area](data-warehousing#t-sql-surface-area) for a listing of unsupported T-SQL commands.
+The following steps detail how to execute a variety of simple and complex SQL queries in SSMS when connected to a warehouse. See [T-SQL surface area](data-warehousing.md#t-sql-surface-area) for a listing of unsupported T-SQL commands.
 
 ## Run a SELECT Top 1000 Rows from Object Explorer
 

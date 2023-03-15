@@ -16,7 +16,7 @@ ms.date: 03/15/2023
 
 To get started, you must complete the following prerequisites:
 
-- [Download SSMS Version 18.0+](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)
+- [Download SSMS Version 18.0+](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16&preserve-view=true)
 - Have access to a warehouse item within a premium per capacity workspace with contributor or above permissions
 - Have a warehouse connected to SSMS via T-SQL Connection String (see Connectivity)
 

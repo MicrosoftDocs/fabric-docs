@@ -143,7 +143,7 @@ DROP STATISTICS [ schema_name . ] table_name.statistics_name
 Likewise, the following T-SQL constructs exist and can be used to check both manually created and automatically created statistics in [!INCLUDE [product-name](../includes/product-name.md)]:
 
 - [sys.stats](/sql/relational-databases/system-catalog-views/sys-stats-transact-sqll) catalog view
-- [DBCC SHOW_STATISTICS](/en-us/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?view=sql-server-ver16) DBCC statement
+- [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?view=sql-server-ver16&preserve-view=true) DBCC statement
 
   ```
   DBCC SHOW_STATISTICS ( table_name , target )

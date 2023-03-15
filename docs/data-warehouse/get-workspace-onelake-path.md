@@ -16,7 +16,7 @@ ms.date: 03/15/2023
 
 To maintain a single copy of data, Lakehouses and transactional Warehouses store data in OneLake.
 
-In this tutorial, you learn how to find a OneLake file path from the Lakehouse experience.  
+In this tutorial, you learn how to find a OneLake file path from the Lakehouse experience.
 
 ## Known limitations
 
@@ -63,7 +63,7 @@ The following steps detail how to get the OneLake path from a Lakehouse:
 
 1. After selecting the **Properties** menu on a selected file, the right-side pane will display the metadata information and location of the selected file.
 
-    :::image type="content" source="media\get-workspace-onelake-path\properties-file-location.png" alt-text="Screenshot showing where to find metadata and file location in the Properties screen." lightbox="media\get-workspace-onelake-path\properties-file-location.png":::
+   :::image type="content" source="media\get-workspace-onelake-path\properties-file-location.png" alt-text="Screenshot showing where to find metadata and file location in the Properties screen." lightbox="media\get-workspace-onelake-path\properties-file-location.png":::
 
 ## Next steps
 

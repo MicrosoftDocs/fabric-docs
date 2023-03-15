@@ -21,15 +21,15 @@ You can modify data that is stored in tables in a warehouse. We'll also show how
 
 See our current documentation for INSERT, UPDATE, DELETE and Transactions:
 
-- Insert - [INSERT (Transact-SQL) - SQL Server | Microsoft Learn](/sql/t-sql/statements/insert-transact-sql?view=azure-sqldw-latest)
-- Update - [UPDATE (Transact-SQL) - SQL Server | Microsoft Learn](/sql/t-sql/queries/update-transact-sql?view=azure-sqldw-latest)
-- Delete - [DELETE (Transact-SQL) - SQL Server | Microsoft Learn](/sql/t-sql/statements/delete-transact-sql?view=azure-sqldw-latest)
-- Transactions - [Transactions (Azure Synapse Analytics) - SQL Server | Microsoft Learn](/sql/t-sql/language-elements/transactions-sql-data-warehouse?view=azure-sqldw-latest)
+- Insert - [INSERT (Transact-SQL) - SQL Server | Microsoft Learn](/sql/t-sql/statements/insert-transact-sql?view=azure-sqldw-latest&preserve-view=true)
+- Update - [UPDATE (Transact-SQL) - SQL Server | Microsoft Learn](/sql/t-sql/queries/update-transact-sql?view=azure-sqldw-latest&preserve-view=true)
+- Delete - [DELETE (Transact-SQL) - SQL Server | Microsoft Learn](/sql/t-sql/statements/delete-transact-sql?view=azure-sqldw-latest&preserve-view=true)
+- Transactions - [Transactions (Azure Synapse Analytics) - SQL Server | Microsoft Learn](/sql/t-sql/language-elements/transactions-sql-data-warehouse?view=azure-sqldw-latest&preserve-view=true)
 
 ## Known limitations
 
-- At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](data-warehousing#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
-- If a SELECT is within a transaction, and was preceded by data insertions, the automatically generated statistics may be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, you may want to [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=sql-server-ver16) for the columns mentioned in your SELECT.
+- At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](data-warehousing.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
+- If a SELECT is within a transaction, and was preceded by data insertions, the automatically generated statistics may be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, you may want to [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=sql-server-ver16&preserve-view=true) for the columns mentioned in your SELECT.
 - To avoid query concurrency issue during preview, refrain from doing trickle INSERTs into a warehouse table.
 
 ## Querying: including cross-database querying
