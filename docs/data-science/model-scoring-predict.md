@@ -29,7 +29,7 @@ In this article, you'll learn to call PREDICT from a notebook and generate code 
 
 PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you've already trained and registered a model, you can skip to Step 2 in the following procedure. If not, Step 1 provides a code sample to guide you through the creation and training of a logistic regression model. You can use this model to generate predictions in the last step of the procedure if you don't use your own.
 
-1. **Train a model and register it with MLflow**. The following code sample uses the MLflow API to create a machine learning experiment and start an MLflow run for a simple scikit-learn logistic regression model, tracking its metrics and parameters. The model version is then registered for prediction. See [How to train models with scikit-learn](train-models-scikit-learn.md)to learn more about training and tracking a scikit-learn model.
+1. **Train a model and register it with MLflow**. The following code sample uses the MLflow API to create a machine learning experiment and start an MLflow run for a simple scikit-learn logistic regression model, tracking its metrics and parameters. The model version is then registered for prediction. See [how to train models with scikit-learn](train-models-scikit-learn.md) to learn more about training and tracking a scikit-learn model.
 
    ```Python
    import mlflow
