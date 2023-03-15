@@ -33,10 +33,14 @@ items:
     href: sql-query-editor.md
   - name: Connectivity
     href: connectivity.md
-  - name: Workspace roles
-    href: workspace-roles.md
   - name: Manage user access
     href: manage-user-access.md
+- name: Workspaces
+  items:
+  - name: Workspace roles
+    href: workspace-roles.md
+  - name: Getting Workspace and OneLake path
+    href: get-workspace-onelake-path.md
 - name: Datasets
   items:
   - name: Data modeling and defining relationships
@@ -57,13 +61,15 @@ items:
     href: ingest-data-pipelines.md
 - name: Develop
   items:
-  - name: link text
-    href: ../placeholder.md
-  - name: link text
-    href: ../placeholder.md
+  - name: Create a table with SSMS
+    href: create-table-ssms.md
+  - name: Transactions and modify tables with SSMS
+    href: transactions-insert-modify-ssms.md
+  - name: Query a warehouse with SSMS
+    href: query-warehouse-ssms.md
+  - name: Statistics
+    href: statistics.md
 - name: Monitor
   items:
-  - name: link text
-    href: ../placeholder.md
-  - name: link text
-    href: ../placeholder.md
+  - name: Monitor using DMVs
+    href: monitor-using-dmv.md
