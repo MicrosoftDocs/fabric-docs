@@ -20,6 +20,8 @@ With Microsoft Fabric's [Git integration](./git-integration/git-integration-over
 
 Microsoft Fabric's [deployment pipelines](./deployment-pipelines/deployment-pipelines-overview.md) automates the delivery of completed code to environments like testing and production. It allows teams to produce software in short cycles with high speed, frequency, and reliability. Software can be released at any time with a simple, repeatable deployment process.
 
+For the most seamless CI/CD experience in Fabric, connect you developer workspace to git, and deploy from there using deployment pipelines.
+
 ## Next steps
 
 * [Deployment pipelines](./deployment-pipelines/deployment-pipelines-overview.md)
