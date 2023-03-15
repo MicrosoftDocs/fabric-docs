@@ -57,7 +57,7 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
        )
     ```
 
-2. **Load in a test dataset and convert it into a Spark DataFrame.** To generate predictions using the model trained in the previous step, we can create a simple test dataset. If you skipped the previous step and are using your own model instead, substitute the `test` dataset in the following code snippet with an appropriate dataset for testing your model.
+2. **Load in test data and convert it into a Spark DataFrame.** To generate predictions using the model trained in the previous step, we can create a simple test data. You can substitute the value for the `test` variable in the following code snippet with data for testing your model.
 
    ```Python
    import pandas as pd
