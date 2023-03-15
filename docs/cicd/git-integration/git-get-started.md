@@ -117,6 +117,6 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
-- The Azure AD user you're using in Trident is the same user you need to use in Azure Repos. There’s no way to edit or change users in Azure Repos.
+- The Azure AD user you're using in Fabric is the same user you need to use in Azure Repos. There’s no way to edit or change users in Azure Repos.
 - You can only sync in one direction at a time. You can't do both commit and update at the same time.
 - You need write permission to the workspace to update it.
