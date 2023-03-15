@@ -18,18 +18,16 @@ ms.custom: template-how-to
 
 Binary format is supported for the following connectors and activities.
 
-|**Supported connector**|
-|:---|
-|Amazon S3|
-|[Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)|
-|[Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
-|Google Cloud Storage|
-|[HTTP](connector-http-copy-activity.md)|
-|REST|
-|**Supported activity**|
-|Copy activity|
-|GetMetadata activity|
-|Delete activity|
+| **Category** | **Connector**/**Activity** | 
+|---|---|
+| **Supported connector** | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
+|  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md) |
+|  | Google Cloud Storage | 
+|  | [HTTP](connector-http-copy-activity.md)| 
+|  | REST | 
+| **Supported activity** | Copy activity |
+|  | GetMetadata activity |
+|  | Delete activity | 
 
 ## Binary format in copy activity
 
