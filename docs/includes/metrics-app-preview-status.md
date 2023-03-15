@@ -7,6 +7,6 @@ ms.topic: include
 ms.date: 03/15/2023
 ---
 
-* **Preview Status** - Indicates whether your item resides in a preview capacity. During public preview, Microsoft Fabric capacities are in preview.
-    * *True* - Microsoft Fabric capacities during private preview
-    * *False* - Power BI capacities
+* **Preview Status** - Indicates whether your item resides in a preview workload. During public preview, Microsoft Fabric workloads that are not Power BI, are in preview.
+    * *True* - Microsoft Fabric workloads that aren't Power BI
+    * *False* - The Power BI workload
