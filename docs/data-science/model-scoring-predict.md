@@ -62,15 +62,15 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
    ```Python
    import pandas as pd
 
-   # Create a simple test dataset from a dictionary of x values
-   # You can substitute "test" below with your own dataset
+   # Create a simple test data from a dictionary of x values
+   # You can substitute "test" below with your own data
    test = pd.DataFrame({'x': [-2, -1, 0, 1, 2, -1]})
 
-   # Convert the test dataset into a Spark DataFrame
+   # Convert the test data into a Spark DataFrame
    test_spark = spark.createDataFrame(data=[(test.values.tolist(),)], schema=test.columns.to_list())
    ```
 
-3. **Create an MLflow Transformer to load the model for inferencing.** To create an MLflow Transformer object for generating predictions, we specify all the columns from the `test` dataset as model inputs, name the output column `predictions`, and provide the correct model name and version to use for generating predictions. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version with the appropriate ones for your model.
+3. **Create an MLflow Transformer to load the model for inferencing.** To create an MLflow Transformer object for generating predictions, we specify all the columns from the `test` data as model inputs, name the output column `predictions`, and provide the correct model name and version to use for generating predictions. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version with the appropriate ones for your model.
 
    ```Python
    from synapse.ml.predict import MLflowTransformer
@@ -89,7 +89,7 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
 
 ### PREDICT with the Transformer API
 
-To invoke the PREDICT function with the transformer API, use the model and the test dataset defined previously. If you've been using your own model, substitute the values for the model and the test dataset in the following code.
+To invoke the PREDICT function with the transformer API, use the model and the test data defined previously. If you've been using your own model, substitute the values for the model and the test data in the following code.
 
 ```Python
 # You can substitute "model" and "test_spark" below with variables  
@@ -100,7 +100,7 @@ predictions.show()
 
 ### PREDICT with the Spark SQL API
 
-To invoke the PREDICT function with the Spark SQL API, use the model and the test dataset defined previously. If you've been using your own model, substitute the values for `model_name`, `model_version`, and `features` with the corresponding values for your model and feature columns.
+To invoke the PREDICT function with the Spark SQL API, use the model and the test data defined previously. If you've been using your own model, substitute the values for `model_name`, `model_version`, and `features` with the corresponding values for your model and feature columns.
 
 ```Python
 from pyspark.ml.feature import SQLTransformer 
@@ -124,7 +124,7 @@ predictions.show()
 
 ### PREDICT with a user-defined function
 
-To invoke the PREDICT function with a user-defined function (UDF), use the model and the test dataset defined previously. If you've been using your own model, substitute the values for the features and model with the corresponding values for your feature columns and model.
+To invoke the PREDICT function with a user-defined function (UDF), use the model and the test data defined previously. If you've been using your own model, substitute the values for the features and model with the corresponding values for your feature columns and model.
 
 ```Python
 from pyspark.sql.functions import col, pandas_udf, udf, lit
