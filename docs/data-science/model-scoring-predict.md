@@ -70,7 +70,7 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
    test_spark = spark.createDataFrame(data=[(test.values.tolist(),)], schema=test.columns.to_list())
    ```
 
-3. **Create an MLflow Transformer to load the model for inferencing.** To generate a transformer for generating predictions, we specify all the columns from the `test` dataset as model inputs, name the output column `predictions`, and generate predictions with the model version trained in step 1. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version with the appropriate ones for your model.
+3. **Create an MLflow Transformer to load the model for inferencing.** To create an MLflow Transformer object for generating predictions, we specify all the columns from the `test` dataset as model inputs, name the output column `predictions`, and provide the correct model name and version to use for generating predictions. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version with the appropriate ones for your model.
 
    ```Python
    from synapse.ml.predict import MLflowTransformer
