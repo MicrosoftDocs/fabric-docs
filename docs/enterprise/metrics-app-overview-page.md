@@ -77,7 +77,7 @@ Displays the CPU usage of the selected capacity over time. Filters applied to th
 >[!NOTE]
 >Peak is calculated as the highest number of seconds from both [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations.
 
-To access the [Timepoint](metrics-app-timepiont-page.md) page from this visual, select a timepoint you want to explore and then select **Explore**.
+To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, select a timepoint you want to explore and then select **Explore**.
 
 The CPU over time chart displays the following elements:
 
