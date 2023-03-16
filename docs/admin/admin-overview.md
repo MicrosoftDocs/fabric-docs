@@ -39,7 +39,7 @@ This section lists the Microsoft 365 admin roles and the tasks they can perform.
 As a Power Platform or a Microsoft Fabric admin, you have full access to all the Microsoft Fabric management tasks.
 
 * **Power Platform admin** or **Microsoft Fabric admin**
-    * Enable and disable Power BI features
+    * Enable and disable Microsoft Fabric features <!--- add link to workloads --->
     * Report on usage and performance
     * Review and manage auditing
 
@@ -54,7 +54,7 @@ As a Microsoft Fabric capacity admin, you can perform these tasks on the capacit
 
 ## Admin tasks and tools
 
-Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/power-bi/developer/visuals/create-r-based-power-bi-desktop), but you should still be familiar with related tools and admin centers. To find out which role is required to perform the tasks listed here, cross reference them with the admin roles listed in [Admin roles related to Microsoft Fabric](#admin-roles-related-to-microsoft-fabric).    
+Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/power-bi/developer/visuals/create-r-based-power-bi-desktop), but you should still be familiar with related tools and admin centers. To find out which role is required to perform the tasks listed here, cross reference them with the admin roles listed in [Admin roles related to Microsoft Fabric](#admin-roles-related-to-microsoft-fabric).
 
 * **[Microsoft Fabric admin portal](https://app.powerbi.com/admin-portal)** <!--- Change link to fabric --->
     * Acquire and work with capacities
