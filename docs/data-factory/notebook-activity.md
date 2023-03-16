@@ -4,7 +4,6 @@ description: Learn how to add a notebook activity to a pipeline and use it to in
 ms.reviewer: xupxhou
 ms.author: jburchel
 author: jonburchel
-ms.subservice: data-factory
 ms.topic: how-to
 ms.date: 03/09/2023
 ---
