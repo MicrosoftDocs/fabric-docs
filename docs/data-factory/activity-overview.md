@@ -27,7 +27,7 @@ The activities in a pipeline define actions to perform on your data. For example
 
 :::image type="content" source="media/activity-overview/relationship-between-dataset-pipeline-activity.png" alt-text="Diagram showing the relationship between pipeline, activity, and dataset.":::
 
-An input dataset represents the input for an activity in the pipeline, and an output dataset represents the output for the activity. Datasets identify data within different data stores, such as tables, files, folders, and documents. After you create a dataset, you can use it with activities in a pipeline. For example, a dataset can be an input/output dataset of a Copy Activity or an Dataflow Activity.
+An input dataset represents the input for an activity in the pipeline, and an output dataset represents the output for the activity. Datasets identify data within different data stores, such as tables, files, folders, and documents. After you create a dataset, you can use it with activities in a pipeline. For example, a dataset can be an input/output dataset of a Copy Activity or a Dataflow Activity.
 
 ## Data movement activities
 
@@ -60,10 +60,10 @@ Control activity | Description
 ---------------- | -----------
 [Append variable](../placeholder.md) | Add a value to an existing array variable.
 [Invoke pipeline](../placeholder.md) | Execute Pipeline activity allows a Data Factory or Synapse pipeline to invoke another pipeline.
-[Filter](../placeholder.md) | Apply a filter expression to an input array
+[Filter](../placeholder.md) | Apply a filter expression to an input array.
 [For Each](../placeholder.md) | ForEach Activity defines a repeating control flow in your pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to the Foreach looping structure in programming languages.
 [Get metadata](../placeholder.md) | GetMetadata activity can be used to retrieve metadata of any data in a Data Factory or Synapse pipeline.
-[If condition](../placeholder.md) | The If Condition can be used to branch based on condition that evaluates to true or false. The If Condition activity provides the same functionality that an if statement provides in programming languages. It evaluates a set of activities when the condition evaluates to `true` and another set of activities when the condition evaluates to `false.`
+[If condition](../placeholder.md) | The If Condition can be used to branch based on condition that evaluates to true or false. The If Condition activity provides the same functionality that an if statement provides in programming languages. It evaluates a set of activities when the condition evaluates to `true` and another set of activities when the condition evaluates to `false`.
 [Lookup Activity](../placeholder.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
 [Set Variable](../placeholder.md) | Set the value of an existing variable.
 [Until Activity](../placeholder.md) | Implements Do-Until loop that is similar to Do-Until looping structure in programming languages. It executes a set of activities in a loop until the condition associated with the activity evaluates to true. You can specify a timeout value for the until activity.
