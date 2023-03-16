@@ -15,7 +15,7 @@ ms.date: 03/16/2023
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-The Fabric Lookup activity can retrieve a dataset from any of the data sources supported by [!INCLUDE [product-name](../includes/product-name.md)]. You can use it to dynamicalimage.pngly determine which objects to operate on in a subsequent activity, instead of hard coding the object name. Some object examples are files and tables.
+The Fabric Lookup activity can retrieve a dataset from any of the data sources supported by [!INCLUDE [product-name](../includes/product-name.md)]. You can use it to dynamically determine which objects to operate on in a subsequent activity, instead of hard coding the object name. Some object examples are files and tables.
 
 Lookup activity reads and returns the content of a configuration file or table. It also returns the result of executing a query or stored procedure. The output can be a singleton value or an array of attributes, which can be consumed in a subsequent copy, transformation, or control flow activities like ForEach activity.
 
@@ -28,12 +28,12 @@ To get started, you must complete the following prerequisites:
 
 ## Add a lookup activity to a pipeline with UI
 
-To use a Lookup activity for in a pipeline, complete the following steps:
+To use a Lookup activity in a pipeline, complete the following steps:
 
 ### General settings
 
 1. Create a new pipeline in your workspace.
-1. Search for Lookup in the pipeline Activities pane, and select it to add it to the pipeline canvas.
+1. Search for Lookup in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
 
    :::image type="content" source="media/lookup-activity/add-lookup-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Lookup activity highlighted.":::
 
@@ -43,7 +43,7 @@ To use a Lookup activity for in a pipeline, complete the following steps:
 
 1. In the **General** tab at the bottom of the canvas, enter a name for the activity in the Name property.
 1. (Optional) You can also enter a description.
-1. Timeout: The Maximum amount of time an activity can run. The default is 12 hours, and the maximum amount of time allowed is seven days. The format for the timeout is in D.HH:MM:SS.
+1. Timeout: The maximum amount of time an activity can run. The default is 12 hours, and the maximum amount of time allowed is seven days. The format for the timeout is in D.HH:MM:SS.
 1. Retry: Maximum number of retry attempts.
 1. (Advanced properties) Retry interval (sec): The number of seconds between each retry attempt.
 1. (Advanced properties) Secure output: When checked, output from the activity isn't captured in logging.
