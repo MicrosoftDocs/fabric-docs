@@ -29,7 +29,7 @@ To enable Microsoft Fabric, you need to have one of the admin roles listed in th
 | Power BI Premium Capacity Administrator  | A single Premium capacity  | A specific capacity     |
 | Power BI Embedded Capacity Administrator | A single Embedded capacity | A specific capacity     |
 
-## How to enable Microsoft Fabric?
+## Enable Microsoft Fabric
 
 Navigate to the [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings#how-to-get-to-the-tenant-settings) in the admin portal, expand **Microsoft Fabric** and enable the switch.
 
