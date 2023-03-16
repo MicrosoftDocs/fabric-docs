@@ -1,6 +1,6 @@
 ---
 title: Apache Spark advisor
-description: This article provides you instructions on how to view Apache Spark advisor in Fabric.
+description: This article provides you with instructions on how to view Apache Spark advisor in Fabric.
 author: jejiang
 ms.author: jejiang
 ms.topic: overview 

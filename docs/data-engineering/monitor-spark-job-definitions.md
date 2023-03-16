@@ -1,6 +1,6 @@
 ---
 title: Monitor Spark job definition
-description: This article provides you instructions on how to monitor Spark job definition in Microsoft Fabric.
+description: This article provides you with instructions on how to monitor Spark job definition in Microsoft Fabric.
 author: jejiang
 ms.author: jejiang
 ms.topic: overview 
