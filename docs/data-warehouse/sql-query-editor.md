@@ -33,7 +33,7 @@ The SQL Query editor provides support for IntelliSense, code completion, syntax 
 
 ## Known limitations with warehouse editor
 
-Currently, you can only write data queries. To write statements to update data (DML) or modify schemas (DDL), see [Connectivity](../placeholder.md) and [how to use SSMS to query your data warehouse](../placeholder.md).
+Currently, you can only write data queries. To write statements to update data (DML) or modify schemas (DDL), see [Connectivity](connectivity.md) and [Query a warehouse using SSMS](query-warehouse-ssms.md).
 
 ## Next steps
 

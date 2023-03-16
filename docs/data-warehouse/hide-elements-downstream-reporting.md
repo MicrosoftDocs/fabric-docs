@@ -10,7 +10,7 @@ ms.date: 03/15/2023
 
 # Hide elements from downstream reporting
 
-**Applies to:** Warehouse (default) and warehouse
+**Applies to:** Warehouse and SQL Endpoint
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -22,6 +22,4 @@ You can also hide the entire table and individual columns by using the **Model v
 
 :::image type="content" source="media\hide-elements-downstream-reporting\model-view-canvas.png" alt-text="Screenshot showing the model view canvas options." lightbox="media\hide-elements-downstream-reporting\model-view-canvas.png":::
 
-## Next steps
-
-- [Access default datasets](access-default-datasets.md)
+**Next steps:** [Access default datasets](access-default-datasets.md)
