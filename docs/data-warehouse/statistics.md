@@ -16,7 +16,7 @@ ms.date: 03/15/2023
 
 Like any other data warehouse, the [!INCLUDE [product-name](../includes/product-name.md)] warehouse uses a query engine to create an execution plan for any given SQL query.
 
-When you submit a query, query optimizer tries to enumerate all possible plans and choose the most efficient candidate. To determine which would require the least overhead (I/O and memory), query optimizer needs to be able to evaluate the amount of work or rows that might be processed at each operator. Then based on each plan's total cost, it chooses the one with the least work and therefore return the results as quickly as possible. To estimate these costs, we need some sort of quick insight or reference to the range of values we have in a column. Our statistics is an object that contains some interesting information about a particular column that query optimizer can use.
+When you submit a query, query optimizer tries to enumerate all possible plans and choose the most efficient candidate. To determine which would require the least overhead (I/O and memory), query optimizer needs to be able to evaluate the amount of work or rows that might be processed at each operator. Then, based on each plan's total cost, it chooses the one with the least work and therefore return the results as quickly as possible. To estimate these costs, we need some sort of quick insight or reference to the range of values we have in a column. Our statistics is an object that contains some interesting information about a particular column that query optimizer can use.
 
 ## How to leverage statistics
 
@@ -37,7 +37,7 @@ To maintain optimal query performance, traditionally users have had to maintain 
 
 Whenever you issue a query and query optimizer requires statistics for particular columns, [!INCLUDE [product-name](../includes/product-name.md)] AutoStats automatically creates those statistics if they don't already exist. Once statistics have been created for the required columns, query optimizer can utilize them in exploring query plans for the triggering query. Because this creation is done synchronously, you can expect the first query run to include this stats creation time, and subsequent queries to not (as long as data hasn't changed).
 
-### To verify the creation of autoStats at query
+### To verify the creation of autostats at query
 
 There are various cases where you should expect some type of statistics to be created. The most common is the `_WA_Sys` system statistics, which is created for columns referenced in GROUP BYs, JOINs, filters (WHERE clauses), and ORDER BYs. For example, if you want to see the automatic creation of statistics in a sample query, you can test with a query like:
 
