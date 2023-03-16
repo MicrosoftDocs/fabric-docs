@@ -50,9 +50,6 @@ For the configuration of each tab under copy activity, see the following section
 - [Source](#source)
 - [Settings](#settings)
 
->[!Note]
->Destination is not supported in Microsoft 365 connector.
-
 ### General
 
 For **General** tab configuration, go to General.

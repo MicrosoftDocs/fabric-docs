@@ -20,8 +20,7 @@ This Microsoft 365 connector is supported in Trident Project  - Data Factory wit
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Basic |
-| **Dataflow Gen2 (source/destination)** |  |  |
+| **Copy activity (source/-)** | None | Basic |
 
 ## Next steps
 
