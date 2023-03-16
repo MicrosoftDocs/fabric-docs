@@ -4,9 +4,9 @@ description: Learn how to use the R language.
 ms.reviewer: mopeakande
 ms.author: negust
 author: nelgson
-ms.subservice: data-science
 ms.topic: how-to
 ms.date: 02/10/2023
+ms.search.form: R Language
 ---
 
 # How to use the R language

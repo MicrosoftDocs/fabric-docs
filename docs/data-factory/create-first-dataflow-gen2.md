@@ -4,7 +4,6 @@ description: Steps for creating dataflows and transforming data.
 ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
-ms.subservice: data-factory
 ms.topic: quickstart 
 ms.date: 01/27/2023
 ---

@@ -4,9 +4,9 @@ description: Learn how to explore and validate data with SemPy and Power BI Conn
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
-ms.subservice: data-science
 ms.topic: how-to
 ms.date: 03/10/2023
+ms.search.form: Browse PBI Metrics
 ---
 
 # How to explore and validate data with SemPy and Power BI Connector

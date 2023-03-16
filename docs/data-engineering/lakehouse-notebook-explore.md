@@ -4,7 +4,6 @@ description: Learn how to use a notebook to explore your Lakehouse data.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
-ms.subservice: data-engineering
 ms.topic: how-to
 ms.date: 02/24/2023
 ---

@@ -46,14 +46,14 @@
       "Publish",
       "Pdf"
     ],
-     "release-trident-public-preview": [
+     "release-public-preview": [
       "Publish",
       "Pdf"
     ]
   },
   "need_generate_pdf_url_template": true,
   "targets": {
-    "pdf": {
+    "Pdf": {
       "template_folder": "_themes.pdf"
     }
   }

@@ -4,7 +4,6 @@ description: Learn about the components of Apache Spark monitoring.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
-ms.subservice: data-engineering
 ms.topic: overview
 ms.date: 02/24/2023
 ---

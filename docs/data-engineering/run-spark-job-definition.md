@@ -4,7 +4,6 @@ description: Learn how to run an Apache Spark job definition in your workspace.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
-ms.subservice: data-engineering
 ms.topic: how-to
 ms.date: 02/24/2023
 ---

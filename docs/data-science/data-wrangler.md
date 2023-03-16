@@ -4,9 +4,9 @@ description: Learn how to use the Data Wrangler tool.
 ms.reviewer: mopeakande
 ms.author: negust
 author: nelgson
-ms.subservice: data-science
 ms.topic: how-to
 ms.date: 02/10/2023
+ms.search.form: Data Wrangler
 ---
 
 # How-to accelerate data prep with Data Wrangler

@@ -4,9 +4,9 @@ description: Learn how to create a Lakehouse.
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
-ms.subservice: data-engineering
 ms.topic: how-to
 ms.date: 02/24/2023
+ms.search.form: Create lakehouse
 ---
 
 # Creating a Lakehouse
