@@ -9,7 +9,7 @@ ms.date: 12/27/2022
 
 # What is the admin monitoring workspace?
 
-The Admin monitoring workspace is designed to provide admins with monitoring capabilities for their organization.
+The *Admin monitoring* workspace is designed to provide admins with monitoring capabilities for their organization. Using the Admin monitoring workspace resources, admins can perform security and governance tasks such as audits and usage checks.
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ Verify that the [new workspace experience](/power-bi/admin/service-admin-portal-
 
 The Admin monitoring workspace is enabled for Microsoft Fabric admins. Admins can also share its content with other users.
 
-The admin monitoring workspace is automatically installed during the first time you access it. To access the admin monitoring workspace, follow these steps:
+The admin monitoring workspace is automatically installed during the first time any Microsoft Fabric admin access it. To access the admin monitoring workspace, follow these steps:
 
 1. Log into Microsoft Fabric with your account.
 
