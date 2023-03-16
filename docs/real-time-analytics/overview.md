@@ -19,7 +19,6 @@ The main items available in Real-time Analytics include:
 
 See how these items work together in the following end-to-end scenario: [Tutorial: Real-time Analytics](realtime-analytics-tutorial.md)
 
-
 ## When do I choose Real-time Analytics?
 
 If any of these questions describe your data needs, Real-time Analytics is the right solution for you:
