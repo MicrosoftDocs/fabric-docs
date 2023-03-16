@@ -62,11 +62,11 @@ items:
 - name: Develop
   items:
   - name: Create a table with SSMS
-    href: create-table-ssms.md
+    href: create-table-sql-server-management-studio.md
   - name: Transactions and modify tables with SSMS
-    href: transactions-insert-modify-ssms.md
+    href: transactions-insert-modify-sql-server-management-studio.md
   - name: Query a warehouse with SSMS
-    href: query-warehouse-ssms.md
+    href: query-warehouse-sql-server-management-studio.md
   - name: Statistics
     href: statistics.md
 - name: Monitor

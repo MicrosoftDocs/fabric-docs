@@ -30,7 +30,7 @@ These three DMVs provide detailed insight on the following scenarios:
 - What's the ID of the connection to the data warehouse item and the session that is running the request?
 - How many queries are actively running?
 - Which queries are long running?
- 
+
 ## How to monitor connections, sessions, and requests using Query Lifecycle DMVs
 
 In this tutorial, learn how to monitor your running SQL queries using dynamic management views (DMVs).
@@ -90,4 +90,4 @@ KILL 101
 
 ## Next steps
 
-- [Create a table with SSMS](create-table-ssms.md)
+- [Create a table with SSMS](create-table-sql-server-management-studio.md)
