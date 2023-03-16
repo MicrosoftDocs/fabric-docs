@@ -17,7 +17,11 @@ ms.date: 03/09/2023
 
 The Fabric Notebook activity runs a notebook in your Fabric pipeline. You can create a Notebook activity directly through the [!INCLUDE [product-name](../includes/product-name.md)] user interface. For a step-by-step walkthrough of how to create a Notebook activity using the user interface, you can refer to the following.
 
-## Prerequisites
+## Add a Notebook activity to a pipeline
+
+This section describes how to use a Notebook activity in a pipeline.
+
+### Prerequisites
 
 To get started, you must complete the following prerequisites:
 
@@ -25,14 +29,10 @@ To get started, you must complete the following prerequisites:
 - A workspace is created.
 - A notebook is created in your workspace. To create a new notebook, refer to [How to create [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
-## Add a notebook activity to a pipeline with UI
-
-To use a Notebook activity in a pipeline, complete the following steps:
-
 ### General settings
 
 1. Create a new pipeline in your workspace.
-1. Search for Notebook in the pipeline Activities pane, and select it to add it to the pipeline canvas.
+1. Search for Notebook in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
 
    :::image type="content" source="media/notebook-activity/add-notebook-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Notebook activity highlighted.":::
 
@@ -56,7 +56,7 @@ Select the **Settings** tab, select an existing notebook from the **Notebook** d
 
 ## Save and run or schedule the pipeline
 
-Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select Run to run it directly, or Schedule to schedule it.  You can also view the run history here or configure other settings.
+Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/notebook-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
