@@ -11,7 +11,7 @@ ms.date: 01/27/2023
 
 # Templates in [!INCLUDE [product-name](../includes/product-name.md)]
 
-Templates are pre-defined pipelines that allow you to get started quickly with Data Integration. These templates help to reduce development time by providing an easy way to create pipelines for common data integration scenarios.  
+Templates are pre-defined pipelines that allow you to get started quickly with Data Factory. These templates help to reduce development time by providing an easy way to create pipelines for common data integration scenarios.  
 
 :::image type="content" source="media/templates/templates-list.png" lightbox="media/templates/templates-list.png" alt-text="Screenshot showing the templates browser in [!INCLUDE [product-name](../includes/product-name.md)].":::
 
@@ -26,7 +26,7 @@ Templates are pre-defined pipelines that allow you to get started quickly with D
 
    :::image type="content" source="media/templates/choose-task-to-start.png" alt-text="Screenshot showing the pipeline editor window with the Choose a task to start button highlighted.":::
 
-1. The template browser appears.  Select the **Copy data from ADLS Gen2 to Lakehouse Table** template, and then select Next.
+1. The template browser appears.  Select the **Copy data from ADLS Gen2 to Lakehouse Table** template, and then select **Next**.
 
    :::image type="content" source="media/templates/templates-list-with-template-selected.png" lightbox="media/templates/templates-list-with-template-selected.png" alt-text="Screenshot showing the templates browser and the Copy data from ADLS Gen2 to Lakehouse Table template selected.":::
 

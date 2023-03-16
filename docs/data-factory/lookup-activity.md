@@ -39,7 +39,7 @@ To use a Lookup activity in a pipeline, complete the following steps:
 
 1. Select the new Lookup activity on the canvas if it isn't already selected.
 
-   :::image type="content" source="media/lookup-activity/lookup-general-settings.png" alt-text="Screenshot showing the General settings tab of the Lookup activity.":::
+   :::image type="content" source="media/lookup-activity/lookup-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the Lookup activity.":::
 
 1. In the **General** tab at the bottom of the canvas, enter a name for the activity in the Name property.
 1. (Optional) You can also enter a description.
@@ -55,22 +55,22 @@ Select the **Settings** tab, select an existing connection from the **Connection
 
 :::image type="content" source="media/lookup-activity/choose-lookup-source-and-configure.png" alt-text="Screenshot showing the Lookup activity settings tab highlighting the tab, and where to choose a new connection.":::
 
-The example above shows a blob storage connection, but each connection type has its own configuration details specific to the data source selected.
+The example in the previous image shows a blob storage connection, but each connection type has its own configuration details specific to the data source selected.
 
 ## Supported capabilities
 
 - The Lookup activity can return up to 5000 rows; if the result set contains more records, the first 5000 rows are returned.
-- The Lookup activity output supports up to 4 MB in size, activity fails if the size exceeds the limit.
+- The Lookup activity output supports up to 4 MB in size; activity fails if the size exceeds the limit.
 - The longest duration for Lookup activity before timeout is 24 hours.
 
 > [!NOTE]
-> When you use query or stored procedure to lookup data, make sure to return one and exact one result set. Otherwise, Lookup activity fails.
+> When you use query or stored procedure to look up data, make sure to return one and exact one result set. Otherwise, Lookup activity fails.
 
 Fabric supports the data stores listed in the [Connector overview](connector-overview.md) article. Data from any source can be used.
 
 ## Save and run or schedule the pipeline
 
-Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select Run to run it directly, or Schedule to schedule it.  You can also view the run history here or configure other settings.
+Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
