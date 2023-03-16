@@ -1,23 +1,22 @@
 ---
-title: How to train models
-description: Learn how to train models.
+title: How to train models with PyTorch
+description: Learn how to train models with PyTorch.
 ms.reviewer: mopeakande
 ms.author: negust
 author: nelgson
 ms.topic: how-to
 ms.date: 02/10/2023
+ms.search.form: Train models with PyTorch
 ---
 
-# How to train models
+# How to train models with PyTorch
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-## Train models with PyTorch
-
 [PyTorch](https://pytorch.org/) is a machine learning framework based on the Torch library. It's frequently used for applications such as computer vision and natural language processing. In this article, we'll go through an example of how you can train and track the iterations of your PyTorch model.
 
-### Install PyTorch
+## Install PyTorch
 
 To get started with PyTorch, you must ensure that it's installed within your notebook. You can install or upgrade the version of PyTorch on your environment using the following command:
 
@@ -25,17 +24,17 @@ To get started with PyTorch, you must ensure that it's installed within your not
 %pip install torch
 ```
 
-### Set up the machine learning experiment
+## Set up the machine learning experiment
 
 Next, we'll create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
 
 ```python
 import mlflow
 
-mlflow.set_experiment(“sample-pytorch”)
+mlflow.set_experiment("sample-pytorch")
 ```
 
-### Train and evaluate a Pytorch model
+## Train and evaluate a Pytorch model
 
 After the experiment has been created, we'll load the MNSIT dataset, generate our test and training datasets, and create our training function.
 
@@ -142,7 +141,7 @@ for epoch in range(1):
 torch.save(model.state_dict(), model.name())
 ```
 
-### Log model with MLflow
+## Log model with MLflow
 
 Now, we'll start an MLflow run and track the results within our machine learning experiment.
 
@@ -158,9 +157,9 @@ with mlflow.start_run() as run:
     print(f"Model URI: {model_uri}")
 ```
 
-This creates a run with the specified parameters and log the run within the sample-pytorch experiment. This snippet will also create a new model called sample-pytorch.  
+This creates a run with the specified parameters and logs the run within the sample-pytorch experiment. This snippet will also create a new model called sample-pytorch.  
 
-### Load and evaluate the model
+## Load and evaluate the model
 
 Once the model is saved, it can also be loaded for inferencing.  
 
@@ -185,91 +184,6 @@ for batch_idx, (x, target) in enumerate(test_loader):
                 epoch, batch_idx + 1, ave_loss, correct_cnt * 1.0 / total_cnt
             )
         )
-```
-
-## Train models with scikit-learn
-
-Scikit-learn ([scikit-learn.org](https://scikit-learn.org)) is a popular, open-source machine learning framework. It's frequently used for supervised and unsupervised learning. It also provides various tools for model fitting, data preprocessing, model selection, model evaluation, and more.  
-
-In this section, we'll go through an example of how you can train and track the iterations of your Scikit-Learn model.
-
-### Install scikit-learn
-
-To get started with scikit-learn, you must ensure that it's installed within your notebook. You can install or upgrade the version of scikit-learn on your environment using the following command:
-
-```shell
-%pip install scikit-learn
-```
-
-Next, we'll create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
-
-```python
-import mlflow
-
-mlflow.set_experiment(“sample-sklearn”)
-```
-
-### Train a scikit-learn model
-
-After the experiment has been created, we'll create a sample dataset and create a logistic regression model. We'll also start a MLflow run and track the metrics, parameters, and final logistic regression model. Once we’ve generated the final model, we'll also save the resulting model for additional tracking.
-
-```python
-import mlflow.sklearn
-import numpy as np
-from sklearn.linear_model import LogisticRegression
-from mlflow.models.signature import infer_signature
-
-with mlflow.start_run() as run:
-
-    lr = LogisticRegression()
-    X = np.array([-2, -1, 0, 1, 2, 1]).reshape(-1, 1)
-    y = np.array([0, 0, 1, 1, 1, 0])
-    lr.fit(X, y)
-    score = lr.score(X, y)
-    signature = infer_signature(X, y)
-
-    print("log_metric.")
-    mlflow.log_metric("score", score)
-
-    print("log_params.")
-    mlflow.log_param("alpha", "alpha")
-
-    print("log_model.")
-    mlflow.sklearn.log_model(lr, "sklearn-model", signature=signature)
-    print("Model saved in run_id=%s" % run.info.run_id)
-
-    print("register_model.")
-    mlflow.register_model(
-
-        "runs:/{}/sklearn-model".format(run.info.run_id), "sample-sklearn"
-    )
-    print("All done")
-```
-
-### Load and evaluate the model on a sample dataset
-
-Once the model is saved, it can also be loaded for inferencing. To do this, we'll load the model and run the inference on a sample dataset.
-
-```python
-# Inference with loading the logged model
-from synapse.ml.predict import MLflowTransformer
-
-spark.conf.set("spark.synapse.ml.predict.enabled", "true")
-
-model = MLflowTransformer(
-    inputCols=["x"],
-    outputCol="prediction",
-    modelName="sample-sklearn",
-    modelVersion=1,
-)
-
-test_spark = spark.createDataFrame(
-    data=np.array([-2, -1, 0, 1, 2, 1]).reshape(-1, 1).tolist(), schema=["x"]
-)
-
-batch_predictions = model.transform(test_spark)
-
-batch_predictions.show()
 ```
 
 ## Next steps
