@@ -48,7 +48,7 @@ For **General** tab configuration, go to General.
 
 The following properties are supported for Amazon S3 under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-amazons3/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
+:::image type="content" source="./media/connector-amazon-s3/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
 
 The following some properties are **required**:
 
@@ -65,7 +65,7 @@ Under **Advanced**, you can specify the following fields:
 
     - **Prefix**: Prefix for the S3 key name under the given bucket configured in a dataset to filter source S3 files. S3 keys whose names start with `bucket_in_dataset/this_prefix` are selected. It utilizes S3's service-side filter, which provides better performance than a wildcard filter.
 
-    :::image type="content" source="./media/connector-amazons3/prefix.png" alt-text="Screenshot showing prefix.":::
+    :::image type="content" source="./media/connector-amazon-s3/prefix.png" alt-text="Screenshot showing prefix.":::
 
     - **Wildcard file path**: Specify the folder or file path with wildcard characters under your given blob container to filter your source folders or files.
 
@@ -73,7 +73,7 @@ Under **Advanced**, you can specify the following fields:
 
         * Wildcard folder path: The folder path with wildcard characters under the given bucket configured in a dataset to filter source folders.
 
-        :::image type="content" source="./media/connector-amazons3/wildcard-folder-path.png" alt-text="Screenshot showing wildcard file path.":::
+        :::image type="content" source="./media/connector-amazon-s3/wildcard-folder-path.png" alt-text="Screenshot showing wildcard file path.":::
 
         * Wildcard file name: The file name with wildcard characters under the given bucket and folder path (or wildcard folder path) to filter source files.
 
