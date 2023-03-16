@@ -79,7 +79,7 @@ Under **Advanced**, you can specify the following fields:
 
     - **List of files**: Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured in the dataset.
 
-    :::image type="content" source="./media/connector-amazons3/path-to-file-list.png" alt-text="Screenshot showing list of files.":::
+    :::image type="content" source="./media/connector-amazon-s3/path-to-file-list.png" alt-text="Screenshot showing list of files.":::
 
 - **Recursively**: Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **recursive** is set to **true** and the sink is a file-based store, an empty folder or subfolder isn't copied or created at the sink.
 Allowed values are **true** (default) and **false**.
