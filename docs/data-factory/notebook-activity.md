@@ -27,7 +27,7 @@ To get started, you must complete the following prerequisites:
 
 ## Add a notebook activity to a pipeline with UI
 
-To use a Notebook activity for in a pipeline, complete the following steps:
+To use a Notebook activity in a pipeline, complete the following steps:
 
 ### General settings
 
@@ -42,7 +42,7 @@ To use a Notebook activity for in a pipeline, complete the following steps:
 
 1. In the **General** tab at the bottom of the canvas, enter a name for the activity in the Name property.
 1. (Optional) You can also enter a description.
-1. Timeout: The Maximum amount of time an activity can run. The default is 12 hours, and the maximum amount of time allowed is seven days. The format for the timeout is in D.HH:MM:SS.
+1. Timeout: The maximum amount of time an activity can run. The default is 12 hours, and the maximum amount of time allowed is seven days. The format for the timeout is in D.HH:MM:SS.
 1. Retry: Maximum number of retry attempts.
 1. (Advanced properties) Retry interval (sec): The number of seconds between each retry attempt.
 1. (Advanced properties) Secure output: When checked, output from the activity isn't captured in logging.
