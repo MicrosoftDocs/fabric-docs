@@ -20,10 +20,9 @@ This Google Cloud Storage connector is supported in Trident Project - Data Facto
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Basic |
+| **Copy activity (source/-)** | None | Basic |
 | **Lookup activity** | None | Basic |
 | **GetMetadata activity** | None | Basic |
-| **Dataflow Gen2 (source/destination)** |  |  |
 
 ## Next Steps
 

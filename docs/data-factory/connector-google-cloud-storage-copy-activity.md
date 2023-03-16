@@ -37,9 +37,6 @@ For the configuration of each tab under copy activity, see the following section
 - [Source](#source)
 - [Settings](#settings)
 
->[!Note]
->Destination is not supported in Google Cloud Storage connector.
-
 ### General
 
 For **General** tab configuration, go to General.
