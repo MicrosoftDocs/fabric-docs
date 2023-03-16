@@ -4,7 +4,6 @@ description: Learn about activities.
 ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
-ms.subservice: data-factory
 ms.topic: overview 
 ms.date: 01/27/2023
 ---
