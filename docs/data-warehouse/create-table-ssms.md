@@ -16,7 +16,7 @@ ms.date: 03/15/2023
 
 To get started, you must complete the following prerequisites:
 
-- [Download SSMS Version 18.0+](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16&preserve-view=true)
+- [Download SSMS](/sql/ssms/download-sql-server-management-studio-ssms) (use the latest version available)
 - Have access to a warehouse item within a premium per capacity workspace with contributor or above permissions
 - Have a warehouse connected to SSMS via T-SQL Connection String (see Connectivity)
 
@@ -36,6 +36,7 @@ The following steps detail how to create a table using SSMS when connected to a 
 
 ### CREATE TABLE T-SQL syntax
 
+TODO: Remove and replace with link to /sql/t-sql/statements/create-table-azure-sql-data-warehouse
 ```
 CREATE TABLE { database_name.schema_name.table_name | schema_name.table_name | table_name } 
     (  
