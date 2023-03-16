@@ -26,25 +26,25 @@ The following steps detail how to execute a variety of simple and complex SQL qu
 
 1. After successfully connecting to SSMS via your T-SQL end-point, expand your database and tables folder in the **Object Explorer** to see all tables listed.
 
-   :::image type="content" source="media\query-warehouse-ssms\object-explorer-connect.png" alt-text="Screenshot of where the Connect option appears on the Object Explorer ribbon." lightbox="media\query-warehouse-ssms\object-explorer-connect.png":::
+   :::image type="content" source="media\query-warehouse-sql-server-management-studio\object-explorer-connect.png" alt-text="Screenshot of where the Connect option appears on the Object Explorer ribbon." lightbox="media\query-warehouse-sql-server-management-studio\object-explorer-connect.png":::
 
 1. Right-click on the table that you would like to query and select **SELECT Top 1000 Rows**.
 
-   :::image type="content" source="media\query-warehouse-ssms\context-menu-select-top.png" alt-text="Screenshot showing where to select the Select Top 1000 Rows option in the right-click menu." lightbox="media\query-warehouse-ssms\context-menu-select-top.png":::
+   :::image type="content" source="media\query-warehouse-sql-server-management-studio\context-menu-select-top.png" alt-text="Screenshot showing where to select the Select Top 1000 Rows option in the right-click menu." lightbox="media\query-warehouse-sql-server-management-studio\context-menu-select-top.png":::
 
 1. Once the script is automatically generated, select the **Execute** button to run the script and see the results.
 
-   :::image type="content" source="media\query-warehouse-ssms\execute-button.png" alt-text="Screenshot showing where to find the Execute button." lightbox="media\query-warehouse-ssms\execute-button.png":::
+   :::image type="content" source="media\query-warehouse-sql-server-management-studio\execute-button.png" alt-text="Screenshot showing where to find the Execute button." lightbox="media\query-warehouse-sql-server-management-studio\execute-button.png":::
 
 ## Run a new query based on a warehouse connection
 
 1. To open a tab to write a new query, locate the warehouse, and right-click to select **New Query**.
 
-   :::image type="content" source="media\query-warehouse-ssms\context-menu-new-query.png" alt-text="Screenshot showing where to select New Query in the context menu." lightbox="media\query-warehouse-ssms\context-menu-new-query.png":::
+   :::image type="content" source="media\query-warehouse-sql-server-management-studio\context-menu-new-query.png" alt-text="Screenshot showing where to select New Query in the context menu." lightbox="media\query-warehouse-sql-server-management-studio\context-menu-new-query.png":::
 
 1. A new tab appears for you to write a SQL query.
 
-   :::image type="content" source="media\query-warehouse-ssms\new-query-tab.png" alt-text="Screenshot of a new query tab." lightbox="media\query-warehouse-ssms\new-query-tab.png":::
+   :::image type="content" source="media\query-warehouse-sql-server-management-studio\new-query-tab.png" alt-text="Screenshot of a new query tab." lightbox="media\query-warehouse-sql-server-management-studio\new-query-tab.png":::
 
 ## Write a cross-database SQL Query
 

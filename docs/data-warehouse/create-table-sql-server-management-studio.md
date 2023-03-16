@@ -28,11 +28,11 @@ The following steps detail how to create a table using SSMS when connected to a 
 
 1. To open a tab to write a new query, locate the warehouse and right-click to select **New Query**.
 
-   :::image type="content" source="media\create-table-ssms\right-click-new-query.png" alt-text="Screenshot showing where to select New Query in the right-click menu." lightbox="media\create-table-ssms\right-click-new-query.png":::
+   :::image type="content" source="media\create-table-sql-server-management-studio\right-click-new-query.png" alt-text="Screenshot showing where to select New Query in the right-click menu." lightbox="media\create-table-sql-server-management-studio\right-click-new-query.png":::
 
 1. A new tab appears for you to write your CREATE TABLE SQL query
 
-   :::image type="content" source="media\create-table-ssms\create-table-new-tab.png" alt-text="Screenshot of a new tab opened next to the Object Explorer pane." lightbox="media\create-table-ssms\create-table-new-tab.png":::
+   :::image type="content" source="media\create-table-sql-server-management-studio\create-table-new-tab.png" alt-text="Screenshot of a new tab opened next to the Object Explorer pane." lightbox="media\create-table-sql-server-management-studio\create-table-new-tab.png":::
 
 ### CREATE TABLE T-SQL syntax
 
@@ -97,4 +97,4 @@ At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL s
 
 ## Next steps
 
-- [Transactions and modify tables with SSMS](transactions-insert-modify-ssms.md)
+- [Transactions and modify tables with SSMS](transactions-insert-modify-sql-server-management-studio.md)
