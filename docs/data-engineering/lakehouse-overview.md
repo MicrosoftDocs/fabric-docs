@@ -6,6 +6,7 @@ ms.author: avinandac
 author: avinandaMS
 ms.topic: overview
 ms.date: 02/24/2023
+ms.search.form: Lakehouse Overview
 ---
 
 # What is a Lakehouse?

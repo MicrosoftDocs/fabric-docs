@@ -6,6 +6,7 @@ ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
 ms.date: 02/24/2023
+ms.search.form: Lakehouse Get Data
 ---
 
 # Get data experience for Lakehouse

@@ -12,7 +12,7 @@ ms.date: 03/15/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article describes how to get started with warehouse using the [!INCLUDE [product-name](../includes/product-name.md)] portal, including discovering creation and consumption of the warehouse. You’ll learn how to create your warehouse from scratch, how to load data, how to rename or delete a warehouse, and other helpful information to get you acquainted and proficient with warehouse capabilities offered through the [!INCLUDE [product-name](../includes/product-name.md)] portal.
+This article describes how to get started with warehouse using the [!INCLUDE [product-name](../includes/product-name.md)] portal, including discovering creation and consumption of the warehouse. You learn how to create your warehouse from scratch, how to load data, how to rename or delete a warehouse, and other helpful information to get you acquainted and proficient with warehouse capabilities offered through the [!INCLUDE [product-name](../includes/product-name.md)] portal.
 
 > [!NOTE]
 > It is important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as SQL Server Management Studio (SSMS) and Azure Data studio (ADS) (for users who prefer to use T-SQL for the majority of their data processing needs). See [Connectivity](../placeholder.md) for additional information on these topics.
