@@ -144,7 +144,7 @@
       - name: For-each activity
         href: ../placeholder.md
       - name: Pipeline lookup activity
-        href: ../placeholder.md
+        href: lookup-activity.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
       - name: Notebook activity
