@@ -4,7 +4,6 @@ description: Learn about templates in [!INCLUDE [product-name](../includes/produ
 ms.reviewer: xupzhou
 ms.author: jburchel
 author: jonburchel
-ms.subservice: data-factory
 ms.topic: conceptual 
 ms.date: 01/27/2023
 ---

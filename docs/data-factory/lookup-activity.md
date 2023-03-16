@@ -4,7 +4,6 @@ description: Learn how to add a lookup activity to a pipeline and use it to look
 ms.reviewer: xupxhou
 ms.author: jburchel
 author: jonburchel
-ms.subservice: data-factory
 ms.topic: how-to
 ms.date: 03/16/2023
 ---
