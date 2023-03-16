@@ -8,7 +8,7 @@ ms.date: 02/07/2022
 ms.custom: template-how-to 
 ---
 
-# REST connector Overview
+# REST connector overview
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
@@ -23,7 +23,7 @@ This REST connector is supported in Trident Project - Data Factory with the foll
 | **Copy activity (source/destination)** | None | Anonymous<br/> Basic |
 | **Dataflow Gen2 (source/destination)** |  |  |
 
-## Next Steps
+## Next steps
 
 [How to create REST connection](connector-rest.md)
 
