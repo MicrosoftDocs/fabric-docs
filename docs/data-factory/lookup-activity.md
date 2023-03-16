@@ -39,7 +39,7 @@ To use a Lookup activity for in a pipeline, complete the following steps:
 
 1. Select the new Lookup activity on the canvas if it isn't already selected.
 
-   :::image type="content" source="media/notebook-activity/notebook-general-settings.png" alt-text="Screenshot showing the General settings tab of the Lookup activity.":::
+   :::image type="content" source="media/lookup-activity/lookup-general-settings.png" alt-text="Screenshot showing the General settings tab of the Lookup activity.":::
 
 1. In the **General** tab at the bottom of the canvas, enter a name for the activity in the Name property.
 1. (Optional) You can also enter a description.
@@ -53,14 +53,14 @@ To use a Lookup activity for in a pipeline, complete the following steps:
 
 Select the **Settings** tab, select an existing connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details.
 
-:::image type="content" source="media/notebook-activity/choose-lookup-source-and-configure.png" alt-text="Screenshot showing the Lookup activity settings tab highlighting the tab, and where to choose a new connection.":::
+:::image type="content" source="media/lookup-activity/choose-lookup-source-and-configure.png" alt-text="Screenshot showing the Lookup activity settings tab highlighting the tab, and where to choose a new connection.":::
 
 The example above shows a blob storage connection, but each connection type has its own configuration details specific to the data source selected.
 
 ## Supported capabilities
 
-- The Lookup activity can return up to 5000 rows; if the result set contains more records, the first 5000 rows will be returned.
-- The Lookup activity output supports up to 4 MB in size, activity will fail if the size exceeds the limit.
+- The Lookup activity can return up to 5000 rows; if the result set contains more records, the first 5000 rows are returned.
+- The Lookup activity output supports up to 4 MB in size, activity fails if the size exceeds the limit.
 - The longest duration for Lookup activity before timeout is 24 hours.
 
 > [!NOTE]
