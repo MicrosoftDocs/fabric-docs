@@ -5,12 +5,20 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
-ms.date: 03/09/2023
+ms.date: 03/16/2023
 ms.search.form: product-kusto
 ---
 # What is Real-time Analytics in Fabric?
 
-Real-time Analytics is the Microsoft Fabric solution for managing logs, observability, telemetry, and IoT data. Real-time Analytics is optimized for the capture and analysis of data that includes a time-series element, by using the intuitive and powerful Kusto Query Language (KQL) to explore and visualize data, and by seamlessly integrating with other Fabric workloads.
+The constant flow of data emitted by devices, events, and users has radically expanded our ability to gain insights into scenarios behind data and to make data-based decisions. Real-time Analytics in Microsoft Fabric uses streaming data ingestion and a simple to understand query language to enable all users, from the citizen data scientist to advanced engineers, immediate access to analyze data and gain insights. This is achieved through automatic data streaming, automatic indexing and data partitioning, and use of the Kusto Query Language for on-demand query generation and visualizations. Real-time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
+
+The main items available in Real-time Analytics include:
+
+* A [KQL Database](create-database.md) is the entity for data storage and management. Data ingested into a KQL Database is automatically reflected in OneLake, and available to other workloads.
+* A [KQL Queryset](kusto-query-set.md) is the item used to run queries, and view and manipulate query results on data from your Data Explorer database. The KQL Queryset allows you to save queries for future use, or export and share queries with others.
+
+See how these items work together in the following end-to-end scenario: [Tutorial: Real-time Analytics](realtime-analytics-tutorial.md)
+
 
 ## When do I choose Real-time Analytics?
 
@@ -19,8 +27,8 @@ If any of these questions describe your data needs, Real-time Analytics is the r
 > [!div class="checklist"]
 >
 > * Do I have a service that needs to access data in real-time?
->* Do I have complicated data, such as JSON or other arrays?
->* Do I need to search or access free text?
+> * Do I have complicated data, such as JSON or other arrays?
+> * Do I need to search or access free text?
 
 :::image type="content" source="media/real-time-analytics-overview/schematic-single-company.png" alt-text="Schematic image of single company architecture.":::
 
@@ -52,17 +60,6 @@ Real-time Analytics provides the following defining advantages:
 * Automatic time and hash-based partitioning
 * By-default streaming
 * By-default indexing
-
-## How do I use Real-time Analytics?
-
-The main items available in Real-time Analytics include:
-
-* A [KQL Database](create-database.md) is the entity for data storage and management. Data ingested into a KQL Database is automatically reflected in OneLake, and available to other workloads.
-* A [KQL Queryset](kusto-query-set.md) is the item used to run queries, and view and manipulate query results on data from your Data Explorer database. The KQL Queryset allows you to save queries for future use, or export and share queries with others.
-
-See how these items work together in the following end-to-end scenario:
-
-For more information, see [Tutorial: Real-time Analytics](realtime-analytics-tutorial.md)
 
 ## How does Real-time Analytics integrate with other workloads?
 
