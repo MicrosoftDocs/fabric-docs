@@ -1,6 +1,6 @@
 ---
-title: explore the data in your Lakehouse with a notebook
-description: Learn how to use a notebook to explore your Lakehouse data.
+title: High Concurrency Mode for Notebooks
+description: Learn how to use High Concurrency Mode to reuse session across multiple notebooks.
 ms.reviewer: snehagunda
 ms.author: santhoshravindran7
 author: saravi
