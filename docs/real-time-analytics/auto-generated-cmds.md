@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: quickstart / get-started
-ms.date: 03/16/2023
+ms.date: 03/17/2023
 ms.search.form: product-kusto
 ---
 
