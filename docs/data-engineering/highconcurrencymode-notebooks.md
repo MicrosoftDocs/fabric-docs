@@ -15,7 +15,7 @@ ms.date: 03/16/2023
 
 When you run a notebook in Microsoft Fabric, an Apache Spark session is started and is used to run the queries submitted as part of the notebook cell executions. With High Concurrency Mode enabled, there's no need to start new spark sessions every time to run a notebook. If you already have a High Concurrency session running, you could attach notebooks to the High Concurrency session getting a spark session instantly to run the queries and achieve a greater session utilization rate. 
 
-> [Note]
+> [!NOTE]
 > The high concurrency mode-based session sharing is always within a single user boundary. 
 > The notebooks need to have matching spark configurations, share the same default lakehouse and libraries to share a single spark session. 
 
