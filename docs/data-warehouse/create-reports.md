@@ -20,6 +20,6 @@ For example, you can establish a live connection to a shared dataset in the Powe
 
 Advanced users can build reports from a warehouse using a composite model or using the SQL Endpoint.
 
-Reports that use warehouse can currently be created with the the Power BI service. Let's take a look at how warehouse can be used with this tool: [Create reports in the Power BI service](reports-power-bi-service.md).
+Reports that use warehouse can currently be created with the Power BI service. Let's take a look at how warehouse can be used with this tool: [Create reports in the Power BI service](reports-power-bi-service.md).
 
 **Next steps:** [Warehouse settings and context menus](settings-context-menus.md)
