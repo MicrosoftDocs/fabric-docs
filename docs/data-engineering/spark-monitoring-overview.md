@@ -35,7 +35,7 @@ The Spark job definition Inline Monitoring feature allows you to view Spark job 
 
 For Pipeline Spark Activity Inline Monitoring, deep links have been built into the Notebook and Spark job definition activities within the Pipeline. You can view Spark application execution details, the respective Notebook and Spark job definition snapshot, and access Spark logs for troubleshooting. If the Spark activities fail, the inline error message is also available within Pipeline Spark activities.
 
-## How to: Follow step-by-step instructions to get started
+## Next steps
 
 - [Workspace artifact recent runs](spark-artifact-recent-runs.md)
 - [Notebook contextual monitoring and debugging](spark-monitor-debug.md)

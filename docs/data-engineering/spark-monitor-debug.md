@@ -89,5 +89,5 @@ def testDataSkew(sc: SparkContext): Unit = {
 
 ## Next steps
 
-- Spark advisor
+- [Spark advisor](spark-advisor-introduction.md)
 - [Apache Spark application detail monitoring](spark-detail-monitoring.md)
