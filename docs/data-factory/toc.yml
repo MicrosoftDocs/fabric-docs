@@ -142,7 +142,7 @@
       - name: Copy activity
         href: copy-data-activity.md
       - name: For-each activity
-        href: ../placeholder.md
+        href: foreach-activity.md
       - name: Pipeline lookup activity
         href: lookup-activity.md
       - name: Monitor data pipeline runs
