@@ -22,4 +22,6 @@ You can also hide the entire table and individual columns by using the **Model v
 
 :::image type="content" source="media\hide-elements-downstream-reporting\model-view-canvas.png" alt-text="Screenshot showing the model view canvas options." lightbox="media\hide-elements-downstream-reporting\model-view-canvas.png":::
 
-**Next steps:** [Access default datasets](access-default-datasets.md)
+## Next steps
+
+ - [Access default datasets](access-default-datasets.md)
