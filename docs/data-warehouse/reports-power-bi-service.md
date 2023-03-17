@@ -46,4 +46,4 @@ To find the warehouse, you begin with the **Data hub**. The following image show
 
 ## Next steps
 
-- [Connectivity](../placeholder.md)
+- [Connectivity](connectivity.md)
