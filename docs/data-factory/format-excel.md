@@ -18,25 +18,24 @@ ms.custom: template-how-to
 
 Excel format is supported for the following connectors and activities.
 
-|**Supported connector**|
-|:---|
-|Amazon S3|
-|[Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)|
-|[Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
-|Google Cloud Storage|
-|[HTTP](connector-http-copy-activity.md)|
-|REST|
-|**Supported activity**|
-|Copy activity|
-|GetMetadata activity|
-|Delete activity|
+| Category | Connector/Activity | 
+|---|---|
+| **Supported connector** | Amazon S3|
+|  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
+|  | Azure Data Lake Storage Gen1 |
+|  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md) |
+|  | Google Cloud Storage | 
+|  | [HTTP](connector-http-copy-activity.md)| 
+|  | REST | 
+| **Supported activity** | Copy activity |
+|  | GetMetadata activity |
+|  | Delete activity | 
 
 ## Excel format in copy activity
 
 You can find the file format settings by selecting **File settings** in source in data pipeline copy activity.
 
-:::image type="content" source="./media/format-common/file-settings.png" alt-text="Screenshot showing file settings button.":::
-
+:::image type="content" source="./media/format-excel/file-settings.png" alt-text="Screenshot showing file settings button.":::
 > [!Note]
 > Excel format is only supported in copy activity source.
 
