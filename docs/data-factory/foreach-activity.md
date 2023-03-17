@@ -45,7 +45,7 @@ To get started, you must complete the following prerequisites:
 
 Select the **Settings** tab, where you can specify whether processing of the items in the batch should be **Sequential** (or otherwise in parallel), a maximum number of items to process at the same time with **Batch count**, and a list of **Items**, which can be parameterized or include dynamic content. Add a few items to the **Items** list as shown in the example.
 
-:::image type="content" source="media/notebook-activity/foreach-settings.png" alt-text="Screenshot showing the ForEach settings tab with several items added to the Items list.":::
+:::image type="content" source="media/foreach-activity/foreach-settings.png" alt-text="Screenshot showing the ForEach settings tab with several items added to the Items list.":::
 
 ### ForEach activities
 
