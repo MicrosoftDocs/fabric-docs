@@ -12,7 +12,7 @@ ms.date: 03/15/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-**Applies to:** Warehouse (default) and warehouse
+**Applies to:** Warehouse and SQL Endpoint
 
 Settings are accessible from the context menu or from the Settings icon in the ribbon when you open the item. There are some key differences in the actions you can take in settings depending on if you're interacting with the warehouse (default) or warehouse item.
 
