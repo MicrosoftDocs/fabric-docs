@@ -45,7 +45,8 @@ By default, all the Fabric workspaces will be enabled with High Concurrency Mode
 :::image type="content" source="media\high-concurrency-mode-for-notebooks\start-new-high-concurrency-session-from-sessions.png" alt-text="Screenshot showing the option to start a new high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\start-new-high-concurrency-session-from-sessions.png":::
 6.	Create a new notebook and by navigating to the Run menu tab as mentioned in the above steps, in the drop down menu you will now see the newly created high concurrency session listed. 
 7.	Selecting the existing high concurrency session attaches the second notebook to the session.
-:::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-for-notebooks\attach-session.png" alt-text="Screenshot showing the option to detach from a high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-for-notebooks\attach-session.png":::
+:::image type="content" source="media\high-concurrency-mode-for-notebooks\attach-session.png" alt-text="Screenshot showing the option to attach to an existing high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\attach-session.png":::
+
 8.	Once the notebook has been attached, you can start executing the notebook steps instantly. 
 9.	The High Concurrency session status also shows the number of notebooks attached to a given session at any point in time. 
 10. At any point in time if you feel the notebook attached to a High Concurrency session requires more dedicated compute, you can choose to switch the notebook to a standard session at any point in time, by selecting the option to detach to a standard session in the Run menu tab. 
