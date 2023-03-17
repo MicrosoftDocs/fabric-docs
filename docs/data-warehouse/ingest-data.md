@@ -16,6 +16,8 @@ ms.date: 03/15/2023
 
 In order to really use your data warehouse, you first need to bring data into it! In this article, we cover the features you need to know about to bring data into your data warehouse.
 
+## Ingest data options
+
 Those key features include:
 
 - COPY
