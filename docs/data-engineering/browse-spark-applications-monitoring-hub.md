@@ -64,7 +64,7 @@ If you need more information about Apache Spark execution statistics, access Apa
 ## Next steps
 
 - [Apache Spark monitoring overview](spark-monitoring-overview.md)
-- [Browse Artifact’S recent runs](spark-artifact-recent-runs.md)
+- [Browse Artifact’s recent runs](spark-artifact-recent-runs.md)
 - [Monitor Apache Spark jobs within notebooks](spark-monitor-debug.md)
 - [Monitor Apache Spark job definition](monitor-spark-job-definitions.md)
 - [Monitor Apache Spark application details](spark-detail-monitoring.md)
