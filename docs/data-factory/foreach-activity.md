@@ -18,7 +18,7 @@ The ForEach Activity defines a repeating control flow in a [!INCLUDE [product-na
 
 ## Add a ForEach activity to a pipeline
 
-This section describes how to use a Notebook activity in a pipeline.
+This section describes how to use a ForEach activity in a pipeline.
 
 ### Prerequisites
 
