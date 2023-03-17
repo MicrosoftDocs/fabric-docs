@@ -59,7 +59,7 @@ Select the **+** button to add a new activity to the pane. You'll see a list of 
 
 ### Referencing an item within an activity
 
-Select one of the child activities in the ForEach **Activities** pane, and switch to its **Settings** tab.  In this example, we selected a **Stored Procedure** activity.  Populate the settings for the activity as you normally would select a connection and stored procedure.  You can use the **@item()** iterator to refer to the current item being processed anywhere within an activity that supports dynamic content.  Here we provided the **@item()** as the value for the FruitName parameter that is passed to a stored procedure.
+Select one of the child activities in the ForEach **Activities** pane, and switch to its **Settings** tab.  In this example, a **Stored Procedure** activity was selected.  Populate the settings for the activity as you normally would select a connection and stored procedure.  You can use the **@item()** iterator to refer to the current item being processed anywhere within an activity that supports dynamic content.  Here the **@item()** was used as the value for the FruitName parameter that is passed to a stored procedure.
 
 :::image type="content" source="media/foreach-activity/foreach-child-activity-configuration.png" alt-text="Screenshot showing a stored procedure child activity with a parameter using the current @item() from the ForEach items list for its value.":::
 
