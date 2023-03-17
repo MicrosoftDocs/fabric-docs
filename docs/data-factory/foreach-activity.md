@@ -30,7 +30,7 @@ To get started, you must complete the following prerequisites:
 ### General settings
 
 1. Create a new pipeline in your workspace.
-1. Search for **ForEach** in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. If you cannot see it initially, use the arrow on the right side of the activities toolbar to scroll to the right to find it.
+1. Search for **ForEach** in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. If you can't see it initially, use the arrow on the right side of the activities toolbar to scroll to the right to find it.
 
    :::image type="content" source="media/foreach-activity/add-foreach-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and ForEach activity highlighted.":::
 
@@ -43,23 +43,23 @@ To get started, you must complete the following prerequisites:
 
 ### ForEach settings
 
-Select the **Settings** tab, where you can specify whether processing of the items in the batch should be **Sequential** (or otherwise in parallel), a maximum number of items to process at the same time with **Batch count**, and a list of **Items**, which can be parameterized or include dynamic content. Add a few items to the **Items** list as shown in the example.
+Select the **Settings** tab, where you can specify whether processing of the items in the batch should be **Sequential** (or otherwise in parallel). You can also specify a maximum number of items to process at the same time with **Batch count**. Finally, you must specify a list of comma delimited **Items**, which can be parameterized or include dynamic content. Add a few items to the **Items** list as shown in the example.
 
 :::image type="content" source="media/foreach-activity/foreach-settings.png" alt-text="Screenshot showing the ForEach settings tab with several items added to the Items list.":::
 
 ### ForEach activities
 
-You will also define an activity or activities to be performed on each of the items in the list, in the ForEach **Activities** pane.
+You'll also define an activity or activities to be performed on each of the items in the list, in the ForEach **Activities** pane.
 
 :::image type="content" source="media/foreach-activity/foreach-activities-pane.png" alt-text="Screenshot showing the ForEach activities pane.":::
 
-Select the **+** button to add a new activity to the pane. You will see a list of activities to choose. You can add multiple activities to the ForEach activity, and each will be run on each of the items in the **Items** list.  Whether the **Sequential** option is selected in the ForEach settings or not, each of the child activities in the ForEach activities pane are processed sequentially to one another for each item. However, if **Sequential** is not selected, multiple items are processed in parallel, each of them running sequentially through the list of child activities specified.
+Select the **+** button to add a new activity to the pane. You'll see a list of activities to choose. You can add multiple activities to the ForEach activity, and each is run on each of the items in the **Items** list.  Whether the **Sequential** option is selected in the ForEach settings or not, each of the child activities in the ForEach activities pane are processed sequentially to one another for each item. However, if **Sequential** isn't selected, multiple items are processed in parallel, each of them running sequentially through the list of child activities specified.
 
 :::image type="content" source="media/foreach-activity/foreach-child-activities.png" alt-text="Screenshot showing a ForEach activity with multiple child activities specified, and the + button highlighted showing a list of child activities to choose from when adding new activities to the pane.":::
 
 ### Referencing an item within an activity
 
-Select one of the child activities within the ForEach **Activities** pane, and switch to its **Settings** tab.  In this example we selected a **Stored Procedure** activity.  Populate the settings for the activity as you normally would to select a connection and stored procedure.  You can use the **@item()** iterator to refer to the current item being processed anywhere within an activity that supports dynamic content.  Here we provided the **@item()** as the value for the FruitName parameter that will be passed to a stored procedure.
+Select one of the child activities in the ForEach **Activities** pane, and switch to its **Settings** tab.  In this example, we selected a **Stored Procedure** activity.  Populate the settings for the activity as you normally would select a connection and stored procedure.  You can use the **@item()** iterator to refer to the current item being processed anywhere within an activity that supports dynamic content.  Here we provided the **@item()** as the value for the FruitName parameter that is passed to a stored procedure.
 
 :::image type="content" source="media/foreach-activity/foreach-child-activity-configuration.png" alt-text="Screenshot showing a stored procedure child activity with a parameter using the current @item() from the ForEach items list for its value.":::
 
