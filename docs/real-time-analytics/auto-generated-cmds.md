@@ -1,19 +1,17 @@
 ---
-title: Auto-generated commands in Real-Time Analytics
-description: Learn how to use query data with auto-generated queries and commands.
+title: Quickstart- Query data with quick queries and commands in Real-Time Analytics
+description: Learn how to use auto-generated queries and commands to get an initial look at your data.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
-ms.topic: quickstart / get-started
-ms.date: 03/17/2023
+ms.topic: quickstart
+ms.date: 03/19/2023
 ms.search.form: product-kusto
 ---
 
-# <!--Quickstart: Query data with quick queries and commands--> Get started with quick queries and commands
+# Quickstart: Query data with quick queries and commands
 
-<!-- I think a quickstart is more suitable because it can include prerequisites, and we can have multiple sections with numbered steps-->
-
-Real-time Analytics offers a variety of features that makes it easy to start analyzing your data. You can either do <!-- ABC---> using [Materialized view](#materialized-view), create or alter an existing stored user-defined [function](#function), or use auto-generated queries to [Query your table](#query-table) and get an initial look at your data.
+Real-time Analytics offers a variety of features that make it easy to start analyzing your data. You can either query a [Materialized view](#materialized-view), create or alter an existing stored user-defined [function](#function), or use auto-generated queries to [Query your table](#query-table) and get an initial look at your data.
 
 ## Prerequisites
 
