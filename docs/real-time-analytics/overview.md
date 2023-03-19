@@ -10,9 +10,7 @@ ms.search.form: product-kusto
 ---
 # What is Real-time Analytics in Fabric?
 
-The constant flow of data emitted by devices, events, and users has radically expanded our ability to gain insights into scenarios behind data and to make data-based decisions. 
-
-Real-time Analytics in Microsoft Fabric enables all users, from the citizen data scientist to advanced engineers, immediate access to analyze data and gain insights.
+The constant flow of data emitted by devices, events, and users has radically expanded our ability to gain insights into scenarios behind data and to make data-based decisions. Simple tasks such as watching TV or shopping are now integrated with our own personal behavioral data. Enterprise data has the same need to provide real-time data that can be consumed and acted upon by a wide variety of users. Real-time Analytics in Microsoft Fabric enables all users, from the citizen data scientist to advanced engineers, immediate access to analyze data and gain insights. You can use Real-time Analytics whether you're looking for no code, or if you want to use complex code and advanced capabilities such as python plugins, anomaly detection, or more.
 
 Quick access to data insights is achieved through automatic data streaming, automatic indexing and data partitioning, and through the use of the Kusto Query Language for on-demand query generation and visualizations. Real-time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
 
