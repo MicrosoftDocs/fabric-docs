@@ -27,7 +27,7 @@ Real-time Analytics provides the following defining advantages:
 * Automatic time and hash-based partitioning
 * By-default indexing
 
-## When to choose Real-time Analytics?
+## When to choose Real-time Analytics
 
 A number of industries use Real-time Analytics for their data needs, for example: finance, transportation and logistics, smart cities, smart buildings, manufacturing operations, automotive, and oil and gas. If any of these questions describe your data needs, Real-time Analytics is the right solution for you:
 
@@ -47,16 +47,16 @@ The main items available in Real-time Analytics include:
 
 See how these items work together in the end-to-end streaming data consumption and analysis scenario: [Tutorial: Real-time Analytics](realtime-analytics-tutorial.md)
 
-## How does Real-time Analytics integrate with other workloads?
+## Integration with other workloads
 
 :::image type="content" source="media/real-time-analytics-overview/schematic-architecture.png" alt-text="Schematic image of architecture of Real-time Analytics integration with other workloads.":::
 
-
-PBI quick create
-PBI for Kusto DB
-Data Integration 
-OneLake
-Data Engineering - Notebook and Spark
+* Data in OneLake can be accessed by Real-time Analytics in several ways:
+    * Data from OneLake can be [queried from Real-time Analytics as an external table](onelake-shortcut.md)
+    * Data from [OneLake can be ingested](get-data-onelake.md) and indexed in Real-time Analytics
+    * Data ingested into Real-time Analytics is reflected in OneLake as one logical copy
+* Data ingested into Real-time Analytics can be used as the underlying data for [visualization in a PowerBI report](create-powerbi-report.md)
+* Data ingested into Real-time Analytics can be used for analysis in [Jupyter](jupyter-notebook.md) or Spark Notebooks in Data Engineering
 
 ## See also
 
