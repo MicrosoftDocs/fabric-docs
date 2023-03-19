@@ -10,14 +10,14 @@ ms.search.form: product-kusto
 ---
 # What is Real-time Analytics in Fabric?
 
-The constant flow of data emitted by devices, events, and users has radically expanded our ability to gain insights into scenarios behind data and to make data-based decisions. Real-time Analytics in Microsoft Fabric uses streaming data ingestion and a simple to understand query language to enable all users, from the citizen data scientist to advanced engineers, immediate access to analyze data and gain insights. This is achieved through automatic data streaming, automatic indexing and data partitioning, and use of the Kusto Query Language for on-demand query generation and visualizations. Real-time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
+The constant flow of data emitted by devices, events, and users has radically expanded our ability to gain insights into scenarios behind data and to make data-based decisions. Real-time Analytics in Microsoft Fabric uses a combination of streaming data ingestion and a simple-to-understand query language to enable all users, from the citizen data scientist to advanced engineers, immediate access to analyze data and gain insights. This quick access to data insights is achieved through automatic data streaming, automatic indexing and data partitioning, and through the use of the Kusto Query Language for on-demand query generation and visualizations. Real-time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
 
 The main items available in Real-time Analytics include:
 
-* A [KQL Database](create-database.md) is the entity for data storage and management. Data ingested into a KQL Database is automatically reflected in OneLake, and available to other workloads.
-* A [KQL Queryset](kusto-query-set.md) is the item used to run queries, and view and manipulate query results on data from your Data Explorer database. The KQL Queryset allows you to save queries for future use, or export and share queries with others.
+* A [KQL Database](create-database.md) for data storage and management. Data ingested into a KQL Database is automatically reflected in OneLake, and is available to other workloads.
+* A [KQL Queryset](kusto-query-set.md) to run queries, view, and manipulate query results on data. The KQL Queryset allows you to save queries for future use, or export and share queries with others.
 
-See how these items work together in the following end-to-end scenario: [Tutorial: Real-time Analytics](realtime-analytics-tutorial.md)
+See how these items work together in the end-to-end streaming data consumption scenario: [Tutorial: Real-time Analytics](realtime-analytics-tutorial.md)
 
 ## When do I choose Real-time Analytics?
 
@@ -29,9 +29,9 @@ If any of these questions describe your data needs, Real-time Analytics is the r
 > * Do I have complicated data, such as JSON or other arrays?
 > * Do I need to search or access free text?
 
-:::image type="content" source="media/real-time-analytics-overview/schematic-single-company.png" alt-text="Schematic image of single company architecture.":::
+A number of industries use Real-time Analytics for their data needs, for example: finance, transportation and logistics, smart cities, smart buildings, manufacturing operations, automotive, and oil and gas.
 
-These needs can be found throughout a number of industries, for example: finance, transportation and logistics, smart cities, smart buildings, manufacturing operations, automotive, and oil and gas. 
+:::image type="content" source="media/real-time-analytics-overview/schematic-single-company.png" alt-text="Schematic image of single company architecture.":::
 
 Even within a single company, different teams can use Real-time Analytics in a variety of ways:
 
@@ -63,7 +63,6 @@ Real-time Analytics provides the following defining advantages:
 ## How does Real-time Analytics integrate with other workloads?
 
 :::image type="content" source="media/real-time-analytics-overview/schematic-architecture.png" alt-text="Schematic image of architecture of Real-time Analytics integration with other workloads.":::
-
 
 
 PBI quick create
