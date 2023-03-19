@@ -6,6 +6,7 @@ ms.author: narsam
 author: narmeens
 ms.topic: how-to
 ms.date: 02/10/2023
+ms.search.form: Browse PBI Metrics
 ---
 
 # How to explore and validate data with SemPy and PBI Connector

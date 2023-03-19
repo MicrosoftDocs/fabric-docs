@@ -59,4 +59,4 @@ To delete a warehouse, navigate to the workspace and find the warehouse you want
 
 ## Next steps
 
-- [Default warehouse](default-warehouse.md)
+- [SQL Endpoint](default-warehouse.md)

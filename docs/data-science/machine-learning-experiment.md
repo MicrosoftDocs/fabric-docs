@@ -6,6 +6,7 @@ ms.author: midesa
 author: nelgson
 ms.topic: conceptual
 ms.date: 03/13/2023
+ms.search.form: Create New Experiment, Run Comparison
 ---
 
 # Machine learning experiments in [!INCLUDE [product-name](../includes/product-name.md)]

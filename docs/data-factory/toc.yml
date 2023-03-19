@@ -138,17 +138,17 @@
     - name: Activities
       items:
       - name: Activity overview
-        href: ../placeholder.md
+        href: activity-overview.md
       - name: Copy activity
         href: copy-data-activity.md
       - name: For-each activity
-        href: ../placeholder.md
+        href: foreach-activity.md
       - name: Pipeline lookup activity
-        href: ../placeholder.md
+        href: lookup-activity.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
       - name: Notebook activity
-        href: ../placeholder.md
+        href: notebook-activity.md
       - name: Script activity
         href: script-activity.md
       - name: Use dataflow and email activities to transform data and report status
@@ -162,7 +162,7 @@
       - name: Data pipeline runs
         href: pipeline-runs.md
       - name: How to use pipeline sample templates
-        href: ../placeholder.md
+        href: templates.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
       - name: Parameterization

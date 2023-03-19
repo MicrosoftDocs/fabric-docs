@@ -10,7 +10,6 @@ ms.date: 03/15/2023
 
 # Query using the SQL Query editor
 
-
 You can query the data in your warehouse with multiple tools, including the [Visual Query editor](visual-query-editor.md) and the SQL Query editor in the Azure portal. This article describes how to use the SQL Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
@@ -34,7 +33,7 @@ The SQL Query editor provides support for IntelliSense, code completion, syntax 
 
 ## Known limitations with warehouse editor
 
-Currently, you can only write data queries. To write statements to update data (DML) or modify schemas (DDL), see [Connectivity](../placeholder.md) and [how to use SSMS to query your data warehouse](../placeholder.md).
+Currently, you can only write data queries. To write statements to update data (DML) or modify schemas (DDL), see [Connectivity](connectivity.md) and [Query a warehouse using SSMS](query-warehouse-sql-server-management-studio.md).
 
 ## Next steps
 
