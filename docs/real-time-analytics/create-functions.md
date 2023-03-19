@@ -33,7 +33,7 @@ This feature allows you to create or alter an existing function using `.create-o
 
 1. Select **New** > **Function**. The `.create-or-alter` command is automatically populated  in the **Check your data** window.
 
-    :::image type="content" source="media/auto-generated-cmds/function-cmd.png" alt-text="Screenshot of the New option dropdown menu. The option titled Function is highlighted.":::
+    :::image type="content" source="media/creation-functions/function-cmd.png" alt-text="Screenshot of the New option dropdown menu. The option titled Function is highlighted.":::
 
 1. In the **Check your data** window, enter the parameters for your function, then select **Run** to run the query.
 

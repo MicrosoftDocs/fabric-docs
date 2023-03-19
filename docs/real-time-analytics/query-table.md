@@ -28,7 +28,7 @@ Real-time Analytics offers a list of auto-generated KQL queries to get you start
 
 1. In the **Object tree**, select the **more menu** on your table > **Query table**
 
-    :::image type="content" source="media/auto-generated-cmds/query-table.png" alt-text="Screenshot of Object tree showing the More menu of a table. The option titled Query table is highlighted.":::
+    :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Object tree showing the More menu of a table. The option titled Query table is highlighted.":::
 
 1. Select a single query, or select **Paste all query templates** to auto-populate all of the listed queries into the **Check your data** window, and then select **Run**.
 
