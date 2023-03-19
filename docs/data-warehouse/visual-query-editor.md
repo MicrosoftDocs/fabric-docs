@@ -10,7 +10,7 @@ ms.date: 03/15/2023
 
 # Query using the Visual Query editor
 
-**Applies to:** Warehouse (default) and warehouse
+**Applies to:** Warehouse and SQL Endpoint
 
 You can query the data in your warehouse with multiple tools, including the Visual query editor and the [SQL Query editor](sql-query-editor.md) among others. This article describes how to use the Visual Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
 
