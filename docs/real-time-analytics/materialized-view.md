@@ -27,8 +27,6 @@ In this article, you'll learn how to create materialized views.
 
 ## Materialized view
 
-<!--INTRO-->
-
 1. Select **New** > **Materialized view**.
 
     :::image type="content" source="media/materialized-view/materialized-view.png" alt-text="Screenshot of the New option dropdown menu. The option titled Materialized view is highlighted.":::

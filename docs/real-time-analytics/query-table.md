@@ -10,7 +10,7 @@ ms.search.form: product-kusto
 ---
 # Query table
 
-In this article, you'll learn how to use KQL queries to get an initial look at your data.
+In this article, you'll learn how to use auto-generated KQL queries to get an initial look at your data.
 
 A query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Queries always run in the context of a particular table or database. At a minimum, a query consists of a source data reference and one or more query operators applied in sequence, indicated visually by the use of a pipe character (|) to delimit operators.
 
@@ -24,9 +24,7 @@ For more information on the Kusto Query Language, see [Kusto Query Language (KQL
 
 ## Use auto-generated queries to query your table
 
-Real-time Analytics offers a list of auto-generated KQL queries to get you started with analyzing your data. Auto-generated queries run in the context of a selected table.
-
-1. In the **Object tree**, select the **more menu** on your table > **Query table**
+1. In the **Object tree**, select the **more menu** on your table > **Query table**. Auto-generated queries run in the context of a selected table.
 
     :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Object tree showing the More menu of a table. The option titled Query table is highlighted.":::
 

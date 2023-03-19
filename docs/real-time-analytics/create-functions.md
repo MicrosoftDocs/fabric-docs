@@ -43,6 +43,6 @@ This feature allows you to create or alter an existing function using `.create-o
 
     :::image type="content" source="media/create-functions/functions-objctree.png" alt-text="Screenshot of Object tree showing the list of stored user-defined functions.":::
 
-## Net steps
+## Next steps
 
 [Query data in the KQL Queryset](kusto-query-set.md)
