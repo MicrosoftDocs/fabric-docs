@@ -35,7 +35,7 @@ This feature allows you to create or alter an existing function using `.create-o
 
     :::image type="content" source="media/create-functions/function-cmd.png" alt-text="Screenshot of the New option dropdown menu. The option titled Function is highlighted.":::
 
-1. In the **Check your data** window, enter the parameters for your function, then select **Run** to run the query.
+1. Enter the parameters for your function, and then select **Run**.
 
     :::image type="content" source="media/create-functions/create-function.png" alt-text="Screenshot of Check your data window showing the newly created function.":::
 
