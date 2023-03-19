@@ -31,16 +31,6 @@ items:
     href: get-data-onelake.md  
   - name: OneLake shortcut
     href: onelake-shortcut.md
-- name: Query data
-  items:
-  - name: Query data in the KQL queryset
-    href: kusto-query-set.md
-  - name:  Use a Jupyter notebook and kqlmagic to query a KQL Database
-    href: jupyter-notebook.md
-- name: Visualize data
-  items:
-  - name: Visualize data in a Power BI report
-    href: create-powerbi-report.md
 - name: Event streams
   items:
   - name: Overview
@@ -59,6 +49,16 @@ items:
     items:
     - name: linktext2
       href: ../placeholder.md
+- name: Query data
+  items:
+  - name: Query data in the KQL queryset
+    href: kusto-query-set.md
+  - name:  Use a Jupyter notebook and kqlmagic to query a KQL Database
+    href: jupyter-notebook.md
+- name: Visualize data
+  items:
+  - name: Visualize data in a Power BI report
+    href: create-powerbi-report.md
 - name: Kusto Query Language
   href: kusto-query-language/toc.yml
 - name: Management commands
