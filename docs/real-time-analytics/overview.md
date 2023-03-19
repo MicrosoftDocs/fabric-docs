@@ -58,18 +58,8 @@ Data Integration
 OneLake
 Data Engineering - Notebook and Spark
 
-### Example scenario
+## See also
 
-:::image type="content" source="media/real-time-analytics-overview/schematic-single-company.png" alt-text="Schematic image of single company architecture.":::
-
-Even within a single company, different teams can use Real-time Analytics in a variety of ways:
-
-* Production analyzes product logs to manage their inventory and make manufacturing decisions, informed also by geospatial analytics.
-* Warehouses are outfitted with IoT devices, some of which are used by security to manage warehouse entry/exit logs, while others are used by operations to monitor the environment inside the warehouse.
-* Individual manufacturing devices use production data to optimize and increase production.
-* Store sites use time series analytics to identify sales anomalies and predict future inventory events.
-* Marketing teams use clickstream data (a form of log analytics) to optimize and scan online both ad campaigns and the customer funnel.
-* The customer success department uses text search to analyze user feedback on social media.
-
-From citizen scientist to advanced engineer, a wide range of personas can use the tools in Real-time Analytics to quickly and easily make data-based decisions.
-
+* [Get data from Azure Event Hubs](get-data-event-hub.md)
+* [Get data from a blob](get-data-blob.md)
+* [Query data in the KQL queryset](kusto-query-set.md)
