@@ -1,51 +1,209 @@
-items:
-- name: Data Factory documentation
-  href: index.yml
-- name: Overview
   items:
-  - name: What is Data Factory?
-    href: data-factory-overview.md
-- name: Get started
-  items:
-  - name: Create a dataflow
-    href: create-first-dataflow-gen2.md
-  - name: Create a data pipeline
-    href: create-first-pipeline.md
-  - name: Move and transform data
-    href: transform-data.md
-  - name: Move data - copy assistant
-    href: move-data-lakehouse-copy-assistant.md
-- name: Data pipelines
-  items:
-  - name: Data pipeline runs
-    href: pipeline-runs.md
-  - name: Copy data - copy activity
-    href: copy-data-activity.md
-  - name: Monitor data pipeline runs
-    href: monitor-pipeline-runs.md
-  - name: Script activity
-    href: script-activity.md
-- name: Dataflows
-  items:
-  - name: Data source management
-    href: data-source-management.md
-- name: Connectors
-  items:
-  - name: Connector overview
-    href: connector-overview.md
-  - name: Azure Blob Storage
+  - name: Data factory documentation
+    href: index.yml
+  - name: Overview
     items:
-    - name: Overview
-      href: connector-azure-blob-storage-overview.md
-    - name: Set up connection
-      href: connector-azure-blob-storage.md
-    - name: Configure in copy activity
-      href: connector-azure-blob-storage-copy-activity.md
-    - name: Google Cloud Storage
+    - name: What is Data Factory
+      href: data-factory-overview.md
+  - name: Get started
     items:
-    - name: Overview
-      href: connector-google-cloud-storage-overview.md
-    - name: Set up connection
-      href: connector-google-cloud-storage.md
-    - name: Configure in copy activity
-      href: connector-google-cloud-storage-copy-activity.md
+    - name: Create a dataflow
+      href: create-first-dataflow-gen2.md
+    - name: Create a data pipeline
+      href: create-first-pipeline-with-sample-data.md
+    - name: Move and transform data
+      href: transform-data.md
+    - name: Move data - copy assistant
+      href: move-data-lakehouse-copy-assistant.md
+  - name: Connectors
+    items:
+    - name: Connector overview
+      href: connector-overview.md
+    - name: Connectors feature summary
+      href: ../placeholder.md
+    - name: Amazon S3
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Azure Blob Storage
+      items:
+      - name: Overview
+        href: connector-azure-blob-storage-overview.md
+      - name: Set up connection
+        href: connector-azure-blob-storage.md
+      - name: Configure in copy activity
+        href: connector-azure-blob-storage-copy-activity.md
+    - name: Azure Cosmos DB for NoSQL
+      items:
+      - name: Overview
+        href: connector-azure-cosmosdb-for-nosql-overview.md
+      - name: Set up connection
+        href: connector-azure-cosmosdb-for-nosql.md
+      - name: Configure in copy activity
+        href: connector-azure-cosmosdb-for-nosql-copy-activity.md
+    - name: Binary format
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Data warehouse
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Excel format
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Google Cloud Storage
+      items:
+      - name: Overview
+        href: connector-google-cloud-storage-overview.md
+      - name: Set up connection
+        href: connector-google-cloud-storage.md
+      - name: Configure in copy activity
+        href: connector-google-cloud-storage-copy-activity.md
+    - name: HTTP
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Kusto
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Microsoft 365
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: Parquet format
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: OData
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: SharePoint online list
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md
+    - name: REST
+      items:
+      - name: Overview
+        href: ../placeholder.md
+      - name: Set up connection
+        href: ../placeholder.md
+      - name: Configure in copy activity
+        href: ../placeholder.md      
+  - name: Data pipelines
+    items:
+    - name: Activities
+      items:
+      - name: Activity overview
+        href: activity-overview.md
+      - name: Copy activity
+        href: copy-data-activity.md
+      - name: For-each activity
+        href: foreach-activity.md
+      - name: Pipeline lookup activity
+        href: lookup-activity.md
+      - name: Monitor data pipeline runs
+        href: monitor-pipeline-runs.md
+      - name: Notebook activity
+        href: notebook-activity.md
+      - name: Script activity
+        href: script-activity.md
+      - name: Use dataflow and email activities to transform data and report status
+        href: ../placeholder.md    
+    - name: Concepts
+      items:
+      - name: Concepts in data factory for Fabric
+        href: ../placeholder.md
+      - name: Billing with data pipelines
+        href: ../placeholder.md
+      - name: Data pipeline runs
+        href: pipeline-runs.md
+      - name: How to use pipeline sample templates
+        href: templates.md
+      - name: Monitor data pipeline runs
+        href: monitor-pipeline-runs.md
+      - name: Parameterization
+        href: ../placeholder.md
+    - name: Tutorials
+      items:
+      - name: Copy sample data into Lakehouse and transform with dataflow
+        href: ../placeholder.md
+      - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
+        href: ../placeholder.md
+      - name: Load sample data to data warehouse
+        href: ../placeholder.md
+      - name: Load sample data to Kusto
+        href: ../placeholder.md
+      - name: Load sample data to Lakehouse
+        href: ../placeholder.md
+      - name: Run script activity and email output summary
+        href: ../placeholder.md
+  - name: Dataflows
+    items:
+    - name: Concepts
+      items:
+      - name: Data source management
+        href: data-source-management.md
+      - name: Introduction to dataflows at scale
+        href: ../placeholder.md
+      - name: Introduction to output destination in Fabric
+        href: ../placeholder.md
+      - name: Templates
+        href: ../placeholder.md
+    - name: How-to
+      items:
+      - name: How to use key dataflow features
+        href: ../placeholder.md
+    - name: Tutorials
+      items:
+      - name: Copy from Azure Blob Storage to Lakehouse
+        href: pipeline-copy-from-azure-blob-storage-to-lakehouse.md      
+      - name: Load OData into Lakehouse with dataflows
+        href: ../placeholder.md
+      - name: Use dataflows to transform data and load to data warehouse
+        href: ../placeholder.md
+      - name: Use dataflows to transform data and load to Kusto
+        href: ../placeholder.md

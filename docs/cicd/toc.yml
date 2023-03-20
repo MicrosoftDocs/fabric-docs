@@ -1,16 +1,40 @@
 items:
 - name: CI/CD documentation
   href: index.yml
-- name: Overview
+- name: What is CI/CD? 
+  href: cicd-overview.md
+- name: Deployment pipelines
   items:
-  - name: What is CI/CD? 
-    href: ../placeholder.md
-- name: Get started
+  - name: Introduction to deployment pipelines
+    href: deployment-pipelines/deployment-pipelines-overview.md
+  - name: Understand the deployment process
+    href: deployment-pipelines/deployment-pipelines-process.md
+  - name: Get started with deployment pipelines
+    href: deployment-pipelines/deployment-pipelines-get-started.md
+  - name: Assigning a workspace
+    href: deployment-pipelines/deployment-pipelines-assign.md
+  - name: Compare content in different stages
+    href: deployment-pipelines/deployment-pipelines-compare.md  
+  - name: Deploy content to the next stage
+    href: deployment-pipelines/deployment-pipelines-deploy.md
+  - name: Deployment history
+    href: deployment-pipelines/deployment-pipelines-history.md
+  - name: Create deployment rules
+    href: deployment-pipelines/deployment-pipelines-create-rules.md
+  - name: Automate deployment pipelines
+    href: deployment-pipelines/deployment-pipelines-automation.md
+  - name: Best practices
+    href: deployment-pipelines/deployment-pipelines-best-practices.md
+  - name: Troubleshooting
+    href: deployment-pipelines/deployment-pipelines-troubleshooting.yml
+- name: Git integration
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Git integration overview
+    href: git-integration/git-integration-overview.md
+  - name: "Git integration process"
+    href: git-integration/git-integration-process.md
+  - name: Get started with git integration
+    href: git-integration/git-get-started.md
 - name: Feature 1
   items:
   - name: linktext1

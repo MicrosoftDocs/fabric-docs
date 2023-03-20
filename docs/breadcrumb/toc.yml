@@ -1,23 +1,44 @@
 items:
-- name: Analytics
-  tocHref: /analytics/
-  topicHref: /analytics/index
+- name: Microsoft Fabric
+  tocHref: /fabric/
+  topicHref: /fabric/index
   items:
-  - name: Power BI
-    tocHref: /analytics/power-bi
-    topicHref: /analytics/index
+  - name: Admin
+    tocHref: /fabric/admin
+    topicHref: /fabric/admin/index
+  - name: CICD
+    tocHref: /fabric/cicd
+    topicHref: /fabric/cicd/index
   - name: Data Engineering
-    tocHref: /analytics/data-engineering
-    topicHref: /analytics/index
+    tocHref: /fabric/data-engineering
+    topicHref: /fabric/data-engineering/index
   - name: Data Factory
-    tocHref: /analytics/data-factory
-    topicHref: /analytics/index
-  - name: Data Warehouse
-    tocHref: /analytics/data-warehouse
-    topicHref: /analytics/index
+    tocHref: /fabric/data-factory
+    topicHref: /fabric/data-factory/index
   - name: Data Science
-    tocHref: /analytics/data-science
-    topicHref: /analytics/index
-  - name: Data Explorer
-    tocHref: /analytics/data-explorer
-    topicHref: /analytics/index
+    tocHref: /fabric/data-science
+    topicHref: /fabric/data-science/index
+  - name: Data Warehouse
+    tocHref: /fabric/data-warehouse
+    topicHref: /fabric/data-warehouse/index
+  - name: Enterprise
+    tocHref: /fabric/enterprise
+    topicHref: /fabric/enterprise/index
+  - name: Get started
+    tocHref: /fabric/get-started
+    topicHref: /fabric/get-started/index
+  - name: Governance
+    tocHref: /fabric/governance
+    topicHref: /fabric/governance/index
+  - name: OneLake
+    tocHref: /fabric/onelake
+    topicHref: /fabric/onelake/index
+  - name: Real-time Analytics
+    tocHref: /fabric/real-time-analytics
+    topicHref: /fabric/real-time-analytics/index
+  - name: Reflex
+    tocHref: /fabric/reflex
+    topicHref: /fabric/reflex/index
+  - name: Security
+    tocHref: /fabric/security
+    topicHref: /fabric/security/index
