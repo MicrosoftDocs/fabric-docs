@@ -4,22 +4,62 @@ items:
 - name: Overview
   items:
   - name: What is Data Engineering?
-    href: ../placeholder.md
+    href: data-engineering-overview.md
 - name: Get started
   items:
   - name: linktext1
     href: ../placeholder.md
   - name: linktext2
     href: ../placeholder.md
-- name: Feature 1
+- name: Lakehouse
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 2
+  - name: What is a Lakehouse?
+    href: lakehouse-overview.md
+  - name: Get data into a Lakehouse
+    href: load-data-lakehouse.md
+  - name: Navigate the Lakehouse explorer
+    href: navigate-lakehouse-explorer.md
+  - name: Create a Lakehouse
+    href: create-lakehouse.md
+- name: Apache Spark
   items:
-  - name: linktext2
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Spark job definition
+    items:
+    - name: What is a Spark job definition?
+      href: spark-job-definition.md
+    - name: Create a Spark job definition
+      href: create-spark-job-definition.md
+    - name: Run a Spark job definition
+      href: run-spark-job-definition.md
+  - name: Spark utilities
+    href: microsoft-spark-utilities.md
+  - name: Library management
+    href: library-management.md
+  - name: Spark administration settings
+    items:
+    - name: Workspace settings
+      href: spark-workspace-admin-settings.md
+    - name: FAQ
+      href: spark-admin-settings-faq.yml 
+  - name: Spark monitoring
+    items:
+    - name: Spark monitoring overview
+      href: spark-monitoring-overview.md
+    - name: View Spark application run status
+      href: spark-artifact-recent-runs.md
+    - name: Monitor Spark jobs in a Notebook 
+      href: spark-monitor-debug.md
+    - name: Monitor Spark application
+      href: spark-detail-monitoring.md
+- name: Notebooks
+  items:
+  - name: Create and use notebooks
+    href: how-to-use-notebook.md
+  - name: Develop and run notebooks
+    href: author-execute-notebook.md
+  - name: Notebook visualization
+    href: notebook-visualization.md
+  - name: Explore data in Lakehouse
+    href: lakehouse-notebook-explore.md
+  - name: Load data in Lakehouse
+    href: lakehouse-notebook-load-data.md

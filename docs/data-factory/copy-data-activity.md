@@ -7,7 +7,7 @@ author: jianleishen
 ms.topic: how-to
 ms.date: 01/27/2023
 ---
-# How to copy data using copy activity (Preview)
+# How to copy data using copy activity
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.

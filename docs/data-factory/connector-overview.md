@@ -38,5 +38,5 @@ You can find a comprehensive list of all connectors supported through our [publi
 
 ## Next steps
 
-- [How to copy data using copy activity (Preview)](copy-data-activity.md)
+- [How to copy data using copy activity](copy-data-activity.md)
 - [Data source management](data-source-management.md)
