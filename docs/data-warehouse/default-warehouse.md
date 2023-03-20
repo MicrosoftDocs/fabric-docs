@@ -1,6 +1,6 @@
 ---
-title: Default warehouse
-description: Learn more about default data warehouses.
+title: SQL Endpoint
+description: Learn more about SQL Endpoint.
 ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 03/15/2023
 ---
 
-# Default warehouse
+# SQL Endpoint
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -16,7 +16,7 @@ When you load data into a [!INCLUDE [product-name](../includes/product-name.md)]
 
 :::image type="content" source="media\default-warehouse\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and Delta Lake tables." lightbox="media\default-warehouse\lakehouse-delta-tables.png":::
 
-## Understand the Warehouse (default)
+## Understand SQL Endpoint
 
 The distinction between Warehouse (default) and [Warehouse](warehouse.md) is an important one as transactional T-SQL statements fail if you attempt to run them against the Warehouse (default) item. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
 
@@ -49,13 +49,13 @@ In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-
 
 For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your warehouse (default). There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later, but we generally expect that the majority of the testing and interaction for warehouse (default) will be via SQL end-point connection to a tool such as SQL Server Management Studio (SSMS) or Azure Data Studio (ADS).
 
-## How to delete a default warehouse
+## How to delete a SQL Endpoint
 
 The Warehouse (default) item is linked to its parent Lakehouse when it's automatically created and can't be directly deleted. If you need to delete the warehouse (default) item, you must delete the parent Lakehouse.
 
 Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
 
-## Known issues and limitations in the default warehouse
+## Known issues and limitations in the SQL Endpoint
 
 1. Lakehouse tables in the warehouse (default) are created with a delay.
 

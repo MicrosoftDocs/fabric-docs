@@ -59,7 +59,7 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
 ## Connectivity
 
-*Applies to:* Warehouse (default) and Warehouse
+*Applies to:* Warehouse and SQL Endpoint
 
 As mentioned previously, the full [!INCLUDE [product-name](../includes/product-name.md)] portal experience isn't available at this time, so for some activities you will be use a TDS end-point to connect to and query your warehouse (default) and/or warehouse via SSMS or ADS.
 
@@ -141,4 +141,4 @@ SQL query editor:
 
 ## Next steps
 
-- [Creating reports](../placeholder.md)
+- [Creating reports](create-reports.md)

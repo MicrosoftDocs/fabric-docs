@@ -6,6 +6,7 @@ ms.author: avinandac
 author: avinandaMS
 ms.topic: how-to
 ms.date: 02/24/2023
+ms.search.form: Create lakehouse
 ---
 
 # Creating a Lakehouse
