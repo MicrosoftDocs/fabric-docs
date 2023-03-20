@@ -6,5 +6,4 @@ ms.author: sngun
 ms.topic: include
 ms.date: 1/24/2023
 ---
-
-Trident
+Microsoft Fabric
