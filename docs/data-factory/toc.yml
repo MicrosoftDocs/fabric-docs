@@ -26,6 +26,20 @@ items:
       href: monitor-pipeline-runs.md
     - name: Script activity
       href: script-activity.md
+  - name: Connectors
+    items:
+    - name: Connector overview
+      href: connector-overview.md
+    - name: Connectors feature summary
+      href: ../placeholder.md
+    - name: REST
+      items:
+      - name: Overview
+        href: connector-rest-overview.md
+      - name: Set up connection
+        href: connector-rest.md
+      - name: Configure in copy activity
+        href: connector-rest-copy-activity.md
   - name: Dataflows
     items:
     - name: Connectors
