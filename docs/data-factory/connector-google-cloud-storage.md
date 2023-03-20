@@ -48,15 +48,15 @@ To get started, you must complete the following prerequisites:
 
 ## Setup connection
 
-### Step 1: Specify the new connection name, type, and URL.
+### Step 1: Specify the new connection name, type, and Url.
 
    :::image type="content" source="media/connector-google-cloud/connection-details.png" alt-text="Screenshot showing how to set new connection":::
 
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
 **Connection name**: Specify a name for your connection.<br>
-**Connection type**: Select Google Cloud Storage(Data pipeline) for your connection type.<br>
-**URL**: Specify the custom GCS endpoint as `https://storage.googleapis.com`.
+**Connection type**: Select **Google Cloud Storage** for your connection type.<br>
+**Url**: Specify the custom GCS endpoint as `https://storage.googleapis.com`.
 
 ### Step 2:  Select and set your authentication
 
@@ -68,8 +68,8 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 #### Basic authentication
 
-- **Username**: The user name to use to access the Google Cloud Storage endpoint.
-- **Password**: The password for the username.
+- **Username**: ID of the secret access key. To find the access key and secret, see the [Prerequisites](https://learn.microsoft.com/azure/data-factory/connector-google-cloud-storage?tabs=data-factory#prerequisites).
+- **Password**: The secret access key itself.
 
 :::image type="content" source="media/connector-google-cloud/authentication-basic.png" alt-text="Screenshot showing that basic authentication method":::
 
@@ -91,8 +91,8 @@ The following connector properties in the table are supported in pipeline copy a
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/|
 |**Connection type**|Select a type for your connection. Select **Google Cloud Storage**.|Yes||✓/|
-|**URL**|The base URL to the Google Cloud Storage service.|Yes||✓/|
-|**Authentication**|Go to [Authentication](#authentication) |Yes|Go to Authentication|See [Authentication](#authentication)|
+|**Url**|The base Url to the Google Cloud Storage service.|Yes||✓/|
+|**Authentication**|Go to [Authentication](#authentication) |Yes||See [Authentication](#authentication)|
 
 ### Authentication
 
@@ -101,8 +101,8 @@ The following properties in the table are the supported authentication types.
 |Name|Description|Required|Property|Copy/dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Basic**||||✓/|
-|- Username|The user name to use to access the Google Cloud Storage endpoint.|Yes |||
-|- Password|The password for the username.|Yes |||
+|- Username|ID of the secret access key. To find the access key and secret, see the [Prerequisites](https://learn.microsoft.com/azure/data-factory/connector-google-cloud-storage?tabs=data-factory#prerequisites).|Yes |||
+|- Password|The secret access key itself.|Yes |||
 
 ## Next steps
 

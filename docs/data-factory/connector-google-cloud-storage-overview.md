@@ -23,6 +23,7 @@ This Google Cloud Storage connector is supported in Trident Project - Data Facto
 | **Copy activity (source/-)** | None | Basic |
 | **Lookup activity** | None | Basic |
 | **GetMetadata activity** | None | Basic |
+| **Delete activity** | None | Basic |
 
 ## Next Steps
 
