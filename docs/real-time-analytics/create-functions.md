@@ -43,7 +43,15 @@ This feature allows you to create or alter an existing function using the `.crea
 
     :::image type="content" source="media/create-functions/functions-objctree.png" alt-text="Screenshot of Object tree showing the list of stored user-defined functions.":::
 
-1. In the **Check your data** window, run a query to check that you've successfully created or altered your function.
+1. In the **Check your data** window, run a query to check that you've successfully created or altered your function. For example, run the following query:
+
+    ```kusto
+    let myLimit = 20;
+    StormEvents
+    | where DamageProperty >= 1
+    | summarize by State, EventType, DamageProperty
+    | take myLimit
+    ```
 
     :::image type="content" source="media/create-functions/function-example.png" alt-text="Screenshot of the Check your data window showing query results.":::
 
