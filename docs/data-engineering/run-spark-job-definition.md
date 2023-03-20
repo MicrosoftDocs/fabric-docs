@@ -13,7 +13,7 @@ ms.date: 02/24/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-In this tutorial, learn how to run a [!INCLUDE [product-name](../includes/product-name.md)] Spark job definition artifact and monitor the job.
+In this tutorial, learn how to run a [!INCLUDE [product-name](../includes/product-name.md)] Spark job definition item and monitor the job.
 
 ## Prerequisites
 
@@ -28,11 +28,11 @@ To get started, you must have the following prerequisites:
 
 There are two ways a user could run a Spark job definition:
 
-- Run a Spark job definition artifact manually by clicking the **Run** button on the Spark job definition artifact.
+- Run a Spark job definition item manually by clicking the **Run** button on the Spark job definition item.
 
   :::image type="content" source="media\run-spark-job-definition\select-run.png" alt-text="Screenshot showing where to select Run." lightbox="media\run-spark-job-definition\select-run.png":::
 
-- Schedule a Spark job definition artifact by setting up the schedule plan under the **Settings** tab.  Select **Settings** on the toolbar, then select the **Schedule** tab.
+- Schedule a Spark job definition item by setting up the schedule plan under the **Settings** tab.  Select **Settings** on the toolbar, then select the **Schedule** tab.
 
   :::image type="content" source="media\run-spark-job-definition\schedule-spark-job-definition.png" alt-text="Screenshot where to select Schedule on the Settings tab." lightbox="media\run-spark-job-definition\schedule-spark-job-definition.png":::
 

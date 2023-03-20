@@ -17,7 +17,7 @@ With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache 
 
 ## View Apache Spark applications
 
-You can view all Apache Spark applications from **Spark job definition**, or **notebook artifact context** menu shows the recent run option -> **Recent runs**.
+You can view all Apache Spark applications from **Spark job definition**, or **notebook item context** menu shows the recent run option -> **Recent runs**.
 
 :::image type="content" source="media\spark-detail-monitoring\recent-run.png" alt-text="Screenshot showing Recent runs list and details." lightbox="media\spark-detail-monitoring\recent-run.png":::
 
