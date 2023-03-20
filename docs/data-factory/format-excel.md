@@ -28,7 +28,6 @@ Excel format is supported for the following connectors and activities.
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md) |
 |  | Google Cloud Storage | 
 |  | [HTTP](connector-http-copy-activity.md)| 
-|  | REST | 
 | **Supported activity** | Copy activity |
 |  | GetMetadata activity |
 |  | Delete activity | 
