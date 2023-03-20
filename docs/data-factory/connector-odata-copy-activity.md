@@ -25,9 +25,6 @@ For the configuration of each tab under copy activity, see the following section
 - [Mapping](#mapping)
 - [Settings](#settings)
 
->[!Note]
->Destination is not supported in OData connector.
-
 ### General
 
 For **General** tab configuration, see General.
@@ -41,14 +38,16 @@ The following properties are supported for OData under **Source** tab of a copy 
 The following three properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an OData connection from the connection list.
-- **Path**: Select path that you want to use.
-
+- **Connection**: Select an OData connection from the connection list. If no connection exists, then create a new OData connection by selecting **New**.
+- **Path**: Select the path to the OData resource. Or you can select Edit to enter the path manually.
 Under **Advanced**, you can specify the following fields:
 
-- **Use query**: You can choose **Table**, **Query** as your use query. See the configuration of each settings below.
-     - **Table**: Read data from the table you specified in **Table** above if you select this button.
+- **Use query**: You can choose **Path**, **Query** as your use query. See the configuration of each settings below.
+     - **Path**: Read data from the specified path if you select this button.
      - **Query**: OData query options for filtering data. Example: `"$select=Name,Description&$top=5"`.
+
+>[!Note]
+>The OData connector copies data from the combined URL: [URL specified in the connection]/[path specified]?[query specified in copy activity source]. For more information, see OData URL components
 
 - **Request timeout**: Timeout for the HTTP request to get a response. Format is in timespan. This value is the timeout to get a response, not the timeout to read response data. The default value is 00:05:00.
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
@@ -73,8 +72,8 @@ To learn more information about copy activity in OData, see the following table.
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection\> |Yes|connection|
-|**Path** | Select the container that you want to use.|\<connection of your source\>|Yes |path|
-|**Use query** |You can choose **Table**, **Query** as your use query.|-**Table** <br>-**Query**|No |query|
+|**Path** | The path to the OData resource.|\<the path to the OData resource\>|Yes |path|
+|**Use query** |You can choose **Path**, **Query** as your use query.|-**Path** <br>-**Query**|No |query|
 |**Request timeout** |Timeout for the HTTP request to get a response. Format is in timespan. This value is the timeout to get a response, not the timeout to read response data. The default value is 00:05:00.| timespan |No |requestTimeout|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|- Name<br>- Value|No |additionalColumns:<br>- name<br>- value|
 

@@ -98,9 +98,9 @@ The following connector properties in the table are supported in pipeline copy a
 |Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/|
-|**Connection type**|Select OData for your connection type.|Yes||✓/|
+|**Connection type**|Select **OData** for your connection type.|Yes||✓/|
 |**URL**|The base URL to the OData server.|Yes||✓/|
-|**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
+|**Authentication**|See [Authentication](#authentication) |Yes||See [Authentication](#authentication)|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
 
 ### Authentication
