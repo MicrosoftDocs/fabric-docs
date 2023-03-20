@@ -128,11 +128,11 @@
     - name: REST
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-rest-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-rest.md
       - name: Configure in copy activity
-        href: ../placeholder.md      
+        href: connector-rest-copy-activity.md     
   - name: Data pipelines
     items:
     - name: Activities
