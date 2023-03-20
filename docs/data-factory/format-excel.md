@@ -34,11 +34,10 @@ Excel format is supported for the following connectors and activities.
 
 ## Excel format in copy activity
 
-You can find the file format settings by selecting **File settings** in source in data pipeline copy activity.
+You can find the file format settings by selecting **File settings** in source in data pipeline copy activity. Excel format is supported in copy activity source only.
 
 :::image type="content" source="./media/format-excel/file-settings.png" alt-text="Screenshot showing file settings button.":::
-> [!Note]
-> Excel format is only supported in copy activity source.
+
 
 ### Excel as source 
 
