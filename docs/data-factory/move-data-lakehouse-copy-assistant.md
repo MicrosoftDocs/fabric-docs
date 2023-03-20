@@ -81,7 +81,7 @@ Follow these steps to set up your copy activity.
 
    :::image type="content" source="media/move-data-lakehouse-copy-assistant/review-create-10.png" alt-text="Screenshot showing where to select ok on the Review and create screen.":::
 
-### Step 4: Save your pipeline and run it to load data
+### Step 4: Save your data pipeline and run it to load data
 
 1. Select **Save**. Then, select **Run**
 
@@ -151,7 +151,7 @@ Follow these steps to move files into Lakehouse.
 
 4. Select **OK** to finish the assistant experience.
 
-### Step 4: Save your pipeline and run it to load data
+### Step 4: Save your data pipeline and run it to load data
 
 1. Select **Save**. Then, select **Run**
 

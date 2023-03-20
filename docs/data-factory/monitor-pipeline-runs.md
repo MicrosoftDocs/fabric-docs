@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 01/27/2023
 ---
 
-# How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)] (Preview)
+# How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
@@ -16,9 +16,9 @@ ms.date: 01/27/2023
 
 In this how-to guide, you'll learn the different ways to review and monitor your pipeline runs.
 
-## Monitor pipeline runs
+## Monitor data pipeline runs
 
-1. To monitor your pipeline runs, hover over your pipeline in your workspace. Doing so will bring up three dots to the right of your pipeline name.
+1. To monitor your data pipeline runs, hover over your pipeline in your workspace. Doing so will bring up three dots to the right of your pipeline name.
 
    :::image type="content" lightbox="media/monitor-pipeline-runs/more-options-for-pipeline.png" source="media/monitor-pipeline-runs/more-options-for-pipeline.png" alt-text="Screenshot showing where to find more pipeline options.":::
 
@@ -28,7 +28,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
    :::image type="content" lightbox="media/monitor-pipeline-runs/view-recent-pipeline-runs.png" source="media/monitor-pipeline-runs/view-recent-pipeline-runs.png" alt-text="Screenshot showing a recent run list.":::
 
-3. Use the Filter to find specific pipeline runs. You can filter on **Status** or on **End time**.
+3. Use the Filter to find specific data pipeline runs. You can filter on **Status** or on **End time**.
 
    :::image type="content" source="media/monitor-pipeline-runs/filter-recent-runs.png" alt-text="Screenshot of filter options.":::
 
@@ -54,7 +54,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
    :::image type="content" source="media/monitor-pipeline-runs/copy-data-details.png" alt-text="Screenshot of additional details for copy data run.":::
 
-7. If your pipeline failed, view the error message by hovering over the activity row and select the message icon under **Status**. This selection will bring up error details, such as the error code and message.
+7. If your data pipeline failed, view the error message by hovering over the activity row and select the message icon under **Status**. This selection will bring up error details, such as the error code and message.
 
    :::image type="content" lightbox="media/monitor-pipeline-runs/failed-pipeline.png" source="media/monitor-pipeline-runs/failed-pipeline.png" alt-text="Screenshot showing where the failed status appears.":::
 
@@ -64,7 +64,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
    :::image type="content" lightbox="media/monitor-pipeline-runs/update-pipeline-on-canvas.png" source="media/monitor-pipeline-runs/update-pipeline-on-canvas.png" alt-text="Screenshot showing where to select Update pipeline.":::
 
-9. You can also **Rerun** your pipeline. You can choose to rerun the entire pipeline or only rerun the pipeline from the failed activity.  
+9. You can also **Rerun** your data pipeline. You can choose to rerun the entire pipeline or only rerun the pipeline from the failed activity.  
 
    :::image type="content" lightbox="media/monitor-pipeline-runs/rerun.png" source="media/monitor-pipeline-runs/rerun.png" alt-text="Screenshot showing where to select Rerun.":::
 
@@ -84,5 +84,5 @@ The length of the bar relates to the duration of the pipeline. You can select th
 
 ## Next steps
 
-- [Quickstart: Create your first pipeline to copy data (Preview)](create-first-pipeline.md)
-- [Quickstart: Create your first Dataflows Gen2 to get and transform data (Preview)](create-first-dataflow-gen2.md)
+- [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
+- [Quickstart: Create your first Dataflows Gen2 to get and transform data](create-first-dataflow-gen2.md)
