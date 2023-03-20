@@ -81,7 +81,7 @@ When you have an interactive Notebook and want to use some extra packages for a 
 ### Manage Python feed libraries through in-line installation
 
 > [!NOTE]
-> When installing new Python libraries, the *%conda install* command normally takes more time than *%pip install* since it will check the full dependencies to detect conflicts. You may want to use *%conda install* when you want to avoid potential issues. Use *%pip install_ when you are certain about the library you are trying to install has no conflict with the pre-installed libraries in runtime environment.
+> When installing new Python libraries, the *%conda install* command normally takes more time than *%pip install* since it will check the full dependencies to detect conflicts. You may want to use *%conda install* when you want to avoid potential issues. Use *%pip install* when you are certain about the library you are trying to install has no conflict with the pre-installed libraries in runtime environment.
 
 > [!TIP]
 > All available Python in-line commands and its clarifications can be found: [%pip commands](https://pip.pypa.io/en/stable/cli/) and [%conda commands](https://docs.conda.io/projects/conda/en/latest/commands.html)
