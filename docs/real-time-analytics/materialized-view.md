@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 03/19/2023
+ms.date: 03/20/2023
 ms.search.form: product-kusto
 ---
 # Materialized views
@@ -17,7 +17,7 @@ A materialized view is an aggregation query over a source table, or over another
 
 For more information on materialized views, see [Materialized view overview](/azure/data-explorer/kusto/management/materialized-views/materialized-view-overview?context=/fabric/context/context)
 
-In this article, you'll learn how to create materialized views.
+In this article, you'll learn how to create materialized views using the `.create materialized-view` command.
 
 ## Prerequisites
 
