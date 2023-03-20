@@ -46,9 +46,9 @@ Under **Advanced**, you can specify the following fields:
      - **Path**: Read data from the specified path if you select this button.
      - **Query**: OData query options for filtering data. Example: `"$select=Name,Description&$top=5"`.
 
->[!Note]
->The OData connector copies data from the combined URL: [URL specified in the connection]/[path specified]?[query specified in copy activity source]. For more information, see OData URL components
-
+    >[!Note]
+    >The OData connector copies data from the combined URL: [URL specified in the connection]/[path specified]?[query specified in copy activity source]. For more information, see [OData URL components](https://www.odata.org/documentation/odata-version-3-0/url-conventions/).
+    
 - **Request timeout**: Timeout for the HTTP request to get a response. Format is in timespan. This value is the timeout to get a response, not the timeout to read response data. The default value is 00:05:00.
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
