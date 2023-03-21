@@ -10,25 +10,23 @@ ms.search.form: product-kusto
 ---
 # What is Real-time Analytics in Fabric?
 
-The constant flow of data emitted by devices, events, and users has radically expanded our ability to gain insights into scenarios behind data and to make data-based decisions. Simple tasks such as watching TV or shopping are now integrated with our own personal behavioral data. Enterprise data has the same need to provide real-time data that can be consumed and acted upon by a wide variety of users. Real-time Analytics in Microsoft Fabric enables all users, from the citizen data scientist to advanced engineers, immediate access to analyze data and gain insights. You can use Real-time Analytics whether you're looking for no code, or if you want to use complex code and advanced capabilities such as python plugins, anomaly detection, or more.
+The last few decades have seen a paradigm shift in the way we access and consume information, as users have become accustomed to data that is interactive, on demand, and accessible to all. This data shift has been powered by big data, streaming data ingestion, and indexed, keyword-based search, all together forming a simplified user experience in many consumer industries. However, real-time data consumption in the enterprise world has lagged behind with systems of high complexity, requiring high costs, and highly skilled data scientists. As a result, many enterprise solutions still depend on one or two experts for the creation of consumable reports.  With Microsoft Fabric Real-time Analytics, we enable organizations to focus and scale up their analytics solution while democratizing data.
 
-Quick access to data insights is achieved through automatic data streaming, automatic indexing and data partitioning, and through the use of the Kusto Query Language for on-demand query generation and visualizations. Real-time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
+How? Real-time Analytics reduces complexity and simplifies data integration. Quick access to data insights is achieved through automatic data streaming, automatic indexing and data partitioning, and through the use of the on-demand query generation and visualizations. Real-time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
 
 ## What makes Real-time Analytics unique?
 
-TODO- write out these explanations
-
-* **Easy ingestion** Ingest from any data source, in any data format.
-* **By-default streaming** for high performance, low latency, high freshness data analysis.
-* **No complex data modeling** There is no need to build complex data models and no need for complex scripting to transform data before it's consumed.
-* **Default partitioning and indexing** Automatic time and hash-based partitioning, and by-default indexing.
-* **Versatile data structures** Query structured, semi-structured, or free text.
+* **Easy ingestion** of data from any source, in any data format.
+* **No complex data modeling** means there's no need to build complex data models or for complex scripting to transform data before it's consumed.
+* **By-default streaming** provides high performance, low latency, high freshness data analysis.
+* **Default partitioning** - both time and hash-based partitioning, and by-default **indexing**.
+* **Versatile data structures** so that you can query structured, semi-structured, or free text.
 * **Unlimited scale** from gigabytes to petabytes, with unlimited scale on concurrent queries and concurrent users.
-* **Integrated** Seamlessly integrated with other workloads and items in Microsoft Fabric.
+* **Integrated** seamlessly with other workloads and items in Microsoft Fabric.
 
 ## When to use Real-time Analytics?
 
-A number of industries use Real-time Analytics for their data needs, for example: finance, transportation and logistics, smart cities, smart buildings, manufacturing operations, automotive, and oil and gas. If any of these questions describe your data needs, Real-time Analytics is the right solution for you:
+A number of industries use Real-time Analytics for their data needs, for example: finance, transportation and logistics, smart cities, smart buildings, manufacturing operations, automotive, and oil and gas. If any one of these questions describe your data needs, Real-time Analytics is the right solution for you:
 
 > [!div class="checklist"]
 >
