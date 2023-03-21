@@ -26,7 +26,7 @@ You can use Real-time Analytics for a range of solutions, such as IoT analytics 
 |  | RBAC | &cross; | &check; |
 | **Business Continuity** | Availability Zones | &cross; (for GA?) | Optional |
 | **SKU** | Compute options | SaaS platform | 22+ Azure VM SKUs to choose from  |
-| **Integrations** | Built-in ingestion pipelines | Event Hub, Event Grid, [!INCLUDE [product-name](../includes/product-name.md)] Pipeline, [!INCLUDE [product-name](../includes/product-name.md)] Dataflow | Event Hub, Event Grid, IoT Hub |
+| **Integrations** | Built-in ingestion pipelines | Event Hubs, Event Grid, [!INCLUDE [product-name](../includes/product-name.md)] Pipeline, [!INCLUDE [product-name](../includes/product-name.md)] Dataflow | Event Hubs, Event Grid, IoT Hub |
 |  | OneLake integration | Ability to mirror data in both directions | &cross; |
 |  | Spark integration | Built-in Kusto Spark connector integration with support for Azure Active Directory pass-through authentication, Synapse Workspace MSI, and Service Principal | Azure Data Explorer linked service: Built-in Kusto Spark integration with support for Azure Active Directory pass-through authentication, Synapse Workspace MSI, and Service Principal|
 |  | KQL artifacts management | Save KQL queries via Query Set and share across Org | &cross; |
@@ -35,7 +35,7 @@ You can use Real-time Analytics for a range of solutions, such as IoT analytics 
 |  | API and SDKs | &check; | &check; |
 |  | Connectors | &check; | &check; |
 |  | Query tools | &check; | &check; |
-|  | Auto-scale | &check; (Built-in) | &check; (Optional: manual, optimized, custom) |
+|  | Autoscale | &check; (Built-in) | &check; (Optional: manual, optimized, custom) |
 |  | ADX Dashboards| &cross; | &check; |
 |  | PowerBI quick create | &check; | &cross; |
 | **Pricing** | Business Model | Part of consumption model in Premium PowerBI workspace. Pay per Use and Dedicated Capacity available | Cost plus billing model with multiple meters: Azure Data Explorer IP markup, Compute, Storage, and Networking |
