@@ -45,10 +45,16 @@ items:
     items:
     - name: Spark monitoring overview
       href: spark-monitoring-overview.md
-    - name: View Spark application run status
+    - name: Apache Spark Advisor
+      href: spark-advisor-introduction.md
+    - name: Monitoring hub - Browse Spark applications
+      href: browse-spark-applications-monitoring-hub.md
+    - name: Browse artifact's recent runs
       href: spark-artifact-recent-runs.md
-    - name: Monitor Spark jobs in a Notebook 
+    - name: Monitor Spark jobs in a notebook 
       href: spark-monitor-debug.md
+    - name: Monitor Spark job definitions
+      href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
 - name: Notebooks
