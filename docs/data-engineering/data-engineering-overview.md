@@ -15,7 +15,7 @@ ms.date: 02/24/2023
 
 Create a Lakehouse and operationalize your workflow to build, transform, and share your data estate.
 
-- Learn more about data engineering core concepts and artifacts by reading these “Concept” sections in this document.
+- Learn more about data engineering core concepts and items by reading these “Concept” sections in this document.
 - Follow step-by-step instructions to get started with the “HowTo” sections in this document.
 
 ## Next steps
