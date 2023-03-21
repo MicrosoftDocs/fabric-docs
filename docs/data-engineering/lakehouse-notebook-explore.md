@@ -55,7 +55,7 @@ To switch to a different default Lakehouse, move the pin icon.
 
 ## Add or remove a Lakehouse
 
-Selecting the **X** icon next to a Lakehouse name removes it from the notebook, but the Lakehouse artifact still exists in the workspace.
+Selecting the **X** icon next to a Lakehouse name removes it from the notebook, but the Lakehouse item still exists in the workspace.
 
 :::image type="content" source="media\lakehouse-notebook-explore\remove-lakehouse.png" alt-text="Screenshot showing where to remove a Lakehouse." lightbox="media\lakehouse-notebook-explore\remove-lakehouse.png":::
 
