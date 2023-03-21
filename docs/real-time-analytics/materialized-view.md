@@ -1,14 +1,14 @@
 ---
-title: Materialized views in Real-Time Analytics
+title: Create materialized views in Real-Time Analytics
 description: Learn how to run an aggregation query over a source table using materialized views.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 03/20/2023
+ms.date: 03/21/2023
 ms.search.form: product-kusto
 ---
-# Materialized views
+# Create materialized views
 
 A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. There are two types of materialized views:
 
