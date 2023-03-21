@@ -14,7 +14,7 @@ ms.search.form: Lakehouse Overview
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-A Lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by the Apache Spark engine and SQL engine for big data processing. A Lakehouse includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables. The Lakehouse artifact is hosted within a unique workspace folder in the [!INCLUDE [product-name](../includes/product-name.md)] lake. It contains files in various formats (structured and unstructured) organized in folders and subfolder structures.
+A Lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by the Apache Spark engine and SQL engine for big data processing. A Lakehouse includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables. The Lakehouse item is hosted within a unique workspace folder in the [!INCLUDE [product-name](../includes/product-name.md)] lake. It contains files in various formats (structured and unstructured) organized in folders and subfolder structures.
 
 ## Lakehouse structure
 
@@ -37,7 +37,7 @@ The overall structure of a Lakehouse is easy to understand. Here's a logical vie
 
 Lakehouse Table Automatic discovery and registration is a feature of the Lakehouse that provides a fully managed file to table experience for data engineers and data scientists. You can drop a file into the managed area of the Lakehouse and the file is automatically validated for supported structured formats, which is currently only Delta tables, and registered into the metastore with the necessary metadata such as column names, formats, compression and more. You can then reference the file as a table and use SparkSQL syntax to interact with the data.
 
-## Interacting with the Lakehouse artifact
+## Interacting with the Lakehouse item
 
 A data engineer can interact with the Lakehouse and the data within the Lakehouse in several ways:
 
