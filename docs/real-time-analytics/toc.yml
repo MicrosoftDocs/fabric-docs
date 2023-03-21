@@ -5,6 +5,9 @@ items:
   items:
   - name: What is Real-time Analytics?
     href: ../placeholder.md
+  - name: Compare Azure Data Explorer
+    href: realtime-analytics-compare.md
+
 - name: Get started
   items:
   - name: Real-time Analytics happy path
