@@ -39,9 +39,9 @@ Microsoft Fabric currently supports these sources:
 
 ## Lakehouse structure
 
-Lakehouses are comprised of two top level folders: the **Tables** folder and the **Files** folder. The **Tables** folder represents the managed portion of the lakehouse and the **Files** folder is the unmanaged portion of the lakehouse.
+Lakehouses are composed of two top level folders: the **Tables** folder and the **Files** folder. The **Tables** folder represents the managed portion of the lakehouse and the **Files** folder is the unmanaged portion of the lakehouse.
 
-- In the **Tables** folder, you can only create shortcuts at the top level. If the source of the shortcut contains data in the Delta\Parquet format, the lakehouse automatically synchronizes the metadata and recognize the folder as a table.
+- In the **Tables** folder, you can only create shortcuts at the top level. If the source of the shortcut contains data in the Delta\Parquet format, the lakehouse automatically synchronizes the metadata and recognizes the folder as a table.
 
 - The **Files** folder has no restrictions on where you can create shortcuts; you can create them at any level of the folder hierarchy.
 
