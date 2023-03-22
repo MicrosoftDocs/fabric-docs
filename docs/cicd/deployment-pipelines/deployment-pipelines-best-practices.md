@@ -1,6 +1,6 @@
 ---
-title: Best practices for deployment pipelines, the Power BI Application lifecycle management (ALM) tool
-description: Learn about the best practices for deployment pipelines, the Power BI Application lifecycle management (ALM) tool.
+title: Best practices for deployment pipelines, the Microsoft Fabric Application lifecycle management (ALM) tool
+description: Learn about the best practices for deployment pipelines, the Microsoft Fabric Application lifecycle management (ALM) tool.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
