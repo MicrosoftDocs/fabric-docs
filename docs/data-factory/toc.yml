@@ -120,11 +120,11 @@
     - name: SharePoint online list
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-sharepoint-online-list-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-sharepoint-online-list.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-sharepoint-online-list-copy-activity.md
     - name: REST
       items:
       - name: Overview
