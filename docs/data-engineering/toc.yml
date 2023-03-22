@@ -23,6 +23,8 @@ items:
     href: create-lakehouse.md
 - name: Apache Spark
   items:
+  - name: Autotune Spark Configuration
+    href: autotune.md
   - name: Spark job definition
     items:
     - name: What is a Spark job definition?

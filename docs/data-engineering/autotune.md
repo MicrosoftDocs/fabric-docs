@@ -1,0 +1,112 @@
+---
+title: Autotune Spark Configuration
+description: Discover how autotune auto-adjusts Spark configurations, minimizing workload execution time and optimizing performance.
+ms.reviewer: snehagunda
+ms.author: eskot
+author: ekote
+ms.topic: overview
+ms.date: 03/22/2023
+---
+
+# Autotune
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
+Autotune automatically tunes Spark configurations to minimize workload execution time and optimize workloads, empowering our customers to achieve more with less. This feature reduces execution time and surpasses the gains accomplished by manually tuned workloads by experts, which necessitate considerable effort and experimentation.
+
+It leverages historical execution data from customer workloads to iteratively learn the optimal configurations for a given workload with respect to execution time.
+
+## Query Tunning
+
+Currently, Autotune configures 3 query-level Spark configurations:
+* `Spark.sql.shuffle.partitions` - configures the number of partitions to use when shuffling data for joins or aggregations. Default is 200.
+* `Spark.sql.autoBroadcastJoinThreshold` - configures the maximum size in bytes for a table that will be broadcast to all worker nodes when performing a join. Default is 10MB.
+* `Spark.sql.files.maxPartitionBytes` - the maximum number of bytes to pack into a single partition when reading files. Works for Parquet, JSON and ORC file-based sources. Default is 128 MB.
+
+
+Since there is no historical data available during the first run of Autotune, configurations will be set based on a baseline model, which relies on heuristics related to the content and structure of the workload itself. However, as the same query or workload is run repeatedly, we'll observe increasingly significant improvements from Autotune, as the results of previous runs are used to fine-tune the model and tailor it to a specific workspace or workload.
+
+>[!NOTE]
+> As the algorithm explores various configurations, you may notice minor differences in results. This is expected, as Autotune operates iteratively and improves with each repetition of the same query.
+
+## Configuration Tuning Algorithm Overview
+For the first run of the query, upon submission, an ML model initially trained using standard open-source benchmark queries (e.g., TPC-DS) will guide the search around the neighbors of the current setting (starting from the default). Among the neighbor candidates, the ML model selects the best one with the shortest predicted execution time. In this run, the "centroid" is the default config, around which Autotune generates new candidates.
+
+Based on the performance of the second run per suggested configuration, we (1) retrain the ML model by adding the new observation from this query, and (2) update the centroid by comparing the performance of the last two runs. If the previous run is better, the centroid will be updated in the inverse direction of the previous update (similar to the momentum approach in DNN training); if the new run is better, the latest configuration setting becomes the new centroid.
+
+Iteratively, the algorithm will gradually search in the direction with better performance.
+
+![Autotune optimization algorithm](media/autotune/autotune-algorithm-diagram.png)
+The Autotune optimization algorithm relies on an ML model to guide the selection of new configuration candidates and a centroid learning algorithm that continuously searches in the direction of performance improvement.
+
+
+## Enable/Disable
+Autotune is enabled by default. To verify and confirm its activation, use the following commands:
+1. SQL
+   ```
+   %%sql 
+   SET spark.ms.autotune.queryTuning.enabled 
+   ```
+1. Python 
+   ```
+   %%pyspark  
+   spark.conf.get('spark.ms.autotune.queryTuning.enabled')   
+   ```
+1. Scala 
+   ```
+   %%spark  
+   spark.conf.get("spark.ms.autotune.queryTuning.enabled") 
+   ```
+1. R
+   ```
+   %%sparkr
+   library(SparkR)
+   sparkR.conf("spark.ms.autotune.queryTuning.enabled")
+   ```
+
+To disable Autotune, execute the following commands:
+1. SQL
+   ```
+   %%sql 
+   SET spark.ms.autotune.queryTuning.enabled=FALSE 
+   ```
+1. Python 
+   ```
+   %%pyspark  
+   spark.conf.set('spark.ms.autotune.queryTuning.enabled', 'false')   
+   ```
+1. Scala 
+   ```
+   %%spark  
+   spark.conf.set("spark.ms.autotune.queryTuning.enabled", "false") 
+   ```
+1. R
+   ```
+   %%sparkr
+   library(SparkR)
+   sparkR.conf("spark.ms.autotune.queryTuning.enabled", "false")
+   ```
+
+Easily enable Autotune within a session by running the following code in your notebook or adding it in your spark job definition code: 
+
+1. SQL
+   ```
+   %%sql 
+   SET spark.ms.autotune.queryTuning.enabled=TRUE 
+   ```
+1. Python 
+   ```
+   %%pyspark  
+   spark.conf.set('spark.ms.autotune.queryTuning.enabled', 'true')   
+   ```
+1. Scala 
+   ```
+   %%spark  
+   spark.conf.set("spark.ms.autotune.queryTuning.enabled", "true") 
+   ```
+1. R
+   ```
+   %%sparkr
+   library(SparkR)
+   sparkR.conf("spark.ms.autotune.queryTuning.enabled", "true")
+   ```
