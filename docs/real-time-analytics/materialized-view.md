@@ -19,6 +19,8 @@ For more information on materialized views, see [Materialized view overview](/az
 
 In this article, you'll learn how to create materialized views using the `.create materialized-view` command.
 
+For more information on the `.create materialized-view` command, see [.create materialized-view](/azure/data-explorer/kusto/management/materialized-views/materialized-view-create?context=/fabric/context/context)
+
 ## Prerequisites
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
@@ -45,4 +47,6 @@ In this article, you'll learn how to create materialized views using the `.creat
 
 ## Next steps
 
+[Materialized views limitations](/azure/data-explorer/kusto/management/materialized-views/materialized-views-limitations?context=/fabric/context/context)
 [Query data in the KQL Queryset](kusto-query-set.md)
+[Create stored functions](create-functions.md)

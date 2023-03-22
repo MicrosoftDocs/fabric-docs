@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 03/21/2023
+ms.date: 03/22/2023
 ms.search.form: product-kusto
 ---
 
@@ -20,6 +20,8 @@ Functions are reusable queries or query parts. Real-time Analytics supports two 
   * Query-defined functions: are user-defined functions that are defined and used within the scope of a single query. The definition of such functions is done through a let statement. For more information on how to create query-defined functions, see [Create a user defined function](/azure/data-explorer/kusto/query/letstatement?context=/fabric/context/context).
 
 In this article, you'll learn how to create or alter an existing stored function using the `.create-or-alter` `function`.
+
+For more information on the `.create-or-alter` `function` command, see [.create-or-alter function](/azure/data-explorer/kusto/management/create-alter-function?context=/fabric/context/context)
 
 ## Prerequisites
 
