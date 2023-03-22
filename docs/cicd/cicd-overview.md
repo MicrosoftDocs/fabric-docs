@@ -20,7 +20,21 @@ With Microsoft Fabric's [Git integration](./git-integration/git-integration-over
 
 Microsoft Fabric's [deployment pipelines](./deployment-pipelines/deployment-pipelines-overview.md) automates the delivery of completed code to environments like testing and production. It allows teams to produce software in short cycles with high speed, frequency, and reliability. Software can be released at any time with a simple, repeatable deployment process.
 
-For the most seamless CI/CD experience in Fabric, connect you developer workspace to git, and deploy from there using deployment pipelines.
+For the most seamless CI/CD experience in Fabric, connect your developer workspace to git, and deploy from there using deployment pipelines.
+
+## Sample CI/CD workflow
+
+A typical application of ALM might look something like this:
+
+1. Create a new git branch for developing your app and share it with other developers
+1. Each developer pushes their own code changes in git
+1. Automated build and test
+1. Merge new code updates
+1. Upload updated version to pipeline
+1. Test new version
+1. Deploy new version of the app
+
+This cycle, or parts of it, repeat themselves over again for the lifetime of the app.
 
 ## Sample CI/CD workflow
 
