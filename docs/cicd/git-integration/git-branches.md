@@ -1,9 +1,9 @@
 ---
 title: Git Integration Create Branch Flow
-description: Learn how to create new git branches and switch branches in your workspace.
+description: Learn how to use git branches to work in your own isolated environment.
 author: mberdugo
 ms.author: monaberdugo
-ms.service: #Required; service per approved list. slug assigned by ACOM.
+ms.service: fabric
 ms.topic: concept-article
 ms.date: 03/21/2023
 ms.custom: 
@@ -57,7 +57,7 @@ For a developer who works in the web, the flow would be as follows:
 1. Save your changes and [commit](./git-get-started.md#commit-changes-to-git) them into the feature branch.
 1. When ready, create a PR to the *main* branch. The review and merge processes are done through Azure Repos based on the configuration your team defined for that repo.
 
-Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes, as illustrated above.
+Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes.
 
 ## Next steps
 
