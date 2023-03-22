@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 12/27/2022
 ---
 
-# Delegate admin settings
+# Delegate admin tenant settings
 
 As a A [Microsoft Fabric] admin for the tenant, you can delegate [admin settings](tbd) in your organization. For example, if you're organization is divided into groups such as *sales*, *marketing* and *finance*, you can create sup-admins for those groups. Sub-admins who sit within a group, a better suited to make admin decisions relating to the group's needs. Typically, you'd want to grant sup-admins, who are usually domain or capacity admins, the ability to override the global settings that you dictate. As a tenant admin, if needed due to company policy for example, you can turn off certain admin settings, preventing domain and capacity admins in your tenant from accessing them.
 
@@ -71,7 +71,7 @@ As a capacity or domain admin, you can do one of the following:
 
 ### Workspace
 
-A workspace admin, can view all the settings in the organization. 
+A workspace admin, can turn on admin settings for the workspace, providing they're not blocked by the capacity, domain or tenant admin.
 
 ## Next steps
 
