@@ -56,7 +56,7 @@ As a Microsoft Fabric capacity admin, you can perform these tasks on the capacit
 
 Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/power-bi/developer/visuals/create-r-based-power-bi-desktop), but you should still be familiar with related tools and admin centers. To find out which role is required to perform the tasks listed here, cross reference them with the admin roles listed in [Admin roles related to Microsoft Fabric](#admin-roles-related-to-microsoft-fabric).
 
-* **[Microsoft Fabric admin portal](https://app.powerbi.com/admin-portal)** <!--- Change link to fabric --->
+* **[Microsoft Fabric admin portal](/power-bi/developer/visuals/create-r-based-power-bi-desktop)**
     * Acquire and work with capacities
     * Ensure quality of service
     * Manage workspaces
@@ -81,7 +81,7 @@ Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/powe
 * **[PowerShell cmdlets](/powershell/power-bi/overview)**
     * Manage workspaces and other aspects of Microsoft Fabric using scripts
 
-* **[Administrative APIs and SDK](/power-bi/developer/visuals/create-r-based-power-bi-desktop)** <!--- Link to admin REST APIs --->
+* **[Administrative APIs and SDK](/power-bi/developer/visuals/create-r-based-power-bi-desktop)**
     * Build custom admin tools.
 
 ## Admin center overview
