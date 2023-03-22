@@ -85,12 +85,12 @@ Select **Anonymous** under **Authentication method**.
 :::image type="content" source="media/connector-sharepoint-online-list/authentication-servical-principal.png" alt-text="Screenshot showing that service principal authentication method":::
 
 * **Tenant Id**: The tenant ID under which your application resides.
-* **Service principal ID**: The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](../azure/data-factory/connector-sharepoint-online-list?tabs=data-factory#prerequisites) for more details including the permission settings.
-* **Service principal key**: The application's key. Mark this field as a **SecureString** to store it securely, or [reference a secret stored in Azure Key Vault](../azure/data-factory/store-credentials-in-key-vault).
+* **Service principal ID**: The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](/azure/data-factory/connector-sharepoint-online-list?tabs=data-factory#prerequisites) for more details including the permission settings.
+* **Service principal key**: The application's key. Mark this field as a **SecureString** to store it securely, or [reference a secret stored in Azure Key Vault](/azure/data-factory/store-credentials-in-key-vault).
 
 The SharePoint List Online connector uses service principal authentication to connect to SharePoint. Follow these steps to set it up:
 
-1. Register an application with the Microsoft Identity platform. To learn how, see [Quickstart: Register an application with the Microsoft identity platform](../azure/active-directory/develop/quickstart-register-app). Make note of these values, which you use to define the linked service:
+1. Register an application with the Microsoft Identity platform. To learn how, see [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app). Make note of these values, which you use to define the linked service:
 
 Application ID
 Application key
@@ -143,8 +143,8 @@ The following properties in the table are the supported authentication type.
 |**OAuth2**||||✓/|
 |**Service Principal**||||✓/|
 |- Tenant ID|The tenant ID under which your application resides.|Yes |||
-|- Service Principal ID|The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](../azure/data-factory/connector-sharepoint-online-list?tabs=data-factory#prerequisites) for more details including the permission settings.|Yes |||
-|- Service Principal key|The application's key. Mark this field as a **SecureString** to store it securely, or [reference a secret stored in Azure Key Vault](../azure/data-factory/store-credentials-in-key-vault).|Yes |||
+|- Service Principal ID|The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](/azure/data-factory/connector-sharepoint-online-list?tabs=data-factory#prerequisites) for more details including the permission settings.|Yes |||
+|- Service Principal key|The application's key. Mark this field as a **SecureString** to store it securely, or [reference a secret stored in Azure Key Vault](/azure/data-factory/store-credentials-in-key-vault).|Yes |||
 
 ## Next steps
 
