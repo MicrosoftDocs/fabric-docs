@@ -17,11 +17,11 @@ ms.date: 02/24/2023
 
 ## Monitoring hub
 
-The Monitoring Hub serves as a centralized portal for browsing Spark activities across artifacts. At a glance, you can view in-progress Spark applications triggered from Notebooks, Spark Job Definitions, and Pipelines. You can also search and filter Spark applications based on different criteria and drill down to view more Spark execution details of a Spark application.
+The Monitoring Hub serves as a centralized portal for browsing Spark activities across items. At a glance, you can view in-progress Spark applications triggered from Notebooks, Spark Job Definitions, and Pipelines. You can also search and filter Spark applications based on different criteria and drill down to view more Spark execution details of a Spark application.
 
-## Artifact recent runs
+## Item recent runs
 
-When working on specific artifacts, the Artifact Recent Runs feature allows you to browse the artifact's current and recent activities and gain insights on the submitter, status, duration, and other information for activities submitted by you or others.
+When working on specific items, the item Recent Runs feature allows you to browse the item's current and recent activities and gain insights on the submitter, status, duration, and other information for activities submitted by you or others.
 
 ## Notebook contextual monitoring
 
@@ -35,9 +35,9 @@ The Spark job definition Inline Monitoring feature allows you to view Spark job 
 
 For Pipeline Spark Activity Inline Monitoring, deep links have been built into the Notebook and Spark job definition activities within the Pipeline. You can view Spark application execution details, the respective Notebook and Spark job definition snapshot, and access Spark logs for troubleshooting. If the Spark activities fail, the inline error message is also available within Pipeline Spark activities.
 
-## How to: Follow step-by-step instructions to get started
+## Next steps
 
-- [Workspace artifact recent runs](spark-artifact-recent-runs.md)
+- [Workspace item recent runs](spark-artifact-recent-runs.md)
 - [Notebook contextual monitoring and debugging](spark-monitor-debug.md)
 - [Run an Apache Spark job definition](run-spark-job-definition.md)
 - [Apache Spark application detail monitoring](spark-detail-monitoring.md)
