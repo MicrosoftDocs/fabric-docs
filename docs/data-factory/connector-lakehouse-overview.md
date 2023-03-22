@@ -8,7 +8,7 @@ ms.date: 02/14/2023
 ms.custom: template-how-to 
 ---
 
-# Lakehouse connector Overview
+# Lakehouse connector overview
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
@@ -24,6 +24,6 @@ This Lakehouse connector is supported in Trident Project - Data Factory with the
 | **Delete activity** | None | User Auth |
 | **Dataflow Gen2 (source/destination)** |  | Placeholder |
 
-## Next Steps
+## Next steps
 
 [How to configure Lakehouse in copy activity](connector-lakehouse-copy-activity.md)
