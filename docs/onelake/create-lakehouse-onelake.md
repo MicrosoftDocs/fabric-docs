@@ -52,4 +52,4 @@ Congratulations, you've created your first lakehouse with data stored in OneLake
 
 ## Next steps
 
-- [What are shortcuts?](onelake-shortcut-overview.md)
+- [OneLake shortcuts](onelake-shortcuts.md)

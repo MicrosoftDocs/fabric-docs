@@ -40,7 +40,7 @@ A shortcut is a reference to data stored in other file locations. These file loc
 
 :::image type="content" source="media\onelake-overview\fabric-shortcuts-onelake.png" alt-text="Diagram showing how shortcuts connect data across workspaces and artifacts." lightbox="media\onelake-overview\fabric-shortcuts-onelake.png":::
 
-For more information on how to use shortcuts, see [Shortcuts](onelake-shortcut-overview.md).
+For more information on how to use shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
 ## Open access to OneLake
 
