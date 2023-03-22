@@ -60,7 +60,7 @@ A table showing every [interactive operation](/power-bi/enterprise/service-premi
 
 * **End** - The time the interactive operation finished.
 
-* **Status** - An indication showing if the operation succeeded or failed. Cancelled operations are reported as failed operations.
+* **Status** - An indication showing if the operation succeeded or failed. Canceled operations are reported as failed operations.
 
     >[!NOTE]
     >CPU usage for failed operations is counted when determining if the capacity is in overload.

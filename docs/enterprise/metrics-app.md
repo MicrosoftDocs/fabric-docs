@@ -15,7 +15,7 @@ The app is updated often with new features and functionalities and provides the 
 
 ## Install the app
 
-You must be a capacity admin to install the the utilization and metrics app. Once installed, anyone in the organization with the right permissions can view the app.
+You must be a capacity admin to install the utilization and metrics app. Once installed, anyone in the organization with the right permissions can view the app.
 
 To install the app follow the instructions in [Install the utilization and metrics app](metrics-app-install.md).
 
