@@ -52,11 +52,13 @@ For a developer who works in the web, the flow would be as follows:
 
    The workspace syncs with your feature branch, and becomes a copy of the ‘Dev team’ workspace, as illustrated above. You can now work in a new isolated environment.
 
-   :::image type="content" source="{source}" alt-text="{alt-text}":::
+   :::image type="content" source="./media/git-branches/branches-update-commit.png" alt-text="Diagram showing the workflow of commits.":::
 
-1. Save your changes and, [commit](./git-get-started.md#commit-changes-to-git) them into the feature branch.
+1. Save your changes and [commit](./git-get-started.md#commit-changes-to-git) them into the feature branch.
 1. When ready, create a PR to the *main* branch. The review and merge processes are done through Azure Repos based on the configuration your team defined for that repo.
 
-Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the ‘Dev team’ workspace with the merged changes, as illustrated above.
+Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes, as illustrated above.
 
 ## Next steps
+
+[Get started with git integration](./git-get-started.md)
