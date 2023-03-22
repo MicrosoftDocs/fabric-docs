@@ -23,11 +23,11 @@ Excel format is supported for the following connectors and activities.
 | Category | Connector/Activity | 
 |---|---|
 | **Supported connector** | Amazon S3|
-|  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
+|  | Azure Blob Storage |
 |  | Azure Data Lake Storage Gen1 |
-|  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md) |
+|  | Azure Data Lake Storage Gen2 |
 |  | Google Cloud Storage | 
-|  | [HTTP](connector-http-copy-activity.md)| 
+|  | HTTP | 
 | **Supported activity** | Copy activity |
 |  | GetMetadata activity |
 |  | Delete activity | 
@@ -47,7 +47,7 @@ After selecting **File settings** under **Source** tab, you can see the followin
 
 
 - **File format**: Select **Excel** from the drop-down list. 
-- **Compression type**: The compression codec used to read/write excel files.
+- **Compression type**: The compression codec used to read excel files.
 You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, **TarGzip** or **tar** type in the drop-down list.
 
 - **Compression level**: The compression ratio. Apply when you are using Copy activity destination. You can choose from **Optimal** or **Fastest**.
@@ -84,12 +84,12 @@ The following properties are supported in the copy activity **Source** section w
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **File format**|The file format that you want to use.| **Excel**|Yes|type (*under `formatSettings`*):<br>BinaryReadSettings|
+| **File format**|The file format that you want to use.| **Excel**|Yes|type (*under `datasetSettings`*):<br>Excel|
 |**Compression type**|The compression codec used to read/write Excel files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
 |**Compression level** |The compression ratio. Apply when dataset is used in Copy activity sink. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
 |**Worksheet mode** |The worksheet mode that you want to use to read Excel data. | - **Name**<br> - **Index**|Yes | - sheetName<br>- sheetIndex|
 |**Range**|The cell range in the given worksheet to locate the selective data.| \<your cell range\> |No | range|
-|**Null value**|The string representation of null value.| \<your null value\> <br> empty string (by dafault) |No | nullValue|
+|**Null value**|The string representation of null value.| \<your null value\> <br> empty string (by default) |No | nullValue|
 |**First row as header**|Specifies whether to treat the first row in the given worksheet/range as a header line with names of columns.| Selected or unselected |No| firstRowAsHeader: <br> true or false (default)|
 
 
