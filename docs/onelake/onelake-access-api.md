@@ -12,7 +12,7 @@ ms.date: 03/24/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Microsoft OneLake supports a subset of Azure Data Lake Storage (ADLS) Gen 2 and Blob Storage APIs, with some differences in functionality. As OneLake is software as a service (SAAS), some functionality is handled by OneLake, and therefore can't be edited. A full list of changes to these APIs can be found in the following sections. Otherwise, you can continue to use the same distributed file system (DFS) APIs, but now pointed at the new OneLake endpoint: [*https://onelake.dfs.fabric.microsoft.com*](https://onelake.dfs.fabric.microsoft.com). Because OneLake exists across your entire Fabric tenant, you can refer to anything in your tenant just by its workspace, artifact, and path. For example, a file named **test** located in lakehouse **foo** and workspace **bar** has the following path:
+Microsoft OneLake supports a subset of Azure Data Lake Storage (ADLS) Gen 2 and Blob Storage APIs, with some differences in functionality. As OneLake is software as a service (SAAS), it handles some functionality that therefore can't be edited. A full list of changes to these APIs can be found in the following sections. Otherwise, you can continue to use the same distributed file system (DFS) APIs, but now pointed at the new OneLake endpoint: [*https://onelake.dfs.fabric.microsoft.com*](https://onelake.dfs.fabric.microsoft.com). Because OneLake exists across your entire Fabric tenant, you can refer to anything in your tenant just by its workspace, artifact, and path. For example, a file named **test** located in lakehouse **foo** and workspace **bar** has the following path:
 
 ```
 https://onelake.dfs.fabric.microsoft.com/bar/foo/Files/test.csv
@@ -20,7 +20,7 @@ https://onelake.dfs.fabric.microsoft.com/bar/foo/Files/test.csv
 
 ## OneLake endpoints
 
-OneLake’s global endpoint ([*https://onelake.dfs.fabric.microsoft.com*](https://onelake.dfs.fabric.microsoft.com)) doesn't currently guarantee data residency in a particular region. When you query data in a region different than your workspace's region, there's a possibility that data will leave your region during the endpoint resolution process. If you're concerned about data residency, using the matching regional endpoint for your workspace ensures your data stays within its current region and the data doesn't cross any regional boundaries. You can discover the correct regional endpoint by checking the region of the capacity that the workspace is attached to.
+OneLake’s global endpoint ([*https://onelake.dfs.fabric.microsoft.com*](https://onelake.dfs.fabric.microsoft.com)) doesn't currently guarantee data residency in a particular region. When you query data in a region different than your workspace's region, there's a possibility that data could leave your region during the endpoint resolution process. If you're concerned about data residency, using the matching regional endpoint for your workspace ensures your data stays within its current region and doesn't cross any regional boundaries. You can discover the correct regional endpoint by checking the region of the capacity that the workspace is attached to.
 
 OneLake regional endpoints:
 
