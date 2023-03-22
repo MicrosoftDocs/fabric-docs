@@ -47,6 +47,6 @@ For more information on the `.create materialized-view` command, see [.create ma
 
 ## Next steps
 
-[Materialized views limitations](/azure/data-explorer/kusto/management/materialized-views/materialized-views-limitations?context=/fabric/context/context)
-[Query data in the KQL Queryset](kusto-query-set.md)
-[Create stored functions](create-functions.md)
+* [Materialized views limitations](/azure/data-explorer/kusto/management/materialized-views/materialized-views-limitations?context=/fabric/context/context)
+* [Query data in the KQL Queryset](kusto-query-set.md)
+* [Create stored functions](create-functions.md)
