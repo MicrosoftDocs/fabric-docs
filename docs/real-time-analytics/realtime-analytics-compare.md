@@ -22,16 +22,16 @@ You can use Real-time Analytics for a range of solutions, such as IoT analytics 
 ## Capability support
 
 | Category | Capability| Synapse Real-time Analytics | Azure Data Explorer |
-|--|--|--|--|
+|----|----|----|----|
 | **Security** | VNET | &cross; | Supports VNet Injection and Azure Private Link  |
-|  | CMK | &cross; | &cross; |
-|  | RBAC | &cross; | &check; |
+|  | CMK | &cross; | &check; |
+|  | RBAC | &check; | &check; |
 | **Business Continuity** | Availability Zones | &cross; | Optional |
 | **SKU** | Compute options | SaaS platform | 22+ Azure VM SKUs to choose from  |
 | **Integrations** | Built-in ingestion pipelines | Event Hubs, Event Grid, [!INCLUDE [product-name](../includes/product-name.md)] Pipeline, [!INCLUDE [product-name](../includes/product-name.md)] Dataflow | Event Hubs, Event Grid, IoT Hub |
-|  | OneLake integration | Ability to mirror data in both directions | &cross; |
+|  | OneLake integration | Supports data mirroring to and from OneLake | &cross; |
 |  | Spark integration | Built-in Kusto Spark connector integration with support for Azure Active Directory pass-through authentication, Synapse Workspace MSI, and Service Principal | Azure Data Explorer linked service: Built-in Kusto Spark integration with support for Azure Active Directory pass-through authentication, Synapse Workspace MSI, and Service Principal|
-|  | KQL artifacts management | Save KQL queries as KQL querysets that can be shared within the tenant | &cross; |
+|  | KQL artifacts management | Option to save queries as KQL querysets that can be shared within the tenant | &cross; |
 |  | Database management | &check; |  &check; |
 | **Features** | KQL queries | &check; | &check; |
 |  | API and SDKs | &check; | &check; |
