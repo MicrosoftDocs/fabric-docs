@@ -32,7 +32,7 @@ The workflow for developers using a client tool like Power BI Desktop should loo
 
    If no tests are required in the workspace, the developer can create a PR to merge changes directly into the *main* branch, without the need for another workspace.
 
-1. Once the changes are merged, the shared team’s workspace will be prompted to accept the new commit. The changes are updated into the shared workspace and everyone can see the changes to those datasets and reports.
+1. Once the changes are merged, the shared team’s workspace is prompted to accept the new commit. The changes are updated into the shared workspace and everyone can see the changes to those datasets and reports.
 
 :::image type="content" source="./media/git-branches/branches-using-client-tools.png" alt-text="Diagram showing the workflow of pushing changes from a remote git repo to the Fabric workspace.":::
 
@@ -50,7 +50,7 @@ For a developer who works in the web, the flow would be as follows:
 1. Under **Branch** drop down, choose **Create a new branch**, and branch it from the *main* branch.
 1. In **Git folder**, enter the name of the folder you want to sync to in your repo.
 
-   The workspace syncs with your feature branch, and becomes a copy of the ‘Dev team’ workspace, as illustrated above. You can now work in a new isolated environment.
+   The workspace syncs with your feature branch, and becomes a copy of the Dev team's workspace, as illustrated. You can now work in this new isolated environment.
 
    :::image type="content" source="./media/git-branches/branches-update-commit.png" alt-text="Diagram showing the workflow of commits.":::
 
