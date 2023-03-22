@@ -71,11 +71,11 @@
         href: ../placeholder.md
     - name: Google Cloud Storage
       items:
-      - name: Overview
+      - name: Overview
         href: connector-google-cloud-storage-overview.md
-      - name: Set up connection
+      - name: Set up connection
         href: connector-google-cloud-storage.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity
         href: connector-google-cloud-storage-copy-activity.md
     - name: HTTP
       items:
