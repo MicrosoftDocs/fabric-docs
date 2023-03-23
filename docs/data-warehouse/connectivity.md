@@ -48,9 +48,9 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
    :::image type="content" source="media\connectivity\object-explorer-example.png" alt-text="Screenshot showing where the connected server name appears in the Object Explorer pane." lightbox="media\connectivity\object-explorer-example.png":::
 
-When connecting via SSMS (or ADS), you see both warehouse (default) and warehouse artifacts listed as warehouses and it's difficult to differentiate between the two item types and their functionality. For this reason, we strongly encourage you to adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience.
+When connecting via SSMS (or ADS), you see both SQL Endpoint and warehouse items listed as warehouses and it's difficult to differentiate between the two item types and their functionality. For this reason, we strongly encourage you to adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience.
 
-### Connecting to SQL server endpoint using JDBC driver
+### Connecting to SQL Server endpoint using JDBC driver
 
 If you're receiving an error when attempting to connect to a SQL Server endpoint using a SQL client that uses a Java database connectivity (JDBC) driver, like DBeaver, check for the following dependencies:
 

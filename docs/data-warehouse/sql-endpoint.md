@@ -41,23 +41,23 @@ The table columns in automatically generated warehouses are derived from the sou
 
 The columns that have the types that aren't listed in the table aren't represented as the table columns in the default warehouse.
 
-In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-generated warehouse is visualized with a data warehouse icon and under the Type column you see it listed as **Warehouse (default).** An important distinction for this default warehouse is that it's a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
+In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-generated warehouse is visualized with a data warehouse icon and under the **Type** column you see it listed as **SQL Endpoint.** An important distinction for this default warehouse is that it's a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
 
 :::image type="content" source="media\sql-endpoint\warehouse-default-list.png" alt-text="Screenshot showing a Warehouse(default) in a portal list." lightbox="media\sql-endpoint\warehouse-default-list.png":::
 
 ## Connectivity
 
-For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your warehouse (default). There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later, but we generally expect that the majority of the testing and interaction for warehouse (default) will be via SQL end-point connection to a tool such as SQL Server Management Studio (SSMS) or Azure Data Studio (ADS).
+For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your SQL Endpoint. There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later, but we generally expect that the majority of the testing and interaction for your SQL Endpoint will be via a tool such as SQL Server Management Studio (SSMS) or Azure Data Studio (ADS).
 
 ## How to delete a SQL Endpoint
 
-The Warehouse (default) item is linked to its parent Lakehouse when it's automatically created and can't be directly deleted. If you need to delete the warehouse (default) item, you must delete the parent Lakehouse.
+The SQL Endpoint is linked to its parent Lakehouse when it's automatically created and can't be directly deleted. If you need to delete the SQL Endpoint, you must delete the parent Lakehouse.
 
 Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
 
 ## Known issues and limitations in the SQL Endpoint
 
-1. Lakehouse tables in the warehouse (default) are created with a delay.
+1. Lakehouse tables in the SQL Endpoint are created with a delay.
 
    Once you create or update Delta Lake folder/table in the lake, the warehouse table that references the lake data won't be immediately created/refreshed. The changes will be applied in the warehouse after 5-10 seconds.
 
@@ -65,7 +65,7 @@ Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
 
 1. Non-delta tables (Parquet, CSV, AVRO) aren't supported.
 
-   If you don't see a Lakehouse table in the warehouse (default), check the data format. Only the tables in Delta Lake format are available in the warehouse (default). Parquet, CSV, and other formats can't be queried using the warehouse (default). If you don't see your table, convert it to Delta Lake format.
+   If you don't see a Lakehouse table in the SQL Endpoint, check the data format. Only the tables in Delta Lake format are available in the SQL Endpoint. Parquet, CSV, and other formats can't be queried using the SQL Endpoint. If you don't see your table, convert it to Delta Lake format.
 
 1. You shouldn't manually create/drop tables in the warehouse(default).
 

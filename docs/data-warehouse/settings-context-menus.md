@@ -28,7 +28,7 @@ The following table is a list of settings available for each warehouse.
 |---|---|---|
 | **Name** | Lets user read/edit name of the warehouse. | Warehouse |
 | **Warehouse description** | Lets users add metadata details to provide descriptive information about a warehouse. | Warehouse |
-| **SQL Server endpoint** | The SQL server endpoint connection string for the workspace. You can use the server connection string to create a connection to the warehouse using various tools, such as SSMS/Azure Data Studio. | |
+| **SQL Server endpoint** | The SQL Server endpoint connection string for the workspace. You can use the server connection string to create a connection to the warehouse using various tools, such as SSMS/Azure Data Studio. | |
 | **Owner** | Name of the user who owns the warehouse. | |
 | **Last modified by** | Name of the user who modified the warehouse recently. | |
 | **Location** | Workspace name where the warehouse is created. | |
