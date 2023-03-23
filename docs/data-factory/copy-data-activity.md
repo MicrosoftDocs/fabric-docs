@@ -141,3 +141,7 @@ Follow these steps to add a copy activity directly.
    :::image type="content" source="media/copy-data-activity/configure-destination-file-details-in-pipeline.png" alt-text="Screenshot of Advanced options." lightbox="media/copy-data-activity/configure-destination-file-details-in-pipeline.png":::
 
 Now you can either save your data pipeline with this single copy activity or continue to design your data pipeline.
+
+## Next steps
+
+[How to monitor pipeline runs](monitor-pipeline-runs.md)
