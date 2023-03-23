@@ -26,8 +26,6 @@ landingContent:
             url: data-factory-overview.md
           - text: Connector overview
             url: connector-overview.md
-          - text: Azure Blob Storage connector overview
-            url: connector-azure-blob-storage-overview.md
 
   # Card 
   - title: Get started
@@ -40,8 +38,6 @@ landingContent:
             url: create-first-pipeline-with-sample-data.md
           - text: Move and transform data
             url: transform-data.md
-          - text: Move data with copy assistant
-            url: move-data-lakehouse-copy-assistant.md
   
   # Card 
   - title: Working with data pipelines
@@ -54,16 +50,16 @@ landingContent:
             url: copy-data-activity.md
           - text: Monitor data pipeline runs
             url: monitor-pipeline-runs.md
-          - text: Script activity
-            url: script-activity.md
+          - text: Activity Overview
+            url: activity-overview.md
+          - text: Move data with copy assistant
+            url: move-data-lakehouse-copy-assistant.md
 
   # Card 
   - title: Working with dataflows
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Connectors
-            url: connector-overview.md
           - text: Data source management
             url: data-source-management.md
 
