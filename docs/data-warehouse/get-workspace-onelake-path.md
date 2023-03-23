@@ -20,7 +20,7 @@ In this tutorial, you learn how to find a OneLake file path from the Lakehouse e
 
 ## Known limitations
 
-Currently, the OneLake path is displayed only in the Lakehouse experience. When you are in default warehouse or transactional warehouse, OneLake path isn't displayed in the product experience.
+Currently, the OneLake path is displayed only in the Lakehouse experience. When you are using the SQL Endpoint or connect to a transactional warehouse, OneLake path isn't displayed in the product experience.
 
 ## How to get a Workspace and OneLake path
 

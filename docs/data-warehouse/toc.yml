@@ -9,8 +9,8 @@ items:
   items: 
   - name: Warehouse
     href: warehouse.md
-  - name: Default warehouse
-    href: default-warehouse.md
+  - name: SQL Endpoint
+    href: sql-endpoint.md
   - name: Datasets
     href: datasets.md
   - name: Creating reports
@@ -19,8 +19,8 @@ items:
   items:
   - name: Warehouse
     href: warehouse.md
-  - name: Default warehouse
-    href: default-warehouse.md
+  - name: SQL Endpoint
+    href: sql-endpoint.md
   - name: Create a warehouse
     href: create-warehouse.md
   - name: Create reports in the Power BI service

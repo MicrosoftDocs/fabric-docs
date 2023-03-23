@@ -3,9 +3,10 @@ title: Query using the Visual Query editor
 description: Learn how to use the Visual Query editor.
 ms.reviewer: wiassaf
 ms.author: salilkanade
-author: cynotebo
+author: salilkanade
 ms.topic: how-to
 ms.date: 03/15/2023
+ms.search.form: Query Editor
 ---
 
 # Query using the Visual Query editor
@@ -38,7 +39,7 @@ To create a query, drag and drop tables from the Object explorer on the left ont
 
 Once you drag one or more tables onto the canvas, you can use the visual experience to design your queries. The warehouse editor uses the similar Power Query diagram view experience to enable you to easily query and analyze your data. Learn more about [Power Query diagram view](/power-query/diagram-view).
 
-As you work on your visual query, the queries are automatically saved every few seconds. A “saving indicator” appears in your query tab at the bottom to indicate that your query is being saved.
+As you work on your visual query, the queries are automatically saved every few seconds. A "saving indicator" appears in your query tab at the bottom to indicate that your query is being saved.
 
 The following image shows a sample query created using the no-code Visual Query editor to retrieve the **Top customers by Orders**.
 
