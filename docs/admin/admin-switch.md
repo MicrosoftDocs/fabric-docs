@@ -9,25 +9,28 @@ ms.date: 03/12/2023
 
 # Enable Microsoft Fabric for your organization
 
-The **Microsoft Fabric** admin switch lets organizations that use Power BI opt into [Microsoft Fabric](/power-bi/developer/visuals/create-r-based-power-bi-desktop). You can enable Microsoft Fabric for the entire organization, a specific capacity, or for a specified group of users.
+The *Microsoft Fabric* admin switch lets organizations that use Power BI opt into [Microsoft Fabric](/power-bi/developer/visuals/create-r-based-power-bi-desktop).
+
+You can enable Microsoft Fabric for:
+
+* **The entire organization** - Use this option to be an early adopter of Microsoft Fabric.
+
+* **A specific capacity** - Use this option if you want advanced users in a specific capacity to try out Microsoft Fabric.
+
+* **A specified group of users** - Use this option if you want a select number of advanced users to try out Microsoft Fabric.
 
 >[!Tip]
 >Microsoft Fabric will be turned on for all Power BI users on 1 July 2023.
 
 ## Prerequisites
 
-To enable Microsoft Fabric, you need to have one of the admin roles listed in the table below. The *applicable to* column specifies the scope of the change per admin role.
+To enable Microsoft Fabric, you need to have one of the following admin roles:
 
-| **Admin role**                           | **Admin scope**            | **Applicable to**       |
-|------------------------------------------|----------------------------|-------------------------|
-| Global Administrator                     | Microsoft 365              | The entire organization |
-| Billing Administrator                    | Microsoft 365              | The entire organization |
-| License Administrator                    | Microsoft 365              | The entire organization |
-| User admin                               | Microsoft 365              | The entire organization |
-| Power Platform Administrator             | Power Platform             | The entire organization |
-| Power BI Administrator                   | Power BI service           | The entire organization |
-| Power BI Premium Capacity Administrator  | A single Premium capacity  | A specific capacity     |
-| Power BI Embedded Capacity Administrator | A single Embedded capacity | A specific capacity     |
+* [Microsoft 365 Global admin](admin-overview#microsoft-365-admin-roles)
+
+* [Power Platform admin](admin-overview#power-platform-and-microsoft-fabric-admin-roles)
+
+* [Power BI admin](/power-bi/admin/service-admin-administering-power-bi-in-your-organization#administrator-roles-related-to-power-bi) (similar to [Microsoft Fabric admin](admin-overview#power-platform-and-microsoft-fabric-admin-roles))
 
 ## Enable Microsoft Fabric
 
