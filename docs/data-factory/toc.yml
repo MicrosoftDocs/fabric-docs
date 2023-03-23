@@ -93,6 +93,12 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
+    - name: Lakehouse
+      items:
+      - name: Overview
+        href: connector-lakehouse-overview.md
+      - name: Configure in copy activity
+        href: connector-lakehouse-copy-activity.md
     - name: Microsoft 365
       items:
       - name: Overview
