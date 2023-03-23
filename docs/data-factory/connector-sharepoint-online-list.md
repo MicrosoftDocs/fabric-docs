@@ -101,7 +101,7 @@ Tenant ID
    - Open SharePoint Online site link e.g. https://[your_site_url]/_layouts/15/appinv.aspx (replace the site URL).
    - Search the application ID you registered, fill the empty fields, and click "Create".
 
-         * App Domain: `contoso.com`
+         * App Domain: ```contoso.com```
          * Redirect URL: `https://www.contoso.com`
          * Permission Request XML:
 
