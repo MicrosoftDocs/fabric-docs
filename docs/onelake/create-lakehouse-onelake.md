@@ -1,6 +1,6 @@
 ---
 title: Create a lakehouse with OneLake
-description: Learn how to create a lakehouse and load data with OneLake.
+description: Learn how to create a lakehouse and load data into it with OneLake; you can also add data in bulk or schedule data loads.
 ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
@@ -46,7 +46,7 @@ At this point, you have a lakehouse running on top of OneLake. Next, add some da
 
 1. Select the More icon (**…**) for the file you uploaded and select **Properties** from the menu.
 
-The **Properties** screen shows the various details for the file, including the URL and Azure Blob File System (ABFS) path for use with Notebooks. You can copy the ABFS into a Fabric Notebook to query the data using Spark. To learn more about notebooks in Microsoft Fabric, see [Explore the data in your Lakehouse with a notebook](..\data-engineering\lakehouse-notebook-explore.md).
+   The **Properties** screen shows the various details for the file, including the URL and Azure Blob File System (ABFS) path for use with Notebooks. You can copy the ABFS into a Fabric Notebook to query the data using Spark. To learn more about notebooks in Fabric, see [Explore the data in your Lakehouse with a notebook](..\data-engineering\lakehouse-notebook-explore.md).
 
 Congratulations, you've created your first lakehouse with data stored in OneLake!
 

@@ -1,6 +1,6 @@
 ---
 title: Create a shortcut
-description: Learn how to create a OneLake shortcut and an ADLS shortcut.
+description: Learn how to create two types of shortcuts, a OneLake shortcut and an Azure Data Lake Storage (ADLS) shortcut.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
@@ -41,7 +41,7 @@ To create a OneLake shortcut:
 
 ## How to create an ADLS shortcut
 
-To create an ADLS shortcut:
+To create an Azure Data Lake Storage (ADLS) shortcut:
 
 1. Open a lakehouse.
 
@@ -57,8 +57,6 @@ To create an ADLS shortcut:
 
 1. Specify the connection details this shortcut will use.
 
-   :::image type="content" source="media\create-onelake-shortcut\connection-details.png" alt-text="Screenshot showing where to enter the Connection settings for a new shortcut." lightbox="media\create-onelake-shortcut\connection-details.png":::
-
    1. Provide the endpoint for your ADLS account (URL).
       > [!NOTE]
       > This must be the DFS endpoint for the storage account.
@@ -69,14 +67,16 @@ To create an ADLS shortcut:
    1. If you chose **Organizational account**, select the **Sign** **in** button.
    1. Select **Next**.
 
-1. Specify the shortcut details.
+   :::image type="content" source="media\create-onelake-shortcut\connection-details.png" alt-text="Screenshot showing where to enter the Connection settings for a new shortcut." lightbox="media\create-onelake-shortcut\connection-details.png":::
 
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-details.png" alt-text="Screenshot showing where to enter new shortcut details." lightbox="media\create-onelake-shortcut\new-shortcut-details.png":::
+1. Specify the shortcut details.
 
    1. Provide a name for the shortcut.
    1. Provide a path for the shortcut (**Sub Path**). Enter a relative path that starts with a container for the storage account.
       > [!NOTE]
       > Shortcut paths are case sensitive.
+
+   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-details.png" alt-text="Screenshot showing where to enter new shortcut details." lightbox="media\create-onelake-shortcut\new-shortcut-details.png":::
 
 1. Select **Create**.
 

@@ -1,6 +1,6 @@
 ---
 title: OneLake shortcuts
-description: Learn about OneLake shortcuts and how they work.
+description: OneLake shortcuts provide a way to connect to existing data without having to directly copy it. Learn how to use them.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
@@ -25,14 +25,12 @@ Shortcuts are embedded references within OneLake that point to other file store 
 From within a lakehouse, you can create shortcuts to multiple locations. You can create shortcuts that point to other lakehouses, which allows multiple lakehouses to derive data from the same source and always be in sync. You can also create shortcuts that point to external storage accounts, such as Azure Data Lake Storage (ADLS) Gen 2 accounts, which allows you to quickly source your existing cloud data without having to copy it.
 
 > [!NOTE]
-> When creating a shortcut to an ADLS Gen 2 account, you must use the Distributed File System (DFS) endpoint.
-
-> [!NOTE]
-> Fabric doesn't currently support connections to private endpoints.
+> - When creating a shortcut to an ADLS Gen 2 account, you must use the Distributed File System (DFS) endpoint.
+> - Microsoft Fabric doesn't currently support connections to private endpoints.
 
 ## Supported shortcut sources
 
-Microsoft Fabric currently supports these sources:
+Fabric currently supports these sources:
 
 - Internal OneLake shortcuts
 - ADLS Gen 2
@@ -118,7 +116,7 @@ User A performs a delete operation on the following path: *MyLakehouse\Files\\**
 
 In this case, **MyShortcut** is deleted from the lakehouse. Shortcuts don't perform cascading deletes, therefore the file and directories in the ADLS Gen 2 account *Foo\Bar* remain untouched.
 
-#### Scenario 2
+#### Scenario two
 
 User A performs a delete operation on the following path: *MyLakehouse\Files\\**MyShortcut**\Foo\Bar*.
 

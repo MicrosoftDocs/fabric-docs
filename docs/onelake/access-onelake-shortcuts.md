@@ -1,6 +1,6 @@
 ---
 title: Accessing shortcuts
-description: Follow steps to access shortcuts as folders or tables.
+description: Learn how to access OneLake shortcuts as folders, and how to access shortcuts as tables, in a Spark notebook.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
@@ -36,7 +36,7 @@ To access a shortcut as a folder:
 
 ## How to access shortcuts as tables in a Spark notebook
 
-Fabric automatically recognizes shortcuts in the **Tables** section of the lakehouse that have data in the delta\parquet format as tables. You can reference these tables directly from a Spark notebook.
+Microsoft Fabric automatically recognizes shortcuts in the **Tables** section of the lakehouse that have data in the delta\parquet format as tables. You can reference these tables directly from a Spark notebook.
 
 To access a shortcut as a table:
 
