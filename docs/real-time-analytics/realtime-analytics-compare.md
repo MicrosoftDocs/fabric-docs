@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: overview
-ms.date: 03/22/2023
+ms.date: 03/23/2023
 ms.search.form: product-kusto
 ---
 
@@ -39,8 +39,8 @@ You can use Real-time Analytics for a range of solutions, such as IoT analytics 
 |  | Query tools | &check; | &check; |
 |  | Autoscale | &check; (Built-in) | &check; (Optional: manual, optimized, custom) |
 |  | Dashboards| &cross; | &check; |
-|  | PowerBI quick create | &check; | &cross; |
-| **Pricing** | Business Model | Included in the Premium PowerBI workspace consumption model. Billing per use and dedicated capacity available | Cost plus billing model with multiple meters: Azure Data Explorer IP markup, Compute, Storage, and Networking |
+|  | Power BI quick create | &check; | &cross; |
+| **Pricing** | Business Model | Included in the Premium Power BI workspace consumption model. Billing per use and dedicated capacity available | Cost plus billing model with multiple meters: Azure Data Explorer IP markup, Compute, Storage, and Networking |
 
 ## Next steps
 
