@@ -6,6 +6,7 @@ ms.author: chweb
 author: chuckles22
 ms.topic: conceptual
 ms.date: 03/15/2023
+ms.search.form: Default dataset overview
 ---
 
 # Default datasets
@@ -24,7 +25,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], datasets are a semant
 
 For more on Power BI, see [Power BI guidance documentation - Power BI | Microsoft Learn](/power-bi/guidance/).
 
-## Understanding what’s in the default dataset
+## Understanding what's in the default dataset
 
 Currently, tables in the lake house are automatically added to the default dataset. Users can also manually select tables or views from the warehouse they want included in the model for more flexibility. Objects that are in the default dataset are created as a layout in the model view.
 
@@ -42,7 +43,7 @@ The default layout for BI enabled tables persists in the user session and is gen
 
 :::image type="content" source="media\datasets\default-dataset-objects.png" alt-text="Screenshot of the reporting tab showing default dataset objects." lightbox="media\datasets\default-dataset-objects.png":::
 
-This layout isn't currently saved past the user’s session.
+This layout isn't currently saved past the user's session.
 
 Default Datasets follow the current limitations for datasets in Power BI. Learn more:
 

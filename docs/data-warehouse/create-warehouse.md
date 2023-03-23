@@ -6,6 +6,7 @@ ms.author: prlangad
 author: prlangad
 ms.topic: how-to
 ms.date: 03/15/2023
+ms.search.form: Create a warehouse
 ---
 
 # Create a warehouse
