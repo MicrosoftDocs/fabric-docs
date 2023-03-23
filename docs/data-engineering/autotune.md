@@ -1,5 +1,5 @@
 ---
-title: Autotune Spark Configuration
+title: Autotune
 description: Discover how autotune auto-adjusts Spark configurations, minimizing workload execution time and optimizing performance.
 ms.reviewer: snehagunda
 ms.author: eskot
