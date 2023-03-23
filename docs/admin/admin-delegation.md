@@ -9,7 +9,7 @@ ms.date: 12/27/2022
 
 # Delegate tenant settings
 
-As a [Microsoft 365 Global admin](admin-overview.md#microsoft-365-admin-roles), a [Power Platform or a Microsoft Fabric admin](admin-overview.md#power-platform-and-microsoft-fabric-admin-roles), you can delegate [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings) in your organization. For example, if you're organization is divided into groups such as *sales*, *marketing* and *finance*, you can create sup-admins for those groups. Sub-admins who sit within a group, a better suited to make admin decisions inline with the group's needs. Domain and capacity admins can also have sub-admins operating under them. For example, the *sales* group in your organization, may be further divided into regions, each with its own workspace. Typically, you'd want to grant sup-admins, the ability to override the global settings that you dictate.
+As a [Microsoft 365 Global admin](admin-overview.md#microsoft-365-admin-roles), a [Power Platform or a Microsoft Fabric admin](admin-overview.md#power-platform-and-microsoft-fabric-admin-roles), you can delegate [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings) in your organization. For example, if your organization is divided into groups such as *sales*, *marketing* and *finance*, you can create sup-admins for those groups. Subadmins who sit within a group, a better suited to make admin decisions inline with the group's needs. Domain and capacity admins can also have subadmins operating under them. For example, the *sales* group in your organization, may be further divided into regions, each with its own workspace. Typically, you'd want to grant sup-admins, the ability to override the global settings that you dictate.
 
 There are three levels of tenant settings:
 
@@ -17,7 +17,7 @@ There are three levels of tenant settings:
 
 * **Domain** and **Capacity** - A [domain admin](/power-bi/developer/visuals/create-r-based-power-bi-desktop) or a [capacity admin](admin-overview.md#capacity-admin-roles) have access to all the tenant settings except settings that are turned off by the tenant admin, and [auto delegated tenant settings](#auto-delegated-tenant-settings)
 
-* **Workspace** - A [workspace admin](/power-bi/developer/visuals/create-r-based-power-bi-desktop) has access to the settings that are not blocked by the tenant, domain or capacity admins.
+* **Workspace** - A [workspace admin](/power-bi/developer/visuals/create-r-based-power-bi-desktop) has access to the settings that aren't blocked by the tenant, domain or capacity admins.
 
 ## How to delegate
 
@@ -34,9 +34,9 @@ Most tenant settings are turned on for the entire organization by default. You c
 
 2. Expand the setting you want to edit and use the following settings:
 
-    * **On/off switch** - Enable or disable delegation for this setting. When the switch is turned *off*, capacity and domain admins will see the disabled setting greyed out.
+    * **On/off switch** - Enable or disable delegation for this setting. When the switch is turned *off*, capacity and domain admins see the disabled setting greyed out.
 
-    * **Apply to** - Apply the delegation of the settings to the entire organization or use security groups to to decide who gets permissions for the setting.
+    * **Apply to** - Apply the delegation of the settings to the entire organization or use security groups to decide who gets permissions for the setting.
 
     * **Delegate setting to other admins** - Select to delegate the setting to capacity, domain or workspace admins.
 
@@ -67,7 +67,7 @@ A workspace admin, can turn on tenant settings for the workspace, providing they
 
 ## Auto delegated tenant settings
 
-Auto delegated tenant settings are always available for everyone. The tenant admin can define the default value of the tenant setting, but he can't stop other admins from overwriting these definitions.
+Auto delegated tenant settings are always available for everyone. Tenant admins can define the default value of the tenant setting, but they can't stop other admins from overwriting these definitions.
 
 Capacity and domain admins can select the *override tenant level settings* to override the tenant admin's suggestion. Workspace admins can also override the tenant setting providing it isn't blocked by a capacity or domain admin.
 
