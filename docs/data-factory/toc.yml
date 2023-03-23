@@ -19,8 +19,6 @@
     items:
     - name: Connector overview
       href: connector-overview.md
-    - name: Connectors feature summary
-      href: ../placeholder.md
     - name: Amazon S3
       items:
       - name: Overview
