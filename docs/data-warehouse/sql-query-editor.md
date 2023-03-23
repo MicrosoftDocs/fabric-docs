@@ -3,9 +3,10 @@ title: Query using the SQL Query editor
 description: Learn how to use the SQL Query editor.
 ms.reviewer: wiassaf
 ms.author: salilkanade
-author: cynotebo
+author: salilkanade
 ms.topic: how-to
 ms.date: 03/15/2023
+ms.search.form: Query Editor
 ---
 
 # Query using the SQL Query editor
@@ -25,11 +26,11 @@ Alternatively, in the **Data grid** view, create a new query using the **+ New Q
 
 You can write your SQL query in the query editor window, which includes IntelliSense support. Once complete, select the **Run** button to execute the query. Query results appear in the results section. You can open the results in Excel for further analysis by selecting the **Open in Excel** button.
 
-As you work on your SQL query, the queries are automatically saved every few seconds. A “saving indicator” appears in your query tab at the bottom to indicate that your query is being saved.
+As you work on your SQL query, the queries are automatically saved every few seconds. A "saving indicator" appears in your query tab at the bottom to indicate that your query is being saved.
 
 :::image type="content" source="media\sql-query-editor\save-indicator-sql-query.png" alt-text="Screenshot of the query editor window." lightbox="media\sql-query-editor\save-indicator-sql-query.png":::
 
-The SQL Query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing and validation. Once you’ve written the T-SQL query, select **Run** to execute the query. The **Results** preview is displayed in the **Results** section. The **Open in Excel** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to view the results in Excel.
+The SQL Query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing and validation. Once you've written the T-SQL query, select **Run** to execute the query. The **Results** preview is displayed in the **Results** section. The **Open in Excel** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to view the results in Excel.
 
 ## Known limitations with warehouse editor
 

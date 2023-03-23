@@ -6,6 +6,7 @@ ms.author: cynotebo
 author: cynotebo
 ms.topic: conceptual
 ms.date: 03/15/2023
+ms.search.form: Warehouse overview, Warehouse in workspace overview
 ---
 
 # Warehouse

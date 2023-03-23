@@ -6,6 +6,7 @@ ms.author: jacindaeng
 author: jacindaeng
 ms.topic: conceptual
 ms.date: 03/15/2023
+ms.search.form: Monitoring
 ---
 
 # Monitoring connections, sessions, and requests using DMVs

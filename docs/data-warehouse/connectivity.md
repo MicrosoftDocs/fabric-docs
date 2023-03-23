@@ -3,9 +3,10 @@ title: Connectivity
 description: Follow steps to connect SSMS to a warehouse in your workspace.
 ms.reviewer: wiassaf
 ms.author: salilkanade
-author: cynotebo
+author: salilkanade
 ms.topic: how-to
 ms.date: 03/15/2023
+ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
 # Connectivity
@@ -27,7 +28,7 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
    :::image type="content" source="media\connectivity\workspace-more-menu.png" alt-text="Screenshot of the workspace screen with the context menu open." lightbox="media\connectivity\workspace-more-menu.png":::
 
-1. Navigate to the warehouse’s **Settings** page.
+1. Navigate to the warehouse's **Settings** page.
 1. Navigate to the **Warehouse mode** tab.
 1. Select the **Copy** button next to the SQL connection string to copy it to your clipboard.
 
@@ -96,7 +97,7 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
 
    **Workaround**: Ignore the message by selecting **OK**, and continue with your query.
 
-- Connection is forcibly closed. You might experience connection issues while querying your warehouse with SSMS. The error might look like “An existing connection was forcibly closed by the remote host”.
+- Connection is forcibly closed. You might experience connection issues while querying your warehouse with SSMS. The error might look like "An existing connection was forcibly closed by the remote host".
 
    **Workaround**: Ignore the message, reconnect, and keep querying your warehouse.
 

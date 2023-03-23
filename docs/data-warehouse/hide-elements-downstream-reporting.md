@@ -3,7 +3,7 @@ title: Hide elements from downstream reporting
 description: Follow steps to hide warehouse elements from downstream reporting.
 ms.reviewer: wiassaf
 ms.author: salilkanade
-author: cynotebo
+author: salilkanade
 ms.topic: how-to
 ms.date: 03/17/2023
 ---
