@@ -17,7 +17,7 @@ When you run a notebook in Microsoft Fabric, an Apache Spark session is started 
 
 > [!NOTE]
 > The high concurrency mode-based session sharing is always within a single user boundary. 
-> The notebooks need to have matching spark configurations, share the same default lakehouse and libraries to share a single spark session. 
+> The notebooks need to have matching spark configurations, should be part of the same workspace, share the same default lakehouse and libraries to share a single spark session. 
 
 ## Configure High Concurrency Mode 
 By default, all the Fabric workspaces will be enabled with High Concurrency Mode. To configure the High Concurrency feature , 
