@@ -40,7 +40,7 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
 1. You can't query tables that are partitioned or the tables with renamed columns.
 
-1. You can't load case sensitive tables to data warehouse (i.e.., Cat, cat and CAT are all read as the same table name by SQL); doing so causes the data warehouse to fail. Use unique table and file names for all items in a warehouse.
+1. You can't load case sensitive tables to data warehouse (for example, "Cat", "cat", and "CAT" are all read as the same table name by SQL). Duplicate table names can cause the data warehouse to fail. Use unique table and file names for all items in a warehouse.
 
 1. Data should be in parquet, delta or .csv format.
 
@@ -62,7 +62,7 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
 *Applies to:* Warehouse and SQL Endpoint
 
-As mentioned previously, the full [!INCLUDE [product-name](../includes/product-name.md)] portal experience isn't available at this time, so for some activities you will be use a TDS end-point to connect to and query the SQL Endpoint and/or your warehouse via SSMS or ADS.
+As mentioned previously, the full [!INCLUDE [product-name](../includes/product-name.md)] portal experience isn't available at this time, so for some activities you will use a TDS endpoint to connect to and query the SQL Endpoint and/or your warehouse via SSMS or ADS.
 
 In this tutorial, you learn how to find your TDS end-point and use it to connect to SSMS for running SQL queries over either the SQL Endpoint or warehouse data.
 
