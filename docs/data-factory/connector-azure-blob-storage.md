@@ -30,7 +30,7 @@ The Azure Blob Storage connector supports the following authentication types for
 |Organizational account||√|
 
 >[!Note]
->For the Azure Blob Storage connection of Dataflow Gen2, go to this article.
+>For the Azure Blob Storage connection of Dataflow Gen2, go to [Connect to Azure Blob Storage in dataflows](./connector-azure-blob-storage-dataflows.md).
 
 ## Prerequisites
 

@@ -24,7 +24,7 @@ To connect to Azure Blob Storage from a dataflow:
 
    :::image type="content" source="./media/connector-azure-blob-storage-dataflows/select-open-dataflow.png" alt-text="Screenshot showing the workspace where you choose to create a new dataflow." lightbox="./media/connector-azure-blob-storage-dataflows/select-open-dataflow.png":::
 
-1. In Power Query, select **Get data**.
+1. In Power Query, either select **Get data** in the ribbon or select **Get data from another source** in the current view.
 
    :::image type="content" source="./media/connector-azure-blob-storage-dataflows/get-data.png" alt-text="Screenshot showing the Power Query workspace with the Get data option emphasized.":::
 

@@ -18,5 +18,5 @@ The Amazon S3 connector isn't currently supported in gen2 dataflows.
 
 ## Next steps
 
-- [How to create Amazon S3 connection](placeholder.md)
-- [Copy data in Amazon S3](placeholder.md)
+- [How to create Amazon S3 connection](../placeholder.md)
+- [Copy data in Amazon S3](../placeholder.md)
