@@ -13,7 +13,7 @@ ms.search.form: Warehouse overview, Warehouse in workspace overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The Warehouse functionality is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. This warehouse is displayed in the [!INCLUDE [product-name](../includes/product-name.md)] portal with a warehouse icon, however under the Type column, you see the type listed as **Warehouse**. Where data is automatically accessible via the read-only SQL Endpoint, you're fully in control of creating tables, loading, transforming and querying your data in the data warehouse using either the [!INCLUDE [product-name](../includes/product-name.md)] portal or T-SQL commands.
+The Warehouse functionality is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. This warehouse is displayed in the [!INCLUDE [product-name](../includes/product-name.md)] portal with a warehouse icon, however under the **Type** column, you see the type listed as **Warehouse**. Where data is automatically accessible via the read-only SQL Endpoint, you're fully in control of creating tables, loading, transforming and querying your data in the data warehouse using either the [!INCLUDE [product-name](../includes/product-name.md)] portal or T-SQL commands.
 
 :::image type="content" source="media\warehouse\multiple-warehouse-list.png" alt-text="Screenshot of a warehouse list that shows distinction between warehouse and SQL Endpoint." lightbox="media\warehouse\multiple-warehouse-list.png":::
 

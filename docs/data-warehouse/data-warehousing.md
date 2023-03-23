@@ -46,11 +46,11 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
 1. The following limitations are regarding query lifecycle DMVs:
 
-   - When running "sys.dm_exec_connections", you may encounter the following error even if you're an Admin of your workspace.
+   - When querying `sys.dm_exec_connections`, you may encounter the following error, even if you're an Admin of your workspace.
 
       ***Error Message:*** *The user doesn't have the external policy action 'Microsoft.Sql/Sqlservers/SystemViewsAndFunctions/ServerPerformanceState/Rows/Select' or permission 'VIEW SERVER PERFORMANCE STATE' to perform this action.*
 
-   - "sys.dm_exec_sessions" provides a limited view as not all active query results will display.
+   - The dynamic management view `sys.dm_exec_sessions` provides a limited view as not all active query results will display.
 
 1. Permissions:
 

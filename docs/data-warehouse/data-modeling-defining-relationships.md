@@ -13,7 +13,7 @@ ms.search.form: Model view
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-A well-defined data model is instrumental in driving your analytics and reporting experiences. In [!INCLUDE [product-name](../includes/product-name.md)] warehouse, we're providing you with a way to easily build and change your data model with a few simple clicks in our visual editor. You need to have at least a small sample of data loaded before you can explore these concepts further; tables may be empty, but the schemas (their structures) need to be defined.
+A well-defined data model is instrumental in driving your analytics and reporting experiences. In [!INCLUDE [product-name](../includes/product-name.md)] warehouse, we're providing you with a way to easily build and change your data model with a few simple steps in our visual editor. You need to have at least a small sample of data loaded before you can explore these concepts further; tables may be empty, but the schemas (their structures) need to be defined.
 
 ## How to model data and define relationships
 
