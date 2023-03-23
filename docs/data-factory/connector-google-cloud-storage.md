@@ -68,7 +68,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 #### Basic authentication
 
-- **Username**: ID of the secret access key. To find the access key and secret, see the [Prerequisites](https://learn.microsoft.com/azure/data-factory/connector-google-cloud-storage?tabs=data-factory#prerequisites).
+- **Username**: ID of the secret access key. To find the access key and secret, see the [Prerequisites](connector-google-cloud-storage-copy-activity.md#prerequisites).
 - **Password**: The secret access key itself.
 
 :::image type="content" source="media/connector-google-cloud/authentication-basic.png" alt-text="Screenshot showing that basic authentication method":::
@@ -101,7 +101,7 @@ The following properties in the table are the supported authentication types.
 |Name|Description|Required|Property|Copy/dataflow gen2|
 |:---|:---|:---|:---|:---|
 |**Basic**||||✓/|
-|- Username|ID of the secret access key. To find the access key and secret, see the [Prerequisites](https://learn.microsoft.com/azure/data-factory/connector-google-cloud-storage?tabs=data-factory#prerequisites).|Yes |||
+|- Username|ID of the secret access key. To find the access key and secret, see the [Prerequisites](connector-google-cloud-storage-copy-activity.md#prerequisites).|Yes |||
 |- Password|The secret access key itself.|Yes |||
 
 ## Next steps

@@ -16,6 +16,25 @@ ms.custom: template-how-to
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Google Cloud Storage.
 
+## Prerequisites
+
+The following setup is required on your Google Cloud Storage account:
+
+1. Enable interoperability for your Google Cloud Storage account
+2. Set the default project that contains the data you want to copy from the target GCS bucket.
+3. Create a service account and define the right levels of permissions by using Cloud IAM on GCP.
+4. Generate the access keys for this service account.
+
+:::image type="content" source="media/connector-google-cloud/google-storage-cloud-settings.png" alt-text="Retrieve access key for Google Cloud Storage":::
+
+## Required permissions
+
+To copy data from Google Cloud Storage, make sure you've been granted the following permissions for object operations: ` storage.objects.get` and ` storage.objects.list`.
+
+If you use UI to author, additional ` storage.buckets.list` permission is required for operations like testing connection to linked service and browsing from root. If you don't want to grant this permission, you can choose "Test connection to file path" or "Browse from specified path" options from the UI.
+
+For the full list of Google Cloud Storage roles and associated permissions, see [IAM roles for Cloud Storage](https://cloud.google.com/storage/docs/access-control/iam-roles) on the Google Cloud site.
+
 ## Supported format
 
 Google Cloud Storage supports the following file formats. Refer to each article for format-based settings.
