@@ -14,7 +14,7 @@ ms.date: 03/15/2023
 
 **Applies to:** Warehouse and SQL Endpoint
 
-Settings are accessible from the context menu or from the Settings icon in the ribbon when you open the item. There are some key differences in the actions you can take in settings depending on if you're interacting with the warehouse (default) or warehouse item.
+Settings are accessible from the context menu or from the Settings icon in the ribbon when you open the item. There are some key differences in the actions you can take in settings depending on if you're interacting with the SQL Endpoint or a data warehouse.
 
 This section describes and explains the settings options available based on the item you're working with and its description.
 

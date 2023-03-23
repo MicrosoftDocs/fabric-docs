@@ -12,12 +12,12 @@ ms.date: 03/15/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The Warehouse functionality is a ‘traditional’ data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. This warehouse is displayed in the [!INCLUDE [product-name](../includes/product-name.md)] portal with a warehouse icon, however under the Type column, you see the type listed as **Warehouse**. Where data is automatically loaded into the warehouse (default), you're fully in control of creating tables, loading, transforming and querying your data in the data warehouse using either the [!INCLUDE [product-name](../includes/product-name.md)] portal or T-SQL commands.
+The Warehouse functionality is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. This warehouse is displayed in the [!INCLUDE [product-name](../includes/product-name.md)] portal with a warehouse icon, however under the Type column, you see the type listed as **Warehouse**. Where data is automatically accessible via the read-only SQL Endpoint, you're fully in control of creating tables, loading, transforming and querying your data in the data warehouse using either the [!INCLUDE [product-name](../includes/product-name.md)] portal or T-SQL commands.
 
-:::image type="content" source="media\warehouse\multiple-warehouse-list.png" alt-text="Screenshot of a warehouse list that shows distinction between warehouse and warehouse (default)." lightbox="media\warehouse\multiple-warehouse-list.png":::
+:::image type="content" source="media\warehouse\multiple-warehouse-list.png" alt-text="Screenshot of a warehouse list that shows distinction between warehouse and SQL Endpoint." lightbox="media\warehouse\multiple-warehouse-list.png":::
 
 > [!IMPORTANT]
-> The distinction between the [Warehouse (default)](default-warehouse.md) and Warehouse is an important one as transactional T-SQL statements fail if you attempt to run them against the Warehouse (default) item. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
+> The distinction between the [SQL Endpoint](sql-endpoint.md) and Warehouse is an important one as T-SQL statements that write data or modify schema fail if you attempt to run them against the SQL Endpoint. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
 
 When you create a Lakehouse or a warehouse, a default Power BI dataset is created. This is represented with the (default) suffix. For more information, see [Default datasets](datasets.md).
 
@@ -27,9 +27,7 @@ When you create a Lakehouse or a warehouse, a default Power BI dataset is create
 
 ## Rename a warehouse
 
-This functionality isn't supported for a default warehouse, you can only rename the **warehouse** item.
-
-From within the **Settings**, select the Settings icon in the ribbon. The **Settings** panel displays on the right side of the screen; you can edit the name of the warehouse to provide a new name and close the panel.
+From within the **Settings**, select the Settings icon in the ribbon. The **Settings** panel displays on the right side of the screen; you can edit the name of a warehouse to provide a new name and close the panel.
 
 :::image type="content" source="media\warehouse\settings-icon-panel.png" alt-text="Screenshot showing the Settings icon in the ribbon and the Settings panel." lightbox="media\warehouse\settings-icon-panel.png":::
 
@@ -59,4 +57,4 @@ To delete a warehouse, navigate to the workspace and find the warehouse you want
 
 ## Next steps
 
-- [SQL Endpoint](default-warehouse.md)
+- [SQL Endpoint](sql-endpoint.md)

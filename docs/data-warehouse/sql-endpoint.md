@@ -12,13 +12,12 @@ ms.date: 03/15/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse workspace as Delta tables, a SQL based warehouse containing tables that reference your Delta Lake data is automatically created in that workspace for you. Every Delta Lake table from a Lakehouse is represented as one table in this automatically generated warehouse.
+When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse workspace as Delta tables, a SQL-based experience containing tables that reference your Delta Lake data is automatically created in that workspace for you, called the SQL Endpoint. Every Delta Lake table from a Lakehouse is represented as one table.
 
-:::image type="content" source="media\default-warehouse\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and Delta Lake tables." lightbox="media\default-warehouse\lakehouse-delta-tables.png":::
+:::image type="content" source="media\sql-endpoint\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and Delta Lake tables." lightbox="media\sql-endpoint\lakehouse-delta-tables.png":::
 
-## Understand SQL Endpoint
-
-The distinction between Warehouse (default) and [Warehouse](warehouse.md) is an important one as transactional T-SQL statements fail if you attempt to run them against the Warehouse (default) item. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
+> [!IMPORTANT]
+> The distinction between the SQL Endpoint and [Warehouse](warehouse.md) is an important one as T-SQL statements that write data or modify schema fail if you attempt to run them against the SQL Endpoint. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
 
 ## Automatically generated schema
 
@@ -43,7 +42,7 @@ The columns that have the types that aren't listed in the table aren't represent
 
 In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-generated warehouse is visualized with a data warehouse icon and under the Type column you see it listed as **Warehouse (default).** An important distinction for this default warehouse is that it's a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
 
-:::image type="content" source="media\default-warehouse\warehouse-default-list.png" alt-text="Screenshot showing a Warehouse(default) in a portal list." lightbox="media\default-warehouse\warehouse-default-list.png":::
+:::image type="content" source="media\sql-endpoint\warehouse-default-list.png" alt-text="Screenshot showing a Warehouse(default) in a portal list." lightbox="media\sql-endpoint\warehouse-default-list.png":::
 
 ## Connectivity
 
@@ -65,7 +64,7 @@ Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
 
 1. Non-delta tables (Parquet, CSV, AVRO) aren't supported.
 
-   If you don’t see a Lakehouse table in the warehouse (default), check the data format. Only the tables in Delta Lake format are available in the warehouse (default). Parquet, CSV, and other formats can't be queried using the warehouse (default). If you don't see your table, convert it to Delta Lake format.
+   If you don't see a Lakehouse table in the warehouse (default), check the data format. Only the tables in Delta Lake format are available in the warehouse (default). Parquet, CSV, and other formats can't be queried using the warehouse (default). If you don't see your table, convert it to Delta Lake format.
 
 1. You shouldn't manually create/drop tables in the warehouse(default).
 
@@ -75,13 +74,13 @@ Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
 
 1. Tables with renamed columns aren't supported.
 
-   Don’t rename the columns in the lake because the renamed columns won't be available in the warehouse.
+   Don't rename the columns in the lake because the renamed columns won't be available in the warehouse.
 
    If you rename the columns, you need to recreate the table in the lake.
 
 1. Delta tables created outside of the tables folder aren't available.
 
-   If you don’t see a Lakehouse table in the warehouse, check the location of the table. Only the tables that are referencing data in the `/tables` folder are available in the warehouse. The tables that reference data in a files folder in the lake won't appear in the warehouse. As a workaround, move your data to the `/tables` folder.
+   If you don't see a Lakehouse table in the warehouse, check the location of the table. Only the tables that are referencing data in the `/tables` folder are available in the warehouse. The tables that reference data in a files folder in the lake won't appear in the warehouse. As a workaround, move your data to the `/tables` folder.
 
 1. Missing columns in the tables
 
