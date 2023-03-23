@@ -63,7 +63,7 @@ conceptualContent:
           text: What is Microsoft Fabric?
         - url: placeholder.md
           itemType: get-started
-          text: Fabric workloads and artifacts
+          text: Fabric workloads and items
         - url: placeholder.md
           itemType: tutorial
           text: Get started with creating resources
