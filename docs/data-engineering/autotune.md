@@ -18,13 +18,13 @@ It leverages historical execution data from customer workloads to iteratively le
 
 ## Query Tuning
 
-Currently, Autotune configures 3 query-level Spark configurations:
+Currently, Autotune configures three query-level Spark configurations:
 * `Spark.sql.shuffle.partitions` - configures the number of partitions to use when shuffling data for joins or aggregations. Default is 200.
-* `Spark.sql.autoBroadcastJoinThreshold` - configures the maximum size in bytes for a table that will be broadcast to all worker nodes when performing a join. Default is 10MB.
+* `Spark.sql.autoBroadcastJoinThreshold` - configures the maximum size in bytes for a table that will be broadcast to all worker nodes when performing a join. Default is 10 MB.
 * `Spark.sql.files.maxPartitionBytes` - the maximum number of bytes to pack into a single partition when reading files. Works for Parquet, JSON and ORC file-based sources. Default is 128 MB.
 
 
-Since there is no historical data available during the first run of Autotune, configurations will be set based on a baseline model, which relies on heuristics related to the content and structure of the workload itself. However, as the same query or workload is run repeatedly, we'll observe increasingly significant improvements from Autotune, as the results of previous runs are used to fine-tune the model and tailor it to a specific workspace or workload.
+Since there's no historical data available during the first run of Autotune, configurations will be set based on a baseline model, which relies on heuristics related to the content and structure of the workload itself. However, as the same query or workload is run repeatedly, we'll observe increasingly significant improvements from Autotune, as the results of previous runs are used to fine-tune the model and tailor it to a specific workspace or workload.
 
 >[!NOTE]
 > As the algorithm explores various configurations, you may notice minor differences in results. This is expected, as Autotune operates iteratively and improves with each repetition of the same query.
