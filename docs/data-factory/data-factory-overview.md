@@ -8,7 +8,7 @@ ms.topic: overview
 ms.date: 01/25/2023
 ---
 
-# Overview: What is Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
+# Data Factory overview
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
