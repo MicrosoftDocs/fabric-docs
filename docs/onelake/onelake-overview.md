@@ -1,5 +1,5 @@
 ---
-title: OneLake overview
+title: What is OneLake?
 description: Learn about the features and functions of OneLake.
 ms.reviewer: eloldag
 ms.author: eloldag
@@ -12,7 +12,7 @@ ms.date: 03/24/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-OneLake is a single, unified, logical data lake for the whole organization. OneLake is the OneDrive for data. Like OneDrive, OneLake comes automatically with every Fabric tenant and is designed to be the single place for all your analytics data. The key features of OneLake include:
+OneLake is a single, unified, logical data lake for the whole organization. OneLake is the OneDrive for data. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. The key features of OneLake include:
 
 - **Foundation of Fabric data services:** OneLake is provisioned automatically with every Fabric tenant.
 - **Shortcuts:** Virtualize data across domains and clouds into a single logical data lake.
@@ -32,7 +32,7 @@ Within a workspace, you can create data artifacts and all data in OneLake is acc
 
 For more information on how to get started using OneLake, see [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
 
-## Shortcuts to unify data products without duplication
+## Shortcuts: Unify data products without duplication
 
 Shortcuts allow your organization to easily share data between users and applications without having to move and duplicate information unnecessarily. When teams work independently in separate workspaces, shortcuts enable you to combine data across different business groups and domains into a virtual data product to fit a user’s specific needs.
 
@@ -50,7 +50,7 @@ You can access all your OneLake data, including shortcuts, with ADLS Gen2 APIs a
 
 For more information on APIs and endpoints, see [OneLake access and APIs](onelake-access-api.md). For examples of OneLake integrations with Azure, see [Use with Azure services](../placeholder.md).
 
-## One copy: All analytical engines can access the same copy of data
+## One copy: Access the same copy of data
 
 While applications may have separation of storage and computing, the data is often optimized for a single engine, which makes it difficult to reuse the same data for multiple applications. With Fabric, the different analytical engines (T-SQL, Spark, Analysis Services, etc.) store data in the open Delta Lake format to allow you to use the same data across multiple engines.
 
@@ -60,7 +60,7 @@ No matter which engine or artifact you use, everyone is contributing to the same
 
 :::image type="content" source="media\onelake-overview\use-same-copy-of-data.png" alt-text="Diagram showing how multiple artifacts and engines use the same copy of data." lightbox="media\onelake-overview\use-same-copy-of-data.png":::
 
-## One security: Easily customize the security of data in OneLake
+## One security: Easily customize the data security
 
 OneLake brings flexible security to the data lake with multi-layered access controls. Grant access to data directly in OneLake for use in machine learning scenarios, or limit access to specific query engines to keep sensitive data secure.
 

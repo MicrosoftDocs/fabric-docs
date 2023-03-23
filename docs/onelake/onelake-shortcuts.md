@@ -12,7 +12,7 @@ ms.date: 03/24/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-OneLake shortcuts provide a way to connect to existing data without having to directly copy it. Shortcuts eliminate the need to set up and monitor data movement jobs and keep data in sync across sources.
+OneLake shortcuts provide a way to connect to existing data without having to directly copy it. Shortcuts eliminate the need to set up and monitor data movement jobs and keeps data in sync across sources.
 
 ## What are OneLake shortcuts?
 

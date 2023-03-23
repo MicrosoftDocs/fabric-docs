@@ -1,6 +1,6 @@
 ---
-title: Creating a lakehouse with OneLake
-description: Follow steps to create a lakehouse and load data with OneLake.
+title: Create a lakehouse with OneLake
+description: Learn how to create a lakehouse and load data with OneLake.
 ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/24/2023
 ---
 
-# Creating a lakehouse with OneLake
+# Create a lakehouse with OneLake
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
