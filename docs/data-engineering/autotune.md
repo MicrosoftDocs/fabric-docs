@@ -16,7 +16,7 @@ Autotune automatically tunes Spark configurations to minimize workload execution
 
 It leverages historical execution data from customer workloads to iteratively learn the optimal configurations for a given workload with respect to execution time.
 
-## Query Tunning
+## Query Tuning
 
 Currently, Autotune configures 3 query-level Spark configurations:
 * `Spark.sql.shuffle.partitions` - configures the number of partitions to use when shuffling data for joins or aggregations. Default is 200.
