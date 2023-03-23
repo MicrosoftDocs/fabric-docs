@@ -50,7 +50,7 @@ To get started, you must complete the following prerequisites:
 
 ## Setup connection
 
-### Step 1: Specify the new connection name, type, and URL.
+### Step 1: Specify the new connection name, type, and URL
 
    :::image type="content" source="media/connector-sharepoint-online-list/connection-details.png" alt-text="Screenshot showing how to set new connection":::
 
@@ -85,31 +85,8 @@ Select **Anonymous** under **Authentication method**.
 :::image type="content" source="media/connector-sharepoint-online-list/authentication-servical-principal.png" alt-text="Screenshot showing that service principal authentication method":::
 
 * **Tenant Id**: The tenant ID under which your application resides.
-* **Service principal ID**: The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](/azure/data-factory/connector-sharepoint-online-list?tabs=data-factory#prerequisites) for more details including the permission settings.
+* **Service principal ID**: The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.
 * **Service principal key**: The application's key. Mark this field as a **SecureString** to store it securely, or [reference a secret stored in Azure Key Vault](/azure/data-factory/store-credentials-in-key-vault).
-
-The SharePoint List Online connector uses service principal authentication to connect to SharePoint. Follow these steps to set it up:
-
-1. Register an application with the Microsoft Identity platform. To learn how, see [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app). Make note of these values, which you use to define the linked service:
-
-Application ID
-Application key
-Tenant ID
-
-2. Grant SharePoint Online site permission to your registered application by following the steps below. To do this, you need a site admin role.
-
-   - Open SharePoint Online site link e.g. https://[your_site_url]/_layouts/15/appinv.aspx (replace the site URL).
-   - Search the application ID you registered, fill the empty fields, and click "Create".
-
-         * App Domain: ```contoso.com```
-         * Redirect URL: `https://www.contoso.com`
-         * Permission Request XML:
-
-      :::image type="content" source="./media/connector-sharepoint-online-list/request-xml.png" alt-text="Screenshot showing request XML.":::
-
-      > [!NOTE]
-      > In the context of configuring the SharePoint connector, the "App Domain" and "Redirect URL" refer to the SharePoint app that you have registered in Azure Active Directory (AAD) to allow access to your SharePoint data. The "App Domain" is the domain where your SharePoint site is hosted. For example, if your SharePoint site is located at "https://contoso.sharepoint.com", then the "App Domain" would be "contoso.sharepoint.com". The "Redirect URL" is the URL that the SharePoint app will redirect to after the user has authenticated and granted permissions to the app. This URL should be a page on your SharePoint site that the app has permission to access. For example, you could use the URL of a page that displays a list of files in a library, or a page that displays the contents of a document.
-   - Click "Trust It" for this app.
 
 ### Step 3: Specify the privacy level that you want to apply
 
@@ -143,7 +120,7 @@ The following properties in the table are the supported authentication type.
 |**OAuth2**||||✓/|
 |**Service Principal**||||✓/|
 |- Tenant ID|The tenant ID under which your application resides.|Yes |||
-|- Service Principal ID|The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](/azure/data-factory/connector-sharepoint-online-list?tabs=data-factory#prerequisites) for more details including the permission settings.|Yes |||
+|- Service Principal ID|The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.|Yes |||
 |- Service Principal key|The application's key. Mark this field as a **SecureString** to store it securely, or [reference a secret stored in Azure Key Vault](/azure/data-factory/store-credentials-in-key-vault).|Yes |||
 
 ## Next steps
