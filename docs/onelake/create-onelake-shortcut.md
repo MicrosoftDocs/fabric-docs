@@ -1,6 +1,6 @@
 ---
-title: Creating shortcuts
-description: Follow steps to create OneLake shortcut and an ADLS shortcut.
+title: Create a shortcut
+description: Learn how to create a OneLake shortcut and an ADLS shortcut.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/24/2023
 ---
 
-# Creating shortcuts
+# Create a shortcut
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
