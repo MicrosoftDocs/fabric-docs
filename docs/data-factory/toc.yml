@@ -5,6 +5,8 @@
     items:
     - name: What is Data Factory
       href: data-factory-overview.md
+    - name: Dataflows Gen2
+      href: dataflowgen2-overview.md
   - name: Get started
     items:
     - name: Create a dataflow
