@@ -37,6 +37,7 @@ Based on the performance of the second run per suggested configuration, we (1) r
 Iteratively, the algorithm will gradually search in the direction with better performance.
 
 ![Autotune optimization algorithm](media/autotune/autotune-algorithm-diagram.png)
+
 The Autotune optimization algorithm relies on an ML model to guide the selection of new configuration candidates and a centroid learning algorithm that continuously searches in the direction of performance improvement.
 
 
