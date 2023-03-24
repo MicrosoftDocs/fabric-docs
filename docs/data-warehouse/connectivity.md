@@ -5,13 +5,15 @@ ms.reviewer: wiassaf
 ms.author: salilkanade
 author: salilkanade
 ms.topic: how-to
-ms.date: 03/15/2023
+ms.date: 03/24/2023
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
 # Connectivity
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+This article provides a how-to on connecting to your SQL Endpoint to data warehouse using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](aka.ms/azuredatastudio).
 
 To get started, you must complete the following prerequisites:
 
@@ -23,6 +25,8 @@ To get started, you must complete the following prerequisites:
 The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to SSMS.
 
 ### Get end-point
+
+To retrieve the connection string, follow these steps:
 
 1. Navigate to your workspace and select the warehouse item you would like to connect to.
 
@@ -107,7 +111,7 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
   - Can't find table 0
   - Invalid handle
 
-   **Workaround**: Wait a few seconds to a minute and try again. Report an issue if these errors don't automatically resolve after retry. Try using Azure Data Studio instead of SSMS.
+   **Workaround**: Wait a few seconds to a minute and try again. Report an issue if these errors don't automatically resolve after retry. Try using [Azure Data Studio (ADS)](aka.ms/azuredatastudio) instead of [SQL Server Management Studio (SSMS)](https://aka.ms/ssms).
 
 ## Next steps
 
