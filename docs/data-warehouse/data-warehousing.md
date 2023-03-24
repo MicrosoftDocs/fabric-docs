@@ -6,13 +6,14 @@ ms.author: cynotebo
 author: cynotebo
 ms.topic: overview
 ms.date: 03/15/2023
+ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspace overview
 ---
 
 # Data warehousing overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The data warehouse experience in [!INCLUDE [product-name](../includes/product-name.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using T-SQL/TDS end-point. Data analysts use T-SQL language to access Lakehouse data artifacts using the warehouse experience that exposes underlying files, folders, and Cosmos DB containers as tables or views.
+The data warehouse experience in [!INCLUDE [product-name](../includes/product-name.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using T-SQL/TDS end-point. Data analysts use T-SQL language to access Lakehouse data items using the warehouse experience that exposes underlying files, folders, and Cosmos DB containers as tables or views.
 
 > [!IMPORTANT]
 > This document provides a comprehensive overview of two distinct data warehousing experiences.
@@ -39,21 +40,21 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
 1. You can't query tables that are partitioned or the tables with renamed columns.
 
-1. You can't load case sensitive tables to data warehouse (i.e.., Cat, cat and CAT are all read as the same table name by SQL); doing so causes the data warehouse to fail. Use unique table and file names for all artifacts you use in warehouse mode.
+1. You can't load case sensitive tables to data warehouse (for example, "Cat", "cat", and "CAT" are all read as the same table name by SQL). Duplicate table names can cause the data warehouse to fail. Use unique table and file names for all items in a warehouse.
 
 1. Data should be in parquet, delta or .csv format.
 
 1. The following limitations are regarding query lifecycle DMVs:
 
-   - When running “sys.dm_exec_connections”, you may encounter the following error even if you're an Admin of your workspace.
+   - When querying `sys.dm_exec_connections`, you may encounter the following error, even if you're an Admin of your workspace.
 
       ***Error Message:*** *The user doesn't have the external policy action 'Microsoft.Sql/Sqlservers/SystemViewsAndFunctions/ServerPerformanceState/Rows/Select' or permission 'VIEW SERVER PERFORMANCE STATE' to perform this action.*
 
-   - “sys.dm_exec_sessions” provides a limited view as not all active query results will display.
+   - The dynamic management view `sys.dm_exec_sessions` provides a limited view as not all active query results will display.
 
 1. Permissions:
 
-   - The user who created the Lakehouse will have “dbo” permissions, everyone else is limited to “Select”.
+   - The user who created the Lakehouse will have "dbo" permissions, everyone else is limited to "Select".
 
    - GRANT, REVOKE, DENY commands are currently not supported.
 
@@ -61,9 +62,9 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
 *Applies to:* Warehouse and SQL Endpoint
 
-As mentioned previously, the full [!INCLUDE [product-name](../includes/product-name.md)] portal experience isn't available at this time, so for some activities you will be use a TDS end-point to connect to and query your warehouse (default) and/or warehouse via SSMS or ADS.
+As mentioned previously, the full [!INCLUDE [product-name](../includes/product-name.md)] portal experience isn't available at this time, so for some activities you will use a TDS endpoint to connect to and query the SQL Endpoint and/or your warehouse via SSMS or ADS.
 
-In this tutorial, you learn how to find your TDS end-point and use it to connect to SSMS for running SQL queries over either your warehouse (default) or warehouse data.
+In this tutorial, you learn how to find your TDS end-point and use it to connect to SSMS for running SQL queries over either the SQL Endpoint or warehouse data.
 
 While not described in this document, we also support Azure Data Services (ADS) if that is your preferred SQL tool and you can use the same TDS end-point to connect via ADS.
 
@@ -103,15 +104,13 @@ At this time, the following list of commands is NOT currently supported. Don't t
 
 There's a known issue with creating foreign and primary keys. For now, you can create them as though they're enforceable but they won't be enforced by the engine.
 
-## Warehouse mode
+## SQL Endpoint
 
-Warehouse mode in the Lakehouse allows a user to transition from the “Lake” view of the Lakehouse (which supports data engineering and Apache Spark) to the “SQL” experiences that a data warehouse would provide, supporting T-SQL. In warehouse mode the user has a subset of SQL commands that can define and query data objects but not manipulate the data. You can perform the following actions in your warehouse(default):
+The SQL Endpoint on the Lakehouse allows a user to transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" experiences that a data warehouse would provide, supporting T-SQL. Via the SQL Endpoint, the user has a subset of SQL commands that can define and query data objects but not manipulate the data. You can perform the following actions in the SQL Endpoint:
 
 - Query the tables that reference data in your Delta Lake folders in the lake.
 - Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
 - Manage permissions on the objects.
-
-Warehouse mode is primarily oriented towards designing your warehouse and BI needs and serving data.
 
 ## Keyboard shortcuts
 
