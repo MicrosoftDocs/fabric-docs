@@ -58,13 +58,18 @@ To create an Azure Data Lake Storage (ADLS) shortcut:
 1. Specify the connection details this shortcut will use.
 
    1. Provide the endpoint for your ADLS account (URL).
+
       > [!NOTE]
       > This must be the DFS endpoint for the storage account.
 
    1. If you've already defined a connection for this storage location, it automatically appears in the connection drop-down. Otherwise, you can choose **Create new connection**.
+
    1. Enter a **Connection name**.
+
    1. Select the **Authentication kind** you want to use for the connection.
+
    1. If you chose **Organizational account**, select the **Sign** **in** button.
+
    1. Select **Next**.
 
    :::image type="content" source="media\create-onelake-shortcut\connection-details.png" alt-text="Screenshot showing where to enter the Connection settings for a new shortcut." lightbox="media\create-onelake-shortcut\connection-details.png":::
@@ -72,7 +77,9 @@ To create an Azure Data Lake Storage (ADLS) shortcut:
 1. Specify the shortcut details.
 
    1. Provide a name for the shortcut.
+
    1. Provide a path for the shortcut (**Sub Path**). Enter a relative path that starts with a container for the storage account.
+
       > [!NOTE]
       > Shortcut paths are case sensitive.
 
