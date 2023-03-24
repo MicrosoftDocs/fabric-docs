@@ -193,6 +193,10 @@
         href: ../placeholder.md
       - name: Introduction to output destination in Fabric
         href: ../placeholder.md
+      - name: Monitoring your Dataflows in Fabric
+        href: dataflowsgen2-monitoring.md
+      - name: Saving a draft of your dataflow
+        href: dataflowsgen2-savedraft.md
       - name: Templates
         href: ../placeholder.md
     - name: How-to
