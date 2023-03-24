@@ -85,7 +85,7 @@ Under **Advanced**, you can specify the following fields:
 
     - **Wildcard file path**: Specify the folder or file path with wildcard characters under your given bucket to filter your source folders or files.
 
-      Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](https://learn.microsoft.com/azure/data-factory/connector-google-cloud-storage?tabs=data-factory#folder-and-file-filter-examples).
+      Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](/azure/data-factory/connector-google-cloud-storage?tabs=data-factory#folder-and-file-filter-examples).
 
         * Wildcard folder path: Specify the folder path with wildcard characters under the given bucket to filter source folders.
 
