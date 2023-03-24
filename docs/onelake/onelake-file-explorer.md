@@ -14,7 +14,7 @@ ms.date: 03/24/2023
 
 The OneLake File Explorer application seamlessly integrates OneLake with Windows File Explorer. This application will automatically sync all OneLake artifacts that you have access to in Windows File Explorer. “Sync” refers to pulling up-to-date metadata on files and folders, as well as sending changes made locally to the OneLake service. Syncing doesn’t mean downloading the data. You must double click on a file to download the data locally.
 
-image1.png
+IMAGE onelake-file-explorer-screen.png Screenshot of OneLake files integrated in the Windows File Explorer screen.
 
 When you create, update, or delete a file via File Explorer, it automatically syncs the changes to OneLake service. Updates to your artifact made outside of your File Explorer are not automatically synced. To pull these updates, you need to right click on the artifact or sub-folder in Windows File Explorer and select **Sync from** **OneLake**.
 
@@ -24,31 +24,31 @@ OneLake File Explorer currently supports Windows and has been validated on Windo
 
 To install:
 
-Download the OneLake.msix file in [OneLakeFileExplorer](https://microsofteur.sharepoint.com/:f:/r/teams/TridentPrivatePreview/Shared%20Documents/Documentation/Private%20Preview%20Documentation/OneLake/OneLakeFileExplorer?csf=1&web=1&e=YZymhf).
+1. Download the OneLake.msix file in [OneLakeFileExplorer](https://microsofteur.sharepoint.com/:f:/r/teams/TridentPrivatePreview/Shared%20Documents/Documentation/Private%20Preview%20Documentation/OneLake/OneLakeFileExplorer?csf=1&web=1&e=YZymhf).
 
-Double click the file to start installing.
-If you have a previous version already installed, exit the app before installing.  You can exit the app by right clicking the OneLake icon in the Windows System Tray and selecting **Exit**.
+1. Double click the file to start installing.
+
+   > [!Note]
+   > If you have a previous version already installed, exit the app before installing. You can exit the app by right clicking the OneLake icon in the Windows System Tray and selecting **Exit**.
 
 Installation is complete and you can now see your OneLake data in Windows File Explorer.
 
 ## Known issues
 
-If there are **large number of files** in OneLake, the initial sync will take a long time to complete. You will see a Sync Pending Icon () while it is syncing.  
+- If there are **large number of files** in OneLake, the initial sync will take a long time to complete. You will see a Sync Pending Icon () while it is syncing.  
 
-image2.png
+   > [!NOTE]
+   > You will also see a Sync Pending icon if there was an error during the sync (red cross icon) or if the sync failed due to access checks for any level in the workspace.  
 
-> [!NOTE]
-> You will also see a Sync Pending icon if there was an error during the sync (red cross icon) or if the sync failed due to access checks for any level in the workspace.  
+- **Workspace names with special characters** (anything other than letters, numbers, and underscores) will fail to sync.
 
-**Workspace names with special characters** (anything other than letters, numbers, and underscores) will fail to sync.
+- **Files or folders containing Windows reserved characters** ([learn more](/windows/win32/fileio/naming-a-file)) will fail to sync.
 
-**Files or folders containing Windows reserved characters** ([learn more](/windows/win32/fileio/naming-a-file)) will fail to sync.
+- **Updating Office files** (excel, ppt, etc.) is not currently supported.
 
-**Updating Office files** (excel, ppt, etc.) is not currently supported.
+- When you select “**Sync from** **OneLake” on a folder, it does not automatically pull data for files that were already downloaded** to your local computer (shown with a green tick icon). To refresh that file with the latest changes from the service, right click on that file and select **Sync from** **OneLake**.  
 
-When you select “**Sync from** **OneLake” on a folder, it does not automatically pull data for files that were already downloaded** to your local computer (shown with a green tick icon). To refresh that file with the latest changes from the service, right click on that file and select **Sync from** **OneLake**.  
-
-**Windows File Explorer is case insensitive** while OneLake is case sensitive. This means you can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer will only show one of the files (the oldest one).
+- **Windows File Explorer is case insensitive** while OneLake is case sensitive. This means you can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer will only show one of the files (the oldest one).
 
 ## Scenarios
 
@@ -56,12 +56,13 @@ The following scenarios provide details for working with the OneLake File Explor
 
 ### Starting and exiting OneLake File Explorer
 
-- To start, search for “OneLake” using Windows search (Windows + S) and select the OneLake application. 
+- To start, search for “OneLake” using Windows search (Windows + S) and select the OneLake application.
+
 - To exit, right-click on the OneLake icon in the Windows System Tray and select **Exit**.
 
 ### Uninstall instructions
 
-- To uninstall the app, in Windows, search for “OneLake”. Select **Uninstall** in the list of options under OneLake.
+To uninstall the app, in Windows, search for “OneLake”. Select **Uninstall** in the list of options under OneLake.
 
 ### Offline support
 
@@ -99,7 +100,7 @@ You can open files using your favorite apps and make edits. Selecting **Save** w
 
 If you edit a file locally and select **Save**, the OneLake File Explorer app will detect if that file has been updated elsewhere (by someone else) since you last selected **Sync from** **OneLake**.
 
-image3.png
+IMAGE confirm-file-change.png Screenshot of the Confirm file change dialog box.
 
 If you select **Yes**, then your local changes will overwrite any other changes made to the file since the last time you selected **Sync from** **OneLake**.
 
@@ -119,41 +120,17 @@ You will see all folders in your artifacts including shortcuts. You can view, up
 
 ### Client-side logs
 
-Client-side logs can be found on your local machine under *%temp%\OneLake\Diagnostics\*.
+Client-side logs can be found on your local machine under *%temp%\OneLake\Diagnostics\\*.
 
 ## OneLake File Explorer icons
 
-:::row:::
-    :::column:::
-    ![OneDrive online file icon](media/image4.png)
-    :::column-end:::
-    :::column:::
-    **The file is only available online. Online-only files don’t take up space on your computer.**
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-    ![OneDrive locally available file](media/image5.png)
-    :::column-end:::
-    :::column:::
-    The file is downloaded to your local computer.
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-    ![OneDrive sync in progress icon](media/image2.png)
-    :::column-end:::
-    :::column:::
-    Sync is in progress. This may occur when you are uploading files.
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-    ![OneDrive sync error icon](media/image6.png)
-    :::column-end:::
-    :::column:::
-    This means your file or folder cannot be synced.
-    :::column-end:::
-:::row-end:::
+| Icon | Meaning |
+| --- | ---|
+| Blue cloud icon | The file is only available online. Online-only files don’t take up space on your computer. |
+| Green tick | The file is downloaded to your local computer. |
+| Sync pending arrows | Sync is in progress. This may occur when you are uploading files. |
+| Red circle with white cross or red cross | Your file or folder cannot be synced. |
 
 ## Next steps
+
+- [OneLake security](onelake-security.md)
