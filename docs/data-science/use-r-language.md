@@ -2,8 +2,8 @@
 title: How to use the R language
 description: Learn how to use the R language.
 ms.reviewer: sgilley
-ms.author: negust
-author: nelgson
+ms.author: ruxu
+author: ruixinxu
 ms.topic: how-to
 ms.date: 03/24/2023
 ms.search.form: R Language
