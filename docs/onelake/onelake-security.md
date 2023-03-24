@@ -1,6 +1,6 @@
 ---
 title: OneLake security
-description: Learn about security in OneLake.
+description: OneLake uses a layered security model built around the organizational structure of components within Microsoft Fabric. Learn more about OneLake security.
 ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
@@ -47,7 +47,7 @@ Some compute engines in Fabric have their own security models. For example, Fabr
 
 As a general rule, users in the Viewer workspace role can't access OneLake directly. Viewers are limited to accessing data through the compute engine and are restricted by any rules set there. All other roles contain direct OneLake access, allowing them to query data through Spark, APIs, or a OneLake File Explorer. However, compute-specific security still applies to those users when accessing data through that compute engine.
 
-**Example:** Martha is an administrator for a Fabric workspace. A coadministrator Pradeep set up rules in SQL to restrict access to the Sales table unless you have accounts assigned to you. When Martha runs a SELECT query from the Sales table, she only sees data for accounts assigned to her. However, because she has OneLake access she can use the Lakehouse explorer to view and open the files backing the Sales table.
+**Example:** Martha is an administrator for a Fabric workspace. A co-administrator Pradeep set up rules in SQL to restrict access to the Sales table unless you have accounts assigned to you. When Martha runs a SELECT query from the Sales table, she only sees data for accounts assigned to her. However, because she has OneLake access she can use the Lakehouse explorer to view and open the files backing the Sales table.
 
 ## Authentication
 
@@ -60,7 +60,7 @@ IMAGE admin-portal-tenant-settings.png Screenshot showing the Developer settings
 
 ## Private links
 
-Microsoft Fabric doesn’t currently support private link access to OneLake data via non-Fabric products and Spark.
+Fabric doesn’t currently support private link access to OneLake data via non-Fabric products and Spark.
 
 ## Next steps
 

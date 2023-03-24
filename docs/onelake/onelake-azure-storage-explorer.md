@@ -1,6 +1,6 @@
 ---
 title: OneLake integration with Azure Storage Explorer
-description: Follow steps to integrate and use Azure Storage Explorer.
+description: Learn more about Microsoft Fabric integration with Azure services, specifically how to use Azure Storage Explorer.
 ms.reviewer: eloldag
 ms.author: harmeetgill
 author: gillharmeet
@@ -32,7 +32,7 @@ This tutorial is an example of OneLake integration with Azure. We encourage you 
 
    IMAGE select-container-directory.png Screenshot showing where to select the ADLS Gen2 container or directory option.
 
-1. Enter URL details of the artifact you would like to connect to, in this format: [*https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{artifactId}/*](https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{artifactId}/). You can find the workspaceID and artifactID in the **Properties** pane of a file in the Fabric portal.
+1. Enter URL details of the artifact you would like to connect to, in this format: [*https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{artifactId}/*](https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{artifactId}/). You can find the workspaceID and artifactID in the **Properties** pane of a file in the Microsoft Fabric portal.
 
    You can choose a **Display name** for convenience, then select **Next.**
 

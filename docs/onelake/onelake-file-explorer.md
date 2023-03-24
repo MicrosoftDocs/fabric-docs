@@ -1,6 +1,6 @@
 ---
 title: OneLake File Explorer
-description: Learn how to use the OneLake File Explorer.
+description: OneLake File Explorer seamlessly integrates OneLake with Windows File Explorer. Learn how to install and use this application.
 ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag

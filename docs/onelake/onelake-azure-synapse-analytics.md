@@ -1,6 +1,6 @@
 ---
 title: OneLake integration with Azure Synapse Analytics
-description: Follow steps to read and write data in Fabric using Azure Synapse Spark.
+description: Learn about Microsoft Fabric integration with Azure services, specifically how to read and write data in Fabric using Azure Synapse Spark.
 ms.reviewer: eloldag
 ms.author: mahi
 author: matt1883
