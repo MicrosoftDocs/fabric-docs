@@ -21,10 +21,10 @@ You can modify data that is stored in tables in a warehouse. We'll also show how
 
 See our current documentation for INSERT, UPDATE, DELETE and Transactions:
 
-- Insert - [INSERT (Transact-SQL) - SQL Server | Microsoft Learn](/sql/t-sql/statements/insert-transact-sql?view=azure-sqldw-latest&preserve-view=true)
-- Update - [UPDATE (Transact-SQL) - SQL Server | Microsoft Learn](/sql/t-sql/queries/update-transact-sql?view=azure-sqldw-latest&preserve-view=true)
-- Delete - [DELETE (Transact-SQL) - SQL Server | Microsoft Learn](/sql/t-sql/statements/delete-transact-sql?view=azure-sqldw-latest&preserve-view=true)
-- Transactions - [Transactions (Azure Synapse Analytics) - SQL Server | Microsoft Learn](/sql/t-sql/language-elements/transactions-sql-data-warehouse?view=azure-sqldw-latest&preserve-view=true)
+- Insert - [INSERT (Transact-SQL)](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true)
+- Update - [UPDATE (Transact-SQL)](/sql/t-sql/queries/update-transact-sql?view=fabric&preserve-view=true)
+- Delete - [DELETE (Transact-SQL)](/sql/t-sql/statements/delete-transact-sql?view=fabric&preserve-view=true)
+- Transactions - [Transactions (Azure Synapse Analytics)](/sql/t-sql/language-elements/transactions-sql-data-warehouse?view=fabric&preserve-view=true)
 
 ## Known limitations
 
