@@ -14,7 +14,7 @@ ms.date: 03/24/2023
 
 Microsoft OneLake supports a subset of Azure Data Lake Storage (ADLS) Gen 2 and Blob Storage APIs, with some differences in functionality. As OneLake is software as a service (SAAS), it handles some functionality that therefore can't be edited. A full list of changes to these APIs can be found in the following sections. Otherwise, you can continue to use the same distributed file system (DFS) APIs, but now pointed at the new OneLake endpoint: [*https://onelake.dfs.fabric.microsoft.com*](https://onelake.dfs.fabric.microsoft.com). Because OneLake exists across your entire Microsoft Fabric tenant, you can refer to anything in your tenant just by its workspace, artifact, and path. For example, a file named **test** located in lakehouse **foo** and workspace **bar** has the following path:
 
-```
+```http
 https://onelake.dfs.fabric.microsoft.com/bar/foo/Files/test.csv
 ```
 
