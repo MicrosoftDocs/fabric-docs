@@ -120,7 +120,7 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
 
 ### Delimited text as source
 
-The following properties are supported in the copy activity **Source** section when using Binary format.
+The following properties are supported in the copy activity **Source** section when using delimited text format.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
@@ -141,7 +141,7 @@ The following properties are supported in the copy activity **Source** section w
 
 ### Delimited text as destination
 
-The following properties are supported in the copy activity **Destination** section when using Binary format.
+The following properties are supported in the copy activity **Destination** section when using delimited text format.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
