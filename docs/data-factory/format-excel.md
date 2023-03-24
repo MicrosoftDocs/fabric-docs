@@ -1,6 +1,6 @@
 ---
-title: How to configure Excel format in Data Factory
-description: This article explains how to configure Excel format in Data Factory.
+title: How to configure Excel format in Data Factory data pipeline
+description: This article explains how to configure Excel format in Data Factory data pipeline.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -14,7 +14,7 @@ ms.custom: template-how-to
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here
 
-This article outlines how to configure Excel format in Data Factory.
+This article outlines how to configure Excel format in Data Factory data pipeline.
 
 ## Supported capabilities
 
@@ -22,13 +22,14 @@ Excel format is supported for the following connectors and activities.
 
 | Category | Connector/Activity | 
 |---|---|
-| **Supported connector** | Amazon S3|
-|  | Azure Blob Storage |
+| **Supported connector** | Amazon S3 |
+|  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
 |  | Azure Data Lake Storage Gen1 |
-|  | Azure Data Lake Storage Gen2 |
+|  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
 |  | Google Cloud Storage | 
-|  | HTTP | 
-| **Supported activity** | Copy activity |
+|  | HTTP| 
+| **Supported activity** | [Copy activity](copy-data-activity.md) |
+|  | [Lookup activity](lookup-activity.md) |
 |  | GetMetadata activity |
 |  | Delete activity | 
 
