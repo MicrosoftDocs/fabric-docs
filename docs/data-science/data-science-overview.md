@@ -14,7 +14,7 @@ ms.date: 03/24/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-[!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science Home page. From there, they can discover and access a variety of relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
+[!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science Home page. From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
 
 :::image type="content" source="media/data-science-overview/data-science-home-page.png" alt-text="Screenshot of the Data science home page." lightbox="media/data-science-overview/data-science-home-page.png":::
 
@@ -44,8 +44,6 @@ Users can easily read data from a Lakehouse directly into a Pandas dataframe. Fo
 
 There's a powerful set of tools is available for data ingestion and data orchestration pipelines with data integration pipelines - a natively integrated part of [!INCLUDE [product-name](../includes/product-name.md)]. Easy-to-build data pipelines can access and transform the data into a format that machine learning can consume. Learn more about data pipelines in Synapse.
 
-**The last sentence above might not clearly map to the relevant Synapse-focused resource**
-
 ## Data preparation, cleansing and visualization
 
 An important part of the machine learning process is to understand data through exploration and visualization.
@@ -56,13 +54,9 @@ Depending on the data storage location, [!INCLUDE [product-name](../includes/pro
 
 Apache Spark offers capabilities to transform, prepare, and explore your data at scale. These Spark pools offer PySpark/Python, Scala, and SparkR/SparklyR tools for data processing at scale. Powerful open-source visualization libraries can enhance the data exploration experience to help better understand the data. Learn more about how to explore and visualize data in Synapse using Spark.
 
-**The last sentence above might not clearly map to the relevant Synapse-focused resource**
-
 ## Data Wrangler for seamless data cleansing
 
-The [!INCLUDE [product-name](../includes/product-name.md)] Notebook experience added a feature to leverage Data Wrangler, a code tool that prepares data and generates Python code. This experience makes it easy to accelerate tedious and mundane tasks - for example, data cleansing, and build repeatability and automation through generated code. Learn more about Data Wrangler in the Data Wrangler section of this document.
-
-**The last sentence might need to clearly map to the relevant Data Wrangler section in this doc**
+The [!INCLUDE [product-name](../includes/product-name.md)] Notebook experience added a feature to use Data Wrangler, a code tool that prepares data and generates Python code. This experience makes it easy to accelerate tedious and mundane tasks - for example, data cleansing, and build repeatability and automation through generated code. Learn more about Data Wrangler in the Data Wrangler section of this document.
 
 ## Model training and experiment tracking
 
@@ -72,11 +66,11 @@ Certain algorithms and libraries can help train machine learning models. Library
 
 Additionally, popular libraries like Scikit Learn can also develop models.  
 
-MLflow experiments can track model training. [!INCLUDE [product-name](../includes/product-name.md)] will offer a native MlFlow endpoint with which users can interact, to log experiments and models. Learn more about MLflow use to track experiments and manage models in the following sections.
+MLflow experiments can track model training. [!INCLUDE [product-name](../includes/product-name.md)] offers a native MlFlow endpoint with which users can interact, to log experiments and models. Learn more about MLflow use to track experiments and manage models in the following sections.
 
 ## SynapseML
 
-The SynapseML (previously known as MMLSpark) open-source library simplifies massively scalable machine learning (ML) pipeline creation. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks, and new Microsoft algorithms, into a single, scalable API usable across Python, R, Scala, .NET, and Java. Learn more about [SynapseML](https://aka.ms/spark).
+The SynapseML (previously known as MMLSpark) open-source library simplifies massively scalable machine learning (ML) pipeline creation. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. This API is usable across Python, R, Scala, .NET, and Java. Learn more about [SynapseML](https://aka.ms/spark).
 
 ## Model scoring
 
@@ -97,7 +91,7 @@ Data scientists and business analysts spend a lot of time trying to understand, 
 
 SemPy users can register new information about the data, and share it with other users. This allows for faster collaboration across teams that operate on the same datasets, and increases productivity. SemPy explores data semantics to simplify data science analytics. Through SemPy we can expect to:
 
-- Reduce the time needed to pre-process and validate the data, before meaningful analysis starts.
+- Reduce the time needed to preprocess and validate the data, before meaningful analysis starts.
 - Increase productivity across teams that operate on same datasets, through registration and sharing data of semantics and transformations; this reduces the time needed to extract value from a dataset.
 - Increase cross-org collaboration, to bring the BI and AI teams together.
 - Decrease ambiguity and the learning curve when onboarding onto a new model/dataset.
