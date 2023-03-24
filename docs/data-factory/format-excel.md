@@ -51,7 +51,7 @@ After selecting **File settings** under **Source** tab, you can see the followin
 - **Compression type**: The compression codec used to read excel files.
 You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, **TarGzip** or **tar** type in the drop-down list.
 
-- **Compression level**: The compression ratio. Apply when you are using Copy activity destination. You can choose from **Optimal** or **Fastest**.
+- **Compression level**: The compression ratio. You can choose from **Optimal** or **Fastest**.
 
     - **Fastest**: The compression operation should complete as quickly as possible, even if the resulting file is not optimally compressed.
     - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, see [Compression Level topic](/dotnet/api/system.io.compression.compressionlevel).
@@ -81,13 +81,13 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
 
 ### Excel as source
 
-The following properties are supported in the copy activity **Source** section when using Binary format.
+The following properties are supported in the copy activity **Source** section when using Excel format.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 | **File format**|The file format that you want to use.| **Excel**|Yes|type (*under `datasetSettings`*):<br>Excel|
 |**Compression type**|The compression codec used to read/write Excel files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
-|**Compression level** |The compression ratio. Apply when dataset is used in Copy activity sink. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
+|**Compression level** |The compression ratio. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
 |**Worksheet mode** |The worksheet mode that you want to use to read Excel data. | - **Name**<br> - **Index**|Yes | - sheetName<br>- sheetIndex|
 |**Range**|The cell range in the given worksheet to locate the selective data.| \<your cell range\> |No | range|
 |**Null value**|The string representation of null value.| \<your null value\> <br> empty string (by default) |No | nullValue|
