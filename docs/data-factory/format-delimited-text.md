@@ -1,6 +1,6 @@
 ---
-title: How to configure delimited text format in Data Factory
-description: This article explains how to configure delimited text format in Data Factory.
+title: How to configure delimited text format in Data Factory data pipeline
+description: This article explains how to configure delimited text format in Data Factory data pipeline.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
