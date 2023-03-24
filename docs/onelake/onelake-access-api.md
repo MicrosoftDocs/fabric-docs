@@ -48,7 +48,7 @@ You can perform CRUD operations on any folder or file created within these artif
 You can’t use ADLS Gen 2 or Blob Storage APIs to perform certain operations or behaviors in OneLake. To prevent these blocked behaviors, OneLake rejects or ignores an API call if it uses a disallowed header or parameter value. If the header or parameter value changes the behavior of the call to a disallowed behavior, OneLake rejects the call. If the header doesn't change the behavior of the call, then OneLake simply ignores the disallowed header. OneLake doesn’t allow the following behaviors and their associated request headers and URI parameters:
 
 - Set access control
-  - URI Parmeters:
+  - URI Parameter:
     - action: setAccessControl (Request rejected)
     - action: setAccessControlRecursive (Request rejected)
   - Request headers:
