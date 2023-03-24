@@ -4,7 +4,7 @@ description: This article explains the overview of using Amazon S3.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/23/2023
+ms.date: 03/24/2023
 ms.custom: template-how-to 
 ---
 
@@ -20,7 +20,7 @@ This Amazon S3 connector is supported in Trident Project  - Data Factory with th
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Basic |
+| **Copy activity (source/-)** | None | Basic |
 | **Lookup activity** | None | Basic |
 | **GetMetadata activity** | None | Basic |
 | **Delete activity** | None | Basic |

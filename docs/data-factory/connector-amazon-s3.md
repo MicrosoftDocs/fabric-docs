@@ -4,7 +4,7 @@ description: This article provides information about how to do create Amazon S3 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 02/23/2023
+ms.date: 03/24/2023
 ms.custom: template-how-to
 ---
 
@@ -95,7 +95,7 @@ The following connector properties in the table are supported in pipeline copy a
 |**Connection name**|A name for your connection.|Yes||✓/|
 |**Connection type**|Select **Amazon S3** for your connection type.|Yes||✓/|
 |**Data source path**|Enter your account endpoint URL of your Amazon S3.|Yes||✓/|
-|**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
+|**Authentication**|See [Authentication](#authentication) |Yes||See [Authentication](#authentication)|
 
 ### Authentication
 
