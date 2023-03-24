@@ -3,7 +3,7 @@ title: An overview of dataflows refresh history
 description: An overview of dataflow refresh history features.
 author: luitwieler
 
-ms.topic: overview
+ms.topic: concepts
 ms.date: 01/31/2023
 ms.author: jeluitwi
 

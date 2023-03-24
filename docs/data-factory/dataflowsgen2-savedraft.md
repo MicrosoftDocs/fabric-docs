@@ -3,7 +3,7 @@ title: An overview of dataflows save as draft functionality
 description: An overview of dataflow save as draft features.
 author: luitwieler
 
-ms.topic: overview
+ms.topic: concepts
 ms.date: 02/13/2023
 ms.author: jeluitwi
 

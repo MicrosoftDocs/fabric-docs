@@ -32,7 +32,7 @@ Dataflows Gen2 is the new generation of dataflows. The new generation of dataflo
 
 Working with Dataflows Gen2 feels like coming home. We kept the full experience you are used to in Power BI Dataflows. When you enter the experience you are guided step-by-step for getting the data into your dataflow.
 
-![Authoring Experience](./media/gen2-overview/authoring-experience.png)
+![Authoring Experience](./media/dataflowsgen2-overview/authoring-experience.png)
 
 ### Output destinations
 
@@ -45,13 +45,13 @@ Dataflows Gen2 allows your data destination to be more flexible and you can choo
 
 Learn more about this feature [here](./docsforoutputdestination).
 
-![Output Destinations Overview](./media/gen2-overview/outputdestinations-overview.png)
+![Output Destinations Overview](./media/dataflowsgen2-overview/outputdestinations-overview.png)
 
 ### Improved refresh history and monitoring
 
 With Dataflows Gen2 we introduce a new way for you to monitor your refreshes of your dataflows. We integrated support for [Monitor Hub](/monitorhuburl) as well as given our [Refresh History](./dataflows-refresh-history.md) experience a major upgrade.
 
-![Refresh History](./media/refresh-history/refresh-details.png)
+![Refresh History](./media/dataflowsgen2-monitoring/refresh-details.png)
 
 ### Integration with Data Pipelines
 
@@ -59,7 +59,7 @@ Data pipelines allows you to group activities that together perform a task. An a
 
 A pipeline can contain one or more activities that are connected by dependencies. For example, you can use a pipeline to ingest and clean data from an Azure blob, and then kick off a Dataflow Gen2 to analyze the log data. You can also use a pipeline to copy data from an Azure blob to an Azure SQL database, and then run a stored procedure on the database.
 
-![Data Pipelines Integration](./media/gen2-overview/datapipelines-integration.png)
+![Data Pipelines Integration](./media/dataflowsgen2-overview/datapipelines-integration.png)
 
 ### Save as draft
 
