@@ -13,7 +13,7 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article provides a how-to on connecting to your SQL Endpoint to data warehouse using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](aka.ms/azuredatastudio).
+This article provides a how-to on connecting to your SQL Endpoint to data warehouse using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
 
 To get started, you must complete the following prerequisites:
 
@@ -111,7 +111,7 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
   - Can't find table 0
   - Invalid handle
 
-   **Workaround**: Wait a few seconds to a minute and try again. Report an issue if these errors don't automatically resolve after retry. Try using [Azure Data Studio (ADS)](aka.ms/azuredatastudio) instead of [SQL Server Management Studio (SSMS)](https://aka.ms/ssms).
+   **Workaround**: Wait a few seconds to a minute and try again. Report an issue if these errors don't automatically resolve after retry. Try using [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio) instead of [SQL Server Management Studio (SSMS)](https://aka.ms/ssms).
 
 ## Next steps
 

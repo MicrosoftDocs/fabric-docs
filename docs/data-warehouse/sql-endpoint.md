@@ -47,7 +47,7 @@ In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-
 
 ## Connectivity
 
-For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your SQL Endpoint. There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later, but we generally expect that the majority of the testing and interaction for your SQL Endpoint will be via a tool such as [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](aka.ms/azuredatastudio).
+For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your SQL Endpoint. There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later, but we generally expect that the majority of the testing and interaction for your SQL Endpoint will be via a tool such as [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
 
 ## How to delete a SQL Endpoint
 

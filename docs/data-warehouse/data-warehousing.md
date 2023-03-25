@@ -40,7 +40,7 @@ For more information on the warehouse in [!INCLUDE [product-name](../includes/pr
 
 ## Connectivity
 
-You can use the [!INCLUDE [product-name](../includes/product-name.md)] portal, or the TDS endpoint to connect to and query the SQL Endpoint and your transactional data warehouses via [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) version 18.0+ or [Azure Data Studio (ADS)](aka.ms/azuredatastudio).
+You can use the [!INCLUDE [product-name](../includes/product-name.md)] portal, or the TDS endpoint to connect to and query the SQL Endpoint and your transactional data warehouses via [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) version 18.0+ or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
 
 For more information and how-to connect, see [Connectivity](connectivity.md).
 
