@@ -28,6 +28,8 @@ The SQL Endpoint on the Lakehouse allows a user to transition from the "Lake" vi
 - Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
 - Manage permissions on the objects.
 
+For more information on the SQL Endpoint for the Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)], see [SQL Endpoint](sql-endpoint.md).
+
 ## Data Warehouse
 
 The Warehouse functionality is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. 

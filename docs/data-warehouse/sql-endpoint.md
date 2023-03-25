@@ -41,7 +41,7 @@ The table columns in automatically generated warehouses are derived from the sou
 
 The columns that have the types that aren't listed in the table aren't represented as the table columns in the default warehouse.
 
-In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-generated warehouse is visualized with a data warehouse icon and under the **Type** column you see it listed as **SQL Endpoint.** An important distinction for this default warehouse is that it's a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
+In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-generated warehouse is visualized with a data warehouse icon and under the **Type** column you see it listed as **SQL Endpoint**. An important distinction for this default warehouse is that it's a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
 
 :::image type="content" source="media\sql-endpoint\warehouse-default-list.png" alt-text="Screenshot showing a Warehouse(default) in a portal list." lightbox="media\sql-endpoint\warehouse-default-list.png":::
 
