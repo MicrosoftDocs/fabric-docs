@@ -14,17 +14,17 @@ ms.date: 03/15/2023
 
 **Applies to:** Warehouse
 
-You can modify data that is stored in tables in a warehouse. We'll also show how you can use transactions to group those changes together. Transactions allow you commit all tables or none of the tables that you're changing data in. For example, if you're changing details about a purchase order that affects three tables, you can group those changes into a transaction so that when those tables are queried, they either all have that change or none of them do. This is a common practice for when you need to ensure your data is consistent across multiple tables. See T-SQL Surface Area for a listing of unsupported T-SQL commands.
+You can modify data that is stored in tables in a warehouse. We'll also show how you can use transactions to group those changes together. Transactions allow you to commit all tables or none of the tables that you're changing data in. For example, if you're changing details about a purchase order that affects three tables, you can group those changes into a transaction so that when those tables are queried, they either all have that change or none of them do. This is a common practice for when you need to ensure your data is consistent across multiple tables. See T-SQL Surface Area for a listing of unsupported T-SQL commands.
 
 > [!NOTE]
 > Only Snapshot Isolation is supported. If you set your transaction isolation level to read uncommitted, it will be ignored and snapshot will still be used.
 
 See our current documentation for INSERT, UPDATE, DELETE and Transactions:
 
-- Insert - [INSERT (Transact-SQL) - SQL Server | Microsoft Learn](/sql/t-sql/statements/insert-transact-sql?view=azure-sqldw-latest&preserve-view=true)
-- Update - [UPDATE (Transact-SQL) - SQL Server | Microsoft Learn](/sql/t-sql/queries/update-transact-sql?view=azure-sqldw-latest&preserve-view=true)
-- Delete - [DELETE (Transact-SQL) - SQL Server | Microsoft Learn](/sql/t-sql/statements/delete-transact-sql?view=azure-sqldw-latest&preserve-view=true)
-- Transactions - [Transactions (Azure Synapse Analytics) - SQL Server | Microsoft Learn](/sql/t-sql/language-elements/transactions-sql-data-warehouse?view=azure-sqldw-latest&preserve-view=true)
+- Insert - [INSERT (Transact-SQL)](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true)
+- Update - [UPDATE (Transact-SQL)](/sql/t-sql/queries/update-transact-sql?view=fabric&preserve-view=true)
+- Delete - [DELETE (Transact-SQL)](/sql/t-sql/statements/delete-transact-sql?view=fabric&preserve-view=true)
+- Transactions - [Transactions (Azure Synapse Analytics)](/sql/t-sql/language-elements/transactions-sql-data-warehouse?view=fabric&preserve-view=true)
 
 ## Known limitations
 
