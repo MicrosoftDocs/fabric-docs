@@ -111,7 +111,7 @@ To use service principal authentication, follow these steps:
     CREATE USER [your application name] FROM EXTERNAL PROVIDER;
     ```
 
-4. Grant the service principal needed permissions as you normally do for SQL users or others. Run the following code. For more options, see [this document](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql).
+4. Grant the service principal needed permissions as you normally do for SQL users or others. Run the following code. For more options, see [ALTER ROLE (Transact-SQL)](/sql/t-sql/statements/alter-role-transact-sql.md).
 
     ```sql
     ALTER ROLE [role name] ADD MEMBER [your application name];
