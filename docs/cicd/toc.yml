@@ -29,7 +29,7 @@ items:
     href: deployment-pipelines/deployment-pipelines-troubleshooting.yml
 - name: Git integration
   items:
-  - name: Git integration overview
+  - name: Introduction to Git integration
     href: git-integration/git-integration-overview.md
   - name: "Git integration process"
     href: git-integration/git-integration-process.md

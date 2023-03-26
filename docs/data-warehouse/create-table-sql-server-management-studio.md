@@ -16,9 +16,9 @@ ms.date: 03/15/2023
 
 To get started, you must complete the following prerequisites:
 
-- [Download SSMS](/sql/ssms/download-sql-server-management-studio-ssms) (use the latest version available)
-- Have access to a warehouse item within a premium per capacity workspace with contributor or above permissions
-- Have a warehouse connected to SSMS via T-SQL Connection String (see Connectivity)
+- [Download SSMS](/sql/ssms/download-sql-server-management-studio-ssms) (use the latest version available).
+- Have access to a warehouse item within a premium per capacity workspace with contributor or above permissions.
+- Have a warehouse connected to SSMS via T-SQL Connection String (see [Connectivity](connectivity.md)).
 
 ## How to create a table
 
@@ -30,59 +30,13 @@ The following steps detail how to create a table using SSMS when connected to a 
 
    :::image type="content" source="media\create-table-sql-server-management-studio\right-click-new-query.png" alt-text="Screenshot showing where to select New Query in the right-click menu." lightbox="media\create-table-sql-server-management-studio\right-click-new-query.png":::
 
-1. A new tab appears for you to write your CREATE TABLE SQL query
+1. A new tab appears for you to write your CREATE TABLE SQL query.
 
    :::image type="content" source="media\create-table-sql-server-management-studio\create-table-new-tab.png" alt-text="Screenshot of a new tab opened next to the Object Explorer pane." lightbox="media\create-table-sql-server-management-studio\create-table-new-tab.png":::
 
-### CREATE TABLE T-SQL syntax
+1. Refer to syntax of [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true). For example:
 
-TODO: Remove and replace with link to /sql/t-sql/statements/create-table-azure-sql-data-warehouse
-```
-CREATE TABLE { database_name.schema_name.table_name | schema_name.table_name | table_name } 
-    (  
-      { column_name <data_type>  [ <column_options> ] } [ ,...n ] 
-    )  
-[;]   
- 
-<column_options> ::= 
-    [ COLLATE Windows_collation_name ] 
-    [ NULL | NOT NULL ] -- default is NULL 
-    [ <column_constraint> ] 
- 
-<column_constraint>::= 
-    { 
-        DEFAULT constant_expression 
-        | PRIMARY KEY NONCLUSTERED NOT ENFORCED
-        | UNIQUE NOT ENFORCED 
-    } 
-<data type> ::= 
-      datetimeoffset [ ( n ) ]   
-    | datetime2 [ ( n ) ]   
-    | datetime   
-    | smalldatetime   
-    | date   
-    | time [ ( n ) ]   
-    | float [ ( n ) ]   
-    | real [ ( n ) ]   
-    | decimal [ ( precision [ , scale ] ) ]    
-    | numeric [ ( precision [ , scale ] ) ]    
-    | money   
-    | smallmoney   
-    | bigint   
-    | int    
-    | smallint   
-    | tinyint   
-    | bit   
-    | varchar [ ( n | max )  ] -- max applies only to Azure Synapse Analytics   
-    | char [ ( n ) ]   
-    | varbinary [ ( n | max ) ] -- max applies only to Azure Synapse Analytics   
-    | binary [ ( n ) ]   
-    | uniqueidentifier 
-```
-
-Example:
-
-```
+```sql
 CREATE TABLE myTable
   (  
     id int NOT NULL,  

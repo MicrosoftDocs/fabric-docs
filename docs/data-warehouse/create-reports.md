@@ -3,7 +3,7 @@ title: Creating reports
 description: Learn about reports in the warehouse experience.
 ms.reviewer: WilliamDAssafMSFT
 ms.author: salilkanade
-author: cynotebo
+author: salilkanade
 ms.topic: conceptual
 ms.date: 03/15/2023
 ---
