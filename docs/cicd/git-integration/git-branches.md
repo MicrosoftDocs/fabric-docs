@@ -3,7 +3,7 @@ title: Git Integration Create Branch Flow
 description: Learn how to use git branches to work in your own isolated environment.
 author: mberdugo
 ms.author: monaberdugo
-ms.service: fabric
+ms.service: 
 ms.topic: concept-article
 ms.date: 03/21/2023
 ms.custom: 
