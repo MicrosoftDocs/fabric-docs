@@ -46,6 +46,10 @@ highlightedContent:
     - title: Choose a workload for your scenario
       itemType: concept
       url: placeholder.md
+    # Card
+    - title: Join the Microsoft Fabric Community
+      itemType: reference
+      url: https://fabric.microsoft.com
 
 # conceptualContent section (optional)
 conceptualContent:
@@ -59,7 +63,7 @@ conceptualContent:
           text: What is Microsoft Fabric?
         - url: placeholder.md
           itemType: get-started
-          text: Fabric workloads and artifacts
+          text: Fabric workloads and items
         - url: placeholder.md
           itemType: tutorial
           text: Get started with creating resources
@@ -143,13 +147,13 @@ conceptualContent:
     # Card
     - title: "Create a Lakehouse and run Spark jobs with Synapse Data Engineering"
       links:
-        - url: placeholder.md
+        - url: data-engineering/data-engineering-overview.md
           itemType: overview
           text: What is Data Engineering?
-        - url: placeholder.md
+        - url: data-engineering/create-lakehouse.md
           itemType: get-started
           text: Create a Lakehouse
-        - url: placeholder.md
+        - url: data-engineering/create-spark-job-definition.md
           itemType: get-started
           text: Create a Spark job definition
       # footerLink (optional)
@@ -159,13 +163,13 @@ conceptualContent:
     # Card
     - title: "Build a relational layer with Synapse Data Warehouse"
       links:
-        - url: placeholder.md
+        - url: data-warehouse/data-warehousing.md
           itemType: overview
           text: What is Data Warehouse?
-        - url: placeholder.md
+        - url: data-warehouse/create-warehouse.md
           itemType: get-started
-          text: Create a Warehous
-        - url: placeholder.md
+          text: Create a Warehouse
+        - url: data-warehouse/sql-query-editor.md
           itemType: how-to-guide
           text: Query using SQL query editor
       # footerLink (optional)
@@ -194,13 +198,13 @@ conceptualContent:
     # Card
     - title: Administer your resources
       links:
-        - url: placeholder.md
+        - url: admin/admin-overview.md
           itemType: overview
           text: What is administration?
-        - url: placeholder.md
+        - url: admin/admin-roles.md
           itemType: concept
           text: Understand administration roles
-        - url: placeholder.md
+        - url: admin/admin-delegate.md
           itemType: how-to-guide
           text: Delegate settings
       # footerLink (optional)
@@ -210,13 +214,13 @@ conceptualContent:
     # Card
     - title: Secure your resources
       links:
-        - url: placeholder.md
+        - url: security/security-overview.md
           itemType: overview
           text: What is security?
-        - url: placeholder.md
+        - url: security/security-byok.md
           itemType: concept
           text: Bring your own encryption keys
-        - url: placeholder.md
+        - url: security/security-b2b.md
           itemType: how-to-guide
           text: How does B2B work?
       # footerLink (optional)
@@ -258,13 +262,13 @@ conceptualContent:
     # Card
     - title: Continuous Integration / Continuous Delivery (CI/CD)
       links:
-        - url: placeholder.md
+        - url: cicd/deployment-pipelines/deployment-pipelines-overview.md
           itemType: overview
           text: What are deployment pipelines?
-        - url: placeholder.md
+        - url: cicd/deployment-pipelines/deployment-pipelines-create-rules.md
           itemType: get-started
           text: Create deployment rules
-        - url: placeholder.md
+        - url: cicd/deployment-pipelines/deployment-pipelines-automation.md
           itemType: how-to-guide
           text: Automate deployment pipelines
       # footerLink (optional)
