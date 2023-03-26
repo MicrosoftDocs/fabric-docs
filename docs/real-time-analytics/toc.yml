@@ -21,6 +21,10 @@ items:
     items:
     - name: Create an empty table
       href: create-empty-table.md
+  - name: Create stored functions
+    href: create-functions.md
+  - name: Create materialized views
+    href: materialized-view.md
 - name: Get data
   items:
   - name: Get data from a blob
@@ -31,6 +35,18 @@ items:
     href: get-data-onelake.md  
   - name: OneLake shortcut
     href: onelake-shortcut.md
+- name: Query data
+  items:
+  - name: Query data in the KQL queryset
+    href: kusto-query-set.md
+  - name: Use sample queries
+    href: query-table.md
+  - name:  Use a Jupyter notebook and kqlmagic to query a KQL Database
+    href: jupyter-notebook.md
+- name: Visualize data
+  items:
+  - name: Visualize data in a Power BI report
+    href: create-powerbi-report.md
 - name: Event streams
   items:
   - name: Overview
