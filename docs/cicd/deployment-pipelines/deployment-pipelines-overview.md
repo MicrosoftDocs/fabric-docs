@@ -56,6 +56,10 @@ When you deploy content from the source stage to a target stage, the source cont
 
 You can learn more about [which items are copied to the next stage](deployment-pipelines-process.md#deployed-items), and [which items are not copied](deployment-pipelines-process.md#unsupported-items), in [Understand the deployment process](deployment-pipelines-process.md).
 
+## Automation
+
+You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). Learn more about the automation process in [Automate your deployment pipeline using APIs and DevOps](deployment-pipelines-automation.md).
+
 ## Next steps
 
 * [Understand the deployment pipelines process](deployment-pipelines-process.md)
