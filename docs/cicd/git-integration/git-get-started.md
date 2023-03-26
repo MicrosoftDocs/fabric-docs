@@ -155,6 +155,6 @@ The actions you can take on a workspace depend on the permissions you have in bo
 - Maximum length of branch name is 244 characters.
 - Maximum length of full path for file names is 250 characters. Longer names will fail
 - If a branch contains only sub-directories without artifact directories, the connection will fail.
-- Name duplication is not allowed – even if Power BI enables it, the update will fail 
+- Duplicating names is not allowed – even if Power BI allows it, the update will fail.
 - B2B isn’t supported
 - Item folder name is created once, but doesn’t the display name of an item in the workspace. To rename, change the relevant ‘Display name’ in the ‘Item.metadata.json’ file.
