@@ -56,10 +56,10 @@ Only a workspace admin can connect a workspace to an Azure Repo, but once connec
     > [!NOTE]
     > You can only connect a workspace to one branch and folder at a time.
 
-    - [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure?view=azure-devops)
-    - [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure?view=azure-devops#how-many-projects-do-you-need)
-    - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure?view=azure-devops#structure-repos-and-version-control-within-a-project)
-    - [Branch](./git-integration-branches.md) (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch)
+    - [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
+    - [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
+    - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
+    - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch)
     - Folder (Select an existing folder in that branch. If you don't select a folder, content will be created in the root folder.)
 
 1. Select **Connect and sync**.

@@ -34,21 +34,7 @@ A typical application of ALM might look something like this:
 1. Test new version
 1. Deploy new version of the app
 
-This cycle, or parts of it, repeat themselves over again for the lifetime of the app.
-
-## Sample CI/CD workflow
-
-A typical application of ALM might look something like this:
-
-1. Create a new git branch for developing your app and share it with other developers
-1. Each developer pushes their own code changes in git
-1. Automated build and test
-1. Merge new code updates
-1. Upload updated version to pipeline
-1. Test new version
-1. Deploy new version of the app
-
-This cycle, or parts of it, repeat themselves over again for the lifetime of the app.
+This cycle, or parts of it, repeat over again for the lifetime of the app.
 
 ## Next steps
 
