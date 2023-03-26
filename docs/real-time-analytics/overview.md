@@ -40,7 +40,7 @@ A number of industries use Real-time Analytics for their data needs, for example
 
 The main items available in Real-time Analytics include:
 
-* A [KQL Database](create-database.md) for data storage and management. Data ingested into a KQL Database is automatically reflected in OneLake, and is available to other workloads.
+* A [KQL Database](create-database.md) for data storage and management. Data loaded into a KQL Database is automatically reflected in OneLake, and is available to other workloads.
 * Event streams for data loading. 
 * A [KQL Queryset](kusto-query-set.md) to run queries, view, and manipulate query results on data. The KQL Queryset allows you to save queries for future use, or export and share queries with others.
 
@@ -52,10 +52,10 @@ See how these items work together in the end-to-end streaming data consumption a
 
 * Data in OneLake can be accessed by Real-time Analytics in several ways:
     * Data from OneLake can be [queried from Real-time Analytics as a shortcut](onelake-shortcut.md)
-    * Data from [OneLake can be ingested](get-data-onelake.md) into Real-time Analytics
-    * Data ingested into Real-time Analytics is reflected in OneLake as one logical copy
-* Data ingested into Real-time Analytics can be used as the underlying data for [visualization in a PowerBI report](create-powerbi-report.md)
-* Data ingested into Real-time Analytics can be used for analysis in [Jupyter](jupyter-notebook.md) or Spark Notebooks in Data Engineering
+    * Data from [OneLake can be loaded](get-data-onelake.md) into Real-time Analytics
+    * Data loaded into Real-time Analytics is reflected in OneLake as one logical copy
+* Data loaded into Real-time Analytics can be used as the underlying data for [visualization in a PowerBI report](create-powerbi-report.md)
+* Data loaded into Real-time Analytics can be used for analysis in [Jupyter](jupyter-notebook.md) or Spark Notebooks in Data Engineering
 * Trigger data loading events in Data Factory using [pipelines](../data-factory/connector-overview.md#supported-data-stores-in-data-pipeline).
 * Trigger data loading events using [Dataflows](../data-factory/connector-overview.md#supported-data-connectors-in-dataflows).
 
