@@ -24,7 +24,7 @@ OneLake is a single, unified, logical data lake for the whole organization. OneL
 
 OneLake eliminates today’s pervasive and chaotic data silos by providing a data lake as a service without you needing to build it yourself and no infrastructure to manage. With everyone contributing to the same underlying data lake, the tenant administrator can unify management and governance policies across all teams and domains in an organization. Within a tenant, you can create any number of workspaces. Workspaces enable different parts of the organization to distribute ownership, with each workspace controlling its own access policies, region, and capacity for billing.
 
-:::image type="content" source="media\onelake-overview\onelake-foundation-fabric.png" alt-text="Diagram showing the function and structure of OneLake." lightbox="media\onelake-overview\onelake-foundation-fabric.png":::
+:::image type="content" source="media\onelake-overview\onelake-foundation-for-fabric.png" alt-text="Diagram showing the function and structure of OneLake." lightbox="media\onelake-overview\onelake-foundation-for-fabric.png":::
 
 Within a workspace, you can create data artifacts and all data in OneLake is accessed through data artifacts. Similar to how Office stores Word, Excel, and PowerPoint files in OneDrive, Fabric stores lakehouses, warehouses, and other artifacts in OneLake. Artifacts can give tailored experiences for each persona such the Spark developer experience in a lakehouse.
 
@@ -38,7 +38,7 @@ Shortcuts allow your organization to easily share data between users and applica
 
 A shortcut is a reference to data stored in other file locations. These file locations can be within the same workspace or across different workspaces, within OneLake or external to OneLake in ADLS or S3. No matter the location, the reference makes it appear as though the files and folders are stored locally.
 
-:::image type="content" source="media\onelake-overview\fabric-shortcuts-onelake.png" alt-text="Diagram showing how shortcuts connect data across workspaces and artifacts." lightbox="media\onelake-overview\fabric-shortcuts-onelake.png":::
+:::image type="content" source="media\onelake-overview\fabric-shortcuts-structure-onelake.png" alt-text="Diagram showing how shortcuts connect data across workspaces and artifacts." lightbox="media\onelake-overview\fabric-shortcuts-structure-onelake.png":::
 
 For more information on how to use shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
@@ -46,7 +46,7 @@ For more information on how to use shortcuts, see [OneLake shortcuts](onelake-sh
 
 You can access all your OneLake data, including shortcuts, with ADLS Gen2 APIs and SDKs, which means OneLake is compatible out of the box with any application and tool that supports ADLS Gen2. Simply point existing tools to the OneLake endpoint and it just works!
 
-:::image type="content" source="media\onelake-overview\access-onelake-data.png" alt-text="Diagram showing how you can access OneLake date with APIs and SDKs." lightbox="media\onelake-overview\access-onelake-data.png":::
+:::image type="content" source="media\onelake-overview\access-onelake-data-other-tools.png" alt-text="Diagram showing how you can access OneLake date with APIs and SDKs." lightbox="media\onelake-overview\access-onelake-data-other-tools.png":::
 
 For more information on APIs and endpoints, see [OneLake access and APIs](onelake-access-api.md). For examples of OneLake integrations with Azure, see [Use with Azure services](../placeholder.md).
 
