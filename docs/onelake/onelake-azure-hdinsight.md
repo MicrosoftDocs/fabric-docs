@@ -25,7 +25,7 @@ To connect to OneLake with a Jupyter notebook from an HDInsight cluster:
 
    1. Create a user assigned managed identity (UAMI): [Create for Azure HDInsight - UAMI](/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2-portal) and choose it as the identity in the **Storage** screen.
 
-      :::image type="content" source="media\onelake-azure-hdinsight\create-hdinsight-cluster-storage.jpeg" alt-text="Screenshot showing where to enter the user assigned managed identity in the Storage screen." lightbox="media\onelake-azure-hdinsight\create-hdinsight-cluster-storage.jpeg":::
+      :::image type="content" source="media\onelake-azure-hdinsight\create-hdinsight-cluster-storage.png" alt-text="Screenshot showing where to enter the user assigned managed identity in the Storage screen." lightbox="media\onelake-azure-hdinsight\create-hdinsight-cluster-storage.png":::
 
 1. Give this UAMI access to the workspace that contains your artifacts.
 
