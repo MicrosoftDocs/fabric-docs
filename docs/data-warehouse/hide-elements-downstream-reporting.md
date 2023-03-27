@@ -16,7 +16,6 @@ ms.date: 03/17/2023
 
 This article reviews methods to hide elements from downstream reporting. You may want to do this to simplify the set of items available for reporting.
 
-
 ## Options to hide elements
 
 You can hide elements of your warehouse from downstream reporting by selecting **Data view** and right-clicking on the column or table you want to hide. Then select **Hide** in **Report view** from the menu that appears to hide the item from downstream reporting.
@@ -29,4 +28,4 @@ You can also hide the entire table and individual columns by using the **Model v
 
 ## Next steps
 
- - [Access default datasets](access-default-datasets.md)
+ - [Data modeling and defining relationships](data-modeling-defining-relationships.md)

@@ -22,4 +22,6 @@ To load the dataset, select the name of the dataset.
 
 :::image type="content" source="media\access-default-datasets\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\access-default-datasets\load-dataset.png":::
 
-**Next steps:** [Ingesting data](ingest-data.md)
+## Next steps
+
+- [Ingesting data](ingest-data.md)

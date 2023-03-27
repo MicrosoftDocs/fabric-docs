@@ -57,6 +57,17 @@ You only see the table names and columns from which you can choose, you aren't p
 
 Single or multi-selected relationships can also be deleted by pressing **Delete** on your keyboard. You can't undo the delete action, so a dialog prompts you to confirm deleting the relationships.
 
+## Access the default dataset
+
+To access default datasets, go to your workspace and find the dataset that matches the name of the warehouse.
+
+:::image type="content" source="media\data-modeling-defining-relationships\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\access-default-datasets\find-dataset.png":::
+
+To load the dataset, select the name of the dataset.
+
+:::image type="content" source="media\data-modeling-defining-relationships\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\access-default-datasets\load-dataset.png":::
+
+
 ## Modeling the default dataset
 
 The default dataset inherits all relationships between entities defined in the model view and infers them as Power BI dataset relationships, when objects are enabled for BI (Power BI Reports). Inheriting the warehouse's business logic allows a warehouse developer or BI analyst to decrease the time to value towards building a useful semantic model and metrics layer for analytical business intelligence (BI) reports in Power BI, Excel, or external tools like Tableau that read the XMLA format.
