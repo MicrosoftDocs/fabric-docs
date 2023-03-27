@@ -84,10 +84,6 @@ Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/powe
 * **[Administrative APIs and SDK](/power-bi/developer/visuals/create-r-based-power-bi-desktop)**
     * Build custom admin tools.
 
-## Admin center overview
-
-TBD with info from PMs
-
 ## Next steps
 
 >[!div class="nextstepaction"]
