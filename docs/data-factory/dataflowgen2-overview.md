@@ -4,14 +4,14 @@ description: An overview of dataflows gen2.
 author: luitwieler
 
 ms.topic: overview
-ms.date: 02/21/2023
+ms.date: 03/27/2023
 ms.author: jeluitwi
 
 ---
 
 # Dataflows Gen2
 
-Dataflows Gen2 is the new generation of dataflows. The new generation of dataflows will replace the current Dataflow Gen1 (Power BI Dataflows) and bring new features and other improvements. Below we will provide you an overview of all the new features that are introduced in Gen2 and some that are still work in progress and are expected to be available by GA timeline.
+Dataflows Gen2 is the new generation of dataflows. The new generation of dataflows will replace the current Dataflow Gen1 (Power BI Dataflows) and bring new features and other improvements. Below we will provide you an overview of all the new features that are introduced in Gen2 and some that are planned to be added in the near future.
 
 ## Feature overview
 
@@ -38,10 +38,11 @@ Working with Dataflows Gen2 feels like coming home. We kept the full experience 
 
 Dataflows Gen2 allows your data destination to be more flexible and you can choose your own destination. Using this feature you can now do a full separation between your ETL logic and storage. In Dataflows Gen2 we added support for the following destinations and many more are coming soon:
 
-- Lakehouse
+- Fabric Lakehouse
 - Azure Data Explorer (Kusto)
 - Azure Synapse Analytics (SQL DW)
 - Azure SQL Database
+
 
 Learn more about this feature [here](./docsforoutputdestination).
 
@@ -63,20 +64,32 @@ A pipeline can contain one or more activities that are connected by dependencies
 
 ### Save as draft
 
-With Dataflows Gen2 we introduce a worry free experience by removing the need for publishing to save your changes. With save as draft functionality we store a draft version of your dataflow every time you make a change. Did you loose internet connectivity? did you accidentally close your browser? No worries we got your back and once you return to your dataflow your changes will still be there and you can continue where you left off. This is a seamless experience and does not require any input from you. Learn more about this feature [here](./dataflows-save-as-draft.md).
+With Dataflows Gen2 we introduce a worry free experience by removing the need for publishing to save your changes. With save as draft functionality we store a draft version of your dataflow every time you make a change. Did you loose internet connectivity? did you accidentally close your browser? No worries we got your back and once you return to your dataflow your changes will still be there and you can continue where you left off. This is a seamless experience and does not require any input from you. Learn more about this feature [here](./dataflowsgen2-savedraft.md).
 
 ### Fast copy
 
+Fast copy allows you leverage the speed and agility of pipeline copy activity with the simple use of dataflows. We will automatically detect if the data size is significant enough to use a data pipeline copy activity. Learn more about this feature [here](./dataflowsgen2-fastcopy.md).
+
 ### High scale compute
 
-With Dataflows Gen2 we introduce a new feature that is leveraging the Lakehouse compute to improve performance for all your dataflows. Below is an architecture overview how this works.
+With Dataflows Gen2 we introduce a new feature that is leveraging the Lakehouse compute to improve performance for all your dataflows. Below is an architecture overview how this works. Learn more about this feature [here](./TOBEUPDATED).
 
 ## Architecture changes from Gen1 to Gen2
 
+TO BE UPDATED!!!
+
 ## Migration from Gen1 to Gen2
+
+You probably have a lot of dataflows in Gen1 and you are wondering how you can migrate them to Gen2. We have a few options for you to migrate your dataflows to Gen2. Below we will provide you an overview of all the options.
 
 ### Copy past your PowerQuery in the browser
 
+If you have a dataflow in Power BI or Power Apps you can copy your queries and paste them in the editor of your dataflow Gen2. This will allow you to migrate your dataflow to Gen2 without having to rewrite your queries.
+
 ### Create a duplicate of your dataflow (coming soon)
 
+coming soon...
+
 ### Auto migrate (coming soon)
+
+coming soon...
