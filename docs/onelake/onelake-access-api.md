@@ -81,4 +81,4 @@ Create file
 
 ## Next steps
 
-- [OneLake integration with Azure Synapse Analytics](onelake-azure-synapse-analytics)
+- OneLake integration with Azure Synapse Analytics
