@@ -18,7 +18,7 @@ This tutorial is an example of OneLake integration with Azure. We encourage you 
 
 1. Open your Synapse workspace and create an Apache Spark pool with your preferred parameters.
 
-   IMAGE - new-apache-spark-pool.png
+   :::image type="content" source="media\onelake-azure-synapse-analytics\new-apache-spark-pool.png" alt-text="Screenshot showing where to select New in the Apache Spark pool screen." lightbox="media\onelake-azure-synapse-analytics\new-apache-spark-pool.png":::
 
    For more information on creating a pool, see [Quickstart: Create a new serverless Apache Spark pool using the Azure portal](/azure/synapse-analytics/quickstart-create-apache-spark-pool-portal)
 

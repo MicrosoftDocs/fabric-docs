@@ -28,7 +28,7 @@ Before you connect, you must have the following:
 
 1. To authenticate to OneLake with your Azure AD identity, you must enable Azure Data Lake Storage credential passthrough on your cluster in the Advanced Options.
 
-   IMAGE advanced-options-create-cluster.png Screenshot showing where to select Create cluster in the Advanced options screen.
+   :::image type="content" source="media\onelake-azure-databricks\advanced-options-create-cluster.png" alt-text="Screenshot showing where to select Create cluster in the Advanced options screen." lightbox="media\onelake-azure-databricks\advanced-options-create-cluster.png":::
 
    > [!NOTE]
    > You can also connect Databricks to OneLake using a service principal. For more information about authenticating Azure Databricks using a service principal, see [Service principals for Azure Databricks automation](/azure/databricks/dev-tools/service-principals).

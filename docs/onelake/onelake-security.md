@@ -16,7 +16,7 @@ OneLake uses a layered security model built around the organizational structure 
 
 OneLake is a single data lake across your entire organization. Fabric sits on top of OneLake and divides the single data lake into separate containers that can be secured independently. Within each workspace, you can define security for different items, and you can set access through compute engines like SQL separately from direct data lake access.
 
-IMAGE onelake-structure.png Diagram showing the structure of a data lake connecting to separately secured containers.
+:::image type="content" source="media\onelake-security\onelake-structure.png" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers." lightbox="media\onelake-security\onelake-structure.png":::
 
 ## Workspace security
 
@@ -56,7 +56,7 @@ OneLake uses Azure Active Directory (Azure AD) for authentication; you can use i
 > [!NOTE]
 > To use service principals in a Fabric tenant, a tenant administrator must enable Service Principal Names (SPNs) for the entire tenant or specific security groups.
 
-IMAGE admin-portal-tenant-settings.png Screenshot showing the Developer settings options on the Tenant setting screen.
+:::image type="content" source="media\onelake-security\admin-portal-tenant-settings.png" alt-text="Screenshot showing the Developer settings options on the Tenant setting screen." lightbox="media\onelake-security\admin-portal-tenant-settings.png":::
 
 ## Private links
 

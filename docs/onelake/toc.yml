@@ -23,9 +23,15 @@ items:
     href: onelake-access-api.md
 - name: Integrate with Azure services
   items:
-  - name: linktext1
-    href: ../placeholder.md
+  - name: Azure Synapse Analytics
+    href: onelake-azure-synapse-analytics.md
+  - name: Azure Storage Explorer
+    href: onelake-azure-storage-explorer.md
+  - name: Azure Databricks
+    href: onelake-azure-databricks.md
+  - name: Azure HDInsight
+    href: onelake-azure-hdinsight.md
 - name: Secure data
-  href: ../placeholder.md
+  href: onelake-security.md
 - name: File explorer
-  href: ../placeholder.md
+  href: onelake-file-explorer.md
