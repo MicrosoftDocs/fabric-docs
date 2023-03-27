@@ -29,7 +29,7 @@ How? Real-time Analytics reduces complexity and simplifies data integration. Qui
 
 ## When to use Real-time Analytics?
 
-If any one of these questions describe your data needs, Real-time Analytics is the right solution for you:
+If any one of these questions describes your data needs, Real-time Analytics is the right solution for you:
 
 > [!div class="checklist"]
 > * Do I need high freshness from data ingestion to query?
@@ -59,7 +59,7 @@ See how these items work together in the end-to-end streaming data consumption a
     * Data from OneLake can be [queried from Real-time Analytics as a shortcut](onelake-shortcut.md)
     * Data from [OneLake can be loaded](get-data-onelake.md) into Real-time Analytics
     * Data loaded into Real-time Analytics is reflected in OneLake as one logical copy
-* Data loaded into Real-time Analytics can be used as the underlying data for [visualization in a PowerBI report](create-powerbi-report.md)
+* Data loaded into Real-time Analytics can be used as the underlying data for [visualization in a Power BI report](create-powerbi-report.md)
 * Data loaded into Real-time Analytics can be used for analysis in [Jupyter](jupyter-notebook.md) or Spark Notebooks in Data Engineering
 * Trigger data loading events in Data Factory using [pipelines](../data-factory/connector-overview.md#supported-data-stores-in-data-pipeline).
 * Trigger data loading events using [Dataflows](../data-factory/connector-overview.md#supported-data-connectors-in-dataflows).
