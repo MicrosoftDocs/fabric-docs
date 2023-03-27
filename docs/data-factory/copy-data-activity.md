@@ -72,7 +72,7 @@ Follow these steps to set up your copy activity using copy assistant.
 
    :::image type="content" source="media/copy-data-activity/map-to-destination.png" alt-text="Screenshot of Map to destination screen." lightbox="media/copy-data-activity/map-to-destination.png":::
 
-   :::image type="content" source="media/copy-data-activity/map-to-destination-details.png" alt-text="Screenshot of Map to destination details." lightbox="media/copy-data-activity/map-to-destination-details.png":::
+   :::image type="content" source="media/copy-data-activity/connect-to-data-destination.png" alt-text="Screenshot of Connect to data destination." lightbox="media/copy-data-activity/connect-to-data-destination.png":::
 
 ### Step 4: Review and create your copy activity
 
