@@ -6,7 +6,7 @@ ms.author: qixwang
 author: qixwang
 ms.topic: how-to
 ms.date: 02/24/2023
-ms.search.form: Create Spark Job Definition
+ms.search.form: Create Spark Job Definition,spark_job_definition
 ---
 
 # How to create an Apache Spark job definition

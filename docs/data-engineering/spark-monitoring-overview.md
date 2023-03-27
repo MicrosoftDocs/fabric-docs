@@ -6,6 +6,7 @@ ms.author: jejiang
 author: jejiang
 ms.topic: overview
 ms.date: 02/24/2023
+ms.search.form: spark_job_definition
 ---
 
 # Apache Spark monitoring overview
