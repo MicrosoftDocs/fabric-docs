@@ -1,9 +1,9 @@
 {
   "docsets_to_publish": [
     {
-      "docset_name": "trident-docs",
+      "docset_name": "fabric-docs",
       "build_source_folder": "docs",
-      "build_output_subfolder": "trident-docs",
+      "build_output_subfolder": "fabric-docs",
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [],
@@ -21,7 +21,6 @@
   ],
   "sync_notification_subscribers": [],
   "branches_to_filter": [],
-  "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
   "dependent_repositories": [
     {
@@ -42,19 +41,20 @@
       "Publish",
       "Pdf"
     ],
-     "main": [
+    "main": [
       "Publish",
       "Pdf"
     ],
-     "release-public-preview": [
+    "release-public-preview": [
       "Publish",
       "Pdf"
     ]
   },
-  "need_generate_pdf_url_template": true,
   "targets": {
     "Pdf": {
       "template_folder": "_themes.pdf"
     }
-  }
+  },
+  "skip_source_output_uploading": false,
+  "need_generate_pdf_url_template": true
 }

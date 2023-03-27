@@ -6,6 +6,7 @@ ms.author: avinandac
 author: avinandaMS
 ms.topic: conceptual
 ms.date: 02/24/2023
+ms.search.form: Lakehouse Explorer
 ---
 
 # Navigating the Lakehouse explorer

@@ -6,6 +6,7 @@ ms.author: negust
 author: nelgson
 ms.topic: conceptual
 ms.date: 02/10/2023
+ms.search.form: Create New Model, Model Comparison
 ---
 
 # Machine learning model

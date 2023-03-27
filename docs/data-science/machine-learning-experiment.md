@@ -3,9 +3,10 @@ title: Machine learning experiment
 description: Learn how to create an experiment and track runs, and review examples of using MLflow.
 ms.reviewer: mopeakande
 ms.author: midesa
-author: nelgson
+author: midesa
 ms.topic: conceptual
 ms.date: 03/13/2023
+ms.search.form: Create New Experiment, Run Comparison
 ---
 
 # Machine learning experiments in [!INCLUDE [product-name](../includes/product-name.md)]
