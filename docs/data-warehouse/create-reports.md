@@ -10,9 +10,9 @@ ms.date: 03/15/2023
 
 # Creating reports
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-**Applies to:** Warehouse and SQL Endpoint
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Warehouse lets you create reusable and default datasets to create reports in various ways in Power BI. This article describes the various ways you can use your warehouses, and their default datasets, to create reports.
 

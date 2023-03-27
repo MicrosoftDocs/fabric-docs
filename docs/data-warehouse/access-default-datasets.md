@@ -10,7 +10,7 @@ ms.date: 03/15/2023
 
 # Access default datasets
 
-**Applies to:** SQL Endpoint
+**Applies to:** [!INCLUDE[fabric-se](includes/applies-to-version/fabric-se.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

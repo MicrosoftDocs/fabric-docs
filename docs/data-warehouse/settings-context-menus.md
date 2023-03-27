@@ -10,9 +10,9 @@ ms.date: 03/15/2023
 
 # Warehouse settings and context menus
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-**Applies to:** Warehouse and SQL Endpoint
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Settings are accessible from the context menu or from the Settings icon in the ribbon when you open the item. There are some key differences in the actions you can take in settings depending on if you're interacting with the SQL Endpoint or a data warehouse.
 
@@ -45,7 +45,7 @@ The following table shows settings for Dataset (default).
 
 ## Context menus
 
-*Applies to:* Warehouse
+*Applies to:* [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 Warehouse offers an easy experience to create reports and access supported actions using its context menus.
 

@@ -11,13 +11,13 @@ ms.search.form: Model view
 
 # Data modeling and defining relationships
 
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 A well-defined data model is instrumental in driving your analytics and reporting experiences. In [!INCLUDE [product-name](../includes/product-name.md)] warehouse, we're providing you with a way to easily build and change your data model with a few simple steps in our visual editor. You need to have at least a small sample of data loaded before you can explore these concepts further; tables may be empty, but the schemas (their structures) need to be defined.
 
 ## How to model data and define relationships
-
-*Applies to:* Warehouse and SQL Endpoint
 
 To model your data, navigate to **Model view** by selecting the **Model view** icon at the bottom left of the window, as shown in the following image.
 

@@ -10,11 +10,12 @@ ms.date: 03/17/2023
 
 # Hide elements from downstream reporting
 
-**Applies to:** Warehouse and SQL Endpoint
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article reviews methods to hide elements from downstream reporting. You may want to do this to simplify the set of items available for reporting.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Options to hide elements
 

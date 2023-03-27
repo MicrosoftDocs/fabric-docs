@@ -11,9 +11,9 @@ ms.search.form: Monitoring
 
 # Monitoring connections, sessions, and requests using DMVs
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-**Applies to:** Warehouse and SQL Endpoint
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 For the current version, there are three Dynamic Management Views (DMVs) provided for you to receive live SQL query lifecycle insights.
 
