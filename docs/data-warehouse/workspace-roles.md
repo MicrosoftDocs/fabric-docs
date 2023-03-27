@@ -15,7 +15,11 @@ ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Workspace roles allow you to manage user access within the workspace. For more information on Workspace roles, see Workspace roles in [!INCLUDE [product-name](../includes/product-name.md)]. There are four roles within [!INCLUDE [product-name](../includes/product-name.md)] workspaces: Admin, Member, Contributor, and Viewer. Adding users to these workspace roles provides the user with different intrinsic permissions when connected to a warehouse. For the current version, the Admin, Member and Contributor workspace roles all receive db_owner role permissions, within the warehouse, while a viewer receives read-only access (as shown in the following table).
+Workspace roles allow you to manage user access within the workspace. For more information on Workspace roles, see Workspace roles in [!INCLUDE [product-name](../includes/product-name.md)]. 
+
+There are four roles within [!INCLUDE [product-name](../includes/product-name.md)] workspaces: **Admin**, **Member**, **Contributor**, and **Viewer**. Adding users to these workspace roles provides the user with different intrinsic permissions when connected to a warehouse. 
+
+The **Admin**, **Member**, and **Contributor** workspace roles all receive db_owner role permissions, within the warehouse, while a viewer receives read-only access.
 
 | **Workspace role** | **SQL permissions** | **Equivalent SQL role** |
 |---|---|---|
@@ -26,12 +30,6 @@ Workspace roles allow you to manage user access within the workspace. For more i
 
 > [!NOTE]
 > The mapping of these roles to SQL permissions will be further refined as we continue to build out the warehouse security experience. In addition, beyond the intrinsic permissions granted based on Workspace roles, permissions will be able to be further configured within SQL, using the standard SQL security model.
-
-## Prerequisites
-
-To get started, you must complete the following:
-
-- If not already done, create a workspace with a premium per capacity workspace settings
 
 ## Next steps
 

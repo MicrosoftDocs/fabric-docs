@@ -15,7 +15,7 @@ ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspac
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[!INCLUDE[fabric](includes/fabric.md)] provides two distinct data warehousing experiences. The **[!INCLUDE[fabric-se](includes/fabric-se.md)]** in [!INCLUDE[fabric](includes/fabric.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using T-SQL/TDS end-point. **[!INCLUDE[fabric-dw](includes/fabric-dw.md)]** in [!INCLUDE[fabric](includes/fabric.md)] provides a "traditional", transactional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse.
+[!INCLUDE [product-name](../includes/product-name.md)] provides two distinct data warehousing experiences. The **[!INCLUDE[fabric-se](includes/fabric-se.md)]** in [!INCLUDE [product-name](../includes/product-name.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using T-SQL/TDS end-point. **[!INCLUDE[fabric-dw](includes/fabric-dw.md)]** in [!INCLUDE [product-name](../includes/product-name.md)] provides a "traditional", transactional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse.
 
 > [!IMPORTANT]
 > This article provides a comprehensive overview of two distinct data warehousing experiences.
@@ -148,4 +148,5 @@ SQL query editor:
 
 ## Next steps
 
+- [Create a warehouse](create-warehouse.md)
 - [Creating reports](create-reports.md)
