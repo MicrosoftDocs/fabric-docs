@@ -6,6 +6,7 @@ ms.author: procha
 author: periclesrocha
 ms.topic: how-to
 ms.date: 03/15/2023
+ms.search.form: Ingesting data
 ---
 
 # Ingest data into your warehouse using Data pipelines
@@ -38,7 +39,7 @@ Once you finish preparing your pipeline, you need to validate it and run it. The
 
 :::image type="content" source="media\ingest-data-pipelines\validate-run.png" alt-text="Screenshot showing where to find the Validate and Run options." lightbox="media\ingest-data-pipelines\validate-run.png":::
 
-Once you run a pipeline, you can monitor its status in the **Output** tab of the pipeline’s configuration pane.
+Once you run a pipeline, you can monitor its status in the **Output** tab of the pipeline's configuration pane.
 
 :::image type="content" source="media\ingest-data-pipelines\output-pane.png" alt-text="Screenshot showing where to find the Output tab." lightbox="media\ingest-data-pipelines\output-pane.png":::
 

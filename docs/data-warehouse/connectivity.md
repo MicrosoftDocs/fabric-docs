@@ -3,14 +3,17 @@ title: Connectivity
 description: Follow steps to connect SSMS to a warehouse in your workspace.
 ms.reviewer: wiassaf
 ms.author: salilkanade
-author: cynotebo
+author: salilkanade
 ms.topic: how-to
-ms.date: 03/15/2023
+ms.date: 03/24/2023
+ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
 # Connectivity
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+This article provides a how-to on connecting to your SQL Endpoint to data warehouse using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
 
 To get started, you must complete the following prerequisites:
 
@@ -23,11 +26,13 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
 ### Get end-point
 
+To retrieve the connection string, follow these steps:
+
 1. Navigate to your workspace and select the warehouse item you would like to connect to.
 
    :::image type="content" source="media\connectivity\workspace-more-menu.png" alt-text="Screenshot of the workspace screen with the context menu open." lightbox="media\connectivity\workspace-more-menu.png":::
 
-1. Navigate to the warehouse’s **Settings** page.
+1. Navigate to the warehouse's **Settings** page.
 1. Navigate to the **Warehouse mode** tab.
 1. Select the **Copy** button next to the SQL connection string to copy it to your clipboard.
 
@@ -47,9 +52,9 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
    :::image type="content" source="media\connectivity\object-explorer-example.png" alt-text="Screenshot showing where the connected server name appears in the Object Explorer pane." lightbox="media\connectivity\object-explorer-example.png":::
 
-When connecting via SSMS (or ADS), you see both warehouse (default) and warehouse artifacts listed as warehouses and it's difficult to differentiate between the two item types and their functionality. For this reason, we strongly encourage you to adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience.
+When connecting via SSMS (or ADS), you see both SQL Endpoint and warehouse items listed as warehouses and it's difficult to differentiate between the two item types and their functionality. For this reason, we strongly encourage you to adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience.
 
-### Connecting to SQL server endpoint using JDBC driver
+### Connecting to SQL Server endpoint using JDBC driver
 
 If you're receiving an error when attempting to connect to a SQL Server endpoint using a SQL client that uses a Java database connectivity (JDBC) driver, like DBeaver, check for the following dependencies:
 
@@ -96,7 +101,7 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
 
    **Workaround**: Ignore the message by selecting **OK**, and continue with your query.
 
-- Connection is forcibly closed. You might experience connection issues while querying your warehouse with SSMS. The error might look like “An existing connection was forcibly closed by the remote host”.
+- Connection is forcibly closed. You might experience connection issues while querying your warehouse with SSMS. The error might look like "An existing connection was forcibly closed by the remote host".
 
    **Workaround**: Ignore the message, reconnect, and keep querying your warehouse.
 
@@ -106,7 +111,7 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
   - Can't find table 0
   - Invalid handle
 
-   **Workaround**: Wait a few seconds to a minute and try again. Report an issue if these errors don't automatically resolve after retry. Try using Azure Data Studio instead of SSMS.
+   **Workaround**: Wait a few seconds to a minute and try again. Report an issue if these errors don't automatically resolve after retry. Try using [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio) instead of [SQL Server Management Studio (SSMS)](https://aka.ms/ssms).
 
 ## Next steps
 

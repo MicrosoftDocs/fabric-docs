@@ -19,16 +19,14 @@
     items:
     - name: Connector overview
       href: connector-overview.md
-    - name: Connectors feature summary
-      href: ../placeholder.md
     - name: Amazon S3
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-amazon-s3-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-amazon-s3.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-amazon-s3-copy-activity.md
     - name: Azure Blob Storage
       items:
       - name: Overview
@@ -45,6 +43,14 @@
         href: connector-azure-cosmosdb-for-nosql.md
       - name: Configure in copy activity
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
+    - name: Azure Data Lake Storage Gen2
+      items:
+      - name: Overview
+        href: connector-azure-data-lake-storage-gen2-overview.md
+      - name: Set up connection
+        href: connector-azure-data-lake-storage-gen2.md
+      - name: Configure in copy activity
+        href: connector-azure-data-lake-storage-gen2-copy-activity.md
     - name: Binary format
       href: format-binary.md
     - name: Data warehouse
@@ -74,11 +80,11 @@
     - name: HTTP
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-http-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-http.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-http-copy-activity.md
     - name: Kusto
       items:
       - name: Overview

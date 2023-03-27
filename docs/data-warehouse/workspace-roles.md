@@ -6,6 +6,7 @@ ms.author: kedodd
 author: kedodd
 ms.topic: conceptual
 ms.date: 03/15/2023
+ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 ---
 
 # Workspace roles

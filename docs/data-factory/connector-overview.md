@@ -5,7 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview 
-ms.date: 01/27/2023
+ms.date: 03/09/2023
 ---
 
 # Connector overview
@@ -26,15 +26,35 @@ You can find a comprehensive list of all connectors supported through our [publi
 
 ## Supported data stores in data pipeline
 
-[!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory supports the following data stores in a data pipeline. The support for various activities in a data pipeline, such as copy, look up, get metadata, delete, script, and store procedures, is slightly different. Go to each data store to learn the supported capabilities and the corresponding configurations in detail.
+[!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory supports the following data stores in a data pipeline via Copy, Lookup, Get Metadata, and Delete Data activities. Go to each data store to learn the supported capabilities and the corresponding configurations in detail.
 
-| **Category** | **Data store** | **Copy activity (source/destination)** | **Lookup activity** | **Get metadata activity** | **Delete activity** | **Script activity** | **Stored procedure activity** |
+| **Category** | **Data store** | **Copy activity (source/destination)** | **Lookup activity** | **Get Metadata activity** | **Delete activity** | **Script activity** | **Stored Procedure activity** |
 |---|---|---|---|---|---|---|---|
+| **Workspace** | Lakehouse | ✓/✓ | - | - | ✓ | - | - |
+|  | Data Warehouse | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
 | **Azure** | Azure Blob Storage | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Cosmos DB (SQL API) | ✓/✓ | ✓ | ✓ | ✓ | - | - |
+|  | Azure Data Lake Storage Gen1 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Data Lake Storage Gen2 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure SQL Database | ✓/✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-|  | Azure SQL Managed Instance | ✓/✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+|  | Azure SQL Managed Instance | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
+|  | Azure SQL Explorer | ✓/✓ | ✓ | - | - | - | - |
+|  | Azure Database for PostgreSQL  | ✓/✓ | ✓ | - | - | - | - |
+|  | Azure Synapse Analytics | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
+|  | Azure Table Storage | ✓/✓ | ✓ | - | - | - | - |
+| **Database** | Amazon Redshift | ✓/-  | ✓ | - | - | - | - |
+|  | Apache Impala | ✓/-  | ✓ | - | - | - | - |
+|  | Hive  | ✓/-  | ✓ | - | - | - | - |
+|  | PostgreSQL | ✓/-  | ✓ | - | - | - | - |
+|  | Spark | ✓/-  | ✓ | - | - | - | - |
+|  | SQL Server | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
+| **File** | Amazon S3 | ✓/-  | ✓ | ✓ | ✓ | - | - |
+|  | Google Cloud Storage | ✓/-  | ✓ | ✓ | ✓ | - | - |
+|  | HTTP | ✓/-  | ✓ | - | - | - | - |
+| **Generic** | OData | ✓/-  | ✓ | - | - | - | - |
+|  | REST | ✓/✓ | - | - | - | - | - |
+| **Services and apps** | Snowflake | ✓/✓ | ✓ | - | - | ✓ | - |
+|  | Dataverse | ✓/✓ | ✓ | - | - | - | - |
 
 ## Next steps
 

@@ -6,6 +6,7 @@ ms.author: kecona
 author: KevinConanMSFT
 ms.topic: conceptual
 ms.date: 03/15/2023
+ms.search.form: Ingesting data
 ---
 
 # Ingesting data into the warehouse
