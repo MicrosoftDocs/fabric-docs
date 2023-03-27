@@ -19,9 +19,9 @@ It leverages historical execution data from customer workloads to iteratively le
 ## Query Tuning
 
 Currently, Autotune configures three query-level Spark configurations:
-* `Spark.sql.shuffle.partitions` - configures the number of partitions to use when shuffling data for joins or aggregations. Default is 200.
-* `Spark.sql.autoBroadcastJoinThreshold` - configures the maximum size in bytes for a table that will be broadcast to all worker nodes when performing a join. Default is 10 MB.
-* `Spark.sql.files.maxPartitionBytes` - the maximum number of bytes to pack into a single partition when reading files. Works for Parquet, JSON and ORC file-based sources. Default is 128 MB.
+* `spark.sql.shuffle.partitions` - configures the number of partitions to use when shuffling data for joins or aggregations. Default is 200.
+* `spark.sql.autoBroadcastJoinThreshold` - configures the maximum size in bytes for a table that will be broadcast to all worker nodes when performing a join. Default is 10 MB.
+* `spark.sql.files.maxPartitionBytes` - the maximum number of bytes to pack into a single partition when reading files. Works for Parquet, JSON and ORC file-based sources. Default is 128 MB.
 
 
 Since there's no historical data available during the first run of Autotune, configurations will be set based on a baseline model, which relies on heuristics related to the content and structure of the workload itself. However, as the same query or workload is run repeatedly, we'll observe increasingly significant improvements from Autotune, as the results of previous runs are used to fine-tune the model and tailor it to a specific workspace or workload.
@@ -32,13 +32,7 @@ Since there's no historical data available during the first run of Autotune, con
 ## Configuration Tuning Algorithm Overview
 For the first run of the query, upon submission, an ML model initially trained using standard open-source benchmark queries (e.g., TPC-DS) will guide the search around the neighbors of the current setting (starting from the default). Among the neighbor candidates, the ML model selects the best one with the shortest predicted execution time. In this run, the "centroid" is the default config, around which Autotune generates new candidates.
 
-Based on the performance of the second run per suggested configuration, we (1) retrain the ML model by adding the new observation from this query, and (2) update the centroid by comparing the performance of the last two runs. If the previous run is better, the centroid will be updated in the inverse direction of the previous update (similar to the momentum approach in DNN training); if the new run is better, the latest configuration setting becomes the new centroid.
-
-Iteratively, the algorithm will gradually search in the direction with better performance.
-
-![Autotune optimization algorithm](media/autotune/autotune-algorithm-diagram.png)
-
-The Autotune optimization algorithm relies on an ML model to guide the selection of new configuration candidates and a centroid learning algorithm that continuously searches in the direction of performance improvement.
+Based on the performance of the second run per suggested configuration, we retrain the ML model by adding the new observation from this query, and update the centroid by comparing the performance of the last two runs. If the previous run is better, the centroid will be updated in the inverse direction of the previous update (similar to the momentum approach in DNN training); if the new run is better, the latest configuration setting becomes the new centroid. Iteratively, the algorithm will gradually search in the direction with better performance.
 
 
 ## Enable/Disable
