@@ -16,9 +16,9 @@ ms.custom: template-how-to
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to SharePoint Online List.
 
-The SharePoint List Online connector uses service principal authentication to connect to SharePoint. Follow these steps to set it up:
-
 ## Prerequisites
+
+1. The SharePoint List Online connector uses service principal authentication to connect to SharePoint. Follow these steps to set it up:
 
 1. Register an application with the Microsoft Identity platform. To learn how, see [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app). Make note of these values, which you use to define the linked service:
 
@@ -26,7 +26,7 @@ The SharePoint List Online connector uses service principal authentication to co
     - Application key
     - Tenant ID
 
-2. Grant SharePoint Online site permission to your registered application by following the steps below. To do this, you need a site admin role.
+1. Grant SharePoint Online site permission to your registered application by following the steps below. To do this, you need a site admin role.
 
    - Open SharePoint Online site link e.g. `https://[your_site_url]/_layouts/15/appinv.aspx` (replace the site URL).
    - Search the application ID you registered, fill the empty fields, and click "Create".
@@ -46,19 +46,6 @@ The SharePoint List Online connector uses service principal authentication to co
       > [!NOTE]
       > In the context of configuring the SharePoint connector, the "App Domain" and "Redirect URL" refer to the SharePoint app that you have registered in Azure Active Directory (AAD) to allow access to your SharePoint data. The "App Domain" is the domain where your SharePoint site is hosted. For example, if your SharePoint site is located at "https://contoso.sharepoint.com", then the "App Domain" would be "contoso.sharepoint.com". The "Redirect URL" is the URL that the SharePoint app will redirect to after the user has authenticated and granted permissions to the app. This URL should be a page on your SharePoint site that the app has permission to access. For example, you could use the URL of a page that displays a list of files in a library, or a page that displays the contents of a document.
    - Click "Trust It" for this app.
-
-## Supported format
-
-SharePoint Online List supports the following file formats. Refer to each article for format-based settings.
-
-- Avro format
-- Binary format
-- Delimited text format
-- Excel format
-- JSON format
-- ORC format
-- Parquet format
-- XML format
 
 ## Supported configuration
 
@@ -86,7 +73,7 @@ The following three properties are **required**:
 - **Use query**: You can choose **List name**, **Query** as your use query. See the configuration of each setting below.
 
     - **List name**: The name of the SharePoint Online list.
-    - **Query**: The OData query to filter the data in SharePoint Online list. For example, "$top=1".
+    - **Query**: The OData query to filter the data in SharePoint Online list. For example, `"$top=1"`.
 
     :::image type="content" source="./media/connector-sharepoint-online-list/query.png" alt-text="Screenshot showing query.":::
 

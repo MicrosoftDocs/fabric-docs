@@ -86,7 +86,7 @@ Select **Anonymous** under **Authentication method**.
 
 * **Tenant Id**: The tenant ID under which your application resides.
 * **Service principal ID**: The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.
-* **Service principal key**: The application's key. Mark this field as a **SecureString** to store it securely, or [reference a secret stored in Azure Key Vault](/azure/data-factory/store-credentials-in-key-vault).
+* **Service principal key**: The application's key.
 
 ### Step 3: Specify the privacy level that you want to apply
 
@@ -121,7 +121,7 @@ The following properties in the table are the supported authentication type.
 |**Service Principal**||||✓/|
 |- Tenant ID|The tenant ID under which your application resides.|Yes |||
 |- Service Principal ID|The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.|Yes |||
-|- Service Principal key|The application's key. Mark this field as a **SecureString** to store it securely, or [reference a secret stored in Azure Key Vault](/azure/data-factory/store-credentials-in-key-vault).|Yes |||
+|- Service Principal key|The application's key.|Yes |||
 
 ## Next steps
 
