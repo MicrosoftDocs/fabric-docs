@@ -14,6 +14,8 @@ The last few decades have seen a paradigm shift in the way we access and consume
 
 How? Real-time Analytics reduces complexity and simplifies data integration. Quick access to data insights is achieved through automatic data streaming, automatic indexing and data partitioning of any data source or format, and through the use of the on-demand query generation and visualizations. This user process is simplified while preserving powerful analytical capabilities. Real-time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
 
+:::image type="content" source="media/real-time-analytics-overview/product-view.png" alt-text="Screenshot of Real-time Analytics product showing database homepage with a quick query pane showing binned ingestion results." lightbox="media/real-time-analytics-overview/product-view.png":::
+
 ## What makes Real-time Analytics unique?
 
 * **Easy ingestion** of data from any source, in any data format.
@@ -21,7 +23,7 @@ How? Real-time Analytics reduces complexity and simplifies data integration. Qui
 * **By-default streaming** provides high performance, low latency, high freshness data analysis.
 * **Default partitioning** - both time and hash-based partitioning, and by-default **indexing**.
 * **Versatile data structures** so that you can query structured, semi-structured, or free text.
-* **Query** of raw data without transformation, with high performance, incredibly low response time, and using a wide variety of available operators. {TODO: ADD LINK}
+* **Query** raw data without transformation, with high performance, incredibly low response time, and using a wide variety of available [operators](/azure/data-explorer/kusto/query/index?context=/fabric/context/context). 
 * **Unlimited scale** from gigabytes to petabytes, with unlimited scale on concurrent queries and concurrent users.
 * **Integrated** seamlessly with other workloads and items in Microsoft Fabric.
 
