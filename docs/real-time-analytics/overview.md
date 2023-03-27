@@ -5,15 +5,14 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
-ms.date: 03/26/2023
+ms.date: 03/27/2023
 ms.search.form: product-kusto
 ---
 # What is Real-time Analytics in Fabric?
 
-The last few decades have seen a paradigm shift in the way we access and consume information, as users have become accustomed to data that is interactive, on demand, and accessible to all. This data shift has been powered by big data, streaming data ingestion, and indexed, keyword-based search, all together forming a simplified user experience in many consumer industries. With Microsoft Fabric Real-time Analytics, we enable organizations to focus and scale up their analytics solution while democratizing data from the citizen data scientist all the way to the advanced data engineer.
+The last few decades have seen a paradigm shift in the way we access and consume information, as users have become used to data that is interactive, on demand, and accessible to all. This data shift has been powered by big data, streaming data ingestion, and indexed, keyword-based search, all together forming a simplified user experience. With Microsoft Fabric Real-time Analytics, we enable organizations to focus and scale up their analytics solution while democratizing data for the needs of both the citizen data scientist all the way to the advanced data engineer.
 
-How? Real-time Analytics reduces complexity and simplifies data integration. Quick access to data insights is achieved through automatic data streaming, automatic indexing and data partitioning of any data source or format, and through the use of the on-demand query generation and visualizations. Real-time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
-
+How? Real-time Analytics reduces complexity and simplifies data integration. Quick access to data insights is achieved through automatic data streaming, automatic indexing and data partitioning of any data source or format, and through the use of the on-demand query generation and visualizations. This user process is simplified while preserving powerful analytical capabilities. Real-time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
 
 ## What makes Real-time Analytics unique?
 
@@ -22,19 +21,23 @@ How? Real-time Analytics reduces complexity and simplifies data integration. Qui
 * **By-default streaming** provides high performance, low latency, high freshness data analysis.
 * **Default partitioning** - both time and hash-based partitioning, and by-default **indexing**.
 * **Versatile data structures** so that you can query structured, semi-structured, or free text.
-* **Query** raw data without transformation.
+* **Query** of raw data without transformation, with high performance, incredibly low response time, and using a wide variety of available operators. {TODO: ADD LINK}
 * **Unlimited scale** from gigabytes to petabytes, with unlimited scale on concurrent queries and concurrent users.
 * **Integrated** seamlessly with other workloads and items in Microsoft Fabric.
 
 ## When to use Real-time Analytics?
 
-A number of industries use Real-time Analytics for their data needs, for example: finance, transportation and logistics, smart cities, smart buildings, manufacturing operations, automotive, and oil and gas. If any one of these questions describe your data needs, Real-time Analytics is the right solution for you:
+If any one of these questions describe your data needs, Real-time Analytics is the right solution for you:
 
 > [!div class="checklist"]
->
-> * Do I have a service that needs to access data in real-time?
-> * Do I have complicated data, such as JSON or other arrays?
-> * Do I need to search or access free text?
+> * Do I need high freshness from data ingestion to query?
+> * Do I have a service that needs to access data with low query latency (in a matter of seconds)?
+> * Does I need to search or access data in different formats, like structured data, semistructured data (including complicated data such as JSON or other arrays), or unstructured data (for example, free text)?
+> * Do I want the ability to query large amounts of data?
+> * Does my data have a time component that can benefit from the time series-optimized database structure?
+> * Do I want the ability to create ad hoc queries on any field or row without prior optimization?
+
+The types of industries which benefit from data analysis in Real-time Analytics is quite varied, for example: finance, transportation and logistics, smart cities, smart buildings, manufacturing operations, automotive, and oil and gas.
 
 ## How to work in Real-time Analytics?
 
