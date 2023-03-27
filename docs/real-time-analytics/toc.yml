@@ -4,7 +4,7 @@ items:
 - name: Overview
   items:
   - name: What is Real-time Analytics?
-    href: ../placeholder.md
+    href: overview.md
 - name: Get started
   items:
   - name: Real-time Analytics happy path
@@ -65,6 +65,16 @@ items:
     items:
     - name: linktext2
       href: ../placeholder.md
+- name: Query data
+  items:
+  - name: Query data in the KQL queryset
+    href: kusto-query-set.md
+  - name:  Use a Jupyter notebook and kqlmagic to query a KQL Database
+    href: jupyter-notebook.md
+- name: Visualize data
+  items:
+  - name: Visualize data in a Power BI report
+    href: create-powerbi-report.md
 - name: Kusto Query Language
   href: kusto-query-language/toc.yml
 - name: Management commands
