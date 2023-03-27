@@ -1,5 +1,5 @@
 ---
-title: Data science overview
+title: What is Data science in Microsoft Fabric?
 description: Overview of machine learning.
 author: nelgson
 ms.author: negust
@@ -9,7 +9,7 @@ ms.date: 03/24/2023
 
 ---
 
-# Data science overview
+# What is Data science in Microsoft Fabric?
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
