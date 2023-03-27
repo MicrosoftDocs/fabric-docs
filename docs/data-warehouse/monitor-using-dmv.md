@@ -5,7 +5,8 @@ ms.reviewer: wiassaf
 ms.author: jacindaeng
 author: jacindaeng
 ms.topic: conceptual
-ms.date: 03/15/2023
+ms.date: 03/23/2023
+ms.search.form: Monitoring
 ---
 
 # Monitoring connections, sessions, and requests using DMVs
@@ -52,8 +53,8 @@ The following example joins `sys.dm_exec_connections` and `sys.dm_exec_sessions`
 SELECT connections.connection_id,
  connections.connect_time,
  sessions.session_id, sessions.login_name, sessions.login_time, sessions.status
-FROM sys.dm_exec_connections connections
-JOIN sys.dm_exec_sessions sessions
+FROM sys.dm_exec_connections AS connections
+INNER JOIN sys.dm_exec_sessions AS sessions
 ON connections.session_id=sessions.session_id;
 ```
 

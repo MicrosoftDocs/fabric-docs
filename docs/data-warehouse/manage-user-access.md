@@ -6,6 +6,7 @@ ms.author: kedodd
 author: kedodd
 ms.topic: quickstart
 ms.date: 03/15/2023
+ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 ---
 
 # Manage user access
@@ -48,7 +49,7 @@ Once you're assigned to a workspace role, you can connect to the warehouse (see 
 
    ```sql
    SELECT *
-   FROM sys.fn_my_permissions(NULL, “Database”)
+   FROM sys.fn_my_permissions(NULL, "Database")
    ```
 
    :::image type="content" source="media\manage-user-access\execute-view-permissions.png" alt-text="Screenshot showing where to execute the command to see permissions." lightbox="media\manage-user-access\execute-view-permissions.png":::

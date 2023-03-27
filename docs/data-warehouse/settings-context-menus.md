@@ -14,7 +14,7 @@ ms.date: 03/15/2023
 
 **Applies to:** Warehouse and SQL Endpoint
 
-Settings are accessible from the context menu or from the Settings icon in the ribbon when you open the item. There are some key differences in the actions you can take in settings depending on if you're interacting with the warehouse (default) or warehouse item.
+Settings are accessible from the context menu or from the Settings icon in the ribbon when you open the item. There are some key differences in the actions you can take in settings depending on if you're interacting with the SQL Endpoint or a data warehouse.
 
 This section describes and explains the settings options available based on the item you're working with and its description.
 
@@ -28,7 +28,7 @@ The following table is a list of settings available for each warehouse.
 |---|---|---|
 | **Name** | Lets user read/edit name of the warehouse. | Warehouse |
 | **Warehouse description** | Lets users add metadata details to provide descriptive information about a warehouse. | Warehouse |
-| **SQL Server endpoint** | The SQL server endpoint connection string for the workspace. You can use the server connection string to create a connection to the warehouse using various tools, such as SSMS/Azure Data Studio. | |
+| **SQL Server endpoint** | The SQL Server endpoint connection string for the workspace. You can use the server connection string to create a connection to the warehouse using various tools, such as SSMS/Azure Data Studio. | |
 | **Owner** | Name of the user who owns the warehouse. | |
 | **Last modified by** | Name of the user who modified the warehouse recently. | |
 | **Location** | Workspace name where the warehouse is created. | |

@@ -6,6 +6,7 @@ ms.author: kecona
 author: KevinConanMSFT
 ms.topic: how-to
 ms.date: 03/15/2023
+ms.search.form: Ingesting data
 ---
 
 # Ingest data into your warehouse using the COPY command
@@ -31,15 +32,15 @@ This is the currently supported syntax for DW [!INCLUDE [product-name](../includ
 ```sql
 COPY INTO [schema.]table_name
 [(Column_list)] 
-FROM ‘<external_location>’ [,...n]
+FROM '<external_location>' [,...n]
 WITH
  ( 
  [FILE_TYPE = {'CSV' | 'PARQUET' '} ]
  [,CREDENTIAL = (AZURE CREDENTIAL) ]
- [,COMPRESSION = { 'Gzip' | ’Snappy’}] 
- [,FIELDQUOTE = ‘string_delimiter’] 
- [,FIELDTERMINATOR = ‘field_terminator’]
- [,ROWTERMINATOR = ‘row_terminator’]
+ [,COMPRESSION = { 'Gzip' | 'Snappy'}] 
+ [,FIELDQUOTE = 'string_delimiter'] 
+ [,FIELDTERMINATOR = 'field_terminator']
+ [,ROWTERMINATOR = 'row_terminator']
  [,FIRSTROW = first_row]
  [,ENCODING = {'UTF8'|'UTF16'}] 
 ```
@@ -88,7 +89,7 @@ To ingest multiple files in a directory, specify only the container name. For ex
 
 ```sql
 ...
-FROM 'https://mystorageaccountxxx.blob.core.windows.net/private/mydirectorywithCSVs’)
+FROM 'https://mystorageaccountxxx.blob.core.windows.net/private/mydirectorywithCSVs')
 ```
 
 ## Known limitations
@@ -99,9 +100,9 @@ The below syntax isn't currently available.
 [,MAXERRORS = max_errors ]
 [,ERRORFILE = '[http(s)://storageaccount/container]/errorfile_directory[/]'] 
 [,ERRORFILE_CREDENTIAL = (AZURE CREDENTIAL) ]
-[,DATEFORMAT = ‘date_format’]
-[,IDENTITY_INSERT = {‘ON’ | ‘OFF’}]
-[,AUTO_CREATE_TABLE   = {‘ON’ | ‘OFF’}]
+[,DATEFORMAT = 'date_format']
+[,IDENTITY_INSERT = {'ON' | 'OFF'}]
+[,AUTO_CREATE_TABLE   = {'ON' | 'OFF'}]
 ```
 
 Other known limitations:

@@ -55,6 +55,14 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
+    - name: Azure SQL Database
+      items:
+      - name: Overview
+        href: connector-azure-sql-database-overview.md
+      - name: Set up connection
+        href: connector-azure-sql-database.md
+      - name: Configure in copy activity
+        href: connector-azure-sql-database-copy-activity.md
     - name: Binary format
       href: format-binary.md
     - name: Data warehouse
