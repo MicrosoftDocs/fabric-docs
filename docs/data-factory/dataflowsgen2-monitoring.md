@@ -3,19 +3,19 @@ title: An overview of dataflows refresh history
 description: An overview of dataflow refresh history features.
 author: luitwieler
 
-ms.topic: concepts
-ms.date: 01/31/2023
+ms.topic: conceptual
+ms.date: 03/28/2023
 ms.author: jeluitwi
 
 ---
 
 # Dataflows Refresh history and monitoring
 
-Monitoring your dataflow refreshes is key in ensuring that your Dataflows are running as expected. Refresh history and monitoring hub allows you to evaluate in detail what happened during the refresh of your dataflow.
+Monitoring your dataflow refreshes is key in ensuring that your Dataflows are running as expected. Refresh history and monitoring hub allows you to evaluate in detail what happened during the refresh of your dataflow. This page will provide you an overview of the features that are available in the refresh history and monitoring hub. We will also provide you with some guidance on how to use these features.
 
 ## Refresh History
 
-Refresh history is available via the drop-down menu in your workspace.
+Refresh history is available via the drop-down menu in your workspace. You can access it by clicking on the **Refresh History** button.
     ![Open Refresh History](./media/dataflowsgen2-monitoring/open-refreshhistory.png)
 
 When you open the refresh history of your dataflow you first will see a list of all the refreshes of your data. This first screen will provide you information about:
@@ -55,7 +55,7 @@ In short, this overview provides you:
 - Session ID
 - Dataflow ID
 
-The Tables section reflects all the entities you have enabled load for in your dataflow. Meaning that those tables shown here are being loaded into the staging area of your workspace. These are also the tables you can access via the Power Query Dataflow connector in Power BI, Excel or Dataflows. You can click on any of the table names listed to view the details of this specific table. Once you do that you arrive on this screen:
+The Tables section reflects all the entities you have enabled load for in your dataflow. meaning that those tables shown here are being loaded into the staging area of your dataflow. These are also the tables you can access via the Power Query Dataflow connector in Power BI, Excel or Dataflows. You can click on any of the table names listed to view the details of this specific table. Once you do that you arrive on this screen:
 
 ![Refresh Details Table](./media/dataflowsgen2-monitoring/table-details.png)
 
@@ -77,4 +77,22 @@ To investigate what happened you can drill down into an activity or table. The f
 
 ## Monitor Hub
 
-TO BE WRITTEN.
+The monitor hub is available via the side menu in your workspace. You can access it by clicking on the **Monitor** button.
+
+![Open Monitor Hub](./media/dataflowsgen2-monitoring/open-monitoringhub.png)
+
+The monitor hub provides you with a dashboard that gives you an overview of the status of your dataflows.
+
+![Monitor Hub](./media/dataflowsgen2-monitoring/monitor-hub.png)
+
+This dashboard provides you with the following information:
+
+- Status of your dataflows
+- Start time of the refresh
+- Refresh duration
+- Submitter of the refresh
+- Workspace name
+- Fabric Capacity used for the refresh of your dataflow
+- Average refresh duration
+- Number of refreshes per day
+- Type of refresh

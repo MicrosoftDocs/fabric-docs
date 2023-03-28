@@ -3,8 +3,8 @@ title: An overview of dataflows save as draft functionality
 description: An overview of dataflow save as draft features.
 author: luitwieler
 
-ms.topic: concepts
-ms.date: 02/13/2023
+ms.topic: how-to
+ms.date: 03/28/2023
 ms.author: jeluitwi
 
 ---
@@ -30,3 +30,5 @@ To publish your changes you made in your draft you take the following steps:
 1. Publish the dataflow with the button on the bottom of the page
 
     ![Publish Dataflow](./media/dataflowsgen2-savedraft/publish-dataflow.png)
+
+1. Confirm the publish
