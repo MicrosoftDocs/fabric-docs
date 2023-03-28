@@ -18,7 +18,7 @@ This article outlines the steps to create Google Cloud Storage connection.
 
 ## Supported authentication types
 
-This Google Cloud Storage connector supports the following authentication types for copy and dataflow Gen2 respectively.  
+This Google Cloud Storage connector supports the following authentication types for copy activity.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
