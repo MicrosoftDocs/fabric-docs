@@ -27,7 +27,7 @@ To connect to OneLake with a Jupyter notebook from an HDInsight cluster:
 
       :::image type="content" source="media\onelake-azure-hdinsight\create-hdinsight-cluster-storage.png" alt-text="Screenshot showing where to enter the user assigned managed identity in the Storage screen." lightbox="media\onelake-azure-hdinsight\create-hdinsight-cluster-storage.png":::
 
-1. Give this UAMI access to the workspace that contains your artifacts.
+1. Give this UAMI access to the Fabric workspace that contains your artifacts.
 
    :::image type="content" source="media\onelake-azure-hdinsight\manage-access-panel.jpg" alt-text="Screenshot showing where to select an artifact in the Manage access panel." lightbox="media\onelake-azure-hdinsight\manage-access-panel.jpg":::
 
