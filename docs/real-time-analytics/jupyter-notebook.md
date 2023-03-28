@@ -26,7 +26,6 @@ Specifically, you'll learn how to:
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
 * Workspace
-* [KQL Database](create-database.md)
 
 ## Get data
 

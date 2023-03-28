@@ -1,6 +1,6 @@
 ---
-title: Tutorial- use a Spark notebook to query a KQL Database
-description: Learn how to import the NYC GreenTaxi notebook into your [!INCLUDE [product-name](../includes/product-name.md)] environment using the Spark connector.
+title: Tutorial- Use Apache Spark to query a KQL Database
+description: Learn how to import the NYC GreenTaxi notebook into your [!INCLUDE [product-name](../includes/product-name.md)] environment using A[ache Spark.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -9,27 +9,27 @@ ms.date: 03/27/2023
 ms.search.form: product-kusto
 ---
 
-# Tutorial: Use a Spark notebook to query a KQL Database
+# Tutorial: Use Apache Spark to query a KQL Database
 
 Intro
 
-For more information...
+<!--The connector for Apache Spark is designed to efficiently transfer data between your KQL Database and Spark. This connector is available --->
+
+<!--For more information, see--->
 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
-> * Create a database
+> * Create a KQL Database
 > * Import a notebook
-> * Run the notebook
-> * Get data using the Spark connector
-
+> * Write data to a KQL Database using Apache Spark
+> * Read data from a KQL Database
 
 ## Prerequisites
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* Workspace
-* [KQL Database](create-database.md)
+* Workspace.
 
 Before we import the NYC GreenTaxi notebook, we need to create a database.
 
@@ -105,13 +105,13 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
 1. Run the cell.
 
-1. Run the next cell to create the table mapping and to get data. It will take a few minutes for this step to be complete.
+1. Run the next cell to write data to your database. It will take a few minutes for this step to be complete.
 
     :::image type="content" source="media/spark-connector/code-cell3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command.":::
 
 ## Run the notebook
 
-Run the remaining two cells sequentially to show the top 20 highest and lowest taxi fares and distances recorded by year.
+Run the remaining two cells sequentially to read data from your table. The rto show the top 20 highest and lowest taxi fares and distances recorded by year.
 
 :::image type="content" source="media/spark-connector/query-example.png" alt-text="Screenshot of fourth and fifth code cell showing the query results.":::
 
