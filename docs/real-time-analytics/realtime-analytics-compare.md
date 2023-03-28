@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: overview
-ms.date: 03/23/2023
+ms.date: 03/28/2023
 ms.search.form: product-kusto
 ---
 
@@ -17,7 +17,7 @@ Real-time Analytics delivers high performance when it comes to your increasing v
 
 You can use Real-time Analytics for a range of solutions, such as IoT analytics and log analytics, and in many scenarios including manufacturing operations, oil and gas, automotive, and more.
 
-<!-- TODO For more information on Synapse Real-time Analytics, see [Real-time Analytics in [!INCLUDE [product-name](../includes/product-name.md)] ](overview.md).-->
+For more information on Real-time Analytics, see [What is Real-time Analytics in Fabric?](overview.md).
 
 ## Capability support
 
@@ -40,7 +40,7 @@ You can use Real-time Analytics for a range of solutions, such as IoT analytics 
 |  | Autoscale | &check; (Built-in) | &check; (Optional: manual, optimized, custom) |
 |  | Dashboards| &cross; | &check; |
 |  | Power BI quick create | &check; | &cross; |
-| **Pricing** | Business Model | Included in the Premium Power BI workspace consumption model. Billing per use and dedicated capacity available | Cost plus billing model with multiple meters: Azure Data Explorer IP markup, Compute, Storage, and Networking |
+| **Pricing** | Business Model | Included in the Power BI Premium workspace consumption model. Billing per use and dedicated capacity available | Cost plus billing model with multiple meters: Azure Data Explorer IP markup, Compute, Storage, and Networking |
 
 ## Next steps
 
