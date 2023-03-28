@@ -43,6 +43,8 @@ items:
     href: query-table.md
   - name:  Use a Jupyter notebook and kqlmagic to query a KQL Database
     href: jupyter-notebook.md
+  - name: Use a Spark notebook to query a KQL Database
+    href: spark-connector.md
 - name: Visualize data
   items:
   - name: Visualize data in a Power BI report

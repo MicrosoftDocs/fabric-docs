@@ -21,8 +21,9 @@ In this tutorial, you learn how to:
 >
 > * Create a database
 > * Import a notebook
-> * Get data using the Spark connector
 > * Run the notebook
+> * Get data using the Spark connector
+
 
 ## Prerequisites
 
@@ -34,25 +35,27 @@ Before we import the NYC GreenTaxi notebook, we need to create a database.
 
 ## Create a KQL Database
 
-1. Open the app switcher on the bottom of the navigation pane and select **Data Explorer**.
+1. Open the experience switcher on the bottom of the navigation pane and select **Real-time Analytics**.
 
-    :::image type="content" source="media/spark-connector/app-switcher-kusto.png" alt-text="Screenshot of experience switcher showing Microsoft Fabric's experiences. The experience titled Real-time analytics is highlighted.":::
+    :::image type="content" source="media/spark-connector/app-switcher-kusto.png" alt-text="Screenshot of experience switcher showing Microsoft Fabric's experiences. Real-time analytics is highlighted.":::
 
-1. Select **Kusto Database**.
+1. Select **KQL Database**.
 
-    :::image type="content" source="media/jupyter-notebook/kusto-database.png" alt-text="Screenshot of Kusto items. The item titled Kusto database is highlighted.":::
+   :::image type="content" source="media/spark-connector/kql-database.png" alt-text="Screenshot of the Real-time Analytics homepage that shows the items that can be created. The item titled KQL Database is highlighted.":::
 
-1. Name your database, then select **Create**.
+1. Under **Database name**, enter *nycGreenTaxi*, then select **Create**.
 
-    :::image type="content" source="media/jupyter-notebook/nyctaxi-database.png" alt-text="Screenshot of New Database naming window. The name bar and the create button are highlighted.":::
+    :::image type="content" source="media/spark-connector/new-database.png" alt-text="alt text Screenshot of New Database window showing the database name. The Create button is highlighted.":::
 
-1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere to use in [Device Code authentication](#device-code-authentication).
+    The KQL database has now been created within the context of the selected workspace.
 
-    :::image type="content" source="media/jupyter-notebook/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
+1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere to use in a later step.
+
+    :::image type="content" source="media/spark-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
 
 ## Download the NYC GreenTaxi notebook
 
-We've created a sample notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your KQL Database.
+We've created a sample notebook that will take you through all the necessary steps for loading data into your database using the Spark connector.
 
 1. Open the Azure Kusto Spark repository on GitHub to download the [NYC GreenTaxi notebook.](https://github.com/Azure/azure-kusto-spark/blob/master/samples/src/main/trident/NYC-GreenTaxi-Read-Write-Data-To-Kusto.ipynb).
 
@@ -63,15 +66,15 @@ We've created a sample notebook that will take you through all the necessary ste
     > [!NOTE]
     > The notebook must be saved in the `.ipynb` file format.
 
-## Import the Jupyter notebook
+## Import the Spark notebook
 
-The rest of this workflow occurs in the **Data Engineering** section of the product, and uses <!-- a Jupyter notebook to query and visualize the data in your KQL Database.-->
+The rest of this workflow occurs in the **Data Engineering** section of the product, and uses a Spark notebook to load and query data in your KQL Database.
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Data Engineering**.
 
     :::image type="content" source="media/spark-connector/app-switcher-dataengineering.png" alt-text="Screenshot of experience switcher showing available apps. The experience titled Data Engineering is highlighted.":::
 
-1. In the Data Engineering homepage, select **Import notebook**.
+1. Select **Import notebook**.
 
     :::image type="content" source="media/spark-connector/import-notebook.png" alt-text="Screenshot of artifact options in Data Engineering. The artifact titled Import notebook is highlighted.":::
 
@@ -82,20 +85,35 @@ The rest of this workflow occurs in the **Data Engineering** section of the prod
 1. Select the NYC GreenTaxi notebook you downloaded in a previous step.
 1. Once the import is complete, return to your workspace to open this notebook.
 
-## Run the notebook and get data
-
-Run the remaining cells sequentially to see how render commands work through kqlmagic and begin creating a heatmap of taxi pickups in NYC.
-For more information on kqlmagic, see
-
-1. Paste the **Query endpoint URI** of the database in which you placed the sample data. This URI can be found in the [Database details](create-database.md#database-details) page. Use this URI instead of the placeholder cluster text.
-1. Change the placeholder database name to **NYCtaxi**.
-
 ## Get data
 
-Select the **play** button to run each cell, or select the cell and press **Shift+ Enter**. Repeat this step for each package.
+Run the cells sequentially to create the table schema mapping and get data from the NYC Green Taxi blob container.
+
+Select the **play** button to run each cell, or select the cell and press **Shift+ Enter**. Repeat this step for each code cell.
 
 > [!NOTE]
 > Wait for the completion check mark to appear before running the next cell.
+
+1. Run the following cell to enable access to the NYC GreenTaxi blob container.
+
+    :::image type="content" source="media/spark-connector/code-cell1.png" alt-text="Screenshot of first code cell showing storage access information.":::
+
+1. In **KustoURI**, paste the **Query URI** that you copied earlier instead of the placeholder text.
+1. Change the placeholder database name to **nycGreenTaxi**.
+
+    :::image type="content" source="media/spark-connector/code-cell2.png" alt-text="Screenshot of second code cell showing the target database information.":::
+
+1. Run the cell.
+
+1. Run the next cell to create the table mapping and to get data. It will take a few minutes for this step to be complete.
+
+    :::image type="content" source="media/spark-connector/code-cell3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command.":::
+
+## Run the notebook
+
+Run the remaining two cells sequentially to show the top 20 highest and lowest taxi fares and distances recorded by year.
+
+:::image type="content" source="media/spark-connector/query-example.png" alt-text="Screenshot of fourth and fifth code cell showing the query results.":::
 
 ## Clean up resources
 
@@ -109,4 +127,4 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 ## Next steps
 
-[Query data in the KQL queryset](kusto-query-set.md)
+[Query data in a KQL queryset](kusto-query-set.md)
