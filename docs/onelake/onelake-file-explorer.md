@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/24/2023
 ---
 
-# OneLake File Explorer
+# OneLake File explorer
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

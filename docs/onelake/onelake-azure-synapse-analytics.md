@@ -1,6 +1,6 @@
 ---
-title: OneLake integration with Azure Synapse Analytics
-description: Learn about Microsoft Fabric integration with Azure services, specifically how to read and write data in Fabric using Azure Synapse Spark.
+title: Integrate OneLake with Azure Synapse Analytics
+description: Learn about Microsoft Fabric integration with Azure Synapse Analytics. Specifically how to read and write data into Fabric using Azure Synapse Spark pool.
 ms.reviewer: eloldag
 ms.author: mahi
 author: matt1883
@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.date: 03/24/2023
 ---
 
-# OneLake integration: Azure Synapse Analytics
+# Integrate OneLake with Azure Synapse Analytics
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This tutorial is an example of OneLake integration with Azure. We encourage you to test any tools, programs, or services that you currently use today to interface with Azure Data Lake Storage (ADLS) Gen2.
+This tutorial shows how to integrate OneLake with Azure Synapse Analytics. We encourage you to test any tools, programs, or services that you currently use today to interface with Azure Data Lake Storage (ADLS) Gen2.
 
 ## Using Azure Synapse Analytics
 
@@ -24,13 +24,13 @@ This tutorial is an example of OneLake integration with Azure. We encourage you 
 
 1. Create a new Apache Spark notebook.
 
-1. Open the Spark notebook, set the language to PySpark (Python), and connect it to your newly created Spark pool.
+1. Open the Spark notebook, set the language to **PySpark (Python)**, and connect it to your newly created Spark pool.
 
 1. In a separate tab, navigate to your Microsoft Fabric Lakehouse and find the GUIDs associated with your workspace and lakehouse. (You can find these values in the URL of your lakehouse or in the **Properties** pane for any file in your lakehouse.)
 
 1. Copy the workspace and lakehouse GUIDs into your Spark notebook, and build your OneLake URL for your lakehouse. This location is what you'll write your data into. The following example is for East US 2:
 
-   ```
+   ```python
    `oneLakePath = https://' + workspaceGUID + '@onelake.dfs.fabric.microsoft.com/' + lakehouseGUID + '/Files/'oneLakePath = https://' + workspaceGUID + '@onelake.dfs.fabric.microsoft.com/' + lakehouseGUID + '/Files/'`
    ```
 

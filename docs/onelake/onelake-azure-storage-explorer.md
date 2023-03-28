@@ -1,6 +1,6 @@
 ---
-title: OneLake integration with Azure Storage Explorer
-description: Learn more about Microsoft Fabric integration with Azure services, specifically how to use Azure Storage Explorer.
+title: Integrate OneLake with Azure Storage Explorer
+description: Learn more about Microsoft Fabric integration with Azure Storage Explorer. Once you connect you can browse existing data, download it, add new tables or files, and move them from one location to another.
 ms.reviewer: eloldag
 ms.author: harmeetgill
 author: gillharmeet
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/24/2023
 ---
 
-# OneLake integration: Azure Storage Explorer
+# Integrate OneLake with Azure Storage Explorer
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

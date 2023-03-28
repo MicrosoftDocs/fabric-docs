@@ -33,13 +33,13 @@ Viewers can still access data through certain compute types in Fabric. For more 
 
 ## Item security
 
-You can apply more security or settings to individual items in Fabric. In general, the access a user has to an item inherits from their Fabric workspace role. However, you can share items with users directly, granting them access to just that item without adding them to a workspace role. The following table outlines the scenarios around sharing lakehouses and warehouses, and how they apply to OneLake.
+You can apply more security or settings to individual items such as lakehouse, warehouse, etc. in Fabric. In general, the access a user has to an item inherits from their Fabric workspace role. However, you can share items with users directly, granting them access to just that item without adding them to a workspace role. The following table outlines the scenarios around sharing lakehouses and warehouses, and how they apply to OneLake.
 
 | **Action** | **View files in OneLake** | **Write files in OneLake** |
 |---|---|---|
-| If a warehouse is shared with you… | No | No |
-| If a lakehouse is shared with you… | Yes | No |
-| If a lakehouse with write access is shared with you… | Yes | Yes |
+| If a warehouse is shared with you | No | No |
+| If a lakehouse is shared with you | Yes | No |
+| If a lakehouse with write access is shared with you | Yes | Yes |
 
 ## Compute-specific security
 
