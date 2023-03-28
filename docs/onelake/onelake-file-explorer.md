@@ -24,7 +24,7 @@ OneLake File Explorer currently supports Windows and has been validated on Windo
 
 To install:
 
-1. Download the OneLake.msix file.
+1. Download the [OneLake.msix](../placeholder.md) file.
 
 1. Double click the file to start installing.
 
@@ -35,10 +35,10 @@ Installation is complete and you can now see your OneLake data in Windows File E
 
 ## Known issues
 
-- If there are **large number of files** in OneLake, the initial sync takes a long time to complete. You'll see a Sync Pending icon (:::image type="icon" source="media\onelake-file-explorer\sync-pending.png":::) while it's syncing.  
+- If there are **large number of files** in OneLake, the initial sync takes a long time to complete. You'll see a Sync Pending icon (:::image type="icon" source="media\onelake-file-explorer\sync-pending.png":::) while it's syncing.
 
    > [!NOTE]
-   > You will also see a Sync Pending icon if there was an error during the sync (red cross icon) or if the sync failed due to access checks for any level in the workspace.  
+   > You will also see a Sync Pending icon if there was an error during the sync (red cross icon) or if the sync failed due to access checks for any level in the workspace.
 
 - **Workspace names with special characters** (anything other than letters, numbers, and underscores) fail to sync.
 
@@ -89,7 +89,7 @@ The OneLake File Explorer only syncs updates when you're online and the applicat
 
 ### Sync updates from OneLake
 
-When you start the OneLake File Explorer app, you see the list of files and folders that are currently in that artifact. To refresh the view of the data, right click on the workspace name, artifact name, folder name or file and select **Sync from** **OneLake**.  
+When you start the OneLake File Explorer app, you see the list of files and folders that are currently in that artifact. To refresh the view of the data, right click on the workspace name, artifact name, folder name or file and select **Sync from** **OneLake**.
 
 ### Edit files
 
@@ -108,7 +108,7 @@ If you select **No**, then the local changes won't be sent to the OneLake servic
 
 ### Copying or moving files
 
-You can copy files to, from, and within your artifacts using standard keyboard shortcuts like Crtl+C and Crtl+V.  You can also move files by dragging and dropping them.
+You can copy files to, from, and within your artifacts using standard keyboard shortcuts like Crtl+C and Crtl+V. You can also move files by dragging and dropping them.
 
 ### Support for large files and a large number of files
 

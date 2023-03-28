@@ -58,4 +58,4 @@ This tutorial is an example of OneLake integration with Azure. We encourage you 
 
 ## Next steps
 
-- [OneLake integration: Azure Databricks](onelake-azure-databricks.md)
+- [Integrate OneLake with Azure Databricks](onelake-azure-databricks.md)
