@@ -14,7 +14,7 @@ ms.date: 03/09/2023
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-The Fabric Notebook activity runs a notebook in your Fabric pipeline. You can create a Notebook activity directly through the [!INCLUDE [product-name](../includes/product-name.md)] user interface. This article provides a step-by-step walkthrough that describes how to create a Notebook activity using the Data Factory user interface.
+The Notebook activity in pipeline allows you to run Notebook created in [!INCLUDE [product-name](../includes/product-name.md)]. You can create a Notebook activity directly through the Fabric user interface. This article provides a step-by-step walkthrough that describes how to create a Notebook activity using the Data Factory user interface.
 
 ## Add a Notebook activity to a pipeline
 

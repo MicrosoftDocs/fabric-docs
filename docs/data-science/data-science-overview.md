@@ -1,27 +1,28 @@
 ---
-title: Data science overview
+title: What is Data science in Microsoft Fabric?
 description: Overview of machine learning.
-ms.reviewer: mopeakande
-ms.author: negust
 author: nelgson
+ms.author: negust
+ms.reviewer: franksolomon
 ms.topic: overview
-ms.date: 02/10/2023
+ms.date: 03/24/2023
+
 ---
 
-# Data science overview
+# What is Data science in Microsoft Fabric?
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Users in [!INCLUDE [product-name](../includes/product-name.md)] will have access to a Data Science Home page, from which they can discover and access a variety of relevant resources. For example, you can start creating machine learning Experiments, Models and Notebooks. You can also import existing Notebooks on the Data Science Home page.
+[!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science Home page. From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
 
 :::image type="content" source="media/data-science-overview/data-science-home-page.png" alt-text="Screenshot of the Data science home page." lightbox="media/data-science-overview/data-science-home-page.png":::
 
 [!INCLUDE [product-name](../includes/product-name.md)] offers various data science capabilities.  
 
-You may be familiar with how a typical data science process looks. It's a well-known process, which most machine learning projects follow.
+You might know how a typical data science process works. As a well-known process, most machine learning projects follow it.
 
-At a high level, the process contains the following steps:
+At a high level, the process involves these steps:
 
 - Business understanding  
 - Data acquisition
@@ -29,66 +30,73 @@ At a high level, the process contains the following steps:
 - Model training and experiment tracking
 - Model scoring
 
-This article describes the [!INCLUDE [product-name](../includes/product-name.md)] Data Science capabilities from a data science process perspective. For each step in the data science process, the [!INCLUDE [product-name](../includes/product-name.md)] capabilities that can help are summarized.
+This article describes the [!INCLUDE [product-name](../includes/product-name.md)] Data Science capabilities from a data science process perspective. For each step in the data science process, this article summarizes the [!INCLUDE [product-name](../includes/product-name.md)] capabilities that can help.
 
 ## Business understanding
 
-Data Science users are working on the same platform as business users and analysts. This means that sharing data and collaboration will be more seamless across different roles. More details about collaboration features that help this phase of the data science lifecycle will come soon.
+Data Science users work on the same platform as business users and analysts. Data sharing and collaboration become more seamless across different roles as a result. More details about collaboration features that help this data science lifecycle phase will come soon.
 
 ## Data acquisition
 
-Users in [!INCLUDE [product-name](../includes/product-name.md)] can interact with data in One Lake using the Lakehouse item. You can easily attach Lakehouse to a Notebook and browse and interact with data.
+[!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in One Lake using the Lakehouse item. Lakehouse easily attaches to a Notebook to browse and interact with data.
 
-We have also made it easy to read data from a Lakehouse directly into a Pandas dataframe. This experience should make it seamless to read data from One Lake for exploration.  
+Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, this should make seamless data reads from One Lake possible.
 
-Thanks to data integration pipelines, a natively integrated part of [!INCLUDE [product-name](../includes/product-name.md)], there's a powerful set of tools available for data ingestion and data orchestration pipelines. This allows you to easily build data pipelines to access and transform the data into a format that can be consumed for machine learning. Learn more about data pipelines in Synapse.
+There's a powerful set of tools is available for data ingestion and data orchestration pipelines with data integration pipelines - a natively integrated part of [!INCLUDE [product-name](../includes/product-name.md)]. Easy-to-build data pipelines can access and transform the data into a format that machine learning can consume. Learn more about data pipelines in Synapse.
 
 ## Data preparation, cleansing and visualization
 
-An important part of the machine learning process is to understand data by exploration and visualization.
+An important part of the machine learning process is to understand data through exploration and visualization.
 
-Depending on where the data is stored, [!INCLUDE [product-name](../includes/product-name.md)] offers a set of different tools to explore and prepare it for analytics and machine learning. One of the quickest ways to get started with data exploration is using Notebooks.
+Depending on the data storage location, [!INCLUDE [product-name](../includes/product-name.md)] offers a set of different tools to explore and prepare the data for analytics and machine learning. Notebooks become one of the quickest ways to get started with data exploration.
 
 ## Apache Spark for preparation and visualization
 
-Apache Spark offers capabilities to transform, prepare, and explore your data at scale. These spark pools offer tools like PySpark/Python, Scala, and SparkR/SparklyR for data processing at scale. Using powerful open-source visualization libraries, the data exploration experience can be enhanced to help understand the data better. Learn more about how to explore and visualize data in Synapse using Spark.
+Apache Spark offers capabilities to transform, prepare, and explore your data at scale. These Spark pools offer PySpark/Python, Scala, and SparkR/SparklyR tools for data processing at scale. Powerful open-source visualization libraries can enhance the data exploration experience to help better understand the data. Learn more about how to explore and visualize data in Synapse using Spark.
 
 ## Data Wrangler for seamless data cleansing
 
-In the Notebook experience in [!INCLUDE [product-name](../includes/product-name.md)], we've also added an experience to leverage Data Wrangler, a tool for code users to prepare data and get Python code generated. This experience makes it easy to accelerate tedious and mundane tasks like data cleansing, and get repeatability and automation thanks to the generated code. Learn more about Data Wrangler in the Data Wrangler section of this document.
+The [!INCLUDE [product-name](../includes/product-name.md)] Notebook experience added a feature to use Data Wrangler, a code tool that prepares data and generates Python code. This experience makes it easy to accelerate tedious and mundane tasks - for example, data cleansing, and build repeatability and automation through generated code. Learn more about Data Wrangler in the Data Wrangler section of this document.
 
 ## Model training and experiment tracking
 
-Training machine learning models can be performed in the Notebooks with tools like PySpark/Python or Scala.
+With tools like PySpark/Python or Scala, notebooks can handle machine learning model training.
 
-Machine learning models can be trained with help from various algorithms and libraries that can be installed using library management capabilities. [SynapseML](https://aka.ms/spark) scalable machine learning algorithms that can help solving most classical machine learning problems. SynapseML is an open-source library including a rich ecosystem of ML tools and this library is owned and maintained by Microsoft. [Spark MLlib](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Data%20Science%20Consolidated%20Documentation.docx) is another option for building scalable ML Models in [!INCLUDE [product-name](../includes/product-name.md)].
+Certain algorithms and libraries can help train machine learning models. Library management tools can install these libraries and algorithms. [SynapseML](https://aka.ms/spark) scalable machine learning algorithms can help solve most classical machine learning problems. The open-source SynapseML library includes a rich ecosystem of ML tools. Microsoft owns and maintains this library. As another option, [Spark MLlib](https://microsoft.sharepoint.com/teams/TridentOnboardingCoreTeam/Shared%20Documents/General/8.%20Private%20Preview%20Documentation/Data%20science/Data%20Science%20Consolidated%20Documentation.docx) can build scalable ML Models in [!INCLUDE [product-name](../includes/product-name.md)].
 
-In addition to the above, popular libraries such as Scikit Learn can also be used to develop models.  
+Additionally, popular libraries like Scikit Learn can also develop models.  
 
-Model training can be tracked using MLflow experiments. [!INCLUDE [product-name](../includes/product-name.md)] will have a native MlFlow endpoint that users can interact with to log experiments and models. Learn more about using MLflow for tracking experiments and managing models in the following sections.
+MLflow experiments can track model training. [!INCLUDE [product-name](../includes/product-name.md)] offers a native MlFlow endpoint with which users can interact, to log experiments and models. Learn more about MLflow use to track experiments and manage models in the following sections.
 
 ## SynapseML
 
-SynapseML (previously known as MMLSpark), is an open-source library that simplifies the creation of massively scalable machine learning (ML) pipelines. It's an ecosystem of tools used to expand the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API that’s usable across Python, R, Scala, .NET, and Java. Learn more about [SynapseML](https://aka.ms/spark).
+The SynapseML (previously known as MMLSpark) open-source library simplifies massively scalable machine learning (ML) pipeline creation. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. This API is usable across Python, R, Scala, .NET, and Java. Learn more about [SynapseML](https://aka.ms/spark).
 
 ## Model scoring
 
-Batch scoring machine learning models can be done in Notebooks using open-source libraries for prediction or the scalable universal Predict function in [!INCLUDE [product-name](../includes/product-name.md)], which supports mlflow packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] model registry.  
+Notebooks can handle machine learning model batch scoring with open-source libraries for prediction, or the [!INCLUDE [product-name](../includes/product-name.md)] scalable universal Predict function, which supports mlflow packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] model registry.  
 
-Predicted values can be written to OneLake and consumed from Power BI reports seamlessly using the Power BI “see-through”-mode.
+Predicted values can be written to OneLake, and seamlessly consumed from Power BI reports, with the Power BI “see-through”-mode.
 
-You can learn more about model scoring in [!INCLUDE [product-name](../includes/product-name.md)] in the following sections.
+Learn more about model scoring in [!INCLUDE [product-name](../includes/product-name.md)], in the following sections.
 
 ## Data Exploration with SemPy
 
-Data scientists and business analysts spend a significant portion of their time trying to understand, clean and transform their data before they can even start performing any meaningful analysis. SemPy simplifies data analytics by capturing and exploiting the semantics of the data as the users perform various transformations on their datasets. By exploiting data semantics, SemPy can simplify various tedious tasks such as automatically transforming data while joining heterogeneous datasets, handling underlying schema changes, enforcing semantic constraints and identifying data that violates them, and enriching the data with new knowledge. SemPy users can register new information about the data and share it with other users allowing faster collaboration across teams operating on the same datasets and increasing productivity. SemPy explores data semantics to simplify data science analytics. Through SemPy we expect to:
+Data scientists and business analysts spend a lot of time trying to understand, clean and transform their data, before they can even start any meaningful analysis. SemPy simplifies data analytics. It captures and exploits the data semantics as the users perform various transformations on their datasets. By exploiting data semantics, SemPy can simplify various tedious tasks, for example
 
-- Reduce the time needed to pre-process and validate the data before starting to perform any meaningful analysis.
-- Increase productivity across teams that operate on same datasets through registering and sharing data semantics and transformations, reducing the time needed to extract value from a dataset.
-- Increase cross org collaboration bringing the BI and AI teams together.
-- Decrease ambiguity and learning curve when onboarding onto a new model/dataset.
+- automatic data transformation while joining heterogeneous datasets
+- handle underlying schema changes
+- enforce semantic constraints and identify data that violates them
+- enrich the data with new knowledge
 
-You can learn more about SemPy in [!INCLUDE [product-name](../includes/product-name.md)] in the following sections.
+SemPy users can register new information about the data, and share it with other users. This allows for faster collaboration across teams that operate on the same datasets, and increases productivity. SemPy explores data semantics to simplify data science analytics. Through SemPy we can expect to:
+
+- Reduce the time needed to preprocess and validate the data, before meaningful analysis starts.
+- Increase productivity across teams that operate on same datasets, through registration and sharing data of semantics and transformations; this reduces the time needed to extract value from a dataset.
+- Increase cross-org collaboration, to bring the BI and AI teams together.
+- Decrease ambiguity and the learning curve when onboarding onto a new model/dataset.
+
+Learn more about SemPy in [!INCLUDE [product-name](../includes/product-name.md)], in the following sections.
 
 ## Next steps
 
