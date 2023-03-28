@@ -14,6 +14,8 @@ ms.date: 03/16/2023
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+[!INCLUDE [redirect-azure-data-factory-users](redirect-azure-data-factory-users.md)]
+
 The Fabric Lookup activity can retrieve a dataset from any of the data sources supported by [!INCLUDE [product-name](../includes/product-name.md)]. You can use it to dynamically determine which objects to operate on in a subsequent activity, instead of hard coding the object name. Some object examples are files and tables.
 
 Lookup activity reads and returns the content of a configuration file or table. It also returns the result of executing a query or stored procedure. The output can be a singleton value or an array of attributes, which can be consumed in a subsequent copy, transformation, or control flow activities like ForEach activity.

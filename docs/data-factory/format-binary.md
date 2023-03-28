@@ -8,11 +8,13 @@ ms.date: 03/07/2023
 ms.custom: template-how-to 
 ---
 
-# Binary format in Data Factory
+# Binary format for Data Factory in Microsoft Fabric
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here
+
+[!INCLUDE [redirect-azure-data-factory-users](redirect-azure-data-factory-users.md)]
 
 This article outlines how to configure Binary format in Data Factory.
 

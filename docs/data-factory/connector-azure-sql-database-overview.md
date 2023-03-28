@@ -14,6 +14,8 @@ ms.custom: template-how-to
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+[!INCLUDE [redirect-azure-data-factory-users](redirect-azure-data-factory-users.md)]
+
 This Azure SQL Database connector is supported in [!INCLUDE [product-name](../includes/product-name.md)] Project  – Data Factory with the following capabilities.
 
 ## Supported capabilities
