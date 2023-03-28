@@ -82,7 +82,7 @@ Use these steps to add and configure activities in a [!INCLUDE [product-name](..
 
 ## General settings
 
-When you add a new activity to a pipeline and select it, you will see its properties panes in the area at the bottom of the screen, including **General**, **Settings**, and sometimes other panes as well.if it isn't already selected.
+When you add a new activity to a pipeline and select it, you'll see its properties panes in the area at the bottom of the screen. These properties panes include **General**, **Settings**, and sometimes other panes as well.
 
    :::image type="content" source="media/activity-overview/general-settings.png" alt-text="Screenshot showing the General settings tab of an activity.":::
 
