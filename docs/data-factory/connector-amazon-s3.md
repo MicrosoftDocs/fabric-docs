@@ -18,14 +18,11 @@ This article outlines the steps to create Amazon S3 connection.
 
 ## Supported authentication types
 
-This Amazon S3 connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+This Amazon S3 connector supports the following authentication types for copy activity.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Basic| √| |
-
->[!Note]
->For the Amazon S3 connection of Dataflow Gen2, see this article.
 
 ## Prerequisites
 
