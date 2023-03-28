@@ -11,14 +11,14 @@ ms.author: jeluitwi
 
 # Dataflows Refresh history and monitoring
 
-Monitoring your dataflow refreshes is key in ensuring that your Dataflows are running as expected. Refresh history and monitoring hub allows you to evaluate in detail what happened during the refresh of your dataflow. This page will provide you an overview of the features that are available in the refresh history and monitoring hub. We will also provide you with some guidance on how to use these features.
+Monitoring your dataflow refreshes is key in ensuring that your Dataflows are running as expected. Refresh history and monitoring hub allows you to evaluate in detail what happened during the refresh of your dataflow. This page provides you with an overview of the features that are available in the refresh history and monitoring hub. We also provide you with some guidance on how to use these features.
 
 ## Refresh History
 
 Refresh history is available via the drop-down menu in your workspace. You can access it by clicking on the **Refresh History** button.
     ![Open Refresh History](./media/dataflowsgen2-monitoring/open-refreshhistory.png)
 
-When you open the refresh history of your dataflow you first will see a list of all the refreshes of your data. This first screen will provide you information about:
+When you open the refresh history of your dataflow, you first see a list of all the refreshes of your data. This first screen provides you with information about:
 
 - Start time
 - Status
@@ -31,7 +31,7 @@ You can take some actions right away from this page like start a new refresh, sc
 
 ### Download a CSV file of the refresh
 
-Some times you are in need of getting a CSV file of your refresh. To get this you take the following steps:
+Some times you are in need of getting a CSV file of your refresh. To get this, you take the following steps:
 
 1. Open the refresh history of the dataflow
 1. Select the run you want to get a CSV file from
@@ -41,7 +41,7 @@ Some times you are in need of getting a CSV file of your refresh. To get this yo
 
 ### Reviewing your dataflow refresh from the UI
 
-Once you have determined which one you want to investigate you can drill down into one of the refreshes by clicking on the **Start time** field. This screen will provide you with more information about the refresh that was performed. This includes general information about the refresh as well as a list of Tables and Activities.
+Once you've determined which one, you want to investigate you can drill down into one of the refreshes by clicking on the **Start time** field. This screen provides you with more information about the refresh that was performed. This includes general information about the refresh and a list of Tables and Activities.
 
 ![Refresh Details](./media/dataflowsgen2-monitoring/refresh-details.png)
 
@@ -55,11 +55,11 @@ In short, this overview provides you:
 - Session ID
 - Dataflow ID
 
-The Tables section reflects all the entities you have enabled load for in your dataflow. meaning that those tables shown here are being loaded into the staging area of your dataflow. These are also the tables you can access via the Power Query Dataflow connector in Power BI, Excel or Dataflows. You can click on any of the table names listed to view the details of this specific table. Once you do that you arrive on this screen:
+The Tables section reflects all the entities you have enabled load for in your dataflow. Meaning that those tables shown here are being loaded into the staging area of your dataflow. These tables are the entities you can access via the Power Query Dataflow connector in Power BI, Excel or Dataflows. You can select on any of the tables names listed to view the details of this specific table. Once you do that you arrive on this screen:
 
 ![Refresh Details Table](./media/dataflowsgen2-monitoring/table-details.png)
 
-The Activities section reflects all the actions that have taken place during the refresh, for example loading data to your output destination. This table also allows you to dive deeper into the details of the specific activity. By clicking on the name of the activity you will arrive on this screen:
+The Activities section reflects all the actions that have taken place during the refresh, for example loading data to your output destination. This table also allows you to dive deeper into the details of the specific activity. By clicking on the name of the activity, you arrive on this screen:
 
 ![Refresh Details](./media/dataflowsgen2-monitoring/activity-details.png)
 
@@ -73,7 +73,7 @@ This screen gives you more clarity in what happened during the activity. For Out
     - Endpoints contacted
     - Volume processed by the connector
 
-To investigate what happened you can drill down into an activity or table. The following screen provides you with general information about the refresh as well as errors. If you are drilling into an activity you will be presented with how much data got processed and sent to your output destination.
+To investigate what happened, you can drill down into an activity or table. The following screen provides you with general information about the refresh and errors. If you're drilling into an activity, you are presented with how much data got processed and sent to your output destination.
 
 ## Monitor Hub
 
