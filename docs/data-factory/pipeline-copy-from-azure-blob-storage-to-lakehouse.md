@@ -14,7 +14,7 @@ ms.date: 03/01/2023
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-[!INCLUDE [redirect-azure-data-factory-users](redirect-azure-data-factory-users.md)]
+[!INCLUDE [redirect-azure-data-factory-users](../includes/redirect-azure-data-factory-users.md)]
 
 In this tutorial, you'll build a data pipeline to move a CSV file from an input folder of an Azure Blob Storage source to a Lakehouse destination. 
 

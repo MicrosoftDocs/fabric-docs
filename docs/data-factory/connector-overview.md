@@ -14,7 +14,7 @@ ms.date: 03/09/2023
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-[!INCLUDE [redirect-azure-data-factory-users](redirect-azure-data-factory-users.md)]
+[!INCLUDE [redirect-azure-data-factory-users](../includes/redirect-azure-data-factory-users.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory offers a rich set of connectors that allow you to connect to different types of data stores. You can take advantage of those connectors to transform data in dataflows or move a PB-level of dataset with high-scale in a data pipeline.
 

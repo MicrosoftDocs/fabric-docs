@@ -14,7 +14,7 @@ ms.date: 01/27/2023
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-[!INCLUDE [redirect-azure-data-factory-users](redirect-azure-data-factory-users.md)]
+[!INCLUDE [redirect-azure-data-factory-users](../includes/redirect-azure-data-factory-users.md)]
 
 A data pipeline run occurs when a data pipeline is executed. This means that the activities in your data pipeline will run and be executed to completion. For example, running a data pipeline with a **Copy data** activity will perform that action and copy your data. Each data pipeline run will have its own unique pipeline run ID.
 

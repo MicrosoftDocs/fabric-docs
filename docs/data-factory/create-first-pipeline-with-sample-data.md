@@ -14,7 +14,7 @@ ms.date: 03/02/2023
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-[!INCLUDE [redirect-azure-data-factory-users](redirect-azure-data-factory-users.md)]
+[!INCLUDE [redirect-azure-data-factory-users](../includes/redirect-azure-data-factory-users.md)]
 
 In this tutorial, you build a data pipeline to move a Sample dataset to the Lakehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Lakehouse.
 
