@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
-ms.date: 03/27/2023
+ms.date: 03/28/2023
 ms.search.form: product-kusto
 ---
 # What is Real-time Analytics in Fabric?
@@ -19,7 +19,7 @@ How? Real-time Analytics reduces complexity and simplifies data integration. Qui
 ## What makes Real-time Analytics unique?
 
 * **Easy ingestion** of data from any source, in any data format.
-* **No complex data modeling** means there's no need to build complex data models or for complex scripting to transform data before it's consumed.
+* **Consume data directly** without first building complex data models or scripting to transform the data.
 * **By-default streaming** provides high performance, low latency, high freshness data analysis.
 * **Default partitioning** - both time and hash-based partitioning, and by-default **indexing**.
 * **Versatile data structures** so that you can query structured, semi-structured, or free text.
@@ -55,6 +55,7 @@ See how these items work together in the end-to-end streaming data consumption a
 
 :::image type="content" source="media/real-time-analytics-overview/schematic-architecture.png" alt-text="Schematic image of architecture of Real-time Analytics integration with other workloads.":::
 
+* Create [Event Hubs cloud connections](get-data-event-hub.md) to stream data into Real-time Analytics
 * Data in OneLake can be accessed by Real-time Analytics in several ways:
     * Data from OneLake can be [queried from Real-time Analytics as a shortcut](onelake-shortcut.md)
     * Data from [OneLake can be loaded](get-data-onelake.md) into Real-time Analytics
@@ -66,6 +67,7 @@ See how these items work together in the end-to-end streaming data consumption a
 
 ## See also
 
-* [Get data from Azure Event Hubs](get-data-event-hub.md)
-* [Get data from a blob](get-data-blob.md)
+* Compare Real-time Analytics to Azure Data Explorer
+* [Tutorial: Real-time Analytics](realtime-analytics-tutorial.md)
 * [Query data in the KQL queryset](kusto-query-set.md)
+* [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context)
