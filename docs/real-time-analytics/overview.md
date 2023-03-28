@@ -19,7 +19,7 @@ How? Real-time Analytics reduces complexity and simplifies data integration. Qui
 ## What makes Real-time Analytics unique?
 
 * **Easy ingestion** of data from any source, in any data format.
-* **Consume data directly** without first building complex data models or scripting to transform the data.
+* **Consume data directly** on the raw data without the need to build complex data models or scripting to transform the data.
 * **By-default streaming** provides high performance, low latency, high freshness data analysis.
 * **Default partitioning** - both time and hash-based partitioning, and by-default **indexing**.
 * **Versatile data structures** so that you can query structured, semi-structured, or free text.
