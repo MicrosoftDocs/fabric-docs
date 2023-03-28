@@ -61,11 +61,11 @@ Single or multi-selected relationships can also be deleted by pressing **Delete*
 
 To access default datasets, go to your workspace and find the dataset that matches the name of the warehouse.
 
-:::image type="content" source="media\data-modeling-defining-relationships\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\access-default-datasets\find-dataset.png":::
+:::image type="content" source="media\data-modeling-defining-relationships\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\data-modeling-defining-relationships\find-dataset.png":::
 
 To load the dataset, select the name of the dataset.
 
-:::image type="content" source="media\data-modeling-defining-relationships\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\access-default-datasets\load-dataset.png":::
+:::image type="content" source="media\data-modeling-defining-relationships\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\data-modeling-defining-relationships\load-dataset.png":::
 
 
 ## Modeling the default dataset
