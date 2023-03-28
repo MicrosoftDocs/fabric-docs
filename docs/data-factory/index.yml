@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: Data Factory documentation # < 60 chars
-summary: Data factory provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade. # < 160 chars
+title: Data Factory in Microsoft Fabric documentation
+summary: Data factory in Microsoft Fabric provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade. # < 160 chars
 
 metadata:
-  title: Data Factory documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Summary of the Data Factory documentation # Required; article description that is displayed in search results. < 160 chars.
+  title: Data Factory  in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Summary of the Data Factory in Microsoft Fabric documentation # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
   ms.topic: landing-page # Required
   author: DougKlopfenstein #Required; your GitHub user alias, with correct capitalization.
