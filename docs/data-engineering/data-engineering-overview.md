@@ -1,6 +1,6 @@
 ---
-title: Data Engineering overview
-description: Read an introduction to Data Engineering.
+title: What is Data engineering in Microsoft Fabric?
+description: Learn about Data engineering in Microsoft Fabric and the analytics functionality it offers. 
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
@@ -8,7 +8,7 @@ ms.topic: overview
 ms.date: 02/24/2023
 ---
 
-# Data engineering overview
+# What is Data engineering in Microsoft Fabric?
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.

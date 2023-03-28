@@ -4,22 +4,28 @@ items:
 - name: Overview
   items:
   - name: What is OneLake?
-    href: ../placeholder.md
+    href: onelake-overview.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 1
+  - name: Creating a lakehouse with OneLake
+    href: create-lakehouse-onelake.md
+- name: Shortcuts
+  items:
+  - name: What are shortcuts?
+    href: onelake-shortcuts.md
+  - name: Create a shortcut
+    href: create-onelake-shortcut.md
+  - name: Access shortcuts
+    href: access-onelake-shortcuts.md
+- name: Access data with APIs
+  items:
+  - name: OneLake access and APIs
+    href: onelake-access-api.md
+- name: Integrate with Azure services
   items:
   - name: linktext1
     href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 2
-  items:
-  - name: linktext2
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+- name: Secure data
+  href: ../placeholder.md
+- name: File explorer
+  href: ../placeholder.md
