@@ -99,7 +99,7 @@ The following table contains connector properties that are supported in pipeline
 
 ### Authentication
 
-The following following table contains properties for the supported authentication type.
+The following table contains properties for the supported authentication type.
 
 |Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
