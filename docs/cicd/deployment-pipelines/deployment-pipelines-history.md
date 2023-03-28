@@ -1,6 +1,6 @@
 ---
-title: Power BI Application lifecycle management (ALM) deployment pipelines history 
-description: Learn how the history feature works in the deployment pipelines, the Power BI Application lifecycle management (ALM) tool.
+title: Fabric Application lifecycle management (ALM) deployment pipelines history 
+description: Learn how the history feature works in the deployment pipelines, the Fabric Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
@@ -34,7 +34,7 @@ The deployment history log is formatted as a table. Each row represents a single
 
 * **Deployed by** - The person (or service principal) who performed the deployment.
 
-* **Items** - The *items* column indicates the differences between the Power BI items in the source and target stage. All labels except *failed deployment*, refer to the items in the target stage before the deployment takes place. These labels show the number of items from that category that were deployed. You can select the label to view a list of all the items in that category. If a label isn't showing, no deployed items fit that category.
+* **Items** - The *items* column indicates the differences between the items in the source and target stage. All labels except *failed deployment*, refer to the items in the target stage before the deployment takes place. These labels show the number of items from that category that were deployed. You can select the label to view a list of all the items in that category. If a label isn't showing, no deployed items fit that category.
 
     | Label | Name            | Description | Expanded view |
     |-------|-----------------|-------------|---------------|
