@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.date: 03/27/2023
+ms.date: 03/29/2023
 ms.search.form: product-kusto
 ---
 
@@ -43,7 +43,7 @@ Before we import the NYC GreenTaxi notebook, we need to create a database.
 
    :::image type="content" source="media/spark-connector/kql-database.png" alt-text="Screenshot of the Real-time Analytics homepage that shows the items that can be created. The item titled KQL Database is highlighted.":::
 
-1. Under **Database name**, enter *nycGreenTaxi*, then select **Create**.
+1. Under **KQL Database name**, enter *nycGreenTaxi*, then select **Create**.
 
     :::image type="content" source="media/spark-connector/new-database.png" alt-text="alt text Screenshot of New Database window showing the database name. The Create button is highlighted.":::
 
@@ -87,9 +87,9 @@ The rest of this workflow occurs in the **Data Engineering** section of the prod
 
 ## Get data
 
-Run the cells sequentially to create the table schema mapping and get data from the NYC Green Taxi blob container.
+To query your database using the Spark connector, you need to give read and write access to the NYC GreenTaxi blob container.
 
-Select the **play** button to run each cell, or select the cell and press **Shift+ Enter**. Repeat this step for each code cell.
+Select the **play** button to run the following cells, or select the cell and press **Shift+ Enter**. Repeat this step for each code cell.
 
 > [!NOTE]
 > Wait for the completion check mark to appear before running the next cell.
@@ -111,7 +111,7 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
 ## Run the notebook
 
-Run the remaining two cells sequentially to read data from your table. The rto show the top 20 highest and lowest taxi fares and distances recorded by year.
+Run the remaining two cells sequentially to read data from your table. The results show the top 20 highest and lowest taxi fares and distances recorded by year.
 
 :::image type="content" source="media/spark-connector/query-example.png" alt-text="Screenshot of fourth and fifth code cell showing the query results.":::
 
