@@ -1,5 +1,5 @@
 ---
-title: How to configure Amazon S3 in copy activity
+title: How to configure Amazon S3 in a copy activity
 description: This article explains how to copy data using Amazon S3.
 author: jianleishen
 ms.author: jianleishen
@@ -8,13 +8,11 @@ ms.date: 02/20/2023
 ms.custom: template-how-to 
 ---
 
-# How to configure Amazon S3 in copy activity
+# How to configure Amazon S3 in a copy activity
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Amazon S3.
+This article outlines how to use the copy activity in a data pipeline to copy data from and to Amazon S3.
 
 ## Supported format
 
@@ -38,7 +36,7 @@ For the configuration of each tab under copy activity, see the following section
 - [Settings](#settings)
 
 >[!Note]
->Destination is not supported in Amazon S3 connector.
+>Destination isn't supported in the Amazon S3 connector.
 
 ### General
 
@@ -50,10 +48,10 @@ The following properties are supported for Amazon S3 under the **Source** tab of
 
 :::image type="content" source="./media/connector-amazon-s3/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
 
-The following some properties are **required**:
+The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an **Amazon S3** connection from the connection list. If no connection exists, then create a new Amazon S3 connection by selecting **New**.
+- **Connection**: Select an **Amazon S3** connection from the connection list. If no connection exists, then create a new Amazon S3 connection by selecting **New**.
 - **File path**: Select **Browse** to choose the file that you want to copy, or fill in the path manually.
 - **File settings**: Select **File settings** to configure the file format. For settings of different file formats, refer to [Supported format](#supported-format) for detailed information.
 
@@ -85,14 +83,14 @@ Under **Advanced**, you can specify the following fields:
 Allowed values are **true** (default) and **false**.
 This property doesn't apply when you configure `fileListPath`.
 
-- **Delete files after completion**: Indicates whether the binary files will be deleted from source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you will see some files have already been copied to the destination and deleted from source, while others are still remaining on source store.
-This property is only valid in binary files copy scenario. The default value: false.
+- **Delete files after completion**: Indicates whether the binary files will be deleted from the source store after successfully moving to the destination store. The file deletion is per file, so when a copy activity fails, you'll see some files have already been copied to the destination and deleted from the source, while others still remain on the source store.
+This property is only valid in the binary files copy scenario. The default value: false.
 
 - **Max concurrent connection**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
 ### Settings
 
-For **Settings** tab configuration, see Settings
+For the **Settings** tab configuration, see Settings
 
 ## Table summary
 
@@ -107,9 +105,9 @@ The following tables contain more information about the copy activity in Amazon 
 |**File path** | The file path of your source data.|\<file path of your source >|Yes |container <br> fileName|
 |**File path type** |The file path type that you want to use.|• File path <br>• Prefix<br>• Wildcard folder path<br>•List of files|No |<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• path to file list|
 |**Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **recursive** is set to **true** and the sink is a file-based store, an empty folder or subfolder isn't copied or created at the sink. Allowed values are **true** (default) and **false**. This property doesn't apply when you configure `fileListPath`.| Selected or unselect |No |recursive|
-|**Delete files after completion** |Indicates whether the binary files will be deleted from source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you will see some files have already been copied to the destination and deleted from source, while others are still remaining on source store. This property is only valid in binary files copy scenario. The default value: false.|Selected or unselect|No |deleteFilesAfterCompletion|
+|**Delete files after completion** |Indicates whether the binary files will be deleted from the source store after successfully moving to the destination store. The file deletion is per file, so when a copy activity fails, you'll see some files have already been copied to the destination and deleted from the source, while others still remain on the source store. This property is only valid in the binary files copy scenario. The default value: false.|Selected or unselect|No |deleteFilesAfterCompletion|
 |**Max concurrent connection** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 
 ## Next steps
 
-[How to create Amazon S3 connection](connector-amazon-s3.md)
+[How to create an Amazon S3 connection](connector-amazon-s3.md)
