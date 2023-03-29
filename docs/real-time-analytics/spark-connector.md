@@ -101,11 +101,11 @@ Select the **play** button to run the following cells, or select the cell and pr
 1. In **KustoURI**, paste the **Query URI** that you copied earlier instead of the placeholder text.
 1. Change the placeholder database name to **nycGreenTaxi**.
 
-    :::image type="content" source="media/spark-connector/code-cell2.png" alt-text="Screenshot of second code cell showing the target database information.":::
+    :::image type="content" source="media/spark-connector/code-cell2.png" alt-text="Screenshot of second code cell showing the target database information. The Query URI and database name are highlighted.":::
 
 1. Run the cell.
 
-1. Run the next cell to write data to your database. It takes a few minutes for this step to be complete.
+1. Run the next cell to write data to your database. It takes a few minutes for this step to complete.
 
     :::image type="content" source="media/spark-connector/code-cell3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command.":::
 
