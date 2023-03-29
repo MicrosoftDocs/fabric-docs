@@ -55,7 +55,7 @@ Before we import the NYC GreenTaxi notebook, we need to create a database.
 
 ## Download the NYC GreenTaxi notebook
 
-We've created a sample notebook that will take you through all the necessary steps for loading data into your database using the Spark connector.
+We've created a sample notebook that takes you through all the necessary steps for loading data into your database using the Spark connector.
 
 1. Open the Azure Kusto Spark repository on GitHub to download the [NYC GreenTaxi notebook.](https://github.com/Azure/azure-kusto-spark/blob/master/samples/src/main/trident/NYC-GreenTaxi-Read-Write-Data-To-Kusto.ipynb).
 
@@ -105,7 +105,7 @@ Select the **play** button to run the following cells, or select the cell and pr
 
 1. Run the cell.
 
-1. Run the next cell to write data to your database. It will take a few minutes for this step to be complete.
+1. Run the next cell to write data to your database. It takes a few minutes for this step to be complete.
 
     :::image type="content" source="media/spark-connector/code-cell3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command.":::
 
