@@ -26,7 +26,7 @@ Real-time Analytics is a fully managed big data analytics platform optimized for
 * Imported data undergoes **default partitioning** - both time and hash-based partitioning, and by-default **indexing**.
 * Work with **versatile data structures** and query structured, semi-structured, or free text.
 * **Query** raw data without transformation, with high performance, incredibly low response time, and using a wide variety of available [operators](/azure/data-explorer/kusto/query/index?context=/fabric/context/context). 
-* **Scale to an unlimited** amount of data ,from gigabytes to petabytes, with unlimited scale on concurrent queries and concurrent users.
+* **Scale to an unlimited** amount of data, from gigabytes to petabytes, with unlimited scale on concurrent queries and concurrent users.
 * **Integrate** seamlessly with other workloads and items in Microsoft Fabric.
 
 ## When to use Real-time Analytics?
