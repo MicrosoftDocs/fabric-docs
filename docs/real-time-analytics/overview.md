@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
-ms.date: 03/28/2023
+ms.date: 03/29/2023
 ms.search.form: product-kusto
 ---
 # What is Real-time Analytics in Fabric?
@@ -16,16 +16,18 @@ How? Real-time Analytics reduces complexity and simplifies data integration. Qui
 
 :::image type="content" source="media/real-time-analytics-overview/product-view.png" alt-text="Screenshot of Real-time Analytics product showing database homepage with a quick query pane showing binned ingestion results." lightbox="media/real-time-analytics-overview/product-view.png":::
 
+Real-time Analytics is a fully managed big data analytics platform optimized for streaming, time-series data. It contains a dedicated query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios.
+
 ## What makes Real-time Analytics unique?
 
-* **Easy ingestion** of data from any source, in any data format.
-* **Consume data directly** on the raw data without the need to build complex data models or scripting to transform the data.
-* **By-default streaming** provides high performance, low latency, high freshness data analysis.
-* **Default partitioning** - both time and hash-based partitioning, and by-default **indexing**.
-* **Versatile data structures** so that you can query structured, semi-structured, or free text.
+* **Easily ingest** data from any source, in any data format.
+* Run analytical queries **directly on raw data** without the need to build complex data models or create scripting to transform the data.
+* Import data with **by-default streaming** that provides high performance, low latency, high freshness data analysis.
+* Imported data undergoes **default partitioning** - both time and hash-based partitioning, and by-default **indexing**.
+* Work with **versatile data structures** and query structured, semi-structured, or free text.
 * **Query** raw data without transformation, with high performance, incredibly low response time, and using a wide variety of available [operators](/azure/data-explorer/kusto/query/index?context=/fabric/context/context). 
-* **Unlimited scale** from gigabytes to petabytes, with unlimited scale on concurrent queries and concurrent users.
-* **Integrated** seamlessly with other workloads and items in Microsoft Fabric.
+* **Scale to an unlimited** amount of data ,from gigabytes to petabytes, with unlimited scale on concurrent queries and concurrent users.
+* **Integrate** seamlessly with other workloads and items in Microsoft Fabric.
 
 ## When to use Real-time Analytics?
 
