@@ -1,6 +1,6 @@
 ---
 title: Amazon S3 connector overview
-description: This article explains the overview of using Amazon S3.
+description: This article provides an overview of the supported capabilities of the Amazon S3 connector.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This Amazon S3 connector is supported in Trident Project - Data Factory with the following capabilities.
+This Amazon S3 connector is supported in Data Factory for Microsoft Fabric with the following capabilities.
 
 ## Supported capabilities
 
@@ -25,6 +25,6 @@ This Amazon S3 connector is supported in Trident Project - Data Factory with the
 
 ## Next steps
 
-[How to create Amazon S3 connection](connector-amazon-s3.md)
+[How to create an Amazon S3 connection](connector-amazon-s3.md)
 
-[How to configure Amazon S3 in copy activity](connector-amazon-s3-copy-activity.md)
+[How to configure Amazon S3 in a copy activity](connector-amazon-s3-copy-activity.md)
