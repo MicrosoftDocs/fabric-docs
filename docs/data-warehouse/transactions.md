@@ -1,6 +1,6 @@
 ---
-title: Transactions, inserting and modifying data in warehouse tables using SSMS
-description: Learn how to use transactions and how to modify data in warehouse tables with SSMS.
+title: Transactions for inserting and modifying data in Synapse Data Warehouse tables.
+description: Learn how to use transactions and how to insert and modify data in Synapse Data Warehouse tables.
 ms.reviewer: wiassaf
 ms.author: kecona
 author: KevinConanMSFT
@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.date: 03/15/2023
 ---
 
-# Transactions, inserting and modifying data in warehouse tables using SQL Server Management Studio (SSMS)
+# Transactions in Synapse Data Warehouse tables
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-You can modify data that is stored in tables in a warehouse. We'll also show how you can use transactions to group those changes together. Transactions allow you to commit all tables or none of the tables that you're changing data in. For example, if you're changing details about a purchase order that affects three tables, you can group those changes into a transaction so that when those tables are queried, they either all have that change or none of them do. This is a common practice for when you need to ensure your data is consistent across multiple tables. See T-SQL Surface Area for a listing of unsupported T-SQL commands.
+You can modify data that is stored in tables in a Synapse Data Warehouse. We'll also show how you can use transactions to group those changes together. Transactions allow you to commit all tables or none of the tables that you're changing data in. For example, if you're changing details about a purchase order that affects three tables, you can group those changes into a transaction so that when those tables are queried, they either all have that change or none of them do. This is a common practice for when you need to ensure your data is consistent across multiple tables. See T-SQL Surface Area for a listing of unsupported T-SQL commands.
 
 > [!NOTE]
 > Only Snapshot Isolation is supported. If you set your transaction isolation level to read uncommitted, it will be ignored and snapshot will still be used.
@@ -39,3 +39,4 @@ In [!INCLUDE [product-name](../includes/product-name.md)], you can write cross-d
 ## Next steps
 
 - [Query a warehouse using SSMS](query-warehouse-sql-server-management-studio.md)
+- [Tables in [!INCLUDE[fabricdw](../../includes/fabric-dw.md)]](tables.md)
