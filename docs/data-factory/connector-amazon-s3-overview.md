@@ -10,9 +10,7 @@ ms.custom: template-how-to
 
 # Amazon S3 connector overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This Amazon S3 connector is supported in Data Factory for Microsoft Fabric with the following capabilities.
 
