@@ -6,6 +6,7 @@ ms.author: qixwang
 author: qixwang
 ms.topic: overview
 ms.date: 02/24/2023
+ms.search.form: spark_job_definition
 ---
 
 # What is an Apache Spark job definition?
