@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 03/29/2023
 ---
 
-# Tables in [!INCLUDE[fabricdw](../../includes/fabric-dw.md)]
+# Tables in [!INCLUDE[fabricdw](includes/fabric-dw.md)]
 
 **Applies to:** [!INCLUDE[fabric-se](includes/applies-to-version/fabric-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
  
-Tables are database objects that contain all the data in a [!INCLUDE[fabricdw](../../includes/fabric-dw.md)]. In tables, data is logically organized in a row-and-column format. Each row represents a unique record, and each column represents a field in the record. 
+Tables are database objects that contain all the data in a [!INCLUDE[fabricdw](includes/fabric-dw.md)]. In tables, data is logically organized in a row-and-column format. Each row represents a unique record, and each column represents a field in the record. 
 
 ## Types of tables
 
- Besides the standard role of basic user-defined tables, [!INCLUDE[fabricdw](../../includes/fabric-dw.md)] provides the following types of tables that serve special purposes in a database.
+ Besides the standard role of basic user-defined tables, [!INCLUDE[fabricdw](includes/fabric-dw.md)] provides the following types of tables that serve special purposes in a database.
 
 ## Known limitations
 
@@ -26,6 +26,6 @@ At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL s
 
 ## Next steps
 
-- [Create tables in [!INCLUDE[fabricdw](../../includes/fabric-dw.md)] using SQL Server Management Studio (SSMS)](create-table-sql-server-management-studio.md)
-- [Create a [!INCLUDE[fabricdw](../../includes/fabric-dw.md)]](create-warehouse.md)
+- [Create tables in [!INCLUDE[fabricdw](includes/fabric-dw.md)] using SQL Server Management Studio (SSMS)](create-table-sql-server-management-studio.md)
+- [Create a [!INCLUDE[fabricdw](includes/fabric-dw.md)]](create-warehouse.md)
 - [Transactions and modify tables with SSMS](transactions.md)
