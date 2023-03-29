@@ -10,9 +10,7 @@ ms.date: 2/10/2023
 
 # QuickStart: Move and transform data with dataflows and data pipelines
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this tutorial, you'll see how the dataflow and data pipeline experience can create a powerful and comprehensive Data factory solution.  
 

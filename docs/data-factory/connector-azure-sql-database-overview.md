@@ -4,11 +4,13 @@ description: This article explains the overview of using Azure SQL Database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 01/08/2023
+ms.date: 02/27/2023
 ms.custom: template-how-to 
 ---
 
 # Azure SQL Database Connector Overview
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This Azure SQL Database connector is supported in [!INCLUDE [product-name](../includes/product-name.md)] Project  – Data Factory with the following capabilities.
 
@@ -19,6 +21,8 @@ This Azure SQL Database connector is supported in [!INCLUDE [product-name](../in
 | **Copy activity (Source/Destination)** | None | Basic<br>OAuth2<br>Service principal |
 | **Lookup activity** | None | Basic<br>OAuth2<br>Service principal |
 | **GetMetadata activity** | None | Basic<br>OAuth2<br>Service principal |
+| **Script activity** | None | Basic<br>OAuth2<br>Service principal |
+| **Stored procedure activity** | None | Basic<br>OAuth2<br>Service principal |
 | **Dataflow Gen2 (Source/Destination)** |  | |
 
 ## Next Steps
