@@ -17,7 +17,7 @@ ms.search.form: Data Wrangler
 
 Data Wrangler, a notebook-based tool, provides users with an immersive experience to conduct exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics and a set of common data-cleansing operations, all available with a few selected icons. Each operation generates code that can be saved back to the notebook as a reusable script.
 
-## Launching Data Wrangler
+## Launch Data Wrangler
 
 Users can launch the Data Wrangler experience from a [!INCLUDE [product-name](../includes/product-name.md)] notebook in two ways. This code snippet shows how to read data into a Pandas DataFrame, as required by both techniques:
 
