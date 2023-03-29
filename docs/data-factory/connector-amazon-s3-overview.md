@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This Amazon S3 connector is supported in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+This Amazon S3 connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 
