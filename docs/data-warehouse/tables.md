@@ -16,7 +16,7 @@ ms.date: 03/29/2023
  
 Tables are database objects that contain all the data in a [!INCLUDE[fabricdw](../../includes/fabric-dw.md)]. In tables, data is logically organized in a row-and-column format. Each row represents a unique record, and each column represents a field in the record. 
 
-## Types of Tables
+## Types of tables
 
  Besides the standard role of basic user-defined tables, [!INCLUDE[fabricdw](../../includes/fabric-dw.md)] provides the following types of tables that serve special purposes in a database.
 

@@ -64,7 +64,7 @@ For more information and how-to connect, see [Connectivity](connectivity.md).
 
    - Unlike (1c), if a data engineering team has already loaded data into your Lakehouse and they explicitly partitioned the data with code like `df.write.partitionBy("FiscalMonthID").format("delta").save("Tables/" + tableName)`, a folder structure is introduced into your Lakehouse and columns in the partitionBy function won't be present in the warehouse. To avoid this issue, load data as shown previously in (1b) without the partitionBy function.
 
-1. You can't query tables that are partitioned or the tables with renamed columns.
+1. You can't query tables with renamed columns.
 
 1. You can't load case sensitive tables to data warehouse (for example, "Cat", "cat", and "CAT" are all read as the same table name by SQL). Duplicate table names can cause the data warehouse to fail. Use unique table and file names for all items in a warehouse.
 
@@ -117,8 +117,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Temp Tables
 - Triggers
 - TRUNCATE
-- There's a known issue with creating foreign and primary keys. For now, you can create them as though they're enforceable but they won't be enforced by the engine.
-
 
 ## Keyboard shortcuts
 
