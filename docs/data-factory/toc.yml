@@ -131,6 +131,8 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
+      - name: OData in dataflows
+        href: connector-odata-dataflows.md
     - name: SharePoint online list
       items:
       - name: Overview
