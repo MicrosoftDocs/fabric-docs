@@ -1,5 +1,5 @@
 ---
-title: How to configure Google Cloud Storage in copy activity
+title: How to configure Google Cloud Storage in copy activity in Data Factory in Microsoft Fabric
 description: This article explains how to copy data using Google Cloud Storage.
 author: jianleishen
 ms.author: jianleishen
@@ -25,7 +25,7 @@ The following setup is required on your Google Cloud Storage account:
 3. Create a service account and define the right levels of permissions by using Cloud IAM on GCP.
 4. Generate the access keys for this service account.
 
-:::image type="content" source="media/connector-google-cloud/google-storage-cloud-settings.png" alt-text="Retrieve access key for Google Cloud Storage":::
+:::image type="content" source="media/connector-google-cloud/google-storage-cloud-settings.png" alt-text="Screenshot showing access key for Google Cloud Storage.":::
 
 ## Required permissions
 
