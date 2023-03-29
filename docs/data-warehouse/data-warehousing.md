@@ -5,20 +5,20 @@ ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
 ms.topic: overview
-ms.date: 03/15/2023
+ms.date: 03/27/2023
 ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspace overview
 ---
 
 # What is Data warehousing in Microsoft Fabric?
 
-*Applies to:* Warehouse and SQL Endpoint
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The data warehouse experience in [!INCLUDE [product-name](../includes/product-name.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using T-SQL/TDS end-point. Data analysts use T-SQL language to access Lakehouse data items using the warehouse experience that exposes underlying files, folders, and Cosmos DB containers as tables or views.
+[!INCLUDE [product-name](../includes/product-name.md)] provides two distinct data warehousing experiences. The **[!INCLUDE[fabric-se](includes/fabric-se.md)]** in [!INCLUDE [product-name](../includes/product-name.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using T-SQL/TDS end-point. **[!INCLUDE[fabric-dw](includes/fabric-dw.md)]** in [!INCLUDE [product-name](../includes/product-name.md)] provides a "traditional", transactional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse.
 
 > [!IMPORTANT]
-> This document provides a comprehensive overview of two distinct data warehousing experiences.
+> This article provides a comprehensive overview of two distinct data warehousing experiences.
 
 ## SQL Endpoint
 
@@ -148,4 +148,5 @@ SQL query editor:
 
 ## Next steps
 
+- [Create a warehouse](create-warehouse.md)
 - [Creating reports](create-reports.md)
