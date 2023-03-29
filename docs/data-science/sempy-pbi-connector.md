@@ -11,8 +11,7 @@ ms.search.form: Browse PBI Metrics
 
 # How to explore and validate data with SemPy and Power BI Connector
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Learn how to use the SemPy library to explore and validate Power BI data in the Data Science workload.
 
