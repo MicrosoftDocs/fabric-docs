@@ -26,7 +26,7 @@ To connect to Azure Data Lake Storage Gen2 data from a dataflow:
 
    :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/get-data.png" alt-text="Screenshot of the get data option in the Power Query ribbon.":::
 
-1. From **Choose data source**, select the **Azure** category, and then select Azure Blobs.
+1. From **Choose data source**, select the **Azure** category, and then select **Azure Data Lake Storage Gen2**.
 
    :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/select-azure-data-lake-storage-gen2.png" alt-text="Screenshot of the choose data source screen with the Azure category and the Azure Data Lake Storage Gen2 connector emphasized.":::
 
