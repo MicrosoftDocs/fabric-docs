@@ -1,5 +1,5 @@
 ---
-title: Data warehousing overview
+title: What is Data warehousing in Microsoft Fabric?
 description: Learn more about the data warehousing experience.
 ms.reviewer: wiassaf
 ms.author: cynotebo
@@ -9,7 +9,9 @@ ms.date: 03/15/2023
 ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspace overview
 ---
 
-# Data warehousing overview
+# What is Data warehousing in Microsoft Fabric?
+
+*Applies to:* Warehouse and SQL Endpoint
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -17,6 +19,30 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
 > [!IMPORTANT]
 > This document provides a comprehensive overview of two distinct data warehousing experiences.
+
+## SQL Endpoint
+
+The SQL Endpoint on the Lakehouse allows a user to transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" experiences that a data warehouse would provide, supporting T-SQL. Via the SQL Endpoint, the user has a subset of SQL commands that can define and query data objects but not manipulate the data. You can perform the following actions in the SQL Endpoint:
+
+- Query the tables that reference data in your Delta Lake folders in the lake.
+- Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
+- Manage permissions on the objects.
+
+For more information on the SQL Endpoint for the Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)], see [SQL Endpoint](sql-endpoint.md).
+
+## Data Warehouse
+
+The Warehouse functionality is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. 
+
+This warehouse is displayed in the [!INCLUDE product-name] portal with a warehouse icon, however under the Type column, you see the type listed as Warehouse. 
+
+For more information on the warehouse in [!INCLUDE [product-name](../includes/product-name.md)], see [Warehouse](warehouse.md).
+
+## Connectivity
+
+You can use the [!INCLUDE [product-name](../includes/product-name.md)] portal, or the TDS endpoint to connect to and query the SQL Endpoint and your transactional data warehouses via [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) version 18.0+ or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
+
+For more information and how-to connect, see [Connectivity](connectivity.md).
 
 ## Prerequisites and known limitations
 
@@ -58,19 +84,9 @@ The data warehouse experience in [!INCLUDE [product-name](../includes/product-na
 
    - GRANT, REVOKE, DENY commands are currently not supported.
 
-## Connectivity
-
-*Applies to:* Warehouse and SQL Endpoint
-
-As mentioned previously, the full [!INCLUDE [product-name](../includes/product-name.md)] portal experience isn't available at this time, so for some activities you will use a TDS endpoint to connect to and query the SQL Endpoint and/or your warehouse via SSMS or ADS.
-
-In this tutorial, you learn how to find your TDS end-point and use it to connect to SSMS for running SQL queries over either the SQL Endpoint or warehouse data.
-
-While not described in this document, we also support Azure Data Services (ADS) if that is your preferred SQL tool and you can use the same TDS end-point to connect via ADS.
-
 ## T-SQL surface area
 
-At this stage, we haven't completed development to support the full T-SQL surface area, focusing on those high-value commands that allow you to explore and analyze the data loaded in the Lakehouse. Creating, altering, and dropping tables, and insert, update, and delete are only supported in the transactional warehouse. Additional T-SQL commands and supporting transactional commands will be rolled out in subsequent releases.
+Creating, altering, and dropping tables, and insert, update, and delete are only supported in the transactional warehouse, not in the SQL Endpoint.
 
 At this time, the following list of commands is NOT currently supported. Don't try to use these commands because even though they may appear to succeed, they could cause corruption to your warehouse.
 
@@ -101,16 +117,8 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Temp Tables
 - Triggers
 - TRUNCATE
+- There's a known issue with creating foreign and primary keys. For now, you can create them as though they're enforceable but they won't be enforced by the engine.
 
-There's a known issue with creating foreign and primary keys. For now, you can create them as though they're enforceable but they won't be enforced by the engine.
-
-## SQL Endpoint
-
-The SQL Endpoint on the Lakehouse allows a user to transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" experiences that a data warehouse would provide, supporting T-SQL. Via the SQL Endpoint, the user has a subset of SQL commands that can define and query data objects but not manipulate the data. You can perform the following actions in the SQL Endpoint:
-
-- Query the tables that reference data in your Delta Lake folders in the lake.
-- Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
-- Manage permissions on the objects.
 
 ## Keyboard shortcuts
 
