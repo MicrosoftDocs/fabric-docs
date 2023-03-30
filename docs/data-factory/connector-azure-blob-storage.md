@@ -3,7 +3,6 @@ title: How to create an Azure Blob Storage connection
 description: This article provides information about how to create an Azure Blob Storage connection.
 author: lrtoyou1223
 ms.author: lle
-ms.subservice: data-factory
 ms.topic: how-to
 ms.date: 02/26/2023
 ms.custom: template-how-to
@@ -11,9 +10,7 @@ ms.custom: template-how-to
 
 # How to create Azure Blob Storage connection
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [Azure Blob storage](/azure/storage/blobs/storage-blobs-introduction) is Microsoft's object storage solution for the cloud. Blob storage is optimized for storing massive amounts of unstructured data. This article outlines the steps to create an Azure Blob Storage connection.
 

@@ -1,13 +1,12 @@
 ### YamlMime:Landing
 
-title: Data Engineering documentation # < 60 chars
+title: Data Engineering in Microsoft Fabric documentation # < 60 chars
 summary: summary # < 160 chars
 
 metadata:
   title: title # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: description # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
-  ms.subservice: data-engineering
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
   author: githubauthor #Required; your GitHub user alias, with correct capitalization.

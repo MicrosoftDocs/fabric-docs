@@ -3,19 +3,20 @@ title: How to create Azure SQL Database connection
 description: This article provides information about how to How to create Azure SQL Database  connection.
 author: jianleishen
 ms.author: jianleishen
-ms.subservice: data-factory
 ms.topic: how-to
-ms.date: 01/08/2023
+ms.date: 02/27/2023
 ms.custom: template-how-to
 ---
 
-# How to create Azure SQL Database connection 
+# How to create Azure SQL Database connection
 
-[Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview) is Microsoft's object storage solution for the cloud. Azure SQL Database is optimized for storing massive amounts of unstructured data. This article outlines the steps to create an Azure SQL Database connection. 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
+This article outlines how to set up connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview). 
 
 ## Supported authentication types
 
-The Azure SQL Database connector supports the following authentication types for copy and Dataflow gen2 respectively.  
+The Azure SQL Database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
 |Authentication type |Copy  |Dataflow Gen2 |
 |:---|:---|:---|
@@ -112,7 +113,7 @@ To use service principal authentication, follow these steps:
     CREATE USER [your application name] FROM EXTERNAL PROVIDER;
     ```
 
-4. Grant the service principal needed permissions as you normally do for SQL users or others. Run the following code. For more options, see [this document](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql).
+4. Grant the service principal needed permissions as you normally do for SQL users or others. Run the following code. For more options, see [ALTER ROLE (Transact-SQL)](/sql/t-sql/statements/alter-role-transact-sql.md).
 
     ```sql
     ALTER ROLE [role name] ADD MEMBER [your application name];
@@ -133,9 +134,9 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The following connector properties in the table are supported in pipeline copy and dataflow gen2.
+The following connector properties in the table are supported in pipeline copy and Dataflow Gen2.
 
-|Name|Description|Required|Property|Copy/Dataflow gen2|
+|Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes| |✓/|
 |**Connection type**|Select a type for your connection. Select **SQL Server**.|Yes| |✓/|
@@ -148,7 +149,7 @@ The following connector properties in the table are supported in pipeline copy a
 
 The following properties in the table are the supported authentication types.
 
-|Name |Description |Required |Property |Copy/Dataflow gen2 |
+|Name |Description |Required |Property |Copy/Dataflow Gen2 |
 |-----|-----|-----|-----|-----|
 |**Basic**||||✓/|
 |- Username|The user name of your Azure SQL Database.|Yes |||

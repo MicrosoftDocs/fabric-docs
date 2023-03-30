@@ -4,15 +4,13 @@ description: Learn about the unstack operation in pandas.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
-ms.subservice: data-science
 ms.topic: how-to 
 ms.date: 02/10/2023
 ---
 
 # Semantic propagation for unstack
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Unstack operation in pandas is used to move a level of index from row to column. Just like its counterpart stack, it's a useful operation to reshape the datacube. Multi-level indexes on rows and columns in pandas can be visualized as the dimensions of a datacube. Each level of the index corresponds to one dimension, and the dataframe itself is just a projection of this higher-dimensional cube onto two dimensions, with some dimensions being projected to the rows, and some dimensions being projected to the columns. The "unstack" operation moves a level from the rows to columns, while the "stack" operation does the opposite. Both operations just change the shape of the dataframe, but neither changes the nature of the underlying datacube. Let's look at an example of how we perform semantic propagation for unstack. As a prerequisite, we recommend the reader to check out `stack_semantic_propagation` notebook. Consider the dataframe constructed in the next example.
 

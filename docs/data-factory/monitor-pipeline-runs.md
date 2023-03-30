@@ -4,16 +4,13 @@ description: Learn how to monitor pipeline runs.
 ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
-ms.subservice: data-factory
 ms.topic: how-to 
 ms.date: 01/27/2023
 ---
 
 # How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this how-to guide, you'll learn the different ways to review and monitor your pipeline runs.
 

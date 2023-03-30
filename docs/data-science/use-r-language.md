@@ -1,36 +1,35 @@
 ---
 title: How to use the R language
 description: Learn how to use the R language.
-ms.reviewer: mopeakande
-ms.author: negust
-author: nelgson
-ms.subservice: data-science
+ms.reviewer: sgilley
+ms.author: ruxu
+author: ruixinxu
 ms.topic: how-to
-ms.date: 02/10/2023
+ms.date: 03/24/2023
+ms.search.form: R Language
 ---
 
 # How to use the R language
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Azure Synapse Analytics provides built-in R support for Apache Spark. As part of this, data scientists can leverage Azure Synapse Analytics notebooks to write and run their R code. This also includes support for SparkR and SparklyR, which allows users to interact with Spark using familiar Spark or R interfaces.
+[!INCLUDE [product-name](../includes/product-name.md)] provides built-in R support for Apache Spark. As part of this support, data scientists can use [!INCLUDE [product-name](../includes/product-name.md)] notebooks to write and run their R code. Support for SparkR and SparklyR is also included, which allows you to interact with Spark using familiar Spark or R interfaces.
 
-In this article, you'll learn how to use R for Apache Spark with Azure Synapse Analytics.
+In this article, you'll learn how to use R for Apache Spark with [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## R runtime
 
-Azure Synapse Analytics supports an R runtime which features many popular open-source R packages, including TidyVerse.  
+[!INCLUDE [product-name](../includes/product-name.md)] supports an R runtime which features many popular open-source R packages, including TidyVerse.  
 
-To learn more about the libraries installed on each runtime, you can visit the following page: Azure Synapse Analytics Runtimes.
+To learn more about the libraries installed on each runtime, you can visit the following page: [!INCLUDE [product-name](../includes/product-name.md)] Runtimes.
 
 ## Create and run notebook sessions
 
-An Azure Synapse notebook is a web interface for you to create files that contain live code, visualizations, and narrative text. Notebooks are a good place to validate ideas and use quick experiments to get insights from your data. Notebooks are also widely used in data preparation, data visualization, machine learning, and other big data scenarios.
+A [!INCLUDE [product-name](../includes/product-name.md)] notebook is a web interface for you to create files that contain live code, visualizations, and narrative text. Notebooks are a good place to validate ideas and use quick experiments to get insights from your data. Notebooks are also widely used in data preparation, data visualization, machine learning, and other big data scenarios.
 
-To get started with R in Synapse notebooks, you can change the primary language by setting the **language option** to **SparkR (R)**.
+To get started with R in [!INCLUDE [product-name](../includes/product-name.md)] notebooks, change the primary language by setting the **language option** to **SparkR (R)**.
 
-In addition, you can use multiple languages in one notebook by specifying the language magic command at the beginning of a cell.
+In addition, use multiple languages in one notebook by specifying the language magic command at the beginning of a cell.
 
 ```r
 %%sparkr
@@ -40,16 +39,16 @@ In addition, you can use multiple languages in one notebook by specifying the la
 
 ## Install packages
 
-When doing interactive data analysis or machine learning, you might try newer packages or you might need packages that are currently unavailable on your Apache Spark pool. Instead of updating the pool configuration, users can now use session-scoped packages to add, manage, and update session dependencies.
+When doing interactive data analysis or machine learning, you might try newer packages or need packages that are currently unavailable on your Apache Spark pool. Instead of updating the pool configuration, you can use session-scoped packages to add, manage, and update session dependencies.
 
 - When you install session-scoped libraries, only the current notebook has access to the specified libraries.
-- These libraries won't impact other sessions or jobs using the same Spark pool.
+- These libraries won't affect other sessions or jobs using the same Spark pool.
 - These libraries are installed on top of the base runtime and pool level libraries.
-- Notebook libraries will take the highest precedence.
-- Session-scoped R libraries don't persist across sessions. These libraries will be installed at the start of each session when the related installation commands are executed.
+- Notebook libraries take the highest precedence.
+- Session-scoped R libraries don't persist across sessions. These libraries are installed at the start of each session when the related installation commands are executed.
 - Session-scoped R libraries are automatically installed across both the driver and worker nodes.
 
-For example, users can install an R library from CRAN and CRAN snapshots. In the following example, **Highcharter** is a popular package for R visualizations. I can install this package on all nodes within my Apache Spark pool using the following command:
+For example, you can install an R library from CRAN and CRAN snapshots. In the following example, `Highcharter` is a popular package for R visualizations. Install this package on all nodes within your Apache Spark pool using the following command:
 
 ```r
 install.packages("highcharter", repos = "https://cran.microsoft.com/snapshot/2021-07-16/")
@@ -59,7 +58,7 @@ install.packages("highcharter", repos = "https://cran.microsoft.com/snapshot/202
 
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can use MSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. MSSparkUtils is supported for R notebooks.
 
-To get started, you can run the following commands:
+To get started, run the following commands:
 
 ```r
 library(notebookutils)
@@ -72,7 +71,7 @@ mssparkutils.fs.help()
 
 ### Create a SparkR dataframe from a local R data.frame
 
-The simplest way to create a DataFrame is to convert a local R data.frame into a SparkDataFrame. In this example, we use `as.DataFrame` and pass in the local R dataframe to create the SparkDataFrame.
+The simplest way to create a DataFrame is to convert a local R data.frame into a SparkDataFrame. In this example, use `as.DataFrame` and pass in the local R dataframe to create the SparkDataFrame.
 
 ```r
 df <- as.DataFrame(faithful)
@@ -86,7 +85,7 @@ head(df)
 
 ### Create a SparkR dataframe using the Spark data source API
 
-SparkR supports operating on a variety of data sources through the SparkDataFrame interface. The general method for creating a DataFrame from a data source is `read.df`. This method takes the path for the file to load and the type of data source. SparkR supports reading CSV, JSON, text, and Parquet files natively.
+SparkR supports operating on various data sources through the SparkDataFrame interface. The general method for creating a DataFrame from a data source is `read.df`. This method takes the path for the file to load and the type of data source. SparkR supports reading CSV, JSON, text, and Parquet files natively.
 
 ```r
 df <- read.df('Files/<file name>.csv', 'csv', header="true")
@@ -108,7 +107,7 @@ head(sql_df)
 
 ### Machine learning
 
-SparkR exposes most of MLLib algorithms. Under the hood, SparkR uses MLlib to train the model. To learn more about which machine learning algorithms are supported, you can visit the [documentation for SparkR and MLlib](https://spark.apache.org/docs/latest/sparkr.html).
+SparkR exposes most of MLLib algorithms. Under the hood, SparkR uses MLlib to train the model. To learn more about which machine learning algorithms are supported, visit the [documentation for SparkR and MLlib](https://spark.apache.org/docs/latest/sparkr.html).
 
 ```r
 # Create the DataFrame
@@ -126,9 +125,22 @@ summary(model)
 
 [SparklyR](https://spark.rstudio.com/) is an R interface to Apache Spark. It provides a mechanism to interact with Spark using familiar R interfaces.
 
-To establish a `sparklyr` connection, you can use the following connection method in `spark_connect()`.
+To establish a `sparklyr` connection, use the following connection method in `spark_connect()`.
 
-:::image type="content" source="media/use-r-language/establish-sparklyr-connection.png" alt-text="Screenshot showing code for connection method." lightbox="media/use-r-language/establish-sparklyr-connection.png":::
+```r
+conf <- spark_config()
+hConf = SparkR:::sparkR.callJMethod(sc, "hadoopConfiguration")
+conf$'trident.lakehouse.name' <- SparkR:::sparkR.callJMethod(hConf, "get", "trident.lakehouse.name")
+conf$'trident.workspace.id' <- SparkR:::sparkR.callJMethod(hConf, "get", "trident.worksace.id")
+conf$'trident.lakehouse.id' <- SparkR:::sparkR.callJMethod(hConf, "get", "trident.lakehouse.id")
+conf$'spark.cluster.type' <- SparkR:::sparkR.conf("spark.cluster.type")[[1]]
+conf$'spark.synapse.clusteridentifier' <- SparkR:::sparkR.conf("spark.synapse.clusteridentifier")[[1]]
+spark_version <- "3.2"
+sc <- spark_connect(master = "yarn",
+            spark_home = "/opt/spark",
+            version = spark_version,
+            config = conf)
+```
 
 ## Next steps
 

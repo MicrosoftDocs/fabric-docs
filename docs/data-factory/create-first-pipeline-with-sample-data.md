@@ -4,16 +4,13 @@ description: Learn how to build and schedule a new data pipeline to copy sample 
 ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
-ms.subservice: data-factory
 ms.topic: quickstart
 ms.date: 03/02/2023
 ---
 
 # Quickstart: Create your first pipeline to copy data
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this tutorial, you build a data pipeline to move a Sample dataset to the Lakehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Lakehouse.
 

@@ -3,7 +3,6 @@ title: How to configure Azure Blob Storage in copy activity
 description: This article explains how to copy data using Azure Blob Storage.
 author: jianleishen
 ms.author: jianleishen
-ms.subservice: data-factory
 ms.topic: how-to
 ms.date: 12/27/2022
 ms.custom: template-how-to 
@@ -11,9 +10,7 @@ ms.custom: template-how-to
 
 # How to configure Azure Blob Storage in copy activity
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Blob Storage.
 

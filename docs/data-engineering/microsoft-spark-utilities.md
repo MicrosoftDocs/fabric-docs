@@ -4,15 +4,13 @@ description: Learn about the MSSparkUtils package.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
-ms.subservice: data-engineering
 ms.topic: how-to
 ms.date: 02/24/2023
 ---
 
 # Advanced capabilities: Microsoft Apache Spark utilities
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can useMSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. MSSparkUtils are available in PySpark (Python) Scala, SparkR notebooks and [!INCLUDE [product-name](../includes/product-name.md)] pipelines.
 

@@ -4,16 +4,13 @@ description: Learn steps to move data as files or tables into Lakehouse.
 ms.reviewer: jonburchel
 ms.author: jianleishen
 author: jianleishen
-ms.subservice: data-factory
 ms.topic: tutorial
 ms.date: 01/27/2023
 ---
 
 # Tutorial: Move data into Lakehouse via copy assistant
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This Tutorial describes the steps to move data into Lakehouse.
 
