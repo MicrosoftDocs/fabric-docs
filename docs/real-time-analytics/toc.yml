@@ -38,6 +38,8 @@ items:
     href: get-data-onelake.md  
   - name: OneLake shortcut
     href: onelake-shortcut.md
+  - name: Continuous export to OneLake (mirroring)
+    href: onelake-mirroring.md
 - name: Query data
   items:
   - name: Query data in the KQL queryset
