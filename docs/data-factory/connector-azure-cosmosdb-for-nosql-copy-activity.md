@@ -95,7 +95,7 @@ Allowed values are Timespan. An example is 00:30:00 (30 minutes).
 
 - **Max concurrent connections**:  The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
-- **Disable performance metrics analytics**: The is to collect metrics such as DTU, DWU, RU, etc. for copy performance optimization and recommendations. If you are concerned with this behavior, please turn off this feature.
+- **Disable performance metrics analytics**: This is to collect metrics such as DTU, DWU, RU, etc. for copy performance optimization and recommendations. If you are concerned with this behavior, please turn off this feature.
 
 ### Mapping
 
