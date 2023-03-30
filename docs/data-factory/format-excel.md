@@ -18,7 +18,7 @@ This article outlines how to configure Excel format in the data pipeline of Data
 
 ## Supported capabilities
 
-Excel format is supported for the following connectors and activities as source.
+Excel format is supported for the following activities and connectors as source.
 
 | Category | Connector/Activity | 
 |---|---|
