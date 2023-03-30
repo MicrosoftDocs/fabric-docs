@@ -8,7 +8,7 @@ ms.date: 02/27/2023
 ms.custom: template-how-to
 ---
 
-# How to create Azure SQL Database connection 
+# How to create Azure SQL Database connection
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.

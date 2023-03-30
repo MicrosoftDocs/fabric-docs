@@ -7,6 +7,7 @@ author: jianleishen
 ms.topic: how-to
 ms.date: 01/27/2023
 ---
+
 # How to copy data using copy activity
 
 > [!IMPORTANT]
