@@ -36,7 +36,8 @@ Based on the performance of the second run per suggested configuration, we retra
 
 
 ## Enable/Disable
-Autotune is enabled by default. To verify and confirm its activation, use the following commands:
+
+Autotune is enabled by default and it's controlled by Apache Spark Configuration Settings. To verify and confirm its activation, use the following commands:
 1. SQL
    ```
    %%sql 
