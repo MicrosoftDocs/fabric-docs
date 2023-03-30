@@ -38,8 +38,6 @@ Continuous export to OneLake is enabled in your **KQL Database** by default. If 
 1. On the ribbon, select **Manage**.
 1. Select **Continuous export** > **off**.
 
-You can enable this option again after creating a shortcut in OneLake
-
 ## Create a OneLake shortcut in OneLake
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Data Engineering**.
