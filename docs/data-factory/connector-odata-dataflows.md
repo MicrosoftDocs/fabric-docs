@@ -50,6 +50,6 @@ For more advanced information about connecting to your data using the OData conn
 
 ## Next steps
 
-[How to create an OData connection](placeholder.md)
+[How to create an OData connection](../placeholder.md)
 
-[How to configure OData in a copy activity](placeholder.md)
+[How to configure OData in a copy activity](../placeholder.md)
