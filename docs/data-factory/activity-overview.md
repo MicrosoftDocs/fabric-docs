@@ -88,11 +88,13 @@ When you add a new activity to a pipeline and select it, you'll see its properti
 
 The general settings will always include **Name** and **Description** fields for every activity.  Some activities also include the following:
 
-1. Timeout: The maximum amount of time an activity can run. The default is 12 hours, and the maximum amount of time allowed is seven days. The format for the timeout is in D.HH:MM:SS.
-1. Retry: Maximum number of retry attempts.
-1. (Advanced properties) Retry interval (sec): The number of seconds between each retry attempt.
-1. (Advanced properties) Secure output: When checked, output from the activity isn't captured in logging.
-1. (Advanced properties) Secure input: The number of seconds between each retry attempt.
+|Setting  |Description  |
+|---------|---------|
+|Timeout |The maximum amount of time an activity can run. The default is 12 hours, and the maximum amount of time allowed is seven days. The format for the timeout is in D.HH:MM:SS. |
+|Retry |Maximum number of retry attempts. |
+|(Advanced properties) Retry interval (sec) |The number of seconds between each retry attempt. |
+|(Advanced properties) Secure output |When checked, output from the activity isn't captured in logging. |
+|(Advanced properties) Secure input |The number of seconds between each retry attempt. |
 
 ## Next steps
 
