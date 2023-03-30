@@ -1,6 +1,6 @@
 ---
-title: How to configure delimited text format in Data Factory data pipeline
-description: This article explains how to configure delimited text format in Data Factory data pipeline.
+title: How to configure delimited text format in the data pipeline of Data Factory in Microsoft Fabric
+description: This article explains how to configure delimited text format in the data pipeline of Data Factory in Microsoft Fabric.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -8,17 +8,17 @@ ms.date: 03/07/2023
 ms.custom: template-how-to 
 ---
 
-# Delimited text format in Data Factory
+# Delimited text format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here
 
-This article outlines how to configure delimited text format in Data Factory data pipeline.
+This article outlines how to configure delimited text format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
-Delimited text format is supported for the following connectors and activities.
+Delimited text format is supported for the following activities and connectors as source and destination.
 
 | Category | Connector/Activity | 
 |---|---|
@@ -35,7 +35,7 @@ Delimited text format is supported for the following connectors and activities.
 
 ## Delimited text format in copy activity
 
-You can find the file format settings by selecting **File settings** in source in data pipeline copy activity after choosing your connection.
+You can find the file format settings by selecting **File settings** in source or  destination in data pipeline copy activity after choosing your connection.
 
 :::image type="content" source="./media/format-delimited-text/file-settings.png" alt-text="Screenshot showing file settings button.":::
 
