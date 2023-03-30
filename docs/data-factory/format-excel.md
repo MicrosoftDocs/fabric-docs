@@ -1,6 +1,6 @@
 ---
-title: How to configure Excel format in Data Factory data pipeline
-description: This article explains how to configure Excel format in Data Factory data pipeline.
+title: How to configure Excel format in the data pipeline of Data Factory in Microsoft Fabric
+description: This article explains how to configure Excel format in the data pipeline of Data Factory in Microsoft Fabric.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -8,17 +8,17 @@ ms.date: 03/07/2023
 ms.custom: template-how-to 
 ---
 
-# Excel format in Data Factory
+# Excel format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] 
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here
 
-This article outlines how to configure Excel format in Data Factory data pipeline.
+This article outlines how to configure Excel format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
-Excel format is supported for the following connectors and activities.
+Excel format is supported for the following connectors and activities as source.
 
 | Category | Connector/Activity | 
 |---|---|
@@ -35,7 +35,7 @@ Excel format is supported for the following connectors and activities.
 
 ## Excel format in copy activity
 
-You can find the file format settings by selecting **File settings** in source in data pipeline copy activity. Excel format is supported in copy activity source only.
+You can find the file format settings by selecting **File settings** in source in data pipeline copy activity.
 
 :::image type="content" source="./media/format-excel/file-settings.png" alt-text="Screenshot showing file settings button.":::
 
