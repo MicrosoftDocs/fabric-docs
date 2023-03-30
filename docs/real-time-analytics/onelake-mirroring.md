@@ -28,7 +28,7 @@ For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/on
 * A Workspace
 * A [KQL database](create-database.md) with data
 
-## Create a OneLake shortcut in a Lakehouse
+## Create a OneLake shortcut in OneLake
 
 1. Open the Experience switcher on the bottom of the navigation pane and select **Data Engineering**.
 
