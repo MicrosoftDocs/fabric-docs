@@ -11,8 +11,7 @@ ms.search.form: Lakehouse Overview
 
 # What is a Lakehouse?
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 A Lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by the Apache Spark engine and SQL engine for big data processing. A Lakehouse includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables. The Lakehouse item is hosted within a unique workspace folder in the [!INCLUDE [product-name](../includes/product-name.md)] lake. It contains files in various formats (structured and unstructured) organized in folders and subfolder structures.
 
