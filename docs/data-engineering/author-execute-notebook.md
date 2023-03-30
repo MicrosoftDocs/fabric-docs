@@ -17,6 +17,7 @@ ms.date: 03/03/2023
 ## Develop notebooks
 
 Notebooks consist of cells, which are individual blocks of code or text that can be run independently or as a group.
+:::image type="icon" source="../includes/media/yes-icon.svg" border="false":::
 
 We provide rich operations to develop notebooks:
 
