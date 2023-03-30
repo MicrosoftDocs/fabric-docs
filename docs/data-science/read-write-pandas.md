@@ -1,11 +1,13 @@
 ---
 title: Read and write data with Pandas
 description: Learn how to read and write data with Pandas from Lakehouse.
-ms.reviewer: mopeakande
 ms.author: negust
 author: nelgson
+ms.reviewer: franksolomon
 ms.topic: how-to
-ms.date: 02/10/2023
+ms.service: ---
+ms.subservice: ---
+ms.date: 03/30/2023
 ms.search.form: Read and Write Pandas
 ---
 
@@ -14,35 +16,35 @@ ms.search.form: Read and Write Pandas
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Pandas is the most popular Python library for data exploration and processing. In this guide, we'll walk through a number of examples for how to read and write data in a Notebook from a Lakehouse using the Pandas library.
+Pandas became the most popular Python library for data exploration and processing. This guide shows examples that explain how to read and write data in a Notebook, from a Lakehouse, using the Pandas library.
 
-## Convert Spark dataframe to Pandas
+## Convert a Spark dataframe to Pandas
 
-Before we list the various ways, you can leverage Pandas to read and write different file types, let’s first look at how you can convert a Spark dataframe to a pandas dataframe:
+First, this code sample shows how to convert a Spark dataframe to a pandas dataframe:
 
 ```Python
 pandas_df = spark_df.toPandas() 
 ```
 
-The below examples show how you can read and write various file formats with Pandas from Lakehouse/One Lake.
+These examples show how Pandas can read and write various file formats from Lakehouse / One Lake.
 
 > [!NOTE]
-> You need to replace the file names and file paths in the below examples.
+> You need to replace the file names and file paths in these examples.
 
 > [!NOTE]
 > Pandas support both abfss and relative paths.  
 
-## Load data into Pandas from UI
+## Load data into Pandas from the UI
 
-Once you've attached a Lakehouse to your Notebook, you can explore the data in the Lakehouse. This allows you to select a file in your Lakehouse, for example a CSV file, and choose to “Load data” into a Pandas dataframe.
+Once you attach a Lakehouse to your Notebook, you can explore the data in that Lakehouse. This way, you can select a file in your Lakehouse - for example, a CSV file - and choose to “Load data” into a Pandas dataframe.
 
 :::image type="content" source="media/read-write-pandas/load-data-pandas-dataframe.png" alt-text="Screenshot showing where to select options to load data into a Pandas dataframe." lightbox="media/read-write-pandas/load-data-pandas-dataframe.png":::
 
-This will add a code cell to the Notebook with generated Python code for loading the data from the file into a Pandas dataframe:
+This image shows a code cell added to the Notebook with generated Python code, to load the data from the file into a Pandas dataframe:
 
 :::image type="content" source="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png" alt-text="Screenshot of the code cell added to the Notebook." lightbox="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png":::
 
-## Read CSV file from Lakehouse with Pandas
+## Read a CSV file from Lakehouse with Pandas
 
 ```Python
 Import pandas as pd 
@@ -51,7 +53,7 @@ df = pd.read_csv("/<Lakehouse path>/filename.csv")
 display(df) 
 ```
 
-## Write CSV file to Lakehouse with Pandas
+## Write a CSV file to Lakehouse with Pandas
 
 ```Python
 Import pandas as pd 
@@ -59,7 +61,7 @@ Import pandas as pd
 df.to_csv("/<Lakehouse path>/filename.csv") 
 ```
 
-## Read Parquet file from Lakehouse with Pandas
+## Read a Parquet file from Lakehouse with Pandas
 
 ```Python
 Import pandas as pd 
@@ -69,7 +71,7 @@ df = pandas.read_parquet(“/<Lakehouse path>/filename.parquet")
 display(df) 
 ```
 
-## Write Parquet file to Lakehouse with Pandas
+## Write a Parquet file to Lakehouse with Pandas
 
 ```Python
 Import pandas as pd 
@@ -78,7 +80,7 @@ Import pandas as pd
 df.to_parquet("/<Lakehouse path>/filename.parquet") 
 ```
 
-## Read Excel file from Lakehouse with Pandas
+## Read an Excel file from Lakehouse with Pandas
 
 ```Python
 Import pandas as pd 
@@ -88,7 +90,7 @@ df = pandas.read_excel(“/<Lakehouse path>/filename.xlsx")
 display(df) 
 ```
 
-## Write Excel file to Lakehouse with Pandas
+## Write an Excel file to Lakehouse with Pandas
 
 ```Python
 Import pandas as pd 
@@ -96,7 +98,7 @@ Import pandas as pd
 df.to_excel("/<Lakehouse path>/filename.xlsx") 
 ```
 
-## Read Json file from Lakehouse with Pandas
+## Read a Json file from Lakehouse with Pandas
 
 ```Python
 Import pandas as pd 
@@ -107,7 +109,7 @@ df = pandas.read_json(“/<Lakehouse path>/filename.json")
 display(df) 
 ```
 
-## Write Json file to Lakehouse with Pandas
+## Write a Json file to Lakehouse with Pandas
 
 ```Python
 Import pandas as pd 
