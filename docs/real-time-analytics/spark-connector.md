@@ -1,21 +1,17 @@
 ---
 title: Tutorial- Use Apache Spark to query a KQL Database
-description: Learn how to import the NYC GreenTaxi notebook into your [!INCLUDE [product-name](../includes/product-name.md)] environment using A[ache Spark.
+description: Learn how to import the NYC GreenTaxi notebook into your [!INCLUDE [product-name](../includes/product-name.md)] environment using Apache Spark.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.date: 03/29/2023
+ms.date: 03/30/2023
 ms.search.form: product-kusto
 ---
 
 # Tutorial: Use Apache Spark to query a KQL Database
 
-Intro
-
-<!--The connector for Apache Spark is designed to efficiently transfer data between your KQL Database and Spark. This connector is available --->
-
-<!--For more information, see--->
+<!-- TODO: intro-->
 
 In this tutorial, you learn how to:
 
