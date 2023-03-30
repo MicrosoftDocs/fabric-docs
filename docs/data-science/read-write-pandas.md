@@ -5,8 +5,6 @@ ms.author: negust
 author: nelgson
 ms.reviewer: franksolomon
 ms.topic: how-to
-ms.service: ---
-ms.subservice: ---
 ms.date: 03/30/2023
 ms.search.form: Read and Write Pandas
 ---
