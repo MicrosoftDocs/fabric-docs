@@ -62,7 +62,7 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 **Connection name**: Specify a name for your connection.<br>
 **Connection type**: Select **Azure CosmosDB (Data pipeline)** for your connection type.<br>
 **Account Endpoint**: Enter your account endpoint URL of your Azure Cosmos DB for NoSQL.<br>
-**Database**: Enter the database id of your Azure Cosmos DB for NoSQL.
+**Database**: Enter the database ID of your Azure Cosmos DB for NoSQL.
 
 ### Step 2:  Select and set your authentication
 
@@ -97,7 +97,7 @@ The following connector properties in the table are supported in pipeline copy a
 |**Connection name**|A name for your connection.|Yes||✓/|
 |**Connection type**|Select **Azure CosmosDB (Data pipeline)** for your connection type.|Yes||✓/|
 |**Account Endpoint**|Enter your account endpoint URL of your Azure Cosmos DB for NoSQL.|Yes||✓/|
-|**Database**|Enter the database id of your Azure Cosmos DB for NoSQL.|Yes||✓/|
+|**Database**|Enter the database ID of your Azure Cosmos DB for NoSQL.|Yes||✓/|
 |**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
 
