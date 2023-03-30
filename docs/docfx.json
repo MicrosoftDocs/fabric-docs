@@ -2,6 +2,7 @@
   "build": {
     "content": [
       {
+        "src": "./",
         "files": [
           "**/*.md",
           "**/*.yml",
@@ -23,6 +24,7 @@
     ],
     "resource": [
       {
+        "src": "./",
         "files": [
           "**/*.png",
           "**/*.jpg",
