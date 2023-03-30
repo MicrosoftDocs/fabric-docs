@@ -17,7 +17,7 @@ OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../
 
 There are two types of shortcuts:
 
-* OneLake shortcut linking data in OneLake to your KQL Database. This shortcut defines the data from OneLake as an external table. Create this shortcut when you want to infrequently run queries on historical data. If you want to run queries frequently and accelerate performance, see [Get data from OneLake](get-data-onelake.md).
+* OneLake shortcut linking data in OneLake to your KQL Database. This shortcut defines the data from OneLake as an external table. Create this shortcut when you want to infrequently run queries on historical data. To create this type of shortcut, see [Create a OneLake shortcut](onelake-shortcut.md). If you want to run queries frequently and accelerate performance, see [Get data from OneLake](get-data-onelake.md).
 * Continuous export: this is a OneLake shortcut that mirrors the data in your KQL Database to OneLake. If enabled, this shortcut creates one logical copy of the data in your database that you can access in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management. To disable continuous export, see [Continuous export (mirroring)](#continuous-export-mirroring).
 
 For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
@@ -28,13 +28,25 @@ For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/on
 * A Workspace
 * A [KQL database](create-database.md) with data
 
+## Continuous export (mirroring)
+
+:::image type="content" source="media/onelake-mirroring/continuous-export.png" alt-text="Screenshot of the Manage tab showing two options titled Data retention policy and Continuous export.":::
+
+Continuous export to OneLake is enabled in your **KQL Database** by default. If you disable continuous export before creating your Lakehouse, your data won't be mirrored. If you disable continuous export after creating a Lakehouse, the data that was already mirrored will remain, but any data loaded into your database after that won't be mirrored.
+
+1. To disable **Continuous export**, navigate to your **KQL Database**.
+1. On the ribbon, select **Manage**.
+1. Select **Continuous export** > **off**.
+
+You can enable this option again after creating a shortcut in OneLake
+
 ## Create a OneLake shortcut in OneLake
 
-1. Open the Experience switcher on the bottom of the navigation pane and select **Data Engineering**.
+1. Open the experience switcher on the bottom of the navigation pane and select **Data Engineering**.
 
     :::image type="content" source="media/onelake-mirroring/app-switcher-dataengineering.png" alt-text="Screenshot of experience switcher showing a list of experiences. The experience titled Data Engineering is highlighted.":::
 
-1. Under **New**, select **Lakehouse**.
+1. Select **Lakehouse**.
 
      :::image type="content" source="media/onelake-mirroring/new-lakehouse.png" alt-text="Screenshot of Data Engineering artifacts. The option titled Lakehouse is highlighted.":::
 
@@ -59,16 +71,6 @@ For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/on
 1. Select **Create** to create the shortcut. The Lakehouse will automatically refresh.
 
 The Lakehouse shortcut has been created. You now have one logical copy of your data that you can use in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management.
-
-## Continuous export (mirroring)
-
-:::image type="content" source="media/onelake-mirroring/continuous-export.png" alt-text="Screenshot of the Manage tab showing two options titled Data retention policy and Continuous export.":::
-
-Continuous export to OneLake is enabled in your **KQL Database** by default. If you disable continuous export before creating your Lakehouse, your data won't be mirrored. If you disable continuous export after creating a Lakehouse, the data that was already mirrored will remain, but any data loaded into your database after that won't be mirrored.
-
-1. To disable **Continuous export**, navigate to your **KQL Database**.
-1. On the ribbon, select **Manage**.
-1. Select **Continuous export** > **off**.
 
 ## Next steps
 
