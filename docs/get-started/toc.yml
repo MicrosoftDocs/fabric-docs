@@ -19,6 +19,8 @@ items:
     href: create-workspaces.md
   - name: Roles in workspaces
     href: roles-workspaces.md
+  - name: Give users access to workspaces
+    href: give-access-workspaces.md
 - name: Feature 2
   items:
   - name: linktext2
