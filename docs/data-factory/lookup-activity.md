@@ -1,6 +1,6 @@
 ---
 title: Lookup activity
-description: Learn how to add a lookup activity to a pipeline and use it to lookup data from a data source.
+description: Learn how to add a lookup activity to a pipeline and use it to look up data from a data source.
 ms.reviewer: xupxhou
 ms.author: jburchel
 author: jonburchel
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/16/2023
 ---
 
-# Use the Lookup activity to lookup data from a data source
+# Use the Lookup activity to look up data from a data source
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
