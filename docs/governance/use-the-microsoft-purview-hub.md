@@ -20,18 +20,18 @@ Explanation of roles. [Maybe a link to roles documentation in Fabric](../placeho
 
 Access to [Microsoft Purview Insights](#microsoft-purview-insights).
 Access to [reports](#reports).
-Access to [links](#links).
+Access to [links](#additional-links).
 
 ### Data owner view in the hub
 
 Access to [Microsoft Purview Insights](#microsoft-purview-insights).
 Access to [reports](#reports).
-Access to [links](#links).
+Access to [links](#additional-links).
 
 ### Consumer role in the hub
 
 Access to [reports](#reports).
-Access to [links](#links).
+Access to [links](#additional-links).
 
 ## Microsoft Purview insights
 
