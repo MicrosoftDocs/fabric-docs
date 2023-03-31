@@ -11,12 +11,12 @@ items:
     href: ../placeholder.md
   - name: linktext2
     href: ../placeholder.md
-- name: Feature 1
+- name: Microsoft Purview
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Microsoft Purview & Fabric
+    href: microsoft-purview-and-fabric.md
+  - name: Microsoft Purview Hub
+    href: use-the-microsoft-purview-hub.md
 - name: Feature 2
   items:
   - name: linktext2
