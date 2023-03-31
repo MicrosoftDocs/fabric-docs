@@ -12,7 +12,7 @@ LocalizationGroup: Administration
 
 # Manage workspaces
 
-Go to the **Admin portal** to access this feature. For information about how to get to and use the Admin portal, see [About the Admin portal](service-admin-portal.md).
+Go to the **Admin portal** to access this feature. For information about how to get to and use the Admin portal, see [About the Admin portal](/power-bi/admin/service-admin-portal).
 
 As a [!INCLUDE [product-name](../includes/product-name.md)] administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab. On this tab, you see a list of all the workspaces in your tenant. Above the list, a ribbon provides options to help you govern the workspaces. These options also appear in the **More options (...)** menu of the selected workspace. The list of options varies depending on workspace type and status. All the options are described under [workspace options](#workspace-options).
 
@@ -27,7 +27,7 @@ The columns of the list of workspaces are described below
 | **Type** | The type of workspace. There are two types of workspaces:<br>![Screenshot of app workspace icon.](./media/service-admin-portal-workspaces/app-workspace-icon.png) **Workspace** (also known as "app workspace")<br>![Screenshot of personal workspace icon in the list of workspaces table explanation.](./media/service-admin-portal-workspaces/personal-workspace-icon.png) **Personal Group** ("My workspaces")|
 | **State** | The state lets you know if the workspace is available for use. There are five states, **Active**, **Orphaned**, **Deleted**, **Removing**, and **Not found**. For more information, see [Workspace states](#workspace-states). |
 | **Capacity name** | Name given to the workspace's capacity. |
-| **Capacity SKU Tier** | The type of license used for the workspace's capacity. Capacity SKU Tiers include **Premium** and **Premium Per User (PPU)**. For more information about capacity tiers, see [Configure and manage capacities in Premium](../enterprise/service-admin-premium-manage.md). |
+| **Capacity SKU Tier** | The type of license used for the workspace's capacity. Capacity SKU Tiers include **Premium** and **Premium Per User (PPU)**. For more information about capacity tiers, see [Configure and manage capacities in Premium](/power-bi/enterprise/service-admin-premium-manage). |
 | **Upgrade status** | The upgrade status lets you know if the workspace is eligible for a [!INCLUDE [product-name](../includes/product-name.md)] upgrade. |
 
 The table columns on the **Workspaces** tab correspond to the properties returned by the [admin Rest API](/rest/api/power-bi/admin) for workspaces. Personal workspaces are of type **PersonalGroup**, classic workspaces are of type **Group**, and the new workspace experience workspaces are of type **Workspace**. For more information, see [Workspaces](../get-started/workspaces.md).
@@ -92,7 +92,7 @@ Once you go inside the My workspace, you’ll be able to perform any actions as 
 
 ### Designate a default capacity for My workspaces
 
-A [!INCLUDE [product-name](../includes/product-name.md)] admin or capacity admin can designate a capacity as the default capacity for My workspaces. For details, see [Designate a default capacity for My workspaces](../enterprise/service-admin-premium-manage.md#designate-a-default-capacity-for-my-workspaces)
+A [!INCLUDE [product-name](../includes/product-name.md)] admin or capacity admin can designate a capacity as the default capacity for My workspaces. For details, see [Designate a default capacity for My workspaces](/power-bi/enterprise/service-admin-premium-manage#designate-a-default-capacity-for-my-workspaces)
 
 ### Prevent My workspace owners from reassigning their My workspaces to a different capacity
 
@@ -115,4 +115,4 @@ After the deleted workspace has been restored as an app workspace, it's just lik
 
 ## Next steps
 
-* [About the Admin portal](service-admin-portal.md)
+* [About the Admin portal](/power-bi/admin/service-admin-portal)

@@ -19,7 +19,7 @@ To create a new workspace, see [Create a workspace](create-workspaces.md).
 
 Roles let you manage who can do what in a workspace, so teams can collaborate. Workspaces allow you to assign roles to individuals, and also to user groups such as security groups, Microsoft 365 groups, and distribution lists.
 
-To grant access to a workspace, assign one of the following workspace roles to a user group or individuals: Admin, Member, Contributor, or Viewer. For more information, see [Give users access to workspaces](service-give-access-new-workspaces.md).
+To grant access to a workspace, assign one of the following workspace roles to a user group or individuals: Admin, Member, Contributor, or Viewer. For more information, see [Give users access to workspaces](give-access-workspaces.md).
 
 Everyone in a user group gets the role that you've assigned. If someone is in several user groups, they get the highest level of permission that's provided by the roles that they're assigned. If you nest user groups and assign a role to a group, all the contained users get that role's permissions. All these capabilities, except viewing and interacting, require a [!INCLUDE [product-name](../includes/product-name.md)] Pro or Premium Per User (PPU) license. For more information, see [licensing](#licenses).
 
@@ -60,7 +60,7 @@ Everyone in a user group gets the role that you've assigned. If someone is in se
 
 > [!NOTE]
 > - You can assign users to roles, either alone or in a group, even if they can't use the role. In other words, you can assign users who don't have [!INCLUDE [product-name](../includes/product-name.md)] Pro or PPU licenses to a role that requires a license. See [Licenses](#licenses) for details.
-> - Use the Viewer role to enforce [row-level security (RLS)](../enterprise/service-admin-rls.md) for users who browse content in a workspace. You can also enforce RLS without giving access to the workspace, [publish an app](service-create-distribute-apps.md) and distribute it to those users, or use [sharing to distribute content](service-share-dashboards.md).
+> - Use the Viewer role to enforce [row-level security (RLS)](/power-bi/enterprise/service-admin-rls) for users who browse content in a workspace. You can also enforce RLS without giving access to the workspace, [publish an app](/power-bi/collaborate-share/service-create-distribute-apps) and distribute it to those users, or use [sharing to distribute content](/power-bi/collaborate-share/service-share-dashboards).
 
 ## Licenses
 If one of the workspaces is in a shared capacity, everyone you add to it needs a [!INCLUDE [product-name](../includes/product-name.md)] Pro or Premium Per User (PPU) license. These users can all collaborate on the dashboards and reports in the workspace. If you want to distribute content to others inside your organization, either assign [!INCLUDE [product-name](../includes/product-name.md)] Pro licenses to those users or place the workspace in a [!INCLUDE [product-name](../includes/product-name.md)] Premium capacity.
@@ -70,11 +70,11 @@ When the workspace is in a [!INCLUDE [product-name](../includes/product-name.md)
 Publishing reports to the workspace enforces existing licensing rules. If you try to publish from client tools without a Pro or Premium Per User (PPU) license, you see the error, "Only users with [!INCLUDE [product-name](../includes/product-name.md)] Pro licenses can publish to this workspace."
 
 > [!NOTE]
-> [!INCLUDE [product-name](../includes/product-name.md)] US Government isn't available as a Free license. For licensing details, see [[!INCLUDE [product-name](../includes/product-name.md)] for US government customers](../enterprise/service-govus-overview.md).
+> [!INCLUDE [product-name](../includes/product-name.md)] US Government isn't available as a Free license. For licensing details, see [[!INCLUDE [product-name](../includes/product-name.md)] for US government customers](/power-bi/enterprise/service-govus-overview).
 
 ### Guest users
 
-By default, [Azure AD B2B Guest users](../enterprise/service-admin-azure-ad-b2b.md) can't access workspaces. [!INCLUDE [product-name](../includes/product-name.md)] admins can [allow external guest users to edit and manage content in the organization](../enterprise/service-admin-azure-ad-b2b.md#guest-users-who-can-edit-and-manage-content). Enabled Guest users can access workspaces to which they have permission.
+By default, [Azure AD B2B Guest users](/power-bi/enterprise/service-admin-azure-ad-b2b) can't access workspaces. [!INCLUDE [product-name](../includes/product-name.md)] admins can [allow external guest users to edit and manage content in the organization](/power-bi/enterprise/service-admin-azure-ad-b2b#guest-users-who-can-edit-and-manage-content). Enabled Guest users can access workspaces to which they have permission.
 
 ## Considerations and limitations
 
@@ -85,6 +85,6 @@ A limitation to be aware of:
 ## Next steps
 
 - [Create workspaces](create-workspaces.md)
-- [Give users access to workspaces](service-give-access-new-workspaces.md)
+- [Give users access to workspaces](give-access-workspaces.md)
 
 

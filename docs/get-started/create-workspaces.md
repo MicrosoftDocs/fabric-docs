@@ -31,7 +31,7 @@ This article explains how to create *workspaces*, spaces to collaborate with col
     - [Add a Contact list](#create-a-contact-list), the names of people to contact for information about the workspace. By default, the workspace admins are the contacts.
     - [Allow contributors to update the app](#allow-contributors-to-update-the-app) for the workspace
     - [Assign the workspace to a Premium capacity](#premium-capacity-settings).
-    - Connect the workspace to an Azure Data Lake Gen2 storage account (in preview). Read about this functionality in the article [Configuring dataflow storage to use Azure Data Lake Gen 2](../transform-model/dataflows/dataflows-azure-data-lake-storage-integration.md#connect-to-an-azure-data-lake-gen-2-at-a-workspace-level).
+    - Connect the workspace to an Azure Data Lake Gen2 storage account (in preview). Read about this functionality in the article [Configuring dataflow storage to use Azure Data Lake Gen 2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration#connect-to-an-azure-data-lake-gen-2-at-a-workspace-level).
 
 1. Select **Save**.
 
@@ -66,7 +66,7 @@ The Workspace OneDrive feature allows you to configure a Microsoft 365 Group who
 > [!NOTE]
 > It's important to note that the creation of Microsoft 365 Groups may be restricted in your environment, and/or the ability to create them from your OneDrive site may be disabled. If this is the case, speak with your IT department.
 
-[!INCLUDE [product-name](../includes/product-name.md)] doesn't synchronize permissions between users or groups with workspace access, and users or groups with Microsoft 365 Group membership. A best practice is to give [access to the workspace](service-give-access-new-workspaces.md) to the same Microsoft 365 Group whose file storage you configured. Then manage workspace access by managing membership of the Microsoft 365 Group.
+[!INCLUDE [product-name](../includes/product-name.md)] doesn't synchronize permissions between users or groups with workspace access, and users or groups with Microsoft 365 Group membership. A best practice is to give [access to the workspace](give-access-workspaces.md) to the same Microsoft 365 Group whose file storage you configured. Then manage workspace access by managing membership of the Microsoft 365 Group.
 
 1. Access the **Workspace OneDrive** setting in one of two ways:
 
@@ -110,7 +110,7 @@ After you've configured the OneDrive location, you get to it in the same way you
 
 ### Allow contributors to update the app
 
-You can create and publish *apps* from a workspace. Each workspace can hold the content for an associated *app*, a collection of dashboards, reports, and datasets which you can distribute to others in your organization. Read more about [publishing apps from workspaces](service-create-distribute-apps.md).
+You can create and publish *apps* from a workspace. Each workspace can hold the content for an associated *app*, a collection of dashboards, reports, and datasets which you can distribute to others in your organization. Read more about [publishing apps from workspaces](/power-bi/collaborate-share/service-create-distribute-apps).
 
 By default, only workspace Admins and Members can create, publish and update the app for the workspace. The **Allow contributors to update the app for this workspace** setting lets workspace Admins delegate the ability to update the app for the workspace to users with the workspace Contributor role. Read more about the different [roles in workspaces](roles-workspaces.md).
 
@@ -143,17 +143,17 @@ On the **Premium** tab in the **Settings** pane, you can choose settings related
 
     ![Screenshot of Premium capacity On.](media/create-workspaces/power-bi-workspace-premium.png)
 
-1. Choose either Premium capacity or **Premium Per User**. Read more about [Premium Per User](../enterprise/service-premium-per-user-faq.yml).
+1. Choose either Premium capacity or **Premium Per User**. Read more about [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq.yml).
 
     :::image type="content" source="media/create-workspaces/power-bi-workspace-premium-per-user.png" alt-text="Screenshot of Choose Premium or Premium Per User.":::
 
-1. Choose **Default storage limit**. Read more about [enabling large datasets](../enterprise/service-premium-large-models.md#enable-large-datasets).
+1. Choose **Default storage limit**. Read more about [enabling large datasets](/power-bi/enterprise/service-premium-large-models#enable-large-datasets).
 
 ## Give users access to your workspace
 
 Now that you've created the workspace, you'll want to add other users to *roles* in the workspace, so you can collaborate with them. See these articles for more information:
 
-- [Give users access to a workspace](service-give-access-new-workspaces.md)
+- [Give users access to a workspace](give-access-workspaces.md)
 - [Roles in workspaces](roles-workspaces.md)
 
 ## Pin workspaces
@@ -175,5 +175,5 @@ Quickly access your favorite workspaces by pinning them to the top of the worksp
 
 ## Next steps
 * Read about [workspaces](workspaces.md)
-* [Publish an app from a workspace](service-create-distribute-apps.md)
+* [Publish an app from a workspace](/power-bi/collaborate-share/service-create-distribute-apps)
 

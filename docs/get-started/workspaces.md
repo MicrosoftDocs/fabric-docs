@@ -90,4 +90,4 @@ Limitations to be aware of:
 ## Next steps
 
 * [Create workspaces](create-workspaces.md)
-* [Install and use apps](service-create-distribute-apps.md)
+* [Install and use apps](/power-bi/collaborate-share/service-create-distribute-apps)
