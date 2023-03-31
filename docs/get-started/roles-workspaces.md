@@ -1,5 +1,5 @@
 ---
-title: Roles in workspaces in Power BI
+title: Roles in workspaces
 description: Learn about the different roles you can assign to workspace users to grant access to read, write, edit, and more.
 author: maggiesMSFT
 ms.author: maggies
@@ -48,11 +48,11 @@ Everyone in a user group gets the role that you've assigned. If someone is in se
 | View and interact with an item.<sup>5</sup> |  :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false":::  | :::image type="icon" source="../media/yes-icon.svg" border="false":::  | :::image type="icon" source="../media/yes-icon.svg" border="false":::  |
 | Read data that's stored in workspace dataflows. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 
-<sup>1</sup> Contributors can [update the app that's associated with the workspace](../collaborate-share/service-create-the-new-workspaces.md#allow-contributors-to-update-the-app), if the workspace Admin delegates this permission to them. However, they can't publish a new app or change who has permission to edit it.
+<sup>1</sup> Contributors can [update the app that's associated with the workspace](create-workspaces.md#allow-contributors-to-update-the-app), if the workspace Admin delegates this permission to them. However, they can't publish a new app or change who has permission to edit it.
 
 <sup>2</sup> Contributors and Viewers can also share items in a workspace, if they have Reshare permissions.
 
-<sup>3</sup> To copy a report to another workspace, and to create a report in another workspace based on a dataset in the current workspace, you need [Build permission for the dataset](../connect-data/service-datasets-build-permissions.md). You also need at least the Contributor role on the source and destination workspaces. For datasets in the original workspace, if you have at least the Contributor role, you automatically have Build permission through your workspace role. For details, see [Copy reports from other workspaces](../connect-data/service-datasets-copy-reports.md).
+<sup>3</sup> To copy a report to another workspace, and to create a report in another workspace based on a dataset in the current workspace, you need [Build permission for the dataset](/power-bi/connect-data/service-datasets-build-permissions). You also need at least the Contributor role on the source and destination workspaces. For datasets in the original workspace, if you have at least the Contributor role, you automatically have Build permission through your workspace role. For details, see [Copy reports from other workspaces](/power-bi/connect-data/service-datasets-copy-reports).
 
 <sup>4</sup> Keep in mind that you also need permissions on the gateway. Those permissions are managed elsewhere, independent of workspace roles and permissions. For details, see [Manage an on-premises gateway](/data-integration/gateway/service-gateway-manage).
 
