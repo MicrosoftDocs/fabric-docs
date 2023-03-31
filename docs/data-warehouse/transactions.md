@@ -41,11 +41,11 @@ This table provides a list of what locks are used for different types of [transa
 
 Conflicts between statements are evaluated at the end of the transaction.  The first transaction to commit will win and the other transactions will be rolled back with an error returned.
 
-INSERT statements create new parquet files, so they will not conflict with other transactions with the exception of DDL because the table's schema could be changing.
+INSERT statements create new parquet files, so they will not conflict with other transactions except for DDL because the table's schema could be changing.
 
 ## Transaction Logging
 
-Transaction logging in Synapse Data Warehouse in Microsoft Fabric is much simpler as it is at the parquet file level instead of row level.  This is because parquet files are immutable (cannot be changed), so a rollback will simply mean pointing back to the previous parquet files.  The benefits of this change is that transaction logging and rollbacks are much faster.
+Transaction logging in Synapse Data Warehouse in Microsoft Fabric is simpler as it is at the parquet file level instead of row level.  This is because parquet files are immutable (they cannot be changed). A rollback results in pointing back to the previous parquet files.  The benefits of this change are that transaction logging and rollbacks are faster.
 
 ## Limitations
 
@@ -59,5 +59,5 @@ Transaction logging in Synapse Data Warehouse in Microsoft Fabric is much simple
 
 ## Next steps
 
-- [Query a warehouse using SSMS](query-warehouse-sql-server-management-studio.md)
+- [Query a warehouse using SSMS](query-warehouse.md)
 - [Tables in [!INCLUDE[fabricdw](includes/fabric-dw.md)]](tables.md)

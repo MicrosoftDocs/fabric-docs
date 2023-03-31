@@ -36,8 +36,8 @@ The table columns in automatically generated warehouses are derived from the sou
 | **FLOAT &#124; REAL** | real |
 | **DATE** | date |
 | **TIMESTAMP** | datetime2 |
-| **CHAR(n)** | char(n) with Latin1_General_100_BIN2_UTF8 collation. |
-| **STRING &#124; VARCHAR(n)** | varchar(n), (MAX) with Latin1_General_100_BIN2_UTF8 collation. STRING/VARCHAR(MAX) is mapped to varbinary(8000). |
+| **CHAR(n)** | char(n) with `Latin1_General_100_BIN2_UTF8` collation. |
+| **STRING &#124; VARCHAR(n)** | varchar(n), (MAX) with `Latin1_General_100_BIN2_UTF8` collation. STRING/VARCHAR(MAX) is mapped to varbinary(8000). |
 | **BINARY** | varbinary(n). |
 | **DECIMAL &#124; DEC &#124; NUMERIC** | decimal(p,s) |
 

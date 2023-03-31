@@ -1,37 +1,36 @@
 ---
 title: Primary, foreign, and unique keys
-description: Table constraints support using Synapse Data Warehouse In Microsoft Fabric
+description: Table constraints support using Synapse Data Warehouse in Microsoft Fabric
 ms.reviewer: wiassaf
 ms.author: kecona
 author: KevinConanMSFT
 ms.topic: how-to
-ms.date: 03/30/2023
+ms.date: 03/31/2023
 ---
 
-# Primary key, foreign key, and unique key using Synapse Data Warehouse In Microsoft Fabric
+# Primary keys, foreign keys, and unique keys in Synapse Data Warehouse in Microsoft Fabric
 
-Learn about table constraints in Synapse Data Warehouse In Microsoft Fabric, including primary key, foreign key, and unique key.
+Learn about table constraints in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], including primary key, foreign key, and unique key.
 
 > [!IMPORTANT]  
-To add or remove Primary Key, Foreign Key or Unique constraints, you must use ALTER TABLE.
-
+To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE.
 
 ## Table constraints
 
-Synapse Data Warehouse In Microsoft Fabric supports these table constraints: 
-- PRIMARY KEY is only supported when NONCLUSTERED and NOT ENFORCED are both used.    
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports these table constraints: 
+
+- PRIMARY KEY is only supported when NONCLUSTERED and NOT ENFORCED are both used.
 - UNIQUE constraint is only supported when NOT ENFORCED is used.
 - FOREIGN KEY is only supported when NOT ENFORCED is used.
 
-For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql) and [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse). 
-
+For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true) and [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric#DataTypes&preserve-view=true). 
 
 ## Remarks
 
-Having primary key, foreign key and/or unique key allows Synapse Data Warehouse In Microsoft Fabric to generate an optimal execution plan for a query.  
+Having primary key, foreign key and/or unique key allows [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] to generate an optimal execution plan for a query.  
 
 > [!IMPORTANT]  
-After creating a table with primary key or unique constraint in Synapse Data Warehouse In Microsoft Fabric, users need to make sure all values in those columns are unique.  A violation of that may cause the query to return inaccurate result.  This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values.  
+After creating a table with primary key or unique constraint in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], users need to make sure all values in those columns are unique.  A violation of that may cause the query to return inaccurate result.  This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values.  
 
 This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values.  
 
@@ -160,7 +159,7 @@ a1          total
 
 ## Examples
 
-Create a Synapse Data Warehouse in Microsoft Fabric table with a primary key: 
+Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] table with a primary key: 
 
 ```sql 
 CREATE TABLE PrimaryKeyTable (c1 INT NOT NULL, c2 INT);
@@ -168,7 +167,7 @@ CREATE TABLE PrimaryKeyTable (c1 INT NOT NULL, c2 INT);
 ALTER TABLE PrimaryKeyTable ADD CONSTRAINT PK_PrimaryKeyTable PRIMARY KEY NONCLUSTERED (c1) NOT ENFORCED;
 ```
 
-Create a Synapse Data Warehouse in Microsoft Fabric table with a unique constraint:
+Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] table with a unique constraint:
 
 ```sql
 CREATE TABLE UniqueConstraintTable (c1 INT NOT NULL, c2 INT);
@@ -176,8 +175,9 @@ CREATE TABLE UniqueConstraintTable (c1 INT NOT NULL, c2 INT);
 ALTER TABLE UniqueConstraintTable ADD CONSTRAINT UK_UniqueConstraintTablec1 UNIQUE NONCLUSTERED (c1) NOT ENFORCED;
 ```
 
-Create a Synapse Data Warehouse in Microsoft Fabric table with a foreign key:
-```sql 
+Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] table with a foreign key:
+
+```sql
 CREATE TABLE ForeignKeyReferenceTable (c1 INT NOT NULL);
 
 ALTER TABLE ForeignKeyReferenceTable ADD CONSTRAINT PK_ForeignKeyReferenceTable PRIMARY KEY NONCLUSTERED (c1) NOT ENFORCED;
@@ -189,4 +189,11 @@ ALTER TABLE ForeignKeyTable ADD CONSTRAINT FK_ForeignKeyTablec1 FOREIGN KEY (c1)
 
 ## Next steps
 
-After creating the tables for your dedicated SQL pool, the next step is to load data into the table. For a loading tutorial, see [Loading data to dedicated SQL pool](load-data-wideworldimportersdw.md).
+- [Design tables in Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)]](tables.md)
+- [What is data warehousing in [!INCLUDE [product-name](../includes/product-name.md)]?](data-warehousing.md)
+- [What is data engineering in [!INCLUDE [product-name](../includes/product-name.md)]?](../data-engineering/data-engineering-overview.md)
+- [[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](warehouse.md)
+- [Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehouse.md)
+- [Query a warehouse](query-warehouse.md)
+- [OneLake overview](../onelake/onelake-overview.md)
+- [Getting Workspace and OneLake path](get-workspace-onelake-path.md)
