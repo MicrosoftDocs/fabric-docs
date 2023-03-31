@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
-ms.date: 03/27/2023
+ms.date: 03/29/2023
 ms.search.form: product-kusto
 ---
 # What is Real-time Analytics in Fabric?
@@ -16,16 +16,18 @@ How? Real-time Analytics reduces complexity and simplifies data integration. Qui
 
 :::image type="content" source="media/real-time-analytics-overview/product-view.png" alt-text="Screenshot of Real-time Analytics product showing database homepage with a quick query pane showing binned ingestion results." lightbox="media/real-time-analytics-overview/product-view.png":::
 
+Real-time Analytics is a fully managed big data analytics platform optimized for streaming, time-series data. It contains a dedicated query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios.
+
 ## What makes Real-time Analytics unique?
 
-* **Easy ingestion** of data from any source, in any data format.
-* **No complex data modeling** means there's no need to build complex data models or for complex scripting to transform data before it's consumed.
-* **By-default streaming** provides high performance, low latency, high freshness data analysis.
-* **Default partitioning** - both time and hash-based partitioning, and by-default **indexing**.
-* **Versatile data structures** so that you can query structured, semi-structured, or free text.
+* **Easily ingest** data from any source, in any data format.
+* Run analytical queries **directly on raw data** without the need to build complex data models or create scripting to transform the data.
+* Import data with **by-default streaming** that provides high performance, low latency, high freshness data analysis.
+* Imported data undergoes **default partitioning** - both time and hash-based partitioning, and by-default **indexing**.
+* Work with **versatile data structures** and query structured, semi-structured, or free text.
 * **Query** raw data without transformation, with high performance, incredibly low response time, and using a wide variety of available [operators](/azure/data-explorer/kusto/query/index?context=/fabric/context/context). 
-* **Unlimited scale** from gigabytes to petabytes, with unlimited scale on concurrent queries and concurrent users.
-* **Integrated** seamlessly with other workloads and items in Microsoft Fabric.
+* **Scale to an unlimited** amount of data, from gigabytes to petabytes, with unlimited scale on concurrent queries and concurrent users.
+* **Integrate** seamlessly with other workloads and items in Microsoft Fabric.
 
 ## When to use Real-time Analytics?
 
@@ -55,6 +57,7 @@ See how these items work together in the end-to-end streaming data consumption a
 
 :::image type="content" source="media/real-time-analytics-overview/schematic-architecture.png" alt-text="Schematic image of architecture of Real-time Analytics integration with other workloads.":::
 
+* Create [Event Hubs cloud connections](get-data-event-hub.md) to stream data into Real-time Analytics
 * Data in OneLake can be accessed by Real-time Analytics in several ways:
     * Data from OneLake can be [queried from Real-time Analytics as a shortcut](onelake-shortcut.md)
     * Data from [OneLake can be loaded](get-data-onelake.md) into Real-time Analytics
@@ -66,6 +69,7 @@ See how these items work together in the end-to-end streaming data consumption a
 
 ## See also
 
-* [Get data from Azure Event Hubs](get-data-event-hub.md)
-* [Get data from a blob](get-data-blob.md)
+* Compare Real-time Analytics to Azure Data Explorer
+* [Tutorial: Real-time Analytics](realtime-analytics-tutorial.md)
 * [Query data in the KQL queryset](kusto-query-set.md)
+* [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context)
