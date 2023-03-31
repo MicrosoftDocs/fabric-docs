@@ -24,6 +24,9 @@ This Amazon S3 connector supports the following authentication types for copy ac
 |:---|:---|:---|
 |Basic| √| |
 
+>[!Note]
+>For the Amazon S3 connection of Dataflow Gen2, go to [Connect to Amazon S3 in dataflows](./connector-amazon-s3-dataflows.md).
+
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:

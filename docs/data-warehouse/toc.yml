@@ -49,8 +49,6 @@ items:
     href: create-measure.md
   - name: Hide elements from downstream reporting
     href: hide-elements-downstream-reporting.md
-  - name: Access default datasets
-    href: access-default-datasets.md
 - name: Load data
   items:
   - name: Ingesting data into the warehouse

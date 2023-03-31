@@ -11,9 +11,9 @@ ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 
 # Manage user access
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-**Applies to:** Warehouse and SQL Endpoint
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Through the workspace, you can add members to, and remove them from, workspace roles.
 

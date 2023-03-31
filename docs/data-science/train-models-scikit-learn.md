@@ -1,7 +1,7 @@
 ---
 title: How to train models with scikit-learn
 description: Learn how to train models with scikit-learn.
-ms.reviewer: mopeakande
+ms.reviewer: ssalgado
 ms.author: negust
 author: nelgson
 ms.topic: how-to

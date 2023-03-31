@@ -10,9 +10,9 @@ ms.date: 03/15/2023
 
 # Query a warehouse using SQL Server Management Studio (SSMS)
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-**Applies to:** Warehouse and SQL Endpoint
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 To get started, you must complete the following prerequisites:
 
