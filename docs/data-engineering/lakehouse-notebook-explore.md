@@ -10,8 +10,7 @@ ms.date: 02/24/2023
 
 # Explore the data in your Lakehouse with a notebook
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this tutorial, learn how to explore the data in your Lakehouse with a notebook.
 
