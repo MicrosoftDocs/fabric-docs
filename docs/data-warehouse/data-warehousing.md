@@ -34,7 +34,7 @@ For more information on the SQL Endpoint for the Lakehouse in [!INCLUDE [product
 
 The Warehouse functionality is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. 
 
-This warehouse is displayed in the [!INCLUDE product-name] portal with a warehouse icon, however under the Type column, you see the type listed as Warehouse. 
+This warehouse is displayed in the [!INCLUDE [product-name](../includes/product-name.md)] portal with a warehouse icon, however under the **Type** column, you see the type listed as Warehouse. 
 
 For more information on the warehouse in [!INCLUDE [product-name](../includes/product-name.md)], see [Warehouse](warehouse.md).
 
