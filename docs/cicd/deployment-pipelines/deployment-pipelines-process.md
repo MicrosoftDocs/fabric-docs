@@ -294,7 +294,7 @@ To enable automatic aggregations, follow the instructions in [configure the auto
 
 ### Hybrid tables
 
-Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview.md) that can have both import and direct query partitions. During a clean deployment, both the refresh policy and the hybrid table partitions are copied. When deploying to a pipeline stage that already has hybrid table partitions, only the refresh policy is copied. To update the partitions, refresh the table.
+Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview.md) that can have both import and direct query partitions. During a clean deployment, both the refresh policy and the hybrid table partitions are copied. When you're deploying to a pipeline stage that already has hybrid table partitions, only the refresh policy is copied. To update the partitions, refresh the table.
 
 ## Update content to Power BI apps
 
@@ -337,7 +337,7 @@ The lowest deployment pipeline permission is *pipeline admin*, and it's required
 
 ### Granted permissions
 
-When deploying Power BI items, the ownership of the deployed item may change. Review the table below to understand who can deploy each item and how the deployment affects the item's ownership.
+When you're deploying Power BI items, the ownership of the deployed item may change. Review the table below to understand who can deploy each item and how the deployment affects the item's ownership.
 
 |Power BI Item    |Required permission to deploy an existing item |Item ownership after a first time deployment |Item ownership after deployment to a stage with the Power BI item|
 |-----------------|---|---|---|
@@ -377,7 +377,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * Downloading a *.pbix* file after deployment isn't supported.
 
-* When deploying a Power BI item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment will fail.
+* When you're deploying a Power BI item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment will fail.
 
 * For a list of workspace limitations, see the [workspace assignment limitations](deployment-pipelines-assign.md#limitations).
 
@@ -397,7 +397,7 @@ This section lists most of the limitations in deployment pipelines.
 
 ### Dataflow limitations
 
-* When deploying a dataflow to an empty stage, deployment pipelines creates a new workspace and sets the dataflow storage to a Power BI blob storage. Blob storage is used even if the source workspace is configured to use Azure data lake storage Gen2 (ADLS Gen2).
+* When you're deploying a dataflow to an empty stage, deployment pipelines creates a new workspace and sets the dataflow storage to a Power BI blob storage. Blob storage is used even if the source workspace is configured to use Azure data lake storage Gen2 (ADLS Gen2).
 
 * Service principal isn't supported for dataflows.
 
