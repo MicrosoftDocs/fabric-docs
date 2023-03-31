@@ -14,11 +14,11 @@ items:
 - name: Workspaces
   items:
   - name: Workspaces
-    href: ../workspaces.md
+    href: workspaces.md
   - name: Create a workspace
-    href: ../create-workspaces.md
+    href: create-workspaces.md
   - name: Roles in workspaces
-    href: ../roles-workspaces.md
+    href: roles-workspaces.md
 - name: Feature 2
   items:
   - name: linktext2
