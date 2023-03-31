@@ -4,7 +4,7 @@ description: This article provides information about how to create an Amazon S3 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 02/23/2023
+ms.date: 03/24/2023
 ms.custom: template-how-to
 ---
 
@@ -18,14 +18,11 @@ This article outlines the steps to create an Amazon S3 connection.
 
 ## Supported authentication types
 
-This Amazon S3 connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+This Amazon S3 connector supports the following authentication types for copy activity.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Basic| √| |
-
->[!Note]
->For the Amazon S3 connection of Dataflow Gen2, see this article.
 
 ## Prerequisites
 
@@ -95,7 +92,7 @@ The following table contains connector properties that are supported in pipeline
 |**Connection name**|A name for your connection.|Yes||✓/|
 |**Connection type**|Select **Amazon S3** for your connection type.|Yes||✓/|
 |**Data source path**|Enter your account endpoint URL of your Amazon S3.|Yes||✓/|
-|**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
+|**Authentication**|See [Authentication](#authentication) |Yes||See [Authentication](#authentication)|
 
 ### Authentication
 
