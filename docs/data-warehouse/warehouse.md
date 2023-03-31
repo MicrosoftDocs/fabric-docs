@@ -58,4 +58,6 @@ To delete a warehouse, navigate to the workspace and find the warehouse you want
 
 ## Next steps
 
+- [Data warehousing overview](data-warehousing.md)
+- [Create a warehouse](create-warehouse.md)
 - [SQL Endpoint](sql-endpoint.md)

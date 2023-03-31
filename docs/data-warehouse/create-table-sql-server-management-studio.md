@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.date: 03/15/2023
 ---
 
-# Creating tables in warehouses using SQL Server Management Studio (SSMS)
+# Create tables in Synapse Data Warehouse using SQL Server Management Studio (SSMS)
+
+**Applies to:** [!INCLUDE[fabric-se](includes/applies-to-version/fabric-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
-
-**Applies to:** Warehouse
 
 To get started, you must complete the following prerequisites:
 
