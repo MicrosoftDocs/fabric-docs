@@ -22,8 +22,8 @@ Here are some useful tips about working with workspaces.
 
 - **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer.  Read more about [workspace roles](#roles-and-licenses) in this article.
 - **Contact list**: Specify who receives notification about workspace activity. Read more about [workspace contact lists](#workspace-contact-list) in this article.
-- **Create template apps**: You can create *template apps* in workspaces. Template apps are apps that you can distribute to customers outside of your organization. Those customers can then connect to their own data with your template app. Read the article about [template apps](../connect-data/service-template-apps-overview.md).
-- **Share datasets**: You can share datasets between workspaces. Read more about [shared datasets](../connect-data/service-datasets-across-workspaces.md).
+- **Create template apps**: You can create *template apps* in workspaces. Template apps are apps that you can distribute to customers outside of your organization. Those customers can then connect to their own data with your template app. Read the article about [template apps](/power-bi/connect-data/service-template-apps-overview).
+- **Share datasets**: You can share datasets between workspaces. Read more about [shared datasets](/power-bi/connect-data/service-datasets-across-workspaces).
 
 This article explains these features in more detail.
 
@@ -55,16 +55,16 @@ Roles let you manage who can do what in workspaces, so team members can collabor
 - **Licensing enforcement**: Publishing reports to a workspace enforces existing licensing rules. Users collaborating in workspaces or sharing content to others in the [!INCLUDE [product-name](../includes/product-name.md)] service need a [!INCLUDE [product-name](../includes/product-name.md)] Pro or Premium Per User (PPU) license. Users without a Pro or PPU license see the error "Only users with [!INCLUDE [product-name](../includes/product-name.md)] Pro licenses can publish to this workspace."
 - **Read-only workspaces**: The Viewer role in workspaces gives users read-only access to the content in a workspace.
 - **Users without a Pro or Premium Per User (PPU) license** can access a workspace if the workspace is in a [!INCLUDE [product-name](../includes/product-name.md)] Premium capacity, but only if they have the Viewer role.
-- **Allow users to export data**: Even users with the Viewer role in the workspace can export data if they have Build permission on the datasets in that workspace. Read more about [Build permission for datasets](../connect-data/service-datasets-build-permissions.md).
+- **Allow users to export data**: Even users with the Viewer role in the workspace can export data if they have Build permission on the datasets in that workspace. Read more about [Build permission for datasets](/power-bi/connect-data/service-datasets-build-permissions).
 - **Assign user groups to workspace roles**: You can add Active Directory security groups, distribution lists, or Microsoft 365 groups to these roles, for easier user management.
 
 See the article [Roles in workspaces](roles-workspaces.md) for more details about the different roles.
 
 ## Administering and auditing workspaces
 
-Administration for workspaces is in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins decide who in an organization can create workspaces and distribute apps. Read about [managing users' ability to create workspaces](../admin/service-admin-portal-workspace.md#create-workspaces-new-workspace-experience) in the "Workspace settings" article.
+Administration for workspaces is in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins decide who in an organization can create workspaces and distribute apps. Read about [managing users' ability to create workspaces](../admin/admin-portal-workspace.md#create-workspaces-new-workspace-experience) in the "Workspace settings" article.
 
-Admins can also see the state of all the workspaces in their organization. They can manage, recover, and even delete workspaces. Read about [managing the workspaces themselves](../admin/service-admin-portal-workspaces.md) in the "Admin portal" article.
+Admins can also see the state of all the workspaces in their organization. They can manage, recover, and even delete workspaces. Read about [managing the workspaces themselves](../admin/admin-portal-workspaces.md) in the "Admin portal" article.
 
 ### Auditing
 
@@ -77,7 +77,7 @@ Admins can also see the state of all the workspaces in their organization. They 
 | Updated [!INCLUDE [product-name](../includes/product-name.md)] folder | UpdateFolder |
 | Updated [!INCLUDE [product-name](../includes/product-name.md)] folder access| UpdateFolderAccess |
 
-Read more about [[!INCLUDE [product-name](../includes/product-name.md)] auditing](../admin/service-admin-auditing.md).
+Read more about [[!INCLUDE [product-name](../includes/product-name.md)] auditing](/power-bi/admin/service-admin-auditing).
 
 ## Considerations and limitations
 
