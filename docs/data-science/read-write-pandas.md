@@ -1,7 +1,7 @@
 ---
 title: Read and write data with Pandas
 description: Learn how to read and write data with Pandas from Lakehouse.
-ms.reviewer: mopeakande
+ms.reviewer: franksolomon
 ms.author: negust
 author: nelgson
 ms.topic: how-to
@@ -17,7 +17,7 @@ Pandas is the most popular Python library for data exploration and processing. I
 
 ## Convert Spark dataframe to Pandas
 
-Before we list the various ways, you can leverage Pandas to read and write different file types, let’s first look at how you can convert a Spark dataframe to a pandas dataframe:
+Before we list the various ways, you can leverage Pandas to read and write different file types, let's first look at how you can convert a Spark dataframe to a pandas dataframe:
 
 ```Python
 pandas_df = spark_df.toPandas() 
@@ -33,7 +33,7 @@ The below examples show how you can read and write various file formats with Pan
 
 ## Load data into Pandas from UI
 
-Once you've attached a Lakehouse to your Notebook, you can explore the data in the Lakehouse. This allows you to select a file in your Lakehouse, for example a CSV file, and choose to “Load data” into a Pandas dataframe.
+Once you've attached a Lakehouse to your Notebook, you can explore the data in the Lakehouse. This allows you to select a file in your Lakehouse, for example a CSV file, and choose to "Load data" into a Pandas dataframe.
 
 :::image type="content" source="media/read-write-pandas/load-data-pandas-dataframe.png" alt-text="Screenshot showing where to select options to load data into a Pandas dataframe." lightbox="media/read-write-pandas/load-data-pandas-dataframe.png":::
 
@@ -64,7 +64,7 @@ df.to_csv("/<Lakehouse path>/filename.csv")
 Import pandas as pd 
  
 # Load data into pandas DataFrame from Parquet 
-df = pandas.read_parquet(“/<Lakehouse path>/filename.parquet") 
+df = pandas.read_parquet("/<Lakehouse path>/filename.parquet") 
 display(df) 
 ```
 
@@ -83,7 +83,7 @@ df.to_parquet("/<Lakehouse path>/filename.parquet")
 Import pandas as pd 
  
 # Load data into pandas DataFrame from Excel 
-df = pandas.read_excel(“/<Lakehouse path>/filename.xlsx") 
+df = pandas.read_excel("/<Lakehouse path>/filename.xlsx") 
 display(df) 
 ```
 
@@ -101,7 +101,7 @@ df.to_excel("/<Lakehouse path>/filename.xlsx")
 Import pandas as pd 
  
 # Load data into pandas DataFrame from json 
-df = pandas.read_json(“/<Lakehouse path>/filename.json") 
+df = pandas.read_json("/<Lakehouse path>/filename.json") 
  
 display(df) 
 ```

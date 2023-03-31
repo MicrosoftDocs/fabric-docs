@@ -1,7 +1,7 @@
 ---
 title: How to train models with PyTorch
 description: Learn how to train models with PyTorch.
-ms.reviewer: mopeakande
+ms.reviewer: ssalgado
 ms.author: negust
 author: nelgson
 ms.topic: how-to
