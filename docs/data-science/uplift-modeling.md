@@ -1,7 +1,7 @@
 ---
 title: Create, train, and evaluate an uplift model
 description: AI sample for creating, training, and evaluating an uplift model.
-ms.reviewer: mopeakande
+ms.reviewer: larryfr
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial

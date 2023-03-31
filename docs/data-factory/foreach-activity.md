@@ -10,7 +10,9 @@ ms.date: 03/17/2023
 
 # Transform data with a ForEach activity
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 The ForEach Activity defines a repeating control flow in a [!INCLUDE [product-name](../includes/product-name.md)] pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to a ForEach looping structure in programming languages.
 
@@ -25,7 +27,7 @@ To get started, you must complete the following prerequisites:
 - A tenant account with an active subscription. [Create an account for free](/trident-docs-private-preview/synapse-data-integration/url).
 - A workspace is created.
 
-### General settings
+### Creating the activity
 
 1. Create a new pipeline in your workspace.
 1. Search for **ForEach** in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. If you can't see it initially, use the arrow on the right side of the activities toolbar to scroll to the right to find it.

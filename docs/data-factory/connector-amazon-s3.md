@@ -4,26 +4,28 @@ description: This article provides information about how to create an Amazon S3 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 02/23/2023
+ms.date: 03/24/2023
 ms.custom: template-how-to
 ---
 
 # How to create an Amazon S3 connection
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 This article outlines the steps to create an Amazon S3 connection.
 
 ## Supported authentication types
 
-This Amazon S3 connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+This Amazon S3 connector supports the following authentication types for copy activity.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Basic| √| |
 
 >[!Note]
->For the Amazon S3 connection of Dataflow Gen2, see this article.
+>For the Amazon S3 connection of Dataflow Gen2, go to [Connect to Amazon S3 in dataflows](./connector-amazon-s3-dataflows.md).
 
 ## Prerequisites
 
@@ -93,7 +95,7 @@ The following table contains connector properties that are supported in pipeline
 |**Connection name**|A name for your connection.|Yes||✓/|
 |**Connection type**|Select **Amazon S3** for your connection type.|Yes||✓/|
 |**Data source path**|Enter your account endpoint URL of your Amazon S3.|Yes||✓/|
-|**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
+|**Authentication**|See [Authentication](#authentication) |Yes||See [Authentication](#authentication)|
 
 ### Authentication
 

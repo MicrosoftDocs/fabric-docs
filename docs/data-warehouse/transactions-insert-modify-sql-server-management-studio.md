@@ -10,9 +10,9 @@ ms.date: 03/15/2023
 
 # Transactions, inserting and modifying data in warehouse tables using SQL Server Management Studio (SSMS)
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-**Applies to:** Warehouse
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 You can modify data that is stored in tables in a warehouse. We'll also show how you can use transactions to group those changes together. Transactions allow you to commit all tables or none of the tables that you're changing data in. For example, if you're changing details about a purchase order that affects three tables, you can group those changes into a transaction so that when those tables are queried, they either all have that change or none of them do. This is a common practice for when you need to ensure your data is consistent across multiple tables. See T-SQL Surface Area for a listing of unsupported T-SQL commands.
 

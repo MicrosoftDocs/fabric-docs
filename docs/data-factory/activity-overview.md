@@ -10,7 +10,9 @@ ms.date: 01/27/2023
 
 # Activity overview
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 This article helps you understand activities in [!INCLUDE [product-name](../includes/product-name.md)] and use them to construct end-to-end data-driven workflows for your data movement and data processing scenarios.
 
@@ -77,6 +79,22 @@ Use these steps to add and configure activities in a [!INCLUDE [product-name](..
 1. Each activity also contains custom properties specific to its configuration on other tabs in the properties pane.
 
 :::image type="content" source="media/activity-overview/activity-ui.png" alt-text="Screenshot showing the pipeline editor with the Activities tab, toolbar, a copy activity, and the General tab of its properties, all highlighted.":::
+
+## General settings
+
+When you add a new activity to a pipeline and select it, you'll see its properties panes in the area at the bottom of the screen. These properties panes include **General**, **Settings**, and sometimes other panes as well.
+
+   :::image type="content" source="media/activity-overview/general-settings.png" alt-text="Screenshot showing the General settings tab of an activity.":::
+
+The general settings will always include **Name** and **Description** fields for every activity.  Some activities also include the following:
+
+|Setting  |Description  |
+|---------|---------|
+|Timeout |The maximum amount of time an activity can run. The default is 12 hours, and the maximum amount of time allowed is seven days. The format for the timeout is in D.HH:MM:SS. |
+|Retry |Maximum number of retry attempts. |
+|(Advanced properties) Retry interval (sec) |The number of seconds between each retry attempt. |
+|(Advanced properties) Secure output |When checked, output from the activity isn't captured in logging. |
+|(Advanced properties) Secure input |The number of seconds between each retry attempt. |
 
 ## Next steps
 
