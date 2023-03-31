@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: Data Warehouseing in Microsoft Fabric documentation # < 60 chars
+title: Data Warehousing in Microsoft Fabric documentation # < 60 chars
 summary: summary # < 160 chars
 
 metadata:
-  title: Data Warehouseing in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Data Warehouseing using the SQL Endpoint and Synapse Data Warehouse in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
+  title: Data Warehousing in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Data Warehousing using the SQL Endpoint and Synapse Data Warehouse in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
 #   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
   ms.topic: landing-page # Required
