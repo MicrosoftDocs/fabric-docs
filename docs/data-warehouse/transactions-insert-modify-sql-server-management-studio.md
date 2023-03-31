@@ -23,7 +23,7 @@ As you would expect, Synapse Data Warehouse in Microsoft Fabric supports multi-s
 Syanpse Data Warehouse implements ACID transactions.  The only isolation level supported by Synapse Data Warehouse is SNAPSHOT ISOLATION.
 
 > [!NOTE]
-> If you use T-SQL to change your isolation level, it the change is ignored are Query Execution time and SNAPSHOT ISOLATION is applied.
+> If you use T-SQL to change your isolation level, it the change is ignored at Query Execution time and SNAPSHOT ISOLATION is applied.
 
 ## Cross Database Query Transaction Support
 
