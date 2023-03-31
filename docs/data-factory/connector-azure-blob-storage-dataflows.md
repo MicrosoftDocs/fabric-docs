@@ -12,9 +12,9 @@ ms.custom: template-how-to
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
-You can connect to Azure Blob Storage files in gen2 dataflows using the Azure Blob Storage connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+You can connect to Azure Blob Storage files in Dataflows Gen2 using the Azure Blob Storage connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Connect to Azure Blob Storage data
 
@@ -50,5 +50,5 @@ For more advanced information about connecting to your data using the Azure Blob
 
 ## Next steps
 
-- [How to create Azure Blob connection](connector-azure-blob-storage.md)
+- [How to create an Azure Blob connection](connector-azure-blob-storage.md)
 - [Copy data in Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)
