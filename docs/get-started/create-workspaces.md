@@ -20,7 +20,7 @@ This article explains how to create *workspaces*, spaces to collaborate with col
    
      ![Screenshot of Create workspace.](media/create-workspaces/power-bi-workspace-create.png)
 
-2. Give the workspace a unique name. If the name isn't available, edit it to come up with a name that's unique.
+1. Give the workspace a unique name. If the name isn't available, edit it to come up with a name that's unique.
    
     When you create an app from the workspace, by default it will have the same name and icon as the workspace. You can change both when you create the app.
    
@@ -53,16 +53,18 @@ You can specify which users receive notification about issues occurring in the w
 
     ![Screenshot of Workspace settings.](media/create-workspaces/power-bi-workspace-new-settings.png)
 
-2. Under **Advanced**, **Contact list**, accept the default, **Workspace admins**, or add your own list of **Specific users or groups**. 
+1. Under **Advanced**, **Contact list**, accept the default, **Workspace admins**, or add your own list of **Specific users or groups**. 
 
     ![Screenshot of Workspace contacts.](media/create-workspaces/power-bi-workspace-contacts.png)
 
-3. Select **Save**.
+1. Select **Save**.
 
 ### Set a workspace OneDrive
 
 The Workspace OneDrive feature allows you to configure a Microsoft 365 Group whose SharePoint document library is available to workspace users. You create the Group *outside* of [!INCLUDE [product-name](../includes/product-name.md)] first, with one available method being from OneDrive. Read about creating a [OneDrive shared library](https://support.microsoft.com/office/create-a-new-shared-library-from-onedrive-for-work-or-school-345c8599-05d8-4bf8-9355-2b5cfabe04d0).
-NOTE: It's important to note that the creation of Microsoft 365 Groups may be restricted in your environment, and/or the ability to create them from your OneDrive site may be disabled. If this is the case, speak with your IT department.
+
+> [!NOTE]
+> It's important to note that the creation of Microsoft 365 Groups may be restricted in your environment, and/or the ability to create them from your OneDrive site may be disabled. If this is the case, speak with your IT department.
 
 [!INCLUDE [product-name](../includes/product-name.md)] doesn't synchronize permissions between users or groups with workspace access, and users or groups with Microsoft 365 Group membership. A best practice is to give [access to the workspace](service-give-access-new-workspaces.md) to the same Microsoft 365 Group whose file storage you configured. Then manage workspace access by managing membership of the Microsoft 365 Group.
 
@@ -74,11 +76,11 @@ NOTE: It's important to note that the creation of Microsoft 365 Groups may be re
 
     ![Screenshot of Workspace settings.](media/create-workspaces/power-bi-workspace-new-settings.png)
 
-2. Under **Advanced** > **Workspace OneDrive**, type the name of the Microsoft 365 group that you created earlier. Type just the name, not the URL. [!INCLUDE [product-name](../includes/product-name.md)] automatically picks up the OneDrive for the group.
+1. Under **Advanced** > **Workspace OneDrive**, type the name of the Microsoft 365 group that you created earlier. Type just the name, not the URL. [!INCLUDE [product-name](../includes/product-name.md)] automatically picks up the OneDrive for the group.
 
     ![Screenshot of Specify a OneDrive location.](media/create-workspaces/power-bi-new-workspace-onedrive.png)
 
-3. Select **Save**.
+1. Select **Save**.
 
 **Access the workspace OneDrive location**
 
@@ -92,15 +94,13 @@ After you've configured the OneDrive location, you get to it in the same way you
 
 1. Select the workspace OneDrive, for example, **OneDrive - Sales and Marketing**.
 
-
-
 1. Navigate to the folder containing your [!INCLUDE [product-name](../includes/product-name.md)] files. Select the file, then select **Connect**.
 
 1. If [!INCLUDE [product-name](../includes/product-name.md)] doesn't automatically detect the workspace OneDrive, on the **Get data** page, select **SharePoint - Team Sites**.
 
     ![Screenshot of SharePoint - Team Sites, get data.](media/create-workspaces/workspace-get-data-sharepoint-team-sites.png)
 
-2. Type the URL of the shared library you created earlier, or select **Connect** to see the content available to you.
+1. Type the URL of the shared library you created earlier, or select **Connect** to see the content available to you.
 
     :::image type="content" source="media/create-workspaces/workspace-sharepoint-site-url.png" alt-text="Screenshot of Type the URL of the shared library you created earlier, or select Connect.":::
 
@@ -121,7 +121,7 @@ By default, only workspace Admins and Members can create, publish and update the
     In the nav pane, select the arrow next to **Workspaces**, select **More options** (...) next to the workspace name > **Workspace settings**. The **Settings** pane opens.
 
     ![Screenshot of Workspace settings.](media/create-workspaces/power-bi-workspace-new-settings.png)
-2. Under **Advanced**, expand **Security settings**. Select **Allow contributors to update the app for this workspace**. 
+1. Under **Advanced**, expand **Security settings**. Select **Allow contributors to update the app for this workspace**. 
 
 When enabled, contributors can:
 * Update app metadata like name, icon, description, support site, and color.
