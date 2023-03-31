@@ -1,6 +1,6 @@
 ---
-title: Creating tables in warehouses using SSMS
-description: Learn how to use SSMS to create tables in your warehouse.
+title: Create tables in Synapse data warehouses using SSMS
+description: Learn how to use SSMS to create tables in your Synapse Data Warehouse in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: kecona
 author: KevinConanMSFT
@@ -51,4 +51,4 @@ At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL s
 
 ## Next steps
 
-- [Transactions and modify tables with SSMS](transactions-insert-modify-sql-server-management-studio.md)
+- [Transactions and modify tables with SSMS](transactions.md)
