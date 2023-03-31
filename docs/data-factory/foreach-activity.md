@@ -27,7 +27,7 @@ To get started, you must complete the following prerequisites:
 - A tenant account with an active subscription. [Create an account for free](/trident-docs-private-preview/synapse-data-integration/url).
 - A workspace is created.
 
-### General settings
+### Creating the activity
 
 1. Create a new pipeline in your workspace.
 1. Search for **ForEach** in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. If you can't see it initially, use the arrow on the right side of the activities toolbar to scroll to the right to find it.

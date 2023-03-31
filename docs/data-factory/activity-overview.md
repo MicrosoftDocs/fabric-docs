@@ -80,6 +80,22 @@ Use these steps to add and configure activities in a [!INCLUDE [product-name](..
 
 :::image type="content" source="media/activity-overview/activity-ui.png" alt-text="Screenshot showing the pipeline editor with the Activities tab, toolbar, a copy activity, and the General tab of its properties, all highlighted.":::
 
+## General settings
+
+When you add a new activity to a pipeline and select it, you'll see its properties panes in the area at the bottom of the screen. These properties panes include **General**, **Settings**, and sometimes other panes as well.
+
+   :::image type="content" source="media/activity-overview/general-settings.png" alt-text="Screenshot showing the General settings tab of an activity.":::
+
+The general settings will always include **Name** and **Description** fields for every activity.  Some activities also include the following:
+
+|Setting  |Description  |
+|---------|---------|
+|Timeout |The maximum amount of time an activity can run. The default is 12 hours, and the maximum amount of time allowed is seven days. The format for the timeout is in D.HH:MM:SS. |
+|Retry |Maximum number of retry attempts. |
+|(Advanced properties) Retry interval (sec) |The number of seconds between each retry attempt. |
+|(Advanced properties) Secure output |When checked, output from the activity isn't captured in logging. |
+|(Advanced properties) Secure input |The number of seconds between each retry attempt. |
+
 ## Next steps
 
 [Create your first pipeline](create-first-pipeline-with-sample-data.md)
