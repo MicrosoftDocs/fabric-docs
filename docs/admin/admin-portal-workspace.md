@@ -12,7 +12,7 @@ LocalizationGroup: Administration
 
 # Workspace tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](service-admin-portal-about-tenant-settings.md).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
 
 ## Create workspaces (new workspace experience)
 
@@ -31,7 +31,7 @@ The admin portal has another section of settings about the workspaces in your te
 
 **Publish content packs and apps**
 
-In the admin portal, you also control which users have permissions to distribute apps to the organization. See [Publish content packs and apps to the entire organization](service-admin-portal-content-pack-app.md#publish-content-packs-and-apps-to-the-entire-organization) in this article for details.
+In the admin portal, you also control which users have permissions to distribute apps to the organization. See [Publish content packs and apps to the entire organization](/power-bi/admin/service-admin-portal-content-pack-app#publish-content-packs-and-apps-to-the-entire-organization) in this article for details.
 
 ## Use datasets across workspaces
 
@@ -54,7 +54,7 @@ Additional notes on deletion of empty workspaces:
 
 ## Users can reassign personal workspaces 
 
-Personal workspaces are the My workspaces that every user has for their personal content. [!INCLUDE [product-name](../includes/product-name.md)] and capacity admins can [designate a preferred capacity for My workspaces](../enterprise/service-admin-premium-manage.md#designate-a-default-capacity-for-my-workspaces). By default, however, My workspace owners can still change the capacity assignment of their workspace. If a [!INCLUDE [product-name](../includes/product-name.md)] or capacity admin designates a Premium capacity as the default capacity for My workspaces, but a My workspace owner then changes that capacity assignment back to shared capacity, this could result in non-compliance with data residency requirements.
+Personal workspaces are the My workspaces that every user has for their personal content. [!INCLUDE [product-name](../includes/product-name.md)] and capacity admins can [designate a preferred capacity for My workspaces](/power-bi/enterprise/service-admin-premium-manage#designate-a-default-capacity-for-my-workspaces). By default, however, My workspace owners can still change the capacity assignment of their workspace. If a [!INCLUDE [product-name](../includes/product-name.md)] or capacity admin designates a Premium capacity as the default capacity for My workspaces, but a My workspace owner then changes that capacity assignment back to shared capacity, this could result in non-compliance with data residency requirements.
 
 To prevent such a scenario, the [!INCLUDE [product-name](../includes/product-name.md)] admin can turn off the **Users can reassign personal workspaces** tenant setting. When this setting is off, My workspace owners can't change the capacity assignment of their My workspace.
 
@@ -67,4 +67,4 @@ For more information, see [Prevent My workspace owners from reassigning their My
 
 ## Next steps
 
-* [About tenant settings](service-admin-portal-about-tenant-settings.md)
+* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
