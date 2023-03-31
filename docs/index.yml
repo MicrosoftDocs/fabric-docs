@@ -77,18 +77,18 @@ conceptualContent:
     # Card
     - title: Unify your data storage with OneLake
       links:
-        - url: placeholder.md
+        - url: onelake/onelake-overview.md
           itemType: concept
           text: What is OneLake?
-        - url: placeholder.md
+        - url: onelake/onelake-shortcuts.md
           itemType: concept
           text: What are shortcuts?
-        - url: placeholder.md
+        - url: onelake/create-lakehouse-onelake.md
           itemType: get-started
-          text: Get started with OneLake
+          text: Create a lakehouse with OneLake
       # footerLink (optional)
       footerLink:
-        url: get-started/index.yml
+        url: onelake/index.yml
         text: See more
     # Card
     - title: Power BI and Microsoft Fabric integration 
@@ -246,13 +246,13 @@ conceptualContent:
     # Card
     - title: Enterprise
       links:
-        - url: placeholder.md
+        - url: enterprise/capacity-and-skus.md
           itemType: overview
           text: Capacity and SKUs
-        - url: placeholder.md
+        - url: enterprise/autoscale.md
           itemType: how-to-guide
           text: Scale your SKU size
-        - url: placeholder.md
+        - url: enterprise/billing-reports.md
           itemType: how-to-guide
           text: Create billing reports
       # footerLink (optional)
