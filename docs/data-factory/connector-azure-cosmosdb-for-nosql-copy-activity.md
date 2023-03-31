@@ -62,7 +62,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. For more information, go to [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).
 
-    :::image type="content" source="./media/connector-cosmosdbnosql/additional-columns.png" alt-text="Screenshot showing additional columns.":::
+    :::image type="content" source="./media/connector-cosmosdbnosql/additional-columns.png" alt-text="Screenshot showing additional columns." lightbox="./media/connector-cosmosdbnosql/additional-columns.png":::
 
 ## Destination
 
