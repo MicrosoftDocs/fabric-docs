@@ -10,7 +10,9 @@ ms.date: 01/27/2023
 
 # Data source management
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 [!INCLUDE [product-name](../includes/product-name.md)] supports many on-premises and cloud data sources, and each source has its own requirements. To learn how to add and manage an on-premises data source, go to [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources). In this article, you'll learn how to add an Azure SQL Server as a cloud data source. The steps are similar for other data sources.
 
