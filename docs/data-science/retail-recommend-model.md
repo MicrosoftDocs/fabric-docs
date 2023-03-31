@@ -1,7 +1,7 @@
 ---
 title: Create, evaluate, and deploy a recommendation system
 description: An e2e sample for building a retail book recommender.
-ms.reviewer: mopeakande
+ms.reviewer: lagayhar
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
@@ -18,7 +18,7 @@ There are different types of recommendation algorithms, we'll use a model based 
 
 :::image type="content" source="media/retail-recommend-model/recommenders-matrix-factorisation.png" alt-text="Chart showing different types of recommendation algorithms." lightbox="media/retail-recommend-model/recommenders-matrix-factorisation.png":::
 
-ALS attempts to estimate the ratings matrix R as the product of two lower-rank matrices, X and Y, i.e. X * Yt = R. Typically these approximations are called ‘factor’ matrices.
+ALS attempts to estimate the ratings matrix R as the product of two lower-rank matrices, X and Y, i.e. X * Yt = R. Typically these approximations are called 'factor' matrices.
 
 The general approach is iterative. During each iteration, one of the factor matrices is held constant, while the other is solved for using least squares. The newly solved factor matrix is then held constant while solving for the other factor matrix.
 
