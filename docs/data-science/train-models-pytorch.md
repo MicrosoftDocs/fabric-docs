@@ -11,8 +11,7 @@ ms.search.form: Train models with PyTorch
 
 # How to train models with PyTorch
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [PyTorch](https://pytorch.org/) is a machine learning framework based on the Torch library. It's frequently used for applications such as computer vision and natural language processing. In this article, we'll go through an example of how you can train and track the iterations of your PyTorch model.
 
