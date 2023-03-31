@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/23/2023
+ms.date: 03/24/2023
 ms.custom: template-how-to 
 ---
 
@@ -12,13 +12,13 @@ ms.custom: template-how-to
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This Amazon S3 connector is supported in Data Factory for Microsoft Fabric with the following capabilities.
+This Amazon S3 connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Basic |
+| **Copy activity (source/-)** | None | Basic |
 | **Lookup activity** | None | Basic |
 | **GetMetadata activity** | None | Basic |
 | **Delete activity** | None | Basic |
