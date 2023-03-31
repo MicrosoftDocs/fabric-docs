@@ -1,5 +1,5 @@
 ---
-title: Tables in Synapse data warehouses
+title: Tables in Synapse Data Warehouses
 description: Learn about tables in your Synapse Data Warehouse in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: kecona
