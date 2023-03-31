@@ -15,6 +15,8 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse workspace as Delta tables, a SQL-based experience containing tables that reference your Delta Lake data is automatically created in that workspace for you, called the SQL Endpoint. Every Delta Lake table from a Lakehouse is represented as one table.
 
+Every Lakehouse has one SQL Endpoint and each workspace can have more than one Lakehouse.
+
 :::image type="content" source="media\sql-endpoint\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and Delta Lake tables." lightbox="media\sql-endpoint\lakehouse-delta-tables.png":::
 
 > [!IMPORTANT]
