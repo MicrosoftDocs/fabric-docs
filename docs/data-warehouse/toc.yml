@@ -64,7 +64,7 @@ items:
   - name: Transactions
     href: transactions.md
   - name: Create a table with SSMS
-    href: create-table-sql-server-management-studio.md
+    href: create-table.md
   - name: Query a Synapse Data Warehouse
     href: query-warehouse.md
   - name: Query using Visual Query editor

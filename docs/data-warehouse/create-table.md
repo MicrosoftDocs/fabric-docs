@@ -20,7 +20,7 @@ To get started, you must complete the following prerequisites:
 - Have a warehouse connected to SSMS via T-SQL Connection String (see [Connectivity](connectivity.md)).
 - Choose your query tool. This tutorial uses SQL Server Management Studio (SSMS), but you can use any T-SQL querying tool.
     - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) (use the latest version available).
-    - [Download Azure Data Studio](http://aka.ms/azuredatastudio).
+    - [Download Azure Data Studio](https://aka.ms/azuredatastudio).
     - Use the [SQL query editor in the Fabric portal](sql-query-editor.md).
 
 For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], see [Connectivity](connectivity.md). 

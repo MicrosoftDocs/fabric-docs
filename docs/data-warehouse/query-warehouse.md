@@ -19,7 +19,7 @@ To get started with this tutorial, check the following prerequisites:
 - Connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] via T-SQL connection string. For more information, see [Connectivity](connectivity.md).
 - Choose your querying tool. This article provides examples in SQL Server Management Studio (SSMS).
     - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
-    - [Download Azure Data Studio](http://aka.ms/azuredatastudio).
+    - [Download Azure Data Studio](https://aka.ms/azuredatastudio).
     - Use the [SQL query editor in the Fabric portal](sql-query-editor.md).
     - Use the [Query using the Visual Query editor](visual-query-editor.md).
 

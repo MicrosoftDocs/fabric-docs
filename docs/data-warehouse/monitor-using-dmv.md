@@ -91,4 +91,4 @@ KILL 101
 
 ## Next steps
 
-- [Create a table with SSMS](create-table-sql-server-management-studio.md)
+- [Create a table with SSMS](create-table.md)
