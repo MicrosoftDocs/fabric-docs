@@ -179,7 +179,7 @@ conceptualContent:
     # Card
     - title: "Perform data analysis with Synapse Real-time Analytics"
       links:
-        - url: placeholder.md
+        - url: real-time-analytics/overview.md
           itemType: overview
           text: What is Real-time Analytics?
         - url: placeholder.md
