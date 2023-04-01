@@ -1,5 +1,5 @@
 ---
-title: Transactions for inserting and modifying data in Synapse Data Warehouse tables.
+title: Transactions for inserting and modifying data in Synapse Data Warehouse tables
 description: Learn how to use transactions and how to insert and modify data in Synapse Data Warehouse tables.
 ms.reviewer: wiassaf
 ms.author: kecona
@@ -23,7 +23,7 @@ You can modify data that is stored in tables in a Synapse Data Warehouse. We'll 
 
 Synapse Data Warehouse in Microsoft Fabric supports transactions that span across databases that are within the same workspace including reading from the SQL Endpoint for Lakehouses. Every Lakehouse has one SQL Endpoint and each workspace can have more than one Lakehouse.
 
-## DDL support within Transactions
+## DDL support within transactions
 
 Synapse Data Warehouse in Microsoft Fabric supports DDL such as CREATE TABLE inside user-defined transactions.
 
@@ -43,7 +43,7 @@ Conflicts between statements are evaluated at the end of the transaction.  The f
 
 INSERT statements create new parquet files, so they will not conflict with other transactions except for DDL because the table's schema could be changing.
 
-## Transaction Logging
+## Transaction logging
 
 Transaction logging in Synapse Data Warehouse in Microsoft Fabric is simpler as it is at the parquet file level instead of row level.  This is because parquet files are immutable (they cannot be changed). A rollback results in pointing back to the previous parquet files.  The benefits of this change are that transaction logging and rollbacks are faster.
 
