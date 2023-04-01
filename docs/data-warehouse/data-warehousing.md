@@ -5,11 +5,11 @@ ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
 ms.topic: overview
-ms.date: 03/27/2023
+ms.date: 03/31/2023
 ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspace overview
 ---
 
-# What is Data warehousing in Microsoft Fabric?
+# What is data warehousing in Microsoft Fabric?
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -46,13 +46,11 @@ For more information and how-to connect, see [Connectivity](connectivity.md).
 
 ## Prerequisites and known limitations
 
-1. Currently, Datamarts must be enabled at the tenant level and / or for any users of the [!INCLUDE [product-name](../includes/product-name.md)] preview for the warehousing features to be available.
+1. For more information on loading your Lakehouse, see [Get data experience for Lakehouse](../data-engineering/load-data-lakehouse.md). 
 
-1. This documentation assumes that the user has already loaded data into a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse and is ready to explore their data via any SQL based analysis or reporting tool. If needed, detailed instructions for loading data in your Lakehouse can be found in the Data Engineering documentation. However, there are some known limitations specific to warehouse workloads that you may encounter if you're loading new data sets for exploring warehouse capabilities:
+1. When you create a Lakehouse table from a pipeline, if the pipeline errors out before inserting rows into the Lakehouse table, the table will be corrupt. Go back to your Lakehouse, delete the table folder from "lake view" and then reapply your pipeline.
 
-   - When you create a Lakehouse table from a pipeline, if the pipeline errors out before inserting rows into the Lakehouse table, the table will be corrupt. Go back to your Lakehouse, delete the table folder from "lake view" and then reapply your pipeline.
-
-   - If you're loading parquet files generated from Apache Spark 2.x, data pipelines aren't gracefully handling the upgrade for datetime fields discussed here and Lakehouse tables will be corrupt. For this scenario, as a workaround, use notebooks to load Spark 2.x generated parquet files.
+1. If you're loading parquet files generated from Apache Spark 2.x, data pipelines aren't gracefully handling the upgrade for datetime fields discussed here and Lakehouse tables will be corrupt. Use notebooks to load Spark 2.x generated parquet files. For example:
 
       ```python
       spark.conf.set("spark.sql.parquet.int96RebaseModeInWrite","LEGACY")
@@ -60,9 +58,9 @@ For more information and how-to connect, see [Connectivity](connectivity.md).
       df.write.format("delta").save("Tables/" + tableName)
       ```
 
-   - If you're loading partitioned data, partition discovery in data pipelines isn't properly creating delta format Lakehouse tables. Tables may appear to work in Spark but during metadata synchronization, to warehouse they'll be corrupt. For this scenario, as a workaround, use notebooks as mentioned in (1b) to load partitioned source data.
+   - If you're loading partitioned data, partition discovery in data pipelines isn't properly creating delta format Lakehouse tables. Tables may appear to work in Spark but during metadata synchronization, to warehouse they'll be corrupt. As a workaround, use notebooks to load partitioned source data.
 
-   - Unlike (1c), if a data engineering team has already loaded data into your Lakehouse and they explicitly partitioned the data with code like `df.write.partitionBy("FiscalMonthID").format("delta").save("Tables/" + tableName)`, a folder structure is introduced into your Lakehouse and columns in the partitionBy function won't be present in the warehouse. To avoid this issue, load data as shown previously in (1b) without the partitionBy function.
+   - If your Lakehouse has data and has explicitly partitioned the data with code like `df.write.partitionBy("FiscalMonthID").format("delta").save("Tables/" + tableName)`, a folder structure is introduced into your Lakehouse and columns in the `partitionBy` function won't be present in the warehouse. To avoid this issue, load data without the `partitionBy` function.
 
 1. You can't query tables with renamed columns.
 
@@ -72,15 +70,13 @@ For more information and how-to connect, see [Connectivity](connectivity.md).
 
 1. The following limitations are regarding query lifecycle DMVs:
 
-   - When querying `sys.dm_exec_connections`, you may encounter the following error, even if you're an Admin of your workspace.
-
-      ***Error Message:*** *The user doesn't have the external policy action 'Microsoft.Sql/Sqlservers/SystemViewsAndFunctions/ServerPerformanceState/Rows/Select' or permission 'VIEW SERVER PERFORMANCE STATE' to perform this action.*
+   - When querying `sys.dm_exec_connections`, you may encounter the following error, even if you're an Admin of your workspace: `Error Message: The user doesn't have the external policy action 'Microsoft.Sql/Sqlservers/SystemViewsAndFunctions/ServerPerformanceState/Rows/Select' or permission 'VIEW SERVER PERFORMANCE STATE' to perform this action.`
 
    - The dynamic management view `sys.dm_exec_sessions` provides a limited view as not all active query results will display.
 
 1. Permissions:
 
-   - The user who created the Lakehouse will have "dbo" permissions, everyone else is limited to "Select".
+   - By default, the user who created the Lakehouse will have "dbo" permissions, everyone else is limited to read-only SELECT permission.
 
    - GRANT, REVOKE, DENY commands are currently not supported.
 
@@ -111,9 +107,9 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Schema and Table names can't contain / or \
 - SELECT - FOR (except JSON)
 - SELECT - INTO
-- sp_showmemo_xml
-- sp_showspaceused
-- Sp_rename
+- `sp_showmemo_xml`
+- `sp_showspaceused`
+- `sp_rename`
 - Temp Tables
 - Triggers
 - TRUNCATE

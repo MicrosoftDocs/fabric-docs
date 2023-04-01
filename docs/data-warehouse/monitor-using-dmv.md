@@ -28,7 +28,7 @@ These three DMVs provide detailed insight on the following scenarios:
 
 - Who is the user running the session?
 - When was the session started by the user?
-- What's the ID of the connection to the data warehouse item and the session that is running the request?
+- What's the ID of the connection to the data [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and the session that is running the request?
 - How many queries are actively running?
 - Which queries are long running?
 
@@ -91,4 +91,4 @@ KILL 101
 
 ## Next steps
 
-- [Create a table with SSMS](create-table-sql-server-management-studio.md)
+- [Create a table with SSMS](create-table.md)
