@@ -33,6 +33,12 @@ items:
     href: admin-audit-log.md
   - name: Activity log report
     href: admin-activity-log.md 
+- name: Workspace administration
+  items:
+  - name: Manage workspaces
+    href: admin-portal-workspaces.md  
+  - name: Workspace tenant settings
+    href: admin-portal-workspace.md 
 - name: Considerations and limitations
   items:
   - name: Admin troubleshooting
