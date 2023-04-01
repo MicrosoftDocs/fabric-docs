@@ -1,5 +1,5 @@
 ---
-title: View workspaces
+title: Manage workspaces
 description: Learn how to view and understand info about workspaces and manage workspaces as an administrator.
 author: paulinbar
 ms.author: painbar
