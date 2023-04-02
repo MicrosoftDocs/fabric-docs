@@ -2,12 +2,13 @@
 metadata:
   title: Troubleshoot deployment pipelines, the Power BI Application lifecycle management (ALM) tool
   description: Find answers to your deployment pipelines, the Power BI Application lifecycle management (ALM) tool, troubleshooting questions
-  author: KesemSharabi
-  ms.author: kesharab
+  author: mberdugo
+  ms.author: monaberdugo
   ms.topic: troubleshooting
   ms.service: powerbi
   ms.subservice: pbi-deployment-pipeline
   ms.date: 01/18/2023
+  ms.search.form: Deployment pipelines troubleshooting
   
 title: Deployment pipelines troubleshooting
 summary: |
@@ -46,7 +47,7 @@ sections:
       - question: |
           Why can't I see the deployment pipelines button?
         answer: |
-          If the following conditions aren't met, you'll not be able to see the deployment pipelines button.
+          If the following conditions aren't met, you won't be able to see the deployment pipelines button.
           
           * You have one of the following Premium licenses:
           
@@ -59,7 +60,7 @@ sections:
       - question: |
           Why can't I see the pipeline stage tag in my workspace?
         answer: |
-          Deployment pipelines display a pipeline stage tag in workspaces that are assigned to a pipeline. To see these tags, you need to be a [pipeline admin](deployment-pipelines-process.md#permissions). Tags for the *Development* and *Test* stages are always visible. However, you'll only see the *Production* tag if you have [access to the pipeline](deployment-pipelines-process.md#permissions).
+          Deployment pipelines display a pipeline stage tag in workspaces that are assigned to a pipeline. To see these tags, you need to be a [pipeline admin](deployment-pipelines-process.md#permissions). Tags for the *Development* and *Test* stages are always visible. However, you only see the *Production* tag if you have [access to the pipeline](deployment-pipelines-process.md#permissions).
           
           > [!div class="mx-imgBorder"]
           > ![A screenshot of the production tag in a production pipeline workspace.](media/deployment-pipelines-troubleshooting/production-tag.png)
@@ -87,24 +88,24 @@ sections:
           For production workspaces, you need a P capacity. If you're an ISV distributing content through embedded applications, you can also use A or EM capacities for production. PPUs can also be used for production workspaces.
           
           >[!NOTE]
-          >When you create a workspace with a PPU, only other PPU users will be able to access the workspace and consume its content.
+          >When you create a workspace with a PPU, only other PPU users can able to access the workspace and consume its content.
           
   - name: Technical  
     questions:
       - question: |
           How do I reestablish connections after deployment?
         answer: |
-          In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between Power BI items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the Power BI connections between items in the source and target stages. This can happen for example, when you accidentally delete an item. To reestablish these connections, unassign and reassign the same workspace in the target stage.
+          In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between Power BI items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the Power BI connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item. To reestablish these connections, unassign and reassign the same workspace in the target stage.
 
       - question: |
           Why am I getting the 'can't assign the workspace' error message when I assign a workspace?
         answer: |
-          When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the Power BI items (such as reports and dashboards) in the workspace. If there are two Power BI items from the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if you have more than one report with the same name in either the *development* or *production* stages, the assignment will fail. Assigning your workspace will also fail if the workspace you're assigning has two datasets titles 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages. To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in the Power BI service. 
+          When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the Power BI items (such as reports and dashboards) in the workspace. If there are two Power BI items from the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there is more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages. To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in the Power BI service. 
           
           :::image type="content" source="media/deployment-pipelines-troubleshooting/cannot-assign-error.png" alt-text="A screenshot of the Can't assign the workspace error message in deployment pipelines.":::
 
       - question: |
-          Why am I seeing the 'different' symbol after I assigned a workspace with datasets that are similar to those in adjacent stages?
+          Why am I seeing the 'different' symbol after I assigned a workspace with datasets that are similar to the datasets in adjacent stages?
         answer: |
           Most datasets use the [enhanced dataset metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata.md) feature, also known as *model v3*. However, older reports might be using the old type of dataset metadata, sometimes referred to as *model v1*. If you're assigning a workspace that uses the old dataset metadata model (v1), deployment pipelines can't evaluate whether the dataset is similar in adjacent stages. In such cases, the *different* UI symbol is displayed, even when the datasets are identical. To resolve this issue, deploy the datasets that are showing the *different* symbol.   
 
@@ -129,7 +130,7 @@ sections:
       - question: |
           Why did my first deployment fail?
         answer: |
-          Your first deployment may have failed due to a number of reasons. Some of these reasons are listed in the table below.
+          Your first deployment may have failed for any of several reasons. Some of these reasons are listed in the following table.
           
           |Error  |Action  |
           |---------|---------|
@@ -157,7 +158,7 @@ sections:
       - question: |
           I fixed a bug in production, but now I can't select the 'deploy to previous stage' button. Why is it greyed out?
         answer: |
-          You can only deploy backwards to an empty stage. If you have content in the test stage, you won't be able to deploy backwards from production.
+          You can only deploy backwards to an empty stage. If you have content in the test stage, you can't deploy backwards from production.
           
           After creating the pipeline, use the development stage to develop your content, and the test stages to review and test it. You can fix bugs in these stages, and then deploy the fixed environment to the production stage.
           
@@ -169,11 +170,11 @@ sections:
         answer: |
           Source stage schema breaking changes, such as replacing a column type from an integer to a string, cause data loss in the target dataset after deployment.
           
-          During deployment, the metadata in the source dataset is checked against the target metadata. Schema breaking changes will cause the deployment to stop. When this happens, you'll receive the *continue the deployment* message.
+          During deployment, the metadata in the source dataset is checked against the target metadata. Schema breaking changes cause the deployment to stop. When this happens, you receive the *continue the deployment* message.
           
           :::image type="content" source="media/deployment-pipelines-troubleshooting/deployment-was-stopped-error.png" alt-text="A screenshot of the continue the deployment message in deployment pipelines":::
           
-          If you continue with the deployment, you'll lose the data in the target stage. You can use this option if the changes you made to the dataset were intentional. After the deployment completes, you'll need to refresh the target dataset.
+          If you continue with the deployment, you lose the data in the target stage. You can use this option if the changes you made to the dataset were intentional. After the deployment completes, you'll need to refresh the target dataset.
           
           If the changes weren't intentional, close the message window, upload a fixed PBIX file to the source workspace and redeploy.
           
@@ -182,13 +183,13 @@ sections:
       - question: |
           Why am I getting the message 'can't start the deployment'?
         answer: |
-          When you're using [incremental refresh](deployment-pipelines-process.md#incremental-refresh), only certain [changes to the dataset](deployment-pipelines-process.md#considerations-and-limitations) you're deploying are allowed. If you made dataset changes that aren't allowed, your deployment will fail and you'll receive this message:
+          When you're using [incremental refresh](deployment-pipelines-process.md#incremental-refresh), only certain [changes to the dataset](deployment-pipelines-process.md#considerations-and-limitations) you're deploying are allowed. If you made dataset changes that aren't allowed, your deployment fails and you receive this message:
 
           :::image type="content" source="media/deployment-pipelines-troubleshooting/cannot-start-deployment-error.png" alt-text="A screenshot of the Can't start the deployment error message in deployment pipelines.":::
   
           If you made changes to your dataset intentionally, you can use one of the following workarounds:
 
-          * **Using PBIX** - Publish your changes directly to the target dataset. All partitions and data will be lost, so you'll need to refresh the dataset.
+          * **Using PBIX** - Publish your changes directly to the target dataset. All partitions and data are lost, so you need to refresh the dataset.
 
           * **Using XMLA tools** - Make your changes directly on the dataset in the target stage.
 
@@ -205,7 +206,7 @@ sections:
       - question: |
           How can I delete a pipeline that doesn't have an owner (an orphaned pipeline)?
         answer: |
-          When working with deployment pipelines, you might end up with a pipeline that doesn't have an owner. For example, a pipeline can be left without an owner when a user that owned it leaves the company without transferring ownership. When a pipeline doesn't have an owner, other users won't be able to access it. As a workspace can only be assigned to one pipeline, if it's assigned to a pipeline without an owner, nobody will be able to unassign it, and you'll not be able to use the workspace in another pipeline.
+          When working with deployment pipelines, you might end up with a pipeline that doesn't have an owner. For example, a pipeline can be left without an owner when a user that owned it leaves the company without transferring ownership. When a pipeline doesn't have an owner, other users can't access it. As a workspace can only be assigned to one pipeline, if it's assigned to a pipeline without an owner, nobody is able to unassign it, and you can't use the workspace in another pipeline.
           
           When a pipeline is left without an owner, a Power BI administrator can use the [admin Power BI REST APIs](/rest/api/power-bi/admin) to add an owner to the pipeline, or delete it. To add an owner to the pipeline, use the [Admin - Pipelines UpdateUserAsAdmin](/rest/api/power-bi/admin/pipelines-update-user-as-admin) API.
           
@@ -215,7 +216,7 @@ sections:
           
           * *Reclaim workspace ownership* - Add any user to a workspace in a pipeline that doesn't have an owner, allowing you to unblock it.
           
-          To use this script, you'll need to provide a *workspace name* and a *user principal name (UPN)*. The script will find the pipeline that the workspace is assigned to, and add admin permissions to the user you specified.
+          To use this script, you need to provide a *workspace name* and a *user principal name (UPN)*. The script finds the pipeline that the workspace is assigned to, and add admin permissions to the user you specified.
           
       - question: |
           How do I resolve a source and target dataset format version mismatch error?
@@ -230,12 +231,12 @@ sections:
       - question: |
           Why are some tiles in my dashboard not displaying information after deployment? 
         answer: |
-          When you pin a tile to a dashboard, if the tile relies on an [unsupported Power BI item](deployment-pipelines-process.md#unsupported-items), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile will not render. For example, if you create a tile from a report that relies on a dataset you're not an admin on, when deploying the report you'll get an error warning. However, when deploying the dashboard with the tile, you'll not receive an error message, the deployment will succeed, but the tile will not display any information.   
+          When you pin a tile to a dashboard, if the tile relies on an [unsupported Power BI item](deployment-pipelines-process.md#unsupported-items), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a dataset you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.   
 
       - question: |
           Why did my dataset deployment fail? 
         answer: |
-          There could be a few possible reasons for your dataset deployment to fail. One of the reasons may be due to a large dataset that isn't configured with the [large dataset format](/power-bi/enterprise/service-premium-large-models.md). If your dataset is larger than 4GB and isn't using the large dataset format, it might fail to be deployed. Try setting your dataset to use the large dataset format, and redeploy.
+          There could be a few possible reasons for your dataset deployment to fail. One of the reasons may be due to a large dataset that isn't configured with the [large dataset format](/power-bi/enterprise/service-premium-large-models.md). If your dataset is larger than 4 GB and isn't using the large dataset format, it might fail to be deployed. Try setting your dataset to use the large dataset format, and redeploy.
 
       - question: |
           What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables?
@@ -252,21 +253,21 @@ sections:
       - question: |
           Why can't I deploy a paginated report?
         answer: |
-          To deploy a paginated report, you need to be a workspace member in the workspace you're deploying from (the source stage workspace). If you're not a workspace member in the source stage, you'll not be able to deploy the paginated report.
+          To deploy a paginated report, you need to be a workspace member in the workspace you're deploying from (the source stage workspace). If you're not a workspace member in the source stage, you can't deploy the paginated report.
           
       - question: |
           Who's the owner of a deployed paginated report?
         answer: |
           When you're deploying a paginated report for the first time, you become the owner of the report.
           
-          If you're deploying a paginated report to a stage that already contains a copy of that paginated report, you'll overwrite the previous report and become its owner, instead of the previous owner. In such cases, you'll need to have credentials to the underlying data source, so that the data can be used in the paginated report.
+          If you're deploying a paginated report to a stage that already contains a copy of that paginated report, you overwrite the previous report and become its owner, instead of the previous owner. In such cases, you need credentials to the underlying data source, so that the data can be used in the paginated report.
           
       - question: |
           Why does my target stage paginated report display data from a Power BI dataset in the source stage?
         answer: |
           At present, datasets are treated as an external Analysis Services data source, and connections to datasets aren't switched automatically after deployment.
           
-          When you deploy a paginated report that's connected to a Power BI dataset, it continues to point to the dataset it was originally connected to. Use [deployment rules](deployment-pipelines-create-rules.md) to point your paginated report to any dataset you want, including for example the target stage dataset.
+          When you deploy a paginated report that's connected to a Power BI dataset, it continues to point to the dataset it was originally connected to. Use [deployment rules](deployment-pipelines-create-rules.md) to point your paginated report to any dataset you want, including, for example,  the target stage dataset.
           
           If you're using a paginated report with a Power BI dataset, see [How do I create a deployment rule for a paginated report with a Power BI dataset?](#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-power-bi-dataset-)
           
@@ -298,14 +299,14 @@ sections:
       - question: |
           After deployment, can I download the RDL file of the paginated report?
         answer: |
-          After a deployment, if you download the RDL of the paginated report, it might not be updated with the latest version which you can see in Power BI service.
+          After a deployment, if you download the RDL of the paginated report, it might not be updated with the latest version that you can see in Power BI service.
 
   - name: Dataflows
     questions:
       - question: |
           What happens to the incremental refresh configuration after deploying dataflows?
         answer: |
-          When you have a dataflow that contains datasets that are configured with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview.md), the refresh policy isn't copied or overwritten during deployment. After deploying a dataflow that includes a dataset with incremental refresh to a stage that doesn't include this dataflow, if you have a refresh policy you'll need to reconfigure it in the target stage. If you're deploying a dataflow with incremental refresh to a stage were it already resides, the incremental refresh policy isn't copied. In such cases, if you wish to update the refresh policy in the target stage, you'll need to do it manually.
+          When you have a dataflow that contains datasets that are configured with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview.md), the refresh policy isn't copied or overwritten during deployment. After deploying a dataflow that includes a dataset with incremental refresh to a stage that doesn't include this dataflow, if you have a refresh policy you'll need to reconfigure it in the target stage. If you're deploying a dataflow with incremental refresh to a stage where it already resides, the incremental refresh policy isn't copied. In such cases, if you wish to update the refresh policy in the target stage, you need to do it manually.
 
       - question: |
           I deleted a data source that belonged to a dataflow, why can I still see it in the lineage view?
@@ -327,7 +328,7 @@ sections:
       - question: |
           Why can't I deploy a datamart in the pipeline?
         answer: |
-          To deploy a datamart you must be the owner of the datamart.
+          To deploy a datamart, you must be the owner of the datamart.
 
   - name: Permissions
     questions:
@@ -393,12 +394,12 @@ sections:
       - question: |
           Why do I need to deploy after I configure deployment rules?
         answer: |
-          Deployment rules aren't applied immediately after they're configured. To apply deployment rules, you have to deploy the datasets from the source stage to the target stage which includes the created deployment rules. After configuring deployment rules, and before you deploy, the *different* indicator is shown next to the dataset with the configured rules. This indicates that you need to deploy that dataset from the source stage to the target stage. Once you deploy, if no other changes were made, the *different* indicator will disappear signifying that the rules were applied successfully.
+          Deployment rules aren't applied immediately after they're configured. To apply deployment rules, you have to deploy the datasets from the source stage to the target stage which includes the created deployment rules. After configuring deployment rules, and before you deploy, the *different* indicator is shown next to the dataset with the configured rules. This indicates that you need to deploy that dataset from the source stage to the target stage. Once you deploy, if no other changes were made, the *different* indicator disappears signifying that the rules were applied successfully.
 
       - question: |
           Why are the deployment rules greyed out?
         answer: |
-          To create a [deployment rule](deployment-pipelines-create-rules.md), you must be the owner of the Power BI item you're creating a deployment rule for. If you're not the owner of the Power BI item, deployment rules will be greyed out.
+          To create a [deployment rule](deployment-pipelines-create-rules.md), you must be the owner of the Power BI item you're creating a deployment rule for. If you're not the owner of the Power BI item, deployment rules are greyed out.
           
           >[!div class="mx-imgBorder"]
           >![A screenshot showing deployment pipelines deployment rules greyed out.](media/deployment-pipelines-troubleshooting/rules-greyed-out.png)
@@ -421,7 +422,7 @@ sections:
       - question: |
           Why can't I connect to a dataset when creating a new dataset rule? 
         answer: |
-          When constructing a dataset using Power BI Desktop, the connection string can be configured. Later, the dataset can be published and used by deployment pipelines in Power BI service. When creating the connection in Power BI Desktop, you can specify additional parameters. When specifying the parameters, the dataset source must be the first parameter listed. If you list any other parameters before the dataset source, you'll run into errors in Power BI service. In such cases, when configuring a new dataset rule, if you point to a dataset that was not configured properly in Power BI Desktop, deployment pipelines will not be able to create the rule.
+          When constructing a dataset using Power BI Desktop, the connection string can be configured. Later, the dataset can be published and used by deployment pipelines in Power BI service. When creating the connection in Power BI Desktop, you can specify additional parameters. When specifying the parameters, the dataset source must be the first parameter listed. If you list any other parameters before the dataset source, you run into errors in Power BI service. In such cases, when configuring a new dataset rule, if you point to a dataset that wasn't configured properly in Power BI Desktop, deployment pipelines can't create the rule.
 
           To resolve this error, format the dataset connection in Power BI Desktop so that the dataset source appears in the first row. Then, republish the dataset.         
 

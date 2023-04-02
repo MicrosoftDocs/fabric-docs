@@ -6,15 +6,18 @@ ms.author: kecona
 author: KevinConanMSFT
 ms.topic: conceptual
 ms.date: 03/15/2023
+ms.search.form: Ingesting data
 ---
 
 # Ingesting data into the warehouse
 
+**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-**Applies to:** Warehouse
-
 In order to really use your data warehouse, you first need to bring data into it! In this article, we cover the features you need to know about to bring data into your data warehouse.
+
+## Ingest data options
 
 Those key features include:
 
@@ -38,7 +41,7 @@ Explicit transactions allow you to group multiple data changes together so that 
 > [!NOTE]
 > If a SELECT is within a transaction, and was preceded by data insertions, the automatically generated statistics may be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, you may want to [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=sql-server-ver16&preserve-view=true) for the columns mentioned in your SELECT.
 
-Next steps:
+## Next steps
 
 - [Ingest data using the COPY command](ingest-data-copy-command.md)
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)

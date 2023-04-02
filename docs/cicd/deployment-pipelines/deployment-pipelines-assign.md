@@ -1,15 +1,16 @@
 ---
-title: Assign a workspace to a Power BI Application lifecycle management (ALM) deployment pipeline 
-description: Learn how to assign and unassign a workspace to a deployment pipeline, the Power BI Application lifecycle management (ALM) tool.
+title: Assign a workspace to a Microsoft Fabric Application lifecycle management (ALM) deployment pipeline 
+description: Learn how to assign and unassign a workspace to a deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.service: powerbi
 ms.custom: contperf-fy21q1
-ms.date: 01/05/2023
+ms.date: 04/02/2023
+ms.search.form: Assign a workspace to a vacant stage
 ---
 
-# Assigning a workspace to a Power BI Application lifecycle management (ALM) deployment pipeline
+# Assigning a workspace to a Microsoft Fabric Application lifecycle management (ALM) deployment pipeline
 
 Deployment pipelines enable you to assign and unassign workspaces to any stage in a pipeline. This capability is particularly important for organizations that already have workspaces that are used as development, test, and production environments. In such cases, you can assign each workspace to its corresponding pipeline stage, and continue working in your usual flow.
 

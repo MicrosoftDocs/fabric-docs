@@ -6,13 +6,12 @@ ms.author: qixwang
 author: qixwang
 ms.topic: how-to
 ms.date: 02/24/2023
-ms.search.form: Create Spark Job Definition
+ms.search.form: Create Spark Job Definition,spark_job_definition
 ---
 
 # How to create an Apache Spark job definition
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this tutorial, learn how to create a Spark job definition in [!INCLUDE [product-name](../includes/product-name.md)].
 
@@ -26,10 +25,10 @@ To get started, you need the following prerequisites:
 > [!TIP]
 > For the following scenarios, main definition file and default Lakehouse context are required:
 >
-> - Save the Spark job definition artifact.
-> - Run the Spark job definition artifact.
-> - Clone the Spark job definition artifact.
-> - Edit settings of the Spark job definition artifact.
+> - Save the Spark job definition item.
+> - Run the Spark job definition item.
+> - Clone the Spark job definition item.
+> - Edit settings of the Spark job definition item.
 
 ## Create a Spark job definition
 

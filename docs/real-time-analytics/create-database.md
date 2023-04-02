@@ -13,7 +13,7 @@ ms.search.form: product-kusto
 
 In Data Explorer, you'll interact with your data in the context of databases. A single workspace can hold multiple databases, and each database can hold multiple tables.
 
-In this article, you'll learn you how to create a new database. Once your database has data, you can proceed to query your data using Kusto Query language in a KQL query set.
+In this article, you'll learn you how to create a new database. Once your database has data, you can proceed to query your data using Kusto Query Language in a KQL Queryset.
 
 ## Prerequisites
 
