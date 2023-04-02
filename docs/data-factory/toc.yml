@@ -27,6 +27,8 @@
         href: connector-amazon-s3.md
       - name: Configure in copy activity
         href: connector-amazon-s3-copy-activity.md
+      - name: Connect to Amazon S3 in dataflows
+        href: connector-amazon-s3-dataflows.md
     - name: Azure Blob Storage
       items:
       - name: Overview
@@ -35,6 +37,8 @@
         href: connector-azure-blob-storage.md
       - name: Configure in copy activity
         href: connector-azure-blob-storage-copy-activity.md
+      - name: Connect to Azure Blob Storage in dataflows
+        href: connector-azure-blob-storage-dataflows.md
     - name: Azure Cosmos DB for NoSQL
       items:
       - name: Overview
@@ -51,6 +55,14 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
+    - name: Azure SQL Database
+      items:
+      - name: Overview
+        href: connector-azure-sql-database-overview.md
+      - name: Set up connection
+        href: connector-azure-sql-database.md
+      - name: Configure in copy activity
+        href: connector-azure-sql-database-copy-activity.md
     - name: Binary format
       href: format-binary.md
     - name: Data warehouse
@@ -69,14 +81,14 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
-    - name: Google cloud Storage
+    - name: Google Cloud Storage
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-google-cloud-storage-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-google-cloud-storage.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-google-cloud-storage-copy-activity.md
     - name: HTTP
       items:
       - name: Overview
@@ -123,6 +135,8 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
+      - name: OData in dataflows
+        href: connector-odata-dataflows.md
     - name: SharePoint online list
       items:
       - name: Overview
