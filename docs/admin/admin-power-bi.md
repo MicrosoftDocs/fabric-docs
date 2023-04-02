@@ -13,7 +13,7 @@ An overview article for the Power BI admin center with a link to the [Power BI a
 
 ## Power BI settings
 
-More info about the Power BI admin center and it's integration with Microsoft Fabric.
+More info about the Power BI admin center and its integration with Microsoft Fabric.
 
 ## Next steps
 
