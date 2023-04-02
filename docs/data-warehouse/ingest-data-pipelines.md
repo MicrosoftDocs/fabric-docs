@@ -6,13 +6,14 @@ ms.author: procha
 author: periclesrocha
 ms.topic: how-to
 ms.date: 03/15/2023
+ms.search.form: Ingesting data
 ---
 
 # Ingest data into your warehouse using Data pipelines
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-**Applies to:** Warehouse
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Data pipelines offer an alternative to using the COPY command through a graphical user interface. A data pipeline is a logical grouping of activities that together perform a task. For example, a pipeline could contain a set of activities that ingest and clean log data, and then kick off a mapping data flow to analyze the log data. The pipeline allows you to manage the activities as a set instead of each one individually. You deploy and schedule the pipeline instead of the activities independently. You can learn more about pipelines and activities by reading [Pipelines and activities in Azure Data Factory and Azure Synapse Analytics](/azure/data-factory/concepts-pipelines-activities?tabs=data-factory). Although this documentation is specific to Azure Data Factory and not all features are available in [!INCLUDE [product-name](../includes/product-name.md)], the concepts are interchangeable.
 
@@ -38,7 +39,7 @@ Once you finish preparing your pipeline, you need to validate it and run it. The
 
 :::image type="content" source="media\ingest-data-pipelines\validate-run.png" alt-text="Screenshot showing where to find the Validate and Run options." lightbox="media\ingest-data-pipelines\validate-run.png":::
 
-Once you run a pipeline, you can monitor its status in the **Output** tab of the pipeline’s configuration pane.
+Once you run a pipeline, you can monitor its status in the **Output** tab of the pipeline's configuration pane.
 
 :::image type="content" source="media\ingest-data-pipelines\output-pane.png" alt-text="Screenshot showing where to find the Output tab." lightbox="media\ingest-data-pipelines\output-pane.png":::
 

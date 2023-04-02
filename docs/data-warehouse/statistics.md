@@ -6,13 +6,14 @@ ms.author: emtehran
 author: mstehrani
 ms.topic: conceptual
 ms.date: 03/15/2023
+ms.search.form: Optimization
 ---
 
 # Statistics
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-**Applies to:** Warehouse and SQL Endpoint
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Like any other data warehouse, the [!INCLUDE [product-name](../includes/product-name.md)] warehouse uses a query engine to create an execution plan for any given SQL query.
 
@@ -146,7 +147,7 @@ DROP STATISTICS [ schema_name . ] table_name.statistics_name
 
 Likewise, the following T-SQL constructs exist and can be used to check both manually created and automatically created statistics in [!INCLUDE [product-name](../includes/product-name.md)]:
 
-- [sys.stats](/sql/relational-databases/system-catalog-views/sys-stats-transact-sqll) catalog view
+- [sys.stats](/sql/relational-databases/system-catalog-views/sys-stats-transact-sql) catalog view
 - [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?view=sql-server-ver16&preserve-view=true) DBCC statement
 
   ```sql

@@ -1,7 +1,7 @@
 ---
 title: How to use the end-to-end AI samples
 description: Learn how to use the end-to-end AI samples.
-ms.reviewer: mopeakande
+ms.reviewer: lagayhar
 ms.author: narsam
 author: narmeens
 ms.topic: how-to
@@ -10,8 +10,7 @@ ms.date: 02/10/2023
 
 # How-to use end-to-end AI samples
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In providing the Data Science SaaS experience we want to enable ML professionals to easily and frictionlessly build, deploy and operationalize their machine learning models, in a single analytics platform, while collaborating with other key roles. Begin here to understand the various capabilities the DS workload has to offer and examples of how ML models can address your common business problems.
 
@@ -65,7 +64,7 @@ Dataset:
 
 ## Uplift model
 
-In this sample, we'll estimate the causal impact of certain treatments on an individual’s behavior by using an Uplift model. We'll walk through step by step how to create, train and evaluate the model touching on four core learnings:
+In this sample, we'll estimate the causal impact of certain treatments on an individual's behavior by using an Uplift model. We'll walk through step by step how to create, train and evaluate the model touching on four core learnings:
 
 - Data-processing module: extracts features, treatments, and labels.
 - Training module: targets to predict the difference between an individual's behavior when there's a treatment and when there's no treatment, using a classical machine learning model like lightGBM.
