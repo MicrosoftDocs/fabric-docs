@@ -15,6 +15,8 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse workspace as Delta tables, a SQL-based experience containing tables that reference your Delta Lake data is automatically created in that workspace for you, called the SQL Endpoint. Every Delta Lake table from a Lakehouse is represented as one table.
 
+Every Lakehouse has one SQL Endpoint and each workspace can have more than one Lakehouse.
+
 :::image type="content" source="media\sql-endpoint\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and Delta Lake tables." lightbox="media\sql-endpoint\lakehouse-delta-tables.png":::
 
 > [!IMPORTANT]
@@ -34,8 +36,8 @@ The table columns in automatically generated warehouses are derived from the sou
 | **FLOAT &#124; REAL** | real |
 | **DATE** | date |
 | **TIMESTAMP** | datetime2 |
-| **CHAR(n)** | char(n) with Latin1_General_100_BIN2_UTF8 collation. |
-| **STRING &#124; VARCHAR(n)** | varchar(n), (MAX) with Latin1_General_100_BIN2_UTF8 collation. STRING/VARCHAR(MAX) is mapped to varbinary(8000). |
+| **CHAR(n)** | char(n) with `Latin1_General_100_BIN2_UTF8` collation. |
+| **STRING &#124; VARCHAR(n)** | varchar(n), (MAX) with `Latin1_General_100_BIN2_UTF8` collation. STRING/VARCHAR(MAX) is mapped to varbinary(8000). |
 | **BINARY** | varbinary(n). |
 | **DECIMAL &#124; DEC &#124; NUMERIC** | decimal(p,s) |
 

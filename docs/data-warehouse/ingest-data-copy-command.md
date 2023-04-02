@@ -11,9 +11,9 @@ ms.search.form: Ingesting data
 
 # Ingest data into your warehouse using the COPY command
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-**Applies to:** Warehouse
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The goal of the COPY statement is to allow customers to ingest data into a [!INCLUDE [product-name](../includes/product-name.md)] warehouse from storage accounts of types:
 

@@ -10,8 +10,7 @@ ms.date: 02/10/2023
 
 # Built-in visualizations
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This notebook shows some of the built-in visualizations on public datasets.
 

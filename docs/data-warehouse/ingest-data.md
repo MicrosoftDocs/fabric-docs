@@ -11,9 +11,9 @@ ms.search.form: Ingesting data
 
 # Ingesting data into the warehouse
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-**Applies to:** Warehouse
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In order to really use your data warehouse, you first need to bring data into it! In this article, we cover the features you need to know about to bring data into your data warehouse.
 
