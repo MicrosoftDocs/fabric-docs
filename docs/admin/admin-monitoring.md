@@ -17,7 +17,7 @@ Verify that the [new workspace experience](/power-bi/admin/service-admin-portal-
 
 ## Access the admin monitoring workspace
 
-The Admin monitoring workspace is enabled for [Microsoft Fabric admins](admin.overview.md) that have one of these admin roles:
+The Admin monitoring workspace is enabled for [Microsoft Fabric admins](admin-overview.md) that have one of these admin roles:
 
 * Global admin
 
