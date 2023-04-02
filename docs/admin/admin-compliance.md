@@ -47,7 +47,7 @@ The features listed below require private endpoints and will not work unless you
 
 ### Customer-managed keys
 
-[Customer-managed keys](power-bi/enterprise/service-encryption-customer-managed-keys) - Customer-managed keys lets you use your own organization's keys for encryption, instead of Microsoft-managed keys. Customer-managed keys are not supported in Microsoft Fabric. Turn on the *compliance settings* if you want to use customer-managed keys in Microsoft Fabric. If you're already using customer-managed keys and the *compliance settings* isn't turned on, Microsoft Fabric will not work as expected.
+[Customer-managed keys](/power-bi/enterprise/service-encryption-customer-managed-keys) - Customer-managed keys lets you use your own organization's keys for encryption, instead of Microsoft-managed keys. Customer-managed keys are not supported in Microsoft Fabric. Turn on the *compliance settings* if you want to use customer-managed keys in Microsoft Fabric. If you're already using customer-managed keys and the *compliance settings* isn't turned on, Microsoft Fabric will not work as expected.
 
 ## How to enable non-compliant features?
 
