@@ -34,7 +34,7 @@ The many controls in the admin center are listed in the table below with links t
 | [Protection metrics](/power-bi/admin/service-admin-portal-protection-metrics) | Monitor and track sensitivity label usage and adoption in your organization. |
 | [Featured content](/power-bi/admin/service-admin-portal-featured-content) |  Manage the reports, dashboards, and apps that were promoted to the Featured section on your Home page. |
 
-## How to get to the admin portal
+## How to get to the admin center
 
 You must be a global admin or Microsoft Fabric admin to access the admin center. To get to the admin center, follow these steps:
 
