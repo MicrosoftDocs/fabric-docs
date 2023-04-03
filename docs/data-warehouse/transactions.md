@@ -21,7 +21,7 @@ You can modify data that is stored in tables in a Synapse Data Warehouse. We'll 
 
 ## Cross-database query transaction support
 
-Synapse Data Warehouse in Microsoft Fabric supports transactions that span across databases that are within the same workspace including reading from the SQL Endpoint for Lakehouses. Every Lakehouse has one SQL Endpoint and each workspace can have more than one Lakehouse.
+Synapse Data Warehouse in Microsoft Fabric supports transactions that span across databases that are within the same workspace including reading from the SQL Endpoint for Lakehouses. Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one SQL Endpoint and each workspace can have more than one Lakehouse.
 
 ## DDL support within transactions
 
