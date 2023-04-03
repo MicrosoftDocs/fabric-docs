@@ -1,6 +1,6 @@
 ---
 title: Spark autotune configuration and how to Enable or disable it?
-description: Discover how autotune auto-adjusts Spark configurations, minimizing workload execution time and optimizing performance.
+description: Learn how autotune auto-adjusts Spark configurations, minimizing workload execution time and optimizing performance. You can enable or disable autotune.
 ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
