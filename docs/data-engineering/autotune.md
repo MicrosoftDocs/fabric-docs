@@ -12,7 +12,7 @@ ms.date: 03/22/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Autotune automatically tunes Spark configurations to minimize workload execution time and optimize workloads, empowering our customers to achieve more with less. This feature reduces execution time and surpasses the gains accomplished by manually tuned workloads by experts, which necessitate considerable effort and experimentation.
+Autotune automatically tunes Spark configurations to minimize workload execution time and optimizes workloads. It empowers you to achieve more with less. This feature reduces execution time and surpasses the gains accomplished by manually tuned workloads by experts, which necessitate considerable effort and experimentation.
 
 It leverages historical data execution from your workloads to iteratively learn the optimal configurations for a given workload and its execution time.
 
