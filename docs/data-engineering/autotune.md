@@ -20,7 +20,7 @@ It leverages historical data execution from your workloads to iteratively learn 
 
 Currently, Autotune configures three query-level Spark configurations:
 * `spark.sql.shuffle.partitions` - configures the number of partitions to use when shuffling data for joins or aggregations. Default is 200.
-* `spark.sql.autoBroadcastJoinThreshold` - configures the maximum size in bytes for a table that will be broadcast to all worker nodes when performing a join. Default is 10 MB.
+* `spark.sql.autoBroadcastJoinThreshold` - configures the maximum size in bytes for a table that will be broadcasted to all worker nodes when performing a join. Default is 10 MB.
 * `spark.sql.files.maxPartitionBytes` - the maximum number of bytes to pack into a single partition when reading files. Works for Parquet, JSON and ORC file-based sources. Default is 128 MB.
 
 
