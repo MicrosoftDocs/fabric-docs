@@ -49,7 +49,7 @@ Autotune is enabled by default and it's controlled by Apache Spark Configuration
    spark.conf.get('spark.ms.autotune.queryTuning.enabled')   
    ```
 1. Scala 
-   ```
+   ```scala
    %%spark  
    spark.conf.get("spark.ms.autotune.queryTuning.enabled") 
    ```
