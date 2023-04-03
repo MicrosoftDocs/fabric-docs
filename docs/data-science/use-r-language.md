@@ -11,8 +11,7 @@ ms.search.form: R Language
 
 # How to use the R language
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] provides built-in R support for Apache Spark. As part of this support, data scientists can use [!INCLUDE [product-name](../includes/product-name.md)] notebooks to write and run their R code. Support for SparkR and SparklyR is also included, which allows you to interact with Spark using familiar Spark or R interfaces.
 
