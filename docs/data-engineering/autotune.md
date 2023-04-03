@@ -39,7 +39,7 @@ Based on the performance of the second run per suggested configuration, we retra
 
 Autotune is enabled by default and it's controlled by Apache Spark Configuration Settings. To verify and confirm its activation, use the following commands:
 1. SQL
-   ```
+   ```sql
    %%sql 
    SET spark.ms.autotune.queryTuning.enabled 
    ```
