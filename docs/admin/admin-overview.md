@@ -34,18 +34,18 @@ This section lists the Microsoft 365 admin roles and the tasks they can perform.
     * Create and manage users and groups
     * Reset user passwords
 
-### Power Platform and Microsoft Fabric admin roles
+### Power Platform and Power BI admin roles
 
-As a Power Platform or a Microsoft Fabric admin, you have full access to all the Microsoft Fabric management tasks.
+As a Power Platform or a Power BI admin, you have full access to all the Microsoft Fabric management tasks.
 
-* **Power Platform admin** or **Microsoft Fabric admin**
-    * Enable and disable Microsoft Fabric features <!--- add link to workloads --->
+* **Power Platform admin** or **Power BI admin**
+    * Enable and disable Microsoft Fabric features
     * Report on usage and performance
     * Review and manage auditing
 
 ### Capacity admin roles
 
-As a Microsoft Fabric capacity admin, you can perform these tasks on the capacity you're an admin of.
+As a capacity admin, you can perform these tasks on the capacity you're an admin of.
 
 * **Capacity admin**
     * Assign workspaces to the capacity
@@ -54,7 +54,7 @@ As a Microsoft Fabric capacity admin, you can perform these tasks on the capacit
 
 ## Admin tasks and tools
 
-Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/power-bi/developer/visuals/create-r-based-power-bi-desktop), but you should still be familiar with related tools and admin centers. To find out which role is required to perform the tasks listed here, cross reference them with the admin roles listed in [Admin roles related to Microsoft Fabric](#admin-roles-related-to-microsoft-fabric).
+Microsoft Fabric admins work mostly in the Microsoft Fabric [admin center](/power-bi/developer/visuals/create-r-based-power-bi-desktop), but you should still be familiar with related tools and admin centers. To find out which role is required to perform the tasks listed here, cross reference them with the admin roles listed in [Admin roles related to Microsoft Fabric](#admin-roles-related-to-microsoft-fabric).
 
 * **[Microsoft Fabric admin portal](/power-bi/developer/visuals/create-r-based-power-bi-desktop)**
     * Acquire and work with capacities
@@ -83,10 +83,6 @@ Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/powe
 
 * **[Administrative APIs and SDK](/power-bi/developer/visuals/create-r-based-power-bi-desktop)**
     * Build custom admin tools.
-
-## Admin center overview
-
-TBD with info from PMs
 
 ## Next steps
 
