@@ -35,7 +35,7 @@ For the first run of the query, upon submission, a machine learning (ML) model i
 Based on the performance of the second run per suggested configuration, we retrain the ML model by adding the new observation from this query, and update the centroid by comparing the performance of the last two runs. If the previous run is better, the centroid will be updated in the inverse direction of the previous update (similar to the momentum approach in DNN training); if the new run is better, the latest configuration setting becomes the new centroid. Iteratively, the algorithm will gradually search in the direction with better performance.
 
 
-## Enable/Disable
+## Enable or disable autotune
 
 Autotune is enabled by default and it's controlled by Apache Spark Configuration Settings. To verify and confirm its activation, use the following commands:
 1. SQL
