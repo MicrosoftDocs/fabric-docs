@@ -14,7 +14,7 @@ ms.date: 03/22/2023
 
 Autotune automatically tunes Spark configurations to minimize workload execution time and optimize workloads, empowering our customers to achieve more with less. This feature reduces execution time and surpasses the gains accomplished by manually tuned workloads by experts, which necessitate considerable effort and experimentation.
 
-It leverages historical execution data from customer workloads to iteratively learn the optimal configurations for a given workload with respect to execution time.
+It leverages historical data execution from your workloads to iteratively learn the optimal configurations for a given workload and its execution time.
 
 ## Query Tuning
 
