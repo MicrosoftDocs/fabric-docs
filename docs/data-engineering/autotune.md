@@ -29,7 +29,7 @@ Since there's no historical data available during the first run of autotune, con
 >[!NOTE]
 > As the algorithm explores various configurations, you may notice minor differences in results. This is expected, as autotune operates iteratively and improves with each repetition of the same query.
 
-## Configuration Tuning Algorithm Overview
+## Configuration tuning algorithm overview
 For the first run of the query, upon submission, an ML model initially trained using standard open-source benchmark queries (e.g., TPC-DS) will guide the search around the neighbors of the current setting (starting from the default). Among the neighbor candidates, the ML model selects the best one with the shortest predicted execution time. In this run, the "centroid" is the default config, around which Autotune generates new candidates.
 
 Based on the performance of the second run per suggested configuration, we retrain the ML model by adding the new observation from this query, and update the centroid by comparing the performance of the last two runs. If the previous run is better, the centroid will be updated in the inverse direction of the previous update (similar to the momentum approach in DNN training); if the new run is better, the latest configuration setting becomes the new centroid. Iteratively, the algorithm will gradually search in the direction with better performance.
