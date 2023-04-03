@@ -15,6 +15,20 @@ items:
     href: datasets.md
   - name: Creating reports
     href: create-reports.md
+- name: Workspaces
+  items:
+  - name: Getting Workspace and OneLake path
+    href: get-workspace-onelake-path.md    
+  - name: Workspace roles
+    href: workspace-roles.md
+- name: Load data into the warehouse
+  items:
+  - name: Ingesting data into the warehouse
+    href: ingest-data.md
+  - name: Ingest data with COPY command
+    href: ingest-data-copy-command.md
+  - name: Ingest data with Data pipelines
+    href: ingest-data-pipelines.md
 - name: Data warehouses
   items:
   - name: Warehouse
@@ -31,12 +45,6 @@ items:
     href: connectivity.md
   - name: Manage user access
     href: manage-user-access.md
-- name: Workspaces
-  items:
-  - name: Workspace roles
-    href: workspace-roles.md
-  - name: Getting Workspace and OneLake path
-    href: get-workspace-onelake-path.md
 - name: Datasets
   items:
   - name: Data modeling and defining relationships
@@ -45,14 +53,6 @@ items:
     href: create-measure.md
   - name: Hide elements from downstream reporting
     href: hide-elements-downstream-reporting.md
-- name: Load data
-  items:
-  - name: Ingesting data into the warehouse
-    href: ingest-data.md
-  - name: Ingest data with COPY command
-    href: ingest-data-copy-command.md
-  - name: Ingest data with Data pipelines
-    href: ingest-data-pipelines.md
 - name: Develop
   items:
   - name: Statistics

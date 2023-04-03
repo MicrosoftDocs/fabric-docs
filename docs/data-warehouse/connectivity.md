@@ -18,7 +18,7 @@ This article provides a how-to on connecting to your SQL Endpoint to data wareho
 To get started, you must complete the following prerequisites:
 
 - For best performance, you must be using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) version 18.0+.
-- You need access to a Lakehouse item within a premium per capacity workspace with contributor or above permissions.
+- You need access to a [Lakehouse](../data-engineering/lakehouse-overview.md) item within a premium per capacity workspace with contributor or above permissions.
 
 ## Connect SSMS to the SQL Endpoint or warehouse in the workspace
 

@@ -98,7 +98,7 @@ If data is coming from multiple data stores, you can port the data into the data
 
 ## Known limitations
 
-At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](data-warehousing.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
+At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
 
 ### Unsupported table features
 
