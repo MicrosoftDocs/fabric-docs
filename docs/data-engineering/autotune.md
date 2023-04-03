@@ -62,22 +62,22 @@ Autotune is enabled by default and it's controlled by Apache Spark Configuration
 
 To disable Autotune, execute the following commands:
 1. SQL
-   ```
+   ```sql
    %%sql 
    SET spark.ms.autotune.queryTuning.enabled=FALSE 
    ```
 1. Python 
-   ```
+   ```python
    %%pyspark  
    spark.conf.set('spark.ms.autotune.queryTuning.enabled', 'false')   
    ```
 1. Scala 
-   ```
-   %%spark  
+   ```scala
+   %%spark
    spark.conf.set("spark.ms.autotune.queryTuning.enabled", "false") 
    ```
 1. R
-   ```
+   ```r
    %%sparkr
    library(SparkR)
    sparkR.conf("spark.ms.autotune.queryTuning.enabled", "false")
@@ -86,22 +86,22 @@ To disable Autotune, execute the following commands:
 Easily enable Autotune within a session by running the following code in your notebook or adding it in your spark job definition code: 
 
 1. SQL
-   ```
+   ```sql
    %%sql 
    SET spark.ms.autotune.queryTuning.enabled=TRUE 
    ```
 1. Python 
-   ```
+   ```python
    %%pyspark  
    spark.conf.set('spark.ms.autotune.queryTuning.enabled', 'true')   
    ```
 1. Scala 
-   ```
+   ```scala
    %%spark  
    spark.conf.set("spark.ms.autotune.queryTuning.enabled", "true") 
    ```
 1. R
-   ```
+   ```r
    %%sparkr
    library(SparkR)
    sparkR.conf("spark.ms.autotune.queryTuning.enabled", "true")
