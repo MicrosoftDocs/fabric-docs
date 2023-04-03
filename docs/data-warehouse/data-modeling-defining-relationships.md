@@ -11,13 +11,13 @@ ms.search.form: Model view
 
 # Data modeling and defining relationships
 
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 A well-defined data model is instrumental in driving your analytics and reporting experiences. In [!INCLUDE [product-name](../includes/product-name.md)] warehouse, we're providing you with a way to easily build and change your data model with a few simple steps in our visual editor. You need to have at least a small sample of data loaded before you can explore these concepts further; tables may be empty, but the schemas (their structures) need to be defined.
 
 ## How to model data and define relationships
-
-*Applies to:* Warehouse and SQL Endpoint
 
 To model your data, navigate to **Model view** by selecting the **Model view** icon at the bottom left of the window, as shown in the following image.
 
@@ -56,6 +56,17 @@ In contrast, editing relationships in the **Properties** pane is a streamlined a
 You only see the table names and columns from which you can choose, you aren't presented with a data preview, and the relationship choices you make are only validated when you select **Apply changes**. Using the **Properties** pane and its streamlined approach reduces the number of queries generated when editing a relationship, which can be important for big data scenarios, especially when using DirectQuery connections. Relationships created using the **Properties** pane can also use multi-select relationships in the **Model** view diagram layouts. Pressing the **Ctrl** key and select more than one line to select multiple relationships. Common properties can be edited in the **Properties** pane and **Apply changes** processes the changes in one transaction.
 
 Single or multi-selected relationships can also be deleted by pressing **Delete** on your keyboard. You can't undo the delete action, so a dialog prompts you to confirm deleting the relationships.
+
+## Access the default dataset
+
+To access default datasets, go to your workspace and find the dataset that matches the name of the warehouse.
+
+:::image type="content" source="media\data-modeling-defining-relationships\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\data-modeling-defining-relationships\find-dataset.png":::
+
+To load the dataset, select the name of the dataset.
+
+:::image type="content" source="media\data-modeling-defining-relationships\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\data-modeling-defining-relationships\load-dataset.png":::
+
 
 ## Modeling the default dataset
 

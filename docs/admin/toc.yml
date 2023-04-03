@@ -7,10 +7,12 @@ items:
     href: admin-overview.md
 - name: Get started
   items:
+  - name: Enable Microsoft Fabric for your organization
+    href: admin-switch.md  
   - name: Understand Microsoft Fabric roles
     href: admin-roles.md
-  - name: Enable Microsoft Fabric for your organization
-    href: admin-switch.md
+  - name: What is the admin center?
+    href: admin-center.md       
   - name: Compliance feature switch
     href: admin-compliance.md    
 - name: Admin features in Microsoft Fabric

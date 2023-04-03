@@ -13,7 +13,7 @@ ms.search.form: Optimization
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-**Applies to:** Warehouse and SQL Endpoint
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Like any other data warehouse, the [!INCLUDE [product-name](../includes/product-name.md)] warehouse uses a query engine to create an execution plan for any given SQL query.
 

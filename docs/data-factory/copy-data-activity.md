@@ -10,7 +10,9 @@ ms.date: 01/27/2023
 
 # How to copy data using copy activity
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 Learn how to add a copy activity directly or through the copy assistant.
 
@@ -140,3 +142,7 @@ Follow these steps to add a copy activity directly.
    :::image type="content" source="media/copy-data-activity/configure-destination-file-details-in-pipeline.png" alt-text="Screenshot of Advanced options." lightbox="media/copy-data-activity/configure-destination-file-details-in-pipeline.png":::
 
 Now you can either save your data pipeline with this single copy activity or continue to design your data pipeline.
+
+## Next steps
+
+[How to monitor pipeline runs](monitor-pipeline-runs.md)

@@ -1,7 +1,7 @@
 ---
 title: Train and evaluate a text classification model
 description: AI sample for training and evaluating a text classification model.
-ms.reviewer: mopeakande
+ms.reviewer: ssalgado
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
