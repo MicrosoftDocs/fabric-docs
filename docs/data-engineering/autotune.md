@@ -27,7 +27,7 @@ Currently, autotune configures three query-level Spark configurations:
 Since there's no historical data available during the first run of autotune, configurations will be set based on a baseline model. This model relies on heuristics related to the content and structure of the workload itself. However, as the same query or workload is run repeatedly, we'll observe increasingly significant improvements from autotune. As the results of previous runs are used to fine-tune the model and tailor it to a specific workspace or workload.
 
 >[!NOTE]
-> As the algorithm explores various configurations, you may notice minor differences in results. This is expected, as Autotune operates iteratively and improves with each repetition of the same query.
+> As the algorithm explores various configurations, you may notice minor differences in results. This is expected, as autotune operates iteratively and improves with each repetition of the same query.
 
 ## Configuration Tuning Algorithm Overview
 For the first run of the query, upon submission, an ML model initially trained using standard open-source benchmark queries (e.g., TPC-DS) will guide the search around the neighbors of the current setting (starting from the default). Among the neighbor candidates, the ML model selects the best one with the shortest predicted execution time. In this run, the "centroid" is the default config, around which Autotune generates new candidates.
