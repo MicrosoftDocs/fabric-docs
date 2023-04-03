@@ -24,7 +24,7 @@ Currently, Autotune configures three query-level Spark configurations:
 * `spark.sql.files.maxPartitionBytes` - the maximum number of bytes to pack into a single partition when reading files. Works for Parquet, JSON and ORC file-based sources. Default is 128 MB.
 
 
-Since there's no historical data available during the first run of Autotune, configurations will be set based on a baseline model, which relies on heuristics related to the content and structure of the workload itself. However, as the same query or workload is run repeatedly, we'll observe increasingly significant improvements from Autotune, as the results of previous runs are used to fine-tune the model and tailor it to a specific workspace or workload.
+Since there's no historical data available during the first run of autotune, configurations will be set based on a baseline model. This model relies on heuristics related to the content and structure of the workload itself. However, as the same query or workload is run repeatedly, we'll observe increasingly significant improvements from autotune. As the results of previous runs are used to fine-tune the model and tailor it to a specific workspace or workload.
 
 >[!NOTE]
 > As the algorithm explores various configurations, you may notice minor differences in results. This is expected, as Autotune operates iteratively and improves with each repetition of the same query.
