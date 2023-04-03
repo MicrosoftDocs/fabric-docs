@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 03/27/2023
+ms.date: 04/03/2023
 ms.search.form: product-kusto
 ---
 
 # Tutorial: Use a Jupyter notebook and kqlmagic to query a KQL Database
 
-Jupyter notebooks are both readable documents containing data analysis descriptions and results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a KQL Database. This tutorial uses pre-created datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in Microsoft Fabric.
+Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a KQL Database. This tutorial uses pre-created datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
 Specifically, you'll learn how to:
 

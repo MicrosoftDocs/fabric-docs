@@ -5,15 +5,15 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.date: 03/30/2023
+ms.date: 04/03/2023
 ms.search.form: product-kusto
 ---
 
 # Tutorial: Use Apache Spark to query a KQL Database
 
-<!-- TODO: intro-->
+Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL Database using Apache Spark. This tutorial uses pre-created datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
-In this tutorial, you learn how to:
+Specifically, you learn how to:
 
 > [!div class="checklist"]
 >
@@ -123,4 +123,4 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 ## Next steps
 
-[Query data in a KQL queryset](kusto-query-set.md)
+[Query data in a KQL Queryset](kusto-query-set.md)
