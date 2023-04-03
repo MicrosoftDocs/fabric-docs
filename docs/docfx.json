@@ -71,7 +71,7 @@
        "titleSuffix": "Microsoft Fabric"
    },
    "searchScope": [
-    ""
+    "Microsoft Fabric"
   ],
     "template": [],
     "dest": "fabric-docs"
