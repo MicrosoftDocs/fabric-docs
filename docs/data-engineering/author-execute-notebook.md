@@ -4,17 +4,15 @@ description: Learn how to develop and run notebooks.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
-ms.subservice: data-engineering
 ms.topic: how-to
-ms.date: 03/03/2023
+ms.date: 03/31/2023
 ---
 
 # Author and execute the notebook
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] notebook is a primary code artifact for developing Apache Spark jobs and machine learning experiments. It's a web-based interactive surface used by data scientists and data engineers to write code benefiting from rich visualizations and Markdown text. This article explains how to develop notebooks with code cell operations and run them.
+[!INCLUDE [product-name](../includes/product-name.md)] notebook is a primary code item for developing Apache Spark jobs and machine learning experiments. It's a web-based interactive surface used by data scientists and data engineers to write code benefiting from rich visualizations and Markdown text. This article explains how to develop notebooks with code cell operations and run them.
 
 ## Develop notebooks
 

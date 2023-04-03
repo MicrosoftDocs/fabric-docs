@@ -1,44 +1,44 @@
 items:
-- name: Analytics
-  tocHref: /analytics/
-  topicHref: /analytics/index
+- name: Microsoft Fabric
+  tocHref: /fabric/
+  topicHref: /fabric/index
   items:
   - name: Admin
-    tocHref: /analytics/admin
-    topicHref: /analytics/admin/index
+    tocHref: /fabric/admin
+    topicHref: /fabric/admin/index
   - name: CICD
-    tocHref: /analytics/cicd
-    topicHref: /analytics/cicd/index
+    tocHref: /fabric/cicd
+    topicHref: /fabric/cicd/index
   - name: Data Engineering
-    tocHref: /analytics/data-engineering
-    topicHref: /analytics/data-engineering/index
+    tocHref: /fabric/data-engineering
+    topicHref: /fabric/data-engineering/index
   - name: Data Factory
-    tocHref: /analytics/data-factory
-    topicHref: /analytics/data-factory/index
+    tocHref: /fabric/data-factory
+    topicHref: /fabric/data-factory/index
   - name: Data Science
-    tocHref: /analytics/data-science
-    topicHref: /analytics/data-science/index
+    tocHref: /fabric/data-science
+    topicHref: /fabric/data-science/index
   - name: Data Warehouse
-    tocHref: /analytics/data-warehouse
-    topicHref: /analytics/data-warehouse/index
+    tocHref: /fabric/data-warehouse
+    topicHref: /fabric/data-warehouse/index
   - name: Enterprise
-    tocHref: /analytics/enterprise
-    topicHref: /analytics/enterprise/index
+    tocHref: /fabric/enterprise
+    topicHref: /fabric/enterprise/index
   - name: Get started
-    tocHref: /analytics/get-started
-    topicHref: /analytics/get-started/index
+    tocHref: /fabric/get-started
+    topicHref: /fabric/get-started/index
   - name: Governance
-    tocHref: /analytics/governance
-    topicHref: /analytics/governance/index
+    tocHref: /fabric/governance
+    topicHref: /fabric/governance/index
   - name: OneLake
-    tocHref: /analytics/onelake
-    topicHref: /analytics/onelake/index
+    tocHref: /fabric/onelake
+    topicHref: /fabric/onelake/index
   - name: Real-time Analytics
-    tocHref: /analytics/real-time-analytics
-    topicHref: /analytics/real-time-analytics/index
+    tocHref: /fabric/real-time-analytics
+    topicHref: /fabric/real-time-analytics/index
   - name: Reflex
-    tocHref: /analytics/reflex
-    topicHref: /analytics/reflex/index
+    tocHref: /fabric/reflex
+    topicHref: /fabric/reflex/index
   - name: Security
-    tocHref: /analytics/security
-    topicHref: /analytics/security/index
+    tocHref: /fabric/security
+    topicHref: /fabric/security/index

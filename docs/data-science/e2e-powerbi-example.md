@@ -4,15 +4,13 @@ description: End-to-end example of data science capabilities when interacting wi
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
-ms.subservice: data-science
 ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
 # E2E Power BI example
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This demo is designed for private preview of Azure Synapse data science capabilities, including, but not limited to, interaction with Power BI and new semantic modeling features of a python package called SemPy developed for making it easier to capture and share domain knowledge.
 

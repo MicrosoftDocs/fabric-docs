@@ -30,4 +30,12 @@ items:
   - name: Charge back
     href: charge-back.md 
   - name: Metrics app
-    href: metrics-app.md
+    items:
+    - name: What is the utilization and metrics app?
+      href: metrics-app.md
+    - name: Install the utilization and metrics app
+      href: metrics-app-install.md
+    - name: Understand the metrics app overview page
+      href: metrics-app-overview-page.md
+    - name: Understand the metrics app timepoint page
+      href: metrics-app-timepoint-page.md                  

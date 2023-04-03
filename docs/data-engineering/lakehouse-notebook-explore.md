@@ -4,15 +4,13 @@ description: Learn how to use a notebook to explore your Lakehouse data.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
-ms.subservice: data-engineering
 ms.topic: how-to
 ms.date: 02/24/2023
 ---
 
 # Explore the data in your Lakehouse with a notebook
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this tutorial, learn how to explore the data in your Lakehouse with a notebook.
 
@@ -56,7 +54,7 @@ To switch to a different default Lakehouse, move the pin icon.
 
 ## Add or remove a Lakehouse
 
-Selecting the **X** icon next to a Lakehouse name removes it from the notebook, but the Lakehouse artifact still exists in the workspace.
+Selecting the **X** icon next to a Lakehouse name removes it from the notebook, but the Lakehouse item still exists in the workspace.
 
 :::image type="content" source="media\lakehouse-notebook-explore\remove-lakehouse.png" alt-text="Screenshot showing where to remove a Lakehouse." lightbox="media\lakehouse-notebook-explore\remove-lakehouse.png":::
 

@@ -4,15 +4,14 @@ description: Learn more about loading data into a Lakehouse.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
-ms.subservice: data-engineering
 ms.topic: conceptual
 ms.date: 02/24/2023
+ms.search.form: Lakehouse Get Data
 ---
 
 # Get data experience for Lakehouse
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Get data experience covers all user scenarios for bringing data into the Lakehouse, like:
 
