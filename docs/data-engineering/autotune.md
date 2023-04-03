@@ -44,7 +44,7 @@ Autotune is enabled by default and it's controlled by Apache Spark Configuration
    SET spark.ms.autotune.queryTuning.enabled 
    ```
 1. Python 
-   ```
+   ```python
    %%pyspark  
    spark.conf.get('spark.ms.autotune.queryTuning.enabled')   
    ```
