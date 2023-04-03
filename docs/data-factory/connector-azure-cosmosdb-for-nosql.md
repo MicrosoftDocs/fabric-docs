@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 This article outlines the steps to create Azure Cosmos DB for NoSQL connection.
 
@@ -60,7 +60,7 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 **Connection name**: Specify a name for your connection.<br>
 **Connection type**: Select **Azure CosmosDB (Data pipeline)** for your connection type.<br>
 **Account Endpoint**: Enter your account endpoint URL of your Azure Cosmos DB for NoSQL.<br>
-**Database**: Enter the database id of your Azure Cosmos DB for NoSQL.
+**Database**: Enter the database ID of your Azure Cosmos DB for NoSQL.
 
 ### Step 2:  Select and set your authentication
 
@@ -95,7 +95,7 @@ The following connector properties in the table are supported in pipeline copy a
 |**Connection name**|A name for your connection.|Yes||✓/|
 |**Connection type**|Select **Azure CosmosDB (Data pipeline)** for your connection type.|Yes||✓/|
 |**Account Endpoint**|Enter your account endpoint URL of your Azure Cosmos DB for NoSQL.|Yes||✓/|
-|**Database**|Enter the database id of your Azure Cosmos DB for NoSQL.|Yes||✓/|
+|**Database**|Enter the database ID of your Azure Cosmos DB for NoSQL.|Yes||✓/|
 |**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
 

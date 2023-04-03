@@ -1,6 +1,10 @@
 ---
 title: Read and write data with Pandas
 description: Learn how to read and write data with Pandas from Lakehouse.
+<<<<<<< HEAD
+=======
+ms.reviewer: franksolomon
+>>>>>>> f2af6f7998e5909a708aacd23081f43d29a43477
 ms.author: negust
 author: nelgson
 ms.reviewer: franksolomon
@@ -11,14 +15,17 @@ ms.search.form: Read and Write Pandas
 
 # How-to read and write data with Pandas
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Pandas became the most popular Python library for data exploration and processing. This guide shows examples that explain how to read and write data in a Notebook, from a Lakehouse, using the Pandas library.
 
 ## Convert a Spark dataframe to Pandas
 
+<<<<<<< HEAD
 First, this code sample shows how to convert a Spark dataframe to a pandas dataframe:
+=======
+Before we list the various ways, you can leverage Pandas to read and write different file types, let's first look at how you can convert a Spark dataframe to a pandas dataframe:
+>>>>>>> f2af6f7998e5909a708aacd23081f43d29a43477
 
 ```Python
 pandas_df = spark_df.toPandas() 
@@ -34,7 +41,11 @@ These examples show how Pandas can read and write various file formats from Lake
 
 ## Load data into Pandas from the UI
 
+<<<<<<< HEAD
 Once you attach a Lakehouse to your Notebook, you can explore the data in that Lakehouse. This way, you can select a file in your Lakehouse - for example, a CSV file - and choose to “Load data” into a Pandas dataframe.
+=======
+Once you've attached a Lakehouse to your Notebook, you can explore the data in the Lakehouse. This allows you to select a file in your Lakehouse, for example a CSV file, and choose to "Load data" into a Pandas dataframe.
+>>>>>>> f2af6f7998e5909a708aacd23081f43d29a43477
 
 :::image type="content" source="media/read-write-pandas/load-data-pandas-dataframe.png" alt-text="Screenshot showing where to select options to load data into a Pandas dataframe." lightbox="media/read-write-pandas/load-data-pandas-dataframe.png":::
 
@@ -65,7 +76,7 @@ df.to_csv("/<Lakehouse path>/filename.csv")
 Import pandas as pd 
  
 # Load data into pandas DataFrame from Parquet 
-df = pandas.read_parquet(“/<Lakehouse path>/filename.parquet") 
+df = pandas.read_parquet("/<Lakehouse path>/filename.parquet") 
 display(df) 
 ```
 
@@ -84,7 +95,7 @@ df.to_parquet("/<Lakehouse path>/filename.parquet")
 Import pandas as pd 
  
 # Load data into pandas DataFrame from Excel 
-df = pandas.read_excel(“/<Lakehouse path>/filename.xlsx") 
+df = pandas.read_excel("/<Lakehouse path>/filename.xlsx") 
 display(df) 
 ```
 
@@ -102,7 +113,7 @@ df.to_excel("/<Lakehouse path>/filename.xlsx")
 Import pandas as pd 
  
 # Load data into pandas DataFrame from json 
-df = pandas.read_json(“/<Lakehouse path>/filename.json") 
+df = pandas.read_json("/<Lakehouse path>/filename.json") 
  
 display(df) 
 ```
