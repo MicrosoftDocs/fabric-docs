@@ -1,5 +1,5 @@
 ---
-title: Spark autotune configuration and how to Enable or disable it?
+title: Spark autotune configuration and how to enable or disable it
 description: Learn how autotune auto-adjusts Spark configurations, minimizing workload execution time and optimizing performance. You can enable or disable autotune.
 ms.reviewer: snehagunda
 ms.author: eskot
@@ -8,7 +8,7 @@ ms.topic: overview
 ms.date: 03/22/2023
 ---
 
-# What is Spark autotune configuration and how to Enable or disable it?
+# What is Spark autotune configuration and how is it enabled or disabled?
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
