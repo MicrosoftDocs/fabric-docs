@@ -19,9 +19,9 @@ items:
   items:
   - name: Delegate admin rights
     href: admin-delegate.md
-- name: Power BI admin portal
+- name: Power BI admin center
   items:
-  - name: Power BI admin portal
+  - name: Power BI admin center
     href: admin-power-bi.md
 - name: Spark
   items:
