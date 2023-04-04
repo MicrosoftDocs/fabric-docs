@@ -7,8 +7,8 @@ items:
     href: ../placeholder.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
+  - name: Fabric terminology
+    href: fabric-terminology.md
   - name: linktext2
     href: ../placeholder.md
 - name: Feature 1
