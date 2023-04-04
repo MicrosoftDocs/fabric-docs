@@ -51,13 +51,13 @@ In Dataflows Gen2, we added support for the following destinations and many more
 - Azure Synapse Analytics (SQL DW)
 - Azure SQL Database
 
-Learn more about this feature [here](./docsforoutputdestination).
+Learn more about this feature [here](../placeholder.md).
 
 :::image type="content" source="./media/dataflowsgen2-overview/outputdestinations-overview.png" alt-text="Screenshot with the supported output destinations displayed.":::
 
 ### Improved refresh history and monitoring
 
-With Dataflows Gen2, we introduce a new way for you to monitor your dataflow refreshes. We integrated support for [Monitor Hub](/monitorhuburl) and give our [Refresh History](./dataflows-refresh-history.md) experience a major upgrade.
+With Dataflows Gen2, we introduce a new way for you to monitor your dataflow refreshes. We integrated support for [Monitor Hub](../placeholder.md) and give our [Refresh History](./dataflowsgen2-monitoring.md) experience a major upgrade.
 
 :::image type="content" source="./media/dataflowsgen2-monitoring/refresh-details.png" alt-text="Screenshot showing the details of a refresh status.":::
 
@@ -75,11 +75,11 @@ With Dataflows Gen2, we introduce a worry free experience by removing the need f
 
 ### Fast copy
 
-Fast copy allows you to apply the speed and agility of pipeline copy activity with the simple use of dataflows. We automatically detect if the data size is significant enough to use a data pipeline copy activity. Learn more about this feature [here](./dataflowsgen2-fastcopy.md).
+Fast copy allows you to apply the speed and agility of pipeline copy activity with the simple use of dataflows. We automatically detect if the data size is significant enough to use a data pipeline copy activity. Learn more about this feature [here](../placeholder.md).
 
 ### High scale compute
 
-With Dataflows Gen2, we introduce a new feature that uses Lakehouse compute to improve performance for all your dataflows. The following section shows an architecture overview how this works. Learn more about this feature [here](./dataflowsgen2-highscalecompute.md).
+With Dataflows Gen2, we introduce a new feature that uses Lakehouse compute to improve performance for all your dataflows. The following section shows an architecture overview how this works. Learn more about this feature [here](../placeholder.md).
 
 ## Architecture changes from Gen1 to Gen2
 
