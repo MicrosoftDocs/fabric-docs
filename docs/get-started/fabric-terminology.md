@@ -16,27 +16,27 @@ Learn the definitions of terms used throughout Microsoft Fabric, and terms used 
 
 ## General terms
 
-- **Capacity:** The potential ability of a resource to perform an activity or to produce output in a specified time period. CPU count, memory, and storage are examples of capacity dimensions.
+- **Capacity:** Capacity is a dedicated set of resources reserved for exclusive use. Capacity defines the ability of a resource to perform an activity or to produce output in a specified period. CPU count, memory, and storage are the capacity dimensions. Fabric offers capacity through the Pro, Trial, Premium - per user, Premium - per capacity, and Embedded SKU types.
 
-   For more information about capacity, see [Placeholder](../placeholder.md).
+   For more information, see [What is capacity](../enterprise/what-is-capacity.md) article.
 
-- **Experience:** A collection of capabilities with a specific look and feel. In Fabric, all experiences, while named differently (for example, Data warehousing or Data factory), provide the same capabilities.
+- **Experience:** A collection of capabilities with a specific look, feel, and functionality. The Fabric experiences include Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-time Analytics, Data Factory, Reflex, and Power BI.
 
    For more information about experiences in Fabric, see [Placeholder](../placeholder.md).
 
-- **Item:** An item is the result of a set of customer activities within an experience that is designed to help resolve or further a customer’s scenario. You can use items within the experience in which they're created or within other experiences. You can save, edit, and share them with other users.
+- **Item:** An item is the result of a set of customer activities within an experience. For example, the Data Engineering experience includes a lakehouse, notebook, and Spark job definition, items. You can use items within the experience in which they're created or from other experiences. You can save, edit, and share them with other users.
 
    For more information on items in Fabric, see [Placeholder](../placeholder.md).
 
-- **Shortcut:** OneLake shortcuts provide a way to connect to existing data without having to directly copy it. Shortcuts eliminate the need to set up and monitor data movement jobs and keeps data in sync across sources.
+- **Shortcut:** Shortcuts are embedded references within OneLake that point to other file store locations. They provide a way to connect to existing data without having to directly copy it. 
 
    For more information on shortcuts, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
-- **Tenant:** A single instance of software, supporting a single user, account, or organization.
+- **Tenant:** A single instance of Fabric supporting a single user, account, or organization.
 
    For more information on tenants in Fabric, see [Placeholder](../placeholder.md).
 
-- **Workspace:** A user interface area, designed for collaboration, in which users perform tasks.
+- **Workspace:** A user interface area designed for collaboration, in which users perform tasks such as creating reports, notebooks, datasets etc.
 
    For more information on Fabric workspaces, see [Placeholder](../placeholder.md).
 
@@ -46,29 +46,29 @@ Learn the definitions of terms used throughout Microsoft Fabric, and terms used 
 
    For more information about lakehouses, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
 
-- **Spark application:** A Spark application is a program written by a user using one of Spark’s API languages (Scala, Python, Spark SQL, or Java) or Microsoft-added languages (.NET with C# or F#). When an application runs, it's divided into one or more Spark jobs that run in parallel to process the data faster.
+- **Spark application:** An Apache Spark application is a program written by a user using one of Spark’s API languages (Scala, Python, Spark SQL, or Java) or Microsoft-added languages (.NET with C# or F#). When an application runs, it's divided into one or more Spark jobs that run in parallel to process the data faster.
 
-   For more information on Spark applications, see [Placeholder](../placeholder.md).
+   For more information, see [Spark application monitoring](../data-engineering/spark-detail-monitoring.md).
 
-- **Spark job:** A Spark job is part of a Spark application that is run (computed) in parallel with other jobs in the application. A job consists of multiple tasks.
+- **Apache Spark job:** A Spark job is part of a Spark application that is run in parallel with other jobs in the application. A job consists of multiple tasks.
 
-   For more information on Spark jobs, see [Placeholder](../placeholder.md).
+   For more information, see [Spark job monitoring](../data-engineering/spark-monitor-debug.md).
 
-- **Spark job definition:** A Spark job definition is a set of parameters, set by the user, indicating how a Spark application should be run.
+- **Apache Spark job definition:** A Spark job definition is a set of parameters, set by the user, indicating how a Spark application should be run. It allows you to submit batch or streaming jobs to the Spark cluster.
 
    For more information on Spark job definitions, see [What is an Apache Spark job definition?](../data-engineering/spark-job-definition.md)
 
 ## Data Factory
 
-- **Connection:** This term refers to a connection to either your data source or data target.
+- **Connector:** Data Factory offers a rich set of connectors that allow you to connect to different types of data stores. Once connected, you can transform the data. 
 
-   For more information on connections, see [Placeholder](../placeholder.md).
+   For more information, see [connectors](../data-factory/connector-overview.md).
 
-- **Data pipeline:** Within the context of data integration (DI), a data pipeline is a pipeline item for orchestrating data movement and transformation. We try to avoid confusing this concept with deployment pipelines in Fabric documentation.
+- **Data pipeline:** In Data Factory, a data pipeline is used for orchestrating data movement and transformation. These are different from the deployment pipelines in Fabric.
 
    For more information on data pipelines, see [Pipelines](../data-factory/data-factory-overview.md#data-pipelines) in the Data Factory overview.
 
-- **Dataflow Gen2:** Dataflow Gen2 is the name of the dataflow product in Fabric. (Gen1 exists in Power BI and doesn't have a direct upgrade path to Gen2.) Dataflow Gen2 is a superset of capabilities, compared to existing in-market dataflow capabilities (in either ADF or Power BI).
+- **Dataflow Gen2:** Dataflows provide a low-code interface for ingesting data from hundreds of data sources and transforming your data. Dataflows in Fabric are referred to as Dataflow Gen2. Dataflow Gen1 exists in Power BI. Dataflow Gen2 offers additional capabilities compared to Dataflows in Azure Data Factory or Power BI.  You can't upgrade from Gen1 to Gen2. 
 
    For more information on Dataflow Gen2, see [Dataflows](../data-factory/data-factory-overview.md#dataflows) in the Data Factory overview.
 
@@ -76,11 +76,11 @@ Learn the definitions of terms used throughout Microsoft Fabric, and terms used 
 
 - **Experiment:** A machine learning experiment is the primary unit of organization and control for all related machine learning runs.
 
-   For more information on experiments, see [Machine learning experiments in Microsoft Fabric](../data-science/machine-learning-experiment.md).
+   For more information, see [Machine learning experiments in Microsoft Fabric](../data-science/machine-learning-experiment.md).
 
 - **Model:** A machine learning model is a file trained to recognize certain types of patterns. You train a model over a set of data, and you provide it with an algorithm that uses to reason over and learn from that data set.
 
-   For more information on models, see [Machine learning model](../data-science/machine-learning-model.md).
+   For more information, see [Machine learning model](../data-science/machine-learning-model.md).
 
 - **Run:** A run corresponds to a single execution of model code. In [MLflow](https://mlflow.org/), tracking is based on experiments and runs.
 
@@ -90,11 +90,11 @@ Learn the definitions of terms used throughout Microsoft Fabric, and terms used 
 
 - **SQL Endpoint:** The SQL Endpoint on the lakehouse allows a user to transition from the Lake view of the lakehouse (which supports data engineering and Apache Spark) to the SQL experiences that a data warehouse provides, supporting Transact-SQL (T-SQL).
 
-   For more information on SQL Endpoints, see [SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint) in What is Data warehousing in Microsoft Fabric?
+   For more information, see [SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint) article.
 
 - **Warehouse:** The warehouse functionality is a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse.
 
-   For more information on the warehouse functionality, see [Data warehouse](../data-warehouse/data-warehousing.md#data-warehouse) in What is Data warehousing in Microsoft Fabric?
+   For more information, see [Data warehouse](../data-warehouse/data-warehousing.md#data-warehouse) article.
 
 ## Real-time analytics
 
@@ -102,7 +102,7 @@ Learn the definitions of terms used throughout Microsoft Fabric, and terms used 
 
    For more information on event streams in Fabric, see [Placeholder](../placeholder.md).
 
-- **KQL Queryset:** This is an activity where the user writes KQL and SQL scripts to query data. The queryset includes the databases and tables, the queries, and the results.
+- **KQL Queryset:**.The KQL queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database.  The queryset includes the databases and tables, the queries, and the results. The KQL queryset allows you to save queries for future use, or export and share queries with others.
 
    For more information on KQL Queryset, see [Query data in the KQL queryset](../real-time-analytics/kusto-query-set.md)
 
