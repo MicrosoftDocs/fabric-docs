@@ -10,8 +10,7 @@ ms.date: 02/10/2023
 
 # Relationship detection
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Relationships are frequently known in advance from the analysis of the ER model, and can be added to the Knowledge Base manually. When starting without an existing model or dealing with new data for the first time, it can be helpful to discover relationships automatically and set the stage for:
 

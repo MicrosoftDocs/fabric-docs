@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
 ms.topic: conceptual
-ms.date: 03/15/2023
+ms.date: 04/03/2023
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
@@ -13,7 +13,9 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse workspace as Delta tables, a SQL-based experience containing tables that reference your Delta Lake data is automatically created in that workspace for you, called the SQL Endpoint. Every Delta Lake table from a Lakehouse is represented as one table.
+When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](../data-engineering/lakehouse-overview.md) workspace as Delta tables, a SQL-based experience containing tables that reference your Delta Lake data is automatically created in that workspace for you, called the SQL Endpoint. Every Delta Lake table from a Lakehouse is represented as one table.
+
+Every Lakehouse has one SQL Endpoint and each workspace can have more than one Lakehouse.
 
 :::image type="content" source="media\sql-endpoint\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and Delta Lake tables." lightbox="media\sql-endpoint\lakehouse-delta-tables.png":::
 
@@ -34,20 +36,20 @@ The table columns in automatically generated warehouses are derived from the sou
 | **FLOAT &#124; REAL** | real |
 | **DATE** | date |
 | **TIMESTAMP** | datetime2 |
-| **CHAR(n)** | char(n) with Latin1_General_100_BIN2_UTF8 collation. |
-| **STRING &#124; VARCHAR(n)** | varchar(n), (MAX) with Latin1_General_100_BIN2_UTF8 collation. STRING/VARCHAR(MAX) is mapped to varbinary(8000). |
+| **CHAR(n)** | char(n) with `Latin1_General_100_BIN2_UTF8` collation. |
+| **STRING &#124; VARCHAR(n)** | varchar(n), (MAX) with `Latin1_General_100_BIN2_UTF8` collation. STRING/VARCHAR(MAX) is mapped to varbinary(8000). |
 | **BINARY** | varbinary(n). |
 | **DECIMAL &#124; DEC &#124; NUMERIC** | decimal(p,s) |
 
 The columns that have the types that aren't listed in the table aren't represented as the table columns in the default warehouse.
 
-In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-generated warehouse is visualized with a data warehouse icon and under the **Type** column you see it listed as **SQL Endpoint.** An important distinction for this default warehouse is that it's a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
+In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-generated warehouse is visualized with a data warehouse icon and under the **Type** column you see it listed as **SQL Endpoint**. An important distinction for this default warehouse is that it's a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
 
 :::image type="content" source="media\sql-endpoint\warehouse-default-list.png" alt-text="Screenshot showing a Warehouse(default) in a portal list." lightbox="media\sql-endpoint\warehouse-default-list.png":::
 
 ## Connectivity
 
-For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your SQL Endpoint. There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later, but we generally expect that the majority of the testing and interaction for your SQL Endpoint will be via a tool such as SQL Server Management Studio (SSMS) or Azure Data Studio (ADS).
+For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your SQL Endpoint. There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later, but we generally expect that the majority of the testing and interaction for your SQL Endpoint will be via a tool such as [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
 
 ## How to delete a SQL Endpoint
 
@@ -94,3 +96,4 @@ Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
 ## Next steps
 
 - [Default datasets](datasets.md)
+- [Lakehouse](../data-engineering/lakehouse-overview.md)

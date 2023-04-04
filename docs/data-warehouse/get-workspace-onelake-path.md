@@ -10,13 +10,13 @@ ms.date: 03/15/2023
 
 # Getting Workspace and OneLake path
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-**Applies to:** Warehouse and SQL Endpoint
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 To maintain a single copy of data, Lakehouses and transactional Warehouses store data in OneLake.
 
-In this tutorial, you learn how to find a OneLake file path from the Lakehouse experience.
+In this tutorial, you learn how to find a OneLake file path from the [Lakehouse](../data-engineering/lakehouse-overview.md) experience.
 
 ## Known limitations
 

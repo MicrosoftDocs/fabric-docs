@@ -12,7 +12,7 @@ ms.date: 03/09/2023
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 The Notebook activity in pipeline allows you to run Notebook created in [!INCLUDE [product-name](../includes/product-name.md)]. You can create a Notebook activity directly through the Fabric user interface. This article provides a step-by-step walkthrough that describes how to create a Notebook activity using the Data Factory user interface.
 
@@ -28,7 +28,7 @@ To get started, you must complete the following prerequisites:
 - A workspace is created.
 - A notebook is created in your workspace. To create a new notebook, refer to [How to create [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
-### General settings
+### Creating the activity
 
 1. Create a new pipeline in your workspace.
 1. Search for Notebook in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
@@ -39,13 +39,7 @@ To get started, you must complete the following prerequisites:
 
    :::image type="content" source="media/notebook-activity/notebook-general-settings.png" alt-text="Screenshot showing the General settings tab of the Notebook activity.":::
 
-1. In the **General** tab at the bottom of the canvas, enter a name for the activity in the Name property.
-1. (Optional) You can also enter a description.
-1. Timeout: The maximum amount of time an activity can run. The default is 12 hours, and the maximum amount of time allowed is seven days. The format for the timeout is in D.HH:MM:SS.
-1. Retry: Maximum number of retry attempts.
-1. (Advanced properties) Retry interval (sec): The number of seconds between each retry attempt.
-1. (Advanced properties) Secure output: When checked, output from the activity isn't captured in logging.
-1. (Advanced properties) Secure input: The number of seconds between each retry attempt.
+Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
 ### Notebook settings
 
