@@ -269,7 +269,7 @@ sections:
           
           When you deploy a paginated report that's connected to a Fabric dataset, it continues to point to the dataset it was originally connected to. Use [deployment rules](deployment-pipelines-create-rules.md) to point your paginated report to any dataset you want, including, for example,  the target stage dataset.
           
-          If you're using a paginated report with a Fabric dataset, see [How do I create a deployment rule for a paginated report with a Fabric dataset?](#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-power-bi-dataset-)
+          If you're using a paginated report with a Fabric dataset, see [How do I create a deployment rule for a paginated report with a Fabric dataset?](#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-fabric-dataset-)
           
       - question: |
           Where are my paginated report subreports?
