@@ -23,13 +23,9 @@ You'll need to be a [Microsoft Fabric admin](admin-overview.md) with one of thes
 
 ## Which features are not compliant?
 
-This section lists features that aren't compliant with Microsoft's security resources.
-
-### Private endpoints
-
 [Private endpoints](/power-bi/enterprise/service-security-private-links) is a feature that provides secure networking for Microsoft Fabric. Some Microsoft Fabric items are not compliant with private endpoints and Microsoft Fabric can't provide secure data traffic for these items. If private endpoints are used in your organization, the items that don't have a secure connection are disabled by default. When you turn the *compliance settings* on, Microsoft Fabric will use unsecure network connections for these items.
 
-The features listed below require private endpoints and will not work unless you turn on the *compliance settings*.  
+The features listed below require private endpoints and will not work unless you turn on the *compliance settings* switch.  
 
 * Kusto
 
@@ -44,10 +40,6 @@ The features listed below require private endpoints and will not work unless you
 * EventStream
 
 * Third party access to Onelake
-
-### Customer-managed keys
-
-[Customer-managed keys](/power-bi/enterprise/service-encryption-customer-managed-keys) lets you use your own organization's keys for encryption, instead of Microsoft-managed keys. Customer-managed keys are not supported in Microsoft Fabric. Turn on the *compliance settings* if you want to use customer-managed keys in Microsoft Fabric. If you're already using customer-managed keys and the *compliance settings* isn't turned on, Microsoft Fabric will not work as expected.
 
 ## How to enable non-compliant features?
 
