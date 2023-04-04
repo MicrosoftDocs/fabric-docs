@@ -16,27 +16,27 @@ Learn the definitions of terms used throughout Microsoft Fabric, and terms used 
 
 ## General terms
 
-- **Capacity:** The potential ability of a resource to perform an activity or to produce output in a specified time period. CPU count, memory, and storage are examples of capacity dimensions.
+- **Capacity:** Capacity is a dedicated set of resources reserved for exclusive use. Capacity defines the ability of a resource to perform an activity or to produce output in a specified period. CPU count, memory, and storage are the capacity dimensions. Fabric offers capacity through the Pro, Trial, Premium - per user, Premium - per capacity, and Embedded SKU types.
 
-   For more information about capacity, see [Placeholder](../placeholder.md).
+   For more information, see [What is capacity](../enterprise/what-is-capacity.md) article.
 
-- **Experience:** A collection of capabilities with a specific look and feel. In Fabric, all experiences, while named differently (for example, Data warehousing or Data factory), provide the same capabilities.
+- **Experience:** A collection of capabilities with a specific look, feel, and functionality. The Fabric experiences include Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-time Analytics, Data Factory, Reflex, and Power BI.
 
    For more information about experiences in Fabric, see [Placeholder](../placeholder.md).
 
-- **Item:** An item is the result of a set of customer activities within an experience that is designed to help resolve or further a customer’s scenario. You can use items within the experience in which they're created or within other experiences. You can save, edit, and share them with other users.
+- **Item:** An item is the result of a set of customer activities within an experience. For example, the Data Engineering experience includes a lakehouse, notebook, and Spark job definition, items. You can use items within the experience in which they're created or from other experiences. You can save, edit, and share them with other users.
 
    For more information on items in Fabric, see [Placeholder](../placeholder.md).
 
-- **Shortcut:** OneLake shortcuts provide a way to connect to existing data without having to directly copy it. Shortcuts eliminate the need to set up and monitor data movement jobs and keeps data in sync across sources.
+- **Shortcut:** Shortcuts are embedded references within OneLake that point to other file store locations. They provide a way to connect to existing data without having to directly copy it. 
 
    For more information on shortcuts, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
-- **Tenant:** A single instance of software, supporting a single user, account, or organization.
+- **Tenant:** A single instance of Fabric supporting a single user, account, or organization.
 
    For more information on tenants in Fabric, see [Placeholder](../placeholder.md).
 
-- **Workspace:** A user interface area, designed for collaboration, in which users perform tasks.
+- **Workspace:** A user interface area designed for collaboration, in which users perform tasks such as creating reports, notebooks, datasets etc.
 
    For more information on Fabric workspaces, see [Placeholder](../placeholder.md).
 
@@ -46,7 +46,7 @@ Learn the definitions of terms used throughout Microsoft Fabric, and terms used 
 
    For more information about lakehouses, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
 
-- **Spark application:** A Spark application is a program written by a user using one of Spark’s API languages (Scala, Python, Spark SQL, or Java) or Microsoft-added languages (.NET with C# or F#). When an application runs, it's divided into one or more Spark jobs that run in parallel to process the data faster.
+- **Spark application:** An Apache Spark application is a program written by a user using one of Spark’s API languages (Scala, Python, Spark SQL, or Java) or Microsoft-added languages (.NET with C# or F#). When an application runs, it's divided into one or more Spark jobs that run in parallel to process the data faster.
 
    For more information on Spark applications, see [Placeholder](../placeholder.md).
 
