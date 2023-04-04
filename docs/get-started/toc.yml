@@ -5,10 +5,12 @@ items:
   items:
   - name: Get started with Microsoft Fabric
     href: ../placeholder.md
-- name: Get started
-  items:
   - name: Fabric terminology
     href: fabric-terminology.md
+- name: Get started
+  items:
+  - name: linktext1
+    href: ../placeholder.md
   - name: linktext2
     href: ../placeholder.md
 - name: Feature 1
