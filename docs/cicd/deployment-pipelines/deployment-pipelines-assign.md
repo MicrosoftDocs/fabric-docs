@@ -6,8 +6,8 @@ ms.author: monaberdugo
 ms.topic: how-to
 ms.service: powerbi
 ms.custom: contperf-fy21q1
-ms.date: 04/02/2023
-ms.search.form: Assign a workspace to a vacant stage
+ms.date: 03/28/2023
+ms.search.form: Deployment pipelines operations
 ---
 
 # Assigning a workspace to a Microsoft Fabric Application lifecycle management (ALM) deployment pipeline
@@ -15,7 +15,7 @@ ms.search.form: Assign a workspace to a vacant stage
 Deployment pipelines enable you to assign and unassign workspaces to any stage in a pipeline. This capability is particularly important for organizations that already have workspaces that are used as development, test, and production environments. In such cases, you can assign each workspace to its corresponding pipeline stage, and continue working in your usual flow.
 
 >[!NOTE]
->This article describes how to assign and unassign a workspace to a deployment pipeline stage in the Power BI service. You can also perform these functions programmatically, using the [Assign Workspace](/rest/api/power-bi/pipelines/assign-workspace) and [Unassign Workspace](/rest/api/power-bi/pipelines/unassign-workspace) Power BI REST APIs.
+>This article describes how to assign and unassign a workspace to a deployment pipeline stage in the Fabric service. You can also perform these functions programmatically, using the [Assign Workspace](/rest/api/fabric/pipelines/assign-workspace) and [Unassign Workspace](/rest/api/fabric/pipelines/unassign-workspace) Fabric REST APIs.
 
 ## Assign a workspace to any vacant pipeline stage
 
@@ -62,7 +62,7 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 ## Item connections
 
-After assigning a workspace to a deployment pipeline stage, if there are any adjacent stages already assigned, deployment pipelines attempts to create the connections between the Power BI items (such as reports, dashboards and datasets) in the adjacent stages. During this process, deployment pipelines checks the names of the Power BI items in the source stage and the stages adjacent to it. Connections to items in adjacent stages, are established according to the item's type and name. If there are multiple items of the same type with the same name in the adjacent stages, assigning the workspace will fail. To understand why this happens and resolve such cases, see [Why am I getting the 'can't assign the workspace' error message when I assign a workspace?](deployment-pipelines-troubleshooting.yml#why-am-i-getting-the--can-t-assign-the-workspace--error-message-when-i-assign-a-workspace-)
+After assigning a workspace to a deployment pipeline stage, if there are any adjacent stages already assigned, deployment pipelines attempts to create the connections between the items (such as reports, dashboards and datasets) in the adjacent stages. During this process, deployment pipelines checks the names of the items in the source stage and the stages adjacent to it. Connections to items in adjacent stages, are established according to the item's type and name. If there are multiple items of the same type with the same name in the adjacent stages, assigning the workspace will fail. To understand why this happens and resolve such cases, see [Why am I getting the 'can't assign the workspace' error message when I assign a workspace?](deployment-pipelines-troubleshooting.yml#why-am-i-getting-the--can-t-assign-the-workspace--error-message-when-i-assign-a-workspace-)
 
 Connections between items are only established when you assign a workspace to a pipeline stage. Adding a new item to a workspace that's part of a pipeline, doesn't trigger the creation of connections between that item and identical items in adjacent stages. To trigger forming a connection between a newly added item in a workspace stage and its equivalent item in an adjacent stage, unassign and reassign the workspace that contains the newly added item.
 

@@ -1,6 +1,6 @@
 ---
-title: Power BI Application lifecycle management (ALM) deploy content
-description: Learn how to deploy content to an empty or to non-empty stage using the Power BI Application lifecycle management (ALM) tool
+title: Fabric Application lifecycle management (ALM) deploy content
+description: Learn how to deploy content to an empty or to non-empty stage using the Fabric Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
@@ -26,15 +26,15 @@ Once the deployment is complete, refresh the dataset. For more information, see 
 
 ### Deploying options
 
-Deployment pipelines offer three options when it comes to deploying your Power BI content:
+Deployment pipelines offer three options when it comes to deploying your Fabric content:
 
-* [Deploying all content](#deploy-all-content) - Deploy all your Power BI content to the target stage.
+* [Deploying all content](#deploy-all-content) - Deploy all your content to the target stage.
 
-* [Selective deployment](#selective-deployment) - Select which Power BI content to deploy to the target stage.
+* [Selective deployment](#selective-deployment) - Select which content to deploy to the target stage.
 
 * [Backwards deployment](#backwards-deployment) - Deploy your content to a previous stage in the pipeline.
 
-After you choose how to deploy your Power BI content, you can [Review your deployment and leave a note](#review-your-deployment-and-leave-a-note).
+After you choose how to deploy your content, you can [Review your deployment and leave a note](#review-your-deployment-and-leave-a-note).
 
 #### Deploy all content
 
@@ -52,8 +52,8 @@ Since dashboards, reports, datasets and dataflows are related and have dependenc
 
 >[!NOTE]
 >
-> * You can't deploy a Power BI item to the next stage, if the items it's dependent on doesn't exist in the stage you are deploying to. For example, deploying a report without a dataset will fail, unless the dataset already exists in the target stage.
-> * You might get unexpected results if you choose to deploy a Power BI item without the item it's dependent on. This can happen when a dataset or a dataflow in the target stage, has changed and is no longer identical to the one in the stage you're deploying from.
+> * You can't deploy a Fabric item to the next stage if the items it's dependent on doesn't exist in the stage you are deploying to. For example, deploying a report without a dataset will fail, unless the dataset already exists in the target stage.
+> * You might get unexpected results if you choose to deploy an item without the item it's dependent on. This can happen when a dataset or a dataflow in the target stage, has changed and is no longer identical to the one in the stage you're deploying from.
 
 #### Backwards deployment
 
