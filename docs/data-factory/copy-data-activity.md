@@ -6,7 +6,7 @@ ms.author: jianleishen
 author: jianleishen
 ms.subservice: data-factory
 ms.topic: how-to
-ms.date: 03/20/2023
+ms.date: 04/03/2023
 ---
 # How to copy data using copy activity
 
@@ -15,6 +15,14 @@ ms.date: 03/20/2023
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 Learn how to add a copy activity directly or through the copy assistant.
+
+In Data Pipeline, you can use the Copy activity to copy data among data stores located on-premises and in the cloud. After you copy the data, you can use other activities to further transform and analyze it. You can also use the Copy activity to publish transformation and analysis results for business intelligence (BI) and application consumption.
+
+To copy data from a source to a destination, the service that runs the Copy activity performs these steps:
+
+Reads data from a source data store.
+Performs serialization/deserialization, compression/decompression, column mapping, and so on. It performs these operations based on the configuration of the input dataset, output dataset, and Copy activity.
+Writes data to the sink/destination data store.
 
 ## Prerequisites
 
@@ -27,14 +35,14 @@ To get started, you must complete the following prerequisites:
 
 Follow these steps to set up your copy activity using copy assistant.
 
-### Step 1: Start with copy assistant
+### Start with copy assistant
 
 1. Open an existing data pipeline or create a new data pipeline.
 1. Select **Copy data** on the canvas to open the **Copy Assistant** tool to get started. Or select **Use copy assistant** from the **Copy data** drop down list under the **Activities** tab on the ribbon.
 
    :::image type="content" source="media/copy-data-activity/use-copy-assistant.png" alt-text="Screenshot showing options for opening the copy assistant." lightbox="media/copy-data-activity/use-copy-assistant.png":::
 
-### Step 2: Configure your source
+### Configure your source
 
 1. Choose your data source by choosing a data source type. In this tutorial, you'll use Azure Blob Storage as an example. Select **Azure Blob Storage** and then select **Next**.
 
@@ -58,7 +66,7 @@ Follow these steps to set up your copy activity using copy assistant.
 
    :::image type="content" source="media/copy-data-activity/choose-copy-file-or-folder.png" alt-text="Screenshot showing where to select the data to be copied." lightbox="media/copy-data-activity/choose-copy-file-or-folder.png":::
 
-### Step 3: Configure your destination
+### Configure your destination
 
 1. Choose your destination by choosing a data source type. In this tutorial, you'll use Azure Blob Storage as an example. Select**Azure Blob Storage**, and then select **Next**.
 
@@ -74,7 +82,7 @@ Follow these steps to set up your copy activity using copy assistant.
 
    :::image type="content" source="media/copy-data-activity/connect-to-data-destination.png" alt-text="Screenshot of Connect to data destination." lightbox="media/copy-data-activity/connect-to-data-destination.png":::
 
-### Step 4: Review and create your copy activity
+### Review and create your copy activity
 
 1. Review your copy activity settings in the previous steps and select **OK** to finish. Or you can go back to the previous steps to edit your settings if needed in the tool.
 
@@ -90,14 +98,14 @@ Now you can either save your data pipeline with this single copy activity or con
 
 Follow these steps to add a copy activity directly.
 
-### Step 1: Add a copy activity
+### Add a copy activity
 
 1. Open an existing data pipeline or create a new data pipeline.
 1. Add a copy activity either by selecting **Add pipeline activity** > **Copy activity** or by selecting **Copy data** > **Add to canvas** under the **Activities** tab.
 
    :::image type="content" source="media/copy-data-activity/add-copy-activity-to-pipeline-canvas.png" alt-text="Screenshot showing two ways to add a copy activity." lightbox="media/copy-data-activity/add-copy-activity-to-pipeline-canvas.png":::
 
-### Step 2: Configure your source under the source tab
+### Configure your source under the source tab
 
 1. Select **New** beside the **Connection** to create a connection to your data source.
 
@@ -123,7 +131,7 @@ Follow these steps to add a copy activity directly.
 
    :::image type="content" source="media/copy-data-activity/file-settings-details-in-pipeline.png" alt-text="Screenshot of advanced settings." lightbox="media/copy-data-activity/file-settings-details-in-pipeline.png":::
 
-### Step 3: Configure your destination under the destination tab
+### Configure your destination under the destination tab
 
 1. Choose your destination type. It could be either your internal first class data store from your workspace, such as Lakehouse, or your external data stores. In this tutorial, you'll use Azure Blob Storage as an example.
 
@@ -142,3 +150,7 @@ Follow these steps to add a copy activity directly.
    :::image type="content" source="media/copy-data-activity/configure-destination-file-details-in-pipeline.png" alt-text="Screenshot of Advanced options." lightbox="media/copy-data-activity/configure-destination-file-details-in-pipeline.png":::
 
 Now you can either save your data pipeline with this single copy activity or continue to design your data pipeline.
+
+## Next steps
+
+[Connector overview](connector-overview.md)
