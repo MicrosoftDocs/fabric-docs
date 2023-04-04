@@ -21,7 +21,7 @@ You can modify data that is stored in tables in a Synapse Data Warehouse. We'll 
 
 ## Cross-database query transaction support
 
-Synapse Data Warehouse in Microsoft Fabric supports transactions that span across databases that are within the same workspace including reading from the SQL Endpoint for Lakehouses. Every Lakehouse has one SQL Endpoint and each workspace can have more than one Lakehouse.
+Synapse Data Warehouse in Microsoft Fabric supports transactions that span across databases that are within the same workspace including reading from the SQL Endpoint for Lakehouses. Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one SQL Endpoint and each workspace can have more than one Lakehouse.
 
 ## DDL support within transactions
 
@@ -53,7 +53,7 @@ Transaction logging in Synapse Data Warehouse in Microsoft Fabric is simpler as 
 - No save points
 - no named transactions
 - no marked transactions
-- At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](data-warehousing.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
+- At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
 - If a SELECT is within a transaction, and was preceded by data insertions, the automatically generated statistics may be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, you may want to [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=sql-server-ver16&preserve-view=true) for the columns mentioned in your SELECT.
 - To avoid query concurrency issue during preview, refrain from doing trickle INSERTs into a warehouse table.
 

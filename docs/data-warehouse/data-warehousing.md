@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
 ms.topic: overview
-ms.date: 03/31/2023
+ms.date: 04/03/2023
 ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspace overview
 ---
 
@@ -15,14 +15,14 @@ ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspac
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides two distinct data warehousing experiences. The **[!INCLUDE[fabric-se](includes/fabric-se.md)]** in [!INCLUDE [product-name](../includes/product-name.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using T-SQL/TDS end-point. **[!INCLUDE[fabric-dw](includes/fabric-dw.md)]** in [!INCLUDE [product-name](../includes/product-name.md)] provides a "traditional", transactional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse.
+[!INCLUDE [product-name](../includes/product-name.md)] provides two distinct data warehousing experiences. The **[!INCLUDE[fabric-se](includes/fabric-se.md)]** in [!INCLUDE [product-name](../includes/product-name.md)] enables data engineers to build a relational layer on top of physical data in the [Lakehouse](../data-engineering/lakehouse-overview.md) and expose it to analysis and reporting tools using T-SQL/TDS end-point. **[!INCLUDE[fabric-dw](includes/fabric-dw.md)]** in [!INCLUDE [product-name](../includes/product-name.md)] provides a "traditional", transactional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse.
 
 > [!IMPORTANT]
 > This article provides a comprehensive overview of two distinct data warehousing experiences.
 
 ## SQL Endpoint
 
-The SQL Endpoint on the Lakehouse allows a user to transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" experiences that a data warehouse would provide, supporting T-SQL. Via the SQL Endpoint, the user has a subset of SQL commands that can define and query data objects but not manipulate the data. You can perform the following actions in the SQL Endpoint:
+The SQL Endpoint on the [Lakehouse](../data-engineering/lakehouse-overview.md) allows a user to transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" experiences that a data warehouse would provide, supporting T-SQL. Via the SQL Endpoint, the user has a subset of SQL commands that can define and query data objects but not manipulate the data. You can perform the following actions in the SQL Endpoint:
 
 - Query the tables that reference data in your Delta Lake folders in the lake.
 - Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
@@ -46,7 +46,7 @@ For more information and how-to connect, see [Connectivity](connectivity.md).
 
 ## Prerequisites and known limitations
 
-1. For more information on loading your Lakehouse, see [Get data experience for Lakehouse](../data-engineering/load-data-lakehouse.md). 
+1. For more information on loading your [Lakehouse](../data-engineering/lakehouse-overview.md), see [Get data experience for Lakehouse](../data-engineering/load-data-lakehouse.md). 
 
 1. When you create a Lakehouse table from a pipeline, if the pipeline errors out before inserting rows into the Lakehouse table, the table will be corrupt. Go back to your Lakehouse, delete the table folder from "lake view" and then reapply your pipeline.
 
@@ -80,40 +80,6 @@ For more information and how-to connect, see [Connectivity](connectivity.md).
 
    - GRANT, REVOKE, DENY commands are currently not supported.
 
-## T-SQL surface area
-
-Creating, altering, and dropping tables, and insert, update, and delete are only supported in the transactional warehouse, not in the SQL Endpoint.
-
-At this time, the following list of commands is NOT currently supported. Don't try to use these commands because even though they may appear to succeed, they could cause corruption to your warehouse.
-
-- ALTER TABLE ADD/ALTER/DROP COLUMN
-- BULK LOAD
-- CREATE ROLE
-- CREATE SECURITY POLICY - Row Level Security (RLS)
-- CREATE USER
-- CTAS
-- GRANT/DENY/REVOKE
-- Hints
-- Identity Columns
-- Manually created multi-column stats
-- MASK and UNMASK (Dynamic Data Masking)
-- MATERIALIZED VIEWS
-- MERGE
-- OPENROWSET
-- PREDICT
-- Queries targeting system and user tables
-- Recursive queries
-- Result Set Caching
-- Schema and Table names can't contain / or \
-- SELECT - FOR (except JSON)
-- SELECT - INTO
-- `sp_showmemo_xml`
-- `sp_showspaceused`
-- `sp_rename`
-- Temp Tables
-- Triggers
-- TRUNCATE
-
 ## Keyboard shortcuts
 
 Keyboard shortcuts provide a quick way to navigate and allow users to work more efficiently in SQL query editor. The table in this article lists all the shortcuts available in SQL query editor.
@@ -142,5 +108,8 @@ SQL query editor:
 
 ## Next steps
 
+- [SQL Endpoint](sql-endpoint.md)
+- [Lakehouse](../data-engineering/lakehouse-overview.md)
+- [Synapse Data Warehouse in Microsoft Fabric](warehouse.md)
 - [Create a warehouse](create-warehouse.md)
 - [Creating reports](create-reports.md)
