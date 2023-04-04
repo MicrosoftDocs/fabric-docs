@@ -73,6 +73,8 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
+    - name: Delimited text
+      href: format-delimited-text.md
     - name: Excel format
       items:
       - name: Overview

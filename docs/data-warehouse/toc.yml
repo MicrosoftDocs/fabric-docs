@@ -15,6 +15,20 @@ items:
     href: datasets.md
   - name: Creating reports
     href: create-reports.md
+- name: Workspaces
+  items:
+  - name: Getting Workspace and OneLake path
+    href: get-workspace-onelake-path.md    
+  - name: Workspace roles
+    href: workspace-roles.md
+- name: Load data into the warehouse
+  items:
+  - name: Ingesting data into the warehouse
+    href: ingest-data.md
+  - name: Ingest data with COPY command
+    href: ingest-data-copy-command.md
+  - name: Ingest data with Data pipelines
+    href: ingest-data-pipelines.md
 - name: Data warehouses
   items:
   - name: Warehouse
@@ -27,20 +41,10 @@ items:
     href: reports-power-bi-service.md
   - name: Warehouse settings and context menus
     href: settings-context-menus.md
-  - name: Query using Visual Query editor
-    href: visual-query-editor.md
-  - name: Query using SQL Query editor
-    href: sql-query-editor.md
   - name: Connectivity
     href: connectivity.md
   - name: Manage user access
     href: manage-user-access.md
-- name: Workspaces
-  items:
-  - name: Workspace roles
-    href: workspace-roles.md
-  - name: Getting Workspace and OneLake path
-    href: get-workspace-onelake-path.md
 - name: Datasets
   items:
   - name: Data modeling and defining relationships
@@ -49,24 +53,24 @@ items:
     href: create-measure.md
   - name: Hide elements from downstream reporting
     href: hide-elements-downstream-reporting.md
-- name: Load data
-  items:
-  - name: Ingesting data into the warehouse
-    href: ingest-data.md
-  - name: Ingest data with COPY command
-    href: ingest-data-copy-command.md
-  - name: Ingest data with Data pipelines
-    href: ingest-data-pipelines.md
 - name: Develop
   items:
-  - name: Create a table with SSMS
-    href: create-table-sql-server-management-studio.md
-  - name: Transactions and modify tables with SSMS
-    href: transactions-insert-modify-sql-server-management-studio.md
-  - name: Query a warehouse with SSMS
-    href: query-warehouse-sql-server-management-studio.md
   - name: Statistics
     href: statistics.md
+  - name: Tables
+    href: tables.md
+  - name: Primary, foreign, and unique keys
+    href: table-constraints.md
+  - name: Transactions
+    href: transactions.md
+  - name: Create a table with SSMS
+    href: create-table.md
+  - name: Query a Synapse Data Warehouse
+    href: query-warehouse.md
+  - name: Query using Visual Query editor
+    href: visual-query-editor.md
+  - name: Query using SQL Query editor
+    href: sql-query-editor.md
 - name: Monitor
   items:
   - name: Monitor using DMVs
