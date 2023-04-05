@@ -7,7 +7,7 @@ author: salilkanade
 ms.topic: how-to
 ms.date: 03/31/2023
 ---
-# Query a warehouse
+# Query the Synapse Data Warehouse
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -38,6 +38,8 @@ To get started with this tutorial, check the following prerequisites:
 
 ## Write a cross-database SQL Query
 
+Currently, you can write cross database queries to databases in the same workspaces in [!INCLUDE [product-name](../includes/product-name.md)].
+
 There are several ways you can write cross-database queries within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace, in this section we explore three examples.
 
 1. Select the database. Using the `USE [database name]` statement, you can reference the table directly within your database and query another's database using three-part naming. In the following example, you are in the context of the database with the Affiliation table.
@@ -45,7 +47,7 @@ There are several ways you can write cross-database queries within the same [!IN
    ```sql
    SELECT * 
    FROM ContosoLakehouse.dbo.ContosoSalesTable AS Contoso
-   JOIN Affiliation
+   INNER JOIN Affiliation
    ON Affiliation.AffiliationId = Contoso.RecordTypeID;
    ```
 
@@ -54,7 +56,7 @@ There are several ways you can write cross-database queries within the same [!IN
    ```sql
    SELECT * 
    FROM ContosoLakehouse.dbo.ContosoSalesTable AS Contoso
-   JOIN My_lakehouse.dbo.Affiliation
+   INNER JOIN My_lakehouse.dbo.Affiliation
    ON My_lakehouse.dbo.Affiliation.AffiliationId = Contoso.RecordTypeID;
    ```
 
@@ -63,7 +65,7 @@ There are several ways you can write cross-database queries within the same [!IN
    ```sql
    SELECT * 
    FROM ContosoLakehouse.dbo.ContosoSalesTable AS Contoso
-   JOIN My_lakehouse.dbo.Affiliation as MyAffiliation
+   INNER JOIN My_lakehouse.dbo.Affiliation as MyAffiliation
    ON MyAffiliation.AffiliationId = Contoso.RecordTypeID;
    ```
 

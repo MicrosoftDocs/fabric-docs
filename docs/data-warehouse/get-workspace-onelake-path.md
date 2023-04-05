@@ -1,5 +1,5 @@
 ---
-title: Getting Workspace and OneLake path
+title: Get Workspace and OneLake path
 description: Follow steps to get the workspace and OneLake path.
 ms.reviewer: wiassaf
 ms.author: prlangad
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/15/2023
 ---
 
-# Getting Workspace and OneLake path
+# Get Workspace and OneLake path
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 

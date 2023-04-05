@@ -17,7 +17,7 @@ ms.search.form: Ingesting data
 
 The goal of the COPY statement is to allow customers to ingest data into a [!INCLUDE [product-name](../includes/product-name.md)] warehouse from storage accounts of types:
 
-- Azure Blob Store (WASB) and
+- Azure Blob Store (`wasb`) and
 - Azure ADLS Gen2
 
 And for file types:

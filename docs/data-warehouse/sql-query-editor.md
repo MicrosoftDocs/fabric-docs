@@ -11,11 +11,11 @@ ms.search.form: Query Editor
 
 # Query using the SQL Query editor
 
-You can query the data in your warehouse with multiple tools, including the [Visual Query editor](visual-query-editor.md) and the SQL Query editor in the Azure portal. This article describes how to use the SQL Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the [Visual Query editor](visual-query-editor.md) and the SQL Query editor in the Fabric portal. This article describes how to use the SQL Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## SQL Query editor in the Azure portal
+## SQL Query editor in the Fabric portal
 The SQL Query editor provides a text editor to write queries using T-SQL. To access the built-in SQL query editor, select the **SQL query editor view** icon located at the bottom of the warehouse editor window.
 
 :::image type="content" source="media\sql-query-editor\sql-query-editor-icon.png" alt-text="Screenshot showing the SQL query editor view icon." lightbox="media\sql-query-editor\sql-query-editor-icon.png":::
@@ -32,10 +32,11 @@ As you work on your SQL query, the queries are automatically saved every few sec
 
 The SQL Query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing and validation. Once you've written the T-SQL query, select **Run** to execute the query. The **Results** preview is displayed in the **Results** section. The **Open in Excel** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to view the results in Excel.
 
-## Known limitations with warehouse editor
+## Known limitations with SQL Query editor
 
-Currently, you can only write data queries. To write statements to update data (DML) or modify schemas (DDL), see [Connectivity](connectivity.md) and [Query a warehouse using SSMS](query-warehouse.md).
+Currently, you can only run read-only queries. To write statements to update data (DML) or modify schemas (DDL), [Query a warehouse using SSMS](query-warehouse.md).
 
 ## Next steps
 
+- [How-to: Query the Synapse Data Warehouse](query-warehouse.md)
 - [Query using the Visual Query editor](visual-query-editor.md)

@@ -9,7 +9,7 @@ ms.date: 04/03/2023
 ms.search.form: Ingesting data
 ---
 
-# Ingesting data into the warehouse
+# Ingesting data into the Synapse Data Warehouse
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
