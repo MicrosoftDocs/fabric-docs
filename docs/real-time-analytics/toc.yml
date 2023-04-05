@@ -20,6 +20,8 @@ items:
       href: create-database.md
     - name: Database Management
       href: database-management.md
+    - name: One logical copy (shortcut)
+      href: onelake-mirroring.md
   - name: Tables
     items:
     - name: Create an empty table
@@ -38,8 +40,6 @@ items:
     href: get-data-onelake.md  
   - name: OneLake shortcut
     href: onelake-shortcut.md
-  - name: Continuous export to OneLake (mirroring)
-    href: onelake-mirroring.md
 - name: Query data
   items:
   - name: Query data in the KQL queryset

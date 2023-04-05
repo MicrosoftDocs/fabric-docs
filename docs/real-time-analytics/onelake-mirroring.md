@@ -1,44 +1,48 @@
 ---
-title: Continuous export to OneLake (mirroring) in Real-time Analytics
-description: Learn how to create a OneLake shortcut to mirror your data to OneLake.
+title: One logical copy (shortcut) in Real-time Analytics
+description: Learn how to create a OneLake shortcut that exposes the data in your KQL Database to other !INCLUDE [product-name](../includes/product-name.md)] experiences.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 03/30/2023
+ms.date: 04/05/2023
 ms.search.form: product-kusto
 ---
 
-# Continuous export to OneLake (mirroring)
+# One logical copy (Shortcut)
 
-In this article, you'll learn how to create a OneLake shortcut in OneLake to mirror your KQL Database.
+In this article, you'll learn how to create a OneLake shortcut to expose the data in your KQL Database to all of [!INCLUDE [product-name](../includes/product-name.md)]'s experiences.
 
-OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files’ store locations.  The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Once you create a shortcut, you can access your data in all of [!INCLUDE [product-name](../includes/product-name.md)]'s experiences. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source.
+OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files’ store locations.  The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source.
 
-There are two types of shortcuts:
+[!INCLUDE [product-name](../includes/product-name.md)] supports two types of OneLake shortcuts that use internal sources:
 
-* OneLake shortcut linking data in OneLake to your KQL Database. This shortcut defines the data from OneLake as an external table. Create this shortcut when you want to infrequently run queries on historical data. To create this type of shortcut, see [Create a OneLake shortcut](onelake-shortcut.md). If you want to run queries frequently and accelerate performance, see [Get data from OneLake](get-data-onelake.md).
-* Continuous export: this is a OneLake shortcut that mirrors the data in your KQL Database to OneLake. If enabled, this shortcut creates one logical copy of the data in your database that you can access in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management. To disable continuous export, see [Continuous export (mirroring)](#continuous-export-mirroring).
+| Shortcut | Description | When to use it? |
+|---------| --------- | --------- |
+|External table| Defines the data from OneLake as an external table in your KQL Database. | Use this shortcut when you want to infrequently run queries on historical data without partitioning or indexing of the data through the service. To create a OneLake shortcut, see [Create a OneLake shortcut](onelake-shortcut.md). If you want to run queries frequently and accelerate performance, import the data directly from OneLake. To get data from OneLake, see [Get data from OneLake](get-data-onelake.md).
+|One logical copy| Creates one logical copy of the data in your KQL Database in OneLake. This shortcut is a two-step process that requires enabling continuous export of your data, and creating a shortcut in OneLake. | Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management. |
 
 For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
+* [Power BI Premium subscription](/power-bi/enterprise/service-admin-premium-purchase).
 * A Workspace
-* A [KQL database](create-database.md) with data
+* A [KQL database](create-database.md) with data.
 
-## Continuous export (mirroring)
+## Continuous export
 
 :::image type="content" source="media/onelake-mirroring/continuous-export.png" alt-text="Screenshot of the Manage tab showing two options titled Data retention policy and Continuous export.":::
 
-Continuous export to OneLake is enabled in your **KQL Database** by default. If you disable continuous export before creating your Lakehouse, your data won't be mirrored. If you disable continuous export after creating a Lakehouse, the data that was already mirrored will remain, but any data loaded into your database after that won't be mirrored.
+Creating one logical copy of your data in OneLake is a two-step process. You send your data from your KQL Database to OneLake by enabling continuous export, then you expose the data by creating a OneLake shortcut. To create the shortcut, see [Create shortcut](#create-shortcut).
+
+Continuous export to OneLake is enabled in your **KQL Database** by default. If you disable continuous export before creating your Lakehouse, your data won't be sent to OneLake. If you disable continuous export after creating a Lakehouse, the data that was already sent will remain, but any data loaded into your database after that point will remain in your database.
 
 1. To disable **Continuous export**, navigate to your **KQL Database**.
 1. On the ribbon, select **Manage**.
 1. Select **Continuous export** > **off**.
 
-## Create a OneLake shortcut in OneLake
+## Create shortcut
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Data Engineering**.
 
