@@ -1,6 +1,6 @@
 ---
-title: Overview of Power BI deployment pipelines 
-description: An introduction to deployment pipelines the Power BI Application lifecycle management (ALM) tool
+title: Overview of Fabric deployment pipelines 
+description: An introduction to deployment pipelines the Fabric Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
@@ -13,17 +13,15 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 
 # Introduction to deployment pipelines
 
-In today’s world, analytics is a vital part of decision making in almost every organization. The growing use of Power BI as an analytics tool, requires it to use more data, look appealing and  be user-friendly. Above all however, Power BI needs to always be available and reliable. To meet these requirements, BI creators must collaborate effectively.
-
-The deployment pipelines tool enables BI creators to manage the lifecycle of organizational content. It's an efficient and reusable tool for creators in an enterprise with Premium capacity. Deployment pipelines enable creators to develop and test Power BI content in the Power BI service, before the content is consumed by users. The content types include reports, paginated reports, dashboards, datasets and dataflows.
+In today’s world, analytics is a vital part of decision making in almost every organization. Fabric's deployment pipelines tool enables BI creators to manage the lifecycle of organizational content. It's an efficient and reusable tool for creators in an enterprise with Premium capacity. Deployment pipelines enable creators to develop and test content in the service, before the content is consumed by users. The content types include reports, paginated reports, dashboards, datasets and dataflows.
 
 ## Learn to use deployment pipelines
 
 You can learn how to use the deployment pipelines tool by following these links.
 
-* [Create and manage a Power BI deployment pipeline](/training/modules/power-bi-deployment-pipelines) - A Power BI Learn module that walks you through creating a deployment pipeline.
+* [Create and manage a deployment pipeline](/training/modules/power-bi-deployment-pipelines) - A Learn module that walks you through creating a deployment pipeline.
 
-* [Get started with deployment pipelines](deployment-pipelines-get-started.md) - A Power BI article that explains how to create a pipeline, as well as key functions such as backward deployment and deployment rules.
+* [Get started with deployment pipelines](deployment-pipelines-get-started.md) - An article that explains how to create a pipeline, as well as key functions such as backward deployment and deployment rules.
 
 ## Pipeline structure
 
@@ -56,6 +54,10 @@ When you deploy content from the source stage to a target stage, the source cont
 :::image type="content" source="media/deployment-pipelines-get-started/replaced-content.png" alt-text="A screenshot of the replaced content warning which is displayed when a deployment is about to cause changes to items in the stage you're deploying to.":::
 
 You can learn more about [which items are copied to the next stage](deployment-pipelines-process.md#deployed-items), and [which items are not copied](deployment-pipelines-process.md#unsupported-items), in [Understand the deployment process](deployment-pipelines-process.md).
+
+## Automation
+
+You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). Learn more about the automation process in [Automate your deployment pipeline using APIs and DevOps](deployment-pipelines-automation.md).
 
 ## Next steps
 

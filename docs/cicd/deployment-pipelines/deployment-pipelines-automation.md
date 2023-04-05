@@ -6,22 +6,22 @@ ms.author: monaberdugo
 ms.topic: conceptual
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
-ms.date: 12/27/2022
+ms.date: 03/28/2023
 ---
 
 # Automate your deployment pipeline by using APIs and Azure DevOps
 
-The Microsoft Fabric [deployment pipelines](deployment-pipelines-overview.md) tool enables business intelligence teams to build an efficient and reusable release process for their Power BI content.
+The Microsoft Fabric [deployment pipelines](deployment-pipelines-overview.md) tool enables business intelligence teams to build an efficient and reusable release process for their Fabric content.
 
-To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tool](#use-the-power-bi-automation-tools-extension) extension, which supports many of the deployment pipelines API operations.
+To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Fabric automation tool](#use-the-fabric-automation-tools-extension) extension, which supports many of the deployment pipelines API operations.
 
-You can use the [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pipelines) to integrate Power BI into your organization's automation process. Here are a few examples of what can be done by using the APIs:
+You can use the [deployment pipelines Fabric REST APIs](/rest/api/fabric/pipelines) to integrate Fabric into your organization's automation process. Here are a few examples of what can be done by using the APIs:
 
 * Manage pipelines from start to finish, including creating a pipeline, assigning a workspace to any stage, and deploying and deleting the pipeline.
 
 * Assign and unassign users to and from a pipeline.
 
-* Integrate Power BI into familiar DevOps tools such as [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops) or [GitHub Actions](https://docs.github.com/en/actions).
+* Integrate Fabric into familiar DevOps tools such as [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops) or [GitHub Actions](https://docs.github.com/en/actions).
 
 * Schedule pipeline deployments to happen automatically at a specific time.
 
@@ -31,11 +31,11 @@ You can use the [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pip
 
 ## Deployment pipelines API functions
 
-The [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pipelines) allow you to perform the following functions:
+The [deployment pipelines Fabric REST APIs](/rest/api/fabric/pipelines) allow you to perform the following functions:
 
 * **Get pipeline information** - Retrieve information about your pipelines and their content. Getting the pipeline information enables you to dynamically build the deployment API calls. You can also check the [status of a deployment](/rest/api/power-bi/pipelines/getpipelineoperation) or the [deployment history](/rest/api/power-bi/pipelines/getpipelineoperations).
 
-* **Deploy** - The REST calls enable developers to use any type of deployment available in the Power BI service.
+* **Deploy** - The REST calls enable developers to use any type of deployment available in the Fabric service.
 
 * **Create** and **delete** pipelines - Use [Create pipeline](/rest/api/power-bi/pipelines/create-pipeline) and [Delete pipeline](/rest/api/power-bi/pipelines/delete-pipeline) to perform these operations.
 
@@ -49,11 +49,11 @@ Here's a list of the different deployment types the APIs support:
 
 * **Deploy all** - A single API call that deploys all the content in the workspace to the next stage in the pipeline. For this operation, use the [Deploy all](/rest/api/power-bi/pipelines/deployall) API.
 
-* **Selective deploy** - Deploys only specific Power BI items, such as reports or dashboards, in the pipeline. For this operation, use the [Selective deploy](/rest/api/power-bi/pipelines/selectivedeploy) API.
+* **Selective deploy** - Deploys only specific items, such as reports or dashboards, in the pipeline. For this operation, use the [Selective deploy](/rest/api/power-bi/pipelines/selectivedeploy) API.
 
-* **Backward deploy** - Deploys new Power BI items to the previous stage. Backward deployment only works if the Power BI items that are deployed don't already exist in the target stage. For this operation, use either the [Deploy all](/rest/api/power-bi/pipelines/deployall) or the [Selective deploy](/rest/api/power-bi/pipelines/selectivedeploy) APIs, with `isBackwardDeployment` set to `True`.
+* **Backward deploy** - Deploys new  items to the previous stage. Backward deployment only works if the items that are deployed don't already exist in the target stage. For this operation, use either the [Deploy all](/rest/api/power-bi/pipelines/deployall) or the [Selective deploy](/rest/api/power-bi/pipelines/selectivedeploy) APIs, with `isBackwardDeployment` set to `True`.
 
-* **Update App** - As part of the deployment API call, you can update the content of the app that's related to that stage. Updated Power BI items are automatically available to your end users, after a deployment has completed. For this operation, use either the [Deploy all](/rest/api/power-bi/pipelines/deployall) or the [Selective deploy](/rest/api/power-bi/pipelines/selectivedeploy) APIs, with [PipelineUpdateAppSettings](/rest/api/power-bi/pipelines/selectivedeploy#pipelineupdateappsettings).
+* **Update App** - As part of the deployment API call, you can update the content of the app that's related to that stage. Updated items are automatically available to your end users, after a deployment has completed. For this operation, use either the [Deploy all](/rest/api/power-bi/pipelines/deployall) or the [Selective deploy](/rest/api/power-bi/pipelines/selectivedeploy) APIs, with [PipelineUpdateAppSettings](/rest/api/power-bi/pipelines/selectivedeploy#pipelineupdateappsettings).
 
 ## Before you begin
 
@@ -65,28 +65,28 @@ Before you use the deployment pipelines APIs, make sure you have the following:
 
 ## Integrate your pipeline with Azure DevOps
 
-To automate the Power BI deployment processes from within your [release pipeline in Azure DevOps](/azure/devops/pipelines), you can use one of these methods:
+To automate the deployment processes from within your [release pipeline in Azure DevOps](/azure/devops/pipelines), use one of these methods:
 
-* **PowerShell** - The script signs into Power BI by using a *service principal* or a *user*.
+* **PowerShell** - The script signs into Fabric using a *service principal* or a *user*.
 
-* **Power BI automation tools** - This extension works with a [*service principal*](/poewr-bi/developer/embedded/embed-service-principal.md) or a *user*.
+* **Fabric automation tools** - This extension works with a [*service principal*](/power-bi/developer/embedded/embed-service-principal.md) or a *user*.
 
-You can also use other [Power BI REST API](/rest/api/power-bi/) calls, to complete related operations such as importing a *.pbix* into the pipeline, updating data sources and parameters.
+You can also use other [Fabric REST API](/rest/api/fabric/) calls, to complete related operations such as importing a *.pbix* into the pipeline, updating data sources and parameters.
 
-### Use the Power BI automation tools extension
+### Use the Fabric automation tools extension
 
-The Power BI automation tools extension is an [open source](https://github.com/microsoft/powerbi-azure-pipelines-extensions) Azure DevOps extension that provides a range of deployment pipelines operations that can be performed in Azure DevOps. The extension eliminates the need for APIs or scripts to manage pipelines. Each operation can be used individually to perform a task, such as creating a pipeline. Operations can be used together in an Azure DevOps pipeline to create a more complex scenario, such as creating a pipeline, assigning a workspace to the pipeline, adding users, and deploying.
+The Fabric automation tools extension is an [open source](https://github.com/microsoft/powerbi-azure-pipelines-extensions) Azure DevOps extension that provides a range of deployment pipelines operations that can be performed in Azure DevOps. The extension eliminates the need for APIs or scripts to manage pipelines. Each operation can be used individually to perform a task, such as creating a pipeline. Operations can be used together in an Azure DevOps pipeline to create a more complex scenario, such as creating a pipeline, assigning a workspace to the pipeline, adding users, and deploying.
 
-After you add the [Power BI automation tools](https://marketplace.visualstudio.com/items?itemName=ms-pbi-api.pbi-automation-tools) extension to DevOps, you need to create a service connection. The following connections are available:
+After you add the [Fabric automation tools](https://marketplace.visualstudio.com/items?itemName=ms-pbi-api.pbi-automation-tools) extension to DevOps, you need to create a service connection. The following connections are available:
 
-* **Service principal** (recommended) - This connection authenticates by using a [service principal](/power-bi/developer/embedded/embed-service-principal.md) and requires the Azure AD app’s secret and application ID. When you use this option, verify that the [Power BI service admin settings](/power-bi/developer/embedded/embed-service-principal#step-3---enable-the-power-bi-service-admin-settings) for the service principal are enabled.
+* **Service principal** (recommended) - This connection authenticates by using a [service principal](/power-bi/developer/embedded/embed-service-principal.md) and requires the Azure AD app’s secret and application ID. When you use this option, verify that the [service admin settings](/power-bi/developer/embedded/embed-service-principal#step-3---enable-the-power-bi-service-admin-settings) for the service principal are enabled.
 
 * **Username and password** – Configured as a generic service connection with a username and a password. This connection method doesn’t support multi-factor authentication. We recommend that you use the service principal connection method because it doesn’t require storing user credentials on Azure DevOps.
 
 >[!NOTE]
->The Power BI automation tools extension uses an Azure DevOps service connection to store credentials. For more information, see [How we store your credentials for Azure DevOps Services](/azure/devops/organizations/security/credential-storage).
+>The Fabric automation tools extension uses an Azure DevOps service connection to store credentials. For more information, see [How we store your credentials for Azure DevOps Services](/azure/devops/organizations/security/credential-storage).
 
-After you enable a service connection for your Azure DevOps Power BI automation tools, you can [create pipeline tasks](/azure/devops/extend/develop/add-build-task). The extension includes the following deployment pipelines tasks:
+After you enable a service connection for your Azure DevOps Fabric automation tools, you can [create pipeline tasks](/azure/devops/extend/develop/add-build-task). The extension includes the following deployment pipelines tasks:
 
 * Create a new pipeline
 
@@ -124,9 +124,9 @@ This section describes an example PowerShell script that deploys a dataset, repo
 
 To run a PowerShell script that performs a deployment, you'll need the following components. You can add any of these parts into [tasks](/azure/devops/pipelines/tasks/utility/powershell) in your Azure pipeline stages.
 
-1. **Sign in** - Before you can deploy your content, you need to sign in to Power BI by using a *service principal* or a *user*. Use the [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount) command to sign in.
+1. **Sign in** - Before you can deploy your content, you need to sign in to Fabric using a *service principal* or a *user*. Use the [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount) command to sign in.
 
-2. **Build your request body** - In this part of the script you specify which Power BI items (such as reports and dashboards) you're deploying.
+2. **Build your request body** - In this part of the script you specify which items (such as reports and dashboards) you're deploying.
 
     ```powershell
     $body = @{ 
@@ -173,13 +173,13 @@ To run a PowerShell script that performs a deployment, you'll need the following
 
 ## Considerations and limitations
 
-* Deployment by using APIs is subject to the same [limitations](deployment-pipelines-process.md#considerations-and-limitations) as the Power BI deployment pipelines user interface.
+* Deployment by using APIs is subject to the same [limitations](deployment-pipelines-process.md#considerations-and-limitations) as the deployment pipelines user interface.
 
 * A *service principal* can't configure *OAuth* credentials. After you deploy new items, the signed in *service principal* becomes the owner of any deployed paginated reports and datasets. In such cases, a refresh can't be completed.
 
 * Deploying dataflows by using a *service principal* isn't supported.
 
-* The maximum number of Power BI items that can be deployed in a single deployment is 300.
+* The maximum number of items that can be deployed in a single deployment is 300.
 
 ## Next steps
 

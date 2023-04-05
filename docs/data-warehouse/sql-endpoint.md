@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
 ms.topic: conceptual
-ms.date: 03/15/2023
+ms.date: 04/03/2023
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
@@ -13,7 +13,7 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse workspace as Delta tables, a SQL-based experience containing tables that reference your Delta Lake data is automatically created in that workspace for you, called the SQL Endpoint. Every Delta Lake table from a Lakehouse is represented as one table.
+When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](../data-engineering/lakehouse-overview.md) workspace as Delta tables, a SQL-based experience containing tables that reference your Delta Lake data is automatically created in that workspace for you, called the SQL Endpoint. Every Delta Lake table from a Lakehouse is represented as one table.
 
 Every Lakehouse has one SQL Endpoint and each workspace can have more than one Lakehouse.
 
@@ -96,3 +96,4 @@ Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
 ## Next steps
 
 - [Default datasets](datasets.md)
+- [Lakehouse](../data-engineering/lakehouse-overview.md)

@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
 ms.topic: conceptual
-ms.date: 03/15/2023
+ms.date: 04/03/2023
 ms.search.form: Warehouse overview, Warehouse in workspace overview
 ---
 
@@ -20,11 +20,45 @@ The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] functionality is a 'traditiona
 > [!IMPORTANT]
 > The distinction between the [SQL Endpoint](sql-endpoint.md) and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is an important one as T-SQL statements that write data or modify schema fail if you attempt to run them against the SQL Endpoint. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
 
-When you create a Lakehouse or a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], a default Power BI dataset is created. This is represented with the (default) suffix. For more information, see [Default datasets](datasets.md).
+When you create a [Lakehouse](../data-engineering/lakehouse-overview.md) or a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], a default Power BI dataset is created. This is represented with the (default) suffix. For more information, see [Default datasets](datasets.md).
 
 ## Limitations
 
 1. Model view layouts aren't currently saved.
+
+## T-SQL surface area
+
+Creating, altering, and dropping tables, and insert, update, and delete are only supported in the transactional warehouse, not in the SQL Endpoint.
+
+At this time, the following list of commands is NOT currently supported. Don't try to use these commands because even though they may appear to succeed, they could cause corruption to your warehouse.
+
+- ALTER TABLE ADD/ALTER/DROP COLUMN
+- BULK LOAD
+- CREATE ROLE
+- CREATE SECURITY POLICY - Row Level Security (RLS)
+- CREATE USER
+- CTAS
+- GRANT/DENY/REVOKE
+- Hints
+- Identity Columns
+- Manually created multi-column stats
+- MASK and UNMASK (Dynamic Data Masking)
+- MATERIALIZED VIEWS
+- MERGE
+- OPENROWSET
+- PREDICT
+- Queries targeting system and user tables
+- Recursive queries
+- Result Set Caching
+- Schema and Table names can't contain / or \
+- SELECT - FOR (except JSON)
+- SELECT - INTO
+- `sp_showmemo_xml`
+- `sp_showspaceused`
+- `sp_rename`
+- Temp Tables
+- Triggers
+- TRUNCATE
 
 ## Rename a warehouse
 

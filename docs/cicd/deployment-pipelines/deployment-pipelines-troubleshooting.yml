@@ -1,14 +1,14 @@
 ### YamlMime:FAQ
 metadata:
-  title: Troubleshoot deployment pipelines, the Power BI Application lifecycle management (ALM) tool
-  description: Find answers to your deployment pipelines, the Power BI Application lifecycle management (ALM) tool, troubleshooting questions
+  title: Troubleshoot deployment pipelines, the Fabric Application lifecycle management (ALM) tool
+  description: Find answers to your deployment pipelines, the Fabric Application lifecycle management (ALM) tool, troubleshooting questions
   author: mberdugo
   ms.author: monaberdugo
   ms.topic: troubleshooting
   ms.service: powerbi
   ms.subservice: pbi-deployment-pipeline
   ms.date: 01/18/2023
-  ms.search.form: Deployment pipelines troubleshooting
+  ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline
   
 title: Deployment pipelines troubleshooting
 summary: |
@@ -17,7 +17,7 @@ summary: |
   * [General considerations and limitations](deployment-pipelines-process.md#considerations-and-limitations)
   * [Assigning workspaces](deployment-pipelines-assign.md#limitations)
   * [Permissions](deployment-pipelines-process.md#permissions)      
-  * Power BI items:
+  * Fabric items:
     * [Deployed items](deployment-pipelines-process.md#deployed-items)
     * [Unsupported items](deployment-pipelines-process.md#unsupported-items)
     * [Item properties copied during deployment](deployment-pipelines-process.md#item-properties-copied-during-deployment)
@@ -35,9 +35,9 @@ sections:
   - name: General
     questions:
       - question: |
-          What's deployment pipelines in Power BI?
+          What's deployment pipelines in Microsoft Fabric?
         answer: |
-          To understand what's deployment pipelines in Power BI, refer to the [deployment pipelines overview](deployment-pipelines-overview.md).
+          To understand what deployment pipelines is in Fabric, refer to the [deployment pipelines overview](deployment-pipelines-overview.md).
           
       - question: |
           How do I get started with deployment pipelines?
@@ -51,7 +51,7 @@ sections:
           
           * You have one of the following Premium licenses:
           
-              * You're a Power BI [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md), and you belong to an organization that has Premium capacity.
+              * You're a [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md), and you belong to an organization that has Premium capacity.
           
               * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
           
@@ -83,7 +83,7 @@ sections:
         answer: |
           All workspaces in a deployment pipeline must reside within a capacity for the pipeline to be functional. However, you can use different capacities for different workspaces in a pipeline. You can also use different capacity types for different workspaces in the same pipeline.
           
-          For development and testing, you can use an A or EM capacity alongside a Pro Power BI account for each user. You can also use a PPU for each user in the development and test stages.
+          For development and testing, you can use an A or EM capacity alongside a Pro Fabric account for each user. You can also use a PPU for each user in the development and test stages.
           
           For production workspaces, you need a P capacity. If you're an ISV distributing content through embedded applications, you can also use A or EM capacities for production. PPUs can also be used for production workspaces.
           
@@ -95,12 +95,12 @@ sections:
       - question: |
           How do I reestablish connections after deployment?
         answer: |
-          In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between Power BI items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the Power BI connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item. To reestablish these connections, unassign and reassign the same workspace in the target stage.
+          In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item. To reestablish these connections, unassign and reassign the same workspace in the target stage.
 
       - question: |
           Why am I getting the 'can't assign the workspace' error message when I assign a workspace?
         answer: |
-          When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the Power BI items (such as reports and dashboards) in the workspace. If there are two Power BI items from the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there is more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages. To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in the Power BI service. 
+          When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there is more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages. To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in Fabric. 
           
           :::image type="content" source="media/deployment-pipelines-troubleshooting/cannot-assign-error.png" alt-text="A screenshot of the Can't assign the workspace error message in deployment pipelines.":::
 
@@ -136,13 +136,13 @@ sections:
           |---------|---------|
           |You don't have [premium capacity permissions](deployment-pipelines-process.md#creating-a-premium-workspace).     |If you work in an organization that has a Premium capacity, ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. After the workspace is in a capacity, redeploy.</br></br>If you don't work in an organization with Premium capacity, consider purchasing [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).        |
           |You don't have workspace permissions.     |To deploy, you need to be a workspace member. Ask your workspace admin to grant you the appropriate permissions.         |
-          |Your Power BI admin disabled the creation of workspaces.     |Contact your Power BI admin for support.         |
+          |Your Fabric admin disabled the creation of workspaces.     |Contact your Fabric admin for support.         |
           |You're using [selective deployment](deployment-pipelines-deploy.md#selective-deployment) and aren't selecting all the linked items.     |Do one of the following: </br></br>Unselect the content that is linked to your dataset or dataflow. Your unselected content (such as datasets, reports or dashboards) won't be copied to the next stage. </br></br>Select the dataset or the dataflow that's linked to the selected items. Your selected items will be copied to the next stage.         |
           
       - question: |
           I'm getting a warning that I have 'unsupported artifacts' in my workspace when I'm trying to deploy. How can I know which items aren't supported?
         answer: |
-          For a comprehensive list of Power BI items that aren't supported in deployment pipelines, see the following sections:
+          For a comprehensive list of items that aren't supported in deployment pipelines, see the following sections:
           
           * [Unsupported items](deployment-pipelines-process.md#unsupported-items)
           
@@ -196,7 +196,7 @@ sections:
       - question: |
           Why is my visual broken after deploying a dataset or a dataflow?
         answer: |
-          Datasets and dataflows are Power BI items that store data and contain both data and metadata. During deployment, only the metadata is copied while the data isn't. As a result, after deployment the dataset or dataflow might not have any data and a report visual that's relying on this data, will appear broken. To solve this problem, refresh the dataflow and then refresh the dataset in the target stage.
+          Datasets and dataflows are Fabric items that store data and contain both data and metadata. During deployment, only the metadata is copied while the data isn't. As a result, after deployment the dataset or dataflow might not have any data and a report visual that's relying on this data, will appear broken. To solve this problem, refresh the dataflow and then refresh the dataset in the target stage.
 
       - question: |
           Does deployment pipelines support multi-geo?
@@ -208,7 +208,7 @@ sections:
         answer: |
           When working with deployment pipelines, you might end up with a pipeline that doesn't have an owner. For example, a pipeline can be left without an owner when a user that owned it leaves the company without transferring ownership. When a pipeline doesn't have an owner, other users can't access it. As a workspace can only be assigned to one pipeline, if it's assigned to a pipeline without an owner, nobody is able to unassign it, and you can't use the workspace in another pipeline.
           
-          When a pipeline is left without an owner, a Power BI administrator can use the [admin Power BI REST APIs](/rest/api/power-bi/admin) to add an owner to the pipeline, or delete it. To add an owner to the pipeline, use the [Admin - Pipelines UpdateUserAsAdmin](/rest/api/power-bi/admin/pipelines-update-user-as-admin) API.
+          When a pipeline is left without an owner, a Fabric administrator can use the [admin Fabric REST APIs](/rest/api/fabric/admin) to add an owner to the pipeline, or delete it. To add an owner to the pipeline, use the [Admin - Pipelines UpdateUserAsAdmin](/rest/api/power-bi/admin/pipelines-update-user-as-admin) API.
           
           You can also review our PowerShell script, [AddUserToWorkspacePipeline](https://github.com/microsoft/PowerBI-Developer-Samples/blob/master/PowerShell%20Scripts/Admin-DeploymentPipelines-AddUserToWorkspacePipeline) (available from the [PowerBI-Developer-Samples](https://github.com/microsoft/PowerBI-Developer-Samples) GitHub repository), which lets you do the following:
           
@@ -231,7 +231,7 @@ sections:
       - question: |
           Why are some tiles in my dashboard not displaying information after deployment? 
         answer: |
-          When you pin a tile to a dashboard, if the tile relies on an [unsupported Power BI item](deployment-pipelines-process.md#unsupported-items), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a dataset you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.   
+          When you pin a tile to a dashboard, if the tile relies on an [unsupported item](deployment-pipelines-process.md#unsupported-items), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a dataset you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.   
 
       - question: |
           Why did my dataset deployment fail? 
@@ -263,13 +263,13 @@ sections:
           If you're deploying a paginated report to a stage that already contains a copy of that paginated report, you overwrite the previous report and become its owner, instead of the previous owner. In such cases, you need credentials to the underlying data source, so that the data can be used in the paginated report.
           
       - question: |
-          Why does my target stage paginated report display data from a Power BI dataset in the source stage?
+          Why does my target stage paginated report display data from a Fabric dataset in the source stage?
         answer: |
           At present, datasets are treated as an external Analysis Services data source, and connections to datasets aren't switched automatically after deployment.
           
-          When you deploy a paginated report that's connected to a Power BI dataset, it continues to point to the dataset it was originally connected to. Use [deployment rules](deployment-pipelines-create-rules.md) to point your paginated report to any dataset you want, including, for example,  the target stage dataset.
+          When you deploy a paginated report that's connected to a Fabric dataset, it continues to point to the dataset it was originally connected to. Use [deployment rules](deployment-pipelines-create-rules.md) to point your paginated report to any dataset you want, including, for example,  the target stage dataset.
           
-          If you're using a paginated report with a Power BI dataset, see [How do I create a deployment rule for a paginated report with a Power BI dataset?](#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-power-bi-dataset-)
+          If you're using a paginated report with a Fabric dataset, see [How do I create a deployment rule for a paginated report with a Fabric dataset?](#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-fabric-dataset-)
           
       - question: |
           Where are my paginated report subreports?
@@ -277,17 +277,17 @@ sections:
           Paginated report subreports are kept in the same folder that holds your paginated report. To avoid rendering problems, when you're using [selective copy](deployment-pipelines-deploy.md#selective-deployment) to copy a paginated report with subreports, select both the parent report and the subreports.
           
       - question: |
-          How do I create a deployment rule for a paginated report with a Power BI dataset?
+          How do I create a deployment rule for a paginated report with a Fabric dataset?
         answer: |
-          Paginated report rules can be created if you want to [point the paginated report to the dataset in the same stage](#why-does-my-target-stage-paginated-report-display-data-from-a-power-bi-dataset-in-the-source-stage-). When creating a deployment rule for a paginated report, you need to select a database and a server.
+          Paginated report rules can be created if you want to [point the paginated report to the dataset in the same stage](#why-does-my-target-stage-paginated-report-display-data-from-a-fabric-dataset-in-the-source-stage-). When creating a deployment rule for a paginated report, you need to select a database and a server.
           
-          If you're setting a deployment rule for a paginated report that doesn't have a Power BI dataset, because the target data source is external, you need to specify both the server and the database.
+          If you're setting a deployment rule for a paginated report that doesn't have a Fabric dataset, because the target data source is external, you need to specify both the server and the database.
           
-          However, paginated reports that use a Power BI dataset use an internal dataset. In such cases, you can't rely on the data source name to identify the Power BI dataset you're connecting to. The data source name doesn't change when you update it in the target stage, by creating a data source rule or by calling the [update datasource](/rest/api/power-bi/datasets/updatedatasourcesingroup) API. When you set a deployment rule, you need to keep the database format and replace the dataset object ID in the database field. As the dataset is internal, the server stays the same.
+          However, paginated reports that use a Fabric dataset use an internal dataset. In such cases, you can't rely on the data source name to identify the Fabric dataset you're connecting to. The data source name doesn't change when you update it in the target stage, by creating a data source rule or by calling the [update datasource](/rest/api/power-bi/datasets/updatedatasourcesingroup) API. When you set a deployment rule, you need to keep the database format and replace the dataset object ID in the database field. As the dataset is internal, the server stays the same.
           
-          * **Database** - The database format for a paginated report with a Power BI dataset, is `sobe_wowvirtualserver-<dataset ID>`. For example, `sobe_wowvirtualserver-d51fd26e-9124-467f-919c-0c48a99a1d63`. Replace the `<dataset ID>` with your dataset's ID. You can get the dataset ID from the URL, by selecting the GUID that comes after `datasets/` and before the next forward slash.
+          * **Database** - The database format for a paginated report with a Fabric dataset, is `sobe_wowvirtualserver-<dataset ID>`. For example, `sobe_wowvirtualserver-d51fd26e-9124-467f-919c-0c48a99a1d63`. Replace the `<dataset ID>` with your dataset's ID. You can get the dataset ID from the URL, by selecting the GUID that comes after `datasets/` and before the next forward slash.
           
-              :::image type="content" source="media/deployment-pipelines-troubleshooting/datasets-id.png" alt-text="A screenshot of the dataset ID as it appears in a Power BI URL.":::
+              :::image type="content" source="media/deployment-pipelines-troubleshooting/datasets-id.png" alt-text="A screenshot of the dataset ID as it appears in a Fabric URL.":::
           
           * **Server** - The server that hosts your database. Keep the existing server as is.
 
@@ -361,7 +361,7 @@ sections:
       - question: |
           Why am I getting the 'workspace member permissions needed' error message when I try to assign a workspace?
         answer: |
-          To assign a workspace you need at least [workspace member](deployment-pipelines-process.md#permissions-table) permissions for the workspaces in its adjacent stages. Workspace member (or higher) permissions in the adjacent stages are required to enable deployment pipelines to establish connections between Power BI items in neighboring pipeline stages.
+          To assign a workspace you need at least [workspace member](deployment-pipelines-process.md#permissions-table) permissions for the workspaces in its adjacent stages. Workspace member (or higher) permissions in the adjacent stages are required to enable deployment pipelines to establish connections between items in neighboring pipeline stages.
 
           
           :::image type="content" source="media/deployment-pipelines-troubleshooting/workspace-permission-needed.png" alt-text="A screenshot of the workspace member permission needed message in the test stage of a deployment pipeline.":::
@@ -399,7 +399,7 @@ sections:
       - question: |
           Why are the deployment rules greyed out?
         answer: |
-          To create a [deployment rule](deployment-pipelines-create-rules.md), you must be the owner of the Power BI item you're creating a deployment rule for. If you're not the owner of the Power BI item, deployment rules are greyed out.
+          To create a [deployment rule](deployment-pipelines-create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are greyed out.
           
           >[!div class="mx-imgBorder"]
           >![A screenshot showing deployment pipelines deployment rules greyed out.](media/deployment-pipelines-troubleshooting/rules-greyed-out.png)
