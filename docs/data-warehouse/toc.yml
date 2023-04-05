@@ -11,12 +11,13 @@ items:
     href: warehouse.md
 - name: Get started 
   items: 
-  - name: Get started with the SQL Endpoint on the Lakehouse
+  - name: SQL Endpoint on the Lakehouse
     href: get-started-lakehouse.md
-  - name: Get started with the Synapse Data Warehouse
-    href: get-started-data-warehouse.md
+  - name: Synapse Data Warehouse
     items:
-    - name: Create a Synapse Data Warehouse
+    - name: Get started with a Synapse Data Warehouse
+      href: get-started-data-warehouse.md  
+    - name: Create a warehouse
       href: create-warehouse.md
     - name: Create a table
       href: create-table.md
