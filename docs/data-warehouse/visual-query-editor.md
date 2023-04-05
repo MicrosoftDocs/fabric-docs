@@ -48,7 +48,7 @@ The following image shows a sample query created using the no-code Visual Query 
 ## Known limitations with Visual Query editor
 
 - You can only write DQL (not DDL or DML).
-- You can't currently open a visual query in Excel.
+- You can't currently open a visual query in Microsoft Excel.
 
 ## Next steps
 

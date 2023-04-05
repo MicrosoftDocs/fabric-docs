@@ -53,6 +53,8 @@ items:
     href: create-measure.md
   - name: Hide elements from downstream reporting
     href: hide-elements-downstream-reporting.md
+  - name: Get Workspace and OneLake path
+    href: get-workspace-onelake-path.md
 - name: Load data into the Synapse Data Warehouse
   items:
   - name: Ingesting data into the warehouse
