@@ -5,22 +5,18 @@ items:
   items: 
   - name: Data warehousing
     href: data-warehousing.md
-- name: Get started
-  items: 
-  - name: Warehouse
-    href: warehouse.md
   - name: SQL Endpoint
     href: sql-endpoint.md
-  - name: Datasets
-    href: datasets.md
-  - name: Creating reports
-    href: create-reports.md
+  - name: Synapse Data Warehouse
+    href: warehouse.md
+- name: Get started 
+  items: 
+  - name: Query the Lakehouse via the SQL Endpoint
+    href: get-started-lakehouse.md
+  - name: Get started with the Synapse Data Warehouse
+    href: get-started-data-warehouse.md
 - name: Data warehouses
   items:
-  - name: Warehouse
-    href: warehouse.md
-  - name: SQL Endpoint
-    href: sql-endpoint.md
   - name: Create a warehouse
     href: create-warehouse.md
   - name: Create reports in the Power BI service
@@ -31,7 +27,7 @@ items:
     href: connectivity.md
   - name: Manage user access
     href: manage-user-access.md
-- name: Workspaces
+- name: Workspace
   items:
   - name: Workspace roles
     href: workspace-roles.md
@@ -39,13 +35,15 @@ items:
     href: get-workspace-onelake-path.md
 - name: Datasets
   items:
+  - name: Datasets
+    href: datasets.md
   - name: Data modeling and defining relationships
     href: data-modeling-defining-relationships.md
   - name: Create a measure
     href: create-measure.md
   - name: Hide elements from downstream reporting
     href: hide-elements-downstream-reporting.md
-- name: Load data
+- name: Load data into the Synapse Data Warehouse
   items:
   - name: Ingesting data into the warehouse
     href: ingest-data.md
@@ -59,18 +57,20 @@ items:
     href: statistics.md
   - name: Tables
     href: tables.md
-  - name: Primary, foreign, and unique keys
-    href: table-constraints.md
-  - name: Transactions
-    href: transactions.md
-  - name: Create a table with SSMS
+  - name: Create a table
     href: create-table.md
   - name: Query a Synapse Data Warehouse
     href: query-warehouse.md
   - name: Query using Visual Query editor
     href: visual-query-editor.md
   - name: Query using SQL Query editor
-    href: sql-query-editor.md
+    href: sql-query-editor.md    
+  - name: Primary, foreign, and unique keys
+    href: table-constraints.md
+  - name: Transactions
+    href: transactions.md
+  - name: Create reports
+    href: create-reports.md
 - name: Monitor
   items:
   - name: Monitor using DMVs

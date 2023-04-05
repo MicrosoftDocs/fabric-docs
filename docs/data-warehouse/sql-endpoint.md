@@ -13,14 +13,14 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse workspace as Delta tables, a SQL-based experience containing tables that reference your Delta Lake data is automatically created in that workspace for you, called the SQL Endpoint. Every Delta Lake table from a Lakehouse is represented as one table.
+When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse workspace as Delta tables, a SQL-based experience containing tables that reference your Delta Lake data is automatically created in that workspace for you, called the SQL Endpoint. Every delta table in a Lakehouse is represented as one table in the SQL Endpoint.
 
 Every Lakehouse has one SQL Endpoint and each workspace can have more than one Lakehouse.
 
-:::image type="content" source="media\sql-endpoint\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and Delta Lake tables." lightbox="media\sql-endpoint\lakehouse-delta-tables.png":::
+:::image type="content" source="media\sql-endpoint\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and delta tables." lightbox="media\sql-endpoint\lakehouse-delta-tables.png":::
 
 > [!IMPORTANT]
-> The distinction between the SQL Endpoint and [Warehouse](warehouse.md) is an important one as T-SQL statements that write data or modify schema fail if you attempt to run them against the SQL Endpoint. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
+> The distinction between the SQL Endpoint and [Synapse Data Warehouse](warehouse.md) is an important one as T-SQL statements that write data or modify schema fail if you attempt to run them against the SQL Endpoint. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
 
 ## Automatically generated schema
 

@@ -42,6 +42,10 @@ landingContent:
             url: create-warehouse.md
           - text: Create a table
             url: create-table.md     
+          - text: Ingest data
+            url: ingest-data.md
+          - text: Query the warehouse
+            url: query-warehouse.md
           - text: Create reports
             url: create-reports.md            
 
