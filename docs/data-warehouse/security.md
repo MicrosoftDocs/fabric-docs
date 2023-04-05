@@ -32,7 +32,7 @@ Permissions for objects in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] can
 
 ## Row-level security in Synapse Data Warehouse
 
-Permissions for rows in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is not currently available.
+Permissions for rows in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] aren't currently available.
 
 ## Next steps
 
