@@ -16,11 +16,10 @@ ms.date: 04/05/2023
 
 Currently, delta tables in the [Lakehouse](../data-engineering/lakehouse-overview.md) are automatically added to the default dataset. The default dataset is queried via the [SQL Endpoint](sql-endpoint.md) and updated via changes to the Lakehouse. You can also query the default dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-sql-query) from a [Synapse Data Warehouse](warehouse.md).
 
-Every delta table from a Lakehouse is represented as one table.
-
-Every Lakehouse has one [SQL Endpoint](sql-endpoint.md) and each workspace can have more than one Lakehouse.
-
-The [default dataset](datasets.md) follows the naming convention of the Lakehouse.
+- [OneLake](../onelake/onelake-overview.md) is a single, unified, logical data lake for the whole organization. OneLake is the OneDrive for data. OneLake can contain multiple workspaces, for example, along your organizational divisions.
+- Every Lakehouse has one [SQL Endpoint](sql-endpoint.md) and each workspace can have more than one Lakehouse.
+- Every delta table from a Lakehouse is represented as one table.
+- The [default dataset](datasets.md) follows the naming convention of the Lakehouse.
 
 ## Get started
 
