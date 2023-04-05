@@ -1,38 +1,37 @@
 ---
-title: Create OneLake shortcut in Real-time Analytics
-description: Learn how to create a OneLake shortcut in a KQL Database.
+title: Create an external table (shortcut) in Real-time Analytics
+description: Learn how to create an external table that references data from OneLake in your KQL Database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 03/02/2023
+ms.date: 04/05/2023
 ms.search.form: product-kusto
 ---
 
-# Create a OneLake shortcut
+# Create an external table (shortcut)
 
-OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items.
+In this article, you'll learn how to create a OneLake shortcut to reference data from OneLake in your KQL Database.
 
-Shortcuts are embedded references within OneLake that point to other files’ storage locations. The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location.
+OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files’ store locations. The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source.
 
-Shortcuts can be updated or removed from your items, but these changes won't affect the original data and its source.
+[!INCLUDE [product-name](../includes/product-name.md)] supports two types of OneLake shortcuts that use internal sources:
 
-There are two types of shortcuts:
+| Shortcut | Description | When to use it? |
+|---------| --------- | --------- |
+|External table| Defines the data from OneLake as an external table in your KQL Database. | Use this shortcut when you want to infrequently run queries on historical data without partitioning or indexing the data. But if you want to run queries frequently and accelerate performance, import the data directly from OneLake. For direct import, see [Get data from OneLake](get-data-onelake.md).
+|One logical copy| Creates one logical copy of the data in your KQL Database in OneLake. This shortcut is a two-step process that requires enabling continuous export of your data, and creating a shortcut in OneLake. | Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management. To create one logical copy, see <!-- [One logical copy (shortcut)](onelake-mirroring) --->|
 
-* OneLake shortcut linking data in your KQL Database to OneLake. This shortcut creates one logical copy of the data in your database that you can access in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management.
-
-* OneLake shortcut linking data in OneLake to your KQL Database. This shortcut defines the data from OneLake as an external table. Create this shortcut when you want to infrequently run queries on historical data. If you want to run queries frequently and accelerate performance, see [Get data from OneLake](get-data-onelake.md).
-
-In this article, you'll learn how to create a OneLake shortcut in your KQL Database.
+For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
+* [Power BI Premium subscription](/power-bi/enterprise/service-admin-premium-purchase).
 * Workspace
 * [KQL Database](create-database.md)
 * Lakehouse with data
 
-## Create a OneLake shortcut in your KQL Database
+## Create Shortcut
 
 1. Select **New** > **OneLake shortcut**.
 

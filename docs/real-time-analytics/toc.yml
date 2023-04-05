@@ -36,7 +36,7 @@ items:
     href: get-data-event-hub.md
   - name: Get data from OneLake
     href: get-data-onelake.md  
-  - name: OneLake shortcut
+  - name: Create an external table (shortcut)
     href: onelake-shortcut.md
 - name: Query data
   items:
