@@ -1,16 +1,16 @@
 ---
 title: Workspaces
-description: Learn about workspaces, which are collections of dashboards and reports built to deliver key metrics for your organization.
+description: Learn about workspaces, which are collections of artifacts such as lakehouses, warehouses, and reports built to deliver key metrics for your organization.
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas
 ms.topic: conceptual
-ms.date: 03/29/2023
+ms.date: 04/04/2023
 ---
 
 # Workspaces
 
-*Workspaces* are places to collaborate with colleagues to create collections of dashboards, reports, datasets, and paginated reports. This article describes workspaces, how to manage access to them, and how to use them to create and distribute apps.
+*Workspaces* are places to collaborate with colleagues to create collections of artifacts such as lakehouses, warehouses, and reports. This article describes workspaces, how to manage access to them, and how to use them to create and distribute apps.
 
 Ready to get started? Read [Create a workspace](create-workspaces.md).
 

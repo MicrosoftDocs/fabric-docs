@@ -19,7 +19,7 @@ To create a new workspace, see [Create a workspace](create-workspaces.md).
 
 Everyone in a user group gets the role that you've assigned. If someone is in several user groups, they get the highest level of permission that's provided by the roles that they're assigned. If you nest user groups and assign a role to a group, all the contained users have permissions.
 
-During private preview, users in workspace roles will have the following [!INCLUDE [product-name](../includes/product-name.md)] capabilities, in addition to the existing Power BI capabilities associated with these roles.
+During private preview, users in workspace roles have the following [!INCLUDE [product-name](../includes/product-name.md)] capabilities, in addition to the existing Power BI capabilities associated with these roles.
 
 ## [!INCLUDE [product-name](../includes/product-name.md)] workspace roles
 
@@ -32,7 +32,7 @@ During private preview, users in workspace roles will have the following [!INCLU
 |Execute or cancel execution of Spark notebooks, and Kusto queries <sup>1</sup> | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |   :::image type="icon" source="../media/yes-icon.svg" border="false":::|
 |View execution output of pipelines, Spark notebooks, Spark job definitions, and Kusto queries | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
 
-<sup>1</sup> Viewers will not be able to execute Spark job definitions. 
+<sup>1</sup> Viewers won't be able to execute Spark job definitions. 
 
 ## Next steps
 

@@ -1,16 +1,16 @@
 ---
 title: Create a workspace
-description: "Learn how to create a workspace: a collection of dashboards, reports, and paginated reports built to deliver key metrics for your organization."
+description: "Learn how to create a workspace: a collection of artifacts such as lakehouses, warehouses, and reports built to deliver key metrics for your organization."
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas
 ms.topic: how-to
-ms.date: 03/29/2023
+ms.date: 04/04/2023
 ms.custom: 
 ---
 # Create a workspace
 
-This article explains how to create *workspaces*, spaces to collaborate with colleagues, in [!INCLUDE [product-name](../includes/product-name.md)]. In workspaces, you create collections of dashboards, reports, and paginated reports. If you want, you can also bundle that collection into an *app* and distribute it to a broader audience. For more background, see the [Workspaces](workspaces.md) article.
+This article explains how to create *workspaces*, spaces to collaborate with colleagues, in [!INCLUDE [product-name](../includes/product-name.md)]. In workspaces, you create collections of artifacts such as lakehouses, warehouses, and reports. If you want, you can also bundle that collection into an *app* and distribute it to a broader audience. For more background, see the [Workspaces](workspaces.md) article.
 
 :::image type="content" source="media/create-workspaces/power-bi-new-workspaces.png" alt-text="Screenshot of a workspace.":::
 
