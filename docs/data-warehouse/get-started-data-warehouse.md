@@ -20,7 +20,6 @@ The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is the 'traditional' data ware
 
 1. [Create a Synapse Data Warehouse in Microsoft Fabric](create-warehouse.md)
 1. [Create tables in Synapse Data Warehouse](create-table.md)
-1. [Ingesting data into the Synapse Data Warehouse](ingest-data.md)
+1. [Ingest data into the Synapse Data Warehouse](ingest-data.md)
 1. [Query the warehouse](query-warehouse.md)
 1. [Create reports](create-reports.md)
-
