@@ -24,7 +24,7 @@ To get started with this tutorial, check the following prerequisites:
     - Use the [Query using the Visual Query editor](visual-query-editor.md).
 
 > [!NOTE]
-> Review the [T-SQL surface area](data-warehousing.md#t-sql-surface-area) for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+> Review the [T-SQL surface area](warehouse.md#t-sql-surface-area) for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Run a new query on a Synapse Data Warehouse connection in SSMS
 
@@ -98,7 +98,7 @@ There are several ways you can write cross-database queries within the same [!IN
    > [!NOTE]
    > Uncompressed data size should be calculated from a CSV representation of the data. Source data stored in parquet (or delta) format is already compressed anywhere from 2x to 10x (or more).
 
-- At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](data-warehousing.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
+- At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
 
 ## Next steps
 

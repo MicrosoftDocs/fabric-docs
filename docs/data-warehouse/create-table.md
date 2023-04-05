@@ -51,7 +51,7 @@ CREATE TABLE myTable
 
 ## Known limitations
 
-See [T-SQL surface area](data-warehousing.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
+See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
 
 ## Next steps
 

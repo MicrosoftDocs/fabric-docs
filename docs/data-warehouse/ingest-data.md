@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: kecona
 author: KevinConanMSFT
 ms.topic: conceptual
-ms.date: 03/15/2023
+ms.date: 04/03/2023
 ms.search.form: Ingesting data
 ---
 
@@ -16,6 +16,9 @@ ms.search.form: Ingesting data
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In order to really use your data warehouse, you first need to bring data into it! In this article, we cover the features you need to know about to bring data into your data warehouse.
+
+> [!NOTE]
+> To load data into your [Lakehouse](../data-engineering/lakehouse-overview.md), see [Load data into the Lakehouse](../data-engineering/load-data-lakehouse.md).
 
 ## Ingest data options
 

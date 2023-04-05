@@ -1,6 +1,6 @@
 ---
-title: The Power BI deployment pipelines process
-description: Understand how deployment pipelines, the Power BI Application lifecycle management (ALM) tool, works
+title: The Fabric deployment pipelines process
+description: Understand how deployment pipelines, the Fabric Application lifecycle management (ALM) tool, works
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
@@ -8,13 +8,14 @@ ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1, intro-deployment
 ms.date: 12/28/2022
+ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines
 ---
 
 # The deployment pipelines process
 
 The deployment process lets you clone content from one stage in the deployment pipeline to another, typically from development to test, and from test to production.
 
-During deployment, Power BI copies the content from the current stage, into the target one. The connections between the copied items are kept during the copy process. Power BI also applies the configured deployment rules to the updated content in the target stage. Deploying content may take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the Power BI portal, but you can't use the content in the target stage.
+During deployment, Microsoft Fabric copies the content from the current stage, into the target one. The connections between the copied items are kept during the copy process. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content may take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the portal, but you can't use the content in the target stage.
 
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). You can learn more about this process in [Automate your deployment pipeline using APIs and DevOps](deployment-pipelines-automation.md).
 
@@ -52,27 +53,27 @@ Deploying content from a working production pipeline to a stage that has an exis
 
 ### Deployment process
 
-When content from the current stage is copied to the target stage, Power BI identifies existing content in the target stage and overwrites it. To identify which content item needs to be overwritten, deployment pipelines uses the connection between the parent item and its clones. This connection is kept when new content is created. The overwrite operation only overwrites the content of the item. The item's ID, URL, and permissions remain unchanged.
+When content from the current stage is copied to the target stage, Fabric identifies existing content in the target stage and overwrites it. To identify which content item needs to be overwritten, deployment pipelines uses the connection between the parent item and its clones. This connection is kept when new content is created. The overwrite operation only overwrites the content of the item. The item's ID, URL, and permissions remain unchanged.
 
 In the target stage, [item properties that aren't copied](deployment-pipelines-process.md#item-properties-that-are-not-copied), remain as they were before deployment. New content and new items are copied from the current stage to the target stage.
 
 ### Auto-binding
 
-In Power BI, when items are connected, one of the items depends on the other. For example, a report will always depend on the dataset it's connected to. A dataset can depend on another dataset, and can also be connected to several reports that depend on it. If there's a connection between two Power BI items, deployment pipelines will always try to maintain this connection.
+In Fabric, when items are connected, one of the items depends on the other. For example, a report will always depend on the dataset it's connected to. A dataset can depend on another dataset, and can also be connected to several reports that depend on it. If there's a connection between two items, deployment pipelines will always try to maintain this connection.
 
 During deployment, deployment pipelines checks for dependencies. The deployment will either succeed or fail, depending on the location of the item that provides the data that the deployed item depends on.
 
-* **Linked item exists in the target stage** - Deployment pipelines will automatically connect (auto-bind) the deployed item, to the item it depends on in the deployed stage. For example, if you deploy a paginated report from development to test, and it's connected to a Power BI dataset that was previously deployed to the test stage, it will be automatically connected to that dataset.
+* **Linked item exists in the target stage** - Deployment pipelines will automatically connect (auto-bind) the deployed item, to the item it depends on in the deployed stage. For example, if you deploy a paginated report from development to test, and it's connected to a dataset that was previously deployed to the test stage, it will be automatically connected to that dataset.
 
-* **Linked item doesn't exist in the target stage** - Deployment pipelines will fail a deployment if an item has a dependency on another item, and the item providing the data isn't deployed and doesn't reside in the target stage. For example, if you deploy a report from development to test, and the test stage doesn't contain its Power BI dataset, the deployment will fail. To avoid failed deployments due to dependent items not being deployed, use the *Select related* button. *Select related* automatically selects all the related items that provide dependencies to the items you're about to deploy.
+* **Linked item doesn't exist in the target stage** - Deployment pipelines will fail a deployment if an item has a dependency on another item, and the item providing the data isn't deployed and doesn't reside in the target stage. For example, if you deploy a report from development to test, and the test stage doesn't contain its dataset, the deployment will fail. To avoid failed deployments due to dependent items not being deployed, use the *Select related* button. *Select related* automatically selects all the related items that provide dependencies to the items you're about to deploy.
 
-Auto-binding works only with Power BI items that are supported by deployment pipelines and reside within Power BI. To view the dependencies of a Power BI item, from the item's *More options* menu, select *View lineage*.
+Auto-binding works only with items that are supported by deployment pipelines and reside within Fabric. To view the dependencies of an item, from the item's *More options* menu, select *View lineage*.
 
 :::image type="content" source="media/deployment-pipelines-process/view-lineage.png" alt-text="A screenshot of the view lineage option, in an item's more options menu.":::
 
 #### Auto-binding across pipelines
 
-Deployment pipelines automatically binds Power BI items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines will attempt to establish a new connection between the deployed item and the item it's connected to in the other pipeline. For example, if you have a report in the test stage of pipeline A that's connected to a dataset in the test stage of pipeline B, deployment pipelines will recognize this connection.
+Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines will attempt to establish a new connection between the deployed item and the item it's connected to in the other pipeline. For example, if you have a report in the test stage of pipeline A that's connected to a dataset in the test stage of pipeline B, deployment pipelines will recognize this connection.
 
 Here's an example with illustrations that will help demonstrate how auto-binding across pipelines works:
 
@@ -106,7 +107,7 @@ In some cases, you might not want to use auto-binding. For example, if you have 
 
 There are three methods you can use to avoid using auto-binding:
 
-* Don't connect the Power BI item to corresponding stages. When the items aren't connected in the same stage, deployment pipelines keeps the original connection. For example, if you have a report in the development stage of pipeline B that's connected to a dataset in the production stage of pipeline A. When you deploy the report to the test stage of pipeline B, it will remain connected to the dataset in the production stage of pipeline A.
+* Don't connect the item to corresponding stages. When the items aren't connected in the same stage, deployment pipelines keeps the original connection. For example, if you have a report in the development stage of pipeline B that's connected to a dataset in the production stage of pipeline A. When you deploy the report to the test stage of pipeline B, it will remain connected to the dataset in the production stage of pipeline A.
 
 * Define a parameter rule. This option isn't available for reports, you can only use it with datasets and dataflows.
 
@@ -114,16 +115,16 @@ There are three methods you can use to avoid using auto-binding:
 
 #### Auto-binding and parameters
 
-Parameters can be used to control the connections between datasets or dataflows and the Power BI items that they depend on. When a parameter controls the connection, auto-binding after deployment won't take place, even when the connection includes a parameter that applies to the dataset’s or dataflow's ID, or the workspace ID. In such cases, you'll need to rebind the items after the deployment by changing the parameter value, or by using [parameter rules](deployment-pipelines-create-rules.md).
+Parameters can be used to control the connections between datasets or dataflows and the items that they depend on. When a parameter controls the connection, auto-binding after deployment won't take place, even when the connection includes a parameter that applies to the dataset’s or dataflow's ID, or the workspace ID. In such cases, you'll need to rebind the items after the deployment by changing the parameter value, or by using [parameter rules](deployment-pipelines-create-rules.md).
 
 >[!NOTE]
 >If you're using parameter rules to rebind items, the parameters must be of type `Text`.  
 
 ### Refreshing data
 
-Data in the target Power BI item, such as a dataset or dataflow, is kept when possible. If there are no changes to a Power BI item that holds the data, the data is kept as it was before the deployment.
+Data in the target item, such as a dataset or dataflow, is kept when possible. If there are no changes to an item that holds the data, the data is kept as it was before the deployment.
 
-In many cases, when you have a small change such as adding or removing a table, Power BI keeps the original data. For breaking schema changes, or changes in the data source connection, a full refresh is required.
+In many cases, when you have a small change such as adding or removing a table, Fabric keeps the original data. For breaking schema changes, or changes in the data source connection, a full refresh is required.
 
 ### Requirements for deploying to a stage with an existing workspace
 
@@ -131,7 +132,7 @@ A user with a [Pro license](/power-bi/enterprise/service-admin-purchasing-power-
 
 ## Deployed items
 
-When you deploy content from one pipeline stage to another, the copied content can contain the following Power BI items:
+When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
 * Datasets
 
@@ -222,7 +223,7 @@ The following dataset properties are also not copied during deployment:
 
 ## Supported dataset features
 
-Deployment pipelines supports many Power BI dataset features. This section lists two Power BI dataset features that can enhance your deployment pipelines experience:
+Deployment pipelines supports many dataset features. This section lists two dataset features that can enhance your deployment pipelines experience:
 
 * [Incremental refresh](#incremental-refresh)
 
@@ -280,9 +281,9 @@ Other changes such as adding a column, removing a column, and renaming a calcula
 
 Using [composite models](/power-bi/transform-model/desktop-composite-models.md) you can set up a report with multiple data connections.
 
-You can use the composite models functionality to connect a Power BI dataset to an external dataset such as Azure Analysis Services. For more information, see [Using DirectQuery for Power BI datasets and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services.md).
+You can use the composite models functionality to connect a Fabric dataset to an external dataset such as Azure Analysis Services. For more information, see [Using DirectQuery for Fabric datasets and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services.md).
 
-In a deployment pipeline, you can use composite models to connect a dataset to another Power BI dataset external to the pipeline.
+In a deployment pipeline, you can use composite models to connect a dataset to another Fabric dataset external to the pipeline.
 
 ### Automatic aggregations
 
@@ -298,13 +299,13 @@ Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incre
 
 ## Update content to Power BI apps
 
-[Power BI apps](/power-bi/consumer/end-user-apps.md) are the recommended way of distributing content to free Power BI consumers. You can update the content of your Power BI apps using a deployment pipeline, giving you more control and flexibility when it comes to your app's lifecycle.
+[Power BI apps](/power-bi/consumer/end-user-apps.md) are the recommended way of distributing content to free Fabric consumers. You can update the content of your Power BI apps using a deployment pipeline, giving you more control and flexibility when it comes to your app's lifecycle.
 
 Create an app for each deployment pipeline stage, so that you can test each update from an end user's point of view. Use the **publish** or **view** button in the workspace card to publish or view the app in a specific pipeline stage.
 
 :::image type="content" source="media/deployment-pipelines-process/publish.png" alt-text="A screenshot highlighting the publish app button, at the bottom right of the production stage." lightbox="media/deployment-pipelines-process/publish.png":::
 
-In the production stage, the main action button on the bottom-right corner opens the update app page in Power BI, so that any content updates become available to app users.
+In the production stage, the main action button on the bottom-right corner opens the update app page in Fabric, so that any content updates become available to app users.
 
 :::image type="content" source="media/deployment-pipelines-process/update-app.png" alt-text="A screenshot highlighting the update app button, at the bottom right of the production stage." lightbox="media/deployment-pipelines-process/update-app.png":::
 
@@ -319,11 +320,11 @@ Permissions are required for the pipeline, and for the workspaces that are assig
 
 * Workspaces have different permissions, also called [roles](/power-bi/collaborate-share/service-roles-new-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
 
-To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a member or an admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, will be able to view the pipeline and share it with others. However, this user won't be able to view the content of the workspace in the pipeline, or in Power BI service, and won't be able to perform deployments.
+To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a member or an admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, will be able to view the pipeline and share it with others. However, this user won't be able to view the content of the workspace in the pipeline, or in the service, and won't be able to perform deployments.
 
 ### Permissions table
 
-This section describes the deployment pipeline permissions. The permissions listed in this section may have different applications in other Power BI features.
+This section describes the deployment pipeline permissions. The permissions listed in this section may have different applications in other Fabric features.
 
 The lowest deployment pipeline permission is *pipeline admin*, and it's required for all deployment pipeline operations.
 
@@ -337,9 +338,9 @@ The lowest deployment pipeline permission is *pipeline admin*, and it's required
 
 ### Granted permissions
 
-When deploying Power BI items, the ownership of the deployed item may change. Review the table below to understand who can deploy each item and how the deployment affects the item's ownership.
+When deploying items, the ownership of the deployed item may change. Review the table below to understand who can deploy each item and how the deployment affects the item's ownership.
 
-|Power BI Item    |Required permission to deploy an existing item |Item ownership after a first time deployment |Item ownership after deployment to a stage with the Power BI item|
+|Fabric Item    |Required permission to deploy an existing item |Item ownership after a first time deployment |Item ownership after deployment to a stage with the item|
 |-----------------|---|---|---|
 |Dataset          |Workspace member |The user who made the deployment becomes the owner |Unchanged |
 |Dataflow         |Dataflow owner   |The user who made the deployment becomes the owner |Unchanged |
@@ -373,11 +374,11 @@ This section lists most of the limitations in deployment pipelines.
 
 * The workspace must reside on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
 
-* The maximum number of Power BI items that can be deployed in a single deployment is 300.
+* The maximum number of items that can be deployed in a single deployment is 300.
 
 * Downloading a *.pbix* file after deployment isn't supported.
 
-* When deploying a Power BI item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment will fail.
+* When deploying an item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment will fail.
 
 * For a list of workspace limitations, see the [workspace assignment limitations](deployment-pipelines-assign.md#limitations).
 

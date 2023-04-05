@@ -16,7 +16,7 @@ ms.date: 03/15/2023
 
 To maintain a single copy of data, Lakehouses and transactional Warehouses store data in OneLake.
 
-In this tutorial, you learn how to find a OneLake file path from the Lakehouse experience.
+In this tutorial, you learn how to find a OneLake file path from the [Lakehouse](../data-engineering/lakehouse-overview.md) experience.
 
 ## Known limitations
 
