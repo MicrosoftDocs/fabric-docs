@@ -14,11 +14,17 @@ ms.date: 04/05/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
+For information on [!INCLUDE [product-name](../includes/product-name.md)] security, see [Security in Microsoft Fabric](../security/security-overview.md).
+
 For information on connecting to the [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Connectivity](connectivity.md).
 
 ## Workspace permissions
 
-Workspace permissions are best accomplished by membership in Azure role-based access control (RBAC) roles. For more information, see [Workspace roles](workspace-roles.md)
+Workspace permissions are best accomplished by membership in Azure role-based access control (RBAC) roles. For more information, see [Workspace roles](workspace-roles.md).
+
+Through the workspace, you can add members to, and remove them from, workspace roles. For a tutorial, see [Manage user access](manage-user-access.md).
+
+
 
 ## Object-level security in Synapse Data Warehouse
 

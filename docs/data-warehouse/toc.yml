@@ -12,7 +12,7 @@ items:
 - name: Get started 
   items: 
   - name: SQL Endpoint on the Lakehouse
-    href: get-started-lakehouse.md
+    href: get-started-sql-endpoint.md
   - name: Synapse Data Warehouse
     items:
     - name: Get started with a Synapse Data Warehouse
@@ -29,12 +29,6 @@ items:
       href: create-reports.md
     - name: Create reports in the Power BI service
       href: reports-power-bi-service.md
-- name: Data warehouses
-  items:
-  - name: Warehouse settings and context menus
-    href: settings-context-menus.md
-  - name: Manage user access
-    href: manage-user-access.md
 - name: Security
   items:
   - name: Data warehousing security
@@ -43,6 +37,8 @@ items:
     href: connectivity.md    
   - name: Workspace roles
     href: workspace-roles.md
+  - name: Manage user access
+    href: manage-user-access.md    
 - name: Datasets
   items:
   - name: Datasets
@@ -63,20 +59,24 @@ items:
     href: ingest-data-copy-command.md
   - name: Ingest data with Data pipelines
     href: ingest-data-pipelines.md
-- name: Develop
+- name: Query
   items:
-  - name: Statistics
-    href: statistics.md
-  - name: Tables
-    href: tables.md
   - name: Query using Visual Query editor
     href: visual-query-editor.md
   - name: Query using SQL Query editor
     href: sql-query-editor.md    
+  - name: Statistics
+    href: statistics.md
+- name: Develop
+  items:
+  - name: Tables
+    href: tables.md
   - name: Primary, foreign, and unique keys
     href: table-constraints.md
   - name: Transactions
     href: transactions.md
+  - name: Warehouse settings and context menus
+    href: settings-context-menus.md
 - name: Monitor
   items:
   - name: Monitor using DMVs

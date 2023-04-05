@@ -17,7 +17,7 @@ ms.search.form: Query Editor
 
 You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the Visual query editor and the [SQL Query editor](sql-query-editor.md) among others. This article describes how to use the Visual Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
 
-## Visual Query editor in the Azure portal
+## Visual Query editor in the Fabric portal
 
 The Visual Query editor provides an easy visual interface to write queries against the data in your warehouse.
 
@@ -52,4 +52,6 @@ The following image shows a sample query created using the no-code Visual Query 
 
 ## Next steps
 
+- [How-to: Query the Synapse Data Warehouse](query-warehouse.md)
 - [Query using the SQL Query editor](sql-query-editor.md)
+

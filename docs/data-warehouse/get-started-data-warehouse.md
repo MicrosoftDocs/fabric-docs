@@ -25,3 +25,8 @@ For more information, see [Synapse Data Warehouse in Microsoft Fabric](warehouse
 1. [Ingest data into the Synapse Data Warehouse](ingest-data.md)
 1. [Query the warehouse](query-warehouse.md)
 1. [Create reports](create-reports.md)
+
+## Next steps
+
+- [Connectivity](connectivity.md)
+- [Synapse Data Warehouse in Microsoft Fabric](warehouse.md)
