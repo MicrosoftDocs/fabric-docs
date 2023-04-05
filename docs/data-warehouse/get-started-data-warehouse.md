@@ -1,6 +1,6 @@
 ---
 title: Get started with the Synapse Data Warehouse in Microsoft Fabric
-description: Learn more about Synapse Data Warehouse in Microsoft Fabric.
+description: Steps to get started with a Synapse Data Warehouse in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
@@ -15,6 +15,8 @@ ms.date: 04/05/2023
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is the 'traditional' data warehouse with full transactional T-SQL capabilities, where you're fully in control of creating tables, loading, transforming and querying your data in the data warehouse using either the [!INCLUDE [product-name](../includes/product-name.md)] portal or T-SQL commands.
+
+For more information, see [Synapse Data Warehouse in Microsoft Fabric](warehouse.md).
 
 ## Get started
 
