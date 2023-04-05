@@ -10,7 +10,9 @@ ms.custom: template-how-to
 
 # How to configure Azure Cosmos DB for NoSQL in copy activity
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Cosmos DB for NoSQL.
 
@@ -30,7 +32,7 @@ For the configuration of each tab under copy activity, see the following section
 
 ### General
 
-For **General** tab configuration, see General.
+Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
 ### Source
 
@@ -91,7 +93,7 @@ Allowed values are Timespan. An example is 00:30:00 (30 minutes).
 
 - **Max concurrent connections**:  The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
-- **Disable performance metrics analytics**: The is to collect metrics such as DTU, DWU, RU, etc. for copy performance optimization and recommendations. If you are concerned with this behavior, please turn off this feature.
+- **Disable performance metrics analytics**: This setting controls the collection of metrics such as DTU, DWU, RU, etc. for copy performance optimization and recommendations. If you're concerned with this behavior, turn off this feature.
 
 ### Mapping
 
@@ -129,7 +131,7 @@ To learn more information about copy activity in Azure Cosmos DB for NoSQL, see 
 |**Write batch timeout** |Wait time for the batch insert operation to complete before it times out. Allowed values are Timespan. An example is 00:30:00 (30 minutes).| timespan |No |writeBatchTimeout|
 |**Write batch size**|The number of rows to insert into the SQL table per batch. The allowed value is integer (number of rows). By default, the service dynamically determines the appropriate batch size based on the row size.|\<number of rows \><br>(integer) |No |writeBatchSize|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
-|**Disable performance metrics analytics**|The is to collect metrics such as DTU, DWU, RU, etc. for copy performance optimization and recommendations. If you are concerned with this behavior, please turn off this feature.|Selected or unselect|No |disableMetricsCollection|
+|**Disable performance metrics analytics**|This setting controls collection of metrics such as DTU, DWU, RU, etc. for copy performance optimization and recommendations. If you are concerned with this behavior, please turn off this feature.|Selected or unselect|No |disableMetricsCollection|
 
 ## Next steps
 

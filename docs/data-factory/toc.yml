@@ -27,6 +27,8 @@
         href: connector-amazon-s3.md
       - name: Configure in copy activity
         href: connector-amazon-s3-copy-activity.md
+      - name: Connect to Amazon S3 in dataflows
+        href: connector-amazon-s3-dataflows.md
     - name: Azure Blob Storage
       items:
       - name: Overview
@@ -35,6 +37,8 @@
         href: connector-azure-blob-storage.md
       - name: Configure in copy activity
         href: connector-azure-blob-storage-copy-activity.md
+      - name: Connect to Azure Blob Storage in dataflows
+        href: connector-azure-blob-storage-dataflows.md
     - name: Azure Cosmos DB for NoSQL
       items:
       - name: Overview
@@ -69,6 +73,8 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
+    - name: Delimited text
+      href: format-delimited-text.md
     - name: Excel format
       items:
       - name: Overview
@@ -131,6 +137,8 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
+      - name: OData in dataflows
+        href: connector-odata-dataflows.md
     - name: SharePoint online list
       items:
       - name: Overview

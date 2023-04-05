@@ -1,7 +1,7 @@
 ---
 title: How to use the end-to-end AI samples
 description: Learn how to use the end-to-end AI samples.
-ms.reviewer: mopeakande
+ms.reviewer: lagayhar
 ms.author: narsam
 author: narmeens
 ms.topic: how-to
@@ -64,7 +64,7 @@ Dataset:
 
 ## Uplift model
 
-In this sample, we'll estimate the causal impact of certain treatments on an individual’s behavior by using an Uplift model. We'll walk through step by step how to create, train and evaluate the model touching on four core learnings:
+In this sample, we'll estimate the causal impact of certain treatments on an individual's behavior by using an Uplift model. We'll walk through step by step how to create, train and evaluate the model touching on four core learnings:
 
 - Data-processing module: extracts features, treatments, and labels.
 - Training module: targets to predict the difference between an individual's behavior when there's a treatment and when there's no treatment, using a classical machine learning model like lightGBM.
