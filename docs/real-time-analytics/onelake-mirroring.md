@@ -1,6 +1,6 @@
 ---
 title: One logical copy (shortcut) in Real-time Analytics
-description: Learn how to create a OneLake shortcut that exposes the data in your KQL Database to other !INCLUDE [product-name](../includes/product-name.md)] experiences.
+description: Learn how to create a OneLake shortcut that exposes the data in your KQL Database to other [!INCLUDE [product-name](../includes/product-name.md)] experiences.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
