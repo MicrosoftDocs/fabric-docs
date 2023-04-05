@@ -27,24 +27,22 @@ items:
       href: query-warehouse.md
     - name: Create reports
       href: create-reports.md
+    - name: Create reports in the Power BI service
+      href: reports-power-bi-service.md
 - name: Data warehouses
   items:
-  - name: Create a warehouse
-    href: create-warehouse.md
-  - name: Create reports in the Power BI service
-    href: reports-power-bi-service.md
   - name: Warehouse settings and context menus
     href: settings-context-menus.md
-  - name: Connectivity
-    href: connectivity.md
   - name: Manage user access
     href: manage-user-access.md
-- name: Workspace
+- name: Security
   items:
+  - name: Data warehousing security
+    href: security.md
+  - name: Connectivity
+    href: connectivity.md    
   - name: Workspace roles
     href: workspace-roles.md
-  - name: Getting Workspace and OneLake path
-    href: get-workspace-onelake-path.md
 - name: Datasets
   items:
   - name: Datasets

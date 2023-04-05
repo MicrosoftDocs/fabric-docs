@@ -11,6 +11,8 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 # Connectivity
 
+**Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article provides a how-to on connecting to your SQL Endpoint to data warehouse using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
