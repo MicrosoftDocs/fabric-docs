@@ -4,15 +4,13 @@ description: Learn how to create SDFs and different types of column groups with 
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
-ms.subservice: data-science
 ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
 # Column groups
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you'll learn to create column groups for a dataframe.
 

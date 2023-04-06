@@ -12,7 +12,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: YaelSchuster #Required; your GitHub user alias, with correct capitalization.
   ms.author: yaschust #Required; microsoft alias of author; optional team alias.
-  ms.date: 01/27/2020 #Required; mm/dd/yyyy format.
+  ms.date: 01/27/2020 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -24,26 +24,10 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is [service]?
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: overview
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-
-  # Card 
-  - title: About Event streams
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is [service]?
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: What is Real-time Analytics?
+            url: overview.md
+          - text: Real-time Analytics Tutorial
+            url: realtime-analytics-tutorial.md
       - linkListType: overview
         links:
           - text: linktext1
@@ -56,13 +40,13 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Create a KQL Database
+            url: create-database.md
+          - text: Get data
+            url: get-data-blob.md
       - linkListType: get-started
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: KQL Query Set
+            url:  kusto-query-set.md
+          - text: Sample queries
+            url: query-table.md

@@ -4,21 +4,20 @@ description: Learn how to view detailed monitoring of an application.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
-ms.subservice: data-engineering
 ms.topic: how-to
 ms.date: 02/24/2023
+ms.search.form: Monitor Spark application details
 ---
 
 # Apache Spark application detail monitoring
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache Spark to run notebooks, jobs, and other kinds of applications on in your workspace. This article explains how to monitor your Apache Spark application, allowing you to keep an eye on the recent run status, issues, and progress of your jobs.
 
 ## View Apache Spark applications
 
-You can view all Apache Spark applications from **Spark job definition**, or **notebook artifact context** menu shows the recent run option -> **Recent runs**.
+You can view all Apache Spark applications from **Spark job definition**, or **notebook item context** menu shows the recent run option -> **Recent runs**.
 
 :::image type="content" source="media\spark-detail-monitoring\recent-run.png" alt-text="Screenshot showing Recent runs list and details." lightbox="media\spark-detail-monitoring\recent-run.png":::
 
@@ -96,15 +95,15 @@ To view the details about the Apache Spark applications that are stopped:
 
 ## View a canceled application
 
-Open the notebook or Spark job definition's recent runs, then select Apache Spark applications whose status is **Cancelled**.
+Open the notebook or Spark job definition's recent runs, then select Apache Spark applications whose status is **canceled**.
 
 :::image type="content" source="media\spark-detail-monitoring\job-canceled.png" alt-text="Screenshot showing where the canceled status is displayed." lightbox="media\spark-detail-monitoring\job-canceled.png":::
 
-To view the details about the Apache Spark applications that are cancelled:
+To view the details about the Apache Spark applications that are canceled:
 
 1. **Refresh** the application.
 
-1. When the status of the application is **Cancelled**, the **cancel** button is disabled.
+1. When the status of the application is **canceled**, the **cancel** button is disabled.
 
 1. Open Apache history server link by clicking **Spark history server**.
 

@@ -19,16 +19,16 @@
     items:
     - name: Connector overview
       href: connector-overview.md
-    - name: Connectors feature summary
-      href: ../placeholder.md
     - name: Amazon S3
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-amazon-s3-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-amazon-s3.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-amazon-s3-copy-activity.md
+      - name: Connect to Amazon S3 in dataflows
+        href: connector-amazon-s3-dataflows.md
     - name: Azure Blob Storage
       items:
       - name: Overview
@@ -37,6 +37,8 @@
         href: connector-azure-blob-storage.md
       - name: Configure in copy activity
         href: connector-azure-blob-storage-copy-activity.md
+      - name: Connect to Azure Blob Storage in dataflows
+        href: connector-azure-blob-storage-dataflows.md
     - name: Azure Cosmos DB for NoSQL
       items:
       - name: Overview
@@ -45,14 +47,24 @@
         href: connector-azure-cosmosdb-for-nosql.md
       - name: Configure in copy activity
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
-    - name: Binary format
+    - name: Azure Data Lake Storage Gen2
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-azure-data-lake-storage-gen2-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-azure-data-lake-storage-gen2-copy-activity.md
+    - name: Azure SQL Database
+      items:
+      - name: Overview
+        href: connector-azure-sql-database-overview.md
+      - name: Set up connection
+        href: connector-azure-sql-database.md
+      - name: Configure in copy activity
+        href: connector-azure-sql-database-copy-activity.md
+    - name: Binary format
+      href: format-binary.md
     - name: Data warehouse
       items:
       - name: Overview
@@ -61,6 +73,8 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
+    - name: Delimited text
+      href: format-delimited-text.md
     - name: Excel format
       items:
       - name: Overview
@@ -69,22 +83,22 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
-    - name: Google cloud Storage
+    - name: Google Cloud Storage
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-google-cloud-storage-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-google-cloud-storage.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-google-cloud-storage-copy-activity.md
     - name: HTTP
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-http-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-http.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-http-copy-activity.md
     - name: Kusto
       items:
       - name: Overview
@@ -93,6 +107,12 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
+    - name: Lakehouse
+      items:
+      - name: Overview
+        href: connector-lakehouse-overview.md
+      - name: Configure in copy activity
+        href: connector-lakehouse-copy-activity.md
     - name: Microsoft 365
       items:
       - name: Overview
@@ -117,6 +137,8 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
+      - name: OData in dataflows
+        href: connector-odata-dataflows.md
     - name: SharePoint online list
       items:
       - name: Overview
@@ -128,27 +150,27 @@
     - name: REST
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-rest-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-rest.md
       - name: Configure in copy activity
-        href: ../placeholder.md      
+        href: connector-rest-copy-activity.md     
   - name: Data pipelines
     items:
     - name: Activities
       items:
       - name: Activity overview
-        href: ../placeholder.md
+        href: activity-overview.md
       - name: Copy activity
         href: copy-data-activity.md
       - name: For-each activity
-        href: ../placeholder.md
+        href: foreach-activity.md
       - name: Pipeline lookup activity
-        href: ../placeholder.md
+        href: lookup-activity.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
       - name: Notebook activity
-        href: ../placeholder.md
+        href: notebook-activity.md
       - name: Script activity
         href: script-activity.md
       - name: Use dataflow and email activities to transform data and report status
@@ -162,15 +184,13 @@
       - name: Data pipeline runs
         href: pipeline-runs.md
       - name: How to use pipeline sample templates
-        href: ../placeholder.md
+        href: templates.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
       - name: Parameterization
         href: ../placeholder.md
     - name: Tutorials
       items:
-      - name: Copy from Azure Blob Storage to Lakehouse
-        href: pipeline-copy-from-azure-blob-storage-to-lakehouse.md
       - name: Copy sample data into Lakehouse and transform with dataflow
         href: ../placeholder.md
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
@@ -201,6 +221,8 @@
         href: ../placeholder.md
     - name: Tutorials
       items:
+      - name: Copy from Azure Blob Storage to Lakehouse
+        href: pipeline-copy-from-azure-blob-storage-to-lakehouse.md      
       - name: Load OData into Lakehouse with dataflows
         href: ../placeholder.md
       - name: Use dataflows to transform data and load to data warehouse
