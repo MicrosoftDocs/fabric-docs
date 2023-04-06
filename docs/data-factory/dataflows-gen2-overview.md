@@ -34,7 +34,7 @@ Dataflows Gen2 is the new generation of dataflows. The new generation of dataflo
 
 Working with Dataflows Gen2 feels like coming home. We kept the full experience you're used to in Power BI dataflows. When you enter the experience, you're guided step-by-step for getting the data into your dataflow. We also added a few new features to make your experience even better.
 
-:::image type="content" source="./media/dataflowsgen2-overview/authoring-experience.png" alt-text="Screenshot of the overall authoring experience in dataflows." lightbox="./media/dataflowsgen2-overview/authoring-experience.png":::
+:::image type="content" source="./media/dataflows-gen2-overview/authoring-experience.png" alt-text="Screenshot of the overall authoring experience in dataflows." lightbox="./media/dataflows-gen2-overview/authoring-experience.png":::
 
 ### Background query validation during publishing
 
@@ -53,13 +53,13 @@ In Dataflows Gen2, we added support for the following destinations and many more
 
 Learn more about this feature [here](../placeholder.md).
 
-:::image type="content" source="./media/dataflowsgen2-overview/outputdestinations-overview.png" alt-text="Screenshot with the supported output destinations displayed.":::
+:::image type="content" source="./media/dataflows-gen2-overview/outputdestinations-overview.png" alt-text="Screenshot with the supported output destinations displayed.":::
 
 ### Improved refresh history and monitoring
 
-With Dataflows Gen2, we introduce a new way for you to monitor your dataflow refreshes. We integrated support for [Monitor Hub](../placeholder.md) and give our [Refresh History](./dataflowsgen2-monitoring.md) experience a major upgrade.
+With Dataflows Gen2, we introduce a new way for you to monitor your dataflow refreshes. We integrated support for [Monitor Hub](../placeholder.md) and give our [Refresh History](./dataflows-gen2-monitoring.md) experience a major upgrade.
 
-:::image type="content" source="./media/dataflowsgen2-monitoring/refresh-details.png" alt-text="Screenshot showing the details of a refresh status.":::
+:::image type="content" source="./media/dataflows-gen2-monitoring/refresh-details.png" alt-text="Screenshot showing the details of a refresh status.":::
 
 ### Integration with data pipelines
 
@@ -67,11 +67,11 @@ Data pipelines allow you to group activities that together perform a task. An ac
 
 A pipeline can contain one or more activities that are connected by dependencies. For example, you can use a pipeline to ingest and clean data from an Azure blob, and then kick off a Dataflow Gen2 to analyze the log data. You can also use a pipeline to copy data from an Azure blob to an Azure SQL database, and then run a stored procedure on the database.
 
-:::image type="content" source="./media/dataflowsgen2-overview/datapipelines-integration.png" alt-text="Screenshot showing the integration with data pipelines.":::
+:::image type="content" source="./media/dataflows-gen2-overview/datapipelines-integration.png" alt-text="Screenshot showing the integration with data pipelines.":::
 
 ### Save as draft
 
-With Dataflows Gen2, we introduce a worry free experience by removing the need for publishing to save your changes. With save as draft functionality, we store a draft version of your dataflow every time you make a change. Did you lose internet connectivity? Did you accidentally close your browser? No worries; we got your back. Once you return to your dataflow, your recent changes will still be there and you can continue where you left off. This is a seamless experience and doesn't require any input from you. This allows you to work on your dataflow without having to worry about losing your changes or having to fix all the query errors before you can save your changes. Learn more about this feature [here](./dataflowsgen2-savedraft.md).
+With Dataflows Gen2, we introduce a worry free experience by removing the need for publishing to save your changes. With save as draft functionality, we store a draft version of your dataflow every time you make a change. Did you lose internet connectivity? Did you accidentally close your browser? No worries; we got your back. Once you return to your dataflow, your recent changes will still be there and you can continue where you left off. This is a seamless experience and doesn't require any input from you. This allows you to work on your dataflow without having to worry about losing your changes or having to fix all the query errors before you can save your changes. Learn more about this feature [here](./dataflows-gen2-savedraft.md).
 
 ### Fast copy
 
@@ -94,11 +94,11 @@ A simplified version of the core architecture of Power BI dataflows exists in th
 
 The following image shows how these components interact with each other during the execution of a dataflow.
 
-:::image type="content" source="./media/dataflowsgen2-overview/architecture-gen1.png" alt-text="Screenshot showing the PBI dataflow architecture.":::
+:::image type="content" source="./media/dataflows-gen2-overview/architecture-gen1.png" alt-text="Screenshot showing the PBI dataflow architecture.":::
 
 The Gen2 architecture is different from Gen1. The new architecture uses Lakehouse compute to improve performance for all your dataflows. The following image is an architecture overview how this works.
 
-:::image type="content" source="./media/dataflowsgen2-overview/architecture-gen2.png" alt-text="Screenshot showing the gen2 dataflow architecture.":::
+:::image type="content" source="./media/dataflows-gen2-overview/architecture-gen2.png" alt-text="Screenshot showing the gen2 dataflow architecture.":::
 
 ## Migration from Gen1 to Gen2
 

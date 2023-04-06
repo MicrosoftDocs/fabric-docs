@@ -6,7 +6,7 @@
     - name: What is Data Factory
       href: data-factory-overview.md
     - name: Dataflows Gen2
-      href: dataflowgen2-overview.md
+      href: dataflows-gen2-overview.md
   - name: Get started
     items:
     - name: Create a dataflow
@@ -194,7 +194,7 @@
       - name: Introduction to output destination in Fabric
         href: ../placeholder.md
       - name: Monitoring your Dataflows in Fabric
-        href: dataflowsgen2-monitoring.md
+        href: dataflows-gen2-monitoring.md
       - name: Templates
         href: ../placeholder.md
     - name: How-to
@@ -202,13 +202,13 @@
       - name: How to use key dataflow features
         href: ../placeholder.md
       - name: Saving a draft of your dataflow
-        href: dataflowsgen2-savedraft.md
+        href: dataflows-gen2-savedraft.md
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
         href: pipeline-copy-from-azure-blob-storage-to-lakehouse.md      
       - name: Use a dataflow in a pipeline
-        href: tutorial-dataflowgen2-pipeline-activity.md
+        href: tutorial-dataflows-gen2-pipeline-activity.md
       - name: Use dataflows to transform data and load to data warehouse
         href: ../placeholder.md
       - name: Use dataflows to transform data and load to Kusto

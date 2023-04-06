@@ -23,12 +23,12 @@ To publish the changes you made in your draft, you take the following steps:
 
 1. Navigate to your workspace.
 
-   :::image type="content" source="./media/dataflowsgen2-savedraft/workspace-view.png" alt-text="Screenshot of the workspace view." lightbox="./media/dataflowsgen2-savedraft/workspace-view.png":::
+   :::image type="content" source="./media/dataflows-gen2-savedraft/workspace-view.png" alt-text="Screenshot of the workspace view." lightbox="./media/dataflows-gen2-savedraft/workspace-view.png":::
 
 1. Open the draft dataflow that you recently saved changes to.
 1. Review all the changes you made last time.
 1. Publish the dataflow with the button on the bottom of the page
 
-   :::image type="content" source="./media/dataflowsgen2-savedraft/publish-dataflow.png" alt-text="Screenshot that shows how to publish your dataflow." lightbox="./media/dataflowsgen2-savedraft/publish-dataflow.png":::
+   :::image type="content" source="./media/dataflows-gen2-savedraft/publish-dataflow.png" alt-text="Screenshot that shows how to publish your dataflow." lightbox="./media/dataflows-gen2-savedraft/publish-dataflow.png":::
 
 1. Confirm the publish.
