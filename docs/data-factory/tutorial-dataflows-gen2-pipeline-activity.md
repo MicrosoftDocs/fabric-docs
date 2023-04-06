@@ -15,109 +15,143 @@ ms.author: jeluitwi
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-In this tutorial, you build a data pipeline to move OData from Northwind source to a Lakehouse destination and sent an email notification when the pipeline is completed.
+In this tutorial, you build a data pipeline to move OData from a Northwind source to a lakehouse destination and send an email notification when the pipeline is completed.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../placeholder.md) that isn’t the default My Workspace.
+- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../placeholder.md) that isn’t the default My Workspace.
 
-## Create a Lakehouse
+## Create a lakehouse
 
-To start, you first need to create a Lakehouse. A Lakehouse is a data lake that is optimized for analytics. In this tutorial, you create a Lakehouse that is used as a destination for the dataflow.
+To start, you first need to create a lakehouse. A lakehouse is a data lake that is optimized for analytics. In this tutorial, you create a lakehouse that's used as a destination for the dataflow.
 
 1. Switch to the **Data Engineering** experience.
-    :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/experience-switcher-dataengineering.png" alt-text="Data Engineering experience":::
 
-1. Go to your Fabric enabled workspace:
-    :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/goto-workspace.png" alt-text="Fabric enabled workspace":::
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/experience-switcher-dataengineering.png" alt-text="Screenshot of the Data Engineering experience.":::
+
+1. Go to your Fabric enabled workspace.
+
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/goto-workspace.png" alt-text="Screenshot of the Fabric enabled workspace emphasized.":::
 
 1. Select **Lakehouse** in the create menu.
-    :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/create-lakehouse.png" alt-text="Create Lakehouse":::
 
-1. Enter a **Name** for the Lakehouse.
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/create-lakehouse.png" alt-text="Screenshot of the create menu with Create Lakehouse emphasized.":::
+
+1. Enter a **Name** for the lakehouse.
 1. Select **Create**.
 
-Now you've created a Lakehouse and we can set up the Dataflow Gen2.
+Now you've created a lakehouse and you can now set up the dataflow.
 
 ## Create a Dataflow Gen2
 
-A Dataflow Gen2 is a reusable data transformation that can be used in a pipeline. In this tutorial, you create a Dataflow Gen2 that gets data from an OData source and write the data to a Lakehouse destination.  
+A Dataflow Gen2 is a reusable data transformation that can be used in a pipeline. In this tutorial, you create a dataflow that gets data from an OData source and writes the data to a lakehouse destination.  
 
 1. Switch to the **Data Factory** experience.
-    :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/experience-switcher.png" alt-text="Data Factory experience":::
 
-1. Go to your Fabric enabled workspace:
-    :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/goto-workspace.png" alt-text="Fabric enabled workspace":::
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/experience-switcher.png" alt-text="Screenshot of the Data Factory experience.":::
 
-1. Select **Dataflows Gen2** in the create menu.
-    :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/create-dataflowgen2.png" alt-text="Create Dataflow Gen2":::
+1. Go to your Fabric enabled workspace.
+
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/goto-workspace.png" alt-text="Screenshot of the Fabric enabled workspace.":::
+
+1. Select **Dataflow Gen2** in the create menu.
+
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/create-dataflowgen2.png" alt-text="Screenshot of the Dataflow Gen2 selection under the new menu.":::
 
 1. Ingest the data from the OData source.
+
     1. Select **Get data**.
-        :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/get-odata.png" alt-text="Get OData":::
     1. Select **OData**.
-    1. Enter the **URL** of the OData source. In this tutorial, we use the [OData sample service](https://services.odata.org/V4/Northwind/Northwind.svc/).
+    
+       :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/get-odata.png" alt-text="Screenshot of the Get data menu with OData emphasized":::
+       
+    1. Enter the **URL** of the OData source. For this tutorial, use the [OData sample service](https://services.odata.org/V4/Northwind/Northwind.svc/).
     1. Select **Next**.
-    1. Select the **Entity** that you want to ingest. In this tutorial, we use the **Orders** entity.
-        :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/odata-preview.png" alt-text="OData preview":::
+    1. Select the **Entity** that you want to ingest. In this tutorial, use the **Orders** entity.
+    
+       :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/odata-preview.png" alt-text="Screenshot of the OData preview." lightbox="media/tutorial-dataflowgen2-pipeline-activity/odata-preview.png":::
+       
     1. Select **Create**.
 
-Now you've ingested the data from the OData source and we can set up the Lakehouse destination.
+Now that you've ingested the data from the OData source, you can set up the lakehouse destination.
 
-1. Ingest the data to the Lakehouse destination.
-    1. Select **Add data destination**.
-        :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/add-output-destination.png" alt-text="Add output destination":::
-    1. Select **Lakehouse**.
-    1. Configure the connection you want to use to connect to the Lakehouse. Default settings are fine.
-    1. Select **Next**.
-    1. Navigate to the workspace in which you created the Lakehouse.
-    1. Select the Lakehouse that you created in the previous step.
-        :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/select-lakehouse.png" alt-text="Select Lakehouse":::
-    1. Confirm the table name.
-    1. Select **Next**.
-    1. Confirm the update method and select **Save settings**.
-        :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/update-method.png" alt-text="Update method":::
-1. Publish the Dataflow Gen2.
+To ingest the data to the lakehouse destination:
 
-Now you've ingested the data to the Lakehouse destination and we can set up our Data Pipeline.
+1. Select **Add data destination**.
+1. Select **Lakehouse**.
 
-## Create a Data Pipeline
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/add-output-destination.png" alt-text="Screenshot of the Add output destination menu with lakehouse emphasized.":::
+   
+1. Configure the connection you want to use to connect to the lakehouse. The default settings are fine.
+1. Select **Next**.
+1. Navigate to the workspace where you created the lakehouse.
+1. Select the lakehouse that you created in the previous steps.
 
-A Data Pipeline is a workflow that can be used to automate data processing. In this tutorial, you create a Data Pipeline that runs the Dataflow Gen2 that you created in the previous step.
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/select-lakehouse.png" alt-text="Screenshot of the selected lakehouse.":::
+   
+1. Confirm the table name.
+1. Select **Next**.
+1. Confirm the update method and select **Save settings**.
+
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/update-method.png" alt-text="Screenshot of the update methods, with replace selected.":::
+   
+1. Publish the dataflow.
+
+Now that you've ingested the data to the lakehouse destination, you can set up your data pipeline.
+
+## Create a data pipeline
+
+A data pipeline is a workflow that can be used to automate data processing. In this tutorial, you create a data pipeline that runs the Dataflow Gen2 that you created in the previous procedure.
 
 1. Navigate back to the workspace overview page and select **Data Pipelines** in the create menu.
-    :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/create-pipeline.png" alt-text="Create Data Pipeline":::
-1. Provide a **Name** for the Data Pipeline.
+
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/create-pipeline.png" alt-text="Screenshot of the Data Pipeline selection.":::
+   
+1. Provide a **Name** for the data pipeline.
 1. Select the **Dataflow** activity.
-    :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/dataflow-pipeline-activity.png" alt-text="Dataflow activity":::
-1. Select the **Dataflow** that you created in the previous step in the **Dataflow** dropdown under settings of the activity.
-    :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/select-dataflow.png" alt-text="Select Dataflow":::
+
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/dataflow-pipeline-activity.png" alt-text="Screenshot of the dataflow activity emphasized.":::
+
+1. Select the **Dataflow** that you created in the previous procedure in the **Dataflow** dropdown list under **Settings**.
+
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/select-dataflow.png" alt-text="Screenshot of the dataflow dropdown list.":::
+   
 1. Add an **Email notification** activity.
-    :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/add-office365-activity.png" alt-text="Email notification activity":::
+
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/add-office365-activity.png" alt-text="Screenshot emphasizing how to select an Email notification activity.":::
+   
 1. Configure the **Email notification** activity.
+
     1. Authenticate with your Office 365 account.
     1. Select the **Email address** that you want to send the notification to.
     1. Enter a **Subject** for the email.
     1. Enter a **Body** for the email.
-        :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/settings-email-activity.png" alt-text="Email notification activity settings":::
+    
+       :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/settings-email-activity.png" alt-text="Screenshot showing the Email notification activity settings.":::
 
-## Run and Schedule the Data Pipeline
+## Run and schedule the data pipeline
 
-In this section, you run and schedule the Data Pipeline. This schedule allows you to run the Data Pipeline on a schedule.
+In this section, you run and schedule the data pipeline. This schedule allows you to run the data pipeline on a schedule.
 
 1. Go to your workspace.
-1. Open the dropdown menu of the Data Pipeline that you created in the previous step.
-    :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/schedule-dropdown.png" alt-text="Schedule dropdown":::
-1. Turn **On** the **Scheduled run** toggle.
-    :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/setting-schedule.png" alt-text="Schedule settings":::
-1. Provide the schedule you want to use to run the Data Pipeline.
+1. Open the dropdown menu of the data pipeline that you created in the previous procedure, and then select **Schedule**.
+
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/schedule-dropdown.png" alt-text="Screenshot of the pipeline menu with schedule emphasized.":::
+   
+1. In **Scheduled run**, select **On**.
+
+   :::image type="content" source="media/tutorial-dataflowgen2-pipeline-activity/setting-schedule.png" alt-text="Screenshot of scheduled run set to On.":::
+
+1. Provide the schedule you want to use to run the data pipeline.
+
     1. Repeat, for example, every **Day** or every **Minute**.
     1. When selected Daily, you can also select the **Time**.
     1. Start **On** a specific **Date**.
     1. End **On** a specific **Date**.
     1. Select the **Timezone**.
-1. Apply the changes by clicking on **Apply**.
+    
+1. Select **Apply** to apply the changes.
 
-You've now created a Data Pipeline that runs on a schedule, refresh the data in the Lakehouse and send you an email notification. You can check the status of the Data Pipeline by going to the **Monitor Hub**. You can also check the status of the Data Pipeline by going to the **Data Pipeline** and clicking on the **Run history** tab in the dropdown menu.
+You've now created a data pipeline that runs on a schedule, refreshes the data in the lakehouse, and sends you an email notification. You can check the status of the data pipeline by going to the **Monitor Hub**. You can also check the status of the data pipeline by going to **Data Pipeline** and selecting the **Run history** tab in the dropdown menu.
