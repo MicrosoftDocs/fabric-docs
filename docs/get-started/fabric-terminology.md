@@ -58,9 +58,9 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## Synapse Data Warehouse
 
-- **SQL Endpoint:** The SQL Endpoint on the lakehouse allows a user to transition from the Lake view of the lakehouse (which supports data engineering and Apache Spark) to the SQL experiences that a data warehouse provides, supporting Transact-SQL (T-SQL). For more information, see [SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint) article.
+- **SQL Endpoint:** The SQL Endpoint on the lakehouse allows a user to transition from the Lake view of the lakehouse (which supports data engineering and Apache Spark) to the SQL experiences that a data warehouse provides, supporting Transact-SQL (T-SQL). For more information, see [SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint).
 
-- **Warehouse:** The warehouse functionality is a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Data warehouse](../data-warehouse/data-warehousing.md#data-warehouse) article.
+- **Warehouse:** The warehouse functionality is a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Synapse data warehouse](../data-warehouse/data-warehousing.md#synapse-data-warehouse).
 
 ## Real-time Analytics
 
