@@ -279,4 +279,4 @@ df
 
 ## Next steps
 
-- [Use a notebook with Lakehouse to explore your data](lakehouse-notebook-explore.md)
+- [Use a notebook with lakehouse to explore your data](lakehouse-notebook-explore.md)

@@ -119,7 +119,7 @@ Now, you can use inline commands to help you enable *altair* on your Notebook se
 
 ### Manage Python custom libraries through in-line installation
 
-You can upload your Python custom libraries to the Notebook-attached Lakehouse **File** folder. Navigate to your Lakehouse, select **…** on the **File** folder, then upload the custom library.
+You can upload your Python custom libraries to the notebook-attached lakehouse **File** folder. Navigate to your lakehouse, select **…** on the **File** folder, then upload the custom library.
 
 After uploading, you can use the following command to install the custom library to your Notebook session:
 

@@ -102,7 +102,7 @@ Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellis
 
 ### Drag and drop to insert snippets
 
-You can use drag and drop to read data from Lakehouse explorer conveniently. Multiple file types are supported here, you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell. The notebook generates the code snippet accordingly to preview the data.
+You can use drag and drop to read data from lakehouse explorer conveniently. Multiple file types are supported here, you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell. The notebook generates the code snippet accordingly to preview the data.
 
 :::image type="content" source="media\author-execute-notebook\test-drag-and-drop.png" alt-text="Screenshot showing an empty cell." lightbox="media\author-execute-notebook\test-drag-and-drop.png":::
 
