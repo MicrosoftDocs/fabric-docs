@@ -16,7 +16,7 @@ ms.date: 04/05/2023
 
 ## What to expect
 
-Synapse Data Warehouse in Microsoft Fabric is built up open file formats.  This means that user tables are stored in Parquet File Format.  With the new file format, we are able to publish Delta Lake Logs for all user tables.  
+Synapse Data Warehouse in Microsoft Fabric is built up open file formats.  This file format means that user tables are stored in Parquet File Format.  With the new file format, we're able to publish Delta Lake Logs for all user tables.  
 
 The Delta Lake Logs opens up direct access the Synapse Data Warehouse's user tables for any engine that can read Delta Lake Tables.  This access is limited to read-only to ensure the user data remains ACID transaction compliance.  All inserts, updates and deletes to the data in the tables, needs to come through the Synapse Data Warehouse.
 
