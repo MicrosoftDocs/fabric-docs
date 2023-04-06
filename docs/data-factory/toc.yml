@@ -63,6 +63,8 @@
         href: connector-azure-sql-database.md
       - name: Configure in copy activity
         href: connector-azure-sql-database-copy-activity.md
+      - name: Connect to an Azure SQL database in dataflows
+        href: connector-azure-sql-database-dataflow.md
     - name: Binary format
       href: format-binary.md
     - name: Data warehouse
