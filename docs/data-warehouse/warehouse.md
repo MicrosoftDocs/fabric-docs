@@ -41,7 +41,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - CREATE ROLE
 - CREATE SECURITY POLICY - Row Level Security (RLS)
 - CREATE USER
-- CTAS
 - GRANT/DENY/REVOKE
 - Hints
 - Identity Columns
@@ -56,7 +55,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Result Set Caching
 - Schema and Table names can't contain / or \
 - SELECT - FOR (except JSON)
-- SELECT - INTO
 - `sp_showmemo_xml`
 - `sp_showspaceused`
 - `sp_rename`
