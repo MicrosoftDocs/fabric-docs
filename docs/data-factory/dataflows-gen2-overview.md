@@ -59,7 +59,7 @@ Learn more about this feature [here](../placeholder.md).
 
 With Dataflows Gen2, we introduce a new way for you to monitor your dataflow refreshes. We integrated support for [Monitor Hub](../placeholder.md) and give our [Refresh History](./dataflows-gen2-monitor.md) experience a major upgrade.
 
-:::image type="content" source="./media/dataflows-gen2-monitoring/refresh-details.png" alt-text="Screenshot showing the details of a refresh status.":::
+:::image type="content" source="./media/dataflows-gen2-monitor/refresh-details.png" alt-text="Screenshot showing the details of a refresh status.":::
 
 ### Integration with data pipelines
 

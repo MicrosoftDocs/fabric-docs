@@ -17,7 +17,7 @@ Monitoring your dataflow refreshes is key in ensuring that your dataflows are ru
 
 Refresh history is available using the drop-down menu in your workspace. You can access it by selecting the **Refresh History** button.
 
-:::image type="content" source="./media/dataflows-gen2-monitoring/open-refreshhistory.png" alt-text="Screenshot of the dataflow dropdown box with Refresh history emphasized.":::
+:::image type="content" source="./media/dataflows-gen2-monitor/open-refreshhistory.png" alt-text="Screenshot of the dataflow dropdown box with Refresh history emphasized.":::
 
 When you open your dataflow refresh history, you first notice a list of all your data refreshes. This first screen provides you with information about:
 
@@ -26,7 +26,7 @@ When you open your dataflow refresh history, you first notice a list of all your
 - Duration
 - Type
 
-:::image type="content" source="./media/dataflows-gen2-monitoring/refresh-history.png" alt-text="Screenshot of the refresh history screen.":::
+:::image type="content" source="./media/dataflows-gen2-monitor/refresh-history.png" alt-text="Screenshot of the refresh history screen.":::
 
 You can take some actions right away from this page like start a new refresh, schedule a refresh, or edit the dataflow.
 
@@ -37,13 +37,13 @@ Some times you might need to get a CSV file of your refresh. To get this file, t
 1. Open the refresh history of the dataflow.
 1. Select the run you want to get a CSV file from.
 1. Download the CSV.
-   :::image type="content" source="./media/dataflows-gen2-monitoring/download-csv.png" alt-text="Screenshot emphasizing the particular refresh you want to download, and the download as CSV selection.":::
+   :::image type="content" source="./media/dataflows-gen2-monitor/download-csv.png" alt-text="Screenshot emphasizing the particular refresh you want to download, and the download as CSV selection.":::
 
 ### Reviewing your dataflow refresh from the UI
 
 Once you've determined which dataflow you want to investigate, you can drill down into one of the refreshes by selecting the **Start time** field. This screen provides you with more information about the refresh that was performed. This includes general information about the refresh and a list of tables and activities.
 
-:::image type="content" source="./media/dataflows-gen2-monitoring/refresh-details.png" alt-text="Screenshot showing an overview of the refresh history.":::
+:::image type="content" source="./media/dataflows-gen2-monitor/refresh-details.png" alt-text="Screenshot showing an overview of the refresh history.":::
 
 In short, this overview provides you:
 
@@ -57,11 +57,11 @@ In short, this overview provides you:
 
 The **Tables** section reflects all the entities you've enabled load for in your dataflow. Meaning that those tables shown here are being loaded into the staging area of your dataflow. These tables are the entities you can access using the Power Query Dataflow connector in Power BI, Excel, or dataflows. You can select any of the listed table names to view the details of this specific table. Once you select the name, you arrive at the following **Details** screen:
 
-:::image type="content" source="./media/dataflows-gen2-monitoring/table-details.png" alt-text="Screenshot of the Details screen, showing the details of the specific table.":::
+:::image type="content" source="./media/dataflows-gen2-monitor/table-details.png" alt-text="Screenshot of the Details screen, showing the details of the specific table.":::
 
 The **Activities** section reflects all the actions that have taken place during the refresh, for example loading data to your output destination. This table also allows you to dive deeper into the details of the specific activity. By selecting the name of the activity, you arrive at the following **Details** screen:
 
-:::image type="content" source="./media/dataflows-gen2-monitoring/activity-details.png" alt-text="Screenshot of the Details screen, showing the details of the specific activity.":::
+:::image type="content" source="./media/dataflows-gen2-monitor/activity-details.png" alt-text="Screenshot of the Details screen, showing the details of the specific activity.":::
 
 This screen gives you more clarity in what happened during the activity. For example, for output destinations the activity screen provides you with the:
 
@@ -79,11 +79,11 @@ To investigate what happened, you can drill down into an activity or table. The 
 
 The monitor hub is available using the side menu in your workspace. You can access it by selecting the **Monitor** button.
 
-:::image type="content" source="./media/dataflows-gen2-monitoring/open-monitoringhub.png" alt-text="Screenshot of the monitoring hub button.":::
+:::image type="content" source="./media/dataflows-gen2-monitor/open-monitoringhub.png" alt-text="Screenshot of the monitoring hub button.":::
 
 The monitor hub provides you with a dashboard that gives you an overview of the status of your dataflows.
 
-:::image type="content" source="./media/dataflows-gen2-monitoring/monitor-hub.png" alt-text="Screenshot of the monitoring hub dashboard." lightbox="./media/dataflows-gen2-monitoring/monitor-hub.png":::
+:::image type="content" source="./media/dataflows-gen2-monitor/monitor-hub.png" alt-text="Screenshot of the monitoring hub dashboard." lightbox="./media/dataflows-gen2-monitor/monitor-hub.png":::
 
 This dashboard provides you with the following information:
 
