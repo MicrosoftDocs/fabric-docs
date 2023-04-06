@@ -76,14 +76,8 @@
     - name: Delimited text
       href: format-delimited-text.md
     - name: Excel format
-      items:
-      - name: Overview
-        href: ../placeholder.md
-      - name: Set up connection
-        href: ../placeholder.md
-      - name: Configure in copy activity
-        href: ../placeholder.md
-    - name: Google Cloud Storage
+      href: format-excel.md
+    - name: Google cloud Storage
       items:
       - name: Overview
         href: connector-google-cloud-storage-overview.md
