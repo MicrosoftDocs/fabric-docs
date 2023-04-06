@@ -4,7 +4,7 @@ description: This article details how to use the Azure Data Lake Storage Gen2 co
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 3/29/2023
+ms.date: 4/6/2023
 ms.custom: template-how-to 
 ---
 
@@ -44,7 +44,7 @@ To connect to Azure Data Lake Storage Gen2 data from a dataflow:
 
 1. In **Choose data**, select the data item that you want to transform, and then select **Transform data**.
 
-   :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/file-systems-online.png" alt-text="Screenshot of the choose data screen with the test examples item selected and the corresponding data on the right side.":::
+   :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/file-systems-online.png" alt-text="Screenshot of the choose data screen with the test examples item selected and the corresponding data on the right side." lightbox="./media/connector-azure-data-lake-storage-gen2/file-systems-online.png":::
 
 ## Advanced connector information
 
