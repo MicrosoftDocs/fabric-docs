@@ -28,6 +28,8 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Workspace:** A user interface area designed for collaboration, in which users perform tasks such as creating reports, notebooks, datasets, etc. For more information, see [Placeholder](../placeholder.md).
 
+- **V-order:** A write optimization to the parquet file format that enables fast reads and provides cost efficiency and better performance. All the Fabric engines write v-ordered parquet files by default.
+
 ## Synapse Data Engineering
 
 - **Lakehouse:** A lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by the Apache Spark engine and SQL engine for big data processing. A lakehouse includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables. The lakehouse item is hosted within a unique workspace folder in the Microsoft Fabric lake. It contains files in various formats (structured and unstructured) organized in folders and subfolders. For more information, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
