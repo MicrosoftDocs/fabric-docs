@@ -2,10 +2,11 @@
   "build": {
     "content": [
       {
+        "src": "./",
         "files": [
           "**/*.md",
           "**/*.yml",
-          "**/*.gif"
+          "**/*.svg"
         ],
         "exclude": [
           "**/obj/**",
@@ -23,16 +24,16 @@
     ],
     "resource": [
       {
+        "src": "./",
         "files": [
           "**/*.png",
           "**/*.jpg",
+          "**/*.jpeg",
           "**/*.svg",
           "**/*.gif"
-
         ],
         "exclude": [
           "**/obj/**",
-          "**/includes/**",
           "_themes/**",
           "_themes.pdf/**",
           "**/docfx.json",
@@ -51,7 +52,7 @@
        "titleSuffix": "Microsoft Fabric"
    },
    "searchScope": [
-    ""
+    "Microsoft Fabric"
   ],
     "template": [],
     "dest": "fabric-docs"

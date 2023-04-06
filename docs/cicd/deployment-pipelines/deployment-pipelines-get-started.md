@@ -1,20 +1,21 @@
 ---
-title: Get started using deployment pipelines, the Power BI Application lifecycle management (ALM) tool
-description: Learn how to use deployment pipelines, the Power BI Application lifecycle management (ALM) tool
+title: Get started using deployment pipelines, the Fabric Application lifecycle management (ALM) tool
+description: Learn how to use deployment pipelines, the Fabric Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1, intro-get-started
-ms.date: 01/18/2023
+ms.date: 04/02/2023
+ms.search.form: Get started using Deployment pipelines, Create a deployment pipeline, Introduction to Deployment pipelines
 ---
 
 # Get started with deployment pipelines
 
-This article walks you through the basic settings required for using deployment pipelines in Power BI service. It's recommended to read the [deployment pipelines introduction](deployment-pipelines-overview.md), before you proceed.
+This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. It's recommended to read the [deployment pipelines introduction](deployment-pipelines-overview.md), before you proceed.
 
-You can also complete the [Create and manage a Power BI deployment pipeline](/training/modules/power-bi-deployment-pipelines) Learn module, which shows how to create a deployment pipeline.
+You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) Learn module, which shows how to create a deployment pipeline.
 
 >[!NOTE]
 >In a deployment pipeline, one Premium workspace is assigned to each stage. Before you start working with your pipeline in production, review the [capacity requirements](deployment-pipelines-troubleshooting.yml#what-type-of-capacity-can-i-assign-to-a-workspace-in-a-pipeline-) for the pipeline's workspaces.
@@ -25,7 +26,7 @@ You'll be able to access the deployment pipelines feature, if the following cond
 
 * You have one of the following Premium licenses:
 
-  * You're a Power BI [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md), and you belong to an organization that has Premium capacity.
+  * You're a [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md), and you belong to an organization that has Premium capacity.
 
   * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
 
@@ -46,7 +47,7 @@ After the pipeline is created, you can share it with other users, edit, or delet
 
 To create a pipeline from the deployment pipelines tab, do the following:
 
-1. In Power BI service, from the navigation pane, select **Deployment pipelines** and then select **Create pipeline**.
+1. From the navigation pane, select **Deployment pipelines** and then select **Create pipeline**.
 
 2. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Create**.
 
@@ -76,15 +77,15 @@ Follow the instructions in the link to [assign a workspace to a pipeline](deploy
 
 When you finished working with content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. A typical workflow for moving content from stage to stage, is development to test, and then test to production, but you can deploy in any direction. You can learn more about this process, in the [deploy content to an existing workspace](deployment-pipelines-process.md#deploy-content-to-an-existing-workspace) section.
 
-Deployment pipelines offer three options when it comes to deploying your Power BI content:
+Deployment pipelines offer three options when it comes to deploying your content:
 
-* [Deploying all content](deployment-pipelines-deploy.md#deploy-all-content) - Deploy all your Power BI content to the target stage.
+* [Deploying all content](deployment-pipelines-deploy.md#deploy-all-content) - Deploy all your content to the target stage.
 
-* [Selective deployment](deployment-pipelines-deploy.md#selective-deployment) - Select which Power BI content to deploy to the target stage.
+* [Selective deployment](deployment-pipelines-deploy.md#selective-deployment) - Select which content to deploy to the target stage.
 
 * [Backwards deployment](deployment-pipelines-deploy.md#backwards-deployment) - Deploy your content to a previous stage in the pipeline.
 
-After you choose how to deploy your Power BI content, you can [Review your deployment and leave a note](deployment-pipelines-deploy.md#review-your-deployment-and-leave-a-note).
+After you choose how to deploy your content, you can [Review your deployment and leave a note](deployment-pipelines-deploy.md#review-your-deployment-and-leave-a-note).
 
 ## Step 4 - Deploy content from one stage to another
 
