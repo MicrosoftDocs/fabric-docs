@@ -5,23 +5,53 @@ items:
   items: 
   - name: Data warehousing
     href: data-warehousing.md
-- name: Get started
-  items: 
-  - name: Warehouse
-    href: warehouse.md
   - name: SQL Endpoint
     href: sql-endpoint.md
-  - name: Datasets
-    href: datasets.md
-  - name: Creating reports
-    href: create-reports.md
-- name: Workspaces
+  - name: Synapse Data Warehouse
+    href: warehouse.md
+- name: Get started 
+  items: 
+  - name: SQL Endpoint on the Lakehouse
+    href: get-started-sql-endpoint.md
+  - name: Synapse Data Warehouse
+    items:
+    - name: Get started with a Synapse Data Warehouse
+      href: get-started-data-warehouse.md  
+    - name: Create a warehouse
+      href: create-warehouse.md
+    - name: Create a table
+      href: create-table.md
+    - name: Ingest data 
+      href: ingest-data.md
+    - name: Query the warehouse
+      href: query-warehouse.md
+    - name: Create reports
+      href: create-reports.md
+    - name: Create reports in the Power BI service
+      href: reports-power-bi-service.md
+- name: Security
   items:
-  - name: Getting Workspace and OneLake path
-    href: get-workspace-onelake-path.md    
+  - name: Data warehousing security
+    href: security.md
+  - name: Connectivity
+    href: connectivity.md    
   - name: Workspace roles
     href: workspace-roles.md
-- name: Load data into the warehouse
+  - name: Manage user access
+    href: manage-user-access.md    
+- name: Datasets
+  items:
+  - name: Datasets
+    href: datasets.md
+  - name: Data modeling and defining relationships
+    href: data-modeling-defining-relationships.md
+  - name: Create a measure
+    href: create-measure.md
+  - name: Hide elements from downstream reporting
+    href: hide-elements-downstream-reporting.md
+  - name: Get Workspace and OneLake path
+    href: get-workspace-onelake-path.md
+- name: Load data into the Synapse Data Warehouse
   items:
   - name: Ingesting data into the warehouse
     href: ingest-data.md
@@ -29,48 +59,24 @@ items:
     href: ingest-data-copy-command.md
   - name: Ingest data with Data pipelines
     href: ingest-data-pipelines.md
-- name: Data warehouses
+- name: Query
   items:
-  - name: Warehouse
-    href: warehouse.md
-  - name: SQL Endpoint
-    href: sql-endpoint.md
-  - name: Create a warehouse
-    href: create-warehouse.md
-  - name: Create reports in the Power BI service
-    href: reports-power-bi-service.md
-  - name: Warehouse settings and context menus
-    href: settings-context-menus.md
-  - name: Connectivity
-    href: connectivity.md
-  - name: Manage user access
-    href: manage-user-access.md
-- name: Datasets
-  items:
-  - name: Data modeling and defining relationships
-    href: data-modeling-defining-relationships.md
-  - name: Create a measure
-    href: create-measure.md
-  - name: Hide elements from downstream reporting
-    href: hide-elements-downstream-reporting.md
-- name: Develop
-  items:
+  - name: Query using Visual Query editor
+    href: visual-query-editor.md
+  - name: Query using SQL Query editor
+    href: sql-query-editor.md    
   - name: Statistics
     href: statistics.md
+- name: Develop
+  items:
   - name: Tables
     href: tables.md
   - name: Primary, foreign, and unique keys
     href: table-constraints.md
   - name: Transactions
     href: transactions.md
-  - name: Create a table with SSMS
-    href: create-table.md
-  - name: Query a Synapse Data Warehouse
-    href: query-warehouse.md
-  - name: Query using Visual Query editor
-    href: visual-query-editor.md
-  - name: Query using SQL Query editor
-    href: sql-query-editor.md
+  - name: Warehouse settings and context menus
+    href: settings-context-menus.md
 - name: Monitor
   items:
   - name: Monitor using DMVs

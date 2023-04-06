@@ -24,7 +24,7 @@ With a default dataset that has tables, the **New report** opens a browser tab t
 
 ## Scenario two
 
-Using the default dataset and action menu in the workspace: In the Project [!INCLUDE [product-name](../includes/product-name.md)] workspace, navigate to the default dataset and select the **More** menu (**…**) to create a report in the Power BI service.
+Using the default dataset and action menu in the workspace: In the [!INCLUDE [product-name](../includes/product-name.md)] workspace, navigate to the default dataset and select the **More** menu (**…**) to create a report in the Power BI service.
 
 Selecting the **More** menu opens the report editing canvas to a new report that is built on the dataset. When you save your new report, it's saved in the workspace that contains the dataset as long as you have write permissions on that workspace. If you don't have write permissions, or if you're a free user and the dataset resides in a Premium-capacity workspace, the new report is saved in your **My workspace**.
 
