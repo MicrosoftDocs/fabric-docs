@@ -5,6 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: makromer
 author: kromerm
 ms.topic: overview
+ms.search.form: product-data-integration, Data_Factory_Overview
 ms.date: 01/25/2023
 ---
 
