@@ -42,7 +42,7 @@ To connect to an Azure SQL database from a dataflow:
 
 1. Select **Next**.
 
-1. In **Choose data**, select the data item that you want to transform, and then select **Transform data**.
+1. In **Choose data**, select the data item that you want to transform, and then select **Create**.
 
    :::image type="content" source="./media/connector-azure-sql-database/choose-data.png" alt-text="Screenshot showing the Power Query Choose data window with one item selected and the item's data displayed in the right pane." lightbox="./media/connector-azure-sql-database/choose-data.png":::
 
