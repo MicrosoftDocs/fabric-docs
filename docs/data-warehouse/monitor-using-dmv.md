@@ -5,14 +5,15 @@ ms.reviewer: wiassaf
 ms.author: jacindaeng
 author: jacindaeng
 ms.topic: conceptual
-ms.date: 03/15/2023
+ms.date: 03/23/2023
+ms.search.form: Monitoring
 ---
 
 # Monitoring connections, sessions, and requests using DMVs
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-**Applies to:** Warehouse and SQL Endpoint
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 For the current version, there are three Dynamic Management Views (DMVs) provided for you to receive live SQL query lifecycle insights.
 
@@ -27,7 +28,7 @@ These three DMVs provide detailed insight on the following scenarios:
 
 - Who is the user running the session?
 - When was the session started by the user?
-- What's the ID of the connection to the data warehouse item and the session that is running the request?
+- What's the ID of the connection to the data [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and the session that is running the request?
 - How many queries are actively running?
 - Which queries are long running?
 
@@ -52,8 +53,8 @@ The following example joins `sys.dm_exec_connections` and `sys.dm_exec_sessions`
 SELECT connections.connection_id,
  connections.connect_time,
  sessions.session_id, sessions.login_name, sessions.login_time, sessions.status
-FROM sys.dm_exec_connections connections
-JOIN sys.dm_exec_sessions sessions
+FROM sys.dm_exec_connections AS connections
+INNER JOIN sys.dm_exec_sessions AS sessions
 ON connections.session_id=sessions.session_id;
 ```
 
@@ -90,4 +91,4 @@ KILL 101
 
 ## Next steps
 
-- [Create a table with SSMS](create-table-sql-server-management-studio.md)
+- [Create a table with SSMS](create-table.md)

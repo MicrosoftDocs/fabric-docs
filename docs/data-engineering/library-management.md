@@ -10,8 +10,7 @@ ms.date: 02/24/2023
 
 # Library management
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Libraries provide reusable code that Apache Spark developers may want to include in their Spark application.
 
@@ -27,7 +26,7 @@ Based on the user scenarios and specific needs, you can include other libraries.
 
 You can manage all the previously mentioned types of libraries via two different entry points: library management in workspace settings and in-line installation.
 
-1. [**Workspace library management**](#library-management-in-workspace-setting): Workspace library settings define the working environment for the entire Workspace. The libraries installed on a Workspace level are available for all Notebooks and Spark job definitions under that workspace. Update the workspace libraries when you want to set up the shared environment for all artifacts in a workspace.
+1. [**Workspace library management**](#library-management-in-workspace-setting): Workspace library settings define the working environment for the entire Workspace. The libraries installed on a Workspace level are available for all Notebooks and Spark job definitions under that workspace. Update the workspace libraries when you want to set up the shared environment for all items in a workspace.
 
    > [!IMPORTANT]
    > Only Workspace admin has access to update the Workspace level settings.
@@ -88,7 +87,7 @@ When you have an interactive Notebook and want to use some extra packages for a 
 
 Here's an example to walk you through the library management abilities using in-line commands. Let's assume you want to use *altair*, a powerful visualization library commonly used by Python developers, for your one-time data exploration. And let's assume the library isn't installed on Workspace or on Notebook. In the following example, we use conda commands to demonstrate the steps.
 
-Now, you can use inline commands to help you enable *altair* on your Notebook session without interrupting other sessions of the Notebook or other artifacts.
+Now, you can use inline commands to help you enable *altair* on your Notebook session without interrupting other sessions of the Notebook or other items.
 
 1. Run the following commands in a Notebook code cell to install the *altair* library and *vega_datasets*, which contains dataset you can use to visualize:
 

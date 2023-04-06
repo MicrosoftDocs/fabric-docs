@@ -10,10 +10,9 @@ ms.date: 02/24/2023
 
 # How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] notebook is a primary code artifact for developing Apache Spark jobs and machine learning experiments, it's a web-based interactive surface used by data scientists and data engineers to write code benefiting from rich visualizations and Markdown text. Data engineers write code for data ingestion, data preparation, and data transformation. Data scientists also use notebooks to build machine learning solutions, including creating experiments and models, model tracking, and deployment.
+[!INCLUDE [product-name](../includes/product-name.md)] notebook is a primary code item for developing Apache Spark jobs and machine learning experiments, it's a web-based interactive surface used by data scientists and data engineers to write code benefiting from rich visualizations and Markdown text. Data engineers write code for data ingestion, data preparation, and data transformation. Data scientists also use notebooks to build machine learning solutions, including creating experiments and models, model tracking, and deployment.
 
 With a [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can:
 
@@ -31,11 +30,11 @@ You can either create a new notebook or import an existing notebook.
 
 ### Create a new notebook
 
-Similar with other standard [!INCLUDE [product-name](../includes/product-name.md)] artifact creation, you can easily create a new notebook from the [!INCLUDE [product-name](../includes/product-name.md)] **Data Engineering** homepage, the workspace **New** button, or the **Create Hub**.
+Similar with other standard [!INCLUDE [product-name](../includes/product-name.md)] item creation, you can easily create a new notebook from the [!INCLUDE [product-name](../includes/product-name.md)] **Data Engineering** homepage, the workspace **New** button, or the **Create Hub**.
 
 ### Import existing notebooks
 
-You can import one or more existing notebooks from your local computer to a [!INCLUDE [product-name](../includes/product-name.md)] workspace from the **Data Engineering or the Data Science** homepage. [!INCLUDE [product-name](../includes/product-name.md)] notebooks can recognize the standard Jupyter Notebook .ipynb files, and source files like .py, .scala, and .sql, and create new notebook artifacts accordingly.
+You can import one or more existing notebooks from your local computer to a [!INCLUDE [product-name](../includes/product-name.md)] workspace from the **Data Engineering or the Data Science** homepage. [!INCLUDE [product-name](../includes/product-name.md)] notebooks can recognize the standard Jupyter Notebook .ipynb files, and source files like .py, .scala, and .sql, and create new notebook items accordingly.
 
 :::image type="content" source="media\how-to-use-notebook\new-menu-notebook-options.png" alt-text="Screenshot showing where to find notebook options on the New menu." lightbox="media\how-to-use-notebook\new-menu-notebook-options.png":::
 
@@ -56,7 +55,7 @@ You can navigate to different Lakehouses in the Lakehouse explorer and set one L
 
 ### Add or remove a Lakehouse
 
-Selecting the **X** icon beside a Lakehouse name removes it from the notebook tab, but the Lakehouse artifact still exists in the workspace.
+Selecting the **X** icon beside a Lakehouse name removes it from the notebook tab, but the Lakehouse item still exists in the workspace.
 
 Select **Add lakehouse** to add more Lakehouses to the notebook, either by adding an existing one or creating a new Lakehouse
 
@@ -70,7 +69,7 @@ If you select a file(.csv, .parquet) with a right mouse click, both Spark and Pa
 
 ## Collaborate in a notebook
 
-The [!INCLUDE [product-name](../includes/product-name.md)] notebook is a collaborative artifact that supports multiple users editing the same notebook.  
+The [!INCLUDE [product-name](../includes/product-name.md)] notebook is a collaborative item that supports multiple users editing the same notebook.  
 
 When you open a notebook, you enter the co-editing mode by default. If your colleagues open the same notebook at the same time, you see their profile, run output, cursor indicator, selection indicator and editing trace. By leveraging the collaborating features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
 

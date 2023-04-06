@@ -2,8 +2,8 @@
 title: Model scoring with PREDICT
 description: Learn how to use the PREDICT function in supported models.
 ms.reviewer: mopeakande
-ms.author: negust
-author: nelgson
+ms.author: erenorbey
+author: orbey
 ms.topic: how-to
 ms.date: 02/10/2023
 ms.search.form: Predict
@@ -11,19 +11,25 @@ ms.search.form: Predict
 
 # Model scoring with PREDICT
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] empowers users to operationalize machine learning models from the secure boundaries of a notebook with a function called PREDICT. Users can get started directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook or from a given model item page. An end-to-end prediction example using a fraud detection model can be found in the “Sample Notebooks” folder.
+[!INCLUDE [product-name](../includes/product-name.md)] empowers users to operationalize machine learning models from the secure boundaries of a notebook by using a function called PREDICT. Users can get started directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook or from a given model item page.
+
+In this article, you'll learn to call PREDICT from a notebook and generate code to call PREDICT for a given model from the model's item page.
 
 > [!NOTE]
-> The PREDICT function is currently supported for only a limited set of model flavors, including LightGBM and Scikit-Learn. Support for additional model flavors (ONNX, PyTorch, TensorFlow) is forthcoming.
+> The PREDICT function is currently supported for a limited set of model types, including LightGBM and scikit-learn.
 
-## Calling PREDICT from a notebook
+## Prerequisites
 
-PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you’ve already trained and registered a model, you can skip to Step 2 in the following procedure. If not, Step 1 provides a code sample to guide you through the creation and training of a simple logistic regression model. This is the model that will be used to generate predictions in the last step if you don’t use your own.
+- A Power BI Premium subscription. If you don't have one, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
+- A Power BI Workspace with assigned premium capacity.
 
-1. **Train a model and register it with MLflow**. The following code sample uses the MLflow API to create a machine learning experiment and start an MLflow run for a simple Scikit-Learn logistic regression model, tracking its metrics and parameters. The model version is then registered for prediction. (For more in-depth instructions about the training process, see our how-to guide on training models.)
+## Call PREDICT from a notebook
+
+PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you've already trained and registered a model, you can skip to Step 2 in the following procedure. If not, Step 1 provides a code sample to guide you through the creation and training of a logistic regression model. You can use this model to generate predictions in the last step of the procedure if you don't use your own.
+
+1. **Train a model and register it with MLflow**. The following code sample uses the MLflow API to create a machine learning experiment and start an MLflow run for a simple scikit-learn logistic regression model, tracking its metrics and parameters. The model version is then registered for prediction. See [how to train models with scikit-learn](train-models-scikit-learn.md) to learn more about training and tracking a scikit-learn model.
 
    ```Python
    import mlflow
@@ -51,20 +57,20 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
        )
     ```
 
-2. **Load in a test dataset and convert it into a Spark DataFrame.** To generate predictions using the model trained in the previous example, we can create a simple test dataset. Substituting the indicated variables in the following example allows you to change this data for testing your own model.
+2. **Load in test data and convert it into a Spark DataFrame.** To generate predictions using the model trained in the previous step, we can create a simple test data. You can substitute the value for the `test` variable in the following code snippet with data for testing your model.
 
    ```Python
    import pandas as pd
 
-   # Create a simple test dataset from a dictionary of x values
-   # You can substitute “test" below with your own dataset
+   # Create a simple test data from a dictionary of x values
+   # You can substitute "test" below with your own data
    test = pd.DataFrame({'x': [-2, -1, 0, 1, 2, -1]})
 
-   # Convert the test dataset into a Spark DataFrame
+   # Convert the test data into a Spark DataFrame
    test_spark = spark.createDataFrame(data=[(test.values.tolist(),)], schema=test.columns.to_list())
    ```
 
-3. **Create an MLflow Transformer to load the model for inferencing.** The following code sample can be modified—with substitutions for the indicated parameters—to create a Transformer for generating predictions. In this case, we’re specifying all the columns from the test dataset as model inputs, naming the output column “predictions,” and generating our predictions with the model version trained earlier.
+3. **Create an MLflow Transformer to load the model for inferencing.** To create an MLflow Transformer object for generating predictions, we specify all the columns from the `test` data as model inputs, name the output column `predictions`, and provide the correct model name and version to use for generating predictions. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version with the appropriate ones for your model.
 
    ```Python
    from synapse.ml.predict import MLflowTransformer
@@ -79,12 +85,14 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
    )
    ```
 
-4. **Generate predictions using the PREDICT function.** The PREDICT function can be invoked with the Transformer API, the Spark SQL API, or user-defined functions (UDFs). The following code snippets generate predictions using the test data and model defined in the preview steps.
+4. **Generate predictions using the PREDICT function.** To invoke the PREDICT function, you can use the Transformer API, the Spark SQL API, or user-defined functions (UDFs). The following sections show how to generate predictions with the test data and model defined in the previous steps, using the different methods for invoking PREDICT.
 
 ### PREDICT with the Transformer API
 
+To invoke the PREDICT function with the transformer API, use the model and the test data defined previously. If you've been using your own model, substitute the values for the model and the test data in the following code.
+
 ```Python
-# You can substitute “model” and “test_spark” below with variables  
+# You can substitute "model" and "test_spark" below with variables  
 # for your own model and test data 
 predictions = model.transform(test_spark)
 predictions.show()
@@ -92,10 +100,13 @@ predictions.show()
 
 ### PREDICT with the Spark SQL API
 
+To invoke the PREDICT function with the Spark SQL API, use the model and the test data defined previously. If you've been using your own model, substitute the values for `model_name`, `model_version`, and `features` with the corresponding values for your model and feature columns.
+
 ```Python
 from pyspark.ml.feature import SQLTransformer 
 
-# You can substitute “model_name,” “model_version,” and “features” below # with variables for your own model name, model version, and feature columns
+# You can substitute "model_name," "model_version," and "features" 
+# with variables for your own model name, model version, and feature columns
 model_name = 'sample-sklearn'
 model_version = 1
 features = test_spark.columns
@@ -103,7 +114,7 @@ features = test_spark.columns
 sqlt = SQLTransformer().setStatement( 
     f"SELECT PREDICT('{model_name}/{model_version}', {','.join(features)}) as prediction FROM __THIS__")
 
-# You can substitute “test_spark” below with your own test data
+# You can substitute "test_spark" below with your own test data
 predictions = sqlt.transform(test_spark)
 predictions.show()
 ```
@@ -111,52 +122,61 @@ predictions.show()
 > [!NOTE]
 > Using the Spark SQL API to generate predictions still requires you to create an MLflow Transformer (as in Step 3). This registers the model for use with the PREDICT keyword.
 
-### PREDICT with a user-defined function (UDF)
+### PREDICT with a user-defined function
+
+To invoke the PREDICT function with a user-defined function (UDF), use the model and the test data defined previously. If you've been using your own model, substitute the values for the features and model with the corresponding values for your feature columns and model.
 
 ```Python
 from pyspark.sql.functions import col, pandas_udf, udf, lit
 
-# You can substitute “features” and "model” below with your 
+# You can substitute "features" and "model" below with your 
 features = test_spark.columns
 lr_udf = model.to_udf()
 
 test_spark.withColumn("PREDICT", lr_udf(*[col(f) for f in features])).show()
 ```
 
-## Generating PREDICT code from a model item page
+## Generate PREDICT code from a model item page
 
-Users can generate code to call PREDICT for a specific model by navigating to the item page for the desired model version and clicking the “Apply model” prompt.
+To generate code that calls PREDICT for a specific model:
 
-### Using an interactive scoring wizard
+- Go to the item page for the desired model version.
+- Select the **Apply model** prompt. This prompt includes options to:
+    - Generate PREDICT code with prepopulated parameters using an interactive scoring wizard, or
+    - Copy a customizable code template to use in generating model predictions.
 
-The “Apply model” prompt includes an option to generate PREDICT code with prepopulated parameters using an interactive scoring wizard. The wizard walks users through a series of steps to select the source data for scoring, map it correctly to the model’s inputs, specify the destination for the model’s outputs, and create a notebook that will generate scores using PREDICT.
+### Use an interactive scoring wizard
+
+The **Apply model** prompt includes an option to generate PREDICT code with prepopulated parameters using an interactive scoring wizard. The wizard walks you through steps to select the source data for scoring, map the data correctly to the model's inputs, specify the destination for the model's outputs, and create a notebook that uses PREDICT to generate scores.
 
 > [!NOTE]
-> The scoring wizard is currently supported only for models that have been saved in the MLflow format with their model signatures populated. For other models, please use the customizable code template provided on the model version’s page, or consult documentation for calling PREDICT directly from a notebook.
+> The scoring wizard is currently supported only for models that have been saved in the MLflow format with their model signatures populated. For other models, use the customizable code template provided on the model version's page, or [call PREDICT directly from a notebook](#call-predict-from-a-notebook).
 
-To use the scoring wizard, navigate to the artifact page for a given model version and click “Apply this model in wizard” from the “Apply model” dropdown. The interface will guide you through the following steps.
+To use the scoring wizard,
+- Go to the artifact page for a given model version.
+- Select **Apply this model in wizard** from the **Apply model** dropdown. The interface guides you through the following steps:
 
-1. **Select input table.** Browse the provided dropdown menus to select an input table from among the Lakehouses in your current Workspace. In the next step, the columns from this table will be mapped to the model’s inputs to generate predictions.
-1. **Map input columns.** Use the provided dropdowns to match columns from the selected table to each of the model’s listed input fields, which have been pulled from the model’s signature. Note that an input column must be provided for all the model’s required fields and that the data types for the selected columns must match the model’s expected data types.
+1. **Select input table.** Browse the provided dropdown menus to select an input table from among the Lakehouses in your current Workspace.
+1. **Map input columns.** Use the provided dropdowns to match columns from the selected table to each of the model's listed input fields, which have been pulled from the model's signature. You must provide an input column for all the model's required fields. Also, the data types for the selected columns must match the model's expected data types.
 
-  > [!TIP]
-  > The wizard will prepopulate the mapping if the names of the input table’s columns match those logged in the model signature.
+    > [!TIP]
+    > The wizard will prepopulate the mapping if the names of the input table's columns match those logged in the model signature.
 
-3. **Create output table.** Provide a name for a new table within your current Workspace’s selected Lakehouse where the model’s predictions will be stored. By default, this table will be created in the same Lakehouse as the input table, but the option to change the destination Lakehouse is also available.
-1. **Map output column(s).** Use the provided text field(s) to name the column(s) in the output table where the model’s predictions will be stored.
-1. **Configure notebook.** Provide a name for a new notebook where the PREDICT code generated by the wizard will be stored. The generated code will be displayed as a preview in this step if you wish to copy it to your clipboard and paste it into an existing notebook instead.
-1. **Review and finish.** Review the designated model version, input table, output table, and notebook name. Click “Create notebook” to add a new notebook with the generated code to your workspace.
+1. **Create output table.** Provide a name for a new table within your current Workspace's selected Lakehouse. This Lakehouse will store the output table that will contain the model's input values and predictions. By default, this table will be created in the same Lakehouse as the input table, but the option to change the destination Lakehouse is also available.
+1. **Map output column(s).** Use the provided text field(s) to name the column(s) in the output table where the model's predictions will be stored.
+1. **Configure notebook.** Provide a name for a new notebook where the PREDICT code generated by the wizard will be stored. The generated code will be displayed as a preview in this step. You can copy the code to your clipboard and paste it into an existing notebook instead.
+1. **Review and finish.** Review the designated model version, input table, output table, and notebook name. Select **Create notebook** to add the new notebook with the generated code to your workspace.
 
-### Using a customizable code template
+### Use a customizable code template
 
-The “Apply model” prompt also includes an option to copy a customizable code template, which can be pasted into a notebook as a new cell to generate model predictions. Unlike the scoring wizard, the code template requires users to update the following fields manually before it can be successfully run:
+The **Apply model** prompt also includes an option to copy a customizable code template. You can paste this code template into a notebook as a new cell to generate model predictions. To successfully run the code template, you need to manually replace the placeholders in the code template as follows:
 
-- **INPUT_TABLE:** The path for the table that will provide inputs to the model
-- **INPUT_COLS:** The array of column names that will be provided as inputs
-- **OUTPUT_COLS:** The name for the column where predictions will be landed
-- **MODEL_NAME:** The name of the model used to generate predictions
-- **MODEL_VERSION:** The version of the model used to generate predictions
-- **OUTPUT_TABLE:** The path for the table where the predictions will be stored
+- `<INPUT_TABLE>`: The path for the table that will provide inputs to the model
+- `<INPUT_COLS>`: The array of column names to use as inputs
+- `<OUTPUT_COLS>`: The name of the column where predictions will land
+- `<MODEL_NAME>`: The name of the model to use for generating predictions
+- `<MODEL_VERSION>`: The version of the model to use for generating predictions
+- `<OUTPUT_TABLE>`: The path for the table that will store the predictions
 
 ```Python
 import mlflow 
@@ -186,3 +206,4 @@ df.write.format('delta').mode("overwrite").save(
 ## Next steps
 
 - How-to: Apply model for batch scoring (PREDICT)
+- [End-to-end prediction example using a fraud detection model](fraud-detection.md)

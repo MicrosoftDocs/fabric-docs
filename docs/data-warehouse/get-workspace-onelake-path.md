@@ -1,5 +1,5 @@
 ---
-title: Getting Workspace and OneLake path
+title: Get Workspace and OneLake path
 description: Follow steps to get the workspace and OneLake path.
 ms.reviewer: wiassaf
 ms.author: prlangad
@@ -8,19 +8,19 @@ ms.topic: how-to
 ms.date: 03/15/2023
 ---
 
-# Getting Workspace and OneLake path
+# Get Workspace and OneLake path
+
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-**Applies to:** Warehouse and SQL Endpoint
-
 To maintain a single copy of data, Lakehouses and transactional Warehouses store data in OneLake.
 
-In this tutorial, you learn how to find a OneLake file path from the Lakehouse experience.
+In this tutorial, you learn how to find a OneLake file path from the [Lakehouse](../data-engineering/lakehouse-overview.md) experience.
 
 ## Known limitations
 
-Currently, the OneLake path is displayed only in the Lakehouse experience. When you are in default warehouse or transactional warehouse, OneLake path isn't displayed in the product experience.
+Currently, the OneLake path is displayed only in the Lakehouse experience. When you are using the SQL Endpoint or connect to a transactional warehouse, OneLake path isn't displayed in the product experience.
 
 ## How to get a Workspace and OneLake path
 

@@ -3,18 +3,18 @@ title: Hide elements from downstream reporting
 description: Follow steps to hide warehouse elements from downstream reporting.
 ms.reviewer: wiassaf
 ms.author: salilkanade
-author: cynotebo
+author: salilkanade
 ms.topic: how-to
 ms.date: 03/17/2023
 ---
 
 # Hide elements from downstream reporting
 
-**Applies to:** Warehouse and SQL Endpoint
-
-This article reviews methods to hide elements from downstream reporting. You may want to do this to simplify the set of items available for reporting.
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+This article reviews methods to hide elements from downstream reporting. You may want to do this to simplify the set of items available for reporting.
 
 ## Options to hide elements
 
@@ -28,4 +28,4 @@ You can also hide the entire table and individual columns by using the **Model v
 
 ## Next steps
 
- - [Access default datasets](access-default-datasets.md)
+ - [Data modeling and defining relationships](data-modeling-defining-relationships.md)

@@ -5,16 +5,20 @@ ms.reviewer: wiassaf
 ms.author: chweb
 author: chuckles22
 ms.topic: conceptual
-ms.date: 03/15/2023
+ms.date: 04/05/2023
+ms.search.form: Default dataset overview
 ---
 
 # Default datasets
+
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In [!INCLUDE [product-name](../includes/product-name.md)], datasets are a semantic model with metrics; a logical description of an analytical domain, with business friendly terminology and representation, to enable deeper analysis. This semantic model is typically a star schema with facts that represent a domain, and dimensions that allow you to analyze, or slice and dice the domain to drill down, filter, and calculate different analyses. With the default dataset, the dataset is created automatically for you, and the aforementioned business logic gets inherited from the parent lakehouse or warehouse respectively, jump-starting the downstream analytics experience for business intelligence and analysis with an item in [!INCLUDE [product-name](../includes/product-name.md)] that is managed, optimized, and kept in sync with no user intervention. Visualizations and analyses in **Power BI reports** can now be built completely in the web - or in just a few steps in Power BI desktop - saving users time, resources, and by default, providing a seamless consumption experience for end-users. **Power BI datasets** represent a source of data ready for reporting, visualization, discovery and consumption including:
 
 - Datasets provide the ability to expand warehousing constructs to include hierarchies, descriptions, relationships. This allows deeper semantic understanding of a domain.
+- The default dataset follows the naming convention of the Lakehouse.
 - Datasets provide the ability to catalog, search, and find dataset information in the Data Hub.
 - The ability to set bespoke permissions for workload isolation and security.
 - The ability to create measures, standardized metrics for repeatable analysis.
@@ -24,9 +28,11 @@ In [!INCLUDE [product-name](../includes/product-name.md)], datasets are a semant
 
 For more on Power BI, see [Power BI guidance documentation - Power BI | Microsoft Learn](/power-bi/guidance/).
 
-## Understanding what’s in the default dataset
+## Understand what's in the default dataset
 
-Currently, tables in the lake house are automatically added to the default dataset. Users can also manually select tables or views from the warehouse they want included in the model for more flexibility. Objects that are in the default dataset are created as a layout in the model view.
+Currently, delta tables in the Lakehouse are automatically added to the default dataset. The default dataset is queried via the [SQL Endpoint](sql-endpoint.md) and updated via changes to the Lakehouse. You can also query the default dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-sql-query) from a [Synapse Data Warehouse](warehouse.md).
+
+Users can also manually select tables or views from the warehouse they want included in the model for more flexibility. Objects that are in the default dataset are created as a layout in the model view.
 
 The background sync that includes objects (tables and views) waits for the downstream dataset to not be in use to update the dataset, honoring bounded staleness. Users can always go and manually pick tables they want or no want in the dataset.
 
@@ -42,7 +48,7 @@ The default layout for BI enabled tables persists in the user session and is gen
 
 :::image type="content" source="media\datasets\default-dataset-objects.png" alt-text="Screenshot of the reporting tab showing default dataset objects." lightbox="media\datasets\default-dataset-objects.png":::
 
-This layout isn't currently saved past the user’s session.
+This layout isn't currently saved past the user's session.
 
 Default Datasets follow the current limitations for datasets in Power BI. Learn more:
 
