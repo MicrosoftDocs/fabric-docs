@@ -62,6 +62,11 @@ OneLake uses Azure Active Directory (Azure AD) for authentication; you can use i
 
 Fabric doesn’t currently support private link access to OneLake data via non-Fabric products and Spark.
 
+## Allowing 3rd party data access
+
+If a tenant admin wants to restrict access to the data stored in OneLake, they can restrict the access to OneLake data by 3rd party apps (non Fabric apps) by turning off the "Allow 3rd party" switch in the tenant Admin. 
+If the admin has turned on Private link, even if 3rd part access is allowed, the requests will be rejected until OneLake supports Private Links.
+
 ## Next steps
 
 - [OneLake File Explorer](onelake-file-explorer.md)
