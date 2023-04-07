@@ -34,8 +34,9 @@ libraries when you want to set up the shared environment for all Artifacts in a 
 - **Session** : A session-level installation creates an environment for a specific notebook session. The change of session-level libraries isn't persisted between sessions. 
 
 Summarizing the current available R library management behaviors: 
-|Library Type|Workspace-leve installation|Session-level installation|
-|-|-|-|
+
+|Library Type |Workspace-leve installation |Session-level installation |
+|---------------|---------------|---------------|
 |R Feed (CRAN)|Not Supported| Supported|
 |R Custom |Supported| Supported|
 
@@ -114,7 +115,7 @@ Currently, the following `devtools` functions are supported within [!INCLUDE [pr
 
 
 |Comamnd|Description|
-|-|-|
+|---------------|----------------|
 |install_github()	|Installs an R package from GitHub|
 |install_gitlab()	|Installs an R package from GitLab|
 |install_bitbucket()	|Installs an R package from BitBucket|
