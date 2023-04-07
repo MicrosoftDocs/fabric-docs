@@ -54,7 +54,7 @@ Transaction logging in Synapse Data Warehouse in Microsoft Fabric is simpler as 
 - no named transactions
 - no marked transactions
 - At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
-- If a SELECT is within a transaction, and was preceded by data insertions, the automatically generated statistics may be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, you may want to [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=sql-server-ver16&preserve-view=true) for the columns mentioned in your SELECT.
+- If a transaction has data insertion into an empty table and issues a SELECT before rolling back, the automatically generated statistics may still reflect the uncommitted data, causing inaccurate statistics. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, you may want to [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=sql-server-ver16&preserve-view=true) for the columns mentioned in your SELECT.
 - To avoid query concurrency issue during preview, refrain from doing trickle INSERTs into a warehouse table.
 
 ## Next steps
