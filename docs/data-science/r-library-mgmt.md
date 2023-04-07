@@ -18,44 +18,44 @@ Libraries provide reusable code that you might want to include in your programs 
 
 [!INCLUDE [product-name](../includes/product-name.md)] supports an R runtime with many popular open-source R packages, including TidyVerse, preinstalled. When a Spark instance starts, these libraries are included automatically and available to be used immediately in notebooks or Spark job definitions. For a full list of libraries, see [Apache Spark version support]().
 
-You might need to update your R libraries for various reasons, for example, one of your core dependencies released a new version, or your team has built a custom pacakge that you need avaliable in your Spark clusters.
+You might need to update your R libraries for various reasons, for example, one of your core dependencies released a new version, or your team has built a custom package that you need available in your Spark clusters.
 
 There are two types of libraries you may want to include based on your scenario:
 
-- **Feed libraries** refer to the ones residing in public sources or repositories, such as [CRAN](https://cran.r-project.org/) or Github.
+- **Feed libraries** refer to the ones residing in public sources or repositories, such as [CRAN](https://cran.r-project.org/) or GitHub.
 
 - **Custom libraries** are the code built by you or your organization, _.tar.gz_ can be managed through Library Management portals.
 
-There are two levels of pacakeges installed on [!INCLUDE [product-name](../includes/product-name.md)] :
+There are two levels of packages installed on [!INCLUDE [product-name](../includes/product-name.md)] :
 
-- **Workspace**: Workspace-level installation will define the working environment for the entire Workspace. The libraries installed on Workspace level will be available for all Notebooks and SJDs under this Workspace. Update the workspace 
+- **Workspace**: Workspace-level installation defines the working environment for the entire Workspace. The libraries installed on Workspace level are available for all Notebooks and SJDs under this Workspace. Update the workspace 
 libraries when you want to set up the shared environment for all Artifacts in a Workspace.
 
 - **Session** : A session-level installation creates an environment for a specific notebook session. The change of session-level libraries isn't persisted between sessions. 
 
-Summarizing the current available R library management behabiors: 
+Summarizing the current available R library management behaviors: 
 |Library Type|Workspace-leve installation|Session-level installation|
 |-|-|-|
-|R Feed (CRAN)|Not Supported|Supported|
+|R Feed (CRAN)|Not Supported| Supported|
 |R Custom |Supported| Supported|
 
 
-## R library managment in Workspace settings
+## R library management in Workspace settings
 
-Under the Workspace settings, you will find the Workspace level library management portal: Workspace setting → Data engineering → Library management. Currently R only support custom 
+Under the Workspace settings, you can find the Workspace level library management portal: Workspace setting → Data engineering → Library management. Currently R only support custom 
 
 [!NOTE] 
 - Only Workspace admin has permission to update the workspace level settings. 
 - Managing R feed libraries in workspace settings is currently not supported.
 
-### Manage Workspace pacakges
-You can install your custom R packages, i.e.,_.tar.gz_ in Workspace library management portal.
+### Manage Workspace packages
+You can install your custom R packages, that is,_.tar.gz_ in Workspace library management portal.
 
 #### Upload new custom library
 If you want to bring your custom codes in Trident runtime, uploading them as custom packages through 
-the portal is a good option. The library management module will help you handle potential conflicts and 
+the portal is a good option. The library management module helps you handle potential conflicts and 
 required dependencies in your custom libraries.
-Under the “Custom libraries" panel, you will see the button of "upload". Click the button and upload the 
+Under the “Custom libraries" panel, you can see the button of "upload". Select the button and upload the 
 packages through a local directory.
 
 #### Remove existing custom library
@@ -68,17 +68,17 @@ updates of custom libraries and apply these changes to your Trident Spark enviro
 or Notebook.
 
 ## Manage session scoped R packages
-When doing interactive data analysis or machine learning, you might try newer packages or you might need packages that are currently unavailable on your worksapce. Instead of updating the workspace settings , you can use session-scoped packages to add, manage, and update session dependencies.
+When doing interactive data analysis or machine learning, you might try newer packages or you might need packages that are currently unavailable on your workspace. Instead of updating the workspace settings, you can use session-scoped packages to add, manage, and update session dependencies.
 
 - When you install session-scoped libraries, only the current notebook has access to the specified libraries.
 - These libraries won't impact other sessions or jobs using the same Spark pool.
 - These libraries are installed on top of the base runtime and pool level libraries.
-- Notebook libraries will take the highest precedence.
-- Session-scoped R libraries don't persist across sessions. These libraries will be installed at the start of each session when the related installation commands are executed.
+- Notebook libraries take the highest precedence.
+- Session-scoped R libraries don't persist across sessions. These libraries are installed at the start of each session when the related installation commands are executed.
 - Session-scoped R libraries are automatically installed across both the driver and worker nodes.
 
 [!NOTE]
-- These commands of managing R libraries will be disabled when running pipeline jobs. If you want to install a package within a pipeline, you must leverage the library management capabilities at the workspace level.
+- These commands of managing R libraries are disabled when running pipeline jobs. If you want to install a package within a pipeline, you must use the library management capabilities at the workspace level.
 
 ### Install R packages from CRAN
 You can easily install an R library from [CRAN](https://cran.r-project.org/).
@@ -96,7 +96,7 @@ install.packages("highcharter", repos = "https://cran.microsoft.com/snapshot/202
 ### Install R packages using devtools
 The `devtools` library simplifies package development to expedite common tasks. This library is installed within the default [!INCLUDE [product-name](../includes/product-name.md)] runtime.
 
-You can use `devtools` to specify a specific version of a library to install. These libraries will be installed across all nodes within the cluster.
+You can use `devtools` to specify a specific version of a library to install. These libraries are installed across all nodes within the cluster.
 
 ```R
 # Install a specific version. 
@@ -126,7 +126,7 @@ Currently, the following `devtools` functions are supported within [!INCLUDE [pr
 ### Install R custom libraries
 You can upload your R custom libraries to the Notebook attached Lakehouse File folder. Navigate to your Lakehouse, select ... on the File folder, then upload the custom library.
 
-After uploading, you can use the following command to install the custom libarary to your session:
+After uploading, you can use the following command to install the custom library to your session:
 
 ```R
 install.packages("filepath/filename.tar.gz", repos = NULL, type = "source")

@@ -12,7 +12,7 @@ ms.search.form: R Language
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The R ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Apache Spark Pool in [!INCLUDE [product-name](../includes/product-name.md)] contains a set of curated and popular open-source libraries. You can also add or manage additional libraries & versions by using the [!INCLUDE [product-name](../includes/product-name.md)]  library management capabilities.
+The R ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Apache Spark Pool in [!INCLUDE [product-name](../includes/product-name.md)] contains a set of curated and popular open-source libraries. You can also add or manage extra libraries or versions by using the [!INCLUDE [product-name](../includes/product-name.md)]  library management capabilities.
 
 ## ggplot2
 The [ggplot2](https://ggplot2.tidyverse.org/) library is popular for data visualization and exploratory data analysis.
@@ -39,7 +39,7 @@ g + geom_point() +
 
 ## rBokeh
 
-[rBokeh](https://hafen.github.io/rbokeh/) is a native R plotting library for creating interactive graphics which are backed by the Bokeh visualization library.
+[rBokeh](https://hafen.github.io/rbokeh/) is a native R plotting library for creating interactive graphics.
 
 ![rbokeh-points](./media/r-visualization/bokeh_plot.png)
 ```R
@@ -53,7 +53,7 @@ p
 
 ## R Plotly
 
-[Plotly](https://plotly.com/r/) is an R graphing library which makes interactive, publication-quality graphs.
+[Plotly](https://plotly.com/r/) is an R graphing library that makes interactive, publication-quality graphs.
 
 ![plot-line](./media/r-visualization/rplot.png)
 ```R
@@ -68,7 +68,7 @@ fig
 
 ## Highcharter
 
-[Highcharter](https://jkunst.com/highcharter/) is a R wrapper for Highcharts JavaScript library and its modules.
+[Highcharter](https://jkunst.com/highcharter/) is an R wrapper for Highcharts JavaScript library and its modules.
 
 ![highchart-scatter](./media/r-visualization/highchart.png)
 ```R

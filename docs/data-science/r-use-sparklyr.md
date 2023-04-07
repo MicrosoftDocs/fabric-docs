@@ -16,7 +16,7 @@ ms.search.form: R Language
 
 ## Requirements
 
-`sparklyr` is usually used along with other [tidyverse](https://www.tidyverse.org/) packages such as [dplyr](https://cran.rstudio.com/web/packages/dplyr/vignettes/dplyr.html). [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of sparklyr and tidyverse with every runtime release. You can simply import them and start using the API.
+`sparklyr` is used along with other [tidyverse](https://www.tidyverse.org/) packages such as [dplyr](https://cran.rstudio.com/web/packages/dplyr/vignettes/dplyr.html). [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of sparklyr and tidyverse with every runtime release. You can import them and start using the API.
 
 ## Connect sparklyr to Synapse Spark cluster
 
@@ -30,7 +30,7 @@ sc <- spark_connect(master = "yarn", version = spark_version, spark_home = "/opt
 ```
 
 ## Use sparklyr to read data
-A new Spark session will contain no data. The first step is to either load data into your Spark session’s memory, or point Spark to the location of the data so it can access the data on-demand.
+A new Spark session contains no data. The first step is to either load data into your Spark session’s memory, or point Spark to the location of the data so it can access the data on-demand.
 
 ```R
 # load the sparklyr package
@@ -66,7 +66,7 @@ head(mtcarsDF)
 
 You can use familiar `dplyr` commands to prepare data inside Spark. The commands run inside Spark, so there are no unnecessary data transfers between R and Spark. 
 
-Click the [Manipulating Data with `dplyr`](https://spark.rstudio.com/guides/dplyr.html) to see additional documentation on using dplyr with Spark. 
+Click the [Manipulating Data with `dplyr`](https://spark.rstudio.com/guides/dplyr.html) to see extra documentation on using dplyr with Spark. 
 
 ```R
 # count cars by the number of cylinders the engine contains (cyl), order the results descendingly
@@ -114,7 +114,7 @@ tbl_mtcars %>%
 ## Machine learning 
 
 
-Here’s an example where we use `ml_linear_regression()` to fit a linear regression model. We’ll use the built-in `mtcars` dataset, and see if we can predict a car’s fuel consumption (`mpg`) based on its weight (`wt`), and the number of cylinders the engine contains (`cyl`). We’ll assume in each case that the relationship between `mpg` and each of our features is linear.
+Here’s an example where we use `ml_linear_regression()` to fit a linear regression model. We use the built-in `mtcars` dataset, and see if we can predict a car’s fuel consumption (`mpg`) based on its weight (`wt`), and the number of cylinders the engine contains (`cyl`). We assume in each case that the relationship between `mpg` and each of our features is linear.
 
 ### Generation of Testing and Training Data Sets
 Simple split, 70% for training and 30% for testing the model. Playing with this ratio may result in different models.

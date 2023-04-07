@@ -32,11 +32,11 @@ In addition, you can use multiple languages in one notebook by specifying the la
 ```
 To learn more about notebooks within [!INCLUDE [product-name](../includes/product-name.md)] Analytics, you can visit the guide on how to [how to use notebooks](../data-engineering/how-to-use-notebook.md).
 
-## Insatll pacakges
+## Install packages
 
 Libraries provide reusable code that you might want to include in your programs or projects. To make third party or locally built code available to your applications, you can install a library onto one of your workspace or notebook session. 
 
-To learn more about how to manage R library manage see the following article: [R library management](./r-library-mgmt.md).
+To learn more about how to manage R libraries see the following article: [R library management](./r-library-mgmt.md).
 
 ## Notebook Utilities
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can use MSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. MSSparkUtils is supported for R notebooks.
@@ -60,10 +60,10 @@ You can learn more about how to use SparkR by visiting the following article: [H
 
 To learn more about how to use sparkly, you can visit [How to use sparklyr](./r-use-sparklyr.md).
 
-[!NOTE] Using SparkR and sparklyr in the same notebook session is not supported yet.
+[!NOTE] Using SparkR and sparklyr in the same notebook session isn't supported yet.
 
 ## R visualization 
-The R ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Spark instance in [!INCLUDE [product-name](../includes/product-name.md)] contains a set of curated and popular open-source libraries. You can also add or manage additional libraries & versions by using the [!INCLUDE [product-name](../includes/product-name.md)] library management capabilities.
+The R ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Spark instance in [!INCLUDE [product-name](../includes/product-name.md)] contains a set of curated and popular open-source libraries. You can also add or manage extra libraries or versions by using the [!INCLUDE [product-name](../includes/product-name.md)] library management capabilities.
 
 You can learn more about how to create R visualizations by visiting the following article: [R visualization](./r-visualization.md).
 
