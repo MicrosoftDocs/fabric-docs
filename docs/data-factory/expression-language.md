@@ -109,26 +109,26 @@ You can call functions within expressions. The following sections provide inform
 
 | Date or time function | Task |
 | --------------------- | ---- |
-| [addDays](control-flow-expression-language-functions.md#addDays) | Add a number of days to a timestamp. |
-| [addHours](control-flow-expression-language-functions.md#addHours) | Add a number of hours to a timestamp. |
-| [addMinutes](control-flow-expression-language-functions.md#addMinutes) | Add a number of minutes to a timestamp. |
-| [addSeconds](control-flow-expression-language-functions.md#addSeconds) | Add a number of seconds to a timestamp. |
-| [addToTime](control-flow-expression-language-functions.md#addToTime) | Add a number of time units to a timestamp. See also [getFutureTime](control-flow-expression-language-functions.md#getFutureTime). |
-| [convertFromUtc](control-flow-expression-language-functions.md#convertFromUtc) | Convert a timestamp from Universal Time Coordinated (UTC) to the target time zone. |
-| [convertTimeZone](control-flow-expression-language-functions.md#convertTimeZone) | Convert a timestamp from the source time zone to the target time zone. |
-| [convertToUtc](control-flow-expression-language-functions.md#convertToUtc) | Convert a timestamp from the source time zone to Universal Time Coordinated (UTC). |
-| [dayOfMonth](control-flow-expression-language-functions.md#dayOfMonth) | Return the day of the month component from a timestamp. |
-| [dayOfWeek](control-flow-expression-language-functions.md#dayOfWeek) | Return the day of the week component from a timestamp. |
-| [dayOfYear](control-flow-expression-language-functions.md#dayOfYear) | Return the day of the year component from a timestamp. |
-| [formatDateTime](control-flow-expression-language-functions.md#formatDateTime) | Return the timestamp as a string in optional format. |
-| [getFutureTime](control-flow-expression-language-functions.md#getFutureTime) | Return the current timestamp plus the specified time units. See also [addToTime](control-flow-expression-language-functions.md#addToTime). |
-| [getPastTime](control-flow-expression-language-functions.md#getPastTime) | Return the current timestamp minus the specified time units. See also [subtractFromTime](control-flow-expression-language-functions.md#subtractFromTime). |
-| [startOfDay](control-flow-expression-language-functions.md#startOfDay) | Return the start of the day for a timestamp. |
-| [startOfHour](control-flow-expression-language-functions.md#startOfHour) | Return the start of the hour for a timestamp. |
-| [startOfMonth](control-flow-expression-language-functions.md#startOfMonth) | Return the start of the month for a timestamp. |
-| [subtractFromTime](control-flow-expression-language-functions.md#subtractFromTime) | Subtract a number of time units from a timestamp. See also [getPastTime](control-flow-expression-language-functions.md#getPastTime). |
-| [ticks](control-flow-expression-language-functions.md#ticks) | Return the `ticks` property value for a specified timestamp. |
-| [utcNow](control-flow-expression-language-functions.md#utcNow) | Return the current timestamp as a string. |
+| [addDays](expression-language.md#addDays) | Add a number of days to a timestamp. |
+| [addHours](expression-language.md#addHours) | Add a number of hours to a timestamp. |
+| [addMinutes](expression-language.md#addMinutes) | Add a number of minutes to a timestamp. |
+| [addSeconds](expression-language.md#addSeconds) | Add a number of seconds to a timestamp. |
+| [addToTime](expression-language.md#addToTime) | Add a number of time units to a timestamp. See also [getFutureTime](expression-language.md#getFutureTime). |
+| [convertFromUtc](expression-language.md#convertFromUtc) | Convert a timestamp from Universal Time Coordinated (UTC) to the target time zone. |
+| [convertTimeZone](expression-language.md#convertTimeZone) | Convert a timestamp from the source time zone to the target time zone. |
+| [convertToUtc](expression-language.md#convertToUtc) | Convert a timestamp from the source time zone to Universal Time Coordinated (UTC). |
+| [dayOfMonth](expression-language.md#dayOfMonth) | Return the day of the month component from a timestamp. |
+| [dayOfWeek](expression-language.md#dayOfWeek) | Return the day of the week component from a timestamp. |
+| [dayOfYear](expression-language.md#dayOfYear) | Return the day of the year component from a timestamp. |
+| [formatDateTime](expression-language.md#formatDateTime) | Return the timestamp as a string in optional format. |
+| [getFutureTime](expression-language.md#getFutureTime) | Return the current timestamp plus the specified time units. See also [addToTime](expression-language.md#addToTime). |
+| [getPastTime](expression-language.md#getPastTime) | Return the current timestamp minus the specified time units. See also [subtractFromTime](expression-language.md#subtractFromTime). |
+| [startOfDay](expression-language.md#startOfDay) | Return the start of the day for a timestamp. |
+| [startOfHour](expression-language.md#startOfHour) | Return the start of the hour for a timestamp. |
+| [startOfMonth](expression-language.md#startOfMonth) | Return the start of the month for a timestamp. |
+| [subtractFromTime](expression-language.md#subtractFromTime) | Subtract a number of time units from a timestamp. See also [getPastTime](expression-language.md#getPastTime). |
+| [ticks](expression-language.md#ticks) | Return the `ticks` property value for a specified timestamp. |
+| [utcNow](expression-language.md#utcNow) | Return the current timestamp as a string. |
 
 ## String functions  
 
@@ -136,18 +136,18 @@ To work with strings, you can use these string functions and also some [collecti
 
 | String function | Task |
 | --------------- | ---- |
-| [concat](control-flow-expression-language-functions.md#concat) | Combine two or more strings, and return the combined string. |
-| [endsWith](control-flow-expression-language-functions.md#endswith) | Check whether a string ends with the specified substring. |
-| [guid](control-flow-expression-language-functions.md#guid) | Generate a globally unique identifier (GUID) as a string. |
-| [indexOf](control-flow-expression-language-functions.md#indexof) | Return the starting position for a substring. |
-| [lastIndexOf](control-flow-expression-language-functions.md#lastindexof) | Return the starting position for the last occurrence of a substring. |
-| [replace](control-flow-expression-language-functions.md#replace) | Replace a substring with the specified string, and return the updated string. |
-| [split](control-flow-expression-language-functions.md#split) | Return an array that contains substrings, separated by commas, from a larger string based on a specified delimiter character in the original string. |
-| [startsWith](control-flow-expression-language-functions.md#startswith) | Check whether a string starts with a specific substring. |
-| [substring](control-flow-expression-language-functions.md#substring) | Return characters from a string, starting from the specified position. |
-| [toLower](control-flow-expression-language-functions.md#toLower) | Return a string in lowercase format. |
-| [toUpper](control-flow-expression-language-functions.md#toUpper) | Return a string in uppercase format. |
-| [trim](control-flow-expression-language-functions.md#trim) | Remove leading and trailing whitespace from a string, and return the updated string. |
+| [concat](expression-language.md#concat) | Combine two or more strings, and return the combined string. |
+| [endsWith](expression-language.md#endswith) | Check whether a string ends with the specified substring. |
+| [guid](expression-language.md#guid) | Generate a globally unique identifier (GUID) as a string. |
+| [indexOf](expression-language.md#indexof) | Return the starting position for a substring. |
+| [lastIndexOf](expression-language.md#lastindexof) | Return the starting position for the last occurrence of a substring. |
+| [replace](expression-language.md#replace) | Replace a substring with the specified string, and return the updated string. |
+| [split](expression-language.md#split) | Return an array that contains substrings, separated by commas, from a larger string based on a specified delimiter character in the original string. |
+| [startsWith](expression-language.md#startswith) | Check whether a string starts with a specific substring. |
+| [substring](expression-language.md#substring) | Return characters from a string, starting from the specified position. |
+| [toLower](expression-language.md#toLower) | Return a string in lowercase format. |
+| [toUpper](expression-language.md#toUpper) | Return a string in uppercase format. |
+| [trim](expression-language.md#trim) | Remove leading and trailing whitespace from a string, and return the updated string. |
 
 ## Collection functions
 
@@ -156,16 +156,16 @@ and sometimes, dictionaries, you can use these collection functions.
 
 | Collection function | Task |
 | ------------------- | ---- |
-| [contains](control-flow-expression-language-functions.md#contains) | Check whether a collection has a specific item. |
-| [empty](control-flow-expression-language-functions.md#empty) | Check whether a collection is empty. |
-| [first](control-flow-expression-language-functions.md#first) | Return the first item from a collection. |
-| [intersection](control-flow-expression-language-functions.md#intersection) | Return a collection that has *only* the common items across the specified collections. |
-| [join](control-flow-expression-language-functions.md#join) | Return a string that has *all* the items from an array, separated by the specified character. |
-| [last](control-flow-expression-language-functions.md#last) | Return the last item from a collection. |
-| [length](control-flow-expression-language-functions.md#length) | Return the number of items in a string or array. |
-| [skip](control-flow-expression-language-functions.md#skip) | Remove items from the front of a collection, and return *all the other* items. |
-| [take](control-flow-expression-language-functions.md#take) | Return items from the front of a collection. |
-| [union](control-flow-expression-language-functions.md#union) | Return a collection that has *all* the items from the specified collections. | 
+| [contains](expression-language.md#contains) | Check whether a collection has a specific item. |
+| [empty](expression-language.md#empty) | Check whether a collection is empty. |
+| [first](expression-language.md#first) | Return the first item from a collection. |
+| [intersection](expression-language.md#intersection) | Return a collection that has *only* the common items across the specified collections. |
+| [join](expression-language.md#join) | Return a string that has *all* the items from an array, separated by the specified character. |
+| [last](expression-language.md#last) | Return the last item from a collection. |
+| [length](expression-language.md#length) | Return the number of items in a string or array. |
+| [skip](expression-language.md#skip) | Remove items from the front of a collection, and return *all the other* items. |
+| [take](expression-language.md#take) | Return items from the front of a collection. |
+| [union](expression-language.md#union) | Return a collection that has *all* the items from the specified collections. | 
 
 ## Logical functions  
 
@@ -173,15 +173,15 @@ These functions are useful inside conditions, they can be used to evaluate any t
   
 | Logical comparison function | Task |
 | --------------------------- | ---- |
-| [and](control-flow-expression-language-functions.md#and) | Check whether all expressions are true. |
-| [equals](control-flow-expression-language-functions.md#equals) | Check whether both values are equivalent. |
-| [greater](control-flow-expression-language-functions.md#greater) | Check whether the first value is greater than the second value. |
-| [greaterOrEquals](control-flow-expression-language-functions.md#greaterOrEquals) | Check whether the first value is greater than or equal to the second value. |
-| [if](control-flow-expression-language-functions.md#if) | Check whether an expression is true or false. Based on the result, return a specified value. |
-| [less](control-flow-expression-language-functions.md#less) | Check whether the first value is less than the second value. |
-| [lessOrEquals](control-flow-expression-language-functions.md#lessOrEquals) | Check whether the first value is less than or equal to the second value. |
-| [not](control-flow-expression-language-functions.md#not) | Check whether an expression is false. |
-| [or](control-flow-expression-language-functions.md#or) | Check whether at least one expression is true. |
+| [and](expression-language.md#and) | Check whether all expressions are true. |
+| [equals](expression-language.md#equals) | Check whether both values are equivalent. |
+| [greater](expression-language.md#greater) | Check whether the first value is greater than the second value. |
+| [greaterOrEquals](expression-language.md#greaterOrEquals) | Check whether the first value is greater than or equal to the second value. |
+| [if](expression-language.md#if) | Check whether an expression is true or false. Based on the result, return a specified value. |
+| [less](expression-language.md#less) | Check whether the first value is less than the second value. |
+| [lessOrEquals](expression-language.md#lessOrEquals) | Check whether the first value is less than or equal to the second value. |
+| [not](expression-language.md#not) | Check whether an expression is false. |
+| [or](expression-language.md#or) | Check whether at least one expression is true. |
   
 ## Conversion functions  
 
@@ -195,44 +195,44 @@ These functions are useful inside conditions, they can be used to evaluate any t
 
 | Conversion function | Task |
 | ------------------- | ---- |
-| [array](control-flow-expression-language-functions.md#array) | Return an array from a single specified input. For multiple inputs, see [createArray](control-flow-expression-language-functions.md#createArray). |
-| [base64](control-flow-expression-language-functions.md#base64) | Return the base64-encoded version for a string. |
-| [base64ToBinary](control-flow-expression-language-functions.md#base64ToBinary) | Return the binary version for a base64-encoded string. |
-| [base64ToString](control-flow-expression-language-functions.md#base64ToString) | Return the string version for a base64-encoded string. |
-| [binary](control-flow-expression-language-functions.md#binary) | Return the binary version for an input value. |
-| [bool](control-flow-expression-language-functions.md#bool) | Return the Boolean version for an input value. |
-| [coalesce](control-flow-expression-language-functions.md#coalesce) | Return the first non-null value from one or more parameters. |
-| [createArray](control-flow-expression-language-functions.md#createArray) | Return an array from multiple inputs. |
-| [dataUri](control-flow-expression-language-functions.md#dataUri) | Return the data URI for an input value. |
-| [dataUriToBinary](control-flow-expression-language-functions.md#dataUriToBinary) | Return the binary version for a data URI. |
-| [dataUriToString](control-flow-expression-language-functions.md#dataUriToString) | Return the string version for a data URI. |
-| [decodeBase64](control-flow-expression-language-functions.md#decodeBase64) | Return the string version for a base64-encoded string. |
-| [decodeDataUri](control-flow-expression-language-functions.md#decodeDataUri) | Return the binary version for a data URI. |
-| [decodeUriComponent](control-flow-expression-language-functions.md#decodeUriComponent) | Return a string that replaces escape characters with decoded versions. |
-| [encodeUriComponent](control-flow-expression-language-functions.md#encodeUriComponent) | Return a string that replaces URL-unsafe characters with escape characters. |
-| [float](control-flow-expression-language-functions.md#float) | Return a floating point number for an input value. |
-| [int](control-flow-expression-language-functions.md#int) | Return the integer version for a string. |
-| [string](control-flow-expression-language-functions.md#string) | Return the string version for an input value. |
-| [uriComponent](control-flow-expression-language-functions.md#uriComponent) | Return the URI-encoded version for an input value by replacing URL-unsafe characters with escape characters. |
-| [uriComponentToBinary](control-flow-expression-language-functions.md#uriComponentToBinary) | Return the binary version for a URI-encoded string. |
-| [uriComponentToString](control-flow-expression-language-functions.md#uriComponentToString) | Return the string version for a URI-encoded string. |
-| [xml](control-flow-expression-language-functions.md#xml) | Return the XML version for a string. |
-| [xpath](control-flow-expression-language-functions.md#xpath) | Check XML for nodes or values that match an XPath (XML Path Language) expression, and return the matching nodes or values. |
+| [array](expression-language.md#array) | Return an array from a single specified input. For multiple inputs, see [createArray](expression-language.md#createArray). |
+| [base64](expression-language.md#base64) | Return the base64-encoded version for a string. |
+| [base64ToBinary](expression-language.md#base64ToBinary) | Return the binary version for a base64-encoded string. |
+| [base64ToString](expression-language.md#base64ToString) | Return the string version for a base64-encoded string. |
+| [binary](expression-language.md#binary) | Return the binary version for an input value. |
+| [bool](expression-language.md#bool) | Return the Boolean version for an input value. |
+| [coalesce](expression-language.md#coalesce) | Return the first non-null value from one or more parameters. |
+| [createArray](expression-language.md#createArray) | Return an array from multiple inputs. |
+| [dataUri](expression-language.md#dataUri) | Return the data URI for an input value. |
+| [dataUriToBinary](expression-language.md#dataUriToBinary) | Return the binary version for a data URI. |
+| [dataUriToString](expression-language.md#dataUriToString) | Return the string version for a data URI. |
+| [decodeBase64](expression-language.md#decodeBase64) | Return the string version for a base64-encoded string. |
+| [decodeDataUri](expression-language.md#decodeDataUri) | Return the binary version for a data URI. |
+| [decodeUriComponent](expression-language.md#decodeUriComponent) | Return a string that replaces escape characters with decoded versions. |
+| [encodeUriComponent](expression-language.md#encodeUriComponent) | Return a string that replaces URL-unsafe characters with escape characters. |
+| [float](expression-language.md#float) | Return a floating point number for an input value. |
+| [int](expression-language.md#int) | Return the integer version for a string. |
+| [string](expression-language.md#string) | Return the string version for an input value. |
+| [uriComponent](expression-language.md#uriComponent) | Return the URI-encoded version for an input value by replacing URL-unsafe characters with escape characters. |
+| [uriComponentToBinary](expression-language.md#uriComponentToBinary) | Return the binary version for a URI-encoded string. |
+| [uriComponentToString](expression-language.md#uriComponentToString) | Return the string version for a URI-encoded string. |
+| [xml](expression-language.md#xml) | Return the XML version for a string. |
+| [xpath](expression-language.md#xpath) | Check XML for nodes or values that match an XPath (XML Path Language) expression, and return the matching nodes or values. |
 
 ## Math functions  
  These functions can be used for either types of numbers: **integers** and **floats**.  
 
 | Math function | Task |
 | ------------- | ---- |
-| [add](control-flow-expression-language-functions.md#add) | Return the result from adding two numbers. |
-| [div](control-flow-expression-language-functions.md#div) | Return the result from dividing two numbers. |
-| [max](control-flow-expression-language-functions.md#max) | Return the highest value from a set of numbers or an array. |
-| [min](control-flow-expression-language-functions.md#min) | Return the lowest value from a set of numbers or an array. |
-| [mod](control-flow-expression-language-functions.md#mod) | Return the remainder from dividing two numbers. |
-| [mul](control-flow-expression-language-functions.md#mul) | Return the product from multiplying two numbers. |
-| [rand](control-flow-expression-language-functions.md#rand) | Return a random integer from a specified range. |
-| [range](control-flow-expression-language-functions.md#range) | Return an integer array that starts from a specified integer. |
-| [sub](control-flow-expression-language-functions.md#sub) | Return the result from subtracting the second number from the first number. |
+| [add](expression-language.md#add) | Return the result from adding two numbers. |
+| [div](expression-language.md#div) | Return the result from dividing two numbers. |
+| [max](expression-language.md#max) | Return the highest value from a set of numbers or an array. |
+| [min](expression-language.md#min) | Return the lowest value from a set of numbers or an array. |
+| [mod](expression-language.md#mod) | Return the remainder from dividing two numbers. |
+| [mul](expression-language.md#mul) | Return the product from multiplying two numbers. |
+| [rand](expression-language.md#rand) | Return a random integer from a specified range. |
+| [range](expression-language.md#range) | Return an integer array that starts from a specified integer. |
+| [sub](expression-language.md#sub) | Return the result from subtracting the second number from the first number. |
 
 ## Function reference
 
