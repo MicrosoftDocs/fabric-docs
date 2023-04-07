@@ -28,8 +28,6 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Workspace:** A user interface area designed for collaboration, in which users perform tasks such as creating reports, notebooks, datasets, etc. For more information, see [Placeholder](../placeholder.md).
 
-- **V-order:** A write optimization to the parquet file format that enables fast reads and provides cost efficiency and better performance. All the Fabric engines write v-ordered parquet files by default.
-
 ## Synapse Data Engineering
 
 - **Lakehouse:** A lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by the Apache Spark engine and SQL engine for big data processing. A lakehouse includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables. The lakehouse item is hosted within a unique workspace folder in the Microsoft Fabric lake. It contains files in various formats (structured and unstructured) organized in folders and subfolders. For more information, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
@@ -39,6 +37,8 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 - **Apache Spark job:** A Spark job is part of a Spark application that is run in parallel with other jobs in the application. A job consists of multiple tasks. For more information, see [Spark job monitoring](../data-engineering/spark-monitor-debug.md).
 
 - **Apache Spark job definition:** A Spark job definition is a set of parameters, set by the user, indicating how a Spark application should be run. It allows you to submit batch or streaming jobs to the Spark cluster. For more information, see [What is an Apache Spark job definition?](../data-engineering/spark-job-definition.md)
+
+- **V-order:** A write optimization to the parquet file format that enables fast reads and provides cost efficiency and better performance. All the Fabric engines write v-ordered parquet files by default.
 
 ## Data Factory
 
