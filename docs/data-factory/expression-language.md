@@ -3359,4 +3359,4 @@ And returns this result: `"Paris"`
 > One can add comments to data flow expressions, but not in pipeline expressions.
 
 ## Next steps
-For a list of system variables you can use in expressions, see [System variables](control-flow-system-variables.md).
+For a list of system variables you can use in expressions, see [System variables](system-variables.md).
