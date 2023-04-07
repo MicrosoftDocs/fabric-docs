@@ -45,8 +45,18 @@ items:
     href: model-scoring-predict.md
 - name: Use R
   items:
-  - name: How to use the R language
-    href: use-r-language.md
+  - name: R overview
+    href: r-overview.md
+  - name: How-to guides
+    items:
+    - name: How to use SparkR 
+      href: r-use-sparkr.md
+    - name: How to use sparklyr
+      href: r-use-sparklyr.md
+    - name: R library management
+      href: r-library-mgmt.md
+    - name: R visualization
+      href: r-visualization.md
 - name: SemPy
   items:
   - name: SemPy overview
