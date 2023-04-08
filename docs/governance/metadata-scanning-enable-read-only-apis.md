@@ -96,3 +96,8 @@ An app using service principal authentication that calls read-only admin APIs **
 
 * You can't sign into the Power BI portal using service principal. [NOT SURE WHAT THIS MEANS. DO WE NEED IT?]
 * Power BI admin rights are required to enable service principal in the Admin API settings in the Fabric admin center.
+
+## Next steps
+
+* [Metadata scanning](./metadata-scanning.md)
+* [Set up metadata scanning](./metadata-scanning-setup.md)
