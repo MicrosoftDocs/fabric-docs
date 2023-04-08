@@ -1,7 +1,6 @@
 ---
 title: Metadata scanning
 description: Learn how to scan your organization's workspaces to get metadata about your organization's Fabric items.
-.
 author: paulinbar
 ms.author: painbar
 ms.topic: concept
