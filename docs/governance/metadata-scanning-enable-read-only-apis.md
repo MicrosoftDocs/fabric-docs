@@ -24,7 +24,7 @@ To enable service principal authentication for Power BI read-only APIs, follow t
 1. Create a new **Security Group** in Azure Active Directory. [Read more about how to create a basic group and add members using Azure Active Directory](/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal). You can skip this step if you already have a security group you would like to use.
     Make sure to select **Security** as the Group type.
 
-    ![Screenshot of new group creation dialog in Azure portal.](media/read-only-apis-service-principal-auth/azure-portal-new-group-dialog.png)
+    ![Screenshot of new group creation dialog in Azure portal.](media/enable-read-only-apis/azure-portal-new-group-dialog.png)
 
 3. Add your App-Id as a member of the security group you created. To do so:
     1. Navigate to **Azure portal > Azure Active Directory > Groups**, and choose the security group you created in Step 2.
@@ -37,7 +37,7 @@ To enable service principal authentication for Power BI read-only APIs, follow t
     1. Log in to the Fabric admin center. You need to be a Power BI admin to see the tenant settings page.
     1. Under **Admin API settings**, you'll see **Allow service principals to use read-only Power BI admin APIs**. Set the toggle to Enabled, and then select the **Specific security groups** radio button and add the security group you created in Step 2 in the text field that appears below it, as shown in the figure below. [IS THIS STILL EXACTLY AS DESCRIBED?]
 
-        :::image type="content" source="media/read-only-apis-service-principal-auth/allow-service-principals-tenant-setting.png" alt-text="Screenshot of allow service principals tenant setting.":::
+        :::image type="content" source="media/enable-read-only-apis/allow-service-principals-tenant-setting.png" alt-text="Screenshot of allow service principals tenant setting.":::
 
  5. Start using the read-only admin APIs. See the list of supported APIs below.
 
