@@ -25,7 +25,7 @@ The following are the scanner APIs. They support both public and sovereign cloud
 Before metadata scanning can be run, a Power BI admin needs to set it up in your organization. To learn how to set up metadata scanning, see [Set up metadata scanning](./metadata-scanning-setup.md).
 
 > [!IMPORTANT]
-> The app you develop for scanning can authenticate by using either a standard delegated admin access token or a service principal. The two authentication paths are mutually exclusive. **When running under a service principal, there must be no Power BI admin-consent-required permissions set on your app**. For more information, see [Enable service principal authentication for read-only admin APIs](./metadata-scanning-read-only-apis.md).
+> The app you develop for scanning can authenticate by using either a standard delegated admin access token or a service principal. The two authentication paths are mutually exclusive. **When running under a service principal, there must be no Power BI admin-consent-required permissions set on your app**. For more information, see [Enable service principal authentication for read-only admin APIs](./metadata-scanning-enable-read-only-apis.md).
 
 ## Run metadata scanning
 
@@ -62,7 +62,7 @@ Divide this list into chunks of up to 100 workspaces, and get the data for these
 
 * Datasets that haven't been refreshed or republished will be returned in API responses but without their subartifact information and expressions. For example, dataset name and lineage are included in the response, but not the dataset's table and column names.
 * Datasets containing only **DirectQuery** tables will return subartifact metadata only if some sort of action has been taken on the dataset, such as someone building a report on top of it, someone viewing a report based on it, etc.
-* [Real-time datasets](../connect-data/service-real-time-streaming.md), datasets with [object-level security](https://powerbi.microsoft.com/blog/object-level-security-ols-is-now-generally-available-in-power-bi-premium-and-pro/), datasets with a live connection to *AS-Azure* and *AS on-premises*, and Excel full fidelity datasets aren't supported for subartifact metadata. For unsupported datasets, the response returns the reason for not getting the subartifact metadata from the dataset. It's found in a field named **schemaRetrievalError**, for example, **schemaRetrievalError: Unsupported request. RealTime dataset are not supported**.
+* [Real-time datasets](/powerbi/connect-data/service-real-time-streaming), datasets with [object-level security](https://powerbi.microsoft.com/blog/object-level-security-ols-is-now-generally-available-in-power-bi-premium-and-pro/), datasets with a live connection to *AS-Azure* and *AS on-premises*, and Excel full fidelity datasets aren't supported for subartifact metadata. For unsupported datasets, the response returns the reason for not getting the subartifact metadata from the dataset. It's found in a field named **schemaRetrievalError**, for example, **schemaRetrievalError: Unsupported request. RealTime dataset are not supported**.
 * The API doesn't return subartifact metadata for datasets that are larger than 1 GB in shared workspaces. In Premium workspaces, there's no size limitation on datasets. [DO WE NEED THIS CONSIDERATION FOR FABRIC?]
 
 ## Licensing
