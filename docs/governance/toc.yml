@@ -13,9 +13,11 @@ items:
     href: ../placeholder.md
 - name: Metadata scanning
   items:
-  - name: Run metadata scanning
-    href: metadata-scanning.md
+  - name: Overview
+    href: metadata-scanning-overview.md
   - name: Set up metadata scanning
     href: metadata-scanning-setup.md
   - name: Enable service principal authentication for read-only admin APIs
     href: metadata-scanning-enable-read-only-apis.md
+  - name: Run metadata scanning
+    href: metadata-scanning-run.md

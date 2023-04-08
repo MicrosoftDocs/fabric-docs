@@ -47,7 +47,8 @@ If the detailed low-level metadata requested isn't in the cache, it's not return
 
 ## Next steps
 
+* [Metadata scanning overview](./metadata-scanning-overview.md)
 * [Enable service principal authentication for read-only admin APIs](./metadata-scanning-enable-read-only-apis.md)
-* [Metadata scanning](./metadata-scanning.md)
+* [Run metadata scanning](./metadata-scanning-run.md)
 * [Power BI REST Admin APIs](/rest/api/power-bi/admin)
 * More questions? Try asking the [Power BI Community](https://community.powerbi.com)

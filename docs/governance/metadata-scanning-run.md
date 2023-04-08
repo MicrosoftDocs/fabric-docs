@@ -1,19 +1,17 @@
 ---
-title: Metadata scanning
-description: Learn how to scan your organization's workspaces to get metadata about your organization's Fabric items.
+title: Run metadata scanning
+description: Learn how to run metadata scanning on your organization's workspaces to get metadata about your organization's Fabric items.
 author: paulinbar
 ms.author: painbar
-ms.topic: concept
+ms.topic: how-to
 ms.date: 04/08/2023
 ---
 
-# Metadata scanning
+# Run metadata scanning
 
-Metadata scanning facilitates governance of your organization's Microsoft Fabric data by making it possible to catalog and report on all the metadata of your organization's Fabric items. It accomplishes this using a set of Admin REST APIs that are collectively known as the *scanner APIs*.
+The following short walkthrough shows how to use the scanner APIs to retrieve metadata from your organization's Fabric items. It assumes that a Power BI admin has set up metadata scanning in your organization.
 
-With the scanner APIs, you can extract information such as item name, owner, sensitivity label, endorsement status, and last refresh. For Power BI datasets, you can also extract the metadata of some of the objects they contain, such as table and column names, measures, DAX expressions, mashup queries, and so forth. The metadata of these dataset internal objects is referred to as subartifact metadata.
-
-For a more extensive list of the artifact and subartifact metadata that metadata scanning returns, see the [documentation for the Admin - WorkspaceInfo GetScanResult API](/rest/api/power-bi/admin/workspace-info-get-scan-result).
+For a the list of the artifact and subartifact metadata that metadata scanning returns, see the [documentation for the Admin - WorkspaceInfo GetScanResult API](/rest/api/power-bi/admin/workspace-info-get-scan-result).
 
 The following are the scanner APIs. They support both public and sovereign clouds.
 
@@ -22,16 +20,10 @@ The following are the scanner APIs. They support both public and sovereign cloud
 * [WorkspaceScanStatus](/rest/api/power-bi/admin/workspace-info-get-scan-status)
 * [WorkspaceScanResult](/rest/api/power-bi/admin/workspace-info-get-scan-result)
 
-Before metadata scanning can be run, a Power BI admin needs to set it up in your organization. To learn how to set up metadata scanning, see [Set up metadata scanning](./metadata-scanning-setup.md).
-
 > [!IMPORTANT]
 > The app you develop for scanning can authenticate by using either a standard delegated admin access token or a service principal. The two authentication paths are mutually exclusive. **When running under a service principal, there must be no Power BI admin-consent-required permissions set on your app**. For more information, see [Enable service principal authentication for read-only admin APIs](./metadata-scanning-enable-read-only-apis.md).
 
-## Run metadata scanning
-
-The following short walkthrough shows how to use the scanner APIs to retrieve metadata from your organization's Fabric items. It assumes that a Power BI admin has set up metadata scanning in your organization.
-
-### Step 1: Perform a full scan
+## Step 1: Perform a full scan
 
 Call [workspaces/modified](/rest/api/power-bi/admin/workspace-info-get-modified-workspaces) without the **modifiedSince** parameter to get the complete list of workspace IDs in the tenant. This scan retrieves all the workspaces in the tenant, including personal workspaces and shared workspaces. If you wish to exclude personal workspaces from the scan, use the *workspaces/modified* **excludePersonalWorkspaces** parameter.
 
@@ -50,7 +42,7 @@ Use the URI from the location header you received from calling *workspaces/getIn
 
 Use the URI from the location header you received from calling *workspaces/scanStatus/{scan-id}* and read the data using [workspaces/scanResult/{scan_id}](/rest/api/power-bi/admin/workspace-info-get-scan-result). The data contains the list of workspaces, artifact info, and other metadata based on the parameters passed in the *workspaces/getInfo* call.
 
-### Step 2: Perform an incremental scan
+## Step 2: Perform an incremental scan
 
 Now that you have all the workspaces and the metadata and lineage of their assets, it's recommended that you perform only incremental scans that reference the previous scan that you did.
 
@@ -71,7 +63,8 @@ Metadata scanning requires no special license. It works for all of your tenant m
 
 ## Next steps
 
-* Learn about [Power BI REST Admin APIs](/rest/api/power-bi/admin).
+* [Metadata scanning overview](./metadata-scanning-overview.md)
 * [Set up metadata scanning](./metadata-scanning-setup.md).
 * [Enable service principal authentication for read-only admin APIs](./metadata-scanning-enable-read-only-apis.md).
+* Learn about [Power BI REST Admin APIs](/rest/api/power-bi/admin).
 * More questions? Ask the [Power BI Community](https://community.powerbi.com).

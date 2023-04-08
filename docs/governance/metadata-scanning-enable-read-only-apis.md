@@ -99,5 +99,6 @@ An app using service principal authentication that calls read-only admin APIs **
 
 ## Next steps
 
-* [Metadata scanning](./metadata-scanning.md)
+* [Metadata scanning overview](./metadata-scanning-overview.md)
 * [Set up metadata scanning](./metadata-scanning-setup.md)
+* [Run metadata scanning](./metadata-scanning-run.md)
