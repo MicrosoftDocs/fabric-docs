@@ -11,12 +11,17 @@ items:
     href: ../placeholder.md
   - name: linktext2
     href: ../placeholder.md
-- name: Feature 1
+- name: Endorsement
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Overview
+    href: endorsement-overview.md
+  - name: Promote Fabric content
+    href: endorsement-promote.md
+  - name: Certify Fabric content
+    href: endorsement-certify.md
+  - name: Set up content certification
+    href: endorsement-setup.md
+
 - name: Feature 2
   items:
   - name: linktext2
