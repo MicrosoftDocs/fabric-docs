@@ -20,10 +20,12 @@ To add or remove primary key, foreign key, or unique constraints, use ALTER TABL
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports these table constraints: 
 
 - PRIMARY KEY is only supported when NONCLUSTERED and NOT ENFORCED are both used.
-- UNIQUE constraint is only supported when NOT ENFORCED is used.
+- UNIQUE constraint is only supported when NONCLUSTERED and NOT ENFORCED is used.
 - FOREIGN KEY is only supported when NOT ENFORCED is used.
 
-For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true) and [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric#DataTypes&preserve-view=true). 
+Synapse Data Warehouse doesn't support default constraints at this time.
+
+For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true).
 
 ## Remarks
 

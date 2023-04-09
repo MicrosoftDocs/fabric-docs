@@ -51,6 +51,8 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Result Set Caching
 - Schema and Table names can't contain / or \
 - SELECT - FOR (except JSON)
+- SET ROWCOUNT
+- SET TRANSACTION ISOLATION LEVEL
 - `sp_showmemo_xml`
 - `sp_showspaceused`
 - `sp_rename`
