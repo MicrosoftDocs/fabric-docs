@@ -11,7 +11,7 @@ ms.date: 04/08/2023
 
 The following short walkthrough shows how to use the scanner APIs to retrieve metadata from your organization's Fabric items. It assumes that a Power BI admin has set up metadata scanning in your organization.
 
-For a the list of the artifact and subartifact metadata that metadata scanning returns, see the [documentation for the Admin - WorkspaceInfo GetScanResult API](/rest/api/power-bi/admin/workspace-info-get-scan-result).
+For the list of the artifact and subartifact metadata that metadata scanning returns, see the [documentation for the Admin - WorkspaceInfo GetScanResult API](/rest/api/power-bi/admin/workspace-info-get-scan-result).
 
 The following are the scanner APIs. They support both public and sovereign clouds.
 
