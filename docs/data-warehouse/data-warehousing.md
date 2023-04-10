@@ -58,12 +58,6 @@ For more information and how-to connect, see [Connectivity](connectivity.md).
 
 1. Data should be in delta format.
 
-1. The following limitations are regarding query lifecycle DMVs:
-
-   - When querying `sys.dm_exec_connections`, you may encounter the following error, even if you're an Admin of your workspace: `Error Message: The user doesn't have the external policy action 'Microsoft.Sql/Sqlservers/SystemViewsAndFunctions/ServerPerformanceState/Rows/Select' or permission 'VIEW SERVER PERFORMANCE STATE' to perform this action.`
-
-   - The dynamic management view `sys.dm_exec_sessions` provides a limited view as not all active query results will display.
-
 1. Permissions:
 
    - By default, the user who created the Lakehouse will have "dbo" permissions, everyone else is limited to read-only SELECT permission.
