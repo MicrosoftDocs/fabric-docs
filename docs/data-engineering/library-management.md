@@ -58,7 +58,7 @@ In this section, we introduce how to manage feed library, which resides in PyPI 
 - **View and search feed library**: The installed library list appears when you open the **library management portal**. You can view the name, version, and dependencies of the library. Use the search box on the upper right corner to find the library if you want to retrieve the information quickly.
 - **Add new feed library**: The default source for installing the Python feed library is PyPI. You can also choose "Conda" by choosing from the drop-down button next to the add button. Once the installation source is selected, you can select the **+** button and a new line appears. Enter the library name, select or specify the version in the new line, and you're good to go.
 
-  Except for adding new feed library one by one, you can upload a .yml file to install the required feed libraries in a batch.
+  Instead of adding each new feed library one by one, you can upload a .yml file to install the required feed libraries in a batch.
 - **Remove existing feed library**: Select the Trash button on the line of the library you want to remove, and this package is removed from your environment.
 - **Update the version of existing feed** **library**: If the current version of the installed library is no longer satisfying your needs, choose another version in the drop-down box.
 - **Review and apply** **changes**: Once you have made all your changes, you can review them if you go to the "Pending changes" panel. If anything is incorrect, you can remove one library specification by selecting the **X** button, or discard all changes by selecting the **Discard** button at the bottom of the page. After reviewing all the pending changes, select **Apply** to generate a new library snapshot.
@@ -80,7 +80,7 @@ When you have an interactive Notebook and want to use some extra packages for a 
 ### Manage Python feed libraries through in-line installation
 
 > [!NOTE]
-> When installing new Python libraries, the *%conda install* command normally takes more time than *%pip install* since it will check the full dependencies to detect conflicts. You may want to use *%conda install* when you want to avoid potential issues. Use *%pip install_ when you are certain about the library you are trying to install has no conflict with the pre-installed libraries in runtime environment.
+> When installing new Python libraries, the *%conda install* command normally takes more time than *%pip install* since it will check the full dependencies to detect conflicts. You may want to use *%conda install* when you want to avoid potential issues. Use *%pip install* when you are certain about the library you are trying to install has no conflict with the pre-installed libraries in runtime environment.
 
 > [!TIP]
 > All available Python in-line commands and its clarifications can be found: [%pip commands](https://pip.pypa.io/en/stable/cli/) and [%conda commands](https://docs.conda.io/projects/conda/en/latest/commands.html)
