@@ -273,7 +273,7 @@ mssparkutils.fs.mount(
 
 ### How to mount a lakehouse
 
-Here's the sample code of mounting a Lakehouse to */test*.
+Here's the sample code of mounting a lakehouse to */test*.
 
 ```python
 from notebookutils import mssparkutils 
