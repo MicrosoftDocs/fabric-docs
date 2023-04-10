@@ -1,31 +1,31 @@
 ---
-title: Transactions for inserting and modifying data in Synapse Data Warehouse tables
-description: Learn how to use transactions and how to insert and modify data in Synapse Data Warehouse tables.
+title: Transactions for inserting and modifying data in Synapse Data Warehouse tables in Microsoft Fabric
+description: Learn how to use transactions and how to insert and modify data in Synapse Data Warehouse tables in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: kecona
 author: KevinConanMSFT
 ms.topic: how-to
-ms.date: 03/31/2023
+ms.date: 04/10/2023
 ---
 
-# Transactions in Synapse Data Warehouse tables
+# Transactions in Synapse Data Warehouse tables in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-You can modify data that is stored in tables in a Synapse Data Warehouse using transactions to group changes together. Transactions allow you to commit all tables or none of the tables that you're changing data in. For example, if you're changing details about a purchase order that affects three tables, you can group those changes into a single transaction. That means when those tables are queried, they either all have the changes or none of them do. Transactions are a common practice for when you need to ensure your data is consistent across multiple tables. See T-SQL Surface Area for a listing of unsupported T-SQL commands.
+You can modify data that is stored in tables in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using transactions to group changes together. Transactions allow you to commit all tables or none of the tables that you're changing data in. For example, if you're changing details about a purchase order that affects three tables, you can group those changes into a single transaction. That means when those tables are queried, they either all have the changes or none of them do. Transactions are a common practice for when you need to ensure your data is consistent across multiple tables. 
 
 > [!NOTE]
 > If you use T-SQL to change your isolation level, it the change is ignored at Query Execution time and SNAPSHOT ISOLATION is applied.
 
 ## Cross-database query transaction support
 
-Synapse Data Warehouse in Microsoft Fabric supports transactions that span across databases that are within the same workspace including reading from the SQL Endpoint for Lakehouse. Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one SQL Endpoint and each workspace can have more than one Lakehouse.
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports transactions that span across databases that are within the same workspace including reading from the SQL Endpoint for Lakehouse. Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one SQL Endpoint and each workspace can have more than one Lakehouse.
 
 ## DDL support within transactions
 
-Synapse Data Warehouse in Microsoft Fabric supports DDL such as CREATE TABLE inside user-defined transactions.
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports DDL such as CREATE TABLE inside user-defined transactions.
 
 ## Locks for different types of statements
 
@@ -46,7 +46,7 @@ INSERT statements always create new parquet files, which means fewer conflicts w
 
 ## Transaction logging
 
-Transaction logging in Synapse Data Warehouse in Microsoft Fabric is at the parquet file level because parquet files are immutable (they can't be changed). A rollback results in pointing back to the previous parquet files.  The benefits of this change are that transaction logging and rollbacks are faster.
+Transaction logging in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is at the parquet file level because parquet files are immutable (they can't be changed). A rollback results in pointing back to the previous parquet files.  The benefits of this change are that transaction logging and rollbacks are faster.
 
 ## Limitations
 
