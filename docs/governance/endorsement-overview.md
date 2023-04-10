@@ -11,7 +11,7 @@ ms.date: 04/09/2023
 
 ## Endorsement overview
 
-Organizations often have large amounts of Power BI content available for sharing and reuse by their Power BI users, and identifying trustworthy, authoritative content can be difficult. Endorsement is a way to make it easier for users to find the high-quality content they need. Endorsed content is clearly labeled, both in Power BI and in other places where users look for Power BI content (such as Excel). It is also given priority in some searches, and you can sort it for in some lists.
+Organizations often have large amounts of Microsoft Fabric content for sharing and reuse by their Fabric users, and identifying trustworthy, authoritative content can be difficult. Endorsement is a way to make it easier for users to find the high-quality content they need. Endorsed content is clearly labeled, both in Fabric and in other places where users look for Fabric content (such as Excel). It is also given priority in some searches, and you can sort it for in some lists.
 
 There are two kinds of endorsement: **promotion** and **certification**.
 
@@ -19,15 +19,15 @@ There are two kinds of endorsement: **promotion** and **certification**.
 
     Any content owner, or any member with write permissions on the workspace where the content is located, can simply promote the content when they think it's good enough for sharing.
 
-    [Learn how to promote your content](service-endorse-content.md#promote-content).
+    [Learn how to promote your content](endorsement-promote.md#promote-content).
 
 * **Certification**: Certification means that the content meets the organization's quality standards and can be regarded as reliable, authoritative content that is ready for use across the organization.
 
-    Only a [select group of reviewers (defined by the Power BI administrator)](../admin/service-admin-setup-certification.md) is authorized to certify content. Content owners who wish to see their content certified and are not authorized to certify it themselves need to follow their organization's guidelines about getting their content certified.
+    Only a [select group of reviewers (defined by the Power BI administrator)](endorsement-setup.md) is authorized to certify content. Content owners who wish to see their content certified and are not authorized to certify it themselves need to follow their organization's guidelines about getting their content certified.
 
-    Learn how to [certify content](service-endorse-content.md#certify-content) or [request certification](service-endorse-content.md#request-content-certification).
+    Learn how to [certify content](endorsement-certify.md#certify-content) or [request certification](endorsement-certify.md#request-content-certification).
 
-    **Certification is available only if a Power BI administrator has [enabled and configured](../admin/service-admin-setup-certification.md) it for your organization**.
+    **Certification is available only if a Power BI administrator has [enabled and configured](endorsement-setup.md) it for your organization**.
 
 The image below illustrates how endorsed content (promoted and certified) is clearly identified when you're searching for a dataset to build a report on.
 
@@ -71,6 +71,7 @@ Whether you’re sharing a report or an app, if the underlying datasets are clea
 
 ## Next steps
 
-* [Promote or certify Power BI content](service-endorse-content.md)
-* [Enable certification for your organization](../admin/service-admin-setup-certification.md) (Power BI admins)
+* [Promote Fabric content](endorsement-promote.md)
+* [Certify Fabric content](endorsement-certify.md)
+* [Enable certification for your organization](endorsement-setup.md) (Power BI admins)
 * Questions? [Try asking the Power BI Community](https://community.powerbi.com/)
