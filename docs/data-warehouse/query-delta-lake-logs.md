@@ -16,12 +16,16 @@ ms.date: 04/10/2023
 
 The Delta Lake logs opens up direct access to the warehouse's user tables for any engine that can read Delta Lake tables. This access is limited to read-only to ensure the user data maintains ACID transaction compliance. All inserts, updates, and deletes to the data in the tables must be executed through the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Once a transaction is committed, a system background process is initiated to publish the updated Delta Lake log for the affected tables.
 
-Delta Lake logs are queried through shortcuts created in the Lakehouse using a [!INCLUDE [product-name](../includes/product-name.md)] Spark Notebook, Power BI using Direct Lake mode, or using any other service that can read Delta Tables. 
+## Location
+
+1. Delta Lake logs are queried through shortcuts created in a lakehouse. You can view the files using a [!INCLUDE [product-name](../includes/product-name.md)] Spark Notebook or the **Lakehouse explorer** in Synapse Data Engineering in the Fabric portal.
+ 
+1. Delta Lake logs can be found through the OneLake Explorer in Windows, via the [Azure Storage Explorer], through Spark connections such as the Power BI Direct Lake mode, or using any other service that can read delta tables.
 
 ## Limitations
 
-- Tables with inserts only are supported at this time.
-- Delta Lake log checkpoint and vacuum functions are unavailable at this time.
+- Currently, tables with inserts only are supported.
+- Currently, Delta Lake log checkpoint and vacuum functions are unavailable.
 
 ## Next steps
 
