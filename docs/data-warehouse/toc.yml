@@ -57,7 +57,7 @@ items:
     href: ingest-data.md
   - name: Ingest data with COPY command
     href: ingest-data-copy-command.md
-  - name: Ingest data with Data pipelines
+  - name: Ingest data with data pipelines
     href: ingest-data-pipelines.md
 - name: Query
   items:
