@@ -25,7 +25,7 @@ Currently it is possible to endorse
 * Reports
 * Apps
 
-If [dataset discoverability](/power-bi/collaborate-share/service-discovery) has been enabled in your organization, endorsed datasets can be made discoverable. When a dataset is discoverable, users who don't have access to it will be able to find it and request access. See [Dataset discoverability](service-discovery.md) for more detail.
+If [dataset discoverability](/power-bi/collaborate-share/service-discovery) has been enabled in your organization, endorsed datasets can be made discoverable. When a dataset is discoverable, users who don't have access to it will be able to find it and request access. See [Dataset discoverability](/power-bi/collaborate-share/service-discovery) for more detail.
 
 This article describes how to [promote content](endorsement-promote.md#promote-content), how to [certify content](endorsement-certify.md#certify-content) if you're an authorized reviewer, and how to [request certification](endorsement-certify.md#request-content-certification) if you're not.
 
@@ -48,7 +48,7 @@ Content certification is a big responsibility, and only authorized users can cer
 
     If you are certifying a dataset and see a **Make discoverable** checkbox, it means you can make it possible for users who don't have access to the dataset to find it. See [dataset discovery](/power-bi/collaborate-share/service-discovery) for more detail.
 
-     If you're certifying a dataset, make sure the dataset has an informative description. The description is important; it's what users see in the dataset info tooltip in the datasets hub and on the dataset's details page. A description helps users quickly identify datasets that might be useful for them. See [Dataset description](../connect-data/service-dataset-description.md) for details about how to provide a dataset description.
+     If you're certifying a dataset, make sure the dataset has an informative description. The description is important; it's what users see in the dataset info tooltip in the datasets hub and on the dataset's details page. A description helps users quickly identify datasets that might be useful for them. See [Dataset description](/power-bi/connect-data/service-dataset-description) for details about how to provide a dataset description.
 
     ![Screen shot of certify content button.](media/endorsement-certify/power-bi-certify-content.png)
 
