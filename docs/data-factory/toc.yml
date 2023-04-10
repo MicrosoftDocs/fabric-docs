@@ -161,8 +161,6 @@
         href: foreach-activity.md
       - name: Pipeline lookup activity
         href: lookup-activity.md
-      - name: Monitor data pipeline runs
-        href: monitor-pipeline-runs.md
       - name: Notebook activity
         href: notebook-activity.md
       - name: Script activity
@@ -175,14 +173,16 @@
         href: ../placeholder.md
       - name: Billing with data pipelines
         href: ../placeholder.md
+      - name: Parameterization
+        href: ../placeholder.md
+    - name: How-To
+      items:
       - name: Data pipeline runs
         href: pipeline-runs.md
       - name: How to use pipeline sample templates
         href: templates.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
-      - name: Parameterization
-        href: ../placeholder.md
     - name: Tutorials
       items:
       - name: Copy sample data into Lakehouse and transform with dataflow
@@ -195,6 +195,8 @@
         href: ../placeholder.md
       - name: Load sample data to Lakehouse
         href: ../placeholder.md
+      - name: Monitor data pipeline runs
+        href: monitor-pipeline-runs.md        
       - name: Run script activity and email output summary
         href: ../placeholder.md
   - name: Dataflows
