@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 02/28/2023
+ms.date: 04/10/2023
 ms.search.form: product-kusto
 ---
 
@@ -17,6 +17,7 @@ Specifically, you'll learn how to:
 
 > [!div class="checklist"]
 >
+> * Create a KQL Database
 > * Get data
 > * Import a Jupyter notebook
 > * Authenticate access to your notebook
@@ -26,7 +27,14 @@ Specifically, you'll learn how to:
 
 * Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
 * Workspace
-* [KQL Database](create-database.md)
+
+## Create a KQL Database
+
+1. Open the experience switcher on the bottom of the navigation pane and select **Real-time Analytics**.
+1. Select **KQL Database**.
+1. Under **Database name**, enter *NYCTaxidb*, then select **Create**.
+
+The KQL database has now been created within the context of the selected workspace.
 
 ## Get data
 
