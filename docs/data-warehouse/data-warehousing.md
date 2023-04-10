@@ -52,25 +52,11 @@ For more information and how-to connect, see [Connectivity](connectivity.md).
 
 1. For more information on loading your [Lakehouse](../data-engineering/lakehouse-overview.md), see [Get data experience for Lakehouse](../data-engineering/load-data-lakehouse.md). 
 
-1. When you create a Lakehouse table from a pipeline, if the pipeline errors out before inserting rows into the Lakehouse table, the table will be corrupt. Go back to your Lakehouse, delete the table folder from "lake view" and then reapply your pipeline.
-
-1. If you're loading parquet files generated from Apache Spark 2.x, data pipelines aren't gracefully handling the upgrade for datetime fields discussed here and Lakehouse tables will be corrupt. Use notebooks to load Spark 2.x generated parquet files. For example:
-
-      ```python
-      spark.conf.set("spark.sql.parquet.int96RebaseModeInWrite","LEGACY")
-      df = spark.read.parquet(wasbs_path)
-      df.write.format("delta").save("Tables/" + tableName)
-      ```
-
-   - If you're loading partitioned data, partition discovery in data pipelines isn't properly creating delta format Lakehouse tables. Tables may appear to work in Spark but during metadata synchronization, to warehouse they'll be corrupt. As a workaround, use notebooks to load partitioned source data.
-
-   - If your Lakehouse has data and has explicitly partitioned the data with code like `df.write.partitionBy("FiscalMonthID").format("delta").save("Tables/" + tableName)`, a folder structure is introduced into your Lakehouse and columns in the `partitionBy` function won't be present in the warehouse. To avoid this issue, load data without the `partitionBy` function.
-
 1. You can't query tables with renamed columns.
 
 1. You can't load case sensitive tables to data warehouse (for example, "Cat", "cat", and "CAT" are all read as the same table name by SQL). Duplicate table names can cause the data warehouse to fail. Use unique table and file names for all items in a warehouse.
 
-1. Data should be in parquet, delta or .csv format.
+1. Data should be in delta format.
 
 1. The following limitations are regarding query lifecycle DMVs:
 
