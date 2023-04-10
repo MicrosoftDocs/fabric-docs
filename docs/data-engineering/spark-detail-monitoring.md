@@ -1,6 +1,6 @@
 ---
-title: Apache Spark application detail monitoring
-description: Learn how to view detailed monitoring of an application.
+title: Monitor Apache Spark application details
+description: In Fabric, use Apache Spark to run notebooks, Spark job definitions, jobs, and other types of applications. Learn how to monitor your Spark application details.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
@@ -9,7 +9,7 @@ ms.date: 02/24/2023
 ms.search.form: Monitor Spark application details
 ---
 
-# Apache Spark application detail monitoring
+# Monitor your Apache Spark application details in Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

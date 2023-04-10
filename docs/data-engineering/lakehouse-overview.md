@@ -1,6 +1,6 @@
 ---
-title: Lakehouse overview
-description: Learn about lakehouses.
+title: What is a lakehouse?
+description: A lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by  Apache Spark and SQL for big data processing.
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
@@ -9,7 +9,7 @@ ms.date: 02/24/2023
 ms.search.form: Lakehouse Overview
 ---
 
-# What is a lakehouse?
+# What is a lakehouse in Microsoft Fabric?
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

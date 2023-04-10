@@ -1,6 +1,6 @@
 ---
-title: Get data experience for lakehouse
-description: Learn more about loading data into a lakehouse.
+title: Options to get data into the Lakehouse
+description: Learn how to load data into a lakehouse via a file upload, Apache Spark libraries in notebook code, and the copy tool in pipelines.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
@@ -9,7 +9,7 @@ ms.date: 02/24/2023
 ms.search.form: Lakehouse Get Data
 ---
 
-# Get data experience for lakehouse
+# Options to get data into the Fabric Lakehouse
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
