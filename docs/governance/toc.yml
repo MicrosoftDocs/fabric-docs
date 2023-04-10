@@ -11,20 +11,13 @@ items:
     href: ../placeholder.md
   - name: linktext2
     href: ../placeholder.md
-- name: Endorsement
+- name: Metadata scanning
   items:
   - name: Overview
-    href: endorsement-overview.md
-  - name: Promote Fabric content
-    href: endorsement-promote.md
-  - name: Certify Fabric content
-    href: endorsement-certify.md
-  - name: Set up content certification
-    href: endorsement-setup.md
-
-- name: Feature 2
-  items:
-  - name: linktext2
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+    href: metadata-scanning-overview.md
+  - name: Set up metadata scanning
+    href: metadata-scanning-setup.md
+  - name: Enable service principal authentication for read-only admin APIs
+    href: metadata-scanning-enable-read-only-apis.md
+  - name: Run metadata scanning
+    href: metadata-scanning-run.md
