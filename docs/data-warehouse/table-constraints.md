@@ -62,7 +62,7 @@ a1          total
 */
 
 -- Add unique constraint
-ALTER TABLE t1 ADD CONSTRAINT unique_t1_a1 unique (a1) NOT ENFORCED
+ALTER TABLE t1 ADD CONSTRAINT unique_t1_a1 unique NONCLUSTERED (a1) NOT ENFORCED
 
 -- Re-run this query.  5 rows returned.  Incorrect result.
 SELECT a1, count(*) AS total FROM t1 GROUP BY a1
@@ -119,7 +119,7 @@ a1          b1
 */
 
 -- Add unique constraint
-ALTER TABLE t1 add CONSTRAINT unique_t1_a1 UNIQUE (a1) NOT ENFORCED  
+ALTER TABLE t1 ADD CONSTRAINT unique_t1_a1 unique NONCLUSTERED (a1) NOT ENFORCED  
 
 -- Re-run this query.  5 rows returned.  Correct result.
 SELECT a1, COUNT(*) as total FROM t1 GROUP BY a1
