@@ -37,9 +37,9 @@ g + geom_point() +
        caption="Source: midwest")
 ```
 
-## rBokeh
+## rbokeh
 
-[rBokeh](https://hafen.github.io/rbokeh/) is a native R plotting library for creating interactive graphics.
+[rbokeh](https://hafen.github.io/rbokeh/) is a native R plotting library for creating interactive graphics.
 
 ![rbokeh-points](./media/r-visualization/bokeh_plot.png)
 ```R
