@@ -37,7 +37,7 @@ This table provides a list of what locks are used for different types of [transa
 | [INSERT](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true) | Intent Exclusive (IX) |
 | [DELETE](/sql/t-sql/statements/delete-transact-sql?view=fabric&preserve-view=true) | Intent Exclusive (IX) |
 | [UPDATE](/sql/t-sql/queries/update-transact-sql?view=fabric&preserve-view=true) | Intent Exclusive (IX) |
-| [COPY INTO](/sql/t-sql/queries/update-transact-sql?view=fabric&preserve-view=true) | Intent Exclusive (IX) |
+| [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) | Intent Exclusive (IX) |
 | DDL | Schema-Modification (Sch-M) |
 
 Conflicts from two or more concurrent transactions that update one or more rows in a table are evaluated at the end of the transaction.  The first transaction to commit completes successfully and the other transactions are rolled back with an error returned.  These conflicts are evaluated at the table level and not the individual parquet file level.
@@ -59,5 +59,5 @@ Transaction logging in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUD
 
 ## Next steps
 
-- [Query a warehouse using SSMS](query-warehouse.md)
+- [Query the Synapse Data Warehouse](query-warehouse.md)
 - [Tables in [!INCLUDE[fabricdw](includes/fabric-dw.md)]](tables.md)
