@@ -32,6 +32,8 @@ For more information on the [!INCLUDE [fabric-se](includes/fabric-se.md)] for th
 
 To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)] on the Lakehouse, see [Get started with the Lakehouse in Microsoft Fabric](get-started-sql-endpoint.md).
 
+For more information on loading your [Lakehouse](../data-engineering/lakehouse-overview.md), see [Get data experience for Lakehouse](../data-engineering/load-data-lakehouse.md). 
+
 ## Synapse Data Warehouse
 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. 
@@ -48,27 +50,9 @@ You can use the [!INCLUDE [product-name](../includes/product-name.md)] portal, o
 
 For more information and how-to connect, see [Connectivity](connectivity.md).
 
-## Prerequisites and known limitations
-
-1. For more information on loading your [Lakehouse](../data-engineering/lakehouse-overview.md), see [Get data experience for Lakehouse](../data-engineering/load-data-lakehouse.md). 
-
-1. You can't query tables with renamed columns.
-
-1. You can't load case sensitive tables to data warehouse (for example, "Cat", "cat", and "CAT" are all read as the same table name by SQL). Duplicate table names can cause the data warehouse to fail. Use unique table and file names for all items in a warehouse.
-
-1. Data should be in delta format.
-
-1. Permissions:
-
-   - By default, the user who created the Lakehouse will have "dbo" permissions, everyone else is limited to read-only SELECT permission.
-
-   - GRANT, REVOKE, DENY commands are currently not supported.
-
 ## Keyboard shortcuts
 
-Keyboard shortcuts provide a quick way to navigate and allow users to work more efficiently in SQL query editor. The table in this article lists all the shortcuts available in SQL query editor.
-
-SQL query editor:
+Keyboard shortcuts provide a quick way to navigate and allow users to work more efficiently in SQL query editor. The table in this article lists all the shortcuts available in SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal:
 
 | **Function** | **Shortcut** |
 |---|---|

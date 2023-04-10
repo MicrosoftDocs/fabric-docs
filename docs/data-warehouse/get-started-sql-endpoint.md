@@ -18,7 +18,7 @@ Currently, delta tables in the [Lakehouse](../data-engineering/lakehouse-overvie
 
 - [OneLake](../onelake/onelake-overview.md) is a single, unified, logical data lake for the whole organization. OneLake is the OneDrive for data. OneLake can contain multiple workspaces, for example, along your organizational divisions.
 - Every Lakehouse has one [SQL Endpoint](sql-endpoint.md) and each workspace can have more than one Lakehouse.
-- Every delta table from a Lakehouse is represented as one table.
+- Every delta table from a Lakehouse is represented as one table. Data should be in delta format.
 - The [default dataset](datasets.md) follows the naming convention of the Lakehouse.
 
 ## Get started
@@ -34,3 +34,4 @@ Currently, delta tables in the [Lakehouse](../data-engineering/lakehouse-overvie
 
 - [Connectivity](connectivity.md)
 - [SQL Endpoint](sql-endpoint.md)
+- [Query the Synapse Data Warehouse](query-warehouse.md)

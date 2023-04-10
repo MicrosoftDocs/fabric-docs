@@ -5,23 +5,24 @@ ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
 ms.topic: conceptual
-ms.date: 04/03/2023
+ms.date: 04/10/2023
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
-# SQL Endpoint
+# SQL Endpoint in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](../data-engineering/lakehouse-overview.md) workspace as Delta tables, a SQL-based experience containing tables that reference your Delta Lake data is automatically created in that workspace for you, called the SQL Endpoint. 
-Every delta table in a Lakehouse is represented as one table in the SQL Endpoint.
+When you load data into a [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](../data-engineering/lakehouse-overview.md) workspace as Delta tables, a SQL-based experience containing tables that reference your Delta Lake data is automatically created in that workspace for you, called the [!INCLUDE [fabric-se](includes/fabric-se.md)]. 
 
-Every Lakehouse has one SQL Endpoint and each workspace can have more than one Lakehouse.
+Every delta table in a Lakehouse is represented as one table in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
+
+Every Lakehouse has one [!INCLUDE [fabric-se](includes/fabric-se.md)] and each workspace can have more than one Lakehouse.
 
 :::image type="content" source="media\sql-endpoint\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and delta tables." lightbox="media\sql-endpoint\lakehouse-delta-tables.png":::
 
 > [!IMPORTANT]
-> The distinction between the SQL Endpoint and [Synapse Data Warehouse](warehouse.md) is an important one as T-SQL statements that write data or modify schema fail if you attempt to run them against the SQL Endpoint. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
+> The distinction between the [!INCLUDE [fabric-se](includes/fabric-se.md)] and [Synapse Data Warehouse](warehouse.md) is an important one as T-SQL statements that write data or modify schema fail if you attempt to run them against the [!INCLUDE [fabric-se](includes/fabric-se.md)]. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
 
 ## Automatically generated schema
 
@@ -42,39 +43,37 @@ The table columns in automatically generated warehouses are derived from the sou
 | **BINARY** | varbinary(n). |
 | **DECIMAL &#124; DEC &#124; NUMERIC** | decimal(p,s) |
 
-The columns that have the types that aren't listed in the table aren't represented as the table columns in the default warehouse.
+The columns that have the types that aren't listed in the table aren't represented as the table columns in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
-In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-generated warehouse is visualized with a data warehouse icon and under the **Type** column you see it listed as **SQL Endpoint**. An important distinction for this default warehouse is that it's a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
-
-:::image type="content" source="media\sql-endpoint\warehouse-default-list.png" alt-text="Screenshot showing a Warehouse(default) in a portal list." lightbox="media\sql-endpoint\warehouse-default-list.png":::
+In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-generated warehouse is visualized with a data warehouse icon and under the **Type** column you see it listed as **[!INCLUDE [fabric-se](includes/fabric-se.md)]**. An important distinction for this [!INCLUDE [fabric-se](includes/fabric-se.md)] is that it's a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
 
 ## Connectivity
 
-For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your SQL Endpoint. There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later, but we generally expect that the majority of the testing and interaction for your SQL Endpoint will be via a tool such as [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
+For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your [!INCLUDE [fabric-se](includes/fabric-se.md)]. There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later, but we generally expect that the majority of the testing and interaction for your [!INCLUDE [fabric-se](includes/fabric-se.md)] will be via a tool such as [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
 
-## How to delete a SQL Endpoint
+## How to delete a [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
-The SQL Endpoint is linked to its parent Lakehouse when it's automatically created and can't be directly deleted. If you need to delete the SQL Endpoint, you must delete the parent Lakehouse.
+The [!INCLUDE [fabric-se](includes/fabric-se.md)] is linked to its parent Lakehouse when it's automatically created and can't be directly deleted. If you need to delete the [!INCLUDE [fabric-se](includes/fabric-se.md)], you must delete the parent Lakehouse.
 
 Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
 
-## Known issues and limitations in the SQL Endpoint
+## Known issues and limitations in the [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
-1. Lakehouse tables in the SQL Endpoint are created with a delay.
+1. Lakehouse tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)] are created with a delay.
 
    Once you create or update Delta Lake folder/table in the lake, the warehouse table that references the lake data won't be immediately created/refreshed. The changes will be applied in the warehouse after 5-10 seconds.
 
 ## Limitations
 
-1. Non-delta tables (Parquet, CSV, AVRO) aren't supported.
+1. Non-delta tables (Parquet, CSV, AVRO) aren't supported. Data should be in delta format. [Delta Lake is an open-source storage framework](https://delta.io/) that enables building Lakehouse architecture.
 
-   If you don't see a Lakehouse table in the SQL Endpoint, check the data format. Only the tables in Delta Lake format are available in the SQL Endpoint. Parquet, CSV, and other formats can't be queried using the SQL Endpoint. If you don't see your table, convert it to Delta Lake format.
+   If you don't see a Lakehouse table in the [!INCLUDE [fabric-se](includes/fabric-se.md)], check the data format. Only the tables in Delta Lake format are available in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. Parquet, CSV, and other formats can't be queried using the [!INCLUDE [fabric-se](includes/fabric-se.md)]. If you don't see your table, convert it to Delta Lake format. 
 
-1. You shouldn't manually create/drop tables in the warehouse(default).
+1. You shouldn't manually create/drop tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
-   DDLs like CREATE TABLE and DROP TABLE aren't blocked in the warehouse. You can create your own tables, or even drop the tables that referencing Delta Lake data. Don't use CREATE/ALTER/DROP TABLE statements.
+   Don't use CREATE/ALTER/DROP TABLE statements. DDLs like CREATE TABLE and DROP TABLE aren't blocked in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. You can create your own tables, or even drop the tables that reference Delta Lake data. 
 
-   Workaround: If you've created your own table - drop it immediately. The user-defined tables aren't supported in the warehouse(default). If you dropped the auto-generated tables, DO NOT try to manually create them. Make some change in the lake using Apache Spark notebook to force warehouse to create the table.
+   Workaround: If you've created your own table - drop it immediately. The user-defined tables aren't supported in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. If you dropped the auto-generated tables, DO NOT try to manually create them. Make some change in the lake using Apache Spark notebook to force warehouse to recreate the table in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
 1. Tables with renamed columns aren't supported.
 
