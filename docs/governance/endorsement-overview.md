@@ -31,7 +31,7 @@ There are two kinds of endorsement: **promotion** and **certification**.
 
 The image below illustrates how endorsed content (promoted and certified) is clearly identified when you're searching for a dataset to build a report on.
 
-![Screenshot of endorsed datasets in a dataset selection dialog.](media/endorsement-overview/power-bi-content-endorsement-dataset-select.png)
+[ ![Screenshot of endorsed datasets in a dataset selection dialog.](media/endorsement-overview/power-bi-content-endorsement-dataset-select.png)](media/endorsement-overview/power-bi-content-endorsement-dataset-select.png#lightbox)
 
 ## Content types that can be endorsed
 Power BI currently supports endorsement for:
@@ -53,11 +53,11 @@ Endorsed content is labeled with badges and icons in lists, cards, and other pla
 In addition, if you are in a report or an app, you can see the endorsement status via the header.
 * Certification is indicated in both in the header and in the header drop-down, where you can also see who did the certification.
 
-    ![Screenshot showing certification badge in a report header.](media/endorsement-overview/certification-report-header.png)
+   [ ![Screenshot showing certification badge in a report header.](media/endorsement-overview/certification-report-header.png)](media/endorsement-overview/certification-report-header.png#lightbox)
 
 * Promotion is indicated in the header drop-down only.
  
-    ![Screenshot showing promotion badge in a report header.](media/endorsement-overview/promotion-report-header.png)
+    [ ![Screenshot showing promotion badge in a report header.](media/endorsement-overview/promotion-report-header.png)](media/endorsement-overview/promotion-report-header.png#lightbox)
 
 ## Deciding whether to endorse an app or a report
 

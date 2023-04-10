@@ -46,7 +46,7 @@ To promote content, you must have write permissions the workspace where the cont
 
     If you're promoting a dataset, make sure the dataset has an informative description. The description is important; it's what users see in the dataset info tooltip in the datasets hub and on the dataset's details page. A description helps users quickly identify datasets that might be useful for them. See [Dataset description](/power-bi/connect-data/service-dataset-description) for details about how to provide a dataset description.
 
-    ![Select Promoted and Apply](media/endorsement-promote/power-bi-promote-content.png)
+  [  ![Screenshot showing how to select Promoted and Apply.](media/endorsement-promote/power-bi-promote-content.png)](media/endorsement-promote/power-bi-promote-content.png#lightbox)
 
 1. Select **Apply**.
 
@@ -61,7 +61,7 @@ The Endorsement dialog is accessed through the settings of the content you want 
 
 * **Apps**: Go to the app workspace, click **More options (...)** on the menu bar, and choose **Endorse this app**.
 
-    ![Screenshot of link to app settings.](media/endorsement-promote/power-bi-app-settings.png)
+   [ ![Screenshot of link to app settings.](media/endorsement-promote/power-bi-app-settings.png)](media/endorsement-promote/power-bi-app-settings.png#lightbox)
 
 ## Next steps
 

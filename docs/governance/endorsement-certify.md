@@ -50,7 +50,7 @@ Content certification is a big responsibility, and only authorized users can cer
 
      If you're certifying a dataset, make sure the dataset has an informative description. The description is important; it's what users see in the dataset info tooltip in the datasets hub and on the dataset's details page. A description helps users quickly identify datasets that might be useful for them. See [Dataset description](/power-bi/connect-data/service-dataset-description) for details about how to provide a dataset description.
 
-    ![Screen shot of certify content button.](media/endorsement-certify/power-bi-certify-content.png)
+    [ ![Screenshot of certify content button.](media/endorsement-certify/power-bi-certify-content.png)]( media/endorsement-certify/power-bi-certify-content.png#lightbox)
 
 1. Select **Apply**.
 
@@ -65,7 +65,7 @@ If you would like to certify your content but are not authorized to do so, follo
 
 1. Expand the endorsement section. The **Certified** button is greyed out since you are not authorized to certify content. Click the link about how to get your content certified.
 
-    ![Screenshot of how to request content link.](media/endorsement-certify/power-bi-request-content-certification.png)
+   [ ![Screenshot of how to request content link.](media/endorsement-certify/power-bi-request-content-certification.png)](media/endorsement-certify/power-bi-request-content-certification.png#lightbox)
     <a name="no-info-redirect"></a>
     >[!NOTE]
     >If you clicked the link above but got redirected back to this note, it means that your Power BI admin has not made any information available. In this case, contact the Power BI admin directly.
