@@ -34,7 +34,7 @@ The SQL Query editor provides support for IntelliSense, code completion, syntax 
 
 ## Known limitations with SQL Query editor
 
-Currently, you can only run read-only queries. To write statements to update data (DML) or modify schemas (DDL), [Query a warehouse using SSMS](query-warehouse.md).
+Currently, you can only run read-only queries. To write statements to update data (DML) or modify schemas (DDL), [Query the Synapse Data Warehouse using SSMS](query-warehouse.md).
 
 ## Next steps
 

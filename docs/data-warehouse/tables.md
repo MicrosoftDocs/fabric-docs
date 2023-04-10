@@ -78,7 +78,7 @@ For [!INCLUDE [fabric-dw](includes/fabric-dw.md)], PRIMARY KEY and UNIQUE constr
 
 FOREIGN KEY is only supported when NOT ENFORCED is used.  
 
-- For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true) and [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric#DataTypes&preserve-view=true). 
+- For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true). 
 - For more information, see [Primary keys, foreign keys, and unique keys in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](table-constraints.md).
 
 ## Commands for creating tables
