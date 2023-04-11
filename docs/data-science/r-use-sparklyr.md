@@ -116,7 +116,7 @@ tbl_mtcars %>%
 
 Here’s an example where we use `ml_linear_regression()` to fit a linear regression model. We use the built-in `mtcars` dataset, and see if we can predict a car’s fuel consumption (`mpg`) based on its weight (`wt`), and the number of cylinders the engine contains (`cyl`). We assume in each case that the relationship between `mpg` and each of our features is linear.
 
-### Generation of Testing and Training Data Sets
+### Generation of testing and training data sets
 Simple split, 70% for training and 30% for testing the model. Playing with this ratio may result in different models.
 
 ```R
@@ -165,5 +165,5 @@ spark_disconnect(sc)
 Learn more about the R functionalities:
 
 - [How to use SparkR](./r-use-sparkr.md)
-- [R library management](./r-library-mgmt.md)
+- [R library management](./r-library-management.md)
 - [Create R visualization](./r-visualization.md)

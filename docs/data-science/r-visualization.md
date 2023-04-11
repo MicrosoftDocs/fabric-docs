@@ -17,7 +17,7 @@ The R ecosystem offers multiple graphing libraries that come packed with many di
 ## ggplot2
 The [ggplot2](https://ggplot2.tidyverse.org/) library is popular for data visualization and exploratory data analysis.
 
-![ggplot2-scatterplot](./media/r-visualization/ggplot2.png)
+![Screenshot of ggplot2 scatterplot.](./media/r-visualization/ggplot2.png)
 
 ```R
 %%sparkr
@@ -41,7 +41,7 @@ g + geom_point() +
 
 [rbokeh](https://hafen.github.io/rbokeh/) is a native R plotting library for creating interactive graphics.
 
-![rbokeh-points](./media/r-visualization/bokeh_plot.png)
+![Screenshot of rbokeh points.](./media/r-visualization/bokeh-plot.png)
 ```R
 library(rbokeh)
 p <- figure() %>%
@@ -55,7 +55,7 @@ p
 
 [Plotly](https://plotly.com/r/) is an R graphing library that makes interactive, publication-quality graphs.
 
-![plot-line](./media/r-visualization/rplot.png)
+![Screenshot of plot line.](./media/r-visualization/rplot.png)
 ```R
 library(plotly) 
 
@@ -70,7 +70,7 @@ fig
 
 [Highcharter](https://jkunst.com/highcharter/) is an R wrapper for Highcharts JavaScript library and its modules.
 
-![highchart-scatter](./media/r-visualization/highchart.png)
+![Screenshot of highchart scatter.](./media/r-visualization/highchart.png)
 ```R
 library(magrittr)
 library(highcharter)
@@ -81,4 +81,4 @@ hchart(mtcars, "scatter", hcaes(wt, mpg, z = drat, color = hp)) %>%
 ## Next steps
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)
-- [R library management](./r-library-mgmt.md)
+- [R library management](./r-library-management.md)

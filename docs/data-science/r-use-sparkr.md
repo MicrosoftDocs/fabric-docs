@@ -22,7 +22,7 @@ You can use SparkR through Spark batch job definitions or with interactive [!INC
 
 R support is only available in Spark3.1 or above. We don't support R in Spark 2.4
 
-## Reading and Writing SparkR DataFrames
+## Reading and writing SparkR DataFrames
 
 ### Reading a SparkR DataFrame from a local R data.frame
 The simplest way to create a DataFrame is to convert a local R data.frame into a Spark DataFrame. 
@@ -41,7 +41,8 @@ display(df)
 ### Reading and writing SparkR DataFrame from Lakehouse
 Data can be stored on the local filesystem of cluster nodes. The general methods for reading and writing a SparkR DataFrame from Lakehouse is `read.df` and `write.df`. These methods take the path for the file to load and the type of data source. SparkR supports reading CSV, JSON, text, and Parquet files natively.
 
-[!Note] To access Lakehouse files using Spark packages, such as `read.df` or `write.df`, you need to use its *ADFS path* or *relative path for Spark*. In the Lakehouse explorer, right click on the files or folder you want to access and copy its *ADFS path* or *relative path for Spark* from the contextual menu.
+> [!Note] 
+> To access Lakehouse files using Spark packages, such as `read.df` or `write.df`, you need to use its *ADFS path* or *relative path for Spark*. In the Lakehouse explorer, right click on the files or folder you want to access and copy its *ADFS path* or *relative path for Spark* from the contextual menu.
 
 ```R
 # write data in CSV using relative path for Spark
@@ -69,7 +70,8 @@ display(faithfulDF_pq)
 
 [!INCLUDE [product-name](../includes/product-name.md)]  has `tidyverse` preinstalled. You can access Lakehouse files using your familiar R packages, such as reading and writing Lakehouse files using `readr::read_csv()` and `readr::write_csv()`.  
 
-[!Note] To access Lakehouse files using R packages, you need to use the *File API path*. In the Lakehouse explorer, right click on the file or folder that you want to access and copy its *File API path* from the contextual menu.
+> [!Note] 
+> To access Lakehouse files using R packages, you need to use the *File API path*. In the Lakehouse explorer, right click on the file or folder that you want to access and copy its *File API path* from the contextual menu.
 
 ```R
 # read data in CSV uxing API path
@@ -118,7 +120,7 @@ class(spark_df)
 head(spark_df)
 ```
 
-## DataFrame Operations
+## DataFrame operations
 SparkR DataFrames support many functions to do structured data processing. Here are some basic examples. A complete list can be found in the [SparkR API docs](https://spark.apache.org/docs/latest/api/R/).
 
 ### Select rows and columns
@@ -244,11 +246,11 @@ train <- function(family) {
 # return a list of model's summaries
 model.summaries <- spark.lapply(families, train)
 
-# rrint the summary of each model
+# print the summary of each model
 print(model.summaries)
 ```
 
-## Running SQL Queries from SparkR
+## Running SQL queries from SparkR
 A SparkR DataFrame can also be registered as a temporary view that allows you to run SQL queries over its data. The sql function enables applications to run SQL queries programmatically and returns the result as a SparkR DataFrame.
 
 ```R
@@ -261,7 +263,7 @@ waiting <- sql("SELECT waiting FROM eruptions where waiting>70 ")
 head(waiting)
 ```
 
-## Machine Learning
+## Machine learning
 SparkR exposes most of MLLib algorithms. Under the hood, SparkR uses MLlib to train the model.
 
 The following example shows how to build a Gaussian GLM model using SparkR. To run linear regression, set family to `"gaussian"`. To run logistic regression, set family to `"binomial"`. When using SparkML GLM SparkR automatically performs one-hot encoding of categorical features so that it doesn't need to be done manually. Beyond String and Double type features, it's also possible to fit over MLlib Vector features, for compatibility with other MLlib components.
@@ -283,5 +285,5 @@ summary(model)
 ## Next steps
 
 - [How to use sparklyr](./r-use-sparklyr.md)
-- [R library management](./r-library-mgmt.md)
+- [R library management](./r-library-management.md)
 - [Create R visualization](./r-visualization.md)

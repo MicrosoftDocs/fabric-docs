@@ -26,7 +26,7 @@ There are two types of libraries you may want to include based on your scenario:
 
 - **Custom libraries** are the code built by you or your organization, _.tar.gz_ can be managed through Library Management portals.
 
-There are two levels of packages installed on [!INCLUDE [product-name](../includes/product-name.md)] :
+There are two levels of packages installed on [!INCLUDE [product-name](../includes/product-name.md)]:
 
 - **Workspace**: Workspace-level installation defines the working environment for the entire Workspace. The libraries installed on Workspace level are available for all Notebooks and SJDs under this Workspace. Update the workspace 
 libraries when you want to set up the shared environment for all Artifacts in a Workspace.
@@ -43,11 +43,11 @@ Summarizing the current available R library management behaviors:
 
 ## R library management in Workspace settings
 
-Under the Workspace settings, you can find the Workspace level library management portal: Workspace setting → Data engineering → Library management. Currently R only support custom 
+Under the Workspace settings, you can find the Workspace level library management portal: Workspace setting → Data engineering → Library management. Currently R only support custom libraries in workspace settings.
 
-[!NOTE] 
-- Only Workspace admin has permission to update the workspace level settings. 
-- Managing R feed libraries in workspace settings is currently not supported.
+> [!NOTE] 
+>- Only Workspace admin has permission to update the workspace level settings. 
+>- Managing R feed libraries in workspace settings is currently not supported.
 
 ### Manage Workspace packages
 You can install your custom R packages, that is,_.tar.gz_ in Workspace library management portal.
@@ -78,8 +78,8 @@ When doing interactive data analysis or machine learning, you might try newer pa
 - Session-scoped R libraries don't persist across sessions. These libraries are installed at the start of each session when the related installation commands are executed.
 - Session-scoped R libraries are automatically installed across both the driver and worker nodes.
 
-[!NOTE]
-- These commands of managing R libraries are disabled when running pipeline jobs. If you want to install a package within a pipeline, you must use the library management capabilities at the workspace level.
+> [!NOTE]
+> These commands of managing R libraries are disabled when running pipeline jobs. If you want to install a package within a pipeline, you must use the library management capabilities at the workspace level.
 
 ### Install R packages from CRAN
 You can easily install an R library from [CRAN](https://cran.r-project.org/).
@@ -159,7 +159,8 @@ detach("package: caesar")
 
 To remove a session-scoped package from a notebook, use the `remove.packages()` command. This library change has no impact on other sessions on the same cluster. Users can't uninstall or remove built-in libraries of the default [!INCLUDE [product-name](../includes/product-name.md)] runtime.
 
-[!NOTE] You can't remove core packages like SparkR, SparklyR, or R.
+> [!NOTE] 
+> You can't remove core packages like SparkR, SparklyR, or R.
 
 ```R
 remove.packages("caesar")

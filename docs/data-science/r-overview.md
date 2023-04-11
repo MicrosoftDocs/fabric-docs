@@ -36,7 +36,7 @@ To learn more about notebooks within [!INCLUDE [product-name](../includes/produc
 
 Libraries provide reusable code that you might want to include in your programs or projects. To make third party or locally built code available to your applications, you can install a library onto one of your workspace or notebook session. 
 
-To learn more about how to manage R libraries see the following article: [R library management](./r-library-mgmt.md).
+To learn more about how to manage R libraries see the following article: [R library management](./r-library-management.md).
 
 ## Notebook Utilities
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can use MSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. MSSparkUtils is supported for R notebooks.
