@@ -114,7 +114,7 @@ install_github("jtilly/matchingR")
 Currently, the following `devtools` functions are supported within [!INCLUDE [product-name](../includes/product-name.md)]:
 
 
-|Comamnd|Description|
+|Command|Description|
 |---------------|----------------|
 |install_github()	|Installs an R package from GitHub|
 |install_gitlab()	|Installs an R package from GitLab|
