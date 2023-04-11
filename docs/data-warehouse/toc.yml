@@ -29,12 +29,14 @@ items:
       href: create-reports.md
     - name: 7. Create reports in the Power BI service
       href: reports-power-bi-service.md
+- name: Connectivity
+  items: 
+  - name: Connectivity
+    href: connectivity.md    
 - name: Security
   items:
   - name: Data warehousing security
     href: security.md
-  - name: Connectivity
-    href: connectivity.md    
   - name: Workspace roles
     href: workspace-roles.md
   - name: Manage user access
@@ -69,7 +71,7 @@ items:
     href: statistics.md
   - name: Query Delta Lake logs
     href: query-delta-lake-logs.md
-- name: Develop
+- name: Design and Develop
   items:
   - name: Tables
     href: tables.md
