@@ -16,17 +16,17 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## General terms
 
-- **Capacity:** Capacity is a dedicated set of resources reserved for exclusive use. Capacity defines the ability of a resource to perform an activity or to produce output in a specified period. CPU count, memory, and storage are the capacity dimensions. Fabric offers capacity through the Pro, Trial, Premium - per user, Premium - per capacity, and Embedded SKU types. For more information, see [What is capacity](../enterprise/what-is-capacity.md) article.
+- **Capacity:** Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different items consume different capacity at a certain time. Fabric offers capacity through the Fabric SKU and Trials. For more information, see [What is capacity](../enterprise/what-is-capacity.md).
 
-- **Experience:** A collection of capabilities with a specific look, feel, and functionality. The Fabric experiences include Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-time Analytics, Data Factory, Reflex, and Power BI.
+- **Experience:** A collection of capabilities targeted to a specific work. The Fabric experiences include Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-time Analytics, Data Factory and Power BI.
 
-- **Item:** An item is the result of a set of customer activities within an experience. For example, the Data Engineering experience includes a lakehouse, notebook, and Spark job definition, items. You can use items within the experience in which they're created or from other experiences. You can save, edit, and share them with other users.
+- **Item:** An item is the definition that is part of a workspace. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
 
 - **Shortcut:** Shortcuts are embedded references within OneLake that point to other file store locations. They provide a way to connect to existing data without having to directly copy it. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
-- **Tenant:** A single instance of Fabric supporting a single user, account, or organization. For more information, see [Placeholder](../placeholder.md).
+- **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with an Azure Active Directory. For more information, see [Placeholder](../placeholder.md).
 
-- **Workspace:** A user interface area designed for collaboration, in which users perform tasks such as creating reports, notebooks, datasets, etc. For more information, see [Placeholder](../placeholder.md).
+- **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that leverages capacity for the work that is executed, and provides controls for who can access the items in it. For more information, see [Placeholder](../placeholder.md).
 
 ## Synapse Data Engineering
 
@@ -46,13 +46,15 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Data pipeline:** In Data Factory, a data pipeline is used for orchestrating data movement and transformation. These pipelines are different from the deployment pipelines in Fabric. For more information, see [Pipelines](../data-factory/data-factory-overview.md#data-pipelines) in the Data Factory overview.
 
-- **Dataflow Gen2:** Dataflows provide a low-code interface for ingesting data from hundreds of data sources and transforming your data. Dataflows in Fabric are referred to as Dataflow Gen2. Dataflow Gen1 exists in Power BI. Dataflow Gen2 offers extra capabilities compared to Dataflows in Azure Data Factory or Power BI.  You can't upgrade from Gen1 to Gen2. For more information, see [Dataflows](../data-factory/data-factory-overview.md#dataflows) in the Data Factory overview.
+- **Dataflow Gen2:** Dataflows provide a low-code interface for ingesting data from hundreds of data sources and transforming your data. Dataflows in Fabric are referred to as Dataflow Gen2. Dataflow Gen1 exists in Power BI. Dataflow Gen2 offers extra capabilities compared to Dataflows in Azure Data Factory or Power BI. You can't upgrade from Gen1 to Gen2. For more information, see [Dataflows](../data-factory/data-factory-overview.md#dataflows) in the Data Factory overview.
 
 ## Synapse Data Science
 
+- **Data Wrangler:** Data Wrangler is a notebook-based tool that provides users with an immersive experience to conduct exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics and a set of common data-cleansing operations, all available with a few selected icons. Each operation generates code that can be saved back to the notebook as a reusable script.
+
 - **Experiment:** A machine learning experiment is the primary unit of organization and control for all related machine learning runs. For more information, see [Machine learning experiments in Microsoft Fabric](../data-science/machine-learning-experiment.md).
 
-- **Model:** A machine learning model is a file trained to recognize certain types of patterns. You train a model over a set of data, and you provide it with an algorithm that uses to reason over and learn from that data set. For more information, see [Machine learning model](../data-science/machine-learning-model.md).
+- **Model:** A machine learning model is a file trained to recognize certain types of patterns. You train a model over a set of data, and you provide it with an algorithm that it uses to reason over and learn from that data set. For more information, see [Machine learning model](../data-science/machine-learning-model.md).
 
 - **Run:** A run corresponds to a single execution of model code. In [MLflow](https://mlflow.org/), tracking is based on experiments and runs.
 
@@ -66,7 +68,9 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Event stream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../placeholder.md).
 
-- **KQL Queryset:** The KQL queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database.  The queryset includes the databases and tables, the queries, and the results. The KQL queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL queryset](../real-time-analytics/kusto-query-set.md)
+- **KQL Database:** The KQL database is the representation of a database holding data in a format to execute a KQL Query against it. For more information, see [Create a database](../real-time-analytics/create-database.md).
+
+- **KQL Queryset:** The KQL queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL queryset](../real-time-analytics/kusto-query-set.md)
 
 ## Next steps
 
