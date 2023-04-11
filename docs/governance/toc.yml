@@ -31,3 +31,5 @@ items:
     href: endorsement-certify.md
   - name: Set up content certification
     href: endorsement-setup.md
+- name: Domains
+  href: domains.md
