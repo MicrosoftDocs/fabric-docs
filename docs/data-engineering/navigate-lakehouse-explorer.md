@@ -1,6 +1,6 @@
 ---
-title: Navigating the lakehouse explorer
-description: Learn about the components of the lakehouse explorer.
+title: Navigate the Fabric Lakehouse explorer
+description: The lakehouse explorer consists of the object explorer, main view, and ribbon. Use it to load data into your lakehouse, and then browse and preview your data.
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
@@ -9,7 +9,7 @@ ms.date: 02/24/2023
 ms.search.form: Lakehouse Explorer
 ---
 
-# Navigating the lakehouse explorer
+# Navigate the Fabric Lakehouse explorer
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

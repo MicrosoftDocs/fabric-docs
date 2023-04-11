@@ -1,6 +1,6 @@
 ---
 title: What is Data engineering in Microsoft Fabric?
-description: Learn about Data engineering in Microsoft Fabric and the analytics functionality it offers. 
+description: Learn about Data engineering core concepts in Microsoft Fabric and the analytics functionality it offers. 
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS

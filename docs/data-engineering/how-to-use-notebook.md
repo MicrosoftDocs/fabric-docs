@@ -1,6 +1,6 @@
 ---
 title: How to use notebooks
-description: Learn how to use notebooks.
+description: Learn how to create a new notebook, import an existing notebook, connect notebooks to lakehouses. collaborate in notebooks, and comment code cells.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/24/2023
 ---
 
-# How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks
+# How to use Microsoft Fabric notebooks
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

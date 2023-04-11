@@ -1,6 +1,6 @@
 ---
-title: How to create an Apache Spark job definition
-description: Learn how to create an Apache Spark job definition in your workspace.
+title: Create an Apache Spark job definition
+description: Learn how to create a Spark job definition for different languages from the Data Engineering homepage, the Workspace view, or the Create hub.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
@@ -9,7 +9,7 @@ ms.date: 02/24/2023
 ms.search.form: Create Spark Job Definition,spark_job_definition
 ---
 
-# How to create an Apache Spark job definition
+# How to create an Apache Spark job definition in Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

@@ -1,6 +1,6 @@
 ---
 title: Load data into your lakehouse with a notebook
-description: Learn how to use a notebook to load data into your lakehouse.
+description: Learn how to use a notebook to load data into your lakehouse with either an existing notebook or a new one.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/24/2023
 ---
 
-# How to use a notebook to load data into your lakehouse
+# Use a notebook to load data into your lakehouse
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

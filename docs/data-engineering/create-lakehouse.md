@@ -1,6 +1,6 @@
 ---
 title: Create a lakehouse
-description: Learn how to create a lakehouse.
+description: Learn how to create a lakehouse from the Data Engineering homepage, the Workspace view, or the Create hub.
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
@@ -9,7 +9,7 @@ ms.date: 02/24/2023
 ms.search.form: Create lakehouse
 ---
 
-# Creating a lakehouse
+# Create a lakehouse in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

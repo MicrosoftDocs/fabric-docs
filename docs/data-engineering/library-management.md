@@ -1,6 +1,6 @@
 ---
-title: Library management
-description: Learn how to manage and use built-in libraries, and how to include other libraries.
+title: Manage Apache Spark libraries
+description: Learn how to manage and use built-in libraries following best practices, and how to include other feed and custom libraries.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/24/2023
 ---
 
-# Library management
+# Manage Apache Spark libraries in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

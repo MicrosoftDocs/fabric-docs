@@ -1,5 +1,5 @@
 ---
-title: Spark autotune configuration and how to enable or disable it
+title: Configure Spark Autotune
 description: Learn how autotune auto-adjusts Spark configurations, minimizing workload execution time and optimizing performance. You can enable or disable autotune.
 ms.reviewer: snehagunda
 ms.author: eskot
@@ -8,7 +8,7 @@ ms.topic: overview
 ms.date: 03/22/2023
 ---
 
-# What is Spark autotune configuration and how is it enabled or disabled?
+# What is Spark autotune configuration in Fabric and how to enable and disable it?
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
