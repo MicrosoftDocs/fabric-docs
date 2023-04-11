@@ -1,6 +1,6 @@
 ---
 title: Apache Spark workspace administration settings
-description: Learn about the workspace administration settings such as Apache Spark node family, runtime version, and Spark properties. 
+description: Learn about the workspace administration settings such as Apache Spark node family, runtime version, and Spark properties.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
