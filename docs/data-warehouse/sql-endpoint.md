@@ -17,7 +17,7 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to analyze data in the [Lakehouse](../data-engineering/lakehouse-overview.md) artifact using T-SQL language and TDS endpoint.
 
-When you create a [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](../data-engineering/lakehouse-overview.md) artifact and create Delta tables in the [Lakehouse](../data-engineering/lakehouse-overview.md) artifact, the [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes the [Lakehouse](../data-engineering/lakehouse-overview.md) data as the set tables that reference your Delta Lake data and enable you to query your data using the T-SQL language. 
+When you create a [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](../data-engineering/lakehouse-overview.md) artifact and create Delta tables in the [Lakehouse](../data-engineering/lakehouse-overview.md) artifact, the [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes the [Lakehouse](../data-engineering/lakehouse-overview.md) data as the set tables that reference your Delta Lake data. The tables enable you to query your data in the Lake using the T-SQL language. 
 
 Each workspace can have more than one Lakehouse and every Lakehouse is getting its own [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
@@ -92,13 +92,13 @@ Once deleted, you can't recover a deleted Lakehouse or the custom SQL objects in
 
 1. Tables with renamed columns aren't supported.
 
-   Don't rename the columns in the lake because the renamed columns won't be available in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
+   Don't rename the columns in the lake because the renamed columns are not available in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
    If you rename the columns, you need to recreate the table in the lake.
 
 1. Delta tables created outside of the `/tables` folder aren't available.
 
-   If you don't see a Lakehouse table in the warehouse, check the location of the table. Only the tables that are referencing data in the `/tables` folder are available in the warehouse. The tables that reference data in a files folder in the lake won't appear in the warehouse. As a workaround, move your data to the `/tables` folder.
+   If you don't see a Lakehouse table in the warehouse, check the location of the table. Only the tables that are referencing data in the `/tables` folder are available in the warehouse. The tables that reference data in the `/files` folder in the lake are not exposed in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. As a workaround, move your data to the `/tables` folder.
 
 1. Missing columns in the tables
 
