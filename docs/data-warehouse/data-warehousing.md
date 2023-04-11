@@ -44,6 +44,22 @@ For more information on the warehouse in [!INCLUDE [product-name](../includes/pr
 
 To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md).
 
+## Use cases and scenarios
+
+The [!INCLUDE [fabric-se](includes/fabric-se.md)] and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] are designed for following scenarios and use cases in mind:
+<!-- More coming -->
+
+**[!INCLUDE [fabric-se](includes/fabric-se.md)]**:
+
+- Automatic creation of external tables for delta lake files in the [OneLake](../onelake/onelake-overview.md)
+- Immediate access to delta lake files via read-only TSQL queries.
+
+**[!INCLUDE [fabric-dw](includes/fabric-dw.md)]**:
+
+- For read/write TSQL access to a traditional data warehouse experience.
+- Star schema data warehouses with fact and dimension tables, slowly changing dimensions.
+- Source of data for querying with Power BI, SQL Server Reporting Services, and other enterprise reporting and visualization tools.
+
 ## Connectivity
 
 You can use the [!INCLUDE [product-name](../includes/product-name.md)] portal, or the TDS endpoint to connect to and query the SQL Endpoint and your transactional data warehouses via [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) version 18.0+ or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).

@@ -116,3 +116,10 @@ landingContent:
         links:
           - text: Monitor 
             url: monitor-using-dmv.md 
+  # Card 
+  - title: Best practices
+    linkLists:
+      - linkListType: architecture
+        links:
+          - text: Security
+            url: security.md
