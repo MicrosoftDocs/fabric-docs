@@ -18,7 +18,9 @@ The Delta Lake logs opens up direct access to the warehouse's user tables for an
 
 ## Location
 
-1. Delta Lake logs are queried through shortcuts created in a lakehouse. You can view the files using a [!INCLUDE [product-name](../includes/product-name.md)] Spark Notebook or the **Lakehouse explorer** in Synapse Data Engineering in the Fabric portal.
+You can locate Delta Lake logs via the following methods:
+
+1. Delta Lake logs can be queried through shortcuts created in a lakehouse. You can view the files using a [!INCLUDE [product-name](../includes/product-name.md)] Spark Notebook or the **Lakehouse explorer** in Synapse Data Engineering in the [!INCLUDE [product-name](../includes/product-name.md)] portal.
  
 1. Delta Lake logs can be found through the OneLake Explorer in Windows, via the [Azure Storage Explorer], through Spark connections such as the Power BI Direct Lake mode, or using any other service that can read delta tables.
 
