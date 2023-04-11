@@ -54,7 +54,7 @@ items:
     - name: How to use sparklyr
       href: r-use-sparklyr.md
     - name: R library management
-      href: r-library-mgmt.md
+      href: r-library-management.md
     - name: R visualization
       href: r-visualization.md
 - name: SemPy
