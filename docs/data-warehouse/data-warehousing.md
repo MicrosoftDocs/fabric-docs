@@ -50,30 +50,6 @@ You can use the [!INCLUDE [product-name](../includes/product-name.md)] portal, o
 
 For more information and how-to connect, see [Connectivity](connectivity.md).
 
-## Keyboard shortcuts
-
-Keyboard shortcuts provide a quick way to navigate and allow users to work more efficiently in SQL query editor. The table in this article lists all the shortcuts available in SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal:
-
-| **Function** | **Shortcut** |
-|---|---|
-| New SQL query | Ctrl + Q |
-| Close current tab | Ctrl + Shift + F4 |
-| Run SQL script | Ctrl + Enter, Shift +Enter |
-| Cancel running SQL script | Alt+Break |
-| Search string | Ctrl + F |
-| Replace string | Ctrl + H |
-| Undo | Ctrl + Z |
-| Redo | Ctrl + Y |
-| Go one word left | Ctrl + Left arrow key |
-| Go one word right*| Ctrl + Right arrow key |
-| Indent increase | Tab |
-| Indent decrease | Shift + Tab |
-| Comment | Ctrl + K, Ctrl + C |
-| Uncomment | Ctrl + K, Ctrl + U |
-| Move cursor up | ↑ |
-| Move cursor down | ↓ |
-|Select All | Ctrl + A |
-
 ## Next steps
 
 - [SQL Endpoint](sql-endpoint.md)
