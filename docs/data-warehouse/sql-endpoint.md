@@ -92,17 +92,17 @@ Once deleted, you can't recover a deleted Lakehouse or the custom SQL objects in
 
 1. Tables with renamed columns aren't supported.
 
-   Don't rename the columns in the lake because the renamed columns are not available in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
+   Don't rename the columns in the lake because the renamed columns aren't available in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
    If you rename the columns, you need to recreate the table in the lake.
 
 1. Delta tables created outside of the `/tables` folder aren't available.
 
-   If you don't see a Lakehouse table in the warehouse, check the location of the table. Only the tables that are referencing data in the `/tables` folder are available in the warehouse. The tables that reference data in the `/files` folder in the lake are not exposed in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. As a workaround, move your data to the `/tables` folder.
+   If you don't see a Lakehouse table in the warehouse, check the location of the table. Only the tables that are referencing data in the `/tables` folder are available in the warehouse. The tables that reference data in the `/files` folder in the lake aren't exposed in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. As a workaround, move your data to the `/tables` folder.
 
 1. Missing columns in the tables
 
-   Some columns that exist in the Spark Delta tables might not be available in the tables in the warehouse. Only the columns with the following types are available in the warehouse tables: boolean, short, small, int, long, date, timestamp, float, double, decimal, varchar/char(truncated to 8 KB), binary (limited to 8 KB). The columns of the other types won't be exposed in the warehouse tables. Unsupported data types should be converted. For example, the following types aren't available:
+   Some columns that exist in the Spark Delta tables might not be available in the tables in the warehouse. Only the columns with the following types are available in the warehouse tables: boolean, short, small, int, long, date, timestamp, float, double, decimal, varchar/char(truncated to 8 KB), binary (limited to 8 KB). The columns of the other types aren't be exposed in the warehouse tables. Unsupported data types should be converted. For example, the following types aren't available:
 
    - Complex types (arrays, struct, maps)
    - Binary/BSON
