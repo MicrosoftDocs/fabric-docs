@@ -67,6 +67,19 @@ landingContent:
           - text: How to move data into Lakehouse via Copy assistant
             url: ../data-factory/move-data-lakehouse-copy-assistant.md
   # Card 
+  - title: Security
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Data warehousing security
+            url: security.md
+          - text: Connectivity
+            url: connectivity.md    
+          - text: Workspace roles
+            url: workspace-roles.md
+          - text: Manage user access
+            url: manage-user-access.md   
+  # Card 
   - title: Ingest data
     linkLists:
       - linkListType: how-to-guide
@@ -101,9 +114,5 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Manage user access
-            url: manage-user-access.md
           - text: Monitor 
-            url: monitor-using-dmv.md
-          - text: Connectivity
-            url: connectivity.md
+            url: monitor-using-dmv.md 
