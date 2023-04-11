@@ -1,6 +1,6 @@
 ---
 title: SQL Endpoint for a Lakehouse
-description: Learn more about SQL Endpoint for a Lakehose that provides analytical capabiities over the Lake data.
+description: Learn more about SQL Endpoint for a Lakehose that provides analytical capabilities over the Lake data.
 ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
@@ -17,9 +17,9 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to analyze data in the [Lakehouse](../data-engineering/lakehouse-overview.md) artifact using T-SQL language and TDS endpoint.
 
-When you create a [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](../data-engineering/lakehouse-overview.md) artifact and create Delta tables in the [Lakehouse](../data-engineering/lakehouse-overview.md) artifact, the [!INCLUDE [fabric-se](includes/fabric-se.md)] will expose the [Lakehouse](../data-engineering/lakehouse-overview.md) data as a set tables that reference your Delta Lake data and enable you to query your data using the T-SQL language. 
+When you create a [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](../data-engineering/lakehouse-overview.md) artifact and create Delta tables in the [Lakehouse](../data-engineering/lakehouse-overview.md) artifact, the [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes the [Lakehouse](../data-engineering/lakehouse-overview.md) data as the set tables that reference your Delta Lake data and enable you to query your data using the T-SQL language. 
 
-Each workspace can have more than one Lakehouse and every Lakehouse is geting it's own [!INCLUDE [fabric-se](includes/fabric-se.md)].
+Each workspace can have more than one Lakehouse and every Lakehouse is getting its own [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
 Every delta table in a Lakehouse is represented as one table in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
@@ -55,12 +55,16 @@ In the [!INCLUDE [product-name](../includes/product-name.md)] portal, this auto-
 
 ## Customization of schema
 
-The automatically generated tables are owned by [!INCLUDE [fabric-se](includes/fabric-se.md)] cannot be modified by the workspace users, but the SQL developers can enrich the model by adding their own schemas, views, procedures, and other database objects.
-The tools that are acessing lake data can directly query the automatically generated tables or the views created on top of these tables.
+The [!INCLUDE [fabric-se](includes/fabric-se.md)] manages the automatically generated tables so the workspace users cannot modify them. The workspace users can enrich the database model by adding their own SQL schemas, views, procedures, and other database objects.
+The tools that are accessing lake data can directly query the automatically generated tables or the views created on top of these tables.
+
+## Datasets
+
+When you create a [Lakehouse](../data-engineering/lakehouse-overview.md), a default Power BI dataset is created with the [!INCLUDE [fabric-se](includes/fabric-se.md)]. The default dataset is represented with the *(default)* suffix. For more information, see [Default datasets](datasets.md).
 
 ## Connectivity
 
-For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your [!INCLUDE [fabric-se](includes/fabric-se.md)]. There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later, but we generally expect that the majority of the testing and interaction for your [!INCLUDE [fabric-se](includes/fabric-se.md)] will be via a tool such as [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
+For the current version, you'll primarily be using a TDS end point and SSMS or ADS to connect to and query your [!INCLUDE [fabric-se](includes/fabric-se.md)]. There's a limited user experience available in [!INCLUDE [product-name](../includes/product-name.md)] portal at this time, which is described in greater detail later, but we generally expect that most of the testing and interaction for your [!INCLUDE [fabric-se](includes/fabric-se.md)] will be via a tool such as [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
 
 ## How to delete a [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
