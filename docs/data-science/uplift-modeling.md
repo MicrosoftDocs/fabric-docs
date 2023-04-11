@@ -48,7 +48,7 @@ In this article, learn how to create, train and evaluate uplift models and apply
 
 ### Notebook configurations
 
-By defining below parameters, you can apply this example on different datasets easily.
+By defining below parameters, you can apply this example to different datasets.
 
 ```python
 IS_CUSTOM_DATA = False  # if True, dataset has to be uploaded manually by user
