@@ -15,19 +15,19 @@ items:
     href: get-started-sql-endpoint.md
   - name: Synapse Data Warehouse
     items:
-    - name: Get started with a Synapse Data Warehouse
+    - name: 1. Get started with a Synapse Data Warehouse
       href: get-started-data-warehouse.md  
-    - name: Create a warehouse
+    - name: 2. Create a warehouse
       href: create-warehouse.md
-    - name: Create a table
+    - name: 3. Create a table
       href: create-table.md
-    - name: Ingest data 
+    - name: 4. Ingest data 
       href: ingest-data.md
-    - name: Query the warehouse
+    - name: 5. Query the warehouse
       href: query-warehouse.md
-    - name: Create reports
+    - name: 6. Create reports
       href: create-reports.md
-    - name: Create reports in the Power BI service
+    - name: 7. Create reports in the Power BI service
       href: reports-power-bi-service.md
 - name: Security
   items:
@@ -49,8 +49,6 @@ items:
     href: create-measure.md
   - name: Hide elements from downstream reporting
     href: hide-elements-downstream-reporting.md
-  - name: Get Workspace and OneLake path
-    href: get-workspace-onelake-path.md
 - name: Load data into the Synapse Data Warehouse
   items:
   - name: Ingesting data into the warehouse
@@ -77,9 +75,13 @@ items:
     href: table-constraints.md
   - name: Transactions
     href: transactions.md
+- name: Sharing 
+  items: 
+  - name: Get Workspace and OneLake path
+    href: get-workspace-onelake-path.md
+- name: Manage and Monitor
+  items:
   - name: Warehouse settings and context menus
     href: settings-context-menus.md
-- name: Monitor
-  items:
   - name: Monitor using DMVs
     href: monitor-using-dmv.md

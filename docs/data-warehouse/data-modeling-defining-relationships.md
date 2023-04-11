@@ -27,7 +27,7 @@ In the model view, users can model their warehouse and the canonical autogenerat
 
 1. Warehouse modeling - the physical relationships expressed as primary and foreign keys and constraints
 
-1. Default dataset modeling - the logical relationships expressed between entities
+1. Default Power BI dataset modeling - the logical relationships expressed between entities
 
 Modeling automatically keeps these definitions in sync, enabling powerful warehouse and semantic layer development simultaneously.
 
@@ -43,7 +43,7 @@ Modeling the warehouse is possible by setting primary and foreign key constraint
 
 1. Select the **Confirm** button when your relationship is complete to save the relationship information. The relationship set will effectively:
    1. Set the physical relationships - primary and foreign key constraints in the database
-   1. Set the logical relationships - primary and foreign key constraints in the default dataset
+   1. Set the logical relationships - primary and foreign key constraints in the default Power BI dataset
 
 ### Editing relationships using different methods
 
@@ -57,9 +57,9 @@ You only see the table names and columns from which you can choose, you aren't p
 
 Single or multi-selected relationships can also be deleted by pressing **Delete** on your keyboard. You can't undo the delete action, so a dialog prompts you to confirm deleting the relationships.
 
-## Access the default dataset
+## Access the default Power BI dataset
 
-To access default datasets, go to your workspace and find the dataset that matches the name of the warehouse.
+To access default Power BI datasets, go to your workspace and find the dataset that matches the name of the warehouse.
 
 :::image type="content" source="media\data-modeling-defining-relationships\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\data-modeling-defining-relationships\find-dataset.png":::
 
@@ -68,9 +68,9 @@ To load the dataset, select the name of the dataset.
 :::image type="content" source="media\data-modeling-defining-relationships\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\data-modeling-defining-relationships\load-dataset.png":::
 
 
-## Modeling the default dataset
+## Modeling the default Power BI dataset
 
-The default dataset inherits all relationships between entities defined in the model view and infers them as Power BI dataset relationships, when objects are enabled for BI (Power BI Reports). Inheriting the warehouse's business logic allows a warehouse developer or BI analyst to decrease the time to value towards building a useful semantic model and metrics layer for analytical business intelligence (BI) reports in Power BI, Excel, or external tools like Tableau that read the XMLA format.
+The default Power BI dataset inherits all relationships between entities defined in the model view and infers them as Power BI dataset relationships, when objects are enabled for BI (Power BI Reports). Inheriting the warehouse's business logic allows a warehouse developer or BI analyst to decrease the time to value towards building a useful semantic model and metrics layer for analytical business intelligence (BI) reports in Power BI, Excel, or external tools like Tableau that read the XMLA format.
 
 While all constraints are translated to relationships, currently in Power BI, only one relationship can be active at a time, whereas multiple primary and foreign key constraints can be defined for warehouse entities and are shown visually in the diagram lines. The active Power BI relationship is represented with a solid line and the rest is represented with a dotted line. We recommend choosing the primary relationship as active for BI reporting purposes.
 
@@ -90,11 +90,11 @@ The following table provides a description of the properties available when usin
 
 During the session, users may create multiple tabs in the model view to depict say, data warehouse schemas or further assist with database design. Currently the model view layouts are only persisted in session. However the database changes are persisted. Users can use the auto-layout whenever a new tab is created to visually inspect the database design and understand the modeling.
 
-## Adding or removing objects to the default dataset
+## Adding or removing objects to the default Power BI dataset
 
-In Power BI, a dataset is always required before any reports can be built, so the default dataset enables quick reporting capabilities on top of the warehouse. Within the warehouse, a user can add warehouse objects - tables or views to their default dataset. They can also add other semantic modeling properties, such as hierarchies and descriptions. These properties are then used to create the Power BI dataset's tables. Users can also remove objects from the default dataset.
+In Power BI, a dataset is always required before any reports can be built, so the default Power BI dataset enables quick reporting capabilities on top of the warehouse. Within the warehouse, a user can add warehouse objects - tables or views to their default Power BI dataset. They can also add other semantic modeling properties, such as hierarchies and descriptions. These properties are then used to create the Power BI dataset's tables. Users can also remove objects from the default Power BI dataset.
 
-To add objects such as tables or views to the default dataset, you have options:
+To add objects such as tables or views to the default Power BI dataset, you have options:
 
 1. Automatically add objects to the dataset, which happens by default with no user intervention needed.
 
@@ -102,7 +102,7 @@ To add objects such as tables or views to the default dataset, you have options:
 
 The auto detect experience determines any tables or views and opportunistically adds them.
 
-The manually detect option in the ribbon allows fine grained control of which object(s), such as tables and/or views, should be added to the default dataset:
+The manually detect option in the ribbon allows fine grained control of which object(s), such as tables and/or views, should be added to the default Power BI dataset:
 
 - Select all
 - Filter for tables or views

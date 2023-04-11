@@ -58,7 +58,7 @@ landingContent:
             url: get-started-sql-endpoint.md
           - text: Create a lakehouse with OneLake
             url: ../onelake/create-lakehouse-onelake.md
-          - text: Understand default datasets
+          - text: Understand default Power BI datasets
             url: datasets.md
           - text: Load data into the Lakehouse
             url: ../data-engineering/load-data-lakehouse.md

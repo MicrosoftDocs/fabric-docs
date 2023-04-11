@@ -95,5 +95,5 @@ Once deleted, you can't recover a deleted Lakehouse; you have to recreate it.
 
 ## Next steps
 
-- [Default datasets](datasets.md)
+- [Default Power BI datasets](datasets.md)
 - [Lakehouse](../data-engineering/lakehouse-overview.md)

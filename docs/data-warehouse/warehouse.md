@@ -24,7 +24,7 @@ To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLU
 
 ## Datasets
 
-When you create a [Lakehouse](../data-engineering/lakehouse-overview.md) or a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], a default Power BI dataset is created. This is represented with the (default) suffix. For more information, see [Default datasets](datasets.md).
+When you create a [Lakehouse](../data-engineering/lakehouse-overview.md) or a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], a default Power BI dataset is created. This is represented with the (default) suffix. For more information, see [Default Power BI datasets](datasets.md).
 
 ## Limitations
 
@@ -86,7 +86,7 @@ From the menu that appears, select **Rename**.
 
 Provide a new name in the dialog and select **Rename** to apply.
 
-When you rename a warehouse, the default dataset based on that warehouse is also automatically renamed.
+When you rename a warehouse, the default Power BI dataset based on that warehouse is also automatically renamed.
 
 ## Delete a warehouse
 

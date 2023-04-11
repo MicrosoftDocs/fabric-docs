@@ -14,7 +14,7 @@ ms.date: 03/15/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Warehouse lets you create reusable and default datasets to create reports in various ways in Power BI. This article describes the various ways you can use your warehouses, and their default datasets, to create reports.
+Warehouse lets you create reusable and default Power BI datasets to create reports in various ways in Power BI. This article describes the various ways you can use your warehouses, and their default Power BI datasets, to create reports.
 
 ## Create reports from data sets
 
