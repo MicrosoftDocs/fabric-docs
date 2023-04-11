@@ -32,7 +32,7 @@ You can create your own T-SQL views, functions, and procedures on top of the tab
 
 ## Automatically generated schema
 
-For every Delta table in your [Lakehouse](../data-engineering/lakehouse-overview.md) artifact, the [!INCLUDE [fabric-se](includes/fabric-se.md)] will automatically generate one table. The column types in the [!INCLUDE [fabric-se](includes/fabric-se.md)] are derived from the source Delta types.
+For every Delta table in your [Lakehouse](../data-engineering/lakehouse-overview.md) artifact, the [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically generating one table. The column types in the [!INCLUDE [fabric-se](includes/fabric-se.md)] are derived from the source Delta types.
 
 | **Delta Data Type** | **SQL Data** **Type (Mapped)** |
 |---|---|
@@ -55,7 +55,7 @@ In the [!INCLUDE [product-name](../includes/product-name.md)] portal, the [!INCL
 
 ## Customization of schema
 
-The [!INCLUDE [fabric-se](includes/fabric-se.md)] manages the automatically generated tables so the workspace users cann't modify them. The workspace users can enrich the database model by adding their own SQL schemas, views, procedures, and other database objects.
+The [!INCLUDE [fabric-se](includes/fabric-se.md)] manages the automatically generated tables so the workspace users can't modify them. The workspace users can enrich the database model by adding their own SQL schemas, views, procedures, and other database objects.
 The tools that are accessing lake data can directly query the automatically generated tables or the views created on top of these tables.
 
 ## Datasets
