@@ -47,3 +47,5 @@ To find the warehouse, you begin with the **Data hub**. The following image show
 ## Next steps
 
 - [Connectivity](connectivity.md)
+- [Create reports](create-reports.md)
+- [Power BI admin center](../admin/admin-power-bi.md)

@@ -53,7 +53,7 @@ The default layout for BI enabled tables persists in the user session and is gen
 
 This layout isn't currently saved past the user's session.
 
-## Limitations
+## Limitations and 
 
 Default Power BI datasets follow the current limitations for datasets in Power BI. Learn more:
 
@@ -64,4 +64,5 @@ If the parquet, Apache Spark, or SQL data types can't be mapped to one of the ab
 
 ## Next steps
 
-- [Data modeling and defining relationships](data-modeling-defining-relationships.md)
+- [Define relationships in data models](data-modeling-defining-relationships.md)
+- [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)

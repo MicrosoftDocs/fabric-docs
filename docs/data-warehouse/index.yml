@@ -97,7 +97,9 @@ landingContent:
         links:
           - text: Datasets
             url: datasets.md            
-          - text: Data modeling 
+          - text: Model data in the default Power BI dataset
+            url: model-default-power-bi-dataset.md          
+          - text: Define relationships in data models
             url: data-modeling-defining-relationships.md
           - text: Create a measure
             url: create-measure.md

@@ -43,7 +43,9 @@ items:
   items:
   - name: Datasets
     href: datasets.md
-  - name: Data modeling and defining relationships
+  - name: Model data in the default Power BI dataset
+    href: model-default-power-bi-dataset.md          
+  - name: Define relationships in data models
     href: data-modeling-defining-relationships.md
   - name: Create a measure
     href: create-measure.md
