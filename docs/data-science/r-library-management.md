@@ -65,7 +65,7 @@ Install and manage your custom R packages, that is,_.tar.gz_ in the **Custom lib
 
 * **Review and apply changes**: Go to the **Pending changes** panel to review the changes you made for the updates of custom libraries and apply these changes to your [[!INCLUDE [product-name](../includes/product-name.md)]] Spark environment of the workspace or Notebook.
 
-## Session-level scoped R packages
+## Session-level R libraries
 
 When doing interactive data analysis or machine learning, you might try newer packages or you might need packages that are currently unavailable on your workspace. Instead of updating the workspace settings, you can use session-scoped packages to add, manage, and update session dependencies.
 
