@@ -7,7 +7,7 @@ ms.topic: concept
 ms.date: 04/09/2023
 ---
 
-# Endorsement - Promoting and certifying Power BI content
+# Endorsement - Promoting and certifying Fabric content
 
 ## Endorsement overview
 
