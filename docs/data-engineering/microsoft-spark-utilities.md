@@ -1,6 +1,6 @@
 ---
-title: Microsoft Apache Spark utilities
-description: Learn about the MSSparkUtils package.
+title: Apache Spark utilities for file management tasks
+description: Use Microsoft Spark Utilities, a built-in package, to work with file systems, get environment variables, chain notebooks together, and work with secrets.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/24/2023
 ---
 
-# Advanced capabilities: Microsoft Apache Spark utilities
+# Use the Microsoft Apache Spark utilities for common file management tasks
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -273,7 +273,7 @@ mssparkutils.fs.mount(
 
 ### How to mount a lakehouse
 
-Here's the sample code of mounting a Lakehouse to */test*.
+Here's the sample code of mounting a lakehouse to */test*.
 
 ```python
 from notebookutils import mssparkutils 

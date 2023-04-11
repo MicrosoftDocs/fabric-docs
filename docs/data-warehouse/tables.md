@@ -98,11 +98,11 @@ If data is coming from multiple data stores, you can port the data into the data
 
 ## Known limitations
 
-1. At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
+- At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
 
-1. You can't query tables with renamed columns.
+- You can't query tables with renamed columns.
 
-1. You can't load case sensitive tables to data warehouse (for example, "Cat", "cat", and "CAT" are all read as the same table name by SQL). Duplicate table names can cause the data warehouse to fail. Use unique table and file names for all items in a warehouse.
+- You can't load case sensitive tables to data warehouse (for example, "Cat", "cat", and "CAT" are all read as the same table name by SQL). Duplicate table names can cause the data warehouse to fail. Use unique table and file names for all items in a warehouse.
 
 
 ### Unsupported table features

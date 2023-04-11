@@ -1,6 +1,6 @@
 ---
 title: Apache Spark monitoring overview
-description: Learn about the components of Apache Spark monitoring.
+description: Spark monitoring helps you monitor the status of applications in progress, browse past Spark activities, analyze and optimizing performance, and troubleshoot.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
@@ -9,7 +9,7 @@ ms.date: 02/24/2023
 ms.search.form: spark_job_definition
 ---
 
-# Apache Spark monitoring overview
+# Microsoft Fabric Apache Spark monitoring overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

@@ -1,6 +1,6 @@
 ---
 title: Notebook visualization
-description: Learn about data visualization options in notebooks.
+description: With Apache Spark in Fabric, you have various built-in options for visualizing your data, including notebook charts and access to popular open-source libraries.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/24/2023
 ---
 
-# Notebook visualization
+# Visualize notebooks in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -279,4 +279,4 @@ df
 
 ## Next steps
 
-- [Use a notebook with Lakehouse to explore your data](lakehouse-notebook-explore.md)
+- [Use a notebook with lakehouse to explore your data](lakehouse-notebook-explore.md)
