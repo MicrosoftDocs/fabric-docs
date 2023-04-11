@@ -55,7 +55,7 @@ In the [!INCLUDE [product-name](../includes/product-name.md)] portal, the [!INCL
 
 ## Customization of schema
 
-The [!INCLUDE [fabric-se](includes/fabric-se.md)] manages the automatically generated tables so the workspace users cannot modify them. The workspace users can enrich the database model by adding their own SQL schemas, views, procedures, and other database objects.
+The [!INCLUDE [fabric-se](includes/fabric-se.md)] manages the automatically generated tables so the workspace users cann't modify them. The workspace users can enrich the database model by adding their own SQL schemas, views, procedures, and other database objects.
 The tools that are accessing lake data can directly query the automatically generated tables or the views created on top of these tables.
 
 ## Datasets
