@@ -1,11 +1,11 @@
 ---
 title: Primary, foreign, and unique keys
 description: Table constraints support using Synapse Data Warehouse in Microsoft Fabric
-ms.reviewer: wiassaf
-ms.author: kecona
 author: KevinConanMSFT
+ms.author: kecona
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/31/2023
 ---
 
 # Primary keys, foreign keys, and unique keys in Synapse Data Warehouse in Microsoft Fabric
