@@ -1,6 +1,6 @@
 ---
 title: How to use the end-to-end AI samples
-description: Learn how to use the end-to-end AI samples.
+description: Understand the various capabilities the DS workload has to offer and examples of how ML models can address your common business problems.
 ms.reviewer: lagayhar
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
-# How-to use end-to-end AI samples
+# How-to use end-to-end AI samples in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

@@ -1,6 +1,6 @@
 ---
-title: Train and evaluate time series forecasting model
-description: AI sample for training and evaluating a time series forecasting model.
+title: Train and evaluate a time series forecasting model
+description: This is an AI sample for training and evaluating a time series forecasting model; we develop a program to forecast time series data that has seasonal cycles.
 ms.reviewer: ssalgado
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 02/10/2023
 ---
 
-# Training and evaluating time series forecasting model
+# Training and evaluating a time series forecasting model in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

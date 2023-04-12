@@ -1,6 +1,6 @@
 ---
 title: SemPy 101
-description: Learn the basics of how SemPy works and is organized.
+description: Learn about SemPy’s organization and how it works with tabular data. Learn how to get started using SemPy and how to migrate data from Pandas.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 02/10/2023
 ---
 
-# SemPy "101"
+# SemPy in Microsoft Fabric 101
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
