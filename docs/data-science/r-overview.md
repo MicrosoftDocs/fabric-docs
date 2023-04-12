@@ -30,7 +30,7 @@ In addition, you can use multiple languages in one notebook by specifying the la
 # Enter your R code here
 ```
 
-To learn more about notebooks within [!INCLUDE [product-name](../includes/product-name.md)] Analytics, see [How to use [!INCLUDE [product-name](../includes/product-name.md) notebooks](../data-engineering/how-to-use-notebook.md).
+To learn more about notebooks within [!INCLUDE [product-name](../includes/product-name.md)] Analytics, see [How to use notebooks](../data-engineering/how-to-use-notebook.md).
 
 ## Install packages
 
