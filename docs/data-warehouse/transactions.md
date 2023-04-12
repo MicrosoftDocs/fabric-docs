@@ -1,11 +1,11 @@
 ---
 title: Transactions for inserting and modifying data in Synapse Data Warehouse tables in Microsoft Fabric
 description: Learn how to use transactions and how to insert and modify data in Synapse Data Warehouse tables in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: kecona
 author: KevinConanMSFT
+ms.author: kecona
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 04/10/2023
 ---
 
 # Transactions in Synapse Data Warehouse tables in Microsoft Fabric

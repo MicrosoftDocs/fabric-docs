@@ -1,15 +1,15 @@
 ---
-title: Ingest data into your warehouse using the COPY command
-description: Follow steps to ingest data using the COPY command.
-ms.reviewer: wiassaf
-ms.author: procha
+title: Ingest data into your Synapse Data Warehouse using the COPY command
+description: Follow steps to ingest data into a Synapse Data Warehouse using the COPY command in Microsoft Fabric.
 author: periclesrocha
+ms.author: procha
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 04/6/2023
 ms.search.form: Ingesting data
 ---
 
-# Ingest data into your warehouse using the COPY command
+# Ingest data into your Synapse Data Warehouse using the COPY command
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -79,6 +79,7 @@ FROM 'https://mystorageaccountxxx.blob.core.windows.net/private/mydirectorywithf
 ```
 
 ## C. Load with a column list with default values authenticating via Storage Account Key
+
 ```sql
 --Note when specifying the column list, input field numbers start from 1
 COPY INTO dbo.test_1 (Column_one default 'myStringDefault' 1, Column_two default 1 3)
@@ -97,6 +98,7 @@ WITH (
 ```
 
 ## D. Specifying a maximum number of rows to reject before the operation is canceled: 
+
 ```sql
 --Note when specifying the column list, input field numbers start from 1
 COPY INTO dbo.Region (Column_one default 'myStringDefault' 1, Column_two default 1 3)
@@ -114,7 +116,8 @@ WITH (
 
 ## Known limitations
 
-- The following arguments are not currently available for the COPY statement on [!INCLUDE [product-name](../includes/product-name.md)] warehouse:
+- The following arguments are not currently available for the COPY statement on [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]:
+
 ```sql
 [,DATEFORMAT = 'date_format']
 [,IDENTITY_INSERT = {'ON' | 'OFF'}]
@@ -128,3 +131,5 @@ WITH (
 ## Next steps
 
 - [Ingest data into your warehouse using Data pipelines](ingest-data-pipelines.md)
+- [Tables in Fabric data warehousing](tables.md)
+- [Ingesting data into the Synapse Data Warehouse](ingest-data.md)

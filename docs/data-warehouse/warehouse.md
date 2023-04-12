@@ -1,15 +1,17 @@
 ---
 title: Synapse Data Warehouse in Microsoft Fabric
 description: Learn more about Synapse Data Warehouse in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: cynotebo
 author: cynotebo
+ms.author: cynotebo
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 04/05/2023
 ms.search.form: Warehouse overview, Warehouse in workspace overview
 ---
 
 # Synapse Data Warehouse in Microsoft Fabric
+
+**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
