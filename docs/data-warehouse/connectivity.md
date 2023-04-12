@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: salilkanade
 author: salilkanade
 ms.topic: how-to
-ms.date: 03/24/2023
+ms.date: 04/12/2023
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
@@ -15,7 +15,7 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article provides a how-to on connecting to your SQL Endpoint to data warehouse using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
+This article provides a how-to on connecting to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
 
 To get started, you must complete the following prerequisites:
 
@@ -26,7 +26,7 @@ To get started, you must complete the following prerequisites:
 
 The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to SSMS.
 
-### Get end-point
+### Get endpoint
 
 To retrieve the connection string, follow these steps:
 
