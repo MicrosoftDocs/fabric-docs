@@ -48,13 +48,19 @@ To manually update the statistics object `DimCustomerFullScan`, perhaps after a 
 UPDATE STATISTICS DimCustomerFullScan (CustomerKey) WITH FULLSCAN;  
 ```
 
-To show information about the statistics object, including a histogram:
+To show information about the statistics object:
+
+```sql
+DBCC SHOW_STATISTICS ("dbo.DimCustomer", "DimCustomerFullScan");
+```
+
+To show only information about the histogram of the statistics object:
 
 ```sql
 DBCC SHOW_STATISTICS ("dbo.DimCustomer", "DimCustomerFullScan") WITH HISTOGRAM;
 ```
 
-To manually drop the statistics object `DimCustomerFullScan`, perhaps after modifications to the table or queries require different statistics:
+To manually drop the statistics object `DimCustomerFullScan`:
 
 ```sql
 DROP STATISTICS dbo.DimCustomer.DimCustomerFullScan;
