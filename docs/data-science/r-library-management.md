@@ -48,7 +48,7 @@ Manage your custom libraries at the workspace-level in workspace settings. Curre
 1. Select your workspace.
 1. Select **Workspace settings** at the top of the page.
 
-    :::image type="content" source="media/r-library/management/workspace-settings.png" alt-text="Screenshot shows the location of Workspace settings.":::
+    :::image type="content" source="media/r-library-management/workspace-settings.png" alt-text="Screenshot shows the location of Workspace settings.":::
 
 1. Select **Data Engineering/Science** → **Library management**.
 1. Select the tab for **Custom libraries**.
