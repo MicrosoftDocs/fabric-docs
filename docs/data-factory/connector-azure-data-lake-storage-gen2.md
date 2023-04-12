@@ -4,7 +4,7 @@ description: This article provides information about how to do create an Azure D
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 12/26/2022
+ms.date: 4/12/2023
 ms.custom: template-how-to
 ---
 
@@ -22,11 +22,10 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Key| √| √|
-|OAuth2| √||
-|Shared Access Signature (SAS)| √| √|
+|Account key| √| √|
+|Organizational account| √| √|
 |Service Principal|√||
-|Organizational Account| | √|
+|Shared Access Signature (SAS)| √| √|
 
 ## Prerequisites
 
