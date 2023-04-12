@@ -1,11 +1,11 @@
 ---
 title: Default Power BI datasets in Microsoft Fabric
 description: Learn more about default Power BI datasets in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: chweb
 author: chuckles22
+ms.author: chweb
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 04/05/2023
 ms.search.form: Default dataset overview
 ---
 
@@ -53,7 +53,7 @@ The default layout for BI enabled tables persists in the user session and is gen
 
 This layout isn't currently saved past the user's session.
 
-## Limitations and 
+## Limitations
 
 Default Power BI datasets follow the current limitations for datasets in Power BI. Learn more:
 

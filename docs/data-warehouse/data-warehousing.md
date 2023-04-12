@@ -1,11 +1,11 @@
 ---
 title: What is Data warehousing in Microsoft Fabric?
 description: Learn more about the data warehousing experience.
-ms.reviewer: wiassaf
-ms.author: cynotebo
 author: cynotebo
+ms.author: cynotebo
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: overview
-ms.date: 04/03/2023
 ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspace overview
 ---
 

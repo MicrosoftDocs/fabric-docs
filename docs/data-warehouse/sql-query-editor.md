@@ -1,11 +1,11 @@
 ---
 title: Query using the SQL Query editor
 description: Learn how to use the SQL Query editor.
-ms.reviewer: wiassaf
-ms.author: salilkanade
 author: salilkanade
+ms.author: salilkanade
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/15/2023
 ms.search.form: Query Editor
 ---
 

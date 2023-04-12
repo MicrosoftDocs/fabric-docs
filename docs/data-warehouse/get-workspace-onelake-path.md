@@ -1,11 +1,11 @@
 ---
 title: Get Workspace and OneLake path
 description: Follow steps to get the workspace and OneLake path in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: prlangad
 author: prlangad
-ms.topic: how-to
+ms.author: prlangad
+ms.reviewer: wiassaf
 ms.date: 04/12/2023
+ms.topic: how-to
 ---
 
 # Get workspace and OneLake path

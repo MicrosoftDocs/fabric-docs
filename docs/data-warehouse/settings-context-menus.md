@@ -1,11 +1,11 @@
 ---
 title: Warehouse settings and context menus
 description: Learn about context menus and settings in the warehouse experience.
-ms.reviewer: wiassaf
-ms.author: prlangad
 author: prlangad
-ms.topic: conceptual
+ms.author: prlangad
+ms.reviewer: wiassaf
 ms.date: 04/12/2023
+ms.topic: conceptual
 ---
 
 # Warehouse settings and context menus

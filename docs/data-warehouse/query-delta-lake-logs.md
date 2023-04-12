@@ -1,11 +1,11 @@
 ---
 title: Delta Lake logs in Synapse Data Warehouse in Microsoft Fabric
 description: Learn how Synapse Data Warehouse in Microsoft Fabric publishes Delta Lake logs
-ms.reviewer: wiassaf
-ms.author: kecona
 author: KevinConanMSFT
-ms.topic: conceptual
+ms.author: kecona
+ms.reviewer: wiassaf
 ms.date: 04/12/2023
+ms.topic: conceptual
 ---
 
 # Delta Lake logs in Synapse Data Warehouse in Microsoft Fabric 

@@ -1,11 +1,11 @@
 ---
 title: Hide elements from downstream reporting
 description: Follow steps to hide warehouse elements from downstream reporting in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: salilkanade
 author: salilkanade
+ms.author: salilkanade
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/17/2023
 ---
 
 # Hide elements from downstream reporting in Microsoft Fabric
@@ -22,7 +22,7 @@ You can hide elements of your warehouse from downstream reporting by selecting *
 
 Select **Hide** in **Report view** from the menu that appears to hide the item from downstream reporting.
 
-:::image type="content" source="media\hide-elements-downstream-reporting\hide-report-view-menu.png" alt-text="Screenshot showing where to find the hide option in the right click menu." lightbox="media\hide-elements-downstream-reporting\hide-report-view-menu.png":::
+:::image type="content" source="media\hide-elements-downstream-reporting\hide-report-view-menu.png" alt-text="Screenshot showing where to find the hide option in the context menu." lightbox="media\hide-elements-downstream-reporting\hide-report-view-menu.png":::
 
 You can also hide the entire table and individual columns by using the **Model view** canvas options, as shown in the following image.
 
@@ -30,7 +30,7 @@ You can also hide the entire table and individual columns by using the **Model v
 
 ## Next steps
 
- - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
- - [Define relationships in data models](data-modeling-defining-relationships.md)
- - [Create reports](create-reports.md)
- - [Create reports in the Power BI service](reports-power-bi-service.md)
+- [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
+- [Define relationships in data models](data-modeling-defining-relationships.md)
+- [Create reports](create-reports.md)
+- [Create reports in the Power BI service](reports-power-bi-service.md)

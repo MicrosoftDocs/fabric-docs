@@ -1,15 +1,15 @@
 ---
-title: Ingesting data into the Synapse Data Warehouse 
+title: Ingest data into the Synapse Data Warehouse
 description: Learn about the features that allow you to ingest data into your Synapse Data Warehouse in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: procha
 author: periclesrocha
+ms.author: procha
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 04/11/2023
 ms.search.form: Ingesting data
 ---
 
-# Ingesting data into the Synapse Data Warehouse
+# Ingest data into the Synapse Data Warehouse
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 

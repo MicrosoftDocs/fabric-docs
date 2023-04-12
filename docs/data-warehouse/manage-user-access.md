@@ -1,11 +1,11 @@
 ---
 title: Manage user access to data warehousing in Microsoft Fabric
 description: Follow steps to manage user access to data warehousing within a workspace in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: kedodd
 author: kedodd
+ms.author: kedodd
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: quickstart
-ms.date: 03/15/2023
 ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 ---
 

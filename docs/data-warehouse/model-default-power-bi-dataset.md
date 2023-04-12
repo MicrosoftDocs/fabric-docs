@@ -1,11 +1,11 @@
 ---
 title: Data modeling in the default Power BI dataset in Microsoft Fabric
 description: Learn how to model your data in the default Power BI dataset in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: salilkanade
 author: salilkanade
+ms.author: salilkanade
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 04/11/2023
 ms.search.form: Model view
 ---
 

@@ -1,11 +1,11 @@
 ---
 title: Ingest data into your Synapse Data Warehouse using data pipelines
 description: Follow steps to ingest data into a Synapse Data Warehouse with data pipelines in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: procha
 author: periclesrocha
+ms.author: procha
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/15/2023
 ms.search.form: Ingesting data
 ---
 

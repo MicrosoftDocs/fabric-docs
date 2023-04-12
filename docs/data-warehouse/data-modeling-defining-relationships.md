@@ -1,11 +1,11 @@
 ---
 title: Define relationships in data models for data warehousing in Microsoft Fabric
 description: Learn how to define physical and logical relationships in your data models for data warehousing in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: salilkanade
 author: salilkanade
+ms.author: salilkanade
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 04/11/2023
 ms.search.form: Model view
 ---
 
@@ -45,7 +45,7 @@ Modeling the warehouse is possible by setting primary and foreign key constraint
    1. Set the physical relationships - primary and foreign key constraints in the database
    1. Set the logical relationships - primary and foreign key constraints in the default Power BI dataset
 
-### Editing relationships using different methods
+### Edit relationships using different methods
 
 Using drag and drop and the associated **Edit relationships dialog** is a more guided experience for editing relationships in Power BI.
 
