@@ -4,7 +4,7 @@ description: This article details how to use the Azure SQL database connector fo
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 4/6/2023
+ms.date: 4/12/2023
 ms.custom: template-how-to 
 ---
 
@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-You can connect to Azure SQL databases in Dataflows Gen2 using the Azure SQL database connector provided by Data Factory in Microsoft Fabric.
+You can connect to Azure SQL databases in Dataflow Gen2 using the Azure SQL database connector provided by Data Factory in Microsoft Fabric.
 
 ## Connect to an Azure SQL database
 

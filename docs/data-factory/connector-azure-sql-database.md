@@ -4,7 +4,7 @@ description: This article provides information about how to How to create Azure 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 3/6/2023
+ms.date: 3/12/2023
 ms.custom: template-how-to
 ---
 
@@ -23,10 +23,8 @@ The Azure SQL Database connector supports the following authentication types for
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Basic | √| √|
-|OAuth2| √||
-|Organizational account| | √|
+|Organizational account| √| √|
 |Service Principal|√||
-|Windows| | √|
 
 >[!Note]
 >For the Azure SQL database connection of Dataflow Gen2, go to [Azure SQL database connector for dataflows](connector-azure-sql-database-dataflow.md).
