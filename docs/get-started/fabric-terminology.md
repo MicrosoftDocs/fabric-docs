@@ -22,8 +22,6 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Item:** An item a set of capabilities within an experience. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
 
-- **Shortcut:** Shortcuts are embedded references within OneLake that point to other file store locations. They provide a way to connect to existing data without having to directly copy it. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
-
 - **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with an Azure Active Directory. For more information, see [Placeholder](../placeholder.md).
 
 - **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that leverages capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, datasets, etc. For more information, see [Placeholder](../placeholder.md).
@@ -71,6 +69,10 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 - **KQL database:** The KQL database is the representation of a database holding data in a format to execute a KQL query against it. For more information, see [Query a KQL database](../real-time-analytics/jupyter-notebook.md).
 
 - **KQL queryset:** The KQL queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL queryset](../real-time-analytics/kusto-query-set.md)
+
+## OneLake
+
+- **Shortcut:** Shortcuts are embedded references within OneLake that point to other file store locations. They provide a way to connect to existing data without having to directly copy it. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
 ## Next steps
 
