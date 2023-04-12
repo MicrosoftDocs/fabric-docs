@@ -3370,4 +3370,5 @@ And returns this result: `"Paris"`
 > One can add comments to data flow expressions, but not in pipeline expressions.
 
 ## Next steps
-For a list of system variables you can use in expressions, see [System variables](system-variables.md).
+
+For instructions on general parameter usage, refer to [Parameters for Data Factory in Fabric](parameters.md)
