@@ -28,4 +28,7 @@ You can also hide the entire table and individual columns by using the **Model v
 
 ## Next steps
 
- - [Data modeling and defining relationships](data-modeling-defining-relationships.md)
+ - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
+ - [Define relationships in data models](data-modeling-defining-relationships.md)
+ - [Create reports](create-reports.md)
+ - [Create reports in the Power BI service](reports-power-bi-service.md)
