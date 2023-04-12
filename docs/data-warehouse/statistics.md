@@ -35,35 +35,35 @@ The traditional option of maintaining statistics health is available in [!INCLUD
 
 ### Examples of manual statistics maintenance
 
-To create statistics on the `dbo.DimCustomer` table, based on all the rows in a column:
+To create statistics on the `dbo.DimCustomer` table, based on all the rows in a column `CustomerKey`:
 
 ```sql
-CREATE STATISTICS DimCustomerFullScan
+CREATE STATISTICS DimCustomer_CustomerKey_FullScan
 ON dbo.DimCustomer (CustomerKey) WITH FULLSCAN;
 ```
 
-To manually update the statistics object `DimCustomerFullScan`, perhaps after a large data update:
+To manually update the statistics object `DimCustomer_CustomerKey_FullScan`, perhaps after a large data update:
 
 ```sql
-UPDATE STATISTICS DimCustomerFullScan (CustomerKey) WITH FULLSCAN;  
+UPDATE STATISTICS DimCustomer_CustomerKey_FullScan (CustomerKey) WITH FULLSCAN;  
 ```
 
 To show information about the statistics object:
 
 ```sql
-DBCC SHOW_STATISTICS ("dbo.DimCustomer", "DimCustomerFullScan");
+DBCC SHOW_STATISTICS ("dbo.DimCustomer", "DimCustomer_CustomerKey_FullScan");
 ```
 
 To show only information about the histogram of the statistics object:
 
 ```sql
-DBCC SHOW_STATISTICS ("dbo.DimCustomer", "DimCustomerFullScan") WITH HISTOGRAM;
+DBCC SHOW_STATISTICS ("dbo.DimCustomer", "DimCustomer_CustomerKey_FullScan") WITH HISTOGRAM;
 ```
 
-To manually drop the statistics object `DimCustomerFullScan`:
+To manually drop the statistics object `DimCustomer_CustomerKey_FullScan`:
 
 ```sql
-DROP STATISTICS dbo.DimCustomer.DimCustomerFullScan;
+DROP STATISTICS dbo.DimCustomer.DimCustomer_CustomerKey_FullScan;
 ```
 
 The following T-SQL objects can also be used to check both manually created and automatically created statistics in [!INCLUDE [product-name](../includes/product-name.md)]:
