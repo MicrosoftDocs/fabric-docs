@@ -49,9 +49,24 @@ Expressions can also appear inside strings, using a feature called *string inter
 |"\@concat('Answer is: ', string(pipeline().parameters.myNumber))"| Returns the string `Answer is: 42`|  
 |"Answer is: \@\@{pipeline().parameters.myNumber}"| Returns the string `Answer is: @{pipeline().parameters.myNumber}`.|  
 
-## Examples of using parameters in expressions 
+## Examples of using parameters in expressions
+
+### Creating and using parameters
+
+To create parameters, select the background of the pipeline editor canvas, and then the **Parameters** tab of the properties window at the bottom.  Select the **+ New** button to add a new parameter to the pipeline, give it a name, a data type, and a default value:
+
+:::image type="content" source="media/parameters/add-parameter.png" alt-text="Screenshot showing the Parameters editor on the properties pages for a pipeline.":::
+
+You can then use the parameter anywhere in your pipeline where dynamic content is supported. In this example, the parameter is used to dynamically provide the name of a Lakehouse data store on the **Source** tab of a copy activity's property pages.
+
+:::image type="content" source="media/parameters/use-dynamic-content.png" alt-text="Screenshot showing the Source tab of a copy activity's property pages, highlighting the Add dynamic content option.":::
+
+The **Add dynamic content** window is displayed, allowing you to specify any kind of dynamic content, including parameters, [system variables](expression-language.md#system-variables), [functions](expression-language.md#functions), or pipeline variables. In this example, the previously defined parameter is selected, and the dynamic content window is automatically populated with the correct expression to reference the parameter.
+
+:::image type="content" source="media/parameters/select-pipeline-parameter.png" alt-text="Screenshot showing the Add dynamic content window with a pipeline parameter selected.":::
 
 ### Complex expression example
+
 The below example shows a complex example that references a deep sub-field of activity output. To reference a pipeline parameter that evaluates to a sub-field, use [] syntax instead of dot(.) operator (as in case of subfield1 and subfield2)
 
 `@activity('*activityName*').output.*subfield1*.*subfield2*[pipeline().parameters.*subfield3*].*subfield4*`
@@ -66,7 +81,7 @@ The dynamic content editor converts the above content to the following expressio
 
 `MYDATA`
 
-## Calling functions within expressions 
+## Calling functions within expressions
 
 You can call functions within expressions. The following sections provide information about the functions that can be used in an expression.  
 

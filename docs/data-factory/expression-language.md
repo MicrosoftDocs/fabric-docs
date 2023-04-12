@@ -101,6 +101,17 @@ Expression functions use single quote for string value parameters. Use two singl
 
 `Baba's book store`
 
+### System variables
+
+These system variables can be referenced anywhere in a pipeline.
+
+| Variable Name | Description |
+| --- | --- |
+| @pipeline().DataFactory |Name of the data  or Synapse workspace the pipeline run is running in |
+| @pipeline().Pipeline |Name of the pipeline |
+| @pipeline().RunId |ID of the specific pipeline run |
+| @pipeline().GroupId | ID of the group to which pipeline run belongs. |
+
 ## Functions
 
 You can call functions within expressions. The following sections provide information about the functions that can be used in an expression.  
