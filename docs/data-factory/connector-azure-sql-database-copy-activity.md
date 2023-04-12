@@ -4,17 +4,17 @@ description: This article explains how to copy data using Azure SQL Database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 01/10/2023
+ms.date: 03/07/2023
 ms.custom: template-how-to 
 ---
 
 # How to configure Azure SQL Database in copy activity
 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure SQL Database.
-
-## Supported format
-
-Azure SQL Database supports the following file formats. 
 
 ## Supported configuration
 
@@ -28,7 +28,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 ### General
 
-For **General** tab configuration, go to General.
+Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
 ### Source
 
@@ -155,9 +155,9 @@ To learn more information about copy activity in Azure SQL Database, see the fol
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **Workspace** or **External**|Yes|type|
+|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
-|**Connection type** |Your connection type. Select **Azure SQL Database**.|< your connection type> |Yes|type|
+|**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|/|
 |**Table** | Your source data table. |< name of your destination table>|Yes |schema <br> table|
 |**Use query** |The custom SQL query to read data.|- None <br>- Query<br>- Stored procedure |No |<br><br>- sqlReaderQuery <br>- sqlReaderStoredProcedureName, storedProcedureParameters|
 |**Query timeout** |The timeout for query command execution, default is 120 minutes. |timespan |No |queryTimeout|
@@ -169,9 +169,9 @@ To learn more information about copy activity in Azure SQL Database, see the fol
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**Workspace** or **External** |Yes|type|
+|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to destination data store.|< your connection >|Yes|connection|
-|**Connection type** |Your connection type. Select **Azure SQL Database**.|< your connection type> |Yes|type|
+|**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|/|
 |**Table**|Your destination data table.| \<name of your destination table\> |Yes |schema <br> table|
 |**Write behavior** |Defines the write behavior when the source is files from a file-based data store.|- Insert<br>- Upsert<br>- Stored procedure|No |writeBehavior:<br> - insert<br>- upsert<br>- sqlWriterStoredProcedureName, sqlWriterTableType, storedProcedureParameters|
 |**Bulk insert table lock** |Use this to improve copy performance during bulk insert operation on table with no index from multiple clients.|Yes or No |No |sqlWriterUseTableLock:<br>true or false|

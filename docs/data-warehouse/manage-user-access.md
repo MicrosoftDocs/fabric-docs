@@ -6,13 +6,14 @@ ms.author: kedodd
 author: kedodd
 ms.topic: quickstart
 ms.date: 03/15/2023
+ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 ---
 
 # Manage user access
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-**Applies to:** Warehouse and SQL Endpoint
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Through the workspace, you can add members to, and remove them from, workspace roles.
 
@@ -48,11 +49,11 @@ Once you're assigned to a workspace role, you can connect to the warehouse (see 
 
    ```sql
    SELECT *
-   FROM sys.fn_my_permissions(NULL, “Database”)
+   FROM sys.fn_my_permissions(NULL, "Database")
    ```
 
    :::image type="content" source="media\manage-user-access\execute-view-permissions.png" alt-text="Screenshot showing where to execute the command to see permissions." lightbox="media\manage-user-access\execute-view-permissions.png":::
 
 ## Next steps
 
-- [Data modeling and defining relationships](data-modeling-defining-relationships.md)
+- [Security for data warehousing in Microsoft Fabric](security.md)

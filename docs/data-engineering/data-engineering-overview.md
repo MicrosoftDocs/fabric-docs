@@ -1,6 +1,6 @@
 ---
-title: Data Engineering overview
-description: Read an introduction to Data Engineering.
+title: What is Data engineering in Microsoft Fabric?
+description: Learn about Data engineering core concepts in Microsoft Fabric and the analytics functionality it offers. 
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
@@ -8,16 +8,15 @@ ms.topic: overview
 ms.date: 02/24/2023
 ---
 
-# Data engineering overview
+# What is Data engineering in Microsoft Fabric?
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Create a Lakehouse and operationalize your workflow to build, transform, and share your data estate.
+Create a lakehouse and operationalize your workflow to build, transform, and share your data estate.
 
 - Learn more about data engineering core concepts and items by reading these “Concept” sections in this document.
 - Follow step-by-step instructions to get started with the “HowTo” sections in this document.
 
 ## Next steps
 
-- [What is a Lakehouse?](lakehouse-overview.md)
+- [What is a lakehouse?](lakehouse-overview.md)

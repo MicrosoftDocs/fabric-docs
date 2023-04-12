@@ -3,20 +3,21 @@ title: Query using the Visual Query editor
 description: Learn how to use the Visual Query editor.
 ms.reviewer: wiassaf
 ms.author: salilkanade
-author: cynotebo
+author: salilkanade
 ms.topic: how-to
 ms.date: 03/15/2023
+ms.search.form: Query Editor
 ---
 
 # Query using the Visual Query editor
 
-**Applies to:** Warehouse and SQL Endpoint
-
-You can query the data in your warehouse with multiple tools, including the Visual query editor and the [SQL Query editor](sql-query-editor.md) among others. This article describes how to use the Visual Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Visual Query editor in the Azure portal
+You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the Visual query editor and the [SQL Query editor](sql-query-editor.md) among others. This article describes how to use the Visual Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+
+## Visual Query editor in the Fabric portal
 
 The Visual Query editor provides an easy visual interface to write queries against the data in your warehouse.
 
@@ -38,7 +39,7 @@ To create a query, drag and drop tables from the Object explorer on the left ont
 
 Once you drag one or more tables onto the canvas, you can use the visual experience to design your queries. The warehouse editor uses the similar Power Query diagram view experience to enable you to easily query and analyze your data. Learn more about [Power Query diagram view](/power-query/diagram-view).
 
-As you work on your visual query, the queries are automatically saved every few seconds. A “saving indicator” appears in your query tab at the bottom to indicate that your query is being saved.
+As you work on your visual query, the queries are automatically saved every few seconds. A "saving indicator" appears in your query tab at the bottom to indicate that your query is being saved.
 
 The following image shows a sample query created using the no-code Visual Query editor to retrieve the **Top customers by Orders**.
 
@@ -47,8 +48,10 @@ The following image shows a sample query created using the no-code Visual Query 
 ## Known limitations with Visual Query editor
 
 - You can only write DQL (not DDL or DML).
-- You can't currently open a visual query in Excel.
+- You can't currently open a visual query in Microsoft Excel.
 
 ## Next steps
 
+- [How-to: Query the Synapse Data Warehouse](query-warehouse.md)
 - [Query using the SQL Query editor](sql-query-editor.md)
+

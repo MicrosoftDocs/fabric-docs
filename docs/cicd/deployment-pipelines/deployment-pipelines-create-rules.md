@@ -1,6 +1,6 @@
 ---
-title: Create deployment rules Power BI Application lifecycle management (ALM)
-description: Learn how to create rules to simplify deploying content with the Power BI Application lifecycle management (ALM) tool
+title: Create deployment rules for Fabric's Application lifecycle management (ALM)
+description: Learn how to create rules to simplify deploying content with Fabric's Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
@@ -8,6 +8,7 @@ ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1
 ms.date: 12/31/2022
+ms.search.form: Deployment rules
 ---
 
 # Create deployment rules
@@ -16,7 +17,7 @@ When you're working in a deployment pipeline, different stages may have differen
 
 When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, if you want a dataset in a production stage to point to a production database instead of one in the test stage, you can define a rule for this. The rule is defined in the production stage, under the appropriate dataset. Once the rule is defined, content deployed from test to production, will inherit the value as defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
 
-You can configure data source rules and parameter rules. The following table lists the type of Power BI items you can configure rules for, and the type of rule you can configure for each one.
+You can configure data source rules and parameter rules. The following table lists the type of items you can configure rules for, and the type of rule you can configure for each one.
 
 ||Data source rule  |Parameter rule  |Details  |
 |---------|---------|---------|---------|
@@ -36,7 +37,7 @@ To create a deployment rule, follow the steps in this section. After you create 
 
     :::image type="content" source="media/deployment-pipelines-get-started/deployment-settings-screenshot.png" alt-text="A screenshot of the deployment rules button, located in the deployment rules.":::
 
-2. You can set rules to **dataflows**, **datasets**, **datamarts** and **paginated reports**. To find the Power BI item you want to set a rule for, use the search functionality or filter functionalities.
+2. You can set rules to **dataflows**, **datasets**, **datamarts** and **paginated reports**. To find the item you want to set a rule for, use the search functionality or filter functionalities.
 
     :::image type="content" source="media/deployment-pipelines-get-started/deployment-rules.png" alt-text="A screenshot of the deployment rules pane, showing that you can set rules for dataflows, datasets, datamarts and paginated reports.":::
 
@@ -58,7 +59,7 @@ To create a deployment rule, follow the steps in this section. After you create 
 
         >[!NOTE]
         >
-        >* *Data source rules* will be grayed out if you're not the owner of the Power BI item you're creating a rule for, or if your Power BI item doesn't contain any data sources.
+        >* *Data source rules* will be grayed out if you're not the owner of the item you're creating a rule for, or if your item doesn't contain any data sources.
         >* For *dataflows*, *datasets* and *paginated reports*, the data source list is taken from the source pipeline stage.
         >* You can’t use the same data source in more than one rule.
 

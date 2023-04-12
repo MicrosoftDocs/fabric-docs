@@ -1,18 +1,18 @@
 ### YamlMime:Landing
 
-title: Data Warehouse documentation # < 60 chars
-summary: summary # < 160 chars
+title: Data Warehousing in Microsoft Fabric documentation # < 60 chars
+summary: Learn more about the two Data Warehousing experiences in Microsoft Fabric # < 160 chars
 
 metadata:
-  title: title # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: description # Required; article description that is displayed in search results. < 160 chars.
+  title: Data Warehousing in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Data Warehousing using the SQL Endpoint and Synapse Data Warehouse in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
 #   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: githubauthor #Required; your GitHub user alias, with correct capitalization.
-  ms.author: msauthor #Required; microsoft alias of author; optional team alias.
-  ms.date: 01/27/2020 #Required; mm/dd/yyyy format.
+  author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
+  ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
+  ms.date: 04/05/2023 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -20,49 +20,108 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About Data Warehouse
+  - title: Data warehousing in Microsoft Fabric
     linkLists:
       - linkListType: overview
         links:
-          - text: What is [service]?
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: overview
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Overview
+            url: data-warehousing.md
+          - text: Synapse Data Warehouse
+            url: warehouse.md
+          - text: SQL Endpoint on Lakehouse
+            url: sql-endpoint.md
 
   # Card 
-  - title: Get started
+  - title: Get started with Data Warehouse
     linkLists:
       - linkListType: get-started
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: get-started
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Create a Synapse Data Warehouse
+            url: create-warehouse.md
+          - text: Create a table
+            url: create-table.md     
+          - text: Ingest data
+            url: ingest-data.md
+          - text: Query the warehouse
+            url: query-warehouse.md
+          - text: Create reports
+            url: create-reports.md            
 
   # Card 
-  - title: how-to-guide
+  - title: Get started with SQL Endpoint
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: What is a Lakehouse?
+            url: ../data-engineering/lakehouse-overview.md
+          - text: The SQL Endpoint on the Lakehouse
+            url: get-started-sql-endpoint.md
+          - text: Create a lakehouse with OneLake
+            url: ../onelake/create-lakehouse-onelake.md
+          - text: Understand default Power BI datasets
+            url: datasets.md
+          - text: Load data into the Lakehouse
+            url: ../data-engineering/load-data-lakehouse.md
+          - text: How to copy data using Copy activity in Data pipeline
+            url: ../data-factory/copy-data-activity.md
+          - text: How to move data into Lakehouse via Copy assistant
+            url: ../data-factory/move-data-lakehouse-copy-assistant.md
+  # Card 
+  - title: Security
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Data warehousing security
+            url: security.md
+          - text: Connectivity
+            url: connectivity.md    
+          - text: Workspace roles
+            url: workspace-roles.md
+          - text: Manage user access
+            url: manage-user-access.md   
+  # Card 
+  - title: Ingest data
+    linkLists:
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Ingest data guide
+            url: ingest-data.md
+          - text: Ingest data using the COPY command
+            url: ingest-data-copy-command.md
+          - text: Ingest data using pipelines
+            url: ingest-data-pipelines.md
+  # Card 
+  - title: Analytics
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Datasets
+            url: datasets.md            
+          - text: Model data in the default Power BI dataset
+            url: model-default-power-bi-dataset.md          
+          - text: Define relationships in data models
+            url: data-modeling-defining-relationships.md
+          - text: Create a measure
+            url: create-measure.md
+          - text: Reports in the Power BI service
+            url: reports-power-bi-service.md            
+          - text: Query using the SQL Query editor
+            url: sql-query-editor.md
+          - text: Query using SSMS
+            url: query-warehouse.md
+          - text: Query using visual query editor
+            url: visual-query-editor.md
+  # Card 
+  - title: Manage and Monitor
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Monitor 
+            url: monitor-using-dmv.md 
+  # Card 
+  - title: Best practices
+    linkLists:
+      - linkListType: architecture
+        links:
+          - text: Security
+            url: security.md

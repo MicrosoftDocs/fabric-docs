@@ -13,16 +13,18 @@ items:
     href: ../placeholder.md
 - name: Lakehouse
   items:
-  - name: What is a Lakehouse?
+  - name: What is a lakehouse?
     href: lakehouse-overview.md
-  - name: Get data into a Lakehouse
+  - name: Get data into a lakehouse
     href: load-data-lakehouse.md
-  - name: Navigate the Lakehouse explorer
+  - name: Navigate the lakehouse explorer
     href: navigate-lakehouse-explorer.md
-  - name: Create a Lakehouse
+  - name: Create a lakehouse
     href: create-lakehouse.md
 - name: Apache Spark
   items:
+  - name: Autotune Spark configuration
+    href: autotune.md
   - name: Spark job definition
     items:
     - name: What is a Spark job definition?
@@ -65,7 +67,7 @@ items:
     href: author-execute-notebook.md
   - name: Notebook visualization
     href: notebook-visualization.md
-  - name: Explore data in Lakehouse
+  - name: Explore data in lakehouse
     href: lakehouse-notebook-explore.md
-  - name: Load data in Lakehouse
+  - name: Load data in lakehouse
     href: lakehouse-notebook-load-data.md

@@ -1,7 +1,7 @@
 ---
 title: Train and evaluate a text classification model
 description: AI sample for training and evaluating a text classification model.
-ms.reviewer: mopeakande
+ms.reviewer: ssalgado
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
@@ -10,8 +10,7 @@ ms.date: 02/10/2023
 
 # Training and evaluating a text classification model
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this notebook, we'll demonstrate how to solve a text classification task with word2vec + linear-regression model on Spark.
 

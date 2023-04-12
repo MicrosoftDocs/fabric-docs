@@ -1,17 +1,17 @@
 ---
 title: Run an Apache Spark job definition
-description: Learn how to run an Apache Spark job definition in your workspace.
+description: Learn how to run or schedule a Spark job definition, and where to find the job definition status and details.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: how-to
 ms.date: 02/24/2023
+ms.search.form: spark_job_definition
 ---
 
-# Run an Apache Spark job definition
+# Schedule and run an Apache Spark job definition
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this tutorial, learn how to run a [!INCLUDE [product-name](../includes/product-name.md)] Spark job definition item and monitor the job.
 
@@ -37,7 +37,7 @@ There are two ways a user could run a Spark job definition:
   :::image type="content" source="media\run-spark-job-definition\schedule-spark-job-definition.png" alt-text="Screenshot where to select Schedule on the Settings tab." lightbox="media\run-spark-job-definition\schedule-spark-job-definition.png":::
 
 > [!IMPORTANT]
-> To run a Spark job definition, it must have the main definition file and the default Lakehouse context.
+> To run a Spark job definition, it must have the main definition file and the default lakehouse context.
 
 Once you've submitted the run, after three to five seconds, a new row appears under the **Runs** tab. The row shows details about your new run. The **Status** column shows the near real-time status of the job and the **Run Kind** column shows if the job is manual or scheduled.
 

@@ -11,8 +11,7 @@ ms.search.form: Predict
 
 # Model scoring with PREDICT
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] empowers users to operationalize machine learning models from the secure boundaries of a notebook by using a function called PREDICT. Users can get started directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook or from a given model item page.
 
@@ -71,14 +70,14 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
    test_spark = spark.createDataFrame(data=[(test.values.tolist(),)], schema=test.columns.to_list())
    ```
 
-3. **Create an MLflow Transformer to load the model for inferencing.** To create an MLflow Transformer object for generating predictions, we specify all the columns from the `test` data as model inputs, name the output column `predictions`, and provide the correct model name and version to use for generating predictions. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version with the appropriate ones for your model.
+3. **Create an `MLFlowTransformer` to load the model for inferencing.** To create an `MLFlowTransformer` object for generating predictions, we specify all the columns from the `test` data as model inputs, name the output column `predictions`, and provide the correct model name and version to use for generating predictions. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version with the appropriate ones for your model.
 
    ```Python
-   from synapse.ml.predict import MLflowTransformer
+   from synapse.ml.predict import MLFlowTransformer
 
    # You can substitute values below for your own input columns
    # output column name, model name, and model version
-   model = MLflowTransformer(
+   model = MLFlowTransformer(
        inputCols=test_spark.columns,
        outputCol='predictions',
        modelName='sample-sklearn',
