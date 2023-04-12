@@ -11,6 +11,8 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 # SQL Endpoint in Microsoft Fabric
 
+**Applies to:** [!INCLUDE[fabric-se](includes/applies-to-version/fabric-se.md)]
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] provides the SQL-based experience for every [Lakehouse](../data-engineering/lakehouse-overview.md) artifact in the workspace. This SQL-based experience is called the **[!INCLUDE [fabric-se](includes/fabric-se.md)]**. 

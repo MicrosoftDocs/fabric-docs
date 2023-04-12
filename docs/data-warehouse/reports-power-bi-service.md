@@ -10,6 +10,8 @@ ms.date: 03/15/2023
 
 # Create reports in the Power BI service in Microsoft Fabric
 
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article describes three different scenarios you can follow to create reports in the Power BI service.

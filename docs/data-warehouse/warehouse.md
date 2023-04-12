@@ -11,6 +11,8 @@ ms.search.form: Warehouse overview, Warehouse in workspace overview
 
 # Synapse Data Warehouse in Microsoft Fabric
 
+**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] functionality is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. 
