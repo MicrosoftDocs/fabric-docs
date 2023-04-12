@@ -27,15 +27,15 @@ Data pipelines offer an alternative to using the COPY command through a graphica
 
     :::image type="content" source="media\ingest-data-pipelines\start-building-data-pipeline.png" alt-text="Screenshot showing the three options to select for starting ingestion." lightbox="media\ingest-data-pipelines\start-building-data-pipeline.png":::
 
-Here's a brief description of these options:
-
-- **Add pipeline activity**: this option launches the pipeline editor, where you can find:
-  - All activities that can be used within the pipeline.
-  - The pipeline editor canvas, where activities appear when added to the pipeline.
-  - The pipeline configurations pane, including parameters, variables, general settings, and output.
-  - The pipeline properties pane, where the pipeline name, optional description, and annotations can be configured.
-- **Copy data**: this option launches a step-by-step wizard that helps you select a source, a destination, and configure data load options, such as the column mapping between source and destination. On completion, it creates a new pipeline activity with the copy data task already configured for you.
-- **Choose a task to start**: a set of predefined templates to help get you started with pipelines.
+    Here's a brief description of these options:
+    
+    - **Add pipeline activity**: this option launches the pipeline editor, where you can find:
+      - All activities that can be used within the pipeline.
+      - The pipeline editor canvas, where activities appear when added to the pipeline.
+      - The pipeline configurations pane, including parameters, variables, general settings, and output.
+      - The pipeline properties pane, where the pipeline name, optional description, and annotations can be configured.
+    - **Copy data**: this option launches a step-by-step wizard that helps you select a source, a destination, and configure data load options, such as the column mapping between source and destination. On completion, it creates a new pipeline activity with the copy data task already configured for you.
+    - **Choose a task to start**: a set of predefined templates to help get you started with pipelines.
 
 1. Once you finish preparing your pipeline, you need to validate it and run it. These options can be found on the Home tab of the pipeline editor:
 
