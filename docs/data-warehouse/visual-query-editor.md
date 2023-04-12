@@ -1,11 +1,11 @@
 ---
 title: Query using the Visual Query editor
 description: Learn how to use the Visual Query editor.
-ms.reviewer: wiassaf
-ms.author: salilkanade
 author: salilkanade
+ms.author: salilkanade
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/15/2023
 ms.search.form: Query Editor
 ---
 
@@ -54,4 +54,3 @@ The following image shows a sample query created using the no-code Visual Query 
 
 - [How-to: Query the Synapse Data Warehouse](query-warehouse.md)
 - [Query using the SQL Query editor](sql-query-editor.md)
-

@@ -1,14 +1,14 @@
 ---
-title: Create a measure
-description: Learn about measures and how to create them.
-ms.reviewer: wiassaf
-ms.author: chweb
+title: Create a measure in Power BI datasets in Microsoft Fabric
+description: Learn about measures and how to create them in Power BI datasets in Microsoft Fabric.
 author: chuckles22
+ms.author: chweb
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/15/2023
 ---
 
-# Create a measure
+# Create a measure in Power BI datasets in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -18,14 +18,16 @@ A [measure](/power-bi/transform-model/desktop-measures) is a collection of stand
 
 ## How to create a measure
 
-To create a measure, select the table in the **Table Explorer** and select the **New Measure** button in the ribbon, as shown in the following image.
+1. To create a measure, select the table in the **Table Explorer** and select the **New Measure** button in the ribbon, as shown in the following image.
 
-:::image type="content" source="media\create-measure\table-explorer-ribbon.png" alt-text="Screenshot showing the table explorer and where the new measure button appears on the ribbon." lightbox="media\create-measure\table-explorer-ribbon.png":::
+    :::image type="content" source="media\create-measure\table-explorer-ribbon.png" alt-text="Screenshot showing the table explorer and where the new measure button appears on the ribbon." lightbox="media\create-measure\table-explorer-ribbon.png":::
 
-Enter the measure into the formula bar and specify the table and the column to which it applies. The formula bar lets you enter your measure.
+1. Enter the measure into the formula bar and specify the table and the column to which it applies. The formula bar lets you enter your measure.
 
-You can expand the table to find the measure in the table.
+1. You can expand the table to find the measure in the table.
 
 ## Next steps
 
 - [Hide elements from downstream reporting](hide-elements-downstream-reporting.md)
+- [Data modeling in the default Power BI dataset in Microsoft Fabric](model-default-power-bi-dataset.md)
+- [Create reports in the Power BI service in Microsoft Fabric](reports-power-bi-service.md)

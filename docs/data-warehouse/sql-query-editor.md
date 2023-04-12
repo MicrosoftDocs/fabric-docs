@@ -1,21 +1,24 @@
 ---
 title: Query using the SQL Query editor
 description: Learn how to use the SQL Query editor.
-ms.reviewer: wiassaf
-ms.author: salilkanade
 author: salilkanade
+ms.author: salilkanade
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/15/2023
 ms.search.form: Query Editor
 ---
 
 # Query using the SQL Query editor
 
-You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the [Visual Query editor](visual-query-editor.md) and the SQL Query editor in the Fabric portal. This article describes how to use the SQL Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
+You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the [Visual Query editor](visual-query-editor.md) and the SQL Query editor in the Fabric portal. This article describes how to use the SQL Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+
 ## SQL Query editor in the Fabric portal
+
 The SQL Query editor provides a text editor to write queries using T-SQL. To access the built-in SQL query editor, select the **SQL query editor view** icon located at the bottom of the warehouse editor window.
 
 :::image type="content" source="media\sql-query-editor\sql-query-editor-icon.png" alt-text="Screenshot showing the SQL query editor view icon." lightbox="media\sql-query-editor\sql-query-editor-icon.png":::
@@ -32,9 +35,33 @@ As you work on your SQL query, the queries are automatically saved every few sec
 
 The SQL Query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing and validation. Once you've written the T-SQL query, select **Run** to execute the query. The **Results** preview is displayed in the **Results** section. The **Open in Excel** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to view the results in Excel.
 
+## Keyboard shortcuts
+
+Keyboard shortcuts provide a quick way to navigate and allow users to work more efficiently in SQL query editor. The table in this article lists all the shortcuts available in SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal:
+
+| **Function** | **Shortcut** |
+|---|---|
+| New SQL query | Ctrl + Q |
+| Close current tab | Ctrl + Shift + F4 |
+| Run SQL script | Ctrl + Enter, Shift +Enter |
+| Cancel running SQL script | Alt+Break |
+| Search string | Ctrl + F |
+| Replace string | Ctrl + H |
+| Undo | Ctrl + Z |
+| Redo | Ctrl + Y |
+| Go one word left | Ctrl + Left arrow key |
+| Go one word right*| Ctrl + Right arrow key |
+| Indent increase | Tab |
+| Indent decrease | Shift + Tab |
+| Comment | Ctrl + K, Ctrl + C |
+| Uncomment | Ctrl + K, Ctrl + U |
+| Move cursor up | ↑ |
+| Move cursor down | ↓ |
+|Select All | Ctrl + A |
+
 ## Known limitations with SQL Query editor
 
-Currently, you can only run read-only queries. To write statements to update data (DML) or modify schemas (DDL), [Query a warehouse using SSMS](query-warehouse.md).
+Currently, you can only run read-only queries. To write statements to update data (DML) or modify schemas (DDL), [Query the Synapse Data Warehouse using SSMS](query-warehouse.md).
 
 ## Next steps
 

@@ -1,28 +1,28 @@
 ---
 title: Statistics
 description: Learn how to use the statistics features.
-ms.reviewer: wiassaf
-ms.author: emtehran
 author: mstehrani
-ms.topic: conceptual
+ms.author: emtehran
+ms.reviewer: wiassaf
 ms.date: 04/12/2023
+ms.topic: conceptual
 ms.search.form: Optimization
 ---
 
-# Statistics
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+# Statistics in Fabric data warehousing
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-The [!INCLUDE [product-name](../includes/product-name.md)] warehouse uses a query engine to create an execution plan for a given SQL query. When you submit a query, the query optimizer tries to enumerate all possible plans and choose the most efficient candidate. To determine which plan would require the least overhead (I/O and memory), the engine needs to be able to evaluate the amount of work or rows that might be processed at each operator. Then, based on each plan's cost, it chooses the one with the least amount of estimated work. Statistics are objects that contain relevalnt information about your data, to allow query optimizer to estimate these costs.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
+The [!INCLUDE [product-name](../includes/product-name.md)] warehouse uses a query engine to create an execution plan for a given SQL query. When you submit a query, the query optimizer tries to enumerate all possible plans and choose the most efficient candidate. To determine which plan would require the least overhead (I/O and memory), the engine needs to be able to evaluate the amount of work or rows that might be processed at each operator. Then, based on each plan's cost, it chooses the one with the least amount of estimated work. Statistics are objects that contain relevant information about your data, to allow query optimizer to estimate these costs.
 
 ## How to leverage statistics
 
-To achieve optimal query performance, it is important to have accurate statistics. [!INCLUDE [product-name](../includes/product-name.md)] today supports the following paths to deliver this:
+To achieve optimal query performance, it is important to have accurate statistics. [!INCLUDE [product-name](../includes/product-name.md)] currently supports the following paths to provide relevant and up-to-date statistics:
 
 - User-defined statistics
-    - User issues DDL to create, update, and drop statistics as needed
+    - [User issues DDL](#manual-statistics-for-all-tables) to create, update, and drop statistics as needed
 - Automatic statistics
     - Engine automatically [creates statistics at querytime](#automatic-statistics-at-query)
 
@@ -108,7 +108,7 @@ In this case, you should expect that statistics for `COLUMN_NAME` to have been c
 ```sql
 select
     object_name(s.object_id) AS [object_name],
-	c.name AS [column_name],
+    c.name AS [column_name],
     s.name AS [stats_name],
     s.stats_id,
     STATS_DATE(s.object_id, s.stats_id) AS [stats_update_date], 
@@ -125,8 +125,8 @@ INNER JOIN sys.columns AS c
 ON sc.object_id = c.object_id 
 AND c.column_id = sc.column_id
 WHERE o.type = 'U' -- Only check for stats on user-tables
-	AND s.auto_created = 1
-	AND o.name = '<YOUR_TABLE_NAME>'
+    AND s.auto_created = 1
+    AND o.name = '<YOUR_TABLE_NAME>'
 ORDER BY object_name, column_name;
 ```
 

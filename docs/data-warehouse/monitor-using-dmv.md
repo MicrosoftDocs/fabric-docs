@@ -1,11 +1,11 @@
 ---
 title: Monitoring connections, sessions, and requests using DMVs
 description: Learn about monitoring with the available Dynamic Management Views.
-ms.reviewer: wiassaf
-ms.author: jacindaeng
 author: jacindaeng
+ms.author: jacindaeng
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 03/23/2023
 ms.search.form: Monitoring
 ---
 
@@ -15,7 +15,11 @@ ms.search.form: Monitoring
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-For the current version, there are three Dynamic Management Views (DMVs) provided for you to receive live SQL query lifecycle insights.
+You can use existing dynamic management views (DMVs) to monitor connection, session, and request status in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about the tools and methods of executing T-SQL queries, see [Query the Synapse Data Warehouse](query-warehouse.md).
+
+## How to monitor connections, sessions, and requests using query lifecycle DMVs
+
+For the current version, there are three dynamic management views (DMVs) provided for you to receive live SQL query lifecycle insights.
 
 - [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql)
     - Returns information about each connection established between the warehouse and the engine.
@@ -31,8 +35,6 @@ These three DMVs provide detailed insight on the following scenarios:
 - What's the ID of the connection to the data [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and the session that is running the request?
 - How many queries are actively running?
 - Which queries are long running?
-
-## How to monitor connections, sessions, and requests using Query Lifecycle DMVs
 
 In this tutorial, learn how to monitor your running SQL queries using dynamic management views (DMVs).
 
@@ -88,6 +90,13 @@ For example
 ```sql
 KILL 101
 ```
+
+## Limitations
+
+- When querying `sys.dm_exec_connections`, you may encounter the following error, even if you're an Admin of your workspace: `Error Message: The user doesn't have the external policy action 'Microsoft.Sql/Sqlservers/SystemViewsAndFunctions/ServerPerformanceState/Rows/Select' or permission 'VIEW SERVER PERFORMANCE STATE' to perform this action.`
+
+- The dynamic management view `sys.dm_exec_sessions` provides a limited view as not all active query results will display.
+
 
 ## Next steps
 
