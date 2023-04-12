@@ -38,7 +38,7 @@ To connect to Azure Data Lake Storage Gen2 data from a dataflow:
 
 1. Select the authentication type to use in **Authentication kind**, and then enter your credentials. More information: [Connections and authentication in Power Query Online](/power-query/connection-authentication-pqo)
 
-   :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/connect-data-source.png" alt-text="Screenshot of the connect to data source screen .":::
+   :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/connect-data-source.png" alt-text="Screenshot of the connect to data source screen.":::
 
 1. Select **Next**.
 
