@@ -78,7 +78,8 @@ display(faithfulDF_pq)
 
 ```R
 # read data in CSV using API path
-temp_csv_api<-'/lakehouse/default/Files/data/faithful.csv'
+# To find the path, navigate to the csv file, right click, and  Copy File API path.
+temp_csv_api<-'/lakehouse/default/Files/data/faithful.csv/part-00000-d8e09a34-bd63-41bd-8cf8-f4ed2ef90e6c-c000.csv'
 faithfulDF_API <- readr::read_csv(temp_csv_api)
 
 # display the content of the R data.frame
