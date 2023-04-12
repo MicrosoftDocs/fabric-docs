@@ -38,7 +38,7 @@ To connect to an Azure SQL database from a dataflow:
 
 1. If you're connecting to this database for the first time, select the authentication type to use in **Authentication kind**, and then enter your credentials. More information: [Connections and authentication in Power Query Online](/power-query/connection-authentication-pqo)
 
-   :::image type="content" source="./media/connector-azure-sql-database/connect-data-source.png" alt-text="Screenshot showing Connect data source where you enter your server name and your credentials." lightbox="./media/connector-azure-ql-database/connect-data-source.png":::
+   :::image type="content" source="./media/connector-azure-sql-database/connect-data-source.png" alt-text="Screenshot showing Connect data source where you enter your server name and your credentials." lightbox="./media/connector-azure-sql-database/connect-data-source.png":::
 
 1. Select **Next**.
 
@@ -54,4 +54,4 @@ For more advanced information about connecting to your data using the Azure SQL 
 
 [How to create an Azure SQL database connection](connector-azure-sql-database.md)
 
-[How to configure Azure SQL database in a copy activity](connector-azure-data-sql-database-copy-activity.md)
+[How to configure Azure SQL database in a copy activity](connector-azure-sql-database-copy-activity.md)
