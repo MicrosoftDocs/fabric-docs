@@ -1,6 +1,6 @@
 ---
 title: Notebook contextual monitoring and debugging
-description: Learn how to view Apache Spark job progress below the Notebook cell.
+description: Learn how to access the Spark UI and monitor detail page, and how to view job progress and Spark advisor info advice.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
