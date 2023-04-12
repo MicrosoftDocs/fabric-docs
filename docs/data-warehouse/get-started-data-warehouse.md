@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 04/05/2023
 ---
 
-# Get started with the Synapse Data Warehouse in Microsoft Fabric
+# Get started with a Synapse Data Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 

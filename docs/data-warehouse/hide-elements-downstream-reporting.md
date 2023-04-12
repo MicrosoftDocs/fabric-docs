@@ -1,6 +1,6 @@
 ---
 title: Hide elements from downstream reporting
-description: Follow steps to hide warehouse elements from downstream reporting.
+description: Follow steps to hide warehouse elements from downstream reporting in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: salilkanade
 author: salilkanade
@@ -8,17 +8,19 @@ ms.topic: how-to
 ms.date: 03/17/2023
 ---
 
-# Hide elements from downstream reporting
+# Hide elements from downstream reporting in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article reviews methods to hide elements from downstream reporting. You may want to do this to simplify the set of items available for reporting.
+This article reviews methods to hide elements in your data model from downstream reporting. You may want to do this to simplify the set of items available to end users for reporting.
 
 ## Options to hide elements
 
-You can hide elements of your warehouse from downstream reporting by selecting **Data view** and right-clicking on the column or table you want to hide. Then select **Hide** in **Report view** from the menu that appears to hide the item from downstream reporting.
+You can hide elements of your warehouse from downstream reporting by selecting **Data view** and right-clicking on the column or table you want to hide. 
+
+Select **Hide** in **Report view** from the menu that appears to hide the item from downstream reporting.
 
 :::image type="content" source="media\hide-elements-downstream-reporting\hide-report-view-menu.png" alt-text="Screenshot showing where to find the hide option in the right click menu." lightbox="media\hide-elements-downstream-reporting\hide-report-view-menu.png":::
 

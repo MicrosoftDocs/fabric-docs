@@ -1,6 +1,6 @@
 ---
-title: Manage user access
-description: Follow steps to manage user access within a workspace.
+title: Manage user access to data warehousing in Microsoft Fabric
+description: Follow steps to manage user access to data warehousing within a workspace in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: kedodd
 author: kedodd
@@ -9,13 +9,15 @@ ms.date: 03/15/2023
 ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 ---
 
-# Manage user access
+# Manage user access to data warehousing in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Through the workspace, you can add members to, and remove them from, workspace roles.
+This article provides a walkthrough of the steps to manage user access to data warehousing within a workspace in Microsoft Fabric.
+
+Through the workspace, you can add members to, and remove them from, [workspace roles](workspace-roles.md).
 
 ## Add users to workspace roles
 
@@ -57,3 +59,4 @@ Once you're assigned to a workspace role, you can connect to the warehouse (see 
 ## Next steps
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
+- [Workspace roles in Fabric data warehousing](workspace-roles.md)

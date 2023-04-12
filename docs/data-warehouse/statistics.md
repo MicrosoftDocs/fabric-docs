@@ -9,7 +9,7 @@ ms.date: 03/15/2023
 ms.search.form: Optimization
 ---
 
-# Statistics
+# Statistics in Fabric data warehousing
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

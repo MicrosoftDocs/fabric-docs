@@ -1,6 +1,6 @@
 ---
-title: Ingest data into your warehouse using the COPY command
-description: Follow steps to ingest data using the COPY command.
+title: Ingest data into your Synapse Data Warehouse using the COPY command
+description: Follow steps to ingest data into a Synapse Data Warehouse using the COPY command in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: procha
 author: periclesrocha
@@ -9,7 +9,7 @@ ms.date: 04/6/2023
 ms.search.form: Ingesting data
 ---
 
-# Ingest data into your warehouse using the COPY command
+# Ingest data into your Synapse Data Warehouse using the COPY command
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -128,3 +128,5 @@ WITH (
 ## Next steps
 
 - [Ingest data into your warehouse using Data pipelines](ingest-data-pipelines.md)
+- [Tables in Fabric data warehousing](tables.md)
+- [Ingesting data into the Synapse Data Warehouse](ingest-data.md)

@@ -1,6 +1,6 @@
 ---
-title: Ingesting data into the warehouse
-description: Learn about the features that allow you to ingest data into your warehouse.
+title: Ingesting data into the Synapse Data Warehouse 
+description: Learn about the features that allow you to ingest data into your Synapse Data Warehouse in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: procha
 author: periclesrocha

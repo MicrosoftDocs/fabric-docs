@@ -7,7 +7,7 @@ author: salilkanade
 ms.topic: how-to
 ms.date: 03/31/2023
 ---
-# Query the SQL Endpoint or Synapse Data Warehouse
+# Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 

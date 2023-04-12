@@ -1,6 +1,6 @@
 ---
-title: Create reports in the Power BI service
-description: Follow steps to create reports in the Power BI service.
+title: Create reports in the Power BI service in Microsoft Fabric
+description: Follow steps to create reports in the Power BI service in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: salilkanade
 author: salilkanade
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/15/2023
 ---
 
-# Create reports in the Power BI service
+# Create reports in the Power BI service in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

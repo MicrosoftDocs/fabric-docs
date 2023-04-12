@@ -1,6 +1,6 @@
 ---
-title: Data modeling in the default Power BI dataset
-description: Learn how to model your data in the default Power BI dataset.
+title: Data modeling in the default Power BI dataset in Microsoft Fabric
+description: Learn how to model your data in the default Power BI dataset in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: salilkanade
 author: salilkanade
@@ -9,7 +9,7 @@ ms.date: 04/11/2023
 ms.search.form: Model view
 ---
 
-# Data modeling in the default Power BI dataset
+# Data modeling in the default Power BI dataset in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -17,7 +17,7 @@ ms.search.form: Model view
 
 ## Access the default Power BI dataset
 
-To access default Power BI datasets, go to your workspace and find the dataset that matches the name of the warehouse.
+To access default Power BI datasets, go to your workspace, and find the dataset that matches the name of the desired Lakehouse. The default Power BI dataset follows the naming convention of the Lakehouse.
 
 :::image type="content" source="media\data-modeling-defining-relationships\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\data-modeling-defining-relationships\find-dataset.png":::
 

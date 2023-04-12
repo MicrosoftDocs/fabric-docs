@@ -1,6 +1,6 @@
 ---
-title: Connectivity
-description: Follow steps to connect SSMS to a warehouse in your workspace.
+title: Connectivity to data warehousing in Microsoft Fabric
+description: Follow steps to connect SSMS to data warehousing in your Microsoft Fabric workspace.
 ms.reviewer: wiassaf
 ms.author: salilkanade
 author: salilkanade
@@ -9,7 +9,7 @@ ms.date: 03/24/2023
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
-# Connectivity
+# Connectivity to data warehousing in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 

@@ -8,9 +8,9 @@ ms.topic: how-to
 ms.date: 03/29/2023
 ---
 
-# Tables in [!INCLUDE[fabricdw](includes/fabric-dw.md)]
+# Tables in Fabric data warehousing
 
-**Applies to:** [!INCLUDE[fabric-se](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
  

@@ -9,7 +9,7 @@ ms.date: 03/15/2023
 ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 ---
 
-# Workspace roles
+# Workspace roles in Fabric data warehousing
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
