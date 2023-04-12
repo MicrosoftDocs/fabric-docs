@@ -32,7 +32,7 @@ To connect to an Azure SQL database from a dataflow:
 
 1. In **Connect to data source**, under **Connection settings**, provide the name of the server and database.
 
-   You can also select and enter advanced options that will modify the connection query, such as a command timeout or a native query (SQL statement). More information: [Connect using advanced options](/power-query/connectors/azure-sql-database#connect-using-advanced-options)
+   You can also select and enter advanced options that modify the connection query, such as a command timeout or a native query (SQL statement). More information: [Connect using advanced options](/power-query/connectors/azure-sql-database#connect-using-advanced-options)
 
 1. If necessary, select the name of your on-premises data gateway.
 
