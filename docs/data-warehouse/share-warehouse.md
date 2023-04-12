@@ -4,7 +4,7 @@ description: Learn about sharing your warehouse.
 ms.reviewer: wiassaf
 ms.author: jacindaeng
 author: jacindaeng
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/11/2023
 ---
 
