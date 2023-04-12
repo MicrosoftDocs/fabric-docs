@@ -35,17 +35,17 @@ The traditional option of maintaining statistics health is available in [!INCLUD
 
 ### Examples of manual statistics maintenance
 
-To create statistics on the `dbo.DimCustomer` table, based on all the rows in two columns:
+To create statistics on the `dbo.DimCustomer` table, based on all the rows in a column:
 
 ```sql
 CREATE STATISTICS DimCustomerFullScan
-ON dbo.DimCustomer (CustomerKey, EmailAddress) WITH FULLSCAN;
+ON dbo.DimCustomer (CustomerKey) WITH FULLSCAN;
 ```
 
 To manually update the statistics object `DimCustomerFullScan`, perhaps after a large data update:
 
 ```sql
-UPDATE STATISTICS DimCustomerFullScan (CustomerKey, EmailAddress) WITH FULLSCAN;  
+UPDATE STATISTICS DimCustomerFullScan (CustomerKey) WITH FULLSCAN;  
 ```
 
 To show information about the statistics object, including a histogram
