@@ -44,7 +44,7 @@ productDirectory:
   summary: Learn about Microsoft Fabric, try and evaluate its features, analyze your data and run reports.
   items:
     # Card
-    - title: Data Factory
+    - title: OneLake
 
       imageSrc: ./media/onelake-icon.png
       links:
@@ -116,7 +116,6 @@ conceptualContent:
         text: See more
     # Card
     - title: Unify your data storage with OneLake
-      imageSrc: ./media/onelake-icon.png
       links:
         - url: onelake/onelake-overview.md
           itemType: concept
