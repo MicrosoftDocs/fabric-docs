@@ -55,6 +55,8 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
+      - name: Connect to Azure Data Lake Storage Gen2 in dataflows
+        href: connector-azure-data-lake-storage-gen2-dataflows.md
     - name: Azure SQL Database
       items:
       - name: Overview
