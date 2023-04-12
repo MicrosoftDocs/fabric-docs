@@ -110,5 +110,5 @@ Once deleted, you can't recover a deleted Lakehouse or the custom SQL objects in
 
 ## Next steps
 
-- [Default datasets](datasets.md)
+- [Default Power BI datasets](datasets.md)
 - [Lakehouse](../data-engineering/lakehouse-overview.md)
