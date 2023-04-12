@@ -5,7 +5,7 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: 
 ms.topic: how-to
-ms.date: 03/31/2023
+ms.date: 04/12/2023
 ---
 # Give users access to workspaces
 

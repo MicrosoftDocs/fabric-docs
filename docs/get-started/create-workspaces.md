@@ -5,7 +5,7 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas
 ms.topic: how-to
-ms.date: 04/04/2023
+ms.date: 04/12/2023
 ms.custom: 
 ---
 # Create a workspace
