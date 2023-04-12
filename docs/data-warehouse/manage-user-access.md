@@ -56,4 +56,4 @@ Once you're assigned to a workspace role, you can connect to the warehouse (see 
 
 ## Next steps
 
-- [Data modeling and defining relationships](data-modeling-defining-relationships.md)
+- [Security for data warehousing in Microsoft Fabric](security.md)

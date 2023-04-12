@@ -126,11 +126,11 @@
     - name: OData
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-odata-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-odata.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-odata-copy-activity.md 
       - name: OData in dataflows
         href: connector-odata-dataflows.md
     - name: SharePoint online list
