@@ -27,29 +27,69 @@ highlightedContent:
       itemType: overview
       url: placeholder.md
     # Card
-    - title: Understand Microsoft Fabric architecture
-      itemType: concept
-      url: placeholder.md
-    # Card
     - title: Try Microsoft Fabric for free
       itemType: get-started
       url: placeholder.md
     # Card
     - title: Get started with creating resources
-      itemType: tutorial
+      itemType: quickstart
       url: placeholder.md
     # Card
     - title: End-to-end tutorials
       itemType: tutorial
       url: placeholder.md
+
+productDirectory:
+  title: Explore Microsoft Fabric experiences
+  summary: Learn about Microsoft Fabric, try and evaluate its features, analyze your data and run reports.
+  items:
     # Card
-    - title: Choose a workload for your scenario
-      itemType: concept
-      url: placeholder.md
+    - title: Data Factory
+
+      imageSrc: ./media/onelake-icon.png
+      links:
+        - url: onelake/onelake-overview.md
+          text: What is OneLake?
+        - url: onelake/onelake-shortcuts.md
+          text: What are shortcuts?
+        - url: onelake/create-lakehouse-onelake.md
+          text: Create a lakehouse with OneLake
+
     # Card
-    - title: Join the Microsoft Fabric Community
-      itemType: reference
-      url: https://fabric.microsoft.com
+    - title: Data Factory
+
+      imageSrc: ./media/data-factory-icon.png
+      links:
+        - url: data-factory/data-factory-overview.md
+          text: What is Data Factory?
+        - url: data-factory/create-first-pipeline-with-sample-data.md
+          text: Create your first pipeline
+        - url: data-factory/create-first-dataflow-gen2.md
+          text: Create your first dataflow?
+
+    # Card
+    - title: Data Factory
+
+      imageSrc: ./media/onelake-icon.png
+      links:
+        - url: data-factory/data-factory-overview.md
+          text: What is Data Factory?
+        - url: data-factory/create-first-pipeline-with-sample-data.md
+          text: Create your first pipeline
+        - url: data-factory/create-first-dataflow-gen2.md
+          text: Create your first dataflow?
+
+    # Card
+    - title: Data Factory
+
+      imageSrc: ./media/onelake-icon.png
+      links:
+        - url: data-factory/data-factory-overview.md
+          text: What is Data Factory?
+        - url: data-factory/create-first-pipeline-with-sample-data.md
+          text: Create your first pipeline
+        - url: data-factory/create-first-dataflow-gen2.md
+          text: Create your first dataflow?
 
 # conceptualContent section (optional)
 conceptualContent:
@@ -76,6 +116,7 @@ conceptualContent:
         text: See more
     # Card
     - title: Unify your data storage with OneLake
+      imageSrc: ./media/onelake-icon.png
       links:
         - url: onelake/onelake-overview.md
           itemType: concept
