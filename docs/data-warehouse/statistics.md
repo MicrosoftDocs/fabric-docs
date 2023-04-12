@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: emtehran
 author: mstehrani
 ms.topic: conceptual
-ms.date: 04/10/2023
+ms.date: 04/12/2023
 ms.search.form: Optimization
 ---
 
@@ -79,6 +79,9 @@ DBCC SHOW_STATISTICS ( table_name , target )
     [ WITH { STAT_HEADER | DENSITY_VECTOR | HISTOGRAM } [ ,...n ] ]
 [;]
 ```
+
+- `target` can be either the name of a single-column histogram statistics or a column.
+- If a column name is used for `target`, this command will return distribution information only about the automatically generated histogram statistic. To view the information about a manually created histogram statistic, specify the statistics name as `target`.
 
 Likewise, the following T-SQL constructs exist and can be used to check both manually created and automatically created statistics in [!INCLUDE [product-name](../includes/product-name.md)]:
 
@@ -167,9 +170,10 @@ In [!INCLUDE [product-name](../includes/product-name.md)], there are multiple ty
 
 ## Known limitations
 
-- Multi-column statistics creation is not supported. Only single-column statistics can be manually created.
+- Only single-column histogram statistics can be manually created and modified.
+- Multi-column statistics creation is not supported.
 - Statistics (of any kind) are not currently supported for varchar(max).
-- Other statistics objects may show under [sys.stats](/sql/relational-databases/system-catalog-views/sys-stats-transact-sql?view=fabric&preserve-view=true) aside from manually created statistics and automatically created statistics. These are not automatically generated statistic objects and are not used for query optimization.
+- Other statistics objects may show under [sys.stats](/sql/relational-databases/system-catalog-views/sys-stats-transact-sql?view=fabric&preserve-view=true) aside from manually created statistics and automatically created statistics. These objects are not used for query optimization.
 
 ## Next steps
 
