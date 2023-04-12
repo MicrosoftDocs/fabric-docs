@@ -64,7 +64,3 @@ A user with ReadAllApacheSpark permissions can find the ABFSS path to the specif
 - Currently, when you share a Warehouse and choose “Read all SQL endpoint data”, the shared recipient can access the Warehouse editor in a read-only mode. These shared recipients can create queries but not save their queries at this point. (will be available in the future)
 - Shared recipients do not have permission to reshare the warehouse they are given permission to. 
 
-
-## Next steps
-
-- [Create a table with SSMS](create-table-sql-server-management-studio.md)
