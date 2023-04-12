@@ -28,62 +28,39 @@ To achieve optimal query performance, it is important to have accurate statistic
 
 ## Manual statistics for all tables
 
-The traditional option of maintaining statistics health is available in [!INCLUDE [product-name](../includes/product-name.md)]. Users can create, update, and drop histogram-based single-column statistics with [CREATE STATISTICS](/sql/t-sql/statements/create-statistics-transact-sql?view=fabric&preserve-view=true), [UPDATE STATISTICS](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true), and [DROP STATISTICS](/sql/t-sql/statements/drop-statistics-transact-sql?view=fabric&preserve-view=true), respectively. Users can also view the contents of histogram-based single-column statistics with [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?view=fabric&preserve-view=true). Currently, a limited version of these statements are supported, and are listed below:
+The traditional option of maintaining statistics health is available in [!INCLUDE [product-name](../includes/product-name.md)]. Users can create, update, and drop histogram-based single-column statistics with [CREATE STATISTICS](/sql/t-sql/statements/create-statistics-transact-sql?view=fabric&preserve-view=true), [UPDATE STATISTICS](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true), and [DROP STATISTICS](/sql/t-sql/statements/drop-statistics-transact-sql?view=fabric&preserve-view=true), respectively. Users can also view the contents of histogram-based single-column statistics with [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?view=fabric&preserve-view=true). Currently, a limited version of these statements are supported. 
 
-### CREATE STATISTICS
-
-```sql
-CREATE STATISTICS statistics_name
-    ON { database_name.schema_name.table_name | schema_name.table_name | table_name }
-    ( column_name )
-    [ WITH {
-           FULLSCAN
-           | SAMPLE number PERCENT
-      }
-    ]
-[;]
-```
-
-- Only single-column FULLSCAN and single-column SAMPLE-based statistics are supported. When no option is included, FULLSCAN statistics are created.
 - If creating statistics manually, consider focusing on those heavily used in your query workload (specifically in GROUP BYs, ORDER BYs, filters, and JOINs).
-
-### UPDATE STATISTICS
-
-```sql
-UPDATE STATISTICS [ schema_name . ] table_name
-    [ ( { statistics_name } ) ]
-    [ WITH
-       {
-              FULLSCAN
-            | SAMPLE number PERCENT
-        }
-    ]
-[;]
-```
-
-- When `statistics_name` isn't specified, statistics for all columns in the table are updated.
-- Resample (using the last recent sample percentage) isn't supported.
 - Consider updating column-level statistics regularly after data changes that significantly change rowcount or distribution of the data.
 
-### DROP STATISTICS
+### Examples of manual statistics maintenance
+
+To create statistics on the `dbo.DimCustomer` table, based on all the rows in two columns:
 
 ```sql
-DROP STATISTICS [ schema_name . ] table_name.statistics_name
-[;]
+CREATE STATISTICS DimCustomerFullScan
+ON dbo.DimCustomer (CustomerKey, EmailAddress) WITH FULLSCAN;
 ```
 
-### DBCC SHOW_STATISTICS
+To manually update the statistics object `DimCustomerFullScan`, perhaps after a large data update:
 
 ```sql
-DBCC SHOW_STATISTICS ( table_name , target )
-    [ WITH { STAT_HEADER | DENSITY_VECTOR | HISTOGRAM } [ ,...n ] ]
-[;]
+UPDATE STATISTICS DimCustomerFullScan (CustomerKey, EmailAddress) WITH FULLSCAN;  
 ```
 
-- `target` can be either the name of a single-column histogram statistics or a column.
-- If a column name is used for `target`, this command will return distribution information only about the automatically generated histogram statistic. To view the information about a manually created histogram statistic, specify the statistics name as `target`.
+To show information about the statistics object, including a histogram
 
-Likewise, the following T-SQL constructs exist and can be used to check both manually created and automatically created statistics in [!INCLUDE [product-name](../includes/product-name.md)]:
+```sql
+DBCC SHOW_STATISTICS ("dbo.DimCustomer", DimCustomerFullScan) WITH HISTOGRAM;
+```
+
+To manually drop the statistics object `DimCustomerFullScan`, perhaps after modifications to the table or queries require different statistics:
+
+```sql
+DROP STATISTICS dbo.DimCustomer.DimCustomerFullScan;
+```
+
+The following T-SQL objects can also be used to check both manually created and automatically created statistics in [!INCLUDE [product-name](../includes/product-name.md)]:
 
 - [sys.stats](/sql/relational-databases/system-catalog-views/sys-stats-transact-sql?view=fabric&preserve-view=true) catalog view
 - [sys.stats_columns](/sql/relational-databases/system-catalog-views/sys-stats-columns-transact-sql?view=fabric&preserve-view=true) catalog view
