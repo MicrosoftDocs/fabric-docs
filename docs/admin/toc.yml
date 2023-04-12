@@ -27,6 +27,8 @@ items:
   items:
   - name: Spark
     href: admin-spark.md
+- name: Track user activities
+  href: admin-track-user-activities.md
 - name: Monitoring workspace
   items:
   - name: What is the monitoring workspace?

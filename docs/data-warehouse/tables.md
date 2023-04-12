@@ -41,7 +41,7 @@ CREATE SCHEMA wwi;
 > [!NOTE]
 > Table names cannot contain `/` or `\`.
 
-To show the organization of the tables, you could use `fact`, `dim`, or `int` as prefixes to the table names. The following table shows some of the schema and table names for [WideWorldImportersDW](/sql/samples/wide-world-importers-dw-database-catalog?view=fabric&preserve-view=true) sample data warehouse.  
+To show the organization of the tables, you could use `fact`, `dim`, or `int` as prefixes to the table names. The following table shows some of the schema and table names for [WideWorldImportersDW](/sql/samples/wide-world-importers-dw-database-catalog?view=fabric&preserve-view=true) sample data warehouse. Table names are not case sensitive.
 
 | WideWorldImportersDW Source Table Name  | Table Type | Data Warehouse Table Name |
 |:-----|:-----|:------|:-----|
@@ -78,7 +78,7 @@ For [!INCLUDE [fabric-dw](includes/fabric-dw.md)], PRIMARY KEY and UNIQUE constr
 
 FOREIGN KEY is only supported when NOT ENFORCED is used.  
 
-- For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true) and [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric#DataTypes&preserve-view=true). 
+- For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true). 
 - For more information, see [Primary keys, foreign keys, and unique keys in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](table-constraints.md).
 
 ## Commands for creating tables
@@ -98,7 +98,12 @@ If data is coming from multiple data stores, you can port the data into the data
 
 ## Known limitations
 
-At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
+- At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
+
+- You can't query tables with renamed columns.
+
+- You can't load case sensitive tables to data warehouse (for example, "Cat", "cat", and "CAT" are all read as the same table name by SQL). Duplicate table names can cause the data warehouse to fail. Use unique table and file names for all items in a warehouse.
+
 
 ### Unsupported table features
 
