@@ -116,7 +116,7 @@ WITH (
 
 ## Known limitations
 
-- The following arguments are not currently available for the COPY statement on[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]:
+- The following arguments are not currently available for the COPY statement on [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]:
 
 ```sql
 [,DATEFORMAT = 'date_format']
