@@ -42,7 +42,7 @@ The following three properties are **required**:
 - **Path**: Select the path to the OData resource. Or you can select Edit to enter the path manually.
 Under **Advanced**, you can specify the following fields:
 
-- **Use query**: You can choose **Path**, **Query** as your use query. See the configuration of each settings below.
+- **Use query**: You can choose **Path**, **Query** as your use query. See the configuration of each setting below.
      - **Path**: Read data from the specified path if you select this button.
      - **Query**: OData query options for filtering data. Example: `"$select=Name,Description&$top=5"`.
 
@@ -77,6 +77,6 @@ To learn more information about copy activity in OData, see the following table.
 |**Request timeout** |Timeout for the HTTP request to get a response. Format is in timespan. This value is the timeout to get a response, not the timeout to read response data. The default value is 00:05:00.| timespan |No |requestTimeout|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|- Name<br>- Value|No |additionalColumns:<br>- name<br>- value|
 
-## Next Steps
+## Next steps
 
 [How to create OData connection](connector-odata.md)

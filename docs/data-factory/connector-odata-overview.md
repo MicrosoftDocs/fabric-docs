@@ -24,7 +24,7 @@ This OData connector is supported in Trident Project  - Data Factory with the fo
 | **Lookup activity** | None | Anonymous<br> Basic |
 | **Dataflow Gen2 (source/destination)** |  |  |
 
-## Next Steps
+## Next steps
 
 [How to create OData connection](connector-odata.md)
 
