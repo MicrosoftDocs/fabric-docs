@@ -31,7 +31,7 @@ highlightedContent:
       itemType: get-started
       url: placeholder.md
     # Card
-    - title: Get started with creating resources
+    - title: Enable Fabric and create resources
       itemType: quickstart
       url: placeholder.md
     # Card
@@ -54,6 +54,8 @@ productDirectory:
           text: What are shortcuts?
         - url: onelake/create-lakehouse-onelake.md
           text: Create a lakehouse with OneLake
+        - url: onelake/index.yml
+          text: See more
 
     # Card
     - title: Data Factory
@@ -66,30 +68,92 @@ productDirectory:
           text: Create your first pipeline
         - url: data-factory/create-first-dataflow-gen2.md
           text: Create your first dataflow?
+        - url: data-factory/index.yml
+          text: See more
 
     # Card
-    - title: Data Factory
+    - title: Power BI
 
-      imageSrc: ./media/onelake-icon.png
+      imageSrc: ./media/power-bi-icon.png
       links:
-        - url: data-factory/data-factory-overview.md
-          text: What is Data Factory?
-        - url: data-factory/create-first-pipeline-with-sample-data.md
-          text: Create your first pipeline
-        - url: data-factory/create-first-dataflow-gen2.md
-          text: Create your first dataflow?
+        - url: /power-bi/fundamentals/power-bi-overview
+          text: What is Power BI?
+        - url: admin/admin-roles.md
+          text: Understand administration roles
+        - url: security/security-byok.md
+          text: Secure with your own encryption keys
+        - url: get-started/index.yml
+          text: See more
 
     # Card
-    - title: Data Factory
+    - title: Synapse Data Engineering
 
-      imageSrc: ./media/onelake-icon.png
+      imageSrc: ./media/synapse-data-engineering-icon.png
       links:
-        - url: data-factory/data-factory-overview.md
-          text: What is Data Factory?
-        - url: data-factory/create-first-pipeline-with-sample-data.md
-          text: Create your first pipeline
-        - url: data-factory/create-first-dataflow-gen2.md
-          text: Create your first dataflow?
+        - url: data-engineering/data-engineering-overview.md
+          text: What is Data Engineering?
+        - url: data-engineering/create-lakehouse.md
+          text: Create a Lakehouse
+        - url: data-engineering/create-spark-job-definition.md
+          text: Create a Spark job definition
+        - url: data-engineering/index.yml
+          text: See more
+
+    # Card
+    - title: Synapse Data Science
+
+      imageSrc: ./media/data-science-icon.png
+      links:
+        - url: data-science/data-science-overview.md
+          text: What is Data science?
+        - url: data-science/machine-learning-experiment.md
+          text: Machine learning experiment
+        - url: data-science/read-write-pandas.md
+          text: Use SemPy library for faster analytics
+        - url: data-science/index.yml
+          text: See more
+
+    # Card
+    - title: Synapse Data warehouse
+
+      imageSrc: ./media/data-warehouse-icon.png
+      links:
+        - url: data-warehouse/data-warehousing.md
+          text: What is Data Warehouse?
+        - url: data-warehouse/create-warehouse.md
+          text: Create a Warehouse
+        - url: data-warehouse/sql-query-editor.md
+          text: Query using SQL query editor
+        - url: data-warehouse/index.yml
+          text: See more
+
+    # Card
+    - title: Synapse Real-time Analytics
+
+      imageSrc: ./media/real-time-analytics-icon.png
+      links:
+        - url: real-time-analytics/overview.md
+          text: What is Real-time Analytics?
+        - url: placeholder.md
+          text: What is Event stream?
+        - url: real-time-analytics/create-database.md
+          text: Create a database
+        - url: real-time-analytics/index.yml
+          text: See more
+
+    # Card
+    - title: Reflex
+
+      imageSrc: ./media/reflex-icon.png
+      links:
+        - url: placeholder.md
+          text: What is Reflex?
+        - url: placeholder.md
+          text: Use Reflex from Power BI
+        - url: placeholder.md
+          text: End-to-end scenario for the reflex simulator
+        - url: reflex/index.yml
+          text: See more
 
 # conceptualContent section (optional)
 conceptualContent:
