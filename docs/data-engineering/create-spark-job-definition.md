@@ -23,12 +23,8 @@ To get started, you need the following prerequisites:
 - Access to the Data Engineering Workload. [Onboard onto the data engineering workload](../placeholder.md).
 
 > [!TIP]
-> For the following scenarios, main definition file and default lakehouse context are required:
->
-> - Save the Spark job definition item.
-> - Run the Spark job definition item.
-> - Clone the Spark job definition item.
-> - Edit settings of the Spark job definition item.
+> To run the Spark job definition item, main definition file and default lakehouse context are required. If you don't have a lakehouse, you can create one by following the steps in [Create a lakehouse](../data-engineering/lakehouse.md#create-a-lakehouse).
+
 
 ## Create a Spark job definition
 
