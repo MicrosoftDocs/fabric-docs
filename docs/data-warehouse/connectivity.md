@@ -30,15 +30,9 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
 To retrieve the connection string, follow these steps:
 
-1. Navigate to your workspace and select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] you would like to connect to.
+1. Navigate to your workspace, select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and click more options. Select **Copy SQL connection string** to copy the connection string to your clipboard.
 
-   :::image type="content" source="media\connectivity\workspace-more-menu.png" alt-text="Screenshot of the workspace screen with the context menu open." lightbox="media\connectivity\workspace-more-menu.png":::
-
-1. Navigate to the warehouse's **Settings** page.
-1. Navigate to the **Warehouse mode** tab.
-1. Select the **Copy** button next to the SQL connection string to copy it to your clipboard.
-
-   :::image type="content" source="media\connectivity\warehouse-mode.png" alt-text="Screenshot of the warehouse mode tab." lightbox="media\connectivity\warehouse-mode.png":::
+   :::image type="content" source="media\connectivity\connectionstringws.png" alt-text="Screenshot of the workspace screen with the context menu open." lightbox="media\connectivity\connectionstringws.png":::
 
 ### Get started with SSMS
 
@@ -95,28 +89,7 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
 </dependency>
 ```
 
-## Known limitations
-
-- Warning on new query. When you open a new query in SSMS, you might see the following error:
-
-   :::image type="content" source="media\connectivity\new-query-error.png" alt-text="Screenshot of the new query error." lightbox="media\connectivity\new-query-error.png":::
-
-   **Workaround**: Ignore the message by selecting **OK**, and continue with your query.
-
-- Connection is forcibly closed. You might experience connection issues while querying your warehouse with SSMS. The error might look like "An existing connection was forcibly closed by the remote host".
-
-   **Workaround**: Ignore the message, reconnect, and keep querying your warehouse.
-
-- Transient SSMS errors. There are some transient issues that might happen while querying a warehouse using SSMS:
-
-  - SSMS might hang and enter (Not responding) state.
-  - Can't find table 0
-  - Invalid handle
-
-   **Workaround**: Wait a few seconds to a minute and try again. Report an issue if these errors don't automatically resolve after retry. Try using [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio) instead of [SQL Server Management Studio (SSMS)](https://aka.ms/ssms).
-
 ## Next steps
 
-- [Workspace roles](workspace-roles.md)
 - [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
 - [Get started with the SQL Endpoint on the Lakehouse in Microsoft Fabric](get-started-sql-endpoint.md)
