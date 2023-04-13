@@ -33,7 +33,7 @@ To retrieve the connection string, follow these steps:
 1. Navigate to your workspace, select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and select **More options**. 
 1. Select **Copy SQL connection string** to copy the connection string to your clipboard.
 
-   :::image type="content" source="media\connectivity\connectionstringws.png" alt-text="Screenshot of the workspace screen with the context menu open." lightbox="media\connectivity\connectionstringws.png":::
+   :::image type="content" source="media\connectivity\warehouse-copy-sql-connection-string.png" alt-text="Screenshot of the workspace screen with the context menu open." lightbox="media\connectivity\connectionstringws.png":::
 
 ### Get started with SSMS
 
