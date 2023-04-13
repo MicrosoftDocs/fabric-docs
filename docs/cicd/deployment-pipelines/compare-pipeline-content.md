@@ -28,7 +28,7 @@ A comparison icon indicator appears between two sequential stages to give a quic
 
 When two sequential stages are different, a **Compare** link appears underneath the orange comparison icon. Select **Compare** to open the content item list in both stages. This *Compare view* helps you track changes or differences between items in each pipeline stage.
 
-:::image type="content" source="media/compare-pipeline-content/compare.png" alt-text="A screenshot showing the compare option, which expands the compare view and allows comparing items between deployment pipeline stages." lightbox="media/deployment-pipelines-compare/compare.png":::
+:::image type="content" source="media/compare-pipeline-content/compare.png" alt-text="A screenshot showing the compare option, which expands the compare view and allows comparing items between deployment pipeline stages." lightbox="media/compare-pipeline-content/compare.png":::
 
 In the comparison display, items are arranged alphabetically by item type. Paired items are next to each other, even if they have different names.
 

@@ -22,7 +22,7 @@ If you already have a workspace that you'd like to use with a specific stage, in
 
 When you deploy content to an empty stage, the relationships between the items are kept. For example, a report that is bound to a dataset in the source stage, will be cloned alongside its dataset, and the clones will be similarly bound in the target workspace.
 
-Once the deployment is complete, refresh the dataset. For more information, see [deploying content to an empty stage](deployment-pipelines-process.md#deploying-content-to-an-empty-stage).
+Once the deployment is complete, refresh the dataset. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#deploying-content-to-an-empty-stage).
 
 ### Deploying options
 
@@ -65,7 +65,7 @@ Deploying to a previous stage works only if the previous stage is empty. When de
 
 ### Review your deployment and leave a note
 
-After selecting which content to deploy, a pop-up window lists all the items you're about to deploy. You can review the list and add a note to the deployment. Adding a note is optional, but it is highly recommended as the notes are added to the [deployment history](deployment-pipelines-history.md). With a note for each deployment, reviewing the history of your pipelines becomes more meaningful.
+After selecting which content to deploy, a pop-up window lists all the items you're about to deploy. You can review the list and add a note to the deployment. Adding a note is optional, but it is highly recommended as the notes are added to the [deployment history](deployment-history.md). With a note for each deployment, reviewing the history of your pipelines becomes more meaningful.
 
 To leave a note, expand the **Add a note** option and write your note in the text box. When you're ready to deploy, select **Deploy**.
 
@@ -73,7 +73,7 @@ To leave a note, expand the **Add a note** option and write your note in the tex
 
 ## Deploy content from one stage to another
 
-Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. A typical workflow for moving content from stage to stage, is development to test, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](deployment-pipelines-process.md#deploy-content-to-an-existing-workspace) section.
+Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. A typical workflow for moving content from stage to stage, is development to test, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
 When you're deploying content to a stage that already has other content in it, select the items you want to deploy. If there's already an item there with the same name, that item will be overwritten. Relationships between the items aren't kept. Therefore, if you deploy a report that is bound to a dataset in the source stage, only the report will be deployed. If you want to deploy everything connected to the report, use the **Select related** button.
 

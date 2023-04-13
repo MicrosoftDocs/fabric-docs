@@ -54,7 +54,7 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 3. From the *settings* menu, select **Unassign workspace**.
 
-    :::image type="content" source="media/assign-pipeline/unassign-workspace.png" alt-text="A screenshot showing the unassign workspace option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/deployment-pipelines-assign/unassign-workspace.png":::
+    :::image type="content" source="media/assign-pipeline/unassign-workspace.png" alt-text="A screenshot showing the unassign workspace option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/assign-pipeline/unassign-workspace.png":::
 
 4. In the *Unassign workspace* dialogue box, select **Unassign**.
 
