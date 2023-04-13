@@ -22,7 +22,7 @@ If you already have a workspace that you'd like to use with a specific stage, in
 
 When you deploy content to an empty stage, the relationships between the items are kept. For example, a report that is bound to a dataset in the source stage, will be cloned alongside its dataset, and the clones will be similarly bound in the target workspace.
 
-Once the deployment is complete, refresh the dataset. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#deploying-content-to-an-empty-stage).
+Once the deployment is complete, refresh the dataset. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#deploy-content-to-an-empty-stage).
 
 ### Deploying options
 
