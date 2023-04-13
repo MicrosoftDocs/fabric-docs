@@ -18,14 +18,14 @@ This article outlines the steps to create an Azure Cosmos DB for NoSQL connectio
 
 ## Supported authentication types
 
-The Azure Cosmos DB for NoSQL connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The Azure Cosmos DB for NoSQL connector supports the following authentication types for copy and Dataflow Gen2 respectively.
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Key| √| |
 
 >[!Note]
->For the Azure Cosmos DB for NoSQL connection of Dataflow Gen2, see this article.
+>For information about the Azure Cosmos DB for NoSQL connection in Dataflow Gen2, go to [Connect to Azure Cosmos DB for NoSQL in dataflows](connector-azure-cosmosdb-for-nosql-dataflows).
 
 ## Prerequisites
 
