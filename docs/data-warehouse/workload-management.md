@@ -33,7 +33,7 @@ Backend compute capacity benefits from a fast provisioning architecture. Althoug
 
 :::image type="content" source="media\workload-management\scaling-diagram.png" alt-text="Diagram that shows fast provisioning of resources." lightbox="media\workload-management\scaling-diagram.png":::
 
-The system is fault tolerant and if a node becomes unhealthy, operations executing on the node will be redistributed to healthy nodes for completion.
+The system is fault tolerant and if a node becomes unhealthy, operations executing on the node are redistributed to healthy nodes for completion.
 
 ## Scheduling and resourcing
 
@@ -41,9 +41,9 @@ The distributed query processing scheduler operates at a **task** level. Queries
 
 As queries arrive, their tasks are scheduled based on first-in-first-out (FIFO) principles. If there is idle capacity, the scheduler may use a "best fit" approach to optimize concurrency.
 
-When the scheduler identifies resourcing pressure, it will invoke a scale operation. This is managed autonomously and backend topology will grow as concurrency increases. As it takes a few seconds to acquire nodes, the system is not optimized for consistent sub-second performance of queries that require distributed processing.
+When the scheduler identifies resourcing pressure, it will invoke a scale operation. Scaling is managed autonomously and backend topology grows as concurrency increases. As it takes a few seconds to acquire nodes, the system is not optimized for consistent subsecond performance of queries that require distributed processing.
  
-When pressure subsides, backend topology will scale back down and release resource back to the region.
+When pressure subsides, backend topology scales back down and releases resource back to the region.
 
 ## Ingestion isolation
 
@@ -57,7 +57,7 @@ In the backend compute pool of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in 
 
 The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a natural isolation boundary of the distributed compute system. Workloads can take advantage of this boundary to manage both cost and performance.
 
-[OneLake shorcuts](../onelake/onelake-shortcuts.md) can be leveraged to create read-only replicas of tables in other workspaces to distribute load across multiple sql engines creating an isolation boundary.
+[OneLake shortcuts](../onelake/onelake-shortcuts.md) can be used to create read-only replicas of tables in other workspaces to distribute load across multiple sql engines creating an isolation boundary.
 
 ## Next steps
 
