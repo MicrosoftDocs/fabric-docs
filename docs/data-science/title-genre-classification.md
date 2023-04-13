@@ -1,6 +1,6 @@
 ---
 title: Train and evaluate a text classification model
-description: AI sample for training and evaluating a text classification model.
+description: This is an AI sample for training and evaluating a text classification model. It uses a sample dataset that consists of metadata relating to digitized books.
 ms.reviewer: ssalgado
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 02/10/2023
 ---
 
-# Training and evaluating a text classification model
+# Training and evaluating a text classification model in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
