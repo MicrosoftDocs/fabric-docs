@@ -50,6 +50,8 @@ This table provides a list of what locks are used for different types of [transa
 
 These locks prevent conflicts such as a table's schema being changed while rows are being updated in a transaction.
 
+You can query locks currently held with the dynamic management view (DMV) [sys.dm_tran_locks](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql).
+
 Conflicts from two or more concurrent transactions that update one or more rows in a table are evaluated at the end of the transaction.  The first transaction to commit completes successfully and the other transactions are rolled back with an error returned.  These conflicts are evaluated at the table level and not the individual parquet file level.
 
 INSERT statements always create new parquet files, which means fewer conflicts with other transactions except for DDL because the table's schema could be changing.
