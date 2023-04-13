@@ -22,8 +22,8 @@ Data pipelines offer an alternative to using the COPY command through a graphica
 
 ## Creating data pipelines
 
-1. To create a new pipeline navigate to the desired workspace, click the **+New** button, and select **Data pipeline**
-    :::image type="content" source="media\ingest-data-pipelines\new-data-pipeline.png" alt-text="Screenshot of a the top section of the user's workspace showing the New button, and with the options Warehouse, Data pipeline, and Show All." lightbox="media\ingest-data-pipelines\ingest-data-pipelines\new-data-pipeline.png":::
+1. To create a new pipeline navigate to the desired workspace, select the **+New** button, and select **Data pipeline**
+    :::image type="content" source="media\ingest-data-pipelines\new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New button, and with the options Warehouse, Data pipeline, and Show All." lightbox="media\ingest-data-pipelines\ingest-data-pipelines\new-data-pipeline.png":::
 
 1. Once you select Data pipeline and give your pipeline a name, you see three options to start ingesting data: **Add a pipeline activity**, **Copy data** (wizard), and **Choose a task to start**.
 
