@@ -90,7 +90,7 @@ After you've configured the OneDrive location, you get to it in the same way you
 
     ![Screenshot of Get data, get files.](media/create-workspaces/power-bi-get-data-files.png)
 
-    [!INCLUDE [product-name](../includes/product-name.md)] should automatically detect the workspace OneDrive, so it appears as **OneDrive - WORKSPACE_NAME". It may take some time for the workspace OneDrive to appear on the **Get data** page after you've configured it.
+    [!INCLUDE [product-name](../includes/product-name.md)] should automatically detect the workspace OneDrive, so it appears as **OneDrive - WORKSPACE_NAME"**. It may take some time for the workspace OneDrive to appear on the **Get data** page after you've configured it.
 
 1. Select the workspace OneDrive, for example, **OneDrive - Sales and Marketing**.
 

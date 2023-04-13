@@ -18,7 +18,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 Workspaces are places where users collaborate on dashboards, reports, and other content. [!INCLUDE [product-name](../includes/product-name.md)] admins can use the **Create workspaces** setting to designate which users in the organization can create workspaces. Admins can let everybody or nobody in an organization create workspaces. Workspace creation can also be limited to members of specific security groups. Learn more about [workspaces](../get-started/workspaces.md).
 
-:::image type="content" source="media/service-admin-portal-workspace/power-bi-admin-workspace-settings.png" alt-text="Create a workspace.":::
+:::image type="content" source="media/service-admin-portal-workspace/power-bi-admin-workspace-settings.png" alt-text="Screenshot showing Create a workspace.":::
 
 For classic workspaces based on Microsoft 365 Groups, administration continues to occur in admin portal and Azure Active Directory.
 
@@ -50,7 +50,7 @@ To reduce the impact of maintaining empty classic workspaces that were automatic
 Additional notes on deletion of empty workspaces:
 
 - Only empty v1 workspaces will be deleted during upgrade. Empty v2 workspaces will not be deleted. Deletion of empty workspaces can be prevented by using the tenant setting described previously in this article.
-- Office 365 groups associated with empty v1 workspaces will not be deleted.Read more about [workspaces](../get-started/workspaces.md).
+- Office 365 groups associated with empty v1 workspaces aren't deleted. Read more about [workspaces](../get-started/workspaces.md).
 
 ## Users can reassign personal workspaces 
 
