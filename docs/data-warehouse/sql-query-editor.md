@@ -50,14 +50,14 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 | Undo | Ctrl + Z |
 | Redo | Ctrl + Y |
 | Go one word left | Ctrl + Left arrow key |
-| Go one word right*| Ctrl + Right arrow key |
+| Go one word right | Ctrl + Right arrow key |
 | Indent increase | Tab |
 | Indent decrease | Shift + Tab |
 | Comment | Ctrl + K, Ctrl + C |
 | Uncomment | Ctrl + K, Ctrl + U |
 | Move cursor up | ↑ |
 | Move cursor down | ↓ |
-|Select All | Ctrl + A |
+| Select All | Ctrl + A |
 
 ## Known limitations with SQL Query editor
 
@@ -67,3 +67,4 @@ Currently, you can only run read-only queries. To write statements to update dat
 
 - [How-to: Query the Synapse Data Warehouse](query-warehouse.md)
 - [Query using the Visual Query editor](visual-query-editor.md)
+- [Share your Synapse Data Warehouse](share-warehouse.md)

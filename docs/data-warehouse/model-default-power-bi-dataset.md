@@ -81,3 +81,4 @@ To remove objects, a user can use the manually select button in the ribbon and:
 - [Define relationships in data models](model-default-power-bi-dataset.md)
 - [Create reports in the Power BI service](reports-power-bi-service.md)
 - [Power BI admin center](../admin/admin-power-bi.md)
+- [Share your Synapse Data Warehouse](share-warehouse.md)
