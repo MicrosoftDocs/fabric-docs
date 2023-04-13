@@ -1,6 +1,6 @@
 ---
 title: Compare content in different stages before deployment
-description: Learn how to compare the content of the source stage and target stage before deployment with the Power BI Application lifecycle management (ALM) tool
+description: Learn how to compare the content of the source stage and target stage before deployment with the Fabric Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to

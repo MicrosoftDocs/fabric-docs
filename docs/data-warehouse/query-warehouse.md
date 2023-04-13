@@ -1,13 +1,13 @@
 ---
-title: Query a Synapse Data Warehouse in Microsoft Fabric
-description: Learn more about options to query a Synapse Data Warehouse in Microsoft Fabric.
-ms.reviewer: wiassaf, kecona
-ms.author: salilkanade
+title: Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric
+description: Learn more about options to write TSQL queries on the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric.
 author: salilkanade
+ms.author: salilkanade
+ms.reviewer: wiassaf, kecona
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/31/2023
 ---
-# Query a warehouse
+# Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -15,8 +15,8 @@ ms.date: 03/31/2023
 
 To get started with this tutorial, check the following prerequisites:
 
-- You should have access to a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] within a premium per capacity workspace with contributor or above permissions.
-- Connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] via T-SQL connection string. For more information, see [Connectivity](connectivity.md).
+- You should have access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) within a premium per capacity workspace with contributor or above permissions.
+- Connect to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] via T-SQL connection string. For more information, see [Connectivity](connectivity.md).
 - Choose your querying tool. This article provides examples in SQL Server Management Studio (SSMS).
     - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
     - [Download Azure Data Studio](https://aka.ms/azuredatastudio).
@@ -24,9 +24,9 @@ To get started with this tutorial, check the following prerequisites:
     - Use the [Query using the Visual Query editor](visual-query-editor.md).
 
 > [!NOTE]
-> Review the [T-SQL surface area](warehouse.md#t-sql-surface-area) for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+> Review the [T-SQL surface area](warehouse.md#t-sql-surface-area) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
-## Run a new query on a Synapse Data Warehouse connection in SSMS
+## Run a new query on a connection in SSMS
 
 1. Open a **New Query** window. For example, in SSMS **Object Explorer**.
 
@@ -38,14 +38,16 @@ To get started with this tutorial, check the following prerequisites:
 
 ## Write a cross-database SQL Query
 
+Currently, you can write cross database queries to databases in the same workspaces in [!INCLUDE [product-name](../includes/product-name.md)].
+
 There are several ways you can write cross-database queries within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace, in this section we explore three examples.
 
-1. Select the database. Using the `USE [database name]` statement, you can reference the table directly within your database and query another's database using three-part naming. In the following example, you are in the context of the database with the Affiliation table.
+1. Select the database. Using the `USE [database name]` statement, you can reference the table directly within your database and query another's database using three-part naming. In the following example, you are in the context of the database with the `Affiliation` table.
 
    ```sql
    SELECT * 
    FROM ContosoLakehouse.dbo.ContosoSalesTable AS Contoso
-   JOIN Affiliation
+   INNER JOIN Affiliation
    ON Affiliation.AffiliationId = Contoso.RecordTypeID;
    ```
 
@@ -54,7 +56,7 @@ There are several ways you can write cross-database queries within the same [!IN
    ```sql
    SELECT * 
    FROM ContosoLakehouse.dbo.ContosoSalesTable AS Contoso
-   JOIN My_lakehouse.dbo.Affiliation
+   INNER JOIN My_lakehouse.dbo.Affiliation
    ON My_lakehouse.dbo.Affiliation.AffiliationId = Contoso.RecordTypeID;
    ```
 
@@ -63,7 +65,7 @@ There are several ways you can write cross-database queries within the same [!IN
    ```sql
    SELECT * 
    FROM ContosoLakehouse.dbo.ContosoSalesTable AS Contoso
-   JOIN My_lakehouse.dbo.Affiliation as MyAffiliation
+   INNER JOIN My_lakehouse.dbo.Affiliation as MyAffiliation
    ON MyAffiliation.AffiliationId = Contoso.RecordTypeID;
    ```
 
@@ -96,7 +98,7 @@ There are several ways you can write cross-database queries within the same [!IN
    > [!NOTE]
    > Uncompressed data size should be calculated from a CSV representation of the data. Source data stored in parquet (or delta) format is already compressed anywhere from 2x to 10x (or more).
 
-- At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
+- At this time, there's limited T-SQL functionality. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
 
 ## Next steps
 

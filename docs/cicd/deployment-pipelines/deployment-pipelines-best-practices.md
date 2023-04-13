@@ -1,8 +1,8 @@
 ---
 title: Best practices for deployment pipelines, the Microsoft Fabric Application lifecycle management (ALM) tool
 description: Learn about the best practices for deployment pipelines, the Microsoft Fabric Application lifecycle management (ALM) tool.
-author: KesemSharabi
-ms.author: kesharab
+author: mberdugo
+ms.author: monaberdugo
 ms.topic: conceptual
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
@@ -47,7 +47,7 @@ If you're using [centralized datasets](/power-bi/connect-data/service-datasets-a
 
 ### Plan your permission model
 
-A deployment pipeline is a Power BI object with its own [permissions](deployment-pipelines-process.md#permissions). In addition, the pipeline contains workspaces that have their own permissions.
+A deployment pipeline is a Fabric object with its own [permissions](deployment-pipelines-process.md#permissions). In addition, the pipeline contains workspaces that have their own permissions.
 
 To implement a secure and easy workflow, plan who gets access to each part of the pipeline. Some of the considerations to take into account are:
 
@@ -76,7 +76,7 @@ A production database should always be stable and available. It's better not to 
 
 ### Use parameters in your model
 
-As you can't edit datasets data sources in Power BI service, we recommend using [parameters](/power-query/power-query-query-parameters) to store connection details such as instance names and database names. By using parameters instead of static connection strings, you can manage the connections through the Power BI service web portal, or [use APIs](/rest/api/power-bi/datasets/updateparametersingroup), at a later stage.
+As you can't edit datasets data sources in the Fabric service, we recommend using [parameters](/power-query/power-query-query-parameters) to store connection details such as instance names and database names. By using parameters instead of static connection strings, you can manage the connections through the Fabric service web portal, or [use APIs](/rest/api/power-bi/datasets/updateparametersingroup), at a later stage.
 
 In deployment pipelines, you can configure parameter rules to set different values for each deployment stage. You can also set rules for paginated reports.
 

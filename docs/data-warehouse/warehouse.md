@@ -1,26 +1,32 @@
 ---
 title: Synapse Data Warehouse in Microsoft Fabric
 description: Learn more about Synapse Data Warehouse in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: cynotebo
 author: cynotebo
+ms.author: cynotebo
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 04/03/2023
 ms.search.form: Warehouse overview, Warehouse in workspace overview
 ---
 
 # Synapse Data Warehouse in Microsoft Fabric
 
+**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] functionality is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. This warehouse is displayed in the [!INCLUDE [product-name](../includes/product-name.md)] portal with a warehouse icon, however under the **Type** column, you see the type listed as **Warehouse**. Where data is automatically accessible via the read-only SQL Endpoint, you're fully in control of creating tables, loading, transforming and querying your data in the data warehouse using either the [!INCLUDE [product-name](../includes/product-name.md)] portal or T-SQL commands.
+The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] functionality is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. 
 
-:::image type="content" source="media\warehouse\multiple-warehouse-list.png" alt-text="Screenshot of a warehouse list that shows distinction between warehouse and SQL Endpoint." lightbox="media\warehouse\multiple-warehouse-list.png":::
+This warehouse is displayed in the [!INCLUDE [product-name](../includes/product-name.md)] portal with a warehouse icon, however under the **Type** column, you see the type listed as **Warehouse**. Where data is automatically accessible via the read-only SQL Endpoint, you're fully in control of creating tables, loading, transforming and querying your data in the data warehouse using either the [!INCLUDE [product-name](../includes/product-name.md)] portal or T-SQL commands.
 
 > [!IMPORTANT]
 > The distinction between the [SQL Endpoint](sql-endpoint.md) and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is an important one as T-SQL statements that write data or modify schema fail if you attempt to run them against the SQL Endpoint. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
 
-When you create a [Lakehouse](../data-engineering/lakehouse-overview.md) or a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], a default Power BI dataset is created. This is represented with the (default) suffix. For more information, see [Default datasets](datasets.md).
+To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], see [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md).
+
+## Datasets
+
+When you create a [Lakehouse](../data-engineering/lakehouse-overview.md) or a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], a default Power BI dataset is created. This is represented with the (default) suffix. For more information, see [Default Power BI datasets](datasets.md).
 
 ## Limitations
 
@@ -37,7 +43,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - CREATE ROLE
 - CREATE SECURITY POLICY - Row Level Security (RLS)
 - CREATE USER
-- CTAS
 - GRANT/DENY/REVOKE
 - Hints
 - Identity Columns
@@ -52,7 +57,8 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Result Set Caching
 - Schema and Table names can't contain / or \
 - SELECT - FOR (except JSON)
-- SELECT - INTO
+- SET ROWCOUNT
+- SET TRANSACTION ISOLATION LEVEL
 - `sp_showmemo_xml`
 - `sp_showspaceused`
 - `sp_rename`
@@ -82,7 +88,7 @@ From the menu that appears, select **Rename**.
 
 Provide a new name in the dialog and select **Rename** to apply.
 
-When you rename a warehouse, the default dataset based on that warehouse is also automatically renamed.
+When you rename a warehouse, the default Power BI dataset based on that warehouse is also automatically renamed.
 
 ## Delete a warehouse
 
@@ -93,5 +99,6 @@ To delete a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], navigate to the works
 ## Next steps
 
 - [Data warehousing overview](data-warehousing.md)
+- [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
 - [Create a warehouse](create-warehouse.md)
 - [SQL Endpoint](sql-endpoint.md)

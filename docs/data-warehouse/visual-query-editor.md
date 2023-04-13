@@ -1,11 +1,11 @@
 ---
 title: Query using the Visual Query editor
 description: Learn how to use the Visual Query editor.
-ms.reviewer: wiassaf
-ms.author: salilkanade
 author: salilkanade
+ms.author: salilkanade
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/15/2023
 ms.search.form: Query Editor
 ---
 
@@ -15,9 +15,9 @@ ms.search.form: Query Editor
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-You can query the data in your warehouse with multiple tools, including the Visual query editor and the [SQL Query editor](sql-query-editor.md) among others. This article describes how to use the Visual Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the Visual query editor and the [SQL Query editor](sql-query-editor.md) among others. This article describes how to use the Visual Query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
 
-## Visual Query editor in the Azure portal
+## Visual Query editor in the Fabric portal
 
 The Visual Query editor provides an easy visual interface to write queries against the data in your warehouse.
 
@@ -48,8 +48,9 @@ The following image shows a sample query created using the no-code Visual Query 
 ## Known limitations with Visual Query editor
 
 - You can only write DQL (not DDL or DML).
-- You can't currently open a visual query in Excel.
+- You can't currently open a visual query in Microsoft Excel.
 
 ## Next steps
 
+- [How-to: Query the Synapse Data Warehouse](query-warehouse.md)
 - [Query using the SQL Query editor](sql-query-editor.md)
