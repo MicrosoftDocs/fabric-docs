@@ -25,7 +25,7 @@ After creating a Warehouse and ingesting data, click the **Data** tab on the bot
 
 **Sort columns (alphabetically or numerically)** – Hover over the column title and click on the up/down arrow that appears next to the title. 
 
-:::image type="content" source="media\data-grid\data-grid-search-bar.png" alt-text="Screenshot of the searching "New York" within the Data grid of the Warehouse" lightbox="media\data-grid\data-grid-search-bar.png":::
+:::image type="content" source="media\data-grid\data-grid-search-bar.png" alt-text="Screenshot of searching New York in the search bar within the Data grid of the Warehouse" lightbox="media\data-grid\data-grid-search-bar.png":::
 
 **Copy value** – Right-click a cell within the table and a Copy option will appear to copy the specific selection. 
 
