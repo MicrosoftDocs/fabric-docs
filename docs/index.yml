@@ -114,7 +114,7 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Synapse Data warehouse
+    - title: Synapse Data Warehouse
 
       imageSrc: ./media/synapse-data-warehouse-icon.png
       links:
