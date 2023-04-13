@@ -58,7 +58,7 @@ landingContent:
             url: get-started-sql-endpoint.md
           - text: Create a lakehouse with OneLake
             url: ../onelake/create-lakehouse-onelake.md
-          - text: Understand default datasets
+          - text: Understand default Power BI datasets
             url: datasets.md
           - text: Load data into the Lakehouse
             url: ../data-engineering/load-data-lakehouse.md
@@ -67,14 +67,25 @@ landingContent:
           - text: How to move data into Lakehouse via Copy assistant
             url: ../data-factory/move-data-lakehouse-copy-assistant.md
   # Card 
+  - title: Security
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Data warehousing security
+            url: security.md
+          - text: Connectivity
+            url: connectivity.md    
+          - text: Workspace roles
+            url: workspace-roles.md
+          - text: Manage user access
+            url: manage-user-access.md   
+  # Card 
   - title: Ingest data
     linkLists:
       - linkListType: how-to-guide
         links:
           - text: Ingest data guide
             url: ingest-data.md
-          - text: Ingest data using the COPY command
-            url: ingest-data-copy-command.md
           - text: Ingest data using pipelines
             url: ingest-data-pipelines.md
   # Card 
@@ -84,7 +95,9 @@ landingContent:
         links:
           - text: Datasets
             url: datasets.md            
-          - text: Data modeling 
+          - text: Model data in the default Power BI dataset
+            url: model-default-power-bi-dataset.md          
+          - text: Define relationships in data models
             url: data-modeling-defining-relationships.md
           - text: Create a measure
             url: create-measure.md
@@ -101,9 +114,12 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Manage user access
-            url: manage-user-access.md
           - text: Monitor 
-            url: monitor-using-dmv.md
-          - text: Connectivity
-            url: connectivity.md
+            url: monitor-using-dmv.md 
+  # Card 
+  - title: Best practices
+    linkLists:
+      - linkListType: architecture
+        links:
+          - text: Security
+            url: security.md

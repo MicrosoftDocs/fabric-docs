@@ -6,27 +6,27 @@ items:
 - name: Deployment pipelines
   items:
   - name: Introduction to deployment pipelines
-    href: deployment-pipelines/deployment-pipelines-overview.md
+    href: deployment-pipelines/intro-to-deployment-pipelines.md
   - name: Understand the deployment process
-    href: deployment-pipelines/deployment-pipelines-process.md
+    href: deployment-pipelines/understand-the-deployment-process.md
   - name: Get started with deployment pipelines
-    href: deployment-pipelines/deployment-pipelines-get-started.md
+    href: deployment-pipelines/get-started-with-deployment-pipelines.md
   - name: Assigning a workspace
-    href: deployment-pipelines/deployment-pipelines-assign.md
+    href: deployment-pipelines/assign-pipeline.md
   - name: Compare content in different stages
-    href: deployment-pipelines/deployment-pipelines-compare.md  
+    href: deployment-pipelines/compare-pipeline-content.md  
   - name: Deploy content to the next stage
-    href: deployment-pipelines/deployment-pipelines-deploy.md
+    href: deployment-pipelines/deploy-content.md
   - name: Deployment history
-    href: deployment-pipelines/deployment-pipelines-history.md
+    href: deployment-pipelines/deployment-history.md
   - name: Create deployment rules
-    href: deployment-pipelines/deployment-pipelines-create-rules.md
+    href: deployment-pipelines/create-rules.md
   - name: Automate deployment pipelines
-    href: deployment-pipelines/deployment-pipelines-automation.md
+    href: deployment-pipelines/pipeline-automation.md
   - name: Best practices
-    href: deployment-pipelines/deployment-pipelines-best-practices.md
+    href: best-practices-cicd.md
   - name: Troubleshooting
-    href: deployment-pipelines/deployment-pipelines-troubleshooting.yml
+    href: troubleshoot-cicd.yml
 - name: Git integration
   items:
   - name: Introduction to Git integration
