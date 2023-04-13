@@ -23,7 +23,7 @@ The SQL Query editor provides a text editor to write queries using T-SQL. To acc
 
 :::image type="content" source="media\sql-query-editor\query-button-ribbon.png" alt-text="Screenshot showing the SQL query editor query icon." lightbox="media\sql-query-editor\query-button-ribbon.png":::
 
-Alternatively, in the ribbon, create a new query using the **New SQL Query** button. If you select the dropdown, you can easily create T-SQL objects with code templates that will prepopulate in your SQL query window, as shown in the following image below.
+Alternatively, in the ribbon, create a new query using the **New SQL Query** button. If you select the dropdown, you can easily create T-SQL objects with code templates that will prepopulate in your SQL query window, as shown in the following image.
 
 :::image type="content" source="media\sql-query-editor\new-sql-query-dropdown-templates.png" alt-text="Screenshot showing where to find the New query menu on the Data grid view ribbon." lightbox="media\sql-query-editor\new-sql-query-dropdown-templates.png":::
 

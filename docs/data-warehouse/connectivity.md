@@ -49,7 +49,7 @@ To retrieve the connection string, follow these steps:
 
    :::image type="content" source="media\connectivity\object-explorer-example.png" alt-text="Screenshot showing where the connected server name appears in the Object Explorer pane." lightbox="media\connectivity\object-explorer-example.png":::
 
-When connecting via SSMS (or ADS), you see both SQL Endpoint and [!INCLUDE [fabric-dw](includes/fabric-dw.md)]s listed as warehouses and it's difficult to differentiate between the two item types and their functionality. For this reason, we strongly encourage you to adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience.
+When connecting via SSMS (or ADS), you see both SQL Endpoint and [!INCLUDE [fabric-dw](includes/fabric-dw.md)]s listed as warehouses, and it's difficult to differentiate between the two item types and their functionality. For this reason, we strongly encourage you to adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience.
 
 ### Connect to SQL Server endpoint using JDBC driver
 
