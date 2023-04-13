@@ -1,15 +1,15 @@
 ---
-title: Use SparkR in Synapse
-description: Learn how to use the SparkR in Synapse.
+title: Use SparkR
+description: Learn how to use SparkR, a light-weight frontend to use Apache Spark from R.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/07/2023
+ms.date: 04/13/2023
 ms.search.form: R Language
 ---
 
-# Use SparkR in [!INCLUDE [product-name](../includes/product-name.md)] 
+# Use SparkR
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
