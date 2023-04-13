@@ -87,3 +87,5 @@ items:
     href: settings-context-menus.md
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
+  - name: Workload Management
+    href: workload-management.md
