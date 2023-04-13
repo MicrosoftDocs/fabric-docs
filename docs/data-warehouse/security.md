@@ -32,23 +32,7 @@ Workspace roles are used for dev team collaboration within a workspace. Role ass
 - For an overview of [!INCLUDE [product-name](../includes/product-name.md)] workspace roles, see [Roles in workspaces](../../roles-workspaces.md).
 - For instructions on assigning workspace roles, see [Give Workspace Access](../../get-started/give-access-workspaces.md).
 
-For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)], the workspace roles provide the following capabilities within SQL.
-
-| Workspace role   |  Description |
-|---|---|
-|Admin|Grants the user CONTROL access for each Warehouse within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.<br/><br/>Allows the user to see workspace-scoped session, connection and request DMV information and KILL sessions.|
-|Member|Grants the user CONTROL access for each Warehouse within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.|
-|Contributor|Grants the user CONTROL access for each Warehouse within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.|
-|Viewer|Grants the user SELECT permission for each Warehouse within the workspace, allowing them to read data from any table/view.|
-
-
-
-<Additional Viewer restrictions>
-
-<get rid of this?>
-Workspace permissions are best accomplished by membership in Azure role-based access control (RBAC) roles. For more information, see [Workspace roles](workspace-roles.md).
-
-Through the workspace, you can add members to, and remove them from, workspace roles. For a tutorial, see [Manage user access](manage-user-access.md).
+See [Workspace roles](workspace-roles.md) for details on the specific Warehouse capabilities provided through Workspace roles.
 
 
 ## Artifact permissions
