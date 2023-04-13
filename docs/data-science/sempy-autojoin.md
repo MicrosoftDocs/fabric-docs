@@ -1,6 +1,6 @@
 ---
 title: SemPy autojoin
-description: Follow an example of how to use SemPy to infer how to flatten or join a set of entities.
+description: Learn how to use SemPy for inferring how to flatten or join a set of entities, how to select the right merge path, and debug merge paths.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 2/10/2023
 ---
 
-# Autojoin
+# Autojoin in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

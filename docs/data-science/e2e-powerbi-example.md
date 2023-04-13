@@ -1,6 +1,6 @@
 ---
-title: E2E Power BI example
-description: End-to-end example of data science capabilities when interacting with Power BI.
+title: End-to-end Power BI example
+description: Follow an example of an end-to-end demo of data science interaction with Power BI and semantic model features of the SemPy package.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
-# E2E Power BI example
+# End-to-end Power BI example in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

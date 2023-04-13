@@ -1,6 +1,6 @@
 ---
 title: SemPy Power BI metrics integration
-description: Learn how to access and work with Power BI metrics.
+description: Learn how to access and work with Power BI metrics on dataframes in SemPy, including examples of merge and groupby.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
-# Power BI metrics integration
+# Power BI metrics integration in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

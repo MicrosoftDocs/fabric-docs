@@ -1,6 +1,6 @@
 ---
 title: How to use the R language
-description: Learn how to use the R language.
+description: Learn how to use the R language in Fabric, which provides built-in R support for Apache Spark. You can use notebooks to write and run your R code.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
@@ -9,7 +9,7 @@ ms.date: 03/24/2023
 ms.search.form: R Language
 ---
 
-# How to use the R language
+# How to use the R language in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

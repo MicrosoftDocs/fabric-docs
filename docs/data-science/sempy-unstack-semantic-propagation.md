@@ -1,6 +1,6 @@
 ---
 title: Sempy semantic propagation for unstack
-description: Learn about the unstack operation in pandas.
+description: Learn about the unstack operation in pandas, which you use to move a level of index from row to column.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
-# Semantic propagation for unstack
+# Semantic propagation for unstack in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

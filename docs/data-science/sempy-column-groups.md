@@ -1,6 +1,6 @@
 ---
 title: SemPy column groups
-description: Learn how to create SDFs and different types of column groups with SemPy.
+description: Use SemPy to create SDFs and column groups, which are the underlying data structure that stores the stypes associated with the columns in a SemanticDataFrame.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
-# Column groups
+# Column groups in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
