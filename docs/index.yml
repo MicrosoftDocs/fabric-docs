@@ -55,6 +55,8 @@ productDirectory:
           text: Understand Fabric admin roles
         - url: security/security-overview.md
           text: Secure Fabric resources
+        - url: cicd/deployment-pipelines/create-rules.md
+          text: What are deployment pipelines?
         - url: get-started/index.yml
           text: See more
 

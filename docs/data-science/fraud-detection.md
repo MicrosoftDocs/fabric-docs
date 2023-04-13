@@ -1,6 +1,6 @@
 ---
 title: Create, evaluate, and deploy a fraud detection model
-description: An e2e sample for building a model to detect credit card fraud.
+description: This demonstration shows the data engineering and data science workflow for building a model that detects credit card fraud.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 02/10/2023
 ---
 
-# Creating, evaluating, and deploying a fraud detection model
+# Creating, evaluating, and deploying a fraud detection model in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

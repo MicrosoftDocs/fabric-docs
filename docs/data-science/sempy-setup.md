@@ -1,6 +1,6 @@
 ---
 title: SemPy setup
-description: Learn how to set up SemPy.
+description: Learn how to set up SemPy from a new notebook in a premium workspace in the Azure Synapse vNext portal.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: quickstart
 ms.date: 02/10/2023
 ---
 
-# SemPy setup
+# SemPy setup in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

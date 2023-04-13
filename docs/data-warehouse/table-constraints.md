@@ -1,11 +1,11 @@
 ---
 title: Primary, foreign, and unique keys
 description: Table constraints support using Synapse Data Warehouse in Microsoft Fabric
-ms.reviewer: wiassaf
-ms.author: kecona
 author: KevinConanMSFT
+ms.author: kecona
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/31/2023
 ---
 
 # Primary keys, foreign keys, and unique keys in Synapse Data Warehouse in Microsoft Fabric
@@ -25,14 +25,14 @@ Learn about table constraints in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] i
 
 Synapse Data Warehouse doesn't support default constraints at this time.
 
-For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true).
+For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 
 ## Remarks
 
 Having primary key, foreign key and/or unique key allows [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] to generate an optimal execution plan for a query.  
 
 > [!IMPORTANT]  
-> After creating a table with primary key or unique constraint in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], users need to make sure all values in those columns are unique.  A violation of that may cause the query to return inaccurate result.  This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values.  
+> After creating a table with primary key or unique constraint in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], users need to make sure all values in those columns are unique. A violation of that may cause the query to return inaccurate result.  This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values. Foreign keys are not enforced.
 
 This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values.  
 
