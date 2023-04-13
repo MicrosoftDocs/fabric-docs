@@ -1,15 +1,15 @@
 ---
-title: Ingesting data into the warehouse
-description: Learn about the features that allow you to ingest data into your warehouse.
-ms.reviewer: wiassaf
-ms.author: procha
+title: Ingest data into the Synapse Data Warehouse
+description: Learn about the features that allow you to ingest data into your Synapse Data Warehouse in Microsoft Fabric.
 author: periclesrocha
+ms.author: procha
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 04/11/2023
 ms.search.form: Ingesting data
 ---
 
-# Ingesting data into the Synapse Data Warehouse
+# Ingest data into the Synapse Data Warehouse
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -21,7 +21,7 @@ ms.search.form: Ingesting data
 
 You can ingest data into a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using one of the following options:
 
-- **COPY (Transact-SQL)**: the COPY statement offers flexible, high-throughput data ingestion from an external Azure storage account. You can use the COPY statement as part of your existing ETL/ELT logic in Transact-SQL code.
+- **COPY (Transact-SQL)**: the COPY statement offers flexible, high-throughput data ingestion from an external Azure storage account. You can use the COPY statement as part of your existing ETL/ELT logic in Transact-SQL code. For more information, see [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
 - **Data pipelines**: pipelines offer a code-free or low-code experience for data ingestion. Using pipeline activities, you can build robust workflows to prepare your environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination.
 - **Data flows**: an alternative to pipelines, Data flows allow you to import and transform data using a code-free experience, with a data transformation logic that can be shared by other datasets and reports in [!INCLUDE [product-name](../includes/product-name.md)]. 
 - **Cross-warehouse ingestion**: data ingestion from workspace sources is also possible. This scenario may be required when there's the need to create a new table with a subset of a different table, or as a result of joining different tables in the warehouse and in the lakehouse. For cross-warehouse ingestion, in addition to the options mentioned, Transact-SQL features such as **INSERT...SELECT**, **SELECT INTO**, or **CREATE TABLE AS SELECT (CTAS)** work cross-warehouse within the same workspace. 
@@ -53,7 +53,7 @@ WHERE s.ProductID = i.ProductID
     AND s.Region = 'West region'
 ```
 
-The COPY (Transact-SQL) statement currently supports the PARQUET and CSV file formats. For data sources, only Azure Data Lake Storage Gen2 accounts are supported.
+The [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) statement currently supports the PARQUET and CSV file formats. For data sources, only Azure Data Lake Storage Gen2 accounts are supported.
 
 Data pipelines and data flows support a wide variety of data sources and data formats. For more information, see [Ingest data using Data pipelines](ingest-data-pipelines.md).
 
@@ -69,6 +69,5 @@ For optimal ingestion performance, the following best practices are recommended:
 
 ## Next steps
 
-- [Ingest data using the COPY command](ingest-data-copy-command.md)
+- [Ingest data using the COPY command](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true)
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)
-- [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql).
