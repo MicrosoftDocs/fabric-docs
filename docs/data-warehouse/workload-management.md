@@ -1,5 +1,5 @@
 ---
-title: Workload Management
+title: Workload management
 description: Learn how Microsoft manages data warehouse compute resources to service workloads.
 ms.reviewer: wiassaf
 ms.author: stevehow
@@ -9,7 +9,7 @@ ms.date: 04/13/2023
 ms.search.form: Optimization
 ---
 
-# Workload Management
+# Workload management
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -21,7 +21,7 @@ The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](incl
 
 The processing system is serverless in that backend compute capacity scales up and down autonomously to meet workload demands.
 
-:::image type="content" source="media\workload-management\sql-engine-diagram.png" alt-text="Diagram of the sql engine." lightbox="media\workload-management\sql-engine-diagram.png":::
+:::image type="content" source="media\workload-management\sql-engine-diagram.png" alt-text="Diagram of the SQL engine." lightbox="media\workload-management\sql-engine-diagram.png":::
 
 When a query is submitted, the SQL frontend (FE) performs query optimization to determine the best plan based on the data size and complexity. Once the plan is generated, it is given to the Distributed Query Processing (DQP) engine. The DQP orchestrates distributed execution of the query by splitting it into smaller queries that will be executed on backend compute nodes. Each small query is called a **task** and represents a distributed execution unit. It reads file(s) from [OneLake](../onelake/onelake-overview.md), joins results from other tasks, groups, or orders data retrieved from other tasks. For ingestion jobs, it also writes data to the proper destination tables.
 
