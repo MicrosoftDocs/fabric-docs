@@ -1,15 +1,15 @@
 ---
 title: Read and write data with Pandas
-description: Learn how to read and write data with Pandas from Lakehouse.
-ms.author: negust
-author: nelgson
+description: Learn how to read and write lakehouse data in a notebook using Pandas, a popular Python library for data exploration and processing.
+ms.author: erenorbey
+author: orbey
 ms.reviewer: franksolomon
 ms.topic: how-to
 ms.date: 04/03/2023
 ms.search.form: Read and Write Pandas
 ---
 
-# How-to read and write data with Pandas
+# How to read and write data with Pandas in Microsoft Fabric
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.

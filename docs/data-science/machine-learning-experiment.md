@@ -1,6 +1,6 @@
 ---
 title: Machine learning experiment
-description: Learn how to create an experiment and track runs, and review examples of using MLflow.
+description: Learn how to create machine learning experiments, use the MLflow API, manage and compare runs, and save a run as a model.
 ms.reviewer: mopeakande
 ms.author: midesa
 author: midesa
@@ -9,7 +9,7 @@ ms.date: 03/13/2023
 ms.search.form: Create New Experiment, Run Comparison
 ---
 
-# Machine learning experiments in [!INCLUDE [product-name](../includes/product-name.md)]
+# Machine learning experiments in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
