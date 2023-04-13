@@ -1,6 +1,6 @@
 ---
 title: Use sparklyr
-description: Learn how to use the sparklyr, an R interface to Apache Spark. 
+description: Learn how to use sparklyr, an R interface to Apache Spark. 
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
