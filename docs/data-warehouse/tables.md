@@ -60,7 +60,7 @@ For more information about OneLake, see the [OneLake overview](../onelake/onelak
 
 ## Data types
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports the most commonly used T-SQL data types. For a list of the supported data types, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric#DataTypes&preserve-view=true) in the CREATE TABLE statement. 
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports the most commonly used T-SQL data types. For a list of the supported data types, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypes) in the CREATE TABLE statement. 
 
 ## Collation
 
@@ -78,7 +78,7 @@ For [!INCLUDE [fabric-dw](includes/fabric-dw.md)], PRIMARY KEY and UNIQUE constr
 
 FOREIGN KEY is only supported when NOT ENFORCED is used.  
 
-- For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true). 
+- For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true). 
 - For more information, see [Primary keys, foreign keys, and unique keys in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](table-constraints.md).
 
 ## Commands for creating tables

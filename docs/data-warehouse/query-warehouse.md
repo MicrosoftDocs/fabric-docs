@@ -7,7 +7,7 @@ ms.reviewer: wiassaf, kecona
 ms.date: 04/12/2023
 ms.topic: how-to
 ---
-# Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric using SQL Server Management Studio
+# Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -17,10 +17,10 @@ To get started with this tutorial, check the following prerequisites:
 
 - You should have access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) within a premium per capacity workspace with contributor or above permissions.
 - Connect to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] via T-SQL connection string. For more information, see [Connectivity](connectivity.md).
-- Choose your querying tool. This article provides examples in SQL Server Management Studio (SSMS).
+- Choose your querying tool. This article provides examples in SQL Server Management Studio (SSMS), but you can use any T-SQL querying tool.
     - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
     - [Download Azure Data Studio](https://aka.ms/azuredatastudio).
-    - Use the [SQL query editor in the Fabric portal](sql-query-editor.md).
+    - Use the [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md).
     - Use the [Query using the Visual Query editor](visual-query-editor.md).
 
 > [!NOTE]
@@ -97,6 +97,6 @@ There are several ways you can write cross-database queries within the same [!IN
 
 ## Next steps
 
-- [SQL query editor in the Fabric portal](sql-query-editor.md)
+- [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md)
 - [Query using the Visual Query editor](visual-query-editor.md)
 - [Transactions in Synapse Data Warehouse tables](transactions.md)
