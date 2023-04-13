@@ -4,7 +4,7 @@ description: Follow steps to ingest data into a Synapse Data Warehouse with data
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 04/13/2023
 ms.topic: how-to
 ms.search.form: Ingesting data
 ---
@@ -18,12 +18,12 @@ ms.search.form: Ingesting data
 Data pipelines offer an alternative to using the COPY command through a graphical user interface. A data pipeline is a logical grouping of activities that together perform a task. For example, a pipeline could contain a set of activities that ingest and clean log data, and then kick off a mapping data flow to analyze the log data. The pipeline allows you to manage the activities as a set instead of each one individually. 
 
 > [!NOTE]
-> Some features from Azure Data Factory are not available in [!INCLUDE [product-name](../includes/product-name.md)], but the concepts are interchangeable. You can learn more about Azure Data Factory and Pipelines on [Pipelines and activities in Azure Data Factory and Azure Synapse Analytics](../../azure/data-factory/concepts-pipelines-activities?tabs=data-factory).
+> Some features from Azure Data Factory are not available in [!INCLUDE [product-name](../includes/product-name.md)], but the concepts are interchangeable. You can learn more about Azure Data Factory and Pipelines on [Pipelines and activities in Azure Data Factory and Azure Synapse Analytics](/azure/data-factory/concepts-pipelines-activities).
 
 ## Create a data pipeline
 
 1. To create a new pipeline navigate to the desired workspace, select the **+New** button, and select **Data pipeline**.
-    :::image type="content" source="media\ingest-data-pipelines\new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New button, and with the options Warehouse, Data pipeline, and Show All." lightbox="media\ingest-data-pipelines\ingest-data-pipelines\new-data-pipeline.png":::
+    :::image type="content" source="media\ingest-data-pipelines\new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New button, and with the options Warehouse, Data pipeline, and Show All." lightbox="media\ingest-data-pipelines\new-data-pipeline.png":::
 
 1. Once you select Data pipeline and give your pipeline a name, you see three options to start ingesting data: **Add a pipeline activity**, **Copy data** (wizard), and **Choose a task to start**.
 
