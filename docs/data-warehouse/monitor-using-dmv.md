@@ -1,11 +1,11 @@
 ---
 title: Monitoring connections, sessions, and requests using DMVs
 description: Learn about monitoring with the available Dynamic Management Views.
-ms.reviewer: wiassaf
-ms.author: jacindaeng
 author: jacindaeng
+ms.author: jacindaeng
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 03/23/2023
 ms.search.form: Monitoring
 ---
 

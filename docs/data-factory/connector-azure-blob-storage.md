@@ -4,7 +4,7 @@ description: This article provides information about how to create an Azure Blob
 author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
-ms.date: 02/26/2023
+ms.date: 4/12/2023
 ms.custom: template-how-to
 ---
 
@@ -22,12 +22,11 @@ The Azure Blob Storage connector supports the following authentication types for
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
+|Account key| √| √|
 |Anonymous | √| √|
-|Key| √| √|
-|OAuth2| √||
-|Shared Access Signature (SAS)| √| √|
+|Organizational account| √| √|
 |Service Principal|√||
-|Organizational account||√|
+|Shared Access Signature (SAS)| √| √|
 
 >[!Note]
 >For the Azure Blob Storage connection of Dataflow Gen2, go to [Connect to Azure Blob Storage in dataflows](./connector-azure-blob-storage-dataflows.md).

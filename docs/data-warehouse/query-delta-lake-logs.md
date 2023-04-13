@@ -1,11 +1,11 @@
 ---
 title: Delta Lake logs in Synapse Data Warehouse in Microsoft Fabric
 description: Learn how Synapse Data Warehouse in Microsoft Fabric publishes Delta Lake logs
-ms.reviewer: wiassaf
-ms.author: kecona
 author: KevinConanMSFT
+ms.author: kecona
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 04/10/2023
 ---
 
 # Delta Lake logs in Synapse Data Warehouse in Microsoft Fabric 
@@ -18,9 +18,15 @@ The Delta Lake logs opens up direct access to the warehouse's user tables for an
 
 ## Location
 
-1. Delta Lake logs are queried through shortcuts created in a lakehouse. You can view the files using a [!INCLUDE [product-name](../includes/product-name.md)] Spark Notebook or the **Lakehouse explorer** in Synapse Data Engineering in the Fabric portal.
+You can locate Delta Lake logs via the following methods:
+
+- Delta Lake logs can be queried through [shortcuts](../onelake/access-onelake-shortcuts.md) created in a lakehouse. You can view the files using a [!INCLUDE [product-name](../includes/product-name.md)] Spark Notebook or the [Lakehouse explorer in Synapse Data Engineering](../data-engineering/navigate-lakehouse-explorer.md) in the [!INCLUDE [product-name](../includes/product-name.md)] portal.
+
+- Delta Lake logs can be found via [Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md), through Spark connections such as the Power BI Direct Lake mode, or using any other service that can read delta tables.
  
-1. Delta Lake logs can be found through the OneLake Explorer in Windows, via the [Azure Storage Explorer], through Spark connections such as the Power BI Direct Lake mode, or using any other service that can read delta tables.
+- Delta Lake logs can be found in the `_delta_log` folder of each table through the OneLake Explorer (Preview) in Windows, as shown in the following screenshot.
+
+    :::image type="content" source="media/query-delta-lake-logs/onelake-explorer-delta-log.png" alt-text="A screenshot of the Windows OneLake Explorer, showing the path to the delta logs folder for the call_center table.":::
 
 ## Limitations
 
@@ -32,3 +38,5 @@ The Delta Lake logs opens up direct access to the warehouse's user tables for an
 - [Query the Synapse Data Warehouse](query-warehouse.md)
 - [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md)
 - [OneLake overview](../onelake/onelake-overview.md)
+- [Accessing shortcuts](../onelake/access-onelake-shortcuts.md)
+- [Navigate the Fabric Lakehouse explorer](../data-engineering/navigate-lakehouse-explorer.md)

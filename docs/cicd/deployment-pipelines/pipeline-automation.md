@@ -11,7 +11,7 @@ ms.date: 03/28/2023
 
 # Automate your deployment pipeline by using APIs and Azure DevOps
 
-The Microsoft Fabric [deployment pipelines](deployment-pipelines-overview.md) tool enables business intelligence teams to build an efficient and reusable release process for their Fabric content.
+The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Fabric content.
 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Fabric automation tool](#use-the-fabric-automation-tools-extension) extension, which supports many of the deployment pipelines API operations.
 
@@ -59,7 +59,7 @@ Here's a list of the different deployment types the APIs support:
 
 Before you use the deployment pipelines APIs, make sure you have the following:
 
-* The [*service principal*](/power-bi/developer/embedded/embed-service-principal.md), or the *user* that will call the APIs, needs [pipeline and workspace permissions](deployment-pipelines-process.md#permissions) and access to an [Azure AD application](/azure/active-directory/develop/active-directory-how-applications-are-added).
+* The [*service principal*](/power-bi/developer/embedded/embed-service-principal.md), or the *user* that will call the APIs, needs [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Azure AD application](/azure/active-directory/develop/active-directory-how-applications-are-added).
 
 * If you're going to use PowerShell scripts, install the Power BI PowerShell cmdlets [Install-Module MicrosoftPowerBIMgmt](/powershell/power-bi/overview).
 
@@ -173,7 +173,7 @@ To run a PowerShell script that performs a deployment, you'll need the following
 
 ## Considerations and limitations
 
-* Deployment by using APIs is subject to the same [limitations](deployment-pipelines-process.md#considerations-and-limitations) as the deployment pipelines user interface.
+* Deployment by using APIs is subject to the same [limitations](understand-the-deployment-process.md#considerations-and-limitations) as the deployment pipelines user interface.
 
 * A *service principal* can't configure *OAuth* credentials. After you deploy new items, the signed in *service principal* becomes the owner of any deployed paginated reports and datasets. In such cases, a refresh can't be completed.
 
@@ -183,6 +183,6 @@ To run a PowerShell script that performs a deployment, you'll need the following
 
 ## Next steps
 
-* [Get started with deployment pipelines](deployment-pipelines-get-started.md)
-* [Deployment pipelines best practices](deployment-pipelines-best-practices.md)
-* [Troubleshooting deployment pipelines](deployment-pipelines-troubleshooting.yml)
+* [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
+* [Deployment pipelines best practices](../best-practices-cicd.md)
+* [Troubleshooting deployment pipelines](../troubleshoot-cicd.yml)

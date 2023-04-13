@@ -13,18 +13,18 @@ ms.search.form: R Language
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-
 [SparkR](https://spark.apache.org/docs/latest/sparkr.html) is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation etc. SparkR also supports distributed machine learning using MLlib.
 
-You can use SparkR through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks. 
+Use SparkR through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks. 
 
 ## Requirements
 
-R support is only available in Spark3.1 or above. We don't support R in Spark 2.4
+R support is only available in Spark3.1 or above.  R in Spark 2.4 is not supported.
 
-## Reading and writing SparkR DataFrames
+## Read and write SparkR DataFrames
 
-### Reading a SparkR DataFrame from a local R data.frame
+### Read a SparkR DataFrame from a local R data.frame
+
 The simplest way to create a DataFrame is to convert a local R data.frame into a Spark DataFrame. 
 
 ```R
@@ -38,11 +38,14 @@ df <- createDataFrame(faithful)
 display(df)
 ```
 
-### Reading and writing SparkR DataFrame from Lakehouse
-Data can be stored on the local filesystem of cluster nodes. The general methods for reading and writing a SparkR DataFrame from Lakehouse is `read.df` and `write.df`. These methods take the path for the file to load and the type of data source. SparkR supports reading CSV, JSON, text, and Parquet files natively.
+### Read and write SparkR DataFrame from Lakehouse
 
-> [!Note] 
-> To access Lakehouse files using Spark packages, such as `read.df` or `write.df`, you need to use its *ADFS path* or *relative path for Spark*. In the Lakehouse explorer, right click on the files or folder you want to access and copy its *ADFS path* or *relative path for Spark* from the contextual menu.
+Data can be stored on the local filesystem of cluster nodes. The general methods to read and write a SparkR DataFrame from Lakehouse is `read.df` and `write.df`. These methods take the path for the file to load and the type of data source. SparkR supports reading CSV, JSON, text, and Parquet files natively.
+
+To read and write to a Lakehouse, first add it to your session. On the left side of the notebook, select **Add** to add an existing Lakehouse or create a Lakehouse.
+
+> [!NOTE] 
+> To access Lakehouse files using Spark packages, such as `read.df` or `write.df`, use its *ADFS path* or *relative path for Spark*. In the Lakehouse explorer, right click on the files or folder you want to access and copy its *ADFS path* or *relative path for Spark* from the contextual menu.
 
 ```R
 # write data in CSV using relative path for Spark
@@ -68,14 +71,15 @@ faithfulDF_pq <- read.df(temp_parquet_spark, source= "parquet", header = "true",
 display(faithfulDF_pq)
 ```
 
-[!INCLUDE [product-name](../includes/product-name.md)]  has `tidyverse` preinstalled. You can access Lakehouse files using your familiar R packages, such as reading and writing Lakehouse files using `readr::read_csv()` and `readr::write_csv()`.  
+[!INCLUDE [product-name](../includes/product-name.md)]  has `tidyverse` preinstalled. You can access Lakehouse files in your familiar R packages, such as reading and writing Lakehouse files using `readr::read_csv()` and `readr::write_csv()`.  
 
-> [!Note] 
+> [!NOTE] 
 > To access Lakehouse files using R packages, you need to use the *File API path*. In the Lakehouse explorer, right click on the file or folder that you want to access and copy its *File API path* from the contextual menu.
 
 ```R
-# read data in CSV uxing API path
-temp_csv_api<-'/lakehouse/default/Files/data/faithful.csv'
+# read data in CSV using API path
+# To find the path, navigate to the csv file, right click, and  Copy File API path.
+temp_csv_api<-'/lakehouse/default/Files/data/faithful.csv/part-00000-d8e09a34-bd63-41bd-8cf8-f4ed2ef90e6c-c000.csv'
 faithfulDF_API <- readr::read_csv(temp_csv_api)
 
 # display the content of the R data.frame
@@ -94,7 +98,8 @@ waiting <- sql("SELECT * FROM eruptions")
 head(waiting)
 ```
 
-### Reading and writing SQL tables through RODBC
+### Read and write SQL tables through RODBC
+
 You can leverage RODBC to connect to SQL based databases through an ODBC interface. For example, you can connect to a Synapse dedicated SQL pool as shown in the example code below.
 
 ```R
@@ -121,9 +126,11 @@ head(spark_df)
 ```
 
 ## DataFrame operations
+
 SparkR DataFrames support many functions to do structured data processing. Here are some basic examples. A complete list can be found in the [SparkR API docs](https://spark.apache.org/docs/latest/api/R/).
 
 ### Select rows and columns
+
 ```R
 # Select only the "waiting" column
 head(select(df,df$waiting))
@@ -139,7 +146,9 @@ head(select(df, "waiting"))
 head(filter(df, df$waiting > 70))
 ```
 
+
 ### Grouping and aggregation
+
 SparkR data frames support many commonly used functions to aggregate data after grouping. For example, we can compute a histogram of the waiting time in the faithful dataset as shown below
 
 ```R
@@ -164,11 +173,11 @@ df$waiting_secs <- df$waiting * 60
 head(df)
 ```
 
-### Applying User-Defined Function
+### Apply user-defined function
 
-SparkR supports several kinds of User-Defined Functions:
+SparkR supports several kinds of user-defined functions:
 
-####  Run a given function on a large dataset using `dapply` or `dapplyCollect`
+#### Run a function on a large dataset with `dapply` or `dapplyCollect`
 
 
 #### `dapply`
@@ -199,9 +208,10 @@ ldf <- dapplyCollect(
 head(ldf, 3)
 ```
 
-#### Run a given function on a large dataset grouping by input column(s) and using `gapply` or `gapplyCollect`
+#### Run a function on a large dataset grouping by input column(s) with `gapply` or `gapplyCollect`
 
 #### `gapply`
+
 
 Apply a function to each group of a `SparkDataFrame`. The function is to be applied to each group of the `SparkDataFrame` and should have only two parameters: grouping key and R `data.frame` corresponding to that key. The groups are chosen from `SparkDataFrames` column(s). The output of function should be a `data.frame`. Schema specifies the row format of the resulting `SparkDataFrame`. It must represent R function’s output schema from Spark [data types](https://spark.apache.org/docs/latest/sparkr.html#data-type-mapping-between-r-and-spark). The column names of the returned `data.frame` are set by user.
 
@@ -220,6 +230,7 @@ head(collect(arrange(result, "max_eruption", decreasing = TRUE)))
 
 #### `gapplyCollect`
 
+
 Like gapply, applies a function to each group of a `SparkDataFrame` and collect the result back to R `data.frame`. The output of the function should be a `data.frame`. But, the schema isn't required to be passed. Note that `gapplyCollect` can fail if the outputs of UDF run on all the partition can't be pulled to the driver and fit in driver memory.
 
 ```R
@@ -235,9 +246,10 @@ result <- gapplyCollect(
 head(result[order(result$max_eruption, decreasing = TRUE), ])
 ```
 
-#### Run local R functions distributed using spark.lapply
+#### Run local R functions distributed with spark.lapply
 
 #### `spark.lapply`
+
 
 Similar to `lapply` in native R, `spark.lapply` runs a function over a list of elements and distributes the computations with Spark. Applies a function in a manner that is similar to `doParallel` or `lapply` to elements of a list. The results of all the computations should fit in a single machine. If that is not the case, they can do something like `df <- createDataFrame(list)` and then use `dapply`.
 
@@ -256,7 +268,8 @@ model.summaries <- spark.lapply(families, train)
 print(model.summaries)
 ```
 
-## Running SQL queries from SparkR
+## Run SQL queries from SparkR
+
 A SparkR DataFrame can also be registered as a temporary view that allows you to run SQL queries over its data. The sql function enables applications to run SQL queries programmatically and returns the result as a SparkR DataFrame.
 
 ```R
@@ -270,6 +283,7 @@ head(waiting)
 ```
 
 ## Machine learning
+
 SparkR exposes most of MLLib algorithms. Under the hood, SparkR uses MLlib to train the model.
 
 The following example shows how to build a Gaussian GLM model using SparkR. To run linear regression, set family to `"gaussian"`. To run logistic regression, set family to `"binomial"`. When using SparkML GLM SparkR automatically performs one-hot encoding of categorical features so that it doesn't need to be done manually. Beyond String and Double type features, it's also possible to fit over MLlib Vector features, for compatibility with other MLlib components.
