@@ -100,7 +100,7 @@ head(waiting)
 
 ### Read and write SQL tables through RODBC
 
-You can leverage RODBC to connect to SQL based databases through an ODBC interface. For example, you can connect to a Synapse dedicated SQL pool as shown in the example code below.
+Use RODBC to connect to SQL based databases through an ODBC interface. For example, you can connect to a Synapse dedicated SQL pool as shown in the following example code.  Substitute your own connection details for <database>, <uid>, <password>, and <table>.
 
 ```R
 # load RODBC package
@@ -108,15 +108,15 @@ library(RODBC)
 
 # connect to driver
 channel <-odbcDriverConnect("Driver={ODBC Driver 17 for SQL Server};
-Server={};
-Database=spark33test1;Uid={};
-Pwd={};
+Server={<database>};
+Database=spark33test1;Uid={<uid>};
+Pwd={<pwd>};
 Encrypt=yes;
 TrustServerCertificate=yes;
 Connection Timeout=30;")
 
 # query from existing tables
-Rdf <- sqlQuery(channel, "select * from irisEdog151")
+Rdf <- sqlQuery(channel, "select * from <table>")
 class(Rdf)
 
 # use SparkR::as.DataFrame to convert R date.frame to SparkR DataFrame.
