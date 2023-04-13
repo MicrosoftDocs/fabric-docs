@@ -1,15 +1,17 @@
 ---
 title: Synapse Data Warehouse in Microsoft Fabric
 description: Learn more about Synapse Data Warehouse in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: cynotebo
 author: cynotebo
+ms.author: cynotebo
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 04/05/2023
 ms.search.form: Warehouse overview, Warehouse in workspace overview
 ---
 
 # Synapse Data Warehouse in Microsoft Fabric
+
+**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -24,7 +26,7 @@ To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLU
 
 ## Datasets
 
-When you create a [Lakehouse](../data-engineering/lakehouse-overview.md) or a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], a default Power BI dataset is created. This is represented with the (default) suffix. For more information, see [Default datasets](datasets.md).
+When you create a [Lakehouse](../data-engineering/lakehouse-overview.md) or a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], a default Power BI dataset is created. This is represented with the (default) suffix. For more information, see [Default Power BI datasets](datasets.md).
 
 ## Limitations
 
@@ -86,7 +88,7 @@ From the menu that appears, select **Rename**.
 
 Provide a new name in the dialog and select **Rename** to apply.
 
-When you rename a warehouse, the default dataset based on that warehouse is also automatically renamed.
+When you rename a warehouse, the default Power BI dataset based on that warehouse is also automatically renamed.
 
 ## Delete a warehouse
 

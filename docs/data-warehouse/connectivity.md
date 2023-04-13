@@ -1,21 +1,21 @@
 ---
-title: Connectivity
-description: Follow steps to connect SSMS to a warehouse in your workspace.
-ms.reviewer: wiassaf
-ms.author: salilkanade
+title: Connectivity to data warehousing in Microsoft Fabric
+description: Follow steps to connect SSMS to data warehousing in your Microsoft Fabric workspace.
 author: salilkanade
+ms.author: salilkanade
+ms.reviewer: wiassaf
 ms.topic: how-to
-ms.date: 03/24/2023
+ms.date: 04/12/2023
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
-# Connectivity
+# Connectivity to data warehousing in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article provides a how-to on connecting to your SQL Endpoint to data warehouse using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
+This article provides a how-to on connecting to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
 
 To get started, you must complete the following prerequisites:
 
@@ -26,7 +26,7 @@ To get started, you must complete the following prerequisites:
 
 The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to SSMS.
 
-### Get end-point
+### Get endpoint
 
 To retrieve the connection string, follow these steps:
 
@@ -56,7 +56,7 @@ To retrieve the connection string, follow these steps:
 
 When connecting via SSMS (or ADS), you see both SQL Endpoint and [!INCLUDE [fabric-dw](includes/fabric-dw.md)]s listed as warehouses and it's difficult to differentiate between the two item types and their functionality. For this reason, we strongly encourage you to adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience.
 
-### Connecting to SQL Server endpoint using JDBC driver
+### Connect to SQL Server endpoint using JDBC driver
 
 If you're receiving an error when attempting to connect to a SQL Server endpoint using a SQL client that uses a Java database connectivity (JDBC) driver, like DBeaver, check for the following dependencies:
 
