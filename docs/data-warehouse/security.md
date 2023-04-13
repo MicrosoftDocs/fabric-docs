@@ -26,7 +26,7 @@ For information on connecting to the [!INCLUDE [fabric-se](includes/fabric-se.md
 -  [!INCLUDE [product-name](../includes/product-name.md)] workspace roles provide [!INCLUDE [product-name](../includes/product-name.md)] permissions for all warehouses within a workspace.
 -  Granular user permissions can be further managed via T-SQL.
 
-## Workspace roles
+### Workspace roles
 
 Workspace roles are used for development team collaboration within a workspace. Role assignment determines the actions available to the user and applies to all artifacts within the workspace.
 - For an overview of [!INCLUDE [product-name](../includes/product-name.md)] workspace roles, see [Roles in workspaces](../../roles-workspaces.md).
@@ -35,44 +35,18 @@ Workspace roles are used for development team collaboration within a workspace. 
 See [Workspace roles](workspace-roles.md) for details on the specific Warehouse capabilities provided through Workspace roles.
 
 
-## Artifact permissions
+### Artifact permissions
 
 In contrast to workspace roles, which apply to all artifacts within a workspace, artifact permissions can be assigned directly to individual artifacts. The user will receive the assigned permission on that single Warehouse. The primary purpose is for artifact permissions is to enable sharing for downstream consumption of the Warehouse.
 
 See [Artifact permissions](artifact-permissions.md) for details on the specific permissions provided for warehouses.
 
 
-## Object-level security
+### Object-level security
 
 Workspace roles and artifact permissions provide an easy way to assign coarse permissions to a user for the entire warehouse. However, in some casees, more granular permissions are needed for a user. To achieve this, standard T-SQL constructs can be used to provide specific permissions to users.
 
-- Granular object-level-security can be managed using GRANT, REVOKE & DENY syntax.
-- Users can also be assigned to SQL roles, both custom and built-in database roles. 
-
-Limitations:
-- Row-level security is currently not supported
-- Dynamic data masking is currently not supported
-
-
-
-## View my permissions
-
-Once you're assigned to a workspace role, you can connect to the warehouse (see [Connectivity](connectivity.md) for more information), with the permissions detailed previously. Once connected, you can check your permissions.
-
-1. Connect to the warehouse using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms).
-
-1. Open a new query window.
-
-   :::image type="content" source="media\manage-user-access\new-query-context-menu.png" alt-text="Screenshot showing where to select New Query in the Object Explorer context menu." lightbox="media\manage-user-access\new-query-context-menu.png":::
-
-1. To see the permissions granted to the user, execute:
-
-   ```sql
-   SELECT *
-   FROM sys.fn_my_permissions(NULL, "Database")
-   ```
-
-   :::image type="content" source="media\manage-user-access\execute-view-permissions.png" alt-text="Screenshot showing where to execute the command to see permissions." lightbox="media\manage-user-access\execute-view-permissions.png":::
+See [SQL permissions](sql-granular-permissions.md) for details on the managing granular permissions in SQL.
 
 ## Next steps
 
