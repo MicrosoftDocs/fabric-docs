@@ -37,8 +37,10 @@ items:
     href: connectivity.md    
   - name: Workspace roles
     href: workspace-roles.md
-  - name: Manage user access
-    href: manage-user-access.md    
+  - name: Artifact permissions
+    href: artifact-permissions.md    
+  - name: SQL granular permissons
+    href: sql-granular-permissions.md  
 - name: Datasets
   items:
   - name: Datasets
