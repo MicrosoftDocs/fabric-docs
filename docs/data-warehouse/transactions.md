@@ -10,16 +10,22 @@ ms.topic: how-to
 
 # Transactions in Synapse Data Warehouse tables in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-You can modify data that is stored in tables in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using transactions to group changes together. Transactions allow you to commit all tables or none of the tables that you're changing data in. For example, if you're changing details about a purchase order that affects three tables, you can group those changes into a single transaction. That means when those tables are queried, they either all have the changes or none of them do. Transactions are a common practice for when you need to ensure your data is consistent across multiple tables. 
+Similar to their behavior in SQL Server, transactions allow you to control the commit or rollback of read and write queries. 
 
-Transactions are also used for sequential select statements to ensure the tables involved all have data from the same point in time. As an example, if a table has new rows added by another transaction, the new rows don't affect the SELECT queries inside an open transaction.
+You can modify data that is stored in tables in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using transactions to group changes together. 
 
-> [!NOTE]
-> If you use T-SQL to change your isolation level, it the change is ignored at Query Execution time and SNAPSHOT ISOLATION is applied.
+- For example, you could commit inserts to multiples tables, or, none of the tables if an error arises. If you're changing details about a purchase order that affects three tables, you can group those changes into a single transaction. That means when those tables are queried, they either all have the changes or none of them do. Transactions are a common practice for when you need to ensure your data is consistent across multiple tables. 
+
+The same transactional capabilities are supported in the [!INCLUDE [fabric-se](includes/fabric-se.md)] in [!INCLUDE [product-name](../includes/product-name.md)], but for read-only queries.
+
+Transactions can also be used for sequential SELECT statements to ensure the tables involved all have data from the same point in time. As an example, if a table has new rows added by another transaction, the new rows don't affect the SELECT queries inside an open transaction.
+
+> [!IMPORTANT]
+> Only the snapshot isolation level is supported in [!INCLUDE [product-name](../includes/product-name.md)]. If you use T-SQL to change your isolation level, the change is ignored at Query Execution time and snapshot isolation is applied.
 
 ## Cross-database query transaction support
 

@@ -86,8 +86,6 @@ landingContent:
         links:
           - text: Ingest data guide
             url: ingest-data.md
-          - text: Ingest data using the COPY command
-            url: ingest-data-copy-command.md
           - text: Ingest data using pipelines
             url: ingest-data-pipelines.md
   # Card 
