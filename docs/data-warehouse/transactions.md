@@ -16,7 +16,7 @@ ms.topic: how-to
 
 You can modify data that is stored in tables in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using transactions to group changes together. Transactions allow you to commit all tables or none of the tables that you're changing data in. For example, if you're changing details about a purchase order that affects three tables, you can group those changes into a single transaction. That means when those tables are queried, they either all have the changes or none of them do. Transactions are a common practice for when you need to ensure your data is consistent across multiple tables. 
 
-Transactions are also used for sequential select statements to ensure the tables involved all have data from the same point in time. As an example, if a table has new rows added or to it during the transaction, the new rows don't affect the queries inside the transaction.
+Transactions are also used for sequential select statements to ensure the tables involved all have data from the same point in time. As an example, if a table has new rows added by another transaction, the new rows don't affect the SELECT queries inside an open transaction.
 
 > [!NOTE]
 > If you use T-SQL to change your isolation level, it the change is ignored at Query Execution time and SNAPSHOT ISOLATION is applied.
