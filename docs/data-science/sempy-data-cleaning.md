@@ -1,6 +1,6 @@
 ---
 title: SemPy data cleaning with functional dependencies
-description: Learn how to use functional dependencies for data cleaning with
+description: Learn how to use functional dependencies for data cleaning. A functional dependency is where one column is a function of another.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
-# Data cleaning with functional dependencies
+# Data cleaning with functional dependencies in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

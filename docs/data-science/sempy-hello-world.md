@@ -1,6 +1,6 @@
 ---
 title: SemPy hello world
-description: Get started learning about SemPy with a small example.
+description: Learn about SemPy with an example with three parts - initialize pandas dataframes, populate SemPy knowledge base, and discover relationships between dataframes.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: quickstart
 ms.date: 02/10/2023
 ---
 
-# Hello world
+# SemPy hello world in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

@@ -12,7 +12,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
   ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 04/05/2023 #Required; mm/dd/yyyy format.
+  ms.date: 04/13/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -114,6 +114,8 @@ landingContent:
         links:
           - text: Monitor 
             url: monitor-using-dmv.md 
+          - text: Workload Management
+            url: workload-management.md            
   # Card 
   - title: Best practices
     linkLists:
