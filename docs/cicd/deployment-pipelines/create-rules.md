@@ -89,7 +89,7 @@ Data source rules can be defined for the following data sources:
 
 * Teradata
 
-For other data sources, we recommend [using parameters to configure your data source](deployment-pipelines-best-practices.md#use-parameters-in-your-model).
+For other data sources, we recommend [using parameters to configure your data source](../best-practices-cicd.md#use-parameters-in-your-model).
 
 ## Considerations and limitations
 
@@ -101,7 +101,7 @@ This section lists the limitations for the deployment rules.
 
 * When an item is removed or deleted, its rules are deleted too. These rules can't be restored.
 
-* When you unassign and reassign a workspace to [reestablish connections](deployment-pipelines-troubleshooting.yml#how-do-i-reestablish-connections-after-deployment-), rules for that workspace are lost. To use these rules again, reconfigure them.
+* When you unassign and reassign a workspace to [reestablish connections](../troubleshoot-cicd.yml#how-do-i-reestablish-connections-after-deployment-), rules for that workspace are lost. To use these rules again, reconfigure them.
 
 * Rules for dataflows that have other dataflows as sources, aren't supported.
 
@@ -120,5 +120,5 @@ This section lists the limitations for the deployment rules.
 
 ## Next steps
 
-* [Get started with deployment pipelines](deployment-pipelines-get-started.md)
-* [Automate your deployment pipeline using APIs and DevOps](deployment-pipelines-automation.md)
+* [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
+* [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md)

@@ -117,4 +117,4 @@ Close the window when you finish examining the differences and deploy to the nex
 
 ## Next steps
 
-[Deploy content to the next stage](deployment-pipelines-deploy.md)
+[Deploy content to the next stage](deploy-content.md)
