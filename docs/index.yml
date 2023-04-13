@@ -1,7 +1,7 @@
 ### YamlMime:Hub
 
 title: Microsoft Fabric documentation # < 60 chars
-summary: Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more. With Microsoft Fabric documentation, you get expert information and answers to address your needs. # < 160 chars
+summary: Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more. With Microsoft Fabric documentation, you get expert information and answer to address your needs. # < 160 chars
 # brand: aspnet | azure | dotnet | dynamics | m365 | ms-graph | office | power-platform | sql | sql-server | vs | visual-studio | windows | xamarin
 brand: power-bi
 
@@ -23,7 +23,7 @@ highlightedContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   items:
     # Card
-    - title: What is Microsoft Fabric ?
+    - title: What is Microsoft Fabric?
       itemType: overview
       url: placeholder.md
     # Card
@@ -41,7 +41,7 @@ highlightedContent:
 
 productDirectory:
   title: Explore Microsoft Fabric experiences
-  summary: Learn about Microsoft Fabric, try and evaluate its features, analyze your data and run reports.
+  summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
   items:
 
     # Card
