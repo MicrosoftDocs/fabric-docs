@@ -179,7 +179,6 @@ SparkR supports several kinds of user-defined functions:
 
 #### Run a function on a large dataset with `dapply` or `dapplyCollect`
 
-
 #### `dapply`
 
 Apply a function to each partition of a `SparkDataFrame`. The function to be applied to each partition of the `SparkDataFrame` and should have only one parameter, to which a data.frame corresponds to each partition will be passed. The output of function should be a `data.frame`. Schema specifies the row format of the resulting a `SparkDataFrame`. It must match to [data types](https://spark.apache.org/docs/latest/sparkr.html#data-type-mapping-between-r-and-spark) of returned value.
@@ -195,6 +194,7 @@ head(collect(df1))
 ```
 
 #### `dapplyCollect`
+
 Like dapply, apply a function to each partition of a `SparkDataFrame` and collect the result back. The output of function should be a `data.frame`. But, Schema isn't required to be passed. Note that `dapplyCollect` can fail if the outputs of UDF run on all the partition can't be pulled to the driver and fit in driver memory.
 
 ```R
@@ -211,7 +211,6 @@ head(ldf, 3)
 #### Run a function on a large dataset grouping by input column(s) with `gapply` or `gapplyCollect`
 
 #### `gapply`
-
 
 Apply a function to each group of a `SparkDataFrame`. The function is to be applied to each group of the `SparkDataFrame` and should have only two parameters: grouping key and R `data.frame` corresponding to that key. The groups are chosen from `SparkDataFrames` column(s). The output of function should be a `data.frame`. Schema specifies the row format of the resulting `SparkDataFrame`. It must represent R function’s output schema from Spark [data types](https://spark.apache.org/docs/latest/sparkr.html#data-type-mapping-between-r-and-spark). The column names of the returned `data.frame` are set by user.
 
@@ -273,7 +272,7 @@ print(model.summaries)
 A SparkR DataFrame can also be registered as a temporary view that allows you to run SQL queries over its data. The sql function enables applications to run SQL queries programmatically and returns the result as a SparkR DataFrame.
 
 ```R
-# Regsiter ealier df as temp view
+# Register earlier df as temp view
 createOrReplaceTempView(df, "eruptions")
 
 # Create a df using a SparkSQL query

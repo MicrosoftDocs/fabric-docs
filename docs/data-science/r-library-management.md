@@ -131,15 +131,15 @@ To use a session-level custom library, you must first upload it to an attached L
 
 1. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
-    :::image type="content" source="media/r-library-management/add-lakehouse.png" alt-text="Add a lakehouse to your notebook.":::
+    :::image type="content" source="media/r-library-management/add-lakehouse.png" alt-text="Screenshot of how to add a lakehouse to your notebook.":::
 
 1. To add files to this lakehouse, select your workspace and then select the lakehouse.
 
-    :::image type="content" source="media/r-library-management/select-lakehouse.png" alt-text="Navigate to your lakehouse to add files.":::
+    :::image type="content" source="media/r-library-management/select-lakehouse.png" alt-text="Screenshot of how to navigate to your lakehouse to add files.":::
 
 1. Right click or select the "..." next to **Files** to upload your _.tar.gz_ file.
 
-    :::image type="content" source="media/r-library-management/upload-files.png" alt-text="Upload you file to the lakehouse Files folder.":::
+    :::image type="content" source="media/r-library-management/upload-files.png" alt-text="Screenshot of how to upload your file to the lakehouse Files folder.":::
 
 
 1. After uploading, go back to your notebook.  Use the following command to install the custom library to your session:
