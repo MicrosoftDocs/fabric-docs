@@ -4,7 +4,7 @@ description: Learn about using the data grid in Microsoft Fabric.
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 04/13/2023
 ms.topic: how-to
 ---
 
