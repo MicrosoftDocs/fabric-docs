@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.service: powerbi
 ms.topic: conceptual
-ms.date: 01/05/2023
+ms.date: 04/13/2023
 ---
 
 # What is CI/CD in Microsoft Fabric?
@@ -18,7 +18,7 @@ With Microsoft Fabric's [Git integration](./git-integration/git-integration-over
 
 ## Continuous delivery
 
-Microsoft Fabric's [deployment pipelines](./deployment-pipelines/deployment-pipelines-overview.md) [automates the delivery](./deployment-pipelines/deployment-pipelines-automation.md) of completed code to environments like testing and production. It allows teams to produce software in short cycles with high speed, frequency, and reliability. Software can be released at any time with a simple, repeatable deployment process.
+Microsoft Fabric's [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) [automates the delivery](./deployment-pipelines/pipeline-automation.md) of completed code to environments like testing and production. It allows teams to produce software in short cycles with high speed, frequency, and reliability. Software can be released at any time with a simple, repeatable deployment process.
 
 For the most seamless CI/CD experience in Fabric, connect your developer workspace to git, and deploy from there using deployment pipelines.
 
@@ -38,5 +38,5 @@ This cycle, or parts of it, repeat over again for the lifetime of the app.
 
 ## Next steps
 
-* [Deployment pipelines](./deployment-pipelines/deployment-pipelines-overview.md)
+* [Deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md)
 * [Git integration](./git-integration/git-integration-overview.md)

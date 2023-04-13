@@ -17,19 +17,19 @@ The deployment process lets you clone content from one stage in the deployment p
 
 During deployment, Microsoft Fabric copies the content from the current stage, into the target one. The connections between the copied items are kept during the copy process. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content may take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the portal, but you can't use the content in the target stage.
 
-You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). You can learn more about this process in [Automate your deployment pipeline using APIs and DevOps](deployment-pipelines-automation.md).
+You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). You can learn more about this process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
-## Deploying content to an empty stage
+## Deploy content to an empty stage
 
 When you deploy content to an empty stage, a new workspace is created on a Premium capacity for the stage you deploy to. All the metadata in the reports, dashboards, and datasets of the original workspace is copied to the new workspace in the stage you're deploying to.
 
-There are two ways to deploy content from one stage to another. You can deploy all the content, or you can [select which items to deploy](deployment-pipelines-deploy.md#selective-deployment).
+There are two ways to deploy content from one stage to another. You can deploy all the content, or you can [select which items to deploy](deploy-content.md#selective-deployment).
 
 You can also deploy content backwards, from a later stage in the deployment pipeline, to an earlier one.
 
 After the deployment is complete, refresh the datasets so that you can use the newly copied content. The dataset refresh is required because data isn't copied from one stage to another. To understand which item properties are copied during the deployment process, and which item properties aren't copied, review the [item properties copied during deployment](#item-properties-copied-during-deployment) section.
 
-### Creating a Premium workspace
+### Create a Premium workspace
 
 The first time you deploy content, deployment pipelines checks if you have Premium permissions.  
 
@@ -55,7 +55,7 @@ Deploying content from a working production pipeline to a stage that has an exis
 
 When content from the current stage is copied to the target stage, Fabric identifies existing content in the target stage and overwrites it. To identify which content item needs to be overwritten, deployment pipelines uses the connection between the parent item and its clones. This connection is kept when new content is created. The overwrite operation only overwrites the content of the item. The item's ID, URL, and permissions remain unchanged.
 
-In the target stage, [item properties that aren't copied](deployment-pipelines-process.md#item-properties-that-are-not-copied), remain as they were before deployment. New content and new items are copied from the current stage to the target stage.
+In the target stage, [item properties that aren't copied](understand-the-deployment-process.md#item-properties-that-are-not-copied), remain as they were before deployment. New content and new items are copied from the current stage to the target stage.
 
 ### Auto-binding
 
@@ -69,7 +69,7 @@ During deployment, deployment pipelines checks for dependencies. The deployment 
 
 Auto-binding works only with items that are supported by deployment pipelines and reside within Fabric. To view the dependencies of an item, from the item's *More options* menu, select *View lineage*.
 
-:::image type="content" source="media/deployment-pipelines-process/view-lineage.png" alt-text="A screenshot of the view lineage option, in an item's more options menu.":::
+:::image type="content" source="media/understand-the-deployment-process/view-lineage.png" alt-text="A screenshot of the view lineage option, in an item's more options menu.":::
 
 #### Auto-binding across pipelines
 
@@ -91,19 +91,19 @@ Here's an example with illustrations that will help demonstrate how auto-binding
 
         The deployment will succeed, and deployment pipelines will connect (auto-bind) the report in the test stage of pipeline B, to the dataset in the test stage of pipeline A.
 
-        :::image type="content" source="media/deployment-pipelines-process/successful-deployment.png" alt-text="A diagram showing a deployment of a report from the development stage to the test stage in pipeline B. The report is connected to a dataset in pipeline A. The deployment is successful because there's a copy of the dataset the report depends on in the test stage of pipeline A. After the deployment the report in the test stage on pipeline B, auto-binds with the dataset in the test stage of pipeline A.":::
+        :::image type="content" source="media/understand-the-deployment-process/successful-deployment.png" alt-text="A diagram showing a deployment of a report from the development stage to the test stage in pipeline B. The report is connected to a dataset in pipeline A. The deployment is successful because there's a copy of the dataset the report depends on in the test stage of pipeline A. After the deployment the report in the test stage on pipeline B, auto-binds with the dataset in the test stage of pipeline A.":::
 
     * *You don't have a copy of the dataset the report depends on in the test stage of pipeline A*
 
         The deployment will fail because deployment pipelines can't connect (auto-bind) the report in the test stage in pipeline B, to the dataset it depends on in the test stage of pipeline A.
 
-        :::image type="content" source="media/deployment-pipelines-process/failed-deployment.png" alt-text="A diagram showing a deployment of a report from the development stage to the test stage in pipeline B. The report is connected to a dataset in pipeline A. The deployment fails because there isn't a copy of the dataset the report depends on in the test stage of pipeline A.":::
+        :::image type="content" source="media/understand-the-deployment-process/failed-deployment.png" alt-text="A diagram showing a deployment of a report from the development stage to the test stage in pipeline B. The report is connected to a dataset in pipeline A. The deployment fails because there isn't a copy of the dataset the report depends on in the test stage of pipeline A.":::
 
 #### Avoid using auto-binding
 
 In some cases, you might not want to use auto-binding. For example, if you have one pipeline for developing organizational datasets, and another for creating reports. In this case, you might want all the reports to always be connected to datasets in the production stage of the pipeline they belong to. To accomplish this, you'll need to avoid using the auto-binding feature.
 
-:::image type="content" source="media/deployment-pipelines-process/no-auto-binding.png" alt-text="A diagram showing two pipelines. Pipeline A has a dataset in every stage and pipeline B has a report in every stage. All the reports from pipeline B are connected to the dataset in the production stage of pipeline A.":::
+:::image type="content" source="media/understand-the-deployment-process/no-auto-binding.png" alt-text="A diagram showing two pipelines. Pipeline A has a dataset in every stage and pipeline B has a report in every stage. All the reports from pipeline B are connected to the dataset in the production stage of pipeline A.":::
 
 There are three methods you can use to avoid using auto-binding:
 
@@ -115,7 +115,7 @@ There are three methods you can use to avoid using auto-binding:
 
 #### Auto-binding and parameters
 
-Parameters can be used to control the connections between datasets or dataflows and the items that they depend on. When a parameter controls the connection, auto-binding after deployment won't take place, even when the connection includes a parameter that applies to the dataset’s or dataflow's ID, or the workspace ID. In such cases, you'll need to rebind the items after the deployment by changing the parameter value, or by using [parameter rules](deployment-pipelines-create-rules.md).
+Parameters can be used to control the connections between datasets or dataflows and the items that they depend on. When a parameter controls the connection, auto-binding after deployment won't take place, even when the connection includes a parameter that applies to the dataset’s or dataflow's ID, or the workspace ID. In such cases, you'll need to rebind the items after the deployment by changing the parameter value, or by using [parameter rules](create-rules.md).
 
 >[!NOTE]
 >If you're using parameter rules to rebind items, the parameters must be of type `Text`.  
@@ -168,9 +168,9 @@ Deployment pipelines doesn't support the following items:
 
 During deployment, the following item properties are copied and overwrite the item properties at the target stage:
 
-* Data sources ([deployment rules](deployment-pipelines-create-rules.md) are supported)
+* Data sources ([deployment rules](create-rules.md) are supported)
 
-* Parameters​ ([deployment rules](deployment-pipelines-create-rules.md) are supported)
+* Parameters​ ([deployment rules](create-rules.md) are supported)
 
 * Report visuals​
 
@@ -255,11 +255,11 @@ Once your pipeline is configured with incremental refresh, we recommend that you
 
 Below are a few examples of how you may integrate incremental refresh with deployment pipelines.
 
-* [Create a new pipeline](deployment-pipelines-get-started.md#step-1---create-a-deployment-pipeline) and connect it to a workspace with a dataset that has incremental refresh enabled.
+* [Create a new pipeline](get-started-with-deployment-pipelines.md#step-1---create-a-deployment-pipeline) and connect it to a workspace with a dataset that has incremental refresh enabled.
 
 * Enable incremental refresh in a dataset that's already in a *development* workspace.  
 
-* Create a pipeline from a production workspace that has a dataset that uses incremental refresh. This is done by assigning the workspace to a new pipeline's *production* stage, and using [backwards deployment](deployment-pipelines-deploy.md#backwards-deployment) to deploy to the *test* stage, and then to the *development* stage.
+* Create a pipeline from a production workspace that has a dataset that uses incremental refresh. This is done by assigning the workspace to a new pipeline's *production* stage, and using [backwards deployment](deploy-content.md#backwards-deployment) to deploy to the *test* stage, and then to the *development* stage.
 
 * Publish a dataset that uses incremental refresh to a workspace that's part of an existing pipeline.
 
@@ -303,11 +303,11 @@ Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incre
 
 Create an app for each deployment pipeline stage, so that you can test each update from an end user's point of view. Use the **publish** or **view** button in the workspace card to publish or view the app in a specific pipeline stage.
 
-:::image type="content" source="media/deployment-pipelines-process/publish.png" alt-text="A screenshot highlighting the publish app button, at the bottom right of the production stage." lightbox="media/deployment-pipelines-process/publish.png":::
+:::image type="content" source="media/understand-the-deployment-process/publish.png" alt-text="A screenshot highlighting the publish app button, at the bottom right of the production stage." lightbox="media/understand-the-deployment-process/publish.png":::
 
 In the production stage, the main action button on the bottom-right corner opens the update app page in Fabric, so that any content updates become available to app users.
 
-:::image type="content" source="media/deployment-pipelines-process/update-app.png" alt-text="A screenshot highlighting the update app button, at the bottom right of the production stage." lightbox="media/deployment-pipelines-process/update-app.png":::
+:::image type="content" source="media/understand-the-deployment-process/update-app.png" alt-text="A screenshot highlighting the update app button, at the bottom right of the production stage." lightbox="media/understand-the-deployment-process/update-app.png":::
 
 >[!IMPORTANT]
 >The deployment process does not include updating the app content or settings. To apply changes to content or settings, you need to manually update the app in the required pipeline stage.
@@ -380,7 +380,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * When you're deploying a Power BI item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment will fail.
 
-* For a list of workspace limitations, see the [workspace assignment limitations](deployment-pipelines-assign.md#limitations).
+* For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#limitations).
 
 * For a list of unsupported items, see [unsupported items](#unsupported-items).
 
@@ -388,13 +388,13 @@ This section lists most of the limitations in deployment pipelines.
 
 * Datasets that use real-time data connectivity can't be deployed.
 
-* A dataset with DirectQuery or Composite connectivity mode that uses variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables, isn’t supported. For more information see [What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or calendar tables?](deployment-pipelines-troubleshooting.yml#what-can-i-do-if-i-have-a-dataset-with-directquery-or-composite-connectivity-mode--that-uses-variation-or-auto-date-time-tables-)
+* A dataset with DirectQuery or Composite connectivity mode that uses variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables, isn’t supported. For more information see [What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or calendar tables?](../troubleshoot-cicd.yml#what-can-i-do-if-i-have-a-dataset-with-directquery-or-composite-connectivity-mode--that-uses-variation-or-auto-date-time-tables-)
 
 * During deployment, if the target dataset is using a [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets.md), the source dataset must use this connection mode too.
 
 * After deployment, downloading a dataset (from the stage it's been deployed to) isn't supported.
 
-* For a list of deployment rule limitations, see [deployment rules limitations](deployment-pipelines-create-rules.md#considerations-and-limitations).
+* For a list of deployment rule limitations, see [deployment rules limitations](create-rules.md#considerations-and-limitations).
 
 ### Dataflow limitations
 
@@ -404,7 +404,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * Deploying common data model (CDM) isn't supported.
 
-* For deployment pipeline rule limitations that affect dataflows, see [Deployment rules limitations](deployment-pipelines-create-rules.md#considerations-and-limitations).
+* For deployment pipeline rule limitations that affect dataflows, see [Deployment rules limitations](create-rules.md#considerations-and-limitations).
 
 * If a dataflow is being refreshed during deployment, the deployment will fail.
 
@@ -418,4 +418,4 @@ This section lists most of the limitations in deployment pipelines.
 
 ## Next steps
 
-[Get started with deployment pipelines](deployment-pipelines-get-started.md)
+[Get started with deployment pipelines](get-started-with-deployment-pipelines.md)

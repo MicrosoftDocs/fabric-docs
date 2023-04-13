@@ -47,7 +47,7 @@ If you're using [centralized datasets](/power-bi/connect-data/service-datasets-a
 
 ### Plan your permission model
 
-A deployment pipeline is a Fabric object with its own [permissions](deployment-pipelines-process.md#permissions). In addition, the pipeline contains workspaces that have their own permissions.
+A deployment pipeline is a Fabric object with its own [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions). In addition, the pipeline contains workspaces that have their own permissions.
 
 To implement a secure and easy workflow, plan who gets access to each part of the pipeline. Some of the considerations to take into account are:
 
@@ -80,7 +80,7 @@ As you can't edit datasets data sources in the Fabric service, we recommend usin
 
 In deployment pipelines, you can configure parameter rules to set different values for each deployment stage. You can also set rules for paginated reports.
 
-If you don’t use parameters for your connection string, you can define data source rules to specify a connection string for a given dataset. However, rules aren't supported in deployment pipelines for all data sources. To verify that you can configure rules for your data source, see [deployment rules limitations](deployment-pipelines-create-rules.md#considerations-and-limitations).
+If you don’t use parameters for your connection string, you can define data source rules to specify a connection string for a given dataset. However, rules aren't supported in deployment pipelines for all data sources. To verify that you can configure rules for your data source, see [deployment rules limitations](deployment-pipelines/create-rules.md#considerations-and-limitations).
 
 Parameters also have other uses, such as making changes to queries, filters, and the text displayed in the report.
 
@@ -137,11 +137,11 @@ Make sure that these three factors are addressed in your test environment:
 
 When testing, you can use the same capacity as the production stage. However, using the same capacity can make production unstable during load testing. To avoid unstable production, test using a different capacity similar in resources to the production capacity. To avoid extra costs, use a capacity where you can pay only for the testing time.
 
-:::image type="content" source="media/deployment-pipelines-best-practices/deployment-pipelines-best-practices-diagram.png" alt-text="A diagram showing a deployment pipeline with a test environment simulating the production environment.":::
+:::image type="content" source="media/best-practices-cicd/deployment-pipelines-best-practices-diagram.png" alt-text="A diagram showing a deployment pipeline with a test environment simulating the production environment.":::
 
 ### Use deployment rules with a real-life data source
 
-If you're using the test stage to simulate real life data usage, it's recommended to separate the development and test data sources. The development database should be relatively small, and the test database should be as similar as possible to the production database. Use [data source rules](deployment-pipelines-create-rules.md) to switch data sources in the test stage.
+If you're using the test stage to simulate real life data usage, it's recommended to separate the development and test data sources. The development database should be relatively small, and the test database should be as similar as possible to the production database. Use [data source rules](deployment-pipelines/create-rules.md) to switch data sources in the test stage.
 
 If you use a production data source in the test stage, it's useful to control the amount of data you import from your data source. You can control the amount of data you import by adding a parameter to your data source query in Power BI Desktop. Use parameter rules to control the amount of imported data or edit the parameter's value.
 You can also use this approach to avoid overloading your capacity.
@@ -174,7 +174,7 @@ This section provides guidance to the deployment pipelines production stage.
 
 ### Manage who can deploy to production
 
-Because deploying to production should be handled carefully, it's good practice to let only specific people manage this sensitive operation. However, you probably want all BI creators for a specific workspace to have access to the pipeline. Use production [workspace permissions](deployment-pipelines-process.md#permissions) to manage access permissions.
+Because deploying to production should be handled carefully, it's good practice to let only specific people manage this sensitive operation. However, you probably want all BI creators for a specific workspace to have access to the pipeline. Use production [workspace permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) to manage access permissions.
 
 To deploy content between stages, users need either *member* or *admin* permissions for both stages. Make sure that only the people you want to deploy to production have these permissions. Other users can have production workspace *contributor* or *viewer* roles. Users with contributor or viewer roles can see content from within the pipeline but can't deploy.
 
@@ -182,7 +182,7 @@ In addition, limit access to the pipeline by only enabling pipeline permissions 
 
 ### Set rules to ensure production stage availability
 
-[Deployment rules](deployment-pipelines-create-rules.md) are a powerful way to ensure the data in production is always connected and available to users. With deployment rules applied, deployments can run while you have the assurance that end users can see the relevant info without disturbance.
+[Deployment rules](deployment-pipelines/create-rules.md) are a powerful way to ensure the data in production is always connected and available to users. With deployment rules applied, deployments can run while you have the assurance that end users can see the relevant info without disturbance.
 
 Make sure that you set production deployment rules for data sources and parameters defined in the dataset.
 
@@ -198,6 +198,6 @@ Sometimes there are issues in production that require a quick fix. Never upload 
 
 ## Next steps
 
-* [Get started with deployment pipelines](deployment-pipelines-get-started.md)
-* [Assign a workspace to a pipeline stage](deployment-pipelines-assign.md)
-* [Deployment history](deployment-pipelines-history.md)
+* [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)
+* [Assign a workspace to a pipeline stage](deployment-pipelines/assign-pipeline.md)
+* [Deployment history](deployment-pipelines/deployment-history.md)
