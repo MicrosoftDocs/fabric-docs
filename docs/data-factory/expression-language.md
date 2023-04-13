@@ -101,22 +101,31 @@ Expression functions use single quote for string value parameters. Use two singl
 
 `Baba's book store`
 
-### System variables
+## Pipeline scope variables
 
-These system variables can be referenced anywhere in a pipeline.
+These system variables can be referenced anywhere in the pipeline.
 
 | Variable Name | Description |
 | --- | --- |
 | @pipeline().DataFactory |Name of the data  or Synapse workspace the pipeline run is running in |
 | @pipeline().Pipeline |Name of the pipeline |
 | @pipeline().RunId |ID of the specific pipeline run |
+| @pipeline().TriggerType |The type of trigger that invoked the pipeline (for example, `ScheduleTrigger`, `BlobEventsTrigger`). For a list of supported trigger types, see [Pipeline execution and triggers](concepts-pipeline-execution-triggers.md). A trigger type of `Manual` indicates that the pipeline was triggered manually. |
+| @pipeline().TriggerId|ID of the trigger that invoked the pipeline |
+| @pipeline().TriggerName|Name of the trigger that invoked the pipeline |
+| @pipeline().TriggerTime|Time of the trigger run that invoked the pipeline. This is the time at which the trigger **actually** fired to invoke the pipeline run, and it may differ slightly from the trigger's scheduled time.  |
 | @pipeline().GroupId | ID of the group to which pipeline run belongs. |
+| @pipeline()?.TriggeredByPipelineName | Name of the pipeline that triggers the pipeline run. Applicable when the pipeline run is triggered by an ExecutePipeline activity. Evaluate to _Null_ when used in other circumstances. Note the question mark after @pipeline() |
+| @pipeline()?.TriggeredByPipelineRunId | Run ID of the pipeline that triggers the pipeline run. Applicable when the pipeline run is triggered by an ExecutePipeline activity. Evaluate to _Null_ when used in other circumstances. Note the question mark after @pipeline() |
+
+>[!NOTE]
+>Trigger-related date/time system variables (in both pipeline and trigger scopes) return UTC dates in ISO 8601 format, for example, `2017-06-01T22:20:00.4061448Z`.
 
 ## Functions
 
 You can call functions within expressions. The following sections provide information about the functions that can be used in an expression.  
   
-## Date functions  
+### Date functions  
 
 | Date or time function | Task |
 | --------------------- | ---- |
@@ -141,7 +150,7 @@ You can call functions within expressions. The following sections provide inform
 | [ticks](expression-language.md#ticks) | Return the `ticks` property value for a specified timestamp. |
 | [utcNow](expression-language.md#utcNow) | Return the current timestamp as a string. |
 
-## String functions  
+### String functions  
 
 To work with strings, you can use these string functions and also some [collection functions](#collection-functions).  String functions work only on strings.
 
@@ -160,7 +169,7 @@ To work with strings, you can use these string functions and also some [collecti
 | [toUpper](expression-language.md#toUpper) | Return a string in uppercase format. |
 | [trim](expression-language.md#trim) | Remove leading and trailing whitespace from a string, and return the updated string. |
 
-## Collection functions
+### Collection functions
 
 To work with collections, generally arrays, strings,
 and sometimes, dictionaries, you can use these collection functions.
@@ -178,7 +187,7 @@ and sometimes, dictionaries, you can use these collection functions.
 | [take](expression-language.md#take) | Return items from the front of a collection. |
 | [union](expression-language.md#union) | Return a collection that has *all* the items from the specified collections. | 
 
-## Logical functions  
+### Logical functions  
 
 These functions are useful inside conditions, they can be used to evaluate any type of logic.  
   
@@ -194,7 +203,7 @@ These functions are useful inside conditions, they can be used to evaluate any t
 | [not](expression-language.md#not) | Check whether an expression is false. |
 | [or](expression-language.md#or) | Check whether at least one expression is true. |
   
-## Conversion functions  
+### Conversion functions  
 
  These functions are used to convert between each of the native types in the language:  
 -   string
@@ -230,7 +239,7 @@ These functions are useful inside conditions, they can be used to evaluate any t
 | [xml](expression-language.md#xml) | Return the XML version for a string. |
 | [xpath](expression-language.md#xpath) | Check XML for nodes or values that match an XPath (XML Path Language) expression, and return the matching nodes or values. |
 
-## Math functions  
+### Math functions  
  These functions can be used for either types of numbers: **integers** and **floats**.  
 
 | Math function | Task |

@@ -14,15 +14,15 @@ ms.date: 04/07/2023
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
-This document describes how to use parameters in your pipelines and dataflows for Data Factory in Fabric.
+This document describes how to use parameters in your pipelines for Data Factory in Fabric.
 
-## How to use parameters, expressions and functions in pipelines and dataflows for Data Factory in Fabric
+## How to use parameters, expressions and functions in pipelines for Data Factory in Fabric
 
 In this document, we focus on learning fundamental concepts with various examples to explore the ability to create parameterized data pipelines within Data Factory in Fabric. Parameterization and dynamic expressions can save a tremendous amount of time and allow for a much more flexible Extract, Transform, Load (ETL) or Extract, Load, Transform (ELT) solution, which will dramatically reduce the cost of solution maintenance and speed up the implementation of new features into existing pipelines. These gains are because parameterization minimizes the amount of hard coding and increases the number of reusable objects and processes in a solution.
 
 ## Parameter and expression concepts
 
-You can use parameters to pass external values into pipelines and dataflows. Once the parameter has been passed into the resource, it cannot be changed. By parameterizing resources, you can reuse them with different values each time. Parameters can be used individually or as a part of expressions. Parameter values in the definition can be literal or expressions that are evaluated at runtime.
+You can use parameters to pass external values into pipelines. Once the parameter has been passed into the resource, it cannot be changed. By parameterizing resources, you can reuse them with different values each time. Parameters can be used individually or as a part of expressions. Parameter values in the definition can be literal or expressions that are evaluated at runtime.
 
 Expressions can appear anywhere in a string value and always generate another string value. Here, password is a pipeline parameter in the expression. If a parameter value is an expression, the body of the expression is extracted by removing the at-sign (@). If a literal string is needed that starts with @, it must be escaped by using @@. The following examples show how expressions are evaluated.
 
@@ -81,9 +81,29 @@ The dynamic content editor converts the above content to the following expressio
 
 `MYDATA`
 
-## Calling functions within expressions
+## Using functions and variables in expressions
 
-You can call functions within expressions. The following sections provide information about the functions that can be used in an expression.  
+You can call functions and use variables within expressions. The following sections provide information about the functions that can be used in an expression.  
+
+### Pipeline scope variables
+
+These system variables can be referenced anywhere in the pipeline JSON.
+
+| Variable Name | Description |
+| --- | --- |
+| @pipeline().DataFactory |Name of the data  or Synapse workspace the pipeline run is running in |
+| @pipeline().Pipeline |Name of the pipeline |
+| @pipeline().RunId |ID of the specific pipeline run |
+| @pipeline().TriggerType |The type of trigger that invoked the pipeline (for example, `ScheduleTrigger`, `BlobEventsTrigger`). For a list of supported trigger types, see [Pipeline execution and triggers](concepts-pipeline-execution-triggers.md). A trigger type of `Manual` indicates that the pipeline was triggered manually. |
+| @pipeline().TriggerId|ID of the trigger that invoked the pipeline |
+| @pipeline().TriggerName|Name of the trigger that invoked the pipeline |
+| @pipeline().TriggerTime|Time of the trigger run that invoked the pipeline. This is the time at which the trigger **actually** fired to invoke the pipeline run, and it may differ slightly from the trigger's scheduled time.  |
+| @pipeline().GroupId | ID of the group to which pipeline run belongs. |
+| @pipeline()?.TriggeredByPipelineName | Name of the pipeline that triggers the pipeline run. Applicable when the pipeline run is triggered by an ExecutePipeline activity. Evaluate to _Null_ when used in other circumstances. Note the question mark after @pipeline() |
+| @pipeline()?.TriggeredByPipelineRunId | Run ID of the pipeline that triggers the pipeline run. Applicable when the pipeline run is triggered by an ExecutePipeline activity. Evaluate to _Null_ when used in other circumstances. Note the question mark after @pipeline() |
+
+>[!NOTE]
+>Trigger-related date/time system variables (in both pipeline and trigger scopes) return UTC dates in ISO 8601 format, for example, `2017-06-01T22:20:00.4061448Z`.
 
 ### String functions  
 
