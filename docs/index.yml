@@ -262,13 +262,13 @@ conceptualContent:
     # Card
     - title: Continuous Integration / Continuous Delivery (CI/CD)
       links:
-        - url: cicd/deployment-pipelines/deployment-pipelines-overview.md
+        - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
           itemType: overview
           text: What are deployment pipelines?
-        - url: cicd/deployment-pipelines/deployment-pipelines-create-rules.md
+        - url: cicd/deployment-pipelines/create-rules.md
           itemType: get-started
           text: Create deployment rules
-        - url: cicd/deployment-pipelines/deployment-pipelines-automation.md
+        - url: cicd/deployment-pipelines/pipeline-automation.md
           itemType: how-to-guide
           text: Automate deployment pipelines
       # footerLink (optional)
