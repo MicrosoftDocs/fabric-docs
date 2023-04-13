@@ -57,39 +57,39 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
 
 1. Add artifacts, choose **Add Artifact** and add the following four dependencies in the window like this, then select **Download/Update** to load all dependencies.
 
+    :::image type="content" source="media\connectivity\download-update.png" alt-text="Screenshot showing where to select Download/Update." lightbox="media\connectivity\download-update.png":::
+
 1. Select **Test connection**, and **Finish**.
 
-:::image type="content" source="media\connectivity\download-update.png" alt-text="Screenshot showing where to select Download/Update." lightbox="media\connectivity\download-update.png":::
+    :::image type="content" source="media\connectivity\dependency-declaration.png" alt-text="Screenshot of the Dependency Declaration tab." lightbox="media\connectivity\dependency-declaration.png":::
 
-:::image type="content" source="media\connectivity\dependency-declaration.png" alt-text="Screenshot of the Dependency Declaration tab." lightbox="media\connectivity\dependency-declaration.png":::
-
-```xml
-<dependency>
-   <groupId>com.microsoft.azure</groupId>
-   <artifactId>msal4j</artifactId>
-   <version>1.13.3</version>
-
-</dependency>
-
-<dependency>
-   <groupId>com.microsoft.sqlserver</groupId>
-   <artifactId>mssql-jdbc_auth</artifactId>
-   <version>11.2.1.x86</version>
-</dependency>
-
- <dependency>
-   <groupId>com.microsoft.sqlserver</groupId>
-   <artifactId>mssql-jdbc</artifactId>
-   <version>12.1.0.jre11-preview</version>
-</dependency>
-
- <dependency>
-   <groupId>com.microsoft.aad</groupId>
-   <artifactId>adal</artifactId>
-   <version>4.2.2</version>
-</dependency>
-```
-
+    ```xml
+    <dependency>
+       <groupId>com.microsoft.azure</groupId>
+       <artifactId>msal4j</artifactId>
+       <version>1.13.3</version>
+    
+    </dependency>
+    
+    <dependency>
+       <groupId>com.microsoft.sqlserver</groupId>
+       <artifactId>mssql-jdbc_auth</artifactId>
+       <version>11.2.1.x86</version>
+    </dependency>
+    
+     <dependency>
+       <groupId>com.microsoft.sqlserver</groupId>
+       <artifactId>mssql-jdbc</artifactId>
+       <version>12.1.0.jre11-preview</version>
+    </dependency>
+    
+     <dependency>
+       <groupId>com.microsoft.aad</groupId>
+       <artifactId>adal</artifactId>
+       <version>4.2.2</version>
+    </dependency>
+    ```
+    
 ## Next steps
 
 - [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
