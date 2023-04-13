@@ -25,7 +25,7 @@ Learn about table constraints in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] i
 
 Synapse Data Warehouse doesn't support default constraints at this time.
 
-For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true).
+For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 
 ## Remarks
 
