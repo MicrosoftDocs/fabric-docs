@@ -25,7 +25,7 @@ The Azure Cosmos DB for NoSQL connector supports the following authentication ty
 |Key| √| |
 
 >[!Note]
->For information about the Azure Cosmos DB for NoSQL connection in Dataflow Gen2, go to [Connect to Azure Cosmos DB for NoSQL in dataflows](connector-azure-cosmosdb-for-nosql-dataflows).
+>For information about the Azure Cosmos DB for NoSQL connection in Dataflow Gen2, go to [Connect to Azure Cosmos DB for NoSQL in dataflows](connector-azure-cosmosdb-for-nosql-dataflows.md).
 
 ## Prerequisites
 
