@@ -28,7 +28,7 @@ For information on connecting to the [!INCLUDE [fabric-se](includes/fabric-se.md
 
 ## Workspace roles
 
-Workspace roles are used for dev team collaboration within a workspace. Role assignment determines the actions available to the user and applies to all artifacts within the workspace.
+Workspace roles are used for development team collaboration within a workspace. Role assignment determines the actions available to the user and applies to all artifacts within the workspace.
 - For an overview of [!INCLUDE [product-name](../includes/product-name.md)] workspace roles, see [Roles in workspaces](../../roles-workspaces.md).
 - For instructions on assigning workspace roles, see [Give Workspace Access](../../get-started/give-access-workspaces.md).
 
@@ -37,20 +37,9 @@ See [Workspace roles](workspace-roles.md) for details on the specific Warehouse 
 
 ## Artifact permissions
 
-In contrast to workspace roles, which apply to all artifacts within a workspace, artifact permissions can be assigned directly to individual artifacts. The user will receive the assigned permission on that single Warehouse. The primary purpose is for sharing for downstream consumption of the Warehouses.
-   
-There are two ways that the artifact permissions can be assigned:
-- Sharing - <note: need to link to sharing page>
-- Manage permissions - <note: need to link to manage permissions page>
+In contrast to workspace roles, which apply to all artifacts within a workspace, artifact permissions can be assigned directly to individual artifacts. The user will receive the assigned permission on that single Warehouse. The primary purpose is for artifact permissions is to enable sharing for downstream consumption of the Warehouse.
 
- 
-For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)], the following permisions can be assigned.
-   
-| Artifact permission   |  Description |
-|---|---|
-|Read|Allows the user to connect to the Warehouse SQL endpoint|
-|ReadData|Allows the user to read data from any table/view within the Warehouse. Equivalent of SQL db_datareader or SELECT on all tables/views.|   
-|ReadAll|Allows user to read data the raw parquet files in One Lake that can be consumed by Spark|
+See [Artifact permissions](artifact-permissions.md) for details on the specific permissions provided for warehouses.
 
 
 ## Object-level security
@@ -63,6 +52,27 @@ Workspace roles and artifact permissions provide an easy way to assign coarse pe
 Limitations:
 - Row-level security is currently not supported
 - Dynamic data masking is currently not supported
+
+
+
+## View my permissions
+
+Once you're assigned to a workspace role, you can connect to the warehouse (see [Connectivity](connectivity.md) for more information), with the permissions detailed previously. Once connected, you can check your permissions.
+
+1. Connect to the warehouse using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms).
+
+1. Open a new query window.
+
+   :::image type="content" source="media\manage-user-access\new-query-context-menu.png" alt-text="Screenshot showing where to select New Query in the Object Explorer context menu." lightbox="media\manage-user-access\new-query-context-menu.png":::
+
+1. To see the permissions granted to the user, execute:
+
+   ```sql
+   SELECT *
+   FROM sys.fn_my_permissions(NULL, "Database")
+   ```
+
+   :::image type="content" source="media\manage-user-access\execute-view-permissions.png" alt-text="Screenshot showing where to execute the command to see permissions." lightbox="media\manage-user-access\execute-view-permissions.png":::
 
 ## Next steps
 
