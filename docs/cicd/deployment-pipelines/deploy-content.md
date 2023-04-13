@@ -22,7 +22,7 @@ If you already have a workspace that you'd like to use with a specific stage, in
 
 When you deploy content to an empty stage, the relationships between the items are kept. For example, a report that is bound to a dataset in the source stage, will be cloned alongside its dataset, and the clones will be similarly bound in the target workspace.
 
-Once the deployment is complete, refresh the dataset. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#deploy-content-to-an-empty-stage).
+Once the deployment is complete, refresh the dataset. For more information, see [deploying content to an empty stage](deployment-pipelines-process.md#deploying-content-to-an-empty-stage).
 
 ### Deploying options
 
@@ -40,7 +40,7 @@ After you choose how to deploy your content, you can [Review your deployment and
 
 Select the stage to deploy from and then select the deployment button. The deployment process creates a duplicate workspace in the target stage. This workspace includes all the content existing in the current stage.
 
-:::image type="content" source="media/deployment-pipelines-get-started/deploy.png" alt-text="A screenshot showing the deploy button for the development and test stages in a deployment pipeline." lightbox="media/deployment-pipelines-get-started/deploy.png":::
+:::image type="content" source="media/deploy-content/deploy.png" alt-text="A screenshot showing the deploy button for the development and test stages in a deployment pipeline." lightbox="media/deploy-content/deploy.png":::
 
 #### Selective deployment
 
@@ -48,7 +48,7 @@ If you don't want to deploy everything from that stage, you can select specific 
 
 Since dashboards, reports, datasets and dataflows are related and have dependencies, you can use the select related button to see all items that those items are dependent on. For example, if you want to deploy a report to the next stage, click the **Select related** button to mark the dataset that the report is connected to, so that both will be deployed together and the report won't break.
 
-:::image type="content" source="media/deployment-pipelines-get-started/selective-deploy.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines, available after selecting the show more option." lightbox="media/deployment-pipelines-get-started/selective-deploy.png":::
+:::image type="content" source="media/deploy-content/selective-deploy.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines, available after selecting the show more option." lightbox="media/deploy-content/selective-deploy.png":::
 
 >[!NOTE]
 >
@@ -61,15 +61,15 @@ You can choose to deploy to a previous stage, for example in a scenario where yo
 
 Deploying to a previous stage works only if the previous stage is empty. When deploying to a previous stage, you can't select specific items. All content in the stage will be deployed.
 
-:::image type="content" source="media/deployment-pipelines-get-started/deploy-back.png" alt-text="A screenshot showing the deploy to previous stage button, available from the test or production stage menus." lightbox="media/deployment-pipelines-get-started/deploy-back.png":::
+:::image type="content" source="media/deploy-content/deploy-back.png" alt-text="A screenshot showing the deploy to previous stage button, available from the test or production stage menus." lightbox="media/deploy-content/deploy-back.png":::
 
 ### Review your deployment and leave a note
 
-After selecting which content to deploy, a pop-up window lists all the items you're about to deploy. You can review the list and add a note to the deployment. Adding a note is optional, but it is highly recommended as the notes are added to the [deployment history](deployment-history.md). With a note for each deployment, reviewing the history of your pipelines becomes more meaningful.
+After selecting which content to deploy, a pop-up window lists all the items you're about to deploy. You can review the list and add a note to the deployment. Adding a note is optional, but it is highly recommended as the notes are added to the [deployment history](deployment-pipelines-history.md). With a note for each deployment, reviewing the history of your pipelines becomes more meaningful.
 
 To leave a note, expand the **Add a note** option and write your note in the text box. When you're ready to deploy, select **Deploy**.
 
-:::image type="content" source="media/deployment-pipelines-get-started/add-note.png" alt-text="A screenshot showing the deployment pop-up window, with the Add a note option expanded.":::
+:::image type="content" source="media/deploy-content/add-note.png" alt-text="A screenshot showing the deployment pop-up window, with the Add a note option expanded.":::
 
 ## Deploy content from one stage to another
 
@@ -85,5 +85,5 @@ The deployment time is useful for establishing when a stage was last updated. It
 
 ## Next steps
 
-* [Get started with deployment pipelines](deployment-pipelines-get-started.md)
-* [Deployment history](deployment-pipelines-history.md)
+* [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
+* [Deployment history](deployment-history.md)

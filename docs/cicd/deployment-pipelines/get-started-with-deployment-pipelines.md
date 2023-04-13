@@ -35,7 +35,7 @@ You'll be able to access the deployment pipelines feature, if the following cond
 >[!NOTE]
 > You'll also be able to see the deployment pipelines button, if you previously created a pipeline, or if a pipeline was shared with you.
 
-:::image type="content" source="media/deployment-pipelines-get-started/creating-pipeline.png" alt-text="A screenshot of the deployment pipelines landing page.":::
+:::image type="content" source="media/get-started-with-deployment-pipelines/creating-pipeline.png" alt-text="A screenshot of the deployment pipelines landing page.":::
 
 ## Step 1 - Create a deployment pipeline
 
@@ -57,7 +57,7 @@ You can create a pipeline from an existing workspace, providing you're the admin
 
 1. From the workspace, select **Create a pipeline**.
 
-    :::image type="content" source="media/deployment-pipelines-get-started/workspace-deploy.png" alt-text="A screenshot of the create a pipeline button in a workspace.":::
+    :::image type="content" source="media/get-started-with-deployment-pipelines/workspace-deploy.png" alt-text="A screenshot of the create a pipeline button in a workspace.":::
 
 2. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Create**.
 

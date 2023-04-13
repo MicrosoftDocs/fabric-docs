@@ -16,7 +16,7 @@ summary: |
   Use this article to troubleshoot issues in deployment pipelines. Review the following links to understand the considerations and limitations.
   * [General considerations and limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
   * [Assigning workspaces](deployment-pipelines/assign-pipeline.md#limitations)
-  * [Permissions](deployment-pipelines-process.md#permissions)      
+  * [Permissions](understand-the-deployment-process.md#permissions)      
   * Fabric items:
     * [Deployed items](deployment-pipelines/understand-the-deployment-process.md#deployed-items)
     * [Unsupported items](deployment-pipelines/understand-the-deployment-process.md#unsupported-items)
@@ -63,7 +63,7 @@ sections:
           Deployment pipelines display a pipeline stage tag in workspaces that are assigned to a pipeline. To see these tags, you need to be a [pipeline admin](deployment-pipelines/understand-the-deployment-process.md#permissions). Tags for the *Development* and *Test* stages are always visible. However, you only see the *Production* tag if you have [access to the pipeline](deployment-pipelines/understand-the-deployment-process.md#permissions).
           
           > [!div class="mx-imgBorder"]
-          > ![A screenshot of the production tag in a production pipeline workspace.](media/deployment-pipelines-troubleshooting/production-tag.png)
+          > ![A screenshot of the production tag in a production pipeline workspace.](media/troubleshoot-cicd/production-tag.png)
           
   - name: Licensing
     questions:
@@ -102,7 +102,7 @@ sections:
         answer: |
           When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there is more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages. To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in Fabric. 
           
-          :::image type="content" source="media/deployment-pipelines-troubleshooting/cannot-assign-error.png" alt-text="A screenshot of the Can't assign the workspace error message in deployment pipelines.":::
+          :::image type="content" source="media/troubleshoot-cicd/cannot-assign-error.png" alt-text="A screenshot of the Can't assign the workspace error message in deployment pipelines.":::
 
       - question: |
           Why am I seeing the 'different' symbol after I assigned a workspace with datasets that are similar to the datasets in adjacent stages?
@@ -172,7 +172,7 @@ sections:
           
           During deployment, the metadata in the source dataset is checked against the target metadata. Schema breaking changes cause the deployment to stop. When this happens, you receive the *continue the deployment* message.
           
-          :::image type="content" source="media/deployment-pipelines-troubleshooting/deployment-was-stopped-error.png" alt-text="A screenshot of the continue the deployment message in deployment pipelines":::
+          :::image type="content" source="media/troubleshoot-cicd/deployment-was-stopped-error.png" alt-text="A screenshot of the continue the deployment message in deployment pipelines":::
           
           If you continue with the deployment, you lose the data in the target stage. You can use this option if the changes you made to the dataset were intentional. After the deployment completes, you'll need to refresh the target dataset.
           
@@ -185,7 +185,7 @@ sections:
         answer: |
           When you're using [incremental refresh](deployment-pipelines/understand-the-deployment-process.md#incremental-refresh), only certain [changes to the dataset](deployment-pipelines-process.md#considerations-and-limitations) you're deploying are allowed. If you made dataset changes that aren't allowed, your deployment fails and you receive this message:
 
-          :::image type="content" source="media/deployment-pipelines-troubleshooting/cannot-start-deployment-error.png" alt-text="A screenshot of the Can't start the deployment error message in deployment pipelines.":::
+          :::image type="content" source="media/troubleshoot-cicd/cannot-start-deployment-error.png" alt-text="A screenshot of the Can't start the deployment error message in deployment pipelines.":::
   
           If you made changes to your dataset intentionally, you can use one of the following workarounds:
 
@@ -287,7 +287,7 @@ sections:
           
           * **Database** - The database format for a paginated report with a Fabric dataset, is `sobe_wowvirtualserver-<dataset ID>`. For example, `sobe_wowvirtualserver-d51fd26e-9124-467f-919c-0c48a99a1d63`. Replace the `<dataset ID>` with your dataset's ID. You can get the dataset ID from the URL, by selecting the GUID that comes after `datasets/` and before the next forward slash.
           
-              :::image type="content" source="media/deployment-pipelines-troubleshooting/datasets-id.png" alt-text="A screenshot of the dataset ID as it appears in a Fabric URL.":::
+              :::image type="content" source="media/troubleshoot-cicd/datasets-id.png" alt-text="A screenshot of the dataset ID as it appears in a Fabric URL.":::
           
           * **Server** - The server that hosts your database. Keep the existing server as is.
 
@@ -364,7 +364,7 @@ sections:
           To assign a workspace you need at least [workspace member](deployment-pipelines/understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. Workspace member (or higher) permissions in the adjacent stages are required to enable deployment pipelines to establish connections between items in neighboring pipeline stages.
 
           
-          :::image type="content" source="media/deployment-pipelines-troubleshooting/workspace-permission-needed.png" alt-text="A screenshot of the workspace member permission needed message in the test stage of a deployment pipeline.":::
+          :::image type="content" source="media/troubleshoot-cicd/workspace-permission-needed.png" alt-text="A screenshot of the workspace member permission needed message in the test stage of a deployment pipeline.":::
 
   - name: Rules
     questions:
@@ -385,7 +385,7 @@ sections:
           
           Your deployment rules are missing values. This may have happened if your dataset changed.
           
-          ![A screenshot of the invalid rules error displayed when a deployment fails due to broken links.](media/deployment-pipelines-troubleshooting/broken-rule.png)
+          ![A screenshot of the invalid rules error displayed when a deployment fails due to broken links.](media/troubleshoot-cicd/broken-rule.png)
           
           When a previously successful deployment fails due to broken links, a warning is displayed. You can select **Configure rules** to navigate to the deployment rules pane, where the failed dataset is marked. When you select the dataset, the broken rules are marked.
           
@@ -402,7 +402,7 @@ sections:
           To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are greyed out.
           
           >[!div class="mx-imgBorder"]
-          >![A screenshot showing deployment pipelines deployment rules greyed out.](media/deployment-pipelines-troubleshooting/rules-greyed-out.png)
+          >![A screenshot showing deployment pipelines deployment rules greyed out.](media/troubleshoot-cicd/rules-greyed-out.png)
           
           If one of the rule options is greyed out, it could be because of the reasons listed below:
           
@@ -429,7 +429,7 @@ sections:
       - question: |
           Troubleshooting errors
         answer: |
-          Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-rules.md) you created. If you don't see a rule error message name, review the [deployment rule limitations](deployment-pipelines-create/rules.md#considerations-and-limitations) and the [supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules), and try to reconfigure the rule.
+          Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-rules.md) you created. If you don't see a rule error message name, review the [deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations) and the [supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules), and try to reconfigure the rule.
     
           |Error message |Solution |
           |--------------|---------|

@@ -21,10 +21,10 @@ You can configure data source rules and parameter rules. The following table lis
 
 ||Data source rule  |Parameter rule  |Details  |
 |---------|---------|---------|---------|
-|**Dataflow**         |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |Use to determine the values of the data sources or parameters for a specific dataflow. |
-|**Dataset**          |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |Use to determine the values of the data sources or parameters for a specific dataset.         |
-|**Datamart**          |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |Use to determine the values of the data sources or parameters for a specific datamart.         |
-|**Paginated report** |![Applies to.](./media/deployment-pipelines-create-rules/yes.png) |![Does not apply to.](./media/deployment-pipelines-create-rules/no.png) |Defined for the data sources of each paginated report. You can use these rules to determine the data sources of the paginated report. |
+|**Dataflow**         |✅ |✅ |Use to determine the values of the data sources or parameters for a specific dataflow. |
+|**Dataset**          |✅ |✅ |Use to determine the values of the data sources or parameters for a specific dataset.         |
+|**Datamart**         |✅ |✅ |Use to determine the values of the data sources or parameters for a specific datamart.         |
+|**Paginated report** |✅ |❌ |Defined for the data sources of each paginated report. You can use these rules to determine the data sources of the paginated report. |
 
 >[!NOTE]
 > Data source rules only work when you change data sources from the same type.
@@ -35,19 +35,19 @@ To create a deployment rule, follow the steps in this section. After you create 
 
 1. In the pipeline stage you want to create a deployment rule for, select **Deployment rules**.
 
-    :::image type="content" source="media/deployment-pipelines-get-started/deployment-settings-screenshot.png" alt-text="A screenshot of the deployment rules button, located in the deployment rules.":::
+    :::image type="content" source="media/create-rules/deployment-settings-screenshot.png" alt-text="A screenshot of the deployment rules button, located in the deployment rules.":::
 
 2. You can set rules to **dataflows**, **datasets**, **datamarts** and **paginated reports**. To find the item you want to set a rule for, use the search functionality or filter functionalities.
 
-    :::image type="content" source="media/deployment-pipelines-get-started/deployment-rules.png" alt-text="A screenshot of the deployment rules pane, showing that you can set rules for dataflows, datasets, datamarts and paginated reports.":::
+    :::image type="content" source="media/create-rules/deployment-rules.png" alt-text="A screenshot of the deployment rules pane, showing that you can set rules for dataflows, datasets, datamarts and paginated reports.":::
 
 3. Select the dataflow, dataset, datamart or paginated report you want to create a rule for.
 
-    :::image type="content" source="media/deployment-pipelines-get-started/deployment-rules-selection.png" alt-text="A screenshot of the deployment rules pane, showing two datasets in the datasets tab. To configure a rule, select an item from one of the tabs.":::
+    :::image type="content" source="media/create-rules/deployment-rules-selection.png" alt-text="A screenshot of the deployment rules pane, showing two datasets in the datasets tab. To configure a rule, select an item from one of the tabs.":::
 
 4. Select the type of rule you want to create, expand the list, and then select **Add rule**. There are two types of rules you can create:
 
-    :::image type="content" source="media/deployment-pipelines-get-started/deployment-rule-types.png" alt-text="A screenshot of the deployment rules pane. It shows a selected dataset and the two rule types, data source and parameter, you can configure for it.":::
+    :::image type="content" source="media/create-rules/deployment-rule-types.png" alt-text="A screenshot of the deployment rules pane. It shows a selected dataset and the two rule types, data source and parameter, you can configure for it.":::
 
     * **Data source rules**
 

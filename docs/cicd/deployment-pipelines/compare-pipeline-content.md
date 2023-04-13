@@ -16,7 +16,7 @@ Before you deploy content to a different stage, it can be helpful to see the dif
 
 ## Compare stages
 
-:::image type="content" source="./media/deployment-pipelines-compare/deployment-pipelines-compare.png" alt-text="Screenshot showing three stages of deployment. There's a green check between the test and production stages and an orange X between the development and test stages." lightbox="media/deployment-pipelines-compare/deployment-pipelines-compare.png":::
+:::image type="content" source="./media/compare-pipeline-content/deployment-pipelines-compare.png" alt-text="Screenshot showing three stages of deployment. There's a green check between the test and production stages and an orange X between the development and test stages." lightbox="media/compare-pipeline-content/deployment-pipelines-compare.png":::
 
 A comparison icon indicator appears between two sequential stages to give a quick visual insight into the differences between them. The comparison indicator has two states:
 
@@ -28,7 +28,7 @@ A comparison icon indicator appears between two sequential stages to give a quic
 
 When two sequential stages are different, a **Compare** link appears underneath the orange comparison icon. Select **Compare** to open the content item list in both stages. This *Compare view* helps you track changes or differences between items in each pipeline stage.
 
-:::image type="content" source="media/deployment-pipelines-compare/compare.png" alt-text="A screenshot showing the compare option, which expands the compare view and allows comparing items between deployment pipeline stages." lightbox="media/deployment-pipelines-compare/compare.png":::
+:::image type="content" source="media/compare-pipeline-content/compare.png" alt-text="A screenshot showing the compare option, which expands the compare view and allows comparing items between deployment pipeline stages." lightbox="media/deployment-pipelines-compare/compare.png":::
 
 In the comparison display, items are arranged alphabetically by item type. Paired items are next to each other, even if they have different names.
 
@@ -49,7 +49,7 @@ Items that aren't paired or that were changed get one of the following labels:
 
 If a text item, like a dataset, is different, hover over it to see the **Change review** button.
 
-:::image type="content" source="./media/deployment-pipelines-compare/granular-change-button.png" alt-text="Screenshot showing the change review button next to an item.":::
+:::image type="content" source="./media/compare-pipeline-content/granular-change-button.png" alt-text="Screenshot showing the change review button next to an item.":::
 
 If there's [nothing to compare](#considerations-and-limitations), the button is disabled. If there are changes to the schema, you can select the button to see a detailed, line by line comparison of the two items.
 
@@ -66,11 +66,11 @@ On top of the screen you'll see:
 
 ### [Side-by-side view](#tab/browser)
 
-:::image type="content" source="./media/deployment-pipelines-compare/changes-side-by-side-numbered.png" alt-text="Screenshot showing a side-by-side view of the changes made to the file.":::
+:::image type="content" source="./media/compare-pipeline-content/changes-side-by-side-numbered.png" alt-text="Screenshot showing a side-by-side view of the changes made to the file.":::
 
 ### [Inline view](#tab/visual-studio)
 
-:::image type="content" source="./media/deployment-pipelines-compare/changes-inline-numbered.png" alt-text="Screenshot showing an inline view of the changes made to the file.":::
+:::image type="content" source="./media/compare-pipeline-content/changes-inline-numbered.png" alt-text="Screenshot showing an inline view of the changes made to the file.":::
 
 ---
 

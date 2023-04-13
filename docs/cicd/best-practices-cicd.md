@@ -141,7 +141,7 @@ When testing, you can use the same capacity as the production stage. However, us
 
 ### Use deployment rules with a real-life data source
 
-If you're using the test stage to simulate real life data usage, it's recommended to separate the development and test data sources. The development database should be relatively small, and the test database should be as similar as possible to the production database. Use [data source rules](media/best-practices-cicd/deployment-pipelines-create-rules.md) to switch data sources in the test stage.
+If you're using the test stage to simulate real life data usage, it's recommended to separate the development and test data sources. The development database should be relatively small, and the test database should be as similar as possible to the production database. Use [data source rules](deployment-pipelines/create-rules.md) to switch data sources in the test stage.
 
 If you use a production data source in the test stage, it's useful to control the amount of data you import from your data source. You can control the amount of data you import by adding a parameter to your data source query in Power BI Desktop. Use parameter rules to control the amount of imported data or edit the parameter's value.
 You can also use this approach to avoid overloading your capacity.

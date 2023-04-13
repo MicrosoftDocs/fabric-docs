@@ -30,17 +30,17 @@ To assign a workspace to a pipeline stage, follow these steps:
 
 1. Open the pipeline.
 
-    :::image type="content" source="media/deployment-pipelines-assign/new-workspace.png" alt-text="A screenshot showing a deployment pipelines new workspace with all the pipeline stages unassigned." lightbox="media/deployment-pipelines-assign/new-workspace.png":::
+    :::image type="content" source="media/assign-pipeline/new-workspace.png" alt-text="A screenshot showing a deployment pipelines new workspace with all the pipeline stages unassigned." lightbox="media/assign-pipeline/new-workspace.png":::
 
 2. In the stage you want to assign a workspace to, expand the dropdown titled **Choose a workspace to assign to this pipeline**.
 
 3. From the dropdown menu, select the workspace you want to assign to this stage.
 
-    :::image type="content" source="media/deployment-pipelines-assign/assign-workspace.png" alt-text="A screenshot showing the assign workspace dropdown in a deployment pipelines empty stage.":::
+    :::image type="content" source="media/assign-pipeline/assign-workspace.png" alt-text="A screenshot showing the assign workspace dropdown in a deployment pipelines empty stage.":::
 
 4. Select **Assign a workspace**.
 
-    :::image type="content" source="media/deployment-pipelines-assign/assign-button.png" alt-text="A screenshot showing the assign workspace button in a deployment pipelines empty stage.":::
+    :::image type="content" source="media/assign-pipeline/assign-button.png" alt-text="A screenshot showing the assign workspace button in a deployment pipelines empty stage.":::
 
 ## Unassign a workspace from a pipeline stage
 
@@ -54,11 +54,11 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 3. From the *settings* menu, select **Unassign workspace**.
 
-    :::image type="content" source="media/deployment-pipelines-assign/unassign-workspace.png" alt-text="A screenshot showing the unassign workspace option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/deployment-pipelines-assign/unassign-workspace.png":::
+    :::image type="content" source="media/assign-pipeline/unassign-workspace.png" alt-text="A screenshot showing the unassign workspace option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/deployment-pipelines-assign/unassign-workspace.png":::
 
 4. In the *Unassign workspace* dialogue box, select **Unassign**.
 
-    :::image type="content" source="media/deployment-pipelines-assign/unassign-note.png" alt-text="A screenshot showing the unassign workspace pop-up window in deployment pipelines, with the unassign button highlighted.":::
+    :::image type="content" source="media/assign-pipeline/unassign-note.png" alt-text="A screenshot showing the unassign workspace pop-up window in deployment pipelines, with the unassign button highlighted.":::
 
 ## Item connections
 
