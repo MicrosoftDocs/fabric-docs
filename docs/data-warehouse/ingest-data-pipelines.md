@@ -20,9 +20,9 @@ Data pipelines offer an alternative to using the COPY command through a graphica
 > [!NOTE]
 > Some features from Azure Data Factory are not available in [!INCLUDE [product-name](../includes/product-name.md)], but the concepts are interchangeable. You can learn more about Azure Data Factory and Pipelines on [Pipelines and activities in Azure Data Factory and Azure Synapse Analytics](../../azure/data-factory/concepts-pipelines-activities?tabs=data-factory).
 
-## Creating data pipelines
+## Create a data pipeline
 
-1. To create a new pipeline navigate to the desired workspace, select the **+New** button, and select **Data pipeline**
+1. To create a new pipeline navigate to the desired workspace, select the **+New** button, and select **Data pipeline**.
     :::image type="content" source="media\ingest-data-pipelines\new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New button, and with the options Warehouse, Data pipeline, and Show All." lightbox="media\ingest-data-pipelines\ingest-data-pipelines\new-data-pipeline.png":::
 
 1. Once you select Data pipeline and give your pipeline a name, you see three options to start ingesting data: **Add a pipeline activity**, **Copy data** (wizard), and **Choose a task to start**.
