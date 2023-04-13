@@ -10,14 +10,22 @@ ms.topic: how-to
 
 # Transactions in Synapse Data Warehouse tables in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-You can modify data that is stored in tables in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using transactions to group changes together. Transactions allow you to commit all tables or none of the tables that you're changing data in. For example, if you're changing details about a purchase order that affects three tables, you can group those changes into a single transaction. That means when those tables are queried, they either all have the changes or none of them do. Transactions are a common practice for when you need to ensure your data is consistent across multiple tables. 
+Similar to their behavior in SQL Server, transactions allow you to control the commit or rollback of read and write queries. 
 
-> [!NOTE]
-> If you use T-SQL to change your isolation level, it the change is ignored at Query Execution time and SNAPSHOT ISOLATION is applied.
+You can modify data that is stored in tables in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using transactions to group changes together. 
+
+- For example, you could commit inserts to multiples tables, or, none of the tables if an error arises. If you're changing details about a purchase order that affects three tables, you can group those changes into a single transaction. That means when those tables are queried, they either all have the changes or none of them do. Transactions are a common practice for when you need to ensure your data is consistent across multiple tables. 
+
+The same transactional capabilities are supported in the [!INCLUDE [fabric-se](includes/fabric-se.md)] in [!INCLUDE [product-name](../includes/product-name.md)], but for read-only queries.
+
+Transactions can also be used for sequential SELECT statements to ensure the tables involved all have data from the same point in time. As an example, if a table has new rows added by another transaction, the new rows don't affect the SELECT queries inside an open transaction.
+
+> [!IMPORTANT]
+> Only the snapshot isolation level is supported in [!INCLUDE [product-name](../includes/product-name.md)]. If you use T-SQL to change your isolation level, the change is ignored at Query Execution time and snapshot isolation is applied.
 
 ## Cross-database query transaction support
 
@@ -39,6 +47,10 @@ This table provides a list of what locks are used for different types of [transa
 | [UPDATE](/sql/t-sql/queries/update-transact-sql?view=fabric&preserve-view=true) | Intent Exclusive (IX) |
 | [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) | Intent Exclusive (IX) |
 | DDL | Schema-Modification (Sch-M) |
+
+These locks prevent conflicts such as a table's schema being changed while rows are being updated in a transaction.
+
+You can query locks currently held with the dynamic management view (DMV) [sys.dm_tran_locks](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql).
 
 Conflicts from two or more concurrent transactions that update one or more rows in a table are evaluated at the end of the transaction.  The first transaction to commit completes successfully and the other transactions are rolled back with an error returned.  These conflicts are evaluated at the table level and not the individual parquet file level.
 

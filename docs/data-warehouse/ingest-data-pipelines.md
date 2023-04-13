@@ -53,5 +53,4 @@ At this time, when reading from Azure Blob Storage, you can only use SAS tokens 
 
 - [Tables in Fabric data warehousing](tables.md)
 - [Ingesting data into the Synapse Data Warehouse](ingest-data.md)
-- [Ingest data into your warehouse using the COPY command](ingest-data-copy-command.md)
 - [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md)
