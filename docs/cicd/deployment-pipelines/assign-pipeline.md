@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.topic: how-to
 ms.service: powerbi
 ms.custom: contperf-fy21q1
-ms.date: 03/28/2023
+ms.date: 04/13/2023
 ms.search.form: Deployment pipelines operations
 ---
 
@@ -30,17 +30,17 @@ To assign a workspace to a pipeline stage, follow these steps:
 
 1. Open the pipeline.
 
-    :::image type="content" source="media/deployment-pipelines-assign/new-workspace.png" alt-text="A screenshot showing a deployment pipelines new workspace with all the pipeline stages unassigned." lightbox="media/deployment-pipelines-assign/new-workspace.png":::
+    :::image type="content" source="media/assign-pipeline/new-workspace.png" alt-text="A screenshot showing a deployment pipelines new workspace with all the pipeline stages unassigned." lightbox="media/assign-pipeline/new-workspace.png":::
 
 2. In the stage you want to assign a workspace to, expand the dropdown titled **Choose a workspace to assign to this pipeline**.
 
 3. From the dropdown menu, select the workspace you want to assign to this stage.
 
-    :::image type="content" source="media/deployment-pipelines-assign/assign-workspace.png" alt-text="A screenshot showing the assign workspace dropdown in a deployment pipelines empty stage.":::
+    :::image type="content" source="media/assign-pipeline/assign-workspace.png" alt-text="A screenshot showing the assign workspace dropdown in a deployment pipelines empty stage.":::
 
 4. Select **Assign a workspace**.
 
-    :::image type="content" source="media/deployment-pipelines-assign/assign-button.png" alt-text="A screenshot showing the assign workspace button in a deployment pipelines empty stage.":::
+    :::image type="content" source="media/assign-pipeline/assign-button.png" alt-text="A screenshot showing the assign workspace button in a deployment pipelines empty stage.":::
 
 ## Unassign a workspace from a pipeline stage
 
@@ -54,15 +54,15 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 3. From the *settings* menu, select **Unassign workspace**.
 
-    :::image type="content" source="media/deployment-pipelines-assign/unassign-workspace.png" alt-text="A screenshot showing the unassign workspace option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/deployment-pipelines-assign/unassign-workspace.png":::
+    :::image type="content" source="media/assign-pipeline/unassign-workspace.png" alt-text="A screenshot showing the unassign workspace option in deployment pipelines, available from the settings menu of the pipeline stage." lightbox="media/assign-pipeline/unassign-workspace.png":::
 
 4. In the *Unassign workspace* dialogue box, select **Unassign**.
 
-    :::image type="content" source="media/deployment-pipelines-assign/unassign-note.png" alt-text="A screenshot showing the unassign workspace pop-up window in deployment pipelines, with the unassign button highlighted.":::
+    :::image type="content" source="media/assign-pipeline/unassign-note.png" alt-text="A screenshot showing the unassign workspace pop-up window in deployment pipelines, with the unassign button highlighted.":::
 
 ## Item connections
 
-After assigning a workspace to a deployment pipeline stage, if there are any adjacent stages already assigned, deployment pipelines attempts to create the connections between the items (such as reports, dashboards and datasets) in the adjacent stages. During this process, deployment pipelines checks the names of the items in the source stage and the stages adjacent to it. Connections to items in adjacent stages, are established according to the item's type and name. If there are multiple items of the same type with the same name in the adjacent stages, assigning the workspace will fail. To understand why this happens and resolve such cases, see [Why am I getting the 'can't assign the workspace' error message when I assign a workspace?](deployment-pipelines-troubleshooting.yml#why-am-i-getting-the--can-t-assign-the-workspace--error-message-when-i-assign-a-workspace-)
+After assigning a workspace to a deployment pipeline stage, if there are any adjacent stages already assigned, deployment pipelines attempts to create the connections between the items (such as reports, dashboards and datasets) in the adjacent stages. During this process, deployment pipelines checks the names of the items in the source stage and the stages adjacent to it. Connections to items in adjacent stages, are established according to the item's type and name. If there are multiple items of the same type with the same name in the adjacent stages, assigning the workspace will fail. To understand why this happens and resolve such cases, see [Why am I getting the 'can't assign the workspace' error message when I assign a workspace?](../troubleshoot-cicd.yml#why-am-i-getting-the--can-t-assign-the-workspace--error-message-when-i-assign-a-workspace-)
 
 Connections between items are only established when you assign a workspace to a pipeline stage. Adding a new item to a workspace that's part of a pipeline, doesn't trigger the creation of connections between that item and identical items in adjacent stages. To trigger forming a connection between a newly added item in a workspace stage and its equivalent item in an adjacent stage, unassign and reassign the workspace that contains the newly added item.
 
@@ -74,7 +74,7 @@ Connections between items are only established when you assign a workspace to a 
 
 * The workspace must reside on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
 
-* To assign a workspace, you need at least [workspace member](deployment-pipelines-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the 'workspace member permissions needed' error message when I try to assign a workspace?](deployment-pipelines-troubleshooting.yml#why-am-i-getting-the--workspace-member-permissions-needed--error-message-when-i-try-to-assign-a-workspace-)
+* To assign a workspace, you need at least [workspace member](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the 'workspace member permissions needed' error message when I try to assign a workspace?](../troubleshoot-cicd.yml#why-am-i-getting-the--workspace-member-permissions-needed--error-message-when-i-try-to-assign-a-workspace-)
 
 * You can't assign a workspace with [Power BI samples](/power-bi/create-reports/sample-datasets.md) to a pipeline stage.
 
@@ -82,4 +82,4 @@ Connections between items are only established when you assign a workspace to a 
 
 ## Next steps
 
-[Compare content in different stages](deployment-pipelines-compare.md)
+[Compare content in different stages](compare-pipeline-content.md)
