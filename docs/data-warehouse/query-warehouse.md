@@ -7,7 +7,7 @@ ms.reviewer: wiassaf, kecona
 ms.date: 04/12/2023
 ms.topic: how-to
 ---
-# Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric
+# Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric using SQL Server Management Studio
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -92,11 +92,6 @@ There are several ways you can write cross-database queries within the same [!IN
    :::image type="content" source="media\query-warehouse-sql-server-management-studio\execute-button.png" alt-text="Screenshot showing where to find the Execute button." lightbox="media\query-warehouse-sql-server-management-studio\execute-button.png":::
 
 ## Known limitations
-
-- Currently, we have not fully optimized warehouse performance to support large amounts of data. When running queries in the current version, limit the size of total data to be queried to 1 TB uncompressed.
-
-   > [!NOTE]
-   > Uncompressed data size should be calculated from a CSV representation of the data. Source data stored in parquet (or delta) format is already compressed anywhere from 2x to 10x (or more).
 
 - At this time, there's limited T-SQL functionality. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
 
