@@ -1,13 +1,13 @@
 ---
 title: Fabric Application lifecycle management (ALM) deploy content
-description: Learn how to deploy content to an empty or to non-empty stage using the Fabric Application lifecycle management (ALM) tool
+description: Learn how to deploy content to an empty or to non-empty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1
-ms.date: 07/31/2022
+ms.date: 04/13/2023
 ---
 
 # Deploy content using Deployment pipelines
