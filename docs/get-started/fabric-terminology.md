@@ -30,6 +30,8 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Lakehouse:** A lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by the Apache Spark engine and SQL engine for big data processing. A lakehouse includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables. The lakehouse item is hosted within a unique workspace folder in the Microsoft Fabric lake. It contains files in various formats (structured and unstructured) organized in folders and subfolders. For more information, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
 
+- **Notebook:** A Fabric notebook is a multi-language interactive programming tool with rich functions. Which include authoring code and markdown, running and monitoring a Spark job, viewing and visualizing result, and collaborating with the team. It helps data engineers and data scientist to explore and process data, and build machine learning experiments with both code and low-code experience. It can be easily transformed to a pipeline activity for orchestration.
+
 - **Spark application:** An Apache Spark application is a program written by a user using one of Spark’s API languages (Scala, Python, Spark SQL, or Java) or Microsoft-added languages (.NET with C# or F#). When an application runs, it's divided into one or more Spark jobs that run in parallel to process the data faster. For more information, see [Spark application monitoring](../data-engineering/spark-detail-monitoring.md).
 
 - **Apache Spark job:** A Spark job is part of a Spark application that is run in parallel with other jobs in the application. A job consists of multiple tasks. For more information, see [Spark job monitoring](../data-engineering/spark-monitor-debug.md).
@@ -64,11 +66,11 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## Real-time Analytics
 
-- **Event stream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../placeholder.md).
-
 - **KQL database:** The KQL database is the representation of a database holding data in a format to execute a KQL query against it. For more information, see [Query a KQL database](../real-time-analytics/jupyter-notebook.md).
 
 - **KQL queryset:** The KQL queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL queryset](../real-time-analytics/kusto-query-set.md)
+
+- **Event stream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../placeholder.md).
 
 ## OneLake
 
