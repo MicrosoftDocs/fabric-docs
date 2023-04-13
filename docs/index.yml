@@ -43,6 +43,35 @@ productDirectory:
   title: Explore Microsoft Fabric experiences
   summary: Learn about Microsoft Fabric, try and evaluate its features, analyze your data and run reports.
   items:
+
+    # Card
+    - title: Fabric platform
+
+      imageSrc: ./media/fabric-icon.png
+      links:
+        - url: enterprise/what-is-capacity.md
+          text: Fabric capacity and SKUs?
+        - url: admin/admin-roles.md
+          text: Understand Fabric admin roles
+        - url: security/security-overview.md
+          text: Secure Fabric resources
+        - url: get-started/index.yml
+          text: See more
+
+    # Card
+    - title: Power BI
+
+      imageSrc: ./media/power-bi-icon.png
+      links:
+        - url: /power-bi/fundamentals/power-bi-overview
+          text: What is Power BI?
+        - url: /power-bi/transform-model/datamarts/datamarts-overview
+          text: What is a datamart?
+        - url: /power-bi/connect-data/service-azure-and-power-bi
+          text: Azure and Power BI integration
+        - url: /power-bi/
+          text: See more
+
     # Card
     - title: OneLake
 
@@ -69,20 +98,6 @@ productDirectory:
         - url: data-factory/create-first-dataflow-gen2.md
           text: Create your first dataflow?
         - url: data-factory/index.yml
-          text: See more
-
-    # Card
-    - title: Power BI
-
-      imageSrc: ./media/power-bi-icon.png
-      links:
-        - url: /power-bi/fundamentals/power-bi-overview
-          text: What is Power BI?
-        - url: admin/admin-roles.md
-          text: Understand administration roles
-        - url: security/security-byok.md
-          text: Secure with your own encryption keys
-        - url: get-started/index.yml
           text: See more
 
     # Card
@@ -139,20 +154,6 @@ productDirectory:
         - url: real-time-analytics/create-database.md
           text: Create a database
         - url: real-time-analytics/index.yml
-          text: See more
-
-    # Card
-    - title: Reflex
-
-      imageSrc: ./media/reflex-icon.png
-      links:
-        - url: placeholder.md
-          text: What is Reflex?
-        - url: placeholder.md
-          text: Use Reflex from Power BI
-        - url: placeholder.md
-          text: End-to-end scenario for the reflex simulator
-        - url: reflex/index.yml
           text: See more
 
 # additionalContent section (optional)
