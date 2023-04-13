@@ -100,7 +100,7 @@ head(waiting)
 
 ### Read and write SQL tables through RODBC
 
-Use RODBC to connect to SQL based databases through an ODBC interface. For example, you can connect to a Synapse dedicated SQL pool as shown in the following example code.  Substitute your own connection details for <database>, <uid>, <password>, and <table>.
+Use RODBC to connect to SQL based databases through an ODBC interface. For example, you can connect to a Synapse dedicated SQL pool as shown in the following example code.  Substitute your own connection details for `<database>`, `<uid>`, `<password>`, and `<table>`.
 
 ```R
 # load RODBC package
