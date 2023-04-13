@@ -1,6 +1,6 @@
 ---
 title: Fabric overview
-description: 
+description: Microsoft Fabric provides a one-stop shop for all the analytical needs for every enterprise. Learn more.
 ms.reviewer: sngun
 ms.author: gesaur
 author: gsaurer
