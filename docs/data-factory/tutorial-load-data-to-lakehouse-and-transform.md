@@ -33,4 +33,50 @@ Use the following steps to load sample data into Lakehouse.
 
 ### Step 1: Start with the Copy assistant
 
-Select **Copy Data** on the canvase, to open the **Copy assistant** tool to get started.
+Select **Copy Data** on the canvas, to open the **Copy assistant** tool to get started.
+
+:::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/copy-data.png" alt-text="Screenshot showing the Copy data button on a new pipeline.":::
+
+### Step 2: Configure your source
+
+1. Choose the **Public Holidays** from the **Sample data** options for your data source, and then select **Next**.
+
+   :::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/public-holidays-data.png" alt-text="Screenshot showing the Public Holidays sample data selection in the Copy data assistant.":::
+
+1. In the **Connect to data source** section of the **Copy data** assistant, a preview of the sample data is displayed. Select **Next** to move on to the data destination.
+
+   :::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/preview-data.png" alt-text="Screenshot showing a preview of the Public Holiday sample data.":::
+
+### Step 3: Configure your destination
+
+1. Select the **Workspace** tab and choose **Lakehouse**.  Then select **Next**.
+
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination.":::
+
+1. Select **Create new Lakehouse** and enter **LHDemo** for the name, then select **Next**.
+
+   :::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/create-new-lakehouse.png" alt-text="Screenshot showing the Create new lakehouse option with the name LHDemo specified for the new Lakehouse.":::
+
+1. Configure and map your source data to the destination Lakehouse table by entering **Table name**, then select **Next** one more time.
+
+   :::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/specify-table-name.png" alt-text="Screenshot showing the table name to create in the Lakehouse destination.":::
+
+### Step 4: Review and create your copy activity
+
+1. Review your copy activity settings in the previous steps and select **Start data transfer immediately**.  Then select **Save + Run** to run the new pipeline.
+
+   :::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/review-settings.png" alt-text="Screenshot showing the Review + save window of the copy data assistant with the Start data transfer immediately checkbox checked.":::
+
+1. Once finished, the copy activity is added to your new data pipeline canvas, and the pipeline will automatically run to load data into Lakehouse.
+
+   :::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/pipeline-runs-after-creation.png" alt-text="Screenshot showing the created pipeline with Copy activity and the current run in progress.":::
+
+1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas. Hover over the name in the output row to see the **Run details** button (an icon of a pair of glasses, highlighted) to view the run details.
+
+   :::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/run-details-button.png" alt-text="Screenshot showing the run details button on the pipeline Output tab.":::
+
+1. The run details show 69,557 rows were read and written, and various other details about the run, including a breakdown of the duration.
+
+   :::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/run-details.png" alt-text="Screenshot showing the run details for the successful pipeline run.":::
+
+   
