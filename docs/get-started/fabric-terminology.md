@@ -12,7 +12,7 @@ ms.date: 04/10/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Learn the definitions of terms used in Microsoft Fabric, including terms specific to Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-time Analytics, Data Factory, Reflex, and Power BI.
+Learn the definitions of terms used in Microsoft Fabric, including terms specific to Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-time Analytics, Data Factory, and Power BI.
 
 ## General terms
 

@@ -27,7 +27,7 @@ There are two ways to get to the Visual Query editor:
 
 In the ribbon, create a new query using the **New visual query** button, as shown in the following image.
 
-:::image type="content" source="media\visual-query-editor\new-visual-query.png" alt-text="Screenshot showing where to find the New query menu in the Data grid view." lightbox="media\visual-query-editor\new-visual-query.png":::
+:::image type="content" source="media\visual-query-editor\new-visual-query.png" alt-text="Screenshot showing where to find the New query menu in the Data preview view." lightbox="media\visual-query-editor\new-visual-query.png":::
 
 To create a query, drag and drop tables from the **Object explorer** on the left onto the canvas. Once you drag one or more tables onto the canvas, you can use the visual experience to design your queries. The warehouse editor uses the similar Power Query diagram view experience to enable you to easily query and analyze your data. Learn more about [Power Query diagram view](/power-query/diagram-view).
 
