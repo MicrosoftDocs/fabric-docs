@@ -7,24 +7,28 @@ items:
     href: admin-overview.md
 - name: Get started
   items:
+  - name: Enable Microsoft Fabric for your organization
+    href: admin-switch.md  
   - name: Understand Microsoft Fabric roles
     href: admin-roles.md
-  - name: Enable Microsoft Fabric for your organization
-    href: admin-switch.md
+  - name: What is the admin center?
+    href: admin-center.md       
   - name: Compliance feature switch
     href: admin-compliance.md    
 - name: Admin features in Microsoft Fabric
   items:
   - name: Delegate admin rights
     href: admin-delegate.md
-- name: Power BI admin portal
+- name: Power BI admin center
   items:
-  - name: Power BI admin portal
+  - name: Power BI admin center
     href: admin-power-bi.md
 - name: Spark
   items:
   - name: Spark
     href: admin-spark.md
+- name: Track user activities
+  href: admin-track-user-activities.md
 - name: Monitoring workspace
   items:
   - name: What is the monitoring workspace?
@@ -33,6 +37,12 @@ items:
     href: admin-audit-log.md
   - name: Activity log report
     href: admin-activity-log.md 
+- name: Workspace administration
+  items:
+  - name: Manage workspaces
+    href: admin-portal-workspaces.md  
+  - name: Workspace tenant settings
+    href: admin-portal-workspace.md 
 - name: Considerations and limitations
   items:
   - name: Admin troubleshooting

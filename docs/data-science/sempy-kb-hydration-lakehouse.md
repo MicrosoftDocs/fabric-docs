@@ -1,6 +1,6 @@
 ---
-title: SemPy knowledge base hydration from a Lakehouse
-description: Learn how to populate a knowledge base with a dataset uploaded to a Lakehouse.
+title: SemPy knowledge base hydration from a lakehouse
+description: Learn how to populate a knowledge base with information about a semantic model of Synthea uploaded to a lakehouse.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,10 +8,9 @@ ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
-# Knowledge base hydration from a Lakehouse
+# Knowledge base hydration from a lakehouse in Microsoft Fabric
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this notebook, we illustrate how you can populate Knowledge Base with information about semantic model of [Synthea](https://synthetichealth.github.io/synthea/) dataset, which we preemptively uploaded to **SemPyLake** Lakehouse in *csv* file format.
 

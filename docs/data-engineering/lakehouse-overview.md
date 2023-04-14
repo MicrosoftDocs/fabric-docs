@@ -1,6 +1,6 @@
 ---
-title: Lakehouse overview
-description: Learn about Lakehouses.
+title: What is a lakehouse?
+description: A lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by  Apache Spark and SQL for big data processing.
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
@@ -9,10 +9,10 @@ ms.date: 02/24/2023
 ms.search.form: Lakehouse Overview
 ---
 
-# What is a Lakehouse?
+# What is a lakehouse in Microsoft Fabric?
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 Microsoft Fabric Lakehouse is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location.It is a flexible and scalable solution that allows organizations to handle large volumes of data using a variety of tools and frameworks to process and analyze that data. It integrates with other data management and analytics tools to provide a comprehensive solution for data engineering and analytics.
 
@@ -33,7 +33,7 @@ The automatic table discovery and registration is a feature of Lakehouse that pr
 
 ## Interacting with the Lakehouse item
 
-A data engineer can interact with the Lakehouse and the data within the Lakehouse in several ways:
+A data engineer can interact with the lakehouse and the data within the lakehouse in several ways:
 
 1. **The Lakehouse explorer**: The explorer is the main Lakehouse interaction page. You can load data in your Lakehouse, explore data in the Lakehouse using the object explorer, set MIP labels & various other things. Learn more about the explorer experience: [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md).
 
@@ -47,8 +47,9 @@ A data engineer can interact with the Lakehouse and the data within the Lakehous
 
 Learn more about the different ways to load data into your lakehouse: [Get data experience for Lakehouse](load-data-lakehouse.md).
 
+
 ## Next steps
 
-In this overview, you get a basic understanding of a Lakehouse. Advance to the next article to learn how to create and get started with your own Lakehouse:
+In this overview, you get a basic understanding of a lakehouse. Advance to the next article to learn how to create and get started with your own lakehouse:
 
-- To get started with Lakehouse, see [Creating a Lakehouse](create-lakehouse.md).
+- To get started with lakehouse, see [Creating a lakehouse](create-lakehouse.md).

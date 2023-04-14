@@ -1,6 +1,6 @@
 ---
-title: Navigating the Lakehouse explorer
-description: Learn about the components of the Lakehouse explorer.
+title: Navigate the Fabric Lakehouse explorer
+description: The lakehouse explorer consists of the object explorer, main view, and ribbon. Use it to load data into your lakehouse, and then browse and preview your data.
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
@@ -9,14 +9,14 @@ ms.date: 02/24/2023
 ms.search.form: Lakehouse Explorer
 ---
 
-# Navigating the Lakehouse explorer
+# Navigate the Fabric Lakehouse explorer
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The Lakehouse explorer page is the main Lakehouse interaction page; you can use it to load data into your Lakehouse, browse through the data, preview them, and many other things. The page is divided into three sections: the Lakehouse explorer, the main view, and the ribbon.
 
    :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Lakehouse experience overview gif" lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
+
 
 ## Lakehouse explorer
 
@@ -28,13 +28,16 @@ The Lakehouse explorer provides a unified graphical representation of the whole 
 
 -The **File Section** is the UI representation of the unidentified area of your lake, it can be seen as a "landing zone" for raw data that is ingested from various sources and requires additional processing before it can be used for analysis. You can navigate through directories, preview files, load a file into a table and perform various other actions.
 
+
 ## Main view area
 
 The main view area of the Lakehouse page is the space where most of the data interaction occurs. The view changes depending on what you select. Since the object explorer only displays a folder level hierarchy of the lake, the main view area is what you use to navigate your files, preview files, and various other tasks.
 
+
 ## Ribbon
 
 The Lakehouse ribbon is a quick go-to action bar for you to refresh the Lakehouse, update settings, load data or create a new dataset.
+
 
 ### Different ways to load data into a Lakehouse
 
@@ -50,6 +53,7 @@ There are several ways to load data into your Lakehouse from the explorer page:
 
 1. **Shortcuts:** Creating shortcuts to connect to existing data into your Lakehouse without having to directly copy it.
 
+
 ## Next steps
 
 - Learn more about the different use cases to understand the best way to load your data:, see [Get data experience for Lakehouse](load-data-lakehouse.md).
@@ -63,3 +67,4 @@ There are several ways to load data into your Lakehouse from the explorer page:
 - [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
 
 - [Create a OneLake shortcut](../real-time-analytics/onelake-shortcut.md).
+
