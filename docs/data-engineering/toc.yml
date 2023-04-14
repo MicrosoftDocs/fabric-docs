@@ -15,12 +15,24 @@ items:
   items:
   - name: What is a lakehouse?
     href: lakehouse-overview.md
-  - name: Get data into a lakehouse
-    href: load-data-lakehouse.md
-  - name: Navigate the lakehouse explorer
-    href: navigate-lakehouse-explorer.md
   - name: Create a lakehouse
     href: create-lakehouse.md
+  - name: Navigate the lakehouse explorer
+    href: navigate-lakehouse-explorer.md
+  - name: Lakehouse SQL endpoint
+    href: sql-lakehouse.md
+- name: Get data
+  - name: Get data into a lakehouse
+    href: load-data-lakehouse.md
+  - name: Shortcut data in a lakehouse
+    href: shortcut-lakehouse.md
+  - name: Stream data to a lakehouse
+    href: streaming-lakehouse.md
+- name: Lakehouse sharing and collaboration
+  - name: Workspace roles
+    href: workspace-roles-lakehouse.md
+  - name: Sharing and permission management
+    href: sharing-lakehouse.md
 - name: Apache Spark
   items:
   - name: Autotune Spark configuration
@@ -59,6 +71,12 @@ items:
       href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
+- name: Apache Delta
+  items:
+    - name: Lakehouse and delta tables
+      href: lakehouse-delta.md
+    - name: V-order optimization for tables
+      href: vorder-tables.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
@@ -71,3 +89,25 @@ items:
     href: lakehouse-notebook-explore.md
   - name: Load data in lakehouse
     href: lakehouse-notebook-load-data.md
+- name: Tutorials
+  items:
+    - name: Data mesh guide
+      href: tutorial-data-mesh-lakehouse.md
+    - name: From Spark ingestion to SQL serving
+      href: tutorial-spark-to-sql.md
+    - name: Zero copy using shortcuts
+      href: tutorial-zero-copy.md
+    - name: Spark Structured Streaming with SJD and retry policy
+      href: tutorial-streaming-retry-policy.md
+- name: How-to guides
+  items:
+    - name: Create a lakehouse
+      href: how-to-create-lakehouse.md
+    - name: Create a copy activity in pipelines
+      href: how-to-copy-activity-lakehouse.md
+    - name: Create a notebook
+      href: how-to-create-notebook.md
+    - name: Create a Spark Job Definition
+      href: how-to-create-sjd.md
+    - name: Create a Shortcut
+      href: how-to-create-shortcut.md
