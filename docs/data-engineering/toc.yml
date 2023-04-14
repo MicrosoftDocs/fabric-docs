@@ -101,15 +101,3 @@ items:
       href: ../placeholder.md
     - name: Spark Structured Streaming with SJD and retry policy
       href: ../placeholder.md
-- name: How-to guides
-  items:
-    - name: Create a lakehouse
-      href: ../placeholder.md
-    - name: Create a copy activity in pipelines
-      href: ../placeholder.md
-    - name: Create a notebook
-      href: ../placeholder.md
-    - name: Create a Spark Job Definition
-      href: ../placeholder.md
-    - name: Create a Shortcut
-      href: ../placeholder.md
