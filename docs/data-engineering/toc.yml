@@ -21,6 +21,8 @@ items:
     href: navigate-lakehouse-explorer.md
   - name: Lakehouse SQL endpoint
     href: ../placeholder.md
+  - name: Direct lake mode and PBI reporting
+    href: ../placeholder.md
 - name: Get data
   items:
   - name: Get data into a lakehouse
