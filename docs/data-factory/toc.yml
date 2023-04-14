@@ -68,7 +68,11 @@
       - name: Connect to an Azure SQL database in dataflows
         href: connector-azure-sql-database-dataflow.md
     - name: Binary format
-      href: format-binary.md
+      items:
+      - name: Configure Binary format
+        href: format-binary.md
+      - name: Binary format in dataflows
+        href: connector-binary-dataflows.md
     - name: Data warehouse
       items:
       - name: Overview
