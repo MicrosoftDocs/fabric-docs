@@ -65,8 +65,8 @@ items:
     href: visual-query-editor.md
   - name: Query using SQL Query editor
     href: sql-query-editor.md    
-  - name: View data in the Data Grid
-    href: data-grid.md
+  - name: View data in the Data preview
+    href: data-preview.md
   - name: Query Delta Lake logs
     href: query-delta-lake-logs.md
 - name: Design and Develop
