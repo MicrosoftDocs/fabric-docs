@@ -22,6 +22,7 @@ items:
   - name: Lakehouse SQL endpoint
     href: ../placeholder.md
 - name: Get data
+  items:
   - name: Get data into a lakehouse
     href: load-data-lakehouse.md
   - name: Shortcut data in a lakehouse
@@ -29,6 +30,7 @@ items:
   - name: Stream data to a lakehouse
     href: ../placeholder.md
 - name: Lakehouse sharing and collaboration
+  items:
   - name: Workspace roles
     href: ../placeholder.md
   - name: Sharing and permission management
