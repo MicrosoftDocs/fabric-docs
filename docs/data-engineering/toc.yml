@@ -20,19 +20,19 @@ items:
   - name: Navigate the lakehouse explorer
     href: navigate-lakehouse-explorer.md
   - name: Lakehouse SQL endpoint
-    href: sql-lakehouse.md
+    href: ../placeholder.md
 - name: Get data
   - name: Get data into a lakehouse
     href: load-data-lakehouse.md
   - name: Shortcut data in a lakehouse
-    href: shortcut-lakehouse.md
+    href: ../placeholder.md
   - name: Stream data to a lakehouse
-    href: streaming-lakehouse.md
+    href: ../placeholder.md
 - name: Lakehouse sharing and collaboration
   - name: Workspace roles
-    href: workspace-roles-lakehouse.md
+    href: ../placeholder.md
   - name: Sharing and permission management
-    href: sharing-lakehouse.md
+    href: ../placeholder.md
 - name: Apache Spark
   items:
   - name: Autotune Spark configuration
@@ -92,22 +92,22 @@ items:
 - name: Tutorials
   items:
     - name: Data mesh guide
-      href: tutorial-data-mesh-lakehouse.md
+      href: ../placeholder.md
     - name: From Spark ingestion to SQL serving
-      href: tutorial-spark-to-sql.md
+      href: ../placeholder.md
     - name: Zero copy using shortcuts
-      href: tutorial-zero-copy.md
+      href: ../placeholder.md
     - name: Spark Structured Streaming with SJD and retry policy
-      href: tutorial-streaming-retry-policy.md
+      href: ../placeholder.md
 - name: How-to guides
   items:
     - name: Create a lakehouse
-      href: how-to-create-lakehouse.md
+      href: ../placeholder.md
     - name: Create a copy activity in pipelines
-      href: how-to-copy-activity-lakehouse.md
+      href: ../placeholder.md
     - name: Create a notebook
-      href: how-to-create-notebook.md
+      href: ../placeholder.md
     - name: Create a Spark Job Definition
-      href: how-to-create-sjd.md
+      href: ../placeholder.md
     - name: Create a Shortcut
-      href: how-to-create-shortcut.md
+      href: ../placeholder.md
