@@ -20,11 +20,17 @@ In this tutorial, we will provide an end-to-end step to common scenario that use
 
 1. Sign in to [Power BI](https://app.powerbi.com) using your admin account credentials.
 1. Choose your existing workspace with premium capacity enabled or create a new workspace enabling Premium capacity.
+
    :::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/create-premium-capacity-workspace.png" alt-text="Screenshot showing the Create a workspace dialog with a premium capacity selection highlighted.":::
+
 1. Switch to the **Data Factory** workload.
+
    :::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/switch-to-data-factory-workload.png" alt-text="Screenshot showing the selection of the Data Factory workload.":::
+
 1. Click **New** and select **Data pipeline**, then input a name for your pipeline.
+
    :::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/new-data-pipeline.png" alt-text="Screenshot showing the new Data pipeline button.":::
+
    :::image type="content" source="media/tutorial-load-data-to-lakehouse-and-transform/pipeline-name.png" alt-text="Screenshot showing the pipeline name dialog.":::
 
 ## Use a pipeline to load sample data into Lakehouse
