@@ -58,6 +58,6 @@ Sharing is a convenient way to provide users access to your [!INCLUDE [fabric-dw
 
 ## Next steps
 
-- [View data using the Data Grid in Microsoft Fabric](data-grid.md)
+- [View data using the Data preview in Microsoft Fabric](data-preview.md)
 - [Define relationships in data models for data warehousing](data-modeling-defining-relationships.md)
 - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)

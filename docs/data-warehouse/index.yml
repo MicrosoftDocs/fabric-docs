@@ -109,8 +109,8 @@ landingContent:
             url: query-warehouse.md
           - text: Query using visual query editor
             url: visual-query-editor.md
-          - text: View data in the Data Grid
-            url: data-grid.md
+          - text: View data in the Data preview
+            url: data-preview.md
   # Card 
   - title: Manage and Monitor
     linkLists:
