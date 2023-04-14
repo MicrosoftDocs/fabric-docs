@@ -65,8 +65,8 @@ items:
     href: visual-query-editor.md
   - name: Query using SQL Query editor
     href: sql-query-editor.md    
-  - name: Statistics
-    href: statistics.md
+  - name: View data in the Data Grid
+    href: data-grid.md
   - name: Query Delta Lake logs
     href: query-delta-lake-logs.md
 - name: Design and Develop
@@ -79,11 +79,17 @@ items:
     href: transactions.md
 - name: Sharing 
   items: 
+  - name: Share your Synapse Data Warehouse
+    href: share-warehouse.md
   - name: Get Workspace and OneLake path
     href: get-workspace-onelake-path.md
 - name: Manage and Monitor
   items:
   - name: Warehouse settings and context menus
     href: settings-context-menus.md
+  - name: Statistics
+    href: statistics.md
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
+  - name: Workload Management
+    href: workload-management.md
