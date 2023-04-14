@@ -76,9 +76,9 @@ items:
 - name: Apache Delta
   items:
     - name: Lakehouse and delta tables
-      href: lakehouse-delta.md
+      href: ../placeholder.
     - name: V-order optimization for tables
-      href: vorder-tables.md
+      href: ../placeholder.
 - name: Notebooks
   items:
   - name: Create and use notebooks
