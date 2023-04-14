@@ -39,6 +39,6 @@ After creating a warehouse and ingesting data, select the **Data** tab. Choose a
 
 ## Next steps
 
- - [Share your warehouse](share-warehouse.md)
+ - [Share your Synapse Data Warehouse](share-warehouse.md)
  - [Define relationships in data models for data warehousing](data-modeling-defining-relationships.md)
  - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
