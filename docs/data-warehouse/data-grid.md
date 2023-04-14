@@ -26,11 +26,11 @@ After creating a warehouse and ingesting data, select the **Data** tab on the bo
 
  - **Sort columns (alphabetically or numerically)** – Hover over the column title and select on the up/down arrow that appears next to the title. 
 
-    :::image type="content" source="media\data-grid\search-bar.png" alt-text="Screenshot of searching New York in the search bar within the data grid of the warehouse" lightbox="media\data-grid\search-bar.png":::
+    :::image type="content" source="media\data-grid\search-bar.png" alt-text="Screenshot of searching New York in the search bar within the data grid of the warehouse." lightbox="media\data-grid\search-bar.png":::
 
  - **Copy value** – Right-click a cell within the table and a **Copy** option will appear to copy the specific selection. 
 
-    :::image type="content" source="media\data-grid\table-tools-copy.png" alt-text="Screenshot of copying a cell within the data grid of the warehouse" lightbox="media\data-grid\table-tools-copy.png":::
+    :::image type="content" source="media\data-grid\table-tools-copy.png" alt-text="Screenshot of copying a cell within the data grid of the warehouse." lightbox="media\data-grid\table-tools-copy.png":::
 
 ## Considerations and Limitations
 
