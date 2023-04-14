@@ -190,7 +190,7 @@
     - name: Tutorials
       items:
       - name: Copy sample data into Lakehouse and transform with dataflow
-        href: ../tutorial-load-data-to-lakehouse-and-transform.md
+        href: tutorial-load-data-to-lakehouse-and-transform.md
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
         href: ../placeholder.md
       - name: Load sample data to data warehouse
