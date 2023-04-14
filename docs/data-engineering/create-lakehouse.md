@@ -14,13 +14,7 @@ ms.search.form: Create lakehouse
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-In this tutorial, you learn how to create a Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)].
-
-## Prerequisites
-
-To get started, you must complete the following prerequisites:
-
-- Get access to a premium workspace with contributor or above permissions.
+In this tutorial, you learn different ways to create a Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Create a Lakehouse
 
@@ -63,8 +57,8 @@ There are a few ways you can get started with the creation process:
 
 ## Next steps
 
-After you create your Lakehouse, your next step is to get data in it. Here are a few ways you can do that:
+Now that you have succesfully created your Lakehouse, learn more about:
 
-- [How to copy data into your Lakehouse](../data-factory/copy-data-activity.md)
-- [How to use a notebook to load data in your Lakehouse](lakehouse-notebook-load-data.md)
-- [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md)
+- Different ways to load data in Lakehouse, see [Get data experience for Lakehouse](navigate-lakehouse-explorer.md)
+
+- Exploring your lakehouse explorer, see [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md)
