@@ -1,6 +1,6 @@
 ---
-title: Data Engineering overview
-description: Read an introduction to Data Engineering.
+title: What is Data engineering in Microsoft Fabric?
+description: Learn about Data engineering core concepts in Microsoft Fabric and the analytics functionality it offers. 
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
@@ -8,10 +8,9 @@ ms.topic: overview
 ms.date: 02/24/2023
 ---
 
-# Data engineering overview
+# What is Data engineering in Microsoft Fabric?
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Data engineering in Microsoft Fabric enables users to design, build, and maintain infrastructures and systems that enable their organizations to collect, store, process, and analyze large volumes of data.
 
@@ -58,3 +57,4 @@ Get started with the Data Engineering experience:
 - Learn more about Notebooks, see [Author and execute the notebook](author-execute-notebook.md).
 
 - To get started with Pipelines copy activity, see [How to copy data using copy activity](..\data-factory\copy-data-activity.md).
+

@@ -1,6 +1,6 @@
 ---
-title: Library management
-description: Learn how to manage and use built-in libraries, and how to include other libraries.
+title: Manage Apache Spark libraries
+description: Learn how to manage and use built-in libraries following best practices, and how to include other feed and custom libraries.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
@@ -8,10 +8,9 @@ ms.topic: how-to
 ms.date: 02/24/2023
 ---
 
-# Library management
+# Manage Apache Spark libraries in Microsoft Fabric
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Libraries provide reusable code that Apache Spark developers may want to include in their Spark application.
 
@@ -27,7 +26,7 @@ Based on the user scenarios and specific needs, you can include other libraries.
 
 You can manage all the previously mentioned types of libraries via two different entry points: library management in workspace settings and in-line installation.
 
-1. [**Workspace library management**](#library-management-in-workspace-setting): Workspace library settings define the working environment for the entire Workspace. The libraries installed on a Workspace level are available for all Notebooks and Spark job definitions under that workspace. Update the workspace libraries when you want to set up the shared environment for all artifacts in a workspace.
+1. [**Workspace library management**](#library-management-in-workspace-setting): Workspace library settings define the working environment for the entire Workspace. The libraries installed on a Workspace level are available for all Notebooks and Spark job definitions under that workspace. Update the workspace libraries when you want to set up the shared environment for all items in a workspace.
 
    > [!IMPORTANT]
    > Only Workspace admin has access to update the Workspace level settings.
@@ -59,7 +58,7 @@ In this section, we introduce how to manage feed library, which resides in PyPI 
 - **View and search feed library**: The installed library list appears when you open the **library management portal**. You can view the name, version, and dependencies of the library. Use the search box on the upper right corner to find the library if you want to retrieve the information quickly.
 - **Add new feed library**: The default source for installing the Python feed library is PyPI. You can also choose "Conda" by choosing from the drop-down button next to the add button. Once the installation source is selected, you can select the **+** button and a new line appears. Enter the library name, select or specify the version in the new line, and you're good to go.
 
-  Except for adding new feed library one by one, you can upload a .yml file to install the required feed libraries in a batch.
+  Instead of adding each new feed library one by one, you can upload a .yml file to install the required feed libraries in a batch.
 - **Remove existing feed library**: Select the Trash button on the line of the library you want to remove, and this package is removed from your environment.
 - **Update the version of existing feed** **library**: If the current version of the installed library is no longer satisfying your needs, choose another version in the drop-down box.
 - **Review and apply** **changes**: Once you have made all your changes, you can review them if you go to the "Pending changes" panel. If anything is incorrect, you can remove one library specification by selecting the **X** button, or discard all changes by selecting the **Discard** button at the bottom of the page. After reviewing all the pending changes, select **Apply** to generate a new library snapshot.
@@ -81,14 +80,14 @@ When you have an interactive Notebook and want to use some extra packages for a 
 ### Manage Python feed libraries through in-line installation
 
 > [!NOTE]
-> When installing new Python libraries, the *%conda install* command normally takes more time than *%pip install* since it will check the full dependencies to detect conflicts. You may want to use *%conda install* when you want to avoid potential issues. Use *%pip install_ when you are certain about the library you are trying to install has no conflict with the pre-installed libraries in runtime environment.
+> When installing new Python libraries, the *%conda install* command normally takes more time than *%pip install* since it will check the full dependencies to detect conflicts. You may want to use *%conda install* when you want to avoid potential issues. Use *%pip install* when you are certain about the library you are trying to install has no conflict with the pre-installed libraries in runtime environment.
 
 > [!TIP]
 > All available Python in-line commands and its clarifications can be found: [%pip commands](https://pip.pypa.io/en/stable/cli/) and [%conda commands](https://docs.conda.io/projects/conda/en/latest/commands.html)
 
 Here's an example to walk you through the library management abilities using in-line commands. Let's assume you want to use *altair*, a powerful visualization library commonly used by Python developers, for your one-time data exploration. And let's assume the library isn't installed on Workspace or on Notebook. In the following example, we use conda commands to demonstrate the steps.
 
-Now, you can use inline commands to help you enable *altair* on your Notebook session without interrupting other sessions of the Notebook or other artifacts.
+Now, you can use inline commands to help you enable *altair* on your Notebook session without interrupting other sessions of the Notebook or other items.
 
 1. Run the following commands in a Notebook code cell to install the *altair* library and *vega_datasets*, which contains dataset you can use to visualize:
 
@@ -120,7 +119,7 @@ Now, you can use inline commands to help you enable *altair* on your Notebook se
 
 ### Manage Python custom libraries through in-line installation
 
-You can upload your Python custom libraries to the Notebook-attached Lakehouse **File** folder. Navigate to your Lakehouse, select **…** on the **File** folder, then upload the custom library.
+You can upload your Python custom libraries to the notebook-attached lakehouse **File** folder. Navigate to your lakehouse, select **…** on the **File** folder, then upload the custom library.
 
 After uploading, you can use the following command to install the custom library to your Notebook session:
 

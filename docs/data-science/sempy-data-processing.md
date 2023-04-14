@@ -1,6 +1,6 @@
 ---
 title: SemPy data processing
-description: Learn how SemPy works with data.
+description: Learn how to use SemPy to explore and process data, including which data sources you can use and how to populate data frames.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 02/10/2023
 ---
 
-# SemPy data processing
+# SemPy data processing in Microsoft Fabric
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article covers how to explore and process data in SemPy.
 

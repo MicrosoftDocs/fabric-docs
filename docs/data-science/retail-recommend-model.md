@@ -1,17 +1,16 @@
 ---
 title: Create, evaluate, and deploy a recommendation system
-description: An e2e sample for building a retail book recommender.
-ms.reviewer: mopeakande
+description: This demonstration shows the data engineering and data science workflow for building a system that provides online book recommendations.
+ms.reviewer: lagayhar
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
 ms.date: 02/10/2023
 ---
 
-# Creating, evaluating, and deploying a recommendation system
+# Creating, evaluating, and deploying a recommendation system in Microsoft Fabric
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this notebook, we'll demonstrate data engineering and data science workflow with an e2e sample. The scenario is to build a recommender for online book recommendation.
 
@@ -19,7 +18,7 @@ There are different types of recommendation algorithms, we'll use a model based 
 
 :::image type="content" source="media/retail-recommend-model/recommenders-matrix-factorisation.png" alt-text="Chart showing different types of recommendation algorithms." lightbox="media/retail-recommend-model/recommenders-matrix-factorisation.png":::
 
-ALS attempts to estimate the ratings matrix R as the product of two lower-rank matrices, X and Y, i.e. X * Yt = R. Typically these approximations are called ‘factor’ matrices.
+ALS attempts to estimate the ratings matrix R as the product of two lower-rank matrices, X and Y, i.e. X * Yt = R. Typically these approximations are called 'factor' matrices.
 
 The general approach is iterative. During each iteration, one of the factor matrices is held constant, while the other is solved for using least squares. The newly solved factor matrix is then held constant while solving for the other factor matrix.
 

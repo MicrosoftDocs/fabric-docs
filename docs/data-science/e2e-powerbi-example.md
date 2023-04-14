@@ -1,6 +1,6 @@
 ---
-title: E2E Power BI example
-description: End-to-end example of data science capabilities when interacting with Power BI.
+title: End-to-end Power BI example
+description: Follow an example of an end-to-end demo of data science interaction with Power BI and semantic model features of the SemPy package.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,10 +8,9 @@ ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
-# E2E Power BI example
+# End-to-end Power BI example in Microsoft Fabric
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This demo is designed for private preview of Azure Synapse data science capabilities, including, but not limited to, interaction with Power BI and new semantic modeling features of a python package called SemPy developed for making it easier to capture and share domain knowledge.
 
