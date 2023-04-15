@@ -28,15 +28,14 @@ Assigning users to the various workspace roles, provides the following SQL capab
 ## Viewer restrictions
 The Viewer role is a more limited role in comparison with the other workspace roles.  In addition to less SQL permissions given to viewers, detailed above, there are additional actions they are restricted from performing.
 
-| Feature |  Enabled? | Notes |
-|---|---|---|
-|Settings|Yes (read-only)|Viewers cannot rename warehouse, add description, or change sensitivity label|
-|Model view|Yes (read-only)|Viewers will only have read-only mode on the Model View|
-|Run queries|Yes (read-only)|Viewers do not have full DML/DDL capabilities unless granted specifically. Viewers can read data using SELECT statement in SQL query editor and use all tools in the toolbar in the Visual query editor. Viewers can also read data from Power BI Desktop and other SQL client tools|
-|Analyze in Excel|No|Viewers do not have permission to Analyze in Excel|
-|Show objects|Yes|Viewers can see list of objects within the warehouse|
-|Manually update dataset|No|Viewers cannot manually update the default dataset to which the Warehouse is connected|
-|New measure|No|Viewers do not have permission to create measures|
-|Lineage view|No|Viewers do not have access to reading the lineage view chart|
-|Share/Manage permissions|No|Viewers do not have permission to share warehouses with others|
-|Create a report|No|Viewers do not have access to create content within the workspace and hence cannot build reports on top of the warehouse|
+| Feature | Limitation |
+|---|---|
+|Settings|Viewers have read-only access, so they cannot rename warehouse, add description, or change sensitivity label|
+|Model view|iewers will only have read-only mode on the Model View|
+|Run queries|Viewers do not have full DML/DDL capabilities unless granted specifically. Viewers can read data using SELECT statement in SQL query editor and use all tools in the toolbar in the Visual query editor. Viewers can also read data from Power BI Desktop and other SQL client tools|
+|Analyze in Excel|Viewers do not have permission to Analyze in Excel|
+|Manually update dataset|Viewers cannot manually update the default dataset to which the Warehouse is connected|
+|New measure|Viewers do not have permission to create measures|
+|Lineage view|Viewers do not have access to reading the lineage view chart|
+|Share/Manage permissions|Viewers do not have permission to share warehouses with others|
+|Create a report|Viewers do not have access to create content within the workspace and hence cannot build reports on top of the warehouse|
