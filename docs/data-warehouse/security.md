@@ -28,25 +28,25 @@ For information on connecting to the [!INCLUDE [fabric-se](includes/fabric-se.md
 
 ### Workspace roles
 
-Workspace roles are used for development team collaboration within a workspace. Role assignment determines the actions available to the user and applies to all artifacts within the workspace.
-- For an overview of [!INCLUDE [product-name](../includes/product-name.md)] workspace roles, see [Roles in workspaces](../../roles-workspaces.md).
-- For instructions on assigning workspace roles, see [Give Workspace Access](../../get-started/give-access-workspaces.md).
+Workspace roles are used for development team collaboration within a workspace. Role assignment determines the actions available to the user and applies to all items within the workspace.
+- For an overview of [!INCLUDE [product-name](../includes/product-name.md)] workspace roles, see [Roles in workspaces](../get-started/roles-workspaces.md).
+- For instructions on assigning workspace roles, see [Give Workspace Access](../get-started/give-access-workspaces.md).
 
-See [Workspace roles](workspace-roles.md) for details on the specific Warehouse capabilities provided through Workspace roles.
+See [Workspace roles in Fabric data warehousing](workspace-roles.md) for details on the specific Warehouse capabilities provided through Workspace roles.
 
 
-### Artifact permissions
+### Item permissions
 
-In contrast to workspace roles, which apply to all artifacts within a workspace, artifact permissions can be assigned directly to individual artifacts. The user will receive the assigned permission on that single Warehouse. The primary purpose is for artifact permissions is to enable sharing for downstream consumption of the Warehouse.
+In contrast to workspace roles, which apply to all items within a workspace, item permissions can be assigned directly to individual Warehouses. The user will receive the assigned permission on that single Warehouse. The primary purpose for these permissions is to enable sharing for downstream consumption of the Warehouse.
 
-See [Artifact permissions](artifact-permissions.md) for details on the specific permissions provided for warehouses.
+See [Item permissions](artifact-permissions.md) for details on the specific permissions provided for Warehouses.
 
 
 ### Object-level security
 
-Workspace roles and artifact permissions provide an easy way to assign coarse permissions to a user for the entire warehouse. However, in some casees, more granular permissions are needed for a user. To achieve this, standard T-SQL constructs can be used to provide specific permissions to users.
+Workspace roles and item permissions provide an easy way to assign coarse permissions to a user for the entire warehouse. However, in some casees, more granular permissions are needed for a user. To achieve this, standard T-SQL constructs can be used to provide specific permissions to users.
 
-See [SQL permissions](sql-granular-permissions.md) for details on the managing granular permissions in SQL.
+See [SQL granular permissions](sql-granular-permissions.md) for details on the managing granular permissions in SQL.
 
 ## Next steps
 
