@@ -1,12 +1,12 @@
 ---
-title: Artifact permissions
-description: Learn about the permissions that can be assigned to warehouse artifacts.
+title: Item permissions
+description: Learn about the permissions that can be assigned to warehouses.
 ms.reviewer: wiassaf
 ms.author: kedodd
 author: kedodd
 ms.topic: conceptual
 ms.date: 04/13/2023
-ms.search.form: Warehouse artifact permissions, Workspace permissions
+ms.search.form: Warehouse item permissions, Workspace permissions
 ---
 
 # Item permissions
@@ -30,7 +30,7 @@ Notes:
 - ReadData is the same permission that Workspace Viewers receive for each warehouse in the workspace
 - ReadAll does not impact the user's permissions within SQL
 
-## Assigning artifact permissions
+## Assigning item permissions
 Permissions can be granted to users through the Item sharing flow or through Manage permissions.
 
 ### Manage permissions ###
