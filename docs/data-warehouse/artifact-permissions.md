@@ -9,7 +9,7 @@ ms.date: 04/13/2023
 ms.search.form: Warehouse artifact permissions, Workspace permissions
 ---
 
-# Artifact permissions
+# Item permissions
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -18,7 +18,7 @@ ms.search.form: Warehouse artifact permissions, Workspace permissions
  
 For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)], the following permisions can be assigned.
    
-| Artifact permission   |  Description |
+| Item permission   |  Description |
 |---|---|
 |Read|Allows the user to connect to the Warehouse SQL endpoint|
 |ReadData|Allows the user to read data from any table/view within the Warehouse. Equivalent of SQL db_datareader or SELECT on all tables/views.|   
@@ -30,10 +30,15 @@ Notes:
 - ReadData is the same permission that Workspace Viewers receive for each warehouse in the workspace
 - ReadAll does not impact the user's permissions within SQL
 
-**--Screenshot showing the permissions**
-
 ## Assigning artifact permissions
-There are two ways that these artifact permissions can be assigned:
-- Sharing - <note: need to link to sharing page>
-- Manage permissions - <note: need to link to platform manage permissions page>
+Permissions can be granted to users through the Item sharing flow or through Manage permissions.
+
+### Manage permissions ###
+The Manage permissions page shows the list of users who have been given access by being assigned to Workspace roles or through being assigned specific item permissions.
+
+1. Select Manage Permissions from the context menu
+2. Select Add User
+3. Enter the user information and select the additional permissions to provide the user
+4. The user will now be displayed, along with their permissions, in the list of users
+5. Permissions or access can be removed by selecting the context menu for the user 
 
