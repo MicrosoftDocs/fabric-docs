@@ -37,8 +37,19 @@ Permissions can be granted to users through the Item sharing flow or through Man
 The Manage permissions page shows the list of users who have been given access by being assigned to Workspace roles or through being assigned specific item permissions.
 
 1. Select Manage Permissions from the context menu
+
+:::image type="content" source="media\ManagePermissionsContextMenu.png" alt-text="Screenshot of manage permission context menu" lightbox="media\ManagePermissionsContextMenu.png":::
+
 2. Select Add User
 3. Enter the user information and select the additional permissions to provide the user
+
+:::image type="content" source="media\ManagePermissionsPageAddUserContextMenu.png" alt-text="Screenshot of manage permission add user dialog" lightbox="media\ManagePermissionsPageAddUserContextMenu.png":::
+
 4. The user will now be displayed, along with their permissions, in the list of users
+
+:::image type="content" source="media\ManagePermissionsPagePermissions.png" alt-text="Screenshot of manage permissions page" lightbox="media\ManagePermissionsPagePermissions.png":::
+
 5. Permissions or access can be removed by selecting the context menu for the user 
+
+:::image type="content" source="media\ManagePermissionsPageRemovePermissions.png" alt-text="Screenshot of manage permissions page remove user permissions context menu" lightbox="media\ManagePermissionsPageRemovePermissions.png":::
 
