@@ -20,7 +20,7 @@ OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../
 | Shortcut | Description | When to use it? |
 |---------| --------- | --------- |
 |External table| Defines the data from OneLake as an external table in your KQL Database. | Use this shortcut when you want to infrequently run queries on historical data without partitioning or indexing the data. But if you want to run queries frequently and accelerate performance, import the data directly from OneLake. For direct import, see [Get data from OneLake](get-data-onelake.md).
-|One logical copy| Creates one logical copy of the data in your KQL Database in OneLake. This shortcut is a two-step process that requires enabling continuous export of your data, and creating a shortcut in OneLake. | Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management. To create one logical copy, see <!-- TODO [One logical copy (shortcut)](onelake-mirroring.md) --->|
+|One logical copy| Creates one logical copy of the data in your KQL Database in OneLake. This shortcut is a two-step process that requires enabling continuous export of your data, and creating a shortcut in OneLake. | Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management. To create one logical copy, see [One logical copy (shortcut)](onelake-mirroring.md). |
 
 For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
