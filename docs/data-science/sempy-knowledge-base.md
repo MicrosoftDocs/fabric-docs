@@ -1,6 +1,6 @@
 ---
 title: SemPy Knowledge Base
-description: Learn about SemPy Knowledge Base.
+description: Learn about SemPy Knowledge Base, a central component of Enya as it captures the semantic model and enables better collaboration between data scientists.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 02/10/2023
 ---
 
-# SemPy Knowledge Base
+# SemPy Knowledge Base in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

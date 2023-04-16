@@ -1,6 +1,6 @@
 ---
 title: SemPy glossary
-description: Learn SemPy terms and definitions.
+description: Learn the definition of SemPy terms, including Knowledge Base, Stype, ColumnSType, and CompoundSType.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 02/10/2023
 ---
 
-# SemPy glossary
+# SemPy in Microsoft Fabric glossary
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

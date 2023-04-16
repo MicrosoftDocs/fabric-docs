@@ -1,6 +1,6 @@
 ---
 title: SemPy semantic propagation
-description: Learn about semantic propagation in SemPy.
+description: Learn about semantic propagation; how SemPy preserves annotations that are attached to tables and columns in datasets that you're manipulating.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 02/10/2023
 ---
 
-# SemPy semantic propagation
+# SemPy semantic propagation in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

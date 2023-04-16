@@ -47,6 +47,8 @@
         href: connector-azure-cosmosdb-for-nosql.md
       - name: Configure in copy activity
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
+      - name: Connect in dataflows
+        href: connector-azure-cosmosdb-for-nosql-dataflows.md
     - name: Azure Data Lake Storage Gen2
       items:
       - name: Overview
@@ -55,6 +57,8 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
+      - name: Connect to Azure Data Lake Storage Gen2 in dataflows
+        href: connector-azure-data-lake-storage-gen2-dataflows.md
     - name: Azure SQL Database
       items:
       - name: Overview
@@ -63,6 +67,8 @@
         href: connector-azure-sql-database.md
       - name: Configure in copy activity
         href: connector-azure-sql-database-copy-activity.md
+      - name: Connect to an Azure SQL database in dataflows
+        href: connector-azure-sql-database-dataflow.md
     - name: Binary format
       href: format-binary.md
     - name: Data warehouse
@@ -73,15 +79,11 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
+    - name: Delimited text
+      href: format-delimited-text.md
     - name: Excel format
-      items:
-      - name: Overview
-        href: ../placeholder.md
-      - name: Set up connection
-        href: ../placeholder.md
-      - name: Configure in copy activity
-        href: ../placeholder.md
-    - name: Google Cloud Storage
+      href: format-excel.md
+    - name: Google cloud Storage
       items:
       - name: Overview
         href: connector-google-cloud-storage-overview.md
@@ -130,11 +132,11 @@
     - name: OData
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-odata-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-odata.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-odata-copy-activity.md 
       - name: OData in dataflows
         href: connector-odata-dataflows.md
     - name: SharePoint online list
@@ -165,8 +167,6 @@
         href: foreach-activity.md
       - name: Pipeline lookup activity
         href: lookup-activity.md
-      - name: Monitor data pipeline runs
-        href: monitor-pipeline-runs.md
       - name: Notebook activity
         href: notebook-activity.md
       - name: Script activity
@@ -179,14 +179,16 @@
         href: ../placeholder.md
       - name: Billing with data pipelines
         href: ../placeholder.md
+      - name: Parameterization
+        href: ../placeholder.md
+    - name: How-To
+      items:
       - name: Data pipeline runs
         href: pipeline-runs.md
       - name: How to use pipeline sample templates
         href: templates.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
-      - name: Parameterization
-        href: ../placeholder.md
     - name: Tutorials
       items:
       - name: Copy sample data into Lakehouse and transform with dataflow
@@ -199,6 +201,8 @@
         href: ../placeholder.md
       - name: Load sample data to Lakehouse
         href: ../placeholder.md
+      - name: Monitor data pipeline runs
+        href: monitor-pipeline-runs.md        
       - name: Run script activity and email output summary
         href: ../placeholder.md
   - name: Dataflows
