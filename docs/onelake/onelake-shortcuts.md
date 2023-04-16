@@ -12,7 +12,7 @@ ms.date: 03/24/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-OneLake Shortcuts allows you to unify your data across domains, clouds and accounts to create a single virtualized data lake for your entire enterprise. All Fabric workloads can directly connect to your existing data sources such as Azure, AWS and OneLake through this single virtualized data lake.  Permissions and credentials are all managed at the OneLake layer, so each Fabric workload does not need to be separately configured to connect to each data source.  Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
+OneLake Shortcuts allows you to unify your data across domains, clouds and accounts to create a single virtualized data lake for your entire enterprise. All Fabric workloads can directly connect to your existing data sources such as Azure, AWS and OneLake through this single virtualized data lake.  Permissions and credentials are all managed at the OneLake layer, so each Fabric workload doesn't need to be separately configured to connect to each data source.  Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
 Shortcuts behave like symbolic links within the OneLake filesystem but have the ability to connect to external data sources in addition to OneLake locations.  These shortcuts can be created within the file structure of a Fabric artifact and can be used by Fabric workloads just like any other folder in the file system.  
 
 :::image type="content" source="media\onelake-shortcuts\shortcut-connects-other-location-v2.png" alt-text="Diagram showing how a shortcut connects files and folders stored in other locations." lightbox="media\onelake-shortcuts\shortcut-connects-other-location.png":::
@@ -23,9 +23,9 @@ Shortcuts can be created both in Lakehouse artifacts and Kusto DB artifacts.  Fu
 
 **Lakehouse:**
 
-When creating shortcuts in a Lakehouse artifact, it’s important to understand the artifact folder structure. Lakehouses are comprised of two top level folders.  The “Tables” folder and the “Files” folder.  The “Tables” folder represents the managed portion of the Lakehouse while the “Files” folder is the unmanaged portion of the Lakehouse.
+When creating shortcuts in a Lakehouse artifact, it’s important to understand the artifact folder structure. Lakehouses are composed of two top level folders.  The “Tables” folder and the “Files” folder.  The “Tables” folder represents the managed portion of the Lakehouse while the “Files” folder is the unmanaged portion of the Lakehouse.
 In the “Tables” folder, you can only create shortcuts at the top level.  If the source of the shortcut contains data in the Delta\Parquet format, the Lakehouse will automatically synchronize the metadata and recognize the folder as a Table.
-In the “Files” folder, there are no restrictions on where you can create shortcuts.  They can be created at any level of the folder hierarchy. Table discovery does not happen in the “Files” folder.
+In the “Files” folder, there are no restrictions on where you can create shortcuts.  They can be created at any level of the folder hierarchy. Table discovery doesn't happen in the “Files” folder.
 
 :::image type="content" source="media\onelake-shortcuts\lake-view-table-view.png" alt-text="Diagram showing the Lake view and the Table view side by side." lightbox="media\onelake-shortcuts\lake-view-table-view.png":::
 
@@ -55,7 +55,7 @@ OneLake shortcuts support multiple filesystem data sources.  These include inter
 
 **Internal OneLake Shortcuts:**
 
-Internal OneLake Shortcuts allow you to reference data within existing Fabric artifacts.  These artifacts include Lakehouses, Kusto DB’s and Data Warehouses.  The shortcut can point to a folder location within the same artifact, across artifacts within the same workspace or even across artifacts in different workspaces.  When creating a shortcut across artifacts, the artifact types do not need to match.  For instance, you can create a shortcut in a Lakehouse artifact that points to data in Kusto DB artifact.
+Internal OneLake Shortcuts allow you to reference data within existing Fabric artifacts.  These artifacts include Lakehouses, Kusto DBs and Data Warehouses.  The shortcut can point to a folder location within the same artifact, across artifacts within the same workspace or even across artifacts in different workspaces.  When you create a shortcut across artifacts, the artifact types don't need to match.  For instance, you can create a shortcut in a Lakehouse artifact that points to data in Kusto DB artifact.
 
 When accessing data through a shortcut to another OneLake location, the identity of the calling user will be utilized to authorize access to the data source of the shortcut*. This user must have “readAll” permissions on the source data.
 
@@ -64,13 +64,13 @@ When accessing data through a shortcut to another OneLake location, the identity
 
 **ADLS Shortcuts:**
 
-Shortcuts can also be created to ADLS Gen 2 storage accounts.  When creating shortcuts to ADLS, the shortcut path can point to any folder within the hierarchal namespace.  At a minimum, the shortcut path must include a container name.
+Shortcuts can also be created to ADLS Gen 2 storage accounts.  When you create shortcuts to ADLS, the shortcut path can point to any folder within the hierarchical namespace.  At a minimum, the shortcut path must include a container name.
 
 *Access:*
 
 ADLS shortcuts must point to the DFS endpoint for the storage account.  
 Example: `https://accountname.dfs.core.windows.net/`
-The storage account endpoint must also be publicly reachable.  This means it can’t not be restricted by the storage firewall or a VNET.
+The storage account endpoint must also be publicly reachable.  This means it can't be restricted by the storage firewall or a VNET.
 
 *Authorization:*
 
@@ -84,7 +84,7 @@ ADLS shortcuts utilize a delegated authorization model.  In this model, the shor
 
 **S3 Shortcuts:**
 
-Shortcuts can also be created to Amazon S3 accounts.  When creating shortcuts to Amazon S3, the shortcut path must contain a bucket name at a minimum.  S3 doesn’t natively support hierarchical namespaces but you can utilize prefixes to mimic a directory structure.  You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcuts.  When accessing data through an S3 shortcut prefixes will be represented as folders.
+Shortcuts can also be created to Amazon S3 accounts.  When you create shortcuts to Amazon S3, the shortcut path must contain a bucket name at a minimum.  S3 doesn’t natively support hierarchical namespaces but you can utilize prefixes to mimic a directory structure.  You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcuts.  When accessing data through an S3 shortcut prefixes will be represented as folders.
 
 *Access:*
 
@@ -92,7 +92,7 @@ S3 shortcuts must point to the https endpoint for the account.
 Example: `https://bucketname.s3.region.amazonaws.com/`
 
 > [!NOTE]
-> S3 shortcuts do not support private endpoints so any account behind a Virtual Private Cloud will not be reachable.
+> S3 shortcuts don't support private endpoints so any account behind a Virtual Private Cloud won't be reachable.
 
 *Authorization:*
 
@@ -101,15 +101,15 @@ S3 shortcuts utilize a delegated authorization model.  In this model, the shortc
 The IAM must have at least read only (Get, List) permissions on the bucket that the shortcut is pointing to.
 
 > [!NOTE]
-> S3 shortcuts are read-only. They do not support write operations regardless of the permissions for the IAM user.
+> S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
 
 ## Shortcut Delegation
 
-Delegation is handled through the use of Shared Cloud Connections.  When creating a new ADLS or S3 shortcut a user either creates a new connection or selects an existing connection for the data source.  When a connection is set for a shortcut, this is considered a “bind” operation.  Only users with permission on the connection can perform the bind operation.  If a user does not have permissions on the connection, they cannot create new shortcuts using that connection.
+Delegation is handled through the use of Shared Cloud Connections.  When creating a new ADLS or S3 shortcut a user either creates a new connection or selects an existing connection for the data source.  When a connection is set for a shortcut, this is considered a “bind” operation.  Only users with permission on the connection can perform the bind operation.  If a user doesn't have permissions on the connection, they can't create new shortcuts using that connection.
 
 ## Permissions
 
-Permissions for shortcuts are governed by a combination of artifact permissions and shortcut source permissions. When accessing a shortcut, the most restrictive permission of the two sources is applied.  Therefore, a user that has read/write permissions in the Lakehouse but only read permissions in the shortcut source will not be allowed to write to the shortcut’s source.  Likewise, a user that only has read permissions in the Lakehouse but read/write in the shortcut source will also not be allowed to write to the shortcut source.
+Permissions for shortcuts are governed by a combination of artifact permissions and shortcut source permissions. When a user accesses a shortcut, the most restrictive permission of the two sources is applied.  Therefore, a user that has read/write permissions in the Lakehouse but only read permissions in the shortcut source won't be allowed to write to the shortcut’s source.  Likewise, a user that only has read permissions in the Lakehouse but read/write in the shortcut source will also not be allowed to write to the shortcut source.
 
 ## Workspace roles
 
@@ -160,15 +160,15 @@ When creating shortcuts between multiple lakehouses within a workspace, you can 
 
 ## Known issues and limitations
 
-- Private Endpoints are not currently supported for shortcuts to ADLS Gen 2.
-- ADLS Gen 2 Shortcuts must point to DFS endpoint. Blob endpoints are not currently supported.
-- Private Endpoints are not currently supported for shortcuts to S3.
+- Private Endpoints aren't currently supported for shortcuts to ADLS Gen 2.
+- ADLS Gen 2 Shortcuts must point to DFS endpoint. Blob endpoints aren't currently supported.
+- Private Endpoints aren't currently supported for shortcuts to S3.
 - S3 shortcuts are read only.
 - The maximum depth of nested shortcuts is 10.
-- Shortcuts to Kusto tables are not discovered as tables in Lakehouse.
-- Spaces in shortcut names will not be discovered as Delta tables.
-- Shortcut paths cannot contain “%” characters.
-- Copy function does not work on shortcuts that directly point to ADLS containers. It is recommended to create ADLS shortcuts be created to a directory that is at least one level below a container.
+- Shortcuts to Kusto tables aren't discovered as tables in Lakehouse.
+- Spaces in shortcut names won't be discovered as Delta tables.
+- Shortcut paths can't contain “%” characters.
+- Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts be created to a directory that is at least one level below a container.
 
 ## Next steps
 
