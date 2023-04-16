@@ -1,11 +1,11 @@
 ---
 title: Primary, foreign, and unique keys
 description: Table constraints support using Synapse Data Warehouse in Microsoft Fabric
-ms.reviewer: wiassaf
-ms.author: kecona
 author: KevinConanMSFT
+ms.author: kecona
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/31/2023
 ---
 
 # Primary keys, foreign keys, and unique keys in Synapse Data Warehouse in Microsoft Fabric
@@ -13,24 +13,26 @@ ms.date: 03/31/2023
 Learn about table constraints in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], including primary key, foreign key, and unique key.
 
 > [!IMPORTANT]  
-To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE.
+> To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE.
 
 ## Table constraints
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports these table constraints: 
 
 - PRIMARY KEY is only supported when NONCLUSTERED and NOT ENFORCED are both used.
-- UNIQUE constraint is only supported when NOT ENFORCED is used.
+- UNIQUE constraint is only supported when NONCLUSTERED and NOT ENFORCED is used.
 - FOREIGN KEY is only supported when NOT ENFORCED is used.
 
-For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true) and [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric#DataTypes&preserve-view=true). 
+Synapse Data Warehouse doesn't support default constraints at this time.
+
+For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 
 ## Remarks
 
 Having primary key, foreign key and/or unique key allows [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] to generate an optimal execution plan for a query.  
 
 > [!IMPORTANT]  
-After creating a table with primary key or unique constraint in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], users need to make sure all values in those columns are unique.  A violation of that may cause the query to return inaccurate result.  This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values.  
+> After creating a table with primary key or unique constraint in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], users need to make sure all values in those columns are unique. A violation of that may cause the query to return inaccurate result.  This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values. Foreign keys are not enforced.
 
 This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values.  
 
@@ -60,7 +62,7 @@ a1          total
 */
 
 -- Add unique constraint
-ALTER TABLE t1 ADD CONSTRAINT unique_t1_a1 unique (a1) NOT ENFORCED
+ALTER TABLE t1 ADD CONSTRAINT unique_t1_a1 unique NONCLUSTERED (a1) NOT ENFORCED
 
 -- Re-run this query.  5 rows returned.  Incorrect result.
 SELECT a1, count(*) AS total FROM t1 GROUP BY a1
@@ -117,7 +119,7 @@ a1          b1
 */
 
 -- Add unique constraint
-ALTER TABLE t1 add CONSTRAINT unique_t1_a1 UNIQUE (a1) NOT ENFORCED  
+ALTER TABLE t1 ADD CONSTRAINT unique_t1_a1 unique NONCLUSTERED (a1) NOT ENFORCED  
 
 -- Re-run this query.  5 rows returned.  Correct result.
 SELECT a1, COUNT(*) as total FROM t1 GROUP BY a1

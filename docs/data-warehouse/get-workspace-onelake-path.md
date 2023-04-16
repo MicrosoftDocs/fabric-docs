@@ -1,28 +1,26 @@
 ---
-title: Getting Workspace and OneLake path
-description: Follow steps to get the workspace and OneLake path.
-ms.reviewer: wiassaf
-ms.author: prlangad
+title: Get Workspace and OneLake path
+description: Follow steps to get the workspace and OneLake path in Microsoft Fabric.
 author: prlangad
+ms.author: prlangad
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/15/2023
 ---
 
-# Getting Workspace and OneLake path
+# Get workspace and OneLake path
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-To maintain a single copy of data, Lakehouses and transactional Warehouses store data in OneLake.
-
-In this tutorial, you learn how to find a OneLake file path from the Lakehouse experience.
+In this tutorial, you learn how to find a [OneLake](../onelake/onelake-overview.md) file path from the [Lakehouse](../data-engineering/lakehouse-overview.md) experience. To maintain a single copy of data, Lakehouses and transactional Warehouses store data in OneLake.
 
 ## Known limitations
 
 Currently, the OneLake path is displayed only in the Lakehouse experience. When you are using the SQL Endpoint or connect to a transactional warehouse, OneLake path isn't displayed in the product experience.
 
-## How to get a Workspace and OneLake path
+## How to get a workspace and OneLake path
 
 Prerequisites:
 
@@ -68,3 +66,6 @@ The following steps detail how to get the OneLake path from a Lakehouse:
 ## Next steps
 
 - [Workspace roles](workspace-roles.md)
+- [OneLake overview](../onelake/onelake-overview.md)
+- [OneLake File Explorer](../onelake/onelake-file-explorer.md)
+- [Delta Lake logs in Synapse Data Warehouse in Microsoft Fabric](query-delta-lake-logs.md)
