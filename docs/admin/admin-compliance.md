@@ -49,7 +49,9 @@ To enable non-compliant features, do the following:
 
 1. Go to [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
 
-2. Turn on the *compliance settings* switch.
+2. Expand *compliance settings*.
+
+3. Turn on the switch titled *Users can work with content that doesn't comply with security requirements*.
 
 ## Next steps
 
