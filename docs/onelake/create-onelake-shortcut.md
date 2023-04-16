@@ -62,7 +62,7 @@ To create an Azure Data Lake Storage (ADLS) shortcut:
       > [!NOTE]
       > This must be the DFS endpoint for the storage account.
 
-   1. If you've already defined a connection for this storage location, it automatically appears in the connection drop-down. Otherwise, you can choose **Create new connection**.
+   1. If you have already defined a connection for this storage location, it automatically appears in the connection drop-down. Otherwise, you can choose **Create new connection**.
 
    1. Enter a **Connection name**.
 
@@ -109,11 +109,11 @@ To create and Amazon S3 Shortcut:
 
 1. Specify the connection details this shortcut will use.
 
-   1. Proved the endpoint for you S3 account (URL)
+   1. Proved the endpoint for your S3 account (URL)
       > [!NOTE]
       > URL must be in the following format `https://bucketname.s3.region.amazonaws.com/`
 
-   1. If you've already defined a connection for this storage location, it automatically appears in the connection drop-down. Otherwise, you can choose **Create new connection**.
+   1. If you have already defined a connection for this storage location, it automatically appears in the connection drop-down. Otherwise, you can choose **Create new connection**.
 
    1. Enter a **Connection name**.
 
