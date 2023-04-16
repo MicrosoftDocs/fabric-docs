@@ -56,7 +56,7 @@ For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/on
 The OneLake shortcut has been created. You can now query this data in a KQL Queryset.
 
 > [!IMPORTANT]
-> To query the data in the OneLake shortcut, use the `external_table()` function .
+> To query the data in the OneLake shortcut, use the [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context) .
 
 ## Next steps
 
