@@ -41,7 +41,7 @@ items:
     href: workspace-roles.md
   - name: Item permissions
     href: item-permissions.md    
-  - name: SQL granular permissons
+  - name: SQL granular permissions
     href: sql-granular-permissions.md  
 - name: Datasets
   items:
