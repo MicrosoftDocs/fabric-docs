@@ -21,22 +21,22 @@ This article outlines how to use the copy activity in data pipeline to copy data
 To copy and transform data from Microsoft 365 into Azure, you need to complete the following prerequisite steps:
 
 - Your Microsoft 365 tenant admin must complete on-boarding actions as described [here](/events/build-may-2021/microsoft-365-teams/breakouts/od483/).
-- Create and configure an Azure AD web application in Azure Active Directory. For instructions, see [Create an Azure AD application](/azure/active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal).
+- Create and configure an Azure AD web application in Azure Active Directory. For instructions, see [Create an Azure AD application](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal).
 - Make note of the following values, which you will use to define the linked service for Microsoft 365:
-Tenant ID. For instructions, see [Get tenant ID](/azure/active-directory/develop/howto-create-service-principal-portal.md#sign-in-to-the-application).
-- Application ID and Application key. For instructions, see [Get application ID and authentication key](/azure/active-directory/develop/howto-create-service-principal-portal.md#sign-in-to-the-application).
+Tenant ID. For instructions, see [Get tenant ID](/azure/active-directory/develop/howto-create-service-principal-portal#sign-in-to-the-application).
+- Application ID and Application key. For instructions, see [Get application ID and authentication key](/azure/active-directory/develop/howto-create-service-principal-portal#sign-in-to-the-application).
 Add the user identity who will be making the data access request as the owner of the Azure AD web application (from the Azure AD web application > Settings > Owners > Add owner).
 - The user identity must be in the Microsoft 365 organization you are getting data from and must not be a Guest user.
 
 ## Approving new data access requests
 
-If this is the first time you are requesting data for this context (a combination of which data table is being access, which destination account is the data being loaded into, and which user identity is making the data access request), you will see the copy activity status as "In Progress", and only when you click into ["Details" link under Actions](/azure/data-factory/copy-activity-overview#monitoring)will you see the status as "RequestingConsent". A member of the data access approver group needs to approve the request in the Privileged Access Management before the data extraction can proceed.
+If this is the first time you are requesting data for this context (a combination of which data table is being access, which destination account is the data being loaded into, and which user identity is making the data access request), you will see the copy activity status as "In Progress", and only when you click into ["Details" link under Actions](/azure/data-factory/copy-activity-overview#monitoring) will you see the status as "RequestingConsent". A member of the data access approver group needs to approve the request in the Privileged Access Management before the data extraction can proceed.
 
 Refer [here](/graph/data-connect-faq#how-can-i-approve-pam-requests-via-microsoft-365-admin-portal) on how the approver can approve the data access request, and refer [here](/graph/data-connect-pam) for an explanation on the overall integration with Privileged Access Management, including how to set up the data access approver group.
 
 ## Supported format
 
-For now, within a single copy activity and data flow, you can only ingest data from Microsoft 365 into **Azure Blob Storage**, **Azure Data Lake Storage Gen1**, and **Azure Data Lake Storage Gen2** in **Binary** format.
+For now, within a single copy activity, you can only ingest data from Microsoft 365 into **Azure Blob Storage**, **Azure Data Lake Storage Gen1**, and **Azure Data Lake Storage Gen2** in **Binary** format.
 
 Microsoft 365 supports the following file formats. Refer to each article for format-based settings.
 
@@ -52,7 +52,7 @@ For the configuration of each tab under copy activity, see the following section
 
 ### General
 
-For **General** tab configuration, go to General.
+For **General** tab configuration, go to [General](activity-overview.md#general-settings).
 
 ### Source
 
@@ -63,7 +63,7 @@ The following properties are supported for Microsoft 365 under the **Source** ta
 The following some properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an **Microsoft365** connection from the connection list. If no connection exists, then create a new Amazon S3 connection by selecting **New**.
+- **Connection**:  Select an **Microsoft 365** connection from the connection list. If no connection exists, then create a new Microsoft 365 connection by selecting **New**.
 - **Table**: Name of the dataset to extract from **Microsoft 365**.
 
 Under **Advanced**, you can specify the following fields:
@@ -74,7 +74,7 @@ Under **Advanced**, you can specify the following fields:
 
 :::image type="content" source="./media/connector-microsoft-365/data-filter.png" alt-text="Screenshot showing data filter.":::
 
-- **Output columns**: Array of the columns to copy to sink.
+- **Output columns**: Array of the columns to copy to destination.
 
 :::image type="content" source="./media/connector-microsoft-365/output-columns.png" alt-text="Screenshot showing output columns.":::
 
