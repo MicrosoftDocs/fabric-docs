@@ -28,7 +28,7 @@ items:
   - name: Get data into a lakehouse
     href: load-data-lakehouse.md
   - name: Shortcut data in a lakehouse
-    href: lakehosue-shortcuts.md
+    href: lakehouse-shortcuts.md
   - name: Stream data to a lakehouse
     href: lakehouse-streaming-data.md
 - name: Lakehouse sharing and collaboration
@@ -38,7 +38,7 @@ items:
   - name: Sharing and permission management
     href: lakehouse-sharing.md
   - name: Lakehouse SQL endpoint security
-    href: ../placeholder.md
+    href: lakehouse-sql-security.md
 - name: Apache Spark
   items:
   - name: Autotune Spark configuration
