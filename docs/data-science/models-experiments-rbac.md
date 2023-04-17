@@ -5,7 +5,6 @@ ms.reviewer: mopeakande
 ms.author: midesa
 author: midesa 
 ms.topic: conceptual
-ms.subservice: machine-learning
 ms.date: 04/17/2023
 ---
 
@@ -37,6 +36,7 @@ The table below describes the levels of permission that control access to machin
 ## Permissions acquired by workspace role
 
 A user's role in a workspace implicitly grants them permissions on the datasets in the workspace, as described in the following table.
+
 |                                       |Admin  |Member  |Contributor  |Viewer |
 |---------------------------------------|-------|--------|-------------|-------|
 |**Read**                               |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::    |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::      |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::            |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::     |
