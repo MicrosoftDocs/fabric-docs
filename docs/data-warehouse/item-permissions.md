@@ -27,10 +27,10 @@ For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](incl
 
 Notes:
 
-- All users will be granted at least the Read permission
-- By assigning a user the Read permission only, all of their SQL access will be determined by the permissions granted to them within SQL
-- ReadData is the same permission that Workspace Viewers receive for each warehouse in the workspace
-- ReadAll does not impact the user's permissions within SQL
+- All users will be granted at least the Read permission.
+- By assigning a user the Read permission only, all of their SQL access will be determined by the permissions granted to them within SQL.
+- ReadData is the same permission that Workspace Viewers receive for each warehouse in the workspace.
+- ReadAll does not impact the user's permissions within SQL.
 
 ## Assigning item permissions
 Permissions can be granted to users through the item sharing flow or through **Manage permissions**.
