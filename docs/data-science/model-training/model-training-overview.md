@@ -5,7 +5,6 @@ ms.reviewer: mopeakande
 ms.author: midesa
 author: midesa 
 ms.topic: conceptual
-ms.subservice: machine-learning
 ms.date: 04/17/2023
 ---
 

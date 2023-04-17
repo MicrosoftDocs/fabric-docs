@@ -21,7 +21,7 @@ The table below describes the levels of permission that control access to machin
 
 |Permission  |Description  |
 |------------|-------------|
-|Read        | Allows user to access machine learning experiments.<br> Allows user to view runs within machine learning experiments.<br> Allows user to view run metrics and parameters.<br> Allows user to view and download run files.|
+|Read        | Allows user to read machine learning experiments.<br> Allows user to view runs within machine learning experiments.<br> Allows user to view run metrics and parameters.<br> Allows user to view and download run files.|
 |Write       | Allows user to create machine learning experiments.<br> Allows user to modify or delete machine learning experiments.<br> Allows user to add runs to machine learning experiments.<br> Allows user to save an experiment run as a model.|
 
 ## Permissions for machine learning models
@@ -30,7 +30,7 @@ The table below describes the levels of permission that control access to machin
 
 |Permission  |Description  |
 |------------|-------------|
-|Read        | Allows user to access machine learning models.<br> Allows user to view versions within machine learning models.<br> Allows user to view model version metrics and parameters.<br> Allows user to view and download model version files.|
+|Read        | Allows user to read machine learning models.<br> Allows user to view versions within machine learning models.<br> Allows user to view model version metrics and parameters.<br> Allows user to view and download model version files.|
 |Write       | Allows user to create machine learning models.<br> Allows user to modify or delete machine learning models.<br> Allows user to add model versions to machine learning models.|
 
 ## Permissions acquired by workspace role
