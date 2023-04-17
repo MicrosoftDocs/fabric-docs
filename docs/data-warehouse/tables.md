@@ -64,7 +64,7 @@ For more information about OneLake, see the [OneLake overview](../onelake/onelak
 
 ## Collation
 
-Currently, `Latin1_General_100_BIN2_UTF8` is the default and only supported collation for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables.
+Currently, `Latin1_General_100_BIN2_UTF8` is the default and only supported collation for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables and metadata.
 
 ## Statistics
 
