@@ -4,14 +4,22 @@ description: This article provides an overview of the admin Microsoft Fabric adm
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 12/27/2022
+ms.date: 04/17/2023
 ---
 
 # What is the admin center?
 
 The Microsoft Fabric admin center, previously known as the [admin portal](/power-bi/admin/service-admin-portal), includes settings that govern Microsoft Fabric. For example, you can make changes to [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings), access the Microsoft 365 admin center, and control how users interact with Microsoft Fabric.
 
-The admin center can be accessed by global and Microsoft Fabric admins. If you're not in one of these roles, you only see *Capacity settings* in the admin center.
+The admin center can be accessed by admins with the following roles:
+
+* Global administrator
+
+* Power Platform administrator
+
+* Power BI administrator
+
+If you're not in one of these roles, you only see *Capacity settings* in the admin center.
 
 ## What can I do in the admin center
 
@@ -36,7 +44,7 @@ The many controls in the admin center are listed in the table below with links t
 
 ## How to get to the admin center
 
-You must be a global admin or Microsoft Fabric admin to access the admin center. To get to the admin center, follow these steps:
+To get to the admin center, follow these steps:
 
 1. Sign in to Microsoft Fabric using your admin account credentials.
 
@@ -44,5 +52,8 @@ You must be a global admin or Microsoft Fabric admin to access the admin center.
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Admin overview](admin-roles.md)
+* [What is the admin monitoring workspace?](admin-monitoring.md)
+
+* [Workspace tenant settings](admin-portal-workspace.md)
+
+* [Manage workspaces](admin-portal-workspaces.md)

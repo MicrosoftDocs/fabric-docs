@@ -9,7 +9,7 @@ ms.date: 03/12/2023
 
 # Enable Microsoft Fabric for your organization
 
-The **Microsoft Fabric** admin switch lets organizations that use Power BI opt into [Microsoft Fabric](/power-bi/developer/visuals/create-r-based-power-bi-desktop). You can enable Microsoft Fabric for the entire organization, a specific capacity, or for a specified group of users.
+The **Microsoft Fabric** admin switch lets organizations that use Power BI opt into [Microsoft Fabric](../get-started/microsoft-fabric-overview.md). You can enable Microsoft Fabric for the entire organization, a specific capacity, or for a specified group of users.
 
 >[!Tip]
 >Microsoft Fabric will be turned on for all Power BI users on 1 July 2023.
@@ -21,9 +21,6 @@ To enable Microsoft Fabric, you need to have one of the admin roles listed in th
 | **Admin role**                           | **Admin scope**            | **Applicable to**       |
 |------------------------------------------|----------------------------|-------------------------|
 | Global Administrator                     | Microsoft 365              | The entire organization |
-| Billing Administrator                    | Microsoft 365              | The entire organization |
-| License Administrator                    | Microsoft 365              | The entire organization |
-| User admin                               | Microsoft 365              | The entire organization |
 | Power Platform Administrator             | Power Platform             | The entire organization |
 | Power BI Administrator                   | Power BI service           | The entire organization |
 | Power BI Premium Capacity Administrator  | A single Premium capacity  | A specific capacity     |
@@ -41,5 +38,6 @@ To disable Microsoft Fabric you can turn off the Microsoft Fabric admin switch. 
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+* [Admin overview](admin-overview.md)
+
+* [What is the admin center?](admin-center.md)

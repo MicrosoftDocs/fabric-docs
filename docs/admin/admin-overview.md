@@ -4,7 +4,7 @@ description: This article provides an overview of the admin role in Microsoft Fa
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 12/27/2022
+ms.date: 04/17/2023
 ---
 
 # What is Microsoft Fabric admin?
@@ -19,18 +19,18 @@ There are several roles that work together to administer Microsoft Fabric for yo
 
 This section lists the Microsoft 365 admin roles and the tasks they can perform.
 
-* **Global admin**
+* **Global administrator**
     * Unlimited access to all management features for the organization
     * Assign roles to other users
 
-* **Billing admin**
+* **Billing administrator**
     * Manage subscriptions
     * Purchase licenses
 
-* **License admin**
+* **License administrator**
     * Assign or remove licenses for users
 
-* **User admin**
+* **User administrator**
     * Create and manage users and groups
     * Reset user passwords
 
@@ -38,7 +38,7 @@ This section lists the Microsoft 365 admin roles and the tasks they can perform.
 
 As a Power Platform or a Power BI admin, you have full access to all the Microsoft Fabric management tasks.
 
-* **Power Platform admin** or **Power BI admin**
+* **Power Platform administrator** or **Power BI administrator**
     * Enable and disable Microsoft Fabric features
     * Report on usage and performance
     * Review and manage auditing
@@ -47,7 +47,7 @@ As a Power Platform or a Power BI admin, you have full access to all the Microso
 
 As a capacity admin, you can perform these tasks on the capacity you're an admin of.
 
-* **Capacity admin**
+* **Capacity administrator**
     * Assign workspaces to the capacity
     * Manage user permission to the capacity
     * Manage workloads to configure memory usage
@@ -86,5 +86,8 @@ Microsoft Fabric admins work mostly in the Microsoft Fabric [admin center](/powe
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Admin overview](admin-roles.md)
+* [What is the admin center?](admin-center.md)
+
+* [What is the admin monitoring workspace?](admin-monitoring.md)
+
+* [Understand Microsoft Fabric roles](admin-roles.md)

@@ -23,10 +23,6 @@ items:
   items:
   - name: Power BI admin center
     href: admin-power-bi.md
-- name: Spark
-  items:
-  - name: Spark
-    href: admin-spark.md
 - name: Track user activities
   href: admin-track-user-activities.md
 - name: Monitoring workspace
@@ -41,9 +37,4 @@ items:
     href: admin-portal-workspaces.md  
   - name: Workspace tenant settings
     href: admin-portal-workspace.md 
-- name: Considerations and limitations
-  items:
-  - name: Admin troubleshooting
-    href: admin-troubleshoot.yml  
-  - name: Admin limitations in Microsoft Fabric
-    href: admin-limitations.md       
+        
