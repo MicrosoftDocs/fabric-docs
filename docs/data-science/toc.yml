@@ -29,12 +29,16 @@ items:
     href: data-wrangler.md
   - name: Explore and validate data with SemPy and PBI connector
     href: sempy-pbi-connector.md
-- name: Machine learning experiments
+- name: Train machine learning models
+  items:
+  - name: Training Overview
+    href: ./model-training/model-training-overview.md
+  - name: How-to guides
+    href: ./model-training/fabric-sparkml-tutorial.md
+- name: Machine learning models
   items:
   - name: Machine learning experiment
     href: machine-learning-experiment.md
-- name: Machine learning models
-  items:
   - name: Machine learning model
     href: machine-learning-model.md
   - name: Train models with PyTorch
