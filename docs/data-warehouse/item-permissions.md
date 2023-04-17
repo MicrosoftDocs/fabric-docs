@@ -17,7 +17,7 @@ ms.search.form: Warehouse item permissions, Workspace permissions
 
 This article explains how to manage individual item permissions in [!INCLUDE [product-name](../includes/product-name.md)].
 
-For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)], the following permisions can be assigned.
+For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)], the following permissions can be assigned.
    
 | Item permission   |  Description |
 |---|---|

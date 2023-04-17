@@ -43,7 +43,7 @@ When a user connects to the SQL connection string, they can view the permissions
 
 ## View permissions granted explicitly to users
 
-When connected via the SQL connection string, a user with elevated permissions can query the permissions that have been granted by using system views. Note that this will not show the users or user permissions that are given to users by being assigned to workspace roles or assigned artifact permissions.
+When connected via the SQL connection string, a user with elevated permissions can query the permissions that have been granted by using system views. This will not show the users or user permissions that are given to users by being assigned to workspace roles or assigned artifact permissions.
 
    ```sql
    SELECT DISTINCT pr.principal_id, pr.name, pr.type_desc, 
