@@ -20,22 +20,24 @@ items:
   - name: Navigate the lakehouse explorer
     href: navigate-lakehouse-explorer.md
   - name: Lakehouse SQL endpoint
-    href: ../placeholder.md
+    href: lakehouse-sql-endpoint.md
   - name: Direct lake mode and PBI reporting
-    href: ../placeholder.md
+    href: lakehouse-pbi-reporting.md
 - name: Get data
   items:
   - name: Get data into a lakehouse
     href: load-data-lakehouse.md
   - name: Shortcut data in a lakehouse
-    href: ../placeholder.md
+    href: lakehosue-shortcuts.md
   - name: Stream data to a lakehouse
-    href: ../placeholder.md
+    href: lakehouse-streaming-data.md
 - name: Lakehouse sharing and collaboration
   items:
-  - name: Workspace roles
-    href: ../placeholder.md
+  - name: Workspace roles and permissions
+    href: workspace-roles-lakehouse.md
   - name: Sharing and permission management
+    href: lakehouse-sharing.md
+  - name: Lakehouse SQL endpoint security
     href: ../placeholder.md
 - name: Apache Spark
   items:
