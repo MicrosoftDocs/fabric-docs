@@ -1,6 +1,6 @@
 ---
 title: Lookup activity
-description: Learn how to add a lookup activity to a pipeline and use it to lookup data from a data source.
+description: Learn how to add a lookup activity to a pipeline and use it to look up data from a data source.
 ms.reviewer: xupxhou
 ms.author: jburchel
 author: jonburchel
@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.date: 03/16/2023
 ---
 
-# Use the Lookup activity to lookup data from a data source
+# Use the Lookup activity to look up data from a data source
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 The Fabric Lookup activity can retrieve a dataset from any of the data sources supported by [!INCLUDE [product-name](../includes/product-name.md)]. You can use it to dynamically determine which objects to operate on in a subsequent activity, instead of hard coding the object name. Some object examples are files and tables.
 
@@ -29,7 +29,7 @@ To get started, you must complete the following prerequisites:
 
 To use a Lookup activity in a pipeline, complete the following steps:
 
-### General settings
+### Creating the activity
 
 1. Create a new pipeline in your workspace.
 1. Search for Lookup in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
@@ -40,13 +40,7 @@ To use a Lookup activity in a pipeline, complete the following steps:
 
    :::image type="content" source="media/lookup-activity/lookup-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the Lookup activity.":::
 
-1. In the **General** tab at the bottom of the canvas, enter a name for the activity in the Name property.
-1. (Optional) You can also enter a description.
-1. Timeout: The maximum amount of time an activity can run. The default is 12 hours, and the maximum amount of time allowed is seven days. The format for the timeout is in D.HH:MM:SS.
-1. Retry: Maximum number of retry attempts.
-1. (Advanced properties) Retry interval (sec): The number of seconds between each retry attempt.
-1. (Advanced properties) Secure output: When checked, output from the activity isn't captured in logging.
-1. (Advanced properties) Secure input: The number of seconds between each retry attempt.
+Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
 ### Lookup settings
 

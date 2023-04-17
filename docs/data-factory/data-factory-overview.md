@@ -5,14 +5,15 @@ ms.reviewer: DougKlopfenstein
 ms.author: makromer
 author: kromerm
 ms.topic: overview
+ms.search.form: product-data-integration, Data_Factory_Overview
 ms.date: 01/25/2023
 ---
 
-# Data Factory overview
+# What is Data Factory in Microsoft Fabric?
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade.
 

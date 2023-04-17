@@ -4,42 +4,46 @@ description: This article provides information about how to How to create Azure 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 01/08/2023
+ms.date: 3/12/2023
 ms.custom: template-how-to
 ---
 
-# How to create Azure SQL Database connection 
+# How to create Azure SQL Database connection
 
-[Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview) is Microsoft's object storage solution for the cloud. Azure SQL Database is optimized for storing massive amounts of unstructured data. This article outlines the steps to create an Azure SQL Database connection. 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+
+This article outlines how to set up connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview). 
 
 ## Supported authentication types
 
-The Azure SQL Database connector supports the following authentication types for copy and Dataflow gen2 respectively.  
+The Azure SQL Database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
-|Authentication type |Copy  |Dataflow Gen2 |
+|Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Basic | √||
-|OAuth2| √||
+|Basic | √| √|
+|Organizational account| √| √|
 |Service Principal|√||
 
 >[!Note]
->For the Azure SQL Database connection of Dataflow Gen2, see this article.
+>For the Azure SQL database connection of Dataflow Gen2, go to [Azure SQL database connector for dataflows](connector-azure-sql-database-dataflow.md).
 
 ## Prerequisites
 
-To get started, you must have following prerequisites:  
+To get started, you must have following prerequisites:
 
-* A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).  
+* A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).
 
-* A workspace is created and that isn’t the default **My Workspace**.
+* A workspace is created and that isn’t the default **My Workspace**.
 
 ## Go to Manage gateways to create a new connection
 
-1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAHoSURBVDhPfVI9SEJRFH5q9idRghhRBoH5hgz62QyKRAqHhiZraqogMBoKgiyQnLK1IYPWFCopIY20JbSWTNOh1xL0clAqK7A0M/ue91kG0ccZzvnud+4959wjyOfzVBEBJuEI3Nw+pJyzWoTD1uNmmcSgadHQciIAfhKs+1F36G5CRyNNragDE2WfIAU/qVOBJzIKCQT+q/jC1jmcp1RGadyGwUFo3Dw7CLIFCQcuYWUv4mfiONaaPYQtRb/ZHbl9xHU2L4NQNDA6ZfMx6ffcqiuKd9UKKf90ERVikWU3nM7m7IGbHlouwIsodETTwp9TlMke9IRicPSdTcuGTkICSEB7wiibPGUSz6/vhIX65S3rWxqEgUTHhIfPy1AWekCLhYLz370SlPLrR1dwhMiurRaTa/4H+/CKF0RhSW/m49M+01cpFoFNPKcPQzFUDx/lYQZadQP8sT6lOxSz7F4KFTIJmq6tLucuoSjLSFdNlbh73gUjIeEhgEzf0SjAgE2OYA9djwmM61Sl4yLAcDa811C7L+6cc1q+afwlfgd/VOjwF0DiUmII/16N1ukdGBkXyNLVKOMf5lYtif9qb5b6mcTsUBuYRccFKgGJnSUa4Nd6I8fmvWbvU1ytmMzaCXqd0Kl+9oWivgAsYHfccfep7QAAAABJRU5ErkJggg==) > **Manage connections and gateways.**
+1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAHoSURBVDhPfVI9SEJRFH5q9idRghhRBoH5hgz62QyKRAqHhiZraqogMBoKgiyQnLK1IYPWFCopIY20JbSWTNOh1xL0clAqK7A0M/ue91kG0ccZzvnud+4959wjyOfzVBEBJuEI3Nw+pJyzWoTD1uNmmcSgadHQciIAfhKs+1F36G5CRyNNragDE2WfIAU/qVOBJzIKCQT+q/jC1jmcp1RGadyGwUFo3Dw7CLIFCQcuYWUv4mfiONaaPYQtRb/ZHbl9xHU2L4NQNDA6ZfMx6ffcqiuKd9UKKf90ERVikWU3nM7m7IGbHlouwIsodETTwp9TlMke9IRicPSdTcuGTkICSEB7wiibPGUSz6/vhIX65S3rWxqEgUTHhIfPy1AWekCLhYLz370SlPLrR1dwhMiurRaTa/4H+/CKF0RhSW/m49M+01cpFoFNPKcPQzFUDx/lYQZadQP8sT6lOxSz7F4KFTIJmq6tLucuoSjLSFdNlbh73gUjIeEhgEzf0SjAgE2OYA9djwmM61Sl4yLAcDa811C7L+6cc1q+afwlfgd/VOjwF0DiUmII/16N1ukdGBkXyNLVKOMf5lYtif9qb5b6mcTsUBuYRccFKgGJnSUa4Nd6I8fmvWbvU1ytmMzaCXqd0Kl+9oWivgAsYHfccfep7QAAAABJRU5ErkJggg==) > **Manage connections and gateways.**
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
-2. Select **New** at the top of the ribbon to add a new data source. 
+2. Select **New** at the top of the ribbon to add a new data source.
 
     :::image type="content" source="./media/connector-common/add-new-connection.png" alt-text="Screenshot showing the '+ new' page.":::
     
@@ -132,9 +136,9 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The following connector properties in the table are supported in pipeline copy and dataflow gen2.
+The following connector properties in the table are supported in pipeline copy and Dataflow Gen2.
 
-|Name|Description|Required|Property|Copy/Dataflow gen2|
+|Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes| |✓/|
 |**Connection type**|Select a type for your connection. Select **SQL Server**.|Yes| |✓/|
@@ -147,7 +151,7 @@ The following connector properties in the table are supported in pipeline copy a
 
 The following properties in the table are the supported authentication types.
 
-|Name |Description |Required |Property |Copy/Dataflow gen2 |
+|Name |Description |Required |Property |Copy/Dataflow Gen2 |
 |-----|-----|-----|-----|-----|
 |**Basic**||||✓/|
 |- Username|The user name of your Azure SQL Database.|Yes |||
