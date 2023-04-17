@@ -1,21 +1,25 @@
 ---
-title: Referencing data to a Lakehouse using shortcuts
-description: Learn how to reference data from other sources into a lakehouse using shortcuts.
+title: Streaming data in lakehouse
+description: Learn how to use Spark structured streaming and retry policy to set up streaming jobs.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
 ms.date: 04/17/2023
-ms.search.form: Lakehouse shortcuts
+ms.search.form: Lakehouse Spark Structured Streaming
 ---
 
-# What are shortcuts in lakehouse?
+# Spark Structure Streaming in Lakehouse
 
-## Setting up a shortcut
+## Spark Job Definitions and Spark Notebooks
 
-## Data sources
+## Retry policy for Spark Job Definitions
 
-## Access Control for shortcuts
+## Streaming sources
+
+## Lakehouse as streaming sink
+
+## Monitoring
 
 ## Next steps
 

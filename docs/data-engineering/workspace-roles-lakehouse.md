@@ -1,25 +1,21 @@
 ---
-title: Streaming data in lakehouse
-description: Learn how to use Spark structured streaming and retry policy to set up streaming jobs.
+title: Workspace roles and permissions in lakehouse
+description: Learn how workspace roles and permissions work in lakehouse.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
 ms.date: 04/17/2023
-ms.search.form: Lakehouse shortcuts
+ms.search.form: Lakehouse Workspace roles Permissions
 ---
 
-# Spark Structure Streaming in Lakehouse
+# Workspace roles in Lakehouse
 
-## Spark Job Definitions and Spark Notebooks
+## Lakehouse specific permissions
 
-## Retry policy for Spark Job Definitions
+## SQL endpoint permissions
 
-## Streaming sources
-
-## Lakehouse as streaming sink
-
-## Monitoring
+## Default dataset permissions
 
 ## Next steps
 
