@@ -1,11 +1,11 @@
 ---
 title: One logical copy (shortcut) in Real-time Analytics
-description: Learn how to create a OneLake shortcut that exposes the data in your KQL Database to other [!INCLUDE [product-name](../includes/product-name.md)] experiences.
+description: Learn how to create a OneLake shortcut that exposes the data in your KQL Database to other Microsoft Fabric experiences.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 04/05/2023
+ms.date: 04/17/2023
 ms.search.form: product-kusto
 ---
 
@@ -46,7 +46,7 @@ Continuous export to OneLake is enabled in your **KQL Database** by default. If 
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Data Engineering**.
 
-    :::image type="content" source="media/onelake-mirroring/app-switcher-dataengineering.png" alt-text="Screenshot of experience switcher showing a list of experiences. The experience titled Data Engineering is highlighted.":::
+    :::image type="content" source="media/onelake-mirroring/app-switcher-data-engineering.png" alt-text="Screenshot of experience switcher showing a list of experiences. The experience titled Data Engineering is highlighted.":::
 
 1. Select **Lakehouse**.
 
