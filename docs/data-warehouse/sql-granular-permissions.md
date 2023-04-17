@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: kedodd
 author: kedodd
 ms.topic: conceptual
-ms.date: 04/13/2023
+ms.date: 04/17/2023
 ms.search.form: Warehouse SQL permissions, Workspace permissions
 ---
 
@@ -15,22 +15,20 @@ ms.search.form: Warehouse SQL permissions, Workspace permissions
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-When the out-of-the box permissions provided by assignment to workspace roles or granted through artifact permissions are insufficient, standard SQL constructs are available for more granular control.
+When the out-of-the box permissions provided by assignment to workspace roles or granted through item permissions are insufficient, standard SQL constructs are available for more granular control.
 
-- Object-level-security can be managed using GRANT, REVOKE & DENY syntax.
+- Object-level-security can be managed using GRANT, REVOKE, and DENY syntax.
+    - For more information, refer to T-SQL syntax for [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true).
 - Users can be assigned to SQL roles, both custom and built-in database roles. 
 
-**-- Note: Need to add links to the existing SQL public documentation for GRANT/REVOKE/DENY and roles**
-
 ### Notes:
-- In order for a user to connect to the database, the user must be assigned to a Workspace role or assigned the Artifact READ permission.  Without Read permission at a minimum, the connection will fail.
-- If you'd like to setup a users granular permissions, prior to allowing them to connect to the warehouse, permissions can be setup within SQL first and then they can be given access by assigning them to a Workspace role or granting artifact permissions.
+- In order for a user to connect to the database, the user must be assigned to a Workspace role or assigned the item READ permission.  Without Read permission at a minimum, the connection will fail.
+- If you'd like to setup a users granular permissions, prior to allowing them to connect to the warehouse, permissions can be setup within SQL first and then they can be given access by assigning them to a Workspace role or granting item permissions.
 
 ### Limitations:
-- CREATE USER cannot be explicitly executed currently. When GRANT or DENY is executed, the user will be created automatically
-- Row-level security is currently not supported
-- Dynamic data masking is currently not supported
-
+- CREATE USER cannot be explicitly executed currently. When GRANT or DENY is executed, the user will be created automatically.
+- Row-level security is currently not supported.
+- Dynamic data masking is currently not supported.
 
 ## View my permissions
 
@@ -53,3 +51,8 @@ Within SQL, a user with elevated permissions can query the permissions that have
     ON pe.grantee_principal_id = pr.principal_id;
    ```
 
+## Next steps
+
+- [Security for data warehousing in Microsoft Fabric](security.md)
+- [Manage item permissions in Microsoft Fabric](item-permissions.md)
+- [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true)

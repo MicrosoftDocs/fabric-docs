@@ -40,7 +40,7 @@ items:
   - name: Workspace roles
     href: workspace-roles.md
   - name: Artifact permissions
-    href: artifact-permissions.md    
+    href: item-permissions.md    
   - name: SQL granular permissons
     href: sql-granular-permissions.md  
 - name: Datasets

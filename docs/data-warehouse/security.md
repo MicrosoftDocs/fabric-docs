@@ -39,7 +39,7 @@ See [Workspace roles in Fabric data warehousing](workspace-roles.md) for details
 
 In contrast to workspace roles, which apply to all items within a workspace, item permissions can be assigned directly to individual Warehouses. The user will receive the assigned permission on that single Warehouse. The primary purpose for these permissions is to enable sharing for downstream consumption of the Warehouse.
 
-See [Item permissions](artifact-permissions.md) for details on the specific permissions provided for Warehouses.
+See [Item permissions](item-permissions.md) for details on the specific permissions provided for Warehouses.
 
 
 ### Object-level security
