@@ -49,7 +49,7 @@ Expressions can appear anywhere in a string value and always result in another s
 |"\@concat('Answer is: ', string(pipeline().parameters.myNumber))"| Returns the string `Answer is: 42`|  
 |"Answer is: \@\@{pipeline().parameters.myNumber}"| Returns the string `Answer is: @{pipeline().parameters.myNumber}`.|  
 
-In the  control flow activities like ForEach activity, you can provide an array to be iterated over for the property items and use  @item() to iterate over a single enumeration in ForEach activity. For example, if items is an array: [1, 2, 3], @item() returns 1 in the first iteration, 2 in the second iteration, and 3 in the third iteration. You can also use @range(0,10) like expression to iterate ten times starting with 0 ending with 9.
+In the  control flow activities like ForEach activity, you can provide an array to be iterated over for the property items and use  @item() to iterate over a single enumeration in ForEach activity. For example, if items is an array: [1, 2, 3], @item() returns 1 in the first iteration, 2 in the second iteration, and 3 in the third iteration. You can also use @range(0,10) like expression to iterate 10 times starting with 0 ending with 9.
 
 You can use @activity('activity name') to capture output of activity and make decisions. Consider a web activity called Web1. For placing the output of the first activity in the body of the second, the expression generally looks like: @activity('Web1').output or @activity('Web1').output.data or something similar depending upon what the output of the first activity looks like. 
 
@@ -62,15 +62,12 @@ The below example shows a complex example that references a deep sub-field of ac
 
 Creating files dynamically and naming them is common pattern. Let us explore few dynamic file naming examples.
 
-  1. Append Date to a filename:  `@concat('Test_',  formatDateTime(utcnow(), 'yyyy-dd-MM'))` 
-  
-  2. Append DateTime in customer timezone : `@concat('Test_',  convertFromUtc(utcnow(), 'Pacific Standard Time'))`
-  
-  3. Append Trigger Time :`@concat('Test_',  pipeline().TriggerTime)`
-  
-  4. Output a custom filename in a Mapping Data Flow when outputting to a single file with date : `'Test_' + toString(currentDate()) + '.csv'`
+- Append Date to a filename:  `@concat('Test_',  formatDateTime(utcnow(), 'yyyy-dd-MM'))` 
+- Append DateTime in customer timezone: `@concat('Test_',  convertFromUtc(utcnow(), 'Pacific Standard Time'))`
+- Append Trigger Time: `@concat('Test_',  pipeline().TriggerTime)`
+- Output a custom filename in a Mapping Data Flow when outputting to a single file with date: `'Test_' + toString(currentDate()) + '.csv'`
 
-In above cases, 4 dynamic filenames are created starting with Test_.
+In above cases, four dynamic filenames are created starting with Test_.
 
 ### Dynamic content editor
 
@@ -84,7 +81,7 @@ The dynamic content editor converts above content to expression `"@{toUpper('myD
 
 ### Replacing special characters
 
-The dynamic content editor automatically escapes characters like double quote, backslash in your content when you finish editing. This causes trouble if you want to replace line feed or tab by using **\n**, **\t** in replace() function. You can of edit your dynamic content in code view to remove the extra \ in the expression, or you can follow below steps to replace special characters using expression language:
+The dynamic content editor automatically escapes characters like double quote, backslash in your content when you finish editing. This causes trouble if you want to replace line feed or tab by using **\n**, **\t** in replace() function. You can edit your dynamic content in code view to remove the extra \ in the expression, or you can follow below steps to replace special characters using expression language:
 
 1. URL encoding against the original string value
 1. Replace URL encoded string, for example, line feed (%0A), carriage return(%0D), horizontal tab(%09).
@@ -270,12 +267,10 @@ add(<summand_1>, <summand_2>)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*summand_1*>, <*summand_2*> | Yes | Integer, Float, or mixed | The numbers to add |
-|||||
 
 | Return value | Type | Description |
 | ------------ | -----| ----------- |
 | <*result-sum*> | Integer or Float | The result from adding the specified numbers |
-||||
 
 *Example*
 
@@ -302,12 +297,12 @@ addDays('<timestamp>', <days>, '<format>'?)
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
 | <*days*> | Yes | Integer | The positive or negative number of days to add |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updated-timestamp*> | String | The timestamp plus the specified number of days  |
-||||
+
 
 *Example 1*
 
@@ -344,12 +339,12 @@ addHours('<timestamp>', <hours>, '<format>'?)
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
 | <*hours*> | Yes | Integer | The positive or negative number of hours to add |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updated-timestamp*> | String | The timestamp plus the specified number of hours  |
-||||
+
 
 *Example 1*
 
@@ -386,12 +381,12 @@ addMinutes('<timestamp>', <minutes>, '<format>'?)
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
 | <*minutes*> | Yes | Integer | The positive or negative number of minutes to add |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updated-timestamp*> | String | The timestamp plus the specified number of minutes |
-||||
+
 
 *Example 1*
 
@@ -428,12 +423,12 @@ addSeconds('<timestamp>', <seconds>, '<format>'?)
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
 | <*seconds*> | Yes | Integer | The positive or negative number of seconds to add |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updated-timestamp*> | String | The timestamp plus the specified number of seconds  |
-||||
+
 
 *Example 1*
 
@@ -472,12 +467,12 @@ addToTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 | <*interval*> | Yes | Integer | The number of specified time units to add |
 | <*timeUnit*> | Yes | String | The unit of time to use with *interval*: "Second", "Minute", "Hour", "Day", "Week", "Month", "Year" |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updated-timestamp*> | String | The timestamp plus the specified number of time units  |
-||||
+
 
 *Example 1*
 
@@ -514,12 +509,12 @@ and(<expression1>, <expression2>)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*expression1*>, <*expression2*> | Yes | Boolean | The expressions to check |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | -----| ----------- |
 | true or false | Boolean | Return true when both expressions are true. Return false when at least one expression is false. |
-||||
+
 
 *Example 1*
 
@@ -567,12 +562,12 @@ array('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The string for creating an array |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | [<*value*>] | Array | An array that contains the single specified input |
-||||
+
 
 *Example*
 
@@ -597,12 +592,12 @@ base64('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The input string |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*base64-string*> | String | The base64-encoded version for the input string |
-||||
+
 
 *Example*
 
@@ -627,12 +622,12 @@ base64ToBinary('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The base64-encoded string to convert |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*binary-for-base64-string*> | String | The binary version for the base64-encoded string |
-||||
+
 
 *Example*
 
@@ -663,12 +658,12 @@ base64ToString('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The base64-encoded string to decode |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*decoded-base64-string*> | String | The string version for a base64-encoded string |
-||||
+
 
 *Example*
 
@@ -693,12 +688,12 @@ binary('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The string to convert |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*binary-for-input-value*> | String | The binary version for the specified string |
-||||
+
 
 *Example*
 
@@ -725,12 +720,12 @@ bool(<value>)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | Any | The value to convert |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | true or false | Boolean | The Boolean version for the specified value |
-||||
+
 
 *Example*
 
@@ -751,7 +746,7 @@ And returns these results:
 ### coalesce
 
 Return the first non-null value from one or more parameters.
-Empty strings, empty arrays, and empty objects are not null.
+Empty strings, empty arrays, and empty objects aren't null.
 
 ```
 coalesce(<object_1>, <object_2>, ...)
@@ -760,12 +755,12 @@ coalesce(<object_1>, <object_2>, ...)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*object_1*>, <*object_2*>, ... | Yes | Any, can mix types | One or more items to check for null |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
-| <*first-non-null-item*> | Any | The first item or value that is not null. If all parameters are null, this function returns null. |
-||||
+| <*first-non-null-item*> | Any | The first item or value that isn't null. If all parameters are null, this function returns null. |
+
 
 *Example*
 
@@ -797,12 +792,12 @@ concat('<text1>', '<text2>', ...)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*text1*>, <*text2*>, ... | Yes | String | At least two strings to combine |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*text1text2...*> | String | The string created from the combined input strings |
-||||
+
 
 *Example*
 
@@ -838,12 +833,12 @@ Specifically, this function works on these collection types:
 | --------- | -------- | ---- | ----------- |
 | <*collection*> | Yes | String, Array, or Dictionary | The collection to check |
 | <*value*> | Yes | String, Array, or Dictionary, respectively | The item to find |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | true or false | Boolean | Return true when the item is found. Return false when not found. |
-||||
+
 
 *Example 1*
 
@@ -878,12 +873,12 @@ convertFromUtc('<timestamp>', '<destinationTimeZone>', '<format>'?)
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
 | <*destinationTimeZone*> | Yes | String | The name for the target time zone. For time zone names, see [Microsoft Time Zone Values](/windows-hardware/manufacture/desktop/default-time-zones#time-zones), but you might have to remove any punctuation from the time zone name. |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*converted-timestamp*> | String | The timestamp converted to the target time zone |
-||||
+
 
 *Example 1*
 
@@ -921,12 +916,12 @@ convertTimeZone('<timestamp>', '<sourceTimeZone>', '<destinationTimeZone>', '<fo
 | <*sourceTimeZone*> | Yes | String | The name for the source time zone. For time zone names, see [Microsoft Time Zone Values](/windows-hardware/manufacture/desktop/default-time-zones#time-zones), but you might have to remove any punctuation from the time zone name. |
 | <*destinationTimeZone*> | Yes | String | The name for the target time zone. For time zone names, see [Microsoft Time Zone Values](/windows-hardware/manufacture/desktop/default-time-zones#time-zones), but you might have to remove any punctuation from the time zone name. |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*converted-timestamp*> | String | The timestamp converted to the target time zone |
-||||
+
 
 *Example 1*
 
@@ -963,12 +958,12 @@ convertToUtc('<timestamp>', '<sourceTimeZone>', '<format>'?)
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
 | <*sourceTimeZone*> | Yes | String | The name for the source time zone. For time zone names, see [Microsoft Time Zone Values](/windows-hardware/manufacture/desktop/default-time-zones#time-zones), but you might have to remove any punctuation from the time zone name. |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*converted-timestamp*> | String | The timestamp converted to UTC |
-||||
+
 
 *Example 1*
 
@@ -1004,12 +999,12 @@ createArray('<object1>', '<object2>', ...)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*object1*>, <*object2*>, ... | Yes | Any, but not mixed | At least two items to create the array |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | [<*object1*>, <*object2*>, ...] | Array | The array created from all the input items |
-||||
+
 
 *Example*
 
@@ -1034,12 +1029,12 @@ dataUri('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The string to convert |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*data-uri*> | String | The data URI for the input string |
-||||
+
 
 *Example*
 
@@ -1067,12 +1062,12 @@ dataUriToBinary('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The data URI to convert |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*binary-for-data-uri*> | String | The binary version for the data URI |
-||||
+
 
 *Example*
 
@@ -1102,12 +1097,12 @@ dataUriToString('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The data URI to convert |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*string-for-data-uri*> | String | The string version for the data URI |
-||||
+
 
 *Example*
 
@@ -1132,12 +1127,12 @@ dayOfMonth('<timestamp>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*day-of-month*> | Integer | The day of the month from the specified timestamp |
-||||
+
 
 *Example*
 
@@ -1163,12 +1158,12 @@ dayOfWeek('<timestamp>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*day-of-week*> | Integer | The day of the week from the specified timestamp where Sunday is 0, Monday is 1, and so on |
-||||
+
 
 *Example*
 
@@ -1193,12 +1188,12 @@ dayOfYear('<timestamp>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*day-of-year*> | Integer | The day of the year from the specified timestamp |
-||||
+
 
 *Example*
 
@@ -1228,12 +1223,12 @@ decodeBase64('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The base64-encoded string to decode |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*decoded-base64-string*> | String | The string version for a base64-encoded string |
-||||
+
 
 *Example*
 
@@ -1262,12 +1257,12 @@ decodeDataUri('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The data URI string to decode |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*binary-for-data-uri*> | String | The binary version for a data URI string |
-||||
+
 
 *Example*
 
@@ -1297,12 +1292,12 @@ decodeUriComponent('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The string with the escape characters to decode |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*decoded-uri*> | String | The updated string with the decoded escape characters |
-||||
+
 
 *Example*
 
@@ -1328,13 +1323,13 @@ div(<dividend>, <divisor>)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*dividend*> | Yes | Integer or Float | The number to divide by the *divisor* |
-| <*divisor*> | Yes | Integer or Float | The number that divides the *dividend*, but cannot be 0 |
-|||||
+| <*divisor*> | Yes | Integer or Float | The number that divides the *dividend*, but can't be 0 |
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*quotient-result*> | Integer | The integer result from dividing the first number by the second number |
-||||
+
 
 *Example*
 
@@ -1365,12 +1360,12 @@ encodeUriComponent('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The string to convert to URI-encoded format |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*encoded-uri*> | String | The URI-encoded string with escape characters |
-||||
+
 
 *Example*
 
@@ -1398,12 +1393,12 @@ empty([<collection>])
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*collection*> | Yes | String, Array, or Object | The collection to check |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | true or false | Boolean | Return true when the collection is empty. Return false when not empty. |
-||||
+
 
 *Example*
 
@@ -1425,7 +1420,7 @@ And returns these results:
 
 Check whether a string ends with a specific substring.
 Return true when the substring is found, or return false when not found.
-This function is not case-sensitive.
+This function isn't case-sensitive.
 
 ```
 endsWith('<text>', '<searchText>')
@@ -1435,12 +1430,12 @@ endsWith('<text>', '<searchText>')
 | --------- | -------- | ---- | ----------- |
 | <*text*> | Yes | String | The string to check |
 | <*searchText*> | Yes | String | The ending substring to find |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | true or false  | Boolean | Return true when the ending substring is found. Return false when not found. |
-||||
+
 
 *Example 1*
 
@@ -1478,12 +1473,12 @@ equals('<object1>', '<object2>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*object1*>, <*object2*> | Yes | Various | The values, expressions, or objects to compare |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | true or false | Boolean | Return true when both are equivalent. Return false when not equivalent. |
-||||
+
 
 *Example*
 
@@ -1513,12 +1508,12 @@ first([<collection>])
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*collection*> | Yes | String or Array | The collection where to find the first item |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*first-collection-item*> | Any | The first item in the collection |
-||||
+
 
 *Example*
 
@@ -1548,12 +1543,12 @@ float('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The string that has a valid floating-point number to convert |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*float-value*> | Float | The floating-point number for the specified string |
-||||
+
 
 *Example*
 
@@ -1579,12 +1574,12 @@ formatDateTime('<timestamp>', '<format>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*reformatted-timestamp*> | String | The updated timestamp in the specified format |
-||||
+
 
 *Example*
 
@@ -1611,12 +1606,12 @@ getFutureTime(<interval>, <timeUnit>, <format>?)
 | <*interval*> | Yes | Integer | The number of specified time units to add |
 | <*timeUnit*> | Yes | String | The unit of time to use with *interval*: "Second", "Minute", "Hour", "Day", "Week", "Month", "Year" |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updated-timestamp*> | String | The current timestamp plus the specified number of time units |
-||||
+
 
 *Example 1*
 
@@ -1655,12 +1650,12 @@ getPastTime(<interval>, <timeUnit>, <format>?)
 | <*interval*> | Yes | Integer | The number of specified time units to subtract |
 | <*timeUnit*> | Yes | String | The unit of time to use with *interval*: "Second", "Minute", "Hour", "Day", "Week", "Month", "Year" |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updated-timestamp*> | String | The current timestamp minus the specified number of time units |
-||||
+
 
 *Example 1*
 
@@ -1701,12 +1696,12 @@ greater('<value>', '<compareTo>')
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | Integer, Float, or String | The first value to check whether greater than the second value |
 | <*compareTo*> | Yes | Integer, Float, or String, respectively | The comparison value |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | true or false | Boolean | Return true when the first value is greater than the second value. Return false when the first value is equal to or less than the second value. |
-||||
+
 
 *Example*
 
@@ -1739,12 +1734,12 @@ greaterOrEquals('<value>', '<compareTo>')
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | Integer, Float, or String | The first value to check whether greater than or equal to the second value |
 | <*compareTo*> | Yes | Integer, Float, or String, respectively | The comparison value |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | true or false | Boolean | Return true when the first value is greater than or equal to the second value. Return false when the first value is less than the second value. |
-||||
+
 
 *Example*
 
@@ -1782,12 +1777,12 @@ guid('<format>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*format*> | No | String | A single [format specifier](/dotnet/api/system.guid.tostring) for the returned GUID. By default, the format is "D", but you can use "N", "D", "B", "P", or "X". |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*GUID-value*> | String | A randomly generated GUID |
-||||
+
 
 *Example*
 
@@ -1816,12 +1811,12 @@ if(<expression>, <valueIfTrue>, <valueIfFalse>)
 | <*expression*> | Yes | Boolean | The expression to check |
 | <*valueIfTrue*> | Yes | Any | The value to return when the expression is true |
 | <*valueIfFalse*> | Yes | Any | The value to return when the expression is false |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*specified-return-value*> | Any | The specified value that returns based on whether the expression is true or false |
-||||
+
 
 *Example*
 
@@ -1838,7 +1833,7 @@ if(equals(1, 1), 'yes', 'no')
 ### indexOf
 
 Return the starting position or index value for a substring.
-This function is not case-sensitive,
+This function isn't case-sensitive,
 and indexes start with the number 0.
 
 ```
@@ -1849,12 +1844,10 @@ indexOf('<text>', '<searchText>')
 | --------- | -------- | ---- | ----------- |
 | <*text*> | Yes | String | The string that has the substring to find |
 | <*searchText*> | Yes | String | The substring to find |
-|||||
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
-| <*index-value*>| Integer | The starting position or index value for the specified substring. <p>If the string is not found, return the number -1. |
-||||
+| <*index-value*>| Integer | The starting position or index value for the specified substring. <br>If the string isn't found, return the number -1. |
 
 *Example*
 
@@ -1880,12 +1873,12 @@ int('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The string to convert |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*integer-result*> | Integer | The integer version for the specified string |
-||||
+
 
 *Example*
 
@@ -1911,12 +1904,12 @@ json('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String or XML | The string or XML to convert |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*JSON-result*> | JSON native type or object | The JSON native type value or object for the specified string or XML. If the string is null, the function returns an empty object. |
-||||
+
 
 *Example 1*
 
@@ -1986,12 +1979,10 @@ intersection('<collection1>', '<collection2>', ...)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*collection1*>, <*collection2*>, ... | Yes | Array or Object, but not both | The collections from where you want *only* the common items |
-|||||
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*common-items*> | Array or Object, respectively | A collection that has only the common items across the specified collections |
-||||
 
 *Example*
 
@@ -2018,12 +2009,12 @@ join([<collection>], '<delimiter>')
 | --------- | -------- | ---- | ----------- |
 | <*collection*> | Yes | Array | The array that has the items to join |
 | <*delimiter*> | Yes | String | The separator that appears between each character in the resulting string |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*char1*><*delimiter*><*char2*><*delimiter*>... | String | The resulting string created from all the items in the specified array |
-||||
+
 
 *Example*
 
@@ -2050,12 +2041,12 @@ last([<collection>])
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*collection*> | Yes | String or Array | The collection where to find the last item |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*last-collection-item*> | String or Array, respectively | The last item in the collection |
-||||
+
 
 *Example*
 
@@ -2077,7 +2068,7 @@ And returns these results:
 
 Return the starting position or index value
 for the last occurrence of a substring.
-This function is not case-sensitive,
+This function isn't case-sensitive,
 and indexes start with the number 0.
 
 ```
@@ -2088,12 +2079,10 @@ lastIndexOf('<text>', '<searchText>')
 | --------- | -------- | ---- | ----------- |
 | <*text*> | Yes | String | The string that has the substring to find |
 | <*searchText*> | Yes | String | The substring to find |
-|||||
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
-| <*ending-index-value*> | Integer | The starting position or index value for the last occurrence of the specified substring. <p>If the string is not found, return the number -1. |
-||||
+| <*ending-index-value*> | Integer | The starting position or index value for the last occurrence of the specified substring. <br>If the string isn't found, return the number -1. |
 
 *Example*
 
@@ -2121,12 +2110,12 @@ length([<collection>])
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*collection*> | Yes | String or Array | The collection with the items to count |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*length-or-count*> | Integer | The number of items in the collection |
-||||
+
 
 *Example*
 
@@ -2156,12 +2145,12 @@ less('<value>', '<compareTo>')
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | Integer, Float, or String | The first value to check whether less than the second value |
 | <*compareTo*> | Yes | Integer, Float, or String, respectively | The comparison item |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | true or false | Boolean | Return true when the first value is less than the second value. Return false when the first value is equal to or greater than the second value. |
-||||
+
 
 *Example*
 
@@ -2194,12 +2183,12 @@ lessOrEquals('<value>', '<compareTo>')
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | Integer, Float, or String | The first value to check whether less than or equal to the second value |
 | <*compareTo*> | Yes | Integer, Float, or String, respectively | The comparison item |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | true or false  | Boolean | Return true when the first value is less than or equal to the second value. Return false when the first value is greater than the second value. |
-||||
+
 
 *Example*
 
@@ -2231,12 +2220,12 @@ max([<number1>, <number2>, ...])
 | --------- | -------- | ---- | ----------- |
 | <*number1*>, <*number2*>, ... | Yes | Integer, Float, or both | The set of numbers from which you want the highest value |
 | [<*number1*>, <*number2*>, ...] | Yes | Array - Integer, Float, or both | The array of numbers from which you want the highest value |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*max-value*> | Integer or Float | The highest value in the specified array or set of numbers |
-||||
+
 
 *Example*
 
@@ -2264,12 +2253,12 @@ min([<number1>, <number2>, ...])
 | --------- | -------- | ---- | ----------- |
 | <*number1*>, <*number2*>, ... | Yes | Integer, Float, or both | The set of numbers from which you want the lowest value |
 | [<*number1*>, <*number2*>, ...] | Yes | Array - Integer, Float, or both | The array of numbers from which you want the lowest value |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*min-value*> | Integer or Float | The lowest value in the specified set of numbers or specified array |
-||||
+
 
 *Example*
 
@@ -2296,13 +2285,13 @@ mod(<dividend>, <divisor>)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*dividend*> | Yes | Integer or Float | The number to divide by the *divisor* |
-| <*divisor*> | Yes | Integer or Float | The number that divides the *dividend*, but cannot be 0. |
-|||||
+| <*divisor*> | Yes | Integer or Float | The number that divides the *dividend*, but can't be 0. |
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*modulo-result*> | Integer or Float | The remainder from dividing the first number by the second number |
-||||
+
 
 *Example*
 
@@ -2328,12 +2317,12 @@ mul(<multiplicand1>, <multiplicand2>)
 | --------- | -------- | ---- | ----------- |
 | <*multiplicand1*> | Yes | Integer or Float | The number to multiply by *multiplicand2* |
 | <*multiplicand2*> | Yes | Integer or Float | The number that multiples *multiplicand1* |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*product-result*> | Integer or Float | The product from multiplying the first number by the second number |
-||||
+
 
 *Example*
 
@@ -2364,12 +2353,12 @@ not(<expression>)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*expression*> | Yes | Boolean | The expression to check |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | true or false | Boolean | Return true when the expression is false. Return false when the expression is true. |
-||||
+
 
 *Example 1*
 
@@ -2414,12 +2403,12 @@ or(<expression1>, <expression2>)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*expression1*>, <*expression2*> | Yes | Boolean | The expressions to check |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | true or false | Boolean | Return true when at least one expression is true. Return false when both expressions are false. |
-||||
+
 
 *Example 1*
 
@@ -2464,12 +2453,12 @@ rand(<minValue>, <maxValue>)
 | --------- | -------- | ---- | ----------- |
 | <*minValue*> | Yes | Integer | The lowest integer in the range |
 | <*maxValue*> | Yes | Integer | The integer that follows the highest integer in the range that the function can return |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*random-result*> | Integer | The random integer returned from the specified range |
-||||
+
 
 *Example*
 
@@ -2495,12 +2484,12 @@ range(<startIndex>, <count>)
 | --------- | -------- | ---- | ----------- |
 | <*startIndex*> | Yes | Integer | An integer value that starts the array as the first item |
 | <*count*> | Yes | Integer | The number of integers in the array |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | [<*range-result*>] | Array | The array with integers starting from the specified index |
-||||
+
 
 *Example*
 
@@ -2530,12 +2519,12 @@ replace('<text>', '<oldText>', '<newText>')
 | <*text*> | Yes | String | The string that has the substring to replace |
 | <*oldText*> | Yes | String | The substring to replace |
 | <*newText*> | Yes | String | The replacement string |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
-| <*updated-text*> | String | The updated string after replacing the substring <p>If the substring is not found, return the original string. |
-||||
+| <*updated-text*> | String | The updated string after replacing the substring <br>If the substring isn't found, return the original string. |
+
 
 *Example*
 
@@ -2563,12 +2552,12 @@ skip([<collection>], <count>)
 | --------- | -------- | ---- | ----------- |
 | <*collection*> | Yes | Array | The collection whose items you want to remove |
 | <*count*> | Yes | Integer | A positive integer for the number of items to remove at the front |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | [<*updated-collection*>] | Array | The updated collection after removing the specified items |
-||||
+
 
 *Example*
 
@@ -2596,12 +2585,12 @@ split('<text>', '<delimiter>')
 | --------- | -------- | ---- | ----------- |
 | <*text*> | Yes | String | The string to separate into substrings based on the specified delimiter in the original string |
 | <*delimiter*> | Yes | String | The character in the original string to use as the delimiter |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | [<*substring1*>,<*substring2*>,...] | Array | An array that contains substrings from the original string, separated by commas |
-||||
+
 
 *Example*
 
@@ -2628,12 +2617,12 @@ startOfDay('<timestamp>', '<format>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updated-timestamp*> | String | The specified timestamp but starting at the zero-hour mark for the day |
-||||
+
 
 *Example*
 
@@ -2659,12 +2648,12 @@ startOfHour('<timestamp>', '<format>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updated-timestamp*> | String | The specified timestamp but starting at the zero-minute mark for the hour |
-||||
+
 
 *Example*
 
@@ -2690,12 +2679,12 @@ startOfMonth('<timestamp>', '<format>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Yes | String | The string that contains the timestamp |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updated-timestamp*> | String | The specified timestamp but starting on the first day of the month at the zero-hour mark |
-||||
+
 
 *Example*
 
@@ -2713,7 +2702,7 @@ And returns this result: `"2018-03-01T00:00:00.0000000Z"`
 
 Check whether a string starts with a specific substring.
 Return true when the substring is found, or return false when not found.
-This function is not case-sensitive.
+This function isn't case-sensitive.
 
 ```
 startsWith('<text>', '<searchText>')
@@ -2723,12 +2712,12 @@ startsWith('<text>', '<searchText>')
 | --------- | -------- | ---- | ----------- |
 | <*text*> | Yes | String | The string to check |
 | <*searchText*> | Yes | String | The starting string to find |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | true or false  | Boolean | Return true when the starting substring is found. Return false when not found. |
-||||
+
 
 *Example 1*
 
@@ -2765,12 +2754,12 @@ string(<value>)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | Any | The value to convert |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*string-value*> | String | The string version for the specified value |
-||||
+
 
 *Example 1*
 
@@ -2808,12 +2797,12 @@ sub(<minuend>, <subtrahend>)
 | --------- | -------- | ---- | ----------- |
 | <*minuend*> | Yes | Integer or Float | The number from which to subtract the *subtrahend* |
 | <*subtrahend*> | Yes | Integer or Float | The number to subtract from the *minuend* |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*result*> | Integer or Float | The result from subtracting the second number from the first number |
-||||
+
 
 *Example*
 
@@ -2842,12 +2831,12 @@ substring('<text>', <startIndex>, <length>)
 | <*text*> | Yes | String | The string whose characters you want |
 | <*startIndex*> | Yes | Integer | A positive number equal to or greater than 0 that you want to use as the starting position or index value |
 | <*length*> | Yes | Integer | A positive number of characters that you want in the substring |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*substring-result*> | String | A substring with the specified number of characters, starting at the specified index position in the source string |
-||||
+
 
 *Example*
 
@@ -2877,12 +2866,12 @@ subtractFromTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 | <*interval*> | Yes | Integer | The number of specified time units to subtract |
 | <*timeUnit*> | Yes | String | The unit of time to use with *interval*: "Second", "Minute", "Hour", "Day", "Week", "Month", "Year" |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updated-timestamp*> | String | The timestamp minus the specified number of time units |
-||||
+
 
 *Example 1*
 
@@ -2919,12 +2908,12 @@ take([<collection>], <count>)
 | --------- | -------- | ---- | ----------- |
 | <*collection*> | Yes | String or Array | The collection whose items you want |
 | <*count*> | Yes | Integer | A positive integer for the number of items that you want from the front |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*subset*> or [<*subset*>] | String or Array, respectively | A string or array that has the specified number of items taken from the front of the original collection |
-||||
+
 
 *Example*
 
@@ -2955,12 +2944,12 @@ ticks('<timestamp>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Yes | String | The string for a timestamp |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*ticks-number*> | Integer | The number of ticks that have elapsed since 12:00:00 midnight, January 1, 0001 in the Gregorian calendar since the input timestamp |
-||||
+
 
 <a name="toLower"></a>
 
@@ -2977,12 +2966,12 @@ toLower('<text>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*text*> | Yes | String | The string to return in lowercase format |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*lowercase-text*> | String | The original string in lowercase format |
-||||
+
 
 *Example*
 
@@ -3009,12 +2998,12 @@ toUpper('<text>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*text*> | Yes | String | The string to return in uppercase format |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*uppercase-text*> | String | The original string in uppercase format |
-||||
+
 
 *Example*
 
@@ -3040,12 +3029,12 @@ trim('<text>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*text*> | Yes | String | The string that has the leading and trailing whitespace to remove |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updatedText*> | String | An updated version for the original string without leading or trailing whitespace |
-||||
+
 
 *Example*
 
@@ -3075,12 +3064,12 @@ union([<collection1>], [<collection2>], ...)
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*collection1*>, <*collection2*>, ...  | Yes | Array or Object, but not both | The collections from where you want *all* the items |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*updatedCollection*> | Array or Object, respectively | A collection with all the items from the specified collections - no duplicates |
-||||
+
 
 *Example*
 
@@ -3109,12 +3098,12 @@ uriComponent('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The string to convert to URI-encoded format |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*encoded-uri*> | String | The URI-encoded string with escape characters |
-||||
+
 
 *Example*
 
@@ -3139,12 +3128,12 @@ uriComponentToBinary('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The URI-encoded string to convert |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*binary-for-encoded-uri*> | String | The binary version for the URI-encoded string. The binary content is base64-encoded and represented by `$content`. |
-||||
+
 
 *Example*
 
@@ -3175,12 +3164,12 @@ uriComponentToString('<value>')
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*value*> | Yes | String | The URI-encoded string to decode |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*decoded-uri*> | String | The decoded version for the URI-encoded string |
-||||
+
 
 *Example*
 
@@ -3207,12 +3196,12 @@ Optionally, you can specify a different format with the <*format*> parameter.
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
 | <*format*> | No | String | Either a [single format specifier](/dotnet/standard/base-types/standard-date-and-time-format-strings) or a [custom format pattern](/dotnet/standard/base-types/custom-date-and-time-format-strings). The default format for the timestamp is ["o"](/dotnet/standard/base-types/standard-date-and-time-format-strings) (yyyy-MM-ddTHH:mm:ss.fffffffK), which complies with [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and preserves time zone information. |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*current-timestamp*> | String | The current date and time |
-||||
+
 
 *Example 1*
 
@@ -3248,13 +3237,13 @@ xml('<value>')
 
 | Parameter | Required | Type | Description |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Yes | String | The string with the JSON object to convert <p>The JSON object must have only one root property, which can't be an array. <br>Use the backslash character (\\) as an escape character for the double quotation mark ("). |
-|||||
+| <*value*> | Yes | String | The string with the JSON object to convert <br>The JSON object must have only one root property, which can't be an array. <br>Use the backslash character (\\) as an escape character for the double quotation mark ("). |
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*xml-version*> | Object | The encoded XML for the specified string or JSON object |
-||||
+
 
 *Example 1*
 
@@ -3312,14 +3301,14 @@ xpath('<xml>', '<xpath>')
 | --------- | -------- | ---- | ----------- |
 | <*xml*> | Yes | Any | The XML string to search for nodes or values that match an XPath expression value |
 | <*xpath*> | Yes | Any | The XPath expression used to find matching XML nodes or values |
-|||||
+
 
 | Return value | Type | Description |
 | ------------ | ---- | ----------- |
 | <*xml-node*> | XML | An XML node when only a single node matches the specified XPath expression |
 | <*value*> | Any | The value from an XML node when only a single value matches the specified XPath expression |
 | [<*xml-node1*>, <*xml-node2*>, ...] </br>-or- </br>[<*value1*>, <*value2*>, ...] | Array | An array with XML nodes or values that match the specified XPath expression |
-||||
+
 
 *Example 1*
 
@@ -3359,7 +3348,7 @@ Here are the arguments:
 
   * `/*[local-name()=\"file\" and namespace-uri()=\"http://contoso.com\"]/*[local-name()=\"location\"]`
 
-Here is the result node that matches the `<location></location>` node:
+Here's the result node that matches the `<location></location>` node:
 
 ```xml
 <location xmlns="https://contoso.com">Paris</location>
