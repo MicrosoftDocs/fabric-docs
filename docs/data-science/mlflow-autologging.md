@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 04/17/2023
 ---
 
-# Overview
+# Fabric autologging
 
 Synapse Fabric autologging significantly reduces the amount of code required to capture machine learning metrics and parameters during the model training process. Synapse Fabric autologging automatically logs the parameters, metrics, and artifacts of a machine learning model during training. This feature extends [MLflow autologging](https://mlflow.org/docs/latest/tracking.html#automatic-logging) capabilities and is deeply integrated into the Microsoft Fabric experience. Using this, developers and data scientists can easily track and compare the performance of different models and experiments without the need for manual tracking.
 
@@ -103,7 +103,7 @@ To do this:
 
 2. Withing the **Data Engineering/Science** tab, select **Spark compute**. Here, you will find the setting to enable or disable Synapse Fabric autologging.
 
-:::image type="content" source="./media/machine-learning-experiment/autologging-setting-2.png" alt-text="Screenshot of the Data science artifact page." lightbox="./media/machine-learning-experiment/autologging-setting-2.png":::
+:::image type="content" source="./media/machine-learning-experiment/autologging-setting-2.png" alt-text="Screenshot of the Data science Workspace setting for autologging." lightbox="./media/machine-learning-experiment/autologging-setting-2.png":::
 
 ## Next steps
 

@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 04/17/2023
 ---
 
-# Overview
+# Data science roles and permissions
 
 This article describes machine learning model and experiment permissions in the Microsoft Fabric service and how these permissions are acquired by users.
 
