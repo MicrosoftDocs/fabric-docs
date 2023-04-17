@@ -61,7 +61,7 @@ You can then use the parameter anywhere in your pipeline where dynamic content i
 
 :::image type="content" source="media/parameters/use-dynamic-content.png" alt-text="Screenshot showing the Source tab of a copy activity's property pages, highlighting the Add dynamic content option.":::
 
-The **Add dynamic content** window is displayed, allowing you to specify any kind of dynamic content, including parameters, [system variables](expression-language.md#system-variables), [functions](expression-language.md#functions), or pipeline variables. In this example, the previously defined parameter is selected, and the dynamic content window is automatically populated with the correct expression to reference the parameter.
+The **Add dynamic content** window is displayed, allowing you to specify any kind of dynamic content, including parameters, [system variables](expression-language.md#pipeline-scope-variables), [functions](expression-language.md#functions), or pipeline variables. In this example, the previously defined parameter is selected, and the dynamic content window is automatically populated with the correct expression to reference the parameter.
 
 :::image type="content" source="media/parameters/select-pipeline-parameter.png" alt-text="Screenshot showing the Add dynamic content window with a pipeline parameter selected.":::
 
