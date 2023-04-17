@@ -1,11 +1,11 @@
 ---
 title: Tutorial- Use Apache Spark to query a KQL Database
-description: Learn how to import the NYC GreenTaxi notebook into your [!INCLUDE [product-name](../includes/product-name.md)] environment using Apache Spark.
+description: Learn how to import and query the NYC GreenTaxi notebook in your Microsoft Fabric environment using Apache Spark.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.date: 04/03/2023
+ms.date: 04/17/2023
 ms.search.form: product-kusto
 ---
 
@@ -20,7 +20,7 @@ Specifically, you learn how to:
 > * Create a KQL Database
 > * Import a notebook
 > * Write data to a KQL Database using Apache Spark
-> * Read data from a KQL Database
+> * Query data from a KQL Database
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ Specifically, you learn how to:
 
 Before we import the NYC GreenTaxi notebook, we need to create a database.
 
-## Create a KQL Database
+## 1- Create a KQL Database
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-time Analytics**.
 
@@ -49,20 +49,20 @@ Before we import the NYC GreenTaxi notebook, we need to create a database.
 
     :::image type="content" source="media/spark-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
 
-## Download the NYC GreenTaxi notebook
+## 2- Download the NYC GreenTaxi notebook
 
 We've created a sample notebook that takes you through all the necessary steps for loading data into your database using the Spark connector.
 
 1. Open the Azure Kusto Spark repository on GitHub to download the [NYC GreenTaxi notebook.](https://github.com/Azure/azure-kusto-spark/blob/master/samples/src/main/trident/NYC-GreenTaxi-Read-Write-Data-To-Kusto.ipynb).
 
-    :::image type="content" source="media/spark-connector/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC GreenTaxi notebook. The option titled Raw is highlighted.":::
+    :::image type="content" source="media/spark-connector/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC GreenTaxi notebook. The option titled Raw is highlighted." lightbox="media/spark-connector/raw-notebook.png":::
 
 1. Save the notebook locally to your device.
 
     > [!NOTE]
     > The notebook must be saved in the `.ipynb` file format.
 
-## Import the Spark notebook
+## 3- Import the notebook
 
 The rest of this workflow occurs in the **Data Engineering** section of the product, and uses a Spark notebook to load and query data in your KQL Database.
 
@@ -81,7 +81,7 @@ The rest of this workflow occurs in the **Data Engineering** section of the prod
 1. Select the NYC GreenTaxi notebook you downloaded in a previous step.
 1. Once the import is complete, return to your workspace to open this notebook.
 
-## Get data
+## 4- Get data
 
 To query your database using the Spark connector, you need to give read and write access to the NYC GreenTaxi blob container.
 
@@ -92,32 +92,34 @@ Select the **play** button to run the following cells, or select the cell and pr
 
 1. Run the following cell to enable access to the NYC GreenTaxi blob container.
 
-    :::image type="content" source="media/spark-connector/code-cell1.png" alt-text="Screenshot of first code cell showing storage access information.":::
+    :::image type="content" source="media/spark-connector/code-cell1.png" alt-text="Screenshot of first code cell showing storage access information." lightbox="media/spark-connector/code-cell1.png":::
 
 1. In **KustoURI**, paste the **Query URI** that you copied earlier instead of the placeholder text.
 1. Change the placeholder database name to **nycGreenTaxi**.
 
-    :::image type="content" source="media/spark-connector/code-cell2.png" alt-text="Screenshot of second code cell showing the target database information. The Query URI and database name are highlighted.":::
+    :::image type="content" source="media/spark-connector/code-cell2.png" alt-text="Screenshot of second code cell showing the target database information. The Query URI and database name are highlighted."  lightbox="media/spark-connector/code-cell2.png":::
 
 1. Run the cell.
 
 1. Run the next cell to write data to your database. It takes a few minutes for this step to complete.
 
-    :::image type="content" source="media/spark-connector/code-cell3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command.":::
+    :::image type="content" source="media/spark-connector/code-cell3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command."  lightbox="media/spark-connector/code-cell3.png":::
 
-## Run the notebook
+Your database will now have data.
 
-Run the remaining two cells sequentially to read data from your table. The results show the top 20 highest and lowest taxi fares and distances recorded by year.
+## 5- Run the notebook
 
-:::image type="content" source="media/spark-connector/query-example.png" alt-text="Screenshot of fourth and fifth code cell showing the query results.":::
+Run the remaining two cells sequentially to query data from your table. The results show the top 20 highest and lowest taxi fares and distances recorded by year.
 
-## Clean up resources
+:::image type="content" source="media/spark-connector/query-example.png" alt-text="Screenshot of fourth and fifth code cell showing the query results."  lightbox="media/spark-connector/query-example.png":::
+
+## 6- Clean up resources
 
 Clean up the items created by navigating to the workspace in which they were created.
 
 1. In your workspace, hover over the notebook you want to delete, select the **More menu** > **Delete**.
 
-    :::image type="content" source="media/spark-connector/cleanup-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC GreenTaxi notebook. The option titled Delete is highlighted.":::
+    :::image type="content" source="media/spark-connector/cleanup-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC GreenTaxi notebook. The option titled Delete is highlighted."  lightbox="media/spark-connector/cleanup-resources-expanded.png":::
 
 1. Select **Delete**. You can't recover your notebook once you delete it.
 
