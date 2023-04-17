@@ -11,6 +11,12 @@ items:
     href: ../placeholder.md
   - name: linktext2
     href: ../placeholder.md
+  - name: From Spark ingestion to SQL serving
+    href: ../placeholder.md
+  - name: Zero copy using shortcuts
+    href: ../placeholder.md
+  - name: Spark Structured Streaming with SJD and retry policy
+    href: ../placeholder.md
 - name: Lakehouse
   items:
   - name: What is a lakehouse?
@@ -23,7 +29,7 @@ items:
     href: lakehouse-sql-endpoint.md
   - name: Direct lake mode and PBI reporting
     href: lakehouse-pbi-reporting.md
-- name: Get data
+- name: Get data into lakehouse
   items:
   - name: Get data into a lakehouse
     href: load-data-lakehouse.md
@@ -39,6 +45,8 @@ items:
     href: lakehouse-sharing.md
   - name: Lakehouse SQL endpoint security
     href: lakehouse-sql-security.md
+  - name: Data mesh guide
+    href: ../placeholder.md
 - name: Apache Spark
   items:
   - name: Autotune Spark configuration
@@ -95,13 +103,3 @@ items:
     href: lakehouse-notebook-explore.md
   - name: Load data in lakehouse
     href: lakehouse-notebook-load-data.md
-- name: Tutorials
-  items:
-    - name: Data mesh guide
-      href: ../placeholder.md
-    - name: From Spark ingestion to SQL serving
-      href: ../placeholder.md
-    - name: Zero copy using shortcuts
-      href: ../placeholder.md
-    - name: Spark Structured Streaming with SJD and retry policy
-      href: ../placeholder.md
