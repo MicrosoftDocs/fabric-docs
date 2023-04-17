@@ -1,24 +1,24 @@
 ---
 title: Accelerate data prep with Data Wrangler
-description: Learn how to use the Data Wrangler tool.
-ms.reviewer: mopeakande
-ms.author: negust
-author: nelgson
-ms.subservice: data-science
+description: Learn how to use Data Wrangler, a notebook-based tool for exploring data and generating code to transform it.
+author: orbey
+ms.author: erenorbey
+ms.reviewer: franksolomon
 ms.topic: how-to
-ms.date: 02/10/2023
+ms.date: 03/27/2023
+
+ms.search.form: Data Wrangler
 ---
 
-# How-to accelerate data prep with Data Wrangler
+# How to accelerate data prep with Data Wrangler in Microsoft Fabric
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Data Wrangler is a notebook-based tool that provides users with an immersive experience for conducting exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics and a set of common data-cleansing operations that can be applied in a matter of clicks. Each operation generates code that can be saved back to the notebook as a reusable script.
+Data Wrangler, a notebook-based tool, provides users with an immersive experience to conduct exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics and a set of common data-cleansing operations, all available with a few selected icons. Each operation generates code that can be saved back to the notebook as a reusable script.
 
-## Launching Data Wrangler
+## Launch Data Wrangler
 
-There are currently two ways to launch the Data Wrangler experience from a [!INCLUDE [product-name](../includes/product-name.md)] notebook. Both require reading data into a Pandas DataFrame, which can be done using the following code snippet:
+Users can launch the Data Wrangler experience from a [!INCLUDE [product-name](../includes/product-name.md)] notebook in two ways. This code snippet shows how to read data into a Pandas DataFrame, as required by both techniques:
 
 ```Python
 # Import the Pandas library
@@ -33,35 +33,35 @@ df = pd.read_csv("<URL_HERE>")
 
 ### Option 1: From the notebook ribbon
 
-Under the “Data” tab in the notebook ribbon, use the Data Wrangler dropdown prompt to browse all the active Pandas DataFrames available for editing. Click on the one you wish to open in Data Wrangler.
+Under the notebook ribbon “Data” tab, use the Data Wrangler dropdown prompt to browse all the active Pandas DataFrames available for editing. Select the one you wish to open in Data Wrangler.
 
 ### Option 2: From the code cell
 
-Print a Pandas DataFrame at the bottom of any cell. A prompt to open that DataFrame in Data Wrangler should appear above the output upon cell execution.
+Print a Pandas DataFrame at the bottom of any cell. A prompt to open that DataFrame in Data Wrangler should appear above the output after the cell executes.
 
 > [!NOTE]
-> Data Wrangler currently supports only Pandas DataFrames. Support for Spark DataFrames is forthcoming.
+> At this time, Data Wrangler supports only Pandas DataFrames. Support for Spark DataFrames is forthcoming.
 
 > [!TIP]
-> Data Wrangler cannot be opened while the notebook kernel is busy. If another cell is executing, that cell must finish before Data Wrangler can be launched.
+> Data Wrangler cannot be opened while the notebook kernel is busy. An executing cell must finish its execution before Data Wrangler can be launched.
 
 ## Viewing summary statistics
 
-Upon the launch of Data Wrangler, a descriptive overview of the displayed DataFrame will be generated in the left-hand Summary panel, including information about the table’s dimensions and missing values. Selecting any column in Data Wrangler’s grid will prompt the Summary panel to update and display descriptive statistics about that column in particular. Quick insights about every column are automatically generated in its header.
+When Data Wrangler launches, it generates a descriptive overview of the displayed DataFrame in the left-hand Summary panel. This overview includes information about the table dimensions and missing values. Selection of any Data Wrangler grid column then prompts the Summary panel to update and display descriptive statistics about that specific column. In turn, that selection automatically generates quick insights about every column in its header.
 
 > [!TIP]
-> Column-specific statistics and visuals (in both the Summary panel and the column headers) depend on the column datatype. For instance, a binned histogram of a numeric column will not appear in its header if the column is not cast as a numeric type. Use the Operations panel to recast column types for the most accurate display.
+> Column-specific statistics and visuals (in both the Summary panel and the column headers) depend on the column datatype. For instance, a binned histogram of a numeric column will only appear in its header if the column is cast as a numeric type. Use the Operations panel to recast column types for the most accurate display.
 
 ## Browsing and applying operations
 
-A searchable list of data-cleaning steps can be found in the left-hand Operations panel. (A smaller selection of the same operations can also be accessed in each column’s contextual menu.) Selecting a data-cleaning step to be applied from the Operations panel will prompt you to select a target column and any necessary parameters for the data-cleaning step (for example, a new range of values if you're scaling a column). The results of that operation will be automatically previewed in Data Wrangler’s display grid, and the corresponding code will be automatically previewed in the history panel below the grid. To commit the previewed code, click “Apply” in either place. To get rid of it and try a new operation, click “Discard.”
+A searchable list of data-cleaning steps can be found in the left-hand Operations panel. (You can also access a smaller selection of the same operations in the contextual menu of each column.) From the Operations panel, selection of a data-cleaning step prompts you to select a target column, and any necessary parameters for the data-cleaning step. For example, the prompt could involve a new range of values to scale a column. The operation results automatically preview in the Data Wrangler display grid, and the corresponding code automatically previews in the history panel below the grid. To commit the previewed code, select “Apply” in either place. To get rid of the previewed code and try a new operation, select “Discard.”
 
-Once an operation is applied, Data Wrangler’s display grid and summary statistics will update to reflect the results. The previewed code will be added to a running list of committed operations in the left-hand Cleaning Steps panel.
+Once an operation is applied, the Data Wrangler display grid and summary statistics update to reflect the results. The previewed code appears in the running list of committed operations, located in the left-hand Cleaning Steps panel.
 
 > [!TIP]
-> The most recently applied step can always be undone using the trash icon displayed beside it in the Cleaning Steps panel.
+> You can always undo the most recently applied step with the trash icon, seen next to that step in the Cleaning Steps panel.
 
-The operations currently supported by Data Wrangler are summarized in the following table.
+The following table summarizes the operations that Data Wrangler currently supports:
 
 | **Operation** | **Description** |
 |---|---|
@@ -74,7 +74,7 @@ The operations currently supported by Data Wrangler are summarized in the follow
 | **Select column** | Choose one or more columns to keep, and delete the rest |
 | **Rename column** | Rename one or more columns |
 | **Drop missing values** | Remove rows with missing values |
-| **Drop duplicate rows** | Drops all rows that have duplicate values in one or more columns |
+| **Drop duplicate rows** | Drop all rows that have duplicate values in one or more columns |
 | **Fill missing values** | Replace cells with missing values with a new value |
 | **Find and replace** | Replace cells with an exact matching pattern |
 | **Group by column and aggregate** | Group by columns and aggregate results |
@@ -87,7 +87,7 @@ The operations currently supported by Data Wrangler are summarized in the follow
 
 ## Saving and exporting code
 
-The toolbar above Data Wrangler’s display grid provides options to save the code generated by the tool. The code can be copied to the clipboard or exported back to the notebook as a new function. Exporting the code will close Data Wrangler and add the new function to a code cell in the notebook. The cleaned DataFrame, reflected in the updated Data Wrangler display grid, can also be downloaded as a csv.
+The toolbar above the Data Wrangler display grid provides options to save the code that the tool generates. You can copy the code to the clipboard, or export it to the notebook as a new function. Export of the code closes Data Wrangler and add the new function to a code cell in the notebook. You can also download the cleaned DataFrame, reflected in the updated Data Wrangler display grid, as a csv.
 
 ## Next steps
 

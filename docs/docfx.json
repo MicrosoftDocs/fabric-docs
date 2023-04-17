@@ -2,10 +2,11 @@
   "build": {
     "content": [
       {
+        "src": "./",
         "files": [
           "**/*.md",
           "**/*.yml",
-          "**/*.gif"
+          "**/*.svg"
         ],
         "exclude": [
           "**/obj/**",
@@ -23,16 +24,16 @@
     ],
     "resource": [
       {
+        "src": "./",
         "files": [
           "**/*.png",
           "**/*.jpg",
-          "**/*.gif",
+          "**/*.jpeg",
           "**/*.svg",
-          "**/includes/media/**"
+          "**/*.gif"
         ],
         "exclude": [
           "**/obj/**",
-          "**/includes/**",
           "_themes/**",
           "_themes.pdf/**",
           "**/docfx.json",
@@ -43,16 +44,17 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "breadcrumb_path": "/trident/breadcrumb/toc.json",
-      "uhfHeaderId": "MSDocsHeader-MSPowerBI",
+      "breadcrumb_path": "/fabric/breadcrumb/toc.json",
+      "uhfHeaderId": "MSDocsHeader-Fabric",
       "extendBreadcrumb": true,
       "feedback_system": "None",
-      "ms.service": "analytics"
+      "ms.service": "azure",
+       "titleSuffix": "Microsoft Fabric"
    },
    "searchScope": [
-    ""
+    "Microsoft Fabric"
   ],
     "template": [],
-    "dest": "trident-docs"
+    "dest": "fabric-docs"
   }
 }

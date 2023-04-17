@@ -1,18 +1,16 @@
 ---
 title: SemPy overview
-description: Learn about SemPy's overall structure and purpose.
+description: Learn about SemPy's overall structure and purpose. SemPy is a new library in Azure Synapse vNext for working with tabular data.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
-ms.subservice: data-science
 ms.topic: conceptual
 ms.date: 02/10/2023
 ---
 
-# SemPy overview
+# SemPy in Microsoft Fabric overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 We introduce new ways for data scientists and ML engineers to structure their code and collaborate while performing common data science tasks by making use of the data semantics. SemPy is a new library in Azure Synapse vNext for working with tabular data. With SemPy, you can preserve subject matter experts' knowledge about data semantics in a standardized form to help make the analysis faster and with fewer errors.
 

@@ -1,18 +1,16 @@
 ---
-title: Train and evaluate time series forecasting model
-description: AI sample for training and evaluating a time series forecasting model.
-ms.reviewer: mopeakande
+title: Train and evaluate a time series forecasting model
+description: This is an AI sample for training and evaluating a time series forecasting model; we develop a program to forecast time series data that has seasonal cycles.
+ms.reviewer: ssalgado
 ms.author: narsam
 author: narmeens
-ms.subservice: data-science
 ms.topic: tutorial
 ms.date: 02/10/2023
 ---
 
-# Training and evaluating time series forecasting model
+# Training and evaluating a time series forecasting model in Microsoft Fabric
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this notebook, we'll develop a program to forecast time series data that has seasonal cycles. We'll use [NYC Property Sales data](https://www1.nyc.gov/site/finance/about/open-portal.page) range from 2003 to 2015 published by NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/).
 

@@ -1,18 +1,16 @@
 ---
 title: SemPy setup
-description: Learn how to set up SemPy.
+description: Learn how to set up SemPy from a new notebook in a premium workspace in the Azure Synapse vNext portal.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
-ms.subservice: data-science
 ms.topic: quickstart
 ms.date: 02/10/2023
 ---
 
-# SemPy setup
+# SemPy setup in Microsoft Fabric
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 You can use SemPy with Azure Synapse vNext, which comes preinstalled but it may be beneficial to update using *pip* so that you can use latest and greatest.
 
