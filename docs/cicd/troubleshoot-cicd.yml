@@ -55,7 +55,7 @@ sections:
           
               * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
           
-          * You're an admin of a [workspace](/power-bi/collaborate-share/service-create-the-new-workspaces.md).
+          * You're an admin of a [workspace](../get-started/create-workspaces.md). 
           
       - question: |
           Why can't I see the pipeline stage tag in my workspace?

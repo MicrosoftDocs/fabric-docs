@@ -12,7 +12,7 @@ ms.date: 04/10/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Learn the definitions of terms used in Microsoft Fabric, including terms specific to Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-time Analytics, Data Factory, Reflex, and Power BI.
+Learn the definitions of terms used in Microsoft Fabric, including terms specific to Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-time Analytics, Data Factory, and Power BI.
 
 ## General terms
 
@@ -58,11 +58,11 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Run:** A run corresponds to a single execution of model code. In [MLflow](https://mlflow.org/), tracking is based on experiments and runs.
 
-## Synapse Data Warehouse
+## Synapse data warehousing
 
 - **SQL Endpoint:** The SQL Endpoint on the lakehouse allows a user to transition from the Lake view of the lakehouse (which supports data engineering and Apache Spark) to the SQL experiences that a data warehouse provides, supporting Transact-SQL (T-SQL). For more information, see [SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint).
 
-- **Warehouse:** The warehouse functionality is a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Synapse data warehouse](../data-warehouse/data-warehousing.md#synapse-data-warehouse).
+- **Synapse Data Warehouse:** The Synapse Data Warehouse functionality is a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Synapse data warehouse](../data-warehouse/data-warehousing.md#synapse-data-warehouse).
 
 ## Synapse Real-time Analytics
 

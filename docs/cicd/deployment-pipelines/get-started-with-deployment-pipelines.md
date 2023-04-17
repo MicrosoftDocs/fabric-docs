@@ -30,7 +30,7 @@ You'll be able to access the deployment pipelines feature, if the following cond
 
   * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
 
-* You're an admin of a Premium [workspace](/power-bi/collaborate-share/service-create-the-new-workspaces.md).
+* You're an admin of a Premium [workspace](../../get-started/create-workspaces.md).
 
 >[!NOTE]
 > You'll also be able to see the deployment pipelines button, if you previously created a pipeline, or if a pipeline was shared with you.
@@ -53,7 +53,7 @@ To create a pipeline from the deployment pipelines tab, do the following:
 
 ### Create a pipeline from a workspace
 
-You can create a pipeline from an existing workspace, providing you're the admin of a [workspace](/power-bi/collaborate-share/service-create-the-new-workspaces.md).
+You can create a pipeline from an existing workspace, providing you're the admin of a [workspace](../../get-started/create-workspaces.md)
 
 1. From the workspace, select **Create a pipeline**.
 
