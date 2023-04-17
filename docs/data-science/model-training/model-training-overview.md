@@ -31,8 +31,6 @@ The Synapse Fabric runtime for Apache Spark includes several popular, open-sourc
   
 - [PyTorch](https://pytorch.org/) & [Tensorflow](https://www.tensorflow.org/) are powerful Python deep learning libraries. You can use these libraries to build single-machine models by setting the number of executors on your pool to zero. Even though Apache Spark is not functional under this configuration, it is a simple and cost-effective way to create single-machine models.
 
-You can learn more about the available libraries and related versions by viewing the published [Synapse Fabric runtime for Apache Spark](../spark/apache-spark-version-support.md).
-
 ## SynapseML
 
  [SynapseML](https://microsoft.github.io/SynapseML/) (previously known as MMLSpark), is an open-source library that simplifies the creation of massively scalable machine learning (ML) pipelines. This library is designed to make data scientists more productive on Spark, increase the rate of experimentation, and leverage cutting-edge machine learning techniques, including deep learning, on large datasets.
