@@ -22,7 +22,7 @@ For information on connecting to the [!INCLUDE [fabric-se](includes/fabric-se.md
 
 [!INCLUDE [product-name](../includes/product-name.md)] permissions and granular SQL permissions work together to govern Warehouse access and the user permissions once connected. 
 - Warehouse connectivity is dependent on being granted the [!INCLUDE [product-name](../includes/product-name.md)] Read permission, at a minimum, for the Warehouse.
-- [!INCLUDE [product-name](../includes/product-name.md)] artifact permissions enable the ability to provide a user with SQL permissions, without needing to explicity grant those permissions within SQL.
+- [!INCLUDE [product-name](../includes/product-name.md)] item permissions enable the ability to provide a user with SQL permissions, without needing to explicity grant those permissions within SQL.
 -  [!INCLUDE [product-name](../includes/product-name.md)] workspace roles provide [!INCLUDE [product-name](../includes/product-name.md)] permissions for all warehouses within a workspace.
 -  Granular user permissions can be further managed via T-SQL.
 

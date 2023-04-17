@@ -1,5 +1,5 @@
 ---
-title: Item permissions
+title: Manage item permissions
 description: Learn about the permissions that can be assigned to Synapse Data Warehouse and the SQL Endpoint in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: kedodd
@@ -15,10 +15,10 @@ ms.search.form: Warehouse item permissions, Workspace permissions
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article explains how to manage individual item permissions in [!INCLUDE [product-name](../includes/product-name.md)].
+This article explains how to manage individual item permissions in [!INCLUDE [product-name](../includes/product-name.md)] using T-SQL commands.
 
-For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)], the following permissions can be assigned.
-   
+For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)], the following permissions can be assigned:
+
 | Item permission   |  Description |
 |---|---|
 |**Read**|Allows the user to connect to the Synapse data warehouse's SQL connection string.|

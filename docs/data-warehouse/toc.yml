@@ -39,7 +39,7 @@ items:
     href: security.md
   - name: Workspace roles
     href: workspace-roles.md
-  - name: Artifact permissions
+  - name: Item permissions
     href: item-permissions.md    
   - name: SQL granular permissons
     href: sql-granular-permissions.md  
