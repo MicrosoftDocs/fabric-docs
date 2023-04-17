@@ -11,7 +11,7 @@ ms.search.form: product-kusto
 
 # Tutorial: Use Apache Spark to query a KQL Database
 
-Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL Database using Apache Spark. This tutorial uses pre-created datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
+Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL Database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
 Specifically, you learn how to:
 
@@ -105,7 +105,7 @@ Select the **play** button to run the following cells, or select the cell and pr
 
     :::image type="content" source="media/spark-connector/code-cell3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command."  lightbox="media/spark-connector/code-cell3.png":::
 
-Your database will now have data.
+Your database now has data.
 
 ## 5- Run the notebook
 
