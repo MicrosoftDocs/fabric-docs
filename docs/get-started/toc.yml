@@ -5,18 +5,24 @@ items:
   items:
   - name: Get started with Microsoft Fabric
     href: ../placeholder.md
+  - name: Fabric terminology
+    href: fabric-terminology.md
 - name: Get started
   items:
   - name: linktext1
     href: ../placeholder.md
   - name: linktext2
     href: ../placeholder.md
-- name: Feature 1
+- name: Workspaces
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Workspaces
+    href: workspaces.md
+  - name: Create a workspace
+    href: create-workspaces.md
+  - name: Roles in workspaces
+    href: roles-workspaces.md
+  - name: Give users access to workspaces
+    href: give-access-workspaces.md
 - name: Feature 2
   items:
   - name: linktext2

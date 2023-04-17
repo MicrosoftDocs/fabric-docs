@@ -1,6 +1,6 @@
 ---
 title: SemPy next steps
-description: Find resources for learning more about SemPy.
+description: Find resources for learning more about SemPy, including deep dives and where to discover the capabilities of SemPy.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 02/10/2023
 ---
 
-# SemPy next steps
+# SemPy in Microsoft Fabric next steps
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

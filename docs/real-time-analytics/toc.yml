@@ -20,6 +20,8 @@ items:
       href: create-database.md
     - name: Database Management
       href: database-management.md
+    - name: One logical copy (shortcut)
+      href: onelake-mirroring.md
   - name: Tables
     items:
     - name: Create an empty table
