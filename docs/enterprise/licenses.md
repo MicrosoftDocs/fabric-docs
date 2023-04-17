@@ -9,7 +9,7 @@ ms.date: 03/01/2023
 
 # Microsoft Fabric licenses
 
-Microsoft Fabric is a platform that allows users to create and share Microsoft Fabric items such as **??xxx??**, **??yyy??**, **??zzz??**, and more. Microsoft Fabric users can collaborate with each other to create new content and consume shared content. To share content and collaborate, users need a [Pro license](tbd). If you're purchasing a Microsoft Fabric license, ensure you purchase at least one Power BI Pro license for your organization.
+Microsoft Fabric is a platform that allows users to create and share data across . Microsoft Fabric users can collaborate with each other to create new content and consume shared content. To share content and collaborate, users need a [Pro license](tbd). If you're purchasing a Microsoft Fabric license, ensure you purchase at least one Pro license for your organization.
 
 Microsoft Fabric resides on a designated capacity. The size of the capacity determines the amount of computation power your organization gets. Before you purchase Microsoft Fabric, review the the [capacity and SKUs](#capacity-and-skus) section, to establish which capacity is right for your organization.
 
