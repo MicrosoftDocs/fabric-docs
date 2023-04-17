@@ -45,13 +45,13 @@ Use the Overview page to find out:
 
 * View activities in your organization by users or top active user
 
-For example, if you're working in a large retail organization, you may want to use the overview page to find out what capacities were utilized during December. You use the *Date* fields to filter the results for December, and notice that the *sales and marketing* capacity has almost 1,000 activities, while other capacities have under 200 activities each. You decide to further investigate this, and go to the [Analysis](#analysis) page to try and understand why this is happening.
+For example, if you're working in a large retail organization, you may want to use the overview page to find out what capacities were utilized during December. You use the *Date* fields to filter the results for December, and notice that the *sales and marketing* capacity has almost 1,000 activities, while other capacities have under 200 activities each. You decide to further investigate this, and go to the [Analysis](#analysis-page) page to try and understand why this is happening.
 
 ### Analysis page
 
 In the Analysis page, you can see a daily count of activities and users by date. It automatically aggregates data and enables drilling down into dimensions in any order. Use the *decomposition tree*, to decompose the activities according to *product*, *item type*, *action* and *name*.
 
-To view the details of a specific activity, drill through to the [activity details](#activity-details):
+To view the details of a specific activity, drill through to the [activity details](#activity-details-page):
 
 1. Right-click the activity you want to drill through from.
 
@@ -59,11 +59,11 @@ To view the details of a specific activity, drill through to the [activity detai
 
 3. Select *Activity Details*.
 
-Continuing the example from the [Overview](#overview) page, you turn to the Analysis page to understand why in December, the *sales and marketing* capacity has almost five times more activities than any other capacity. Using the *Date* fields, you filter the results for December. By reviewing the *Decomposition tree*, you see that almost all of the activities are for viewing a Power BI report. You decide to drill through to the [Activity details](#activity-details) page to understand which report is being extensively viewed.
+Continuing the example from the [Overview](#overview-page) page, you turn to the Analysis page to understand why in December, the *sales and marketing* capacity has almost five times more activities than any other capacity. Using the *Date* fields, you filter the results for December. By reviewing the *Decomposition tree*, you see that almost all of the activities are for viewing a Power BI report. You decide to drill through to the [Activity details](#activity-details-page) page to understand which report is being extensively viewed.
 
 ### Activity Details page
 
-The Activity Details page shows information related to specific or multiple capacity or workspaces activities. You can only get to the *activity details* page by drilling through from the [overview](#overview) or [Analysis](#analysis) pages. To drill through, right-click a result and then select After drilling through, you see the following information for the selected activities:
+The Activity Details page shows information related to specific or multiple capacity or workspaces activities. You can only get to the *activity details* page by drilling through from the [overview](#overview-page) or [Analysis](#analysis-page) pages. To drill through, right-click a result and then select After drilling through, you see the following information for the selected activities:
 
 * **Creation time** - The time the activity was registered
 
@@ -83,7 +83,7 @@ The Activity Details page shows information related to specific or multiple capa
 
 * **Total of activities** - The number of times the activity was registered
 
-To conclude the example given in the [overview](#overview) and [Analysis](#analysis) pages, after drilling through from the *View Reports* log, in the [Analysis](#analysis) page, you realize that a report titled *unclosed deals* has been heavily reviewed during December. After further inquiries, you learn that this is a new report and that many people in the organization reviewed in during December, to try and understand how sales could have been improved.
+To conclude the example given in the [overview](#overview-page) and [Analysis](#analysis-page) pages, after drilling through from the *View Reports* log, in the [Analysis](#analysis-page) page, you realize that a report titled *unclosed deals* has been heavily reviewed during December. After further inquiries, you learn that this is a new report and that many people in the organization reviewed in during December, to try and understand how sales could have been improved.
 
 ## Considerations and limitations
 
