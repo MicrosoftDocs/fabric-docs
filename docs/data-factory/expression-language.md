@@ -110,7 +110,6 @@ These system variables can be referenced anywhere in the pipeline.
 | @pipeline().DataFactory |Name of the data  or Synapse workspace the pipeline run is running in |
 | @pipeline().Pipeline |Name of the pipeline |
 | @pipeline().RunId |ID of the specific pipeline run |
-| @pipeline().TriggerType |The type of trigger that invoked the pipeline (for example, `ScheduleTrigger`, `BlobEventsTrigger`). For a list of supported trigger types, see [Pipeline execution and triggers](concepts-pipeline-execution-triggers.md). A trigger type of `Manual` indicates that the pipeline was triggered manually. |
 | @pipeline().TriggerId|ID of the trigger that invoked the pipeline |
 | @pipeline().TriggerName|Name of the trigger that invoked the pipeline |
 | @pipeline().TriggerTime|Time of the trigger run that invoked the pipeline. This is the time at which the trigger **actually** fired to invoke the pipeline run, and it may differ slightly from the trigger's scheduled time.  |
