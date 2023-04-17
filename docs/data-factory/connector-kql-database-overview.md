@@ -22,7 +22,6 @@ This KQL Database connector is supported in Data Factory for [!INCLUDE [product-
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | User Auth |
 | **Lookup activity** | None | User Auth |
-| **Dataflow Gen2 (source/destination)** |  | Placeholder |
 
 ## Next steps
 

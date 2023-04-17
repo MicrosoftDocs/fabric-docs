@@ -28,7 +28,7 @@ For the configuration of each tab under copy activity, see the following section
 
 ### General
 
-For **General** tab configuration, go to General.
+For **General** tab configuration, go to [General](activity-overview.md#general-settings).
 
 ### Source
 
@@ -39,8 +39,8 @@ The following properties are supported for KQL Database under the **Source** tab
 The following properties are **required**:
 
 - **Data store type**: Select **Workspace**.
-- **Workspace data store type**: Select **KQLDatabase** from the data store type list.
-- **KQL Database**: Select an existing KQLDatabase from the workspace.
+- **Workspace data store type**: Select **KQL Database** from the data store type list.
+- **KQL Database**: Select an existing KQL Database from the workspace.
 - **Use query**: Select **Tables** or **Query**.
 
     - **Tables**: The name of the table that the linked service refers to.
@@ -68,14 +68,14 @@ The following properties are supported for KQL Database under the **Destination*
 The following properties are **required**:
 
 - **Data store type**: Select **Workspace**.
-- **Workspace data store type**: Select **KQLDatabase** from the data store type list.
-- **KQL Database**: Select an existing KQLDatabase from the workspace.
+- **Workspace data store type**: Select **KQL Database** from the data store type list.
+- **KQL Database**: Select an existing KQL Database from the workspace.
 - **Table**: The name of the table that the linked service refers to.
 
 Under **Advanced**, you can specify the following fields:
 
-- **Ingestion mapping name**: The name of a mapping which was pre-created and assigned to Kusto Sink table in advance.
-- **Additional properties**: A property bag which can be used for specifying any of the ingestion properties which aren't being set already by the Kusto Sink. Specifically, it can be useful for specifying ingestion tags.
+- **Ingestion mapping name**: The name of a mapping which was pre-created and assigned to Kusto Destination table in advance.
+- **Additional properties**: A property bag which can be used for specifying any of the ingestion properties which aren't being set already by the Kusto Destination. Specifically, it can be useful for specifying ingestion tags.
 
 :::image type="content" source="./media/connector-kql-database/additional-properties.png" alt-text="Screenshot showing additional properties.":::
 
@@ -111,5 +111,5 @@ To learn more information about copy activity in KQL Database, see the following
 |**Workspace data store type** |Select **KQL Database** from the data store type list.|**KQL Database**|Yes|/|
 |**KQL Database** | Select an existing KQLDatabase from the workspace.|\<your KQL Database>|Yes |/|
 |**Table** |The name of the table that the linked service refers to.|\<your table name>|Yes|table|
-|**Ingestion mapping name** | The name of a mapping which was pre-created and assigned to Kusto Sink table in advance.|\<your ingestion mapping name>|Yes|ingestionMappingName|
-|**Additional properties** | A property bag which can be used for specifying any of the ingestion properties which aren't being set already by the Kusto Sink. Specifically, it can be useful for specifying ingestion tags.|- Name<br> - Type<br> - Value|Yes|additionalProperties:<br> -name<br> -type:<br>Array<br>Object<br>Node<br>  -value|
+|**Ingestion mapping name** | The name of a mapping which was pre-created and assigned to Kusto Destination table in advance.|\<your ingestion mapping name>|Yes|ingestionMappingName|
+|**Additional properties** | A property bag which can be used for specifying any of the ingestion properties which aren't being set already by the Kusto Destination. Specifically, it can be useful for specifying ingestion tags.|- Name<br> - Type<br> - Value|Yes|additionalProperties:<br> -name<br> -type:<br>Array<br>Object<br>Node<br>  -value|
