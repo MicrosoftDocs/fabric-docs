@@ -1,14 +1,14 @@
 ---
 title: SemPy creating geo location plots
-description: Learn how to create geo location plots with SemPy.
+description: Learn how to create geo location plots with SemPy, including an example that tests whether non-relevant attributes are ignored.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
-ms.topic: how-to 
+ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
-# Creating geo location plots
+# Creating geo location plots in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
