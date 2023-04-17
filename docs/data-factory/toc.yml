@@ -105,6 +105,12 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
+    - name: KQL Database
+      items:
+      - name: Overview
+        href: connector-kql-database-overview.md
+      - name: Configure in copy activity
+        href: connector-kql-database-copy-activity.md
     - name: Lakehouse
       items:
       - name: Overview
