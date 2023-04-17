@@ -41,16 +41,20 @@ items:
         href: ./model-training/fabric-sparkml-tutorial.md
       - name: Train models with Scikit-learn
         href: train-models-scikit-learn.md
-- name: Model and Experiment tracking
+- name: Track models and experiments
   items:
   - name: Machine learning experiment
     href: machine-learning-experiment.md
   - name: Machine learning model
     href: machine-learning-model.md
-  - name: Train models with PyTorch
-    href: train-models-pytorch.md   
-  - name: Score models with PREDICT
-    href: model-scoring-predict.md
+  - name: Fabric autologging
+    href: mlflow-autologging.md
+  - name: How-to guides
+    items:
+    - name: Train models with PyTorch
+      href: train-models-pytorch.md   
+    - name: Score models with PREDICT
+      href: model-scoring-predict.md
 - name: Use R
   items:
   - name: R overview
