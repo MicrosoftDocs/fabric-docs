@@ -11,7 +11,7 @@ ms.search.form: Lakehouse SQL Security
 
 # Lakehouse SQL endpoint security principles
 
-## Wokrspace permissions and SQL endpoint security
+## Workspace permissions and SQL endpoint security
 
 ## Next steps
 

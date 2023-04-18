@@ -1,6 +1,6 @@
 ---
 title: Direct lake mode and PBI reporting
-description: Learn how to build PBI report reports on top of lakehouse data.
+description: Learn how to build PBI reports on top of lakehouse data.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
