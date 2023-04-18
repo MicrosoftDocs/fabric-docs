@@ -15,10 +15,23 @@ ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspac
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides two distinct data warehousing experiences. The **[!INCLUDE[fabric-se](includes/fabric-se.md)]** in [!INCLUDE [product-name](../includes/product-name.md)] enables data engineers to build a relational layer on top of physical data in the [Lakehouse](../data-engineering/lakehouse-overview.md) and expose it to analysis and reporting tools using T-SQL/TDS end-point. **[!INCLUDE[fabric-dw](includes/fabric-dw.md)]** in [!INCLUDE [product-name](../includes/product-name.md)] provides a "traditional", transactional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse.
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] introduces a lake centric data warehouse experience that encompasses all the aspects of an enterprise grade distributed query processing engine through a SaaS experience that are tightly integrated with PowerBI for easy analysis and reporting. Data in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] converges the world of data lakes and warehouse, greatly simplifying an organizations investment in their analytics estate by converging the two. Data Warehousing workloads benefit from the rich capabilities of the SQL engine over an open data format, enabling customers to focus on data preparation, analysis and reporting over a single copy of their data stored in their Microsoft OneLake. 
 
-> [!IMPORTANT]
-> This article provides a comprehensive overview of two distinct data warehousing experiences.
+Data in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]is stored in the Parquet/Delta format, enabling engine interoperability which can be leveraged through other Microsoft Fabric workloads such as Spark, Pipelines, Power BI, Azure Data Explorer and more. In addition to cross engine interoperability, customers reap benefits such as ACID transactions over parquet files stored in their lake. 
+
+Compute and storage are decoupled in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] which enables customers to scale near instantaneously to meet the demands of their business. When a query is issued, resources are provisioned to execute the query as fast as possible utilizing the distributed query processing engine, which is complete with a cost-based selection of distributed execution plans that make up the query optimizer. 
+
+Data can be [ingested](../ingest-data.md) into the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] through Pipelines, Dataflows, cross database querying or the COPY INTO command. Customers benefit from a low code/no code experience which is appropriate for any skill level - be it a citizen developer through to an advanced data engineer. Once ingested, data can be analyzed by multiple business groups through functionality such as sharing and cross database querying. Time to insights is expedited through a fully integrated BI experience through graphical data modeling easy to use web experience for querying within the Synapse Data Warehouse Editor. 
+
+## Synapse Data Warehouse
+
+The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. 
+
+This warehouse is displayed in the [!INCLUDE [product-name](../includes/product-name.md)] portal with a warehouse icon, however under the **Type** column, you see the type listed as Warehouse. 
+
+For more information on the warehouse in [!INCLUDE [product-name](../includes/product-name.md)], see [Synapse Data Warehouse](warehouse.md).
+
+To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md).
 
 ## SQL Endpoint
 
@@ -28,21 +41,15 @@ The [!INCLUDE [fabric-se](includes/fabric-se.md)] on the [Lakehouse](../data-eng
 - Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
 - Manage permissions on the objects.
 
+The difference between a [!INCLUDE [product-name](../includes/product-name.md)] Synapse Data Warehouse and a SQL Endpoint is that a Synapse Data Warehouse supports ACID transactions with both DDL and DML support. The SQL Endpoint is a read only SQL experience over an existing Lakehouse. Data modification is performed within the Lakehouse experience through Spark Notebooks. 
+
+In a [!INCLUDE [product-name](../includes/product-name.md)] workspace, a SQL Endpoint is named 'SQL Endpoint' under the <b>Type</b> column. 
+
 For more information on the [!INCLUDE [fabric-se](includes/fabric-se.md)] for the Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)], see [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md).
 
 To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)] on the Lakehouse, see [Get started with the Lakehouse in Microsoft Fabric](get-started-sql-endpoint.md).
 
 For more information on loading your [Lakehouse](../data-engineering/lakehouse-overview.md), see [Get data experience for Lakehouse](../data-engineering/load-data-lakehouse.md). 
-
-## Synapse Data Warehouse
-
-The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. 
-
-This warehouse is displayed in the [!INCLUDE [product-name](../includes/product-name.md)] portal with a warehouse icon, however under the **Type** column, you see the type listed as Warehouse. 
-
-For more information on the warehouse in [!INCLUDE [product-name](../includes/product-name.md)], see [Synapse Data Warehouse](warehouse.md).
-
-To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md).
 
 ## Use cases and scenarios
 
