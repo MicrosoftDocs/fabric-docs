@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: Microsoft Fabric overview
+  - name: What is Microsoft Fabric?
     href: microsoft-fabric-overview.md
   - name: Fabric terminology
     href: fabric-terminology.md
