@@ -1,6 +1,6 @@
 ---
-title: Fabric overview
-description: Microsoft Fabric provides a one-stop shop for all the analytical needs for every enterprise. Learn more.
+title: What is Microsoft Fabric
+description: Microsoft Fabric is a one-stop shop for all the analytical needs of every enterprise. It covers the complete spectrum of services including data movement, data lake, data engineering, data integration and data science, real time analytics, and business intelligence.
 ms.reviewer: sngun
 ms.author: gesaur
 author: gsaurer
@@ -8,31 +8,35 @@ ms.topic: overview
 ms.date: 04/15/2023
 ---
 
-# Microsoft Fabric overview
+# What is Microsoft Fabric?
 
-Microsoft Fabric provides a one-stop shop for all the analytical needs for every enterprise. It covers the complete spectrum of services including data movement, data lake, data engineering, data integration and data science, real time analytics, and business intelligence. With Microsoft Fabric, there's no need to stitch together different services from multiple vendors. Instead, the customer enjoys an end-to-end, highly integrated, single comprehensive product that is easy to understand, onboard, create and operate. There's no other product on the market that offers the breadth, depth, and level of integration that Microsoft Fabric offers. Microsoft Fabric architecture is based on Software as a Service (SaaS) foundation instead of traditional Platform as a Service (PaaS) to take simplicity and integration to the next level.
+Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place.
 
-## SaaS Foundation
+With Fabric, you won't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs.
 
-Microsoft Fabric brings together new and existing components from Power BI, Synapse, and ADX in a single integrated environment and exposes them in different experiences that are tailor made for users.  
+Fabric is unparalleled in the market, offering a level of breadth, depth, and integration that is unmatched. The platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level.
+
+## SaaS foundation
+
+Microsoft Fabric brings together new and existing components from Power BI, Azure Synapse, and Azure Data Explorer into a single integrated environment. These components are then presented in various customized user experiences.
 
 :::image type="content" source="media\microsoft-fabric-overview\saas-foundation.png" alt-text="Visual representation of the software as a service foundation beneath the different workloads of Microsoft Fabric." lightbox="media\microsoft-fabric-overview\saas-foundation.png":::
 
 By bringing together these workloads (Data Engineering, Data Factory, Data Science, Data Warehousing, Kusto, and Power BI) on the common SaaS foundation, Microsoft Fabric provides the following benefits to customers:
 
-- The broadest set of deeply integrated analytics in the industry
-- Shared experiences that are familiar and easy to learn across all the products
-- All developers can easily discover and reuse all assets
-- A unified data lake, allowing customers to keep the data where it is while using the analytics tools of choice
-- Centralized administration and governance across all workloads
+- An extensive range of deeply integrated analytics in the industry.
+- Shared experiences across wrokloads that are familiar and easy to learn.
+- Developers can easily access and and reuse all assets.
+- A unified data lake that allows you to retain the data where it is while using your preferred analytics tools.
+- Centralized administration and governance across all workloads.
 
-The Microsoft Fabric SaaS experience ensures that all the data and all the services are prewired together. IT teams are able to configure core enterprise capabilities centrally and permissions are applied automatically across all the underlying services. Data sensitivity labels are inherited automatically across the items in the suite.
+With the Microsoft Fabric SaaS experience, all the data and the services are seamlessly integrated. IT teams can centrally configure core enterprise capabilities and permissions are automatically applied across all the underlying services. Additionally, data sensitivity labels are inherited automatically across the items in the suite.
 
-Microsoft Fabric enables creators to focus on doing their best work without needing to integrate, manage, or even understand the underlying infrastructure powering the experience.
+Microsoft Fabric allows creators to concentrate on producing their best work, freeing them from the need to integrate, manage, or understand the underlying infrastructure that supports the experience.
 
-## The parts of Microsoft Fabric
+## Components of Microsoft Fabric
 
-Microsoft Fabric provides the most comprehensive set of analytics workloads designed from the ground up to work together seamlessly. Each workload needs to target a specific persona and a specific task. Microsoft Fabric includes industry-leading workloads in the following categories for an end-to-end analytical need.  
+Microsoft Fabric offers the comprehensive set of analytics workloads designed to work together seamlessly. Each workload is tailored to a specific persona and a specific task. Microsoft Fabric includes industry-leading workloads in the following categories for an end-to-end analytical need.  
 
 :::image type="content" source="media\microsoft-fabric-overview\workload-menu.png" alt-text="Screenshot of the Microsoft Fabric menu of workloads." lightbox="media\microsoft-fabric-overview\workload-menu.png":::
 
