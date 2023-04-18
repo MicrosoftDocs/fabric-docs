@@ -1,5 +1,5 @@
 ---
-title: Synapse Data Warehouse in Microsoft Fabric
+title: Synapse Data Warehouse
 description: Learn more about Synapse Data Warehouse in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
