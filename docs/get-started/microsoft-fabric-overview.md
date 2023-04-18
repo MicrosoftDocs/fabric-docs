@@ -14,8 +14,6 @@ Microsoft Fabric is an all-in-one analytics solution for enterprises that covers
 
 With Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs.
 
-The platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level.
-
 ## SaaS foundation
 
 Microsoft Fabric brings together new and existing components from Power BI, Azure Synapse, and Azure Data Explorer into a single integrated environment. These components are then presented in various customized user experiences.
