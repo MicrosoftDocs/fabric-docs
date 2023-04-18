@@ -5,10 +5,6 @@ items:
   items: 
   - name: Data warehousing
     href: data-warehousing.md
-  - name: SQL Endpoint
-    href: sql-endpoint.md
-  - name: Synapse Data Warehouse
-    href: warehouse.md
 - name: Get started 
   items: 
   - name: SQL Endpoint on the Lakehouse
