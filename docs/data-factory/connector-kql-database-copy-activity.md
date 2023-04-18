@@ -43,13 +43,13 @@ The following properties are **required**:
 - **KQL Database**: Select an existing KQL Database from the workspace.
 - **Use query**: Select **Tables** or **Query**.
 
-    - **Tables**: The name of the table that the linked service refers to.
+    - **Tables**: The name of the table that the connection refers to.
 
-    :::image type="content" source="./media/connector-kql-database/table.png" alt-text="Screenshot showing table.":::
+        :::image type="content" source="./media/connector-kql-database/table.png" alt-text="Screenshot showing table.":::
 
     - **Query**: Specify the query to retrieve data.
 
-    :::image type="content" source="./media/connector-kql-database/query.png" alt-text="Screenshot showing query.":::
+        :::image type="content" source="./media/connector-kql-database/query.png" alt-text="Screenshot showing query.":::
 
 Under **Advanced**, you can specify the following fields:
 
@@ -70,14 +70,14 @@ The following properties are **required**:
 - **Data store type**: Select **Workspace**.
 - **Workspace data store type**: Select **KQL Database** from the data store type list.
 - **KQL Database**: Select an existing KQL Database from the workspace.
-- **Table**: The name of the table that the linked service refers to.
+- **Table**: The name of the table that the connection refers to.
 
 Under **Advanced**, you can specify the following fields:
 
-- **Ingestion mapping name**: The name of a mapping which was pre-created and assigned to Kusto Destination table in advance.
-- **Additional properties**: A property bag which can be used for specifying any of the ingestion properties which aren't being set already by the Kusto Destination. Specifically, it can be useful for specifying ingestion tags.
+- **Ingestion mapping name**: The name of a mapping which was pre-created and assigned to KQL Database destination table in advance.
+- **Additional properties**: A property bag which can be used for specifying any of the ingestion properties which aren't being set already by the KQL Database destination. Specifically, it can be useful for specifying ingestion tags.
 
-:::image type="content" source="./media/connector-kql-database/additional-properties.png" alt-text="Screenshot showing additional properties.":::
+    :::image type="content" source="./media/connector-kql-database/additional-properties.png" alt-text="Screenshot showing additional properties.":::
 
 ### Mapping
 
@@ -97,8 +97,8 @@ To learn more information about copy activity in KQL Database, see the following
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type** |Select **KQL Database** from the data store type list.|**KQL Database**|Yes|/|
-|**KQL Database** | Select an existing KQLDatabase from the workspace.|\<your KQL Database>|Yes |/|
-|**Use query** |Select **Tables** or **Query**.| •**Tables**<br>  •**Query** |No| tableName<br> query|
+|**KQL Database** | Select an existing KQL Database from the workspace.|\<your KQL Database>|Yes |/|
+|**Use query** |Select **Tables** or **Query**.| •**Tables**<br>  •**Query** |No| table<br> query|
 |**Query timeout** |Specify the wait time before the query request times out. Default is 10 minutes (00:10:00).|timespan|No|queryTimeout|
 |**No truncation**|Indicates whether to truncate the returned result set. By default result is truncated after 500,000 records or 64 MB. Truncation is strongly recommended for a proper behavior of the activity.|select or unselect|No|noTruncation|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|- Name<br>- Value|No|additionalColumns:<br>- name<br>- value |
@@ -109,7 +109,7 @@ To learn more information about copy activity in KQL Database, see the following
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type** |Select **KQL Database** from the data store type list.|**KQL Database**|Yes|/|
-|**KQL Database** | Select an existing KQLDatabase from the workspace.|\<your KQL Database>|Yes |/|
-|**Table** |The name of the table that the linked service refers to.|\<your table name>|Yes|table|
-|**Ingestion mapping name** | The name of a mapping which was pre-created and assigned to Kusto Destination table in advance.|\<your ingestion mapping name>|Yes|ingestionMappingName|
-|**Additional properties** | A property bag which can be used for specifying any of the ingestion properties which aren't being set already by the Kusto Destination. Specifically, it can be useful for specifying ingestion tags.|- Name<br> - Type<br> - Value|Yes|additionalProperties:<br> -name<br> -type:<br>Array<br>Object<br>Node<br>  -value|
+|**KQL Database** | Select an existing KQL Database from the workspace.|\<your KQL Database>|Yes |/|
+|**Table** |The name of the table that the connection refers to.|\<your table name>|Yes|table|
+|**Ingestion mapping name** | The name of a mapping which was pre-created and assigned to KQL Database destination table in advance.|\<your ingestion mapping name>|Yes|ingestionMappingName|
+|**Additional properties** | A property bag which can be used for specifying any of the ingestion properties which aren't being set already by the KQL Database destination. Specifically, it can be useful for specifying ingestion tags.|- Name<br> - Type<br> - Value|Yes|additionalProperties|
