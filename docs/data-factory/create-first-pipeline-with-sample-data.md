@@ -35,7 +35,7 @@ To get started, you must complete the following prerequisites:
 1. Select **Data pipeline** and then input a pipeline name create a new pipeline.
 
    :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
-  :::image type="content" source="media/create-first-pipeline/new-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+  :::image type="content" source="media/create-first-pipeline/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
 ## Copy data using pipeline
 
