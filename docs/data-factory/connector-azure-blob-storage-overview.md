@@ -16,7 +16,6 @@ ms.custom: template-how-to
 
 This Azure Blob Storage connector is supported in [!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory with the following capabilities.
 
-
 ## Supported capabilities
 
 | Supported capabilities | Gateway | Authentication |
@@ -24,9 +23,9 @@ This Azure Blob Storage connector is supported in [!INCLUDE [product-name](../in
 | **Copy activity (source/destination)** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
 | **Lookup activity** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
 | **GetMetadata activity** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
-| **Dataflow Gen2 (source/destination)** | On-premises data gateway<br/>Virtual network data gateway | Anonymous<br/>Key<br/>Shared Access Signature (SAS)<br/>Organizational account |
 
 ## Next steps
 
 - [How to create Azure Blob connection](connector-azure-blob-storage.md)
 - [Copy data in Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)
+- [Connect to Azure Blob Storage in dataflows](connector-azure-blob-storage-dataflows.md)

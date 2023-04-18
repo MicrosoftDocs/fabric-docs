@@ -29,7 +29,7 @@ The Azure Blob Storage connector supports the following authentication types for
 |Shared Access Signature (SAS)| √| √|
 
 >[!Note]
->For the Azure Blob Storage connection of Dataflow Gen2, go to [Connect to Azure Blob Storage in dataflows](./connector-azure-blob-storage-dataflows.md).
+>For the Azure Blob Storage connection of Dataflow Gen2, go to [Connect to Azure Blob Storage in dataflows][def].
 
 ## Prerequisites
 
@@ -43,13 +43,13 @@ To get started, you must have following prerequisites:
 
 1. From the page header in Data Integration service, select **Settings** ![Settings gear icon.](./media/connector-common/settings.png) > **Manage connections and gateways.**
 
-   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
+   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open Manage gateway.":::
 
 2. Select **New** at the top of the ribbon to add a new data source.
 
     :::image type="content" source="./media/connector-common/add-new-connection.png" alt-text="Screenshot showing the '+ new' page." lightbox="./media/connector-common/add-new-connection.png":::
 
-    The **New connection** pane will show up on the left side of the page.
+    The **New connection** pane is then displayed on the left side of the page.
 
     :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the 'New connection' pane." lightbox="./media/connector-common/new-connection-pane.png":::
 
@@ -141,35 +141,35 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The following connector properties in the table are supported in data pipeline copy and Dataflow Gen2.
+The following table contains connector properties that are supported in data pipeline creation.
 
-|Name|Description|Required|Property|Copy/<br/>Dataflow Gen2|
+|Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
-|**Connection name**|A name for your connection.|Yes| |✓/✓|
-|**Connection type**|Select a type for your connection. Select **Azure Blob Storage**.|Yes| |✓/✓|
-|**Account**|Azure Blob Storage account name.|Yes||✓/✓|
-|**Domain**|The domain of Azure Blob Storage: `blob.core.windows.net`.|Yes| |✓/✓|
+|**Connection name**|A name for your connection.|Yes| |✓|
+|**Connection type**|Select a type for your connection. Select **Azure Blob Storage**.|Yes| |✓|
+|**Account**|Azure Blob Storage account name.|Yes||✓|
+|**Domain**|The domain of Azure Blob Storage: `blob.core.windows.net`.|Yes| |✓|
 |**Authentication**|Go to [Authentication](#authentication). |Yes||Go to [Authentication](#authentication).|
-|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**.|Yes||✓/✓|
+|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**.|Yes||✓|
 
 ### Authentication
 
 The following properties in the table are the supported authentication types.
 
-|Name |Description |Required |Property |Copy/<br/>Dataflow Gen2 |
+|Name |Description |Required |Property |Copy |
 |-----|-----|-----|-----|-----|
-|**Anonymous**||||✓/✓|
-|**Key**||||✓/✓|
+|**Anonymous**||||✓|
+|**Key**||||✓|
 |- Account key|The account key of the Azure Blob Storage.|Yes |||
-|**OAuth2**||||✓/-|
-|**Shared Access Signature (SAS)**||||✓/✓|
+|**OAuth2**||||✓|
+|**Shared Access Signature (SAS)**||||✓|
 |- SAS token|The shared access signature token to the Storage resources, such as a blob or container.|Yes |||
-|**Service Principal**||||✓/-|
+|**Service Principal**||||✓|
 |- Tenant ID|The tenant information (domain name or tenant ID).|Yes |||
 |- Service Principal ID|The application's client ID.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
-|**Organizational account**||||-/✓|
 
 ## Next steps
 
-[Copy data in Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)
+* [Copy data in Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)
+* [Connect to Azure Blob Storage in dataflows](connector-azure-blob-storage-dataflows.md)
