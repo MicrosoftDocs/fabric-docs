@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1, intro-deployment
-ms.date: 12/28/2022
+ms.date: 04/18/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines
 ---
 
