@@ -185,8 +185,9 @@ Apply a function to each partition of a `SparkDataFrame`. The function to be app
 
 ```R
 # convert waiting time from hours to seconds
+df <- createDataFrame(faithful)
 schema <- structType(structField("eruptions", "double"), structField("waiting", "double"),
-                     structField("waiting_secs", "double"), structField("waiting_secs2", "double"))
+                     structField("waiting_secs", "double"))
 
 # apply UDF to DataFrame
 df1 <- dapply(df, function(x) { x <- cbind(x, x$waiting * 60) }, schema)
