@@ -29,11 +29,11 @@ The Azure Blob Storage connector supports the following authentication types for
 |Shared Access Signature (SAS)| √| √|
 
 >[!Note]
->For the Azure Blob Storage connection of Dataflow Gen2, go to [Connect to Azure Blob Storage in dataflows][def].
+>For information about the Azure Blob Storage connection in Dataflow Gen2, go to [Connect to Azure Blob Storage in dataflows][def].
 
 ## Prerequisites
 
-To get started, you must have following prerequisites:
+To get started, you must already have the following prerequisites:
 
 * A tenant account with an active subscription. Create an account for free.
 
@@ -57,7 +57,7 @@ To get started, you must have following prerequisites:
 
 ### Step 1: Specify the connection name, connection type, account, and domain
 
-:::image type="content" source="./media/connector-azure-blob-storage/configure-azure-blob-storage-connection-common.png" alt-text="Screenshot showing new connection page.":::
+:::image type="content" source="./media/connector-azure-blob-storage/configure-azure-blob-storage-connection-common.png" alt-text="Screenshot showing the new connection page.":::
 
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
