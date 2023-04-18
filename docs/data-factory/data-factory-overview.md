@@ -5,10 +5,11 @@ ms.reviewer: DougKlopfenstein
 ms.author: makromer
 author: kromerm
 ms.topic: overview
+ms.search.form: product-data-integration, Data_Factory_Overview
 ms.date: 01/25/2023
 ---
 
-# Data Factory in Microsoft Fabric overview
+# What is Data Factory in Microsoft Fabric?
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.

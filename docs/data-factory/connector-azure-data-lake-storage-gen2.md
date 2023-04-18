@@ -4,7 +4,7 @@ description: This article provides information about how to do create an Azure D
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 12/26/2022
+ms.date: 4/12/2023
 ms.custom: template-how-to
 ---
 
@@ -20,12 +20,12 @@ This article outlines the steps to create an Azure Date Lake Storage Gen2 connec
 
 The Azure Date Lake Storage Gen2 connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
-|Authentication type |Copy  |Dataflow Gen2 |
+|Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Key| √| |
-|OAuth2| √||
-|Shared Access Signature (SAS)| √| |
+|Account key| √| √|
+|Organizational account| √| √|
 |Service Principal|√||
+|Shared Access Signature (SAS)| √| √|
 
 ## Prerequisites
 
@@ -37,11 +37,11 @@ To get started, you must complete the following prerequisites:
 
 ## Go to Manage gateways to create connection
 
-1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**
+1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
-2. Select **New** at the top of the ribbon to add a new data source. 
+2. Select **New** at the top of the ribbon to add a new data source.
 
     :::image type="content" source="./media/connector-common/add-new-connection.png" alt-text="Screenshot showing the new page." lightbox="./media/connector-common/add-new-connection.png":::
     
@@ -64,7 +64,7 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 
 ### Step 2:  Select and set your authentication
 
-Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The Azure Data Lake Storage Gen2 connector supports the following authentication types  
+Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The Azure Data Lake Storage Gen2 connector supports the following authentication types:
 
 * [Key](connector-azure-data-lake-storage-gen2.md#key-authentication)
 * [OAuth2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication)
@@ -93,7 +93,7 @@ Open **Edit credentials**. The sign-in interface opens. Enter your account and p
 
 If you don’t have a SAS token, switch to **Shared access signature** in your Azure Data Lake Storage Gen2 account interface. Under **Allowed resource types**, select **Container**, and then select **Generate SAS and connection string**. You can get your SAS token from the generated content that appears.
 The shared access signature is a URI that encompasses in its query parameters all the information necessary for authenticated access to a storage resource. To access storage resources with the shared access signature, the client only needs to pass in the shared access signature to the appropriate constructor or method.
-For more information about shared access signatures, go to [Shared access signatures: Understand the shared access signature model](/azure/storage/common/storage-sas-overview).
+For more information about shared access signatures, go to [Shared access signatures: Understand the shared access signature model](/azure/storage/common/storage-sas-overview).
 
 #### Service principal authentication
 

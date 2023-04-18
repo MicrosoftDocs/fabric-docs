@@ -1,6 +1,6 @@
 ---
 title: SemPy overview
-description: Learn about SemPy's overall structure and purpose.
+description: Learn about SemPy's overall structure and purpose. SemPy is a new library in Azure Synapse vNext for working with tabular data.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 02/10/2023
 ---
 
-# SemPy overview
+# SemPy in Microsoft Fabric overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

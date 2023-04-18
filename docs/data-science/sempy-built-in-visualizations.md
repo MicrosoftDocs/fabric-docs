@@ -1,6 +1,6 @@
 ---
 title: SemPy built-in visualizations
-description: Learn about SemPy's built-in visualizations on public datasets.
+description: Follow these examples of some of the built-in visualizations on public datasets, including a more complex dataset.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
-# Built-in visualizations
+# Built-in visualizations in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
