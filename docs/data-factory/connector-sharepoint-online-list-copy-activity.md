@@ -66,7 +66,7 @@ The following properties are supported for SharePoint Online List under the **So
 
 :::image type="content" source="./media/connector-sharepoint-online-list/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
 
-The following some properties are **required**:
+The following properties are **required**:
 
 - **Data store type**: Select **External**.
 - **Connection**:  Select a SharePoint Online List connection from the connection list. If no connection exists, then create a new HTTP connection by selecting **New**.
