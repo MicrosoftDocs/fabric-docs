@@ -20,7 +20,7 @@ This article outlines how to use the copy activity in data pipeline to copy data
 
 1. The SharePoint List Online connector uses service principal authentication to connect to SharePoint. Follow these steps to set it up:
 
-1. Register an application with the Microsoft Identity platform. To learn how, see [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app). Make note of these values, which you use to define the linked service:
+1. Register an application with the Microsoft Identity platform. To learn how, see [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app). Make note of these values, which you use to define the connection:
 
     - Application ID
     - Application key
@@ -44,7 +44,7 @@ This article outlines how to use the copy activity in data pipeline to copy data
             :::image type="content" source="./media/connector-sharepoint-online-list/request-xml.png" alt-text="Screenshot showing request XML.":::
 
       > [!NOTE]
-      > In the context of configuring the SharePoint connector, the "App Domain" and "Redirect URL" refer to the SharePoint app that you have registered in Azure Active Directory (AAD) to allow access to your SharePoint data. The "App Domain" is the domain where your SharePoint site is hosted. For example, if your SharePoint site is located at "https://contoso.sharepoint.com", then the "App Domain" would be "contoso.sharepoint.com". The "Redirect URL" is the URL that the SharePoint app will redirect to after the user has authenticated and granted permissions to the app. This URL should be a page on your SharePoint site that the app has permission to access. For example, you could use the URL of a page that displays a list of files in a library, or a page that displays the contents of a document.
+      > In the context of configuring the SharePoint connector, the "App Domain" and "Redirect URL" refer to the SharePoint app that you have registered in Azure Active Directory (Azure AD) to allow access to your SharePoint data. The "App Domain" is the domain where your SharePoint site is hosted. For example, if your SharePoint site is located at "https://contoso.sharepoint.com", then the "App Domain" would be "contoso.sharepoint.com". The "Redirect URL" is the URL that the SharePoint app will redirect to after the user has authenticated and granted permissions to the app. This URL should be a page on your SharePoint site that the app has permission to access. For example, you could use the URL of a page that displays a list of files in a library, or a page that displays the contents of a document.
    - Click "Trust It" for this app.
 
 ## Supported configuration
@@ -58,7 +58,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 ### General
 
-For **General** tab configuration, go to General.
+For **General** tab configuration, go to [General](activity-overview.md#general-settings).
 
 ### Source
 
@@ -66,16 +66,16 @@ The following properties are supported for SharePoint Online List under the **So
 
 :::image type="content" source="./media/connector-sharepoint-online-list/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
 
-The following three properties are **required**:
+The following some properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an SharePoint Online List connection from the connection list. If no connection exists, then create a new HTTP connection by selecting **New**.
+- **Connection**:  Select a SharePoint Online List connection from the connection list. If no connection exists, then create a new HTTP connection by selecting **New**.
 - **Use query**: You can choose **List name**, **Query** as your use query. See the configuration of each setting below.
 
     - **List name**: The name of the SharePoint Online list.
     - **Query**: The OData query to filter the data in SharePoint Online list. For example, `"$top=1"`.
 
-    :::image type="content" source="./media/connector-sharepoint-online-list/query.png" alt-text="Screenshot showing query.":::
+        :::image type="content" source="./media/connector-sharepoint-online-list/query.png" alt-text="Screenshot showing query.":::
 
 - **List name**: The name of the SharePoint Online list.
 

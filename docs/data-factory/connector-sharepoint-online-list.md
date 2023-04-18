@@ -30,7 +30,7 @@ This SharePoint Online List connector supports the following authentication type
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).
+- A tenant account with an active subscription. Create an account for free.
 
 - A workspace is created and isn't the default My Workspace
 
@@ -38,7 +38,7 @@ To get started, you must complete the following prerequisites:
 
 1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAHoSURBVDhPfVI9SEJRFH5q9idRghhRBoH5hgz62QyKRAqHhiZraqogMBoKgiyQnLK1IYPWFCopIY20JbSWTNOh1xL0clAqK7A0M/ue91kG0ccZzvnud+4959wjyOfzVBEBJuEI3Nw+pJyzWoTD1uNmmcSgadHQciIAfhKs+1F36G5CRyNNragDE2WfIAU/qVOBJzIKCQT+q/jC1jmcp1RGadyGwUFo3Dw7CLIFCQcuYWUv4mfiONaaPYQtRb/ZHbl9xHU2L4NQNDA6ZfMx6ffcqiuKd9UKKf90ERVikWU3nM7m7IGbHlouwIsodETTwp9TlMke9IRicPSdTcuGTkICSEB7wiibPGUSz6/vhIX65S3rWxqEgUTHhIfPy1AWekCLhYLz370SlPLrR1dwhMiurRaTa/4H+/CKF0RhSW/m49M+01cpFoFNPKcPQzFUDx/lYQZadQP8sT6lOxSz7F4KFTIJmq6tLucuoSjLSFdNlbh73gUjIeEhgEzf0SjAgE2OYA9djwmM61Sl4yLAcDa811C7L+6cc1q+afwlfgd/VOjwF0DiUmII/16N1ukdGBkXyNLVKOMf5lYtif9qb5b6mcTsUBuYRccFKgGJnSUa4Nd6I8fmvWbvU1ytmMzaCXqd0Kl+9oWivgAsYHfccfep7QAAAABJRU5ErkJggg==) > **Manage connections and gateways**
 
-   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway":::
+   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
 2. Select **New** at the top of the ribbon to add a new data source.
 
@@ -52,7 +52,7 @@ To get started, you must complete the following prerequisites:
 
 ### Step 1: Specify the new connection name, type, and URL
 
-   :::image type="content" source="media/connector-sharepoint-online-list/connection-details.png" alt-text="Screenshot showing how to set new connection":::
+   :::image type="content" source="media/connector-sharepoint-online-list/connection-details.png" alt-text="Screenshot showing how to set new connection.":::
 
 In the **New connection** pane, choose **Cloud**, and specify the following field:
 
@@ -68,7 +68,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 [OAuth2](#oauth2-authentication)<br>
 [Service Principal](#service-principal-authentication)
 
-:::image type="content" source="media/connector-sharepoint-online-list/authentication-method.png" alt-text="Screenshot showing that authentication method of SharePoint Online List":::
+:::image type="content" source="media/connector-sharepoint-online-list/authentication-method.png" alt-text="Screenshot showing that authentication method of SharePoint Online List.":::
 
 #### Anonymous authentication
 
@@ -78,11 +78,11 @@ Select **Anonymous** under **Authentication method**.
 
 #### OAuth2 authentication
 
-:::image type="content" source="media/connector-sharepoint-online-list/authentication-oauth2.png" alt-text="Screenshot showing that OAuth2 authentication method":::
+:::image type="content" source="media/connector-sharepoint-online-list/authentication-oauth2.png" alt-text="Screenshot showing that OAuth2 authentication method.":::
 
 #### Service Principal authentication
 
-:::image type="content" source="media/connector-sharepoint-online-list/authentication-servical-principal.png" alt-text="Screenshot showing that service principal authentication method":::
+:::image type="content" source="media/connector-sharepoint-online-list/authentication-service-principal.png" alt-text="Screenshot showing that service principal authentication method.":::
 
 * **Tenant Id**: The tenant ID under which your application resides.
 * **Service principal ID**: The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.
