@@ -15,7 +15,7 @@ OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../
 
 In this article, you'll learn how to create a OneLake shortcut that exposes the data in your KQL Database to all of [!INCLUDE [product-name](../includes/product-name.md)]'s experiences.
 
-This shortcut is a two-step process that requires you to enable data copy to OneLake, and then creating a shortcut in OneLake. Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management.
+This shortcut is a two-step process that requires you to enable data copy to OneLake, and then to create a shortcut in OneLake. Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management.
 
 To query referenced data from OneLake in your KQL Database, see [Create a OneLake shortcut](onelake-shortcut.md).
 
