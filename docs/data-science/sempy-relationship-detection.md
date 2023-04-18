@@ -1,6 +1,6 @@
 ---
 title: SemPy relationship detection
-description: Learn about relationship detection in SemPy.
+description: Learn about relationship detection in SemPy. This example illustrates relationship detection using public Synthea datasets.
 ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/10/2023
 ---
 
-# Relationship detection
+# Relationship detection in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

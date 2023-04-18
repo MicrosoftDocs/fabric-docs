@@ -1,5 +1,5 @@
 ---
-title: Synapse Data Warehouse in Microsoft Fabric
+title: Synapse Data Warehouse
 description: Learn more about Synapse Data Warehouse in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
@@ -98,7 +98,8 @@ To delete a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], navigate to the works
 
 ## Next steps
 
-- [Data warehousing overview](data-warehousing.md)
 - [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
 - [Create a warehouse](create-warehouse.md)
+- [Create tables in Synapse Data Warehouse in Microsoft Fabric](create-table.md)
+- [Data warehousing overview](data-warehousing.md)
 - [SQL Endpoint](sql-endpoint.md)
