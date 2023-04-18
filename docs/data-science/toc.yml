@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Data Science?
     href: data-science-overview.md
+  - name: Roles and permissions
+    href: models-experiments-rbac.md
 - name: Get started
   items:
   - name: How to use end-to-end AI samples
@@ -29,20 +31,30 @@ items:
     href: data-wrangler.md
   - name: Explore and validate data with SemPy and PBI connector
     href: sempy-pbi-connector.md
-- name: Machine learning experiments
+- name: Train machine learning models
+  items:
+  - name: Training Overview
+    href: ./model-training/model-training-overview.md
+  - name: How-to guides
+    items:
+      - name: Train with Spark MLlib
+        href: ./model-training/fabric-sparkml-tutorial.md
+      - name: Train models with Scikit-learn
+        href: train-models-scikit-learn.md
+- name: Track models and experiments
   items:
   - name: Machine learning experiment
     href: machine-learning-experiment.md
-- name: Machine learning models
-  items:
   - name: Machine learning model
     href: machine-learning-model.md
-  - name: Train models with PyTorch
-    href: train-models-pytorch.md  
-  - name: Train models with Scikit-learn
-    href: train-models-scikit-learn.md 
-  - name: Score models with PREDICT
-    href: model-scoring-predict.md
+  - name: Fabric autologging
+    href: mlflow-autologging.md
+  - name: How-to guides
+    items:
+    - name: Train models with PyTorch
+      href: train-models-pytorch.md   
+    - name: Score models with PREDICT
+      href: model-scoring-predict.md
 - name: Use R
   items:
   - name: R overview
