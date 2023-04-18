@@ -13,11 +13,11 @@ ms.search.form: product-kusto
 
 OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files’ store locations. The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source. For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
-In this article, you learn how to create a OneLake shortcut to query referenced data from OneLake in your KQL Database.
+In this article, you learn how to create a OneLake shortcut to query data from OneLake in your KQL Database.
 
 Use this shortcut when you want to infrequently run queries on historical data without partitioning or indexing the data. If you want to run queries frequently and accelerate performance, import the data directly from OneLake. For direct import, see [Get data from OneLake](get-data-onelake.md).
 
-To access the data in your KQL Database in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management, see [One logical copy](onelake-mirroring.md).
+To access the data in your KQL Database in other [!INCLUDE [product-name](../includes/product-name.md)] experiences, see [One logical copy](onelake-mirroring.md).
 
 ## Prerequisites
 
@@ -53,7 +53,7 @@ To access the data in your KQL Database in other [!INCLUDE [product-name](../inc
 The OneLake shortcut has been created. You can now query this data.
 
 > [!NOTE]
-> You can only connect to one subfolder or table per shortcut. Repeat these steps and create new shortcuts to connect to more data.
+> You can only connect to one subfolder or table per shortcut. To connect to more data, repeat these steps and create new shortcuts.
 
 ## Query data
 
