@@ -14,7 +14,7 @@ Microsoft Fabric is an all-in-one analytics solution for enterprises that covers
 
 With Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs.
 
-Fabric is unparalleled in the market, offering a level of breadth, depth, and integration that is unmatched. The platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level.
+The platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level.
 
 ## SaaS foundation
 
@@ -54,7 +54,7 @@ Microsoft Fabric offers the comprehensive set of analytics workloads designed to
 
 Fabric brings together all these workloads into a unified platform to offer the most comprehensive big data analytics platform in the industry.
 
-## OneLake and lakehouse - unification of warehouses
+## OneLake and lakehouse - the unification of lakehouses
 
 The Microsoft Fabric platform unifies the OneLake and lakehouse architecture across the enterprises.
 
