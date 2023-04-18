@@ -74,4 +74,4 @@ The Lakehouse shortcut has been created. You now have one logical copy of your d
 
 ## Next steps
 
-[Query data in a KQL Queryset](kusto-query-set.md)
+[Accessing shortcuts](../onelake/access-onelake-shortcuts.md)
