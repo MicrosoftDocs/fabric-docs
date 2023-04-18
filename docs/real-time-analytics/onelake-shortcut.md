@@ -25,7 +25,7 @@ To access the data in your KQL Database in other [!INCLUDE [product-name](../inc
 * [KQL Database](create-database.md)
 * Lakehouse with data
 
-## Create Shortcut
+## Create shortcut
 
 1. Select **New** > **OneLake shortcut**.
 
@@ -62,7 +62,7 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 1. Replace the table name placeholder with `external_table('`*Shortcut name*`')`.
 1. Select **Run** or press **Shift+ Enter** on a selected query to run it.
 
-:::image type="content" source="media/onelake-shortcut/query-shortcut.png" alt-text="Screenshot of the Check your data window showing the results of a sample query.":::
+:::image type="content" source="media/onelake-shortcut/query-shortcut.png" alt-text="Screenshot of the Check your data window showing the results of a sample query."  lightbox="media/onelake-shortcut/query-shortcut.png":::
 
 ## Next steps
 
