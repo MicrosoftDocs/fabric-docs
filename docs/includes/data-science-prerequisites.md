@@ -1,6 +1,6 @@
 ---
 title: Prerequisites
-description: Prerequisites to use for R articles.
+description: Prerequisites to use data-science articles.
 author: sdgilley
 ms.author: sgilley
 ms.topic: include
