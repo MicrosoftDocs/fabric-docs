@@ -20,7 +20,7 @@ items:
       href: create-database.md
     - name: Database Management
       href: database-management.md
-    - name: One logical copy (shortcut)
+    - name: One logical copy
       href: onelake-mirroring.md
   - name: Tables
     items:
@@ -42,12 +42,12 @@ items:
     href: onelake-shortcut.md
 - name: Query data
   items:
-  - name: Query data in the KQL queryset
+  - name: Query data in a KQL Queryset
     href: kusto-query-set.md
-  - name: Use sample queries
-    href: query-table.md
   - name:  Use a Jupyter notebook and kqlmagic to query a KQL Database
     href: jupyter-notebook.md
+  - name: Use sample queries
+    href: query-table.md
 - name: Visualize data
   items:
   - name: Visualize data in a Power BI report
