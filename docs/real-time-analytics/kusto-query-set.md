@@ -1,40 +1,39 @@
 ---
-title: Query data in the KQL queryset in Real-time Analytics
-description: Learn how to use the KQL queryset to query your data explorer data.
+title: Query data in the KQL Queryset in Real-time Analytics
+description: Learn how to use the KQL Queryset to query your data explorer data.
 ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
-ms.date: 12/27/2022
+ms.date: 04/18/2023
 ms.search.form: product-kusto
 ---
-# Query data in the KQL queryset
+# Query data in the KQL Queryset
 
-In this article, you'll learn how to create and use a new KQL queryset.
+In this article, you'll learn how to create and use a new KQL Queryset.
 
-The KQL queryset is the item used to run queries, and view and manipulate query results on data from your Data Explorer database. The KQL queryset allows you to save queries for future use, or export and share queries with others.
+The KQL Queryset is the item used to run queries, and view and manipulate query results on data from your Data Explorer database. The KQL Queryset allows you to save queries for future use, or export and share queries with others.
 
-The KQL queryset uses the Kusto Query language for query creation, and also supports some SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/). <!-- Add link to contextual item -->
+The KQL Queryset uses the Kusto Query language for query creation, and also supports some SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/). <!-- Add link to contextual item -->
 
 ## Prerequisites
 
-* Power BI premium subscription
-* Workspace
-* A [Kusto database](create-database.md) with a populated data table
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace
+* A [KQL Database](create-database.md) with a populated data table
 
 ## Create a new query set
 
-A query set exists within the context of a workspace. A new KQL queryset is associated with the workspace that is open at the time of creation.
+A query set exists within the context of a workspace. A new KQL Queryset is associated with the workspace that is open at the time of creation.
 
 1. Browse to the desired workspace.
-1. Select **+New** > **KQL queryset**
+1. Select **+New** > **KQL Queryset**
 
     :::image type="content" source="media/kusto-query-set/create-query-set.png" alt-text="Screenshot of creating new query set.":::
 
 1. Enter a unique name. You can use alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
 > [!NOTE]
-> You can create multiple KQL querysets in a single workspace.
+> You can create multiple KQL Querysets in a single workspace.
 
 ### Open an existing query set
 
@@ -44,7 +43,7 @@ To access an existing query set, browse to your workspace and select the desired
 
 ## Connect to a database
 
-Queries run in the context of a database. To connect to a database or switch the database associated with any tab in the KQL queryset, select a database from the dropdown.
+Queries run in the context of a database. To connect to a database or switch the database associated with any tab in the KQL Queryset, select a database from the dropdown.
 
 :::image type="content" source="media/kusto-query-set/connect-database.png" alt-text="Screenshot of connecting to a database.":::
 
@@ -52,7 +51,7 @@ A list of tables associated with this database will appear below the database na
 
 ## Manage tabs
 
-:::image type="content" source="media/kusto-query-set/manage-tabs.png" alt-text="Screenshot of the options for editing tabs in the KQL queryset.":::
+:::image type="content" source="media/kusto-query-set/manage-tabs.png" alt-text="Screenshot of the options for editing tabs in the KQL Queryset.":::
 
 * **Rename a tab**: Select the **pencil icon** next to the tab name.
 * **Add a new tab**: Select the plus **+** to the right of the existing tabs. Different tabs can be connected to different databases.
@@ -60,11 +59,11 @@ A list of tables associated with this database will appear below the database na
 
 ## Write a query
 
-Now that you're connected to your data source, you can run queries on this data. The KQL queryset uses the Kusto Query Language (KQL) to query data from your workspace. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/).
+Now that you're connected to your data source, you can run queries on this data. The KQL Queryset uses the Kusto Query Language (KQL) to query data from your workspace. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/).
 
 The following examples use data that is publicly available at [https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv](https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv).
 
-1. Write or copy a query in the top pane of the KQL queryset. 
+1. Write or copy a query in the top pane of the KQL Queryset. 
 1. Select the **Run** button, or press **Shift**+**Enter** to run the query.
 
     The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query has finished successfully, and time used to compute the query results.

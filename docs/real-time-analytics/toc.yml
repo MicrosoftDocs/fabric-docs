@@ -42,7 +42,7 @@ items:
     href: onelake-shortcut.md
 - name: Query data
   items:
-  - name: Query data in the KQL queryset
+  - name: Query data in the KQL Queryset
     href: kusto-query-set.md
   - name: Use sample queries
     href: query-table.md

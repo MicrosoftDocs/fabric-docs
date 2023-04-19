@@ -26,9 +26,8 @@ For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/on
 
 ## Prerequisites
 
-* [Power BI Premium subscription](/power-bi/enterprise/service-admin-premium-purchase).
-* A Workspace
-* A [KQL database](create-database.md) with data.
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace
+* [KQL database](create-database.md) with data
 
 ## Continuous export
 

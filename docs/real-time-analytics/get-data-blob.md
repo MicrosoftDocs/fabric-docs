@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 01/10/2023
+ms.date: 04/18/2023
 ms.search.form: product-kusto
 ---
 
@@ -15,9 +15,8 @@ In this article, you'll learn you how to get data from an Azure blob or blob con
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* Workspace
-* [Kusto database](create-database.md)
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace
+* [KQL Database](create-database.md)
 * An Azure blob or blob container with data
 
 ## Get data from a blob
@@ -139,4 +138,4 @@ For more information on KQL Query Set, see <!-- [TODO- KQL query set]().-->
 
 * To create an empty table, see <!--[TODO- Create table]().-->
 * To manage your database, see [Manage](database-management.md).
-* To create, store, and export queries, see [Query data in the KQL queryset](kusto-query-set.md)
+* To create, store, and export queries, see [Query data in the KQL Queryset](kusto-query-set.md)
