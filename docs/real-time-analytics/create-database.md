@@ -1,6 +1,6 @@
 ---
-title: Create a Kusto database in Real-time Analytics
-description: Learn how to create a Kusto database.
+title: Create a KQL Database in Real-time Analytics
+description: Learn how to create a KQL Database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -17,14 +17,13 @@ In this article, you'll learn you how to create a new database. Once your databa
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* Workspace
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace
 
 ## Create a new database
 
-1. Select **New** > **Kusto Database**.
+1. Select **New** > **KQL Database**.
 
-    :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Kusto workspace that shows the dropdown menu of the ribbon button titled New. Both the New tab and the entry titled Kusto Database are highlighted":::
+    :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Kusto workspace that shows the dropdown menu of the ribbon button titled New. Both the New tab and the entry titled KQL Database are highlighted":::
 
 1. Enter your database name, then select **Create**. 
 
@@ -33,7 +32,7 @@ In this article, you'll learn you how to create a new database. Once your databa
 
     :::image type="content" source="media/database-editor/new-database.png" alt-text="alt text tbd":::
 
-The Kusto database has now been created within the context of the selected workspace.
+The KQL Database has now been created within the context of the selected workspace.
 
 ## Database details
 
@@ -75,9 +74,9 @@ To access your existing databases:
 
     :::image type="content" source="media/database-editor/access-existing-database-1.png" alt-text="Screenshot of the left menu of UI that shows the dropdown menu of the icon titled workspaces. The workspaces icon is highlighted.":::
 
-1. Select **Filter** on the right side of the ribbon > **Kusto Database**.
+1. Select **Filter** on the right side of the ribbon > **KQL Database**.
 
-    :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace pane that shows the dropdown menu of the workspace ribbon option titled Filter. The dropdown entry titled Kusto Database is selected. Both the Filter option and Kusto Database are highlighted.":::
+    :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace pane that shows the dropdown menu of the workspace ribbon option titled Filter. The dropdown entry titled KQL Database is selected. Both the Filter option and KQL Database are highlighted.":::
 
 1. Select the desired database.
 
@@ -85,4 +84,4 @@ To access your existing databases:
 
 * [Get data from a blob](get-data-blob.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)
-* [Query data in the KQL queryset](kusto-query-set.md)
+* [Query data in the KQL Queryset](kusto-query-set.md)
