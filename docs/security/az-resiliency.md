@@ -5,8 +5,7 @@ author: paulinbar #Required; your GitHub user alias, with correct capitalization
 ms.author: painbar #Required; Microsoft alias of author; optional team alias.
 ms.topic: reliability-article
 ms.custom: subject-reliability, references_regions
-ms.prod: non-product-specific
-# ms.service: your-value #Required: your service meta tag goes here. For taxonomies see https://review.learn.microsoft.com/help/platform/metadata-taxonomies?branch=main#msservice
+ms.service: your-value #Required: your service meta tag goes here. For taxonomies see https://review.learn.microsoft.com/help/platform/metadata-taxonomies?branch=main#msservice
 ms.date: 04/19/2023 #Required; mm/dd/yyyy format.
 ---
 
@@ -63,7 +62,7 @@ TODO: Add your heading
 Required: Provide an introduction. Use the following placeholder as a suggestion, but elaborate.
 -->
 
-This article describes reliability support in [TODO-service-name], and covers <!-- IF (AZ SUPPORTED) --> both regional resiliency with availability zones and <!-- END IF (AZ SUPPORTED)--> cross-region resiliency with disaster recovery. For a more detailed overview of reliability in Azure, see [Azure reliability](https://docs.microsoft.com/azure/architecture/framework/resiliency/overview.md).
+This article describes reliability support in [TODO-service-name], and covers <!-- IF (AZ SUPPORTED) --> both regional resiliency with availability zones and <!-- END IF (AZ SUPPORTED)--> cross-region resiliency with disaster recovery. For a more detailed overview of reliability in Azure, see [Azure reliability](azure/architecture/framework/resiliency/overview).
 
 [Introduction]
 TODO: Add your introduction
