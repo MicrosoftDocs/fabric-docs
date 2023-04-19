@@ -59,14 +59,22 @@ To create a Spark job definition for PySpark, follow these steps:
 
 1. Upload the main definition file as *.py* file. The main definition file is the file that contains the application logic of this *job.Main* definition file is mandatory to run a Spark job. For each Spark Job Definition, you can only upload one main definition file.
    
-   Beside uploading from local desktop, you can also upload from existing Azure Data Lake Storage Gen2 by providing the full abfss path of the file. For example, abfss://<your storage account name>.dfs.core.windows.net/<your file path>. To make sure the file is accessible, The user whose credential is used to run the job must be assigned as Contributor role to the storage account.For manually run, the AAD of current login user would be used to run the job
+   Beside uploading from local desktop, you can also upload from existing Azure Data Lake Storage Gen2 by providing the full abfss path of the file. For example, abfss://your-storage-account-name.dfs.core.windows.net/your-file- path. 
 
-2. Upload Reference files as *.py* file. the Reference files are the python modules that are imported by the main definition file. Similar as uploading main definition file, you can also upload from existing Azure Data Lake Storage Gen2 by providing the full abfss path of the file.To make sure the file is accessible, The user whose credential is used to run the job must be assigned as Contributor role to the storage account.For manually run, the AAD of current login user would be used to run the job
-   Multiple reference files are supported.
+2. Upload Reference files as *.py* file. the Reference files are the python modules that are imported by the main definition file. Similar as uploading main definition file, you can also upload from existing Azure Data Lake Storage Gen2 by providing the full abfss path of the file. Multiple reference files are supported.
 
-3. Provide command line arguments to the job if needed.
+> [!TIP]
+> If ADLS-gen2 path is used, to make sure the file is accessible, The user account which is used to run the job should be assigned with 
+> proper permission to the storage account. There are two suggested way to do this:
+>       - Assign the user account as Contributor role to the storage account.
+>        - Grant Read and Execution permission to the user account on the file via Azure Data Lake Storage Gen2 Access Control List (ACL)
+>  
+> For manually run, the accoutn of current login user would be used to run the job
+
+3. Provide command line arguments to the job if needed. please use space as splitter to separate the arguments.
 
 4. Add the lakehouse reference to the job. You must have at least one lakehouse reference added to the job. This lakehouse is the default lakehouse context for the job.
+   Multiple lakehouse references are supported. For the non-default Lakehouse, you can find its name and full OneLake URL in the Spark Settings page.
 
 :::image type="content" source="media\create-spark-job-definition\main-definition-file-example.png" alt-text="Screenshot showing an example of a populated main definition file screen." lightbox="media\create-spark-job-definition\main-definition-file-example.png":::
 
@@ -112,7 +120,13 @@ To create a Spark job definition for SparkR(R), follow these steps:
 
 There are a few options to further customize the execution of Spark job definition
 
-- **Spark Compute**: Within the **Spark Compute** sub-tab of **Setting**, you can 
+- **Spark Compute**: Within the **Spark Compute** tab, you can see the Runtime Version which is the version of Spark that will be used to run the job. You can also see the Spark configuration settings that will be used to run the job. You can customize the Spark configuration settings by clicking on the **Add** button.
+
+:::image type="content" source="media\create-spark-job-definition\SparkCompute.png" alt-text="Screenshot showing where to edit Spark configuration." lightbox="media\create-spark-job-definition\SparkCompute.png":::
+
+- **Optimization**: Within the **Optimization** tab, you can enable and setup the Retry Policy for the job. When enabled, the job will be retried if it fails. You can also set the maximum number of retries and the interval between retries. For each attempt of retry, the job will be restarted, please make sure the job is idempotent.
+
+:::image type="content" source="media\create-spark-job-definition\RetryPolicy.png" alt-text="Screenshot showing where to setup retry policy." lightbox="media\create-spark-job-definition\RetryPolicy.png":::
 
 ## Next steps
 
