@@ -48,7 +48,7 @@ Data copying to OneLake is disabled in your **KQL Database** by default. Data lo
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Data Engineering**.
 
-    :::image type="content" source="media/onelake-mirroring/app-switcher-data-engineering.png" alt-text="Screenshot of experience switcher showing a list of experiences. The experience titled Data Engineering is highlighted.":::
+    :::image type="content" source="media/onelake-mirroring/experience-switcher-data-engineering.png" alt-text="Screenshot of experience switcher showing a list of experiences. The experience titled Data Engineering is highlighted.":::
 
 1. Select **Lakehouse**.
 
