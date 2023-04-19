@@ -1,11 +1,11 @@
 ---
 title: Train machine learning models with Apache Spark
 description: Use Apache Spark in Fabric to train machine learning models
-ms.reviewer: mopeakande
+ms.reviewer: scottpolly
 ms.author: midesa
 author: midesa 
 ms.topic: conceptual
-ms.date: 04/17/2023
+ms.date: 04/19/2023
 ---
 
 # Train machine learning models
@@ -21,7 +21,7 @@ Apache Spark in [!INCLUDE [product-name] provides a unified, open-source, parall
 There are two scalable machine learning libraries that bring algorithmic modeling capabilities to this distributed environment: MLlib and SparkML. MLlib contains the original API built on top of RDDs. SparkML is a newer package that provides a higher-level API built on top of DataFrames for constructing ML pipelines. SparkML doesn't yet support all of the features of MLlib, but is replacing MLlib as Spark's standard machine learning library.
 
 > [!NOTE]
-> You can learn more about creating a SparkML model by following the article [Train models with Apache Spark MLlib](./model-training/fabric-sparkml-tutorial.md).
+> You can learn more about creating a SparkML model in the article [Train models with Apache Spark MLlib](./model-training/fabric-sparkml-tutorial.md).
 
 ## Popular libraries
 
