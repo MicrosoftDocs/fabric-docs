@@ -17,7 +17,7 @@ Monitoring your dataflow refreshes is key in ensuring that your dataflows are ru
 
 Refresh history is available using the drop-down menu in your workspace. You can access it by selecting the **Refresh History** button.
 
-:::image type="content" source="./media/dataflows-gen2-monitor/open-refreshhistory.png" alt-text="Screenshot of the dataflow dropdown box with Refresh history emphasized.":::
+:::image type="content" source="./media/dataflows-gen2-monitor/open-refresh-history.png" alt-text="Screenshot of the dataflow dropdown box with Refresh history emphasized.":::
 
 When you open your dataflow refresh history, you first notice a list of all your data refreshes. This first screen provides you with information about:
 
@@ -79,7 +79,7 @@ To investigate what happened, you can drill down into an activity or table. The 
 
 The monitor hub is available using the side menu in your workspace. You can access it by selecting the **Monitor** button.
 
-:::image type="content" source="./media/dataflows-gen2-monitor/open-monitoringhub.png" alt-text="Screenshot of the monitoring hub button.":::
+:::image type="content" source="./media/dataflows-gen2-monitor/open-monitoring-hub.png" alt-text="Screenshot of the monitoring hub button.":::
 
 The monitor hub provides you with a dashboard that gives you an overview of the status of your dataflows.
 

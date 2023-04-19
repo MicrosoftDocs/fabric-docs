@@ -2,11 +2,9 @@
 title: Dataflows Gen2 overview
 description: An overview of the new generation of dataflows.
 author: luitwieler
-
 ms.topic: overview
 ms.date: 03/28/2023
 ms.author: jeluitwi
-
 ---
 
 # Dataflows Gen2
@@ -53,7 +51,7 @@ In Dataflows Gen2, we added support for the following destinations and many more
 
 Learn more about this feature [here](../placeholder.md).
 
-:::image type="content" source="./media/dataflows-gen2-overview/outputdestinations-overview.png" alt-text="Screenshot with the supported output destinations displayed.":::
+:::image type="content" source="./media/dataflows-gen2-overview/output-destinations-overview.png" alt-text="Screenshot with the supported output destinations displayed.":::
 
 ### Improved refresh history and monitoring
 
@@ -67,7 +65,7 @@ Data pipelines allow you to group activities that together perform a task. An ac
 
 A pipeline can contain one or more activities that are connected by dependencies. For example, you can use a pipeline to ingest and clean data from an Azure blob, and then kick off a Dataflow Gen2 to analyze the log data. You can also use a pipeline to copy data from an Azure blob to an Azure SQL database, and then run a stored procedure on the database.
 
-:::image type="content" source="./media/dataflows-gen2-overview/datapipelines-integration.png" alt-text="Screenshot showing the integration with data pipelines.":::
+:::image type="content" source="./media/dataflows-gen2-overview/data-pipelines-integration.png" alt-text="Screenshot showing the integration with data pipelines.":::
 
 ### Save as draft
 

@@ -29,11 +29,11 @@ To start, you first need to create a lakehouse. A lakehouse is a data lake that 
 
 1. Switch to the **Data Engineering** experience.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/experience-switcher-dataengineering.png" alt-text="Screenshot of the Data Engineering experience.":::
+   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/experience-switcher-data-engineering.png" alt-text="Screenshot of the Data Engineering experience.":::
 
 1. Go to your Fabric enabled workspace.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/goto-workspace.png" alt-text="Screenshot of the Fabric enabled workspace emphasized.":::
+   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/go-to-workspace.png" alt-text="Screenshot of the Fabric enabled workspace emphasized.":::
 
 1. Select **Lakehouse** in the create menu.
 
@@ -58,7 +58,7 @@ A Dataflow Gen2 is a reusable data transformation that can be used in a pipeline
 
 1. Select **Dataflow Gen2** in the create menu.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/create-dataflowgen2.png" alt-text="Screenshot of the Dataflow Gen2 selection under the new menu.":::
+   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/create-dataflow-gen2.png" alt-text="Screenshot of the Dataflow Gen2 selection under the new menu.":::
 
 1. Ingest the data from the OData source.
 
