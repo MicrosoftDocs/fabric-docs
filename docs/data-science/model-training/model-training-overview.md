@@ -21,7 +21,7 @@ Apache Spark in [!INCLUDE [product-name] provides a unified, open-source, parall
 There are two scalable machine learning libraries that bring algorithmic modeling capabilities to this distributed environment: MLlib and SparkML. MLlib contains the original API built on top of RDDs. SparkML is a newer package that provides a higher-level API built on top of DataFrames for constructing ML pipelines. SparkML doesn't yet support all of the features of MLlib, but is replacing MLlib as Spark's standard machine learning library.
 
 > [!NOTE]
-> You can learn more about creating a SparkML model by following this [tutorial](../model-training/fabric-sparkml-tutorial.md).
+> You can learn more about creating a SparkML model by following the article [Train models with Apache Spark MLlib](./model-training/fabric-sparkml-tutorial.md).
 
 ## Popular libraries
 
