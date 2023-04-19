@@ -138,16 +138,13 @@ test_spark.withColumn("PREDICT", lr_udf(*[col(f) for f in features])).show()
 
 ## Generate PREDICT code from a model item page
 
-To generate code that calls PREDICT for a specific model:
-
-- Go to the item page for the desired model version.
-- Select the **Apply model** prompt. This prompt includes options to:
-    - Generate PREDICT code with prepopulated parameters using an interactive scoring wizard, or
-    - Copy a customizable code template to use in generating model predictions.
+You can choose one of the following options to generate code that calls PREDICT for a specific model's version.
+- Use an interactive scoring wizard to generate the model prediction code based on prepopulated parameters
+- Copy a code template into a notebook and customize it to generate the model prediction code
 
 ### Use an interactive scoring wizard
 
-The **Apply model** prompt includes an option to generate PREDICT code with prepopulated parameters using an interactive scoring wizard. The wizard walks you through steps to select the source data for scoring, map the data correctly to the model's inputs, specify the destination for the model's outputs, and create a notebook that uses PREDICT to generate and store scores.
+The interactive scoring wizard walks you through steps to select the source data for scoring, map the data correctly to the model's inputs, specify the destination for the model's outputs, and create a notebook that uses PREDICT to generate and store scores.
 
 > [!NOTE]
 > The scoring wizard is currently supported only for models that have been saved in the MLflow format with their model signatures populated. For other models, use the customizable code template provided on the model version's page, or [call PREDICT directly from a notebook](#call-predict-from-a-notebook).
@@ -193,6 +190,8 @@ To use the scoring wizard,
     :::image type="content" source="media/model-scoring-predict/review-and-finish.png" alt-text="Screenshot of the review-and-finish step for model predictions." lightbox="media/model-scoring-predict/review-and-finish.png":::
 
 ### Use a customizable code template
+
+To use a code template to generate the model's prediction code:
 
 1. Go to the item page for a given model version.
 1. Select **Copy code to apply** from the **Apply model** dropdown. The selection allows you to copy a customizable code template.
