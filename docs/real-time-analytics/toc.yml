@@ -37,15 +37,16 @@ items:
   - name: Get data from Event Hubs
     href: get-data-event-hub.md
   - name: Get data from OneLake
-    href: get-data-onelake.md  
-  - name: OneLake shortcut
-    href: onelake-shortcut.md
+    href: get-data-onelake.md
 - name: Query data
   items:
   - name: Query data in a KQL Queryset
+  - name: Query data in a KQL Queryset
     href: kusto-query-set.md
-  - name:  Use a Jupyter notebook and kqlmagic to query a KQL Database
+  - name: Use a Jupyter notebook and kqlmagic to query a KQL Database
     href: jupyter-notebook.md
+  - name: Use a OneLake shortcut to query data
+    href: onelake-shortcut.md
   - name: Use sample queries
     href: query-table.md
 - name: Visualize data
