@@ -17,7 +17,7 @@ The R ecosystem offers multiple graphing libraries that come packed with many di
 
 ## Prerequisites
 
-[!INCLUDE [r-prerequisites](./includes/prerequisites.md)]
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
 [!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md
 )]

@@ -21,7 +21,7 @@ R support is only available in Spark3.1 or above.  R in Spark 2.4 is not support
 
 ## Prerequisites
 
-[!INCLUDE [r-prerequisites](./includes/prerequisites.md)]
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
 [!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md
 )]
