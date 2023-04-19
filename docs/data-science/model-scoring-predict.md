@@ -15,12 +15,11 @@ ms.search.form: Predict
 
 [!INCLUDE [product-name](../includes/product-name.md)] empowers users to operationalize machine learning models from the secure boundaries of a notebook by using a function called PREDICT, which supports scoring at scale in any compute engine. Users can get started directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook or from a given model item page.
 
-In this article, you'll learn to call PREDICT directly from a notebook and how to generate code to call PREDICT from a given model's item page.
+In this article, you'll learn how to call PREDICT directly from a notebook and how to generate code to call PREDICT from a given model's item page.
 
 ## Prerequisites
 
-- A Power BI Premium subscription. If you don't have one, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-- A Power BI Workspace with assigned premium capacity.
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
 
 ## Limitations
 
@@ -28,7 +27,7 @@ In this article, you'll learn to call PREDICT directly from a notebook and how t
 
 ## Call PREDICT from a notebook
 
-PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you've already trained and registered a model in your workspace, you can skip to Step 2 in the following procedure. If not, Step 1 provides a code sample to guide you through the creation and training of a simple logistic regression model. You can use this model to generate predictions at the end of the procedure if you don't use your own.
+PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you've already trained and registered a model in your workspace, you can skip to Step 2 in the following procedure. If not, Step 1 provides a code sample to guide you through the creation and training of a logistic regression model. You can use this model to generate predictions at the end of the procedure if you don't use your own.
 
 1. **Train a model and register it with MLflow**. The following code sample uses the MLflow API to create a machine learning experiment and start an MLflow run for a simple scikit-learn logistic regression model, tracking some metrics and parameters. The model version is then registered for prediction. See [how to train models with scikit-learn](train-models-scikit-learn.md) to learn more about training and tracking models of your own.
 
@@ -101,10 +100,10 @@ predictions.show()
 
 ### PREDICT with the Spark SQL API
 
-To invoke the PREDICT function with the Spark SQL API, you can use the model and the test data defined previously. If you've been using your own model, substitute the values for `model_name`, `model_version`, and `features` with the right values for your model name and version and your feature columns.
+To invoke the PREDICT function with the Spark SQL API, you can use the model and the test data defined previously. If you've been using your own model, substitute the values for `model_name`, `model_version`, and `features` with the right values for your model name, model version, and your feature columns.
 
 > [!NOTE]
-> Using the Spark SQL API to generate predictions still requires you to create an MLFlowTransformer object (as in Step 3). This registers the model for use with the PREDICT keyword.
+> Using the Spark SQL API to generate predictions still requires you to create an `MLFlowTransformer` object (as in Step 3). This registers the model for use with the PREDICT keyword.
 
 ```Python
 from pyspark.ml.feature import SQLTransformer 
@@ -154,10 +153,12 @@ The **Apply model** prompt includes an option to generate PREDICT code with prep
 > The scoring wizard is currently supported only for models that have been saved in the MLflow format with their model signatures populated. For other models, use the customizable code template provided on the model version's page, or [call PREDICT directly from a notebook](#call-predict-from-a-notebook).
 
 To use the scoring wizard,
-- Go to the artifact page for a given model version.
-- Select **Apply this model in wizard** from the **Apply model** dropdown. The interface guides you through the following steps:
+- Go to the item page for a given model version.
+- Select **Apply this model in wizard** from the **Apply model** dropdown.
 
 :::image type="content" source="media/model-scoring-predict/apply-model.png" alt-text="Screenshot of the prompt to apply a model from its item page." lightbox="media/model-scoring-predict/apply-model.png":::
+
+The interface guides you through the following steps:
 
 1. **Select input table.** Browse the provided dropdown menus to select an input table from among the Lakehouses in your current workspace.
 
