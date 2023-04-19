@@ -112,7 +112,7 @@ To create a Spark job definition for SparkR(R), follow these steps:
 
 There are a few options to further customize the execution of Spark job definition
 
-- **Spark Compute**: Within the **Spark Compute** sub-tab of **Setting**, you can .
+- **Spark Compute**: Within the **Spark Compute** sub-tab of **Setting**, you can 
 
 ## Next steps
 
