@@ -40,7 +40,7 @@ Summarizing the current available R library management behaviors:
 
 ## Prerequisites
 
-[!INCLUDE [r-prerequisites](./includes/prerequisites.md)]
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
 
 ## Workspace-level R library management 

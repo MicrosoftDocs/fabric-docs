@@ -19,7 +19,7 @@ This document provides an overview of developing Spark applications in Synapse u
 
 ## Prerequisites
 
-[!INCLUDE [r-prerequisites](./includes/prerequisites.md)]
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
 
 ## Create and run notebook sessions
