@@ -10,7 +10,7 @@ ms.date: 04/19/2023
 
 # Train machine learning models
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 Apache Spark in [!INCLUDE [product-name] enables machine learning with big data, providing the ability to obtain valuable insight from large amounts of structured, unstructured, and fast-moving data. There are several options when training machine learning models using Apache Spark in [!INCLUDE [product-name]: Apache Spark MLlib, SynapseML, and various other open-source libraries.
 
@@ -21,7 +21,7 @@ Apache Spark in [!INCLUDE [product-name] provides a unified, open-source, parall
 There are two scalable machine learning libraries that bring algorithmic modeling capabilities to this distributed environment: MLlib and SparkML. MLlib contains the original API built on top of RDDs. SparkML is a newer package that provides a higher-level API built on top of DataFrames for constructing ML pipelines. SparkML doesn't yet support all of the features of MLlib, but is replacing MLlib as Spark's standard machine learning library.
 
 > [!NOTE]
-> You can learn more about creating a SparkML model in the article [Train models with Apache Spark MLlib](./model-training/fabric-sparkml-tutorial.md).
+> You can learn more about creating a SparkML model in the article [Train models with Apache Spark MLlib](model-training/fabric-sparkml-tutorial.md).
 
 ## Popular libraries
 
