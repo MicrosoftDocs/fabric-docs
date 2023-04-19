@@ -47,6 +47,8 @@
         href: connector-azure-cosmosdb-for-nosql.md
       - name: Configure in copy activity
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
+      - name: Connect in dataflows
+        href: connector-azure-cosmosdb-for-nosql-dataflows.md
     - name: Azure Data Lake Storage Gen2
       items:
       - name: Overview
@@ -55,6 +57,8 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
+      - name: Connect to Azure Data Lake Storage Gen2 in dataflows
+        href: connector-azure-data-lake-storage-gen2-dataflows.md
     - name: Azure SQL Database
       items:
       - name: Overview
@@ -63,6 +67,8 @@
         href: connector-azure-sql-database.md
       - name: Configure in copy activity
         href: connector-azure-sql-database-copy-activity.md
+      - name: Connect to an Azure SQL database in dataflows
+        href: connector-azure-sql-database-dataflow.md
     - name: Binary format
       href: format-binary.md
     - name: Data warehouse
@@ -126,21 +132,21 @@
     - name: OData
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-odata-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-odata.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-odata-copy-activity.md 
       - name: OData in dataflows
         href: connector-odata-dataflows.md
     - name: SharePoint online list
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-sharepoint-online-list-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-sharepoint-online-list.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-sharepoint-online-list-copy-activity.md
     - name: REST
       items:
       - name: Overview
@@ -183,10 +189,16 @@
         href: templates.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
+      - name: Parameterization
+        items:
+        - name: Parameter usage
+          href: parameters.md
+        - name: Expression language
+          href: expression-language.md
     - name: Tutorials
       items:
       - name: Copy sample data into Lakehouse and transform with dataflow
-        href: ../placeholder.md
+        href: tutorial-load-data-lakehouse-transform.md
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
         href: ../placeholder.md
       - name: Load sample data to data warehouse

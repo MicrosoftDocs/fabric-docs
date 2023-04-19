@@ -1,20 +1,27 @@
 ---
 title: Visualize data in R
-description: Learn how to create R visualization.
+description: Learn how to create R visualizations.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/07/2023
+ms.date: 04/13/2023
 ms.search.form: R Language
 ---
+
 # Visualize data in R
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The R ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Apache Spark Pool in [!INCLUDE [product-name](../includes/product-name.md)] contains a set of curated and popular open-source libraries. You can also add or manage extra libraries or versions by using the [!INCLUDE [product-name](../includes/product-name.md)]  library management capabilities.
+The R ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Apache Spark Pool in [!INCLUDE [product-name](../includes/product-name.md)] contains a set of curated and popular open-source libraries. Add or manage extra libraries or versions by using the [!INCLUDE [product-name](../includes/product-name.md)] [library management capabilities](r-library-management.md).
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](../includes/data-science-prerequisites.md)]
+[!INCLUDE [r-prerequisites](../includes/data-science-r-prerequisites.md)]
 
 ## ggplot2
+
 The [ggplot2](https://ggplot2.tidyverse.org/) library is popular for data visualization and exploratory data analysis.
 
 ![Screenshot of ggplot2 scatterplot.](./media/r-visualization/ggplot2.png)
@@ -42,6 +49,7 @@ g + geom_point() +
 [rbokeh](https://hafen.github.io/rbokeh/) is a native R plotting library for creating interactive graphics.
 
 ![Screenshot of rbokeh points.](./media/r-visualization/bokeh-plot.png)
+
 ```R
 library(rbokeh)
 p <- figure() %>%
@@ -56,6 +64,7 @@ p
 [Plotly](https://plotly.com/r/) is an R graphing library that makes interactive, publication-quality graphs.
 
 ![Screenshot of plot line.](./media/r-visualization/rplot.png)
+
 ```R
 library(plotly) 
 
@@ -71,6 +80,7 @@ fig
 [Highcharter](https://jkunst.com/highcharter/) is an R wrapper for Highcharts JavaScript library and its modules.
 
 ![Screenshot of highchart scatter.](./media/r-visualization/highchart.png)
+
 ```R
 library(magrittr)
 library(highcharter)

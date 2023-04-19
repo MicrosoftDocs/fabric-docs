@@ -1,16 +1,16 @@
 ---
 title: Tables in Synapse data warehouses
 description: Learn about tables in your Synapse Data Warehouse in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: kecona
 author: KevinConanMSFT
+ms.author: kecona
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: how-to
-ms.date: 03/29/2023
 ---
 
-# Tables in [!INCLUDE[fabricdw](includes/fabric-dw.md)]
+# Tables in Fabric data warehousing
 
-**Applies to:** [!INCLUDE[fabric-se](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
  
@@ -60,11 +60,11 @@ For more information about OneLake, see the [OneLake overview](../onelake/onelak
 
 ## Data types
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports the most commonly used T-SQL data types. For a list of the supported data types, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric#DataTypes&preserve-view=true) in the CREATE TABLE statement. 
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports the most commonly used T-SQL data types. For a list of the supported data types, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypes) in the CREATE TABLE statement. 
 
 ## Collation
 
-Currently, `Latin1_General_100_BIN2_UTF8` is the default and only supported collation for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables.
+Currently, `Latin1_General_100_BIN2_UTF8` is the default and only supported collation for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables and metadata.
 
 ## Statistics
 
@@ -78,7 +78,7 @@ For [!INCLUDE [fabric-dw](includes/fabric-dw.md)], PRIMARY KEY and UNIQUE constr
 
 FOREIGN KEY is only supported when NOT ENFORCED is used.  
 
-- For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true). 
+- For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true). 
 - For more information, see [Primary keys, foreign keys, and unique keys in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](table-constraints.md).
 
 ## Commands for creating tables
