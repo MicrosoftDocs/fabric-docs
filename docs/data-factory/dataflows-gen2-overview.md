@@ -69,7 +69,7 @@ A pipeline can contain one or more activities that are connected by dependencies
 
 ### Save as draft
 
-With Dataflows Gen2, we introduce a worry free experience by removing the need for publishing to save your changes. With save as draft functionality, we store a draft version of your dataflow every time you make a change. Did you lose internet connectivity? Did you accidentally close your browser? No worries; we got your back. Once you return to your dataflow, your recent changes will still be there and you can continue where you left off. This is a seamless experience and doesn't require any input from you. This allows you to work on your dataflow without having to worry about losing your changes or having to fix all the query errors before you can save your changes. Learn more about this feature [here](./dataflows-gen2-savedraft.md).
+With Dataflows Gen2, we introduce a worry free experience by removing the need for publishing to save your changes. With save as draft functionality, we store a draft version of your dataflow every time you make a change. Did you lose internet connectivity? Did you accidentally close your browser? No worries; we got your back. Once you return to your dataflow, your recent changes will still be there and you can continue where you left off. This is a seamless experience and doesn't require any input from you. This allows you to work on your dataflow without having to worry about losing your changes or having to fix all the query errors before you can save your changes. Learn more about this feature [here](./dataflows-gen2-save-draft.md).
 
 ### Fast copy
 

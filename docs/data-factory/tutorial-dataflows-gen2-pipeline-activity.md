@@ -54,7 +54,7 @@ A Dataflow Gen2 is a reusable data transformation that can be used in a pipeline
 
 1. Go to your Fabric enabled workspace.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/goto-workspace.png" alt-text="Screenshot of the Fabric enabled workspace.":::
+   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/go-to-workspace.png" alt-text="Screenshot of the Fabric enabled workspace.":::
 
 1. Select **Dataflow Gen2** in the create menu.
 

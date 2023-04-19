@@ -232,7 +232,7 @@
       - name: How to use key dataflow features
         href: ../placeholder.md
       - name: Saving a draft of your dataflow
-        href: dataflows-gen2-savedraft.md
+        href: dataflows-gen2-save-draft.md
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
