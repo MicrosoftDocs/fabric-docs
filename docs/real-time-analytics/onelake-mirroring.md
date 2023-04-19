@@ -17,9 +17,9 @@ In this article, you learn how to create a OneLake shortcut that exposes the dat
 
 This shortcut is a two-step process that requires you to do the following:
 
- 1. Enable data copy to OneLake
- 1. Create a shortcut in OneLake. 
- 
+ 1. Enable data copy to OneLake.
+ 1. Create a shortcut in OneLake.
+
  Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences.
 
 To query referenced data from OneLake in your KQL Database, see [Create a OneLake shortcut](onelake-shortcut.md).
