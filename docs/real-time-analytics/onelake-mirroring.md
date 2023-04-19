@@ -15,7 +15,12 @@ OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../
 
 In this article, you learn how to create a OneLake shortcut that exposes the data in your KQL Database to all of [!INCLUDE [product-name](../includes/product-name.md)]'s experiences.
 
-This shortcut is a two-step process that requires you to enable data copy to OneLake, and then to create a shortcut in OneLake. Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management.
+This shortcut is a two-step process that requires you to do the following:
+
+ 1. Enable data copy to OneLake
+ 1. Create a shortcut in OneLake. 
+ 
+ Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences.
 
 To query referenced data from OneLake in your KQL Database, see [Create a OneLake shortcut](onelake-shortcut.md).
 
@@ -32,7 +37,7 @@ Creating one logical copy of your data in OneLake is a two-step process. You sen
 Data copying to OneLake is disabled in your **KQL Database** by default. Data loaded before enabling data copy won't be copied. Only new tables are affected by this change. If you disable data copying after creating a Lakehouse, the data that was already copied will remain, but any data loaded into your database after that point will remain in your database.
 
 1. To enable data copying, navigate to your **KQL Database**.
-1. Next to **OneLake folder** in the **Database details** pane, select the **Edit** option.
+1. Next to **OneLake folder** in the **Database details** pane, select the **Edit** (pencil) icon.
 
     :::image type="content" source="media/onelake-mirroring/onelake-folder.png" alt-text="Screenshot of the Database details pane showing an overview of the database. The edit OneLake folder option is highlighted.":::
 
@@ -68,10 +73,10 @@ Data copying to OneLake is disabled in your **KQL Database** by default. Data lo
 
 1. To connect the table with the data from your database, select **>** to expand the tables in the left-hand pane, then select a table.
 
-1. Select **Create** to create the shortcut. The Lakehouse automatically refreshes.
+1. Select **Create**. The Lakehouse automatically refreshes.
 
-The Lakehouse shortcut has been created. You now have one logical copy of your data that you can use in other [!INCLUDE [product-name](../includes/product-name.md)] experiences without more management.
+The Lakehouse shortcut has been created. You now have one logical copy of your data that you can use in other [!INCLUDE [product-name](../includes/product-name.md)] experiences.
 
 ## Next steps
 
-[Accessing shortcuts](../onelake/access-onelake-shortcuts.md)
+[Access shortcuts](../onelake/access-onelake-shortcuts.md)
