@@ -70,7 +70,7 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
    test_spark = spark.createDataFrame(data=[(test.values.tolist(),)], schema=test.columns.to_list())
    ```
 
-3. **Create an `MLFlowTransformer` object to load the model for inferencing.** To create an `MLFlowTransformer` object for generating predictions, we specify all the columns from the `test` data as model inputs, name the new output column `predictions` (although this could be any string), and provide the correct model name and version to use for generating predictions. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version.
+3. **Create an `MLFlowTransformer` object to load the model for inferencing.** To create an `MLFlowTransformer` object for generating predictions, we specify all the columns from the `test` data as model inputs, name the new output column `predictions` (although this column name could be any string), and provide the correct model name and version to use for generating predictions. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version.
 
    ```Python
    from synapse.ml.predict import MLFlowTransformer
@@ -153,46 +153,54 @@ The **Apply model** prompt includes an option to generate PREDICT code with prep
 > The scoring wizard is currently supported only for models that have been saved in the MLflow format with their model signatures populated. For other models, use the customizable code template provided on the model version's page, or [call PREDICT directly from a notebook](#call-predict-from-a-notebook).
 
 To use the scoring wizard,
-- Go to the item page for a given model version.
-- Select **Apply this model in wizard** from the **Apply model** dropdown.
+1. Go to the item page for a given model version.
+1. Select **Apply this model in wizard** from the **Apply model** dropdown.
 
-:::image type="content" source="media/model-scoring-predict/apply-model.png" alt-text="Screenshot of the prompt to apply a model from its item page." lightbox="media/model-scoring-predict/apply-model.png":::
+    :::image type="content" source="media/model-scoring-predict/apply-model.png" alt-text="Screenshot of the prompt to apply a model from its item page." lightbox="media/model-scoring-predict/apply-model.png":::
 
-The interface guides you through the following steps:
+    The selection opens up the "Apply model predictions" window at the "Select input table" step.
 
-1. **Select input table.** Browse the provided dropdown menus to select an input table from among the Lakehouses in your current workspace.
+1. Select an input table from one of the Lakehouses in your current workspace.
 
-:::image type="content" source="media/model-scoring-predict/select-input-table.png" alt-text="Screenshot of the step to select an input table for model predictions." lightbox="media/model-scoring-predict/select-input-table.png":::
+    :::image type="content" source="media/model-scoring-predict/select-input-table.png" alt-text="Screenshot of the step to select an input table for model predictions." lightbox="media/model-scoring-predict/select-input-table.png":::
 
-2. **Map input columns.** Use the provided dropdowns to match columns from the selected table to each of the model's listed input fields, which have been pulled from the model's signature. You must provide an input column for all the model's required fields. Also, the data types for the selected columns must match the model's expected data types.
+1. Select **Next** to go to the "Map input columns" step.
+1. Map column names from the input table to the model's input fields that have been pulled from the model's signature. You must provide an input column for all the model's required fields. Also, the data types for the selected columns must match the model's expected data types.
 
     > [!TIP]
     > The wizard will prepopulate the mapping if the names of the input table's columns match those logged in the model signature.
 
-:::image type="content" source="media/model-scoring-predict/map-input-columns.png" alt-text="Screenshot of the step to map input columns for model predictions." lightbox="media/model-scoring-predict/map-input-columns.png":::
+    :::image type="content" source="media/model-scoring-predict/map-input-columns.png" alt-text="Screenshot of the step to map input columns for model predictions." lightbox="media/model-scoring-predict/map-input-columns.png":::
 
-3. **Create output table.** Provide a name for a new table within your current workspace's selected Lakehouse. This Lakehouse will store the output table that will contain the model's input values and predictions. By default, this table will be created in the same Lakehouse as the input table, but the option to change the destination Lakehouse is also available.
+1. Select **Next** to go to the "Create output table" step.
+1. Provide a name for a new table within the selected Lakehouse of your current workspace. This Lakehouse will store the output table that will contain the model's input values and predictions. By default, this table will be created in the same Lakehouse as the input table, but the option to change the destination Lakehouse is also available.
 
-:::image type="content" source="media/model-scoring-predict/create-output-table.png" alt-text="Screenshot of the step to create an output table for model predictions." lightbox="media/model-scoring-predict/create-output-table.png":::
+    :::image type="content" source="media/model-scoring-predict/create-output-table.png" alt-text="Screenshot of the step to create an output table for model predictions." lightbox="media/model-scoring-predict/create-output-table.png":::
 
-4. **Map output column(s).** Use the provided text field(s) to name the column(s) in the output table where the model's predictions will be stored.
+1. Select **Next** to go to the "Map output columns" step.
+1. Use the provided text field(s) to name the column(s) in the output table that will store the model's predictions.
 
-:::image type="content" source="media/model-scoring-predict/map-output-columns.png" alt-text="Screenshot of the step to map output columns for model predictions." lightbox="media/model-scoring-predict/map-output-columns.png":::
+    :::image type="content" source="media/model-scoring-predict/map-output-columns.png" alt-text="Screenshot of the step to map output columns for model predictions." lightbox="media/model-scoring-predict/map-output-columns.png":::
 
-5. **Configure notebook.** Provide a name for a new notebook where the PREDICT code generated by the wizard will be stored. The generated code will be displayed as a preview in this step. You can copy the code to your clipboard and paste it into an existing notebook instead.
+1. Select **Next** to go to the "Configure notebook" step.
+1. Provide a name for a new notebook that will store the generated PREDICT code. The wizard displays a preview of the generated code at this step. You can copy the code to your clipboard and paste it into an existing notebook if you like.
 
-:::image type="content" source="media/model-scoring-predict/configure-notebook.png" alt-text="Screenshot of the step to configure a notebook for model predictions." lightbox="media/model-scoring-predict/configure-notebook.png":::
+    :::image type="content" source="media/model-scoring-predict/configure-notebook.png" alt-text="Screenshot of the step to configure a notebook for model predictions." lightbox="media/model-scoring-predict/configure-notebook.png":::
 
-6. **Review and finish.** Review the designated model version, input table, output table, and notebook name. Select **Create notebook** to add the new notebook with the generated code to your workspace.
+1. Select **Next** to go to the "Review and finish" step.
+1. Review the details on the summary page and select **Create notebook** to add the new notebook with its generated code to your workspace.
 
-:::image type="content" source="media/model-scoring-predict/review-and-finish.png" alt-text="Screenshot of the review-and-finish step for model predictions." lightbox="media/model-scoring-predict/review-and-finish.png":::
+    :::image type="content" source="media/model-scoring-predict/review-and-finish.png" alt-text="Screenshot of the review-and-finish step for model predictions." lightbox="media/model-scoring-predict/review-and-finish.png":::
 
 ### Use a customizable code template
 
-The **Apply model** prompt also includes an option to copy a customizable code template. You can paste this code template into a notebook as a new cell to generate model predictions. To successfully run the code template, you need to manually replace the placeholders in the code template as follows:
+1. Go to the item page for a given model version.
+1. Select **Copy code to apply** from the **Apply model** dropdown. The selection allows you to copy a customizable code template.
+
+You can paste this code template as a new cell in a notebook to generate model predictions. To successfully run the code template, you need to manually replace the placeholders in the code template as follows:
 
 - `<INPUT_TABLE>`: The file path for the table that will provide inputs to the model
-- `<INPUT_COLS>`: An array of column names from that table to feed as inputs to the model
+- `<INPUT_COLS>`: An array of column names from the input table to feed as inputs to the model
 - `<OUTPUT_COLS>`: A name for a new column where predictions will land in the output table
 - `<MODEL_NAME>`: The name of the model to use for generating predictions
 - `<MODEL_VERSION>`: The version of the model to use for generating predictions
@@ -226,3 +234,4 @@ df.write.format('delta').mode("overwrite").save(
 ## Next steps
 
 - [End-to-end prediction example using a fraud detection model](fraud-detection.md)
+- [How to train models with scikit-learn in Microsoft Fabric](train-models-scikit-learn.md)
