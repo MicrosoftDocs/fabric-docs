@@ -41,7 +41,6 @@ items:
 - name: Query data
   items:
   - name: Query data in a KQL Queryset
-  - name: Query data in a KQL Queryset
     href: kusto-query-set.md
   - name: Use a Jupyter notebook and kqlmagic to query a KQL Database
     href: jupyter-notebook.md
