@@ -101,11 +101,11 @@ To create and Amazon S3 Shortcut:
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="The same screenshot displayed earlier showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
+   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
 
 1. Select **Amazon S3** tile
 
-    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-tile-options-v2.png" alt-text="The same screenshot shown previously of the tile options in the New shortcut screen." lightbox="media\create-onelake-shortcut\new-shortcut-tile-options.png":::
+    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-tile-options-v2.png" alt-text="Screenshot of New Shortcuts dialog showing selection tiles for shortcut types" lightbox="media\create-onelake-shortcut\new-shortcut-tile-options.png":::
 
 1. Specify the connection details this shortcut will use.
 
