@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
 ms.topic: overview
-ms.date: 03/22/2023
+ms.date: 04/19/2023
 ---
 
 # What is Spark autotune configuration in Fabric and how to enable and disable it?
@@ -37,7 +37,31 @@ Based on the performance of the second run per suggested configuration, we retra
 
 ## Enable or disable autotune
 
-Autotune is enabled by default and it's controlled by Apache Spark Configuration Settings. To verify and confirm its activation, use the following commands:
+Autotune is disabled by default and it's controlled by Apache Spark Configuration Settings. Easily enable Autotune within a session by running the following code in your notebook or adding it in your spark job definition code:
+
+1. SQL
+   ```sql
+   %%sql 
+   SET spark.ms.autotune.queryTuning.enabled=TRUE 
+   ```
+1. Python
+   ```python
+   %%pyspark
+   spark.conf.set('spark.ms.autotune.queryTuning.enabled', 'true')   
+   ```
+1. Scala 
+   ```scala
+   %%spark  
+   spark.conf.set("spark.ms.autotune.queryTuning.enabled", "true") 
+   ```
+1. R
+   ```r
+   %%sparkr
+   library(SparkR)
+   sparkR.conf("spark.ms.autotune.queryTuning.enabled", "true")
+   ```
+
+To verify and confirm its activation, use the following commands:
 1. SQL
    ```sql
    %%sql 
@@ -83,26 +107,23 @@ To disable Autotune, execute the following commands:
    sparkR.conf("spark.ms.autotune.queryTuning.enabled", "false")
    ```
 
-Easily enable Autotune within a session by running the following code in your notebook or adding it in your spark job definition code:
+## Transparency Note
 
-1. SQL
-   ```sql
-   %%sql 
-   SET spark.ms.autotune.queryTuning.enabled=TRUE 
-   ```
-1. Python 
-   ```python
-   %%pyspark  
-   spark.conf.set('spark.ms.autotune.queryTuning.enabled', 'true')   
-   ```
-1. Scala 
-   ```scala
-   %%spark  
-   spark.conf.set("spark.ms.autotune.queryTuning.enabled", "true") 
-   ```
-1. R
-   ```r
-   %%sparkr
-   library(SparkR)
-   sparkR.conf("spark.ms.autotune.queryTuning.enabled", "true")
-   ```
+Microsoft follows Responsible AI Standard and this transparency note aims to provide clear documentation defining the intended uses of Autotune and the evidence that the feature is fit for purpose before the service becomes externally available. We understand the importance of transparency and ensuring that our customers have the necessary information to make informed decisions when using our services.
+
+### Intended Uses of the Autotune
+The primary goal of Autotune is to optimize the performance of Spark workloads by automating the process of Spark configuration tuning. The system is designed to be used by data engineers, data scientists, and other professionals who are involved in the development and deployment of Spark workloads. The intended uses of the Autotune include:
+1. Automatic tuning of Spark configurations to minimize workload execution time
+1. Accelerating the Spark workload development process
+1. Reducing the manual effort required for Spark configuration tuning
+1. Leveraging historical data execution from workloads to iteratively learn optimal configurations
+
+### Evidence that the Autotune is Fit for Purpose
+To ensure that Autotune meets the desired performance standards and is fit for its intended use, we have conducted rigorous testing and validation. The evidence includes:
+1. Thorough internal testing and validation using various Spark workloads and datasets to confirm the effectiveness of the autotuning algorithms
+1. Comparisons with alternative Spark configuration optimization techniques, demonstrating the performance improvements and efficiency gains achieved by Autotune
+1. Customer case studies and testimonials showcasing successful applications of Autotune in real-world projects
+1. Compliance with industry-standard security and privacy requirements, ensuring the protection of customer data and intellectual property
+
+
+
