@@ -11,4 +11,4 @@ ms.date: 04/18/2023
 
 * A Power BI Workspace with assigned premium capacity.
 
-* Sign in to [[!INCLUDE [product-name](../includes/product-name.md)]](https://fabric.microsoft.com/).
+* Sign in to [[!INCLUDE [product-name](../../includes/product-name.md)]](https://fabric.microsoft.com/).
