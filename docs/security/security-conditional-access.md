@@ -31,7 +31,7 @@ To configure conditional access for Fabric, follow the guidance provided in the 
 
 +++++++
 
-Tell what happens when you have Power BI already set, what will be covered. WHen you turn on the switch, there will be other workloads such as XXX that will be uncovered. You need to configure these for conditional access as well.
+Tell what happens when you have Power BI already set, what will be covered. When you turn on the switch, there will be other workloads such as XXX that will be uncovered. You need to configure these for conditional access as well.
 
 When user accesses Power BI or Trident workloads (data engineering and data science), AAD will enforce CA policies configured for Power BI Service app.  
 
