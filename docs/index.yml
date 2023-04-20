@@ -25,7 +25,7 @@ highlightedContent:
     # Card
     - title: What is Microsoft Fabric?
       itemType: overview
-      url: placeholder.md
+      url: get-started/microsoft-fabric-overview.md
     # Card
     - title: Try Microsoft Fabric for free
       itemType: get-started
@@ -45,18 +45,20 @@ productDirectory:
   items:
 
     # Card
-    - title: Fabric platform
+    - title: Get started
 
       imageSrc: ./media/fabric-icon.png
       links:
-        - url: enterprise/what-is-capacity.md
-          text: Fabric capacity and SKUs?
-        - url: admin/admin-roles.md
-          text: Understand Fabric admin roles
-        - url: security/security-overview.md
-          text: Secure Fabric resources
-        - url: cicd/deployment-pipelines/create-rules.md
-          text: What are deployment pipelines?
+        - url: get-started/microsoft-fabric-overview.md
+          text: What is Fabric?
+        - url: placeholder.md
+          text: Navigate the Fabric portal
+        - url: placeholder.md
+          text: Choose the right experience
+        - url: placeholder.md
+          text: Workspaces in Fabric
+        - url: placeholder.md
+          text: Find data in the OneLake data hub
         - url: get-started/index.yml
           text: See more
 
@@ -155,6 +157,67 @@ productDirectory:
           text: Create a database
         - url: real-time-analytics/index.yml
           text: See more
+
+    # Card
+    - title: Admin and governance
+
+      imageSrc: /office/media/icons/administrator.png
+      links:
+        - url: /admin/admin-overview.md
+          text: Fabric administration
+        - url: /governance/metadata-scanning-overview.md
+          text: Data governance and compliance
+        - url: /security/security-overview.md
+          text: Security
+        - url: /enterprise/billing-reports.md
+          text: Billing and consumption
+        - url: admin/index.yml
+          text: See more
+
+    # Card
+    - title: Developer experience
+
+      imageSrc: /office/media/icons/developer.png
+      links:
+        - url: .md
+          text: REST APIs
+        - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
+          text: Deployment pipelines
+        - url: cicd/git-integration/git-integration-process.md
+          text: Git integration
+        - url: cicd/index.yml
+          text: See more
+
+    # Card
+    - title: Troubleshooting 
+
+      imageSrc: ./media/fabric-icon.png
+      links:
+        - url: placeholder.md
+          text: Create a support ticket
+        - url: placeholder.md
+          text: Known issues
+        - url: placeholder.md
+          text: Troubleshoot issues
+        - url: get-started/index.yml
+          text: See more
+
+    # Card
+    - title: Training modules
+
+      imageSrc: ./media/fabric-icon.png
+      links:
+        - url: placeholder.md
+          text: End-to-end analytics using Fabric
+        - url: placeholder.md
+          text: Get started with lakehouses
+        - url: placeholder.md
+          text: Use Data Factory pipelines
+        - url: placeholder.md
+          text: Get started with Data science
+        - url: get-started/index.yml
+          text: See more
+
 
 # additionalContent section (optional)
 # Card with summary style
