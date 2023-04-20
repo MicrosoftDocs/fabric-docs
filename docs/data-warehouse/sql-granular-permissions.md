@@ -9,7 +9,7 @@ ms.date: 04/17/2023
 ms.search.form: Warehouse SQL permissions, Workspace permissions
 ---
 
-# SQL granular permissions
+# SQL granular permissions in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -24,8 +24,8 @@ For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](incl
 - Users can be assigned to SQL roles, both custom and built-in database roles. 
 
 ### Notes:
-- In order for a user to connect to the database, the user must be assigned to a Workspace role or assigned the item READ permission.  Without Read permission at a minimum, the connection fails.
-- If you'd like to set up a user's granular permissions, prior to allowing them to connect to the warehouse, permissions can be set up within SQL first and then they can be given access by assigning them to a Workspace role or granting item permissions.
+- In order for a user to connect to the database, the user must be assigned to a Workspace role or assigned the item **Read** permission.  Without **Read** permission at a minimum, the connection fails.
+- If you'd like to set up a user's granular permissions prior to allowing them to connect to the warehouse, permissions can first be set up within SQL. Then, they can be given access by assigning them to a Workspace role or granting item permissions.
 
 ### Limitations:
 - CREATE USER cannot be explicitly executed currently. When GRANT or DENY is executed, the user will be created automatically.
@@ -43,7 +43,7 @@ When a user connects to the SQL connection string, they can view the permissions
 
 ## View permissions granted explicitly to users
 
-When connected via the SQL connection string, a user with elevated permissions can query the permissions that have been granted by using system views. This will not show the users or user permissions that are given to users by being assigned to workspace roles or assigned item permissions.
+When connected via the SQL connection string, a user with elevated permissions can query the permissions that have been granted by using system views. This doesn't show the users or user permissions that are given to users by being assigned to workspace roles or assigned item permissions.
 
    ```sql
    SELECT DISTINCT pr.principal_id, pr.name, pr.type_desc, 
