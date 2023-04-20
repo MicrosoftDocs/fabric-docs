@@ -27,9 +27,6 @@ To configure conditional access for Fabric, follow the guidance provided in the 
     |Azure Storage              | e406a681-f3d4-42a8-90b6-c2b029497af1 |
     |Microsoft Azure Management |                                      |
 
-    Configuring a single, common policy for the Power BI Service, Azure Storage, Azure SQL Database, Azure Data Explorer, and Microsoft Azure Management will significantly reduce unexpected prompts that may arise from different policies being applied to downstream services. Having a consistent security posture will provide the best user experience in Microsoft Fabric and its related products.
-
-
 * If you create a restrictive policy (such as one that blocks access for all apps except Power BI), certain features, such as dataflows, will not work.
 
 +++++++
