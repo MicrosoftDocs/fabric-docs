@@ -15,17 +15,16 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides the SQL-based experience for every [Lakehouse](../data-engineering/lakehouse-overview.md) item in the workspace. This SQL-based experience is called the **[!INCLUDE [fabric-se](includes/fabric-se.md)]**. 
+[!INCLUDE [product-name](../includes/product-name.md)] provides the SQL-based experience for a [Lakehouse](../data-engineering/lakehouse-overview.md) and all items it contains. This SQL-based experience is called the **[!INCLUDE [fabric-se](includes/fabric-se.md)]**. 
 
-The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to analyze data in the [Lakehouse](../data-engineering/lakehouse-overview.md) using T-SQL language and TDS endpoint.
+The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to analyze data in the [Lakehouse](../data-engineering/lakehouse-overview.md) using T-SQL language and a TDS endpoint.
 
-When you create a [Lakehouse](../data-engineering/lakehouse-overview.md) item and create Delta tables in the Lakehouse, the [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes the data as tables. The tables reference your Delta Lake data and enable you to query your data in the Lake using the T-SQL language. 
+When you create a [Lakehouse](../data-engineering/lakehouse-overview.md) and create Delta tables in the Lakehouse, the [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes the data as tables. The tables reference your Delta Lake data and enable you to query your data in the Lake using the T-SQL language. 
 
-Each workspace can have more than one Lakehouse and every Lakehouse is getting its own [!INCLUDE [fabric-se](includes/fabric-se.md)].
-
-Every delta table in a Lakehouse is represented as one table in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
-
-You can create your own T-SQL views, functions, and procedures on top of the tables that reference your Delta Lake data.
+- Each workspace can have more than one Lakehouse. 
+- Each Lakehouse has its own [!INCLUDE [fabric-se](includes/fabric-se.md)].
+- Each delta table in a Lakehouse is represented as one table in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
+- You can create your own T-SQL views, functions, and procedures on top of the tables that reference your Delta Lake data.
 
 :::image type="content" source="media\lakehouse-sql-endpoint\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and delta tables." lightbox="media\lakehouse-sql-endpoint\lakehouse-delta-tables.png":::
 
