@@ -17,17 +17,17 @@ items:
     href: get-started-lakehouse-sql-endpoint.md
   - name: Get started with Synapse Data Warehouse
     items:
-    - name: Get started with Synapse Data Warehouse
+    - name: 1. Get started
       href: get-started-data-warehouse.md  
-    - name: 1. Create a warehouse
+    - name: 2. Create a warehouse
       href: create-warehouse.md
-    - name: 2. Create a table
+    - name: 3. Create a table
       href: create-table.md
-    - name: 3. Ingest data 
+    - name: 4. Ingest data 
       href: ingest-data.md
-    - name: 4. Query the warehouse
+    - name: 5. Query the warehouse
       href: query-warehouse.md
-    - name: 5. Create reports
+    - name: 6. Create reports
       href: create-reports.md
 - name: Concepts
   items: 
