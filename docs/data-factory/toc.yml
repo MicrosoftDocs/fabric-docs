@@ -89,6 +89,8 @@
         href: connector-google-cloud-storage.md
       - name: Configure in copy activity
         href: connector-google-cloud-storage-copy-activity.md
+      - name: Connect in dataflows
+        href: connector-google-cloud-storage-dataflow.md
     - name: HTTP
       items:
       - name: Overview
