@@ -20,4 +20,8 @@ items:
   - name: Bring your own encryption keys
     href: security-byok.md
   - name: Service tags
-    href: security-service-tags.md                
+    href: security-service-tags.md
+- name: Resiliency
+  items:
+  - name: AZ Resiliency in Fabric
+    href: az-resiliency.md        
