@@ -126,4 +126,4 @@ To ensure that Autotune meets the desired performance standards and is fit for i
 1. Compliance with industry-standard security and privacy requirements, ensuring the protection of customer data and intellectual property
 
 
-
+We want to assure that we prioritize data privacy and security. Your data will only be used to train the model that serves your specific workload. We take stringent measures to ensure that no sensitive information is used in our storage or training processes.
