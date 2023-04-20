@@ -9,7 +9,9 @@ ms.date: 04/20/2023
 
 # Conditional access in Fabric
 
-Azure AD Conditional Access is a feature included in the Azure AD premium tier that provides centralized control and management of the identities and credentials used to access an organization’s resources and data. It provides a rich policy framework including controls such as requiring multi-factor authentication, limiting sign-in location, ensuring a compliant device, or even evaluating sign-in risk using the broad set of signals that Microsoft constantly gathers. For more information about Azure AD Conditional Access, see [Azure AD Conditional Access documentation](/azure/active-directory/conditional-access/).
+Azure AD Conditional Access is a feature included in the Azure AD premium tier that enables products that use Azure Active Directory to allow conditional access policies to be applied when users sign-in. Azure AD Conditional Access provides a rich policy framework including controls such as requiring multi-factor authentication, limiting sign-in location, ensuring a compliant device, or even evaluating sign-in risk using the broad set of signals that Microsoft constantly gathers.
+
+Products that wish to take advantage of conditional access polices must take the step of configuring a policy for the product in Azure AD Conditional Access amd allowing it to be applied when users login in. For more information about Azure AD Conditional Access, see [Azure AD Conditional Access documentation](/azure/active-directory/conditional-access/).
 
 ## Configure conditional access for Fabric
 
