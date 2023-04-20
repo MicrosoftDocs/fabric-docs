@@ -8,7 +8,9 @@ items:
 - name: Security features
   items:
   - name: Business to business
-    href: security-b2b.md  
+    href: security-b2b.md
+  - name: Conditional access
+    href: security-conditional-access.md
   - name: Recovery
     href: security-recovery.md
   - name: Private links
