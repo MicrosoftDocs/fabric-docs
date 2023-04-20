@@ -1,6 +1,6 @@
 ---
-title: Lakehouse SQL Endpoint
-description: Learn more about Lakehouse SQL Endpoint in Microsoft Fabric that provides analytical capabilities over the Lake data.
+title: The Lakehouse SQL Endpoint
+description: Learn more about the Lakehouse SQL Endpoint in Microsoft Fabric that provides analytical capabilities over the Lake data.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
