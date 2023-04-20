@@ -1,5 +1,5 @@
 ---
-title: Get started with the Lakehouse SQL Endpoint in Microsoft Fabric
+title: Get started with the Lakehouse SQL Endpoint
 description: Learn more about querying the Lakehouse SQL Endpoint in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
