@@ -1,5 +1,5 @@
 ---
-title: Connectivity to data warehousing in Microsoft Fabric
+title: Connectivity to data warehousing
 description: Follow steps to connect SSMS to data warehousing in your Microsoft Fabric workspace.
 author: salilkanade
 ms.author: salilkanade

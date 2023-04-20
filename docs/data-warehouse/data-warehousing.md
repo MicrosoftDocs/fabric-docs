@@ -1,5 +1,5 @@
 ---
-title: What is Data warehousing in Microsoft Fabric?
+title: What is data warehousing in Microsoft Fabric?
 description: Learn more about the data warehousing experience.
 author: cynotebo
 ms.author: cynotebo
