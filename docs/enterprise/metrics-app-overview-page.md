@@ -4,7 +4,7 @@ description: Learn how to read the Microsoft Fabric utilization and metrics app'
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
-ms.date: 12/27/2022
+ms.date: 04/20/2023
 ---
 
 # Understand the metrics app overview page
@@ -37,7 +37,7 @@ Displays the CU usage of the selected capacity over time. Use the tabs at the to
 
 Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint](metrics-app-timepoint-page.md) page.
 
-Filters applied to the page in the [Multi metric column chart](#multi-metric-column-chart), affect this chart's display as follows:
+Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
 
 * *No filters applied* - Columns display the peak timepoint per hour.
 
