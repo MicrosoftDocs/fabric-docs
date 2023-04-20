@@ -13,9 +13,11 @@ Azure AD Conditional Access is a feature included in the Azure AD premium tier t
 
 ## Configure conditional access for Fabric
 
-To configure conditional access for Fabric, following the guidance provided in the [Azure AD Conditional Access documentation](/azure/active-directory/conditional-access/). To ensure that conditional access for Fabric works as intended and expected, it is recommended to adhere to the following best practices:
+To configure conditional access for Fabric, follow the guidance provided in the [Azure AD Conditional Access documentation](/azure/active-directory/conditional-access/). To ensure that conditional access for Fabric works as intended and expected, it is recommended to adhere to the following best practices:
 
-* Include the following apps in one single conditional access policy.
+* Configure a single, common, conditional access policy for the Power BI Service, Azure Storage, Azure SQL Database, Azure Data Explorer, and Microsoft Azure Management. Having a single, common policy for will significantly reduce unexpected prompts that may arise from different policies being applied to downstream services, and the consistent security posture will provide the best user experience in Microsoft Fabric and its related products.
+
+    The products to include in the policy along with their App IDs are shown in the following table. 
     
     |Product  |App ID  |
     |---------|---------|
