@@ -20,7 +20,7 @@ The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](..
 
 For example, you can establish a live connection to a shared dataset in the Power BI service and create many different reports from the same dataset. You can create a data model in Power BI Desktop and publish to the Power BI service. Then, you and others can create multiple reports in separate .pbix files from that common data model and save them to different workspaces.
 
-Advanced users can build reports from a warehouse using a composite model or using the SQL Endpoint.
+Advanced users can build reports from a warehouse using a composite model or using the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
 Reports that use the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] can be created with the Power BI service. For more information, see [Create reports in the Power BI service](reports-power-bi-service.md).
 
