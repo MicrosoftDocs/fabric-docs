@@ -84,6 +84,24 @@ In [!INCLUDE [product-name](../includes/product-name.md)], Predicted values can 
 
 Notebooks that contain batch scoring can be scheduled to run using the Notebook scheduling capabilities. Batch scoring can also be scheduled as part of data pipeline activities or Spark jobs. Power BI automatically gets the latest predictions without need for loading or refresh of the data, thanks to the Direct lake mode in [!INCLUDE [product-name](../includes/product-name.md)].
 
+## Data Exploration with SemPy
+
+Data scientists and business analysts spend a lot of time trying to understand, clean and transform their data, before they can even start any meaningful analysis. SemPy simplifies data analytics. It captures and exploits the data semantics as the users perform various transformations on their datasets. By exploiting data semantics, SemPy can simplify various tedious tasks, for example
+
+- automatic data transformation while joining heterogeneous datasets
+- handle underlying schema changes
+- enforce semantic constraints and identify data that violates them
+- enrich the data with new knowledge
+
+SemPy users can register new information about the data, and share it with other users. This allows for faster collaboration across teams that operate on the same datasets, and increases productivity. SemPy explores data semantics to simplify data science analytics. Through SemPy we can expect to:
+
+- Reduce the time needed to preprocess and validate the data, before meaningful analysis starts.
+- Increase productivity across teams that operate on same datasets, through registration and sharing data of semantics and transformations; this reduces the time needed to extract value from a dataset.
+- Increase cross-org collaboration, to bring the BI and AI teams together.
+- Decrease ambiguity and the learning curve when onboarding onto a new model/dataset.
+
+Learn more about SemPy in [!INCLUDE [product-name](../includes/product-name.md)], in the following sections.
+
 ## Next steps
 
 - Get started with end-to-end data science samples, see Data Science Tutorials
