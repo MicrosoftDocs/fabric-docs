@@ -4,7 +4,7 @@ description: This article provides information about how to do create an HTTP co
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 02/08/2023
+ms.date: 04/20/2023
 ms.custom: template-how-to
 ---
 
@@ -29,7 +29,7 @@ The HTTP connector supports the following authentication types for copy and Data
 
 To get started, you must have the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).
+- A tenant account with an active subscription. Create an account for free.
 
 - A workspace is created and that isn't the default **My Workspace**.
 

@@ -4,7 +4,7 @@ description: This article provides information about how to How to create Azure 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 3/12/2023
+ms.date: 04/20/2023
 ms.custom: template-how-to
 ---
 
@@ -14,7 +14,7 @@ ms.custom: template-how-to
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
-This article outlines how to set up connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview). 
+This article outlines how to set up connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview).
 
 ## Supported authentication types
 
@@ -33,7 +33,7 @@ The Azure SQL Database connector supports the following authentication types for
 
 To get started, you must have following prerequisites:
 
-* A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).
+* A tenant account with an active subscription. Create an account for free.
 
 * A workspace is created and that isn’t the default **My Workspace**.
 

@@ -4,7 +4,7 @@ description: This article explains how to copy data using Amazon S3.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 03/24/2023
+ms.date: 04/20/2023
 ms.custom: template-how-to 
 ---
 
@@ -29,9 +29,9 @@ For the full list of Amazon S3 permissions, see [Specifying Permissions in a Pol
 Amazon S3 supports the following file formats. Refer to each article for format-based settings.
 
 - Avro format
-- Binary format
-- Delimited text format
-- Excel format
+- [Binary format](format-binary.md)
+- [Delimited text format](format-delimited-text.md)
+- [Excel format](format-excel.md)
 - JSON format
 - ORC format
 - Parquet format
@@ -47,7 +47,7 @@ For the configuration of each tab under copy activity, see the following section
 
 ### General
 
-For **General** tab configuration, go to General.
+For **General** tab configuration, go to [General](activity-overview.md#general-settings).
 
 ### Source
 

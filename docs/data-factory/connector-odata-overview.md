@@ -4,7 +4,7 @@ description: This article explains the overview of using OData.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/09/2022
+ms.date: 04/20/2023
 ms.custom: template-how-to 
 ---
 
@@ -14,7 +14,7 @@ ms.custom: template-how-to
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-This OData connector is supported in Trident Project  - Data Factory with the following capabilities.
+This OData connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 

@@ -4,7 +4,7 @@ description: This article explains how to copy data using OData.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/09/2023
+ms.date: 04/20/2023
 ms.custom: template-how-to 
 ---
 
@@ -27,7 +27,7 @@ For the configuration of each tab under copy activity, see the following section
 
 ### General
 
-For **General** tab configuration, see General.
+For **General** tab configuration, go to [General](activity-overview.md#general-settings).
 
 ### Source
 
