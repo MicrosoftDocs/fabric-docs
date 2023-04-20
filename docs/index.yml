@@ -3,7 +3,7 @@
 title: Microsoft Fabric documentation # < 60 chars
 summary: Translate data to competitive advantage with the Microsoft Fabric unified analytics platform - the data platform for the age of AI. Get expert information and answers to help you deliver complete data solutions that take you from data to insight to action. # < 160 chars
 # brand: aspnet | azure | dotnet | dynamics | m365 | ms-graph | office | power-platform | sql | sql-server | vs | visual-studio | windows | xamarin
-brand: power-bi
+brand: fabric
 
 metadata:
   title: Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
