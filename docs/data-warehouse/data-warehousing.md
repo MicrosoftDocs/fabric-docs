@@ -20,7 +20,7 @@ ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspac
 > [!IMPORTANT]
 > This article provides a comprehensive overview of two distinct data warehousing experiences.
 
-## SQL Endpoint
+## Lakehouse SQL Endpoint
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] allows a user to transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" experiences that a data warehouse would provide, supporting T-SQL. Via the SQL Endpoint, the user has a subset of SQL commands that can define and query data objects but not manipulate the data. You can perform the following actions in the [!INCLUDE [fabric-se](includes/fabric-se.md)]:
 
