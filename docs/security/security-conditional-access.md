@@ -31,13 +31,8 @@ To configure conditional access for Fabric, follow the guidance provided in the 
 
 * If you create a restrictive policy (such as one that blocks access for all apps except Power BI), certain features, such as dataflows, won't work.
 
-+++++++
-
-Tell what happens when you have Power BI already set, what will be covered. When you turn on the switch, there will be other workloads such as XXX that will be uncovered. You need to configure these for conditional access as well.
-
-When user accesses Power BI or Microsoft Fabric workloads (data engineering and data science), Azure AD will enforce CA policies configured for Power BI Service app.  
-
-In addition, you need to include in the policy SQL, Kusto, Dataflows, etc.
+> [!NOTE]
+> If you already have a conditional access policy configured for Power BI, be sure to include the other products listed in the table above in your existing Power BI policy, otherwise conditional access may not operate as intended.
 
 ## Next steps
 
