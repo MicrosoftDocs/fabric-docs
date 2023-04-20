@@ -5,7 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
-ms.date: 04/03/2023
+ms.date: 04/20/2023
 ---
 
 # How to copy data using copy activity
@@ -14,22 +14,23 @@ ms.date: 04/03/2023
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
-Learn how to add a copy activity directly or through the copy assistant.
-
-In Data Pipeline, you can use the Copy activity to copy data among data stores located on-premises and in the cloud. After you copy the data, you can use other activities to further transform and analyze it. You can also use the Copy activity to publish transformation and analysis results for business intelligence (BI) and application consumption.
+In Data Pipeline, you can use the Copy activity to copy data among data stores located in the cloud. After you copy the data, you can use other activities to further transform and analyze it. You can also use the Copy activity to publish transformation and analysis results for business intelligence (BI) and application consumption.
 
 To copy data from a source to a destination, the service that runs the Copy activity performs these steps:
 
-Reads data from a source data store.
-Performs serialization/deserialization, compression/decompression, column mapping, and so on. It performs these operations based on the configuration of the input dataset, output dataset, and Copy activity.
-Writes data to the sink/destination data store.
+1. Reads data from a source data store.
+1. Performs serialization/deserialization, compression/decompression, column mapping, and so on. It performs these operations based on the configuration of the input dataset, output dataset, and Copy activity.
+1. Writes data to the sink/destination data store.
+
+Learn how to add a copy activity directly or through the copy assistant.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](/trident-docs-private-preview/synapse-data-integration/url).
-- A workspace is created.
+- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
+
+- Make sure you have a Microsoft Fabric enabled Workspace.
 
 ## Add a copy activity using copy assistant
 
@@ -50,17 +51,15 @@ Follow these steps to set up your copy activity using copy assistant.
 
    :::image type="content" source="media/copy-data-activity/choose-azure-blob-storage-source.png" alt-text="Screenshot showing where to select the correct data source." lightbox="media/copy-data-activity/choose-azure-blob-storage-source.png":::
 
-2. Create a connection to your data source by selecting **New connection**.
+2. Create a connection to your data source by selecting **Create new connection**.
 
    :::image type="content" source="media/copy-data-activity/create-new-azure-blob-storage-connection.png" alt-text="Screenshot showing where to select New connection." lightbox="media/copy-data-activity/create-new-azure-blob-storage-connection.png":::
 
-   1. After you select **New connection**, it will navigate to the connection creation page in a new browser. Fill in the required connection information on the panel and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [Power Query connector article](/power-query/connectors/).
+    After you select **Create new connection**, fill in the required connection information and then select **Next**. For the details of connection creation for each type of data source, you can refer to each [Power Query connector article](connector-overview.md#supported-data-stores-in-data-pipeline).
 
-      :::image type="content" source="media/copy-data-activity/configure-source-details.png" alt-text="Screenshot showing the New connection page." lightbox="media/copy-data-activity/configure-source-details.png":::
+   If you have existing connections, you can select **Existing connection** and select your connection from the drop-down list.
 
-   1. Once your connection is created successfully, it will take you back to the previous page. Then select **Refresh** to fetch the connection that you created and go to the next step. You could also choose an existing blob connection from the drop-down directly if you already created it before.
-
-      :::image type="content" source="media/copy-data-activity/refresh-source-connection.png" alt-text="Screenshot showing where to select Refresh." lightbox="media/copy-data-activity/refresh-source-connection.png":::
+   :::image type="content" source="media/copy-data-activity/existing-connection.png" alt-text="Screenshot showing the existing connection." lightbox="media/copy-data-activity/existing-connection.png":::
 
 3. Choose the file or folder to be copied in this source configuration step, and then select **Next**.
 
