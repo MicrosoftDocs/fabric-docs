@@ -15,11 +15,11 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides the SQL-based experience for every [Lakehouse](../data-engineering/lakehouse-overview.md) artifact in the workspace. This SQL-based experience is called the **[!INCLUDE [fabric-se](includes/fabric-se.md)]**. 
+[!INCLUDE [product-name](../includes/product-name.md)] provides the SQL-based experience for every [Lakehouse](../data-engineering/lakehouse-overview.md) item in the workspace. This SQL-based experience is called the **[!INCLUDE [fabric-se](includes/fabric-se.md)]**. 
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to analyze data in the [Lakehouse](../data-engineering/lakehouse-overview.md) using T-SQL language and TDS endpoint.
 
-When you create a [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](../data-engineering/lakehouse-overview.md) and create Delta tables in the [Lakehouse](../data-engineering/lakehouse-overview.md), the [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes the [Lakehouse](../data-engineering/lakehouse-overview.md) data as the set tables that reference your Delta Lake data. The tables enable you to query your data in the Lake using the T-SQL language. 
+When you create a [Lakehouse](../data-engineering/lakehouse-overview.md) item and create Delta tables in the Lakehouse, the [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes the data as tables. The tables reference your Delta Lake data and enable you to query your data in the Lake using the T-SQL language. 
 
 Each workspace can have more than one Lakehouse and every Lakehouse is getting its own [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
