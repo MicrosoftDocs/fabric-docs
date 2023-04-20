@@ -6,15 +6,15 @@ items:
   items: 
   - name: Data warehousing
     href: data-warehousing.md
-  - name: SQL Endpoint
-    href: sql-endpoint.md
+  - name: Lakehouse SQL Endpoint
+    href: lakehouse-sql-endpoint.md
   - name: Synapse Data Warehouse
     href: warehouse.md
 - name: Quickstarts
   expanded: true
   items: 
-  - name: Get started with SQL Endpoint on Lakehouse
-    href: get-started-sql-endpoint.md
+  - name: Get started with the Lakehouse SQL Endpoint
+    href: get-started-lakehouse-sql-endpoint.md
   - name: Get started with Synapse Data Warehouse
     items:
     - name: Get started with Synapse Data Warehouse

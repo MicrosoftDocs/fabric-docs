@@ -22,15 +22,15 @@ ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspac
 
 ## SQL Endpoint
 
-The [!INCLUDE [fabric-se](includes/fabric-se.md)] on the [Lakehouse](../data-engineering/lakehouse-overview.md) allows a user to transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" experiences that a data warehouse would provide, supporting T-SQL. Via the SQL Endpoint, the user has a subset of SQL commands that can define and query data objects but not manipulate the data. You can perform the following actions in the [!INCLUDE [fabric-se](includes/fabric-se.md)]:
+The [!INCLUDE [fabric-se](includes/fabric-se.md)] allows a user to transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" experiences that a data warehouse would provide, supporting T-SQL. Via the SQL Endpoint, the user has a subset of SQL commands that can define and query data objects but not manipulate the data. You can perform the following actions in the [!INCLUDE [fabric-se](includes/fabric-se.md)]:
 
 - Query the tables that reference data in your Delta Lake folders in the lake.
 - Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
 - Manage permissions on the objects.
 
-For more information on the [!INCLUDE [fabric-se](includes/fabric-se.md)] for the Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)], see [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md).
+For more information on the [!INCLUDE [fabric-se](includes/fabric-se.md)]  in [!INCLUDE [product-name](../includes/product-name.md)], see [[!INCLUDE [fabric-se](includes/fabric-se.md)]](lakehouse-sql-endpoint.md).
 
-To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)] on the Lakehouse, see [Get started with the Lakehouse in Microsoft Fabric](get-started-sql-endpoint.md).
+To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [Get started with the Lakehouse SQL Endpoint in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md).
 
 For more information on loading your [Lakehouse](../data-engineering/lakehouse-overview.md), see [Get data experience for Lakehouse](../data-engineering/load-data-lakehouse.md). 
 
@@ -68,7 +68,7 @@ For more information and how-to connect, see [Connectivity](connectivity.md).
 
 ## Next steps
 
-- [SQL Endpoint](sql-endpoint.md)
+- [Lakehouse SQL Endpoint](lakehouse-sql-endpoint.md)
 - [Lakehouse](../data-engineering/lakehouse-overview.md)
 - [Synapse Data Warehouse in Microsoft Fabric](warehouse.md)
 - [Create a warehouse](create-warehouse.md)
