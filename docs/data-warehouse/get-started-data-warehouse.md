@@ -1,5 +1,5 @@
 ---
-title: Get started with the Synapse Data Warehouse in Microsoft Fabric
+title: Get started with the Synapse Data Warehouse
 description: Steps to get started with a Synapse Data Warehouse in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo

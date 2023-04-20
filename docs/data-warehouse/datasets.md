@@ -1,5 +1,5 @@
 ---
-title: Default Power BI datasets in Microsoft Fabric
+title: Default Power BI datasets
 description: Learn more about default Power BI datasets in Microsoft Fabric.
 author: chuckles22
 ms.author: chweb
