@@ -41,8 +41,6 @@ items:
       href: security.md
     - name: Workspace roles
       href: workspace-roles.md
-    - name: Manage user access
-      href: manage-user-access.md    
   - name: Datasets
     items:
     - name: Datasets
