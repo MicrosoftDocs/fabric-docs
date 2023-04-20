@@ -27,7 +27,7 @@ TBD
 
 ## Buy Office SKUs
 
-TBD
+Same as Power BI Premium
 
 ## Next steps
 
