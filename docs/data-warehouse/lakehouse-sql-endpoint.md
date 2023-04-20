@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
-# Lakehouse SQL Endpoint in Microsoft Fabric
+# The Lakehouse SQL Endpoint in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se](includes/applies-to-version/fabric-se.md)]
 
