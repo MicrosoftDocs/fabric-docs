@@ -1,6 +1,6 @@
 ---
-title: SQL Endpoint for a Lakehouse
-description: Learn more about SQL Endpoint for a Lakehouse that provides analytical capabilities over the Lake data.
+title: The Lakehouse SQL Endpoint
+description: Learn more about the Lakehouse SQL Endpoint in Microsoft Fabric that provides analytical capabilities over the Lake data.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
@@ -9,17 +9,17 @@ ms.topic: conceptual
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
-# SQL Endpoint in Microsoft Fabric
+# The Lakehouse SQL Endpoint in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se](includes/applies-to-version/fabric-se.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides the SQL-based experience for every [Lakehouse](../data-engineering/lakehouse-overview.md) artifact in the workspace. This SQL-based experience is called the **[!INCLUDE [fabric-se](includes/fabric-se.md)]**. 
+[!INCLUDE [product-name](../includes/product-name.md)] provides the SQL-based experience for every [Lakehouse](../data-engineering/lakehouse-overview.md) item in the workspace. This SQL-based experience is called the **[!INCLUDE [fabric-se](includes/fabric-se.md)]**. 
 
-The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to analyze data in the [Lakehouse](../data-engineering/lakehouse-overview.md) artifact using T-SQL language and TDS endpoint.
+The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to analyze data in the [Lakehouse](../data-engineering/lakehouse-overview.md) using T-SQL language and TDS endpoint.
 
-When you create a [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](../data-engineering/lakehouse-overview.md) artifact and create Delta tables in the [Lakehouse](../data-engineering/lakehouse-overview.md) artifact, the [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes the [Lakehouse](../data-engineering/lakehouse-overview.md) data as the set tables that reference your Delta Lake data. The tables enable you to query your data in the Lake using the T-SQL language. 
+When you create a [Lakehouse](../data-engineering/lakehouse-overview.md) item and create Delta tables in the Lakehouse, the [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes the data as tables. The tables reference your Delta Lake data and enable you to query your data in the Lake using the T-SQL language. 
 
 Each workspace can have more than one Lakehouse and every Lakehouse is getting its own [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
@@ -27,14 +27,14 @@ Every delta table in a Lakehouse is represented as one table in the [!INCLUDE [f
 
 You can create your own T-SQL views, functions, and procedures on top of the tables that reference your Delta Lake data.
 
-:::image type="content" source="media\sql-endpoint\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and delta tables." lightbox="media\sql-endpoint\lakehouse-delta-tables.png":::
+:::image type="content" source="media\lakehouse-sql-endpoint\lakehouse-delta-tables.png" alt-text="Diagram showing the relationship between the Lakehouse item, data warehouses, and delta tables." lightbox="media\lakehouse-sql-endpoint\lakehouse-delta-tables.png":::
 
 > [!IMPORTANT]
-> The distinction between the [!INCLUDE [fabric-se](includes/fabric-se.md)] and [Synapse Data Warehouse](warehouse.md) is an important one as T-SQL statements that write data or modify tables fail if you attempt to run them against the [!INCLUDE [fabric-se](includes/fabric-se.md)]. The [!INCLUDE [fabric-se](includes/fabric-se.md)] provides analytical/reporting capabilities over your lake data, but not the data management functionalities. In [Synapse Data Warehouse](warehouse.md) you can use T-SQL language to manage tables and update data, while in the [!INCLUDE [fabric-se](includes/fabric-se.md)] you are using Notebooks and Pipelines to update the underlying tables in the [Lakehouse](../data-engineering/lakehouse-overview.md) artifact. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
+> The distinction between the [!INCLUDE [fabric-se](includes/fabric-se.md)] and [Synapse Data Warehouse](warehouse.md) is an important one as T-SQL statements that write data or modify tables fail if you attempt to run them against the [!INCLUDE [fabric-se](includes/fabric-se.md)]. The [!INCLUDE [fabric-se](includes/fabric-se.md)] provides analytical/reporting capabilities over your lake data, but not the data management functionalities. In [Synapse Data Warehouse](warehouse.md) you can use T-SQL language to manage tables and update data, while in the [!INCLUDE [fabric-se](includes/fabric-se.md)] you are using Notebooks and Pipelines to update the underlying tables in the [Lakehouse](../data-engineering/lakehouse-overview.md). Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
 
 ## Automatically generated schema
 
-For every Delta table in your [Lakehouse](../data-engineering/lakehouse-overview.md) artifact, the [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically generating one table. The column types in the [!INCLUDE [fabric-se](includes/fabric-se.md)] are derived from the source Delta types.
+For every Delta table in your [Lakehouse](../data-engineering/lakehouse-overview.md), the [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically generating one table. The column types in the [!INCLUDE [fabric-se](includes/fabric-se.md)] are derived from the source Delta types.
 
 | **Delta Data Type** | **SQL Data** **Type (Mapped)** |
 |---|---|
@@ -72,11 +72,11 @@ For the current version, you'll primarily be using a TDS end point and SSMS or A
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically linked to its parent Lakehouse when it's created and can't be directly deleted. If you need to delete the [!INCLUDE [fabric-se](includes/fabric-se.md)], you must delete the parent Lakehouse.
 
-Once deleted, you can't recover a deleted Lakehouse or the custom SQL objects in the [!INCLUDE [fabric-se](includes/fabric-se.md)]; you have to recreate it.
+Once the Lakehouse is deleted, you can't recover it or the custom SQL objects in the [!INCLUDE [fabric-se](includes/fabric-se.md)]; you have to recreate it.
 
 ## Known issues and limitations in the [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
-1. Lakehouse tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)] are created with a delay.
+1. Tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)] are created with a delay.
 
    Once you create or update Delta Lake folder/table in the lake, the warehouse table that references the lake data won't be immediately created/refreshed. The changes will be applied in the warehouse after 5-10 seconds.
 
