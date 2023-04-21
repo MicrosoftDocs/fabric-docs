@@ -44,8 +44,6 @@ landingContent:
             url: onelake-file-explorer.md
           - text: Create a shortcut
             url: create-onelake-shortcut.md
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
 
   # Card 
   - title: OneLake integration with Azure
