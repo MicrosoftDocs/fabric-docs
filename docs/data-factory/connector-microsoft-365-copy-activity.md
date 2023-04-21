@@ -77,7 +77,7 @@ Under **Advanced**, you can specify the following fields:
 
     If you select **Select groups from the Microsoft 365 tenant**, you can select **+ Add user groups** to select groups from the Microsoft 365 tenant. Use this property to select up to 10 user groups for whom the data will be retrieved. If no groups are specified, then data will be returned for the entire organization.
 
-        :::image type="content" source="./media/connector-microsoft-365/group-details.png" alt-text="Screenshot showing group details.":::
+    :::image type="content" source="./media/connector-microsoft-365/group-details.png" alt-text="Screenshot showing group details.":::
 
 - **Date filter**: Name of the data filter column.. Use this property to limit the time range for which Microsoft 365 data is extracted.
 
