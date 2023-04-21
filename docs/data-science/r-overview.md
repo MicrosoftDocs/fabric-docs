@@ -17,6 +17,11 @@ ms.search.form: R Language
 
 This document provides an overview of developing Spark applications in Synapse using the R language. 
 
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+
 ## Create and run notebook sessions
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebook is a web interface for you to create files that contain live code, visualizations, and narrative text. Notebooks are a good place to validate ideas and use quick experiments to get insights from your data. Notebooks are also widely used in data preparation, data visualization, machine learning, and other big data scenarios.

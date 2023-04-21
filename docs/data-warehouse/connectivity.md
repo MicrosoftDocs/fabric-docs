@@ -1,5 +1,5 @@
 ---
-title: Connectivity to data warehousing in Microsoft Fabric
+title: Connectivity to data warehousing
 description: Follow steps to connect SSMS to data warehousing in your Microsoft Fabric workspace.
 author: salilkanade
 ms.author: salilkanade
@@ -15,7 +15,7 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article provides a how-to on connecting to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
+This article provides a how-to on connecting to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](lakehouse-sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
 
 To get started, you must complete the following prerequisites:
 
@@ -93,4 +93,4 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
 ## Next steps
 
 - [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
-- [Get started with the SQL Endpoint on the Lakehouse in Microsoft Fabric](get-started-sql-endpoint.md)
+- [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)

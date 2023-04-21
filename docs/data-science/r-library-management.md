@@ -38,12 +38,16 @@ Summarizing the current available R library management behaviors:
 |R Feed (CRAN)|Not Supported| Supported|
 |R Custom |Supported| Supported|
 
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
 
 ## Workspace-level R library management 
 
 Manage your custom libraries at the workspace-level in workspace settings. Currently R supports only custom libraries in the workspace settings.
 
-1. Sign in to [[!INCLUDE [product-name](../includes/product-name.md)]](https://fabric.microsoft.com/)
+
 1. Select your workspace.
 1. Select **Workspace settings** at the top of the page.
 
