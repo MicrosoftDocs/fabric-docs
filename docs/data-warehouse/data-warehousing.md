@@ -28,7 +28,7 @@ The [!INCLUDE [fabric-se](includes/fabric-se.md)] allows a user to transition fr
 - Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
 - Manage permissions on the objects.
 
-For more information on the [!INCLUDE [fabric-se](includes/fabric-se.md)]  in [!INCLUDE [product-name](../includes/product-name.md)], see [[!INCLUDE [fabric-se](includes/fabric-se.md)]](lakehouse-sql-endpoint.md).
+For more information on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)], see [[!INCLUDE [fabric-se](includes/fabric-se.md)]](lakehouse-sql-endpoint.md).
 
 To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md).
 

@@ -60,7 +60,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## Synapse data warehousing
 
-- **SQL Endpoint:** Each Lakehouse has a SQL Endpoint that allows a user to query delta table data with TSQL over TDS. For more information, see [SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint).
+- **SQL Endpoint:** Each Lakehouse has a SQL Endpoint that allows a user to query delta table data with TSQL over TDS. For more information, see [SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint-of-the-lakehouse).
 
 - **Synapse Data Warehouse:** The Synapse Data Warehouse functionality is a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Synapse Data Warehouse](../data-warehouse/data-warehousing.md#synapse-data-warehouse).
 
