@@ -4,7 +4,7 @@ description: This article explains how to copy data using KQL Database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/12/2023
+ms.date: 04/21/2023
 ms.custom: template-how-to 
 ---
 
@@ -47,21 +47,23 @@ The following properties are **required**:
 
         :::image type="content" source="./media/connector-kql-database/table.png" alt-text="Screenshot showing table.":::
 
-    - **Query**: Specify the query to retrieve data.
+    - **Query**: Specify the read-only request given in a [KQL format](/azure/data-explorer/kusto/query/). Use the custom KQL query as a reference.
 
         :::image type="content" source="./media/connector-kql-database/query.png" alt-text="Screenshot showing query.":::
 
 Under **Advanced**, you can specify the following fields:
 
-- **Query timeout**: Specify the wait time before the query request times out. Default is 10 minutes (00:10:00).
+- **Query timeout**: Specify the wait time before the query request times out. Default is 10 minutes (00:10:00). Allowed max value is 1 hour (01:00:00).
+Refer to [Azure Data Explorer as source](/azure/data-factory/connector-azure-data-explorer#azure-data-explorer-as-source).
 - **No truncation**: Indicates whether to truncate the returned result set. By default result is truncated after 500,000 records or 64 MB. Truncation is strongly recommended for a proper behavior of the activity.
-- **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
+- **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. Learn more from this article [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).
 
     :::image type="content" source="./media/connector-kql-database/additional-columns.png" alt-text="Screenshot showing additional columns.":::
 
 ## Destination
 
-The following properties are supported for KQL Database under the **Destination** tab of a copy activity.
+The following properties are supported for KQL Database
+ under the **Destination** tab of a copy activity.
 
 :::image type="content" source="./media/connector-kql-database/destination.png" alt-text="Screenshot showing destination tab.":::
 
@@ -74,7 +76,7 @@ The following properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Ingestion mapping name**: The name of a mapping which was pre-created and assigned to KQL Database destination table in advance.
+- **Ingestion mapping name**: The name of a mapping which was pre-created and assigned to KQL Database destination table in advance. Learn more from [Azure Data Explore data ingestion](/azure/data-explorer/ingestion-properties).
 - **Additional properties**: A property bag which can be used for specifying any of the ingestion properties which aren't being set already by the KQL Database destination. Specifically, it can be useful for specifying ingestion tags.
 
     :::image type="content" source="./media/connector-kql-database/additional-properties.png" alt-text="Screenshot showing additional properties.":::
@@ -99,9 +101,10 @@ To learn more information about copy activity in KQL Database, see the following
 |**Workspace data store type** |Select **KQL Database** from the data store type list.|**KQL Database**|Yes|/|
 |**KQL Database** | Select an existing KQL Database from the workspace.|\<your KQL Database>|Yes |/|
 |**Use query** |Select **Tables** or **Query**.| •**Tables**<br>  •**Query** |No| table<br> query|
-|**Query timeout** |Specify the wait time before the query request times out. Default is 10 minutes (00:10:00).|timespan|No|queryTimeout|
+|**Query timeout** |Specify the wait time before the query request times out. Default is 10 minutes (00:10:00). Allowed max value is 1 hour (01:00:00).
+Refer to [Azure Data Explorer as source](/azure/data-factory/connector-azure-data-explorer#azure-data-explorer-as-source)|timespan|No|queryTimeout|
 |**No truncation**|Indicates whether to truncate the returned result set. By default result is truncated after 500,000 records or 64 MB. Truncation is strongly recommended for a proper behavior of the activity.|select or unselect|No|noTruncation|
-|**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|- Name<br>- Value|No|additionalColumns:<br>- name<br>- value |
+|**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. Learn more from this article [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).|- Name<br>- Value|No|additionalColumns:<br>- name<br>- value |
 
 ### Destination information
 
@@ -111,5 +114,5 @@ To learn more information about copy activity in KQL Database, see the following
 |**Workspace data store type** |Select **KQL Database** from the data store type list.|**KQL Database**|Yes|/|
 |**KQL Database** | Select an existing KQL Database from the workspace.|\<your KQL Database>|Yes |/|
 |**Table** |The name of the table that the connection refers to.|\<your table name>|Yes|table|
-|**Ingestion mapping name** | The name of a mapping which was pre-created and assigned to KQL Database destination table in advance.|\<your ingestion mapping name>|Yes|ingestionMappingName|
+|**Ingestion mapping name** | The name of a mapping which was pre-created and assigned to KQL Database destination table in advance. Learn more from [Azure Data Explore data ingestion](/azure/data-explorer/ingestion-properties).|\<your ingestion mapping name>|Yes|ingestionMappingName|
 |**Additional properties** | A property bag which can be used for specifying any of the ingestion properties which aren't being set already by the KQL Database destination. Specifically, it can be useful for specifying ingestion tags.|- Name<br> - Type<br> - Value|Yes|additionalProperties|
