@@ -1,17 +1,17 @@
 ### YamlMime:Landing
 
-title: Data Engineering in Microsoft Fabric documentation # < 60 chars
+title: Data Engineering in Microsoft Fabric documentation
 summary: summary # < 160 chars
 
 metadata:
-  title: Data Engineering in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  title: Data Engineering in Microsoft Fabric documentation
   description: description # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
-  ms.topic: landing-page # Required
+  ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
-  ms.author: sngun #Required; microsoft alias of author; optional team alias.
-  ms.date: 04/25/2023 #Required; mm/dd/yyyy format.
+  author: SnehaGunda
+  ms.author: sngun
+  ms.date: 04/25/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -41,8 +41,6 @@ landingContent:
             url: navigate-lakehouse-explorer.md
           - text: What are shortcuts in lakehouse?
             url: lakehouse-shortcuts.md
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
 
   # Card 
   - title: Get started with notebooks
@@ -55,24 +53,23 @@ landingContent:
             url: author-execute-notebook.md
           - text: Explore the data in your lakehouse with a notebook
             url: lakehouse-notebook-explore.md
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Notebook contextual monitoring and debugging
+            url: spark-monitor-debug.md
+          - text: Visualize notebooks in Microsoft Fabric
+            url: notebook-visualization.md
 
   # Card 
   - title: Load data
     linkLists:
+      - linkListType: concept
+        links:
+          - text: Options to get data into the Fabric Lakehouse
+            url: load-data-lakehouse.md
+
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: how-to-guide
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Use a notebook to load data into your lakehouse
+            url: lakehouse-notebook-load-data.md
 
   # Card 
   - title: Security and permissions
@@ -85,21 +82,25 @@ landingContent:
             url: lakehouse-sql-security.md
           - text: Workspace roles in Lakehouse
             url: workspace-roles-lakehouse.md
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
 
   # Card 
-  - title: Apache Spark?
+  - title: Apache Spark
     linkLists:
+      - linkListType: concept
+        links:
+          - text: What is an Apache Spark job definition?
+            url: spark-job-definition.md
+          - text: Microsoft Fabric Apache Spark monitoring overview
+            url: spark-monitoring-overview.md
+          - text: Apache Spark advisor for real-time advice on notebooks
+            url: spark-advisor-introduction.md
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: how-to-guide
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Use the Microsoft Apache Spark utilities for common file management tasks
+            url: microsoft-spark-utilities.md
+          - text: Schedule and run an Apache Spark job definition
+            url: run-spark-job-definition.md
+          - text: Workspace item recent runs
+            url: spark-artifact-recent-runs.md
+          - text: Manage Apache Spark libraries in Microsoft Fabric
+            url: library-management.md
