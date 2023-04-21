@@ -161,7 +161,7 @@ productDirectory:
     # Card
     - title: Admin and governance
 
-      imageSrc: ./media/administrator-icon.png
+      imageSrc: ./media/administrator-icon.svg
       links:
         - url: /admin/admin-overview.md
           text: Fabric administration
