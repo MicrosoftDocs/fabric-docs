@@ -25,7 +25,7 @@ In this article, you'll learn how to call PREDICT both ways, whether you're more
 
 - The PREDICT function is currently supported for a limited set of model flavors, including PyTorch, Sklearn, Spark, TensorFlow, ONNX, XGBoost, LightGBM, CatBoost, and Statsmodels.
 - PREDICT requires models to be saved in the MLflow format with their signatures populated.
-- PREDICT does not support models with multi-tensor inputs or outputs.
+- PREDICT _does not_ support models with multi-tensor inputs or outputs.
 
 ## Call PREDICT from a notebook
 
