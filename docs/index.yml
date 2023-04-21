@@ -191,7 +191,7 @@ productDirectory:
     # Card
     - title: Troubleshooting 
 
-      imageSrc: ./media/support-icon.png
+      imageSrc: ./media/support-icon.svg
       links:
         - url: placeholder.md
           text: Create a support ticket
