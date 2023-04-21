@@ -56,7 +56,7 @@ items:
   items:
   - name: Overview
     items:
-    - name: What is Event streams?
+    - name: Introduction to event streams
       href: event-streams/overview.md
 - name: Kusto Query Language
   href: kusto-query-language/toc.yml
