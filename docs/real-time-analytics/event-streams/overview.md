@@ -24,5 +24,4 @@ Drag and drop experience gives you an intuitive and easy way to create your even
 ## Multiple destinations 
 Multiple destinations such as Lakehouse and KQL database can be attached simultaneously to receive the event data from your eventstreams without interfering with each other. 
 
-:::image type="content" source="./media/overview/overview.png" lightbox="./media/overview/overview.png" alt-text="Screenshot showing an event stream in the editor.":::
 
