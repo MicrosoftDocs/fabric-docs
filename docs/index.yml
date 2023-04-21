@@ -163,13 +163,13 @@ productDirectory:
 
       imageSrc: ./media/administrator-icon.svg
       links:
-        - url: /admin/admin-overview.md
+        - url: admin/admin-overview.md
           text: Fabric administration
-        - url: /governance/metadata-scanning-overview.md
+        - url: governance/metadata-scanning-overview.md
           text: Data governance and compliance
-        - url: /security/security-overview.md
+        - url: security/security-overview.md
           text: Security
-        - url: /enterprise/billing-reports.md
+        - url: enterprise/billing-reports.md
           text: Billing and consumption
         - url: admin/index.yml
           text: See more
