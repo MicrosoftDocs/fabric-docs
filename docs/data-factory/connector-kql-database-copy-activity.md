@@ -53,10 +53,9 @@ The following properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Query timeout**: Specify the wait time before the query request times out. Default is 10 minutes (00:10:00). Allowed max value is 1 hour (01:00:00).
-Refer to [Azure Data Explorer as source](/azure/data-factory/connector-azure-data-explorer#azure-data-explorer-as-source).
+- **Query timeout**: Specify the wait time before the query request times out. Default value is 10 minutes (00:10:00). Allowed max value is 1 hour (01:00:00).
 - **No truncation**: Indicates whether to truncate the returned result set. By default result is truncated after 500,000 records or 64 MB. Truncation is strongly recommended for a proper behavior of the activity.
-- **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. Learn more from this article [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).
+- **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. Learn more from this [article](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).
 
     :::image type="content" source="./media/connector-kql-database/additional-columns.png" alt-text="Screenshot showing additional columns.":::
 
@@ -101,9 +100,9 @@ To learn more information about copy activity in KQL Database, see the following
 |**Workspace data store type** |Select **KQL Database** from the data store type list.|**KQL Database**|Yes|/|
 |**KQL Database** | Select an existing KQL Database from the workspace.|\<your KQL Database>|Yes |/|
 |**Use query** |Select **Tables** or **Query**.| •**Tables**<br>  •**Query** |No| table<br> query|
-|**Query timeout** |Specify the wait time before the query request times out. Default is 10 minutes (00:10:00). Allowed max value is 1 hour (01:00:00). Refer to [Azure Data Explorer as source](/azure/data-factory/connector-azure-data-explorer#azure-data-explorer-as-source)|timespan|No|queryTimeout|
+|**Query timeout** |Specify the wait time before the query request times out. Default value is 10 minutes (00:10:00). Allowed max value is 1 hour (01:00:00).|timespan|No|queryTimeout|
 |**No truncation**|Indicates whether to truncate the returned result set. By default result is truncated after 500,000 records or 64 MB. Truncation is strongly recommended for a proper behavior of the activity.|select or unselect|No|noTruncation|
-|**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. Learn more from this article [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).|- Name<br>- Value|No|additionalColumns:<br>- name<br>- value |
+|**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. Learn more from this [article](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).|- Name<br>- Value|No|additionalColumns:<br>- name<br>- value |
 
 ### Destination information
 
