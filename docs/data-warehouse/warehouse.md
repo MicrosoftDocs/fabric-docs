@@ -102,4 +102,4 @@ To delete a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], navigate to the works
 - [Create a warehouse](create-warehouse.md)
 - [Create tables in [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-table.md)
 - [Data warehousing overview](data-warehousing.md)
-- [Lakehouse SQL Endpoint](lakehouse-sql-endpoint.md)
+- [SQL Endpoint of the Lakehouse](lakehouse-sql-endpoint.md)
