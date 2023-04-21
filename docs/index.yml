@@ -205,7 +205,7 @@ productDirectory:
     # Card
     - title: Training modules
 
-      imageSrc: ./media/fabric-icon.png
+      imageSrc: ./media/education-icon.svg
       links:
         - url: placeholder.md
           text: End-to-end analytics using Fabric
