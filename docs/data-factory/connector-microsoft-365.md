@@ -4,7 +4,7 @@ description: This article provides information about how to do create Microsoft 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 03/06/2023
+ms.date: 04/21/2023
 ms.custom: template-how-to
 ---
 
@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 This article outlines the steps to create Microsoft 365 connection.
 
@@ -22,7 +22,7 @@ This Microsoft 365 connector supports the following authentication types for cop
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Service Principal| √| |
+|Service principal| √| |
 
 >[!Note]
 >For the Microsoft 365 connection of Dataflow Gen2, see this article.
@@ -31,9 +31,9 @@ This Microsoft 365 connector supports the following authentication types for cop
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).
+- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 
-- A workspace is created and isn't the default My Workspace
+- Make sure you have a Microsoft Fabric enabled Workspace.
 
 ## Go to Manage gateways to create connection
 
@@ -72,7 +72,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 :::image type="content" source="media/connector-microsoft-365/service-pricipal-authentication.png" alt-text="Screenshot showing that Service Principal authentication method of Microsoft 365":::
 
-* **Tenant Id**: Specify the tenant information under which your Azure AD web application resides.
+* **Tenant Id**: Your service principal tenant ID. Specify the tenant information under which your Azure AD web application resides.
 * **Service principal ID**: Specify the application's client ID.
 * **Service principal key**: Specify the application's key.
 
@@ -103,7 +103,7 @@ The following properties in the table are the supported authentication type.
 |Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Service Principal**||||✓/|
-|- Tenant ID|Specify the tenant information under which your Azure AD web application resides.|Yes |||
+|- Tenant ID|Your service principal tenant ID. Specify the tenant information under which your Azure AD web application resides.|Yes |||
 |- Service Principal ID|Specify the application's client ID.|Yes |||
 |- Service Principal key|Specify the application's key.|Yes |||
 

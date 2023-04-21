@@ -4,7 +4,7 @@ description: This article explains the overview of using Microsoft 365.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 03/06/2023
+ms.date: 04/21/2023
 ms.custom: template-how-to 
 ---
 
@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 This Microsoft 365 connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
@@ -20,7 +20,7 @@ This Microsoft 365 connector is supported in Data Factory for [!INCLUDE [product
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Basic |
+| **Copy activity (source/-)** | None | Service principal |
 
 ## Next steps
 
