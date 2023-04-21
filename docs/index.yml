@@ -179,7 +179,7 @@ productDirectory:
 
       imageSrc: /office/media/icons/developer.png
       links:
-        - url: .md
+        - url: placeholder.md
           text: REST APIs
         - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
           text: Deployment pipelines
