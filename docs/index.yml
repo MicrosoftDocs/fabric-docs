@@ -230,7 +230,7 @@ additionalContent:
         - title: Power BI
           summary: Power BI amplifies your insights and the value of your data. 
           url: /power-bi/
-        - title: Azure Synapse analytics
+        - title: Azure Synapse Analytics
           summary: Azure Synapse is a limitless analytics service that brings together enterprise data warehouse and Big Data analytics.
           url: /azure/synapse-analytics/
         - title: Azure Data Factory
