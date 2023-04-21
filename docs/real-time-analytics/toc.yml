@@ -54,10 +54,10 @@ items:
     href: create-powerbi-report.md
 - name: Event streams
   items:
-  - name: Overview
-    items:
-    - name: Introduction to event streams
-      href: event-streams/overview.md
+  - name: Introduction to event streams
+    href: event-streams/overview.md
+  - name: Event streams main editor
+    href: event-streams/main-editor.md
 - name: Kusto Query Language
   href: kusto-query-language/toc.yml
 - name: Management commands
