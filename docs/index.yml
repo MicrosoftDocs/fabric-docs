@@ -177,7 +177,7 @@ productDirectory:
     # Card
     - title: Developer experience
 
-      imageSrc: ./media/developer-icon.png
+      imageSrc: ./media/developer-icon.svg
       links:
         - url: placeholder.md
           text: REST APIs
