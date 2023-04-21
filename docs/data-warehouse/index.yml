@@ -28,7 +28,7 @@ landingContent:
             url: data-warehousing.md
           - text: Synapse Data Warehouse
             url: warehouse.md
-          - text: Lakehouse SQL Endpoint
+          - text: SQL Endpoint
             url: lakehouse-sql-endpoint.md
 
   # Card 
@@ -54,7 +54,7 @@ landingContent:
         links:
           - text: What is a Lakehouse?
             url: ../data-engineering/lakehouse-overview.md
-          - text: The Lakehouse SQL Endpoint
+          - text: SQL Endpoint
             url: get-started-lakehouse-sql-endpoint.md
           - text: Create a lakehouse with OneLake
             url: ../onelake/create-lakehouse-onelake.md
