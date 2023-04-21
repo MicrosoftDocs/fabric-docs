@@ -101,7 +101,7 @@ To learn more information about copy activity in KQL Database, see the following
 |**KQL Database** | Select an existing KQL Database from the workspace.|\<your KQL Database>|Yes |/|
 |**Use query** |Select **Tables** or **Query**.| •**Tables**<br>  •**Query** |No| table<br> query|
 |**Query timeout** |Specify the wait time before the query request times out. Default value is 10 minutes (00:10:00). Allowed max value is 1 hour (01:00:00).|timespan|No|queryTimeout|
-|**No truncation**|Indicates whether to truncate the returned result set. By default result is truncated after 500,000 records or 64 MB. Truncation is strongly recommended for a proper behavior of the activity.|select or unselect|No|noTruncation|
+|**No truncation**|Indicates whether to truncate the returned result set. By default result is truncated after 500,000 records or 64 MB. Truncation is strongly recommended for a proper behavior of the activity.|select or unselect|No|noTruncation: true or false|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. Learn more from this [article](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).|- Name<br>- Value|No|additionalColumns:<br>- name<br>- value |
 
 ### Destination information
