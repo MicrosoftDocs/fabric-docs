@@ -15,7 +15,7 @@ ms.search.form: Predict
 
 [!INCLUDE [product-name](../includes/product-name.md)] allows users to operationalize machine learning models with a scalable function called PREDICT, which supports batch scoring in any compute engine. Users can generate batch predictions directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook or from a given model's item page.
 
-In this article, you'll learn how to call PREDICT both ways, whether you're more comfortable writing code yourself or using a guided UI experience to handle batch scoring for you.
+In this article, you'll learn how to apply PREDICT both ways, whether you're more comfortable writing code yourself or using a guided UI experience to handle batch scoring for you.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ In this article, you'll learn how to call PREDICT both ways, whether you're more
 
 PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you've already trained and registered a model in your workspace, you can skip to Step 2 below. If not, Step 1 provides sample code to guide you through training a sample logistic regression model. You can use this model to generate batch predictions at the end of the procedure.
 
-1. **Train a model and register it with MLflow**. The following sample code uses the MLflow API to create a machine learning experiment and start an MLflow run for a scikit-learn logistic regression model. The model version is then stored and registered with  the [!INCLUDE [product-name](../includes/product-name.md)] registry. See [how to train models with scikit-learn](train-models-scikit-learn.md) to learn more about training models and tracking experiments of your own.
+1. **Train a model and register it with MLflow**. The following sample code uses the MLflow API to create a machine learning experiment and start an MLflow run for a scikit-learn logistic regression model. The model version is then stored and registered in  the [!INCLUDE [product-name](../includes/product-name.md)] registry. See [how to train models with scikit-learn](train-models-scikit-learn.md) to learn more about training models and tracking experiments of your own.
 
     ```Python
     import mlflow
@@ -62,7 +62,7 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
     test = spark.createDataFrame(data.frame.drop(['target'], axis=1))
     ```
 
-3. **Create an `MLFlowTransformer` object to load the model for inferencing.** To create an `MLFlowTransformer` object for generating batch predictions, you must specify which columns from the `test` DataFrame you need as model inputs, choose a name for the new output column (we'll go with `predictions`), and provide the correct model name and model version for generating those predictions. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version.
+3. **Create an `MLFlowTransformer` object to load the model for inferencing.** To create an `MLFlowTransformer` object for generating batch predictions, you must specify which columns from the `test` DataFrame you need as model inputs (in this case, all of them), choose a name for the new output column (in this case, `predictions`), and provide the correct model name and model version for generating those predictions. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version.
 
     ```Python
     from synapse.ml.predict import MLFlowTransformer
@@ -77,7 +77,7 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
     )
     ```
 
-4. **Generate predictions using the PREDICT function.** To invoke the PREDICT function, you can use the Transformer API, the Spark SQL API, or user-defined functions (UDFs). The following sections show how to generate batch predictions with the test data and model defined in the previous steps, using the different methods for invoking PREDICT.
+4. **Generate predictions using the PREDICT function.** To invoke the PREDICT function, you can use the Transformer API, the Spark SQL API, or a PySpark user-defined function (UDF). The following sections show how to generate batch predictions with the test data and model defined in the previous steps, using the different methods for invoking PREDICT.
 
 ### PREDICT with the Transformer API
 
@@ -86,7 +86,7 @@ The following code invokes the PREDICT function with the Transformer API. If you
 ```Python
 # You can substitute "model" and "test" below with values  
 # for your own model and test data 
-model.transform(test_spark).show()
+model.transform(test).show()
 ```
 
 ### PREDICT with the Spark SQL API
@@ -114,7 +114,7 @@ sqlt.transform(test).show()
 
 ### PREDICT with a user-defined function
 
-The following code invokes the PREDICT function with a user-defined function (UDF). If you've been using your own model, substitute the values for the model and features.
+The following code invokes the PREDICT function with a PySpark UDF. If you've been using your own model, substitute the values for the model and features.
 
 ```Python
 from pyspark.sql.functions import col, pandas_udf, udf, lit
@@ -126,9 +126,9 @@ features = test.columns
 test.withColumn("PREDICT", my_udf(*[col(f) for f in features])).show()
 ```
 
-## Generate PREDICT code from a model item page
+## Generate PREDICT code from a model's item page
 
-You can choose either of the following options to generate batch predictions for a specific model version with PREDICT.
+From any model's item page, you can choose either of the following options to start generating batch predictions for a specific model version with PREDICT.
 - Use a guided UI experience to generate PREDICT code for you
 - Copy a code template into a notebook and customize the parameters yourself
 
@@ -152,7 +152,7 @@ To use the guided experience,
 1. Map column names from the source table to the model's input fields, which have been pulled from the model's signature. You must provide an input column for all the model's required fields. Also, the data types for the source columns must match the model's expected data types.
 
     > [!TIP]
-    > The wizard will prepopulate the mapping if the names of the input table's columns match the column names logged in the model signature.
+    > The wizard will prepopulate this mapping if the names of the input table's columns match the column names logged in the model signature.
 
     :::image type="content" source="media/model-scoring-predict/map-input-columns.png" alt-text="Screenshot of the step to map input columns for model predictions." lightbox="media/model-scoring-predict/map-input-columns.png":::
 
@@ -172,7 +172,7 @@ To use the guided experience,
     :::image type="content" source="media/model-scoring-predict/configure-notebook.png" alt-text="Screenshot of the step to configure a notebook for model predictions." lightbox="media/model-scoring-predict/configure-notebook.png":::
 
 1. Select **Next** to go to the "Review and finish" step.
-1. Review the details on the summary page and select **Create notebook** to add the new notebook with its generated code to your workspace.
+1. Review the details on the summary page and select **Create notebook** to add the new notebook with its generated code to your workspace. You'll be taken directly to that notebook, where you can run the code to generate and store predictions.
 
     :::image type="content" source="media/model-scoring-predict/review-and-finish.png" alt-text="Screenshot of the review-and-finish step for model predictions." lightbox="media/model-scoring-predict/review-and-finish.png":::
 
