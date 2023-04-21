@@ -29,9 +29,9 @@ In this article, you'll learn how to call PREDICT both ways, whether you're more
 
 ## Call PREDICT from a notebook
 
-PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you've already trained and registered a model in your workspace, you can skip to Step 2 in the following procedure. If not, Step 1 provides a code sample to guide you through training a sample logistic regression model. You can use this model to generate batch predictions at the end of the procedure if you don't use your own.
+PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you've already trained and registered a model in your workspace, you can skip to Step 2 below. If not, Step 1 provides sample code to guide you through training a sample logistic regression model. You can use this model to generate batch predictions at the end of the procedure.
 
-1. **Train a model and register it with MLflow**. The following code sample uses the MLflow API to create a machine learning experiment and start an MLflow run for a scikit-learn logistic regression model. The model version is then registered for prediction. See [how to train models with scikit-learn](train-models-scikit-learn.md) to learn more about training models and tracking experiments of your own.
+1. **Train a model and register it with MLflow**. The following sample code uses the MLflow API to create a machine learning experiment and start an MLflow run for a scikit-learn logistic regression model. The model version is then stored and registered with  the [!INCLUDE [product-name](../includes/product-name.md)] registry. See [how to train models with scikit-learn](train-models-scikit-learn.md) to learn more about training models and tracking experiments of your own.
 
     ```Python
     import mlflow
@@ -86,8 +86,7 @@ The following code invokes the PREDICT function with the Transformer API. If you
 ```Python
 # You can substitute "model" and "test" below with values  
 # for your own model and test data 
-predictions = model.transform(test_spark)
-predictions.show()
+model.transform(test_spark).show()
 ```
 
 ### PREDICT with the Spark SQL API
@@ -110,8 +109,7 @@ sqlt = SQLTransformer().setStatement(
     f"SELECT PREDICT('{model_name}/{model_version}', {','.join(features)}) as predictions FROM __THIS__")
 
 # You can substitute "test" below with your own test data
-predictions = sqlt.transform(test)
-predictions.show()
+sqlt.transform(test).show()
 ```
 
 ### PREDICT with a user-defined function
@@ -131,8 +129,8 @@ test.withColumn("PREDICT", my_udf(*[col(f) for f in features])).show()
 ## Generate PREDICT code from a model item page
 
 You can choose either of the following options to generate batch predictions for a specific model version with PREDICT.
-- Use an guided UI experience to generate PREDICT code based on your parameters
-- Copy a code template into a notebook and customize it to generate predictions
+- Use a guided UI experience to generate PREDICT code for you
+- Copy a code template into a notebook and customize the parameters yourself
 
 ### Use a guided UI experience
 
@@ -154,7 +152,7 @@ To use the guided experience,
 1. Map column names from the source table to the model's input fields, which have been pulled from the model's signature. You must provide an input column for all the model's required fields. Also, the data types for the source columns must match the model's expected data types.
 
     > [!TIP]
-    > The wizard will prepopulate the mapping if the names of the input table's columns match those logged in the model signature.
+    > The wizard will prepopulate the mapping if the names of the input table's columns match the column names logged in the model signature.
 
     :::image type="content" source="media/model-scoring-predict/map-input-columns.png" alt-text="Screenshot of the step to map input columns for model predictions." lightbox="media/model-scoring-predict/map-input-columns.png":::
 
@@ -193,6 +191,8 @@ You can paste this code template into a notebook to generate batch predictions w
 - `<MODEL_NAME>`: The name of the model to use for generating predictions
 - `<MODEL_VERSION>`: The version of the model to use for generating predictions
 - `<OUTPUT_TABLE>`: The file path for the table that will store the predictions
+
+:::image type="content" source="media/model-scoring-predict/copy-code.png" alt-text="Screenshot of the copy-code template for model predictions." lightbox="media/model-scoring-predict/copy-code.png":::
 
 ```Python
 import mlflow 
