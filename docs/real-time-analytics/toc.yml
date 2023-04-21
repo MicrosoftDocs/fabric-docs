@@ -56,20 +56,8 @@ items:
   items:
   - name: Overview
     items:
-    - name: What is Event streams?
-      href: ../placeholder.md
-  - name: Get started
-    items:
-    - name: linktext1
-      href: ../placeholder.md
-  - name: Feature 1
-    items:
-    - name: linktext1
-      href: ../placeholder.md
-  - name: Feature 2
-    items:
-    - name: linktext2
-      href: ../placeholder.md
+    - name: Introduction to event streams
+      href: event-streams/overview.md
 - name: Kusto Query Language
   href: kusto-query-language/toc.yml
 - name: Management commands
