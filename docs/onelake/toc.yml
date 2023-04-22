@@ -1,0 +1,37 @@
+items:
+- name: OneLake documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is OneLake?
+    href: onelake-overview.md
+- name: Get started
+  items:
+  - name: Creating a lakehouse with OneLake
+    href: create-lakehouse-onelake.md
+- name: Shortcuts
+  items:
+  - name: What are shortcuts?
+    href: onelake-shortcuts.md
+  - name: Create a shortcut
+    href: create-onelake-shortcut.md
+  - name: Access shortcuts
+    href: access-onelake-shortcuts.md
+- name: Access data with APIs
+  items:
+  - name: OneLake access and APIs
+    href: onelake-access-api.md
+- name: Integrate with Azure services
+  items:
+  - name: Azure Synapse Analytics
+    href: onelake-azure-synapse-analytics.md
+  - name: Azure Storage Explorer
+    href: onelake-azure-storage-explorer.md
+  - name: Azure Databricks
+    href: onelake-azure-databricks.md
+  - name: Azure HDInsight
+    href: onelake-azure-hdinsight.md
+- name: Secure data
+  href: onelake-security.md
+- name: File explorer
+  href: onelake-file-explorer.md

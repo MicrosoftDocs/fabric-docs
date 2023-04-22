@@ -1,0 +1,60 @@
+### YamlMime:Landing
+
+title: OneLake in Microsoft Fabric documentation
+summary: summary # < 160 chars
+
+metadata:
+  title: OneLake in Microsoft Fabric documentation
+  description: OneLake is included with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. Find resources.
+  ms.service: azure #Required; use either service or product per approved list. 
+#   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
+  ms.topic: landing-page
+  ms.collection: collection # Optional; Remove if no collection is used.
+  author: eloldag
+  ms.author: eloldag
+  ms.date: 04/25/2023
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card 
+  - title: About OneLake
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is OneLake?
+            url: onelake-overview.md
+          - text: OneLake security
+            url: onelake-security.md
+          - text: OneLake shortcuts
+            url: onelake-shortcuts.md
+          - text: OneLake access and APIs
+            url: onelake-access-api.md
+
+  # Card 
+  - title: Get started with OneLake
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Create a lakehouse with OneLake
+            url: create-lakehouse-onelake.md
+          - text: OneLake File Explorer
+            url: onelake-file-explorer.md
+          - text: Create a shortcut
+            url: create-onelake-shortcut.md
+
+  # Card 
+  - title: OneLake integration with Azure
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Integrate OneLake with Azure Databricks
+            url: onelake-azure-databricks.md
+          - text: Integrate OneLake with Azure HDInsight
+            url: onelake-azure-hdinsight.md
+          - text: Integrate OneLake with Azure Storage Explorer
+            url: onelake-azure-storage-explorer.md
+          - text: Integrate OneLake with Azure Synapse Analytics
+            url: onelake-azure-synapse-analytics.md

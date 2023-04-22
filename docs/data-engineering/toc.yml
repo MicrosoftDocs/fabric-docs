@@ -1,0 +1,105 @@
+items:
+- name: Data Engineering documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is Data Engineering?
+    href: data-engineering-overview.md
+- name: Get started
+  items:
+  - name: Lakehouse tutorial
+    href: ../placeholder.md
+  - name: CSV upload to Delta for PBI reporting
+    href: ../placeholder.md
+  - name: Structured streaming to SQL serving
+    href: ../placeholder.md
+  - name: Reference external data for data science
+    href: ../placeholder.md
+  - name: Share lakehouse for PBI connectivity
+    href: ../placeholder.md
+- name: Lakehouse
+  items:
+  - name: What is a lakehouse?
+    href: lakehouse-overview.md
+  - name: Create a lakehouse
+    href: create-lakehouse.md
+  - name: Navigate the lakehouse explorer
+    href: navigate-lakehouse-explorer.md
+  - name: Lakehouse SQL endpoint
+    href: lakehouse-sql-endpoint.md
+  - name: Direct lake mode and PBI reporting
+    href: lakehouse-pbi-reporting.md
+- name: Get data into lakehouse
+  items:
+  - name: Get data into a lakehouse
+    href: load-data-lakehouse.md
+  - name: Shortcut data in a lakehouse
+    href: lakehouse-shortcuts.md
+  - name: Stream data to a lakehouse
+    href: lakehouse-streaming-data.md
+- name: Lakehouse sharing and collaboration
+  items:
+  - name: Workspace roles and permissions
+    href: workspace-roles-lakehouse.md
+  - name: Sharing and permission management
+    href: lakehouse-sharing.md
+  - name: Lakehouse SQL endpoint security
+    href: lakehouse-sql-security.md
+  - name: Data mesh guide
+    href: ../placeholder.md
+- name: Apache Spark
+  items:
+  - name: Autotune Spark configuration
+    href: autotune.md
+  - name: Spark job definition
+    items:
+    - name: What is a Spark job definition?
+      href: spark-job-definition.md
+    - name: Create a Spark job definition
+      href: create-spark-job-definition.md
+    - name: Run a Spark job definition
+      href: run-spark-job-definition.md
+  - name: Spark utilities
+    href: microsoft-spark-utilities.md
+  - name: Library management
+    href: library-management.md
+  - name: Spark administration settings
+    items:
+    - name: Workspace settings
+      href: spark-workspace-admin-settings.md
+    - name: FAQ
+      href: spark-admin-settings-faq.yml 
+  - name: Spark monitoring
+    items:
+    - name: Spark monitoring overview
+      href: spark-monitoring-overview.md
+    - name: Apache Spark Advisor
+      href: spark-advisor-introduction.md
+    - name: Monitoring hub - Browse Spark applications
+      href: browse-spark-applications-monitoring-hub.md
+    - name: Browse artifact's recent runs
+      href: spark-artifact-recent-runs.md
+    - name: Monitor Spark jobs in a notebook 
+      href: spark-monitor-debug.md
+    - name: Monitor Spark job definitions
+      href: monitor-spark-job-definitions.md
+    - name: Monitor Spark application
+      href: spark-detail-monitoring.md
+- name: Apache Delta
+  items:
+    - name: Lakehouse and delta tables
+      href: ../placeholder.md
+    - name: V-order optimization for tables
+      href: ../placeholder.md
+- name: Notebooks
+  items:
+  - name: Create and use notebooks
+    href: how-to-use-notebook.md
+  - name: Develop and run notebooks
+    href: author-execute-notebook.md
+  - name: Notebook visualization
+    href: notebook-visualization.md
+  - name: Explore data in lakehouse
+    href: lakehouse-notebook-explore.md
+  - name: Load data in lakehouse
+    href: lakehouse-notebook-load-data.md

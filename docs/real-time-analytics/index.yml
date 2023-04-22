@@ -1,0 +1,52 @@
+### YamlMime:Landing
+
+title: Real-time Analytics documentation # < 60 chars
+summary: summary # < 160 chars
+
+metadata:
+  title: Real-time Analytics documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Learn about Real-time Analytics, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis. 
+  ms.service: azure #Required; use either service or product per approved list. 
+#   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
+  ms.topic: landing-page # Required
+  ms.collection: collection # Optional; Remove if no collection is used.
+  author: YaelSchuster #Required; your GitHub user alias, with correct capitalization.
+  ms.author: yaschust #Required; microsoft alias of author; optional team alias.
+  ms.date: 01/27/2020 
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card 
+  - title: About Real-time Analytics
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Real-time Analytics?
+            url: overview.md
+          - text: Real-time Analytics Tutorial
+            url: realtime-analytics-tutorial.md
+      - linkListType: overview
+        links:
+          - text: linktext1
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: linktext2
+            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+
+  # Card 
+  - title: Get started
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Create a KQL Database
+            url: create-database.md
+          - text: Get data
+            url: get-data-blob.md
+      - linkListType: get-started
+        links:
+          - text: KQL Query Set
+            url:  kusto-query-set.md
+          - text: Sample queries
+            url: query-table.md

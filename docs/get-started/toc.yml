@@ -1,0 +1,31 @@
+items:
+- name: Get started documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is Microsoft Fabric?
+    href: microsoft-fabric-overview.md
+  - name: Fabric terminology
+    href: fabric-terminology.md
+- name: Get started
+  items:
+  - name: linktext1
+    href: ../placeholder.md
+  - name: linktext2
+    href: ../placeholder.md
+- name: Workspaces
+  items:
+  - name: Workspaces
+    href: workspaces.md
+  - name: Create a workspace
+    href: create-workspaces.md
+  - name: Roles in workspaces
+    href: roles-workspaces.md
+  - name: Give users access to workspaces
+    href: give-access-workspaces.md
+- name: Feature 2
+  items:
+  - name: linktext2
+    href: ../placeholder.md
+  - name: linktext2
+    href: ../placeholder.md

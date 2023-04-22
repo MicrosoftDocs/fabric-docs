@@ -1,0 +1,175 @@
+### YamlMime:Hub
+
+title: Microsoft Fabric documentation # < 60 chars
+summary: Translate data to competitive advantage with the Microsoft Fabric unified analytics platform - the data platform for the age of AI. Get expert information and answers to help you deliver complete data solutions that take you from data to insight to action. # < 160 chars
+# brand: aspnet | azure | dotnet | dynamics | m365 | ms-graph | office | power-platform | sql | sql-server | vs | visual-studio | windows | xamarin
+brand: fabric
+
+metadata:
+  title: Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description:  Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more.
+  services: service
+  ms.service: powerbi #Required; service per approved list. service slug assigned to your service by ACOM.
+  ms.subservice: powerbi-service
+  ms.topic: hub-page # Required
+  ms.collection: collection
+  author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
+  ms.author: sngun #Required; microsoft alias of author; optional team alias.
+  ms.date: 03/07/2023
+
+# highlightedContent section (optional)
+# Maximum of 8 items 
+highlightedContent:
+# itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
+  items:
+    # Card
+    - title: What is Microsoft Fabric?
+      itemType: overview
+      url: placeholder.md
+    # Card
+    - title: Try Microsoft Fabric for free
+      itemType: get-started
+      url: placeholder.md
+    # Card
+    - title: Enable Fabric and create resources
+      itemType: quickstart
+      url: placeholder.md
+    # Card
+    - title: End-to-end tutorials
+      itemType: tutorial
+      url: placeholder.md
+
+productDirectory:
+  title: Explore Microsoft Fabric experiences
+  summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
+  items:
+
+    # Card
+    - title: Fabric platform
+
+      imageSrc: ./media/fabric-icon.png
+      links:
+        - url: enterprise/what-is-capacity.md
+          text: Fabric capacity and SKUs?
+        - url: admin/admin-roles.md
+          text: Understand Fabric admin roles
+        - url: security/security-overview.md
+          text: Secure Fabric resources
+        - url: cicd/deployment-pipelines/create-rules.md
+          text: What are deployment pipelines?
+        - url: get-started/index.yml
+          text: See more
+
+    # Card
+    - title: Power BI
+
+      imageSrc: ./media/power-bi-icon.png
+      links:
+        - url: /power-bi/fundamentals/power-bi-overview
+          text: What is Power BI?
+        - url: /power-bi/transform-model/datamarts/datamarts-overview
+          text: What is a datamart?
+        - url: /power-bi/connect-data/service-azure-and-power-bi
+          text: Azure and Power BI integration
+        - url: /power-bi/
+          text: See more
+
+    # Card
+    - title: OneLake
+
+      imageSrc: ./media/onelake-icon.png
+      links:
+        - url: onelake/onelake-overview.md
+          text: What is OneLake?
+        - url: onelake/onelake-shortcuts.md
+          text: What are shortcuts?
+        - url: onelake/create-lakehouse-onelake.md
+          text: Create a lakehouse with OneLake
+        - url: onelake/index.yml
+          text: See more
+
+    # Card
+    - title: Data Factory
+
+      imageSrc: ./media/data-factory-icon.png
+      links:
+        - url: data-factory/data-factory-overview.md
+          text: What is Data Factory?
+        - url: data-factory/create-first-pipeline-with-sample-data.md
+          text: Create your first pipeline
+        - url: data-factory/create-first-dataflow-gen2.md
+          text: Create your first dataflow?
+        - url: data-factory/index.yml
+          text: See more
+
+    # Card
+    - title: Synapse Data Engineering
+
+      imageSrc: ./media/synapse-data-engineering-icon.png
+      links:
+        - url: data-engineering/data-engineering-overview.md
+          text: What is Data Engineering?
+        - url: data-engineering/create-lakehouse.md
+          text: Create a Lakehouse
+        - url: data-engineering/create-spark-job-definition.md
+          text: Create a Spark job definition
+        - url: data-engineering/index.yml
+          text: See more
+
+    # Card
+    - title: Synapse Data Science
+
+      imageSrc: ./media/synapse-data-science-icon.png
+      links:
+        - url: data-science/data-science-overview.md
+          text: What is Data science?
+        - url: data-science/machine-learning-experiment.md
+          text: Machine learning experiment
+        - url: data-science/index.yml
+          text: See more
+
+    # Card
+    - title: Synapse Data Warehouse
+
+      imageSrc: ./media/synapse-data-warehouse-icon.png
+      links:
+        - url: data-warehouse/data-warehousing.md
+          text: What is Data Warehouse?
+        - url: data-warehouse/create-warehouse.md
+          text: Create a Warehouse
+        - url: data-warehouse/sql-query-editor.md
+          text: Query using SQL query editor
+        - url: data-warehouse/index.yml
+          text: See more
+
+    # Card
+    - title: Synapse Real-time Analytics
+
+      imageSrc: ./media/synapse-real-time-analytics-icon.png
+      links:
+        - url: real-time-analytics/overview.md
+          text: What is Real-time Analytics?
+        - url: placeholder.md
+          text: What is Event stream?
+        - url: real-time-analytics/create-database.md
+          text: Create a database
+        - url: real-time-analytics/index.yml
+          text: See more
+
+# additionalContent section (optional)
+# Card with summary style
+additionalContent:
+  # Supports up to 3 sections
+  sections:
+    - title: Related products # < 60 chars (optional)
+      items:
+        # Card
+        - title: Power BI
+          summary: Power BI amplifies your insights and the value of your data. 
+          url: /power-bi/
+        - title: Azure Synapse analytics
+          summary: Azure Synapse is a limitless analytics service that brings together enterprise data warehouse and Big Data analytics.
+          url: /azure/synapse-analytics/
+        - title: Azure Data Factory
+          summary: Azure Data Factory is Azure's cloud ETL service for scale-out serverless data integration and data transformation.
+          url: /azure/data-factory/

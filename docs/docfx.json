@@ -5,7 +5,8 @@
         "src": "./",
         "files": [
           "**/*.md",
-          "**/*.yml"
+          "**/*.yml",
+          "**/*.svg"
         ],
         "exclude": [
           "**/obj/**",
@@ -44,14 +45,14 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/fabric/breadcrumb/toc.json",
-      "uhfHeaderId": "MSDocsHeader-MSPowerBI",
+      "uhfHeaderId": "MSDocsHeader-Fabric",
       "extendBreadcrumb": true,
       "feedback_system": "None",
       "ms.service": "azure",
        "titleSuffix": "Microsoft Fabric"
    },
    "searchScope": [
-    ""
+    "Microsoft Fabric"
   ],
     "template": [],
     "dest": "fabric-docs"
