@@ -32,7 +32,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Notebook:** A Fabric notebook is a multi-language interactive programming tool with rich functions. Which include authoring code and markdown, running and monitoring a Spark job, viewing and visualizing result, and collaborating with the team. It helps data engineers and data scientist to explore and process data, and build machine learning experiments with both code and low-code experience. It can be easily transformed to a pipeline activity for orchestration.
 
-- **Spark application:** An Apache Spark application is a program written by a user using one of Spark’s API languages (Scala, Python, Spark SQL, or Java) or Microsoft-added languages (.NET with C# or F#). When an application runs, it's divided into one or more Spark jobs that run in parallel to process the data faster. For more information, see [Spark application monitoring](../data-engineering/spark-detail-monitoring.md).
+- **Spark application:** An Apache Spark application is a program written by a user using one of Spark's API languages (Scala, Python, Spark SQL, or Java) or Microsoft-added languages (.NET with C# or F#). When an application runs, it's divided into one or more Spark jobs that run in parallel to process the data faster. For more information, see [Spark application monitoring](../data-engineering/spark-detail-monitoring.md).
 
 - **Apache Spark job:** A Spark job is part of a Spark application that is run in parallel with other jobs in the application. A job consists of multiple tasks. For more information, see [Spark job monitoring](../data-engineering/spark-monitor-debug.md).
 
@@ -60,9 +60,9 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## Synapse data warehousing
 
-- **SQL Endpoint:** The SQL Endpoint on the lakehouse allows a user to transition from the Lake view of the lakehouse (which supports data engineering and Apache Spark) to the SQL experiences that a data warehouse provides, supporting Transact-SQL (T-SQL). For more information, see [SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint).
+- **SQL Endpoint:** Each Lakehouse has a SQL Endpoint that allows a user to query delta table data with TSQL over TDS. For more information, see [SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint-of-the-lakehouse).
 
-- **Synapse Data Warehouse:** The Synapse Data Warehouse functionality is a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Synapse data warehouse](../data-warehouse/data-warehousing.md#synapse-data-warehouse).
+- **Synapse Data Warehouse:** The Synapse Data Warehouse functionality is a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Synapse Data Warehouse](../data-warehouse/data-warehousing.md#synapse-data-warehouse).
 
 ## Synapse Real-time Analytics
 

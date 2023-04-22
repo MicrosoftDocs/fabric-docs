@@ -1,5 +1,5 @@
 ---
-title: Create a Synapse Data Warehouse in Microsoft Fabric
+title: Create a Synapse Data Warehouse
 description: Learn how to create a Synapse Data Warehouse in Microsoft Fabric.
 author: prlangad
 ms.author: prlangad

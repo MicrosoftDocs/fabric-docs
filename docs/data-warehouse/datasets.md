@@ -1,5 +1,5 @@
 ---
-title: Default Power BI datasets in Microsoft Fabric
+title: Default Power BI datasets
 description: Learn more about default Power BI datasets in Microsoft Fabric.
 author: chuckles22
 ms.author: chweb
@@ -33,7 +33,7 @@ For more on Power BI, see [Power BI guidance](/power-bi/guidance/).
 
 ## Understand what's in the default Power BI dataset
 
-Currently, delta tables in the Lakehouse are automatically added to the default Power BI dataset. The default dataset is queried via the [SQL Endpoint](sql-endpoint.md) and updated via changes to the Lakehouse. You can also query the default dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-sql-query) from a [Synapse Data Warehouse](warehouse.md).
+Currently, delta tables in the Lakehouse are automatically added to the default Power BI dataset. The default dataset is queried via the [SQL Endpoint](lakehouse-sql-endpoint.md) and updated via changes to the Lakehouse. You can also query the default dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-sql-query) from a [Synapse Data Warehouse](warehouse.md).
 
 Users can also manually select tables or views from the warehouse they want included in the model for more flexibility. Objects that are in the default Power BI dataset are created as a layout in the model view.
 
