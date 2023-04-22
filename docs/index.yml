@@ -15,7 +15,7 @@ metadata:
   ms.collection: collection
   author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
   ms.author: sngun #Required; microsoft alias of author; optional team alias.
-  ms.date: 03/07/2023
+  ms.date: 05/23/2023
 
 # highlightedContent section (optional)
 # Maximum of 8 items 
@@ -53,8 +53,6 @@ productDirectory:
           text: What is Fabric?
         - url: placeholder.md
           text: Navigate the Fabric portal
-        - url: placeholder.md
-          text: Choose the right experience
         - url: placeholder.md
           text: Workspaces in Fabric
         - url: placeholder.md
