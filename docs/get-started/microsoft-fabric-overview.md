@@ -10,6 +10,8 @@ ms.date: 04/15/2023
 
 # What is Microsoft Fabric?
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place.
 
 With Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs.
@@ -20,7 +22,7 @@ The platform is built on a foundation of Software as a Service (SaaS), which tak
 
 Microsoft Fabric brings together new and existing components from Power BI, Azure Synapse, and Azure Data Explorer into a single integrated environment. These components are then presented in various customized user experiences.
 
-:::image type="content" source="media\microsoft-fabric-overview\saas-foundation.png" alt-text="Diagram of the software as a service foundation beneath the different workloads of Fabric." lightbox="media\microsoft-fabric-overview\saas-foundation.png":::
+:::image type="content" source="media\microsoft-fabric-overview\saas-foundation.png" alt-text="Diagram of the software as a service foundation beneath the different workloads of Fabric.":::
 
 Fabric brings together workloads such as Data Engineering, Data Factory, Data Science, Data Warehouse, Real-time Analytics, and Power BI onto a shared SaaS foundation. This integration provides the following advantages:
 
@@ -38,7 +40,7 @@ Fabric allows creators to concentrate on producing their best work, freeing them
 
 Microsoft Fabric offers the comprehensive set of analytics workloads designed to work together seamlessly. Each workload is tailored to a specific persona and a specific task. Fabric includes industry-leading workloads in the following categories for an end-to-end analytical need.
 
-:::image type="content" source="media\microsoft-fabric-overview\workload-menu.png" alt-text="Screenshot of the Fabric menu of workloads." lightbox="media\microsoft-fabric-overview\workload-menu.png":::
+:::image type="content" source="media\microsoft-fabric-overview\workload-menu.png" alt-text="Screenshot of the Fabric menu of workloads.":::
 
 - **Data Engineering** - Data Engineering workload provides a world class Spark platform with great authoring experiences, enabling data engineers to perform large scale data transformation and democratize data through the lakehouse. Microsoft Fabric Spark's integration with Data Factory enables notebooks and spark jobs to be scheduled and orchestrated. For more information, see [What is Data engineering in Microsoft Fabric?](../data-engineering/data-engineering-overview.md)
 
@@ -66,7 +68,7 @@ OneLake is built on top of ADLS (Azure Data Lake Storage) Gen2. It provides a si
 
 OneLake eliminates today’s pervasive and chaotic data silos, which individual developers create when they provision and configure their own isolated storage accounts. Instead, OneLake provides a single, unified storage system for all developers, where discovery and data sharing is trivial and compliance with policy and security settings are enforced centrally and uniformly. For more information, see [What is OneLake?](../onelake/onelake-overview.md)
 
-:::image type="content" source="media\microsoft-fabric-overview\onelake-in-microsoft-fabric.png" alt-text="Diagram of the structure of Fabric, showing OneLake as the single data store on which all the workloads operate." lightbox="media\microsoft-fabric-overview\onelake-in-microsoft-fabric.png":::
+:::image type="content" source="media\microsoft-fabric-overview\onelake-in-microsoft-fabric.png" alt-text="Diagram of the structure of Fabric, showing OneLake as the single data store on which all the workloads operate.":::
 
 ### Organizational structure of OneLake and lakehouse
 
@@ -76,13 +78,13 @@ The tenant maps to the root of OneLake and is at the top level of the hierarchy.
 
 The following image shows the various Fabric items where data is stored. It's an example of how various items within Fabric would store data inside OneLake. As displayed, you can create multiple workspaces within a tenant, create multiple lakehouses within each workspace. A lakehouse is a collection of files, folders, and tables that represents a database over a data lake. To learn more, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md).
 
-:::image type="content" source="media\microsoft-fabric-overview\hierarchy-within-tenant.png" alt-text="Diagram of the hierarchy of items like lakehouses and datasets within a workspace within a tenant." lightbox="media\microsoft-fabric-overview\hierarchy-within-tenant.png":::
+:::image type="content" source="media\microsoft-fabric-overview\hierarchy-within-tenant.png" alt-text="Diagram of the hierarchy of items like lakehouses and datasets within a workspace within a tenant.":::
 
 Every developer and business unit in the tenant can instantly create their own workspaces in OneLake. They can ingest data into their own lakehouses, start processing, analyzing, and collaborating on the data, just like OneDrive in Office.
 
 All the Microsoft Fabric compute workloads are prewired to OneLake, just like the Office applications are prewired to use the organizational OneDrive. The workloads such as Data Engineering, Data Warehouse, Data Factory, Power BI, and Real-time Analytics use OneLake as their native store. They don't need any extra configuration.
 
-:::image type="content" source="media\microsoft-fabric-overview\workloads-access-data.png" alt-text="Diagram of different workloads all accessing the same OneLake data storage." lightbox="media\microsoft-fabric-overview\workloads-access-data.png":::
+:::image type="content" source="media\microsoft-fabric-overview\workloads-access-data.png" alt-text="Diagram of different workloads all accessing the same OneLake data storage.":::
 
 OneLake is designed to allow instant mounting of existing PaaS storage accounts into OneLake with the [Shortcut](../onelake/onelake-shortcuts.md) feature. There's no need to migrate or move any of the existing data. Using shortcuts, you can access the data stored in Azure Data Lake Storage.
 
