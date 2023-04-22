@@ -1,3 +1,14 @@
+---
+title: Troubleshooting
+description: Troubleshoot common issues in using Synapse Data Warehouse in Microsoft Fabric.
+author: xiaoyuMSFT
+ms.author: XiaoyuL
+ms.reviewer: wiassaf
+ms.date: 04/22/2023
+ms.topic: conceptual
+ms.search.form: Troubleshoot
+---
+
 # Troubleshooting
 
 Applies to: [!INCLUDEfabric-se-and-dw]
@@ -48,4 +59,4 @@ A SELECT statement could have completed successfully in the backend and fails wh
 4. Time when the query completes or fails.
 
 ## Contact us for help
-[!INCLUDE [Azure Help Support](../../includes/azure-help-support.md)]
+
