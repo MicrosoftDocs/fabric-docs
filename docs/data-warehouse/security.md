@@ -4,7 +4,7 @@ description: Learn more about securing the SQL Endpoint and Synapse Data Warehou
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: overview
 ---
 

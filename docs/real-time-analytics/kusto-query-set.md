@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 # Query data in the KQL queryset

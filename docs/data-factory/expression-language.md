@@ -5,7 +5,7 @@ ms.reviewer: xupzhou
 ms.author: jburchel
 author: jonburchel
 ms.topic: conceptual 
-ms.date: 04/07/2023
+ms.date: 05/23/2023
 ---
 
 # Expressions and functions for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]

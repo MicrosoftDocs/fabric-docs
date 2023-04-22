@@ -5,7 +5,7 @@ author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf
 ms.topic: how-to
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 

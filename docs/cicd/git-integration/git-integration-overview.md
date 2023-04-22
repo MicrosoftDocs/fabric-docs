@@ -4,7 +4,7 @@ description: Introduction to git integration in Microsoft Fabric. Learn how it w
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.date: 01/17/2023
+ms.date: 05/23/2023
 ms.custom: 
 ---
 

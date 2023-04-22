@@ -4,7 +4,7 @@ description: Learn more about the data warehousing experience.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: overview
 ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspace overview
 ---
