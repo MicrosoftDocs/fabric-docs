@@ -41,6 +41,10 @@ This article explains how to create *workspaces*, spaces to collaborate with col
 
 To see these workspace settings, expand **Advanced** in the **Settings** pane.
 
+### Specify a domain
+
+If you are a workspace domain administrator and have been delegated the required permissions, you can associate the workspace to a domain, or your can change an existing association. For information about domains, see [Overview of domains in Fabric](../governance/domains-overview.md).
+
 ### Create a contact list
 
 You can specify which users receive notification about issues occurring in the workspace. By default, any user or group specified as a workspace admin is notified, but you can add others to the *contact list*. Users or groups in the contact list are listed in the user interface (UI) to help users get help related to the workspace.

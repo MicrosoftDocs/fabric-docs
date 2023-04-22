@@ -32,4 +32,10 @@ items:
   - name: Set up content certification
     href: endorsement-setup.md
 - name: Domains
-  href: domains.md
+  items:
+  - name: Domains overview
+    href: domains-overview.md
+  - name: Create a domain
+    href: domains-create.md
+  - name: Manage a domain
+    href: domains-manage.md
