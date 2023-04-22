@@ -1,11 +1,11 @@
 ---
 title: Warehouse settings and context menus
 description: Learn about context menus and settings in the warehouse experience.
-ms.reviewer: wiassaf
-ms.author: prlangad
 author: prlangad
+ms.author: prlangad
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 03/15/2023
 ---
 
 # Warehouse settings and context menus
@@ -33,9 +33,7 @@ The following table is a list of settings available for each warehouse.
 | **Last modified by** | Name of the user who modified the warehouse recently. | |
 | **Location** | Workspace name where the warehouse is created. | |
 
-*Applies to:* Dataset (default)
-
-The following table shows settings for Dataset (default).
+The following table shows settings for the default Power BI dataset.
 
 | **Setting** | **Details** |
 |---|---|
@@ -68,4 +66,8 @@ The following table describes the warehouse context menu options:
 
 ## Next steps
 
-- [Query using the SQL Query editor](sql-query-editor.md)
+- [Synapse Data Warehouse in Microsoft Fabric](warehouse.md)
+- [SQL Endpoint in Microsoft Fabric](lakehouse-sql-endpoint.md)
+- [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
+- [Create reports in the Power BI service](reports-power-bi-service.md)
+- [Power BI admin center](../admin/admin-power-bi.md)

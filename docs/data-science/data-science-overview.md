@@ -1,6 +1,6 @@
 ---
-title: What is Data science in Microsoft Fabric?
-description: Overview of machine learning.
+title: What is Data science?
+description: Learn about the Data science machine learning resources, including models, experiments, and notebooks.
 author: nelgson
 ms.author: negust
 ms.reviewer: franksolomon
@@ -75,27 +75,9 @@ The SynapseML (previously known as MMLSpark) open-source library simplifies mass
 
 Notebooks can handle machine learning model batch scoring with open-source libraries for prediction, or the [!INCLUDE [product-name](../includes/product-name.md)] scalable universal Predict function, which supports mlflow packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] model registry.  
 
-Predicted values can be written to OneLake, and seamlessly consumed from Power BI reports, with the Power BI “see-through”-mode.
+Predicted values can be written to OneLake, and seamlessly consumed from Power BI reports, with the Power BI "see-through"-mode.
 
 Learn more about model scoring in [!INCLUDE [product-name](../includes/product-name.md)], in the following sections.
-
-## Data Exploration with SemPy
-
-Data scientists and business analysts spend a lot of time trying to understand, clean and transform their data, before they can even start any meaningful analysis. SemPy simplifies data analytics. It captures and exploits the data semantics as the users perform various transformations on their datasets. By exploiting data semantics, SemPy can simplify various tedious tasks, for example
-
-- automatic data transformation while joining heterogeneous datasets
-- handle underlying schema changes
-- enforce semantic constraints and identify data that violates them
-- enrich the data with new knowledge
-
-SemPy users can register new information about the data, and share it with other users. This allows for faster collaboration across teams that operate on the same datasets, and increases productivity. SemPy explores data semantics to simplify data science analytics. Through SemPy we can expect to:
-
-- Reduce the time needed to preprocess and validate the data, before meaningful analysis starts.
-- Increase productivity across teams that operate on same datasets, through registration and sharing data of semantics and transformations; this reduces the time needed to extract value from a dataset.
-- Increase cross-org collaboration, to bring the BI and AI teams together.
-- Decrease ambiguity and the learning curve when onboarding onto a new model/dataset.
-
-Learn more about SemPy in [!INCLUDE [product-name](../includes/product-name.md)], in the following sections.
 
 ## Next steps
 
@@ -104,5 +86,3 @@ Learn more about SemPy in [!INCLUDE [product-name](../includes/product-name.md)]
 - Learn more about tracking experiments (See [Machine learning experiment section](machine-learning-experiment.md))
 - Learn more about managing models (See [Machine learning model](machine-learning-model.md) section)
 - Learn more about batch scoring with Predict (See [model scoring](model-scoring-predict.md) section)
-- Learn more about exploring and validating data with SemPy (See SemPy section)
-- Learn more about connecting to Power BI Datasets with SemPy (See PBI Connector section)

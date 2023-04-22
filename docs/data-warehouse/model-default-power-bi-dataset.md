@@ -1,15 +1,15 @@
 ---
 title: Data modeling in the default Power BI dataset
-description: Learn how to model your data in the default Power BI dataset.
-ms.reviewer: wiassaf
-ms.author: salilkanade
+description: Learn how to model your data in the default Power BI dataset in Microsoft Fabric.
 author: salilkanade
+ms.author: salilkanade
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: conceptual
-ms.date: 04/11/2023
 ms.search.form: Model view
 ---
 
-# Data modeling in the default Power BI dataset
+# Data modeling in the default Power BI dataset in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -17,7 +17,7 @@ ms.search.form: Model view
 
 ## Access the default Power BI dataset
 
-To access default Power BI datasets, go to your workspace and find the dataset that matches the name of the warehouse.
+To access default Power BI datasets, go to your workspace, and find the dataset that matches the name of the desired Lakehouse. The default Power BI dataset follows the naming convention of the Lakehouse.
 
 :::image type="content" source="media\data-modeling-defining-relationships\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\data-modeling-defining-relationships\find-dataset.png":::
 
@@ -81,3 +81,4 @@ To remove objects, a user can use the manually select button in the ribbon and:
 - [Define relationships in data models](model-default-power-bi-dataset.md)
 - [Create reports in the Power BI service](reports-power-bi-service.md)
 - [Power BI admin center](../admin/admin-power-bi.md)
+- [Share your Synapse Data Warehouse](share-warehouse.md)

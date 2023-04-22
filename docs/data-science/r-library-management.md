@@ -1,18 +1,17 @@
 ---
 title: R library management
-description: Learn how to manage R libraries in Synapse.
+description: Learn how to manage R libraries.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/07/2023
+ms.date: 04/13/2023
 ms.search.form: R Language
 ---
 
 # R library management
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
-
 
 Libraries provide reusable code that you might want to include in your programs or projects for [!INCLUDE [product-name](../includes/product-name.md)] Spark.
 
@@ -39,16 +38,20 @@ Summarizing the current available R library management behaviors:
 |R Feed (CRAN)|Not Supported| Supported|
 |R Custom |Supported| Supported|
 
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
 
 ## Workspace-level R library management 
 
 Manage your custom libraries at the workspace-level in workspace settings. Currently R supports only custom libraries in the workspace settings.
 
-1. Sign in to [[!INCLUDE [product-name](../includes/product-name.md)]](https://fabric.microsoft.com/)
+
 1. Select your workspace.
 1. Select **Workspace settings** at the top of the page.
 
-    :::image type="content" source="media/workspace-settings.png" alt-text="Screenshot shows the location of Workspace settings.":::
+    :::image type="content" source="media/r-library-management/workspace-settings.png" alt-text="Screenshot shows the location of Workspace settings.":::
 
 1. Select **Data Engineering/Science** → **Library management**.
 1. Select the tab for **Custom libraries**.
@@ -57,13 +60,13 @@ Manage your custom libraries at the workspace-level in workspace settings. Curre
 >- Only the workspace admin has permission to update the workspace level settings. 
 >- Managing R feed libraries in workspace settings is currently not supported.
 
-Install and manage your custom R packages, that is,_.tar.gz_ in the **Custom libraries** section.
+Install and manage your custom R packages, that is, _.tar.gz_ in the **Custom libraries** section.
 
 * **Upload**: Select the **Upload** button and select your package from your local directory.  Then select **Apply** to add the package to the workspace.  The library management module helps you handle potential conflicts and required dependencies in your custom libraries.
 
 * **Remove**: If a custom library is no longer useful for your Spark applications, use the trash button to remove it.
 
-* **Review and apply changes**: Go to the **Pending changes** panel to review the changes you made for the updates of custom libraries and apply these changes to your [[!INCLUDE [product-name](../includes/product-name.md)]] Spark environment of the workspace or Notebook.
+* **Review and apply changes**: When changes are pending, go to the **Pending changes** panel to review them or cancel a change.
 
 ## Session-level R libraries
 
@@ -127,13 +130,26 @@ Currently, the following `devtools` functions are supported within [!INCLUDE [pr
 
 ### Install R custom libraries
 
-You can upload your R custom libraries to the Notebook attached Lakehouse File folder. Navigate to your Lakehouse, select ... on the File folder, then upload the custom library.
+To use a session-level custom library, you must first upload it to an attached Lakehouse.  
 
-After uploading, use the following command to install the custom library to your session:
+1. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
-```R
-install.packages("filepath/filename.tar.gz", repos = NULL, type = "source")
-```
+    :::image type="content" source="media/r-library-management/add-lakehouse.png" alt-text="Screenshot of how to add a lakehouse to your notebook.":::
+
+1. To add files to this lakehouse, select your workspace and then select the lakehouse.
+
+    :::image type="content" source="media/r-library-management/select-lakehouse.png" alt-text="Screenshot of how to navigate to your lakehouse to add files.":::
+
+1. Right click or select the "..." next to **Files** to upload your _.tar.gz_ file.
+
+    :::image type="content" source="media/r-library-management/upload-files.png" alt-text="Screenshot of how to upload your file to the lakehouse Files folder.":::
+
+
+1. After uploading, go back to your notebook.  Use the following command to install the custom library to your session:
+
+    ```R
+    install.packages("filepath/filename.tar.gz", repos = NULL, type = "source")
+    ```
 
 ### View installed libraries
 

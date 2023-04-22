@@ -1,11 +1,11 @@
 ---
-title: Security for data warehousing in Microsoft Fabric
+title: Security for data warehousing
 description: Learn more about securing the SQL Endpoint and Synapse Data Warehouse in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: cynotebo
 author: cynotebo
+ms.author: cynotebo
+ms.reviewer: wiassaf
+ms.date: 04/12/2023
 ms.topic: overview
-ms.date: 04/05/2023
 ---
 
 # Security for data warehousing in Microsoft Fabric
