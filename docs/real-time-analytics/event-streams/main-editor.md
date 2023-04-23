@@ -15,6 +15,8 @@ Microsoft Fabric event streams feature provides a main editor – a canvas that 
 ## Main editor
 The following screenshot shows an eventstream with its source and destination configured. 
 
+:::image type="content" source="./media/main-editor/eventstream-main-editor.png" alt-text="Screenshot showing an Eventstream item overview." lightbox="./media/main-editor/eventstream-main-editor.png" :::
+
 - **Ribbon**: It provides the source and destination options for you to choose. 
 - **Data navigation pane**: It provides the navigation of the sources and destinations. 
 - **Canvas and diagram view**: It provides graphical representation of the whole topology from the sources to the destinations. Each source or destination is visualized as a tile in the canvas. 
