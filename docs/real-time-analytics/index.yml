@@ -8,10 +8,10 @@ metadata:
   description: Learn about Real-time Analytics, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis. 
   ms.service: azure #Required; use either service or product per approved list. 
 #   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
-  ms.topic: landing-page # Required
-  ms.collection: collection # Optional; Remove if no collection is used.
-  author: YaelSchuster #Required; your GitHub user alias, with correct capitalization.
-  ms.author: yaschust #Required; microsoft alias of author; optional team alias.
+  ms.topic: landing-page 
+  ms.collection: collection 
+  author: YaelSchuster 
+  ms.author: yaschust 
   ms.date: 01/27/2020 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -26,27 +26,51 @@ landingContent:
         links:
           - text: What is Real-time Analytics?
             url: overview.md
-          - text: Real-time Analytics Tutorial
+          - text: End-to-end tutorial
             url: realtime-analytics-tutorial.md
-      - linkListType: overview
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
 
   # Card 
-  - title: Get started
+  - title: Create entities
     linkLists:
       - linkListType: get-started
         links:
           - text: Create a KQL Database
             url: create-database.md
-          - text: Get data
-            url: get-data-blob.md
-      - linkListType: get-started
+          - text: Create a table
+            url: create-empty-table.md
+
+# Card 
+  - title: Load data
+    linkLists:
+      - linkListType: how-to-guide
+        links: 
+        - text: Get data from a blob
+          url: get-data-blob.md
+        - text: Get data from Event Hubs
+          url: get-data-event-hub.md
+        - text: Get data from OneLake
+          url: get-data-onelake.md
+      
+  # Card 
+  - title: Query data
+    linkLists:
+      - linkListType: how-to-guide
         links:
           - text: KQL Query Set
             url:  kusto-query-set.md
           - text: Sample queries
             url: query-table.md
+          - text: Query data in notebooks
+            url: jupyter-notebooks.md
+  
+  # Card 
+  - title: Training
+    linkLists:
+      - linkListType: learn
+        links:
+          - text: "Training module: Write your first query with Kusto Query Language"
+            url: /training/modules/write-first-query-kusto-query-language/
+          - text: "Training module: Gain insights from your data by using Kusto Query Language"
+            url: /training/modules/gain-insights-data-kusto-query-language/
+          - text: "Training module: Multi-table queries using Kusto Query Language"
+            url: /training/modules/multi-table-queries-with-kusto-query-language/
