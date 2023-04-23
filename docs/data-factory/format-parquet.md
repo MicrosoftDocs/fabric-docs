@@ -45,7 +45,7 @@ After selecting **Settings** in **File format** section, following properties ar
 
 :::image type="content" source="./media/format-parquet/source-file-settings.png" alt-text="Screenshot showing parquet file format source.":::
 
-- **Compression type**: Choose the compression codec used to read Parquet files in the drop-down list. You can choose from **gzip (.gz)**, **snappy**, **lzo**, **Brotli (.br)**, **Zstandard**, **lz4**, **lz4frame**, **bzip2 (.bz2)**, **lz4hadoop**.
+- **Compression type**: Choose the compression codec used to read Parquet files in the drop-down list. You can choose from **None**, **gzip (.gz)**, **snappy**, **lzo**, **Brotli (.br)**, **Zstandard**, **lz4**, **lz4frame**, **bzip2 (.bz2)**, **lz4hadoop**.
 
 ### Parquet format as destination
 
@@ -54,7 +54,7 @@ After selecting **Settings**, following properties are shown up in the pop-up **
 :::image type="content" source="./media/format-parquet/destination-file-settings.png" alt-text="Screenshot showing parquet file format destination.":::
 
 - **Enable Verti-Parquet**: Select this checkbox to optimize with Verti-Parquet technology.
-- **Compression type**: Choose the compression codec used to write Parquet files in the drop-down list. You can choose from **gzip (.gz)**, **snappy**, **lzo**, **Brotli (.br)**, **Zstandard**, **lz4**, **lz4frame**, **bzip2 (.bz2)**, **lz4hadoop**.
+- **Compression type**: Choose the compression codec used to write Parquet files in the drop-down list. You can choose from **None**, **gzip (.gz)**, **snappy**, **lzo**, **Brotli (.br)**, **Zstandard**, **lz4**, **lz4frame**, **bzip2 (.bz2)**, **lz4hadoop**.
 
 Under **Advanced** settings in **Destination** tab, further parquet format related property are shown up.
 
@@ -69,7 +69,7 @@ The following properties are supported in the copy activity **Source** section w
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **File format**|The file format that you want to use.| **Parquet**|Yes|type (*under `datasetSettings`*):<br>DelimitedText|
+| **File format**|The file format that you want to use.| **Parquet**|Yes|type (*under `datasetSettings`*):<br>Parquet|
 |**Compression type**|The compression codec used to read Parquet files.|Choose from: <br>**None** <br>**gzip (.gz)**<br>**snappy**<br>**lzo**<br>**Brotli (.br)**<br>**Zstandard**<br>**lz4**<br>**lz4frame**<br>**bzip2 (.bz2)**<br>**lz4hadoop** |No|compressionCodec: <br><br>gzip<br>snappy<br>lzo<br>brotli<br>zstd<br>lz4<br>lz4frame<br>bz2<br>lz4hadoop|
 
 
