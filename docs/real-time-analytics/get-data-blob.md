@@ -132,7 +132,7 @@ To verify that you have ingested data into your database, select **Quick query**
 
 :::image type="content" source="media/database-editor/quick-query.png" alt-text="Screenshot of the Quick query button.":::
 
-For more information on KQL Query Set, see <!-- [TODO- KQL query set]().-->
+For more information on KQL Queryset, see <!-- [TODO- KQL query set]().-->
 
 ## Next steps
 
