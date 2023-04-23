@@ -37,6 +37,15 @@ If the folder has unsupported items, it can still be connected, but the unsuppor
 
 The actions you can take on a workspace depend on the permissions you have in both the workspace and Azure DevOps. For a detailed explanation of permissions needed for git integration, see [Basic concepts](./git-integration-process.md#permissions).
 
+## Workflow
+
+A typical workflow for a developer using Fabric git integration may look like this:
+
+1. [Connect](./git-get-started.md#connect-a-workspace-to-an-azure-repo) the IT developer workspace to a Git branch​
+1. [Edit and commit](./git-get-started.md#commit-changes-to-git) changes​
+1. Start a pull request and merge changes to ‘main’ branch​
+1. [Update](./git-get-started.md#update-workspace-from-git) the IT developer workspace
+
 ## Considerations and limitations
 
 * Currently, only [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) is supported. Other platforms will be supported in the future.

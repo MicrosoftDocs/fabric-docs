@@ -174,12 +174,10 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 - The size limit for a commit is 25MB.
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
-- Works with limited items (link to supported items). If unsupported items are in the folder, they will be ignored.
+- Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they will be ignored.
 - Duplicating names is not allowed – even if Power BI allows it, the update will fail.
 - B2B isn’t supported.
 - Conflict resolution is partially done in git. For a full explanation of resolving conlicts see (link).
-- You need write permission to the workspace to update it.
-- Only workspaces assigned to a Premium license can connect to Azure Repos.
 
 ## Next steps
 
