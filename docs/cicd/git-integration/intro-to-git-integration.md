@@ -5,7 +5,6 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.service: powerbi
-ms.subservice: pbi-git-integration
 ms.custom: contperf-fy21q1
 ms.date: 04/02/2023
 ms.search.form: 
