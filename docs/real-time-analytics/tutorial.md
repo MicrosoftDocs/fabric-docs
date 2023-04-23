@@ -1,3 +1,14 @@
+---
+title: 
+description: 
+ms.reviewer: tzgitlin
+ms.author: yaschust
+author: YaelSchuster
+ms.topic: tutorial
+ms.date: 03/28/2023
+ms.search.form: product-kusto
+---
+
 # Real-time Analytics
 
 Real-time Analytics is a portfolio of capabilities that provides an
@@ -20,13 +31,14 @@ boroughs of New York and related insights.
 
 In this tutorial, you learn how to:
 
--   Create a KQL Database
--   Create Eventstream
--   Stream data from Eventstream to KQL Database
--   Check your data with sample queries
--   Save queries as a KQL Queryset
--   Create a Power BI report
--   Create a OneLake shortcut
+> [!div class="checklist"]
+> * Create a KQL Database
+> * Create Eventstream
+> * Stream data from Eventstream to KQL Database
+> * Check your data with sample queries
+> * Save queries as a KQL Queryset
+> * Create a Power BI report
+> * Create a OneLake shortcut
 
 ## Prerequisites
 
@@ -40,17 +52,17 @@ In this tutorial, you learn how to:
 1.  In the upper left corner, select **New \> Show all** to display a
     full list of available items.
 
-> ![](media/realtime-analytics-tutorial/image7.png)
+ ![](media/realtime-analytics-tutorial/image7.png)
 
 2.  In the **Real-time Analytics** section, select **KQL Database**.
 
-> ![](media/realtime-analytics-tutorial/image8.png)
+![](media/realtime-analytics-tutorial/image8.png)
 
 3.  On the **New KQL Database** dialog, enter a ***unique name***. 
 
 4.  Select **Create**. 
 
-> ![](media/realtime-analytics-tutorial/image9.png)
+![](media/realtime-analytics-tutorial/image9.png)
 
 5.  When provisioning is complete the KQL database editor landing page
     will be shown.
@@ -59,9 +71,7 @@ In this tutorial, you learn how to:
 
 6.  Select the **Database** in the Object tree.
 
-> ![A screenshot of a computer Description automatically generated with
-> medium
-> confidence](media/realtime-analytics-tutorial/image11.png)
+ ![A screenshot of a computer Description automatically generated with medium confidence](media/realtime-analytics-tutorial/image11.png)
 
 7.  Select **Check your data**
 
