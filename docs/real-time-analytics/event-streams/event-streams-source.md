@@ -25,7 +25,7 @@ If you already have Azure event hub set up in Azure, you can utilize that event 
 - **Data format** - Format of the incoming real-time events that you want to get from your Azure event hub.
 - **Consumer group** - The consumer group of your event hub that is used for reading the event data from your Azure event hub.
 
-:::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-sources-event-hub.png" :::
+:::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-event-hub.png" :::
 
 ## Sample data
 
@@ -34,7 +34,7 @@ By utilizing the sample data source (Yellow Taxi or Stock Market events), you ca
 - **Source name** – Meaningful source name that appears in your eventstream. 
 - **Sample data** – Select either the Yellow Taxi or Stock Market sample data.
  
-:::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration." lightbox="./media/event-streams-source/eventstream-sources-sources-sample-data.png" :::
+:::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration." lightbox="./media/event-streams-source/eventstream-sources-sample-data.png" :::
 
 ## Custom application
 
@@ -42,7 +42,7 @@ Custom application enables a streaming endpoint where you can point your existin
 
 - **Source name** – Meaningful source name that appears in your eventstream.
 
-:::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="./media/event-streams-source/eventstream-sources-sources-custom-app.png" :::
+:::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="./media/event-streams-source/eventstream-sources-custom-app.png" :::
 
 
 ## Next steps

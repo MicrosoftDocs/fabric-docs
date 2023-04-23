@@ -27,10 +27,10 @@ Eventstream item is created in workspaces or homepage or Create hub. Here are th
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the eventstream creation in homepage." lightbox="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" :::
 
    In **Workspace**:
-   :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot showing the eventstream creation in workspace." lightbox="./media/create-manage-an-eventstream/eventstream-workspace.png" :::
+   :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot showing the eventstream creation in workspace." lightbox="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" :::
 
    In **Create hub**: 
-   :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the eventstream creation in create hub." lightbox="./media/create-manage-an-eventstream/eventstream-workspace-create-hub.png" :::
+   :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the eventstream creation in create hub." lightbox="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" :::
 
 2. Enter a name for the new eventstream and select Create.
 
@@ -38,7 +38,7 @@ Eventstream item is created in workspaces or homepage or Create hub. Here are th
 
 3. Wait for a few seconds to create a new eventstream in your workspace. Once it’s done, you are directed to the main editor in which you can add sources and destinations to your eventstream.
 
-:::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-completed.png" alt-text="Screenshot showing the eventstream creation completed." lightbox="./media/create-manage-an-eventstream/eventstream-completed.png" :::
+:::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-completed.png" alt-text="Screenshot showing the eventstream creation completed." lightbox="./media/create-manage-an-eventstream/eventstream-creation-completed.png" :::
 
 ## Manage an eventstream 
 
@@ -50,7 +50,7 @@ After you create an Eventstream item, you can edit and manage your eventstream i
 - **View lineage**: Gives you an overview of where all the data comes from and goes to. 
 - **View details**: View detailed information about your eventstream.  
 
-:::image type="content" source="./media/create-manage-an-eventstream/eventstream-management.png" alt-text="Screenshot showing the eventstream creation completed." lightbox="./media/create-manage-an-eventstream/eventstream-management.png" :::
+:::image type="content" source="./media/create-manage-an-eventstream/eventstream-management.png" alt-text="Screenshot showing the eventstream management." lightbox="./media/create-manage-an-eventstream/eventstream-management.png" :::
 
 
 ## Next steps

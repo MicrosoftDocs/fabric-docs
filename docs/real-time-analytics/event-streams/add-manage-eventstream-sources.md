@@ -21,7 +21,7 @@ If you have an Azure event hub created with event data there, do the following s
 
 2. Enter a source name for the new source and select a cloud connection to your Azure event hub.
 
-:::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-sources-event-hub.png" :::
+:::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-event-hub.png" :::
 
 3. If you don’t have a cloud connection, select **Create new connection** to create one. To create a new connection, fill in the information of your Azure Event Hubs on the **New connection** blade.
 
@@ -57,7 +57,7 @@ To get a better understanding of how an eventstream works, you can use the out o
 2. On the right pane, enter a source name to be displayed on the canvas, select the desired sample data to be added to your eventstream and then Create. 
    - Yellow Taxi: sample taxi data with a preset schema that includes fields such as pickup time, dropoff time, distance, total fee, and more. 
    - Stock Market: sample data of a stock exchange with a preset schema column such as time, symbol, price, volume and more
-   :::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration." lightbox="./media/event-streams-source/eventstream-sources-sources-sample-data.png" :::
+   :::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration." lightbox="./media/event-streams-source/eventstream-sources-sample-data.png" :::
 
 3. When the sample data source is created successfully, you can find it on the canvas and navigation pane.
 
@@ -74,7 +74,7 @@ If you want to connect your own application with an eventstream, you can add a c
 
 2. Enter a **Source name** for the custom app and select Create. 
 
-:::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="./media/event-streams-source/eventstream-sources-sources-custom-app.png" :::
+:::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="./media/event-streams-source/eventstream-sources-custom-app.png" :::
 
 3. Once the custom app is created successfully, you can view the information of the custom app such as connection string and use it in your application.
 
