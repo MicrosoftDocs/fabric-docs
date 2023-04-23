@@ -22,7 +22,7 @@ Parquet format is supported for the following activities and connectors as sourc
 
 | Category | Connector/Activity | 
 |---|---|
-| **Supported connector** | Amazon S3 |
+| **Supported connector** | [Amazon S3](connector-amazon-s3-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
 |  | Azure Data Lake Storage Gen1 |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
