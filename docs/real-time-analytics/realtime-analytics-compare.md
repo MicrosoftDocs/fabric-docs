@@ -31,7 +31,7 @@ For more information on Real-time Analytics, see [What is Real-time Analytics in
 | **Integrations** | Built-in ingestion pipelines | Event Hubs, Event Grid, [!INCLUDE [product-name](../includes/product-name.md)] Pipeline, [!INCLUDE [product-name](../includes/product-name.md)] Dataflow | Event Hubs, Event Grid, IoT Hub |
 |  | OneLake integration | Supports data mirroring to and from OneLake | &cross; |
 |  | Spark integration | Built-in Kusto Spark connector integration with support for Azure Active Directory pass-through authentication, Synapse Workspace MSI, and Service Principal | Azure Data Explorer linked service: Built-in Kusto Spark integration with support for Azure Active Directory pass-through authentication, Synapse Workspace MSI, and Service Principal|
-|  | KQL artifacts management | Option to save queries as KQL querysets that can be shared within the tenant | &cross; |
+|  | KQL artifacts management | Option to save queries as KQL Querysets that can be shared within the tenant | &cross; |
 |  | Database management | &check; |  &check; |
 | **Features** | KQL queries | &check; | &check; |
 |  | API and SDKs | &check; | &check; |
