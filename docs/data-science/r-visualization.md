@@ -15,6 +15,11 @@ ms.search.form: R Language
 
 The R ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Apache Spark Pool in [!INCLUDE [product-name](../includes/product-name.md)] contains a set of curated and popular open-source libraries. Add or manage extra libraries or versions by using the [!INCLUDE [product-name](../includes/product-name.md)] [library management capabilities](r-library-management.md).
 
+## Prerequisites
+
+[!INCLUDE [prerequisites](../includes/data-science-prerequisites.md)]
+[!INCLUDE [r-prerequisites](../includes/data-science-r-prerequisites.md)]
+
 ## ggplot2
 
 The [ggplot2](https://ggplot2.tidyverse.org/) library is popular for data visualization and exploratory data analysis.

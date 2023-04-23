@@ -15,9 +15,14 @@ ms.search.form: R Language
 
 [sparklyr](https://spark.rstudio.com/) is an R interface to Apache Spark. It provides a mechanism to interact with Spark using familiar R interfaces. You can use sparklyr through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)]  notebooks.
 
-## Requirements
-
 `sparklyr` is used along with other [tidyverse](https://www.tidyverse.org/) packages such as [dplyr](https://cran.rstudio.com/web/packages/dplyr/vignettes/dplyr.html). [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of sparklyr and tidyverse with every runtime release. You can import them and start using the API.
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](../includes/data-science-prerequisites.md)]
+[!INCLUDE [r-prerequisites](../includes/data-science-r-prerequisites.md)]
+
+
 
 ## Connect sparklyr to Synapse Spark cluster
 

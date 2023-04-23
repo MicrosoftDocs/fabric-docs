@@ -20,7 +20,7 @@ items:
       href: create-database.md
     - name: Database Management
       href: database-management.md
-    - name: One logical copy (shortcut)
+    - name: One logical copy
       href: onelake-mirroring.md
   - name: Tables
     items:
@@ -37,17 +37,17 @@ items:
   - name: Get data from Event Hubs
     href: get-data-event-hub.md
   - name: Get data from OneLake
-    href: get-data-onelake.md  
-  - name: OneLake shortcut
-    href: onelake-shortcut.md
+    href: get-data-onelake.md
 - name: Query data
   items:
   - name: Query data in the KQL Queryset
     href: kusto-query-set.md
+  - name: Use a Jupyter notebook and kqlmagic to query a KQL Database
+    href: jupyter-notebook.md
+  - name: Use a OneLake shortcut to query data
+    href: onelake-shortcut.md
   - name: Use sample queries
     href: query-table.md
-  - name:  Use a Jupyter notebook and kqlmagic to query a KQL Database
-    href: jupyter-notebook.md
 - name: Visualize data
   items:
   - name: Visualize data in a Power BI report

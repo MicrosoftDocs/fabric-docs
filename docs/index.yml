@@ -125,8 +125,6 @@ productDirectory:
           text: What is Data science?
         - url: data-science/machine-learning-experiment.md
           text: Machine learning experiment
-        - url: data-science/read-write-pandas.md
-          text: Use SemPy library for faster analytics
         - url: data-science/index.yml
           text: See more
 
