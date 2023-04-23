@@ -11,7 +11,7 @@ items:
 - name: Get started
   items:
   - name: Real-time Analytics happy path
-    href: realtime-analytics-tutorial.md
+    href: tutorial.md
 - name: Create entities
   items:
   - name: Databases
