@@ -9,9 +9,9 @@ ms.date: 12/27/2022
 
 # Buy a Microsoft Fabric license
 
-This article describes how to purchase a [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) capacity for your organization. The article is aimed at admins who want to purchase Microsoft Fabric for their organization.
+This article describes the differences between the [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) capacities, and shows you how to buy an Azure SKU for your organization. The article is aimed at admins who want to buy Microsoft Fabric for their organization.
 
-After you purchase a capacity, you can learn how to [manage your capacity](/power-bi/enterprise/service-admin-premium-manage#manage-capacity) and [assign workspaces](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity) to it.
+After you buy a capacity, you can learn how to [manage your capacity](/power-bi/enterprise/service-admin-premium-manage#manage-capacity) and [assign workspaces](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity) to it.
 
 ## SKU types
 
@@ -25,7 +25,7 @@ Microsoft Fabric operates on two types of SKUs:
 
 ## Azure SKUs
 
-Azure SKUs, also known as F SKUs, are the recommended capacities for Microsoft Fabric. To buy an Azure SKU you need to be an owner or a contributor of an [Azure subscription](/azure/role-based-access-control/overview). You can use your Azure capacity for as long as you want without any commitment. Pricing is regional and billing is made on a per second basis with a minimum of one minute.
+Azure SKUs, also known as F SKUs, are the recommended capacities for Microsoft Fabric. You can use your Azure capacity for as long as you want without any commitment. Pricing is regional and billing is made on a per second basis with a minimum of one minute.
 
 Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
@@ -37,7 +37,11 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 * [Azure cost management](/cost-management-billing/cost-management-billing-overview).
 
-* [Azure Monitor Metrics](/azure/azure-monitor/essentials/data-platform-metrics). 
+* [Azure Monitor Metrics](/azure/azure-monitor/essentials/data-platform-metrics).
+
+### Buy an Azure SKU
+
+To buy an Azure SKU you need to be an owner or a contributor of an [Azure subscription](/azure/role-based-access-control/overview).
 
 ## Microsoft 365 SKUs
 
