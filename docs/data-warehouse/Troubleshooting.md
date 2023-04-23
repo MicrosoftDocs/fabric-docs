@@ -28,19 +28,19 @@ TEMPDB is a system database used by the engine for various temporary storage nee
 
 1. Follow [Statistics](statistics.md) to verify proper column statistics have been created on all tables. 
 2. Ensure all table statistics are updated after large DML transactions.
-3. Queries with complex JOINs, GROUP BY, and ORDER BY and expect to return large result set use more TEMPDB space in execution. Try to run these queries separately when the warehouse isn't busy.  
-4. Update queries to reduce the number of GROUP BY and ORDER BY columns if possible.
-5. Pause and resume the service to flush TEMPDB data.
-
+3. Queries with complex JOINs, GROUP BY, and ORDER BY and expect to return large result set use more TEMPDB space in execution.  Update queries to reduce the number of GROUP BY and ORDER BY columns if possible.
+4. Check for data skew in base tables.
+5. Rerun the query when there's no other active queries running to avoid resource constraint during query execution. 
+6. Pause and resume the service to flush TEMPDB data.
 
 ## Query performance seems to degrade over time
 Many factors can affect a query's performance, such as changes in table size, data skew, workload concurrency, available resources, network, etc.  Just because a query runs slower doesn't necessarily mean there's a query performance problem.  Take following steps to investigate the target query:
 
-1. Identify the differences in performance-impacting factors among good and bad performance runs. 
+1. Identify the differences in all performance-affecting factors among good and bad performance runs. 
 2. Follow [Statistics](statistics.md) to verify proper column statistics have been created on all tables. 
 3. Ensure all table statistics are updated after large DML transactions.
 4. Check for data skew in base tables.
-5. Pause and resume the service. Then, rerun the query when there's no other active queries running.  You can [monitor the warehouse workload using DMV](monitor-using-dmv.md). 
+5. Pause and resume the service. Then, rerun the query when there's no other active queries running.  You can [monitor the warehouse workload using DMV](monitor-using-dmv.md).  
 
 ## Query fails after running for a long time.  No data is returned to the client.
 A SELECT statement could have completed successfully in the backend and fails when trying to return the query result set to the client.  Try following steps to isolate the problem:
@@ -48,7 +48,7 @@ A SELECT statement could have completed successfully in the backend and fails wh
 1. Use different client tools to rerun the same query.  
 - SQL Query tool in [!INCLUDEfabric-dw]  
 - Azure Data Studio
-- SQLCMD Utility (For MFA authentication, use parameter -G -U.)  
+- SQLCMD Utility (For authentication via AAD Universal with MFA, use parameter -G -U.)  
 
 2. If step 1 fails, run a CTAS command with the failed SELECT statement to send the SELECT query result to another table in the same warehouse.  Using CTAS avoids query result set being sent back to the client machine.  If the CTAS command finishes successfully and the target table is populated, then the original query failure is likely caused by the warehouse front end or client issues.
 
