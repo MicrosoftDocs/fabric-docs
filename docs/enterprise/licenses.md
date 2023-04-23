@@ -98,12 +98,12 @@ This table lists the main differences between the capabilities of the individual
 
 | Capabilities | Free | Pro |
 |--|--|--|
-| Access Microsoft Fabric | :::image type="content" source="../media/yes.png" alt-text="Yes."::: | :::image type="content" source="../media/yes.png" alt-text="Yes."::: |
-| View content | :::image type="content" source="../media/no.png" alt-text="No."::: | :::image type="content" source="../media/yes.png" alt-text="Yes."::: |
-| Create Workspaces | :::image type="content" source="../media/yes.png" alt-text="Yes."::: | :::image type="content" source="../media/yes.png" alt-text="Yes."::: |
-| Create items | :::image type="content" source="../media/no.png" alt-text="No."::: | :::image type="content" source="../media/yes.png" alt-text="Yes."::: |
-| Share items | :::image type="content" source="../media/No.png" alt-text="No."::: | :::image type="content" source="../media/yes.png" alt-text="Yes."::: |
-| Connect to items | :::image type="content" source="../media/no.png" alt-text="No."::: | :::image type="content" source="../media/yes.png" alt-text="Yes."::: |
+| Access Microsoft Fabric | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
+| View content | :::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
+| Create Workspaces |:::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
+| Create items | :::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
+| Share items | :::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
+| Connect to items | :::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 
 ## Next steps
 
