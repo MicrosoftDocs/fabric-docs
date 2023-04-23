@@ -34,7 +34,7 @@ Eventstream item is created in workspaces or homepage or Create hub. Here are th
 
 2. Enter a name for the new eventstream and select Create.
 
-:::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-naming.png" alt-text="Screenshot showing the eventstream naming." lightbox="./media/create-manage-an-eventstream/eventstream-naming.png" :::
+:::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-naming.png" alt-text="Screenshot showing the eventstream naming." lightbox="./media/create-manage-an-eventstream/eventstream-creation-naming.png" :::
 
 3. Wait for a few seconds to create a new eventstream in your workspace. Once it’s done, you are directed to the main editor in which you can add sources and destinations to your eventstream.
 
