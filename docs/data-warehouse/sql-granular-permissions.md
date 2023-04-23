@@ -36,10 +36,24 @@ For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](incl
 
 When a user connects to the SQL connection string, they can view the permissions available to them using the [sys.fn_my_permissions](/sql/relational-databases/system-functions/sys-fn-my-permissions-transact-sql?view=fabric&preserve-view=true) function.
 
+User's database scoped permissions:
    ```sql
    SELECT *
    FROM sys.fn_my_permissions(NULL, "Database")
    ```
+
+User's schema scoped permissions:
+   ```sql
+   SELECT *
+   FROM sys.fn_my_permissions("<schema-name>", "Schema")
+   ```
+
+User's object-scoped permissions:
+   ```sql
+   SELECT *
+   FROM sys.fn_my_permissions("<schema-name>.<object-name>", "Object")
+   ```
+
 
 ## View permissions granted explicitly to users
 
@@ -52,6 +66,33 @@ When connected via the SQL connection string, a user with elevated permissions c
    JOIN sys.database_permissions AS pe
     ON pe.grantee_principal_id = pr.principal_id;
    ```
+
+## Restricting row access by using views
+
+Row level security is currently not supported. As a workaround, views and system functions can be used to limit a user's access to the data. This can be achieved in the following way:
+
+1. Provide the user with the Fabric Read permission only - This will grant them CONNECT permissions only for the Warehouse.
+2. Optionally, create a custom role and add the user to the role, if you'd like to restrict access based on roles.
+
+   ```sql
+   CREATE ROLE PrivilegedRole
+   
+   ALTER ROLE PrivilegedRole ADD MEMBER [userOne@contoso.com]
+   ```
+
+3. Create a view that queries the table for which you'd like to restrict row access
+4. Add a WHERE clause within the VIEW definition, using the SUSER_SNAME() or IS_ROLEMEMBER() system functions, to filter based on user name or role membership. Below is an example of providing access to certain rows to users based on region data within the row. The first condition provides access to rows, of a specific region, to one specific user, while the second condition provides access to rows, of a specific region, to any member of the PrivilegedRole custom role.
+
+   ```sql
+   CREATE VIEW dbo.RestrictedAccessTable as
+   select *
+   from dbo.SampleTable
+   WHERE
+   ( SUSER_SNAME() = 'userTwo@contoso.com' AND test_region = '<region_one_name>')
+   OR
+   ( IS_ROLEMEMBER('PrivilegedRole', SUSER_SNAME()) = 1 AND test_region = '<region_two_name')
+   ```
+
 
 ## Next steps
 
