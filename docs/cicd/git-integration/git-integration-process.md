@@ -56,7 +56,7 @@ If both the workspace and git branch have content, you have to decide which dire
 
 If you don’t select which content to sync, you can’t continue to work until you do so:
 
-:::image type="content" source="./media/git-integration-process/sync-direction-continue.png" alt-text="Screenshot of dialog asking which direction to sync if both Git and the workspace have content.":::
+:::image type="content" source="./media/git-integration-process/sync-direction-continue.png" alt-text="Screenshot notification that you can't continue working until workspace is synced.":::
 
 ### Git status
 

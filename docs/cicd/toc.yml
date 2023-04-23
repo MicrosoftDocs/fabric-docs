@@ -34,7 +34,7 @@ items:
   - name: "Git integration process"
     href: git-integration/git-integration-process.md
   - name: Git integration source code format
-    href: source-code-format.md
+    href: git-integration/source-code-format.md
   - name: Get started with git integration
     href: git-integration/git-get-started.md
   - name: Manage git branches

@@ -17,7 +17,7 @@ This article walks you through the following basic tasks in in Microsoft Fabric�
 - [Update from git](#update-workspace-from-git)
 - [Disconnect from git](#disconnect-a-workspace-from-git)
 
-It’s recommended to read the[ overview of git integration](./intro-to-git-integration) before you begin.
+It’s recommended to read the [overview of git integration](./intro-to-git-integration.md) before you begin.
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ To access the git integration feature, you need one of the following:
 
 ## Connect a workspace to an Azure repo
 
-Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/repos/get-started/?view=azure-devops), but once connected, anyone with [permission](#permissions) can work in the workspace. If you're not an admin, ask your admin for help with connecting. To connect a workspace to an Azure Repo, follow these steps:
+Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/repos/get-started), but once connected, anyone with [permission](#permissions) can work in the workspace. If you're not an admin, ask your admin for help with connecting. To connect a workspace to an Azure Repo, follow these steps:
 
 1. Sign into Power BI and navigate to the workspace you want to connect with.
 
