@@ -15,8 +15,8 @@ ms.search.form: product-kusto
 
 ## Prerequisites
 To get started, you must complete the following prerequisites:
-- Get access to a premium workspace with **Viewer** or above permissions where your Eventstream item is located in.
-- For KQL database or Lakehouse destination, get access to a premium workspace with **Viewer** or above permissions where your KQL Database or Lakehouse item is located in.
+- Get access to a **premium workspace** with **Viewer** or above permissions where your Eventstream item is located in.
+- For KQL database or Lakehouse destination, get access to a **premium workspace** with **Viewer** or above permissions where your KQL Database or Lakehouse item is located in.
 
 ## Preview source 
 

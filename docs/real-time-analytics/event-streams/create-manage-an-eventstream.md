@@ -15,7 +15,7 @@ Event streams feature in Microsoft Fabric is a centralized event data place that
 
 ## Prerequisites
 To get started, you must complete the following prerequisites:
-- Get access to a premium workspace with contributor or above permissions.
+- Get access to a **premium workspace** with **Contributor** or above permissions.
 
 ## Create an eventstream 
 
