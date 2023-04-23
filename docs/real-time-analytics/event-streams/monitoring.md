@@ -17,8 +17,10 @@ In an Eventstream item, there are two types of monitoring experience: **Data ins
 
 ## Prerequisites 
 
-- An eventstream is available with event data inside. 
-- An Azure event hub source and lakehouse destination are added. 
+## Prerequisites
+To get started, you must complete the following prerequisites:
+- Get access to a **premium workspace** with **Viewer** or above permissions where your Eventstream item is located in.
+- An Azure event hub source or lakehouse destination is added in your Eventstream item.
 
 ## Data insights 
 

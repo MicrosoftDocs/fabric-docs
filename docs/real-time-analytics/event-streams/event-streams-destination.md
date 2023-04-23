@@ -35,7 +35,8 @@ This destination provides a direct ingestion of your real-time event data into a
 
 :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot showing the kql database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png" :::
 
-**Ingest data wizard** will be popping up after clicking "Create and configure":
+**Ingest data wizard** will be popping up after clicking **Create and configure**:
+
 :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-ingestion-wizard.png" alt-text="Screenshot showing the ingestion wizard in kql database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database-ingestion-wizard.png" :::
 
 - **Destination** – With the step, you can either create a new table or choose an existing one from your KQL database to route and ingest your real-time data. 

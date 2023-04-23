@@ -13,6 +13,11 @@ ms.search.form: product-kusto
 
 Once you have created an eventstream, you can connect it to various data sources and destinations. The types of event sources that can be added to your eventstream include Azure Event Hubs, Sample data and Custom app. 
 
+## Prerequisites
+To get started, you must complete the following prerequisites:
+- Get access to a premium workspace with contributor or above permissions where your Eventstream item is located in.
+- For Azure Event Hubs source, an Azure event hub with data inside exists and appropriate permission available to access the policy keys.
+
 ## Add an Azure event hub as a source
 
 If you have an Azure event hub created with event data there, do the following steps to add an Azure event hub as your eventstream source:  
@@ -21,7 +26,7 @@ If you have an Azure event hub created with event data there, do the following s
 
 2. Enter a source name for the new source and select a cloud connection to your Azure event hub.
 
-:::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-event-hub.png" :::
+   :::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-event-hub.png" :::
 
 3. If you don’t have a cloud connection, select **Create new connection** to create one. To create a new connection, fill in the information of your Azure Event Hubs on the **New connection** blade.
 
@@ -56,12 +61,13 @@ To get a better understanding of how an eventstream works, you can use the out o
 
 2. On the right pane, enter a source name to be displayed on the canvas, select the desired sample data to be added to your eventstream and then Create. 
    - Yellow Taxi: sample taxi data with a preset schema that includes fields such as pickup time, dropoff time, distance, total fee, and more. 
-   - Stock Market: sample data of a stock exchange with a preset schema column such as time, symbol, price, volume and more
+   - Stock Market: sample data of a stock exchange with a preset schema column such as time, symbol, price, volume and more.
+   
    :::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration." lightbox="./media/event-streams-source/eventstream-sources-sample-data.png" :::
 
 3. When the sample data source is created successfully, you can find it on the canvas and navigation pane.
 
-4. To verify if the sample data is added successfully, select Data preview in the bottom pane.
+To verify if the sample data is added successfully, select Data preview in the bottom pane.
 
 :::image type="content" source="./media/add-manage-eventstream-sources/sample-data-source-completed.png" alt-text="Screenshot showing the sample data source." lightbox="./media/add-manage-eventstream-sources/sample-data-source-completed.png" :::
 
@@ -74,19 +80,17 @@ If you want to connect your own application with an eventstream, you can add a c
 
 2. Enter a **Source name** for the custom app and select Create. 
 
-:::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="./media/event-streams-source/eventstream-sources-custom-app.png" :::
+   :::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="./media/event-streams-source/eventstream-sources-custom-app.png" :::
 
 3. Once the custom app is created successfully, you can view the information of the custom app such as connection string and use it in your application.
 
-:::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source-completed.png" alt-text="Screenshot showing the custom app source." lightbox="./media/add-manage-eventstream-sources/custom-app-source-completed.png" :::
+   :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source-completed.png" alt-text="Screenshot showing the custom app source." lightbox="./media/add-manage-eventstream-sources/custom-app-source-completed.png" :::
 
 ## Manage source
 
-- **Edit/delete**: You can select an eventstream source to edit or delete either through the navigation pane or canvas.
+- **Edit/remove**: You can select an eventstream source to edit or remove either through the navigation pane or canvas. After selecting **Edit**, the edit pane will be open in the right of the main editor. 
 
    :::image type="content" source="./media/add-manage-eventstream-sources/source-modification-deletion.png" alt-text="Screenshot showing the source modification and deletion." lightbox="./media/add-manage-eventstream-sources/source-modification-deletion.png" :::
-
-After selecting **Edit**, the edit pane will be open in the right of the main editor. 
 
 - **Regenerate key for a custom app**: If you want to regenerate a new connection key for your application, select one of your custom app sources on the canvas and select regenerate button to get a new connection key.
 

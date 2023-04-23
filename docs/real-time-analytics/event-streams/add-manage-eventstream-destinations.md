@@ -13,6 +13,12 @@ ms.search.form: product-kusto
 
 Once you have created an eventstream, you can route data to different destinations. The types of data destinations that can be added to your eventstream include KQL Database, Lakehouse and Custom App.
 
+## Prerequisites
+To get started, you must complete the following prerequisites:
+- Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream item is located in.
+- For KQL database destination, get access to a **premium workspace** with **Contributor** or above permissions where your KQL database is located in.
+- For Lakehouse destination, get access to a **premium workspace** with **Contributor**  or above permissions where your lakehouse is located in.
+
 ## Add a KQL database as a destination
 
 If you have a KQL database created in the workspace, do the following steps to add a KQL database as eventstream destination:
@@ -58,7 +64,7 @@ If you have a lakehouse created in your workspace, follow these steps to add thi
    2. **Data format**: You can select a data format for the data that is sent to your lakehouse.
    3. **Event processing**: You can use our event processor to specify how the data should be processed before it's sent to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Use event processor editor to define the data transformation logic](./process-event-with-event-preocessor-editor.md).
    
-   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" alt-text="Screenshot showing the event processor editor." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" :::
+      :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" alt-text="Screenshot showing the event processor editor." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" :::
 
 3. Select **Create** to add the lakehouse destination.
 
@@ -83,12 +89,11 @@ Once the custom app is created successfully, you can view the information such a
 
 ## Manage destination 
 
-- **Edit/delete**: You can edit or delete an eventstream destination either through the navigation pane or canvas.
-
-   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing destination modification and deletion." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
+**Edit/remove**: You can edit or remove an eventstream destination either through the navigation pane or canvas.
 
 After selecting **Edit**, the edit pane will be open in the right of the main editor. You can modify the configuration as you wish, including the event transformation logic through the event processor editor.
 
+:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing destination modification and deletion." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
 
 
 ## Next steps

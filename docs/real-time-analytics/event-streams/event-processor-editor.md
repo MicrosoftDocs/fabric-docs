@@ -46,6 +46,10 @@ You can use the **Aggregate** transformation to calculate an aggregation (**
 
 Use the **Expand** array transformation to create a new row for each value within an array. 
 
+### Filter 
+
+Use the **Filter** transformation to filter events based on the value of a field in the input. Depending on the data type (number or text), the transformation will keep the values that match the selected condition. 
+
 ### Group by 
 
 Use the **Group by** transformation to calculate aggregations across all events within a certain time window. You can group by the values in one or more fields. It's like the **Aggregate** transformation but provides more options for aggregation. It also includes more complex options for time windows. Also like Aggregate, you can add more than one aggregation per transformation. 
@@ -69,6 +73,8 @@ In time-streaming scenarios, performing operations on the data contained in temp
 The **Manage fields** transformation allows you to add, remove, or rename fields coming in from an input or another transformation. The settings on the side pane give you the option of adding a new one by selecting **Add field** or adding all fields at once. 
 
 You can also add new field with the **Build-in Functions** to aggregate the data from upstream. Currently, the build-in functions we support are some functions in **String Functions**, **Date and Time Functions**, and **Mathematical Functions**.
+
+:::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing the manage field operator of the event processor editor." lightbox="./media/event-processor-editor/event-processor-editor-manage-field.png" :::
 
 ### Union 
 
