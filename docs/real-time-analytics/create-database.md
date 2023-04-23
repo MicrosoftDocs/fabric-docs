@@ -5,19 +5,19 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 01/10/2023
+ms.date: 04/23/2023
 ms.search.form: product-kusto
 ---
 
 # Create a database
 
-In Data Explorer, you'll interact with your data in the context of databases. A single workspace can hold multiple databases, and each database can hold multiple tables.
+In Real-time Analytics, you'll interact with your data in the context of databases. A single workspace can hold multiple databases, and each database can hold multiple tables.
 
 In this article, you'll learn you how to create a new database. Once your database has data, you can proceed to query your data using Kusto Query Language in a KQL Queryset.
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
 
 ## Create a new database
 

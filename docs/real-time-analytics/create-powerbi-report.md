@@ -15,7 +15,7 @@ In this article, you'll learn how to build a report using a KQL Queryset.
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
 * [KQL Database](create-database.md)
 * [KQL Queryset](kusto-query-set.md)
 

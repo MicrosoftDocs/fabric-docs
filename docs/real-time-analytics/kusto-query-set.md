@@ -18,7 +18,7 @@ The KQL Queryset uses the Kusto Query language for query creation, and also supp
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
 * A [KQL Database](create-database.md) with a populated data table
 
 ## Create a new query set

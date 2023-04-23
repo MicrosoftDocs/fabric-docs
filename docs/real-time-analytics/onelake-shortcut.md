@@ -27,7 +27,7 @@ In this article, you'll learn how to create a OneLake shortcut in your KQL Datab
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
 * [KQL Database](create-database.md)
 * Lakehouse with data
 

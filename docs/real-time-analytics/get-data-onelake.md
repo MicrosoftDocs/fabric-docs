@@ -15,9 +15,9 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace
-* A Lakehouse. <!-- To create a Lakehouse, see [TODO]()-->
-* [KQL Database](create-database.md).
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* [Lakehouse](../data-engineering/create-lakehouse.md)
+* [KQL Database](create-database.md)
 
 ## Copy folder path from Lakehouse
 
