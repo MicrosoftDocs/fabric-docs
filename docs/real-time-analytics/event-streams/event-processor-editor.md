@@ -1,5 +1,5 @@
 ---
-title: Event processor editor
+title: Event processor editor for Microsoft Fabric event streams
 description: This article describes the event processor editor that is used to transform your event data in Microsoft Fabric event streams feature.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -9,7 +9,7 @@ ms.date: 04/23/2023
 ms.search.form: product-kusto
 ---
 
-# Event processor editor
+# Event processor editor for Microsoft Fabric event streams
 
 Event processor enables you to transform the data that is being ingested into the destination. It's available for the Lakehouse type of destination. When you configure your lakehouse destination, you can find the “Event processing” section in the middle of the right panel. From there, you can open the event processor editor to configure your data transformation logic with drag and drop experience.
 

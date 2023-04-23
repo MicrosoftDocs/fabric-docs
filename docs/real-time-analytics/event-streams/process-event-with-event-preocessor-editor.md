@@ -1,5 +1,5 @@
 ---
-title: Process event with event processor editor
+title: Process event data with event processor editor
 description: This article describes how to use the event processor editor in an Eventstream item to define the event processing logic.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -9,7 +9,7 @@ ms.date: 04/23/2023
 ms.search.form: product-kusto
 ---
 
-# Process event with event processor editor
+# Process event data with event processor editor
 
 Event processor in the Lakehouse destination allows you to process your data before it's ingested into Lakehouse destination. The event processor editor is a no-code experience that provides you with the drag and drop experience to design the event data processing logic. This article describes how to use the event processor editor to design the processing logic.
 

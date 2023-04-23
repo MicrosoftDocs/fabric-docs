@@ -1,5 +1,5 @@
 ---
-title: Event streams destination
+title: Event streams destinations
 description: This article describes the event routing destination types that Microsoft Fabric event streams feature supports.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -9,7 +9,7 @@ ms.date: 04/23/2023
 ms.search.form: product-kusto
 ---
 
-# Event streams destination
+# Event streams destinations
 
 With the eventstream destinations, you can route their real-time events to a custom app, KQL database, or lakehouse in Microsoft Fabric without writing a single line of code. 
 

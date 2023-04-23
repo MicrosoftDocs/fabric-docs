@@ -1,5 +1,5 @@
 ---
-title: Event streams source
+title: Event streams sources
 description: This article describes the event source types that Microsoft Fabric event streams feature supports.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -9,7 +9,7 @@ ms.date: 04/23/2023
 ms.search.form: product-kusto
 ---
 
-# Event streams source
+# Event streams sources
 By utilizing the eventstream sources, users can seamlessly incorporate their real-time events into Microsoft Fabric, facilitating efficient and effective data ingestion.
 
 :::image type="content" source="./media/event-streams-source/eventstream-sources.png" alt-text="Screenshot showing the overview of the event streams source types." lightbox="./media/event-streams-source/eventstream-sources.png" :::
