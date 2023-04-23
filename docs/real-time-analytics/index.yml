@@ -61,7 +61,7 @@ landingContent:
           - text: Sample queries
             url: query-table.md
           - text: Query data in notebooks
-            url: jupyter-notebooks.md
+            url: jupyter-notebook.md
   
   # Card 
   - title: Training
