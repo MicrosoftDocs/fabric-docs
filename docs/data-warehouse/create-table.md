@@ -1,5 +1,5 @@
 ---
-title: Create tables in Synapse data warehouses in Microsoft Fabric
+title: Create tables in Synapse Data Warehouse
 description: Learn how to use SSMS to create tables in your Synapse Data Warehouse in Microsoft Fabric.
 author: KevinConanMSFT
 ms.author: kecona
