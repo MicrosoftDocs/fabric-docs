@@ -33,7 +33,8 @@ library(tidyverse)
 
 Let's first create an R data.frame, write it to lakehouse using `readr::write_csv()` and read it back with `readr::read_csv()`.
 
-> [!Note]To access Lakehouse files using `readr`, you need to use the *File API path*. In the Lakehouse explorer, right click on the file or folder that you want to access and copy its *File API path* from the contextual menu.
+> [!Note]
+> To access Lakehouse files using `readr`, you need to use the *File API path*. In the Lakehouse explorer, right click on the file or folder that you want to access and copy its *File API path* from the contextual menu.
 
 
 ```R
@@ -163,7 +164,7 @@ The `tidymodels` framework is a collection of packages for modeling and machine 
 ggplot(mtcars, aes(wt,mpg))+
 geom_point()
 ```
-![Screenshot of plot points.](./media/r-use-tidyverse/mpgwt.png)
+![Screenshot of mpg and wt.](./media/r-use-tidyverse/mpgwt.png)
 
 From the scatterplot, the relationship looks approximately linear and the variance looks constant. Let's try to model this using linear regression.
 
@@ -208,7 +209,7 @@ ggplot(lm_aug, aes(x = wt, y = mpg)) +
   geom_abline(intercept = lm_fit$fit$coefficients[1], slope = lm_fit$fit$coefficients[2], color = "blue")
 ```
 
-![Screenshot of plot points.](./media/r-use-tidyverse/modelout.png)
+![Screenshot of model result.](./media/r-use-tidyverse/modelout.png)
 
 
 ## Next steps

@@ -14,8 +14,7 @@ ms.search.form: R Language
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this notebook, we demonstrate an end to end example of using R to analyze, visualize the avocado prices in the US and predict which city has the cheapest Avocado.
-<img src="https://medmunch.com/wp-content/uploads/2020/07/Avocado-1.jpg"  width="500" height="400">
-
+![Screenshot of avocado](./media/r-avocado/avocado.png)
 
 ## Prerequisites
 
