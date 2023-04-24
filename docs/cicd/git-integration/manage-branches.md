@@ -13,7 +13,7 @@ ms.custom:
 
 The Fabric workspace is a shared environment that accesses live items. Any changes made directly in the workspace override and affect all other workspace users. Therefore, git best practice is for developers to work in isolation outside of the shared workspaces. There are two ways for a developer to work in their own protected workspace.
 
-- [Develop using client tools](#develop-using-client-tools), such as Power BI Desktop for reports and datasets, or VS Code for Notebooks.
+- [Develop using client tools](#develop-using-client-tools), such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for reports and datasets, or [VS Code](https://code.visualstudio.com/) for Notebooks.
 - [Develop in a separate workspace](#develop-using-another-workspace). Each developer has another workspace where they connect their own separate branch, sync the content into that workspace and then commit back to the branch.
 
 To work with branches using git integration, first connect the shared development team’s workspace to a single shared branch. For example, if your team uses one shared workspace, connect it to the *main* branch in your team’s repository, and sync between the workspace and the repo. If your team’s workflow has multiple shared branches like *Dev/Test/Prod* branches, each branch can be connected to a different workspace.
@@ -24,13 +24,13 @@ Then, each developer can choose the isolated environment in which to work.
 
 The workflow for developers using a client tool like Power BI Desktop should look something like this:
 
-1. Clone the repo into a local machine. (You only need to so this step once)
+1. [Clone](/azure/devops/repos/git/clone?) the repo into a local machine. (You only need to so this step once)
 1. Use the local copy of the *PBIProj* to open the project in Power BI Desktop.
-1. Make changes and save the updated files locally. Commits to the local repo.
-1. When ready, push the branch and commits to the remote repo.
+1. Make changes and save the updated files locally. [Commit](/azure/devops/repos/git/gitquickstart?view=azure-devops#commit-your-work) to the local repo.
+1. When ready, [push](/azure/devops/repos/git/pushing?view=azure-devops) the branch and commits to the remote repo.
 1. To test the changes against other items or more data, connect the new branch to a separate workspace, and upload the dataset and reports using the *update all* button in the source control pane. Do any tests or configuration changes there before merging into the *main* branch.
 
-   If no tests are required in the workspace, the developer can create a PR to merge changes directly into the *main* branch, without the need for another workspace.
+   If no tests are required in the workspace, the developer can merge changes directly into the *main* branch, without the need for another workspace.
 
 1. Once the changes are merged, the shared team’s workspace is prompted to accept the new commit. The changes are updated into the shared workspace and everyone can see the changes to those datasets and reports.
 
