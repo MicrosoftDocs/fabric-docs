@@ -14,7 +14,7 @@ In this tutorial, we show you how to use a pipeline Script activity to run a sto
 
 ## Prerequisites
 
-- A Microsoft Fabric enabled workspace. If you don't already have one, refer to the article [Create a workspace](../get-started/create-workspaces).
+- A Microsoft Fabric enabled workspace. If you don't already have one, refer to the article [Create a workspace](../get-started/create-workspaces.md).
 - Prepare a stored procedure in your Azure Synapse Data Warehouse. Create the following stored procedure in advance:
   
   ```sql
