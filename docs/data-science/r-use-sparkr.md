@@ -23,8 +23,7 @@ R support is only available in Spark3.1 or above.  R in Spark 2.4 is not support
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md
-)]
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
 
 
 ## Read and write SparkR DataFrames
