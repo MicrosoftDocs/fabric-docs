@@ -19,7 +19,7 @@ To create a new workspace, see [Create a workspace](create-workspaces.md).
 
 Everyone in a user group gets the role that you've assigned. If someone is in several user groups, they get the highest level of permission that's provided by the roles that they're assigned. If you nest user groups and assign a role to a group, all the contained users have permissions.
 
-During private preview, users in workspace roles have the following [!INCLUDE [product-name](../includes/product-name.md)] capabilities, in addition to the existing Power BI capabilities associated with these roles.
+Users in workspace roles have the following [!INCLUDE [product-name](../includes/product-name.md)] capabilities, in addition to the existing Power BI capabilities associated with these roles.
 
 ## [!INCLUDE [product-name](../includes/product-name.md)] workspace roles
 
