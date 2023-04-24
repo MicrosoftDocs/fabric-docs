@@ -1,0 +1,69 @@
+items:
+- name: Data Science documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is Data Science?
+    href: data-science-overview.md
+  - name: Roles and permissions
+    href: models-experiments-rbac.md
+- name: Get started
+  items:
+  - name: How to use end-to-end AI samples
+    href: use-ai-samples.md
+- name: Tutorials
+  items:
+  - name: Train a retail recommendation model
+    href: retail-recommend-model.md
+  - name: Fraud detection
+    href: fraud-detection.md
+  - name: Forecasting
+    href: time-series-forecasting.md
+  - name: Text classification
+    href: title-genre-classification.md
+  - name: Healthcare causal impact of treatments
+    href: uplift-modeling.md
+- name: Preparing data 
+  items:
+  - name: How to read and write data with Pandas
+    href: read-write-pandas.md
+  - name: How to accelerate data prep with Data Wrangler
+    href: data-wrangler.md
+- name: Train machine learning models
+  items:
+  - name: Training Overview
+    href: ./model-training/model-training-overview.md
+  - name: How-to guides
+    items:
+      - name: Train with Spark MLlib
+        href: ./model-training/fabric-sparkml-tutorial.md
+      - name: Train models with Scikit-learn
+        href: train-models-scikit-learn.md
+- name: Track models and experiments
+  items:
+  - name: Machine learning experiment
+    href: machine-learning-experiment.md
+  - name: Machine learning model
+    href: machine-learning-model.md
+  - name: Fabric autologging
+    href: mlflow-autologging.md
+  - name: How-to guides
+    items:
+    - name: Train models with PyTorch
+      href: train-models-pytorch.md   
+    - name: Score models with PREDICT
+      href: model-scoring-predict.md
+- name: Use R
+  items:
+  - name: R overview
+    href: r-overview.md
+  - name: How-to guides
+    items:
+    - name: How to use SparkR 
+      href: r-use-sparkr.md
+    - name: How to use sparklyr
+      href: r-use-sparklyr.md
+    - name: R library management
+      href: r-library-management.md
+    - name: R visualization
+      href: r-visualization.md
