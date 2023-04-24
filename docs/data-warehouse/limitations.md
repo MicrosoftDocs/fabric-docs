@@ -23,7 +23,7 @@ This article details the current limitations and known issues in [!INCLUDE [prod
 For more limitations information in specific areas, see:
 
 - [Data types in Microsoft Fabric](data-types.md)
-- [Tables](tables.md#known-limitations)
+- [Tables](tables.md#limitations)
 - [Datasets](datasets.md#limitations)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
 - [Sharing](share-warehouse.md#limitations)
