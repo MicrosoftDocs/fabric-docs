@@ -64,11 +64,11 @@ In this section, we use a Script activity to run the stored procedure created in
 
 1. Select Azure Synapse Analytics and then **Continue**.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-azure-synapse-analytics.png" alt-text="Screenshot showing the New connection dialog with Azure Synapse Analytics selected.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-azure-synapse-analytics.png"  lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-azure-synapse-analytics.png" alt-text="Screenshot showing the New connection dialog with Azure Synapse Analytics selected.":::
 
 1. Provide your **Server**, **Database**, and **Username** and **Password** fields for **Basic authentication**, and enter SynapseConnection for the **Connection name**. Then select **Create** to create the new connection.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/create-new-connection.png" alt-text="Screenshot showing the create new connection dialog.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/create-new-connection.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/create-new-connection.png" alt-text="Screenshot showing the create new connection dialog.":::
 
 1. Input **EXEC spM_add_names** to run the stored procedure. It will create a new table dbo.name and pre-process the data with a simple transformation to change the **fullname** field into two fields, **first_name** and **last_name**.
 
@@ -82,15 +82,15 @@ In this section, we use a Script activity to run the stored procedure created in
 
 1. Select **Azure Synapse Analytics** for the data source, and then select **Next**.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-copy-assistant-data-source.png" alt-text="Screenshot showing the Copy assistant data source selection page with Azure Synapse Analytics selected.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-copy-assistant-data-source.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-copy-assistant-data-source.png" alt-text="Screenshot showing the Copy assistant data source selection page with Azure Synapse Analytics selected.":::
 
 1. Choose the existing connection **SynapseConnection** that you created previously.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/choose-existing-connection-in-copy-assistant.png" alt-text="Screenshot showing the selection of the previously created SynapseConnection in the Choose data source page of the Copy assistant.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/choose-existing-connection-in-copy-assistant.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/choose-existing-connection-in-copy-assistant.png" alt-text="Screenshot showing the selection of the previously created SynapseConnection in the Choose data source page of the Copy assistant.":::
 
 1. Choose the table **dbo.names** that was created and pre-processed by the stored procedure. Then select **Next**.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-table.png" alt-text="Screenshot showing the selection of the dbo.names table created and pre-processed by the stored procedure in the previous steps.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-table.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-table.png" alt-text="Screenshot showing the selection of the dbo.names table created and pre-processed by the stored procedure in the previous steps.":::
 
 1. Select **Lakehouse** under the **Workspace** tab as the destination, and then select **Next** again.
 
@@ -132,7 +132,7 @@ In this section, we use a Script activity to run the stored procedure created in
 
 1. Switch to the workspace and select the Lakehouse to check the results.
 
-  :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/workspace-with-lakehouse.png" alt-text="Screenshot showing the workspace with the Lakehouse destination highlighted.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/workspace-with-lakehouse.png" alt-text="Screenshot showing the workspace with the Lakehouse destination highlighted.":::
 
 1. Select the table SynapseNamesTable to view the dat loaded into Lakehouse.
 
