@@ -42,7 +42,7 @@ items:
   items:
   - name: Query data in the KQL Queryset
     href: kusto-query-set.md
-  - name: Use a Jupyter notebook and kqlmagic to query a KQL Database
+  - name: Use a notebook with kqlmagic to query a KQL Database
     href: jupyter-notebook.md
   - name: Use a OneLake shortcut to query data
     href: onelake-shortcut.md
