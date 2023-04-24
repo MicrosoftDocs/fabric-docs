@@ -212,7 +212,7 @@
       - name: Copy sample data into Lakehouse and transform with dataflow
         href: tutorial-load-data-lakehouse-transform.md
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
-        href: ../placeholder.md
+        href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
       - name: Load sample data to data warehouse
         href: ../placeholder.md
       - name: Load sample data to Kusto
