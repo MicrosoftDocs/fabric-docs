@@ -97,3 +97,5 @@ items:
       href: monitor-using-dmv.md
     - name: Workload Management
       href: workload-management.md
+    - name: Troubleshoot Synapse Data Warehouse
+      href: troubleshoot-synapse-data-warehouse.md
