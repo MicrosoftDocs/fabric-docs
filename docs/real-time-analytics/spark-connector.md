@@ -24,8 +24,7 @@ Specifically, you learn how to:
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* Workspace.
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace.
 
 Before we import the NYC GreenTaxi notebook, we need to create a database.
 
