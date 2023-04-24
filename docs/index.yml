@@ -149,7 +149,7 @@ productDirectory:
       links:
         - url: real-time-analytics/overview.md
           text: What is Real-time Analytics?
-        - url: placeholder.md
+        - url: real-time-analytics/event-streams/overview.md
           text: What is Event stream?
         - url: real-time-analytics/create-database.md
           text: Create a database
@@ -177,7 +177,7 @@ productDirectory:
 
       imageSrc: ./media/developer-icon.svg
       links:
-        - url: placeholder.md
+        - url: /rest/api/fabric/
           text: REST APIs
         - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
           text: Deployment pipelines
@@ -205,13 +205,13 @@ productDirectory:
 
       imageSrc: ./media/education-icon.svg
       links:
-        - url: placeholder.md
+        - url: /training/modules/introduction-end-analytics-using-microsoft-fabric/
           text: End-to-end analytics using Fabric
-        - url: placeholder.md
+        - url: /training/modules/get-started-lakehouses/
           text: Get started with lakehouses
-        - url: placeholder.md
+        - url: /training/modules/use-spark-notebooks-pipelines-fabric/
           text: Use Data Factory pipelines
-        - url: placeholder.md
+        - url: /training/modules/get-started-data-science-fabric/
           text: Get started with Data science
         - url: get-started/index.yml
           text: See more
