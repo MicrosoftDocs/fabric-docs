@@ -53,7 +53,7 @@ productDirectory:
           text: What is Fabric?
         - url: placeholder.md
           text: Navigate the Fabric portal
-        - url: placeholder.md
+        - url: get-started/workspaces.md
           text: Workspaces in Fabric
         - url: placeholder.md
           text: Find data in the OneLake data hub
