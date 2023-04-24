@@ -23,7 +23,7 @@ You have two options:
 If you revert to a previous synced state, you will lose the changes made in one of the locations. Use the undo command in the workspace to revert to last synced state. (You will lose the work) and then update.
 To revert to the prior synced state, do one of the following steps:
 
-- Return the workspace to the last synced state by using the the [Undo](./git-get-started.md#undo-saved-change) command.
+- Return the workspace to the last synced state by using the the [Undo](./git-get-started.md#commit-changes-to-git?tabs=undo-saved-change) command.
 - Revert to the last synced state in git.
 - Disconnect and reconnect.
 
