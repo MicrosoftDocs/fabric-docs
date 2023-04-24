@@ -22,5 +22,3 @@ ms.search.form: Lakehouse Spark Structured Streaming
 ## Monitoring
 
 ## Next steps
-
-

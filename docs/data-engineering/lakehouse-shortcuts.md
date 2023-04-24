@@ -18,5 +18,3 @@ ms.search.form: Lakehouse shortcuts
 ## Access Control for shortcuts
 
 ## Next steps
-
-

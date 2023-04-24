@@ -23,23 +23,35 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Data engineering in Microsoft Fabric?
+          - text: What is Data engineering?
             url: data-engineering-overview.md
-          - text: What is a lakehouse in Microsoft Fabric?
+          - text: What is a lakehouse?
             url: lakehouse-overview.md
-          - text: What is SQL endpoint for a lakehouse?
-            url: lakehouse-sql-endpoint.md
+          - text: workspace roles and permissions?
+            url: workspace-roles-lakehouse.md
 
   # Card 
   - title: Get started with lakehouses
     linkLists:
       - linkListType: get-started
         links:
-          - text: Create a lakehouse in Microsoft Fabric
+          - text: Create a lakehouse
             url: create-lakehouse.md
-          - text: Navigate the Fabric Lakehouse explorer
+          - text: Navigate the lakehouse explorer
             url: navigate-lakehouse-explorer.md
-          - text: What are shortcuts in lakehouse?
+          - text: What are shortcuts?
+            url: lakehouse-shortcuts.md
+
+  # Card 
+  - title: Get started with lakehouses
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Step1 - Create a lakehouse
+            url: create-lakehouse.md
+          - text: Step2 - Navigate the lakehouse explorer
+            url: navigate-lakehouse-explorer.md
+          - text: step3 - What are shortcuts?
             url: lakehouse-shortcuts.md
 
   # Card 
@@ -59,16 +71,16 @@ landingContent:
             url: notebook-visualization.md
 
   # Card 
-  - title: Load data
+  - title: Load data into lakehouse
     linkLists:
       - linkListType: concept
         links:
-          - text: Options to get data into the Fabric Lakehouse
+          - text: Options to get data
             url: load-data-lakehouse.md
 
       - linkListType: how-to-guide
         links:
-          - text: Use a notebook to load data into your lakehouse
+          - text: Use a notebook to load data
             url: lakehouse-notebook-load-data.md
 
   # Card 

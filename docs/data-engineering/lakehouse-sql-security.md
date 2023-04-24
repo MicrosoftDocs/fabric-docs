@@ -14,5 +14,3 @@ ms.search.form: Lakehouse SQL Security
 ## Workspace permissions and SQL endpoint security
 
 ## Next steps
-
-
