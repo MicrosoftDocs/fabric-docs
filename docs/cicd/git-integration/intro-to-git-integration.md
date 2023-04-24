@@ -23,7 +23,7 @@ The integration with source control is on a workspace level. Developers can vers
 
 Read up on [version control](/devops/develop/git/what-is-version-control) and [Git](/devops/develop/git/what-is-git)) to make sure you’re familiar with basic git concepts.
 
-## Supported Items
+## Supported items
 
 The following items are currently supported, with more items to be added soon:
 
