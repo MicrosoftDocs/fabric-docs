@@ -1,5 +1,5 @@
 ---
-title: Create a measure in Power BI datasets in Microsoft Fabric
+title: Create a measure in Power BI datasets
 description: Learn about measures and how to create them in Power BI datasets in Microsoft Fabric.
 author: chuckles22
 ms.author: chweb
