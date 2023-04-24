@@ -63,23 +63,9 @@ Unlike a [!INCLUDE [fabric-se](includes/fabric-se.md)] which only supports read 
 
 To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Get started with the Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)]](get-started-data-warehouse.md).
 
-## Use cases and scenarios
-
-The [!INCLUDE [fabric-se](includes/fabric-se.md)] on the Lakehouse and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] are designed for following scenarios and use cases in mind:
-<!-- More coming -->
-
-**[!INCLUDE [fabric-se](includes/fabric-se.md)]**:
-
-- Automatic creation of external tables for delta lake files in the [OneLake](../onelake/onelake-overview.md)
-- Immediate access to delta lake files via read-only TSQL queries.
-
-**[!INCLUDE [fabric-dw](includes/fabric-dw.md)]**:
-
-- For read/write TSQL access to a traditional data warehouse experience.
-- Star schema data warehouses with fact and dimension tables, slowly changing dimensions.
-- Source of data for querying with Power BI, SQL Server Reporting Services, and other enterprise reporting and visualization tools.
-
 ## Next steps
 
+- [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
+- [Get started with a Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
 - [Create a warehouse](create-warehouse.md)
 - [Creating reports](create-reports.md)
