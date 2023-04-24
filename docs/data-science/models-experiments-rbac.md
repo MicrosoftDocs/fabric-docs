@@ -46,9 +46,9 @@ A user's role in a workspace implicitly grants them permissions on the datasets 
 |**Write**                              |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::      |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::      |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::            |:::image type="icon" source="./media/data-science-overview/no.png" border="false":::   |
 
 > [!NOTE]
-> You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. To learn more about workspace roles in [!INCLUDE [product-name](../includes/product-name.md)], see [roles in workspaces](../get-started/roles-workspaces.md)
+> You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. To learn more about workspace roles in [!INCLUDE [product-name](../includes/product-name.md)], see [Roles in workspaces](../get-started/roles-workspaces.md)
 
 ## Next steps
 
-- Learn about roles in workspaces: [roles in [!INCLUDE [product-name](../includes/product-name.md)] workspaces](../get-started/roles-workspaces.md)
-- Give users access to workspaces: [granting access to users](../get-started/give-access-workspaces.md)
+- Learn about roles in workspaces: [Roles in [!INCLUDE [product-name](../includes/product-name.md)] workspaces](../get-started/roles-workspaces.md)
+- Give users access to workspaces: [Granting access to users](../get-started/give-access-workspaces.md)
