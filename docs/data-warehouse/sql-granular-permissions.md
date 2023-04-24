@@ -93,6 +93,11 @@ Row level security is currently not supported. As a workaround, views and system
    ( IS_ROLEMEMBER('PrivilegedRole', SUSER_SNAME()) = 1 AND test_region = '<region_two_name')
    ```
 
+5. Grant access to the view 
+
+   ```sql
+   GRANT SELECT ON dbo.RestrictedAccessTable TO [userOne@contoso.com]
+   ```
 
 ## Next steps
 
