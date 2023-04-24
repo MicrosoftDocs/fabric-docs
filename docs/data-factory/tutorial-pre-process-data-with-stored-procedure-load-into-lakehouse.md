@@ -1,6 +1,6 @@
 ---
-title: Pre-process data with a stored procedure before loading into Lakehouse
-description: This tutorial shows you how to pre-process data with a stored procedure and then load the data into a Lakehouse with a pipeline with Data Factory in Microsoft Fabric.
+title: Preprocess data with a stored procedure before loading into Lakehouse
+description: This tutorial shows you how to preprocess data with a stored procedure and then load the data into a Lakehouse with a pipeline with Data Factory in Microsoft Fabric.
 ms.reviewer: jburchel
 ms.author: xupzhou
 author: pennyzhou-msft
@@ -8,9 +8,9 @@ ms.topic: conceptual
 ms.date: 05/23/2023
 ---
 
-# Tutorial: Pre-process data with a stored procedure before loading into Lakehouse
+# Tutorial: Preprocess data with a stored procedure before loading into Lakehouse
 
-In this tutorial, we show you how to use a pipeline Script activity to run a stored procedure to create a table and pre-process the data in a Synapse Data Warehouse. After that, we load the pre-processed table into Lakehouse.
+In this tutorial, we show you how to use a pipeline Script activity to run a stored procedure to create a table and preprocess the data in a Synapse Data Warehouse. After that, we load the preprocessed table into Lakehouse.
 
 ## Prerequisites
 
@@ -70,11 +70,11 @@ In this section, we use a Script activity to run the stored procedure created in
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/create-new-connection.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/create-new-connection.png" alt-text="Screenshot showing the create new connection dialog.":::
 
-1. Input **EXEC spM_add_names** to run the stored procedure. It will create a new table dbo.name and pre-process the data with a simple transformation to change the **fullname** field into two fields, **first_name** and **last_name**.
+1. Input **EXEC spM_add_names** to run the stored procedure. It creates a new table dbo.name and preprocess the data with a simple transformation to change the **fullname** field into two fields, **first_name** and **last_name**.
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/execute-stored-procedure.png" alt-text="Screenshot showing the settings tab of the Script activity configured to execute the spM_add_names stored procedure.":::
 
-## Use a pipeline activity to load pre-processed table data into Lakehouse
+## Use a pipeline activity to load preprocessed table data into Lakehouse
 
 1. Select **Copy data** and then select **Use copy assistant**.
 
@@ -88,15 +88,15 @@ In this section, we use a Script activity to run the stored procedure created in
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/choose-existing-connection-in-copy-assistant.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/choose-existing-connection-in-copy-assistant.png" alt-text="Screenshot showing the selection of the previously created SynapseConnection in the Choose data source page of the Copy assistant.":::
 
-1. Choose the table **dbo.names** that was created and pre-processed by the stored procedure. Then select **Next**.
+1. Choose the table **dbo.names** that was created and preprocessed by the stored procedure. Then select **Next**.
 
-   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-table.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-table.png" alt-text="Screenshot showing the selection of the dbo.names table created and pre-processed by the stored procedure in the previous steps.":::
+   :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-table.png" lightbox="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-table.png" alt-text="Screenshot showing the selection of the dbo.names table created and preprocessed by the stored procedure in the previous steps.":::
 
 1. Select **Lakehouse** under the **Workspace** tab as the destination, and then select **Next** again.
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/select-lakehouse-destination.png" alt-text="Screenshot showing the selection of Lakehouse for the copy destination in the Copy assistant.":::
 
-1. Choose an existing or create a new Lakehouse, than select **Next**.
+1. Choose an existing or create a new Lakehouse, then select **Next**.
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/choose-lakehouse-destination.png" alt-text="Screenshot showing the selection of a Lakehouse destination in the Copy assistant.":::
 
@@ -108,7 +108,7 @@ In this section, we use a Script activity to run the stored procedure created in
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/review-summary.png" alt-text="Screenshot showing the summary page of the Copy assistant with details of the configured connections.":::
 
-1. After selecting **OK**, the new Copy activity will be added onto the pipeline canvas.
+1. After you select **OK**, the new Copy activity will be added onto the pipeline canvas.
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/pipeline-canvas-with-copy-activity-added.png" alt-text="Screenshot showing the pipeline canvas with the Copy activity added.":::
 
