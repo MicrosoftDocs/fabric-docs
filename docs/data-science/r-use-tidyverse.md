@@ -153,7 +153,7 @@ ggplot(stocksL, aes(x=time, y=price, colour = stock)) +
   geom_boxplot()
 ```
 
-![Screenshot of plot box.](./media/r-use-tidyverse/ggplot-box.png)
+![Graph of plot box.](./media/r-use-tidyverse/ggplot-box.png)
 
 
 ## Model building
