@@ -54,7 +54,6 @@ Following the steps to open the event processor editor and use it to design your
 
 9. If there's any configuration error, you're notified by **Authoring error** tab in the bottom pane.
 
-
    :::image type="content" source="./media/process-event-with-event-processor-editor/event-processor-editor-authoring-error.png" alt-text="Screenshot showing the authoring error tab in event processor editor." lightbox="./media/process-event-with-event-processor-editor/event-processor-editor-authoring-error.png" :::
 
 10. If everything is as you expected after previewing the data, you can select Done to complete your event processing design and return to the Lakehouse destination configuration pane to get your Lakehouse destination created.

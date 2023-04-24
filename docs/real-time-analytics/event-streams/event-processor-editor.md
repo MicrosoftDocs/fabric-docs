@@ -11,7 +11,7 @@ ms.search.form: product-kusto
 
 # Event processor editor for Microsoft Fabric event streams
 
-Event processor enables you to transform the data that is being ingested into the destination. It's available for the Lakehouse type of destination. When you configure your lakehouse destination, you can find the “Event processing” section in the middle of the right panel. From there, you can open the event processor editor to configure your data transformation logic with drag and drop experience.
+Event processor enables you to transform the data that is being ingested into the destination. It's available for the Lakehouse type of destination. When you configure your Lakehouse destination, you can find the “Event processing” section in the middle of the right panel. From there, you can open the event processor editor to define your data transformation logic with drag and drop experience.
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-entrypoint.png" alt-text="Screenshot showing the entrypoint of the event processor editor." lightbox="./media/event-processor-editor/event-processor-editor-entrypoint.png" :::
 
@@ -31,6 +31,7 @@ The whole view layout is like the main editor. It consists of:
 2. **Right editing pane**: it's the place where you can configure the selected operation node or view the schema of the eventstream and destination. 
 3. **Bottom pane with data preview and authoring error tabs**: it's the place where you can preview the data in the selected node with “Data preview” tab. It provides you with the experience of “what you see is what you get”. You can also discover the authoring errors when there's something not configured correctly or completely in the operation nodes. 
 
+To learn more about how to use event processor editor to define your data transformation logic, see [Process event data with event processor editor](./process-event-with-event-preocessor-editor.md).
 
 ## Transformation operators 
 
@@ -82,6 +83,6 @@ Use the Union transformation to connect two or more nodes to add events that
 
 ## Next steps
 
+- [Process event data with event processor editor](./process-event-with-event-preocessor-editor.md)
 - [Event streams destination](./event-streams-destination.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
-- [Use event processor editor to define the data transformation logic](./process-event-with-event-preocessor-editor.md)

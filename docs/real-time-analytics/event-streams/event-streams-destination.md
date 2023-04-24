@@ -73,11 +73,14 @@ The **Event processor editor** will be popping up after clicking **Open event pr
 
 To learn more about the event processor editor, see [Event processor editor](./event-processor-editor.md).
 
+To learn more about how to use the event processor editor define your data transformation logic, see [Process event data with event processor editor](./process-event-with-event-preocessor-editor.md).
+
 Upon completion of the event processor wizard, real-time event data begin ingesting into the selected Delta table.
 
 ## Next steps
 
 - [Event processor editor](./event-processor-editor.md)
+- [Process event data with event processor editor](./process-event-with-event-preocessor-editor.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
 - [Event streams source](./event-streams-source.md)
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
