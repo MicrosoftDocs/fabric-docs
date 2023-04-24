@@ -27,6 +27,5 @@ This Amazon S3 connector is supported in Data Factory for [!INCLUDE [product-nam
 
 ## Next steps
 
-[How to create an Amazon S3 connection](connector-amazon-s3.md)
-
-[How to configure Amazon S3 in a copy activity](connector-amazon-s3-copy-activity.md)
+- [How to create an Amazon S3 connection](connector-amazon-s3.md)
+- [How to configure Amazon S3 in a copy activity](connector-amazon-s3-copy-activity.md)
