@@ -63,11 +63,11 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
     ```
 
 3. **Create an `MLFlowTransformer` object to load the model for inferencing.** To create an `MLFlowTransformer` object for generating batch predictions, you must do the following:
-  - specify which columns from the `test` DataFrame you need as model inputs (in this case, all of them)
-  - choose a name for the new output column (in this case, `predictions`), 
-  - and provide the correct model name and model version for generating those predictions. 
+    - specify which columns from the `test` DataFrame you need as model inputs (in this case, all of them),
+    - choose a name for the new output column (in this case, `predictions`), and
+    - provide the correct model name and model version for generating those predictions.
   
- If you're using your own model, substitute the values for the input columns, output column name, model name, and model version.
+    If you're using your own model, substitute the values for the input columns, output column name, model name, and model version.
 
     ```Python
     from synapse.ml.predict import MLFlowTransformer
