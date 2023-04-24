@@ -14,7 +14,7 @@ Continuous integration (CI) and continuous delivery (CD) are integral parts of t
 
 ## Continuous integration
 
-With Microsoft Fabric's [Git integration](./git-integration/git-integration-overview.md) process, incremental code changes can be made frequently and reliably by multiple developers. Build-and-test steps triggered by CI ensure that the code changes merged into the repository are reliable. The CD process can then deliver the code quickly and seamlessly.
+With Microsoft Fabric's [Git integration](./git-integration/intro-to-git-integration.md) process, incremental code changes can be made frequently and reliably by multiple developers. Build-and-test steps triggered by CI ensure that the code changes merged into the repository are reliable. The CD process can then deliver the code quickly and seamlessly.
 
 ## Continuous delivery
 
@@ -39,4 +39,4 @@ This cycle, or parts of it, repeat over again for the lifetime of the app.
 ## Next steps
 
 * [Deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md)
-* [Git integration](./git-integration/git-integration-overview.md)
+* [Git integration](./git-integration/intro-to-git-integration.md)

@@ -23,9 +23,8 @@ For more information on the `.create materialized-view` command, see [.create ma
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A Workspace
-* A [KQL database](create-database.md)
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* [KQL database](create-database.md)
 
 ## Materialized view
 

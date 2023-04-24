@@ -71,5 +71,5 @@ See how these items work together in the end-to-end streaming data consumption a
 
 * Compare Real-time Analytics to Azure Data Explorer
 * [Tutorial: Real-time Analytics](realtime-analytics-tutorial.md)
-* [Query data in the KQL queryset](kusto-query-set.md)
+* [Query data in the KQL Queryset](kusto-query-set.md)
 * [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context)

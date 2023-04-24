@@ -21,7 +21,7 @@ To access the data in your KQL Database in other [!INCLUDE [product-name](../inc
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace.
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
 * [KQL Database](create-database.md)
 * Lakehouse with data
 

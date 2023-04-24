@@ -26,8 +26,9 @@ To query referenced data from OneLake in your KQL Database, see [Create a OneLak
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace.
-* [KQL database](create-database.md) with data.
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* [KQL database](create-database.md) with data
+
 
 ## Enable data copy
 

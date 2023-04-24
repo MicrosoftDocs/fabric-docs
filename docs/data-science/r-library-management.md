@@ -233,4 +233,5 @@ Learn more about the R functionalities:
 
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [Create R visualization](./r-visualization.md)
