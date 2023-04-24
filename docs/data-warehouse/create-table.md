@@ -24,9 +24,6 @@ To get started, you must complete the following prerequisites:
 
 For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], see [Connectivity](connectivity.md). 
 
-> [!NOTE]
-> For complete syntax, refer to [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true).
-
 ### Create a new table in the SQL query editor with templates
 
 1. In the warehouse editor ribbon, locate the **New SQL query** button. 
@@ -59,10 +56,8 @@ For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric
       );  
     ```
 
-## Known limitations
-
-See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
-
 ## Next steps
 
-- [Transactions and modify tables with SSMS](transactions.md)
+- [Tables in data warehousing in Microsoft Fabric](tables.md)
+- [Data types in Microsoft Fabric](data-types.md)
+- [T-SQL surface area](tsql-surface-area.md)

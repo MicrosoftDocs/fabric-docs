@@ -16,7 +16,7 @@ ms.topic: conceptual
 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is the 'traditional' data warehouse with full transactional T-SQL capabilities, where you're fully in control of creating tables, loading, transforming and querying your data in the data warehouse using either the [!INCLUDE [product-name](../includes/product-name.md)] portal or T-SQL commands.
 
-For more information, see [Synapse Data Warehouse in Microsoft Fabric](warehouse.md).
+For more information, see [Synapse Data Warehouse in Microsoft Fabric](data-warehousing.md#synapse-data-warehouse).
 
 ## Get started
 
@@ -29,4 +29,4 @@ For more information, see [Synapse Data Warehouse in Microsoft Fabric](warehouse
 ## Next steps
 
 - [Connectivity](connectivity.md)
-- [Synapse Data Warehouse in Microsoft Fabric](warehouse.md)
+- [Synapse Data Warehouse in Microsoft Fabric](data-warehousing.md#synapse-data-warehouse)
