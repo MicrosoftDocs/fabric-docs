@@ -23,7 +23,7 @@ To install the app follow the instructions in [Install the utilization and metri
 
 When using the Microsoft Fabric utilization and metrics app, consider the following limitations.
 
-* In the [CU over time](metrics-app-overview-page.md#cu-over-time) visual logarithmic's view, the *CU % Limit* value isn't aligned with the total CU % values.
+* In the [CU over time](metrics-app-overview-page.md#cu-over-time) visual logarithmic's view, the primary axis seen on the left of the visual, isn't aligned with the secondary axis seen on the right of the visual.
 
 * In the [interactive](metrics-app-timepoint-page.md#interactive-operations) and [background](metrics-app-timepoint-page.md#background-operations) operation tables, the *Throttling(s)* column displays zero when throttling is disabled, even when the capacity is overloaded.
 
