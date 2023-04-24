@@ -88,13 +88,13 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The following connector properties in the table are supported in pipeline copy and Dataflow gen2:
+The following connector properties in the table are supported in pipeline copy and Dataflow Gen2:
 
 |Name|Description|Required|Property|Copy/Dataflow Gen2|
 |:---|:---|:---|:---|:---|
 |**Connection name**|A name for your connection.|Yes||✓/|
 |**Connection type**|Select **Microsoft-365** for your connection type.|Yes||✓/|
-|**Authentication**|See [Authentication](#authentication) |Yes|See Authentication|See [Authentication](#authentication)|
+|**Authentication**|See [Authentication](#authentication) |Yes||See [Authentication](#authentication)|
 
 ### Authentication
 

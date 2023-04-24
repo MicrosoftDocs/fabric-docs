@@ -67,19 +67,21 @@ The following some properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Scope**: you can select **All users or groups in the Microsoft 365 tenant** or **Select groups from the Microsoft 365 tenant**
+- **Scope**: You can select **All users or groups in the Microsoft 365 tenant** or **Select groups from the Microsoft 365 tenant**
 
     If you select **All users or groups in the Microsoft 365 tenant**, scope filter will show up.
 
     :::image type="content" source="./media/connector-microsoft-365/scope-filter.png" alt-text="Screenshot showing scope filter.":::
 
-    - **Scope filter**: you can use a predicate expression that is applied on the entire tenant to filter the specific rows to extract from Microsoft 365. The predicate format should match the query format of Microsoft Graph APIs, e.g. `https://graph.microsoft.com/v1.0/users?$filter=Department eq 'Finance'`.
+    - **Scope filter**: You can use a predicate expression that is applied on the entire tenant to filter the specific rows to extract from Microsoft 365. The predicate format should match the query format of Microsoft Graph APIs, e.g. `https://graph.microsoft.com/v1.0/users?$filter=Department eq 'Finance'`.
 
     If you select **Select groups from the Microsoft 365 tenant**, you can select **+ Add user groups** to select groups from the Microsoft 365 tenant. Use this property to select up to 10 user groups for whom the data will be retrieved. If no groups are specified, then data will be returned for the entire organization.
 
     :::image type="content" source="./media/connector-microsoft-365/group-details.png" alt-text="Screenshot showing group details.":::
 
-- **Date filter**: Name of the data filter column.. Use this property to limit the time range for which Microsoft 365 data is extracted.
+- **Date filter**: Specify the name of the DateTime filter column. Use this property to limit the time range for which Microsoft 365 data is extracted. If your dataset has one or more DateTime columns. Refer [here](/graph/data-connect-filtering#filtering) for list of datasets that require this DateTime filter.
+
+    Specify the **Start time (UTC)** and **End time (UTC)** to filter on when you select a DateTime filter column.
 
     :::image type="content" source="./media/connector-microsoft-365/data-filter.png" alt-text="Screenshot showing data filter.":::
 
@@ -107,10 +109,12 @@ The following tables contain more information about the copy activity in Microso
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Table**|Name of the table to extract from **Microsoft 365**.|\<table>|Yes|table|
 |**Scope**|When the user group is not is not specified, you can use a predicate expression that is applied on the entire tenant to filter the specific rows to extract from Microsoft 365. The predicate format should match the query format of Microsoft Graph APIs, e.g. `https://graph.microsoft.com/v1.0/users?$filter=Department eq 'Finance'`.|\<your scope>|Yes|scope|
-|**Scope filter**|you can use a predicate expression that is applied on the entire tenant to filter the specific rows to extract from Microsoft 365. The predicate format should match the query format of Microsoft Graph APIs, e.g. `https://graph.microsoft.com/v1.0/users?$filter=Department eq 'Finance'`.|\<scope filter>|Yes|userScopeFilterUri|
-|**Group ID**|you can select **+ Add user groups** to select groups from the Microsoft 365 tenant. Use this property to select up to 10 user groups for whom the data will be retrieved. If no groups are specified, then data will be returned for the entire organization.|\<group id>|Yes|allowedGroups|
-|**Date filter**|Name of the data filter column. Use this property to limit the time range for which Microsoft 365 data is extracted.|\<date filter>|Yes|dateFilter|
-|**Output columns**|Array of the columns to copy to destination.|\<output columns>|Yes|outputColumns|
+|**Scope filter**|When `allowedGroups` property is not specified, you can use a predicate expression that is applied on the entire tenant to filter the specific rows to extract from Microsoft 365 (Office 365). The predicate format should match the query format of Microsoft Graph APIs, e.g. `https://graph.microsoft.com/v1.0/users?$filter=Department eq 'Finance'`.|\<scope filter>|No|userScopeFilterUri|
+|**Group ID**|Group selection predicate. Use this property to select up to 10 user groups for whom the data will be retrieved. If no groups are specified, then data will be returned for the entire organization.|\<group id>|No|allowedGroups|
+|**Date filter<br>(Column name)**|Name of the DateTime filter column. Use this property to limit the time range for which Microsoft 365(Office 365) data is extracted.|\<your DateTime filter column>|Yes if data has one or more DateTime columns.|dateFilterColumn|
+|**Start time (UTC)**|Start DateTime value to filter on.|\<start time>|Yes if `dateFilterColumn` is specified|startTime|
+|**End time (UTC)**|End DateTime value to filter on.|\<end time>|Yes if `dateFilterColumn` is specified|endTime|
+|**Output columns**|Array of the columns to copy to destination.|\<output columns>|No|outputColumns|
 
 ## Next steps
 
