@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
-ms.date: 01/27/2023
+ms.date: 05/23/2023
 ---
 
 # Tutorial: Move data into Lakehouse via copy assistant

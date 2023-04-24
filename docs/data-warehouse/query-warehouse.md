@@ -4,7 +4,7 @@ description: Learn more about options to write TSQL queries on the SQL Endpoint 
 author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf, kecona
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ---
 # Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric

@@ -4,7 +4,7 @@ description: Learn about the Microsoft Fabric limitations.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 02/27/2023
+ms.date: 05/23/2023
 ---
 
 # Admin limitations in Microsoft Fabric

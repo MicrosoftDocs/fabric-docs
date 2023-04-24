@@ -4,7 +4,7 @@ description: Learn how to use SSMS to create tables in your Synapse Data Warehou
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ---
 

@@ -5,7 +5,7 @@ ms.reviewer: ssalgado
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
-ms.date: 02/10/2023
+ms.date: 05/23/2023
 ---
 
 # Training and evaluating a time series forecasting model in Microsoft Fabric
