@@ -28,19 +28,19 @@ The following list shows what different workspace roles can do depending on thei
 
 The following table describes the permissions needed to perform various common operations:
 
-| **Operations**                                                       | **Workspace role**                                                                        | **GitHub permissions**                       | **Azure DevOps permissions **                 | **** | **** | **** | **** | **** | **** |
-|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|-----------------------------------------------|------|------|------|------|------|------|
-| Connect workspace to Git repo                                        | Admin                                                                                     | Role=Read                                    | Read=Allow                                    |      |      |      |      |      |      |
-| Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    | No permissions are needed                     |      |      |      |      |      |      |
-| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Role=Read  (in target repo/directory/branch) | Read=Allow (in target repo/directory/branch)  |      |      |      |      |      |      |
-| View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 | Read or None                                  |      |      |      |      |      |      |
-| See workspace 'git status'                                           | Contributor                                                                               | Role=Read                                    | Read=Allow                                    |      |      |      |      |      |      |
-| Update from Git                                                      | All of the following                                                                      | Role=Read                                    | Read=Allow                                    |      |      |      |      |      |      |
-|                                                                      | Contributor in the workspace (WRITE permission on all artifacts)                          |                                              |                                               |      |      |      |      |      |      |
-|                                                                      | Owner on the artifact (if applicable and the tenant switch blocks updates for non-owners) |                                              |                                               |      |      |      |      |      |      |
-|                                                                      | BUILD permission on external dependencies (where applicable)                              |                                              |                                               |      |      |      |      |      |      |
+| **Operations**                                                       | **Workspace role**                                                                        | **GitHub permissions**                       | **Azure DevOps permissions**                  |
+|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|-----------------------------------------------|
+| Connect workspace to Git repo                                        | Admin                                                                                     | Role=Read                                    | Read=Allow                                    |
+| Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    | No permissions are needed                     |
+| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Role=Read  (in target repo/directory/branch) | Read=Allow (in target repo/directory/branch)  |
+| View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 | Read or None                                  |
+| See workspace 'git status'                                           | Contributor                                                                               | Role=Read                                    | Read=Allow                                    |
+| Update from Git                                                      | All of the following                                                                      | Role=Read                                    | Read=Allow                                    |
+|                                                                      | Contributor in the workspace (WRITE permission on all artifacts)                          |                                              |                                               |
+|                                                                      | Owner on the artifact (if applicable, and the tenant switch blocks updates for nonowners) |                                              |                                               |
+|                                                                      | BUILD permission on external dependencies (where applicable)                              |                                              |                                               |
 
-### Create a new folder permissions
+### Permissions needed to create a new folder
 
 ## Connect and sync
 
@@ -91,7 +91,7 @@ On top of the screen is the Source control icon. When the workspace is synced wi
 :::image type="content" source="./media/git-integration-process/source-control-zero.png" alt-text="Screenshot of the source control icon showing zero items changed.":::
 
 When changes are made either to the workspace or the git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control pane.
-In the Source control pane, the Changes tab shows the number of items that were changed in the workspace, and the Updates tab shows the number of items that were modified in the git branch and need that need to updated to the workspace.
+In the Source control pane, the **Changes** tab shows the number of items that were changed in the workspace, and the **Updates** tab shows the number of items that were modified in the git branch and need that need to updated to the workspace.
 
 In each tab, the changed items are listed with an icon indicating that the item one of the following:
 

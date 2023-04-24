@@ -10,7 +10,7 @@ ms.custom:
 
 # Manage a workspace with git
 
-This article walks you through the following basic tasks in in Microsoft Fabric’s git integration tool:
+This article walks you through the following basic tasks in Microsoft Fabric’s git integration tool:
 
 - [Connect to a git repo](#connect-a-workspace-to-an-azure-repo)
 - [Commit changes](#commit-changes-to-git)
@@ -25,7 +25,7 @@ To integrate git with your Microsoft Fabric workspace, you need to set up the fo
 
 ### Azure DevOps prerequisites
 
-- An active Azure DevOps account registered to the same user that is using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
+- An active Azure account registered to the same user that is using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
 - Access to an existing repository
 
 ### Fabric prerequisites
