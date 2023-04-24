@@ -1,6 +1,6 @@
 ---
 title: Create, evaluate, and deploy a recommendation system
-description: An e2e sample for building a retail book recommender.
+description: This demonstration shows the data engineering and data science workflow for building a system that provides online book recommendations.
 ms.reviewer: lagayhar
 ms.author: narsam
 author: narmeens
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 02/10/2023
 ---
 
-# Creating, evaluating, and deploying a recommendation system
+# Creating, evaluating, and deploying a recommendation system in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

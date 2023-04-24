@@ -18,23 +18,24 @@ In this tutorial, you build a data pipeline to move a Sample dataset to the Lake
 
 ## Prerequisites
 
-Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../placeholder.md) that isn’t the default My Workspace.
+To get started, you must complete the following prerequisites:
+
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. Create an account for free.
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a Project Trident enabled Workspace.pdf (sharepoint.com)](../placeholder.md).
 
 ## Create a data pipeline
 
-1. Switch to **Data factory** on the [app.powerbi.com](https://app.powerbi.com) page.
+1. Click [Link](https://msit.powerbi.com/home?experience=power-bi) and choose **Data factory** to open homepage of Data Factory.
+  :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory workload emphasized.":::
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/switch-data-factory.png" alt-text="Screenshot of menu in which Data factory option appears.":::
+1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
-1. Create a new workspace or choose another workspace besides **My workspace** for this demo.
+   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/create-workspace.png" alt-text="Screenshot showing the Create workspace button on the data factory page in Fabric.":::
+1. Select **Data pipeline** and then input a pipeline name create a new pipeline.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/create-workspace-page.png" alt-text="Screenshot showing the create workspace dialog.":::
-
-1. Select **New** and then **Data pipeline**.
-
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/new-data-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+  :::image type="content" source="media/create-first-pipeline/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
 ## Copy data using pipeline
 
@@ -42,11 +43,9 @@ In this session, you start to build your first pipeline by following below steps
 
 ### Step 1: Start with the Copy assistant
 
-1. Select **Copy data** on the canvas to open the **Copy assistant** tool to get started. Or select **Use copy assistant** from the **Copy data** drop down list under the **Activities** tab on the ribbon.
+1. After selecting **Copy data** on the canvas,  the **Copy assistant** tool will be opened to get started.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/copy-data-button.png" alt-text="Screenshot showing the Copy data button.":::
-
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/copy-data-assistant-button.png" alt-text="Screenshot showing the Copy data assistant button.":::
 
 ### Step 2: Configure your source
 
@@ -54,7 +53,7 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data.png" alt-text="Screenshot showing the Choose data source page of the Copy data assistant with the NYC Taxi - Green sample data selected.":::
 
-1. On the **Connect to data source** page of the assistant, the preview data for the **NYC Taxi - Green** is displayed.
+1. On the **Connect to data source** page of the assistant, the preview data for the **NYC Taxi - Green** is displayed, and then click **Next**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data-preview.png" alt-text="Screenshot showing the sample data for the NYC Taxi - Green sample data.":::
 
@@ -78,9 +77,9 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/review-create-activity.png" alt-text="Screenshot of the Review + create page of the Copy data assistant highlighting source and destination.":::
 
-1. The Copy activity is added to your new data pipeline canvas. All settings including advanced settings for the activity are available in the tabs below the pipeline canvas when the activity is selected.
+1. The Copy activity is added to your new data pipeline canvas. All settings including advanced settings for the activity are available in the tabs below the pipeline canvas when the created **Copy data** activity is selected.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/completed-activity.png" alt-text="Screenshot showing the completed Copy activity with the Copy activity settings tabs highlighted.":::
+   :::image type="content" source="media/create-first-pipeline/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity with the Copy activity settings tabs highlighted.":::
 
 ## Run and schedule your data pipeline
 

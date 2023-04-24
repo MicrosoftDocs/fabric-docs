@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.service: powerbi
 ms.topic: conceptual
-ms.date: 01/05/2023
+ms.date: 04/13/2023
 ---
 
 # What is CI/CD in Microsoft Fabric?
@@ -14,11 +14,11 @@ Continuous integration (CI) and continuous delivery (CD) are integral parts of t
 
 ## Continuous integration
 
-With Microsoft Fabric's [Git integration](./git-integration/git-integration-overview.md) process, incremental code changes can be made frequently and reliably by multiple developers. Build-and-test steps triggered by CI ensure that the code changes merged into the repository are reliable. The CD process can then deliver the code quickly and seamlessly.
+With Microsoft Fabric's [Git integration](./git-integration/intro-to-git-integration.md) process, incremental code changes can be made frequently and reliably by multiple developers. Build-and-test steps triggered by CI ensure that the code changes merged into the repository are reliable. The CD process can then deliver the code quickly and seamlessly.
 
 ## Continuous delivery
 
-Microsoft Fabric's [deployment pipelines](./deployment-pipelines/deployment-pipelines-overview.md) [automates the delivery](./deployment-pipelines/deployment-pipelines-automation.md) of completed code to environments like testing and production. It allows teams to produce software in short cycles with high speed, frequency, and reliability. Software can be released at any time with a simple, repeatable deployment process.
+Microsoft Fabric's [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) [automates the delivery](./deployment-pipelines/pipeline-automation.md) of completed code to environments like testing and production. It allows teams to produce software in short cycles with high speed, frequency, and reliability. Software can be released at any time with a simple, repeatable deployment process.
 
 For the most seamless CI/CD experience in Fabric, connect your developer workspace to git, and deploy from there using deployment pipelines.
 
@@ -38,5 +38,5 @@ This cycle, or parts of it, repeat over again for the lifetime of the app.
 
 ## Next steps
 
-* [Deployment pipelines](./deployment-pipelines/deployment-pipelines-overview.md)
-* [Git integration](./git-integration/git-integration-overview.md)
+* [Deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md)
+* [Git integration](./git-integration/intro-to-git-integration.md)

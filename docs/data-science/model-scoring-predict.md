@@ -1,6 +1,6 @@
 ---
 title: Model scoring with PREDICT
-description: Learn how to use the PREDICT function in supported models.
+description: Learn how to operationalize machine learning models in Fabric from the secure boundaries of a notebook with a function called PREDICT.
 ms.reviewer: mopeakande
 ms.author: erenorbey
 author: orbey
@@ -9,7 +9,7 @@ ms.date: 02/10/2023
 ms.search.form: Predict
 ---
 
-# Model scoring with PREDICT
+# Model scoring with PREDICT in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -70,14 +70,14 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
    test_spark = spark.createDataFrame(data=[(test.values.tolist(),)], schema=test.columns.to_list())
    ```
 
-3. **Create an MLflow Transformer to load the model for inferencing.** To create an MLflow Transformer object for generating predictions, we specify all the columns from the `test` data as model inputs, name the output column `predictions`, and provide the correct model name and version to use for generating predictions. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version with the appropriate ones for your model.
+3. **Create an `MLFlowTransformer` to load the model for inferencing.** To create an `MLFlowTransformer` object for generating predictions, we specify all the columns from the `test` data as model inputs, name the output column `predictions`, and provide the correct model name and version to use for generating predictions. If you're using your own model, substitute the values for the input columns, output column name, model name, and model version with the appropriate ones for your model.
 
    ```Python
-   from synapse.ml.predict import MLflowTransformer
+   from synapse.ml.predict import MLFlowTransformer
 
    # You can substitute values below for your own input columns
    # output column name, model name, and model version
-   model = MLflowTransformer(
+   model = MLFlowTransformer(
        inputCols=test_spark.columns,
        outputCol='predictions',
        modelName='sample-sklearn',
