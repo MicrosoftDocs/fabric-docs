@@ -5,7 +5,7 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas
 ms.topic: conceptual
-ms.date: 04/12/2023
+ms.date: 04/24/2023
 ms.custom: 
 ---
 
@@ -25,14 +25,14 @@ During private preview, users in workspace roles have the following [!INCLUDE [p
 
 | Capability   | Admin | Member | Contributor | Viewer|
 |---|---|---|---|---|
-|View and read content of data pipelines, Spark notebooks, Spark job definitions, KQL Databases, KQL Querysets, and Real-time Dashboards in a workspace. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false":::|
+|View and read content of data pipelines, Spark notebooks, Spark job definitions, KQL databases, KQL Querysets, and real-time dashboards in a workspace. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false":::|
 |Read files and tables in a Lakehouse via TDS endpoint | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false":::|
 |Read files and tables in a Lakehouse via Spark experiences | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
-|Write or delete data pipelines, Spark notebooks, Spark job definitions, Kusto Querysets, Real-time Dashboards, and schema and data of KQL databases, Lakehouses, and Data warehouses | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
+|Write or delete data pipelines, Spark notebooks, Spark job definitions, Kusto Querysets, real-time dashboards, and schema and data of KQL databases, Lakehouses, and data warehouses | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
 |Execute or cancel execution of Spark notebooks, and KQL Querysets <sup>1</sup> | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |   :::image type="icon" source="../media/yes-icon.svg" border="false":::|
 |View execution output of data pipelines, Spark notebooks, Spark job definitions, and KQL Querysets | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
 
-<sup>1</sup> Viewers won't be able to execute Spark job definitions. 
+<sup>1</sup> Viewers can't execute Spark job definitions. 
 
 ## Next steps
 
