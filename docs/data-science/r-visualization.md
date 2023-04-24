@@ -93,4 +93,7 @@ hchart(mtcars, "scatter", hcaes(wt, mpg, z = drat, color = hp)) %>%
 ## Next steps
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
+- [Tutorial: avocado price prediction](./r-avocado.md)
+- [Tutorial: flight delay prediction](./r-flight-delay.md)
