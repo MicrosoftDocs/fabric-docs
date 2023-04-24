@@ -19,8 +19,7 @@ The R ecosystem offers multiple graphing libraries that come packed with many di
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md
-)]
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
 
 ## ggplot2
 
