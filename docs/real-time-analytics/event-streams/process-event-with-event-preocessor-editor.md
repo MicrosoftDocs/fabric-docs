@@ -16,6 +16,7 @@ Event processor in the Lakehouse destination allows you to process your data bef
 ## Prerequisites 
 
 To get started, you must complete the following prerequisites:
+
 - Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream item is located in.
 - Get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse is located in.
 

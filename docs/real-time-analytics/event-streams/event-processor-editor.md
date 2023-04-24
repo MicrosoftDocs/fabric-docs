@@ -27,9 +27,9 @@ The event processor editor provides a canvas and bottom pane to enable you to:
 
 The whole view layout is like the main editor. It consists of:
 
-- **Canvas with diagram view**: it's the place where you can design your data transformation logic with selecting the operator from the “Operations” menu in ribbon. Then you can connect the eventsteam node, operator nodes, and the destination node by dragging the line. If you want to delete the connection between two nodes, you can select the line between the two nodes, and hit the delete key.  
-- **Right editing pane**: it's the place where you can configure the selected operation node or view the schema of the eventstream and destination. 
-- **Bottom pane with data preview and authoring error tabs**: it's the place where you can preview the data in the selected node with “Data preview” tab. It provides you with the experience of “what you see is what you get”. You can also discover the authoring errors when there's something not configured correctly or completely in the operation nodes. 
+1. **Canvas with diagram view**: it's the place where you can design your data transformation logic with selecting the operator from the “Operations” menu in ribbon. Then you can connect the eventsteam node, operator nodes, and the destination node by dragging the line. If you want to delete the connection between two nodes, you can select the line between the two nodes, and hit the delete key.  
+2. **Right editing pane**: it's the place where you can configure the selected operation node or view the schema of the eventstream and destination. 
+3. **Bottom pane with data preview and authoring error tabs**: it's the place where you can preview the data in the selected node with “Data preview” tab. It provides you with the experience of “what you see is what you get”. You can also discover the authoring errors when there's something not configured correctly or completely in the operation nodes. 
 
 
 ## Transformation operators 
@@ -64,7 +64,7 @@ The aggregations available in the transformation are:
 - Sum 
 - Variance 
 
-In time-streaming scenarios, performing operations on the data contained in temporal windows is a common pattern. The windowing functions are supported in event processor and integrated with **Group by** operator. You can define it in the setting of this operator.
+In time-streaming scenarios, performing operations on the data contained in temporal windows is a common pattern. The **windowing functions** are supported in event processor and integrated with **Group by** operator. You can define it in the setting of this operator.
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-operators-group-by.png" alt-text="Screenshot showing the group by operator of the event processor editor." lightbox="./media/event-processor-editor/event-processor-editor-operators-group-by.png" :::
 

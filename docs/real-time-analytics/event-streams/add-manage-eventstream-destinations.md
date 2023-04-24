@@ -14,6 +14,7 @@ ms.search.form: product-kusto
 Once you have created an eventstream, you can route data to different destinations. The types of data destinations that can be added to your eventstream include KQL Database, Lakehouse and Custom App.
 
 ## Prerequisites
+
 To get started, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream item is located in.
 - For KQL database destination, get access to a **premium workspace** with **Contributor** or above permissions where your KQL database is located in.
@@ -46,7 +47,7 @@ If you have a KQL database created in the workspace, do the following steps to a
 
        :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" alt-text="Screenshot showing the ingestion wizard step#4 in kql database destination type." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" :::
 
-After everything is configured and select **Done** in step 4, you see a KQL database destination added to your eventstream on the canvas.
+After everything is configured and select **Done**, you see a KQL database destination added to your eventstream on the canvas.
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the kql database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
 
@@ -61,7 +62,7 @@ If you have a lakehouse created in your workspace, follow these steps to add thi
    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse.png" alt-text="Screenshot showing the lakehouse destination type." lightbox="./media/event-streams-destination/eventstream-destinations-lakehouse.png" :::
  
    1. **Delta table**: Select an existing delta table or create a new one to receive data.
-   2. **Data format**: You can select a data format for the data that is sent to your lakehouse.
+   2. **Data format**: Select the data format for the data that is sent to your lakehouse.
    3. **Event processing**: You can use our event processor to specify how the data should be processed before it's sent to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Use event processor editor to define the data transformation logic](./process-event-with-event-preocessor-editor.md).
    
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" alt-text="Screenshot showing the event processor editor." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" :::
@@ -82,7 +83,7 @@ If you want to route the event data to your application, you can add a custom ap
 
    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" alt-text="Screenshot showing the custom app configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" :::
 
-Once the custom app is created successfully, you can view the information such as connection string on the bottom pane and use it in your application.
+Once the custom app is created successfully, you can view the information such as **connection string** on the bottom pane and use it in your application.
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot showing the custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" :::
 

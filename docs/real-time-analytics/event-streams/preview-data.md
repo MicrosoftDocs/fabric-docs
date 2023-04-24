@@ -11,10 +11,12 @@ ms.search.form: product-kusto
 
 # Preview data in an Eventstream item
 
-**Preview data** provide you with a snapshot of your event data in your source or destination or the eventstream itself. Once you have added sources and destinations to your eventstream, you can preview the data in each node and visualize how your data flows through the eventstream.
+Data preview provide you with a snapshot of your event data in your source or destination or the eventstream itself. Once you have added sources and destinations to your eventstream, you can preview the data in each node and visualize how your data flows through the eventstream.
 
 ## Prerequisites
+
 To get started, you must complete the following prerequisites:
+
 - Get access to a **premium workspace** with **Viewer** or above permissions where your Eventstream item is located in.
 - For KQL database or Lakehouse destination, get access to a **premium workspace** with **Viewer** or above permissions where your KQL Database or Lakehouse item is located in.
 

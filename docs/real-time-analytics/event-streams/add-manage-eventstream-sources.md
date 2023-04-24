@@ -14,6 +14,7 @@ ms.search.form: product-kusto
 Once you have created an eventstream, you can connect it to various data sources and destinations. The types of event sources that can be added to your eventstream include Azure Event Hubs, Sample data and Custom app. 
 
 ## Prerequisites
+
 To get started, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream item is located in.
 - For Azure Event Hubs source, an Azure event hub with data inside exists and appropriate permission available to access the policy keys.
@@ -35,7 +36,7 @@ If you have an Azure event hub created with event data there, do the following s
    - **Connection name**: Enter a name for the cloud connection. 
    - **Connection type**: Default value is **EventHub**. 
    - **Event Hub namespace**: Enter the name of your Azure event hub namespace. 
-   - **Authentication username and password**: Go to your Azure event hub and create a policy under **Share access policies**. Then use policy name and primary key as the username and password. 
+   - **Authentication username and password**: Go to your Azure event hub and create a policy under **Share access policies**. Then use **policy name** and **primary key** as the username and password. 
    
        :::image type="content" source="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png" alt-text="Screenshot showing the Azure event hub policy key." lightbox="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png" :::
    

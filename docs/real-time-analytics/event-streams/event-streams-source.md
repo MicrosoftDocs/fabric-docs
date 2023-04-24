@@ -21,7 +21,7 @@ The following sources are currently available.
 If you already have Azure event hub set up in Azure, you can utilize that event hub to ingest real-time data into Microsoft Fabric via event streams feature.
 
 - **Source name** - Meaningful source name that appears in your eventstream. 
-- **Cloud connection** - A cloud connection needs to be established between existing event hub to Microsoft Fabric. Once that cloud connection is in place, it can be reused across multiple Eventstream items. To create a new cloud connection, you must provide the event hub namespace name, event hub name, consumer group name, policy name and primary key.  
+- **Cloud connection** - A cloud connection needs to be established between existing event hub to Microsoft Fabric. Once that cloud connection is in place, it can be reused across multiple Eventstream items. To create a new cloud connection, you must provide the **event hub namespace name**, **event hub name**, **shared access policy name** and **primary key**.  
 - **Data format** - Format of the incoming real-time events that you want to get from your Azure event hub.
 - **Consumer group** - The consumer group of your event hub that is used for reading the event data from your Azure event hub.
 

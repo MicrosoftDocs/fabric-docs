@@ -11,27 +11,29 @@ ms.search.form: product-kusto
 
 # Create and manage an eventstream in Microsoft Fabric
 
-Event streams feature in Microsoft Fabric is a centralized event data place that allows you to capture, transform, and route real-time event data to various destinations in desired format. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL database, and Lakehourse.  
+Event streams feature in Microsoft Fabric is a centralized event data place that allows you to capture, transform, and route real-time event data to various destinations in desired format. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL database, and Lakehouse.
 
 ## Prerequisites
+
 To get started, you must complete the following prerequisites:
+
 - Get access to a **premium workspace** with **Contributor** or above permissions.
 
 ## Create an eventstream 
 
-Eventstream item is created in workspaces or homepage or Create hub. Here are the steps to create an Eventstream item in your workspace: 
+Eventstream item can be created in **Workspace** or the **Real-time Analytics experience Homepage** or **Create hub**. Here are the steps to create an Eventstream item. 
 
-1. Change your Power BI experience to **Real-time Analytics** and select **Eventstream** to create a new eventstream in your workspace either in the homepage or in the **New** menu.
+1. Change your Power BI experience to **Real-time Analytics** and select **Eventstream** to create a new eventstream in  workspace or homepage or create hub.
 
-   In **Real-time Analytics** homepage:
+   In **Real-time Analytics** homepage, select **Eventstream** tile:
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the eventstream creation in homepage." lightbox="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" :::
 
-   In **Workspace**:
+   In **Workspace**, select **New** and then **Eventstream**:
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot showing the eventstream creation in workspace." lightbox="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" :::
 
-   In **Create hub**: 
+   In **Create hub**, select **Eventstream** tile: 
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the eventstream creation in create hub." lightbox="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" :::
 

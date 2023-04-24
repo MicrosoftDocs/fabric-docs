@@ -16,13 +16,15 @@ Within Microsoft Fabric event streams, it's easy to monitor the event data strea
 In an Eventstream item, there are two types of monitoring experience: **Data insights** and **Runtime logs**. Different sources and destinations have one or two types of them.
 
 ## Prerequisites
+
 To get started, you must complete the following prerequisites:
+
 - Get access to a **premium workspace** with **Viewer** or above permissions where your Eventstream item is located in.
 - An Azure event hub source or lakehouse destination is added in your Eventstream item.
 
 ## Data insights 
 
-**Data insights** is located in the bottom pane of the main editor (canvas). It provides metrics that you can use to monitor the status and performance of the eventstream, sources and destinations. Different sources, destination has different metrics. When you select a node in the main editor canvas, the corresponding metrics for this specific node are shown in **Data insights** tab.
+**Data insights** is located in the bottom pane of the main editor. It provides metrics that you can use to monitor the status and performance of the eventstream, sources and destinations. Different sources, destination has different metrics. When you select a node in the main editor canvas, the corresponding metrics for this specific node are shown in **Data insights** tab.
 
 ### Data insights in eventstream node
 
@@ -31,7 +33,7 @@ The available metrics in eventstream node’s Data insights are the following fo
 | Metric                 | Unit                               | Description                     |
 | ---------------------- | ---------------------------------------- | --------------------------|
 | **Incoming Messages** | Count | The number of events or messages sent to an eventstream over a specified period. |
-| **Outgoing  Messages** | Count | The number of events or messages received from an eventstream over a specified period. |
+| **Outgoing  Messages** | Count | The number of events or messages outflow from an eventstream over a specified period. |
 | **Incoming Bytes** | Bytes | Incoming bytes for an eventstream over a specified period. |
 | **Outgoing Bytes** | Bytes | Outgoing bytes for an eventstream over a specified period. |
 
@@ -50,13 +52,13 @@ The following metrics are available in the Data insights of an Azure event hub s
 
 | Metric                 | Unit                               | Description                     |
 | ---------------------- | ---------------------------------------- | --------------------------|
-| **Input Events**  | Count | Number of event data that event streams engine pull from an eventstream (in a lakehouse destination node) or from an Azure event hub source (in an Azure event hub source node). |
-| **Output Events** | Count | Number of event data that the event streams engine sends to a lakehouse (in a lakehouse destination node) or an eventstream (in an Azure event hub source node). |
-| **Input Event Bytes** | Bytes | Amount of event data that event streams engine pulls from an eventstream (in a lakehouse destination node) or from an Azure event hub source (in an Azure event hub source node). |
+| **Input Events**  | Count | Number of event data that event streams engine pulls from an eventstream (in a lakehouse destination) or from an Azure event hub source (in an Azure event hub source). |
+| **Input Event Bytes** | Bytes | Amount of event data that event streams engine pulls from an eventstream (in a lakehouse destination) or from an Azure event hub source (in an Azure event hub source). |
+| **Output Events** | Count | Number of event data that the event streams engine sends to a lakehouse (in a lakehouse destination) or an eventstream (in an Azure event hub source). |
 | **Backlogged Input Events** | Count | Number of input events that are backlogged in event streams engine. |
 | **Runtime Errors** | Count | Total number of errors related to event processing. |
 | **Data Conversion Errors** | Count | Number of output events that couldn't be converted to the expected output schema. |
-| **Deserialization Errors** | Count | Number of output events that couldn't be converted to the expected output schema. |
+| **Deserialization Errors** | Count | Number of input events that couldn't be deserialized inside the event streams engine. |
 
 :::image type="content" source="./media/monitoring/source-destination-metrics.png" alt-text="Screenshot showing the source and destination metrics." lightbox="./media/monitoring/source-destination-metrics.png" :::
 
