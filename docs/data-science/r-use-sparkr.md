@@ -311,5 +311,6 @@ summary(model)
 ## Next steps
 
 - [How to use sparklyr](./r-use-sparklyr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
 - [Create R visualization](./r-visualization.md)
