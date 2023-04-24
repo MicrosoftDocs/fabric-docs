@@ -41,13 +41,13 @@ To get started, you must have following prerequisites:
 
 1. From the page header in the Data Factory service, select **Settings** ![Settings gear icon.](./media/connector-common/settings.png) > **Manage connections and gateways**.
 
-   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
+   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open the manage gateway resource.":::
 
 2. Select **New** at the top of the ribbon to add a new data source.
 
     :::image type="content" source="./media/connector-common/add-new-connection.png" alt-text="Screenshot showing the ' new' page.":::
 
-    The **New connection** pane will show up on the left side of the page.
+    The **New connection** pane shows up on the left side of the page.
 
     :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the 'New connection' pane." lightbox="./media/connector-common/new-connection-pane.png":::
 
@@ -91,33 +91,34 @@ In the **General** tab, select the privacy level that you want apply in the **Pr
 
 ### Step 4: Create your connection
 
-Select **Create**. Your creation will be successfully tested and saved if all the credentials are correct. If not correct, the creation will fail with errors.
+Select **Create**. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
 :::image type="content" source="./media/connector-odata/connection.png" alt-text="Screenshot showing connection page." lightbox="./media/connector-odata/connection.png":::
 
 ## Table summary
 
-The connector properties in the following table are supported in pipeline copy and Dataflow Gen2:
+The connector properties in the following table are supported in pipeline copy:
 
-|Name|Description|Required|Property|Copy/Dataflow Gen2|
+|Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
-|**Connection name**|A name for your connection.|Yes||✓/✓|
-|**Connection type**|Select **OData** for your connection type.|Yes||✓/|
-|**URL**|The base URL to the OData server.|Yes||✓/✓|
+|**Connection name**|A name for your connection.|Yes||✓|
+|**Connection type**|Select **OData** for your connection type.|Yes||✓|
+|**URL**|The base URL to the OData server.|Yes||✓|
 |**Authentication**|Go to [Authentication](#authentication) |Yes||Go to [Authentication](#authentication)|
-|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
+|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓|
 
 ### Authentication
 
 The properties in the following table are the supported authentication type.
 
-|Name|Description|Required|Property|Copy/Dataflow Gen2|
+|Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
-|**Anonymous**||||✓/|
-|**Basic**||||✓/|
+|**Anonymous**||||✓|
+|**Basic**||||✓|
 |- Username|The user name to use to access the OData endpoint.|Yes |||
 |- Password|The password for the specified username.|Yes |||
 
 ## Next steps
 
-- [How to create OData connection](connector-odata.md)
+- [How to configure OData in copy activity](connector-odata-copy-activity.md)
+- [Connect to OData in dataflows](connector-odata-dataflows.md)

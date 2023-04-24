@@ -22,7 +22,6 @@ The OData connector is supported in Data Factory in Microsoft Fabric with the fo
 | --- | --- | ---|
 | **Copy activity (source/-)** | None | Anonymous<br> Basic |
 | **Lookup activity** | None | Anonymous<br> Basic |
-| **Dataflow Gen2 (source/destination)** |  |  |
 
 ## Next steps
 
