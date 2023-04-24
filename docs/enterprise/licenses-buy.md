@@ -15,11 +15,11 @@ After you buy a capacity, you can learn how to [manage your capacity](/power-bi/
 
 ## SKU types
 
-Microsoft Fabric has an array of capacities that you can buy. The capacities are split into Stock Keeping Units (SKU). Each SKU provides a different amount of computing power, measured by its Capacity Unit (CU) value. Refer to the [Capacity and SUKs](licenses.md#capacity-and-skus) table to see how many CUs each SKU provides.
+Microsoft Fabric has an array of capacities that you can buy. The capacities are split into Stock Keeping Units (SKU). Each SKU provides a different amount of computing power, measured by its Capacity Unit (CU) value. Refer to the [Capacity and SKUs](licenses.md#capacity-and-skus) table to see how many CUs each SKU provides.
 
 Microsoft Fabric operates on two types of SKUs:
 
-* **Azure** - Billed hourly with no commitment.
+* **Azure** - Billed per second with no commitment.
 
 * **Microsoft 365** - Billed monthly or yearly, with a monthly commitment
 
