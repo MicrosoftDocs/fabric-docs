@@ -12,7 +12,7 @@ ms.date: 04/17/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and artifacts of a machine learning model during training. This feature extends [MLflow autologging](https://mlflow.org/docs/latest/tracking.html#automatic-logging) capabilities and is deeply integrated into the [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience. Using this, developers and data scientists can easily track and compare the performance of different models and experiments without the need for manual tracking.
+[!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and artifacts of a machine learning model during training. This feature extends [MLflow autologging](https://mlflow.org/docs/latest/tracking.html#automatic-logging) capabilities and is deeply integrated into the [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience. Using autologging, developers and data scientists can easily track and compare the performance of different models and experiments without the need for manual tracking.
 
 ## How it works
 
@@ -32,7 +32,7 @@ mlflow.autolog(
 )
 ```
 
-When you launch a [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] notebook, [!INCLUDE [product-name](../includes/product-name.md)] calls [mlflow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.autolog) to instantly set up the tracking and load the corresponding dependencies. As you train models in your notebook, this model information is automatically tracked with MLflow. This configuration is done automatically behind the scenes when you run ```import mlflow```.
+When you launch a [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] notebook, [!INCLUDE [product-name](../includes/product-name.md)] calls [mlflow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.autolog) to instantly enable the tracking and load the corresponding dependencies. As you train models in your notebook, this model information is automatically tracked with MLflow. This configuration is done automatically behind the scenes when you run ```import mlflow```.
 
 ### Supported frameworks
 
@@ -40,7 +40,7 @@ Autologging supports a wide range of machine learning frameworks, including Tens
 
 ## Customize logging behavior
 
-To customize the logging behavior, you can use the [mlflow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.autolog) configuration. This provides the parameters to enable model logging, collect input samples, configure warnings, or even enable logging for user-specified content.
+To customize the logging behavior, you can use the [mlflow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.autolog) configuration. This configuration provides the parameters to enable model logging, collect input samples, configure warnings, or even enable logging for user-specified content.
 
 ### Track additional content
 
@@ -62,7 +62,7 @@ To do this:
     )
     ```
 
-2. Use the MLflow tracking APIs to log additional [parameters](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.log_param) and [metrics](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.log_metric). This will allow you to capture your custom metrics and parameters, while also allowing you to leverage autologging to capture additional properties.
+2. Use the MLflow tracking APIs to log additional [parameters](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.log_param) and [metrics](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.log_metric). This allows you to capture your custom metrics and parameters, while also allowing you to use autologging to capture additional properties.
 
     For instance:
     ```python
