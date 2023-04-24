@@ -34,7 +34,7 @@ items:
   - name: Resolve conflicts
     href: git-integration/conflict-resolution.md
   - name: Manage git branches
-    href: git-integration/git-branches.md
+    href: git-integration/manage-branches.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
 - name: Best practices

@@ -26,8 +26,8 @@ The workflow for developers using a client tool like Power BI Desktop should loo
 
 1. [Clone](/azure/devops/repos/git/clone?) the repo into a local machine. (You only need to so this step once)
 1. Use the local copy of the *PBIProj* to open the project in Power BI Desktop.
-1. Make changes and save the updated files locally. [Commit](/azure/devops/repos/git/gitquickstart?view=azure-devops#commit-your-work) to the local repo.
-1. When ready, [push](/azure/devops/repos/git/pushing?view=azure-devops) the branch and commits to the remote repo.
+1. Make changes and save the updated files locally. [Commit](/azure/devops/repos/git/gitquickstart#commit-your-work) to the local repo.
+1. When ready, [push](/azure/devops/repos/git/pushing) the branch and commits to the remote repo.
 1. To test the changes against other items or more data, connect the new branch to a separate workspace, and upload the dataset and reports using the *update all* button in the source control pane. Do any tests or configuration changes there before merging into the *main* branch.
 
    If no tests are required in the workspace, the developer can merge changes directly into the *main* branch, without the need for another workspace.
