@@ -42,10 +42,10 @@ items:
   items:
   - name: Query data in the KQL queryset
     href: kusto-query-set.md
+  - name:  Use a notebook with kqlmagic to query a KQL Database
+    href: jupyter-notebook.md
   - name: Use sample queries
     href: query-table.md
-  - name:  Use a Jupyter notebook and kqlmagic to query a KQL Database
-    href: jupyter-notebook.md
 - name: Visualize data
   items:
   - name: Visualize data in a Power BI report
