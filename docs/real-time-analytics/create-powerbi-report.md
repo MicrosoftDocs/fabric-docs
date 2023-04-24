@@ -1,28 +1,27 @@
 ---
-title: Create a Power BI report from KQL queryset in Real-time Analytics
-description: Learn how to visualize KQL queryset data in a Power BI report
+title: Create a Power BI report from KQL Queryset in Real-time Analytics
+description: Learn how to visualize KQL Queryset data in a Power BI report
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 02/01/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Visualize data in a Power BI report
 
-In this article, you'll learn how to build a report using a KQL queryset.
+In this article, you'll learn how to build a report using a KQL Queryset.
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A workspace
-* A database. For more information, see [Create a database](create-database.md).
-* A KQL queryset. For more information, see [Query data in the KQL queryset](kusto-query-set.md).
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* [KQL Database](create-database.md)
+* [KQL Queryset](kusto-query-set.md)
 
 ## Create a report
 
-1. Open a KQL queryset from your workspace or create a new one.
+1. Open a KQL Queryset from your workspace or create a new one.
 
 1. Write and select the query you want to build into a Power BI report. The output of this query will be used as the dataset for building the Power BI report.
 1. On the ribbon, select **Build Power BI report**.

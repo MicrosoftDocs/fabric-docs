@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: quickstart
-ms.date: 03/02/2023
+ms.date: 05/23/2023
 ---
 
 # Quickstart: Create your first pipeline to copy data

@@ -4,7 +4,7 @@ description: Learn about reports in the warehouse experience.
 author: salilkanade
 ms.author: salilkanade
 ms.reviewer: WilliamDAssafMSFT
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
 ---
 

@@ -4,7 +4,7 @@ description: Learn more about Synapse Data Warehouse in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Warehouse overview, Warehouse in workspace overview
 ---
@@ -102,4 +102,4 @@ To delete a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], navigate to the works
 - [Create a warehouse](create-warehouse.md)
 - [Create tables in [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-table.md)
 - [Data warehousing overview](data-warehousing.md)
-- [Lakehouse SQL Endpoint](lakehouse-sql-endpoint.md)
+- [SQL Endpoint of the Lakehouse](lakehouse-sql-endpoint.md)

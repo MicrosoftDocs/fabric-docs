@@ -4,7 +4,7 @@ description: Learn about context menus and settings in the warehouse experience.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
 ---
 

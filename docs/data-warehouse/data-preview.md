@@ -4,7 +4,7 @@ description: Learn about using the Data preview in Microsoft Fabric.
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 04/14/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ---
 

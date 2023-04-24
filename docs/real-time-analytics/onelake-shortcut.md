@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 04/19/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
@@ -21,7 +21,7 @@ To access the data in your KQL Database in other [!INCLUDE [product-name](../inc
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace.
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
 * [KQL Database](create-database.md)
 * Lakehouse with data
 

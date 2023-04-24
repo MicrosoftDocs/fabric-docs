@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: how-to
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ---
 
 # Explore the data in your lakehouse with a notebook

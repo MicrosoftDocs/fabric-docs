@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
 ms.topic: how-to
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ms.search.form: Monitor notebook all runs, monitor Spark jobs within a notebook 
 ---
 

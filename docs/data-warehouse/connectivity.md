@@ -5,7 +5,7 @@ author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf
 ms.topic: how-to
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
@@ -98,4 +98,4 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
 ## Next steps
 
 - [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
-- [Get started with the Lakehouse SQL Endpoint in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
+- [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)

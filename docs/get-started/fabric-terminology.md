@@ -5,7 +5,7 @@ ms.reviewer: sngun
 ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
-ms.date: 04/10/2023
+ms.date: 05/23/2023
 ---
 
 # Microsoft Fabric terminology
@@ -60,7 +60,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## Synapse data warehousing
 
-- **Lakehouse SQL Endpoint:** The Lakehouse SQL Endpoint allows a user to transition from the Lake view of the lakehouse (which supports data engineering and Apache Spark) to the SQL experiences that a data warehouse provides, supporting Transact-SQL (T-SQL). For more information, see [Lakheouse SQL Endpoint](../data-warehouse/data-warehousing.md#lakehouse-sql-endpoint).
+- **SQL Endpoint:** Each Lakehouse has a SQL Endpoint that allows a user to query delta table data with TSQL over TDS. For more information, see [SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint-of-the-lakehouse).
 
 - **Synapse Data Warehouse:** The Synapse Data Warehouse functionality is a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Synapse Data Warehouse](../data-warehouse/data-warehousing.md#synapse-data-warehouse).
 
@@ -68,7 +68,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **KQL database:** The KQL database is the representation of a database holding data in a format to execute a KQL query against it. For more information, see [Query a KQL database](../real-time-analytics/jupyter-notebook.md).
 
-- **KQL queryset:** The KQL queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL queryset](../real-time-analytics/kusto-query-set.md)
+- **KQL Queryset:** The KQL Queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL Queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL Queryset](../real-time-analytics/kusto-query-set.md)
 
 - **Event stream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../placeholder.md).
 

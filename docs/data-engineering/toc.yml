@@ -7,15 +7,15 @@ items:
     href: data-engineering-overview.md
 - name: Get started
   items:
-  - name: linktext1
+  - name: Lakehouse tutorial
     href: ../placeholder.md
-  - name: linktext2
+  - name: CSV upload to Delta for PBI reporting
     href: ../placeholder.md
-  - name: From Spark ingestion to SQL serving
+  - name: Structured streaming to SQL serving
     href: ../placeholder.md
-  - name: Zero copy using shortcuts
+  - name: Reference external data for data science
     href: ../placeholder.md
-  - name: Spark Structured Streaming with SJD and retry policy
+  - name: Share lakehouse for PBI connectivity
     href: ../placeholder.md
 - name: Lakehouse
   items:

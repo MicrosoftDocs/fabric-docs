@@ -5,7 +5,7 @@ ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
@@ -23,8 +23,7 @@ R support is only available in Spark3.1 or above.  R in Spark 2.4 is not support
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md
-)]
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
 
 
 ## Read and write SparkR DataFrames
@@ -113,10 +112,16 @@ Use RODBC to connect to SQL based databases through an ODBC interface. For examp
 library(RODBC)
 
 # connect to driver
-channel <-odbcDriverConnect("Driver={ODBC Driver 17 for SQL Server};
-Server={<database>};
-Database=spark33test1;Uid={<uid>};
-Pwd={<pwd>};
+
+
+DriverInstalled <- system("apt list --installed msodbc*", intern=TRUE, ignore.stderr=TRUE)
+DriverVersion <- substr(DriverInstalled[2],10,11)
+DriverVersion
+
+channel <-odbcDriverConnect("Driver={DriverVersion};
+Server={<your-server-name>};
+Database={<your-database-name>};Uid={<uid>};
+Pwd={<your-pwd>};
 Encrypt=yes;
 TrustServerCertificate=yes;
 Connection Timeout=30;")
@@ -311,5 +316,8 @@ summary(model)
 ## Next steps
 
 - [How to use sparklyr](./r-use-sparklyr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
 - [Create R visualization](./r-visualization.md)
+- [Tutorial: avocado price prediction](./r-avocado.md)
+- [Tutorial: flight delay prediction](./r-flight-delay.md)

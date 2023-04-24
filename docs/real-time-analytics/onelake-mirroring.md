@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 04/19/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
@@ -26,8 +26,9 @@ To query referenced data from OneLake in your KQL Database, see [Create a OneLak
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace.
-* [KQL database](create-database.md) with data.
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* [KQL database](create-database.md) with data
+
 
 ## Enable data copy
 

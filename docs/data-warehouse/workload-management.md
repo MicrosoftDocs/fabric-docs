@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: stevehow
 author: realAngryAnalytics
 ms.topic: conceptual
-ms.date: 04/20/2023
+ms.date: 05/23/2023
 ms.search.form: Optimization
 ---
 
@@ -63,4 +63,4 @@ The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a 
 
 - [OneLake overview](../onelake/onelake-overview.md)
 - [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
-- [Get started with the Lakehouse SQL Endpoint in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
+- [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
