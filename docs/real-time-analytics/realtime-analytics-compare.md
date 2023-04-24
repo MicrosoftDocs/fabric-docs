@@ -29,7 +29,7 @@ For more information on Real-time Analytics, see [What is Real-time Analytics in
 | **Business Continuity** | Availability Zones | &cross; | Optional |
 | **SKU** | Compute options | SaaS platform | 22+ Azure VM SKUs to choose from  |
 | **Integrations** | Built-in ingestion pipelines | Event Hubs, Event Grid, [!INCLUDE [product-name](../includes/product-name.md)] Pipeline, [!INCLUDE [product-name](../includes/product-name.md)] Dataflow | Event Hubs, Event Grid, IoT Hub |
-|  | OneLake integration | Supports data mirroring to and from OneLake | &cross; |
+|  | OneLake integration | Supports data copying to and from OneLake | &cross; |
 |  | Spark integration | Built-in Kusto Spark connector integration with support for Azure Active Directory pass-through authentication, Synapse Workspace MSI, and Service Principal | Azure Data Explorer linked service: Built-in Kusto Spark integration with support for Azure Active Directory pass-through authentication, Synapse Workspace MSI, and Service Principal|
 |  | KQL artifacts management | Option to save queries as KQL Querysets that can be shared within the tenant | &cross; |
 |  | Database management | &check; |  &check; |
