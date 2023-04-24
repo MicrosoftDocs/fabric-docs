@@ -34,13 +34,13 @@ The workflow for developers using a client tool like Power BI Desktop should loo
 
 1. Once the changes are merged, the shared team’s workspace is prompted to accept the new commit. The changes are updated into the shared workspace and everyone can see the changes to those datasets and reports.
 
-:::image type="content" source="./media/git-branches/branches-using-client-tools.png" alt-text="Diagram showing the workflow of pushing changes from a remote git repo to the Fabric workspace.":::
+:::image type="content" source="./media/manage-branches/branches-using-client-tools.png" alt-text="Diagram showing the workflow of pushing changes from a remote git repo to the Fabric workspace.":::
 
 For a specific guidance on how to use the new Power BI Desktop file format in git, read more here.
 
 ## Develop using another workspace
 
-:::image type="content" source="./media/git-branches/branches-using-another-workspace.png" alt-text="Diagram showing the workflow from a remote git repo to a feature branch and private workspace.":::
+:::image type="content" source="./media/manage-branches/branches-using-another-workspace.png" alt-text="Diagram showing the workflow from a remote git repo to a feature branch and private workspace.":::
 
 For a developer who works in the web, the flow would be as follows:
 
@@ -52,7 +52,7 @@ For a developer who works in the web, the flow would be as follows:
 
    The workspace syncs with your feature branch, and becomes a copy of the Dev team's workspace, as illustrated. You can now work in this new isolated environment.
 
-   :::image type="content" source="./media/git-branches/branches-update-commit.png" alt-text="Diagram showing the workflow of commits.":::
+   :::image type="content" source="./media/manage-branches/branches-update-commit.png" alt-text="Diagram showing the workflow of commits.":::
 
 1. Save your changes and [commit](./git-get-started.md#commit-changes-to-git) them into the feature branch.
 1. When ready, create a PR to the *main* branch. The review and merge processes are done through Azure Repos based on the configuration your team defined for that repo.
