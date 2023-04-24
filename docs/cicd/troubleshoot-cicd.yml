@@ -7,8 +7,8 @@ metadata:
   ms.topic: troubleshooting
   ms.service: powerbi
   ms.subservice: pbi-deployment-pipeline
-  ms.date: 01/18/2023
-  ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline
+  ms.date: 05/23/2023
+  ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
   
 title: Deployment pipelines troubleshooting
 summary: |
@@ -55,7 +55,7 @@ sections:
           
               * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
           
-          * You're an admin of a [workspace](/power-bi/collaborate-share/service-create-the-new-workspaces.md).
+          * You're an admin of a [workspace](../get-started/create-workspaces.md). 
           
       - question: |
           Why can't I see the pipeline stage tag in my workspace?

@@ -1,10 +1,10 @@
 ---
-title: Synapse Data Warehouse in Microsoft Fabric
+title: Synapse Data Warehouse
 description: Learn more about Synapse Data Warehouse in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Warehouse overview, Warehouse in workspace overview
 ---
@@ -17,12 +17,12 @@ ms.search.form: Warehouse overview, Warehouse in workspace overview
 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] functionality is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. 
 
-This warehouse is displayed in the [!INCLUDE [product-name](../includes/product-name.md)] portal with a warehouse icon, however under the **Type** column, you see the type listed as **Warehouse**. Where data is automatically accessible via the read-only SQL Endpoint, you're fully in control of creating tables, loading, transforming and querying your data in the data warehouse using either the [!INCLUDE [product-name](../includes/product-name.md)] portal or T-SQL commands.
+This warehouse is displayed in the [!INCLUDE [product-name](../includes/product-name.md)] portal with a warehouse icon, however under the **Type** column, you see the type listed as **Warehouse**. Where data is automatically accessible via the read-only [[!INCLUDE [fabric-se](includes/fabric-se.md)]](lakehouse-sql-endpoint.md), in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] you're fully in control of creating tables, loading, transforming and querying your data in the data warehouse using either the [!INCLUDE [product-name](../includes/product-name.md)] portal or T-SQL commands.
 
 > [!IMPORTANT]
-> The distinction between the [SQL Endpoint](sql-endpoint.md) and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is an important one as T-SQL statements that write data or modify schema fail if you attempt to run them against the SQL Endpoint. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
+> The distinction between the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](lakehouse-sql-endpoint.md) and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is an important one as T-SQL statements that write data or modify schema fail if you attempt to run them against the SQL Endpoint. Throughout our documentation, we've called out specific features and functionality to align with the differing functionality.
 
-To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], see [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md).
+To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], see [Get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](get-started-data-warehouse.md).
 
 ## Datasets
 
@@ -98,7 +98,8 @@ To delete a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], navigate to the works
 
 ## Next steps
 
-- [Data warehousing overview](data-warehousing.md)
-- [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
+- [Get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](get-started-data-warehouse.md)
 - [Create a warehouse](create-warehouse.md)
-- [SQL Endpoint](sql-endpoint.md)
+- [Create tables in [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-table.md)
+- [Data warehousing overview](data-warehousing.md)
+- [SQL Endpoint of the Lakehouse](lakehouse-sql-endpoint.md)

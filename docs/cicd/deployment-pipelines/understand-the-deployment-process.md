@@ -1,5 +1,5 @@
 ---
-title: The Fabric deployment pipelines process
+title: The Microsoft Fabric deployment pipelines process
 description: Understand how deployment pipelines, the Fabric Application lifecycle management (ALM) tool, works
 author: mberdugo
 ms.author: monaberdugo
@@ -7,8 +7,8 @@ ms.topic: conceptual
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1, intro-deployment
-ms.date: 12/28/2022
-ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines
+ms.date: 05/23/2023
+ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
 # The deployment pipelines process
@@ -295,7 +295,7 @@ To enable automatic aggregations, follow the instructions in [configure the auto
 
 ### Hybrid tables
 
-Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview.md) that can have both import and direct query partitions. During a clean deployment, both the refresh policy and the hybrid table partitions are copied. When deploying to a pipeline stage that already has hybrid table partitions, only the refresh policy is copied. To update the partitions, refresh the table.
+Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview.md) that can have both import and direct query partitions. During a clean deployment, both the refresh policy and the hybrid table partitions are copied. When you're deploying to a pipeline stage that already has hybrid table partitions, only the refresh policy is copied. To update the partitions, refresh the table.
 
 ## Update content to Power BI apps
 
@@ -318,7 +318,7 @@ Permissions are required for the pipeline, and for the workspaces that are assig
 
 * Pipelines only have one permission, *Admin*, which is required for sharing, editing and deleting a pipeline.
 
-* Workspaces have different permissions, also called [roles](/power-bi/collaborate-share/service-roles-new-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
+* Workspaces have different permissions, also called [roles](../../get-started/roles-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
 
 To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a member or an admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, will be able to view the pipeline and share it with others. However, this user won't be able to view the content of the workspace in the pipeline, or in the service, and won't be able to perform deployments.
 
@@ -338,7 +338,7 @@ The lowest deployment pipeline permission is *pipeline admin*, and it's required
 
 ### Granted permissions
 
-When deploying items, the ownership of the deployed item may change. Review the table below to understand who can deploy each item and how the deployment affects the item's ownership.
+When you're deploying Power BI items, the ownership of the deployed item may change. Review the table below to understand who can deploy each item and how the deployment affects the item's ownership.
 
 |Fabric Item    |Required permission to deploy an existing item |Item ownership after a first time deployment |Item ownership after deployment to a stage with the item|
 |-----------------|---|---|---|
@@ -378,7 +378,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * Downloading a *.pbix* file after deployment isn't supported.
 
-* When deploying an item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment will fail.
+* When you're deploying a Power BI item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment will fail.
 
 * For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#limitations).
 
@@ -398,7 +398,7 @@ This section lists most of the limitations in deployment pipelines.
 
 ### Dataflow limitations
 
-* When deploying a dataflow to an empty stage, deployment pipelines creates a new workspace and sets the dataflow storage to a Power BI blob storage. Blob storage is used even if the source workspace is configured to use Azure data lake storage Gen2 (ADLS Gen2).
+* When you're deploying a dataflow to an empty stage, deployment pipelines creates a new workspace and sets the dataflow storage to a Fabric blob storage. Blob storage is used even if the source workspace is configured to use Azure data lake storage Gen2 (ADLS Gen2).
 
 * Service principal isn't supported for dataflows.
 

@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
 ms.topic: overview
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ---
 
 # What is Data engineering in Microsoft Fabric?

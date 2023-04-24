@@ -4,7 +4,7 @@ description: Table constraints support using Synapse Data Warehouse in Microsoft
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ---
 
@@ -25,7 +25,7 @@ Learn about table constraints in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] i
 
 Synapse Data Warehouse doesn't support default constraints at this time.
 
-For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true).
+For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 
 ## Remarks
 

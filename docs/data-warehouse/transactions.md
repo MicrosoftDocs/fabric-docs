@@ -1,10 +1,10 @@
 ---
-title: Transactions for inserting and modifying data in Synapse Data Warehouse tables in Microsoft Fabric
+title: Transactions for inserting and modifying data in Synapse Data Warehouse tables
 description: Learn how to use transactions and how to insert and modify data in Synapse Data Warehouse tables in Microsoft Fabric.
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ---
 
@@ -29,7 +29,7 @@ Transactions can also be used for sequential SELECT statements to ensure the tab
 
 ## Cross-database query transaction support
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports transactions that span across databases that are within the same workspace including reading from the SQL Endpoint for Lakehouse. Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one SQL Endpoint and each workspace can have more than one Lakehouse.
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports transactions that span across databases that are within the same workspace including reading from the [SQL Endpoint of the Lakehouse](lakehouse-sql-endpoint.md). Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one SQL Endpoint and each workspace can have more than one Lakehouse.
 
 ## DDL support within transactions
 

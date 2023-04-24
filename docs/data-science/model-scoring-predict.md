@@ -1,15 +1,15 @@
 ---
 title: Model scoring with PREDICT
-description: Learn how to use the PREDICT function in supported models.
+description: Learn how to operationalize machine learning models in Fabric from the secure boundaries of a notebook with a function called PREDICT.
 ms.reviewer: mopeakande
 ms.author: erenorbey
 author: orbey
 ms.topic: how-to
-ms.date: 02/10/2023
+ms.date: 05/23/2023
 ms.search.form: Predict
 ---
 
-# Model scoring with PREDICT
+# Model scoring with PREDICT in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
