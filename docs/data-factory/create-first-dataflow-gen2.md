@@ -1,5 +1,5 @@
 ---
-title: Create your first [!INCLUDE [product-name](../includes/product-name.md)] dataflow
+title: Create your first Microsoft Fabric dataflow
 description: Steps for creating dataflows and transforming data.
 ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
