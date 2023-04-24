@@ -24,8 +24,8 @@ Specifically, you'll learn how to:
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* Workspace
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* [KQL Database](create-database.md)
 
 ## Get data
 

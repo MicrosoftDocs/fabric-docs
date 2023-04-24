@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.service: powerbi
 ms.custom: contperf-fy21q1
 ms.date: 04/13/2023
-ms.search.form: Deployment pipelines operations
+ms.search.form: Deployment pipelines operations, Deployment pipelines operations
 ---
 
 # Assigning a workspace to a Microsoft Fabric Application lifecycle management (ALM) deployment pipeline
