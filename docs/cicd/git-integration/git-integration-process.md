@@ -40,8 +40,6 @@ The following table describes the permissions needed to perform various common o
 |                                                                      | Owner on the artifact (if applicable, and the tenant switch blocks updates for nonowners) |                                              |                                               |
 |                                                                      | BUILD permission on external dependencies (where applicable)                              |                                              |                                               |
 
-### Permissions needed to create a new folder
-
 ## Connect and sync
 
 Only a workspace admin can connect a workspace to Azure Repos, but once connected, anyone with permissions can work in the workspace. If you're not an admin, ask your admin for help with connecting.
@@ -91,9 +89,9 @@ On top of the screen is the Source control icon. When the workspace is synced wi
 :::image type="content" source="./media/git-integration-process/source-control-zero.png" alt-text="Screenshot of the source control icon showing zero items changed.":::
 
 When changes are made either to the workspace or the git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control pane.
-In the Source control pane, the **Changes** tab shows the number of items that were changed in the workspace, and the **Updates** tab shows the number of items that were modified in the git branch that need to updated to the workspace.
+In the Source control pane, the **Changes** tab shows the number of items that were changed in the workspace, and the **Updates** tab shows the number of items that were modified in the git branch and need to be updated to the workspace.
 
-In each tab, the changed items are listed with an icon indicating that the item one of the following:
+In each tab, the changed items are listed with an icon indicating the status:
 
 - new :::image type="icon" source="./media/git-integration-process/new-icon.png":::
 - modified :::image type="icon" source="./media/git-integration-process/modified-icon.png":::

@@ -39,3 +39,6 @@ items:
     href: git-integration/git-get-started.md
   - name: Manage git branches
     href: git-integration/git-branches.md
+  - name: Resolve conflicts
+    href: git-integration/conflict-resolution.md
+    
