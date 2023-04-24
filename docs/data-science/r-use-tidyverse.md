@@ -85,8 +85,8 @@ stocksL
 ```R
 # double the stock values using purrr
 library(purrr)
-stocks_doulbe = map(stocks %>% select_if(is.numeric), ~.x*2)
-stocks_doulbe
+stocks_double = map(stocks %>% select_if(is.numeric), ~.x*2)
+stocks_double
 ```
 
 ## Data manipulation
@@ -143,7 +143,7 @@ ggplot(stocksL, aes(x=time, y=price, colour = stock)) +
 
 ```
 
-![Screenshot of plot line.](./media/r-use-tidyverse/ggplotline.png)
+![Graph of plot line.](./media/r-use-tidyverse/ggplot-line.png)
 
 
 ```R
@@ -153,7 +153,7 @@ ggplot(stocksL, aes(x=time, y=price, colour = stock)) +
   geom_boxplot()
 ```
 
-![Screenshot of plot box.](./media/r-use-tidyverse/ggplotbox.png)
+![Screenshot of plot box.](./media/r-use-tidyverse/ggplot-box.png)
 
 
 ## Model building
@@ -164,7 +164,7 @@ The `tidymodels` framework is a collection of packages for modeling and machine 
 ggplot(mtcars, aes(wt,mpg))+
 geom_point()
 ```
-![Screenshot of mpg and wt.](./media/r-use-tidyverse/mpgwt.png)
+![Graph of mpg and wt.](./media/r-use-tidyverse/mpg-wt.png)
 
 From the scatterplot, the relationship looks approximately linear and the variance looks constant. Let's try to model this using linear regression.
 
@@ -209,7 +209,7 @@ ggplot(lm_aug, aes(x = wt, y = mpg)) +
   geom_abline(intercept = lm_fit$fit$coefficients[1], slope = lm_fit$fit$coefficients[2], color = "blue")
 ```
 
-![Screenshot of model result.](./media/r-use-tidyverse/modelout.png)
+![Graph of model result.](./media/r-use-tidyverse/model-out.png)
 
 
 ## Next steps

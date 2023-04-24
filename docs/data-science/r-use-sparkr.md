@@ -113,10 +113,16 @@ Use RODBC to connect to SQL based databases through an ODBC interface. For examp
 library(RODBC)
 
 # connect to driver
-channel <-odbcDriverConnect("Driver={ODBC Driver 17 for SQL Server};
-Server={<database>};
-Database=spark33test1;Uid={<uid>};
-Pwd={<pwd>};
+
+
+DriverInstalled <- system("apt list --installed msodbc*", intern=TRUE, ignore.stderr=TRUE)
+DriverVersion <- substr(DriverInstalled[2],10,11)
+DriverVersion
+
+channel <-odbcDriverConnect("Driver={DriverVersion};
+Server={<your-server-name>};
+Database={<your-database-name>};Uid={<uid>};
+Pwd={<your-pwd>};
 Encrypt=yes;
 TrustServerCertificate=yes;
 Connection Timeout=30;")
@@ -314,3 +320,5 @@ summary(model)
 - [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
 - [Create R visualization](./r-visualization.md)
+- [Tutorial: avocado price prediction](./r-avocado.md)
+- [Tutorial: flight delay prediction](./r-flight-delay.md)

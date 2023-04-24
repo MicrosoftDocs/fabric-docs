@@ -44,7 +44,7 @@ The `nycflights13` data contains information on 325,819 flights departing near N
 ggplot(flights, aes(arr_delay)) + geom_histogram(color="blue", bins = 300)
 ```
 
-![Screenshot of flight delay](./media/r-flight-delay/flightdelay.png)
+![Graph of flight delay.](./media/r-flight-delay/flight-delay.png)
 
 
 Let’s load the data and make a few changes to the variables:
@@ -235,7 +235,7 @@ flights_aug %>%
 ## Build a Power BI report
 The model result isn't too bad! Let's use the flight delay prediction results to build an interactive Power BI dashboard, which shows the number of flights by carrier, number of flights by destination, and able to filter by the delay prediction results.  
 
-![Screenshot of power bi report](./media/r-flight-delay/pbireport.png)
+![Graph of power bi report.](./media/r-flight-delay/power-bi-report.png)
 
 Let's first include the carrier name and airport name to the prediction result dataset. 
 
@@ -276,7 +276,7 @@ write.df(sparkdf, temp_delta ,source="delta", mode = "overwrite", header = "true
 
 Once the delta table is created, [!INCLUDE [product-name](../includes/product-name.md)] creates a dataset automatically. When we switch to the Power BI landing page and create a new report, we can see the delta table `nycflight13` show up on the data list automatically! It's super easy to build a Power BI visual report via See Through mode directly access data on the LakeHouse.
 
-![Screenshot of power bi dataset](./media/r-flight-delay/pbidata.png)
+![Graph of power bi dataset.](./media/r-flight-delay/power-bi-data.png)
 
 
 ## Next steps
