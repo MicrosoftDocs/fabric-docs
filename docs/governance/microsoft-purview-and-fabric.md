@@ -47,6 +47,31 @@ Microsoft Purview Audit (Premium) helps organizations to conduct forensic and co
 
 With the Microsoft Purview Data Catalog, business and technical users can quickly and easily find relevant data using a search experience with filters based on lenses such as glossary terms, classifications, sensitivity labels and more. For subject matter experts, data stewards and officers, the Microsoft Purview Data Catalog provides data curation features such as business glossary management and the ability to automate tagging of data assets with glossary terms. Data consumers and producers can also visually trace the lineage of data assets: for example, starting from operational systems on-premises, through movement, transformation & enrichment with various data storage and processing systems in the cloud, to consumption in an analytics system like Power BI.
 
+## Your role in the hub
+
+Explanation of roles. [Maybe a link to roles documentation in Fabric](../placeholder.md).
+
+### Admin view in the hub
+
+Access to [Microsoft Purview Insights](#microsoft-purview-insights).
+Access to [reports](#reports).
+Access to [links](#additional-links).
+
+### Data owner view in the hub
+
+Access to [Microsoft Purview Insights](#microsoft-purview-insights).
+Access to [reports](#reports).
+Access to [links](#additional-links).
+
+### Consumer role in the hub
+
+Access to [reports](#reports).
+Access to [links](#additional-links).
+
+## Procurement/Licensing
+
+What licenses do you need for Fabric and Purview to access what?
+
 ## Learn more
 
 - How to use the [Microsoft Purview Hub](use-the-microsoft-purview-hub.md)
