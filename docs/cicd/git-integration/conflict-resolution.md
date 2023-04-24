@@ -9,7 +9,7 @@ ms.date: 03/21/2023
 ms.custom: 
 ---
 
-# Conflict Resolution
+# Conflict resolution
 
 A conflict occurs when there are uncommitted changes in the workspace and incoming changes from the git repository on the same item. When a conflict occurs, both **Commit** and **Update** are disabled.
 
