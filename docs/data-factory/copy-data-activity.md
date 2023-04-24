@@ -19,10 +19,8 @@ In Data Pipeline, you can use the Copy activity to copy data among data stores l
 To copy data from a source to a destination, the service that runs the Copy activity performs these steps:
 
 1. Reads data from a source data store.
-1. Performs serialization/deserialization, compression/decompression, column mapping, and so on. It performs these operations based on the configuration of the input dataset, output dataset, and Copy activity.
-1. Writes data to the sink/destination data store.
-
-Learn how to add a copy activity directly or through the copy assistant.
+1. Performs serialization/deserialization, compression/decompression, column mapping, and so on. It performs these operations based on the configuration.
+1. Writes data to the destination data store.
 
 ## Prerequisites
 
@@ -45,7 +43,7 @@ Follow these steps to set up your copy activity using copy assistant.
 
 ### Configure your source
 
-1. Choose your data source by choosing a data source type. In this tutorial, you'll use Azure Blob Storage as an example. Select **Azure Blob Storage** and then select **Next**.
+1. Select a data source type from the category. You'll use Azure Blob Storage as an example. Select **Azure Blob Storage** and then select **Next**.
 
    :::image type="content" source="media/copy-data-activity/choose-data-source.png" alt-text="Screenshot of Choose data source screen." lightbox="media/copy-data-activity/choose-data-source.png":::
 
@@ -67,7 +65,7 @@ Follow these steps to set up your copy activity using copy assistant.
 
 ### Configure your destination
 
-1. Choose your destination by choosing a data source type. In this tutorial, you'll use Azure Blob Storage as an example. Select**Azure Blob Storage**, and then select **Next**.
+1. Select a data source type from the category. You'll use Azure Blob Storage as an example. Select **Azure Blob Storage**, and then select **Next**.
 
    :::image type="content" source="media/copy-data-activity/choose-destination.png" alt-text="Screenshot showing how to select Azure Blob Storage." lightbox="media/copy-data-activity/choose-destination.png":::
 
