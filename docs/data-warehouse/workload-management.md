@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: stevehow
 author: realAngryAnalytics
 ms.topic: conceptual
-ms.date: 04/13/2023
+ms.date: 04/20/2023
 ms.search.form: Optimization
 ---
 
@@ -23,13 +23,13 @@ The processing system is serverless in that backend compute capacity scales up a
 
 :::image type="content" source="media\workload-management\sql-engine-diagram.png" alt-text="Diagram of the SQL engine." lightbox="media\workload-management\sql-engine-diagram.png":::
 
-When a query is submitted, the SQL frontend (FE) performs query optimization to determine the best plan based on the data size and complexity. Once the plan is generated, it is given to the Distributed Query Processing (DQP) engine. The DQP orchestrates distributed execution of the query by splitting it into smaller queries that will be executed on backend compute nodes. Each small query is called a **task** and represents a distributed execution unit. It reads file(s) from [OneLake](../onelake/onelake-overview.md), joins results from other tasks, groups, or orders data retrieved from other tasks. For ingestion jobs, it also writes data to the proper destination tables.
+When a query is submitted, the SQL frontend (FE) performs query optimization to determine the best plan based on the data size and complexity. Once the plan is generated, it is given to the Distributed Query Processing (DQP) engine. The DQP orchestrates distributed execution of the query by splitting it into smaller queries that are executed on backend compute nodes. Each small query is called a **task** and represents a distributed execution unit. It reads file(s) from [OneLake](../onelake/onelake-overview.md), joins results from other tasks, groups, or orders data retrieved from other tasks. For ingestion jobs, it also writes data to the proper destination tables.
 
 When data is processed, results are returned to the SQL frontend for serving back to the user or calling application.
 
 ## Elasticity and resiliency
 
-Backend compute capacity benefits from a fast provisioning architecture. Although there is no SLA on resource assignment, typically new nodes are acquired within a few seconds. As resource demand increases, new workloads will leverage the scaled-out capacity. Scaling is an online operation and query processing goes uninterrupted.
+Backend compute capacity benefits from a fast provisioning architecture. Although there is no SLA on resource assignment, typically new nodes are acquired within a few seconds. As resource demand increases, new workloads leverage the scaled-out capacity. Scaling is an online operation and query processing goes uninterrupted.
 
 :::image type="content" source="media\workload-management\scaling-diagram.png" alt-text="Diagram that shows fast provisioning of resources." lightbox="media\workload-management\scaling-diagram.png":::
 
@@ -41,7 +41,7 @@ The distributed query processing scheduler operates at a **task** level. Queries
 
 As queries arrive, their tasks are scheduled based on first-in-first-out (FIFO) principles. If there is idle capacity, the scheduler may use a "best fit" approach to optimize concurrency.
 
-When the scheduler identifies resourcing pressure, it will invoke a scale operation. Scaling is managed autonomously and backend topology grows as concurrency increases. As it takes a few seconds to acquire nodes, the system is not optimized for consistent subsecond performance of queries that require distributed processing.
+When the scheduler identifies resourcing pressure, it invokes a scale operation. Scaling is managed autonomously and backend topology grows as concurrency increases. As it takes a few seconds to acquire nodes, the system is not optimized for consistent subsecond performance of queries that require distributed processing.
  
 When pressure subsides, backend topology scales back down and releases resource back to the region.
 
@@ -63,4 +63,4 @@ The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a 
 
 - [OneLake overview](../onelake/onelake-overview.md)
 - [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
-- [Get started with the SQL Endpoint on the Lakehouse in Microsoft Fabric](get-started-sql-endpoint.md)
+- [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
