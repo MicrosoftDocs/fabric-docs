@@ -5,7 +5,7 @@ ms.reviewer: mopeakande
 ms.author: midesa
 author: midesa
 ms.topic: how-to
-ms.date: 04/17/2023
+ms.date: 05/23/2023
 ---
 
 # Tutorial: Build a machine learning model with Apache Spark MLlib

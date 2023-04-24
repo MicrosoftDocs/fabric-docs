@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: jburchel
 author: jonburchel
 ms.topic: quickstart 
-ms.date: 03/01/2023
+ms.date: 05/23/2023
 ---
 
 # Quickstart: Copy from Azure Blob Storage to Lakehouse
