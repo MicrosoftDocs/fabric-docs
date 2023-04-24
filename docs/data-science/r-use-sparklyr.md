@@ -21,8 +21,7 @@ ms.search.form: R Language
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md
-)]
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
 
 
 
