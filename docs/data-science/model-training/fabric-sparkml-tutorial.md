@@ -62,9 +62,9 @@ In the rest of this article, we will use Apache Spark to perform some analysis o
 
 3. In this article, we will use [MLflow](https://mlflow.org/) to track our machine learning experiments and corresponding runs. If [!INCLUDE [preview-note](../../includes/preview-note.md)] Autologging is enabled, the corresponding metrics and parameters will be automatically captured.
 
-```python
-import mlflow
-```
+    ```python
+    import mlflow
+    ```
 
 ## Construct the input DataFrame
 
@@ -108,20 +108,20 @@ Data preparation is a crucial step in the machine learning process. It involves 
 
 ```python
 taxi_df = sampled_taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paymentType', 'rateCodeId', 'passengerCount'\
-                                , 'tripDistance', 'tpepPickupDateTime', 'tpepDropoffDateTime'\
-                                , date_format('tpepPickupDateTime', 'hh').alias('pickupHour')\
-                                , date_format('tpepPickupDateTime', 'EEEE').alias('weekdayString')\
-                                , (unix_timestamp(col('tpepDropoffDateTime')) - unix_timestamp(col('tpepPickupDateTime'))).alias('tripTimeSecs')\
-                                , (when(col('tipAmount') > 0, 1).otherwise(0)).alias('tipped')
-                                )\
-                        .filter((sampled_taxi_df.passengerCount > 0) & (sampled_taxi_df.passengerCount < 8)\
-                                & (sampled_taxi_df.tipAmount >= 0) & (sampled_taxi_df.tipAmount <= 25)\
-                                & (sampled_taxi_df.fareAmount >= 1) & (sampled_taxi_df.fareAmount <= 250)\
-                                & (sampled_taxi_df.tipAmount < sampled_taxi_df.fareAmount)\
-                                & (sampled_taxi_df.tripDistance > 0) & (sampled_taxi_df.tripDistance <= 100)\
-                                & (sampled_taxi_df.rateCodeId <= 5)
-                                & (sampled_taxi_df.paymentType.isin({"1", "2"}))
-                                )
+                        , 'tripDistance', 'tpepPickupDateTime', 'tpepDropoffDateTime'\
+                        , date_format('tpepPickupDateTime', 'hh').alias('pickupHour')\
+                        , date_format('tpepPickupDateTime', 'EEEE').alias('weekdayString')\
+                        , (unix_timestamp(col('tpepDropoffDateTime')) - unix_timestamp(col('tpepPickupDateTime'))).alias('tripTimeSecs')\
+                        , (when(col('tipAmount') > 0, 1).otherwise(0)).alias('tipped')
+                        )\
+                .filter((sampled_taxi_df.passengerCount > 0) & (sampled_taxi_df.passengerCount < 8)\
+                        & (sampled_taxi_df.tipAmount >= 0) & (sampled_taxi_df.tipAmount <= 25)\
+                        & (sampled_taxi_df.fareAmount >= 1) & (sampled_taxi_df.fareAmount <= 250)\
+                        & (sampled_taxi_df.tipAmount < sampled_taxi_df.fareAmount)\
+                        & (sampled_taxi_df.tripDistance > 0) & (sampled_taxi_df.tripDistance <= 100)\
+                        & (sampled_taxi_df.rateCodeId <= 5)
+                        & (sampled_taxi_df.paymentType.isin({"1", "2"}))
+                        )
 ```
 
 We will then make a second pass over the data to add the final features.
