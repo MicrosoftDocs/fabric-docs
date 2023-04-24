@@ -121,11 +121,11 @@ There are a few options to further customize the execution of Spark job definiti
 
 - **Spark Compute**: Within the **Spark Compute** tab, you can see the Runtime Version which is the version of Spark that will be used to run the job. You can also see the Spark configuration settings that will be used to run the job. You can customize the Spark configuration settings by clicking on the **Add** button.
 
- :::image type="content" source="media\create-spark-job-definition\spark-compute.png" alt-text="Screenshot showing where to edit Spark configuration." lightbox="media\create-spark-job-definition\SparkCompute.png":::
+ :::image type="content" source="media\create-spark-job-definition\spark-compute.png" alt-text="Screenshot showing where to edit Spark configuration." lightbox="media\create-spark-job-definition\spark-compute.png":::
 
 - **Optimization**: Within the **Optimization** tab, you can enable and setup the Retry Policy for the job. When enabled, the job will be retried if it fails. You can also set the maximum number of retries and the interval between retries. For each attempt of retry, the job will be restarted, please make sure the job is idempotent.
 
- :::image type="content" source="media\create-spark-job-definition\retry-policy.png" alt-text="Screenshot showing where to setup retry policy." lightbox="media\create-spark-job-definition\RetryPolicy.png":::
+ :::image type="content" source="media\create-spark-job-definition\retry-policy.png" alt-text="Screenshot showing where to setup retry policy." lightbox="media\create-spark-job-definition\retry-policy.png":::
 
 ## Next steps
 
