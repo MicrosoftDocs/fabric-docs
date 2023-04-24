@@ -48,6 +48,17 @@ Workspace roles and item permissions provide an easy way to assign coarse permis
 
 See [SQL granular permissions](sql-granular-permissions.md) for details on the managing granular permissions in SQL.
 
+
+### Guidance
+
+When evaluating the permissions to assign to a user, consider the following:
+- Only team members who will be collaborating on the solution should be assigned to Workspace roles, as this provides them access to all Items within the workspace.
+- If they primarily require read only access, assign them to the Viewer role. Write on specific objects can be granted through SQL.
+- If they are higher privileged users, assign them to Admin, Member or Contributor roles. The appropriate role is dependent on the other actions that they will need to perform.  
+- Other users, who only need access to an individual warehouse or require access to only specific SQL objects, should be given Fabric Item permissions and granted access through SQL to the specific objects. 
+- Note that you can manage permissions on AAD groups, as well, rather than adding each specific member.
+
+
 ## Next steps
 
 - [Synapse Data Warehouse in Microsoft Fabric](warehouse.md)
