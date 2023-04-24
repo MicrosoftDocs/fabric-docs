@@ -44,7 +44,7 @@ A typical workflow for a developer using Fabric git integration may look like th
 1. [Edit and commit](./git-get-started.md#commit-changes-to-git) changes​
 1. Start a pull request and merge changes to ‘main’ branch​
 1. [Update](./git-get-started.md#update-workspace-from-git) the IT developer workspace
-1. Resolve conflicts
+1. [Resolve conflicts](./conflict-resolution.md)
 
 ## Considerations and limitations
 
