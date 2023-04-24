@@ -91,7 +91,7 @@ On top of the screen is the Source control icon. When the workspace is synced wi
 :::image type="content" source="./media/git-integration-process/source-control-zero.png" alt-text="Screenshot of the source control icon showing zero items changed.":::
 
 When changes are made either to the workspace or the git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control pane.
-In the Source control pane, the **Changes** tab shows the number of items that were changed in the workspace, and the **Updates** tab shows the number of items that were modified in the git branch and need that need to updated to the workspace.
+In the Source control pane, the **Changes** tab shows the number of items that were changed in the workspace, and the **Updates** tab shows the number of items that were modified in the git branch that need to updated to the workspace.
 
 In each tab, the changed items are listed with an icon indicating that the item one of the following:
 
@@ -107,7 +107,7 @@ In each tab, the changed items are listed with an icon indicating that the item 
 - When there is more than one item to commit, you can select which items to commit to the git branch.
 - If there were changes made to the git branch commits are disabled until you update your workspace, to prevent conflicts.
 
-Read more about how to [commit](./git-get-started.md#commit-changes-to-git) and [update](./git-get-started.md#update-workspace-from-git). For more about the update process and how to resolve conflicts, see (link)
+Read more about how to [commit](./git-get-started.md#commit-changes-to-git) and [update](./git-get-started.md#update-workspace-from-git). Read more about the update process and how to [resolve conflicts](./conflict-resolution.md).
 
 ## Next steps
 

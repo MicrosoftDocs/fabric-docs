@@ -93,7 +93,7 @@ To commit your changes to the git branch, follow these steps:
 
    :::image type="content" source="./media/git-get-started/commit-changes.png" alt-text="Screenshot of source control window with two changes selected to commit.":::
 
-After the changes are committed, the content items that were committed are removed, and the workspace will point to the new commit that it's synced to.
+After the changes are committed, the items that were committed are removed from the list, and the workspace will point to the new commit that it's synced to.
 
 :::image type="content" source="./media/git-get-started/no-changes.png" alt-text="Screenshot of source control window stating that there are no changes to commit.":::
 
@@ -128,7 +128,7 @@ Whenever anyone commits a new change to the connected git branch, a notification
 
  Unlike *commit* and *undo*, the *Update* command always updates the entire branch and syncs to the most recent commit. You can’t select specific items to update.
 
-To update a workspace follow these steps:
+To update a workspace, follow these steps:
 
 1. Go to the workspace.
 1. Select the **Source control** icon.
@@ -143,7 +143,7 @@ After it updates successfully, the list of items is removed, and the workspace w
 
 ## Disconnect a workspace from git
 
-Only a workspace admin can disconnect a workspace from an Azure Repo. If you’re not an admin, ask your admin for help disconnecting. If you’re an admin and want to disconnect your repo, follow these steps:
+Only a workspace admin can disconnect a workspace from an Azure Repo. If you’re not an admin, ask your admin for help with disconnecting. If you’re an admin and want to disconnect your repo, follow these steps:
 
 1. Go to Workspace settings
 1. Select Git integration
@@ -165,20 +165,19 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 - Maximum length of branch name is 244 characters.
 - Maximum length of full path for file names is 250 characters. Longer names will fail.
-- If a branch contains only sub-directories without artifact directories, the connection will fail.
-- You can’t create sub-directories inside the folder connected to the workspace.
+- If a branch contains only subdirectories without artifact directories, the connection fails.
+- You can’t create subdirectories inside the folder connected to the workspace.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git Integration.
-
 
 ### Sync and commit limitations
 
-- The size limit for a commit is 25MB.
+- The size limit for a commit is 25 MB.
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
-- Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they will be ignored.
-- Duplicating names is not allowed – even if Power BI allows it, the update will fail.
+- Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they are ignored.
+- Duplicating names isn't allowed – even if Power BI allows it, the update fails.
 - B2B isn’t supported.
-- Conflict resolution is partially done in git. For a full explanation of resolving conlicts see (link).
+- [Conflict resolution](./conflict-resolution.md) is partially done in git.
 
 ## Next steps
 
-???
+[Git integration best practices](../best-practices-cicd.md)

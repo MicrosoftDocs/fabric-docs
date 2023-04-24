@@ -21,11 +21,11 @@ Git integration in Microsoft Fabric enables Pro developers to integrate their de
 
 The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. Currently, in Preview, only a few items are supported, but the list of [supported items](#supported-items) is growing.
 
-Read up on [version control](/devops/develop/git/what-is-version-control) and [Git](/devops/develop/git/what-is-git)) to make sure you’re familiar with basic git concepts.
+Read up on [version control](/devops/develop/git/what-is-version-control) and [Git](/devops/develop/git/what-is-git) to make sure you’re familiar with basic git concepts.
 
 ## Supported items
 
-The following items are currently supported, with more items to be added soon:
+The following items are currently supported:
 
 * Reports (except paginated reports)
 * Datasets (except push datasets, live connections, and model v1)
