@@ -23,10 +23,6 @@ items:
     href: deployment-pipelines/create-rules.md
   - name: Automate deployment pipelines
     href: deployment-pipelines/pipeline-automation.md
-  - name: Best practices
-    href: best-practices-cicd.md
-  - name: Troubleshooting
-    href: troubleshoot-cicd.yml
 - name: Git integration
   items:
   - name: Introduction to Git integration
@@ -41,4 +37,8 @@ items:
     href: git-integration/git-branches.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
+- name: Best practices
+  href: best-practices-cicd.md
+- name: Troubleshooting
+  href: troubleshoot-cicd.yml
 
