@@ -95,7 +95,7 @@ In the Source control pane, the **Changes** tab shows the number of items that w
 
 In each tab, the changed items are listed with an icon indicating that the item one of the following:
 
-- new :::image type="icon" source="./media/git-integration-process/new-icon.png"::: 
+- new :::image type="icon" source="./media/git-integration-process/new-icon.png":::
 - modified :::image type="icon" source="./media/git-integration-process/modified-icon.png":::
 - deleted ⛔
 - in conflict :::image type="icon" source="./media/git-integration-process/conflict-icon.png":::
