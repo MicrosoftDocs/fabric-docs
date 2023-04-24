@@ -12,10 +12,10 @@ ms.date: 04/20/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article describes machine learning model and experiment permissions in the [!INCLUDE [product-name](../includes/product-name.md)] service and how these permissions are acquired by users.
+This article describes machine learning model and experiment permissions in [!INCLUDE [product-name](../includes/product-name.md)] and how these permissions are acquired by users.
 
 > [!NOTE]
-> After you create a workspace in [!INCLUDE [product-name](../includes/product-name.md)], or if you have an admin role in a workspace, you can give others access to it by adding them to the different role.
+> After you create a workspace in [!INCLUDE [product-name](../includes/product-name.md)], or if you have an admin role in a workspace, you can give others access to it by assigning them a different role.
 > To learn more about workspaces and how to grant users access to your workspace, review the articles [Workspaces](../get-started/workspaces.md) and [Giving users access to workspaces](../../docs/get-started/give-access-workspaces.md).
 
 ## Permissions for machine learning experiments
