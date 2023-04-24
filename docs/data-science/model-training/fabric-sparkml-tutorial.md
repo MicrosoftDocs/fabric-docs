@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Train models with Apache Spark MLlib'
+title: How to train models with Apache Spark MLlib
 description: A tutorial on how to use Apache Spark MLlib to create a machine learning model that analyzes a dataset by using classification through logistic regression.
 ms.reviewer: mopeakande
 ms.author: midesa
@@ -8,7 +8,9 @@ ms.topic: how-to
 ms.date: 04/17/2023
 ---
 
-# Tutorial: Build a machine learning model with Apache Spark MLlib
+# Build a machine learning model with Apache Spark MLlib
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you'll learn how to use Apache Spark [MLlib](https://spark.apache.org/mllib/) to create a machine learning application that does simple predictive analysis on an Azure open dataset. Spark provides built-in machine learning libraries. This example uses *classification* through logistic regression.
 
@@ -37,7 +39,7 @@ To get started, we will install ```azureml-opendatasets```. The data is availabl
 %pip install azureml-opendatasets
 ```
 
-In the rest of this tutorial, we will use Apache Spark to perform some analysis on the NYC taxi-trip tip data and then develop a model to predict whether a particular trip includes a tip or not.
+In the rest of this article, we will use Apache Spark to perform some analysis on the NYC taxi-trip tip data and then develop a model to predict whether a particular trip includes a tip or not.
 
 ## Create an Apache Spark machine learning model
 
@@ -58,7 +60,7 @@ In the rest of this tutorial, we will use Apache Spark to perform some analysis 
     from pyspark.ml.evaluation import BinaryClassificationEvaluator
     ```
 
-3. In this tutorial, we will use [MLflow](https://mlflow.org/) to track our machine learning experiments and corresponding runs. If Fabric Autologging is enabled, the corresponding metrics and parameters will be automatically captured.
+3. In this article, we will use [MLflow](https://mlflow.org/) to track our machine learning experiments and corresponding runs. If [!INCLUDE [product-name](../includes/product-name.md)] Autologging is enabled, the corresponding metrics and parameters will be automatically captured.
 
 ```python
 import mlflow
