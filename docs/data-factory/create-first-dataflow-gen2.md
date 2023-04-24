@@ -33,7 +33,7 @@ In this section, you'll be creating your first dataflow.
 
 2. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
+   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace." lightbox="media/create-first-dataflow-gen2/navigate-to-workspace.png":::
 
 3. Select **New**, and then select **Dataflow Gen2**.
 
