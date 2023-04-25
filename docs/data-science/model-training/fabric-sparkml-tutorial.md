@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Train models with Apache Spark MLlib'
+title: How to train models with Apache Spark MLlib
 description: A tutorial on how to use Apache Spark MLlib to create a machine learning model that analyzes a dataset by using classification through logistic regression.
 ms.reviewer: mopeakande
 ms.author: midesa
@@ -8,7 +8,9 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ---
 
-# Tutorial: Build a machine learning model with Apache Spark MLlib
+# Build a machine learning model with Apache Spark MLlib
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 In this article, you'll learn how to use Apache Spark [MLlib](https://spark.apache.org/mllib/) to create a machine learning application that does simple predictive analysis on an Azure open dataset. Spark provides built-in machine learning libraries. This example uses *classification* through logistic regression.
 
@@ -31,17 +33,17 @@ In summary, the process of logistic regression produces a *logistic function* th
 
 ## Predictive analysis example on NYC taxi data
 
-To get started, we will install ```azureml-opendatasets```. The data is available through [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). This subset of the dataset contains information about yellow taxi trips, including information about each trip, the start and end time and locations, the cost, and other interesting attributes.
+To get started, install ```azureml-opendatasets```. The data is available through [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). This subset of the dataset contains information about yellow taxi trips, including the start and end time and locations, the cost, and other attributes.
 
 ```python
 %pip install azureml-opendatasets
 ```
 
-In the rest of this tutorial, we will use Apache Spark to perform some analysis on the NYC taxi-trip tip data and then develop a model to predict whether a particular trip includes a tip or not.
+In the rest of this article, we'll use Apache Spark to perform some analysis on the NYC taxi-trip tip data and then develop a model to predict whether a particular trip includes a tip or not.
 
 ## Create an Apache Spark machine learning model
 
-1. Create a PySpark notebook . For instructions, see [Create a notebook](../../data-engineering/how-to-use-notebook.md).
+1. Create a PySpark notebook. For instructions, see [Create a notebook](../../data-engineering/how-to-use-notebook.md).
 2. Import the types required for this notebook.
 
     ```python
@@ -58,11 +60,11 @@ In the rest of this tutorial, we will use Apache Spark to perform some analysis 
     from pyspark.ml.evaluation import BinaryClassificationEvaluator
     ```
 
-3. In this tutorial, we will use [MLflow](https://mlflow.org/) to track our machine learning experiments and corresponding runs. If Fabric Autologging is enabled, the corresponding metrics and parameters will be automatically captured.
+3. We will use [MLflow](https://mlflow.org/) to track our machine learning experiments and corresponding runs. If [!INCLUDE [product-name](../../includes/product-name.md)] Autologging is enabled, the corresponding metrics and parameters are automatically captured.
 
-```python
-import mlflow
-```
+    ```python
+    import mlflow
+    ```
 
 ## Construct the input DataFrame
 
@@ -106,20 +108,20 @@ Data preparation is a crucial step in the machine learning process. It involves 
 
 ```python
 taxi_df = sampled_taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paymentType', 'rateCodeId', 'passengerCount'\
-                                , 'tripDistance', 'tpepPickupDateTime', 'tpepDropoffDateTime'\
-                                , date_format('tpepPickupDateTime', 'hh').alias('pickupHour')\
-                                , date_format('tpepPickupDateTime', 'EEEE').alias('weekdayString')\
-                                , (unix_timestamp(col('tpepDropoffDateTime')) - unix_timestamp(col('tpepPickupDateTime'))).alias('tripTimeSecs')\
-                                , (when(col('tipAmount') > 0, 1).otherwise(0)).alias('tipped')
-                                )\
-                        .filter((sampled_taxi_df.passengerCount > 0) & (sampled_taxi_df.passengerCount < 8)\
-                                & (sampled_taxi_df.tipAmount >= 0) & (sampled_taxi_df.tipAmount <= 25)\
-                                & (sampled_taxi_df.fareAmount >= 1) & (sampled_taxi_df.fareAmount <= 250)\
-                                & (sampled_taxi_df.tipAmount < sampled_taxi_df.fareAmount)\
-                                & (sampled_taxi_df.tripDistance > 0) & (sampled_taxi_df.tripDistance <= 100)\
-                                & (sampled_taxi_df.rateCodeId <= 5)
-                                & (sampled_taxi_df.paymentType.isin({"1", "2"}))
-                                )
+                        , 'tripDistance', 'tpepPickupDateTime', 'tpepDropoffDateTime'\
+                        , date_format('tpepPickupDateTime', 'hh').alias('pickupHour')\
+                        , date_format('tpepPickupDateTime', 'EEEE').alias('weekdayString')\
+                        , (unix_timestamp(col('tpepDropoffDateTime')) - unix_timestamp(col('tpepPickupDateTime'))).alias('tripTimeSecs')\
+                        , (when(col('tipAmount') > 0, 1).otherwise(0)).alias('tipped')
+                        )\
+                .filter((sampled_taxi_df.passengerCount > 0) & (sampled_taxi_df.passengerCount < 8)\
+                        & (sampled_taxi_df.tipAmount >= 0) & (sampled_taxi_df.tipAmount <= 25)\
+                        & (sampled_taxi_df.fareAmount >= 1) & (sampled_taxi_df.fareAmount <= 250)\
+                        & (sampled_taxi_df.tipAmount < sampled_taxi_df.fareAmount)\
+                        & (sampled_taxi_df.tripDistance > 0) & (sampled_taxi_df.tripDistance <= 100)\
+                        & (sampled_taxi_df.rateCodeId <= 5)
+                        & (sampled_taxi_df.paymentType.isin({"1", "2"}))
+                        )
 ```
 
 We will then make a second pass over the data to add the final features.
