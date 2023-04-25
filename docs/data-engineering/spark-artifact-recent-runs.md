@@ -1,11 +1,11 @@
 ---
-title: Workspace item recent runs
-description: Learn how to view item recent runs.
+title: View workspace item recent runs
+description: In Fabric, use Apache Spark to run notebooks, Spark job definitions, jobs, and other types of applications. Learn how to view recent runs.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
 ms.topic: how-to
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ms.search.form: Browse artifacts recent runs
 ---
 

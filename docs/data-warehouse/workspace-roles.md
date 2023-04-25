@@ -1,15 +1,15 @@
 ---
 title: Workspace roles
 description: Learn about the roles you can use to manage user access within a workspace.
-ms.reviewer: wiassaf
-ms.author: kedodd
 author: kedodd
+ms.author: kedodd
+ms.reviewer: wiassaf
+ms.date: 05/23/2023
 ms.topic: conceptual
-ms.date: 03/15/2023
 ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 ---
 
-# Workspace roles
+# Workspace roles in Fabric data warehousing
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 

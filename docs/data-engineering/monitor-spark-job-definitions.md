@@ -1,10 +1,10 @@
 ---
 title: Monitor Spark job definition
-description: This article provides you with instructions on how to monitor Spark job definition in Microsoft Fabric.
+description: Learn how to monitor the progress and status of a running Spark job definition, and how to view the status and duration of previous runs.
 author: jejiang
 ms.author: jejiang
 ms.topic: overview 
-ms.date: 02/25/2023
+ms.date: 05/23/2023
 ms.custom: template-howto
 ms.search.form: Monitor Spark job definitions
 ---

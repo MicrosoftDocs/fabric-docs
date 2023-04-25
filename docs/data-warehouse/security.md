@@ -1,11 +1,11 @@
 ---
-title: Security for data warehousing in Microsoft Fabric
+title: Security for data warehousing
 description: Learn more about securing the SQL Endpoint and Synapse Data Warehouse in Microsoft Fabric.
-ms.reviewer: wiassaf
-ms.author: cynotebo
 author: cynotebo
+ms.author: cynotebo
+ms.reviewer: wiassaf
+ms.date: 05/23/2023
 ms.topic: overview
-ms.date: 04/05/2023
 ---
 
 # Security for data warehousing in Microsoft Fabric
@@ -24,11 +24,13 @@ Workspace permissions are best accomplished by membership in Azure role-based ac
 
 Through the workspace, you can add members to, and remove them from, workspace roles. For a tutorial, see [Manage user access](manage-user-access.md).
 
-
-
 ## Object-level security in Synapse Data Warehouse
 
 Permissions for objects in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] can be assigned to SQL principals. 
+
+   - By default, the user who created the Lakehouse will have "dbo" permissions, everyone else is limited to read-only SELECT permission.
+
+   - GRANT, REVOKE, DENY commands are currently not supported.
 
 ## Row-level security in Synapse Data Warehouse
 

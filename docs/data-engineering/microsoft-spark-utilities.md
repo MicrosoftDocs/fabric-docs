@@ -1,14 +1,14 @@
 ---
-title: Microsoft Apache Spark utilities
-description: Learn about the MSSparkUtils package.
+title: Apache Spark utilities for file management tasks
+description: Use Microsoft Spark Utilities, a built-in package, to work with file systems, get environment variables, chain notebooks together, and work with secrets.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ---
 
-# Advanced capabilities: Microsoft Apache Spark utilities
+# Use the Microsoft Apache Spark utilities for common file management tasks
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -156,7 +156,7 @@ mssparkutils.notebook.run("Sample1", 90, {"input": 20 })
 
 Exits a notebook with a value. You can run nesting function calls in a notebook interactively or in a pipeline.
 
-- When you call an *exit()* function a notebook interactively, Azure Synapse throws an exception, skip running subsequence cells, and keep the Spark session alive.
+- When you call an *exit()* function from a notebook interactively, Azure Synapse will throw an exception, skip running subsequence cells, and keep the Spark session alive.
 - When you orchestrate a notebook that calls an *exit()* function in a Synapse pipeline, Azure Synapse returns an exit value, complete the pipeline run, and stop the Spark session.
 - When you call an *exit()* function in a notebook being referenced, Azure Synapse will stop the further execution in the notebook being referenced, and continue to run next cells in the notebook that call the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
 
@@ -211,7 +211,7 @@ mssparkutils.session.stop()
 *mssparkutils.session.stop()* API stops the current interactive session asynchronously in the background, it stops the Spark session and release resources occupied by the session so they're available to other sessions in the same pool.
 
 > [!NOTE]
-> We don't recommend call language built-in APIs like *sys.exit* in Scala or *sys.exit()* in Python in your code, because such APIs just kill the interpreter process, leaving the Spark session alive and the resources not released.
+> We don't recommend calling language built-in APIs like *sys.exit* in Scala or *sys.exit()* in Python in your code, because such APIs just kill the interpreter process, leaving the Spark session alive and the resources not released.
 
 ## File mount and unmount
 
@@ -273,7 +273,7 @@ mssparkutils.fs.mount(
 
 ### How to mount a lakehouse
 
-Here's the sample code of mounting a Lakehouse to */test*.
+Here's the sample code of mounting a lakehouse to */test*.
 
 ```python
 from notebookutils import mssparkutils 
