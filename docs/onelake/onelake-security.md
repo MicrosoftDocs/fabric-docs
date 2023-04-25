@@ -20,7 +20,8 @@ OneLake uses a layered security model built around the organizational structure 
 
 ## Workspace security
 
-The workspace is the primary security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. Security in the workspace is managed through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](..\data-warehouse\workspace-roles.md)
+The workspace is the primary security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. Security in the workspace is managed through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](..\data-warehouse\workspace-roles.md)  
+  
 Workspace roles in Fabric grant the following permissions in OneLake.
 
 | **Capability** | **Admin** | **Member** | **Contributor** | **Viewer** |
@@ -32,15 +33,21 @@ Workspace roles in Fabric grant the following permissions in OneLake.
 
 ## Data item security
 
-You can apply more security or settings to individual data items such as lakehouse, warehouse, etc. in Fabric. In general, the access a user has to an item inherits from their Fabric workspace role. However, you can share items with users directly, granting them access to just that item without adding them to a workspace role. The following table outlines the scenarios around sharing lakehouses and warehouses, and how they apply to OneLake.
+Data security and further be managed on individual data items such as lakehouse, warehouse, etc. in Fabric. In general, the access a user has to an item inherits from their Fabric workspace role. However, you can share items with users directly, granting them access to just that item without adding them to a workspace role. In addition, users with workspace role access to a data item can have additional permissions granted directly to that item. The following tables outline the scenarios around sharing data items, the individual data item permissions, and how they apply to OneLake.
 
-| **Action** | **View files in OneLake** | **Write files in OneLake** |
-|---|---|---|
-| If a warehouse is shared with you | No | No |
-| If a lakehouse is shared with you | Yes | No |
-| If a lakehouse with write access is shared with you | Yes | Yes |
-| If a Dataset is shared with you | No | No |
-| If a Real-time Analytics database is shared with you | Yes | No |
+**Permissions available when sharing a data item**
+| **Action** | **Read all SQL endpoint data** | **Read all Apache Spark** | **Build reports on the default dataset** |
+|---|---|---|---|
+| Share a warehouse | Yes | Yes | Yes |
+| Share a lakehouse | Yes | Yes | Yes |
+| Share a real time analytics database | No | No | No |
+
+**Permissions assigned to individual data items**
+| **Permission** | **Actions** |
+|---|---|
+| Read | Connect to SQL endpoint |
+| ReadAll | View OneLake data in Spark, OneLake Explorer or APIs |
+| Write | Write data to OneLake in Spark, OneLake Explorer or APIs |
 
 ## Compute-specific security
 
