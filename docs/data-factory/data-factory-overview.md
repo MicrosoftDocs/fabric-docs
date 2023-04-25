@@ -6,7 +6,7 @@ ms.author: makromer
 author: kromerm
 ms.topic: overview
 ms.search.form: product-data-integration, Data_Factory_Overview
-ms.date: 01/25/2023
+ms.date: 05/23/2023
 ---
 
 # What is Data Factory in Microsoft Fabric?

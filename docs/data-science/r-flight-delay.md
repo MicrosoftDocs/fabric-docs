@@ -22,7 +22,11 @@ In this tutorial, you can see how to
 
 
 ## Prerequisites
-- Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
+
 
 ## Install package
 To use code in this article, you need to install the nycflights13 package.

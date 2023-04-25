@@ -5,7 +5,7 @@ ms.reviewer: eloldag
 ms.author: mahi
 author: matt1883
 ms.topic: how-to
-ms.date: 03/24/2023
+ms.date: 05/23/2023
 ---
 
 # Integrate OneLake with Azure Synapse Analytics
