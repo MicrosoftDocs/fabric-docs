@@ -102,7 +102,7 @@ Use the inline package installation to add new packages to the session.
 install.packages(c("repr","gridExtra","fpp2"))
 ```
 
-Load the libraries you'll use.
+Load the libraries to use.
 
 ```R
 library(tidyverse) 
@@ -142,7 +142,7 @@ avocado2 %>%
   scale_y_continuous(lim = c(0, 3), breaks = seq(0, 3, 0.5))
 ```
 
-:::image type="content" source="media/r-avocado/non-organic-avocado.png" alt-text="Graph of non-organic prices.":::
+:::image type="content" source="media/r-avocado/non-organic-avocado.png" alt-text="Graph of nonorganic prices.":::
 
 Look specifically at the Houston region.
 
