@@ -20,7 +20,7 @@ Major components of the Runtime:
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Runtime 1.1
+# Runtime 1.1
 
 Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are: 
 - Operating System: Ubuntu 18.04
@@ -42,8 +42,8 @@ Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.1, pro
 [//]: # (TODO publish list of changes)
 
 
-### New features and improvements
-#### Apache Spark 3.3.1
+## New features and improvements
+### Apache Spark 3.3.1
 Below is an extended summary of key new features related to Apache Spark version 3.3.0 and 3.3.1
 
 *   **Row-level filtering**: improve the performance of joins by pre-filtering one side of a jas long as there are no deprecation or regression impacts.oin using a Bloom filter and IN predicate generated from the values from the other side of the join ([SPARK-32268](https://issues.apache.org/jira/browse/SPARK-32268))
@@ -72,16 +72,16 @@ Below is an extended summary of key new features related to Apache Spark version
 *   Fix column pruning in CSV when \_corrupt\_record is selected ([SPARK-40468](https://issues.apache.org/jira/browse/SPARK-40468))
 
 
-#### Delta Lake 2.2
+### Delta Lake 2.2
 TBD
 
 
-### Default level packages
+## Default level packages
 
-#### Java/Scala libraries
+### Java/Scala libraries
 Below you can find the table with listing all the default level packages for Java/Scala and their respective versions.
 
-#### Python libraries
+### Python libraries
 Below you can find the table with listing all the default level packages for Python and their respective versions.
 
 | **Library**                   | **Version** | **Library**              | **Version**  | **Library**             | **Version** |
@@ -243,7 +243,7 @@ Below you can find the table with listing all the default level packages for Pyt
 | interpret                     | 0.3.1       | pcre2                    | 10.40        | zstd                    | 1.5.2       |
 | interpret-core                | 0.3.1       | pexpect                  | 4.8.0        |                         |             |
 
-#### R libraries
+### R libraries
 Below you can find the table with listing all the default level packages for R and their respective versions.
 
 |  **Library**  | **Version** | **Library**  | **Version** | **Library**  | **Version** |
@@ -322,7 +322,7 @@ Below you can find the table with listing all the default level packages for R a
 | hexbin        | 1.28.2      |     Rcpp     | 1.0.9       |     zoo      | 1.8-11      |
 
 
-### Migration between different Apache Spark Versions
+## Migration between different Apache Spark Versions
 Migrating your workloads to Runtime 1.1 (Apache Spark 3.3) from an older versions of Apache Spark involves a series of steps to ensure a smooth migration. This guide will outline the necessary steps to help you migrate efficiently and effectively.
 
 1. Review Runtime 1.1 release notes, including checking the components and default-level packages included into the runtime, to understand the new features, improvements.
