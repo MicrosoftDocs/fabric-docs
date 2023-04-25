@@ -1,16 +1,16 @@
 ---
 title: Accelerate data prep with Data Wrangler
-description: Learn how to use the Data Wrangler tool.
-author: nelgson
-ms.author: negust
+description: Learn how to use Data Wrangler, a notebook-based tool for exploring data and generating code to transform it.
+author: orbey
+ms.author: erenorbey
 ms.reviewer: franksolomon
 ms.topic: how-to
-ms.date: 03/27/2023
+ms.date: 05/23/2023
 
 ms.search.form: Data Wrangler
 ---
 
-# How-to accelerate data prep with Data Wrangler
+# How to accelerate data prep with Data Wrangler in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

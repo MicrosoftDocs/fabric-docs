@@ -4,7 +4,7 @@ description: Learn how to access the monitoring hub and use it to sort, search, 
 author: jejiang
 ms.author: jejiang
 ms.topic: overview 
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ms.custom: template-howto
 ms.search.form: Browse Spark applications in Monitoring hub 
 ---

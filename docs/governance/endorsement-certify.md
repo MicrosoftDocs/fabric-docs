@@ -4,7 +4,7 @@ description: Learn how to certify Fabric content.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.date: 04/09/2023
+ms.date: 05/23/2023
 ---
 
 # Certify Fabric content

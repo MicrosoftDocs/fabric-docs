@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Data Science?
     href: data-science-overview.md
+  - name: Roles and permissions
+    href: models-experiments-rbac.md
 - name: Get started
   items:
   - name: How to use end-to-end AI samples
@@ -27,22 +29,30 @@ items:
     href: read-write-pandas.md
   - name: How to accelerate data prep with Data Wrangler
     href: data-wrangler.md
-  - name: Explore and validate data with SemPy and PBI connector
-    href: sempy-pbi-connector.md
-- name: Machine learning experiments
+- name: Train machine learning models
+  items:
+  - name: Training Overview
+    href: ./model-training/model-training-overview.md
+  - name: How-to guides
+    items:
+      - name: Train with Spark MLlib
+        href: ./model-training/fabric-sparkml-tutorial.md
+      - name: Train models with Scikit-learn
+        href: train-models-scikit-learn.md
+- name: Track models and experiments
   items:
   - name: Machine learning experiment
     href: machine-learning-experiment.md
-- name: Machine learning models
-  items:
   - name: Machine learning model
     href: machine-learning-model.md
-  - name: Train models with PyTorch
-    href: train-models-pytorch.md  
-  - name: Train models with Scikit-learn
-    href: train-models-scikit-learn.md 
-  - name: Score models with PREDICT
-    href: model-scoring-predict.md
+  - name: Fabric autologging
+    href: mlflow-autologging.md
+  - name: How-to guides
+    items:
+    - name: Train models with PyTorch
+      href: train-models-pytorch.md   
+    - name: Score models with PREDICT
+      href: model-scoring-predict.md
 - name: Use R
   items:
   - name: R overview
@@ -53,53 +63,15 @@ items:
       href: r-use-sparkr.md
     - name: How to use sparklyr
       href: r-use-sparklyr.md
+    - name: How to use Tidyverse
+      href: r-use-tidyverse.md
     - name: R library management
       href: r-library-management.md
     - name: R visualization
       href: r-visualization.md
-- name: SemPy
-  items:
-  - name: SemPy overview
-    href: sempy-overview.md
-  - name: Glossary
-    href: sempy-glossary.md
-  - name: Get started
+  - name: Tutorials
     items:
-    - name: Setup
-      href: sempy-setup.md
-    - name: Hello world
-      href: sempy-hello-world.md
-    - name: SemPy 101
-      href: sempy-101.md
-    - name: Semantic modeling
-      href: sempy-semantic-modeling.md
-    - name: Knowledge base
-      href: sempy-knowledge-base.md
-    - name: Data processing
-      href: sempy-data-processing.md
-    - name: Semantic propagation
-      href: sempy-semantic-propagation.md
-    - name: Next steps
-      href: sempy-next-steps.md
-  - name: End-to-end Power BI example
-    href: e2e-powerbi-example.md
-  - name: How-to guides
-    items:   
-    - name: Autojoin entities
-      href: sempy-autojoin.md
-    - name: View built-in visualizations
-      href: sempy-built-in-visualizations.md
-    - name: Create column groups
-      href: sempy-column-groups.md
-    - name: Clean data with functional dependencies
-      href: sempy-data-cleaning.md
-    - name: Create geo location plots
-      href: sempy-geo-location.md
-    - name: Detect relationships between tables
-      href: sempy-relationship-detection.md
-    - name: Propagate dataframe semantics for unstack operation
-      href: sempy-unstack-semantic-propagation.md
-    - name: Knowledge base hydration from a Lakehouse
-      href: sempy-kb-hydration-lakehouse.md
-    - name: Power BI metrics integration
-      href: sempy-powerbi-metrics.md      
+    - name: Avocado price prediction
+      href: r-avocado.md
+    - name: Flight delay prediction
+      href: r-flight-delay.md

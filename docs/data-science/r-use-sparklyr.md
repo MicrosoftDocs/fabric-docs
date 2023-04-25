@@ -1,26 +1,33 @@
 ---
-title: Use sparklyr in Synapse
-description: Learn how to use the sparkly in Synapse.
+title: Use sparklyr
+description: Learn how to use sparklyr, an R interface to Apache Spark. 
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/07/2023
+ms.date: 05/23/2023
 ms.search.form: R Language
 ---
-# Use sparklyr in [!INCLUDE [product-name](../includes/product-name.md)] 
+
+# Use sparklyr
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[sparklyr](https://spark.rstudio.com/) is an R interface to Apache Spark. It provides a mechanism to interact with Spark using familiar R interfaces. You can use sparkly through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)]  notebooks. 
-
-## Requirements
+[sparklyr](https://spark.rstudio.com/) is an R interface to Apache Spark. It provides a mechanism to interact with Spark using familiar R interfaces. You can use sparklyr through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)]  notebooks.
 
 `sparklyr` is used along with other [tidyverse](https://www.tidyverse.org/) packages such as [dplyr](https://cran.rstudio.com/web/packages/dplyr/vignettes/dplyr.html). [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of sparklyr and tidyverse with every runtime release. You can import them and start using the API.
 
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
+
+
+
 ## Connect sparklyr to Synapse Spark cluster
 
-To establish a `sparklyr` connection, you can use the following connection method in `spark_connect()`.
+Use the following connection method in `spark_connect()` to establish a `sparklyr` connection.
 
 ```R
 # connect sparklyr to your spark cluster
@@ -30,6 +37,7 @@ sc <- spark_connect(master = "yarn", version = spark_version, spark_home = "/opt
 ```
 
 ## Use sparklyr to read data
+
 A new Spark session contains no data. The first step is to either load data into your Spark session’s memory, or point Spark to the location of the data so it can access the data on-demand.
 
 ```R
@@ -42,7 +50,9 @@ mtcars_tbl <- copy_to(sc, mtcars, "spark_mtcars", overwrite = TRUE)
 head(mtcars_tbl)
 ```
 
-Using `sparklyr`, you can also `write` and `read` data from a Lakehouse file using ABFS path. 
+Using `sparklyr`, you can also `write` and `read` data from a Lakehouse file using ABFS path. To read and write to a Lakehouse, first add it to your session. On the left side of the notebook, select **Add** to add an existing Lakehouse or create a Lakehouse.
+
+To find your ABFS path, right click on the **Files** folder in your Lakehouse, then select **Copy ABFS path**.  Paste your path to replace `abfss://xxxx@onelake.dfs.fabric.microsoft.com/xxxx/Files` in this code:
 
 ```R
 temp_csv = "abfss://xxxx@onelake.dfs.fabric.microsoft.com/xxxx/Files/data/mtcars.csv"
@@ -56,13 +66,14 @@ head(mtcarsDF)
 ```
 
 ## Use sparklyr to manipulate data
-`sparklyr` provides multiple methods to process data inside Spark:
 
-- Using `dplyr` commands
-- Using SparkSQL
-- uSING Spark's feature transformers
+`sparklyr` provides multiple methods to process data inside Spark using:
 
-### Using `dplyr`
+- `dplyr` commands
+- SparkSQL
+- Spark's feature transformers
+
+### Use `dplyr`
 
 You can use familiar `dplyr` commands to prepare data inside Spark. The commands run inside Spark, so there are no unnecessary data transfers between R and Spark. 
 
@@ -86,7 +97,8 @@ cargroup
 dplyr::show_query(cargroup)
 ```
 
-### Using SQL
+### Use SQL
+
 It’s also possible to execute SQL queries directly against tables within a Spark cluster. The `spark_connection() `object implements a [DBI](https://dbi.r-dbi.org/) interface for Spark, so you can use `dbGetQuery()` to execute SQL and return the result as an R data frame:
 
 ```R
@@ -96,7 +108,7 @@ GROUP BY cyl
 ORDER BY n DESC")
 ```
 
-### Using Feature Transformers
+### Use Feature Transformers
 
 Both of the previous methods rely on SQL statements. Spark provides commands that make some data transformation more convenient, and without the use of SQL.
 
@@ -111,13 +123,13 @@ tbl_mtcars %>%
   head(5)
 ```
 
-## Machine learning 
-
+## Machine learning
 
 Here’s an example where we use `ml_linear_regression()` to fit a linear regression model. We use the built-in `mtcars` dataset, and see if we can predict a car’s fuel consumption (`mpg`) based on its weight (`wt`), and the number of cylinders the engine contains (`cyl`). We assume in each case that the relationship between `mpg` and each of our features is linear.
 
-### Generation of testing and training data sets
-Simple split, 70% for training and 30% for testing the model. Playing with this ratio may result in different models.
+### Generate testing and training data sets
+
+Use a simple split, 70% for training and 30% for testing the model. Playing with this ratio may result in different models.
 
 ```R
 # split the dataframe into test and training dataframes
@@ -128,6 +140,7 @@ partitions <- mtcars_tbl %>%
 ```
 
 ### Train the model
+
 Train the Logistic Regression model.
 
 ```R
@@ -136,24 +149,28 @@ fit <- partitions$training %>%
 
 fit
 ```
-Then use `summary() `to learn a bit more about the quality of our model, and the statistical significance of each of our predictors.
+
+Now use `summary() `to learn a bit more about the quality of our model, and the statistical significance of each of our predictors.
 
 ```R
 summary(fit)
 ```
 
 ### Use the model
-You can apply the model on the testing dataset through calling `ml_predict()`.
+
+You can apply the model on the testing dataset by calling `ml_predict()`.
 
 ```R
 pred <- ml_predict(fit, partitions$test)
 
 head(pred)
 ```
+
 For a list of Spark ML models available through sparklyr visit [Reference - ML](https://spark.rstudio.com/packages/sparklyr/latest/reference/#spark-machine-learning)
 
 ## Disconnect from Spark cluster
-You can call `spark_disconnect()` to or click the **Stop session** button on top of the notebook ribbon end your Spark session.
+
+You can call `spark_disconnect()` to or select the **Stop session** button on top of the notebook ribbon end your Spark session.
 
 ```R
 spark_disconnect(sc)
@@ -165,5 +182,6 @@ spark_disconnect(sc)
 Learn more about the R functionalities:
 
 - [How to use SparkR](./r-use-sparkr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
 - [Create R visualization](./r-visualization.md)

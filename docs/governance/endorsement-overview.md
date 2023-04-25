@@ -4,7 +4,7 @@ description: Learn how to make quality content easier to find through promotion 
 author: paulinbar
 ms.author: painbar
 ms.topic: concept
-ms.date: 04/09/2023
+ms.date: 05/23/2023
 ---
 
 # Endorsement - Promoting and certifying Fabric content
