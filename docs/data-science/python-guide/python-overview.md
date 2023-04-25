@@ -11,6 +11,8 @@ ms.search.form: Python Language
 
 # Use Python for Apache Spark
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 Microsoft Fabric provides built-in Python support for Apache Spark. This includes support for [PySpark](https://spark.apache.org/docs/latest/api/python/index.html), which allows users to interact with Spark using familiar Spark or Python interfaces. You can analyze data using Python through Spark batch job definitions or with interactive Fabric notebooks. This document provides an overview of developing Spark applications in Synapse using the Python language.
 
 ## Create and run notebook sessions
@@ -26,7 +28,7 @@ In addition, you can use multiple languages in one notebook by specifying the la
 # Enter your Python code here
 ```
 
-To learn more about notebooks within [!INCLUDE [product-name](../includes/product-name.md)] Analytics, see [How to use notebooks](../data-engineering/how-to-use-notebook.md).
+To learn more about notebooks within [!INCLUDE [product-name](../../includes/product-name.md)] Analytics, see [How to use notebooks](../../data-engineering/how-to-use-notebook.md).
 
 ## Install packages
 
@@ -46,7 +48,7 @@ mssparkutils.notebook.help()
 
 ```
 
-Learn more about the supported MSSparkUtils commands at [Use Microsoft Spark Utilities](../data-engineering/microsoft-spark-utilities.md).
+Learn more about the supported MSSparkUtils commands at [Use Microsoft Spark Utilities](../../data-engineering/microsoft-spark-utilities.md).
 
 ## Use Pandas on Spark
 

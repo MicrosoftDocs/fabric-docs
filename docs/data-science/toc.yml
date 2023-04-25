@@ -62,7 +62,7 @@ items:
 - name: Use Python
   items:
   - name: Python overview
-    href: python-overview.md
+    href: ./python-guide/python-overview.md
   - name: How-to guides
     items:
     - name: Python library management

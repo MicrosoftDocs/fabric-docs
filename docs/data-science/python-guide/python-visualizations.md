@@ -11,7 +11,7 @@ ms.search.form: Python Language
 
 # Analyze data with Apache Spark and Python
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 In this tutorial, you'll learn how to perform exploratory data analysis by using Azure Open Datasets and Apache Spark. 
 
@@ -19,7 +19,7 @@ In particular, we'll analyze the [New York City (NYC) Taxi](https://azure.micros
   
 ## Prerequisites
 
-[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+[!INCLUDE [prerequisites](../../includes/preview-note.md)]
 
 ## Download and prepare the data
 
@@ -68,11 +68,11 @@ In particular, we'll analyze the [New York City (NYC) Taxi](https://azure.micros
 
 ## Analyze data
 
-As a data analyst, you have a wide range of tools available to help you extract insights from the data. In this part of the tutorial, we'll walk through a few useful tools available within [!INCLUDE [product-name](../includes/product-name.md)] notebooks. In this analysis, we want to understand the factors that yield higher taxi tips for our selected period.
+As a data analyst, you have a wide range of tools available to help you extract insights from the data. In this part of the tutorial, we'll walk through a few useful tools available within [!INCLUDE [product-name](../../includes/product-name.md)] notebooks. In this analysis, we want to understand the factors that yield higher taxi tips for our selected period.
 
 ### Apache Spark SQL Magic
 
-First, we'll perform exploratory data analysis by Apache Spark SQL and magic commands with the [!INCLUDE [product-name](../includes/product-name.md)] notebook. After we have our query, we'll visualize the results by using the built-in ```chart options``` capability.
+First, we'll perform exploratory data analysis by Apache Spark SQL and magic commands with the [!INCLUDE [product-name](../../includes/product-name.md)] notebook. After we have our query, we'll visualize the results by using the built-in ```chart options``` capability.
 
 1. Within your notebook, create a new cell and copy the following code. By using this query, we want to understand how the average tip amounts have changed over the period we've selected. This query will also help us identify other useful insights, including the minimum/maximum tip amount per day and the average fare amount.
    

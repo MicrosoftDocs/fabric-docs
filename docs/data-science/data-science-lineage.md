@@ -65,7 +65,7 @@ To access the lineage view:
 
 3. You can also navigate to **Lineage** view for a specific artifact by opening the related actions.
 
-   :::image type="content" source="media/lineage/artifact-lineage-view-ds.png" alt-text="Image showing workspace lineage view in Fabric" lightbox="media/lineage/artifact-lineage-view-ds.png":::
+   :::image type="content" source="media/lineage/artifact-lineage-view-ds.png" alt-text="Image showing workspace lineage view in Fabric for a given artifact" lightbox="media/lineage/artifact-lineage-view-ds.png":::
 
 ## Next steps
 
