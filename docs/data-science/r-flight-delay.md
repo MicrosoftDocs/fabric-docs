@@ -286,4 +286,4 @@ Once the delta table is created, [!INCLUDE [product-name](../includes/product-na
 - [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
 - [Visualize data in R](r-visualization.md)
-- [Tutorial: avocado price prediction](./r-avocado.md)
+- [Tutorial: Avocado price prediction](./r-avocado.md)
