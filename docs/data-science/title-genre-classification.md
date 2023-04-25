@@ -12,9 +12,9 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this notebook, we'll demonstrate how to solve a text classification task with word2vec + linear-regression model on Spark.
+In this notebook, we demonstrate how to solve a text classification task with word2vec + linear-regression model on Spark.
 
-The sample dataset we used here consists of metadata relating to books digitized by the British Library in partnership with Microsoft. It includes human generated labels for whether a book is 'fiction' or 'non-fiction'. We use this dataset to train a model for genre classification that predicts whether a book is 'fiction' or 'non-fiction' based on its title.
+The sample dataset consists of metadata relating to books digitized by the British Library in partnership with Microsoft. It includes human generated labels for classifying a book as 'fiction' or 'non-fiction'. We use this dataset to train a model for genre classification that predicts whether a book is 'fiction' or 'non-fiction' based on its title.
 
 | BL record ID | Type of resource | Name | Dates associated with name | Type of name | Role | All names | Title | Variant titles | Series title | Number within series | Country of publication | Place of publication | Publisher | Date of publication | Edition | Physical description | Dewey classification | BL shelfmark | Topics | Genre | Languages | Notes | BL record ID for physical resource | classification_id | user_id | created_at | subject_ids | annotator_date_pub | annotator_normalised_date_pub | annotator_edition_statement | annotator_genre | annotator_FAST_genre_terms | annotator_FAST_subject_terms | annotator_comments | annotator_main_language | annotator_other_languages_summaries | annotator_summaries_language | annotator_translation | annotator_original_language | annotator_publisher | annotator_place_pub | annotator_country | annotator_title | Link to digitized book | annotated |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -27,7 +27,7 @@ The sample dataset we used here consists of metadata relating to books digitized
 
 #### Install libraries
 
-In this notebook, we'll use `wordcloud`, which first needs to be installed. The PySpark kernel will be restarted after `%pip install`, thus we need to install it before we run any other cells.
+In this notebook, we'll use `wordcloud`, which first needs to be installed. The PySpark kernel will be restarted after `%pip install`, thus we need to install it before we run any other cells. Word Cloud is a package allowing us to use a data visualization technique for representing text data to indicates its frequency in a given piece of text.
 
 ```shell
 # install wordcloud for text visualization
@@ -301,7 +301,7 @@ ax.set_ylabel("True label")
 
 ### Log and Load Model with MLflow
 
-Now we get a good model, we can save it for later use. Here we use MLflow to log metrics/models, and load models back for prediction.
+Now that we have a good model, we can save it for later use. Here we use MLflow to log metrics/models, and load models back for prediction.
 
 ```python
 # setup mlflow
