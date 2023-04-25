@@ -126,7 +126,7 @@ Use the MSSparkUtils Notebook Utilities to run a notebook or exit a notebook wit
 mssparkutils.notebook.help()
 ```
 
-**Output**
+**Output:**
 
 ```console
 The notebook module.
@@ -181,7 +181,7 @@ exitVal = mssparkutils.notebook.run("folder/Sample1")
 print (exitVal)
 ```
 
-**Output**
+**Output:**
 
 ```console
 Sample1 run success with input is 10
@@ -194,7 +194,7 @@ exitVal = mssparkutils.notebook.run("mssparkutils/folder/Sample1", 90, {"input":
 print (exitVal)
 ```
 
-**Output**
+**Output:**
 
 ```console
 Sample1 run success with input is 20
