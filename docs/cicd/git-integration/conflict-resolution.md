@@ -32,8 +32,6 @@ To revert to the prior synced state, do one of the following steps:
 
  You can also revert to a previous state by disconnecting and reconnecting the workspace. When you reconnect, [select the direction](./git-integration-process.md#connect-and-sync) you want to sync.
 
-:::image type="content" source="./media/conflict-resolution/git-sync-direction.png" alt-text="Screenshot of connect dialog asking which direction to sync.":::
-
 ## Resolve conflict in git
 
 If you made numerous changes and don’t want to revert to a previous state, you can try resolving the conflict in the git repo:
