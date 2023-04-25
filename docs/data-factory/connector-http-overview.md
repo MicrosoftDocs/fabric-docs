@@ -1,6 +1,6 @@
 ---
 title: HTTP connector overview
-description: This article explains the overview of using HTTP.
+description: This article provides the overview of connecting to and using HTTP data in Data Factory.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -14,7 +14,7 @@ ms.custom: template-how-to
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
-This HTTP connector is supported in Trident Project  - Data Factory with the following capabilities.
+This HTTP connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 
@@ -22,10 +22,9 @@ This HTTP connector is supported in Trident Project  - Data Factory with the fol
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | Basic |
 | **Lookup activity** | None | Basic |
-| **Dataflow Gen2 (source/destination)** |  |  |
 
 ## Next steps
 
-[How to create HTTP connection](connector-http.md)
-
-[How to configure HTTP in copy activity](connector-http-copy-activity.md)
+- [How to create HTTP connection](connector-http.md)
+- [How to configure HTTP in a copy activity](connector-http-copy-activity.md)
+- [Connect to HTTP data in dataflows](connector-http-dataflows.md)
