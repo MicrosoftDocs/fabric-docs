@@ -129,7 +129,5 @@ landingContent:
     linkLists: 
       - linkListType: how-to-guide
         links:
-          - text: Share your Synapse Data Warehouse
-            url: share-warehouse.md
           - text: Get Workspace and OneLake path
             url: get-workspace-onelake-path.md

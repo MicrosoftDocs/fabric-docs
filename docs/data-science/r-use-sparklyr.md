@@ -5,7 +5,7 @@ ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 04/23/2023
 ms.search.form: R Language
 ---
 
@@ -185,3 +185,5 @@ Learn more about the R functionalities:
 - [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
 - [Create R visualization](./r-visualization.md)
+- [Tutorial: avocado price prediction](./r-avocado.md)
+- [Tutorial: flight delay prediction](./r-flight-delay.md)
