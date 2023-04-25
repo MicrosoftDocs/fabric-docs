@@ -19,6 +19,8 @@ Git integration in Microsoft Fabric enables Pro developers to integrate their de
 * Collaborate with others or work alone using Git branches
 * Leverage the capabilities of familiar source control tools to manage Fabric items.
 
+:::image type="content" source="./media/intro-to-git-integration/git-flow.png" alt-text="Flowchart showing the connection between the remore git repo and the Fabric workspace.":::
+
 The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. Currently, in Preview, only a few items are supported, but the list of [supported items](#supported-items) is growing.
 
 Read up on [version control](/devops/develop/git/what-is-version-control) and [Git](/devops/develop/git/what-is-git) to make sure you’re familiar with basic git concepts.
