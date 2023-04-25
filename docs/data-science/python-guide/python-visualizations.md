@@ -162,7 +162,7 @@ In addition to the built-in notebook charting options, you can use popular open-
    plt.show()
    ```
 
-   ![Scatter plot of tip amount.](../media/python-visualization/scatter.png)
+   ![Screenshot of scatter plot of tip amount.](../media/python-visualization/scatter.png)
 
 ## Next steps
 
