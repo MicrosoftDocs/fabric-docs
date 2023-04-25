@@ -39,7 +39,7 @@ For more information on connectivity modes, see [Import and Direct Query connect
 1. Navigate to your **KQL Database**.
 1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere to use in a later step.
 
-    :::image type="content" source="media/power-bi-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
+    :::image type="content" source="media/power-bi-data-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
 
 ## 2- Use data in Power BI
 
@@ -60,7 +60,7 @@ To use your **KQL Database** as a data source in Power BI, you need to add the A
 
     | Setting | Field description | Sample value |
     |---|---|---|
-    | Cluster | The Query URI from Microsoft Fabric's **KQL Database** dashboard. For other clusters, the URL is in the form *https://\<ClusterName\>.\<Region\>.kusto.windows.net*. | Paste your [Query URI](#copy-query-uri) |
+    | Cluster | The Query URI from Microsoft Fabric's **KQL Database** dashboard. For other clusters, the URL is in the form *https://\<ClusterName\>.\<Region\>.kusto.windows.net*. | Paste your [Query URI](#1--copy-query-uri) |
     | Database | A database that is hosted on the cluster you're connecting to. You can optionally select a database in a later step. | Leave blank |
     | Table name | The name of a table in the database, or a query like <code>StormEvents \| take 1000</code>. You can optionally select a table name in a later step. | Leave blank |
     | Advanced options | Optionally, you can select options for your queries, such as result set size. |  Leave blank |
