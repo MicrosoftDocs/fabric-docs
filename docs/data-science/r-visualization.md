@@ -1,11 +1,11 @@
 ---
 title: Visualize data in R
-description: Learn how to create R visualization.
+description: Learn how to create R visualizations.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/07/2023
+ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
@@ -14,6 +14,12 @@ ms.search.form: R Language
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The R ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Apache Spark Pool in [!INCLUDE [product-name](../includes/product-name.md)] contains a set of curated and popular open-source libraries. Add or manage extra libraries or versions by using the [!INCLUDE [product-name](../includes/product-name.md)] [library management capabilities](r-library-management.md).
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
 
 ## ggplot2
 
@@ -86,4 +92,7 @@ hchart(mtcars, "scatter", hcaes(wt, mpg, z = drat, color = hp)) %>%
 ## Next steps
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
+- [Tutorial: avocado price prediction](./r-avocado.md)
+- [Tutorial: flight delay prediction](./r-flight-delay.md)

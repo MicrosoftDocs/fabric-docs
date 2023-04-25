@@ -4,7 +4,7 @@ description: Learn about the roles you can use to manage user access within a wo
 author: kedodd
 ms.author: kedodd
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 ---

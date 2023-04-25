@@ -4,7 +4,7 @@ description: Learn to bring your own encryption keys works in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ---
 
 # Bring your own encryption keys

@@ -1,23 +1,29 @@
 ---
-title: Use sparklyr in Synapse
-description: Learn how to use the sparkly in Synapse.
+title: Use sparklyr
+description: Learn how to use sparklyr, an R interface to Apache Spark. 
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/07/2023
+ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
-# Use sparklyr in [!INCLUDE [product-name](../includes/product-name.md)] 
+# Use sparklyr
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[sparklyr](https://spark.rstudio.com/) is an R interface to Apache Spark. It provides a mechanism to interact with Spark using familiar R interfaces. You can use sparkly through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)]  notebooks.
-
-## Requirements
+[sparklyr](https://spark.rstudio.com/) is an R interface to Apache Spark. It provides a mechanism to interact with Spark using familiar R interfaces. You can use sparklyr through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)]  notebooks.
 
 `sparklyr` is used along with other [tidyverse](https://www.tidyverse.org/) packages such as [dplyr](https://cran.rstudio.com/web/packages/dplyr/vignettes/dplyr.html). [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of sparklyr and tidyverse with every runtime release. You can import them and start using the API.
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
+
+
 
 ## Connect sparklyr to Synapse Spark cluster
 
@@ -176,5 +182,6 @@ spark_disconnect(sc)
 Learn more about the R functionalities:
 
 - [How to use SparkR](./r-use-sparkr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
 - [Create R visualization](./r-visualization.md)

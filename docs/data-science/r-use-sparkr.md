@@ -1,25 +1,30 @@
 ---
-title: Use SparkR in Synapse
-description: Learn how to use the SparkR in Synapse.
+title: Use SparkR
+description: Learn how to use SparkR, a light-weight frontend to use Apache Spark from R.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/07/2023
+ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
-# Use SparkR in [!INCLUDE [product-name](../includes/product-name.md)] 
+# Use SparkR
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [SparkR](https://spark.apache.org/docs/latest/sparkr.html) is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation etc. SparkR also supports distributed machine learning using MLlib.
 
-Use SparkR through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks. 
-
-## Requirements
+Use SparkR through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks.
 
 R support is only available in Spark3.1 or above.  R in Spark 2.4 is not supported.
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
+
 
 ## Read and write SparkR DataFrames
 
@@ -100,23 +105,37 @@ head(waiting)
 
 ### Read and write SQL tables through RODBC
 
-You can leverage RODBC to connect to SQL based databases through an ODBC interface. For example, you can connect to a Synapse dedicated SQL pool as shown in the example code below.
+Use RODBC to connect to SQL based databases through an ODBC interface. For example, you can connect to a Synapse dedicated SQL pool as shown in the following example code.  Substitute your own connection details for `<database>`, `<uid>`, `<password>`, and `<table>`.
 
 ```R
 # load RODBC package
 library(RODBC)
 
-# connect to driver
-channel <-odbcDriverConnect("Driver={ODBC Driver 17 for SQL Server};
-Server={};
-Database=spark33test1;Uid={};
-Pwd={};
+
+# config connection string
+
+DriverVersion <- substr(system("apt list --installed *msodbc*", intern=TRUE, ignore.stderr=TRUE)[2],10,11)
+ServerName <- "your-server-name"
+DatabaseName <- "your-database-name"
+Uid <- "your-user-id-list"
+Password <- "your-password"
+
+ConnectionString = sprintf("Driver={ODBC Driver %s for SQL Server};
+Server=%s;
+Database=%s;
+Uid=%s;
+Pwd=%s;
 Encrypt=yes;
 TrustServerCertificate=yes;
-Connection Timeout=30;")
+Connection Timeout=30;",DriverVersion,ServerName,DatabaseName,Uid,Password)
+print(ConnectionString)
+
+
+# connect to driver
+channel <-odbcDriverConnect(ConnectionString)
 
 # query from existing tables
-Rdf <- sqlQuery(channel, "select * from irisEdog151")
+Rdf <- sqlQuery(channel, "select * from <table>")
 class(Rdf)
 
 # use SparkR::as.DataFrame to convert R date.frame to SparkR DataFrame.
@@ -146,6 +165,7 @@ head(select(df, "waiting"))
 head(filter(df, df$waiting > 70))
 ```
 
+
 ### Grouping and aggregation
 
 SparkR data frames support many commonly used functions to aggregate data after grouping. For example, we can compute a histogram of the waiting time in the faithful dataset as shown below
@@ -161,7 +181,7 @@ waiting_counts <- summarize(groupBy(df, df$waiting), count = n(df$waiting))
 head(arrange(waiting_counts, desc(waiting_counts$count)))
 ```
 
-### Column operations
+### Column operations 
 
 SparkR provides many functions that can be directly applied to columns for data processing and aggregation. The following example shows the use of basic arithmetic functions.
 
@@ -178,13 +198,13 @@ SparkR supports several kinds of user-defined functions:
 
 #### Run a function on a large dataset with `dapply` or `dapplyCollect`
 
-
 #### `dapply`
 
 Apply a function to each partition of a `SparkDataFrame`. The function to be applied to each partition of the `SparkDataFrame` and should have only one parameter, to which a data.frame corresponds to each partition will be passed. The output of function should be a `data.frame`. Schema specifies the row format of the resulting a `SparkDataFrame`. It must match to [data types](https://spark.apache.org/docs/latest/sparkr.html#data-type-mapping-between-r-and-spark) of returned value.
 
 ```R
 # convert waiting time from hours to seconds
+df <- createDataFrame(faithful)
 schema <- structType(structField("eruptions", "double"), structField("waiting", "double"),
                      structField("waiting_secs", "double"))
 
@@ -194,7 +214,8 @@ head(collect(df1))
 ```
 
 #### `dapplyCollect`
-Like dapply, apply a function to each partition of a `SparkDataFrame` and collect the result back. The output of function should be a `data.frame`. But, Schema isn't required to be passed. Note that `dapplyCollect` can fail if the outputs of UDF run on all the partition can't be pulled to the driver and fit in driver memory.
+
+Like dapply, apply a function to each partition of a `SparkDataFrame` and collect the result back. The output of the function should be a `data.frame`. But, this time, schema isn't required to be passed. Note that `dapplyCollect` can fail if the outputs of the function run on all the partition can't be pulled to the driver and fit in driver memory.
 
 ```R
 # convert waiting time from hours to seconds
@@ -211,7 +232,7 @@ head(ldf, 3)
 
 #### `gapply`
 
-Apply a function to each group of a `SparkDataFrame`. The function is to be applied to each group of the `SparkDataFrame` and should have only two parameters: grouping key and R `data.frame` corresponding to that key. The groups are chosen from `SparkDataFrames` column(s). The output of function should be a `data.frame`. Schema specifies the row format of the resulting `SparkDataFrame`. It must represent R function’s output schema from Spark [data types](https://spark.apache.org/docs/latest/sparkr.html#data-type-mapping-between-r-and-spark). The column names of the returned `data.frame` are set by user.
+Apply a function to each group of a `SparkDataFrame`. The function is to be applied to each group of the `SparkDataFrame` and should have only two parameters: grouping key and R `data.frame` corresponding to that key. The groups are chosen from `SparkDataFrames` column(s). The output of the function should be a `data.frame`. Schema specifies the row format of the resulting `SparkDataFrame`. It must represent R function’s output schema from Spark [data types](https://spark.apache.org/docs/latest/sparkr.html#data-type-mapping-between-r-and-spark). The column names of the returned `data.frame` are set by user.
 
 ```R
 # determine six waiting times with the largest eruption time in minutes.
@@ -228,7 +249,8 @@ head(collect(arrange(result, "max_eruption", decreasing = TRUE)))
 
 #### `gapplyCollect`
 
-Like gapply, applies a function to each group of a `SparkDataFrame` and collect the result back to R `data.frame`. The output of the function should be a `data.frame`. But, the schema isn't required to be passed. Note that `gapplyCollect` can fail if the outputs of UDF run on all the partition can't be pulled to the driver and fit in driver memory.
+
+Like `gapply`, applies a function to each group of a `SparkDataFrame` and collect the result back to R `data.frame`. The output of the function should be a `data.frame`. But, the schema isn't required to be passed. Note that `gapplyCollect` can fail if the outputs of the function run on all the partition can't be pulled to the driver and fit in driver memory.
 
 ```R
 # determine six waiting times with the largest eruption time in minutes.
@@ -246,6 +268,7 @@ head(result[order(result$max_eruption, decreasing = TRUE), ])
 #### Run local R functions distributed with spark.lapply
 
 #### `spark.lapply`
+
 
 Similar to `lapply` in native R, `spark.lapply` runs a function over a list of elements and distributes the computations with Spark. Applies a function in a manner that is similar to `doParallel` or `lapply` to elements of a list. The results of all the computations should fit in a single machine. If that is not the case, they can do something like `df <- createDataFrame(list)` and then use `dapply`.
 
@@ -269,7 +292,7 @@ print(model.summaries)
 A SparkR DataFrame can also be registered as a temporary view that allows you to run SQL queries over its data. The sql function enables applications to run SQL queries programmatically and returns the result as a SparkR DataFrame.
 
 ```R
-# Regsiter ealier df as temp view
+# Register earlier df as temp view
 createOrReplaceTempView(df, "eruptions")
 
 # Create a df using a SparkSQL query
@@ -282,7 +305,7 @@ head(waiting)
 
 SparkR exposes most of MLLib algorithms. Under the hood, SparkR uses MLlib to train the model.
 
-The following example shows how to build a Gaussian GLM model using SparkR. To run linear regression, set family to `"gaussian"`. To run logistic regression, set family to `"binomial"`. When using SparkML GLM SparkR automatically performs one-hot encoding of categorical features so that it doesn't need to be done manually. Beyond String and Double type features, it's also possible to fit over MLlib Vector features, for compatibility with other MLlib components.
+The following example shows how to build a Gaussian GLM model using SparkR. To run linear regression, set family to `"gaussian"`. To run logistic regression, set family to `"binomial"`. When using SparkML `GLM` SparkR automatically performs one-hot encoding of categorical features so that it doesn't need to be done manually. Beyond String and Double type features, it's also possible to fit over MLlib Vector features, for compatibility with other MLlib components.
 
 To learn more about which machine learning algorithms are supported, you can visit the [documentation for SparkR and MLlib](https://spark.apache.org/docs/latest/sparkr.html#machine-learning).
 
@@ -301,5 +324,8 @@ summary(model)
 ## Next steps
 
 - [How to use sparklyr](./r-use-sparklyr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
 - [Create R visualization](./r-visualization.md)
+- [Tutorial: avocado price prediction](./r-avocado.md)
+- [Tutorial: flight delay prediction](./r-flight-delay.md)

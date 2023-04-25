@@ -1,10 +1,10 @@
 ---
-title: Define relationships in data models for data warehousing in Microsoft Fabric
+title: Define relationships in data models for data warehousing
 description: Learn how to define physical and logical relationships in your data models for data warehousing in Microsoft Fabric.
 author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Model view
 ---
