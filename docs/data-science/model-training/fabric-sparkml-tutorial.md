@@ -33,17 +33,17 @@ In summary, the process of logistic regression produces a *logistic function* th
 
 ## Predictive analysis example on NYC taxi data
 
-To get started, we will install ```azureml-opendatasets```. The data is available through [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). This subset of the dataset contains information about yellow taxi trips, including information about each trip, the start and end time and locations, the cost, and other interesting attributes.
+To get started, install ```azureml-opendatasets```. The data is available through [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). This subset of the dataset contains information about yellow taxi trips, including the start and end time and locations, the cost, and other attributes.
 
 ```python
 %pip install azureml-opendatasets
 ```
 
-In the rest of this article, we will use Apache Spark to perform some analysis on the NYC taxi-trip tip data and then develop a model to predict whether a particular trip includes a tip or not.
+In the rest of this article, we'll use Apache Spark to perform some analysis on the NYC taxi-trip tip data and then develop a model to predict whether a particular trip includes a tip or not.
 
 ## Create an Apache Spark machine learning model
 
-1. Create a PySpark notebook . For instructions, see [Create a notebook](../../data-engineering/how-to-use-notebook.md).
+1. Create a PySpark notebook. For instructions, see [Create a notebook](../../data-engineering/how-to-use-notebook.md).
 2. Import the types required for this notebook.
 
     ```python
@@ -60,7 +60,7 @@ In the rest of this article, we will use Apache Spark to perform some analysis o
     from pyspark.ml.evaluation import BinaryClassificationEvaluator
     ```
 
-3. In this article, we will use [MLflow](https://mlflow.org/) to track our machine learning experiments and corresponding runs. If [!INCLUDE [preview-note](../../includes/preview-note.md)] Autologging is enabled, the corresponding metrics and parameters will be automatically captured.
+3. We will use [MLflow](https://mlflow.org/) to track our machine learning experiments and corresponding runs. If [!INCLUDE [product-name](../../includes/product-name.md)] Autologging is enabled, the corresponding metrics and parameters are automatically captured.
 
     ```python
     import mlflow
