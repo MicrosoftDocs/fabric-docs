@@ -5,7 +5,7 @@ ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
@@ -19,8 +19,7 @@ The R ecosystem offers multiple graphing libraries that come packed with many di
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md
-)]
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
 
 ## ggplot2
 

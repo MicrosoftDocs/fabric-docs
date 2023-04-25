@@ -4,6 +4,6 @@ description: Include file for the data science product name. This include file w
 author: msakande
 ms.author: mopeakande
 ms.topic: include
-ms.date: 04/14/2023
+ms.date: 05/23/2023
 ---
 Synapse Data Science

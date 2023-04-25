@@ -4,7 +4,7 @@ description: Learn more about querying the SQL Endpoint of the Lakehouse in Micr
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
 ---
 
@@ -14,10 +14,10 @@ ms.topic: conceptual
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Currently, delta tables in the [Lakehouse](../data-engineering/lakehouse-overview.md) are automatically added to the default Power BI dataset. The default Power BI dataset is queried via the [SQL Endpoint of the Lakehouse](lakehouse-sql-endpoint.md) and updated via changes to the Lakehouse. You can also query the default Power BI dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-sql-query) from a [Synapse Data Warehouse](warehouse.md).
+Currently, delta tables in the [Lakehouse](../data-engineering/lakehouse-overview.md) are automatically added to the default Power BI dataset. The default Power BI dataset is queried via the [SQL Endpoint of the Lakehouse](data-warehousing.md#sql-endpoint-of-the-lakehouse) and updated via changes to the Lakehouse. You can also query the default Power BI dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-sql-query) from a [Synapse Data Warehouse](data-warehousing.md#).
 
 - [OneLake](../onelake/onelake-overview.md) is a single, unified, logical data lake for the whole organization. OneLake is the OneDrive for data. OneLake can contain multiple workspaces, for example, along your organizational divisions.
-- Every Lakehouse has one [SQL Endpoint](lakehouse-sql-endpoint.md) and each workspace can have more than one Lakehouse.
+- Every Lakehouse has one [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) and each workspace can have more than one Lakehouse.
 - Every delta table from a Lakehouse is represented as one table. Data should be in delta format.
 - The [default Power BI dataset](datasets.md) follows the naming convention of the Lakehouse.
 
@@ -33,5 +33,5 @@ Currently, delta tables in the [Lakehouse](../data-engineering/lakehouse-overvie
 ## Next steps
 
 - [Connectivity](connectivity.md)
-- [SQL Endpoint of the Lakehouse](lakehouse-sql-endpoint.md)
+- [SQL Endpoint of the Lakehouse](data-warehousing.md#sql-endpoint-of-the-lakehouse)
 - [Query the Synapse Data Warehouse](query-warehouse.md)

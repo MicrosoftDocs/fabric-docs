@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: quickstart
-ms.date: 03/02/2023
+ms.date: 05/23/2023
 ---
 
 # Quickstart: Create your first pipeline to copy data
@@ -21,7 +21,7 @@ In this tutorial, you build a data pipeline to move a Sample dataset to the Lake
 To get started, you must complete the following prerequisites:
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. Create an account for free.
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a Project Trident enabled Workspace.pdf (sharepoint.com)](../placeholder.md).
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 
 ## Create a data pipeline
 

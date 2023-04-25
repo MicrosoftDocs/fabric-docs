@@ -128,7 +128,7 @@ avocado2 %>%
   scale_y_continuous(lim = c(0, 3), breaks = seq(0, 3, 0.5))
 ```
 
-![Screenshot of non-organic price in houston](./media/r-avocado/non-organic-avocado.png)
+![Graph of non-organic price in Houston.](./media/r-avocado/non-organic-avocado.png)
 
 
 ```R
@@ -153,7 +153,7 @@ autoplot(conv_houston_ts) +
   geom_path(colour = "brown")
 ```
 
-![Screenshot of avocado price in houston](./media/r-avocado/non-organic-avocado-houston.png)
+![Graph of avocado price in Houston.](./media/r-avocado/non-organic-avocado-houston.png)
 
 
 ## Train a machine learning model
@@ -171,7 +171,7 @@ conv_houston_ts_arima <- auto.arima(conv_houston_ts,
 checkresiduals(conv_houston_ts_arima)
 ```
 
-![Screenshot of residuals](./media/r-avocado/residuals.png)
+![Graph of residuals.](./media/r-avocado/residuals.png)
 
 
 ```R
@@ -181,7 +181,7 @@ autoplot(conv_houston_ts_arima_fc) + labs(subtitle = "Prediction of weekly price
        y = "$") +
   geom_hline(yintercept = 2.5, linetype = 2, colour = "blue")
 ```
-![Screenshot of forecasts from arima](./media/r-avocado/forecast.png)
+![Graph of forecasts from arima.](./media/r-avocado/forecast.png)
 
 
 
