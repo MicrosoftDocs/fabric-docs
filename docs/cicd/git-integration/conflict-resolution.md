@@ -17,12 +17,12 @@ A conflict occurs when changes are made *to the same item* in both the workspace
 
 You have two options:
 
-- Revert either the workspace or the git repository to a previous synced state OR
+- Revert either the workspace or the git repository to a previous synced state or
 - Resolve the conflict in git.
 
 ## Revert to a previous synced state
 
-If you revert to a previous synced state, you lose the changes made after that sync. If you revert the git branch to a previous synced branch, you can still see the changes made to the unsynced branch, If you revert the workspace, the changes are lost completely.
+If you revert to a previous synced state, you lose the changes made after that sync. If you revert the git branch to a previous synced branch, you can still see the changes made to the unsynced branch. If you revert the workspace, the changes are lost completely.
 
 Use the undo command in the workspace to revert to last synced state.
 To revert to the prior synced state, do one of the following steps:
