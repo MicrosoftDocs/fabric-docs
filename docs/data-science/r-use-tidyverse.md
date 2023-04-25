@@ -23,7 +23,6 @@ ms.search.form: R Language
 
 [!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
 
-* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
 ## Load `tidyverse`
 
