@@ -51,5 +51,5 @@ It usually takes approximately 10 seconds to provision a new warehouse. Once ini
 ## Next steps
 
 - [Warehouse settings and context menus](settings-context-menus.md)
-- [Create tables in Synapse Data Warehouse using SQL Server Management Studio (SSMS)](create-table.md)
+- [Create tables in Synapse Data Warehouse](create-table.md)
 - [Tables in Synapse Data Warehouse](tables.md)
