@@ -1,20 +1,20 @@
 ---
-title: Azure SQL database connector for dataflows
-description: This article details how to use the Azure SQL database connector for [!INCLUDE [product-name](../includes/product-name.md)] Data Factory in dataflows.
+title: Connect to an Azure SQL database connector in dataflows
+description: This article details how to connect to an Azure SQL database in dataflows for Data Factory in Microsoft Fabric.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 4/12/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
-# Azure SQL database in dataflows
+# Connect to an Azure SQL database in dataflows
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
-You can connect to Azure SQL databases in Dataflow Gen2 using the Azure SQL database connector provided by Data Factory in Microsoft Fabric.
+You can connect to Azure SQL databases in Dataflow Gen2 using the Azure SQL database connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Connect to an Azure SQL database
 
@@ -54,6 +54,5 @@ For more advanced information about connecting to your data using the Azure SQL 
 
 ## Next steps
 
-[How to create an Azure SQL database connection](connector-azure-sql-database.md)
-
-[How to configure Azure SQL database in a copy activity](connector-azure-sql-database-copy-activity.md)
+- [How to create an Azure SQL database connection](connector-azure-sql-database.md)
+- [How to configure Azure SQL database in a copy activity](connector-azure-sql-database-copy-activity.md)
