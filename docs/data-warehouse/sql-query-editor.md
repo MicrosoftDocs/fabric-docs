@@ -4,7 +4,7 @@ description: Learn how to use the SQL Query editor.
 author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Query Editor
 ---

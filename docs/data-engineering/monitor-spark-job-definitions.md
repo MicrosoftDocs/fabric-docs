@@ -4,7 +4,7 @@ description: Learn how to monitor the progress and status of a running Spark job
 author: jejiang
 ms.author: jejiang
 ms.topic: overview 
-ms.date: 02/25/2023
+ms.date: 05/23/2023
 ms.custom: template-howto
 ms.search.form: Monitor Spark job definitions
 ---

@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
-ms.date: 04/17/2023
+ms.date: 05/23/2023
 ms.search.form: Lakehouse Spark Structured Streaming
 ---
 

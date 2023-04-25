@@ -4,7 +4,7 @@ description: Follow steps to hide warehouse elements from downstream reporting i
 author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ---
 
