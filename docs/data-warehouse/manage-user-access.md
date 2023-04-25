@@ -4,7 +4,7 @@ description: Follow steps to manage user access to data warehousing within a wor
 author: kedodd
 ms.author: kedodd
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: quickstart
 ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 ---

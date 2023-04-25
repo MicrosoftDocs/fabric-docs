@@ -5,7 +5,7 @@ author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf
 ms.topic: how-to
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 ---
 
@@ -15,7 +15,7 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article provides a how-to on connecting to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](lakehouse-sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
+This article provides a how-to on connecting to your [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
 
 To get started, you must complete the following prerequisites:
 

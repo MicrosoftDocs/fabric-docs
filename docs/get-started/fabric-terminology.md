@@ -5,7 +5,7 @@ ms.reviewer: sngun
 ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
-ms.date: 04/10/2023
+ms.date: 05/23/2023
 ---
 
 # Microsoft Fabric terminology
