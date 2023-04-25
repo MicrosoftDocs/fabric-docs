@@ -52,6 +52,8 @@ items:
   items:
   - name: Visualize data in a Power BI report
     href: create-powerbi-report.md
+  - name: Use data from KQL Databases in Power BI
+    href: power-bi-connector.md
 - name: Event streams
   items:
   - name: Introduction to event streams
