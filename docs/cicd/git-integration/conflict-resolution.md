@@ -11,7 +11,7 @@ ms.custom:
 
 # Conflict resolution
 
-A conflict occurs when there are uncommitted changes in the workspace and incoming changes from the git repository on the same item. When a conflict occurs, both **Commit** and **Update** are disabled.
+A conflict occurs when changes are made *to the same item* in both the workspace and the remote git repository. When a conflict occurs, both **Commit** and **Update** are disabled until the conflict is resolved.
 
 You have two options:
 
@@ -20,7 +20,7 @@ You have two options:
 
 ## Revert to a previous synced state
 
-If you revert to a previous synced state, you lose the changes made in one of the locations. Use the undo command in the workspace to revert to last synced state.
+If you revert to a previous synced state, you lose the changes made in one of the locations. If you revert the git branch, Use the undo command in the workspace to revert to last synced state.
 To revert to the prior synced state, do one of the following steps:
 
 - Return the workspace to the last synced state by using the [Undo](./git-get-started.md#commit-changes-to-git) command.
