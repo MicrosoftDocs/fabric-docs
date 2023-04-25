@@ -15,17 +15,6 @@ ms.search.form: Model view
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Access the default Power BI dataset
-
-To access default Power BI datasets, go to your workspace, and find the dataset that matches the name of the desired Lakehouse. The default Power BI dataset follows the naming convention of the Lakehouse.
-
-:::image type="content" source="media\data-modeling-defining-relationships\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\data-modeling-defining-relationships\find-dataset.png":::
-
-To load the dataset, select the name of the dataset.
-
-:::image type="content" source="media\data-modeling-defining-relationships\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\data-modeling-defining-relationships\load-dataset.png":::
-
-
 ## Data modeling
 
 The default Power BI dataset inherits all relationships between entities defined in the model view and infers them as Power BI dataset relationships, when objects are enabled for BI (Power BI Reports). Inheriting the warehouse's business logic allows a warehouse developer or BI analyst to decrease the time to value towards building a useful semantic model and metrics layer for analytical business intelligence (BI) reports in Power BI, Excel, or external tools like Tableau that read the XMLA format.
@@ -44,9 +33,6 @@ The following table provides a description of the properties available when usin
 | **RelyOnReferentialIntegrity** | A boolean value that indicates whether the relationship can rely on referential integrity or not. |
 | **CrossFilteringBehavior** | Indicates how relationships influence filtering of data and is Power BI specific. The possible values are: 1 - OneDirection, 2 - BothDirections, and 3 - Automatic. |
 
-## Using model view layouts
-
-During the session, users may create multiple tabs in the model view to depict say, data warehouse schemas or further assist with database design. Currently the model view layouts are only persisted in session. However the database changes are persisted. Users can use the auto-layout whenever a new tab is created to visually inspect the database design and understand the modeling.
 
 ## Adding or removing objects to the default Power BI dataset
 
@@ -75,9 +61,46 @@ To remove objects, a user can use the manually select button in the ribbon and:
 > [!TIP]
 > We recommend reviewing the objects enabled for BI and ensuring they have the correct logical relationships to ensure a smooth downstream reporting experience.
 
+## Using model view layouts
+
+During the session, users may create multiple tabs in the model view to depict say, data warehouse schemas or further assist with database design. Currently the model view layouts are only persisted in session. However the database changes are persisted. Users can use the auto-layout whenever a new tab is created to visually inspect the database design and understand the modeling.
+
+## Create a measure
+
+A [measure](/power-bi/transform-model/desktop-measures) is a collection of standardized metrics. Similar to Power BI Desktop, the DAX editing experience in warehouse presents a rich editor complete with auto-complete for formulas (IntelliSense). The DAX editor enables you to easily develop measures right in warehouse, making it a more effective single source for business logic, semantics, and business critical calculations.
+
+1. To create a measure, select the table in the **Table Explorer** and select the **New Measure** button in the ribbon, as shown in the following image.
+
+    :::image type="content" source="media\create-measure\table-explorer-ribbon.png" alt-text="Screenshot showing the table explorer and where the new measure button appears on the ribbon." lightbox="media\create-measure\table-explorer-ribbon.png":::
+
+1. Enter the measure into the formula bar and specify the table and the column to which it applies. The formula bar lets you enter your measure.
+
+1. You can expand the table to find the measure in the table.
+
+## Hide elements from downstream reporting
+
+You can hide elements of your warehouse from downstream reporting by selecting **Data view** and right-clicking on the column or table you want to hide. 
+
+Select **Hide** in **Report view** from the menu that appears to hide the item from downstream reporting.
+
+:::image type="content" source="media\hide-elements-downstream-reporting\hide-report-view-menu.png" alt-text="Screenshot showing where to find the hide option in the context menu." lightbox="media\hide-elements-downstream-reporting\hide-report-view-menu.png":::
+
+You can also hide the entire table and individual columns by using the **Model view** canvas options, as shown in the following image.
+
+:::image type="content" source="media\hide-elements-downstream-reporting\model-view-canvas.png" alt-text="Screenshot showing the model view canvas options." lightbox="media\hide-elements-downstream-reporting\model-view-canvas.png":::
+
+## Access the default Power BI dataset
+
+To access default Power BI datasets, go to your workspace, and find the dataset that matches the name of the desired Lakehouse. The default Power BI dataset follows the naming convention of the Lakehouse.
+
+:::image type="content" source="media\data-modeling-defining-relationships\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\data-modeling-defining-relationships\find-dataset.png":::
+
+To load the dataset, select the name of the dataset.
+
+:::image type="content" source="media\data-modeling-defining-relationships\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\data-modeling-defining-relationships\load-dataset.png":::
+
 ## Next steps
 
-- [Create a measure](create-measure.md)
 - [Define relationships in data models](model-default-power-bi-dataset.md)
 - [Create reports in the Power BI service](reports-power-bi-service.md)
 - [Power BI admin center](../admin/admin-power-bi.md)
