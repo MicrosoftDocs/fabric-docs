@@ -25,7 +25,7 @@ items:
   items:
   - name: Roles and permissions
     href: models-experiments-rbac.md
-  - name: Lineage for data science
+  - name: Lineage for models and experiments
     href: data-science-lineage.md
 - name: Preparing data 
   items:
