@@ -31,9 +31,9 @@ highlightedContent:
       itemType: get-started
       url: placeholder.md
     # Card
-    - title: Enable Fabric and create resources
+    - title: Enable Fabric for your organization
       itemType: quickstart
-      url: placeholder.md
+      url: /admin/admin-switch.md
     # Card
     - title: End-to-end tutorials
       itemType: tutorial
