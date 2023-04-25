@@ -1,14 +1,14 @@
 ---
 title: Create, train, and evaluate an uplift model
-description: AI sample for creating, training, and evaluating an uplift model.
+description: Review this notebook to learn how to create, train, and evaluate uplift models and apply uplift modeling technique.
 ms.reviewer: larryfr
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
-ms.date: 02/10/2023
+ms.date: 05/23/2023
 ---
 
-# Creating, training and evaluating uplift models
+# Creating, training, and evaluating uplift models in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
