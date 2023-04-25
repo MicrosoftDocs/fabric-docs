@@ -15,7 +15,7 @@ ms.topic: how-to
 
 To get started with this tutorial, check the following prerequisites:
 
-- You should have access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](lakehouse-sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) within a premium per capacity workspace with contributor or above permissions.
+- You should have access to a [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] within a premium per capacity workspace with contributor or above permissions.
 - Connect to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] via T-SQL connection string. For more information, see [Connectivity](connectivity.md).
 - Choose your querying tool. This article provides examples in SQL Server Management Studio (SSMS), but you can use any T-SQL querying tool.
     - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
@@ -24,7 +24,7 @@ To get started with this tutorial, check the following prerequisites:
     - Use the [Query using the Visual Query editor](visual-query-editor.md).
 
 > [!NOTE]
-> Review the [T-SQL surface area](warehouse.md#t-sql-surface-area) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+> Review the [T-SQL surface area](tsql-surface-area.md) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Run a new query on a connection in SSMS
 
@@ -91,9 +91,9 @@ There are several ways you can write cross-database queries within the same [!IN
 
    :::image type="content" source="media\query-warehouse-sql-server-management-studio\execute-button.png" alt-text="Screenshot showing where to find the Execute button." lightbox="media\query-warehouse-sql-server-management-studio\execute-button.png":::
 
-## Known limitations
+## Limitations
 
-- At this time, there's limited T-SQL functionality. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
+- At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
 
 ## Next steps
 

@@ -18,7 +18,11 @@ In this notebook, we demonstrate an end to end example of using R to analyze, vi
 
 ## Prerequisites
 
-Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
+
 
 ## Load libraries
 

@@ -66,8 +66,7 @@ The following table describes the warehouse context menu options:
 
 ## Next steps
 
-- [Synapse Data Warehouse in Microsoft Fabric](warehouse.md)
-- [SQL Endpoint in Microsoft Fabric](lakehouse-sql-endpoint.md)
+- [Synapse Data Warehouse in Microsoft Fabric](data-warehousing.md#synapse-data-warehouse)
 - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
 - [Create reports in the Power BI service](reports-power-bi-service.md)
 - [Power BI admin center](../admin/admin-power-bi.md)
