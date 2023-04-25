@@ -4,7 +4,7 @@ description: Learn how to use the statistics features.
 author: mstehrani
 ms.author: emtehran
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Optimization
 ---

@@ -5,7 +5,7 @@ ms.reviewer: SnehaGunda
 ms.author: sngun
 author: SnehaGunda
 ms.topic: overview
-ms.date: 02/09/2023
+ms.date: 05/23/2023
 ---
 
 # Welcome to Microsoft Fabric docs!

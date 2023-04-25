@@ -5,7 +5,7 @@ author: paulinbar #Required; your GitHub user alias, with correct capitalization
 ms.author: painbar #Required; Microsoft alias of author; optional team alias.
 ms.topic: reliability-article
 ms.custom: subject-reliability, references_regions
-ms.date: 04/19/2023 #Required; mm/dd/yyyy format.
+ms.date: 05/23/2023 #Required; mm/dd/yyyy format.
 ---
 
 <!--#Customer intent: As a < type of user >, I want to understand reliability support for [TODO-service-name] so that I can respond to and/or avoid failures in order to minimize downtime and data loss. -->

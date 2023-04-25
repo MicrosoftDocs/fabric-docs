@@ -5,7 +5,7 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas
 ms.topic: conceptual
-ms.date: 04/24/2023
+ms.date: 05/23/2023
 ms.custom: 
 ---
 
@@ -19,23 +19,29 @@ To create a new workspace, see [Create a workspace](create-workspaces.md).
 
 Everyone in a user group gets the role that you've assigned. If someone is in several user groups, they get the highest level of permission that's provided by the roles that they're assigned. If you nest user groups and assign a role to a group, all the contained users have permissions.
 
-During private preview, users in workspace roles have the following [!INCLUDE [product-name](../includes/product-name.md)] capabilities, in addition to the existing Power BI capabilities associated with these roles.
+Users in workspace roles have the following [!INCLUDE [product-name](../includes/product-name.md)] capabilities, in addition to the existing Power BI capabilities associated with these roles.
 
 ## [!INCLUDE [product-name](../includes/product-name.md)] workspace roles
 
 | Capability   | Admin | Member | Contributor | Viewer|
 |---|---|---|---|---|
-|View and read content of data pipelines, Spark notebooks, Spark job definitions, KQL databases, KQL query sets, and real-time dashboards in a workspace. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false":::|
-|Read files and tables in a Lakehouse via TDS endpoint. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false":::|
-|Read files and tables in a Lakehouse via Spark experiences. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
-|Write or delete data pipelines, Spark notebooks, Spark job definitions, Kusto query sets, real-time dashboards, and schema and data of KQL databases, Lakehouses, and data warehouses. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
-|Execute or cancel execution of Spark notebooks, and KQL query sets. <sup>1</sup> | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |   :::image type="icon" source="../media/yes-icon.svg" border="false":::|
-|View execution output of data pipelines, Spark notebooks, Spark job definitions, and KQL query sets. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
+|View and read content of data pipelines, Spark notebooks, Spark job definitions, ML models and experiments, and Event streams. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false":::|
+|View and read content of KQL databases, KQL query-sets, and real-time dashboards in a workspace. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false":::|
+|Connect to SQL endpoints of Lakehouse and Data warehouse  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false":::|
+|Read Lakehouse and Data warehouse data through SQL endpoint | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false":::|
+|Read Lakehouse and Data warehouse data through OneLake APIs and Spark. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
+|Read Lakehouse data through Lakehouse explorer | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
+|Write or delete data pipelines, Spark notebooks, Spark job definitions, ML models and experiments, and Event streams. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
+|Write or delete KQL query-sets, real-time dashboards, and schema and data of KQL databases, Lakehouses, and Data warehouses. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
+|Execute or cancel execution of Spark notebooks and KQL query-sets. <sup>2</sup> | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |   :::image type="icon" source="../media/yes-icon.svg" border="false":::|
+|View execution output of data pipelines, Spark notebooks, Spark job definitions, and KQL query-sets. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -|
 
-<sup>1</sup> Viewers can't execute Spark job definitions. 
+<sup>1</sup> Viewers can't execute Spark notebooks, Spark job definitions, ML models, and ML experiments by default. They can however be granted artifact level permissions to execute individual artifacts. 
 
 ## Next steps
 
 - [Roles in workspaces in Power BI](/power-bi/collaborate-share/service-new-workspaces.md)
 - [Create workspaces](create-workspaces.md)
 - [Give users access to workspaces](give-access-workspaces.md)
+- [OneLake security](../onelake/onelake-security.md)
+- [Data Warehouse security](../data-warehouse/workspace-roles.md)

@@ -4,7 +4,7 @@ description: Learn about tables in your Synapse Data Warehouse in Microsoft Fabr
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ---
 

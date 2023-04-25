@@ -4,7 +4,7 @@ description: Understand how Microsoft Fabric interacts with git on Azure Repos
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual 
-ms.date: 01/17/2023
+ms.date: 05/23/2023
 ms.custom: 
 ---
 
@@ -35,10 +35,7 @@ The following table describes the permissions needed to perform various common o
 | Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Role=Read  (in target repo/directory/branch) | Read=Allow (in target repo/directory/branch)  |
 | View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 | Read or None                                  |
 | See workspace 'git status'                                           | Contributor                                                                               | Role=Read                                    | Read=Allow                                    |
-| Update from Git                                                      | All of the following                                                                      | Role=Read                                    | Read=Allow                                    |
-|                                                                      | Contributor in the workspace (WRITE permission on all artifacts)                          |                                              |                                               |
-|                                                                      | Owner on the artifact (if applicable, and the tenant switch blocks updates for nonowners) |                                              |                                               |
-|                                                                      | BUILD permission on external dependencies (where applicable)                              |                                              |                                               |
+| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Read   | Read=Allow  |
 
 ## Connect and sync
 
