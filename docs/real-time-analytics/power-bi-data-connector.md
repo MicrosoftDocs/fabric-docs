@@ -1,6 +1,6 @@
 ---
 title: Use data from KQL Databases in Power BI in Real-time Analytics
-description: Learn how to create an empty table.
+description: Learn how to use data from your KQL Database in Power BI.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
