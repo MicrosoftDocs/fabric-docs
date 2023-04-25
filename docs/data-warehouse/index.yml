@@ -26,11 +26,6 @@ landingContent:
         links:
           - text: Overview
             url: data-warehousing.md
-          - text: Synapse Data Warehouse
-            url: warehouse.md
-          - text: SQL Endpoint
-            url: lakehouse-sql-endpoint.md
-
   # Card 
   - title: Get started with Data Warehouse
     linkLists:
@@ -118,6 +113,8 @@ landingContent:
             url: monitor-using-dmv.md 
           - text: Workload Management
             url: workload-management.md            
+          - text: Troubleshoot
+            url: troubleshoot-synapse-data-warehouse.md
   # Card 
   - title: Best practices
     linkLists:
@@ -130,7 +127,5 @@ landingContent:
     linkLists: 
       - linkListType: how-to-guide
         links:
-          - text: Share your Synapse Data Warehouse
-            url: share-warehouse.md
           - text: Get Workspace and OneLake path
             url: get-workspace-onelake-path.md

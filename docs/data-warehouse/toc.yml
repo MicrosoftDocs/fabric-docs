@@ -1,4 +1,6 @@
 items:
+- name: Microsoft Fabric documentation
+  href: ../get-started/microsoft-fabric-overview.md
 - name: Data Warehousing documentation
   href: index.yml
 - name: Overview
@@ -6,10 +8,6 @@ items:
   items: 
   - name: Data warehousing
     href: data-warehousing.md
-  - name: SQL Endpoint
-    href: lakehouse-sql-endpoint.md
-  - name: Synapse Data Warehouse
-    href: warehouse.md
 - name: Quickstarts
   expanded: true
   items: 
@@ -75,16 +73,16 @@ items:
     items:
     - name: Tables
       href: tables.md
+    - name: Data types
+      href: data-types.md
+    - name: T-SQL surface area
+      href: tsql-surface-area.md
     - name: Primary, foreign, and unique keys
       href: table-constraints.md
     - name: Transactions
       href: transactions.md
-  - name: Sharing 
-    items: 
-    - name: Share your Synapse Data Warehouse
-      href: share-warehouse.md
-    - name: Get Workspace and OneLake path
-      href: get-workspace-onelake-path.md
+    - name: Limitations and known issues
+      href: limitations.md      
   - name: Manage and Monitor
     items:
     - name: Warehouse settings and context menus
@@ -97,3 +95,5 @@ items:
       href: workload-management.md
     - name: Troubleshoot Synapse Data Warehouse
       href: troubleshoot-synapse-data-warehouse.md
+    - name: Get Workspace and OneLake path
+      href: get-workspace-onelake-path.md      

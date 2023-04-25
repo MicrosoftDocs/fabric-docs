@@ -1,7 +1,7 @@
 items:
 - name: CI/CD documentation
   href: index.yml
-- name: What is CI/CD? 
+- name: What is lifecycle management? 
   href: cicd-overview.md
 - name: Deployment pipelines
   items:

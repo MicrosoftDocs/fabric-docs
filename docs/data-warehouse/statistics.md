@@ -151,7 +151,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], there are multiple ty
     - Named `ACE-Cardinality`.
     - Contents cannot be viewed and are nonactionable by user.
 
-## Known limitations
+## Limitations
 
 - Only single-column histogram statistics can be manually created and modified.
 - Multi-column statistics creation is not supported.

@@ -37,7 +37,7 @@ The following image shows a sample query created using the no-code Visual Query 
 
 :::image type="content" source="media\visual-query-editor\sample-query-top-customers.png" alt-text="Screenshot of the results of a sample query to retrieve top customers by orders." lightbox="media\visual-query-editor\sample-query-top-customers.png":::
 
-## Known limitations with Visual Query editor
+## Limitations with Visual Query editor
 
 - You can only write DQL (not DDL or DML).
 - You can't currently open a visual query in Microsoft Excel.
