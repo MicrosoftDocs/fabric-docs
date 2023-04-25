@@ -57,15 +57,15 @@ To access the lineage view:
 
 1. Select your Fabric workspace and then navigate to the workspace list.
 
-  :::image type="content" source="media/lineage/artifact-workspace-list-view-data-science.png" alt-text="Image showing workspace list view in Fabric." lightbox="media/lineage/artifact-workspace-list-view-ds.png":::
+  :::image type="content" source="media/lineage/artifact-workspace-list-view-data-science.png" alt-text="Image showing workspace list view in Fabric." lightbox="media/lineage/artifact-workspace-list-view-data-science.png":::
 
 2. Switch from the workspace **List** view to the Workspace **Lineage** view.
 
-  :::image type="content" source="media/lineage/workspace-artifact-lineage-data-science.png" alt-text="Image showing workspace lineage view in Fabric." lightbox="media/lineage/workspace-artifact-lineage-ds.png":::
+  :::image type="content" source="media/lineage/workspace-artifact-lineage-data-science.png" alt-text="Image showing workspace lineage view in Fabric." lightbox="media/lineage/workspace-artifact-lineage-data-science.png":::
 
 3. You can also navigate to **Lineage** view for a specific artifact by opening the related actions.
 
-   :::image type="content" source="media/lineage/artifact-lineage-view-data-science.png" alt-text="Image showing workspace lineage view in Fabric for a given artifact." lightbox="media/lineage/artifact-lineage-view-ds.png":::
+   :::image type="content" source="media/lineage/artifact-lineage-view-data-science.png" alt-text="Image showing workspace lineage view in Fabric for a given artifact." lightbox="media/lineage/artifact-lineage-view-data-science.png":::
 
 ## Next steps
 
