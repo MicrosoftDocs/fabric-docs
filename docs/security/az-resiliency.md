@@ -19,8 +19,8 @@ Azure availability zone-enabled services are designed to provide the right level
 
 Availability zones allow Fabric customers to run critical applications with higher availability and fault tolerance in the event of datacenter failures. Fabric supports zone-redundant availability zones, such that resources replicate across zones automatically, without any customer intervention.
 
-[!Note]
-At Public Preview, Fabric provides partial availability zone support in a limited number of regions. Data Factory, Data Engineering, Data Science, and Event Streams do not support availability zones.
+> [!Note]
+> At Public Preview, Fabric provides partial availability zone support in a limited number of regions. Data Factory, Data Engineering, Data Science, and Event Streams do not support availability zones.
 
 Fabric provides availability zone support in various regions as follows:
 
@@ -64,4 +64,6 @@ During a zone-wide outage, no action is required during zone recovery. The follo
 - Data Warehouses
 - Real-Time Analytics
 
-> [Resiliency in Azure](/azure/availability-zones/overview.md)
+## Next steps
+
+* [Resiliency in Azure](/azure/availability-zones/overview.md)
