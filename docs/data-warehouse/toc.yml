@@ -41,6 +41,8 @@ items:
       href: workspace-roles.md
     - name: Manage user access
       href: manage-user-access.md    
+    - name: Get Workspace and OneLake path
+      href: get-workspace-onelake-path.md      
   - name: Datasets
     items:
     - name: Datasets
@@ -85,12 +87,6 @@ items:
       href: transactions.md
     - name: Limitations and known issues
       href: limitations.md      
-  - name: Sharing 
-    items: 
-    - name: Share your Synapse Data Warehouse
-      href: share-warehouse.md
-    - name: Get Workspace and OneLake path
-      href: get-workspace-onelake-path.md
   - name: Manage and Monitor
     items:
     - name: Warehouse settings and context menus
