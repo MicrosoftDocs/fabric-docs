@@ -18,5 +18,3 @@ ms.search.form: Lakehouse Workspace roles Permissions
 ## Default dataset permissions
 
 ## Next steps
-
-
