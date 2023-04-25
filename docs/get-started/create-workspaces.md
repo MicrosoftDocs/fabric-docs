@@ -10,144 +10,59 @@ ms.custom:
 ---
 # Create a workspace
 
-This article explains how to create *workspaces*, spaces to collaborate with colleagues, in [!INCLUDE [product-name](../includes/product-name.md)]. In workspaces, you create collections of artifacts such as lakehouses, warehouses, and reports. If you want, you can also bundle that collection into an *app* and distribute it to a broader audience. For more background, see the [Workspaces](workspaces.md) article.
+This article explains how to create *workspaces*, spaces to collaborate with colleagues, in [!INCLUDE [product-name](../includes/product-name.md)]. In workspaces, you create collections of items such as lakehouses, warehouses, and reports. For more background, see the [Workspaces](workspaces.md) article.
 
-:::image type="content" source="media/create-workspaces/power-bi-new-workspaces.png" alt-text="Screenshot of a workspace.":::
+:::image type="content" source="media/create-workspaces/fabric-sample-workspace.png" alt-text="Screenshot of a workspace.":::
 
-## Create a workspace
+## Quickly create a workspace
 
-1. Select **Workspaces** > **Create workspace**.
+1. Select **Workspaces** > **New workspace**.
    
-     ![Screenshot of Create workspace.](media/create-workspaces/power-bi-workspace-create.png)
+     ![Screenshot of Create workspace.](media/create-workspaces/fabric-new-workspaces.png)
 
-1. Give the workspace a unique name. If the name isn't available, edit it to come up with a name that's unique.
+2. Give the workspace a unique name. If the name isn't available, edit it to come up with a name that's unique. Select **Apply**.
    
-    When you create an app from the workspace, by default it will have the same name and icon as the workspace. You can change both when you create the app.
-   
-1. Here are some optional settings for your workspace. They're explained in more detail in the [Workspace settings](#workspace-settings) section later in this article:
+     ![Screenshot of Input workspacename.](media/create-workspaces/fabric-quickly-create-workspace.png)
 
-    - Upload a **Workspace image**. Files can be .png or .jpg format. File size has to be less than 45 KB. 
-    - [Specify a Workspace OneDrive](#set-a-workspace-onedrive) to use a Microsoft 365 Group file storage location (provided by SharePoint).    
-    - [Add a Contact list](#create-a-contact-list), the names of people to contact for information about the workspace. By default, the workspace admins are the contacts.
-    - [Allow contributors to update the app](#allow-contributors-to-update-the-app) for the workspace
-    - [Assign the workspace to a Premium capacity](#premium-capacity-settings).
-    - Connect the workspace to an Azure Data Lake Gen2 storage account (in preview). Read about this functionality in the article [Configuring dataflow storage to use Azure Data Lake Gen 2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration#connect-to-an-azure-data-lake-gen-2-at-a-workspace-level).
 
-1. Select **Save**.
+3. [!INCLUDE [product-name](../includes/product-name.md)] creates the workspace and opens it. You see it in the list of workspaces where you can find all the workspaces you have access to.
 
-    [!INCLUDE [product-name](../includes/product-name.md)] creates the workspace and opens it. You see it in the list of workspaces you’re a member of.
+![Screenshot of Find workspace in workspace flyout.](media/create-workspaces/fabric-workspace-in-flyout.png)
 
-## Workspace settings
 
-To see these workspace settings, expand **Advanced** in the **Settings** pane.
+## Optional and advanced settings
+Here are some optional and advanced settings for your workspace. They're explained in more detail in this section.
 
-### Create a contact list
+- **Description:** Add a description to provide more details about this workspace.
+- **Workspace image:** Upload a Workspace image by selecting the upload button. Files can be .png or .jpg format. File size has to be less than 45 KB.
+- **Domain (Preview):** Assign your workspace to a domain.
+  
+Expand **Advanced** and you see advanced setting options:
 
-You can specify which users receive notification about issues occurring in the workspace. By default, any user or group specified as a workspace admin is notified, but you can add others to the *contact list*. Users or groups in the contact list are listed in the user interface (UI) to help users get help related to the workspace.
+**Contact list**
 
-1. Access the **Contact list** setting in one of two ways:
+Contact list is a place where you can put the names of people as contacts for information about the workspace. Accordingly, people in this contact list receive system email notifications for workspace level changes. 
 
-    In the **Create a workspace** pane when you first create it.
+By default, the first workspace admin who created the workspace is the contact. You can add other users or groups according to your needs. Enter the name in the input box directly, it helps you to automatically search and match users or groups in your org.
 
-    In the nav pane, select the arrow next to **Workspaces**, select **More options** (...) next to the workspace name > **Workspace settings**. The **Settings** pane opens.
+![Screenshot of Find workspace in workspace flyout.](media/create-workspaces/fabric-contact-list.png)
 
-    ![Screenshot of Workspace settings.](media/create-workspaces/power-bi-workspace-new-settings.png)
+**License mode**
 
-1. Under **Advanced**, **Contact list**, accept the default, **Workspace admins**, or add your own list of **Specific users or groups**. 
+Different license mode provides different sets of feature for your workspace. After the creation, you can still change the workspace license type in workspace settings, but some migration effort is needed. 
 
-    ![Screenshot of Workspace contacts.](media/create-workspaces/power-bi-workspace-contacts.png)
+**Default storage format**
 
-1. Select **Save**.
+Power BI datasets can store data in a highly compressed in-memory cache for optimized query performance, enabling fast user interactivity. With Premium capacities, large datasets beyond the default limit can be enabled with the Large dataset storage format setting. When enabled, dataset size is limited by the Premium capacity size or the maximum size set by the administrator. Learn more about large dataset storage format [here](https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-large-models#enable-large-models).
 
-### Set a workspace OneDrive
+**Template apps** 
+  
+[Power BI Template apps](https://learn.microsoft.com/en-us/power-bi/connect-data/service-template-apps-overview) are developed for sharing outside your organization. If you check this option, a special type of workspace (template app workspace) will be created and it is not possible to revert it back to a normal workspace after creation.
+  
+**Dataflow storage(preview)** 
 
-The Workspace OneDrive feature allows you to configure a Microsoft 365 Group whose SharePoint document library is available to workspace users. You create the Group *outside* of [!INCLUDE [product-name](../includes/product-name.md)] first, with one available method being from OneDrive. Read about creating a [OneDrive shared library](https://support.microsoft.com/office/create-a-new-shared-library-from-onedrive-for-work-or-school-345c8599-05d8-4bf8-9355-2b5cfabe04d0).
+Data used with Power BI is stored in internal storage provided by Power BI by default. With the integration of dataflows and Azure Data Lake Storage Gen 2 (ADLS Gen2), you can store your dataflows in your organization's Azure Data Lake Storage Gen2 account. Learn more [here](https://learn.microsoft.com/en-us/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration#considerations-and-limitations).
 
-> [!NOTE]
-> It's important to note that the creation of Microsoft 365 Groups may be restricted in your environment, and/or the ability to create them from your OneDrive site may be disabled. If this is the case, speak with your IT department.
-
-[!INCLUDE [product-name](../includes/product-name.md)] doesn't synchronize permissions between users or groups with workspace access, and users or groups with Microsoft 365 Group membership. A best practice is to give [access to the workspace](give-access-workspaces.md) to the same Microsoft 365 Group whose file storage you configured. Then manage workspace access by managing membership of the Microsoft 365 Group.
-
-1. Access the **Workspace OneDrive** setting in one of two ways:
-
-    In the **Create a workspace** pane when you first create it.
-
-    In the nav pane, select the arrow next to **Workspaces**, select **More options** (...) next to the workspace name > **Workspace settings**. The **Settings** pane opens.
-
-    ![Screenshot of Workspace settings.](media/create-workspaces/power-bi-workspace-new-settings.png)
-
-1. Under **Advanced** > **Workspace OneDrive**, type the name of the Microsoft 365 group that you created earlier. Type just the name, not the URL. [!INCLUDE [product-name](../includes/product-name.md)] automatically picks up the OneDrive for the group.
-
-    ![Screenshot of Specify a OneDrive location.](media/create-workspaces/power-bi-new-workspace-onedrive.png)
-
-1. Select **Save**.
-
-**Access the workspace OneDrive location**
-
-After you've configured the OneDrive location, you get to it in the same way you get to other data sources in the [!INCLUDE [product-name](../includes/product-name.md)] service.
-
-1. In the nav pane, select **Get Data**, then in the **Files** box select **Get**.
-
-    ![Screenshot of Get data, get files.](media/create-workspaces/power-bi-get-data-files.png)
-
-    [!INCLUDE [product-name](../includes/product-name.md)] should automatically detect the workspace OneDrive, so it appears as **OneDrive - WORKSPACE_NAME"**. It may take some time for the workspace OneDrive to appear on the **Get data** page after you've configured it.
-
-1. Select the workspace OneDrive, for example, **OneDrive - Sales and Marketing**.
-
-1. Navigate to the folder containing your [!INCLUDE [product-name](../includes/product-name.md)] files. Select the file, then select **Connect**.
-
-1. If [!INCLUDE [product-name](../includes/product-name.md)] doesn't automatically detect the workspace OneDrive, on the **Get data** page, select **SharePoint - Team Sites**.
-
-    ![Screenshot of SharePoint - Team Sites, get data.](media/create-workspaces/workspace-get-data-sharepoint-team-sites.png)
-
-1. Type the URL of the shared library you created earlier, or select **Connect** to see the content available to you.
-
-    :::image type="content" source="media/create-workspaces/workspace-sharepoint-site-url.png" alt-text="Screenshot of Type the URL of the shared library you created earlier, or select Connect.":::
-
-1. Navigate to the folder containing your [!INCLUDE [product-name](../includes/product-name.md)] files.
-
-    :::image type="content" source="media/create-workspaces/sharepoint-team-sites-content.png" alt-text="Screenshot of folders in SharePoint - Team Sites.":::
-
-### Allow contributors to update the app
-
-You can create and publish *apps* from a workspace. Each workspace can hold the content for an associated *app*, a collection of dashboards, reports, and datasets which you can distribute to others in your organization. Read more about [publishing apps from workspaces](/power-bi/collaborate-share/service-create-distribute-apps).
-
-By default, only workspace Admins and Members can create, publish and update the app for the workspace. The **Allow contributors to update the app for this workspace** setting lets workspace Admins delegate the ability to update the app for the workspace to users with the workspace Contributor role. Read more about the different [roles in workspaces](roles-workspaces.md).
-
-1. Access the **Allow contributors to update the app** setting in one of two ways:
-
-    In the **Create a workspace** pane when you first create it.
-
-    In the nav pane, select the arrow next to **Workspaces**, select **More options** (...) next to the workspace name > **Workspace settings**. The **Settings** pane opens.
-
-    ![Screenshot of Workspace settings.](media/create-workspaces/power-bi-workspace-new-settings.png)
-1. Under **Advanced**, expand **Security settings**. Select **Allow contributors to update the app for this workspace**. 
-
-When enabled, contributors can:
-* Update app metadata like name, icon, description, support site, and color.
-* Add or remove items included in the app, like adding reports or datasets.
-* Change the visibility of the items for all the audience groups in the audience tab.
-
-However, contributors can't:
-* Create or publish the app for the first time.
-* Add users to the app or change who has permission to the app.
-* Enable or disable automatic installation of app for app users.
-* Enable or disable advance settings under Manage audience access pane. These settings include share and build permissions for the datasets in the audience groups.
-* Allow or prevent app consumers saving a copy of reports included in the app.  
-
-## Premium capacity settings
-
-On the **Premium** tab in the **Settings** pane, you can choose settings related to Premium capacities.
-
-1. Set **Premium capacity** to **On**.
-
-    ![Screenshot of Premium capacity On.](media/create-workspaces/power-bi-workspace-premium.png)
-
-1. Choose either Premium capacity or **Premium Per User**. Read more about [Premium Per User](/power-bi/enterprise/service-premium-per-user-faq.yml).
-
-    :::image type="content" source="media/create-workspaces/power-bi-workspace-premium-per-user.png" alt-text="Screenshot of Choose Premium or Premium Per User.":::
-
-1. Choose **Default storage limit**. Read more about [enabling large datasets](/power-bi/enterprise/service-premium-large-models#enable-large-datasets).
 
 ## Give users access to your workspace
 
@@ -175,5 +90,3 @@ Quickly access your favorite workspaces by pinning them to the top of the worksp
 
 ## Next steps
 * Read about [workspaces](workspaces.md)
-* [Publish an app from a workspace](/power-bi/collaborate-share/service-create-distribute-apps)
-
