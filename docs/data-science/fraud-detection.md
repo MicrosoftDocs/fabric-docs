@@ -8,23 +8,44 @@ ms.topic: tutorial
 ms.date: 05/23/2023
 ---
 
-# Creating, evaluating, and deploying a fraud detection model in Microsoft Fabric
+# Create, evaluate, and deploy a fraud detection model in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this notebook, we'll demonstrate data engineering and data science work flow with an e2e sample. The scenario is to build a model for detecting fraud credit card transactions.
+In this tutorial, we'll demonstrate data engineering and data science workflows with an end-to-end example that builds a model for detecting fraudulent credit card transactions. The steps you'll take are:
+
+> [!div class="checklist"]
+> * Step 1
+> * step 2
+> * step 3
+
+
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
+- Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
+- Open the sample notebook or create a new notebook.
+    - Create [a new notebook](/fabric/data-engineering/how-to-use-notebook) if you want to copy/paste code into cells.
+    - Or, Select **Use a sample** > **Fraud detection** to open the sample notebook.
+- [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
 ## Step 1: Load the data
 
-The dataset contains transactions made by credit cards in September 2013 by European cardholders.
+The dataset contains credit card transactions made by European cardholders in September 2013 over the course of two days. Out of 284,807 transactions, 492 are fraudulent. The positive class (fraud) accounts for a mere 0.172% of the data, thereby making the dataset highly unbalanced.
 
-This dataset presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. The dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions.
+### Input and response variables
 
-It contains only numerical input variables, which are the result of a PCA transformation. Unfortunately, due to confidentiality issues, we can't provide the original features and more background information about the data. Features V1, V2, … V28 are the principal components obtained with PCA, the only features that haven't been transformed with PCA are 'Time' and 'Amount'. Feature 'Time' contains the seconds elapsed between each transaction and the first transaction in the dataset. The feature 'Amount' is the transaction Amount, this feature can be used for example-dependent cost-sensitive learning. Feature 'Class' is the response variable, and it takes value 1 in case of fraud and 0 otherwise.
+The dataset contains only numerical input variables, which are the result of a Principal Component Analysis (PCA) transformation on the original features. To protect confidentiality, we can't provide the original features or additional background information about the data. The only features that haven't been transformed with PCA are "Time" and "Amount".
 
-Given the class imbalance ratio, we recommend measuring the accuracy using the Area Under the Precision-Recall Curve (AUPRC). Confusion matrix accuracy isn't meaningful for unbalanced classification.
+- Features _V1, V2, … V28_ are the principal components obtained with PCA.
+- _Time_ contains the seconds elapsed between each transaction and the first transaction in the dataset.
+- _Amount_ is the transaction amount. This feature can be used for example-dependent cost-sensitive learning.
+- _Class_ is the response variable, and it takes the value `1` for fraud and `0` otherwise.
 
-- creditcard.csv
+Given the class imbalance ratio, we recommend measuring the accuracy using the Area Under the Precision-Recall Curve (AUPRC). Using a confusion matrix to evaluate accuracy isn't meaningful for unbalanced classification.
+
+The following is a snippet of the _creditcard.csv_ data
 
 | "Time" | "V1" | "V2" | "V3" | "V4" | "V5" | "V6" | "V7" | "V8" | "V9" | "V10" | "V11" | "V12" | "V13" | "V14" | "V15" | "V16" | "V17" | "V18" | "V19" | "V20" | "V21" | "V22" | "V23" | "V24" | "V25" | "V26" | "V27" | "V28" | "Amount" | "Class" |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -33,14 +54,14 @@ Given the class imbalance ratio, we recommend measuring the accuracy using the A
 
 ### Install libraries
 
-In this notebook, we'll use `imblearn` that first needs to be installed. The PySpark kernel will be restarted after `%pip install`, thus we need to install it before we run any other cells.
+For this tutorial, we need to install the `imblearn` library. The PySpark kernel will be restarted after running `%pip install`, thus we need to install the library before we run any other cells.
 
 ```shell
 # install imblearn for SMOTE
 %pip install imblearn
 ```
 
-**By defining below parameters, we can apply this notebook on different datasets easily.**
+By defining the following parameters, we can apply the notebook on different datasets easily.
 
 ```python
 IS_CUSTOM_DATA = False  # if True, dataset has to be uploaded manually
@@ -55,9 +76,9 @@ DATA_FILE = "creditcard.csv"  # data file name
 EXPERIMENT_NAME = "aisample-fraud"  # mlflow experiment name
 ```
 
-### Download dataset and upload to Lakehouse
+### Download the dataset and upload to a Lakehouse
 
-**Please add a Lakehouse to the notebook before running it.**
+Before running the notebook, you must add a Lakehouse to it. The Lakehouse is used to store the data for this example. To add a Lakehouse, see [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
 ```python
 if not IS_CUSTOM_DATA:
@@ -87,7 +108,7 @@ import time
 ts = time.time()
 ```
 
-### Read data from Lakehouse
+### Read data from the Lakehouse
 
 ```python
 df = (
@@ -99,15 +120,19 @@ df = (
 )
 ```
 
-## Step 2. Exploratory data analysis
+## Step 2. Perform exploratory data analysis
+
+In this section, we'll explore the data, check its schema, reorder its columns, and cast the columns into the correct data types.
 
 ### Display raw data
 
-We can explore the raw data with `display`, do some basic statistics or even show chart views.
+We can use `display` to explore the raw data, calculate some basic statistics, or even show chart views.
 
 ```python
 display(df)
 ```
+
+Print some information about the data, such as the schema.
 
 ```python
 # print dataset basic info
@@ -133,13 +158,13 @@ if IS_SAMPLE:
     df = df.limit(SAMPLE_ROWS)
 ```
 
-## Step 3. Model development and deploy
+## Step 3. Develop and deploy a model
 
-So far, we've explored the dataset, checked the scheme, adjusted the columns order, and casted the columns into correct types.
-
-Next, we'll train a lightgbm model to classify fraud transactions.
+In this section, we'll train a LightGBM model to classify fraudulent transactions.
 
 ### Prepare training and testing data
+
+Begin by splitting the data into training and testing sets.
 
 ```python
 # Split the dataset into train and test
@@ -156,7 +181,7 @@ train_data = featurizer.transform(train)[TARGET_COL, "features"]
 test_data = featurizer.transform(test)[TARGET_COL, "features"]
 ```
 
-### Check data volume and imbalance
+Check the data volume and imbalance in the training set.
 
 ```python
 display(train_data.groupBy(TARGET_COL).count())
@@ -164,11 +189,15 @@ display(train_data.groupBy(TARGET_COL).count())
 
 ### Handle imbalanced data
 
-We'll apply [SMOTE](https://arxiv.org/abs/1106.1813) (Synthetic Minority Over-sampling Technique) to automatically handle imbalance data. A dataset is imbalanced if the classification categories aren't approximately equally represented. Often real-world data sets are predominately composed of "normal" examples with only a small percentage of "abnormal" or "interesting" examples. It's also the case that the cost of misclassifying an abnormal (interesting) example as a normal example is often much higher than the cost of the reverse error. Under-sampling of the majority (normal) class has been proposed as a good means of increasing the sensitivity of a classifier to the minority class. This paper shows that a combination of our method of over-sampling the minority (abnormal) class and under-sampling the majority (normal) class can achieve better classifier performance (in ROC space) than only under-sampling the majority class.
+We'll apply (Synthetic Minority Over-sampling Technique) SMOTE to automatically handle imbalance in the data. According to [Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). SMOTE: synthetic minority over-sampling technique. Journal of artificial intelligence research, 16, 321-357](https://arxiv.org/abs/1106.1813):
 
-#### Apply SMOTE for new train_data
+    A dataset is imbalanced if the classification categories aren't approximately equally represented. Often real-world data sets are predominately composed of "normal" examples with only a small percentage of "abnormal" or "interesting" examples. It's also the case that the cost of misclassifying an abnormal (interesting) example as a normal example is often much higher than the cost of the reverse error. Under-sampling of the majority (normal) class has been proposed as a good means of increasing the sensitivity of a classifier to the minority class. This paper shows that a combination of our method of over-sampling the minority (abnormal) class and under-sampling the majority (normal) class can achieve better classifier performance (in ROC space) than only under-sampling the majority class. (p. 321)
 
-imblearn only works for pandas dataframe, not pyspark dataframe.
+
+Let's apply SMOTE to the training data:
+
+> [!NOTE]
+> `imblearn` only works for pandas DataFrames, not PySpark DataFrames.
 
 ```python
 from pyspark.ml.functions import vector_to_array, array_to_vector
@@ -198,9 +227,7 @@ new_train_data = new_train_data.withColumn("features", array_to_vector("features
 
 ### Define the model
 
-With our data in place, we can now define the model. We'll apply lightgbm model in this notebook.
-
-We'll leverage SynapseML to implement the model within a few lines of code.
+With our data in place, we can now define the model. We'll use a LightGBM classifier and leverage SynapseML to implement the model with a few lines of code.
 
 ```python
 from synapse.ml.lightgbm import LightGBMClassifier
@@ -213,16 +240,16 @@ smote_model = LightGBMClassifier(
 )
 ```
 
-### Model training
+### Train the model
 
 ```python
 model = model.fit(train_data)
 smote_model = smote_model.fit(new_train_data)
 ```
 
-### Model explanation
+### Explain the model
 
-Here we can show the importance of each column.
+Here we can show the importance that the model assigns to each feature in the training data.
 
 ```python
 import pandas as pd
@@ -250,12 +277,16 @@ plt.ylabel("features")
 plt.show()
 ```
 
-### Model evaluation
+### Evaluate the model
+
+Generate model predictions:
 
 ```python
 predictions = model.transform(test_data)
 predictions.limit(10).toPandas()
 ```
+
+Display model metrics:
 
 ```python
 from synapse.ml.train import ComputeModelStatistics
@@ -266,11 +297,15 @@ metrics = ComputeModelStatistics(
 display(metrics)
 ```
 
+Create a confusion matrix:
+
 ```python
 # collect confusion matrix value
 cm = metrics.select("confusion_matrix").collect()[0][0].toArray()
 print(cm)
 ```
+
+Plot the confusion matrix:
 
 ```python
 # plot confusion matrix
@@ -282,6 +317,8 @@ ax.set_title("Confusion Matrix")
 ax.set_xlabel("Predicted label")
 ax.set_ylabel("True label")
 ```
+
+Define a function to evaluate the model:
 
 ```python
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
@@ -310,10 +347,14 @@ def evaluate(predictions):
     return auroc, auprc
 ```
 
+Evaluate the original model:
+
 ```python
 # evaluate the original model
 auroc, auprc = evaluate(predictions)
 ```
+
+Evaluate the SMOTE model:
 
 ```python
 # evaluate the SMOTE model
@@ -329,9 +370,11 @@ if new_auprc > auprc:
     auroc = new_auroc
 ```
 
-### Log and load model with MLflow
+### Log and load the model with MLflow
 
-Now we get a pretty good model, we can save it for later use. Here we use MLflow to log metrics/models, and load models back for prediction.
+Now that we have a decent working model, we can save it for later use. Here we use MLflow to log metrics and models, and loadthe models back for prediction.
+
+Set up MLflow:
 
 ```python
 # setup mlflow
@@ -339,6 +382,8 @@ import mlflow
 
 mlflow.set_experiment(EXPERIMENT_NAME)
 ```
+
+Log model, metrics, and parameters:
 
 ```python
 # log model, metrics and params
@@ -362,6 +407,8 @@ with mlflow.start_run() as run:
     print(f"Model URI: {model_uri}")
 ```
 
+Reload the model:
+
 ```python
 # load model back
 loaded_model = mlflow.spark.load_model(model_uri, dfs_tmpdir="Files/spark")
@@ -369,11 +416,14 @@ loaded_model = mlflow.spark.load_model(model_uri, dfs_tmpdir="Files/spark")
 
 ## Step 4. Save prediction results
 
+In this section, we'll deploy the model and save the prediction results.
 ### Model deploy and prediction
 
 ```python
 batch_predictions = loaded_model.transform(test_data)
 ```
+
+Save predictions into the Lakehouse:
 
 ```python
 # code for saving predictions into lakehouse
@@ -385,3 +435,10 @@ batch_predictions.write.format("delta").mode("overwrite").save(
 ```python
 print(f"Full run cost {int(time.time() - ts)} seconds.")
 ```
+
+## Next Steps
+
+- [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
+- [Machine learning model in Microsoft Fabric](machine-learning-model.md)
+- [Train machine learning models](model-training/model-training-overview.md)
+- [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
