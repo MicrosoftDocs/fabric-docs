@@ -181,7 +181,7 @@ productDirectory:
           text: REST APIs
         - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
           text: Deployment pipelines
-        - url: cicd/git-integration/git-integration-process.md
+        - url: cicd/git-integration/intro-to-git-integrations.md
           text: Git integration
         - url: cicd/index.yml
           text: See more
