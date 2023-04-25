@@ -38,7 +38,17 @@ To revert to the prior synced state, do one of the following steps:
 
 If you made numerous changes and don’t want to revert to a previous state, you can try resolving the conflict in the git repo:
 
-1. Check out new branch using the last synced branch ID shown on bottom of screen
-1. Resolve the conflict in git
+1. From the **Source control** pane, check out a new branch using the last synced branch ID shown on bottom of screen
+
+   :::image type="content" source="./media/conflict-resolution/checkout/new/branch.png" alt-text="Screenshot showing how to check out a new branch from the source control pane by selecting the down arrow.":::
+
+   This step creates a new branch from the conflicted branch using the last synced git state, before changes were made that conflict with your changes. You can see your changes in the **Source control** pane, but there is nothing to update from the git branch.
+
+1. Commit your changes into the new branch. This new branch now has the changes you made to the items connected to an earlier version of the git branch that doesn't conflict with your changes.
+1. In git, resolve the conflicts between the original branch and the new branch.
 1. Merge the new branch into the original branch
-1. Disconnect and reconnect to original branch
+1. In Fabric, disconnect and reconnect your workspace to the original branch.
+
+## Next steps
+
+[Deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md)
