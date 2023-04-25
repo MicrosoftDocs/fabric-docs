@@ -66,19 +66,19 @@ landingContent:
       - linkListType: tutorial
         links:
           - text: Lakehouse scenario overview
-            url: placeholder.md
+            url: ../placeholder.md
           - text: Step1 - Create a workspace
-            url: placeholder.md
+            url: ../placeholder.md
           - text: Step2 - Create a lakehouse
-            url: placeholder.md
+            url: ../placeholder.md
           - text: Step2 - Ingest data into lakehouse
-            url: placeholder.md
+            url: ../placeholder.md
           - text: Step2 - Transform data into delta tables
-            url: placeholder.md
+            url: ../placeholder.md
           - text: Step2 - Build a report
-            url: placeholder.md
+            url: ../placeholder.md
           - text: Step2 - Clean up resources
-            url: placeholder.md
+            url: ../placeholder.md
 
   # Card 
   - title: Apache Spark
