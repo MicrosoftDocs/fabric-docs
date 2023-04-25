@@ -40,7 +40,7 @@ If you made numerous changes and don’t want to revert to a previous state, you
 
 1. From the **Source control** pane, check out a new branch using the last synced branch ID shown on bottom of screen
 
-   :::image type="content" source="./media/conflict-resolution/checkout/new/branch.png" alt-text="Screenshot showing how to check out a new branch from the source control pane by selecting the down arrow.":::
+   :::image type="content" source="./media/conflict-resolution/checkout-new-branch.png" alt-text="Screenshot showing how to check out a new branch from the source control pane by selecting the down arrow.":::
 
    This step creates a new branch from the conflicted branch using the last synced git state, before changes were made that conflict with your changes. You can see your changes in the **Source control** pane, but there is nothing to update from the git branch.
 
