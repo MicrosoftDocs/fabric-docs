@@ -72,11 +72,9 @@
     - name: Data warehouse
       items:
       - name: Overview
-        href: ../placeholder.md
-      - name: Set up connection
-        href: ../placeholder.md
+        href: connector-data-warehouse-overview.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-data-warehouse-copy-activity.md
     - name: Delimited text
       href: format-delimited-text.md
     - name: Excel format
