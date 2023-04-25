@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
 title: Data Engineering in Microsoft Fabric documentation
-summary: summary # < 160 chars
+summary: Data engineering in Microsoft Fabric enables users to design, build, and maintain infrastructures and systems that enable their organizations to collect, store, process, and analyze large volumes of data. # < 160 chars
 
 metadata:
   title: Data Engineering in Microsoft Fabric documentation
-  description: With Data Engineering you can create a lakehouse and operationalize your workflow to build, transform, and share your data estate. # Required; article description that is displayed in search results. < 160 chars.
+  description: Data engineering in Microsoft Fabric enables users to design, build, and maintain systems that enable their organizations to collect, store, process, and analyze large volumes of data. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
