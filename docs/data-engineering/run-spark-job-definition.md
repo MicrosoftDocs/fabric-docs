@@ -54,7 +54,7 @@ For the detail of how to monitor the job, see [Monitor a Spark job](monitor-spar
 
 Once the job is submitted, you can cancel the job by clicking the **Cancel** button on the Spark job definition item from the job list
 
-:::image type="content" source="media\run-spark-job-definition\cancelJob.png" alt-text="Screenshot of cancel job." lightbox="media\run-spark-job-definition\cancelJob.png":::
+:::image type="content" source="media\run-spark-job-definition\cancel-job.png" alt-text="Screenshot of cancel job." lightbox="media\run-spark-job-definition\cancelJob.png":::
 
 ## Next steps
 
