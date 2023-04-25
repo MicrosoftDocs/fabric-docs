@@ -93,7 +93,7 @@ landingContent:
 # Card 
   - title: Using R
     linkLists:
-      - linkListType: Overview
+      - linkListType: overview
         links:
           - text: R overview
             url: r-overview.md # Placeholder file. Replace with the actual file name.
