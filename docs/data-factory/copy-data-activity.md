@@ -150,5 +150,5 @@ Now you can either save your data pipeline with this single copy activity or con
 
 ## Next steps
 
-[Connector overview](connector-overview.md)
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [Connector overview](connector-overview.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)
