@@ -13,7 +13,7 @@ ms.search.form: R Language
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This articles uses the [nycflights13](https://github.com/hadley/nycflights13) data to predict whether a plane arrives more than 30 minutes late. We then use the prediction results to build an interactive Power BI dashboard. 
+This article uses the [nycflights13](https://github.com/hadley/nycflights13) data to predict whether a plane arrives more than 30 minutes late. We then use the prediction results to build an interactive Power BI dashboard. 
 
 In this tutorial, you learn how to:
 
@@ -129,7 +129,7 @@ test_data  <- testing(data_split)
 
 Create a recipe for a simple logistic regression model. Before training the model, use a recipe to create a few new predictors and conduct some preprocessing required by the model.
 
-Use the `update_role() `function to let recipes know that `flight` and `time_hour` are variables with a custom role called `ID` (a role can have any character value). The formula includes all variables in the training set other than `arr_delay` as predictors. The recipe keeps these two ID variables but does not use them as either outcomes or predictors.
+Use the `update_role() `function to let recipes know that `flight` and `time_hour` are variables with a custom role called `ID` (a role can have any character value). The formula includes all variables in the training set other than `arr_delay` as predictors. The recipe keeps these two ID variables but doesn't use them as either outcomes or predictors.
 
 ```R
 flights_rec <- 
@@ -249,9 +249,9 @@ flights_aug %>%
 
 ## Build a Power BI report
 
-The model result isn't too bad! Use the flight delay prediction results to build an interactive Power BI dashboard, that shows the number of flights by carrier and number of flights by destination, and is able to filter by the delay prediction results.  
+The model result isn't too bad! Use the flight delay prediction results to build an interactive Power BI dashboard, showing the number of flights by carrier and number of flights by destination. The dashboard is also able to filter by the delay prediction results.  
 
-:::image type="content" source="media/r-flight-delay/power-bi-report.png" alt-text="Graph of power bi report.":::
+:::image type="content" source="media/r-flight-delay/power-bi-report.png" alt-text="Graph of Power BI report.":::
 
 First include the carrier name and airport name to the prediction result dataset.
 
