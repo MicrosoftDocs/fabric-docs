@@ -21,7 +21,7 @@ In this tutorial, you build a data pipeline to move OData from a Northwind sourc
 
 To get started, you must complete the following prerequisites:
 
-- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../create-workspaces.md) that isn’t the default My Workspace.
+- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../get-started/create-workspaces.md) that isn’t the default My Workspace.
 
 ## Create a lakehouse
 
