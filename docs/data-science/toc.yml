@@ -57,21 +57,21 @@ items:
   items:
   - name: R overview
     href: r-overview.md
-  - name: How-to guides
-    items:
-    - name: How to use SparkR 
-      href: r-use-sparkr.md
-    - name: How to use sparklyr
-      href: r-use-sparklyr.md
-    - name: How to use Tidyverse
-      href: r-use-tidyverse.md
-    - name: R library management
-      href: r-library-management.md
-    - name: R visualization
-      href: r-visualization.md
   - name: Tutorials
     items:
     - name: Avocado price prediction
       href: r-avocado.md
     - name: Flight delay prediction
       href: r-flight-delay.md
+  - name: How-to guides
+    items:
+    - name: R library management
+      href: r-library-management.md
+    - name: How to use SparkR 
+      href: r-use-sparkr.md
+    - name: How to use sparklyr
+      href: r-use-sparklyr.md
+    - name: How to use Tidyverse
+      href: r-use-tidyverse.md
+    - name: R visualization
+      href: r-visualization.md
