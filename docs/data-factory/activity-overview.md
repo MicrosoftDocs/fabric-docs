@@ -44,12 +44,12 @@ Data transformation activity | Compute environment
 ---------------------------- | -------------------
 [Copy data](copy-data-activity.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Dataflow](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-[Dataflow Gen2](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+[Dataflow Gen2](dataflows-gen2-overview.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Delete data](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Fabric Notebook](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Spark job definition](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Stored Procedure](../placeholder.md) | Azure SQL, Azure Synapse Analytics, or SQL Server
-[SQL script](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+[SQL script](script-activity.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Switch](../placeholder.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 
 ## Control flow activities
@@ -60,10 +60,10 @@ Control activity | Description
 [Append variable](../placeholder.md) | Add a value to an existing array variable.
 [Invoke pipeline](../placeholder.md) | Execute Pipeline activity allows a Data Factory or Synapse pipeline to invoke another pipeline.
 [Filter](../placeholder.md) | Apply a filter expression to an input array.
-[For Each](../placeholder.md) | ForEach Activity defines a repeating control flow in your pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to the Foreach looping structure in programming languages.
+[For Each](foreach-activity.md) | ForEach Activity defines a repeating control flow in your pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to the Foreach looping structure in programming languages.
 [Get metadata](../placeholder.md) | GetMetadata activity can be used to retrieve metadata of any data in a Data Factory or Synapse pipeline.
 [If condition](../placeholder.md) | The If Condition can be used to branch based on condition that evaluates to true or false. The If Condition activity provides the same functionality that an if statement provides in programming languages. It evaluates a set of activities when the condition evaluates to `true` and another set of activities when the condition evaluates to `false`.
-[Lookup Activity](../placeholder.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
+[Lookup Activity](lookup-activity.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
 [Set Variable](../placeholder.md) | Set the value of an existing variable.
 [Until Activity](../placeholder.md) | Implements Do-Until loop that is similar to Do-Until looping structure in programming languages. It executes a set of activities in a loop until the condition associated with the activity evaluates to true. You can specify a timeout value for the until activity.
 [Wait Activity](../placeholder.md) | When you use a Wait activity in a pipeline, the pipeline waits for the specified time before continuing with execution of subsequent activities.
