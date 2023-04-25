@@ -107,4 +107,4 @@ In this module, you quickly build a lakehouse, ingest data for a table, apply tr
 
 ## Next steps
 
-- Lakehouse tutorial: Ingest data in Microsoft Fabric
+- [Lakehouse tutorial: Data ingestion in Microsoft Fabric](tutorial-lakehouse-data-ingestion.md)
