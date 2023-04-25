@@ -25,7 +25,7 @@ To get started with PyTorch, you must ensure that it's installed within your not
 
 ## Set up the machine learning experiment
 
-Next, we'll create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
+Next, you will create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
 
 ```python
 import mlflow
@@ -35,7 +35,7 @@ mlflow.set_experiment("sample-pytorch")
 
 ## Train and evaluate a Pytorch model
 
-After the experiment has been created, we'll load the MNSIT dataset, generate our test and training datasets, and create our training function.
+After the experiment has been created, the code below loads the MNSIT dataset, generates our test and training datasets, and creates a training function.
 
 ```python
 import os
@@ -142,7 +142,7 @@ torch.save(model.state_dict(), model.name())
 
 ## Log model with MLflow
 
-Now, we'll start an MLflow run and track the results within our machine learning experiment.
+Now, you will start an MLflow run and track the results within our machine learning experiment.
 
 ```python
 with mlflow.start_run() as run:
@@ -156,7 +156,7 @@ with mlflow.start_run() as run:
     print(f"Model URI: {model_uri}")
 ```
 
-This creates a run with the specified parameters and logs the run within the sample-pytorch experiment. This snippet will also create a new model called sample-pytorch.  
+The code above creates a run with the specified parameters and logs the run within the sample-pytorch experiment. This snippet will also create a new model called sample-pytorch.  
 
 ## Load and evaluate the model
 
