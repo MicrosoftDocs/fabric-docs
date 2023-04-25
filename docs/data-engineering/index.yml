@@ -61,26 +61,6 @@ landingContent:
             url: notebook-visualization.md
 
   # Card 
-  - title: Lakehouse end-to-end tutorial
-    linkLists:
-      - linkListType: tutorial
-        links:
-          - text: Lakehouse scenario overview
-            url: ../placeholder.md
-          - text: Step1 - Create a workspace
-            url: ../placeholder.md
-          - text: Step2 - Create a lakehouse
-            url: ../placeholder.md
-          - text: Step2 - Ingest data into lakehouse
-            url: ../placeholder.md
-          - text: Step2 - Transform data into delta tables
-            url: ../placeholder.md
-          - text: Step2 - Build a report
-            url: ../placeholder.md
-          - text: Step2 - Clean up resources
-            url: ../placeholder.md
-
-  # Card 
   - title: Apache Spark
     linkLists:
       - linkListType: concept
@@ -102,9 +82,29 @@ landingContent:
           - text: Monitor a Spark application
             url: spark-detail-monitoring.md
           - text: Manage Apache Spark libraries
-            url: library-management
+            url: library-management.md
           - text: Spark utilities for file management tasks
             url: microsoft-spark-utilities.md
+
+  # Card 
+  - title: Lakehouse end-to-end tutorial
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Lakehouse scenario overview
+            url: ../placeholder.md
+          - text: Step1 - Create a workspace
+            url: ../placeholder.md
+          - text: Step2 - Create a lakehouse
+            url: ../placeholder.md
+          - text: Step2 - Ingest data into lakehouse
+            url: ../placeholder.md
+          - text: Step2 - Transform data into delta tables
+            url: ../placeholder.md
+          - text: Step2 - Build a report
+            url: ../placeholder.md
+          - text: Step2 - Clean up resources
+            url: ../placeholder.md
 
   # Card 
   - title: Security and permissions
