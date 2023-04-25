@@ -1,17 +1,17 @@
 ### YamlMime:Landing
 
 title: Data Science in Microsoft Fabric documentation # < 60 chars
-summary: summary # < 160 chars
+summary: Learn more about the Data Science experience in Microsoft Fabric  # < 160 chars
 
 metadata:
-  title: title # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: description # Required; article description that is displayed in search results. < 160 chars.
+  title: Data Science in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Summary of the Data Science documentation in Microsoft Fabric # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: githubauthor #Required; your GitHub user alias, with correct capitalization.
-  ms.author: msauthor #Required; microsoft alias of author; optional team alias.
-  ms.date: 05/23/2023 #Required; mm/dd/yyyy format.
+  author: s-polly #Required; your GitHub user alias, with correct capitalization.
+  ms.author: scottpolly #Required; microsoft alias of author; optional team alias.
+  ms.date: 04/25/2023 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -23,45 +23,87 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is [service]?
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: overview
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: What is Data Science?
+            url: data-science-overview.md # Placeholder file. Replace with the actual file name.
 
   # Card 
   - title: Get started
     linkLists:
       - linkListType: get-started
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: get-started
+          - text: How to use end-to-end AI samples
+            url: use-ai-samples.md # Placeholder file. Replace with the actual file name.
+          - text: Machine learning experiments
+            url: machine-learning-experiment.md # Placeholder file. Replace with the actual file name.
+          - text: Machine learning models
+            url: machine-learning-model.md # Placeholder file. Replace with the actual file name.
+
+# Card 
+  - title: Tutorials
+    linkLists:
+      - linkListType: tutorial
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Train a retail recommendation model
+            url: retail-recommend-model.md # Placeholder file. Replace with the actual file name.
+          - text: Fraud detection
+            url: fraud-detection.md # Placeholder file. Replace with the actual file name.
+          - text: Forecasting
+            url: time-series-forecasting.md # Placeholder file. Replace with the actual file name.
+          - text: Text classification
+            url: title-genre-classification.md # Placeholder file. Replace with the actual file name.
+          - text: Healthcare causal impact of treatments
+            url: uplift-modeling.md # Placeholder file. Replace with the actual file name.         
 
   # Card 
-  - title: how-to-guide
+  - title: Preparing Data
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: How to accelerate data prep with Data Wrangler
+            url: data-wrangler.md # Placeholder file. Replace with the actual file name.
+          - text: How to read and write data with Pandas
+            url: read-write-pandas.md # Placeholder file. Replace with the actual file name.
+
+  # Card 
+  - title: Training Models
+    linkLists:
+      - linkListType: overview
+        links:  
+        - text: Training Overview
+          url: ./model-training/model-training-overview.md # Placeholder file. Replace with the actual file name.
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Train with Spark MLlib
+            url: ./model-training/fabric-sparkml-tutorial.md # Placeholder file. Replace with the actual file name.
+          - text: Train models with Scikit-learn
+            url: train-models-scikit-learn.md # Placeholder file. Replace with the actual file name.
+          - text: Train models with PyTorch
+            url: train-models-pytorch.md  # Placeholder file. Replace with the actual file name.
+
+# Card 
+  - title: Tracking models and experiments
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Score models with PREDICT
+            url: model-scoring-predict.md # Placeholder file. Replace with the actual file name.
+          - text: Fabric autologging
+            url: mlflow-autologging.md # Placeholder file. Replace with the actual file name.
+
+# Card 
+  - title: Using R
+    linkLists:
+      - linkListType: Overview
+        links:
+          - text: R overview
+            url: r-overview.md # Placeholder file. Replace with the actual file name.
+      - linkListType: how-to-guide
+        links:
+          - text: How to use SparkR
+            url: r-use-sparkr.md # Placeholder file. Replace with the actual file name.
+          - text: How to use sparklyr
+            url: r-use-sparklyr.md # Placeholder file. Replace with the actual file name.
+          - text: R library management
+            url: r-library-management.md # Placeholder file. Replace with the actual file name.
+          - text: R visualization
+            url: r-visualization.md # Placeholder file. Replace with the actual file name.
