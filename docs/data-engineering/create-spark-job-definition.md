@@ -70,9 +70,9 @@ To create a Spark job definition for PySpark, follow these steps:
 >  
 > For manually run, the account of current login user would be used to run the job
 
-4. Provide command line arguments to the job if needed. please use space as splitter to separate the arguments.
+5. Provide command line arguments to the job if needed. please use space as splitter to separate the arguments.
 
-5. Add the lakehouse reference to the job. You must have at least one lakehouse reference added to the job. This lakehouse is the default lakehouse context for the job.
+6. Add the lakehouse reference to the job. You must have at least one lakehouse reference added to the job. This lakehouse is the default lakehouse context for the job.
    Multiple lakehouse references are supported. For the non-default Lakehouse, you can find its name and full OneLake URL in the Spark Settings page.
 
    :::image type="content" source="media\create-spark-job-definition\main-definition-file-example.png" alt-text="Screenshot showing an example of a populated main definition file screen." lightbox="media\create-spark-job-definition\main-definition-file-example.png":::
