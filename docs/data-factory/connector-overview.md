@@ -5,7 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview 
-ms.date: 03/09/2023
+ms.date: 04/25/2023
 ---
 
 # Connector overview
@@ -30,31 +30,37 @@ You can find a comprehensive list of all connectors supported through our [publi
 
 | **Category** | **Data store** | **Copy activity (source/destination)** | **Lookup activity** | **Get Metadata activity** | **Delete activity** | **Script activity** | **Stored Procedure activity** |
 |---|---|---|---|---|---|---|---|
-| **Workspace** | Lakehouse | ✓/✓ | - | - | ✓ | - | - |
-|  | Data Warehouse | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
+| **Workspace** | Data Warehouse | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
+|  | KQL Database | ✓/✓ | ✓ | - | - | - | - |
+|  | Lakehouse | ✓/✓ | - | - | ✓ | - | - |
 | **Azure** | Azure Blob Storage | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Cosmos DB (SQL API) | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Data Lake Storage Gen1 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Data Lake Storage Gen2 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
-|  | Azure SQL Database | ✓/✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-|  | Azure SQL Managed Instance | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
-|  | Azure SQL Explorer | ✓/✓ | ✓ | - | - | - | - |
 |  | Azure Database for PostgreSQL  | ✓/✓ | ✓ | - | - | - | - |
+|  | Azure SQL Database | ✓/✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+|  | Azure SQL Database Managed Instance | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
+|  | Azure SQL Explorer | ✓/✓ | ✓ | - | - | - | - |
 |  | Azure Synapse Analytics | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
 |  | Azure Table Storage | ✓/✓ | ✓ | - | - | - | - |
 | **Database** | Amazon Redshift | ✓/-  | ✓ | - | - | - | - |
+|  | Amazon RDS for SQL Server | ✓/-  | ✓ | ✓ | ✓ | - | - |
 |  | Apache Impala | ✓/-  | ✓ | - | - | - | - |
 |  | Hive  | ✓/-  | ✓ | - | - | - | - |
 |  | PostgreSQL | ✓/-  | ✓ | - | - | - | - |
 |  | Spark | ✓/-  | ✓ | - | - | - | - |
 |  | SQL Server | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
 | **File** | Amazon S3 | ✓/-  | ✓ | ✓ | ✓ | - | - |
+|  | Amazon S3 Compatible | ✓/-  | ✓ | ✓ | ✓ | - | - |
 |  | Google Cloud Storage | ✓/-  | ✓ | ✓ | ✓ | - | - |
-|  | HTTP | ✓/-  | ✓ | - | - | - | - |
-| **Generic** | OData | ✓/-  | ✓ | - | - | - | - |
+| **Generic** | HTTP | ✓/-  | ✓ | - | - | - | - |
+|  | OData | ✓/-  | ✓ | - | - | - | - |
 |  | REST | ✓/✓ | - | - | - | - | - |
-| **Services and apps** | Snowflake | ✓/✓ | ✓ | - | - | ✓ | - |
-|  | Dataverse | ✓/✓ | ✓ | - | - | - | - |
+| **Services and apps** | Dataverse | ✓/✓ | ✓ | - | - | - | - |
+|  | Dynamics CRM | ✓/✓ | ✓ | - | - | - | - |
+|  | Microsoft 365 | ✓/- | - | - | - | - | - |
+|  | SharePoint Online List | ✓/- | ✓ | - | - | - | - |
+|  | Snowflake | ✓/✓ | ✓ | - | - | ✓ | - |
 
 ## Next steps
 
