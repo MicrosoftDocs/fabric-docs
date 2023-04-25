@@ -5,7 +5,7 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
-ms.date: 04/28/23
+ms.date: 4/28/2023
 ---
 
 # Lakehouse tutorial: Introduction to Microsoft Fabric
