@@ -1,5 +1,5 @@
 ---
-title: Python Library Management in Fabric
+title: Python library management in Fabric
 description: Overview of library management for Python.
 ms.reviewer: mopeakande
 author: midesa
@@ -13,7 +13,7 @@ ms.search.form: Python Language
 
 Libraries provide reusable code that you might want to include in your programs or projects. Each workspace comes with a pre-installed set of libraries available in the Spark run-time and available to be used immediately in the notebook or Spark job definition. We refer to these as built-in libraries. However, you might find that you need to include additional libraries for your machine learning scenario. This document describes how you can use Microsoft Fabric to install Python libraries for your data science workflows.
 
-## Python Libraries in Microsoft Fabric
+## Python libraries in Microsoft Fabric
 
 Within Fabric, there are 2 methods to add additional Python libraries.
 
@@ -45,7 +45,7 @@ From the Workspace setting, you can do the following:
 
 Using the Workspace setting, you can also make custom Python ```.whl``` files available for all notebooks in your workspace. Once the changes are saved, Fabric will install your custom libraries and their related dependencies.  
 
-## In-line Installation
+## In-line installation
 
 When developing a machine learning model or doing ad-hoc data analysis, you may need to quickly install a library for your Apache Spark session. To do this, you can use the in-line installation capabilities to quickly get started with new libraries.  
 

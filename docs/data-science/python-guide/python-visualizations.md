@@ -118,7 +118,7 @@ In addition to the built-in notebook charting options, you can use popular open-
    plt.show()
    ```
 
-   ![Histogram of tips.](../media/python-visualization/histogram.png)
+   ![Screenshot of histogram of tips.](../media/python-visualization/histogram.png)
 
 1. Next, we want to understand the relationship between the tips for a given trip and the day of the week. Use Seaborn to create a box plot that summarizes the trends for each day of the week. 
 

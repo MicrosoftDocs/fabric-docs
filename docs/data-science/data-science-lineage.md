@@ -1,5 +1,5 @@
 ---
-title: Data Science lineage
+title: Data science lineage
 description: Track relationships between data science artifacts
 ms.reviewer: mopeakande
 ms.author: midesa
@@ -23,11 +23,11 @@ There are several reasons why lineage is important in your machine learning work
 - **Debugging**: If a model is not performing as expected, knowing its lineage can help to identify the source of the problem. By examining the training data, parameters, and decisions that were made during the training process, it may be possible to identify issues that are affecting the model's performance.
 - **Improvement**: Knowing the lineage of a model can also help to improve it. By understanding how the model was created and trained, it may be possible to make changes to the training data, parameters, or process that can improve the model's accuracy or other performance metrics.
 
-## Data Science artifact types
+## Data science artifact types
 
 In Fabric, machine learning models and experiments are integrated into a unified platform. As part of this, users can browse the relationship between Fabric Data Science artifacts and other Fabric artifacts.
 
-:::image type="content" source="media/data-science-overview/lineage-ds.gif" alt-text="Gif showing lineage view for models and experiments." lightbox="media/data-science-overview/lineage-ds.gif":::
+:::image type="content" source="media/data-science-overview/lineage-data-science.gif" alt-text="Gif showing lineage view for models and experiments." lightbox="media/data-science-overview/lineage-data-science.gif":::
 
 ### Machine learning models
 
@@ -57,15 +57,15 @@ To access the lineage view:
 
 1. Select your Fabric workspace and then navigate to the workspace list.
 
-  :::image type="content" source="media/lineage/artifact-workspace-list-view-ds.png" alt-text="Image showing workspace list view in Fabric" lightbox="media/lineage/artifact-workspace-list-view-ds.png":::
+  :::image type="content" source="media/lineage/artifact-workspace-list-view-data-science.png" alt-text="Image showing workspace list view in Fabric." lightbox="media/lineage/artifact-workspace-list-view-ds.png":::
 
 2. Switch from the workspace **List** view to the Workspace **Lineage** view.
 
-  :::image type="content" source="media/lineage/workspace-artifact-lineage-ds.png" alt-text="Image showing workspace lineage view in Fabric" lightbox="media/lineage/workspace-artifact-lineage-ds.png":::
+  :::image type="content" source="media/lineage/workspace-artifact-lineage-data-science.png" alt-text="Image showing workspace lineage view in Fabric." lightbox="media/lineage/workspace-artifact-lineage-ds.png":::
 
 3. You can also navigate to **Lineage** view for a specific artifact by opening the related actions.
 
-   :::image type="content" source="media/lineage/artifact-lineage-view-ds.png" alt-text="Image showing workspace lineage view in Fabric for a given artifact" lightbox="media/lineage/artifact-lineage-view-ds.png":::
+   :::image type="content" source="media/lineage/artifact-lineage-view-data-science.png" alt-text="Image showing workspace lineage view in Fabric for a given artifact." lightbox="media/lineage/artifact-lineage-view-ds.png":::
 
 ## Next steps
 
