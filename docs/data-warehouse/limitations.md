@@ -26,7 +26,6 @@ For more limitations information in specific areas, see:
 - [Tables](tables.md#limitations)
 - [Datasets](datasets.md#limitations)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
-- [Sharing](share-warehouse.md#limitations)
 - [Statistics](statistics.md#limitations)
 - [Transactions](transactions.md#limitations)
 - [The Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
