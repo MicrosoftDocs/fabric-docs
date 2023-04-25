@@ -59,10 +59,10 @@ A SELECT statement could have completed successfully in the backend and fails wh
 
 ## What to collect before contacting Microsoft support
 
-- The workspace ID of [!INCLUDE [fabric-dw](includes/fabric-dw.md)]  
-- Statement ID and Distributed request ID.  They're returned as messages after a query completes or fails.
-- Exact error message
-- Time when the query completes or fails.
+- Provide the workspace ID of [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+- Provide the Statement ID and Distributed request ID. They're returned as messages after a query completes or fails.
+- Provide the text of the exact error message.
+- Provide the time when the query completes or fails.
 
 ## Next steps
 

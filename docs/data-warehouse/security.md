@@ -38,5 +38,4 @@ Permissions for rows in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] aren't
 
 ## Next steps
 
-- [Synapse Data Warehouse in Microsoft Fabric](warehouse.md)
 - [Connectivity](connectivity.md)
