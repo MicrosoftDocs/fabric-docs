@@ -5,8 +5,6 @@ items:
   items:
   - name: What is Data Science?
     href: data-science-overview.md
-  - name: Roles and permissions
-    href: models-experiments-rbac.md
 - name: Get started
   items:
   - name: How to use end-to-end AI samples
@@ -23,6 +21,12 @@ items:
     href: title-genre-classification.md
   - name: Healthcare causal impact of treatments
     href: uplift-modeling.md
+- name: Governance
+  items:
+  - name: Roles and permissions
+    href: models-experiments-rbac.md
+  - name: Lineage for data Science
+    href: data-science-lineage.md
 - name: Preparing data 
   items:
   - name: How to read and write data with Pandas
@@ -50,9 +54,21 @@ items:
   - name: How-to guides
     items:
     - name: Train models with PyTorch
-      href: train-models-pytorch.md   
+      href: train-models-pytorch.md
+- name: Model scoring
+  items:   
     - name: Score models with PREDICT
       href: model-scoring-predict.md
+- name: Use Python
+  items:
+  - name: Python overview
+    href: python-overview.md
+  - name: How-to guides
+    items:
+    - name: Python library management
+      href: ./python-guide/python-library-management.md
+    - name: Python visualizations
+      href: ./python-guide/python-visualizations.md
 - name: Use R
   items:
   - name: R overview
