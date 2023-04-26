@@ -1,6 +1,6 @@
 ---
 title: Configure high concurrency mode for notebooks.
-description: Learn how to use High Concurrency Mode to reuse session across multiple notebooks.
+description: Learn how to configure and run high concurrency mode to reuse session across multiple notebooks.
 ms.reviewer: snehagunda
 ms.author: santhoshravindran7
 author: saravi
