@@ -92,5 +92,5 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
     
 ## Next steps
 
-- [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
+- [Create a warehouse in Microsoft Fabric](create-warehouse.md)
 - [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
