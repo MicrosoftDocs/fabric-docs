@@ -37,8 +37,6 @@ items:
       href: security.md
     - name: Workspace roles
       href: workspace-roles.md
-    - name: Manage user access
-      href: manage-user-access.md    
     - name: Get Workspace and OneLake path
       href: get-workspace-onelake-path.md      
   - name: Model the warehouse
@@ -93,3 +91,5 @@ items:
       href: workload-management.md
     - name: Troubleshoot Synapse Data Warehouse
       href: troubleshoot-synapse-data-warehouse.md
+    - name: Get Workspace and OneLake path
+      href: get-workspace-onelake-path.md      

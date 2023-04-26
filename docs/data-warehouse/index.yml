@@ -72,8 +72,6 @@ landingContent:
             url: connectivity.md    
           - text: Workspace roles
             url: workspace-roles.md
-          - text: Manage user access
-            url: manage-user-access.md   
   # Card 
   - title: Ingest data
     linkLists:
