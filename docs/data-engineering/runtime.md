@@ -15,7 +15,7 @@ The Microsoft Fabric Runtime provides an Azure-integrated Apache Spark-based pla
 Major components of the Runtime:
 - **Apache Spark** - a powerful open-source distributed computing library, to enable large-scale data processing and analytics tasks. Apache Spark provides a versatile and high-performance platform for data engineering and data science workloads.
 - **Delta Lake** - an open-source storage layer that brings ACID transactions and other data reliability features to Apache Spark. Integrated within the Microsoft Fabric Runtime, Delta Lake enhances the data processing capabilities and ensures data consistency across multiple concurrent operations.
-- **Default-level Packages for Java/Scala, Python, and R** to support diverse programming languages and environments. These packages are automatically installed and configured, allowing developers to leverage their preferred programming languages for data processing tasks.
+- **Default-level Packages for Java/Scala, Python, and R** to support diverse programming languages and environments. These packages are automatically installed and configured, allowing developers to apply their preferred programming languages for data processing tasks.
 - The Microsoft Fabric Runtime is built upon **a robust open-source operating system (Ubuntu)**, ensuring compatibility with various hardware configurations and system requirements. 
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
@@ -32,7 +32,7 @@ Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offer
 
 :::image type="content" source="media\spark-workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\spark-workspace-admin-settings\runtime-version.png":::
 
-Microsoft Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and additional commonly-used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
+Microsoft Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
 
 
 Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.1, providing bug fixes, performance enhancements, and security patches. **Staying up-to-date ensures optimal performance and reliability for your data processing tasks.**
@@ -44,7 +44,7 @@ Below is an extended summary of key new features related to Apache Spark version
 *   **Row-level filtering**: improve the performance of joins by pre-filtering one side of a jas long as there are no deprecation or regression impacts.oin using a Bloom filter and IN predicate generated from the values from the other side of the join ([SPARK-32268](https://issues.apache.org/jira/browse/SPARK-32268))
 *   Improve the compatibility of Spark with the SQL standard:**ANSI enhancements** ([SPARK-38860](https://issues.apache.org/jira/browse/SPARK-38860))
 *   Error Message Improvements to identify problems faster and take the necessary steps to resolve it ([SPARK-38781](https://issues.apache.org/jira/browse/SPARK-38781))
-*   Support **complex types for Parquet vectorized reader.** Previously, Parquet vectorized reader has not supported nested column type (struct, array and map). The Apache Spark 3.3 contains an implementation of nested column vectorized reader for FB-ORC in our internal fork of Spark. It impacts performance improvement compared to non-vectorized reader when reading nested columns. In addition, this can also help improve the non-nested column performance when reading non-nested and nested columns together in one query ([SPARK-34863](https://issues.apache.org/jira/browse/SPARK-34863))
+*   Support **complex types for Parquet vectorized reader.** Previously, Parquet vectorized reader hasn't supported nested column type (struct, array and map). The Apache Spark 3.3 contains an implementation of nested column vectorized reader for FB-ORC in our internal fork of Spark. It impacts performance improvement compared to non-vectorized reader when reading nested columns. In addition, this can also help improve the non-nested column performance when reading non-nested and nested columns together in one query ([SPARK-34863](https://issues.apache.org/jira/browse/SPARK-34863))
 *   Allows users to query the metadata of the input files for all file formats, expose them as **built-in hidden columns** meaning **users can only see them when they explicitly reference them** (e.g. file path, file name) ([SPARK-37273](https://issues.apache.org/jira/browse/SPARK-37273))
 *   Provide a profiler for Python/Pandas UDFs ([SPARK-37443](https://issues.apache.org/jira/browse/SPARK-37443))
 *   Previously, streaming queries with Trigger. Which was loading all of the available data in a single batch. Because of this, the amount of data the queries could process was limited, or the Spark driver would be out of memory. Now, introducing **Trigger.AvailableNow** for running streaming queries like Trigger.Once in multiple batches ([SPARK-36533](https://issues.apache.org/jira/browse/SPARK-36533))
@@ -78,7 +78,7 @@ Below is an extended summary of key new features related to Apache Spark version
 
 [Improve](https://github.com/delta-io/delta/commit/9017ac0d811c0a42ba8ac45720bddf06c8f17e63) performance of the [DELETE](https://docs.delta.io/latest/delta-update.html#delete-from-a-table) command by pruning the columns to read when searching for files to rewrite.
 
-[Fix](https://github.com/delta-io/delta/commit/6dbc55db53332c985e5bc8470df6c95106afac25) for a bug in the DynamoDB-based [S3 multi-cluster mode](https://docs.delta.io/2.1.1/delta-storage.html#setup-configuration-s3-multi-cluster) configuration. The previous version wrote an incorrect timestamp which was used by [DynamoDB’s TTL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) feature to cleanup expired items. This timestamp value has been fixed and the table attribute renamed from `commitTime` to `expireTime`. If you already have TTL enabled, please follow the migration steps [here](https://docs.delta.io/latest/porting.html#delta-lake-1-2-1-2-0-0-or-2-1-0-to-delta-lake-2-0-1-2-1-1-or-above).
+[Fix](https://github.com/delta-io/delta/commit/6dbc55db53332c985e5bc8470df6c95106afac25) for a bug in the DynamoDB-based [S3 multi-cluster mode](https://docs.delta.io/2.1.1/delta-storage.html#setup-configuration-s3-multi-cluster) configuration. The previous version wrote an incorrect timestamp which was used by [DynamoDB’s TTL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) feature to clean up expired items. This timestamp value has been fixed and the table attribute renamed from `commitTime` to `expireTime`. If you already have TTL enabled, please follow the migration steps [here](https://docs.delta.io/latest/porting.html#delta-lake-1-2-1-2-0-0-or-2-1-0-to-delta-lake-2-0-1-2-1-1-or-above).
 
 [Fix](https://github.com/delta-io/delta/commit/b07257df) [non-deterministic](https://github.com/delta-io/delta/issues/527) behavior during MERGE when working with sources that are non-deterministic.
 
@@ -594,7 +594,7 @@ Migrating your workloads to Runtime 1.1 (Apache Spark 3.3) from an older version
    2. [Review SQL, Datasets and DataFrame migration guide](https://spark.apache.org/docs/latest/sql-migration-guide.html)
    3. If your solution is Apache Spark Structure Streaming related, [review Structured Streaming migration guide](https://spark.apache.org/docs/latest/ss-migration-guide.html)
    4. If you use PySpark, [review Pyspark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/pyspark_upgrade.html)
-   5. If you are migrating code from Koalas to PySpark, [review Koalas to pandas API on Spark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/koalas_to_pyspark.html)
+   5. If you migrate code from Koalas to PySpark, [review Koalas to pandas API on Spark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/koalas_to_pyspark.html)
 
 3. Move your workloads to Fabric and ... Ensure that you have backups of your data and configuration files in case you need to revert to the previous version.
 
