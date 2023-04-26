@@ -20,6 +20,8 @@ This article describes three different scenarios you can follow to create report
 
 From within the warehouse experience, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI dataset.
 
+:::image type="content" source="media\reports-power-bi-service\new-report-riboon.png" alt-text="Screenshot of new report in the ribbon." lightbox="media\reports-power-bi-service\new-report-ribbon.png":::
+
 If no tables have been added to the default Power BI dataset, the dialog first automatically adds tables, prompting the user to confirm or manually select the tables included in the canonical default dataset first, ensuring there's always data first.
 
 With a default dataset that has tables, the **New report** opens a browser tab to the report editing canvas to a new report that is built on the dataset. When you save your new report you're prompted to choose a workspace, provided you have write permissions for that workspace. If you don't have write permissions, or if you're a free user and the dataset resides in a Premium-capacity workspace, the new report is saved in your **My workspace**.
@@ -28,7 +30,9 @@ With a default dataset that has tables, the **New report** opens a browser tab t
 
 Using the default dataset and action menu in the workspace: In the [!INCLUDE [product-name](../includes/product-name.md)] workspace, navigate to the default Power BI dataset and select the **More** menu (**…**) to create a report in the Power BI service.
 
-Selecting the **More** menu opens the report editing canvas to a new report that is built on the dataset. When you save your new report, it's saved in the workspace that contains the dataset as long as you have write permissions on that workspace. If you don't have write permissions, or if you're a free user and the dataset resides in a Premium-capacity workspace, the new report is saved in your **My workspace**.
+:::image type="content" source="media\reports-power-bi-service\create-report-ws.png" alt-text="Screenshot of new report in the workspace." lightbox="media\reports-power-bi-service\create-report-ws.png":::
+
+Selecting **Create report** opens the report editing canvas to a new report that is built on the dataset. When you save your new report, it's saved in the workspace that contains the dataset as long as you have write permissions on that workspace. If you don't have write permissions, or if you're a free user and the dataset resides in a Premium-capacity workspace, the new report is saved in your **My workspace**.
 
 ## Scenario three
 
@@ -50,4 +54,3 @@ To find the warehouse, you begin with the **Data hub**. The following image show
 
 - [Connectivity](connectivity.md)
 - [Create reports](create-reports.md)
-- [Power BI admin center](../admin/admin-power-bi.md)
