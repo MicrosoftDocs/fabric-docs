@@ -1,6 +1,6 @@
 ---
 title: Templates
-description: Learn about templates in [!INCLUDE [product-name](../includes/product-name.md)].
+description: Learn about templates for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.author: jburchel
 author: jonburchel

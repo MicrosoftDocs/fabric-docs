@@ -1,6 +1,6 @@
 ---
 title: Azure SQL database connector for dataflows
-description: This article details how to use the Azure SQL database connector for [!INCLUDE [product-name](../includes/product-name.md)] Data Factory in dataflows.
+description: This article details how to use the Azure SQL database connector for Data Factory in Microsoft Fabric in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
