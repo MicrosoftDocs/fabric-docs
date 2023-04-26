@@ -5,8 +5,8 @@ ms.reviewer: wiassaf
 ms.author: kedodd
 author: kedodd
 ms.topic: how-to
-ms.date: 04/17/2023
-ms.search.form: Warehouse item permissions, Workspace permissions
+ms.date: 05/23/2023
+ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 ---
 
 # Manage item permissions in Microsoft Fabric

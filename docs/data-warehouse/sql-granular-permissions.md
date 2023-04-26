@@ -5,8 +5,8 @@ ms.reviewer: wiassaf
 ms.author: kedodd
 author: kedodd
 ms.topic: conceptual
-ms.date: 04/17/2023
-ms.search.form: Warehouse SQL permissions, Workspace permissions
+ms.date: 05/23/2023
+ms.search.form: Warehouse roles and permissions
 ---
 
 # SQL granular permissions in Microsoft Fabric
@@ -37,18 +37,21 @@ For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](incl
 When a user connects to the SQL connection string, they can view the permissions available to them using the [sys.fn_my_permissions](/sql/relational-databases/system-functions/sys-fn-my-permissions-transact-sql?view=fabric&preserve-view=true) function.
 
 User's database scoped permissions:
+
    ```sql
    SELECT *
    FROM sys.fn_my_permissions(NULL, "Database")
    ```
 
 User's schema scoped permissions:
+
    ```sql
    SELECT *
    FROM sys.fn_my_permissions("<schema-name>", "Schema")
    ```
 
 User's object-scoped permissions:
+
    ```sql
    SELECT *
    FROM sys.fn_my_permissions("<schema-name>.<object-name>", "Object")
