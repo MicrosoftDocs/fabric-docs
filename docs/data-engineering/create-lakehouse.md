@@ -56,7 +56,7 @@ There are a few ways you can get started with the creation process:
 
 ## Next steps
 
-Now that you have succesfully created your Lakehouse, learn more about:
+Now that you have successfully created your Lakehouse, learn more about:
 
 - Different ways to load data in Lakehouse, see [Get data experience for Lakehouse](navigate-lakehouse-explorer.md)
 
