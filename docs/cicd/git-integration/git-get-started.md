@@ -76,7 +76,7 @@ To keep your workspace synced with the git branch, [commit any changes](#commit-
 
 ## Commit changes to git
 
-Once you successfully connect to a git folder, edit your workspace as usual. Any changes you save are saved in the workspace only. When you’re ready, you can commit your changes to the git branch, or you can undo the changes and revert to the previous status.
+Once you successfully connect to a git folder, edit your workspace as usual. Any changes you save are saved in the workspace only. When you’re ready, you can commit your changes to the git branch, or you can undo the changes and revert to the previous status. Read more about [commits](git-integration-process.md#commit).
 
 ### [Commit to git](#tab/commit-to-git)
 
@@ -124,9 +124,7 @@ The selected items in your workspace revert to how they were before you saved th
 
 ## Update workspace from git
 
-Whenever anyone commits a new change to the connected git branch, a notification appears in the relevant workspace. Use the **Source control** pane to pull latest changes, merges or reverts into the workspace and update live items.
-
- Unlike *commit* and *undo*, the *Update* command always updates the entire branch and syncs to the most recent commit. You can’t select specific items to update.
+Whenever anyone commits a new change to the connected git branch, a notification appears in the relevant workspace. Use the **Source control** pane to pull latest changes, merges or reverts into the workspace and update live items. Read more about [updating](git-integration-process.md#update).
 
 To update a workspace, follow these steps:
 

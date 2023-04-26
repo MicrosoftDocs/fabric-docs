@@ -28,7 +28,7 @@ The following list shows what different workspace roles can do depending on thei
 
 The following table describes the permissions needed to perform various common operations:
 
-| **Operations**                                                       | **Workspace role**                                                                        | **GitHub permissions**                       | **Azure DevOps permissions**                  |
+| **Operation**                                                       | **Workspace role**                                                                        | **GitHub permissions**                       | **Azure DevOps permissions**                  |
 |----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|-----------------------------------------------|
 | Connect workspace to Git repo                                        | Admin                                                                                     | Role=Read                                    | Read=Allow                                    |
 | Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    | No permissions are needed                     |
@@ -100,9 +100,15 @@ In each tab, the changed items are listed with an icon indicating the status:
 ### Commit
 
 - When there is more than one item to commit, you can select which items to commit to the git branch.
-- If there were changes made to the git branch commits are disabled until you update your workspace, to prevent conflicts.
+- If there were updates made to the git branch, commits are disabled until you update your workspace, to prevent conflicts.
 
-Read more about how to [commit](./git-get-started.md#commit-changes-to-git) and [update](./git-get-started.md#update-workspace-from-git). Read more about the update process and how to [resolve conflicts](./conflict-resolution.md).
+### Update
+
+- Unlike *commit* and *undo*, the *Update* command always updates the entire branch and syncs to the most recent commit. You can’t select specific items to update.
+- If changes were made in the workspace and in the git branch *on the same item*, updates are disabled until the [conflict is resolved](./conflict-resolution.md).
+
+Read more about how to [commit](./git-get-started.md#commit-changes-to-git) and [update](./git-get-started.md#update-workspace-from-git).
+Read more about the update process and how to [resolve conflicts](./conflict-resolution.md).
 
 ## Next steps
 
