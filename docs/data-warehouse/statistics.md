@@ -6,7 +6,7 @@ ms.author: emtehran
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
-ms.search.form: Optimization
+ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 
 # Statistics in Fabric data warehousing

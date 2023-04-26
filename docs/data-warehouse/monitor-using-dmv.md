@@ -6,7 +6,7 @@ ms.author: jacindaeng
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
-ms.search.form: Monitoring
+ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 
 # Monitoring connections, sessions, and requests using DMVs

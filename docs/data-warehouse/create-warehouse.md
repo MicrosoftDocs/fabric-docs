@@ -6,7 +6,7 @@ ms.author: prlangad
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
-ms.search.form: Create a warehouse
+ms.search.form: Create a warehouse # This article's title should not change. If so, contact engineering.
 ---
 
 # Create a Synapse Data Warehouse in Microsoft Fabric

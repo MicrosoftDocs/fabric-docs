@@ -6,7 +6,7 @@ ms.author: kedodd
 author: kedodd
 ms.topic: conceptual
 ms.date: 05/23/2023
-ms.search.form: Warehouse roles and permissions
+ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 
 # SQL granular permissions in Microsoft Fabric

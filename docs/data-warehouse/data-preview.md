@@ -6,7 +6,7 @@ ms.author: jacindaeng
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
-ms.search.form: Data preview
+ms.search.form: Data preview # This article's title should not change. If so, contact engineering.
 ---
 
 # View data in the Data preview in Microsoft Fabric
