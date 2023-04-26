@@ -25,8 +25,8 @@ To get started, you must complete the following prerequisites:
 
 ## Create a data pipeline
 
-1. Navigate to [PowerBI](https://app.powerbi.com/).
-1. Select the PowerBI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
+1. Navigate to [Power BI](https://app.powerbi.com/).
+1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
 
   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory workload emphasized.":::
 
@@ -99,7 +99,7 @@ In this session, you start to build your first pipeline by following below steps
 
 1. You can also schedule the pipeline to run with a specific frequency as required. Below is an example scheduling the pipeline to run every 15 minutes.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15 minute recurring schedule.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
 
 ## Next steps
 
