@@ -57,6 +57,9 @@ You only see the table names and columns from which you can choose, you aren't p
 
 Single or multi-selected relationships can also be deleted by pressing **Delete** on your keyboard. You can't undo the delete action, so a dialog prompts you to confirm deleting the relationships.
 
+### Using model view layouts
+
+During the session, users may create multiple tabs in the model view to depict say, data warehouse schemas or further assist with database design. Currently the model view layouts are only persisted in session. However the database changes are persisted. Users can use the auto-layout whenever a new tab is created to visually inspect the database design and understand the modeling.
 
 ## Next steps
 
