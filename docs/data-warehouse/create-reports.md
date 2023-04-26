@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 ms.topic: conceptual
 ---
 
-# Create reports from data warehousing in Microsoft Fabric
+# Create reports from warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
