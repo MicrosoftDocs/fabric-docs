@@ -22,8 +22,8 @@ Advanced users can build reports from a warehouse using a composite model or usi
 
 Reports that use the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] can be created in either of the following two tools:
 
-1. [Power BI service](reports-power-bi-service.md)
-2. [Power BI Desktop](/power-bi/fundamentals/desktop-getting-started)
+- [Power BI service](reports-power-bi-service.md)
+- [Power BI Desktop](/power-bi/fundamentals/desktop-getting-started)
 
 ## Create reports using the Power BI service
 
