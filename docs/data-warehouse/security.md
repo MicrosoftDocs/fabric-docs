@@ -6,6 +6,7 @@ ms.author: cynotebo
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: overview
+ms.search.form: Warehouse roles and permissions
 ---
 
 # Security for data warehousing in Microsoft Fabric
