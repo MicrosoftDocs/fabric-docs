@@ -41,7 +41,7 @@ The dataset contains only numerical input variables, which are the result of a P
 - Features "V1, V2, … V28" are the principal components obtained with PCA.
 - "Time" contains the seconds elapsed between each transaction and the first transaction in the dataset.
 - "Amount" is the transaction amount. This feature can be used for example-dependent cost-sensitive learning.
-- "Class"_ is the response variable, and it takes the value `1` for fraud and `0` otherwise.
+- "Class" is the response variable, and it takes the value `1` for fraud and `0` otherwise.
 
 Given the class imbalance ratio, we recommend measuring the accuracy using the Area Under the Precision-Recall Curve (AUPRC). Using a confusion matrix to evaluate accuracy isn't meaningful for unbalanced classification.
 
