@@ -55,7 +55,15 @@ The default layout for BI enabled tables persists in the user session and is gen
 
 This layout isn't currently saved past the user's session.
 
+## Access the default Power BI dataset
 
+To access default Power BI datasets, go to your workspace, and find the dataset that matches the name of the desired Lakehouse. The default Power BI dataset follows the naming convention of the Lakehouse.
+
+:::image type="content" source="media\data-modeling-defining-relationships\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\data-modeling-defining-relationships\find-dataset.png":::
+
+To load the dataset, select the name of the dataset.
+
+:::image type="content" source="media\data-modeling-defining-relationships\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\data-modeling-defining-relationships\load-dataset.png":::
 
 ## Limitations
 
