@@ -17,7 +17,7 @@ ms.search.form: Model view
 
 A well-defined data model is instrumental in driving your analytics and reporting experiences. In a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], you can easily build and change your data model with a few simple steps in our visual editor. You need to have at least a small sample of data loaded before you can explore these concepts further; tables may be empty, but the schemas (their structures) need to be defined.
 
-## Warehouse Modeling
+## Warehouse modeling
 
 Modeling the warehouse is possible by setting primary and foreign key constraints and setting identity columns on the model view within the data warehouse UX. After you navigate the model view, you can do this in a visual entity relationship diagram that allows a user to drag and drop tables to infer how the objects relate to one another. Lines visually connecting the entities infer the type of physical relationships that exist.
 

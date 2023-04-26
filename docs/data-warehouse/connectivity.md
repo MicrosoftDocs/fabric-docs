@@ -20,7 +20,7 @@ This article provides a how-to on connecting to your [!INCLUDE [fabric-se](inclu
 To get started, you must complete the following prerequisites:
 
 - For best performance, you must be using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) version 18.0+.
-- You need access to a [Lakehouse](../data-engineering/lakehouse-overview.md) or a [Warehouse](../data-warehouse/data-warehousing.md) item within a premium per capacity workspace with contributor or above permissions.
+- You need access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) or a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](../data-warehouse/data-warehousing.md) within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or above permissions.
 
 ## Connect SSMS to the SQL Endpoint or warehouse in the workspace
 
