@@ -15,8 +15,6 @@
       href: create-first-pipeline-with-sample-data.md
     - name: Move and transform data
       href: transform-data.md
-    - name: Move data - copy assistant
-      href: move-data-lakehouse-copy-assistant.md
   - name: Connectors
     items:
     - name: Connector overview
@@ -168,13 +166,19 @@
       - name: Script activity
         href: script-activity.md
       - name: Use dataflow and email activities to transform data and report status
-        href: ../placeholder.md    
+        href: ../placeholder.md
     - name: Concepts
       items:
-      - name: Concepts in data factory for Fabric
+      - name: Differences from Azure Data Factory
         href: ../placeholder.md
+      - name: Monitor data pipeline runs
+        href: monitor-pipeline-runs.md          
       - name: Parameterization
-        href: parameters.md
+        items:
+        - name: Parameter usage
+          href: parameters.md
+        - name: Expression language
+          href: expression-language.md
     - name: How-To
       items:
       - name: Data pipeline runs
@@ -183,24 +187,16 @@
         href: templates.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
-      - name: Parameterization
-        items:
-        - name: Parameter usage
-          href: parameters.md
-        - name: Expression language
-          href: expression-language.md
     - name: Tutorials
       items:
       - name: Copy sample data into Lakehouse and transform with dataflow
         href: tutorial-load-data-lakehouse-transform.md
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
         href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
-      - name: Load sample data to Kusto
-        href: ../placeholder.md
+      - name: Move data from Azure SQL DB into Lakehouse via copy assistant
+        href: move-data-lakehouse-copy-assistant.md        
       - name: Load sample data to Lakehouse
-        href: create-first-pipeline-with-sample-data.md
-      - name: Monitor data pipeline runs
-        href: monitor-pipeline-runs.md        
+        href: create-first-pipeline-with-sample-data.md      
   - name: Dataflows
     items:
     - name: Concepts

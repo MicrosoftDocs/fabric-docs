@@ -94,13 +94,11 @@ landingContent:
             url: model-default-power-bi-dataset.md          
           - text: Define relationships in data models
             url: data-modeling-defining-relationships.md
-          - text: Create a measure
-            url: create-measure.md
           - text: Reports in the Power BI service
             url: reports-power-bi-service.md            
           - text: Query using the SQL Query editor
             url: sql-query-editor.md
-          - text: Query using SSMS
+          - text: Query with T-SQL
             url: query-warehouse.md
           - text: Query using visual query editor
             url: visual-query-editor.md
