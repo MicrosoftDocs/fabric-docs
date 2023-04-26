@@ -1,5 +1,5 @@
 ---
-title: High Concurrency Mode for Notebooks
+title: Configure high concurrency mode for notebooks.
 description: Learn how to use High Concurrency Mode to reuse session across multiple notebooks.
 ms.reviewer: snehagunda
 ms.author: santhoshravindran7
