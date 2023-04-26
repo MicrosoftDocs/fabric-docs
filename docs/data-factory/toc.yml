@@ -179,10 +179,10 @@
           href: parameters.md
         - name: Expression language
           href: expression-language.md
-    - name: How-To
-      items:
       - name: Data pipeline runs
         href: pipeline-runs.md
+    - name: How-To
+      items:
       - name: How to use pipeline sample templates
         href: templates.md
       - name: Monitor data pipeline runs
