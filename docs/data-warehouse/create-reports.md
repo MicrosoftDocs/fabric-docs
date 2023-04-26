@@ -45,7 +45,7 @@ For advanced situations where you want to add more data or change the storage mo
 Complete the following steps to connect to a warehouse in Power BI Desktop:
 
 1.	Navigate to the warehouse settings in your workspace and copy the SQL connection string. 
-2.	In Power BI Desktop select the **Warehouse (preview) connector** from the ribbon or connect to the default dataset from **Data hub**. 
+2.	In Power BI Desktop select the **Warehouse (preview) connector** from the **Get data** or connect to the default dataset from **Data hub**. 
 3.	Paste the SQL connection string into the connector dialog. 
 4.	For authentication, select *organizational account*.
 5.	Authenticate using Azure Active Directory - MFA
