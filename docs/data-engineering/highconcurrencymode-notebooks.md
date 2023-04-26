@@ -2,8 +2,8 @@
 title: Configure high concurrency mode for notebooks.
 description: Learn how to configure and run high concurrency mode to reuse session across multiple notebooks.
 ms.reviewer: snehagunda
-ms.author: santhoshravindran7
-author: saravi
+ms.author: saravi
+author: santhoshravindran7
 ms.topic: concepts
 ms.date: 03/16/2023
 ---
@@ -52,4 +52,4 @@ By default, all the Fabric workspaces will be enabled with High Concurrency Mode
 10. At any point in time if you feel the notebook attached to a High Concurrency session requires more dedicated compute, you can choose to switch the notebook to a standard session at any point in time, by selecting the option to detach to a standard session in the Run menu tab. 
 :::image type="content" source="media\high-concurrency-mode-for-notebooks\detach-to-standard-session.png" alt-text="Screenshot showing the option to detach from a high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\detach-to-standard-session.png":::
 11. You can view the session status, type and session id by navigating to status bar, and by clicking on the Session ID would allow you to explore the jobs executed in this high concurrency session and view logs of the spark session in the monitoring detail page.
-:::image type="content" source="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png" alt-text="Screenshot showing the option to detach from a high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png":::
+:::image type="content" source="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png" alt-text="Screenshot showing how to view the status of jobs executed in a high concurrency session." lightbox="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png":::
