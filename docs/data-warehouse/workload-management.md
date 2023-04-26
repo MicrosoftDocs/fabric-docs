@@ -64,5 +64,5 @@ The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a 
 ## Next steps
 
 - [OneLake overview](../onelake/onelake-overview.md)
-- [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
+- [Create a warehouse](create-warehouse.md)
 - [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
