@@ -37,12 +37,11 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 |Execute or cancel execution of data pipelines.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 |View execution output of data pipelines, notebooks, ML models and experiments.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 
-<sup>1</sup> Viewers can't execute Spark notebooks, Spark job definitions, ML models, and ML experiments by default. They can however be granted artifact level permissions to execute individual artifacts. 
-
 ## Next steps
 
 - [Roles in workspaces in Power BI](/power-bi/collaborate-share/service-new-workspaces.md)
 - [Create workspaces](create-workspaces.md)
 - [Give users access to workspaces](give-access-workspaces.md)
 - [OneLake security](../onelake/onelake-security.md)
-- [Data Warehouse security](../data-warehouse/workspace-roles.md)
+- [Data warehouse security](../data-warehouse/workspace-roles.md)
+- [Data science roles and permissions](../data-science/models-experiments-rbac.md)
