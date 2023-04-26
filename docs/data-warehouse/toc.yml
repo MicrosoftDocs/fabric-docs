@@ -1,21 +1,21 @@
 items:
+- name: Microsoft Fabric documentation
+  href: ../get-started/microsoft-fabric-overview.md
 - name: Data Warehousing documentation
   href: index.yml
 - name: Overview
+  expanded: true
   items: 
   - name: Data warehousing
     href: data-warehousing.md
-  - name: SQL Endpoint
-    href: sql-endpoint.md
-  - name: Synapse Data Warehouse
-    href: warehouse.md
-- name: Get started 
+- name: Quickstarts
+  expanded: true
   items: 
-  - name: SQL Endpoint on the Lakehouse
-    href: get-started-sql-endpoint.md
-  - name: Synapse Data Warehouse
+  - name: Get started with the SQL Endpoint
+    href: get-started-lakehouse-sql-endpoint.md
+  - name: Get started with Synapse Data Warehouse
     items:
-    - name: 1. Get started with a Synapse Data Warehouse
+    - name: 1. Get started
       href: get-started-data-warehouse.md  
     - name: 2. Create a warehouse
       href: create-warehouse.md
@@ -27,69 +27,75 @@ items:
       href: query-warehouse.md
     - name: 6. Create reports
       href: create-reports.md
-    - name: 7. Create reports in the Power BI service
-      href: reports-power-bi-service.md
-- name: Connectivity
+- name: Concepts
   items: 
   - name: Connectivity
-    href: connectivity.md    
-- name: Security
-  items:
-  - name: Data warehousing security
-    href: security.md
-  - name: Workspace roles
-    href: workspace-roles.md
-  - name: Manage user access
-    href: manage-user-access.md    
-- name: Datasets
-  items:
+    items: 
+    - name: Connectivity
+      href: connectivity.md    
+  - name: Security
+    items:
+    - name: Data warehousing security
+      href: security.md
+    - name: Workspace roles
+      href: workspace-roles.md
+    - name: Manage user access
+      href: manage-user-access.md    
+    - name: Get Workspace and OneLake path
+      href: get-workspace-onelake-path.md      
   - name: Datasets
-    href: datasets.md
-  - name: Model data in the default Power BI dataset
-    href: model-default-power-bi-dataset.md          
-  - name: Define relationships in data models
-    href: data-modeling-defining-relationships.md
-  - name: Create a measure
-    href: create-measure.md
-  - name: Hide elements from downstream reporting
-    href: hide-elements-downstream-reporting.md
-- name: Load data into the Synapse Data Warehouse
-  items:
-  - name: Ingesting data into the warehouse
-    href: ingest-data.md
-  - name: Ingest data with data pipelines
-    href: ingest-data-pipelines.md
-- name: Query
-  items:
-  - name: Query using Visual Query editor
-    href: visual-query-editor.md
-  - name: Query using SQL Query editor
-    href: sql-query-editor.md    
-  - name: View data in the Data Grid
-    href: data-grid.md
-  - name: Query Delta Lake logs
-    href: query-delta-lake-logs.md
-- name: Design and Develop
-  items:
-  - name: Tables
-    href: tables.md
-  - name: Primary, foreign, and unique keys
-    href: table-constraints.md
-  - name: Transactions
-    href: transactions.md
-- name: Sharing 
-  items: 
-  - name: Share your Synapse Data Warehouse
-    href: share-warehouse.md
-  - name: Get Workspace and OneLake path
-    href: get-workspace-onelake-path.md
-- name: Manage and Monitor
-  items:
-  - name: Warehouse settings and context menus
-    href: settings-context-menus.md
-  - name: Statistics
-    href: statistics.md
-  - name: Monitor using DMVs
-    href: monitor-using-dmv.md
-  - name: Workload Management
-    href: workload-management.md
+    items:
+    - name: Datasets
+      href: datasets.md
+    - name: Model data in the default Power BI dataset
+      href: model-default-power-bi-dataset.md          
+    - name: Define relationships in data models
+      href: data-modeling-defining-relationships.md
+    - name: Create a measure
+      href: create-measure.md
+    - name: Hide elements from downstream reporting
+      href: hide-elements-downstream-reporting.md
+    - name: Create reports in the Power BI service
+      href: reports-power-bi-service.md      
+  - name: Load data into the Synapse Data Warehouse
+    items:
+    - name: Ingesting data into the warehouse
+      href: ingest-data.md
+    - name: Ingest data with data pipelines
+      href: ingest-data-pipelines.md
+  - name: Query
+    items:
+    - name: Query using Visual Query editor
+      href: visual-query-editor.md
+    - name: Query using SQL Query editor
+      href: sql-query-editor.md    
+    - name: View data in the Data preview
+      href: data-preview.md
+    - name: Query Delta Lake logs
+      href: query-delta-lake-logs.md
+  - name: Design and Develop
+    items:
+    - name: Tables
+      href: tables.md
+    - name: Data types
+      href: data-types.md
+    - name: T-SQL surface area
+      href: tsql-surface-area.md
+    - name: Primary, foreign, and unique keys
+      href: table-constraints.md
+    - name: Transactions
+      href: transactions.md
+    - name: Limitations and known issues
+      href: limitations.md      
+  - name: Manage and Monitor
+    items:
+    - name: Warehouse settings and context menus
+      href: settings-context-menus.md
+    - name: Statistics
+      href: statistics.md
+    - name: Monitor using DMVs
+      href: monitor-using-dmv.md
+    - name: Workload Management
+      href: workload-management.md
+    - name: Troubleshoot Synapse Data Warehouse
+      href: troubleshoot-synapse-data-warehouse.md

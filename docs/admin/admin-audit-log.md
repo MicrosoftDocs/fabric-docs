@@ -4,7 +4,7 @@ description: Learn how to use the Microsoft Fabric audit log report.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ---
 
 # Audit log report

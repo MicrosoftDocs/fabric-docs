@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ---
 
 # Apache Spark workspace administration settings

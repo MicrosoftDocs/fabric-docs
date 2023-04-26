@@ -22,7 +22,7 @@ To connect to an Azure SQL database from a dataflow:
 
 1. From your workspace, select **New** > **Dataflow Gen2 (Preview)** to create a new dataflow.
 
-   :::image type="content" source="./media/connector-azure-sql-database/select-open-dataflow.png" alt-text="Screenshot showing the workspace where you choose to create a new dataflow." lightbox="./media/connector-azure-blob-storage-dataflows/select-open-dataflow.png":::
+   :::image type="content" source="./media/connector-azure-sql-database/select-open-dataflow.png" alt-text="Screenshot showing the workspace where you choose to create a new dataflow." lightbox="./media/connector-azure-sql-database/select-open-dataflow.png":::
 
 1. In Power Query, either select **Get data** in the ribbon or select **Get data from another source** in the current view.
 
