@@ -123,6 +123,8 @@
         href: ../placeholder.md
       - name: Configure in copy activity
         href: ../placeholder.md
+      - name: Connect to a dataflow
+        href: connector-parquet-dataflows.md
     - name: OData
       items:
       - name: Overview

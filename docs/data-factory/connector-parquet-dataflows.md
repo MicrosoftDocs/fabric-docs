@@ -1,10 +1,10 @@
 ---
 title: Connect to Parquet files in dataflows
-description: This article explains how to connect to Parquet files in dataflows.
+description: This article explains how to use the Data Factory Parquet connector in Microsoft Fabric to connect to Parquet files in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 4/14/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
@@ -18,7 +18,7 @@ You can connect to Parquet files in Dataflow Gen2 using the Parquet connector pr
 
 ## Connect to Parquet files
 
-To connect to Parquet files from a dataflow:
+To connect to Parquet files in a dataflow:
 
 1. From your workspace, select **New** > **Dataflow Gen2 (Preview)** to create a new dataflow.
 
@@ -48,5 +48,5 @@ For more advanced information about connecting to your data using the parquet co
 
 ## Next steps
 
-- [How to create a Parquet connection](../placeholder.md.md)
-- [Copy data in Parquet](../placeholder.md)
+- [How to create a Parquet connection](connector-parquet.md)
+- [How to configure Parquet in a copy activity](connector-parquet-copy-activity.md)
