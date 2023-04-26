@@ -20,7 +20,7 @@ Major components of the Runtime:
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-# Runtime 1.1
+## Runtime 1.1
 
 Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are: 
 - Operating System: Ubuntu 18.04
@@ -35,12 +35,7 @@ Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offer
 Microsoft Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and additional commonly-used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
 
 
-Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.1, providing bug fixes, performance enhancements, and security patches. Staying up-to-date ensures optimal performance and reliability for your data processing tasks.
-
-
-[//]: # (TODO periodically - how often?)
-[//]: # (TODO publish list of changes)
-
+Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.1, providing bug fixes, performance enhancements, and security patches. **Staying up-to-date ensures optimal performance and reliability for your data processing tasks.**
 
 ## New features and improvements
 ### Apache Spark 3.3.1
@@ -73,13 +68,281 @@ Below is an extended summary of key new features related to Apache Spark version
 
 
 ### Delta Lake 2.2
-TBD
+**The key features in this release are as follows:**
+
+[`LIMIT`](https://github.com/delta-io/delta/commit/1a94a585) pushdown into Delta scan. Improve the performance of queries containing `LIMIT` clauses by pushing down the `LIMIT` into Delta scan during query planning. Delta scan uses the `LIMIT` and the file-level row counts to reduce the number of files scanned which helps the queries read far less number of files and could make `LIMIT` queries faster by 10-100x depending upon the table size.
+
+[Aggregate](https://github.com/delta-io/delta/commit/0c349da8) pushdown into Delta scan for SELECT COUNT(\*). Aggregation queries such as `SELECT COUNT(*)` on Delta tables are satisfied using file-level row counts in Delta table metadata rather than counting rows in the underlying data files. This significantly reduces the query time as the query just needs to read the table metadata and could make full table count queries faster by 10-100x.
+
+[Support](https://github.com/delta-io/delta/commit/a5fcec4f) for collecting file level statistics as part of the CONVERT TO DELTA command. These statistics potentially help speed up queries on the Delta table. By default the statistics are collected now as part of the CONVERT TO DELTA command. In order to disable statistics collection specify `NO STATISTICS` clause in the command. Example: `CONVERT TO DELTA table_name NO STATISTICS`
+
+[Improve](https://github.com/delta-io/delta/commit/9017ac0d811c0a42ba8ac45720bddf06c8f17e63) performance of the [DELETE](https://docs.delta.io/latest/delta-update.html#delete-from-a-table) command by pruning the columns to read when searching for files to rewrite.
+
+[Fix](https://github.com/delta-io/delta/commit/6dbc55db53332c985e5bc8470df6c95106afac25) for a bug in the DynamoDB-based [S3 multi-cluster mode](https://docs.delta.io/2.1.1/delta-storage.html#setup-configuration-s3-multi-cluster) configuration. The previous version wrote an incorrect timestamp which was used by [DynamoDB’s TTL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) feature to cleanup expired items. This timestamp value has been fixed and the table attribute renamed from `commitTime` to `expireTime`. If you already have TTL enabled, please follow the migration steps [here](https://docs.delta.io/latest/porting.html#delta-lake-1-2-1-2-0-0-or-2-1-0-to-delta-lake-2-0-1-2-1-1-or-above).
+
+[Fix](https://github.com/delta-io/delta/commit/b07257df) [non-deterministic](https://github.com/delta-io/delta/issues/527) behavior during MERGE when working with sources that are non-deterministic.
+
+[Remove](https://github.com/delta-io/delta/commit/89384632) the restrictions for using Delta tables with column mapping in certain Streaming + CDF cases. Earlier we used to block Streaming+CDF if the Delta table has column mapping enabled even though it doesn’t contain any RENAME or DROP columns.
+
+Other notable changes
+
+*   [Improve](https://github.com/delta-io/delta/commit/38f146b3) the monitoring of the Delta state construction queries (additional queries run as part of planning) by making them visible in the Spark UI.
+*   [Support](https://github.com/delta-io/delta/commit/ddc36911) for multiple `where()` calls in Optimize scala/python API
+*   [Support](https://github.com/delta-io/delta/commit/ee3917fc) for passing Hadoop configurations via DeltaTable API
+*   [Support](https://github.com/delta-io/delta/commit/3e8d2d16) partition column names starting with `.` or `_` in CONVERT TO DELTA command.
+*   Improvements to metrics in table history
+    *   [Fix](https://github.com/delta-io/delta/commit/5d22a38d) a metric in MERGE command
+    *   [Source type](https://github.com/delta-io/delta/commit/ac13fcb0) metric for CONVERT TO DELTA
+    *   [Metrics](https://github.com/delta-io/delta/commit/2118e64b) for DELETE on partitions
+    *   [Additional](https://github.com/delta-io/delta/commit/fd503d80) vacuum stats
+*   [Fix](https://github.com/delta-io/delta/commit/7e876792efdd92a85aa3f7b81d81f34c8b276d7b) for accidental protocol downgrades with [RESTORE](https://docs.delta.io/latest/delta-utility.html#restore-a-delta-table-to-an-earlier-state) command. Until now, RESTORE TABLE may downgrade the protocol version of the table, which could have resulted in inconsistent reads with time travel. With this fix, the protocol version is never downgraded from the current one.
+*   [Fix](https://github.com/delta-io/delta/commit/943e1531) a bug in `MERGE INTO` when there are multiple `UPDATE` clauses and one of the UPDATEs is with a schema evolution.
+*   [Fix](https://github.com/delta-io/delta/commit/68c8e183) a bug where sometimes active `SparkSession` object is not found when using Delta APIs
+*   [Fix](https://github.com/delta-io/delta/commit/951a97d3) an issue where partition schema couldn’t be set during the initial commit.
+*   [Catch](https://github.com/delta-io/delta/commit/e5a7cd05) exceptions when writing `last_checkpoint` file fails.
+*   [Fix](https://github.com/delta-io/delta/commit/29d3a092) an issue when restarting a streaming query with `AvailableNow` trigger on a Delta table.
+*   [Fix](https://github.com/delta-io/delta/commit/0bbec372) an issue with CDF and Streaming where the offset is not correctly updated when there are no data changes  
+      
+Source: [https://github.com/delta-io/delta/releases](https://github.com/delta-io/delta/releases)
+Read full Documentation: [https://docs.delta.io/2.2.0/index.html](https://docs.delta.io/2.2.0/index.html)
 
 
 ## Default level packages
 
 ### Java/Scala libraries
 Below you can find the table with listing all the default level packages for Java/Scala and their respective versions.
+
+| **GroupId**                       | **ArtifactId**                              | **Version**                 |
+|-----------------------------------|---------------------------------------------|-----------------------------|
+| com.aliyun                        | aliyun-java-sdk-core                        | 4.5.10                      |
+| com.aliyun                        | aliyun-java-sdk-kms                         | 2.11.0                      |
+| com.aliyun                        | aliyun-java-sdk-ram                         | 3.1.0                       |
+| com.aliyun                        | aliyun-sdk-oss                              | 3.13.0                      |
+| com.amazonaws                     | aws-java-sdk-bundle                         | 1.11.1026                   |
+| com.chuusai                       | shapeless_2.12                              | 2.3.7                       |
+| com.esotericsoftware              | kryo-shaded                                 | 4.0.2                       |
+| com.esotericsoftware              | minlog                                      | 1.3.0                       |
+| com.fasterxml.jackson             | jackson-annotations-2.13.4.jar              |                             |
+| com.fasterxml.jackson             | jackson-core                                | 2.13.4                      |
+| com.fasterxml.jackson             | jackson-core-asl                            | 1.9.13                      |
+| com.fasterxml.jackson             | jackson-databind                            | 2.13.4.1                    |
+| com.fasterxml.jackson             | jackson-dataformat-cbor                     | 2.13.4                      |
+| com.fasterxml.jackson             | jackson-mapper-asl                          | 1.9.13                      |
+| com.fasterxml.jackson             | jackson-module-scala_2.12                   | 2.13.4                      |
+| com.github.joshelser              | dropwizard-metrics-hadoop-metrics2-reporter | 0.1.2                       |
+| com.github.wendykierp             | JTransforms                                 | 3.1                         |
+| com.google.code.findbugs          | jsr305                                      | 3.0.0                       |
+| com.google.code.gson              | gson                                        | 2.8.6                       |
+| com.google.flatbuffers            | flatbuffers-java                            | 1.12.0                      |
+| com.google.guava                  | guava                                       | 14.0.1                      |
+| com.google.protobuf               | protobuf-java                               | 2.5.0                       |
+| com.googlecode.json-simple        | json-simple                                 | 1.1.1                       |
+| com.jcraft                        | jsch                                        | 0.1.54                      |
+| com.jolbox                        | bonecp                                      | 0.8.0.RELEASE               |
+| com.linkedin.isolation-forest     | isolation-forest_3.2.0_2.12                 | 2.0.8                       |
+| com.ning                          | compress-lzf                                | 1.1                         |
+| com.qcloud                        | cos_api-bundle                              | 5.6.19                      |
+| com.sun.istack                    | istack-commons-runtime                      | 3.0.8                       |
+| com.tdunning                      | json                                        | 1.8                         |
+| com.thoughtworks.paranamer        | paranamer                                   | 2.8                         |
+| com.twitter                       | chill-java                                  | 0.10.0                      |
+| com.twitter                       | chill_2.12                                  | 0.10.0                      |
+| com.typesafe                      | config                                      | 1.3.4                       |
+| com.zaxxer                        | HikariCP                                    | 2.5.1                       |
+| commons-cli                       | commons-cli                                 | 1.5.0                       |
+| commons-codec                     | commons-codec                               | 1.15                        |
+| commons-collections               | commons-collections                         | 3.2.2                       |
+| commons-dbcp                      | commons-dbcp                                | 1.4                         |
+| commons-io                        | commons-io                                  | 2.11.0                      |
+| commons-lang                      | commons-lang                                | 2.6                         |
+| commons-logging                   | commons-logging                             | 1.1.3                       |
+| commons-pool                      | commons-pool                                | 1.5.4.jar                   |
+| dev.ludovic.netlib                | arpack                                      | 2.2.1                       |
+| dev.ludovic.netlib                | blas                                        | 2.2.1                       |
+| dev.ludovic.netlib                | lapack                                      | 2.2.1                       |
+| io.airlift                        | aircompressor                               | 0.21                        |
+| io.dropwizard.metrics             | metrics-core                                | 4.2.7                       |
+| io.dropwizard.metrics             | metrics-graphite                            | 4.2.7                       |
+| io.dropwizard.metrics             | metrics-jmx                                 | 4.2.7                       |
+| io.dropwizard.metrics             | metrics-json                                | 4.2.7                       |
+| io.dropwizard.metrics             | metrics-jvm                                 | 4.2.7                       |
+| io.netty                          | netty-all                                   | 4.1.74.Final                |
+| io.netty                          | netty-buffer                                | 4.1.74.Final                |
+| io.netty                          | netty-codec                                 | 4.1.74.Final                |
+| io.netty                          | netty-common                                | 4.1.74.Final                |
+| io.netty                          | netty-handler                               | 4.1.74.Final                |
+| io.netty                          | netty-resolver                              | 4.1.74.Final                |
+| io.netty                          | netty-tcnative-classes                      | 2.0.48.Final                |
+| io.netty                          | netty-transport                             | 4.1.74.Final                |
+| io.netty                          | netty-transport-classes-epoll               | 4.1.74.Final                |
+| io.netty                          | netty-transport-classes-kqueue              | 4.1.74.Final                |
+| io.netty                          | netty-transport-native-epoll                | 4.1.74.Final-linux-aarch_64 |
+| io.netty                          | netty-transport-native-epoll                | 4.1.74.Final-linux-x86_64   |
+| io.netty                          | netty-transport-native-kqueue               | 4.1.74.Final-osx-aarch_64   |
+| io.netty                          | netty-transport-native-kqueue               | 4.1.74.Final-osx-x86_64     |
+| io.netty                          | netty-transport-native-unix-common          | 4.1.74.Final                |
+| io.opentracing                    | opentracing-api                             | 0.33.0                      |
+| io.opentracing                    | opentracing-noop                            | 0.33.0                      |
+| io.opentracing                    | opentracing-util                            | 0.33.0                      |
+| jakarta.annotation                | jakarta.annotation-api                      | 1.3.5                       |
+| jakarta.inject                    | jakarta.inject                              | 2.6.1                       |
+| jakarta.servlet                   | jakarta.servlet-api                         | 4.0.3                       |
+| jakarta.validation-api            | 2.0.2                                       |                             |
+| jakarta.ws.rs                     | jakarta.ws.rs-api                           | 2.1.6                       |
+| jakarta.xml.bind                  | jakarta.xml.bind-api                        | 2.3.2                       |
+| javax.activation                  | activation                                  | 1.1.1                       |
+| javax.jdo                         | jdo-api                                     | 3.0.1                       |
+| javax.transaction                 | jta                                         | 1.1                         |
+| javax.xml.bind                    | jaxb-api                                    | 2.2.11                      |
+| javolution                        | javolution                                  | 5.5.1                       |
+| jline                             | jline                                       | 2.14.6                      |
+| joda-time                         | joda-time                                   | 2.10.13                     |
+| net.razorvine                     | pickle                                      | 1.2                         |
+| net.sf.jpam                       | jpam                                        | 1.1                         |
+| net.sf.opencsv                    | opencsv                                     | 2.3                         |
+| net.sf.py4j                       | py4j                                        | 0.10.9.5                    |
+| net.sourceforge.f2j               | arpack_combined_all                         | 0.1                         |
+| org.antlr                         | ST4                                         | 4.0.4                       |
+| org.antlr                         | antlr-runtime                               | 3.5.2                       |
+| org.antlr                         | antlr4-runtime                              | 4.8                         |
+| org.apache.arrow                  | arrow-format                                | 7.0.0                       |
+| org.apache.arrow                  | arrow-memory-core                           | 7.0.0                       |
+| org.apache.arrow                  | arrow-memory-netty                          | 7.0.0                       |
+| org.apache.arrow                  | arrow-vector                                | 7.0.0                       |
+| org.apache.avro                   | avro                                        | 1.11.0                      |
+| org.apache.avro                   | avro-ipc                                    | 1.11.0                      |
+| org.apache.avro                   | avro-mapred                                 | 1.11.0                      |
+| org.apache.commons                | commons-collections4                        | 4.4                         |
+| org.apache.commons                | commons-compress                            | 1.21                        |
+| org.apache.commons                | commons-crypto                              | 1.1.0                       |
+| org.apache.commons                | commons-lang3                               | 3.12.0                      |
+| org.apache.commons                | commons-math3                               | 3.6.1                       |
+| org.apache.commons                | commons-pool2                               | 2.11.1                      |
+| org.apache.commons                | commons-text                                | 1.10.0                      |
+| org.apache.curator                | curator-client                              | 2.13.0                      |
+| org.apache.curator                | curator-framework                           | 2.13.0                      |
+| org.apache.curator                | curator-recipes                             | 2.13.0                      |
+| org.apache.derby                  | derby                                       | 10.14.2.0                   |
+| org.apache.hadoop                 | hadoop-aliyun                               | 3.3.3.5.2-90111858          |
+| org.apache.hadoop                 | hadoop-annotations                          | 3.3.3.5.2-90111858          |
+| org.apache.hadoop                 | hadoop-aws                                  | 3.3.3.5.2-90111858          |
+| org.apache.hadoop                 | hadoop-azure                                | 3.3.3.5.2-90111858          |
+| org.apache.hadoop                 | hadoop-azure-datalake                       | 3.3.3.5.2-90111858          |
+| org.apache.hadoop                 | hadoop-client-api                           | 3.3.3.5.2-90111858          |
+| org.apache.hadoop                 | hadoop-client-runtime                       | 3.3.3.5.2-90111858          |
+| org.apache.hadoop                 | hadoop-cloud-storage                        | 3.3.3.5.2-90111858          |
+| org.apache.hadoop                 | hadoop-cos                                  | 3.3.3.5.2-90111858          |
+| org.apache.hadoop                 | hadoop-openstack                            | 3.3.3.5.2-90111858          |
+| org.apache.hadoop                 | hadoop-shaded-guava                         | 1.1.1                       |
+| org.apache.hadoop                 | hadoop-yarn-server-web-proxy                | 3.3.3.5.2-90111858          |
+| org.apache.hive                   | hive-beeline                                | 2.3.9                       |
+| org.apache.hive                   | hive-cli                                    | 2.3.9                       |
+| org.apache.hive                   | hive-common                                 | 2.3.9                       |
+| org.apache.hive                   | hive-exec                                   | 2.3.9                       |
+| org.apache.hive                   | hive-jdbc                                   | 2.3.9                       |
+| org.apache.hive                   | hive-llap-common                            | 2.3.9                       |
+| org.apache.hive                   | hive-metastore                              | 2.3.9                       |
+| org.apache.hive                   | hive-serde                                  | 2.3.9                       |
+| org.apache.hive                   | hive-service-rpc                            | 3.1.2                       |
+| org.apache.hive                   | hive-shims-0.23                             | 2.3.9                       |
+| org.apache.hive                   | hive-shims                                  | 2.3.9                       |
+| org.apache.hive                   | hive-shims-common                           | 2.3.9                       |
+| org.apache.hive                   | hive-shims-scheduler                        | 2.3.9                       |
+| org.apache.hive                   | hive-storage-api                            | 2.7.2                       |
+| org.apache.hive                   | hive-vector-code-gen                        | 2.3.9                       |
+| org.apache.httpcomponents         | httpclient                                  | 4.5.13                      |
+| org.apache.httpcomponents         | httpcore                                    | 4.4.14                      |
+| org.apache.httpcomponents         | httpmime                                    | 4.5.13                      |
+| org.apache.httpcomponents.client5 | httpclient5                                 | 5.1.3                       |
+| org.apache.ivy                    | ivy                                         | 2.5.1                       |
+| org.apache.kafka                  | kafka-clients                               | 2.8.1                       |
+| org.apache.logging.log4j          | log4j-1.2-api                               | 2.17.2                      |
+| org.apache.logging.log4j          | log4j-api                                   | 2.17.2                      |
+| org.apache.logging.log4j          | log4j-core                                  | 2.17.2                      |
+| org.apache.logging.log4j          | log4j-slf4j-impl                            | 2.17.2                      |
+| org.apache.orc                    | orc-core                                    | 1.7.6                       |
+| org.apache.orc                    | orc-mapreduce                               | 1.7.6                       |
+| org.apache.orc                    | orc-shims                                   | 1.7.6                       |
+| org.apache.parquet                | parquet-column                              | 1.12.3                      |
+| org.apache.parquet                | parquet-common                              | 1.12.3                      |
+| org.apache.parquet                | parquet-encoding                            | 1.12.3                      |
+| org.apache.parquet                | parquet-format-structures                   | 1.12.3                      |
+| org.apache.parquet                | parquet-hadoop                              | 1.12.3                      |
+| org.apache.parquet                | parquet-jackson                             | 1.12.3                      |
+| org.apache.qpid                   | proton-j                                    | 0.33.8                      |
+| org.apache.thrift                 | libfb303                                    | 0.9.3                       |
+| org.apache.thrift                 | libthrift                                   | 0.12.0                      |
+| org.apache.yetus                  | audience-annotations                        | 0.5.0                       |
+| org.apiguardian                   | apiguardian-api                             | 1.1.0                       |
+| org.codehaus.janino               | commons-compiler                            | 3.0.16                      |
+| org.codehaus.janino               | janino                                      | 3.0.16                      |
+| org.codehaus.jettison             | jettison                                    | 1.1                         |
+| org.datanucleus                   | datanucleus-api-jdo                         | 4.2.4                       |
+| org.datanucleus                   | datanucleus-core                            | 4.1.17                      |
+| org.datanucleus                   | datanucleus-rdbms                           | 4.1.19                      |
+| org.datanucleusjavax.jdo          | 3.2.0-m3                                    |                             |
+| org.eclipse.jdt                   | core                                        | 1.1.2                       |
+| org.eclipse.jetty                 | jetty-util                                  | 9.4.48.v20220622            |
+| org.eclipse.jetty                 | jetty-util-ajax                             | 9.4.48.v20220622            |
+| org.fusesource.leveldbjni         | leveldbjni-all                              | 1.8                         |
+| org.glassfish.hk2                 | hk2-api                                     | 2.6.1                       |
+| org.glassfish.hk2                 | hk2-locator                                 | 2.6.1                       |
+| org.glassfish.hk2                 | hk2-utils                                   | 2.6.1                       |
+| org.glassfish.hk2                 | osgi-resource-locator                       | 1.0.3                       |
+| org.glassfish.hk2.external        | aopalliance-repackaged                      | 2.6.1                       |
+| org.glassfish.jaxb                | jaxb-runtime                                | 2.3.2                       |
+| org.glassfish.jersey.containers   | jersey-container-servlet                    | 2.36                        |
+| org.glassfish.jersey.containers   | jersey-container-servlet-core               | 2.36                        |
+| org.glassfish.jersey.core         | jersey-client                               | 2.36                        |
+| org.glassfish.jersey.core         | jersey-common                               | 2.36                        |
+| org.glassfish.jersey.core         | jersey-server                               | 2.36                        |
+| org.glassfish.jersey.inject       | jersey-hk2                                  | 2.36                        |
+| org.ini4j                         | ini4j                                       | 0.5.4                       |
+| org.javassist                     | javassist                                   | 3.25.0-GA                   |
+| org.javatuples                    | javatuples                                  | 1.2                         |
+| org.jdom                          | jdom2                                       | 2.0.6                       |
+| org.jetbrains                     | annotations                                 | 17.0.0                      |
+| org.jodd                          | jodd-core                                   | 3.5.2                       |
+| org.json4s                        | json4s-ast_2.12                             | 3.7.0-M11                   |
+| org.json4s                        | json4s-core_2.12                            | 3.7.0-M11                   |
+| org.json4s                        | json4s-jackson_2.12                         | 3.7.0-M11                   |
+| org.json4s                        | json4s-scalap_2.12                          | 3.7.0-M11                   |
+| org.junit.jupiter                 | junit-jupiter                               | 5.5.2                       |
+| org.junit.jupiter                 | junit-jupiter-api                           | 5.5.2                       |
+| org.junit.jupiter                 | junit-jupiter-engine                        | 5.5.2                       |
+| org.junit.jupiter                 | junit-jupiter-params                        | 5.5.2                       |
+| org.junit.platform                | junit-platform-commons                      | 1.5.2                       |
+| org.junit.platform                | junit-platform-engine                       | 1.5.2                       |
+| org.lz4                           | lz4-java                                    | 1.8.0                       |
+| org.objenesis                     | objenesis                                   | 3.2                         |
+| org.openpnp                       | opencv                                      | 3.2.0-1                     |
+| org.opentest4j                    | opentest4j                                  | 1.2.0                       |
+| org.postgresql                    | postgresql                                  | 42.2.9                      |
+| org.roaringbitmap                 | RoaringBitmap                               | 0.9.25                      |
+| org.roaringbitmap                 | shims                                       | 0.9.25                      |
+| org.rocksdb                       | rocksdbjni                                  | 6.20.3                      |
+| org.scala-lang                    | scala-compiler                              | 2.12.15                     |
+| org.scala-lang                    | scala-library                               | 2.12.15                     |
+| org.scala-lang                    | scala-reflect                               | 2.12.15                     |
+| org.scala-lang.modules            | scala-collection-compat_2.12                | 2.1.1                       |
+| org.scala-lang.modules            | scala-java8-compat_2.12                     | 0.9.0                       |
+| org.scala-lang.modules            | scala-parser-combinators_2.12               | 1.1.2                       |
+| org.scala-lang.modules            | scala-xml_2.12                              | 1.2.0                       |
+| org.scalactic                     | scalactic_2.12                              | 3.2.14                      |
+| org.scalanlp                      | breeze-macros_2.12                          | 1.2                         |
+| org.scalanlp                      | breeze_2.12                                 | 1.2                         |
+| org.slf4j                         | jcl-over-slf4j                              | 1.7.32                      |
+| org.slf4j                         | jul-to-slf4j                                | 1.7.32                      |
+| org.slf4j                         | slf4j-api                                   | 1.7.32                      |
+| org.typelevel                     | algebra_2.12                                | 2.0.1                       |
+| org.typelevel                     | cats-kernel_2.12                            | 2.1.1                       |
+| org.typelevel                     | spire-macros_2.12                           | 0.17.0                      |
+| org.typelevel                     | spire-platform_2.12                         | 0.17.0                      |
+| org.typelevel                     | spire-util_2.12                             | 0.17.0                      |
+| org.xerial.snappy                 | snappy-java                                 | 1.1.8.4                     |
+| oro                               | oro                                         | 2.0.8                       |
+| pl.edu.icm                        | JLargeArrays                                | 1.5                         |
+
 
 ### Python libraries
 Below you can find the table with listing all the default level packages for Python and their respective versions.
