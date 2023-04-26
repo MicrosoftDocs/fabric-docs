@@ -26,7 +26,7 @@ In this tutorial, we'll demonstrate data engineering and data science workflows 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 - Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 - Open the sample notebook or create a new notebook.
-    - Create [a new notebook](/fabric/data-engineering/how-to-use-notebook) if you want to copy/paste code into cells.
+    - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) if you want to copy/paste code into cells.
     - Or, Select **Use a sample** > **Fraud detection** to open the sample notebook.
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
