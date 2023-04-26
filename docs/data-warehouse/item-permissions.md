@@ -35,7 +35,6 @@ Notes:
 
 Permissions can be granted to users through:
 
-- The item sharing flow, see [Share your Synapse Data Warehouse](share-warehouse.md).
 - Via T-SQL, see [SQL granular permissions](sql-granular-permissions.md).
 - In the Fabric portal through **Manage permissions**, as follows.
 
