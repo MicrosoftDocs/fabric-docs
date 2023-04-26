@@ -61,15 +61,11 @@ To remove objects, a user can use the manually select button in the ribbon and:
 > [!TIP]
 > We recommend reviewing the objects enabled for BI and ensuring they have the correct logical relationships to ensure a smooth downstream reporting experience.
 
-## Using model view layouts
-
-During the session, users may create multiple tabs in the model view to depict say, data warehouse schemas or further assist with database design. Currently the model view layouts are only persisted in session. However the database changes are persisted. Users can use the auto-layout whenever a new tab is created to visually inspect the database design and understand the modeling.
-
 ## Create a measure
 
 A [measure](/power-bi/transform-model/desktop-measures) is a collection of standardized metrics. Similar to Power BI Desktop, the DAX editing experience in warehouse presents a rich editor complete with auto-complete for formulas (IntelliSense). The DAX editor enables you to easily develop measures right in warehouse, making it a more effective single source for business logic, semantics, and business critical calculations.
 
-1. To create a measure, select the table in the **Table Explorer** and select the **New Measure** button in the ribbon, as shown in the following image.
+1. To create a measure, select the **New Measure** button in the ribbon, as shown in the following image.
 
     :::image type="content" source="media\create-measure\table-explorer-ribbon.png" alt-text="Screenshot showing the table explorer and where the new measure button appears on the ribbon." lightbox="media\create-measure\table-explorer-ribbon.png":::
 
@@ -79,7 +75,7 @@ A [measure](/power-bi/transform-model/desktop-measures) is a collection of stand
 
 ## Hide elements from downstream reporting
 
-You can hide elements of your warehouse from downstream reporting by selecting **Data view** and right-clicking on the column or table you want to hide. 
+You can hide elements of your warehouse from downstream reporting by right-clicking on the column or table you want to hide from the object explorer. 
 
 Select **Hide** in **Report view** from the menu that appears to hide the item from downstream reporting.
 
@@ -89,15 +85,6 @@ You can also hide the entire table and individual columns by using the **Model v
 
 :::image type="content" source="media\hide-elements-downstream-reporting\model-view-canvas.png" alt-text="Screenshot showing the model view canvas options." lightbox="media\hide-elements-downstream-reporting\model-view-canvas.png":::
 
-## Access the default Power BI dataset
-
-To access default Power BI datasets, go to your workspace, and find the dataset that matches the name of the desired Lakehouse. The default Power BI dataset follows the naming convention of the Lakehouse.
-
-:::image type="content" source="media\data-modeling-defining-relationships\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\data-modeling-defining-relationships\find-dataset.png":::
-
-To load the dataset, select the name of the dataset.
-
-:::image type="content" source="media\data-modeling-defining-relationships\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\data-modeling-defining-relationships\load-dataset.png":::
 
 ## Next steps
 
