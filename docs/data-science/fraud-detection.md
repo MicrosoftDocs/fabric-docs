@@ -15,11 +15,11 @@ ms.date: 05/23/2023
 In this tutorial, we'll demonstrate data engineering and data science workflows with an end-to-end example that builds a model for detecting fraudulent credit card transactions. The steps you'll take are:
 
 > [!div class="checklist"]
-> * Step 1
-> * step 2
-> * step 3
-
-
+> * Upload the data into a Lakehouse
+> * Perform exploratory data analysis on the data
+> * Prepare the data by handling class imbalance
+> * Train a model and log it with MLflow
+> * Deploy the model and save prediction results
 
 ## Prerequisites
 
@@ -36,16 +36,16 @@ The dataset contains credit card transactions made by European cardholders in Se
 
 ### Input and response variables
 
-The dataset contains only numerical input variables, which are the result of a Principal Component Analysis (PCA) transformation on the original features. To protect confidentiality, we can't provide the original features or additional background information about the data. The only features that haven't been transformed with PCA are "Time" and "Amount".
+The dataset contains only numerical input variables, which are the result of a Principal Component Analysis (PCA) transformation on the original features. To protect confidentiality, we can't provide the original features or more background information about the data. The only features that haven't been transformed with PCA are "Time" and "Amount".
 
-- Features _V1, V2, … V28_ are the principal components obtained with PCA.
-- _Time_ contains the seconds elapsed between each transaction and the first transaction in the dataset.
-- _Amount_ is the transaction amount. This feature can be used for example-dependent cost-sensitive learning.
-- _Class_ is the response variable, and it takes the value `1` for fraud and `0` otherwise.
+- Features "V1, V2, … V28" are the principal components obtained with PCA.
+- "Time" contains the seconds elapsed between each transaction and the first transaction in the dataset.
+- "Amount" is the transaction amount. This feature can be used for example-dependent cost-sensitive learning.
+- "Class"_ is the response variable, and it takes the value `1` for fraud and `0` otherwise.
 
 Given the class imbalance ratio, we recommend measuring the accuracy using the Area Under the Precision-Recall Curve (AUPRC). Using a confusion matrix to evaluate accuracy isn't meaningful for unbalanced classification.
 
-The following is a snippet of the _creditcard.csv_ data
+The following snippet shows a portion of the _creditcard.csv_ data.
 
 | "Time" | "V1" | "V2" | "V3" | "V4" | "V5" | "V6" | "V7" | "V8" | "V9" | "V10" | "V11" | "V12" | "V13" | "V14" | "V15" | "V16" | "V17" | "V18" | "V19" | "V20" | "V21" | "V22" | "V23" | "V24" | "V25" | "V26" | "V27" | "V28" | "Amount" | "Class" |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -189,10 +189,7 @@ display(train_data.groupBy(TARGET_COL).count())
 
 ### Handle imbalanced data
 
-We'll apply (Synthetic Minority Over-sampling Technique) SMOTE to automatically handle imbalance in the data. According to [Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). SMOTE: synthetic minority over-sampling technique. Journal of artificial intelligence research, 16, 321-357](https://arxiv.org/abs/1106.1813):
-
-    A dataset is imbalanced if the classification categories aren't approximately equally represented. Often real-world data sets are predominately composed of "normal" examples with only a small percentage of "abnormal" or "interesting" examples. It's also the case that the cost of misclassifying an abnormal (interesting) example as a normal example is often much higher than the cost of the reverse error. Under-sampling of the majority (normal) class has been proposed as a good means of increasing the sensitivity of a classifier to the minority class. This paper shows that a combination of our method of over-sampling the minority (abnormal) class and under-sampling the majority (normal) class can achieve better classifier performance (in ROC space) than only under-sampling the majority class. (p. 321)
-
+As often happens with real-world data, this data has a class-imbalance problem, since the positive class (fraudulent transactions) accounts for only 0.172% of all transactions. We'll apply [SMOTE](https://arxiv.org/abs/1106.1813) (Synthetic Minority Over-sampling Technique) to automatically handle class imbalance in the data. The SMOTE method oversamples the minority class and undersamples the majority class for improved classifier performance.
 
 Let's apply SMOTE to the training data:
 
@@ -227,7 +224,7 @@ new_train_data = new_train_data.withColumn("features", array_to_vector("features
 
 ### Define the model
 
-With our data in place, we can now define the model. We'll use a LightGBM classifier and leverage SynapseML to implement the model with a few lines of code.
+With our data in place, we can now define the model. We'll use a LightGBM classifier and use SynapseML to implement the model with a few lines of code.
 
 ```python
 from synapse.ml.lightgbm import LightGBMClassifier
@@ -372,7 +369,7 @@ if new_auprc > auprc:
 
 ### Log and load the model with MLflow
 
-Now that we have a decent working model, we can save it for later use. Here we use MLflow to log metrics and models, and loadthe models back for prediction.
+Now that we have a decent working model, we can save it for later use. Here we use MLflow to log metrics and models, and load the models back for prediction.
 
 Set up MLflow:
 
@@ -442,3 +439,5 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training/model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
+
+
