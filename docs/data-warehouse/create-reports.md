@@ -26,7 +26,7 @@ Reports that use the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE 
 2. Using Power BI Desktop 
 
 ## Create reports using the Power BI service
-From within the warehouse experience, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI dataset.
+Within the warehouse experience, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI dataset.
 
 :::image type="content" source="media\reports-power-bi-service\new-report-riboon.png" alt-text="Screenshot of new report in the ribbon." lightbox="media\reports-power-bi-service\new-report-ribbon.png":::
 
