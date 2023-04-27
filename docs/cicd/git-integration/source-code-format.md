@@ -4,7 +4,7 @@ description: Understand how the items in Microsoft Fabric's git integration tool
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual 
-ms.date: 01/17/2023
+ms.date: 05/23/2023
 ms.custom: 
 ---
 

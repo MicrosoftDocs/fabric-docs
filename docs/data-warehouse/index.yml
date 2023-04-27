@@ -12,7 +12,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
   ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 04/13/2023 #Required; mm/dd/yyyy format.
+  ms.date: 05/23/2023 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -26,11 +26,6 @@ landingContent:
         links:
           - text: Overview
             url: data-warehousing.md
-          - text: Synapse Data Warehouse
-            url: warehouse.md
-          - text: SQL Endpoint
-            url: lakehouse-sql-endpoint.md
-
   # Card 
   - title: Get started with Data Warehouse
     linkLists:
@@ -77,8 +72,6 @@ landingContent:
             url: connectivity.md    
           - text: Workspace roles
             url: workspace-roles.md
-          - text: Manage user access
-            url: manage-user-access.md   
   # Card 
   - title: Ingest data
     linkLists:
@@ -99,13 +92,11 @@ landingContent:
             url: model-default-power-bi-dataset.md          
           - text: Define relationships in data models
             url: data-modeling-defining-relationships.md
-          - text: Create a measure
-            url: create-measure.md
           - text: Reports in the Power BI service
             url: reports-power-bi-service.md            
           - text: Query using the SQL Query editor
             url: sql-query-editor.md
-          - text: Query using SSMS
+          - text: Query with T-SQL
             url: query-warehouse.md
           - text: Query using visual query editor
             url: visual-query-editor.md
@@ -120,6 +111,8 @@ landingContent:
             url: monitor-using-dmv.md 
           - text: Workload Management
             url: workload-management.md            
+          - text: Troubleshoot
+            url: troubleshoot-synapse-data-warehouse.md
   # Card 
   - title: Best practices
     linkLists:
@@ -132,7 +125,5 @@ landingContent:
     linkLists: 
       - linkListType: how-to-guide
         links:
-          - text: Share your Synapse Data Warehouse
-            url: share-warehouse.md
           - text: Get Workspace and OneLake path
             url: get-workspace-onelake-path.md

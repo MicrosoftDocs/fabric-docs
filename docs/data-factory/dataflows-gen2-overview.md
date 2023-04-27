@@ -3,7 +3,7 @@ title: Dataflows Gen2 overview
 description: An overview of the new generation of dataflows.
 author: luitwieler
 ms.topic: overview
-ms.date: 03/28/2023
+ms.date: 05/23/2023
 ms.author: jeluitwi
 ---
 
@@ -49,7 +49,7 @@ In Dataflows Gen2, we added support for the following destinations and many more
 - Azure Synapse Analytics (SQL DW)
 - Azure SQL Database
 
-Learn more about this feature [here](../placeholder.md).
+Learn more about this feature [here](dataflows-gen2-overview.md).
 
 :::image type="content" source="./media/dataflows-gen2-overview/output-destinations-overview.png" alt-text="Screenshot with the supported output destinations displayed.":::
 

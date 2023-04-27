@@ -4,7 +4,7 @@ description: Learn how to use the Visual Query editor.
 author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Query Editor
 ---
@@ -37,7 +37,7 @@ The following image shows a sample query created using the no-code Visual Query 
 
 :::image type="content" source="media\visual-query-editor\sample-query-top-customers.png" alt-text="Screenshot of the results of a sample query to retrieve top customers by orders." lightbox="media\visual-query-editor\sample-query-top-customers.png":::
 
-## Known limitations with Visual Query editor
+## Limitations with Visual Query editor
 
 - You can only write DQL (not DDL or DML).
 - You can't currently open a visual query in Microsoft Excel.

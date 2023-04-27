@@ -5,7 +5,7 @@ ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
@@ -23,8 +23,7 @@ R support is only available in Spark3.1 or above.  R in Spark 2.4 is not support
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md
-)]
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
 
 
 ## Read and write SparkR DataFrames
@@ -112,20 +111,28 @@ Use RODBC to connect to SQL based databases through an ODBC interface. For examp
 # load RODBC package
 library(RODBC)
 
-# connect to driver
 
+# config connection string
 
-DriverInstalled <- system("apt list --installed msodbc*", intern=TRUE, ignore.stderr=TRUE)
-DriverVersion <- substr(DriverInstalled[2],10,11)
-DriverVersion
+DriverVersion <- substr(system("apt list --installed *msodbc*", intern=TRUE, ignore.stderr=TRUE)[2],10,11)
+ServerName <- "your-server-name"
+DatabaseName <- "your-database-name"
+Uid <- "your-user-id-list"
+Password <- "your-password"
 
-channel <-odbcDriverConnect("Driver={DriverVersion};
-Server={<your-server-name>};
-Database={<your-database-name>};Uid={<uid>};
-Pwd={<your-pwd>};
+ConnectionString = sprintf("Driver={ODBC Driver %s for SQL Server};
+Server=%s;
+Database=%s;
+Uid=%s;
+Pwd=%s;
 Encrypt=yes;
 TrustServerCertificate=yes;
-Connection Timeout=30;")
+Connection Timeout=30;",DriverVersion,ServerName,DatabaseName,Uid,Password)
+print(ConnectionString)
+
+
+# connect to driver
+channel <-odbcDriverConnect(ConnectionString)
 
 # query from existing tables
 Rdf <- sqlQuery(channel, "select * from <table>")

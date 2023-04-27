@@ -4,7 +4,7 @@ description: Understand how Microsoft Fabric interacts with git on Azure Repos
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual 
-ms.date: 01/17/2023
+ms.date: 05/23/2023
 ms.custom: 
 ---
 
@@ -28,17 +28,14 @@ The following list shows what different workspace roles can do depending on thei
 
 The following table describes the permissions needed to perform various common operations:
 
-| **Operations**                                                       | **Workspace role**                                                                        | **GitHub permissions**                       | **Azure DevOps permissions**                  |
+| **Operation**                                                       | **Workspace role**                                                                        | **GitHub permissions**                       | **Azure DevOps permissions**                  |
 |----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|-----------------------------------------------|
 | Connect workspace to Git repo                                        | Admin                                                                                     | Role=Read                                    | Read=Allow                                    |
 | Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    | No permissions are needed                     |
 | Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Role=Read  (in target repo/directory/branch) | Read=Allow (in target repo/directory/branch)  |
 | View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 | Read or None                                  |
 | See workspace 'git status'                                           | Contributor                                                                               | Role=Read                                    | Read=Allow                                    |
-| Update from Git                                                      | All of the following                                                                      | Role=Read                                    | Read=Allow                                    |
-|                                                                      | Contributor in the workspace (WRITE permission on all artifacts)                          |                                              |                                               |
-|                                                                      | Owner on the artifact (if applicable, and the tenant switch blocks updates for nonowners) |                                              |                                               |
-|                                                                      | BUILD permission on external dependencies (where applicable)                              |                                              |                                               |
+| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Read   | Read=Allow  |
 
 ## Connect and sync
 
@@ -103,9 +100,15 @@ In each tab, the changed items are listed with an icon indicating the status:
 ### Commit
 
 - When there is more than one item to commit, you can select which items to commit to the git branch.
-- If there were changes made to the git branch commits are disabled until you update your workspace, to prevent conflicts.
+- If there were updates made to the git branch, commits are disabled until you update your workspace, to prevent conflicts.
 
-Read more about how to [commit](./git-get-started.md#commit-changes-to-git) and [update](./git-get-started.md#update-workspace-from-git). Read more about the update process and how to [resolve conflicts](./conflict-resolution.md).
+### Update
+
+- Unlike *commit* and *undo*, the *Update* command always updates the entire branch and syncs to the most recent commit. You can’t select specific items to update.
+- If changes were made in the workspace and in the git branch *on the same item*, updates are disabled until the [conflict is resolved](./conflict-resolution.md).
+
+Read more about how to [commit](./git-get-started.md#commit-changes-to-git) and [update](./git-get-started.md#update-workspace-from-git).
+Read more about the update process and how to [resolve conflicts](./conflict-resolution.md).
 
 ## Next steps
 
