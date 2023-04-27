@@ -77,8 +77,12 @@
         href: connector-binary-dataflows.md
     - name: Delimited text
       href: format-delimited-text.md
-    - name: Excel format
-      href: format-excel.md
+    - name: Excel
+      items:
+      - name: Excel format
+        href: format-excel.md
+      - name: Connect in dataflows
+        href: connector-excel-dataflows.md
     - name: Google cloud Storage
       items:
       - name: Overview
