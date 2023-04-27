@@ -23,7 +23,7 @@ In this article, you learn you how to create a new database. Once your database 
 
 1. Select **New** > **KQL Database**.
 
-    :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Real-time Analytics workspace that shows the dropdown menu of the ribbon button titled New. Both the New tab and the entry titled KQL Database are highlighted":::
+    :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Real-time Analytics workspace that shows the dropdown menu of the ribbon button titled New. Both the New tab and the entry titled KQL Database are highlighted.":::
 
 1. Enter your database name, then select **Create**.
 
