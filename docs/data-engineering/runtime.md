@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # What is a Runtime in Fabric?
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 The Microsoft Fabric Runtime provides an Azure-integrated Apache Spark-based platform for executing and managing data engineering and data science workloads. It combines essential components from both internal and open-source sources to offer customers a seamless and comprehensive solution.
 
 Major components of the Runtime:
@@ -18,10 +20,7 @@ Major components of the Runtime:
 - **Default-level Packages for Java/Scala, Python, and R** to support diverse programming languages and environments. These packages are automatically installed and configured, allowing developers to apply their preferred programming languages for data processing tasks.
 - The Microsoft Fabric Runtime is built upon **a robust open-source operating system (Ubuntu)**, ensuring compatibility with various hardware configurations and system requirements. 
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Runtime 1.1
-
 Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are: 
 - Operating System: Ubuntu 18.04
 - Java: 1.8.0_282
@@ -33,7 +32,6 @@ Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offer
 :::image type="content" source="media\spark-workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\spark-workspace-admin-settings\runtime-version.png":::
 
 Microsoft Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
-
 
 Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.1, providing bug fixes, performance enhancements, and security patches. **Staying up-to-date ensures optimal performance and reliability for your data processing tasks.**
 
@@ -68,24 +66,14 @@ Below is an extended summary of key new features related to Apache Spark version
 
 
 ### Delta Lake 2.2
-**The key features in this release are as follows:**
-
-[`LIMIT`](https://github.com/delta-io/delta/commit/1a94a585) pushdown into Delta scan. Improve the performance of queries containing `LIMIT` clauses by pushing down the `LIMIT` into Delta scan during query planning. Delta scan uses the `LIMIT` and the file-level row counts to reduce the number of files scanned which helps the queries read far less number of files and could make `LIMIT` queries faster by 10-100x depending upon the table size.
-
-[Aggregate](https://github.com/delta-io/delta/commit/0c349da8) pushdown into Delta scan for SELECT COUNT(\*). Aggregation queries such as `SELECT COUNT(*)` on Delta tables are satisfied using file-level row counts in Delta table metadata rather than counting rows in the underlying data files. This significantly reduces the query time as the query just needs to read the table metadata and could make full table count queries faster by 10-100x.
-
-[Support](https://github.com/delta-io/delta/commit/a5fcec4f) for collecting file level statistics as part of the CONVERT TO DELTA command. These statistics potentially help speed up queries on the Delta table. By default the statistics are collected now as part of the CONVERT TO DELTA command. In order to disable statistics collection specify `NO STATISTICS` clause in the command. Example: `CONVERT TO DELTA table_name NO STATISTICS`
-
-[Improve](https://github.com/delta-io/delta/commit/9017ac0d811c0a42ba8ac45720bddf06c8f17e63) performance of the [DELETE](https://docs.delta.io/latest/delta-update.html#delete-from-a-table) command by pruning the columns to read when searching for files to rewrite.
-
-[Fix](https://github.com/delta-io/delta/commit/6dbc55db53332c985e5bc8470df6c95106afac25) for a bug in the DynamoDB-based [S3 multi-cluster mode](https://docs.delta.io/2.1.1/delta-storage.html#setup-configuration-s3-multi-cluster) configuration. The previous version wrote an incorrect timestamp which was used by [DynamoDB’s TTL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) feature to clean up expired items. This timestamp value has been fixed and the table attribute renamed from `commitTime` to `expireTime`. If you already have TTL enabled, please follow the migration steps [here](https://docs.delta.io/latest/porting.html#delta-lake-1-2-1-2-0-0-or-2-1-0-to-delta-lake-2-0-1-2-1-1-or-above).
-
-[Fix](https://github.com/delta-io/delta/commit/b07257df) [non-deterministic](https://github.com/delta-io/delta/issues/527) behavior during MERGE when working with sources that are non-deterministic.
-
-[Remove](https://github.com/delta-io/delta/commit/89384632) the restrictions for using Delta tables with column mapping in certain Streaming + CDF cases. Earlier we used to block Streaming+CDF if the Delta table has column mapping enabled even though it doesn’t contain any RENAME or DROP columns.
-
-Other notable changes
-
+The key features in this release are as follows:
+*   [`LIMIT`](https://github.com/delta-io/delta/commit/1a94a585) pushdown into Delta scan. Improve the performance of queries containing `LIMIT` clauses by pushing down the `LIMIT` into Delta scan during query planning. Delta scan uses the `LIMIT` and the file-level row counts to reduce the number of files scanned which helps the queries read far less number of files and could make `LIMIT` queries faster by 10-100x depending upon the table size.
+*   [Aggregate](https://github.com/delta-io/delta/commit/0c349da8) pushdown into Delta scan for SELECT COUNT(\*). Aggregation queries such as `SELECT COUNT(*)` on Delta tables are satisfied using file-level row counts in Delta table metadata rather than counting rows in the underlying data files. This significantly reduces the query time as the query just needs to read the table metadata and could make full table count queries faster by 10-100x.
+*   [Support](https://github.com/delta-io/delta/commit/a5fcec4f) for collecting file level statistics as part of the CONVERT TO DELTA command. These statistics potentially help speed up queries on the Delta table. By default the statistics are collected now as part of the CONVERT TO DELTA command. In order to disable statistics collection specify `NO STATISTICS` clause in the command. Example: `CONVERT TO DELTA table_name NO STATISTICS`
+*   [Improve](https://github.com/delta-io/delta/commit/9017ac0d811c0a42ba8ac45720bddf06c8f17e63) performance of the [DELETE](https://docs.delta.io/latest/delta-update.html#delete-from-a-table) command by pruning the columns to read when searching for files to rewrite.
+*   [Fix](https://github.com/delta-io/delta/commit/6dbc55db53332c985e5bc8470df6c95106afac25) for a bug in the DynamoDB-based [S3 multi-cluster mode](https://docs.delta.io/2.1.1/delta-storage.html#setup-configuration-s3-multi-cluster) configuration. The previous version wrote an incorrect timestamp which was used by [DynamoDB’s TTL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) feature to clean up expired items. This timestamp value has been fixed and the table attribute renamed from `commitTime` to `expireTime`. If you already have TTL enabled, please follow the migration steps [here](https://docs.delta.io/latest/porting.html#delta-lake-1-2-1-2-0-0-or-2-1-0-to-delta-lake-2-0-1-2-1-1-or-above).
+*   [Fix](https://github.com/delta-io/delta/commit/b07257df) [non-deterministic](https://github.com/delta-io/delta/issues/527) behavior during MERGE when working with sources that are non-deterministic.
+*   [Remove](https://github.com/delta-io/delta/commit/89384632) the restrictions for using Delta tables with column mapping in certain Streaming + CDF cases. Earlier we used to block Streaming+CDF if the Delta table has column mapping enabled even though it doesn’t contain any RENAME or DROP columns.
 *   [Improve](https://github.com/delta-io/delta/commit/38f146b3) the monitoring of the Delta state construction queries (additional queries run as part of planning) by making them visible in the Spark UI.
 *   [Support](https://github.com/delta-io/delta/commit/ddc36911) for multiple `where()` calls in Optimize scala/python API
 *   [Support](https://github.com/delta-io/delta/commit/ee3917fc) for passing Hadoop configurations via DeltaTable API
@@ -103,13 +91,9 @@ Other notable changes
 *   [Fix](https://github.com/delta-io/delta/commit/29d3a092) an issue when restarting a streaming query with `AvailableNow` trigger on a Delta table.
 *   [Fix](https://github.com/delta-io/delta/commit/0bbec372) an issue with CDF and Streaming where the offset is not correctly updated when there are no data changes  
       
-Source: [https://github.com/delta-io/delta/releases](https://github.com/delta-io/delta/releases)
-Read full Documentation: [https://docs.delta.io/2.2.0/index.html](https://docs.delta.io/2.2.0/index.html)
+Check the source and full release notes [here](https://github.com/delta-io/delta/releases). 
 
-
-## Default level packages
-
-### Java/Scala libraries
+## Default level packages for Java/Scala libraries
 Below you can find the table with listing all the default level packages for Java/Scala and their respective versions.
 
 | **GroupId**                       | **ArtifactId**                              | **Version**                 |
@@ -344,7 +328,7 @@ Below you can find the table with listing all the default level packages for Jav
 | pl.edu.icm                        | JLargeArrays                                | 1.5                         |
 
 
-### Python libraries
+## Default level packages for Python libraries
 Below you can find the table with listing all the default level packages for Python and their respective versions.
 
 | **Library**                   | **Version** | **Library**              | **Version**  | **Library**             | **Version** |
@@ -506,7 +490,7 @@ Below you can find the table with listing all the default level packages for Pyt
 | interpret                     | 0.3.1       | pcre2                    | 10.40        | zstd                    | 1.5.2       |
 | interpret-core                | 0.3.1       | pexpect                  | 4.8.0        |                         |             |
 
-### R libraries
+## Default level packages for R libraries
 Below you can find the table with listing all the default level packages for R and their respective versions.
 
 |  **Library**  | **Version** | **Library**  | **Version** | **Library**  | **Version** |
