@@ -7,8 +7,6 @@ items:
     href: data-engineering-overview.md
 - name: Get started
   items:
-  - name: Lakehouse tutorial
-    href: ../placeholder.md
   - name: CSV upload to Delta for PBI reporting
     href: ../placeholder.md
   - name: Structured streaming to SQL serving
@@ -17,6 +15,22 @@ items:
     href: ../placeholder.md
   - name: Share lakehouse for PBI connectivity
     href: ../placeholder.md
+- name: Tutorial
+  items:
+  - name: 1 Lakehouse tutorial introduction
+    href: tutorial-lakehouse-introduction.md
+  - name: 2 Get started
+    href: tutorial-lakehouse-get-started.md
+  - name: 3 Build a lakehouse 
+    href: tutorial-build-lakehouse.md
+  - name: 4 Ingest data
+    href: tutorial-lakehouse-data-ingestion.md
+  - name: 5 Prepare data
+    href: tutorial-lakehouse-data-preparation.md
+  - name: 6 Build a report
+    href: tutorial-lakehouse-build-report.md
+  - name: 7 Clean up resources
+    href: tutorial-lakehouse-clean-up.md
 - name: Lakehouse
   items:
   - name: What is a lakehouse?

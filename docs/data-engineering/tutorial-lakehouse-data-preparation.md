@@ -30,19 +30,17 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Select **Open**. A notification indicating the status of the import appears in the top right corner of the browser window.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png" alt-text="Screenshot showing where to find the downloaded notebooks and the Open button." lightbox="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png":::
 
 1. After the import of notebooks is successful, you can go to items view of the workspace and see these newly imported notebooks. Select **wwilakehouse** lakehouse to open it.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\imported-notebooks-lakehouse.png" alt-text="Screenshot showing the list of imported notebooks and where to select the lakehouse." lightbox="media\tutorial-lakehouse-data-preparation\imported-notebooks-lakehouse.png":::
 
 1. Once the **wwilakehouse** lakehouse is opened, select **Open notebook** > **Existing notebook** from the ribbon at the top.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-notebook-ribbon.png" alt-text="Screenshot showing the list of successfully imported notebooks." lightbox="media\tutorial-lakehouse-data-preparation\existing-notebook-ribbon.png":::
 
 1. From the list of existing notebooks, select the **01 - Create Delta Tables** notebook and select **Open**.
-
-   IMAGE
 
 1. In the open notebook in **Lakehouse explorer**, you see the notebook is already linked to your opened lakehouse.
 
@@ -54,11 +52,11 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Before you write data as delta lake tables in the **Tables** section of the lakehouse, you use two Fabric features (**Verti-Parquet** and **Optimize Write**) for optimized data writing and for improved reading performance. To enable these features in your session, set these configurations in the first cell of your notebook. (Eventually these features will be enabled by default for Spark sessions.)
 
-   To start execution, select **Run All** under **Home** at the top to start execution of the notebook and all its cells in the sequence. Or to execute code from that specific cell, you can select the **Run** icon on the left of the cell or push **SHIFT + ENTER** on your keyboard while control is in the cell.
+   To start execution, select **Run All** under **Home** at the top to start execution of the notebook and all its cells in the sequence. Or to execute code from that specific cell, you can select the **Run** icon on the left of the cell or press **SHIFT + ENTER** on your keyboard while control is in the cell.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\spark-session-run-execution.png" alt-text="Screenshot of a Spark session configuration screen, including a code cell and Run icon." lightbox="media\tutorial-lakehouse-data-preparation\spark-session-run-execution.png":::
 
-   The first thing you would have noticed when executing this cell is that you didn’t have to specify the underlying Spark pool or cluster details as Fabric provides it through the concepts of Live Pool. (Every Fabric workspace comes prewired with a default Spark pool, called Live Pool.) This means that when you create notebooks, you don't have to worry about specifying any Spark configurations or cluster details (or something like that) and when you execute your first command in the notebooks the live pool kicks in and is up in a few seconds after establishing your Spark session and starts executing the code in the cell. Subsequent code execution is almost instantaneous in this notebook while the Spark session is active.
+   When you execute this cell, you see that you didn’t have to specify the underlying Spark pool or cluster details because Fabric provides them through the concepts of Live Pool. (Every Fabric workspace comes prewired with a default Spark pool, called Live Pool.) This means that when you create notebooks, you don't have to worry about specifying any Spark configurations or cluster details (or something like that) and when you execute your first command in the notebooks the live pool kicks in and is up in a few seconds after establishing your Spark session and starts executing the code in the cell. Subsequent code execution is almost instantaneous in this notebook while the Spark session is active.
 
 1. Next, you read raw data from the **Files** section of the lakehouse, and add more columns for different date parts as part of the transformation. Finally, you use partitionBy Spark API to partition the data before writing it as delta table based on the newly created data part columns (Year and Quarter).
 
@@ -96,19 +94,15 @@ From the previous tutorial steps, we have raw data ingested from the source to t
        loadFullDataFromSource(table)
    ```
 
-   IMAGE
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\tutorial-lakehouse-explorer-tables.png" alt-text="Screenshot showing where to find your created tables in the Lakehouse explorer." lightbox="media\tutorial-lakehouse-data-preparation\tutorial-lakehouse-explorer-tables.png":::
 
 1. Go the items view of the workspace again and select the **wwilakehouse** lakehouse to open it.
 
-   IMAGE
-
 1. Now, open the second notebook. In the lakehouse view, select **Open notebook** > **Existing notebook** from the ribbon.
-
-   IMAGE
 
 1. From the list of existing notebooks, select the **02 - Data Transformation - Business** notebook to open it.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-second-notebook.png" alt-text="" lightbox="media\tutorial-lakehouse-data-preparation\":::
 
 1. In the open notebook in **Lakehouse explorer**, you see the notebook is already linked to your opened lakehouse.
 
@@ -119,7 +113,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    - Approach #1 - Use PySpark to join and aggregates data for generating business aggregates. This approach is preferable to someone with a programming (Python or PySpark) background.
    - Approach #2 - Use Spark SQL to join and aggregates data for generating business aggregates. This approach is preferable to someone with SQL background, transitioning to Spark.
 
-1. **Approach #1 (sale_by_date_city)** - Use PySpark to join and aggregate data for generating business aggregates. With the following code, you create three different Spark dataframes, each referencing an existing delta table. Then you join these tables using the dataframes, do group by to generate aggregation, rename a few of the columns.  and finally write it as a delta table in the **Tables** section of the lakehouse to persist with the data.
+1. **Approach #1 (sale_by_date_city)** - Use PySpark to join and aggregate data for generating business aggregates. With the following code, you create three different Spark dataframes, each referencing an existing delta table. Then you join these tables using the dataframes, do group by to generate aggregation, rename a few of the columns, and finally write it as a delta table in the **Tables** section of the lakehouse to persist with the data.
 
    In this cell, you create three different Spark dataframes, each referencing an existing delta table.
 
@@ -179,7 +173,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. To validate the created tables, right click and select refresh on the **wwilakehouse** lakehouse. The aggregate tables appear.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\validate-tables.png" alt-text="Screenshot of the Lakehouse explorer showing where the new tables appear." lightbox="media\tutorial-lakehouse-data-preparation\validate-tables.png":::
 
 Both of the previous approaches (1 and 2) produce a similar outcome. You can choose based on your background and preference, to minimize the need for you to learn a new technology or compromise on the performance.
 
@@ -187,4 +181,4 @@ Also you may notice that you're writing data as delta lake files, which the auto
 
 ## Next steps
 
-- Lakehouse tutorial: Building reports in Microsoft Fabric
+- [Lakehouse tutorial: Building reports in Microsoft Fabric](tutorial-lakehouse-build-report.md)
