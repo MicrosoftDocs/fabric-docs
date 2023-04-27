@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 
-title: CI/CD documentation # < 60 chars
+title: Lifecycle management documentation # < 60 chars
 summary: summary # < 160 chars
 
 metadata:
@@ -20,49 +20,49 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About CI/CD
+  - title: About Lifecycle management
     linkLists:
       - linkListType: overview
         links:
-          - text: What is [service]?
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: What is Lifecycle management?
+            url: ./cicd-overview.md 
+          - text: Microsoft Fabric REST APIs
+            url:  https://learn.microsoft.com/rest/api/fabric/ 
       - linkListType: overview
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: What is git integration?
+            url: git-integration/intro-to-git-integration.md 
+          - text: What is deployment pipelines?
+            url: deployment-pipelines/intro-to-deployment-pipelines.md
 
   # Card 
   - title: Get started
     linkLists:
       - linkListType: get-started
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Get started with git integration
+            url: git-integration/git-get-started.md
+          - text: Git integration concepts
+            url: git-integration/git-integration-process.md
       - linkListType: get-started
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Get started with deployment pipelines
+            url: deployment-pipelines/get-started-with-deployment-pipelines.md
+          - text: The deployment pipelines process
+            url: deployment-pipelines/understand-the-deployment-process.md
 
   # Card 
   - title: how-to-guide
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Manage git branches
+            url: git-integration/manage-branches.md
+          - text: Resolve conflicts in git
+            url: git-integration/resolve-conflicts.md
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Create deployment pipleline rules
+            url: deployment-pipelines/create-rules.md
+          - text: Automate deployment pipelines
+            url: deployment-pipelines/pipeline-automation.md
