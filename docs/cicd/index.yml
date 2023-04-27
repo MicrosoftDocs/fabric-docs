@@ -59,7 +59,7 @@ landingContent:
           - text: Manage git branches
             url: git-integration/manage-branches.md
           - text: Resolve conflicts in git
-            url: git-integration/resolve-conflicts.md
+            url: git-integration/conflict-resolution.md
       - linkListType: how-to-guide
         links:
           - text: Create deployment pipleline rules
