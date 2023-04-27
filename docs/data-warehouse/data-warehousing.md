@@ -27,11 +27,11 @@ The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is built for any skill level -
 
 Customers can instantaneously stand up Virtual Warehouses by quickly and easily creating a shortcut to data they want to query regardless of where that data resides. A Virtual Warehouse enables a customer to reason over multiple Lakehouse and Warehouse tables within a single boundary and with no data duplication.
 
-Seamlessly unlock value from data stored in a Lakehouse or a Warehouse through the richness of cross database querying in [!INCLUDE [product-name](../includes/product-name.md). Data that has been prepared in a Lakehouse can be easily joined to data in a Warehouse to deliver rich insights that previously required significant effort from data integration and engineering teams. Cross database querying enables customers to quickly and seamlessly leverage multiple data sources for fast insights and with zero data duplciation. 
+Seamlessly unlock value from data stored in a Lakehouse or a Warehouse through the richness of cross database querying in [!INCLUDE [product-name](../includes/product-name.md)]. Data that has been prepared in a Lakehouse can be easily joined to data in a Warehouse to deliver rich insights that previously required significant effort from data integration and engineering teams. Cross database querying enables customers to quickly and seamlessly leverage multiple data sources for fast insights and with zero data duplciation. 
 
 ### Autonomous workload management
 
-Warehouses in [!INCLUDE [product-name](../includes/product-name.md) leverage an industry leading distributed query processing engine which provides a natural isolation boundary with autonomous allocation and reliquishing of resources to offer a second-to-none autonomous workload management experience with no knobs to turn. True isolation is achieved by separating workloads with different workload characteristics, ensuring that a customers ETL jobs never interfere with their day to day analytics and reporting. 
+Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] leverage an industry leading distributed query processing engine which provides a natural isolation boundary with autonomous allocation and reliquishing of resources to offer a second-to-none autonomous workload management experience with no knobs to turn. True isolation is achieved by separating workloads with different workload characteristics, ensuring that a customers ETL jobs never interfere with their day to day analytics and reporting. 
 
 ### Open format for seamless engine interoperability
 
