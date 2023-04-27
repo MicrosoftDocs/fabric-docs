@@ -25,12 +25,9 @@ This Azure SQL Database connector is supported in [!INCLUDE [product-name](../in
 | **GetMetadata activity** | None | Basic<br>OAuth2<br>Service principal |
 | **Script activity** | None | Basic<br>OAuth2<br>Service principal |
 | **Stored procedure activity** | None | Basic<br>OAuth2<br>Service principal |
-| **Dataflow Gen2 (Source/Destination)** |  | |
 
 ## Next Steps
 
-[How to create Azure SQL Database connection](connector-azure-sql-database.md)
-
-[How to configure Azure SQL Database in copy activity](connector-azure-sql-database-copy-activity.md)
-
-
+- [How to create Azure SQL Database connection](connector-azure-sql-database.md)
+- [How to configure Azure SQL Database in copy activity](connector-azure-sql-database-copy-activity.md)
+- [Connect to an Azure SQL database in dataflows](connector-azure-sql-database-dataflow.md)
