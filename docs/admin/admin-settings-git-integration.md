@@ -40,7 +40,7 @@ Learn more about Multi-Geo support.
 
 The admin can decide whether or not to export sensitivity labels into the git repository when connecting to a workpace. Enable this setting to export sensitivity labels.
 
-:::image type="content" source="./media/admin-settings-git-integration/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting items to other geographical locations.":::
+:::image type="content" source="./media/admin-settings-git-integration/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting sensitivity labels.":::
 
 Learn more about sensitivity labels.
 
