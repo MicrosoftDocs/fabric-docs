@@ -24,6 +24,12 @@ Advanced users can build reports from a warehouse using a composite model or usi
 
 Reports that use the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] can be created with the Power BI service. For more information, see [Create reports in the Power BI service](reports-power-bi-service.md).
 
+## Create reports from Power BI Desktop
+
+You can use integrated Data hub experience in Power BI Desktop to select your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) to make a connection and build reports.
+
+   :::image type="content" source="media\create-reports\get-data-powerbi-desktop.png" alt-text="Screenshot of a get data from Power BI Desktop." lightbox="media\create-reports\get-data-powerbi-desktop.png":::
+
 ## Next steps
 
 - [Power BI admin center](../admin/admin-power-bi.md)
