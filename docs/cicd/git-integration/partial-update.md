@@ -11,16 +11,16 @@ ms.custom:
 
 # Manual update
 
-When updating more than one item in a workspace, there’s always a chance that one of them will fail. This happens if the incoming update from the git branch causes inconsistencies or dependency problems in the workspace that are difficult to determine in advance. The update stops when an item fails and you're left in a situation where your workspace isn't synced to any git branch.
+When updating more than one item in a workspace, there’s always a chance that one of them will fail. The workspace fails to update if the incoming update from the git branch causes inconsistencies or dependency problems in the workspace that are difficult to determine in advance. The update stops when an item fails and you're left in a situation where your workspace isn't synced to any git branch.
 
 > [!NOTE]
 > This is not the same as [conflict resolution](./conflict-resolution.md). If changes were made to the same item in both the workspace and git branch, it causes a conflict and updates are disabled. This article discusses what to do a workspace fails to update even though there are no direct conflicts.
 
-There are many reasons that an update can fail, including, but not limited to the following:
+There are many reasons that an update can fail, including, but not limited to the following problems:
 
 * Dependent items were changed or deleted
 * Circular dependencies were created
-* *Other reasons??*
+* *Other reasons?*
 
 An error message lets you know which item failed and why.
 
@@ -32,9 +32,9 @@ This error message appears for any user trying to access the workspace, until th
 
 Your workspace now contains the following items
 
-* The item or items updated before the failure. These are identical to the items in git, but the metadata isn't updated. These items have a git status of *synced* but with a triangle warning.
+* The item or items updated before the failure. These items are identical to the items in git, but the metadata isn't updated. They have a git status of *synced* but with a triangle warning.
 * The item that failed. This item has a git status of *Update required*.
-* Possibly, items that weren't updated yet when the item failed. These aren't updated at all and have a git status of *I don't know!*.
+* Possibly, items that weren't updated yet when the item failed. These items aren't updated at all and have a git status of *I don't know!*.
 
 The status bar at the bottom of the screen that shows the latest sync status is red and indicated the partially synced status.
 
@@ -48,7 +48,7 @@ To update the workspace manually after it failed to update automatically:
 1. Fix the problem in git. This can mean doing one or more of the following depending on what the issue is:
    * Revert the item to an earlier version that doesn't fail
    * Edit the item so it doesn't fail
-   * Restore an dependant item that was deleted
+   * Restore a dependant item that was deleted
 1. Go back to the workspace and **Update** it again
 
 ## Considerations and limitations
