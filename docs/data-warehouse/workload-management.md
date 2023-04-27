@@ -21,7 +21,7 @@ The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](incl
 
 The processing system is serverless in that backend compute capacity scales up and down autonomously to meet workload demands.
 
-:::image type="content" source="media\workload-management\sql-engine-diagram.png" alt-text="Diagram of the SQL engine." lightbox="media\workload-management\sql-engine-diagram.png":::
+:::image type="content" source="media\workload-management\sql-engine-diagram.svg" alt-text="Diagram of the SQL engine.":::
 
 When a query is submitted, the SQL frontend (FE) performs query optimization to determine the best plan based on the data size and complexity. Once the plan is generated, it is given to the Distributed Query Processing (DQP) engine. The DQP orchestrates distributed execution of the query by splitting it into smaller queries that are executed on backend compute nodes. Each small query is called a **task** and represents a distributed execution unit. It reads file(s) from [OneLake](../onelake/onelake-overview.md), joins results from other tasks, groups, or orders data retrieved from other tasks. For ingestion jobs, it also writes data to the proper destination tables.
 
@@ -31,7 +31,7 @@ When data is processed, results are returned to the SQL frontend for serving bac
 
 Backend compute capacity benefits from a fast provisioning architecture. Although there is no SLA on resource assignment, typically new nodes are acquired within a few seconds. As resource demand increases, new workloads leverage the scaled-out capacity. Scaling is an online operation and query processing goes uninterrupted.
 
-:::image type="content" source="media\workload-management\scaling-diagram.png" alt-text="Diagram that shows fast provisioning of resources." lightbox="media\workload-management\scaling-diagram.png":::
+:::image type="content" source="media\workload-management\scaling-diagram.svg" alt-text="Diagram that shows fast provisioning of resources.":::
 
 The system is fault tolerant and if a node becomes unhealthy, operations executing on the node are redistributed to healthy nodes for completion.
 
@@ -51,7 +51,7 @@ When pressure subsides, backend topology scales back down and releases resource 
 
 In the backend compute pool of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], loading activities are provided resource isolation from analytical workloads. This improves performance and reliability, as ingestion jobs can run on dedicated nodes that are optimized for ETL and do not compete with other queries or applications for resources.
 
-:::image type="content" source="media\workload-management\ETL-isolation.png" alt-text="Diagram that shows isolation of ingestion activities." lightbox="media\workload-management\ETL-isolation.png":::
+:::image type="content" source="media\workload-management\etl-isolation.svg" alt-text="Diagram that shows isolation of ingestion activities.":::
 
 ## Best practices
 
@@ -59,8 +59,10 @@ The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a 
 
 [OneLake shortcuts](../onelake/onelake-shortcuts.md) can be used to create read-only replicas of tables in other workspaces to distribute load across multiple sql engines creating an isolation boundary.
 
+:::image type="content" source="media\workload-management\workspace-isolation.svg" alt-text="Diagram that shows isolation of two workspaces, for example, the Finance and the Marketing workspace.":::
+
 ## Next steps
 
 - [OneLake overview](../onelake/onelake-overview.md)
-- [Get started with the Synapse Data Warehouse in Microsoft Fabric](get-started-data-warehouse.md)
+- [Data warehousing](data-warehousing.md)
 - [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
