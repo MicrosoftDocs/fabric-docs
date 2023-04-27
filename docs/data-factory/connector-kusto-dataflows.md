@@ -1,10 +1,10 @@
 ---
 title: Connect to Azure Data Explorer (Kusto) in dataflows
-description: This article explains how to connect to Azure Data Explorer (Kusto) in dataflows.
+description: This article details how to use the Azure Data Explorer (Kusto) connector in Microsoft Fabric to connect to Azure Data Explorer (Kusto) in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 4/17/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
@@ -54,5 +54,4 @@ For more advanced information about connecting to your data using the Azure Data
 
 ## Next steps
 
-- [How to create an Azure Data Explorer (Kusto) connection](../placeholder.md.md)
-- [Copy data in Azure Data Explorer (Kusto)](../placeholder.md)
+- [How to configure KQL Database in copy activity](connector-kql-database-copy-activity.md)
