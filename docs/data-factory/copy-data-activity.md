@@ -108,7 +108,7 @@ To learn how to configure your general settings, see [General](activity-overview
 
 ### Configure your source under the source tab
 
-1. Select **New** beside the **Connection** to create a connection to your data source.
+1. Select **+ New** beside the **Connection** to create a connection to your data source.
 
    :::image type="content" source="media/copy-data-activity/configure-source-connection-in-pipeline.png" alt-text="Screenshot showing where to select New." lightbox="media/copy-data-activity/configure-source-connection-in-pipeline.png":::
 
@@ -120,7 +120,7 @@ To learn how to configure your general settings, see [General](activity-overview
    
       :::image type="content" source="media/copy-data-activity/configure-connection-details.png" alt-text="Screenshot showing New connection page." lightbox="media/copy-data-activity/configure-connection-details.png":::
 
-   1. Once your connection is created successfully, it takes you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Azure SQL Database connection from the drop-down directly if you already created it before. Then select **Azure SQL Database** in **Connection** type. The capabilities of **Test connection** and **Edit** are available to each selected connection.
+   1. Once your connection is created successfully, it takes you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Azure SQL Database connection from the drop-down directly if you already created it before. The capabilities of **Test connection** and **Edit** are available to each selected connection.
    
       :::image type="content" source="media/copy-data-activity/refresh-source-connection-in-pipeline.png" alt-text="Screenshot showing where to refresh your connection." lightbox="media/copy-data-activity/refresh-source-connection-in-pipeline.png":::
 
@@ -147,7 +147,7 @@ To learn how to configure your general settings, see [General](activity-overview
 
    :::image type="content" source="media/copy-data-activity/destination-connection-in-pipeline.png" alt-text="Screenshot showing selecting connection." lightbox="media/copy-data-activity/destination-connection-in-pipeline.png":::
 
-1. Specify a table or set up the file path to define the file or folder as the destination. Here select **Table** and specify a table to write data.
+1. Specify a table or set up the file path to define the file or folder as the destination. Here select **Tables** and specify a table to write data.
 
    :::image type="content" source="media/copy-data-activity/configure-destination-file-settings-in-pipeline.png" alt-text="Screenshot showing where to find Table settings." lightbox="media/copy-data-activity/configure-destination-file-settings-in-pipeline.png":::
 
