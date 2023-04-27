@@ -61,11 +61,11 @@ The main page of your database shows an overview of the contents in your databas
 | | Name | User name of most active users in the database.|
 | | Queries run last month | The number of queries run per user in the last month.|
 |**Recently updated functions**
-| | |  Lists the function name and the time it was last accessed.|
+| | |  Lists the function name and the time it was last updated.|
 |**Recently used Querysets**|
 | | | Lists the recently used query set and the time it was last accessed.|
 |**Recently created data connections**
-| | | Lists the data connection and the time it was last accessed.|
+| | | Lists the data connection and the time it was created.|
 
 ## Access an existing database
 
