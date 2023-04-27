@@ -2,19 +2,17 @@
 
 title: Microsoft Fabric documentation # < 60 chars
 summary: Microsoft Fabric is a unified platform that can meet your organization’s data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it. # < 160 chars
-# brand: aspnet | azure | dotnet | dynamics | m365 | ms-graph | office | power-platform | sql | sql-server | vs | visual-studio | windows | xamarin
 brand: fabric
 
 metadata:
-  title: Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  title: Microsoft Fabric documentation
   description: Microsoft Fabric is a unified platform that can meet your organization’s data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
-  services: service
-  ms.service: powerbi #Required; service per approved list. service slug assigned to your service by ACOM.
+  ms.service: powerbi
   ms.subservice: powerbi-service
-  ms.topic: hub-page # Required
+  ms.topic: hub-page
   ms.collection: collection
-  author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
-  ms.author: sngun #Required; microsoft alias of author; optional team alias.
+  author: SnehaGunda
+  ms.author: sngun
   ms.date: 05/23/2023
 
 # highlightedContent section (optional)
