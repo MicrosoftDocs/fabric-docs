@@ -8,7 +8,6 @@ ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: SQL Endpoint Overview, Warehouse overview
 ---
-
 # Warehouse settings and context menus
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]

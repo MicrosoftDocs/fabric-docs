@@ -8,7 +8,6 @@ ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Query Editor # This article's title should not change. If so, contact engineering.
 ---
-
 # Query using the Visual Query editor
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]

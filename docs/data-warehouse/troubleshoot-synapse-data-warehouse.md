@@ -6,9 +6,8 @@ ms.author: XiaoyuL
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
-ms.search.form: Monitoring
+ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
-
 # Troubleshoot Synapse Data Warehouse
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]

@@ -8,7 +8,6 @@ ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
-
 # Ingest data into your Synapse Data Warehouse using data pipelines
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]

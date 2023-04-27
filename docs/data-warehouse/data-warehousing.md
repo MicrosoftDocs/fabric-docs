@@ -8,7 +8,6 @@ ms.date: 05/23/2023
 ms.topic: overview
 ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
-
 # What is data warehousing in Microsoft Fabric?
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]

@@ -6,9 +6,8 @@ ms.author: kecona
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
-ms.search.form: Warehouse Design and Development
+ms.search.form: Warehouse Design and Development # This article's title should not change. If so, contact engineering.
 ---
-
 # Tables in data warehousing in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
