@@ -1,24 +1,24 @@
 ---
-title: Connect to SharePoint Online list in dataflows
-description: This article explains how to connect to SharePoint Online list in dataflows.
+title: Connect to a SharePoint Online list in dataflows
+description: This article details how to use the SharePoint Online list connector in Microsoft Fabric to connect to a SharePoint Online list in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 4/17/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
-# Connect to SharePoint Online list in dataflows
+# Connect to a SharePoint Online list in dataflows
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
-You can connect to SharePoint Online list in Dataflow Gen2 using the SharePoint Online list connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+You can connect to a SharePoint Online list in Dataflow Gen2 using the SharePoint Online list connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
-## Connect to SharePoint Online list
+## Connect to a SharePoint Online list
 
-To connect to SharePoint Online list from a dataflow:
+To connect to a SharePoint Online list from a dataflow:
 
 1. From your workspace, select **New** > **Dataflow Gen2 (Preview)** to create a new dataflow.
 
@@ -38,7 +38,7 @@ To connect to SharePoint Online list from a dataflow:
 
 1. Enter the name of an on-premises data gateway if needed.
 
-1. If you are connecting to this data source for the first time, select the authentication type to use in **Authentication kind**, and then enter your credentials. More information: [Connections and authentication in Power Query Online](/power-query/connection-authentication-pqo)
+1. If you're connecting to this data source for the first time, select the authentication type to use in **Authentication kind**, and then enter your credentials. More information: [Connections and authentication in Power Query Online](/power-query/connection-authentication-pqo)
 
    :::image type="content" source="./media/connector-sharepoint-online-list/connect-data-source.png" alt-text="Screenshot showing Connect data source where you enter your site URL, implementation, and your credentials." lightbox="./media/connector-sharepoint-online-list/connect-data-source.png":::
 
@@ -52,5 +52,5 @@ For more advanced information about connecting to your data using the SharePoint
 
 ## Next steps
 
-- [How to create a SharePoint Online list connection](../placeholder.md.md)
-- [Copy data in SharePoint Online list](../placeholder.md)
+- [How to create a SharePoint Online list connection](connector-sharepoint-online-list.md)
+- [How to configure SharePoint Online List in copy activity](connector-sharepoint-online-list-copy-activity.md)
