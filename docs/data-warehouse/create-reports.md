@@ -6,6 +6,7 @@ ms.author: salilkanade
 ms.reviewer: WilliamDAssafMSFT
 ms.date: 05/23/2023
 ms.topic: conceptual
+ms.search.form: Reporting
 ---
 
 # Create reports on data warehousing in Microsoft Fabric

@@ -6,6 +6,7 @@ ms.author: XiaoyuL
 ms.reviewer: wiassaf
 ms.date: 04/24/2023
 ms.topic: conceptual
+ms.search.form: Monitoring
 ---
 
 # Troubleshoot Synapse Data Warehouse

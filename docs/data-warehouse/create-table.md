@@ -6,6 +6,8 @@ ms.author: kecona
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.search.form: Warehouse Design and Development
+
 ---
 
 # Create tables in Synapse Data Warehouse in Microsoft Fabric
