@@ -91,8 +91,6 @@ items:
     items:
     - name: Monitor using DMVs
       href: monitor-using-dmv.md
-    - name: Troubleshoot Synapse Data Warehouse
-      href: troubleshoot-synapse-data-warehouse.md
     - name: Get Workspace and OneLake path
       href: get-workspace-onelake-path.md      
   - name: Troubleshoot

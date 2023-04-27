@@ -25,15 +25,15 @@ The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is built for any skill level -
 
 ### Virtual warehouses with cross database querying
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides customers with the ability to stand up virtual warehouses containing data from virtually any source through the use of shortcuts. Customers can build a virtual warehouse by creating shortcuts to their data wherever it resides. A virtual warehouse may consist of data from OneLake, Azure Data Lake Storage or any other cloud vendor storage within a single boundary and with no data duplication. 
+[!INCLUDE [product-name](../includes/product-name.md)] provides customers with the ability to stand up virtual warehouses containing data from virtually any source through the use of shortcuts. Customers can build a virtual warehouse by creating shortcuts to their data wherever it resides. A virtual warehouse may consist of data from OneLake, Azure Data Lake Storage, or any other cloud vendor storage within a single boundary and with no data duplication. 
 
 Seamlessly unlock value from a variety of data sources through the richness of cross database querying in [!INCLUDE [product-name](../includes/product-name.md)]. Cross database querying enables customers to quickly and seamlessly leverage multiple data sources for fast insights and with zero data duplication. Data stored in different sources can be easily joined together enabling customers to deliver rich insights that previously required significant effort from data integration and engineering teams. 
 
-Cross database queries can be created through the [Visual Query Editor](visual-query-editor.md) which offers a no-code path to insights over multiple tables. The [SQL Query Editor](sql-query-editor.md), or other familiar tools such as SQL Server Management Studio (SSMS) can also be used to create cross database queries. 
+Cross-database queries can be created through the [Visual Query Editor](visual-query-editor.md) which offers a no-code path to insights over multiple tables. The [SQL Query Editor](sql-query-editor.md), or other familiar tools such as SQL Server Management Studio (SSMS), can also be used to create cross-database queries. 
 
 ### Autonomous workload management
 
-Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] leverage an industry leading distributed query processing engine which provides customers with workloads that have a natural isolation boundary. Customers have no knobs to turn with the autonomous allocation and relinquishing of resources to offer best in breed performance with automatic scale and concurrency built in. True isolation is achieved by separating workloads with different workload characteristics, ensuring that a customers ETL jobs never interfere with their ad hoc analytics and reporting workloads. 
+Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] leverage an industry-leading distributed query processing engine which provides customers with workloads that have a natural isolation boundary. There are no knobs to turn with the autonomous allocation and relinquishing of resources to offer best in breed performance with automatic scale and concurrency built in. True isolation is achieved by separating workloads with different workload characteristics, ensuring that ETL jobs never interfere with their ad hoc analytics and reporting workloads. 
 
 ### Open format for seamless engine interoperability
 
@@ -83,7 +83,7 @@ To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Crea
 
 This section describes the differences between Warehouse and [!INCLUDE [fabricse](includes/fabric-se.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
-:::image type="content" source="media\data-warehousing\synapse-overview-diagram.png" alt-text="Diagram of a SQL Endpoint and a Synapse Data Warehouse in Microsoft Fabric." lightbox="media\synapse-overview-diagram.png":::
+:::image type="content" source="media\data-warehousing\synapse-overview-diagram.png" alt-text="Diagram of a SQL Endpoint and a Synapse Data Warehouse in Microsoft Fabric." lightbox="media\data-warehousing\synapse-overview-diagram.png":::
 
 The **[!INCLUDE [fabricse](includes/fabric-se.md)]** is a *read-only* warehouse that is automatically generated upon creation from a [Lakehouse](../data-engineering/lakehouse-overview.md) in [!INCLUDE [product-name](../includes/product-name.md)]. Delta tables that are created through Spark in a Lakehouse are automatically discoverable in the [!INCLUDE [fabricse](includes/fabric-se.md)] as tables. The [!INCLUDE [fabricse](includes/fabric-se.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using the SQL connection string. Data analysts can then use T-SQL to access Lakehouse data artifacts using the warehouse experience. Use [!INCLUDE [fabricse](includes/fabric-se.md)] to design your warehouse for BI needs and serving data.
 
