@@ -24,21 +24,22 @@ To connect to an Excel workbook in a dataflow:
 
    :::image type="content" source="./media/connector-excel/select-open-dataflow.png" alt-text="Screenshot showing the workspace where you choose to create a new dataflow." lightbox="./media/connector-azure-blob-storage/select-open-dataflow.png":::
 
-1. In Power Query, either select **Get data** in the ribbon or select **Get data from another source** in the current view.
+1. In Power Query, select **Import from Excel**.
 
-   :::image type="content" source="./media/connector-excel/get-data.png" alt-text="Screenshot showing the Power Query workspace with the Get data option emphasized.":::
+   :::image type="content" source="./media/connector-excel/import-data.png" alt-text="Screenshot showing the Power Query workspace with the Import from Excel option emphasized." lightbox="./media/connector-excel/import-data.png":::
 
-1. From **Choose data source**, select the **File** category, and then select **Excel workbook**.
+   You can also select **Get data** in the Power Query ribbon, or select **Get data from another source**. If you choose either of these selections, select the **File** category, and then select **Excel workbook** from the **Choose data source** dialog.
 
-   :::image type="content" source="./media/connector-excel/select-excel.png" alt-text="Screenshot showing Choose data source with the Azure category and the Azure Blobs connector emphasized.":::
+   :::image type="content" source="./media/connector-excel/get-data.png" alt-text="Screenshot showing the Power Query workspace with the Get data and Get data from another source emphasized. lightbox="./media/connector-excel/get-data.png"":::
 
-1. In **Connect to data source**, under **Connection settings**, enter your account name or the URL of your account.
+   :::image type="content" source="./media/connector-excel/select-excel.png" alt-text="Screenshot showing Choose data source with the File category and the Excel workbook connector emphasized.":::
+
+1. In **Connect to data source**, under **Connection settings**, enter the path or URL for your Excel workbook. If the workbook is stored online, select **Link to file**. Then either enter the URL to your online Excel workbook, or select the **Browse OneDrive** to navigate to a workbook on OneDrive. If the workbook is stored locally, either enter the path and filename to your local Excel workbook, or select **Upload file** and drag the file to the page or select **Browse** to browse to the location of the local Excel workbook.
 
 1. If you're connecting to this data source for the first time, select the authentication type to use in **Authentication kind**, and then enter your credentials. The supported authentication types for this data source are:
 
    - Anonymous
-   - Account key
-   - Shared Access Signature (SAS)
+   - Basic  
    - Organizational account
 
 1. More information: [Connections and authentication in Power Query Online](/power-query/connection-authentication-pqo)
