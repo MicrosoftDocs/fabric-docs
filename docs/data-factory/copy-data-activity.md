@@ -181,7 +181,7 @@ See the following table for the setting details.
 
 |Setting  |Description  |
 |---------|---------|
-|**Allow data truncation** |Allow data truncation when converting source data to sink with different type during copy. For example, from decimal to integer, from DatetimeOffset to Datetime.  |
+|**Allow data truncation** |Allow data truncation when converting source data to destination with different type during copy. For example, from decimal to integer, from DatetimeOffset to Datetime.  |
 |**Treat boolean as number** | Treat boolean as number. For example, treat true as 1. |
 |**DateTime format** |Format string when converting between dates without time zone offset and strings. For example, "yyyy-MM-dd HH:mm:ss.fff". |
 |**DateTimeOffset format** | Format string when converting between dates with time zone offset and strings. For example, "yyyy-MM-dd HH:mm:ss.fff zzz".|
