@@ -25,15 +25,15 @@ The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is built for any skill level -
 
 ### Virtual Warehouses with cross database querying
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides customers with the ability to stand up a Virtual Warehouse, which can contain tables from different sources within [!INCLUDE [product-name](../includes/product-name.md)] through the use of Shortcuts. A Virtual Warehouse enables a customer to reason over multiple Lakehouse and Warehouse tables across the same or even different workspaces within a single boundary and with no data duplication. 
+[!INCLUDE [product-name](../includes/product-name.md)] provides customers with the ability to stand up Virtual Warehouses containing data from virtually any source through the use of shortcuts. Customers can build a Virtual Warehouse by creating shortcuts to their data wherever it resides. A Virtual Warehouse may consist of data from OneLake, Azure Data Lake Storage or any other cloud vendor storage within a single boundary and with no data duplication. 
 
-Seamlessly unlock value from data stored in a Lakehouse or a Warehouse through the richness of cross database querying in [!INCLUDE [product-name](../includes/product-name.md)]. Data that has been prepared in a Lakehouse can be easily joined to data in a Warehouse to deliver rich insights that previously required significant effort from data integration and engineering teams. Cross database querying enables customers to quickly and seamlessly leverage multiple data sources for fast insights and with zero data duplciation. 
+Seamlessly unlock value from a variety of data sources through the richness of cross database querying in [!INCLUDE [product-name](../includes/product-name.md)]. Cross database querying enables customers to quickly and seamlessly leverage multiple data sources for fast insights and with zero data duplication. Data stored in different sources can be easily joined together enabling customers to deliver rich insights that previously required significant effort from data integration and engineering teams. 
 
 Cross database queries can be created through the [Visual Query Editor](visual-query-editor.md) which offers a no-code path to insights over multiple tables. The [SQL Query Editor](sql-query-editor.md), or other familiar tools such as SQL Server Management Studio (SSMS) can also be used to create cross database queries. 
 
 ### Autonomous workload management
 
-Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] leverage an industry leading distributed query processing engine which provides customers with workloads that have a natural isolation boundary. Customers have no knobs to turn with the autonomous allocation and relinquishing of resources to offer best in breed performance with automatic scale and concurrency built in. True isolation is achieved by separating workloads with different workload characteristics, ensuring that a customers ETL jobs never interfere with their day to day analytics and reporting. 
+Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] leverage an industry leading distributed query processing engine which provides customers with workloads that have a natural isolation boundary. Customers have no knobs to turn with the autonomous allocation and relinquishing of resources to offer best in breed performance with automatic scale and concurrency built in. True isolation is achieved by separating workloads with different workload characteristics, ensuring that a customers ETL jobs never interfere with their ad hoc analytics and reporting workloads. 
 
 ### Open format for seamless engine interoperability
 
