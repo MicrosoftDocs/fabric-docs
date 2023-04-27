@@ -1,5 +1,5 @@
 ---
-title: OData in dataflows
+title: Connect to OData in dataflows
 description: This article details how to use the OData connector in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
@@ -52,6 +52,5 @@ For more advanced information about connecting to your data using the OData conn
 
 ## Next steps
 
-[How to create an OData connection](../placeholder.md)
-
-[How to configure OData in a copy activity](../placeholder.md)
+- [How to create an OData connection](connector-odata-overview.md)
+- [How to configure OData in a copy activity](connector-odata-copy-activity.md)

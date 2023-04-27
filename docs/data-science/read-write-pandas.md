@@ -5,7 +5,7 @@ ms.author: erenorbey
 author: orbey
 ms.reviewer: franksolomon
 ms.topic: how-to
-ms.date: 04/03/2023
+ms.date: 05/23/2023
 ms.search.form: Read and Write Pandas
 ---
 

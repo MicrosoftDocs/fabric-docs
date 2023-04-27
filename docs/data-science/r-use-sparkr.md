@@ -5,7 +5,7 @@ ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
@@ -15,11 +15,16 @@ ms.search.form: R Language
 
 [SparkR](https://spark.apache.org/docs/latest/sparkr.html) is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation etc. SparkR also supports distributed machine learning using MLlib.
 
-Use SparkR through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks. 
-
-## Requirements
+Use SparkR through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks.
 
 R support is only available in Spark3.1 or above.  R in Spark 2.4 is not supported.
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
+
 
 ## Read and write SparkR DataFrames
 
@@ -106,14 +111,28 @@ Use RODBC to connect to SQL based databases through an ODBC interface. For examp
 # load RODBC package
 library(RODBC)
 
-# connect to driver
-channel <-odbcDriverConnect("Driver={ODBC Driver 17 for SQL Server};
-Server={<database>};
-Database=spark33test1;Uid={<uid>};
-Pwd={<pwd>};
+
+# config connection string
+
+DriverVersion <- substr(system("apt list --installed *msodbc*", intern=TRUE, ignore.stderr=TRUE)[2],10,11)
+ServerName <- "your-server-name"
+DatabaseName <- "your-database-name"
+Uid <- "your-user-id-list"
+Password <- "your-password"
+
+ConnectionString = sprintf("Driver={ODBC Driver %s for SQL Server};
+Server=%s;
+Database=%s;
+Uid=%s;
+Pwd=%s;
 Encrypt=yes;
 TrustServerCertificate=yes;
-Connection Timeout=30;")
+Connection Timeout=30;",DriverVersion,ServerName,DatabaseName,Uid,Password)
+print(ConnectionString)
+
+
+# connect to driver
+channel <-odbcDriverConnect(ConnectionString)
 
 # query from existing tables
 Rdf <- sqlQuery(channel, "select * from <table>")
@@ -185,8 +204,9 @@ Apply a function to each partition of a `SparkDataFrame`. The function to be app
 
 ```R
 # convert waiting time from hours to seconds
+df <- createDataFrame(faithful)
 schema <- structType(structField("eruptions", "double"), structField("waiting", "double"),
-                     structField("waiting_secs", "double"), structField("waiting_secs2", "double"))
+                     structField("waiting_secs", "double"))
 
 # apply UDF to DataFrame
 df1 <- dapply(df, function(x) { x <- cbind(x, x$waiting * 60) }, schema)
@@ -195,7 +215,7 @@ head(collect(df1))
 
 #### `dapplyCollect`
 
-Like dapply, apply a function to each partition of a `SparkDataFrame` and collect the result back. The output of function should be a `data.frame`. But, Schema isn't required to be passed. Note that `dapplyCollect` can fail if the outputs of UDF run on all the partition can't be pulled to the driver and fit in driver memory.
+Like dapply, apply a function to each partition of a `SparkDataFrame` and collect the result back. The output of the function should be a `data.frame`. But, this time, schema isn't required to be passed. Note that `dapplyCollect` can fail if the outputs of the function run on all the partition can't be pulled to the driver and fit in driver memory.
 
 ```R
 # convert waiting time from hours to seconds
@@ -212,7 +232,7 @@ head(ldf, 3)
 
 #### `gapply`
 
-Apply a function to each group of a `SparkDataFrame`. The function is to be applied to each group of the `SparkDataFrame` and should have only two parameters: grouping key and R `data.frame` corresponding to that key. The groups are chosen from `SparkDataFrames` column(s). The output of function should be a `data.frame`. Schema specifies the row format of the resulting `SparkDataFrame`. It must represent R function’s output schema from Spark [data types](https://spark.apache.org/docs/latest/sparkr.html#data-type-mapping-between-r-and-spark). The column names of the returned `data.frame` are set by user.
+Apply a function to each group of a `SparkDataFrame`. The function is to be applied to each group of the `SparkDataFrame` and should have only two parameters: grouping key and R `data.frame` corresponding to that key. The groups are chosen from `SparkDataFrames` column(s). The output of the function should be a `data.frame`. Schema specifies the row format of the resulting `SparkDataFrame`. It must represent R function’s output schema from Spark [data types](https://spark.apache.org/docs/latest/sparkr.html#data-type-mapping-between-r-and-spark). The column names of the returned `data.frame` are set by user.
 
 ```R
 # determine six waiting times with the largest eruption time in minutes.
@@ -230,7 +250,7 @@ head(collect(arrange(result, "max_eruption", decreasing = TRUE)))
 #### `gapplyCollect`
 
 
-Like gapply, applies a function to each group of a `SparkDataFrame` and collect the result back to R `data.frame`. The output of the function should be a `data.frame`. But, the schema isn't required to be passed. Note that `gapplyCollect` can fail if the outputs of UDF run on all the partition can't be pulled to the driver and fit in driver memory.
+Like `gapply`, applies a function to each group of a `SparkDataFrame` and collect the result back to R `data.frame`. The output of the function should be a `data.frame`. But, the schema isn't required to be passed. Note that `gapplyCollect` can fail if the outputs of the function run on all the partition can't be pulled to the driver and fit in driver memory.
 
 ```R
 # determine six waiting times with the largest eruption time in minutes.
@@ -285,7 +305,7 @@ head(waiting)
 
 SparkR exposes most of MLLib algorithms. Under the hood, SparkR uses MLlib to train the model.
 
-The following example shows how to build a Gaussian GLM model using SparkR. To run linear regression, set family to `"gaussian"`. To run logistic regression, set family to `"binomial"`. When using SparkML GLM SparkR automatically performs one-hot encoding of categorical features so that it doesn't need to be done manually. Beyond String and Double type features, it's also possible to fit over MLlib Vector features, for compatibility with other MLlib components.
+The following example shows how to build a Gaussian GLM model using SparkR. To run linear regression, set family to `"gaussian"`. To run logistic regression, set family to `"binomial"`. When using SparkML `GLM` SparkR automatically performs one-hot encoding of categorical features so that it doesn't need to be done manually. Beyond String and Double type features, it's also possible to fit over MLlib Vector features, for compatibility with other MLlib components.
 
 To learn more about which machine learning algorithms are supported, you can visit the [documentation for SparkR and MLlib](https://spark.apache.org/docs/latest/sparkr.html#machine-learning).
 
@@ -304,5 +324,8 @@ summary(model)
 ## Next steps
 
 - [How to use sparklyr](./r-use-sparklyr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
 - [Create R visualization](./r-visualization.md)
+- [Tutorial: avocado price prediction](./r-avocado.md)
+- [Tutorial: flight delay prediction](./r-flight-delay.md)
