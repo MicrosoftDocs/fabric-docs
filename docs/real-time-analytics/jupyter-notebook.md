@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 04/03/2023
+ms.date: 04/27/2023
 ms.search.form: product-kusto
 ---
 

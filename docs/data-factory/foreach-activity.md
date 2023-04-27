@@ -5,7 +5,7 @@ ms.reviewer: xupxhou
 ms.author: jburchel
 author: jonburchel
 ms.topic: how-to
-ms.date: 03/17/2023
+ms.date: 05/23/2023
 ---
 
 # Transform data with a ForEach activity

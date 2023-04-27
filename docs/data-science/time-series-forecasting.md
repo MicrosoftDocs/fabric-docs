@@ -5,14 +5,14 @@ ms.reviewer: ssalgado
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
-ms.date: 02/10/2023
+ms.date: 05/23/2023
 ---
 
 # Training and evaluating a time series forecasting model in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this notebook, we'll develop a program to forecast time series data that has seasonal cycles. We'll use [NYC Property Sales data](https://www1.nyc.gov/site/finance/about/open-portal.page) range from 2003 to 2015 published by NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/).
+In this notebook, we'll develop a program to forecast time series data that has seasonal cycles. We'll use the [NYC Property Sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates ranging from 2003 to 2015 published by NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/).
 
 The dataset is a record of every building sold in New York City property market during 13-year period. Refer to [Glossary of Terms for Property Sales Files](https://www1.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf) for definition of columns in the spreadsheet. The dataset looks like the following table:
 
@@ -25,11 +25,11 @@ We'll build up a model to forecast monthly volume of property trade based on his
 
 ## Install Prophet
 
-Let's first install [Facebook Prophet](https://facebook.github.io/prophet/). It uses a decomposable time series model that consists of three main components: trend, seasonality, and holidays.
+Let's first install [Facebook Prophet](https://facebook.github.io/prophet/). Facebook Prophet (Prophet) is an open source time-series forecasting library developed by Facebook. It uses a decomposable time series model that consists of three main components: trend, seasonality, and holidays.
 
-For the trend part, Prophet assumes piece-wise constant rate of growth with automatic change point selection.
+For the trend component, Prophet assumes piece-wise constant rate of growth with automatic change point selection.
 
-For seasonality part, Prophet models weekly and yearly seasonality using Fourier Series. Since we're using monthly data, so we won't have weekly seasonality and won't considering holidays.
+For seasonality component, Prophet models weekly and yearly seasonality using Fourier Series. Since we're using monthly data, so we won't have weekly seasonality and won't be considering holidays.
 
 ```shell
 !pip install prophet
@@ -37,9 +37,9 @@ For seasonality part, Prophet models weekly and yearly seasonality using Fourier
 
 ## Step 1: Load the data
 
-### Download dataset and upload to Lakehouse
+### Download dataset and upload to a Data Lakehouse
 
-There are 15 csv files containing property sales records from five boroughs in New York since 2003 to 2015. For your convenience, these files are compressed in `nyc_property_sales.tar` and are available in a public blob storage.
+A Data Lakehouse (lakehouse) is a data architecture that provides a central repository for your data. There are 15 csv files containing property sales records from five boroughs in New York since 2003 to 2015. For your convenience, these files are compressed in `nyc_property_sales.tar` and are available in a public blob storage.
 
 ```python
 URL = "https://synapseaisolutionsa.blob.core.windows.net/public/NYC_Property_Sales_Dataset/"
@@ -91,7 +91,7 @@ Lets do some necessary type conversion and filtering.
 - Need exclude irregular sales data. For example, a $0 sale indicates ownership transfer without cash consideration.
 - Exclude building types other than A class.
 
-The reason to choose only market of A class building for analysis is that seasonal effect is ineligible coefficient for A class building. The model we'll use outperform many others in including seasonality, which is common needs in time series analysis.
+The reason to choose only market of A class building for analysis is that seasonal effect is ineligible coefficient for A class building. The model we are using outperforms many others in including seasonality, which is common needs in time series analysis.
 
 ```python
 # import libs
@@ -139,7 +139,7 @@ display(summary_df)
 
 ### Visualization
 
-Now, let's take a look at the trend of property trade trend at NYC. The yearly seasonality is clear on the chosen building class. The peak buying seasons are usually spring and fall.
+Now take a look at the trend of property trade trend at NYC. The yearly seasonality is clear on the chosen building class. The peak buying seasons are usually spring and fall.
 
 ```python
 df_pandas = summary_df.toPandas()
@@ -173,7 +173,7 @@ plt.show()
 
 ### Model fitting
 
-To do model fitting, we just need to rename the time axis to 'ds' and value axis to 'y'.
+To do model fitting, rename the time axis to 'ds' and value axis to 'y'.
 
 ```python
 import pandas as pd
@@ -182,7 +182,7 @@ df_pandas["ds"] = pd.to_datetime(df_pandas["month"])
 df_pandas["y"] = df_pandas["total_sales"]
 ```
 
-Now let's fit the model. We'll choose to use 'multiplicative' seasonality, it means seasonality is no longer a constant additive factor like default assumed by Prophet. As you can see in a previous cell, we printed the total property sale data per month, and the vibration amplitude isn't consistent. It means using simple additive seasonality won't fit the data well.
+Now let's fit the model. We'll choose to use 'multiplicative' seasonality, it means seasonality is no longer a constant additive factor like default assumed by Prophet. As shown in a previous cell, we printed the total property sale data per month, and the vibration amplitude isn't consistent. It means using simple additive seasonality won't fit the data well.
 In addition, we'll use Markov Chain Monte Carlo (MCMC) that gives mean of posteriori distribution. By default, Prophet uses Stan's L-BFGS to fit the model, which finds a maximum a posteriori probability(MAP) estimate.
 
 ```python

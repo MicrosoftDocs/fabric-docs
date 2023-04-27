@@ -4,7 +4,7 @@ description: This article explains the overview of using Azure SQL Database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/27/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
