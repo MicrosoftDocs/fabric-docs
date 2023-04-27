@@ -116,11 +116,11 @@ To learn how to configure your general settings, see [General](activity-overview
    
       :::image type="content" source="media/copy-data-activity/choose-azure-sql-database-connection-in-pipeline.png" alt-text="Screenshot showing how to select the data source." lightbox="media/copy-data-activity/choose-azure-sql-database-connection-in-pipeline.png":::
 
-   1. It will navigate to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-data-stores-in-data-pipeline).
+   1. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-data-stores-in-data-pipeline).
    
       :::image type="content" source="media/copy-data-activity/configure-connection-details.png" alt-text="Screenshot showing New connection page." lightbox="media/copy-data-activity/configure-connection-details.png":::
 
-   1. Once your connection is created successfully, it will take you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Azure SQL Database connection from the drop-down directly if you already created it before. Then select **Azure SQL Database** in **Connection** type. The capabilities of **Test connection** and **Edit** are available to each selected connection.
+   1. Once your connection is created successfully, it takes you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Azure SQL Database connection from the drop-down directly if you already created it before. Then select **Azure SQL Database** in **Connection** type. The capabilities of **Test connection** and **Edit** are available to each selected connection.
    
       :::image type="content" source="media/copy-data-activity/refresh-source-connection-in-pipeline.png" alt-text="Screenshot showing where to refresh your connection." lightbox="media/copy-data-activity/refresh-source-connection-in-pipeline.png":::
 
@@ -138,12 +138,12 @@ To learn how to configure your general settings, see [General](activity-overview
 
    :::image type="content" source="media/copy-data-activity/configure-destination-connection-in-pipeline.png" alt-text="Screenshot showing where to select destination type." lightbox="media/copy-data-activity/configure-destination-connection-in-pipeline.png":::
 
-2. Choose to use **Lakehouse** in **Workspace data store type**. Select **+ New**, and it will navigate you to the Lakehouse creation page. Specify your Lakehouse name and then select **Create**.
+2. Choose to use **Lakehouse** in **Workspace data store type**. Select **+ New**, and it navigates you to the Lakehouse creation page. Specify your Lakehouse name and then select **Create**.
 
    :::image type="content" source="media/copy-data-activity/create-lakehouse.png" alt-text="Screenshot showing Lakehouse creation." lightbox="media/copy-data-activity/create-lakehouse.png":::
 
 
-3. Once your connection is created successfully, it will take you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Lakehouse connection from the drop-down directly if you already created it before.
+3. Once your connection is created successfully, it takes you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Lakehouse connection from the drop-down directly if you already created it before.
 
    :::image type="content" source="media/copy-data-activity/destination-connection-in-pipeline.png" alt-text="Screenshot showing selecting connection." lightbox="media/copy-data-activity/destination-connection-in-pipeline.png":::
 
@@ -161,11 +161,11 @@ Now you can either save your data pipeline with this single copy activity or con
 
 If the connector that you apply supports mapping, you can go to **Mapping** tab to configure your mapping. 
 
-1. Select **Import schemas** to import your data schema and map your data. 
+1. Select **Import schemas** to import your data schema. 
 
    :::image type="content" source="media/copy-data-activity/configure-mapping-in-pipeline.png" alt-text="Screenshot of mapping settings 1." lightbox="media/copy-data-activity/configure-mapping-in-pipeline.png":::
 
-2. Specify your **Source** column and **Destination** column. If you create a new table in the destination, you can modify your **Destination** column name. If you want to write data into the existing destination table, you can't modify the existing **Destination** column name. You can also view the **Type** of source and destination column. 
+2. You can see the auto mapping is shown up. Specify your **Source** column and **Destination** column. If you create a new table in the destination, you can customize your **Destination** column name here. If you want to write data into the existing destination table, you can't modify the existing **Destination** column name. You can also view the **Type** of source and destination columns. 
 
    :::image type="content" source="media/copy-data-activity/configure-mapping-in-pipeline-2.png" alt-text="Screenshot of mapping settings 2." lightbox="media/copy-data-activity/configure-mapping-in-pipeline-2.png":::
 
