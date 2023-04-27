@@ -54,3 +54,7 @@ To update the workspace manually after it failed to update automatically:
 ## Considerations and limitations
 
 The update process fails as soon as one item fails. Therefore, there's no way to know if other items in the git branch are also problematic. If you're updating many items and more than one item is problematic, you have to repeat this process once for each failed item.
+
+## Next steps
+
+[Conflict resolution](./conflict-resolution.md)
