@@ -4,7 +4,7 @@ description: This article explains the overview of using Google Cloud Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/20/2022
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 

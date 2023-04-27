@@ -5,7 +5,7 @@ ms.reviewer: eloldag
 ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: conceptual
-ms.date: 03/24/2023
+ms.date: 05/23/2023
 ---
 
 # OneLake access and APIs
