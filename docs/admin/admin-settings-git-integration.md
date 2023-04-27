@@ -11,7 +11,7 @@ ms.date: 05/23/2023
 
 The git integration tenant admin settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
 
-:::image type="content" source="./media/admin-settings-git-integration/workspace-settings.png" alt-text="Screenshot of the Admin portal with the workspace settings shown.":::
+:::image type="content" source="./media/admin-settings-git-integration/workspace-settings.png" alt-text="Screenshot of the Admin portal with the workspace settings shown." lightbox="./media/admin-settings-git-integration/workspace-settings.png":::
 
 These settings are only visible to the tenant admin.
 There are three settings relating to git integration:
