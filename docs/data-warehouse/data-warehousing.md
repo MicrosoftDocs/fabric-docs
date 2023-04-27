@@ -31,7 +31,7 @@ Seamlessly unlock value from data stored in a Lakehouse or a Warehouse through t
 
 ### Autonomous workload management
 
-Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] leverage an industry leading distributed query processing engine which provides a natural isolation boundary with autonomous allocation and reliquishing of resources to offer a second-to-none autonomous workload management experience with no knobs to turn. True isolation is achieved by separating workloads with different workload characteristics, ensuring that a customers ETL jobs never interfere with their day to day analytics and reporting. 
+Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] leverage an industry leading distributed query processing engine which provides a natural isolation boundary with autonomous allocation and reliquishing of resources to offer a second-to-none autonomous [workload management](workload-management.md) experience with no knobs to turn. True isolation is achieved by separating workloads with different workload characteristics, ensuring that a customers ETL jobs never interfere with their day to day analytics and reporting. 
 
 ### Open format for seamless engine interoperability
 
