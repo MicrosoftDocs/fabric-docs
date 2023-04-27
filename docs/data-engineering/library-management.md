@@ -3,7 +3,7 @@ title: Manage Apache Spark libraries
 description: Learn how to manage and use built-in libraries following best practices, and how to include other feed and custom libraries.
 ms.reviewer: snehagunda
 ms.author: shuaijunye
-author: Shuaijun Ye
+author: shuaijunye
 ms.topic: how-to
 ms.date: 04/24/2023
 ---
