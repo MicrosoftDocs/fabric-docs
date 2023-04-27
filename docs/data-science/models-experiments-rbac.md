@@ -5,7 +5,7 @@ ms.reviewer: scottpolly
 ms.author: midesa
 author: midesa 
 ms.topic: conceptual
-ms.date: 04/20/2023
+ms.date: 05/23/2023
 ---
 
 # Data science roles and permissions

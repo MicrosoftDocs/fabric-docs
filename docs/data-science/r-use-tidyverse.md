@@ -13,14 +13,18 @@ ms.search.form: R Language
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-
 [Tidyverse](https://www.tidyverse.org/packages/) is a collection of R packages that data scientists commonly use in everyday data analyses. It includes packages for data import (`readr`), data visualization (`ggplot2`), data manipulation (`dplyr`, `tidyr`), functional programming (`purrr`), and model building (`tidymodels`) etc. The packages in `tidyverse` are designed to work together seamlessly and follow a consistent set of design principles.
 
-[!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of `tidyverse` with every runtime release. You can import and start using your familiar R packages.
+[!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of `tidyverse` with every runtime release. Import and start using your familiar R packages.
 
 ## Prerequisites
 
-Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
+
+
+## Load `tidyverse`
 
 ```R
 # load tidyverse
@@ -29,7 +33,7 @@ library(tidyverse)
 
 ## Data import
 
-`readr` is an R package that provides tools for reading rectangular data files such as CSV, TSV, and fixed-width files. `readr` provides a fast and friendly way to read rectangular data files such as providing functions `read_csv()` and `read_tsv()` for reading CSV and TSV files respectively. 
+`readr` is an R package that provides tools for reading rectangular data files such as CSV, TSV, and fixed-width files. `readr` provides a fast and friendly way to read rectangular data files such as providing functions `read_csv()` and `read_tsv()` for reading CSV and TSV files respectively.
 
 Let's first create an R data.frame, write it to lakehouse using `readr::write_csv()` and read it back with `readr::read_csv()`.
 
@@ -56,6 +60,7 @@ Then let's write the data to lakehouse using the *File API path*.
 temp_csv_api <- "/lakehouse/default/Files/stocks.csv"
 readr::write_csv(stocks,temp_csv_api)
 ```
+
 Read the data from lakehouse.
 
 ```R
@@ -78,6 +83,7 @@ library(tidyr)
 stocksL <- gather(data = stocks, key = stock, value = price, X, Y, Z)
 stocksL
 ```
+
 ## Functional programming
 
 `purrr` is an R package that enhances R’s functional programming toolkit by providing a complete and consistent set of tools for working with functions and vectors. The best place to start with `purrr` is the family of `map()` functions that allow you to replace many for loops with code that is both more succinct and easier to read. Here’s an example of using `map()` to apply a function to each element of a list:
@@ -90,6 +96,7 @@ stocks_double
 ```
 
 ## Data manipulation
+
 `dplyr` is an R package that provides a consistent set of verbs that help you solve the most common data manipulation problems, such as selecting variables based on the names, picking cases based on the values, reducing multiple values down to a single summary, and changing the ordering of the rows etc. Here are some examples:
 
 ```R
@@ -157,6 +164,7 @@ ggplot(stocksL, aes(x=time, y=price, colour = stock)) +
 
 
 ## Model building
+
 The `tidymodels` framework is a collection of packages for modeling and machine learning using `tidyverse` principles. It covers a list of core packages for a wide variety of model building tasks, such as `rsample` for train/test dataset sample splitting, `parsnip` for model specification, `recipes` for data preprocessing, `workflows` for modeling workflows, `tune` for hyperparameters tuning, `yardstick` for model evaluation, `broom` for tiding model outputs, and `dials` for managing tuning parameters. You can learn more about the packages by visiting [tidymodels website](https://www.tidymodels.org/packages/). Here's an example of building a linear regression model to predict the miles per gallon (mpg) of a car based on its weight (wt):
 
 ```R
@@ -164,6 +172,7 @@ The `tidymodels` framework is a collection of packages for modeling and machine 
 ggplot(mtcars, aes(wt,mpg))+
 geom_point()
 ```
+
 ![Graph of mpg and wt.](./media/r-use-tidyverse/mpg-wt.png)
 
 From the scatterplot, the relationship looks approximately linear and the variance looks constant. Let's try to model this using linear regression.
@@ -214,10 +223,9 @@ ggplot(lm_aug, aes(x = wt, y = mpg)) +
 
 ## Next steps
 
-
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)
 - [R library management](./r-library-management.md)
-- [Visualize data in R](r-visualization.md)
+- [Visualize data in R](./r-visualization.md)
 - [Tutorial: avocado price prediction](./r-avocado.md)
 - [Tutorial: flight delay prediction](./r-flight-delay.md)
