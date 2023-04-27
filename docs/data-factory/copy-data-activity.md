@@ -126,7 +126,7 @@ To learn how to configure your general settings, see [General](activity-overview
 
 1. Specify a table to be copied. Select **Preview data** to preview your source table. You can also use **Query** and **Stored procedure** to read data from your source.
 
-   :::image type="content" source="media/copy-data-activity/specify-source-data.png" alt-text="Screenshot showing source file settings options." lightbox="media/copy-data-activity/specify-source-data.png":::
+   :::image type="content" source="media/copy-data-activity/specify-source-data.png" alt-text="Screenshot showing source table settings options." lightbox="media/copy-data-activity/specify-source-data.png":::
 
 1. Expand **Advanced** for more advanced settings.
 
@@ -140,16 +140,16 @@ To learn how to configure your general settings, see [General](activity-overview
 
 2. Choose to use **Lakehouse** in **Workspace data store type**. Select **+ New**, and it will navigate you to the Lakehouse creation page. Specify your Lakehouse name and then select **Create**.
 
-   :::image type="content" source="media/copy-data-activity/create-lakehouse.png" alt-text="Screenshot showing Lakehouse creation." lightbox="media/copy-data-activity/lakehouse-creation.png":::
+   :::image type="content" source="media/copy-data-activity/create-lakehouse.png" alt-text="Screenshot showing Lakehouse creation." lightbox="media/copy-data-activity/create-lakehouse.png":::
 
 
 3. Once your connection is created successfully, it will take you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Lakehouse connection from the drop-down directly if you already created it before.
 
-   :::image type="content" source="media/copy-data-activity/destination-connection-in-pipeline.png" alt-text="Screenshot showing the Test connection and Edit options." lightbox="media/copy-data-activity/destination-connection-in-pipeline.png":::
+   :::image type="content" source="media/copy-data-activity/destination-connection-in-pipeline.png" alt-text="Screenshot showing selecting connection." lightbox="media/copy-data-activity/destination-connection-in-pipeline.png":::
 
 1. Specify a table or set up the file path to define the file or folder as the destination. Here select **Table** and specify a table to write data.
 
-   :::image type="content" source="media/copy-data-activity/configure-destination-file-settings-in-pipeline.png" alt-text="Screenshot showing where to find File settings." lightbox="media/copy-data-activity/configure-destination-file-settings-in-pipeline.png":::
+   :::image type="content" source="media/copy-data-activity/configure-destination-file-settings-in-pipeline.png" alt-text="Screenshot showing where to find Table settings." lightbox="media/copy-data-activity/configure-destination-file-settings-in-pipeline.png":::
 
 1. Expand **Advanced** for more advanced settings.
 
@@ -175,7 +175,7 @@ Besides, you can select **+ New mapping** to add new mapping, select **Clear** t
 
 Expand **Type conversion settings** to configure your type conversion if needed. 
 
-   :::image type="content" source="media/copy-data-activity/mapping-type-conversion.png" alt-text="Screenshot of Advanced options." lightbox="media/copy-data-activity/data-type-conversion.png":::
+   :::image type="content" source="media/copy-data-activity/mapping-type-conversion.png" alt-text="Screenshot of mapping type conversion." lightbox="media/copy-data-activity/mapping-type-conversion.png":::
 
 See the following table for the setting details.
 
@@ -193,7 +193,7 @@ See the following table for the setting details.
 
 The **Settings** tab contains the settings of performance, staging, and so on.
 
-   :::image type="content" source="media/copy-data-activity/pipeline-settings.png" alt-text="Screenshot of Advanced options.":::
+   :::image type="content" source="media/copy-data-activity/pipeline-settings.png" alt-text="Screenshot of Settings tab." lightbox="media/copy-data-activity/pipeline-settings.png":::
 
 See the following table for the description of each setting.
 
