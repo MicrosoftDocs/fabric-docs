@@ -99,8 +99,12 @@ If you want to use some additional packages for a quick test in an interactive N
 
 > [!IMPORTANT]
 >
-> - *!pip install* installs the libraries only on driver node, it's the iPython built-in shell command and we don't have extra support on Fabric at this moment.
-> - *%pip install* will help you to install libraries across all driver node and executor nodes. Please use *%pip* commands to manage your libraries instead of *!pip*.
+> *%pip* is recommended instead of *!pip*. *!pip* is a IPython built-in shell command which has following limitations:
+>
+> - *!pip* will only install package on driver node without executor nodes.
+> - Packages that install through *!pip* will not effect when conflicts with built-in packages or when it's already imported in Notebook.
+>
+> However, *%pip* will handle all above mentioned scenarios. Libraries installed through *%pip* will be available on both driver & executor nodes and will be still effective even it's already imported.
 
 > [!TIP]
 >
