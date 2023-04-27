@@ -1,20 +1,18 @@
 ### YamlMime:Hub
 
 title: Microsoft Fabric documentation # < 60 chars
-summary: Translate data to competitive advantage with the Microsoft Fabric unified analytics platform - the data platform for the age of AI. Get expert information and answers to help you deliver complete data solutions that take you from data to insight to action. # < 160 chars
-# brand: aspnet | azure | dotnet | dynamics | m365 | ms-graph | office | power-platform | sql | sql-server | vs | visual-studio | windows | xamarin
+summary: Microsoft Fabric is a unified platform that can meet your organization’s data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it. # < 160 chars
 brand: fabric
 
 metadata:
-  title: Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description:  Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more.
-  services: service
-  ms.service: powerbi #Required; service per approved list. service slug assigned to your service by ACOM.
+  title: Microsoft Fabric documentation
+  description: Microsoft Fabric is a unified platform that can meet your organization’s data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
+  ms.service: powerbi
   ms.subservice: powerbi-service
-  ms.topic: hub-page # Required
+  ms.topic: hub-page
   ms.collection: collection
-  author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
-  ms.author: sngun #Required; microsoft alias of author; optional team alias.
+  author: SnehaGunda
+  ms.author: sngun
   ms.date: 05/23/2023
 
 # highlightedContent section (optional)
@@ -33,7 +31,7 @@ highlightedContent:
     # Card
     - title: Enable Fabric for your organization
       itemType: quickstart
-      url: /admin/admin-switch.md
+      url: admin/admin-switch.md
     # Card
     - title: End-to-end tutorials
       itemType: tutorial
