@@ -87,10 +87,6 @@ items:
       href: statistics.md
     - name: Workload Management
       href: workload-management.md
-  - name: Troubleshoot
-    items:
-    - name: Troubleshoot Synapse Data Warehouse
-      href: troubleshoot-synapse-data-warehouse.md
   - name: Monitor
     items:
     - name: Monitor using DMVs
@@ -99,3 +95,7 @@ items:
       href: troubleshoot-synapse-data-warehouse.md
     - name: Get Workspace and OneLake path
       href: get-workspace-onelake-path.md      
+  - name: Troubleshoot
+    items:
+    - name: Troubleshooting your Warehouse
+      href: troubleshoot-synapse-data-warehouse.md
