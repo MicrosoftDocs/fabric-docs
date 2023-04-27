@@ -20,7 +20,7 @@ There are many reasons that an update can fail, including, but not limited to th
 
 * Dependent items were changed or deleted
 * Circular dependencies were created
-* *Other reasons?*
+* Item renamed
 
 An error message lets you know which item failed and why.
 
