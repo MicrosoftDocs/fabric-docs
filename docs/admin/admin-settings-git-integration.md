@@ -32,7 +32,7 @@ Learn more about [git integration](../CICD/git-integration/git-get-started.md).
 
 Cross-geo support helps multinational customers address regional, industry-specific, or organizational data residency requirements. If a workspace capacity is in one geographic location (for example, Central US) while the Azure DevOps repo is in another location (for example, West Europe), admins can decide whether to allow users to deploy data to other geographical locations. Only the metadata of the items is exported. Item data and user related information are not exported. Enable this setting to allow users to export their workspace content to other geographical locations.
 
-:::image type="content" source="./media/admin-settings-git-integration/multii-geo-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting items to other geographical locations.":::
+:::image type="content" source="./media/admin-settings-git-integration/multi-geo-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting items to other geographical locations.":::
 
 Learn more about Multi-Geo support.
 
