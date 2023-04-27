@@ -23,6 +23,16 @@ ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspac
 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is built for any skill level - from the citizen developer through to the professional developer, DBA or data engineer. The rich set of experiences built into [!INCLUDE [product-name](../includes/product-name.md)] workspace enables customers to reduce their time to insights by having an easily consumable, always connected dataset that is integrated with Power BI in DirectLake mode. This enables second-to-none industry leading performance that ensures a customer's report always has the most recent data for analysis and reporting. Cross database querying can be leveraged to quickly and seamlessly leverage multiple data sources that span multiple databases for fast insights and zero data duplication. 
 
+### Virtual Warehouses with cross database querying
+
+Customers can instantaneously stand up Virtual Warehouses by quickly and easily creating a shortcut to data they want to query regardless of where that data resides. A Virtual Warehouse enables a customer to reason over multiple Lakehouse and Warehouse tables within a single boundary and with no data duplication.
+
+Seamlessly unlock value from data stored in a Lakehouse or a Warehouse through the richness of cross database querying in [!INCLUDE [product-name](../includes/product-name.md). Data that has been prepared in a Lakehouse can be easily joined to data in a Warehouse to deliver rich insights that previously required significant effort from data integration and engineering teams. Cross database querying enables customers to quickly and seamlessly leverage multiple data sources for fast insights and with zero data duplciation. 
+
+### Autonomous workload management
+
+Warehouses in [!INCLUDE [product-name](../includes/product-name.md) leverage an industry leading distributed query processing engine which provides a natural isolation boundary with autonomous allocation and reliquishing of resources to offer a second-to-none autonomous workload management experience with no knobs to turn. True isolation is achieved by separating workloads with different workload characteristics, ensuring that a customers ETL jobs never interfere with their day to day analytics and reporting. 
+
 ### Open format for seamless engine interoperability
 
 Data in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is stored in the parquet file format and published as Delta Lake Logs, enabling ACID transactions and cross engine interoperability that can be leveraged through other [!INCLUDE [product-name](../includes/product-name.md)] workloads such as Spark, Pipelines, Power BI and Azure Data Explorer. Customers no longer need to create multiple copies of their data to enable data professionals with different skill sets. Data engineers that are accustomed to working in Python can easily leverage the same data that was modeled and served by a data warehouse professional that is accustomed to working in SQL. In parallel, BI professionals can quickly and easily leverage the same data to create a rich set of visualizations in Power BI with record performance and no data duplication. 
@@ -70,6 +80,8 @@ To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Crea
 ## Comparing the Synapse Data Warehouse and the SQL Endpoint of the Lakehouse
 
 This section describes the differences between Warehouse and [!INCLUDE [fabricse](includes/fabric-se.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+
+    :::image type="content" source="media\synapse-overview-diagram.png" alt-text="Diagram of a SQL Endpoint and a Synapse Data Warehouse in Microsoft Fabric." lightbox="media\synapse-overview-diagram.png":::
 
 The **[!INCLUDE [fabricse](includes/fabric-se.md)]** is a *read-only* warehouse that is automatically generated upon creation from a [Lakehouse](../data-engineering/lakehouse-overview.md) in [!INCLUDE [product-name](../includes/product-name.md)]. Delta tables that are created through Spark in a Lakehouse are automatically discoverable in the [!INCLUDE [fabricse](includes/fabric-se.md)] as tables. The [!INCLUDE [fabricse](includes/fabric-se.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using the SQL connection string. Data analysts can then use T-SQL to access Lakehouse data artifacts using the warehouse experience. Use [!INCLUDE [fabricse](includes/fabric-se.md)] to design your warehouse for BI needs and serving data.
 
