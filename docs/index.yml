@@ -1,20 +1,18 @@
 ### YamlMime:Hub
 
 title: Microsoft Fabric documentation # < 60 chars
-summary: Translate data to competitive advantage with the Microsoft Fabric unified analytics platform - the data platform for the age of AI. Get expert information and answers to help you deliver complete data solutions that take you from data to insight to action. # < 160 chars
-# brand: aspnet | azure | dotnet | dynamics | m365 | ms-graph | office | power-platform | sql | sql-server | vs | visual-studio | windows | xamarin
+summary: Microsoft Fabric is a unified platform that can meet your organization’s data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it. # < 160 chars
 brand: fabric
 
 metadata:
-  title: Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description:  Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more.
-  services: service
-  ms.service: powerbi #Required; service per approved list. service slug assigned to your service by ACOM.
+  title: Microsoft Fabric documentation
+  description: Microsoft Fabric is a unified platform that can meet your organization’s data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
+  ms.service: powerbi
   ms.subservice: powerbi-service
-  ms.topic: hub-page # Required
+  ms.topic: hub-page
   ms.collection: collection
-  author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
-  ms.author: sngun #Required; microsoft alias of author; optional team alias.
+  author: SnehaGunda
+  ms.author: sngun
   ms.date: 05/23/2023
 
 # highlightedContent section (optional)
@@ -25,15 +23,15 @@ highlightedContent:
     # Card
     - title: What is Microsoft Fabric?
       itemType: overview
-      url: placeholder.md
+      url: get-started/microsoft-fabric-overview.md
     # Card
     - title: Try Microsoft Fabric for free
       itemType: get-started
       url: placeholder.md
     # Card
-    - title: Enable Fabric and create resources
+    - title: Enable Fabric for your organization
       itemType: quickstart
-      url: placeholder.md
+      url: admin/admin-switch.md
     # Card
     - title: End-to-end tutorials
       itemType: tutorial
@@ -45,18 +43,18 @@ productDirectory:
   items:
 
     # Card
-    - title: Fabric platform
+    - title: Get started
 
       imageSrc: ./media/fabric-icon.png
       links:
-        - url: enterprise/what-is-capacity.md
-          text: Fabric capacity and SKUs?
-        - url: admin/admin-roles.md
-          text: Understand Fabric admin roles
-        - url: security/security-overview.md
-          text: Secure Fabric resources
-        - url: cicd/deployment-pipelines/create-rules.md
-          text: What are deployment pipelines?
+        - url: get-started/microsoft-fabric-overview.md
+          text: What is Fabric?
+        - url: placeholder.md
+          text: Navigate the Fabric portal
+        - url: get-started/workspaces.md
+          text: Workspaces in Fabric
+        - url: placeholder.md
+          text: Find data in the OneLake data hub
         - url: get-started/index.yml
           text: See more
 
@@ -149,12 +147,73 @@ productDirectory:
       links:
         - url: real-time-analytics/overview.md
           text: What is Real-time Analytics?
-        - url: placeholder.md
+        - url: real-time-analytics/event-streams/overview.md
           text: What is Event stream?
         - url: real-time-analytics/create-database.md
           text: Create a database
         - url: real-time-analytics/index.yml
           text: See more
+
+    # Card
+    - title: Admin and governance
+
+      imageSrc: ./media/administrator-icon.svg
+      links:
+        - url: admin/admin-overview.md
+          text: Fabric administration
+        - url: governance/metadata-scanning-overview.md
+          text: Data governance and compliance
+        - url: security/security-overview.md
+          text: Security
+        - url: enterprise/billing-reports.md
+          text: Billing and consumption
+        - url: admin/index.yml
+          text: See more
+
+    # Card
+    - title: Developer experience
+
+      imageSrc: ./media/developer-icon.svg
+      links:
+        - url: /rest/api/fabric/
+          text: REST APIs
+        - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
+          text: Deployment pipelines
+        - url: cicd/git-integration/intro-to-git-integration.md
+          text: Git integration
+        - url: cicd/index.yml
+          text: See more
+
+    # Card
+    - title: Troubleshooting 
+
+      imageSrc: ./media/support-icon.svg
+      links:
+        - url: placeholder.md
+          text: Create a support ticket
+        - url: placeholder.md
+          text: Known issues
+        - url: placeholder.md
+          text: Troubleshoot issues
+        - url: get-started/index.yml
+          text: See more
+
+    # Card
+    - title: Training modules
+
+      imageSrc: ./media/education-icon.svg
+      links:
+        - url: /training/modules/introduction-end-analytics-using-microsoft-fabric/
+          text: End-to-end analytics using Fabric
+        - url: /training/modules/get-started-lakehouses/
+          text: Get started with lakehouses
+        - url: /training/modules/use-spark-notebooks-pipelines-fabric/
+          text: Use Data Factory pipelines
+        - url: /training/modules/get-started-data-science-fabric/
+          text: Get started with Data science
+        - url: get-started/index.yml
+          text: See more
+
 
 # additionalContent section (optional)
 # Card with summary style
@@ -167,7 +226,7 @@ additionalContent:
         - title: Power BI
           summary: Power BI amplifies your insights and the value of your data. 
           url: /power-bi/
-        - title: Azure Synapse analytics
+        - title: Azure Synapse Analytics
           summary: Azure Synapse is a limitless analytics service that brings together enterprise data warehouse and Big Data analytics.
           url: /azure/synapse-analytics/
         - title: Azure Data Factory

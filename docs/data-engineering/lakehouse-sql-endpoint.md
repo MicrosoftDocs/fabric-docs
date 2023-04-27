@@ -18,5 +18,3 @@ ms.search.form: Lakehouse SQL Endpoint
 ## Storing procedures, views
 
 ## Next steps
-
-

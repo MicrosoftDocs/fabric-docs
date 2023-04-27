@@ -46,6 +46,7 @@ Unable to find the relation(s) specified in the hint. Verify that the relation(s
 ```scala
 spark.sql("SELECT /*+ BROADCAST(unknownTable) */ * FROM t1 INNER JOIN t2 ON t1.str = t2.str")
 ```
+
 ### A hint in the query prevents another hint from being applied
 
 The selected query contains a hint that prevents another hint from being applied.
@@ -53,13 +54,14 @@ The selected query contains a hint that prevents another hint from being applied
 ```scala
 spark.sql("SELECT /*+ BROADCAST(t1), MERGE(t1, t2) */ * FROM t1 INNER JOIN t2 ON t1.str = t2.str")
 ```
+
 ### Enable 'spark.advise.divisionExprConvertRule.enable' to reduce rounding error propagation
 
 This query contains the expression with Double type. We recommend that you enable the configuration 'spark.advise.divisionExprConvertRule.enable', which can help reduce the division expressions and to reduce the rounding error propagation.
 
 ```console
 "t.a/t.b/t.c" convert into "t.a/(t.b * t.c)"
-````
+```
 
 ### Enable 'spark.advise.nonEqJoinConvertRule.enable' to improve query performance
 
@@ -74,6 +76,7 @@ This query is on a delta table with many small files. To improve the performance
 This query is on a Delta table and contains a highly selective filter. To improve the performance of queries, run the OPTIMIZE ZORDER BY command on the delta table. More details could be found within this article.
 
 ## User experience
+
 The Apache Spark advisor displays the advice, including info, warnings, and errors, at Notebook cell output in real-time.
 
 - Info
@@ -87,6 +90,6 @@ The Apache Spark advisor displays the advice, including info, warnings, and erro
 
 ## Next steps
 
-- [Monitor Apache Spark jobs within notebooks](spark-monitor-debug.md)
-- [Monitor Apache Spark job definition](monitor-spark-job-definitions.md)
-- [Monitor Apache Spark application details](spark-detail-monitoring.md)
+- [Monitor Apache Spark jobs within notebooks.](spark-monitor-debug.md)
+- [Monitor Apache Spark job definition.](monitor-spark-job-definitions.md)
+- [Monitor Apache Spark application details.](spark-detail-monitoring.md)
