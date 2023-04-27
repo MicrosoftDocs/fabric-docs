@@ -4,7 +4,7 @@ description: Learn about monitoring with the available Dynamic Management Views.
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Monitoring
 ---

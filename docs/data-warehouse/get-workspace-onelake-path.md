@@ -4,7 +4,7 @@ description: Follow steps to get the workspace and OneLake path in Microsoft Fab
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ---
 
@@ -16,7 +16,7 @@ ms.topic: how-to
 
 In this tutorial, you learn how to find a [OneLake](../onelake/onelake-overview.md) file path from the [Lakehouse](../data-engineering/lakehouse-overview.md) experience. To maintain a single copy of data, Lakehouses and transactional Warehouses store data in OneLake.
 
-## Known limitations
+## Limitations
 
 Currently, the OneLake path is displayed only in the Lakehouse experience. When you are using the SQL Endpoint or connect to a transactional warehouse, OneLake path isn't displayed in the product experience.
 

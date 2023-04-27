@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: how-to 
-ms.date: 01/27/2023
+ms.date: 05/23/2023
 ---
 
 # How to use Script activity

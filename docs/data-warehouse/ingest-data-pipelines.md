@@ -4,7 +4,7 @@ description: Follow steps to ingest data into a Synapse Data Warehouse with data
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Ingesting data
 ---

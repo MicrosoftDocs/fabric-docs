@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
 ms.topic: overview
-ms.date: 04/19/2023
+ms.date: 05/23/2023
 ---
 
 # What is Spark autotune configuration in Fabric and how to enable and disable it?
