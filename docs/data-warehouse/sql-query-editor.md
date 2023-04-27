@@ -4,7 +4,7 @@ description: Learn how to use the SQL query editor.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Query Editor
 ---
@@ -140,4 +140,3 @@ When you define temp table in the first batch request and try to use it in subse
 
 - [How-to: Query the Synapse Data Warehouse](query-warehouse.md)
 - [Query using the Visual Query editor](visual-query-editor.md)
-- [Share your Synapse Data Warehouse](share-warehouse.md)

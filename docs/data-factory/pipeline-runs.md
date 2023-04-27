@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
 ms.topic: conceptual
-ms.date: 01/27/2023
+ms.date: 05/23/2023
 ---
 
 # Concept: Data pipeline Runs
@@ -48,35 +48,11 @@ When you schedule a data pipeline run, you can choose the frequency that your pi
 
 :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab.":::
 
-:::image type="content" source="media/pipeline-runs/run-schedule-configuration.png" alt-text="Screenshot of the Schedule configuration screen." lightbox="media/pipeline-runs/run-schedule-configuration.png":::
+On the Schedule configuration page, you can specify a schedule frequency, start and end dates and times, and time zone.
 
-To set a schedule, choose the **Frequency-based run** option. This selection will bring up your scheduling options.
+:::image type="content" source="media/pipeline-runs/configure-schedule.png" alt-text="Screenshot of the Schedule configuration screen." lightbox="media/pipeline-runs/configure-schedule.png":::
 
-:::image type="content" source="media/pipeline-runs/frequency-based-run.png" alt-text="Screenshot showing where to select Frequency-based run." lightbox="media/pipeline-runs/frequency-based-run.png":::
-
-Set your interval and select the granularity. You can choose between Minute(s), Hour(s), Day(s), Week(s), and Month(s).
-
-:::image type="content" source="media/pipeline-runs/set-interval.png" alt-text="Screenshot showing where to select run intervals.":::
-
-Then, choose your start date either by typing the date in manually or using the date picker.
-
-:::image type="content" source="media/pipeline-runs/run-start-date.png" alt-text="Screenshot showing where to enter run start date.":::
-
-You can also set a start time. For example, if you wanted your pipeline to run at 9:00 AM every morning, you can update the time to 09:00:00.
-
-:::image type="content" source="media/pipeline-runs/run-start-time.png" alt-text="Screenshot showing where to enter run start time.":::
-
-You can also update the time zone. Use the drop-down list and filter to find the time zone you’d like to use.
-
-:::image type="content" source="media/pipeline-runs/run-time-zone.png" alt-text="Screenshot showing where to select your preferred time zone.":::
-
-Once configured, select **Ok** to set your schedule.
-
-:::image type="content" source="media/pipeline-runs/set-schedule-configuration.png" alt-text="Screenshot showing where to select OK.":::
-
-A schedule is now set on your pipeline editing canvas, detailing how often your pipeline is set to run.
-
-:::image type="content" source="media/pipeline-runs/pipeline-schedule.png" alt-text="Screenshot showing where your schedule runs appear on the pipeline editing canvas.":::
+Once configured, select **Apply** to set your schedule. You can view or edit the schedule again anytime by selecting the **Schedule** button again.
 
 ## Next steps
 

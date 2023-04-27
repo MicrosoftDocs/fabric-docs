@@ -4,7 +4,7 @@ description: Learn how to read the Microsoft Fabric utilization and metrics app'
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ---
 
 # Understand the metrics app timepoint page

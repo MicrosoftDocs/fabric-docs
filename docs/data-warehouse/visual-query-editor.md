@@ -4,7 +4,7 @@ description: Learn how to use the Visual Query editor.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Query Editor
 ---
@@ -50,7 +50,7 @@ When you see results, you can use **Download Excel file** to view results in Exc
 :::image type="content" source="media\visual-query-editor\cross-warehouse-query-visual-query-editor.png" alt-text="Screenshot of sample cross-warehouse query between Sales and marketing database and Power Query activities." lightbox="media\visual-query-editor\cross-warehouse-query-visual-query-editor.png":::
 
 
-## Known limitations with Visual query editor
+## Limitations with Visual query editor
 
 - You can only write DQL (not DDL or DML).
 
