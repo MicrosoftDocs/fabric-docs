@@ -1,11 +1,11 @@
 ---
 title: Copy sample data into Lakehouse and transform with dataflow
-description: This tutorial shows you how to first load data into a Lakehouse with a pipeline and then transform it using a dataflow with Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+description: This tutorial shows you how to first load data into a Lakehouse with a pipeline and then transform it using a dataflow with Data Factory in Microsoft Fabric.
 ms.reviewer: jburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: conceptual 
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ---
 
 # Copy sample data into Lakehouse and transform with a dataflow with Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
@@ -16,20 +16,19 @@ ms.date: 04/13/2023
 
 In this tutorial, we provide end-to-end steps to a common scenario that uses the pipeline to load source data into Lakehouse at high performance copy and then transform the data by dataflow to make users can easily load and transform data.
 
-## Create a data pipeline
+## Prerequisites
 
-1. Sign in to [Power BI](https://app.powerbi.com) using your admin account credentials.
-1. Choose your existing workspace with premium capacity enabled or create a new workspace enabling Premium capacity.
+A Microsoft Fabric enabled workspace. If you don't already have one, refer to the article [Create a workspace](../get-started/create-workspaces.md).
 
-   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/create-premium-capacity-workspace.png" alt-text="Screenshot showing the Create a workspace dialog with a premium capacity selection highlighted.":::
+## Create a data pipeline 
 
 1. Switch to the **Data Factory** workload.
 
    :::image type="content" source="media/tutorial-load-data-lakehouse-transform/switch-to-data-factory-workload.png" alt-text="Screenshot showing the selection of the Data Factory workload.":::
 
-1. Select **New** and select **Data pipeline**, then input a name for your pipeline.
+1. Select **New** and then **Data pipeline**, and then input a name for your pipeline.
 
-   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/new-data-pipeline.png" alt-text="Screenshot showing the new Data pipeline button.":::
+   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new Data pipeline button.":::
 
    :::image type="content" source="media/tutorial-load-data-lakehouse-transform/pipeline-name.png" alt-text="Screenshot showing the pipeline name dialog.":::
 
