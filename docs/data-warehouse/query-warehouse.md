@@ -6,6 +6,7 @@ ms.author: salilkanade
 ms.reviewer: wiassaf, kecona
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.search.form: Query Editor
 ---
 # Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric
 

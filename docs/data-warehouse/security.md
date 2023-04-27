@@ -58,7 +58,7 @@ When evaluating the permissions to assign to a user, consider the following guid
 - If they primarily require read only access, assign them to the Viewer role. Write on specific objects can be granted through SQL.
 - If they are higher privileged users, assign them to Admin, Member or Contributor roles. The appropriate role is dependent on the other actions that they will need to perform.  
 - Other users, who only need access to an individual warehouse or require access to only specific SQL objects, should be given Fabric Item permissions and granted access through SQL to the specific objects. 
-- You can manage permissions on Azure Activty Directory groups, as well, rather than adding each specific member.
+- You can manage permissions on Azure Activity Directory groups, as well, rather than adding each specific member.
 
 ## Next steps
 

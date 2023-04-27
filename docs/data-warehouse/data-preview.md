@@ -6,7 +6,12 @@ ms.author: jacindaeng
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+<<<<<<< HEAD
 ms.search.form: Data preview # This article's title should not change. If so, contact engineering.
+=======
+ms.search.form: Data Preview
+
+>>>>>>> 22a51ad1c09a5bba3c065ec76e3babf29816df5b
 ---
 
 # View data in the Data preview in Microsoft Fabric

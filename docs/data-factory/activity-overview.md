@@ -45,10 +45,10 @@ Data transformation activity | Compute environment
 [Copy data](copy-data-activity.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 [Dataflow Gen2](dataflows-gen2-overview.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 Delete data | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-Fabric Notebook | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+[Fabric Notebook](notebook-activity.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 Spark job definition | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 Stored Procedure | Azure SQL, Azure Synapse Analytics, or SQL Server
-SQL script | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+[SQL script](script-activity.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 Switch | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 
 ## Control flow activities
