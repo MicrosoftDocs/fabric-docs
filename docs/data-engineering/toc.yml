@@ -10,7 +10,7 @@ items:
   - name: Lakehouse tutorial
     href: ../placeholder.md
   - name: CSV upload to Delta for PBI reporting
-    href: ../placeholder.md
+    href: csv-to-lakehouse-delta-to-pbi.md
   - name: Structured streaming to SQL serving
     href: ../placeholder.md
   - name: Reference external data for data science
@@ -89,7 +89,9 @@ items:
   items:
     - name: Lakehouse and Delta tables
       href: lakehouse-and-delta-tables.md
-    - name: Delta table optimization and V-Order
+    - name: Load to Delta
+      href: load-to-delta.md
+    - name: Delta optimization and V-Order
       href: delta-optimization-and-v-order.md
 - name: Notebooks
   items:
