@@ -43,15 +43,15 @@ The Lakehouse ribbon is a quick go-to action bar for you to refresh the Lakehous
 
 There are several ways to load data into your Lakehouse from the explorer page:
 
-1. **Local file/folder upload:** Uploading data directly from your local machine to the File section of your Lakehouse.
+- **Local file/folder upload:** Uploading data directly from your local machine to the File section of your Lakehouse.
 
-1. **Notebook code:** Using available spark libraries to connect to a data source directly and then loading data to dataframe and saving it in your Lakehouse.
+- **Notebook code:** Using available spark libraries to connect to a data source directly and then loading data to dataframe and saving it in your Lakehouse.
 
-1. **Copy tool in pipelines:** Connect to different data sources and land the data either in original format or convert it to a delta table.
+- **Copy tool in pipelines:** Connect to different data sources and land the data either in original format or convert it to a delta table.
 
-1. **Dataflows Gen 2:** Creating a dataflow to get data in, then transform and publish it into your Lakehouse.
+- **Dataflows Gen 2:** Creating a dataflow to get data in, then transform and publish it into your Lakehouse.
 
-1. **Shortcuts:** Creating shortcuts to connect to existing data into your Lakehouse without having to directly copy it.
+- **Shortcuts:** Creating shortcuts to connect to existing data into your Lakehouse without having to directly copy it.
 
 ## Next steps
 
