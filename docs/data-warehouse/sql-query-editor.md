@@ -4,7 +4,7 @@ description: Learn how to use the SQL Query editor.
 author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Query Editor
 ---
@@ -25,7 +25,7 @@ The SQL Query editor provides a text editor to write queries using T-SQL. To acc
 
 Alternatively, in the warehouse editor ribbon, create a new query using the **New SQL Query** button. If you select the dropdown, you can easily create T-SQL objects with code templates that will prepopulate in your SQL query window, as shown in the following image.
 
-:::image type="content" source="media\sql-query-editor\new-sql-query-dropdown-templates.png" alt-text="Screenshot showing where to find the New query menu on the Data grid view ribbon." lightbox="media\sql-query-editor\new-sql-query-dropdown-templates.png":::
+:::image type="content" source="media\sql-query-editor\new-sql-query-dropdown-templates.png" alt-text="Screenshot showing where to find the New query menu on the Data preview view ribbon." lightbox="media\sql-query-editor\new-sql-query-dropdown-templates.png":::
 
 The SQL Query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing, and validation. 
 
@@ -73,4 +73,3 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - [How-to: Query the Synapse Data Warehouse](query-warehouse.md)
 - [Query using the Visual Query editor](visual-query-editor.md)
-- [Share your Synapse Data Warehouse](share-warehouse.md)
