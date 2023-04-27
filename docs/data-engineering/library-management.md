@@ -6,6 +6,7 @@ ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
 ms.date: 04/24/2023
+
 ---
 
 # Manage Apache Spark libraries in Microsoft Fabric

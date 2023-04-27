@@ -4,7 +4,7 @@ description: Learn about the features that allow you to ingest data into your Sy
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Ingesting data
 ---
