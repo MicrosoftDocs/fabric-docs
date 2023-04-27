@@ -1,5 +1,5 @@
 ---
-title: Load data into your lakehouse with a notebook
+title: Load data into your Lakehouse with a notebook
 description: Learn how to use a notebook to load data into your lakehouse with either an existing notebook or a new one.
 ms.reviewer: snehagunda
 ms.author: qixwang
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ---
 
-# Use a notebook to load data into your lakehouse
+# Use a notebook to load data into your Lakehouse
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -23,15 +23,20 @@ df = spark.read.parquet("location to read from")
 
 # Keep it if you want to save dataframe as CSV files
 
-df.write.mode("overwrite").format("csv").save("Files/ " + csvtableName)
+df.write.mode("overwrite").format("csv").save("Files/ " + csv_table_name)
 
 # Keep it if you want to save dataframe as Parquet files
 
-df.write.mode("overwrite").format("parquet").save("Files/" + parquettableName)
+df.write.mode("overwrite").format("parquet").save("Files/" + parquet_table_name)
 
 # Keep it if you want to save dataframe as a delta lake, parquet table
 
-df.write.mode("overwrite").format("delta").save("Tables/" + deltatableName)
+df.write.mode("overwrite").format("delta").saveAsTable(delta_table_name)
+
+# Keep it if you want to save the dataframe as a delta lake, appending the data to an existing table
+
+df.write.mode("append").format("delta").saveAsTable(delta_table_name)
+
 ```
 
 ## Next steps
