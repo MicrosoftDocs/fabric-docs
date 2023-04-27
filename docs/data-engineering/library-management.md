@@ -63,7 +63,7 @@ Under the **Workspace settings**, you find the Workspace level library managemen
 
 In this section, we explain how to manage feed libraries from PyPI or Conda using the Workspace library management portal.
 
-- **View and search feed library**: You can see the installed libraries and their name, version, and dependencies on the **library management portal**. You can also use the filter box on the upper right corner to find a installed library quickly.
+- **View and search feed library**: You can see the installed libraries and their name, version, and dependencies on the **library management portal**. You can also use the filter box on the upper right corner to find an installed library quickly.
 - **Add new feed library**: The default source for installing Python feed libraries is PyPI. You can also select "Conda" from the drop-down button next to the add button. To add a new library, click on the **+** button and enter the library name and version in the new row.
 
    Alternatively, you can upload a .yml file to install multiple feed libraries at once.
