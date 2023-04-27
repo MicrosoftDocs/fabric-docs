@@ -94,7 +94,8 @@ Select the **play** button to run the following cells, or select the cell and pr
     :::image type="content" source="media/spark-connector/code-cell1.png" alt-text="Screenshot of first code cell showing storage access information." lightbox="media/spark-connector/code-cell1.png":::
 
 1. In **KustoURI**, paste the **Query URI** that you copied earlier instead of the placeholder text.
-1. Change the placeholder database name to **nycGreenTaxi**.
+1. Change the placeholder database name to *nycGreenTaxi*.
+1. Change the placeholder table name to *GreenTaxiData*.
 
     :::image type="content" source="media/spark-connector/code-cell2.png" alt-text="Screenshot of second code cell showing the target database information. The Query URI and database name are highlighted."  lightbox="media/spark-connector/code-cell2.png":::
 
