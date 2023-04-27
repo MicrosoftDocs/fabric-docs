@@ -57,9 +57,9 @@ In this tutorial, you take on the role of a developer at the fictional Wide Worl
 
 ## Sample data
 
-For sample data, we're going to use [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16). For our lakehouse end-to-end scenario, we have generated sufficient data for a sneak peek into the scale and performance capabilities of the Fabric platform.
+For sample data, we're going to use [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true). For our lakehouse end-to-end scenario, we have generated sufficient data for a sneak peek into the scale and performance capabilities of the Fabric platform.
 
-Wide World Importers (WWI) is a wholesale novelty goods importer and distributor operating from the San Francisco Bay area. As a wholesaler, WWI's customers are mostly companies who resell to individuals. WWI sells to retail customers across the United States including specialty stores, supermarkets, computing stores, tourist attraction shops, and some individuals. WWI also sells to other wholesalers via a network of agents who promote the products on WWI's behalf. Learn more about their company profile and operation: [Wide World Importers sample databases for Microsoft SQL](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16).
+Wide World Importers (WWI) is a wholesale novelty goods importer and distributor operating from the San Francisco Bay area. As a wholesaler, WWI's customers are mostly companies who resell to individuals. WWI sells to retail customers across the United States including specialty stores, supermarkets, computing stores, tourist attraction shops, and some individuals. WWI also sells to other wholesalers via a network of agents who promote the products on WWI's behalf. Learn more about their company profile and operation: [Wide World Importers sample databases for Microsoft SQL](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true).
 
 Typically, you would bring data from transactional systems (or line of business applications) into a lakehouse, however for simplicity of this tutorial, we use the dimensional model provided by WWI as our initial data source. We use it as the source to ingest the data into a lakehouse and transform it through different stages (Bronze, Silver, and Gold) of a medallion architecture.
 
@@ -71,7 +71,7 @@ While the WWI dimensional model contains multiple fact tables, for simplicity in
 
 ## End-to-end data and transformation flow
 
-Earlier, we described the [Wide World Importers (WWI) sample data](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16), which we're going to leverage in building this end to end lakehouse. For this implementation, this sample data is in an Azure Data storage account in Parquet file format for all the tables, however in your real-world implementation data would likely come from varieties of sources and in a variety of formats.
+Earlier, we described the [Wide World Importers (WWI) sample data](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true), which we're going to leverage in building this end to end lakehouse. For this implementation, this sample data is in an Azure Data storage account in Parquet file format for all the tables, however in your real-world implementation data would likely come from varieties of sources and in a variety of formats.
 
 :::image type="content" source="media\tutorial-lakehouse-introduction\data-transformation-flow.png" alt-text="Diagram of how data flows and transforms in Microsoft Fabric." lightbox="media\tutorial-lakehouse-introduction\data-transformation-flow.png":::
 
