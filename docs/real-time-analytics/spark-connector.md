@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.date: 04/24/2023
+ms.date: 04/27/2023
 ms.search.form: product-kusto
 ---
 
@@ -24,7 +24,7 @@ Specifically, you learn how to:
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace.
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
 
 Before we import the NYC GreenTaxi notebook, we need to create a database.
 
@@ -52,7 +52,7 @@ Before we import the NYC GreenTaxi notebook, we need to create a database.
 
 We've created a sample notebook that takes you through all the necessary steps for loading data into your database using the Spark connector.
 
-1. Open the Azure Kusto Spark repository on GitHub to download the [NYC GreenTaxi notebook.](https://github.com/Azure/azure-kusto-spark/blob/master/samples/src/main/trident/NYC-GreenTaxi-Read-Write-Data-To-Kusto.ipynb).
+1. Open the Fabric samples repository on GitHub to download the [NYC GreenTaxi KQL notebook.](https://github.com/microsoft/fabric-samples/blob/main/samples/real-time-analytics/NYC_GreenTaxi_KQL_notebook.ipynb).
 
     :::image type="content" source="media/spark-connector/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC GreenTaxi notebook. The option titled Raw is highlighted." lightbox="media/spark-connector/raw-notebook.png":::
 
