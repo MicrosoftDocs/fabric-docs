@@ -30,7 +30,7 @@ To connect to an Excel workbook in a dataflow:
 
    You can also select **Get data** in the Power Query ribbon, or select **Get data from another source**. If you choose either of these selections, select the **File** category, and then select **Excel workbook** from the **Choose data source** dialog.
 
-   :::image type="content" source="./media/connector-excel-workbook/get-data.png" alt-text="Screenshot showing the Power Query workspace with the Get data and Get data from another source emphasized. lightbox="./media/connector-excel-workbook/get-data.png"":::
+   :::image type="content" source="./media/connector-excel-workbook/get-data.png" alt-text="Screenshot showing the Power Query workspace with the Get data and Get data from another source emphasized. lightbox="./media/connector-excel-workbook/get-data.png":::
 
    :::image type="content" source="./media/connector-excel-workbook/select-excel.png" alt-text="Screenshot showing Choose data source with the File category and the Excel workbook connector emphasized.":::
 
