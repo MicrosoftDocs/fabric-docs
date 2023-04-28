@@ -27,4 +27,4 @@ The following screenshot shows an eventstream with its source and destination co
 ## Next steps
 
 - [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
-- [Introduction to Microsoft Fabric event streams](overview.md).
+- [Introduction to Microsoft Fabric event streams](overview.md)
