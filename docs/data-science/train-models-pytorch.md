@@ -13,7 +13,7 @@ ms.search.form: Train models with PyTorch
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[PyTorch](https://pytorch.org/) is a machine learning framework based on the Torch library. It's frequently used for applications such as computer vision and natural language processing. In this article, we'll go through an example of how you can train and track the iterations of your PyTorch model.
+[PyTorch](https://pytorch.org/) is a machine learning framework based on the Torch library. It's frequently used for applications such as computer vision and natural language processing. In this article, we go through an example of how you train and track the iterations of your PyTorch model.
 
 ## Install PyTorch
 
@@ -25,7 +25,7 @@ To get started with PyTorch, you must ensure that it's installed within your not
 
 ## Set up the machine learning experiment
 
-Next, you will create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
+Next, you create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API creates a new machine learning experiment if it doesn't already exist.
 
 ```python
 import mlflow
@@ -142,7 +142,7 @@ torch.save(model.state_dict(), model.name())
 
 ## Log model with MLflow
 
-Now, you will start an MLflow run and track the results within our machine learning experiment.
+Now, you start an MLflow run and track the results within our machine learning experiment.
 
 ```python
 with mlflow.start_run() as run:
@@ -156,7 +156,7 @@ with mlflow.start_run() as run:
     print(f"Model URI: {model_uri}")
 ```
 
-The code above creates a run with the specified parameters and logs the run within the sample-pytorch experiment. This snippet will also create a new model called sample-pytorch.  
+The code above creates a run with the specified parameters and logs the run within the sample-pytorch experiment. This snippet creates a new model called sample-pytorch.  
 
 ## Load and evaluate the model
 
