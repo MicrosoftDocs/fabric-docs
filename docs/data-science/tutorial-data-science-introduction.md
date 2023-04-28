@@ -62,9 +62,7 @@ In this tutorial,  we showcase a simplified end-to-end data science scenario tha
 1. [Model batch scoring and saving predictions](../placeholder.md) for consumption.
 1. [Visualizing prediction results](../placeholder.md).
 
-:::image type="content" source="media/tutorial-data-science-introduction/
-data-science-scenario.png" alt-text="Diagram of the Data science end-to-end scenario components." lightbox="media/tutorial-data-science-introduction/
-data-science-scenario.png":::
+:::image type="content" source="media/tutorial-data-science-introduction/data-science-scenario.png" alt-text="Diagram of the Data science end-to-end scenario components." lightbox="media/tutorial-data-science-introduction/data-science-scenario.png":::
 
 ### Different components of the Data science scenario
 
