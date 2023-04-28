@@ -38,7 +38,8 @@ To get started, you must complete the following prerequisites:
 1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
 
    :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
-  :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
+
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
 ## Copy data using pipeline
 
@@ -54,11 +55,11 @@ In this session, you start to build your pipeline by following below steps about
 
 1. Choose the **COVID-19 Data Lake** from the **Sample data** options for your data source, and then select **Next**.
 
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/covid-19-data-lake.png" alt-text="Screenshot showing the COVID-19 Data Lake sample data selection in the Copy data assistant." alt-text="Screenshot showing the Choose data source page of the Copy data assistant with the COVID-19 Data Lake sample data selected.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/covid-19-data-lake.png" alt-text="Screenshot showing the COVID-19 Data Lake sample data selection in the Copy data assistant.":::
 
 1. In the **Connect to data source** section of the **Copy data** assistant, a preview of the sample data **Bing COVID-19** is displayed. Select **Next** to move on to the data destination.
 
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/preview-data.png" alt-text="Screenshot showing a preview of the Public Holiday sample data.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/preview-data.png" alt-text="Screenshot showing a preview of the Bing COVID-19 sample data.":::
 
 ### Step 3: Configure your destination
 
@@ -86,7 +87,7 @@ In this session, you start to build your pipeline by following below steps about
 
 1. The Copy activity is added to your new data pipeline canvas. All settings including advanced settings for the activity are available in the tabs below the pipeline canvas when the created **Copy data** activity is selected.
 
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity with the Copy activity settings tabs highlighted.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity in pipeline canvas.":::
 
 ## Run and schedule your data pipeline
 
