@@ -27,10 +27,10 @@ Fabric provides availability zone support in various regions as follows:
 |	Region	|	|		|		| 	|
 |------------------|----------------------|---------------|--------------------|----------------|
 |	**Americas**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
-|	Brazil South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	Brazil South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|		:::image type="icon" source="../media/yes-icon.svg" border="false":::	|
 |	Brazil South B	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
 |	Canada Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	Central US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	Central US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|	:::image type="icon" source="../media/yes-icon.svg" border="false":::		|
 |	East US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
 |	East US 2	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
 |	South Central US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
@@ -41,13 +41,13 @@ Fabric provides availability zone support in various regions as follows:
 |	Germany West Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
 |	North Europe	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
 |	Sweden Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	UK South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	UK South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|:::image type="icon" source="../media/yes-icon.svg" border="false":::			|
 |	West Europe	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	Norway East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	Norway East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|		:::image type="icon" source="../media/yes-icon.svg" border="false":::	|
 |	**Middle East**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
 |	Qatar Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
 |	**Africa**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
-|	South Africa North	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	South Africa North	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|	:::image type="icon" source="../media/yes-icon.svg" border="false":::		|
 |	**Asia Pacific**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
 |	Australia East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
 |	Japan East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
@@ -58,11 +58,7 @@ Fabric provides availability zone support in various regions as follows:
 To prepare for availability zone failure, customers should over-provision capacity of service to ensure that the solution can tolerate ⅓ loss of capacity and continue to function without degraded performance during zone-wide outages.
 
 ### Zone down experience
-During a zone-wide outage, no action is required during zone recovery. The following Fabric capabilities in the regions indicated above will self-heal and re-balance automatically to take advantage of the healthy zone. 
-- Power BI 
-- Data Marts
-- Data Warehouses
-- Real-Time Analytics
+During a zone-wide outage, no action is required during zone recovery. Fabric capabilities in regions listed above will self-heal and re-balance automatically to take advantage of the healthy zone. 
 
 ## Next steps
 
