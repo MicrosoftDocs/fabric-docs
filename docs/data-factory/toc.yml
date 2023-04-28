@@ -116,13 +116,7 @@
       - name: Configure in copy activity
         href: ../placeholder.md
     - name: Parquet format
-      items:
-      - name: Overview
-        href: ../placeholder.md
-      - name: Set up connection
-        href: ../placeholder.md
-      - name: Configure in copy activity
-        href: ../placeholder.md
+      href: format-parquet.md
     - name: OData
       items:
       - name: Overview

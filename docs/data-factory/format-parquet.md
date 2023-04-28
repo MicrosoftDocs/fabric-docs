@@ -4,7 +4,7 @@ description: This article explains how to configure Parquet format in the data p
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/23/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
