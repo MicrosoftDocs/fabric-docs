@@ -20,7 +20,7 @@ items:
     - name: 2. Create a table
       href: create-table.md
     - name: 3. Ingest data 
-      href: ingest-data.md
+      href: ingest-data-pipelines.md
     - name: 4. Query the warehouse
       href: query-warehouse.md
     - name: 5. Create reports
