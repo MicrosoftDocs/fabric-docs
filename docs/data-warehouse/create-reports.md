@@ -43,7 +43,7 @@ You can build reports from datasets with **Power BI Desktop** using a Live conne
 
 For a tutorial with Power BI Desktop, see [Get started with Power BI Desktop](/power-bi/fundamentals/desktop-getting-started). For advanced situations where you want to add more data or change the storage mode, see [use composite models in Power BI Desktop](/power-bi/transform-model/desktop-composite-models).
 
-You can use integrated Data hub experience in Power BI Desktop to select your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) to make a connection and build reports.
+You can use integrated Data hub experience in Power BI Desktop to select your [[!INCLUDE [fabric-se](includes/fabric-se.md)]]data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]]data-warehousing.md#synapse-data-warehouse) to make a connection and build reports.
 
    :::image type="content" source="media\create-reports\get-data-powerbi-desktop.png" alt-text="Screenshot of a get data from Power BI Desktop." lightbox="media\create-reports\get-data-powerbi-desktop.png":::
 

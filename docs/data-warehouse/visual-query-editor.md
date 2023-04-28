@@ -41,11 +41,11 @@ When you see results, you can use **Download Excel file** to view results in Exc
 
 ## Create a cross-warehouse query in Visual query editor
 
-For more information on cross-warehouse querying, see [Cross-warehouse querying](query-warehouse.md#cross-warehouse-querying).
+For more information on cross-warehouse querying, see [Cross-warehouse querying](query-warehouse.md#write-a-cross-database-query).
 
-- To create a cross-warehouse query, drag and drop tables from added warehouses and add merge activity. For example, in the image, `store_sales` is added from `sales` warehouse and it is merged with `item` table from `marketing` warehouse.
+- To create a cross-warehouse query, drag and drop tables from added warehouses and add merge activity. For example, in the following image example, `store_sales` is added from `sales` warehouse and it's merged with `item` table from `marketing` warehouse.
 
-:::image type="content" source="media\visual-query-editor\cross-warehouse-query-visual-query-editor.png" alt-text="Screenshot of sample cross-warehouse query between Sales and marketing database and Power Query activities." lightbox="media\visual-query-editor\cross-warehouse-query-visual-query-editor.png":::
+:::image type="content" source="media\visual-query-editor\cross-warehouse-query-visual-query-editor.png" alt-text="Screenshot of sample cross-warehouse query between sales and marketing database and Power Query activities." lightbox="media\visual-query-editor\cross-warehouse-query-visual-query-editor.png":::
 
 ## Limitations with Visual query editor
 
