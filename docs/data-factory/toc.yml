@@ -207,6 +207,8 @@
         href: ../placeholder.md
       - name: Saving a draft of your dataflow
         href: dataflows-gen2-save-draft.md
+      - name: How to obfuscate data
+        href: data-obfuscation-with-delphix.md
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
