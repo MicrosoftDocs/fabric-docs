@@ -37,6 +37,8 @@ The status bar indicates the query status, duration of the run and number of row
 
 When you run multiple queries and those return multiple results, you can select results drop down to see individual results.
 
+:::image type="content" source="media\sql-query-editor\sql-query-editor-overview.png" alt-text="Screenshot of the query editor window with results." lightbox="media\sql-query-editor\sql-query-editor-overview.png":::
+
 To enable **Save as view**, **Save as table**, **Download Excel file** and **Visualize results** menus, select the SQL statement containing SELECT statement in the SQL query editor.
 
 :::image type="content" source="media\sql-query-editor\editor-commands.png" alt-text="Screenshot of the query editor window. Command buttons are boxed in red." lightbox="media\sql-query-editor\editor-commands.png":::

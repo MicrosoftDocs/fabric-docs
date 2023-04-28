@@ -43,7 +43,11 @@ You can build reports from datasets with **Power BI Desktop** using a Live conne
 
 For a tutorial with Power BI Desktop, see [Get started with Power BI Desktop](/power-bi/fundamentals/desktop-getting-started). For advanced situations where you want to add more data or change the storage mode, see [use composite models in Power BI Desktop](/power-bi/transform-model/desktop-composite-models).
 
-Complete the following steps to connect to a warehouse in Power BI Desktop:
+You can use integrated Data hub experience in Power BI Desktop to select your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) to make a connection and build reports.
+
+   :::image type="content" source="media\create-reports\get-data-powerbi-desktop.png" alt-text="Screenshot of a get data from Power BI Desktop." lightbox="media\create-reports\get-data-powerbi-desktop.png":::
+
+Alternatively, you can complete the following steps to connect to a warehouse in Power BI Desktop:
 
 1. Navigate to the warehouse settings in your workspace and copy the SQL connection string. Or, right-click on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] in your workspace and select **Copy SQL connection string**.
 2. Select the **Warehouse (preview) connector** from the **Get data** or connect to the default dataset from **Data hub**. 
@@ -52,12 +56,6 @@ Complete the following steps to connect to a warehouse in Power BI Desktop:
 5. Authenticate using Azure Active Directory - MFA.
 6. Select **Connect**.
 7. Select the data items you want to include or not include in your dataset.
-
-## Create reports from Power BI Desktop
-
-You can use integrated Data hub experience in Power BI Desktop to select your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) to make a connection and build reports.
-
-   :::image type="content" source="media\create-reports\get-data-powerbi-desktop.png" alt-text="Screenshot of a get data from Power BI Desktop." lightbox="media\create-reports\get-data-powerbi-desktop.png":::
 
 ## Next steps
 
