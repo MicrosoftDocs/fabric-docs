@@ -1,5 +1,5 @@
 ---
-title: Bring your real-time events to Microsoft Fabric to build near real-time report
+title: Bring real-time events to Microsoft Fabric to build near real-time report
 description: This tutorial provides an end-to-end demonstration of how to use event streams feature to bring your real-time events to Fabric Lakehouse from Azure Event Hubs to build near real-time report.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -9,7 +9,7 @@ ms.date: 04/28/2023
 ms.search.form: product-kusto
 ---
 
-# Bring your real-time events to Microsoft Fabric to build near real-time report
+# Bring real-time events to Microsoft Fabric to build near real-time report
 
 This tutorial shows you how to use Microsoft Fabric event streams to bring your real-time events to lakehouse from your Azure event hub, then build near real-time report to monitor your business events data.
 
