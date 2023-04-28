@@ -110,11 +110,11 @@
     - name: Microsoft 365
       items:
       - name: Overview
-        href: ../placeholder.md
+        href: connector-microsoft-365-overview.md
       - name: Set up connection
-        href: ../placeholder.md
+        href: connector-microsoft-365.md
       - name: Configure in copy activity
-        href: ../placeholder.md
+        href: connector-microsoft-365-copy-activity.md
     - name: Parquet format
       items:
       - name: Overview
