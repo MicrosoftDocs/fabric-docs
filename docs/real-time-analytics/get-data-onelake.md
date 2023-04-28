@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 02/01/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
@@ -15,10 +15,9 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A workspace.
-* A Lakehouse. <!-- To create a Lakehouse, see [TODO]()-->
-* [Kusto database](create-database.md).
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* [Lakehouse](../data-engineering/create-lakehouse.md)
+* [KQL Database](create-database.md)
 
 ## Copy folder path from Lakehouse
 

@@ -4,7 +4,7 @@ description: This article explains the overview of using Azure SQL Database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/20/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
@@ -25,12 +25,9 @@ This Azure SQL Database connector is supported in Data Factory for [!INCLUDE [pr
 | **GetMetadata activity** | None | Basic<br>OAuth2<br>Service principal |
 | **Script activity** | None | Basic<br>OAuth2<br>Service principal |
 | **Stored procedure activity** | None | Basic<br>OAuth2<br>Service principal |
-| **Dataflow Gen2 (Source/Destination)** |  | |
 
 ## Next Steps
 
-[How to create Azure SQL Database connection](connector-azure-sql-database.md)
-
-[How to configure Azure SQL Database in copy activity](connector-azure-sql-database-copy-activity.md)
-
-
+- [How to create Azure SQL Database connection](connector-azure-sql-database.md)
+- [How to configure Azure SQL Database in copy activity](connector-azure-sql-database-copy-activity.md)
+- [Connect to an Azure SQL database in dataflows](connector-azure-sql-database-dataflow.md)

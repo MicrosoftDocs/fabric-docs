@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure Cosmos DB for No
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 3/31/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
@@ -138,10 +138,10 @@ The following tables contain more information about the copy activity in Azure C
 |**Container**|The container of your destination data.|\<container of source\> |Yes |container <br> fileName|
 |**Write behavior** |Describes how to write data to Azure Cosmos DB. Allowed values: insert and upsert. The behavior of upsert is to replace the document if a document with the same ID already exists; otherwise, insert the document.|• **Add dynamic content**<br>• **Insert**<br>• **Upsert**|No |writeBehavior|
 |**Write batch timeout** |Wait time for the batch insert operation to complete before it times out. Allowed values are Timespan. An example is 00:30:00 (30 minutes).| timespan |No |writeBatchTimeout|
-|**Write batch size**|The number of rows to insert into the SQL table per batch. The allowed value is integer (number of rows). By default, the service dynamically determines the appropriate batch size based on the row size.|\<number of rows \><br>(integer) |No |writeBatchSize|
+|**Write batch size**|The number of rows to insert into the SQL table per batch. The allowed value is integer (number of rows). By default, the service dynamically determines the appropriate batch size based on the row size.|\<number of rows \><br>(integer) |No |writeBatchSize|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 |**Disable performance metrics analytics**|This setting controls collection of metrics such as DTU, DWU, RU, and so on for copy performance optimization and recommendations. If you're concerned with this behavior, turn off this feature.|Selected or unselect|No |disableMetricsCollection|
 
 ## Next steps
 
-[How to create an Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md)
+- [How to create an Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md)
