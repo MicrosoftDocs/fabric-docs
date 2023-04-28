@@ -81,6 +81,10 @@ landingContent:
         links:
           - text: Introduction to event streams
             url: event-streams/overview.md
+      - linkListType: tutorial
+        links:
+          - text: Stream events from Event Hubs into Fabric
+            url: event-streams/bring-events-to-fabric-from-event-hub.md
       - linkListType: concept
         links:
           - text: Main editor
