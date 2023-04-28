@@ -94,11 +94,11 @@ landingContent:
           - text: Destinations
             url: event-streams/event-streams-destination.md
           - text: Processor editor
-            url: event-streams/processor-editor.md          
+            url: event-streams/event-processor-editor.md          
       - linkListType: how-to-guide
         links: 
         - text: Process events with event processor
-          url: event-streams/process-events-event-processor.md
+          url: event-streams/process-event-with-event-processor-editor.md
         - text: Preview data
           url: event-streams/preview-data.md
         - text: Monitor event streams
