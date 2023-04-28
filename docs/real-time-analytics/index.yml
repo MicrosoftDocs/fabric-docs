@@ -98,7 +98,7 @@ landingContent:
       - linkListType: how-to-guide
         links: 
         - text: Process events with event processor
-          url: event-streams/process-event-with-event-processor-editor.md
+          url: event-streams/process-events-using-event-processor-editor.md
         - text: Preview data
           url: event-streams/preview-data.md
         - text: Monitor event streams

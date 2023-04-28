@@ -186,4 +186,4 @@ In this tutorial, you learned how to transfer real-time events from your Azure e
 - [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
-- [Process event data with event processor editor](./process-event-with-event-preocessor-editor.md)
+- [Process event data with event processor editor](./process-events-using-event-processor-editor.md)
