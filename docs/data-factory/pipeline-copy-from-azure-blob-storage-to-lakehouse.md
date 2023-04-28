@@ -5,14 +5,14 @@ ms.reviewer: jonburchel
 ms.author: jburchel
 author: jonburchel
 ms.topic: quickstart 
-ms.date: 03/01/2023
+ms.date: 05/23/2023
 ---
 
 # Quickstart: Copy from Azure Blob Storage to Lakehouse
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 In this tutorial, you'll build a data pipeline to move a CSV file from an input folder of an Azure Blob Storage source to a Lakehouse destination. 
 
@@ -20,7 +20,7 @@ In this tutorial, you'll build a data pipeline to move a CSV file from an input 
 
 To get started, you must complete the following prerequisites:
 
-- Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../placeholder.md) that isn’t the default My Workspace.
+- Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 - Select the **Click to Prepare Data** button to prepare the data source of the Copy with one-click button. Create a new resource group for this Azure Blob storage and select **Review + Create** > **Create**.
 
   :::image type="content" source="media/create-first-pipeline/select-prepare-data.png" alt-text="Screenshot of Click to Prepare Data button.":::

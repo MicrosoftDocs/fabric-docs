@@ -1,23 +1,22 @@
 ---
-title: Load data into your Lakehouse with a notebook
-description: Learn how to use a notebook to load data into your Lakehouse.
+title: Load data into your lakehouse with a notebook
+description: Learn how to use a notebook to load data into your lakehouse with either an existing notebook or a new one.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: how-to
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ---
 
-# How to use a notebook to load data into your Lakehouse
+# Use a notebook to load data into your lakehouse
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this tutorial, learn how to load data into your Lakehouse with a notebook.
+In this tutorial, learn how to load data into your lakehouse with a notebook.
 
 ## Load data with an Apache Spark notebook
 
-To load data into a Lakehouse, you can write Spark code either in an existing notebook or create a new notebook. In the code cell of the notebook, use the following code example to read data from the source and load it into **Files**, **Tables**, or both sections of your Lakehouse.
+To load data into a lakehouse, you can write Spark code either in an existing notebook or create a new notebook. In the code cell of the notebook, use the following code example to read data from the source and load it into **Files**, **Tables**, or both sections of your lakehouse.
 
 ```python
 df = spark.read.parquet("location to read from") 
@@ -37,4 +36,4 @@ df.write.mode("overwrite").format("delta").save("Tables/" + deltatableName)
 
 ## Next steps
 
-- [Explore the data in your Lakehouse with a notebook](lakehouse-notebook-explore.md)
+- [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md)

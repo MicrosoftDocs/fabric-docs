@@ -4,7 +4,7 @@ description: This article explains how to copy data using HTTP.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/08/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to HTTP.
 
@@ -42,7 +42,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 ### General
 
-For **General** tab configuration, go to General.
+Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
 ### Source
 
