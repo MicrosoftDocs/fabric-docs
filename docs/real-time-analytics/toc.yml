@@ -79,7 +79,7 @@ items:
     - name: Add and manage eventstream destinations
       href: event-streams/add-manage-eventstream-destinations.md
     - name: Process event with event processor
-      href: event-streams/process-event-with-event-preocessor-editor.md
+      href: event-streams/process-events-using-event-processor-editor.md
     - name: Preview data
       href: event-streams/preview-data.md
     - name: Monitoring
