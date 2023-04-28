@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 03/21/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 # Use sample queries to query your table
@@ -18,8 +18,7 @@ For more information on the Kusto Query Language, see [Kusto Query Language (KQL
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A Workspace
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
 * A [KQL database](create-database.md) with data
 
 ## Query table

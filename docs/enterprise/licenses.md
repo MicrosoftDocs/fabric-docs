@@ -4,7 +4,7 @@ description: Understand how licenses in Microsoft Fabric work, and what are tena
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 03/01/2023
+ms.date: 05/23/2023
 ---
 
 # Microsoft Fabric licenses
