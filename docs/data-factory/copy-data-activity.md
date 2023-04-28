@@ -199,7 +199,7 @@ See the following table for the description of each setting.
 
 |Setting  |Description  |
 |---------|---------|
-|**Intelligent throughput optimization** |Specify to optimize the throughput. You can choose from **Auto**, **Standard**, **Balanced** and **Maximum**. When you choose **Auto**, the optimal setting is dynamically applied based on your source-destination pair and data pattern. You can also select **Edit** to customize your throughput, and custom value can be 2-256 while higher value implies more gains.  |
+|**Intelligent throughput optimization** |Specify to optimize the throughput. You can choose from: <br>• **Auto**<br>• **Standard**<br>• **Balanced**<br>• **Maximum**<br> When you choose **Auto**, the optimal setting is dynamically applied based on your source-destination pair and data pattern. You can also customize your throughput, and custom value can be 2-256 while higher value implies more gains.  |
 |**Degree of copy parallelism** | Specify the degree of parallelism that data loading would use. |
 |**Fault tolerance** |When selecting this option, you can ignore some errors occurred in the middle of copy process. For example, incompatible rows between source and destination store, file being deleted during data movement, etc.  |
 |**Enable logging** |When selecting this option, you can log copied files, skipped files and rows|
