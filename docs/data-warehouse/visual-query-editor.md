@@ -1,6 +1,6 @@
 ---
-title: Query using the Visual Query editor
-description: Learn how to use the Visual Query editor.
+title: Query using the Visual query editor
+description: Learn how to use the Visual query editor.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
@@ -15,7 +15,7 @@ ms.search.form: Query Editor
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the Visual query editor and the [SQL Query editor](sql-query-editor.md) among others. This article describes how to use the Visual query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the Visual query editor and the [SQL query editor](sql-query-editor.md). This article describes how to use the Visual query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
 
 ## Visual query editor in the Fabric portal
 
@@ -37,18 +37,15 @@ The following image shows a sample query created using the no-code Visual query 
 
 :::image type="content" source="media\visual-query-editor\sample-query-top-customers.png" alt-text="Screenshot of the results of a sample query to retrieve top customers by orders." lightbox="media\visual-query-editor\sample-query-top-customers.png":::
 
-When you see results, you can use **Download Excel file** to view results in Excel or **Visualize results** to create report on results. 
+When you see results, you can use **Download Excel file** to view results in Excel or **Visualize results** to create report on results.
 
 ## Create a cross-warehouse query in Visual query editor
 
-1. Add [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) from your current active workspace to object Explorer using **+ Warehouses** action. When you select [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) from the dialog, it gets added into the **Object Explorer** for referencing when writing a SQL query or creating Visual query.
+For more information on cross-warehouse querying, see [Cross-warehouse querying](query-warehouse.md#cross-warehouse-querying).
 
-:::image type="content" source="media\visual-query-editor\add-warehouses.png" alt-text="Screenshot of adding warehouses or SQL endpoint from current active workspace." lightbox="media\visual-query-editor\add-warehouses.png":::
-
-2. To create a cross-warehouse query, drag and drop tables from added warehouses and add merge activity. For example, in the image, `store_sales` is added from `sales` warehouse and it is merged with `item` table from `marketing` warehouse.
+- To create a cross-warehouse query, drag and drop tables from added warehouses and add merge activity. For example, in the image, `store_sales` is added from `sales` warehouse and it is merged with `item` table from `marketing` warehouse.
 
 :::image type="content" source="media\visual-query-editor\cross-warehouse-query-visual-query-editor.png" alt-text="Screenshot of sample cross-warehouse query between Sales and marketing database and Power Query activities." lightbox="media\visual-query-editor\cross-warehouse-query-visual-query-editor.png":::
-
 
 ## Limitations with Visual query editor
 
