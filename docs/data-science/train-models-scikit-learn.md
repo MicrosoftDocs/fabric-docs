@@ -1,32 +1,31 @@
 ---
 title: How to train models with scikit-learn
-description: Learn how to train models with scikit-learn.
-ms.reviewer: mopeakande
+description: Learn how to train models with scikit-learn, a popular open-source machine learning framework that's frequently used for supervised and unsupervised learning.
+ms.reviewer: ssalgado
 ms.author: negust
 author: nelgson
 ms.topic: how-to
-ms.date: 02/10/2023
+ms.date: 05/23/2023
 ms.search.form: Train models with scikit-learn
 ---
 
-# How to train models with scikit-learn
+# How to train models with scikit-learn in Microsoft Fabric
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Scikit-learn ([scikit-learn.org](https://scikit-learn.org)) is a popular, open-source machine learning framework. It's frequently used for supervised and unsupervised learning. It also provides various tools for model fitting, data preprocessing, model selection, model evaluation, and more.  
+Scikit-learn ([scikit-learn.org](https://scikit-learn.org)) is a popular, open-source machine learning framework. Scitkit-learn is frequently used for supervised and unsupervised learning. It also provides various tools for model fitting, data preprocessing, model selection, model evaluation, and more.  
 
-In this section, we'll go through an example of how you can train and track the iterations of your Scikit-Learn model.
+In this section, you go through an example of how to train and track the iterations of your Scikit-Learn model.
 
 ## Install scikit-learn
 
-To get started with scikit-learn, you must ensure that it's installed within your notebook. You can install or upgrade the version of scikit-learn on your environment using the following command:
+To get started with scikit-learn, you must ensure that it's installed within your notebook. Install or upgrade the version of scikit-learn on your environment using the following command:
 
 ```shell
 %pip install scikit-learn
 ```
 
-Next, we'll create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
+Next, you will create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
 
 ```python
 import mlflow
@@ -36,7 +35,7 @@ mlflow.set_experiment("sample-sklearn")
 
 ## Train a scikit-learn model
 
-After the experiment has been created, we'll create a sample dataset and create a logistic regression model. We'll also start a MLflow run and track the metrics, parameters, and final logistic regression model. Once we've generated the final model, we'll also save the resulting model for additional tracking.
+After the experiment has been created, we'll create a sample dataset and create a logistic regression model. We'll also start a MLflow run and track the metrics, parameters, and final logistic regression model. Once we've generated the final model, we'll also save the resulting model for more tracking.
 
 ```python
 import mlflow.sklearn
@@ -73,7 +72,7 @@ with mlflow.start_run() as run:
 
 ## Load and evaluate the model on a sample dataset
 
-Once the model is saved, it can also be loaded for inferencing. To do this, we'll load the model and run the inference on a sample dataset.
+Once the model is saved, it can also be loaded for inferencing. To run inferencing on the model, load the model and run the inference on a sample dataset.
 
 ```python
 # Inference with loading the logged model

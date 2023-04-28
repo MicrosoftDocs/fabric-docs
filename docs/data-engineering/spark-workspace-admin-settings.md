@@ -1,21 +1,20 @@
 ---
 title: Apache Spark workspace administration settings
-description: Learn about the workspace administration settings such as Apache Spark node family, runtime version, and Spark properties. 
+description: Learn about the workspace administration settings such as Apache Spark node family, runtime version, and Spark properties.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ---
 
 # Apache Spark workspace administration settings
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 When you create a workspace in [!INCLUDE [product-name](../includes/product-name.md)], an [Apache Spark pool](/azure/synapse-analytics/spark/apache-spark-pool-configurations) that is associated with that workspace is automatically created. With the simplified setup in [!INCLUDE [product-name](../includes/product-name.md)], there's no need to choose the node or machine sizes, as this is handled for you behind the scenes. This configuration provides a faster experience to start and run your Spark jobs in many common scenarios.
 
-To make changes to the Spark settings in a workspace, you should have the admin role for that workspace. To learn more about the roles you can assign users in a workspace, see [Roles in workspaces in Power BI](/power-bi/collaborate-share/service-roles-new-workspaces).
+To make changes to the Spark settings in a workspace, you should have the admin role for that workspace. To learn more about the roles you can assign users in a workspace, see [Roles in workspaces](../get-started/roles-workspaces.md).
 
 To manage the Spark settings for the pool associated with your workspace:
 
@@ -46,7 +45,7 @@ By default, your pool uses **Memory Optimized** machines. This is the most commo
 
 ## Runtime version
 
-You may choose which version of Spark you’d like to use for the workspace. The only version of Spark that is currently available for use is Spark 3.2. You'll have additional options in the future.
+You may choose which version of Spark you’d like to use for the workspace. The only version of Spark that is currently available for use is Spark 3.3. 
 
 :::image type="content" source="media\spark-workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\spark-workspace-admin-settings\runtime-version.png":::
 

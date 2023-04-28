@@ -4,15 +4,15 @@ description: This article explains how to configure Binary format in Data Factor
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 03/07/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
-# Binary format in Data Factory
+# Binary format for Data Factory in Microsoft Fabric
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 This article outlines how to configure Binary format in Data Factory.
 
