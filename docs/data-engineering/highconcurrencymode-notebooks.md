@@ -22,23 +22,23 @@ When you run a notebook in Microsoft Fabric, an Apache Spark session is started 
 > The notebooks need to have matching spark configurations, should be part of the same workspace, share the same default lakehouse and libraries to share a single spark session. 
 
 ## Configure High Concurrency Mode 
-By default, all the Fabric workspaces will be enabled with High Concurrency Mode. To configure the High Concurrency feature , 
+By default, all the Fabric workspaces are enabled with High Concurrency Mode. Use the following steps to configure the High Concurrency feature: 
 
 1.	Click on Workspace Settings Option in your Fabric Workspace
-:::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-settings-nav.png" alt-text="Screenshot showing the navigration to workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-settings-nav.png":::
+:::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-settings-nav.png" alt-text="Screenshot showing the navigation to workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-settings-nav.png":::
 
 2.	Navigate to the Synapse section > Spark Compute > High Concurrency 
-3.	In the High Concurrency section you could choose to enable or disable the setting. 
+3.	In the High Concurrency section, you could choose to enable or disable the setting. 
 :::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-settings-high-concurrency-section.png" alt-text="Screenshot showing the high concurrency section in workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-settings-high-concurrency-section.png":::
 
-4.	Enabling the high concurrency option will allow users to start a High Concurrency session in their Notebooks or attach to existing High Concurrency session. 
+4.	Enabling the high concurrency option allows users to start a High Concurrency session in their Notebooks or attach to existing High Concurrency session. 
 5. Disabling the high concurrency mode hides the section to configure the time period of inactivity and also hides the option to start a new high concurrecny session from the notebook menu.
 :::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-setting-disable-high-concurrency-mode.png" alt-text="Screenshot showing the high concurrency option disabled in workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-setting-disable-high-concurrency-mode.png":::
 
 ## Run Notebooks in High Concurrency Session
 1.	Open the Fabric workspace 
 2.	Create a Notebook or open an existing Notebook 
-3.	Navigate to the Run tab in the menu ribbon and Click on the session type dropdown which has  “Standard” selected as the default option.
+3.	Navigate to the Run tab in the menu ribbon and Click on the session type dropdown that has  “Standard” selected as the default option.
 
 :::image type="content" source="media\high-concurrency-mode-for-notebooks\start-high-concurrency-session.png" alt-text="Screenshot showing the high concurrency option in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\start-high-concurrency-session.png":::
 
@@ -57,19 +57,19 @@ By default, all the Fabric workspaces will be enabled with High Concurrency Mode
 :::image type="content" source="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png" alt-text="Screenshot showing the session details of a high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png":::
 
 ## Monitoring and Debugging Notebooks Running in High Concurrency Session
-Monitoring and debugging is often a non trivial task when you are running multiple notebooks in a shared session. For high concurrency mode in Fabric, seperation of logs is offered which would allow users to trace the logs emitted by spark events from different notebooks. 
+Monitoring and debugging are often a non-trivial task when you are running multiple notebooks in a shared session. For high concurrency mode in Fabric, seperation of logs is offered which would allow users to trace the logs emitted by spark events from different notebooks. 
 
 1. When the session is in progress or in completed state, users can view the session status by navigating to the Run menu -> by selecting the All Runs option 
 2. This would open up the run history of the notebook showing the list of current active and historic spark sessions
 :::image type="content" source="media\high-concurrency-mode-for-notebooks\view-all-runs-in-high-concurrency-mode.png" alt-text="Screenshot showing the all runs page for a notebook in a high concurrency session." lightbox="media\high-concurrency-mode-for-notebooks\view-all-runs-in-high-concurrency-mode.png":::
-3. By clicking on a session, users can access the monitoring detail view which shows the list of all the spark jobs that have been run in the session.
+3. By selecting a session, users can access the monitoring detail view, which shows the list of all the spark jobs that have been run in the session.
 4. In the case of high concurrency session, users could identify the jobs and its associated logs from different notebooks using the "Related notebook" tab, which shows the notebook from which that job has been run.
 :::image type="content" source="media\high-concurrency-mode-for-notebooks\view-related-notebooks-in-hogh-concurrency-mode.png" alt-text="Screenshot showing the all related notebooks for high concurrency session in the monitoring detail view." lightbox="media\high-concurrency-mode-for-notebooks\view-related-notebooks-in-hogh-concurrency-mode.png":::
 
 
 ## Next steps
 
-In this document, you get a basic understanding of a session sharing through high concurrency mode in notebooks. Advance to the next articles to learn how to create and get started with your own Data Engineering workloads using Lakehouses and Notebooks:
+In this document, you get a basic understanding of a session sharing through high concurrency mode in notebooks. Advance to the next articles to learn how to create and get started with your own Data Engineering workloads using lakehouses and Notebooks:
 
 - To get started with Lakehouse, see [Creating a Lakehouse](create-lakehouse.md).
 - To get started with Notebooks, see [How to use a Notebook](how-to-use-notebook.md)
