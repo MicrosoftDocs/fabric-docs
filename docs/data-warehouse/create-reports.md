@@ -29,7 +29,7 @@ Reports that use the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE 
 
 Within the warehouse experience, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI dataset.
 
-:::image type="content" source="media\reports-power-bi-service\new-report-ribbon.png" alt-text="Screenshot of new report in the ribbon." lightbox="media\reports-power-bi-service\new-report-ribbon.png":::
+:::image type="content" source="media\create-reports\new-report-ribbon.png" alt-text="Screenshot of new report in the ribbon." lightbox="media\create-reports\new-report-ribbon.png":::
 
 If no tables have been added to the default Power BI dataset, the dialog first automatically adds tables, prompting the user to confirm or manually select the tables included in the canonical default dataset first, ensuring there's always data first.
 
@@ -45,7 +45,7 @@ For a tutorial with Power BI Desktop, see [Get started with Power BI Desktop](/p
 
 You can use integrated Data hub experience in Power BI Desktop to select your [[!INCLUDE [fabric-se](includes/fabric-se.md)]]data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]]data-warehousing.md#synapse-data-warehouse) to make a connection and build reports.
 
-   :::image type="content" source="media\create-reports\get-data-powerbi-desktop.png" alt-text="Screenshot of a get data from Power BI Desktop." lightbox="media\create-reports\get-data-powerbi-desktop.png":::
+:::image type="content" source="media\create-reports\get-data-powerbi-desktop.png" alt-text="Screenshot of a get data from Power BI Desktop." lightbox="media\create-reports\get-data-powerbi-desktop.png":::
 
 Alternatively, you can complete the following steps to connect to a warehouse in Power BI Desktop:
 
