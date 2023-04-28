@@ -49,7 +49,7 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 
 ## Limitations with Visual query editor
 
-- You can only write DQL (not DDL or DML).
+- In the visual query editor, you can only run DQL (Data Query Language) or read-only [SELECT](/sql/t-sql/queries/select-transact-sql?view=fabric&preserve-view=true) statements. DDL or DML are not supported.
 
 ## Next steps
 

@@ -45,8 +45,6 @@ For a tutorial with Power BI Desktop, see [Get started with Power BI Desktop](/p
 
 You can use integrated Data hub experience in Power BI Desktop to select your [[!INCLUDE [fabric-se](includes/fabric-se.md)]]data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]]data-warehousing.md#synapse-data-warehouse) to make a connection and build reports.
 
-:::image type="content" source="media\create-reports\get-data-powerbi-desktop.png" alt-text="Screenshot of a get data from Power BI Desktop." lightbox="media\create-reports\get-data-powerbi-desktop.png":::
-
 Alternatively, you can complete the following steps to connect to a warehouse in Power BI Desktop:
 
 1. Navigate to the warehouse settings in your workspace and copy the SQL connection string. Or, right-click on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] in your workspace and select **Copy SQL connection string**.

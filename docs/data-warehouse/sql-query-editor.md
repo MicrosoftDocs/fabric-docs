@@ -118,11 +118,13 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - In SQL query editor, every time you run the query, it opens a separate session and closes it at the end of the execution. This means if you set up session context for multiple query runs, the context is not maintained for independent execution of queries.
 
-- In SQL query editor, when you select **Run** button, you are submitting an independent batch request to execute. The SQL query editor does not support `sp_set_session_context`. You can set session_context for your single batch request. For example, when independently executing transaction statements, session context does not get retained, resulting into the failure of commit/rollback operation:
+- In SQL query editor, when you select **Run** button, you are submitting an independent batch request to execute. The SQL query editor does not support `sp_set_session_context`. Each **Run** action in the SQL query editor is a batch request, and a session only exists per batch. Each execution of code in the same query window will run in a different batch and session.
+
+   For example, when independently executing transaction statements, session context is not retained. In the following screenshot, `BEGIN TRAN` was executed in the first request, but since the second request was executed in a different session, there is no transaction to commit, resulting into the failure of commit/rollback operation.
 
    :::image type="content" source="media\sql-query-editor\transaction-run-error.png" alt-text="Screenshot showing independent run of transactions failed in SQL query editor" lightbox="media\sql-query-editor\transaction-run-error.png":::
 
-   When you define temp table in the first batch request and try to use it in subsequent batch runs in the same query tab, it throws error.
+   For example, when you define temp table in the first batch request and try to use it in subsequent batch runs in the same query tab, it throws error.
 
    :::image type="content" source="media\sql-query-editor\temp-table-run-error.png" alt-text="Screenshot showing multiple runs of temp table failed in SQL query editor" lightbox="media\sql-query-editor\temp-table-run-error.png":::
 
