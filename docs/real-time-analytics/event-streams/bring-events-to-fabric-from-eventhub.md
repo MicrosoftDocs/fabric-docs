@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Bring your real-time events to Fabric Lakehouse from Azure Event Hubs to build near real-time report
+title: Bring your real-time events to Fabric Lakehouse from Azure Event Hubs to build near real-time report
 description: This tutorial provides an end-to-end demonstration of how to use event streams feature to bring your real-time events to Fabric Lakehouse from Azure Event Hubs to build near real-time report.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -88,7 +88,7 @@ After the Lakehouse and Eventstream items are created, do the following steps to
 
 7. You can also select the eventstream node in the canvas, then the **Data preview** tab in the bottom pane to view the data inside the eventstream.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/eventstream-data-preview.png" alt-text="Screenshot showing the event hub source preview." lightbox="./media/bring-events-to-fabric-from-eventhub/eventstream-data-preview.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/eventstream-data-preview.png" alt-text="Screenshot showing the data preview in eventstream." lightbox="./media/bring-events-to-fabric-from-eventhub/eventstream-data-preview.png" :::
 
 8. Similarly, you can check the **Data insights** for the event hub source node and the eventstream node.
 
@@ -100,7 +100,7 @@ After your event hub events have been ingested into your eventstream, you can ad
 
 2. Enter a name for the eventstream destination, fill in the information about your lakehouse.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/lakehouse-destination-adding.png" alt-text="Screenshot showing the event hub source preview." lightbox="./media/bring-events-to-fabric-from-eventhub/lakehouse-destination-adding.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/lakehouse-destination-adding.png" alt-text="Screenshot showing the lakehouse destination configuration." lightbox="./media/bring-events-to-fabric-from-eventhub/lakehouse-destination-adding.png" :::
 
    1. **Lakehouse**: Select an existing lakehouse item from the workspace you specified. The newly created lakehouse **citypwrdata** is selected.
    2. **Delta table**: Select an existing delta table or create a new one to receive data. Here a new delta table **citypwrtbl** is given.
@@ -171,11 +171,11 @@ To verify the event data in lakehouse, open **citypwrdata** lakehouse from your 
    > [!NOTE]
    > The minimal refresh interval is controlled by admin interval.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/enable-auto-refresh.png" alt-text="Screenshot showing the auto generated report." lightbox="./media/bring-events-to-fabric-from-eventhub/enable-auto-refresh.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/enable-auto-refresh.png" alt-text="Screenshot showing how to enable auto refresh." lightbox="./media/bring-events-to-fabric-from-eventhub/enable-auto-refresh.png" :::
 
 4. After the report adjustment is done, select **Save** button and give the report a name to save it.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/final-report.png" alt-text="Screenshot showing the auto generated report." lightbox="./media/bring-events-to-fabric-from-eventhub/final-report.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/final-report.png" alt-text="Screenshot showing the final report." lightbox="./media/bring-events-to-fabric-from-eventhub/final-report.png" :::
 
 ## Next steps
 
