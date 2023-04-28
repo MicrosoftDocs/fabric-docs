@@ -15,7 +15,7 @@ items:
     href: ../placeholder.md
   - name: Share lakehouse for PBI connectivity
     href: ../placeholder.md
-- name: Tutorial
+- name: Tutorials
   items:
   - name: 1 Lakehouse tutorial introduction
     href: tutorial-lakehouse-introduction.md

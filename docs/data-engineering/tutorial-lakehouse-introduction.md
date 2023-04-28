@@ -10,38 +10,38 @@ ms.date: 4/28/2023
 
 # Lakehouse tutorial: Introduction to Microsoft Fabric
 
-Microsoft Fabric provides a one-stop shop for all the analytical needs for every enterprise. It covers the complete spectrum of services including data movement, data lake, data engineering, data integration and data science, real time analytics, and business intelligence. With Fabric, there's no need to stitch together different services from multiple vendors. Instead, the customer enjoys an end-to-end, highly integrated, single comprehensive product that is easy to understand, onboard, create and operate. There's no other product on the market that offers the breadth, depth, and level of integration that Fabric offers. Additionally, Microsoft Purview is included by default in every tenant to meet compliance and governance needs.
+Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place. For more information, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
 
 For more information, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
 
 ## Purpose of this tutorial
 
-While many concepts in Fabric may be familiar to data and analytics professionals, it can be challenging to apply those concepts in a new environment. This tutorial has been designed to walk step-by-step through an end-to-end scenario from data acquisition to data consumption to build a basic understanding of the Fabric UX, the various workloads and their integration points, and the Fabric professional and citizen developer experiences.
+This tutorial walks you step-by-step through an end-to-end scenario from data acquisition to data consumption. It builds a basic understanding of Fabric, the various workloads, their integration points, and the Fabric professional and citizen developer experiences.
 
-The tutorials aren't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
+This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
 ## Lakehouse end-to-end scenario
 
-Traditionally, organizations have been building modern data warehouses for their transactional and structured data processing/analytics needs and data lakehouses for big data (semi/unstructured data) processing/analytics needs. These two systems ran in parallel, creating silos, data duplicity and increased total cost of ownership.
+Traditionally, organizations have been building modern data warehouses for their transactional and structured data analytics needs. And data lakehouses for big data (semi/unstructured) data analytics needs. These two systems ran in parallel, creating silos, data duplicity, and increased total cost of ownership.
 
 Fabric with its unification of data store and standardization on Delta Lake format allows you to eliminate silos, remove data duplicity, and drastically reduce total cost of ownership.
 
-With the flexibility Fabric provides, you can implement either lakehouse or data warehouse architectures or combine these two together to get the best of both the worlds in simple implementation. In this tutorial, you're going to take an example of retail organization and build its lakehouse from start to finish. The same approach can be taken to implement a lakehouse for any organization from any industry.
+With the flexibility offered by Fabric, you can implement either lakehouse or data warehouse architectures or combine these two together to get the best of both with simple implementation. In this tutorial, you're going to take an example of a retail organization and build its lakehouse from start to finish. It uses the [medallion architecture](/azure/databricks/lakehouse/medallion) where the bronze layer has the raw data, the silver layer has the validated and deduplicated data, and the gold layer has highly refined data. You can take the same approach to implement a lakehouse for any organization from any industry.
 
-In this tutorial, you take on the role of a developer at the fictional Wide World Importers company from retail domain and complete the following steps:
+This tutorial explains how a developer at the fictional Wide World Importers company from the retail domain completes the following steps:
 
-1. Sign into your Power BI online account, or if you don’t have an account yet, sign up for a free trial.
+1. Sign in to your Power BI account, or if you don’t have one yet, [sign up for a free trial](../placeholder.md).
 
 1. Build and implement an end-to-end lakehouse for your organization:
-   1. Create a Fabric workspace.
-   1. Quickly create a lakehouse - an optional module to implement medallion architecture (Bronze, Silver, and Gold).
-   1. Ingest, transform, and load data into the lakehouse - bronze, silver and gold zones as delta lake tables for medallion architecture.
+   1. [Create a Fabric workspace](tutorial-lakehouse-get-started.md)
+   1. [Create a lakehouse](tutorial-build-lakehouse.md) - an optional module to implement medallion architecture (Bronze, Silver, and Gold).
+   1. [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse - bronze, silver, and gold zones as delta lake tables for medallion architecture.
    1. Explore OneLake, OneCopy of your data across lake mode and warehouse mode
    1. Connect to your lakehouse using TDS/SQL endpoint.
-   1. Create Power BI report using DirectLake - to analyze sales data across different dimensions.
+   1. [Create a Power BI report using DirectLake](tutorial-lakehouse-build-report.md) - to analyze sales data across different dimensions.
    1. Orchestrate and schedule data ingestion and transformation flow with Pipeline.
 
-1. Clean up resources by deleting the workspace and other items.
+1. [Clean up resources](tutorial-lakehouse-clean-up.md) by deleting the workspace and other items.
 
 ## Lakehouse end-to-end architecture
 
