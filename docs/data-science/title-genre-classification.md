@@ -1,6 +1,6 @@
 ---
 title: Train and evaluate a text classification model
-description: This Article is an AI sample for training and evaluating a text classification model. It uses a sample dataset that consists of metadata relating to digitized books.
+description: This article is an AI sample for training and evaluating a text classification model. It uses a sample dataset that consists of metadata relating to digitized books.
 ms.reviewer: ssalgado
 ms.author: narsam
 author: narmeens
