@@ -29,7 +29,7 @@ In this tutorial, you learn how to:
 To get started, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream and Lakehouse item are located in.
-- An Azure event hub with event data inside exists and appropriate permission available to access the policy keys.
+- An Azure event hub with event data exists and appropriate permission available to access the policy keys.
 
 ## Create Eventstream and Lakehouse item
 
@@ -66,12 +66,12 @@ After the Lakehouse and Eventstream items are created, do the following steps to
 
    :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/azure-event-hub-connection.png" alt-text="Screenshot showing the event hub creation." lightbox="./media/bring-events-to-fabric-from-event-hub/azure-event-hub-connection.png" :::
 
-3. Fill in the information of your Azure event hub on the **New connection** blade
+3. Fill in the information of your Azure event hub on the **New connection** page.
 
    :::image type="content" source="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" :::
 
    - **Connection name**: Enter a name for the cloud connection. 
-   - **Connection type**: Default value is **EventHub**. 
+   - **Connection type**: Default value is `EventHub`. 
    - **Event Hub namespace**: Enter the name of your Azure event hub namespace. 
    - **Authentication username and password**: Go to your Azure event hub and create a policy under **Share access policies**. Then use **policy name** and **primary key** as the username and password. 
    
@@ -186,4 +186,4 @@ In this tutorial, you learned how to transfer real-time events from your Azure e
 - [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
-- [Process event data with event processor editor](./process-event-with-event-preocessor-editor.md)
+- [Process event data with event processor editor](./process-events-using-event-processor-editor.md)
