@@ -75,5 +75,4 @@ Explicit transactions allow you to group multiple data changes together so that 
 
 ## Next steps
 
-- [Ingest data using the COPY command](ingest-data-copy-command.md)
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)
