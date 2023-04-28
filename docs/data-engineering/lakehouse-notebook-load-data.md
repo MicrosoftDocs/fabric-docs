@@ -18,9 +18,9 @@ In this tutorial, learn how to read/write data into your lakehouse with a notebo
 
  In the code cell of the notebook, use the following code example to read data from the source and load it into **Files**, **Tables**, or both sections of your lakehouse.
 
-To specify the location to read from, you can use the relative path if the data is from the default lakehouse of current notebook, or you can use the absolute abfss path if the data is from other lakehouse. you can copy this path from the context menu of the data
+To specify the location to read from, you can use the relative path if the data is from the default lakehouse of current notebook, or you can use the absolute ABFS path if the data is from other lakehouse. you can copy this path from the context menu of the data
 
-:::image type="content" source="media\lakehouse-notebook-explore\copypath-menu.png" alt-text="Screenshot showing menu option of copy action." lightbox="media\lakehouse-notebook-explore\copypath-menu.png":::
+:::image type="content" source="media\lakehouse-notebook-explore\copy-path-menu.png" alt-text="Screenshot showing menu option of copy action." lightbox="media\lakehouse-notebook-explore\copy-path-menu.png":::
 
 **Copy ABFS path** : this return the absolute path of the file
 
@@ -46,7 +46,7 @@ df.write.mode("overwrite").format("delta").save("Tables/" + deltatableName)
 
 To support Pandas API, the default Lakehouse will be automatically mounted to the notebook. The mount point is '/lakehouse/default/'. You can use this mount point to read/write data from/to the default lakehouse. The "Copy File API Path" option from the context menu will return the File API path from that mount point. The path returned from the option **Copy ABFS path** also works for Pandas API.
 
-:::image type="content" source="media\lakehouse-notebook-explore\copypath-menu-filepath.png" alt-text="Screenshot showing menu option of copy File API path." lightbox="media\lakehouse-notebook-explore\copypath-menu-filepath.png":::
+:::image type="content" source="media\lakehouse-notebook-explore\copy-path-menu-file-path.png" alt-text="Screenshot showing menu option of copy File API path." lightbox="media\lakehouse-notebook-explore\copy-path-menu-file-path.png":::
 **Copy File API Path** :This return the path under the mount point of the default lakehouse
 
 ```python
