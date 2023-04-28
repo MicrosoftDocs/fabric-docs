@@ -102,7 +102,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. From the list of existing notebooks, select the **02 - Data Transformation - Business** notebook to open it.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-second-notebook.png" alt-text="Screenshot of the Open existing notebook menu, showing where to select your notebook." lightbox="media\tutorial-lakehouse-data-preparation\":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-second-notebook.png" alt-text="Screenshot of the Open existing notebook menu, showing where to select your notebook." lightbox="media\tutorial-lakehouse-data-preparation\existing-second-notebook.png":::
 
 1. In the open notebook in **Lakehouse explorer**, you see the notebook is already linked to your opened lakehouse.
 
