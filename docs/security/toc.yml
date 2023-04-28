@@ -8,7 +8,9 @@ items:
 - name: Security features
   items:
   - name: Business to business
-    href: security-b2b.md  
+    href: security-b2b.md
+  - name: Conditional access
+    href: security-conditional-access.md
   - name: Recovery
     href: security-recovery.md
   - name: Private links
@@ -18,4 +20,8 @@ items:
   - name: Bring your own encryption keys
     href: security-byok.md
   - name: Service tags
-    href: security-service-tags.md                
+    href: security-service-tags.md
+- name: Resiliency
+  items:
+  - name: AZ Resiliency in Fabric
+    href: az-resiliency.md        

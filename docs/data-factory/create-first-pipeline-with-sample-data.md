@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: quickstart
-ms.date: 03/02/2023
+ms.date: 05/23/2023
 ---
 
 # Quickstart: Create your first pipeline to copy data
@@ -21,18 +21,20 @@ In this tutorial, you build a data pipeline to move a Sample dataset to the Lake
 To get started, you must complete the following prerequisites:
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. Create an account for free.
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a Project Trident enabled Workspace.pdf (sharepoint.com)](../placeholder.md).
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 
 ## Create a data pipeline
 
-1. Click [Link](https://msit.powerbi.com/home?experience=power-bi) and choose **Data factory** to open homepage of Data Factory.
-  :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory workload emphasized.":::
+1. Navigate to [Power BI](https://app.powerbi.com/).
+1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
 
-1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
+   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory workload emphasized.":::
+
+1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you created a new workspace in the prior Prerequisites section, use this one.
 
    :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
 
-1. Select **Data pipeline** and then input a pipeline name create a new pipeline.
+1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
 
    :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
   :::image type="content" source="media/create-first-pipeline/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
@@ -83,7 +85,7 @@ In this session, you start to build your first pipeline by following below steps
 
 ## Run and schedule your data pipeline
 
-1. Switch to the **Home** tab and select **Run**. Then select **Save and run** to start the activity.
+1. Switch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Run button on the Home tab, and the Save and run prompt displayed.":::
 
@@ -97,7 +99,7 @@ In this session, you start to build your first pipeline by following below steps
 
 1. You can also schedule the pipeline to run with a specific frequency as required. Below is an example scheduling the pipeline to run every 15 minutes.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15 minute recurring schedule.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
 
 ## Next steps
 

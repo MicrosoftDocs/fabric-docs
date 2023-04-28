@@ -20,7 +20,7 @@ items:
       href: create-database.md
     - name: Database Management
       href: database-management.md
-    - name: One logical copy (shortcut)
+    - name: One logical copy
       href: onelake-mirroring.md
   - name: Tables
     items:
@@ -40,7 +40,7 @@ items:
     href: get-data-onelake.md
 - name: Query data
   items:
-  - name: Query data in a KQL Queryset
+  - name: Query data in the KQL Queryset
     href: kusto-query-set.md
   - name: Use a Jupyter notebook and kqlmagic to query a KQL Database
     href: jupyter-notebook.md
@@ -52,24 +52,38 @@ items:
   items:
   - name: Visualize data in a Power BI report
     href: create-powerbi-report.md
+  - name: Use data from KQL Databases in Power BI Desktop
+    href: power-bi-data-connector.md
 - name: Event streams
   items:
-  - name: Overview
+  - name: Introduction to event streams
+    href: event-streams/overview.md
+  - name: Event streams tutorial
+    href: event-streams/bring-events-to-fabric-from-event-hub.md
+  - name: Concepts
     items:
-    - name: What is Event streams?
-      href: ../placeholder.md
-  - name: Get started
+    - name: Event streams main editor
+      href: event-streams/main-editor.md
+    - name: Event streams sources
+      href: event-streams/event-streams-source.md
+    - name: Event streams destinations
+      href: event-streams/event-streams-destination.md
+    - name: Event processor editor
+      href: event-streams/event-processor-editor.md
+  - name: How-to
     items:
-    - name: linktext1
-      href: ../placeholder.md
-  - name: Feature 1
-    items:
-    - name: linktext1
-      href: ../placeholder.md
-  - name: Feature 2
-    items:
-    - name: linktext2
-      href: ../placeholder.md
+    - name: Create and manage an Eventstream item
+      href: event-streams/create-manage-an-eventstream.md
+    - name: Add and manage eventstream sources
+      href: event-streams/add-manage-eventstream-sources.md
+    - name: Add and manage eventstream destinations
+      href: event-streams/add-manage-eventstream-destinations.md
+    - name: Process event with event processor
+      href: event-streams/process-event-with-event-preocessor-editor.md
+    - name: Preview data
+      href: event-streams/preview-data.md
+    - name: Monitoring
+      href: event-streams/monitoring.md
 - name: Kusto Query Language
   href: kusto-query-language/toc.yml
 - name: Management commands
