@@ -62,7 +62,7 @@ The CU over time chart displays the following elements:
 
 * **Interactive Preview %** - Green columns represent the percent of CU consumption used during preview workloads interactive operations in a 30 second period. This column refers to operations that are performed in non-preview workloads.
 
-* **Autoscale CU % Limit** - An orange dotted line that shows the percent of CU consumption for autoscaled capacities. The line represent timepoints where the capacity is overloaded.
+* **Autoscale CU % Limit** - An orange dotted line that shows the percent of CU consumption for autoscaled capacities. The line represents timepoints where the capacity is overloaded.
 
 * **CU % Limit** - A grey dotted line that shows the threshold of the allowed percent of CU consumption for the selected capacity. Columns that stretch above this line, represent timepoints where the capacity is overloaded.
 
