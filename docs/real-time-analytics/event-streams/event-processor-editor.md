@@ -27,11 +27,11 @@ The event processor editor provides a canvas and bottom pane to enable you to:
 
 The whole view layout is like the main editor. It consists of:
 
-1. **Canvas with diagram view**: it's the place where you can design your data transformation logic with selecting the operator from the “Operations” menu in ribbon. Then you can connect the eventsteam node, operator nodes, and the destination node by dragging the line. If you want to delete the connection between two nodes, you can select the line between the two nodes, and hit the delete key.  
+1. **Canvas with diagram view**: it's the place where you can design your data transformation logic with selecting the operator from the “Operations” menu in ribbon. Then you can connect the eventstream node, operator nodes, and the destination node by dragging the line. If you want to delete the connection between two nodes, you can select the line between the two nodes, and hit the delete key.  
 2. **Right editing pane**: it's the place where you can configure the selected operation node or view the schema of the eventstream and destination. 
 3. **Bottom pane with data preview and authoring error tabs**: it's the place where you can preview the data in the selected node with “Data preview” tab. It provides you with the experience of “what you see is what you get”. You can also discover the authoring errors when there's something not configured correctly or completely in the operation nodes. 
 
-To learn more about how to use event processor editor to define your data transformation logic, see [Process event data with event processor editor](./process-event-with-event-preocessor-editor.md).
+To learn more about how to use event processor editor to define your data transformation logic, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md).
 
 ## Transformation operators 
 
@@ -49,7 +49,7 @@ Use the **Expand** array transformation to create a new row for each value w
 
 ### Filter 
 
-Use the **Filter** transformation to filter events based on the value of a field in the input. Depending on the data type (number or text), the transformation will keep the values that match the selected condition. 
+Use the **Filter** transformation to filter events based on the value of a field in the input. Depending on the data type (number or text), the transformation keeps the values that match the selected condition. 
 
 ### Group by 
 
@@ -83,6 +83,6 @@ Use the Union transformation to connect two or more nodes to add events that
 
 ## Next steps
 
-- [Process event data with event processor editor](./process-event-with-event-preocessor-editor.md)
+- [Process event data with event processor editor](./process-events-using-event-processor-editor.md)
 - [Event streams destination](./event-streams-destination.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
