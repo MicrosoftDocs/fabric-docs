@@ -198,7 +198,7 @@
       - name: Load sample data to Lakehouse
         href: create-first-pipeline-with-sample-data.md   
       - name: Load sample data to Data Warehouse
-        href: create-first-pipeline-with-sample-data-to-data-warehouse.md     
+        href: tutorial-load-sample-data-to-data-warehouse.md     
   - name: Dataflows
     items:
     - name: Concepts

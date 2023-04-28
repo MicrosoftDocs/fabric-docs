@@ -38,7 +38,7 @@ To get started, you must complete the following prerequisites:
 1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
 
    :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
-  :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
+  :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
 ## Copy data using pipeline
 
@@ -54,57 +54,57 @@ In this session, you start to build your pipeline by following below steps about
 
 1. Choose the **COVID-19 Data Lake** from the **Sample data** options for your data source, and then select **Next**.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/covid-19-data-lake.png" alt-text="Screenshot showing the COVID-19 Data Lake sample data selection in the Copy data assistant." alt-text="Screenshot showing the Choose data source page of the Copy data assistant with the COVID-19 Data Lake sample data selected.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/covid-19-data-lake.png" alt-text="Screenshot showing the COVID-19 Data Lake sample data selection in the Copy data assistant." alt-text="Screenshot showing the Choose data source page of the Copy data assistant with the COVID-19 Data Lake sample data selected.":::
 
 1. In the **Connect to data source** section of the **Copy data** assistant, a preview of the sample data **Bing COVID-19** is displayed. Select **Next** to move on to the data destination.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/preview-data.png" alt-text="Screenshot showing a preview of the Public Holiday sample data.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/preview-data.png" alt-text="Screenshot showing a preview of the Public Holiday sample data.":::
 
 ### Step 3: Configure your destination
 
 1. Select the **Workspace** tab and choose **Data warehouse**. Then select **Next**.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/data-warehouse-destination.png" alt-text="Screenshot showing the selection of the Data Warehouse destination.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/data-warehouse-destination.png" alt-text="Screenshot showing the selection of the Data Warehouse destination.":::
 
 1. Select your Data Warehouse from the drop-down list, then select **Next**. 
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/select-data-warehouse.png" alt-text="Screenshot showing selecting Data warehouse.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/select-data-warehouse.png" alt-text="Screenshot showing selecting Data warehouse.":::
 
 1. Configure and map your source data to the destination Data Warehouse table by entering **Destination table name**, then select **Next** one more time.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/specify-table-name.png" alt-text="Screenshot showing the table name to create in the Data Warehouse destination.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/specify-table-name.png" alt-text="Screenshot showing the table name to create in the Data Warehouse destination.":::
 
 1. Configure other settings on **Settings** page. In this tutorial, select **Next** directly since you don't need to use staging and copy command.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/destination-settings.png" alt-text="Screenshot showing the destination settings.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/destination-settings.png" alt-text="Screenshot showing the destination settings.":::
 
 ### Step 4: Review and create your copy activity
 
 1. Review your copy activity settings in the previous steps and select **OK** to finish. Or you can revisit the previous steps in the tool to edit your settings, if needed.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/review-create-activity.png" alt-text="Screenshot of the Review + create page of the Copy data assistant highlighting source and destination.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/review-create-activity.png" alt-text="Screenshot of the Review + create page of the Copy data assistant highlighting source and destination.":::
 
 1. The Copy activity is added to your new data pipeline canvas. All settings including advanced settings for the activity are available in the tabs below the pipeline canvas when the created **Copy data** activity is selected.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity with the Copy activity settings tabs highlighted.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity with the Copy activity settings tabs highlighted.":::
 
 ## Run and schedule your data pipeline
 
 1. Switch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/save-and-run.png" alt-text="Screenshot showing the Run button on the Home tab, and the Save and run prompt displayed.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/save-and-run.png" alt-text="Screenshot showing the Run button on the Home tab, and the Save and run prompt displayed.":::
 
 1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas.  Select the run details button (with the glasses icon highlighted) to view the run details.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/run-details-button.png" alt-text="Screenshot showing the Output tab of the pipeline run in-progress with the Details button highlighted in the run status.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/run-details-button.png" alt-text="Screenshot showing the Output tab of the pipeline run in-progress with the Details button highlighted in the run status.":::
 
 1. The run details show how much data was read and written and various other details about the run.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/run-details.png" alt-text="Screenshot showing the run details window.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/run-details.png" alt-text="Screenshot showing the run details window.":::
 
 1. You can also schedule the pipeline to run with a specific frequency as required. Below is an example scheduling the pipeline to run every 15 minutes. You can also specify the **Start** time and **End** time for your schedule. If you don't specify a start time, the start time is the time your schedule applies. If you don't specify an end time, your pipeline run will keep recurring every 15 minutes.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data-to-data-warehouse/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
 
 ## Next steps
 
