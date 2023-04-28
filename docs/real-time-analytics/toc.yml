@@ -56,6 +56,8 @@ items:
   items:
   - name: Introduction to event streams
     href: event-streams/overview.md
+  - name: Event streams tutorial
+    href: event-streams/bring-events-to-fabric-from-eventhub.md
   - name: Concepts
     items:
     - name: Event streams main editor
