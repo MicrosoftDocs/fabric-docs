@@ -47,7 +47,7 @@ If you have a KQL database created in the workspace, do the following steps to a
 
        :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" alt-text="Screenshot showing the ingestion wizard step#4 in kql database destination type." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" :::
 
-After everything is configured and select **Done**, you see a KQL database destination added to your eventstream on the canvas.
+After everything is configured and you've selected **Done**, you see a KQL database destination added to your eventstream on the canvas.
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the kql database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
 

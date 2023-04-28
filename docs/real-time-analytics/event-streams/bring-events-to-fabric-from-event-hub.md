@@ -39,22 +39,22 @@ Eventstream and Lakehouse item can be created in **Workspace** or **Create hub**
 
    In **Workspace**, select **New** and then **Eventstream**, **Lakehouse**:
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/two-items-creation-in-workspace.png" alt-text="Screenshot showing the eventstream and lakehouse creation in workspace." lightbox="./media/bring-events-to-fabric-from-eventhub/two-items-creation-in-workspace.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/two-items-creation-in-workspace.png" alt-text="Screenshot showing the eventstream and lakehouse creation in workspace." lightbox="./media/bring-events-to-fabric-from-event-hub/two-items-creation-in-workspace.png" :::
 
    In **Create hub**, select **Eventstream** and **Lakehouse**: 
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/eventstream-creation-in-hub.png" alt-text="Screenshot showing the eventstream item creation in create hub." lightbox="./media/bring-events-to-fabric-from-eventhub/eventstream-creation-in-hub.png" :::
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/lakehouse-creation-in-hub.png" alt-text="Screenshot showing the lakehouse item creation in create hub." lightbox="./media/bring-events-to-fabric-from-eventhub/lakehouse-creation-in-hub.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/eventstream-creation-in-hub.png" alt-text="Screenshot showing the eventstream item creation in create hub." lightbox="./media/bring-events-to-fabric-from-event-hub/eventstream-creation-in-hub.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/lakehouse-creation-in-hub.png" alt-text="Screenshot showing the lakehouse item creation in create hub." lightbox="./media/bring-events-to-fabric-from-event-hub/lakehouse-creation-in-hub.png" :::
 
 2. Give the name for the new Eventstream and Lakehouse items and select **Create**. Here, **citypwr-es** eventstream and **citypwrdata** lakehouse are created.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/creating-dialog.png" alt-text="Screenshot showing the eventstream item creation dialog." lightbox="./media/bring-events-to-fabric-from-eventhub/creating-dialog.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/creating-dialog.png" alt-text="Screenshot showing the eventstream item creation dialog." lightbox="./media/bring-events-to-fabric-from-event-hub/creating-dialog.png" :::
 
 3. After they're created successfully, four items are added into your workspace:
    - **citypwr-es**: an Eventstream item
    - **citypwrdata**: a Lakehouse item, a Dataset (default) item, and a SQL endpoint item.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/four-items-list.png" alt-text="Screenshot showing the four items list." lightbox="./media/bring-events-to-fabric-from-eventhub/four-items-list.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/four-items-list.png" alt-text="Screenshot showing the four items list." lightbox="./media/bring-events-to-fabric-from-event-hub/four-items-list.png" :::
 
 ## Add an Azure Event Hubs source to the Eventstream item
 
@@ -64,7 +64,7 @@ After the Lakehouse and Eventstream items are created, do the following steps to
 
 2. Enter a source name for the new source and select **Create new connection** to your Azure event hub.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/azure-eventhub-connection.png" alt-text="Screenshot showing the event hub creation." lightbox="./media/bring-events-to-fabric-from-eventhub/azure-eventhub-connection.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/azure-event-hub-connection.png" alt-text="Screenshot showing the event hub creation." lightbox="./media/bring-events-to-fabric-from-event-hub/azure-event-hub-connection.png" :::
 
 3. Fill in the information of your Azure event hub on the **New connection** blade
 
@@ -85,11 +85,11 @@ After the Lakehouse and Eventstream items are created, do the following steps to
 
 6. You see the new source node appears in the canvas after the event hub source is created successfully. You can select the event hub node in the canvas, then the **Data preview** tab in the bottom pane to view the data inside the event hub.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/eventhub-source-preview.png" alt-text="Screenshot showing the event hub source preview." lightbox="./media/bring-events-to-fabric-from-eventhub/eventhub-source-preview.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/event-hub-source-preview.png" alt-text="Screenshot showing the event hub source preview." lightbox="./media/bring-events-to-fabric-from-event-hub/event-hub-source-preview.png" :::
 
 7. You can also select the eventstream node in the canvas, then the **Data preview** tab in the bottom pane to view the data inside the eventstream.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/eventstream-data-preview.png" alt-text="Screenshot showing the data preview in eventstream." lightbox="./media/bring-events-to-fabric-from-eventhub/eventstream-data-preview.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/eventstream-data-preview.png" alt-text="Screenshot showing the data preview in eventstream." lightbox="./media/bring-events-to-fabric-from-event-hub/eventstream-data-preview.png" :::
 
 8. Similarly, you can check the **Data insights** for the event hub source node and the eventstream node.
 
@@ -101,7 +101,7 @@ After your event hub events have been ingested into your eventstream, you can ad
 
 2. Enter a name for the eventstream destination, fill in the information about your lakehouse.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/lakehouse-destination-adding.png" alt-text="Screenshot showing the lakehouse destination configuration." lightbox="./media/bring-events-to-fabric-from-eventhub/lakehouse-destination-adding.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/lakehouse-destination-adding.png" alt-text="Screenshot showing the lakehouse destination configuration." lightbox="./media/bring-events-to-fabric-from-event-hub/lakehouse-destination-adding.png" :::
 
    1. **Lakehouse**: Select an existing lakehouse item from the workspace you specified. The newly created lakehouse **citypwrdata** is selected.
    2. **Delta table**: Select an existing delta table or create a new one to receive data. Here a new delta table **citypwrtbl** is given.
@@ -112,29 +112,29 @@ After your event hub events have been ingested into your eventstream, you can ad
 
 If the event processing is needed, select **Open event processor** before selecting **Create**. The event processor editor is open.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/event-processor-editor.png" alt-text="Screenshot showing the event processor editor." lightbox="./media/bring-events-to-fabric-from-eventhub/event-processor-editor.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/event-processor-editor.png" alt-text="Screenshot showing the event processor editor." lightbox="./media/bring-events-to-fabric-from-event-hub/event-processor-editor.png" :::
 
 In this case, the sensor IDs data isn't necessary to store in lakehouse. We can use event processor to remove these columns. 
 
 1. Select **Manage fields** operator from **Operations** menu in the ribbon to add the event processing logic. 
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/manage-fields-operator.png" alt-text="Screenshot showing the manage field operator." lightbox="./media/bring-events-to-fabric-from-eventhub/manage-fields-operator.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/manage-fields-operator.png" alt-text="Screenshot showing the manage field operator." lightbox="./media/bring-events-to-fabric-from-event-hub/manage-fields-operator.png" :::
 
 2. Select the line between eventstream and lakehouse and hit the **delete** key to delete the connection between them in order to insert the Manage fields operator between them. 
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/delete-connection.png" alt-text="Screenshot showing the operator connection deletion." lightbox="./media/bring-events-to-fabric-from-eventhub/delete-connection.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/delete-connection.png" alt-text="Screenshot showing the operator connection deletion." lightbox="./media/bring-events-to-fabric-from-event-hub/delete-connection.png" :::
 
 3. Select the green circle on the left edge of the eventstream node, **hold and move** your mouse to connect it to Manage fields operator node. Similarly connect Manage fields operator node to Lakehouse node.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/setup-connection.png" alt-text="Screenshot showing the operator connection setup." lightbox="./media/bring-events-to-fabric-from-eventhub/setup-connection.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/setup-connection.png" alt-text="Screenshot showing the operator connection setup." lightbox="./media/bring-events-to-fabric-from-event-hub/setup-connection.png" :::
 
 4. Select the **Manage fields** operator node. In the **Manage fields** configuration panel, select **Add all fields**. Then hover your mouse to the sensor column, select **...** and **Remove** to remove the column. 
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/configure-manage-fields.png" alt-text="Screenshot showing manage field operator configuration." lightbox="./media/bring-events-to-fabric-from-eventhub/configure-manage-fields.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/configure-manage-fields.png" alt-text="Screenshot showing manage field operator configuration." lightbox="./media/bring-events-to-fabric-from-event-hub/configure-manage-fields.png" :::
 
 5. After the Manage fields is configured, you can preview the data that will be produced with this operator by clicking **Refresh static preview**.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/operator-data-preview.png" alt-text="Screenshot showing data preview in operator." lightbox="./media/bring-events-to-fabric-from-eventhub/operator-data-preview.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/operator-data-preview.png" alt-text="Screenshot showing data preview in operator." lightbox="./media/bring-events-to-fabric-from-event-hub/operator-data-preview.png" :::
 
 6. Select **Done** to save the event processing logic and return to the Lakehouse destination configuration pane.
 
@@ -142,17 +142,17 @@ In this case, the sensor IDs data isn't necessary to store in lakehouse. We can 
 
 8. You see a Lakehouse destination node is added into canvas. It takes 1 or 3 minutes to get its status to **Ingesting**.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/lakehouse-destination-starting.png" alt-text="Screenshot showing the lakehouse destination status." lightbox="./media/bring-events-to-fabric-from-eventhub/lakehouse-destination-starting.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/lakehouse-destination-starting.png" alt-text="Screenshot showing the lakehouse destination status." lightbox="./media/bring-events-to-fabric-from-event-hub/lakehouse-destination-starting.png" :::
 
 9. After the destination status becomes **Ingesting**, select **Data preview** tab in the bottom pane to check if the event data is correctly ingested into the lakehouse.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/lakehouse-destination-preview.png" alt-text="Screenshot showing the lakehouse destination preview." lightbox="./media/bring-events-to-fabric-from-eventhub/lakehouse-destination-preview.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/lakehouse-destination-preview.png" alt-text="Screenshot showing the lakehouse destination preview." lightbox="./media/bring-events-to-fabric-from-event-hub/lakehouse-destination-preview.png" :::
 
 ## Verify the data in lakehouse
 
 To verify the event data in lakehouse, open **citypwrdata** lakehouse from your workspace, then select table **citypwrtbl** to view its data.
 
-:::image type="content" source="./media/bring-events-to-fabric-from-eventhub/lakehouse-data-preview.png" alt-text="Screenshot showing the lakehouse data preview." lightbox="./media/bring-events-to-fabric-from-eventhub/lakehouse-data-preview.png" :::
+:::image type="content" source="./media/bring-events-to-fabric-from-event-hub/lakehouse-data-preview.png" alt-text="Screenshot showing the lakehouse data preview." lightbox="./media/bring-events-to-fabric-from-event-hub/lakehouse-data-preview.png" :::
 
 
 ## Build near real-time Power BI report with the data in lakehouse
@@ -161,26 +161,26 @@ To verify the event data in lakehouse, open **citypwrdata** lakehouse from your 
 
 2. Select **Auto-create** or **Start from scratch** to create your report.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/default-dataset-page.png" alt-text="Screenshot showing the default dataset page." lightbox="./media/bring-events-to-fabric-from-eventhub/default-dataset-page.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/default-dataset-page.png" alt-text="Screenshot showing the default dataset page." lightbox="./media/bring-events-to-fabric-from-event-hub/default-dataset-page.png" :::
 
 3. Adjust the report by selecting the temperature, humidity, WindSpeed, and three zones' power consumption in order to monitor these data.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/auto-generated-report.png" alt-text="Screenshot showing the auto generated report." lightbox="./media/bring-events-to-fabric-from-eventhub/auto-generated-report.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/auto-generated-report.png" alt-text="Screenshot showing the auto generated report." lightbox="./media/bring-events-to-fabric-from-event-hub/auto-generated-report.png" :::
 
 3. In order to get the data autorefreshed for near real-time monitoring, select **Edit** button in the autogenerated report. Then navigate to **Format page** under **Visualizations**, select **Page refresh** to set the refresh interval.
 
    > [!NOTE]
    > The minimal refresh interval is controlled by admin interval.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/enable-auto-refresh.png" alt-text="Screenshot showing how to enable auto refresh." lightbox="./media/bring-events-to-fabric-from-eventhub/enable-auto-refresh.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/enable-auto-refresh.png" alt-text="Screenshot showing how to enable auto refresh." lightbox="./media/bring-events-to-fabric-from-event-hub/enable-auto-refresh.png" :::
 
 4. After the report adjustment is done, select **Save** button and give the report a name to save it.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-eventhub/final-report.png" alt-text="Screenshot showing the final report." lightbox="./media/bring-events-to-fabric-from-eventhub/final-report.png" :::
+   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/final-report.png" alt-text="Screenshot showing the final report." lightbox="./media/bring-events-to-fabric-from-event-hub/final-report.png" :::
 
 ## Next steps
 
-In this tutorial, you learned how to transfer real-time events from your Azure Event Hub to a Microsoft Fabric lakehouse and use the lakehouse to build the near real-time report to monitor your business data. If you're interested in discovering more advanced features for working with event streams, you may find the following resources helpful.
+In this tutorial, you learned how to transfer real-time events from your Azure event hub to a Microsoft Fabric lakehouse and use the lakehouse to build the near real-time report to monitor your business data. If you're interested in discovering more advanced features for working with event streams, you may find the following resources helpful.
 
 - [Introduction to Microsoft Fabric event streams](./overview.md)
 - [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
