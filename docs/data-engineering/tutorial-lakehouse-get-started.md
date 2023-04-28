@@ -23,11 +23,16 @@ In this step, you create a Fabric workspace in the Power BI service. The workspa
    :::image type="content" source="media\tutorial-lakehouse-get-started\create-new-workspace.png" alt-text="Screenshot showing where to select Workspaces and create a new workspace." lightbox="media\tutorial-lakehouse-get-started\create-new-workspace.png":::
 
 1. Fill out the **Create a workspace** form as follows:
+
    1. **Name:** Enter *Fabric Lakehouse Tutorial*, and some characters for uniqueness.
+
    1. **Description**: Optionally, enter a description for the workspace.
-   :::image type="content" source="media\tutorial-lakehouse-get-started\create-workspace-details.png" alt-text="Screenshot of the Create a workspace dialog box." lightbox="media\tutorial-lakehouse-get-started\create-workspace-details.png":::
+
+      :::image type="content" source="media\tutorial-lakehouse-get-started\create-workspace-details.png" alt-text="Screenshot of the Create a workspace dialog box." lightbox="media\tutorial-lakehouse-get-started\create-workspace-details.png":::
+
    1. **Advanced**: Select **Premium capacity** under **License mode** and then choose a premium capacity you have access to.
-   :::image type="content" source="media\tutorial-lakehouse-get-started\select-premium-capacity.png" alt-text="Screenshot of the Advanced options dialog box." lightbox="media\tutorial-lakehouse-get-started\select-premium-capacity.png":::
+
+      :::image type="content" source="media\tutorial-lakehouse-get-started\select-premium-capacity.png" alt-text="Screenshot of the Advanced options dialog box." lightbox="media\tutorial-lakehouse-get-started\select-premium-capacity.png":::
 
 1. Select **Apply.** The workspace is created and opens.
 

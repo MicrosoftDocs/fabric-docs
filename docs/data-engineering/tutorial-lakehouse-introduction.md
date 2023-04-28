@@ -12,13 +12,9 @@ ms.date: 4/28/2023
 
 Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place. For more information, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
 
-For more information, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
-
 ## Purpose of this tutorial
 
-This tutorial walks you step-by-step through an end-to-end scenario from data acquisition to data consumption. It builds a basic understanding of Fabric, the various workloads, their integration points, and the Fabric professional and citizen developer experiences.
-
-This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
+This tutorial walks you step-by-step through an end-to-end scenario from data acquisition to data consumption. It builds a basic understanding of Fabric, the various workloads, their integration points, and the Fabric professional and citizen developer experiences. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
 ## Lakehouse end-to-end scenario
 
