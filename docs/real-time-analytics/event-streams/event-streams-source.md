@@ -11,7 +11,7 @@ ms.search.form: product-kusto
 
 # Event streams sources
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 By utilizing the eventstream sources, users can seamlessly incorporate their real-time events into Microsoft Fabric, facilitating efficient and effective data ingestion.
 

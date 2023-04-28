@@ -11,7 +11,7 @@ ms.search.form: product-kusto
 
 # Create and manage an eventstream in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 Event streams feature in Microsoft Fabric is a centralized event data place that allows you to capture, transform, and route real-time event data to various destinations in desired format. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL database, and Lakehouse.
 

@@ -11,7 +11,7 @@ ms.search.form: product-kusto
 
 # Bring real-time events to Microsoft Fabric to build near real-time report
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 This tutorial shows you how to use Microsoft Fabric event streams to bring your real-time events to lakehouse from your Azure event hub, then build near real-time report to monitor your business events data.
 
