@@ -4,6 +4,7 @@ description: OneLake shortcuts provide a way to connect to existing data without
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
+ms.search.form: Shortcuts
 ms.topic: conceptual
 ms.date: 03/24/2023
 ---

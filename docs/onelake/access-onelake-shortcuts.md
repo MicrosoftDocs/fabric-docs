@@ -4,6 +4,7 @@ description: Learn how to access OneLake shortcuts as folders, and how to access
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
+ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 03/24/2023
 ---

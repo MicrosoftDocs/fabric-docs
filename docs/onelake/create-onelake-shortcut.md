@@ -4,6 +4,7 @@ description: Learn how to create two types of shortcuts, a OneLake shortcut and 
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
+ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 03/24/2023
 ---
