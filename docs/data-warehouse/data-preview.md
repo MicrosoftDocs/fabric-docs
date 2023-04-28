@@ -4,7 +4,7 @@ description: Learn about using the Data preview in Microsoft Fabric.
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 04/14/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ---
 
@@ -39,6 +39,5 @@ After creating a warehouse and ingesting data, select the **Data** tab. Choose a
 
 ## Next steps
 
- - [Share your Synapse Data Warehouse](share-warehouse.md)
  - [Define relationships in data models for data warehousing](data-modeling-defining-relationships.md)
  - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)

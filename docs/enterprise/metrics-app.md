@@ -4,7 +4,7 @@ description: Learn how to evaluate your Microsoft Fabric capacity's health, by r
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ---
 
 # What is the utilization and metrics app?

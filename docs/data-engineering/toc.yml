@@ -49,6 +49,8 @@ items:
     href: ../placeholder.md
 - name: Apache Spark
   items:
+  - name: Runtime
+    href: runtime.md
   - name: Autotune Spark configuration
     href: autotune.md
   - name: Spark job definition
