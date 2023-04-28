@@ -4,16 +4,16 @@ description: Learn how to delegate tenant settings.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ---
 
 # Delegate tenant settings
 
-As a [Microsoft 365 Global admin](admin-overview.md#microsoft-365-admin-roles), a [Power Platform or a Microsoft Fabric admin](admin-overview.md#power-platform-and-microsoft-fabric-admin-roles), you can delegate [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings) in your organization. For example, if your organization is divided into groups such as *sales*, *marketing* and *finance*, you can create sup-admins for those groups. Subadmins who sit within a group, a better suited to make admin decisions inline with the group's needs. Domain and capacity admins can also have subadmins operating under them. For example, the *sales* group in your organization, may be further divided into regions, each with its own workspace. Typically, you'd want to grant sup-admins, the ability to override the global settings that you dictate.
+As a [Microsoft 365 Global admin](admin-overview.md#microsoft-365-admin-roles), a [Power Platform or a Power BI admin](admin-overview.md#power-platform-and-power-bi-admin-roles), you can delegate [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings) in your organization. For example, if your organization is divided into groups such as *sales*, *marketing* and *finance*, you can create sup-admins for those groups. Subadmins who sit within a group, a better suited to make admin decisions inline with the group's needs. Domain and capacity admins can also have subadmins operating under them. For example, the *sales* group in your organization, may be further divided into regions, each with its own workspace. Typically, you'd want to grant sup-admins, the ability to override the global settings that you dictate.
 
 There are three levels of tenant settings:
 
-* **Tenant** - A [Microsoft 365 Global admin](admin-overview.md#microsoft-365-admin-roles), a [Power Platform or a Microsoft Fabric admin](admin-overview.md#power-platform-and-microsoft-fabric-admin-roles), also know as a *tenant admin*. Has access to all the tenant settings. If needed due to company policy for example, you can turn off certain tenant settings, preventing domain and capacity admins in your tenant from accessing them.
+* **Tenant** - A [Microsoft 365 Global admin](admin-overview.md#microsoft-365-admin-roles), a [Power Platform or a Power BI admin](admin-overview.md#power-platform-and-power-bi-admin-roles), also know as a *tenant admin*. Has access to all the tenant settings. If needed due to company policy for example, you can turn off certain tenant settings, preventing domain and capacity admins in your tenant from accessing them.
 
 * **Domain** and **Capacity** - A [domain admin](/power-bi/developer/visuals/create-r-based-power-bi-desktop) or a [capacity admin](admin-overview.md#capacity-admin-roles) have access to all the tenant settings except settings that are turned off by the tenant admin, and [auto delegated tenant settings](#auto-delegated-tenant-settings)
 

@@ -28,9 +28,9 @@ To enable Microsoft Fabric, you need to have one of the following admin roles:
 
 * [Microsoft 365 Global admin](admin-overview.md#microsoft-365-admin-roles)
 
-* [Power Platform admin](admin-overview.md#power-platform-and-microsoft-fabric-admin-roles)
+* [Power Platform admin](admin-overview.md#power-platform-and-power-bi-admin-roles)
 
-* [Power BI admin](/power-bi/admin/service-admin-administering-power-bi-in-your-organization#administrator-roles-related-to-power-bi) (similar to [Microsoft Fabric admin](admin-overview.md#power-platform-and-microsoft-fabric-admin-roles))
+* [Power BI admin](admin-overview.md#power-platform-and-power-bi-admin-roles)
 
 ## Enable Microsoft Fabric
 
