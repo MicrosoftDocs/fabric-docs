@@ -196,7 +196,9 @@
       - name: Move data from Azure SQL DB into Lakehouse via copy assistant
         href: move-data-lakehouse-copy-assistant.md        
       - name: Load sample data to Lakehouse
-        href: create-first-pipeline-with-sample-data.md      
+        href: create-first-pipeline-with-sample-data.md   
+      - name: Load sample data to Data Warehouse
+        href: tutorial-load-sample-data-to-data-warehouse.md     
   - name: Dataflows
     items:
     - name: Concepts
