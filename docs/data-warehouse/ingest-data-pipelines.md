@@ -24,13 +24,8 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
 ## Create a data pipeline
 
-<<<<<<< Updated upstream
-1. To create a new pipeline navigate to the desired workspace, select the **+New** button, and select **Data pipeline**.
-    :::image type="content" source="media\ingest-data-pipelines\new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New button, and with the options Warehouse, Data pipeline, and Show All." lightbox="media\ingest-data-pipelines\new-data-pipeline.png":::
-=======
 1. To create a new pipeline navigate to your workspace, select the **+New** button, and select **Data pipeline**.
     :::image type="content" source="media\ingest-data-pipelines\new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New button, and with the options Warehouse, Data pipeline, and Show All." lightbox="media\ingest-data-pipelines\new-data-pipeline.png":::
->>>>>>> Stashed changes
 
 1. In the **New pipeline** dialog, provide a name for your new pipeline and select **Create**. 
 
