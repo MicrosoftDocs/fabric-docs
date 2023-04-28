@@ -1,80 +1,75 @@
 ---
-title: Ingest data into the Synapse Data Warehouse
-description: Learn about the features that allow you to ingest data into your Synapse Data Warehouse in Microsoft Fabric.
+title: Ingest data into your Synapse Data Warehouse using data pipelines
+description: Follow steps to ingest data into a Synapse Data Warehouse with data pipelines in Microsoft Fabric.
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
-ms.topic: conceptual
+ms.date: 04/12/2023
+ms.topic: how-to
 ms.search.form: Ingesting data
 ---
 
-# Ingest data into the Synapse Data Warehouse
+# Ingest data into your Synapse Data Warehouse using data pipelines
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
- [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers built-in data ingestion tools that allow users to ingest data into warehouses at scale using code-free or code-rich experiences.
+Data pipelines offer an alternative to using the COPY command through a graphical user interface. A data pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allows you to manage extract, transform, and load activities instead of managing each one individually.
 
-## Data ingestion options
+In this tutorial, you will create a new pipeline that loads sample data into a [!INCLUDE [product-name](../includes/product-name.md)] warehouse. 
 
-You can ingest data into a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using one of the following options:
-
-- **COPY (Transact-SQL)**: the COPY statement offers flexible, high-throughput data ingestion from an external Azure storage account. You can use the COPY statement as part of your existing ETL/ELT logic in Transact-SQL code. For more information, see [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
-- **Data pipelines**: pipelines offer a code-free or low-code experience for data ingestion. Using pipelines, you can orchestrate robust workflows for a full Extract, Transform, Load (ETL) experience that includes activities to help prepare the destination environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination.
-- **Dataflows**: an alternative to pipelines, Dataflows enable easy data preparation, cleaning, and transformation using a code-free experience. 
-- **Cross-warehouse ingestion**: data ingestion from workspace sources is also possible. This scenario may be required when there's the need to create a new table with a subset of a different table, or as a result of joining different tables in the warehouse and in the lakehouse. For cross-warehouse ingestion, in addition to the options mentioned, Transact-SQL features such as **INSERT...SELECT**, **SELECT INTO**, or **CREATE TABLE AS SELECT (CTAS)** work cross-warehouse within the same workspace.
-
-### Decide which data ingestion tool to use
-
-To decide which data ingestion option to use, you can use the following criteria: 
-
-- Use **dataflows** for a code-free experience that allow custom transformations to source data before it's ingested. These transformations include (but aren't limited to) changing data types, adding or removing columns or using functions to produce calculated columns.
-- Use **data pipelines** for code-free or low-code, robust data ingestion workflows that run repeatedly, at a schedule, or that involves large volumes of data.
-- Use the **COPY (Transact-SQL)** statement for code-rich data ingestion operations, for the highest data ingestion throughput possible, or when you need to add data ingestion as part of a Transact-SQL logic. 
-- Use **cross-warehouse ingestion** to create new tables with source data within the same workspace, using a code-rich experience.
- 
 > [!NOTE]
-> The COPY statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports only data sources on Azure storage accounts, with authentication using to Shared Access Signature (SAS), Storage Account Key (SAK), or accounts with public access. For other limitations, see [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql).
+> Some features from Azure Data Factory are not available in [!INCLUDE [product-name](../includes/product-name.md)], but the concepts are interchangeable. You can learn more about Azure Data Factory and Pipelines on [Pipelines and activities in Azure Data Factory and Azure Synapse Analytics](../../azure/data-factory/concepts-pipelines-activities?tabs=data-factory).
 
-## Supported data formats and sources
+## Create a data pipeline
 
-Data ingestion in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] offers a vast number of data formats and sources you can use. Each of the options outlined includes its own list of supported data connector types and data formats. 
+1. To create a new pipeline navigate to your workspace, select the **+New** button, and click **Data pipeline**.
+    :::image type="content" source="media\ingest-data-pipelines\new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New button, and with the options Warehouse, Data pipeline, and Show All." lightbox="media\ingest-data-pipelines\ingest-data-pipelines\new-data-pipeline.png":::
 
-For **cross-warehouse ingestion**, data sources must be within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace. Queries can be performed using three-part naming for the source data.
+1. In the **New pipeline** dialog, provide a name for your new pipeline and click **Create**. 
 
-As an example, suppose there's two warehouses named `Inventory` and `Sales` in a workspace. A query such as the following one creates a new table in the `Inventory` warehouse with the content of a table in the `Inventory` warehouse, joined with a table in the `Sales` warehouse:
+1. You will land in the pipeline canvas area, where you see three options to get started: **Add a pipeline activity**, **Copy data**, and **Choose a task to start**.
+    :::image type="content" source="media\ingest-data-pipelines\start-building-data-pipeline.png" alt-text="Screenshot showing the three options to select for starting ingestion." lightbox="media\ingest-data-pipelines\start-building-data-pipeline.png":::
 
-```sql
-CREATE TABLE Inventory.dbo.RegionalSalesOrders
-AS
-SELECT s.SalesOrders, i.ProductName
-FROM Sales.dbo.SalesOrders s
-JOIN Inventory.dbo.Products i
-WHERE s.ProductID = i.ProductID
-    AND s.Region = 'West region'
-```
+    Each of these options offer different alternatives to create a pipeline:
 
-The **[COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true)** statement currently supports the PARQUET and CSV file formats. For data sources, only Azure Data Lake Storage Gen2 accounts are supported.
+    - **Add pipeline activity**: this option launches the pipeline editor, where you can create new pipelines from scratch by using pipeline activities.
+    - **Copy data**: this option launches a step-by-step assistant that helps you select a data source, a destination, and configure data load options such as the column mappings. On completion, it creates a new pipeline activity with a **Copy Data** task already configured for you.
+    - **Choose a task to start**: this option launches a set of predefined templates to help get you started with pipelines based on different scenarios.
 
-**Data pipelines** and **dataflows** support a wide variety of data sources and data formats. For more information, see [Ingest data using Data pipelines](ingest-data-pipelines.md).
+    Pick the **Copy data** option to launch the **Copy assistant**.
 
-For more information, visit [Ingest data into your warehouse using Data pipelines](/ingest-data-pipelines) and [Ingest data into your warehouse using Data flows](/ingest-data-flows).
+1. The first page of the **Copy data** assistant helps you pick your own data from a variety of data sources, or select from one of the provided samples to get started. For this tutorial, we will use the **COVID-19 Data Lake** sample. Select this option and click **Next**.
+    :::image type="content" source="media\ingest-data-pipelines\sample-data-page.png" alt-text="Screenshot showing choices to use sample data or other data sources." lightbox="media\ingest-data-pipelines\sample-data-page.png":::
 
-## Best practices
+1. In the next page, you can select a dataset, the source file format, and preview the selected dataset. Select the **Bing COVID-19** dataset, the **CSV** format, and click **Next**.
+    :::image type="content" source="media\ingest-data-pipelines\data-source-page.png" alt-text="Screenshot showing different dataset options for the COVID-19 sample, file formats, and a grid showing a preview of the dataset." lightbox="media\ingest-data-pipelines\data-source-page.png":::
 
-For optimal ingestion performance, the following best practices are recommended:
+1. The next page, **Data destinations**, allows you to configure the type of the destination dataset. We will load data into a warehouse in our workspace, so select the **Warehouse** tab, and the **Data Warehouse** option. Click **Next**.
+    :::image type="content" source="media\ingest-data-pipelines\data-destination-type-page.png" alt-text="Screenshot showing different destination options." lightbox="media\ingest-data-pipelines\data-destination-type-page.png":::
 
-- Avoid ingesting data using singleton **INSERT** statements, as this causes poor performance on queries and updates. If singleton **INSERT** statements were used for data ingestion consecutively, we recommend creating a new table by using **CREATE TABLE AS SELECT (CTAS)** or **INSERT...SELECT** patterns, dropping the original table, and then creating your table again from the table you created using **CREATE TABLE AS SELECT (CTAS)** or **INSERT...SELECT**.
-- When working with external data on files, we recommend that files are at least 4 MB in size.
-- For large compressed CSV files, consider splitting your file into multiple files.
-- Azure Data Lake Storage (ADLS) Gen2 account offers better performance than Azure Blob Storage (legacy). Consider using an ADLS Gen2 account whenever possible. 
-- For pipelines that run frequently, consider isolating your Azure storage account from other services that could access the same files at the same time.
+1. Now it's time to pick the warehouse  in which the data will be loaded into. Select your desired warehouse in the dropdown box and click **Next**. 
+    :::image type="content" source="media\ingest-data-pipelines\data-destination-details-page.png" alt-text="Screenshot showing a dropdown list with a warehouse selected." lightbox="media\ingest-data-pipelines\data-destination-details-page.png":::
+
+1. The last step to configure the destination is to provide a name to the destination table and configure the column mappings. Here you can choose to load the data to a new table or to an existing one, provide a schema and table names, change column names, remove columns, or change their mappings. You can accept the defaults, or adjust the settings to your preference.
+    :::image type="content" source="media\ingest-data-pipelines\data-destination-table-page.png" alt-text="Screenshot showing the options to load data to an existing table or to create a new one, text boxes to specify the destination schema and table name with a default value, and a grid with the column mappings between source and destination showing column names and their data types." lightbox="media\ingest-data-pipelines\data-destination-table-page.png":::
+
+    When you are done reviewing the options, click **Next**.
+
+1. The next page gives you the option to use staging, or provide advanced options for the data copy operation (which uses the T-SQL COPY command). Review the options without changing them and click **Next**.
+ 
+1. The last page in the assistant offers a summary of the copy activity. Select the option **Start data transfer immediately** and click **Save + Run**. 
+    :::image type="content" source="media\ingest-data-pipelines\run-immediately.png" alt-text="Screenshot showing the option to start the data transfer operation immediately, and the buttons Back and Save + Run." lightbox="media\ingest-data-pipelines\run-immediately.png":::
+
+1. You will be directed to the pipeline canvas area, where a new Copy Data activity is already configured for you. The pipeline starts to run automatically. You can monitor the status of your pipeline in the **Output** pane: 
+    :::image type="content" source="media\ingest-data-pipelines\monitor-pipeline.png" alt-text="Screenshot showing the the pipeline canvas with a Copy activity in the center, and the pipeline execution status in the bottom of the page showing the current status with the value In progress." lightbox="media\ingest-data-pipelines\monitor-pipeline.png":::
+
+1. After a few seconds, your pipeline finishes successfully. Navigating back to your warehouse, you can select your table to preview the data and confirm that the copy operation concluded. 
+    :::image type="content" source="media\ingest-data-pipelines\table-preview.png" alt-text="Screenshot showing a warehouse with the bing_covid_19 table selected, and a grid showing a preview of the data in the table." lightbox="media\ingest-data-pipelines\table-preview.png":::
 
 ## Next steps
 
-- [Ingest data using the COPY command](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true)
-- [Ingest data using Data pipelines](ingest-data-pipelines.md)
-- [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true)
-- For details on **INSERT...SELECT** patterns, see [INSERT (Transact-SQL)](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true)
+- [Tables in Fabric data warehousing](tables.md)
+- [Ingesting data into the Synapse Data Warehouse](ingest-data.md)
+- [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md)
