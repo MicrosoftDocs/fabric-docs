@@ -4,7 +4,7 @@ description: Learn how to opt out of Microsoft Fabric features that don't meet t
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.date: 03/29/2023
+ms.date: 05/23/2023
 ---
 
 # Compliance settings

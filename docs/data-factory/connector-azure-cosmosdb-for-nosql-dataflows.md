@@ -4,7 +4,7 @@ description: This article explains how to connect to Azure Cosmos DB for NoSQL i
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 4/13/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 

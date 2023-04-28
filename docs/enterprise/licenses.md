@@ -4,7 +4,7 @@ description: Understand how licenses in Microsoft Fabric work, and how you can b
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ---
 
 # Licenses
