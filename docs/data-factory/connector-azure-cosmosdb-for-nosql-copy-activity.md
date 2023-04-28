@@ -18,7 +18,16 @@ This article outlines how to use the copy activity in a data pipeline to copy da
 
 ## Supported format
 
-Azure Cosmos DB for NoSQL supports the following file formats.
+Azure Cosmos DB for NoSQL supports the following file formats. Refer to each article for format-based settings.
+
+- Avro format
+- [Binary format](format-binary.md)
+- [Delimited text format](format-delimited-text.md)
+- [Excel format](format-excel.md)
+- JSON format
+- ORC format
+- Parquet format
+- XML format
 
 ## Supported configuration
 

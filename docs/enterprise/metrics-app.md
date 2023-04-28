@@ -19,7 +19,16 @@ You must be a capacity admin to install the utilization and metrics app. Once in
 
 To install the app follow the instructions in [Install the utilization and metrics app](metrics-app-install.md).
 
+## Considerations and limitations
+
+When using the Microsoft Fabric utilization and metrics app, consider the following limitations.
+
+* In the [CU over time](metrics-app-overview-page.md#cu-over-time) visual logarithmic's view, the primary axis seen on the left of the visual, isn't aligned with the secondary axis seen on the right of the visual.
+
+* In the [interactive](metrics-app-timepoint-page.md#interactive-operations) and [background](metrics-app-timepoint-page.md#background-operations) operation tables, the *Throttling(s)* column displays zero when throttling is disabled, even when the capacity is overloaded.
+
+* There's a difference of 0.01-0.05 percent between the *CU %* value in the [Top row visuals](metrics-app-timepoint-page.md#top-row-visuals) *Heartbeat line chart*, and the [interactive](metrics-app-timepoint-page.md#interactive-operations) and [background](metrics-app-timepoint-page.md#background-operations) operations tables *Total CU* values.
+
 ## Next steps
 
->[!div class="nextstepaction"]
->[Install the utilization and metrics app](metrics-app-install.md)
+[Install the utilization and metrics app](metrics-app-install.md)

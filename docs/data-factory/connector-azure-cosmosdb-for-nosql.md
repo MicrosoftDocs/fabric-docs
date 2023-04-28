@@ -31,7 +31,7 @@ The Azure Cosmos DB for NoSQL connector supports the following authentication ty
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).
+- A tenant account with an active subscription. Create an account for free.
 
 - A workspace is created and isn't the default My Workspace.
 

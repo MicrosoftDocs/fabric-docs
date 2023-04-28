@@ -77,19 +77,23 @@ items:
       href: table-constraints.md
     - name: Transactions
       href: transactions.md
-    - name: Limitations and known issues
-      href: limitations.md      
-  - name: Manage and Monitor
-    items:
     - name: Warehouse settings and context menus
       href: settings-context-menus.md
+    - name: Limitations and known issues
+      href: limitations.md      
+  - name: Performance
+    items:
     - name: Statistics
       href: statistics.md
-    - name: Monitor using DMVs
-      href: monitor-using-dmv.md
     - name: Workload Management
       href: workload-management.md
-    - name: Troubleshoot Synapse Data Warehouse
-      href: troubleshoot-synapse-data-warehouse.md
+  - name: Monitor
+    items:
+    - name: Monitor using DMVs
+      href: monitor-using-dmv.md
     - name: Get Workspace and OneLake path
       href: get-workspace-onelake-path.md      
+  - name: Troubleshoot
+    items:
+    - name: Troubleshooting your Warehouse
+      href: troubleshoot-synapse-data-warehouse.md
