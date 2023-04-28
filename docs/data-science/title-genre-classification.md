@@ -27,7 +27,7 @@ The sample dataset consists of metadata relating to books digitized by the Briti
 
 #### Install libraries
 
-In this notebook, we'll use `wordcloud`, which first needs to be installed. The PySpark kernel will be restarted after `%pip install`, thus we need to install it before we run any other cells. Word Cloud is a package allowing us to use a data visualization technique for representing text data to indicate its frequency in a given piece of text.
+In this notebook, we `wordcloud`, which first needs to be installed. The PySpark kernel will be restarted after `%pip install`, thus we need to install it before we run any other cells. Word Cloud is a package allowing us to use a data visualization technique for representing text data to indicate its frequency in a given piece of text.
 
 ```shell
 # install wordcloud for text visualization
@@ -218,7 +218,7 @@ display(vec_df.limit(20))
 
 We've cleaned the dataset, dealt with unbalanced data, tokenized the text, displayed word cloud and vectorized the text.
 
-Next, we'll train a linear regression model to classify the vectorized text.
+Next, we train a linear regression model to classify the vectorized text.
 
 ### Split dataset into train and test
 
@@ -301,7 +301,7 @@ ax.set_ylabel("True label")
 
 ### Log and Load Model with MLflow
 
-Now that we have a model we are satisfied with, we can save it for later use. Here we use MLflow to log metrics/models, and load models back for prediction.
+Now that we have a model we're satisfied with, we can save it for later use. Here we use MLflow to log metrics/models, and load models back for prediction.
 
 ```python
 # setup mlflow
