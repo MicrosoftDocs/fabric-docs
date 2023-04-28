@@ -21,9 +21,9 @@ This article outlines how to use the copy activity in data pipeline to copy data
 Azure Data Lake Storage Gen2 supports the following file formats. Refer to each article for format-based settings.
 
 - Avro format
-- Binary format
-- Delimited text format
-- Excel format
+- [Binary format](format-binary.md)
+- [Delimited text format](format-delimited-text.md)
+- [Excel format](format-excel.md)
 - JSON format
 - ORC format
 - Parquet format
