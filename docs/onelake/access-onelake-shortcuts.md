@@ -21,7 +21,7 @@ Shortcuts appear as folders in OneLake, and Spark can read from them just like a
 
 To access a shortcut as a folder:
 
-1. From a lakehouse containing shortcuts, select the **Open notebook** menu and then select **New notebook**.
+1. From a lakehouse containing shortcuts, select the **Open notebook** menu and then select **New notebook**. 
 
    :::image type="content" source="media\access-onelake-shortcuts\open-notebook-ribbon.png" alt-text="Screenshot showing where to find the Open notebook option on the ribbon." lightbox="media\access-onelake-shortcuts\open-notebook-ribbon.png":::
 

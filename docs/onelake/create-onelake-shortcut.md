@@ -22,7 +22,7 @@ To create a OneLake shortcut:
 
 1. Open a lakehouse.
 
-1. Right click on a directory within the **Lake view** of the lakehouse.
+1. Right click on a directory within the **Lake view** of the lakehouse. 
 
 1. Select **New shortcut**.
 
