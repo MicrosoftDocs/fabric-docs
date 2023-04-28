@@ -52,7 +52,7 @@ As a capacity or domain admin, you can do one of the following:
 
 * **Delegate** - You can delegate tenant settings you have access to, to workspace admins.
 
-The table below shows which capabilities are available for the domain, capacity and workspace admins in your organization.
+This table shows which capabilities are available for the domain, capacity and workspace admins in your organization.
 
 |Capacity checkbox  |Workspace checkbox  |Domain/capacity admin can override tenant setting |Domain/capacity admin can override workspace delegation |Workspace admin can override tenant setting  |
 |---------|---------|---------|---------|---|

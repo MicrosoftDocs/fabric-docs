@@ -36,11 +36,11 @@ To enable Microsoft Fabric, you need to have one of the following admin roles:
 
 Navigate to the [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings#how-to-get-to-the-tenant-settings) in the admin center, expand **Microsoft Fabric** and enable the switch.
 
-Depending on your admin role, Microsoft Fabric will be available to the entire organization or a specific capacity by default. You can also enable Microsoft Fabric for specific users, by using the *security groups* options. When security groups are enabled, users that don't have access to Microsoft Fabric will have view permissions for Microsoft Fabric items.
+Depending on your admin role, Microsoft Fabric is available to the entire organization or a specific capacity by default. You can also enable Microsoft Fabric for specific users, by using the *security groups* options. When security groups are enabled, users that don't have access to Microsoft Fabric will have view permissions for Microsoft Fabric items.
 
 ## Can I disable Microsoft Fabric?
 
-To disable Microsoft Fabric you can turn off the Microsoft Fabric admin switch. After disabling Microsoft Fabric, users will have view permissions for Microsoft Fabric items. If you disable Microsoft Fabric for a specific capacity while Microsoft Fabric is available in your organization, your selection will only affect that capacity.
+To disable Microsoft Fabric, you can turn off the Microsoft Fabric admin switch. After disabling Microsoft Fabric, users will have view permissions for Microsoft Fabric items. If you disable Microsoft Fabric for a specific capacity while Microsoft Fabric is available in your organization, your selection will only affect that capacity.
 
 ## Next steps
 
