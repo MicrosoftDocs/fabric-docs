@@ -29,7 +29,7 @@ If you have an Azure event hub created with event data there, do the following s
 
    :::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-event-hub.png" :::
 
-3. If you don’t have a cloud connection, select **Create new connection** to create one. To create a new connection, fill in the information of your Azure Event Hubs on the **New connection** blade.
+3. If you don’t have a cloud connection, select **Create new connection** to create one. To create a new connection, fill in the information of your Azure event hub on the **New connection** blade.
 
    :::image type="content" source="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" :::
 
