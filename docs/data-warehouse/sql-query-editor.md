@@ -15,7 +15,7 @@ ms.search.form: Query Editor
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the [Visual Query editor](visual-query-editor.md) and the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal. This article describes how to use the SQL query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the [Visual query editor](visual-query-editor.md) and the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal. This article describes how to use the SQL query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
 
 ## SQL query editor in the Fabric portal
 
@@ -41,11 +41,11 @@ To enable **Save as view**, **Save as table**, **Download Excel file** and **Vis
 
 :::image type="content" source="media\sql-query-editor\editor-commands.png" alt-text="Screenshot of the query editor window. Command buttons are boxed in red." lightbox="media\sql-query-editor\editor-commands.png":::
 
-You can select the query and save your query as a view using the **Save as view** button. Select the schema name, provide name of view and verify the SQL statement before confirming creating view.
+- You can select the query and save your query as a view using the **Save as view** button. Select the schema name, provide name of view and verify the SQL statement before confirming creating view. When view is successfully created, it will appear in Object explorer.
 
 :::image type="content" source="media\sql-query-editor\save-as-view.png" alt-text="Screenshot showing how to use Save as view menu" lightbox="media\sql-query-editor\save-as-view.png":::
 
-- You can use **Save as table** to save your query results into a table. Select the warehouse in which you would like to save results, select schema and provide table name to load results into the table using Create Table AS Select statement.
+- You can use **Save as table** to save your query results into a table. Select the warehouse in which you would like to save results, select schema and provide table name to load results into the table using Create Table AS Select statement. When table is successfully created, it will appear in Object explorer.
 
 :::image type="content" source="media\sql-query-editor\save-as-table.png" alt-text="Screenshot showing how to use Save as table menu" lightbox="media\sql-query-editor\save-as-table.png":::
 
@@ -61,15 +61,12 @@ As you work on your SQL query, the queries are automatically saved every few sec
 
 ## Cross-warehouse querying
 
-For more information on cross-warehouse querying, see [How-to: Query the Synapse Data Warehouse](query-warehouse.md#cross-warehouse-querying).
-
-You can run join tables or views to run cross-warehouse queries within current active workspace. For getting view of other warehouses while querying, you can add warehouse or SQL endpoint from the current workspace to Object explorer. 
-
-:::image type="content" source="media\sql-query-editor\add-warehouses.png" alt-text="Screenshot showing how to use add warehouses in object explorer" lightbox="media\sql-query-editor\add-warehouses.png":::
+For more information on cross-warehouse querying, see [Cross-warehouse querying](query-warehouse.md#cross-warehouse-querying).
 
 You can write a T-SQL query with three-part naming convention to refer to objects and join them across warehouses.
 
 Example:
+
 ```sql
 SELECT 
     emp.Employee
@@ -123,17 +120,21 @@ Examples:
 
 When independently executing transaction statements, session context does not get retained, resulting into the failure of commit/rollback operation.
 
+:::image type="content" source="media\sql-query-editor\transaction-run-error.png" alt-text="Screenshot showing independent run of transactions failed in SQL query editor" lightbox="media\sql-query-editor\transaction-run-error.png":::
+
 When you define temp table in the first batch request and try to use it in subsequent batch runs in the same query tab, it throws error.
+
+:::image type="content" source="media\sql-query-editor\temp-table-run-error.png" alt-text="Screenshot showing multiple runs of temp table failed in SQL query editor" lightbox="media\sql-query-editor\temp-table-run-error.png":::
 
 - The table below summarizes the expected behavior will not be matching with SQL Server Management Studio/Azure Data Studio due to limitations explained above.
 
 | **Scenario** | **Supported in SSMS/ADS** | **Supported in SQL query editor in Fabric portal** |
 |---|---|---|
 |Using [USE (Transact-SQL)](/sql/t-sql/language-elements/use-transact-sql) |Yes|No|
-|Using SET Statements (Transact-SQL) - SQL Server Microsoft Learn to set properties for session |Yes|No|
+|Using [SET Statements (Transact-SQL)](/sql/t-sql/statements/set-statements-transact-sql) to set properties for session |Yes|No|
 |Referencing temp tables in open SQL query tab for multiple batch executions |Yes|No|
-|Using sp_set_session_context (Transact-SQL) - SQL Server Microsoft Learn for multiple batch statements runs |Yes|No|
-|Transactions (Transact-SQL) - SQL Server Microsoft Learn (unless executed as a single batch request) |Yes|No|
+|Using [sp_set_session_context (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-set-session-context-transact-sql) for multiple batch statements runs |Yes|No|
+|[Transactions (Transact-SQL)](/sql/t-sql/language-elements/transactions-transact-sql) (unless executed as a single batch request) |Yes|No|
 
 
 ## Next steps

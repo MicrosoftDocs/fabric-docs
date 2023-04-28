@@ -37,6 +37,10 @@ To get started with this tutorial, check the following prerequisites:
 
    :::image type="content" source="media\query-warehouse-sql-server-management-studio\new-query-tab.png" alt-text="Screenshot of a new query tab." lightbox="media\query-warehouse-sql-server-management-studio\new-query-tab.png":::
 
+3. Write a SQL query and run it.
+
+  :::image type="content" source="media\query-warehouse-sql-server-management-studio\new-query-tab.png" alt-text="Screenshot of a new query tab." lightbox="media\query-warehouse-sql-server-management-studio\new-query-tab.png":::
+
 ## Run a new query in **Visual query editor**
 
 1. Open a **New visual query** window.
@@ -55,9 +59,11 @@ To get started with this tutorial, check the following prerequisites:
 
 You can write cross database queries to databases in the current active workspace in [!INCLUDE [product-name](../includes/product-name.md)].
 
-There are several ways you can write cross-database queries within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace, in this section we explore three examples.
+There are several ways you can write cross-database queries within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace, in this section we explore examples. You can join tables or views to run cross-warehouse queries within current active workspace.  
 
 1. Add [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) from your current active workspace to object Explorer using **+ Warehouses** action. When you select [[!INCLUDE [fabric-se](includes/fabric-se.md)]](sql-endpoint.md) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](warehouse.md) from the dialog, it gets added into the **Object Explorer** for referencing when writing a SQL query or creating Visual query.
+
+    :::image type="content" source="media\sql-query-editor\add-warehouses.png" alt-text="Screenshot showing how to use add warehouses in object explorer" lightbox="media\sql-query-editor\add-warehouses.png":::
 
 2. You can reference the table from added databases using three-part naming. In the following example, you are using three-part naming to refer `ContosoSalesTable` from added database `ContosoLakehouse`.
 
@@ -96,21 +102,21 @@ There are several ways you can write cross-database queries within the same [!IN
 
 6. You can drag and drop tables from added databases to **Visual query editor** to create a cross-database query.
 
-   :::image type="content" source="media\query-warehouse-sql-server-management-studio\new-query-tab.png" alt-text="Screenshot of a new query tab." lightbox="media\query-warehouse-sql-server-management-studio\new-query-tab.png":::
+   :::image type="content" source="media\query-warehouse\new-query-tab.png" alt-text="Screenshot of a new query tab." lightbox="media\query-warehouse-sql-server-management-studio\new-query-tab.png":::
 
 ## SELECT Top 100 Rows from Object Explorer
 
 1. After opening your warehouse from the workspace, expand your database, schema and tables folder in the **Object Explorer** to see all tables listed.
 
-   :::image type="content" source="media\query-warehouse-sql-server-management-studio\object-explorer-connect.png" alt-text="Screenshot of where the Connect option appears on the Object Explorer ribbon." lightbox="media\query-warehouse-sql-server-management-studio\object-explorer-connect.png":::
+   :::image type="content" source="media\query-warehouse\object-explorer-connect.png" alt-text="Screenshot of where the Connect option appears on the Object Explorer ribbon." lightbox="media\query-warehouse-sql-server-management-studio\object-explorer-connect.png":::
 
 1. Right-click on the table that you would like to query and select **SELECT Top 100 rows**.
 
-   :::image type="content" source="media\query-warehouse-sql-server-management-studio\context-menu-select-top.png" alt-text="Screenshot showing where to select the Select Top 1000 Rows option in the right-click menu." lightbox="media\query-warehouse-sql-server-management-studio\context-menu-select-top.png":::
+   :::image type="content" source="media\query-warehouse\context-menu-select-top.png" alt-text="Screenshot showing where to select the Select Top 1000 Rows option in the right-click menu." lightbox="media\query-warehouse-sql-server-management-studio\context-menu-select-top.png":::
 
 1. Once the script is automatically generated, select the **Run** button to run the script and see the results.
 
-   :::image type="content" source="media\query-warehouse-sql-server-management-studio\execute-button.png" alt-text="Screenshot showing where to find the Execute button." lightbox="media\query-warehouse-sql-server-management-studio\execute-button.png":::
+   :::image type="content" source="media\query-warehouse\execute-button.png" alt-text="Screenshot showing where to find the Execute button." lightbox="media\query-warehouse-sql-server-management-studio\execute-button.png":::
 
 ## Limitations
 
