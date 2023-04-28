@@ -4,7 +4,7 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/14/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
@@ -21,9 +21,9 @@ This article outlines how to use the copy activity in data pipeline to copy data
 Trident Lakehouse supports the following file formats. Refer to each article for format-based settings.
 
 - Avro format
-- Binary format
-- Delimited text format
-- Excel format
+- [Binary format](format-binary.md)
+- [Delimited text format](format-delimited-text.md)
+- [Excel format](format-excel.md)
 - JSON format
 - ORC format
 - Parquet format

@@ -4,7 +4,7 @@ description: Understand the Microsoft Fabric monitoring workspace and the report
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 04/17/2023
+ms.date: 05/23/2023
 ---
 
 # What is the admin monitoring workspace?

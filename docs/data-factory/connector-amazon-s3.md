@@ -4,7 +4,7 @@ description: This article provides information about how to create an Amazon S3 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 03/24/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to
 ---
 

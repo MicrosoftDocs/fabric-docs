@@ -1,10 +1,10 @@
 ---
-title: View data in the Data preview in Microsoft Fabric
+title: View data in the Data preview
 description: Learn about using the Data preview in Microsoft Fabric.
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 04/14/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ---
 
@@ -32,13 +32,12 @@ After creating a warehouse and ingesting data, select the **Data** tab. Choose a
 
     :::image type="content" source="media\data-preview\table-tools-copy.png" alt-text="Screenshot of copying a cell within the data preview of the warehouse." lightbox="media\data-preview\table-tools-copy.png":::
 
-## Considerations and Limitations
+## Considerations and limitations
 
  - Only the top 1000 rows can be shown in the data grid of the Data preview. 
  - The Data preview view will change depending on how the columns are sorted or if there's a keyword that is searched. 
 
 ## Next steps
 
- - [Share your Synapse Data Warehouse](share-warehouse.md)
  - [Define relationships in data models for data warehousing](data-modeling-defining-relationships.md)
  - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)

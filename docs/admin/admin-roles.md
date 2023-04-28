@@ -4,7 +4,7 @@ description: This article explains the Microsoft Fabric admin roles.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 04/17/2023
+ms.date: 05/23/2023
 ---
 
 # Understand Microsoft Fabric roles

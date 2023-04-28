@@ -4,7 +4,7 @@ description: Learn how to track user activities in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ---
 
 # Track user activities in Fabric

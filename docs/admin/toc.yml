@@ -36,5 +36,6 @@ items:
   - name: Manage workspaces
     href: admin-portal-workspaces.md  
   - name: Workspace tenant settings
-    href: admin-portal-workspace.md 
-        
+    href: admin-portal-workspace.md         
+  - name: Git integration admin tenant settings
+    href: admin-settings-git-integration.md     
