@@ -301,7 +301,7 @@ ax.set_ylabel("True label")
 
 ### Log and Load Model with MLflow
 
-Now that we have a good model, we can save it for later use. Here we use MLflow to log metrics/models, and load models back for prediction.
+Now that we have a model we are satisfied with, we can save it for later use. Here we use MLflow to log metrics/models, and load models back for prediction.
 
 ```python
 # setup mlflow
