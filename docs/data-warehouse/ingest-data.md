@@ -8,7 +8,6 @@ ms.topic: conceptual
 ms.date: 04/03/2023
 ms.search.form: Ingesting data
 ---
-
 # Ingesting data into the Synapse Data Warehouse
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
@@ -51,9 +50,7 @@ WHERE s.ProductID = i.ProductID
 
 The COPY (Transact-SQL) statement currently supports the PARQUET and CSV file formats. For data sources, only Azure Data Lake Storage accounts are supported.
 
-Data pipelines and data flows support a wide variety of data sources and data formats. For more information, see 
-
-For more information, visit [Ingest data into your warehouse using Data pipelines](/ingest-data-pipelines) and [Ingest data into your warehouse using Data flows](/ingest-data-flows)
+Data pipelines and data flows support a wide variety of data sources and data formats. For more information, see [Ingest data into your warehouse using Data pipelines](/ingest-data-pipelines) and [Ingest data into your warehouse using Data flows](/ingest-data-flows).
 
 ## Best practices
 
@@ -65,8 +62,6 @@ You can also use TSQL to create a new table and then insert into it, and then up
 INSERT INTO MyWarehouseTable
 SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 ```
-
-
 
 Explicit transactions allow you to group multiple data changes together so that they're only visible when reading one or more tables when the transaction is fully committed. You also have the ability to roll back the transaction if any of the changes fail.
 
