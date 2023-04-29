@@ -28,4 +28,17 @@ To manage the Data Engineering/Science settings for [!INCLUDE [product-name](../
 
 3. You will be navigated to the capacities detail page, where you cal view the usage and other admin controls for your capacity. Navigate to the **Data Engineering/Science Settings** section and click on **Open Spark Compute** 
 
-4. 
+  :::image type="content" source="media\data-engineering-and-data-science-capacity-settings-management\capacitysettingssections.png" alt-text="Screenshot showing different sections in spark compute settings." lightbox="media\data-engineering-and-data-science-capacity-settings-management\capacitysettingssections.png":::
+
+4. Customized workspace pools : You can restrict or democratize compute customization to workspace admins by enabling or disabling the Customized workspace pools option. Enabling this option allows workspace admins to create , update or delete workspace level custom spark pools and size them based on the compute requirements within the max cores limit of a capacity. 
+
+5. Runtime version: As a capacity admin, you can select a default runtime version for the entire capacity and all new workspaces created in the capacity will inherit the selected runtime version. Workspace admins can override the default runtime version inherited from their capacity and choose a different runtime version based on their workspace level requirements. 
+
+6. Spark properties: Capacity admins can configure spark properties and their values which are inhertied to all the workspaces in the capacity. Like the spark runtime version, workspace admins can override these properties for their individual workspaces. 
+
+
+## Next steps
+
+>[!div class="nextstepaction"]
+>[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](spark-workspace-admin-settings.md)
+>[Learn about the Spark Compute for Fabric Data Engineering/Science workloads](spark-compute.md)
