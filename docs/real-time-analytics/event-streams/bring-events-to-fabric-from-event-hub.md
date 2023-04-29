@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: tutorial
-ms.date: 04/28/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
