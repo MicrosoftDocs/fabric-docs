@@ -7,11 +7,11 @@ items:
     href: bring-events-to-fabric-from-event-hub.md
 - name: Concepts
   items:
-  - name: Event streams main editor
+  - name: Main editor
     href: main-editor.md
-  - name: Event streams sources
+  - name: Sources
     href: event-streams-source.md
-  - name: Event streams destinations
+  - name: Destinations
     href: event-streams-destination.md
   - name: Event processor editor
     href: event-processor-editor.md
@@ -19,13 +19,13 @@ items:
   items:
   - name: Create and manage an event stream
     href: create-manage-an-eventstream.md
-  - name: Add and manage event stream sources
+  - name: Add and manage sources
     href: add-manage-eventstream-sources.md
-  - name: Add and manage event stream destinations
+  - name: Add and manage destinations
     href: add-manage-eventstream-destinations.md
   - name: Process event with event processor
     href: process-events-using-event-processor-editor.md
   - name: Preview data
     href: preview-data.md
-  - name: Monitoring
+  - name: Monitor event streams
     href: monitoring.md
