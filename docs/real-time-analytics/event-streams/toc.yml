@@ -1,0 +1,33 @@
+items:
+- name: Event streams
+  items:
+  - name: Introduction to event streams
+    href: overview.md
+  - name: Tutorials
+    items:  
+    - name: Stream events from Event Hubs to Microsoft Fabric
+      href: bring-events-to-fabric-from-event-hub.md
+  - name: Concepts
+    items:
+    - name: Event streams main editor
+      href: main-editor.md
+    - name: Event streams sources
+      href: event-streams-source.md
+    - name: Event streams destinations
+      href: event-streams-destination.md
+    - name: Event processor editor
+      href: event-processor-editor.md
+  - name: How-to
+    items:
+    - name: Create and manage an Eventstream item
+      href: create-manage-an-eventstream.md
+    - name: Add and manage eventstream sources
+      href: add-manage-eventstream-sources.md
+    - name: Add and manage eventstream destinations
+      href: add-manage-eventstream-destinations.md
+    - name: Process event with event processor
+      href: process-events-using-event-processor-editor.md
+    - name: Preview data
+      href: preview-data.md
+    - name: Monitoring
+      href: monitoring.md
