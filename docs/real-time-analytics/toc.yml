@@ -58,6 +58,8 @@ items:
   items:
   - name: Introduction to event streams
     href: event-streams/overview.md
+  - name: Event streams tutorial
+    href: event-streams/bring-events-to-fabric-from-event-hub.md
   - name: Concepts
     items:
     - name: Event streams main editor
@@ -70,14 +72,14 @@ items:
       href: event-streams/event-processor-editor.md
   - name: How-to
     items:
-    - name: Add and manage an Eventstream item
+    - name: Create and manage an Eventstream item
       href: event-streams/create-manage-an-eventstream.md
     - name: Add and manage eventstream sources
       href: event-streams/add-manage-eventstream-sources.md
     - name: Add and manage eventstream destinations
       href: event-streams/add-manage-eventstream-destinations.md
     - name: Process event with event processor
-      href: event-streams/process-event-with-event-preocessor-editor.md
+      href: event-streams/process-events-using-event-processor-editor.md
     - name: Preview data
       href: event-streams/preview-data.md
     - name: Monitoring

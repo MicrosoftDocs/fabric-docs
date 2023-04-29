@@ -47,7 +47,7 @@ If you have a KQL database created in the workspace, do the following steps to a
 
        :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" alt-text="Screenshot showing the ingestion wizard step#4 in kql database destination type." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" :::
 
-After everything is configured and select **Done**, you see a KQL database destination added to your eventstream on the canvas.
+After everything is configured and you've selected **Done**, you see a KQL database destination added to your eventstream on the canvas.
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the kql database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
 
@@ -61,9 +61,10 @@ If you have a lakehouse created in your workspace, follow these steps to add thi
 
    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse.png" alt-text="Screenshot showing the lakehouse destination type." lightbox="./media/event-streams-destination/eventstream-destinations-lakehouse.png" :::
  
-   1. **Delta table**: Select an existing delta table or create a new one to receive data.
-   2. **Data format**: Select the data format for the data that is sent to your lakehouse.
-   3. **Event processing**: You can use our event processor to specify how the data should be processed before it's sent to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Use event processor editor to define the data transformation logic](./process-event-with-event-preocessor-editor.md).
+   1. **Lakehouse**: Select an existing lakehouse item from the workspace you specified.
+   2. **Delta table**: Select an existing delta table or create a new one to receive data.
+   3. **Data format**: Select the data format for the data that is sent to your lakehouse.
+   4. **Event processing**: You can use our event processor to specify how the data should be processed before it's sent to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Use event processor editor to define the data transformation logic](./process-events-using-event-processor-editor.md).
    
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" alt-text="Screenshot showing the event processor editor." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" :::
 
@@ -102,4 +103,4 @@ After selecting **Edit**, the edit pane will be open in the right of the main ed
 - [Create and manage an Eventstream item](./create-manage-an-eventstream.md)
 - [Add and manage an event source in Eventstream item](./add-manage-eventstream-sources.md)
 - [Event streams destination](./event-streams-destination.md)
-- [Use event processor editor to define the data transformation logic](./process-event-with-event-preocessor-editor.md)
+- [Use event processor editor to define the data transformation logic](./process-events-using-event-processor-editor.md)

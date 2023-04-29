@@ -18,7 +18,7 @@ This tutorial is an example of OneLake integration with Azure. We encourage you 
 
 1. Install the latest Azure Storage Explorer bits from the [product webpage](https://azure.microsoft.com/features/storage-explorer/).
 
-1. Check to ensure the version installed is 1.27.0 or higher. (You can check the version by selecting **Help** > **About**.)
+1. Check to ensure the version installed is 1.29.0 or higher. (You can check the version by selecting **Help** > **About**.)
 
 1. Select the **Open** **connect** **dialog** icon.
 
@@ -32,7 +32,7 @@ This tutorial is an example of OneLake integration with Azure. We encourage you 
 
    :::image type="content" source="media\onelake-azure-storage-explorer\select-container-directory.png" alt-text="Screenshot showing where to select the ADLS Gen2 container or directory option." lightbox="media\onelake-azure-storage-explorer\select-container-directory.png":::
 
-1. Enter URL details of the artifact you would like to connect to, in this format: `https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{artifactId}/`. You can find the workspaceID and artifactID in the **Properties** pane of a file in the Microsoft Fabric portal.
+1. Enter URL details of the item you would like to connect to, in this format: `https://onelake.dfs.fabric.microsoft.com/{workspace-Name}/{itemName.itemType}/`. You can find the workspace name and item name in the **Properties** pane of a file in the Microsoft Fabric portal.
 
    You can choose a **Display name** for convenience, then select **Next.**
 
