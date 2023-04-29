@@ -34,7 +34,7 @@ Before you use the COPY statement, the destination table needs to be created. To
 1. To create the table used as the destination in this tutorial, run the following code:
 
 ```sql
-CREATE TABLE [dbo].[bing_covid-19_data_copy]
+CREATE TABLE [dbo].[bing_covid-19_data]
 (
     [id] [int] NULL,
     [updated] [date] NULL,
@@ -62,7 +62,7 @@ In the first example, we'll load data using a Parquet source. Since this is a pu
 Use the following code to run the COPY statement with a Parquet source:
 
 ```sql
-COPY INTO [dbo].[bing_covid-19_data_copy]
+COPY INTO [dbo].[bing_covid-19_data]
 FROM 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet'
 WITH (
     FILE_TYPE = 'PARQUET'
@@ -76,13 +76,13 @@ It's common for comma-separated value (CSV) files to have a header row that prov
 If you ran the previous example to load data from Parquet, consider deleting all data from your table: 
 
 ```sql 
-DELETE FROM [dbo].[bing_covid-19_data_copy]
+DELETE FROM [dbo].[bing_covid-19_data]
 ```
 
 To load data from a CSV file skipping a header row, use the following code:
 
 ```sql
-COPY INTO [dbo].[bing_covid-19_data_copy]
+COPY INTO [dbo].[bing_covid-19_data]
 FROM 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.csv'
 WITH (
     FILE_TYPE = 'CSV', 
@@ -95,10 +95,13 @@ WITH (
 The COPY statement completes by ingesting 4,766,736 rows into your new table. You can confirm the operation ran successfully by running a query that returns the total number of rows in your table:
 
 ```sql
-SELECT COUNT(*) FROM [dbo].[bing_covid-19_data_copy]
+SELECT COUNT(*) FROM [dbo].[bing_covid-19_data]
 ```
 
 If you ran both examples without deleting the rows in between runs, you'll see the result of this query with twice as many rows. While that works for data ingestion in this case, consider deleting all rows and ingesting data only once if you're going to further experiment with this data. 
 
+## Next steps
+
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)
+- [Ingest data into your Synapse Data Warehouse using Transact-SQL](ingest-data-tsql.md)
 - [Ingesting data into the Synapse Data Warehouse](ingest-data.md)

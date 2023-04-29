@@ -77,5 +77,6 @@ For optimal ingestion performance, the following best practices are recommended:
 - [Ingest data using the COPY command](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true)
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)
 - [Ingest data into your Synapse Data Warehouse using the COPY statement](ingest-data-copy.md)
+- [Ingest data into your Synapse Data Warehouse using Transact-SQL](ingest-data-tsql.md)
 - [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true)
 - For details on **INSERT...SELECT** patterns, see [INSERT (Transact-SQL)](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true)
