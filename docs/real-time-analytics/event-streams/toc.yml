@@ -28,4 +28,4 @@ items:
   - name: Preview data
     href: preview-data.md
   - name: Monitor event streams
-    href: monitoring.md
+    href: monitor.md

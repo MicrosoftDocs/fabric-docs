@@ -37,7 +37,7 @@ The available metrics in eventstream node’s Data insights are the following fo
 | **Incoming Bytes** | Bytes | Incoming bytes for an eventstream over a specified period. |
 | **Outgoing Bytes** | Bytes | Outgoing bytes for an eventstream over a specified period. |
 
-:::image type="content" source="./media/monitoring/eventstream-metrics.png" alt-text="Screenshot showing the eventstream metrics." lightbox="./media/monitoring/eventstream-metrics.png" :::
+:::image type="content" source="./media/monitor/eventstream-metrics.png" alt-text="Screenshot showing the eventstream metrics." lightbox="./media/monitor/eventstream-metrics.png" :::
 
 Following the steps to view the data insights for eventstream: 
 
@@ -60,7 +60,7 @@ The following metrics are available in the Data insights of an Azure event hub s
 | **Data Conversion Errors** | Count | Number of output events that couldn't be converted to the expected output schema. |
 | **Deserialization Errors** | Count | Number of input events that couldn't be deserialized inside the event streams engine. |
 
-:::image type="content" source="./media/monitoring/source-destination-metrics.png" alt-text="Screenshot showing the source and destination metrics." lightbox="./media/monitoring/source-destination-metrics.png" :::
+:::image type="content" source="./media/monitor/source-destination-metrics.png" alt-text="Screenshot showing the source and destination metrics." lightbox="./media/monitor/source-destination-metrics.png" :::
 
 Following the steps to view the data insights for Azure Event Hubs source or Lakehouse destination: 
 
@@ -75,7 +75,7 @@ Following the steps to view the data insights for Azure Event Hubs source or Lak
 
 Inside the runtime log tab, you can search the keyword through the logs. You can also filter the logs according to the severity and type. If you want to get the latest logs, you can also use refresh button to get it. 
 
-:::image type="content" source="./media/monitoring/source-destination-runtime-logs.png" alt-text="Screenshot showing the source and destination runtime logs." lightbox="./media/monitoring/source-destination-runtime-logs.png" :::
+:::image type="content" source="./media/monitor/source-destination-runtime-logs.png" alt-text="Screenshot showing the source and destination runtime logs." lightbox="./media/monitor/source-destination-runtime-logs.png" :::
 
 Following the steps to view the runtime logs for Azure Event Hubs source or Lakehouse destination: 
 

@@ -102,4 +102,4 @@ landingContent:
         - text: Preview data
           url: event-streams/preview-data.md
         - text: Monitor event streams
-          url: event-streams/monitoring.md
+          url: event-streams/monitor.md
