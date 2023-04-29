@@ -20,11 +20,11 @@ To manage the Spark settings for the pool associated with your workspace:
 
 1. Go to the **Workspace settings** in your workspace:
 
-   :::image type="content" source="media\spark-workspace-admin-settings\workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings." lightbox="media\spark-workspace-admin-settings\workspace-settings.png":::
+   :::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings." lightbox="media\spark-workspace-admin-settings\workspace-settings.png":::
 
 1. Then, choose the **Data Engineering/Science** option to expand the menu:
 
-   :::image type="content" source="media\spark-workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\spark-workspace-admin-settings\data-engineering-menu.png":::
+   :::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\spark-workspace-admin-settings\data-engineering-menu.png":::
 
 1. You see the **Spark Compute** option in your left-hand menu:
 
@@ -44,7 +44,7 @@ There are two options, you could use the **Starter Pool** (which are prehydrated
 
 Admins can create custom spark pools based on their compute requirements by selecting the **New Pool** option.
 
-:::image type="content" source="media\spark-workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options." lightbox="media\spark-workspace-admin-settings\custom-pool-creation.png":::
+:::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options." lightbox="media\spark-workspace-admin-settings\custom-pool-creation.png":::
 
 > [!NOTE]
 > For creating a custom spark pool,  the capacity admin should have enabled the **Customized workspace pools** option in the Spark Compute section of Capacity Admin settings. 
@@ -52,11 +52,20 @@ Admins can create custom spark pools based on their compute requirements by sele
 
 [!INCLUDE [product-name](../includes/product-name.md)] spark supports Single node clusters, which allows users to select a min node configuration of 1 and with a max node of 2 thereby offering high-availability and better job reliability for smaller compute requirements. 
 
+Users can also enable or disable autoscaling option for their custom spark pools. When enabled with autoscale, the pool would acquire new nodes within the max node limit specified by the user and retire them after the job execution for better performance. 
+
+Users can also select the option to dynamically allocate executors to pool to automatically optimal number of executors within the max bound specificed by the user based on the data volume for better performance. 
+
+:::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\custom-pool-auto-scale-and-da.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation." lightbox="media\spark-workspace-admin-settings\custom-pool-auto-scale-and-da.png":::
+
+
+Learn more about [Spark Compute for Fabric](spark-compute.md).
+
 ## Runtime version
 
 You may choose which version of Spark you’d like to use for the workspace. The only version of Spark that is currently available for use is Spark 3.2. You'll have additional options in the future.
 
-:::image type="content" source="media\spark-workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\spark-workspace-admin-settings\runtime-version.png":::
+:::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\spark-workspace-admin-settings\runtime-version.png":::
 
 ## High Concurrency
 
@@ -74,13 +83,19 @@ Admins can now enable autologging for their machine learning models and experime
 
 Apache Spark has many settings you can provide to optimize the experience for your scenarios. You may set those properties through the UI by selecting the **Add** option. Select an item from the dropdown menu, and enter the value.
 
-:::image type="content" source="media\spark-workspace-admin-settings\spark-properties-add.png" alt-text="Screenshot showing where to select Add." lightbox="media\spark-workspace-admin-settings\spark-properties-add.png":::
+:::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\spark-properties-add.png" alt-text="Screenshot showing where to select Add." lightbox="media\spark-workspace-admin-settings\spark-properties-add.png":::
 
 You can delete items by selecting the item(s) and then select the **Delete** button, or simply select the delete icon after each item you wish you to delete.
 
-:::image type="content" source="media\spark-workspace-admin-settings\spark-properties-delete.png" alt-text="Screenshot showing where to select Delete." lightbox="media\spark-workspace-admin-settings\spark-properties-delete.png":::
+:::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\spark-properties-delete.png" alt-text="Screenshot showing where to select Delete." lightbox="media\spark-workspace-admin-settings\spark-properties-delete.png":::
+
+
+## Next steps
+
+>[!div class="nextstepaction"]
+>Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
 
 ## Learn more
 
-Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
+
 
