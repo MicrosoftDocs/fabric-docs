@@ -33,7 +33,7 @@ The many controls in the admin center are listed in the table below with links t
 | [Premium Per User](/power-bi/admin/service-admin-portal-premium-per-user) | Configure auto refresh and dataset workload settings. |
 | [Audit logs](/power-bi/admin/service-admin-portal-audit-logs) | Audit Microsoft Fabric activities in the Microsoft Purview compliance portal. |
 | [Capacity settings](/power-bi/admin/service-admin-portal-capacity-settings) | Manage Microsoft Fabric DC capacities. |
-| [Refresh summary](/power-bi/admin/service-admin-portal-refresh-summary) | Schedule refresh on a capacity and view the details of refreshes that have occurred. |
+| [Refresh summary](/power-bi/admin/service-admin-portal-refresh-summary) | Schedule refresh on a capacity and view the details of refreshes that occurred. |
 | [Embed codes](/power-bi/admin/service-admin-portal-embed-codes) | View and manage the embed codes that have been generated for your organization to share reports publicly. |
 | [Organizational visuals](/power-bi/admin/organizational-visuals#organizational-visuals) | View, add, and manage which type of Power BI visuals users can access across the organization. |
 | [Azure connections](/power-bi/admin/service-admin-portal-azure-connections) | Configure and manage connections to Azure resources. |
