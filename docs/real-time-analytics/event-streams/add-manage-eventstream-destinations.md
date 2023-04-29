@@ -9,13 +9,12 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Add and manage an event destination in Eventstream item
-
-Once you have created an eventstream, you can route data to different destinations. The types of data destinations that can be added to your eventstream include KQL Database, Lakehouse and Custom App.
+# Add and manage a destination to an event stream
+Once you have created an event stream, you can route data to various destinations such as KQL Database, Lakehouse and a custom app.
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+To get started, complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream item is located in.
 - For KQL database destination, get access to a **premium workspace** with **Contributor** or above permissions where your KQL database is located in.
 - For Lakehouse destination, get access to a **premium workspace** with **Contributor**  or above permissions where your lakehouse is located in.

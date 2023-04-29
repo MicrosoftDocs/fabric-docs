@@ -23,7 +23,7 @@ items:
     href: add-manage-eventstream-sources.md
   - name: Add and manage destinations
     href: add-manage-eventstream-destinations.md
-  - name: Process event with event processor
+  - name: Process events using event processor
     href: process-events-using-event-processor-editor.md
   - name: Preview data
     href: preview-data.md
