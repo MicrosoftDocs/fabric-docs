@@ -1,11 +1,11 @@
 ---
 title: Ingesting data into the warehouse
 description: Learn about the features that allow you to ingest data into your warehouse.
-ms.reviewer: wiassaf
-ms.author: procha
 author: periclesrocha
+ms.author: procha
+ms.reviewer: wiassaf
+ms.date: 05/23/2023
 ms.topic: conceptual
-ms.date: 04/03/2023
 ms.search.form: Ingesting data
 ---
 # Ingesting data into the Synapse Data Warehouse
