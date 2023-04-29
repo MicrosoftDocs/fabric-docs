@@ -45,9 +45,7 @@ Possible custom pool configurations for F64 based on the above example
 
 > [!NOTE]
 > To create custom pools, the user should have the **admin** permissions for the workspace and the [!INCLUDE [product-name](../includes/product-name.md)] capacity admin should have granted permissions to allow workspace admins to size their custom spark pools.
-> Learn more about [Data Engineering/Science Admin Settings for Capacities in Fabric]()
-
-You can learn how to create a custom Spark pool here [Get Started with Custom Spark Pools in Fabric](create-custom-spark-pools.md)
+> You can learn how to create a custom Spark pool here [Get Started with Custom Spark Pools in Fabric](create-custom-spark-pools.md)
 
 ## Nodes
 
@@ -74,3 +72,8 @@ Autoscale for Apache Spark pools allows automatic scale up and down of compute r
 Dynamic allocation allows the spark application to request more number of executors if the tasks exceed the load that current executors can bear. It also releases the executors when the jobs are completed and if the spark application is moving to idle state. Enterprise users often find it hard to tune the executor configurations as they're vastly different across different stages of a Spark Job Execution process, which are also dependent on the volume of data processed which changes from time to time. Users can enable Dynamic Allocation of Executors option as part of the pool configuration, which would enable automatic allocation of executors to the spark application based on the nodes available in the Spark Pool.
 When Dynamic Allocation option is enabled, for every spark application submitted, the system reserves executors during the job submission step based on the Max Nodes, which were specified by the user to support successful auto scale scenarios.
 
+## Next steps
+
+>[!div class="nextstepaction"]
+>[Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](data-engineering-and-data-science-capacity-settings-overview.md)
+>[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](spark-workspace-admin-settings.md)
