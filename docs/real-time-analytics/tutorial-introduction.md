@@ -26,7 +26,6 @@ taxi trip records include fields capturing pick-up and drop-off
 dates/times, pick-up and drop-off locations, trip distances, itemized
 fares, rate types, payment types, and driver-reported passenger counts. This data does not contain latitude and longitude data.
 
-
 You'll use the streaming and query capabilities of Real-Time Analytics
 to answer key questions about the trip statistics, taxi demand in the
 boroughs of New York and related insights.
@@ -50,4 +49,4 @@ To successfully complete this tutorial, you need a [Power BI Premium](/power-bi/
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial part 1: Set up resources](tutorial-part-1.md)
+> [Tutorial part 1: Set up resources](tutorial-1-resources.md)

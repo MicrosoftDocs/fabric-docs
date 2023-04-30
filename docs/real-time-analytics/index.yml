@@ -25,7 +25,7 @@ landingContent:
           - text: What is Real-Time Analytics?
             url: overview.md
           - text: Real-Time Analytics Tutorial
-            url: realtime-analytics-tutorial.md
+            url: tutorial-introduction.md
 
   # Card 
   - title: Create entities

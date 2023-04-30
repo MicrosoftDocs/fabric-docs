@@ -44,4 +44,4 @@ For more information on Real-Time Analytics, see [What is Real-Time Analytics in
 
 ## Next steps
 
-Get started with [Synapse Real-Time Analytics](realtime-analytics-tutorial.md)
+Get started with [Synapse Real-Time Analytics](tutorial-introduction.md)

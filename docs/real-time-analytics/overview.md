@@ -47,8 +47,8 @@ The types of industries which benefit from data analysis in Real-Time Analytics 
 
 The main items available in Real-Time Analytics include:
 
+* [Event streams](event-streams/overview.md) for capture, transform, and route real-time events to various destinations with a no-code experience.
 * A [KQL Database](create-database.md) for data storage and management. Data loaded into a KQL Database is automatically reflected in OneLake, and is available to other workloads.
-* Event streams for data loading. 
 * A [KQL Queryset](kusto-query-set.md) to run queries, view, and manipulate query results on data. The KQL Queryset allows you to save queries for future use, or export and share queries with others.
 
 See how these items work together in the end-to-end streaming data consumption and analysis scenario: [Tutorial: Real-Time Analytics](realtime-analytics-tutorial.md)
@@ -70,6 +70,6 @@ See how these items work together in the end-to-end streaming data consumption a
 ## See also
 
 * Compare Real-Time Analytics to Azure Data Explorer
-* [Tutorial: Real-Time Analytics](realtime-analytics-tutorial.md)
+* [Tutorial: Real-Time Analytics](tutorial-introduction.md)
 * [Query data in the KQL Queryset](kusto-query-set.md)
 * [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context)
