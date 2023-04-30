@@ -146,13 +146,8 @@ productDirectory:
       imageSrc: ./media/synapse-real-time-analytics-icon.png
       links:
         - url: real-time-analytics/overview.md
-<<<<<<< HEAD
           text: What is Real-Time Analytics?
-        - url: placeholder.md
-=======
-          text: What is Real-time Analytics?
-        - url: real-time-analytics/event-streams/overview.md
->>>>>>> d6ce7d6602d4160eba5f41f8b9f270d657b15629
+        - url: real-time-analytics/overview.md
           text: What is Event stream?
         - url: real-time-analytics/create-database.md
           text: Create a database
