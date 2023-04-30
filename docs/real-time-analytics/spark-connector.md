@@ -26,9 +26,9 @@ Specifically, you learn how to:
 
 * [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
 
-Before we import the NYC GreenTaxi notebook, we need to create a database.
-
 ## 1- Create a KQL Database
+
+Before we import the NYC GreenTaxi notebook, we need to create a database.
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
 
