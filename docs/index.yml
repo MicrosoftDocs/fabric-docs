@@ -7,7 +7,7 @@ brand: fabric
 
 metadata:
   title: Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description:  Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more.
+  description:  Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-Time Analytics, Business Intelligence, and many more.
   services: service
   ms.service: powerbi #Required; service per approved list. service slug assigned to your service by ACOM.
   ms.subservice: powerbi-service
@@ -143,12 +143,12 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Synapse Real-time Analytics
+    - title: Synapse Real-Time Analytics
 
       imageSrc: ./media/synapse-real-time-analytics-icon.png
       links:
         - url: real-time-analytics/overview.md
-          text: What is Real-time Analytics?
+          text: What is Real-Time Analytics?
         - url: placeholder.md
           text: What is Event stream?
         - url: real-time-analytics/create-database.md

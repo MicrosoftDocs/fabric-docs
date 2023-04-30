@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: Real-time Analytics documentation # < 60 chars
+title: Real-Time Analytics documentation # < 60 chars
 summary: summary # < 160 chars
 
 metadata:
-  title: Real-time Analytics documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Learn about Real-time Analytics, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis. 
+  title: Real-Time Analytics documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Learn about Real-Time Analytics, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis. 
   ms.service: azure #Required; use either service or product per approved list. 
 #   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
   ms.topic: landing-page # Required
@@ -20,13 +20,13 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About Real-time Analytics
+  - title: About Real-Time Analytics
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Real-time Analytics?
+          - text: What is Real-Time Analytics?
             url: overview.md
-          - text: Real-time Analytics Tutorial
+          - text: Real-Time Analytics Tutorial
             url: realtime-analytics-tutorial.md
       - linkListType: overview
         links:

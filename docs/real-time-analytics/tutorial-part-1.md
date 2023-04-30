@@ -1,118 +1,60 @@
 ---
-title: 
-description: 
+title: Real-Time Analytics tutorial - part 1
+description: Part 1 of the Real-Time Analytics tutorial in Microsoft Fabric
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.date: 03/28/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
+# Real-Time Analytics tutorial part 1: Set up resources
 
-# Real-time Analytics
+This tutorial is part of a series. For the previous section, see:
 
-Real-time Analytics is a portfolio of capabilities that provides an
-end-to-end analytics streaming solution across Trident experiences. It
-supplies high velocity, low latency data analysis, and is optimized for
-time-series data, including automatic partitioning and indexing of any
-data format and structure, such as structured data, semi-structured
-(JSON), and free text.
+> [!div class="nextstepaction"]
+> [Introduction to the Real-Time Analytics tutorial](tutorial-introduction.md)
 
-## Scenario
 
-This tutorial is based on a *sample on New York Yellow Taxi trip data*.
-The dataset contains trip records of New York's yellow taxis. The yellow
-taxi trip records include fields capturing pick-up and drop-off
-dates/times, pick-up and drop-off locations, trip distances, itemized
-fares, rate types, payment types, and driver-reported passenger counts.
-You'll use the streaming and query capabilities of Real-time Analytics
-to answer key questions about the trip statistics, taxi demand in the
-boroughs of New York and related insights.
+## Create a KQL database
 
-In this tutorial, you learn how to:
+1. Browse to the workspace in which you want to create your database.
+1. On the bottom left experience switcher, select **Real-Time Analytics**.
+    
+    :::image type="icon" source="media/realtime-analytics-tutorial/product-icon.png" border="false":::
 
-> [!div class="checklist"]
-> * Create a KQL Database
-> * Create Eventstream
-> * Stream data from Eventstream to KQL Database
-> * Check your data with sample queries
-> * Save queries as a KQL Queryset
-> * Create a Power BI report
-> * Create a OneLake shortcut
+1.  In the upper left corner, select **+ New \> KQL Database** 
+1.  Enter *NycTaxiDB* as the database name.
+1.  Select **Create**.
+    
+    ![](media/realtime-analytics-tutorial/image9.png)
 
-## Prerequisites
+    When provisioning is complete, the KQL database details page will be shown.
 
--   Power BI Premium subscription. For more information, see [How to
-    purchase Power BI
-    Premium](https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-premium-purchase).
--   Workspace
+## Enable copy to OneLake
 
-## Create a KQL Database
+1.  In the **Database details** card, Select the **pencil** icon.
 
-1.  In the upper left corner, select **New \> Show all** to display a
-    full list of available items.
+    :::image type="content" source="media/realtime-analytics-tutorial/onelake-folder-active.png" alt-text="Screenshot of database details page with pencil icon highlighted.":::
 
- ![](media/realtime-analytics-tutorial/image7.png)
-
-2.  In the **Real-time Analytics** section, select **KQL Database**.
-
-![](media/realtime-analytics-tutorial/image8.png)
-
-3.  On the **New KQL Database** dialog, enter a ***unique name***. 
-
-4.  Select **Create**. 
-
-![](media/realtime-analytics-tutorial/image9.png)
-
-5.  When provisioning is complete the KQL database editor landing page
-    will be shown.
-
-![](media/realtime-analytics-tutorial/image10.png)
-
-6.  Select the **Database** in the Object tree.
-
- ![A screenshot of a computer Description automatically generated with medium confidence](media/realtime-analytics-tutorial/image11.png)
-
-7.  Select **Check your data**
-
-![](media/realtime-analytics-tutorial/image12.png)
-
-8.  Paste the following command, replace **NycTaxiDB** with your
-    database's name and select **Run.**
-
-> *//Command to enable mirroring policy on the database to mirror one
-> logical copy in OneLake*
->
-> *.alter-merge database NycTaxiDB policy mirroring \`\`\` {
-> \'IsEnabled\' : true } \`\`\`*
->
-> ![A screenshot of a computer Description automatically generated with
-> medium
-> confidence](media/realtime-analytics-tutorial/image13.png)
+1. Toggle the button to **Active** and select **Done**.
+    :::image type="content" source="media/realtime-analytics-tutorial/enable-copy-one-lake.png" alt-text="Screenshot of enabling data copy to OneLake.":::
 
 ## Create an Eventstream
 
-1.  Go back to Trident workspace home page, select **New \> Show all**
-    to display a full list of available items
+1.  Return to the Fabric home page.
 
-![](media/realtime-analytics-tutorial/image7.png)
+    :::image type="icon" source="media/realtime-analytics-tutorial/home-icon.png" border="false":::
 
-2.  In the **Real-time Analytics** section, select **Eventstream**
+1.  Select **New > Eventstream (Preview)**
 
-![](media/realtime-analytics-tutorial/image14.png)
+    :::image type="content" source="media/realtime-analytics-tutorial/new-eventstream.png" alt-text="Screenshot of new eventstream button.":::
 
-3.  On the New Eventstream dialog, enter NyTaxiTripsEventstream as the
-    name.
+1.  Enter *NyTaxiTripsEventstream* as the Eventstream name and select  **Create**.
 
-> ![](media/realtime-analytics-tutorial/image15.png)
+    When provisioning is complete, the Eventstream landing page will be shown.
 
-4.  Select **Create**.
-
-5.  When provisioning is complete, Eventstream landing page will be
-    shown.
-
-> ![A screenshot of a computer Description automatically
-> generated](media/realtime-analytics-tutorial/image16.png)
+    :::image type="content" source="media/realtime-analytics-tutorial/new-eventstream-created.png" alt-text="Screenshot of Eventstream landing page after provisioning." lightbox="media/realtime-analytics-tutorial/new-eventstream-created.png":::
 
 ## Stream data from Eventstream to KQL Database
 
@@ -269,7 +211,7 @@ With this tutorial, you have now built an auto-refreshing Power BI
 report that is querying streaming data arriving in KQL Database from
 Eventstream.
 
-[]{#_Toc132650968 .anchor}Module 3: Extending the real-time analytics
+[]{#_Toc132650968 .anchor}Module 3: Extending the Real-Time Analytics
 solution
 
 ## Get dimension data from Blob Storage
@@ -277,7 +219,7 @@ solution
 In this module, you are going to ingest Location available in a blob
 storage container. This data contains additional information on the
 pick-up locations and drop-off locations used in the trips dataset.
-Real-time analytics reads and ingests data directly from the blob
+Real-Time Analytics reads and ingests data directly from the blob
 storage without requiring any other intermediary service.
 
 1.  Navigate to KQL Database **NycTaxiDB**
@@ -630,7 +572,7 @@ use in other Trident experiences, such as Notebooks and Spark jobs.
 You can delete individual reports, eventstreams, KQL databases, KQL
 querysets, and other items or remove the entire workspace.
 
-1.  Select Trident Real-time Analytics Solution Tutorial in the
+1.  Select Trident Real-Time Analytics Solution Tutorial in the
     left-hand navigation menu to return to the workspace artifact view
 
 > ![A screenshot of a phone Description automatically generated with

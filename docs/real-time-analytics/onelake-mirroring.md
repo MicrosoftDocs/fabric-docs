@@ -1,5 +1,5 @@
 ---
-title: One logical copy in Real-time Analytics
+title: One logical copy in Real-Time Analytics
 description: Learn how to create a OneLake shortcut that exposes the data in your KQL Database to other Microsoft Fabric experiences.
 ms.reviewer: tzgitlin
 ms.author: yaschust

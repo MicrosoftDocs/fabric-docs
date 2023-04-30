@@ -1,5 +1,5 @@
 ---
-title: Create a Power BI report from KQL Queryset in Real-time Analytics
+title: Create a Power BI report from KQL Queryset in Real-Time Analytics
 description: Learn how to visualize KQL Queryset data in a Power BI report
 ms.reviewer: tzgitlin
 ms.author: yaschust

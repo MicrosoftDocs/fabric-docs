@@ -1,5 +1,5 @@
 ---
-title: Use a OneLake shortcut to query data in Real-time Analytics
+title: Use a OneLake shortcut to query data in Real-Time Analytics
 description: Learn how to create a OneLake shortcut to query data from OneLake in your KQL Database.
 ms.reviewer: tzgitlin
 ms.author: yaschust

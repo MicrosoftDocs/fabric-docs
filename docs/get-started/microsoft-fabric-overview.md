@@ -1,6 +1,6 @@
 ---
 title: What is Microsoft Fabric
-description: Microsoft Fabric is an all-in-one analytics solution that covers everything from data movement to data science, real-time analytics, and business intelligence.
+description: Microsoft Fabric is an all-in-one analytics solution that covers everything from data movement to data science, Real-Time Analytics, and business intelligence.
 ms.reviewer: sngun
 ms.author: gesaur
 author: gsaurer
@@ -12,7 +12,7 @@ ms.date: 04/15/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place.
+Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, Real-Time Analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place.
 
 With Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs.
 
@@ -24,7 +24,7 @@ Microsoft Fabric brings together new and existing components from Power BI, Azur
 
 :::image type="content" source="media\microsoft-fabric-overview\saas-foundation.png" alt-text="Diagram of the software as a service foundation beneath the different workloads of Fabric.":::
 
-Fabric brings together workloads such as Data Engineering, Data Factory, Data Science, Data Warehouse, Real-time Analytics, and Power BI onto a shared SaaS foundation. This integration provides the following advantages:
+Fabric brings together workloads such as Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Analytics, and Power BI onto a shared SaaS foundation. This integration provides the following advantages:
 
 - An extensive range of deeply integrated analytics in the industry.
 - Shared experiences across workloads that are familiar and easy to learn.
@@ -50,7 +50,7 @@ Microsoft Fabric offers the comprehensive set of analytics workloads designed to
 
 - **Data Warehouse** - Data Warehouse workload provides industry leading SQL performance and scale. It fully separates compute from storage, enabling independent scaling of both the components. Additionally, it natively stores data in the open Delta Lake format. For more information, see [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
 
-- **Real-time Analytics** - Observational data, which is collected from various sources such as apps, IoT devices, human interactions, and so many more. It's currently the fastest growing data category. This data is often semi-structured in formats like JSON or Text. It comes in at high volume, with shifting schemas. These characteristics make it hard for traditional data warehousing platforms to work with. Real-time Analytics is best in class engine for observational data analytics. For more information, see [What is Real-time Analytics in Fabric?](../real-time-analytics/overview.md)
+- **Real-Time Analytics** - Observational data, which is collected from various sources such as apps, IoT devices, human interactions, and so many more. It's currently the fastest growing data category. This data is often semi-structured in formats like JSON or Text. It comes in at high volume, with shifting schemas. These characteristics make it hard for traditional data warehousing platforms to work with. Real-Time Analytics is best in class engine for observational data analytics. For more information, see [What is Real-Time Analytics in Fabric?](../real-time-analytics/overview.md)
 
 - **Power BI** - Power BI is the world’s leading Business Intelligence platform. It ensures that business owners can access all the data in Fabric quickly and intuitively to make better decisions with data. For more information, see [What is Power BI?](/power-bi/fundamentals/power-bi-overview)
 
@@ -82,7 +82,7 @@ The following image shows the various Fabric items where data is stored. It's an
 
 Every developer and business unit in the tenant can instantly create their own workspaces in OneLake. They can ingest data into their own lakehouses, start processing, analyzing, and collaborating on the data, just like OneDrive in Office.
 
-All the Microsoft Fabric compute workloads are prewired to OneLake, just like the Office applications are prewired to use the organizational OneDrive. The workloads such as Data Engineering, Data Warehouse, Data Factory, Power BI, and Real-time Analytics use OneLake as their native store. They don't need any extra configuration.
+All the Microsoft Fabric compute workloads are prewired to OneLake, just like the Office applications are prewired to use the organizational OneDrive. The workloads such as Data Engineering, Data Warehouse, Data Factory, Power BI, and Real-Time Analytics use OneLake as their native store. They don't need any extra configuration.
 
 :::image type="content" source="media\microsoft-fabric-overview\workloads-access-data.png" alt-text="Diagram of different workloads all accessing the same OneLake data storage.":::
 

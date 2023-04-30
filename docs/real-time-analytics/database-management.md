@@ -1,5 +1,5 @@
 ---
-title: Manage KQL Databases in Real-time Analytics
+title: Manage KQL Databases in Real-Time Analytics
 description: Learn how to manage your KQL Database
 ms.reviewer: tzgitlin
 ms.author: yaschust

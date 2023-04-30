@@ -1,5 +1,5 @@
 ---
-title: Get data from a blob in Real-time Analytics
+title: Get data from a blob in Real-Time Analytics
 description: Learn get blob data in a KQL Database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
