@@ -49,6 +49,11 @@ items:
     href: ../placeholder.md
 - name: Apache Spark
   items:
+  - name: Overview of Spark Compute in Fabric  
+    href: spark-compute.md
+    items:
+    - name: Create Custom Pools in Fabric Workspaces
+      href: create-custom-spark-pools.md
   - name: Autotune Spark configuration
     href: autotune.md
   - name: Spark job definition
@@ -63,10 +68,15 @@ items:
     href: microsoft-spark-utilities.md
   - name: Library management
     href: library-management.md
-  - name: Spark administration settings
+  - name: Data Engineering/Science administration settings
     items:
-    - name: Workspace settings
-      href: spark-workspace-admin-settings.md
+    - name: Fabric Capacity settings Overview
+      href: data-engineering-and-data-science-capacity-settings-overview.md
+      items: 
+        - name: Spark Compute Settings for Data Engineering/Science Capacity Settings
+          href: data-engineering-and-data-science-capacity-settings-management.md
+    - name: Fabric Workspace Settings 
+      href: data-engineering-and-science-workspace-admin-settings.md
     - name: FAQ
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring
