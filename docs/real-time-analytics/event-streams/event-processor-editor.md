@@ -11,6 +11,8 @@ ms.search.form: product-kusto
 
 # Event processor editor for Microsoft Fabric event streams
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 Event processor enables you to transform the data that is being ingested into the destination. It's available for the Lakehouse type of destination. When you configure your Lakehouse destination, you can find the “Event processing” section in the middle of the right panel. From there, you can open the event processor editor to define your data transformation logic with drag and drop experience.
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-entrypoint.png" alt-text="Screenshot showing the entrypoint of the event processor editor." lightbox="./media/event-processor-editor/event-processor-editor-entrypoint.png" :::

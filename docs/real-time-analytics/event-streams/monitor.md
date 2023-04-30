@@ -11,6 +11,8 @@ ms.search.form: product-kusto
 
 # Monitoring status and performance of an Eventstream item
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 Within Microsoft Fabric event streams, it's easy to monitor the event data streaming and ingestion status and its performance without navigating to other pages. This article explains how to monitor the eventstream status, allowing you to check logs, errors, and data insights with metrics. 
 
 In an Eventstream item, there are two types of monitoring experience: **Data insights** and **Runtime logs**. Different sources and destinations have one or two types of them.

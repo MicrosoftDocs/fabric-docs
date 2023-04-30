@@ -11,6 +11,8 @@ ms.search.form: product-kusto
 
 # Event streams destinations
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 With the eventstream destinations, you can route their real-time events to a custom app, KQL database, or lakehouse in Microsoft Fabric without writing a single line of code. 
 
 :::image type="content" source="./media/event-streams-destination/eventstream-destinations.png" alt-text="Screenshot showing the overview of the event streams destination types." lightbox="./media/event-streams-destination/eventstream-destinations.png" :::

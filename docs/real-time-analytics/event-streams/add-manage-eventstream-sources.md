@@ -11,6 +11,8 @@ ms.search.form: product-kusto
 
 # Add and manage an event source in Eventstream item
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 Once you have created an eventstream, you can connect it to various data sources and destinations. The types of event sources that can be added to your eventstream include Azure Event Hubs, Sample data and Custom app. 
 
 ## Prerequisites
