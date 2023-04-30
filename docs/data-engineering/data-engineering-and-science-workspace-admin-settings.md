@@ -37,7 +37,7 @@ To manage the Spark settings for the pool associated with your workspace:
 
 ## Default Pool for Workspace
 
-There are two options, you could use the **Starter Pool** (which are prehydrated live clusters automatlically created for your faster experience, but are of Medium size) or create a **Custom Spark Pool** and size the nodes, autoscaling and dynamic allocation of executors based on your requirements. 
+There are two options, you could use the **Starter Pool** (which are prehydrated live clusters automatlically created for your faster experience, but are of Medium size) or create a **Custom Spark Pool** and size the nodes, autoscaling and dynamic allocation of executors based on your spark job requirements.
 
 > [!NOTE]
 > A starter pool with 10 nodes is provided for evaluation purposes. In the coming months, the starter pool will automatically be resized based on your purchased capacity size.
@@ -95,7 +95,6 @@ You can delete items by selecting the item(s) and then select the **Delete** but
 >[!div class="nextstepaction"]
 >Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
 
-## Learn more
 
 
 
