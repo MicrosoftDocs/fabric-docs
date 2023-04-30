@@ -28,7 +28,7 @@ Specifically, you learn how to:
 
 ## 1- Create a KQL Database
 
-Before we import the NYC GreenTaxi notebook, we need to create a database.
+Before we import the NYC GreenTaxi notebook, we need to create a database to load the data into.
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
 
