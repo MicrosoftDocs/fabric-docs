@@ -26,7 +26,7 @@ Specifically, you learn how to:
 
 * [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
 
-## 1- Create a KQL Database
+## 1- Create a KQL database
 
 Before importing the NYC GreenTaxi notebook, create a database.
 
@@ -59,7 +59,7 @@ The rest of this workflow occurs in the **Data Engineering** section of the prod
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Data Engineering**.
 
-    :::image type="content" source="media/spark-connector/app-switcher-dataengineering.png" alt-text="Screenshot of experience switcher showing available apps. The experience titled Data Engineering is highlighted.":::
+    :::image type="content" source="media/spark-connector/app-switcher-data-engineering.png" alt-text="Screenshot of experience switcher showing available apps. The experience titled Data Engineering is highlighted.":::
 
 1. Select **Import notebook**.
 
@@ -83,19 +83,19 @@ Select the **play** button to run the following cells, or select the cell and pr
 
 1. Run the following cell to enable access to the NYC GreenTaxi blob container.
 
-    :::image type="content" source="media/spark-connector/code-cell1.png" alt-text="Screenshot of first code cell showing storage access information." lightbox="media/spark-connector/code-cell1.png":::
+    :::image type="content" source="media/spark-connector/code-cell-1.png" alt-text="Screenshot of first code cell showing storage access information." lightbox="media/spark-connector/code-cell1.png":::
 
 1. In **KustoURI**, paste the **Query URI** that you copied earlier instead of the placeholder text.
 1. Change the placeholder database name to *nycGreenTaxi*.
 1. Change the placeholder table name to *GreenTaxiData*.
 
-    :::image type="content" source="media/spark-connector/code-cell2.png" alt-text="Screenshot of second code cell showing the target database information. The Query URI, the database name, and the table name are highlighted."  lightbox="media/spark-connector/code-cell2.png":::
+    :::image type="content" source="media/spark-connector/code-cell-2.png" alt-text="Screenshot of second code cell showing the target database information. The Query URI, the database name, and the table name are highlighted."  lightbox="media/spark-connector/code-cell2.png":::
 
 1. Run the cell.
 
 1. Run the next cell to write data to your database. It may take a few minutes for this step to complete.
 
-    :::image type="content" source="media/spark-connector/code-cell3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command."  lightbox="media/spark-connector/code-cell3.png":::
+    :::image type="content" source="media/spark-connector/code-cell-3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command."  lightbox="media/spark-connector/code-cell3.png":::
 
 Your database now has data.
 
@@ -111,7 +111,7 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 1. In your workspace, hover over the notebook you want to delete, select the **More menu** > **Delete**.
 
-    :::image type="content" source="media/spark-connector/cleanup-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC GreenTaxi notebook. The option titled Delete is highlighted."  lightbox="media/spark-connector/cleanup-resources-expanded.png":::
+    :::image type="content" source="media/spark-connector/clean-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC GreenTaxi notebook. The option titled Delete is highlighted."  lightbox="media/spark-connector/clean-resources-expanded.png":::
 
 1. Select **Delete**. You can't recover your notebook once you delete it.
 
