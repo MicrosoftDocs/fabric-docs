@@ -10,11 +10,10 @@ ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 2: Get data with Event streams
 
-> This tutorial is part of a series. For the previous section, see:
-> 
+ This tutorial is part of a series. For the previous section, see:
+ 
 >[!div class="nextstepaction"]
 > [Tutorial part 1: Create resources](tutorial-1-resources.md)
->
 
 ## Create an Eventstream
 
@@ -34,89 +33,75 @@ ms.search.form: product-kusto
 
 ## Stream data from Eventstream to your KQL database
 
-1.  In the Eventstream authoring area, select **New source** and choose
-    **Sample data.**
+1.  In the Eventstream authoring area, select **New source** > **Sample data**.
 
-> ![](media/realtime-analytics-tutorial/image17.png)
+    :::image type="content" source="media/realtime-analytics-tutorial/new-sample-data.png" alt-text="Screenshot of new source - sample data.":::
 
-2.  Enter **nytaxitripsdatasource** as the Source Name, choose **Yellow
+1.  Enter **nytaxitripsdatasource** as the Source Name, choose **Yellow
     Taxi** from Sample data dropdown.
+1.  Select **Create**.
+1.  In the Eventstream authoring area, select **New destination** > **KQL Database**.
+1.  In the **KQL Database** pane, fill out the fields as follows:
 
-![](media/realtime-analytics-tutorial/image18.png)
+    
+    |Field  | Suggested value  |
+    |---------|---------|
+    | **Destination name**     |  *nytaxidatabase* |
+    | **Workspace**     |   The workspace in which you [created a database](tutorial-1-resources.md#create-a-kql-database).      |
+    | **KQL Database**     | *NycTaxiDB* |
+    
+1.  Select **Create and configure.**
 
-3.  Select **Create**.
+    A data ingestion pane opens with the **Destination** tab selected.
 
-4.  In the Eventstream authoring area, select **New destination** and
-    choose **KQL Database.**
+## Configure data loading to the KQL database
 
-> ![](media/realtime-analytics-tutorial/image19.png)
+1.  Select **New table**,  and enter *nyctaxitrips* as the table name.
+1.  Select **Next: Source**.
+    The **Source** tab opens.
+1.  Review the default values. Notice that the data connection name is made from the database name and the Event stream name.
 
-5.  Enter **nytaxidatabase** as the destination name, choose your
-    Trident workspace from the Workspace dropdown and then choose your
-    KQL Database that you created above.
+    :::image type="content" source="media/realtime-analytics-tutorial/source-tab.png" alt-text="Screenshot of source tab for event stream.":::
 
-![](media/realtime-analytics-tutorial/image20.png)
+1. Select **Next: Schema.**
+    The **Schema** tab opens.
 
-6.  Select **Create and configure.**
+## Schema mapping
 
-7.  In the **Destination** tab, select **New table** and enter
-    **nyctaxitrips** as the table name.
+1. The incoming data source is uncompressed, so don't change thee **Compression type**.
+1. In the **Data format** dropdown, select **JSON**.
+     
+    :::image type="content" source="media/realtime-analytics-tutorial/data-format-json.png" alt-text="Screenshot of Schema tab with data format JSON selected.":::
 
-> ![A screenshot of a computer Description automatically
-> generated](media/realtime-analytics-tutorial/image21.png)
+    Notice that the data preview will refresh and show the data in columns with the data types automatically identified. Some of these data types will need to be changed for later queries. The columns that appear in the preview can be manipulated by selecting the **down arrow** to the right of the column name.
 
-8.  Select **Next: Source**.
+### Change data types
 
-9.  In the **Source** tab, keep the default values, select **Next:
-    Schema.**
+1. Change the following columns to the target types by selecting the **down arrow**> **Change data type**. Verify that the following columns reflect the correct data type:
 
-![](media/realtime-analytics-tutorial/image22.png)
+    :::image type="content" source="media/realtime-analytics-tutorial/change-data-type.png" alt-text="Screenshot of changing data type in data preview.":::
+    
+    | Column name | Target data type|
+    |--|--|
+    | VendorID | *int* |
+    | passenger_count | *long*
+    | trip_distance | *real*
+    | PULocationID | *long*
+    | DOLocationID | *long*
+    | payment_type | *real*
+    | fare_amount | *real*
+    | extra | *real*
+    | mta_tax | *real*
+    | tip_amount | *real*
+    | tolls_amount | *real*
+    | improvement_surcharge | *real*
+    | total_amount | *real*
+    | congestion_charge | *real*
+    | airport_fee | *real*
 
-10. In the **Schema** tab, choose **JSON** as the Data format dropdown.
+1. Select **Next: Summary**.
 
-![](media/realtime-analytics-tutorial/image23.png)
-
-11. After choosing JSON as the Data format, data preview will refresh
-    and show the data in strongly typed columns.
-
-![A screenshot of a computer Description automatically
-generated](media/realtime-analytics-tutorial/image24.png)
-
-12. In this step, we will change data types of multiple columns.
-
-    a.  Select
-        ![](media/realtime-analytics-tutorial/image25.png)
-
- next to VendorID column name,
-        choose **Change data type**, and then choose **int.**
-
-![A screenshot of a computer Description automatically
-generated](media/realtime-analytics-tutorial/image26.png)
-
-b.  As shown in the previous step, choose datatype as **long** for the
-    columns passenger_count, PULocationID, DOLocationID and
-    payment_type.
-
-> ![A screenshot of a computer Description automatically
-> generated](media/realtime-analytics-tutorial/image28.png)
-
-c.  As shown in the previous step, choose datatype as **real** for the
-    following columns: extra, mta_tax, tolls_amount,
-    improvement_surcharge, congestion_charge, airport_fee,
-    trip_distance, fare_amount, tip_amount, total_amount
-
-> ![](media/realtime-analytics-tutorial/image29.png)
-
-13. Select **Next: Summary**.
-
-14. In the **Continuous ingestion from Event Stream established**
-    window, all steps will be marked with green check marks when the
-    data connection is successfully created. The data from Eventstream
-    will begin streaming automatically into your table.
-
-![A screenshot of a computer Description automatically generated with
-low
-confidence](media/realtime-analytics-tutorial/image30.png)
+ In the **Continuous ingestion from Event Stream established** window, all steps will be marked with green check marks when the data connection is successfully created. The data from Eventstream will begin streaming automatically into your table.
 
 ## Next steps
 
