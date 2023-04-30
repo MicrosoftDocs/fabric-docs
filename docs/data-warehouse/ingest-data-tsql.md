@@ -21,7 +21,7 @@ The Transact-SQL language offers options you can use to load data at scale from 
 
 The **CREATE TABLE AS SELECT (CTAS)** statement allows you to create a new table in your warehouse from the output of a `SELECT` statement. It runs the ingestion operation into the new table in parallel, making it highly efficient for data transformation and creation of new tables in your workspace.
 
-> [!NOTE] The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Synapse Data Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
+>[!NOTE] The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Synapse Data Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
 
 The first example illustrates how to create a new table that is a copy of the existing `[dbo].[bing_covid-19_data_2023]` table, but filtered to data from the year 2023 only:
 
@@ -74,7 +74,7 @@ SELECT * FROM [dbo].[bing_covid-19_data]
 WHERE [updated] > '2023-02-28'
 ```
 
-The query criteria for the `SELECT` statement can be any valid query, as long as the resulting query column types align with the columns on the destination table. If column names are specified and include only a subset of the columns from the destination table, all other columns are loaded as `null`.  For more information, see [Using INSERT INTO...SELECT to Bulk Import data with minimal logging and parallelism](https://learn.microsoft.com/sql/t-sql/statements/insert-transact-sql?view=sql-server-ver16#using-insert-intoselect-to-bulk-import-data-with-minimal-logging-and-parallelism). 
+The query criteria for the `SELECT` statement can be any valid query, as long as the resulting query column types align with the columns on the destination table. If column names are specified and include only a subset of the columns from the destination table, all other columns are loaded as `null`.  For more information, see [Using INSERT INTO...SELECT to Bulk Import data with minimal logging and parallelism](/sql/t-sql/statements/insert-transact-sql?#using-insert-intoselect-to-bulk-import-data-with-minimal-logging-and-parallelism). 
 
 ## Ingesting data from tables on different warehouses and lakehouses
 
@@ -95,7 +95,7 @@ INNER JOIN [reference_warehouse].[dbo].[bing_covid-19_data] reference
 ON cases.[iso3] = reference.[countrycode]
 ```
 
-To learn more about cross-warehouse queries, see [Write a cross-database SQL Query](query-warehouse#write-a-cross-database-sql-query)
+To learn more about cross-warehouse queries, see [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-sql-query)
 
 
 ## Next steps
