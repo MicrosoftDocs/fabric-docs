@@ -5,7 +5,7 @@ ms.reviewer: sngun
 ms.author: gesaur
 author: gsaurer
 ms.topic: overview
-ms.date: 04/15/2023
+ms.date: 05/23/2023
 ---
 
 # What is Microsoft Fabric?

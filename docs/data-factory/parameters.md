@@ -1,11 +1,11 @@
 ---
 title: Parameters
-description: Learn about parameters in [!INCLUDE [product-name](../includes/product-name.md)].
+description: Learn about parameters for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.author: jburchel
 author: jonburchel
 ms.topic: conceptual 
-ms.date: 04/07/2023
+ms.date: 05/23/2023
 ---
 
 # Parameters for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
