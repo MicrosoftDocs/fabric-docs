@@ -40,7 +40,7 @@ landingContent:
           - text: Create a table
             url: create-empty-table.md
           - text: Create and manage event streams
-            url: create-manage-an-eventstream.md
+            url: event-streams/create-manage-an-eventstream.md
 
 # Card 
   - title: Load data
