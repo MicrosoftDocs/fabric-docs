@@ -41,23 +41,6 @@ This tutorial is part of a series. For the previous section, see:
 
     :::image type="content" source="media/realtime-analytics-tutorial/enable-copy-one-lake.png" alt-text="Screenshot of enabling data copy to OneLake.":::
 
-## Create an Eventstream
-
-1.  Return to the Fabric home page.
-
-    :::image type="icon" source="media/realtime-analytics-tutorial/home-icon.png" border="false":::
-
-1.  Select **New > Eventstream (Preview)**
-
-    :::image type="content" source="media/realtime-analytics-tutorial/new-eventstream.png" alt-text="Screenshot of new eventstream button.":::
-
-1.  Enter *NyTaxiTripsEventstream* as the Eventstream name and select  **Create**.
-
-    When provisioning is complete, the Eventstream landing page will be shown.
-
-    :::image type="content" source="media/realtime-analytics-tutorial/new-eventstream-created.png" alt-text="Screenshot of Eventstream landing page after provisioning." lightbox="media/realtime-analytics-tutorial/new-eventstream-created.png":::
-
-
 ## Next steps
 
 > [!div class="nextstepaction"]
