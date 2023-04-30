@@ -12,24 +12,24 @@ items:
   items:
   - name: Real-time Analytics happy path
     href: realtime-analytics-tutorial.md
-- name: Create entities
+- name: Create and manage entities
   items:
+  - name: Data management
+    href: database-management.md
   - name: Databases
     items:
     - name: Create a database
       href: create-database.md
-    - name: Data management
-      href: database-management.md
     - name: One logical copy
       href: onelake-mirroring.md
   - name: Tables
     items:
     - name: Create an empty table
       href: create-empty-table.md
-  - name: Create stored functions
-    href: create-functions.md
-  - name: Create materialized views
-    href: materialized-view.md
+    - name: Create stored functions
+      href: create-functions.md
+    - name: Create materialized views
+      href: materialized-view.md
 - name: Get data
   items:
   - name: Get data from a blob
