@@ -30,7 +30,7 @@ Before we import the NYC GreenTaxi notebook, we need to create a database.
 
 ## 1- Create a KQL Database
 
-1. Open the experience switcher on the bottom of the navigation pane and select **Real-time Analytics**.
+1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
 
     :::image type="content" source="media/spark-connector/app-switcher-kusto.png" alt-text="Screenshot of experience switcher showing Microsoft Fabric's experiences. Real-time analytics is highlighted.":::
 
@@ -111,7 +111,7 @@ Your database now has data.
 
 Run the remaining two cells sequentially to query data from your table. The results show the top 20 highest and lowest taxi fares and distances recorded by year.
 
-:::image type="content" source="media/spark-connector/query-example.png" alt-text="Screenshot of fourth and fifth code cell showing the query results."  lightbox="media/spark-connector/query-example.png":::
+:::image type="content" source="media/spark-connector/query-example.png" alt-text="Screenshot of fourth and fifth code cell showing the query results."  lightbox="media/spark-connector/query-example-extended.png":::
 
 ## 6- Clean up resources
 
