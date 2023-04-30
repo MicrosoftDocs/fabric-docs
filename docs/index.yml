@@ -147,7 +147,7 @@ productDirectory:
       links:
         - url: real-time-analytics/overview.md
           text: What is Real-Time Analytics?
-        - url: real-time-analytics/overview.md
+        - url: real-time-analytics/event-streams/overview.md
           text: What is Event stream?
         - url: real-time-analytics/create-database.md
           text: Create a database
