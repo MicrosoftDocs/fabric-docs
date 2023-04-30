@@ -5,16 +5,9 @@ summary: Microsoft Fabric is a unified platform that can meet your organizationâ
 brand: fabric
 
 metadata:
-<<<<<<< HEAD
-  title: Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description:  Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-Time Analytics, Business Intelligence, and many more.
-  services: service
-  ms.service: powerbi #Required; service per approved list. service slug assigned to your service by ACOM.
-=======
   title: Microsoft Fabric documentation
   description: Microsoft Fabric is a unified platform that can meet your organizationâ€™s data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
   ms.service: powerbi
->>>>>>> d6ce7d6602d4160eba5f41f8b9f270d657b15629
   ms.subservice: powerbi-service
   ms.topic: hub-page
   ms.collection: collection
