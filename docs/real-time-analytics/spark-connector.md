@@ -32,15 +32,9 @@ Before we import the NYC GreenTaxi notebook, we need to create a database to loa
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
 
-    :::image type="content" source="media/spark-connector/app-switcher-kusto.png" alt-text="Screenshot of experience switcher showing Microsoft Fabric's experiences. Real-time analytics is highlighted.":::
-
 1. Select **KQL Database**.
 
-   :::image type="content" source="media/spark-connector/kql-database.png" alt-text="Screenshot of the Real-time Analytics homepage that shows the items that can be created. The item titled KQL Database is highlighted.":::
-
 1. Under **KQL Database name**, enter *nycGreenTaxi*, then select **Create**.
-
-    :::image type="content" source="media/spark-connector/new-database.png" alt-text="alt text Screenshot of New Database window showing the database name. The Create button is highlighted.":::
 
     The KQL database has now been created within the context of the selected workspace.
 
