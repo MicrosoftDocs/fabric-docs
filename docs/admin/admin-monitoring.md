@@ -41,5 +41,6 @@ In the monitoring workspace, you can use the [Feature Usage and Adoption](/power
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+* [Admin overview](admin-overview.md)
+
+* [Feature usage and adoption report](admin-feature-usage-adoption.md)

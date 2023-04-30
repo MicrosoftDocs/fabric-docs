@@ -5,11 +5,13 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 04/23/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Create and manage an eventstream in Microsoft Fabric
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 Event streams feature in Microsoft Fabric is a centralized event data place that allows you to capture, transform, and route real-time event data to various destinations in desired format. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL database, and Lakehouse.
 
@@ -23,7 +25,7 @@ To get started, you must complete the following prerequisites:
 
 Eventstream item can be created in **Workspace** or the **Real-time Analytics experience Homepage** or **Create hub**. Here are the steps to create an Eventstream item. 
 
-1. Change your Power BI experience to **Real-time Analytics** and select **Eventstream** to create a new eventstream in  workspace or homepage or create hub.
+1. Change your Fabric experience to **Real-time Analytics** and select **Eventstream** to create a new eventstream in  workspace or homepage or create hub.
 
    In **Real-time Analytics** homepage, select **Eventstream** tile:
 
@@ -37,7 +39,7 @@ Eventstream item can be created in **Workspace** or the **Real-time Analytics ex
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the eventstream creation in create hub." lightbox="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" :::
 
-2. Enter a name for the new eventstream and select Create.
+2. Enter a name for the new eventstream and select **Create**.
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-naming.png" alt-text="Screenshot showing the eventstream naming." lightbox="./media/create-manage-an-eventstream/eventstream-creation-naming.png" :::
 
