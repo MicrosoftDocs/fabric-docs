@@ -24,8 +24,7 @@ ms.search.form: product-kusto
 1.  Enter *NycTaxiDB* as the database name.
 1.  Select **Create**.
     
-    
-    ![](media/realtime-analytics-tutorial/image9.png)
+    :::image type="content" source="media/create-database/new-database.png" alt-text="Screenshot of creating new KQL database.":::
 
     When provisioning is complete, the KQL database details page will be shown.
 

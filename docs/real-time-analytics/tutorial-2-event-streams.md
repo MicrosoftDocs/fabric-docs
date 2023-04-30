@@ -32,9 +32,6 @@ ms.search.form: product-kusto
 ## Stream data from Eventstream to your KQL database
 
 1.  In the Eventstream authoring area, select **New source** > **Sample data**.
-
-    :::image type="content" source="media/realtime-analytics-tutorial/new-sample-data.png" alt-text="Screenshot of new source - sample data.":::
-
 1.  Enter **nytaxitripsdatasource** as the Source Name, choose **Yellow
     Taxi** from Sample data dropdown.
 1.  Select **Create**.
@@ -66,7 +63,7 @@ ms.search.form: product-kusto
 
 ## Schema mapping
 
-1. The incoming data source is uncompressed, so don't change thee **Compression type**.
+1. The incoming data source is uncompressed, so don't change the **Compression type**.
 1. In the **Data format** dropdown, select **JSON**.
      
     :::image type="content" source="media/realtime-analytics-tutorial/data-format-json.png" alt-text="Screenshot of Schema tab with data format JSON selected.":::
@@ -78,7 +75,7 @@ ms.search.form: product-kusto
 1. Change the following columns to the target types by selecting the **down arrow**> **Change data type**. Verify that the following columns reflect the correct data type:
 
     :::image type="content" source="media/realtime-analytics-tutorial/change-data-type.png" alt-text="Screenshot of changing data type in data preview.":::
-    
+
     | Column name | Target data type|
     |--|--|
     | VendorID | *int* |
@@ -99,7 +96,7 @@ ms.search.form: product-kusto
 
 1. Select **Next: Summary**.
 
- In the **Continuous ingestion from Event Stream established** window, all steps will be marked with green check marks when the data connection is successfully created. The data from Eventstream will begin streaming automatically into your table.
+     In the **Continuous ingestion from Event Stream established** window, all steps will be marked with green check marks when the data connection is successfully created. The data from Eventstream will begin streaming automatically into your table.
 
 ## Next steps
 

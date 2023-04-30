@@ -15,29 +15,13 @@ ms.search.form: product-kusto
 
 ## Clean up resources
 
-You can delete individual reports, eventstreams, KQL databases, KQL
+Once you are finished with the tutorial, you should delete all resources created. You can delete individual reports, eventstreams, KQL databases, KQL
 querysets, and other items or remove the entire workspace.
 
-1.  Select Trident Real-Time Analytics Solution Tutorial in the
-    left-hand navigation menu to return to the workspace artifact view
-
-> ![A screenshot of a phone Description automatically generated with
-> medium
-> confidence](media/realtime-analytics-tutorial/image64.png)
-
-2.  Below the workspace name and description at the top of the workspace
-    header, select Workspace settings.
-
-> ![A picture containing text, font, white, screenshot Description
-> automatically
-> generated](media/realtime-analytics-tutorial/image65.png)
-
-3.  Select **Other \> Delete this workspace**
-
-> ![A screenshot of a computer Description automatically
-> generated](media/realtime-analytics-tutorial/image66.png)
-
-4.  Select **Delete** on the warning.
+1.  Browse to the workspace in which you created the tutorial.
+1.  Below the workspace name and description at the top of the workspace header, select **Workspace settings**.
+1.  Select **Other > Delete this workspace**
+1.  On the warning, select **Delete**. Once a workspace is deleted, it can't be recovered.
 
 ## See also
 
