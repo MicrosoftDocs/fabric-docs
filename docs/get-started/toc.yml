@@ -23,8 +23,10 @@ items:
     href: roles-workspaces.md
   - name: Give users access to workspaces
     href: give-access-workspaces.md
-- name: Discover Fabric content in the OneLake data hub
+- name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
+- name: Endorse items
+  href: endorse-items.md
 - name: Feature 2
   items:
   - name: linktext2
