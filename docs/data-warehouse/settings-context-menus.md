@@ -41,7 +41,7 @@ The following table shows settings for the default Power BI dataset.
 | **Q&A** | Use natural language to ask question on your data. |
 | **Query caching** | Turn on or off caching query results for speeding up reports by using previously saved query results. |
 | **Server settings** | The XMLA connection string of the default dataset. |
-| **Endorsement and discovery** | Endorse default dataset and make it discoverageble in your org. |
+| **Endorsement and discovery** | Endorse default dataset and make it discoverable in your org. |
 
 ## Context menus
 
