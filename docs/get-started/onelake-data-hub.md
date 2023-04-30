@@ -11,45 +11,24 @@ ms.custom:
 
 # Discover Fabric content in the OneLake data hub
 
-The data hub makes it easy to find, explore, and use the data items in your organization, such as datasets and datamarts. It provides information about the items as well as entry points for working with them, such as creating reports on top of them, using them with Analyze in Excel, accessing settings, managing permissions, and more.
-
-:::image type="content" source="./media/onelake-data-hub/data-hub-main-page.png" alt-text="Screenshot of data hub main page.":::
-
-The data hub can be useful in many scenarios:
-* Data item owners can see usage metrics, refresh status, related reports, and lineage to help monitor and manage their data items.
-* Report creators can use the hub to find suitable items to build their reports on and use links to easily create the reports.
-* Report consumers can use hub to find reports based on trustworthy data items.
-
-By making it easy to find quality data items and their related reports, the data hub helps prevent the creation of redundant reports. It also makes it easy to find good reports to use as starting points for creating new reports.
+The OneLake data hub makes it easy to find, explore, and use the data items in your organization. It provides information about the items as well as entry points for working with them, such as accessing settings, managing permissions, and more. To explore more details about an item and its related items, you select an item to open its details page.
 
 This article explains what you see on the data hub and describes how to use it.
 
+:::image type="content" source="./media/onelake-data-hub/data-hub-main-page.png" alt-text="Screenshot of data hub main page.":::
+
 ## What data items do I see in the data hub?
 
-# [Datasets](#tab/datasets)
-
-* Datasets that you have at least [build permission](service-datasets-build-permissions.md) for.
-* Datasets that you have [read-only permission](#read-only-permission-for-datasets) for. With read-only permission you have limited access to dataset info and capabilities. You can [request build permission](#read-only-permission-for-datasets) for more complete access to the dataset. 
-* Datasets that have been made [discoverable](../collaborate-share/service-discovery.md) for you. Discoverable datasets appear grayed out. While you can find them, you need to [request access](#discoverable-datasets) in order to be able to access dataset info and capabilities.
-
-# [Datamarts](#tab/datamarts)
-
-* Datamarts that you have at least [build permission](service-datasets-build-permissions.md) for. This means datamarts that have been shared with you or that are located in workspaces where you have an Admin, Member, or Contributor role.
-
----
-
-For a data item to show up in the datasets hub, it must be located in a [workspace that you have access to](../collaborate-share/service-new-workspaces.md).
-
-If you're a free user, see [Users with free licenses](#users-with-free-licenses) for details about viewing data items and using the capabilities available on the data hub.
+For a data item to show up in the data hub, it must be located in a [workspace that you have access to](../collaborate-share/service-new-workspaces.md).
 
 >[!NOTE]
 > To be fully functional, the data hub requires that the [Use datasets across workspaces](../admin/service-admin-portal-workspace.md#use-datasets-across-workspaces) admin setting be enabled. If this setting is not enabled, you won't be able to access the data items you see listed in the data hub unless the item is in your *My Workspace* or you have an Admin, Member, or Contributor role in the workspace where the item is located.
 
 ## Find the data you need
 
-The dataset discovery experience starts on the data hub. To get to the data hub:
-* In the Power BI service: Select **Data hub** in the navigation pane.
-* In the Power BI app in Teams: Select either the **Data hub** tab or **Data hub** in the navigation pane.
+The data discovery experience starts on the OneLake data hub. To get to the data hub:
+
+* In Fabric: Select **OneLake Data hub** in the navigation pane.
 
 The data hub has two sections:
 * Recommended data items
@@ -70,10 +49,7 @@ Recommended data items are data items that have been certified or promoted by so
 ![Screenshot of the data items list on the data hub.](media/onelake-data-hub/data-items-list.png)
 
 1. Open the data item's details page.
-1. A grayed-out icon indicates that you don't have permissions to access that data item's details page. Data items with grayed-out icons only show up for you in the list if [data discoverability](../collaborate-share/service-discovery.md) is enabled for you.
-1. Request access.
 1. Open the actions menu.
-1. Refresh the data item.
 1. Hover to view the data item's description. 
 
 The list has three tabs to filter the list of data items.
