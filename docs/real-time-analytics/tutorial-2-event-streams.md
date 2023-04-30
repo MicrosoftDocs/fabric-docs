@@ -15,6 +15,7 @@ ms.search.form: product-kusto
 > 
 >[!div class="nextstepaction"]
 > [Tutorial part 1: Create resources](tutorial-1-resources.md)
+>
 
 ## Create an Eventstream
 
