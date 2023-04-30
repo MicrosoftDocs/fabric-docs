@@ -33,7 +33,7 @@ This OData connector supports the following authentication types for copy and Da
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../placeholder.md).
+- A tenant account with an active subscription. Create an account for free.
 
 - A workspace is created that isn't the default **My Workspace**.
 

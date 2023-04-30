@@ -45,7 +45,7 @@ By default, your pool uses **Memory Optimized** machines. This is the most commo
 
 ## Runtime version
 
-You may choose which version of Spark you’d like to use for the workspace. The only version of Spark that is currently available for use is Spark 3.2. You'll have additional options in the future.
+You may choose which version of Spark you’d like to use for the workspace. The only version of Spark that is currently available for use is Spark 3.3. 
 
 :::image type="content" source="media\spark-workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\spark-workspace-admin-settings\runtime-version.png":::
 
