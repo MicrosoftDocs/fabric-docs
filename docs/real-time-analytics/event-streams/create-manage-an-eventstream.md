@@ -43,7 +43,7 @@ Eventstream item can be created in **Workspace** or the **Real-time Analytics ex
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-naming.png" alt-text="Screenshot showing the eventstream naming." lightbox="./media/create-manage-an-eventstream/eventstream-creation-naming.png" :::
 
-3. Wait for a few seconds to create a new eventstream in your workspace. Once it’s done, you're directed to the main editor in which you can add sources and destinations to your eventstream.
+3. Wait for a few seconds to create a new eventstream in your workspace. Once it’s done, you're directed to the main editor in which you can add sources and destinations to your eventstream. See the [Main editor](#main-editor-for-microsoft-fabric-even) section for details about the main editor. 
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-completed.png" alt-text="Screenshot showing the eventstream creation completed." lightbox="./media/create-manage-an-eventstream/eventstream-creation-completed.png" :::
 

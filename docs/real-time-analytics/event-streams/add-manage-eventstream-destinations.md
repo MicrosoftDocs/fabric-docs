@@ -13,7 +13,7 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-Once you have created an eventstream, you can route data to different destinations. The types of data destinations that can be added to your eventstream include KQL Database, Lakehouse and Custom App.
+Once you have created an eventstream, you can route data to different destinations. The types of data destinations that can be added to your eventstream include KQL Database, Lakehouse and Custom App. See the [Supported destinations](#supported-destinations) section for details about these destinations.
 
 ## Prerequisites
 
@@ -95,7 +95,7 @@ Once the custom app is created successfully, you can view the information such a
 
 **Edit/remove**: You can edit or remove an eventstream destination either through the navigation pane or canvas.
 
-After selecting **Edit**, the edit pane will be open in the right of the main editor. You can modify the configuration as you wish, including the event transformation logic through the event processor editor.
+When you select **Edit**, the edit pane opens in the right of the main editor. You can modify the configuration as you wish, including the event transformation logic through the event processor editor.
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing destination modification and deletion." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
 
@@ -107,7 +107,7 @@ With the eventstream destinations, you can route their real-time events to a cus
 
 The following destinations are currently available.
 
-## Custom application
+### Custom application
 
 With this destination, you can easily route your real-time events to a custom application. With this option, a consumer group is created, allowing custom applications to connect to your eventstream and consume the event data in real-time. It's useful for applications outside of Microsoft Fabric that need to consume the event data to respond to events as they occur. 
 
@@ -115,7 +115,7 @@ With this destination, you can easily route your real-time events to a custom ap
 
 :::image type="content" source="./media/event-streams-destination/eventstream-destinations-custom-app.png" alt-text="Screenshot showing the custom app destination type." lightbox="./media/event-streams-destination/eventstream-destinations-custom-app.png" :::
 
-## KQL Database 
+### KQL Database 
 
 This destination provides a direct ingestion of your real-time event data into a KQL database, allowing for seamless querying of the data once it has been successfully loaded. With the data in the KQL database, you can then perform more queries and analysis to gain deeper insights into your event data. 
 
@@ -136,7 +136,7 @@ This destination provides a direct ingestion of your real-time event data into a
 
 Upon completion of the wizard, real-time event data begin ingesting into the selected KQL table.
 
-## Lakehouse
+### Lakehouse
 
 This destination provides you with the ability to transform your real-time events prior to ingestion into your lakehouse. Real-time events are converted into Delta Lake format and then stored in the designated lakehouse tables. It helps with your data warehousing scenario. 
 

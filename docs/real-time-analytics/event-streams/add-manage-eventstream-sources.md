@@ -13,13 +13,13 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-Once you have created an eventstream, you can connect it to various data sources and destinations. The types of event sources that can be added to your eventstream include Azure Event Hubs, Sample data and Custom app. 
+Once you have created an eventstream, you can connect it to various data sources and destinations. The types of event sources that can be added to your eventstream include Azure Event Hubs, Sample data and Custom app. See the [#supported-event-sources](Supported event sources) section for details about these event sources. 
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream item is located in.
-- For Azure Event Hubs source, an Azure event hub with event data inside exists and appropriate permission available to access the policy keys.
+- For Azure Event Hubs source, an Azure event hub with event data and appropriate permission available to access the policy keys.
 
 ## Add an Azure event hub as a source
 
@@ -31,12 +31,12 @@ If you have an Azure event hub created with event data there, do the following s
 
    :::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-event-hub.png" :::
 
-3. If you don’t have a cloud connection, select **Create new connection** to create one. To create a new connection, fill in the information of your Azure event hub on the **New connection** blade.
+3. If you don’t have a cloud connection, select **Create new connection** to create one. To create a new connection, fill in the information of your Azure event hub on the **New connection** page.
 
    :::image type="content" source="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" :::
 
    - **Connection name**: Enter a name for the cloud connection. 
-   - **Connection type**: Default value is **EventHub**. 
+   - **Connection type**: Default value is `EventHub`. 
    - **Event Hub namespace**: Enter the name of your Azure event hub namespace. 
    - **Authentication username and password**: Go to your Azure event hub and create a policy under **Share access policies**. Then use **policy name** and **primary key** as the username and password. 
    
@@ -91,11 +91,11 @@ If you want to connect your own application with an eventstream, you can add a c
 
 ## Manage source
 
-- **Edit/remove**: You can select an eventstream source to edit or remove either through the navigation pane or canvas. After selecting **Edit**, the edit pane will be open in the right of the main editor. 
+- **Edit/remove**: You can select an eventstream source to edit or remove either through the navigation pane or canvas. When you select **Edit**, the edit pane opens in the right of the main editor. 
 
    :::image type="content" source="./media/add-manage-eventstream-sources/source-modification-deletion.png" alt-text="Screenshot showing the source modification and deletion." lightbox="./media/add-manage-eventstream-sources/source-modification-deletion.png" :::
 
-- **Regenerate key for a custom app**: If you want to regenerate a new connection key for your application, select one of your custom app sources on the canvas and select regenerate button to get a new connection key.
+- **Regenerate key for a custom app**: If you want to regenerate a new connection key for your application, select one of your custom app sources on the canvas and select **Regenerate** to get a new connection key.
 
    :::image type="content" source="./media/add-manage-eventstream-sources/regenerate-key-in-custom-app.png" alt-text="Screenshot showing how to regenerate a key." lightbox="./media/add-manage-eventstream-sources/regenerate-key-in-custom-app.png" :::
 
@@ -107,7 +107,7 @@ By utilizing the eventstream sources, users can seamlessly incorporate their rea
 
 The following sources are currently available.
 
-## Azure Event Hubs
+### Azure Event Hubs
 
 If you already have Azure event hub set up in Azure, you can utilize that event hub to ingest real-time data into Microsoft Fabric via event streams feature.
 
@@ -118,7 +118,7 @@ If you already have Azure event hub set up in Azure, you can utilize that event 
 
 :::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-event-hub.png" :::
 
-## Sample data
+### Sample data
 
 By utilizing the sample data source (Yellow Taxi or Stock Market events), you can effortlessly test your configuration without the need for writing any code, as the sample data is pushed directly into your eventstream.
 
@@ -127,7 +127,7 @@ By utilizing the sample data source (Yellow Taxi or Stock Market events), you ca
  
 :::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration." lightbox="./media/event-streams-source/eventstream-sources-sample-data.png" :::
 
-## Custom application
+### Custom application
 
 Custom application enables a streaming endpoint where you can point your existing event hubs or Kafka clients to your eventstream in Microsoft Fabric without needing any code changes. 
 

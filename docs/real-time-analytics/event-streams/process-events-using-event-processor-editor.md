@@ -24,7 +24,8 @@ To get started, you must complete the following prerequisites:
 
 ## Design the event processing with the editor 
 
-Following the steps to open the event processor editor and use it to design your event processing:
+Following the steps to open the event processor editor and use it to design your event processing. 
+
 1. Create a **Lakehouse** destination and input the necessary parameters in the right pane. 
 2. Select **Open event processor** to open the event processor editor in the right pane.
 
@@ -64,8 +65,6 @@ Following the steps to open the event processor editor and use it to design your
 Event processor enables you to transform the data that is being ingested into the destination. It's available for the Lakehouse type of destination. When you configure your Lakehouse destination, you can find the “Event processing” section in the middle of the right panel. From there, you can open the event processor editor to define your data transformation logic with drag and drop experience.
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-entrypoint.png" alt-text="Screenshot showing the entrypoint of the event processor editor." lightbox="./media/event-processor-editor/event-processor-editor-entrypoint.png" :::
-
-## Event processor editor overview
 
 The event processor editor provides a canvas and bottom pane to enable you to: 
 
