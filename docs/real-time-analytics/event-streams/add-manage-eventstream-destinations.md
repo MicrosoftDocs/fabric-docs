@@ -9,18 +9,19 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Add and manage an event destination in Eventstream item
+# Add and manage a destination in an eventstream
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-Once you have created an eventstream, you can route data to different destinations. The types of data destinations that can be added to your eventstream include KQL Database, Lakehouse and Custom App. See the [Supported destinations](#supported-destinations) section for details about these destinations.
+Once you have created an eventstream, you can route data to different destinations. The types of destinations that you can add to your eventstream are KQL Database, Lakehouse and Custom App. See the [Supported destinations](#supported-destinations) section for details about these destinations.
 
 ## Prerequisites
 
 To get started, complete the following prerequisites:
-- Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream item is located in.
-- For KQL database destination, get access to a **premium workspace** with **Contributor** or above permissions where your KQL database is located in.
-- For Lakehouse destination, get access to a **premium workspace** with **Contributor**  or above permissions where your lakehouse is located in.
+
+- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located in.
+- For KQL database destination, get access to a **premium workspace** with **Contributor** or above permissions where your KQL database is located.
+- For Lakehouse destination, get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse is located.
 
 ## Add a KQL database as a destination
 
@@ -160,8 +161,6 @@ The **Event processor editor** will be popping up after clicking **Open event pr
 
 - **Data preview** – It shows a live preview of data coming in the selected node in the bottom pane. You can pause/resume the preview. You can also see the details of a specific record, a cell in the table, by selecting it and then selecting Show/Hide details.  
 
-
-To learn more about the event processor editor, see [Event processor editor](./event-processor-editor.md).
 
 To learn more about how to use the event processor editor define your data transformation logic, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md).
 
