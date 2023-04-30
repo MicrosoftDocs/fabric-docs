@@ -1,5 +1,5 @@
 ---
-title: "Real-Time Analytics tutorial part 4: Enrich your data"
+title: "Synapse Real-Time Analytics tutorial part 4: Enrich your data"
 description: Part 4 of the Real-Time Analytics tutorial in Microsoft Fabric
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -13,7 +13,7 @@ ms.search.form: product-kusto
 This tutorial is part of a series. For the previous section, see:
 
 > [!div class="nextstepaction"]
-> [Real-Time Analytics tutorial part 3: Explore data and build report](tutorial-3-explore.md)
+> [Tutorial part 3: Explore data and build report](tutorial-3-explore.md)
 
 ## Get dimension data from Blob Storage
 

@@ -1,5 +1,5 @@
 ---
-title: "Real-Time Analytics tutorial part 6: Build a Power BI report"
+title: "Synapse Real-Time Analytics tutorial part 6: Build a Power BI report"
 description: Part 4 of the Real-Time Analytics tutorial in Microsoft Fabric
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -87,4 +87,4 @@ visuals that represent findings and insights from that dataset.
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Real-Time Analytics tutorial part 7: Clean up resources](tutorial-7-clean-up-resources.md)
+> [Synapse Real-Time Analytics tutorial part 7: Clean up resources](tutorial-7-clean-up-resources.md)

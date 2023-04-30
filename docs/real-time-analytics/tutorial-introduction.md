@@ -9,7 +9,7 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Synapse Real-Time Analytics Tutorial- Introduction
+# Real-Time Analytics Tutorial- Introduction
 
 Real-Time Analytics is a portfolio of capabilities that provides an
 end-to-end analytics streaming solution across Trident experiences. It

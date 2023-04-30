@@ -1,5 +1,5 @@
 ---
-title: "Real-Time Analytics tutorial part 1: Create resources"
+title: "Synapse Real-Time Analytics tutorial part 1: Create resources"
 description: Part 1 of the Real-Time Analytics tutorial in Microsoft Fabric
 ms.reviewer: tzgitlin
 ms.author: yaschust

@@ -1,5 +1,5 @@
 ---
-title: "Real-Time Analytics tutorial part 5: Explore your enriched data"
+title: "Synapse Real-Time Analytics tutorial part 5: Explore your enriched data"
 description: Part 4 of the Real-Time Analytics tutorial in Microsoft Fabric
 ms.reviewer: tzgitlin
 ms.author: yaschust

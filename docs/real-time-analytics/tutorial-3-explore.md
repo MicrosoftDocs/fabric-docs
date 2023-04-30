@@ -1,5 +1,5 @@
 ---
-title: "Real-Time Analytics tutorial part 3: Explore data and build report"
+title: "Synapse Real-Time Analytics tutorial part 3: Explore data and build report"
 description: Part 3 of the Real-Time Analytics tutorial in Microsoft Fabric
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -13,7 +13,7 @@ ms.search.form: product-kusto
 This tutorial is part of a series. For the previous section, see:
 
 > [!div class="nextstepaction"]
-> [Real-Time Analytics tutorial part 2: Get data with Event streams](tutorial-2-event-streams.md)
+> [Tutorial part 2: Get data with Event streams](tutorial-2-event-streams.md)
 
 ## Explore data and build Power BI report
 

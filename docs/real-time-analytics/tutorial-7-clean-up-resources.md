@@ -1,5 +1,5 @@
 ---
-title: "Real-Time Analytics tutorial part 7: Clean up resources"
+title: "Synapse Real-Time Analytics tutorial part 7: Clean up resources"
 description: Part 7 of the Real-Time Analytics tutorial in Microsoft Fabric
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -13,7 +13,7 @@ ms.search.form: product-kusto
 This tutorial is part of a series. For the previous section, see:
 
 > [!div class="nextstepaction"]
-> [Tutorial part 4: Enrich your data](tutorial-4-enrich-data.md)
+> [Tutorial part 6: Build a Power BI report](tutorial-6-build-report.md)
 
 ## Clean up resources
 
