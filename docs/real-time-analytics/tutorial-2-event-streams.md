@@ -10,7 +10,6 @@ ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 2: Get data with Event streams
 
-> [!NOTE]
 > This tutorial is part of a series. For the previous section, see:
 > 
 >[!div class="nextstepaction"]
@@ -66,7 +65,6 @@ ms.search.form: product-kusto
 > ![A screenshot of a computer Description automatically
 > generated](media/realtime-analytics-tutorial/image21.png)
 
-
 8.  Select **Next: Source**.
 
 9.  In the **Source** tab, keep the default values, select **Next:
@@ -119,7 +117,6 @@ c.  As shown in the previous step, choose datatype as **real** for the
 ![A screenshot of a computer Description automatically generated with
 low
 confidence](media/realtime-analytics-tutorial/image30.png)
-
 
 ## Next steps
 

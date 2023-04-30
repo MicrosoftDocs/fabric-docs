@@ -15,7 +15,6 @@ This tutorial is part of a series. For the previous section, see:
 > [!div class="nextstepaction"]
 > [Introduction to the Real-Time Analytics tutorial](tutorial-introduction.md)
 
-
 ## Create a KQL database
 
 1. Browse to the workspace in which you want to create your database.

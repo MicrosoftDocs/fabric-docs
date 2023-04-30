@@ -17,8 +17,6 @@ This tutorial is part of a series. For the previous section, see:
 
 ## Clean up resources
 
-[]{#_Toc132650974 .anchor}Module 4: Clean up resources
-
 You can delete individual reports, eventstreams, KQL databases, KQL
 querysets, and other items or remove the entire workspace.
 
@@ -42,3 +40,8 @@ querysets, and other items or remove the entire workspace.
 > generated](media/realtime-analytics-tutorial/image66.png)
 
 4.  Select **Delete** on the warning.
+
+## See also
+
+* [What is Real-Time Analytics in Fabric?](overview.md)
+* [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)

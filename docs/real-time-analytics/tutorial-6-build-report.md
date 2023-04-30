@@ -1,6 +1,6 @@
 ---
 title: "Synapse Real-Time Analytics tutorial part 6: Build a Power BI report"
-description: Part 4 of the Real-Time Analytics tutorial in Microsoft Fabric
+description: Part 6 of the Real-Time Analytics tutorial in Microsoft Fabric
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -13,7 +13,7 @@ ms.search.form: product-kusto
 This tutorial is part of a series. For the previous section, see:
 
 > [!div class="nextstepaction"]
-> [Tutorial part 5: Explore your enriched data](tutorial-5-explore-enriched-data.md)
+> [Tutorial part 5: Explore the enriched data](tutorial-5-explore-enriched-data.md)
 
 ## Build Power BI report
 

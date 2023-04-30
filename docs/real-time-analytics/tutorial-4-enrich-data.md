@@ -134,8 +134,7 @@ capabilities of Kusto Query language to query your telemetry data.
     open your **KQL Queryset** with the queries that you wrote in the
     query editor.
 
-
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial part 5: Explore your enriched data](tutorial-5-explore-enriched-data.md)
+> [Tutorial part 5: Explore the enriched data](tutorial-5-explore-enriched-data.md)

@@ -83,9 +83,6 @@ With this tutorial, you have now built an auto-refreshing Power BI
 report that is querying streaming data arriving in KQL Database from
 Eventstream.
 
-[]{#_Toc132650968 .anchor}Module 3: Extending the Real-Time Analytics
-solution
-
 ## Next steps
 
 > [!div class="nextstepaction"]

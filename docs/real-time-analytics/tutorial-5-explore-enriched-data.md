@@ -1,6 +1,6 @@
 ---
-title: "Synapse Real-Time Analytics tutorial part 5: Explore your enriched data"
-description: Part 4 of the Real-Time Analytics tutorial in Microsoft Fabric
+title: "Synapse Real-Time Analytics tutorial part 5: Explore the enriched data"
+description: Part 5 of the Real-Time Analytics tutorial in Microsoft Fabric
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-# Real-Time Analytics tutorial part 5: Explore your enriched data
+# Real-Time Analytics tutorial part 5: Explore the enriched data
 
 This tutorial is part of a series. For the previous section, see:
 
 > [!div class="nextstepaction"]
 > [Tutorial part 4: Enrich your data](tutorial-4-enrich-data.md)
 
-## Explore data further in the KQL Queryset
+## Explore data further in a KQL queryset
 
 In this module, you are going to write queries using [Kusto Query
 Language](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/)
