@@ -10,10 +10,8 @@ ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 1: Create resources
 
-This tutorial is part of a series. For the previous section, see:
-
-> [!div class="nextstepaction"]
-> [Introduction to the Real-Time Analytics tutorial](tutorial-introduction.md)
+> [!NOTE]
+> This tutorial is part of a series. For the previous section, see: [Introduction to the Real-Time Analytics tutorial](tutorial-introduction.md)
 
 ## Create a KQL database
 
@@ -25,6 +23,7 @@ This tutorial is part of a series. For the previous section, see:
 1.  In the upper left corner, select **+ New \> KQL Database** 
 1.  Enter *NycTaxiDB* as the database name.
 1.  Select **Create**.
+    
     
     ![](media/realtime-analytics-tutorial/image9.png)
 

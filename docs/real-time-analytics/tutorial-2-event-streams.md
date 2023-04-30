@@ -10,10 +10,8 @@ ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 2: Get data with Event streams
 
- This tutorial is part of a series. For the previous section, see:
- 
->[!div class="nextstepaction"]
-> [Tutorial part 1: Create resources](tutorial-1-resources.md)
+> [!NOTE]
+> This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md)
 
 ## Create an Eventstream
 

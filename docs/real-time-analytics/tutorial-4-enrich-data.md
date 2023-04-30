@@ -10,10 +10,8 @@ ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 4: Enrich your data
 
-This tutorial is part of a series. For the previous section, see:
-
-> [!div class="nextstepaction"]
-> [Tutorial part 3: Explore data and build report](tutorial-3-explore.md)
+> [!NOTE]
+> This tutorial is part of a series. For the previous section, see:   [Tutorial part 3: Explore data and build report](tutorial-3-explore.md)
 
 ## Get dimension data from Blob Storage
 

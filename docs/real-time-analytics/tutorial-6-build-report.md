@@ -10,10 +10,8 @@ ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 6: Build a Power BI report
 
-This tutorial is part of a series. For the previous section, see:
-
-> [!div class="nextstepaction"]
-> [Tutorial part 5: Explore the enriched data](tutorial-5-explore-enriched-data.md)
+> [!NOTE]
+> This tutorial is part of a series. For the previous section, see:  [Tutorial part 5: Explore the enriched data](tutorial-5-explore-enriched-data.md)
 
 ## Build Power BI report
 

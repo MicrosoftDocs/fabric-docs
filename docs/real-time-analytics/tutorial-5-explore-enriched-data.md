@@ -10,10 +10,8 @@ ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 5: Explore the enriched data
 
-This tutorial is part of a series. For the previous section, see:
-
-> [!div class="nextstepaction"]
-> [Tutorial part 4: Enrich your data](tutorial-4-enrich-data.md)
+> [!NOTE]
+> This tutorial is part of a series. For the previous section, see:   [Tutorial part 4: Enrich your data](tutorial-4-enrich-data.md)
 
 ## Explore data further in a KQL queryset
 

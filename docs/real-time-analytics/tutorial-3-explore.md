@@ -10,10 +10,8 @@ ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 3: Explore data and build report
 
-This tutorial is part of a series. For the previous section, see:
-
-> [!div class="nextstepaction"]
-> [Tutorial part 2: Get data with Event streams](tutorial-2-event-streams.md)
+> [!NOTE]
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data with Event streams](tutorial-2-event-streams.md)
 
 ## Explore data and build Power BI report
 

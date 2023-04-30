@@ -10,10 +10,8 @@ ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 7: Clean up resources
 
-This tutorial is part of a series. For the previous section, see:
-
-> [!div class="nextstepaction"]
-> [Tutorial part 6: Build a Power BI report](tutorial-6-build-report.md)
+> [!NOTE]
+> This tutorial is part of a series. For the previous section, see:  [Tutorial part 6: Build a Power BI report](tutorial-6-build-report.md)
 
 ## Clean up resources
 
