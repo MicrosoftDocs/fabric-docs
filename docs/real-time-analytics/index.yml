@@ -25,6 +25,8 @@ landingContent:
         links:
           - text: What is Real-time Analytics?
             url: overview.md
+          - text: Introduction to event streams
+            url: event-streams/overview.md
           - text: End-to-end tutorial
             url: realtime-analytics-tutorial.md
 
@@ -37,6 +39,8 @@ landingContent:
             url: create-database.md
           - text: Create a table
             url: create-empty-table.md
+          - text: Create and manage event streams
+            url: create-manage-an-eventstream.md
 
 # Card 
   - title: Load data
@@ -49,6 +53,8 @@ landingContent:
           url: get-data-event-hub.md
         - text: Get data from OneLake
           url: get-data-onelake.md
+        - text: Stream events from Event Hubs into Fabric
+          url: event-streams/bring-events-to-fabric-from-event-hub.md        
       
   # Card 
   - title: Query data
@@ -74,32 +80,3 @@ landingContent:
           - text: "Training module: Multi-table queries using Kusto Query Language"
             url: /training/modules/multi-table-queries-with-kusto-query-language/
 
-  # Card 
-  - title: Event streams
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Introduction to event streams
-            url: event-streams/overview.md
-      - linkListType: tutorial
-        links:
-          - text: Stream events from Event Hubs into Fabric
-            url: event-streams/bring-events-to-fabric-from-event-hub.md
-      - linkListType: concept
-        links:
-          - text: Main editor
-            url: event-streams/main-editor.md
-          - text: Sources
-            url: event-streams/event-streams-source.md
-          - text: Destinations
-            url: event-streams/event-streams-destination.md
-          - text: Processor editor
-            url: event-streams/event-processor-editor.md          
-      - linkListType: how-to-guide
-        links: 
-        - text: Process events with event processor
-          url: event-streams/process-events-using-event-processor-editor.md
-        - text: Preview data
-          url: event-streams/preview-data.md
-        - text: Monitor event streams
-          url: event-streams/monitor.md

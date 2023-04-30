@@ -31,6 +31,4 @@ Multiple destinations, such as **Lakehouse**, **KQL database**, **Custom App**, 
 
 
 ## Next steps
-
-- [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
-- [Event streams main editor - Microsoft Fabric](./main-editor.md)
+See [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)

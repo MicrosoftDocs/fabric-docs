@@ -86,5 +86,4 @@ Use the Union transformation to connect two or more nodes to add events that
 ## Next steps
 
 - [Process event data with event processor editor](./process-events-using-event-processor-editor.md)
-- [Event streams destination](./event-streams-destination.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)

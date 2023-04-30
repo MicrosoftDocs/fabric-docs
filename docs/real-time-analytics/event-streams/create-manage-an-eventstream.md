@@ -60,6 +60,20 @@ After you create an Eventstream item, you can edit and manage your eventstream i
 :::image type="content" source="./media/create-manage-an-eventstream/eventstream-management.png" alt-text="Screenshot showing the eventstream management." lightbox="./media/create-manage-an-eventstream/eventstream-management.png" :::
 
 
+## Main editor for Microsoft Fabric event streams
+Microsoft Fabric event streams feature provides a main editor – a canvas that allows you to connect to event data sources and destinations with a few clicks. Each tile (node) in the canvas represents a source, or a destination or the eventstream itself. From there, you can preview the event data, monitor the data insights with metrics, check logs for each of these tiles (nodes). 
+
+The following screenshot shows an eventstream with its source and destination configured. 
+
+:::image type="content" source="./media/main-editor/eventstream-main-editor.png" alt-text="Screenshot showing an Eventstream item overview." lightbox="./media/main-editor/eventstream-main-editor.png" :::
+
+1. **Ribbon**: It provides the source and destination options for you to choose. 
+2. **Data navigation pane**: It provides the navigation of the sources and destinations. 
+3. **Canvas and diagram view**: It provides graphical representation of the whole topology from the sources to the destinations. Each source or destination is visualized as a tile (node) in the canvas. 
+4. **Configuration and modification pane**: It's the place used to configure or modify a specific source or destination.  
+5. **Bottom pane for Information, Data preview, Data Insights, and Runtime logs**: For each tile (node), the data preview  shows you data inside the selected tile (node). This section also summarizes runtime logs where the runtime logs exist in certain source or destination. It also provides metrics for you to monitor the data insights for certain source or destination, like the input events, output events, incoming messages, outgoing messages, etc. 
+
+
 ## Next steps
 
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)

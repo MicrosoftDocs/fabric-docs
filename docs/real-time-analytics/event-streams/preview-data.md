@@ -55,5 +55,4 @@ To get the previewed event data updated, select the **Refresh** button in the to
 
 ## Next steps
 
-- [Main editor for Microsoft Fabric event streams](main-editor.md)
-- [Monitoring status and performance of an Eventstream item](monitor.md)
+See [Monitoring status and performance of an Eventstream item](monitor.md)

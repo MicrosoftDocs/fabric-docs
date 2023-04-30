@@ -88,5 +88,4 @@ Following the steps to view the runtime logs for Azure Event Hubs source or Lake
 
 ## Next steps
 
-- [Main editor for Microsoft Fabric event streams](./main-editor.md)
 - [Preview data in an Eventstream item](./preview-data.md)
