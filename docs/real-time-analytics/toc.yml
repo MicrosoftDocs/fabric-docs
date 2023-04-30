@@ -16,6 +16,16 @@ items:
     href: tutorial-1-resources.md
   - name: 2- Get data with Event streams
     href: tutorial-2-event-streams.md
+  - name: 3- Explore data and build report
+    href: tutorial-3-explore.md
+  - name: 4- Enrich data
+    href: tutorial-4-enrich-data.md
+  - name: 5- Explore your enriched data
+    href: tutorial-5-explore-enriched-data.md
+  - name: 6- Build a Power BI report
+    href: tutorial-6-build-report.md
+  - name: 7- Clean up resources
+    href: tutorial-7-clean-up-resources.md
 - name: Create entities
   items:
   - name: Databases
