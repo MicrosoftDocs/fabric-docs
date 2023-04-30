@@ -18,7 +18,7 @@ You can manage your data in the following ways:
 * Modify [Data retention policy](#data-retention-policy)
 * Activate [Data copy to OneLake](#data-copy-to-onelake)
 * Create [Stored functions](#stored-functions)
-* Create [Materialized views](#materialized-view)
+* Create [Materialized views](#materialized-views)
 
 ## Data retention policy
 
@@ -36,7 +36,7 @@ This feature allows you to create or alter an existing function using the `.crea
 
 For more information, see [Create stored functions](create-functions.md)
 
-## Materialized View
+## Materialized views
 
 A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. You can create materialized views using the `.create materialized-view` command.
 
