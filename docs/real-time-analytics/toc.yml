@@ -18,7 +18,7 @@ items:
     items:
     - name: Create a database
       href: create-database.md
-    - name: Database management
+    - name: Data management
       href: database-management.md
     - name: One logical copy
       href: onelake-mirroring.md

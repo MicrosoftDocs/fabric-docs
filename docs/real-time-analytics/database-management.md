@@ -1,24 +1,49 @@
 ---
-title: Database management in Real-time Analytics
+title: Data management in Real-Time Analytics
 description: Learn how to manage your KQL Database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
-ms.topic: how-to
-ms.date: 04/27/2023
+ms.topic: conceptual
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Database management
+# Data management
 
-To manage your data, select **Manage** on the **home** tab of your database. And then, select **Data retention policy** to modify it.
+Real-Time Analytics offers a range of options for managing your data.
+
+You can manage your data in the following ways:
+
+* Modify [Data retention policy](#data-retention-policy)
+* Activate [Data copy to OneLake](#data-copy-to-onelake)
+* Create [Stored functions](stored-functions)
+* Create [Materialized views](#materialized-view)
 
 ## Data retention policy
 
-To change the data retention policy, enter a time period and select **Done**. By default, your data is stored for 36,500 days.
+To change the data retention policy, select **Manage** on the **Home** tab of your database. And then, select **Data retention policy** to modify it. Then, enter a time period and select **Done**. By default, your data is stored for 36,500 days.
 
 For more information, see [Retention policy](/azure/data-explorer/kusto/management/retentionpolicy?context=/fabric/context/context).  
 
+## Data copy to OneLake
+
+To expose the data in your KQL database to all of [!INCLUDE [product-name](../includes/product-name.md)]'s experiences, activate data copy and create a OneLake shortcut. For more information, see [One logical copy](onelake-mirroring.md).
+
+## Stored functions
+
+This feature allows you to create or alter an existing function using the `.create-or-alter` `function` command, which stores it in the database metadata. If the function with the provided *functionName* doesn't exist in the database metadata, the command creates a new function. Otherwise, the named function will be changed.
+
+For more information, see [Create stored functions](create-functions.md)
+
+## Materialized View
+
+A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. You can create materialized views using the `.create materialized-view` command.
+
+For more information, see [Create materialized views](materialized-view.md)
+
 ## Next steps
 
-[Create an empty table](create-empty-table.md)
+* [Create a database](create-database.md)
+* [Get data from a blob](get-data-blob.md)
+* [Query data in the KQL Queryset](kusto-query-set.md)
