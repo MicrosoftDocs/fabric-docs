@@ -21,7 +21,8 @@ The Transact-SQL language offers options you can use to load data at scale from 
 
 The **CREATE TABLE AS SELECT (CTAS)** statement allows you to create a new table in your warehouse from the output of a `SELECT` statement. It runs the ingestion operation into the new table in parallel, making it highly efficient for data transformation and creation of new tables in your workspace.
 
->[!NOTE] The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Synapse Data Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
+> [!NOTE] 
+> The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Synapse Data Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
 
 The first example illustrates how to create a new table that is a copy of the existing `[dbo].[bing_covid-19_data_2023]` table, but filtered to data from the year 2023 only:
 

@@ -17,7 +17,7 @@ ms.search.form: Ingesting data
 
 The COPY statement is the primary way to ingest data into [!INCLUDE [product-name](../includes/product-name.md)] warehouse tables. It performs high high-throughput data ingestion from an external Azure storage account, with the flexibility to configure source file format options, a location to store rejected rows, skipping header rows, and other options. 
 
-This tutorial shows data ingestion examples for a [!INCLUDE [product-name](../includes/product-name.md)] warehouse table using the T-SQL COPY statement. It uses the Bing COVID-19 sample data from the Azure Open Datasets. For details about this dataset, including its schema and usage rights, see [Bing COVID-19](https://learn.microsoft.com/azure/open-datasets/dataset-bing-covid-19?tabs=azure-storage).
+This tutorial shows data ingestion examples for a [!INCLUDE [product-name](../includes/product-name.md)] warehouse table using the T-SQL COPY statement. It uses the Bing COVID-19 sample data from the Azure Open Datasets. For details about this dataset, including its schema and usage rights, see [Bing COVID-19](/azure/open-datasets/dataset-bing-covid-19?tabs=azure-storage).
 
 > [!NOTE]
 > To learn more about the T-SQL COPY statement including more examples and the full syntax, see [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
