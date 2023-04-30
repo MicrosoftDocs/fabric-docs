@@ -10,8 +10,12 @@ items:
 
 - name: Get started
   items:
-  - name: Real-Time Analytics happy path
-    href: tutorial.md
+  - name: Tutorial - Introduction
+    href: tutorial-introduction.md
+  - name: 1- Create resources
+    href: tutorial-1-resources.md
+  - name: 2- Get data with Event streams
+    href: tutorial-2-event-streams.md
 - name: Create entities
   items:
   - name: Databases
