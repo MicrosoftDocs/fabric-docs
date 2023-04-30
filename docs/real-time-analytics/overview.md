@@ -51,7 +51,7 @@ The main items available in Real-Time Analytics include:
 * A [KQL Database](create-database.md) for data storage and management. Data loaded into a KQL Database is automatically reflected in OneLake, and is available to other workloads.
 * A [KQL Queryset](kusto-query-set.md) to run queries, view, and manipulate query results on data. The KQL Queryset allows you to save queries for future use, or export and share queries with others.
 
-See how these items work together in the end-to-end streaming data consumption and analysis scenario: [Tutorial: Real-Time Analytics](realtime-analytics-tutorial.md)
+See how these items work together in the end-to-end streaming data consumption and analysis scenario: [Real-Time Analytics Tutorial- Introduction](tutorial-introduction.md)
 
 ## Integration with other workloads
 
