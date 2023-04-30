@@ -1,5 +1,5 @@
 ---
-title: Tutorial- Use a notebook with Apache Spark to query a KQL Database in Real-time Analytics
+title: Tutorial- Use a notebook with Apache Spark to query a KQL database in Real-time Analytics
 description: Learn how to import and query the NYC GreenTaxi notebook in your Microsoft Fabric environment using Apache Spark.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -9,7 +9,7 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Tutorial: Use a notebook with Apache Spark to query a KQL Database
+# Tutorial: Use a notebook with Apache Spark to query a KQL database
 
 Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL Database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
@@ -35,7 +35,7 @@ Before importing the NYC GreenTaxi notebook, create a database.
 1. Under **KQL Database name**, enter *nycGreenTaxi*, then select **Create**.
 
     The KQL database has now been created within the context of the selected workspace.
-    
+
 1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
 
     :::image type="content" source="media/spark-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::

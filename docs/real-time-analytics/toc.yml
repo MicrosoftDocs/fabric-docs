@@ -44,9 +44,9 @@ items:
     href: kusto-query-set.md
   - name: Use a OneLake shortcut to query data
     href: onelake-shortcut.md
-  - name: Use a notebook with kqlmagic to query a KQL Database
+  - name: Use a notebook with kqlmagic to query a KQL database
     href: jupyter-notebook.md
-  - name: Use a notebook with Apache Spark to query a KQL Database
+  - name: Use a notebook with Apache Spark to query a KQL database
     href: spark-connector.md
   - name: Use sample queries
     href: query-table.md
