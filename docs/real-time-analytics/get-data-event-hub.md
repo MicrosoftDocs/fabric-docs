@@ -66,12 +66,12 @@ Now that your SAS policy is set up, you can configure a connection to this event
     | Icon | Type of connection | Cloud
     | Connection name | User-defined name for this connection
     | Connection type | Type of resource to connect to | EventHub
-    | Event Hub namespace | Field reference **d** from the above [table](#gather-information-for-the-data-connection). | *eventhubpm15910.servicebus.windows.net*
-    | Event Hub | Field reference **a** from the above [table](#gather-information-for-the-data-connection). | *iotdata*
+    | Event Hub namespace | Field reference **d** from the above [table](#gather-information-for-the-data-stream). | *eventhubpm15910.servicebus.windows.net*
+    | Event Hub | Field reference **a** from the above [table](#gather-information-for-the-data-stream). | *iotdata*
     | Consumer Group | User-defined name for the unique stream view. Use a name of an existing consumer group. If the event hub doesn't have a consumer group, use "$Default", which is the Event Hub's default consumer group. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups). 
     | Authentication method | Type of authentication | Basic
-    | Username | Field reference **b** from the above [table](#gather-information-for-the-data-connection).  <br><br> The SAS policy name | *DocsTest*
-    | Password | Field reference **c** from the above [table](#gather-information-for-the-data-connection). <br><br> The SAS primary key.
+    | Username | Field reference **b** from the above [table](#gather-information-for-the-data-stream).  <br><br> The SAS policy name | *DocsTest*
+    | Password | Field reference **c** from the above [table](#gather-information-for-the-data-stream). <br><br> The SAS primary key.
     | Privacy level | Kusto doesn't use the Privacy level. You can use Organizational as a default value. | Organizational
 
     :::image type="content" source="media/get-data-event-hub/fill-out-connection-portal.png" alt-text="Screenshot of filling out event hub information in the Azure portal.":::
