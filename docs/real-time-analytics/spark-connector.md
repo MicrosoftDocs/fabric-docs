@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.date: 04/27/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
@@ -97,7 +97,7 @@ Select the **play** button to run the following cells, or select the cell and pr
 1. Change the placeholder database name to *nycGreenTaxi*.
 1. Change the placeholder table name to *GreenTaxiData*.
 
-    :::image type="content" source="media/spark-connector/code-cell2.png" alt-text="Screenshot of second code cell showing the target database information. The Query URI and database name are highlighted."  lightbox="media/spark-connector/code-cell2.png":::
+    :::image type="content" source="media/spark-connector/code-cell2.png" alt-text="Screenshot of second code cell showing the target database information. The Query URI, the database name, and the table name are highlighted."  lightbox="media/spark-connector/code-cell2.png":::
 
 1. Run the cell.
 
