@@ -61,11 +61,11 @@ After you connect, the workspace displays information about source control that 
 
 Each item has one of the following statuses:
 
-- **Synced** :::image type="icon" source="./media/git-integration-process/synced-icon.png":::
-- **Conflict** :::image type="icon" source="./media/git-integration-process/conflict-icon.png":::
-- **Unsupported** :::image type="icon" source="./media/git-integration-process/unsupported-icon.png":::
-- **Uncommitted** :::image type="icon" source="./media/git-integration-process/uncommitted-icon.png":::
-- **Update required** :::image type="icon" source="./media/git-integration-process/update-required-icon.png":::
+- :::image type="icon" source="./media/git-integration-process/synced-icon.png"::: Synced
+- :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: Conflict
+- :::image type="icon" source="./media/git-integration-process/unsupported-icon.png"::: Unsupported
+- :::image type="icon" source="./media/git-integration-process/uncommitted-icon.png"::: Uncommitted
+- :::image type="icon" source="./media/git-integration-process/update-required-icon.png"::: Update required
 
 ### Sync information
 
@@ -90,10 +90,10 @@ In the Source control pane, the **Changes** tab shows the number of items that w
 
 In each tab, the changed items are listed with an icon indicating the status:
 
-- new :::image type="icon" source="./media/git-integration-process/new-icon.png":::
-- modified :::image type="icon" source="./media/git-integration-process/modified-icon.png":::
-- deleted ⛔
-- in conflict :::image type="icon" source="./media/git-integration-process/conflict-icon.png":::
+- :::image type="icon" source="./media/git-integration-process/new-icon.png"::: new
+- :::image type="icon" source="./media/git-integration-process/modified-icon.png"::: modified
+- :::image type="icon" source="./media/git-integration-process/deleted-icon.png" ::: deleted
+- :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: conflict
 
 :::image type="content" source="./media/git-integration-process/source-control-panel-items.png" alt-text="Screenshot of the source control panel showing the status of the changed items.":::
 
