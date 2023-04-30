@@ -1,6 +1,6 @@
 ---
 title: Data management in Real-Time Analytics
-description: Learn how to manage your KQL Database.
+description: Learn how to manage your data in a KQL Database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -17,7 +17,7 @@ You can manage your data in the following ways:
 
 * Modify [Data retention policy](#data-retention-policy)
 * Activate [Data copy to OneLake](#data-copy-to-onelake)
-* Create [Stored functions](stored-functions)
+* Create [Stored functions](#stored-functions)
 * Create [Materialized views](#materialized-view)
 
 ## Data retention policy
@@ -32,7 +32,7 @@ To expose the data in your KQL database to all of [!INCLUDE [product-name](../in
 
 ## Stored functions
 
-This feature allows you to create or alter an existing function using the `.create-or-alter` `function` command, which stores it in the database metadata. If the function with the provided *functionName* doesn't exist in the database metadata, the command creates a new function. Otherwise, the named function will be changed.
+This feature allows you to create or alter an existing function using the `.create-or-alter` `function` command, which stores it in the database metadata. If the function with the provided *functionName* doesn't exist in the database metadata, the command creates a new function. Otherwise, the named function is changed.
 
 For more information, see [Create stored functions](create-functions.md)
 
