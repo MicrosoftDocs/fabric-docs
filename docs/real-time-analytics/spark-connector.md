@@ -83,19 +83,19 @@ Select the **play** button to run the following cells, or select the cell and pr
 
 1. Run the following cell to enable access to the NYC GreenTaxi blob container.
 
-    :::image type="content" source="media/spark-connector/code-cell-1.png" alt-text="Screenshot of first code cell showing storage access information." lightbox="media/spark-connector/code-cell1.png":::
+    :::image type="content" source="media/spark-connector/code-cell-1.png" alt-text="Screenshot of first code cell showing storage access information." lightbox="media/spark-connector/code-cell-1.png":::
 
 1. In **KustoURI**, paste the **Query URI** that you copied earlier instead of the placeholder text.
 1. Change the placeholder database name to *nycGreenTaxi*.
 1. Change the placeholder table name to *GreenTaxiData*.
 
-    :::image type="content" source="media/spark-connector/code-cell-2.png" alt-text="Screenshot of second code cell showing the target database information. The Query URI, the database name, and the table name are highlighted."  lightbox="media/spark-connector/code-cell2.png":::
+    :::image type="content" source="media/spark-connector/code-cell-2.png" alt-text="Screenshot of second code cell showing the target database information. The Query URI, the database name, and the table name are highlighted."  lightbox="media/spark-connector/code-cell-2.png":::
 
 1. Run the cell.
 
 1. Run the next cell to write data to your database. It may take a few minutes for this step to complete.
 
-    :::image type="content" source="media/spark-connector/code-cell-3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command."  lightbox="media/spark-connector/code-cell3.png":::
+    :::image type="content" source="media/spark-connector/code-cell-3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command."  lightbox="media/spark-connector/code-cell-3.png":::
 
 Your database now has data.
 
