@@ -28,7 +28,7 @@ Specifically, you learn how to:
 
 ## 1- Create a KQL Database
 
-Before we import the NYC GreenTaxi notebook, we need to create a database to load the data into.
+Before importing the NYC GreenTaxi notebook, create a database.
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
 1. Select **KQL Database**.
@@ -36,7 +36,7 @@ Before we import the NYC GreenTaxi notebook, we need to create a database to loa
 
     The KQL database has now been created within the context of the selected workspace.
     
-1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere to use in a later step.
+1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
 
     :::image type="content" source="media/spark-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
 
@@ -93,7 +93,7 @@ Select the **play** button to run the following cells, or select the cell and pr
 
 1. Run the cell.
 
-1. Run the next cell to write data to your database. It takes a few minutes for this step to complete.
+1. Run the next cell to write data to your database. It may take a few minutes for this step to complete.
 
     :::image type="content" source="media/spark-connector/code-cell3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command."  lightbox="media/spark-connector/code-cell3.png":::
 
