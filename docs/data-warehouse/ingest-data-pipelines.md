@@ -25,7 +25,6 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 ## Create a data pipeline
 
 1. To create a new pipeline navigate to your workspace, select the **+New** button, and select **Data pipeline**.
-
     :::image type="content" source="media\ingest-data-pipelines\new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New button, and with the options Warehouse, Data pipeline, and Show All." lightbox="media\ingest-data-pipelines\new-data-pipeline.png":::
 
 1. In the **New pipeline** dialog, provide a name for your new pipeline and select **Create**. 
@@ -43,6 +42,7 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
     Pick the **Copy data** option to launch the **Copy assistant**.
 
 1. The first page of the **Copy data** assistant helps you pick your own data from various data sources, or select from one of the provided samples to get started. For this tutorial, we'll use the **COVID-19 Data Lake** sample. Select this option and select **Next**.
+
     :::image type="content" source="media\ingest-data-pipelines\sample-data-page.png" alt-text="Screenshot showing choices to use sample data or other data sources." lightbox="media\ingest-data-pipelines\sample-data-page.png":::
 
 1. In the next page, you can select a dataset, the source file format, and preview the selected dataset. Select the **Bing COVID-19** dataset, the **CSV** format, and select **Next**.

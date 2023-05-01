@@ -1,6 +1,6 @@
 ---
-title: Ingest data into the Synapse Data Warehouse
-description: Learn about the features that allow you to ingest data into your Synapse Data Warehouse in Microsoft Fabric.
+title: Ingesting data into the warehouse
+description: Learn about the features that allow you to ingest data into your warehouse.
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
@@ -8,16 +8,20 @@ ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Ingesting data
 ---
-
-# Ingest data into the Synapse Data Warehouse
+# Ingesting data into the Synapse Data Warehouse
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
- [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers built-in data ingestion tools that allow users to ingest data into warehouses at scale using code-free or code-rich experiences.
+ [!INCLUDE [product-name](../includes/product-name.md)] Warehouse offers built-in data ingestion tools that allow users to ingest data into warehouses at scale using code-free or code-rich experiences.
 
 ## Data ingestion options
+You can ingest data into warehouses using one of the following options:
+- **COPY (Transact-SQL)**: the COPY statement offers flexible, high-throughput data ingestion from an external Azure storage account. You can use the COPY statement as part of your existing ETL/ELT logic in Transact-SQL code.
+- **Data pipelines**: pipelines offer a code-free or low-code experience for data ingestion. Using pipeline activities, you can build robust workflows to prepare your environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination.
+- **Data flows**: an alternative to pipelines, Data flows allow you to import and transform data using a code-free experience, with a data transformation logic that can be shared with other datasets and reports in [!INCLUDE [product-name](../includes/product-name.md)]. 
+- **Cross-warehouse ingestion**: data ingestion from workspace sources is also possible. This may be required when there's the need to create a new table with a subset of a different table, or as a result of joining different tables in the warehouse and in the lakehouse. For cross-warehouse ingestion, in addition to the options mentioned above, Transact-SQL features such as **INSERT...SELECT**, **SELECT INTO**, or **CREATE TABLE AS SELECT (CTAS)** work cross-warehouse within the same workspace. 
 
 You can ingest data into a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using one of the following options:
 
@@ -39,12 +43,11 @@ To decide which data ingestion option to use, you can use the following criteria
 > The COPY statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports only data sources on Azure storage accounts, with authentication using to Shared Access Signature (SAS), Storage Account Key (SAK), or accounts with public access. For other limitations, see [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
 
 ## Supported data formats and sources
+Data ingestion for [!INCLUDE [product-name](../includes/product-name.md)] Warehouse offers a vast number of data formats and sources you can use. Each of the options outlined includes its own list of supported data connector types and data formats. 
 
-Data ingestion in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] offers a vast number of data formats and sources you can use. Each of the options outlined includes its own list of supported data connector types and data formats. 
+For **cross-warehouse ingestion**, data sources must be within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace. Queries can be performed using three-part naming for the source data. 
 
-For **cross-warehouse ingestion**, data sources must be within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace. Queries can be performed using three-part naming for the source data.
-
-As an example, suppose there's two warehouses named `Inventory` and `Sales` in a workspace. A query such as the following one creates a new table in the `Inventory` warehouse with the content of a table in the `Inventory` warehouse, joined with a table in the `Sales` warehouse:
+As an example, suppose there's two warehouses named Inventory and Sales in a workspace. A query such as the following one creates a new table in the Inventory warehouse with the content of a table in the Inventory warehouse, joined with a table in the Sales warehouse:
 
 ```sql
 CREATE TABLE Inventory.dbo.RegionalSalesOrders
@@ -62,13 +65,22 @@ The [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabr
 
 ## Best practices
 
-For optimal ingestion performance, the following best practices are recommended:
+The COPY command feature in [!INCLUDE [product-name](../includes/product-name.md)] Warehouse uses a simple, flexible, and fast interface for high-throughput data ingestion for SQL workloads. In the current version of [!INCLUDE [product-name](../includes/product-name.md)] Warehouse, we support loading data from external storage accounts only.
+
+You can also use TSQL to create a new table and then insert into it, and then update and delete rows of data. Data can be inserted from any database within the [!INCLUDE [product-name](../includes/product-name.md)] workspace using cross-database queries. If you want to ingest data from a Lakehouse to a warehouse, you can do this with a cross database query. For example:
+
+```sql
+INSERT INTO MyWarehouseTable
+SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
+```
 
 - Avoid ingesting data using singleton **INSERT** statements, as this causes poor performance on queries and updates. If singleton **INSERT** statements were used for data ingestion consecutively, we recommend creating a new table by using **CREATE TABLE AS SELECT (CTAS)** or **INSERT...SELECT** patterns, dropping the original table, and then creating your table again from the table you created using **CREATE TABLE AS SELECT (CTAS)** or **INSERT...SELECT**.
 - When working with external data on files, we recommend that files are at least 4 MB in size.
 - For large compressed CSV files, consider splitting your file into multiple files.
 - Azure Data Lake Storage (ADLS) Gen2 offers better performance than Azure Blob Storage (legacy). Consider using an ADLS Gen2 account whenever possible. 
 - For pipelines that run frequently, consider isolating your Azure storage account from other services that could access the same files at the same time.
+- Explicit transactions allow you to group multiple data changes together so that they're only visible when reading one or more tables when the transaction is fully committed. You also have the ability to roll back the transaction if any of the changes fail.
+- If a SELECT is within a transaction, and was preceded by data insertions, the [automatically generated statistics](statistics.md) may be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, you may want to [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
 
 ## Next steps
 
