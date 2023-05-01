@@ -37,7 +37,6 @@ The following table contains the configuration differences between Azure Synapse
 
 The Lakehouse explorer provides a tree-like view of the objects in the [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse artifact. It has a key capability of discovering and displaying tables that are described in the metadata repository and in disk under the ```Tables``` section of the Lakehouse. Auto-discovery also applies to tables defined over OneLake shortcuts.
 
--> test all table types
 -> image of Lakehouse with all table types
 
 ### Tables over Shortcuts
