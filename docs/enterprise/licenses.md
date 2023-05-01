@@ -38,10 +38,10 @@ Workspaces can be created in (or assigned to) capacities that belong to a Micros
 
 | Capacity license<sup>*</sup> | User capabilities |
 |--|--|
-| Shared Capacity. Created by a Pro (/power-bi/enterprise/service-admin-purchasing-power-bi-pro)  user in the Power BI service without residing on a capacity. | Use basic Power BI features and collaborate on reports, dashboards, and scorecards. |
+| Shared Capacity. Created by a [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro)  user in the Power BI service without residing on a capacity. | Use basic Power BI features and collaborate on reports, dashboards, and scorecards. |
 | Microsoft Fabric trial | Create Microsoft Fabric items and collaborate with others in the same Microsoft Fabric trial capacity. |
  | Shared Capacity. Created by a Power BI [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) user | Create PPU workspaces and Power BI items. Collaborate using most of the [Power BI Premium features](/power-bi/enterprise/service-premium-features), including paginated reports, dataflows, and datamarts. |
- | Power BI Premium Per Capacity (/power-bi/enterprise/service-premium-what-is)(P SKUs) | Create Power BI content. Share, collaborate on, and distribute Power BI and Microsoft Fabric content. To create workspaces and share content you need a Pro or PPU license. To view content, you can use a Free license. |
+ | [Power BI Premium Per Capacity](/power-bi/enterprise/service-premium-what-is) (P SKUs) | Create Power BI content. Share, collaborate on, and distribute Power BI and Microsoft Fabric content. To create workspaces and share content you need a Pro or PPU license. To view content, you can use a Free license. |
  | [Power BI Embedded Capacity](https://azure.microsoft.com/services/power-bi-embedded/#overview) Azure (A SKUs) | Independent Software Vendors (ISVs) and developers use Power BI Embedded to embed visuals and analytics in their applications. |
 | Microsoft Fabric Capacity (F SKUs)| Create and share Microsoft Fabric content. To create content you can use a Free license, and to share content you need a Pro license. |
 
@@ -61,8 +61,8 @@ Organizational licenses provide the infrastructure for Microsoft Fabric. Without
 
 | License | Description | Create | Share |
 |---------|-------------|--------|-------|
-| [**PPU**](/power-bi/enterprise/service-premium-per-user-faq) | Create Power BI items and use many Power BI [Premium features](/power-bi/enterprise/service-premium-features) | Create Power BI items and connect to Power BI items created by other Pro and PPU users | You can share Power BI content with other PPU users, and consume Power BI content created by other Pro and PPU users |
-| [**Capacity**](#capacity-and-skus) | Use all the Microsoft Fabric features | Create Microsoft Fabric items and connect to other Microsoft Fabric items | Save your items to a workspace and share them with any Microsoft Fabric license holder |
+| [PPU](/power-bi/enterprise/service-premium-per-user-faq) | Create Power BI items and use many Power BI [Premium features](/power-bi/enterprise/service-premium-features) | Create Power BI items and connect to Power BI items created by other Pro and PPU users | You can share Power BI content with other PPU users, and consume Power BI content created by other Pro and PPU users |
+| [Capacity](#capacity-and-skus) | Use all the Microsoft Fabric features | Create Microsoft Fabric items and connect to other Microsoft Fabric items | Save your items to a workspace and share them with any Microsoft Fabric license holder |
 
 ### Capacity and SKUs
 
@@ -99,9 +99,9 @@ This table lists the main differences between the capabilities of the individual
 | Capabilities | Free | Pro |
 |--|--|--|
 | Access Microsoft Fabric | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
-| View content | :::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
-| Create Fabric Capacity Workspaces |:::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
-| Create Pro and Premium per Capacity Workspaces |:::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
+| View shared content | :::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
+| Create Fabric capacity workspaces |:::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
+| Create Pro and Power BI Premium workspaces |:::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 | Create items | :::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 | Share items | :::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 | Connect to items | :::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |

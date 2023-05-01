@@ -28,45 +28,27 @@ Follow these steps to pause your capacity.
 
 1. Sign into the [Azure portal](https://portal.azure.com/).
 
-2. Under **Azure services**, select **Microsoft Fabric (preview)** to see your capacities.
-
-    :::image type="content" source="media/azure-fabric-pause-start/azure-portal-more-services.png" alt-text="Screenshot of the Azure portal, which shows the Azure services list.":::
+2. Select the **Microsoft Fabric (preview)** service to see your capacities. You can *Microsoft Fabric (preview)* using the search menu.
 
 3. Select the capacity you want to pause.
 
-    :::image type="content" source="media/azure-fabric-pause-start/azure-portal-capacity-list-active.png" alt-text="Screenshot of the Azure portal, which shows the Fabric capacity list.":::
-
-4. Select **Pause** above the capacity details.
-
-    :::image type="content" source="media/azure-fabric-pause-start/azure-portal-pause-capacity.png" alt-text="Screenshot of the Azure portal, which shows the highlighted Pause button.":::
+4. Select **Pause**.
 
 5. Select **Yes** to confirm you want to pause the capacity.
 
-    :::image type="content" source="media/azure-fabric-pause-start/azure-portal-confirm-pause.png" alt-text="Screenshot of the Azure portal, which shows the highlighted Yes button in the pause capacity dialog.":::
-
 ## Start your capacity
 
-Resume usage by starting your capacity. Starting your capacity also resumes billing.
+Resume usage by starting your capacity. Starting your capacity also resumes billing. Content that's assigned to this capacity becomes available once the capacity is started.
 
 1. Sign into the [Azure portal](https://portal.azure.com/).
 
-2. Select **All services** > **Microsoft Fabric (preview)** to see your capacities.
-
-    :::image type="content" source="media/azure-fabric-pause-start/azure-portal-more-services.png" alt-text="Screenshot of the Azure portal, which shows the list of Azure services.":::
+2. Select the **Microsoft Fabric (preview)** service to see your capacities. You can *Microsoft Fabric (preview)* using the search menu.
 
 3. Select the capacity you want to start.
 
-    :::image type="content" source="media/azure-fabric-pause-start/azure-portal-capacity-list.png" alt-text="Screenshot of the Azure portal, which shows the list of Fabric capacities.":::
-
-4. Select **Start** above the capacity details.
-
-    :::image type="content" source="media/azure-fabric-pause-start/azure-portal-start-capacity.png" alt-text="Screenshot of the Azure portal, which shows the highlighted Start button.":::
+4. Select **Start**.
 
 5. Select **Yes** to confirm you want to start the capacity.
-
-    :::image type="content" source="media/azure-fabric-pause-start/azure-portal-confirm-start.png" alt-text="Screenshot of the Azure portal, which shows the highlighted Yes button in the start capacity dialog.":::
-
-If any content is assigned to this capacity, the content becomes available once the capacity is started.
 
 ## Next steps
 

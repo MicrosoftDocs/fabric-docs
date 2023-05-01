@@ -15,11 +15,11 @@ After you buy a capacity, you can learn how to [manage your capacity](/power-bi/
 
 ## SKU types
 
-Microsoft Fabric has an array of capacities that you can buy. The capacities are split into Stock Keeping Units (SKU). Each SKU provides a different amount of computing power, measured by its Capacity Unit (CU) value. Refer to the [Capacity and SUKs](licenses.md#capacity-and-skus) table to see how many CUs each SKU provides.
+Microsoft Fabric has an array of capacities that you can buy. The capacities are split into Stock Keeping Units (SKU). Each SKU provides a different amount of computing power, measured by its Capacity Unit (CU) value. Refer to the [Capacity and SKUs](licenses.md#capacity-and-skus) table to see how many CUs each SKU provides.
 
 Microsoft Fabric operates on two types of SKUs:
 
-* **Azure** - Billed hourly with no commitment.
+* **Azure** - Billed per second with no commitment.
 
 * **Microsoft 365** - Billed monthly or yearly, with a monthly commitment
 
@@ -33,7 +33,7 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 * You can [scale your capacity](/power-bi/developer/embedded/azure-pbie-scale-capacity#scale-a-capacity) up or down using the Azure portal or via the Azure APIs.
 
-* You can [pause](pause-resume#pause-your-capacity) and [start](pause-resume#start-your-capacity) your capacity as needed. This feature is designed to save money when the capacity isn't in use.
+* You can [pause](pause-resume.md#pause-your-capacity) and [start](pause-resume.md#start-your-capacity) your capacity as needed. This feature is designed to save money when the capacity isn't in use.
 
 * [Azure cost management](/cost-management-billing/cost-management-billing-overview).
 
