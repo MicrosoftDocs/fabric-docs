@@ -13,124 +13,74 @@ ms.search.form: product-kusto
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:   [Tutorial part 3: Explore data and build report](tutorial-3-explore.md)
 
-## Get dimension data from Blob Storage
+Recall that the dataset you have ingested with Eventstream does not contain latitude and longitude data. In this section, you are going to load additional information on the pick-up locations and drop-off. This data is available in a blob storage container.
 
-In this module, you are going to ingest Location available in a blob
-storage container. This data contains additional information on the
-pick-up locations and drop-off locations used in the trips dataset.
-Real-Time Analytics reads and ingests data directly from the blob
-storage without requiring any other intermediary service.
+## Get dimension data from blob storage
 
-1.  Navigate to KQL Database **NycTaxiDB**
+1. Navigate to your KQL database named **NycTaxiDB**/
+1.  Select **Get data** > **Blob container**.
 
-2.  From within the KQL Database, select **Get Data** \> **Blob
-    container**.![](media/realtime-analytics-tutorial/image38.png)
+    :::image type="content" source="media/realtime-analytics-tutorial/get-data-blob-container.png" alt-text="Screenshot of get data from blob container.":::
+
+    An **Ingest data** window opens with the **Destination** tab selected. 
 
 ### Destination tab
 
 In the **Destination** tab, **Database** is auto populated with the name
 of the selected database.
 
-3.  Under **Table**, make sure that **New table** is selected, and enter
-    ***locations*** as your table name.
+1. Under **Table**, make sure that **New table** is selected, and enter *locations* as the table name.
+1. Select **Next: Source**.
 
-> ![A screenshot of a computer Description automatically
-> generated](media/realtime-analytics-tutorial/image39.png)
-
-4.  Select **Next: Source**.
+    :::image type="content" source="media/realtime-analytics-tutorial/destination-tab.png" alt-text="Screenshot of destination tab.":::
 
 ### Source tab
 
-In the **Source** tab, **Source type** is auto populated with **Blob
-container**
+In the **Source** tab, **Source type** is auto populated with *Blob container*.
 
-![A screenshot of a computer Description automatically
-generated](media/realtime-analytics-tutorial/image40.png)
+:::image type="content" source="media/realtime-analytics-tutorial/source-tab-filled-out.png" alt-text="Screenshot of source tab with blob container filled out.":::
 
 1.  Fill out the remaining fields according to the following table:
 
-  ------------------------------------------------------------------------------------------------------------------------------
-  **Setting**   **Suggested value**                                                                **Field description**
-  ------------- ---------------------------------------------------------------------------------- -----------------------------
-  Ingestion     *One-time*                                                                         The type of data ingestion
-  type                                                                                             that is intended with options
-                                                                                                   being one-time and historical
-                                                                                                   data.
+    |  **Setting**  | **Suggested value**  | **Field description**
+    |-------|---|------
+    |  Ingestion  |   *One-time*         |The type of data ingestion type.
+    | Link to source |  *https://azuresynapsestorage.blob.core.windows.net/sampledata/NYCTaxiLocations/* | URI to the blob container where the files are located |
+    |  Sample size |  *Blank* 
+    | Folder path |  *Blank* 
+    | Schema  defining file |  Choose the first file 
 
-  Link to       *https://azuresynapsestorage.blob.core.windows.net/sampledata/NYCTaxiLocations/*   SAS URI to the blob container
-  source                                                                                           where the files are located
-
-  Sample size   *Blank*                                                                            
-
-  Folder path   Blank                                                                              
-
-  File          Blank                                                                              
-  extension                                                                                        
-
-  Schema        Choose the first file                                                              
-  defining file                                                                                    
-  ------------------------------------------------------------------------------------------------------------------------------
-
-2.  Select **Next: Schema**.
+1.  Select **Next: Schema**.
 
 ### Schema tab
 
-The tool automatically infers the schema based on your data.
+The tool automatically infers the schema based on your data. No changes are necessary.
 
-![](media/realtime-analytics-tutorial/image41.png)
+:::image type="content" source="media/realtime-analytics-tutorial/schema-tab.png" alt-text="Screenshot of schema tab.":::
 
-1.  Select **Next: Summary**.
+Select **Next: Summary**.
 
 ### Summary tab
 
 In the **Data ingestion is in progress** window, all steps will be
 marked with green check marks when the data has been successfully
-ingested. The data from Blob container will begin streaming
-automatically into your table.
+loaded. 
 
-![](media/realtime-analytics-tutorial/image42.png)
+i:::image type="content" source="media/realtime-analytics-tutorial/data-ingestion-complete.png" alt-text="Screenshot of summary page with data ingestion completed.":::
 
-1.  Now that you've got data in your database, click on **Close**.
-    you're going to check your data with sample queries.
+Select **Close** to return to your database landing page.
 
-## Query data
+## Create a KQL queryset
 
 In the following step, you'll use the advanced data analysis
-capabilities of Kusto Query language to query your telemetry data.
+capabilities of Kusto Query Language to query the two tables you have ingested in the database. 
 
-1.  Select **Check your data** on the right-hand side of your
-    database-editor.
+1.  Select **New related item** > **KQL Queryset**
 
--   ![](media/realtime-analytics-tutorial/image43.png)
+    :::image type="content" source="media/realtime-analytics-tutorial/new-kql-queryset.png" alt-text="Screenshot to create a new related KQL queryset.":::
 
-    Note: The numbers in the screen capture above may look different in
-    your database editor page.
-
-2.  Let's take a look at the data itself. Paste the following query in
-    **Check your data** window to take 10 random records from your data.
-
--   nyctaxitrips
-        | take 10
-
-3.  Select Run.
-
--   ![](media/realtime-analytics-tutorial/image45.png)
-4.  Select **Save as Query Set** to save this and future queries for
-    later use.
-
-5.  Under **KQL Queryset name**, enter *nyctaxiqs*, then select
-    **Create**.
-
--   ![](media/realtime-analytics-tutorial/image46.png)
-
-    **'Check your data'** enables you to run some quick queries to
-    understand your data. This query can be saved as a KQL Queryset and
-    persisted in the workspace as an item. Query set autosaves the
-    queries as you type them and lets you resume from the point where
-    you had stopped. In the next module, you will work with the KQL
-    Queryset. Saving the quick query as KQL Query Set will automatically
-    open your **KQL Queryset** with the queries that you wrote in the
-    query editor.
+1. Enter the following KQL Queryset name: *nyctaxiqs*.
+1. Select **Create**. A query window opens with several autopopulated sample queries.
 
 ## Next steps
 

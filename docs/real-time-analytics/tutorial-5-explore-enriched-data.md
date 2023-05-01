@@ -15,24 +15,29 @@ ms.search.form: product-kusto
 
 ## Explore data further in a KQL queryset
 
-In this module, you are going to write queries using [Kusto Query
-Language](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/)
-to explore the data that you have ingested from the Event hub and blob
-storage. Kusto Query Language is a powerful tool to explore your data
-and discover patterns, identify anomalies and outliers, create
-statistical modeling, and more. The query uses schema entities that are
-organized in a hierarchy similar to SQLs: databases, tables, and
-columns. Kusto query is a read-only request to process data and return
-results. The request is stated in plain text, using a data-flow model
-that is easy to read, author, and automate. Kusto queries are made of
-one or more query statements. You are going to write some simple Kusto
-queries to get familiar with the language and discover its power and
-simplicity.
+In this module, you're going to write queries using [Kusto Query Language](/azure/data-explorer/kusto/query/) to explore the data that you have ingested from the Eventstream and blob storage. Kusto Query Language is a powerful tool to explore your data and discover patterns, identify anomalies and outliers, create statistical modeling, and more. The query uses schema entities that are organized in a hierarchy similar to SQLs: databases, tables, and columns. A KQL query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Kusto queries are made of one or more query statements. You're going to write some simple KQL queries to get familiar with the language and discover its power and simplicity.
 
 Run the following queries in the new KQL Queryset you have created.
 Copy/paste each query into your environment, select the query and then
 select **Run**.
 
+
+## Query data
+
+The first step in data analysis is often to take a look at a subset of the data itself.
+
+1. Paste the following query in the query editor to take 10 arbitrary records from the specified table.
+
+    ```kusto
+    nyctaxitrips
+    | take 10
+    ```
+
+1. Select **Run** or press **Shift + Enter**. 
+
+    :::image type="content" source="media/realtime-analytics-tutorial/results-take-10.png" alt-text="Screenshot of take 10 results.":::
+
+    The specific lines returned in your query may vary. 
 1.  The following query returns the top 10 pickup locations in New York
     City for Yellow Taxis.
 
@@ -51,11 +56,11 @@ select **Run**.
     **Note**: Result of the query may not exactly match the screenshot
     provided as you are ingesting streaming data.
 
-2.  We will run the same query as in the previous step with an addition
+2.  We'll run the same query as in the previous step with an addition
     of looking up the corresponding zones of the top 10 pickup locations
     by using the 'locations' table.
 
--    //For the same top 10 locations, lookup the NYC zones --> Top 10 zones
+-    //For the same top 10 locations, look up the NYC zones --> Top 10 zones
 
         nyctaxitrips
 
@@ -103,7 +108,7 @@ select **Run**.
 4.  To ensure that the sufficient taxis are plying in the Manhattan
     borough, let's forecast the number of taxis needed per hour.
 
--   //Forecast the number of trips that will begin from Manhattan to line up the taxis in that borough
+-   //Forecast the number of trips that begin from Manhattan to line up the taxis in that borough
 
         nyctaxitrips
 
