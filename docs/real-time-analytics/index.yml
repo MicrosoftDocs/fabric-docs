@@ -4,7 +4,7 @@ title: Real-Time Analytics documentation # < 60 chars
 summary: Real-time Analytics is a fully managed big data analytics platform optimized for streaming, time-series data. It contains a dedicated query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios.
 
 metadata:
-  title: Real-Time Analytics documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  title: Synapse Real-Time Analytics in Microsoft Fabric documentation 
   description: Learn about Real-Time Analytics, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis. 
   ms.service: azure #Required; use either service or product per approved list. 
 #   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
