@@ -17,7 +17,7 @@ Power BI provides two ways you can endorse your valuable, high-quality content t
 
 * **Certification**: Certification means that the content meets the organization's quality standards and can be regarded as reliable, authoritative, and ready for use across the organization.
 
-    Only [authorized reviewers (defined by the Power BI administrator)](endorsement-setup.md) can certify content. Content owners who wish to see their content certified and are not authorized to certify it themselves need to follow their organization's guidelines about getting their content certified.
+    Only [authorized reviewers (defined by the Power BI administrator)](../admin/endorsement-setup.md) can certify content. Content owners who wish to see their content certified and are not authorized to certify it themselves need to follow their organization's guidelines about getting their content certified.
 
 Currently it is possible to endorse
 * Datasets
@@ -67,6 +67,6 @@ The Endorsement dialog is accessed through the settings of the content you want 
 
 * [Read more about content endorsement](endorsement-overview.md)
 * [Certify content](endorsement-certify.md)
-* [Enable content certification](endorsement-setup.md) (Power BI admins)
+* [Enable content certification](../admin/endorsement-setup.md) (Power BI admins)
 * [Read more about dataset discoverability](/power-bi/collaborate-share/service-discovery)
 * Questions? [Try asking the Power BI Community](https://community.powerbi.com/)

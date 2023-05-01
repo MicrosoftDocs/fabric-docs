@@ -17,13 +17,9 @@ Power BI provides two ways you can endorse your valuable, high-quality content t
 
 * **Certification**: Certification means that the content meets the organization's quality standards and can be regarded as reliable, authoritative, and ready for use across the organization.
 
-    Only [authorized reviewers (defined by the Power BI administrator)](endorsement-setup.md) can certify content. Content owners who wish to see their content certified and are not authorized to certify it themselves need to follow their organization's guidelines about getting their content certified.
+    Only [authorized reviewers (defined by the Power BI administrator)](../admin/endorsement-setup.md) can certify content. Content owners who wish to see their content certified and are not authorized to certify it themselves need to follow their organization's guidelines about getting their content certified.
 
-Currently it is possible to endorse
-* Datasets
-* Dataflows
-* Reports
-* Apps
+Currently it is possible to endorse all Fabric items except Power BI dashboards.
 
 If [dataset discoverability](/power-bi/collaborate-share/service-discovery) has been enabled in your organization, endorsed datasets can be made discoverable. When a dataset is discoverable, users who don't have access to it will be able to find it and request access. See [Dataset discoverability](/power-bi/collaborate-share/service-discovery) for more detail.
 
@@ -88,6 +84,6 @@ The Endorsement dialog is accessed through the settings of the content you want 
 
 * [Read more about content endorsement](endorsement-overview.md)
 * [Promote Fabric content](endorsement-promote.md)
-* [Enable content certification](endorsement-setup.md) (Power BI admins)
+* [Enable content certification](../admin/endorsement-setup.md) (Power BI admins)
 * [Read more about dataset discoverability](/power-bi/collaborate-share/service-discovery)
 * Questions? [Try asking the Power BI Community](https://community.powerbi.com/)
