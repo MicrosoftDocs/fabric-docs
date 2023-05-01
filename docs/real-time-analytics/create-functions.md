@@ -11,7 +11,7 @@ ms.search.form: product-kusto
 
 # Create stored functions
 
-Functions are reusable queries or query parts. Real-time Analytics supports two kinds of functions:
+Functions are reusable queries or query parts. Real-Time Analytics supports two kinds of functions:
 
 * Built-in functions, which are hard-coded functions that can't be modified by users.
 * User-defined functions, which are divided into two types:

@@ -5,11 +5,13 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 04/23/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Add and manage an event source in Eventstream item
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 Once you have created an eventstream, you can connect it to various data sources and destinations. The types of event sources that can be added to your eventstream include Azure Event Hubs, Sample data and Custom app. 
 
@@ -17,7 +19,7 @@ Once you have created an eventstream, you can connect it to various data sources
 
 To get started, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream item is located in.
-- For Azure Event Hubs source, an Azure event hub with data inside exists and appropriate permission available to access the policy keys.
+- For Azure Event Hubs source, an Azure event hub with event data inside exists and appropriate permission available to access the policy keys.
 
 ## Add an Azure event hub as a source
 
@@ -29,7 +31,7 @@ If you have an Azure event hub created with event data there, do the following s
 
    :::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-event-hub.png" :::
 
-3. If you don’t have a cloud connection, select **Create new connection** to create one. To create a new connection, fill in the information of your Azure Event Hubs on the **New connection** blade.
+3. If you don’t have a cloud connection, select **Create new connection** to create one. To create a new connection, fill in the information of your Azure event hub on the **New connection** blade.
 
    :::image type="content" source="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" :::
 

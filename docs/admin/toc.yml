@@ -23,29 +23,25 @@ items:
   items:
   - name: Power BI admin center
     href: admin-power-bi.md
-- name: Spark
-  items:
-  - name: Spark
-    href: admin-spark.md
 - name: Track user activities
   href: admin-track-user-activities.md
 - name: Monitoring workspace
   items:
   - name: What is the monitoring workspace?
-    href: admin-monitoring.md  
-  - name: Audit log report
-    href: admin-audit-log.md
-  - name: Activity log report
-    href: admin-activity-log.md 
+    href: admin-monitoring.md
+  - name: Feature usage and adoption report
+    href: admin-feature-usage-adoption.md
 - name: Workspace administration
   items:
   - name: Manage workspaces
     href: admin-portal-workspaces.md  
   - name: Workspace tenant settings
-    href: admin-portal-workspace.md 
-- name: Considerations and limitations
-  items:
-  - name: Admin troubleshooting
-    href: admin-troubleshoot.yml  
-  - name: Admin limitations in Microsoft Fabric
-    href: admin-limitations.md       
+    href: admin-portal-workspace.md         
+  - name: Git integration admin tenant settings
+    href: admin-settings-git-integration.md
+- name: Set up item certification
+  href: endorsement-setup.md
+- name: Set up metadata scanning
+  href: metadata-scanning-setup.md
+
+
