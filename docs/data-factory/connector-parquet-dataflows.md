@@ -48,5 +48,4 @@ For more advanced information about connecting to your data using the parquet co
 
 ## Next steps
 
-- [How to create a Parquet connection](connector-parquet.md)
-- [How to configure Parquet in a copy activity](connector-parquet-copy-activity.md)
+- [Parquet format](parquet-format.md)
