@@ -48,4 +48,4 @@ For more advanced information about connecting to your data using the parquet co
 
 ## Next steps
 
-- [Parquet format](parquet-format.md)
+- [Parquet format](format-parquet.md)
