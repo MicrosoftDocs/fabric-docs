@@ -1,5 +1,5 @@
 ---
-title: Create an empty table in Real-time Analytics
+title: Create an empty table in Real-Time Analytics
 description: Learn how to create an empty table.
 ms.reviewer: tzgitlin
 ms.author: yaschust

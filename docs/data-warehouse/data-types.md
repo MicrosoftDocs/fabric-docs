@@ -20,7 +20,33 @@ Tables in Microsoft Fabric support the most commonly used T-SQL data types.
 
 ## Data types in Synapse Data Warehouse
 
-For a list of the supported data types in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric). 
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports a subset of T-SQL data types: 
+
+| **Category** | **Supported data types** |
+|---|---|
+| **Exact numerics** | <ul><li>bit</li><li>bigint</li><li>int</li><li>smallint</li><li>decimal</li><li>numeric</li></ul> |
+| **Approximate numerics** | <ul><li>float</li><li>real</li></ul> |
+| **Date and time** | <ul><li>date</li><li>datetime2</li><li>time</li></ul> |
+| **Character strings** | <ul><li>char</li><li>varchar</li></ul> |
+| **Binary strings** | <ul><li>uniqueidentifer</li></ul> |
+| **Other data types** | <ul><li>char</li><li>varchar</li></ul> |
+
+> [!NOTE]
+> The precision for datetime2 and time is limited to 6 digits of precision on fractions of seconds.
+
+For more details about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric). 
+
+For T-SQL data types that aren't currently supported, some alternatives are available. Make sure you evaluate the use of these types as precision and query behavior may vary:
+
+| **Unsupported data type** | **Alternatives available** |
+|---|---|
+| **money and smallmoney** | Use decimal, however note that it can't store the monetary unit.  |
+| **datetime and smalldatetime** | Use datetime2. |
+| **nchar and nvarchar** | Use char and varchar respectively. These types use more storage than nchar and nvarchar to store unicode data. To understand the impact on your environment, see [Storage differences between UTF-8 and UTF-16](https://learn.microsoft.com/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver15#storage_differences.) |
+| **text and ntext** | Use varchar. |
+| **image** | Use varbinary. |
+
+Unsupported data types can still be used in T-SQL code for variables, or any in-memory use in session. Creating tables or views that persist data on disk with any of these types isn't allowed.
 
 For a guide to create a table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Create tables](create-table.md).
 
