@@ -146,7 +146,9 @@
       - name: Configure in admin portal
         href: connector-rest.md
       - name: Configure in copy activity of pipeline
-        href: connector-rest-copy-activity.md     
+        href: connector-rest-copy-activity.md
+      - name: Connect in dataflows
+        href: connector-rest-dataflows.md
   - name: Data pipelines
     items:
     - name: Activities
