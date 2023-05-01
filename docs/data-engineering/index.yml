@@ -1,17 +1,17 @@
 ### YamlMime:Landing
 
 title: Data Engineering in Microsoft Fabric documentation
-summary: summary # < 160 chars
+summary: Data engineering in Microsoft Fabric enables users to design, build, and maintain infrastructures and systems that enable their organizations to collect, store, process, and analyze large volumes of data. # < 160 chars
 
 metadata:
   title: Data Engineering in Microsoft Fabric documentation
-  description: description # Required; article description that is displayed in search results. < 160 chars.
+  description: Data engineering in Microsoft Fabric enables users to design, build, and maintain systems that enable their organizations to collect, store, process, and analyze large volumes of data. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
   author: SnehaGunda
   ms.author: sngun
-  ms.date: 04/25/2023
+  ms.date: 05/23/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -23,84 +23,97 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Data engineering in Microsoft Fabric?
+          - text: What is Data engineering?
             url: data-engineering-overview.md
-          - text: What is a lakehouse in Microsoft Fabric?
+          - text: What is a lakehouse?
             url: lakehouse-overview.md
-          - text: What is SQL endpoint for a lakehouse?
-            url: lakehouse-sql-endpoint.md
+          - text: workspace roles and permissions
+            url: workspace-roles-lakehouse.md
 
   # Card 
-  - title: Get started with lakehouses
+  - title: Get started with lakehouse
     linkLists:
       - linkListType: get-started
         links:
-          - text: Create a lakehouse in Microsoft Fabric
+          - text: Create a lakehouse
             url: create-lakehouse.md
-          - text: Navigate the Fabric Lakehouse explorer
+          - text: Navigate the lakehouse explorer
             url: navigate-lakehouse-explorer.md
-          - text: What are shortcuts in lakehouse?
-            url: lakehouse-shortcuts.md
+      - linkListType: how-to-guide
+        links:
+          - text: Get data into lakehouse using notebook
+            url: lakehouse-notebook-load-data.md
 
   # Card 
   - title: Get started with notebooks
     linkLists:
       - linkListType: get-started
         links:
-          - text: How to use Microsoft Fabric notebooks
+          - text: Microsoft Fabric notebooks
             url: how-to-use-notebook.md
-          - text: Develop, execute, and manage Microsoft Fabric notebooks
+      - linkListType: how-to-guide
+        links:
+          - text: Build and manage notebooks
             url: author-execute-notebook.md
-          - text: Explore the data in your lakehouse with a notebook
+          - text: Explore lakehouse data with a notebook
             url: lakehouse-notebook-explore.md
-          - text: Notebook contextual monitoring and debugging
-            url: spark-monitor-debug.md
-          - text: Visualize notebooks in Microsoft Fabric
+          - text: Visualize notebooks
             url: notebook-visualization.md
-
-  # Card 
-  - title: Load data
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Options to get data into the Fabric Lakehouse
-            url: load-data-lakehouse.md
-
-      - linkListType: how-to-guide
-        links:
-          - text: Use a notebook to load data into your lakehouse
-            url: lakehouse-notebook-load-data.md
-
-  # Card 
-  - title: Security and permissions
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: How lakehouse sharing works
-            url: lakehouse-sharing.md
-          - text: Lakehouse SQL endpoint security principles
-            url: lakehouse-sql-security.md
-          - text: Workspace roles in Lakehouse
-            url: workspace-roles-lakehouse.md
 
   # Card 
   - title: Apache Spark
     linkLists:
       - linkListType: concept
         links:
-          - text: What is an Apache Spark job definition?
+          - text: Apache Spark job definition
             url: spark-job-definition.md
-          - text: Microsoft Fabric Apache Spark monitoring overview
+          - text: Spark monitoring overview
             url: spark-monitoring-overview.md
-          - text: Apache Spark advisor for real-time advice on notebooks
+          - text: Apache Spark advisor
             url: spark-advisor-introduction.md
+      - linkListType: get-started
+        links:
+          - text: Create a Spark job definition
+            url: create-spark-job-definition.md
       - linkListType: how-to-guide
         links:
-          - text: Use the Microsoft Apache Spark utilities for common file management tasks
-            url: microsoft-spark-utilities.md
-          - text: Schedule and run an Apache Spark job definition
+          - text: Schedule and run a Spark job definition
             url: run-spark-job-definition.md
-          - text: Workspace item recent runs
-            url: spark-artifact-recent-runs.md
-          - text: Manage Apache Spark libraries in Microsoft Fabric
+          - text: Monitor a Spark application
+            url: spark-detail-monitoring.md
+          - text: Manage Apache Spark libraries
             url: library-management.md
+          - text: Spark utilities for file management tasks
+            url: microsoft-spark-utilities.md
+
+  # Card 
+  - title: Lakehouse end-to-end tutorial
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Lakehouse scenario overview
+            url: ../placeholder.md
+          - text: Step1 - Create a workspace
+            url: ../placeholder.md
+          - text: Step2 - Create a lakehouse
+            url: ../placeholder.md
+          - text: Step2 - Ingest data into lakehouse
+            url: ../placeholder.md
+          - text: Step2 - Transform data into delta tables
+            url: ../placeholder.md
+          - text: Step2 - Build a report
+            url: ../placeholder.md
+          - text: Step2 - Clean up resources
+            url: ../placeholder.md
+
+  # Card 
+  - title: Security and permissions
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Lakehouse sharing and permissions
+            url: lakehouse-sharing.md
+          - text: Lakehouse SQL endpoint security
+            url: lakehouse-sql-security.md
+          - text: Workspace roles in Lakehouse
+            url: workspace-roles-lakehouse.md

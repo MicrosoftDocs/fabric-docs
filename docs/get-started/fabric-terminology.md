@@ -5,7 +5,7 @@ ms.reviewer: sngun
 ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
-ms.date: 04/10/2023
+ms.date: 05/23/2023
 ---
 
 # Microsoft Fabric terminology
@@ -68,7 +68,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **KQL database:** The KQL database is the representation of a database holding data in a format to execute a KQL query against it. For more information, see [Query a KQL database](../real-time-analytics/jupyter-notebook.md).
 
-- **KQL queryset:** The KQL queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL queryset](../real-time-analytics/kusto-query-set.md)
+- **KQL Queryset:** The KQL Queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL Queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL Queryset](../real-time-analytics/kusto-query-set.md)
 
 - **Event stream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../placeholder.md).
 

@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 01/10/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
@@ -29,4 +29,4 @@ To enable continuous data export, you need to have database admin permissions.
 
 ## Data connections
 
-The **Data connections** pane opens to show available connections to Azure Event Hubs. To establish a new cloud data connection, see [Create a data connection](get-data-event-hub.md#create-a-data-connection).
+The **Data connections** pane opens to show available connections to Azure Event Hubs. To establish a new cloud data connection, see [Create a data connection](get-data-event-hub.md#create-a-data-stream).

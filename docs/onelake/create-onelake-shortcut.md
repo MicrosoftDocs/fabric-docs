@@ -4,8 +4,9 @@ description: Learn how to create two types of shortcuts, a OneLake shortcut and 
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
+ms.search.form: Shortcuts
 ms.topic: how-to
-ms.date: 03/24/2023
+ms.date: 05/23/2023
 ---
 
 # Create a shortcut
@@ -21,7 +22,7 @@ To create a OneLake shortcut:
 
 1. Open a lakehouse.
 
-1. Right click on a directory within the **Lake view** of the lakehouse.
+1. Right click on a directory within the **Lake view** of the lakehouse. 
 
 1. Select **New shortcut**.
 
