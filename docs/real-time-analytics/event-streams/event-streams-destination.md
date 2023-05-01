@@ -5,11 +5,13 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: concept
-ms.date: 04/23/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Event streams destinations
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 With the eventstream destinations, you can route their real-time events to a custom app, KQL database, or lakehouse in Microsoft Fabric without writing a single line of code. 
 
@@ -73,14 +75,14 @@ The **Event processor editor** will be popping up after clicking **Open event pr
 
 To learn more about the event processor editor, see [Event processor editor](./event-processor-editor.md).
 
-To learn more about how to use the event processor editor define your data transformation logic, see [Process event data with event processor editor](./process-event-with-event-preocessor-editor.md).
+To learn more about how to use the event processor editor define your data transformation logic, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md).
 
 Upon completion of the event processor wizard, real-time event data begin ingesting into the selected Delta table.
 
 ## Next steps
 
 - [Event processor editor](./event-processor-editor.md)
-- [Process event data with event processor editor](./process-event-with-event-preocessor-editor.md)
+- [Process event data with event processor editor](./process-events-using-event-processor-editor.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
 - [Event streams source](./event-streams-source.md)
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)

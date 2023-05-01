@@ -15,17 +15,15 @@ items:
     href: get-started-lakehouse-sql-endpoint.md
   - name: Get started with Synapse Data Warehouse
     items:
-    - name: 1. Get started
-      href: get-started-data-warehouse.md  
-    - name: 2. Create a warehouse
+    - name: 1. Create a warehouse
       href: create-warehouse.md
-    - name: 3. Create a table
+    - name: 2. Create a table
       href: create-table.md
-    - name: 4. Ingest data 
-      href: ingest-data.md
-    - name: 5. Query the warehouse
+    - name: 3. Ingest data 
+      href: ingest-data-pipelines.md
+    - name: 4. Query the warehouse
       href: query-warehouse.md
-    - name: 6. Create reports
+    - name: 5. Create reports
       href: create-reports.md
 - name: Concepts
   items: 
@@ -39,11 +37,9 @@ items:
       href: security.md
     - name: Workspace roles
       href: workspace-roles.md
-    - name: Manage user access
-      href: manage-user-access.md    
     - name: Get Workspace and OneLake path
       href: get-workspace-onelake-path.md      
-  - name: Datasets
+  - name: Model the warehouse
     items:
     - name: Datasets
       href: datasets.md
@@ -51,13 +47,9 @@ items:
       href: model-default-power-bi-dataset.md          
     - name: Define relationships in data models
       href: data-modeling-defining-relationships.md
-    - name: Create a measure
-      href: create-measure.md
-    - name: Hide elements from downstream reporting
-      href: hide-elements-downstream-reporting.md
     - name: Create reports in the Power BI service
       href: reports-power-bi-service.md      
-  - name: Load data into the Synapse Data Warehouse
+  - name: Load data
     items:
     - name: Ingesting data into the warehouse
       href: ingest-data.md
@@ -75,6 +67,10 @@ items:
       href: query-delta-lake-logs.md
   - name: Design and Develop
     items:
+    - name: Warehouse settings and context menus
+      href: settings-context-menus.md
+    - name: Create a sample warehouse 
+      href: create-warehouse-sample.md
     - name: Tables
       href: tables.md
     - name: Data types
@@ -87,15 +83,19 @@ items:
       href: transactions.md
     - name: Limitations and known issues
       href: limitations.md      
-  - name: Manage and Monitor
+  - name: Performance
     items:
-    - name: Warehouse settings and context menus
-      href: settings-context-menus.md
     - name: Statistics
       href: statistics.md
-    - name: Monitor using DMVs
-      href: monitor-using-dmv.md
     - name: Workload Management
       href: workload-management.md
-    - name: Troubleshoot Synapse Data Warehouse
+  - name: Monitor
+    items:
+    - name: Monitor using DMVs
+      href: monitor-using-dmv.md
+    - name: Get Workspace and OneLake path
+      href: get-workspace-onelake-path.md      
+  - name: Troubleshoot
+    items:
+    - name: Troubleshooting your Warehouse
       href: troubleshoot-synapse-data-warehouse.md
