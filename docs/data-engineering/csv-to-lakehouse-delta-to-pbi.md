@@ -9,7 +9,7 @@ ms.date: 05/23/2023
 ms.search.form: csv load to delta to pbi report
 ---
 
-# CSV upload to Delta for PBI reporting
+# CSV file upload to Delta for Power BI reporting
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

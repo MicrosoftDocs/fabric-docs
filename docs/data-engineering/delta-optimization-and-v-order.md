@@ -25,11 +25,49 @@ V-Order works by applying special sorting, row group distribution, dictionary en
 
 Its __100% open-source parquet format compliant__; all parquet engines can read it as a regular parquet files. Delta tables are more efficient than ever; features such as Z-Order are compatible with V-Order. Table properties and optimization commands can be used on control V-Order on its partitions.
 
-## Write optimization considerations
+V-Order is applied at the parquet file level. Delta tables and its features, such as Z-Order, compaction, vacuum, time travel, etc are orthogonal to V-Order, as such, are compatible and may be used in conjuction for additional benefits.
 
-## Apache Spark configurations for Delta optimization
+## Controlling V-Order writes
 
-## Delta Lake usage scenarios and best practices
+V-Order is __enabled by default__ in [!INCLUDE [product-name](../includes/product-name.md)] and in Apache Spark it is controlled by two configurations:
+
+-> table with V-Order stuff
+
+Use the following commands to control usage of V-Order writes.
+
+### Check V-Order configuration in Apache Spark session
+
+### Disable V-Order writing in Apache Spark session
+
+### Enable V-Order writing in Apache Spark session
+
+### Control V-Order using Delta table properties
+
+## Delta table maintenance
+
+As Delta tables change, performance adn storage cost efficiency tends to degrade for the following reasons:
+
+1. New data added to the table may skew data
+1. Batch and streaming data ingestion rate might bring in many small files
+1. Update and delete operations will eventually create additional read overhead; parquet files are immutable by design, so Delta tables adds new parquet files which the change set, exarcebating the issues imposed by the first two items.
+1. No longer needed data files and log files available in the storage.
+
+In order to keep the tables at the best state for best performance, perform bin-compaction and vacuuming operations in the Delta tables. Bin-compaction is achieved by the [OPTIMIZE](https://docs.delta.io/latest/optimizations-oss.html) command; it merges all changes into bigger, consolidated parquet files. De-referenced storage clean-up is achieved by the [VACUUM](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) command.
+
+> [!IMPORTANT]
+> Properly designing the table physical structure based on the ingestion frequency and expected read patterns is likely more important than running the optimization commands described in this section. Please refer to the next section for Delta Lake scenario-based best practices.
+
+### Run OPTIMIZE using Apache Spark
+
+### Run VACUUM using Apache Spark
+
+### Control V-Order when optimizing a table
+
+## Delta Lake performance considerations and best practices
+
+This section contains a non-exhausting reference of common usage patterns and the best practices for Delta Lake tables configuration and maintenance actions.
+
+--> big table with scenarios/best practices
 
 ## Next steps
 
