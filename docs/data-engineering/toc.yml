@@ -7,22 +7,56 @@ items:
     href: data-engineering-overview.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: CSV upload to Delta for PBI reporting
+    href: get-started-csv-upload.md
+  - name: Structured streaming to SQL serving
+    href: get-started-streaming.md
+  - name: Reference external data for data science
+    href: get-started-shortcuts.md
+- name: Tutorials
+  items:
+  - name: 1 Lakehouse tutorial introduction
+    href: tutorial-lakehouse-introduction.md
+  - name: 2 Get started
+    href: tutorial-lakehouse-get-started.md
+  - name: 3 Build a lakehouse 
+    href: tutorial-build-lakehouse.md
+  - name: 4 Ingest data
+    href: tutorial-lakehouse-data-ingestion.md
+  - name: 5 Prepare data
+    href: tutorial-lakehouse-data-preparation.md
+  - name: 6 Build a report
+    href: tutorial-lakehouse-build-report.md
+  - name: 7 Clean up resources
+    href: tutorial-lakehouse-clean-up.md
 - name: Lakehouse
   items:
   - name: What is a lakehouse?
     href: lakehouse-overview.md
-  - name: Get data into a lakehouse
-    href: load-data-lakehouse.md
-  - name: Navigate the lakehouse explorer
-    href: navigate-lakehouse-explorer.md
   - name: Create a lakehouse
     href: create-lakehouse.md
+  - name: Navigate the lakehouse explorer
+    href: navigate-lakehouse-explorer.md
+  - name: Lakehouse SQL endpoint
+    href: lakehouse-sql-endpoint.md
+  - name: Direct lake mode and PBI reporting
+    href: lakehouse-pbi-reporting.md
+- name: Get data into lakehouse
+  items:
+  - name: Get data into a lakehouse
+    href: load-data-lakehouse.md
+  - name: Shortcut data in a lakehouse
+    href: lakehouse-shortcuts.md
+  - name: Stream data to a lakehouse
+    href: lakehouse-streaming-data.md
+- name: Lakehouse collaboration
+  items:
+  - name: Workspace roles and permissions
+    href: workspace-roles-lakehouse.md
 - name: Apache Spark
   items:
+  - name: Runtime
+    href: runtime.md
   - name: Autotune Spark configuration
     href: autotune.md
   - name: Spark job definition
@@ -59,6 +93,12 @@ items:
       href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
+- name: Apache Delta
+  items:
+    - name: Lakehouse and delta tables
+      href: ../placeholder.md
+    - name: V-order optimization for tables
+      href: ../placeholder.md
 - name: Notebooks
   items:
   - name: Create and use notebooks

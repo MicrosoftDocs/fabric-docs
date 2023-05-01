@@ -1,5 +1,5 @@
 ---
-title: The Fabric deployment pipelines process
+title: The Microsoft Fabric deployment pipelines process
 description: Understand how deployment pipelines, the Fabric Application lifecycle management (ALM) tool, works
 author: mberdugo
 ms.author: monaberdugo
@@ -7,8 +7,8 @@ ms.topic: conceptual
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1, intro-deployment
-ms.date: 12/28/2022
-ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines
+ms.date: 05/23/2023
+ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
 # The deployment pipelines process
@@ -398,7 +398,7 @@ This section lists most of the limitations in deployment pipelines.
 
 ### Dataflow limitations
 
-* When you're deploying a dataflow to an empty stage, deployment pipelines creates a new workspace and sets the dataflow storage to a Power BI blob storage. Blob storage is used even if the source workspace is configured to use Azure data lake storage Gen2 (ADLS Gen2).
+* When you're deploying a dataflow to an empty stage, deployment pipelines creates a new workspace and sets the dataflow storage to a Fabric blob storage. Blob storage is used even if the source workspace is configured to use Azure data lake storage Gen2 (ADLS Gen2).
 
 * Service principal isn't supported for dataflows.
 

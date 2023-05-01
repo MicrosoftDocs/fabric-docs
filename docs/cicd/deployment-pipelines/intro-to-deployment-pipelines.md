@@ -7,13 +7,16 @@ ms.topic: conceptual
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1
-ms.date: 04/02/2023
+ms.date: 05/23/2023
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 ---
 
 # Introduction to deployment pipelines
 
-In today’s world, analytics is a vital part of decision making in almost every organization. Fabric's deployment pipelines tool enables BI creators to manage the lifecycle of organizational content. It's an efficient and reusable tool for creators in an enterprise with Premium capacity. Deployment pipelines enable creators to develop and test content in the service, before the content is consumed by users. The content types include reports, paginated reports, dashboards, datasets and dataflows.
+> [!NOTE]
+> This articles in this section describe how to deploy content to your app. For version control, see the [git integration](../git-integration/intro-to-git-integration.md) documentation.
+
+In today’s world, analytics is a vital part of decision making in almost every organization. Fabric's deployment pipelines tool enables BI creators to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service, before it's consumed by users. Supported content types include reports, paginated reports, dashboards, datasets and dataflows.
 
 ## Learn to use deployment pipelines
 

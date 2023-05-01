@@ -4,7 +4,7 @@ description: This article explains how to copy data using Google Cloud Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/20/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
@@ -40,9 +40,9 @@ For the full list of Google Cloud Storage roles and associated permissions, go t
 Google Cloud Storage supports the following file formats. Refer to each article for format-based settings.
 
 - Avro format
-- Binary format
-- Delimited text format
-- Excel format
+- [Binary format](format-binary.md)
+- [Delimited text format](format-delimited-text.md)
+- [Excel format](format-excel.md)
 - JSON format
 - ORC format
 - Parquet format
@@ -58,7 +58,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 ### General
 
-For **General** tab configuration, go to General.
+For **General** tab configuration, go to [General](activity-overview.md#general-settings).
 
 ### Source
 

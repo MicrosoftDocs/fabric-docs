@@ -4,7 +4,7 @@ description: This article provides information about how to do create a Google C
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 02/20/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to
 ---
 
@@ -28,7 +28,7 @@ This Google Cloud Storage connector supports the following authentication types 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).
+- A tenant account with an active subscription. Create an account for free.
 
 - A workspace is created and isn't the default **My Workspace**.
 

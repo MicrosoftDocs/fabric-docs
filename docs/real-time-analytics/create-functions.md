@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 03/22/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Create stored functions
 
-Functions are reusable queries or query parts. Real-time Analytics supports two kinds of functions:
+Functions are reusable queries or query parts. Real-Time Analytics supports two kinds of functions:
 
 * Built-in functions, which are hard-coded functions that can't be modified by users.
 * User-defined functions, which are divided into two types:
@@ -25,9 +25,8 @@ For more information on the `.create-or-alter` `function` command, see [.create-
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A Workspace
-* A [KQL database](create-database.md)
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* [KQL database](create-database.md)
 
 ## Functions
 

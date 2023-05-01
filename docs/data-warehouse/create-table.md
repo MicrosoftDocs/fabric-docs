@@ -1,10 +1,10 @@
 ---
-title: Create tables in Synapse data warehouses in Microsoft Fabric
-description: Learn how to use SSMS to create tables in your Synapse Data Warehouse in Microsoft Fabric.
+title: Create tables in Synapse Data Warehouse
+description: Learn how to create tables in your Synapse Data Warehouse in Microsoft Fabric.
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.topic: how-to
 ---
 
@@ -16,16 +16,11 @@ ms.topic: how-to
 
 To get started, you must complete the following prerequisites:
 
-- Have access to a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] within a premium per capacity workspace with contributor or above permissions.
-- Choose your query tool. This tutorial features the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal and SQL Server Management Studio (SSMS), but you can use any T-SQL querying tool.
-    - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) (use the latest version available).
-    - [Download Azure Data Studio](https://aka.ms/azuredatastudio).
+- Have access to a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or above permissions.
+- Choose your query tool. This tutorial features the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal, but you can use any T-SQL querying tool.
     - Use the [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md).
 
 For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], see [Connectivity](connectivity.md). 
-
-> [!NOTE]
-> For complete syntax, refer to [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true).
 
 ### Create a new table in the SQL query editor with templates
 
@@ -38,31 +33,10 @@ For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric
 1. Modify the `CREATE TABLE` template to suit your new table.
 1. Select **Run** to create the table.
 
-### Create a new table in SQL Server Management Studio
-
-1. In SSMS, locate the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in the **Object Explorer** and right-click to select **New Query**. This opens a tab to write a new query.
-
-   :::image type="content" source="media\create-table\right-click-new-query.png" alt-text="Screenshot showing where to select New Query in the right-click menu." lightbox="media\create-table\right-click-new-query.png":::
-
-1. A new tab appears for you to write your CREATE TABLE SQL query.
-
-   :::image type="content" source="media\create-table\create-table-new-tab.png" alt-text="Screenshot of a new tab opened next to the Object Explorer pane." lightbox="media\create-table\create-table-new-tab.png":::
-
-1. Refer to syntax of [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true). For example:
-
-    ```sql
-    CREATE TABLE myTable
-      (  
-        id int NOT NULL,  
-        lastName varchar(20),  
-        zipCode varchar(6)  
-      );  
-    ```
-
-## Known limitations
-
-See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
+To learn more about supported table creation in Synapse Data Warehouse in Microsoft Fabric, refer to this doc: [Tables in data warehousing in Microsoft Fabric](tables.md)
 
 ## Next steps
 
-- [Transactions and modify tables with SSMS](transactions.md)
+- [Tables in data warehousing in Microsoft Fabric](tables.md)
+- [Data types in Microsoft Fabric](data-types.md)
+- [T-SQL surface area](tsql-surface-area.md)

@@ -1,11 +1,11 @@
 ---
-title: Get data from a blob in Real-time Analytics
+title: Get data from a blob in Real-Time Analytics
 description: Learn get blob data in a KQL Database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 01/10/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
@@ -15,9 +15,8 @@ In this article, you'll learn you how to get data from an Azure blob or blob con
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* Workspace
-* [Kusto database](create-database.md)
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* [KQL Database](create-database.md)
 * An Azure blob or blob container with data
 
 ## Get data from a blob
@@ -129,14 +128,14 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 ## Quick query
 
-To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database landing page. You can then save your query as a KQL Query Set by selecting **Save as Query Set**.
+To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database landing page. You can then save your query as a KQL Queryset by selecting **Save as Query Set**.
 
 :::image type="content" source="media/database-editor/quick-query.png" alt-text="Screenshot of the Quick query button.":::
 
-For more information on KQL Query Set, see <!-- [TODO- KQL query set]().-->
+For more information on KQL Queryset, see <!-- [TODO- KQL query set]().-->
 
 ## Next steps
 
 * To create an empty table, see <!--[TODO- Create table]().-->
 * To manage your database, see [Manage](database-management.md).
-* To create, store, and export queries, see [Query data in the KQL queryset](kusto-query-set.md)
+* To create, store, and export queries, see [Query data in the KQL Queryset](kusto-query-set.md)
