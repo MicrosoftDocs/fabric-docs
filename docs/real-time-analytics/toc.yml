@@ -14,7 +14,7 @@ items:
     href: tutorial-introduction.md
   - name: 1- Create resources
     href: tutorial-1-resources.md
-  - name: 2- Get data with Event streams
+  - name: 2- Get data with Eventstream
     href: tutorial-2-event-streams.md
   - name: 3- Explore data and build report
     href: tutorial-3-explore.md

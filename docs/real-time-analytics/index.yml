@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
-title: Real-Time Analytics documentation # < 60 chars
-summary: Real-Time Analytics is a fully managed big data analytics platform optimized for streaming, time-series data. It contains a dedicated query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-Time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios.
+title: Synapse Real-Time Analytics documentation 
+summary: Synapse Real-Time Analytics is a fully managed big data analytics platform optimized for streaming, time-series data. It contains a dedicated query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-Time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios.
 
 metadata:
   title: Synapse Real-Time Analytics in Microsoft Fabric documentation 
@@ -37,7 +37,7 @@ landingContent:
             url: create-empty-table.md
 
 # Card 
-  - title: Load data
+  - title: Get data
     linkLists:
       - linkListType: how-to-guide
         links: 
@@ -53,12 +53,14 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: KQL Query Set
+          - text: KQL Queryset
             url:  kusto-query-set.md
           - text: Sample queries
             url: query-table.md
-          - text: Query data in notebooks
+          - text: Use a notebook and Kqlmagic to query a KQL Database
             url: jupyter-notebook.md
+          - text: Use a notebook with Apache Spark to query a KQL database
+            url: spark-connector.md
   
   # Card 
   - title: Training
