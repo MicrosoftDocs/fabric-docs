@@ -4,13 +4,15 @@ description: This article provides information about how to do create an HTTP co
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 02/08/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to
 ---
 
 # How to create HTTP connection
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 This article outlines the steps to create HTTP connection.
 
@@ -27,7 +29,7 @@ The HTTP connector supports the following authentication types for copy and Data
 
 To get started, you must have the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).
+- A tenant account with an active subscription. Create an account for free.
 
 - A workspace is created and that isn't the default **My Workspace**.
 

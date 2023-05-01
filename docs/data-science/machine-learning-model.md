@@ -1,16 +1,16 @@
 ---
 title: Machine learning model
-description: Learn about creating models and managing versions; review examples of MLflow.
+description: Learn how to create machine learning models, manage versions within a model, track models, and apply a model.
 author: nelgson
 ms.author: negust
 ms.reviewer: franksolomon
 ms.topic: conceptual
-ms.date: 03/28/2023
+ms.date: 05/23/2023
 
 ms.search.form: Create New Model, Model Comparison
 ---
 
-# Machine learning model
+# Machine learning model in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

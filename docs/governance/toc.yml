@@ -17,9 +17,11 @@ items:
     href: microsoft-purview-and-fabric.md
   - name: Microsoft Purview Hub
     href: use-the-microsoft-purview-hub.md
-- name: Feature 2
+- name: Metadata scanning
   items:
-  - name: linktext2
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Overview
+    href: metadata-scanning-overview.md
+  - name: Enable service principal authentication for read-only admin APIs
+    href: metadata-scanning-enable-read-only-apis.md
+  - name: Run metadata scanning
+    href: metadata-scanning-run.md

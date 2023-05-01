@@ -1,15 +1,15 @@
 ---
-title: Browse the Apache Spark applications in Monitoring hub
-description: This article provides you with instructions on how to browse Spark applications in the Monitoring hub.
+title: Use the Monitoring hub to manage Apache Spark applications
+description: Learn how to access the monitoring hub and use it to sort, search, filter, manage, and cancel Apache Spark applications.
 author: jejiang
 ms.author: jejiang
 ms.topic: overview 
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ms.custom: template-howto
 ms.search.form: Browse Spark applications in Monitoring hub 
 ---
 
-# Browse the Apache Spark applications in Monitoring hub
+# Browse the Apache Spark applications in the Fabric monitoring hub
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -25,19 +25,19 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
 For better usability and discoverability, you can sort the Apache Spark applications by selecting different columns in the UI. You can also filter the applications based on different columns and search for specific applications.
 
-### Sort Apache Spark applications 
+### Sort Apache Spark applications
 
 To sort Apache Spark applications, you can select on each column header, such as **Name**, **Status**, **Item Type**, **Start Time**, **Workspace**, and so on.
 
 :::image type="content" source="media\browse-spark-applications-in-monitoring-hub\sort-spark-applications.png" alt-text="Screenshot showing the sort spark application." lightbox="media\browse-spark-applications-in-monitoring-hub\sort-spark-applications.png":::
 
-### Filter Apache Spark applications 
+### Filter Apache Spark applications
 
 You can filter Apache Spark applications by **Status**, **Item Type**, **Start Time**, **Submitter**, and **Workspace** using the Filter pane in the upper-right corner.
 
 :::image type="content" source="media\browse-spark-applications-in-monitoring-hub\filter-spark-applications.png" alt-text="Screenshot showing the filter spark applications." lightbox="media\browse-spark-applications-in-monitoring-hub\filter-spark-applications.png":::
 
-### Search Apache Spark applications 
+### Search Apache Spark applications
 
 To search for specific Apache Spark applications, you can enter certain keywords in the search box located in the upper-right corner.
 

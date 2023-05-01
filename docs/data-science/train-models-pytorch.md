@@ -1,19 +1,19 @@
 ---
 title: How to train models with PyTorch
-description: Learn how to train models with PyTorch.
-ms.reviewer: mopeakande
+description: Learn how to train models with PyTorch, a framework that’s frequently used for applications such as computer vision and natural language processing.
+ms.reviewer: ssalgado
 ms.author: negust
 author: nelgson
 ms.topic: how-to
-ms.date: 02/10/2023
+ms.date: 05/23/2023
 ms.search.form: Train models with PyTorch
 ---
 
-# How to train models with PyTorch
+# How to train models with PyTorch in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[PyTorch](https://pytorch.org/) is a machine learning framework based on the Torch library. It's frequently used for applications such as computer vision and natural language processing. In this article, we'll go through an example of how you can train and track the iterations of your PyTorch model.
+[PyTorch](https://pytorch.org/) is a machine learning framework based on the Torch library. It's frequently used for applications such as computer vision and natural language processing. In this article, we go through an example of how you train and track the iterations of your PyTorch model.
 
 ## Install PyTorch
 
@@ -25,7 +25,7 @@ To get started with PyTorch, you must ensure that it's installed within your not
 
 ## Set up the machine learning experiment
 
-Next, we'll create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API will create a new machine learning experiment if it doesn't already exist.
+Next, you create a machine learning experiment using the MLFLow API. The MLflow set_experiment() API creates a new machine learning experiment if it doesn't already exist.
 
 ```python
 import mlflow
@@ -35,7 +35,7 @@ mlflow.set_experiment("sample-pytorch")
 
 ## Train and evaluate a Pytorch model
 
-After the experiment has been created, we'll load the MNSIT dataset, generate our test and training datasets, and create our training function.
+After the experiment has been created, the code below loads the MNSIT dataset, generates our test and training datasets, and creates a training function.
 
 ```python
 import os
@@ -142,7 +142,7 @@ torch.save(model.state_dict(), model.name())
 
 ## Log model with MLflow
 
-Now, we'll start an MLflow run and track the results within our machine learning experiment.
+Now, you start an MLflow run and track the results within our machine learning experiment.
 
 ```python
 with mlflow.start_run() as run:
@@ -156,7 +156,7 @@ with mlflow.start_run() as run:
     print(f"Model URI: {model_uri}")
 ```
 
-This creates a run with the specified parameters and logs the run within the sample-pytorch experiment. This snippet will also create a new model called sample-pytorch.  
+The code above creates a run with the specified parameters and logs the run within the sample-pytorch experiment. This snippet creates a new model called sample-pytorch.  
 
 ## Load and evaluate the model
 

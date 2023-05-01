@@ -5,34 +5,39 @@ ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: quickstart
-ms.date: 03/02/2023
+ms.date: 05/23/2023
 ---
 
 # Quickstart: Create your first pipeline to copy data
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 In this tutorial, you build a data pipeline to move a Sample dataset to the Lakehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Lakehouse.
 
 ## Prerequisites
 
-Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../placeholder.md) that isn’t the default My Workspace.
+To get started, you must complete the following prerequisites:
+
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. Create an account for free.
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 
 ## Create a data pipeline
 
-1. Switch to **Data factory** on the [app.powerbi.com](https://app.powerbi.com) page.
+1. Navigate to [Power BI](https://app.powerbi.com/).
+1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/switch-data-factory.png" alt-text="Screenshot of menu in which Data factory option appears.":::
+   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory workload emphasized.":::
 
-1. Create a new workspace or choose another workspace besides **My workspace** for this demo.
+1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you created a new workspace in the prior Prerequisites section, use this one.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/create-workspace.png" alt-text="Screenshot showing the Create workspace button on the data factory page in Fabric.":::
+   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/create-workspace-page.png" alt-text="Screenshot showing the create workspace dialog.":::
+1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
 
-1. Select **New** and then **Data pipeline**.
-
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/new-data-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+  :::image type="content" source="media/create-first-pipeline/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
 ## Copy data using pipeline
 
@@ -40,11 +45,9 @@ In this session, you start to build your first pipeline by following below steps
 
 ### Step 1: Start with the Copy assistant
 
-1. Select **Copy data** on the canvas to open the **Copy assistant** tool to get started. Or select **Use copy assistant** from the **Copy data** drop down list under the **Activities** tab on the ribbon.
+1. After selecting **Copy data** on the canvas,  the **Copy assistant** tool will be opened to get started.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/copy-data-button.png" alt-text="Screenshot showing the Copy data button.":::
-
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/copy-data-assistant-button.png" alt-text="Screenshot showing the Copy data assistant button.":::
 
 ### Step 2: Configure your source
 
@@ -52,7 +55,7 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data.png" alt-text="Screenshot showing the Choose data source page of the Copy data assistant with the NYC Taxi - Green sample data selected.":::
 
-1. On the **Connect to data source** page of the assistant, the preview data for the **NYC Taxi - Green** is displayed.
+1. On the **Connect to data source** page of the assistant, the preview data for the **NYC Taxi - Green** is displayed, and then click **Next**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data-preview.png" alt-text="Screenshot showing the sample data for the NYC Taxi - Green sample data.":::
 
@@ -76,13 +79,13 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/review-create-activity.png" alt-text="Screenshot of the Review + create page of the Copy data assistant highlighting source and destination.":::
 
-1. The Copy activity is added to your new data pipeline canvas. All settings including advanced settings for the activity are available in the tabs below the pipeline canvas when the activity is selected.
+1. The Copy activity is added to your new data pipeline canvas. All settings including advanced settings for the activity are available in the tabs below the pipeline canvas when the created **Copy data** activity is selected.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/completed-activity.png" alt-text="Screenshot showing the completed Copy activity with the Copy activity settings tabs highlighted.":::
+   :::image type="content" source="media/create-first-pipeline/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity with the Copy activity settings tabs highlighted.":::
 
 ## Run and schedule your data pipeline
 
-1. Switch to the **Home** tab and select **Run**. Then select **Save and run** to start the activity.
+1. Switch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Run button on the Home tab, and the Save and run prompt displayed.":::
 
@@ -96,7 +99,7 @@ In this session, you start to build your first pipeline by following below steps
 
 1. You can also schedule the pipeline to run with a specific frequency as required. Below is an example scheduling the pipeline to run every 15 minutes.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15 minute recurring schedule.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
 
 ## Next steps
 

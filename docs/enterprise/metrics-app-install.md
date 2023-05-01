@@ -4,7 +4,7 @@ description: Learn how to install the utilization and metrics app.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ---
 
 # Install the utilization and metrics app
@@ -102,7 +102,7 @@ To complete the installation, configure the utilization and metrics app by runni
 
     |Field          |Required |Value    |Notes    |
     |---------------|---------|---------|---------|
-    |**CapacityID** |Yes |An ID of a capacity you're an admin of |You can find the capacity ID in the URL of the capacity management page. In Microsoft Fabric, go to **Settings** > **Admin portal** > **Capacity settings**, then select a capacity. The capacity ID is shown in the URL after */capacities/*. For example, `9B77CC50-E537-40E4-99B9-2B356347E584` is the capacity ID in this URL: `https://app.powerbi.com/admin-portal/capacities/9B77CC50-E537-40E4-99B9-2B356347E584`.</br> After installation, the app will let you see all the capacities you can access. |
+    |**CapacityID** |Yes |An ID of a capacity you're an admin of |You can find the capacity ID in the URL of the capacity management page. In Microsoft Fabric, go to **Settings** > **Admin center** > **Capacity settings**, then select a capacity. The capacity ID is shown in the URL after */capacities/*. For example, `9B77CC50-E537-40E4-99B9-2B356347E584` is the capacity ID in this URL: `https://app.powerbi.com/admin-portal/capacities/9B77CC50-E537-40E4-99B9-2B356347E584`.</br> After installation, the app will let you see all the capacities you can access. |
     |**UTC_offset** |Yes |Numerical values ranging from `14` to `-12`.</br> To signify a Half hour timezone, use `.5`. For example, for Iran's standard time enter `3.5`.   |Enter your organization's standard time in Coordinated Universal Time (UTC). |
     |**Timepoint**  |Automatically populated  |         |This field is automatically populated and is used for internal purposes. The value in this field will be overwritten when you use the app. |
     |**Timepoint2** |Automatically populated  |         |This field is automatically populated and is used for internal purposes. The value in this field will be overwritten when you use the app. |

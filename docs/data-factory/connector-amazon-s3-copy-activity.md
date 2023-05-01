@@ -4,24 +4,34 @@ description: This article explains how to copy data using Amazon S3.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/20/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
 # How to configure Amazon S3 in a copy activity
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Amazon S3.
+
+## Required permissions
+
+To copy data from Amazon S3, make sure you've been granted the following permissions for Amazon S3 object operations: `s3:GetObject` and `s3:GetObjectVersion`.
+
+In addition, `s3:ListAllMyBuckets` and `s3:ListBucket`/`s3:GetBucketLocation` permissions are required for operations like testing connection and browsing from root.
+
+For the full list of Amazon S3 permissions, see [Specifying Permissions in a Policy on the AWS site](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html).
 
 ## Supported format
 
 Amazon S3 supports the following file formats. Refer to each article for format-based settings.
 
 - Avro format
-- Binary format
-- Delimited text format
-- Excel format
+- [Binary format](format-binary.md)
+- [Delimited text format](format-delimited-text.md)
+- [Excel format](format-excel.md)
 - JSON format
 - ORC format
 - Parquet format
@@ -35,12 +45,9 @@ For the configuration of each tab under copy activity, see the following section
 - [Source](#source)
 - [Settings](#settings)
 
->[!Note]
->Destination isn't supported in the Amazon S3 connector.
-
 ### General
 
-For **General** tab configuration, go to General.
+For **General** tab configuration, go to [General](activity-overview.md#general-settings).
 
 ### Source
 
