@@ -11,20 +11,21 @@ ms.custom:
 
 # Manual update
 
-When updating more than one item in a workspace, there’s always a chance that one of them will fail. The workspace fails to update if the incoming update from the git branch causes inconsistencies or dependency problems in the workspace that are difficult to determine in advance. The update stops when an item fails and you're left in a situation where your workspace isn't synced to any git branch.
-
-> [!NOTE]
-> This is not the same as [conflict resolution](./conflict-resolution.md). If changes were made to the same item in both the workspace and git branch, it causes a conflict and updates are disabled. This article discusses what to do a workspace fails to update even though there are no direct conflicts.
+When updating items in a workspace, there’s always a chance that one of them will fail. The workspace fails to update if the incoming update from the git branch causes inconsistencies or other problems in the workspace that are difficult to determine in advance. If an item fails to update, the update stops and you're left in a situation where your workspace isn't synced to any git branch.
 
 There are many reasons that an update can fail, including, but not limited to the following problems:
 
 * Dependent items were changed or deleted
 * Circular dependencies were created
 * Item renamed
+* Invalid item data
+
+> [!NOTE]
+> This is not the same as [conflict resolution](./conflict-resolution.md). If changes were made to the same item in both the workspace and git branch, it causes a conflict and updates are disabled. This article discusses what to do a workspace fails to update even though there are no direct conflicts.
 
 An error message lets you know which item failed and why.
 
-:::image type="content" source="./media/manual-update/partial-update-error.png" alt-text="Screenshot showing the error message when update fails.":::
+:::image type="content" source="./media/partial-update/partial-update-error.png" alt-text="Screenshot showing the error message when update fails.":::
 
 This error message appears for any user trying to access the workspace, until the update is completed successfully.
 
@@ -32,13 +33,13 @@ This error message appears for any user trying to access the workspace, until th
 
 Your workspace now contains the following items
 
-* The item or items updated before the failure. These items are identical to the items in git, but the metadata isn't updated. They have a git status of *synced* but with a triangle warning.
+* The item or items updated before the failure. These items are identical to the items in git, but the metadata isn't updated. They have a git status of *synced* but with a triangle warning sign. :::image type="icon" source="./media/partial-update/warning.png":::
 * The item that failed. This item has a git status of *Update required*.
-* Possibly, items that weren't updated yet when the item failed. These items aren't updated at all and have a git status of *I don't know!*.
+* Possibly, items that weren't updated yet when the item failed. These items haven't been updated yet and have a git status of *Update required*.
 
 The status bar at the bottom of the screen that shows the latest sync status is red and indicated the partially synced status.
 
-:::image type="content" source="./media/manual-update/partial-update-status.png" alt-text="Screenshot showing status line at the bottom of the screen when an update fails.":::
+:::image type="content" source="./media/partial-update/partial-update-status.png" alt-text="Screenshot showing status line at the bottom of the screen when an update fails.":::
 
 ## Update the failed item
 
@@ -49,7 +50,7 @@ To update the workspace manually after it failed to update automatically:
    * Revert the item to an earlier version that doesn't fail
    * Edit the item so it doesn't fail
    * Restore a dependant item that was deleted
-1. Go back to the workspace and **Update** it again
+1. Go back to the workspace and [**Update**](./git-get-started.md#update-workspace-from-git) the entire workspace again
 
 ## Considerations and limitations
 
