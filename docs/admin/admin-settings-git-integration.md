@@ -13,6 +13,9 @@ The git integration tenant admin settings are configured in the tenant settings 
 
 :::image type="content" source="./media/admin-settings-git-integration/workspace-settings.png" alt-text="Screenshot of the Admin portal with the workspace settings shown." lightbox="./media/admin-settings-git-integration/workspace-settings.png":::
 
+> [!IMPORTANT]
+> The switches that control git integration are part of Microsoft Fabric and will only work if the [Fabric admin switch](./admin-switch.md) is turned on. If Fabric is disabled, git integration can't work regardless of the status of these switches.
+
 These settings are only visible to the tenant admin.
 There are three settings relating to git integration:
 
@@ -40,7 +43,7 @@ Learn more about Multi-Geo support.
 
 The admin can decide whether or not to export sensitivity labels into the git repository when connecting to a workspace. Enable this setting to export sensitivity labels.
 
-:::image type="content" source="./media/admin-settings-git-integration/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting sensitivity labels." lightbox="./media/admin-settings-git-integration/git-integration-sensitivity-labels-switch.png":::
+:::image type="content" source="./media/admin-settings-git-integration/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting sensitivity labels.":::
 
 Learn more about sensitivity labels.
 
