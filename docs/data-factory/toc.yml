@@ -97,6 +97,8 @@
         href: connector-http.md
       - name: Configure in copy activity of pipeline
         href: connector-http-copy-activity.md
+      - name: Connect to dataflows
+        href: connector-http-dataflows.md
     - name: KQL Database
       items:
       - name: Overview
