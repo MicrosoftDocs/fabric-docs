@@ -141,12 +141,12 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Synapse Real-time Analytics
+    - title: Synapse Real-Time Analytics
 
       imageSrc: ./media/synapse-real-time-analytics-icon.png
       links:
         - url: real-time-analytics/overview.md
-          text: What is Real-time Analytics?
+          text: What is Real-Time Analytics?
         - url: real-time-analytics/event-streams/overview.md
           text: What is Event stream?
         - url: real-time-analytics/create-database.md
