@@ -21,7 +21,7 @@ Use the tiles across the top of the data hub to find and explore recommended dat
 
 ## Display only data items belonging to a particular domain
 
-If domains have been defined in your organization, you can use the domain selector to select a domain so that only data items belonging to that domain will be displayed. If an image has been associated with the domain, you’ll see that image on the data hub to remind you of the domain your are viewing.
+If domains have been defined in your organization, you can use the domain selector to select a domain so that only data items belonging to that domain will be displayed. If an image has been associated with the domain, you’ll see that image on the data hub to remind you of the domain you're viewing.
 
 ## Find items in the data items list
 
@@ -31,25 +31,25 @@ The list has three tabs to narrow down the list of data items.
 
 |Tab  |Description  |
 |:-------------------------|:----------------------------------------------------|
-| **All**                  | Data items that you are allowed to find.  |
-| **My data**              | Data item that you are the owner of.      |
+| **All**                  | Data items that you're allowed to find.  |
+| **My data**              | Data item that you're the owner of.      |
 | **Endorsed in your org** | Endorsed data items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. |
 
 The columns of the list are described below.
 
 |Column  |Description  |
 |:-----------------|:--------|
-| **Name**         | The data item name. Click the name to open the item's details page. |
+| **Name**         | The data item name. Select the name to open the item's details page. |
 | **Endorsement**  | Endorsement status. |
 | **Owner**        | Data item owner (All and Endorsed in your org tabs only). |
 | **Workspace**    | The workspace the data item is located in. |
 | **Refreshed**    | Last refresh time (rounded to hour, day, month, and year. See the details section on the item's detail page for the exact time of the last refresh). |
 | **Next refresh** | The time of the next scheduled refresh (My data tab only). |
-| **Sensitivity**  | Sensitivity, if set. Click on the info icon to view the sensitivity label description. |
+| **Sensitivity**  | Sensitivity, if set. Select the info icon to view the sensitivity label description. |
 
 ## Find items by workspace
 
-Related data items are often grouped together in a workspace. To see the data items in a workspace, expand the Explorer pane and select the workspace your’re interested in. The data items you are allowed to see in that workspace will be displayed in the data items list.
+Related data items are often grouped together in a workspace. To see the data items in a workspace, expand the Explorer pane and select the workspace you’re interested in. The data items you're allowed to see in that workspace will be displayed in the data items list.
 
 ## Next steps
 
