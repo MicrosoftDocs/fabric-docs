@@ -1,5 +1,5 @@
 items:
-- name: CI/CD documentation
+- name: Lifecycle management documentation
   href: index.yml
 - name: What is lifecycle management? 
   href: cicd-overview.md

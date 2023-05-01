@@ -155,27 +155,9 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
-### General limitations
-
-- The Azure AD user you’re using in Fabric is the same user you need to use in Azure Repos. There’s no way to edit or change users in Fabric.
-
-### Branch and folder limitations
-
-- Maximum length of branch name is 244 characters.
-- Maximum length of full path for file names is 250 characters. Longer names will fail.
-- If a branch contains only subdirectories without artifact directories, the connection fails.
-- You can’t create subdirectories inside the folder connected to the workspace.
-- You can’t download a report/dataset as *.pbix* from the service after deploying them with Git Integration.
-
-### Sync and commit limitations
-
-- The size limit for a commit is 25 MB.
-- You can only sync in one direction at a time. You can’t commit and update at the same time.
-- Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they are ignored.
-- Duplicating names isn't allowed – even if Power BI allows it, the update fails.
-- B2B isn’t supported.
-- [Conflict resolution](./conflict-resolution.md) is partially done in git.
+If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the git integration feature.
 
 ## Next steps
 
-[Git integration best practices](../best-practices-cicd.md)
+- [Understand the git integration process](./git-integration-process.md)
+- [Git integration best practices](../best-practices-cicd.md)
