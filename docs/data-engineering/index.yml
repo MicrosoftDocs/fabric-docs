@@ -111,9 +111,7 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Lakehouse sharing and permissions
-            url: lakehouse-sharing.md
-          - text: Lakehouse SQL endpoint security
-            url: lakehouse-sql-security.md
           - text: Workspace roles in Lakehouse
             url: workspace-roles-lakehouse.md
+          - text: Lakehouse SQL endpoint security
+            url: lakehouse-sql-security.md
