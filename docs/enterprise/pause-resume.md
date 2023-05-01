@@ -7,14 +7,24 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ---
 
-# Pause your capacity
+# Pause and resume your capacity
 
-This article walks through how to pause and resume a Fabric capacity in Microsoft Azure. Pausing your capacity prevents you from being billed. Pausing your capacity is great if you don't need to use the capacity for some time. Use the following steps to pause your capacity.
-This assumes that you've already created a Fabric capacity (**F SKU**). If you haven't, see [Create a Fabric capacity in the Azure portal](licenses-buy.md) to get started.
+Microsoft Fabric lets you pause and resume your capacity. When your capacity isn't operational, you can pause it to enable cost savings for your organization. Later, when you want to resume work on your capacity, you can reactivate it.
 
-> [!NOTE]
-> Pausing a capacity can prevent content from being available within Fabric. Make sure the capacity is not being currently utilized by any workloads.
+> [!IMPORTANT]
+> Pausing a capacity can prevent Microsoft Fabric content from being available. Before you pause your capacity, make sure the capacity is not being used.
 
+## Prerequisites
+
+To pause your capacity you need:
+
+* An [F SKU capacity](licenses-buy#azure-skus)
+
+* To be a [Power BI administrator](../admin/admin-overview.md#power-platform-and-power-bi-admin-roles)
+
+## Pause your capacity
+
+Follow these steps to pause your capacity.
 
 1. Sign into the [Azure portal](https://portal.azure.com/).
 
@@ -57,7 +67,6 @@ Resume usage by starting your capacity. Starting your capacity also resumes bill
     :::image type="content" source="media/azure-fabric-pause-start/azure-portal-confirm-start.png" alt-text="Screenshot of the Azure portal, which shows the highlighted Yes button in the start capacity dialog.":::
 
 If any content is assigned to this capacity, the content becomes available once the capacity is started.
-
 
 ## Next steps
 
