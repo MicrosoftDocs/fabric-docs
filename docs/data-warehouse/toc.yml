@@ -67,6 +67,10 @@ items:
       href: query-delta-lake-logs.md
   - name: Design and Develop
     items:
+    - name: Warehouse settings and context menus
+      href: settings-context-menus.md
+    - name: Create a sample warehouse 
+      href: create-warehouse-sample.md
     - name: Tables
       href: tables.md
     - name: Data types
@@ -77,8 +81,6 @@ items:
       href: table-constraints.md
     - name: Transactions
       href: transactions.md
-    - name: Warehouse settings and context menus
-      href: settings-context-menus.md
     - name: Limitations and known issues
       href: limitations.md      
   - name: Performance
