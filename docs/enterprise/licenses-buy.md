@@ -43,6 +43,28 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 To buy an Azure SKU you need to be an owner or a contributor of an [Azure subscription](/azure/role-based-access-control/overview).
 
+1. Select the **Microsoft Fabric (preview)** service. You can *Microsoft Fabric (preview)* using the search menu.
+
+2. Select **Create Fabric Capacity**.
+
+3. In the **Basics** tab, fill in the following fields:
+
+    * *Subscription* - The subscription you want your capacity to be assigned to. All Azure subscriptions are billed together.
+
+    * *Resource group* - The resource group you want your capacity to be assigned to.
+
+    * *Capacity name* - Provide a name for your capacity.
+
+    * *Region* - Select the region you want your capacity to be part of.
+
+    * *Size* - Select your capacity size. Capacities come in different stock keeping units (SKUs) and are measured by capacity units (CUs). You can view a detailed list of Microsoft Fabric capacities in [Capacities and SKUs](licenses.md#capacity-and-skus).
+
+    * *Fabric capacity administrator* - Select the [admin](../admin/admin-overview.md#capacity-admin-roles) for this capacity.
+
+4. Select **Next: Tags** and if required, enter a name and a value for your capacity.
+
+5. Select **Review + create**.
+
 ## Microsoft 365 SKUs
 
 Microsoft 365 SKUs, also known as EM or P SKUs, are legacy SKUs inherited from Power BI. You can only renew a Microsoft 365 SKU if you already have a Power BI subscription, and Microsoft Fabric is [enabled](../admin/admin-switch.md) on top of your Power BI subscription.
