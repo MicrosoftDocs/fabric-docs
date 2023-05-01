@@ -123,8 +123,11 @@
         href: connector-microsoft-365.md
       - name: Configure in copy activity of pipeline
         href: connector-microsoft-365-copy-activity.md
-    - name: Parquet format
-      href: format-parquet.md
+    - name: Parquet
+      items:
+      - name: Parquet format
+      - name: Connect in dataflows
+        href: connector-parquet-dataflows.md
     - name: OData
       items:
       - name: Overview
