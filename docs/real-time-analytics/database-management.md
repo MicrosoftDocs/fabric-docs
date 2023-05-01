@@ -11,7 +11,9 @@ ms.search.form: product-kusto
 
 # Data management
 
-Real-Time Analytics offers a range of options for managing your data, both on a database and table level.
+Synapse Real-Time Analytics offers a range of options for managing your data, both on a database and table level. You can manage your data either through the UI of your KQL Database or by using management commands. Management commands, also known as control commands, are requests to the service to retrieve information that is not necessarily data in the database tables, or requests to modify the service state.
+
+For more information, see [Management commands](/azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric)
 
 You can manage your data in the following ways:
 
@@ -19,8 +21,7 @@ You can manage your data in the following ways:
 * Activate [Data copy to OneLake](#data-copy-to-onelake)
 * Create [Stored functions](#stored-functions)
 * Create [Materialized views](#materialized-views)
-
-For more information, see [Management commands](/azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric)
+<!-- * Alter [table policy update](#table-update-policy)-->
 
 ## Database management
 
@@ -36,17 +37,22 @@ To expose the data in your KQL database to all of [!INCLUDE [product-name](../in
 
 ## Table management
 
-### Stored functions
+<!-- ### Table update policy
 
-This feature allows you to create or alter an existing function using the `.create-or-alter` `function` command, which stores it in the database metadata. If the function with the provided *functionName* doesn't exist in the database metadata, the command creates a new function. Otherwise, the named function is changed.
 
-For more information, see [Create stored functions](create-functions.md)
 
+-->
 ### Materialized views
 
 A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. You can create materialized views using the `.create materialized-view` command.
 
 For more information, see [Create materialized views](materialized-view.md)
+
+## Stored functions
+
+This feature allows you to create or alter an existing function using the `.create-or-alter` `function` command, which stores it in the database metadata. If the function with the provided *functionName* doesn't exist in the database metadata, the command creates a new function. Otherwise, the named function is changed.
+
+For more information, see [Create stored functions](create-functions.md)
 
 ## Next steps
 
