@@ -38,7 +38,7 @@ By default, all the Fabric workspaces are enabled with high concurrency Mode. Us
 
 5. Disabling the high concurrency mode hides the section to configure the time period of inactivity and also hides the option to start a new high concurrecny session from the notebook menu.
 
-  :::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-setting-disable-high-concurrency-mode.png" alt-text="Screenshot showing the high concurrency option disabled in workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-setting-disable-high-concurrency-mode.png":::
+   :::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-setting-disable-high-concurrency-mode.png" alt-text="Screenshot showing the high concurrency option disabled in workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-setting-disable-high-concurrency-mode.png":::
 
 ## Run Notebooks in High Concurrency Session
 
