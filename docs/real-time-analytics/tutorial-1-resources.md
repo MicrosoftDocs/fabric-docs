@@ -41,4 +41,4 @@ ms.search.form: product-kusto
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial part 2: Get data with Event streams](tutorial-2-event-streams.md)
+> [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md)
