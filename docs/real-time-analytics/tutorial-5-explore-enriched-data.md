@@ -13,15 +13,7 @@ ms.search.form: product-kusto
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:   [Tutorial part 4: Enrich your data](tutorial-4-enrich-data.md)
 
-## Explore data further in a KQL queryset
-
-In this module, you're going to write queries using [Kusto Query Language](/azure/data-explorer/kusto/query/) to explore the data that you have ingested from the Eventstream and blob storage. Kusto Query Language is a powerful tool to explore your data and discover patterns, identify anomalies and outliers, create statistical modeling, and more. The query uses schema entities that are organized in a hierarchy similar to SQLs: databases, tables, and columns. A KQL query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Kusto queries are made of one or more query statements. You're going to write some simple KQL queries to get familiar with the language and discover its power and simplicity.
-
-Run the following queries in the new KQL Queryset you have created.
-Copy/paste each query into your environment, select the query and then
-select **Run**.
-
-
+In this module, you'll write queries using [Kusto Query Language](/azure/data-explorer/kusto/query/) to explore the NYC Taxi data and the location data. Kusto Query Language is a powerful tool to explore your data and discover patterns, identify anomalies and outliers, create statistical modeling, and more. The query uses schema entities that are organized in a hierarchy similar to SQLs: databases, tables, and columns. A KQL query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. 
 ## Query data
 
 The first step in data analysis is often to take a look at a subset of the data itself.
@@ -33,100 +25,58 @@ The first step in data analysis is often to take a look at a subset of the data 
     | take 10
     ```
 
-1. Select **Run** or press **Shift + Enter**. 
+1. Select **Run** or press **Shift + Enter**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/results-take-10.png" alt-text="Screenshot of take 10 results.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/results-take-10.png" alt-text="Screenshot of take 10 results in Real-Time Analytics in Microsoft Fabric.":::
 
     The specific lines returned in your query may vary. 
-1.  The following query returns the top 10 pickup locations in New York
-    City for Yellow Taxis.
 
--    //Top 10 pickup locations
+1.  The following query returns the top 10 pickup locations in New York City for Yellow Taxis.
 
-        nyctaxitrips
+    ```kusto
+    nyctaxitrips
+    | summarize Count=count() by PULocationID
+    | top 10 by Count 
+    ```
 
-        | summarize count() by PULocationID
+    :::image type="content" source="media/realtime-analytics-tutorial/top-10-by-count.png" alt-text="Screenshot of query result in Real-Time Analytics in Microsoft Fabric.":::
 
-        | top 10 by count_ 
+1. This query adds a step to the previous query by looking up the corresponding zones of the top 10 pickup locations using the *Locations* table.
 
-    ![A screenshot of a computer Description automatically generated
-    with medium
-    confidence](media/realtime-analytics-tutorial/image47.png)
+    ```kusto
+    nyctaxitrips
+    | lookup (Locations) on $left.PULocationID == $right.LocationID
+    | summarize Count=count() by Zone
+    | top 10 by Count
+    | render columnchart
+    ```
 
-    **Note**: Result of the query may not exactly match the screenshot
-    provided as you are ingesting streaming data.
+    :::image type="content" source="media/realtime-analytics-tutorial/top-10-locations.png" alt-text="Screenshot of top 10 location results in Real-Time Analytics in Microsoft Fabric.":::
 
-2.  We'll run the same query as in the previous step with an addition
-    of looking up the corresponding zones of the top 10 pickup locations
-    by using the 'locations' table.
+1.  Let's check anomalies in the tips that have been given by the customers in the Manhattan borough. Hover over the red dots to see the values.
 
--    //For the same top 10 locations, look up the NYC zones --> Top 10 zones
+    ```kusto
+    nyctaxitrips
+    | lookup (Locations) on $left.PULocationID==$right.LocationID
+    | where Borough == "Manhattan"
+    | make-series s1 = avg(tip_amount) on tpep_pickup_datetime from datetime(2022-06-01) to datetime(2022-06-04) step 1h
+    | extend anomalies = series_decompose_anomalies(s1)
+    | render anomalychart with (anomalycolumns=anomalies)
+    ```
 
-        nyctaxitrips
+    :::image type="content" source="media/realtime-analytics-tutorial/anomaly-chart.png" alt-text="Screenshot of anomaly chart result in Real-Time Analytics in Microsoft Fabric.":::
 
-        | lookup (locations) on $left.PULocationID == $right.LocationID
+1.  To ensure that the sufficient taxis are working in the Manhattan borough, forecast the number of taxis needed per hour.
 
-        | summarize count() by Zone
-
-        | top 10 by count_
-
-        | render columnchart
-
-```{=html}
-<!-- -->
-```
-
--   **Note**: Result of the query may not exactly match the screenshot
-    provided as you are ingesting streaming data.
-
-    ![](media/realtime-analytics-tutorial/image49.png)
-
-3.  Let's check anomalies in the tips that have been given by the
-    customers in the Manhattan borough. Hover over the red dots to see
-    the values.
-
--   //Find anomalies in the tips given by the customers 
-
-        nyctaxitrips
-
-        | lookup (locations) on $left.PULocationID==$right.LocationID
-
-        | where Borough == "Manhattan"
-
-        | make-series s1 = avg(tip_amount) on tpep_pickup_datetime from datetime(2022-06-01) to datetime(2022-06-04) step 1h
-
-        | extend anomalies = series_decompose_anomalies(s1)
-
-        | render anomalychart with (anomalycolumns=anomalies)
-
-        Note: Result of the query may not exactly match the screenshot provided as you are ingesting streaming data.
-
-    ![A picture containing line, plot, text, font Description
-    automatically
-    generated](media/realtime-analytics-tutorial/image50.png)
-
-4.  To ensure that the sufficient taxis are plying in the Manhattan
-    borough, let's forecast the number of taxis needed per hour.
-
--   //Forecast the number of trips that begin from Manhattan to line up the taxis in that borough
-
-        nyctaxitrips
-
-        | lookup (locations) on $left.PULocationID==$right.LocationID
-
-        | where Borough == "Manhattan"
-
-        | make-series s1 = count() on tpep_pickup_datetime from datetime(2022-06-01) to datetime(2022-06-08)+3d step 1h by PULocationID
-
-        | extend forecast = series_decompose_forecast(s1, 24*3)
-
-        | render timechart
-
-        Note: Result of the query may not exactly match the screenshot provided below as you are ingesting streaming data.
-
-    ![A picture containing plot, line, font, text Description
-    automatically
-    generated](media/realtime-analytics-tutorial/image51.png)
+    ```kusto
+    nyctaxitrips
+    | lookup (Locations) on $left.PULocationID==$right.LocationID
+    | where Borough == "Manhattan"
+    | make-series s1 = count() on tpep_pickup_datetime from datetime(2022-06-01) to datetime(2022-06-08)+3d step 1h by PULocationID
+    | extend forecast = series_decompose_forecast(s1, 24*3)
+    | render timechart
+    ```
+    :::image type="content" source="media/realtime-analytics-tutorial/forecast-results.png" alt-text="Screenshot of forecast results in Real-Time Analytics in Microsoft Fabric.":::
 
 ## Next steps
 
