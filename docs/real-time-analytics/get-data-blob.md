@@ -128,7 +128,7 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 ## Quick query
 
-To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database landing page. You can then save your query as a KQL Query Set by selecting **Save as Query Set**.
+To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database landing page. You can then save your query as a KQL Queryset by selecting **Save as Query Set**.
 
 :::image type="content" source="media/database-editor/quick-query.png" alt-text="Screenshot of the Quick query button.":::
 

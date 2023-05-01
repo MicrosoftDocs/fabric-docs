@@ -37,7 +37,7 @@ ms.search.form: product-kusto
     
     :::image type="content" source="media/realtime-analytics-tutorial/build-power-bi-report.png" alt-text="Screenshot of query results with building Power BI report selected in Real-Time Analytics in Microsoft Fabric.":::
 
-    An empty PowerBI report editing window will open.
+    An empty Power BI report editing window will open.
 1.  Select **Stacked Column Chart** in the Visualizations pane. 
 1. In the **Data** pane on the right side, expand the **Kusto Query Result** to view the *avg_fare_amount* and *HourOfDay* fields.
 1. Drag the **HourOfDay** field to the **X-axis** and **avg_fare_amount** to the **Y-axis**

@@ -17,7 +17,7 @@ Recall that the dataset you have ingested with Eventstream does not contain lati
 
 ## Get dimension data from blob storage
 
-1. Navigate to your KQL database named **NycTaxiDB**/
+1. Navigate to your KQL database named **NycTaxiDB**.
 1.  Select **Get data** > **Blob container**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/get-data-blob-container.png" alt-text="Screenshot of get data from blob container.":::
