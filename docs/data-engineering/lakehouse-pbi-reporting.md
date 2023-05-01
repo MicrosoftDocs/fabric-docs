@@ -12,9 +12,9 @@ ms.search.form: Lakehouse PBI Reporting
 # How direct lake mode works with PBI reporting
 In Microsoft Fabric, when the user creates a lakehouse, the system also provisions the associated SQL Endpoint and default dataset. The default dataset is a semantic model with metrics on top of lakehouse data. The dataset allows Power BI to load data for reporting.
 
-When a Power BI report shows an element that uses data, it requests it from the underlying dataset. Consequently, the dataset will access a lakehouse to retrieve data and return it to the Power BI report. For efficiency default dataset loads commonly requested data into the cache and refreshes it when needed.
+When a Power BI report shows an element that uses data, it requests it from the underlying dataset. Next the dataset accesses a lakehouse to retrieve data and return it to the Power BI report. For efficiency default dataset loads commonly requested data into the cache and refreshes it when needed.
 
-Lakehouse applies V-order optimization to tables. That enables quickly loading data into the dataset and having it ready for querying without any additional sorting or transformations. 
+Lakehouse applies V-order optimization to tables. That enables quickly loading data into the dataset and having it ready for querying without any other sorting or transformations. 
 
 This approach gives unprecedented performance and the ability to instantly load large amounts of data for Power BI reporting.
 
