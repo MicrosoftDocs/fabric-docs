@@ -14,7 +14,7 @@ Synapse Real-Time Analytics in Microsoft Fabric is a fully managed big data anal
 
 ## Scenario
 
-This tutorial is based on sample streaming data called *New York Yellow Taxi trip data*. The dataset contains trip records of New York's yellow taxis, with fields capturing pick-up and drop-off dates/times, pick-up and drop-off locations, trip distances, itemized fares, rate types, payment types, and driver-reported passenger counts. This data does not contain latitude and longitude data, which will be loaded from a separate, no-streaming source and joined together with the streaming data. 
+This tutorial is based on sample streaming data called *New York Yellow Taxi trip data*. The dataset contains trip records of New York's yellow taxis, with fields capturing pick-up and drop-off dates/times, pick-up and drop-off locations, trip distances, itemized fares, rate types, payment types, and driver-reported passenger counts. This data does not contain latitude and longitude data, which will be loaded from a blob container and joined together with the streaming data. 
 
 You'll use the streaming and query capabilities of Real-Time Analytics to answer key questions about the trip statistics, taxi demand in the boroughs of New York and related insights, and build Power BI reports.
 
