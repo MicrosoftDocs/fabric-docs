@@ -1,17 +1,31 @@
 items:
-- name: Real-time Analytics documentation
+- name: Real-Time Analytics documentation
   href: index.yml
 - name: Overview
   items:
-  - name: What is Real-time Analytics?
+  - name: What is Real-Time Analytics?
     href: overview.md
   - name: Compare with Azure Data Explorer
     href: realtime-analytics-compare.md
 
 - name: Get started
   items:
-  - name: Real-time Analytics happy path
-    href: realtime-analytics-tutorial.md
+  - name: Tutorial - Introduction
+    href: tutorial-introduction.md
+  - name: 1- Create resources
+    href: tutorial-1-resources.md
+  - name: 2- Get data with Event streams
+    href: tutorial-2-event-streams.md
+  - name: 3- Explore data and build report
+    href: tutorial-3-explore.md
+  - name: 4- Enrich data
+    href: tutorial-4-enrich-data.md
+  - name: 5- Explore the enriched data
+    href: tutorial-5-explore-enriched-data.md
+  - name: 6- Build a Power BI report
+    href: tutorial-6-build-report.md
+  - name: 7- Clean up resources
+    href: tutorial-7-clean-up-resources.md
 - name: Create and manage entities
   items:
   - name: Data management
