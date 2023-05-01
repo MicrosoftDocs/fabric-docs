@@ -101,6 +101,7 @@ FOREIGN KEY is only supported when NOT ENFORCED is used.
 
 If data is coming from multiple data stores, you can port the data into the data warehouse and store it in an integration table. Once data is in the integration table, you can use the power of data warehouse to implement transformation operations. Once the data is prepared, you can insert it into production tables.
 
+<a id="limitations"></a>
 ### Unsupported table features
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports many, but not all, of the table features offered by other databases.
