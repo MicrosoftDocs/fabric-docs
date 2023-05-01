@@ -28,14 +28,15 @@ The following list shows what different workspace roles can do depending on thei
 
 The following table describes the permissions needed to perform various common operations:
 
-| **Operation**                                                       | **Workspace role**                                                                        | **GitHub permissions**                       | **Azure DevOps permissions**                  |
+| **Operation**                                                        | **Workspace role**                                                                        | **Git permissions**                          | **Azure DevOps permissions**                  |
 |----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|-----------------------------------------------|
 | Connect workspace to Git repo                                        | Admin                                                                                     | Role=Read                                    | Read=Allow                                    |
 | Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    | No permissions are needed                     |
 | Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Role=Read  (in target repo/directory/branch) | Read=Allow (in target repo/directory/branch)  |
 | View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 | Read or None                                  |
-| See workspace 'git status'                                           | Contributor                                                                               | Role=Read                                    | Read=Allow                                    |
+| See workspace 'git status'                                           | Admin, Member, Contributor                                                                | Role=Read                                    | Read=Allow                                    |
 | Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Read   | Read=Allow  |
+| Commit workspace changes to git                                      |                                                                                           |                                              |                                               |
 
 ## Connect and sync
 
@@ -55,17 +56,17 @@ If you don’t select which content to sync, you can’t continue to work until 
 
 ### Git status
 
-After you connect, the workspace displays information about source control that allows you to view the connected branch and the status of each item in the branch.
+After you connect, the workspace displays a *Git status* column that indicates the sync state of each item in the workspace in relation to the items in the remote branch.
 
 :::image type="content" source="./media/git-integration-process/git-status.png" alt-text="Screenshot if items in a workspace with their git status outlined.":::
 
 Each item has one of the following statuses:
 
-- **Synced** :::image type="icon" source="./media/git-integration-process/synced-icon.png":::
-- **Conflict** :::image type="icon" source="./media/git-integration-process/conflict-icon.png":::
-- **Unsupported** :::image type="icon" source="./media/git-integration-process/unsupported-icon.png":::
-- **Uncommitted** :::image type="icon" source="./media/git-integration-process/uncommitted-icon.png":::
-- **Update required** :::image type="icon" source="./media/git-integration-process/update-required-icon.png":::
+- :::image type="icon" source="./media/git-integration-process/synced-icon.png"::: Synced
+- :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: Conflict
+- :::image type="icon" source="./media/git-integration-process/unsupported-icon.png"::: Unsupported
+- :::image type="icon" source="./media/git-integration-process/uncommitted-icon.png"::: Uncommitted
+- :::image type="icon" source="./media/git-integration-process/update-required-icon.png"::: Update required
 
 ### Sync information
 
@@ -86,14 +87,15 @@ On top of the screen is the Source control icon. When the workspace is synced wi
 :::image type="content" source="./media/git-integration-process/source-control-zero.png" alt-text="Screenshot of the source control icon showing zero items changed.":::
 
 When changes are made either to the workspace or the git branch, the source control icon shows the number of items that are different. Select the source control icon to open the Source control pane.
-In the Source control pane, the **Changes** tab shows the number of items that were changed in the workspace, and the **Updates** tab shows the number of items that were modified in the git branch and need to be updated to the workspace.
+
+In the **Source control** pane, the **Changes** tab shows the number of items that were changed in the workspace and need to be committed to git, and the **Updates** tab shows the number of items that were modified in the git branch and need to be updated to the workspace.
 
 In each tab, the changed items are listed with an icon indicating the status:
 
-- new :::image type="icon" source="./media/git-integration-process/new-icon.png":::
-- modified :::image type="icon" source="./media/git-integration-process/modified-icon.png":::
-- deleted ⛔
-- in conflict :::image type="icon" source="./media/git-integration-process/conflict-icon.png":::
+- :::image type="icon" source="./media/git-integration-process/new-icon.png"::: new
+- :::image type="icon" source="./media/git-integration-process/modified-icon.png"::: modified
+- :::image type="icon" source="./media/git-integration-process/deleted-icon.png" ::: deleted
+- :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: conflict
 
 :::image type="content" source="./media/git-integration-process/source-control-panel-items.png" alt-text="Screenshot of the source control panel showing the status of the changed items.":::
 
