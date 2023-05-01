@@ -1,20 +1,20 @@
 ---
-title: Use an event hub connection to stream data to your KQL Database in Real-time Analytics
-description: Learn how to create a connection to Event Hubs and get data into your KQL Database.
+title: Use an event hub connection to stream data to your KQL database in Real-Time Analytics
+description: Learn how to create a connection to Event Hubs and get data into your KQL database.
 ms.reviewer: guregini
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 04/19/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 # Get data from Azure Event Hubs
 
 In this article, you'll learn how to get data from event hub into your KQL Database in [!INCLUDE [product-name](../includes/product-name.md)]. [Azure Event Hubs](/azure/event-hubs/event-hubs-about) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
 
-To stream data from Azure Event Hubs into Kusto, you'll go through two main steps. The first step is to create a [!INCLUDE [product-name](../includes/product-name.md)] platform-based cloud connection to a specific event hub instance. This data connection can be used across all [!INCLUDE [product-name](../includes/product-name.md)] workspaces and is managed centrally.
+To stream data from Azure Event Hubs into Real-Time-Analytics, you'll go through two main steps. The first step is to create a [!INCLUDE [product-name](../includes/product-name.md)] platform-based cloud connection to a specific event hub instance. This data stream can be used across all [!INCLUDE [product-name](../includes/product-name.md)] workspaces and is managed centrally.
 
-In the second step, you'll connect this [!INCLUDE [product-name](../includes/product-name.md)]-based cloud connection to a KQL Database. This process creates a database-specific Kusto Event Hub Data Connection. The connection will stream data into the table you specified during setup, and the data will then be available to query using the KQL Queryset.
+In the second step, you'll connect this [!INCLUDE [product-name](../includes/product-name.md)]-based cloud connection to a KQL Database. This process creates a database-specific Kusto Event Hub Data Stream. The connection will stream data into the table you specified during setup, and the data will then be available to query using a KQL queryset.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ In the second step, you'll connect this [!INCLUDE [product-name](../includes/pro
 
 ## Set a shared access policy on your event hub
 
-Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you'll need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the data connection. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature).
+Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you'll need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the data stream. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature).
 
 1. In the [Azure portal](https://ms.portal.azure.com/), browse to the specific Event Hubs instance you want to connect.
 1. Under **Settings**, select **Shared access policies**
@@ -36,7 +36,7 @@ Before you can create a cloud connection in [!INCLUDE [product-name](../includes
 1. Enter a **Policy name**.
 1. Select **Manage**, and then **Create**.
 
-## Gather information for the data connection
+## Gather information for the data stream
 
 Within the SAS policy pane, take note of the following four fields. You may want to copy/paste these fields to a note pad for later use.
 
@@ -49,7 +49,7 @@ Within the SAS policy pane, take note of the following four fields. You may want
 | c |**Primary key** | The key associated with the SAS policy | Starts with *PGGIISb009*...
 | d | **Connection string-primary key** | In this field you only want to copy the event hub namespace, which can be found as part of the connection string. | *eventhubpm15910.servicebus.windows.net*
 
-## Create a data connection
+## Create a data stream
 
 Now that your SAS policy is set up, you can configure a connection to this event hub.
 
@@ -66,21 +66,21 @@ Now that your SAS policy is set up, you can configure a connection to this event
     | Icon | Type of connection | Cloud
     | Connection name | User-defined name for this connection
     | Connection type | Type of resource to connect to | EventHub
-    | Event Hub namespace | Field reference **d** from the above [table](#gather-information-for-the-data-connection). | *eventhubpm15910.servicebus.windows.net*
-    | Event Hub | Field reference **a** from the above [table](#gather-information-for-the-data-connection). | *iotdata*
+    | Event Hub namespace | Field reference **d** from the above [table](#gather-information-for-the-data-stream). | *eventhubpm15910.servicebus.windows.net*
+    | Event Hub | Field reference **a** from the above [table](#gather-information-for-the-data-stream). | *iotdata*
     | Consumer Group | User-defined name for the unique stream view. Use a name of an existing consumer group. If the event hub doesn't have a consumer group, use "$Default", which is the Event Hub's default consumer group. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups). 
     | Authentication method | Type of authentication | Basic
-    | Username | Field reference **b** from the above [table](#gather-information-for-the-data-connection).  <br><br> The SAS policy name | *DocsTest*
-    | Password | Field reference **c** from the above [table](#gather-information-for-the-data-connection). <br><br> The SAS primary key.
+    | Username | Field reference **b** from the above [table](#gather-information-for-the-data-stream).  <br><br> The SAS policy name | *DocsTest*
+    | Password | Field reference **c** from the above [table](#gather-information-for-the-data-stream). <br><br> The SAS primary key.
     | Privacy level | Kusto doesn't use the Privacy level. You can use Organizational as a default value. | Organizational
 
     :::image type="content" source="media/get-data-event-hub/fill-out-connection-portal.png" alt-text="Screenshot of filling out event hub information in the Azure portal.":::
 
 1. Select **Create**.
 
-## Create a Kusto-specific connection to your data connection
+## Create a Kusto-specific connection to your data stream
 
-In the following step, you'll create a data connection in your KQL Database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your Event Hubs instance and get data into the specified table using specified data mapping.
+In the following step, you'll create a data stream in your KQL Database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your Event Hubs instance and get data into the specified table using specified data mapping.
 
 1. Navigate to your KQL Database. 
 1. Select **Get data** > **Get data from Event Hub**.
@@ -108,9 +108,9 @@ In the source tab, the **Source type** is autopopulated with **Event Hub**
 
     |**Setting** | **Suggested value** | **Field description**
     |---|---|---|
-    | Data connection | *TestDataConnection*  | The name that identifies your data connection.
+    | data stream | *TestDataConnection*  | The name that identifies your data stream.
     | Event hub data source |  | The name that identifies your event hub cloud connection. |
-    | Data connection name |  | This defines the name of the database-specific Kusto event hub Data Connection. The default is \<tablename>\<EventHubname>. |
+    | data stream name |  | This defines the name of the database-specific Kusto event hub data stream. The default is \<tablename>\<EventHubname>. |
     | Consumer group | **Add consumer group** | The consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups)
     | Compression | | Data compression of the events, as coming from the event hub. Options are None (default), or GZip compression.
     | Event system properties | Select relevant properties. | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations). If there are multiple records per event message, the system properties will be added to the first one. See [event system properties](#event-system-properties).|
@@ -119,7 +119,7 @@ In the source tab, the **Source type** is autopopulated with **Event Hub**
 
 #### Event system properties
 
-System properties store properties that are set by the Event Hubs service, at the time the event is enqueued. The data connection to the event hub can embed a selected set of system properties into the data ingested into a table based on a given mapping.
+System properties store properties that are set by the Event Hubs service, at the time the event is enqueued. The data stream to the event hub can embed a selected set of system properties into the data ingested into a table based on a given mapping.
 
 |        Property       | Data Type |      Description       |
 |---|---|---|
@@ -154,9 +154,9 @@ In the **Continuous ingestion from Event Hub established** window, all steps wil
 
 :::image type="content" source="media/get-data-event-hub/summary-tab.png" alt-text="Screenshot of summary tab.":::
 
-Note the name of the data connection that was created. This connection will be visible in your workspace as a new item, and is specific to the chosen table and data connection.
+Note the name of the data stream that was created. This connection will be visible in your workspace as a new item, and is specific to the chosen table and data stream.
 
-:::image type="content" source="media/get-data-event-hub/view-kusto-event-hub-data-connection.png" alt-text="Screenshot of workspace with new data connection.":::
+:::image type="content" source="media/get-data-event-hub/view-kusto-event-hub-data-connection.png" alt-text="Screenshot of workspace with new data stream.":::
 
 ## Next steps
 

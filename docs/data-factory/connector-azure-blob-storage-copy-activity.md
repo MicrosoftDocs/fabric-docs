@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure Blob Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
@@ -18,7 +18,16 @@ This article outlines how to use the copy activity in data pipeline to copy data
 
 ## Supported format
 
-Azure Blob Storage supports the following file formats.
+Azure Blob Storage supports the following file formats. Refer to each article for format-based settings.
+
+- Avro format
+- [Binary format](format-binary.md)
+- [Delimited text format](format-delimited-text.md)
+- [Excel format](format-excel.md)
+- JSON format
+- ORC format
+- Parquet format
+- XML format
 
 ## Supported configuration
 

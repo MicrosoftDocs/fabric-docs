@@ -12,24 +12,24 @@ items:
   items:
   - name: Real-time Analytics happy path
     href: realtime-analytics-tutorial.md
-- name: Create entities
+- name: Create and manage entities
   items:
+  - name: Data management
+    href: database-management.md
   - name: Databases
     items:
     - name: Create a database
       href: create-database.md
-    - name: Database Management
-      href: database-management.md
     - name: One logical copy
       href: onelake-mirroring.md
   - name: Tables
     items:
     - name: Create an empty table
       href: create-empty-table.md
-  - name: Create stored functions
-    href: create-functions.md
-  - name: Create materialized views
-    href: materialized-view.md
+    - name: Create stored functions
+      href: create-functions.md
+    - name: Create materialized views
+      href: materialized-view.md
 - name: Get data
   items:
   - name: Get data from a blob
@@ -42,22 +42,50 @@ items:
   items:
   - name: Query data in the KQL Queryset
     href: kusto-query-set.md
-  - name: Use a Jupyter notebook and kqlmagic to query a KQL Database
-    href: jupyter-notebook.md
   - name: Use a OneLake shortcut to query data
     href: onelake-shortcut.md
+  - name: Use a notebook with kqlmagic to query a KQL database
+    href: jupyter-notebook.md
+  - name: Use a notebook with Apache Spark to query a KQL database
+    href: spark-connector.md
   - name: Use sample queries
     href: query-table.md
 - name: Visualize data
   items:
   - name: Visualize data in a Power BI report
     href: create-powerbi-report.md
+  - name: Use data from KQL Databases in Power BI Desktop
+    href: power-bi-data-connector.md
 - name: Event streams
   items:
   - name: Introduction to event streams
     href: event-streams/overview.md
-  - name: Event streams main editor
-    href: event-streams/main-editor.md
+  - name: Event streams tutorial
+    href: event-streams/bring-events-to-fabric-from-event-hub.md
+  - name: Concepts
+    items:
+    - name: Event streams main editor
+      href: event-streams/main-editor.md
+    - name: Event streams sources
+      href: event-streams/event-streams-source.md
+    - name: Event streams destinations
+      href: event-streams/event-streams-destination.md
+    - name: Event processor editor
+      href: event-streams/event-processor-editor.md
+  - name: How-to
+    items:
+    - name: Create and manage an Eventstream item
+      href: event-streams/create-manage-an-eventstream.md
+    - name: Add and manage eventstream sources
+      href: event-streams/add-manage-eventstream-sources.md
+    - name: Add and manage eventstream destinations
+      href: event-streams/add-manage-eventstream-destinations.md
+    - name: Process event with event processor
+      href: event-streams/process-events-using-event-processor-editor.md
+    - name: Preview data
+      href: event-streams/preview-data.md
+    - name: Monitoring
+      href: event-streams/monitoring.md
 - name: Kusto Query Language
   href: kusto-query-language/toc.yml
 - name: Management commands
