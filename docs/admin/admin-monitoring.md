@@ -41,11 +41,11 @@ In the monitoring workspace, you can use the [Feature Usage and Adoption](/power
 
 ### Sharing
 
-You can either share the entire *Admin monitoring* workspace, or a report or dataset in the workspace.
+You can share the entire *Admin monitoring* workspace, or a report or dataset in the workspace.
 
 * **Admin monitoring workspace** - When you share the monitoring workspace, the users you share it with are granted a viewer role. Once a viewer role is provided, it can't be taken away.
 
-* **Report or a dataset** - To build on an existing report or dataset, you need to share the report or the dataset. You can mange the permissions for the monitoring reports and datasets at any time.
+* **Report or a dataset** - To build on an existing report or dataset, you need to share the report or the dataset. You can manage the permissions for the monitoring reports and datasets at any time.
 
 
 
