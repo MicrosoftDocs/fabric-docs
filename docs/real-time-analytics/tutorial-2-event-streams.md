@@ -21,7 +21,7 @@ ms.search.form: product-kusto
 
 1.  Select **New > Eventstream (Preview)**
 
-    :::image type="content" source="media/realtime-analytics-tutorial/new-eventstream.png" alt-text="Screenshot of new eventstream button.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/new-eventstream.png" alt-text="Screenshot of new eventstream button in Real-Time Analytics in Microsoft Fabric.":::
 
 1.  Enter *NyTaxiTripsEventstream* as the Eventstream name and select  **Create**.
 
@@ -56,7 +56,7 @@ ms.search.form: product-kusto
     The **Source** tab opens.
 1.  Review the default values. Notice that the data connection name is made from the database name and the Event stream name.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/source-tab.png" alt-text="Screenshot of source tab for event stream.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/source-tab.png" alt-text="Screenshot of source tab for event stream in Real-Time Analytics in Microsoft Fabric.":::
 
 1. Select **Next: Schema.**
     The **Schema** tab opens.
@@ -66,7 +66,7 @@ ms.search.form: product-kusto
 1. The incoming data source is uncompressed, so don't change the **Compression type**.
 1. In the **Data format** dropdown, select **JSON**.
      
-    :::image type="content" source="media/realtime-analytics-tutorial/data-format-json.png" alt-text="Screenshot of Schema tab with data format JSON selected.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/data-format-json.png" alt-text="Screenshot of Schema tab with data format JSON selected in Real-Time Analytics in Microsoft Fabric.":::
 
     Notice that the data preview will refresh and show the data in columns with the data types automatically identified. Some of these data types will need to be changed for later queries. The columns that appear in the preview can be manipulated by selecting the **down arrow** to the right of the column name.
 
@@ -74,7 +74,7 @@ ms.search.form: product-kusto
 
 1. Change the following columns to the target types by selecting the **down arrow**> **Change data type**. Verify that the following columns reflect the correct data type:
 
-    :::image type="content" source="media/realtime-analytics-tutorial/change-data-type.png" alt-text="Screenshot of changing data type in data preview.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/change-data-type.png" alt-text="Screenshot of changing data type in data preview in Real-Time Analytics in Microsoft Fabric.":::
 
     | Column name | Target data type|
     |--|--|

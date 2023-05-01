@@ -17,7 +17,7 @@ ms.search.form: product-kusto
 
 1.  Navigate to your Trident workspace homepage, and select the **NycTaxiDB** KQL database.
     
-    :::image type="content" source="media/realtime-analytics-tutorial/go-to-database.png" alt-text="Screenshot of selecting NYC taxi database.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/go-to-database.png" alt-text="Screenshot of selecting NYC taxi database in Real-Time Analytics in Microsoft Fabric.":::
 
 1.  In the object tree, select the table **nytaxitrips**
 1.  In the top right corner, select **Check your data**.
@@ -35,21 +35,21 @@ ms.search.form: product-kusto
 
 1.  Select **Build Power BI Report.**  The report you create in this step is based on the query output from the previous step.
     
-    :::image type="content" source="media/realtime-analytics-tutorial/build-power-bi-report.png" alt-text="Screenshot of query results with building Power BI report selected.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/build-power-bi-report.png" alt-text="Screenshot of query results with building Power BI report selected in Real-Time Analytics in Microsoft Fabric.":::
 
     An empty PowerBI report editing window will open.
 1.  Select **Stacked Column Chart** in the Visualizations pane. 
 1. In the **Data** pane on the right side, expand the **Kusto Query Result** to view the *avg_fare_amount* and *HourOfDay* fields.
 1. Drag the **HourOfDay** field to the **X-axis** and **avg_fare_amount** to the **Y-axis**
 
-    :::image type="content" source="media/realtime-analytics-tutorial/create-power-bi-visual.png" alt-text="Screenshot of creating Power BI visual from quick query output.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/create-power-bi-visual.png" alt-text="Screenshot of creating Power BI visual from quick query output in Real-Time Analytics in Microsoft Fabric.":::
 
 1.  In the top left corner of the ribbon, select **File** > **Save**.
 1.  Enter the name *nyctaxitripstats*. Choose your workspace, and set sensitivity as *Public*.
 1. Select **Continue**.
 1. Select **Open the file in Power BI to view, edit, and get a shareable link**. 
     
-    :::image type="content" source="media/realtime-analytics-tutorial/open-in-power-BI.png" alt-text="Screenshot of opening in Power BI.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/open-in-power-BI.png" alt-text="Screenshot of opening in Power BI in Real-Time Analytics in Microsoft Fabric.":::
 
     A new tab opens with the Power BI report selected.
 
@@ -59,7 +59,7 @@ ms.search.form: product-kusto
 1. In the **Visualizations** pane, select the paintbrush icon to **Format page**.
 1. Expand **Page Refresh**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/page-refresh-on.png" alt-text="Screenshot of page refresh details.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/page-refresh-on.png" alt-text="Screenshot of page refresh details in Real-Time Analytics in Microsoft Fabric.":::
 
 1. Toggle **Page Refresh** to **On** and set the refresh interval to 10 seconds.
 

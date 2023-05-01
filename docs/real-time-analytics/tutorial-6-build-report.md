@@ -13,74 +13,47 @@ ms.search.form: product-kusto
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 5: Explore the enriched data](tutorial-5-explore-enriched-data.md)
 
+A Power BI report is a multi-perspective view into a dataset, with visuals that represent findings and insights from that dataset. In a previous step in this tutorial, you [generated a PowerBI report](tutorial-3-explore.md#build-a-power-bi-report-from-the-query-output) from the streaming data. Now that the data has been enriched with additional location data, you'll create a new query that joins both datasets, and use this query output to create a new Power BI report.
+
 ## Build Power BI report
 
-A Power BI report is a multi-perspective view into a dataset, with
-visuals that represent findings and insights from that dataset.
+1. Copy and paste the following query into your KQL queryset. The output of this query will be used as the dataset for building the Power BI report.
 
-1.  Continuing the in same queryset, paste the following query. The
-    output of this query will be used as the dataset for building the
-    Power BI report.
+    ```kusto 
+    nyctaxitrips
+    | where PULocationID == DOLocationID
+    | lookup (Locations) on $left.PULocationID==$right.LocationID
+    | summarize Count=count() by Borough, Zone, Latitude, Longitude 
+    ```
 
->      //Find the total number of trips that started and ended at the same location
->
->     nyctaxitrips
->
->     | where PULocationID == DOLocationID
->
->     | lookup (locations) on $left.PULocationID==$right.LocationID
->
->     | summarize count() by Borough, Zone, Latitude, Longitude 
+1.  Place your cursor somewhere within the query, and then select **Build Power BI report**.
+    The Power BI report editor opens with query results available as a data source named *Kusto Query Result*.
 
-2.  Select the query and then select **Build Power BI report**.
+1.  In the report editor, select **Visualizations** > **Map** icon. :::image type="icon" source="media/realtime-analytics-tutorial/map-icon.png" border="false":::
+1. Drag the following fields from **Data** > **Kusto Query Result** to the **Visualizations** pane.
 
--   ![](media/realtime-analytics-tutorial/image52.png)
-- 
-    > Power BI report editor will open with the result of the query
-    > available as a table with the name Kusto Query Result.
+    * **Borough**  > **Legend**
+    * **Latitude** > **Latitude**
+    * **Longitude** > **Longitude**
+    * **Count** > **Bubble size**
 
-    > Note:
+    :::image type="content" source="media/realtime-analytics-tutorial/create-power-bi-second-report.png" alt-text="Screenshot of creating second Power BI report in Synapse Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/create-power-bi-second-report.png":::
 
-    > \(a\) When you build a report, a dataset is created and saved in
-    > your workspace. You can create multiple reports from a single
-    > dataset. (b) Result of the query may not exactly match the
-    > screenshot provided below as you are ingesting streaming data.
+## Add a visualization
 
-    > If you delete the dataset, your reports will also be removed.
+1.  Select the **Stacked Bar Chart** icon. :::image type="icon" source="media/realtime-analytics-tutorial/stacked-bar-chart-icon.png" border="false":::
+1. Drag the **Borough** field to Y-Axis and **Count** to the X-axis
 
-3.  In the report editor, choose **Azure Maps** as the visual, drag
-    **Latitude** field to Latitude, **Longitude** field to Longitude,
-    **Borough** field to Legend, and **count\_** field to Size.
+    :::image type="content" source="media/realtime-analytics-tutorial/power-bi-second-visual.png" alt-text="Screenshot of adding second visualization to the Power BI report in Synapse Real-Time Analytics in Microsoft Fabric.":::
 
--   ![A screenshot of a computer Description automatically
-    generated](media/realtime-analytics-tutorial/image53.png)
+## Save the Power BI report
 
-4.  Add a **Stacked Bar Chart** to the canvas. Drag **Borough** field to
-    Y-Axis and **count\_** to the X-axis
-
-> ![A screenshot of a computer Description automatically
-> generated](media/realtime-analytics-tutorial/image54.png)
-
-5.  Click File \> Save
-
-6.  Under **Name your file in Power BI**, enter *nyc-taxi-maps-report*.
-
-> ![](media/realtime-analytics-tutorial/image55.png)
-
-7.  Select the workspace in which you want to save this report. The
-    report can be saved in a different workspace than the one you
-    started in.
-
-8.  Select the sensitivity label to apply to the report. For more
-    information, see [sensitivity
-    labels](https://learn.microsoft.com/en-us/power-bi/enterprise/service-security-sensitivity-label-overview).
-
-9.  Select **Continue**.
-
-10. Select **Open the file in Power BI to view, edit, and get a
-    shareable link** to view and edit your report.
-
--   ![](media/realtime-analytics-tutorial/image56.png)
+1.  In the top left corner of the ribbon, select **File** > **Save**.
+1.  Enter the name *nyctaximapsreport*. Choose your workspace, and set sensitivity as *Public*.
+1. Select **Continue**.
+1. Select **Open the file in Power BI to view, edit, and get a shareable link**. 
+    
+    :::image type="content" source="media/realtime-analytics-tutorial/open-in-power-BI.png" alt-text="Screenshot of opening in Power BI in Real-Time Analytics in Microsoft Fabric.":::
 
 ## Next steps
 

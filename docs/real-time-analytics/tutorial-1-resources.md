@@ -20,11 +20,11 @@ ms.search.form: product-kusto
     
     :::image type="icon" source="media/realtime-analytics-tutorial/product-icon.png" border="false":::
 
-1.  In the upper left corner, select **+ New \> KQL Database** 
+1.  In the upper left corner, select **+ New > KQL Database** 
 1.  Enter *NycTaxiDB* as the database name.
 1.  Select **Create**.
     
-    :::image type="content" source="media/create-database/new-database.png" alt-text="Screenshot of creating new KQL database.":::
+    :::image type="content" source="media/create-database/new-database.png" alt-text="Screenshot of creating new KQL database in Real-Time Analytics in Microsoft Fabric.":::
 
     When provisioning is complete, the KQL database details page will be shown.
 
@@ -32,11 +32,11 @@ ms.search.form: product-kusto
 
 1.  In the **Database details** card, Select the **pencil** icon.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/onelake-folder-active.png" alt-text="Screenshot of database details page with pencil icon highlighted.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/onelake-folder-active.png" alt-text="Screenshot of database details page with pencil icon highlighted in Real-Time Analytics in Microsoft Fabric.":::
 
 1. Toggle the button to **Active** and select **Done**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/enable-copy-one-lake.png" alt-text="Screenshot of enabling data copy to OneLake.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/enable-copy-one-lake.png" alt-text="Screenshot of enabling data copy to OneLake in Real-Time Analytics in Microsoft Fabric.":::
 
 ## Next steps
 
