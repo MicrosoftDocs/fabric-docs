@@ -23,6 +23,16 @@ items:
     href: roles-workspaces.md
   - name: Give users access to workspaces
     href: give-access-workspaces.md
+- name: Discover data in the OneLake data hub
+  href: onelake-data-hub.md
+- name: Endorse data
+  items:
+  - name: Overview
+    href: endorsement-overview.md
+  - name: Promote items
+    href: endorsement-promote.md
+  - name: Certify items
+    href: endorsement-promote.md
 - name: Feature 2
   items:
   - name: linktext2
