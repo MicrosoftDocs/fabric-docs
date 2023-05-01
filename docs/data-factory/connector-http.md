@@ -31,7 +31,7 @@ The HTTP connector supports the following authentication types for copy and Data
 
 To get started, you must have completed the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../placeholder.md).
+- A tenant account with an active subscription. Create an account for free.
 
 - A workspace is created and that isn't the default **My Workspace**.
 

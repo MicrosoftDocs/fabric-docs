@@ -1,5 +1,5 @@
 items:
-- name: CI/CD documentation
+- name: Lifecycle management documentation
   href: index.yml
 - name: What is lifecycle management? 
   href: cicd-overview.md
@@ -33,6 +33,8 @@ items:
     href: git-integration/git-get-started.md
   - name: Resolve conflicts
     href: git-integration/conflict-resolution.md
+  - name: Manually update the workspace
+    href: git-integration/partial-update.md
   - name: Manage git branches
     href: git-integration/manage-branches.md
   - name: Git integration source code format
