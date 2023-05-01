@@ -11,7 +11,7 @@ ms.search.form: Get Started Lakehouse Streaming SQL Endpoint
 
 # Sharing a lakehouse and building a Power BI report
 
-This tutorial is a quick guide to creating a Spark Job Definition that cointains Python code with Spark Structured Streaming to land data in a lakehouse and then serve it through SQL endpoint. After completing this tutorial, you'll have a Spark Job Definition running continuously and seeing incoming data through SQL endpoint.
+This tutorial is a quick guide to creating a Spark Job Definition that contains Python code with Spark Structured Streaming to land data in a lakehouse and then serve it through an SQL endpoint. After completing this tutorial, you'll have a Spark Job Definition running continuously and seeing incoming data through the SQL endpoint.
 
 ## Create a lakehouse
 
