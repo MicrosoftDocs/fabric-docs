@@ -66,7 +66,7 @@ In the **Data ingestion is in progress** window, all steps will be
 marked with green check marks when the data has been successfully
 loaded. 
 
-i:::image type="content" source="media/realtime-analytics-tutorial/data-ingestion-complete.png" alt-text="Screenshot of summary page with data ingestion completed.":::
+:::image type="content" source="media/realtime-analytics-tutorial/data-ingestion-complete.png" alt-text="Screenshot of summary page with data ingestion completed.":::
 
 Select **Close** to return to your database landing page.
 
