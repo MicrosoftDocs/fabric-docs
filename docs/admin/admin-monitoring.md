@@ -4,7 +4,7 @@ description: Understand the Microsoft Fabric monitoring workspace and the report
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ---
 
 # What is the admin monitoring workspace?
@@ -41,5 +41,6 @@ In the monitoring workspace, you can use the [Feature Usage and Adoption](/power
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+* [Admin overview](admin-overview.md)
+
+* [Feature usage and adoption report](admin-feature-usage-adoption.md)

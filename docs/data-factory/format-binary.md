@@ -4,7 +4,7 @@ description: This article explains how to configure Binary format in Data Factor
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 03/07/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
