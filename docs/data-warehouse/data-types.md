@@ -42,7 +42,7 @@ For T-SQL data types that aren't currently supported, some alternatives are avai
 |---|---|
 | **money and smallmoney** | Use decimal, however note that it can't store the monetary unit.  |
 | **datetime and smalldatetime** | Use datetime2. |
-| **nchar and nvarchar** | Use char and varchar respectively. These types use more storage than nchar and nvarchar to store unicode data. To understand the impact on your environment, see [Storage differences between UTF-8 and UTF-16](https://learn.microsoft.com/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver15#storage_differences.) |
+| **nchar and nvarchar** | Use char and varchar respectively. These types use more storage than nchar and nvarchar to store unicode data. To understand the impact on your environment, see [Storage differences between UTF-8 and UTF-16](/sql/relational-databases/collations/collation-and-unicode-support?view=fabric#storage_differences.) |
 | **text and ntext** | Use varchar. |
 | **image** | Use varbinary. |
 
