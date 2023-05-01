@@ -104,7 +104,7 @@ The following tables contain more information about the copy activity in REST.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|•**Workspace**<br>• **External**<br>• **Sample dataset**<br>|Yes|type|
+|**Data store type**|Your data store type.|• **Workspace**<br>• **External**<br>• **Sample dataset**<br>|Yes|type|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Connection type** | Your connection type. Select **REST**.|**REST**|Yes |type:<br>RestResource|
 |**Relative URL** |A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the linked service definition is used. The HTTP connector copies data from the combined URL: `[URL specified in linked service]/[relative URL specified]`.| \<your relative url> |No |relativeUrl|
