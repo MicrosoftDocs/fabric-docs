@@ -135,14 +135,6 @@
         href: connector-odata-copy-activity.md 
       - name: Configure in dataflow gen2
         href: connector-odata-dataflows.md
-    - name: SharePoint online list
-      items:
-      - name: Overview
-        href: connector-sharepoint-online-list-overview.md
-      - name: Configure in admin portal
-        href: connector-sharepoint-online-list.md
-      - name: Configure in copy activity of pipeline
-        href: connector-sharepoint-online-list-copy-activity.md
     - name: REST
       items:
       - name: Overview
@@ -150,9 +142,17 @@
       - name: Configure in admin portal
         href: connector-rest.md
       - name: Configure in copy activity of pipeline
-        href: connector-rest-copy-activity.md
+        href: connector-rest-copy-activity.md     
+    - name: SharePoint online list
+      items:
+      - name: Overview
+        href: connector-sharepoint-online-list-overview.md
+      - name: Set up connection
+        href: connector-sharepoint-online-list.md
+      - name: Configure in copy activity of pipeline
+        href: connector-sharepoint-online-list-copy-activity.md
       - name: Connect in dataflows
-        href: connector-rest-dataflows.md
+        href: connector-sharepoint-online-list-dataflows.md
   - name: Data pipelines
     items:
     - name: Activities
