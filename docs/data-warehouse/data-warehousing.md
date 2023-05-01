@@ -19,9 +19,21 @@ ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspac
 
 ### A lake-centric SaaS experience built for any skill level
 
-[!INCLUDE [product-name](../includes/product-name.md)] introduces a lake centric data warehouse built on an enterprise grade distributed processing engine that enables industry leading performance at scale whilst eliminating the need for configuration and management. Through an easy to use SaaS experience that is tightly integrated with Power BI for easy analysis and reporting, [!INCLUDE [fabric-dw](includes/fabric-dw.md)] on [!INCLUDE [product-name](../includes/product-name.md)] converges the world of data lakes and warehouses with a goal of greatly simplifying an organizations investment in their analytics estate. Data warehousing workloads benefit from the rich capabilities of the SQL engine over an open data format, enabling customers to focus on data preparation, analysis and reporting over a single copy of their data stored in their Microsoft OneLake. 
+[!INCLUDE [product-name](../includes/product-name.md)] introduces a lake centric data warehouse built on an enterprise grade distributed processing engine that enables industry leading performance at scale whilst eliminating the need for configuration and management. Through an easy to use SaaS experience that is tightly integrated with Power BI for easy analysis and reporting, [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] converges the world of data lakes and warehouses with a goal of greatly simplifying an organizations investment in their analytics estate. Data warehousing workloads benefit from the rich capabilities of the SQL engine over an open data format, enabling customers to focus on data preparation, analysis and reporting over a single copy of their data stored in their Microsoft OneLake. 
 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is built for any skill level - from the citizen developer through to the professional developer, DBA or data engineer. The rich set of experiences built into [!INCLUDE [product-name](../includes/product-name.md)] workspace enables customers to reduce their time to insights by having an easily consumable, always connected dataset that is integrated with Power BI in DirectLake mode. This enables second-to-none industry leading performance that ensures a customer's report always has the most recent data for analysis and reporting. Cross database querying can be leveraged to quickly and seamlessly leverage multiple data sources that span multiple databases for fast insights and zero data duplication. 
+
+### Virtual warehouses with cross database querying
+
+[!INCLUDE [product-name](../includes/product-name.md)] provides customers with the ability to stand up virtual warehouses containing data from virtually any source through the use of shortcuts. Customers can build a virtual warehouse by creating shortcuts to their data wherever it resides. A virtual warehouse may consist of data from OneLake, Azure Data Lake Storage, or any other cloud vendor storage within a single boundary and with no data duplication. 
+
+Seamlessly unlock value from a variety of data sources through the richness of cross database querying in [!INCLUDE [product-name](../includes/product-name.md)]. Cross database querying enables customers to quickly and seamlessly leverage multiple data sources for fast insights and with zero data duplication. Data stored in different sources can be easily joined together enabling customers to deliver rich insights that previously required significant effort from data integration and engineering teams. 
+
+Cross-database queries can be created through the [Visual Query Editor](visual-query-editor.md) which offers a no-code path to insights over multiple tables. The [SQL Query Editor](sql-query-editor.md), or other familiar tools such as SQL Server Management Studio (SSMS), can also be used to create cross-database queries. 
+
+### Autonomous workload management
+
+Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] leverage an industry-leading distributed query processing engine which provides customers with workloads that have a natural isolation boundary. There are no knobs to turn with the autonomous allocation and relinquishing of resources to offer best in breed performance with automatic scale and concurrency built in. True isolation is achieved by separating workloads with different workload characteristics, ensuring that ETL jobs never interfere with their ad hoc analytics and reporting workloads. 
 
 ### Open format for seamless engine interoperability
 
@@ -70,6 +82,8 @@ To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Crea
 ## Comparing the Synapse Data Warehouse and the SQL Endpoint of the Lakehouse
 
 This section describes the differences between Warehouse and [!INCLUDE [fabricse](includes/fabric-se.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+
+:::image type="content" source="media\data-warehousing\synapse-overview-diagram.png" alt-text="Diagram of a SQL Endpoint and a Synapse Data Warehouse in Microsoft Fabric." lightbox="media\data-warehousing\synapse-overview-diagram.png":::
 
 The **[!INCLUDE [fabricse](includes/fabric-se.md)]** is a *read-only* warehouse that is automatically generated upon creation from a [Lakehouse](../data-engineering/lakehouse-overview.md) in [!INCLUDE [product-name](../includes/product-name.md)]. Delta tables that are created through Spark in a Lakehouse are automatically discoverable in the [!INCLUDE [fabricse](includes/fabric-se.md)] as tables. The [!INCLUDE [fabricse](includes/fabric-se.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using the SQL connection string. Data analysts can then use T-SQL to access Lakehouse data artifacts using the warehouse experience. Use [!INCLUDE [fabricse](includes/fabric-se.md)] to design your warehouse for BI needs and serving data.
 
