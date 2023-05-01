@@ -33,7 +33,7 @@ For the configuration of each tab under a copy activity, go to the following sec
 
 ### General
 
-For **General** tab configuration, go to General.
+For **General** tab configuration, go to [General](activity-overview.md#general-settings).
 
 ### Source
 

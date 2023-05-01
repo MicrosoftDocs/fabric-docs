@@ -1,5 +1,5 @@
 ---
-title: Use sample queries to query your table in Real-time Analytics
+title: Use sample queries to query your table in Real-Time Analytics
 description: Learn how to use sample queries to get an initial look at your data.
 ms.reviewer: tzgitlin
 ms.author: yaschust

@@ -80,7 +80,8 @@ In this example, we will load the data into a Pandas dataframe and then convert 
     nyc_tlc = NycTlcYellow(start_date=start_date, end_date=end_date)
     nyc_tlc_pd = nyc_tlc.to_pandas_dataframe()
 
-    nyc_tlc_df = spark.createDataFrame(nyc_tlc_pd)
+    nyc_tlc_df = spark.createDataFrame(nyc_tlc__pd).repartition(20)
+
     ```
 
 2. The following code reduces the dataset to about 10,000 rows. To speed up the development and training, we will sample down our dataset for now.
@@ -93,8 +94,8 @@ In this example, we will load the data into a Pandas dataframe and then convert 
 3. Next, we want to take a look at our data using the built-in ```display()``` command. This allows us to easily view a sample of the data or explore the trends in the data graphically.
 
     ```python
-    #sampled_taxi_df.show(5)
-    display(sampled_taxi_df)
+    #sampled_taxi_df.show(10)
+    display(sampled_taxi_df.limit(10))    
     ```
 
 ## Prepare the data
