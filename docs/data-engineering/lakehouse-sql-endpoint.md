@@ -18,6 +18,8 @@ To access SQL Endpoint, the user can select a corresponding item in the workspac
 
 Creating a Lakehouse creates a SQL Endpoint, which points to the Lakehouse Delta table storage. Once you create a Delta table in the Lakehouse, it's immediately available for querying using SQL Endpoint.
 
+   :::image type="content" source="media\sql-endpoint\main-screen.png" alt-text="Lakehouse SQL Endpoint main screen" lightbox="media\sql-endpoint\main-screen.png":::
+
 To learn more, see [Data Warehouse documentation: SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint-of-the-lakehouse)
 
 ## SQL endpoint Read only mode
