@@ -14,7 +14,7 @@ ms.search.form: Ingesting data
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
- [!INCLUDE [product-name](../includes/product-name.md)] Warehouse offers built-in data ingestion tools that allow users to ingest data into warehouses at scale using code-free or code-rich experiences.
+ [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers built-in data ingestion tools that allow users to ingest data into warehouses at scale using code-free or code-rich experiences.
 
 ## Data ingestion options
 You can ingest data into warehouses using one of the following options:
@@ -43,7 +43,7 @@ To decide which data ingestion option to use, you can use the following criteria
 > The COPY statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports only data sources on Azure storage accounts, with authentication using to Shared Access Signature (SAS), Storage Account Key (SAK), or accounts with public access. For other limitations, see [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
 
 ## Supported data formats and sources
-Data ingestion for [!INCLUDE [product-name](../includes/product-name.md)] Warehouse offers a vast number of data formats and sources you can use. Each of the options outlined includes its own list of supported data connector types and data formats. 
+Data ingestion for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers a vast number of data formats and sources you can use. Each of the options outlined includes its own list of supported data connector types and data formats. 
 
 For **cross-warehouse ingestion**, data sources must be within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace. Queries can be performed using three-part naming for the source data. 
 
@@ -65,7 +65,7 @@ The [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabr
 
 ## Best practices
 
-The COPY command feature in [!INCLUDE [product-name](../includes/product-name.md)] Warehouse uses a simple, flexible, and fast interface for high-throughput data ingestion for SQL workloads. In the current version of [!INCLUDE [product-name](../includes/product-name.md)] Warehouse, we support loading data from external storage accounts only.
+The COPY command feature in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] uses a simple, flexible, and fast interface for high-throughput data ingestion for SQL workloads. In the current version, we support loading data from external storage accounts only.
 
 You can also use TSQL to create a new table and then insert into it, and then update and delete rows of data. Data can be inserted from any database within the [!INCLUDE [product-name](../includes/product-name.md)] workspace using cross-database queries. If you want to ingest data from a Lakehouse to a warehouse, you can do this with a cross database query. For example:
 

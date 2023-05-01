@@ -17,7 +17,7 @@ ms.search.form: Ingesting data
 
 Data pipelines offer an alternative to using the COPY command through a graphical user interface. A data pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allow you to manage extract, transform, and load (ETL) activities instead of managing each one individually.
 
-In this tutorial, you'll create a new pipeline that loads sample data into a [!INCLUDE [product-name](../includes/product-name.md)] warehouse. 
+In this tutorial, you'll create a new pipeline that loads sample data into a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. 
 
 > [!NOTE]
 > Some features from Azure Data Factory are not available in [!INCLUDE [product-name](../includes/product-name.md)], but the concepts are interchangeable. You can learn more about Azure Data Factory and Pipelines on [Pipelines and activities in Azure Data Factory and Azure Synapse Analytics](/azure/data-factory/concepts-pipelines-activities).
