@@ -24,14 +24,14 @@ The **CREATE TABLE AS SELECT (CTAS)** statement allows you to create a new table
 > [!NOTE] 
 > The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Synapse Data Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
 
-The first example illustrates how to create a new table that is a copy of the existing `[dbo].[bing_covid-19_data_2023]` table, but filtered to data from the year 2023 only:
+The first example illustrates how to create a new table that is a copy of the existing `dbo.[bing_covid-19_data_2023]` table, but filtered to data from the year 2023 only:
 
 ```sql
 CREATE TABLE [dbo].[bing_covid-19_data_2023]
 AS
 SELECT * 
 FROM [dbo].[bing_covid-19_data] 
-WHERE DATEPART(YEAR,[updated]) = '2023'
+WHERE DATEPART(YEAR,[updated]) = '2023';
 ```
 
 You can also create a new table with new `year`, `month`, `dayofmonth` columns, with values obtained from `updated` column in the source table. This can be useful if you're trying to visualize infection data by year, or to see months when the most COVID-19 cases are observed:
@@ -40,7 +40,7 @@ You can also create a new table with new `year`, `month`, `dayofmonth` columns, 
 CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
 AS
 SELECT DATEPART(YEAR,[updated]) [year], DATEPART(MONTH,[updated]) [month], DATEPART(DAY,[updated]) [dayofmonth], * 
-FROM [dbo].[bing_covid-19_data] 
+FROM [dbo].[bing_covid-19_data];
 ```
 
 As another example, you can create a new table that summarizes the number of cases observed in each month, regardless of the year, to evaluate how seasonality may affect spread in a given country/region. It uses the table created in the previous example with the new `month` column as a source: 
@@ -50,7 +50,7 @@ CREATE TABLE [dbo].[infections_by_month]
 AS
 SELECT [country_region],[month], SUM(CAST(confirmed as bigint)) [confirmed_sum]
 FROM [dbo].[bing_covid-19_data_with_year_month_day]
-GROUP BY [country_region],[month]
+GROUP BY [country_region],[month];
 ```
 
 Based on this new table, we can see that the United States observed more confirmed cases across all years in the month of `January`, followed by `December` and `October`. `April` is the month with the lowest number of cases overall:
@@ -58,12 +58,12 @@ Based on this new table, we can see that the United States observed more confirm
 ```sql
 SELECT * FROM [dbo].[infections_by_month]
 WHERE [country_region] = 'United States'
-ORDER BY [confirmed_sum] DESC
+ORDER BY [confirmed_sum] DESC;
 ```
 
-:::image type="content" source="media\ingest-data-tsql\infections-by-month.png" alt-text="Screenshot of the query results showing the number of infections by month in the United States, ordered by month, in descending order. The month number 1 is shown on top, followed by the month numbers 12, 10, 11, 9, 8, 2, 7, 5, 6, 3, and 4 " lightbox="media\ingest-data-tsql\infections-by-month.png":::
+:::image type="content" source="media\ingest-data-tsql\infections-by-month.png" alt-text="Screenshot of the query results showing the number of infections by month in the United States, ordered by month, in descending order. The month number 1 is shown on top." lightbox="media\ingest-data-tsql\infections-by-month.png":::
 
-For more examples and details about **CREATE TABLE AS SELECT**, see [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true)
+For more examples and syntax reference, see [CREATE TABLE AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true).
 
 ## Ingesting data into existing tables with T-SQL queries
 
@@ -72,10 +72,10 @@ The previous examples create new tables based on the result of a query. To repli
 ```sql
 INSERT INTO [dbo].[bing_covid-19_data_2023]
 SELECT * FROM [dbo].[bing_covid-19_data] 
-WHERE [updated] > '2023-02-28'
+WHERE [updated] > '2023-02-28';
 ```
 
-The query criteria for the `SELECT` statement can be any valid query, as long as the resulting query column types align with the columns on the destination table. If column names are specified and include only a subset of the columns from the destination table, all other columns are loaded as `null`.  For more information, see [Using INSERT INTO...SELECT to Bulk Import data with minimal logging and parallelism](/sql/t-sql/statements/insert-transact-sql?#using-insert-intoselect-to-bulk-import-data-with-minimal-logging-and-parallelism). 
+The query criteria for the `SELECT` statement can be any valid query, as long as the resulting query column types align with the columns on the destination table. If column names are specified and include only a subset of the columns from the destination table, all other columns are loaded as `NULL`. For more information, see [Using INSERT INTO...SELECT to Bulk Import data with minimal logging and parallelism](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true#using-insert-intoselect-to-bulk-import-data-with-minimal-logging-and-parallelism).
 
 ## Ingesting data from tables on different warehouses and lakehouses
 
@@ -93,14 +93,14 @@ AS
 SELECT 
 FROM [cases_lakehouse].[dbo].[bing_covid-19_data] cases
 INNER JOIN [reference_warehouse].[dbo].[bing_covid-19_data] reference
-ON cases.[iso3] = reference.[countrycode]
+ON cases.[iso3] = reference.[countrycode];
 ```
 
-To learn more about cross-warehouse queries, see [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-sql-query)
-
+To learn more about cross-warehouse queries, see [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-sql-query).
 
 ## Next steps
 
-- [Ingest data using Data pipelines](ingest-data-pipelines.md)
-- [Ingest data using the COPY statement](ingest-data-copy.md)
 - [Ingesting data into the Synapse Data Warehouse](ingest-data.md)
+- [Ingest data using the COPY statement](ingest-data-copy.md)
+- [Ingest data using Data pipelines](ingest-data-pipelines.md)
+- [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-sql-query)
