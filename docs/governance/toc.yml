@@ -15,7 +15,7 @@ items:
   items:
   - name: Overview
     href: domains-overview.md
-  - name: Create and configure a domain
+  - name: Create and configure domains
     href: domains-create-configure.md
 - name: Metadata scanning
   items:

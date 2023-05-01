@@ -9,6 +9,8 @@ ms.date: 04/08/2023
 
 # Create a domain in Microsoft Fabric (preview)
 
+This article explains how to create a domain in Fabric. It describes just the min
+
 ## Create the domain
 
 To create domain you must be a tenant admin.
