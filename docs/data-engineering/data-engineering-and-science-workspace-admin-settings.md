@@ -71,8 +71,6 @@ You may choose which version of Spark you’d like to use for the workspace. The
 
 [!INCLUDE [product-name](../includes/product-name.md)] Spark supports session sharing through the High Concurrency mode, where multiple items could execute in parallel inside a single spark application within a user boundary. This shared mode can be enabled for notebooks to save session start time, achieve a better utilization rate and save on compute spend. 
 
-[Learn more about High Concurrency mode](high-concurrency-mode-overview.md)
-
 ## Autologging for Machine Learning Models and Experiments
 
 Admins can now enable autologging for their machine learning models and experiments, which would automatically capture the values of input parameters, output metrics, and output artifacts of a machine learning model as it is being trained. 
