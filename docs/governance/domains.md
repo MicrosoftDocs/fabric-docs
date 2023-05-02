@@ -44,7 +44,7 @@ There are three roles involved in domains:
 
 When users look for data items in the OneLake data hub, they may want to see only the data items that belong to a particular domain. If they select the domain in the domain selector on the data hub, only items belonging to that domain will be shown. To remind users what context they'r viewing the data hub in you can choose an image to represent your domain. Then, when your domain is selected, the image will become part of the theme of the data hub, as illustrated in the following image.
 
-:::image type="content" source="./media/domains/domain-image.png" alt-text="Screenshot of the OneLake data hub with a domain image.":::
+:::image type="content" source="./media/domains/domain-image-data-hub.png" alt-text="Screenshot of the OneLake data hub with a domain image.":::
 
 ## Create a domain
 
@@ -58,7 +58,7 @@ To create domain you must be a Power BI admin.
 
 1. On the new domain’s configuration page, provide a name (mandatory) and a description for the domain.
 
-    [Image]
+    :::image type="content" source="./media/domains/domains-new-name.png" alt-text="Screenshot of domains new details section.":::
 
 1. Select **Apply**. The domain will be created, and you can continue configuring the domain as described in the following sections.
 
@@ -66,7 +66,7 @@ To create domain you must be a Power BI admin.
 
 Power BI and domain admins can configure a domain on the domain's configuration page. To get to the domain's configuration page, go to the admin center, choose **Domains**, and then select the domain you want to configure.
 
-:::image type="content" source="./media/domains/configure-choose-domain.png" alt-text="Screenshot showing the domains page.":::
+:::image type="content" source="./media/domains/configure-choose-domain.png" alt-text="Screenshot showing the domains page-for choosing domain to configure.":::
 
 Domain admins see only domains they are admins of.
 
@@ -141,9 +141,6 @@ Power BI admins and domain admins can associate workspaces with the domain on th
 
 To unassign a workspace in the Workspaces in this domain section, hover over the workspace entry and select the unassign icon that appears.
 To unassign several workspaces at a time, select the checkboxes next to the workspace names and then select the **Unassign** button above the table.
-
-:::image type="content" source="./media/domains/domain-specify-domain-contributors.png" alt-text="Screenshot showing domain contributor specification section.":::
-
 
 ## Next steps
 
