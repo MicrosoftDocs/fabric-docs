@@ -109,17 +109,17 @@ Expand the Domain contributors section and specify who will be able to assign wo
 
 ### Assign workspaces to the domain
 
-Tenant admins and domain admins can associate workspaces with the domain on the domains configuration page in the admin portal.
+Power BI admins and domain admins can associate workspaces with the domain on the domains.
 
 1. Expand the **Workspaces in this domain** section. If any workspaces have been associated with the domain, they will be listed here.
 
 1. Select **Assign workspaces**.
 
-    [Image]
+    :::image type="content" source="./media/domains/domain-assign-workspaces-link.png" alt-text="Screenshot showing assign workspaces link.":::
  
 1. In the **Assign workspaces to this domain** side pane that appears, select how to assign the workspaces.
 
-    [Image]
+    :::image type="content" source="./media/domains/domain-assign-workspaces-to-this-domain.png" alt-text="Screenshot showing assign workspaces side pane.":::
 
 * **Assign by workspace name**
 
@@ -142,7 +142,7 @@ Tenant admins and domain admins can associate workspaces with the domain on the 
 To unassign a workspace in the Workspaces in this domain section, hover over the workspace entry and select the unassign icon that appears.
 To unassign several workspaces at a time, select the checkboxes next to the workspace names and then select the **Unassign** button above the table.
 
-[Image]
+:::image type="content" source="./media/domains/domain-specify-domain-contributors.png" alt-text="Screenshot showing domain contributor specification section.":::
 
 
 ## Next steps
