@@ -23,7 +23,6 @@ This article details the current limitations and known issues in [!INCLUDE [prod
 For more limitations information in specific areas, see:
 
 - [Data types in Microsoft Fabric](data-types.md)
-- [Tables](tables.md#limitations)
 - [Datasets](datasets.md#limitations)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
 - [Statistics](statistics.md#limitations)
@@ -34,7 +33,7 @@ For more limitations information in specific areas, see:
 
 - Model view layouts aren't currently saved.
 
-## Limitations and known issues of [!INCLUDE [fabric-se](includes/fabric-se.md)]
+## Limitations and known issues of the SQL Endpoint of the Lakehouse
 
 The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)] automatic schema generation and metadata discovery.
 
