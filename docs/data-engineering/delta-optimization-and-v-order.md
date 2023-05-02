@@ -152,17 +152,18 @@ In order to keep the tables at the best state for best performance, perform bin-
 
 ### Control V-Order when optimizing a table
 
-## Delta Lake performance considerations and best practices
+## Delta Lake performance considerations
 
-This section contains a non-exhausting reference of common usage patterns and the best practices for Delta Lake tables configuration and maintenance actions.
+This section contains a non-exhausting reference of common usage patterns and the best practices for Apache Spark and Delta Lake configurations and maintenance actions.
 
-|Scenario  |Best practice  |
+|Scenario|Consideration|
 |---------|---------|
-|Row1     |         |
-|Row2     |         |
-|Row3     |         |
-|Row4     |         |
-|Row5     |         |
+|When ingestion will always produce small files|         |
+|Streaming ingesting|         |
+|Streaming ingesting directly to Delta|         |
+|Batch loading to Delta|         |
+|Adding data to new partitions|         |
+|Data modification over many partitions|         |
 
 ## Next steps
 
