@@ -33,7 +33,7 @@ To create or manage the Spark Pool associated with your workspace:
 
 3. Navigate to the **Spark Compute** option in your left-hand menu:
 
-   :::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view." lightbox="media\data-engineering-and-science-workspace-admin-settings\spark-compute-detail-view":::
+   :::image type="content" source="media/data-engineering-and-science-workspace-admin-settings/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view." lightbox="media\data-engineering-and-science-workspace-admin-settings\spark-compute-detail-view.png":::
 
 4. Select the **New Pool** option in the pool selection drop-down menu and select the node family, and node size from the available sizes Small, Medium, Large, X-Large and XX-Large based on compute requirements for data engineering/science workloads. 
 
@@ -55,4 +55,4 @@ To create or manage the Spark Pool associated with your workspace:
 
 >[!div class="nextstepaction"]
 >Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
->[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](spark-workspace-admin-settings.md)
+>[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](data-engineering-and-science-workspace-admin-settings.md)
