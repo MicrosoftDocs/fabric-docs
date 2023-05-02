@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 05/23/2023
+ms.date: 04/27/2023
 ms.search.form: product-kusto
 ---
 
@@ -159,6 +159,6 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 1. Select **Delete**. You can't recover your notebook once you delete it.
 
-## See also
+## Next steps
 
-* [Query data in the KQL Queryset](kusto-query-set.md)
+[Query data in the KQL Queryset](kusto-query-set.md)
