@@ -29,7 +29,7 @@ To scale your capacity you need:
 
 4. Under **Scale**, select **Change size**.
 
-5. Select a scale and click **Resize**.
+5. Select a scale and then select **Resize**.
 
 6. Confirm your tier by viewing the overview tab. The current pricing tier is listed.
 
