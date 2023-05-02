@@ -6,6 +6,7 @@ ms.author: salilkanade
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.search.form: Reporting
 ---
 
 # Create reports in the Power BI service in Microsoft Fabric

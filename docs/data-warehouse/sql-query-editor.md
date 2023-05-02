@@ -6,7 +6,7 @@ ms.author: prlangad
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
-ms.search.form: Query Editor
+ms.search.form: Query editor
 ---
 
 # Query using the SQL query editor

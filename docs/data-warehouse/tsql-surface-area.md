@@ -6,6 +6,7 @@ ms.author: cynotebo
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
+ms.search.form: SQL Endpoint overview, Warehouse overview
 ---
 
 # T-SQL surface area in Microsoft Fabric

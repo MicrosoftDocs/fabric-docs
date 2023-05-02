@@ -6,7 +6,7 @@ ms.author: kedodd
 author: kedodd
 ms.topic: conceptual
 ms.date: 04/17/2023
-ms.search.form: Warehouse SQL permissions, Workspace permissions
+ms.search.form: Warehouse roles and permissions
 ---
 
 # SQL granular permissions in Microsoft Fabric

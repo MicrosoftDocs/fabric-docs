@@ -6,7 +6,7 @@ ms.author: salilkanade
 ms.reviewer: wiassaf
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.search.form: SQL Endpoint overview, Warehouse in workspace overview
+ms.search.form: Warehouse connectivity
 ---
 
 # Connectivity to data warehousing in Microsoft Fabric

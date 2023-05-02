@@ -6,6 +6,7 @@ ms.author: kecona
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.search.form: Warehouse design and development
 ---
 
 # Tables in data warehousing in Microsoft Fabric
