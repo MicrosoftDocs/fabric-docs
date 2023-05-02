@@ -47,6 +47,8 @@ items:
   items:
   - name: Machine learning experiment
     href: machine-learning-experiment.md
+  - name: Train models with SynapseML
+    href: train-models-synapseml.md  
   - name: Machine learning model
     href: machine-learning-model.md
   - name: Fabric autologging
@@ -91,3 +93,35 @@ items:
       href: r-use-tidyverse.md
     - name: R visualization
       href: r-visualization.md
+- name: SynapseML # Pass 1 Inject
+  items:
+  - name: Get started
+    items:
+    - name: Your first model # Sentiment analysis model
+      href: synapseml-first-model.md
+  - name: Algorithms
+    items:
+    - name: Cognitive Services
+      href: overview-cognitive-services.md
+    - name: OpenAI
+      href: open-ai.md
+    - name: LightGBM
+      href: lightgbm-overview.md
+    - name: Deep Learning # ONNX, TODO: and Simple Deep Learning
+      href: onnx-overview.md
+    - name: Responsible AI # LIME/SHAP/Data Balance TODO: SHAP for now
+      href: tabular-shap-explainer.md
+    - name: Causal Structure # New Causal Structure algos
+      href: causal-structure.md
+    - name: Outlier and Anomaly Detection # Isolation Forest, Maybe Anomaly Detection
+      href: isolation-forest-multivariate-anomaly-detection.md
+  - name: Quickstarts
+    items:   
+    - name: Build a Search Engine
+      href: cognitive-services-create-a-multilingual-search-engine-from-forms.md
+    - name: Train a Text Classifier
+      href: deep-learning-deep-text-classification.md
+    - name: Analyze time series
+      href: cognitive-services-multivariate-anomaly-detection.md
+    - name: Hyperparameter tuning
+      href: hyperparameter-tuning-fighting-breast-cancer.md

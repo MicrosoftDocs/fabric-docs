@@ -5,7 +5,7 @@ author: nelgson
 ms.author: negust
 ms.reviewer: franksolomon
 ms.topic: overview
-ms.date: 05/23/2023
+ms.date: 03/24/2023
 
 ---
 
@@ -69,7 +69,7 @@ MLflow experiments can track model training. [!INCLUDE [product-name](../include
 
 ## SynapseML
 
-The SynapseML (previously known as MMLSpark) open-source library simplifies massively scalable machine learning (ML) pipeline creation. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. This API is usable across Python, R, Scala, .NET, and Java. Learn more about [SynapseML](https://aka.ms/spark).
+SynapseML (previously known as MMLSpark), is an open-source library that simplifies the creation of massively scalable machine learning (ML) pipelines. It's an ecosystem of tools used to expand the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API that’s usable across Python, R, Scala. Learn more about [SynapseML](https://aka.ms/spark). You can build scalable and intelligent systems to solve challenges in domains such as anomaly detection, computer vision, deep learning, text analytics, and others.
 
 ## Model scoring
 

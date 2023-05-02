@@ -1,0 +1,111 @@
+---
+title: Causal Structure
+description: Causal Structure
+ms.topic: overview
+ms.reviewer: jessiwang
+author: jessiwang
+ms.author: jessiwang
+ms.date: 05/02/2023
+---
+# Startup Investment Attribution - Understand Outreach Effort's Effect
+
+![image-alt-text](https://camo.githubusercontent.com/4ac8c931fd4600d2b466975c87fb03b439ebc7f6debd58409aea0db10457436d/68747470733a2f2f7777772e6d6963726f736f66742e636f6d2f656e2d75732f72657365617263682f75706c6f6164732f70726f642f323032302f30352f4174747269627574696f6e2e706e67)
+
+**This sample notebook aims to show how to use SynapseML's DoubleMLEstimator for inferring causality using observational data.**
+
+A startup that sells software would like to know whether its outreach efforts were successful in attracting new customers or boosting consumption among existing customers. In other words, they would like to learn the treatment effect of each investment on customers' software usage.
+
+In an ideal world, the startup would run several randomized experiments where each customer would receive a random assortment of investments. However, this can be logistically prohibitive or strategically unsound: the startup might not have the resources to design such experiments or they might not want to risk losing out on large opportunities due to lack of incentives.
+
+In this customer scenario walkthrough, we show how SynapseML causal package can use historical investment data to learn the investment effect.
+
+## Background
+In this scenario, a startup that sells software provides discounts incentives to its customer. A customer might be given or not.
+
+The startup has historical data on these investments for 2,000 customers, and how much revenue these customers generated in the year after the investments were made. They would like to use this data to learn the optimal incentive policy for each existing or new customer in order to maximize the return on investment (ROI).
+
+The startup faces a challenge:  the dataset is biased because historically the larger customers received the most incentives. Thus, they need a causal model that can remove the bias.
+
+## Data
+The data contains ~2,000 customers and is composed of:
+
+* Customer features: details about the industry, size, revenue, and technology profile of each customer.
+* Interventions: information about which incentive was given to a customer.
+* Outcome: the amount of product the customer bought in the year after the incentives were given.
+
+
+| Feature Name    | Type | Details                                                                                                                                    |
+|-----------------|------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| Global Flag     | W    | whether the customer has global offices                                                                                                    | 
+| Major Flag      | W    | whether the customer is a large consumer in their industry (as opposed to SMC - Small Medium Corporation - or SMB - Small Medium Business) |
+| SMC Flag        | W    | whether the customer is a Small Medium Corporation (SMC, as opposed to major and SMB)                                                      |
+| Commercial Flag | W    | whether the customer's business is commercial (as opposed to public sector)                                                                |
+| IT Spend        | W    | $ spent on IT-related purchases                                                                                                            |
+| Employee Count  | W    | number of employees                                                                                                                        |
+| PC Count        | W    | number of PCs used by the customer                                                                                                         |
+| Discount        | T    | whether the customer was given a discount (binary)                                                                                         |
+| Revenue         | Y    | $ Revenue from customer given by the amount of software purchased                                                                          |
+
+
+Start by initializing a Spark session.
+
+
+```python
+from pyspark.sql import SparkSession
+
+# Bootstrap Spark Session
+spark = SparkSession.builder.getOrCreate()
+```
+
+Next, import the sample multi-attribution data from a CSV file and load it into a Spark DataFrame.
+
+
+```python
+# Import the sample multi-attribution data
+data = (
+    spark.read.format("csv")
+    .option("inferSchema", True)
+    .option("header", True)
+    .load(
+        "wasbs://publicwasb@mmlspark.blob.core.windows.net/multi_attribution_sample.csv"
+    )
+)
+```
+
+## Get Causal Effects with SynapseML DoubleMLEstimator
+Now, use SynapseML's DoubleMLEstimator to estimate causal effects. First, we create an instance of the DoubleMLEstimator, specifying the treatment and outcome models, treatment column, outcome column, and maximum number of iterations. Then call `fit` to fit the model.
+
+
+```python
+from synapse.ml.causal import *
+from pyspark.ml.classification import LogisticRegression
+from pyspark.ml.regression import LinearRegression
+
+treatmentColumn = "Discount"
+outcomeColumn = "Revenue"
+
+dml = (
+    DoubleMLEstimator()
+    .setTreatmentModel(LogisticRegression())
+    .setTreatmentCol(treatmentColumn)
+    .setOutcomeModel(LinearRegression())
+    .setOutcomeCol(outcomeColumn)
+    .setMaxIter(20)
+)
+
+model = dml.fit(data)
+```
+
+Now get the average treatment effect to see the number of extra dollars that customers you receive a discount spend on software.
+
+
+```python
+model.getAvgTreatmentEffect()
+# returns e.g. 5166.78324, indicating a customer who receives a discount spends on average $5166.78 extra on software.
+```
+
+
+```python
+# Get treatment effect's confidence interval, e.g.  [4765.826181160708, 5371.2817538168965]
+model.getConfidenceInterval()
+```
