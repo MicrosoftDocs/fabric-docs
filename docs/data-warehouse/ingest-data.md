@@ -17,11 +17,6 @@ ms.search.form: Ingesting data # This article's title should not change. If so, 
  [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers built-in data ingestion tools that allow users to ingest data into warehouses at scale using code-free or code-rich experiences.
 
 ## Data ingestion options
-You can ingest data into warehouses using one of the following options:
-- **COPY (Transact-SQL)**: the COPY statement offers flexible, high-throughput data ingestion from an external Azure storage account. You can use the COPY statement as part of your existing ETL/ELT logic in Transact-SQL code.
-- **Data pipelines**: pipelines offer a code-free or low-code experience for data ingestion. Using pipeline activities, you can build robust workflows to prepare your environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination.
-- **Data flows**: an alternative to pipelines, Data flows allow you to import and transform data using a code-free experience, with a data transformation logic that can be shared with other datasets and reports in [!INCLUDE [product-name](../includes/product-name.md)]. 
-- **Cross-warehouse ingestion**: data ingestion from workspace sources is also possible. This may be required when there's the need to create a new table with a subset of a different table, or as a result of joining different tables in the warehouse and in the lakehouse. For cross-warehouse ingestion, in addition to the options mentioned above, Transact-SQL features such as **INSERT...SELECT**, **SELECT INTO**, or **CREATE TABLE AS SELECT (CTAS)** work cross-warehouse within the same workspace. 
 
 You can ingest data into a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using one of the following options:
 
