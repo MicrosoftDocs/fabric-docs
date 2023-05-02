@@ -42,7 +42,7 @@ There are three roles involved in domains:
 
 ### Domain image
 
-When users look for data items in the OneLake data hub, they may want to see only the data items that belong to a particular domain. If they select the domain in the domain selector on the data hub, only items belonging to that domain will be shown. To remind users what context they'r viewing the data hub in you can choose an image to represent your domain. Then, when your domain is selected, the image will become part of the theme of the data hub, as illustrated in the following image.
+When users look for data items in the OneLake data hub, they may want to see only the data items that belong to a particular domain. To do this they can select the domain in the domain selector on the data hub to display only items belonging to that domain. To remind them of which domain's data items they're seeing, you can choose an image to represent your domain. Then, when your domain is selected, the image will become part of the theme of the data hub, as illustrated in the following image.
 
 :::image type="content" source="./media/domains/domain-image-data-hub.png" alt-text="Screenshot of the OneLake data hub with a domain image.":::
 
