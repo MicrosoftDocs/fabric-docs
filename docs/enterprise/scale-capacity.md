@@ -7,7 +7,7 @@ ms.topic: concept
 ms.date: 11/04/2022
 ---
 
-# Scale your Fabric capacity in the Azure portal
+# Scale your capacity
 
 This article shows how to scale a Microsoft Fabric capacity in Azure. Scaling allows you to increase or decrease the size of your capacity.
 
