@@ -35,7 +35,7 @@ landingContent:
             url: create-database.md
           - text: Create a table
             url: create-empty-table.md
-          - text: Create and manage event streams
+          - text: Create event streams
             url: event-streams/create-manage-an-eventstream.md
 
 # Card 
