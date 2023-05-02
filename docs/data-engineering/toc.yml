@@ -50,7 +50,7 @@ items:
 - name: Apache Spark
   items:
   - name: High concurrency mode
-    href: highconcurrencymode-notebooks.md
+    href: high-concurrency-mode-notebooks.md
   - name: Runtime
     href: runtime.md
   - name: Autotune Spark configuration
