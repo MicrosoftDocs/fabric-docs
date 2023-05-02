@@ -63,4 +63,4 @@ In this mode, a folder of similar types, selected in the Lakehouse ```Files```se
 ## Next steps
 
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
-- [CSV file upload to Delta for Power BI reporting](csv-to-lakehouse-delta-to-pbi.md)
+- [CSV file upload to Delta for Power BI reporting](get-started-csv-upload.md)
