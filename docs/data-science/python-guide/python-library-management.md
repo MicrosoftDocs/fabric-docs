@@ -97,5 +97,5 @@ To do this:
 
 ## Next steps
 
-- Manage workspace settings: [Apache Spark workspace administration settings](../../data-engineering/spark-workspace-admin-settings.md)
+- Manage workspace settings: [Apache Spark workspace administration settings](../../data-engineering/data-engineering-and-science-workspace-admin-settings.md)
 - Manage libraries in Fabric: [Manage libraries in Fabric documentation](../../data-engineering/library-management.md)
