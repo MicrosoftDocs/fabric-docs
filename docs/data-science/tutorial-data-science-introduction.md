@@ -53,10 +53,10 @@ In this tutorial, you learn to perform the following activities:
 
 ## The Data science end-to-end scenario
 
-In this tutorial,  we showcase a simplified end-to-end data science scenario that involves:
+In this tutorial, we showcase a simplified end-to-end data science scenario that involves:
 
-1. [Ingesting data](../placeholder.md) from an external data source.
-1. [Data exploration and visualization](../placeholder.md).
+1. [Ingesting data](tutorial-data-science-ingest-data.md) from an external data source.
+1. [Data exploration and visualization](tutorial-data-science-explore-notebook.md).
 1. [Data cleansing, preparation, and feature engineering](../placeholder.md).
 1. [Model training and evaluation](../placeholder.md).
 1. [Model batch scoring and saving predictions](../placeholder.md) for consumption.

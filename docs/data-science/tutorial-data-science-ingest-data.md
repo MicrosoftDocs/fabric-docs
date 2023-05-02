@@ -1,6 +1,6 @@
 ---
 title: Data science tutorial - ingest data into a lakehouse
-description: In this first module, 
+description: In this first module, learn how to ingest a dataset into a Fabric lakehouse in delta lake format and how to preview the data you ingested.
 ms.reviewer: mopeakande
 ms.author: mopeakande
 author: msakande
@@ -42,7 +42,7 @@ filter-by-year-month
 
 1. In the next step, perform a spark dataframe write operation to save data into a lakehouse table named *nyctaxi_raw*.
 
-   :::image type="content" source="media\tutorial-data-science-ingest-data\save-data-new-table.png" alt-text="Screenshot of code sample for saving data into a new lakehouse table." lightbox="media\tutorial-data-science-ingest-data\ave-data-new-table.png":::
+   :::image type="content" source="media\tutorial-data-science-ingest-data\save-data-new-table.png" alt-text="Screenshot of code sample for saving data into a new lakehouse table." lightbox="media\tutorial-data-science-ingest-data\save-data-new-table.png":::
 
    Once the dataframe has been saved, you can navigate to the attached lakehouse artifact in your workspace and open the lakehouse UI to preview data in the **nyctaxi_raw** table created in the previous steps.
 
@@ -50,4 +50,4 @@ filter-by-year-month
 
 ## Next steps
 
-- Module 2: Explore and visualize data using notebooks
+- [Module 2: Explore and visualize data using notebooks](tutorial-data-science-explore-notebook.md)

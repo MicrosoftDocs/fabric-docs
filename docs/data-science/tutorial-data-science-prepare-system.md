@@ -32,13 +32,13 @@ We utilize the notebook artifact in the Data Science experience to demonstrate v
 
 1. Switch to the Data Science experience using the workload switcher icon at the left corner of your homepage.
 
-   :::image type="content" source="media\tutorial-data-science-prepare-system\switch-to-data-science.png" alt-text="Screenshot of the workload switcher menu, showing where to select Data Science." lightbox="media\tutorial-data-science-prepare-system\switch-to-data-science"::: switch-to-data-science
+   :::image type="content" source="media\tutorial-data-science-prepare-system\switch-to-data-science.png" alt-text="Screenshot of the workload switcher menu, showing where to select Data Science." lightbox="media\tutorial-data-science-prepare-system\switch-to-data-science.png"::: switch-to-data-science
 
 1. On the Data science experience homepage, select **Import notebook** and upload the notebook files for modules 1- 5 that you downloaded in step 1.
 
    :::image type="content" source="media\tutorial-data-science-prepare-system\select-import-notebook.png" alt-text="Screenshot showing where to select Import notebook on the Data science home page." lightbox="media\tutorial-data-science-prepare-system\select-import-notebook.png":::
 
-   :::image type="content" source="media\tutorial-data-science-prepare-system\import-status-upload.png" alt-text="Screenshot of Import status dialog box, showing where to select Upload." lightbox="media\tutorial-data-science-prepare-system\":::
+   :::image type="content" source="media\tutorial-data-science-prepare-system\import-status-upload.png" alt-text="Screenshot of Import status dialog box, showing where to select Upload." lightbox="media\tutorial-data-science-prepare-system\import-status-upload.png":::
 
 1. Once the notebooks are imported, select **Go to workspace** in the import dialog box.
 
@@ -46,7 +46,7 @@ We utilize the notebook artifact in the Data Science experience to demonstrate v
 
 1. The imported notebooks are now available in your workspace for use.
 
-   :::image type="content" source="media\tutorial-data-science-prepare-system\imported-notebook-list.png" alt-text="Screenshot showing a list of available noteboks in a workspace." lightbox="media\tutorial-data-science-prepare-system\":::
+   :::image type="content" source="media\tutorial-data-science-prepare-system\imported-notebook-list.png" alt-text="Screenshot showing a list of available noteboks in a workspace." lightbox="media\tutorial-data-science-prepare-system\imported-notebook-list.png":::
 
 ## Attach a lakehouse to the notebooks
 
@@ -63,7 +63,7 @@ To demonstrate Fabric lakehouse features, the first five modules in this tutoria
 > [!NOTE]
 > Before executing all notebooks, you need to perform these steps for each notebook in this tutorial.
 
-:::image type="content" source="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png" alt-text="Diagram of the process steps to attach a lakehouse to a notebook." lightbox="media\tutorial-data-science-prepare-system\media\tutorial-data-science-prepare-system\attach-lakehouse-process.png":::
+:::image type="content" source="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png" alt-text="Diagram of the process steps to attach a lakehouse to a notebook." lightbox="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png":::
 
 ## Next steps
 
