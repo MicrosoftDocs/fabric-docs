@@ -46,7 +46,7 @@ items:
       href: materialized-view.md
 - name: Get data
   items:
-  - name: Get data from a blob
+  - name: Get data from a blob and a blob container
     href: get-data-blob.md
   - name: Get data from Event Hubs
     href: get-data-event-hub.md
@@ -68,7 +68,7 @@ items:
   items:
   - name: Visualize data in a Power BI report
     href: create-powerbi-report.md
-  - name: Use data from KQL Databases in Power BI Desktop
+  - name: Use data from a KQL Database in Power BI Desktop
     href: power-bi-data-connector.md
 - name: Event streams
   items:

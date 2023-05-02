@@ -1,6 +1,6 @@
 ---
-title: Get data from a blob in Real-Time Analytics
-description: Learn get blob data in a KQL Database.
+title: Get data from a blob and a blob container in Real-Time Analytics
+description: Learn how to get data from a blob and a blob container in a KQL Database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -9,9 +9,9 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Get data from a blob
+# Get data from a blob and a blob container
 
-In this article, you'll learn you how to get data from an Azure blob or blob container into an existing database. 
+In this article, you learn you how to get data from an Azure blob and a blob container into an existing database.
 
 ## Prerequisites
 
@@ -19,12 +19,16 @@ In this article, you'll learn you how to get data from an Azure blob or blob con
 * [KQL Database](create-database.md)
 * An Azure blob or blob container with data
 
-## Get data from a blob
+## Get data
 
 You can get data from two types of blobs:
 
 * Azure blob: Blob Storage is optimized for storing massive amounts of unstructured data. Unstructured data is data that doesn't adhere to a particular data model or definition, such as text or binary data. For more information on Azure blob storage, see [Introduction to Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
 * Blob container: A container organizes a set of blobs, similar to a directory in a file system. A storage account can include an unlimited number of containers, and a container can store an unlimited number of blobs. For more information on blob containers, see [Manage blob containers using Azure portal](/azure/storage/blobs/blob-containers-portal).
+
+In the next section of this document, choose the tab that corresponds to the type of blob you want to ingest.
+
+### [Azure Blob](#tab/azure-blob/)
 
 1. On the lower ribbon, select **Get Data** > **Get data from blob**.
 
@@ -38,11 +42,6 @@ You can get data from two types of blobs:
     >  Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
 1. Select **Next: Source**.
-
-In the next section of this document, choose the tab that corresponds to the type of blob you want to ingest.
-
-### [Azure Blob](#tab/azure-blob/)
-
 1. In **Source type** select Azure blob.
 1. In the **Link to source** field, add the Account Key/SAS URI.
 
@@ -55,6 +54,19 @@ In the next section of this document, choose the tab that corresponds to the typ
 1. Select **Next: Schema** to view and edit your table column configuration.
 
 ### [Blob container](#tab/blob-container/)
+
+1. On the lower ribbon, select **Get Data** > **Get data from blob container**.
+
+    :::image type="content" source="media/database-editor/get-data.png" alt-text="Get data.":::
+
+1. In **Table**, enter a name for your table.
+
+    :::image type="content" source="media/database-editor/table-name.png" alt-text="table name.":::
+
+    > [!TIP]
+    >  Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
+
+1. Select **Next: Source**.
 
 1. In **Source type**, select Blob container.
 1. In **Link to source** field, add the Account Key/SAS URI.
@@ -126,16 +138,16 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 :::image type="content" source="media/database-editor/azure-blob-summary-pane.png" alt-text="Screenshot of ingested complete dialog box with data preview.":::
 
-## Quick query
+## Check your data
 
-To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database landing page. You can then save your query as a KQL Queryset by selecting **Save as Query Set**.
+To verify that you have ingested data into your database, select **Check your data** on the rightmost of the database landing page. You can then save your query as a KQL Queryset by selecting **Save as Query Set**.
 
 :::image type="content" source="media/database-editor/quick-query.png" alt-text="Screenshot of the Quick query button.":::
 
-For more information on KQL Queryset, see <!-- [TODO- KQL query set]().-->
+For more information on KQL Querysets, see [Query data in the KQL Queryset](kusto-query-set.md).
 
 ## Next steps
 
-* To create an empty table, see <!--[TODO- Create table]().-->
-* To manage your database, see [Manage](database-management.md).
-* To create, store, and export queries, see [Query data in the KQL Queryset](kusto-query-set.md)
+* [Create an empty table](create-empty-table.md)
+* [Data management](database-management.md).
+* [Query data in the KQL Queryset](kusto-query-set.md)
