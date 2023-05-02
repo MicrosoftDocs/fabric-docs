@@ -59,7 +59,7 @@
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
       - name: Configure in dataflow gen2
         href: connector-azure-data-lake-storage-gen2-dataflows.md
-    - name: Azure SQL Database
+    - name: Azure SQL database
       items:
       - name: Overview
         href: connector-azure-sql-database-overview.md
@@ -77,6 +77,7 @@
         href: connector-binary-dataflows.md
     - name: Delimited text in pipeline
       href: format-delimited-text.md
+<<<<<<< HEAD
     - name: Excel
       items:
       - name: Excel format
@@ -84,6 +85,11 @@
       - name: Connect in dataflows
         href: connector-excel-dataflows.md
     - name: Google cloud Storage
+=======
+    - name: Excel format in dataflow gen2
+      href: format-excel.md
+    - name: Google Cloud Storage
+>>>>>>> ea44ca2d187526f8561a692448fed342b390f15c
       items:
       - name: Overview
         href: connector-google-cloud-storage-overview.md
@@ -101,9 +107,13 @@
         href: connector-http.md
       - name: Configure in copy activity of pipeline
         href: connector-http-copy-activity.md
+<<<<<<< HEAD
       - name: Connect to dataflows
         href: connector-http-dataflows.md
     - name: KQL Database
+=======
+    - name: KQL database
+>>>>>>> ea44ca2d187526f8561a692448fed342b390f15c
       items:
       - name: Overview
         href: connector-kql-database-overview.md
