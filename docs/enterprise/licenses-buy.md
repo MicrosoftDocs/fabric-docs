@@ -31,7 +31,7 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 * Pay as you go with no time commitment.
 
-* You can [scale your capacity](/power-bi/developer/embedded/azure-pbie-scale-capacity#scale-a-capacity) up or down using the Azure portal or via the Azure APIs.
+* You can [scale your capacity](scale-capacity) up or down using the Azure portal or via the Azure APIs.
 
 * You can [pause](pause-resume.md#pause-your-capacity) and [start](pause-resume.md#start-your-capacity) your capacity as needed. This feature is designed to save money when the capacity isn't in use.
 

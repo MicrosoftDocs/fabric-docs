@@ -1,0 +1,57 @@
+---
+title: Scale your Fabric capacity
+description: This article walks through how to scale a Fabric capacity in Microsoft Azure.
+author: Kesem Sharabi, Mihir Wagle
+ms.author: kesharab, mihirwagle
+services: power-bi-embedded
+ms.topic: concept
+ms.date: 11/04/2022
+---
+
+# Scale your Fabric capacity in the Azure portal
+
+This article walks through how to scale a Fabric (Preview) capacity in Microsoft Azure. Scaling allows you to increase or decrease the size of your capacity.
+
+This assumes you created a Fabric capacity (**F SKU**). If you haven't, see [Buy Licenses](licenses-buy.md) to get started.
+
+## Scale a capacity
+
+1. Sign into the [Azure portal](https://portal.azure.com/).
+
+2. Under **Azure services**, select **Microsoft Fabric (Preview)** to see your capacities.
+
+    > [!div class="mx-imgBorder"]
+    > ![Screenshot of Azure services in Azure portal.](media/scale-capacity/azure-portal-more-services.png)
+
+3. Select the capacity you want to scale. Notice that the current size for each capacity is listed under **SKU**.
+
+    > [!div class="mx-imgBorder"]
+    > ![Screenshot of Fabric capacity list in Azure portal.](media/scale-capacity/azure-portal-capacity-list.png)
+
+    When you make your selection, information about that capacity is displayed next to it. This information again includes the current scaling under **SKU**.
+
+    > [!div class="mx-imgBorder"]
+    > ![Screenshot of essential information about capacity.](media/scale-capacity/azure-portal-capacity-details.png)
+
+4. Under **Scale**, select **Change size**.
+
+    > [!div class="mx-imgBorder"]
+    > ![Screenshot of Change size option.](media/scale-capacity/azure-portal-change-size.png)
+
+5. Select a scale and click **Resize**.
+
+    > [!div class="mx-imgBorder"]
+    > ![Sceenshot of new scale selection.](media/scale-capacity/azure-portal-scale-pricing-info.png)
+
+6. Confirm your tier by viewing the overview tab. The current pricing tier is listed.
+
+    > [!div class="mx-imgBorder"]
+    > ![Screenshot current tier information.](media/scale-capacity/azure-portal-confirm-tier.png)
+
+
+
+## Next steps
+
+* [Pause and start your Fabric capacity in the Azure portal](pause-resume.md)
+
+More questions? [Try asking the Microsoft Fabric (Preview) Community](https://community.fabric.microsoft.com/)
