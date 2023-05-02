@@ -22,19 +22,18 @@ You have two options:
 
 ## Revert to a previous synced state
 
-If you revert to a previous synced state, you lose the changes made after that sync. If you revert the git branch to a previous synced branch, you can still see the changes made to the unsynced branch. If you revert the workspace, the changes are lost completely.
+You can revert either the workspace or the git branch to last synced state. If you revert the git branch to a previous commit, you can still see the changes made to the unsynced branch. If you revert the workspace, the changes are lost completely.
 
-Use the undo command in the workspace to revert to last synced state.
-To revert to the prior synced state, do one of the following steps:
+To revert to the prior synced state, do *one* of the following steps:
 
-- Return the workspace to the last synced state by using the [Undo](./git-get-started.md#commit-changes-to-git) command in the conflicted item.
-- Revert to the last synced state in git using the `git revert` command.
+- Use the [Undo](./git-get-started.md#commit-changes-to-git) command to return all items in the workspace to their last synced state.
+- Revert to the last synced state in git using the `git revert` command in Azure DevOps.
 
  You can also revert to a previous state by disconnecting and reconnecting the workspace. When you reconnect, [select the direction](./git-integration-process.md#connect-and-sync) you want to sync.
 
 ## Resolve conflict in git
 
-If you made numerous changes and don’t want to revert to a previous state, you can try resolving the conflict in the git repo:
+If you made numerous changes and don’t want to revert to a previous state, you can try resolving the conflict in the git repo by creating a new branch and syncing it with the current one. **Only a workspace admin can create a new branch**:
 
 1. From the **Source control** pane, check out a new branch using the last synced branch ID shown on bottom of screen
 
