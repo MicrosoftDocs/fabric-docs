@@ -12,9 +12,9 @@ ms.date: 03/24/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-OneLake is a single data lake across your entire organization. Microsoft Fabric sits on top of OneLake and divides the single data lake into separate containers that can be secured independently. Within each workspace, you can define security for different items, and you can set access through compute engines like SQL separately from direct data lake access.
+OneLake is a single data lake across your entire organization. Microsoft Fabric sits on top of OneLake and provides security boundaries that can be secured independently through workspaces. Within each workspace, you can define security for different items, and you can set access through compute engines like SQL separately from direct data lake access.
 
-OneLake uses a layered security model built around the organizational structure of components within Microsoft Fabric. Security is derived from Azure Active Directory (Azure AD) authentication and is compatible with both user identities and service principals. Using Azure AD and Fabric components, you can build out robust security mechanisms across OneLake, ensuring that you keep your data safe while also reducing copies and minimizing complexity.
+OneLake uses a layered security model built around the organizational structure of components within Microsoft Fabric. Security is derived from Azure Active Directory (Azure AD) authentication and is compatible with user identities, service principals, and managed identities. Using Azure AD and Fabric components, you can build out robust security mechanisms across OneLake, ensuring that you keep your data safe while also reducing copies and minimizing complexity.
 
 :::image type="content" source="media\onelake-security\onelake-structure.png" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers." lightbox="media\onelake-security\onelake-structure.png":::
 
@@ -28,26 +28,26 @@ Workspace roles in Fabric grant the following permissions in OneLake.
 |---|---|---|---|---|
 | View files in OneLake | Yes | Yes | Yes | No |
 | Write files in OneLake | Yes | Yes | Yes | No |
-| Manage OneLake settings | Yes | Yes | No | No |
 
 
 ## Data item security
 
-Data security and further be managed on individual data items such as lakehouse, warehouse, etc. in Fabric. In general, the access a user has to an item inherits from their Fabric workspace role. However, you can share items with users directly, granting them access to just that item without adding them to a workspace role. In addition, users with workspace role access to a data item can have additional permissions granted directly to that item. The following tables outline the scenarios around sharing data items, the individual data item permissions, and how they apply to OneLake.
+Data security can further be managed on individual data items such as lakehouse, warehouse, etc. in Fabric. In general, the access a user has to an item inherits from their Fabric workspace role. However, you can share items with users directly, granting them access to just that item without adding them to a workspace role. In addition, users with workspace role access to a data item can have additional permissions granted directly to that item through the manage permissions experience. The following tables outline the scenarios around sharing data items, the individual data item permissions, and how they apply to OneLake.
 
-**Permissions available when sharing a data item**
+**Permissions granted when sharing a data item**
 | **Action** | **Read all SQL endpoint data** | **Read all Apache Spark** | **Build reports on the default dataset** |
 |---|---|---|---|
-| Share a warehouse | Yes | Yes | Yes |
-| Share a lakehouse | Yes | Yes | Yes |
-| Share a real time analytics database | No | No | No |
+| Share a warehouse | Read | ReadAll | Build |
+| Share a lakehouse | Read | ReadAll | Build |
+| Share a real time analytics database | N/A | N/A | N/A |
+| Datasets | N/A | N/A | N/A |
 
 **Permissions assigned to individual data items**
 | **Permission** | **Actions** |
 |---|---|
-| Read | Connect to SQL endpoint |
+| Read | Connect to SQL endpoint, read data from Dataset, read data from real-time analytics DB |
 | ReadAll | View OneLake data in Spark, OneLake Explorer or APIs |
-| Write | Write data to OneLake in Spark, OneLake Explorer or APIs |
+| Write | Write data to OneLake in Spark, OneLake Explorer or APIs, write data to a real-time analytics DB, or write/edit Dataset |
 
 ## Compute-specific security
 
