@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # Azure Cosmos DB for NoSQL connector overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 The Azure Cosmos DB for NoSQL connector is supported in Data Factory in Microsoft Fabric with the following capabilities.
+
+[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
 
 ## Supported capabilities
 
