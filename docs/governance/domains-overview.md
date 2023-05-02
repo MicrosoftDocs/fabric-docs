@@ -21,39 +21,74 @@ In Fabric, a domain is a way of logically grouping together all the data in an o
 
 To group data into domains, workspaces are associated with domains. When a workspace is associated with a domain, all the items in the workspace are also associated with the domain, and they receive a domain attribute as part of their metadata. During the Fabric public preview, the association of workspaces and the items included within them with domains primarily enables a better consumption experience. For instance, in the OneLake data hub, users can filter content by domain in order find content that is relevant to them. Going forward, capabilities for managing and governing data at the domain level will be added.
 
-## Getting started with domains in Fabric: basic flow
+## Key concepts
 
-1. In the admin portal, a Power BI administrator or above (hereafter referred to as the tenant admin) creates a domain and specifies a domain administrator. A domain admin ideally is the business owner who is familiar with the data in their area and the regulations and restrictions that are relevant to it.
-
-1. In the admin portal, the domain admin and/or tenant admin designates domain contributors. Domain contributors are workspace admins who will be authorized to associate the workspaces they're admins of with a domain.
-
-    The domain admin and tenant admin can associate workspaces with the domain, either individually or in bulk, and they can specify a domain image to make it easier to identify the domain context in the OneLake data hub. 
-
-    The tenant admin can delegate some settings to the domain admin. This enables the domain admin to override tenant settings in their own specific domain.
-
-1. Domain contributors associate their workspaces with domains in workspace settings.
-
-1. Data consumers filter by domain in the data hub in order to see only the data items that are relevant to their department.
-
-## Domain roles
+### Domain roles
 
 There are three roles involved in domains:
 
-* **Tenant admin** (Power BI admin or higher): Tenant admins can create and edit domains, specify domain admins and domain contributors, and associate workspaces with domains. Tenant admins can also see all the defined domains on the Domains page in the admin portal, and they can edit and delete domains.
+* **Power BI admin** (or higher): Power BI admins can create and edit domains, specify domain admins and domain contributors, and associate workspaces with domains. Power BI admins can also see all the defined domains on the Domains page in the admin center, and they can edit and delete domains.
 
 * **Domain admin**: Ideally, the domain admins of a domain are the business owners or designated experts. They should be familiar with the data in their area and the regulations and restrictions that are relevant to it.
 
-    Domain admins have access to the **Domains** page in the admin portal, but they can only see and edit the domains they're admins of. Domain admins can update the domain description, define/update domain contributors, and associate workspaces with the domain. They also can define and update the domain image and override tenant settings for any specific settings the tenant admin has delegated to the domain level. They can't delete the domain, change the domain name, or add/delete other domain admins.
+    Domain admins have access to the **Domains** page in the admin center, but they can only see and edit the domains they're admins of. Domain admins can update the domain description, define/update domain contributors, and associate workspaces with the domain. They also can define and update the domain image and override tenant settings for any specific settings the tenant admin has delegated to the domain level. They can't delete the domain, change the domain name, or add/delete other domain admins.
 
-* **Domain contributor**: Domain contributors are [workspace admins](../get-started/roles-workspaces.md) who have been authorized by the domain or tenant admins to associate the workspaces they're the admins of to a domain, or to change the current domain association.
+* **Domain contributor**: Domain contributors are [workspace admins](../get-started/roles-workspaces.md) who have been authorized by the domain or Power BI admin to associate the workspaces they're the admins of to a domain, or to change the current domain association.
 
-    Domain contributors associate the workspaces they're an admin of in the settings of the workspace itself. They don’t have access to the **Domains** page in the admin portal.
+    Domain contributors associate the workspaces they're an admin of in the settings of the workspace itself. They don’t have access to the **Domains** page in the admin center.
     
     > [!NOTE]
     > Remember, to be able to associate a their workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../get-started/roles-workspaces.md) in the workspace).
 
+### Domain image
+
+When users look for data items in the OneLake data hub, they may want to see only the data items that belong to a particular domain. If they select the domain in the domain selector on the data hub, only items belonging to that domain will be shown. To remind users what context they'r viewing the data hub in you can choose an image to represent your domain. Then, when your domain is selected, the image will become part of the theme of the data hub, as illustrated in the following image.
+
+:::image type="content" source="./media/domains/domain-image.png" alt-text="Screenshot of the OneLake data hub with a domain image.":::
+
+## Create a domain
+
+To create domain you must be a Power BI admin.
+
+1. Open the admin center and select **Domains**.
+
+1. On the **Domains** page that opens, select **Create new domain**.
+
+    :::image type="content" source="./media/domains/domains-page.png" alt-text="Screenshot of domains page.":::
+
+1. On the new domain’s configuration page, provide a name (mandatory) and a description for the domain.
+
+    [Image]
+
+1. Select **Apply**. The domain will be created, and you can continue configuring the domain as described in the following sections.
+
+## Configure a domain
+
+Power BI and domain admins can configure a domain on the domain's configuration page. To get to the domain's configuration page, go to the admin center, choose **Domains**, and then select the domain you want to configure.
+
+:::image type="content" source="./media/domains/configure-choose-domain.png" alt-text="Screenshot showing the domains page.":::
+
+Domain admins see only domains they are admins of.
+
+### Edit name and description
+
+Power BI admins can edit the name and description fields. Domain admins can edit the description field only.
+
+### Choose a domain image
+
+Expand the Domain image section and select **Select an image**. In the photo gallery that pops up you can chose an image or color to represent your domain in the OneLake data hub when your domain is selected.
+
+:::image type="content" source="./media/domain-image-gallery.png" alt-text="Screenshot showing the domains image gallery.":::
+
+### Specify domain admins
+
+### Specify domain contributors
+
+### Assign workspaces to the domain
+
+
 ## Next steps
 
-* Tenant admins: [Create a domain in Microsoft Fabric (preview)](./domains-create.md)
+* Power BI admin: [Create a domain in Microsoft Fabric (preview)](./domains-create.md)
 * Domain admins: [Manage a domain in Microsoft Fabric (preview)](./domains-manage.md)
 * Domain contributors: [Specify a domain in a workspace](../get-started/create-workspaces.md#specify-a-domain)
