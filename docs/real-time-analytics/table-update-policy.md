@@ -23,6 +23,7 @@ This article describes how to create an update policy on a table in Synapse Real
 
 ## Table update policy
 
+1. Browse to the main page of your KQL database that holds the table for which you want to create an update policy.
 1. Select **New** > **Table update policy**
     
     :::image type="content" source="media/table-update-policy/new-policy.png" alt-text="Screenshot of adding new table update policy in Synapse Real-Time Analytics in Microsoft Fabric.":::
