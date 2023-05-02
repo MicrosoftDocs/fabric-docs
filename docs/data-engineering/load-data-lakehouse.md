@@ -17,7 +17,7 @@ Get data experience covers all user scenarios for bringing data into the lakehou
 
 - Connecting to existing SQL Server and copying data into delta table on the lakehouse.
 - Uploading files from your computer.
-- Copying and merging multiple tables from other lakehouses into a new delta table.
+- Copying and merging multiple tables from other alehouses into a new delta table.
 - Connecting to a streaming source to land data in a lakehouse.
 - Referencing data without copying it from other internal lakehouses or external sources.
 
@@ -32,7 +32,7 @@ In Microsoft Fabric, there are a few ways you can get data into a lakehouse:
 
 ### Local file upload
 
-You can also upload data stored on your local machine. You can do this directly in the lakehouse explorer.
+You can also upload data stored on your local machine. You can do it directly in the lakehouse explorer.
 
 :::image type="content" source="media/get-data/file-upload-dialog.png" alt-text="Screenshot of file upload dialog in Lakehouse Explorer" lightbox="media/get-data/file-upload-dialog.png":::
 
@@ -46,7 +46,7 @@ For users that are familiar to Power BI dataflows same tool is available to land
 
 ### Notebook code
 
-You can use available Spark libraries to connect to a data source directly, load data to data frame and then save it in a lakehouse. This is the most open way to load data in the lakehouse that is fully managed by the user code.
+You can use available Spark libraries to connect to a data source directly, load data to data frame and then save it in a lakehouse. It's the most open way to load data in the lakehouse that user code is fully managing.
 
 ## Considerations when choosing approach to load data
 
