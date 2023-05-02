@@ -1,10 +1,10 @@
 ---
 title: Domains (preview)
-description: Learn how domains can be used to organize your organization's Fabric data into logical groupings.
+description: Learn about domains and how to create and manage them.
 author: paulinbar
 ms.author: painbar
 ms.topic: concept
-ms.date: 04/23/2023
+ms.date: 05/02/2023
 ---
 
 # Domains (preview)
@@ -74,9 +74,11 @@ Domain admins see only domains they are admins of.
 
 Power BI admins can edit the name and description fields. Domain admins can edit the description field only.
 
-:::image type="content" source="./media/domains/domain-edit-details.png" alt-text="Screenshot showing the domains name and description fields.":::
+1. Expand the Name and description section and make your desired changes.
 
-domain-edit-details.png
+    :::image type="content" source="./media/domains/domain-edit-details.png" alt-text="Screenshot showing the domains name and description fields.":::
+
+1. When done, select **Apply**.
 
 ### Choose a domain image
 
@@ -88,9 +90,9 @@ Expand the Domain image section and select **Select an image**. In the photo gal
 
 To specify domain admins, you must be a Power BI admin.
 
-Expand the Domain admins section and specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain.
+1. Expand the Domain admins section and specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain.
 
-:::image type="content" source="./media/domains/domain-specify-domain-admins.png" alt-text="Screenshot showing domain admins specification section.":::
+    :::image type="content" source="./media/domains/domain-specify-domain-admins.png" alt-text="Screenshot showing domain admins specification section.":::
 
 1. Select **Apply**.
 
@@ -98,9 +100,9 @@ Expand the Domain admins section and specify who will be able to assign workspac
 
 To specify domain contributors, you must be a domain admin for the domain or a Power BI admin.
 
-Expand the Domain contributors section and specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain.
+1. Expand the Domain contributors section and specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain.
 
-:::image type="content" source="./media/domains/domain-specify-domain-contributors.png" alt-text="Screenshot showing domain contributor specification section.":::
+    :::image type="content" source="./media/domains/domain-specify-domain-contributors.png" alt-text="Screenshot showing domain contributor specification section.":::
 
 1. Select **Apply**.
 
