@@ -53,6 +53,10 @@ items:
       href: ingest-data.md
     - name: Ingest data with data pipelines
       href: ingest-data-pipelines.md
+    - name: Ingest data with the COPY statement
+      href: ingest-data-copy.md
+    - name: Ingest data with TSQL
+      href: ingest-data-tsql.md
   - name: Query
     items:
     - name: Query using Visual Query editor

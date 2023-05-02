@@ -14,9 +14,9 @@ ms.search.form: Ingesting data # This article's title should not change. If so, 
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Data pipelines offer an alternative to using the COPY command through a graphical user interface. A data pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allows you to manage extract, transform, and load activities instead of managing each one individually.
+Data pipelines offer an alternative to using the COPY command through a graphical user interface. A data pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allow you to manage extract, transform, and load (ETL) activities instead of managing each one individually.
 
-In this tutorial, you'll create a new pipeline that loads sample data into a [!INCLUDE [product-name](../includes/product-name.md)] warehouse. 
+In this tutorial, you'll create a new pipeline that loads sample data into a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. 
 
 > [!NOTE]
 > Some features from Azure Data Factory are not available in [!INCLUDE [product-name](../includes/product-name.md)], but the concepts are interchangeable. You can learn more about Azure Data Factory and Pipelines on [Pipelines and activities in Azure Data Factory and Azure Synapse Analytics](/azure/data-factory/concepts-pipelines-activities).
@@ -29,6 +29,7 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 1. In the **New pipeline** dialog, provide a name for your new pipeline and select **Create**. 
 
 1. You'll land in the pipeline canvas area, where you see three options to get started: **Add a pipeline activity**, **Copy data**, and **Choose a task to start**.
+
     :::image type="content" source="media\ingest-data-pipelines\start-building-data-pipeline.png" alt-text="Screenshot showing the three options to select for starting ingestion." lightbox="media\ingest-data-pipelines\start-building-data-pipeline.png":::
 
     Each of these options offers different alternatives to create a pipeline:
@@ -51,7 +52,7 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
     :::image type="content" source="media\ingest-data-pipelines\data-destination-type-page.png" alt-text="Screenshot showing different destination options." lightbox="media\ingest-data-pipelines\data-destination-type-page.png":::
 
-1. Now it's time to pick the warehouse in which the data will be loaded into. Select your desired warehouse in the dropdown box and select **Next**. 
+1. Now it's time to pick the warehouse to load data into. Select your desired warehouse in the dropdown box and select **Next**. 
 
     :::image type="content" source="media\ingest-data-pipelines\data-destination-details-page.png" alt-text="Screenshot showing a dropdown list with a warehouse selected." lightbox="media\ingest-data-pipelines\data-destination-details-page.png":::
 
@@ -63,13 +64,13 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
 1. The next page gives you the option to use staging, or provide advanced options for the data copy operation (which uses the T-SQL COPY command). Review the options without changing them and select **Next**.
  
-1. The last page in the assistant offers a summary of the copy activity. Select the option **Start data transfer immediately** and select **Save + Run**.
- 
+1. The last page in the assistant offers a summary of the copy activity. Select the option **Start data transfer immediately** and select **Save + Run**. 
+
     :::image type="content" source="media\ingest-data-pipelines\run-immediately.png" alt-text="Screenshot showing the option to start the data transfer operation immediately, and the buttons Back and Save + Run." lightbox="media\ingest-data-pipelines\run-immediately.png":::
 
-1. You'll be directed to the pipeline canvas area, where a new Copy Data activity is already configured for you. The pipeline starts to run automatically. You can monitor the status of your pipeline in the **Output** pane: 
+1. You are directed to the pipeline canvas area, where a new Copy Data activity is already configured for you. The pipeline starts to run automatically. You can monitor the status of your pipeline in the **Output** pane: 
 
-    :::image type="content" source="media\ingest-data-pipelines\monitor-pipeline.png" alt-text="Screenshot showing the pipeline canvas with a Copy activity in the center, and the pipeline execution status with the value In progress." lightbox="media\ingest-data-pipelines\monitor-pipeline.png":::
+    :::image type="content" source="media\ingest-data-pipelines\monitor-pipeline.png" alt-text="Screenshot showing the pipeline canvas with a Copy activity in the center, and the pipeline execution status showing the current status In progress." lightbox="media\ingest-data-pipelines\monitor-pipeline.png":::
 
 1. After a few seconds, your pipeline finishes successfully. Navigating back to your warehouse, you can select your table to preview the data and confirm that the copy operation concluded. 
 
@@ -79,4 +80,6 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
 - [Tables in Fabric data warehousing](tables.md)
 - [Ingesting data into the Synapse Data Warehouse](ingest-data.md)
+- [Ingest data into your Synapse Data Warehouse using the COPY statement](ingest-data-copy.md)
+- [Ingest data into your Synapse Data Warehouse using Transact-SQL](ingest-data-tsql.md)
 - [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md)
