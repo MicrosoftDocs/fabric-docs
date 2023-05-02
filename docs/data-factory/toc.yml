@@ -5,7 +5,7 @@
     items:
     - name: What is Data Factory?
       href: data-factory-overview.md
-    - name: What are Dataflows Gen2?
+    - name: What are dataflows Gen2?
       href: dataflows-gen2-overview.md
   - name: Get started
     items:
