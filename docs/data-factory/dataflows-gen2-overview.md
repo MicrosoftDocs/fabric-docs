@@ -24,9 +24,8 @@ Dataflows Gen2 is the new generation of dataflows. The new generation of dataflo
 | Fast copy       | X  |   |
 | High scale compute using lakehouse     |  X |   |
 | Enhanced compute using Premium SQL engine |  |  X|
-| Incremental refresh       | *Coming soon  | X  |
-| AI Insights support | *Coming soon | X |
-| Dataflow Gen1 to Gen2 migration | *Coming soon |  |
+| Incremental refresh       |   | X  |
+| AI Insights support |  | X |
 
 ### Authoring experience
 

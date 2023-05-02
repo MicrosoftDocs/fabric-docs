@@ -6,8 +6,8 @@ ms.author: kecona
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.search.form: Warehouse Design and Development # This article's title should not change. If so, contact engineering.
 ---
-
 # Transactions in Synapse Data Warehouse tables in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
@@ -67,7 +67,7 @@ Transaction logging in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUD
 - Named transactions are not supported.
 - Marked transactions are not supported.
 - At this time, there's limited T-SQL functionality in the warehouse. See [TSQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
-- If a transaction has data insertion into an empty table and issues a SELECT before rolling back, the automatically generated statistics may still reflect the uncommitted data, causing inaccurate [statistics](statistics.md). Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, you may want to [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=sql-server-ver16&preserve-view=true) for the columns mentioned in your SELECT.
+- If a transaction has data insertion into an empty table and issues a SELECT before rolling back, the automatically generated statistics may still reflect the uncommitted data, causing inaccurate [statistics](statistics.md). Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, you may want to [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
 
 ## Next steps
 

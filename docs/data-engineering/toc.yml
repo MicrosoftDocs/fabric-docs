@@ -61,10 +61,12 @@ items:
       href: spark-compute.md
     - name: Create custom pools
       href: create-custom-spark-pools.md
-  - name: Runtime
-    href: runtime.md
-  - name: Autotune Spark configuration
-    href: autotune.md
+    - name: High concurrency mode
+      href: high-concurrency-mode-notebooks.md
+    - name: Runtime
+      href: runtime.md
+    - name: Autotune Spark configuration
+      href: autotune.md
   - name: Spark job definition
     items:
     - name: What is a Spark job definition?

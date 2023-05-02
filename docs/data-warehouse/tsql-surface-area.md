@@ -6,8 +6,8 @@ ms.author: cynotebo
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
+ms.search.form: SQL Endpoint Overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
-
 # T-SQL surface area in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
