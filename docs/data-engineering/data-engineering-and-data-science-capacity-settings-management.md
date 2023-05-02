@@ -1,6 +1,6 @@
 ---
-title: Data engineering/science capacity Settings
-description: Learn about the capacity administration settings for data engineering/science workloads
+title: Learn to configure data engineering/science capacity admin settings in Fabric
+description: Learn to configure and manage the capacity administration settings for data engineering/science workloads in Fabric
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
