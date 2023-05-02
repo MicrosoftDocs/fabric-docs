@@ -16,13 +16,19 @@ This tutorial is a quick guide to creating a Spark Job Definition that contains 
 ## Create a Python script using your IDE
 
 1. Create a Python code that uses Spark Structured Streaming to land data in a lakehouse table
+
+   :::image type="content" source="media\get-started-streaming\python-code.png" alt-text="Screenshot showing Python script" lightbox="media\get-started-streaming\python-code.png":::
+
 1. Save your script as Python file (.py) in your local computer
 
 ## Create a lakehouse
 
-1. In Microsoft Fabric, make sure you are in desired workspace or select/create one
-1. Select **Create** icon on the left menu
-1. Under **Data Engineering** select **Lakehouse**
+1. In Microsoft Fabric, select **Synapse Data Engineering** workload
+1. Make sure you are in desired workspace or select/create one
+1. Select **Lakehouse** icon under New section in the main mage
+
+   :::image type="content" source="media\get-started-streaming\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog" lightbox="media\get-started-streaming\new-lakehouse.png":::
+
 1. Enter name of your lakehouse
 1. Select **Create**
 
@@ -30,6 +36,9 @@ This tutorial is a quick guide to creating a Spark Job Definition that contains 
 
 1. In the same workspace where you created a lakehouse, select **Create** icon on the left menu
 1. Under "Data Engineering", select **Spark Job Definition**
+
+   :::image type="content" source="media\get-started-streaming\new-sjd.png" alt-text="Screenshot showing new Spark Job Definition dialog" lightbox="media\get-started-streaming\new-sjd.png":::
+
 1. Enter name of your Spark Job Definition
 1. Select **Create**
 1. Select **Upload** and select your Python file (.py) from your local computer
@@ -38,8 +47,14 @@ This tutorial is a quick guide to creating a Spark Job Definition that contains 
 ## Set Retry policy for Spark Job Definition
 
 1. On a top menu, select **Setting** icon
+
+   :::image type="content" source="media\get-started-streaming\sjd-settings.png" alt-text="Screenshot showing Spark Job Definition settings icon" lightbox="media\get-started-streaming\sjd-settings.png":::
+
 1. Select Optimization tab
 1. Set Retry Policy trigger **On**
+
+   :::image type="content" source="media\get-started-streaming\sjd-retry-on.png" alt-text="Screenshot showing Spark Job Definition optimization tab" lightbox="media\get-started-streaming\sjd-retry-on.png":::
+
 1. Define maximum retry attempts or check **Allow unlimited attempts**
 1. Specify time between each retry attempt
 1. Select **Apply**
@@ -47,6 +62,9 @@ This tutorial is a quick guide to creating a Spark Job Definition that contains 
 ## Execute and Monitor Spark Job Definition
 
 1. On a top menu, select **Run** icon
+
+   :::image type="content" source="media\get-started-streaming\sjd-run.png" alt-text="Screenshot showing Spark Job Definition run icon" lightbox="media\get-started-streaming\sjd-run.png":::
+
 1. Check if **Spark Job definition** was submitted successfully and running
 
 ## View data using SQL Endpoint

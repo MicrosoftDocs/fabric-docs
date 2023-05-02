@@ -6,9 +6,8 @@ ms.author: kecona
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
-ms.search.form: Warehouse design and development
+ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
-
 # Create tables in Synapse Data Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se](includes/applies-to-version/fabric-dw.md)]
@@ -34,7 +33,7 @@ For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric
 1. Modify the `CREATE TABLE` template to suit your new table.
 1. Select **Run** to create the table.
 
-To learn more about supported table creation in Synapse Data Warehouse in Microsoft Fabric, refer to this doc: [Tables in data warehousing in Microsoft Fabric](tables.md)
+To learn more about supported table creation in Synapse Data Warehouse in Microsoft Fabric, see [Tables in data warehousing in Microsoft Fabric](tables.md).
 
 ## Next steps
 
