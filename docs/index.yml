@@ -33,7 +33,7 @@ highlightedContent:
       itemType: quickstart
       url: admin/admin-switch.md
     # Card
-    - title: End-to-end tutorials
+    - title: Develop with end-to-end tutorials
       itemType: tutorial
       url: placeholder.md
 
