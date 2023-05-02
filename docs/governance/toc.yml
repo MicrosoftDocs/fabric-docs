@@ -12,7 +12,7 @@ items:
   - name: linktext2
     href: ../placeholder.md
 - name: Domains
-  href: domains-overview.md
+  href: domains.md
 - name: Metadata scanning
   items:
   - name: Overview

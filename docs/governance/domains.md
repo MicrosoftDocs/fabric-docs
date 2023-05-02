@@ -109,9 +109,42 @@ Expand the Domain contributors section and specify who will be able to assign wo
 
 ### Assign workspaces to the domain
 
+Tenant admins and domain admins can associate workspaces with the domain on the domains configuration page in the admin portal.
+
+1. Expand the **Workspaces in this domain** section. If any workspaces have been associated with the domain, they will be listed here.
+
+1. Select **Assign workspaces**.
+
+    [Image]
+ 
+1. In the **Assign workspaces to this domain** side pane that appears, select how to assign the workspaces.
+
+    [Image]
+
+* **Assign by workspace name**
+
+    * Some organizations have naming conventions for workspaces that make it easy to identify the data’s business context.
+    * You can search for and select multiple workspaces at once
+    * If a workspace is already associated with another domain, you’ll see an icon next to the specific name. If you chose to continue the action, a warning message will pop up, but you’ll be able to continue and override the previous association.
+
+* **Assign by workspace admin**
+    * You can select specific users or security groups as per your business structure. When you confirm the selection, all the workspaces the users and security groups are admins of will be associated to the domain.
+    * This action excludes “My workspaces”.
+    * If some of the workspaces are already associated with another domain, a warning message will pop up, but you’ll be able to continue and override the previous association.
+   * This action affects existing workspaces only. It won’t affect workspaces the selected users create after the action has been performed.
+ * **Assign by capacity**
+    * Some organizations have dedicated capacities per department/business unit.
+     * You can search for and select multiple capacities at once. When you confirm your selection, all the workspaces associated to the selected capacities will be associated with the domain.
+    * If some of the workspaces are already associated with another domain, a warning message will pop up, but you’ll be able to continue and override the previous association.
+     * This action excludes “My workspaces”.
+    * This action affects existing workspaces only. It won’t affect workspaces that are assigned to the specified capacities after the action has been performed.
+
+To unassign a workspace in the Workspaces in this domain section, hover over the workspace entry and select the unassign icon that appears.
+To unassign several workspaces at a time, select the checkboxes next to the workspace names and then select the **Unassign** button above the table.
+
+[Image]
+
 
 ## Next steps
 
-* Power BI admin: [Create a domain in Microsoft Fabric (preview)](./domains-create.md)
-* Domain admins: [Manage a domain in Microsoft Fabric (preview)](./domains-manage.md)
 * Domain contributors: [Specify a domain in a workspace](../get-started/create-workspaces.md#specify-a-domain)
