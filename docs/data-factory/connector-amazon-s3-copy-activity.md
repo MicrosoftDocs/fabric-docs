@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Amazon S3.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Required permissions
 

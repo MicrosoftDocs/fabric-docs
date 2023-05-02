@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 In this how-to guide, you'll learn the different ways to review and monitor your pipeline runs.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Monitor data pipeline runs
 

@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 This article outlines how to configure delimited text format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported capabilities
 

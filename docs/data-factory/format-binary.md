@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 This article outlines how to configure Binary format in Data Factory.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported capabilities
 

@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 This document describes how to use parameters in your pipelines for Data Factory in Fabric.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## How to use parameters, expressions and functions in pipelines for Data Factory in Fabric
 

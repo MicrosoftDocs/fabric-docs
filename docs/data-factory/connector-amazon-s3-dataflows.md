@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 The Amazon S3 connector isn't currently supported in Dataflows Gen2.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Next steps
 

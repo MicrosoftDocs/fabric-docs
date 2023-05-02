@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to HTTP.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported format
 

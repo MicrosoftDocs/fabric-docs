@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 [!INCLUDE [product-name](../includes/product-name.md)] supports many on-premises and cloud data sources, and each source has its own requirements. To learn how to add and manage an on-premises data source, go to [Add or remove a gateway data source](/power-bi/connect-data/service-gateway-data-sources). In this article, you'll learn how to add an Azure SQL Server as a cloud data source. The steps are similar for other data sources.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 > [!NOTE]
 > Currently, these cloud connections are only supported for data pipelines and Kusto. In the future, other artifacts can also make use of the cloud connections. To create personal cloud connections in datasets, datamarts, and dataflows, use the Power Query Online experience in "get data".

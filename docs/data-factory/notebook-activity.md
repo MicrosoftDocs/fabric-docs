@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 The Notebook activity in pipeline allows you to run Notebook created in [!INCLUDE [product-name](../includes/product-name.md)]. You can create a Notebook activity directly through the Fabric user interface. This article provides a step-by-step walkthrough that describes how to create a Notebook activity using the Data Factory user interface.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Add a Notebook activity to a pipeline
 

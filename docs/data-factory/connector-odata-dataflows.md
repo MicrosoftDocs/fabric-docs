@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 You can connect to an OData feed in Dataflow Gen2 using the OData connector provided by Data Factory in Microsoft Fabric.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Connect to an OData feed
 

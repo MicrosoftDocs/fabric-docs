@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 A Binary format connector isn't currently supported in Dataflow Gen2.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Next steps
 

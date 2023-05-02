@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 This article outlines the steps to create an OData connection in a data pipeline.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 

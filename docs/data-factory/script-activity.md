@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 In this article, you learn how to add a new Script activity, add a new connection, and configure script content.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
