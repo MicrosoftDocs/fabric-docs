@@ -53,20 +53,20 @@ Explanation of roles. [Maybe a link to roles documentation in Fabric](../placeho
 
 ### Admin view in the hub
 
-Access to [Microsoft Purview Insights](#microsoft-purview-insights).
-Access to [reports](#reports).
-Access to [links](#additional-links).
+Access to [Microsoft Purview Insights](use-the-microsoft-purview-hub.md#microsoft-purview-insights).
+Access to [reports](use-the-microsoft-purview-hub.md#reports).
+Access to [links](use-the-microsoft-purview-hub.md#additional-links).
 
 ### Data owner view in the hub
 
-Access to [Microsoft Purview Insights](#microsoft-purview-insights).
-Access to [reports](#reports).
-Access to [links](#additional-links).
+Access to [Microsoft Purview Insights](use-the-microsoft-purview-hub.md#microsoft-purview-insights).
+Access to [reports](use-the-microsoft-purview-hub.md#reports).
+Access to [links](use-the-microsoft-purview-hub.md#additional-links).
 
 ### Consumer role in the hub
 
-Access to [reports](#reports).
-Access to [links](#additional-links).
+Access to [reports](use-the-microsoft-purview-hub.md#reports).
+Access to [links](use-the-microsoft-purview-hub.md#additional-links).
 
 ## Procurement/Licensing
 
