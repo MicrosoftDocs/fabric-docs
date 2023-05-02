@@ -3,9 +3,9 @@
     href: index.yml
   - name: Overview
     items:
-    - name: What is Data Factory
+    - name: What is Data Factory?
       href: data-factory-overview.md
-    - name: Dataflows Gen2
+    - name: What are Dataflows Gen2?
       href: dataflows-gen2-overview.md
   - name: Get started
     items:
@@ -13,7 +13,7 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
-    - name: Build data integration
+    - name: Configure data integration
       href: transform-data.md
   - name: Connectors
     items:
