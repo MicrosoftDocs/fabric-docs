@@ -17,18 +17,16 @@ OneLake is a single, unified, logical data lake for the whole organization. OneL
 - **Foundation of Fabric data services:** OneLake is provisioned automatically with every Fabric tenant.
 - **Shortcuts:** Virtualize data across domains and clouds into a single logical data lake.
 - **Open access:** OneLake supports Azure Data Lake storage (ADLS) Gen2 APIs and SDKs so your existing applications simply work. You aren't locked in to proprietary technologies or formats.
-- **One copy:** Fabric data artifacts store data natively in open-source formats, which allows you to access it across multiple analytical engines without data duplication.
+- **One copy:** Fabric data items store data natively in open-source formats, which allows you to access it across multiple analytical engines without data duplication.
 - **One security:** Easily secure data in OneLake by granting access either directly to the data or by limiting access to specific query engines.
 
 ## OneLake: The foundation for Fabric
 
 OneLake eliminates today’s pervasive and chaotic data silos by providing a data lake as a service without you needing to build it yourself and no infrastructure to manage. With everyone contributing to the same underlying data lake, the tenant administrator can unify management and governance policies across all teams and domains in an organization. Within a tenant, you can create any number of workspaces. Workspaces enable different parts of the organization to distribute ownership, with each workspace controlling its own access policies, region, and capacity for billing.
 
-:::image type="content" source="media\onelake-overview\onelake-foundation-for-fabric.png" alt-text="Diagram showing the function and structure of OneLake." lightbox="media\onelake-overview\onelake-foundation-for-fabric.png":::
+:::image type="content" source="media\onelake-overview\onelake-foundation-for-fabric-v-2.png" alt-text="Diagram showing the function and structure of OneLake." lightbox="media\onelake-overview\onelake-foundation-for-fabric-v-2.png":::
 
-Within a workspace, you can create data artifacts and all data in OneLake is accessed through data artifacts. Similar to how Office stores Word, Excel, and PowerPoint files in OneDrive, Fabric stores lakehouses, warehouses, and other artifacts in OneLake. Artifacts can give tailored experiences for each persona such the Spark developer experience in a lakehouse.
-
-:::image type="content" source="media\onelake-overview\onelake-with-artifacts.png" alt-text="Diagram showing the different artifacts that work with OneLake." lightbox="media\onelake-overview\onelake-with-artifacts.png":::
+Within a workspace, you can create data items and all data in OneLake is accessed through data items. Similar to how Office stores Word, Excel, and PowerPoint files in OneDrive, Fabric stores lakehouses, warehouses, and other items in OneLake. Items can give tailored experiences for each persona such the Spark developer experience in a lakehouse.
 
 For more information on how to get started using OneLake, see [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
 
@@ -38,15 +36,15 @@ Shortcuts allow your organization to easily share data between users and applica
 
 A shortcut is a reference to data stored in other file locations. These file locations can be within the same workspace or across different workspaces, within OneLake or external to OneLake in ADLS or S3. No matter the location, the reference makes it appear as though the files and folders are stored locally.
 
-:::image type="content" source="media\onelake-overview\fabric-shortcuts-structure-onelake.png" alt-text="Diagram showing how shortcuts connect data across workspaces and artifacts." lightbox="media\onelake-overview\fabric-shortcuts-structure-onelake.png":::
+:::image type="content" source="media\onelake-overview\fabric-shortcuts-structure-onelake-v-2.png" alt-text="Diagram showing how shortcuts connect data across workspaces and items." lightbox="media\onelake-overview\fabric-shortcuts-structure-onelake-v-2.png":::
 
 For more information on how to use shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
 ## Open access to OneLake
 
-You can access all your OneLake data, including shortcuts, with ADLS Gen2 APIs and SDKs, which means OneLake is compatible out of the box with any application and tool that supports ADLS Gen2. Simply point existing tools to the OneLake endpoint and it just works!
+You can access all your OneLake data, including shortcuts, with ADLS Gen2 APIs and SDKs.  OneLake is compatible out of the box with any application and tool that supports ADLS Gen2. Simply point existing tools to the OneLake endpoint and it just works!
 
-:::image type="content" source="media\onelake-overview\access-onelake-data-other-tools.png" alt-text="Diagram showing how you can access OneLake date with APIs and SDKs." lightbox="media\onelake-overview\access-onelake-data-other-tools.png":::
+:::image type="content" source="media\onelake-overview\access-onelake-data-other-tools-v-2.png" alt-text="Diagram showing how you can access OneLake date with APIs and SDKs." lightbox="media\onelake-overview\access-onelake-data-other-tools-v-2.png":::
 
 For more information on APIs and endpoints, see [OneLake access and APIs](onelake-access-api.md). For examples of OneLake integrations with Azure, see [Use with Azure services](../placeholder.md).
 
@@ -56,9 +54,10 @@ While applications may have separation of storage and computing, the data is oft
 
 For example, you can load data with T-SQL transaction into Tables and then query the data with T-SQL *and* Spark without having to create copies of the data. Similarly, you can use Spark to load and transform data and then query it directly using T-SQL.
 
-No matter which engine or artifact you use, everyone is contributing to the same data lake. Users with different skill sets or preferences can operate on the same copy of data without duplication.
+No matter which engine or item you use, everyone is contributing to the same data lake. Users with different skill sets or preferences can operate on the same copy of data without duplication.
 
-:::image type="content" source="media\onelake-overview\use-same-copy-of-data.png" alt-text="Diagram showing how multiple artifacts and engines use the same copy of data." lightbox="media\onelake-overview\use-same-copy-of-data.png":::
+:::image type="content" source="media\onelake-overview\use-same-copy-of-data-v-2.png" alt-text="Diagram showing how multiple items and engines use the same copy of data." lightbox="media\onelake-overview\use-same-copy-of-data-v-2.png":::
+*Example diagram showing loading data using Spark, querying using T-SQL and viewing the data in a Power BI report.*
 
 ## One security: Customize data security
 
