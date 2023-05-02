@@ -14,7 +14,7 @@ ms.date: 05/23/2023
 
 When you create a [!INCLUDE [product-name](../includes/product-name.md)], on Azure portal, it automatically gets added to the Fabric tenant thats associated with the subscription used to created the capacity. With the simplified setup in [!INCLUDE [product-name](../includes/product-name.md)], there's no need to link the capacity to the Fabric tenant, as this is handled for you behind the scenes. This configuration provides a faster experience for admins to start setting up the capacity for their enterprise analytics teams.
 
-To make changes to the Data Engineering/Science settings in a capacity, you should have the admin role for that capacity. To learn more about the roles you can assign users in a capacity, see [Roles in capacities](../get-started/roles-capacities.md).
+To make changes to the Data Engineering/Science settings in a capacity, you should have the admin role for that capacity. To learn more about the roles you can assign users in a capacity, see [Roles in capacities](../admin/admin-roles.md).
 
 To manage the Data Engineering/Science settings for [!INCLUDE [product-name](../includes/product-name.md)] capacity:
 
@@ -40,5 +40,5 @@ To manage the Data Engineering/Science settings for [!INCLUDE [product-name](../
 ## Next steps
 
 >[!div class="nextstepaction"]
->[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](spark-workspace-admin-settings.md)
+>[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](data-engineering-and-science-workspace-admin-settings.md)
 >[Learn about the Spark Compute for Fabric Data Engineering/Science workloads](spark-compute.md)
