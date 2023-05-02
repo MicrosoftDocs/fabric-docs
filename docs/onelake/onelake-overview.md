@@ -56,7 +56,7 @@ For example, you can load data with T-SQL transaction into Tables and then query
 
 No matter which engine or item you use, everyone is contributing to the same data lake. Users with different skill sets or preferences can operate on the same copy of data without duplication.
 
-:::image type="content" source="media\onelake-overview\use-same-copy-of-data-v-2.png" alt-text="Diagram showing how multiple items and engines use the same copy of data." lightbox="media\onelake-overview\use-same-copy-of-data-v-2.png":::
+:::image type="content" source="media\onelake-overview\use-same-copy-of-data-v-3.png" alt-text="Diagram showing how multiple items and engines use the same copy of data." lightbox="media\onelake-overview\use-same-copy-of-data-v-3.png":::
 *Example diagram showing loading data using Spark, querying using T-SQL and viewing the data in a Power BI report.*
 
 ## One security: Customize data security
