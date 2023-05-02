@@ -28,7 +28,7 @@ To manage the Spark settings for the pool associated with your workspace:
 
 1. You see the **Spark Compute** option in your left-hand menu:
 
-   :::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view." lightbox="media\data-engineering-and-science-workspace-admin-settings\spark-compute-detail-view":::
+   :::image type="content" source="media/data-engineering-and-science-workspace-admin-settings/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view." lightbox="media/data-engineering-and-science-workspace-admin-settings/spark-compute-detail-view.png":::
 
 1. You have five options you can change on this page: **Pool**, **Runtime version**, **High Concurrency mode for Fabric Spark**, **Auto-Logging for Machine Learning Experiments and Models** and **Spark properties**.
 
