@@ -52,6 +52,8 @@ items:
     href: get-data-event-hub.md
   - name: Get data from OneLake
     href: get-data-onelake.md
+- name: Stream events 
+  href: event-streams/toc.yml
 - name: Query data
   items:
   - name: Query data in the KQL Queryset
@@ -70,8 +72,6 @@ items:
     href: create-powerbi-report.md
   - name: Use data from KQL Databases in Power BI Desktop
     href: power-bi-data-connector.md
-- name: Stream data
-  href: event-streams/toc.yml
 - name: Kusto Query Language
   href: kusto-query-language/toc.yml
 - name: Management commands
