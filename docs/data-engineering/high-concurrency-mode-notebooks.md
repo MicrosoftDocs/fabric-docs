@@ -15,7 +15,7 @@ ms.date: 03/16/2023
 
 When you run a notebook in Microsoft Fabric, an Apache Spark session is started and is used to run the queries submitted as part of the notebook cell executions. With High Concurrency Mode enabled, there's no need to start new spark sessions every time to run a notebook. If you already have a High Concurrency session running, you could attach notebooks to the high concurrency session getting a spark session instantly to run the queries and achieve a greater session utilization rate. 
 
-:::image type="content" source="media\high-concurrency-mode-for-notebooks\hcsession.gif" alt-text="GIF showing high concurrency session for notebooks." lightbox="media\high-concurrency-mode-for-notebooks\hcsession.gif":::
+:::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-session.gif" alt-text="GIF showing high concurrency session for notebooks." lightbox="media\high-concurrency-mode-for-notebooks\high-concurrency-session.gif":::
 
 > [!NOTE]
 > The high concurrency mode-based session sharing is always within a single user boundary. 
@@ -88,7 +88,7 @@ Monitoring and debugging are often a non-trivial task when you are running multi
 
 4. In the case of high concurrency session, users could identify the jobs and its associated logs from different notebooks using the **Related notebook** tab, which shows the notebook from which that job has been run.
 
-   :::image type="content" source="media\high-concurrency-mode-for-notebooks\view-related-notebooks-in-hogh-concurrency-mode.png" alt-text="Screenshot showing the all related notebooks for high concurrency session in the monitoring detail view." lightbox="media\high-concurrency-mode-for-notebooks\view-related-notebooks-in-hogh-concurrency-mode.png":::
+   :::image type="content" source="media\high-concurrency-mode-for-notebooks\view-related-notebooks-in-high-concurrency-mode.png" alt-text="Screenshot showing the all related notebooks for high concurrency session in the monitoring detail view." lightbox="media\high-concurrency-mode-for-notebooks\view-related-notebooks-in-high-concurrency-mode.png":::
 
 
 ## Next steps
