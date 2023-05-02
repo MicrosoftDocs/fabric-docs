@@ -10,7 +10,7 @@ ms.date: 05/02/2023
 # Recipe: Cognitive Services - Multivariate Anomaly Detection 
 This recipe shows how you can use SynapseML and Azure Cognitive Services on Apache Spark for multivariate anomaly detection. Multivariate anomaly detection allows for the detection of anomalies among many variables or timeseries, taking into account all the inter-correlations and dependencies between the different variables. In this scenario, we use SynapseML to train a model for multivariate anomaly detection using the Azure Cognitive Services, and we then use to the model to infer multivariate anomalies within a dataset containing synthetic measurements from three IoT sensors. 
 
-To learn more about the Anomaly Detector Cognitive Service, refer to [ this documentation page](https://docs.microsoft.com/azure/cognitive-services/anomaly-detector/). 
+To learn more about the Anomaly Detector Cognitive Service, refer to [ this documentation page](/azure/cognitive-services/anomaly-detector/). 
 
 ### Prerequisites
 - An Azure subscription - [Create one for free](https://azure.microsoft.com/free/)
