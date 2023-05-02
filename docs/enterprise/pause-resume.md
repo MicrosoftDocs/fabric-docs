@@ -28,7 +28,7 @@ Follow these steps to pause your capacity.
 
 1. Sign into the [Azure portal](https://portal.azure.com/).
 
-2. Select the **Microsoft Fabric (preview)** service to see your capacities. You can *Microsoft Fabric (preview)* using the search menu.
+2. Select the **Microsoft Fabric (preview)** service to see your capacities. You can search for *Microsoft Fabric (preview)* in the search menu.
 
 3. Select the capacity you want to pause.
 
