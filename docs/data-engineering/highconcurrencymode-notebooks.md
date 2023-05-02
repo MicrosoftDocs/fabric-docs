@@ -21,7 +21,7 @@ When you run a notebook in Microsoft Fabric, an Apache Spark session is started 
 > The high concurrency mode-based session sharing is always within a single user boundary. 
 > The notebooks need to have matching spark configurations, should be part of the same workspace, share the same default lakehouse and libraries to share a single spark session. 
 
-## Configure High Concurrency Mode 
+## Configure high concurrency mode 
 By default, all the Fabric workspaces are enabled with high concurrency Mode. Use the following steps to configure the high concurrency feature: 
 
 1.	Click on **Workspace Settings** Option in your Fabric Workspace
@@ -36,11 +36,11 @@ By default, all the Fabric workspaces are enabled with high concurrency Mode. Us
 
 4. Enabling the high concurrency option allows users to start a high concurrency session in their notebooks or attach to existing high concurrency session. 
 
-5. Disabling the high concurrency mode hides the section to configure the time period of inactivity and also hides the option to start a new high concurrecny session from the notebook menu.
+5. Disabling the high concurrency mode hides the section to configure the time period of inactivity and also hides the option to start a new high concurrency session from the notebook menu.
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\workspace-setting-disable-high-concurrency-mode.png" alt-text="Screenshot showing the high concurrency option disabled in workspace settings." lightbox="media\high-concurrency-mode-for-notebooks\workspace-setting-disable-high-concurrency-mode.png":::
 
-## Run Notebooks in High Concurrency Session
+## Run notebooks in high concurrency session
 
 1.	Open the Fabric workspace 
 
@@ -70,13 +70,13 @@ By default, all the Fabric workspaces are enabled with high concurrency Mode. Us
 
     :::image type="content" source="media\high-concurrency-mode-for-notebooks\detach-to-standard-session.png" alt-text="Screenshot showing the option to detach from a high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\detach-to-standard-session.png":::
     
-11. You can view the session status, type and session id by navigating to **status** bar, select the **Session ID** allows you to explore the jobs executed in this high concurrency session and view logs of the spark session in the monitoring detail page.
+11. You can view the session status, type and session ID by navigating to **status** bar, select the **Session ID** allows you to explore the jobs executed in this high concurrency session and view logs of the spark session in the monitoring detail page.
 
     :::image type="content" source="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png" alt-text="Screenshot showing the session details of a high concurrency session in Notebook Menu." lightbox="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png":::
 
-## Monitoring and Debugging Notebooks Running in High Concurrency Session
+## Monitoring and debugging notebooks running in high concurrency session
 
-Monitoring and debugging are often a non-trivial task when you are running multiple notebooks in a shared session. For high concurrency mode in Fabric, seperation of logs is offered which would allow users to trace the logs emitted by spark events from different notebooks. 
+Monitoring and debugging are often a non-trivial task when you are running multiple notebooks in a shared session. For high concurrency mode in Fabric, separation of logs is offered which would allow users to trace the logs emitted by spark events from different notebooks. 
 
 1. When the session is in progress or in completed state, you can view the session status by navigating to the **Run** menu and selecting the **All Runs** option
 
@@ -84,7 +84,7 @@ Monitoring and debugging are often a non-trivial task when you are running multi
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\view-all-runs-in-high-concurrency-mode.png" alt-text="Screenshot showing the all runs page for a notebook in a high concurrency session." lightbox="media\high-concurrency-mode-for-notebooks\view-all-runs-in-high-concurrency-mode.png":::
   
-3. By selecting a session, users can access the monitoring detail view, which shows the list of all the spark jobs that have been run in the session.
+3. Users by selecting a session, can access the monitoring detail view, which shows the list of all the spark jobs that have been run in the session.
 
 4. In the case of high concurrency session, users could identify the jobs and its associated logs from different notebooks using the **Related notebook** tab, which shows the notebook from which that job has been run.
 
@@ -93,7 +93,7 @@ Monitoring and debugging are often a non-trivial task when you are running multi
 
 ## Next steps
 
-In this document, you get a basic understanding of a session sharing through high concurrency mode in notebooks. Advance to the next articles to learn how to create and get started with your own Data Engineering workloads using lakehouses and Notebooks:
+In this document, you get a basic understanding of a session sharing through high concurrency mode in notebooks. Advance to the next articles to learn how to create and get started with your own Data Engineering workloads using Lakehouse and Notebooks:
 
 - To get started with Lakehouse, see [Creating a Lakehouse](create-lakehouse.md).
 - To get started with Notebooks, see [How to use a Notebook](how-to-use-notebook.md)
