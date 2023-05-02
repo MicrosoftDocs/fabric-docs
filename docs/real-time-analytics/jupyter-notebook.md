@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
-ms.date: 04/27/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
@@ -34,6 +34,9 @@ Before we import the NYC Taxi notebook, we need to create a database to load the
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
 1. Select **KQL Database**.
 1. Under **Database name**, enter *NYCTaxidb*, then select **Create**.
+1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
+
+    :::image type="content" source="media/spark-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
 
 The KQL database has now been created within the context of the selected workspace.
 
@@ -45,21 +48,20 @@ In this step, you'll use a script to first create a table with specified mapping
 
     :::image type="content" source="media/jupyter-notebook/copy-kql-script.png" alt-text="Screenshot of GitHub repository showing the KQL script for the NYC Taxi demo notebook. The copy icon is highlighted."  lightbox="media/jupyter-notebook/copy-kql-script.png":::
 
-1. Navigate to your KQL Database.
-1. Select **Quick query** on the top right corner of the database summary page.
+1. Navigate to your KQL database.
+1. Select **Check your data** on the top right corner of the database summary page.
 1. Paste the KQL script from step 1.
 
-1. Place your cursor somewhere within the first query, and select the **Run** button.
+1. Place your cursor somewhere within the query, and select the **Run** button.
 
     The first query will run and create the table and schema mapping. The output of this query will show the table and mapping creation information, including the type of command and the result of *Completed* when finished.
-
-1. Place your cursor somewhere within the second query, and select the **Run** button.
-
     The second query will load your data. It might take a few minutes for the data loading to be complete.
+
+    :::image type="content" source="media/jupyter-notebook/data-map-ingest.png" alt-text="Screenshot of the Check your data window showing the completed state of the table mapping and data ingestion."  lightbox="media/jupyter-notebook/data-map-ingest.png":::
 
 ## 3- Download the NYC Taxi demo notebook
 
-We've created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your KQL Database.
+We've created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your KQL database.
 
 1. Open the Fabric samples repository on GitHub to download the [NYC Taxi demo Notebook.](https://github.com/microsoft/fabric-samples/blob/main/samples/real-time-analytics/NYC_Taxi_KQL_Notebook.ipynb).
 
@@ -76,8 +78,6 @@ The rest of this workflow occurs in the **Data Engineering** section of the prod
 
 1. Open the app switcher on the bottom of the navigation pane and select **Data Engineering**.
 
-    :::image type="content" source="media/jupyter-notebook/app-switcher-dataengineering.png" alt-text="Screenshot of app switcher showing available apps. The app titled Data Engineering is highlighted.":::
-
 1. In the Data Engineering homepage, select **Import notebook**.
 
     :::image type="content" source="media/jupyter-notebook/import-notebook.png" alt-text="Screenshot of artifact options in Data Engineering. The artifact titled Import notebook is highlighted.":::
@@ -86,7 +86,7 @@ The rest of this workflow occurs in the **Data Engineering** section of the prod
 
     :::image type="content" source="media/jupyter-notebook/upload-notebook.png" alt-text="Screenshot of Import status window. The button titled Upload is highlighted.":::
 
-1. Select the NYCTaxi Notebook you downloaded in a previous step.
+1. Select the NYC Taxi KQL Notebook that you downloaded in a previous step.
 1. Once the import is complete, return to your workspace to open this notebook.
 
 ## 5- Load packages
@@ -100,8 +100,8 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
 ## 6- Device Code authentication
 
-1. Paste the **Query endpoint URI** of the database in which you placed the sample data. This URI can be found in the [Database details](create-database.md#database-details) page. Use this URI instead of the placeholder cluster text.
-1. Change the placeholder database name to **NYCtaxi**.
+1. Paste the **Query URI** that you copied earlier instead of the placeholder cluster text.
+1. Change the placeholder database name to **NYCTaxidb**.
 
     :::image type="content" source="media/jupyter-notebook/paste-query-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted.":::
 
@@ -155,7 +155,7 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 1. In your workspace, hover over the notebook you want to delete, select the **More menu** > **Delete**.
 
-    :::image type="content" source="media/jupyter-notebook/cleanup-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC Taxi notebook. The option titled Delete is highlighted.":::
+    :::image type="content" source="media/jupyter-notebook/clean-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC Taxi notebook. The option titled Delete is highlighted.":::
 
 1. Select **Delete**. You can't recover your notebook once you delete it.
 
