@@ -1,7 +1,7 @@
 ---
 title: Scale your Fabric capacity
 description: This article walks through how to scale a Microsoft Fabric capacity in Azure.
-author: Kesem Sharabi
+author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
 ms.date: 11/04/2022
