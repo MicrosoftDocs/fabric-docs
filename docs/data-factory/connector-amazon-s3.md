@@ -18,11 +18,11 @@ This article outlines the steps to create an Amazon S3 connection.
 
 ## Supported authentication types
 
-This Amazon S3 connector supports the following authentication types for copy activity.  
+The Amazon S3 connector supports the following authentication types for copy activity.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Basic| √| |
+|Basic| √| n/a|
 
 >[!Note]
 >For the Amazon S3 connection of Dataflow Gen2, go to [Connect to Amazon S3 in dataflows](./connector-amazon-s3-dataflows.md).
@@ -33,21 +33,21 @@ To get started, you must complete the following prerequisites:
 
 - Create a tenant account with an active subscription. Create an account for free.
 
-- Create a workspace that isn't the default My Workspace.
+- Create a workspace that isn't the default **My Workspace**.
 
 ## Create a connection
 
-1. From the page header in the Data Factory service, select **Settings** ![Settings gear icon](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAHoSURBVDhPfVI9SEJRFH5q9idRghhRBoH5hgz62QyKRAqHhiZraqogMBoKgiyQnLK1IYPWFCopIY20JbSWTNOh1xL0clAqK7A0M/ue91kG0ccZzvnud+4959wjyOfzVBEBJuEI3Nw+pJyzWoTD1uNmmcSgadHQciIAfhKs+1F36G5CRyNNragDE2WfIAU/qVOBJzIKCQT+q/jC1jmcp1RGadyGwUFo3Dw7CLIFCQcuYWUv4mfiONaaPYQtRb/ZHbl9xHU2L4NQNDA6ZfMx6ffcqiuKd9UKKf90ERVikWU3nM7m7IGbHlouwIsodETTwp9TlMke9IRicPSdTcuGTkICSEB7wiibPGUSz6/vhIX65S3rWxqEgUTHhIfPy1AWekCLhYLz370SlPLrR1dwhMiurRaTa/4H+/CKF0RhSW/m49M+01cpFoFNPKcPQzFUDx/lYQZadQP8sT6lOxSz7F4KFTIJmq6tLucuoSjLSFdNlbh73gUjIeEhgEzf0SjAgE2OYA9djwmM61Sl4yLAcDa811C7L+6cc1q+afwlfgd/VOjwF0DiUmII/16N1ukdGBkXyNLVKOMf5lYtif9qb5b6mcTsUBuYRccFKgGJnSUa4Nd6I8fmvWbvU1ytmMzaCXqd0Kl+9oWivgAsYHfccfep7QAAAABJRU5ErkJggg==) > **Manage connections and gateways**
+1. From the page header in the Data Factory service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**.
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
 2. Select **New** at the top of the ribbon to add a new data source.
 
     :::image type="content" source="./media/connector-common/add-new-connection.png" alt-text="Screenshot showing the '+ new' page.":::
-    
-    The **New connection** pane will show up on the left side of the page.
-       
-    :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the 'New connection pane.":::
+
+    The **New connection** pane is then displayed on the left side of the page.
+
+    :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the 'New connection pane." lightbox="./media/connector-common/new-connection-pane.png":::
 
 ## Set up the connection
 
@@ -63,7 +63,7 @@ In the **New connection** pane, choose **Cloud**, and then specify the following
 
 ### Step 2:  Select and set your authentication
 
-Under **Authentication method**, select your authentication method from the drop-down list and complete the related configuration. This Amazon S3 connector supports the following authentication types:
+Under **Authentication method**, select your authentication method from the drop-down list and complete the related configuration. The Amazon S3 connector supports the following authentication types:
 
 - [Basic](#basic-authentication)
 
@@ -82,31 +82,31 @@ In the **General** tab, under **Privacy level**, select the privacy level that y
 
 ### Step 4: Create your connection
 
-Select **Create**. Your creation will be successfully tested and saved if all the credentials are correct. If the credentials aren't correct, the creation will fail with errors.
+Select **Create**. Your creation is successfully tested and saved if all the credentials are correct. If the credentials aren't correct, the creation fails with errors.
 
-:::image type="content" source="./media/connector-amazon-s3/connection.png" alt-text="Screenshot showing connection page.":::
+:::image type="content" source="./media/connector-amazon-s3/connection.png" alt-text="Screenshot showing connection page."lightbox="./media/connector-amazon-s3/connection.png":::
 
 ## Table summary
 
-The following table contains connector properties that are supported in pipeline copy and Dataflow Gen2:
+The following table contains connector properties that are supported in pipeline copy.
 
-|Name|Description|Required|Property|Copy/Dataflow Gen2|
+|Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
-|**Connection name**|A name for your connection.|Yes||✓/|
-|**Connection type**|Select **Amazon S3** for your connection type.|Yes||✓/|
-|**Data source path**|Enter your account endpoint URL of your Amazon S3.|Yes||✓/|
-|**Authentication**|See [Authentication](#authentication) |Yes||See [Authentication](#authentication)|
+|**Connection name**|A name for your connection.|Yes||✓|
+|**Connection type**|Select **Amazon S3** for your connection type.|Yes||✓|
+|**Data source path**|Enter your account endpoint URL of your Amazon S3.|Yes||✓|
+|**Authentication**|Go to [Authentication](#authentication) |Yes||Go to [Authentication](#authentication)|
 
 ### Authentication
 
 The following table contains properties for the supported authentication type.
 
-|Name|Description|Required|Property|Copy/Dataflow Gen2|
+|Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
-|**Basic**||||✓/|
+|**Basic**||||✓|
 |- Username|The user name to use to access the Amazon S3 endpoint.|Yes |||
 |- Password|The password for specified username.|Yes |||
 
 ## Next steps
 
-- [How to create Amazon S3 connection](connector-amazon-s3.md)
+- [How to configure Amazon S3 in a copy activity](connector-amazon-s3-copy-activity.md)
