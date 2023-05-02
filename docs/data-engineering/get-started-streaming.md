@@ -15,7 +15,7 @@ This tutorial is a quick guide to creating a Spark Job Definition that contains 
 
 ## Create a Python script using your IDE
 
-1. Create a Python code that uses SPark Structured Streaming to land data in a lakehouse table
+1. Create a Python code that uses Spark Structured Streaming to land data in a lakehouse table
 1. Save your script as Python file (.py) in your local computer
 
 ## Create a lakehouse
