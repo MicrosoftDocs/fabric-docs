@@ -46,7 +46,7 @@ items:
       href: materialized-view.md
 - name: Get data
   items:
-  - name: Get data from a blob and a blob container
+  - name: Get data from an Azure blob and a blob container
     href: get-data-blob.md
   - name: Get data from Event Hubs
     href: get-data-event-hub.md

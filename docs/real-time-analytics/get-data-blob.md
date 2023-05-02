@@ -1,6 +1,6 @@
 ---
-title: Get data from a blob and a blob container in Real-Time Analytics
-description: Learn how to get data from a blob and a blob container in a KQL Database.
+title: Get data from an Azure blob and a blob container in Real-Time Analytics
+description: Learn how to get data from an Azure blob and a blob container in a KQL Database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
