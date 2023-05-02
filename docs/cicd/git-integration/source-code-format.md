@@ -14,10 +14,10 @@ Each item in Microsoft Fabric is represented in Git as a directory. Each directo
 
 :::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of git directory containing items.":::
 
-Inside each directory are the files that mandatory system defined files that define the item. Besides item files, there are two automatically generated system files in each directory:
+Inside each directory are the mandatory system files that define the item. Besides these files, there are two automatically generated system files in each directory:
 
-- [item.config.json](#config-file)
 - [item.metadata.json](#metadata-file)
+- [item.config.json](#config-file)
 
 ## Metadata file
 
