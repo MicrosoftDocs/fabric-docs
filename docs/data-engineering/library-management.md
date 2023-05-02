@@ -188,4 +188,4 @@ Follow this example to walk through the steps of installing an R feed library:
 
 ## Next steps
 
-- [Apache Spark workspace administration settings](spark-workspace-admin-settings.md)
+- [Apache Spark workspace administration settings](data-engineering-and-science-workspace-admin-settings.md)
