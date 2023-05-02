@@ -82,7 +82,7 @@ Power BI admins can edit the name and description fields. Domain admins can edit
 
 ### Choose a domain image
 
-Expand the Domain image section and select **Select an image**. In the photo gallery that pops up you can chose an image or color to represent your domain in the OneLake data hub when your domain is selected.
+Expand the Domain image section and select **Select an image**. In the photo gallery that pops up you can choose an image or color to represent your domain in the OneLake data hub when your domain is selected.
 
 :::image type="content" source="./media/domains/domain-image-gallery.png" alt-text="Screenshot showing the domains image gallery.":::
 
