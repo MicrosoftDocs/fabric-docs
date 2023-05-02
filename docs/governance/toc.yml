@@ -12,11 +12,7 @@ items:
   - name: linktext2
     href: ../placeholder.md
 - name: Domains
-  items:
-  - name: Overview
-    href: domains-overview.md
-  - name: Create and configure domains
-    href: domains-create-configure.md
+  href: domains-overview.md
 - name: Metadata scanning
   items:
   - name: Overview

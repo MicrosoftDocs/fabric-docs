@@ -74,15 +74,38 @@ Domain admins see only domains they are admins of.
 
 Power BI admins can edit the name and description fields. Domain admins can edit the description field only.
 
+:::image type="content" source="./media/domains/domain-edit-details.png" alt-text="Screenshot showing the domains name and description fields.":::
+
+domain-edit-details.png
+
 ### Choose a domain image
 
 Expand the Domain image section and select **Select an image**. In the photo gallery that pops up you can chose an image or color to represent your domain in the OneLake data hub when your domain is selected.
 
-:::image type="content" source="./media/domain-image-gallery.png" alt-text="Screenshot showing the domains image gallery.":::
+:::image type="content" source="./media/domains/domain-image-gallery.png" alt-text="Screenshot showing the domains image gallery.":::
 
 ### Specify domain admins
 
+To specify domain admins, you must be a Power BI admin.
+
+Expand the Domain admins section and specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain.
+
+:::image type="content" source="./media/domains/domain-specify-domain-admins.png" alt-text="Screenshot showing domain admins specification section.":::
+
+1. Select **Apply**.
+
 ### Specify domain contributors
+
+To specify domain contributors, you must be a domain admin for the domain or a Power BI admin.
+
+Expand the Domain contributors section and specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain.
+
+:::image type="content" source="./media/domains/domain-specify-domain-contributors.png" alt-text="Screenshot showing domain contributor specification section.":::
+
+1. Select **Apply**.
+
+>[!NOTE]
+> For domain contributors to be able to associate their workspaces with their domains, they must have an admin role in the workspaces they are trying to associate with the domain.
 
 ### Assign workspaces to the domain
 
