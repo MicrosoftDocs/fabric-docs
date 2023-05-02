@@ -6,8 +6,8 @@ ms.author: kecona
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.search.form: Warehouse Design and Development # This article's title should not change. If so, contact engineering.
 ---
-
 # Transactions in Synapse Data Warehouse tables in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]

@@ -6,8 +6,8 @@ ms.author: kecona
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.search.form: Warehouse Design and Development # This article's title should not change. If so, contact engineering.
 ---
-
 # Tables in data warehousing in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
@@ -101,11 +101,13 @@ FOREIGN KEY is only supported when NOT ENFORCED is used.
 
 If data is coming from multiple data stores, you can port the data into the data warehouse and store it in an integration table. Once data is in the integration table, you can use the power of data warehouse to implement transformation operations. Once the data is prepared, you can insert it into production tables.
 
+<a id="limitations"></a>
+
 ### Unsupported table features
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports many, but not all, of the table features offered by other databases.
 
-The following list shows some of the table features that aren't currently supported:
+The following list shows some of the table features that aren't currently supported. During preview, this list is subject to change.
 
 - Computed columns
 - Indexed views
@@ -116,6 +118,7 @@ The following list shows some of the table features that aren't currently suppor
 - Triggers
 - Unique indexes
 - User-defined types
+- Temporary tables
 
 ## Next steps
 
