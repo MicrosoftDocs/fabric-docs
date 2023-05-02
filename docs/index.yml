@@ -223,9 +223,9 @@ additionalContent:
     - title: Related products # < 60 chars (optional)
       items:
         # Card
-        - title: Power BI
-          summary: Power BI amplifies your insights and the value of your data. 
-          url: /power-bi/
+        - title: Power Platform
+          summary: Power Platform is a low-code platform that allows users to easily create and automate business solutions using Power Apps, Power Automate, and Power BI.
+          url: /power-platform/
         - title: Azure Synapse Analytics
           summary: Azure Synapse is a limitless analytics service that brings together enterprise data warehouse and Big Data analytics.
           url: /azure/synapse-analytics/
