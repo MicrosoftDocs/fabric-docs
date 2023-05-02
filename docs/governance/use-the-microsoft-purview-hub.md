@@ -10,7 +10,7 @@ ms.date: 3/31/2023
 
 # The Microsoft Purview Hub in Microsoft Fabric
 
-Introduction to the hub. What is it. Basics of navigating.  [Link to the Microsoft Purview and Microsoft Fabric page.](microsoft-purview-and-fabric.md)
+Introduction to the hub. What is it? Basics of navigating.  [Link to the Microsoft Purview and Microsoft Fabric page.](microsoft-purview-and-fabric.md)
 
 ## Your role in the hub
 
@@ -46,9 +46,9 @@ Description of available links with links listed here that point to the rest of 
 
 ### More Insights
 
-Link to Microsoft Purview to see more information, not only about your Microsoft Fabric environment, but your whole data estate. This'll take you to the Microsoft Purview unified portal...
+Link to Microsoft Purview to see more information, not only about your Microsoft Fabric environment, but your whole data estate. This will take you to the Microsoft Purview unified portal...
 
-## Additional links
+## Other links
 
 ## Next steps
 

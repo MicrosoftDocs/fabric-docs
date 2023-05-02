@@ -1,6 +1,6 @@
 ---
 title: Use Microsoft Purview to govern Microsoft Fabric
-description: This article describes how Microsoft Purivew and Microsoft Fabric work together to deliver a complete, governed data flow.
+description: This article describes how Microsoft Purview and Microsoft Fabric work together to deliver a complete, governed data flow.
 ms.reviewer: viseshag
 ms.author: whhender
 author: whhender
