@@ -106,7 +106,7 @@ If data is coming from multiple data stores, you can port the data into the data
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports many, but not all, of the table features offered by other databases.
 
-The following list shows some of the table features that aren't currently supported:
+The following list shows some of the table features that aren't currently supported. During preview, this list is subject to change.
 
 - Computed columns
 - Indexed views
@@ -117,6 +117,7 @@ The following list shows some of the table features that aren't currently suppor
 - Triggers
 - Unique indexes
 - User-defined types
+- Temporary tables
 
 ## Next steps
 
