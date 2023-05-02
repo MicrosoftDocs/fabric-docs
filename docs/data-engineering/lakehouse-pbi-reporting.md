@@ -21,7 +21,7 @@ This approach gives unprecedented performance and the ability to instantly load 
    :::image type="content" source="media\pbi-reporting\dataset.png" alt-text="Screenshot of the default dataset landing page." lightbox="media\pbi-reporting\dataset.png":::
 
 ## Setting permissions for report consumption
-The default dataset is retrieving data from a lakehouse on demand. To make sure that data is accessible for the user that is viewing Power BI report necessary permissions on the underlying lakehouse need to be set.
+The default dataset is retrieving data from a lakehouse on demand. To make sure that data is accessible for the user that is viewing Power BI report, necessary permissions on the underlying lakehouse need to be set.
 
 One option is to give the user Viewer role in the workspace and grant necessary permissions to data using SQL endpoint security. Alternatively, the user can be given Admin, Member, or Contributor role to have full access to the data.
 
