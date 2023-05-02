@@ -18,34 +18,44 @@ Get data experience covers all user scenarios for bringing data into the lakehou
 - Connecting to existing SQL Server and copying data into delta table on the lakehouse.
 - Uploading files from your computer.
 - Copying and merging multiple tables from other lakehouses into a new delta table.
+- Connecting to a streaming source to land data in a lakehouse.
+- Referencing data without copying it from other internal lakehouses or external sources.
 
 ## Different ways to load data in lakehouse
 
-For Private Preview, there are a few ways you can get data into a lakehouse:
+In Microsoft Fabric, there are a few ways you can get data into a lakehouse:
 
-- file upload
+- File upload from local computer.
+- Run a copy tool in pipelines.
+- Set up a dataflow.
 - Apache Spark libraries in notebook code
-- Copy tool in pipelines
 
 ### Local file upload
 
 You can also upload data stored on your local machine. You can do this directly in the lakehouse explorer.
 
-### Notebook code
-
-You can use available Spark libraries to connect to a data source directly, load data to data frame and then save it in a lakehouse. This is the most open way to load data in the lakehouse that is fully managed by the user code.
+:::image type="content" source="media/get-data/file-upload-dialog.png" alt-text="Screenshot of file upload dialog in Lakehouse Explorer" lightbox="media/get-data/file-upload-dialog.png":::
 
 ### Copy tool in pipelines
 
-The Copy tool is a highly scalable Data Integration solution that allows you to connect to different data sources and load the data either in original format or convert it to a delta table. Copy tool is a part of pipelines activities that can be orchestrated in multiple ways, such as scheduling or triggering based on event.
+The Copy tool is a highly scalable Data Integration solution that allows you to connect to different data sources and load the data either in original format or convert it to a delta table. Copy tool is a part of pipelines activities that can be orchestrated in multiple ways, such as scheduling or triggering based on event. See, [How to copy data using copy activity](../data-factory/copy-data-activity.md)
+
+### Dataflows
+
+For users that are familiar to Power BI dataflows same tool is available to land data in Lakehouse. You can quickly access it from Lakehouse explorer "Get data" option, and land data from over 200 connectors. See, [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md)
+
+### Notebook code
+
+You can use available Spark libraries to connect to a data source directly, load data to data frame and then save it in a lakehouse. This is the most open way to load data in the lakehouse that is fully managed by the user code.
 
 ## Considerations when choosing approach to load data
 
 | **Use case** | **Recommendation** |
 |---|---|
 | **Small file upload from local machine** | Use Local file upload |
-| **Complex data transformations** | Use Notebook code |
+| **Small data or specific connector** | Use Dataflows |
 | **Large data source** | Use Copy tool in pipelines |
+| **Complex data transformations** | Use Notebook code |
 
 ## Next steps
 
