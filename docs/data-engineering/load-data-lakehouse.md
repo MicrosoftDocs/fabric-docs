@@ -34,15 +34,15 @@ In Microsoft Fabric, there are a few ways you can get data into a lakehouse:
 
 You can also upload data stored on your local machine. You can do it directly in the lakehouse explorer.
 
-:::image type="content" source="media/get-data/file-upload-dialog.png" alt-text="Screenshot of file upload dialog in Lakehouse Explorer" lightbox="media/get-data/file-upload-dialog.png":::
+:::image type="content" source="media/get-data/file-upload-dialog.png" alt-text="Screenshot of file upload dialog in Lakehouse Explorer." lightbox="media/get-data/file-upload-dialog.png":::
 
 ### Copy tool in pipelines
 
-The Copy tool is a highly scalable Data Integration solution that allows you to connect to different data sources and load the data either in original format or convert it to a delta table. Copy tool is a part of pipelines activities that can be orchestrated in multiple ways, such as scheduling or triggering based on event. See, [How to copy data using copy activity](../data-factory/copy-data-activity.md)
+The Copy tool is a highly scalable Data Integration solution that allows you to connect to different data sources and load the data either in original format or convert it to a delta table. Copy tool is a part of pipelines activities that can be orchestrated in multiple ways, such as scheduling or triggering based on event. See, [How to copy data using copy activity](../data-factory/copy-data-activity.md).
 
 ### Dataflows
 
-For users that are familiar to Power BI dataflows same tool is available to land data in Lakehouse. You can quickly access it from Lakehouse explorer "Get data" option, and land data from over 200 connectors. See, [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md)
+For users that are familiar to Power BI dataflows same tool is available to land data in Lakehouse. You can quickly access it from Lakehouse explorer "Get data" option, and land data from over 200 connectors. See, [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
 
 ### Notebook code
 
