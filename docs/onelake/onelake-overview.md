@@ -44,7 +44,7 @@ For more information on how to use shortcuts, see [OneLake shortcuts](onelake-sh
 
 You can access all your OneLake data, including shortcuts, with ADLS Gen2 APIs and SDKs.  OneLake is compatible out of the box with any application and tool that supports ADLS Gen2. Simply point existing tools to the OneLake endpoint and it just works!
 
-:::image type="content" source="media\onelake-overview\access-onelake-data-other-tools-v-2.png" alt-text="Diagram showing how you can access OneLake date with APIs and SDKs." lightbox="media\onelake-overview\access-onelake-data-other-tools-v-2.png":::
+:::image type="content" source="media\onelake-overview\access-onelake-data-other-tools-v-3.png" alt-text="Diagram showing how you can access OneLake date with APIs and SDKs." lightbox="media\onelake-overview\access-onelake-data-other-tools-v-3.png":::
 
 For more information on APIs and endpoints, see [OneLake access and APIs](onelake-access-api.md). For examples of OneLake integrations with Azure, see [Use with Azure services](../placeholder.md).
 
