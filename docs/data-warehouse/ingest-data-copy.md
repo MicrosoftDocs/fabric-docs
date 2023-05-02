@@ -30,7 +30,7 @@ Before you use the COPY statement, the destination table needs to be created. To
 
 1. Switch to the **Home** tab and select **New SQL query**.
 
-    :::image type="content" source="media\ingest-data-copy\new-sql-query.png" alt-text="Screenshot of the top section of the user's workspace showing the New SQL query button" lightbox="media\ingest-data-copy\new-sql-query.png":::
+    :::image type="content" source="media\ingest-data-copy\new-sql-query.png" alt-text="Screenshot of the top section of the user's workspace showing the New SQL query button." lightbox="media\ingest-data-copy\new-sql-query.png":::
 
 1. To create the table used as the destination in this tutorial, run the following code:
     
