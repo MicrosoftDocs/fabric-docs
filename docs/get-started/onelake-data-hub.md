@@ -15,6 +15,8 @@ The OneLake data hub makes it easy to find, explore, and use the Fabric data ite
 
 This article explains what you see on the data hub and describes how to use it.
 
+:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-general.png" alt-text="Screenshot of the OneLake data hub.":::
+
 ## Find recommended items
 
 Use the tiles across the top of the data hub to find and explore recommended data items. Recommended data items are data items that have been certified or promoted by someone in your organization or have recently been refreshed or accessed.  Each tile contains information about the item and provides an entry point for accessing or using the item.
@@ -22,6 +24,8 @@ Use the tiles across the top of the data hub to find and explore recommended dat
 ## Display only data items belonging to a particular domain
 
 If domains have been defined in your organization, you can use the domain selector to select a domain so that only data items belonging to that domain will be displayed. If an image has been associated with the domain, you’ll see that image on the data hub to remind you of the domain you're viewing.
+
+:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-domains-selector.png" alt-text="Screenshot of the OneLake data hub.":::
 
 ## Find items in the data items list
 
