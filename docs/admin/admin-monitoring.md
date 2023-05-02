@@ -39,15 +39,15 @@ The admin monitoring workspace is automatically installed during the first time 
 
 In the monitoring workspace, you can use the [Feature Usage and Adoption](/power-bi/developer/visuals/create-r-based-power-bi-desktop) report as is. You can also connect to this report's dataset, and create a solution that's optimized for your organization.
 
-### Sharing
+### Manage access
 
-You can share the entire *Admin monitoring* workspace, or a report or dataset in the workspace.
+There are several ways you can manage access to content of the admin monitoring workspace.
 
-* **Admin monitoring workspace** - When you share the monitoring workspace, the users you share it with are granted a viewer role. Once a viewer role is provided, it can't be taken away.
+* **Workspace** - Learn how to to give users access to the workspace in [manage workspace](../admin/admin-portal-workspaces.md). You can only grant other users a viewer role. Once a viewer role is provided, it can't be taken away.
 
-* **Report or a dataset** - To build on an existing report or dataset, you need to share the report or the dataset. You can manage the permissions for the monitoring reports and datasets at any time.
+* **Report** - You can [share a report](/power-bi/connect-data/service-datasets-share) with other users.
 
-
+* **Dataset** - You can [share access to a dataset](/power-bi/connect-data/service-datasets-share) with other users. Once a dataset is shared, you can't unshare it.
 
 ## Next steps
 
