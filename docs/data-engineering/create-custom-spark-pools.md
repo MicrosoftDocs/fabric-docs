@@ -25,11 +25,11 @@ To create or manage the Spark Pool associated with your workspace:
 
 1. Go to the **Workspace settings** in your workspace:
 
-   :::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings." lightbox="media\spark-workspace-admin-settings\workspace-settings.png":::
+   :::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings." lightbox="media\data-engineering-and-science-workspace-admin-settings\workspace-settings.png":::
 
 2. Then, choose the **Data Engineering/Science** option to expand the menu:
 
-   :::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\spark-workspace-admin-settings\data-engineering-menu.png":::
+   :::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\data-engineering-and-science-workspace-admin-settings\data-engineering-menu.png":::
 
 3. Navigate to the **Spark Compute** option in your left-hand menu:
 
@@ -37,13 +37,13 @@ To create or manage the Spark Pool associated with your workspace:
 
 4. Select the **New Pool** option in the pool selection drop-down menu and select the node family, and node size from the available sizes Small, Medium, Large, X-Large and XX-Large based on compute requirements for data engineering/science workloads. 
 
-:::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options." lightbox="media\spark-workspace-admin-settings\custom-pool-creation.png":::
+:::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options." lightbox="media\data-engineering-and-science-workspace-admin-settings\custom-pool-creation.png":::
 
 5. You can even set the minimum node configuration for your custom pools to 1 as [!INCLUDE [product-name](../includes/product-name.md)] Spark provides restorable HA for clusters with single node, so users dont have to worry about job failures, loss of session during failures or about paying for larger compute for smaller spark jobs. 
 
 6. You also have the option to enable or disable autoscaling for your custom Spark pools. When autoscaling is enabled, the pool will dynamically acquire new nodes up to the maximum node limit specified by the user, and then retire them after job execution. This feature ensures better performance by automatically adjusting resources based on the job requirements.You will only be able to size the number of nodes based on the number of Spark VCores purchased as part of the Fabric capacity SKU. 
 
-:::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\custom-pool-auto-scale-and-da.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation." lightbox="media\spark-workspace-admin-settings\custom-pool-auto-scale-and-da.png":::
+:::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\custom-pool-auto-scale-and-da.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation." lightbox="media\data-engineering-and-science-workspace-admin-settings\custom-pool-auto-scale-and-da.png":::
 
 7. You can also choose to enable dynamic executor allocation for your Spark pool, which automatically determines the optimal number of executors within the user-specified maximum bound. This feature adjusts the number of executors based on data volume, resulting in improved performance and resource utilization.
 
