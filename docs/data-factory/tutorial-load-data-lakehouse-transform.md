@@ -110,7 +110,7 @@ You now have a Lakehouse with sample data loaded.  Next, you'll use a dataflow t
 
 1. Review the data preview in the editor.
 
-   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/review-data-in-dataflow.png" alt-text="Screenshot showing the data preview in the dataflow editor.":::
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/review-data-in-dataflow.png" lightbox="media/tutorial-load-data-lakehouse-transform/review-data-in-dataflow.png" alt-text="Screenshot showing the data preview in the dataflow editor.":::
 
 1. Apply a filter to the dataflow to only include rows where the **Countryorregion** column is equal to **Belgium**.
 
@@ -130,7 +130,7 @@ You now have a Lakehouse with sample data loaded.  Next, you'll use a dataflow t
 
 1. Review the settings and click **Save settings**.
 
-   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/output-destinations-save-settings.png" alt-text="Screenshot showing the review settings dialog.":::
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/output-destinations-save-settings.png" lightbox="media/tutorial-load-data-lakehouse-transform/output-destinations-save-settings.png" alt-text="Screenshot showing the review settings dialog.":::
 
 1. Publish the dataflow by clicking **Publish**.
 
