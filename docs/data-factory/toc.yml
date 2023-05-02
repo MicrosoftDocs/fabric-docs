@@ -77,8 +77,12 @@
         href: connector-binary-dataflows.md
     - name: Delimited text in pipeline
       href: format-delimited-text.md
-    - name: Excel format in dataflow gen2
-      href: format-excel.md
+    - name: Excel
+      items:
+      - name: Excel format
+        href: format-excel.md
+      - name: Connect in dataflows
+        href: connector-excel-dataflows.md
     - name: Google cloud Storage
       items:
       - name: Overview
@@ -87,6 +91,8 @@
         href: connector-google-cloud-storage.md
       - name: Configure in copy activity of pipeline
         href: connector-google-cloud-storage-copy-activity.md
+      - name: Connect in dataflows
+        href: connector-google-cloud-storage-dataflow.md
     - name: HTTP
       items:
       - name: Overview
@@ -95,6 +101,8 @@
         href: connector-http.md
       - name: Configure in copy activity of pipeline
         href: connector-http-copy-activity.md
+      - name: Connect to dataflows
+        href: connector-http-dataflows.md
     - name: KQL Database
       items:
       - name: Overview
@@ -115,8 +123,11 @@
         href: connector-microsoft-365.md
       - name: Configure in copy activity of pipeline
         href: connector-microsoft-365-copy-activity.md
-    - name: Parquet format
-      href: format-parquet.md
+    - name: Parquet
+      items:
+      - name: Parquet format
+      - name: Connect in dataflows
+        href: connector-parquet-dataflows.md
     - name: OData
       items:
       - name: Overview
@@ -127,14 +138,6 @@
         href: connector-odata-copy-activity.md 
       - name: Configure in dataflow gen2
         href: connector-odata-dataflows.md
-    - name: SharePoint online list
-      items:
-      - name: Overview
-        href: connector-sharepoint-online-list-overview.md
-      - name: Configure in admin portal
-        href: connector-sharepoint-online-list.md
-      - name: Configure in copy activity of pipeline
-        href: connector-sharepoint-online-list-copy-activity.md
     - name: REST
       items:
       - name: Overview
@@ -143,6 +146,16 @@
         href: connector-rest.md
       - name: Configure in copy activity of pipeline
         href: connector-rest-copy-activity.md     
+    - name: SharePoint online list
+      items:
+      - name: Overview
+        href: connector-sharepoint-online-list-overview.md
+      - name: Set up connection
+        href: connector-sharepoint-online-list.md
+      - name: Configure in copy activity of pipeline
+        href: connector-sharepoint-online-list-copy-activity.md
+      - name: Connect in dataflows
+        href: connector-sharepoint-online-list-dataflows.md
   - name: Data pipelines
     items:
     - name: Activities
