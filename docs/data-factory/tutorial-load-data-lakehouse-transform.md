@@ -84,6 +84,64 @@ Select **Copy Data** on the canvas, to open the **Copy assistant** tool to get s
 
    :::image type="content" source="media/tutorial-load-data-lakehouse-transform/run-details.png" alt-text="Screenshot showing the run details for the successful pipeline run.":::
 
+## Use a dataflow gen2 to transform data in the Lakehouse
+
+You now have a Lakehouse with sample data loaded.  Next, you'll use a dataflow to transform the data. Dataflows are a code-free way to transform data at scale.
+
+1. Select **New** and then **Dataflow Gen2**.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/new-dataflow.png" alt-text="Screenshot showing the new Dataflow button.":::
+
+1. Click on get data dropdown and select **More...**.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/get-data.png" alt-text="Screenshot showing the get data dropdown.":::
+
+1. Search for **Lakehouse** and select **Lakehouse in Microsoft Fabric**.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/lakehouse-connector.png" alt-text="Screenshot showing the Lakehouse in Microsoft Fabric option.":::
+
+1. Sign-in and click **Next** to continue.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/connect-lakehouse.png" alt-text="Screenshot showing the sign-in dialog.":::
+
+1. Select the table you created in the previous step and click **Create**.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/select-lakehouse-table.png" alt-text="Screenshot showing the selection of the table created in the previous step.":::
+
+1. Review the data preview in the editor.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/review-data-in-dataflow.png" lightbox="media/tutorial-load-data-lakehouse-transform/review-data-in-dataflow.png" alt-text="Screenshot showing the data preview in the dataflow editor.":::
+
+1. Apply a filter to the dataflow to only include rows where the **Countryorregion** column is equal to **Belgium**.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/belgium-filter.png" alt-text="Screenshot showing the filter applied to the dataflow.":::
+
+1. Add a data destination to the query by selecting **Add data destination** and then **Lakehouse in Microsoft Fabric**.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/output-destination-lakehouse.png" alt-text="Screenshot showing the add data destination button.":::
+
+1. Sign-in and click **Next** to continue.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/connect-lakehouse.png" alt-text="Screenshot showing the sign-in dialog.":::
+
+1. Create a new table called **BelgiumPublicHolidays** and click **Next**.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/lakehouse-belgiumtable.png" alt-text="Screenshot showing the create new table dialog.":::
+
+1. Review the settings and click **Save settings**.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/output-destinations-save-settings.png" lightbox="media/tutorial-load-data-lakehouse-transform/output-destinations-save-settings.png" alt-text="Screenshot showing the review settings dialog.":::
+
+1. Publish the dataflow by clicking **Publish**.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/publish-dataflow.png" alt-text="Screenshot showing the publish button.":::
+
+1. After the dataflow is published, click **Refresh now** to run the dataflow.
+
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/refresh-now.png" alt-text="Screenshot showing the refresh now button.":::
+
+After the refresh is complete, you can view the data in the Lakehouse table. You can also use this data now to create reports, dashboards, and more.
+
 ## Next steps
 
 [Monitor pipeline runs](monitor-pipeline-runs.md)

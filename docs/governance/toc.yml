@@ -17,6 +17,8 @@ items:
     href: microsoft-purview-and-fabric.md
   - name: Microsoft Purview Hub
     href: use-the-microsoft-purview-hub.md
+- name: Domains
+  href: domains.md
 - name: Metadata scanning
   items:
   - name: Overview

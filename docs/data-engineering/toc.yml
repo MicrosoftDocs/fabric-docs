@@ -8,13 +8,11 @@ items:
 - name: Get started
   items:
   - name: CSV upload to Delta for PBI reporting
-    href: ../placeholder.md
+    href: get-started-csv-upload.md
   - name: Structured streaming to SQL serving
-    href: ../placeholder.md
+    href: get-started-streaming.md
   - name: Reference external data for data science
-    href: ../placeholder.md
-  - name: Share lakehouse for PBI connectivity
-    href: ../placeholder.md
+    href: get-started-shortcuts.md
 - name: Tutorials
   items:
   - name: 1 Lakehouse tutorial introduction
@@ -51,16 +49,10 @@ items:
     href: lakehouse-shortcuts.md
   - name: Stream data to a lakehouse
     href: lakehouse-streaming-data.md
-- name: Lakehouse sharing and collaboration
+- name: Lakehouse collaboration
   items:
   - name: Workspace roles and permissions
     href: workspace-roles-lakehouse.md
-  - name: Sharing and permission management
-    href: lakehouse-sharing.md
-  - name: Lakehouse SQL endpoint security
-    href: lakehouse-sql-security.md
-  - name: Data mesh guide
-    href: ../placeholder.md
 - name: Apache Spark
   items:
   - name: Runtime
