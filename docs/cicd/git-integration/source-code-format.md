@@ -51,6 +51,28 @@ The `item.config.json` file contains the following attributes:
 
 The logicalId connects an item in a workspace with its corresponding item in a git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a git branch or a new item is synced. The logicalId is necessary for git integration to function properly. Therefore, it’s essential not to change it in any way.
 
+## Item definition files
+
+Besides the item.config.json file and the item.metadata.json file found in all item folders, each item's directory has specific files that define that item.
+
+### Dataset files
+
+Dataset directories contain the following files:
+
+- definition.pbidataset
+- model.bim
+
+:::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
+
+### Report files
+
+Report directories contain the following files:
+
+- definition.pbir
+- report.json
+
+:::image type="content" source="./media/source-code-format/report-directory.png" alt-text="Screenshot of directory tree showing files in the report directory.":::
+
 ## Next steps
 
 [Get started with git integration](./git-get-started.md)

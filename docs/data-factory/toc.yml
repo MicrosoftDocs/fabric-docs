@@ -13,7 +13,7 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
-    - name: Move and transform data
+    - name: Build data integration
       href: transform-data.md
   - name: Connectors
     items:
@@ -23,126 +23,139 @@
       items:
       - name: Overview
         href: connector-amazon-s3-overview.md
-      - name: Set up connection
+      - name: Configure in admin portal
         href: connector-amazon-s3.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity of pipeline
         href: connector-amazon-s3-copy-activity.md
-      - name: Connect to Amazon S3 in dataflows
+      - name: Configure in dataflow gen2
         href: connector-amazon-s3-dataflows.md
     - name: Azure Blob Storage
       items:
       - name: Overview
         href: connector-azure-blob-storage-overview.md
-      - name: Set up connection
+      - name: Configure in admin portal
         href: connector-azure-blob-storage.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity of pipeline
         href: connector-azure-blob-storage-copy-activity.md
-      - name: Connect to Azure Blob Storage in dataflows
+      - name: Configure in dataflow gen2
         href: connector-azure-blob-storage-dataflows.md
     - name: Azure Cosmos DB for NoSQL
       items:
       - name: Overview
         href: connector-azure-cosmosdb-for-nosql-overview.md
-      - name: Set up connection
+      - name: Configure in admin portal
         href: connector-azure-cosmosdb-for-nosql.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity of pipeline
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
-      - name: Connect in dataflows
+      - name: Configure in dataflow gen2
         href: connector-azure-cosmosdb-for-nosql-dataflows.md
     - name: Azure Data Lake Storage Gen2
       items:
       - name: Overview
         href: connector-azure-data-lake-storage-gen2-overview.md
-      - name: Set up connection
+      - name: Configure in admin portal
         href: connector-azure-data-lake-storage-gen2.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity of pipeline
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
-      - name: Connect to Azure Data Lake Storage Gen2 in dataflows
+      - name: Configure in dataflow gen2
         href: connector-azure-data-lake-storage-gen2-dataflows.md
     - name: Azure SQL Database
       items:
       - name: Overview
         href: connector-azure-sql-database-overview.md
-      - name: Set up connection
+      - name: Configure in admin portal
         href: connector-azure-sql-database.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity of pipeline
         href: connector-azure-sql-database-copy-activity.md
-      - name: Connect to an Azure SQL database in dataflows
+      - name: Configure in dataflow gen2
         href: connector-azure-sql-database-dataflow.md
     - name: Binary format
       items:
-      - name: Configure Binary format
+      - name: Binary format in pipeline
         href: format-binary.md
-      - name: Binary format in dataflows
+      - name: Binary format in dataflow gen2
         href: connector-binary-dataflows.md
-    - name: Delimited text
+    - name: Delimited text in pipeline
       href: format-delimited-text.md
-    - name: Excel format
-      href: format-excel.md
+    - name: Excel
+      items:
+      - name: Excel format
+        href: format-excel.md
+      - name: Connect in dataflows
+        href: connector-excel-dataflows.md
     - name: Google cloud Storage
       items:
       - name: Overview
         href: connector-google-cloud-storage-overview.md
-      - name: Set up connection
+      - name: Configure in admin portal
         href: connector-google-cloud-storage.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity of pipeline
         href: connector-google-cloud-storage-copy-activity.md
+      - name: Connect in dataflows
+        href: connector-google-cloud-storage-dataflow.md
     - name: HTTP
       items:
       - name: Overview
         href: connector-http-overview.md
-      - name: Set up connection
+      - name: Configure in admin portal
         href: connector-http.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity of pipeline
         href: connector-http-copy-activity.md
+      - name: Connect to dataflows
+        href: connector-http-dataflows.md
     - name: KQL Database
       items:
       - name: Overview
         href: connector-kql-database-overview.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity of pipeline
         href: connector-kql-database-copy-activity.md
     - name: Lakehouse
       items:
       - name: Overview
         href: connector-lakehouse-overview.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity of pipeline
         href: connector-lakehouse-copy-activity.md
     - name: Microsoft 365
       items:
       - name: Overview
         href: connector-microsoft-365-overview.md
-      - name: Set up connection
+      - name: Configure in admin portal
         href: connector-microsoft-365.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity of pipeline
         href: connector-microsoft-365-copy-activity.md
-    - name: Parquet format
-      href: format-parquet.md
+    - name: Parquet
+      items:
+      - name: Parquet format
+      - name: Connect in dataflows
+        href: connector-parquet-dataflows.md
     - name: OData
       items:
       - name: Overview
         href: connector-odata-overview.md
-      - name: Set up connection
+      - name: Configure in admin portal
         href: connector-odata.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity of pipeline
         href: connector-odata-copy-activity.md 
-      - name: OData in dataflows
+      - name: Configure in dataflow gen2
         href: connector-odata-dataflows.md
+    - name: REST
+      items:
+      - name: Overview
+        href: connector-rest-overview.md
+      - name: Configure in admin portal
+        href: connector-rest.md
+      - name: Configure in copy activity of pipeline
+        href: connector-rest-copy-activity.md     
     - name: SharePoint online list
       items:
       - name: Overview
         href: connector-sharepoint-online-list-overview.md
       - name: Set up connection
         href: connector-sharepoint-online-list.md
-      - name: Configure in copy activity
+      - name: Configure in copy activity of pipeline
         href: connector-sharepoint-online-list-copy-activity.md
-    - name: REST
-      items:
-      - name: Overview
-        href: connector-rest-overview.md
-      - name: Set up connection
-        href: connector-rest.md
-      - name: Configure in copy activity
-        href: connector-rest-copy-activity.md     
+      - name: Connect in dataflows
+        href: connector-sharepoint-online-list-dataflows.md
   - name: Data pipelines
     items:
     - name: Activities
@@ -159,12 +172,8 @@
         href: notebook-activity.md
       - name: Script activity
         href: script-activity.md
-      - name: Use dataflow and email activities to transform data and report status
-        href: ../placeholder.md
     - name: Concepts
       items:
-      - name: Differences from Azure Data Factory
-        href: ../placeholder.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md          
       - name: Parameterization
@@ -175,7 +184,7 @@
           href: expression-language.md
       - name: Data pipeline runs
         href: pipeline-runs.md
-    - name: How-To
+    - name: How-to
       items:
       - name: How to use pipeline sample templates
         href: templates.md
@@ -183,6 +192,8 @@
         href: monitor-pipeline-runs.md
     - name: Tutorials
       items:
+      - name: Copy from Azure Blob Storage to Lakehouse
+        href: pipeline-copy-from-azure-blob-storage-to-lakehouse.md    
       - name: Copy sample data into Lakehouse and transform with dataflow
         href: tutorial-load-data-lakehouse-transform.md
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
@@ -203,17 +214,11 @@
         href: dataflows-gen2-monitor.md
     - name: How-to
       items:
-      - name: How to use key dataflow features
-        href: ../placeholder.md
       - name: Saving a draft of your dataflow
         href: dataflows-gen2-save-draft.md
       - name: How to obfuscate data
         href: data-obfuscation-with-delphix.md
     - name: Tutorials
-      items:
-      - name: Copy from Azure Blob Storage to Lakehouse
-        href: pipeline-copy-from-azure-blob-storage-to-lakehouse.md      
+      items:  
       - name: Use a dataflow in a pipeline
         href: tutorial-dataflows-gen2-pipeline-activity.md
-      - name: Use dataflows to transform data and load to Kusto
-        href: ../placeholder.md
