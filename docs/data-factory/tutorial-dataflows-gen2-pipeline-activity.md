@@ -13,7 +13,7 @@ ms.author: jeluitwi
 
 In this tutorial, you build a data pipeline to move OData from a Northwind source to a lakehouse destination and send an email notification when the pipeline is completed.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Prerequisites
 

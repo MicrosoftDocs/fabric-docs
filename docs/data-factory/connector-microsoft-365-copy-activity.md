@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 This article outlines how to use the copy activity in data pipeline to copy data from Microsoft 365. For now, within a single copy activity, you can only ingest data from Microsoft 365 into **Azure Blob Storage**, **Azure Data Lake Storage Gen1**, and **Azure Data Lake Storage Gen2**.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Prerequisites
 

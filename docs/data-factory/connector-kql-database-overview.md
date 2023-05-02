@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 This KQL Database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Supported capabilities
 

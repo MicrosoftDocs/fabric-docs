@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 Dataflows are a self-service, cloud-based, data preparation technology. In this article, you'll create your first dataflow, get data for your dataflow, then transform the data and publish the dataflow.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Prerequisites
 

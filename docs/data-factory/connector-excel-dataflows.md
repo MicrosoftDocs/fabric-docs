@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 You can connect to Excel workbooks in Dataflows Gen2 using the Excel connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Connect to an Excel workbook
 

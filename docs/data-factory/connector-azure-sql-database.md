@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 This article outlines how to set up connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview).
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Supported authentication types
 

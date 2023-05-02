@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to OData.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Supported configuration
 

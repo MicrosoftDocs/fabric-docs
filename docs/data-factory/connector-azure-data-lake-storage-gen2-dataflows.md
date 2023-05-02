@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 You can connect to Azure Data Lake Storage files in Dataflow Gen2 using the Azure Data Lake Storage Gen2 connector provided by Data Factory in Microsoft Fabric.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Connect to Azure Data Lake Storage data
 

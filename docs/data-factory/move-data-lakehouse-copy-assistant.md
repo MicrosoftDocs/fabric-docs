@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 This Tutorial describes the steps to move data into Lakehouse.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 Two approaches are provided using the copy assistant:
 

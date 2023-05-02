@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 You can connect to HTTP in Dataflow Gen2 using the Web page connector provided by Data Factory in Microsoft Fabric.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Connect to HTTP data
 

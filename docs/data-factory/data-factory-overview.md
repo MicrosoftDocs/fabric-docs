@@ -13,7 +13,7 @@ ms.date: 05/23/2023
 
 Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] provides cloud-scale data movement and data transformation services that allow you to solve the most complex ETL scenarios. It's intended to make your experience easy to use, powerful, and truly enterprise-grade.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 There are two primary high-level features Data Factory implements - dataflows and pipelines.
 

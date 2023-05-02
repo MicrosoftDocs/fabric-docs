@@ -16,7 +16,7 @@ A data pipeline run occurs when a data pipeline is executed. This means that the
 
 A data pipeline run can be triggered one of two ways, either on-demand or by setting up a schedule. A scheduled pipeline will be able to run based on the time and frequency that you set.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## On-demand data pipeline run
 

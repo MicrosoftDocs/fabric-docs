@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 This article outlines how to configure Parquet format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Supported capabilities
 

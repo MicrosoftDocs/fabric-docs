@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 This article outlines the steps to create SharePoint Online List connection.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Supported authentication types
 

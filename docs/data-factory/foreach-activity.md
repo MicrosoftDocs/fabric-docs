@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 The ForEach Activity defines a repeating control flow in a [!INCLUDE [product-name](../includes/product-name.md)] pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to a ForEach looping structure in programming languages.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Add a ForEach activity to a pipeline
 

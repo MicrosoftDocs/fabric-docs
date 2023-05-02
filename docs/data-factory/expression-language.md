@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 This article provides details about expressions and functions supported by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]. 
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Expressions
 

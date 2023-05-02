@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Data Lake Storage Gen2.
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Supported format
 

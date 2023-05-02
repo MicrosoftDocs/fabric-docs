@@ -12,7 +12,7 @@ ms.custom: template-how-to
 
 You can connect to a SharePoint Online list in Dataflow Gen2 using the SharePoint Online list connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
-[!INCLUDE [df-preview-warning](includes/df-preview-warning.md)]
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning)]
 
 ## Connect to a SharePoint Online list
 
