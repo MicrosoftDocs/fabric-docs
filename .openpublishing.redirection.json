@@ -2,7 +2,7 @@
     "redirections": [
         {
             "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage.md",
-            "redirect_url": "/docs/data-factory/tutorial-pipeline-copy-from-azure-blob-storage",
+            "redirect_url": "data-factory/tutorial-pipeline-copy-from-azure-blob-storage",
             "redirect_document_id": true
         }
     ]
