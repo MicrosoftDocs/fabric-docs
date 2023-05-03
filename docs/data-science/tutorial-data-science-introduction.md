@@ -8,26 +8,20 @@ ms.topic: tutorial
 ms.date: 5/4/2023
 ---
 
-# Get started with the Microsoft Fabric Data science tutorial
+# Data science end-to-end scenario: introduction and architecture
 
-In this set of tutorials, we demonstrate a sample end-to-end scenario in the Fabric data science experience by implementing each step from data ingestion, cleansing, and preparation, to training machine learning models and generating insights, and then consuming those insights using visualization tools like Power BI.
+In this set of tutorials, we demonstrate a sample end-to-end scenario in the Fabric data science experience by implementing each step from data ingestion, cleansing, and preparation, to training machine learning models and generating insights, and then consuming those insights using visualization tools like Power BI. If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md).
 
-> [!NOTE]
-> If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
 
 ## Introduction
 
 The lifecycle of a Data science project typically includes (often, iteratively) the following steps:
 
-• Business understanding
-
-• Data acquisition
-
-• Data exploration, cleansing, preparation, and visualization
-
-• Model training and experiment tracking
-
-• Model scoring and generating insights.
+- Business understanding
+- Data acquisition
+- Data exploration, cleansing, preparation, and visualization
+- Model training and experiment tracking
+- Model scoring and generating insights.
 
 The goals and success criteria of each stage depend on collaboration, data sharing and documentation. The Fabric Data science experience consists of multiple native-built features that enable collaboration, data acquisition, sharing, and consumption in a seamless way.
 
@@ -51,7 +45,7 @@ In this tutorial, you learn to perform the following activities:
 
 1. Visualize predictions in Power BI using DirectLake.
 
-## The Data science end-to-end scenario
+## Architecture
 
 In this tutorial, we showcase a simplified end-to-end data science scenario that involves:
 

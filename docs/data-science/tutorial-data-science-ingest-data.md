@@ -18,8 +18,8 @@ In this module, we ingest the NYC Taxi & Limousine Commission - yellow taxi trip
 
 In the following steps, you use the Apache spark to read data from Azure Open Datasets containers and write data into a Fabric lakehouse delta table.[Azure Open Datasets](/azure/open-datasets/overview-what-are-open-datasets) are curated public datasets that you can use to add scenario-specific features to machine learning solutions for more accurate models. Open Datasets are in the cloud on Microsoft Azure Storage and can be accessed by various methods including Apache Spark, REST API, Data factory, and other tools.
 
-> [!NOTE]
-> The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **01 Ingest data into trident lakehouse using Apache Spark**.
+## Follow along in notebook
+The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **01 Ingest data into trident lakehouse using Apache Spark**. Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
 
 ## Ingest the data
 
@@ -28,10 +28,10 @@ In the following steps, you use the Apache spark to read data from Azure Open Da
    :::image type="content" source="media\tutorial-data-science-ingest-data\filter-by-year-month.png" alt-text="Screenshot of code sample for filtering data ingestion by month and year." lightbox="media\tutorial-data-science-ingest-data\filter-by-year-month.png":::
 filter-by-year-month
 
-1. Next, we set spark configurations to enable Verti-Parquet engine and Optimize delta writes.
+1. Next, we set spark configurations to enable VOrder engine and Optimize delta writes.
 
-   - **VOrder** - Fabric includes Microsoft’s VertiParquet engine. VertiParquet writer optimizes the Delta Lake parquet files resulting in 3x-4x compression improvement and up to 10x performance acceleration over Delta Lake files not optimized using VertiParquet while still maintaining full Delta Lake and PARQUET format compliance.
-   - **Optimize write** - Spark in Trident includes an Optimize write feature that reduces the number of files written and targets to increase individual file size of the written data. It dynamically optimizes files during write operations generating files with a default 128-MB size. The target file size may be changed per workload requirements using configurations.
+   - **VOrder** - Fabric includes Microsoft’s VOrder engine. VOrder writer optimizes the Delta Lake parquet files resulting in 3x-4x compression improvement and up to 10x performance acceleration over Delta Lake files not optimized using VOrder while still maintaining full Delta Lake and PARQUET format compliance.
+   - **Optimize write** - Spark in Microsoft Fabric includes an Optimize write feature that reduces the number of files written and targets to increase individual file size of the written data. It dynamically optimizes files during write operations generating files with a default 128-MB size. The target file size may be changed per workload requirements using configurations.
 
       These configs can be applied at a session level (as spark.conf.set in a notebook cell) as demonstrated in the following code cell, or at workspace level, which is applied automatically to all spark sessions created in the workspace. In this tutorial, we set these configurations using the code cell.
 
