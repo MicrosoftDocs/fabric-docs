@@ -10,21 +10,21 @@ metadata:
   ms.date: 05/23/2023
   ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
   
-title: Deployment pipelines troubleshooting
+title: Lifecycle management troubleshooting
 summary: |
 
-  Use this article to troubleshoot issues in deployment pipelines. Review the following links to understand the considerations and limitations.
-  * [General considerations and limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
-  * [Assigning workspaces](deployment-pipelines/assign-pipeline.md#limitations)
-  * [Permissions](deployment-pipelines/understand-the-deployment-process.md#permissions)      
+  Use this article to troubleshoot issues in the lifecycle management process. Review the following links to understand the considerations and limitations.
+  * General considerations and limitations
+    [git-integration](./git-integration/git-integration-process.md#considerations-and-limitations) [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
+  * Permissions
+    [git-integration](./git-integration/git-integration-process.md#permissions) [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#permissions) 
+  * Workspaces
+    [git integration](./git-integration/git-integration-process.md#workspace-limitations) [Assigning workspaces in deployment pipelines](deployment-pipelines/assign-pipeline.md#limitations)
   * Fabric items:
-    * [Deployed items](deployment-pipelines/understand-the-deployment-process.md#deployed-items)
-    * [Unsupported items](deployment-pipelines/understand-the-deployment-process.md#unsupported-items)
-    * [Item properties copied during deployment](deployment-pipelines/understand-the-deployment-process.md#item-properties-copied-during-deployment)
-    * [Item properties that are not copied](deployment-pipelines/understand-the-deployment-process.md#item-properties-that-are-not-copied)
-    * [Dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
-    * [Dataflow limitations](deployment-pipelines/understand-the-deployment-process.md#dataflow-limitations)
-    * [Datamart limitations](deployment-pipelines/understand-the-deployment-process.md#datamart-limitations)
+    * Supported and unsupported items
+      [git integration](./git-integration/intro-to-git-integration.md#supported-items) [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#deployed-items)
+    * Limitations
+      [deployment-pipelines](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
   * Deployment rules:
     * [Deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations)
     * [Supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules)
