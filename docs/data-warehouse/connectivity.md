@@ -91,7 +91,7 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
     
 ## Considerations and limitations
 
-- Multiple Active Result Sets (MARS) is unsupported for Trident Warehouse. MARS is disabled by default, however if MultipleActiveResultSets is included in the connection string, it should be removed or set to false.
+- Multiple Active Result Sets (MARS) is unsupported for Fabric Warehouse. MARS is disabled by default, however if MultipleActiveResultSets is included in the connection string, it should be removed or set to false.
 - On connection to a Warehouse, you may receive an error that "The token size exceeded the maximum allowed payload size".  This may be due to having a large number of warehouses within the workspace or being a member of a large number of AAD groups. For most users, the error typically would not occur until approaching beyond 80 warehouses in the workspace. In event of this error, please work with the Workspace admin to clean up unused Warehouses and retry the connection, or contact support if the problem persists.
 
 ## Next steps
