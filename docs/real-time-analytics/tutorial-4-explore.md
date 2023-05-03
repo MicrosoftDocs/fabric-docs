@@ -19,16 +19,23 @@ There are several sample queries available to you in both SQL and KQL to help yo
 
 ## Sample KQL queries
 
-1. In the **Object tree**, select the **more menu** on the **nyctaxitrips** table > **Query table**. Sample queries run in the context of a selected table.
+1. In the **Object tree**, select the **more menu** [...] on the **nyctaxitrips** table > **Query table** > **Show any 100 records**. The sample query opens in the **Check your data** pane with the table context already populated. 
 
-    :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Object tree showing the More menu of a table. The option titled Query table is highlighted.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/kql-sample-queries.png" alt-text="Screenshot of Object tree showing the More menu of a table. The option titled Query table is highlighted.":::
 
-1. Select **Paste all query templates** to autopopulate all of the listed queries into the **Check your data** window.
+1. This query returns a sample number of records, and is useful to get a first look at the data structure and possible values. Place your cursor somewhere within the query and select  **Run** or press **Shift + Enter**.
 
-    :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Check your data window showing query results.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/take-100.png" alt-text="Screenshot of first sample query result in Synapse Real-Time Analytics in Microsoft Fabric.":::
 
-1. Run each query sequentially by pressing **Run** or **Shift + Enter**. 
+1. Return to the object tree to paste the next query, which will return records ingested in the last 24 hours.
 
+    :::image type="content" source="media/realtime-analytics-tutorial/sample-last-24-h.png" alt-text="Screenshot of sample query to return records ingested in the last 24 hours.":::
+
+    Notice that the volumes of the streaming data exceed the query limits. This behavior may vary depending on the amount of data streamed into your database.
+
+1. The next query in the list of sample queries retrieves the table schema. 
+
+    :::image type="content" source="media/realtime-analytics-tutorial/sample-query-schema.png" alt-text="Screenshot returing sample query results of getschema operator. ":::
 
 ## Sample SQL queries 
 
