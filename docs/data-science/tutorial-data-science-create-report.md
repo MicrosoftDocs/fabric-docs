@@ -10,9 +10,9 @@ ms.date: 5/4/2023
 
 # Module 6: Create a Power BI report to visualize predictions
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this module, we use the Microsoft Fabric DirectLake feature, which enables direct connectivity from Power BI datasets to lakehouse tables in direct query mode with automatic data refresh. For the following steps, use the prediction data produced in [Module 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prepare for creating reports
 

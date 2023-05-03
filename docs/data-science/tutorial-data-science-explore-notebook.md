@@ -10,9 +10,9 @@ ms.date: 5/4/2023
 
 # Module 2: Explore and visualize data using Microsoft Fabric notebooks
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The python runtime environment in Fabric notebooks comes with various preinstalled open-source libraries for building visualizations like matplotlib, seaborn, Plotly and more.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this module, we use seaborn, which is a Python data visualization library that provides a high-level interface for building visuals on dataframes and arrays. For more information about seaborn, see [seaborn: statistical data visualization](https://seaborn.pydata.org/).
 
@@ -27,6 +27,7 @@ In this tutorial you learn to perform the following actions:
 1. Perform exploratory data analysis using seaborn on the New York taxi yellow cab dataset. We do this by visualizing a trip duration variable against other categorical and numeric variables.
 
 ## Follow along in notebook
+
 The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **02 -Explore and Visualize Data using Notebooks**. Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
 
 ## Visualize and analyze

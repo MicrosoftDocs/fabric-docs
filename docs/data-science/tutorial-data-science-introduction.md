@@ -10,9 +10,9 @@ ms.date: 5/4/2023
 
 # Data science end-to-end scenario: introduction and architecture
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this set of tutorials, we demonstrate a sample end-to-end scenario in the Fabric data science experience by implementing each step from data ingestion, cleansing, and preparation, to training machine learning models and generating insights, and then consuming those insights using visualization tools like Power BI. If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Introduction
 
