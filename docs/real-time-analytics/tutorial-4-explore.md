@@ -13,37 +13,24 @@ ms.search.form: product-kusto
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Get historical data](tutorial-3-get-historical-data.md)
 
+The first step in data analysis is often to take a look at a subset of the data itself. A query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Queries always run in the context of a particular table or database. At a minimum, a query consists of a source data reference and one or more query operators applied in sequence, indicated visually by the use of a pipe character (|) to delimit operators. For more information on the Kusto Query Language, see [Kusto Query Language (KQL) Overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
-## Create a KQL queryset
+There are several sample queries available to you in both SQL and KQL to help you get familiar with the query languages and assist with initial data exploration.
 
-In the following step, you'll use the advanced data analysis
-capabilities of Kusto Query Language to query the two tables you have ingested in the database. 
+## Sample KQL queries
 
-1.  Select **New related item** > **KQL Queryset**
+1. In the **Object tree**, select the **more menu** on the **nyctaxitrips** table > **Query table**. Sample queries run in the context of a selected table.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/new-kql-queryset.png" alt-text="Screenshot to create a new related KQL queryset.":::
+    :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Object tree showing the More menu of a table. The option titled Query table is highlighted.":::
 
-1. Enter the following KQL Queryset name: *nyctaxiqs*.
-1. Select **Create**. A query window opens with several autopopulated sample queries.
-1. 
-## Explore data
+1. Select **Paste all query templates** to autopopulate all of the listed queries into the **Check your data** window.
 
-1.  Navigate to your Fabric workspace homepage, and select the **NycTaxiDB** KQL database.
-    
-    :::image type="content" source="media/realtime-analytics-tutorial/go-to-database.png" alt-text="Screenshot of selecting NYC taxi database in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Check your data window showing query results.":::
 
-1.  In the object tree, select the table **nytaxitrips**
-1.  In the top right corner, select **Check your data**.
-    
-    :::image type="content" source="media/realtime-analytics-tutorial/check-your-data.png" alt-text="Screenshot of object tree with table selected and check your data."  lightbox="media/realtime-analytics-tutorial/check-your-data.png":::
+1. Run each query sequentially by pressing **Run** or **Shift + Enter**. 
 
-1.  Paste the following query in the query editor and select **Run**.
 
-    ```kusto 
-    nyctaxitrips
-    | summarize avg(fare_amount) by HourOfDay = hourofday(tpep_dropoff_datetime)
-    ```
-
+## Sample SQL queries 
 
 ## Next steps
 

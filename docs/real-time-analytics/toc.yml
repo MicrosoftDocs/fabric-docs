@@ -17,11 +17,11 @@ items:
   - name: 2- Get data with Eventstream
     href: tutorial-2-event-streams.md
   - name: 3- Explore data and build report
-    href: tutorial-3-explore.md
+    href: tutorial-3-get-historical-data.md
   - name: 4- Enrich data
-    href: tutorial-4-enrich-data.md
+    href: tutorial-4-explore.md
   - name: 5- Explore the enriched data
-    href: tutorial-5-explore-enriched-data.md
+    href: tutorial-5-advanced-kql-query.md
   - name: 6- Build a Power BI report
     href: tutorial-6-build-report.md
   - name: 7- Clean up resources

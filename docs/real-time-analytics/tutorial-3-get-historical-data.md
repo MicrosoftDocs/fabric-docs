@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-# Real-Time Analytics tutorial part 4: Get historical data
+# Real-Time Analytics tutorial part 3: Get historical data
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md)
 
-Recall that the dataset you have ingested with Eventstream does not contain latitude and longitude data. In this section, you are going to load additional information on the pick-up locations and drop-off. This data is available in a blob storage container.
+One-time data loading is often needed for historical data, or to add dimension tables. Recall that the dataset you have ingested with Eventstream does not contain latitude and longitude data. In this section, you are going to load additional information on the pick-up locations and drop-off. This data is available in a blob storage container.
 
 ## Get dimension data from blob storage
 
@@ -75,4 +75,4 @@ Select **Close** to return to your database landing page.
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial part 54: Explore the enriched data](tutorial-5-explore-enriched-data.md)
+> [Tutorial part 4: Explore your data with KQL and SQL](tutorial-4-explore.md)
