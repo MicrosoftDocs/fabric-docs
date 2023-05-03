@@ -104,7 +104,7 @@ landingContent:
             url: reports-power-bi-service.md   
   # card
   - title: Query
-    linklists: 
+    linkLists: 
       - linkListType: concept
         links:
           - text: Query using the SQL Query editor
