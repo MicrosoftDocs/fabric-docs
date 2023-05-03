@@ -18,7 +18,7 @@ As a final step in the tutorial, clean up your resources.
 
 You can delete individual reports, pipelines, warehouses, and other items or remove the entire workspace.  
 
-1. Select **Trident Lakehouse Tutorial *suffix you added to make it unique*** in the left-hand navigation menu to return to the workspace item view.  
+1. Select **Fabric Lakehouse Tutorial *suffix you added to make it unique*** in the left-hand navigation menu to return to the workspace item view.  
 
    :::image type="content" source="media\tutorial-lakehouse-clean-up\select-workspace-item.png" alt-text="Screenshot of the left navigation menu, showing where to select your workspace." lightbox="media\tutorial-lakehouse-clean-up\select-workspace-item.png":::
 
