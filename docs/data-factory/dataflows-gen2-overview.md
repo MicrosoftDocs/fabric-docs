@@ -7,9 +7,11 @@ ms.date: 05/23/2023
 ms.author: jeluitwi
 ---
 
-# Dataflows Gen2
+# What are dataflows Gen2 in Data Factory for Microsoft Fabric?
 
-Dataflows Gen2 is the new generation of dataflows. The new generation of dataflows replaces the current Dataflow Gen1 (Power BI Dataflows) and brings new features and other improvements. The following section provides an overview of all the new features that are introduced in Gen2.
+Dataflows Gen2 are the new generation of dataflows. The new generation of dataflows replaces the current Dataflow Gen1 (Power BI Dataflows) and brings new features and other improvements. The following section provides an overview of all the new features that are introduced in Gen2.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Feature overview
 
@@ -24,9 +26,8 @@ Dataflows Gen2 is the new generation of dataflows. The new generation of dataflo
 | Fast copy       | X  |   |
 | High scale compute using lakehouse     |  X |   |
 | Enhanced compute using Premium SQL engine |  |  X|
-| Incremental refresh       | *Coming soon  | X  |
-| AI Insights support | *Coming soon | X |
-| Dataflow Gen1 to Gen2 migration | *Coming soon |  |
+| Incremental refresh       |   | X  |
+| AI Insights support |  | X |
 
 ### Authoring experience
 
@@ -102,6 +103,11 @@ The Gen2 architecture is different from Gen1. The new architecture uses Lakehous
 
 You probably have many dataflows in Gen1 and you're wondering how you can migrate them to Gen2. We have a few options for you to migrate your dataflows to Gen2. The following sections provide you with an overview of all the options.
 
-### Copy past your PowerQuery in the browser
+### Copy paste your PowerQuery in the browser
 
 If you have a dataflow in Power BI or Power Apps, you can copy your queries and paste them in the editor of your dataflow Gen2. This functionality allows you to migrate your dataflow to Gen2 without having to rewrite your queries.
+
+## Next steps
+
+- [Dataflows refresh history and monitoring](dataflows-gen2-monitor.md)
+- [Dataflows save as draft](dataflows-gen2-save-draft.md)

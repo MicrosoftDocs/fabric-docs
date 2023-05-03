@@ -10,11 +10,11 @@ ms.date: 05/23/2023
 
 # How to copy data using copy activity
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+In Data Pipeline, you can use the Copy activity to copy data among data stores located in the cloud. 
 
-In Data Pipeline, you can use the Copy activity to copy data among data stores located in the cloud. After you copy the data, you can use other activities to further transform and analyze it. You can also use the Copy activity to publish transformation and analysis results for business intelligence (BI) and application consumption.
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+
+After you copy the data, you can use other activities to further transform and analyze it. You can also use the Copy activity to publish transformation and analysis results for business intelligence (BI) and application consumption.
 
 To copy data from a source to a destination, the service that runs the Copy activity performs these steps:
 

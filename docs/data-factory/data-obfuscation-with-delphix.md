@@ -11,6 +11,8 @@ ms.author: miescobar
 
 The following how-to outlines the use of Delphix Compliance Services (DCS) in Data Factory in Microsoft Fabric dataflows to mask sensitive data prior to delivery.
 
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+
 DCS is a highly scalable masking API service that automatically masks personally identifiable information (PII), supplanting manual processes for delivering compliant data. Its out-of-the-box and configurable algorithms replace sensitive data values with fictitious yet realistic ones, so teams mitigate risk while ensuring end-users can easily consume the right data.
 
 Masked data maintains multicloud referential integrity, is production-like in quality, and remains fully functional for accurate analysis or testing. Note that a DCS account needs to be created prior to use, and you can sign up for a [free trial](https://www.delphix.com/solutions/azure-trial).
@@ -64,3 +66,8 @@ You're now ready to mask your data. Select **Delphix fx** and enter parameters a
 Once this change is complete, select **Invoke** to run the data flow. This selection automatically calls the DCS masking API service to mask data prior to delivery to the destination of your choice.
 
 Your data is now ready to be used safely by end users. The data is masked consistently, ensuring that references remain intact across data sets. As an example, George Smith becomes Edward Robinson regardless of data source or destination, ensuring it’s still valuable for integrated analytics scenarios.
+
+## Next steps
+
+- [Delphix free preview page](https://www.delphix.com/solutions/azure-trial)
+- [Delphix documentation](https://maskingdocs.delphix.com/Securing_Sensitive_Data/Algorithms/Algorithms_Introduction/)

@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # Excel format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] 
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This article outlines how to configure Excel format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported capabilities
 
@@ -93,5 +91,6 @@ The following properties are supported in the copy activity **Source** section w
 |**Null value**|The string representation of null value.| \<your null value\> <br> empty string (by default) |No | nullValue|
 |**First row as header**|Specifies whether to treat the first row in the given worksheet/range as a header line with names of columns.| Selected or unselected |No| firstRowAsHeader: <br> true or false (default)|
 
+## Next steps
 
-
+[Connectors overview](connector-overview.md)
