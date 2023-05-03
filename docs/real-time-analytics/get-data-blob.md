@@ -11,6 +11,8 @@ ms.search.form: product-kusto
 
 # Get data from a blob
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 In this article, you'll learn you how to get data from an Azure blob or blob container into an existing database. 
 
 ## Prerequisites
