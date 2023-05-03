@@ -82,4 +82,4 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 - [Ingesting data into the Synapse Data Warehouse](ingest-data.md)
 - [Ingest data into your Synapse Data Warehouse using the COPY statement](ingest-data-copy.md)
 - [Ingest data into your Synapse Data Warehouse using Transact-SQL](ingest-data-tsql.md)
-- [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md)
+- [Quickstart: Create your first pipeline to copy data](../data-factory/tutorial-create-first-pipeline-with-sample-data.md)
