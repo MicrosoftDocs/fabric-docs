@@ -36,21 +36,22 @@ Follow these steps to pause your capacity.
 
 5. Select **Yes** to confirm you want to pause the capacity.
 
-## Start your capacity
+## Resume your capacity
 
-Resume usage by starting your capacity. Starting your capacity also resumes billing. Content that's assigned to this capacity becomes available once the capacity is started.
+Restart usage by resuming your capacity. Resuming your capacity also resumes billing. Content that's assigned to this capacity becomes available once the capacity is resumed.
 
 1. Sign into the [Azure portal](https://portal.azure.com/).
 
 2. Select the **Microsoft Fabric (preview)** service to see your capacities. You can search for *Microsoft Fabric (preview)* in the search menu.
 
-3. Select the capacity you want to start.
+3. Select the capacity you want to resume.
 
-4. Select **Start**.
+4. Select **Resume**.
 
-5. Select **Yes** to confirm you want to start the capacity.
+5. Select **Yes** to confirm you want to resume the capacity.
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Autoscale](autoscale.md)
+* [Scale your capacity](scale-capacity.md)
+
+* [Understand the metrics app overview page](metrics-app-overview-page.md)

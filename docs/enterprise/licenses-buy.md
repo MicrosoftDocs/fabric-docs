@@ -4,7 +4,7 @@ description: Learn how to buy a Microsoft Fabric license.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ---
 
 # Buy a Microsoft Fabric license
@@ -43,7 +43,7 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 To buy an Azure SKU you need to be an owner or a contributor of an [Azure subscription](/azure/role-based-access-control/overview).
 
-1. Select the **Microsoft Fabric (preview)** service. You can *Microsoft Fabric (preview)* using the search menu.
+1. Select the **Microsoft Fabric (preview)** service. You can search for *Microsoft Fabric (preview)* using the search menu.
 
 2. Select **Create Fabric Capacity**.
 

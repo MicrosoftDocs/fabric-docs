@@ -4,7 +4,7 @@ description: This article walks through how to scale a Microsoft Fabric capacity
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 11/04/2022
+ms.date: 05/23/2023
 ---
 
 # Scale your capacity
@@ -35,4 +35,6 @@ To scale your capacity you need:
 
 ## Next steps
 
-* [Pause and start your Fabric capacity in the Azure portal](pause-resume.md)
+* [Pause and resume your capacity](pause-resume.md)
+
+* [Understand the metrics app overview page](metrics-app-overview-page.md)

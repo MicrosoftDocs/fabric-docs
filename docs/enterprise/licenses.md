@@ -13,7 +13,7 @@ Microsoft Fabric is a platform that allows users to get, create, share and visua
 
 A Microsoft Fabric subscription is made out of tenants, capacities and workspaces and can be organized in various ways according to your organizational needs. This illustration provides two example subscriptions, each organized differently. Typically, companies organize their subscription in a model that resembles the *Retail company A* example.
 
-:::image type="content" source="media/licenses/tenants_capacities.png" alt-text="An illustration of two organizations. Retail company A has one organizational tenant with three capacities, marketing, sales and finance. Retail company B has two tenants, Marketing and sales and finance. The finance tenant has two capacities, procurement and human resources. The marketing and sales tenant has four capacities, Europe, Asia, Australia and America. Each capacity has a few workspaces.":::
+:::image type="content" source="media/licenses/tenants-capacities.png" alt-text="Illustration. Org A has one tenant with three capacities. Org B has two tenants, each with a few capacities. Every capacity has workspaces." lightbox="media/licenses/tenants-capacities.png":::
 
 ## Microsoft Fabric components
 
