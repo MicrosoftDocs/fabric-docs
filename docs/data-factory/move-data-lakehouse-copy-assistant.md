@@ -10,7 +10,7 @@ ms.date: 05/23/2023
 
 # Tutorial: Move data from Azure SQL DB into Lakehouse via copy assistant
 
-This Tutorial describes the steps to move data into Lakehouse.
+This tutorial describes the steps to move data into Lakehouse.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
