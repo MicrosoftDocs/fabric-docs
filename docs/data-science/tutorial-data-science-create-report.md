@@ -24,7 +24,7 @@ In this module, we use the Microsoft Fabric DirectLake feature, which enables di
 
 1. Once the UI for the new dataset loads, rename the dataset by clicking on the dropdown at top left corner of the dataset page and entering the more user-friendly name ***nyctaxi_predictions***. Click outside the drop down to apply the name change.
 
-   :::image type="content" source="media\tutorial-data-science-create-report\rename-dataset.png" alt-text="" lightbox="media\tutorial-data-science-create-report\rename-dataset.png":::
+   :::image type="content" source="media\tutorial-data-science-create-report\rename-dataset.png" alt-text="Screenshot of the dataset page, showing where to enter the new name." lightbox="media\tutorial-data-science-create-report\rename-dataset.png":::
 
 1. On the dataset pane in the section titled **Visualize this data**, select **Create from scratch** and then select **Start from Scratch** to open the Power BI report authoring page.
 
