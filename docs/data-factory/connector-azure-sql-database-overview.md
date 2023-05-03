@@ -24,7 +24,7 @@ This Azure SQL Database connector is supported in Data Factory for [!INCLUDE [pr
 | **Script activity** | None | Basic<br>OAuth2<br>Service principal |
 | **Stored procedure activity** | None | Basic<br>OAuth2<br>Service principal |
 
-## Next Steps
+## Next steps
 
 - [How to create Azure SQL Database connection](connector-azure-sql-database.md)
 - [How to configure Azure SQL Database in copy activity](connector-azure-sql-database-copy-activity.md)

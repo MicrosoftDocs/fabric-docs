@@ -158,3 +158,7 @@ The following properties are supported in the copy activity **Destination** sect
 |**File extension**|The file extension used to name the output files. | < your file extension > <br> `.txt` (by default)|No|fileExtension|
 |**Max rows per file**| When writing data into a folder, you can choose to write to multiple files and specify the max rows per file. |< your max rows per file > | No| maxRowsPerFile |
 |**File name prefix**| Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, file name prefix will be auto generated. This property does not apply when source is file based store or partition option enabled data store.|< your file name prefix > |No| fileNamePrefix|
+
+## Next steps
+
+[Connectors overview](connector-overivew.md)

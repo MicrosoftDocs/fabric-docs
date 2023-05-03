@@ -21,7 +21,7 @@ The Azure Cosmos DB for NoSQL connector is supported in Data Factory in Microsof
 | **Copy activity (source/destination)** | None | Key |
 | **Lookup activity** | None | Key |
 
-## Next Steps
+## Next steps
 
 - [How to create an Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md)
 - [How to configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md)
