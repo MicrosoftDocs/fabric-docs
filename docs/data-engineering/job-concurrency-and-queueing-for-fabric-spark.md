@@ -42,12 +42,13 @@ As there are different items like notebooks, spark job defintions and lakehouses
 
 To avoid these  blocking scenarios, [!INCLUDE [product-name](../includes/product-name.md)] applies a **Dynamic reserve based throttling** for jobs from these items. Notebook and Lakehouse based jobs being more interactive and real-time are classified as **interactive** and spark job defintions are classfied as **batch**. As part of this Dynamic reserve, a minimum and maximum reserve bounds is maintained for these job types. This is mainly to address usecases where an enterprise team could experience peak usage scenarios having their entire capacity consumed by batch jobs and during those peak hours, users will be blocked from using interactive items like notebooks or lakehouses. With this approach every capacity gets a minimum reserve of 30% of the total jobs allocated for interactive jobs (5% for Lakehouse and 25% for notebooks) and a minimum reserve of 10% for batch jobs.  
 
-| Job Type     | Artifact                | Min % | Max % |
-|--------------|-------------------------|-------|-------|
-| Batch Jobs   | Spark Job Definitions   | 10%   | 70%   |
-| Interactive  | Interactive Min and Max | 30%   | 90%   |
-|              | Notebooks               | 25%   | 85%   |
-|              | LH Operations           | 5%    | 65%   |
+| Job Type     | Artifact                  | Min % | Max % |
+|--------------|---------------------------|-------|-------|
+| Batch Jobs   | Spark Job Definitions     | 10    | 70    |
+| Interactive  | Interactive Min and Max   | 30    | 90    |
+|              | Notebooks                 | 25    | 85    |
+|              | LH Operations             | 5     | 65    |
+
 
 Interactive jobs like Notebooks and Lakehouses are throttled with a  **HTTP Response code 430 : Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later**,  when they exceed these reserves and when their capacity is at its maximum utilization
 
