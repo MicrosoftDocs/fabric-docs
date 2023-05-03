@@ -40,7 +40,7 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 6. Your items organized by recent, favorites, and items shared with you by your colleagues.  
 
 > [!IMPORTANT]
-> Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. There are situations where you might try to open an item and receive a prompt to [start a trial or to upgrade your license](fabric-trial.md). 
+> Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. <!--There are situations where you might try to open an item and receive a prompt to [start a trial or to upgrade your license](fabric-trial.md). -->
 
 ## Locate items from Home
 
@@ -80,7 +80,7 @@ The Help pane is also a great place to search for answers to your questions. Typ
 
 For more information about searching, see [Searching and sorting](fabric-search.md).
 
-For more information about the Help pane, see [Get help](get-help.md).
+<!-- For more information about the Help pane, see [Get help](get-help.md). -->
 
 ### Get help and support
 

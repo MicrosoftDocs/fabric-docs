@@ -1,6 +1,6 @@
 ---
-title: Find content from Microsoft Fabric Home
-description: Open reports, apps, and workspaces from the Microsoft Fabric Home. Learn how to change your layout and feature your important content. 
+title: Search and find your content using global search
+description: Learn how to use the search and filter tools in Fabric to quickly find the content you want.
 author: mihart
 ms.author: mihart
 ms.topic: conceptual  
