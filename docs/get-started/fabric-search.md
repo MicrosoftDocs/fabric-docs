@@ -9,7 +9,7 @@ ms.date: 05/02/2023
 
 # Global search
 
-When you're new to [!INCLUDE [product-name](../includes/product-name.md)], you'll have only a few items (workspaces, reports, apps, lakehouses). But as colleagues begin sharing content with you and you begin downloading and creating items, you can end up with long lists of items. That's when you'll find searching, filtering, and sorting extremely helpful.
+When you're new to [!INCLUDE [product-name](../includes/product-name.md)], you have only a few items (workspaces, reports, apps, lakehouses). But as colleagues begin sharing content with you and you begin downloading and creating items, you can end up with long lists of items. That's when searching, filtering, and sorting become helpful.
 
 ## Search for content
 
@@ -27,7 +27,7 @@ In addition to the **Search** field, most experiences on the [!INCLUDE [product-
 
 ## Sort content lists
 
-If you have only a few pieces of content, sorting won't be necessary. But when you have long lists of items, sorting will help you find what you need. For example, this **Shared with me** content list has many items.
+If you have only a few pieces of content, sorting isn't necessary. But when you have long lists of items, sorting helps you find what you need. For example, this **Shared with me** content list has many items.
 
 :::image type="content" source="./media/fabric-search/power-bi-shared-with-me-search.png" alt-text="Screenshot of a Shared with me content list with multiple items.":::
 
@@ -43,6 +43,6 @@ Not all columns can be sorted. Hover over the column headings to discover which 
 
 ## Filter content lists
 
-Another way to locate content quickly is to use the content list **Filter**. Display the filters by selecting **Filter** from the upper right corner. The filters available will depend on your location in [!INCLUDE [product-name](../includes/product-name.md)]. The example below is from a **Recent** content list. It allows you to filter the list by content **Type**, **Time**, or **Owner**.
+Another way to locate content quickly is to use the content list **Filter**. Display the filters by selecting **Filter** from the upper right corner. The filters available depend on your location in [!INCLUDE [product-name](../includes/product-name.md)]. This example is from a **Recent** content list. It allows you to filter the list by content **Type**, **Time**, or **Owner**.
 
 :::image type="content" source="./media/fabric-search/power-bi-sort-filters-new.png" alt-text="Screenshot of the filter on a Recent content list.":::
