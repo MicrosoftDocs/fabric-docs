@@ -48,4 +48,4 @@ capabilities of Kusto Query Language to query the two tables you have ingested i
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial part 5: Explore the enriched data](tutorial-5-advanced-kql-query.md)
+> [Real-Time Analytics tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md)
