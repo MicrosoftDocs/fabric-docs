@@ -103,7 +103,7 @@ The Gen2 architecture is different from Gen1. The new architecture uses Lakehous
 
 You probably have many dataflows in Gen1 and you're wondering how you can migrate them to Gen2. We have a few options for you to migrate your dataflows to Gen2. The following sections provide you with an overview of all the options.
 
-### Copy past your PowerQuery in the browser
+### Copy paste your PowerQuery in the browser
 
 If you have a dataflow in Power BI or Power Apps, you can copy your queries and paste them in the editor of your dataflow Gen2. This functionality allows you to migrate your dataflow to Gen2 without having to rewrite your queries.
 

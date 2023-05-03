@@ -69,5 +69,5 @@ Your data is now ready to be used safely by end users. The data is masked consis
 
 ## Next steps
 
-[Delphix free preview page](https://www.delphix.com/solutions/azure-trial)
-[Delphix documentation](https://maskingdocs.delphix.com/Securing_Sensitive_Data/Algorithms/Algorithms_Introduction/)
+- [Delphix free preview page](https://www.delphix.com/solutions/azure-trial)
+- [Delphix documentation](https://maskingdocs.delphix.com/Securing_Sensitive_Data/Algorithms/Algorithms_Introduction/)
