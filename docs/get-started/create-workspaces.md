@@ -44,7 +44,7 @@ Contact list is a place where you can put the names of people as contacts for in
 
 By default, the first workspace admin who created the workspace is the contact. You can add other users or groups according to your needs. Enter the name in the input box directly, it helps you to automatically search and match users or groups in your org.
 
-![Screenshot of Find workspace in workspace flyout.](media/create-workspaces/fabric-contact-list.png)
+![Screenshot of Contact list.](media/create-workspaces/fabric-contact-list.png)
 
 ### License mode
 
@@ -52,15 +52,15 @@ Different license mode provides different sets of feature for your workspace. Af
 
 ### Default storage format
 
-Power BI datasets can store data in a highly compressed in-memory cache for optimized query performance, enabling fast user interactivity. With Premium capacities, large datasets beyond the default limit can be enabled with the Large dataset storage format setting. When enabled, dataset size is limited by the Premium capacity size or the maximum size set by the administrator. Learn more about large dataset storage format [here](https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-large-models#enable-large-models).
+Power BI datasets can store data in a highly compressed in-memory cache for optimized query performance, enabling fast user interactivity. With Premium capacities, large datasets beyond the default limit can be enabled with the Large dataset storage format setting. When enabled, dataset size is limited by the Premium capacity size or the maximum size set by the administrator. Learn more about [large dataset storage format](/power-bi/enterprise/service-premium-large-models#enable-large-models).
 
 ### Template apps
   
-[Power BI Template apps](https://learn.microsoft.com/en-us/power-bi/connect-data/service-template-apps-overview) are developed for sharing outside your organization. If you check this option, a special type of workspace (template app workspace) will be created and it is not possible to revert it back to a normal workspace after creation.
+[Power BI template apps](/power-bi/connect-data/service-template-apps-overview) are developed for sharing outside your organization. If you check this option, a special type of workspace (template app workspace) is created. It's not possible to revert it back to a normal workspace after creation.
   
-### Dataflow storage(preview)
+### Dataflow storage (preview)
 
-Data used with Power BI is stored in internal storage provided by Power BI by default. With the integration of dataflows and Azure Data Lake Storage Gen 2 (ADLS Gen2), you can store your dataflows in your organization's Azure Data Lake Storage Gen2 account. Learn more [here](https://learn.microsoft.com/en-us/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration#considerations-and-limitations).
+Data used with Power BI is stored in internal storage provided by Power BI by default. With the integration of dataflows and Azure Data Lake Storage Gen 2 (ADLS Gen2), you can store your dataflows in your organization's Azure Data Lake Storage Gen2 account. Learn more about [dataflows in Azure Data Lake Storage Gen2 accounts](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration#considerations-and-limitations).
 
 ## Give users access to your workspace
 
