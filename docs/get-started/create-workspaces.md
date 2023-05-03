@@ -43,7 +43,7 @@ To see these workspace settings, expand **Advanced** in the **Settings** pane.
 
 ### Specify a domain
 
-If you are a domain contributor for the workspace and have been delegated the required permissions, you can associate the workspace to a domain, or your can change an existing association. For information about domains, see [Domains in Fabric](../governance/domains.md).
+If you are a domain contributor for the workspace, you can associate the workspace to a domain, or you can change an existing association. For information about domains, see [Domains in Fabric](../governance/domains.md).
 
 ### Create a contact list
 
