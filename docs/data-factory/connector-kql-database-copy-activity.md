@@ -112,3 +112,7 @@ To learn more information about copy activity in KQL Database, see the following
 |**Table** |The name of the table that the connection refers to.|\<your table name>|Yes|table|
 |**Ingestion mapping name** | The name of a mapping which was pre-created and assigned to KQL Database destination table in advance. Learn more from [Azure Data Explore data ingestion](/azure/data-explorer/ingestion-properties).|\<your ingestion mapping name>|Yes|ingestionMappingName|
 |**Additional properties** | A property bag which can be used for specifying any of the ingestion properties which aren't being set already by the KQL Database destination. Specifically, it can be useful for specifying ingestion tags.|- Name<br> - Type<br> - Value|Yes|additionalProperties|
+
+## Next steps
+
+[KQL Database connector overview](connector-kql-database-overview.md)

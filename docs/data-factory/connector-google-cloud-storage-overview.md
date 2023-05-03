@@ -23,7 +23,7 @@ This Google Cloud Storage connector is supported in Data Factory for [!INCLUDE [
 | **GetMetadata activity** | None | Basic |
 | **Delete activity** | None | Basic |
 
-## Next Steps
+## Next steps
 
 [How to create Google Cloud Storage connection](connector-google-cloud-storage.md)
 

@@ -66,3 +66,8 @@ You're now ready to mask your data. Select **Delphix fx** and enter parameters a
 Once this change is complete, select **Invoke** to run the data flow. This selection automatically calls the DCS masking API service to mask data prior to delivery to the destination of your choice.
 
 Your data is now ready to be used safely by end users. The data is masked consistently, ensuring that references remain intact across data sets. As an example, George Smith becomes Edward Robinson regardless of data source or destination, ensuring it’s still valuable for integrated analytics scenarios.
+
+## Next steps
+
+- [Delphix free preview page](https://www.delphix.com/solutions/azure-trial)
+- [Delphix documentation](https://maskingdocs.delphix.com/Securing_Sensitive_Data/Algorithms/Algorithms_Introduction/)

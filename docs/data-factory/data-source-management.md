@@ -85,3 +85,7 @@ Remember that you need to add users to each data source that you want to grant a
 ## Remove users from a data source
 
 On the **Manage Users** tab for the data source, you can remove users and security groups that use this data source.
+
+## Next steps
+
+[Connectors overview](connector-overview.md)
