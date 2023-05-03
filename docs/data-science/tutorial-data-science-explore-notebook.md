@@ -26,7 +26,7 @@ In this tutorial you learn to perform the following actions:
 1. Perform exploratory data analysis using seaborn on the New York taxi yellow cab dataset. We do this by visualizing a trip duration variable against other categorical and numeric variables.
 
 ## Follow along in notebook
-The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **02 -Explore and Visualize Data using Notebooks**.
+The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **02 -Explore and Visualize Data using Notebooks**. Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
 
 ## Visualize and analyze
 
