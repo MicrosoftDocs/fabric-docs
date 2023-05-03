@@ -1,6 +1,6 @@
 ---
-title: OneLake security
-description: OneLake uses a layered security model built around the organizational structure of components within Microsoft Fabric. Learn more about OneLake security.
+title: Getting started with securing data in OneLake
+description: Get started with securing data in OneLake with an overview of the concepts and capabilities.
 ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
@@ -16,8 +16,10 @@ As a single data lake for your entire organization, it’s critical to implement
 
 ## OneLake structure
 
-OneLake is a hierarchical data lake, similar to ADLS gen 2 or the Windows file system. This allows for security to be set at different levels in the hierarchy to govern access. OneLake offers additional features and controls at certain levels in the folder hierarchy. These levels are:
-**Workspace**: a collaborative environment that is used to create and manage items.
+OneLake is a hierarchical data lake, similar to ADLS gen 2 or the Windows file system. This allows for security to be set at different levels in the hierarchy to govern access. OneLake offers additional features and controls at certain levels in the folder hierarchy. These levels are:  
+  
+**Workspace**: a collaborative environment that is used to create and manage items.  
+  
 **Item**: a set of capabilities bundled together into single component. A data item is a subtype of item that allows for data to be stored within it using OneLake.
 Items always live within workspaces and workspaces always live directly under the OneLake namespace. This structure can be visualized as follows:
 
