@@ -31,8 +31,6 @@ If domains have been defined in your organization, you can use the domain select
 
 The data items list displays all the data items you have access to. To shorten the list, you can filter by keyword or data-item type using the filters at the top of the list.
 
-:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-data-items-list.png" alt-text="Screenshot of the OneLake data hub data items list.":::
-
 :::image type="content" source="media/onelake-data-hub/onelake-data-hub-data-items-list.png" alt-text="Screenshot of the OneLake data hub data items list." lightbox="media/onelake-data-hub/onelake-data-hub-data-items-list.png":::
 
 The list has three tabs to narrow down the list of data items.
