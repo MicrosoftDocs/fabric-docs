@@ -12,7 +12,7 @@ ms.custom:
 
 This article explains how to create *workspaces*, spaces to collaborate with colleagues, in [!INCLUDE [product-name](../includes/product-name.md)]. In workspaces, you create collections of items such as lakehouses, warehouses, and reports. For more background, see the [Workspaces](workspaces.md) article.
 
-:::image type="content" source="media/create-workspaces/fabric-sample-workspace.png" alt-text="Screenshot of a workspace.":::
+:::image type="content" source="media/create-workspaces/fabric-sample-workspace.png" alt-text="Screenshot of a workspace." lightbox="media/create-workspaces/fabric-sample-workspace.png":::
 
 ## Quickly create a workspace
 
@@ -26,10 +26,10 @@ This article explains how to create *workspaces*, spaces to collaborate with col
 
 3. [!INCLUDE [product-name](../includes/product-name.md)] creates the workspace and opens it. You see it in the list of workspaces where you can find all the workspaces you have access to.
 
-![Screenshot of Find workspace in workspace flyout.](media/create-workspaces/fabric-workspace-in-flyout.png)
-
+   ![Screenshot of Find workspace in workspace flyout.](media/create-workspaces/fabric-workspace-in-flyout.png)
 
 ## Optional and advanced settings
+
 Here are some optional and advanced settings for your workspace. They're explained in more detail in this section.
 
 - **Description:** Add a description to provide more details about this workspace.
@@ -38,7 +38,7 @@ Here are some optional and advanced settings for your workspace. They're explain
   
 Expand **Advanced** and you see advanced setting options:
 
-**Contact list**
+### Contact list
 
 Contact list is a place where you can put the names of people as contacts for information about the workspace. Accordingly, people in this contact list receive system email notifications for workspace level changes. 
 
@@ -46,22 +46,21 @@ By default, the first workspace admin who created the workspace is the contact. 
 
 ![Screenshot of Find workspace in workspace flyout.](media/create-workspaces/fabric-contact-list.png)
 
-**License mode**
+### License mode
 
 Different license mode provides different sets of feature for your workspace. After the creation, you can still change the workspace license type in workspace settings, but some migration effort is needed. 
 
-**Default storage format**
+### Default storage format
 
 Power BI datasets can store data in a highly compressed in-memory cache for optimized query performance, enabling fast user interactivity. With Premium capacities, large datasets beyond the default limit can be enabled with the Large dataset storage format setting. When enabled, dataset size is limited by the Premium capacity size or the maximum size set by the administrator. Learn more about large dataset storage format [here](https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-large-models#enable-large-models).
 
-**Template apps** 
+### Template apps
   
 [Power BI Template apps](https://learn.microsoft.com/en-us/power-bi/connect-data/service-template-apps-overview) are developed for sharing outside your organization. If you check this option, a special type of workspace (template app workspace) will be created and it is not possible to revert it back to a normal workspace after creation.
   
-**Dataflow storage(preview)** 
+### Dataflow storage(preview)
 
 Data used with Power BI is stored in internal storage provided by Power BI by default. With the integration of dataflows and Azure Data Lake Storage Gen 2 (ADLS Gen2), you can store your dataflows in your organization's Azure Data Lake Storage Gen2 account. Learn more [here](https://learn.microsoft.com/en-us/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration#considerations-and-limitations).
-
 
 ## Give users access to your workspace
 
@@ -86,6 +85,6 @@ Quickly access your favorite workspaces by pinning them to the top of the worksp
 
     ![Screenshot of unpin workspace.](media/create-workspaces/unpin-workspace.png)
 
-
 ## Next steps
+
 * Read about [workspaces](workspaces.md)
