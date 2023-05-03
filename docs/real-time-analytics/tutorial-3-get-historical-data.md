@@ -1,6 +1,6 @@
 ---
-title: "Synapse Real-Time Analytics tutorial part 4: Enrich your data"
-description: Part 4 of the Real-Time Analytics tutorial in Microsoft Fabric
+title: "Synapse Real-Time Analytics tutorial part 3: Get historical data"
+description: Part 3 of the Real-Time Analytics tutorial in Microsoft Fabric
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-# Real-Time Analytics tutorial part 4: Enrich your data
+# Real-Time Analytics tutorial part 4: Get historical data
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see:   [Tutorial part 3: Explore data and build report](tutorial-3-explore.md)
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md)
 
 Recall that the dataset you have ingested with Eventstream does not contain latitude and longitude data. In this section, you are going to load additional information on the pick-up locations and drop-off. This data is available in a blob storage container.
 
@@ -70,19 +70,7 @@ loaded.
 
 Select **Close** to return to your database landing page.
 
-## Create a KQL queryset
-
-In the following step, you'll use the advanced data analysis
-capabilities of Kusto Query Language to query the two tables you have ingested in the database. 
-
-1.  Select **New related item** > **KQL Queryset**
-
-    :::image type="content" source="media/realtime-analytics-tutorial/new-kql-queryset.png" alt-text="Screenshot to create a new related KQL queryset.":::
-
-1. Enter the following KQL Queryset name: *nyctaxiqs*.
-1. Select **Create**. A query window opens with several autopopulated sample queries.
-
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial part 5: Explore the enriched data](tutorial-5-explore-enriched-data.md)
+> [Tutorial part 54: Explore the enriched data](tutorial-5-explore-enriched-data.md)
