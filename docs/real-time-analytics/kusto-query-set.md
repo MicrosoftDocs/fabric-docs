@@ -10,6 +10,8 @@ ms.search.form: product-kusto
 ---
 # Query data in the KQL Queryset
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 In this article, you'll learn how to create and use a new KQL Queryset.
 
 The KQL Queryset is the item used to run queries, and view and manipulate query results on data from your Data Explorer database. The KQL Queryset allows you to save queries for future use, or export and share queries with others.
