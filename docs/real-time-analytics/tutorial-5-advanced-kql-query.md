@@ -10,6 +10,8 @@ ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 5: Use advanced KQL queries
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:   [Tutorial part 4: Enrich your data](tutorial-4-enrich-data.md)
 

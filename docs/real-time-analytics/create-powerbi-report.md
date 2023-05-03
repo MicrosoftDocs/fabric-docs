@@ -5,11 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 04/27/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Visualize data in a Power BI report
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you learn how to build a Power BI report using a KQL Queryset. The output of your query is used as the dataset of your report.
 
