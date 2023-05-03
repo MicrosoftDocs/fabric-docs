@@ -10,6 +10,8 @@ ms.search.form: product-kusto
 ---
 # Synapse Real-Time Analytics Tutorial- Introduction
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Synapse Real-Time Analytics in Microsoft Fabric is a fully managed big data analytics platform optimized for streaming, time-series data. It contains a dedicated query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-Time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios. For more information, see [What is Real-Time Analytics in Fabric?](overview.md). 
 
 ## Scenario
