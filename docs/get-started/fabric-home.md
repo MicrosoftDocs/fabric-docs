@@ -9,7 +9,7 @@ ms.date: 05/01/2023
 
 # Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
 
-This article gives a high level view of navigating to your items and actions from [!INCLUDE [product-name](../includes/product-name.md)] Home. Each product experience has its own Home, and there are similarities that they all share. Those similarities are described below. For detailed information about **Home** for a particular product experience, such as Reflex Home, visit the relevant page for that product experience. Links to those pages are provided at the end of this article.
+This article gives a high level view of navigating to your items and actions from [!INCLUDE [product-name](../includes/product-name.md)] Home. Each product experience has its own Home, and there are similarities that they all share. Those similarities are described in this article. For detailed information about **Home** for a particular product experience, such as Reflex Home, visit the relevant page for that product experience. Links to those pages are provided at the end of this article.
 
 ## Overview of Home 
 
@@ -25,7 +25,7 @@ To open **Home**, select it from the top of your left navigation pane.
 
 ## Most important content at your fingertips
 
-The items that you can access appear on Home. If your Home canvas gets crowded, use [global search](fabric-search.md) to find what you need, quickly. The layout and content on Home is different for every user and every product experience, but you'll notice a lot of similarities as well. These similarities are listed here and discussed in more detail later in this article.
+The items that you can access appear on Home. If your Home canvas gets crowded, use [global search](fabric-search.md) to find what you need, quickly. The layout and content on Home is different for every user and every product experience, but there are numerous similarities as well. These similarities are listed here and discussed in more detail later in this article.
 
 > [!NOTE]
 > **Power BI Home** is different from the other product experiences. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home.md).
@@ -36,15 +36,15 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 2. The selector for switching product experiences.
 3. The top menu bar for orienting yourself in [!INCLUDE [product-name](../includes/product-name.md)], finding items, help, and sending Microsoft feedback. The [**Account manager**](#account-and-license-information) control is a critical icon for looking up your account information. 
 4. Options for creating new items.  
-5. Links to recommended content. Here you'll find material to help you get started using the active product experience.
-6. Your items organized by those that you've visited recently (**Recent**), those you've marked as favorites (**Favorites**), and those shared with you by your colleagues (**Shared with me**).  
+5. Links to recommended content. This is material to help you get started using the product experience.
+6. Your items organized by recent, favorites, and items shared with you by your colleagues.  
 
 > [!IMPORTANT]
 > Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. There are situations where you might try to open an item and receive a prompt to [start a trial or to upgrade your license](fabric-trial.md). 
 
 ## Locate items from Home
 
-[!INCLUDE [product-name](../includes/product-name.md)] offers many ways of locating and viewing your content. All approaches access the same pool of content in different ways. Searching is sometimes the easiest and quickest way to find something, while other times, using the nav pane or selecting a card on the Home canvas is your best option.
+[!INCLUDE [product-name](../includes/product-name.md)] offers many ways of locating and viewing your content. All approaches access the same pool of content in different ways. Searching is sometimes the easiest and quickest way to find something. While other times, using the nav pane or selecting a card on the Home canvas is your best option.
 
 ### The navigation pane
 
@@ -68,7 +68,7 @@ To learn about the many ways to search from Home and from different produce expe
 
 Select the Help icon :::image type="content" source="media/fabric-home/fabric-help-icon.png" alt-text="Screenshot of the question mark Help icon."::: to open the contextual help pane and to search for answers to questions.
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides context sensitive help in the right rail of your browser. In this example, we've selected **Browse** from the nav pane and the Help pane automatically updates to show us articles about the features of the **Browse** screen. For example, we're shown articles on *View recent content* and *See content that others have shared with you*. If there are Community posts related to the current view, those are displayed under **Forum topics**. 
+[!INCLUDE [product-name](../includes/product-name.md)] provides context sensitive help in the right rail of your browser. In this example, we've selected **Browse** from the nav pane and the Help pane automatically updates to show us articles about the features of the **Browse** screen. For example, we're shown articles on *View recent content* and *See content that others have shared with you*. If there are Community posts related to the current view, they are displayed under **Forum topics**. 
 
 Leave the Help pane open as you work, and use the suggested topics to learn how to use [!INCLUDE [product-name](../includes/product-name.md)] features and terminology. Or, select the **X** to close the Help pane and save screen space. 
 
@@ -97,7 +97,7 @@ Information about your account and license is available from the Account manager
 
 ### Notifications, settings, and feedback
 
-In the upper right corner of Home are several helpful icons. Take time to explore your **Notifications center**, **Settings**, and **Feedback** options. The **?** icon displays your [Help and search options](#get-help-and-support) and the [**Account manager** icon](#learn-about-your-account-and-license) displays information about your account and license. Both of these features are described in detail earlier in this article.
+In the upper right corner of Home are several helpful icons. Take time to explore your **Notifications center**, **Settings**, and **Feedback** options. The **?** icon displays your [Help and search options](#get-help-and-support) and the [**Account manager** icon](#account-and-license-information) displays information about your account and license. Both of these features are described in detail earlier in this article.
 
 ### Find what you need on your Home canvas
 
@@ -111,7 +111,7 @@ The final section of Home is the center area, called the **canvas**. The content
 **Recommended** content might include content that:
 
 - is Getting started content
-- has been featured on Home by your organization
+- is featured on Home by your organization
 - is visited often by colleagues in your organization
 - is used frequently by your closest colleagues
 
