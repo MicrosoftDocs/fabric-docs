@@ -19,15 +19,15 @@ In this tutorial, you'll build a data pipeline to move a CSV file from an input 
 To get started, you must complete the following prerequisites:
 
 - Make sure you have a Project [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
-- Select the **Click to Prepare Data** button to prepare the data source of the Copy with one-click button. Create a new resource group for this Azure Blob storage and select **Review + Create** > **Create**.
+- Select the **Try it now!** button to prepare the Azure Blob Storage data source of the Copy. Create a new resource group for this Azure Blob Storage and select **Review + Create** > **Create**.
 
-  :::image type="content" source="media/create-first-pipeline/select-prepare-data.png" alt-text="Screenshot of Click to Prepare Data button.":::
+  [![Try your first data factory demo](./media/pipeline-copy-from-azure-blob-storage-to-lakehouse/try-it-now.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fquickstarts%2Fmicrosoft.datafactory%2Fdata-factory-copy-data-tool%2Fazuredeploy.json)
 
-:::image type="content" source="media/create-first-pipeline/create-resource-group.png" alt-text="Screenshot of Project details screen.":::
+  :::image type="content" source="media/create-first-pipeline/create-resource-group.png" alt-text="Screenshot of Project details screen.":::
 
-Then Azure Blob Storage will be created and [moviesDB2.csv](https://github.com/kromerm/adfdataflowdocs/blob/master/sampledata/moviesDB2.csv) will be uploaded to the input folder of the created Azure Blob Storage.
+  Then an Azure Blob Storage will be created and [moviesDB2.csv](https://github.com/kromerm/adfdataflowdocs/blob/master/sampledata/moviesDB2.csv) will be uploaded to the input folder of the created Azure Blob Storage.
 
-:::image type="content" source="media/create-first-pipeline/azure-blob-storage.png" alt-text="Screenshot showing where new storage appears in folder.":::
+  :::image type="content" source="media/create-first-pipeline/azure-blob-storage.png" alt-text="Screenshot showing where new storage appears in folder.":::
 
 ## Create a data pipeline
 
@@ -121,4 +121,14 @@ In this session, you'll start to build a data pipeline by using the following st
 
 ## Next steps
 
-[How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
+The pipeline in this sample shows you how to copy data from Azure Blob Storage to Lakehouse.  You learned how to:
+
+> [!div class="checklist"]
+> - Create a data pipeline.
+> - Copy data with the Copy Assistant.
+> - Run and schedule your data pipeline.
+
+Next, advance to learn more about monitoring your pipeline runs.
+
+> [!div class="nextstepaction"]
+> [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
