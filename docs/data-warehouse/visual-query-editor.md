@@ -1,6 +1,6 @@
 ---
-title: Query using the Visual query editor
-description: Learn how to use the Visual query editor.
+title: Query using the visual query editor
+description: Learn how to use the visual query editor.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
@@ -8,21 +8,21 @@ ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Query Editor # This article's title should not change. If so, contact engineering.
 ---
-# Query using the Visual query editor
+# Query using the visual query editor
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the Visual query editor and the [SQL query editor](sql-query-editor.md). This article describes how to use the Visual query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the visual query editor and the [SQL query editor](sql-query-editor.md). This article describes how to use the visual query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
 
 ## Visual query editor in the Fabric portal
 
-The Visual query editor provides an easy visual interface to write queries against the data in your warehouse.
+The visual query editor provides an easy visual interface to write queries against the data in your warehouse.
 
-Once you've loaded data into your warehouse, you can use the Visual query editor to create queries to analyze your data. You can use the Visual query editor for a no-code experience to create your queries.
+Once you've loaded data into your warehouse, you can use the visual query editor to create queries to analyze your data. You can use the visual query editor for a no-code experience to create your queries.
 
-There are two ways to get to the Visual query editor:
+There are two ways to get to the visual query editor:
 
 In the ribbon, create a new query using the **New visual query** button, as shown in the following image.
 
@@ -32,13 +32,13 @@ To create a query, drag and drop tables from the **Object explorer** on the left
 
 As you work on your visual query, the queries are automatically saved every few seconds. A "saving indicator" appears in your query tab to indicate that your query is being saved.
 
-The following image shows a sample query created using the no-code Visual query editor to retrieve the **Top customers by Orders**.
+The following image shows a sample query created using the no-code visual query editor to retrieve the **Top customers by Orders**.
 
 :::image type="content" source="media\visual-query-editor\sample-query-top-customers.png" alt-text="Screenshot of the results of a sample query to retrieve top customers by orders." lightbox="media\visual-query-editor\sample-query-top-customers.png":::
 
 When you see results, you can use **Download Excel file** to view results in Excel or **Visualize results** to create report on results.
 
-## Create a cross-warehouse query in Visual query editor
+## Create a cross-warehouse query in visual query editor
 
 For more information on cross-warehouse querying, see [Cross-warehouse querying](query-warehouse.md#write-a-cross-database-query).
 
@@ -46,7 +46,7 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 
 :::image type="content" source="media\visual-query-editor\cross-warehouse-query-visual-query-editor.png" alt-text="Screenshot of sample cross-warehouse query between sales and marketing database and Power Query activities." lightbox="media\visual-query-editor\cross-warehouse-query-visual-query-editor.png":::
 
-## Limitations with Visual query editor
+## Limitations with visual query editor
 
 - In the visual query editor, you can only run DQL (Data Query Language) or read-only [SELECT](/sql/t-sql/queries/select-transact-sql?view=fabric&preserve-view=true) statements. DDL or DML are not supported.
 
