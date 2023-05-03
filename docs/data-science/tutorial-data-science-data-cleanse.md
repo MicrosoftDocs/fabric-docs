@@ -10,6 +10,8 @@ ms.date: 5/4/2023
 
 # Module 3: Perform data cleansing and preparation using Apache Spark
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 The [NYC Yellow Taxi dataset](/azure/open-datasets/dataset-taxi-yellow?tabs=pyspark) contains over 1.5 Billion trip records with each month of trip data running into millions of records, which makes processing these records computationally expensive and often not feasible with nondistributed processing engines.
 
 In this tutorial, we demonstrate how to use Apache Spark notebooks to clean and prepare the taxi trips dataset. Spark's optimized distribution engine makes it ideal for processing large volumes of data.

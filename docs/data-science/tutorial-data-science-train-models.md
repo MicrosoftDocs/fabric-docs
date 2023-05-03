@@ -10,6 +10,8 @@ ms.date: 5/4/2023
 
 # Module 4: Train and register machine learning models in Microsoft Fabric
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 In this module, you learn to train machine learning models to predict the total ride duration (tripDuration) of yellow taxi trips in New York City based on various factors, such as pickup and drop-off locations, distance, date, time, number of passengers, and rate code. Once a model is trained, you register the trained models, and log hyperparameters used and evaluation metrics using Fabric's native integration with the MLflow framework.
 
 > [!TIP]

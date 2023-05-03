@@ -10,6 +10,8 @@ ms.date: 5/4/2023
 
 # Module 5: Perform batch scoring and save predictions to a lakehouse
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 In this module, you learn to import a trained and registered LightGBMRegressor model from the Microsoft Fabric MLflow model registry, and perform batch predictions on a test dataset loaded from a lakehouse.
 
 ## Follow along in notebook

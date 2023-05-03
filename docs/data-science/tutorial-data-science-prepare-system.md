@@ -10,6 +10,8 @@ ms.date: 5/4/2023
 
 # Prepare your system for the Data science tutorial
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Before you begin the Data science end-to-end tutorial modules, learn about prerequisites, the sample dataset, which notebooks to import, and how to attach a lakehouse to those notebooks.
 
 ## Prerequisites

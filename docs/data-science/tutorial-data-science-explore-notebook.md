@@ -10,8 +10,9 @@ ms.date: 5/4/2023
 
 # Module 2: Explore and visualize data using Microsoft Fabric notebooks
 
-The python runtime environment in Fabric notebooks comes with various preinstalled open-source libraries for building visualizations like matplotlib, seaborn, Plotly and more.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
+The python runtime environment in Fabric notebooks comes with various preinstalled open-source libraries for building visualizations like matplotlib, seaborn, Plotly and more.
 
 In this module, we use seaborn, which is a Python data visualization library that provides a high-level interface for building visuals on dataframes and arrays. For more information about seaborn, see [seaborn: statistical data visualization](https://seaborn.pydata.org/).
 

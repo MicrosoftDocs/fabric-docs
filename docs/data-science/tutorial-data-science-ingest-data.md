@@ -10,6 +10,8 @@ ms.date: 5/4/2023
 
 # Module 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 In this module, we ingest the NYC Taxi & Limousine Commission - yellow taxi trip dataset to demonstrate data ingestion into Fabric lakehouses in delta lake format.
 
 **Lakehouse**: A lakehouse is a collection of files, folders, and tables that represents a database over a data lake used by the Spark engine and SQL engine for big data processing, and that includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables.
