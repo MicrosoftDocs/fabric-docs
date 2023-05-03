@@ -30,11 +30,11 @@ This tutorial explains how a developer at the fictional Wide World Importers com
 
 1. Build and implement an end-to-end lakehouse for your organization:
 
-   1. [Create a Fabric workspace](tutorial-lakehouse-get-started.md)
-   1. [Create a lakehouse](tutorial-build-lakehouse.md). It includes an optional section to implement the medallion architecture that is the bronze, silver, and gold layers.
-   1. [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform data](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse. Load data from the bronze, silver, and gold zones as delta lake tables. You can also explore the OneLake, OneCopy of your data across lake mode and warehouse mode.
-   1. Connect to your lakehouse using TDS/SQL endpoint and [Create a Power BI report using DirectLake](tutorial-lakehouse-build-report.md) to analyze sales data across different dimensions.
-   1. Optionally, you can orchestrate and schedule data ingestion and transformation flow with a pipeline.
+   * [Create a Fabric workspace](tutorial-lakehouse-get-started.md)
+   * [Create a lakehouse](tutorial-build-lakehouse.md). It includes an optional section to implement the medallion architecture that is the bronze, silver, and gold layers.
+   * [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform data](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse. Load data from the bronze, silver, and gold zones as delta lake tables. You can also explore the OneLake, OneCopy of your data across lake mode and warehouse mode.
+   * Connect to your lakehouse using TDS/SQL endpoint and [Create a Power BI report using DirectLake](tutorial-lakehouse-build-report.md) to analyze sales data across different dimensions.
+   * Optionally, you can orchestrate and schedule data ingestion and transformation flow with a pipeline.
 
 1. [Clean up resources](tutorial-lakehouse-clean-up.md) by deleting the workspace and other items.
 
