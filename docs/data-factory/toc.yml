@@ -193,7 +193,7 @@
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
-        href: pipeline-copy-from-azure-blob-storage-to-lakehouse.md    
+        href: tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse.md    
       - name: Copy sample data into Lakehouse and transform with dataflow
         href: tutorial-load-data-lakehouse-transform.md
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
