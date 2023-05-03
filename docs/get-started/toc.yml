@@ -9,10 +9,8 @@ items:
     href: fabric-terminology.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: End-to-end tutorials
+    href: end-to-end-tutorials.md
 - name: Workspaces
   items:
   - name: Workspaces
@@ -33,9 +31,3 @@ items:
     href: endorsement-promote.md
   - name: Certify items
     href: endorsement-promote.md
-- name: Feature 2
-  items:
-  - name: linktext2
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md

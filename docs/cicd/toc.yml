@@ -31,12 +31,14 @@ items:
     href: git-integration/git-integration-process.md
   - name: Get started with git integration
     href: git-integration/git-get-started.md
-  - name: Resolve conflicts
-    href: git-integration/conflict-resolution.md
-  - name: Manually update the workspace
-    href: git-integration/partial-update.md
   - name: Manage git branches
     href: git-integration/manage-branches.md
+  - name: Fix errors
+    items:
+    - name: Resolve conflicts
+      href: git-integration/conflict-resolution.md
+    - name: Manually update the workspace
+      href: git-integration/partial-update.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
 - name: Best practices

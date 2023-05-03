@@ -12,6 +12,8 @@ ms.date: 4/28/2023
 
 In this part of the tutorial, you use notebooks with Spark runtime to transform and prepare the data.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 ## Prepare data
 
 From the previous tutorial steps, we have raw data ingested from the source to the **Files** section of the lakehouse. Now you can transform that data and prepare it for creating delta tables.
@@ -47,7 +49,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    > [!NOTE]
    > Fabric provides these unique capabilities for writing optimized delta lake files:
    >
-   > - Verti-Parquet - Tridentincludes Microsoft ’s unique VertiParquet IP. VertiParquet transparently optimizes the Delta Lake files in a way that is highly optimized by Fabric compute engines, often resulting in 3x-4x compression improvement and up to 10x performance acceleration over Delta Lake files not optimized using VertiParquet while still maintaining full Delta Lake format compliance.
+   > - V-order: A write optimization to the parquet file format that enables fast reads and provides cost efficiency and better performance. All the Fabric engines write v-ordered parquet files by default. It often improves compression by 3 to 4 times and up to 10 times performance acceleration over the Delta Lake files that aren't optimized. To learn more, see [v-order optimization](../placeholder.md)
    > - [Optimize write](/azure/synapse-analytics/spark/optimize-write-for-apache-spark) - Apache Spark performs most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and Spark’s configurations play a critical role in performance. Ingestion workloads into Delta Lake tables may have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small files problem". To overcome this problem, Spark in Fabric includes an Optimize Write feature that reduces the number of files written and aims to increase individual file size of the written data. It dynamically optimizes partitions while generating files with a default 128 MB size. The target file size may be changed per workload requirements using configurations.
 
 1. Before you write data as delta lake tables in the **Tables** section of the lakehouse, you use two Fabric features (**Verti-Parquet** and **Optimize Write**) for optimized data writing and for improved reading performance. To enable these features in your session, set these configurations in the first cell of your notebook. (Eventually these features will be enabled by default for Spark sessions.)
@@ -181,4 +183,6 @@ Also you may notice that you're writing data as delta lake files, which the auto
 
 ## Next steps
 
-- [Lakehouse tutorial: Building reports in Microsoft Fabric](tutorial-lakehouse-build-report.md)
+Advance to the next article to learn about
+> [!div class="nextstepaction"]
+> [Build reports using Power BI](tutorial-lakehouse-build-report.md)

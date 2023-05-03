@@ -6,7 +6,7 @@ ms.author: kecona
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
-ms.search.form: Warehouse Design and Development # This article's title should not change. If so, contact engineering.
+ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Primary keys, foreign keys, and unique keys in Synapse Data Warehouse in Microsoft Fabric
 

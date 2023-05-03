@@ -12,11 +12,13 @@ ms.date: 4/28/2023
 
 As a final step in the tutorial, clean up your resources.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 ## Clean up resources
 
 You can delete individual reports, pipelines, warehouses, and other items or remove the entire workspace.  
 
-1. Select **Trident Lakehouse Tutorial *suffix you added to make it unique*** in the left-hand navigation menu to return to the workspace item view.  
+1. Select **Fabric Lakehouse Tutorial *suffix you added to make it unique*** in the left-hand navigation menu to return to the workspace item view.  
 
    :::image type="content" source="media\tutorial-lakehouse-clean-up\select-workspace-item.png" alt-text="Screenshot of the left navigation menu, showing where to select your workspace." lightbox="media\tutorial-lakehouse-clean-up\select-workspace-item.png":::
 
@@ -32,4 +34,6 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 ## Next steps
 
-- [What is Data engineering in Microsoft Fabric?](data-engineering-overview.md)
+Advance to the next article to learn about
+> [!div class="nextstepaction"]
+> [Options to get data into lakehouse](tutorial-lakehouse-clean-up.md)
