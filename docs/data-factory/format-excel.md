@@ -93,4 +93,4 @@ The following properties are supported in the copy activity **Source** section w
 
 ## Next steps
 
-[Connectors overview](connector-overivew.md)
+[Connectors overview](connector-overview.md)

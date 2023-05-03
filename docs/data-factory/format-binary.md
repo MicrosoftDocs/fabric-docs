@@ -109,4 +109,4 @@ The following properties are supported in the copy activity **Destination** sect
 
 ## Next steps
 
-[Connectors overview](connector-overivew.md)
+[Connectors overview](connector-overview.md)
