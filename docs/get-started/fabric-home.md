@@ -3,14 +3,13 @@ title: Find content from Microsoft Fabric Home
 description: Open reports, apps, and workspaces from the Microsoft Fabric Home. Learn how to change your layout and feature your important content. 
 author: mihart
 ms.author: mihart
-ms.service: fabric
 ms.topic: conceptual  
 ms.date: 05/01/2023
 ---
 
-# Find your new, recent, favorite, and shared items in [!INCLUDE [product-name](../includes/product-name.md)] Home
+# Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
 
-This article gives a high level view of [!INCLUDE [product-name](../includes/product-name.md)] Home. Each product experience has its own Home, and there are similarities that they all share. Those similarities are described below. For detailed information about **Home** for a particular product experience, such as Reflex Home, visit the relevant page for that product experience. Links to those pages are provided at the end of this article.
+This article gives a high level view of navigating to your items and actions from [!INCLUDE [product-name](../includes/product-name.md)] Home. Each product experience has its own Home, and there are similarities that they all share. Those similarities are described below. For detailed information about **Home** for a particular product experience, such as Reflex Home, visit the relevant page for that product experience. Links to those pages are provided at the end of this article.
 
 ## Overview of Home 
 
@@ -41,7 +40,7 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 6. Your items organized by those that you've visited recently (**Recent**), those you've marked as favorites (**Favorites**), and those shared with you by your colleagues (**Shared with me**).  
 
 > [!IMPORTANT]
-> Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. There are situations where you might try to open an item and receive a prompt to [start a trial or to upgrade your license](vvvv). 
+> Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. There are situations where you might try to open an item and receive a prompt to [start a trial or to upgrade your license](fabric-trial.md). 
 
 ## Locate items from Home
 
@@ -49,10 +48,11 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 
 ### The navigation pane
 
-|---------|---------|
-|:::image type="content" source="media/fabric-home/fabric-nav-pane.png" alt-text="Screenshot of the nav pane for Data factory.":::     |   Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data factory nav pane. The options in your nav pane depend on the product experience you've selected. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
+:::image type="content" source="media/fabric-home/fabric-nav-pane.png" alt-text="Screenshot of the nav pane for Data factory.":::        
 
-The nav pane is there when you open Home  and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product experience nav pane includes **Home**, **Browse**, **Workspaces**, and **My workspace**.       |
+Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data factory nav pane. The options in your nav pane depend on the product experience you've selected. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
+
+The nav pane is there when you open Home  and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product experience nav pane includes **Home**, **Browse**, **Workspaces**, and **My workspace**.       
 
 ### The product experience selector
 
@@ -80,9 +80,11 @@ The Help pane is also a great place to search for answers to your questions. Typ
 
 For more information about searching, see [Searching and sorting](fabric-search.md).
 
+For more information about the Help pane, see [Get help](get-help.md).
+
 ### Get help and support
 
-If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane and either ask the community or connect with [!INCLUDE [product-name](../includes/product-name.md)] Support.  For more information about contacting Support, see [Support options](xxxx.md).
+If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane and either ask the community or connect with [!INCLUDE [product-name](../includes/product-name.md)] Support. <!-- For more information about contacting Support, see [Support options](xxxx.md).-->
 
 ### Account and license information
 
@@ -90,7 +92,7 @@ Information about your account and license is available from the Account manager
 
 :::image type="content" source="media/fabric-home/fabric-home-me.png" alt-text="Screenshot showing the Account manager expanded.":::
 
-For more information about licenses and trials, see [Licenses and trials](yyyyy.md).
+<!--For more information about licenses and trials, see [Licenses and trials](yyyyy.md). -->
 
 
 ### Notifications, settings, and feedback
