@@ -7,7 +7,7 @@ items:
     href: data-science-overview.md
 - name: Get started
   items:
-  - name: Get started with the Data Science happy path 
+  - name: Data science tutorial introduction
     href: tutorial-data-science-introduction.md
   - name: Prepare your system
     href: tutorial-data-science-prepare-system.md
