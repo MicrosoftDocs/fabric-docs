@@ -493,8 +493,8 @@ Below you can find the table with listing all the default level packages for Pyt
 ## Default level packages for R libraries
 Below you can find the table with listing all the default level packages for R and their respective versions.
 
-|  **Library**  | **Version** | **Library**  | **Version** | **Library**  | **Version** |
-|:-------------:|:-----------:|:------------:|:-----------:|:------------:|:-----------:|
+| **Library**                   | **Version** | **Library**              | **Version**  | **Library**             | **Version** |
+|-------------------------------|-------------|--------------------------|--------------|-------------------------|-------------|
 | askpass       | 1.1         | highcharter  | 0.9.4       |    readr     | 2.1.3       |
 | assertthat    | 0.2.1       |    highr     | 0.9         |    readxl    | 1.4.1       |
 | backports     | 1.4.1       |     hms      | 1.1.2       |   recipes    | 1.0.3       |
@@ -570,9 +570,9 @@ Below you can find the table with listing all the default level packages for R a
 
 
 ## Migration between different Apache Spark Versions
-Migrating your workloads to Runtime 1.1 (Apache Spark 3.3) from an older versions of Apache Spark involves a series of steps to ensure a smooth migration. This guide will outline the necessary steps to help you migrate efficiently and effectively.
+Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older versions of Apache Spark involves a series of steps to ensure a smooth migration. This guide will outline the necessary steps to help you migrate efficiently and effectively.
 
-1. Review Runtime 1.1 release notes, including checking the components and default-level packages included into the runtime, to understand the new features, improvements.
+1. Review Fabric Runtime 1.1 release notes, including checking the components and default-level packages included into the runtime, to understand the new features, improvements.
 2. Check compatibility of your current setup and all related libraries, including dependencies and integrations. Review the migration guides to identify potential breaking changes:
    1. [Review Spark Core migration guide](https://spark.apache.org/docs/latest/core-migration-guide.html)
    2. [Review SQL, Datasets and DataFrame migration guide](https://spark.apache.org/docs/latest/sql-migration-guide.html)
@@ -580,16 +580,16 @@ Migrating your workloads to Runtime 1.1 (Apache Spark 3.3) from an older version
    4. If you use PySpark, [review Pyspark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/pyspark_upgrade.html)
    5. If you migrate code from Koalas to PySpark, [review Koalas to pandas API on Spark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/koalas_to_pyspark.html)
 
-3. Move your workloads to Fabric and ... Ensure that you have backups of your data and configuration files in case you need to revert to the previous version.
+3. Move your workloads to Fabric and ensure that you have backups of your data and configuration files in case you need to revert to the previous version.
 
-4. Update any dependencies that may be impacted by the new version of Apache Spark or other Runtime 1.1 related components. This may include third-party libraries or connectors. Make sure to test the updated dependencies in a staging environment before deploying to production
+4. Update any dependencies that may be impacted by the new version of Apache Spark or other Fabric Runtime 1.1 related components. This may include third-party libraries or connectors. Make sure to test the updated dependencies in a staging environment before deploying to production
 
 5. Update Spark Configuration to your workload. This may include updating configuration settings, adjusting memory allocations, and modifying any deprecated configurations. 
 
-6. Modify your Spark applications (notebooks and Spark Jobs Definitions) to use the new APIs and features introduced in Runtime 1.1 and Apache Spark 3.3. This may involve updating your code to accommodate any deprecated or removed APIs, as well as refactoring your applications to take advantage of performance improvements and new functionalities.
+6. Modify your Spark applications (notebooks and Spark Jobs Definitions) to use the new APIs and features introduced in Fabric Runtime 1.1 and Apache Spark 3.3. This may involve updating your code to accommodate any deprecated or removed APIs, as well as refactoring your applications to take advantage of performance improvements and new functionalities.
 
 7. Thoroughly test your updated applications in a staging environment to ensure compatibility and stability with Apache Spark 3.3. Perform performance testing, functional testing, and regression testing to identify and resolve any issues that may arise during the migration process.
 
 8. After validating your applications in a staging environment, deploy the updated applications to your production environment. Monitor the performance and stability of your applications after the migration to identify any issues that need to be addressed.
 
-9. Update your internal documentation and training materials to reflect the changes introduced in Runtime 1.1. Ensure that your team members are familiar with the new features and improvements to maximize the benefits of the migration.
+9. Update your internal documentation and training materials to reflect the changes introduced in Fabric Runtime 1.1. Ensure that your team members are familiar with the new features and improvements to maximize the benefits of the migration.

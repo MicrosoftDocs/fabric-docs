@@ -5,11 +5,13 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 04/23/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Add and manage an event destination in Eventstream item
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 Once you have created an eventstream, you can route data to different destinations. The types of data destinations that can be added to your eventstream include KQL Database, Lakehouse and Custom App.
 
@@ -64,7 +66,7 @@ If you have a lakehouse created in your workspace, follow these steps to add thi
    1. **Lakehouse**: Select an existing lakehouse item from the workspace you specified.
    2. **Delta table**: Select an existing delta table or create a new one to receive data.
    3. **Data format**: Select the data format for the data that is sent to your lakehouse.
-   4. **Event processing**: You can use our event processor to specify how the data should be processed before it's sent to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Use event processor editor to define the data transformation logic](./process-event-with-event-preocessor-editor.md).
+   4. **Event processing**: You can use our event processor to specify how the data should be processed before it's sent to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Use event processor editor to define the data transformation logic](./process-events-using-event-processor-editor.md).
    
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" alt-text="Screenshot showing the event processor editor." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" :::
 
@@ -103,4 +105,4 @@ After selecting **Edit**, the edit pane will be open in the right of the main ed
 - [Create and manage an Eventstream item](./create-manage-an-eventstream.md)
 - [Add and manage an event source in Eventstream item](./add-manage-eventstream-sources.md)
 - [Event streams destination](./event-streams-destination.md)
-- [Use event processor editor to define the data transformation logic](./process-event-with-event-preocessor-editor.md)
+- [Use event processor editor to define the data transformation logic](./process-events-using-event-processor-editor.md)

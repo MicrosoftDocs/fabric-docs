@@ -1,5 +1,5 @@
 ---
-title: Use sample queries to query your table in Real-time Analytics
+title: Use sample queries to query your table in Real-Time Analytics
 description: Learn how to use sample queries to get an initial look at your data.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -9,6 +9,8 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 # Use sample queries to query your table
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you'll learn how to use sample KQL queries to get an initial look at your data.
 

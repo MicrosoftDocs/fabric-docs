@@ -5,11 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 04/27/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Use data from KQL Databases in Power BI Desktop
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you learn how to connect your KQL Database as a data source to Power BI Desktop. Once connected, you can use multiple tables to build your Power BI reports.
 
