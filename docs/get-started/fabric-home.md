@@ -5,95 +5,132 @@ author: mihart
 ms.author: mihart
 ms.service: fabric
 ms.topic: conceptual  
-ms.date: 04/03/2023
+ms.date: 05/01/2023
 ---
 
-# Find your new, recent, favorite, and shared content
+# Find your new, recent, favorite, and shared items in [!INCLUDE [product-name](../includes/product-name.md)] Home
+
+This article gives a high level view of [!INCLUDE [product-name](../includes/product-name.md)] Home. Each product experience has its own Home, and there are similarities that they all share. Those similarities are described below. For detailed information about **Home** for a particular product experience, such as Reflex Home, visit the relevant page for that product experience. Links to those pages are provided at the end of this article.
+
+## Overview of Home 
+
+On your Home canvas, you can view all the items that you have permission to use. That means that the items available on everyone's Home are different. At first, you might not have much content, but that changes as you start to use [!INCLUDE [product-name](../includes/product-name.md)] with your colleagues.
+
+In [!INCLUDE [product-name](../includes/product-name.md)], the term *item* refers to: apps, lakehouses, warehouses, reports, and more. Items are created by [!INCLUDE [product-name](../includes/product-name.md)] *creators* who share with their colleagues. Your items are accessible and viewable in [!INCLUDE [product-name](../includes/product-name.md)], and often the best place to start working in [!INCLUDE [product-name](../includes/product-name.md)] is from **Home**.
+
+:::image type="content" source="media/fabric-home/fabric-home-data-science.png" alt-text="Screenshot showing sample Home for the Data Science experience.":::
+
+To open **Home**, select it from the top of your left navigation pane. 
+
+:::image type="content" source="media/fabric-home/fabric-home-icon.png" alt-text="Screenshot showing the Home icon.":::
+
+## Most important content at your fingertips
+
+The items that you can access appear on Home. If your Home canvas gets crowded, use [global search](fabric-search.md) to find what you need, quickly. The layout and content on Home is different for every user and every product experience, but you'll notice a lot of similarities as well. These similarities are listed here and discussed in more detail later in this article.
+
+> [!NOTE]
+> **Power BI Home** is different from the other product experiences. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home.md).
+
+:::image type="content" source="media/fabric-home/fabric-home-numbered.png" alt-text="Screenshot of the left navigation menu with Knowledge center selected":::
+
+1. The left navigation pane (nav pane) for your product experience links you to different views of your items and to creator pages. 
+2. The selector for switching product experiences.
+3. The top menu bar for orienting yourself in [!INCLUDE [product-name](../includes/product-name.md)], finding items, help, and sending Microsoft feedback. The [**Account manager**](#account-and-license-information) control is a critical icon for looking up your account information. 
+4. Options for creating new items.  
+5. Links to recommended content. Here you'll find material to help you get started using the active product experience.
+6. Your items organized by those that you've visited recently (**Recent**), those you've marked as favorites (**Favorites**), and those shared with you by your colleagues (**Shared with me**).  
+
+> [!IMPORTANT]
+> Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. There are situations where you might try to open an item and receive a prompt to [start a trial or to upgrade your license](vvvv). 
+
+## Locate items from Home
+
+[!INCLUDE [product-name](../includes/product-name.md)] offers many ways of locating and viewing your content. All approaches access the same pool of content in different ways. Searching is sometimes the easiest and quickest way to find something, while other times, using the nav pane or selecting a card on the Home canvas is your best option.
+
+### The navigation pane
+
+|---------|---------|
+|:::image type="content" source="media/fabric-home/fabric-nav-pane.png" alt-text="Screenshot of the nav pane for Data factory.":::     |   Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data factory nav pane. The options in your nav pane depend on the product experience you've selected. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
+
+The nav pane is there when you open Home  and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product experience nav pane includes **Home**, **Browse**, **Workspaces**, and **My workspace**.       |
+
+### The product experience selector
+
+:::image type="content" source="media/fabric-home/fabric-home-selector.png" alt-text="Screenshot of the product experience selector expanded.":::
+
+In the bottom left corner is your experience selector. Click the icon to see all of the available [!INCLUDE [product-name](../includes/product-name.md)] product experiences. Select an experience to open it and make it active.
+
+### Searching and sorting from Home
+
+To learn about the many ways to search from Home and from different produce experiences, see [Searching and sorting](fabric-search.md). Searching is available by item, name, keyword, workspace, and more.
+
+### The context sensitive Help pane
+
+Select the Help icon :::image type="content" source="media/fabric-home/fabric-help-icon.png" alt-text="Screenshot of the question mark Help icon."::: to open the contextual help pane and to search for answers to questions.
+
+[!INCLUDE [product-name](../includes/product-name.md)] provides context sensitive help in the right rail of your browser. In this example, we've selected **Browse** from the nav pane and the Help pane automatically updates to show us articles about the features of the **Browse** screen. For example, we're shown articles on *View recent content* and *See content that others have shared with you*. If there are Community posts related to the current view, those are displayed under **Forum topics**. 
+
+Leave the Help pane open as you work, and use the suggested topics to learn how to use [!INCLUDE [product-name](../includes/product-name.md)] features and terminology. Or, select the **X** to close the Help pane and save screen space. 
+
+:::image type="content" source="media/fabric-home/fabric-home-help-contextual.png" alt-text="Screenshot of the Help pane with Recent selected in Data factory.":::
+
+The Help pane is also a great place to search for answers to your questions. Type in the **Search** field and your answers are listed below. 
+
+:::image type="content" source="media/fabric-home/fabric-home-help-results.png" alt-text="Screenshot of the Help pane before beginning a search.":::
+
+For more information about searching, see [Searching and sorting](fabric-search.md).
+
+### Get help and support
+
+If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane and either ask the community or connect with [!INCLUDE [product-name](../includes/product-name.md)] Support.  For more information about contacting Support, see [Support options](xxxx.md).
+
+### Account and license information
+
+Information about your account and license is available from the Account manager. Select the tiny photo from the upper right corner of [!INCLUDE [product-name](../includes/product-name.md)] to open your Account manager. 
+
+:::image type="content" source="media/fabric-home/fabric-home-me.png" alt-text="Screenshot showing the Account manager expanded.":::
+
+For more information about licenses and trials, see [Licenses and trials](yyyyy.md).
 
 
-# <Feature> in <product or service> 
-TODO: Add your heading
+### Notifications, settings, and feedback
 
-<!-- 2. Overview ------------------------------------------------------------------------
+In the upper right corner of Home are several helpful icons. Take time to explore your **Notifications center**, **Settings**, and **Feedback** options. The **?** icon displays your [Help and search options](#get-help-and-support) and the [**Account manager** icon](#learn-about-your-account-and-license) displays information about your account and license. Both of these features are described in detail earlier in this article.
 
-Required: Lead with an overview that briefly describes what the feature does. Provide
-links to more detailed information about the feature. Consider including a video or
-image that provides a high-level view of how the feature works.
+### Find what you need on your Home canvas
 
--->
+The final section of Home is the center area, called the **canvas**. The content of your canvas updates as you select different items. By default, the Home canvas displays new items, recommended items, recents, favorites, and content that has been shared with you. If you've selected the **Show less** view, the **New** section of the canvas is collapsed. 
 
-[Overview]
-TODO: Add your overview
+:::image type="content" source="media/fabric-home/fabric-show-less.png" alt-text="{alt-text}":::
 
-<!-- 3. Use cases -----------------------------------------------------------------------
+> [!NOTE]
+> Power BI **Home** is different from the other product experiences. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home.md).
 
-Optional: List a few key scenarios that you can use the feature in.
+**Recommended** content might include content that:
 
--->
+- is Getting started content
+- has been featured on Home by your organization
+- is visited often by colleagues in your organization
+- is used frequently by your closest colleagues
 
-## Use cases
-TODO: Add use cases
+## Find and open workspaces
 
-<!-- 4. Article body --------------------------------------------------------------------
+*Workspaces* are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports. 
 
-Required: In a series of H2 sections, provide basic information about how the feature
-works. Consider including:
+There are different ways to find workspaces that are available to you. If you know the name or owner, you can search. Or you can select the icon in the nav pane and choose which workspace to open. 
 
-- A *Requirements* section. List the software, networking components, tools, and
-product or service versions that you need to run the feature.
-- A *Considerations* section. Explain which configuration settings to use to optimize
-feature performance.
-- Examples. Show practical ways to use the feature, or provide code for implementing
-the feature.
+:::image type="content" source="media/fabric-home/fabric-home-workspaces.png" alt-text="Screenshot showing list of workspaces with red outlines around the Search fields and Workspaces icon.":::
 
--->
+The workspace opens on your canvas, and the name of the workspace is listed on your nav pane. When you open a workspace, you can view its content. It includes items such as dashboards, reports, worksheets, and dataflows. 
 
-[Article body]
-TODO: Add your article body
-
-<!-- 5. Availability and pricing information --------------------------------------------
-
-Optional: Discuss the feature's availability and pricing.
-
-- If the feature isn't available in all regions, provide a link to a list of supported
-regions.
-- If customers are charged for using the feature, provide a link to pricing information.
-
-Don't hard-code specific regions or costs. Instead, provide links to sites that manage
-and maintain that information.
-
---->
-
-[Availability and pricing information]
-TODO: Add your availability and pricing information
-
-<!-- 6. Limitations ---------------------------------------------------------------------
-
-Optional: List the feature's constraints, limitations, and known issues in an H2
-section. If possible, also include the following information:
-
-- State that upcoming releases address the known issues.
-- Describe workarounds for limitations.
-- Discuss the environments that the feature works best in.
-
-Use an H2 header of *Limitations* or *Known issues.*
-
---->
-
-## Limitations
-TODO: Add your Limitations
-
-<!-- 7. Next steps ----------------------------------------------------------------------
-
-Optional: In an H2 section called *Next steps*, list resources such as the following
-types of material:
-
-- A quickstart, get-started guide, or tutorial that explains how to get started with the
-feature
-- An overview of the product or service that the feature's a part of
-- Reference information for the feature, product, or service
-
---->
+For more information, see [Workspaces](workspaces.md).
 
 ## Next steps
-TODO: Add your next steps
+- Power BI Home
+- Data engineering Home
+- Data factory Home
+- Reflex Home
+- App development Home
+- Extension API playground Home
+- Data warehouse Home
+- Real-time analytics Home
