@@ -15,7 +15,7 @@ ms.search.form: product-kusto
 
 ## Explore data
 
-1.  Navigate to your Trident workspace homepage, and select the **NycTaxiDB** KQL database.
+1.  Navigate to your Fabric workspace homepage, and select the **NycTaxiDB** KQL database.
     
     :::image type="content" source="media/realtime-analytics-tutorial/go-to-database.png" alt-text="Screenshot of selecting NYC taxi database in Real-Time Analytics in Microsoft Fabric.":::
 
