@@ -101,4 +101,4 @@ ms.search.form: product-kusto
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial part 3: Explore data and build report](tutorial-3-explore.md)
+> [Tutorial part 3: Get historical data](tutorial-3-get-historical-data.md)
