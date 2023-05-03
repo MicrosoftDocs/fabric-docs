@@ -6,9 +6,9 @@ ms.author: procha
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
-ms.search.form: Ingesting data
+ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
-# Ingesting data into the Synapse Data Warehouse
+# Ingest data into the Synapse Data Warehouse
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 

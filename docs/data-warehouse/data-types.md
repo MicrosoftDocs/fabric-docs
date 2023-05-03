@@ -6,8 +6,8 @@ ms.author: cynotebo
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
+ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
-
 # Data types in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
@@ -42,7 +42,7 @@ For T-SQL data types that aren't currently supported, some alternatives are avai
 |---|---|
 | **money and smallmoney** | Use decimal, however note that it can't store the monetary unit.  |
 | **datetime and smalldatetime** | Use datetime2. |
-| **nchar and nvarchar** | Use char and varchar respectively. These types use more storage than nchar and nvarchar to store unicode data. To understand the impact on your environment, see [Storage differences between UTF-8 and UTF-16](/sql/relational-databases/collations/collation-and-unicode-support?view=fabric&preserve-view=true#storage_differences.) |
+| **nchar and nvarchar** | Use char and varchar respectively. These types use more storage than nchar and nvarchar to store unicode data. To understand the impact on your environment, see [Storage differences between UTF-8 and UTF-16](/sql/relational-databases/collations/collation-and-unicode-support?view=fabric&preserve-view=true#storage_differences). |
 | **text and ntext** | Use varchar. |
 | **image** | Use varbinary. |
 

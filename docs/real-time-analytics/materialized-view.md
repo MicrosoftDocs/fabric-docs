@@ -10,6 +10,9 @@ ms.search.form: product-kusto
 ---
 # Create materialized views
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
+
 A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. There are two types of materialized views:
 
 * Empty materialized view: it includes records ingested after view creation. A creation of this kind returns immediately, with the view instantly being available for query.
