@@ -12,6 +12,8 @@ ms.date: 4/28/2023
 
 Before you can begin building the lakehouse, you need to create a workspace where you'll build out the remainder of the tutorial.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 ## Create a workspace
 
 In this step, you create a Fabric workspace in the Power BI service. The workspace contains all the artifacts needed for this lakehouse tutorial including Lakehouse, Dataflows, Data Factory pipelines, the Notebooks, Power BI datasets, and reports.

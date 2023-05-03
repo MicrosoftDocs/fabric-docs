@@ -14,6 +14,8 @@ Microsoft Fabric is an all-in-one analytics solution for enterprises that covers
 
 This tutorial walks you through an end-to-end scenario from data acquisition to data consumption. It helps you build a basic understanding of Fabric, including the different workloads and how they integrate, as well as the professional and citizen developer experiences that come with working on this platform. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 ## Lakehouse end-to-end scenario
 
 Traditionally, organizations have been building modern data warehouses for their transactional and structured data analytics needs. And data lakehouses for big data (semi/unstructured) data analytics needs. These two systems ran in parallel, creating silos, data duplicity, and increased total cost of ownership.

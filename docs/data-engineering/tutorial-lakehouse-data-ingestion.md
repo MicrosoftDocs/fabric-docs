@@ -12,6 +12,8 @@ ms.date: 4/28/2023
 
 In this module, you build on the work you completed in the previous module and ingest additional tables (dimensions and fact) of the dimensional model of Wide World Importers (WWI).
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 ## Ingest data
 
 In this section, you use the **Copy data activity** of a **Data Factory pipeline** to ingest sample data from a source (Azure storage account) to the **Files** section of the lakehouse you created earlier.

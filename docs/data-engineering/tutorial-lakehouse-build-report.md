@@ -12,6 +12,8 @@ ms.date: 4/28/2023
 
 In this section of the tutorial, you create a Power BI data model and create a report from scratch.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 ## Build a report
 
 Power BI is natively integrated in the whole Fabric experience. This native integration brings a unique mode, called DirectLake, of accessing the data from the lakehouse to provide the most performant query and reporting experience. DirectLake mode is a groundbreaking new engine capability to analyze very large datasets in Power BI. The technology is based on the idea of loading parquet-formatted files directly from a data lake without having to query a data warehouse or lakehouse endpoint, and without having to import or duplicate data into a Power BI dataset. DirectLake is a fast path to load the data from the data lake straight into the Power BI engine, ready for analysis.

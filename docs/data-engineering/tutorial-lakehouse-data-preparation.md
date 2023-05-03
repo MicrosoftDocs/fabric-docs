@@ -12,6 +12,8 @@ ms.date: 4/28/2023
 
 In this part of the tutorial, you use notebooks with Spark runtime to transform and prepare the data.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 ## Prepare data
 
 From the previous tutorial steps, we have raw data ingested from the source to the **Files** section of the lakehouse. Now you can transform that data and prepare it for creating delta tables.

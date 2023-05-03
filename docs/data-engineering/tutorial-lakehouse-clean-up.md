@@ -12,6 +12,8 @@ ms.date: 4/28/2023
 
 As a final step in the tutorial, clean up your resources.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 ## Clean up resources
 
 You can delete individual reports, pipelines, warehouses, and other items or remove the entire workspace.  
