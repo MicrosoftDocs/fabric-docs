@@ -11,6 +11,8 @@ ms.search.form: product-kusto
 
 # Data management
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Real-Time Analytics offers a range of options for managing your data, both on a database and table level.
 
 You can manage your data in the following ways:

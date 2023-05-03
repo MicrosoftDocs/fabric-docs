@@ -13,6 +13,8 @@ ms.author: jeluitwi
 
 Monitoring your dataflow refreshes is key in ensuring that your dataflows are running as expected. Refresh history and monitoring hub allows you to evaluate in detail what happened during the refresh of your dataflow. This article provides you with an overview of the features that are available in the refresh history and monitoring hub. We also provide you with some guidance on how to use these features.
 
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+
 ## Refresh history
 
 Refresh history is available using the drop-down menu in your workspace. You can access it by selecting the **Refresh History** button.
@@ -96,3 +98,8 @@ This dashboard provides you with the following information:
 - Average refresh duration
 - Number of refreshes per day
 - Type of refresh
+
+## Next steps
+
+- [What are dataflows Gen2 in Data Factory for Microsoft Fabric?](dataflows-gen2-overview.md)
+- [Dataflows save as draft](dataflows-gen2-save-draft.md)
