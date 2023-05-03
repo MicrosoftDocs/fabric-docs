@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB for NoSQL connector overview
-description: This article provideds an overview of the Azure Cosmos DB for NoSQL connector in Microsoft Fabric.
+description: This article provides an overview of the Azure Cosmos DB for NoSQL connector in Microsoft Fabric.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
