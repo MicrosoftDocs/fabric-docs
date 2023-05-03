@@ -58,12 +58,13 @@ In this step, you'll use a script to first create a table with specified mapping
     The second query will load your data. It might take a few minutes for the data loading to be complete.
 
     :::image type="content" source="media/jupyter-notebook/data-map-ingest.png" alt-text="Screenshot of the Check your data window showing the completed state of the table mapping and data ingestion."  lightbox="media/jupyter-notebook/data-map-ingest.png":::
+1. Refresh your database. The table appears in the **Data tree**.
 
 ## 3- Download the NYC Taxi demo notebook
 
 We've created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your KQL database.
 
-1. Open the Fabric samples repository on GitHub to download the [NYC Taxi demo Notebook.](https://github.com/microsoft/fabric-samples/blob/main/samples/real-time-analytics/NYC_Taxi_KQL_Notebook.ipynb).
+1. Open the Fabric samples repository on GitHub to download the [NYC Taxi KQL Notebook.](https://github.com/microsoft/fabric-samples/blob/main/samples/real-time-analytics/NYC_Taxi_KQL_Notebook.ipynb).
 
     :::image type="content" source="media/jupyter-notebook/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC Taxi demo notebook. The option titled Raw is highlighted."  lightbox="media/jupyter-notebook/raw-notebook.png":::
 
