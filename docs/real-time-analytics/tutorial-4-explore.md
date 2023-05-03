@@ -13,17 +13,20 @@ ms.search.form: product-kusto
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Get historical data](tutorial-3-get-historical-data.md)
 
-The first step in data analysis is often to take a look at a subset of the data itself. A query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Queries always run in the context of a particular table or database. At a minimum, a query consists of a source data reference and one or more query operators applied in sequence, indicated visually by the use of a pipe character (|) to delimit operators. For more information on the Kusto Query Language, see [Kusto Query Language (KQL) Overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
-
-There are several sample queries available to you in both SQL and KQL to help you get familiar with the query languages and assist with initial data exploration.
+The first step in data analysis is often to take a look at a subset of the data itself. There are several sample queries available to you in both SQL and KQL to help you get familiar with the query languages and assist with initial data exploration.
 
 ## Sample KQL queries
 
-1. In the **Object tree**, select the **more menu** [...] on the **nyctaxitrips** table > **Query table** > **Show any 100 records**. The sample query opens in the **Check your data** pane with the table context already populated. 
+ A Kusto Query Language (KQL) query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Queries always run in the context of a particular table or database. At a minimum, a query consists of a source data reference and one or more query operators applied in sequence, indicated visually by the use of a pipe character (|) to delimit operators. For more information on the Kusto Query Language, see [Kusto Query Language (KQL) Overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+
+> [!NOTE]
+> The query editor comes with syntax highlighting and IntelliSense, so you can quickly ramp-up your knowledge of the Kusto Query Language.
+
+1. In the **Object tree**, select the **more menu** [...] on the **nyctaxitrips** table. Select **Query table** > **Show any 100 records**. 
 
     :::image type="content" source="media/realtime-analytics-tutorial/kql-sample-queries.png" alt-text="Screenshot of Object tree showing the More menu of a table. The option titled Query table is highlighted.":::
 
-1. This query uses the [take operator](/azure/data-explorer/kusto/query/takeoperator?context=/fabric/context/context&pivots=fabric) to return a sample number of records, and is useful to get a first look at the data structure and possible values. Place your cursor somewhere within the query and select  **Run** or press **Shift + Enter**.
+1. The sample query opens in the **Check your data** pane with the table context already populated. This first query uses the [take operator](/azure/data-explorer/kusto/query/takeoperator?context=/fabric/context/context&pivots=fabric) to return a sample number of records, and is useful to get a first look at the data structure and possible values. Place your cursor somewhere within the query and select  **Run** or press **Shift + Enter**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/take-100.png" alt-text="Screenshot of first sample query result in Synapse Real-Time Analytics in Microsoft Fabric.":::
 
@@ -41,7 +44,15 @@ There are several sample queries available to you in both SQL and KQL to help yo
 
     :::image type="content" source="media/realtime-analytics-tutorial/most-recent-record.png" alt-text="Screenshot showing results of most recent record query.":::
 
+1. The next query in the list of sample queries uses the [count operator](/azure/data-explorer/kusto/query/countoperator?context=/fabric/context/context&pivots=fabric) to return the number of records in the table.
+
+    :::image type="content" source="media/realtime-analytics-tutorial/count-results.png" alt-text="Screenshot of results of count operator.":::
+
+1. Continue running the remainder of the sample KQL queries.
+
 ## Sample SQL queries 
+
+:::image type="content" source="media/realtime-analytics-tutorial/sql-queries.png" alt-text="Screenshot of sample SQL queries.":::
 
 ## Next steps
 
