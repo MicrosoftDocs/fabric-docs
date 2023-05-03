@@ -117,4 +117,6 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
 ## Next steps
 
-- [Lakehouse tutorial - Clean up resources](tutorial-lakehouse-clean-up.md)
+Advance to the next article to learn how to
+> [!div class="nextstepaction"]
+> [Clean up resources](tutorial-lakehouse-clean-up.md)

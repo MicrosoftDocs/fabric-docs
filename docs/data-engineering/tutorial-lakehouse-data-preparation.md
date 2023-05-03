@@ -181,4 +181,6 @@ Also you may notice that you're writing data as delta lake files, which the auto
 
 ## Next steps
 
-- [Lakehouse tutorial: Building reports in Microsoft Fabric](tutorial-lakehouse-build-report.md)
+Advance to the next article to learn about
+> [!div class="nextstepaction"]
+> [Build reports using Power BI](tutorial-lakehouse-build-report.md)

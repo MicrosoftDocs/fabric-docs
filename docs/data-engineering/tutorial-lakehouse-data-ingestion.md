@@ -89,4 +89,6 @@ In this section, you use the **Copy data activity** of a **Data Factory pipeline
 
 ## Next steps
 
-- [Lakehouse tutorial: Data preparation in Microsoft Fabric](tutorial-lakehouse-data-preparation.md)
+Advance to the next article to learn about
+> [!div class="nextstepaction"]
+> [Prepare and transform data](tutorial-lakehouse-data-preparation.md)

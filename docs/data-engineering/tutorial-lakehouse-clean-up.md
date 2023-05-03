@@ -32,4 +32,6 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 ## Next steps
 
-- [What is Data engineering in Microsoft Fabric?](data-engineering-overview.md)
+Advance to the next article to learn about
+> [!div class="nextstepaction"]
+> [Options to get data into lakehouse](tutorial-lakehouse-clean-up.md)

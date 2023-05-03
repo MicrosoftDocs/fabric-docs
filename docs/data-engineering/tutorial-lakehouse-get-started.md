@@ -38,4 +38,6 @@ In this step, you create a Fabric workspace in the Power BI service. The workspa
 
 ## Next steps
 
-- [Lakehouse tutorial: Build a lakehouse in Microsoft Fabric](tutorial-build-lakehouse.md)
+Advance to the next article to learn about
+> [!div class="nextstepaction"]
+> [Create a lakehouse in Microsoft Fabric](tutorial-build-lakehouse.md)
