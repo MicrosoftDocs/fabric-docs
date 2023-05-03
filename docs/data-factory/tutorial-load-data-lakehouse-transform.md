@@ -54,7 +54,7 @@ Select **Copy Data** on the canvas, to open the **Copy assistant** tool to get s
 
 1. Select the **Workspace** tab and choose **Lakehouse**.  Then select **Next**.
 
-   :::image type="content" source="media/tutorial-create-first-pipeline-with-sample-data/lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination.":::
 
 1. Select **Create new Lakehouse** and enter **LHDemo** for the name, then select **Next**.
 

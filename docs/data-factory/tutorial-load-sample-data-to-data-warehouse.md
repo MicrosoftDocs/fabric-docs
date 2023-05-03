@@ -103,7 +103,7 @@ In this session, you start to build your pipeline by following below steps about
 
 1. You can also schedule the pipeline to run with a specific frequency as required. Below is an example scheduling the pipeline to run every 15 minutes. You can also specify the **Start** time and **End** time for your schedule. If you don't specify a start time, the start time is the time your schedule applies. If you don't specify an end time, your pipeline run will keep recurring every 15 minutes.
 
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/schedule-run.png" lightbox="media/tutorial-create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
 
 ## Next steps
 

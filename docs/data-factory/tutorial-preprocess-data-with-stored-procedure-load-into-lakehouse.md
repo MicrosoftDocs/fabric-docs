@@ -124,7 +124,7 @@ In this section, we use a Script activity to run the stored procedure created in
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/run-pipeline.png" alt-text="Screenshot showing the pipeline Run button.":::
 
-   :::image type="content" source="media/tutorial-create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Save and run button for the pipeline.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Save and run button for the pipeline.":::
 
 1. After the pipeline successfully runs, you can view the details for more information.
 
