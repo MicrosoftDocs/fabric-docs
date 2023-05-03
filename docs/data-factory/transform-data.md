@@ -164,3 +164,7 @@ Follow these steps to create your data pipeline.
 4. Select **Save** to save your data pipeline. Then select **Run** to run your data pipeline and load your data.  
 
    :::image type="content" source="media/transform-data/save-run-pipeline.png" alt-text="Screenshot showing where to select Run." lightbox="media/transform-data/save-run-pipeline.png":::
+
+## Next steps
+
+[Monitor pipeline runs](monitor-pipeline-runs.md)

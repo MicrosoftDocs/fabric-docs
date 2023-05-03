@@ -98,3 +98,8 @@ This dashboard provides you with the following information:
 - Average refresh duration
 - Number of refreshes per day
 - Type of refresh
+
+## Next steps
+
+- [What are dataflows Gen2 in Data Factory for Microsoft Fabric?](dataflows-gen2-overview.md)
+- [Dataflows save as draft](dataflows-gen2-save-draft.md)

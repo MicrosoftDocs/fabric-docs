@@ -10,6 +10,8 @@ ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 3: Explore data and build report
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md)
 

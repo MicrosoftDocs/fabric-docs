@@ -44,6 +44,8 @@ items:
       href: create-functions.md
     - name: Create materialized views
       href: materialized-view.md
+    - name: Create a table update policy
+      href: table-update-policy.md
 - name: Get data
   items:
   - name: Get data from a blob

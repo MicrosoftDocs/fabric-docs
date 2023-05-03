@@ -118,6 +118,10 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 
 - The Azure AD user you’re using in Fabric is the same user you need to use in Azure Repos. There’s no way to edit or change users in Fabric.
 
+## Workspace limitations
+
+Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/repos/get-started), but once connected, anyone with [permission](#permissions) can work in the workspace.
+
 ### Branch and folder limitations
 
 - Maximum length of branch name is 244 characters.

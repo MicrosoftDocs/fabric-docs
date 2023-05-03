@@ -169,3 +169,6 @@ To learn more information about copy activity in Lakehouse, see the following ta
 |**Metadata** |Set custom metadata when copy to sink.|• `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 |**Max rows per file** |When writing data into a folder, you can choose to write to multiple files and specify the max rows per file.|\<max rows per flie> |No |maxRowsPerFile|
 |**File name prefix** |Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>`_00000.`<fileExtension>`. If not specified, prefix will be auto generated. Not applicable when source is file-based store or source has partition option enabled.| \<flie name prefix> |No |fileNamePrefix|
+
+## Next steps
+[Lakehouse connector overview](connector-lakehouse-overview.md)

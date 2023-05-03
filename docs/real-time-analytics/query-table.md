@@ -10,6 +10,8 @@ ms.search.form: product-kusto
 ---
 # Use sample queries to query your table
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 In this article, you'll learn how to use sample KQL queries to get an initial look at your data.
 
 A query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Queries always run in the context of a particular table or database. At a minimum, a query consists of a source data reference and one or more query operators applied in sequence, indicated visually by the use of a pipe character (|) to delimit operators.

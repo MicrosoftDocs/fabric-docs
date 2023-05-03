@@ -34,3 +34,9 @@ To publish the changes you made in your draft, you take the following steps:
    :::image type="content" source="./media/dataflows-gen2-save-draft/publish-dataflow.png" alt-text="Screenshot that shows how to publish your dataflow." lightbox="./media/dataflows-gen2-save-draft/publish-dataflow.png":::
 
 1. Confirm the publish.
+
+## Next steps
+
+- [What are dataflows Gen2 in Data Factory for Microsoft Fabric?](dataflows-gen2-overview.md)
+- [Dataflows refresh history and monitoring](dataflows-gen2-monitor.md)
+
