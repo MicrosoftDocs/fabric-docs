@@ -23,19 +23,23 @@ There are several sample queries available to you in both SQL and KQL to help yo
 
     :::image type="content" source="media/realtime-analytics-tutorial/kql-sample-queries.png" alt-text="Screenshot of Object tree showing the More menu of a table. The option titled Query table is highlighted.":::
 
-1. This query returns a sample number of records, and is useful to get a first look at the data structure and possible values. Place your cursor somewhere within the query and select  **Run** or press **Shift + Enter**.
+1. This query uses the [take operator](/azure/data-explorer/kusto/query/takeoperator?context=/fabric/context/context&pivots=fabric) to return a sample number of records, and is useful to get a first look at the data structure and possible values. Place your cursor somewhere within the query and select  **Run** or press **Shift + Enter**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/take-100.png" alt-text="Screenshot of first sample query result in Synapse Real-Time Analytics in Microsoft Fabric.":::
 
-1. Return to the object tree to paste the next query, which will return records ingested in the last 24 hours.
+1. Return to the object tree to paste the next query, which uses the [where operator](/azure/data-explorer/kusto/query/whereoperator?context=/fabric/context/context&pivots=fabric) and [between operator](/azure/data-explorer/kusto/query/betweenoperator?context=/fabric/context/context&pivots=fabric) to return records ingested in the last 24 hours.
 
     :::image type="content" source="media/realtime-analytics-tutorial/sample-last-24-h.png" alt-text="Screenshot of sample query to return records ingested in the last 24 hours.":::
 
     Notice that the volumes of the streaming data exceed the query limits. This behavior may vary depending on the amount of data streamed into your database.
 
-1. The next query in the list of sample queries retrieves the table schema. 
+1. The next query in the list of sample queries uses the [getschema operator](/azure/data-explorer/kusto/query/getschemaoperator?context=/fabric/context/context&pivots=fabric) to retrieve the table schema. 
 
     :::image type="content" source="media/realtime-analytics-tutorial/sample-query-schema.png" alt-text="Screenshot returing sample query results of getschema operator. ":::
+
+1. The next query in the list of sample queries uses the [summarize operator](/azure/data-explorer/kusto/query/summarizeoperator?context=/fabric/context/context&pivots=fabric) to check when the last record was ingested.
+
+    :::image type="content" source="media/realtime-analytics-tutorial/most-recent-record.png" alt-text="Screenshot showing results of most recent record query.":::
 
 ## Sample SQL queries 
 
