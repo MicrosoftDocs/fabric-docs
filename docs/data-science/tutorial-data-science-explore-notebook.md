@@ -50,7 +50,7 @@ In this tutorial you learn to perform the following actions:
 
    :::image type="content" source="media\tutorial-data-science-explore-notebook\create-bins-plot-histogram.png" alt-text="Screenshot of code samples for creating bins and then visualizing your binned column with a histogram plot." lightbox="media\tutorial-data-science-explore-notebook\create-bins-plot-histogram.png":::
 
-   :::image type="content" source="media\tutorial-data-science-explore-notebook\trip-distribution-duration-chart.png" alt-text="Bar chart of trip distribution by duration bins." lightbox="media\tutorial-data-science-explore-notebook\":::
+   :::image type="content" source="media\tutorial-data-science-explore-notebook\trip-distribution-duration-chart.png" alt-text="Bar chart of trip distribution by duration bins." lightbox="media\tutorial-data-science-explore-notebook\trip-distribution-duration-chart.png":::
 
 1. Visualize the distribution of tripDuration and tripDistance and classify by passengerCount using seaborn scatterplot by running below commands.
 
@@ -108,4 +108,4 @@ In this tutorial you learn to perform the following actions:
 
 ## Next steps
 
-- Module 3: Perform data cleansing and preparation using Apache Spark
+- [Module 3: Perform data cleansing and preparation using Apache Spark](tutorial-data-science-data-cleanse.md)

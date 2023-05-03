@@ -7,10 +7,26 @@ items:
     href: data-science-overview.md
 - name: Get started
   items:
-  - name: How to use end-to-end AI samples
-    href: use-ai-samples.md
+  - name: Get started with the Data Science happy path 
+    href: tutorial-data-science-introduction.md
+  - name: Prepare your system
+    href: tutorial-data-science-prepare-system.md
+  - name: Module 1 - Ingest data into a Fabric lakehouse
+    href: tutorial-data-science-ingest-data.md
+  - name: Module 2 - Explore and visualize data using notebooks
+    href: tutorial-data-science-explore-notebook.md
+  - name: Module 3 - Perform data cleansing and preparation
+    href: tutorial-data-science-data-cleanse.md
+  - name: Module 4 - Train and register machine learning models
+    href: tutorial-data-science-train-models.md
+  - name: Module 5 - Perform batch scoring and save predictions
+    href: tutorial-data-science-batch-scoring.md
+  - name: Module 6 - Create a Power BI report
+    href: tutorial-data-science-create-report.md
 - name: Tutorials
   items:
+  - name: How to use end-to-end AI samples
+    href: use-ai-samples.md
   - name: Train a retail recommendation model
     href: retail-recommend-model.md
   - name: Fraud detection
