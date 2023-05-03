@@ -19,8 +19,8 @@ In this tutorial, we demonstrate how to use Apache Spark notebooks to clean and 
 
 In the following steps, you read the raw NYC Taxi data from a lakehouse delta lake table (saved in module 1), and perform various operations to clean and transform that data to prepare it for training machine learning models.
 
-> [!NOTE]
-> The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **03 - Perform Data Cleansing and preparation using Apache Spark**.
+## Follow along in notebook
+The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **03 - Perform Data Cleansing and preparation using Apache Spark**.
 
 ## Cleanse and prepare
 

@@ -12,10 +12,10 @@ ms.date: 5/4/2023
 
 In this module, you learn to import a trained and registered LightGBMRegressor model from the Microsoft Fabric MLflow model registry, and perform batch predictions on a test dataset loaded from a lakehouse.
 
-> [!NOTE]
-> The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **05 - Perform batch scoring and save predictions to lakehouse**.
+## Follow along in notebook
+The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **05 - Perform batch scoring and save predictions to lakehouse**.
 
-## Batch scoring and save predictions
+## Perform batch scoring and save predictions
 
 1. Read a random sample of cleansed data from lakehouse table ***nyctaxi_prep*** filtered for puYear=2016 and puMonth=3.
 

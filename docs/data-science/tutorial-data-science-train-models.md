@@ -15,8 +15,8 @@ In this module, you learn to train machine learning models to predict the total 
 > [!TIP]
 > MLflow is an open-source platform for managing the end-to-end machine learning lifecycle with features for tracking experiments, packaging ML models and artifacts, and model registry. For more information, see [MLflow](https://mlflow.org/docs/latest/index.html).
 
-> [!NOTE]
-> The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **04 - Train and track machine learning models**.
+## Follow along in notebook
+The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **04 - Train and track machine learning models**.
 
 In the following steps, you load cleansed and prepared data from lakehouse delta table and use it to train a regression model to predict tripDuration variable. You also use the Fabric MLflow integration to create and track experiments and register the trained model, model hyperparameters and metrics.
 

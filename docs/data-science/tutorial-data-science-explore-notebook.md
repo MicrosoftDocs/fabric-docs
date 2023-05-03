@@ -12,8 +12,6 @@ ms.date: 5/4/2023
 
 The python runtime environment in Fabric notebooks comes with various preinstalled open-source libraries for building visualizations like matplotlib, seaborn, Plotly and more.
 
-> [!NOTE]
-> The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **02 -Explore and Visualize Data using Notebooks**.
 
 In this module, we use seaborn, which is a Python data visualization library that provides a high-level interface for building visuals on dataframes and arrays. For more information about seaborn, see [seaborn: statistical data visualization](https://seaborn.pydata.org/).
 
@@ -26,6 +24,9 @@ In this tutorial you learn to perform the following actions:
 1. Convert a Spark dataframe to Pandas dataframe, which python visualization libraries support.
 
 1. Perform exploratory data analysis using seaborn on the New York taxi yellow cab dataset. We do this by visualizing a trip duration variable against other categorical and numeric variables.
+
+## Follow along in notebook
+The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **02 -Explore and Visualize Data using Notebooks**.
 
 ## Visualize and analyze
 
