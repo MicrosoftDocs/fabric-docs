@@ -39,15 +39,17 @@ Data security can further be managed on individual data items such as lakehouse,
 |---|---|---|---|
 | Share a warehouse | Read | ReadAll | Build |
 | Share a lakehouse | Read | ReadAll | Build |
-| Share a real time analytics database | N/A | N/A | N/A |
-| Datasets | N/A | N/A | N/A |
+| Share a real time analytics database<sup>1</sup> | N/A | N/A | N/A |
+| Datasets<sup>2</sup> | N/A | N/A | N/A |
+<sup>1</sup> Real-time analytics items always include both Read and Write access when shared.
+<sup>2</sup> Datasets cannot be shared directly
 
 **Permissions assigned to individual data items**
-| **Permission** | **Actions** |
-|---|---|
-| Read | Connect to SQL endpoint, read data from Dataset, read data from real-time analytics DB |
-| ReadAll | View OneLake data in Spark, OneLake Explorer or APIs |
-| Write | Write data to OneLake in Spark, OneLake Explorer or APIs, write data to a real-time analytics DB, or write/edit Dataset |
+| **Permission** | **Warehouse** | **Lakehouse** | **Real-time Analytics** | **Dataset** |
+|---|---|---|---|
+| Read | Connect to SQL endpoint | Connect to SQL endpoint and open lakehouse artifact | Connect to database and query data | Read data from the dataset | 
+| ReadAll | Read warehouse data in OneLake | Read lakehouse files and tables in OneLake | N/A | N/A |
+| Write | Write data through SQL endpoint | Write to lakehouse files and tables in OneLake | Write data to real-time analytics DB | Edit a dataset |
 
 ## Compute-specific security
 
