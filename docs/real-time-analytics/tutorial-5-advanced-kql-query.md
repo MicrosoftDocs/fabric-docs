@@ -13,25 +13,23 @@ ms.search.form: product-kusto
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see:   [Tutorial part 4: Enrich your data](tutorial-4-enrich-data.md)
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 4: Explore your data with KQL and SQL](tutorial-4-explore.md)
 
 In this module, you'll write queries using [Kusto Query Language](/azure/data-explorer/kusto/query/) to explore the NYC Taxi data and the location data. Kusto Query Language is a powerful tool to explore your data and discover patterns, identify anomalies and outliers, create statistical modeling, and more. The query uses schema entities that are organized in a hierarchy similar to SQLs: databases, tables, and columns. A KQL query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. 
+
+## Create a KQL queryset
+
+In the following step, you'll use the advanced data analysis
+capabilities of Kusto Query Language to query the two tables you have ingested in the database.
+
+1.  Select **New related item** > **KQL Queryset**
+
+    :::image type="content" source="media/realtime-analytics-tutorial/new-kql-queryset.png" alt-text="Screenshot to create a new related KQL queryset.":::
+
+1. Enter the following KQL Queryset name: *nyctaxiqs*.
+1. Select **Create**. A query window opens with several autopopulated sample queries.
+
 ## Query data
-
-The first step in data analysis is often to take a look at a subset of the data itself.
-
-1. Paste the following query in the query editor to take 10 arbitrary records from the specified table.
-
-    ```kusto
-    nyctaxitrips
-    | take 10
-    ```
-
-1. Select **Run** or press **Shift + Enter**.
-
-    :::image type="content" source="media/realtime-analytics-tutorial/results-take-10.png" alt-text="Screenshot of take 10 results in Real-Time Analytics in Microsoft Fabric.":::
-
-    The specific lines returned in your query may vary. 
 
 1.  The following query returns the top 10 pickup locations in New York City for Yellow Taxis.
 

@@ -15,7 +15,7 @@ ms.search.form: product-kusto
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md)
 
-A Power BI report is a multi-perspective view into a dataset, with visuals that represent findings and insights from that dataset. In a previous step in this tutorial, you [generated a PowerBI report](tutorial-3-explore.md#build-a-power-bi-report-from-the-query-output) from the streaming data. Now that the data has been enriched with additional location data, you'll create a new query that joins both datasets, and use this query output to create a new Power BI report.
+A Power BI report is a multi-perspective view into a dataset, with visuals that represent findings and insights from that dataset. In this section, you'll create a new query that joins both datasets, and use this query output to create a new Power BI report.
 
 ## Build Power BI report
 
