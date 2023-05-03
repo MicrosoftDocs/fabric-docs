@@ -55,4 +55,4 @@ Once configured, select **Apply** to set your schedule. You can view or edit the
 ## Next steps
 
 - [How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
-- [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
+- [Quickstart: Create your first data pipeline to copy data](tutorial-create-first-pipeline-with-sample-data.md)

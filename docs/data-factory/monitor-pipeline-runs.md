@@ -82,5 +82,5 @@ The length of the bar relates to the duration of the pipeline. You can select th
 
 ## Next steps
 
-- [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
+- [Quickstart: Create your first data pipeline to copy data](tutorial-create-first-pipeline-with-sample-data.md)
 - [Quickstart: Create your first Dataflows Gen2 to get and transform data](create-first-dataflow-gen2.md)

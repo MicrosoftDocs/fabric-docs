@@ -4,7 +4,7 @@ description: This tutorial shows you how to first load data into a Lakehouse wit
 ms.reviewer: jburchel
 ms.author: xupzhou
 author: pennyzhou-msft
-ms.topic: conceptual 
+ms.topic: tutorial 
 ms.date: 05/23/2023
 ---
 
@@ -54,7 +54,7 @@ Select **Copy Data** on the canvas, to open the **Copy assistant** tool to get s
 
 1. Select the **Workspace** tab and choose **Lakehouse**.  Then select **Next**.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination.":::
+   :::image type="content" source="media/tutorial-create-first-pipeline-with-sample-data/lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination.":::
 
 1. Select **Create new Lakehouse** and enter **LHDemo** for the name, then select **Next**.
 
@@ -142,4 +142,14 @@ After the refresh is complete, you can view the data in the Lakehouse table. You
 
 ## Next steps
 
-[Monitor pipeline runs](monitor-pipeline-runs.md)
+This sample shows you how to copy sample data to Lakehouse and transform the data with a dataflow using Data Factory in Microsoft Fabric.  You learned how to:
+
+> [!div class="checklist"]
+> - Create a data pipeline.
+> - Use the pipeline to load sample data into Lakehouse.
+> - Use dataflow to transform data in the Lakehouse.
+
+Next, advance to learn more about monitoring your pipeline runs.
+
+> [!div class="nextstepaction"]
+> [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)

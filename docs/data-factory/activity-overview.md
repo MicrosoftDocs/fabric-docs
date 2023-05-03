@@ -95,4 +95,4 @@ The general settings will always include **Name** and **Description** fields for
 
 ## Next steps
 
-[Create your first pipeline](create-first-pipeline-with-sample-data.md)
+[Create your first pipeline](tutorial-create-first-pipeline-with-sample-data.md)

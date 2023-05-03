@@ -169,4 +169,4 @@ If you're not going to continue to use this dataflow, delete the dataflow using 
 
 ## Next steps
 
-Advance to the next article to learn how to create your first data pipeline: [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md).
+Advance to the next article to learn how to create your first data pipeline: [Quickstart: Create your first data pipeline to copy data](tutorial-create-first-pipeline-with-sample-data.md).

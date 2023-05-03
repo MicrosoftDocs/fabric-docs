@@ -35,7 +35,7 @@ landingContent:
           - text: Create your first gen2 dataflow
             url: create-first-dataflow-gen2.md
           - text: Create your first data pipeline
-            url: create-first-pipeline-with-sample-data.md
+            url: tutorial-create-first-pipeline-with-sample-data.md
           - text: Move and transform data
             url: transform-data.md
   
@@ -53,7 +53,7 @@ landingContent:
           - text: Activity Overview
             url: activity-overview.md
           - text: Move data with copy assistant
-            url: move-data-lakehouse-copy-assistant.md
+            url: tutorial-move-data-lakehouse-copy-assistant.md
 
   # Card 
   - title: Working with dataflows
