@@ -4,7 +4,7 @@ description: Learn how to monitor the progress and status of a running Spark job
 author: jejiang
 ms.author: jejiang
 ms.topic: overview 
-ms.date: 02/25/2023
+ms.date: 05/23/2023
 ms.custom: template-howto
 ms.search.form: Monitor Spark job definitions
 ---
@@ -13,10 +13,10 @@ ms.search.form: Monitor Spark job definitions
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Using the Spark job definition artifact inline monitoring, you can track the following: 
+Using the Spark job definition artifact inline monitoring, you can track the following:
 
-* Monitor the progress and status of a running Spark job definition. 
-* View the status and duration of previous Spark job definition runs. 
+* Monitor the progress and status of a running Spark job definition.
+* View the status and duration of previous Spark job definition runs.
 
 You can get this information from the **Recent Runs** contextual menu in the workspace or by browsing the Spark job definition activities in the monitoring hub.
 
@@ -34,7 +34,7 @@ You can access the job runs associated with specific Spark job definition artifa
 
 ## Spark job definition runs in the Monitoring hub
 
-To view all the Spark applications related to a Spark job definition, go to the **Monitoring hub**.  Sort or filter the **Item Type** column to view all the run activities associated with the Spark job definitions. 
+To view all the Spark applications related to a Spark job definition, go to the **Monitoring hub**.  Sort or filter the **Item Type** column to view all the run activities associated with the Spark job definitions.
 
 :::image type="content" source="media\monitor-spark-job-definitions\spark-job-definition-runs-in-monitoring-hub.png" alt-text="Screenshot showing the spark job definition runs in Monitoring hub." lightbox="media\monitor-spark-job-definitions\spark-job-definition-runs-in-monitoring-hub.png":::
 
@@ -42,4 +42,4 @@ To view all the Spark applications related to a Spark job definition, go to the 
 
 The next step after viewing the details of an Apache Spark application is to view Spark job progress below the Notebook cell. You can refer to
 
-- [Spark application detail monitoring](spark-detail-monitoring.md)
+* [Spark application detail monitoring](spark-detail-monitoring.md)

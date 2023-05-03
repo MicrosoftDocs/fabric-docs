@@ -5,7 +5,7 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas
 ms.topic: how-to
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.custom: 
 ---
 # Create a workspace
@@ -21,9 +21,8 @@ This article explains how to create *workspaces*, spaces to collaborate with col
      ![Screenshot of Create workspace.](media/create-workspaces/fabric-new-workspaces.png)
 
 2. Give the workspace a unique name. If the name isn't available, edit it to come up with a name that's unique. Select **Apply**.
-   
-     ![Screenshot of Input workspacename.](media/create-workspaces/fabric-quickly-create-workspace.png)
 
+     ![Screenshot of Input workspace name.](media/create-workspaces/fabric-quickly-create-workspace.png)
 
 3. [!INCLUDE [product-name](../includes/product-name.md)] creates the workspace and opens it. You see it in the list of workspaces where you can find all the workspaces you have access to.
 

@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
 ms.topic: how-to
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ms.search.form: Create lakehouse
 ---
 
@@ -13,13 +13,7 @@ ms.search.form: Create lakehouse
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this tutorial, you learn how to create a lakehouse in [!INCLUDE [product-name](../includes/product-name.md)].
-
-## Prerequisites
-
-To get started, you must complete the following prerequisites:
-
-- Get access to a premium workspace with contributor or above permissions.
+In this tutorial, you learn different ways to create a Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Create a lakehouse
 
@@ -62,8 +56,9 @@ There are a few ways you can get started with the creation process:
 
 ## Next steps
 
-After you create your lakehouse, your next step is to get data in it. Here are a few ways you can do that:
+Now that you have successfully created your Lakehouse, learn more about:
 
-- [How to copy data into your lakehouse](../data-factory/copy-data-activity.md)
-- [How to use a notebook to load data in your lakehouse](lakehouse-notebook-load-data.md)
-- [Navigating the lakehouse explorer](navigate-lakehouse-explorer.md)
+- Different ways to load data in Lakehouse, see [Get data experience for Lakehouse](navigate-lakehouse-explorer.md)
+
+- Exploring your lakehouse explorer, see [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md)
+

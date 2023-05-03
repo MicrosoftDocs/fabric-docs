@@ -4,8 +4,9 @@ description: OneLake shortcuts provide a way to connect to existing data without
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
+ms.search.form: Shortcuts
 ms.topic: conceptual
-ms.date: 03/24/2023
+ms.date: 05/23/2023
 ---
 
 # OneLake shortcuts
@@ -13,7 +14,7 @@ ms.date: 03/24/2023
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 OneLake Shortcuts allows you to unify your data across domains, clouds and accounts to create a single virtualized data lake for your entire enterprise. All Fabric workloads can directly connect to your existing data sources such as Azure, AWS and OneLake through this single virtualized data lake.  Permissions and credentials are all managed at the OneLake layer, so each Fabric workload doesn't need to be separately configured to connect to each data source.  Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
-Shortcuts behave like symbolic links within the OneLake filesystem but have the ability to connect to external data sources in addition to OneLake locations.  These shortcuts can be created within the file structure of a Fabric artifact and can be used by Fabric workloads just like any other folder in the file system.  
+Shortcuts behave like symbolic links within the OneLake filesystem but have the ability to connect to external data sources in addition to OneLake locations.  These shortcuts can be created within the file structure of a Fabric artifact and can be used by Fabric workloads just like any other folder in the file system.   
 
 :::image type="content" source="media\onelake-shortcuts\shortcut-connects-other-location-v2.png" alt-text="Diagram showing how a shortcut connects files and folders stored in other locations." lightbox="media\onelake-shortcuts\shortcut-connects-other-location.png":::
 

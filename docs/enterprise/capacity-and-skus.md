@@ -4,7 +4,7 @@ description: Understand the Microsoft Fabric capacity and SKU model.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ---
 
 # Capacity and SKUs

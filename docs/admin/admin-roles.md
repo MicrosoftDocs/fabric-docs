@@ -4,22 +4,22 @@ description: This article explains the Microsoft Fabric admin roles.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ---
 
 # Understand Microsoft Fabric roles
 
 To be a Microsoft Fabric admin for your organization, you must be in one of the following roles:
 
-* Power BI administrator
+* Global administrator
 
 * Power Platform administrator
 
-* Global administrator.
+* Power BI administrator
 
 Microsoft 365 user admins assign users to the Power BI administrator or Power Platform administrator roles in the Microsoft 365 admin center, or by using a PowerShell script. For more information, see [Assign roles to user accounts with PowerShell](/office365/enterprise/powershell/assign-roles-to-user-accounts-with-office-365-powershell).
 
-Users in Power BI administrator and Power Platform administrator roles have full control over org-wide Power BI settings and administrative features, except for licensing. Once a user is assigned an administrator role, they can access the [admin center](/power-bi/developer/visuals/create-r-based-power-bi-desktop). There, they have access to org-wide usage metrics and can control org-wide usage of Power BI features. These admin roles are ideal for users who need access to the Power BI admin center without also granting those users full Microsoft 365 administrative access.
+Users in Power BI administrator and Power Platform administrator roles have full control over org-wide Microsoft Fabric settings and admin features, except for licensing. Once a user is assigned an admin role, they can access the [admin center](/power-bi/developer/visuals/create-r-based-power-bi-desktop). There, they have access to org-wide usage metrics and can control org-wide usage of Microsoft Fabric features. These admin roles are ideal for users who need access to the Fabric admin center without also granting those users full Microsoft 365 administrative access.
 
 ## Assign users to an admin role in the Microsoft 365 admin center
 
@@ -91,5 +91,6 @@ To learn more about using PowerShell to assign admin roles, see [AzureAD Directo
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+* [What is the admin center?](admin-center.md)
+
+* [What is the admin monitoring workspace?](admin-monitoring.md)

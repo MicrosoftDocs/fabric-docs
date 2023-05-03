@@ -5,7 +5,7 @@ ms.reviewer: ssalgado
 ms.author: negust
 author: nelgson
 ms.topic: how-to
-ms.date: 02/10/2023
+ms.date: 05/23/2023
 ms.search.form: Train models with scikit-learn
 ---
 

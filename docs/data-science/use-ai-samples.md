@@ -5,7 +5,7 @@ ms.reviewer: lagayhar
 ms.author: narsam
 author: narmeens
 ms.topic: how-to
-ms.date: 02/10/2023
+ms.date: 05/23/2023
 ---
 
 # How-to use end-to-end AI samples in Microsoft Fabric

@@ -1,15 +1,17 @@
 ---
-title: Use a OneLake shortcut to query data in Real-time Analytics
+title: Use a OneLake shortcut to query data in Real-Time Analytics
 description: Learn how to create a OneLake shortcut to query data from OneLake in your KQL Database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 04/19/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Use a OneLake shortcut to query data
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files’ store locations. The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source. For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
@@ -21,7 +23,7 @@ To access the data in your KQL Database in other [!INCLUDE [product-name](../inc
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled workspace.
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
 * [KQL Database](create-database.md)
 * Lakehouse with data
 

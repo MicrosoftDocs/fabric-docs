@@ -4,7 +4,7 @@ description: Learn how to enable service principal authentication to permit use 
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.date: 04/08/2023
+ms.date: 05/23/2023
 ---
 
 # Enable service principal authentication for read-only admin APIs
@@ -100,5 +100,5 @@ An app using service principal authentication that calls read-only admin APIs **
 ## Next steps
 
 * [Metadata scanning overview](./metadata-scanning-overview.md)
-* [Set up metadata scanning](./metadata-scanning-setup.md)
+* [Set up metadata scanning](../admin/metadata-scanning-setup.md)
 * [Run metadata scanning](./metadata-scanning-run.md)

@@ -5,7 +5,7 @@ ms.reviewer: sgilley
 author: ruixinxu
 ms.author: ruxu
 ms.topic: overview 
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
@@ -71,6 +71,13 @@ To learn more about how to use sparklyr, visit [How to use sparklyr](./r-use-spa
 > [!NOTE] 
 > Using SparkR and sparklyr in the same notebook session isn't supported yet.
 
+
+## Use Tidyverse
+
+[Tidyverse](https://www.tidyverse.org/packages/) is a collection of R packages that data scientists commonly use in everyday data analyses. It includes packages for data import (`readr`), data visualization (`ggplot2`), data manipulation (`dplyr`, `tidyr`), functional programming (`purrr`), and model building (`tidymodels`) etc. The packages in `tidyverse` are designed to work together seamlessly and follow a consistent set of design principles. [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of `tidyverse` with every runtime release. 
+
+To learn more about how to use Tidyverse, visit [How to use Tidyverse](./r-use-tidyverse.md).
+
 ## R visualization
 
 The R ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Spark instance in [!INCLUDE [product-name](../includes/product-name.md)] contains a set of curated and popular open-source libraries. You can also add or manage extra libraries or versions by using the [!INCLUDE [product-name](../includes/product-name.md)] [library management capabilities](./r-library-management.md).
@@ -79,8 +86,10 @@ Learn more about how to create R visualizations by visiting [R visualization](./
 
 ## Next steps
 
-
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
-- [Visualize data in R](r-visualization.md)
+- [Visualize data in R](./r-visualization.md)
+- [Tutorial: avocado price prediction](./r-avocado.md)
+- [Tutorial: flight delay prediction](./r-flight-delay.md)

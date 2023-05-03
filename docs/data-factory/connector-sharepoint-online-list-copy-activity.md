@@ -4,17 +4,15 @@ description: This article explains how to copy data using SharePoint Online List
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 03/21/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
 # How to configure SharePoint Online List in copy activity
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
 This article outlines how to use the copy activity in data pipeline to copy data from SharePoint Online List.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 

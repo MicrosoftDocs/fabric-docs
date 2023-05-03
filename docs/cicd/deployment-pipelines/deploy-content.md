@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1
-ms.date: 04/18/2023
+ms.date: 05/23/2023
 ms.search.form: 
 ---
 
