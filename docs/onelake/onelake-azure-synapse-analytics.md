@@ -30,13 +30,11 @@ Azure Synapse is a limitless analytics service that brings together enterprise d
 
    :::image type="content" source="media\onelake-azure-synapse-analytics\properties-context-menu.png" alt-text="Screenshot showing where to open the Properties pane lakehouse explorer." lightbox="media\onelake-azure-synapse-analytics\properties-context-menu.png":::
 
-1. Copy the ABFS path, which should look like the following:
+1. Copy the **ABFS path** from the properties pane.
 
-   ```
-   abfss://WorkspaceName@onelake.dfs.fabric.microsoft.com/LakehouseName.lakehouse/Tables
-   ```
+   :::image type="content" source="media\onelake-azure-synapse-analytics\abfs-path.png" alt-text="Screenshot showing where to copy the ABFS path." lightbox="media\onelake-azure-synapse-analytics\abfs-path.png":::
 
-1. Back in the Azure Synapse notebook, in the first new code cell, provide the lakehouse path you previously copied. This is where your data will be written. Run the cell.
+1. Back in the Azure Synapse notebook, in the first new code cell, provide the lakehouse path. This is where your data will be written later. Run the cell.
 
    ```python
    # Replace the path below with the ABFS path to your lakehouse Tables folder. 
