@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # How to create an Azure SQL Database connection
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This article outlines how to set up connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview).
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -159,7 +157,7 @@ The following properties in the table are the supported authentication types.
 |- Service Principal ID|The application's client ID.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
 
-## Next Steps
+## Next steps
 
 - [How to configure Azure SQL Database in copy activity](connector-azure-sql-database-copy-activity.md)
 - [Connect to an Azure SQL database in dataflows](connector-azure-sql-database-dataflow.md)
