@@ -1,6 +1,6 @@
 ---
-title: Lakehouse tutorial - introduction
-description: Read the introduction to the Microsoft Fabric Lakehouse end-to-end scenario before you begin the tutorial.
+title: "Lakehouse end-to-end scenario: overview and architecture"
+description: This article describes the lakehouse end-to-end scenario including its architecture, the various components involved in its implementation, and the dataset used.
 ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
@@ -8,13 +8,13 @@ ms.topic: tutorial
 ms.date: 4/28/2023
 ---
 
-# Lakehouse tutorial: Introduction to Microsoft Fabric
+# Lakehouse end-to-end scenario: overview and architecture
 
 Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place. For more information, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
 
-## Purpose of this tutorial
+This tutorial walks you through an end-to-end scenario from data acquisition to data consumption. It helps you build a basic understanding of Fabric, including the different workloads and how they integrate, as well as the professional and citizen developer experiences that come with working on this platform. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
-This tutorial walks you step-by-step through an end-to-end scenario from data acquisition to data consumption. It builds a basic understanding of Fabric, the various workloads, their integration points, and the Fabric professional and citizen developer experiences. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Lakehouse end-to-end scenario
 
@@ -29,62 +29,65 @@ This tutorial explains how a developer at the fictional Wide World Importers com
 1. Sign in to your Power BI account, or if you don’t have one yet, [sign up for a free trial](../placeholder.md).
 
 1. Build and implement an end-to-end lakehouse for your organization:
-   1. [Create a Fabric workspace](tutorial-lakehouse-get-started.md)
-   1. [Create a lakehouse](tutorial-build-lakehouse.md) - an optional module to implement medallion architecture (Bronze, Silver, and Gold).
-   1. [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse - bronze, silver, and gold zones as delta lake tables for medallion architecture.
-   1. Explore OneLake, OneCopy of your data across lake mode and warehouse mode
-   1. Connect to your lakehouse using TDS/SQL endpoint.
-   1. [Create a Power BI report using DirectLake](tutorial-lakehouse-build-report.md) - to analyze sales data across different dimensions.
-   1. Orchestrate and schedule data ingestion and transformation flow with Pipeline.
+
+   * [Create a Fabric workspace](tutorial-lakehouse-get-started.md)
+   * [Create a lakehouse](tutorial-build-lakehouse.md). It includes an optional section to implement the medallion architecture that is the bronze, silver, and gold layers.
+   * [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform data](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse. Load data from the bronze, silver, and gold zones as delta lake tables. You can also explore the OneLake, OneCopy of your data across lake mode and warehouse mode.
+   * Connect to your lakehouse using TDS/SQL endpoint and [Create a Power BI report using DirectLake](tutorial-lakehouse-build-report.md) to analyze sales data across different dimensions.
+   * Optionally, you can orchestrate and schedule data ingestion and transformation flow with a pipeline.
 
 1. [Clean up resources](tutorial-lakehouse-clean-up.md) by deleting the workspace and other items.
 
-## Lakehouse end-to-end architecture
+## Architecture
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\lakehouse-end-to-end-architecture.png" alt-text="Diagram of the end-to-end architecture of a lakehouse in Microsoft Fabric." lightbox="media\tutorial-lakehouse-introduction\lakehouse-end-to-end-architecture.png":::
+The following image shows the lakehouse end-to-end architecture. The components involved are described in detailed below:
 
-**Data sources** - Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data from.
+:::image type="content" source="media\tutorial-lakehouse-introduction\lakehouse-end-to-end-architecture.png" alt-text="Diagram of the end-to-end architecture of a lakehouse in Microsoft Fabric.":::
 
-**Ingestion** - With 200+ native connectors as part of the Fabric pipeline and with drag and drop data transformation with dataflow, you can quickly build insights for your organization. Shortcut is a new feature in Fabric that provides a way to connect to existing data without having to copy or move it.
+* **Data sources**: Fabric makes it quick and easy to connect to Azure Data Services, as well as other cloud-based platforms and on-premises data sources, for streamlined data ingestion.
 
-**Transform and store** - Fabric standardizes on Delta Lake format, which means all the engines of Fabric can read and work on the same dataset stored in OneLake - no need for data duplicity. This storage allows you to build lakehouses using a medallion architecture or data mesh based on your organizational need. For transformation, you can choose either low-code or no-code experience with pipelines/dataflows or notebook/Spark for a code first experience.
+* **Ingestion**: You can quickly build insights for your organization using more than 200 native connectors. These connectors are integrated into the Fabric pipeline and utilize the user-friendly drag-and-drop data transformation with dataflow. Additionally, with the Shortcut feature in Fabric you can connect to existing data, without having to copy or move it.
 
-**Consume** - Data from Lakehouse can be consumed by Power BI, industry leading business intelligence tool, for reporting and visualization. Each Lakehouse comes with a built-in TDS/SQL endpoint for easily connecting to and querying data in the Lakehouse tables from other reporting tools, when needed. When a Lakehouse is created a secondary item, called a Warehouse, is automatically generated at the same time with the same name as the Lakehouse and this Warehouse item provides you with the TDS/SQL endpoint.
+* **Transform and store**: Fabric standardizes on Delta Lake format. Which means all the Fabric engines can access and manipulate the same dataset stored in OneLake without duplicating data. This storage system provides the flexibility to build lakehouses using a medallion architecture or a data mesh, depending on your organizational requirement. You can choose between a low-code or no-code experience for data transformation, utilizing either pipelines/dataflows or notebook/Spark for a code-first experience.
 
-## Sample data
+* **Consume**: Power BI can consume data from the Lakehouse for reporting and visualization. Each Lakehouse has a built-in TDS/SQL endpoint, for easy connectivity and querying of data in the Lakehouse tables from other reporting tools. Additionally, when a Lakehouse is created, a corresponding secondary item called a Warehouse is automatically generated with the same name as the Lakehouse. It provides users with the TDS/SQL endpoint functionality.
 
-For sample data, we're going to use [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true). For our lakehouse end-to-end scenario, we have generated sufficient data for a sneak peek into the scale and performance capabilities of the Fabric platform.
+## Sample dataset
 
-Wide World Importers (WWI) is a wholesale novelty goods importer and distributor operating from the San Francisco Bay area. As a wholesaler, WWI's customers are mostly companies who resell to individuals. WWI sells to retail customers across the United States including specialty stores, supermarkets, computing stores, tourist attraction shops, and some individuals. WWI also sells to other wholesalers via a network of agents who promote the products on WWI's behalf. Learn more about their company profile and operation: [Wide World Importers sample databases for Microsoft SQL](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true).
+This tutorial uses the [Wide World Importers (WWI) sample database](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true). For the lakehouse end-to-end scenario, we have generated sufficient data to explore the scale and performance capabilities of the Fabric platform.
 
-Typically, you would bring data from transactional systems (or line of business applications) into a lakehouse, however for simplicity of this tutorial, we use the dimensional model provided by WWI as our initial data source. We use it as the source to ingest the data into a lakehouse and transform it through different stages (Bronze, Silver, and Gold) of a medallion architecture.
+Wide World Importers (WWI) is a wholesale novelty goods importer and distributor operating from the San Francisco Bay area. As a wholesaler, WWI's customers mostly include companies who resell to individuals. WWI sells to retail customers across the United States including specialty stores, supermarkets, computing stores, tourist attraction shops, and some individuals. WWI also sells to other wholesalers via a network of agents who promote the products on WWI's behalf. To learn more about their company profile and operation, see [Wide World Importers sample databases for Microsoft SQL](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true).
+
+In general, data is brought from transactional systems or line-of-business applications into a lakehouse. However, for the sake of simplicity in this tutorial, we will use the dimensional model provided by WWI as our initial data source. We use it as the source to ingest the data into a lakehouse and transform it through different stages (Bronze, Silver, and Gold) of a medallion architecture.
 
 ## Data model
 
-While the WWI dimensional model contains multiple fact tables, for simplicity in explanation we focus on the Sale Fact table and its related dimensions only, as shown in the following example, to demonstrate this end-to-end lakehouse scenario:
+While the WWI dimensional model contains numerous fact tables, for this tutorial, we will use the *Sale* fact table and its correlated dimensions. The following example illustrates the WWI data model:
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\model-sale-fact-table.png" alt-text="Diagram of the Sale Fact table and related dimensions for this tutorial's data model." lightbox="media\tutorial-lakehouse-introduction\model-sale-fact-table.png":::
+:::image type="content" source="media\tutorial-lakehouse-introduction\model-sale-fact-table.png" alt-text="Diagram of the Sale Fact table and related dimensions for this tutorial's data model.":::
 
-## End-to-end data and transformation flow
+## Data and transformation flow
 
-Earlier, we described the [Wide World Importers (WWI) sample data](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true), which we're going to leverage in building this end to end lakehouse. For this implementation, this sample data is in an Azure Data storage account in Parquet file format for all the tables, however in your real-world implementation data would likely come from varieties of sources and in a variety of formats.
+As described earlier, we will use the sample data from [Wide World Importers (WWI) sample data](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true) to build this end-to-end lakehouse. In this implementation, the sample data is stored in an Azure Data storage account in Parquet file format for all the tables. However, in real-world scenarios, data would typically originate from various sources and in diverse formats.
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\data-transformation-flow.png" alt-text="Diagram of how data flows and transforms in Microsoft Fabric." lightbox="media\tutorial-lakehouse-introduction\data-transformation-flow.png":::
+The following image shows the source, destination and data transformation:
 
-**Data Source** - source data is in Parquet file format in an unpartitioned structure, stored in a folder for each table. In this tutorial, we set up a pipeline to copy/ingest the complete historical or onetime data to the lakehouse.
+:::image type="content" source="media\tutorial-lakehouse-introduction\data-transformation-flow.png" alt-text="Diagram of how data flows and transforms in Microsoft Fabric.":::
 
-To demonstrate process and capabilities for subsequent incremental data load, we have an optional module at the end of this tutorial. In that module, we use a fact table (Sale) which has one parent folder with all the historical data for 11 months (one subfolder for each month) and another folder only for incremental data for three months (one subfolder for each month). During initial data ingestion, 11 months of data are ingested or written into the lakehouse table. However, when the incremental data arrives, it has updated data for Oct and Nov and new data for Dec, so Oct and Nov data are merged and new data for Dec is written into lakehouse table as depicted in the following figure.
+* **Data Source**: The source data is in Parquet file format and in an unpartitioned structure. It's stored in a folder for each table. In this tutorial, we set up a pipeline to ingest the complete historical or onetime data to the lakehouse.
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\incremental-data-load.png" alt-text="Diagram showing how changed data can be incrementally merged into initially ingested data in a lakehouse." lightbox="media\tutorial-lakehouse-introduction\incremental-data-load.png":::
+  To demonstrate the capabilities for incremental data load, we have an optional module at the end of this tutorial. In that module, we use the *Sale* fact table, which has one parent folder with historical data for 11 months (with one subfolder for each month) and another folder containing incremental data for three months (one subfolder for each month). During the initial data ingestion, 11 months of data are ingested into the lakehouse table. However, when the incremental data arrives, it includes updated data for Oct and Nov, and new data for Dec. Oct and Nov data is merged with the existing data and the new Dec data is written into lakehouse table as shown in the following image:
 
-**Lakehouse** - For this implementation and for simplicity’s sake, we'll create one lakehouse, ingest data into Files section of the lakehouse and then create delta lake tables in the Tables section of the lakehouse.
+  :::image type="content" source="media\tutorial-lakehouse-introduction\incremental-data-load.png" alt-text="Diagram showing how changed data can be incrementally merged into initially ingested data in a lakehouse.":::
 
-You can find an optional module at the end of this tutorial, which covers creating the lakehouse with medallion architecture (Bronze, Silver, and Gold) and talks about its recommended approach.
+* **Lakehouse**: In this tutorial, you will create a lakehouse, ingest data into the files section of the lakehouse and then create delta lake tables in the Tables section of the lakehouse. You can find an optional module at the end of this tutorial, which covers creating the lakehouse with medallion architecture some recommendations.
 
-**Transform** - For data preparation and transformation, we demonstrate the use of Notebooks/Spark for code first users and demonstrate Pipelines/Dataflow for low-code/no-code users.
+* **Transform**: For data preparation and transformation, you will see two different approaches. We will demonstrate the use of Notebooks/Spark for users who prefer a code-first experience and use pipelines/dataflow for users who prefer a low-code or no-code experience.
 
-**Consume** - To demonstrate data consumption, you learn how you can use the DirectLake feature of Power BI to create reports/dashboards and directly query data from the lakehouse. Further, to demonstrate how you can make your data available to third party reporting tools, you can use TDS/SQL endpoint to connect to Warehouse and run SQL-based queries for analytics.
+* **Consume**: To demonstrate data consumption, you will see how you can use the DirectLake feature of Power BI to create reports, dashboards and directly query data from the lakehouse. Additionally, we will demonstrate how you can make your data available to third party reporting tools by using the TDS/SQL endpoint. This endpoint allows you to connect to the warehouse and run SQL queries for analytics.
 
 ## Next steps
 
-- [Lakehouse tutorial: Get started](tutorial-lakehouse-get-started.md)
+Advance to the next article to learn how to
+> [!div class="nextstepaction"]
+> [Create a lakehouse](tutorial-lakehouse-get-started.md)

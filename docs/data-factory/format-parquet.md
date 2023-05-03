@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # Parquet format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This article outlines how to configure Parquet format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported capabilities
 
@@ -83,3 +81,7 @@ The following properties are supported in the copy activity **Destination** sect
 |**Compression type**|The compression codec used to write Parquet files.|Choose from: <br>**None** <br>**gzip (.gz)**<br>**snappy**<br>**lzo**<br>**Brotli (.br)**<br>**Zstandard**<br>**lz4**<br>**lz4frame**<br>**bzip2 (.bz2)**<br>**lz4hadoop** |No|compressionCodec: <br><br>gzip<br>snappy<br>lzo<br>brotli<br>zstd<br>lz4<br>lz4frame<br>bz2<br>lz4hadoop|
 |**Max rows per file**| When writing data into a folder, you can choose to write to multiple files and specify the max rows per file. Specify the max rows that you want to write per file.|< your max rows per file > | No| maxRowsPerFile |
 |**File name prefix**| Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, file name prefix will be auto generated. This property does not apply when source is file based store or partition option enabled data store.|< your file name prefix > |No| fileNamePrefix|
+
+## Next steps
+
+[Connectors overview](connector-overview.md)
