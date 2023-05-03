@@ -38,7 +38,7 @@ This tutorial explains how a developer at the fictional Wide World Importers com
 
 1. [Clean up resources](tutorial-lakehouse-clean-up.md) by deleting the workspace and other items.
 
-## Lakehouse end-to-end architecture
+## Architecture
 
 The following image shows the lakehouse end-to-end architecture. The components involved are described in detailed below:
 
@@ -64,21 +64,21 @@ In general, data is brought from transactional systems or line-of-business appli
 
 While the WWI dimensional model contains numerous fact tables, for this tutorial, we will use the *Sale* fact table and its correlated dimensions. The following example illustrates the WWI data model:
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\model-sale-fact-table.png" alt-text="Diagram of the Sale Fact table and related dimensions for this tutorial's data model." lightbox="media\tutorial-lakehouse-introduction\model-sale-fact-table.png":::
+:::image type="content" source="media\tutorial-lakehouse-introduction\model-sale-fact-table.png" alt-text="Diagram of the Sale Fact table and related dimensions for this tutorial's data model.":::
 
-## End-to-end data and transformation flow
+## Data and transformation flow
 
 As described earlier, we will use the sample data from [Wide World Importers (WWI) sample data](/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true) to build this end-to-end lakehouse. In this implementation, the sample data is stored in an Azure Data storage account in Parquet file format for all the tables. However, in real-world scenarios, data would typically originate from various sources and in diverse formats.
 
 The following image shows the source, destination and data transformation:
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\data-transformation-flow.png" alt-text="Diagram of how data flows and transforms in Microsoft Fabric." lightbox="media\tutorial-lakehouse-introduction\data-transformation-flow.png":::
+:::image type="content" source="media\tutorial-lakehouse-introduction\data-transformation-flow.png" alt-text="Diagram of how data flows and transforms in Microsoft Fabric.":::
 
 * **Data Source**: The source data is in Parquet file format and in an unpartitioned structure. It's stored in a folder for each table. In this tutorial, we set up a pipeline to ingest the complete historical or onetime data to the lakehouse.
 
   To demonstrate the capabilities for incremental data load, we have an optional module at the end of this tutorial. In that module, we use the *Sale* fact table, which has one parent folder with historical data for 11 months (with one subfolder for each month) and another folder containing incremental data for three months (one subfolder for each month). During the initial data ingestion, 11 months of data are ingested into the lakehouse table. However, when the incremental data arrives, it includes updated data for Oct and Nov, and new data for Dec. Oct and Nov data is merged with the existing data and the new Dec data is written into lakehouse table as shown in the following image:
 
-  :::image type="content" source="media\tutorial-lakehouse-introduction\incremental-data-load.png" alt-text="Diagram showing how changed data can be incrementally merged into initially ingested data in a lakehouse." lightbox="media\tutorial-lakehouse-introduction\incremental-data-load.png":::
+  :::image type="content" source="media\tutorial-lakehouse-introduction\incremental-data-load.png" alt-text="Diagram showing how changed data can be incrementally merged into initially ingested data in a lakehouse.":::
 
 * **Lakehouse**: In this tutorial, you will create a lakehouse, ingest data into the files section of the lakehouse and then create delta lake tables in the Tables section of the lakehouse. You can find an optional module at the end of this tutorial, which covers creating the lakehouse with medallion architecture some recommendations.
 
