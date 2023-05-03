@@ -59,7 +59,7 @@
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
       - name: Configure in dataflow gen2
         href: connector-azure-data-lake-storage-gen2-dataflows.md
-    - name: Azure SQL Database
+    - name: Azure SQL database
       items:
       - name: Overview
         href: connector-azure-sql-database-overview.md
@@ -83,7 +83,7 @@
         href: format-excel.md
       - name: Connect in dataflows
         href: connector-excel-dataflows.md
-    - name: Google cloud Storage
+    - name: Google Cloud Storage
       items:
       - name: Overview
         href: connector-google-cloud-storage-overview.md
@@ -103,7 +103,7 @@
         href: connector-http-copy-activity.md
       - name: Connect to dataflows
         href: connector-http-dataflows.md
-    - name: KQL Database
+    - name: KQL database
       items:
       - name: Overview
         href: connector-kql-database-overview.md
