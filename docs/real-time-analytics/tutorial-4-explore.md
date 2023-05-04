@@ -22,6 +22,7 @@ The first step in data analysis is often to take a look at a subset of the data 
 > [!NOTE]
 > The query editor comes with syntax highlighting and IntelliSense, so you can quickly ramp-up your knowledge of the Kusto Query Language.
 
+1. Browse to your KQL database named **NycTaxiDB**.
 1. In the **Object tree**, select the **more menu** [...] on the **nyctaxitrips** table. Select **Query table** > **Show any 100 records**. 
 
     :::image type="content" source="media/realtime-analytics-tutorial/kql-sample-queries.png" alt-text="Screenshot of Object tree showing the More menu of a table. The option titled Query table is highlighted.":::

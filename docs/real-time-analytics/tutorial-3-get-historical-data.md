@@ -19,7 +19,7 @@ One-time data loading is often needed for historical data, or to add dimension t
 
 ## Get dimension data from blob storage
 
-1. Navigate to your KQL database named **NycTaxiDB**.
+1. Browse to your KQL database named **NycTaxiDB**.
 1.  Select **Get data** > **Blob container**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/get-data-blob-container.png" alt-text="Screenshot of get data from blob container.":::

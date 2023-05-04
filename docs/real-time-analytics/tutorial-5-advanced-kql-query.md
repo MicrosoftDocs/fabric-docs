@@ -13,15 +13,16 @@ ms.search.form: product-kusto
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 4: Explore your data with KQL and SQL](tutorial-4-explore.md) t
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 4: Explore your data with KQL and SQL](tutorial-4-explore.md)
 
-In this module, you'll write queries using [Kusto Query Language](/azure/data-explorer/kusto/query/) to explore the NYC Taxi data and the location data. Kusto Query Language is a powerful tool to explore your data and discover patterns, identify anomalies and outliers, create statistical modeling, and more. The query uses schema entities that are organized in a hierarchy similar to SQLs: databases, tables, and columns. A KQL query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. 
+In this module, you'll write adbanced queries using [Kusto Query Language](/azure/data-explorer/kusto/query/) to explore the NYC Taxi data and the location data. 
 
 ## Create a KQL queryset
 
 In the following step, you'll use the advanced data analysis
 capabilities of Kusto Query Language to query the two tables you have ingested in the database.
 
+1. Browse to your KQL database named **NycTaxiDB**.
 1.  Select **New related item** > **KQL Queryset**
 
     :::image type="content" source="media/realtime-analytics-tutorial/new-kql-queryset.png" alt-text="Screenshot to create a new related KQL queryset.":::
@@ -41,7 +42,7 @@ capabilities of Kusto Query Language to query the two tables you have ingested i
 
     :::image type="content" source="media/realtime-analytics-tutorial/top-10-by-count.png" alt-text="Screenshot of query result in Real-Time Analytics in Microsoft Fabric.":::
 
-1. This query adds a step to the previous query by looking up the corresponding zones of the top 10 pickup locations using the *Locations* table.
+1. This query adds a step to the previous query by looking up the corresponding zones of the top 10 pickup locations using the *Locations* table. The [lookup operator](/azure/data-explorer/kusto/query/lookupoperator?context=/fabric/context/context&pivots=fabric) extends the columns of a fact table with values looked-up in a dimension table.
 
     ```kusto
     nyctaxitrips
@@ -53,7 +54,7 @@ capabilities of Kusto Query Language to query the two tables you have ingested i
 
     :::image type="content" source="media/realtime-analytics-tutorial/top-10-locations.png" alt-text="Screenshot of top 10 location results in Real-Time Analytics in Microsoft Fabric.":::
 
-1.  Let's check anomalies in the tips that have been given by the customers in the Manhattan borough. Hover over the red dots to see the values.
+1.  KQL also provides machine learning functions to detect anomalies. Let's check anomalies in the tips that have been given by the customers in the Manhattan borough. This query uses the [series_decompose_anomalies function](/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?context=/fabric/context/context&pivots=fabric). 
 
     ```kusto
     nyctaxitrips
@@ -66,7 +67,9 @@ capabilities of Kusto Query Language to query the two tables you have ingested i
 
     :::image type="content" source="media/realtime-analytics-tutorial/anomaly-chart.png" alt-text="Screenshot of anomaly chart result in Real-Time Analytics in Microsoft Fabric.":::
 
-1.  To ensure that the sufficient taxis are working in the Manhattan borough, forecast the number of taxis needed per hour.
+    Hover over the red dots to see the values of the anomalies.
+
+1.  You can also use the predictive power of the [series_decompose_forecast function](/azure/data-explorer/kusto/query/series-decompose-forecastfunction?context=/fabric/context/context&pivots=fabric) to ensure that the sufficient taxis are working in the Manhattan borough and forecast the number of taxis needed per hour.
 
     ```kusto
     nyctaxitrips
