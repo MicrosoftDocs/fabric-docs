@@ -4,6 +4,7 @@ description: Learn how to buy a Microsoft Fabric license.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
+ms.service: azure
 ms.date: 05/23/2023
 ---
 

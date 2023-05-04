@@ -4,6 +4,7 @@ description: Learn how to opt out of Microsoft Fabric features that don't meet t
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
@@ -55,5 +56,4 @@ To enable noncompliant features, do the following:
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+[Admin overview](admin-overview.md)

@@ -4,6 +4,7 @@ description: Learn how to set up and enable metadata scanning in your organizati
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
@@ -48,7 +49,11 @@ If the detailed low-level metadata requested isn't in the cache, it's not return
 ## Next steps
 
 * [Metadata scanning overview](../governance/metadata-scanning-overview.md)
+
 * [Enable service principal authentication for read-only admin APIs](../governance/metadata-scanning-enable-read-only-apis.md)
+
 * [Run metadata scanning](../governance/metadata-scanning-run.md)
+
 * [Power BI REST Admin APIs](/rest/api/power-bi/admin)
+
 * More questions? Try asking the [Power BI Community](https://community.powerbi.com)
