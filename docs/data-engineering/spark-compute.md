@@ -15,22 +15,22 @@ ms.date: 02/24/2023
 
 ## Starter Pools
 
-Starter pools, an advanced feature of the [!INCLUDE [product-name](../includes/product-name.md)] platform, enable users to quickly access Spark sessions within 10-15 seconds, streamlining their engagement with tasks and promoting increased productivity as well as expedited time-to-insight. These pools are a key component of [!INCLUDE [product-name](../includes/product-name.md)] Data Engineering and Data Science workloads.
+Starter pools, an advanced feature of the [!INCLUDE [product-name](../includes/product-name.md)] platform, enable users to quickly access Spark sessions within 10-15 seconds, streamlining their engagement with tasks and promoting increased productivity and expedited time-to-insight. These pools are a key component of [!INCLUDE [product-name](../includes/product-name.md)] Data Engineering and Data Science workloads.
 
 :::image type="content" source="media\spark-compute\starter-pool-configuration.png" alt-text="Image showing starter pool configuration" lightbox="media\spark-compute\starter-pool-configuration.png":::
 
-Managed and prewarmed, the clusters within starter pools come equipped with an idle Spark session, ready to be allocated to user-submitted requests from a [!INCLUDE [product-name](../includes/product-name.md)] workspace. Starter pools are outfitted with Medium nodes and incorporate Auto-scale and Dynamic allocation functionalities, allowing the live clusters to seamlessly adapt to Spark job requirements.
+Managed and prewarmed, the clusters within starter pools come equipped with an idle Spark session, ready to be allocated to user-submitted requests from a [!INCLUDE [product-name](../includes/product-name.md)] workspace. Starter pools are outfitted with Medium nodes and incorporate Autoscale and Dynamic allocation functionalities, allowing the live clusters to seamlessly adapt to Spark job requirements.
 
 :::image type="content" source="media\spark-compute\starter-pool-high-level.png" alt-text="Image showing high level design of starter pools." lightbox="media\spark-compute\starter-pool-high-level.png":::
 
-Pre-configured with default settings, starter pools support inline library installations after securing the live session without impacting the rapid 5 to 10-second session start experience. However, the adding custom Spark properties or libraries through workspace or capacity settings may result in a 2 to 3-minute session start latency for on-demand cluster acquisition. In terms of billing, users are only charged for capacities when Spark sessions are active and executing queries, while no charges are incurred during prewarming periods.
+Preconfigured with default settings, starter pools support inline library installations after securing the live session without impacting the rapid 5-second to 10-second session start experience. However, the adding custom Spark properties or libraries through workspace or capacity settings may result in a 2-minute to 3-minute session start latency for on-demand cluster acquisition. In terms of billing, users are only charged for capacities when Spark sessions are active and executing queries, while no charges are incurred during prewarming periods.
 
 ## Spark Pools
 
-A Spark pool is a collection of metadata that outlines the compute resource requirements and associated behavior attributes for a Spark instance upon creation. These attributes encompass elements such as the name, number of nodes, node size, and scaling behavior. It is important to note that creating a Spark pool does not consume any resources or incur costs. Charges only arise when a Spark job is executed on the designated Spark pool, causing the Spark instance to be instantiated as needed. Additionally, the "time to live" property for all custom pool sessions is set to a default duration of 2 minutes following the session's conclusion. Workspace admins can create custom spark pools (if they authorized by [!INCLUDE [product-name](../includes/product-name.md)] capacity admins)and select these pools as the default compute option for a [!INCLUDE [product-name](../includes/product-name.md)] workspace. Once selected as users submit notebook or spark job defintion jobs, the spark sessions are created in an on-demand manner and take ~3 minutes (as it involves acquiring the VM from Azure based on the compute specifications specified by the users) unlike the prewarmed starter pools.
-Admins can create these custom spark pools and size them based on the cores thats available in their [!INCLUDE [product-name](../includes/product-name.md)] capacity. Each [!INCLUDE [product-name](../includes/product-name.md)] capacity SKU offers a set of capacity units and these capacity units are converted to spark VCores (1 Spark VCore = Capacity Unis * 2).
+A Spark pool is a collection of metadata that outlines the compute resource requirements and associated behavior attributes for a Spark instance upon creation. These attributes encompass elements such as the name, number of nodes, node size, and scaling behavior. It's important to note that creating a Spark pool doesn't consume any resources or incur costs. Charges only arise when a Spark job is executed on the designated Spark pool, causing the Spark instance to be instantiated as needed. Additionally, the "time to live" property for all custom pool sessions is set to a default duration of 2 minutes following the session's conclusion. Workspace admins can create custom spark pools (if they authorized by [!INCLUDE [product-name](../includes/product-name.md)] capacity admins) and select these pools as the default compute option for a [!INCLUDE [product-name](../includes/product-name.md)] workspace. Once selected as users submit notebook or spark job definition jobs, the spark sessions are created in an on-demand manner and take ~3 minutes (as it involves acquiring the VM from Azure based on the compute specifications specified by the users) unlike the prewarmed starter pools.
+Admins can create these custom spark pools and size them based on the cores that's available in their [!INCLUDE [product-name](../includes/product-name.md)] capacity. Each [!INCLUDE [product-name](../includes/product-name.md)] capacity SKU offers a set of capacity units and these capacity units are converted to spark VCores (one Spark VCore = Capacity Unis * 2).
 
-For example if you are using a Fabric capacity SKU F64, that offers 64 Compute Units (which traslate to 128 spark VCores), you would be able to size your custom pool with node sizes and number of nodes not exceeding 128 Spark VCores. 
+For example if you're using a Fabric capacity SKU F64, that offers 64 Compute Units (which translate to 128 spark VCores) you would be able to size your custom pool with node sizes and number of nodes not exceeding 128 Spark VCores. 
 
 Possible custom pool configurations for F64 based on the above example 
 
@@ -52,27 +52,26 @@ Apache Spark pool instance consists of one head node and two or more worker node
 
 ## Node Sizes
 
-A Spark pool can be defined with node sizes that range from a Small compute node with 4 vCore and 32 GB of memory up to a XXLarge compute node with 64 vCore and 512 GB of memory per node. Node sizes can be altered after pool creation although the active session would have to be restarted. 
+A Spark pool can be defined with node sizes that range from a Small compute node with 4 vCore and 32 GB of memory up to a XX-Large compute node with 64 vCore and 512 GB of memory per node. Node sizes can be altered after pool creation although the active session would have to be restarted. 
 
 |Size| vCore|Memory|
 |:-----:|:-----:|:------:|
 |Small |4|32 GB|
 |Medium |8|64 GB|
 |Large |16|128 GB|
-|XLarge |32|256 GB|
-|XXLarge |64|512 GB|
+|X-Large |32|256 GB|
+|XX-Large |64|512 GB|
 
 ## Autoscale
 
-Autoscale for Apache Spark pools allows automatic scale up and down of compute resources based on the amount of activity. When the autoscale feature is enabled, you set the minimum, and maximum number of nodes to scale. When the autoscale feature is disabled, the number of nodes set will remain fixed. This setting can be altered after pool creation although the instance may need to be restarted.
+Autoscale for Apache Spark pools allows automatic scale up and down of compute resources based on the amount of activity. When the autoscale feature is enabled, you set the minimum, and maximum number of nodes to scale. When the autoscale feature is disabled, the number of nodes set remain fixed. This setting can be altered after pool creation although the instance may need to be restarted.
 
 ## Dynamic Allocation 
 
-Dynamic allocation allows the spark application to request more number of executors if the tasks exceed the load that current executors can bear. It also releases the executors when the jobs are completed and if the spark application is moving to idle state. Enterprise users often find it hard to tune the executor configurations as they're vastly different across different stages of a Spark Job Execution process, which are also dependent on the volume of data processed which changes from time to time. Users can enable Dynamic Allocation of Executors option as part of the pool configuration, which would enable automatic allocation of executors to the spark application based on the nodes available in the Spark Pool.
+Dynamic allocation allows the spark application to request number of executors if the tasks exceed the load that current executors can bear. It also releases the executors when the jobs are completed and if the spark application is moving to idle state. Enterprise users often find it hard to tune the executor configurations as they're vastly different across different stages of a Spark Job Execution process, which are also dependent on the volume of data processed which changes from time to time. Users can enable Dynamic Allocation of Executors option as part of the pool configuration, which would enable automatic allocation of executors to the spark application based on the nodes available in the Spark Pool.
 When Dynamic Allocation option is enabled, for every spark application submitted, the system reserves executors during the job submission step based on the Max Nodes, which were specified by the user to support successful auto scale scenarios.
 
 ## Next steps
 
->[!div class="nextstepaction"]
 >[Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](data-engineering-and-data-science-capacity-settings-overview.md)
 >[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](spark-workspace-admin-settings.md)
