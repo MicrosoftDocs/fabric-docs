@@ -15,12 +15,9 @@ ms.search.form: product-kusto
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 4: Explore your data with KQL and SQL](tutorial-4-explore.md)
 
-In this module, you'll write adbanced queries using [Kusto Query Language](/azure/data-explorer/kusto/query/) to explore the NYC Taxi data and the location data. 
-
 ## Create a KQL queryset
 
-In the following step, you'll use the advanced data analysis
-capabilities of Kusto Query Language to query the two tables you have ingested in the database.
+In the following step, you'll use the advanced data analysis capabilities of Kusto Query Language to query the two tables you have ingested in the database.
 
 1. Browse to your KQL database named **NycTaxiDB**.
 1.  Select **New related item** > **KQL Queryset**
@@ -31,6 +28,8 @@ capabilities of Kusto Query Language to query the two tables you have ingested i
 1. Select **Create**. A query window opens with several autopopulated sample queries.
 
 ## Query data
+
+This section walks you through some of the query and visualization capabilities of the KQL Queryset. Copy and paste the queries in your own query editor to run and visualize the results.
 
 1.  The following query returns the top 10 pickup locations in New York City for Yellow Taxis.
 
