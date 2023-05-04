@@ -17,7 +17,7 @@ Users specify the minimum and maximum nodes for autoscaling, based on which the 
 
 > [!NOTE]
 > For creating a custom spark pool the user must have the admin access for the workspace,  the capacity admin should have enabled the **Customized workspace pools** option in the Spark Compute section of Capacity Admin settings. 
-> Learn more about [Spark Compute Settings for Fabric Capacities](data-engineering-and-data-science-capacity-settings-management.md)
+> Learn more about [Spark Compute Settings for Fabric Capacities](capacity-settings-management.md)
 
 ## Create Custom Spark Pools
 
@@ -25,25 +25,25 @@ To create or manage the Spark Pool associated with your workspace:
 
 1. Go to the **Workspace settings** in your workspace:
 
-   :::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings." lightbox="media\data-engineering-and-science-workspace-admin-settings\workspace-settings.png":::
+   :::image type="content" source="media\workspace-admin-settings\workspace-settings.png" alt-text="Screenshot showing where to select Workspace settings." lightbox="media\workspace-admin-settings\workspace-settings.png":::
 
 2. Then, choose the **Data Engineering/Science** option to expand the menu:
 
-   :::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\data-engineering-and-science-workspace-admin-settings\data-engineering-menu.png":::
+   :::image type="content" source="media\workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\workspace-admin-settings\data-engineering-menu.png":::
 
 3. Navigate to the **Spark Compute** option in your left-hand menu:
 
-   :::image type="content" source="media/data-engineering-and-science-workspace-admin-settings/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view." lightbox="media\data-engineering-and-science-workspace-admin-settings\spark-compute-detail-view.png":::
+   :::image type="content" source="media/workspace-admin-settings/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view." lightbox="media\workspace-admin-settings\spark-compute-detail-view.png":::
 
 4. Select the **New Pool** option in the pool selection drop-down menu and select the node family, and node size from the available sizes Small, Medium, Large, X-Large and XX-Large based on compute requirements for data engineering/science workloads. 
 
-:::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options." lightbox="media\data-engineering-and-science-workspace-admin-settings\custom-pool-creation.png":::
+:::image type="content" source="media\workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options." lightbox="media\workspace-admin-settings\custom-pool-creation.png":::
 
 5. You can even set the minimum node configuration for your custom pools to 1 as [!INCLUDE [product-name](../includes/product-name.md)] Spark provides restorable HA for clusters with single node, so users do not have to worry about job failures, loss of session during failures or about paying for larger compute for smaller spark jobs. 
 
 6. You also have the option to enable or disable autoscaling for your custom Spark pools. When autoscaling is enabled, the pool will dynamically acquire new nodes up to the maximum node limit specified by the user, and then retire them after job execution. This feature ensures better performance by adjusting resources based on the job requirements. You are allowed to size the nodes which fit within the capacity units purchased as part of the Fabric capacity SKU. 
 
-:::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\custom-pool-auto-scale-and-da.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation." lightbox="media\data-engineering-and-science-workspace-admin-settings\custom-pool-auto-scale-and-da.png":::
+:::image type="content" source="media\workspace-admin-settings\custom-pool-auto-scale-and-da.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation." lightbox="media\workspace-admin-settings\custom-pool-auto-scale-and-da.png":::
 
 7. You can also choose to enable dynamic executor allocation for your Spark pool, which automatically determines the optimal number of executors within the user-specified maximum bound. This feature adjusts the number of executors based on data volume, resulting in improved performance and resource utilization.
 
@@ -54,4 +54,4 @@ To create or manage the Spark Pool associated with your workspace:
 ## Next steps
 
 >Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
->[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](data-engineering-and-science-workspace-admin-settings.md)
+>[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](workspace-admin-settings.md)
