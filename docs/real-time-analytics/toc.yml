@@ -70,7 +70,7 @@ items:
   items:
   - name: Visualize data in a Power BI report
     href: create-powerbi-report.md
-  - name: Use data from KQL Databases in Power BI Desktop
+  - name: Use data from a KQL Database in Power BI Desktop
     href: power-bi-data-connector.md
 - name: Event streams
   items:
