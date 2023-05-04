@@ -1,14 +1,14 @@
 ---
-title: Author and execute the notebook
-description: Learn how to develop and run notebooks.
+title: Develop, execute, and manage notebooks
+description: Learn how to use notebooks, including how to add, move and delete a cell. Also learn how to work with languages, code snippets, and images in your notebook.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.date: 03/31/2023
+ms.date: 05/23/2023
 ---
 
-# Author and execute the notebook
+# Develop, execute, and manage Microsoft Fabric notebooks
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

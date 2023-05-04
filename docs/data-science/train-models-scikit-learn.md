@@ -1,15 +1,15 @@
 ---
 title: How to train models with scikit-learn
-description: Learn how to train models with scikit-learn.
+description: Learn how to train models with scikit-learn, a popular open-source machine learning framework that's frequently used for supervised and unsupervised learning.
 ms.reviewer: ssalgado
 ms.author: negust
 author: nelgson
 ms.topic: how-to
-ms.date: 02/10/2023
+ms.date: 05/23/2023
 ms.search.form: Train models with scikit-learn
 ---
 
-# How to train models with scikit-learn
+# How to train models with scikit-learn in Microsoft Fabric
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

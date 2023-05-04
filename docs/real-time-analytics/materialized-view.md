@@ -5,10 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 03/21/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 # Create materialized views
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. There are two types of materialized views:
 
@@ -23,9 +26,8 @@ For more information on the `.create materialized-view` command, see [.create ma
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A Workspace
-* A [KQL database](create-database.md)
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* [KQL database](create-database.md)
 
 ## Materialized view
 

@@ -4,17 +4,15 @@ description: This article explains how to configure Binary format in the data pi
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 03/07/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
 # Binary format for Data Factory in Microsoft Fabric
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+This article outlines how to configure Binary format in Data Factory.
 
-This article outlines how to configure Binary format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported capabilities
 
@@ -108,3 +106,6 @@ The following properties are supported in the copy activity **Destination** sect
 |**Compression type**|The compression codec used to read/write binary files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
 |**Compression level** |The compression ratio. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
 
+## Next steps
+
+[Connectors overview](connector-overview.md)

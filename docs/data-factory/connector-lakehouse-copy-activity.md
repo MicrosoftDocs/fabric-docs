@@ -4,26 +4,24 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/14/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
 # How to configure Lakehouse in copy activity
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This article outlines how to use the copy activity in data pipeline to copy data from and to Trident Lakehouse.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported format
 
 Trident Lakehouse supports the following file formats. Refer to each article for format-based settings.
 
 - Avro format
-- Binary format
-- Delimited text format
-- Excel format
+- [Binary format](format-binary.md)
+- [Delimited text format](format-delimited-text.md)
+- [Excel format](format-excel.md)
 - JSON format
 - ORC format
 - Parquet format
@@ -171,3 +169,6 @@ To learn more information about copy activity in Lakehouse, see the following ta
 |**Metadata** |Set custom metadata when copy to sink.|• `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 |**Max rows per file** |When writing data into a folder, you can choose to write to multiple files and specify the max rows per file.|\<max rows per flie> |No |maxRowsPerFile|
 |**File name prefix** |Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>`_00000.`<fileExtension>`. If not specified, prefix will be auto generated. Not applicable when source is file-based store or source has partition option enabled.| \<flie name prefix> |No |fileNamePrefix|
+
+## Next steps
+[Lakehouse connector overview](connector-lakehouse-overview.md)
