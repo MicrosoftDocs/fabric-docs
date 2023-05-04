@@ -300,7 +300,7 @@ path = mssparkutils.fs.getMountPath("/test")
 ```
 
 > [!NOTE]
-> The “/” of mount point is necessary in *mssparkutils.fs.getMountPath()*, and it doesn’t verify the validity of the mount point now.
+> The “/” of mount point is necessary in *mssparkutils.fs.getMountPath()*, and it doesn't verify the validity of the mount point now.
 
 - List directories:
 

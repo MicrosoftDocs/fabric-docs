@@ -52,7 +52,7 @@ Microsoft Fabric offers the comprehensive set of analytics workloads designed to
 
 - **Real-Time Analytics** - Observational data, which is collected from various sources such as apps, IoT devices, human interactions, and so many more. It's currently the fastest growing data category. This data is often semi-structured in formats like JSON or Text. It comes in at high volume, with shifting schemas. These characteristics make it hard for traditional data warehousing platforms to work with. Real-Time Analytics is best in class engine for observational data analytics. For more information, see [What is Real-Time Analytics in Fabric?](../real-time-analytics/overview.md)
 
-- **Power BI** - Power BI is the world’s leading Business Intelligence platform. It ensures that business owners can access all the data in Fabric quickly and intuitively to make better decisions with data. For more information, see [What is Power BI?](/power-bi/fundamentals/power-bi-overview)
+- **Power BI** - Power BI is the world's leading Business Intelligence platform. It ensures that business owners can access all the data in Fabric quickly and intuitively to make better decisions with data. For more information, see [What is Power BI?](/power-bi/fundamentals/power-bi-overview)
 
 Fabric brings together all these workloads into a unified platform to offer the most comprehensive big data analytics platform in the industry.
 
@@ -66,7 +66,7 @@ The data lake is the foundation on which all the Fabric services are built. Micr
 
 OneLake is built on top of ADLS (Azure Data Lake Storage) Gen2. It provides a single SaaS experience and a tenant-wide store for data that serves both professional and citizen developers. The OneLake SaaS experience simplifies the experiences, eliminating the need for users to understand any infrastructure concepts such as resource groups, RBAC (Role-Based Access Control), Azure Resource Manager, redundancy, or regions. Additionally it doesn't require the user to even have an Azure account.
 
-OneLake eliminates today’s pervasive and chaotic data silos, which individual developers create when they provision and configure their own isolated storage accounts. Instead, OneLake provides a single, unified storage system for all developers, where discovery and data sharing is trivial and compliance with policy and security settings are enforced centrally and uniformly. For more information, see [What is OneLake?](../onelake/onelake-overview.md)
+OneLake eliminates today's pervasive and chaotic data silos, which individual developers create when they provision and configure their own isolated storage accounts. Instead, OneLake provides a single, unified storage system for all developers, where discovery and data sharing is trivial and compliance with policy and security settings are enforced centrally and uniformly. For more information, see [What is OneLake?](../onelake/onelake-overview.md)
 
 :::image type="content" source="media\microsoft-fabric-overview\onelake-in-microsoft-fabric.png" alt-text="Diagram of the structure of Fabric, showing OneLake as the single data store on which all the workloads operate.":::
 
