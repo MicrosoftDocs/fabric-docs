@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 05/23/2023
 ---
 
-# Data Engineering/Science workspace administration settings
+# Spark workspace administration settings in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-and-ds.md)]
 
