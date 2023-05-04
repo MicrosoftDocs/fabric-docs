@@ -9,9 +9,11 @@ ms.date: 02/24/2023
 ---
 # Spark Compute for Data Engineering/Science in Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/applies-to-version/fabric-de-and-ds.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] Data Engineering and Data Science workloads operates on a fully managed Spark compute platform, designed to deliver unparalleled speed and efficiency. With Starter pools, users can expect rapid spark session initialization, typically within 5 to 10 seconds, eliminating the need for manual setup. Furthermore, users also get the flexibility to customize Spark pools according to their specific data engineering and data science requirements, enabling an optimized and tailored analytics experience.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Starter Pools
 

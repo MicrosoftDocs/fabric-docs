@@ -9,9 +9,11 @@ ms.date: 02/24/2023
 ---
 # How to create Custom Spark Pools in Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/applies-to-version/fabric-de-and-ds.md)]
 
 In this document, we'll provide a comprehensive guide on applying Apache Spark pools in [!INCLUDE [product-name](../includes/product-name.md)] for customizing your analytics workloads. Apache Spark pools enable users to create tailored compute environments based on their specific requirements, ensuring optimal performance and resource utilization.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Users specify the minimum and maximum nodes for autoscaling, based on which the system dynamically acquires and retire nodes as the job's compute needs change, resulting in efficient scaling and improved performance. Furthermore, the dynamic allocation of executors in Spark pools alleviates the need for manual executor configuration. Instead, the system adjusts the number of executors depending on the data volume and job-level compute needs thereby enabling you to focus on your workloads without worrying about performance optimization and resource management.
 

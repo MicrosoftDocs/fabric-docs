@@ -9,9 +9,11 @@ ms.date: 02/24/2023
 ---
 # Concurrency limits and queueing for Fabric Spark
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/applies-to-version/fabric-de-and-ds.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] allows allocation of compute units through Capacity, which is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different items consume different capacity at a certain time. [!INCLUDE [product-name](../includes/product-name.md)] offers capacity through the Fabric SKU and Trials. For more information, see [What is capacity?](../enterprise/scale-capacity.md)
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 When users create a [!INCLUDE [product-name](../includes/product-name.md)] capacity on Azure, they get to choose a capacity size based on their analytics workload size. When it comes to Spark, users get two spark VCores for every capacity unit they get reserved as part of their SKU.
 
