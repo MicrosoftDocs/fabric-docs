@@ -42,7 +42,7 @@ This article describes the [!INCLUDE [product-name](../includes/product-name.md)
 
 ## Problem formulation and ideation
 
-Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] work on the same platform as business users and analysts. Data sharing and collaboration becomes more seamless across different roles as a result. Analysts can easily share PowerBI reports and datasets with data science practitioners. The ease of collaboration across roles in [product-name](../includes/product-name.md) makes hand-offs during the problem formulation phase much easier. 
+Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] work on the same platform as business users and analysts. Data sharing and collaboration becomes more seamless across different roles as a result. Analysts can easily share PowerBI reports and datasets with data science practitioners. The ease of collaboration across roles in [!INCLUDE [product-name](../includes/product-name.md)] makes hand-offs during the problem formulation phase much easier. 
 
 ## Data Dicovery and pre-processing 
 
@@ -60,7 +60,7 @@ Depending on the data storage location, [!INCLUDE [product-name](../includes/pro
 
 ### Apache Spark and Python for data preparation
 
-[!INCLUDE [product-name](../includes/product-name.md) offers capabilities to transform, prepare, and explore your data at scale. With Spark, users can leverage PySpark/Python, Scala, and SparkR/SparklyR tools for data pre-processing at scale. Powerful open-source visualization libraries can enhance the data exploration experience to help better understand the data. 
+[!INCLUDE [product-name](../includes/product-name.md)] offers capabilities to transform, prepare, and explore your data at scale. With Spark, users can leverage PySpark/Python, Scala, and SparkR/SparklyR tools for data pre-processing at scale. Powerful open-source visualization libraries can enhance the data exploration experience to help better understand the data. 
 
 ### Data Wrangler for seamless data cleansing
 
@@ -70,11 +70,11 @@ The [!INCLUDE [product-name](../includes/product-name.md)] Notebook experience a
 
 With tools like PySpark/Python, SparklyR/R, notebooks can handle machine learning model training.
 
-ML algorithms and libraries can help train machine learning models. Library management tools can install these libraries and algorithms. Users have therefore the option to leverage a large variety of popular machine learning libraries to complete their ML model training in [!INCLUDE [product-name](../includes/product-name.md).
+ML algorithms and libraries can help train machine learning models. Library management tools can install these libraries and algorithms. Users have therefore the option to leverage a large variety of popular machine learning libraries to complete their ML model training in [!INCLUDE [product-name](../includes/product-name.md)].
 
 Additionally, popular libraries like Scikit Learn can also develop models.  
 
-MLflow experiments and runs can track the ML model training. [!INCLUDE [product-name](../includes/product-name.md)] offers a built-in MlFlow experience with which users can interact, to log experiments and models. Learn more about how to use MLflow to track experiments and manage models in [!INCLUDE [product-name](../includes/product-name.md).
+MLflow experiments and runs can track the ML model training. [!INCLUDE [product-name](../includes/product-name.md)] offers a built-in MlFlow experience with which users can interact, to log experiments and models. Learn more about how to use MLflow to track experiments and manage models in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ### SynapseML
  
@@ -86,9 +86,9 @@ Notebooks can handle machine learning model batch scoring with open-source libra
 
 ## Gain insights
 
-In [!INCLUDE [product-name](../includes/product-name.md),Predicted values can easily be written to OneLake, and seamlessly consumed from Power BI reports, with the Power BI Direct Lake mode. This makes it very easy for data science practitioners to share results from their work with stakeholders and it also simplifies operationalization.
+In [!INCLUDE [product-name](../includes/product-name.md)], Predicted values can easily be written to OneLake, and seamlessly consumed from Power BI reports, with the Power BI Direct Lake mode. This makes it very easy for data science practitioners to share results from their work with stakeholders and it also simplifies operationalization.
 
-Notebooks that contain batch scoring can be scheduled to run using the Notebook scheduling capabilities. Batch scoring can also be scheduled as part of data pipeline activities or Spark jobs. Power BI automatically gets the latest predictions without need for loading or refresh of the data, thanks to the Direct lake mode in [!INCLUDE [product-name](../includes/product-name.md).
+Notebooks that contain batch scoring can be scheduled to run using the Notebook scheduling capabilities. Batch scoring can also be scheduled as part of data pipeline activities or Spark jobs. Power BI automatically gets the latest predictions without need for loading or refresh of the data, thanks to the Direct lake mode in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Next steps
 
