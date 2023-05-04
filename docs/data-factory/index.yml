@@ -62,4 +62,8 @@ landingContent:
         links:
           - text: Data source management
             url: data-source-management.md
+          - text: Monitor your dataflows
+            url: dataflows-gen2-monitor.md
+          - text: Save a draft of your dataflow
+            url: dataflows-gen2-save-draft.md
 
