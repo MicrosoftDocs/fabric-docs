@@ -12,7 +12,7 @@ ms.date: 5/23/2023
 
 In this tutorial, you'll build a lakehouse, ingest sample data into the delta table, apply transformation where required, and then create reports.
 
-## Prerequisite
+## Prerequisites
 
 * [Create a Fabric workspace](tutorial-lakehouse-get-started.md)
 
