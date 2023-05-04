@@ -143,19 +143,19 @@ Now that you created a dataflow, you can operate on it in a pipeline.
 
 1. Add a **Dataflow** activity to your data pipeline by selecting **Dataflow** in the **Activities** tab.  
 
-   :::image type="content" source="media/transform-data/add-dataflow-activity.png" alt-text="Screenshot showing where to select the Dataflow option." lightbox="media/transform-data/add-dataflow-activity.png":::
+   :::image type="content" source="media/transform-data/add-dataflow-activity.png" alt-text="Screenshot showing where to select the Dataflow option.":::
 
 1. Choose the dataflow you created in the **Dataflow** activity **Settings** from the drop-down list.
 
-   :::image type="content" source="media/transform-data/choose-dataflow.png" alt-text="Screenshot showing how to choose the dataflow you created." lightbox="media/transform-data/choose-dataflow.png":::
+   :::image type="content" source="media/transform-data/choose-dataflow.png" alt-text="Screenshot showing how to choose the dataflow you created.":::
 
 1. To run the **Dataflow** activity after the copy activity, drag from **Succeeded** on the **Copy** activity to the **Dataflow** activity. The **Dataflow** activity will only run after the **Copy** activity has succeeded.  
 
-   :::image type="content" source="media/transform-data/copy-dataflow-activity.png" alt-text="Screenshot showing how to make the dataflow run take place after the copy activity." lightbox="media/transform-data/copy-dataflow-activity.png":::
+   :::image type="content" source="media/transform-data/copy-dataflow-activity.png" alt-text="Screenshot showing how to make the dataflow run take place after the copy activity.":::
 
 1. Select **Save** to save your data pipeline. Then select **Run** to run your data pipeline and load your data.  
 
-   :::image type="content" source="media/transform-data/save-run-pipeline.png" alt-text="Screenshot showing where to select Run." lightbox="media/transform-data/save-run-pipeline.png":::
+   :::image type="content" source="media/transform-data/save-run-pipeline.png" alt-text="Screenshot showing where to select Run.":::
 
 ## Next steps
 
