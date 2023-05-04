@@ -46,7 +46,7 @@ Before importing the NYC GreenTaxi notebook, create a database.
 
 We've created a sample notebook that takes you through all the necessary steps for loading data into your database using the Spark connector.
 
-1. Open the Fabric samples repository on GitHub to download the [NYC GreenTaxi KQL notebook.](https://github.com/microsoft/fabric-samples/blob/main/samples/real-time-analytics/NYC_GreenTaxi_KQL_notebook.ipynb).
+1. Open the Fabric samples repository on GitHub to download the [NYC GreenTaxi KQL notebook.](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/NYC_GreenTaxi_KQL_notebook.ipynb).
 
     :::image type="content" source="media/spark-connector/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC GreenTaxi notebook. The option titled Raw is highlighted." lightbox="media/spark-connector/raw-notebook.png":::
 

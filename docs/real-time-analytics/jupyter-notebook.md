@@ -46,7 +46,7 @@ The KQL database has now been created within the context of the selected workspa
 
 In this step, you'll use a script to first create a table with specified mapping, and then get data from a public blob into this table.
 
-1. Copy the KQL script from the [Fabric samples repository on GitHub](https://github.com/microsoft/fabric-samples/blob/main/samples/real-time-analytics/IngestNYCTaxi2014.kql)
+1. Copy the KQL script from the [Fabric samples repository on GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/IngestNYCTaxi2014.kql)
 
     :::image type="content" source="media/jupyter-notebook/copy-kql-script.png" alt-text="Screenshot of GitHub repository showing the KQL script for the NYC Taxi demo notebook. The copy icon is highlighted."  lightbox="media/jupyter-notebook/copy-kql-script.png":::
 
@@ -66,7 +66,7 @@ In this step, you'll use a script to first create a table with specified mapping
 
 We've created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your KQL database.
 
-1. Open the Fabric samples repository on GitHub to download the [NYC Taxi KQL Notebook.](https://github.com/microsoft/fabric-samples/blob/main/samples/real-time-analytics/NYC_Taxi_KQL_Notebook.ipynb).
+1. Open the Fabric samples repository on GitHub to download the [NYC Taxi KQL Notebook.](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/NYC_Taxi_KQL_Notebook.ipynb).
 
     :::image type="content" source="media/jupyter-notebook/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC Taxi demo notebook. The option titled Raw is highlighted."  lightbox="media/jupyter-notebook/raw-notebook.png":::
 
