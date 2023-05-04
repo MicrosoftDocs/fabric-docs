@@ -10,11 +10,11 @@ ms.date: 05/23/2023
 
 # Connector overview
 
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] offers a rich set of connectors that allow you to connect to different types of data stores. You can take advantage of those connectors to transform data in dataflows or move a PB-level of dataset with high-scale in a data pipeline.
+
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
-[!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory offers a rich set of connectors that allow you to connect to different types of data stores. You can take advantage of those connectors to transform data in dataflows or move a PB-level of dataset with high-scale in a data pipeline.
 
 ## Supported data connectors in dataflows
 
@@ -22,11 +22,18 @@ Dataflows provide data ingestion and transformation capabilities over a wide ran
 
 :::image type="content" source="media/connector-overview/choose-data-source.png" alt-text="Screenshot of the Choose data source screen." lightbox="media/connector-overview/choose-data-source.png":::
 
-You can find a comprehensive list of all connectors supported through our [public Power Query connectors reference](/power-query/connectors/). Supported connectors match the ones marked as supported in the "Power BI (Dataflows)" column in this reference table.
+You can find a comprehensive list of all connectors supported through our [public Power Query connectors reference](/power-query/connectors/). Supported connectors match the ones marked as supported in the **Power BI (Dataflows)** column in the Power Query reference table.
+
+The following connectors are currently available for output destinations in Dataflow Gen2:
+
+- Azure Data Explorer (Kusto)
+- Azure SQL
+- Data Warehouse
+- Lakehouse
 
 ## Supported data stores in data pipeline
 
-[!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory supports the following data stores in a data pipeline via Copy, Lookup, Get Metadata, and Delete Data activities. Go to each data store to learn the supported capabilities and the corresponding configurations in detail.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] supports the following data stores in a data pipeline via Copy, Lookup, Get Metadata, and Delete Data activities. Go to each data store to learn the supported capabilities and the corresponding configurations in detail.
 
 | **Category** | **Data store** | **Copy activity (source/destination)** | **Lookup activity** | **Get Metadata activity** | **Delete activity** | **Script activity** | **Stored Procedure activity** |
 |---|---|---|---|---|---|---|---|
