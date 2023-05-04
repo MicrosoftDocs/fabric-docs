@@ -53,7 +53,7 @@ Item certification is a significant responsibility, and only authorized users ca
 
     If you're certifying a Power BI dataset and see a **Make discoverable** checkbox, it means you can make it possible for users who don't have access to the dataset to find it. See [dataset discovery](/power-bi/collaborate-share/service-discovery) for more detail.
 
-    ![Screen shot of certify content button.](media/endorsement-promote-certify/power-bi-certify-content.png)
+    ![Screen shot of certify content button.](media/endorsement-promote-certify/certify-item.png)
 
 1. Select **Apply**.
 
