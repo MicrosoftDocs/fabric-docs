@@ -83,7 +83,7 @@ As long as you’re connected, the following information appears at the bottom o
 
 ### Source control pane
 
-On top of the screen is the Source control icon. When the workspace is synced with the git branch, it displays a *0*.
+On top of the screen is the Source control icon. It shows the number of items that are different in the workspace and git branch. When the workspace is synced with the git branch, the Source control icon displays a *0*.
 
 :::image type="content" source="./media/git-integration-process/source-control-zero.png" alt-text="Screenshot of the source control icon showing zero items changed.":::
 
@@ -121,7 +121,8 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 
 ## Workspace limitations
 
-Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/repos/get-started), but once connected, anyone with [permission](#permissions) can work in the workspace.
+Only the workspace admin can manage the connections to the [Azure Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.
+Once connected, anyone with [permission](#permissions) can work in the workspace.
 
 ### Branch and folder limitations
 

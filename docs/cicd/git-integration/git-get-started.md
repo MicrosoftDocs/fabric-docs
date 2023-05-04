@@ -87,7 +87,7 @@ To commit your changes to the git branch, follow these steps:
     :::image type="content" source="./media/git-get-started/source-control-number.png" alt-text="Screenshot of source control icon with the number 2 indicating that there are two changes to commit.":::
 1. Select the **Changes** tab of the **Source control** pane.
    A list appears with all the items you changed, and an icon indicating if the item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
-1. Select the changes you want to commit.
+1. Select the items you want to commit. To select all items check the top box.
 1. Add a comment in the box. If you don't add a comment, a default message is added automatically.
 1. Select **Commit**.
 
