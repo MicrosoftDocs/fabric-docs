@@ -4,17 +4,15 @@ description: This tutorial shows you how to preprocess data with a stored proced
 ms.reviewer: jburchel
 ms.author: xupzhou
 author: pennyzhou-msft
-ms.topic: conceptual 
+ms.topic: tutorial 
 ms.date: 05/23/2023
 ---
 
-# Tutorial: Preprocess data with a stored procedure before loading into Lakehouse
-
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+# Preprocess data with a stored procedure before loading into Lakehouse
 
 In this tutorial, we show you how to use a pipeline Script activity to run a stored procedure to create a table and preprocess the data in a Synapse Data Warehouse. After that, we load the preprocessed table into Lakehouse.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -144,4 +142,14 @@ In this section, we use a Script activity to run the stored procedure created in
 
 ## Next steps
 
-[Monitor pipeline runs](monitor-pipeline-runs.md)
+This sample shows you how to preprocess data with a stored procedure before loading the results into Lakehouse.  You learned how to:
+
+> [!div class="checklist"]
+> - Create a data pipeline with a Script activity to run a stored procedure.
+> - Use a pipeline activity to load the preprocessed table data into Lakehouse.
+> - Execute the pipeline activities to load the data.
+
+Next, advance to learn more about monitoring your pipeline runs.
+
+> [!div class="nextstepaction"]
+> [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)

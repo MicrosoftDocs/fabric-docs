@@ -1,5 +1,5 @@
 ---
-title: Get data from a blob in Real-time Analytics
+title: Get data from a blob in Real-Time Analytics
 description: Learn get blob data in a KQL Database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -10,6 +10,8 @@ ms.search.form: product-kusto
 ---
 
 # Get data from a blob
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you'll learn you how to get data from an Azure blob or blob container into an existing database. 
 
@@ -128,7 +130,7 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 ## Quick query
 
-To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database landing page. You can then save your query as a KQL Query Set by selecting **Save as Query Set**.
+To verify that you have ingested data into your database, select **Quick query** on the right-hand side of the database landing page. You can then save your query as a KQL Queryset by selecting **Save as Query Set**.
 
 :::image type="content" source="media/database-editor/quick-query.png" alt-text="Screenshot of the Quick query button.":::
 
