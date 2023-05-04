@@ -67,6 +67,8 @@ items:
       href: runtime.md
     - name: Autotune Spark configuration
       href: autotune.md
+    - name: Spark concurrency limits and queueing
+      href: spark-job-concurrency-and-queueing.md
   - name: Spark job definition
     items:
     - name: What is a Spark job definition?
