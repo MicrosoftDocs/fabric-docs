@@ -21,9 +21,9 @@ You can manage your data in the following ways:
 
 * Modify [Data retention policy](#data-retention-policy)
 * Activate [Data copy to OneLake](#data-copy-to-onelake)
-* Create [Stored functions](#stored-functions)
 * Create [Materialized views](#materialized-views)
-* Create a [table policy update](#table-update-policy)
+* Create a [table update policy](#table-update-policy)
+* Create [Stored functions](#stored-functions)
 
 ## Database management
 
