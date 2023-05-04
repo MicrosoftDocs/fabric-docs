@@ -90,7 +90,6 @@ You can delete items by selecting the item(s) and then select the **Delete** but
 
 ## Next steps
 
->[!div class="nextstepaction"]
 >Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
 
 
