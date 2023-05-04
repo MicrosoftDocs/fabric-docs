@@ -111,7 +111,7 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 1. Run the cell.
 1. An authentication code appears below the cell. Copy this authentication code.
 
-    :::image type="content" source="media/jupyter-notebook/copy-code.png" alt-text="Screenshot of code cell showing authentication code. The Copy to clipboard button is highlighted."  lightbox="media/jupyter-notebook/copy-code.png":::
+    :::image type="content" source="media/jupyter-notebook/copy-authentication-code.png" alt-text="Screenshot of code cell showing authentication code. The Copy to clipboard button is highlighted."  lightbox="media/jupyter-notebook/copy-authentication-code.png":::
 
 1. Paste the code in the popup window, then select **Next**
 
