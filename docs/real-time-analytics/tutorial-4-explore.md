@@ -48,11 +48,26 @@ The first step in data analysis is often to take a look at a subset of the data 
 
     :::image type="content" source="media/realtime-analytics-tutorial/count-results.png" alt-text="Screenshot of results of count operator.":::
 
-1. Continue running the remainder of the sample KQL queries.
+1. The final query in the list of sample queries uses the [summarize operator](/azure/data-explorer/kusto/query/summarizeoperator?context=/fabric/context/context&pivots=fabric), [count operator](/azure/data-explorer/kusto/query/countoperator?context=/fabric/context/context&pivots=fabric), and [bin function](/azure/data-explorer/kusto/query/binfunction?context=/fabric/context/context&pivots=fabric) to return the number of ingestions per hour. 
+
+    :::image type="content" source="media/realtime-analytics-tutorial/summarize-by-ingestion-time.png" alt-text="Screenshot of summarizing by ingestion time in Synapse Real-Time Analytics in Microsoft Fabric.":::
+
 
 ## Sample SQL queries 
 
-:::image type="content" source="media/realtime-analytics-tutorial/sql-queries.png" alt-text="Screenshot of sample SQL queries.":::
+The query editor supports the use of T-SQL in addition to its primary query language, Kusto query language (KQL). While KQL is the recommended query language, T-SQL can be useful for tools that are unable to use KQL. For more information, see [Query data using T-SQL](/azure/data-explorer/t-sql)
+
+1. In the **Object tree**, select the **more menu** [...] on the **nyctaxitrips** table. Select **Query table** > **SQL** > **Show any 100 records**. 
+
+    :::image type="content" source="media/realtime-analytics-tutorial/sql-queries.png" alt-text="Screenshot of sample SQL queries.":::
+
+1. Place your cursor somewhere within the query and select  **Run** or press **Shift + Enter**. 
+
+    :::image type="content" source="media/realtime-analytics-tutorial/sql-top-100.png" alt-text="Screenshot of using a SQL query to take top 100 results.":::
+
+1. The next SQL query returns a count of the total number of records in the table.
+
+    :::image type="content" source="media/realtime-analytics-tutorial/sql-count.png" alt-text="Screnshot of using the count SQL operator in a KQL quick query.":::
 
 ## Next steps
 

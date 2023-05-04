@@ -15,7 +15,7 @@ ms.search.form: product-kusto
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md)
 
-One-time data loading is often needed for historical data, or to add dimension tables. Recall that the dataset you have ingested with Eventstream does not contain latitude and longitude data. In this section, you are going to load additional information on the pick-up locations and drop-off. This data is available in a blob storage container.
+One-time data loading is often needed for historical data, or to add dimension tables. Recall that the dataset you have ingested with Eventstream does not contain latitude and longitude data. In this section, you are going to load additional information on the pick-up locations and drop-off from a blob storage container.
 
 ## Get dimension data from blob storage
 
