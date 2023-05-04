@@ -20,7 +20,7 @@ ms.search.form: Data Science Overview
 
 [!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science Home page. 
 
-:::image type="content" source="media/data-science-overview/data-science-home-page.png" alt-text="Screenshot of the Fabric home page." lightbox="media/data-science-overview/fabric-home.png":::
+:::image type="content" source="media/data-science-overview/fabric-home.png" alt-text="Screenshot of the Fabric home page." lightbox="media/data-science-overview/fabric-home.png":::
 
 From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
 
@@ -36,7 +36,7 @@ At a high level, the process involves these steps:
 - Enrich and operationalize
 - Gain insights
 
-:::image type="content" source="media/data-science-overview/data-science-process.png" alt-text="Screenshot of the Data science home page." lightbox="media/data-science-overview/data-science-process.png":::
+:::image type="content" source="media/data-science-overview/data-science-process.png" alt-text="Dsata science process." lightbox="media/data-science-overview/data-science-process.png":::
 
 This article describes the [!INCLUDE [product-name](../includes/product-name.md)] Data Science capabilities from a data science process perspective. For each step in the data science process, this article summarizes the [!INCLUDE [product-name](../includes/product-name.md)] capabilities that can help.
 
