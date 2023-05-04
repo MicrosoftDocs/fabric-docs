@@ -4,6 +4,7 @@ description: Learn how to read the Microsoft Fabric utilization and metrics app'
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
@@ -99,5 +100,4 @@ A matrix table that displays metrics for each item on the capacity. To gain a be
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
+[Understand the metrics app timepoint page](metrics-app-timepoint-page.md)

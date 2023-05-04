@@ -4,6 +4,7 @@ description: Understand the Microsoft Fabric monitoring workspace and the report
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
@@ -46,8 +47,6 @@ You can share the entire *Admin monitoring* workspace, or a report or dataset in
 * **Admin monitoring workspace** - When you share the monitoring workspace, the users you share it with are granted a viewer role. Once a viewer role is provided, it can't be taken away.
 
 * **Report or a dataset** - To build on an existing report or dataset, you need to share the report or the dataset. You can manage the permissions for the monitoring reports and datasets at any time.
-
-
 
 ## Next steps
 
