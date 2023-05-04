@@ -5,11 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 04/27/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Create a database
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In Real-Time Analytics, you'll interact with your data in the context of databases. A single workspace can hold multiple databases, and each database can hold multiple tables.
 

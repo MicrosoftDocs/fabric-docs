@@ -11,6 +11,8 @@ ms.search.form: product-kusto
 
 # Get data from OneLake
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 In this article, you'll learn how to get data from OneLake into an existing KQL Database.
 
 ## Prerequisites

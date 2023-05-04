@@ -6,6 +6,7 @@ ms.author: painbar
 ms.reviewer: ''
 ms.custom: tenant-setting
 ms.topic: how-to
+ms.service: azure
 ms.date: 05/23/2023
 LocalizationGroup: Administration
 ---
@@ -67,4 +68,4 @@ For more information, see [Prevent My workspace owners from reassigning their My
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+[About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
