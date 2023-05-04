@@ -50,7 +50,7 @@ In this step, you use a script to first create a table with specified mapping, a
 
     :::image type="content" source="media/jupyter-notebook/copy-kql-script.png" alt-text="Screenshot of GitHub repository showing the KQL script for the NYC Taxi demo notebook. The copy icon is highlighted."  lightbox="media/jupyter-notebook/copy-kql-script.png":::
 
-1. Navigate to your KQL database.
+1. Browse to your KQL database.
 1. Select **Check your data** on the top right corner of the database summary page.
 1. Paste the KQL script from step 1.
 
@@ -64,7 +64,7 @@ In this step, you use a script to first create a table with specified mapping, a
 
 ## 3- Download the NYC Taxi demo notebook
 
-We've created a sample Jupyter notebook that takes you through all the necessary steps for query and visualization of the sample data you have just loaded in your KQL database.
+Use a sample Jupyter notebook to query and visualize the sample data you have just loaded in your KQL database.
 
 1. Open the Fabric samples repository on GitHub to download the [NYC Taxi KQL Notebook.](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/NYC_Taxi_KQL_Notebook.ipynb).
 
@@ -156,7 +156,7 @@ For more information on kqlmagic, see [Use a Jupyter Notebook and kqlmagic exten
 
 Clean up the items created by navigating to the workspace in which they were created.
 
-1. In your workspace, hover over the notebook you want to delete, select the **More menu** > **Delete**.
+1. In your workspace, hover over the notebook you want to delete, select the **More menu** [...] > **Delete**.
 
     :::image type="content" source="media/jupyter-notebook/clean-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC Taxi notebook. The option titled Delete is highlighted.":::
 
