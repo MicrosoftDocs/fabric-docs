@@ -35,7 +35,9 @@ For more information, see [Retention policy](/azure/data-explorer/kusto/manageme
 
 ### Data copy to OneLake
 
-To expose the data in your KQL database to all of [!INCLUDE [product-name](../includes/product-name.md)]'s experiences, activate data copy and create a OneLake shortcut. For more information, see [One logical copy](onelake-mirroring.md).
+To expose the data in your KQL database to all of [!INCLUDE [product-name](../includes/product-name.md)]'s experiences, activate data copy and create a OneLake shortcut. 
+
+For more information, see [One logical copy](onelake-mirroring.md).
 
 ## Table management
 
