@@ -2,20 +2,16 @@
 title: Use a dataflow in a pipeline
 description: This article describes how to use a dataflow in a pipeline.
 author: luitwieler
-
 ms.topic: tutorial
 ms.date: 05/23/2023
 ms.author: jeluitwi
-
 ---
 
 # Quickstart: Use a dataflow in a pipeline
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
 In this tutorial, you build a data pipeline to move OData from a Northwind source to a lakehouse destination and send an email notification when the pipeline is completed.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -155,3 +151,7 @@ In this section, you run and schedule the data pipeline. This schedule allows yo
 1. Select **Apply** to apply the changes.
 
 You've now created a data pipeline that runs on a schedule, refreshes the data in the lakehouse, and sends you an email notification. You can check the status of the data pipeline by going to the **Monitor Hub**. You can also check the status of the data pipeline by going to **Data Pipeline** and selecting the **Run history** tab in the dropdown menu.
+
+## Next steps
+
+[Monitor pipeline runs](monitor-pipeline-runs.md)
