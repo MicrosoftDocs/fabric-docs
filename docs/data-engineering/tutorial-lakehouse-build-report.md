@@ -5,7 +5,7 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
-ms.date: 4/28/2023
+ms.date: 5/23/2023
 ---
 
 # Lakehouse tutorial: Building reports in Microsoft Fabric
@@ -13,6 +13,10 @@ ms.date: 4/28/2023
 In this section of the tutorial, you create a Power BI data model and create a report from scratch.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+## Prerequisite
+
+* [Prepare and transform the data using notebooks and Spark runtime](tutorial-lakehouse-data-preparation.md)
 
 ## Build a report
 
@@ -26,7 +30,7 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
    :::image type="content" source="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png" alt-text="Screenshot showing where to find and select SQL endpoint under the Lake mode drop down." lightbox="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png":::
 
-1. Once you are in warehouse mode, you should be able to see all the tables you created. If you don’t see them yet, select the **Refresh** icon at the top. Next, select the **Model** tab at the bottom to open the default Power BI dataset.
+1. Once you are in warehouse mode, you should be able to see all the tables you created. If you don't see them yet, select the **Refresh** icon at the top. Next, select the **Model** tab at the bottom to open the default Power BI dataset.
 
    :::image type="content" source="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png" alt-text="Screenshot showing where to select the Refresh icon and the Model tab." lightbox="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png":::
 

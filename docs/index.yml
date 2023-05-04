@@ -1,12 +1,12 @@
 ### YamlMime:Hub
 
 title: Microsoft Fabric documentation # < 60 chars
-summary: Microsoft Fabric is a unified platform that can meet your organization’s data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it. # < 160 chars
+summary: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it. # < 160 chars
 brand: fabric
 
 metadata:
   title: Microsoft Fabric documentation
-  description: Microsoft Fabric is a unified platform that can meet your organization’s data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
+  description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
   ms.service: powerbi
   ms.subservice: powerbi-service
   ms.topic: hub-page
