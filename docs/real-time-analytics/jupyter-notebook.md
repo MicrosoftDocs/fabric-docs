@@ -13,9 +13,9 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents which can be run to perform data analysis. In this article, you'll learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a KQL Database. This tutorial uses pre-created datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
+Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents which can be run to perform data analysis. In this article, you learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a KQL Database. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
-Specifically, you'll learn how to:
+Specifically, you learn how to:
 
 > [!div class="checklist"]
 >
@@ -44,7 +44,7 @@ The KQL database has now been created within the context of the selected workspa
 
 ## 2- Get data
 
-In this step, you'll use a script to first create a table with specified mapping, and then get data from a public blob into this table.
+In this step, you use a script to first create a table with specified mapping, and then get data from a public blob into this table.
 
 1. Copy the KQL script from the [Fabric samples repository on GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/IngestNYCTaxi2014.kql)
 
@@ -56,15 +56,15 @@ In this step, you'll use a script to first create a table with specified mapping
 
 1. Place your cursor somewhere within the query, and select the **Run** button.
 
-    The first query will run and create the table and schema mapping. The output of this query will show the table and mapping creation information, including the type of command and the result of *Completed* when finished.
-    The second query will load your data. It might take a few minutes for the data loading to be complete.
+    The first query will run and create the table and schema mapping. The output of this query shows the table and mapping creation information, including the type of command and the result of *Completed* when finished.
+    The second query loads your data. It might take a few minutes for the data loading to be complete.
 
     :::image type="content" source="media/jupyter-notebook/data-map-ingest.png" alt-text="Screenshot of the Check your data window showing the completed state of the table mapping and data ingestion."  lightbox="media/jupyter-notebook/data-map-ingest.png":::
 1. Refresh your database. The table appears in the **Data tree**.
 
 ## 3- Download the NYC Taxi demo notebook
 
-We've created a sample Jupyter notebook that will take you through all the necessary steps for query and visualization of the sample data you have just loaded in your KQL database.
+We've created a sample Jupyter notebook that takes you through all the necessary steps for query and visualization of the sample data you have just loaded in your KQL database.
 
 1. Open the Fabric samples repository on GitHub to download the [NYC Taxi KQL Notebook.](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/NYC_Taxi_KQL_Notebook.ipynb).
 
@@ -104,14 +104,14 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 ## 6- Device Code authentication
 
 1. Paste the **Query URI** that you copied earlier instead of the placeholder cluster text.
-1. Change the placeholder database name to **NYCTaxidb**.
+1. Change the placeholder database name to *NYCTaxidb*.
 
-    :::image type="content" source="media/jupyter-notebook/paste-query-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted.":::
+    :::image type="content" source="media/jupyter-notebook/paste-query-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted." lightbox="media/jupyter-notebook/paste-query-uri.png":::
 
 1. Run the cell.
 1. An authentication code appears below the cell. Copy this authentication code.
 
-    :::image type="content" source="media/jupyter-notebook/copy-code.png" alt-text="Screenshot of code cell showing authentication code. The Copy to clipboard button is highlighted.":::
+    :::image type="content" source="media/jupyter-notebook/copy-code.png" alt-text="Screenshot of code cell showing authentication code. The Copy to clipboard button is highlighted."  lightbox="media/jupyter-notebook/copy-code.png":::
 
 1. Paste the code in the popup window, then select **Next**
 
@@ -125,12 +125,12 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
     :::image type="content" source="media/jupyter-notebook/kustoclient-confirmation.jpg" alt-text="Screenshot of KustoClient sign-in confirmation page.":::
 
-1. Run the next cell to check if your sign-in was successful. If successful, the query will return a row count.
+1. Run the next cell to check if your sign-in was successful. If successful, the query returns a row count.
 
 ## 7- Run the notebook
 
 Run the remaining cells sequentially to see how render commands work through kqlmagic and begin creating a heatmap of taxi pickups in NYC.
-For more information on kqlmagic, see [Use a Jupyter Notebook and kqlmagic extension to analyze data ](/azure/data-explorer/kqlmagic).
+For more information on kqlmagic, see [Use a Jupyter Notebook and kqlmagic extension to analyze data ](/azure/data-explorer/kqlmagic?context=/fabric/context/context.
 
 1. The following cell aggregates all pickups within the specified geographic boundary.
 
@@ -148,7 +148,7 @@ For more information on kqlmagic, see [Use a Jupyter Notebook and kqlmagic exten
 
     :::image type="content" source="media/jupyter-notebook/starred-query.png" alt-text="Screenshot of code cell showing query for starring data."  lightbox="media/jupyter-notebook/starred-query.png":::
 
-    The heatmap will look like the following image:
+    The heatmap looks like the following image:
 
     :::image type="content" source="media/jupyter-notebook/starred-map.jpg" alt-text="Screenshot of map showing different sized stars that signify the results of a clustering function.":::
 
