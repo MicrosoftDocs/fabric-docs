@@ -23,13 +23,13 @@ OneLake is a hierarchical data lake, similar to ADLS gen 2 or the Windows file s
 **Item**: a set of capabilities bundled together into single component. A data item is a subtype of item that allows for data to be stored within it using OneLake.
 Items always live within workspaces and workspaces always live directly under the OneLake namespace. This structure can be visualized as follows:
 
-:::image type="content" source="media\getting-started-security\structure.png" alt-text="Diagram showing the hierarchical nature of OneLake as a folder structure. OneLake/Workspace/Item as an example." lightbox=media\getting-started-security\structure.png":::
+:::image type="content" source="media\getting-started-security\structure.png" alt-text="Diagram showing the hierarchical nature of OneLake as a folder structure. OneLake/Workspace/Item as an example." lightbox="media\getting-started-security\structure.png":::
 
 ## Workspace permissions
 
 In the public preview release of Microsoft Fabric, permissions can only be configured at the workspace level.
 
-To grant a user access to an item, users will need permissions from one of the Fabric [workspace roles.](../get-started/roles-workspaces.md). At a minimum, users will need Read access on an item to see and connect to that item, which is provided by the Viewer role. Users in the Viewer role can also connect to and read data using SQL endpoints for the Warehouse and Lakehouse items or read data through Power BI datasets.
+To grant a user access to an item, users will need permissions from one of the Fabric [workspace roles.](/docs/get-started/roles-workspaces.md). At a minimum, users will need Read access on an item to see and connect to that item, which is provided by the Viewer role. Users in the Viewer role can also connect to and read data using SQL endpoints for the Warehouse and Lakehouse items or read data through Power BI datasets.
 
 Access directly to OneLake or to write data is provided through the other roles. Admin, member, and contributor all provide access to read data directly in OneLake through Spark or APIs, as well as write data to those sources. Note that the Warehouse item is read-only through the lake interface, so even Admins are not able to write data to a Warehouse through APIs, but they can write data through SQL. 
 
@@ -38,12 +38,12 @@ In addition to the workspace data access can be given through the SQL compute en
 
 In the below example, a user is shared a Lakehouse but with only Viewer access. They are then granted SELECT through the SQL endpoint. When that user tries to write data through the OneLake APIs the access gets denied since they don’t have sufficient permissions, but reads made through SQL SELECT statements would succeed.
 
-:::image type="content" source="media\getting-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but getting denied access when querying OneLake directly." lightbox=media\getting-started-security\sql.png":::
+:::image type="content" source="media\getting-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but getting denied access when querying OneLake directly." lightbox="media\getting-started-security\sql.png":::
 
 ## Securing OneLake
 Now that we understand the permissions available in Microsoft Fabric, let us look at an example of how to best structure data in OneLake. To start, we will build a standard medallion architecture. In this approach, we typically want to have a very limited set of users that have access to the Bronze and Silver layers, with broader access to the Gold layer. One way to structure that is as follows:
 
-:::image type="content" source="media\getting-started-security\medallion-architecture.png" alt-text="Diagram showing bronze and silver layers as one workspace each with the godl layer broken into several different workspaces for each data domain." lightbox=media\getting-started-security\medallion-architecture.png":::
+:::image type="content" source="media\getting-started-security\medallion-architecture.png" alt-text="Diagram showing bronze and silver layers as one workspace each with the godl layer broken into several different workspaces for each data domain." lightbox="media\getting-started-security\medallion-architecture.png":::
 
 The people responsible for managing Bronze and Silver can be added to Member or Contributor roles so that they can update and manage all the data in those environments. Since those users will need write access this is currently the only method to accomplish this. Users that need access to specific data items within the Bronze and Silver layer can be given the Viewer role and access data through SQL endpoints.
 
@@ -65,6 +65,6 @@ Object level security: To protect sensitive data, give users access to a Warehou
 
 ## Next steps
 
-- [Workspace roles](..\get-started\workspace-roles.md)  
+- [Workspace roles](/docs/get-started/roles-workspaces.md)  
 - [OneLake security](onelake-security.md)
 - [OneLake file explorer](onelake-file-explorer.md)
