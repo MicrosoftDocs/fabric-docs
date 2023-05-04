@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # How to configure KQL Database in copy activity
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This article outlines how to use the copy activity in data pipeline to copy data from and to KQL Database.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 
@@ -114,3 +112,7 @@ To learn more information about copy activity in KQL Database, see the following
 |**Table** |The name of the table that the connection refers to.|\<your table name>|Yes|table|
 |**Ingestion mapping name** | The name of a mapping which was pre-created and assigned to KQL Database destination table in advance. Learn more from [Azure Data Explore data ingestion](/azure/data-explorer/ingestion-properties).|\<your ingestion mapping name>|Yes|ingestionMappingName|
 |**Additional properties** | A property bag which can be used for specifying any of the ingestion properties which aren't being set already by the KQL Database destination. Specifically, it can be useful for specifying ingestion tags.|- Name<br> - Type<br> - Value|Yes|additionalProperties|
+
+## Next steps
+
+[KQL Database connector overview](connector-kql-database-overview.md)

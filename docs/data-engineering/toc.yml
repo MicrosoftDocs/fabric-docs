@@ -7,9 +7,9 @@ items:
     href: data-engineering-overview.md
 - name: Get started
   items:
-  - name: CSV upload to Delta for PBI reporting
+  - name: Upload CSV to delta tables
     href: get-started-csv-upload.md
-  - name: Structured streaming to SQL serving
+  - name: Get streaming data into lakehouse
     href: get-started-streaming.md
   - name: Reference external data for data science
     href: get-started-shortcuts.md

@@ -6,7 +6,7 @@ ms.author: cynotebo
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
-ms.search.form: SQL Endpoint Overview, Warehouse overview # This article's title should not change. If so, contact engineering.
+ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Limitations and known issues in Microsoft Fabric
 

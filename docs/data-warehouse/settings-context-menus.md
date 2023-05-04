@@ -6,7 +6,7 @@ ms.author: prlangad
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
-ms.search.form: SQL Endpoint Overview, Warehouse overview
+ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Warehouse settings and context menus
 
@@ -72,4 +72,4 @@ The following table describes the warehouse context menu options:
 - [Synapse Data Warehouse in Microsoft Fabric](data-warehousing.md#synapse-data-warehouse)
 - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
 - [Create reports in the Power BI service](reports-power-bi-service.md)
-- [Power BI admin center](../admin/admin-power-bi.md)
+- [Admin center](../admin/admin-center.md)

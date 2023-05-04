@@ -4,6 +4,7 @@ description: Learn how to read the Microsoft Fabric utilization and metrics app'
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
@@ -95,5 +96,4 @@ All the columns in the background operations table are similar to the ones in th
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Understand the metrics app overview page?](metrics-app-overview-page.md)
+[Understand the metrics app overview page?](metrics-app-overview-page.md)
