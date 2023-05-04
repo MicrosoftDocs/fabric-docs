@@ -165,8 +165,6 @@ productDirectory:
           text: Data governance and compliance
         - url: security/security-overview.md
           text: Security
-        - url: enterprise/billing-reports.md
-          text: Billing and consumption
         - url: admin/index.yml
           text: See more
 
