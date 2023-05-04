@@ -6,6 +6,7 @@ ms.author: painbar
 ms.reviewer: ''
 ms.custom: admin-portal
 ms.topic: how-to
+ms.service: azure
 ms.date: 05/23/2023
 LocalizationGroup: Administration
 ---
@@ -115,4 +116,4 @@ After the deleted workspace has been restored as an app workspace, it's just lik
 
 ## Next steps
 
-* [About the Admin portal](/power-bi/admin/service-admin-portal)
+[About the Admin portal](/power-bi/admin/service-admin-portal)

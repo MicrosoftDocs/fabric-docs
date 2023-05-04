@@ -4,6 +4,7 @@ description: This article explains what the feature switches affecting git integ
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
@@ -50,4 +51,5 @@ Learn more about sensitivity labels.
 ## Next steps
 
 * [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+
 * [About git integration](../CICD/git-integration/intro-to-git-integration.md)

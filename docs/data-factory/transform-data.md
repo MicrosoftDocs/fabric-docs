@@ -10,11 +10,9 @@ ms.date: 2/10/2023
 
 # Quickstart: Move and transform data with dataflows and data pipelines
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 In this tutorial, you'll see how the dataflow and data pipeline experience can create a powerful and comprehensive Data factory solution.  
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -111,7 +109,7 @@ Follow these steps to create your data pipeline.
 
    :::image type="content" source="media/transform-data/create-connection.png" alt-text="Screenshot showing where to create a new connection.":::
 
-3. After you select **New Connection**, a new browser will open with the connection creation page. Fill in the required connection information on the panel. Then select **Create**.
+3. After you select **New Connection**, you are prompted for details of your Azure SQL DB. Fill in the required connection information on the panel. Then select **Next**.
 
    :::image type="content" source="media/transform-data/connection-creation-page.png" alt-text="Screenshot of the connection creation screen.":::
 
@@ -133,7 +131,7 @@ Follow these steps to create your data pipeline.
 
    :::image type="content" source="media/transform-data/create-new-connection.png" alt-text="Screenshot showing how to create a connection." lightbox="media/transform-data/create-new-connection.png":::
 
-3. After you select **New Connection**, a new browser will open with the connection creation page. Fill in the required connection information on the panel. Then select **Create**.
+3. After you select **New Connection**, you are prompted for the connection details. Fill in the required connection information on the panel. Then select **Next**.
 
    :::image type="content" source="media/transform-data/new-connection-page.png" alt-text="Screenshot of the New connection screen.":::
 
@@ -166,3 +164,7 @@ Follow these steps to create your data pipeline.
 4. Select **Save** to save your data pipeline. Then select **Run** to run your data pipeline and load your data.  
 
    :::image type="content" source="media/transform-data/save-run-pipeline.png" alt-text="Screenshot showing where to select Run." lightbox="media/transform-data/save-run-pipeline.png":::
+
+## Next steps
+
+[Monitor pipeline runs](monitor-pipeline-runs.md)

@@ -10,6 +10,8 @@ ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 2: Get data with Eventstream
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md)
 
@@ -101,4 +103,4 @@ ms.search.form: product-kusto
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial part 3: Explore data and build report](tutorial-3-explore.md)
+> [Tutorial part 3: Get historical data](tutorial-3-get-historical-data.md)
