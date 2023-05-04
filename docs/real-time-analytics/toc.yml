@@ -104,10 +104,10 @@ items:
       href: event-streams/monitoring.md
 - name: Kusto Query Language
   href: kusto-query-language/toc.yml
-- name: Management commands
-  href: management/toc.yml
 - name: Reference and resources
   items:
+  - name: Management commands
+    href: management/toc.yml
   - name: API
     href: api/toc.yml
   - name: Functions library
