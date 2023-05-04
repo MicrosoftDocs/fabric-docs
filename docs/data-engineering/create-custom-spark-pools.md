@@ -53,6 +53,5 @@ To create or manage the Spark Pool associated with your workspace:
 
 ## Next steps
 
->[!div class="nextstepaction"]
 >Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
 >[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](data-engineering-and-science-workspace-admin-settings.md)
