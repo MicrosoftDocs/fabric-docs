@@ -29,6 +29,8 @@ items:
     href: read-write-pandas.md
   - name: How to accelerate data prep with Data Wrangler
     href: data-wrangler.md
+  - name: How to read and write data from and to PowerBI
+    href: read-write-powerbi.md
   - name: Explore and validate data with SemPy and PBI connector
     href: sempy-pbi-connector.md
 - name: Train machine learning models
