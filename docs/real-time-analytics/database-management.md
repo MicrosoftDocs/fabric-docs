@@ -17,7 +17,7 @@ Synapse Real-Time Analytics offers a range of options for managing your data, bo
 
 For more information, see [Management commands](/azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric)
 
-You can manage your data in the following ways:
+You can manage your data using the UI in the following ways:
 
 * Modify [Data retention policy](#data-retention-policy)
 * Activate [Data copy to OneLake](#data-copy-to-onelake)
