@@ -9,7 +9,7 @@ ms.date: 05/23/2023
 
 # Endorsement
 
-Organizations often have very large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. Identifying trustworthy, authoritative items can be difficult. Endorsement is a way to make it easier for users to find the high-quality items they need. Endorsed items are clearly labeled, both in Fabric and in other places where users look for Fabric items (such for Power BI datasets in Excel). Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists.
+Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. Identifying trustworthy, authoritative items can be difficult. Endorsement is a way to make it easier for users to find the high-quality items they need. Endorsed items are clearly labeled, both in Fabric and in other places where users look for Fabric items (such for Power BI datasets in Excel). Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists.
 
 There are two kinds of endorsement: **promotion** and **certification**.
 
@@ -21,7 +21,7 @@ There are two kinds of endorsement: **promotion** and **certification**.
 
 * **Certification**: Certification means that the item meets the organization's quality standards and can be regarded as reliable and authoritative, and is ready for use across the organization.
 
-    Only a [select group of reviewers (defined by the Power BI administrator)](../admin/endorsement-setup.md) is authorized to certify items. Item owners who wish to see their item certified and are not authorized to certify it themselves need to follow their organization's guidelines about getting it certified.
+    Only a [select group of reviewers (defined by the Power BI administrator)](../admin/endorsement-setup.md) is authorized to certify items. Item owners who wish to see their item certified and aren't authorized to certify it themselves need to follow their organization's guidelines about getting it certified.
 
     Learn how to [certify items](endorsement-promote-certify.md#certify-items) or [request certification](endorsement-promote-certify.md#request-item-certification).
 
@@ -33,11 +33,11 @@ The image below illustrates how endorsed promoted and certified datasets are cle
 
 ## Types of items that can be endorsed
 
-All Fabric items can be endorsed with the exception of Power BI dashboards.
+All Fabric items can be endorsed except for Power BI dashboards.
 
 ## Identifying endorsed items
 
-Endorsed are labeled with badges and icons in lists, cards, and other places, both in Fabric and in places such as Excel where it is possible to find Power BI datasets. The following badges and icons identify endorsed items.
+Endorsed are labeled with badges and icons in lists, cards, and other places, both in Fabric and in places such as Excel where it's possible to find Power BI datasets. The following badges and icons identify endorsed items.
 
 |Badge|Icon|
 |---------|---------|
