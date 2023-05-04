@@ -59,5 +59,5 @@ With queueing enabled, Batch jobs like Spark Job Definitions get added to the qu
 
 ## Next steps
 
->[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](data-engineering-and-science-workspace-admin-settings.md)
+>[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](workspace-admin-settings.md)
 >[Learn about the Spark Compute for Fabric Data Engineering/Science workloads](spark-compute.md)
