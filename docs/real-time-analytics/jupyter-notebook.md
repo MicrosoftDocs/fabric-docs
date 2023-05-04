@@ -103,7 +103,7 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
 ## 6- Device Code authentication
 
-1. Paste the **Query URI** that you copied earlier instead of the placeholder cluster text.
+1. Paste the **Query URI** that you [copied earlier](#1--create-a-kql-database) instead of the placeholder cluster text.
 1. Change the placeholder database name to *NYCTaxidb*.
 
     :::image type="content" source="media/jupyter-notebook/paste-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted." lightbox="media/jupyter-notebook/paste-query-uri.png":::
@@ -130,7 +130,7 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 ## 7- Run the notebook
 
 Run the remaining cells sequentially to see how render commands work through kqlmagic and begin creating a heatmap of taxi pickups in NYC.
-For more information on kqlmagic, see [Use a Jupyter Notebook and kqlmagic extension to analyze data ](/azure/data-explorer/kqlmagic?context=/fabric/context/context.
+For more information on kqlmagic, see [Use a Jupyter Notebook and kqlmagic extension to analyze data](/azure/data-explorer/kqlmagic?context=/fabric/context/context.)
 
 1. The following cell aggregates all pickups within the specified geographic boundary.
 
