@@ -145,7 +145,9 @@
       - name: Configure in admin portal
         href: connector-rest.md
       - name: Configure in copy activity of pipeline
-        href: connector-rest-copy-activity.md     
+        href: connector-rest-copy-activity.md    
+      - name: Configure in dataflow gen2
+        href: connector-rest-dataflows.md 
     - name: SharePoint online list
       items:
       - name: Overview
