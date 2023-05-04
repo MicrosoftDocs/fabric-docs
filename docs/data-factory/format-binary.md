@@ -1,6 +1,6 @@
 ---
-title: How to configure Binary format in Data Factory
-description: This article explains how to configure Binary format in Data Factory.
+title: How to configure Binary format in the data pipeline of Data Factory in Microsoft Fabric
+description: This article explains how to configure Binary format in the data pipeline of Data Factory in Microsoft Fabric.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -16,7 +16,7 @@ This article outlines how to configure Binary format in Data Factory.
 
 ## Supported capabilities
 
-Binary format is supported for the following connectors and activities.
+Binary format is supported for the following activities and connectors as source and destination.
 
 | Category | Connector/Activity | 
 |---|---|
@@ -24,8 +24,7 @@ Binary format is supported for the following connectors and activities.
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md) |
 |  | Google Cloud Storage | 
 |  | [HTTP](connector-http-copy-activity.md)| 
-|  | REST | 
-| **Supported activity** | Copy activity |
+| **Supported activity** | [Copy activity](copy-data-activity.md) |
 |  | GetMetadata activity |
 |  | Delete activity | 
 
@@ -49,7 +48,7 @@ After selecting **File settings** under **Source** tab, you can see the followin
 - **Compression type**: The compression codec used to read/write binary files.
 You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, **TarGzip** or **tar** type in the drop-down list.
 
-- **Compression level**: The compression ratio. Apply when you are using Copy activity destination. You can choose from **Optimal** or **Fastest**.
+- **Compression level**: The compression ratio. You can choose from **Optimal** or **Fastest**.
 
     - **Fastest**: The compression operation should complete as quickly as possible, even if the resulting file is not optimally compressed.
     - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, see [Compression Level topic](/dotnet/api/system.io.compression.compressionlevel).
@@ -76,7 +75,7 @@ After selecting **File settings** under **Destination** tab, you can see the fol
 - **Compression type**: The compression codec used to read/write binary files.
 You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, **TarGzip** or **tar** type in the drop-down list.
 
-- **Compression level**: The compression ratio. Apply when you are using Copy activity destination. You can choose from **Optimal** or **Fastest**.
+- **Compression level**: The compression ratio. You can choose from **Optimal** or **Fastest**.
 
     - **Fastest**: The compression operation should complete as quickly as possible, even if the resulting file is not optimally compressed.
     - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, see [Compression Level topic](/dotnet/api/system.io.compression.compressionlevel).
@@ -89,9 +88,9 @@ The following properties are supported in the copy activity **Source** section w
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **File format**|The file format that you want to use.| **Binary**|Yes|type (*under `formatSettings`*):<br>BinaryReadSettings|
+| **File format**|The file format that you want to use.| **Binary**|Yes|type (*under `datasetSettings`*):<br>Binary|
 |**Compression type**|The compression codec used to read/write binary files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
-|**Compression level** |The compression ratio. Apply when dataset is used in Copy activity sink. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
+|**Compression level** |The compression ratio. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
 |**Delete files after completion** |Indicates whether the binary files will be deleted from source store after successfully moving to the destination store. | Selected or unselect|No | deleteFilesAfterCompletion: <br>true or false|
 |**Preserve zip file name as folder**|Indicates whether to preserve the source zip file name as folder structure during copy.| Selected or unselect|No |preserveZipFileNameAsFolder <br> (*under `compressionProperties`->`type` as `ZipDeflateReadSettings`*)|
 |**Preserve compression file name as folder**|Indicates whether to preserve the source compressed file name as folder structure during copy.| Selected or unselect|No|preserveCompressionFileNameAsFolder  <br> (*under `compressionProperties`->`type` as `TarGZipReadSettings` or `TarReadSettings`*)|
@@ -103,9 +102,9 @@ The following properties are supported in the copy activity **Destination** sect
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **File format**|The file format that you want to use.| **Binary**|Yes|type (*under `formatSettings`*):<br>BinaryReadSettings|
+| **File format**|The file format that you want to use.| **Binary**|Yes||type (*under `datasetSettings`*):<br>Binary |
 |**Compression type**|The compression codec used to read/write binary files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
-|**Compression level** |The compression ratio. Apply when dataset is used in Copy activity sink. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
+|**Compression level** |The compression ratio. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
 
 ## Next steps
 

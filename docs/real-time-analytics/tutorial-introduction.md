@@ -27,11 +27,10 @@ Specifically, in this tutorial, you learn how to:
 > * Enable data copy to OneLake
 > * Create an Eventstream
 > * Stream data from Eventstream to your KQL database
-> * Check your data with sample queries
-> * Build a Power BI report from a query
-> * Enrich your data with additional datasets
-> * Explore enriched data
-> * Save the queries as a KQL queryset
+> * Get additional historical data
+> * Explore data with KQL and SQL
+> * Create a KQL queryset
+> * Use advanced KQL queries
 > * Create a Power BI report
 > * Clean up resources
 

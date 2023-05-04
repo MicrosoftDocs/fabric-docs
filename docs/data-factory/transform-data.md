@@ -109,7 +109,7 @@ Follow these steps to create your data pipeline.
 
    :::image type="content" source="media/transform-data/create-connection.png" alt-text="Screenshot showing where to create a new connection.":::
 
-3. After you select **New Connection**, a new browser will open with the connection creation page. Fill in the required connection information on the panel. Then select **Create**.
+3. After you select **New Connection**, you are prompted for details of your Azure SQL DB. Fill in the required connection information on the panel. Then select **Next**.
 
    :::image type="content" source="media/transform-data/connection-creation-page.png" alt-text="Screenshot of the connection creation screen.":::
 
@@ -131,7 +131,7 @@ Follow these steps to create your data pipeline.
 
    :::image type="content" source="media/transform-data/create-new-connection.png" alt-text="Screenshot showing how to create a connection." lightbox="media/transform-data/create-new-connection.png":::
 
-3. After you select **New Connection**, a new browser will open with the connection creation page. Fill in the required connection information on the panel. Then select **Create**.
+3. After you select **New Connection**, you are prompted for the connection details. Fill in the required connection information on the panel. Then select **Next**.
 
    :::image type="content" source="media/transform-data/new-connection-page.png" alt-text="Screenshot of the New connection screen.":::
 
