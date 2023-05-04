@@ -4,7 +4,8 @@ description: Learn how to use the Microsoft feature usage and adoption report.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.date: 04/17/2023
+ms.service: azure
+ms.date: 05/23/2023
 ---
 
 # Feature usage and adoption report

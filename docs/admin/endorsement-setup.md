@@ -4,6 +4,7 @@ description: Learn how to enable certification for Fabric content.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
@@ -37,6 +38,7 @@ Certification is part of Power BI's *endorsement* feature. See [Endorsement: Pro
 1. Click **Apply**.
 
 ## Next steps
+
 * [Read about endorsement in Fabric](../get-started/endorsement-overview.md)
 * [Promote Fabric items](../get-started/endorsement-promote-certify.md#promote-items)
 * [Certify Fabric items](../get-started/endorsement-promote-certify.md#certify-items)
