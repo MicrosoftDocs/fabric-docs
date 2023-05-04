@@ -100,12 +100,33 @@ sections:
       - question: |
           Why is the Commit button disabled?
         answer: |
-          In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item. To reestablish these connections, unassign and reassign the same workspace in the target stage.
+          If there were updates made to the git branch, commits are disabled until you update your workspace, to prevent conflicts. Update your workspace to enable commits.
 
       - question: |
           Why are the Commit and Update buttons both disabled?
         answer: |
-          When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace. For example, if you're
+          Changing the same item in the workspace and the git branch can lead a possible conflict. If changes were made in the workspace and in the git branch on the same item, updates are disabled until the conflict is resolved. See [Resolve conflicts](./git-integration/conflict-resolution.md) for more information.
+      
+      - question: |
+          Why does my Source control icon not have a number?
+        answer: |
+          The number on the Source control icon indicates the number of changes that have been made to the workspace since the last commit. If the icon doesn't have a number, there may have been a problem connecting to the branch. Disconnect and reconnect.
+
+          :::image type="content" source="./media/troubleshoot-cicd/no-source.png" alt-text="Screenshot of source control icon without a number.":::
+
+      - question: |
+          Why did I get a **Something went wrong** error when I tried to connect?
+        answer: |
+          If the folder you're trying to connect to has subdirectories, but no Fabric items, the connect will fail. Open the git repository in Azure DevOps and navigate to the git folder defined in the connection. If the git folder contains sub-directories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a sub-directory. If the git folder doesn't contain any item directories, you can't connect to it. Either remove the sub-directories or connect to a different folder that doesn't contain sub-directories.
+
+          :::image type="content" source="./media/troubleshoot-cicd/something-went-wrong.png" alt-text="Screenshot of error message when the workspace can't connect.":::
+
+      - question: |
+          Why is it asking me if I want to create a new folder when I connect to a git branch?
+        answer: |
+          If the folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository, you'll be asked if you want to create a new folder. This can happen if you're connecting to a new branch, or if the folder was deleted from the branch. To create a new folder and connect it to the workspace choose **Create and sync**. If you want to connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the git integration tab.
+
+          :::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of the create new folder dialog.":::  
 
   - name: Deployment pipelines  
     questions:
