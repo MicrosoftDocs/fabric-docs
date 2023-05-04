@@ -17,9 +17,9 @@ Fabric provides two ways you can endorse your valuable, high-quality items to in
 
 * **Certification**: Certification means that the item meets the organization's quality standards and can be regarded as reliable, authoritative, and ready for use across the organization.
 
-    Only [authorized reviewers (defined by the Power BI administrator)](../admin/endorsement-setup.md) can certify items. Item owners who wish to see their item certified and are not authorized to certify it themselves need to follow their organization's guidelines about getting items certified.
+    Only [authorized reviewers (defined by the Power BI administrator)](../admin/endorsement-setup.md) can certify items. Item owners who wish to see their item certified and aren't authorized to certify it themselves need to follow their organization's guidelines about getting items certified.
 
-Currently it is possible to endorse all Fabric items except Power BI dashboards.
+Currently it's possible to endorse all Fabric items except Power BI dashboards.
 
 This article describes how to [promote items](#promote-items), how to [certify items](#certify-items) if you're an authorized reviewer, and how to [request certification](#request-item-certification) if you're not.
 
@@ -33,7 +33,7 @@ To promote an item, you must have write permissions on the workspace where the c
 
 1. Expand the endorsement section and select **Promoted**.
 
-    If you are promoting a Power BI dataset and see a **Make discoverable** checkbox, it means you can make it possible for users who don't have access to the dataset to find it. See [dataset discovery](/power-bi/collaborate-share/service-discovery) for more detail.
+    If you're promoting a Power BI dataset and see a **Make discoverable** checkbox, it means you can make it possible for users who don't have access to the dataset to find it. See [dataset discovery](/power-bi/collaborate-share/service-discovery) for more detail.
 
     ![Select Promoted and Apply](media/endorsement-promote-certify/promote-item.png)
 
@@ -41,7 +41,7 @@ To promote an item, you must have write permissions on the workspace where the c
 
 ## Certify items
 
-Item certification is a big responsibility, and only authorized users can certify items. Other users can [request item certification](#request-item-certification). This section describes how to certify an item.
+Item certification is a significant responsibility, and only authorized users can certify items. Other users can [request item certification](#request-item-certification). This section describes how to certify an item.
 
 1. Get write permissions on the workspace where the item you want to certify is located. You can request these permissions from the item owner or from anyone who as an admin role in workspace.
 
@@ -51,7 +51,7 @@ Item certification is a big responsibility, and only authorized users can certif
 
 1. Expand the endorsement section and select **Certified**.
 
-    If you are certifying a Power BI dataset and see a **Make discoverable** checkbox, it means you can make it possible for users who don't have access to the dataset to find it. See [dataset discovery](/power-bi/collaborate-share/service-discovery) for more detail.
+    If you're certifying a Power BI dataset and see a **Make discoverable** checkbox, it means you can make it possible for users who don't have access to the dataset to find it. See [dataset discovery](/power-bi/collaborate-share/service-discovery) for more detail.
 
     ![Screen shot of certify content button.](media/endorsement-promote-certify/power-bi-certify-content.png)
 
@@ -59,11 +59,11 @@ Item certification is a big responsibility, and only authorized users can certif
 
 ## Request item certification
 
-If you would like to certify your item but are not authorized to do so, follow the steps below.
+If you would like to certify your item but aren't authorized to do so, follow the steps below.
 
 1. Go to the workspace where the item you want to be certified is located, and then open the settings of that item.
 
-1. Expand the endorsement section. The **Certified** button is greyed out since you are not authorized to certify content. Click the link about how to get your item certified.
+1. Expand the endorsement section. The **Certified** button is greyed out since you aren't authorized to certify content. Select the link about how to get your item certified.
 
     ![Screenshot of how to request certification link.](media/endorsement-promote-certify/request-item-certification.png)
     <a name="no-info-redirect"></a>
