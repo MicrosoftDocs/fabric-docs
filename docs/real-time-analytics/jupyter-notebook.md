@@ -38,7 +38,7 @@ Before we import the NYC Taxi notebook, we need to create a database to load the
 1. Under **Database name**, enter *NYCTaxidb*, then select **Create**.
 1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
 
-    :::image type="content" source="media/spark-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
+    :::image type="content" source="media/jupyter-notebook/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
 
 The KQL database has now been created within the context of the selected workspace.
 
@@ -134,11 +134,11 @@ For more information on kqlmagic, see [Use a Jupyter Notebook and kqlmagic exten
 
 1. The following cell aggregates all pickups within the specified geographic boundary.
 
-    :::image type="content" source="media/jupyter-notebook/aggregate-pickups.png" alt-text="Screenshot of code cell showing aggregation query.":::
+    :::image type="content" source="media/jupyter-notebook/aggregate-pickups.png" alt-text="Screenshot of code cell showing aggregation query." lightbox="media/jupyter-notebook/aggregate-pickups.png":::
 
 1. Run the following cell to draw a map by plotting a heatmap over a scatter plot.
 
-    :::image type="content" source="media/jupyter-notebook/draw-heatmap.png" alt-text="Screenshot of code cell showing query to create heatmap.":::
+    :::image type="content" source="media/jupyter-notebook/draw-heatmap.png" alt-text="Screenshot of code cell showing query to create heatmap."  lightbox="media/jupyter-notebook/draw-heatmap.png":::
 
     The heatmap should look like the following image:
 
@@ -146,7 +146,7 @@ For more information on kqlmagic, see [Use a Jupyter Notebook and kqlmagic exten
 
 1. You can also mark the map to show the results of a clustering function using the following query.
 
-    :::image type="content" source="media/jupyter-notebook/starred-query.png" alt-text="Screenshot of code cell showing query for starring data.":::
+    :::image type="content" source="media/jupyter-notebook/starred-query.png" alt-text="Screenshot of code cell showing query for starring data."  lightbox="media/jupyter-notebook/starred-query.png":::
 
     The heatmap will look like the following image:
 
