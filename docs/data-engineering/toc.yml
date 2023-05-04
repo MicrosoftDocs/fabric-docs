@@ -75,20 +75,21 @@ items:
       href: create-spark-job-definition.md
     - name: Run a Spark job definition
       href: run-spark-job-definition.md
-  - name: Spark utilities
-    href: microsoft-spark-utilities.md
-  - name: Library management
-    href: library-management.md
-  - name: Data Engineering/Science administration settings
+  - name: Spark development
     items:
-    - name: Fabric Capacity settings Overview
+    - name: Spark utilities
+      href: microsoft-spark-utilities.md
+    - name: Library management
+      href: library-management.md
+  - name: Spark administration settings
+    items:
+    - name: Capacity settings overview
       href: capacity-settings-overview.md
-      items: 
-        - name: Spark Compute Settings for Data Engineering/Science Capacity Settings
-          href: capacity-settings-management.md
-    - name: Fabric Workspace Settings 
+    - name: Configure capacity Settings
+      href: capacity-settings-management.md
+    - name: Spark workspace settings 
       href: workspace-admin-settings.md
-    - name: FAQ
+    - name: Spark admin settings - FAQ
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring
     items:
@@ -108,10 +109,10 @@ items:
       href: spark-detail-monitoring.md
 - name: Apache Delta
   items:
-    - name: Lakehouse and delta tables
-      href: ../placeholder.md
-    - name: V-order optimization for tables
-      href: ../placeholder.md
+  - name: Lakehouse and delta tables
+    href: ../placeholder.md
+  - name: V-order optimization for tables
+    href: ../placeholder.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
