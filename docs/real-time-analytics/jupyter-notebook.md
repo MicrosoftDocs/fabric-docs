@@ -106,7 +106,7 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 1. Paste the **Query URI** that you [copied earlier](#1--create-a-kql-database) instead of the placeholder cluster text.
 1. Change the placeholder database name to *NYCTaxidb*.
 
-    :::image type="content" source="media/jupyter-notebook/paste-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted." lightbox="media/jupyter-notebook/paste-query-uri.png":::
+    :::image type="content" source="media/jupyter-notebook/paste-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted." lightbox="media/jupyter-notebook/paste-uri.png":::
 
 1. Run the cell.
 1. An authentication code appears below the cell. Copy this authentication code.
@@ -115,7 +115,7 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 
 1. Paste the code in the popup window, then select **Next**
 
-    :::image type="content" source="media/jupyter-notebook/paste-code.jpg" alt-text="Screenshot of the past code window. The Next button is highlighted.":::
+    :::image type="content" source="media/jupyter-notebook/paste-code.jpg" alt-text="Screenshot of the paste code window. The Next button is highlighted.":::
 
 1. Enter your details in the sign-in window, then select **Next** to sign into KustoClient.
 
