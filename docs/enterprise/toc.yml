@@ -3,24 +3,18 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is capacity?
-    href: what-is-capacity.md
+  - name: Microsoft Fabric licenses
+    href: licenses.md
 - name: Get started
   items:
-  - name: Licenses
-    href: licenses.md  
-  - name: Capacities and SKUs
-    href: capacity-and-skus.md
   - name: Buy a Microsoft Fabric license
-    href: licenses-buy.md     
+    href: licenses-buy.md    
 - name: Capacity operations
   items:
   - name: Pause and resume your capacity
     href: pause-resume.md
   - name: Scale your capacity
     href: scale-capacity.md    
-  - name: Create billing reports
-    href: billing-reports.md
   - name: Metrics app
     items:
     - name: What is the utilization and metrics app?

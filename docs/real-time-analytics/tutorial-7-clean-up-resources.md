@@ -17,7 +17,7 @@ ms.search.form: product-kusto
 
 ## Clean up resources
 
-Once you are finished with the tutorial, you may want to delete all resources created. You can delete individual reports, eventstreams, KQL databases, KQL querysets, and other items individually, or you can delete the entire workspace.
+Once you're finished with the tutorial, you may want to delete all resources created. You can delete individual reports, eventstreams, KQL databases, KQL querysets, and other items individually, or you can delete the entire workspace.
 
 1.  Browse to the workspace in which you created the tutorial.
 1.  In the ribbon, select the **More menu** [**...**] > **Workspace settings**.

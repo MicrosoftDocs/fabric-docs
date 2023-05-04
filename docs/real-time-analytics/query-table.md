@@ -25,16 +25,13 @@ For more information on the Kusto Query Language, see [Kusto Query Language (KQL
 
 ## Query table
 
-1. In the **Object tree**, select the **more menu** on your table > **Query table**. Sample queries run in the context of a selected table.
+1. In the **Object tree**, select the **More menu** [...] on your table > **Query table**. Sample queries run in the context of a selected table.
 
     :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Object tree showing the More menu of a table. The option titled Query table is highlighted.":::
 
-1. Select a single query, or select **Paste all query templates** to autopopulate all of the listed queries into the **Check your data** window, and then select **Run**.
+1. Select a single query to autopopulate into the **Check your data** window, and then select **Run**.
 
     :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Check your data window showing query results.":::
-
-    > [!NOTE]
-    > If you select **Paste all query templates**, you need to run each query individually.
 
 ## Next steps
 
