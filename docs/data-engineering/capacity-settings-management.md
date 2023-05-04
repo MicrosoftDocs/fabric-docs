@@ -10,7 +10,7 @@ ms.date: 05/23/2023
 
 # How to Configure and Manage Data Engineering/Science Settings for Fabric Capacities
 
-**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/applies-to-version/fabric-de-and-ds.md)]
+**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-and-ds.md)]
 
 When you create Microsoft Fabric from the Azure portal, it is automatically added to the Fabric tenant that's associated with the subscription used to create the capacity. With the simplified setup in Microsoft Fabric, there's no need to link the capacity to the Fabric tenant. Because the newly created capacity will be listed in the admin settings pane. This configuration provides a faster experience for admins to start setting up the capacity for their enterprise analytics teams.
 

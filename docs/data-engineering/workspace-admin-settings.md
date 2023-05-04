@@ -10,7 +10,7 @@ ms.date: 05/23/2023
 
 # Data Engineering/Science workspace administration settings
 
-**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/applies-to-version/fabric-de-and-ds.md)]
+**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-and-ds.md)]
 
 When you create a workspace in [!INCLUDE [product-name](../includes/product-name.md)], an [Starter Pool](spark-compute.md) that is associated with that workspace is automatically created. With the simplified setup in [!INCLUDE [product-name](../includes/product-name.md)], there's no need to choose the node or machine sizes, as this is handled for you behind the scenes. This configuration provides a faster (5-10 seconds) spark session start experience for users to get started and run your Spark jobs in many common scenarios without having to worry about setting up the compute. For advanced scenarios with specific compute requirements, users can create a custom spark pool and size the nodes based on their performance needs.
 

@@ -9,7 +9,7 @@ ms.date: 02/24/2023
 ---
 # Concurrency limits and queueing for Fabric Spark
 
-**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/applies-to-version/fabric-de-and-ds.md)]
+**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-and-ds.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] allows allocation of compute units through Capacity, which is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different items consume different capacity at a certain time. [!INCLUDE [product-name](../includes/product-name.md)] offers capacity through the Fabric SKU and Trials. For more information, see [What is capacity?](../enterprise/scale-capacity.md)
 
