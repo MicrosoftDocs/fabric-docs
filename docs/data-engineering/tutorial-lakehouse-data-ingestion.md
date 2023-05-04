@@ -1,5 +1,5 @@
 ---
-title: Lakehouse tutorial - data ingestion
+title: Lakehouse tutorial - Ingest data into the lakehouse
 description: In this tutorial, you build on the work you completed in the previous tutorial and ingest additional tables (dimensions and fact) of a dimensional model.
 ms.reviewer: sngun
 ms.author: arali
@@ -8,9 +8,9 @@ ms.topic: tutorial
 ms.date: 5/23/2023
 ---
 
-# Lakehouse tutorial: Data ingestion in Microsoft Fabric
+# Lakehouse tutorial: Ingest data into the lakehouse
 
-In this tutorial, you build on the work you completed in the previous tutorial and ingest additional tables (dimensions and fact) of the dimensional model of Wide World Importers (WWI).
+In this tutorial, you'll  ingest additional dimensional and fact tables from the Wide World Importers (WWI).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -24,7 +24,7 @@ In this section, you use the **Copy data activity** of a **Data Factory pipeline
 
 1. On the bottom left of the screen, select the workload switcher, and then select **Data Factory**.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\workload-switch-data-factory.png" alt-text="Screenshot showing where to select Data Factory from the workload switcher." lightbox="media\tutorial-lakehouse-data-ingestion\workload-switch-data-factory.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\workload-switch-data-factory.png" alt-text="Screenshot showing where to select Data Factory from the workload switcher.":::
 
 1. Under **New**, select **Data pipeline** to create a new data pipeline.
 
