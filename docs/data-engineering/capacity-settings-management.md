@@ -20,15 +20,15 @@ To manage the Data Engineering/Science settings for [!INCLUDE [product-name](../
 
 1. Click on the **Settings** to open the setting pane for your Fabric and click on **Admin portal** under Governance and insights section
 
-   :::image type="content" source="media\data-engineering-and-data-science-capacity-settings-management\adminportal.png" alt-text="Screenshot showing where to select Admin Portal settings." lightbox="media\data-engineering-and-data-science-capacity-settings-management\adminportal.png":::
+   :::image type="content" source="media\capacity-settings-management\adminportal.png" alt-text="Screenshot showing where to select Admin Portal settings." lightbox="media\capacity-settings-management\adminportal.png":::
 
 2. Then, choose the **Capacity settings** option to expand the menu and select Fabric capacity tab. Here you should see the capacities that you have created in your tenant. Click on the capacity that you would want to configure.
 
-:::image type="content" source="media\data-engineering-and-data-science-capacity-settings-management\capacitysettings.png" alt-text="Screenshot showing where to select Capacity settings." lightbox="media\data-engineering-and-data-science-capacity-settings-management\capacitysettings.png":::
+:::image type="content" source="media\capacity-settings-management\capacitysettings.png" alt-text="Screenshot showing where to select Capacity settings." lightbox="media\capacity-settings-management\capacitysettings.png":::
 
 3. You are navigated to the capacities detail page, where you cal view the usage and other admin controls for your capacity. Navigate to the **Data Engineering/Science Settings** section and click on **Open Spark Compute** 
 
-  :::image type="content" source="media\data-engineering-and-data-science-capacity-settings-management\capacitysettingssections.png" alt-text="Screenshot showing different sections in spark compute settings." lightbox="media\data-engineering-and-data-science-capacity-settings-management\capacitysettingssections.png":::
+  :::image type="content" source="media\capacity-settings-management\capacitysettingssections.png" alt-text="Screenshot showing different sections in spark compute settings." lightbox="media\capacity-settings-management\capacitysettingssections.png":::
 
 4. Customized workspace pools: You can restrict or democratize compute customization to workspace admins by enabling or disabling the Customized workspace pools option. Enabling this option allows workspace admins to create, update or delete workspace level custom spark pools and size them based on the compute requirements within the max cores limit of a capacity. 
 
@@ -39,5 +39,5 @@ To manage the Data Engineering/Science settings for [!INCLUDE [product-name](../
 
 ## Next steps
 
->[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](data-engineering-and-science-workspace-admin-settings.md)
+>[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](workspace-admin-settings.md)
 >[Learn about the Spark Compute for Fabric Data Engineering/Science workloads](spark-compute.md)
