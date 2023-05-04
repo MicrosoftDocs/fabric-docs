@@ -5,7 +5,7 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas
 ms.topic: how-to
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.custom: 
 ---
 # Create a workspace
@@ -40,6 +40,10 @@ This article explains how to create *workspaces*, spaces to collaborate with col
 ## Workspace settings
 
 To see these workspace settings, expand **Advanced** in the **Settings** pane.
+
+### Specify a domain
+
+If you are a domain contributor for the workspace, you can associate the workspace to a domain, or you can change an existing association. For information about domains, see [Domains in Fabric](../governance/domains.md).
 
 ### Create a contact list
 

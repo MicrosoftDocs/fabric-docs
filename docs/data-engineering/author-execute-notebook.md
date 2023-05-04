@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.date: 03/31/2023
+ms.date: 05/23/2023
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks

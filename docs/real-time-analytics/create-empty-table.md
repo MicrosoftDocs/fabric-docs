@@ -1,15 +1,17 @@
 ---
-title: Create an empty table in Real-time Analytics
+title: Create an empty table in Real-Time Analytics
 description: Learn how to create an empty table.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 01/29/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Create an empty table
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Tables are named entities that hold data. A table has an ordered set of columns, and zero or more rows of data. Each row holds one data value for each of the columns of the table. The order of rows in the table is unknown, and doesn't in general affect queries, except for some tabular operators (such as the top operator) that are inherently undetermined.
 
@@ -17,9 +19,8 @@ You can create an empty table without a data source to use as a testing environm
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A Workspace
-* A [KQL database](create-database.md)
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* [KQL database](create-database.md)
 
 ## Create an empty table
 

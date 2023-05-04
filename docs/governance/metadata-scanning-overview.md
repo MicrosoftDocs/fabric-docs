@@ -4,7 +4,7 @@ description: Learn how metadata scanning can help you govern your organizations 
 author: paulinbar
 ms.author: painbar
 ms.topic: concept
-ms.date: 04/08/2023
+ms.date: 05/23/2023
 ---
 
 # Metadata scanning overview
@@ -27,7 +27,7 @@ The following are the scanner APIs. They support both public and sovereign cloud
 
 ## Basic flow
 
-* **Set up metadata scanning in the organization**: Before metadata scanning can be run, a Power BI admin needs to set it up in your organization. Power BI admins should see [Set up metadata scanning](./metadata-scanning-setup.md).
+* **Set up metadata scanning in the organization**: Before metadata scanning can be run, a Power BI admin needs to set it up in your organization. Power BI admins should see [Set up metadata scanning](../admin/metadata-scanning-setup.md).
 
 * **Enable service principal authentication for admin read-only APIs**. Service principal is an authentication method that can be used to let an Azure Active Directory (Azure AD) application access Microsoft Fabric content and APIs. See [Enable service principal authentication for admin read-only APIs](./metadata-scanning-enable-read-only-apis.md).
 
@@ -39,7 +39,7 @@ Metadata scanning requires no special license. It works for all of your tenant m
 
 ## Next steps
 
-* [Set up metadata scanning](./metadata-scanning-setup.md).
+* [Set up metadata scanning](../admin/metadata-scanning-setup.md).
 * [Enable service principal authentication for read-only admin APIs](./metadata-scanning-enable-read-only-apis.md).
 * [Run metadata scanning](./metadata-scanning-run.md)
 * Learn about [Power BI REST Admin APIs](/rest/api/power-bi/admin).

@@ -4,17 +4,15 @@ description: This article provides information about how to do create SharePoint
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 03/21/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to
 ---
 
 # How to create SharePoint Online List connection
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
 This article outlines the steps to create SharePoint Online List connection.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 

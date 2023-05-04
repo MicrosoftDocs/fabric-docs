@@ -5,7 +5,7 @@ ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
@@ -233,4 +233,5 @@ Learn more about the R functionalities:
 
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [Create R visualization](./r-visualization.md)
