@@ -3,13 +3,13 @@ title: Read and write data to and from Power BI
 description: Learn how to use read and write data from and to Power BI in the Data Science workload.
 ms.reviewer: larryfr
 ms.author: marcozo
-author: marcozo
+author: eisber
 ms.topic: how-to
 ms.date: 05/04/2023
 ms.search.form: Read write powerbi
 ---
 
-# How to read data from Power BI Datasets
+# How to read and write data from and to Power BI Datasets
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -90,4 +90,4 @@ GROUP BY
     """)
 ```
 
-# How to write data consumable by Power BI Datasets
+## How to write data consumable by Power BI Datasets
