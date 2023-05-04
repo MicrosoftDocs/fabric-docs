@@ -1,18 +1,22 @@
 ---
-title: Lakehouse tutorial - data ingestion
-description: In this module, you build on the work you completed in the previous module and ingest additional tables (dimensions and fact) of a dimensional model.
+title: Lakehouse tutorial - Ingest data into the lakehouse
+description: In this tutorial, you build on the work you completed in the previous tutorial and ingest additional tables (dimensions and fact) of a dimensional model.
 ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
-ms.date: 4/28/2023
+ms.date: 5/23/2023
 ---
 
-# Lakehouse tutorial: Data ingestion in Microsoft Fabric
+# Lakehouse tutorial: Ingest data into the lakehouse
 
-In this module, you build on the work you completed in the previous module and ingest additional tables (dimensions and fact) of the dimensional model of Wide World Importers (WWI).
+In this tutorial, you'll  ingest additional dimensional and fact tables from the Wide World Importers (WWI).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+## Prerequisite
+
+* [Create a lakehouse](tutorial-build-lakehouse.md)
 
 ## Ingest data
 
@@ -20,7 +24,7 @@ In this section, you use the **Copy data activity** of a **Data Factory pipeline
 
 1. On the bottom left of the screen, select the workload switcher, and then select **Data Factory**.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\workload-switch-data-factory.png" alt-text="Screenshot showing where to select Data Factory from the workload switcher." lightbox="media\tutorial-lakehouse-data-ingestion\workload-switch-data-factory.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\workload-switch-data-factory.png" alt-text="Screenshot showing where to select Data Factory from the workload switcher.":::
 
 1. Under **New**, select **Data pipeline** to create a new data pipeline.
 
@@ -79,7 +83,7 @@ In this section, you use the **Copy data activity** of a **Data Factory pipeline
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-tab-details.png" alt-text="Screenshot of the Destination tab, showing where to enter specific details." lightbox="media\tutorial-lakehouse-data-ingestion\destination-tab-details.png":::
 
-1. You have now completed configuring copy data activity. Select the **Save** button under **Home** to save all these details, and select **Run** to kick off execution of this pipeline and its activity. You can also schedule pipelines to refresh data at defined intervals to meet your business requirements. For this module, we'll run the pipeline once by clicking on **Run** button. This triggers data copy from the underlying data source to the specified lakehouse and might take up to a minute to complete. You can monitor the execution of the pipeline and its activity under the **Output** tab, which appears when you click anywhere on the canvas. Optionally, you can select the glasses icon to look at the details of the data transfer.
+1. You have now completed configuring copy data activity. Select the **Save** button under **Home** to save all these details, and select **Run** to kick off execution of this pipeline and its activity. You can also schedule pipelines to refresh data at defined intervals to meet your business requirements. For this tutorial, we'll run the pipeline once by clicking on **Run** button. This triggers data copy from the underlying data source to the specified lakehouse and might take up to a minute to complete. You can monitor the execution of the pipeline and its activity under the **Output** tab, which appears when you click anywhere on the canvas. Optionally, you can select the glasses icon to look at the details of the data transfer.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\save-run-output-tab.png" alt-text="Screenshot showing where to select Save and Run, and where to find the run details and glasses icon on the Output tab." lightbox="media\tutorial-lakehouse-data-ingestion\save-run-output-tab.png":::
 

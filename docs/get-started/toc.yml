@@ -11,6 +11,12 @@ items:
   items:
   - name: End-to-end tutorials
     href: end-to-end-tutorials.md
+- name: Find your way around Fabric
+  items:
+  - name: Find your items from Fabric Home
+    href: fabric-home.md
+  - name: Search, sort, and filter
+    href: fabric-search.md    
 - name: Workspaces
   items:
   - name: Workspaces

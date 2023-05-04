@@ -31,7 +31,7 @@ Partitions are an essential part of being able to handle a high volume of data. 
 
 If too many partitions are used with a low ingestion rate, partition readers will deal with a tiny portion of this data, causing non-optimal processing. The ideal number of partitions depends directly on the desired processing rate. If you want to scale your event processing, consider adding additional partitions. There is no specific throughput limit on a partition. However, the aggregate throughput in your namespace is limited by the number of throughput units. As you increase the number of throughput units in your namespace, you may want additional partitions to allow concurrent readers to achieve their own maximum throughput.
 
-The recommendation is to investigate and test the best number of partitions for your throughput scenario. But it’s common to see scenarios with high throughput using 32 or more partitions.
+The recommendation is to investigate and test the best number of partitions for your throughput scenario. But it's common to see scenarios with high throughput using 32 or more partitions.
 
 ## Lakehouse as streaming sink
 Delta Lake is an open-source storage layer that provides ACID (atomicity, consistency, isolation, and durability) transactions on top of data lake storage solutions. Delta Lake also supports scalable metadata handling, schema evolution, time travel (data versioning), open format, and other features. 

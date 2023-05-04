@@ -5,7 +5,7 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
-ms.date: 4/28/2023
+ms.date: 5/23/2023
 ---
 
 # Lakehouse end-to-end scenario: overview and architecture
@@ -26,7 +26,7 @@ With the flexibility offered by Fabric, you can implement either lakehouse or da
 
 This tutorial explains how a developer at the fictional Wide World Importers company from the retail domain completes the following steps:
 
-1. Sign in to your Power BI account, or if you don’t have one yet, [sign up for a free trial](../placeholder.md).
+1. Sign in to your Power BI account, or if you don't have one yet, [sign up for a free trial](../placeholder.md).
 
 1. Build and implement an end-to-end lakehouse for your organization:
 
@@ -76,11 +76,11 @@ The following image shows the source, destination and data transformation:
 
 * **Data Source**: The source data is in Parquet file format and in an unpartitioned structure. It's stored in a folder for each table. In this tutorial, we set up a pipeline to ingest the complete historical or onetime data to the lakehouse.
 
-  To demonstrate the capabilities for incremental data load, we have an optional module at the end of this tutorial. In that module, we use the *Sale* fact table, which has one parent folder with historical data for 11 months (with one subfolder for each month) and another folder containing incremental data for three months (one subfolder for each month). During the initial data ingestion, 11 months of data are ingested into the lakehouse table. However, when the incremental data arrives, it includes updated data for Oct and Nov, and new data for Dec. Oct and Nov data is merged with the existing data and the new Dec data is written into lakehouse table as shown in the following image:
+  To demonstrate the capabilities for incremental data load, we have an optional tutorial at the end of this tutorial. In that tutorial, we use the *Sale* fact table, which has one parent folder with historical data for 11 months (with one subfolder for each month) and another folder containing incremental data for three months (one subfolder for each month). During the initial data ingestion, 11 months of data are ingested into the lakehouse table. However, when the incremental data arrives, it includes updated data for Oct and Nov, and new data for Dec. Oct and Nov data is merged with the existing data and the new Dec data is written into lakehouse table as shown in the following image:
 
   :::image type="content" source="media\tutorial-lakehouse-introduction\incremental-data-load.png" alt-text="Diagram showing how changed data can be incrementally merged into initially ingested data in a lakehouse.":::
 
-* **Lakehouse**: In this tutorial, you will create a lakehouse, ingest data into the files section of the lakehouse and then create delta lake tables in the Tables section of the lakehouse. You can find an optional module at the end of this tutorial, which covers creating the lakehouse with medallion architecture some recommendations.
+* **Lakehouse**: In this tutorial, you will create a lakehouse, ingest data into the files section of the lakehouse and then create delta lake tables in the Tables section of the lakehouse. You can find an optional tutorial, which covers creating the lakehouse with medallion architecture some recommendations.
 
 * **Transform**: For data preparation and transformation, you will see two different approaches. We will demonstrate the use of Notebooks/Spark for users who prefer a code-first experience and use pipelines/dataflow for users who prefer a low-code or no-code experience.
 
