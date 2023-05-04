@@ -39,6 +39,5 @@ To manage the Data Engineering/Science settings for [!INCLUDE [product-name](../
 
 ## Next steps
 
->[!div class="nextstepaction"]
 >[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](data-engineering-and-science-workspace-admin-settings.md)
 >[Learn about the Spark Compute for Fabric Data Engineering/Science workloads](spark-compute.md)
