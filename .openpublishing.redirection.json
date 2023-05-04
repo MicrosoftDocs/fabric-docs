@@ -7,7 +7,7 @@
         },
         {
           "source_path_from_root": "/docs/data-factory/move-data-lakehouse-copy-assistant.md",
-          "redirect_url": "/fabric/data-factory/tutorial/move-data-lakehouse-copy-assistant",
+          "redirect_url": "/fabric/data-factory/tutorial-move-data-lakehouse-copy-assistant",
           "redirect_document_id": false
       }
     ]
