@@ -1,6 +1,6 @@
 ---
 title: Lakehouse tutorial - Ingest data into the lakehouse
-description: In this tutorial, you build on the work you completed in the previous tutorial and ingest additional tables (dimensions and fact) of a dimensional model.
+description: In this tutorial, you will ingest additional dimensions and fact tables from the Wide World Importers (WWI) into the lakehouse.
 ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
@@ -10,7 +10,7 @@ ms.date: 5/23/2023
 
 # Lakehouse tutorial: Ingest data into the lakehouse
 
-In this tutorial, you'll  ingest additional dimensional and fact tables from the Wide World Importers (WWI).
+In this tutorial, you'll ingest additional dimensional and fact tables from the Wide World Importers (WWI) into the lakehouse.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -20,7 +20,7 @@ In this tutorial, you'll  ingest additional dimensional and fact tables from the
 
 ## Ingest data
 
-In this section, you use the **Copy data activity** of a **Data Factory pipeline** to ingest sample data from a source (Azure storage account) to the **Files** section of the lakehouse you created earlier.
+In this section, you use the **Copy data activity** of the Data Factory pipeline to ingest sample data from an Azure storage account to the **Files** section of the lakehouse you created earlier.
 
 1. On the bottom left of the screen, select the workload switcher, and then select **Data Factory**.
 
