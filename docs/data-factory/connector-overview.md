@@ -5,7 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview 
-ms.date: 05/23/2023
+ms.date: 04/25/2023
 ---
 
 # Connector overview
@@ -34,7 +34,7 @@ You can find a comprehensive list of all connectors supported through our [publi
 |  | KQL Database | ✓/✓ | ✓ | - | - | - | - |
 |  | Lakehouse | ✓/✓ | - | - | ✓ | - | - |
 | **Azure** | Azure Blob Storage | ✓/✓ | ✓ | ✓ | ✓ | - | - |
-|  | Azure Cosmos DB (SQL API) | ✓/✓ | ✓ | ✓ | ✓ | - | - |
+|  | Azure Cosmos DB for NoSQL | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Data Lake Storage Gen1 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Data Lake Storage Gen2 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Database for PostgreSQL  | ✓/✓ | ✓ | - | - | - | - |
