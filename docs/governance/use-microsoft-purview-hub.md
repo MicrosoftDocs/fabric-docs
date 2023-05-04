@@ -10,7 +10,7 @@ ms.date: 3/31/2023
 
 # The Microsoft Purview Hub in Microsoft Fabric
 
-Introduction to the hub. What is it? Basics of navigating.  [Link to the Microsoft Purview and Microsoft Fabric page.](microsoft-purview-and-fabric.md)
+Introduction to the hub. What is it? Basics of navigating.  [Link to the Microsoft Purview and Microsoft Fabric page.](microsoft-purview-fabric.md)
 
 ## Your role in the hub
 
