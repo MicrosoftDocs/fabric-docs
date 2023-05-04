@@ -48,7 +48,7 @@ We utilize the notebook artifact in the Data Science experience to demonstrate v
 
 1. The imported notebooks are now available in your workspace for use.
 
-   :::image type="content" source="media\tutorial-data-science-prepare-system\imported-notebook-list.png" alt-text="Screenshot showing a list of available noteboks in a workspace." lightbox="media\tutorial-data-science-prepare-system\imported-notebook-list.png":::
+   :::image type="content" source="media\tutorial-data-science-prepare-system\imported-notebook-list.png" alt-text="Screenshot showing a list of available notebooks in a workspace." lightbox="media\tutorial-data-science-prepare-system\imported-notebook-list.png":::
 
 ## Attach a lakehouse to the notebooks
 

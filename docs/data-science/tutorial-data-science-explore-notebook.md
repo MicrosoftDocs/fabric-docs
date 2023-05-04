@@ -53,19 +53,19 @@ The python commands/script used in each step of this tutorial can be found in th
 
    :::image type="content" source="media\tutorial-data-science-explore-notebook\create-bins-plot-histogram.png" alt-text="Screenshot of code samples for creating bins and then visualizing your binned column with a histogram plot." lightbox="media\tutorial-data-science-explore-notebook\create-bins-plot-histogram.png":::
 
-   :::image type="content" source="media\tutorial-data-science-explore-notebook\trip-distribution-duration-chart.png" alt-text="Bar chart of trip distribution by duration bins." lightbox="media\tutorial-data-science-explore-notebook\trip-distribution-duration-chart.png":::
+   :::image type="content" source="media\tutorial-data-science-explore-notebook\trip-distribution-duration-chart.png" alt-text="Bar chart that shows the distribution of trip duration by duration bins." lightbox="media\tutorial-data-science-explore-notebook\trip-distribution-duration-chart.png":::
 
 1. Visualize the distribution of tripDuration and tripDistance and classify by passengerCount using seaborn scatterplot by running below commands.
 
    :::image type="content" source="media\tutorial-data-science-explore-notebook\visualize-seaborn-scatterplot.png" alt-text="Screenshot of code sample for creating a seaborn scatterplot to visualize trip duration and distance." lightbox="media\tutorial-data-science-explore-notebook\visualize-seaborn-scatterplot.png":::
 
-   :::image type="content" source="media\tutorial-data-science-explore-notebook\scatterplot-trip-details.png" alt-text="Scatterplot chart to visualize passenger count, trip duration, and trip distance." lightbox="media\tutorial-data-science-explore-notebook\scatterplot-trip-details.png":::
+   :::image type="content" source="media\tutorial-data-science-explore-notebook\scatterplot-trip-details.png" alt-text="Scatterplot chart that shows the distribution of trip duration and trip distance classified by passenger count." lightbox="media\tutorial-data-science-explore-notebook\scatterplot-trip-details.png":::
 
 1. Visualize the overall distribution of ***passengerCount*** column to understand the most common ***passengerCount*** instances in the trips.
 
    :::image type="content" source="media\tutorial-data-science-explore-notebook\passenger-count-distribution.png" alt-text="Screenshot of code sample for visualizing distribution of the passengerCount column." lightbox="media\tutorial-data-science-explore-notebook\passenger-count-distribution.png":::
 
-   :::image type="content" source="media\tutorial-data-science-explore-notebook\passengercount-distribution-chart.png" alt-text="Bar chart to visualize the distribution of passenger count." lightbox="media\tutorial-data-science-explore-notebook\passengercount-distribution-chart.png":::
+   :::image type="content" source="media\tutorial-data-science-explore-notebook\passenger-count-distribution-chart.png" alt-text="Bar chart to show the most common number of passengers in the taxi trips." lightbox="media\tutorial-data-science-explore-notebook\passenger-count-distribution-chart.png":::
 
 1. Create boxplots to visualize the distribution of ***tripDuration*** by passenger count. A boxplot is a useful tool to understand the variability, symmetry, and outliers of the data.
 
@@ -85,19 +85,19 @@ The python commands/script used in each step of this tutorial can be found in th
 
    :::image type="content" source="media\tutorial-data-science-explore-notebook\code-histogram-trip-counts.png" alt-text="Screenshot of code sample for creating a histogram to analyze the frequency of trips." lightbox="media\tutorial-data-science-explore-notebook\code-histogram-trip-counts.png":::
 
-   :::image type="content" source="media\tutorial-data-science-explore-notebook\histogram-trip-counts.png" alt-text="Histogram chart to visualize distribution of trips by hour of the day." lightbox="media\tutorial-data-science-explore-notebook\histogram-trip-counts.png":::
+   :::image type="content" source="media\tutorial-data-science-explore-notebook\histogram-trip-counts.png" alt-text="Histogram chart to show the number of taxi trips by the hour of the day." lightbox="media\tutorial-data-science-explore-notebook\histogram-trip-counts.png":::
 
 1. Analyze average taxi trip duration by hour and day together by using a seaborn heatmap. The below cell creates a pandas pivot table by grouping the trips by hour and ***dayName*** columns and getting a mean of the tripDuration values. This pivot table is used to create a heatmap using seaborn as shown in the following example.
 
    :::image type="content" source="media\tutorial-data-science-explore-notebook\seaborn-heatmap-code.png" alt-text="Screenshot of code sample to create a pivot table, which can then create a heatmap." lightbox="media\tutorial-data-science-explore-notebook\seaborn-heatmap-code.png":::
 
-   :::image type="content" source="media\tutorial-data-science-explore-notebook\pivot-table-heat-map.png" alt-text="Pandas pivot table used for a seaborn heatmap to analyze trip duration by hour and day." lightbox="media\tutorial-data-science-explore-notebook\pivot-table-heat-map.png":::
+   :::image type="content" source="media\tutorial-data-science-explore-notebook\pivot-table-heat-map.png" alt-text="Heat map over a pandas table to show the average duration of trips by hour and day." lightbox="media\tutorial-data-science-explore-notebook\pivot-table-heat-map.png":::
 
 1. Finally let’s create a correlation plot, which is a useful tool for exploring the relationships among numerical variables in a dataset. It displays the data points for each pair of variables as a scatterplot and calculates the correlation coefficient for each pair. The correlation coefficient indicates how strongly and in what direction the variables are related. A positive correlation means that the variables tend to increase or decrease together, while a negative correlation means that they tend to move in opposite directions. In this example, we're generating correlation plot for a subset of columns in the dataframe for analysis.
 
    :::image type="content" source="media\tutorial-data-science-explore-notebook\correlation-plot-code.png" alt-text="Screenshot of code sample to create a correlation plot." lightbox="media\tutorial-data-science-explore-notebook\correlation-plot-code.png":::
 
-   :::image type="content" source="media\tutorial-data-science-explore-notebook\correlation-plot-trip-details.png" alt-text="Correlation plot to visualize relationships between various trip details." lightbox="media\tutorial-data-science-explore-notebook\correlation-plot-trip-details.png":::
+   :::image type="content" source="media\tutorial-data-science-explore-notebook\correlation-plot-trip-details.png" alt-text="Correlation plot table that shows relationships between pairs of trip variables." lightbox="media\tutorial-data-science-explore-notebook\correlation-plot-trip-details.png":::
 
 ## Observations from exploration data analysis
 
