@@ -13,8 +13,6 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Synapse Real-Time Analytics offers a range of options for managing your data, both on a database and table level. You can manage your data either through the UI of your KQL database or by using management commands. Management commands, also known as control commands, are requests to the service to retrieve information that isn't necessarily data in the database tables, or requests to modify the service state.
 
 For more information, see [Management commands](/azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric)
@@ -25,7 +23,7 @@ You can manage your data in the following ways:
 * Activate [Data copy to OneLake](#data-copy-to-onelake)
 * Create [Stored functions](#stored-functions)
 * Create [Materialized views](#materialized-views)
-<!-- * Alter [table policy update](#table-update-policy)-->
+* Create a [table policy update](#table-update-policy)
 
 ## Database management
 
@@ -41,11 +39,12 @@ To expose the data in your KQL database to all of [!INCLUDE [product-name](../in
 
 ## Table management
 
-<!-- ### Table update policy
+### Table update policy
 
+When you trigger an update policy with a command that adds data to a source table, data also appends to a target table. The target table can have a different schema, retention policy, and other policies from the source table. You can create an update policy on a table using the [.alter table update policy](/azure/data-explorer/kusto/management/alter-table-update-policy-command?context=/fabric/context/context&pivots=fabric) command.
 
+For more information, see [Create a table update policy](table-update-policy.md).
 
--->
 ### Materialized views
 
 A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. You can create materialized views using the `.create materialized-view` command.
