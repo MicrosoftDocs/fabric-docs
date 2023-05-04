@@ -1,5 +1,5 @@
 ---
-title: Query data in the KQL Queryset in Real-time Analytics
+title: Query data in the KQL Queryset in Real-Time Analytics
 description: Learn how to use the KQL Queryset to query your data explorer data.
 ms.reviewer: tzgitlin
 author: YaelSchuster
@@ -9,6 +9,8 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 # Query data in the KQL Queryset
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you'll learn how to create and use a new KQL Queryset.
 

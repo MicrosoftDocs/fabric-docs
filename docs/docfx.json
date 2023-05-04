@@ -46,7 +46,6 @@
     "globalMetadata": {
       "breadcrumb_path": "/fabric/breadcrumb/toc.json",
       "uhfHeaderId": "MSDocsHeader-Fabric",
-      "extendBreadcrumb": true,
       "feedback_system": "None",
       "ms.service": "azure",
        "titleSuffix": "Microsoft Fabric"

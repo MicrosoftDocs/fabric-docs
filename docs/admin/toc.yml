@@ -38,4 +38,10 @@ items:
   - name: Workspace tenant settings
     href: admin-portal-workspace.md         
   - name: Git integration admin tenant settings
-    href: admin-settings-git-integration.md     
+    href: admin-settings-git-integration.md
+- name: Set up item certification
+  href: endorsement-setup.md
+- name: Set up metadata scanning
+  href: metadata-scanning-setup.md
+
+

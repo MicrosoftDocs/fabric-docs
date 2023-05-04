@@ -50,7 +50,7 @@ Below is an extended summary of key new features related to Apache Spark version
 *   Executor **Rolling in Kubernetes** environment ([SPARK-37810](https://issues.apache.org/jira/browse/SPARK-37810))
 *   Support **Customized Kubernetes** Schedulers ( [SPARK-36057](https://issues.apache.org/jira/browse/SPARK-36057))
 *   Migrating from **log4j 1 to log4j 2** ([SPARK-37814](https://issues.apache.org/jira/browse/SPARK-37814)) to gain in:
-    *   Performance: Log4j 2 is much faster than Log4j 1. Log4j 2 uses **asynchronous logging by default,** which can improve performance significantly.
+    *   Performance: Log4j 2 is faster than Log4j 1. Log4j 2 uses **asynchronous logging by default,** which can improve performance significantly.
     *   Flexibility: Log4j 2 provides more flexibility in terms of configuration. It supports **multiple configuration formats**, including XML, JSON, and YAML.
     *   Extensibility: Log4j 2 is designed to be extensible. It allows developers to **create custom plugins and appenders** to extend the functionality of the logging framework.
     *   Security: Log4j 2 provides better security features than Log4j 1. It supports **encryption and secure socket layers** for secure communication between applications.
@@ -69,12 +69,12 @@ Below is an extended summary of key new features related to Apache Spark version
 The key features in this release are as follows:
 *   [`LIMIT`](https://github.com/delta-io/delta/commit/1a94a585) pushdown into Delta scan. Improve the performance of queries containing `LIMIT` clauses by pushing down the `LIMIT` into Delta scan during query planning. Delta scan uses the `LIMIT` and the file-level row counts to reduce the number of files scanned which helps the queries read far less number of files and could make `LIMIT` queries faster by 10-100x depending upon the table size.
 *   [Aggregate](https://github.com/delta-io/delta/commit/0c349da8) pushdown into Delta scan for SELECT COUNT(\*). Aggregation queries such as `SELECT COUNT(*)` on Delta tables are satisfied using file-level row counts in Delta table metadata rather than counting rows in the underlying data files. This significantly reduces the query time as the query just needs to read the table metadata and could make full table count queries faster by 10-100x.
-*   [Support](https://github.com/delta-io/delta/commit/a5fcec4f) for collecting file level statistics as part of the CONVERT TO DELTA command. These statistics potentially help speed up queries on the Delta table. By default the statistics are collected now as part of the CONVERT TO DELTA command. In order to disable statistics collection specify `NO STATISTICS` clause in the command. Example: `CONVERT TO DELTA table_name NO STATISTICS`
+*   [Support](https://github.com/delta-io/delta/commit/a5fcec4f) for collecting file level statistics as part of the CONVERT TO DELTA command. These statistics potentially help speed up queries on the Delta table. By default the statistics are collected now as part of the CONVERT TO DELTA command. In order to disable statistics collection, specify `NO STATISTICS` clause in the command. Example: `CONVERT TO DELTA table_name NO STATISTICS`
 *   [Improve](https://github.com/delta-io/delta/commit/9017ac0d811c0a42ba8ac45720bddf06c8f17e63) performance of the [DELETE](https://docs.delta.io/latest/delta-update.html#delete-from-a-table) command by pruning the columns to read when searching for files to rewrite.
-*   [Fix](https://github.com/delta-io/delta/commit/6dbc55db53332c985e5bc8470df6c95106afac25) for a bug in the DynamoDB-based [S3 multi-cluster mode](https://docs.delta.io/2.1.1/delta-storage.html#setup-configuration-s3-multi-cluster) configuration. The previous version wrote an incorrect timestamp which was used by [DynamoDB’s TTL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) feature to clean up expired items. This timestamp value has been fixed and the table attribute renamed from `commitTime` to `expireTime`. If you already have TTL enabled, please follow the migration steps [here](https://docs.delta.io/latest/porting.html#delta-lake-1-2-1-2-0-0-or-2-1-0-to-delta-lake-2-0-1-2-1-1-or-above).
+*   [Fix](https://github.com/delta-io/delta/commit/6dbc55db53332c985e5bc8470df6c95106afac25) for a bug in the DynamoDB-based [S3 multi-cluster mode](https://docs.delta.io/2.1.1/delta-storage.html#setup-configuration-s3-multi-cluster) configuration. The previous version wrote an incorrect timestamp, which was used by [DynamoDB's TTL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) feature to clean up expired items. This timestamp value has been fixed and the table attribute renamed from `commitTime` to `expireTime`. If you already have TTL enabled, please follow the migration steps [here](https://docs.delta.io/latest/porting.html#delta-lake-1-2-1-2-0-0-or-2-1-0-to-delta-lake-2-0-1-2-1-1-or-above).
 *   [Fix](https://github.com/delta-io/delta/commit/b07257df) [non-deterministic](https://github.com/delta-io/delta/issues/527) behavior during MERGE when working with sources that are non-deterministic.
-*   [Remove](https://github.com/delta-io/delta/commit/89384632) the restrictions for using Delta tables with column mapping in certain Streaming + CDF cases. Earlier we used to block Streaming+CDF if the Delta table has column mapping enabled even though it doesn’t contain any RENAME or DROP columns.
-*   [Improve](https://github.com/delta-io/delta/commit/38f146b3) the monitoring of the Delta state construction queries (additional queries run as part of planning) by making them visible in the Spark UI.
+*   [Remove](https://github.com/delta-io/delta/commit/89384632) the restrictions for using Delta tables with column mapping in certain Streaming + CDF cases. Earlier we used to block Streaming+CDF if the Delta table has column mapping enabled even though it doesn't contain any RENAME or DROP columns.
+*   [Improve](https://github.com/delta-io/delta/commit/38f146b3) the monitoring of the Delta state construction queries (other queries run as part of planning) by making them visible in the Spark UI.
 *   [Support](https://github.com/delta-io/delta/commit/ddc36911) for multiple `where()` calls in Optimize scala/python API
 *   [Support](https://github.com/delta-io/delta/commit/ee3917fc) for passing Hadoop configurations via DeltaTable API
 *   [Support](https://github.com/delta-io/delta/commit/3e8d2d16) partition column names starting with `.` or `_` in CONVERT TO DELTA command.
@@ -86,7 +86,7 @@ The key features in this release are as follows:
 *   [Fix](https://github.com/delta-io/delta/commit/7e876792efdd92a85aa3f7b81d81f34c8b276d7b) for accidental protocol downgrades with [RESTORE](https://docs.delta.io/latest/delta-utility.html#restore-a-delta-table-to-an-earlier-state) command. Until now, RESTORE TABLE may downgrade the protocol version of the table, which could have resulted in inconsistent reads with time travel. With this fix, the protocol version is never downgraded from the current one.
 *   [Fix](https://github.com/delta-io/delta/commit/943e1531) a bug in `MERGE INTO` when there are multiple `UPDATE` clauses and one of the UPDATEs is with a schema evolution.
 *   [Fix](https://github.com/delta-io/delta/commit/68c8e183) a bug where sometimes active `SparkSession` object is not found when using Delta APIs
-*   [Fix](https://github.com/delta-io/delta/commit/951a97d3) an issue where partition schema couldn’t be set during the initial commit.
+*   [Fix](https://github.com/delta-io/delta/commit/951a97d3) an issue where partition schema couldn't be set during the initial commit.
 *   [Catch](https://github.com/delta-io/delta/commit/e5a7cd05) exceptions when writing `last_checkpoint` file fails.
 *   [Fix](https://github.com/delta-io/delta/commit/29d3a092) an issue when restarting a streaming query with `AvailableNow` trigger on a Delta table.
 *   [Fix](https://github.com/delta-io/delta/commit/0bbec372) an issue with CDF and Streaming where the offset is not correctly updated when there are no data changes  
@@ -493,8 +493,8 @@ Below you can find the table with listing all the default level packages for Pyt
 ## Default level packages for R libraries
 Below you can find the table with listing all the default level packages for R and their respective versions.
 
-|  **Library**  | **Version** | **Library**  | **Version** | **Library**  | **Version** |
-|:-------------:|:-----------:|:------------:|:-----------:|:------------:|:-----------:|
+| **Library**                   | **Version** | **Library**              | **Version**  | **Library**             | **Version** |
+|-------------------------------|-------------|--------------------------|--------------|-------------------------|-------------|
 | askpass       | 1.1         | highcharter  | 0.9.4       |    readr     | 2.1.3       |
 | assertthat    | 0.2.1       |    highr     | 0.9         |    readxl    | 1.4.1       |
 | backports     | 1.4.1       |     hms      | 1.1.2       |   recipes    | 1.0.3       |
@@ -570,9 +570,9 @@ Below you can find the table with listing all the default level packages for R a
 
 
 ## Migration between different Apache Spark Versions
-Migrating your workloads to Runtime 1.1 (Apache Spark 3.3) from an older versions of Apache Spark involves a series of steps to ensure a smooth migration. This guide will outline the necessary steps to help you migrate efficiently and effectively.
+Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older versions of Apache Spark involves a series of steps to ensure a smooth migration. This guide will outline the necessary steps to help you migrate efficiently and effectively.
 
-1. Review Runtime 1.1 release notes, including checking the components and default-level packages included into the runtime, to understand the new features, improvements.
+1. Review Fabric Runtime 1.1 release notes, including checking the components and default-level packages included into the runtime, to understand the new features, improvements.
 2. Check compatibility of your current setup and all related libraries, including dependencies and integrations. Review the migration guides to identify potential breaking changes:
    1. [Review Spark Core migration guide](https://spark.apache.org/docs/latest/core-migration-guide.html)
    2. [Review SQL, Datasets and DataFrame migration guide](https://spark.apache.org/docs/latest/sql-migration-guide.html)
@@ -580,16 +580,16 @@ Migrating your workloads to Runtime 1.1 (Apache Spark 3.3) from an older version
    4. If you use PySpark, [review Pyspark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/pyspark_upgrade.html)
    5. If you migrate code from Koalas to PySpark, [review Koalas to pandas API on Spark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/koalas_to_pyspark.html)
 
-3. Move your workloads to Fabric and ... Ensure that you have backups of your data and configuration files in case you need to revert to the previous version.
+3. Move your workloads to Fabric and ensure that you have backups of your data and configuration files in case you need to revert to the previous version.
 
-4. Update any dependencies that may be impacted by the new version of Apache Spark or other Runtime 1.1 related components. This may include third-party libraries or connectors. Make sure to test the updated dependencies in a staging environment before deploying to production
+4. Update any dependencies that may be impacted by the new version of Apache Spark or other Fabric Runtime 1.1 related components. This may include third-party libraries or connectors. Make sure to test the updated dependencies in a staging environment before deploying to production
 
 5. Update Spark Configuration to your workload. This may include updating configuration settings, adjusting memory allocations, and modifying any deprecated configurations. 
 
-6. Modify your Spark applications (notebooks and Spark Jobs Definitions) to use the new APIs and features introduced in Runtime 1.1 and Apache Spark 3.3. This may involve updating your code to accommodate any deprecated or removed APIs, as well as refactoring your applications to take advantage of performance improvements and new functionalities.
+6. Modify your Spark applications (notebooks and Spark Jobs Definitions) to use the new APIs and features introduced in Fabric Runtime 1.1 and Apache Spark 3.3. This may involve updating your code to accommodate any deprecated or removed APIs, as well as refactoring your applications to take advantage of performance improvements and new functionalities.
 
 7. Thoroughly test your updated applications in a staging environment to ensure compatibility and stability with Apache Spark 3.3. Perform performance testing, functional testing, and regression testing to identify and resolve any issues that may arise during the migration process.
 
 8. After validating your applications in a staging environment, deploy the updated applications to your production environment. Monitor the performance and stability of your applications after the migration to identify any issues that need to be addressed.
 
-9. Update your internal documentation and training materials to reflect the changes introduced in Runtime 1.1. Ensure that your team members are familiar with the new features and improvements to maximize the benefits of the migration.
+9. Update your internal documentation and training materials to reflect the changes introduced in Fabric Runtime 1.1. Ensure that your team members are familiar with the new features and improvements to maximize the benefits of the migration.

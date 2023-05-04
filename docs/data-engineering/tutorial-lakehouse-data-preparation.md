@@ -5,12 +5,18 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
-ms.date: 4/28/2023
+ms.date: 5/23/2023
 ---
 
 # Lakehouse tutorial: Data preparation in Microsoft Fabric
 
 In this part of the tutorial, you use notebooks with Spark runtime to transform and prepare the data.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
+## Prerequisite
+
+* [Ingest data into the lakehouse](tutorial-lakehouse-data-ingestion.md)
 
 ## Prepare data
 
@@ -47,8 +53,8 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    > [!NOTE]
    > Fabric provides these unique capabilities for writing optimized delta lake files:
    >
-   > - Verti-Parquet - Tridentincludes Microsoft ’s unique VertiParquet IP. VertiParquet transparently optimizes the Delta Lake files in a way that is highly optimized by Fabric compute engines, often resulting in 3x-4x compression improvement and up to 10x performance acceleration over Delta Lake files not optimized using VertiParquet while still maintaining full Delta Lake format compliance.
-   > - [Optimize write](/azure/synapse-analytics/spark/optimize-write-for-apache-spark) - Apache Spark performs most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and Spark’s configurations play a critical role in performance. Ingestion workloads into Delta Lake tables may have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small files problem". To overcome this problem, Spark in Fabric includes an Optimize Write feature that reduces the number of files written and aims to increase individual file size of the written data. It dynamically optimizes partitions while generating files with a default 128 MB size. The target file size may be changed per workload requirements using configurations.
+   > - V-order: A write optimization to the parquet file format that enables fast reads and provides cost efficiency and better performance. All the Fabric engines write v-ordered parquet files by default. It often improves compression by 3 to 4 times and up to 10 times performance acceleration over the Delta Lake files that aren't optimized. To learn more, see [v-order optimization](../placeholder.md)
+   > - [Optimize write](/azure/synapse-analytics/spark/optimize-write-for-apache-spark) - Apache Spark performs most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and Spark's configurations play a critical role in performance. Ingestion workloads into Delta Lake tables may have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small files problem". To overcome this problem, Spark in Fabric includes an Optimize Write feature that reduces the number of files written and aims to increase individual file size of the written data. It dynamically optimizes partitions while generating files with a default 128 MB size. The target file size may be changed per workload requirements using configurations.
 
 1. Before you write data as delta lake tables in the **Tables** section of the lakehouse, you use two Fabric features (**Verti-Parquet** and **Optimize Write**) for optimized data writing and for improved reading performance. To enable these features in your session, set these configurations in the first cell of your notebook. (Eventually these features will be enabled by default for Spark sessions.)
 
@@ -56,7 +62,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
    :::image type="content" source="media\tutorial-lakehouse-data-preparation\spark-session-run-execution.png" alt-text="Screenshot of a Spark session configuration screen, including a code cell and Run icon." lightbox="media\tutorial-lakehouse-data-preparation\spark-session-run-execution.png":::
 
-   When you execute this cell, you see that you didn’t have to specify the underlying Spark pool or cluster details because Fabric provides them through the concepts of Live Pool. (Every Fabric workspace comes prewired with a default Spark pool, called Live Pool.) This means that when you create notebooks, you don't have to worry about specifying any Spark configurations or cluster details (or something like that) and when you execute your first command in the notebooks the live pool kicks in and is up in a few seconds after establishing your Spark session and starts executing the code in the cell. Subsequent code execution is almost instantaneous in this notebook while the Spark session is active.
+   When you execute this cell, you see that you didn't have to specify the underlying Spark pool or cluster details because Fabric provides them through the concepts of Live Pool. (Every Fabric workspace comes prewired with a default Spark pool, called Live Pool.) This means that when you create notebooks, you don't have to worry about specifying any Spark configurations or cluster details (or something like that) and when you execute your first command in the notebooks the live pool kicks in and is up in a few seconds after establishing your Spark session and starts executing the code in the cell. Subsequent code execution is almost instantaneous in this notebook while the Spark session is active.
 
 1. Next, you read raw data from the **Files** section of the lakehouse, and add more columns for different date parts as part of the transformation. Finally, you use partitionBy Spark API to partition the data before writing it as delta table based on the newly created data part columns (Year and Quarter).
 
@@ -177,8 +183,10 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 Both of the previous approaches (1 and 2) produce a similar outcome. You can choose based on your background and preference, to minimize the need for you to learn a new technology or compromise on the performance.
 
-Also you may notice that you're writing data as delta lake files, which the automatic table discovery and registration feature of Fabric picks up and registers in the metastore. This means you don’t need to explicitly call CREATE TABLE statements to create tables to use with SQL.
+Also you may notice that you're writing data as delta lake files, which the automatic table discovery and registration feature of Fabric picks up and registers in the metastore. This means you don't need to explicitly call CREATE TABLE statements to create tables to use with SQL.
 
 ## Next steps
 
-- [Lakehouse tutorial: Building reports in Microsoft Fabric](tutorial-lakehouse-build-report.md)
+Advance to the next article to learn about
+> [!div class="nextstepaction"]
+> [Build reports using Power BI](tutorial-lakehouse-build-report.md)

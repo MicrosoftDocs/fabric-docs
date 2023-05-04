@@ -33,7 +33,7 @@ items:
   - name: OneLake
     tocHref: /fabric/onelake
     topicHref: /fabric/onelake/index
-  - name: Real-time Analytics
+  - name: Real-Time Analytics
     tocHref: /fabric/real-time-analytics
     topicHref: /fabric/real-time-analytics/index
   - name: Security
