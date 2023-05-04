@@ -35,7 +35,7 @@ To promote an item, you must have write permissions on the workspace where the c
 
     If you're promoting a Power BI dataset and see a **Make discoverable** checkbox, it means you can make it possible for users who don't have access to the dataset to find it. See [dataset discovery](/power-bi/collaborate-share/service-discovery) for more detail.
 
-    ![Select Promoted and Apply](media/endorsement-promote-certify/promote-item.png)
+    :::image type="content" source="./media/endorsement-promote-certify/promote-item.png" alt-text="Screenshot of promoting an item.":::
 
 1. Select **Apply**.
 
@@ -53,7 +53,7 @@ Item certification is a significant responsibility, and only authorized users ca
 
     If you're certifying a Power BI dataset and see a **Make discoverable** checkbox, it means you can make it possible for users who don't have access to the dataset to find it. See [dataset discovery](/power-bi/collaborate-share/service-discovery) for more detail.
 
-    ![Screen shot of certify content button.](media/endorsement-promote-certify/certify-item.png)
+    :::image type="content" source="./media/endorsement-promote-certify/certify-item.png" alt-text="Screenshot of certifying an item.":::
 
 1. Select **Apply**.
 
@@ -65,7 +65,7 @@ If you would like to certify your item but aren't authorized to do so, follow th
 
 1. Expand the endorsement section. The **Certified** button is greyed out since you aren't authorized to certify content. Select the link about how to get your item certified.
 
-    ![Screenshot of how to request certification link.](media/endorsement-promote-certify/request-item-certification.png)
+    :::image type="content" source="./media/endorsement-promote-certify/request-item-certification.png" alt-text="Screenshot of how to request certification link.":::
     <a name="no-info-redirect"></a>
     >[!NOTE]
     >If you clicked the link above but got redirected back to this note, it means that your Power BI admin has not made any information available. In this case, contact the Power BI admin directly.
