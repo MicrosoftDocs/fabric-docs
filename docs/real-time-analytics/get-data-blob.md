@@ -35,8 +35,6 @@ In the next section of this document, choose the tab that corresponds to the typ
 1. On the **Home** tab, select **Get Data** > **Get data from blob**.
 1. Enter a name for your table. By default, **New table** is selected.
 
-    :::image type="content" source="media/get-data-blob/table-name.png" alt-text="table name.":::
-
     > [!TIP]
     >  Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
@@ -52,8 +50,6 @@ In the next section of this document, choose the tab that corresponds to the typ
 
 1. On the **Home** tab, select **Get Data** > **Get data from blob container**.
 1. Enter a name for your table. By default, **New table** is selected.
-
-    :::image type="content" source="media/get-data-blob/table-name.png" alt-text="table name.":::
 
     > [!TIP]
     >  Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
@@ -86,7 +82,7 @@ For more information on data formats, see [Data formats supported for ingestion]
 
 1. In the **Mapping name** field, enter a mapping name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 
-    :::image type="content" source="media/get-data-blob/azure-blob-schema.png" alt-text="Screenshot of the Ingest data window showing the blob schema mapping.Azure blob schema.":::
+    :::image type="content" source="media/get-data-blob/azure-blob-schema.png" alt-text="Screenshot of the Ingest data window showing the blob schema mapping.":::
 
     >[!NOTE]
     >
@@ -122,13 +118,13 @@ Select **Next: Summary** to create a table and mapping and to begin data ingesti
 
 ### Complete data ingestion
 
-In the **Data ingestion completed** window, all three steps will be marked with green check marks when data ingestion finishes successfully.
+In the **Data ingestion completed** window, all three steps are marked with green check marks when data ingestion finishes successfully.
 
 :::image type="content" source="media/get-data-blob/azure-blob-summary-pane.png" alt-text="Screenshot of ingested complete dialog box with data preview. The Close button is highlighted."  lightbox="media/get-data-blob/azure-blob-summary-pane.png":::
 
 ## Check your data
 
-To verify that you've ingested data into your database, select **Check your data** on the rightmost of the database landing page and run any of the auto-populated sample queries. You can then save your query as a KQL Queryset by selecting **Save as KQL queryset**.
+To verify that you've ingested data into your database, select **Check your data** on the rightmost of the database landing page and run any of the autopopulated sample queries. You can then save your query as a KQL Queryset by selecting **Save as KQL queryset**.
 
 :::image type="content" source="media/get-data-blob/quick-query.png" alt-text="Screenshot of the Quick query button.":::
 
