@@ -82,12 +82,12 @@ items:
   - name: Data Engineering/Science administration settings
     items:
     - name: Fabric Capacity settings Overview
-      href: data-engineering-and-data-science-capacity-settings-overview.md
+      href: capacity-settings-overview.md
       items: 
         - name: Spark Compute Settings for Data Engineering/Science Capacity Settings
-          href: data-engineering-and-data-science-capacity-settings-management.md
+          href: capacity-settings-management.md
     - name: Fabric Workspace Settings 
-      href: data-engineering-and-science-workspace-admin-settings.md
+      href: workspace-admin-settings.md
     - name: FAQ
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring

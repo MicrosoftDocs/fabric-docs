@@ -48,7 +48,7 @@ Admins can create custom spark pools based on their compute requirements by sele
 
 > [!NOTE]
 > For creating a custom spark pool,  the capacity admin should have enabled the **Customized workspace pools** option in the Spark Compute section of Capacity Admin settings. 
-> Learn more about [Spark Compute Settings for Fabric Capacities](data-engineering-and-data-science-capacity-settings-management.md)
+> Learn more about [Spark Compute Settings for Fabric Capacities](capacity-settings-management.md)
 
 [!INCLUDE [product-name](../includes/product-name.md)] spark supports Single node clusters, which allows users to select a min node configuration of 1 and with a max node of 2 thereby offering high-availability and better job reliability for smaller compute requirements. 
 

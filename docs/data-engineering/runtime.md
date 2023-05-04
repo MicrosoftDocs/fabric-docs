@@ -34,11 +34,7 @@ Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offer
 - Delta Lake: 2.2
 - R: 4.2.2
 
-<<<<<<< HEAD
-:::image type="content" source="media\data-engineering-and-science-workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\data-engineering-and-science-workspace-admin-settings\runtime-version.png":::
-=======
-:::image type="content" source="media\spark-workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version.":::
->>>>>>> 5dfe46f0728da396c8b3ee9a6cac43e16fa33f5d
+:::image type="content" source="media\workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version.":::
 
 Microsoft Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
 
