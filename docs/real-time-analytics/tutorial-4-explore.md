@@ -39,7 +39,7 @@ The first step in data analysis is often to take a look at a subset of the data 
 
 1. The next query in the list of sample queries uses the [getschema operator](/azure/data-explorer/kusto/query/getschemaoperator?context=/fabric/context/context&pivots=fabric) to retrieve the table schema. 
 
-    :::image type="content" source="media/realtime-analytics-tutorial/sample-query-schema.png" alt-text="Screenshot returing sample query results of getschema operator. ":::
+    :::image type="content" source="media/realtime-analytics-tutorial/sample-query-schema.png" alt-text="Screenshot returning sample query results of getschema operator. ":::
 
 1. The next query in the list of sample queries uses the [summarize operator](/azure/data-explorer/kusto/query/summarizeoperator?context=/fabric/context/context&pivots=fabric) to check when the last record was ingested.
 
