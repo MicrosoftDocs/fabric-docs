@@ -34,7 +34,7 @@ To enable service principal authentication for Power BI read-only APIs, follow t
     > Make sure the app doesn't have any admin-consent required permissions for Power BI set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions). [POWER BI?]
 
 4. Enable the Fabric admin settings:
-    1. Log in to the Fabric admin center. You need to be a Power BI admin to see the tenant settings page.
+    1. Log in to the Fabric admin portal. You need to be a Fabric admin to see the tenant settings page.
     1. Under **Admin API settings**, you'll see **Allow service principals to use read-only Power BI admin APIs**. Set the toggle to Enabled, and then select the **Specific security groups** radio button and add the security group you created in Step 2 in the text field that appears below it, as shown in the figure below. [IS THIS STILL EXACTLY AS DESCRIBED?]
 
         :::image type="content" source="media/enable-read-only-apis/allow-service-principals-tenant-setting.png" alt-text="Screenshot of allow service principals tenant setting.":::
@@ -94,11 +94,11 @@ An app using service principal authentication that calls read-only admin APIs **
 
 ## Considerations and limitations
 
-* You can't sign into the Power BI portal using service principal. [NOT SURE WHAT THIS MEANS. DO WE NEED IT?]
-* Power BI admin rights are required to enable service principal in the Admin API settings in the Fabric admin center.
+* The service principal can make rest API calls, but you can't open Fabric with service principal credentials.
+* Fabric admin rights are required to enable service principal in the Admin API settings in the Fabric admin portal.
 
 ## Next steps
 
-* [Metadata scanning overview](./metadata-scanning-overview.md)
-* [Set up metadata scanning](../admin/metadata-scanning-setup.md)
-* [Run metadata scanning](./metadata-scanning-run.md)
+* [Metadata scanning overview](../governance/metadata-scanning-overview.md)
+* [Set up metadata scanning](./metadata-scanning-setup.md)
+* [Run metadata scanning](../governance/metadata-scanning-run.md)
