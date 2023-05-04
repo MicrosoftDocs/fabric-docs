@@ -97,4 +97,4 @@ Notebooks that contain batch scoring can be scheduled to run using the Notebook 
 - Learn more about tracking experiments, see [Machine learning experiment](machine-learning-experiment.md)
 - Learn more about managing models, see [Machine learning model](machine-learning-model.md)
 - Learn more about batch scoring with Predict, see [Score models with PREDICT](model-scoring-predict.md)
-- Serve predictions from Lakehouse to Power BI with [Direct lake Mode ](../../data-engineering/lakehouse-pbi-reporting.md)
+- Serve predictions from Lakehouse to Power BI with [Direct lake Mode ](../data-engineering/lakehouse-pbi-reporting.md)
