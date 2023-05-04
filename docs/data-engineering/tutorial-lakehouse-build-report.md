@@ -49,7 +49,7 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
       :::image type="content" source="media\tutorial-lakehouse-build-report\create-relationship-dialog.png" alt-text="Screenshot of the Create Relationship dialog box, showing where to select Assume referential integrity.":::
 
-   1. Similarly, you need to add these relationships as well:
+   1. Similarly, you need to add these relationships as well. After you add these relationships, your data model is ready for reporting as shown in the previous image:
 
       * StockItemKey(fact_sale) - StockItemKey(dimension_stock_item)
       * Salespersonkey(fact_sale) - EmployeeKey(dimension_employee)
@@ -58,9 +58,7 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
         :::image type="content" source="media\tutorial-lakehouse-build-report\new-report-relationships.png" alt-text="Screenshot of a New report screen showing multiple table relationships." lightbox="media\tutorial-lakehouse-build-report\new-report-relationships.png":::
 
-        After you add these relationships, your data model is ready for reporting as shown in the previous image. Select **New report** to start creating reports/dashboards in Power BI.
-
-1. On the Power BI report canvas, you can create reports to meet your business requirements by dragging required columns from the **Data** pane to the canvas and using one or more of available visualizations.
+1. Select **New report** to start creating reports/dashboards in Power BI. On the Power BI report canvas, you can create reports to meet your business requirements by dragging required columns from the **Data** pane to the canvas and using one or more of available visualizations.
 
    :::image type="content" source="media\tutorial-lakehouse-build-report\report-canvas-drag-columns.png" alt-text="Screenshot of the Power BI report canvas, showing where to select columns in the Data pane." lightbox="media\tutorial-lakehouse-build-report\report-canvas-drag-columns.png":::
 
