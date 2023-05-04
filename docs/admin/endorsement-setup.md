@@ -30,14 +30,13 @@ Certification is part of Power BI's *endorsement* feature. See [Endorsement: Pro
    [ ![Screenshot of how to set up dataset and dataflow certification](media/endorsement-setup/service-admin-certification-setup-dialog.png)](media/endorsement-setup/service-admin-certification-setup-dialog.png#lightbox)
 
 1. Set the toggle to **Enabled**.
-1. If your organization has a published certification policy, provide its URL here. This will become the **Learn more** link in the certification section of the [endorsement settings dialog](../get-started/endorsement-certify.md#request-content-certification). If you don't supply a link, users who want to request certification of their content will be advised to contact their Power BI administrator.
-1. Specify one or more security groups whose members will be authorized to certify content. These authorized certifiers will able to use the Certification button in the certification section of the [endorsement settings dialog](../get-started/endorsement-certify.md#certify-content). This field accepts security groups only. You can't enter named users.
+1. If your organization has a published certification policy, provide its URL here. This will become the **Learn more** link in the certification section of the [endorsement settings dialog](../get-started/endorsement-promote-certify.md#request-item-certification). If you don't supply a link, users who want to request certification of their content will be advised to contact their Power BI administrator.
+1. Specify one or more security groups whose members will be authorized to certify content. These authorized certifiers will able to use the Certification button in the certification section of the [endorsement settings dialog](../get-started/endorsement-promote-certify.md#certify-items). This field accepts security groups only. You can't enter named users.
     
     If a security group contains subsecurity groups that you don't want to give certification rights to, you can check the **Except specific security groups** box and enter the name(s) of those group(s) in a text box that will appear.
 1. Click **Apply**.
 
 ## Next steps
 * [Read about endorsement in Fabric](../get-started/endorsement-overview.md)
-* [Promote Fabric content](../get-started/endorsement-promote.md)
-* [Certify Fabric content](../get-started/endorsement-certify.md)
-* Questions? [Try asking the Power BI Community](https://community.powerbi.com/)
+* [Promote Fabric items](../get-started/endorsement-promote-certify.md#promote-items)
+* [Certify Fabric items](../get-started/endorsement-promote-certify.md#certify-items)
