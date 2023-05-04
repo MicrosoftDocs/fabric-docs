@@ -38,9 +38,9 @@ The following section lists various numerical limits for Fabric Spark workload b
 |F256|P4|256|512|80|320|
 |F512|P5|512|1024|160|640|
 
-The queueing mechanism is a simple FIFO based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available. 
+The queueing mechanism is a simple FIFO based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available.
 
-As there are different items like notebooks, spark job definition and Lakehouse which users could use in any workspace, and as usage varies across different enterprise teams, users could run into starvation scenarios where the dependency on only type of item, like spark job definition could result in users sharing the capacity from running a notebook based job or any lakehouse based operation like load to table. 
+As there are different items like notebooks, spark job definition and Lakehouse which users could use in any workspace, and as usage varies across different enterprise teams, users could run into starvation scenarios where the dependency on only type of item, like spark job definition could result in users sharing the capacity from running a notebook based job or any lakehouse based operation like load to table.
 
 To avoid these  blocking scenarios, [!INCLUDE [product-name](../includes/product-name.md)] applies a **Dynamic reserve based throttling** for jobs from these items. Notebook and Lakehouse based jobs being more interactive and real-time are classified as **interactive** and spark job definition is classified as **batch**. As part of this Dynamic reserve, a minimum and maximum reserve bounds are maintained for these job types. The reserves are mainly to address use cases where an enterprise team could experience peak usage scenarios having their entire capacity consumed through batch jobs and during those peak hours, users are blocked from using interactive items like notebooks or Lakehouse. With this approach, every capacity gets a minimum reserve of 30% of the total jobs allocated for interactive jobs (5% for Lakehouse and 25% for notebooks) and a minimum reserve of 10% for batch jobs.  
 
@@ -51,13 +51,12 @@ To avoid these  blocking scenarios, [!INCLUDE [product-name](../includes/product
 |              | Notebook                  | 25    | 85    |
 |              | Lakehouse                 | 5     | 65    |
 
-
 Interactive jobs like Notebooks and Lakehouse are throttled with a  **HTTP Response code 430 : Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later**,  when they exceed these reserves and when their capacity is at its maximum utilization
 
 With queueing enabled, Batch jobs like Spark Job Definitions get added to the queue and are automatically retried when the capacity is freed up.
 
 > [!NOTE]
-> The jobs have a queue expiration period of 24 hours, after which they are cancelled and users would have to resubmit them for job execution. 
+> The jobs have a queue expiration period of 24 hours, after which they are cancelled and users would have to resubmit them for job execution.
 
 ## Next steps
 
