@@ -14,18 +14,18 @@ title: Lifecycle management troubleshooting
 summary: |
 
   Use this article to troubleshoot issues in the lifecycle management process. Review the following links to understand the considerations and limitations.
-  * General considerations and limitations
-    [git-integration](./git-integration/git-integration-process.md#considerations-and-limitations) [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
-  * Permissions
-    [git-integration](./git-integration/git-integration-process.md#permissions) [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#permissions) 
-  * Workspaces
-    [git integration](./git-integration/git-integration-process.md#workspace-limitations) [Assigning workspaces in deployment pipelines](deployment-pipelines/assign-pipeline.md#limitations)
-  * Fabric items:
-    * Supported and unsupported items
-      [git integration](./git-integration/intro-to-git-integration.md#supported-items) [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#deployed-items)
+  * <b>General considerations and limitations</b>:
+    [git-integration](./git-integration/git-integration-process.md#considerations-and-limitations), [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
+  * <b>Permissions</b>:
+    [git-integration](./git-integration/git-integration-process.md#permissions), [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#permissions) 
+  * <b>Workspaces</b>:
+    [git integration](./git-integration/git-integration-process.md#workspace-limitations), [deployment pipelines](deployment-pipelines/assign-pipeline.md#limitations)
+  * <b>Fabric items</b>:
+    * Supported and unsupported items:
+      [git integration](./git-integration/intro-to-git-integration.md#supported-items), [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#deployed-items)
     * Limitations
       [deployment-pipelines](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
-  * Deployment rules:
+  * <b>Deployment rules</b>:
     * [Deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations)
     * [Supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules)
   * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
@@ -35,9 +35,14 @@ sections:
   - name: General
     questions:
       - question: |
-          What's deployment pipelines in Microsoft Fabric?
+          What is lifecycle management in Microsoft Fabric?
         answer: |
-          To understand what deployment pipelines is in Fabric, refer to the [deployment pipelines overview](deployment-pipelines/intro-to-deployment-pipelines.md).
+          Lifecycle management has two parts, integration and deployment. To understand what integration is in Fabric, refer to [the git integration overview](./git-integration/intro-to-git-integration.md). To understand what deployment pipelines is in Fabric, refer to the [deployment pipelines overview](deployment-pipelines/intro-to-deployment-pipelines.md).
+          
+      - question: |
+          How do I get started with git integration?
+        answer: |
+          Get started with git integration using the [get started instructions](git-integration/git-get-started.md).
           
       - question: |
           How do I get started with deployment pipelines?
@@ -68,15 +73,15 @@ sections:
   - name: Licensing
     questions:
       - question: |
-          What licenses are needed to work with deployment pipelines?
+          What licenses are needed to work with lifecycle management?
         answer: |
-          To use deployment pipelines, you need to have one of the following licenses:
+          To use the lifecycle management features, you need to have one of the following licenses:
           
-          * A [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md) license, with a workspace that resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
+          * A [Pro license](../enterprise/licenses.md#individual-licenses) license, with a workspace that resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
           
-          * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
+          * [Capacity license](../enterprise/licenses.md#organizational-licenses).
           
-          For more information, see [accessing deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md).
+          For more information on obtaining a license, see [Fabric licenses](../enterprise/licenses-buy.md).
           
       - question: |
           What type of capacity can I assign to a workspace in a pipeline?
@@ -90,7 +95,19 @@ sections:
           >[!NOTE]
           >When you create a workspace with a PPU, only other PPU users can able to access the workspace and consume its content.
           
-  - name: Technical  
+  - name: Git integration  
+    questions:
+      - question: |
+          Why is the Commit button disabled?
+        answer: |
+          In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item. To reestablish these connections, unassign and reassign the same workspace in the target stage.
+
+      - question: |
+          Why are the Commit and Update buttons both disabled?
+        answer: |
+          When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace. For example, if you're
+
+  - name: Deployment pipelines  
     questions:
       - question: |
           How do I reestablish connections after deployment?
@@ -294,7 +311,7 @@ sections:
       - question: |
           Why deploying a large number of paginated reports fails?
         answer: |
-          A deployment of a large number of paginated reports with rules might fail due to an overload on the capacity. To overcome this problem, either purchase a higher SKU, or use selective deployment.
+          A deployment of a large number of paginated reports with rules might fail due to an overload on the capacity. To overcome this problem, either purchase a higher [SKU](../enterprise/licenses.md#capacity-and-skus), or use selective deployment.
 
       - question: |
           After deployment, can I download the RDL file of the paginated report?
