@@ -23,7 +23,5 @@ items:
   items:
   - name: Overview
     href: metadata-scanning-overview.md
-  - name: Enable service principal authentication for read-only admin APIs
-    href: metadata-scanning-enable-read-only-apis.md
   - name: Run metadata scanning
     href: metadata-scanning-run.md
