@@ -106,7 +106,7 @@ Select the **play** button to run each cell, or select the cell and press **Shif
 1. Paste the **Query URI** that you copied earlier instead of the placeholder cluster text.
 1. Change the placeholder database name to *NYCTaxidb*.
 
-    :::image type="content" source="media/jupyter-notebook/paste-query-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted." lightbox="media/jupyter-notebook/paste-query-uri.png":::
+    :::image type="content" source="media/jupyter-notebook/paste-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted." lightbox="media/jupyter-notebook/paste-query-uri.png":::
 
 1. Run the cell.
 1. An authentication code appears below the cell. Copy this authentication code.
