@@ -18,8 +18,8 @@ Admins purchase [!INCLUDE [product-name](../includes/product-name.md)] capacitie
 
 Admins can select a specific capacity and navigate to the Data Engineering/Science section in the Admin portal page of [!INCLUDE [product-name](../includes/product-name.md)].
 
-:::image type="content" source="media\data-engineering-and-data-science-capacity-settings\capacitysettings_without_userdefinedpools.gif" alt-text="A gif showing the  configuration of capacity settings for Data Engineering/Science.":::
+:::image type="content" source="media\capacity-settings\capacitysettings_without_userdefinedpools.gif" alt-text="A gif showing the  configuration of capacity settings for Data Engineering/Science.":::
 
 ## Next steps
 
->[Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](data-engineering-and-data-science-capacity-settings-management.md)
+>[Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-management.md)
