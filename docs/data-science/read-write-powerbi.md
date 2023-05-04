@@ -93,4 +93,32 @@ GROUP BY
     """)
 ```
 
+## Read Limitations
+
+The read access APIs have the following limitations:
+
+- SemPy read_table, SemPy read_dax and Power BI table access using Spark SQL are subject to [Power BI backend limitations](https://learn.microsoft.com/en-us/rest/api/power-bi/datasets/execute-queries#limitations).
+- Predicate pushdown for Spark *_Metrics* queries is limited to a single [IN](https://spark.apache.org/docs/3.3.0/api/sql/index.html#in) expression. Extra [IN](https://spark.apache.org/docs/3.3.0/api/sql/index.html#in) expressions and unsupported predicates are evaluated in Spark after data transfer.
+- Predicate pushdown for Power BI tables accessed using Spark SQL doesn't support
+  - [ISNULL](https://spark.apache.org/docs/3.3.0/api/sql/#isnull)
+  - [IS_NOT_NULL](https://spark.apache.org/docs/3.3.0/api/sql/#isnotnull)
+  - [STARTS_WITH](https://spark.apache.org/docs/3.3.0/api/sql/#startswith)
+  - [ENDS_WITH](https://spark.apache.org/docs/3.3.0/api/sql/#endswith)
+  - [CONTAINS](https://spark.apache.org/docs/3.3.0/api/sql/#contains).
+
 ## How to write data consumable by Power BI Datasets
+
+Spark tables added to a Lakehouse are automatically added to corresponding default Power BI dataset.
+This example demonstrates how to convert a Pandas dataframe to a Spark dataframe and write it to the attached Lakehouse.
+
+```python
+import pandas as pd
+
+df_pandas = pd.DataFrame({'a': [1, 2, 3]})
+df_spark  = spark.createDataFrame(df_pandas)
+
+df_spark.write.format("delta").saveAsTable("ForecastTable")
+```
+
+Using Power BI the table *ForecastTable* can be added to a composite dataset using the Lakehouse dataset.
+
