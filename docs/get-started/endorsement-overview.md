@@ -27,7 +27,7 @@ There are two kinds of endorsement: **promotion** and **certification**.
 
     **Certification is available only if a Power BI administrator has [enabled and configured](../admin/endorsement-setup.md) it for your organization**.
 
-The following image illustrates how endorsed promoted and certified datasets are clearly identified when you're searching for a items.
+The following image illustrates how endorsed, promoted, and certified datasets are clearly identified when you're searching for an item.
 
 [ ![Screenshot of endorsed datasets in a dataset selection dialog.](media/endorsement-overview/endorsement-data-hub.png)](media/endorsement-overview/endorsement-data-hub.png#lightbox)
 
