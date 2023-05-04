@@ -73,5 +73,5 @@ When Dynamic Allocation option is enabled, for every spark application submitted
 
 ## Next steps
 
->[Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](data-engineering-and-data-science-capacity-settings-overview.md)
->[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](spark-workspace-admin-settings.md)
+>[Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-overview.md)
+>[Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](workspace-admin-settings.md)
