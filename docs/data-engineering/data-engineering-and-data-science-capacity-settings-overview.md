@@ -22,5 +22,4 @@ Admins can select a specific capacity and navigate to the Data Engineering/Scien
 
 ## Next steps
 
->[!div class="nextstepaction"]
 >[Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](data-engineering-and-data-science-capacity-settings-management.md)
