@@ -4,7 +4,7 @@ items:
 - name: Overview
   items:
   - name: Microsoft Fabric licenses
-    href: license.md
+    href: licenses.md
 - name: Get started
   items:
   - name: Buy a Microsoft Fabric license
