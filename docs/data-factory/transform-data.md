@@ -158,4 +158,17 @@ Now that you created a dataflow gen2, you can operate on it in a pipeline. In th
 
 ## Next steps
 
-[Monitor pipeline runs](monitor-pipeline-runs.md)
+This sample shows you how to create and configure a dataflow gen2 to create a merge query and store it in an Azure SQL database, then copy data from the database into a text file in Azure Blob Storage.  You learned how to:
+
+> [!div class="checklist"]
+> - Create a dataflow.
+> - Transform data with the dataflow.
+> - Create a data pipeline using the dataflow.
+> - Order the execution of steps in the pipeline.
+> - Copy data with the Copy Assistant.
+> - Run and schedule your data pipeline.
+
+Next, advance to learn more about monitoring your pipeline runs.
+
+> [!div class="nextstepaction"]
+> [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
