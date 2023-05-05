@@ -4,7 +4,8 @@ description: Learn how to install the utilization and metrics app.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
-ms.date: 12/27/2022
+ms.service: azure
+ms.date: 05/23/2023
 ---
 
 # Install the utilization and metrics app
@@ -127,5 +128,4 @@ To complete the installation, configure the utilization and metrics app by runni
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Understand the metrics app overview page?](metrics-app-overview-page.md)
+[Understand the metrics app overview page?](metrics-app-overview-page.md)

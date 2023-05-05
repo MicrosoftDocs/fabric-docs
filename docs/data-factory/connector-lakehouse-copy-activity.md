@@ -10,10 +10,9 @@ ms.custom: template-how-to
 
 # How to configure Lakehouse in copy activity
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 This article outlines how to use the copy activity in data pipeline to copy data from and to Lakehouse.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported format
 
@@ -187,3 +186,6 @@ To learn more information about copy activity in Lakehouse, see the following ta
 |**File format**|Select your file format from the drop-down list. Select Settings button to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.|\<file format settings>|Yes|**formatSettings**:<br>•type|
 |**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store. You can choose Add Dynamic content, none, Flatten hierarchy or Preserve hierarchy as your copy behavior.|•**Add dynamic content**<br>•**None**<br>•**Flatten hierarchy**<br>•**Preserve hierarchy**|No |copyBehavior:<br><br><br>FlattenHierarchy<br>PreserveHierarchy|
 |**Metadata** |Set custom metadata when copy to sink.|•`$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
+
+## Next steps
+[Lakehouse connector overview](connector-lakehouse-overview.md)

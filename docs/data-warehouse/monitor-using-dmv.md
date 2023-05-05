@@ -4,11 +4,10 @@ description: Learn about monitoring with the available Dynamic Management Views.
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
-ms.search.form: Monitoring
+ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
-
 # Monitoring connections, sessions, and requests using DMVs
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
@@ -21,11 +20,11 @@ You can use existing dynamic management views (DMVs) to monitor connection, sess
 
 For the current version, there are three dynamic management views (DMVs) provided for you to receive live SQL query lifecycle insights.
 
-- [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql)
+- [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each connection established between the warehouse and the engine.
-- [sys.dm_exec_sessions](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql)
+- [sys.dm_exec_sessions](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each session authenticated between the item and engine.
-- [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql)
+- [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each active request in a session.
 
 These three DMVs provide detailed insight on the following scenarios:
@@ -76,28 +75,28 @@ This second query shows which user ran the session that has the long-running que
 ```sql
 SELECT login_name
 FROM sys.dm_exec_sessions
-WHERE 'session_id' = '[SESSION_ID WITH LONG-RUNNING QUERY]';
+WHERE 'session_id' = 'SESSION_ID WITH LONG-RUNNING QUERY';
 ```
 
 This third query shows how to use the KILL command on the `session_id` with the long-running query.
 
 ```sql
-KILL '[SESSION_ID WITH LONG-RUNNING QUERY]'
+KILL 'SESSION_ID WITH LONG-RUNNING QUERY'
 ```
 
 For example
 
 ```sql
-KILL 101
+KILL '101'
 ```
 
-## Limitations
+## Permissions
 
-- When querying `sys.dm_exec_connections`, you may encounter the following error, even if you're an Admin of your workspace: `Error Message: The user doesn't have the external policy action 'Microsoft.Sql/Sqlservers/SystemViewsAndFunctions/ServerPerformanceState/Rows/Select' or permission 'VIEW SERVER PERFORMANCE STATE' to perform this action.`
-
-- The dynamic management view `sys.dm_exec_sessions` provides a limited view as not all active query results will display.
-
+- An Admin has permissions to execute all three DMVs (`sys.dm_exec_connections`, `sys.dm_exec_sessions`, `sys.dm_exec_requests`) to see their own and others' information within a workspace.
+- A Member, Contributor, and Viewer can execute `sys.dm_exec_sessions` and `sys.dm_exec_requests` and see their own results within the warehouse, but does not have permission to execute `sys.dm_exec_connections`. 
+- Only an Admin has permission to run the `KILL` command. 
 
 ## Next steps
 
-- [Create a table with SSMS](create-table.md)
+- [Query using the SQL Query editor](sql-query-editor.md)
+- [Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric](query-warehouse.md)

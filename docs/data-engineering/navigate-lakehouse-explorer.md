@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
 ms.topic: conceptual
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ms.search.form: Lakehouse Explorer
 ---
 
@@ -13,31 +13,56 @@ ms.search.form: Lakehouse Explorer
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The lakehouse explorer is the main lakehouse interaction page; you can use it to load data into your lakehouse, browse through the data, preview them, and many other things. The page is divided into three sections: the object explorer, the main view, and the ribbon.
+The Lakehouse explorer page is the main Lakehouse interaction page; you can use it to load data into your Lakehouse, browse through the data, preview them, and many other things. The page is divided into three sections: the Lakehouse explorer, the main view, and the ribbon.
 
-## Object explorer
+   :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 
-The lakehouse object explorer is a graphical interface that provides a focused view on a single lakehouse for you to navigate, access, and take action on your folders, files, and tables.
 
-The explorer has two main views: the **Lake** view and the **Table** view.
+## Lakehouse explorer
 
-- **Lake** view:
-  - Displays all folders and files in the lakehouse and is the default view when you open the **Lakehouse editor** page.
-  - The screen has two sections: the **Tables** section, which is the managed area and the **Files** section, which is the unmanaged area.
-- **Table** view:
-  - The main purpose of the **Table** section is to hold data files for all tables available in the table view, although it can also hold miscellaneous file types but this is strongly discouraged.
-  - The **Files** section can hold any file types but no tables are stored there.
-  - The main difference between these two sections is the auto-discovery feature. This feature ensures that any supported Delta file formats uploaded in the **Tables** section are immediately scanned and the system adds an entry into the metastore.
-  - The **Table** view displays tables registered in the metastore in your lakehouse. You can browse through the tables and preview the data.
+The Lakehouse explorer provides a unified graphical representation of the whole Lakehouse for users to navigate, access, and update their data.
+
+- The **Table Section** is a UI representation of the managed area of your lake which is typically organized and governed to facilitate efficient data processing and analysis. All tables, whether automatically or explicitly created and registered in SyMS, are displayed here. You can preview table data, view the table schema, access underlying files of selected table, and perform various other actions.
+
+- The **Unidentified Area** is a part of the managed area of your lake which displays any folders or files in the managed area with no associated tables in SyMS. For example, if a user were to drop an unsupported folder/file in the managed area, eg: a directory full of pictures or audio, this would not get picked up by our auto-detection process and hence not have an associated table. In this case, this folder would be found in this unidentified area. The main purpose of this new section is to promote either deleting these files from the managed area or moving them to the file section for further processing.
+
+- The **File Section** is the UI representation of the unidentified area of your lake, it can be seen as a "landing zone" for raw data that is ingested from various sources and requires additional processing before it can be used for analysis. You can navigate through directories, preview files, load a file into a table and perform various other actions.
+
 
 ## Main view area
 
-The main view area of the lakehouse page is the space where most of the data interaction occurs. The view changes depending on what you select. Since the object explorer only displays a folder level hierarchy of the lake, the main view area is what you use to navigate your files, preview files, and take action on them.
+The main view area of the Lakehouse page is the space where most of the data interaction occurs. The view changes depending on what you select. Since the object explorer only displays a folder level hierarchy of the lake, the main view area is what you use to navigate your files, preview files, and various other tasks.
+
 
 ## Ribbon
 
-The lakehouse ribbon is a quick go-to action bar for you to quickly load data into your lakehouse. You can quickly open a notebook or the pipeline experience to get started.
+The Lakehouse ribbon is a quick go-to action bar for you to refresh the Lakehouse, update settings, load data or create a new dataset.
+
+
+### Different ways to load data into a Lakehouse
+
+There are several ways to load data into your Lakehouse from the explorer page:
+
+- **Local file/folder upload:** Uploading data directly from your local machine to the File section of your Lakehouse.
+
+- **Notebook code:** Using available spark libraries to connect to a data source directly and then loading data to dataframe and saving it in your Lakehouse.
+
+- **Copy tool in pipelines:** Connect to different data sources and land the data either in original format or convert it to a delta table.
+
+- **Dataflows Gen 2:** Creating a dataflow to get data in, then transform and publish it into your Lakehouse.
+
+- **Shortcuts:** Creating shortcuts to connect to existing data into your Lakehouse without having to directly copy it.
 
 ## Next steps
 
-To get started with lakehouse, see [Creating a lakehouse](create-lakehouse.md).
+- Learn more about the different use cases to understand the best way to load your data, see [Get data experience for Lakehouse](load-data-lakehouse.md).
+
+- [Explore the data in your Lakehouse with a notebook](lakehouse-notebook-explore.md)
+
+- [How to use a notebook to load data into your Lakehouse](lakehouse-notebook-load-data.md).
+
+- To get started with Pipelines copy activity, see [How to copy data using copy activity](..\data-factory\copy-data-activity.md).
+
+- [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
+
+- [Create a OneLake shortcut](../real-time-analytics/onelake-shortcut.md).

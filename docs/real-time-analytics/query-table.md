@@ -1,14 +1,16 @@
 ---
-title: Use sample queries to query your table in Real-time Analytics
+title: Use sample queries to query your table in Real-Time Analytics
 description: Learn how to use sample queries to get an initial look at your data.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 03/21/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 # Use sample queries to query your table
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you'll learn how to use sample KQL queries to get an initial look at your data.
 
@@ -18,22 +20,18 @@ For more information on the Kusto Query Language, see [Kusto Query Language (KQL
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A Workspace
+* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
 * A [KQL database](create-database.md) with data
 
 ## Query table
 
-1. In the **Object tree**, select the **more menu** on your table > **Query table**. Sample queries run in the context of a selected table.
+1. In the **Object tree**, select the **More menu** [...] on your table > **Query table**. Sample queries run in the context of a selected table.
 
     :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Object tree showing the More menu of a table. The option titled Query table is highlighted.":::
 
-1. Select a single query, or select **Paste all query templates** to autopopulate all of the listed queries into the **Check your data** window, and then select **Run**.
+1. Select a single query to autopopulate into the **Check your data** window, and then select **Run**.
 
     :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Check your data window showing query results.":::
-
-    > [!NOTE]
-    > If you select **Paste all query templates**, you need to run each query individually.
 
 ## Next steps
 

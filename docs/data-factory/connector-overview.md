@@ -5,16 +5,14 @@ ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview 
-ms.date: 03/09/2023
+ms.date: 05/23/2023
 ---
 
 # Connector overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 [!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory offers a rich set of connectors that allow you to connect to different types of data stores. You can take advantage of those connectors to transform data in dataflows or move a PB-level of dataset with high-scale in a data pipeline.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported data connectors in dataflows
 
@@ -30,31 +28,37 @@ You can find a comprehensive list of all connectors supported through our [publi
 
 | **Category** | **Data store** | **Copy activity (source/destination)** | **Lookup activity** | **Get Metadata activity** | **Delete activity** | **Script activity** | **Stored Procedure activity** |
 |---|---|---|---|---|---|---|---|
-| **Workspace** | Lakehouse | ✓/✓ | - | - | ✓ | - | - |
-|  | Data Warehouse | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
+| **Workspace** | Data Warehouse | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
+|  | KQL Database | ✓/✓ | ✓ | - | - | - | - |
+|  | Lakehouse | ✓/✓ | - | - | ✓ | - | - |
 | **Azure** | Azure Blob Storage | ✓/✓ | ✓ | ✓ | ✓ | - | - |
-|  | Azure Cosmos DB (SQL API) | ✓/✓ | ✓ | ✓ | ✓ | - | - |
+|  | Azure Cosmos DB for NoSQL | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Data Lake Storage Gen1 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
 |  | Azure Data Lake Storage Gen2 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
-|  | Azure SQL Database | ✓/✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-|  | Azure SQL Managed Instance | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
-|  | Azure SQL Explorer | ✓/✓ | ✓ | - | - | - | - |
 |  | Azure Database for PostgreSQL  | ✓/✓ | ✓ | - | - | - | - |
+|  | Azure SQL Database | ✓/✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+|  | Azure SQL Database Managed Instance | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
+|  | Azure SQL Explorer | ✓/✓ | ✓ | - | - | - | - |
 |  | Azure Synapse Analytics | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
 |  | Azure Table Storage | ✓/✓ | ✓ | - | - | - | - |
 | **Database** | Amazon Redshift | ✓/-  | ✓ | - | - | - | - |
+|  | Amazon RDS for SQL Server | ✓/-  | ✓ | ✓ | ✓ | - | - |
 |  | Apache Impala | ✓/-  | ✓ | - | - | - | - |
 |  | Hive  | ✓/-  | ✓ | - | - | - | - |
 |  | PostgreSQL | ✓/-  | ✓ | - | - | - | - |
 |  | Spark | ✓/-  | ✓ | - | - | - | - |
 |  | SQL Server | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
 | **File** | Amazon S3 | ✓/-  | ✓ | ✓ | ✓ | - | - |
+|  | Amazon S3 Compatible | ✓/-  | ✓ | ✓ | ✓ | - | - |
 |  | Google Cloud Storage | ✓/-  | ✓ | ✓ | ✓ | - | - |
-|  | HTTP | ✓/-  | ✓ | - | - | - | - |
-| **Generic** | OData | ✓/-  | ✓ | - | - | - | - |
+| **Generic** | HTTP | ✓/-  | ✓ | - | - | - | - |
+|  | OData | ✓/-  | ✓ | - | - | - | - |
 |  | REST | ✓/✓ | - | - | - | - | - |
-| **Services and apps** | Snowflake | ✓/✓ | ✓ | - | - | ✓ | - |
-|  | Dataverse | ✓/✓ | ✓ | - | - | - | - |
+| **Services and apps** | Dataverse | ✓/✓ | ✓ | - | - | - | - |
+|  | Dynamics CRM | ✓/✓ | ✓ | - | - | - | - |
+|  | Microsoft 365 | ✓/- | - | - | - | - | - |
+|  | SharePoint Online List | ✓/- | ✓ | - | - | - | - |
+|  | Snowflake | ✓/✓ | ✓ | - | - | ✓ | - |
 
 ## Next steps
 
