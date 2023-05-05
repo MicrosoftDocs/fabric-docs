@@ -32,10 +32,10 @@ In this tutorial, you take on the role of a data warehouse developer at the fict
   - [Create a Fabric workspace](tutorial-data-warehouse-create-workspace.md).
   - Quickly [create a data warehouse](tutorial-data-warehouse-create-warehouse.md).
   - [Ingest data](tutorial-data-warehouse-ingest-data.md) from source to the data warehouse dimensional model.
-  - Transform the data to create aggregated datasets using T-SQL.
+  - [Transform the data](tutorial-data-warehouse-transform-data.md) to create aggregated datasets using T-SQL.
   - Perform orchestration, data ingestion, and data transformation with pipelines.
-  - Query the data warehouse using T-SQL and a visual query editor.
-  - Create Power BI report using DirectLake mode to analyze the data in place.
+  - Query the data warehouse using T-SQL and a [visual query editor](tutorial-data-warehouse-visual-query.md).
+  - Create Power BI reports using DirectLake mode to analyze the data in place.
 - Clean up resources by deleting the workspace and other items.
 
 ## Data warehouse end-to-end architecture

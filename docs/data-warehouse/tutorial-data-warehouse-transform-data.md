@@ -1,5 +1,5 @@
 ---
-title: Data warehouse tutorial - Transform data using a stored procedure
+title: Data warehouse tutorial - transform data using a stored procedure
 description: In this seventh tutorial step, learn how to create and save a new stored procedure to transform data.
 ms.reviewer: wiassaf
 ms.author: scbradl
@@ -18,7 +18,7 @@ Learn how to create and save a new stored procedure to transform data.
 
 1. From the **Home** tab of the ribbon, select **New SQL query**.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-transform-data\select-new-query.png" alt-text="Screenshot of the ribbon of the Home tab, showing where to select New SQL query.":::
 
 1. In the query editor, paste the following code.
 
@@ -76,7 +76,7 @@ Learn how to create and save a new stored procedure to transform data.
 
 1. To save this query for reference later, right-click on the query tab just above the editor and select **Rename**.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-transform-data\query-tab-select-rename.png" alt-text="Screenshot of the tabs above the editor screen, showing where to right click on the query and select Rename.":::
 
 1. Type **Create Aggregate Procedure** to change the name of the query.
 
@@ -86,11 +86,11 @@ Learn how to create and save a new stored procedure to transform data.
 
 1. Select the **refresh** button on the ribbon.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-transform-data\refresh-option-ribbon.png" alt-text="Screenshot of the Home ribbon, showing where to select the Refresh button.":::
 
 1. In the **Object explorer**, verify that you can see the newly created stored procedure by expanding the **StoredProcedures** node under the **dbo** schema.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-transform-data\explorer-expand-node.png" alt-text="Screenshot of the Explorer pane, showing where to expand the StoredProcedures node to find your newly created procedure.":::
 
 1. From the **Home** tab of the ribbon, select **New SQL query**.
 
@@ -116,7 +116,7 @@ Learn how to create and save a new stored procedure to transform data.
 
 1. In the **Object explorer**, load the data preview to validate the data loaded successfully by clicking on the `aggregate_sale_by_city` table in the **Explorer**.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-transform-data\validate-loaded-data.png" alt-text="Screenshot of the Explorer pane next to a Data preview screen that lists the data loaded into the selected table.":::
 
 ## Next steps
 

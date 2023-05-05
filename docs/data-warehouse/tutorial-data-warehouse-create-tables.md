@@ -22,13 +22,14 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
 1. From the artifact list, select **WideWorldImporters** with the type of **Warehouse**.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-create-tables\select-the-warehouse.png" alt-text="Screenshot of the warehouse option that appears in the artifact list.":::
 
 1. From the ribbon, select **New SQL query**.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-create-tables\ribbon-new-sql-query.png" alt-text="Screenshot of the New SQL query option where it appears on the ribbon.":::
 
 1. In the query editor, paste the following code.
+
    > [!NOTE]
    > This code will be in a code block on Microsoft Learn which allows for easy copying. In case of issues with copy/paste formatting, a text file containing the script called **Create Tables.txt** can be accessed from the parent folder [Data Warehouse Tutorial Source Code](../placeholder.md).
 
@@ -96,11 +97,11 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
 1. Select **Run** to execute the query.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-create-tables\run-to-execute.png" alt-text="Screenshot of the top corner of the query editor screen, showing where to select Run.":::
 
 1. To save this query for reference later, right-click on the query tab just above the editor and select **Rename**.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-create-tables\rename-query-option.png" alt-text="Screenshot of the top corner of the query editor screen, showing where to right-click to select the Rename option.":::
 
 1. Type **Create Tables** to change the name of the query.
 
@@ -108,11 +109,11 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
 1. Validate the table was created successfully by clicking the **refresh** button on the ribbon.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-create-tables\home-ribbon-refresh.png" alt-text="Screenshot of the ribbon on the Home screen, showing where to select the refresh option.":::
 
 1. In the **Object explorer**, verify that you can see the newly created **Create Tables** query, `fact_sale` table, and `dimension_city` table.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-create-tables\object-explorer-verify.png" alt-text="Screenshot of the Explorer pane, showing where to find your tables and newly created query.":::
 
 ## Next steps
 
