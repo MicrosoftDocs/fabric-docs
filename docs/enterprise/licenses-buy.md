@@ -68,7 +68,7 @@ To buy an Azure SKU you need to be an owner or a contributor of an [Azure subscr
 
 ## Microsoft 365 SKUs
 
-Microsoft 365 SKUs, also known as EM or P SKUs, are legacy SKUs inherited from Power BI. You can only renew a Microsoft 365 SKU if you already have a Power BI subscription, and Microsoft Fabric is [enabled](../admin/admin-switch.md) on top of your Power BI subscription.
+Microsoft 365 SKUs, also known as EM or P SKUs, are legacy SKUs inherited from Power BI. You can only renew a Microsoft 365 SKU if you already have a Power BI subscription, and Microsoft Fabric is [enabled](../admin/admin-fabric-switch.md) on top of your Power BI subscription.
 
 ## Next steps
 

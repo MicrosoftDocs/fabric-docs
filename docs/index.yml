@@ -31,7 +31,7 @@ highlightedContent:
     # Card
     - title: Enable Fabric for your organization
       itemType: quickstart
-      url: admin/admin-switch.md
+      url: admin/admin-fabric-switch.md
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
