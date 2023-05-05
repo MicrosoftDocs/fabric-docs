@@ -22,9 +22,9 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Item:** An item a set of capabilities within an experience. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
 
-- **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with an Azure Active Directory. For more information, see [Placeholder](../placeholder.md).
+- **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with an Azure Active Directory.
 
-- **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that leverages capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, datasets, etc. For more information, see [Placeholder](../placeholder.md).
+- **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that leverages capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, datasets, etc. For more information, see [Workspaces](workspaces.md) article.
 
 ## Synapse Data Engineering
 
@@ -70,7 +70,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **KQL Queryset:** The KQL Queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL Queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL Queryset](../real-time-analytics/kusto-query-set.md)
 
-- **Event stream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../placeholder.md).
+- **Event stream:** The Microsoft Fabric event streams feature provides a centralized place in the Fabric platform to capture, transform, and route real-time events to destinations with a no-code experience. An event stream consists of various streaming data sources, ingestion destinations, and an event processor when the transformation is needed. For more information, see [Microsoft Fabric event streams](../real-time-analytics/event-streams/overview.md).
 
 ## OneLake
 
@@ -78,4 +78,6 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## Next steps
 
-- [What is Microsoft Fabric?](../placeholder.md)
+- [Navigate to your items from Microsoft Fabric Home page](fabric-home.md)
+- [Discover data items in the OneLake data hub](onelake-data-hub.md)
+- [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
