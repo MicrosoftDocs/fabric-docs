@@ -10,7 +10,7 @@ ms.date: 5/9/2023
 
 # Tutorial: Build a report
 
-INTRO
+Learn how to build a report with the data you ingested into your warehouse in the last step.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -42,4 +42,4 @@ INTRO
 
 ## Next steps
 
-- Tutorial: Create tables in a data warehouse
+- [Tutorial: Create tables in a data warehouse](tutorial-data-warehouse-create-tables.md)
