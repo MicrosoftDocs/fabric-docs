@@ -18,27 +18,22 @@ To create a workspace:
 
     :::image type="content" source="media/create-workspaces/fabric-new-workspaces.png" alt-text="Screenshot of the Create a workspace option.":::
 
-2. The Create a workspace pane opens.
+1. The Create a workspace pane opens.
 
     :::image type="content" source="media/create-workspaces/create-workspace-side-pane.png" alt-text="Screenshot of the Create a workspace side pane.":::
-1. 
-1. 
-1. Give the workspace a unique name. If the name isn't available, edit it to come up with a name that's unique. Select **Apply**.
 
-     ![Screenshot of Input workspace name.](media/create-workspaces/fabric-quickly-create-workspace.png)
+    * Give the workspace a unique name. (mandatory).
 
-3. [!INCLUDE [product-name](../includes/product-name.md)] creates the workspace and opens it. You see it in the list of workspaces where you can find all the workspaces you have access to.
+    * Provide a description of the workspace. (optional)
 
-   ![Screenshot of Find workspace in workspace flyout.](media/create-workspaces/fabric-workspace-in-flyout.png)
+    * Assign the workspace to a domain (optional)
 
-## Optional and advanced settings
+        If you are a domain contributor for the workspace, you can associate the workspace to a domain, or you can change an existing association. For information about domains, see [Domains in Fabric](../governance/domains.md).
 
-Here are some optional and advanced settings for your workspace. They're explained in more detail in this section.
+1. When done, either continue to the advanced settings, or select **Apply**.
 
-- **Description:** Add a description to provide more details about this workspace.
-- **Workspace image:** Upload a Workspace image by selecting the upload button. Files can be .png or .jpg format. File size has to be less than 45 KB.
-- **Domain (Preview):** If you are a domain contributor for the workspace, you can associate the workspace to a domain, or you can change an existing association. For information about domains, see [Domains in Fabric](../governance/domains.md).
-  
+## Advanced settings
+
 Expand **Advanced** and you see advanced setting options:
 
 ### Contact list
