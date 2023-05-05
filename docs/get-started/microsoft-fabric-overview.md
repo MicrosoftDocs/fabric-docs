@@ -10,13 +10,13 @@ ms.date: 05/23/2023
 
 # What is Microsoft Fabric?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, Real-Time Analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place.
 
 With Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs.
 
 The platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## SaaS foundation
 
@@ -62,7 +62,7 @@ The Microsoft Fabric platform unifies the OneLake and lakehouse architecture acr
 
 ### OneLake
 
-The data lake is the foundation on which all the Fabric services are built. Microsoft Fabric Lake is also known as OneLake. It's built into the Fabric service and provides a unified location to store all organizational data where the workloads operate.
+The data lake is the foundation on which all the Fabric services are built. Microsoft Fabric Lake is also known as [OneLake](../onelake/onelake-overview.md). It's built into the Fabric service and provides a unified location to store all organizational data where the workloads operate.
 
 OneLake is built on top of ADLS (Azure Data Lake Storage) Gen2. It provides a single SaaS experience and a tenant-wide store for data that serves both professional and citizen developers. The OneLake SaaS experience simplifies the experiences, eliminating the need for users to understand any infrastructure concepts such as resource groups, RBAC (Role-Based Access Control), Azure Resource Manager, redundancy, or regions. Additionally it doesn't require the user to even have an Azure account.
 

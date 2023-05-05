@@ -11,9 +11,9 @@ ms.search.form: spark_job_definition
 
 # Schedule and run an Apache Spark job definition
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this tutorial, learn how to run a [!INCLUDE [product-name](../includes/product-name.md)] Spark job definition item and monitor the job.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 

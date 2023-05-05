@@ -60,7 +60,7 @@ landingContent:
           - text: How to copy data using Copy activity in Data pipeline
             url: ../data-factory/copy-data-activity.md
           - text: How to move data into Lakehouse via Copy assistant
-            url: ../data-factory/move-data-lakehouse-copy-assistant.md
+            url: ../data-factory/tutorial-move-data-lakehouse-copy-assistant.md
   # Card 
   - title: Security
     linkLists:
