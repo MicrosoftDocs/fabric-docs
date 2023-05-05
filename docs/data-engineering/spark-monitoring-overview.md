@@ -11,9 +11,9 @@ ms.search.form: spark_job_definition
 
 # Microsoft Fabric Apache Spark monitoring overview
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] Spark monitoring is designed to offer a web-UI based experience with built-in rich capabilities for monitoring the progress and status of Spark applications in progress, browsing past Spark activities, analyzing and optimizing performance, and facilitating troubleshooting of failures. Multiple entry points are available for browsing, monitoring, and viewing Spark application details.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Monitoring hub
 
