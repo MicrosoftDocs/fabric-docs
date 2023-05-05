@@ -39,7 +39,7 @@ To configure Parquet format, choose your connection in the source or destination
 
 ### Parquet format as source
 
-After selecting **Settings** in **File format** section, the following properties are shown in the pop-up **File format settings** dialog box.
+After you select **Settings** in the **File format** section, the following properties are shown in the pop-up **File format settings** dialog box.
 
 :::image type="content" source="./media/format-parquet/source-file-settings.png" alt-text="Screenshot showing parquet file format source.":::
 
@@ -47,7 +47,7 @@ After selecting **Settings** in **File format** section, the following propertie
 
 ### Parquet format as destination
 
-After selecting **Settings**, the following properties are shown in the pop-up **File format settings** dialog box.
+After you select **Settings**, the following properties are shown in the pop-up **File format settings** dialog box.
 
 :::image type="content" source="./media/format-parquet/destination-file-settings.png" alt-text="Screenshot showing parquet file format destination.":::
 
