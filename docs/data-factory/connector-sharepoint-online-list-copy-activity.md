@@ -24,7 +24,7 @@ This article outlines how to use the copy activity in a data pipeline to copy da
    - Application key
    - Tenant ID
 
-1. Use the following steps to grant SharePoint Online site permission to your registered application. To do this, you need a site admin role.
+1. Use the following steps to grant SharePoint Online site permission to your registered application. To grant permission, you need a site admin role.
 
    1. Open a SharePoint Online site link, for example `https://[your_site_url]/_layouts/15/appinv.aspx` (replace the site URL).
    2. Search the application ID you registered, fill the empty fields, and then select **Create**.
