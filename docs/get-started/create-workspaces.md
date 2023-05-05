@@ -10,17 +10,20 @@ ms.custom:
 ---
 # Create a workspace
 
-This article explains how to create *workspaces*, spaces to collaborate with colleagues, in [!INCLUDE [product-name](../includes/product-name.md)]. In workspaces, you create collections of items such as lakehouses, warehouses, and reports. For more background, see the [Workspaces](workspaces.md) article.
+This article explains how to create *workspaces* in [!INCLUDE [product-name](../includes/product-name.md)]. In workspaces, you create collections of items such as lakehouses, warehouses, and reports. For more background, see the [Workspaces](workspaces.md) article.
 
-:::image type="content" source="media/create-workspaces/fabric-sample-workspace.png" alt-text="Screenshot of a workspace." lightbox="media/create-workspaces/fabric-sample-workspace.png":::
+To create a workspace:
 
-## Quickly create a workspace
+1. Select **Workspaces** > **New workspace**. The Create a workspace pane opens.
 
-1. Select **Workspaces** > **New workspace**.
-   
-     ![Screenshot of Create workspace.](media/create-workspaces/fabric-new-workspaces.png)
+    :::image type="content" source="media/create-workspaces/fabric-new-workspaces.png" alt-text="Screenshot of the Create a workspace option.":::
 
-2. Give the workspace a unique name. If the name isn't available, edit it to come up with a name that's unique. Select **Apply**.
+2. The Create a workspace pane opens.
+
+    :::image type="content" source="media/create-workspaces/create-workspace-side-pane.png" alt-text="Screenshot of the Create a workspace side pane.":::
+1. 
+1. 
+1. Give the workspace a unique name. If the name isn't available, edit it to come up with a name that's unique. Select **Apply**.
 
      ![Screenshot of Input workspace name.](media/create-workspaces/fabric-quickly-create-workspace.png)
 
@@ -34,7 +37,7 @@ Here are some optional and advanced settings for your workspace. They're explain
 
 - **Description:** Add a description to provide more details about this workspace.
 - **Workspace image:** Upload a Workspace image by selecting the upload button. Files can be .png or .jpg format. File size has to be less than 45 KB.
-- **Domain (Preview):** Assign your workspace to a domain.
+- **Domain (Preview):** If you are a domain contributor for the workspace, you can associate the workspace to a domain, or you can change an existing association. For information about domains, see [Domains in Fabric](../governance/domains.md).
   
 Expand **Advanced** and you see advanced setting options:
 
