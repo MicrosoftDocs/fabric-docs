@@ -48,6 +48,9 @@ For users that are familiar to Power BI dataflows same tool is available to land
 
 You can use available Spark libraries to connect to a data source directly, load data to data frame and then save it in a lakehouse. It's the most open way to load data in the lakehouse that user code is fully managing.
 
+> [!NOTE]
+> External delta tables created with Spark code won't be visible to SQL endpoint. Use shortcuts in Table space to make external delta tables visible for SQL endpoint.
+
 ## Considerations when choosing approach to load data
 
 | **Use case** | **Recommendation** |
