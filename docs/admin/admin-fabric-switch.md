@@ -59,7 +59,10 @@ Follow these steps to enable Microsoft Fabric for your tenant.
 
 4. (Optional) Use the **Specific security groups** option to enable Microsoft Fabric for specific users. You can also use the **Except specific security groups** option, to enable Microsoft Fabric for the tenant, and exclude specific users.
 
-[!INCLUDE [product-name](../includes/admin-switch-fabric-note.md)]
+    >[!NOTE]
+    >When security groups are enabled, users without access to Microsoft Fabric including admins, will:
+    >* Not see all the Microsoft Fabric UI icons
+    >* Have view permissions for Microsoft Fabric items
 
    :::image type="content" source="media/admin-fabric-switch/fabric-switch-security-groups.png" alt-text="Screenshot of the Microsoft Fabric tenant setting with the users can create Fabric items enabled, and the specific security groups option selected.":::
 
@@ -85,7 +88,10 @@ Follow these steps to enable Microsoft Fabric for a specific capacity.
 
 5. (Optional) Use the **Specific security groups** option to enable Microsoft Fabric for specific users. You can also use the **Except specific security groups** option, to enable Microsoft Fabric for the capacity, and exclude specific users.
 
-[!INCLUDE [product-name](../includes/admin-switch-fabric-note.md)]
+    >[!NOTE]
+    >When security groups are enabled, users without access to Microsoft Fabric including admins, will:
+    >* Not see all the Microsoft Fabric UI icons
+    >* Have view permissions for Microsoft Fabric items
 
    :::image type="content" source="media/admin-fabric-switch/fabric-capacity-switch-security-groups.png" alt-text="Screenshot of a selected capacity in the admin portal capacity settings with the users can create Fabric items setting expanded and the specific security groups option selected.":::
 
