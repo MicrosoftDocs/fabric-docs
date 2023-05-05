@@ -9,6 +9,8 @@ ms.date: 05/23/2023
 
 # Service tags
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Learn how to use service tags in [!INCLUDE [product-name](../includes/product-name.md)].
 
 Based on [Using service tags with Power BI](/power-bi/enterprise/service-premium-service-tags).
@@ -19,5 +21,4 @@ Explain how to use service tags.
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Private endpoints](security-private-links.md)
+[Private endpoints](security-private-links.md)

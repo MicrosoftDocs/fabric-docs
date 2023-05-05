@@ -1,6 +1,6 @@
 ---
 title: How to create SharePoint Online List connection
-description: This article provides information about how to do create SharePoint Online List connection in Trident.
+description: This article provides information about how to do create SharePoint Online List connection in Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # How to create SharePoint Online List connection
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
 This article outlines the steps to create SharePoint Online List connection.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 

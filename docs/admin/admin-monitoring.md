@@ -4,10 +4,13 @@ description: Understand the Microsoft Fabric monitoring workspace and the report
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
 # What is the admin monitoring workspace?
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The *Admin monitoring* workspace is designed to provide admins with monitoring capabilities for their organization. Using the Admin monitoring workspace resources, admins can perform security and governance tasks such as audits and usage checks.
 
@@ -37,9 +40,18 @@ The admin monitoring workspace is automatically installed during the first time 
 
 ## Reports and datasets
 
-In the monitoring workspace, you can use the [Feature Usage and Adoption](/power-bi/developer/visuals/create-r-based-power-bi-desktop) report as is. You can also connect to this report's dataset, and create a solution that's optimized for your organization.
+In the monitoring workspace, you can use the [Feature Usage and Adoption](admin-feature-usage-adoption.md) report as is. You can also connect to this report's dataset, and create a solution that's optimized for your organization.
+
+### Sharing
+
+You can share the entire *Admin monitoring* workspace, or a report or dataset in the workspace.
+
+* **Admin monitoring workspace** - When you share the monitoring workspace, the users you share it with are granted a viewer role. Once a viewer role is provided, it can't be taken away.
+
+* **Report or a dataset** - To build on an existing report or dataset, you need to share the report or the dataset. You can manage the permissions for the monitoring reports and datasets at any time.
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Admin overview](admin-overview.md)
+* [Admin overview](admin-overview.md)
+
+* [Feature usage and adoption report](admin-feature-usage-adoption.md)
