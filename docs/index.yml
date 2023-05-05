@@ -49,13 +49,13 @@ productDirectory:
       links:
         - url: get-started/microsoft-fabric-overview.md
           text: What is Fabric?
-        - url: placeholder.md
+        - url: get-started/microsoft-fabric-overview.md
           text: Navigate the Fabric portal
         - url: get-started/workspaces.md
           text: Workspaces in Fabric
         - url: placeholder.md
           text: Find data in the OneLake data hub
-        - url: get-started/index.yml
+        - url: get-started/onelake-data-hub.md
           text: See more
 
     # Card

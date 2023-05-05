@@ -94,3 +94,5 @@ Additionally, shortcuts allow you to easily share data between users and applica
 
 - [Microsoft Fabric terminology](fabric-terminology.md)
 - [Create a workspace](create-workspaces.md)
+- [Navigate to your items from Microsoft Fabric Home page](fabric-home.md)
+- [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
