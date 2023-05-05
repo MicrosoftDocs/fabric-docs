@@ -11,9 +11,9 @@ ms.search.form: Monitor notebook all runs, monitor Spark jobs within a notebook
 
 # Notebook contextual monitoring and debugging
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Notebook is purely Apache Spark based. Code cells are executed on the serverless remotely. A Spark job progress indicator is provided with a real-time progress bar appears to help you understand the job execution status.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Monitor job progress
 

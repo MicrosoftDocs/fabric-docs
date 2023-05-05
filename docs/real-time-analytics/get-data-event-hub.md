@@ -10,6 +10,8 @@ ms.search.form: product-kusto
 ---
 # Get data from Azure Event Hubs
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 In this article, you'll learn how to get data from event hub into your KQL Database in [!INCLUDE [product-name](../includes/product-name.md)]. [Azure Event Hubs](/azure/event-hubs/event-hubs-about) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
 
 To stream data from Azure Event Hubs into Real-Time-Analytics, you'll go through two main steps. The first step is to create a [!INCLUDE [product-name](../includes/product-name.md)] platform-based cloud connection to a specific event hub instance. This data stream can be used across all [!INCLUDE [product-name](../includes/product-name.md)] workspaces and is managed centrally.

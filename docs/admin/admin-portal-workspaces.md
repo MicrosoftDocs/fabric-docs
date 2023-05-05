@@ -6,11 +6,14 @@ ms.author: painbar
 ms.reviewer: ''
 ms.custom: admin-portal
 ms.topic: how-to
+ms.service: azure
 ms.date: 05/23/2023
 LocalizationGroup: Administration
 ---
 
 # Manage workspaces
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Go to the **Admin portal** to access this feature. For information about how to get to and use the Admin portal, see [About the Admin portal](/power-bi/admin/service-admin-portal).
 
@@ -115,4 +118,4 @@ After the deleted workspace has been restored as an app workspace, it's just lik
 
 ## Next steps
 
-* [About the Admin portal](/power-bi/admin/service-admin-portal)
+[About the Admin portal](/power-bi/admin/service-admin-portal)

@@ -3,9 +3,9 @@
     href: index.yml
   - name: Overview
     items:
-    - name: What is Data Factory
+    - name: What is Data Factory?
       href: data-factory-overview.md
-    - name: Dataflows Gen2
+    - name: Dataflows gen1 versus gen2
       href: dataflows-gen2-overview.md
   - name: Get started
     items:
@@ -13,7 +13,7 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
-    - name: Build data integration
+    - name: Configure data integration
       href: transform-data.md
   - name: Connectors
     items:
@@ -61,7 +61,7 @@
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
       - name: Configure in dataflow gen2
         href: connector-azure-data-lake-storage-gen2-dataflows.md
-    - name: Azure SQL Database
+    - name: Azure SQL database
       items:
       - name: Overview
         href: connector-azure-sql-database-overview.md
@@ -79,9 +79,13 @@
         href: connector-binary-dataflows.md
     - name: Delimited text in pipeline
       href: format-delimited-text.md
-    - name: Excel format in dataflow gen2
-      href: format-excel.md
-    - name: Google cloud Storage
+    - name: Excel
+      items:
+      - name: Excel format
+        href: format-excel.md
+      - name: Connect in dataflows
+        href: connector-excel-dataflows.md
+    - name: Google Cloud Storage
       items:
       - name: Overview
         href: connector-google-cloud-storage-overview.md
@@ -89,6 +93,8 @@
         href: connector-google-cloud-storage.md
       - name: Configure in copy activity of pipeline
         href: connector-google-cloud-storage-copy-activity.md
+      - name: Connect in dataflows
+        href: connector-google-cloud-storage-dataflow.md
     - name: HTTP
       items:
       - name: Overview
@@ -97,7 +103,9 @@
         href: connector-http.md
       - name: Configure in copy activity of pipeline
         href: connector-http-copy-activity.md
-    - name: KQL Database
+      - name: Connect to dataflows
+        href: connector-http-dataflows.md
+    - name: KQL database
       items:
       - name: Overview
         href: connector-kql-database-overview.md
@@ -117,8 +125,11 @@
         href: connector-microsoft-365.md
       - name: Configure in copy activity of pipeline
         href: connector-microsoft-365-copy-activity.md
-    - name: Parquet format
-      href: format-parquet.md
+    - name: Parquet
+      items:
+      - name: Parquet format
+      - name: Connect in dataflows
+        href: connector-parquet-dataflows.md
     - name: OData
       items:
       - name: Overview
@@ -129,14 +140,6 @@
         href: connector-odata-copy-activity.md 
       - name: Configure in dataflow gen2
         href: connector-odata-dataflows.md
-    - name: SharePoint online list
-      items:
-      - name: Overview
-        href: connector-sharepoint-online-list-overview.md
-      - name: Configure in admin portal
-        href: connector-sharepoint-online-list.md
-      - name: Configure in copy activity of pipeline
-        href: connector-sharepoint-online-list-copy-activity.md
     - name: REST
       items:
       - name: Overview
@@ -145,6 +148,16 @@
         href: connector-rest.md
       - name: Configure in copy activity of pipeline
         href: connector-rest-copy-activity.md     
+    - name: SharePoint online list
+      items:
+      - name: Overview
+        href: connector-sharepoint-online-list-overview.md
+      - name: Set up connection
+        href: connector-sharepoint-online-list.md
+      - name: Configure in copy activity of pipeline
+        href: connector-sharepoint-online-list-copy-activity.md
+      - name: Connect in dataflows
+        href: connector-sharepoint-online-list-dataflows.md
   - name: Data pipelines
     items:
     - name: Activities
@@ -182,15 +195,13 @@
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
-        href: pipeline-copy-from-azure-blob-storage-to-lakehouse.md    
+        href: tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse.md    
       - name: Copy sample data into Lakehouse and transform with dataflow
         href: tutorial-load-data-lakehouse-transform.md
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
         href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
       - name: Move data from Azure SQL DB into Lakehouse via copy assistant
-        href: move-data-lakehouse-copy-assistant.md        
-      - name: Load sample data to Lakehouse
-        href: create-first-pipeline-with-sample-data.md   
+        href: tutorial-move-data-lakehouse-copy-assistant.md        
       - name: Load sample data to Data Warehouse
         href: tutorial-load-sample-data-to-data-warehouse.md     
   - name: Dataflows
