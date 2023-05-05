@@ -22,11 +22,11 @@ To create a workspace:
 
     :::image type="content" source="media/create-workspaces/create-workspace-side-pane.png" alt-text="Screenshot of the Create a workspace side pane.":::
 
-    * Give the workspace a unique name. (mandatory).
+    * Give the workspace a unique name (mandatory).
 
-    * Provide a description of the workspace. (optional)
+    * Provide a description of the workspace (optional).
 
-    * Assign the workspace to a domain (optional)
+    * Assign the workspace to a domain (optional).
 
         If you are a domain contributor for the workspace, you can associate the workspace to a domain, or you can change an existing association. For information about domains, see [Domains in Fabric](../governance/domains.md).
 
