@@ -25,7 +25,7 @@ The clusters within starter pools come equipped with an idle Spark session that 
 
 :::image type="content" source="media\spark-compute\starter-pool-high-level.png" alt-text="Image showing high-level design of starter pools.":::
 
-Starter pools are pre-configured with default settings and they support inline library installations without impacting the rapid 5 second to 10-second session start experience. However, the extra custom Spark properties or libraries through workspace or capacity settings may result in a 2 minute to 3-minute session start latency for on-demand cluster acquisition. In terms of billing, you are only charged for capacities when Spark sessions are active and executing queries. There are no charges are incurred during prewarming periods.
+Starter pools are pre-configured with default settings and they support inline library installations without impacting the rapid 5 second to 10-second session start experience. However, the extra custom Spark properties or libraries through workspace or capacity settings may result in a 2 minute to 3-minute session start latency for on-demand cluster acquisition. In terms of billing, you are only charged for capacities when Spark sessions are active and executing queries. There are no charges incurred during prewarming periods.
 
 ## Spark pools
 
