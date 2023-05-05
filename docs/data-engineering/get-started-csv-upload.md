@@ -15,11 +15,11 @@ ms.search.form: csv load to delta to pbi report
 
 [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](lakehouse-overview.md) is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location.
 
-In this tutorial you'll learn to:
+In this tutorial you learn to:
 
 * Upload a CSV file to a Lakehouse
 * Convert the file to a Delta table
-* Generate a Dataset and create a PowerBI report
+* Generate a Dataset and create a Power BI report
 
 ## Create a Lakehouse and get a CSV file ready
 
@@ -36,18 +36,18 @@ In this tutorial you'll learn to:
 ## Upload a CSV file to the Lakehouse
 
 1. Create the ```TaxiData```  folder under the ```Files``` section of your Lakehouse.
-1. Upload the file to the folder, by using the "Upload file" item in the folder contextual menu.
-1. Once uploaded, click the folder to see its content.
+1. Upload the file to the folder, by using the **Upload file** item in the folder contextual menu.
+1. Once uploaded, select the folder to see its content.
 1. Rename the file to remove special characters, in this example, remove the '+' character. To see the full list of special characters, read the [Load to Delta Lake tables](load-to-tables.md) article.
 
    :::image type="content" source="media\get-started-csv-upload\upload-csv-lakehouse.gif" alt-text="Animated image showing upload CSV and CSV renaming" lightbox="media\get-started-csv-upload\upload-csv-lakehouse.gif":::
 
 ## Load the file to a Delta table
 
-1. Right-click or use the ellipsis on the CSV file to access the contextual menu, and select "Load to Delta".
-1. The load to tables user interface shows up with the suggested table name. Real time validation on special characters will apply during typing.
-1. Click __Confirm__ to execute the load.
-1. The table now shows up in the lakehouse explorer, expand the table to see the columns and its types. Click on the table to see a preview.
+1. Right-click or use the ellipsis on the CSV file to access the contextual menu, and select **Load to Delta**.
+1. The load to tables user interface shows up with the suggested table name. Real time validation on special characters apply during typing.
+1. Select **Confirm** to execute the load.
+1. The table now shows up in the lakehouse explorer, expand the table to see the columns and its types. Select the table to see a preview.
 
    :::image type="content" source="media\get-started-csv-upload\load-to-table.gif" alt-text="Animated image showing load to table and table preview" lightbox="media\get-started-csv-upload\load-to-table.gif":::
 
@@ -56,10 +56,10 @@ In this tutorial you'll learn to:
 
 ## Generate a Dataset and create a Power BI report
 
-1. Click "New Power BI dataset" on the Lakehouse ribbon.
-1. Select the table to be added to the dataset model, click the Confirm button.
-1. On the dataset editing experience define relationships between multiple tables, and also apply data types normalization and DAX transformations to the data if desired.
-1. Click "New report" on the riboon.
+1. Select **New Power BI dataset** on the Lakehouse ribbon.
+1. Select the table to be added to the dataset model, select the **Confirm** button.
+1. On the dataset editing experience, your are able to define relationships between multiple tables, and also apply data types normalization and DAX transformations to the data if desired.
+1. Select **New report** on the ribbon.
 1. Use the report builder experience to design a Power BI report.
 
    :::image type="content" source="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif" alt-text="Animated image showing dataset and power bi report generation" lightbox="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif":::

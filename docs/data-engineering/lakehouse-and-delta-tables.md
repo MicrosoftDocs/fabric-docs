@@ -21,11 +21,11 @@ For a more comprehensive introduction to the Delta Lake table format, follow lin
 
 ## Big data, Apache Spark and legacy table formats
 
-[!INCLUDE [product-name](../includes/product-name.md)] Runtime for Apache Spark leverages the same foundation as Azure Synapse Analytics Runtime for Apache Spark, but contain key differences to provide a more streamlined behavior across all engines in the [!INCLUDE [product-name](../includes/product-name.md)] service. In [!INCLUDE [product-name](../includes/product-name.md)], key performance features are turned on by default. Advanced Apache Spark users may revert configurations to previous values to better align with specific scenarios.
+[!INCLUDE [product-name](../includes/product-name.md)] Runtime for Apache Spark uses the same foundation as Azure Synapse Analytics Runtime for Apache Spark, but contain key differences to provide a more streamlined behavior across all engines in the [!INCLUDE [product-name](../includes/product-name.md)] service. In [!INCLUDE [product-name](../includes/product-name.md)], key performance features are turned on by default. Advanced Apache Spark users may revert configurations to previous values to better align with specific scenarios.
 
-All table types, managed and un-managed, are supported by [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse and the Apache Spark engine; this include views and regular non-Delta Hive table formats. Tables defined using PARQUET, CSV, AVRO, JSON, and any Apache Hive compatible file format will work as expected.
+[!INCLUDE [product-name](../includes/product-name.md)] Lakehouse and the Apache Spark engine support all table types, both managed and unmanaged; this includes views and regular non-Delta Hive table formats. Tables defined using PARQUET, CSV, AVRO, JSON, and any Apache Hive compatible file format work as expected.
 
-The Lakehouse explorer user interface experience will vary depending on table type. Currently, the Lakehouse explorer only renders table objects.
+The Lakehouse explorer user interface experience varies depending on table type. Currently, the Lakehouse explorer only renders table objects.
 
 ### Configuration differences with Azure Synapse Analytics
 
@@ -35,12 +35,12 @@ The following table contains the configuration differences between Azure Synapse
 |---------|---------|---------|---------|
 |spark.sql.sources.default|delta|parquet|Default table format|
 |spark.sql.parquet.vorder.enabled|true|N/A|V-Order writer|
-|spark.sql.parquet.vorder.dictionaryPageSize|2g|N/A|Dictionay page size limit for V-Order|
+|spark.sql.parquet.vorder.dictionaryPageSize|2 GB|N/A|Dictionary page size limit for V-Order|
 |spark.microsoft.delta.optimizeWrite.enabled|true|unset (false)|Optimize Write|
 
 ## Auto discovery of tables
 
-The Lakehouse explorer provides a tree-like view of the objects in the [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse artifact. It has a key capability of discovering and displaying tables that are described in the metadata repository and in OneLake storage. The table references are displayed under the ```Tables``` section of the Lakehouse explorer user interface. Auto-discovery also applies to tables defined over OneLake shortcuts.
+The Lakehouse explorer provides a tree-like view of the objects in the [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse artifact. It has a key capability of discovering and displaying tables that are described in the metadata repository and in OneLake storage. The table references are displayed under the ```Tables``` section of the Lakehouse explorer user interface. Auto discovery also applies to tables defined over OneLake shortcuts.
 
 ### Tables over Shortcuts
 
@@ -58,7 +58,7 @@ The Lakehouse explorer provides a tree-like view of the objects in the [!INCLUDE
 
 ## Delta Lake table optimization
 
-Keeping tables in shape for the broad scope of analytics scenarios is no minor feat. [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse pro-actively enables the important parameters to minimize common problems associated with big data tables, such as compaction and small file sizes, and to maximize query performance. Still, there are many scenarios where those parameters will need additional changes. The [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md) article covers some key scenarios and provides an in-depth guide on how to efficiently maintain Delta tables for maximum performance.
+Keeping tables in shape for the broad scope of analytics scenarios is no minor feat. [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse pro-actively enables the important parameters to minimize common problems associated with big data tables, such as compaction and small file sizes, and to maximize query performance. Still, there are many scenarios where those parameters need changes. The [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md) article covers some key scenarios and provides an in-depth guide on how to efficiently maintain Delta tables for maximum performance.
 
 ## Next steps
 
