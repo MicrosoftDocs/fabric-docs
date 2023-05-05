@@ -62,4 +62,4 @@ You can use available Spark libraries to connect to a data source directly, load
 - Overview: How to use notebook together with lakehouse
 - [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md).
 - [How to: How to copy data using Copy activity in Data pipeline](../data-factory/copy-data-activity.md).
-- [Tutorial: Move data into lakehouse via Copy assistant](../data-factory/move-data-lakehouse-copy-assistant.md).
+- [Tutorial: Move data into lakehouse via Copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md).
