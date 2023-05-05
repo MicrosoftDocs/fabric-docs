@@ -26,14 +26,17 @@ We provide rich operations to develop notebooks:
 - [IDE-style IntelliSense](#ide-style-intellisense)
 - [Code snippets](#code-snippets)
 - [Drag and drop to insert snippets](#drag-and-drop-to-insert-snippets)
+- [Drag and drop to insert images](#drag-and-drop-to-insert-images)
 - [Format text cell with toolbar buttons](#format-text-cell-with-toolbar-buttons)
 - [Undo or redo cell operation](#undo-or-redo-cell-operation)
-- Code cell commenting
 - [Move a cell](#move-a-cell)
 - [Delete a cell](#delete-a-cell)
 - [Collapse a cell input](#collapse-a-cell-input)
 - [Collapse a cell output](#collapse-a-cell-output)
-- [Notebook outline](#notebook-outline)
+- [Lock or freeze a cell](#lock-or-freeze-a-cell)
+- [Merge and Split cells](#merge-and-split-cells)
+- [Notebook contents](#notebook-contents)
+- [Markdown folding](#markdown-folding)
 
 ### Add a cell
 
@@ -90,13 +93,11 @@ The IntelliSense features are at different levels of maturity for different lang
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebooks provide code snippets that make it easier to enter commonly used code patterns like code for the following:
 
-- Configuring your Spark session
 - Reading data as a Spark DataFrame, or
 - Drawing charts with Matplotlib.
 
 Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellisense) mixed with other suggestions. The code snippets contents align with the code cell language. You can see available snippets by typing **Snippet** or any keywords appear in the snippet title in the code cell editor. For example, by typing **read** you can see the list of snippets to read data from various data sources.
 
-:::image type="content" source="media\author-execute-notebook\cell-editor.png" alt-text="Screenshot showing a cell editing screen at the beginning of an Apache Spark session." lightbox="media\author-execute-notebook\cell-editor.png":::
 
 ![Animated GIF of code snippets.](media/author-execute-notebook/code-snippet.gif)
 
@@ -104,15 +105,12 @@ Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellis
 
 You can use drag and drop to read data from Lakehouse explorer conveniently. Multiple file types are supported here, you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell. The notebook generates the code snippet accordingly to preview the data.
 
-:::image type="content" source="media\author-execute-notebook\test-drag-and-drop.png" alt-text="Screenshot showing an empty cell." lightbox="media\author-execute-notebook\test-drag-and-drop.png":::
 
 ![Animated GIF of drag and drop to insert snippets.](media/author-execute-notebook/drag-drop-insert-snippet.gif)
 
 ### Drag and drop to insert images
 
 You can use drag and drop to insert images from your browser or local computer to a markdown cell conveniently.
-
-:::image type="content" source="media\author-execute-notebook\drag-and-drop-image.png" alt-text="Screenshot showing a markdown cell." lightbox="media\author-execute-notebook\drag-and-drop-image.png":::
 
 ![Animated GIF of drag and drop to insert images.](media/author-execute-notebook/drag-drop-insert-image.gif)
 
@@ -140,11 +138,13 @@ Supported undo cell operations:
 
 ### Move a cell
 
-You can drag from the empty part of a cell and drop it to the desired position, you can also move the selected cell using **Move up** and **Move down** on the ribbon.
+You can drag from the empty part of a cell and drop it to the desired position。
+![Animated GIF of drag and drop to move a cell.](media/author-execute-notebook/drag-drop-move-cell.gif)
+
+You can also move the selected cell using **Move up** and **Move down** on the ribbon.
 
 :::image type="content" source="media\author-execute-notebook\move-cell-options.png" alt-text="Screenshot showing the options for moving a cell." lightbox="media\author-execute-notebook\move-cell-options.png":::
 
-![Animated GIF of drag and drop to move a cell.](media/author-execute-notebook/drag-drop-move-cell.gif)
 
 ### Delete a cell
 
@@ -156,23 +156,36 @@ You can also use [shortcut keys under command mode](#shortcut-keys-under-command
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide input** to collapse current cell's input. To expand it, Select the **Show input** while the cell is collapsed.
 
-:::image type="content" source="media\author-execute-notebook\show-hide-input.png" alt-text="Screenshot showing where to find the show and hide input options." lightbox="media\author-execute-notebook\show-hide-input.png":::
-
 ![Animated GIF of collapsing cell input.](media/author-execute-notebook/collapse-cell-input.gif)
 
 ### Collapse a cell output
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide output** to collapse current cell's output. To expand it, select the **Show output** while the cell's output is hidden.
 
-:::image type="content" source="media\author-execute-notebook\show-hide-output.png" alt-text="Screenshot showing where to find the show and hide output options." lightbox="media\author-execute-notebook\show-hide-output.png":::
 
 ![Animated GIF of collapsing cell output.](media/author-execute-notebook/collapse-cell-output.gif)
 
-### Notebook outline
+### Lock or freeze a cell
+Lock and freeze cell operation allow you to make cells read-only or stop code cells from being run on an individual cell basis.
 
-The Outlines or Table of Contents presents the first markdown header of any markdown cell in a sidebar window for quick navigation. The Outlines sidebar is resizable and collapsible to fit the screen in the best ways possible. You can select the **Outline** button on the notebook command bar to open or hide the sidebar.
+![Animated GIF of lock or freeze a cell.](media/author-execute-notebook/Lock-and-freeze-cell.gif)
+
+### Merge and Split cells
+You can use **Merge with previous cell** **Merge with next cell** to merge related cells conveniently.
+Select **Split cell** will help you split irrelevant statements to multiple cells.
+
+:::image type="content" source="media\author-execute-notebook\merge-split-cell.png" alt-text="Screenshot showing the entry of merge split cells." lightbox="media\author-execute-notebook\merge-split-cell.png":::
+
+### Notebook contents
+
+The Outlines or Table of Contents presents the first markdown header of any markdown cell in a sidebar window for quick navigation. The Outlines sidebar is resizable and collapsible to fit the screen in the best ways possible. You can select the **Contents** button on the notebook command bar to open or hide the sidebar.
 
 :::image type="content" source="media\author-execute-notebook\outline-option.png" alt-text="Screenshot showing where to select the Contents option." lightbox="media\author-execute-notebook\outline-option.png":::
+
+### Markdown folding
+
+The markdown folding allows you to hide cells under a markdown cell that contains a heading. The markdown cell and its hidden cells are treated the same as a set of contiguous multi-selected cells when performing cell operations. 
+![Animated GIF of markdown folding.](media/author-execute-notebook/markdown-folding.gif)
 
 ## Run notebooks
 
@@ -192,7 +205,7 @@ Select the **Run All** button to run all the cells in the current notebook in se
 
 ### Run all cells above or below
 
-Expand the dropdown list from **Run all** button, then select **Run cells above** to run all the cells above the current in sequence. Select **Run cells below** to run all the cells below the current in sequence.
+Expand the dropdown list from **Run all** button, then select **Run cells above** to run all the cells above the current in sequence. Select **Run cells below** to run the current cell and all the cells below the current in sequence.
 
 :::image type="content" source="media\author-execute-notebook\run-cells-menu.png" alt-text="Screenshot showing the Run all menu options." lightbox="media\author-execute-notebook\run-cells-menu.png":::
 
@@ -200,13 +213,18 @@ Expand the dropdown list from **Run all** button, then select **Run cells above*
 
 Select the **Cancel All** button to cancel the running cells or cells waiting in the queue.
 
-:::image type="content" source="media\author-execute-notebook\cancel-all-runs.png" alt-text="Screenshot showing where to select Cancel all runs." lightbox="media\author-execute-notebook\cancel-all-runs.png":::
+### Stop session
+
+**Stop session** will cancel the running and waiting cells and stop the current session, you will restart a brand new session if you click run button again.
+:::image type="content" source="media\author-execute-notebook\cancel-all-stop-session.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\cancel-all-stop-session.png":::
 
 ### Variable explorer
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebook provides a built-in variables explorer for you to see the list of the variables name, type, length, and value in the current Spark session for PySpark (Python) cells. More variables show up automatically as they're defined in the code cells. Clicking on each column header sorts the variables in the table.
 
 You can select the **Variables** button on the notebook ribbon “View” tab to open or hide the variable explorer.
+
+:::image type="content" source="media\author-execute-notebook\variables.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\variables.png":::
 
 > [!NOTE]
 > Variable explorer only supports python.
@@ -217,15 +235,20 @@ A step-by-step cell execution status is displayed beneath the cell to help you s
 
 :::image type="content" source="media\author-execute-notebook\cell-run-status.png" alt-text="Screenshot showing an example of cell run status details." lightbox="media\author-execute-notebook\cell-run-status.png":::
 
-### Spark progress indicator
+### Inline spark job indicator
 
-The [!INCLUDE [product-name](../includes/product-name.md)] notebook is purely Spark based. Code cells are executed on the serverless Apache Spark pool remotely. A Spark job progress indicator is provided with a real-time progress bar appears to help you understand the job execution status. The number of tasks per each job or stage help you to identify the parallel level of your spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
+The [!INCLUDE [product-name](../includes/product-name.md)] notebook is Spark based. Code cells are executed on the spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar appears to help you understand the job execution status. The number of tasks per each job or stage help you to identify the parallel level of your spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
+
+You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you useful suggestions to help refine and debug the code.
 
 :::image type="content" source="media\author-execute-notebook\spark-progress-details.png" alt-text="Screenshot of details of Spark jobs progress." lightbox="media\author-execute-notebook\spark-progress-details.png":::
 
+In **More actions**, you'll be able to easily navigate to the **Spark application details** page and **Spark web UI** page.
+:::image type="content" source="media\author-execute-notebook\inline-monitor-more-actions.png" alt-text="Screenshot of details of more actions." lightbox="media\author-execute-notebook\inline-monitor-more-actions.png":::
+
 ## IPython Widgets
 
-Widgets are eventful python objects that have a representation in the browser, often as a control like a slider, textbox etc. IPython Widgets only works in Python environment, it's not supported in other languages (e.g. Scala, SQL, C#) yet.
+Widgets are eventful python objects that have a representation in the browser, often as a control like a slider, textbox etc. IPython Widgets only works in Python environment, it's not supported in other languages (e.g. Scala, SQL, R) yet.
 
 ### To use IPython Widget
 
@@ -242,12 +265,12 @@ Widgets are eventful python objects that have a representation in the browser, o
    display(slider)
    ```
 
+1. Run the cell, the widget displays in the output area.
+
    ```python
    slider = widgets.IntSlider()
-   slider
+   display(slider)
    ```
-
-1. Run the cell, the widget displays in the output area.
 
    :::image type="content" source="media\author-execute-notebook\widget-in-output.png" alt-text="Screenshot of widget displayed in the output area." lightbox="media\author-execute-notebook\widget-in-output.png":::
 
@@ -259,7 +282,7 @@ Widgets are eventful python objects that have a representation in the browser, o
    display(slider)
    ```
 
-   :::image type="content" source="media\author-execute-notebook\multiple-widget-instances.png" alt-text="Screenshot showing multiple instances of one widget." lightbox="media\author-execute-notebook\multiple-widget-instances.png":::
+   :::image type="content" source="media\author-execute-notebook\multiple-time-widget.png" alt-text="Screenshot showing multiple times of one widget." lightbox="media\author-execute-notebook\multiple-time-widget.png":::
 
 1. To render two widgets independent of each other, create two widget instances:
 
@@ -269,6 +292,8 @@ Widgets are eventful python objects that have a representation in the browser, o
    display(slider1)
    display(slider2)
    ```
+
+   :::image type="content" source="media\author-execute-notebook\multiple-widget-instances.png" alt-text="Screenshot showing multiple instances of widgets." lightbox="media\author-execute-notebook\multiple-widget-instances.png":::
 
 ### Supported widgets
 
