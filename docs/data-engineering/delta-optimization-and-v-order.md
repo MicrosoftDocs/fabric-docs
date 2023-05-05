@@ -31,11 +31,11 @@ V-Order is applied at the parquet file level. Delta tables and its features, suc
 
 V-Order is __enabled by default__ in [!INCLUDE [product-name](../includes/product-name.md)] and in Apache Spark it is controlled by the following configurations
 
-|Apache Spark configuration|Default value  |Description  |
+|Configuration|Default value  |Description  |
 |---------|---------|---------|
-|Row1     |         |         |
-|Row2     |         |         |
-|Row3     |         |         |
+|spark.sql.parquet.vorder.enabled|true|Controls session level V-Order writing.|
+|TBLPROPERTIES(“delta.parquet.vorder.enabled”)|false|Default V-Order mode on tables|
+|Dataframe writer option: parquet.vorder.enabled|unset|Control V-Order writes using Dataframe writer|
 
 Use the following commands to control usage of V-Order writes.
 
@@ -116,7 +116,76 @@ Use the following commands to control usage of V-Order writes.
 
 ### Control V-Order using Delta table properties
 
+Enable V-Order table property during table creation:
+```sql
+%%sql 
+CREATE TABLE person (id INT, name STRING, age INT) USING parquet TBLPROPERTIES("delta.parquet.vorder.enabled","true");
+```
+
+> [!IMPORTANT]
+> When the table property is set to true; INSERT, UPDATE and MERGE commands will behave as expected and perform. If the V-Order session configuration is set to true or the spark.write enables it, then the writes will be V-Order even if the TBLPROPERTIES is set to false.
+
+Enable or disable V-Order by altering the table property:
+```sql
+%%sql 
+ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled","true");
+
+ALTER TABLE person SET TBLPROPERTIES("delta. parquet.vorder.enabled","false");
+
+ALTER TABLE person UNSET TBLPROPERTIES("delta.parquet.vorder.enabled");
+```
+
+After enabling or disabling the table property, only future writes to the table will be affected. Parquet files will keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, read the "Control V-Order when optimizing a table" section bellow.
+
 ### Controlling V-Order directly on write operations
+
+All Apache Spark write commands will inherit the session setting if not explicit. All following commands will write using V-Order by implicitly inheriting the session configuration.
+
+```python
+df_source.write\
+  .format("delta")\
+  .mode("append")\
+  .saveAsTable("myschema.mytable")
+
+DeltaTable.createOrReplace(spark)\
+  .addColumn("id","INT")\
+  .addColumn("firstName","STRING")\
+  .addColumn("middleName","STRING")\
+  .addColumn("lastName","STRING",comment="surname")\
+  .addColumn("birthDate","TIMESTAMP")\
+  .location("Files/people")\
+  .execute()
+
+df_source.write\
+  .format("delta")\
+  .mode("overwrite")\
+  .option("replaceWhere","start_date >= '2017-01-01' AND end_date <= '2017-01-31'")\
+  .saveAsTable("myschema.mytable") 
+```
+
+> [!IMPORTANT]
+> V-Order applies only files affected by the predicate.
+
+In a session where ```spark.sql.parquet.vorder.enabled``` is unset or set to false, the following commands would write using V-Order:
+
+```python
+df_source.write\
+  .format("delta")\
+  .mode("overwrite")\
+  .option("replaceWhere","start_date >= '2017-01-01' AND end_date <= '2017-01-31'")\
+  .option("parquet.vorder.enabled ","true")\
+  .saveAsTable("myschema.mytable")
+
+DeltaTable.createOrReplace(spark)\
+  .addColumn("id","INT")\
+  .addColumn("firstName","STRING")\
+  .addColumn("middleName","STRING")\
+  .addColumn("lastName","STRING",comment="surname")\
+  .addColumn("birthDate","TIMESTAMP")\
+  .option("parquet.vorder.enabled","true")\
+  .location("Files/people")\
+  .execute()
+```
 
 ## What is Optimized Write?
 
@@ -146,11 +215,31 @@ In order to keep the tables at the best state for best performance, perform bin-
 > [!IMPORTANT]
 > Properly designing the table physical structure based on the ingestion frequency and expected read patterns is likely more important than running the optimization commands described in this section.
 
-### Run OPTIMIZE using Apache Spark
-
-### Run VACUUM using Apache Spark
-
 ### Control V-Order when optimizing a table
+
+The following command structures will bin-compact and rewrite all affected files using V-Order, independent of the TBLPROPERTIES setting or session configuration setting:
+
+```sql
+%%sql 
+OPTIMIZE <table|fileOrFolderPath> VORDER;
+
+OPTIMIZE <table|fileOrFolderPath> WHERE <predicate> VORDER;
+
+OPTIMIZE <table|fileOrFolderPath> WHERE <predicate> [ZORDER  BY (col_name1, col_name2, ...)] VORDER;
+```
+
+When ZORDER and VORDER are used together, Apache Spark will perform bin-compaction, ZORDER, VORDER sequentially.
+
+The following commands will bin-compact and rewrite all affected files using the TBLPROPERTIES setting. If TBLPROPERTIES is set true to V-Order, all affected files will be written as V-Order. If TBLPROPERTIES is unset or set to false to V-Order, it will inherit the session setting; so in order to remove V-Order from the table, set the session configuration to false.
+
+```sql
+%%sql 
+OPTIMIZE <table|fileOrFolderPath>;
+
+OPTIMIZE <table|fileOrFolderPath> WHERE predicate;
+
+OPTIMIZE <table|fileOrFolderPath> WHERE predicate [ZORDER BY (col_name1, col_name2, ...)];
+```
 
 ## Next steps
 

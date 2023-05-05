@@ -33,19 +33,10 @@ The following table contains the configuration differences between Azure Synapse
 
 |Apache Spark configuration|Microsoft Fabric value|Azure Synapse Analytics value|Notes|
 |---------|---------|---------|---------|
-|spark.sql.sources.default|         |         | |
-|spark.sql.legacy.createHiveTableByDefault|         |         | |
-|spark.sql.parquet.vorder.enabled|         |         | |
-|parquet.block.size     |         |         | |
-|spark.sql.parquet.vorder.dictionaryPageSize     |         |         | |
-|spark.sql.parquet.native.writer.memory     |         |         | |
-|spark.microsoft.delta.optimizeWrite.enabled     |         |         | |
-|spark.databricks.delta.optimize.minFileSize     |         |         | |
-|spark.databricks.delta.optimize.maxFileSize     |         |         | |
-|spark.microsoft.delta.optimizeWrite.binSize     |         |         | |
-|spark.microsoft.delta.autoCompact.enabled     |         |         | |
-|spark.microsoft.delta.properties.defaults.autoOptimize.autoCompact     |         |         | |
-|spark.databricks.delta.schema.autoMerge.enabled     |         |         | |
+|spark.sql.sources.default|delta|parquet|Default table format|
+|spark.sql.parquet.vorder.enabled|true|N/A|V-Order writer|
+|spark.sql.parquet.vorder.dictionaryPageSize|2g|N/A|Dictionay page size limit for V-Order|
+|spark.microsoft.delta.optimizeWrite.enabled|true|unset (false)|Optimize Write|
 
 ## Auto discovery of tables
 
@@ -74,6 +65,6 @@ Keeping tables in shape for the broad scope of analytics scenarios is no minor f
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 - [Delta Lake overview](/azure/synapse-analytics/spark/apache-spark-delta-lake-overview?pivots=programming-language-python)
 - [Shortcuts](lakehouse-shortcuts.md)
-- [Load to Tables Lake tables](load-to-tables.md)
+- [Load to Tables](load-to-tables.md)
 - [Apache Spark workspace administration settings](spark-workspace-admin-settings.md)
 - [What is a Runtime in Fabric?](runtime.md)

@@ -35,7 +35,7 @@ In this tutorial you'll learn to:
 
 ## Upload a CSV file to the Lakehouse
 
-1. Create the ```MyData```  folder under the ```Files``` section of your Lakehouse.
+1. Create the ```TaxiData```  folder under the ```Files``` section of your Lakehouse.
 1. Upload the file to the folder, by using the "Upload file" item in the folder contextual menu.
 1. Once uploaded, click the folder to see its content.
 1. Rename the file to remove special characters, in this example, remove the '+' character. To see the full list of special characters, read the [Load to Delta Lake tables](load-to-delta.md) article.
