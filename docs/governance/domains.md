@@ -146,4 +146,4 @@ To unassign several workspaces at a time, select the checkboxes next to the work
 
 ## Next steps
 
-* Domain contributors: [Specify a domain in a workspace](../get-started/create-workspaces.md#specify-a-domain)
+* [Admin role in workspaces](../get-started/roles-workspaces.md)
