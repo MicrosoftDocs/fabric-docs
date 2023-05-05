@@ -10,9 +10,9 @@ ms.date: 05/23/2023
 
 # Apache Spark runtime in Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The Microsoft Fabric Runtime provides an Azure-integrated Apache Spark-based platform for executing and managing data engineering and data science workloads. It combines essential components from both internal and open-source sources to offer customers a seamless and comprehensive solution.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Major components of the Runtime:
 

@@ -11,8 +11,6 @@ ms.search.form: Lakehouse Get Data
 
 # Options to get data into the Fabric Lakehouse
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Get data experience covers all user scenarios for bringing data into the lakehouse, like:
 
 - Connecting to existing SQL Server and copying data into delta table on the lakehouse.
@@ -20,6 +18,8 @@ Get data experience covers all user scenarios for bringing data into the lakehou
 - Copying and merging multiple tables from other alehouses into a new delta table.
 - Connecting to a streaming source to land data in a lakehouse.
 - Referencing data without copying it from other internal lakehouses or external sources.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Different ways to load data in lakehouse
 
