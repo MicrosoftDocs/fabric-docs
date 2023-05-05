@@ -154,7 +154,7 @@ Now that you created a dataflow gen2, you can operate on it in a pipeline. In th
 
 1. Select **Save** to save your data pipeline. Then select **Run** to run your data pipeline and load your data.  
 
-   :::image type="content" source="media/transform-data/save-run-pipeline.png" alt-text="Screenshot showing where to select Run.":::
+   :::image type="content" source="media/transform-data/save-run-pipeline.png" alt-text="Screenshot showing where to select Save and Run.":::
 
 ## Next steps
 
