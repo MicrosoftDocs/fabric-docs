@@ -36,7 +36,7 @@ Call [workspaces/getInfo](/rest/api/power-bi/admin/workspace-info-post-workspace
 >[!NOTE]
 > Not more than 16 calls can be made simultaneously. The caller should wait for a scan succeed/failed response from the *scanStatus* API before invoking another call.
 >
-> If some metadata you expected to receive is not returned, check with your Power BI admin to make sure they have [enabled all relevant admin switches](./metadata-scanning-setup.md).
+> If some metadata you expected to receive is not returned, check with your Power BI admin to make sure they have [enabled all relevant admin switches](../admin/metadata-scanning-setup.md).
 
 Use the URI from the location header you received from calling *workspaces/getInfo* and poll on [workspaces/scanStatus/{scan_id}](/rest/api/power-bi/admin/workspace-info-get-scan-status) until the status returned is "Succeeded". This status means the scan result is ready. It's recommended to use a polling interval of 30-60 seconds. In the location header, you also receive the URI to call in the next step. Use it only after the status is "Succeeded".
 
@@ -64,7 +64,7 @@ Metadata scanning requires no special license. It works for all of your tenant m
 ## Next steps
 
 * [Metadata scanning overview](./metadata-scanning-overview.md)
-* [Set up metadata scanning](./metadata-scanning-setup.md).
+* [Set up metadata scanning](../admin/metadata-scanning-setup.md).
 * [Enable service principal authentication for read-only admin APIs](./metadata-scanning-enable-read-only-apis.md).
 * Learn about [Power BI REST Admin APIs](/rest/api/power-bi/admin).
 * More questions? Ask the [Power BI Community](https://community.powerbi.com).

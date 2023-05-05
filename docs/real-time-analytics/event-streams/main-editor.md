@@ -10,6 +10,9 @@ ms.search.form: product-kusto
 ---
 
 # Main editor for Microsoft Fabric event streams
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 Microsoft Fabric event streams feature provides a main editor – a canvas that allows you to connect to event data sources and destinations with a few clicks. Each tile (node) in the canvas represents a source, or a destination or the eventstream itself. From there, you can preview the event data, monitor the data insights with metrics, check logs for each of these tiles (nodes). 
 
 ## Main editor
@@ -27,4 +30,4 @@ The following screenshot shows an eventstream with its source and destination co
 ## Next steps
 
 - [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
-- [Introduction to Microsoft Fabric event streams](overview.md).
+- [Introduction to Microsoft Fabric event streams](overview.md)

@@ -40,8 +40,6 @@ For a specific guidance on how to use the new Power BI Desktop file format in gi
 
 ## Develop using another workspace
 
-:::image type="content" source="./media/manage-branches/branches-using-another-workspace.png" alt-text="Diagram showing the workflow from a remote git repo to a feature branch and private workspace.":::
-
 For a developer who works in the web, the flow would be as follows:
 
 1. Create a new workspace (or use an existing one you already use).

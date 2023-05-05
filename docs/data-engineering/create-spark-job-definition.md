@@ -11,9 +11,9 @@ ms.search.form: Create Spark Job Definition,spark_job_definition
 
 # How to create an Apache Spark job definition in Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this tutorial, learn how to create a Spark job definition in [!INCLUDE [product-name](../includes/product-name.md)].
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 

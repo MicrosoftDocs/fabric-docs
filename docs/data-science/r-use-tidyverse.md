@@ -1,6 +1,6 @@
 ---
 title: Use Tidyverse
-description: Learn how to use Tidyverse, a collection of R packages designed for data science.
+description: How to use Tidyverse, a collection of R packages designed for data science.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
@@ -23,7 +23,6 @@ ms.search.form: R Language
 
 [!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
 
-* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
 ## Load `tidyverse`
 

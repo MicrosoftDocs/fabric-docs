@@ -76,7 +76,7 @@ To keep your workspace synced with the git branch, [commit any changes](#commit-
 
 ## Commit changes to git
 
-Once you successfully connect to a git folder, edit your workspace as usual. Any changes you save are saved in the workspace only. When you’re ready, you can commit your changes to the git branch, or you can undo the changes and revert to the previous status.
+Once you successfully connect to a git folder, edit your workspace as usual. Any changes you save are saved in the workspace only. When you’re ready, you can commit your changes to the git branch, or you can undo the changes and revert to the previous status. Read more about [commits](git-integration-process.md#commit).
 
 ### [Commit to git](#tab/commit-to-git)
 
@@ -124,9 +124,7 @@ The selected items in your workspace revert to how they were before you saved th
 
 ## Update workspace from git
 
-Whenever anyone commits a new change to the connected git branch, a notification appears in the relevant workspace. Use the **Source control** pane to pull latest changes, merges or reverts into the workspace and update live items.
-
- Unlike *commit* and *undo*, the *Update* command always updates the entire branch and syncs to the most recent commit. You can’t select specific items to update.
+Whenever anyone commits a new change to the connected git branch, a notification appears in the relevant workspace. Use the **Source control** pane to pull latest changes, merges or reverts into the workspace and update live items. Read more about [updating](git-integration-process.md#update).
 
 To update a workspace, follow these steps:
 
@@ -157,27 +155,9 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
-### General limitations
-
-- The Azure AD user you’re using in Fabric is the same user you need to use in Azure Repos. There’s no way to edit or change users in Fabric.
-
-### Branch and folder limitations
-
-- Maximum length of branch name is 244 characters.
-- Maximum length of full path for file names is 250 characters. Longer names will fail.
-- If a branch contains only subdirectories without artifact directories, the connection fails.
-- You can’t create subdirectories inside the folder connected to the workspace.
-- You can’t download a report/dataset as *.pbix* from the service after deploying them with Git Integration.
-
-### Sync and commit limitations
-
-- The size limit for a commit is 25 MB.
-- You can only sync in one direction at a time. You can’t commit and update at the same time.
-- Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they are ignored.
-- Duplicating names isn't allowed – even if Power BI allows it, the update fails.
-- B2B isn’t supported.
-- [Conflict resolution](./conflict-resolution.md) is partially done in git.
+If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the git integration feature.
 
 ## Next steps
 
-[Git integration best practices](../best-practices-cicd.md)
+- [Understand the git integration process](./git-integration-process.md)
+- [Git integration best practices](../best-practices-cicd.md)

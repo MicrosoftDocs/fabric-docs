@@ -1,11 +1,11 @@
 ---
 title: Use sparklyr
-description: Learn how to use sparklyr, an R interface to Apache Spark. 
+description: How to use sparklyr, an R interface to Apache Spark. 
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 04/23/2023
 ms.search.form: R Language
 ---
 
@@ -117,7 +117,7 @@ For example, the `ft_binarizer()` command simplifies the creation of a new colum
 You can find the full list of the Spark Feature Transformers available through `sparklyr` from [Reference -FT](https://spark.rstudio.com/packages/sparklyr/latest/reference/#spark-feature-transformers).
 
 ```R
-tbl_mtcars %>% 
+mtcars_tbl %>% 
   ft_binarizer("mpg", "over_20", threshold = 20) %>% 
   select(mpg, over_20) %>% 
   head(5)
@@ -185,3 +185,5 @@ Learn more about the R functionalities:
 - [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
 - [Create R visualization](./r-visualization.md)
+- [Tutorial: avocado price prediction](./r-avocado.md)
+- [Tutorial: flight delay prediction](./r-flight-delay.md)
