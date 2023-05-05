@@ -1,5 +1,5 @@
 ---
-title: Data engineering/science capacity Settings
+title: Data engineering and science capacity administration settings
 description: Learn about the capacity administration settings for data engineering and data science workloads.
 ms.reviewer: snehagunda
 ms.author: saravi
@@ -10,7 +10,7 @@ ms.date: 05/23/2023
 
 # Capacity administration settings for Data Engineering and Data Science
 
-**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-and-ds.md)]
+**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
 Admins purchase Microsoft Fabric capacities based on the compute and scale requirements of their enterprise's analytics needs. Admins are responsible to manage the capacity and governance. They must govern and manage the compute properties for data engineering and science analytics applications.
 
@@ -20,7 +20,7 @@ Microsoft Fabric capacity admins can now manage and govern their Data Engineerin
 
 From the Admin portal, navigate to the **Data Engineering/Science Settings** section and select a specific capacity as shown in the following animation:
 
-:::image type="content" source="media\capacity-settings\capacitysettings_without_userdefinedpools.gif" alt-text="A gif showing the  configuration of capacity settings for Data Engineering/Science.":::
+:::image type="content" source="media\capacity-settings\capacity-settings-without-user-defined-pools.gif" alt-text="A gif showing the  configuration of capacity settings for Data Engineering/Science.":::
 
 ## Next steps
 

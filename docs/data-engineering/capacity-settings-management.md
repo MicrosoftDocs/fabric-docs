@@ -1,5 +1,5 @@
 ---
-title: Configure data engineering and science capacity admin settings.
+title: Configure data engineering and science capacity admin settings
 description: Learn how to configure and manage the capacity administration settings for data engineering and science workloads.
 ms.reviewer: snehagunda
 ms.author: saravi
@@ -10,7 +10,7 @@ ms.date: 05/23/2023
 
 # How to Configure and Manage Data Engineering/Science Settings for Fabric Capacities
 
-**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-and-ds.md)]
+**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
 When you create Microsoft Fabric from the Azure portal, it is automatically added to the Fabric tenant that's associated with the subscription used to create the capacity. With the simplified setup in Microsoft Fabric, there's no need to link the capacity to the Fabric tenant. Because the newly created capacity will be listed in the admin settings pane. This configuration provides a faster experience for admins to start setting up the capacity for their enterprise analytics teams.
 
@@ -22,11 +22,11 @@ Use the following steps to manage the Data Engineering/Science settings for Micr
 
 1. Select the **Settings** option to open the setting pane for your Fabric account. Select **Admin portal** under Governance and insights section
 
-   :::image type="content" source="media\capacity-settings-management\adminportal.png" alt-text="Screenshot showing where to select Admin Portal settings.":::
+   :::image type="content" source="media\capacity-settings-management\admin-portal.png" alt-text="Screenshot showing where to select Admin Portal settings.":::
 
 1. Choose the **Capacity settings** option to expand the menu and select **Fabric capacity** tab. Here you should see the capacities that you have created in your tenant. Choose the capacity that you want to configure.
 
-   :::image type="content" source="media\capacity-settings-management\capacitysettings.png" alt-text="Screenshot showing where to select Capacity settings." lightbox="media\capacity-settings-management\capacitysettings.png":::
+   :::image type="content" source="media\capacity-settings-management\capacity-settings.png" alt-text="Screenshot showing where to select Capacity settings." lightbox="media\capacity-settings-management\capacity-settings.png":::
 
 1. You are navigated to the capacities detail pane, where you can view the usage and other admin controls for your capacity. Navigate to the **Data Engineering/Science Settings** section and select **Open Spark Compute**. Configure the following parameters:
 
@@ -36,7 +36,7 @@ Use the following steps to manage the Data Engineering/Science settings for Micr
 
    * **Spark properties:** Capacity admins can configure spark properties and their values, which are inherited to all the workspaces in the capacity. Like the spark runtime version, workspace admins can override these properties for their individual workspaces.
 
-   :::image type="content" source="media\capacity-settings-management\capacitysettingssections.png" alt-text="Screenshot showing different sections in spark compute settings.":::
+   :::image type="content" source="media\capacity-settings-management\capacity-settings-sections.png" alt-text="Screenshot showing different sections in spark compute settings.":::
 
 1. After configuring, select **Apply**
 

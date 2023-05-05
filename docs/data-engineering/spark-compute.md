@@ -9,7 +9,7 @@ ms.date: 02/24/2023
 ---
 # What is spark compute in Microsoft Fabric?
 
-**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-and-ds.md)]
+**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
 Microsoft Fabric Data Engineering and Data Science workloads operates on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. With starter pools, you can expect rapid spark session initialization, typically within 5 to 10 seconds. It eliminates the need for manual setup. Furthermore, you also get the flexibility to customize Spark pools according to the specific data engineering and data science requirements. It enables an optimized and tailored analytics experience.
 
@@ -25,13 +25,13 @@ The clusters within starter pools come equipped with an idle Spark session that 
 
 :::image type="content" source="media\spark-compute\starter-pool-high-level.png" alt-text="Image showing high-level design of starter pools.":::
 
-Starter pools are pre-configured with default settings and they support inline library installations without impacting the rapid 5 second to 10-second session start experience. However, the extra custom Spark properties or libraries through workspace or capacity settings may result in a 2 minute to 3-minute session start latency for on-demand cluster acquisition. In terms of billing, you are only charged for capacities when Spark sessions are active and executing queries. There are no charges are incurred during prewarming periods.
+Starter pools are pre-configured with default settings and they support inline library installations without impacting the rapid 5 second to 10-second session start experience. However, the extra custom Spark properties or libraries through workspace or capacity settings may result in a 2 minute to 3-minute session start latency for on-demand cluster acquisition. In terms of billing, you are only charged for capacities when Spark sessions are active and executing queries. There are no charges incurred during prewarming periods.
 
 ## Spark pools
 
 A Spark pool is a collection of metadata that outlines the compute resource requirements and associated behavior attributes for a Spark instance. These attributes encompass elements such as the name, number of nodes, node size, and scaling behavior. It's important to note that creating a Spark pool doesn't consume any resources or incur costs. Charges only arise when a Spark job is executed on the designated Spark pool, which, causes the Spark instance to be instantiated as needed.
 
-Additionally, the "time to live" property for all custom pool sessions is has a default duration of 2 minutes following the session's conclusion. Workspace admins can create custom spark pools (if they authorized by the capacity admins) and select these pools as the default compute option for a workspace. Once selected as users submit notebook or spark job definitions, the spark sessions are created on-demand and take ~3 minutes. Because it involves acquiring the VM from Azure based on the compute specifications specified by the users unlike the prewarmed starter pools.
+Additionally, the "time to live" property for all custom pool sessions has a default duration of 2 minutes following the session's conclusion. Workspace admins can create custom spark pools (if they authorized by the capacity admins) and select these pools as the default compute option for a workspace. Once selected as users submit notebook or spark job definitions, the spark sessions are created on-demand and take ~3 minutes. Because it involves acquiring the VM from Azure based on the compute specifications specified by the users unlike the prewarmed starter pools.
 
 Admins can create these custom spark pools and size them based on the cores that's available in their Microsoft Fabric capacity. Each Microsoft Fabric capacity SKU offers a set of capacity units and these capacity units are converted to spark VCores. One Spark VCore = Capacity Units * 2.
 
