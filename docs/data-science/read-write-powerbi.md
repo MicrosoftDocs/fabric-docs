@@ -103,7 +103,7 @@ spark.table("pbi.`Sales Dataset`._Metrics").printSchema()
 
 The read access APIs have the following limitations:
 
-- SemPy read_table, SemPy read_dax and Power BI table access using Spark SQL are subject to [Power BI backend limitations](https://learn.microsoft.com/en-us/rest/api/power-bi/datasets/execute-queries#limitations).
+- SemPy read_table, SemPy read_dax and Power BI table access using Spark SQL are subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
 - Predicate pushdown for Spark *_Metrics* queries is limited to a single [IN](https://spark.apache.org/docs/3.3.0/api/sql/index.html#in) expression. Extra [IN](https://spark.apache.org/docs/3.3.0/api/sql/index.html#in) expressions and unsupported predicates are evaluated in Spark after data transfer.
 - Predicate pushdown for Power BI tables accessed using Spark SQL doesn't support
   - [ISNULL](https://spark.apache.org/docs/3.3.0/api/sql/#isnull)
