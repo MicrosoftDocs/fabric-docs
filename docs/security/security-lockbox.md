@@ -9,6 +9,8 @@ ms.date: 05/23/2023
 
 # Customer Lockbox for Microsoft Fabric
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Use [Customer Lockbox for Microsoft Azure](/azure/security/fundamentals/customer-lockbox-overview) to control how Microsoft engineers access your data. In this article you'll learn how Customer Lockbox requests are initiated, tracked, and stored for later reviews and audits.
 
 Typically, Customer Lockbox is used to help Microsoft engineers troubleshoot a [!INCLUDE [product-name](../includes/product-name.md)] service support request. Customer Lockbox can also be used when Microsoft identifies a problem, and a Microsoft-initiated event is opened to investigate the issue.
@@ -75,7 +77,7 @@ Customer Lockbox has two type of logs:
 
     :::image type="content" source="media/security-lockbox/customer-lockbox-activity-logs-thumbnail.png" alt-text="Screenshot of the activity logs in Customer Lockbox for Microsoft Azure." lightbox="media/security-lockbox/customer-lockbox-activity-logs.png":::
 
-* **Audit logs** - Available from the Microsoft Purview compliance portal. You can see the audit logs in the [admin center](/power-bi/admin/service-admin-portal-audit-logs).
+* **Audit logs** - Available from the Microsoft Purview compliance portal. You can see the audit logs in the [admin portal](/power-bi/admin/service-admin-portal-audit-logs).
 
     Customer Lockbox for [!INCLUDE [product-name](../includes/product-name.md)] has four [audit logs](/power-bi/admin/service-admin-auditing):
 
