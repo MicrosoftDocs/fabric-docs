@@ -23,6 +23,9 @@ Creating a lakehouse creates a SQL endpoint, which points to the lakehouse delta
 
 SQL endpoint operates in read-only mode over lakehouse delta tables. You can only read data from delta tables using SQL endpoint. They can save functions, views, and set SQL object-level security.
 
+> [!NOTE]
+> External delta tables create with Spark code won't be visible to SQL endpoint. Use shortcuts in Table space to make external delta tables visible for SQL endpoint.
+
 To modify data in lakehouse delta tables, you have to switch to lakehouse mode and use Apache Spark.
 
 ## Access control using SQL security
