@@ -4,7 +4,7 @@ description: This article explains how to copy data using Data Warehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/20/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
@@ -39,7 +39,7 @@ The following properties are supported for Data Warehouse as **Source** in a cop
 The following some properties are **required**:
 
 - **Data store type**: Select **Workspace**.
-- **Workspace data store type**:  Select **Data Warehouse** connection from the data store list.
+- **Workspace data store type**:  Select **Data Warehouse** from the data store type list.
 - **Data Warehouse**: Select an existing **Data Warehouse** from the workspace. If not exist, then create a new Data Warehouse by clicking on **New**.
 - **Use query**: Select **Table**, **Query** or **Stored procedure**.
 
@@ -79,7 +79,7 @@ The following properties are supported for Data Warehouse as **Destination** in 
 :::image type="content" source="./media/connector-data-warehouse/destination.png" alt-text="Screenshot showing destination tab and the list of properties.":::
 
 - **Data store type**: Select **Workspace**.
-- **Workspace data store type**:  Select **Data Warehouse** connection from the data store list.
+- **Workspace data store type**: Select **Data Warehouse** from the data store type list.
 - **Data Warehouse**: Select an existing **Data Warehouse** from the workspace. If not exist, then create a new Data Warehouse by clicking on **New**.
 - **Table**: Choose an existing table from the table list or specify a table name as destination.
 
@@ -87,9 +87,9 @@ Under **Advanced**, you can specify the following fields:
 
 - **Copy command settings**: Specify the copy command properties.
 
-:::image type="content" source="./media/connector-data-warehouse/default-values.png" alt-text="Screenshot showing default values of copy command settings.":::
+    :::image type="content" source="./media/connector-data-warehouse/default-values.png" alt-text="Screenshot showing default values of copy command settings.":::
 
-- **Table options**: Specifies whether to automatically create the destination table if not exists based on the source schema.
+- **Table options**: Specify whether to automatically create the destination table if not exists based on the source schema. You can select **None** or **Auto create table**.
 - **Pre-copy script**: Specify a SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.
 - **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out.  
 - **Disable performance metrics analytics**: The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.
@@ -98,33 +98,32 @@ If your source data is in **Azure Blob Storage** or **Azure Data Lake Storage 
 
 1. The source data and format are with the following types and authentication methods:
 
-    |**Supported source data store type** |**Supported format**  |**Supported source authentication type**|
+    |**Supported source data store type** |**Supported format**  |**Supported source authentication type**|
     |:---|:---|:---|
     |Azure Blob Storage |Delimited text Parquet|Anonymous authentication Shared access signature authentication|
     |Azure Data Lake Storage Gen2 |Delimited text Parquet|Shared access signature authentication |
 
 1. Format settings are with the following:<br>
-    a. For **Parquet**: compression can be no compression, Snappy, or GZip.<br>
-    b. For **Delimited text**:<br>
-            i. `rowDelimiter` is explicitly set as **single character** or "**\r\n**", the default value is not supported.<br>
-            ii. `nullValue` is left as default or set to **empty string** ("").<br>
-            iii. `encodingName` is left as default or set to **utf-8 or utf-16**.<br>
-            iv. escpae char requirement is no longer needed.<br>
-            v. compression can be **no compression** or GZip.
+   a. For **Parquet**: compression can be no compression, Snappy, or GZip.<br>
+   b. For **Delimited text**:<br>
+       i. `rowDelimiter` is explicitly set as **single character** or "**\r\n**", the default value is not supported.<br>
+       ii. `nullValue` is left as default or set to **empty string ("")**.<br>
+       iii. `encodingName` is left as default or set to **utf-8 or utf-16**.<br>
+       iv. `skipLineCount` is left as default or set to 0. <br>
+       v. compression can be **no compression** or **GZip**.
 
-1. `wildcardFilename` requirement is no longer needed. If source is a folder, customer can either use File path mode, set path in File path, and left file name as empty, or use Wildcard file path mode, set path in wildcard file path.
-1. `modifiedDateTimeStart`, `modifiedDateTimeEnd`, prefix, `enablePartitionDiscovery` and `additionalColumns` are not specified.<br>
+1. If your source is a folder, `recursive` in copy activity must be set to true.
+1. `modifiedDateTimeStart`, `modifiedDateTimeEnd`, `prefix`, `enablePartitionDiscovery` and `additionalColumns` are not specified.<br>
 
-    If your source data store and format isn't originally supported by COPY statement, use the Staged copy by using COPY statement feature instead. The staged copy feature also provides you with better throughput. It automatically converts the data into COPY statement compatible format, then calls COPY statement to load data into Data Warehouse.<br>
-    `wildardFolderPath` can be supported, `wildcardFilename` requirement is no longer needed.
+    If your source data store and format isn't originally supported by COPY statement, use the Staged copy by using COPY statement feature instead. The staged copy feature also provides you with better throughput. It automatically converts the data into COPY statement compatible format, then calls COPY statement to load data into Data Warehouse.
 
 ### Mapping
 
-For **Mapping** tab configuration, see Mapping.
+For **Mapping** tab configuration, see [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
 
 ### Settings
 
-For **Settings** tab configuration, see Settings.
+For **Settings** tab configuration, see [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 
@@ -135,9 +134,9 @@ To learn more information about copy activity in Data Warehouse, see the followi
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
-|**Workspace data store type**|Select **Data Warehouse** from the data store type list.|\<your workspace data store type> |Yes|type|
-|**Data Warehouse** |Select an existing **Data Warehouse** from the workspace. If not exist, then create a new Data Warehouse by clicking on **New**.|\<your data warehouse>|Yes|name|
-|**Use query** |Select **Tables**, **Query** or **Stored procedure**. |**Tables**<br>**Query**<br>**Stored procedure**|No|typeProperties|
+|**Workspace data store type**|Select **Data Warehouse** from the data store type list.|\<Data Warehouse> |Yes|type|
+|**Data Warehouse** |Select an existing **Data Warehouse** from the workspace. If not exist, then create a new Data Warehouse by clicking on **New**.|\<your data warehouse>|Yes|endpoint<br>artifactId|
+|**Use query** |Select **Tables**, **Query** or **Stored procedure**. |**Tables**<br>**Query**<br>**Stored procedure**|No|typeProperties:<br> schema  table<br>sqlReaderQuery<br>sqlReaderStoredProcedureName|
 |**Query timeout (minutes)**|Set the timeout for query command execution.|timespan |No |queryTimeout|
 |**Isolation level** |Specifies the transaction locking behavior for source. |•None<br>•Snapshot|No |isolationLevel|
 |**Partition option**|Select **None** or **Dynamic range**.|•None<br>•Dynamic range|No|partitionOption|
@@ -149,13 +148,13 @@ To learn more information about copy activity in Data Warehouse, see the followi
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type**|Select **Data Warehouse** from the data store type list.|\<your workspace data store type> |Yes|type|
-|**Data Warehouse** |Select an existing **Data Warehouse** from the workspace. If not exist, then create a new Data Warehouse by clicking on **New**.|\<your data warehouse>|Yes|name|
+|**Data Warehouse** |Select an existing **Data Warehouse** from the workspace. If not exist, then create a new Data Warehouse by clicking on **New**.|\<your data warehouse>|Yes|endpoint<br>artifactId|
 |**Table** |Choose an existing table from the table list or specify a table name as destination.|\<name of your destination table>|Yes|schema <br> table|
 |**Copy command settings**|Specify the copy command properties.|\<default values> |No |copyCommandSettings:<br>defaultValues:<br>columnName<br>defaultValue|
 |**Table option**|Specifies whether to automatically create the destination table if not exists based on the source schema.|•None<br>•Auto create table|No|tableOption|
 |**Pre-copy script** |Specify a SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.|\<pre-copy script>|No|preCopyScript|
 |**Write batch timeout** |Specify the wait time for the batch insert operation to finish before it times out. |\<write batch timeout>|No |writeBatchTimeout|
-|**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection|
+|**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br>ture or false|
 
 ## Next Steps
 
