@@ -10,11 +10,17 @@ ms.custom: template-how-to
 
 # Connect to Azure Data Explorer (Kusto) in dataflows
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 You can connect to Azure Data Explorer (Kusto) in Dataflow Gen2 using the Azure Data Explorer (Kusto) connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+
+## Copy the query URI
+
+1. Navigate to your KQL Database.
+
+2. Copy the **Query URI** from the database details card in the database dashboard and paste it somewhere to use in a later step.
+
+   :::image type="content" source="media/connector-kusto/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted." lightbox="media/connector-kusto/query-uri.png":::
 
 ## Connect to Azure Data Explorer (Kusto)
 
@@ -32,9 +38,9 @@ To connect to Azure Data Explorer from a dataflow:
 
    :::image type="content" source="./media/connector-kusto/select-kusto.png" alt-text="Screenshot showing Choose data source with the Azure category and the Azure Data Explorer (Kusto) connector emphasized.":::
 
-1. In **Azure Data Explorer (Kusto)**, provide the name of your Azure Data Explorer cluster. For this example, use `https://help.kusto.windows.net` to access the sample help cluster. For other clusters, the URL is in the form `https://_\<ClusterName>_._\<Region>_.kusto.windows.net`.
+1. In **Connect to data source**, provide the Query URI from Microsoft Fabric's KQL Database dashboard that you copied in [Copy the query URI](#copy-the-query-uri). For other clusters, the URL is in the form `https://_\<ClusterName>_._\<Region>_.kusto.windows.net`.
 
-   You can also select a database that's hosted on the cluster you're connecting to, and one of the tables in the database, or a query like `StormEvents | take 1000`.
+   You can also select a database that's hosted on the cluster you're connecting to, and one of the tables in the database, or add a query like `StormEvents | take 1000`.
 
    :::image type="content" source="./media/connector-kusto/connect-data-source.png" alt-text="Screenshot showing Connect data source where you enter your Kusto cluster name and your credentials." lightbox="./media/connector-kusto/connect-data-source.png":::
 
