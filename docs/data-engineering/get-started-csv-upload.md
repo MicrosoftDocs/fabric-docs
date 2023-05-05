@@ -27,7 +27,7 @@ In this tutorial you'll learn to:
 1. Make sure you are in desired workspace or select/create one
 1. Select **Lakehouse** icon under New section in the main mage
 
-   :::image type="content" source="media\get-started-streaming\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog" lightbox="media\get-started-streaming\new-lakehouse.png":::
+   :::image type="content" source="media\get-started-csv-upload\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog" lightbox="media\get-started-streaming\new-lakehouse.png":::
 
 1. Enter name of your Lakehouse
 1. Select **Create**
@@ -38,7 +38,9 @@ In this tutorial you'll learn to:
 1. Create the ```TaxiData```  folder under the ```Files``` section of your Lakehouse.
 1. Upload the file to the folder, by using the "Upload file" item in the folder contextual menu.
 1. Once uploaded, click the folder to see its content.
-1. Rename the file to remove special characters, in this example, remove the '+' character. To see the full list of special characters, read the [Load to Delta Lake tables](load-to-delta.md) article.
+1. Rename the file to remove special characters, in this example, remove the '+' character. To see the full list of special characters, read the [Load to Delta Lake tables](load-to-tables.md) article.
+
+   :::image type="content" source="media\get-started-csv-upload\upload-csv-lakehouse.gif" alt-text="Animated image showing upload CSV and CSV renaming" lightbox="media\get-started-csv-upload\upload-csv-lakehouse.gif":::
 
 ## Load the file to a Delta table
 
@@ -47,22 +49,20 @@ In this tutorial you'll learn to:
 1. Click __Confirm__ to execute the load.
 1. The table now shows up in the lakehouse explorer, expand the table to see the columns and its types. Click on the table to see a preview.
 
+   :::image type="content" source="media\get-started-csv-upload\load-to-table.gif" alt-text="Animated image showing load to table and table preview" lightbox="media\get-started-csv-upload\load-to-table.gif":::
+
 > [!NOTE]
-> If the table already exists, then select the __load mode__ you wish. Overwrite will drop and recreate the table. Append will insert all CSV content as new data. If the table schemas are different, it will auto-merge the schemas. For an in-depth guide on the __Load to Tables__ feature, read the [Load to Delta Lake tables](load-to-delta.md) article.
+> If the table already exists, different __load mode__ options are show. __Overwrite__ will drop and recreate the table. __Append__ will insert all CSV content as new data. For an in-depth guide on the __Load to Tables__ feature, read the [Load to Tables](load-to-tables.md) article.
 
-## Generate a Dataset
+## Generate a Dataset and create a Power BI report
 
-After the table is loaded, clicking on the table name will display a data preview.
+1. Click "New Power BI dataset" on the Lakehouse ribbon.
+1. Select the table to be added to the dataset model, click the Confirm button.
+1. On the dataset editing experience define relationships between multiple tables, and also apply data types normalization and DAX transformations to the data if desired.
+1. Click "New report" on the riboon.
+1. Use the report builder experience to design a Power BI report.
 
-Click generate Dataset on the Lakehouse Ribbon.
-
-Select the table into the Dataset model, rename and save the Dataset. On this screen you will be able to define relationships between multiple tables and also apply DAX transformations to the data.
-
-## Create a PowerBI report
-
-From the Dataset, click generate Report to go into report design mode.
-
-Design your report using Power BI.
+   :::image type="content" source="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif" alt-text="Animated image showing dataset and power bi report generation" lightbox="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif":::
 
 ## Next steps
 
