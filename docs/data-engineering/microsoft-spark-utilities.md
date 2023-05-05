@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ---
 
-# Use the Microsoft Apache Spark utilities for common file management tasks
+# Introduction of Fabric MSSparkUtils
 
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can useMSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. MSSparkUtils are available in PySpark (Python) Scala, SparkR notebooks and [!INCLUDE [product-name](../includes/product-name.md)] pipelines.
 
@@ -149,16 +149,22 @@ For example:
 mssparkutils.notebook.run("Sample1", 90, {"input": 20 })
 ```
 
+You can open the snapshot link of reference run in the cell output, the snapshot captures the code run results and allows you easily debug a reference run.
+
+:::image type="content" source="media\microsoft-spark-utilities\reference-run.png" alt-text="Screenshot of reference run result." lightbox="media\microsoft-spark-utilities\reference-run.png":::
+
+:::image type="content" source="media\microsoft-spark-utilities\run-snapshot.png" alt-text="Screenshot of a snapshot example." lightbox="media\microsoft-spark-utilities\run-snapshot.png":::
+
 > [!NOTE]
-> Currently [!INCLUDE [product-name](../includes/product-name.md)] only supports referencing notebooks within a workspace. The snapshot feature of the referenced notebook is coming soon.
+> Currently Fabric notebook only supports referencing notebooks within a workspace.
 
 ### Exit a notebook
 
 Exits a notebook with a value. You can run nesting function calls in a notebook interactively or in a pipeline.
 
-- When you call an *exit()* function from a notebook interactively, Azure Synapse will throw an exception, skip running subsequence cells, and keep the Spark session alive.
-- When you orchestrate a notebook that calls an *exit()* function in a Synapse pipeline, Azure Synapse returns an exit value, complete the pipeline run, and stop the Spark session.
-- When you call an *exit()* function in a notebook being referenced, Azure Synapse will stop the further execution in the notebook being referenced, and continue to run next cells in the notebook that call the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
+- When you call an *exit()* function from a notebook interactively, Fabric notebook will throw an exception, skip running subsequence cells, and keep the Spark session alive.
+- When you orchestrate a notebook that calls an *exit()* function in a pipeline, the Notebook returns an exit value, complete the pipeline run, and stop the Spark session.
+- When you call an *exit()* function in a notebook being referenced, Fabric Spark will stop the further execution in the notebook being referenced, and continue to run next cells in the notebook that call the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
 
 ```python
 mssparkutils.notebook.exit("value string")
@@ -166,7 +172,7 @@ mssparkutils.notebook.exit("value string")
 
 For example:
 
-**Sample1** notebook locates under **folder/** with following two cells:
+**Sample1** notebook with following two cells:
 
 - Cell 1 defines an **input** parameter with default value set to 10.
 
@@ -177,27 +183,27 @@ For example:
 You can run the **Sample1** in another notebook with default values:
 
 ```python
-exitVal = mssparkutils.notebook.run("folder/Sample1")
+exitVal = mssparkutils.notebook.run("Sample1")
 print (exitVal)
 ```
 
 **Output:**
 
 ```console
-Sample1 run success with input is 10
+Notebook executed successfully with exit value 10
 ```
 
 You can run the **Sample1** in another notebook and set the **input** value as 20:
 
 ```python
-exitVal = mssparkutils.notebook.run("mssparkutils/folder/Sample1", 90, {"input": 20 })
+exitVal = mssparkutils.notebook.run("Sample1", 90, {"input": 20 })
 print (exitVal)
 ```
 
 **Output:**
 
 ```console
-Sample1 run success with input is 20
+Notebook executed successfully with exit value 20
 ```
 
 ## Session management - stop an interactive session
