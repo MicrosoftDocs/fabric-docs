@@ -10,32 +10,30 @@ ms.custom:
 ---
 # Create a workspace
 
-This article explains how to create *workspaces*, spaces to collaborate with colleagues, in [!INCLUDE [product-name](../includes/product-name.md)]. In workspaces, you create collections of items such as lakehouses, warehouses, and reports. For more background, see the [Workspaces](workspaces.md) article.
+This article explains how to create *workspaces* in [!INCLUDE [product-name](../includes/product-name.md)]. In workspaces, you create collections of items such as lakehouses, warehouses, and reports. For more background, see the [Workspaces](workspaces.md) article.
 
-:::image type="content" source="media/create-workspaces/fabric-sample-workspace.png" alt-text="Screenshot of a workspace." lightbox="media/create-workspaces/fabric-sample-workspace.png":::
+To create a workspace:
 
-## Quickly create a workspace
+1. Select **Workspaces** > **New workspace**. The Create a workspace pane opens.
 
-1. Select **Workspaces** > **New workspace**.
-   
-     ![Screenshot of Create workspace.](media/create-workspaces/fabric-new-workspaces.png)
+    :::image type="content" source="media/create-workspaces/fabric-new-workspaces.png" alt-text="Screenshot of the Create a workspace option.":::
 
-2. Give the workspace a unique name. If the name isn't available, edit it to come up with a name that's unique. Select **Apply**.
+1. The Create a workspace pane opens.
 
-     ![Screenshot of Input workspace name.](media/create-workspaces/fabric-quickly-create-workspace.png)
+    :::image type="content" source="media/create-workspaces/create-workspace-side-pane.png" alt-text="Screenshot of the Create a workspace side pane.":::
 
-3. [!INCLUDE [product-name](../includes/product-name.md)] creates the workspace and opens it. You see it in the list of workspaces where you can find all the workspaces you have access to.
+    * Give the workspace a unique name (mandatory).
 
-   ![Screenshot of Find workspace in workspace flyout.](media/create-workspaces/fabric-workspace-in-flyout.png)
+    * Provide a description of the workspace (optional).
 
-## Optional and advanced settings
+    * Assign the workspace to a domain (optional).
 
-Here are some optional and advanced settings for your workspace. They're explained in more detail in this section.
+        If you are a domain contributor for the workspace, you can associate the workspace to a domain, or you can change an existing association. For information about domains, see [Domains in Fabric](../governance/domains.md).
 
-- **Description:** Add a description to provide more details about this workspace.
-- **Workspace image:** Upload a Workspace image by selecting the upload button. Files can be .png or .jpg format. File size has to be less than 45 KB.
-- **Domain (Preview):** Assign your workspace to a domain.
-  
+1. When done, either continue to the advanced settings, or select **Apply**.
+
+## Advanced settings
+
 Expand **Advanced** and you see advanced setting options:
 
 ### Contact list
@@ -48,7 +46,10 @@ By default, the first workspace admin who created the workspace is the contact. 
 
 ### License mode
 
-Different license mode provides different sets of feature for your workspace. After the creation, you can still change the workspace license type in workspace settings, but some migration effort is needed. 
+Different license mode provides different sets of feature for your workspace. After the creation, you can still change the workspace license type in workspace settings, but some migration effort is needed.
+
+>[!NOTE]
+> Currently, if you want to downgrade the workspace license type from Premium capacity to Pro (Shared capacity), you must first remove any non-Power BI Fabric items that the workspace contains. Only after you remove such items will you be allowed to downgrade the capacity.
 
 ### Default storage format
 
