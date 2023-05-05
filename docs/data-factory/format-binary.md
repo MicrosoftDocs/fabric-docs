@@ -32,7 +32,7 @@ Binary format is supported for the following activities and connectors as source
 
 ## Binary format in copy activity
 
-To configure delimited text format, choose your connection in the source or destination of data pipeline copy activity, and then select **Binary** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
+To configure Binary format, choose your connection in the source or destination of data pipeline copy activity, and then select **Binary** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
 
 :::image type="content" source="./media/format-common/file-settings.png" alt-text="Screenshot showing file settings button.":::
 
@@ -45,7 +45,7 @@ After selecting **Settings** in **File format** section under **Source** tab, fo
 
 :::image type="content" source="./media/format-binary/file-format-settings.png" alt-text="Screenshot showing file format settings.":::
 
-- **Compression type**: The compression codec used to read/write binary files.
+- **Compression type**: The compression codec used to read binary files.
 You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, **TarGzip** or **tar** type in the drop-down list.
 
     If you select **ZipDeflate** as compression type, **Preserve zip file name as folder** will show up under **Advanced** settings in **Source** tab.
@@ -76,7 +76,7 @@ After selecting **Settings** in **File format** section under **Destination** ta
 
 :::image type="content" source="./media/format-binary/file-format-settings.png" alt-text="Screenshot showing selecting file format.":::
 
-- **Compression type**: The compression codec used to read/write binary files.
+- **Compression type**: The compression codec used to write binary files.
 You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, **TarGzip** or **tar** type in the drop-down list.
 
 - **Compression level**: The compression ratio. You can choose from **Optimal** or **Fastest**.
