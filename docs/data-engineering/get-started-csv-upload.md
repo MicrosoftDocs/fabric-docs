@@ -66,5 +66,5 @@ In this tutorial you'll learn to:
 
 ## Next steps
 
-- [Load to Delta Lake tables](load-to-delta.md)
+- [Load to Delta Lake tables](load-to-tables.md)
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)

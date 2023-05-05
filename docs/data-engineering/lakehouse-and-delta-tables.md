@@ -66,5 +66,5 @@ Keeping tables in shape for the broad scope of analytics scenarios is no minor f
 - [Delta Lake overview](/azure/synapse-analytics/spark/apache-spark-delta-lake-overview?pivots=programming-language-python)
 - [Shortcuts](lakehouse-shortcuts.md)
 - [Load to Tables](load-to-tables.md)
-- [Apache Spark workspace administration settings](spark-workspace-admin-settings.md)
+- [Spark workspace administration settings](workspace-admin-settings.md)
 - [What is a Runtime in Fabric?](runtime.md)
