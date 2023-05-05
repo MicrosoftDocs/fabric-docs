@@ -27,15 +27,15 @@ To group data into domains, workspaces are associated with domains. When a works
 
 There are three roles involved in domains:
 
-* **Power BI admin** (or higher): Power BI admins can create and edit domains, specify domain admins and domain contributors, and associate workspaces with domains. Power BI admins can also see all the defined domains on the Domains page in the admin center, and they can edit and delete domains.
+* **Power BI admin** (or higher): Power BI admins can create and edit domains, specify domain admins and domain contributors, and associate workspaces with domains. Power BI admins can also see all the defined domains on the Domains page in the admin portal, and they can edit and delete domains.
 
 * **Domain admin**: Ideally, the domain admins of a domain are the business owners or designated experts. They should be familiar with the data in their area and the regulations and restrictions that are relevant to it.
 
-    Domain admins have access to the **Domains** page in the admin center, but they can only see and edit the domains they're admins of. Domain admins can update the domain description, define/update domain contributors, and associate workspaces with the domain. They also can define and update the domain image and override tenant settings for any specific settings the tenant admin has delegated to the domain level. They can't delete the domain, change the domain name, or add/delete other domain admins.
+    Domain admins have access to the **Domains** page in the admin portal, but they can only see and edit the domains they're admins of. Domain admins can update the domain description, define/update domain contributors, and associate workspaces with the domain. They also can define and update the domain image and override tenant settings for any specific settings the tenant admin has delegated to the domain level. They can't delete the domain, change the domain name, or add/delete other domain admins.
 
 * **Domain contributor**: Domain contributors are [workspace admins](../get-started/roles-workspaces.md) who have been authorized by the domain or Power BI admin to associate the workspaces they're the admins of to a domain, or to change the current domain association.
 
-    Domain contributors associate the workspaces they're an admin of in the settings of the workspace itself. They don’t have access to the **Domains** page in the admin center.
+    Domain contributors associate the workspaces they're an admin of in the settings of the workspace itself. They don’t have access to the **Domains** page in the admin portal.
     
     > [!NOTE]
     > Remember, to be able to associate a their workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../get-started/roles-workspaces.md) in the workspace).
@@ -50,7 +50,7 @@ When users look for data items in the OneLake data hub, they may want to see onl
 
 To create domain you must be a Power BI admin.
 
-1. Open the admin center and select **Domains**.
+1. Open the admin portal and select **Domains**.
 
 1. On the **Domains** page that opens, select **Create new domain**.
 
@@ -64,7 +64,7 @@ To create domain you must be a Power BI admin.
 
 ## Configure a domain
 
-Power BI and domain admins can configure a domain on the domain's configuration page. To get to the domain's configuration page, go to the admin center, choose **Domains**, and then select the domain you want to configure.
+Power BI and domain admins can configure a domain on the domain's configuration page. To get to the domain's configuration page, go to the admin portal, choose **Domains**, and then select the domain you want to configure.
 
 :::image type="content" source="./media/domains/configure-choose-domain.png" alt-text="Screenshot showing the domains page-for choosing domain to configure.":::
 

@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # Buy a Microsoft Fabric license
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 This article describes the differences between the [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) capacities, and shows you how to buy an Azure SKU for your organization. The article is aimed at admins who want to buy Microsoft Fabric for their organization.
 
 After you buy a capacity, you can learn how to [manage your capacity](/power-bi/enterprise/service-admin-premium-manage#manage-capacity) and [assign workspaces](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity) to it.
