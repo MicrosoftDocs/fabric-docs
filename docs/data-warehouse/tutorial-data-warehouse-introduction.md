@@ -29,9 +29,9 @@ In this tutorial, you take on the role of a data warehouse developer at the fict
 - Sign into your Power BI online account, or if you don’t have an account yet, sign up for a free trial.
 - Build and implement an end-to-end data warehouse for your organization:
   - Enable Fabric in your tenant.
-  - Create a Fabric workspace.
-  - Quickly create a data warehouse.
-  - Ingest data from source to the data warehouse dimensional model.
+  - [Create a Fabric workspace](tutorial-data-warehouse-create-workspace.md).
+  - Quickly [create a data warehouse](tutorial-data-warehouse-create-warehouse.md).
+  - [Ingest data](tutorial-data-warehouse-ingest-data.md) from source to the data warehouse dimensional model.
   - Transform the data to create aggregated datasets using T-SQL.
   - Perform orchestration, data ingestion, and data transformation with pipelines.
   - Query the data warehouse using T-SQL and a visual query editor.

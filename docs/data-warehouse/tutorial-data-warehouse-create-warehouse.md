@@ -18,17 +18,17 @@ Now that you have a workspace, you can create your first data warehouse.
 
 1. In the [Power BI service](https://powerbi.com/), select **Workspaces** in the left-hand menu.
 
-1. Search for the workspace you created in [Tutorial: Create a Microsoft Fabric workspace](tutorial-data-warehouse-create-workspace.md) by typing in the search textbox at the top and click on your workspace to open it.
+1. Search for the workspace you created in [Tutorial: Create a Microsoft Fabric workspace](tutorial-data-warehouse-create-workspace.md) by typing in the search textbox at the top and selecting your workspace to open it.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-create-warehouse\search-workspaces.png" alt-text="Screenshot of the Workspaces panel, showing where to search for and select a workspace.":::
 
 1. In the upper left corner, select **New** > **Show all** to display a full list of available items.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-create-warehouse\new-show-all.png" alt-text="Screenshot of the workspace screen, showing where to select Show all in the New drop-down menu.":::
 
 1. In the **Data warehouse** section, select **Warehouse**.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-create-warehouse\select-warehouse.png" alt-text="Screenshot of the data warehouse section, showing where to select Warehouse.":::
 
 1. On the **New warehouse** dialog, enter **WideWorldImporters** as the name.
 
@@ -36,11 +36,11 @@ Now that you have a workspace, you can create your first data warehouse.
 
 1. Select **Create**.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-create-warehouse\new-warehouse-create.png" alt-text="Screenshot of the New warehouse dialog box, showing where to enter a warehouse name, set the Sensitivity, and select Create.":::
 
 When provisioning is complete, the **Build a warehouse** landing page appears.
 
-IMAGE
+:::image type="content" source="media\tutorial-data-warehouse-create-warehouse\build-a-warehouse.png" alt-text="Screenshot of the Build a warehouse landing page.":::
 
 ## Next steps
 

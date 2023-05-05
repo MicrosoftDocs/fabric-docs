@@ -18,19 +18,19 @@ INTRO
 
 1. Select **Data Warehouse Tutorial** in the left-hand navigation menu to return to the workspace artifact view.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-build-report\tutorial-in-navigation.png" alt-text="Screenshot of the navigation menu, showing where to select Data Warehouse Tutorial.":::
 
 1. From the artifact list, select **WideWorldImporters** with the type of **Dataset (default)**.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-build-report\select-artifact-list.png" alt-text="Screenshot of the WorldWideImporters option in the list of artifacts.":::
 
 1. In the **Visualize this data** section, select **Create a report > Auto-create**. A report is generated from the `dimension_customer` table that was loaded in the previous section.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-build-report\visualize-create-report.png" alt-text="Screenshot of the Visualize this data section, showing where to select Auto-create from the Create a report menu.":::
 
 1. A report similar to the following image is generated.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-build-report\quick-summary-report-example.png" alt-text="Screenshot of a Quick summary page that shows four different bar charts as an example of an auto-created report."lightbox="media\tutorial-data-warehouse-build-report\quick-summary-report-example.png":::
 
 1. From the ribbon, select **Save.**
 
@@ -38,7 +38,7 @@ INTRO
 
 1. Select **Save**.
 
-   IMAGE
+   :::image type="content" source="media\tutorial-data-warehouse-build-report\save-report-dialog.png" alt-text="Screenshot of the Save your report dialog with the report name Customer Quick Summary entered.":::
 
 ## Next steps
 
