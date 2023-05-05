@@ -154,7 +154,7 @@
         href: connector-sharepoint-online-list.md
       - name: Configure in copy activity of pipeline
         href: connector-sharepoint-online-list-copy-activity.md
-      - name: Connect in dataflows
+      - name: Configure in dataflow gen2
         href: connector-sharepoint-online-list-dataflows.md
   - name: Data pipelines
     items:
