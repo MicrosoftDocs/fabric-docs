@@ -16,7 +16,7 @@ This quickstart explains how to reference data stored in external ADLS account a
 1. In Azure create ADLS Gen2 account
 1. Enable hierarchical namespaces
 
-   :::image type="content" source="media\get-started-shortcuts\storage-account.png" alt-text="Screenshot of hierarchical namespaces in storage account" lightbox="media\get-started-shortcuts\storage-account.png":::
+   :::image type="content" source="media\get-started-shortcuts\storage-account.png" alt-text="Screenshot of hierarchical namespaces in storage account." lightbox="media\get-started-shortcuts\storage-account.png":::
 
 1. Create folders for your data
 1. Upload data
@@ -28,12 +28,12 @@ This quickstart explains how to reference data stored in external ADLS account a
 1. Under files create a folder where you reference data
 1. Right select (...) and select New Shortcut next to the folder name
 
-   :::image type="content" source="media\get-started-shortcuts\new-shortcut.png" alt-text="Screenshot of new shortcut link" lightbox="media\get-started-shortcuts\new-shortcut.png":::
+   :::image type="content" source="media\get-started-shortcuts\new-shortcut.png" alt-text="Screenshot of new shortcut link." lightbox="media\get-started-shortcuts\new-shortcut.png":::
 
 1. Select External Sources > ADLS Gen2
 1. Provide shortcut name, storage account endpoint, end your data folder location in storage account
 
-   :::image type="content" source="media\get-started-shortcuts\shortcut-dialog.png" alt-text="Screenshot of new shortcut dialog" lightbox="media\get-started-shortcuts\shortcut-dialog.png":::
+   :::image type="content" source="media\get-started-shortcuts\shortcut-dialog.png" alt-text="Screenshot of new shortcut dialog." lightbox="media\get-started-shortcuts\shortcut-dialog.png":::
 
 1. Select create
 
