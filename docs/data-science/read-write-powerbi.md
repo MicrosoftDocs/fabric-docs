@@ -93,6 +93,12 @@ GROUP BY
     """)
 ```
 
+Available measures and dimensions can be inspected using Spark schema.
+
+```python
+spark.table("pbi.`Sales Dataset`._Metrics").printSchema()
+```
+
 ## Read Limitations
 
 The read access APIs have the following limitations:
@@ -105,6 +111,7 @@ The read access APIs have the following limitations:
   - [STARTS_WITH](https://spark.apache.org/docs/3.3.0/api/sql/#startswith)
   - [ENDS_WITH](https://spark.apache.org/docs/3.3.0/api/sql/#endswith)
   - [CONTAINS](https://spark.apache.org/docs/3.3.0/api/sql/#contains).
+- Spark session must be restarted to make new Power BI datasets accessible in Spark SQL.
 
 ## How to write data consumable by Power BI Datasets
 
