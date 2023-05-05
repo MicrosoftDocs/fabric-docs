@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # Enable Microsoft Fabric for your organization
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 The [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) admin switch lets organizations that use Power BI opt into Microsoft Fabric.
 
 >[!NOTE]
@@ -105,4 +107,4 @@ To disable Microsoft Fabric, you can turn off the *Microsoft Fabric (Preview)* a
 
 * [Admin overview](admin-overview.md)
 
-* [What is the admin center?](admin-center.md)
+* [What is the admin portal?](admin-center.md)
