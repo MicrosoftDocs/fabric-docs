@@ -49,13 +49,13 @@ productDirectory:
       links:
         - url: get-started/microsoft-fabric-overview.md
           text: What is Fabric?
-        - url: get-started/microsoft-fabric-overview.md
+        - url: get-started/fabric-home.md
           text: Navigate the Fabric portal
         - url: get-started/workspaces.md
           text: Workspaces in Fabric
-        - url: placeholder.md
+        - url: get-started/onelake-data-hub
           text: Find data in the OneLake data hub
-        - url: get-started/onelake-data-hub.md
+        - url: get-started/index.yml
           text: See more
 
     # Card
@@ -209,7 +209,7 @@ productDirectory:
           text: Use Data Factory pipelines
         - url: /training/modules/get-started-data-science-fabric/
           text: Get started with Data science
-        - url: get-started/index.yml
+        - url: /training/modules/introduction-end-analytics-using-microsoft-fabric/
           text: See more
 
 
