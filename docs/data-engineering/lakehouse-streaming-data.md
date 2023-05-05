@@ -30,6 +30,7 @@ Spark notebooks are an excellent tool for validating ideas and doing experiments
 Spark notebooks are excellent source to test the logic of your code and address all the business requirements. However to keep it running in a production scenario, Spark job definitions are the best solution.
 
 ## Retry policy for Spark Job Definitions
+In Microsoft Fabric, the user can set a retry policy for Spark Job Definition jobs. Though the script in the job might be infinite, the infrastructure running the script might incur an issue requiring stopping the job. Or the job could be eliminated due to underlying infrastructure patching needs. The retry policy allows the user to set rules for automatically restarting the job if it stops because of any underlying issues. The parameters specify how often the job should be restarted, up to infinite retries, and setting time between retries. That way, the users can ensure that their Spark Job Definition jobs will continue running infinitely until the user decides to stop them.
 
 ## Streaming sources
 
