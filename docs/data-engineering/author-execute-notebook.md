@@ -224,7 +224,7 @@ Select the **Cancel All** button to cancel the running cells or cells waiting in
 
 You can select the **Variables** button on the notebook ribbon “View” tab to open or hide the variable explorer.
 
-:::image type="content" source="media\author-execute-notebook\variables.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\variables.png":::
+:::image type="content" source="media\author-execute-notebook\variables.png" alt-text="Screenshot showing where to open variables." lightbox="media\author-execute-notebook\variables.png":::
 
 > [!NOTE]
 > Variable explorer only supports python.
