@@ -15,7 +15,7 @@ ms.search.form: lakehouse delta lake tables
 
 [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](lakehouse-overview.md) is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location. In order to achieve seamless data access across all compute engines in [!INCLUDE [product-name](../includes/product-name.md)], [Delta Lake](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake) is chosen as the unified table format.
 
-Saving data in the Lakehouse using capabilities such as [Load to Delta](load-to-delta.md) or methods described in [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md), all data is saved in Delta format. Delta is also used as the default Spark table format mode in code-first experiences such as Notebooks and Spark Job Definitions.
+Saving data in the Lakehouse using capabilities such as [Load to Tables](load-to-tables.md) or methods described in [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md), all data is saved in Delta format. Delta is also used as the default Spark table format mode in code-first experiences such as Notebooks and Spark Job Definitions.
 
 For a more comprehensive introduction to the Delta Lake table format, follow links in the Next steps section.
 
@@ -39,11 +39,13 @@ The following table contains the configuration differences between Azure Synapse
 |parquet.block.size     |         |         | |
 |spark.sql.parquet.vorder.dictionaryPageSize     |         |         | |
 |spark.sql.parquet.native.writer.memory     |         |         | |
+|spark.microsoft.delta.optimizeWrite.enabled     |         |         | |
 |spark.databricks.delta.optimize.minFileSize     |         |         | |
 |spark.databricks.delta.optimize.maxFileSize     |         |         | |
 |spark.microsoft.delta.optimizeWrite.binSize     |         |         | |
 |spark.microsoft.delta.autoCompact.enabled     |         |         | |
 |spark.microsoft.delta.properties.defaults.autoOptimize.autoCompact     |         |         | |
+|spark.databricks.delta.schema.autoMerge.enabled     |         |         | |
 
 ## Auto discovery of tables
 
@@ -59,9 +61,9 @@ The Lakehouse explorer provides a tree-like view of the objects in the [!INCLUDE
 |Folders with files|```Files``` section|Use Apache Spark to use the destination directly using relative paths. Load the data into Lakehouse native Delta tables for maximum performance.|
 |Legacy Apache Hive tables|```Files``` section|Use Apache Spark to use the destination directly using relative paths, or create a metadata catalog reference using ```CREATE EXTERNAL TABLE``` syntax. Load the data into Lakehouse native Delta tables for maximum performance.|
 
-## Load to Delta
+## Load to Tables
 
-[!INCLUDE [product-name](../includes/product-name.md)] Lakehouse provides a convenient and productive user interface to streamline loading data into Delta tables. The Load to Delta feature allows a visual experiences to load common file formats and folders to Delta to boost analytical productivity to all personas. To learn more about the Load to Delta feature in details, read the [Lakehouse Load to Delta Lake tables](load-to-delta.md) reference documentation.
+[!INCLUDE [product-name](../includes/product-name.md)] Lakehouse provides a convenient and productive user interface to streamline loading data into Delta tables. The Load to Tables feature allows a visual experiences to load common file formats and folders to Delta to boost analytical productivity to all personas. To learn more about the Load to Tables feature in details, read the [Lakehouse Load to Tables](load-to-tables.md) reference documentation.
 
 ## Delta Lake table optimization
 
@@ -72,6 +74,6 @@ Keeping tables in shape for the broad scope of analytics scenarios is no minor f
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 - [Delta Lake overview](/azure/synapse-analytics/spark/apache-spark-delta-lake-overview?pivots=programming-language-python)
 - [Shortcuts](lakehouse-shortcuts.md)
-- [Load to Delta Lake tables](load-to-delta.md)
+- [Load to Tables Lake tables](load-to-tables.md)
 - [Apache Spark workspace administration settings](spark-workspace-admin-settings.md)
 - [What is a Runtime in Fabric?](runtime.md)

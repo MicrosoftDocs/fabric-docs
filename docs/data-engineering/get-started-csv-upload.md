@@ -21,23 +21,36 @@ In this tutorial you'll learn to:
 * Convert the file to a Delta table
 * Generate a Dataset and create a PowerBI report
 
-## Step 1 - Create a Lakehouse and get a CSV file ready
+## Create a Lakehouse and get a CSV file ready
 
-Use the following quick start to create a Lakehouse. Download the following CSV file to a location in your computer.
+1. In Microsoft Fabric, select **Synapse Data Engineering** workload
+1. Make sure you are in desired workspace or select/create one
+1. Select **Lakehouse** icon under New section in the main mage
 
-## Step 2 - Upload a CSV file to the Lakehouse
+   :::image type="content" source="media\get-started-streaming\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog" lightbox="media\get-started-streaming\new-lakehouse.png":::
 
-Create the ```MyData```  folder under the ```Files``` section of your Lakehouse.
+1. Enter name of your Lakehouse
+1. Select **Create**
+1. Download the "Taxi Zone Lookup Table" [CSV file](https://d37ci6vzurychx.cloudfront.net/misc/taxi+_zone_lookup.csv) from the [TLC Trip Record Data website](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page), and save to a location in your computer.
 
-## Step 3 - Load the file to a Delta table
+## Upload a CSV file to the Lakehouse
 
-Select the folder where you uploaded the file from the Lakehouse explorer navigation.
+1. Create the ```MyData```  folder under the ```Files``` section of your Lakehouse.
+1. Upload the file to the folder, by using the "Upload file" item in the folder contextual menu.
+1. Once uploaded, click the folder to see its content.
+1. Rename the file to remove special characters, in this example, remove the '+' character. To see the full list of special characters, read the [Load to Delta Lake tables](load-to-delta.md) article.
 
-Right-click the CSV file from the content pane and choose the Load to Delta from the contextual menu.
+## Load the file to a Delta table
 
-If the table already exists, then select the load mode you wish. Overwrite will drop and recreate the table. Append will insert all CSV content as new data. If the table schemas are different, it will auto-merge the schemas.
+1. Right-click or use the ellipsis on the CSV file to access the contextual menu, and select "Load to Delta".
+1. The load to tables user interface shows up with the suggested table name. Real time validation on special characters will apply during typing.
+1. Click __Confirm__ to execute the load.
+1. The table now shows up in the lakehouse explorer, expand the table to see the columns and its types. Click on the table to see a preview.
 
-## Step 4 -  Generate a Dataset
+> [!NOTE]
+> If the table already exists, then select the __load mode__ you wish. Overwrite will drop and recreate the table. Append will insert all CSV content as new data. If the table schemas are different, it will auto-merge the schemas. For an in-depth guide on the __Load to Tables__ feature, read the [Load to Delta Lake tables](load-to-delta.md) article.
+
+## Generate a Dataset
 
 After the table is loaded, clicking on the table name will display a data preview.
 
@@ -45,7 +58,7 @@ Click generate Dataset on the Lakehouse Ribbon.
 
 Select the table into the Dataset model, rename and save the Dataset. On this screen you will be able to define relationships between multiple tables and also apply DAX transformations to the data.
 
-## Step 5 -  Create a PowerBI report
+## Create a PowerBI report
 
 From the Dataset, click generate Report to go into report design mode.
 

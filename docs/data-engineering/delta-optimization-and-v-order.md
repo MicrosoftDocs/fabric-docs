@@ -25,7 +25,7 @@ V-Order works by applying special sorting, row group distribution, dictionary en
 
 Its __100% open-source parquet format compliant__; all parquet engines can read it as a regular parquet files. Delta tables are more efficient than ever; features such as Z-Order are compatible with V-Order. Table properties and optimization commands can be used on control V-Order on its partitions.
 
-V-Order is applied at the parquet file level. Delta tables and its features, such as Z-Order, compaction, vacuum, time travel, etc are orthogonal to V-Order, as such, are compatible and may be used in conjuction for additional benefits.
+V-Order is applied at the parquet file level. Delta tables and its features, such as Z-Order, compaction, vacuum, time travel, etc are orthogonal to V-Order, as such, are compatible and may be used together for additional benefits.
 
 ## Controlling V-Order writes
 
@@ -130,7 +130,7 @@ The feature is __enabled by default__ in [!INCLUDE [product-name](../includes/pr
 
 Delta Lake MERGE command allows users to update a delta table with advanced conditions. It can update data from a source table, view or DataFrame into a target table by using MERGE command. However, the current algorithm in the open source distribution of Delta Lake isn't fully optimized for handling unmodified rows. The Microsoft Spark Delta team implemented a custom Low Shuffle Merge optimization, unmodified rows are excluded from an expensive shuffling operation that is needed for updating matched rows.
 
-The implemention is controlled by the ```spark.microsoft.delta.merge.lowShuffle.enabled``` configuration, __enabled by default__ in the runtime. It requires no code changes and is fully compatible with the open-source distribution of Delta Lake. To learn more about Low Shuffle Merge usage scenarios, read the article [Low Shuffle Merge optimization on Delta tables](/azure/synapse-analytics/spark/low-shuffle-merge-for-apache-spark)
+The implementation is controlled by the ```spark.microsoft.delta.merge.lowShuffle.enabled``` configuration, __enabled by default__ in the runtime. It requires no code changes and is fully compatible with the open-source distribution of Delta Lake. To learn more about Low Shuffle Merge usage scenarios, read the article [Low Shuffle Merge optimization on Delta tables](/azure/synapse-analytics/spark/low-shuffle-merge-for-apache-spark)
 
 ## Delta table maintenance
 
@@ -144,26 +144,13 @@ As Delta tables change, performance and storage cost efficiency tends to degrade
 In order to keep the tables at the best state for best performance, perform bin-compaction and vacuuming operations in the Delta tables. Bin-compaction is achieved by the [OPTIMIZE](https://docs.delta.io/latest/optimizations-oss.html) command; it merges all changes into bigger, consolidated parquet files. De-referenced storage clean-up is achieved by the [VACUUM](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) command.
 
 > [!IMPORTANT]
-> Properly designing the table physical structure based on the ingestion frequency and expected read patterns is likely more important than running the optimization commands described in this section. Please refer to the next section for some common Delta Lake scenario-based best practices.
+> Properly designing the table physical structure based on the ingestion frequency and expected read patterns is likely more important than running the optimization commands described in this section.
 
 ### Run OPTIMIZE using Apache Spark
 
 ### Run VACUUM using Apache Spark
 
 ### Control V-Order when optimizing a table
-
-## Delta Lake performance considerations
-
-This section contains a non-exhausting reference of common usage patterns and the best practices for Apache Spark and Delta Lake configurations and maintenance actions.
-
-|Scenario|Consideration|
-|---------|---------|
-|When ingestion will always produce small files|         |
-|Streaming ingesting|         |
-|Streaming ingesting directly to Delta|         |
-|Batch loading to Delta|         |
-|Adding data to new partitions|         |
-|Data modification over many partitions|         |
 
 ## Next steps
 
