@@ -10,9 +10,9 @@ ms.date: 05/23/2023
 
 # Use a notebook to load data into your lakehouse
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this tutorial, learn how to read/write data into your lakehouse with a notebook.Spark API and Pandas API are supported to achieve this goal.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Load data with an Apache Spark API
 

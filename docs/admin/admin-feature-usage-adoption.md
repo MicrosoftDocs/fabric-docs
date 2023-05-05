@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # Feature usage and adoption report
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 The Feature Usage and Adoption Report is a comprehensive analysis of usage and adoption of different features in your Microsoft Fabric tenant. As a Fabric admin you can share this report with others in your organization. You can also share the report's dataset, and use it to customize the report, or build a new report that relies on the same data.
 
 You can access the report from the [admin monitoring](admin-monitoring.md) workspace. To see this workspace you need to be a [Power BI Administrator](admin-overview.md#power-platform-and-power-bi-admin-roles).

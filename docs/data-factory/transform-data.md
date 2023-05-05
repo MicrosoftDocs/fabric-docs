@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
 ms.topic: quickstart
-ms.date: 2/10/2023
+ms.date: 05/23/2023
 ---
 
 # Quickstart: Move and transform data with dataflows and data pipelines

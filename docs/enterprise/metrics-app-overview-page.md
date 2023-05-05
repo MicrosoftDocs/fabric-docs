@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # Understand the metrics app overview page
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 The Microsoft Fabric utilization and metrics app's overview page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line chart, and the bottom visual is a matrix table.
 
 At the top of each page, the **CapacityID** field allows you to select the capacity the app shows results for.
