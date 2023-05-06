@@ -7,7 +7,7 @@ ms.topic: concept
 ms.date: 05/23/2023
 ---
 
-# Endorsement
+# Endorsement overview
 
 Placeholder for endorsement content that is going to be moved here.
 
