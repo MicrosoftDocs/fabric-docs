@@ -1,5 +1,5 @@
 ---
-title: Create a shortcut
+title: Create a OneLake shortcut
 description: Learn how to create two types of shortcuts, a OneLake shortcut and an Azure Data Lake Storage (ADLS) shortcut.
 ms.reviewer: eloldag
 ms.author: trolson
