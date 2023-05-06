@@ -25,8 +25,6 @@ items:
     href: workspaces.md
   - name: Create a workspace
     href: create-workspaces.md
-  - name: Workspace settings
-    href: workspace-settings.md
   - name: Roles in workspaces
     href: roles-workspaces.md
   - name: Give users access to workspaces
