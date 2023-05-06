@@ -10,7 +10,7 @@ ms.custom: template-how-to
 
 # How to configure Lakehouse in copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Lakehouse.
+This article outlines how to use the copy activity in data pipeline to copy data from and to the Fabric Lakehouse.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -53,7 +53,7 @@ The following properties are **required**:
 - **Data store type**: Select **Workspace**.
 - **Workspace data store type**: Select **Lakehouse** from the data store type list.
 - **Lakehouse**: Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.
-- **Root folder**: Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](/trident-docs-private-preview/synapse-data-engineering/concepts-lakehouse?branch=main).
+- **Root folder**: Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
     - If select **Tables**,
         - **Table name**: Choose an existing table from the table list or specify table name as source.
         - Under **Advanced**, you can specify the following fields:
@@ -114,6 +114,7 @@ The following properties are **required**:
                     - **Partition column name**: Select from destination columns in schemas mapping. Supported data types are string, integer, boolean and datetime. Format respects type conversion settings under "Mapping" tab.
         - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
+
     - If select **Files**:
         - **File path**: Select **Browse** to choose the file that you want to copy or fill in the path manually.
 
@@ -158,17 +159,18 @@ To learn more information about copy activity in Lakehouse, see the following ta
 |**Workspace data store type** |Select **Lakehouse** from the data store type list.|**Lakehouse**|Yes|type|
 |**Lakehouse** | Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.|\<your Lakehouse>|Yes |workspaceId<br>artifactId|
 |**Root folder** |The type of the root folder.|•**Tables**<br>•**Files** |No|rootFolder|
-|**Table name** |Choose an existing table from the table list or specify table name as source. |\<table name> |Yes when you select **Tables** in **Root folder** | table|
+|**Table name** |Specify your table name.|\<table name> |Yes when you select **Tables** in **Root folder** | table|
 |**Timestamp** |Query an older snapshot by timestamp.| \<timestamp>|No |timestampAsOf |
 |**Version** |Query an older snapshot by version.| \<version>|No |versionAsOf|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value.| •Name<br>•Value|No |additionalColumns:<br>- name<br>- value |
-|**File path type** |You can choose **File path**, **Wildcard file path** or **List of files** as your file path type. |•**File path**<br>•**Wildcard file path**<br> •**List of files** |Yes|**File path**<br>•folderPath<br>•fileName<br>**Wildcard file path**<br>•wildcardFolderPath<br>•wildcardFileName<br>**List of files**<br>•folderPath•fileListPath |
+|**File path type** |the type of the file path. |•**File path**<br>•**Wildcard file path**<br> •**List of files** |Yes|**File path**<br>•folderPath<br>•fileName<br>**Wildcard file path**<br>•wildcardFolderPath<br>•wildcardFileName<br>**List of files**<br>•folderPath•fileListPath |
 |**Recursively** |Process all files in the input folder and its subfolders recursively or just the ones in the selected folder.| select or unselect |No | recursive:<br>true or false|
 |**File format**|Format of the file.|\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextReadSettings|
 |**Filter by last modified**|Files are filtered based on the last modified dates.|•**Start time**<br>•**End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
 |**Enable partition discovery**|Specify whether to parse the partitions from the file path and add them as additional source columns.| Selected or unselected |No| enablePartitionDiscovery: <br> true or false (default)|
 |**Partition root path**|For files that are partitioned, specify whether to parse the partitions from the file path and add them as additional source columns.| \<your partition root path\> |No| partitionRootPath|
 |**Max concurrent connections**|Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
+
 
 ### Destination information
 

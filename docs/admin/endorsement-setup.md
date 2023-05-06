@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # Set up item certification
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Your organization can certify selected items to identify them an as authoritative sources for critical information. Currently, all Fabric items except Power BI dashboards can be certified.
 
 As a Power BI admin, you're responsible for enabling and setting up the certification process for your organization. This means:
