@@ -222,12 +222,13 @@ Select the **Cancel All** button to cancel the running cells or cells waiting in
 
 ### Notebook reference run
 
-You can use ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. ```%run``` magic command supports nested calls but not support recursive calls. You will receive an exception if the statement depth is larger than **five**.  
+Besides using [mssparkutils reference run API](microsoft-spark-utilities.md)
+You can also use ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. ```%run``` magic command supports nested calls but not support recursive calls. You will receive an exception if the statement depth is larger than **five**.  
 
 Example:
 ``` %run Notebook1 { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true,  "parameterString": "abc" } ```.
 
-Notebook reference works in both interactive mode and Synapse pipeline.
+Notebook reference works in both interactive mode and pipeline.
 
 > [!NOTE]
 > - ```%run``` command currently only supports reference notebooks that in the same workspace with current notebook. 
@@ -473,6 +474,9 @@ Using the following keystroke shortcuts, you can more easily navigate and run co
 | Dedent | Ctrl + [ |
 | Switch to command mode | Esc |
 
+You can easily find all shortcut keys from notebook ribbon *View* -> *Keybindings*.
+
 ## Next steps
 
 - [Notebook visualization](notebook-visualization.md)
+- [Introduction of Fabric MSSparkUtils](microsoft-spark-utilities.md)
