@@ -50,7 +50,11 @@ You can Export your notebook to other standard formats. Synapse notebook suppo
 
 ## Save a notebook
 
-In [!INCLUDE [product-name](../includes/product-name.md)], a notebook will save automatically after you open and edit it; you don't need to worry about losing code changes. You can also use **Save a copy** to clone another copy in the current workspace.
+In [!INCLUDE [product-name](../includes/product-name.md)], a notebook will by default save automatically after you open and edit it; you don't need to worry about losing code changes. You can also use **Save a copy** to clone another copy in the current workspace.
+
+If you prefer to save a notebook manually, you can also switch to "Manual save" mode to have a "local branch" of your notebook artifact, and use **Save** or **CTRL+s** to save your changes. 
+
+:::image type="content" source="media\how-to-use-notebook\manual-save.png" alt-text="Screenshot showing where to witch manual save.":::
 
 ## Connect lakehouses and notebooks
 
@@ -83,15 +87,15 @@ The [!INCLUDE [product-name](../includes/product-name.md)] notebook is a collabo
 
 When you open a notebook, you enter the co-editing mode by default. If your colleagues open the same notebook at the same time, you see their profile, run output, cursor indicator, selection indicator and editing trace. By leveraging the collaborating features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
 
-:::image type="content" source="media\how-to-use-notebook\collaborate-code-cell.png" alt-text="Screenshot showing a code cell with another user editing.":::
+:::image type="content" source="media\how-to-use-notebook\collaboration.png" alt-text="Screenshot showing a code cell with another user editing.":::
 
 ### Comment a code cell
 
 Commenting is another useful feature during collaborative scenarios. Currently, we support adding cell-level comments.
 
-1. Select the **Comments** button on the notebook toolbar to open the **Comments** pane.
+1. Select the **Comments** button on the notebook toolbar or cell comment indicator to open the **Comments** pane.
 
-   :::image type="content" source="media\how-to-use-notebook\comment-code-cell.png" alt-text="Screenshot showing where to select Comment.":::
+   :::image type="content" source="media\how-to-use-notebook\open-comment-pane.png" alt-text="Screenshot showing where to select Comment.":::
 
 1. Select code in the code cell, select **New** in the **Comments** pane, add comments, and then select the post comment button to save.
 
@@ -99,8 +103,17 @@ Commenting is another useful feature during collaborative scenarios. Currently, 
 
 1. You could perform **Edit comment**, **Resolve thread**, or **Delete thread** by selecting the More button besides your comment.
 
-   :::image type="content" source="media\how-to-use-notebook\comment-options.png" alt-text="Screenshot showing the comment options menu.":::
+## Switch Notebook mode
+
+Fabric notebook support two modes for different scenarios, you can easily switch between **Editing** mode and **Viewing** mode.
+
+:::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where switch modes.":::
+
+- Editing mode: You can edit and run the cells and collaborate with others on the notebook.
+- Viewing mode: You can only view the cell content, output, and comments of the notebook, all the operations that can lead to change the notebook will be disabled.
+
+
 
 ## Next steps
 
-- [Author and execute the notebook](author-execute-notebook.md)
+- [Author and execute notebooks](author-execute-notebook.md)
