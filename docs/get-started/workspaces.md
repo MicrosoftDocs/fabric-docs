@@ -29,7 +29,7 @@ Here are some useful tips about working with workspaces.
 This article explains these features in more detail.
 
 ## Workspace settings
-Workspace settings is the portal for workspace admins and allow them to manage and update the workspace settings, including the basic information of the workspace, contact list, Onedrive, license and so on.
+Workspace settings are for workspace admins to allow them for managing and updating the workspace settings. The settings include general settings of the workspace, like the basic information of the workspace, contact list, OneDrive, license, Azure connections, storage, and other experiences' specific settings.
 
 To open the workspace settings, you can select the workspace and open it from the nav pane.
 
@@ -82,17 +82,17 @@ After the connection with Azure Log Analytics (LA), activity log data is sent co
 
 ## System storage
 
-System storage is the place to manage your dataset storage in your individual or workspace account so you can keep publishing reports and datasets. Your own  datasets, Excel reports, and those items that someone has shared with you are included in your system storage.
+System storage is the place to manage your dataset storage in your individual or workspace account so you can keep publishing reports and datasets. Your own datasets, Excel reports, and those items that someone has shared with you, are included in your system storage.
 
 In the system storage, you can view how much storage you  have used and free up the storage by deleting the items in it.
 
-Keep in mind that you or someone else may have reports and dashboards based on a dataset. If you delete the dataset, those reports and dashboards won’t work anymore.
+Keep in mind that you or someone else may have reports and dashboards based on a dataset. If you delete the dataset, those reports and dashboards don't work anymore.
 
 :::image type="content" source="media/workspaces/system-storage.png" alt-text="Manage your storage.":::
 
 ## Remove the workspace
 
-As an admin for a workspace, you can delete it. When you delete the workspace, the associated app and everything contained within it is also deleted for all group members, and the app is removed from AppSource.
+As an admin for a workspace, you can delete it. When you delete the workspace, everything contained within the workspace is deleted for all group members, and the associated app is also removed from AppSource.
 
 In the Workspace settings pane, select Other > Remove this workspace.
 
