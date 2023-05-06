@@ -18,19 +18,28 @@ After you [create a workspace](create-workspaces.md) in [!INCLUDE [product-name]
 
 ## Give access to your workspace
 
-1. Because you have the Admin or Member role in the workspace, on the workspace content list page, you see **Access**.
+1. Because you have the Admin or Member role in the workspace, on the command bar of workspace page, you see **Manage Access**. Sometimes this entry could be in the contextual menu.
 
-    ![Screenshot that shows the Workspaces content list.](media/create-workspaces/power-bi-workspace-access-icon.png)
+    ![Screenshot of entry of manage access in command bar of workspace page.](media/workspace-access/workspace-manage-access-entry.png)
 
-1. Add security groups, distribution lists, Microsoft 365 groups, or individuals to these workspaces as admins, members, contributors, or viewers. Members can only add others to the member, contributor, or viewer roles.
+    ![Screenshot of entry of manage access in contextual menu in workspace page .](media/workspace-access/workspace-manage-access-entry-in-contextual-menu.png)
 
-    ![Screenshot that shows how to add members, admins, contributors to a workspace.](media/create-workspaces/power-bi-workspace-add-members.png)
+2. Select **Add people or groups**
+   
+   ![Screenshot of add button in manage access panel.](media/workspace-access/workspace-manage-access-add-button.png)
 
-1. Select **Add** > **Close**.
+3. Enter name or email, select a [role](roles-workspaces.md), select **Add**. You can add security groups, distribution lists, Microsoft 365 groups, or individuals to these workspaces as admins, members, contributors, or viewers. Members can only add others to the member, contributor, or viewer roles.
+
+   
+   ![Screenshot of add people panel.](media/workspace-access/workspace-manage-access-add-people-panel.png)
+
+
+4. You can view and modify access later if needed. Use search box to search people or groups who already have access of this workspace. To modify access, select drop down and select role.
+   
+   ![Screenshot of modify role of workspace ](media/workspace-access/workspace-manage-access-edit-role.png)
 
 ## Next steps
 
 * Read about [the workspace experience](workspaces.md).
 * [Create workspaces](create-workspaces.md).
-* [Publish an app from a workspace](/power-bi/collaborate-share/service-create-distribute-apps).
-* Questions? [Try asking the community](https://community.powerbi.com/).
+* [Roles in workspaces](roles-workspaces.md)
