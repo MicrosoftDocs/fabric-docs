@@ -95,7 +95,7 @@ Currently supported for Power BI items in supported export paths. Currently no o
 
 [Supported export paths in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview#supported-export-paths)
 
-## Deploying Information protection in your tenant
+## Deploy information protection in your tenant
 
 | Step | Activity | References | 
 |:---|:------|:------------|
