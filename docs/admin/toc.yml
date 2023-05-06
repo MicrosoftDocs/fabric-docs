@@ -35,7 +35,6 @@ items:
   href: information-protection-setup.md
 - name: Set up item certification
   href: endorsement-setup.md
-  href: endorsement-setup.md
 - name: Set up metadata scanning
   href: metadata-scanning-setup.md
 
