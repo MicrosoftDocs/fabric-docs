@@ -17,4 +17,4 @@ Explain how business to business works in [!INCLUDE [product-name](../includes/p
 
 ## Next steps
 
-[Service tags](service-tags.md)
+[Service tags](security-service-tags.md)

@@ -17,4 +17,4 @@ A few examples of using recovery in specific scenarios.
 
 ## Next steps
 
-[Service tags](service-tags.md)
+[Service tags](security-service-tags.md)

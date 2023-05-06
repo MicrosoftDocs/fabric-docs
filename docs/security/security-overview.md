@@ -21,4 +21,4 @@ A few examples of using the Microsoft Fabric security features in specific scena
 
 ## Next steps
 
-[Service tags](service-tags.md)
+[Service tags](security-service-tags.md)
