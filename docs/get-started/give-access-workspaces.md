@@ -1,6 +1,6 @@
 ---
 title: Give users access to workspaces
-description: "Learn how to give others access to workspaces, including collections of dashboards, reports, and paginated reports built to deliver key metrics for your organization."
+description: "Learn how to give others access to workspaces, and how to modify the access"
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: 
