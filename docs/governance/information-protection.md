@@ -47,19 +47,27 @@ The following table summarizes the information protection capabilities in Fabric
 
 ## Manual labeling
 
+[How to apply sensitivity labels](../get-started/apply-sensitivity-labels.md)
+
 ## Default labeling
 
 Creation scenario: When there's a clear substantive create dialog. experienceNot
 
 Update scenario: If an article doesn’t have an artifact, label gets applied.|Limitations: Power BI – change to any other attributes, will get applied. Fabric – only certain attributes. name, description, etc. And through flyout. workload editing: making a change to an item in the workload interface – not supported currently.
 
+[Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy)
+
 ## Mandatory labeling
 
 Currently supported for Power BI items only. Not enforced in Flyout Lakehouse, Pipeline: if mandatory is on, and default is off. And MIP enabled. Data Warehouse – same show label section through dialog.
 
+[Mandatory label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-mandatory-label-policy)
+
 ## Programmatic labeling
 
 Supported for all Fabric items. For more information, see XXX.
+
+[Set or remove sensitivity labels using Power BI REST admin APIs](/power-bi/enterprise/service-security-sensitivity-label-inheritance-set-remove-api)
 
 ## Downstream inheritance
 
@@ -76,17 +84,25 @@ Not supported:
 
 Auto-generated items from Lakehouse or Data Warehouse get their label from the Lakehouse or Data Data Warehouse. They don't inherit the label from items further upstream.
 
+[Sensitivity label downstream inheritance](/power-bi/enterprise/service-security-sensitivity-label-downstream-inheritance)
+
 ## Inheritance upon creation
 
  If you try to create a pipeline or notebook from lakehouse, it will get the sensitivity label of the lakehouse.
+
+[Sensitivity label inheritance upon creation of new content](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-label-inheritance-upon-creation-of-new-content)
 
 ## Inheritance from data sources
 
 Currently supported for PBI datasets only. For more information, see XXX.
 
+[Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources)
+
 ## Export
 
 Currently supported for Power BI items in supported export paths. Currently no other Fabric experience uses an export method that transfers the sensitivity label to the exported output. However, if they do export an item that has a sensitivity label, a warning is issued.
+
+[Supported export paths in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview#supported-export-paths)
 
 ## Next steps
 
