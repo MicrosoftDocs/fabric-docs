@@ -17,6 +17,12 @@ items:
     href: microsoft-purview-fabric.md
   - name: Microsoft Purview Hub
     href: use-microsoft-purview-hub.md
+- name: Information protection
+  href: information-protection.md
+- name: Endorsement
+  href: endorsement.md
+- name: Lineage
+  href: lineage.md
 - name: Domains
   href: domains.md
 - name: Metadata scanning
