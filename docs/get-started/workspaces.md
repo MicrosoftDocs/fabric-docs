@@ -3,7 +3,7 @@ title: Workspaces
 description: Learn about workspaces, which are collections of artifacts such as lakehouses, warehouses, and reports built to deliver key metrics for your organization.
 author: maggiesMSFT
 ms.author: maggies
-ms.reviewer: yicw, mesrivas
+ms.reviewer: yicw, mesrivas,liud
 ms.topic: conceptual
 ms.date: 05/23/2023
 ---
@@ -21,11 +21,23 @@ Ready to get started? Read [Create a workspace](create-workspaces.md).
 Here are some useful tips about working with workspaces.
 
 - **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer.  Read more about [workspace roles](#roles-and-licenses) in this article.
+- **Workspace settings** : As workspace admin, you can update and manage your workspace configurations in workspace settings.
 - **Contact list**: Specify who receives notification about workspace activity. Read more about [workspace contact lists](#workspace-contact-list) in this article.
 - **Create template apps**: You can create *template apps* in workspaces. Template apps are apps that you can distribute to customers outside of your organization. Those customers can then connect to their own data with your template app. Read the article about [template apps](/power-bi/connect-data/service-template-apps-overview).
 - **Share datasets**: You can share datasets between workspaces. Read more about [shared datasets](/power-bi/connect-data/service-datasets-across-workspaces).
 
 This article explains these features in more detail.
+
+## Workspace settings
+Workspace settings is the portal for workspace admins and allow them to manage and update the workspace settings, including the basic information of the workspace, contact list, Onedrive, license and so on.
+
+To open the workspace settings, you can select the workspace and open it from the nav pane.
+
+:::image type="content" source="media/workspaces/open-workspace-settings.png" alt-text="Open workspace settings in nav pane.":::
+
+You can also open it from the workspace page.
+
+:::image type="content" source="media/workspaces/open-in-workspace.png" alt-text="Open workspace settings in workspace.":::
 
 ## Workspace contact list
 
@@ -57,6 +69,34 @@ Roles let you manage who can do what in workspaces, so team members can collabor
 - **Assign user groups to workspace roles**: You can add Active Directory security groups, distribution lists, or Microsoft 365 groups to these roles, for easier user management.
 
 See the article [Roles in workspaces](roles-workspaces.md) for more details about the different roles.
+
+## Azure connections configuration
+
+Workspace admin can configure dataflow storage to use Azure Data Lake Gen 2 storage and Azure Log Analytics (LA) connection to collect usage and performance logs for the workspace in workspace settings.
+
+:::image type="content" source="media/workspaces/azure-connection.png" alt-text="Azure resource configuration.":::
+
+With the integration of Azure Data Lake Gen 2 storage, you can bring your own storage to dataflows, and establish a connection at the workspace level. Read more about [Configure dataflow storage to use Azure Data Lake Gen 2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration) for more detail.  
+
+After the connection with Azure Log Analytics (LA), activity log data is sent continuously and is available in Log Analytics approximately 5 minutes. Read more about [Using Azure Log Analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for more detail.
+
+## System storage
+
+System storage is the place to manage your dataset storage in your individual or workspace account so you can keep publishing reports and datasets. Your own  datasets, Excel reports, and those items that someone has shared with you are included in your system storage.
+
+In the system storage, you can view how much storage you  have used and free up the storage by deleting the items in it.
+
+Keep in mind that you or someone else may have reports and dashboards based on a dataset. If you delete the dataset, those reports and dashboards won’t work anymore.
+
+:::image type="content" source="media/workspaces/system-storage.png" alt-text="Manage your storage.":::
+
+## Remove the workspace
+
+As an admin for a workspace, you can delete it. When you delete the workspace, the associated app and everything contained within it is also deleted for all group members, and the app is removed from AppSource.
+
+In the Workspace settings pane, select Other > Remove this workspace.
+
+:::image type="content" source="media/workspaces/remove-workspace.png" alt-text="Delete workspace.":::
 
 ## Administering and auditing workspaces
 
