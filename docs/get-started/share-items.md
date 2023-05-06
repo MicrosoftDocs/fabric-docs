@@ -19,18 +19,18 @@ Workspaces are the central places where you collaborate with your colleagues. Be
 This document describes how to share an item and manage the permissions. 
 
 > [!NOTE] 
-> Currently, you can share Kusto databases and KQL querysets. Sharing other items will be available soon. 
+> Currently, you can share Kusto databases and KQL querysets.
 
 ## Share an item via link
 
-1. In the list of items, or in an open item, select the **Share** button ![Screenshot of share button.](media/item-sharing/share-button.png).
+1. In the list of items, or in an open item, select the **Share** button ![Screenshot of share button.](media/share-items/share-button.png).
 1. In the **Create and send link** dialog, first configure which scope this link works in and which permission you want to grant. Select **People in your organization can view** to open the **Select permissions** dialog.
 
-    ![Screenshot of create and send link.](media/item-sharing/create-send-link.png)
+    ![Screenshot of create and send link.](media/share-items/create-send-link.png)
 
 1. Select the scope where the link works.
 
-    ![Screenshot of select permission.](media/item-sharing/select-permission.png)
+    ![Screenshot of select permission.](media/share-items/select-permission.png)
 
     **People in your organization** This type of link allows people in your organization to access this item. This link doesn't work for external users nor guest users. Use this link type when:
 
@@ -49,7 +49,7 @@ This document describes how to share an item and manage the permissions.
     > [!NOTE] 
     > The **Additional permissions** settings vary for different items. Learn more about the [item permission model](#item-permission-model).
 
-    ![Screenshot of additional permissions.](media/item-sharing/additional-permissions.png)
+    ![Screenshot of additional permissions.](media/share-items/additional-permissions.png)
 
     > [!TIP] 
     > Links for **People with existing access** don't have additional permission settings because these links don't give access to the item.
@@ -58,7 +58,7 @@ This document describes how to share an item and manage the permissions.
 
     **Copy link**: This option automatically generates a shareable link. Select **Copy** to copy the link to your clipboard.
 
-    ![Screenshot of copy link.](media/item-sharing/copy-link.png)
+    ![Screenshot of copy link.](media/share-items/copy-link.png)
 
     **By email**: This option opens your default email client app on your computer and creates an email draft with the link in it.
 
@@ -66,11 +66,11 @@ This document describes how to share an item and manage the permissions.
 
 1. You can also choose to send the link directly to **Specific people** or groups (distribution groups or security groups). Enter their name or email address, optionally type a message, and select **Send**. An email with this link is sent to your recipients.
 
-    ![Screenshot of directly send link.](media/item-sharing/directly-send-link.png)
+    ![Screenshot of directly send link.](media/share-items/directly-send-link.png)
 
 1. Select **Send**.
 
-    ![Screenshot of send link by email.](media/item-sharing/send-link-by-email.png)
+    ![Screenshot of send link by email.](media/share-items/send-link-by-email.png)
 
 1. When your recipients receive the email, they can select **Open** and automatically access the report through the shareable link.
 
@@ -78,16 +78,16 @@ This document describes how to share an item and manage the permissions.
 
 1. To manage links that give access to the item, in the upper right of the sharing dialog, select **Manage permissions** button:
 
-    ![Screenshot of entry of manage permission pane.](media/item-sharing/manage-permission-entry-1.png)
+    ![Screenshot of entry of manage permission pane.](media/share-items/manage-permission-entry-1.png)
 
 1. The **Manage permissions** pane opens, where you can copy or modify existing links or grant users direct access. To modify a given link, select **Edit**.
 
-    ![Screenshot of manage permission pane](media/item-sharing/manage-permission-pane.png)
+    ![Screenshot of manage permission pane](media/share-items/manage-permission-pane.png)
 
 1. In **Edit link** pane, you can modify the permission included in the link, people who can use this link, or delete the link. Select **Apply** after your modification.
 
-    ![Screenshot of edit org link](media/item-sharing/edit-link-1.png)
-    ![Screenshot of edit specific link](media/item-sharing/edit-link-2.png)
+    ![Screenshot of edit org link](media/share-items/edit-link-1.png)
+    ![Screenshot of edit specific link](media/share-items/edit-link-2.png)
 
 1. For more access management capabilities, select the **Advanced** option in the footer of the Manage permissions pane. On the management page that opens, you can:
 
@@ -95,7 +95,7 @@ This document describes how to share an item and manage the permissions.
     - View and manage who has direct access and grant people direct access.
     - Apply filters or search for specific links or people.
 
-    [ ![Screenshot of permission management page.](media/item-sharing/permission-management-page-1.png) ](media/item-sharing/permission-management-page-1.png#lightbox)
+    [ ![Screenshot of permission management page.](media/share-items/permission-management-page-1.png) ](media/share-items/permission-management-page-1.png#lightbox)
 
 ## Grant and manage access directly
 
@@ -103,25 +103,25 @@ In some cases, you need to grant permission directly instead of sharing link, su
 
 1. Select **Manage permission** from the context menu.
 
-    ![Screenshot of permission management entry.](media/item-sharing/permission-management-entry.png)
+    ![Screenshot of permission management entry.](media/share-items/permission-management-entry.png)
 
 1. Select **Direct access**.
 
-    [ ![Screenshot of selecting direct access tab.](media/item-sharing/select-direct-access-tab.png) ](media/item-sharing/select-direct-access-tab.png#lightbox)
+    [ ![Screenshot of selecting direct access tab.](media/share-items/select-direct-access-tab.png) ](media/share-items/select-direct-access-tab.png#lightbox)
 
 1. Select **Add user**.
 
-    [ ![Screenshot of add user.](media/item-sharing/add-user.png) ](media/item-sharing/add-user.png#lightbox)
+    [ ![Screenshot of add user.](media/share-items/add-user.png) ](media/share-items/add-user.png#lightbox)
 
 1. Enter the names of people or accounts that you need to grant access to directly. Select the permissions that you want to grant. You can also optionally notify recipients by email. 
 
 1. Select **Grant**.
    
-    ![Screenshot of direct share dialog.](media/item-sharing/direct-share-dialog.png)
+    ![Screenshot of direct share dialog.](media/share-items/direct-share-dialog.png)
 
 1. You can see all the people, groups, and accounts with access in the list on the permission management page. You can also see their workspace roles, permissions, and so on. By selecting the context menu, you can modify or remove the permissions.
 
-    [ ![Screenshot of modify access.](media/item-sharing/modify-access.png) ](media/item-sharing/modify-access.png#lightbox)
+    [ ![Screenshot of modify access.](media/share-items/modify-access.png) ](media/share-items/modify-access.png#lightbox)
 
     > [!NOTE] 
     > You can't modify or remove permissions that are inherited from a workspace role, here in the permission management page. Learn more about [workspace roles](./roles-workspaces.md) and the [item permission model](#item-permission-model).
@@ -141,6 +141,6 @@ Depending on the item being shared, you may find a different set of permissions 
 |Execute|Execute or cancel execution of the item.|
 
 
-## See also
+## Next steps
 
 [Workspace roles](./roles-workspaces.md)
