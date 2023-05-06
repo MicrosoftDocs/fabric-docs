@@ -16,7 +16,7 @@ Microsoft Fabric information protection provides capabilities that enable you to
 
 Information protection in Microsoft Fabric leverages sensitivity labels to from Microsoft Purview Information Protection. Once your sensitive data is labeled, you can monitor and analyze it, either in Fabric's Microsoft Purview hub, or in the Purview portal itself. Purview’s powerful analytic capabilities enable you to get a detailed, comprehensive picture of the state of your organization’s sensitive data, and to drill down into details to obtain actionable insights.
 
-This article describes Fabric's information protection capabilities, outlines the steps you need to take to implement information protection in your organization, and provides links to relevant documentation.
+This article describes Fabric's information protection [capabilities](#capabilities), outlines the [steps](#deploying-information-protection-in-your-tenant) you need to take to implement information protection in your organization, and provides links to relevant documentation.
 
 >[!NOTE]
 > Information protection in Fabric is based on information protection in Power BI. Currently, information protection in Fabric is more fully supported for Power BI items than other Fabric items. Information protection in Power BI has additional capabilities, many of which will be coming to Fabric in the months ahead.
@@ -36,20 +36,11 @@ The following table summarizes the information protection capabilities in Fabric
 |[Inheritance from data sources](#inheritance-from-data-sources)| When a Fabric item ingests data from a data source that has a sensitivity label, that label is applied to the Fabric item. The label then filters down to the child items of that Fabric item via downstream inheritance.| Currently supported for Power BI datasets only.|
 |[Export](#export)| When a user exports data from an item that has a sensitivity label, the sensitivity label moves with it to the exported format. |Currently supported for Power BI items in supported export paths. |
 
-## Deploying Information protection in your tenant
-
-| Step | Activity | References | 
-|:---|:------|:------------|
-|1| Define your sensitivity labels and policies that will protect your organization's data. | [Learn about sensitivity labels](/microsoft-365/compliance/sensitivity-labels)<br>[Get started with sensitivity labels](/microsoft-365/compliance/sensitivity-labels)<br>[Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels)
-|2| Enable sensitivity labels in Fabric| [Set up information protection in your tenant](../admin/information-protection-setup.md)|
-|3| Apply labeling to your organization's sensitive data | Apply labeling to your organization’s sensitive data |
-|4| Monitor your sensitive data and get insights | [Microsoft Purview hub](./use-microsoft-purview-hub.md) |
-
-## Manual labeling
+### Manual labeling
 
 [How to apply sensitivity labels](../get-started/apply-sensitivity-labels.md)
 
-## Default labeling
+### Default labeling
 
 Creation scenario: When there's a clear substantive create dialog. experienceNot
 
@@ -57,19 +48,19 @@ Update scenario: If an article doesn’t have an artifact, label gets applied.|L
 
 [Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy)
 
-## Mandatory labeling
+### Mandatory labeling
 
 Currently supported for Power BI items only. Not enforced in Flyout Lakehouse, Pipeline: if mandatory is on, and default is off. And MIP enabled. Data Warehouse – same show label section through dialog.
 
 [Mandatory label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-mandatory-label-policy)
 
-## Programmatic labeling
+### Programmatic labeling
 
 Supported for all Fabric items. For more information, see XXX.
 
 [Set or remove sensitivity labels using Power BI REST admin APIs](/power-bi/enterprise/service-security-sensitivity-label-inheritance-set-remove-api)
 
-## Downstream inheritance
+### Downstream inheritance
 
 Limitation: a label set on a dataset won't propagate downstream to non-Power BI Fabric items.
 
@@ -86,23 +77,40 @@ Auto-generated items from Lakehouse or Data Warehouse get their label from the L
 
 [Sensitivity label downstream inheritance](/power-bi/enterprise/service-security-sensitivity-label-downstream-inheritance)
 
-## Inheritance upon creation
+### Inheritance upon creation
 
  If you try to create a pipeline or notebook from lakehouse, it will get the sensitivity label of the lakehouse.
 
 [Sensitivity label inheritance upon creation of new content](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-label-inheritance-upon-creation-of-new-content)
 
-## Inheritance from data sources
+### Inheritance from data sources
 
 Currently supported for PBI datasets only. For more information, see XXX.
 
 [Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources)
 
-## Export
+### Export
 
 Currently supported for Power BI items in supported export paths. Currently no other Fabric experience uses an export method that transfers the sensitivity label to the exported output. However, if they do export an item that has a sensitivity label, a warning is issued.
 
 [Supported export paths in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview#supported-export-paths)
+
+## Deploying Information protection in your tenant
+
+| Step | Activity | References | 
+|:---|:------|:------------|
+|1| Define your sensitivity labels and policies that will protect your organization's data. | [Learn about sensitivity labels](/microsoft-365/compliance/sensitivity-labels)<br>[Get started with sensitivity labels](/microsoft-365/compliance/sensitivity-labels)<br>[Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels)
+|2| Enable sensitivity labels in Fabric. | [Set up information protection in your tenant](../admin/information-protection-setup.md)|
+|3| Apply labeling to your organization's sensitive data. | [Apply labeling to your organization’s sensitive data](../admin/information-protection-setup.md) |
+|4| Monitor your sensitive data and get insights. | [Microsoft Purview hub](./use-microsoft-purview-hub.md) |
+
+### Define your sensitivity labels and policies
+
+### Set up information protection
+
+### Apply labeling
+
+### Monitor your sensitive data
 
 ## Next steps
 
