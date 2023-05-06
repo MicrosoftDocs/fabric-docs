@@ -140,8 +140,8 @@ To learn more information about copy activity in Data Warehouse, see the followi
 |**Data Warehouse** |Select an existing **Data Warehouse** from the workspace.|\<your data warehouse>|Yes|endpoint<br>artifactId|
 |**Use query** |Select **Tables**, **Query** or **Stored procedure**. |**Tables**<br>**Query**<br>**Stored procedure**|No|typeProperties:<br> schema  table<br>sqlReaderQuery<br>sqlReaderStoredProcedureName|
 |**Query timeout (minutes)**|Set the timeout for query command execution.|timespan |No |queryTimeout|
-|**Isolation level** |Specify the transaction locking behavior for source. |•None<br>•Snapshot|No |isolationLevel|
-|**Partition option**|Specify the data partitioning options used to load data from Data Warehouse.|•None<br>•Dynamic range|No|partitionOption|
+|**Isolation level** |The transaction locking behavior for source. |•None<br>•Snapshot|No |isolationLevel|
+|**Partition option**|The data partitioning options used to load data from Data Warehouse.|•None<br>•Dynamic range|No|partitionOption|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.| •Name<br>•Value|No |additionalColumns:<br>- name<br>- value|
 
 ### Destination information
@@ -152,10 +152,10 @@ To learn more information about copy activity in Data Warehouse, see the followi
 |**Workspace data store type**|Select **Data Warehouse** from the data store type list.|\<your workspace data store type> |Yes|type|
 |**Data Warehouse** |Select an existing **Data Warehouse** from the workspace.|\<your data warehouse>|Yes|endpoint<br>artifactId|
 |**Table** |Choose an existing table from the table list or specify a table name as destination.|\<name of your destination table>|Yes|schema <br> table|
-|**Copy command settings**|Specify the copy command properties.|\<default values> |No |copyCommandSettings:<br>defaultValues:<br>columnName<br>defaultValue|
-|**Table option**|Specify whether to automatically create the destination table if not exists based on the source schema.|•None<br>•Auto create table|No|tableOption|
+|**Copy command settings**|A group of properties that can be specified|\<default values> |No |copyCommandSettings:<br>defaultValues:<br>columnName<br>defaultValue|
+|**Table option**|Whether to automatically create the destination table if not exists based on the source schema.|•None<br>•Auto create table|No|tableOption|
 |**Pre-copy script** |You can use this property to clean up the preloaded data.|\<pre-copy script>|No|preCopyScript|
-|**Write batch timeout** |Specify the wait time for the batch insert operation to finish before it times out. | timespan |No |writeBatchTimeout|
+|**Write batch timeout** |Wait time for the batch insert operation to finish before it times out.| timespan |No |writeBatchTimeout|
 |**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br> true or false|
 
 ## Next Steps
