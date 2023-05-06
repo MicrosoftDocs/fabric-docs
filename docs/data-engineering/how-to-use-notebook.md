@@ -77,9 +77,13 @@ Select **Add lakehouse** to add more lakehouses to the notebook, either by addin
 
 The subfolder and files under the **Tables** and **Files** section of the **Lake** view appear in a content area between the lakehouse list and the notebook content. Select different folders in the **Tables** and **Files** section to refresh the content area.
 
-## Generate a code cell via the context menu
+### Folder and File operations
 
-If you select a file(.csv, .parquet) with a right mouse click, both Spark and Pandas API are supported to load the data. A new code cell is generated and inserted into the end of the notebook.
+If you select a file(.csv, .parquet, .txt, .jpg, .png, etc) with a right mouse click, both Spark and Pandas API are supported to load the data. A new code cell is generated and inserted to below of the focus cell.
+
+You can easily copy path with different format of the select file or folder and use the corresponding path in your code.
+
+:::image type="content" source="media\how-to-use-notebook\lakehouse-file-operation.png" alt-text="Screenshot showing context menu of files in lakehouse.":::
 
 ## Collaborate in a notebook
 
@@ -109,8 +113,8 @@ Fabric notebook support two modes for different scenarios, you can easily switch
 
 :::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where switch modes.":::
 
-- Editing mode: You can edit and run the cells and collaborate with others on the notebook.
-- Viewing mode: You can only view the cell content, output, and comments of the notebook, all the operations that can lead to change the notebook will be disabled.
+- **Editing mode**: You can edit and run the cells and collaborate with others on the notebook.
+- **Viewing mode**: You can only view the cell content, output, and comments of the notebook, all the operations that can lead to change the notebook will be disabled.
 
 
 
