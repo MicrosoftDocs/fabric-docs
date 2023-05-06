@@ -217,6 +217,7 @@ Select the **Cancel All** button to cancel the running cells or cells waiting in
 ### Stop session
 
 **Stop session** will cancel the running and waiting cells and stop the current session, you will restart a brand new session if you click run button again.
+
 :::image type="content" source="media\author-execute-notebook\cancel-all-stop-session.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\cancel-all-stop-session.png":::
 
 ### Notebook reference run
@@ -278,7 +279,7 @@ You can use familiar Ipython magic commands in Fabric notebooks. Review the foll
 >
 
 Available line magics:
-[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#notebook-reference), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), 
+[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#notebook-reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), 
 %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2,  
 %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode. 
 
@@ -301,7 +302,7 @@ You can also build out more custom magic commands to meet your specific needs as
 
 2. In another notebook referrence the *"MyLakehouseModule"* and its magic commands, by this way you can orgnize your project with notebooks that using different languages conveniently.
 
-:::image type="content" source="media\author-execute-notebook\consume-custom-magic.png" alt-text="Screenshot of define a custom magic." lightbox="media\author-execute-notebook\consume-custom-magic.png":::
+:::image type="content" source="media\author-execute-notebook\consume-custom-magic.png" alt-text="Screenshot of use custom magic." lightbox="media\author-execute-notebook\consume-custom-magic.png":::
 
 ## IPython Widgets
 
