@@ -22,7 +22,7 @@ To create a OneLake shortcut:
 
 1. Open a lakehouse.
 
-1. Right click on a directory within the **Lake view** of the lakehouse. 
+1. Right click on a directory within the **Lake view** of the lakehouse.
 
 1. Select **New shortcut**.
 
@@ -32,13 +32,17 @@ To create a OneLake shortcut:
 
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-tile-options-v2.png" alt-text="Screenshot of the tile options in the New shortcut screen." lightbox="media\create-onelake-shortcut\new-shortcut-tile-options.png":::
 
-1. Choose a lakehouse for the shortcut to point to and then select **Next**.
+1. Choose a Fabric item for the shortcut to point to.  This can be a Lakehouse, Data Warehouse or KQL Database. Then select **Next**.
 
    :::image type="content" source="media\create-onelake-shortcut\select-data-source.png" alt-text="Screenshot of the Select a data source type screen." lightbox="media\create-onelake-shortcut\select-data-source.png":::
 
 1. Select a folder, then select **Create**.
 
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-create-button.png" alt-text="Screenshot showing where to select the Create button in the New shortcut screen." lightbox="media\create-onelake-shortcut\new-shortcut-create-button.png":::
+
+1. See the folder icon with shortcut symbol in the explorer.
+
+   :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol." lightbox="media\create-onelake-shortcut\folder-shortcut-symbol.png":::
 
 ## Next steps
 

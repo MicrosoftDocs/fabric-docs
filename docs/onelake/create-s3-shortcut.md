@@ -15,6 +15,7 @@ ms.date: 03/24/2023
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
 ## Prerequisite
+
 Create a lakehouse by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
 
 ## Create an S3 Shortcut
@@ -62,7 +63,7 @@ To create and Amazon S3 Shortcut:
 
 1. Select **Create**.
 
-1. See the folder icon with shortcut symbol in the **Lake view** of the explorer.
+1. See the folder icon with shortcut symbol in the explorer.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol." lightbox="media\create-onelake-shortcut\folder-shortcut-symbol.png":::
 

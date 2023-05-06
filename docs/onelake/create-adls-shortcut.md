@@ -66,10 +66,9 @@ To create an Azure Data Lake Storage (ADLS) shortcut:
 
 1. Select **Create**.
 
-1. See the folder icon with shortcut symbol in the **Lake view** of the explorer.
+1. See the folder icon with shortcut symbol in the explorer.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol." lightbox="media\create-onelake-shortcut\folder-shortcut-symbol.png":::
-
 
 ## Next steps
 
