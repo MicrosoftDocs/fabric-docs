@@ -31,7 +31,7 @@ The following table summarizes the information protection capabilities in Fabric
 |[Default labeling](#default-labeling)| When a item is created or edited, it gets a default sensitivity label unless a label is applied through other means.|Supported for all Fabric items, with limitations. |
 |[Mandatory labeling](#mandatory-labeling)| Users can't save items unless a sensitivity label is applied to the item. This means they can't remove a label either.| Currently fully supported for Power BI items only. Supported for some non-Power BI Fabric items, with limitations. |
 |[Programmatic labeling](#programmatic-labeling)| Sensitivity labels can be added, changed, or deleted programmatically via Power BI admin REST APIs.|Supported for all Fabric items.|
-|[Downstream inheritance](#downstream-inheritance)| When a sensitivity label is applied to an item, the label is propagated down to all dependent items. |Supported for all Fabric items, with limitations. |
+|[Downstream inheritance](#downstream-inheritance)| When a sensitivity label is applied to an item, the label filters down to all dependent items. |Supported for all Fabric items, with limitations. |
 |[Inheritance upon creation](#inheritance-upon-creation)| When you create new item by copying an existing one, the new item takes the label of the existing item.| Supported for all Fabric items, with limitations.|
 |[Inheritance from data sources](#inheritance-from-data-sources)| When a Fabric item ingests data from a data source that has a sensitivity label, that label is applied to the Fabric item. The label then filters down to the child items of that Fabric item via downstream inheritance.| Currently supported for Power BI datasets only.|
 |[Export](#export)| When a user exports data from an item that has a sensitivity label, the sensitivity label moves with it to the exported format. |Currently supported for Power BI items in supported export paths. |
@@ -41,6 +41,8 @@ The following table summarizes the information protection capabilities in Fabric
 [How to apply sensitivity labels](../get-started/apply-sensitivity-labels.md)
 
 ### Default labeling
+
+When a item is created or edited, it gets a default sensitivity label unless a label is applied through other means. Default labeling is described in 
 
 Creation scenario: When there's a clear substantive create dialog. experienceNot
 
@@ -85,9 +87,7 @@ Auto-generated items from Lakehouse or Data Warehouse get their label from the L
 
 ### Inheritance from data sources
 
-Currently supported for PBI datasets only. For more information, see XXX.
-
-[Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources)
+Currently supported for PBI datasets only. For more information, see [Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources).
 
 ### Export
 
