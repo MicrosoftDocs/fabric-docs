@@ -59,7 +59,7 @@ The following properties are **required**:
         - Under **Advanced**, you can specify the following fields:
             - **Timestamp**: Specify to query an older snapshot by timestamp.
             - **Version**: Specify to query an older snapshot by version.
-            - **Additional columns**: Add additional data columns to store source files relative path or static value. Expression is supported for the latter.
+            - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
     - If select **Files**:
         - **File path type**: You can choose **File path**, **Wildcard file path** or **List of files** as your file path type. See the configuration of each setting below：
 
@@ -110,7 +110,7 @@ The following properties are **required**:
         - **Table actions**: Specify the operation against the selected table.
             - **Append**: Append new values to existing table.
             - **Overwrite**: Overwrite the existing data and schema in the table using the new values. if this is selected, you can enable partition on your target table:
-                - **Enable Partition**: This allows you to create partitions in folder structure based on one or multiple columns. Each distinct column value (pair) will be a new partition (e.g. year=2000/month=01/file). It supports insert-only mode and requires an empty directory in destination.
+                - **Enable Partition**: This allows you to create partitions in folder structure based on one or multiple columns. Each distinct column value (pair) will be a new partition. For example, "year=2000/month=01/file". It supports insert-only mode and requires an empty directory in destination.
                     - **Partition column name**: Select from destination columns in schemas mapping. Supported data types are string, integer, boolean and datetime. Format respects type conversion settings under "Mapping" tab.
         - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
@@ -119,7 +119,7 @@ The following properties are **required**:
 
             :::image type="content" source="./media/connector-lakehouse/files-path.png" alt-text="Screenshot showing files path in destination.":::
 
-        - **File format**: Select your file format from the drop-down list. Select **Settings** button to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
+        - **File format**: Select your file format from the drop-down list. Click **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
         - Under **Advanced**, you can specify the following fields:
             - **Copy behavior**: Defines the copy behavior when the source is files from a file-based data store. You can choose **Add Dynamic content**, **None**, **Flatten hierarchy** or **Preserve hierarchy** as your copy behavior. See the configuration of each setting below：
                 - **Add dynamic content**: To specify an expression for a property value, select **Add dynamic content**. This opens the expression builder where you can build expressions from supported system variables, activity output, functions, and user-specified variables or parameters. For more information about the expression language, go to [Expressions and functions](/azure/data-factory/control-flow-expression-language-functions).
@@ -130,6 +130,7 @@ The following properties are **required**:
                     :::image type="content" source="./media/connector-lakehouse/copy-behavior.png" alt-text="Screenshot showing copy behavior.":::
 
             - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
+            - **Block size (MB)**: Specify the block size in MB when writing data to Lakehouse. Allowed value is between 4 and 100 MB.
             - **Metadata**: Set custom metadata when copy to destination data store. Each object under the `metadata` array represents an extra column. The `name` defines the metadata key name, and the `value` indicates the data value of that key. If [preserve attributes feature](/azure/data-factory/copy-activity-preserve-metadata#preserve-metadata) is used, the specified metadata will union/overwrite with the source file metadata. The allowed data values are:
                 - `$$LASTMODIFIED`: a reserved variable indicates to store the source files' last modified time. Apply to file-based source with binary format only.
                 - Expression
@@ -156,18 +157,18 @@ To learn more information about copy activity in Lakehouse, see the following ta
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type** |Select **Lakehouse** from the data store type list.|**Lakehouse**|Yes|type|
 |**Lakehouse** | Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.|\<your Lakehouse>|Yes |workspaceId<br>artifactId|
-|**Root folder** |Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](/trident-docs-private-preview/synapse-data-engineering/concepts-lakehouse?branch=main).|•**Tables**<br>•**Files** |No|rootFolder|
+|**Root folder** |The type of the root folder.|•**Tables**<br>•**Files** |No|rootFolder|
 |**Table name** |Choose an existing table from the table list or specify table name as source. |\<table name> |Yes when you select **Tables** in **Root folder** | table|
-|**Timestamp** |Specify to query an older snapshot by timestamp.| \<timestamp>|No |timestampAsOf |
-|**Version** |Specify to query an older snapshot by version.| \<version>|No |versionAsOf|
-|**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.| •Name<br>•Value|No |additionalColumns:<br>- name<br>- value |
+|**Timestamp** |Query an older snapshot by timestamp.| \<timestamp>|No |timestampAsOf |
+|**Version** |Query an older snapshot by version.| \<version>|No |versionAsOf|
+|**Additional columns** |Add additional data columns to store source files' relative path or static value.| •Name<br>•Value|No |additionalColumns:<br>- name<br>- value |
 |**File path type** |You can choose **File path**, **Wildcard file path** or **List of files** as your file path type. |•**File path**<br>•**Wildcard file path**<br> •**List of files** |Yes|**File path**<br>•folderPath<br>•fileName<br>**Wildcard file path**<br>•wildcardFolderPath<br>•wildcardFileName<br>**List of files**<br>•folderPath•fileListPath |
-|**Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. If enabled, all files in the input folder and its subfolders will be processed recursively.| select or unselect |No | recursive:<br>true or false|
-|**File format**|Select your file format from the drop-down list. Select Settings button to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.|\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextReadSettings|
-|**Filter by last modified**|Files are filtered based on the last modified dates. This property doesn’t apply when you configure your file path type as **List of files**.|•**Start time**<br>•**End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
+|**Recursively** |Process all files in the input folder and its subfolders recursively or just the ones in the selected folder.| select or unselect |No | recursive:<br>true or false|
+|**File format**|Format of the file.|\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextReadSettings|
+|**Filter by last modified**|Files are filtered based on the last modified dates.|•**Start time**<br>•**End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
 |**Enable partition discovery**|Specify whether to parse the partitions from the file path and add them as additional source columns.| Selected or unselected |No| enablePartitionDiscovery: <br> true or false (default)|
 |**Partition root path**|For files that are partitioned, specify whether to parse the partitions from the file path and add them as additional source columns.| \<your partition root path\> |No| partitionRootPath|
-|**Max concurrent connections**|Indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
+|**Max concurrent connections**|Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
 
 ### Destination information
 
@@ -176,15 +177,16 @@ To learn more information about copy activity in Lakehouse, see the following ta
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type** |Select **Lakehouse** from the data store type list.|**Lakehouse**|Yes|type|
 |**Lakehouse** | Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.|\<your Lakehouse>|Yes |workspaceId<br>artifactId|
-|**Root folder** |Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](/trident-docs-private-preview/synapse-data-engineering/concepts-lakehouse?branch=main).|•**Tables**<br>•**Files** |Yes | rootFolder|
+|**Root folder** |The type of the root folder.|•**Tables**<br>•**Files** |Yes | rootFolder|
 |**Table name** |Specify your table name.|\<your table name> |Yes when you select **Tables** in **Root folder** | table|
 |**Max rows per file** |When writing data into a folder, you can choose to write to multiple files and specify the max rows per file.|\<max rows per flie> |No |maxRowsPerFile|
-|**Table action**|Specify the operation against the selected table.|•**Append**<br>•**Overwrite**|No|tableActionOption|
-|**Max concurrent connections**|Indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
-|**File path**|Select **Browse** to choose the file that you want to copy or fill in the path manually.|\<file path>|No|•folderPath<br>•fileName|
-|**File format**|Select your file format from the drop-down list. Select Settings button to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.|\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextWriteSettings|
-|**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store. You can choose Add Dynamic content, none, Flatten hierarchy or Preserve hierarchy as your copy behavior.|•**Add dynamic content**<br>•**None**<br>•**Flatten hierarchy**<br>•**Preserve hierarchy**|No |copyBehavior:<br><br><br>FlattenHierarchy<br>PreserveHierarchy|
-|**Metadata** |Set custom metadata when copy to sink.|•`$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
+|**Table action**|Append new values to existing table or overwrite the existing data and schema in the table using the new values|•**Append**<br>•**Overwrite**|No|tableActionOption|
+|**Max concurrent connections**|Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
+|**File path**|Copy from the given file path specified|\<file path>|No|•folderPath<br>•fileName|
+|**File format**|Format of the file.|\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextWriteSettings|
+|**Copy behavior** |Defines behaviour when copying files from one file system like storage to the other.|•**Add dynamic content**<br>•**None**<br>•**Flatten hierarchy**<br>•**Preserve hierarchy**|No |copyBehavior:<br><br><br>FlattenHierarchy<br>PreserveHierarchy|
+|**Block size (MB)** |Specify the block size in MB when writing data to Lakehouse.|\<block size\>|No|blockSizeInMB|
+|**Metadata** |Set custom metadata when copy to destination.|•`$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
 ## Next steps
 
