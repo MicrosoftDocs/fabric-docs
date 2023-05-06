@@ -1,6 +1,6 @@
 ---
 title: Endorsement
-description: Learn how to make quality content easier to find through promotion or certification.
+description: Learn about data endorsement in Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: concept
@@ -13,5 +13,5 @@ Placeholder for endorsement content that is going to be moved here.
 
 ## Next steps
 
-* [Promote or certify Fabric content](../getting-started/endorsement-promote-certify.md)
+* [Promote or certify Fabric content](../get-started/endorsement-promote-certify.md)
 * [Enable certification for your organization](../admin/endorsement-setup.md) (Power BI admins)
