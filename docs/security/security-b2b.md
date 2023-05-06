@@ -17,5 +17,4 @@ Explain how business to business works in [!INCLUDE [product-name](../includes/p
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Private endpoints](security-private-links.md)
+[Service tags](service-tags.md)

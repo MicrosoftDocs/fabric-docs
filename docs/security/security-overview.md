@@ -21,5 +21,4 @@ A few examples of using the Microsoft Fabric security features in specific scena
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Private endpoints](security-private-links.md)
+[Service tags](service-tags.md)
