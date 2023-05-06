@@ -1,6 +1,6 @@
 ---
 title: Develop, execute, and manage notebooks
-description: Learn how to use notebooks, including how to add, move and delete a cell. Also learn how to work with languages, code snippets, and images in your notebook.
+description: Learn how to author and develop notebook jobs with rich built-in features.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
@@ -112,6 +112,7 @@ You can use drag and drop to read data from Lakehouse explorer conveniently. Mul
 
 You can use drag and drop to insert images from your browser or local computer to a markdown cell conveniently.
 
+
 ![Animated GIF of drag and drop to insert images.](media/author-execute-notebook/drag-drop-insert-image.gif)
 
 ### Format text cell with toolbar buttons
@@ -138,13 +139,13 @@ Supported undo cell operations:
 
 ### Move a cell
 
-You can drag from the empty part of a cell and drop it to the desired position。
+You can drag from the empty part of a cell and drop it to the desired position.
+
 ![Animated GIF of drag and drop to move a cell.](media/author-execute-notebook/drag-drop-move-cell.gif)
 
 You can also move the selected cell using **Move up** and **Move down** on the ribbon.
 
 :::image type="content" source="media\author-execute-notebook\move-cell-options.png" alt-text="Screenshot showing the options for moving a cell." lightbox="media\author-execute-notebook\move-cell-options.png":::
-
 
 ### Delete a cell
 
@@ -218,6 +219,20 @@ Select the **Cancel All** button to cancel the running cells or cells waiting in
 **Stop session** will cancel the running and waiting cells and stop the current session, you will restart a brand new session if you click run button again.
 :::image type="content" source="media\author-execute-notebook\cancel-all-stop-session.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\cancel-all-stop-session.png":::
 
+### Notebook reference run
+
+You can use ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. ```%run``` magic command supports nested calls but not support recursive calls. You will receive an exception if the statement depth is larger than **five**.  
+
+Example:
+``` %run Notebook1 { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true,  "parameterString": "abc" } ```.
+
+Notebook reference works in both interactive mode and Synapse pipeline.
+
+> [!NOTE]
+> - ```%run``` command currently only supports reference notebooks that in the same workspace with current notebook. 
+> - ```%run``` command currently only supports to 4 parameter value types: `int`, `float`, `bool`, `string`, variable replacement operation is not supported.
+> - ```%run``` command do not support nested reference that depth is larger than **five**.
+>
 ### Variable explorer
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebook provides a built-in variables explorer for you to see the list of the variables name, type, length, and value in the current Spark session for PySpark (Python) cells. More variables show up automatically as they're defined in the code cells. Clicking on each column header sorts the variables in the table.
@@ -245,6 +260,48 @@ You can also find the **Cell level real-time log** next to the progress indicato
 
 In **More actions**, you'll be able to easily navigate to the **Spark application details** page and **Spark web UI** page.
 :::image type="content" source="media\author-execute-notebook\inline-monitor-more-actions.png" alt-text="Screenshot of details of more actions." lightbox="media\author-execute-notebook\inline-monitor-more-actions.png":::
+
+### Secret redaction
+
+To prevent credentials accidentally leak when running notebooks, Fabric notebook support **Secret redaction** to replace the secret values that are displayed in the cell output with ```[REDACTED]```, Secret redaction is applicable for **Python**, **Scala** and **R**. 
+
+:::image type="content" source="media\author-execute-notebook\secret-redaction.png" alt-text="Screenshot of secret redaction." lightbox="media\author-execute-notebook\secret-redaction.png":::
+
+## Magic commands in notebook
+
+### Built-in magics
+
+You can use familiar Ipython magic commands in Fabric notebooks. Review the following list as the current available magic commands. 
+
+> [!NOTE]
+> Only following magic commands are supported in Fabric pipeline : %%pyspark, %%spark, %%csharp, %%sql. 
+>
+
+Available line magics:
+[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#notebook-reference), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), 
+%alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2,  
+%popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode. 
+
+
+Fabric notebook also support improved library management commands **%pip**, **%conda**, check [Manage Apache Spark libraries in Microsoft Fabric](library-management.md) for the usage.
+
+Available cell magics:
+[%%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%%capture](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-capture), [%%writefile](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-writefile), [%%sql](#use-multiple-languages), [%%pyspark](#use-multiple-languages), [%%spark](#use-multiple-languages), [%%csharp](#use-multiple-languages), [%%html](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-html), [%%bash](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-bash), [%%markdown](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-markdown), [%%perl](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-perl), [%%script](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-script), [%%sh](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-sh).
+
+
+### Custom magics
+
+You can also build out more custom magic commands to meet your specific needs as the below example shows.
+
+1. Create a notebook with name *"MyLakehouseModule"*.
+
+
+:::image type="content" source="media\author-execute-notebook\custom-magic-define.png" alt-text="Screenshot of define a custom magic." lightbox="media\author-execute-notebook\custom-magic-define.png":::
+
+
+2. In another notebook referrence the *"MyLakehouseModule"* and its magic commands, by this way you can orgnize your project with notebooks that using different languages conveniently.
+
+:::image type="content" source="media\author-execute-notebook\consume-custom-magic.png" alt-text="Screenshot of define a custom magic." lightbox="media\author-execute-notebook\consume-custom-magic.png":::
 
 ## IPython Widgets
 
