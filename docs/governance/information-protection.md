@@ -39,7 +39,7 @@ The following table summarizes the information protection capabilities in Fabric
 
 ## Deploying Information protection in your tenant
 
-|| Step | Description | 
+| Step | Activity | References | 
 |:---|:------|:------------|
 |1| Define your sensitivity labels and policies that will protect your organization's data. | [Learn about sensitivity labels](/microsoft-365/compliance/sensitivity-labels)<br>[Get started with sensitivity labels](/microsoft-365/compliance/sensitivity-labels)<br>[Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels)
 |2| Enable sensitivity labels in Fabric| [Set up information protection in your tenant](../admin/information-protection-setup.md)|
