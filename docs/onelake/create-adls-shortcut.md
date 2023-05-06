@@ -1,6 +1,6 @@
 ---
 title: Create an ADLS shortcut
-description: Learn how to create two types of shortcuts, a OneLake shortcut and an Azure Data Lake Storage (ADLS) shortcut.
+description: Learn how to create ADLS shortcuts.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
