@@ -35,3 +35,5 @@ items:
     href: endorsement-overview.md
   - name: Promote or certify items
     href: endorsement-promote-certify.md
+- name: Share items
+  href: share-items.md
