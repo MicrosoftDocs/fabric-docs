@@ -22,8 +22,9 @@ To open Fabric settings, select the gear icon in the Fabric portal header.
 
 ## Preferences
 
+Short description of preferences.
 
-|||
+| Link| Description|
 |:-----------|:--------------|
 | General||
 | Notifications||
@@ -33,7 +34,9 @@ To open Fabric settings, select the gear icon in the Fabric portal header.
 
 ## Resources and extensions
 
-|||
+Short description of resources and extensions.
+
+| Link| Description|
 |:-----------|:--------------|
 |Manage personal storage||
 |Power BI settings||
@@ -43,12 +46,14 @@ To open Fabric settings, select the gear icon in the Fabric portal header.
 
 ## Governance and insights
 
-|||
+Short description of governance and insights.
+
+| Link| Description|
 |:-----------|:--------------|
-|[Admin portal](..admin/admin-center.md)||
+|[Admin portal](../admin/admin-center.md)||
 |[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)||
 
 ## Next steps
 
 * [What is Fabric](../get-started/microsoft-fabric-overview.md)
-* [What is Microsoft Fabric admin?](../admin/admin-overview)
+* [What is Microsoft Fabric admin?](../admin/admin-overview.md)
