@@ -1,6 +1,6 @@
 ---
 title: Create stored functions in Real-Time Analytics
-description: Learn how to use the .create-or-alter function command to create stored functions.
+description: Learn how to use the .create-or-alter function command to create stored functions in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -10,8 +10,6 @@ ms.search.form: product-kusto
 ---
 
 # Create stored functions
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Functions are reusable queries or query parts. Real-Time Analytics supports two kinds of functions:
 
@@ -24,6 +22,8 @@ Functions are reusable queries or query parts. Real-Time Analytics supports two 
 In this article, you'll learn how to create or alter an existing stored function using the `.create-or-alter` `function`.
 
 For more information on the `.create-or-alter` `function` command, see [.create-or-alter function](/azure/data-explorer/kusto/management/create-alter-function?context=/fabric/context/context)
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
