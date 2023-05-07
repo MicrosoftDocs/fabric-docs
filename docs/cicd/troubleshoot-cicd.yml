@@ -34,6 +34,8 @@ summary: |
   * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
   * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)
 
+  General questions:
+
 sections:
   - name: General
     questions:
@@ -118,8 +120,7 @@ sections:
 
       - question: |
           Connect failure: Why did I get a **Something went wrong** error when I tried to connect?
-        answer: |
-          
+        answer: |   
           Description of problem: After selecting **Connect** in the git integration tab, the **Something went wrong** dialog pops up. In addition, when selecting the source control button, the pane indicates that the you need to sync with the git branch. 
           
           :::image type="content" source="./media/troubleshoot-cicd/something-went-wrong.png" alt-text="Screenshot of error message when the workspace can't connect.":::
