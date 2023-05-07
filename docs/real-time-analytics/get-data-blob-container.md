@@ -1,6 +1,6 @@
 ---
-title: Get data from a blobin Real-Time Analytics
-description: Learn how to get data from a blob in a KQL Database in Real-Time Analytics
+title: Get data from a blob container in Real-Time Analytics
+description: Learn how to get data from a blob container in a KQL Database in Real-Time Analytics
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,12 +8,11 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
+# Get data from a blob container
 
-# Get data from a blob
+In this article, you'll learn you how to get data from an Azure blob or blob container into an existing database. A blob container organizes a set of blobs, similar to a directory in a file system. A storage account can include an unlimited number of containers, and a container can store an unlimited number of blobs. For more information on blob containers, see [Manage blob containers using Azure portal](/azure/storage/blobs/blob-containers-portal).
 
-In this article, you'll learn you how to get data from an Azure blob into an existing database. Azure Blob Storage is optimized for storing massive amounts of unstructured data. Unstructured data is data that doesn't adhere to a particular data model or definition, such as text or binary data. For more information on Azure blob storage, see [Introduction to Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
-
-To get data from a blob container, see [Get data from a blob container](get-data-blob-container.md).
+To get data from a blob, see [Get data from a blob](get-data-blob.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -21,35 +20,37 @@ To get data from a blob container, see [Get data from a blob container](get-data
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [KQL Database](create-database.md)
-* An Azure blob with data
+* A blob container with data
 
 ## Get data
 
-1. On the lower ribbon, select **Get Data** > **Blob**.
+1. On the lower ribbon, select **Get Data** > **Blob container**.
 
     :::image type="content" source="media/database-editor/get-data.png" alt-text="Get data.":::
-
-1. In **Table**, enter a name for your table.
-
-    :::image type="content" source="media/database-editor/table-name.png" alt-text="table name.":::
 
     > [!TIP]
     >  Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
-1. Select **Next: Source**.
 
-## Source tab
+### Source tab
 
-1. In **Source type** select Azure blob.
-1. In the **Link to source** field, add the Account Key/SAS URI.
+1. In **Source type**, select Blob container.
+1. In **Link to source** field, add the Account Key/SAS URI.
 
     To add a blob URI, you need to generate an Account Key/ SAS token with both List and Read permissions. To generate an Account Key/SAS token, see <!-- [TODO- Generate a SAS token](generate-sas-token.md). -->
 
-    The blob you add will be the basis for the schema tab. You can add up to 10 items of up to 1-GB uncompressed size each. If you upload more than one item, you can change the schema-defining blob by selecting the star icon on the right side of the source link field.
+    :::image type="content" source="media/database-editor/ingest-new-data-blob-container.png" alt-text="Screenshot of data ingestion pane for blob containers.":::
 
-    :::image type="content" source="media/database-editor/ingest-new-data.png" alt-text="Ingest new data.":::
+1. Optionally, you can filter data to be ingested with **File filters**. You can filter by file extension, folder path, or both.
+
+    **Filter by file extension**: for example, filter for all files with a CSV extension.
+
+    **Filter by folder path**: you can either enter a full or partial folder path, or folder name.
+
+    :::image type="content" source="media/database-editor/file-filters-blob-container.png" alt-text="Screenshot of file filters for blob container.":::
 
 1. Select **Next: Schema** to view and edit your table column configuration.
+
 
 ### Schema tab
 
@@ -102,13 +103,6 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 :::image type="content" source="media/database-editor/azure-blob-summary-pane.png" alt-text="Screenshot of ingested complete dialog box with data preview.":::
 
-## Explore your data
-
-To verify that you have ingested data into your database, select **Explore your data** on the right-hand side of the database landing page. You can then save your query as a KQL Queryset by selecting **Save as Query Set**.
-
-:::image type="content" source="media/database-editor/quick-query.png" alt-text="Screenshot of the Quick query button.":::
-
-For more information on KQL Queryset, see [Query data in the KQL Queryset](kusto-query-set.md).
 
 ## Next steps
 
