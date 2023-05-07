@@ -1,5 +1,5 @@
 ---
-title: Tutorial-  Use a notebook with kqlmagic to query a KQL Database
+title: Tutorial-  Use a notebook with Kqlmagic to query a KQL Database
 description: Learn how to import the NYCtaxicab notebook into your [!INCLUDE [product-name](../includes/product-name.md)] environment.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -9,7 +9,7 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Tutorial: Use a notebook with kqlmagic to query a KQL Database
+# Tutorial: Use a notebook with Kqlmagic to query a KQL Database
 
 Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents which can be run to perform data analysis. In this article, you learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a KQL Database. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
@@ -130,8 +130,8 @@ Select the **play** button to run each cell sequentially, or select the cell and
 
 ## 7- Run the notebook
 
-Run the remaining cells sequentially to see how render commands work through kqlmagic and begin creating a heatmap of taxi pickups in NYC.
-For more information on kqlmagic, see [Use a Jupyter Notebook and kqlmagic extension to analyze data](/azure/data-explorer/kqlmagic?context=/fabric/context/context.)
+Run the remaining cells sequentially to see how render commands work through Kqlmagic and begin creating a heatmap of taxi pickups in NYC.
+For more information on Kqlmagic, see [Use a Jupyter Notebook and Kqlmagic extension to analyze data](/azure/data-explorer/kqlmagic?context=/fabric/context/context.)
 
 1. The following cell aggregates all pickups within the specified geographic boundary.
 
