@@ -70,7 +70,7 @@ items:
   items:
   - name: Visualize data in a Power BI report
     href: create-powerbi-report.md
-  - name: Use data from KQL Databases in Power BI Desktop
+  - name: Use data from a KQL Database in Power BI Desktop
     href: power-bi-data-connector.md
 - name: Event streams
   items:
@@ -104,10 +104,10 @@ items:
       href: event-streams/monitoring.md
 - name: Kusto Query Language
   href: kusto-query-language/toc.yml
-- name: Management commands
-  href: management/toc.yml
 - name: Reference and resources
   items:
+  - name: Management commands
+    href: management/toc.yml
   - name: API
     href: api/toc.yml
   - name: Functions library

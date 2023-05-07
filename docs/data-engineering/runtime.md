@@ -10,9 +10,9 @@ ms.date: 05/23/2023
 
 # Apache Spark runtime in Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The Microsoft Fabric Runtime provides an Azure-integrated Apache Spark-based platform for executing and managing data engineering and data science workloads. It combines essential components from both internal and open-source sources to offer customers a seamless and comprehensive solution.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Major components of the Runtime:
 
@@ -34,7 +34,7 @@ Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offer
 - Delta Lake: 2.2
 - R: 4.2.2
 
-:::image type="content" source="media\spark-workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version.":::
+:::image type="content" source="media\workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version.":::
 
 Microsoft Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
 

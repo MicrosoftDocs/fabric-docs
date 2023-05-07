@@ -16,7 +16,9 @@ items:
   - name: Find your items from Fabric Home
     href: fabric-home.md
   - name: Search, sort, and filter
-    href: fabric-search.md    
+    href: fabric-search.md
+  - name: Fabric settings
+    href: fabric-settings.md 
 - name: Workspaces
   items:
   - name: Workspaces
@@ -33,7 +35,9 @@ items:
   items:
   - name: Overview
     href: endorsement-overview.md
-  - name: Promote items
-    href: endorsement-promote.md
-  - name: Certify items
-    href: endorsement-promote.md
+  - name: Promote or certify items
+    href: endorsement-promote-certify.md
+- name: Apply sensitivity labels
+  href: apply-sensitivity-labels.md
+- name: Share items
+  href: share-items.md
