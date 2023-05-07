@@ -94,7 +94,7 @@ sections:
         answer: |
           All workspaces in a deployment pipeline must reside within a capacity for the pipeline to be functional. However, you can use different capacities for different workspaces in a pipeline. You can also use different capacity types for different workspaces in the same pipeline.
           
-          For information on capacity types, see [Capacity and SKUs](../enterprise/Capacity and SKUs.md#capacity-and-skus).
+          For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity-and-skus).
 
           >[!NOTE]
           >When you create a workspace with a PPU, only other PPU users can able to access the workspace and consume its content.
@@ -224,7 +224,7 @@ sections:
           
           * The workspace isn't assigned to any other pipeline
           
-          * The workspace resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md)
+          * The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus)
           
           Workspaces that don't meet these conditions, aren't displayed in the list of workspaces you can select from.
           
@@ -240,7 +240,7 @@ sections:
           
           |Error  |Action  |
           |---------|---------|
-          |You don't have [premium capacity permissions](deployment-pipelines/understand-the-deployment-process.md#create-a-premium-workspace).     |If you work in an organization that has a Premium capacity, ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. After the workspace is in a capacity, redeploy.</br></br>If you don't work in an organization with Premium capacity, consider purchasing [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).        |
+          |You don't have [capacity permissions](deployment-pipelines/understand-the-deployment-process.md#create-a-premium-workspace).     |If you work in an organization that has a Fabric capacity, ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. After the workspace is in a capacity, redeploy.</br></br>If you don't work in an organization with a Fabric capacity, consider purchasing [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).        |
           |You don't have workspace permissions.     |To deploy, you need to be a workspace member. Ask your workspace admin to grant you the appropriate permissions.         |
           |Your Fabric admin disabled the creation of workspaces.     |Contact your Fabric admin for support.         |
           |You're using [selective deployment](deployment-pipelines/deploy-content.md#selective-deployment) and aren't selecting all the linked items.     |Do one of the following: </br></br>Unselect the content that is linked to your dataset or dataflow. Your unselected content (such as datasets, reports or dashboards) won't be copied to the next stage. </br></br>Select the dataset or the dataflow that's linked to the selected items. Your selected items will be copied to the next stage.         |
@@ -446,11 +446,11 @@ sections:
       - question: |
           Who can deploy content between stages?
         answer: |
-          Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
+          Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus).
           
-          * **Deploying to an empty stage** - Any [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md) or [PPU](/power-bi/enterprise/service-premium-per-user-faq.yml) user, that's a member or admin in the source workspace.
+          * **Deploying to an empty stage** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin in the source workspace.
           
-          * **Deploying to a stage with content** - Any [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md) or [PPU](/power-bi/enterprise/service-premium-per-user-faq.yml) user, who's a member or admin of both workspaces in the source and target deployment stages.
+          * **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin of both workspaces in the source and target deployment stages.
           
           * **Overwriting a dataset** - Deployment overwrites each dataset that is included in the target stage, even if the dataset wasn't changed. Any user who's a member or admin of both workspaces, but the tenant admin can restrict this to target dataset owners only.
           
