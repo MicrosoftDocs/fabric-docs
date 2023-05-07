@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: OneLake in Microsoft Fabric documentation
-summary: summary # < 160 chars
+summary: OneLake is the OneDrive for data. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. # < 160 chars
 
 metadata:
   title: OneLake in Microsoft Fabric documentation
@@ -40,7 +40,7 @@ landingContent:
         links:
           - text: Create a lakehouse with OneLake
             url: create-lakehouse-onelake.md
-          - text: OneLake File Explorer
+          - text: OneLake file explorer
             url: onelake-file-explorer.md
           - text: Create a shortcut
             url: create-onelake-shortcut.md
