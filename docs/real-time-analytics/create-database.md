@@ -1,6 +1,6 @@
 ---
-title: Create a KQL database in Synapse Real-Time Analytics
-description: Learn how to create a KQL database in Synapse Real-Time Analytics in Microsoft Fabric
+title: Create a KQL database in Real-Time Analytics
+description: Learn how to create a KQL database in Real-Time Analytics in Microsoft Fabric
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster

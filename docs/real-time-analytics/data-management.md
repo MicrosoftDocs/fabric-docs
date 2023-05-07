@@ -1,6 +1,6 @@
 ---
-title: Data management in Synapse Real-Time Analytics
-description: Learn how to manage your data in Synapse Real-Time Analytics in Microsoft Fabric.
+title: Data management in Real-Time Analytics
+description: Learn how to manage your data in Real-Time Analytics in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
