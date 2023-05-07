@@ -43,6 +43,8 @@ landingContent:
         links: 
         - text: Get data from a blob
           url: get-data-blob.md
+        - text: Get data from a blob container 
+          url: get-data-blob-container.md
         - text: Get data from Event Hubs
           url: get-data-event-hub.md
         - text: Get data from OneLake
