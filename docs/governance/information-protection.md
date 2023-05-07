@@ -109,7 +109,19 @@ Currently supported for Power BI items in supported export paths. Currently no o
 
 ### Set up information protection
 
-### Apply labeling
+### Apply labeling to the data in your tenant
+
+* Define the users who will be allowed to apply sensitivity labels. [Set up information protection in Fabric](../admin/information-protection-setup.md)
+
+* Define a default label policy that will cause a default label to be applied to an item when it is created or edited if no label is otherwise applied. That way no item can be saved without a label. [Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy).
+
+* Define a mandatory label policy that will require users to apply a label when they try to save an unlabeled item. A mandatory label policy also ensures that no item can be saved without a label. [Mandatory label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-mandatory-label-policy).
+
+* Enable downstream inheritance. Downstream inheritance helps make sure that changes made to certain items are reflected on their dependent items. [Sensitivity label downstream inheritance](/power-bi/enterprise/service-security-sensitivity-label-downstream-inheritance)
+
+* Programmatically apply labels to unlabeled items. Using [Power BI admin REST APIs](/power-bi/enterprise/service-security-sensitivity-label-inheritance-set-remove-api) you can label apply labels to entire sections of your data estate to get started governing and protecting your data with Microsoft Purview governance and compliance.
+
+* Allow sensitivity lables to be inherited from data sources. [Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources). 
 
 ### Monitor your sensitive data
 
