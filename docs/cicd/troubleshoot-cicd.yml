@@ -59,11 +59,7 @@ sections:
         answer: |
           If the following conditions aren't met, you won't be able to see the deployment pipelines button.
           
-          * You have one of the following Premium licenses:
-          
-              * You're a [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md), and you belong to an organization that has Premium capacity.
-          
-              * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
+          * You have a [Fabric license](../enterprise/licenses.md).
           
           * You're an admin of a [workspace](../get-started/create-workspaces.md). 
           
@@ -90,14 +86,15 @@ sections:
           For more information on obtaining a license, see [Fabric licenses](../enterprise/licenses.md).
           
       - question: |
-          What type of capacity can I assign to a workspace in a pipeline?
+          What type of capacity do I need?
         answer: |
-          All workspaces in a deployment pipeline must reside within a capacity for the pipeline to be functional. However, you can use different capacities for different workspaces in a pipeline. You can also use different capacity types for different workspaces in the same pipeline.
+          All workspaces must assigned to a Fabric license. However, you can use different capacity types for different workspaces.
           
           For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity-and-skus).
 
           >[!NOTE]
-          >When you create a workspace with a PPU, only other PPU users can able to access the workspace and consume its content.
+          > * PPU, EM, and A SKUs only work with Power BI items. If you add other Fabric items to the workspace, you need a trial, P, or F SKU.
+          > * When you create a workspace with a PPU, only other PPU users can able to access the workspace and consume its content.
           
   - name: Git integration  
     questions:
