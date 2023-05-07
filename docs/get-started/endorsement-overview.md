@@ -7,71 +7,35 @@ ms.topic: concept
 ms.date: 05/23/2023
 ---
 
-# Endorsement - Promoting and certifying Fabric content
+# Endorsement
 
-## Endorsement overview
-
-Organizations often have large amounts of Microsoft Fabric content for sharing and reuse by their Fabric users, and identifying trustworthy, authoritative content can be difficult. Endorsement is a way to make it easier for users to find the high-quality content they need. Endorsed content is clearly labeled, both in Fabric and in other places where users look for Fabric content (such as Excel). It is also given priority in some searches, and you can sort it for in some lists.
+Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. Identifying trustworthy, authoritative items can be difficult. Endorsement is a way to make it easier for users to find the high-quality items they need. Endorsed items are clearly labeled, both in Fabric and in other places where users look for Fabric items (such for Power BI datasets in Excel). Endorsed items are also given priority in some searches, and you can sort for endorsed items for in some lists.
 
 There are two kinds of endorsement: **promotion** and **certification**.
 
-* **Promotion**: Promotion enables users to highlight content that they think is valuable, worthwhile, and ready for others to use. It encourages the collaborative spread of content within the organization.
+* **Promotion**: Promotion enables users to highlight items that they think are valuable, worthwhile, and ready for others to use. It encourages the collaborative spread of content within the organization.
 
-    Any content owner, or any member with write permissions on the workspace where the content is located, can simply promote the content when they think it's good enough for sharing.
+    Any content owner, or any member with write permissions on the workspace where the item is located, can simply promote the item when they think it's good enough for sharing.
 
-    [Learn how to promote your content](endorsement-promote.md#promote-content).
+    [Learn how to promote your items](endorsement-promote-certify.md#promote-items).
 
-* **Certification**: Certification means that the content meets the organization's quality standards and can be regarded as reliable, authoritative content that is ready for use across the organization.
+* **Certification**: Certification means that the item meets the organization's quality standards and can be regarded as reliable and authoritative, and is ready for use across the organization.
 
-    Only a [select group of reviewers (defined by the Power BI administrator)](../admin/endorsement-setup.md) is authorized to certify content. Content owners who wish to see their content certified and are not authorized to certify it themselves need to follow their organization's guidelines about getting their content certified.
+    Only a [select group of reviewers (defined by the Power BI administrator)](../admin/endorsement-setup.md) is authorized to certify items. Item owners who wish to see their item certified and aren't authorized to certify it themselves need to follow their organization's guidelines about getting it certified.
 
-    Learn how to [certify content](endorsement-certify.md#certify-content) or [request certification](endorsement-certify.md#request-content-certification).
+    Learn how to [certify items](endorsement-promote-certify.md#certify-items) or [request certification](endorsement-promote-certify.md#request-item-certification).
 
     **Certification is available only if a Power BI administrator has [enabled and configured](../admin/endorsement-setup.md) it for your organization**.
 
-The image below illustrates how endorsed content (promoted and certified) is clearly identified when you're searching for a dataset to build a report on.
+The following image illustrates how endorsed, promoted, and certified datasets are clearly identified when you're searching for an item.
 
-[ ![Screenshot of endorsed datasets in a dataset selection dialog.](media/endorsement-overview/power-bi-content-endorsement-dataset-select.png)](media/endorsement-overview/power-bi-content-endorsement-dataset-select.png#lightbox)
+[ ![Screenshot of endorsed datasets in a dataset selection dialog.](media/endorsement-overview/endorsement-data-hub.png)](media/endorsement-overview/endorsement-data-hub.png#lightbox)
 
-## Content types that can be endorsed
-Power BI currently supports endorsement for:
-* Datasets
-* Dataflows
-* Reports
-* Apps
+## Types of items that can be endorsed
 
-## Identifying endorsed content
-
-Endorsed content is labeled with badges and icons in lists, cards, and other places, both in Power BI and in places such as Excel where it is possible to find Power BI content. The following badges and icons identify endorsed content.
-
-|Badge|Icon|
-|---------|---------|
-|![Screenshot of Certification badge.](media/endorsement-overview/certified-badge.png)|![Screenshot of certification icon.](media/endorsement-overview/certified-icon.png)|
-|![Screenshot of promotion badge.](media/endorsement-overview/promoted-badge.png)|![Screenshot promotion icon.](media/endorsement-overview/promoted-icon.png)|
-|||
-
-In addition, if you are in a report or an app, you can see the endorsement status via the header.
-* Certification is indicated in both in the header and in the header drop-down, where you can also see who did the certification.
-
-   [ ![Screenshot showing certification badge in a report header.](media/endorsement-overview/certification-report-header.png)](media/endorsement-overview/certification-report-header.png#lightbox)
-
-* Promotion is indicated in the header drop-down only.
- 
-    [ ![Screenshot showing promotion badge in a report header.](media/endorsement-overview/promotion-report-header.png)](media/endorsement-overview/promotion-report-header.png#lightbox)
-
-## Deciding whether to endorse an app or a report
-
-Endorsement is meant to be used for the content items (apps, reports, datasets, and dataflows) you want people to find, use, and possibly re-share.
-
-When you’re sharing data with a broad audience, a Power BI best practice is to share that data via an app. If you’re following this best practice, you want people to be able to find that app easily. In such cases then, you should endorse the app. 
-
-If you still find it useful to share reports directly, however, then endorse the report itself. 
-
-Whether you’re sharing a report or an app, if the underlying datasets are clean and ready to be shared, it’s a good idea to endorse the datasets as well. The same applies to dataflows.  
+All Fabric items can be endorsed except for Power BI dashboards.
 
 ## Next steps
 
-* [Promote Fabric content](endorsement-promote.md)
-* [Certify Fabric content](endorsement-certify.md)
+* [Promote or certify Fabric content](endorsement-promote-certify.md)
 * [Enable certification for your organization](../admin/endorsement-setup.md) (Power BI admins)
-* Questions? [Try asking the Power BI Community](https://community.powerbi.com/)

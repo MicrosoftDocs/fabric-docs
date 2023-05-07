@@ -1,12 +1,12 @@
 ### YamlMime:Hub
 
 title: Microsoft Fabric documentation # < 60 chars
-summary: Microsoft Fabric is a unified platform that can meet your organization’s data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it. # < 160 chars
+summary: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it. # < 160 chars
 brand: fabric
 
 metadata:
   title: Microsoft Fabric documentation
-  description: Microsoft Fabric is a unified platform that can meet your organization’s data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
+  description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
   ms.service: powerbi
   ms.subservice: powerbi-service
   ms.topic: hub-page
@@ -31,7 +31,7 @@ highlightedContent:
     # Card
     - title: Enable Fabric for your organization
       itemType: quickstart
-      url: admin/admin-switch.md
+      url: admin/admin-fabric-switch.md
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
@@ -49,11 +49,11 @@ productDirectory:
       links:
         - url: get-started/microsoft-fabric-overview.md
           text: What is Fabric?
-        - url: placeholder.md
+        - url: get-started/fabric-home.md
           text: Navigate the Fabric portal
         - url: get-started/workspaces.md
           text: Workspaces in Fabric
-        - url: placeholder.md
+        - url: get-started/onelake-data-hub.md
           text: Find data in the OneLake data hub
         - url: get-started/index.yml
           text: See more
@@ -165,8 +165,6 @@ productDirectory:
           text: Data governance and compliance
         - url: security/security-overview.md
           text: Security
-        - url: enterprise/billing-reports.md
-          text: Billing and consumption
         - url: admin/index.yml
           text: See more
 
@@ -211,7 +209,7 @@ productDirectory:
           text: Use Data Factory pipelines
         - url: /training/modules/get-started-data-science-fabric/
           text: Get started with Data science
-        - url: get-started/index.yml
+        - url: /training/modules/introduction-end-analytics-using-microsoft-fabric/
           text: See more
 
 

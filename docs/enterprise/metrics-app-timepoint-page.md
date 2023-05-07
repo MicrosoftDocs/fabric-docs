@@ -4,10 +4,13 @@ description: Learn how to read the Microsoft Fabric utilization and metrics app'
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
 # Understand the metrics app timepoint page
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 All the activities in the capacity are ranked according to their compute impact. Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to CU usage.
 
@@ -95,5 +98,4 @@ All the columns in the background operations table are similar to the ones in th
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Understand the metrics app overview page?](metrics-app-overview-page.md)
+[Understand the metrics app overview page?](metrics-app-overview-page.md)

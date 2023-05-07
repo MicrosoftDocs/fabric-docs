@@ -1,42 +1,42 @@
 ---
-title: Lakehouse tutorial - get started
-description: To get started on the lakehouse tutorial, follow steps to create a workspace where you'll build out the remainder of the tutorial.
+title: Lakehouse tutorial - Create a workspace
+description: Learn how to create a workspace that you'll use to create other items required by this end-toend-tutorial.
 ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
-ms.date: 4/28/2023
+ms.date: 5/23/2023
 ---
 
-# Lakehouse tutorial: Get started in Microsoft Fabric
+# Lakehouse tutorial: Create a Fabric workspace
 
-Before you can begin building the lakehouse, you need to create a workspace where you'll build out the remainder of the tutorial.
+Before you can begin creating the lakehouse, you need to create a workspace where you'll build out the remainder of the tutorial.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create a workspace
 
-In this step, you create a Fabric workspace in the Power BI service. The workspace contains all the artifacts needed for this lakehouse tutorial including Lakehouse, Dataflows, Data Factory pipelines, the Notebooks, Power BI datasets, and reports.
+In this step, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and reports.
 
 1. Sign in to [Power BI](https://powerbi.com/).
 
-1. Select **Workspaces > New Workspace**.
+1. Select **Workspaces** and &&New Workspace**.
 
    :::image type="content" source="media\tutorial-lakehouse-get-started\create-new-workspace.png" alt-text="Screenshot showing where to select Workspaces and create a new workspace.":::
 
 1. Fill out the **Create a workspace** form with the following details:
 
-   1. **Name:** Enter *Fabric Lakehouse Tutorial*, and some characters for uniqueness.
+   * **Name:** Enter *Fabric Lakehouse Tutorial*, and any extra characters to make the name unique.
 
-   1. **Description**: Optionally, enter a description for the workspace.
+   * **Description**: Enter an optional description for your workspace.
 
       :::image type="content" source="media\tutorial-lakehouse-get-started\create-workspace-details.png" alt-text="Screenshot of the Create a workspace dialog box.":::
 
-   1. **Advanced**: Select **Premium capacity** under **License mode** and then choose a premium capacity you have access to.
+   * **Advanced**: Under **License mode**, select **Premium capacity** and then choose a premium capacity that you have access to.
 
       :::image type="content" source="media\tutorial-lakehouse-get-started\select-premium-capacity.png" alt-text="Screenshot of the Advanced options dialog box.":::
 
-1. Select **Apply.** The workspace is created and opens.
+1. Select **Apply** to create and open the workspace.
 
 ## Next steps
 

@@ -4,10 +4,13 @@ description: Learn how to opt out of Microsoft Fabric features that don't meet t
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
 # Compliance settings
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Microsoft Fabric security is based on [Power BI security](/power-bi/enterprise/service-admin-power-bi-security). Some features aren't fully compliant with Microsoft's security requirements. By default, these features are blocked in Microsoft Fabric. You can decide whether features that don't fully comply with Microsoft Fabric's security requirements, are turned on in your organization.
 
