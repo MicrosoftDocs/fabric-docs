@@ -1,9 +1,9 @@
 ---
 title: Share items
 description: "Learn how to share an item and manage permission of an item."
-author: yicw16322
-ms.author: yicw
-ms.reviewer: painbar, mesrivas
+author: paulinbar
+ms.author: painbar
+ms.reviewer: yicw, mesrivas
 ms.topic: how-to
 ms.date: 05/23/2023
 ms.custom: 
