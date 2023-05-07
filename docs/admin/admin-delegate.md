@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # Delegate settings
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Learn how to delegate admin rights (settings) form a tenant to a capacity in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## How to delegate admin rights?

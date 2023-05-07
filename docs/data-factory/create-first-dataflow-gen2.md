@@ -169,4 +169,15 @@ If you're not going to continue to use this dataflow, delete the dataflow using 
 
 ## Next steps
 
-Advance to the next article to learn how to create your first data pipeline: [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md).
+The dataflow in this sample shows you how to load and transform data in a dataflow gen2.  You learned how to:
+
+> [!div class="checklist"]
+> - Create a dataflow gen2.
+> - Transform data.
+> - Configure destination settings for transformed data.
+> - Run and schedule your data pipeline.
+
+Advance to the next article to learn how to create your first data pipeline.
+
+> [!div class="nextstepaction"]
+> [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md).
