@@ -4,10 +4,13 @@ description: Learn how to read the Microsoft Fabric utilization and metrics app'
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
 # Understand the metrics app overview page
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The Microsoft Fabric utilization and metrics app's overview page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line chart, and the bottom visual is a matrix table.
 
@@ -99,5 +102,4 @@ A matrix table that displays metrics for each item on the capacity. To gain a be
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
+[Understand the metrics app timepoint page](metrics-app-timepoint-page.md)

@@ -10,15 +10,13 @@ ms.custom: template-how-to
 
 # How to configure Lakehouse in copy activity
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+This article outlines how to use the copy activity in data pipeline to copy data from and to the Fabric Lakehouse.
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Trident Lakehouse.
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported format
 
-Trident Lakehouse supports the following file formats. Refer to each article for format-based settings.
+Lakehouse supports the following file formats. Refer to each article for format-based settings.
 
 - Avro format
 - [Binary format](format-binary.md)
@@ -53,7 +51,7 @@ The following properties are **required**:
 - **Data store type**: Select **Workspace**.
 - **Workspace data store type**: Select **Lakehouse** from the data store type list.
 - **Lakehouse**: Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.
-- **Root folder**: Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](/trident-docs-private-preview/synapse-data-engineering/concepts-lakehouse?branch=main).
+- **Root folder**: Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
     - If select **Tables**,
         - (placeholder, not supported yet)
     - If select **Files**:
@@ -102,7 +100,7 @@ The following properties are **required**:
 - **Data store type**: Select **Workspace**.
 - **Workspace data store type**: Select **Lakehouse** from the data store type list.
 - **Lakehouse**: Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.
-- **Root folder**: Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](/trident-docs-private-preview/synapse-data-engineering/concepts-lakehouse?branch=main).
+- **Root folder**: Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
     - If select **Tables**, specify the **Table name**.
     
     :::image type="content" source="./media/connector-lakehouse/table-name.png" alt-text="Screenshot showing table name.":::
@@ -148,7 +146,7 @@ To learn more information about copy activity in Lakehouse, see the following ta
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type** |Select **Lakehouse** from the data store type list.|**Lakehouse**|Yes|/|
 |**Lakehouse** | Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.|\<your Lakehouse>|Yes |/|
-|**Root folder** |Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](/trident-docs-private-preview/synapse-data-engineering/concepts-lakehouse?branch=main).| •**Tables**<br>  •**Files** |No|rootFolder|
+|**Root folder** |Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).| •**Tables**<br>  •**Files** |No|rootFolder|
 |**Table name** |Specify your table name.|\<your table name> |Yes when you select **Tables** in **Root folder** | folderPath|
 |**File path** |Select **Browse** to choose the file that you want to copy or fill in the path manually.|\<file path> |No | •folderPath<br>•fileName|
 |**File path type** |You can choose **File path**, **Wildcard file path** or **List of files** as your file path type. | •**File path**<br> •**Wildcard file path**<br> •**List of files** |No |**Wildcard file path**<br>•wildcardFolderPath<br>•wildcardFileName<br>**List of files**<br>•fileListPath |
@@ -163,7 +161,7 @@ To learn more information about copy activity in Lakehouse, see the following ta
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type** |Select **Lakehouse** from the data store type list.|**Lakehouse**|Yes|/|
 |**Lakehouse** | Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.|\<your Lakehouse>|Yes |/|
-|**Root folder** |Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](/trident-docs-private-preview/synapse-data-engineering/concepts-lakehouse?branch=main).| •**Tables**<br>  •**Files** |Yes | rootFolder|
+|**Root folder** |Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).| •**Tables**<br>  •**Files** |Yes | rootFolder|
 |**Table name** |Specify your table name.|\<your table name> |Yes when you select **Tables** in **Root folder** | folderPath|
 |**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store. You can choose Add Dynamic content, none, Flatten hierarchy or Preserve hierarchy as your copy behavior.| • **Add dynamic content**<br>• **None**<br>• **Flatten hierarchy**<br>• **Preserve hierarchy**|No |copyBehavior:<br><br><br>FlattenHierarchy<br>PreserveHierarchy|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| < upper limit of concurrent connections ><br>(integer)|No |maxConcurrentConnections|
@@ -171,3 +169,6 @@ To learn more information about copy activity in Lakehouse, see the following ta
 |**Metadata** |Set custom metadata when copy to sink.|• `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 |**Max rows per file** |When writing data into a folder, you can choose to write to multiple files and specify the max rows per file.|\<max rows per flie> |No |maxRowsPerFile|
 |**File name prefix** |Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>`_00000.`<fileExtension>`. If not specified, prefix will be auto generated. Not applicable when source is file-based store or source has partition option enabled.| \<flie name prefix> |No |fileNamePrefix|
+
+## Next steps
+[Lakehouse connector overview](connector-lakehouse-overview.md)

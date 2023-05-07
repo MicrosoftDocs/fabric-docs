@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This tutorial is an example of OneLake integration with Azure. We encourage you to test any tools, programs, or services that you currently use today to interface with Azure Data Lake Storage (ADLS) Gen2.
+Azure Storage Explorer allows you to view and manage your cloud storage account’s contents - upload, download or move files from one location to another. This tutorial shows OneLake integration with Azure Storage Explorer.
 
 ## Using Azure Storage Explorer
 
@@ -32,7 +32,7 @@ This tutorial is an example of OneLake integration with Azure. We encourage you 
 
    :::image type="content" source="media\onelake-azure-storage-explorer\select-container-directory.png" alt-text="Screenshot showing where to select the ADLS Gen2 container or directory option." lightbox="media\onelake-azure-storage-explorer\select-container-directory.png":::
 
-1. Enter URL details of the item you would like to connect to, in this format: `https://onelake.dfs.fabric.microsoft.com/{workspace-Name}/{itemName.itemType}/`. You can find the workspace name and item name in the **Properties** pane of a file in the Microsoft Fabric portal.
+1. Enter URL details of the workspace or item you would like to connect to, in this format: `https://onelake.dfs.fabric.microsoft.com/{workspace-Name}/{itemName.itemType}/`. You can find the workspace name and item name in the **Properties** pane of a file in the Microsoft Fabric portal.
 
    You can choose a **Display name** for convenience, then select **Next.**
 

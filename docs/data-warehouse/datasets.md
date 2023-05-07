@@ -6,9 +6,8 @@ ms.author: chweb
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
-ms.search.form: Default dataset overview
+ms.search.form: Default dataset overview # This article's title should not change. If so, contact engineering.
 ---
-
 # Default Power BI datasets in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]

@@ -9,10 +9,16 @@ items:
     href: fabric-terminology.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: End-to-end tutorials
+    href: end-to-end-tutorials.md
+- name: Find your way around Fabric
+  items:
+  - name: Find your items from Fabric Home
+    href: fabric-home.md
+  - name: Search, sort, and filter
+    href: fabric-search.md
+  - name: Fabric settings
+    href: fabric-settings.md 
 - name: Workspaces
   items:
   - name: Workspaces
@@ -29,13 +35,9 @@ items:
   items:
   - name: Overview
     href: endorsement-overview.md
-  - name: Promote items
-    href: endorsement-promote.md
-  - name: Certify items
-    href: endorsement-promote.md
-- name: Feature 2
-  items:
-  - name: linktext2
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Promote or certify items
+    href: endorsement-promote-certify.md
+- name: Apply sensitivity labels
+  href: apply-sensitivity-labels.md
+- name: Share items
+  href: share-items.md

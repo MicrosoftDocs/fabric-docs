@@ -11,16 +11,15 @@ ms.search.form: spark_job_definition
 
 # Schedule and run an Apache Spark job definition
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this tutorial, learn how to run a [!INCLUDE [product-name](../includes/product-name.md)] Spark job definition item and monitor the job.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
 To get started, you must have the following prerequisites:
 
 - A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../placeholder.md).
-- Access to the Data Engineering Workload. [Onboard onto the data engineering workload](../placeholder.md).
 - Understand the Spark job definition: [What is an Apache Spark job definition?](spark-job-definition.md).
 - Create a Spark job definition: [How to create an Apache Spark job definition](create-spark-job-definition.md).
 

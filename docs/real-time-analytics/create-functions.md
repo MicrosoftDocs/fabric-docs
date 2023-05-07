@@ -11,6 +11,8 @@ ms.search.form: product-kusto
 
 # Create stored functions
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Functions are reusable queries or query parts. Real-Time Analytics supports two kinds of functions:
 
 * Built-in functions, which are hard-coded functions that can't be modified by users.

@@ -10,21 +10,21 @@ ms.date: 05/23/2023
 
 # What is Data engineering in Microsoft Fabric?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Data engineering in Microsoft Fabric enables users to design, build, and maintain infrastructures and systems that enable their organizations to collect, store, process, and analyze large volumes of data.
 
-Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and of high-quality. From the data engineering homepage, you can: 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-- Create and manage your data using a Lakehouse
+Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and of high-quality. From the data engineering homepage, you can:
 
-- Design pipelines to copy data into your Lakehouse
+- Create and manage your data using a lakehouse
+
+- Design pipelines to copy data into your lakehouse
 
 - Use Spark Job definitions to submit batch/streaming job to Spark cluster
 
-- Use notebooks to write code for data ingestion, preparation, and transformation 
+- Use notebooks to write code for data ingestion, preparation, and transformation
 
-    :::image type="content" source="media\data-engineering-overview\data-engineering-artifacts.png" alt-text="Screenshot showing Data Engineering objects." lightbox="media\data-engineering-overview\data-engineering-artifacts.png":::
+  :::image type="content" source="media\data-engineering-overview\data-engineering-artifacts.png" alt-text="Screenshot showing Data Engineering objects.":::
 
 ## Lakehouse
 
@@ -57,4 +57,3 @@ Get started with the Data Engineering experience:
 - Learn more about Notebooks, see [Author and execute the notebook](author-execute-notebook.md).
 
 - To get started with Pipelines copy activity, see [How to copy data using copy activity](..\data-factory\copy-data-activity.md).
-

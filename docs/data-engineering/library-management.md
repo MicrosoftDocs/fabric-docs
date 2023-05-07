@@ -5,17 +5,17 @@ ms.reviewer: snehagunda
 ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
-ms.date: 04/24/2023
+ms.date: 05/23/2023
 
 ---
 
 # Manage Apache Spark libraries in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 **Libraries** provide reusable code that Apache Spark developers may want to include in their Spark application.
 
 Each workspace comes with a pre-installed set of libraries available in the Spark run-time and available to be used immediately in the notebook or Spark job definition. We refer to these as built-in libraries.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Based on the user scenarios and specific needs, you can include other libraries. There are two types of libraries you may want to include:
 
@@ -188,4 +188,4 @@ Follow this example to walk through the steps of installing an R feed library:
 
 ## Next steps
 
-- [Apache Spark workspace administration settings](spark-workspace-admin-settings.md)
+- [Apache Spark workspace administration settings](workspace-admin-settings.md)

@@ -10,6 +10,8 @@ ms.search.form: product-kusto
 ---
 # Synapse Real-Time Analytics Tutorial- Introduction
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Synapse Real-Time Analytics in Microsoft Fabric is a fully managed big data analytics platform optimized for streaming, time-series data. It contains a dedicated query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-Time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios. For more information, see [What is Real-Time Analytics in Fabric?](overview.md). 
 
 ## Scenario
@@ -25,11 +27,10 @@ Specifically, in this tutorial, you learn how to:
 > * Enable data copy to OneLake
 > * Create an Eventstream
 > * Stream data from Eventstream to your KQL database
-> * Check your data with sample queries
-> * Build a Power BI report from a query
-> * Enrich your data with additional datasets
-> * Explore enriched data
-> * Save the queries as a KQL queryset
+> * Get additional historical data
+> * Explore data with KQL and SQL
+> * Create a KQL queryset
+> * Use advanced KQL queries
 > * Create a Power BI report
 > * Clean up resources
 

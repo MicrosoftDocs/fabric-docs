@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB for NoSQL connector overview
-description: This article provideds an overview of the Azure Cosmos DB for NoSQL connector in Microsoft Fabric.
+description: This article provides an overview of the Azure Cosmos DB for NoSQL connector in Microsoft Fabric.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # Azure Cosmos DB for NoSQL connector overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 The Azure Cosmos DB for NoSQL connector is supported in Data Factory in Microsoft Fabric with the following capabilities.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported capabilities
 
@@ -23,7 +21,7 @@ The Azure Cosmos DB for NoSQL connector is supported in Data Factory in Microsof
 | **Copy activity (source/destination)** | None | Key |
 | **Lookup activity** | None | Key |
 
-## Next Steps
+## Next steps
 
 - [How to create an Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md)
 - [How to configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md)

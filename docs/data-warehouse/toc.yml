@@ -1,6 +1,4 @@
 items:
-- name: Microsoft Fabric documentation
-  href: ../get-started/microsoft-fabric-overview.md
 - name: Data Warehousing documentation
   href: index.yml
 - name: Overview
