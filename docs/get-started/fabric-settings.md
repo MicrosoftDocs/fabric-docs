@@ -26,10 +26,10 @@ Short description of preferences settings.
 
 | Link| Description|
 |:-----------|:--------------|
-| General||
-| Notifications||
-| Item settings||
-| Developer settings||
+| General| Opens the generate settings page, where you can set the display language for the Fabric interfaces and parts of visuals.|
+| Notifications| Opens the notifications settings page where you can view your subscriptions and alerts. |
+| Item settings| Opens the item settings page, where you can configure per-item settings.|
+| Developer settings|Opens the developer settings page, where you can configure developer mode settings.|
 
 
 ## Resources and extensions settings
@@ -38,11 +38,11 @@ Short description of resources and extensions settings.
 
 | Link| Description|
 |:-----------|:--------------|
-|Manage personal storage||
-|Power BI settings||
-|Manage connections and gateways||
-|Manage embed codes||
-|Azure Analysis Services migrations||
+|Manage personal storage|Opens the personal storage management page, where you can see details about the data items you own. |
+|Power BI settings| Opens the Power BI settings page, where you can get to the settings pages for the Power BI dashboards, datasets, workbooks, and reports that are in your *my workspace*. |
+|Manage connections and gateways| Opens page where you can manage connections, on-premises data gateways, and virtual networks data gateways. |
+|Manage embed codes| Opens a pate where you can manage [embed codes](/power-bi/collaborate-share/service-publish-to-web) you have created. |
+|Azure Analysis Services migrations| Opens up a page where you can [migrate your Azure Analysis Services datasets to Power BI Premium](/power-bi/enterprise/aas-pbi-migration-overview).  |
 
 ## Governance and insights settings
 
@@ -50,8 +50,8 @@ Short description of governance and insights settings.
 
 | Link| Description|
 |:-----------|:--------------|
-|[Admin portal](../admin/admin-center.md)||
-|[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)||
+|Admin portal | Opens the Fabric admin portal where admins perform various management tasks and configure Fabric tenant settings. For more information, see [What is the admin portal?](../admin/admin-center.md)|
+|[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)| Opens the Microsoft Purview hub where you can view Purview insights about your organization's sensitive data. The Microsoft Purview hub also provides links to Purview governance and compliance capabilites and as links to documentation to help you get started with Microsoft Purview governance and compliance in Fabric. |
 
 ## Next steps
 
