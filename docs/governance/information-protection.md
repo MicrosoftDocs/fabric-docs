@@ -111,6 +111,8 @@ Currently supported for Power BI items in supported export paths. Currently no o
 
 ### Apply labeling to the data in your tenant
 
+The following are steps you can take using Fabric's information protection capabilities to achieve maximum sensitivity label coverage in your tenant.
+
 * Define the users who will be allowed to apply sensitivity labels. [Set up information protection in Fabric](../admin/information-protection-setup.md)
 
 * Define a default label policy that will cause a default label to be applied to an item when it is created or edited if no label is otherwise applied. That way no item can be saved without a label. [Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy).
