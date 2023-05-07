@@ -15,10 +15,10 @@ A conflict occurs when changes are made *to the same item* in both the workspace
 
 :::image type="content" source="./media/conflict-resolution/conflict-status-workspace.png" alt-text="Screenshot of a report with a git status that says conflict.":::
 
-You have two options:
+There are two ways to resolve a conflict:
 
-- Revert either the workspace or the git repository to a previous synced state or
-- Resolve the conflict in git.
+- [Revert](#revert-to-a-previous-synced-state) either the workspace or the git repository to a previous synced state.
+- [Resolve](#resolve-conflict-in-git) the conflict in git.
 
 ## Revert to a previous synced state
 
@@ -38,6 +38,8 @@ If you made numerous changes and don’t want to revert to a previous state, you
 1. From the **Source control** pane, check out a new branch using the last synced branch ID shown on bottom of screen
 
    :::image type="content" source="./media/conflict-resolution/checkout-new-branch.png" alt-text="Screenshot showing how to check out a new branch from the source control pane by selecting the down arrow.":::
+
+   :::image type="content" source="./media/conflict-resolution/sync-info.png" alt-text="Screenshot of branch ID information shown on bottom of the screen.":::
 
    This step creates a new branch from the conflicted branch using the last synced git state, before changes were made that conflict with your changes. You can see your changes in the **Source control** pane, but there is nothing to update from the git branch.
 
