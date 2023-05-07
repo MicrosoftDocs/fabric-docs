@@ -7,10 +7,10 @@ items:
     href: governance-compliance-overview.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Set up information protection
+    href: ../admin/information-protection-setup.md
+  - name: Set up item certification
+    href: ../endorsement-setup.md
 - name: Microsoft Purview
   items:
   - name: Microsoft Purview & Fabric
