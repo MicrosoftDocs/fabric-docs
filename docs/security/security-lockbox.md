@@ -100,11 +100,8 @@ Customer Lockbox requests aren't triggered in the following engineering support 
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Microsoft Purview Customer Lockbox](/microsoft-365/compliance/customer-lockbox-requests)
+* [Microsoft Purview Customer Lockbox](/microsoft-365/compliance/customer-lockbox-requests)
 
->[!div class="nextstepaction"]
->[Microsoft 365 guidance for security & compliance](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#microsoft-purview-customer-lockbox)
+* [Microsoft 365 guidance for security & compliance](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#microsoft-purview-customer-lockbox)
 
->[!div class="nextstepaction"]
->[Security overview](security-overview.md)
+* [Security overview](security-overview.md)
