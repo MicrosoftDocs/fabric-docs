@@ -33,7 +33,7 @@ landingContent:
         links:
           - text: Create a KQL Database
             url: create-database.md
-          - text: Create a table
+          - text: Create an empty table
             url: create-empty-table.md
 
 # Card 
