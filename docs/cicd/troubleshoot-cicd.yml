@@ -78,23 +78,22 @@ sections:
       - question: |
           What licenses are needed to work with lifecycle management?
         answer: |
-          To use the lifecycle management features, you need to have one of the following licenses:
+ 
+          To use the lifecycle management features, you need one of the following licenses:
+          
+          * An [organizational license](../enterprise/licenses.md#organizational-licenses) 
           
           * A [Pro license](../enterprise/licenses.md#individual-licenses), with a workspace that resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
-          
-          * [Capacity license](../enterprise/licenses.md#organizational-licenses).
-          
-          For more information on obtaining a license, see [Fabric licenses](../enterprise/licenses-buy.md).
+              
+          For more information on obtaining a license, see [Fabric licenses](../enterprise/licenses.md).
           
       - question: |
           What type of capacity can I assign to a workspace in a pipeline?
         answer: |
           All workspaces in a deployment pipeline must reside within a capacity for the pipeline to be functional. However, you can use different capacities for different workspaces in a pipeline. You can also use different capacity types for different workspaces in the same pipeline.
           
-          For development and testing, you can use an A or EM capacity alongside a Pro Fabric account for each user. You can also use a PPU for each user in the development and test stages.
-          
-          For production workspaces, you need a P capacity. If you're an ISV distributing content through embedded applications, you can also use A or EM capacities for production. PPUs can also be used for production workspaces.
-          
+          For information on capacity types, see [Capacity and SKUs](../enterprise/Capacity and SKUs.md#capacity-and-skus).
+
           >[!NOTE]
           >When you create a workspace with a PPU, only other PPU users can able to access the workspace and consume its content.
           
@@ -118,18 +117,83 @@ sections:
           :::image type="content" source="./media/troubleshoot-cicd/no-source.png" alt-text="Screenshot of source control icon without a number.":::
 
       - question: |
-          Why did I get a **Something went wrong** error when I tried to connect?
+          Connect failure: Why did I get a **Something went wrong** error when I tried to connect?
         answer: |
-          If the folder you're trying to connect to has subdirectories, but no Fabric items, the connect will fail. Open the git repository in Azure DevOps and navigate to the git folder defined in the connection. If the git folder contains sub-directories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a sub-directory. If the git folder doesn't contain any item directories, you can't connect to it. Either remove the sub-directories or connect to a different folder that doesn't contain sub-directories.
-
+          
+          Description of problem: After selecting **Connect** in the git integration tab, the **Something went wrong** dialog pops up. In addition, when selecting the source control button, the pane indicates that the you need to sync with the git branch. 
+          
           :::image type="content" source="./media/troubleshoot-cicd/something-went-wrong.png" alt-text="Screenshot of error message when the workspace can't connect.":::
 
-      - question: |
-          Why is it asking me if I want to create a new folder when I connect to a git branch?
-        answer: |
-          If the folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository, you'll be asked if you want to create a new folder. This can happen if you're connecting to a new branch, or if the folder was deleted from the branch. To create a new folder and connect it to the workspace choose **Create and sync**. If you want to connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the git integration tab.
+          :::image type="content" source="./media/troubleshoot-cicd/sync-direction-continue.png" alt-text="Screenshot of error message when the workspace isn't connected to a git branch.":::
 
-          :::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of the create new folder dialog.":::  
+          Solution: If the folder you're trying to connect to has subdirectories, but no Fabric items, the connection will fail. Open the git repository in Azure DevOps and navigate to the git folder defined in the connection. If the git folder contains sub-directories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a sub-directory. If the git folder doesn't contain any item directories, you can't connect to it. Either remove the sub-directories or connect to a different folder that doesn't contain sub-directories.
+
+      - question: |
+          Connect failure: Why is it asking if I want to create a new folder when I connect to a git branch?
+        answer: |
+          Description of problem: After selecting **Connect** in the git integration tab, a dialog pops up indicating an invalid folder path.
+          
+          :::image type="content" source="./media/troubleshoot-cicd/invalid-folder-path.png" alt-text="Screenshot of error message when the workspace can't connect.":::
+
+          Solution: If the folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository, you're asked if you want to create a new folder. This can happen if you're connecting to a new branch, or if the folder was deleted from the branch.  
+          To create a new folder and connect it to the workspace choose **Create and sync**.  
+          To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the git integration tab.
+
+      - question: |
+          Update failure: Why can't I complete an update?
+        answer: |
+          Description of problem: After selecting **Update all** in the **Updates** tab, a dialog pops up indicating failure because the action would break a dependency links.
+
+          :::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when the updating would break dependencies.":::
+
+          Solution: Open the Lineage view to find the item or items that would be deleted from the workspace in the update and are linked to items that won't be deleted from workspace.
+
+          :::image type="content" source="./media/troubleshoot-cicd/lineage-view.png" alt-text="Screenshot of the lineage view.":::
+
+          To resolve the issue, delete the problematic item(s):
+          * If the item isn't supported by Git (for example, Dashboards), delete it manually from the workspace.
+          * If the item is supported by Git (for example, reports), delete it either from Git (if exists) or from the workspace.
+          
+          Select **Update All**.  
+          For more information, see [Manually Update from Git](./git-integration/partial-update.md).
+
+      - question: |
+          Post update failure: Why are the dependencies not pointing to the correct items?
+        answer: |
+          Description of problem: After updating from Git, when looking at the lineage view, the dependencies of some items are not as expected. For example, the proxy model no longer points to the correct model.
+
+          Reason: Git Integration does not support Direct Query and proxy models at this time.
+          
+          Solution: To fix the dependencies, do one of the following:
+
+          * Edit the bim file of the ProxyDataset in the git repository to point to the correct dataset, and then, in the workspace, update from git to receive the change.
+          * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace. : Use "Update Datasource" API to update the connection detail of the proxy model in the workspace.
+
+      - question: |
+          Undo failure: After selecting **Undo**, a dialog pops up indicating failure because dependency can't be found.
+        answer: |
+          Description of problem: The following error appears after an undo action if there is an uncommitted dependency in the **Changes** tab that wasn't selected in the "Undo" action.
+
+          :::image type="content" source="./media/troubleshoot-cicd/dependency-not-found.png" alt-text="Screenshot of error message when undo fails because dependency isn't found.":::
+
+          Solution: Select the all the dependencies of the selected items and try again.
+
+      - question: |
+          Undo failure: After selecting **Undo**, a dialog pops up indicating failure because the action would break a dependency link.
+        answer: |
+          Description of problem: The following error appears after an undo action if the action would break a dependency.
+
+          :::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when undo fails because the action would break a dependency link.":::
+
+          Solution: Open the Lineage view to find the item or items that were selected to be "undone" and are linked to items that aren't selected.
+
+          :::image type="content" source="./media/troubleshoot-cicd/lineage-view.png" alt-text="Screenshot of the lineage view.":::
+
+          To resolve the issue, delete the problematic item(s):
+          * If the item that's not selected isn't supported by Git (for example, Dashboards), delete it manually from the workspace.
+          * If the item that isn't selected is supported by Git (for example, reports), select it as well.
+          
+          Select **Undo**.  
 
   - name: Deployment pipelines  
     questions:

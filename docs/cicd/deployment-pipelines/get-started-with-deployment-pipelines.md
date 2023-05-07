@@ -22,15 +22,11 @@ You can also complete the [Create and manage a Fabric deployment pipeline](/trai
 
 ## Prerequisites
 
-You'll be able to access the deployment pipelines feature, if the following conditions are met:
+To access the deployment pipelines feature, you must meet the following conditions:
 
-* You have one of the following Premium licenses:
+* You have an [Microsoft Fabric license](../../enterprise/licenses.md):
 
-  * You're a [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md), and you belong to an organization that has Premium capacity.
-
-  * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
-
-* You're an admin of a Premium [workspace](../../get-started/create-workspaces.md).
+* You're an admin of a Fabric [workspace](../../get-started/create-workspaces.md).
 
 >[!NOTE]
 > You'll also be able to see the deployment pipelines button, if you previously created a pipeline, or if a pipeline was shared with you.
