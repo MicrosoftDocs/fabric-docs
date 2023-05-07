@@ -12,17 +12,17 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article describes Fabric settings.
+The Fabric settings pane provides links to links to various kinds of settings you can configure. This article shows how to open the Fabric settings pane and describes the kinds of settings you can access from there.
 
-## Open Fabric settings
+## Open the Fabric settings pane
 
-To open Fabric settings, select the gear icon in the Fabric portal header.
+To open the Fabric settings pane, select the gear icon in the Fabric portal header.
 
 :::image type="content" source="./media/fabric-settings/open-fabric-settings-pane.png" alt-text="Screenshot showing how to get the Fabric settings pane.":::
 
-## Preferences
+## Preferences settings
 
-Short description of preferences.
+Short description of preferences settings.
 
 | Link| Description|
 |:-----------|:--------------|
@@ -32,9 +32,9 @@ Short description of preferences.
 | Developer settings||
 
 
-## Resources and extensions
+## Resources and extensions settings
 
-Short description of resources and extensions.
+Short description of resources and extensions settings.
 
 | Link| Description|
 |:-----------|:--------------|
@@ -44,9 +44,9 @@ Short description of resources and extensions.
 |Manage embed codes||
 |Azure Analysis Services migrations||
 
-## Governance and insights
+## Governance and insights settings
 
-Short description of governance and insights.
+Short description of governance and insights settings.
 
 | Link| Description|
 |:-----------|:--------------|
