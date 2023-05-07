@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The Fabric settings pane provides links to links to various kinds of settings you can configure. This article shows how to open the Fabric settings pane and describes the kinds of settings you can access from there.
+The Fabric settings pane provides links to various kinds of settings you can configure. This article shows how to open the Fabric settings pane and describes the kinds of settings you can access from there.
 
 ## Open the Fabric settings pane
 
