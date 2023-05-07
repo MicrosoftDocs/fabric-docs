@@ -1,3 +1,5 @@
+### YamlMime:Landing
+
 title: Enterprise documentation
 summary: Microsoft Fabric enterprise documentation
 
@@ -20,7 +22,7 @@ landingContent:
         links:
           - text: Microsoft Fabric licenses
             url: licenses.md
-      - linkListType: how-to
+      - linkListType: how-to-guide
         links:
           - text: Buy a Microsoft Fabric license
             url: docs\enterprise\licenses-buy.md

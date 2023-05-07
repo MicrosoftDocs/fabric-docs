@@ -1,3 +1,5 @@
+### YamlMime:Landing
+
 title: Microsoft Fabric documentation for admins# < 60 chars
 summary: Documentation of Microsoft Fabric admins
 
@@ -48,7 +50,7 @@ landingContent:
 
   - title: Admin monitoring workspace
     linkLists:
-      - linkListType: Overview
+      - linkListType: overview
         links:
           - text: What is the admin monitoring workspace?
             url: admin-monitoring.md
@@ -57,7 +59,7 @@ landingContent:
 
   - title: Tools and settings
     linkLists:
-      - linkListType: Overview
+      - linkListType: overview
         links: 
           - text: Tenant admin settings for git integration
             url: admin-settings-git-integration.md              
