@@ -57,6 +57,7 @@ To get data from a blob container, see [Get data from a blob container](get-data
 
 ## Next steps
 
+
 * To create an empty table, see [Create an empty table](create-empty-table.md)
-* To manage your database, see [Manage data](database-management.md)
+* To manage your database, see [Manage data](data-management.md)
 * To create, store, and export queries, see [Query data in the KQL Queryset](kusto-query-set.md)

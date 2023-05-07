@@ -29,10 +29,10 @@ items:
 - name: Create and manage entities
   items:
   - name: Data management
-    href: database-management.md
+    href: data-management.md
   - name: Databases
     items:
-    - name: Create a database
+    - name: Create a KQL database
       href: create-database.md
     - name: One logical copy
       href: onelake-mirroring.md
