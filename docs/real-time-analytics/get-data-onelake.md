@@ -1,5 +1,5 @@
 ---
-title: Get data from OneLake into a KQL database in Real-Time Analytics
+title: Get data from OneLake in Real-Time Analytics
 description: Learn how to get data from OneLake into a KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
