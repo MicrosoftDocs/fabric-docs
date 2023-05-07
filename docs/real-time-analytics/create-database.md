@@ -1,6 +1,6 @@
 ---
-title: Create a KQL Database in Real-Time Analytics
-description: Learn how to create a KQL Database.
+title: Create a KQL database in Real-Time Analytics
+description: Learn how to create a KQL database in Real-Time Analytics in Microsoft Fabric
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -11,11 +11,11 @@ ms.search.form: product-kusto
 
 # Create a database
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In Real-Time Analytics, you'll interact with your data in the context of databases. A single workspace can hold multiple databases, and each database can hold multiple tables.
 
-In this article, you learn you how to create a new database. Once your database has data, you can proceed to query your data using Kusto Query Language in a KQL Queryset.
+In this article, you learn you how to create a new database. Once your database has data, you can proceed to query your data using Kusto Query Language in a KQL queryset.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
@@ -57,7 +57,7 @@ The main page of your database shows an overview of the contents in your databas
 | | Original size | Total size of uncompressed data.|
 | | Compression ratio | Compression ratio of the data.|
 |**Top tables**|  
-| | Name | Lists the names of tables in your database. You can select a table to see more information.|
+| | Name | Lists the names of tables in your database. Select a table to see more information.|
 | | Size | Database size in megabytes. The tables are listed in a descending order according to the data size.|
 |**Most active users**|
 | | Name | User name of most active users in the database.|
