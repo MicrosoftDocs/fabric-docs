@@ -46,7 +46,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Manage workspaces
-            url: docs\admin\admin-portal-workspaces.md
+            url: admin-portal-workspaces.md
 
   - title: Admin monitoring workspace
     linkLists:
