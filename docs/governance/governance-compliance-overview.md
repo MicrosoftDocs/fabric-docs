@@ -36,8 +36,8 @@ For more information, see [Lineage](./lineage.md).
 
 ## Microsoft Purview hub
 
-For more information, see [Microsoft Purview hub](./microsoft-purview-hub.md).
+For more information, see [Microsoft Purview hub](./microsoft-purview-fabric.md).
 
 ## Next steps
 
-* [What is the admin portal?](admin-center.md)
+* [What is the admin portal?](..admin/admin-center.md)
