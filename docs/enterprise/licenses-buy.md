@@ -4,10 +4,13 @@ description: Learn how to buy a Microsoft Fabric license.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
 # Buy a Microsoft Fabric license
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article describes the differences between the [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) capacities, and shows you how to buy an Azure SKU for your organization. The article is aimed at admins who want to buy Microsoft Fabric for their organization.
 
@@ -67,7 +70,7 @@ To buy an Azure SKU you need to be an owner or a contributor of an [Azure subscr
 
 ## Microsoft 365 SKUs
 
-Microsoft 365 SKUs, also known as EM or P SKUs, are legacy SKUs inherited from Power BI. You can only renew a Microsoft 365 SKU if you already have a Power BI subscription, and Microsoft Fabric is [enabled](../admin/admin-switch.md) on top of your Power BI subscription.
+Microsoft 365 SKUs, also known as EM or P SKUs, are legacy SKUs inherited from Power BI. You can only renew a Microsoft 365 SKU if you already have a Power BI subscription, and Microsoft Fabric is [enabled](../admin/admin-fabric-switch.md) on top of your Power BI subscription.
 
 ## Next steps
 

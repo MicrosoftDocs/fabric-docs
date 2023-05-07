@@ -14,7 +14,7 @@ As a final step in the tutorial, clean up your resources. This article shows how
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Prerequisite
+## Prerequisites
 
 * [Create the Power BI data model and a report](tutorial-lakehouse-build-report.md)
 

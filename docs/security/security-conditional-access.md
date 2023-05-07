@@ -9,7 +9,7 @@ ms.date: 05/23/2023
 
 # Conditional access in Fabric
 
-The Conditional Access feature in Azure Active Directory (Azure AD) offers one of several ways that you can use to secure apps in your tenant. Conditional Access enables enterprise customers to protect apps in a multitude of ways including:
+The Conditional Access feature in Azure Active Directory (Azure AD) offers a number ways enterprise customers can secure apps in their tenants, including:
 
 - Multi-factor authentication
 - Allowing only Intune enrolled devices to access specific services

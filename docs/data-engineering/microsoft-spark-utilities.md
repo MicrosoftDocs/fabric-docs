@@ -10,9 +10,9 @@ ms.date: 05/23/2023
 
 # Use the Microsoft Apache Spark utilities for common file management tasks
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can useMSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. MSSparkUtils are available in PySpark (Python) Scala, SparkR notebooks and [!INCLUDE [product-name](../includes/product-name.md)] pipelines.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## File system utilities
 

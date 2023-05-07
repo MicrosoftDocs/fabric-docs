@@ -1,6 +1,6 @@
 ---
 title: Use Tidyverse
-description: Learn how to use Tidyverse, a collection of R packages designed for data science.
+description: How to use Tidyverse, a collection of R packages designed for data science.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu

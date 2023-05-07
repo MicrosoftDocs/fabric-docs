@@ -7,7 +7,7 @@ ms.date: 05/23/2023
 ms.author: jeluitwi
 ---
 
-# Quickstart: Use a dataflow in a pipeline
+# Use a dataflow in a pipeline
 
 In this tutorial, you build a data pipeline to move OData from a Northwind source to a lakehouse destination and send an email notification when the pipeline is completed.
 
@@ -19,7 +19,7 @@ To get started, you must complete the following prerequisites:
 
 - Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../get-started/create-workspaces.md) that isn’t the default My Workspace.
 
-## Create a lakehouse
+## Create a Lakehouse
 
 To start, you first need to create a lakehouse. A lakehouse is a data lake that is optimized for analytics. In this tutorial, you create a lakehouse that's used as a destination for the dataflow.
 
@@ -40,9 +40,9 @@ To start, you first need to create a lakehouse. A lakehouse is a data lake that 
 
 Now you've created a lakehouse and you can now set up the dataflow.
 
-## Create a Dataflow Gen2
+## Create a dataflow
 
-A Dataflow Gen2 is a reusable data transformation that can be used in a pipeline. In this tutorial, you create a dataflow that gets data from an OData source and writes the data to a lakehouse destination.  
+A dataflow is a reusable data transformation that can be used in a pipeline. In this tutorial, you create a dataflow that gets data from an OData source and writes the data to a lakehouse destination.  
 
 1. Switch to the **Data Factory** experience.
 
@@ -154,4 +154,14 @@ You've now created a data pipeline that runs on a schedule, refreshes the data i
 
 ## Next steps
 
-[Monitor pipeline runs](monitor-pipeline-runs.md)
+This sample shows you how to use a dataflow in a pipeline with Data Factory in Microsoft Fabric.  You learned how to:
+
+> [!div class="checklist"]
+> - Create a dataflow.
+> - Create a pipeline invoking your dataflow.
+> - Run and schedule your data pipeline.
+
+Next, advance to learn more about monitoring your pipeline runs.
+
+> [!div class="nextstepaction"]
+> [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
