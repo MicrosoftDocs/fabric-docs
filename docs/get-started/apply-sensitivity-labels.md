@@ -12,21 +12,28 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Sensitivity labels from Microsoft Purview Information Protection on your reports, dashboards, datasets, dataflows, and .pbix files can guard your sensitive content against unauthorized data access and leakage. Labeling your data correctly with sensitivity labels ensures that only authorized people can access your data. This article shows you how to apply sensitivity labels in the Power BI service and in Power BI Desktop.
+Sensitivity labels from Microsoft Purview Information Protection on items can guard your sensitive content against unauthorized data access and leakage. They are a key component in helping your organization meet its governance and compliance requirements. Labeling your data correctly with sensitivity labels ensures that only authorized people can access your data. This article shows you how to apply sensitivity labels to your Microsoft Fabric items.
 
-For more information about sensitivity labels in Power BI, see Sensitivity labels in Power BI.
+> [!NOTE]
+> For information about applying sensitivity labels in Power BI Desktop, see [Apply sensitivity labels in Power BI Desktop](/power-bi/enterprise/service-security-apply-data-sensitivity-labels#apply-sensitivity-labels-in-power-bi-desktop).
 
 ## Prerequisites
 
-Requirements needed to apply sensitivity labels in the Power BI service:
+Requirements needed to apply sensitivity labels to Fabric items:
 
-You must have a Power BI Pro or Premium Per User (PPU) license and edit permissions on the content you wish to label.
-Sensitivity labels must be enabled for your organization. Contact your Power BI admin if you aren't sure about this.
-You must belong to a security group that has permissions to apply sensitivity labels, as described in Enable sensitivity labels in Power BI.
-All licensing and other requirements must have been met.
-When data protection is enabled on your tenant, sensitivity labels appear in the sensitivity column in the list view of dashboards, reports, datasets, and dataflows.
+* Power BI Pro or Premium Per User (PPU) license
+* Edit permissions on the item you wish to label.
 
-For the list of sensitivity label limitations in Power BI, see Sensitivity labels in Power BI.
+> [!NOTE]
+> [If you can't apply a sensitivity label, or if the sensitivity label is greyed out in the sensitivity label menu, you may not have permissions to use the label. Contact your organizations tech support.]
+
+Sensitivity flyout menu from the item header
+
+:::image type="content" source="./media/apply-sensitivity-labels/apply-sensitivity-label-flyout.png" alt-text="Screenshot of the sensitivity label flyout for items in Fabric.":::
+
+Opern the item's settings side pane and choose **Sensitivity label**:
+
+:::image type="content" source="./media/apply-sensitivity-labels/apply-sensitivity-label-side-pane.png" alt-text="Screenshot of the sensitivity label side pane for items in Fabric.":::
 
 ## Next steps
 
