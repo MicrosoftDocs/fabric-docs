@@ -28,7 +28,7 @@ The following table summarizes the information protection capabilities in Fabric
 |Capability|Scenario|Public preview support|
 |:----------|:---------|:----------|
 |[Manual labeling](#manual-labeling)| Users can manually apply sensitive labels to Fabric items|Supported for all Fabric items.|
-|[Default labeling](#default-labeling)| When a item is created or edited, it gets a default sensitivity label unless a label is applied through other means.|Supported for all Fabric items, with limitations. |
+|[Default labeling](#default-labeling)| When an item is created or edited, it gets a default sensitivity label unless a label is applied through other means.|Supported for all Fabric items, with limitations. |
 |[Mandatory labeling](#mandatory-labeling)| Users can't save items unless a sensitivity label is applied to the item. This means they can't remove a label either.| Currently fully supported for Power BI items only. Supported for some non-Power BI Fabric items, with limitations. |
 |[Programmatic labeling](#programmatic-labeling)| Sensitivity labels can be added, changed, or deleted programmatically via Power BI admin REST APIs.|Supported for all Fabric items.|
 |[Downstream inheritance](#downstream-inheritance)| When a sensitivity label is applied to an item, the label filters down to all dependent items. |Supported for all Fabric items, with limitations. |
@@ -45,11 +45,11 @@ When you enable sensitivity labels on your tenant, you specify which users can a
 
 ### Default labeling
 
-As part of the strategy to apply sensitivity labels to all of your organization's Fabric items, you can define a default label policy in the Microsoft Purview compliance center. With a default label policy, when a item is created or edited, it gets a default sensitivity label unless a label is applied through other means. Default labeling is fully supported in Power BI and is described in [Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy). In Fabric, there are some limitations.
+As part of the strategy to apply sensitivity labels to all of your organization's Fabric items, you can define a default label policy in the Microsoft Purview compliance center. With a default label policy, when an item is created or edited, it gets a default sensitivity label unless a label is applied through other means. Default labeling is fully supported in Power BI and is described in [Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy). In Fabric, there are some limitations.
 
-* When a non-Power BI Fabric item is created, if there is a clear, substantive create dialog, the default sensitivity label will be applied to the item if the user does not choose a label. If the item is created in a process where there is no clear create dialog, the default label **won't** be applied.
+* When a non-Power BI Fabric item is created, if there's a clear, substantive create dialog, the default sensitivity label will be applied to the item if the user doesn't choose a label. If the item is created in a process where there's no clear create dialog, the default label **won't** be applied.
 
-* When a Fabric item that has no label is updated, if the item is a Power BI item, a change to any of its attributes will cause the default label to be applied if the user does not apply a label. If the item is a non-Power BI Fabric item, only changes to certain attributes, such as name, description, etc., will cause the default label to be applied. And this is only if the change is made in the item's flyout menu. Default labeling in the case of changes made in the workload interface is not currently supported.
+* When a Fabric item that has no label is updated, if the item is a Power BI item, a change to any of its attributes will cause the default label to be applied if the user doesn't apply a label. If the item is a non-Power BI Fabric item, only changes to certain attributes, such as name, description, etc., will cause the default label to be applied. And this is only if the change is made in the item's flyout menu. Default labeling in the case of changes made in the workload interface isn't currently supported.
 
 ### Mandatory labeling
 
@@ -76,7 +76,7 @@ Not supported:
 
 * Power BI item to Fabric item
 
-Auto-generated items from Lakehouse or Data Warehouse get their label from the Lakehouse or Data Data Warehouse. They don't inherit the label from items further upstream.
+Auto-generated items from Lakehouse or Data Warehouse get their label from the Lakehouse or Data Warehouse. They don't inherit the label from items further upstream.
 
 [Sensitivity label downstream inheritance](/power-bi/enterprise/service-security-sensitivity-label-downstream-inheritance)
 
@@ -115,7 +115,7 @@ The following are steps you can take using Fabric's information protection capab
 
 * Define the users who will be allowed to apply sensitivity labels. [Set up information protection in Fabric](../admin/information-protection-setup.md)
 
-* Define a default label policy that will cause a default label to be applied to an item when it is created or edited if no label is otherwise applied. That way no item can be saved without a label. [Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy).
+* Define a default label policy that will cause a default label to be applied to an item when it's created or edited if no label is otherwise applied. That way no item can be saved without a label. [Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy).
 
 * Define a mandatory label policy that will require users to apply a label when they try to save an unlabeled item. A mandatory label policy also ensures that no item can be saved without a label. [Mandatory label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-mandatory-label-policy).
 
@@ -123,7 +123,7 @@ The following are steps you can take using Fabric's information protection capab
 
 * Programmatically apply labels to unlabeled items. Using [Power BI admin REST APIs](/power-bi/enterprise/service-security-sensitivity-label-inheritance-set-remove-api) you can label apply labels to entire sections of your data estate to get started governing and protecting your data with Microsoft Purview governance and compliance.
 
-* Allow sensitivity lables to be inherited from data sources. [Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources). 
+* Allow sensitivity labels to be inherited from data sources. [Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources). 
 
 ### Monitor your sensitive data
 
