@@ -40,4 +40,4 @@ For more information, see [Microsoft Purview hub](./microsoft-purview-fabric.md)
 
 ## Next steps
 
-* [What is the admin portal?](..admin/admin-center.md)
+* [What is the admin portal?](../admin/admin-center.md)

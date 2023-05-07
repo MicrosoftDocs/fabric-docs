@@ -10,7 +10,7 @@ items:
   - name: Set up information protection
     href: ../admin/information-protection-setup.md
   - name: Set up item certification
-    href: ../endorsement-setup.md
+    href: ../admin/endorsement-setup.md
 - name: Microsoft Purview
   items:
   - name: Microsoft Purview & Fabric
