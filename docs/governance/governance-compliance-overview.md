@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The articles describes Microsoft Fabric's governance and compliance capabilities that build on Microsoft Purview.
+This article describes Microsoft Fabric's governance and compliance capabilities that build on Microsoft Purview.
 
 ## Information protection
 
