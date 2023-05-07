@@ -23,7 +23,7 @@ Currently it's possible to endorse all Fabric items except Power BI dashboards.
 
 This article describes how to [promote items](#promote-items), how to [certify items](#certify-items) if you're an authorized reviewer, and how to [request certification](#request-item-certification) if you're not.
 
-See the [endorsement overview](endorsement-overview.md) to learn more about endorsement.
+See the [endorsement overview](../governance/endorsement-overview.md) to learn more about endorsement.
 
 ## Promote items
 
@@ -72,6 +72,6 @@ If you would like to certify your item but aren't authorized to do so, follow th
 
 ## Next steps
 
-* [Read more about endorsement](endorsement-overview.md)
+* [Read more about endorsement](../governance/endorsement-overview.md)
 * [Enable content certification](../admin/endorsement-setup.md) (Power BI admins)
 * [Read more about dataset discoverability](/power-bi/collaborate-share/service-discovery)
