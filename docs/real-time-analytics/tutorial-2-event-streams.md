@@ -1,5 +1,5 @@
 ---
-title: "Synapse Real-Time Analytics tutorial part 2: Get data with Eventstream"
+title: "Real-Time Analytics tutorial part 2: Get data with Eventstream"
 description: Part 2 of the Real-Time Analytics tutorial in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust

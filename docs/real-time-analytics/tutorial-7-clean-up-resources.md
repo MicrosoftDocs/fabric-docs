@@ -1,5 +1,5 @@
 ---
-title: "Synapse Real-Time Analytics tutorial part 7: Clean up resources"
+title: "Real-Time Analytics tutorial part 7: Clean up resources"
 description: Part 7 of the Real-Time Analytics tutorial in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
