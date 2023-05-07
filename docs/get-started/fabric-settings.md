@@ -16,7 +16,9 @@ This article describes Fabric settings.
 
 ## Open Fabric settings
 
-To open Fabric settings, select the gear icon in the portal header. Placeholder text.
+To open Fabric settings, select the gear icon in the Fabric portal header.
+
+:::image type="content" source="./media/fabric-settings/open-fabric-settings-pane.png" alt-text="Screenshot showing how to get the Fabric settings pane.":::
 
 ## Next steps
 
