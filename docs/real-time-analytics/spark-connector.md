@@ -46,7 +46,7 @@ Before importing the NYC GreenTaxi notebook, create a database.
 
 We've created a sample notebook that takes you through all the necessary steps for loading data into your database using the Spark connector.
 
-1. Open the Fabric samples repository on GitHub to download the [NYC GreenTaxi KQL notebook.](https://github.com/microsoft/fabric-samples/blob/main/samples/real-time-analytics/NYC_GreenTaxi_KQL_notebook.ipynb).
+1. Open the Fabric samples repository on GitHub to download the [NYC GreenTaxi KQL notebook.](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/NYC_GreenTaxi_KQL_notebook.ipynb).
 
     :::image type="content" source="media/spark-connector/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC GreenTaxi notebook. The option titled Raw is highlighted." lightbox="media/spark-connector/raw-notebook.png":::
 
@@ -87,7 +87,7 @@ Select the **play** button to run the following cells, or select the cell and pr
 
     :::image type="content" source="media/spark-connector/code-cell-1.png" alt-text="Screenshot of first code cell showing storage access information." lightbox="media/spark-connector/code-cell-1.png":::
 
-1. In **KustoURI**, paste the **Query URI** that you copied earlier instead of the placeholder text.
+1. In **KustoURI**, paste the **Query URI** that you [copied earlier](#1--create-a-kql-database) instead of the placeholder text.
 1. Change the placeholder database name to *nycGreenTaxi*.
 1. Change the placeholder table name to *GreenTaxiData*.
 
@@ -111,7 +111,7 @@ Run the remaining two cells sequentially to query data from your table. The resu
 
 Clean up the items created by navigating to the workspace in which they were created.
 
-1. In your workspace, hover over the notebook you want to delete, select the **More menu** > **Delete**.
+1. In your workspace, hover over the notebook you want to delete, select the **More menu** [...] > **Delete**.
 
     :::image type="content" source="media/spark-connector/clean-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC GreenTaxi notebook. The option titled Delete is highlighted."  lightbox="media/spark-connector/clean-resources-expanded.png":::
 

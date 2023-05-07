@@ -1,6 +1,6 @@
 ---
 title: Data management in Real-Time Analytics
-description: Learn how to manage your data in a KQL Database.
+description: Learn how to manage your data in Real-Time Analytics in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -10,8 +10,6 @@ ms.search.form: product-kusto
 ---
 
 # Data management
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Synapse Real-Time Analytics offers a range of options for managing your data, both on a database and table level. You can manage your data either through the UI of your KQL database or by using management commands. Management commands, also known as control commands, are requests to the service to retrieve information that isn't necessarily data in the database tables, or requests to modify the service state.
 
@@ -25,17 +23,19 @@ You can manage your data using the UI in the following ways:
 * Create a [Table update policy](#table-update-policy)
 * Create [Stored functions](#stored-functions)
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 ## Database management
 
 ### Data retention policy
 
-To change the data retention policy, select **Manage** on the **Home** tab of your database. And then, select **Data retention policy** to modify it. Then, enter a time period and select **Done**. By default, your data is stored for 36,500 days.
+To change the data retention policy, browse to your KQL database and select the **Manage** tab. Then, select **Data retention policy**. Enter a time period and select **Done**. By default, your data is stored for 36,500 days.
 
 For more information, see [Retention policy](/azure/data-explorer/kusto/management/retentionpolicy?context=/fabric/context/context).  
 
 ### Data copy to OneLake
 
-To expose the data in your KQL database to all of [!INCLUDE [product-name](../includes/product-name.md)]'s experiences, activate data copy and create a OneLake shortcut. 
+To expose the data in your KQL database to all of [!INCLUDE [product-name](../includes/product-name.md)] experiences, activate data copy and create a OneLake shortcut.
 
 For more information, see [One logical copy](onelake-mirroring.md).
 
