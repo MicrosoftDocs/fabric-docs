@@ -23,11 +23,32 @@ To open Fabric settings, select the gear icon in the Fabric portal header.
 ## Preferences
 
 
+|||
+|:-----------|:--------------|
+| General||
+| Notifications||
+| Item settings||
+| Developer settings||
+
 
 ## Resources and extensions
 
+|||
+|:-----------|:--------------|
+|Manage personal storage||
+|Power BI settings||
+|Manage connections and gateways||
+|Manage embed codes||
+|Azure Analysis Services migrations||
+
 ## Governance and insights
+
+|||
+|:-----------|:--------------|
+|[Admin portal](..admin/admin-center.md)||
+|[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)||
 
 ## Next steps
 
-* [Admin overview](../admin/admin-overview.md)
+* [What is Fabric](../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric admin?](../admin/admin-overview)
