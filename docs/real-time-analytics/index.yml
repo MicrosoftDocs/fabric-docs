@@ -57,7 +57,7 @@ landingContent:
         links:
           - text: Query data in the KQL Queryset
             url:  kusto-query-set.md
-          - text: Sample queries
+          - text: Use sample queries
             url: query-table.md
           - text: Use a notebook with Kqlmagic to query a KQL database
             url: jupyter-notebook.md
