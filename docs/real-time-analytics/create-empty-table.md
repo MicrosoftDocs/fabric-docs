@@ -19,7 +19,7 @@ You can create an empty table without a data source to use as a testing environm
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [KQL database](create-database.md)
 
 ## Create an empty table

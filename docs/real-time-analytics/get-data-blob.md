@@ -17,7 +17,7 @@ In this article, you'll learn you how to get data from an Azure blob or blob con
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [KQL Database](create-database.md)
 * An Azure blob or blob container with data
 

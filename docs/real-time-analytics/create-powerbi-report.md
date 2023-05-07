@@ -19,7 +19,7 @@ To use multiple tables to build your Power BI report, see [Use data from KQL Dat
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [KQL Database](create-database.md)
 * [KQL Queryset](kusto-query-set.md).
 

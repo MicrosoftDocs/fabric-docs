@@ -19,7 +19,7 @@ To create reports with Power BI service using a KQL Queryset, see [Create a Powe
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [KQL database](create-database.md) with data.
 * [Power BI Desktop](https://powerbi.microsoft.com/get-started).
 

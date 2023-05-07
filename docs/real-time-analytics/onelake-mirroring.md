@@ -28,7 +28,7 @@ To query referenced data from OneLake in your KQL Database, see [Create a OneLak
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [KQL database](create-database.md) with data
 
 

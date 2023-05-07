@@ -20,7 +20,7 @@ The KQL Queryset uses the Kusto Query language for query creation, and also supp
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL Database](create-database.md) with a populated data table
 
 ## Create a new query set
