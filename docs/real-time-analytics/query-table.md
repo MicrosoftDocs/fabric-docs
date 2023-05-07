@@ -20,7 +20,7 @@ For more information on the Kusto Query Language, see [Kusto Query Language (KQL
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with data
 
 ## Query table

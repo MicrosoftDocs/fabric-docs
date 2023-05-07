@@ -18,7 +18,7 @@ You can create an empty table without a data source to use as a testing environm
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [KQL database](create-database.md)
 
 ## Create an empty table
