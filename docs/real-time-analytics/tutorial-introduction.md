@@ -36,7 +36,7 @@ Specifically, in this tutorial, you learn how to:
 
 ## Prerequisites
 
-To successfully complete this tutorial, you need a [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md).
+To successfully complete this tutorial, you need a A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric enabled [capacity](../enterprise/licenses.md#capacity).
 
 ## Next steps
 

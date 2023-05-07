@@ -22,7 +22,7 @@ In the second step, you'll connect this [!INCLUDE [product-name](../includes/pro
 
 * An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/free/)
 * [An Event Hubs instance](/azure/event-hubs/event-hubs-create)
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric enabled [capacity](../enterprise/licenses.md#capacity)
 * [KQL Database](create-database.md)
 
 ## Set a shared access policy on your event hub
