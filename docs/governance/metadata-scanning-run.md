@@ -59,7 +59,7 @@ Divide this list into chunks of up to 100 workspaces, and get the data for these
 
 ## Licensing
 
-Metadata scanning requires no special license. It works for all of your tenant metadata, including that of artifacts located in non-Premium workspaces. [DO WE NEED THIS CONSIDERATION FOR FABRIC?]
+Metadata scanning requires no special license. It works for all of your tenant's metadata, including that of artifacts located in non-Premium workspaces.
 
 ## Next steps
 

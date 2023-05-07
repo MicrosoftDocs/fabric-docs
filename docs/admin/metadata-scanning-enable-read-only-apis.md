@@ -20,7 +20,8 @@ To enable service principal authentication for Power BI read-only APIs, follow t
 1. [Create an Azure AD app](/azure/active-directory/develop/howto-create-service-principal-portal). You can skip this step if you already have an Azure AD app you want to use. Take note of the App-Id for later steps.
 
     >[!IMPORTANT]
-    > Make sure the app you use doesn't have any admin-consent required permissions for Power BI set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions). [POWER BI?]
+    > Make sure the app you use doesn't have any admin-consent required permissions for Power BI set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions).
+    
 1. Create a new **Security Group** in Azure Active Directory. [Read more about how to create a basic group and add members using Azure Active Directory](/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal). You can skip this step if you already have a security group you would like to use.
     Make sure to select **Security** as the Group type.
 
@@ -31,18 +32,18 @@ To enable service principal authentication for Power BI read-only APIs, follow t
     1. Select **Add Members**.
 
     > [!IMPORTANT]
-    > Make sure the app doesn't have any admin-consent required permissions for Power BI set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions). [POWER BI?]
+    > Make sure the app doesn't have any admin-consent required permissions for Power BI set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions).
 
 4. Enable the Fabric admin settings:
     1. Log in to the Fabric admin portal. You need to be a Fabric admin to see the tenant settings page.
-    1. Under **Admin API settings**, you'll see **Allow service principals to use read-only Power BI admin APIs**. Set the toggle to Enabled, and then select the **Specific security groups** radio button and add the security group you created in Step 2 in the text field that appears below it, as shown in the figure below. [IS THIS STILL EXACTLY AS DESCRIBED?]
+    1. Under **Admin API settings**, you'll see **Allow service principals to use read-only Power BI admin APIs**. Set the toggle to Enabled, and then select the **Specific security groups** radio button and add the security group you created in Step 2 in the text field that appears below it.
 
         :::image type="content" source="media/enable-read-only-apis/allow-service-principals-tenant-setting.png" alt-text="Screenshot of allow service principals tenant setting.":::
 
  5. Start using the read-only admin APIs. See the list of supported APIs below.
 
 >[!IMPORTANT]
->An app using service principal authentication that calls read-only admin APIs **must not** have any admin-consent required permissions for Power BI set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions). [POWER BI?]
+>An app using service principal authentication that calls read-only admin APIs **must not** have any admin-consent required permissions for Power BI set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions).
 
 ## Supported APIs
 

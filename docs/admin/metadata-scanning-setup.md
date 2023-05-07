@@ -38,7 +38,5 @@ To enable these settings, go to **Admin portal > Tenant settings > Admin API set
 
 * [Metadata scanning overview](../governance/metadata-scanning-overview.md)
 * [Enable service principal authentication for read-only admin APIs](./metadata-scanning-enable-read-only-apis.md)
-
 * [Run metadata scanning](../governance/metadata-scanning-run.md)
-
 * [Power BI REST Admin APIs](/rest/api/power-bi/admin)
