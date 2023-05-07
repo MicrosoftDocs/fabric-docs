@@ -24,7 +24,7 @@ Data loss prevention is currently supported for Power BI datasets only. For more
 
 ## Endorsement
 
-For more information, see [Endorsement](./endorsement.md).
+For more information, see [Endorsement](./endorsement-overview.md).
 
 ## Metadata scanning
 
