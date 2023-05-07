@@ -1,6 +1,6 @@
 ---
 title: Use a OneLake shortcut to query data in Real-Time Analytics
-description: Learn how to create a OneLake shortcut to query data from OneLake in your KQL Database.
+description: Learn how to create a OneLake shortcut to query data from OneLake in your KQL database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -11,15 +11,16 @@ ms.search.form: product-kusto
 
 # Use a OneLake shortcut to query data
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files’ store locations. The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
-OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files’ store locations. The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source. For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+In this article, you learn how to create a OneLake shortcut to query data from OneLake in your KQL database.
 
-In this article, you learn how to create a OneLake shortcut to query data from OneLake in your KQL Database.
-
-Use this shortcut when you want to infrequently run queries on historical data without partitioning or indexing the data. If you want to run queries frequently and accelerate performance, import the data directly from OneLake. For direct import, see [Get data from OneLake](get-data-onelake.md).
+> [!NOTE]
+> Use this shortcut when you want to infrequently run queries on historical data without partitioning or indexing the data. If you want to run queries frequently and accelerate performance, import the data directly from OneLake. For direct import, see [Get data from OneLake](get-data-onelake.md).
 
 To access the data in your KQL Database in other [!INCLUDE [product-name](../includes/product-name.md)] experiences, see [One logical copy](onelake-mirroring.md).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
@@ -29,6 +30,7 @@ To access the data in your KQL Database in other [!INCLUDE [product-name](../inc
 
 ## Create shortcut
 
+1. Browse to an existing KQL database.
 1. Select **New** > **OneLake shortcut**.
 
     :::image type="content" source="media/onelake-shortcut/home-tab.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
@@ -45,7 +47,8 @@ To access the data in your KQL Database in other [!INCLUDE [product-name](../inc
 
     :::image type="content" source="media/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted.":::
 
-1. Select **Close** on the **Shortcut creation completed** window that appears, and then refresh your database.
+1. Select **Close**.
+1. Refresh your database.
 
     The shortcut appears under **Shortcuts** in the **Data tree**.
 
@@ -68,4 +71,5 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 
 ## Next steps
 
-[Query data in a KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL Queryset](kusto-query-set.md)
+* [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context)
