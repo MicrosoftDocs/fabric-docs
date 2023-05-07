@@ -54,7 +54,7 @@ ms.search.form: product-kusto
 
 1. Select **New table**,  and enter *nyctaxitrips* as the table name.
 1. Select **Next: Source** to open the **Source tab**.
-1. Review the default values. The data connection name is made from the database name and the Event stream name.
+1. Review the default values. The data connection name is made from the database name and the eventstream name.
 
     :::image type="content" source="media/realtime-analytics-tutorial/source-tab.png" alt-text="Screenshot of source tab for event stream in Real-Time Analytics in Microsoft Fabric.":::
 
