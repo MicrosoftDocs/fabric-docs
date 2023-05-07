@@ -45,13 +45,11 @@ When you enable sensitivity labels on your tenant, you specify which users can a
 
 ### Default labeling
 
-When a item is created or edited, it gets a default sensitivity label unless a label is applied through other means. Default labeling is described in 
+As part of the strategy to apply sensitivity labels to all of your organization's Fabric items, you can define a default label policy in the Microsoft Purview compliance center. With a default label policy, when a item is created or edited, it gets a default sensitivity label unless a label is applied through other means. Default labeling is fully supported in Power BI and is described in [Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy). In Fabric, there are some limitations.
 
-Creation scenario: When there's a clear substantive create dialog. experienceNot
+* When a non-Power BI Fabric item is created, if there is a clear, substantive create dialog, the default sensitivity label will be applied to the item if the user does not choose a label. If the item is created in a process where there is no clear create dialog, the default label **won't** be applied.
 
-Update scenario: If an article doesn’t have an artifact, label gets applied.|Limitations: Power BI – change to any other attributes, will get applied. Fabric – only certain attributes. name, description, etc. And through flyout. workload editing: making a change to an item in the workload interface – not supported currently.
-
-[Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy)
+* When a Fabric item that has no label is updated, if the item is a Power BI item, a change to any of its attributes will cause the default label to be applied if the user does not apply a label. If the item is a non-Power BI Fabric item, only changes to certain attributes, such as name, description, etc., will cause the default label to be applied. And this is only if the change is made in the item's flyout menu. Default labeling in the case of changes made in the workload interface is not currently supported.
 
 ### Mandatory labeling
 
