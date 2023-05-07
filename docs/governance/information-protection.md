@@ -16,7 +16,7 @@ Microsoft Fabric information protection provides capabilities that enable you to
 
 Information protection in Microsoft Fabric leverages sensitivity labels to from Microsoft Purview Information Protection. Once your sensitive data is labeled, you can monitor and analyze it, either in Fabric's Microsoft Purview hub, or in the Purview portal itself. Purview’s powerful analytic capabilities enable you to get a detailed, comprehensive picture of the state of your organization’s sensitive data, and to drill down into details to obtain actionable insights.
 
-This article describes Fabric's information protection [capabilities](#capabilities), outlines the [steps](#deploying-information-protection-in-your-tenant) you need to take to implement information protection in your organization, and provides links to relevant documentation.
+This article describes Fabric's information protection [capabilities](#capabilities), outlines the [steps](#deploy-information-protection-in-your-tenant) you need to take to implement information protection in your organization, and provides links to relevant documentation.
 
 >[!NOTE]
 > Information protection in Fabric is based on information protection in Power BI. Currently, information protection in Fabric is more fully supported for Power BI items than other Fabric items. Information protection in Power BI has additional capabilities, many of which will be coming to Fabric in the months ahead.
