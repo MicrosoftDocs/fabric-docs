@@ -134,7 +134,7 @@ sections:
         answer: |
           Description of problem: After selecting **Connect** in the git integration tab, a dialog pops up indicating an invalid folder path.
           
-          :::image type="content" source="./media/troubleshoot-cicd/invalid-folder-path.png" alt-text="Screenshot of error message when the workspace can't connect.":::
+          :::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect.":::
 
           Solution: If the folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository, you're asked if you want to create a new folder. This can happen if you're connecting to a new branch, or if the folder was deleted from the branch.  
           To create a new folder and connect it to the workspace choose **Create and sync**.  
