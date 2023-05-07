@@ -20,7 +20,7 @@ When you create, update, or delete a file via File Explorer, it automatically sy
 
 ## Installation instructions
 
-OneLake file Explorer currently supports Windows and has been validated on Windows 10 and 11.
+OneLake file explorer currently supports Windows and has been validated on Windows 10 and 11.
 
 To install:
 
@@ -28,7 +28,7 @@ To install:
 
 1. Double click the file to start installing.
 
-The location on your PC where the placeholders and any downloaded content are stored is 'C:\Users\%USERPROFILE%\OneLake\OneLake - Microsoft'.
+The location on your PC where the placeholders and any downloaded content are stored is '\%USERPROFILE%\OneLake - Microsoft'.
 
 Once the application is installed and launched, you can now see your OneLake data in Windows File Explorer.
 
@@ -45,7 +45,7 @@ Once the application is installed and launched, you can now see your OneLake dat
 
 ## Scenarios
 
-The following scenarios provide details for working with the OneLake file Explorer.
+The following scenarios provide details for working with the OneLake file explorer.
 
 ### Starting and exiting OneLake file explorer
 
@@ -59,7 +59,7 @@ OneLake file explorer starts automatically at startup of Windows.  You can disab
 
 To optimize performance during the initial sync, OneLake file explorer syncs the placeholder files for the top-level workspaces and item names.  When you open an item, OneLake file explorer syncs the files directly in that folder. Then, opening a folder within the item syncs the files directly in that folder.  This allows you to navigate your OneLake content seamlessly, without having to wait for all files to sync before starting to work.
 
-When you create, update, or delete a file via OneLake file explorer, it automatically syncs the changes to OneLake service. Updates to your item made outside of your OneLake file explorer aren't automatically synced. To pull these updates, you need to right click on the workspace name, item name, folder name or file in OneLake file explorer and select **Sync from** **OneLake**. This action refreshes the view for any folders that were previously synced.
+When you create, update, or delete a file via OneLake file explorer, it automatically syncs the changes to OneLake service. Updates to your item made outside of your OneLake file explorer aren't automatically synced. To pull these updates, you need to right click on the workspace name, item name, folder name or file in OneLake file explorer and select **Sync from** **OneLake**. This action refreshes the view for any folders that were previously synced.  To pull updates for all workspaces, right click on the OneLake root folder and select **Sync from** **OneLake**.
 
 ### Offline support
 
