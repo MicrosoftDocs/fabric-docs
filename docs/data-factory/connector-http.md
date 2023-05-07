@@ -1,6 +1,6 @@
 ---
 title: How to create an HTTP connection
-description: This article provides information about how to do create an HTTP connection in Trident.
+description: This article provides information about how to do create an HTTP connection in Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to

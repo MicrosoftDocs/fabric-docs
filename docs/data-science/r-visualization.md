@@ -1,6 +1,6 @@
 ---
 title: Visualize data in R
-description: Learn how to create R visualizations.
+description: How to create R visualizations.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu

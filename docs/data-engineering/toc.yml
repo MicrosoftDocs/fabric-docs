@@ -55,12 +55,20 @@ items:
     href: workspace-roles-lakehouse.md
 - name: Apache Spark
   items:
-  - name: High concurrency mode
-    href: high-concurrency-mode-notebooks.md
-  - name: Runtime
-    href: runtime.md
-  - name: Autotune Spark configuration
-    href: autotune.md
+  - name: Spark compute
+    items:
+    - name: Overview
+      href: spark-compute.md
+    - name: Create custom pools
+      href: create-custom-spark-pools.md
+    - name: High concurrency mode
+      href: high-concurrency-mode-notebooks.md
+    - name: Runtime
+      href: runtime.md
+    - name: Autotune Spark configuration
+      href: autotune.md
+    - name: Spark concurrency limits and queueing
+      href: spark-job-concurrency-and-queueing.md
   - name: Spark job definition
     items:
     - name: What is a Spark job definition?
@@ -69,15 +77,21 @@ items:
       href: create-spark-job-definition.md
     - name: Run a Spark job definition
       href: run-spark-job-definition.md
-  - name: Spark utilities
-    href: microsoft-spark-utilities.md
-  - name: Library management
-    href: library-management.md
+  - name: Spark development
+    items:
+    - name: Spark utilities
+      href: microsoft-spark-utilities.md
+    - name: Library management
+      href: library-management.md
   - name: Spark administration settings
     items:
-    - name: Workspace settings
-      href: spark-workspace-admin-settings.md
-    - name: FAQ
+    - name: Capacity settings overview
+      href: capacity-settings-overview.md
+    - name: Configure capacity Settings
+      href: capacity-settings-management.md
+    - name: Spark workspace settings 
+      href: workspace-admin-settings.md
+    - name: Spark admin settings - FAQ
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring
     items:
@@ -97,10 +111,10 @@ items:
       href: spark-detail-monitoring.md
 - name: Apache Delta
   items:
-    - name: Lakehouse and delta tables
-      href: ../placeholder.md
-    - name: V-order optimization for tables
-      href: ../placeholder.md
+  - name: Lakehouse and delta tables
+    href: ../placeholder.md
+  - name: V-order optimization for tables
+    href: ../placeholder.md
 - name: Notebooks
   items:
   - name: Create and use notebooks

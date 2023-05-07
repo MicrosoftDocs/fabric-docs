@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # Microsoft Fabric licenses
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Microsoft Fabric is a platform that allows users to get, create, share and visualize data using various tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [organizational license](#organizational-licenses) and at least one [individual license](#individual-licenses).
 
 A Microsoft Fabric subscription is made out of tenants, capacities and workspaces and can be organized in various ways according to your organizational needs. This illustration provides two example subscriptions, each organized differently. Typically, companies organize their subscription in a model that resembles the *Retail company A* example.
@@ -33,7 +35,7 @@ A Microsoft Fabric capacity resides on a tenant. Each capacity that sits under a
 [Workspaces](../get-started/workspaces.md) reside within capacities and are used as containers for Microsoft Fabric items. Each Microsoft Fabric user has a personal workspace known as *My Workspace*. More workspaces can be created to enable collaboration. By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including *My Workspaces* can be assigned to any capacity in your organization.
 
 >[!NOTE]
->If you're using a Power BI shared capacity, Microsoft Fabric items aren't supported. To enable support for Microsoft Fabric items on your Power BI capacity, [enable Microsoft Fabric](../admin/admin-switch.md).
+>If you're using a Power BI shared capacity, Microsoft Fabric items aren't supported. To enable support for Microsoft Fabric items on your Power BI capacity, [enable Microsoft Fabric](../admin/admin-fabric-switch.md).
 
 Workspaces can be created in (or assigned to) capacities that belong to a Microsoft Fabric [organizational license](#organizational-licenses), and in legacy Power BI capacities. Workspaces have different capabilities depending on the capacity they're created in.
 

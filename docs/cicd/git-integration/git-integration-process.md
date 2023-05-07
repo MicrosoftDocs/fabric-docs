@@ -28,15 +28,16 @@ The following list shows what different workspace roles can do depending on thei
 
 The following table describes the permissions needed to perform various common operations:
 
-| **Operation**                                                        | **Workspace role**                                                                        | **Git permissions**                          | **Azure DevOps permissions**                  |
-|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|-----------------------------------------------|
-| Connect workspace to Git repo                                        | Admin                                                                                     | Role=Read                                    | Read=Allow                                    |
-| Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    | No permissions are needed                     |
-| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Role=Read  (in target repo/directory/branch) | Read=Allow (in target repo/directory/branch)  |
-| View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 | Read or None                                  |
-| See workspace 'git status'                                           | Admin, Member, Contributor                                                                | Role=Read                                    | Read=Allow                                    |
-| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Read   | Read=Allow  |
-| Commit workspace changes to git                                      |                                                                                           |                                              |                                               |
+| **Operation**                                                        | **Workspace role**                                                                        | **Git permissions**                          |
+|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|
+| Connect workspace to Git repo                                        | Admin                                                                                     | Role=Read                                    |
+| Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    |
+| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Role=Read  (in target repo/directory/branch) |
+| View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 |
+| See workspace 'git status'                                           | Admin, Member, Contributor                                                                | Role=Read                                    |
+| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Read   |
+| Commit workspace changes to git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Write  |
+| Create new git branch from within Fabric                             | Admin                                                                                     | Role=Write                                    |
 
 ## Connect and sync
 
@@ -82,7 +83,7 @@ As long as you’re connected, the following information appears at the bottom o
 
 ### Source control pane
 
-On top of the screen is the Source control icon. When the workspace is synced with the git branch, it displays a *0*.
+On top of the screen is the Source control icon. It shows the number of items that are different in the workspace and git branch. When the workspace is synced with the git branch, the Source control icon displays a *0*.
 
 :::image type="content" source="./media/git-integration-process/source-control-zero.png" alt-text="Screenshot of the source control icon showing zero items changed.":::
 
@@ -120,7 +121,8 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 
 ## Workspace limitations
 
-Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/repos/get-started), but once connected, anyone with [permission](#permissions) can work in the workspace.
+Only the workspace admin can manage the connections to the [Azure Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.
+Once connected, anyone with [permission](#permissions) can work in the workspace.
 
 ### Branch and folder limitations
 
