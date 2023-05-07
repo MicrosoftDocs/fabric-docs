@@ -14,18 +14,21 @@ title: Lifecycle management troubleshooting
 summary: |
 
   Use this article to troubleshoot issues in the lifecycle management process. Review the following links to understand the considerations and limitations.
-  * <b>General considerations and limitations</b>:
-    [git-integration](./git-integration/git-integration-process.md#considerations-and-limitations), [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
-  * <b>Permissions</b>:
-    [git-integration](./git-integration/git-integration-process.md#permissions), [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#permissions) 
-  * <b>Workspaces</b>:
-    [git integration](./git-integration/git-integration-process.md#workspace-limitations), [deployment pipelines](deployment-pipelines/assign-pipeline.md#limitations)
-  * <b>Fabric items</b>:
+  * General considerations and limitations:
+    * [git-integration](./git-integration/git-integration-process.md#considerations-and-limitations)
+    * [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
+  * Permissions:
+    * [git-integration](./git-integration/git-integration-process.md#permissions)
+    * [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#permissions) 
+  * Workspaces:
+    * [git integration](./git-integration/git-integration-process.md#workspace-limitations)
+    * [deployment pipelines](deployment-pipelines/assign-pipeline.md#limitations)
+  * Fabric items:
     * Supported and unsupported items:
       [git integration](./git-integration/intro-to-git-integration.md#supported-items), [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#deployed-items)
     * Limitations
       [deployment-pipelines](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
-  * <b>Deployment rules</b>:
+  * Deployment rules:
     * [Deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations)
     * [Supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules)
   * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
@@ -77,7 +80,7 @@ sections:
         answer: |
           To use the lifecycle management features, you need to have one of the following licenses:
           
-          * A [Pro license](../enterprise/licenses.md#individual-licenses) license, with a workspace that resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
+          * A [Pro license](../enterprise/licenses.md#individual-licenses), with a workspace that resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
           
           * [Capacity license](../enterprise/licenses.md#organizational-licenses).
           
