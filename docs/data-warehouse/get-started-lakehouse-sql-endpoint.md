@@ -28,7 +28,7 @@ Currently, delta tables in the [Lakehouse](../data-engineering/lakehouse-overvie
 - [Understand default Power BI datasets](datasets.md)
 - [Load data into the Lakehouse](../data-engineering/load-data-lakehouse.md)
 - [How to copy data using Copy activity in Data pipeline](../data-factory/copy-data-activity.md)
-- [Tutorial: Move data into Lakehouse via Copy assistant](../data-factory/move-data-lakehouse-copy-assistant.md)
+- [Tutorial: Move data into Lakehouse via Copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)
 
 ## Next steps
 

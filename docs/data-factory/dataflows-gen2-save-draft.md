@@ -1,5 +1,5 @@
 ---
-title: A how-to guide for the dataflows save as draft feature
+title: How to save a draft of your dataflow
 description: This article describes how to save a draft version of your dataflow.
 author: luitwieler
 
@@ -9,7 +9,7 @@ ms.author: jeluitwi
 
 ---
 
-# Dataflows save as draft
+# Save a draft of your dataflow
 
 This powerful feature allows you to make changes to your dataflow without immediately publishing them to your workspace. Instead, you can save your changes as a draft, review them at a later time, and then publish when you're ready. With this feature, you can streamline your dataflow development process, and reduce the risk of data errors. In this article, you learn how to use the "Save as Draft" feature and how it can benefit your dataflow development and management.
 

@@ -18,7 +18,7 @@ This scenario shows how to connect to OneLake via Azure Databricks. After comple
 
 Before you connect, you must have the following:
 
-- A Fabric workspace. For detailed instructions in creating and gaining access to a Fabric workspace, follow these steps: [Quickstart: Create a workspace for Fabric](../placeholder.md).
+- A Fabric workspace. For detailed instructions in creating and gaining access to a Fabric workspace, follow these steps: [Quickstart: Create a workspace for Fabric](../get-started/create-workspaces.md).
 - A Fabric Lakehouse with data loaded into it. Follow [Scenario one](create-lakehouse-onelake.md) for more details.
 - An Azure Databricks workspace. To use Azure Active Directory (Azure AD) passthrough to authenticate to Fabric, you must have a premium Azure Databricks workspace.
 
