@@ -139,5 +139,5 @@ For more information on KQL Queryset, see <!-- [TODO- KQL query set]().-->
 ## Next steps
 
 * To create an empty table, see <!--[TODO- Create table]().-->
-* To manage your database, see [Manage](database-management.md).
+* To manage your database, see [Manage](data-management.md).
 * To create, store, and export queries, see [Query data in the KQL Queryset](kusto-query-set.md)
