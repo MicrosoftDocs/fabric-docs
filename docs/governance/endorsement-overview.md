@@ -15,7 +15,7 @@ There are two kinds of endorsement: **promotion** and **certification**.
 
 * **Promotion**: Promotion enables users to highlight items that they think are valuable, worthwhile, and ready for others to use. It encourages the collaborative spread of content within the organization.
 
-    Any content owner, or any member with write permissions on the workspace where the item is located, can simply promote the item when they think it's good enough for sharing.
+    Any content owner, or any member with write permissions the item, can simply promote the item when they think it's good enough for sharing.
 
     [Learn how to promote your items](../get-started/endorsement-promote-certify.md#promote-items).
 
