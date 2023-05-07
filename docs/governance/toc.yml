@@ -3,8 +3,8 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is Governance?
-    href: ../placeholder.md
+  - name: What is Microsoft Fabric governance and compliance?
+    href: governance-compliance-overview.md
 - name: Get started
   items:
   - name: linktext1
