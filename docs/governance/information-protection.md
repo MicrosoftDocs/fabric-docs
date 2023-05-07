@@ -38,7 +38,10 @@ The following table summarizes the information protection capabilities in Fabric
 
 ### Manual labeling
 
-[How to apply sensitivity labels](../get-started/apply-sensitivity-labels.md)
+When you enable sensitivity labels on your tenant, you specify which users can apply sensitivity labels. While the other information protection capabilities described in this article can ensure that most items get labeled without someone having to manually apply a label, manual labeling makes it possible for users to change labels on items. For more information about how to manually apply sensitivity labels to Fabric items, see [How to apply sensitivity labels](../get-started/apply-sensitivity-labels.md).
+
+> [!NOTE]
+> For a user to be able to apply sensitivity labels to Fabric items, it is not enough just to include the user in the list of specified users. The sensitivity label must also be published to the user as part of the label's policy definitions in the Microsoft Purview compliance center. For more information, see [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels).
 
 ### Default labeling
 
