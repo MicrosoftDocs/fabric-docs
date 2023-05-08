@@ -20,11 +20,11 @@ After you [create a workspace](create-workspaces.md) in [!INCLUDE [product-name]
 
 1. Because you have the Admin or Member role in the workspace, on the command bar of workspace page, you see **Manage Access**. Sometimes this entry is on the **More options (...)** menu.
 
-    :::image type="content" source="media/workspace-access/workspace-manage-access-entry.png" alt-text="Screenshot of entry of manage access in command bar of workspace page.":::
+    :::image type="content" source="media/workspace-access/workspace-manage-access-entry.png" alt-text="Screenshot of entry of manage access in command bar of workspace page." lightbox="media/workspace-access/workspace-manage-access-entry.png":::
 
     **Manage access** on the **More options** menu.
     
-    :::image type="content" source="media/workspace-access/workspace-manage-access-entry-in-contextual-menu.png" alt-text="Screenshot of entry of manage access in More options menu in workspace page.":::
+    :::image type="content" source="media/workspace-access/workspace-manage-access-entry-in-contextual-menu.png" alt-text="Screenshot of entry of manage access in More options menu in workspace page." lightbox="media/workspace-access/workspace-manage-access-entry-in-contextual-menu.png":::
 
 1. Select **Add people or groups**.
    
