@@ -13,7 +13,7 @@ Fabric provides two ways you can endorse your valuable, high-quality items to in
 
 * **Promotion**: Promotion is a way to highlight items you think are valuable and worthwhile for others to use. It encourages the collaborative use and spread of content within an organization.
 
-    Any item owner, as well as any member with write permissions on the workspace where the item is located, can promote the item when they think it's good enough for sharing.
+    Any item owner, as well as anyone with write permissions on the item, can promote the item when they think it's good enough for sharing.
 
 * **Certification**: Certification means that the item meets the organization's quality standards and can be regarded as reliable, authoritative, and ready for use across the organization.
 
@@ -23,11 +23,11 @@ Currently it's possible to endorse all Fabric items except Power BI dashboards.
 
 This article describes how to [promote items](#promote-items), how to [certify items](#certify-items) if you're an authorized reviewer, and how to [request certification](#request-item-certification) if you're not.
 
-See the [endorsement overview](endorsement-overview.md) to learn more about endorsement.
+See the [endorsement overview](../governance/endorsement-overview.md) to learn more about endorsement.
 
 ## Promote items
 
-To promote an item, you must have write permissions on the workspace where the content you want to promote is located.
+To promote an item, you must have write permissions on the item you want to promote.
 
 1. Go to the settings of the content you want to promote.
 
@@ -43,7 +43,7 @@ To promote an item, you must have write permissions on the workspace where the c
 
 Item certification is a significant responsibility, and only authorized users can certify items. Other users can [request item certification](#request-item-certification). This section describes how to certify an item.
 
-1. Get write permissions on the workspace where the item you want to certify is located. You can request these permissions from the item owner or from anyone who as an admin role in workspace.
+1. Get write permissions on the item you want to certify. You can request these permissions from the item owner or from anyone who as an admin role in workspace where the item is located.
 
 1. Carefully review the item and determine whether it meets your organization's certification standards.
 
@@ -72,6 +72,6 @@ If you would like to certify your item but aren't authorized to do so, follow th
 
 ## Next steps
 
-* [Read more about endorsement](endorsement-overview.md)
+* [Read more about endorsement](../governance/endorsement-overview.md)
 * [Enable content certification](../admin/endorsement-setup.md) (Power BI admins)
 * [Read more about dataset discoverability](/power-bi/collaborate-share/service-discovery)

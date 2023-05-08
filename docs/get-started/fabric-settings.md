@@ -20,38 +20,38 @@ To open the Fabric settings pane, select the gear icon in the Fabric portal head
 
 :::image type="content" source="./media/fabric-settings/open-fabric-settings-pane.png" alt-text="Screenshot showing how to get the Fabric settings pane.":::
 
-## Preferences settings
+## Preferences
 
-Short description of preferences settings.
+In the preferences section, individual users can set their user preferences, specify the language of the Fabric user interface, manage their account and notifications, and configure settings for their personal use throughout the system.
 
 | Link| Description|
 |:-----------|:--------------|
-| General| Opens the generate settings page, where you can set the display language for the Fabric interfaces and parts of visuals.|
+| General| Opens the generate settings page, where you can set the display language for the Fabric interface and parts of visuals.|
 | Notifications| Opens the notifications settings page where you can view your subscriptions and alerts. |
-| Item settings| Opens the item settings page, where you can configure per-item settings.|
+| Item settings| Opens the item settings page, where you can configure per-item-type settings.|
 | Developer settings|Opens the developer settings page, where you can configure developer mode settings.|
 
 
-## Resources and extensions settings
+## Resources and extensions
 
-Short description of resources and extensions settings.
+The resources and extensions section provides links to pages where users can use following capabilities.
 
 | Link| Description|
 |:-----------|:--------------|
-|Manage personal storage|Opens the personal storage management page, where you can see details about the data items you own. |
-|Power BI settings| Opens the Power BI settings page, where you can get to the settings pages for the Power BI dashboards, datasets, workbooks, and reports that are in your *my workspace*. |
+|Manage personal/group storage|Opens the personal/group storage management page, where you can see and manage data items that you own or that have been shared with you. |
+|Power BI settings| Opens the Power BI settings page, where you can get to the settings pages for the Power BI items (dashboards, datasets, workbooks, reports, datamarts, and dataflows) that are in the current workspace. |
 |Manage connections and gateways| Opens page where you can manage connections, on-premises data gateways, and virtual networks data gateways. |
-|Manage embed codes| Opens a pate where you can manage [embed codes](/power-bi/collaborate-share/service-publish-to-web) you have created. |
+|Manage embed codes| Opens a page where you can manage [embed codes](/power-bi/collaborate-share/service-publish-to-web) you have created. |
 |Azure Analysis Services migrations| Opens up a page where you can [migrate your Azure Analysis Services datasets to Power BI Premium](/power-bi/enterprise/aas-pbi-migration-overview).  |
 
 ## Governance and insights settings
 
-Short description of governance and insights settings.
+The governance and insights section provides links to help admins and users with their admin, governance, and compliance tasks.
 
 | Link| Description|
 |:-----------|:--------------|
 |Admin portal | Opens the Fabric admin portal where admins perform various management tasks and configure Fabric tenant settings. For more information, see [What is the admin portal?](../admin/admin-center.md)|
-|[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)| Opens the Microsoft Purview hub where you can view Purview insights about your organization's sensitive data. The Microsoft Purview hub also provides links to Purview governance and compliance capabilities and as links to documentation to help you get started with Microsoft Purview governance and compliance in Fabric. |
+|[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)| Currently available to Power BI admins only. Opens the Microsoft Purview hub where you can view Purview insights about your organization's sensitive data. The Microsoft Purview hub also provides links to Purview governance and compliance capabilities and has links to documentation to help you get started with Microsoft Purview governance and compliance in Fabric. |
 
 ## Next steps
 

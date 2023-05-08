@@ -22,9 +22,9 @@ The git integration tenant admin settings are configured in the tenant settings 
 These settings are only visible to the tenant admin.
 There are three settings relating to git integration:
 
-* Enable the git integration feature (link)
-* Enable cross geo support for git integration (link)
-* Enable export of sensitivity labels (link)
+* [Enable the git integration feature](#enable-git-integration-feature)
+* [Enable cross geo support for git integration](#enable-cross-geo-support-for-git-integration)
+* [Enable export of sensitivity labels](#enable-export-of-content-with-sensitivity-labels-into-a-git-repository)
 
 ## Enable git integration feature
 
