@@ -30,7 +30,7 @@ Windows
 2. add both %JAVA_HOME%/bin and Condabin subfolder of the Conda installation to the system path directory
 
 macOS 
-1. run the conda.sh in the terminal. Open the terminal window, change the directory to the folder where conda is installed, then go to these sub-directory: etc/profile.d, there should be a file named conda.sh there, then execute: Source conda.sh
+1. run the conda.sh in the terminal. Open the terminal window, change the directory to the folder where conda is installed, the change to the sub-directory: etc/profile.d, there should be a file named conda.sh there, then execute: Source conda.sh
 2. in the same terminal windows, run: sudo conda init
 3. type in Java –-version, the version should be Java 1.8 
 
@@ -62,7 +62,7 @@ Once you have a workspace, you can select it by clicking the **select workspace*
 
 ## Next steps
 
-In this overview, you get a basic understanding of how to install and set up the Synapse VS Code extension. Advance to the next article to learn how to develop your notebook and Spark Job Definition locally in VS Code.:
+In this overview, you get a basic understanding of how to install and set up the Synapse VS Code extension. Advance to the next article to learn how to develop your notebook and Spark Job Definition locally in VS Code.
 
 - To get started with notebook, see [Develop, execute and debug notebook in VS Code](author-notebook-with-vscode.md).
 - To get started with Spark Job Definition, see [Develop, execute and debug Spark Job Definition in VS Code](author-sjd-with-vscode.md).
