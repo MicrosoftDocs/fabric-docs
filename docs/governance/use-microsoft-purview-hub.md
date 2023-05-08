@@ -31,7 +31,7 @@ The hub has two main sections:
 
 * [Microsoft Purview hub](#microsoft-purview-hub), which provides links to resources and entry points for getting started with and using Microsoft Purview governance and compliance capabilities.
 
-* [Microsoft Fabric data](#get-insights-about-your-fabric-data-estate), which provides insights about how Fabric items are distributed throughout your tenant and what the current state of endorsement is.
+* [Microsoft Fabric data](#microsoft-fabric-data), which provides insights about how Fabric items are distributed throughout your tenant and what the current state of endorsement is.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub, admin view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
@@ -55,7 +55,7 @@ The Microsoft Fabric data section shows you insights about your Fabric data esta
 
 The items page provides oversight of all of the workspaces in your tenant. You can filter on each workspace to see what items are in the workspace and how many of them are certified or promoted. You can also use this view to identify where the certified items in your tenant are, and to see what types of items are being certified. Such insights might be used to drive adoption of certification in workspaces.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-fabric-data-item-view.png" alt-text="Screenshot of the Microsoft Purview hub, admin view." lightbox="./media/use-microsoft-purview-hub/microsoft-fabric-data-item-view.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-fabric-data-item-view.png" alt-text="Screenshot of the Microsoft Purview hub, item page." lightbox="./media/use-microsoft-purview-hub/microsoft-fabric-data-item-view.png":::
 
 ### Sensitivity page
 
@@ -63,7 +63,7 @@ The sensitivity view provides insights about sensitivity labeling throughout you
 
 You could also use label coverage by item type to see if there are certain items types that typically aren't getting labeled. You could then filter on them to identify workspaces that have the greatest number of unlabeled items so that you could reach out to the data owners and ask them to take action.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-fabric-data-sensitivity-view.png" alt-text="Screenshot of the Microsoft Purview hub, admin view." lightbox="./media/use-microsoft-purview-hub/microsoft-fabric-data-sensitivity-view.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-fabric-data-sensitivity-view.png" alt-text="Screenshot of the Microsoft Purview hub, sensitivity page." lightbox="./media/use-microsoft-purview-hub/microsoft-fabric-data-sensitivity-view.png":::
 
 ## Purview hub insights report
 
@@ -80,4 +80,4 @@ The report contains the following pages:
 
 ## Next steps
 
-* [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric)
+* [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.d)
