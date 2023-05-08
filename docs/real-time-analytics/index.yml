@@ -45,7 +45,7 @@ landingContent:
           url: get-data-blob.md
         - text: Get data from a blob container 
           url: get-data-blob-container.md
-        - text: Get data from Event Hubs
+        - text: Get data from Azure Event Hubs
           url: get-data-event-hub.md
         - text: Get data from OneLake
           url: get-data-onelake.md
@@ -55,7 +55,7 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Query data in the KQL Queryset
+          - text: Query data in a KQL queryset
             url:  kusto-query-set.md
           - text: Use sample queries
             url: query-table.md
