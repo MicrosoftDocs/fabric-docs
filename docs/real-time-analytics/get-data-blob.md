@@ -24,7 +24,7 @@ To get data from a blob container, see [Get data from a blob container](get-data
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* [KQL Database](create-database.md)
+* A [KQL database](create-database.md)
 * An Azure blob with data
 
 ## Get data
