@@ -15,15 +15,15 @@ There are two kinds of endorsement: **promotion** and **certification**.
 
 * **Promotion**: Promotion enables users to highlight items that they think are valuable, worthwhile, and ready for others to use. It encourages the collaborative spread of content within the organization.
 
-    Any content owner, or any member with write permissions on the workspace where the item is located, can simply promote the item when they think it's good enough for sharing.
+    Any content owner, or any member with write permissions the item, can simply promote the item when they think it's good enough for sharing.
 
-    [Learn how to promote your items](endorsement-promote-certify.md#promote-items).
+    [Learn how to promote your items](../get-started/endorsement-promote-certify.md#promote-items).
 
 * **Certification**: Certification means that the item meets the organization's quality standards and can be regarded as reliable and authoritative, and is ready for use across the organization.
 
     Only a [select group of reviewers (defined by the Power BI administrator)](../admin/endorsement-setup.md) is authorized to certify items. Item owners who wish to see their item certified and aren't authorized to certify it themselves need to follow their organization's guidelines about getting it certified.
 
-    Learn how to [certify items](endorsement-promote-certify.md#certify-items) or [request certification](endorsement-promote-certify.md#request-item-certification).
+    Learn how to [certify items](../get-started/endorsement-promote-certify.md#certify-items) or [request certification](../get-started/../get-started/endorsement-promote-certify.md#request-item-certification).
 
     **Certification is available only if a Power BI administrator has [enabled and configured](../admin/endorsement-setup.md) it for your organization**.
 
@@ -37,5 +37,5 @@ All Fabric items can be endorsed except for Power BI dashboards.
 
 ## Next steps
 
-* [Promote or certify Fabric content](endorsement-promote-certify.md)
+* [Promote or certify Fabric content](../get-started/endorsement-promote-certify.md)
 * [Enable certification for your organization](../admin/endorsement-setup.md) (Power BI admins)
