@@ -9,7 +9,7 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 # What is Real-Time Analytics in Fabric?
-
+ 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The last few decades have seen a paradigm shift in the way we access and consume information, as users have become used to data that is interactive, on demand, and accessible to all. This data shift has been powered by big data, streaming data ingestion, and indexed, keyword-based search, all together forming a simplified user experience. With Microsoft Fabric Real-Time Analytics, we enable organizations to focus and scale up their analytics solution while democratizing data for the needs of both the citizen data scientist all the way to the advanced data engineer.
@@ -75,3 +75,4 @@ See how these items work together in the end-to-end streaming data consumption a
 * [Tutorial: Real-Time Analytics](tutorial-introduction.md)
 * [Query data in the KQL Queryset](kusto-query-set.md)
 * [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context)
+ 
