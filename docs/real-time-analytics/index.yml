@@ -76,10 +76,14 @@ landingContent:
         links:
           - text: Create and manage event streams
             url:  event-streams/create-manage-an-eventstream.md
-          - text: Process events using processor editor
+          - text: Process events using processor editor            
             url: event-streams/process-events-using-event-processor-editor.md
           - text: Monitor event streams
             url: event-streams/monitor.md
+      - linkListType: tutorial
+        links:
+          - text: Process real-time events from Azure Event Hubs
+            url:  event-streams/create-manage-an-eventstream.md
 
   # Card 
   - title: Training
