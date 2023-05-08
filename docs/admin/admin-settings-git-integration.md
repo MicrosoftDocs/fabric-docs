@@ -48,7 +48,7 @@ Sensitivity labels aren't included when exporting an item. Therefore, the admin 
 
 :::image type="content" source="./media/admin-settings-git-integration/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting sensitivity labels.":::
 
-Learn more about sensitivity labels.
+Learn more about [sensitivity labels](../get-started/apply-sensitivity-labels.md).
 
 ## Next steps
 
