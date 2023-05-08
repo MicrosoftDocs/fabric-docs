@@ -116,9 +116,9 @@ sections:
           :::image type="content" source="./media/troubleshoot-cicd/no-source.png" alt-text="Screenshot of source control icon without a number.":::
 
       - question: |
-          Connect failure: Why did I get a **Something went wrong** error when I tried to connect?
+          Connect failure: Why does it say something went wrong when I try to connect?
         answer: |   
-          Description of problem: After selecting **Connect** in the git integration tab, the **Something went wrong** dialog pops up. In addition, when selecting the source control button, the pane indicates that you need to sync with the git branch. 
+          Description of problem: After selecting **Connect** in the git integration tab, the **Something went wrong** error dialog pops up. In addition, when you select the source control button, the pane indicates that you need to sync with the git branch. 
           
           :::image type="content" source="./media/troubleshoot-cicd/something-went-wrong.png" alt-text="Screenshot of error message when the workspace can't connect.":::
 
@@ -201,9 +201,9 @@ sections:
           In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item. To reestablish these connections, unassign and reassign the same workspace in the target stage.
 
       - question: |
-          Why am I getting the 'can't assign the workspace' error message when I assign a workspace?
+          Why can't I assign a workspace?
         answer: |
-          When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there is more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages. To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in Fabric. 
+          When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace, and the **Can't assign the workspace** error message appears. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there is more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages. To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in Fabric. 
           
           :::image type="content" source="media/troubleshoot-cicd/cannot-assign-error.png" alt-text="A screenshot of the Can't assign the workspace error message in deployment pipelines.":::
 
