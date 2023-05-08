@@ -23,6 +23,8 @@ items:
     href: admin-monitoring.md
   - name: Feature usage and adoption report
     href: admin-feature-usage-adoption.md
+  - name: Using Monitoring hub
+    href: admin-monitoring-hub.md    
 - name: Workspace administration
   items:
   - name: Manage workspaces
