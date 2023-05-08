@@ -20,7 +20,6 @@ This SharePoint Online List connector is supported in Data Factory for [!INCLUDE
 | --- | --- | ---|
 | **Copy activity (source/-)** | None | Anonymous<br>OAuth2<br>Service Principal |
 | **Lookup activity** | None | Anonymous<br>OAuth2<br>Service Principal |
-| **Dataflow Gen2 (source/destination)** |  |  |
 
 ## Next steps
 

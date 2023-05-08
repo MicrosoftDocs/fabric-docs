@@ -113,7 +113,7 @@
       items:
       - name: Overview
         href: connector-lakehouse-overview.md
-      - name: Configure in copy activity of pipeline
+      - name: Configure in Data pipeline Copy activity
         href: connector-lakehouse-copy-activity.md
     - name: Microsoft 365
       items:
@@ -126,6 +126,7 @@
     - name: Parquet
       items:
       - name: Parquet format
+        href: format-parquet.md
       - name: Connect in dataflows
         href: connector-parquet-dataflows.md
     - name: OData

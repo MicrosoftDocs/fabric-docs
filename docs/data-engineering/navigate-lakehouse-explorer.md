@@ -11,12 +11,11 @@ ms.search.form: Lakehouse Explorer
 
 # Navigate the Fabric Lakehouse explorer
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The Lakehouse explorer page is the main Lakehouse interaction page; you can use it to load data into your Lakehouse, browse through the data, preview them, and many other things. The page is divided into three sections: the Lakehouse explorer, the main view, and the ribbon.
 
-   :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
+:::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Lakehouse explorer
 
@@ -28,16 +27,13 @@ The Lakehouse explorer provides a unified graphical representation of the whole 
 
 - The **File Section** is the UI representation of the unidentified area of your lake, it can be seen as a "landing zone" for raw data that is ingested from various sources and requires additional processing before it can be used for analysis. You can navigate through directories, preview files, load a file into a table and perform various other actions.
 
-
 ## Main view area
 
 The main view area of the Lakehouse page is the space where most of the data interaction occurs. The view changes depending on what you select. Since the object explorer only displays a folder level hierarchy of the lake, the main view area is what you use to navigate your files, preview files, and various other tasks.
 
-
 ## Ribbon
 
 The Lakehouse ribbon is a quick go-to action bar for you to refresh the Lakehouse, update settings, load data or create a new dataset.
-
 
 ### Different ways to load data into a Lakehouse
 

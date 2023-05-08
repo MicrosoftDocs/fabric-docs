@@ -11,8 +11,6 @@ ms.search.form: Lakehouse Get Data
 
 # Options to get data into the Fabric Lakehouse
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Get data experience covers all user scenarios for bringing data into the lakehouse, like:
 
 - Connecting to existing SQL Server and copying data into delta table on the lakehouse.
@@ -20,6 +18,8 @@ Get data experience covers all user scenarios for bringing data into the lakehou
 - Copying and merging multiple tables from other alehouses into a new delta table.
 - Connecting to a streaming source to land data in a lakehouse.
 - Referencing data without copying it from other internal lakehouses or external sources.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Different ways to load data in lakehouse
 
@@ -47,6 +47,9 @@ For users that are familiar to Power BI dataflows same tool is available to land
 ### Notebook code
 
 You can use available Spark libraries to connect to a data source directly, load data to data frame and then save it in a lakehouse. It's the most open way to load data in the lakehouse that user code is fully managing.
+
+> [!NOTE]
+> External delta tables created with Spark code won't be visible to SQL endpoint. Use shortcuts in Table space to make external delta tables visible for SQL endpoint.
 
 ## Considerations when choosing approach to load data
 

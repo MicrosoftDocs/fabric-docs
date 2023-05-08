@@ -1,6 +1,6 @@
 ---
 title: How to create SharePoint Online List connection
-description: This article provides information about how to do create SharePoint Online List connection in Trident.
+description: This article provides information about how to do create SharePoint Online List connection in Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
@@ -28,9 +28,9 @@ This SharePoint Online List connector supports the following authentication type
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 
-- A workspace is created and isn't the default My Workspace
+- Make sure you have a Microsoft Fabric enabled Workspace.
 
 ## Go to Manage gateways to create connection
 

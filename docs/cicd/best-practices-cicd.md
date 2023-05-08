@@ -15,6 +15,8 @@ ms.search.form: Best practices for Deployment pipelines
 
 This article provides guidance for business intelligence (BI) creators who are managing their content throughout its lifecycle. The article focuses on the use of deployment pipelines as a BI content lifecycle management tool.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 The article is divided into four sections:
 
 * [**Content preparation**](#content-preparation) - Prepare your content for lifecycle management.
