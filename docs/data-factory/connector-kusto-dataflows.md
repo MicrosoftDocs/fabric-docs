@@ -14,9 +14,11 @@ You can connect to data that's either in an Azure Data Explorer (Kusto) cluster 
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Copy the query URI
+## Copy the query URI of your KQL database
 
-1. Navigate to your KQL Database.
+If you are using the Azure Data Explorer (Kusto) to connect to a KQL database, first copy your query URI using the following steps:
+
+1. Navigate to your KQL database.
 
 2. Copy the **Query URI** from the database details card in the database dashboard and paste it somewhere to use in a later step.
 
@@ -60,4 +62,4 @@ For more advanced information about connecting to your data using the Azure Data
 
 ## Next steps
 
-- [How to configure KQL Database in copy activity](connector-kql-database-copy-activity.md)
+- [How to configure KQL Database in a copy activity](connector-kql-database-copy-activity.md)
