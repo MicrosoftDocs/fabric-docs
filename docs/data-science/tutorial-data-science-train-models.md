@@ -19,7 +19,7 @@ In this module, you learn to train machine learning models to predict the total 
 
 ## Follow along in notebook
 
-The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **04 - Train and track machine learning models**. Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
+The python commands/script used in each step of this tutorial can be found in the accompanying notebook: [04-train-and-track-machine-learning-models.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/04-train-and-track-machine-learning-models.ipynb). Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
 
 In the following steps, you load cleansed and prepared data from lakehouse delta table and use it to train a regression model to predict tripDuration variable. You also use the Fabric MLflow integration to create and track experiments and register the trained model, model hyperparameters and metrics.
 
