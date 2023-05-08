@@ -28,7 +28,7 @@ To install:
 
 1. Double click the file to start installing.
 
-The location on your PC where the placeholders and any downloaded content are stored is '\%USERPROFILE%\OneLake - Microsoft'.
+The location on your PC where the placeholders and any downloaded content are stored is `\%USERPROFILE%\OneLake - Microsoft`.
 
 Once the application is installed and launched, you can now see your OneLake data in Windows File Explorer.
 
