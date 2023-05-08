@@ -33,11 +33,7 @@ items:
   href: onelake-data-hub.md
 - name: Share items
   href: share-items.md
-- name: Endorse data
-  items:
-  - name: Overview
-    href: endorsement-overview.md
-  - name: Promote or certify items
-    href: endorsement-promote-certify.md
+- name: Promote or certify items
+  href: endorsement-promote-certify.md
 - name: Apply sensitivity labels
   href: apply-sensitivity-labels.md
