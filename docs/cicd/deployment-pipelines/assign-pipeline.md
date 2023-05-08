@@ -12,6 +12,8 @@ ms.search.form: Deployment pipelines operations, Deployment pipelines operations
 
 # Assigning a workspace to a Microsoft Fabric Application lifecycle management (ALM) deployment pipeline
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Deployment pipelines enable you to assign and unassign workspaces to any stage in a pipeline. This capability is particularly important for organizations that already have workspaces that are used as development, test, and production environments. In such cases, you can assign each workspace to its corresponding pipeline stage, and continue working in your usual flow.
 
 >[!NOTE]
