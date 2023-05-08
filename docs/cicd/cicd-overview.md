@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # What is lifecycle management in Microsoft Fabric?
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Microsoft Fabric's lifecycle management tools provide a standardized system for communication and collaboration between software development teams and related departments, such as test and operations. Lifecycle management facilitates an effective process for releasing products quickly by continuously delivering updated code into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method. There are two basic components of lifecycle management:
 
 ## Integration

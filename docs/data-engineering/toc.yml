@@ -109,12 +109,14 @@ items:
       href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
-- name: Apache Delta
+- name: Delta Lake
   items:
-  - name: Lakehouse and delta tables
-    href: ../placeholder.md
-  - name: V-order optimization for tables
-    href: ../placeholder.md
+    - name: Lakehouse and Delta tables
+      href: lakehouse-and-delta-tables.md
+    - name: Load to tables
+      href: load-to-tables.md
+    - name: Delta optimization and V-Order
+      href: delta-optimization-and-v-order.md
 - name: Notebooks
   items:
   - name: Create and use notebooks

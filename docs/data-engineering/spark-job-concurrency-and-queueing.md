@@ -17,7 +17,7 @@ Microsoft Fabric allows allocation of compute units through capacity, which is a
 
 When users create a Microsoft Fabric capacity on Azure, they get to choose a capacity size based on their analytics workload size. In Spark, users get two spark VCores for every capacity unit they get reserved as part of their SKU.
 
-*One Spark VCore = Two Capacity Units*
+*One Capacity Unit = Two Spark VCores*
 
 Once the capacity is purchased, admins can create workspaces within the capacity in Microsoft Fabric. The Spark VCores associated with the capacity is shared among all the Spark-based items like notebooks, spark job definitions, and the lakehouse created in these workspaces.
 

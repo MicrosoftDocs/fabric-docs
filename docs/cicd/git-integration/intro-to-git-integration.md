@@ -24,6 +24,8 @@ Git integration in Microsoft Fabric enables Pro developers to integrate their de
 
 :::image type="content" source="./media/intro-to-git-integration/git-flow.png" alt-text="Flowchart showing the connection between the remote git repo and the Fabric workspace.":::
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. Currently, in Preview, only a few items are supported, but the list of [supported items](#supported-items) is growing.
 
 Read up on [version control](/devops/develop/git/what-is-version-control) and [Git](/devops/develop/git/what-is-git) to make sure you’re familiar with basic git concepts.  
@@ -37,7 +39,7 @@ The following items are currently supported:
 * Reports (except paginated reports)
 * Datasets (except push datasets, live connections, and model v1)
 
-If the folder has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either.
+If the workspace or git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pan but you can't commit or update them.
 
 ## Permissions
 
@@ -47,7 +49,8 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 A typical workflow for a developer using Fabric git integration may look like this:
 
-1. [Connect](./git-get-started.md#connect-a-workspace-to-an-azure-repo) the IT developer workspace to a Git branch​
+1. [Connect](./git-get-started.md#connect-a-workspace-to-an-azure-repo) the Fabric developer workspace to a Git repository
+1. Checkout branch
 1. [Edit and commit](./git-get-started.md#commit-changes-to-git) changes​
 1. Start a pull request and merge changes to ‘main’ branch​
 1. [Update](./git-get-started.md#update-workspace-from-git) the IT developer workspace
