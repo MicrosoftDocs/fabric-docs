@@ -141,7 +141,7 @@ After it updates successfully, the list of items is removed, and the workspace w
 
 :::image type="content" source="./media/git-get-started/no-updates.png" alt-text="Screenshot of source control window stating that you successfully updated the workspace.":::
 
-after the update is completed successfully, the status of the items is changed to **Synced**.
+After the update is completed successfully, the status of the items is changed to **Synced**.
 
 ## Disconnect a workspace from git
 
