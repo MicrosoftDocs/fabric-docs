@@ -124,17 +124,12 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
    :::image type="content" source="media\sql-query-editor\transaction-run-error.png" alt-text="Screenshot showing independent run of transactions failed in SQL query editor" lightbox="media\sql-query-editor\transaction-run-error.png":::
 
-   For example, when you define temp table in the first batch request and try to use it in subsequent batch runs in the same query tab, it throws error.
-
-   :::image type="content" source="media\sql-query-editor\temp-table-run-error.png" alt-text="Screenshot showing multiple runs of temp table failed in SQL query editor" lightbox="media\sql-query-editor\temp-table-run-error.png":::
-
 - The following table summarizes the expected behavior will not match with SQL Server Management Studio/Azure Data Studio:
 
    | **Scenario** | **Supported in SSMS/ADS** | **Supported in SQL query editor in Fabric portal** |
    |---|---|---|
    |Using [USE (Transact-SQL)](/sql/t-sql/language-elements/use-transact-sql) |Yes|No|
    |Using [SET Statements (Transact-SQL)](/sql/t-sql/statements/set-statements-transact-sql) to set properties for session |Yes|No|
-   |Referencing temp tables in open SQL query tab for multiple batch executions |Yes|No|
    |Using [sp_set_session_context (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-set-session-context-transact-sql) for multiple batch statements runs |Yes|No|
    |[Transactions (Transact-SQL)](/sql/t-sql/language-elements/transactions-transact-sql) (unless executed as a single batch request) |Yes|No|
 
