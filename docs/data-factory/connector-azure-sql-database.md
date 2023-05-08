@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # How to create an Azure SQL Database connection
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This article outlines how to set up connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview).
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -33,9 +31,9 @@ The Azure SQL Database connector supports the following authentication types for
 
 To get started, you must complete the following prerequisites:
 
-* A tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 
-- A workspace is created and that isn’t the default **My Workspace**.
+- Make sure you have a Microsoft Fabric enabled Workspace.
 
 ## Go to Manage gateways to create a new connection
 
@@ -99,7 +97,7 @@ Open **Edit credentials**. You'll see the sign in interface. Enter your account 
 
 To use service principal authentication, follow these steps:
 
-1. [Create an Azure Active Directory application](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal) from the Azure portal. Make note of the application name and the following values that define the linked service:
+1. [Create an Azure Active Directory application](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal) from the Azure portal. Make note of the application name and the following values that define the connection:
 
     - Tenant ID
     - Application ID
@@ -119,7 +117,7 @@ To use service principal authentication, follow these steps:
     ALTER ROLE [role name] ADD MEMBER [your application name];
     ```
 
-5. Configure an Azure SQL Database linked service.
+5. Configure an Azure SQL Database connection.
 
 ### Step 3: Specify the privacy level that you want to apply
 
@@ -159,7 +157,7 @@ The following properties in the table are the supported authentication types.
 |- Service Principal ID|The application's client ID.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
 
-## Next Steps
+## Next steps
 
 - [How to configure Azure SQL Database in copy activity](connector-azure-sql-database-copy-activity.md)
 - [Connect to an Azure SQL database in dataflows](connector-azure-sql-database-dataflow.md)

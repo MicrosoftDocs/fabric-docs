@@ -11,12 +11,11 @@ ms.search.form: Lakehouse Overview
 
 # What is a lakehouse in Microsoft Fabric?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-
 Microsoft Fabric Lakehouse is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location. It is a flexible and scalable solution that allows organizations to handle large volumes of data using a variety of tools and frameworks to process and analyze that data. It integrates with other data management and analytics tools to provide a comprehensive solution for data engineering and analytics.
 
-   :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
+:::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Lakehouse SQL endpoint
 
@@ -46,7 +45,6 @@ A data engineer can interact with the lakehouse and the data within the lakehous
 - **Dataflows Gen 2**: Data engineers can leverage Dataflows Gen 2 to ingest and prepare their data. Find more information on load data using dataflows: [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
 
 Learn more about the different ways to load data into your lakehouse: [Get data experience for Lakehouse](load-data-lakehouse.md).
-
 
 ## Next steps
 

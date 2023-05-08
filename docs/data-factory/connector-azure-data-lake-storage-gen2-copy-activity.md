@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # How to configure Azure Data Lake Storage Gen2 in copy activity
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Data Lake Storage Gen2.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported format
 
@@ -26,7 +24,7 @@ Azure Data Lake Storage Gen2 supports the following file formats. Refer to each 
 - [Excel format](format-excel.md)
 - JSON format
 - ORC format
-- Parquet format
+- [Parquet format](format-parquet.md)
 - XML format
 
 ## Supported configuration
@@ -36,6 +34,7 @@ For the configuration of each tab under copy activity, go to the following secti
 - [General](#general)  
 - [Source](#source)
 - [Destination](#destination)
+- [Mapping](#mapping)
 - [Settings](#settings)
 
 ### General
@@ -124,9 +123,13 @@ Under **Advanced**, you can specify the following fields:
 
   :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/metadata.png" alt-text="Screenshot showing metadata." lightbox="./media/connector-azure-blob-storage/metadata.png":::
 
+### Mapping
+
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). If you choose Binary as your file format, mapping will not be supported.
+
 ### Settings
 
-For the **Settings** tab configuration, go to Settings.
+For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 
@@ -154,7 +157,7 @@ The following tables contain more information about the copy activity in Azure D
 |**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store.|• None<br>• Add dynamic content<br>• Flatten hierarchy<br>• Preserve hierarchy|No |copyBehavior|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 |**Block size (MB)** |Specify the block size in MB when writing data to Azure Data Lake Storage Gen2. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
-|**Metadata**|Set custom metadata when copy to sink.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
+|**Metadata**|Set custom metadata when copy to destination.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
 ## Next steps
 

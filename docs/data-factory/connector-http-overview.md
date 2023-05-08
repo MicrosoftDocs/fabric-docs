@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # HTTP connector overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This HTTP connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported capabilities
 
@@ -22,7 +20,6 @@ This HTTP connector is supported in Data Factory for [!INCLUDE [product-name](..
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | Basic |
 | **Lookup activity** | None | Basic |
-| **Dataflow Gen2 (source/destination)** |  |  |
 
 ## Next steps
 

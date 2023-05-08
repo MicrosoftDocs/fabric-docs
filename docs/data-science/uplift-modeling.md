@@ -10,9 +10,9 @@ ms.date: 05/23/2023
 
 # Creating, training, and evaluating uplift models in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this article, learn how to create, train and evaluate uplift models and apply uplift modeling technique.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 - What is uplift modeling?
 

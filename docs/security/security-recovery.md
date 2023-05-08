@@ -17,5 +17,4 @@ A few examples of using recovery in specific scenarios.
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Private endpoints](security-private-links.md)
+[Service tags](security-service-tags.md)

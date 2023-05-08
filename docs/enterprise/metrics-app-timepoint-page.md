@@ -4,10 +4,13 @@ description: Learn how to read the Microsoft Fabric utilization and metrics app'
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
 # Understand the metrics app timepoint page
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 All the activities in the capacity are ranked according to their compute impact. Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to CU usage.
 
@@ -87,6 +90,8 @@ A table showing every [interactive operation](/power-bi/enterprise/service-premi
 
 [!INCLUDE [product-name](../includes/metrics-app-preview-status.md)]
 
+* **Operation ID** - A unique identifier assigned to an individual operation.
+
 ## Background Operations
 
 A table showing every background operation that contributed CU usage to the viewed timepoint. Every background operation that completed in the prior 24 hours (defined as a 2,880 x 30 second timepoint window), contributes a small portion of its total usage to the CU value. This means that a background operation that completed the previous day can contribute some CU activity to determine if the capacity is in overload. For more information see [performance smoothing](/power-bi/enterprise/service-premium-smoothing.md).
@@ -95,5 +100,4 @@ All the columns in the background operations table are similar to the ones in th
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Understand the metrics app overview page?](metrics-app-overview-page.md)
+[Understand the metrics app overview page?](metrics-app-overview-page.md)

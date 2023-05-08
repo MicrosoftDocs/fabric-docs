@@ -4,17 +4,15 @@ description: Learn how to build and schedule a new data pipeline to copy sample 
 ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
-ms.topic: quickstart
+ms.topic: tutorial
 ms.date: 05/23/2023
 ---
 
-# Tutorial: Load Sample data to Data Warehouse
-
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+# Load Sample data to Data Warehouse
 
 In this tutorial, you build a data pipeline to move a Sample dataset to the Data Warehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Data Warehouse.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -109,4 +107,14 @@ In this session, you start to build your pipeline by following below steps about
 
 ## Next steps
 
-[How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
+This sample shows you how to load sample data into a Data Warehouse using Data Factory in Microsoft Fabric.  You learned how to:
+
+> [!div class="checklist"]
+> - Create a data pipeline.
+> - Copy data using your pipeline.
+> - Run and schedule your data pipeline.
+
+Next, advance to learn more about monitoring your pipeline runs.
+
+> [!div class="nextstepaction"]
+> [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)

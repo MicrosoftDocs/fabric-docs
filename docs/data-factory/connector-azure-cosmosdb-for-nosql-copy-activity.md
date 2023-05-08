@@ -10,24 +10,10 @@ ms.custom: template-how-to
 
 # How to configure Azure Cosmos DB for NoSQL in a copy activity
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Cosmos DB for NoSQL.
 
-## Supported format
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-Azure Cosmos DB for NoSQL supports the following file formats. Refer to each article for format-based settings.
-
-- Avro format
-- [Binary format](format-binary.md)
-- [Delimited text format](format-delimited-text.md)
-- [Excel format](format-excel.md)
-- JSON format
-- ORC format
-- Parquet format
-- XML format
 
 ## Supported configuration
 
@@ -106,11 +92,12 @@ Allowed values are `Timespan`. An example is 00:30:00 (30 minutes).
 
 ### Mapping
 
-For the **Mapping** tab configuration, go to Mapping.
+For the **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+
 
 ### Settings
 
-For the **Settings** tab configuration, go to Settings.
+For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 

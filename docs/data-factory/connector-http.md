@@ -1,6 +1,6 @@
 ---
 title: How to create an HTTP connection
-description: This article provides information about how to do create an HTTP connection in Trident.
+description: This article provides information about how to do create an HTTP connection in Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # How to create HTTP connection
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This article outlines the steps to create HTTP connection.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -27,11 +25,11 @@ The HTTP connector supports the following authentication types for copy and Data
 
 ## Prerequisites
 
-To get started, you must have the following prerequisites:
+To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 
-- A workspace is created and that isn't the default **My Workspace**.
+- Make sure you have a Microsoft Fabric enabled Workspace.
 
 ## Go to Manage gateways to create connection
 
@@ -93,7 +91,7 @@ The following connector properties in the table are supported in pipeline copy a
 |**Connection name**|A name for your connection.|Yes||✓/|
 |**Connection type**|Select **Web** for your connection type.|Yes||✓/|
 |**URL**|The base URL to the HTTP server.|Yes||✓/|
-|**Authentication**|Go to [Authentication](#authentication) |Yes|See Authentication|Go to  [Authentication](#authentication)|
+|**Authentication**|Go to [Authentication](#authentication) |Yes||Go to  [Authentication](#authentication)|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
 
 

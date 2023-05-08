@@ -3,19 +3,29 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is Governance?
-    href: ../placeholder.md
+  - name: What is Microsoft Fabric governance and compliance?
+    href: governance-compliance-overview.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Set up item certification
+    href: ../admin/endorsement-setup.md
+- name: Microsoft Purview
+  items:
+  - name: Microsoft Purview & Fabric
+    href: microsoft-purview-fabric.md
+  - name: Microsoft Purview Hub
+    href: use-microsoft-purview-hub.md
+- name: Information protection
+  href: information-protection.md
+- name: Endorsement
+  href: endorsement-overview.md
+- name: Lineage
+  href: lineage.md
+- name: Domains
+  href: domains.md
 - name: Metadata scanning
   items:
   - name: Overview
     href: metadata-scanning-overview.md
-  - name: Enable service principal authentication for read-only admin APIs
-    href: metadata-scanning-enable-read-only-apis.md
   - name: Run metadata scanning
     href: metadata-scanning-run.md

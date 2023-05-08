@@ -92,16 +92,29 @@ landingContent:
       - linkListType: tutorial
         links:
           - text: Lakehouse scenario overview
-            url: ../placeholder.md
+            url: tutorial-lakehouse-introduction.md
           - text: Step1 - Create a workspace
-            url: ../placeholder.md
+            url: tutorial-lakehouse-get-started.md
           - text: Step2 - Create a lakehouse
-            url: ../placeholder.md
+            url: tutorial-build-lakehouse.md
           - text: Step2 - Ingest data into lakehouse
-            url: ../placeholder.md
+            url: tutorial-lakehouse-data-ingestion.md
           - text: Step2 - Transform data into delta tables
-            url: ../placeholder.md
+            url: tutorial-lakehouse-data-preparation.md
           - text: Step2 - Build a report
-            url: ../placeholder.md
+            url: tutorial-lakehouse-build-report.md
           - text: Step2 - Clean up resources
-            url: ../placeholder.md
+            url: tutorial-lakehouse-clean-up.md
+
+  # Card 
+  - title: Delta Lake
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Lakehouse and Delta tables
+            url: lakehouse-and-delta-tables.md
+          - text: Delta optimization and V-Order
+            url: delta-optimization-and-v-order.md
+          - text: Load to tables
+            url: load-to-tables.md
+

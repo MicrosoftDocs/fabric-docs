@@ -24,33 +24,33 @@ Availability zones allow Fabric customers to run critical applications with high
 
 Fabric provides availability zone support in various regions as follows:
 
-|	Region	|	|		|		| 	|
+|	**Region**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
 |------------------|----------------------|---------------|--------------------|----------------|
-|	**Americas**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
-|	Brazil South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|		:::image type="icon" source="../media/yes-icon.svg" border="false":::	|
+|	**Americas**	|	|	|	| |
+|	Brazil South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|		:::image type="icon" source="../media/yes-icon.svg" border="false":::	| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	Brazil South B	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	Canada Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	Central US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|	:::image type="icon" source="../media/yes-icon.svg" border="false":::		|
-|	East US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	East US 2	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	South Central US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	West US 2	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	West US 3	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	Canada Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	Central US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|	:::image type="icon" source="../media/yes-icon.svg" border="false":::		| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	East US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	East US 2	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	South Central US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	West US 2	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	West US 3	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	**Europe**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
-|	France Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	Germany West Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	North Europe	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	Sweden Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	UK South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|:::image type="icon" source="../media/yes-icon.svg" border="false":::			|
-|	West Europe	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	Norway East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|		:::image type="icon" source="../media/yes-icon.svg" border="false":::	|
+|	France Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	Germany West Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	North Europe	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	Sweden Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	UK South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|:::image type="icon" source="../media/yes-icon.svg" border="false":::			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	West Europe	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	Norway East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|		:::image type="icon" source="../media/yes-icon.svg" border="false":::	| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	**Middle East**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
-|	Qatar Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	Qatar Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	**Africa**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
-|	South Africa North	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|	:::image type="icon" source="../media/yes-icon.svg" border="false":::		|
+|	South Africa North	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|	:::image type="icon" source="../media/yes-icon.svg" border="false":::		| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	**Asia Pacific**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
 |	Australia East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	Japan East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	Japan East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	**Southeast Asia**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
 |	Singapore	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
 

@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # How to create an Amazon S3 connection
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This article outlines the steps to create an Amazon S3 connection.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -31,9 +29,10 @@ The Amazon S3 connector supports the following authentication types for copy act
 
 To get started, you must complete the following prerequisites:
 
-- Create a tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 
-- Create a workspace that isn't the default **My Workspace**.
+- Make sure you have a Microsoft Fabric enabled Workspace.
+
 
 ## Create a connection
 
