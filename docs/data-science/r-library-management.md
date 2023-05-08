@@ -11,9 +11,10 @@ ms.search.form: R Language
 
 # R library management
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Libraries provide reusable code that you might want to include in your programs or projects for [!INCLUDE [product-name](../includes/product-name.md)] Spark.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] supports an R runtime with many popular open-source R packages, including TidyVerse, preinstalled. When a Spark instance starts, these libraries are included automatically and available to be used immediately in notebooks or Spark job definitions. For a full list of libraries, see [Apache Spark version support]().
 
