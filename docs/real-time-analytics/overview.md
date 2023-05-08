@@ -16,7 +16,7 @@ The last few decades have seen a paradigm shift in the way we access and consume
 
 How? Real-Time Analytics reduces complexity and simplifies data integration. Quick access to data insights is achieved through automatic data streaming, automatic indexing and data partitioning of any data source or format, and through the use of the on-demand query generation and visualizations. This user process is simplified while preserving powerful analytical capabilities. Real-Time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
 
-:::image type="content" source="media/real-time-analytics-overview/product-view.png" alt-text="Screenshot of Real-Time Analytics product showing database homepage with a quick query pane showing binned ingestion results." lightbox="media/real-time-analytics-overview/product-view.png":::
+:::image type="content" source="media/real-time-analytics-overview/product-view.png" alt-text="Screenshot of Real-Time Analytics product showing the database homepage with a quick query pane showing binned ingestion results." lightbox="media/real-time-analytics-overview/product-view.png":::
 
 Real-Time Analytics is a fully managed big data analytics platform optimized for streaming, time-series data. It contains a dedicated query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-Time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios.
 
