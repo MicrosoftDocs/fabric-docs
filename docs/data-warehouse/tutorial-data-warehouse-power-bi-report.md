@@ -22,7 +22,7 @@ Learn how to create and save several types of Power BI reports.
 
 1. From the `fact_sale` table, drag the **CityKey** field and drop it on the **CityKey** field in the `dimension_city` table to create a relationship.
 
-   :::image type="content" source="media\tutorial-data-warehouse-power-bi-report\drag-field-drop-table.png" alt-text="":::
+   :::image type="content" source="media\tutorial-data-warehouse-power-bi-report\drag-field-drop-table.png" alt-text="Screenshot ot two table field lists, showing where to drag a field from one table to another.":::
 
 1. On the **Create Relationship** settings:
 
