@@ -34,7 +34,7 @@ We utilize the notebook artifact in the Data Science experience to demonstrate v
 
 1. Switch to the Data Science experience using the workload switcher icon at the left corner of your homepage.
 
-   :::image type="content" source="media\tutorial-data-science-prepare-system\switch-to-data-science.png" alt-text="Screenshot of the workload switcher menu, showing where to select Data Science." lightbox="media\tutorial-data-science-prepare-system\switch-to-data-science.png"::: switch-to-data-science
+   :::image type="content" source="media\tutorial-data-science-prepare-system\switch-to-data-science.png" alt-text="Screenshot of the workload switcher menu, showing where to select Data Science." lightbox="media\tutorial-data-science-prepare-system\switch-to-data-science.png":::
 
 1. On the Data science experience homepage, select **Import notebook** and upload the notebook files for modules 1- 5 that you downloaded in step 1.
 
