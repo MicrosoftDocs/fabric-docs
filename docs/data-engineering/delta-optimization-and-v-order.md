@@ -233,10 +233,10 @@ The implementation is controlled by the ```spark.microsoft.delta.merge.lowShuffl
 
 As Delta tables change, performance and storage cost efficiency tend to degrade for the following reasons:
 
-1. New data added to the table may skew data
-1. Batch and streaming data ingestion rates might bring in many small files
-1. Update and delete operations eventually create read overhead; parquet files are immutable by design, so Delta tables adds new parquet files which the changeset, further amplifying  the issues imposed by the first two items.
-1. No longer needed data files and log files available in the storage.
+- New data added to the table may skew data
+- Batch and streaming data ingestion rates might bring in many small files
+- Update and delete operations eventually create read overhead; parquet files are immutable by design, so Delta tables adds new parquet files which the changeset, further amplifying  the issues imposed by the first two items.
+- No longer needed data files and log files available in the storage.
 
 In order to keep the tables at the best state for best performance, perform bin-compaction and vacuuming operations in the Delta tables. Bin-compaction is achieved by the [OPTIMIZE](https://docs.delta.io/latest/optimizations-oss.html) command; it merges all changes into bigger, consolidated parquet files. Dereferenced storage clean-up is achieved by the [VACUUM](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) command.
 
