@@ -21,7 +21,6 @@ Lakehouse supports the following file formats. Refer to each article for format-
 - Avro format
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
-- Delta format
 - [Excel format](format-excel.md)
 - JSON format
 - ORC format
