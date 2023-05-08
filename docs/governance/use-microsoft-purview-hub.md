@@ -31,9 +31,9 @@ To access the hub, open the [Fabric settings pane](../get-started/fabric-setting
 
 The hub has two main sections:
 
-* [Microsoft Purview hub](#microsoft-purview-hub), which provides links to resources and entry points for getting started with and using Microsoft Purview governance and compliance capabilities.
+* [Microsoft Purview hub](#get-started-with-microsoft-purview-governance-and-compliance), which provides links to resources and entry points for getting started with and using Microsoft Purview governance and compliance capabilities.
 
-* [Microsoft Fabric data](#microsoft-fabric-data), which provides insights about how Fabric items are distributed throughout your tenant and what the current state of endorsement is.
+* [Microsoft Fabric data](#get-insights-about-your-fabric-data-estate), which provides insights about how Fabric items are distributed throughout your tenant and what the current state of endorsement is.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
@@ -51,7 +51,7 @@ The tiles in the Microsoft Purview hub section provide access to the locations y
 
 ## Get insights about your Fabric data estate
 
-The Microsoft Fabric data section shows you insights about your Fabric data estate. It has two tabs that show you the **Items** and **Sensitivity** pages from the [Microsoft Purview hub report](#purview-hub-insights-report). From these two pages you can gain insights about how Fabric items are distributed throughout your tenant and what the current state of endorsement is.
+The Microsoft Fabric data section shows you insights about your Fabric data estate. It has two tabs that show you the **Items** and **Sensitivity** pages from the [Microsoft Purview hub report](#view-the-full-purview-hub-insights-report). From these two pages you can gain insights about how Fabric items are distributed throughout your tenant and what the current state of endorsement is.
 
 ### Items page
 
