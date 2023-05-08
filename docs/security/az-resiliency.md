@@ -26,7 +26,7 @@ Fabric provides availability zone support in various regions as follows:
 
 |	**Region**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
 |------------------|----------------------|---------------|--------------------|----------------|
-|	**Americas**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
+|	**Americas**	|	|	|	| |
 |	Brazil South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|		:::image type="icon" source="../media/yes-icon.svg" border="false":::	| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	Brazil South B	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
 |	Canada Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
