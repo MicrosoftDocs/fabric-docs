@@ -122,6 +122,7 @@ To uninstall the app, in Windows, search for “OneLake”. Select **Uninstall**
 ## OneLake file explorer icons
 
 These OneLake file explorer icons are visible in Windows File Explorer and tell you the sync state of the file or folder.  
+
 | Icon | Meaning |
 | --- | ---|
 | Blue cloud icon :::image type="icon" source="media\onelake-file-explorer\blue-cloud.png"::: | The file is only available online. Online-only files don’t take up space on your computer. |
