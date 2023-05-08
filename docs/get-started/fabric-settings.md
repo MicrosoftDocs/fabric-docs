@@ -20,9 +20,9 @@ To open the Fabric settings pane, select the gear icon in the Fabric portal head
 
 :::image type="content" source="./media/fabric-settings/open-fabric-settings-pane.png" alt-text="Screenshot showing how to get the Fabric settings pane.":::
 
-## Preferences settings
+## Preferences
 
-In the preferences section, individual users can set their user preferences, specify the language, manage their account and notifications, and configure settings for their personal use throughout the system.
+In the preferences section, individual users can set their user preferences, specify the language of the Fabric user interface, manage their account and notifications, and configure settings for their personal use throughout the system.
 
 | Link| Description|
 |:-----------|:--------------|
@@ -32,9 +32,9 @@ In the preferences section, individual users can set their user preferences, spe
 | Developer settings|Opens the developer settings page, where you can configure developer mode settings.|
 
 
-## Resources and extensions settings
+## Resources and extensions
 
-Short description of resources and extensions settings.
+The resources and extensions section provides links to pages where users can use following capabilities.
 
 | Link| Description|
 |:-----------|:--------------|
@@ -46,12 +46,12 @@ Short description of resources and extensions settings.
 
 ## Governance and insights settings
 
-Short description of governance and insights settings.
+The governance and insights section provides links to help admins and users with their admin, governance, and compliance tasks.
 
 | Link| Description|
 |:-----------|:--------------|
 |Admin portal | Opens the Fabric admin portal where admins perform various management tasks and configure Fabric tenant settings. For more information, see [What is the admin portal?](../admin/admin-center.md)|
-|[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)| Opens the Microsoft Purview hub where you can view Purview insights about your organization's sensitive data. The Microsoft Purview hub also provides links to Purview governance and compliance capabilities and as links to documentation to help you get started with Microsoft Purview governance and compliance in Fabric. |
+|[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)| Opens the Microsoft Purview hub where you can view Purview insights about your organization's sensitive data. The Microsoft Purview hub also provides links to Purview governance and compliance capabilities and as links to documentation to help you get started with Microsoft Purview governance and compliance in Fabric. Currently only Power BI admins have this option. |
 
 ## Next steps
 
