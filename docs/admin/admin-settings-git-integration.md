@@ -22,9 +22,9 @@ The git integration tenant admin settings are configured in the tenant settings 
 These settings are only visible to the tenant admin.
 There are three settings relating to git integration:
 
-* Enable the git integration feature (link)
-* Enable cross geo support for git integration (link)
-* Enable export of sensitivity labels (link)
+* [Enable the git integration feature](#enable-git-integration-feature)
+* [Enable cross geo support for git integration](#enable-cross-geo-support-for-git-integration)
+* [Enable export of sensitivity labels](#enable-export-of-content-with-sensitivity-labels-into-a-git-repository)
 
 ## Enable git integration feature
 
@@ -44,7 +44,7 @@ Learn more about Multi-Geo support.
 
 ## Enable export of content with sensitivity labels into a git repository
 
-The admin can decide whether or not to export sensitivity labels into the git repository when connecting to a workspace. Enable this setting to export sensitivity labels.
+Sensitivity labels aren't included when exporting an item. Therefore, the admin can choose whether to allow block the export of items that have sensitivity labels, or to allow it even though the sensitivity label won't be included. Enable this setting to allow the export of items without their sensitivity labels.
 
 :::image type="content" source="./media/admin-settings-git-integration/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting sensitivity labels.":::
 

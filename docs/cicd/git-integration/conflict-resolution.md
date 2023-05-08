@@ -15,6 +15,8 @@ A conflict occurs when changes are made *to the same item* in both the workspace
 
 :::image type="content" source="./media/conflict-resolution/conflict-status-workspace.png" alt-text="Screenshot of a report with a git status that says conflict.":::
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 There are two ways to resolve a conflict:
 
 - [Revert](#revert-to-a-previous-synced-state) either the workspace or the git repository to a previous synced state.

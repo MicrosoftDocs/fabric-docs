@@ -13,7 +13,7 @@ ms.search.form: product-kusto
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Get historical data](tutorial-3-get-historical-data.md)
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Get historical data](tutorial-3-get-historical-data.md).
 
 The first step in data analysis is often to take a look at a subset of the data itself. There are several sample queries available to you in both SQL and KQL to help you get familiar with the query languages and assist with initial data exploration.
 
