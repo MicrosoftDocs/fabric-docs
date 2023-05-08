@@ -34,15 +34,15 @@ Once the application is installed and launched, you can now see your OneLake dat
 
 ## Known issues
 
-- **Workspace names with "/" character, escape characters like %23 and names that look like GUIDs** will fail to sync.
+- Workspace names with "/" character, encoded escape characters such as `%23` and names that look like GUIDs will fail to sync.
 
-- **Files or folders containing Windows reserved characters** ([learn more](/windows/win32/fileio/naming-a-file)) fail to sync.
+- Files or folders containing Windows reserved characters ([learn more](/windows/win32/fileio/naming-a-file)) fail to sync.
 
-- **Updating Office files** (excel, ppt, etc.) isn't currently supported.
+- Updating Office files (.xlsx, .pptx, .docx etc.) isn't currently supported.
 
-- **Moving a folder (cut and paste or drag and drop) from a location outside of OneLake to OneLake will fail to sync the contents in that folder.** The contents move to the OneLake directory locally, but only the top-level folder syncs to OneLake.  You must trigger a sync by either opening the files and saving them or moving them back out of OneLake and then copying and pasting (versus moving).
+- Moving a folder (cut and paste or drag and drop) from a location outside of OneLake to OneLake will fail to sync the contents in that folder. The contents move to the OneLake directory locally, but only the top-level folder syncs to OneLake.  You must trigger a sync by either opening the files and saving them or moving them back out of OneLake and then copying and pasting (versus moving).
 
-- **Windows File Explorer is case insensitive** while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).
+- Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).
 
 ## Scenarios
 
@@ -52,7 +52,7 @@ The following scenarios provide details for working with the OneLake file explor
 
 OneLake file explorer starts automatically at startup of Windows.  You can disable the application from starting automatically by selecting Startup apps in Windows Task Manager and then right clicking OneLake and select **Disable**.  
 
-- To manually start the application, search for “OneLake” using Windows search (Windows + S) and select the OneLake application.  The views for any folders that were previously synced are then refreshed automatically.  
+- To manually start the application, search for "OneLake" using Windows search (Windows + S) and select the OneLake application.  The views for any folders that were previously synced are then refreshed automatically.  
 
 - To exit, right-click on the OneLake icon in the Windows System Tray and select **Exit**.  The sync is paused and placeholder files and folders cannot be accessed.  You will continue to see the blue cloud icon for placeholders that were previously synced but not downloaded.
 
