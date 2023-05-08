@@ -30,7 +30,7 @@ In this tutorial, we use the [NYC Taxi and Limousine yellow dataset](/azure/open
 
 We utilize the notebook artifact in the Data Science experience to demonstrate various Fabric capabilities. The notebooks are available as Jupyter notebook files that can be imported to your Fabric-enabled workspace.
 
-1. Download the notebooks(.ipynb) files for this tutorial from the parent folder [Data Science Tutorial Source Code](../placeholder.md).
+1. Download the notebooks(.ipynb) files for this tutorial from the parent folder [Data Science Tutorial Source Code](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial).
 
 1. Switch to the Data Science experience using the workload switcher icon at the left corner of your homepage.
 
