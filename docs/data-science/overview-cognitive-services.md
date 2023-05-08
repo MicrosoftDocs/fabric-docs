@@ -81,7 +81,7 @@ ms.date: 05/08/2023
 ## Prerequisites
 
 * Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
-* Cognitive Services Key. To obtain a Cognitive Services key, follow the [Quickstart](https://learn.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
+* Cognitive Services Key. To obtain a Cognitive Services key, follow the [Quickstart](/azure/cognitive-services/cognitive-services-apis-create-account).
 
 ## Shared code
 
