@@ -12,6 +12,8 @@ ms.custom:
 
 This article explains basic git concepts and the process of integrating git with your Microsoft Fabric workspace.
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 ## Permissions
 
 The actions you can take on a workspace depend on the permissions you have in both the workspace and Azure DevOps. 
@@ -68,6 +70,7 @@ Each item has one of the following statuses:
 - :::image type="icon" source="./media/git-integration-process/unsupported-icon.png"::: Unsupported
 - :::image type="icon" source="./media/git-integration-process/uncommitted-icon.png"::: Uncommitted
 - :::image type="icon" source="./media/git-integration-process/update-required-icon.png"::: Update required
+- :::image type="icon" source="./media/git-integration-process/warning.png"::: Item is synced but metadata is different
 
 ### Sync information
 

@@ -1,5 +1,5 @@
 ---
-title: Tutorial-  Use a notebook with Kqlmagic to query a KQL Database
+title: Tutorial-  Use a notebook with Kqlmagic to query a KQL database
 description: Learn how to import the NYCtaxicab notebook into your [!INCLUDE [product-name](../includes/product-name.md)] environment.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -9,9 +9,11 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Tutorial: Use a notebook with Kqlmagic to query a KQL Database
+# Tutorial: Use a notebook with Kqlmagic to query a KQL database
 
 Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents which can be run to perform data analysis. In this article, you learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a KQL Database. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
+
+[Kqlmagic](https://github.com/microsoft/jupyter-Kqlmagic) extends the capabilities of the Python kernel in Jupyter Notebook so you can run [Kusto Query Language (KQL)](/azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric) queries natively. You can combine Python and KQL to query and visualize data using the rich Plot.ly library integrated with the [render](/azure/data-explorer/kusto/query/renderoperator?context=/fabric/context/context&pivots=fabric) operator.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -30,7 +32,7 @@ Specifically, you learn how to:
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [KQL Database](create-database.md)
 
-## 1- Create a KQL Database
+## 1- Create a KQL database
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
 1. Select **KQL Database**.

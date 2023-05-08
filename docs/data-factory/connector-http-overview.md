@@ -20,7 +20,6 @@ This HTTP connector is supported in Data Factory for [!INCLUDE [product-name](..
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | Basic |
 | **Lookup activity** | None | Basic |
-| **Dataflow Gen2 (source/destination)** |  |  |
 
 ## Next steps
 

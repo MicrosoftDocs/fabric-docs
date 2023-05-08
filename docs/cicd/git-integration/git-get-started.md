@@ -19,6 +19,8 @@ This article walks you through the following basic tasks in Microsoft Fabric’s
 
 It’s recommended to read the [overview of git integration](./intro-to-git-integration.md) before you begin.
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 ## Prerequisites
 
 To integrate git with your Microsoft Fabric workspace, you need to set up the following in both Azure DevOps and Fabric.
@@ -97,6 +99,8 @@ After the changes are committed, the items that were committed are removed from 
 
 :::image type="content" source="./media/git-get-started/no-changes.png" alt-text="Screenshot of source control window stating that there are no changes to commit.":::
 
+After the commit is completed successfully, the status of the selected items change from **Uncommitted** to **Synced**. 
+
 ### [Undo saved change](#tab/undo-save)
 
 If, after you saved changes to the workspace, you decide that you don’t want to commit those changes to git, you can undo the changes and revert those items to the previous (unsaved) status. To undo your changes, follow these steps:
@@ -138,6 +142,8 @@ To update a workspace, follow these steps:
 After it updates successfully, the list of items is removed, and the workspace will point to the new commit that it's synced to.
 
 :::image type="content" source="./media/git-get-started/no-updates.png" alt-text="Screenshot of source control window stating that you successfully updated the workspace.":::
+
+After the update is completed successfully, the status of the items is changed to **Synced**.
 
 ## Disconnect a workspace from git
 
