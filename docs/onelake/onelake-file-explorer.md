@@ -124,11 +124,11 @@ To uninstall the app, in Windows, search for “OneLake”. Select **Uninstall**
 
 These OneLake file explorer icons are visible in Windows File Explorer and tell you the sync state of the file or folder.  
 
-| Icon | Meaning |
-| --- | ---|
-| :::image type="icon" source="media\onelake-file-explorer\blue-cloud.png"::: <br/> Blue cloud icon | The file is only available online. Online-only files don’t take up space on your computer. |
-| :::image type="icon" source="media\onelake-file-explorer\green-checkmark.png"::: <br/> Green tick | The file is downloaded to your local computer. |
-| :::image type="icon" source="media\onelake-file-explorer\sync-pending.png"::: <br/> Sync pending arrows | Sync is in progress. This icon may appear when you're uploading files.  If the sync pending arrows are persistent, then your file or folder may have an error syncing.  You can find more information in the client-side logs on your local machine under %temp%\OneLake\Diagnostics\.|
+| Icon | Icon description | Meaning |
+| --- | --- | ---|
+| :::image type="icon" source="media\onelake-file-explorer\blue-cloud.png"::: | Blue cloud icon | The file is only available online. Online-only files don’t take up space on your computer. |
+| :::image type="icon" source="media\onelake-file-explorer\green-checkmark.png"::: | Green tick | The file is downloaded to your local computer. |
+| :::image type="icon" source="media\onelake-file-explorer\sync-pending.png"::: | Sync pending arrows | Sync is in progress. This icon may appear when you're uploading files.  If the sync pending arrows are persistent, then your file or folder may have an error syncing.  You can find more information in the client-side logs on your local machine under %temp%\OneLake\Diagnostics\.|
 
 ## Next steps
 
