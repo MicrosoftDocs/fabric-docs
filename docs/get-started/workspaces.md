@@ -34,11 +34,11 @@ Workspace admins can use workspace settings to manage and update the workspace. 
 
 To open the workspace settings, you can select the workspace in the nav pane, then select **More options (...) next to the workspace name.
 
-:::image type="content" source="media/workspaces/open-workspace-settings.png" alt-text="Open workspace settings in nav pane.":::
+:::image type="content" source="media/workspaces/open-workspace-settings.png" alt-text="Screenshot showing Open workspace settings in nav pane.":::
 
 You can also open it from the workspace page.
 
-:::image type="content" source="media/workspaces/open-in-workspace.png" alt-text="Open workspace settings in workspace." lightbox="media/workspaces/open-in-workspace.png":::
+:::image type="content" source="media/workspaces/open-in-workspace.png" alt-text="Screenshot showing Open workspace settings in workspace." lightbox="media/workspaces/open-in-workspace.png":::
 
 ## Workspace contact list
 
@@ -75,7 +75,7 @@ See the article [Roles in workspaces](roles-workspaces.md) for more details abou
 
 Workspace admins can configure dataflow storage to use Azure Data Lake Gen 2 storage and Azure Log Analytics (LA) connection to collect usage and performance logs for the workspace in workspace settings.
 
-:::image type="content" source="media/workspaces/azure-connection.png" alt-text="Azure resource configuration." lightbox="media/workspaces/azure-connection.png":::
+:::image type="content" source="media/workspaces/azure-connection.png" alt-text="Screenshot showing Azure resource configuration." lightbox="media/workspaces/azure-connection.png":::
 
 With the integration of Azure Data Lake Gen 2 storage, you can bring your own storage to dataflows, and establish a connection at the workspace level. Read [Configure dataflow storage to use Azure Data Lake Gen 2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration) for more detail.  
 
@@ -89,7 +89,7 @@ In the system storage, you can view how much storage you  have used and free up 
 
 Keep in mind that you or someone else may have reports and dashboards based on a dataset. If you delete the dataset, those reports and dashboards don't work anymore.
 
-:::image type="content" source="media/workspaces/system-storage.png" alt-text="Manage your storage." lightbox="media/workspaces/remove-workspace.png":::
+:::image type="content" source="media/workspaces/system-storage.png" alt-text="Screenshot showing Manage your storage." lightbox="media/workspaces/system-storage.png":::
 
 ## Remove the workspace
 
