@@ -16,7 +16,7 @@ Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easil
 
 ## File system utilities
 
-*mssparkutils.fs* provides utilities for working with various file systems, including Azure Data Lake Storage Gen2 (ADLS Gen2) and Azure Blob Storage. Make sure you configure access to [Azure Data Lake Storage Gen2](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) and [Azure Blob Storage](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) appropriately.
+*mssparkutils.fs* provides utilities for working with various file systems, including Azure Data Lake Storage Gen2 (ADLS Gen2) and Azure Blob Storage. Make sure you configure access to [Azure Data Lake Storage Gen2](https://learn.microsoft.com/azure/storage/blobs/data-lake-storage-introduction) and [Azure Blob Storage](https://learn.microsoft.com/azure/storage/blobs/storage-blobs-introduction) appropriately.
 
 Run the following commands for an overview of the available methods:
 
@@ -40,16 +40,29 @@ put(file: String, contents: String, overwrite: Boolean = false): Boolean -> Writ
 head(file: String, maxBytes: int = 1024 * 100): String -> Returns up to the first 'maxBytes' bytes of the given file as a String encoded in UTF-8
 append(file: String, content: String, createFileIfNotExists: Boolean): Boolean -> Append the content to a file
 rm(dir: String, recurse: Boolean = false): Boolean -> Removes a file or directory
+exists(file: String): Boolean -> Check if a file or directory exists
+mount(source: String, mountPoint: String, extraConfigs: Map[String, Any]): Boolean -> Mounts the given remote storage directory at the given mount point
+unmount(mountPoint: String): Boolean -> Deletes a mount point
+mounts(): Array[MountPointInfo] -> Show information about what is mounted
+getMountPath(mountPoint: String, scope: String = ""): String -> Gets the local path of the mount point
 
 Use mssparkutils.fs.help("methodName") for more info about a method.
 ```
+mssparkutils works with the file system in the same way as Spark APIs. Take *mssparkuitls.fs.mkdirs()* and Fabric Lakehouse usage for example: 
+| **Usage** | **Relative path from HDFS root** | **Absolute path for ABFS file system** |**Absolute path for local file system in driver node** |
+|---|---|---|---|
+| Non-default lakehouse | Not supported | *mssparkutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")*  | *mssparkutils.fs.mkdirs("file:/<new_dir>")* |
+| Default lakehouse  | Directory under “Files” or “Tables”: *mssparkutils.fs.mkdirs("Files/<new_dir>")* | *mssparkutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* |*mssparkutils.fs.mkdirs("file:/<new_dir>")*|
+
 
 ### List files
 
-List the content of a directory.
+List the content of a directory, use *mssparkutils.fs.ls('Your directory path')*, for example: 
 
 ```python
-mssparkutils.fs.ls('Your directory path')
+mssparkutils.fs.ls("Files/tmp")  # works with the default lakehouse files using relative path 
+mssparkutils.fs.ls("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<path>")  # based on ABFS file system 
+mssparkutils.fs.ls("file:/tmp")  # based on local file system of driver node 
 ```
 
 ### View file properties
@@ -67,7 +80,10 @@ for file in files:
 Creates the given directory if it doesn't exist and any necessary parent directories.
 
 ```python
-mssparkutils.fs.mkdirs('new directory name')
+mssparkutils.fs.mkdirs('new directory name')  
+mssparkutils.fs. mkdirs("Files/<new_dir>")  # works with the default lakehouse files using relative path 
+mssparkutils.fs.ls("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")  # based on ABFS file system 
+mssparkutils.fs.ls("file:/<new_dir>")  # based on local file system of driver node 
 ```
 
 ### Copy file
@@ -117,6 +133,9 @@ Removes a file or directory.
 ```python
 mssparkutils.fs.rm('file path', True) # Set the last parameter as True to remove all files and directories recursively
 ```
+### Mount/unmount directory
+
+You can find the detailed usage in [File mount and unmount](#file-mount-and-unmount).
 
 ## Notebook utilities
 
@@ -219,15 +238,58 @@ mssparkutils.session.stop()
 > [!NOTE]
 > We don't recommend calling language built-in APIs like *sys.exit* in Scala or *sys.exit()* in Python in your code, because such APIs just kill the interpreter process, leaving the Spark session alive and the resources not released.
 
+## Credentials utilities
+
+You can use the MSSparkUtils Credentials Utilities to get the access tokens and manage secrets in Azure Key Vault.
+
+Run the following command to get an overview of the available methods:
+
+```python
+mssparkutils.credentials.help()
+```
+
+**Output:**
+
+```console
+getToken(audience, name): returns AAD token for a given audience, name (optional)
+getSecret(akvName, secret): returns AKV secret for a given akvName, secret key
+```
+
+### Get token
+
+Returns Azure AD token for a given audience, name (optional). The table below list all the available audience types:
+<!---
+|Audience Type|Audience key|
+|--|--|
+|Audience Resolve Type|'Audience'|
+|Storage Audience Resource|'Storage'|
+|Dedicated SQL pools (Data warehouse)|'DW'|
+|Data Lake Audience Resource|'AzureManagement'|
+|Vault Audience Resource|'DataLakeStore'|
+|Azure OSSDB Audience Resource|'AzureOSSDB'|
+|Azure Synapse Resource|'Synapse'|
+|Azure Data Factory Resource|'ADF'|
+-->
+
+```python
+mssparkutils.credentials.getToken('audience Key')
+```
+### Get secret using user credentials
+
+Returns Azure Key Vault secret for a given Azure Key Vault name, secret name, and linked service name using user credentials.
+
+```python
+mssparkutils.credentials.getSecret('azure key vault name','secret name')
+```
 ## File mount and unmount
 
-The [!INCLUDE [product-name](../includes/product-name.md)] notebook team has built three new APIs to support mount scenarios in the Microsoft Spark Utilities package, they are: mount, unmount, and mounts. You can use these APIs to attach remote storage (Azure Data Lake Storage Gen2) to all working nodes (driver node and worker nodes). After the storage mount point is in place, use the local file API to access data as if it's stored in the local file system.
+The [!INCLUDE [product-name](../includes/product-name.md)] support mount scenarios in the Microsoft Spark Utilities package via four APIs, they are: *mount*, *unmount*, *getMountPath()* and *mounts*. You can use these APIs to attach remote storage (Azure Data Lake Storage Gen2) to all working nodes (driver node and worker nodes). After the storage mount point is in place, use the local file API to access data as if it's stored in the local file system.
 
 ### How to mount an ADLS Gen2 account
 
 This section illustrates how to mount Azure Data Lake Storage Gen2 step by step as an example. Mounting Blob Storage works similarly.
 
-The example assumes that you have one Data Lake Storage Gen2 account named *storegen2*. The account has one container named *mycontainer* that you want to mount to */test* in your Spark pool.
+The example assumes that you have one Data Lake Storage Gen2 account named *storegen2*. The account has one container named *mycontainer* that you want to mount to */test* into your notebook spark session.
 
 :::image type="content" source="media\microsoft-spark-utilities\mount-container-example.png" alt-text="Screenshot showing where to select a container to mount." lightbox="media\microsoft-spark-utilities\mount-container-example.png":::
 
@@ -235,57 +297,52 @@ To mount the container called *mycontainer*, *mssparkutils* first needs to check
 
 ### Mount via shared access signature token or account key
 
-Mssparkutils supports explicitly passing an account key or [Shared access signature (SAS)](/azure/storage/common/storage-sas-overview) token as a parameter to mount the target.
+Mssparkutils supports explicitly passing an account key or [Shared access signature (SAS)](https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview) token as a parameter to mount the target.
 
-For security reasons, we recommend that you store account keys or SAS tokens in Azure Key Vault (as the following example screenshot shows). You can then retrieve them by using the PyTridentTokenLibrary.get_secret_with_token API. For the usage of Azure Key Vault, refer to [About Azure Key Vault managed storage account keys](/azure/key-vault/secrets/about-managed-storage-account-keys).
+For security reasons, we recommend that you store account keys or SAS tokens in Azure Key Vault (as the following example screenshot shows). You can then retrieve them by using the PyTridentTokenLibrary.get_secret_with_token API. For the usage of Azure Key Vault, refer to [About Azure Key Vault managed storage account keys](https://learn.microsoft.com/en-us/azure/key-vault/secrets/about-managed-storage-account-keys).
 
 :::image type="content" source="media\microsoft-spark-utilities\use-azure-key-vault.png" alt-text="Screenshot showing where secrets stored in an Azure Key Vault." lightbox="media\microsoft-spark-utilities\use-azure-key-vault.png":::
 
 Here's the sample code of using accountKey method:
 
 ```python
-from notebookutils import mssparkutils  
-from trident_token_library_wrapper import PyTridentTokenLibrary
+from notebookutils import mssparkutils  
 # get access token for keyvault resource
 # you can also use full audience here like https://vault.azure.net
-access_token = PyTridentTokenLibrary.get_access_token("keyvault") # The "keyvault" is a hard coded resource id, you don't need to change it
-accountKey = PyTridentTokenLibrary.get_secret_with_token("<vaultURI>", "<secretName>", access_token)
-mssparkutils.fs.mount(  
-    "abfss://mycontainer@<accountname>.dfs.core.windows.net",  
-    "/test",  
-    {"accountKey":accountKey}
+accountKey = mssparkutils.credentials.getSecret("<vaultURI>", "<secretName>")
+mssparkutils.fs.mount(  
+    "abfss://mycontainer@<accountname>.dfs.core.windows.net",  
+    "/test",  
+    {"accountKey":accountKey}
 )
 ```
 
 For *sastoken*, reference the following sample code:
 
 ```python
-from notebookutils import mssparkutils  
-from trident_token_library_wrapper import PyTridentTokenLibrary
+from notebookutils import mssparkutils  
 # get access token for keyvault resource
 # you can also use full audience here like https://vault.azure.net
-access_token = PyTridentTokenLibrary.get_access_token("keyvault") # The "keyvault" is a hard coded resource id, you don't need to change it
-sasToken = PyTridentTokenLibrary.get_secret_with_token("<vaultURI>", "<secretName>", access_token)
-sasToken = sasToken[1:] # To remove the '?' from sasToken
-mssparkutils.fs.mount(  
-    "abfss://mycontainer@<accountname>.dfs.core.windows.net",  
-    "/test",  
-    {"sasToken":sasToken}
+sasToken = mssparkutils.credentials.getSecret("<vaultURI>", "<secretName>")
+mssparkutils.fs.mount(  
+    "abfss://mycontainer@<accountname>.dfs.core.windows.net",  
+    "/test",  
+    {"sasToken":sasToken}
 )
 ```
 
 > [!NOTE]
-> For security reasons, it's not recommended to store credentials in code. We will support secret redaction soon.
+> For security reasons, it's not recommended to store credentials in code. To further protect your credentials, we will redact your secret in notebook output, for more details please check [Secret redaction](author-execute-notebook.md/secret-redaction).
 
 ### How to mount a lakehouse
 
 Here's the sample code of mounting a lakehouse to */test*.
 
 ```python
-from notebookutils import mssparkutils 
+from notebookutils import mssparkutils 
 mssparkutils.fs.mount( 
- "abfss://<workspace_id>@msit-onelake.pbidedicated.windows.net/<lakehouse_id>", 
- "/test"
+ "abfss://<workspace_id>@msit-onelake.dfs.fabric.microsoft.com/<lakehouse_id>", 
+ "/test"
 )
 ```
 
@@ -296,7 +353,7 @@ The main purpose of the mount operation is to let customers access the data stor
 Assume that you mounted the Data Lake Storage Gen2 container *mycontainer* to */test* by using the mount API. When you access the data by using a local file system API, the path format is like this:
 
 ```python
-/trident/test/{filename}
+/synfs/notebook/{sessionId}/test/{filename}
 ```
 
 When you want to access the data by using the mssparkutils fs API, we recommend using a *getMountPath()* to get the accurate path:
@@ -304,9 +361,6 @@ When you want to access the data by using the mssparkutils fs API, we recommend 
 ```python
 path = mssparkutils.fs.getMountPath("/test")
 ```
-
-> [!NOTE]
-> The “/” of mount point is necessary in *mssparkutils.fs.getMountPath()*, and it doesn't verify the validity of the mount point now.
 
 - List directories:
 
@@ -333,7 +387,7 @@ You can easily read and write the files in mount point using standard file syste
 ```python
 #File read
 with open(mssparkutils.fs.getMountPath('/test2') + "/myFile.txt", "r") as f:
-print(f.read())
+    print(f.read())
 #File write
 with open(mssparkutils.fs.getMountPath('/test2') + "/myFile.txt", "w") as f:
     print(f.write("dummy data"))
@@ -341,7 +395,7 @@ with open(mssparkutils.fs.getMountPath('/test2') + "/myFile.txt", "w") as f:
 
 ### How to check existing mount points
 
-You can use *mssparkutils.fs.mounts* API to check all existing mount point info:
+You can use *mssparkutils.fs.mounts()* API to check all existing mount point info:
 
 ```python
 mssparkutils.fs.mounts()
@@ -357,8 +411,7 @@ mssparkutils.fs.unmount("/test")
 
 ### Known limitations
 
-- The *mssparkutils fs help* function hasn't added the description about the mount and unmount part yet.
-- The current mount is a job level configuration; notebook level and workspace level design work will be available soon. So, always use *mounts* API to check if mount point exists or not available.
+- The current mount is a job level configuration, we recommand to use *mounts* API to check if mount point exists or not available.
 - The unmount mechanism isn't automatic. When the application run finishes, to unmount the mount point to release the disk space, you need to explicitly call an unmount API in your code. Otherwise, the mount point will still exist in the node after the application run finishes.
 - Mounting an ADLS Gen1 storage account isn't supported.
 
