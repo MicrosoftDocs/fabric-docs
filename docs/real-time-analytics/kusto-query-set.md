@@ -91,7 +91,7 @@ Expanding cells are useful to view long strings or dynamic fields such as JSON.
 
 1. Select on the icon on the top right of the result grid to switch reading pane modes. Choose between the following reading pane modes for expanded view: inline, below pane, and right pane.
 
-    :::image type="content" source="media/kusto-query-set/expanded-view-icon.png" alt-text="Screenshot of the KQL queryset results pane showing the option to change the view mode of the query results pane.":::
+    :::image type="content" source="media/kusto-query-set/expanded-view-icon.png" alt-text="Screenshot of the KQL queryset results pane showing the option to change the view mode of the query results pane."  lightbox="media/kusto-query-set/expanded-view-icon.png":::
 
 #### Expand a row
 
@@ -117,7 +117,7 @@ Within the results, you can group results by any column.
 
 1. Mouse-over the **State** column, select the menu, and select **Group by State**.
 
-    :::image type="content" source="media/kusto-query-set/group-by.png" alt-text="Screenshot of the KQL queryset result pane showing the menu of the column titled State. The menu option to group by state is highlighted.":::
+    :::image type="content" source="media/kusto-query-set/group-by.png" alt-text="Screenshot of the KQL queryset result pane showing the menu of the column titled State. The menu option to group by state is highlighted."  lightbox="media/kusto-query-set/group-by.png":::
 
 1. In the grid, double-click on **California** to expand and see records for that state. This type of grouping can be helpful when doing exploratory analysis.
 
@@ -131,7 +131,7 @@ Within the results, you can group results by any column.
 
 You can hide/show empty columns by toggling the **eye** icon on the results grid menu.
 
-:::image type="content" source="media/kusto-query-set/hide-empty-columns.png" alt-text="Screenshot of the KQL queryset result pane. The eye icon to hide and show empty columns in the results pane is highlighted.":::
+:::image type="content" source="media/kusto-query-set/hide-empty-columns.png" alt-text="Screenshot of the KQL queryset result pane. The eye icon to hide and show empty columns in the results pane is highlighted."  lightbox="media/kusto-query-set/hide-empty-columns.png":::
 
 #### Filter columns
 
@@ -162,7 +162,7 @@ You can use one or more operators to filter the results of a column.
 
 1. In the results pane, select a few of the numerical cells. The table grid allows you to select multiple rows, columns, and cells and calculate aggregations on them. The following functions are supported for numeric values: **Average**, **Count**, **Min**, **Max**, and **Sum**.
 
-    :::image type="content" source="media/kusto-query-set/select-stats.png" alt-text="Screenshot of the KQL query results pane showing a few numerical cells that are selected. The outcome of the selection shows an calculated aggregation of those cells..":::
+    :::image type="content" source="media/kusto-query-set/select-stats.png" alt-text="Screenshot of the KQL query results pane showing a few numerical cells that are selected. The outcome of the selection shows a calculated aggregation of those cells."  lightbox="media/kusto-query-set/select-stats.png":::
 
 ### Filter to query from grid
 
