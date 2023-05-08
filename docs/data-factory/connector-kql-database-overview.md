@@ -23,4 +23,4 @@ This KQL Database connector is supported in Data Factory for [!INCLUDE [product-
 
 ## Next steps
 
-[How to configure KQL Database in copy activity](connector-kql-database-copy-activity.md)
+- [How to configure KQL Database in a copy activity](connector-kql-database-copy-activity.md)
