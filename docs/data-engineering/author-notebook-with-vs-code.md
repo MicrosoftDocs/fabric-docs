@@ -42,11 +42,12 @@ Before editing the notebook content, you need to explicitly download the noteboo
 
 ## Open notebook
 
-To open the notebook, you can click the “Open Notebook Folder” button at the toolbar.
+To open the notebook, you can select the “Open Notebook Folder” button at the toolbar.
 
 :::image type="content" source="media\vscode\open-notebook.png" alt-text="Screenshot showing open notebook button.":::
 
 ## Delete notebook
+
 You can delete the notebook artifact by clicking the “Delete Notebook” button at the toolbar of the target notebook. You can choose to delete only the local copy or both the local copy and the remote workspace copy.
 
 :::image type="content" source="media\vscode\delete-notebook.png" alt-text="Screenshot showing delete notebook button.":::
@@ -67,8 +68,7 @@ If the same notebook is  open in the Trident portal, the user at the portal side
 **Accept**: the change from VSCode is successfully saved at the workspace
 **Reject**: the change from VSCode is ignored
 
-
-## Pull change from remote workspace 
+## Pull change from remote workspace
 
 Beside pushing the change to remote workspace, you can also choose to update the local version with the latest workspace version by pulling the remote version. you can trigger the pulling by clicking the “Update” button.
 
@@ -78,7 +78,7 @@ The system would pull the latest version from the remote workspace and open the 
 
 :::image type="content" source="media\vscode\update-notebook-diff.png" alt-text="Screenshot showing update notebook diff.":::
 
-You can update the code/markdown cell on the left side to address the difference. After the conflict/difference are all addressed, you should click the “Merge” button at the top right corner of the windows to confirm the merging is done. Before clicking “Merge”, the notebook will stay in the “Conflict” mode.
+You can update the code/markdown cell on the left side to address the difference. After the conflict/difference are all addressed, you should select the “Merge” button at the top-right corner of the windows to confirm the merging is done. Before clicking “Merge”, the notebook will stay in the “Conflict” mode.
 
 :::image type="content" source="media\vscode\update-notebook-merge.png" alt-text="Screenshot showing update notebook merge.":::
 
@@ -86,6 +86,7 @@ You can update the code/markdown cell on the left side to address the difference
 > After the diff view is open once, the extension will NOT automatically refresh left side of the diff view to fetch the latest update from the remote workspace.
 
 ## Run/Debug notebook on remote Spark compute
+
 By selecting the kernel shipped with this extension, you can run the code cell on top of the remote Trident Spark compute. Once this kernel is selected, during runtime, all the PySpark API call will be intercepted by the extension and translated to the corresponding http call to the remote Spark compute. For pure python code, it would still be executed in the local environment.
 
 :::image type="content" source="media\vscode\run-notebook.png" alt-text="Screenshot showing run notebook.":::
