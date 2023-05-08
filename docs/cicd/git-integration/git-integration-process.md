@@ -12,6 +12,8 @@ ms.custom:
 
 This article explains basic git concepts and the process of integrating git with your Microsoft Fabric workspace.
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 ## Permissions
 
 The actions you can take on a workspace depend on the permissions you have in both the workspace and Azure DevOps. 

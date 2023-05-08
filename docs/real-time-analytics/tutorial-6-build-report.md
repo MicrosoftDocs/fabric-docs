@@ -13,7 +13,7 @@ ms.search.form: product-kusto
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md)
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md).
 
 A Power BI report is a multi-perspective view into a dataset, with visuals that represent findings and insights from that dataset. In this section, you create a new query that joins both datasets, and use this query output to create a new Power BI report.
 
@@ -80,4 +80,4 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Synapse Real-Time Analytics tutorial part 7: Clean up resources](tutorial-7-clean-up-resources.md)
+> [Tutorial part 7: Clean up resources](tutorial-7-clean-up-resources.md)
