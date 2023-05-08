@@ -78,7 +78,9 @@ The Help pane is also a great place to search for answers to your questions. Typ
 
 :::image type="content" source="media/fabric-home/fabric-home-help-results.png" alt-text="Screenshot of the Help pane before beginning a search.":::
 
-To return to the default Help pane, select the left arrow. ![Screenshot of the left arrow icon](media/fabric-home/fabric-home-arrow.png).
+To return to the default Help pane, select the left arrow. 
+
+:::image type="content" source="media/fabric-home/fabric-home-arrow.png" alt-text="Screenshot of the left arrow icon.":::
 
 For more information about searching, see [Searching and sorting](fabric-search.md).
 
