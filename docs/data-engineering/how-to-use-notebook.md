@@ -42,7 +42,7 @@ You can import one or more existing notebooks from your local computer to a [!IN
 
 In [!INCLUDE [product-name](../includes/product-name.md)], a notebook will save automatically after you open and edit it; you don't need to worry about losing code changes. You can also use **Save a copy** to clone another copy in the current workspace.
 
-You can also switch to manual save mode from "Edit->Save options->Manual" to turn on a local branch of your notebook then save it manually by clicking "Save" button or through "Ctrl" + "s" keybinding.
+You can also switch to manual save mode from **Edit**->**Save options**->**Manual**. To turn on a local branch of your notebook then save it manually by clicking **Save** button or through "Ctrl" + "s" keybinding.
 
 ## Connect lakehouses and notebooks
 
