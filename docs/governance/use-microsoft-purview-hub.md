@@ -1,12 +1,11 @@
 ---
 title: The Microsoft Purview Hub in Microsoft Fabric
 description: This article describes how to use the Microsoft Purview Hub in Microsoft Fabric to monitor and govern your Microsoft Fabric instance.
-ms.reviewer: viseshag
-ms.author: whhender
-author: whhender
+ms.reviewer: antonfr
+ms.author: painbar
+author: paulinbar
 ms.topic: how-to 
 ms.date: 3/31/2023
----
 
 # The Microsoft Purview Hub in Microsoft Fabric
 
@@ -16,14 +15,14 @@ The Microsoft Purview hub is your gateway to Microsoft Purview's powerful govern
 
 To access the hub, select the Fabric settings gear icon and choose **Microsoft Purview hub (preview)**.
 
-:::image type="content" source="./media/microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of Open Microsoft Purview hub option.":::
+:::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of Open Microsoft Purview hub option.":::
 
 > [!NOTE]
 > Currently, the hub is available to Power BI admins only.
 
 ## The hub at a glance
 
-:::image type="content" source="./media/microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub, admin view." lightbox="./media/microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub, admin view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
 The main components of the hub are described below.
 
