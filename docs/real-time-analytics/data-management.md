@@ -18,7 +18,7 @@ For more information, see [Management commands](/azure/data-explorer/kusto/manag
 You can manage your data using the UI in the following ways:
 
 * Modify [Data retention policy](#data-retention-policy)
-* Activate [Data copy to OneLake](#data-copy-to-onelake)
+* Activate [One logical copy](#data-copy-to-onelake)
 * Create [Materialized views](#materialized-views)
 * Create a [Table update policy](#table-update-policy)
 * Create [Stored functions](#stored-functions)
@@ -33,9 +33,9 @@ To change the data retention policy, browse to your KQL database and select the 
 
 For more information, see [Retention policy](/azure/data-explorer/kusto/management/retentionpolicy?context=/fabric/context/context).
 
-### Data copy to OneLake
+### One logical copy
 
-To expose the data in your KQL database to all of [!INCLUDE [product-name](../includes/product-name.md)] experiences, activate data copy and create a OneLake shortcut.
+To expose the data in your KQL database to all of [!INCLUDE [product-name](../includes/product-name.md)] experiences, create a OneLake shortcut.
 
 For more information, see [One logical copy](onelake-mirroring.md).
 
@@ -43,7 +43,7 @@ For more information, see [One logical copy](onelake-mirroring.md).
 
 ### Table update policy
 
-When you trigger an update policy with a command that adds data to a source table, data also appends to a target table. The target table can have a different schema, retention policy, and other policies from the source table. You can create an update policy on a table using the [.alter table update policy](/azure/data-explorer/kusto/management/alter-table-update-policy-command?context=/fabric/context/context&pivots=fabric) command.
+When you trigger an update policy with a command that adds data to a source table, data also appends to a target table. The target table can have a different schema, retention policy, and other policies from the source table.
 
 For more information, see [Create a table update policy](table-update-policy.md).
 
