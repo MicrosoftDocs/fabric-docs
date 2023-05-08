@@ -45,7 +45,7 @@ landingContent:
           url: get-data-blob.md
         - text: Get data from a blob container 
           url: get-data-blob-container.md
-        - text: Get data from Event Hubs
+        - text: Get data from Azure Event Hubs
           url: get-data-event-hub.md
         - text: Get data from OneLake
           url: get-data-onelake.md
