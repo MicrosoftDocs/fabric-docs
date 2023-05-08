@@ -12,7 +12,7 @@ ms.date: 03/24/2023
 # How-to: Create an Amazon S3 shortcut
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
-For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+In this how-to guide, you will learn how to create an S3 shortcut inside a Fabric Lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
 ## Prerequisite
 
@@ -30,13 +30,13 @@ To create and Amazon S3 Shortcut:
 
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
 
-1. Select **Amazon S3** tile
+1. Select **Amazon S3** tile.
 
     :::image type="content" source="media\create-onelake-shortcut\new-shortcut-tile-options-v2.png" alt-text="Screenshot of New Shortcuts dialog showing selection tiles for shortcut types" lightbox="media\create-onelake-shortcut\new-shortcut-tile-options.png":::
 
 1. Specify the connection details this shortcut will use.
 
-   1. Proved the endpoint for your S3 account (URL)
+   1. Proved the endpoint for your S3 account (URL).
       > [!NOTE]
       > URL must be in the following format `https://bucketname.s3.region.amazonaws.com/`
 
@@ -44,7 +44,7 @@ To create and Amazon S3 Shortcut:
 
    1. Enter a **Connection name**.
 
-   1. Provide the **Username**(Key) **Password**(Secret) for your IAM user
+   1. Provide the **Username**(Key) **Password**(Secret) for your IAM user.
 
    1. Select **Next**.
 

@@ -12,7 +12,7 @@ ms.date: 03/24/2023
 # How-to: Create an ADLS Gen2 shortcut
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
-For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+In this how-to guide, you will learn how to create an ADLS shortcut inside a Fabric Lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
 ## Prerequisite
 
