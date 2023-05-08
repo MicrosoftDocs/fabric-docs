@@ -20,32 +20,34 @@ Visual Studio Code is a one of the most popular lightweight source code editors,
 ## Prerequisites
 Below software is required to use this extension
 1. [Java 1.8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
-2. [Conda]https://docs.conda.io/latest/miniconda.html)
-3. [Jupyter extension for VS Code]https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+2. [Conda](https://docs.conda.io/latest/miniconda.html)
+3. [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
  
 After all this software is installed, there are certain steps needed to update the operating system properties
 
-Windows 
+**Windows** 
 1. add JAVA_HOME to the environment variables and point it to the directory where java 1.8 in installed
 2. add both %JAVA_HOME%/bin and Contain subfolder of the Conda installation to the system path directory
 
-macOS 
+**macOS**  
 1. run the conda.sh in the terminal. Open the terminal window, change the directory to the folder where conda is installed, the change to the sub-directory: etc/profile.d, there should be a file named conda.sh there, then execute: Source conda.sh
 2. in the same terminal windows, run: sudo conda init
 3. type in Java –-version, the version should be Java 1.8 
 
 ## Install the extension and prepare the environment
-Search "Synapse VS Code" in the VS Code extension marketplace, then install the extension. The extension is still under preview, so you need to select the "pre-release" version to install.
+Search *Synapse VS Code* in the VS Code extension marketplace, then install the extension. The extension is still under preview, so you need to select the "pre-release" version to install.
 
 It is suggested that to restart the VS Code once the extension is installed. After successfully installed, the icon of the extension will be listed at the VS Code activity bar:
 
-### Local working directory 
+### Local working directory
+
 To develop notebook, you need to have a local copy of the notebook content for the further edition. The local working directory of the extension serves as the local root folder of all downloaded notebooks from different workspaces. By invoking the command of **Synapse:Set Local Work Folder**, you could specify a folder as the local working directory for this extension.
  
 To validate the setup, you could open the extension settings and check the value there.
  :::image type="content" source="media\vscode\local-working-dir.png" alt-text="Screenshot showing local working dir.":::
 
 ### Sign in your account
+
 The **Synapse:Sign in** command is provided to sign-in. Once this command is invoked from the VS Code command palette, a separated browser sign in page will be promoted and ask for the username and password.
 
 After successfully sing in, the username will be displayed at the status bar to indicate the state of sign in.
