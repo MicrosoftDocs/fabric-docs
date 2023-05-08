@@ -80,4 +80,4 @@ The report contains the following pages:
 
 ## Next steps
 
-* [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.d)
+* [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md)
