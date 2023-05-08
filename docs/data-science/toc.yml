@@ -43,12 +43,12 @@ items:
         href: ./model-training/fabric-sparkml-tutorial.md
       - name: Train models with Scikit-learn
         href: train-models-scikit-learn.md
+      - name: Train models with SynapseML
+        href: train-models-synapseml.md  
 - name: Track models and experiments
   items:
   - name: Machine learning experiment
     href: machine-learning-experiment.md
-  - name: Train models with SynapseML
-    href: train-models-synapseml.md  
   - name: Machine learning model
     href: machine-learning-model.md
   - name: Fabric autologging
@@ -101,24 +101,24 @@ items:
       href: synapseml-first-model.md
   - name: How-to guides
     items:
-    - name: How to use LightGBM with SynapseML
+    - name: Use LightGBM with SynapseML
       href: lightgbm-overview.md
-    - name: How to use Cognitive Services with SynapseML
+    - name: Use Cognitive Services with SynapseML
       href: overview-cognitive-services.md
-    - name: How to perform the same classification task with and without SynapseML
+    - name: Perform classification with and without SynapseML
       href: classification-before-and-after-synapseml.md
-    - name: How to use knn model with SynapseML
+    - name: Use k-nearest neighbors with SynapseML
       href: conditional-knn-exploring-art.md
-    - name: How to use ONNX with SynapseML - Deep Learning
+    - name: Perform deep learning using ONNX with SynapseML
       href: onnx-overview.md
-    - name: How to use Kernel SHAP to explain a tabular classification model
+    - name: Explain a tabular classification model with tabular SHAP
       href: tabular-shap-explainer.md
-    - name: How to use SynapseML for multivariate anomaly detection
+    - name: Perform multivariate anomaly detection with SynapseML
       href: isolation-forest-multivariate-anomaly-detection.md 
-    - name: How to Build a Search Engine with SynapseML
+    - name: Build a Search engine with SynapseML
       href: cognitive-services-create-a-multilingual-search-engine-from-forms.md
-    - name: How to use SynapseML and Cognitive Services for multivariate anomaly detection - Analyze time series
+    - name: Use SynapseML and Cognitive Services for multivariate anomaly detection
       href: cognitive-services-multivariate-anomaly-detection.md
-    - name: How to use SynapseML to tune hyperparameters
+    - name: Tune hyperparameters using SynapseML
       href: hyperparameter-tuning-fighting-breast-cancer.md
 

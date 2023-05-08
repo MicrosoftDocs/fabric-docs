@@ -15,7 +15,7 @@ ms.date: 05/08/2023
 
 ## Introduction
 
-<p>:::image source="media/classification-before-and-after-synapseml/1000638-books-landing-page-bookstore-photo-01.jpg" alt-text="picture 1000638_books_landing-page_bookstore-photo-01":::<br /></p>
+:::image type="content" source="media/classification-before-and-after-synapseml/1000638-books-landing-page-bookstore-photo-01.jpg" alt-text="picture 1000638_books_landing-page_bookstore-photo-01" lightbox="media/classification-before-and-after-synapseml/1000638-books-landing-page-bookstore-photo-01.jpg":::
 
 In this tutorial, we perform the same classification task in two
 different ways: once using plain **`pyspark`** and once using the
