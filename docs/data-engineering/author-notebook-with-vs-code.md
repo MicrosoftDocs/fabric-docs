@@ -92,5 +92,5 @@ By selecting the kernel shipped with this extension, you can run the code cell o
 
 ## Next steps
 
-* [Spark Job Definition experience in VS Code](author-sjd-with-vscode.md)
-* [Explore lakehouse from VS Code](explore-lakehouse-with-vscode.md)
+* [Spark Job Definition experience in VS Code](author-sjd-with-vs-code.md)
+* [Explore lakehouse from VS Code](explore-lakehouse-with-vs-code.md)
