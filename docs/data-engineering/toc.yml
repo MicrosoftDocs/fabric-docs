@@ -130,10 +130,10 @@ items:
 - name: VSCode Integration 
   items:
   - name: Overview
-    href: setup-vscode-extension.md
+    href: setup-vs-code-extension.md
   - name: Develop Notebook with VS Code extension
-    href: author-notebook-with-vscode.md
+    href: author-notebook-with-vs-code.md
   - name: Develop Spark Job Definition with VS Code extension
-    href: author-sjd-with-vscode.md
+    href: author-sjd-with-vs-code.md
   - name: Explore lakehouse with VS Code extension
-    href: explore-lakehouse-with-vscode.md
+    href: explore-lakehouse-with-vs-code.md
