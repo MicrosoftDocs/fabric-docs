@@ -22,7 +22,7 @@ For more information about the Fabric/Purview integration, see [Use Microsoft Pu
 
 To access the hub, open the [Fabric settings pane](../get-started/fabric-settings.md#open-the-fabric-settings-pane) and choose **Microsoft Purview hub (preview)**.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub, admin view." lightbox="./media/use-microsoft-purview-hub/open-purview-hub.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings." lightbox="./media/use-microsoft-purview-hub/open-purview-hub.png":::
 
 > [!NOTE]
 > Currently the Microsoft Purview hub is available for Power BI administrators only.
@@ -35,7 +35,7 @@ The hub has two main sections:
 
 * [Microsoft Fabric data](#microsoft-fabric-data), which provides insights about how Fabric items are distributed throughout your tenant and what the current state of endorsement is.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub, admin view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
 ## Microsoft Purview hub
 
@@ -71,7 +71,7 @@ You could also use label coverage by item type to see if there are certain items
 
 The Purview hub insights report contains more detailed insights about your data. To open it, select the  **Open full report** but at the top of the report page in the Purview hub. The report is located in the [Admin monitoring workspace](../admin/admin-monitoring.md), and you can also access it directly from there.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png" alt-text="Screenshot of the Microsoft Purview hub, sensitivity page." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png" alt-text="Screenshot of the Microsoft Purview hub full report." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png":::
 
 The report contains the following pages:
 
