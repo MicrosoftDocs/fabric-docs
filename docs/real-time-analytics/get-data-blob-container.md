@@ -38,7 +38,7 @@ To get data from a blob, see [Get data from a blob](get-data-blob.md).
 
     To add a blob URI, you need to generate an Account Key/ SAS token with both List and Read permissions. To generate an Account Key/SAS token, see [Generate a SAS token](/azure/data-explorer/generate-sas-token?context=/fabric/context/context&pivots=fabric).
 
-    :::image type="content" source="media/database-editor/ingest-new-data-blob-container.png" alt-text="Screenshot of data ingestion pane for blob containers.":::
+    :::image type="content" source="media/get-data-blob/ingest-new-data-blob-container.png" alt-text="Screenshot of data ingestion pane for blob containers.":::
 
 1. Optionally, you can filter data to be ingested with **File filters**. You can filter by file extension, folder path, or both.
 
@@ -46,7 +46,7 @@ To get data from a blob, see [Get data from a blob](get-data-blob.md).
 
     **Filter by folder path**: you can either enter a full or partial folder path, or folder name.
 
-    :::image type="content" source="media/database-editor/file-filters-blob-container.png" alt-text="Screenshot of file filters for blob container.":::
+    :::image type="content" source="media/get-data-blob/file-filters-blob-container.png" alt-text="Screenshot of file filters for blob container.":::
 
 1. Select **Next: Schema** to view and edit your table column configuration.
 

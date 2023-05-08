@@ -1,6 +1,6 @@
 ---
-title: Get data from a blobin Real-Time Analytics
-description: Learn how to get data from a blob in a KQL Database in Real-Time Analytics
+title: Get data from a blob in Real-Time Analytics
+description: Learn how to get data from a blob in a KQL database in Real-Time Analytics
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -9,7 +9,11 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Get data from a blob
+# Get data from a blob 
+
+In this article, you'll learn you how to get data from an Azure blob into an existing database. Azure Blob Storage is optimized for storing massive amounts of unstructured data. Unstructured data is data that doesn't adhere to a particular data model or definition, such as text or binary data. For more information on Azure blob storage, see [Introduction to Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
+
+To get data from a blob container, see [Get data from a blob container](get-data-blob-container.md).
 
 In this article, you'll learn you how to get data from an Azure blob into an existing database. Azure Blob Storage is optimized for storing massive amounts of unstructured data. Unstructured data is data that doesn't adhere to a particular data model or definition, such as text or binary data. For more information on Azure blob storage, see [Introduction to Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
 
@@ -29,9 +33,8 @@ To get data from a blob container, see [Get data from a blob container](get-data
 
     :::image type="content" source="media/get-data-blob/get-data-blob.png" alt-text="Screenshot of get data- blob in Real-Time Analytics.":::
 
-1. In **Table**, enter a name for your table.
-
-    :::image type="content" source="media/database-editor/table-name.png" alt-text="table name.":::
+1. On the **Home** tab, select **Get Data** > **Get data from blob**.
+1. Enter a name for your table. By default, **New table** is selected.
 
     > [!TIP]
     >  Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
@@ -46,9 +49,6 @@ To get data from a blob container, see [Get data from a blob container](get-data
     To add a blob URI, you need to generate an Account Key/ SAS token with both List and Read permissions. To generate an Account Key/SAS token, see [Generate a SAS token](/azure/data-explorer/generate-sas-token?context=/fabric/context/context&pivots=fabric).
 
     The blob you add will be the basis for the schema tab. You can add up to 10 items of up to 1-GB uncompressed size each. If you upload more than one item, you can change the schema-defining blob by selecting the star icon on the right side of the source link field.
-
-    :::image type="content" source="media/database-editor/ingest-new-data.png" alt-text="Ingest new data.":::
-
 1. Select **Next: Schema** to view and edit your table column configuration.
 
 ### Schema tab
