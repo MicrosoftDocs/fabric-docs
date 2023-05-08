@@ -49,7 +49,7 @@ The tiles in the Microsoft Purview hub section provide access to the locations y
 
 ## Microsoft Fabric data
 
-The Microsoft Fabric data section shows you insights about your Fabric data estate. It has two tabs which show you the **Items** and **Sensitivity** pages from the [Microsoft Purview hub report](#purview-hub-insights-report). From these two pages you can gain insights about how Fabric items are distributed throughout your tenant and what the current state of endorsement is.
+The Microsoft Fabric data section shows you insights about your Fabric data estate. It has two tabs that show you the **Items** and **Sensitivity** pages from the [Microsoft Purview hub report](#purview-hub-insights-report). From these two pages you can gain insights about how Fabric items are distributed throughout your tenant and what the current state of endorsement is.
 
 ### Items page
 
