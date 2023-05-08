@@ -29,7 +29,6 @@ The python commands/script used in each step of this tutorial can be found in th
 1. In the first step of this module, we read data from "azureopendatastorage" storage container using anonymous since the container has public access. We load yellow cab data by specifying the directory and filter the data by year (puYear) and month (puMonth). In this tutorial, we try to minimize the amount of data ingested and processed to speed up the execution.
 
    :::image type="content" source="media\tutorial-data-science-ingest-data\filter-by-year-month.png" alt-text="Screenshot of code sample for filtering data ingestion by month and year." lightbox="media\tutorial-data-science-ingest-data\filter-by-year-month.png":::
-filter-by-year-month
 
 1. Next, we set spark configurations to enable VOrder engine and Optimize delta writes.
 
