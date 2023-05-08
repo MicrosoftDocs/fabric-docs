@@ -185,7 +185,7 @@ To learn more information about copy activity in Lakehouse, see the following ta
 |**Max concurrent connections**|Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
 |**File path**|Copy from the given file path specified|\<file path>|No|•folderPath<br>•fileName|
 |**File format**|Format of the file.|\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextWriteSettings|
-|**Copy behavior** |Defines behaviour when copying files from one file system like storage to the other.|•**Add dynamic content**<br>•**None**<br>•**Flatten hierarchy**<br>•**Preserve hierarchy**|No |copyBehavior:<br><br><br>FlattenHierarchy<br>PreserveHierarchy|
+|**Copy behavior** |Defines behavior when copying files from one file system like storage to the other.|•**Add dynamic content**<br>•**None**<br>•**Flatten hierarchy**<br>•**Preserve hierarchy**|No |copyBehavior:<br><br><br>FlattenHierarchy<br>PreserveHierarchy|
 |**Block size (MB)** |Specify the block size in MB when writing data to Lakehouse.|\<block size\>|No|blockSizeInMB|
 |**Metadata** |Set custom metadata when copy to destination.|•`$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
