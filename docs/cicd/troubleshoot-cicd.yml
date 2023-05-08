@@ -77,9 +77,9 @@ sections:
  
           To use the lifecycle management features, you need one of the following licenses:
           
-          * An [organizational license](../enterprise/licenses.md#organizational-licenses) 
+          * A [Premium Per user (PPU)](../enterprise/licenses.md#organizational-licenses) 
           
-          * A [Pro license](../enterprise/licenses.md#individual-licenses), with a workspace that resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
+          * A [capacity license](../enterprise/licenses.md#organizational-licenses), with a workspace that resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
               
           For more information on obtaining a license, see [Fabric licenses](../enterprise/licenses.md).
           
@@ -91,6 +91,7 @@ sections:
           For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity-and-skus).
 
           >[!NOTE]
+          >
           > * PPU, EM, and A SKUs only work with Power BI items. If you add other Fabric items to the workspace, you need a trial, P, or F SKU.
           > * When you create a workspace with a PPU, only other PPU users can able to access the workspace and consume its content.
           
