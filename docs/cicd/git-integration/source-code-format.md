@@ -19,7 +19,7 @@ Inside each directory are the mandatory system files that define the item. Besid
 - [item.metadata.json](#metadata-file)
 - [item.config.json](#config-file)
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Metadata file
 

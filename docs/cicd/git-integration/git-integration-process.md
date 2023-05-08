@@ -12,7 +12,7 @@ ms.custom:
 
 This article explains basic git concepts and the process of integrating git with your Microsoft Fabric workspace.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Permissions
 
