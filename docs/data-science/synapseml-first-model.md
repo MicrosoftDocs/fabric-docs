@@ -7,8 +7,9 @@ author: jessiwang
 ms.author: jessiwang
 ms.date: 05/08/2023
 ---
+
 # Your First SynapseML Model
-This tutorial provides a brief introduction to building your first machine learning model using SynapseML, demonstrating how SynapseML makes it easy to do complex machine learning tasks. We'll use SynapseML to create a small ML training pipeline with a featurization stage and LightGBM regression stage to predict ratings based on review text from a dataset containing book reviews from Amazon. Finally we'll showcase how SynapseML makes it easy to leverage pre-built models to solve problems without having to re-solve them yourself.
+This tutorial provides a brief introduction to building your first machine learning model using SynapseML, demonstrating how SynapseML makes it easy to do complex machine learning tasks. We use SynapseML to create a small ML training pipeline with a featurization stage and LightGBM regression stage to predict ratings based on review text from a dataset containing book reviews from Amazon. Finally we showcase how SynapseML makes it easy to use prebuilt models to solve problems without having to re-solve them yourself.
 
 ## Prerequisites
 
@@ -71,7 +72,7 @@ display(model.transform(test))
 ```
 
 ## Alternate route - Let the Cognitive Services handle it!
-For tasks like this that have a pre-built solution, try using SynapseML's integration with Cognitive Services to transform your data in one step.
+For tasks like this that have a prebuilt solution, try using SynapseML's integration with Cognitive Services to transform your data in one step.
 
 
 ```python
@@ -86,6 +87,7 @@ model = TextSentiment(
 
 display(model.transform(test))
 ```
+
 ## Next steps
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
