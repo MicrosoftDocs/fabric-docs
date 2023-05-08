@@ -64,5 +64,5 @@ Once you have a workspace, you can select it by clicking the **select workspace*
 
 In this overview, you get a basic understanding of how to install and set up the Synapse VS Code extension. Advance to the next article to learn how to develop your notebook and Spark Job Definition locally in VS Code.
 
-- To get started with notebook, see [Develop, execute and debug notebook in VS Code](author-notebook-with-vs-ode.md).
-- To get started with Spark Job Definition, see [Develop, execute and debug Spark Job Definition in VS Code](author-sjd-with-vs-ode.md).
+- To get started with notebook, see [Develop, execute and debug notebook in VS Code](author-notebook-with-vs-code.md).
+- To get started with Spark Job Definition, see [Develop, execute and debug Spark Job Definition in VS Code](author-sjd-with-vs-code.md).
