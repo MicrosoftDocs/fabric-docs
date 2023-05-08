@@ -55,4 +55,4 @@ To get the previewed event data updated, select the **Refresh** button in the to
 
 ## Next steps
 
-See [Monitoring status and performance of an Eventstream item](monitor.md)
+See [Monitor status and performance of an eventstream](monitor.md)

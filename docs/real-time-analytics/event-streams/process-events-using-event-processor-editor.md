@@ -132,4 +132,4 @@ You can also add new field with the **Build-in Functions** to aggregate the 
 Use the Union transformation to connect two or more nodes to add events that have shared fields (with the same name and data type) into one table. Fields that don't match are dropped and not included in the output.
 
 ## Next steps
-See [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md).
+See [Add and manage destinations in an eventstream](./add-manage-eventstream-destinations.md).

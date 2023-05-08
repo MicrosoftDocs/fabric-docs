@@ -9,9 +9,9 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Add and manage an event source in Eventstream item
+# Add and manage an event source in an eventstream
 
-Once you have created an eventstream, you can connect it to various data sources and destinations. The types of event sources that can be added to your eventstream include Azure Event Hubs, Sample data and Custom app. See the [#supported-event-sources](Supported event sources) section for details about these event sources. 
+Once you have created an eventstream, you can connect it to various data sources and destinations. The types of event sources that can be added to your eventstream include Azure Event Hubs, Sample data and Custom app. See the [Supported event sources](#supported-event-sources) section for details about these event sources. 
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
@@ -138,5 +138,5 @@ Custom application enables a streaming endpoint where you can point your existin
 
 ## Next steps
 
-- [Create and manage an Eventstream item](./create-manage-an-eventstream.md)
-- [Add and manage an event destination in Eventstream item](./add-manage-eventstream-destinations.md)
+- [Create and manage an eventstream](./create-manage-an-eventstream.md)
+- [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)

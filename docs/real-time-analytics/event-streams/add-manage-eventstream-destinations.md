@@ -169,6 +169,6 @@ Upon completion of the event processor wizard, real-time event data begin ingest
 
 ## Next steps
 
-- [Create and manage an Eventstream item](./create-manage-an-eventstream.md)
-- [Add and manage an event source in Eventstream item](./add-manage-eventstream-sources.md)
+- [Create and manage an eventstream](./create-manage-an-eventstream.md)
+- [Add and manage a source in an eventstream](./add-manage-eventstream-sources.md)
 - [Use event processor editor to define the data transformation logic](./process-events-using-event-processor-editor.md)

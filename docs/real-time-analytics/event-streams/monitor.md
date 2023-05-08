@@ -89,4 +89,4 @@ Following the steps to view the runtime logs for Azure Event Hubs source or Lake
 
 ## Next steps
 
-- [Preview data in an Eventstream item](./preview-data.md)
+- [Preview data in an eventstream](./preview-data.md)
