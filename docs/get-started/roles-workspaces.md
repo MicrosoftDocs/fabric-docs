@@ -37,7 +37,7 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 |Execute or cancel execution of data pipelines.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 |View execution output of data pipelines, notebooks, ML models and experiments.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 
-<sup>1</sup> Additional permissions are needed to read data from shortcut destination. Learn more about [shortcut security model.](../onelake/onelake-shortcuts?#types-of-shortcuts)
+<sup>1</sup> Additional permissions are needed to read data from shortcut destination. Learn more about [shortcut security model.](../onelake/onelake-shortcuts.md?#types-of-shortcuts)
 
 ## Next steps
 
@@ -45,6 +45,6 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 - [Create workspaces](create-workspaces.md)
 - [Give users access to workspaces](give-access-workspaces.md)
 - [OneLake security](../onelake/onelake-security.md)
-- [OneLake shortcuts](../onelake/onelake-shortcuts?#types-of-shortcuts)
+- [OneLake shortcuts](../onelake/onelake-shortcuts.md?#types-of-shortcuts)
 - [Data warehouse security](../data-warehouse/workspace-roles.md)
 - [Data science roles and permissions](../data-science/models-experiments-rbac.md)
