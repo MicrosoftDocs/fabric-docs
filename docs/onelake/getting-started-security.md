@@ -43,7 +43,7 @@ In the below example, a user is shared a Lakehouse but with only Viewer access. 
 ## Securing OneLake
 Now that we understand the permissions available in Microsoft Fabric, let us look at an example of how to best structure data in OneLake. To start, we will build a standard medallion architecture. In this approach, we typically want to have a very limited set of users that have access to the Bronze and Silver layers, with broader access to the Gold layer. One way to structure that is as follows:
 
-:::image type="content" source="media\getting-started-security\medallion-architecture.png" alt-text="Diagram showing bronze and silver layers as one workspace each with the godl layer broken into several different workspaces for each data domain." lightbox="media\getting-started-security\medallion-architecture.png":::
+:::image type="content" source="media\getting-started-security\medallion-architecture.png" alt-text="Diagram showing bronze and silver layers as one workspace each with the gold layer broken into several different workspaces for each data domain." lightbox="media\getting-started-security\medallion-architecture.png":::
 
 The people responsible for managing Bronze and Silver can be added to Member or Contributor roles so that they can update and manage all the data in those environments. Since those users will need write access this is currently the only method to accomplish this. Users that need access to specific data items within the Bronze and Silver layer can be given the Viewer role and access data through SQL endpoints.
 
