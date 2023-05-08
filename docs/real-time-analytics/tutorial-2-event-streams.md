@@ -1,6 +1,6 @@
 ---
-title: "Synapse Real-Time Analytics tutorial part 2: Get data with Eventstream"
-description: Part 2 of the Real-Time Analytics tutorial in Microsoft Fabric
+title: "Real-Time Analytics tutorial part 2: Get data with Eventstream"
+description: Part 2 of the Real-Time Analytics tutorial in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -13,19 +13,19 @@ ms.search.form: product-kusto
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md)
+> This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md).
 
-## Create an Eventstream
+## Create an eventstream
 
-1.  Return to the Fabric home page.
+1. Return to the Real-Time Analytics home page. The **Home** icon directs you to the home page of the experience you're currently using.
 
     :::image type="icon" source="media/realtime-analytics-tutorial/home-icon.png" border="false":::
 
-1.  Select **New > Eventstream (Preview)**
+1. Under **New**, select **Eventstream (Preview)**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/new-eventstream.png" alt-text="Screenshot of new eventstream button in Real-Time Analytics in Microsoft Fabric.":::
 
-1.  Enter *NyTaxiTripsEventstream* as the Eventstream name and select  **Create**.
+1. Enter *NyTaxiTripsEventstream* as the eventstream name and select  **Create**.
 
     When provisioning is complete, the Eventstream landing page is shown.
 
@@ -33,41 +33,38 @@ ms.search.form: product-kusto
 
 ## Stream data from Eventstream to your KQL database
 
-1.  In the Eventstream authoring area, select **New source** > **Sample data**.
-1.  Enter **nytaxitripsdatasource** as the Source Name, choose **Yellow
-    Taxi** from Sample data dropdown.
-1.  Select **Create**.
-1.  In the Eventstream authoring area, select **New destination** > **KQL Database**.
-1.  In the **KQL Database** pane, fill out the fields as follows:
+1. In the Eventstream authoring area, select **New source** > **Sample data**.
+1. Enter **nytaxitripsdatasource** as the Source Name, and then select **Yellow
+    Taxi** from the dropdown of **Sample data**.
+1. Select **Create**.
+1. In the Eventstream authoring area, select **New destination** > **KQL Database**.
+1. In the **KQL Database** pane, fill out the fields as follows:
 
-    
     |Field  | Suggested value  |
     |---------|---------|
     | **Destination name**     |  *nytaxidatabase* |
     | **Workspace**     |   The workspace in which you [created a database](tutorial-1-resources.md#create-a-kql-database).      |
     | **KQL Database**     | *NycTaxiDB* |
-    
-1.  Select **Create and configure.**
+
+1. Select **Create and configure.**
 
     A data ingestion pane opens with the **Destination** tab selected.
 
 ## Configure data loading to the KQL database
 
-1.  Select **New table**,  and enter *nyctaxitrips* as the table name.
-1.  Select **Next: Source**.
-    The **Source** tab opens.
-1.  Review the default values. Notice that the data connection name is made from the database name and the Event stream name.
+1. Select **New table**,  and enter *nyctaxitrips* as the table name.
+1. Select **Next: Source** to open the **Source tab**.
+1. Review the default values. The data connection name is made from the database name and the eventstream name.
 
     :::image type="content" source="media/realtime-analytics-tutorial/source-tab.png" alt-text="Screenshot of source tab for event stream in Real-Time Analytics in Microsoft Fabric.":::
 
-1. Select **Next: Schema.**
-    The **Schema** tab opens.
+1. Select **Next: Schema** to open the **Schema** tab.
 
 ## Schema mapping
 
-1. The incoming data source is uncompressed, so don't change the **Compression type**.
-1. In the **Data format** dropdown, select **JSON**.
-     
+1. The incoming data source is uncompressed, so keep the **Compression type** as *uncompressed*.
+1. From the **Data format** dropdown, select **JSON**.
+
     :::image type="content" source="media/realtime-analytics-tutorial/data-format-json.png" alt-text="Screenshot of Schema tab with data format JSON selected in Real-Time Analytics in Microsoft Fabric.":::
 
     Notice that the data preview will refresh and show the data in columns with the data types automatically identified. Some of these data types need to be changed for later queries. The columns that appear in the preview can be manipulated by selecting the **down arrow** to the right of the column name.
@@ -98,7 +95,7 @@ ms.search.form: product-kusto
 
 1. Select **Next: Summary**.
 
-     In the **Continuous ingestion from Event Stream established** window, all steps are marked with green check marks when the data connection is successfully created. The data from Eventstream begins streaming automatically into your table.
+     In the **Continuous ingestion from Eventstream established** window, all steps are marked with green check marks when the data connection is successfully created. The data from Eventstream begins streaming automatically into your table.
 
 ## Next steps
 

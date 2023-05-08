@@ -29,9 +29,9 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 
-- A workspace is created that isn't the default My Workspace.
+- Make sure you have a Microsoft Fabric enabled Workspace.
 
 ## Go to Manage gateways to create connection
 
@@ -103,7 +103,7 @@ For more information about shared access signatures, go to [Shared access signat
 
 To use service principal authentication, follow these steps:
 
-1. Register an application entity in Azure Active Directory (Azure AD) by following [Register your application with an Azure AD tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the linked service:
+1. Register an application entity in Azure Active Directory (Azure AD) by following [Register your application with an Azure AD tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
    - Tenant ID
    - Application ID
    - Application key
@@ -111,7 +111,7 @@ To use service principal authentication, follow these steps:
 2. Grant the service principal proper permission. For examples of how permission works in Azure Data Lake Storage Gen2, go to [Access control lists on files and directories](/azure/storage/blobs/data-lake-storage-access-control#access-control-lists-on-files-and-directories).
 
    - **As source**, in Storage Explorer, grant at least **Execute** permission for all upstream folders and the file system, along with **Read** permission for the files to copy. Alternatively, in Access control (IAM), grant at least the **Storage Blob Data Reader** role.
-   - **As sink**, in Storage Explorer, grant at least **Execute** permission for all upstream folders and the file system, along with **Write** permission for the sink folder. Alternatively, in Access control (IAM), grant at least the **Storage Blob Data Contributor** role.
+   - **As destination**, in Storage Explorer, grant at least **Execute** permission for all upstream folders and the file system, along with **Write** permission for the destination folder. Alternatively, in Access control (IAM), grant at least the **Storage Blob Data Contributor** role.
 
     > [!NOTE]
     > If you use a UI to author and the service principal isn't set with the "Storage Blob Data Reader/Contributor" role in IAM, when doing a test connection or browsing/navigating folders, choose **Test connection to file path** or **Browse from specified path**, and then specify a path with **Read + Execute** permission to continue.
