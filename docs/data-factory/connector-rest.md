@@ -29,9 +29,9 @@ This REST connector supports the following authentication types for copy and Dat
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 
-- A workspace is created and isn't the default My Workspace
+- Make sure you have a Microsoft Fabric enabled Workspace.
 
 ## Go to Manage gateways to create connection
 
@@ -100,7 +100,7 @@ The following table contains connector properties that are supported in pipeline
 |**Connection name**|A name for your connection.|Yes||✓|
 |**Connection type**|Select **Web** for your connection type.|Yes||✓|
 |**URL**|The base URL to the REST server.|Yes||✓|
-|**Authentication**|Go to [Authentication](#authentication) |Yes|Go to Authentication|See [Authentication](#authentication)|
+|**Authentication**|Go to [Authentication](#authentication) |Yes||See [Authentication](#authentication)|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓|
 
 ### Authentication

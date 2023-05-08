@@ -55,11 +55,11 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For the **Mapping** tab configuration, go to Mapping.
+For the **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
 
 ### Settings
 
-For the **Settings** tab configuration, go to Settings.
+For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.mdmd#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 
