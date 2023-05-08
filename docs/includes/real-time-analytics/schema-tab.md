@@ -16,7 +16,7 @@ For more information on data formats, see [Data formats supported  for ingestion
 
 1. In the **Mapping name** field, enter a mapping name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 
-    :::image type="content" source="../../real-time-analytics/media/database-editor/azure-blob-schema.png" alt-text="Azure blob schema.":::
+    :::image type="content" source="../../real-time-analytics/media/database-editor/azure-blob-schema.png" alt-text="Azure blob schema."  lightbox="../../real-time-analytics/media/database-editor/azure-blob-schema.png":::
 
     >[!NOTE]
     >
@@ -32,7 +32,7 @@ The command viewer shows the commands for creating tables, mapping, and ingestin
 
 To open the command viewer, select the **v** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
 
-:::image type="content" source="../../real-time-analytics/media/database-editor/question-command-viewer.png" alt-text="Screenshot of command editor.":::
+:::image type="content" source="../../real-time-analytics/media/database-editor/question-command-viewer.png" alt-text="Screenshot of command editor."  lightbox="../../real-time-analytics/media/database-editor/question-command-viewer.png":::
 
 #### Partial data preview
 
@@ -40,7 +40,7 @@ The partial data preview is automatically inferred based on your data. You can c
 
 To add a new column, select the **+** button on the right-hand column under **Partial data preview**.
 
-:::image type="content" source="../../real-time-analytics/media/database-editor/partial-data-preview.png" alt-text="Screenshot of Partial data preview pane.":::
+:::image type="content" source="../../real-time-analytics/media/database-editor/partial-data-preview.png" alt-text="Screenshot of Partial data preview pane."  lightbox="../../real-time-analytics/media/database-editor/partial-data-preview.png":::
 
 * The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
 * The default column type is `string` but can be altered in the drop-down menu of the Column type field.
