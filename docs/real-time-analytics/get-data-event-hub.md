@@ -1,5 +1,5 @@
 ---
-title: Use an event hub connection to stream data to your KQL database in Real-Time Analytics
+title: Get data from Azure Event Hubs in Real-Time Analytics
 description: Learn how to create a connection to Event Hubs and get data into your KQL database.
 ms.reviewer: guregini
 ms.author: yaschust
@@ -10,24 +10,24 @@ ms.search.form: product-kusto
 ---
 # Get data from Azure Event Hubs
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-In this article, you'll learn how to get data from event hub into your KQL Database in [!INCLUDE [product-name](../includes/product-name.md)]. [Azure Event Hubs](/azure/event-hubs/event-hubs-about) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
+In this article, you learn how to get data from Event Hubs into your KQL database in [!INCLUDE [product-name](../includes/product-name.md)]. [Azure Event Hubs](/azure/event-hubs/event-hubs-about?context=/fabric/context/context) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
 
 To stream data from Azure Event Hubs into Real-Time-Analytics, you'll go through two main steps. The first step is to create a [!INCLUDE [product-name](../includes/product-name.md)] platform-based cloud connection to a specific event hub instance. This data stream can be used across all [!INCLUDE [product-name](../includes/product-name.md)] workspaces and is managed centrally.
 
 In the second step, you'll connect this [!INCLUDE [product-name](../includes/product-name.md)]-based cloud connection to a KQL Database. This process creates a database-specific Kusto Event Hub Data Stream. The connection will stream data into the table you specified during setup, and the data will then be available to query using a KQL queryset.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 ## Prerequisites
 
 * An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/free/)
 * [An Event Hubs instance](/azure/event-hubs/event-hubs-create)
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [KQL Database](create-database.md)
 
 ## Set a shared access policy on your event hub
 
-Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you'll need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the data stream. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature).
+Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you'll need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the data stream. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature?context=/fabric/context/context).
 
 1. In the [Azure portal](https://ms.portal.azure.com/), browse to the specific Event Hubs instance you want to connect.
 1. Under **Settings**, select **Shared access policies**
@@ -62,7 +62,7 @@ Now that your SAS policy is set up, you can configure a connection to this event
     The **New connection** pane opens.
 
 1. Fill out the fields according to the following table:
-   
+
     | Field | Description | Suggested value |
     |---|---|---|
     | Icon | Type of connection | Cloud
@@ -162,4 +162,4 @@ Note the name of the data stream that was created. This connection will be visib
 
 ## Next steps
 
-* [Query data in the KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)

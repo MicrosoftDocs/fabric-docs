@@ -28,11 +28,11 @@ In this tutorial you learn to perform the following actions:
 
 ## Follow along in notebook
 
-The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **02 -Explore and Visualize Data using Notebooks**. Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
+The python commands/script used in each step of this tutorial can be found in the accompanying notebook; [02-explore-and-visualize-data-using-notebooks.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/02-explore-and-visualize-data-using-notebooks.ipynb). Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
 
 ## Visualize and analyze
 
-1. To get started, let’s read the delta table (saved in module 1) from the lakehouse and create a pandas dataframe on a random sample of the data.
+1. To get started, let's read the delta table (saved in module 1) from the lakehouse and create a pandas dataframe on a random sample of the data.
 
    :::image type="content" source="media\tutorial-data-science-explore-notebook\read-delta-table.png" alt-text="Screenshot of code sample to read the delta table and create a pandas dataframe." lightbox="media\tutorial-data-science-explore-notebook\read-delta-table.png":::
 
@@ -93,7 +93,7 @@ The python commands/script used in each step of this tutorial can be found in th
 
    :::image type="content" source="media\tutorial-data-science-explore-notebook\pivot-table-heat-map.png" alt-text="Heat map over a pandas table to show the average duration of trips by hour and day." lightbox="media\tutorial-data-science-explore-notebook\pivot-table-heat-map.png":::
 
-1. Finally let’s create a correlation plot, which is a useful tool for exploring the relationships among numerical variables in a dataset. It displays the data points for each pair of variables as a scatterplot and calculates the correlation coefficient for each pair. The correlation coefficient indicates how strongly and in what direction the variables are related. A positive correlation means that the variables tend to increase or decrease together, while a negative correlation means that they tend to move in opposite directions. In this example, we're generating correlation plot for a subset of columns in the dataframe for analysis.
+1. Finally let's create a correlation plot, which is a useful tool for exploring the relationships among numerical variables in a dataset. It displays the data points for each pair of variables as a scatterplot and calculates the correlation coefficient for each pair. The correlation coefficient indicates how strongly and in what direction the variables are related. A positive correlation means that the variables tend to increase or decrease together, while a negative correlation means that they tend to move in opposite directions. In this example, we're generating correlation plot for a subset of columns in the dataframe for analysis.
 
    :::image type="content" source="media\tutorial-data-science-explore-notebook\correlation-plot-code.png" alt-text="Screenshot of code sample to create a correlation plot." lightbox="media\tutorial-data-science-explore-notebook\correlation-plot-code.png":::
 

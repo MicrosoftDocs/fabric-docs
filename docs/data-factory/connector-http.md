@@ -25,11 +25,11 @@ The HTTP connector supports the following authentication types for copy and Data
 
 ## Prerequisites
 
-To get started, you must have the following prerequisites:
+To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 
-- A workspace is created and that isn't the default **My Workspace**.
+- Make sure you have a Microsoft Fabric enabled Workspace.
 
 ## Go to Manage gateways to create connection
 
@@ -91,7 +91,7 @@ The following connector properties in the table are supported in pipeline copy a
 |**Connection name**|A name for your connection.|Yes||✓/|
 |**Connection type**|Select **Web** for your connection type.|Yes||✓/|
 |**URL**|The base URL to the HTTP server.|Yes||✓/|
-|**Authentication**|Go to [Authentication](#authentication) |Yes|See Authentication|Go to  [Authentication](#authentication)|
+|**Authentication**|Go to [Authentication](#authentication) |Yes||Go to  [Authentication](#authentication)|
 |**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, **Public**|Yes||✓/|
 
 

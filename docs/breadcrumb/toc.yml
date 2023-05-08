@@ -6,7 +6,7 @@ items:
   - name: Admin
     tocHref: /fabric/admin
     topicHref: /fabric/admin/index
-  - name: CICD
+  - name: Lifecycle management
     tocHref: /fabric/cicd
     topicHref: /fabric/cicd/index
   - name: Data Engineering

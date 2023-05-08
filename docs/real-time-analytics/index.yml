@@ -1,10 +1,10 @@
 ### YamlMime:Landing
 
-title: Synapse Real-Time Analytics documentation 
-summary: Synapse Real-Time Analytics is a fully managed big data analytics platform optimized for streaming, time-series data. It contains a dedicated query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-Time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios.
+title: Real-Time Analytics documentation 
+summary: Real-Time Analytics is a fully managed big data analytics platform optimized for streaming, time-series data. It contains a dedicated query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-Time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios.
 
 metadata:
-  title: Synapse Real-Time Analytics in Microsoft Fabric documentation 
+  title: Real-Time Analytics in Microsoft Fabric documentation 
   description: Learn about Real-Time Analytics, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis. 
   ms.service: azure 
   ms.topic: landing-page 
@@ -31,9 +31,9 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Create a KQL Database
+          - text: Create a KQL database
             url: create-database.md
-          - text: Create a table
+          - text: Create an empty table
             url: create-empty-table.md
 
 # Card 
@@ -43,7 +43,9 @@ landingContent:
         links: 
         - text: Get data from a blob
           url: get-data-blob.md
-        - text: Get data from Event Hubs
+        - text: Get data from a blob container 
+          url: get-data-blob-container.md
+        - text: Get data from Azure Event Hubs
           url: get-data-event-hub.md
         - text: Get data from OneLake
           url: get-data-onelake.md
@@ -53,15 +55,16 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: KQL Queryset
+          - text: Query data in a KQL queryset
             url:  kusto-query-set.md
-          - text: Sample queries
+          - text: Use sample queries
             url: query-table.md
-          - text: Use a notebook and Kqlmagic to query a KQL Database
+          - text: Use a notebook with Kqlmagic to query a KQL database
             url: jupyter-notebook.md
           - text: Use a notebook with Apache Spark to query a KQL database
             url: spark-connector.md
-  
+          - text: Use a OneLake shortcut to query data
+            url: onelake-shortcut.md
   # Card 
   - title: Training
     linkLists:
