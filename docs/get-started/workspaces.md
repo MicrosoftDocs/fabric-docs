@@ -21,7 +21,7 @@ Ready to get started? Read [Create a workspace](create-workspaces.md).
 Here are some useful tips about working with workspaces.
 
 - **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer.  Read more about [workspace roles](#roles-and-licenses) in this article.
-- **Workspace settings** : As workspace admin, you can update and manage your workspace configurations in workspace settings.
+- **Workspace settings**: As workspace admin, you can update and manage your workspace configurations in workspace settings.
 - **Contact list**: Specify who receives notification about workspace activity. Read more about [workspace contact lists](#workspace-contact-list) in this article.
 - **Create template apps**: You can create *template apps* in workspaces. Template apps are apps that you can distribute to customers outside of your organization. Those customers can then connect to their own data with your template app. Read the article about [template apps](/power-bi/connect-data/service-template-apps-overview).
 - **Share datasets**: You can share datasets between workspaces. Read more about [shared datasets](/power-bi/connect-data/service-datasets-across-workspaces).
@@ -29,19 +29,20 @@ Here are some useful tips about working with workspaces.
 This article explains these features in more detail.
 
 ## Workspace settings
-Workspace settings are for workspace admins to allow them for managing and updating the workspace settings. The settings include general settings of the workspace, like the basic information of the workspace, contact list, OneDrive, license, Azure connections, storage, and other experiences' specific settings.
 
-To open the workspace settings, you can select the workspace and open it from the nav pane.
+Workspace admins can use workspace settings to manage and update the workspace. The settings include general settings of the workspace, like the basic information of the workspace, contact list, OneDrive, license, Azure connections, storage, and other experiences' specific settings.
+
+To open the workspace settings, you can select the workspace in the nav pane, then select **More options (...) next to the workspace name.
 
 :::image type="content" source="media/workspaces/open-workspace-settings.png" alt-text="Open workspace settings in nav pane.":::
 
 You can also open it from the workspace page.
 
-:::image type="content" source="media/workspaces/open-in-workspace.png" alt-text="Open workspace settings in workspace.":::
+:::image type="content" source="media/workspaces/open-in-workspace.png" alt-text="Open workspace settings in workspace." lightbox="media/workspaces/open-in-workspace.png":::
 
 ## Workspace contact list
 
-The **Contact list** feature allows you to specify which users receive notification about issues occurring in the workspace. By default, any user or group specified as a workspace admin in the workspace is notified. You can add to that list. Users or groups in the contact list are also listed in the user interface (UI) of the workspaces, so workspace end-users know whom to contact.
+The **Contact list** feature allows you to specify which users receive notification about issues occurring in the workspace. By default, any user or group specified as a workspace admin in the workspace is notified. You can add to that list. Users or groups in the contact list are also listed in the user interface (UI) of the workspace, so workspace users know whom to contact.
 
 Read about [how to create the workspace contact list](create-workspaces.md#contact-list).
 
@@ -72,13 +73,13 @@ See the article [Roles in workspaces](roles-workspaces.md) for more details abou
 
 ## Azure connections configuration
 
-Workspace admin can configure dataflow storage to use Azure Data Lake Gen 2 storage and Azure Log Analytics (LA) connection to collect usage and performance logs for the workspace in workspace settings.
+Workspace admins can configure dataflow storage to use Azure Data Lake Gen 2 storage and Azure Log Analytics (LA) connection to collect usage and performance logs for the workspace in workspace settings.
 
-:::image type="content" source="media/workspaces/azure-connection.png" alt-text="Azure resource configuration.":::
+:::image type="content" source="media/workspaces/azure-connection.png" alt-text="Azure resource configuration." lightbox="media/workspaces/azure-connection.png":::
 
-With the integration of Azure Data Lake Gen 2 storage, you can bring your own storage to dataflows, and establish a connection at the workspace level. Read more about [Configure dataflow storage to use Azure Data Lake Gen 2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration) for more detail.  
+With the integration of Azure Data Lake Gen 2 storage, you can bring your own storage to dataflows, and establish a connection at the workspace level. Read [Configure dataflow storage to use Azure Data Lake Gen 2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration) for more detail.  
 
-After the connection with Azure Log Analytics (LA), activity log data is sent continuously and is available in Log Analytics approximately 5 minutes. Read more about [Using Azure Log Analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for more detail.
+After the connection with Azure Log Analytics (LA), activity log data is sent continuously and is available in Log Analytics in approximately 5 minutes. Read more about [Using Azure Log Analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for more detail.
 
 ## System storage
 
