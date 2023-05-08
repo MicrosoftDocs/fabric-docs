@@ -80,4 +80,4 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Synapse Real-Time Analytics tutorial part 7: Clean up resources](tutorial-7-clean-up-resources.md)
+> [Tutorial part 7: Clean up resources](tutorial-7-clean-up-resources.md)
