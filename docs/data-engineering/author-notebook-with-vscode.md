@@ -1,6 +1,6 @@
 ---
-title: author notebook in VS Code
-description: VS Code extesion for Synapse supports pro-dev authoring experience of Notebook, inlcuding run and debug notebook
+title: Develop, execute and debug notebook in VS Code
+description: VS Code extension for Synapse supports pro-dev authoring experience of Notebook, including run and debug notebook
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
@@ -9,22 +9,84 @@ ms.date: 05/08/2023
 ms.search.form: VSCodeExtension
 ---
 
-# What is an Apache Spark job definition?
+# Notebook experience in VS Code
 
-An Apache Spark Job Definition is a Microsoft Fabric code item that allows you to submit batch/streaming job to Spark cluster. By uploading the binary files from compilation output of different languages, .jar from Java for example, you can apply different transformation logic to the data hosted on lakehouse. Besides the binary file, you can further customize the behavior of the job by uploading additional libraries and command line arguments.
+The CURD (create/update/read/delete) experience of notebook is fully supported with this extension, the synchronization between local and the remote workspace is also supported via certain UX gesture. During synchronizing the change, you have the option to address the conflict/difference between the local and remote workspace.
+
+Another key scenario enabled by this extension is to support running notebook onto the remote Trident Spark compute.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-To run a Spark job definition, you must have at least one lakehouse associated with it. This default lakehouse context serves as the default file system for Spark runtime. For any Spark code using relative path to read/write data, the data is served from the default lakehouse.
+### List notebook
+
+The notebook tree node lists names of the all the notebook artifacts in the current workspace. Based on the change made in VSCode side, there are different colors/character to indicate the latest state
+
+- Default: White color indicate the default/initialized state, the notebook exists at remote workspace and has not been downloaded yet
+- Modified: The notebook has been downloaded and edited at VS Code side, there are some pending change to be published back to the remote workspace
+- Local: The notebook has been downloaded and the content is the same as the remote workspace
+- Conflict: There is some conflict between the version of local copy and the version of remote workspace
+
+:::image type="content" source="media\vscode\list-notebook.png" alt-text="Screenshot showing notebook list.":::
+
+### Create notebook
+
+When hovering the mouse over the Notebook toolbar, you will find the “Create Notebook” button appear. After clicking it, with the promoted input box to provide the name and description, a new notebook artifact is created at the remote workspace and the Notebook list will be refreshed to show a new entry there
+
+:::image type="content" source="media\vscode\create-notebook.png" alt-text="Screenshot showing create notebook button.":::
+
+### Download notebook
+
+Before editing the notebook content, you need to explicitly download the notebook to the VS Code side. When hovering the mouse over the notebook name, the “Download” button will appear beside the notebook name. After clicking it, the notebook will be downloaded and saved in the local working directory.
+
+:::image type="content" source="media\vscode\download-notebook.png" alt-text="Screenshot showing download notebook button.":::
+
+### Open notebook
+
+To open the .ipynb file of the notebook, you can click the “Open Notebook Folder” button at the toolbar.
+
+:::image type="content" source="media\vscode\open-notebook.png" alt-text="Screenshot showing open notebook button.":::
+
+### Delete notebook
+You can delete the notebook artifact by clicking the “Delete Notebook” button at the toolbar of the target notebook.You can choose to delete only the local copy or both the local copy and the remote workspace copy.
+
+:::image type="content" source="media\vscode\delete-notebook.png" alt-text="Screenshot showing delete notebook button.":::
 
 > [!TIP]
-> To run the Spark job definition item, main definition file and default lakehouse context are required. If you don't have a lakehouse, you can create one by following the steps in [Create a lakehouse](../data-engineering/create-lakehouse.md).
+> To avoid failure, please close that notebook folder in the Explorer view and close the notebook in the editor view before deleting the notebook.
+
+### Publish local change to remote workspace
+
+By clicking the “Publish” button, you can push the local change to the remote workspace. The workspace version will be updated with content submitted from VSCode side. If the workspace version contains any new change, you will be prompted to resolve the conflict before publishing the change.
+
+:::image type="content" source="media\vscode\publish-notebook.png" alt-text="Screenshot showing publish notebook button.":::
+
+If the same notebook is  open in the Trident portal, the user at the portal side will be notified to accept/reject the change published from VS Code side.
+
+:::image type="content" source="media\vscode\publish-notebook-portal.png" alt-text="Screenshot showing accept or reject change.":::
+
+**Accept**: the change from VSCode is successfully saved at the workspace
+**Reject**: the change from VSCode is ignored
+
+
+### Pull change from remote workspace 
+
+Beside pushing the change to remote workspace, you can also choose to update the local version with the latest workspace version by pulling the remote version. you can trigger the pulling by clicking the “Update” button.
+
+:::image type="content" source="media\vscode\update-notebook.png" alt-text="Screenshot showing update notebook button.":::
+
+The system would pull the latest version from the remote workspace and open the VSCode default diff window to compare the two notebook files. The left side is from the workspace, the right side is the from the local side
+
+:::image type="content" source="media\vscode\update-notebook-diff.png" alt-text="Screenshot showing update notebook diff.":::
+
+You can update the code/markdown cell on the left side to address the difference. After the conflict/difference are all addressed, You should click the “Merge” button at the top right corner of the windows to confirm the merging is done. Before clicking “Merge”, the notebook will stay in the “Conflict” mode.
+
+:::image type="content" source="media\vscode\update-notebook-merge.png" alt-text="Screenshot showing update notebook merge.":::
 
 > [!IMPORTANT]
-> The Spark job definition item is currently in PREVIEW.
+> After the diff view is open once, the extension will NOT automatically refresh left side of the diff view to fetch the latest update from the remote workspace.
 
-## Next steps
+### Run/Debug notebook on remote Spark compute
+By selecting the kernel shipped with this extension, you can run the code cell on top of the remote Trident Spark compute
+Once this kernel is selected, during runtime, all the PySpark API call will be intercepted by the extension and translated to the corresponding http call to the remote Spark compute. For pure python code, it would still be executed in the local environment.
 
-In this overview, you get a basic understanding of a Spark job definition. Advance to the next article to learn how to create and get started with your own Spark job definition:
-
-- To get started with [!INCLUDE [product-name](../includes/product-name.md)], see [Creating an Apache Spark job definition](create-spark-job-definition.md).
+:::image type="content" source="media\vscode\run-notebook.png" alt-text="Screenshot showing run notebook.":::
