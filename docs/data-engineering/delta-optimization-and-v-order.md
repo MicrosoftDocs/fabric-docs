@@ -153,6 +153,7 @@ CREATE TABLE person (id INT, name STRING, age INT) USING parquet TBLPROPERTIES("
 > When the table property is set to true; INSERT, UPDATE and MERGE commands will behave as expected and perform. If the V-Order session configuration is set to true or the spark.write enables it, then the writes will be V-Order even if the TBLPROPERTIES is set to false.
 
 Enable or disable V-Order by altering the table property:
+
 ```sql
 %%sql 
 ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled","true");
@@ -162,7 +163,7 @@ ALTER TABLE person SET TBLPROPERTIES("delta. parquet.vorder.enabled","false");
 ALTER TABLE person UNSET TBLPROPERTIES("delta.parquet.vorder.enabled");
 ```
 
-By enabling or disabling the table property, only future writes to the table will be affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, read the "Control V-Order when optimizing a table" section bellow.
+After you enable or disable V-Order using table properties, only future writes to the table are affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, read the "Control V-Order when optimizing a table" section bellow.
 
 ### Controlling V-Order directly on write operations
 
