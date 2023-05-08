@@ -128,7 +128,7 @@ In many cases, when you have a small change such as adding or removing a table, 
 
 ### Requirements for deploying to a stage with an existing workspace
 
-A user with a [Pro license](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md) or a [PPU user](/power-bi/enterprise/service-premium-per-user-faq.yml) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
+Any [licensed user](../../enterprise/licenses.md#organizational-licenses) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [capacity](/../../enterprise/license.md#capacity-nd-skus) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
 
 ## Deployed items
 
