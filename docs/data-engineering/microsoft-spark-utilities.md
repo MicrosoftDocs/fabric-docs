@@ -49,6 +49,8 @@ getMountPath(mountPoint: String, scope: String = ""): String -> Gets the local 
 Use mssparkutils.fs.help("methodName") for more info about a method.
 ```
 mssparkutils works with the file system in the same way as Spark APIs. Take *mssparkuitls.fs.mkdirs()* and Fabric Lakehouse usage for example: 
+
+
 | **Usage** | **Relative path from HDFS root** | **Absolute path for ABFS file system** |**Absolute path for local file system in driver node** |
 |---|---|---|---|
 | Non-default lakehouse | Not supported | *mssparkutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")*  | *mssparkutils.fs.mkdirs("file:/<new_dir>")* |
@@ -257,8 +259,10 @@ getSecret(akvName, secret): returns AKV secret for a given akvName, secret key
 
 ### Get token
 
-Returns Azure AD token for a given audience, name (optional). The table below list all the available audience types:
+Returns Azure AD token for a given audience, name (optional). 
 <!---
+The table below list all the available audience types:
+
 |Audience Type|Audience key|
 |--|--|
 |Audience Resolve Type|'Audience'|
@@ -283,7 +287,7 @@ mssparkutils.credentials.getSecret('azure key vault name','secret name')
 ```
 ## File mount and unmount
 
-The [!INCLUDE [product-name](../includes/product-name.md)] support mount scenarios in the Microsoft Spark Utilities package via four APIs, they are: *mount*, *unmount*, *getMountPath()* and *mounts*. You can use these APIs to attach remote storage (Azure Data Lake Storage Gen2) to all working nodes (driver node and worker nodes). After the storage mount point is in place, use the local file API to access data as if it's stored in the local file system.
+The [!INCLUDE [product-name](../includes/product-name.md)] support mount scenarios in the Microsoft Spark Utilities package. You can use *mount*, *unmount*, *getMountPath()* and *mounts()* APIs to attach remote storage (Azure Data Lake Storage Gen2) to all working nodes (driver node and worker nodes). After the storage mount point is in place, use the local file API to access data as if it's stored in the local file system.
 
 ### How to mount an ADLS Gen2 account
 
@@ -297,9 +301,9 @@ To mount the container called *mycontainer*, *mssparkutils* first needs to check
 
 ### Mount via shared access signature token or account key
 
-Mssparkutils supports explicitly passing an account key or [Shared access signature (SAS)](https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview) token as a parameter to mount the target.
+Mssparkutils supports explicitly passing an account key or [Shared access signature (SAS)](https://learn.microsoft.com/azure/storage/common/storage-sas-overview) token as a parameter to mount the target.
 
-For security reasons, we recommend that you store account keys or SAS tokens in Azure Key Vault (as the following example screenshot shows). You can then retrieve them by using the PyTridentTokenLibrary.get_secret_with_token API. For the usage of Azure Key Vault, refer to [About Azure Key Vault managed storage account keys](https://learn.microsoft.com/en-us/azure/key-vault/secrets/about-managed-storage-account-keys).
+For security reasons, we recommend that you store account keys or SAS tokens in Azure Key Vault (as the following example screenshot shows). You can then retrieve them by using the PyTridentTokenLibrary.get_secret_with_token API. For the usage of Azure Key Vault, refer to [About Azure Key Vault managed storage account keys](https://learn.microsoft.com/azure/key-vault/secrets/about-managed-storage-account-keys).
 
 :::image type="content" source="media\microsoft-spark-utilities\use-azure-key-vault.png" alt-text="Screenshot showing where secrets stored in an Azure Key Vault." lightbox="media\microsoft-spark-utilities\use-azure-key-vault.png":::
 
@@ -332,7 +336,7 @@ mssparkutils.fs.mount(  
 ```
 
 > [!NOTE]
-> For security reasons, it's not recommended to store credentials in code. To further protect your credentials, we will redact your secret in notebook output, for more details please check [Secret redaction](author-execute-notebook.md/secret-redaction).
+> For security reasons, it's not recommended to store credentials in code. To further protect your credentials, we will redact your secret in notebook output, for more details please check [Secret redaction](author-execute-notebook.md/#secret-redaction).
 
 ### How to mount a lakehouse
 
