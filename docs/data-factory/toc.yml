@@ -190,6 +190,8 @@
         href: templates.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
+      - name: Browse pipeline runs in the Monitoring Hub
+        href: monitoring-hub-pipeline-runs.md
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
