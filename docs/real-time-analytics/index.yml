@@ -75,7 +75,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Create and manage event streams
-            url:  event-streams/create-manage-an-event-stream.md
+            url:  event-streams/create-manage-an-eventstream.md
           - text: Process events using processor editor
             url: event-streams/process-events-using-event-processor-editor.md
           - text: Monitor event streams
