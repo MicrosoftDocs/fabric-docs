@@ -50,6 +50,8 @@ items:
   items:
   - name: Get data from a blob
     href: get-data-blob.md
+  - name: Get data from a blob container
+    href: get-data-blob-container.md
   - name: Get data from Event Hubs
     href: get-data-event-hub.md
   - name: Get data from OneLake
@@ -60,7 +62,7 @@ items:
     href: kusto-query-set.md
   - name: Use a OneLake shortcut to query data
     href: onelake-shortcut.md
-  - name: Use a notebook with kqlmagic to query a KQL database
+  - name: Use a notebook with Kqlmagic to query a KQL database
     href: jupyter-notebook.md
   - name: Use a notebook with Apache Spark to query a KQL database
     href: spark-connector.md
@@ -70,7 +72,7 @@ items:
   items:
   - name: Visualize data in a Power BI report
     href: create-powerbi-report.md
-  - name: Use data from a KQL Database in Power BI Desktop
+  - name: Use data from a KQL database in Power BI Desktop
     href: power-bi-data-connector.md
 - name: Event streams
   items:

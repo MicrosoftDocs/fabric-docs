@@ -20,7 +20,7 @@ The KQL Queryset uses the Kusto Query language for creating queries, and also su
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [KQL Database](create-database.md) with data
 
 ## Create a KQL queryset

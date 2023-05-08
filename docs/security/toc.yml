@@ -13,7 +13,7 @@ items:
     href: security-conditional-access.md
   - name: Recovery
     href: security-recovery.md
-  - name: Customer lockbox
+  - name: Customer Lockbox
     href: security-lockbox.md
   - name: Service tags
     href: security-service-tags.md

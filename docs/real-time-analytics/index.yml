@@ -33,7 +33,7 @@ landingContent:
         links:
           - text: Create a KQL database
             url: create-database.md
-          - text: Create a table
+          - text: Create an empty table
             url: create-empty-table.md
 
 # Card 
@@ -43,6 +43,8 @@ landingContent:
         links: 
         - text: Get data from a blob
           url: get-data-blob.md
+        - text: Get data from a blob container 
+          url: get-data-blob-container.md
         - text: Get data from Event Hubs
           url: get-data-event-hub.md
         - text: Get data from OneLake
@@ -55,13 +57,14 @@ landingContent:
         links:
           - text: Query data in the KQL Queryset
             url:  kusto-query-set.md
-          - text: Sample queries
+          - text: Use sample queries
             url: query-table.md
           - text: Use a notebook with Kqlmagic to query a KQL database
             url: jupyter-notebook.md
           - text: Use a notebook with Apache Spark to query a KQL database
             url: spark-connector.md
-  
+          - text: Use a OneLake shortcut to query data
+            url: onelake-shortcut.md
   # Card 
   - title: Training
     linkLists:
