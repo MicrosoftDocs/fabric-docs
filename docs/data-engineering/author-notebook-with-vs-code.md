@@ -17,7 +17,7 @@ Another key scenario enabled by this extension is to support running notebook on
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-### List notebook
+## List notebook
 
 The notebook tree node lists names of the all the notebook artifacts in the current workspace. Based on the change made in VSCode side, there are different colors/character to indicate the latest state
 
@@ -28,25 +28,25 @@ The notebook tree node lists names of the all the notebook artifacts in the curr
 
 :::image type="content" source="media\vscode\list-notebook.png" alt-text="Screenshot showing notebook list.":::
 
-### Create notebook
+## Create notebook
 
 When hovering the mouse over the Notebook toolbar, you will find the “Create Notebook” button appear. After the button is clicked, with the promoted input box to provide the name and description, a new notebook artifact is created at the remote workspace and the Notebook list will be refreshed to show a new entry there
 
 :::image type="content" source="media\vscode\create-notebook.png" alt-text="Screenshot showing create notebook button.":::
 
-### Download notebook
+## Download notebook
 
 Before editing the notebook content, you need to explicitly download the notebook to the VS Code side. When hovering the mouse over the notebook name, the “Download” button will appear beside the notebook name. The notebook will be downloaded and saved in the local working directory.
 
 :::image type="content" source="media\vscode\download-notebook.png" alt-text="Screenshot showing download notebook button.":::
 
-### Open notebook
+## Open notebook
 
 To open the notebook, you can click the “Open Notebook Folder” button at the toolbar.
 
 :::image type="content" source="media\vscode\open-notebook.png" alt-text="Screenshot showing open notebook button.":::
 
-### Delete notebook
+## Delete notebook
 You can delete the notebook artifact by clicking the “Delete Notebook” button at the toolbar of the target notebook. You can choose to delete only the local copy or both the local copy and the remote workspace copy.
 
 :::image type="content" source="media\vscode\delete-notebook.png" alt-text="Screenshot showing delete notebook button.":::
@@ -54,7 +54,7 @@ You can delete the notebook artifact by clicking the “Delete Notebook” butto
 > [!TIP]
 > To avoid failure, please close that notebook folder in the Explorer view and close the notebook in the editor view before deleting the notebook.
 
-### Publish local change to remote workspace
+## Publish local change to remote workspace
 
 By clicking the “Publish” button, you can push the local change to the remote workspace. The workspace version will be updated with content submitted from VSCode side. If the workspace version contains any new change, you will be prompted to resolve the conflict before publishing the change.
 
@@ -68,13 +68,13 @@ If the same notebook is  open in the Trident portal, the user at the portal side
 **Reject**: the change from VSCode is ignored
 
 
-### Pull change from remote workspace 
+## Pull change from remote workspace 
 
 Beside pushing the change to remote workspace, you can also choose to update the local version with the latest workspace version by pulling the remote version. you can trigger the pulling by clicking the “Update” button.
 
 :::image type="content" source="media\vscode\update-notebook.png" alt-text="Screenshot showing update notebook button.":::
 
-The system would pull the latest version from the remote workspace and open the VSCode default diff window to compare the two notebook files. The left side is from the workspace, the right side is the from the local side
+The system would pull the latest version from the remote workspace and open the VSCode default diff window to compare the two notebook files. The left side screen is from the workspace, the right side screen is from the local version:
 
 :::image type="content" source="media\vscode\update-notebook-diff.png" alt-text="Screenshot showing update notebook diff.":::
 
@@ -85,7 +85,12 @@ You can update the code/markdown cell on the left side to address the difference
 > [!IMPORTANT]
 > After the diff view is open once, the extension will NOT automatically refresh left side of the diff view to fetch the latest update from the remote workspace.
 
-### Run/Debug notebook on remote Spark compute
+## Run/Debug notebook on remote Spark compute
 By selecting the kernel shipped with this extension, you can run the code cell on top of the remote Trident Spark compute. Once this kernel is selected, during runtime, all the PySpark API call will be intercepted by the extension and translated to the corresponding http call to the remote Spark compute. For pure python code, it would still be executed in the local environment.
 
 :::image type="content" source="media\vscode\run-notebook.png" alt-text="Screenshot showing run notebook.":::
+
+## Next steps
+
+* [Spark Job Definition experience in VS Code](author-sjd-with-vscode.md)
+* [Explore lakehouse from VS Code](explore-lakehouse-with-vscode.md)
