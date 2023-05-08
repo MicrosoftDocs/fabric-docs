@@ -10,7 +10,7 @@ ms.custom: template-how-to
 
 # Connect to Azure Data Explorer (Kusto) in dataflows
 
-You can connect to Azure Data Explorer (Kusto) in Dataflow Gen2 using the Azure Data Explorer (Kusto) connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+You can connect to data that's either in an Azure Data Explorer (Kusto) cluster or in a Kusto Query Language (KQL) database in Dataflow Gen2 using the Azure Data Explorer (Kusto) connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
