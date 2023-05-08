@@ -1,7 +1,7 @@
 ---
 title: Limitations and known issues
 description: This article contains a list of current limitations and known issues in Microsoft Fabric.
-author: joannapea
+author: joanpo
 ms.author: joannapea
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
