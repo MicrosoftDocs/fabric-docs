@@ -28,7 +28,7 @@ To install:
 
 1. Double click the file to start installing.
 
-The location on your PC where the placeholders and any downloaded content are stored is `\%USERPROFILE%\OneLake - Microsoft`.
+   The location on your PC where the placeholders and any downloaded content are stored is `\%USERPROFILE%\OneLake - Microsoft\`.
 
 Once the application is installed and launched, you can now see your OneLake data in Windows File Explorer.
 
@@ -39,6 +39,7 @@ Once the application is installed and launched, you can now see your OneLake dat
 - **Files or folders containing Windows reserved characters** ([learn more](/windows/win32/fileio/naming-a-file)) fail to sync.
 
 - **Updating Office files** (excel, ppt, etc.) isn't currently supported.
+
 - **Moving a folder (cut and paste or drag and drop) from a location outside of OneLake to OneLake will fail to sync the contents in that folder.** The contents move to the OneLake directory locally, but only the top-level folder syncs to OneLake.  You must trigger a sync by either opening the files and saving them or moving them back out of OneLake and then copying and pasting (versus moving).
 
 - **Windows File Explorer is case insensitive** while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).
