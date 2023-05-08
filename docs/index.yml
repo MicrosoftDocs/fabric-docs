@@ -65,7 +65,7 @@ productDirectory:
 
       imageSrc: ./media/power-bi-icon.png
       links:
-        - url: admin-fabric-switch.md
+        - url: admin/admin-fabric-switch.md
           text: Enable Microsoft Fabric for your organization
         - url: /power-bi/fundamentals/power-bi-overview
           text: What is Power BI?
