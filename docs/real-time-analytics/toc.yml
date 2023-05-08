@@ -58,7 +58,7 @@ items:
     href: get-data-onelake.md
 - name: Query data
   items:
-  - name: Query data in the KQL Queryset
+  - name: Query data in a KQL queryset
     href: kusto-query-set.md
   - name: Use a OneLake shortcut to query data
     href: onelake-shortcut.md

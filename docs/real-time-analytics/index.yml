@@ -55,7 +55,7 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Query data in the KQL Queryset
+          - text: Query data in a KQL queryset
             url:  kusto-query-set.md
           - text: Use sample queries
             url: query-table.md
