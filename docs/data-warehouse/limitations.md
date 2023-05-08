@@ -37,7 +37,7 @@ For more limitations information in specific areas, see:
 - [The Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
 - [Connectivity](connectivity.md#considerations-and-limitations)
 
-## Limitations and known issues of the SQL Endpoint of the Lakehouse
+## Limitations of the SQL Endpoint
 
 The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)] automatic schema generation and metadata discovery.
 
