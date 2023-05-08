@@ -1,6 +1,6 @@
 ---
 title: Give users access to workspaces
-description: "Learn how to give others access to workspaces, and how to modify the access"
+description: "Learn how to give others access to workspaces, and how to modify their access."
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: 
@@ -26,15 +26,15 @@ After you [create a workspace](create-workspaces.md) in [!INCLUDE [product-name]
     
     :::image type="content" source="media/workspace-access/workspace-manage-access-entry-in-contextual-menu.png" alt-text="Screenshot of entry of manage access in More options menu in workspace page.":::
 
-2. Select **Add people or groups**.
+1. Select **Add people or groups**.
    
    :::image type="content" source="media/workspace-access/workspace-manage-access-add-button.png" alt-text="Screenshot of add button in manage access panel.":::
 
-3. Enter name or email, select a [role](roles-workspaces.md), and select **Add**. You can add security groups, distribution lists, Microsoft 365 groups, or individuals to these workspaces as admins, members, contributors, or viewers. If you have the member role, you can only add others to the member, contributor, or viewer roles.
+1. Enter name or email, select a [role](roles-workspaces.md), and select **Add**. You can add security groups, distribution lists, Microsoft 365 groups, or individuals to these workspaces as admins, members, contributors, or viewers. If you have the member role, you can only add others to the member, contributor, or viewer roles.
    
-   :::image type="content" source="media/workspace-access/workspace-manage-access-add-people-panel.png" alt-text="Screenshot of add people panel.":::)
+   :::image type="content" source="media/workspace-access/workspace-manage-access-add-people-panel.png" alt-text="Screenshot of add people panel.":::
 
-4. You can view and modify access later if needed. Use the **Search** box to search for people or groups who already have access of this workspace. To modify access, select drop-down arrow, and select a role.
+1. You can view and modify access later if needed. Use the **Search** box to search for people or groups who already have access of this workspace. To modify access, select drop-down arrow, and select a role.
    
    :::image type="content" source="media/workspace-access/workspace-manage-access-edit-role.png" alt-text="Screenshot of modify role in a workspace.":::
 
