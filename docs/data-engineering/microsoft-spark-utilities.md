@@ -336,7 +336,7 @@ mssparkutils.fs.mount(  
 ```
 
 > [!NOTE]
-> For security reasons, it's not recommended to store credentials in code. To further protect your credentials, we will redact your secret in notebook output, for more details please check [Secret redaction](author-execute-notebook.md/#secret-redaction).
+> For security reasons, it's not recommended to store credentials in code. To further protect your credentials, we will redact your secret in notebook output, for more details please check [Secret redaction](author-execute-notebook.md#secret-redaction).
 
 ### How to mount a lakehouse
 
