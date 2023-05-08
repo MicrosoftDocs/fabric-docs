@@ -94,7 +94,7 @@ Information about your account and license is available from the Account manager
 
 :::image type="content" source="media/fabric-home/fabric-home-me.png" alt-text="Screenshot showing the Account manager expanded.":::
 
-For more information about licenses and trials, see [Licenses](licenses.md).
+For more information about licenses and trials, see [Licenses](../enterprise/licenses.md).
 
 
 ### Notifications, settings, and feedback
