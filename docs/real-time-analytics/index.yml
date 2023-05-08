@@ -75,11 +75,11 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Create and manage event streams
-            url:  create-manage-an-event-stream.md
+            url:  event-streams/create-manage-an-event-stream.md
           - text: Process events using processor editor
-            url: process-events-using-event-processor-editor.md
+            url: event-streams/process-events-using-event-processor-editor.md
           - text: Monitor event streams
-            url: monitor.md
+            url: event-streams/monitor.md
 
   # Card 
   - title: Training
