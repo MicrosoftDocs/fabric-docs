@@ -26,7 +26,6 @@ General product limitations for Data Warehousing in Microsoft Fabric are listed 
 
 - At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
 - Warehouse Recovery capabilities are not available during Preview.
-- You can't load case sensitive tables to data warehouse (for example, "Cat", "cat", and "CAT" are all read as the same table name by SQL). For more information on Collation, refer to [Tables](tables.md#collation).
 - Duplicate table names can cause the data warehouse to fail. Use unique table and file names for all items in a warehouse. 
 
 For more limitations information in specific areas, see:
