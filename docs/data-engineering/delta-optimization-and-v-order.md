@@ -41,27 +41,36 @@ Use the following commands to control usage of V-Order writes.
 
 ### Check V-Order configuration in Apache Spark session
 
-1. SQL
-   ```sql
-   %%sql 
-   GET spark.sql.parquet.vorder.enabled 
-   ```
-1. Python
-   ```python
-   %%pyspark
-   spark.conf.get('spark.sql.parquet.vorder.enabled')
-   ```
-1. Scala 
-   ```scala
-   %%spark  
-   spark.conf.get('spark.sql.parquet.vorder.enabled')
-   ```
-1. R
-   ```r
-   %%sparkr
-   library(SparkR)
-   sparkR.conf("spark.sql.parquet.vorder.enabled")
-   ```
+# [Spark SQL](#tab/sparksql)
+
+```sql
+%%sql 
+GET spark.sql.parquet.vorder.enabled 
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+%%pyspark
+spark.conf.get('spark.sql.parquet.vorder.enabled')
+```
+
+# [Scala Spark](#tab/scalaspark)
+
+```scala
+%%spark  
+spark.conf.get('spark.sql.parquet.vorder.enabled')
+```
+
+# [SparkR](#tab/sparkr)
+
+```r
+%%sparkr
+library(SparkR)
+sparkR.conf("spark.sql.parquet.vorder.enabled")
+```
+
+---
 
 ### Disable V-Order writing in Apache Spark session
 
