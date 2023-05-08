@@ -37,9 +37,9 @@ Data Science users work on the same platform as business users and analysts. Dat
 
 ## Data acquisition
 
-[!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in One Lake using the Lakehouse item. Lakehouse easily attaches to a Notebook to browse and interact with data.
+[!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in OneLake using the Lakehouse item. Lakehouse easily attaches to a Notebook to browse and interact with data.
 
-Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, this should make seamless data reads from One Lake possible.
+Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, this should make seamless data reads from OneLake possible.
 
 There's a powerful set of tools is available for data ingestion and data orchestration pipelines with data integration pipelines - a natively integrated part of [!INCLUDE [product-name](../includes/product-name.md)]. Easy-to-build data pipelines can access and transform the data into a format that machine learning can consume. Learn more about data pipelines in Synapse.
 
