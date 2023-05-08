@@ -12,17 +12,17 @@ ms.date: 3/31/2023
 
 The Microsoft Purview hub is your gateway to using Microsoft Purview's powerful governance and compliance capabilities to help you manage your organization's sensitive data. It provides
 
-* Purview insights about endorsement and sensitivity labeling in your Fabric data estate
-* Entry points to the Microsoft Purview unified portal itself, where you can gain wider insights, not only about your Microsoft Fabric environment, but about your whole data estate.
+* Reports about endorsement and sensitivity labeling in your Fabric data estate
+* Access to Microsoft Purview insights in the Microsoft Purview unified portal itself, where you can gain wider insights, not only about your Microsoft Fabric environment, but about your whole data estate.
 * Links to documentation to help you get started implementing Purview governance and compliance capabilities in your organization.
 
 For more information about the Fabric/Purview integration, see [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md).
 
 ## Accessing the hub
 
-To access the hub, open the [Fabric settings pane](../get-started/fabric-settings.md#open-the-fabric-settings-pane) and choose **Microsoft Purview hub (preview)**.
+To access the hub, open the Fabric settings pane and choose **Microsoft Purview hub (preview)**.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings." lightbox="./media/use-microsoft-purview-hub/open-purview-hub.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings.":::
 
 > [!NOTE]
 > Currently the Microsoft Purview hub is available for Power BI administrators only.
