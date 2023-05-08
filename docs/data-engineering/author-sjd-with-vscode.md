@@ -26,7 +26,7 @@ After the request is processed, the name of the newly created SJD will appear un
 - **Lakehouse**: List all the referenced Lakehouse by this SJD, one of them is marked as default lakehouse which could be accessed via the relative path (Files/…, Tables/…).
 - **Run**: List the run history of this SJD and the job status of each run
 
-### Upload Main Def / Referenced lib 
+### Upload main defintion file / referenced lib
 By clicking “Add Main File” button, you can upload/overwrite the main definition file.
 
 :::image type="content" source="media\vscode\upload-main-def.png" alt-text="Screenshot showing upload main def button.":::
@@ -40,7 +40,7 @@ After the file is uploaded, users can also override it by clicking the “Update
 :::image type="content" source="media\vscode\update-file.png" alt-text="Screenshot showing update file button.":::
 
 ### Submit Run request
-You can directly submit a request to run the SJD from VSCode side by click the “Run Spark Job” button at the toolbar of the source SJD
+You can directly submit a request to run the SJD from VSCode side by clicking the “Run Spark Job” button at the toolbar of the source SJD
 
 :::image type="content" source="media\vscode\submit-sjd-run.png" alt-text="Screenshot showing submit run button.":::
 
@@ -57,7 +57,7 @@ You can open the SJD authoring page in the Trident portal by clicking the “Ope
 
 If the SJD is created with PySpark(Python), you can download the .py script of the main definition file and the referenced file and debug the source script in the VS Code.
 
-By clicking the “Debug” button, user can trigger the download of the source code. Once the download is finished, the folder of the source code will be automatically open.
+You can click the "Debug" button trigger the download of the source code. Once the download is finished, the folder of the source code will be automatically open.
 
 :::image type="content" source="media\vscode\download-sjd-source.png" alt-text="Screenshot showing download source button.":::
 
