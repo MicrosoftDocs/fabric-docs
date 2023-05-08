@@ -16,7 +16,7 @@ Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easil
 
 ## File system utilities
 
-*mssparkutils.fs* provides utilities for working with various file systems, including Azure Data Lake Storage Gen2 (ADLS Gen2) and Azure Blob Storage. Make sure you configure access to [Azure Data Lake Storage Gen2](https://learn.microsoft.com/azure/storage/blobs/data-lake-storage-introduction) and [Azure Blob Storage](https://learn.microsoft.com/azure/storage/blobs/storage-blobs-introduction) appropriately.
+*mssparkutils.fs* provides utilities for working with various file systems, including Azure Data Lake Storage Gen2 (ADLS Gen2) and Azure Blob Storage. Make sure you configure access to [Azure Data Lake Storage Gen2](/azure/storage/blobs/data-lake-storage-introduction) and [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) appropriately.
 
 Run the following commands for an overview of the available methods:
 
@@ -301,9 +301,9 @@ To mount the container called *mycontainer*, *mssparkutils* first needs to check
 
 ### Mount via shared access signature token or account key
 
-Mssparkutils supports explicitly passing an account key or [Shared access signature (SAS)](https://learn.microsoft.com/azure/storage/common/storage-sas-overview) token as a parameter to mount the target.
+Mssparkutils supports explicitly passing an account key or [Shared access signature (SAS)](azure/storage/common/storage-sas-overview) token as a parameter to mount the target.
 
-For security reasons, we recommend that you store account keys or SAS tokens in Azure Key Vault (as the following example screenshot shows). You can then retrieve them by using the PyTridentTokenLibrary.get_secret_with_token API. For the usage of Azure Key Vault, refer to [About Azure Key Vault managed storage account keys](https://learn.microsoft.com/azure/key-vault/secrets/about-managed-storage-account-keys).
+For security reasons, we recommend that you store account keys or SAS tokens in Azure Key Vault (as the following example screenshot shows). You can then retrieve them by using the PyTridentTokenLibrary.get_secret_with_token API. For the usage of Azure Key Vault, refer to [About Azure Key Vault managed storage account keys](/azure/key-vault/secrets/about-managed-storage-account-keys).
 
 :::image type="content" source="media\microsoft-spark-utilities\use-azure-key-vault.png" alt-text="Screenshot showing where secrets stored in an Azure Key Vault." lightbox="media\microsoft-spark-utilities\use-azure-key-vault.png":::
 
