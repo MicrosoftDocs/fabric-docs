@@ -34,8 +34,10 @@ To integrate git with your Microsoft Fabric workspace, you need to set up the fo
 
 To access the git integration feature, you need one of the following:
 
-- Premium license
-- Access to a Premium capacity workspace
+- [Fabric license](../../enterprise/licenses.md)
+- Access to a [Fabric capacity workspace](../../enterprise/licenses.md#capacity-and-skus)
+
+In addition, [git integration has to be enabled](../../admin/admin-settings-git-integration.md) by your organization’s administrator. If git integration is disabled in the workspace, contact your administrator.
 
 ## Connect a workspace to an Azure repo
 
@@ -111,7 +113,6 @@ If, after you saved changes to the workspace, you decide that you don’t want t
 1. Select the **Changes** tab of the **Source control** pane.
    A list appears with all the items you changed, and an icon indicating if the changed item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
 1. Select the changes you want to undo.
-1. Add a comment in the box. If you don't add a comment, a default message is added automatically.
 1. Select **Undo**.
 
    :::image type="content" source="./media/git-get-started/undo-changes.png" alt-text="Screenshot of source control window with two changes selected to undo.":::
@@ -119,7 +120,7 @@ If, after you saved changes to the workspace, you decide that you don’t want t
 
    :::image type="content" source="./media/git-get-started/undo-confirm.png" alt-text="Screenshot of source control window asking if you're sure you want to undo changes.":::
 
-The selected items in your workspace revert to how they were before you saved them.
+The selected items in your workspace revert to how they were when the workspace was last synced.
 
 > [!IMPORTANT]
 > If you delete an item and then undo the changes, the item is created anew and some of the metadata might be lost. For example, the sensitivity labels aren’t kept and should be reset, and the owner of the item is set to the current user.
