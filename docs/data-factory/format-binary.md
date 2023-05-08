@@ -106,7 +106,7 @@ The following properties are supported in the copy activity **Destination** sect
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **File format**|The file format that you want to use.| **Binary**|Yes||type (*under `datasetSettings`*):<br>Binary |
+| **File format**|The file format that you want to use.| **Binary**|Yes|type (*under `datasetSettings`*):<br>Binary |
 |**Compression type**|The compression codec used to write binary files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
 |**Compression level** |The compression ratio. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
 
