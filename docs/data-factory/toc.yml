@@ -113,7 +113,7 @@
       items:
       - name: Overview
         href: connector-lakehouse-overview.md
-      - name: Configure in copy activity of pipeline
+      - name: Configure in Data pipeline Copy activity
         href: connector-lakehouse-copy-activity.md
     - name: Microsoft 365
       items:
