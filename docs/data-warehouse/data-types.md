@@ -36,13 +36,15 @@ Tables in Microsoft Fabric support the most commonly used T-SQL data types.
 
 For more details about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric). 
 
+### Unsupported data types
+
 For T-SQL data types that aren't currently supported, some alternatives are available. Make sure you evaluate the use of these types as precision and query behavior may vary:
 
 | **Unsupported data type** | **Alternatives available** |
 |---|---|
 | **money and smallmoney** | Use decimal, however note that it can't store the monetary unit.  |
 | **datetime and smalldatetime** | Use datetime2. |
-| **nchar and nvarchar** | Use char and varchar respectively. These types use more storage than nchar and nvarchar to store unicode data. To understand the impact on your environment, see [Storage differences between UTF-8 and UTF-16](/sql/relational-databases/collations/collation-and-unicode-support?view=fabric&preserve-view=true#storage_differences). |
+| **nchar and nvarchar** | Use char and varchar respectively, as there is no similar unicode data type in Parquet. Char and varchar types in a UTF-8 collation may use more storage than nchar and nvarchar to store unicode data. To understand the impact on your environment, see [Storage differences between UTF-8 and UTF-16](/sql/relational-databases/collations/collation-and-unicode-support?view=fabric&preserve-view=true#storage_differences). |
 | **text and ntext** | Use varchar. |
 | **image** | Use varbinary. |
 
