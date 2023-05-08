@@ -16,7 +16,7 @@ For more information on data formats, see [Data formats supported  for ingestion
 
 1. In the **Mapping name** field, enter a mapping name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 
-    :::image type="content" source="../../real-time-analytics/media/get-data-blob/azure-blob-schema.png" alt-text="Azure blob schema."  lightbox="../../real-time-analytics/media/get-data-blob/azure-blob-schema.png":::
+    :::image type="content" source="../../real-time-analytics/media/get-data-blob/azure-blob-schema.png" alt-text="Screenshot showing the Azure blob schema."  lightbox="../../real-time-analytics/media/get-data-blob/azure-blob-schema.png":::
 
     >[!NOTE]
     >
