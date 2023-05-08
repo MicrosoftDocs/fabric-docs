@@ -56,7 +56,7 @@ items:
     href: get-data-event-hub.md
   - name: Get data from OneLake
     href: get-data-onelake.md
-- name: Stream events 
+- name: Process event streams
   href: event-streams/toc.yml
 - name: Query data
   items:
