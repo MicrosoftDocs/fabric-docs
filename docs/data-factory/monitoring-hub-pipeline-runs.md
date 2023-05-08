@@ -1,6 +1,6 @@
 ---
 title: How to monitor pipeline runs in Monitoring hub
-description: Learn how to monitor pipeline runs.
+description: Learn how to monitor pipeline runs from Monitoring hub.
 ms.reviewer: jonburchel
 ms.author: chugugrace
 author: chugugrace
