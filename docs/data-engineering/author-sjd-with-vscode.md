@@ -20,13 +20,13 @@ By clicking the “Create Spark Job Definition” button, you can start to creat
 
 :::image type="content" source="media\vscode\create-sjd.png" alt-text="Screenshot showing create sjd button.":::
 
-After the request is processed, the name of the newly created SJD will appear under the Spark Job Definition root node. After expanding the SJD name node, there are three sub-nodes are listed
+After the request is processed, the name of the newly created SJD will appear under the Spark Job Definition root node. Under the SJD name node, there are three sub-nodes are listed
 
 - **Files**:List the main definition file and other referenced lib. Users can upload new files from here.
 - **Lakehouse**: List all the referenced Lakehouse by this SJD, one of them is marked as default lakehouse which could be accessed via the relative path (Files/…, Tables/…).
 - **Run**: List the run history of this SJD and the job status of each run
 
-### Upload main defintion file / referenced lib
+### Upload main definition file / referenced lib
 By clicking “Add Main File” button, you can upload/overwrite the main definition file.
 
 :::image type="content" source="media\vscode\upload-main-def.png" alt-text="Screenshot showing upload main def button.":::
