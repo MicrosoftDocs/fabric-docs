@@ -59,7 +59,7 @@ For the **Mapping** tab configuration, go to [Configure your mappings under mapp
 
 ### Settings
 
-For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.mdmd#configure-your-other-settings-under-settings-tab).
+For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 
