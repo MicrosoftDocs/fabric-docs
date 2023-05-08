@@ -37,7 +37,7 @@ The hub has two main sections:
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
-## Microsoft Purview hub
+## Get started with Microsoft Purview governance and compliance 
 
 The tiles in the Microsoft Purview hub section provide access to the locations you need for getting started with Microsoft Purview governance and compliance.
 
@@ -49,7 +49,7 @@ The tiles in the Microsoft Purview hub section provide access to the locations y
 |**Data Loss Prevention**| Open the Microsoft Purview compliance portal where you define data loss prevention policies.|
 |**Audit**:|?|
 
-## Microsoft Fabric data
+## Get insights about your Fabric data estate
 
 The Microsoft Fabric data section shows you insights about your Fabric data estate. It has two tabs that show you the **Items** and **Sensitivity** pages from the [Microsoft Purview hub report](#purview-hub-insights-report). From these two pages you can gain insights about how Fabric items are distributed throughout your tenant and what the current state of endorsement is.
 
@@ -67,7 +67,7 @@ You could also use label coverage by item type to see if there are certain items
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-fabric-data-sensitivity-view.png" alt-text="Screenshot of the Microsoft Purview hub, sensitivity page." lightbox="./media/use-microsoft-purview-hub/microsoft-fabric-data-sensitivity-view.png":::
 
-## Purview hub insights report
+## View the full Purview hub insights report
 
 The Purview hub insights report contains more detailed insights about your data. To open it, select the  **Open full report** but at the top of the report page in the Purview hub. The report is located in the [Admin monitoring workspace](../admin/admin-monitoring.md), and you can also access it directly from there.
 
