@@ -45,7 +45,7 @@ In this tutorial you learn to:
 ## Load the file to a Delta table
 
 1. Right-click or use the ellipsis on the CSV file to access the contextual menu, and select **Load to Delta**.
-1. The load to tables user interface shows up with the suggested table name. Real time validation on special characters apply during typing.
+1. The load to tables user interface shows up with the suggested table name. Real time validations on special characters apply during typing.
 1. Select **Confirm** to execute the load.
 1. The table now shows up in the lakehouse explorer, expand the table to see the columns and its types. Select the table to see a preview.
 
@@ -54,11 +54,11 @@ In this tutorial you learn to:
 > [!NOTE]
 > If the table already exists, different __load mode__ options are show. __Overwrite__ will drop and recreate the table. __Append__ will insert all CSV content as new data. For an in-depth guide on the __Load to Tables__ feature, read the [Load to Tables](load-to-tables.md) article.
 
-## Generate a Dataset and create a Power BI report
+## Generate a dataset and create a Power BI report
 
 1. Select **New Power BI dataset** on the Lakehouse ribbon.
 1. Select the table to be added to the dataset model, select the **Confirm** button.
-1. On the dataset editing experience, your are able to define relationships between multiple tables, and also apply data types normalization and DAX transformations to the data if desired.
+1. On the dataset editing experience, you are able to define relationships between multiple tables, and also apply data types normalization and DAX transformations to the data if desired.
 1. Select **New report** on the ribbon.
 1. Use the report builder experience to design a Power BI report.
 
