@@ -27,7 +27,7 @@ In this tutorial you learn to:
 1. Make sure you are in desired workspace or select/create one
 1. Select **Lakehouse** icon under New section in the main mage
 
-   :::image type="content" source="media\get-started-csv-upload\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog" lightbox="media\get-started-streaming\new-lakehouse.png":::
+   :::image type="content" source="media\get-started-csv-upload\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog." lightbox="media\get-started-streaming\new-lakehouse.png":::
 
 1. Enter name of your Lakehouse
 1. Select **Create**

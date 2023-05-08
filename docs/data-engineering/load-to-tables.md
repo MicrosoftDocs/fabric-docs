@@ -36,7 +36,7 @@ The following standard applies to the Load to Delta experience:
 
 A file selected in the Lakehouse ```Files```section to be loaded into a new Delta table in the ```Tables``` section. If the table already exists, it is dropped and then created.
 
-   :::image type="content" source="media\load-to-tables\load-from-file.png" alt-text="Load to tables dialog box with filled table name" lightbox="media\load-to-tables\load-from-file.png":::
+   :::image type="content" source="media\load-to-tables\load-from-file.png" alt-text="Screenshot showing the load to tables dialog box with filled table name." lightbox="media\load-to-tables\load-from-file.png":::
 
 ## Next steps
 
