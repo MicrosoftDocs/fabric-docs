@@ -39,7 +39,7 @@ The following items are currently supported:
 * Reports (except paginated reports)
 * Datasets (except push datasets, live connections, and model v1)
 
-If the folder has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either.
+If the folder has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pan but you can't commit or update them.
 
 ## Permissions
 
