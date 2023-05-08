@@ -19,7 +19,7 @@ A conflict occurs when changes are made *to the same item* in both the workspace
 
 There are two ways to resolve a conflict:
 
-- [Revert](#revert-to-a-previous-synced-state) either the workspace or the git repository to a previous synced state.
+- [Revert](#revert-to-a-previous-state) either the workspace or the git repository to a previous synced state.
 - [Resolve](#resolve-conflict-in-git) the conflict in git.
 
 ## Revert to a previous state
