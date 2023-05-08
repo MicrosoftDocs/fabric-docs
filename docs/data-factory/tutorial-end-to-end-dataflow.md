@@ -8,7 +8,141 @@ ms.topic: tutorial
 ms.date: 05/23/2023
 ---
 
-# Module 2:
+# Module 2: Create a dataflow in Data Factory
+
+This module takes about 25 minutes to create a dataflow, apply transformations, and move the raw data from the Bronze table into a Gold Lakehouse table. 
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+
+With the raw data loaded into your Bronze Lakehouse table from the last module, you can now prepare that data and enrich it by combining it with another table that contains discounts for each vendor and their trips during a particular day. This final Gold Lakehouse table will be loaded and ready for consumption.
+
+The high-level steps in the dataflow are as follows:
+
+- Get raw data from the Lakehouse table created by the Copy activity in [Module 1: Create a pipeline in Data Factory](tutorial-end-to-end-pipeline.md).
+- Transform the data imported from the Lakehouse table.
+- Connect to a CSV file containing discounts data.
+- Transform the discounts data.
+- Combine trips and discounts data.
+- Load the output query into the Gold Lakehouse table.
+
+## Get data from the Bronze Lakhouse table
+
+1. From the sidebar, select **Create**, and then **Dataflow Gen2 (Preview)** to create a new dataflow gen2.
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/create-new-dataflow.png" alt-text="Screenshot showing the Fabric Create page with the Dataflow Gen2 (Preview) button highlighted.":::
+
+1. From the new dataflow menu, select **Get data**, and then **More...**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/get-data-button.png" alt-text="Screenshot showing the datalow menu with Get data button highlighted and and the More... option highlighted from its menu.":::
+
+1. Search for and select the **Lakehouse** connector.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-lakehouse-data-source.png" alt-text="Screenshot showing the selection of the Lakehouse data source from the Choose data source menu.":::
+
+1. The **Connect to data source** dialog appears, and a new connection is automatically created for you based on the currently signed in user. Select **Next**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/lakehouse-settings.png" alt-text="Screenshot showing the configuration of the data source settings for your new Lakehouse with your current signed in user, and the Next button selected.":::
+
+1. The **Choose data** dialog is displayed. Use the navigation pane to find the Lakehouse you created for the destination in the prior module, and select the nyc_taxi data  table.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/browse-and-choose-nyc-taxi-lakehouse-table.png" alt-text="Screenshot showing the Lakehouse browser with the workspace, lakehouse, and table created with the Copy activity in module 1.":::
+
+1. _(Optional)_ Once your canvas is populated with the data, you can set **column profile** information, as this will be useful for data profiling. You can apply the right transformation and target the right data values based on it.
+
+   To do this, select **Options** from the ribbon pane, then select the first three options under **Column profile**, and then select **OK**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/column-profile-options.png" alt-text="Screenshot showing the column options selection for your data.":::
+
+## Transform the data imported from the Lakehouse
+
+1. Select the data type icon in the column header of the second column, **IpepPickupDatetime**, to display a dropdown menu and select the data type from the menu to convert the column from the **Date/Time** to **Date** type.
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/select-date-type.png" alt-text="Screenshot showing the selection of the Date data type for the IpepPickupDatetime column.":::
+
+1. _(Optional)_ On the **Home** tab of the ribbon, select the **Choose columns** option from the **Manage columns** group.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-columns-button.png" alt-text="Screenshot showing the Choose columns button on the Home tab of the dataflow editor.":::
+
+1. _(Optional)_ On the **Choose columns** dialog, deselect some columns listed below, then select **OK**.
+
+   - lpepDropoffDatetime
+   - puLocationId
+   - doLocationId
+   - pickupLongitude
+   - pickupLatitude
+   - dropoffLongitude
+   - dropoffLatitude
+   - rateCodeID
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-columns-dialog.png" alt-text="Screenshot showing the Choose columns dialog with the identified columns deselected.":::
+
+1. Select the **storeAndFwdFlag** column's filter and sort dropdown menu. (If you see a warning **List may be incomplete**, select **Load more** to see all the data).
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/filter-sort-values-dialog.png" alt-text="Screenshot showing the filter and sort dialog for the column.":::
+
+1. Select 'Y' to show only rows where a discount was applied, and then select **OK**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/filter-values.png" alt-text="Screenshot showing the values filter with only 'Y' selected.":::
+
+1. Select the **Ipep_Pickup_Datetime** column sort and filter dropdown menu, then select **Date filters**, and choose the **Between...** filter provided for Date and Date/Time types.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/date-filters.png" alt-text="Screenshot showing the selection of the Date filters option in the column sort and format dropdown.":::
+
+1. In the **Filter rows** dialog, select dates between January 1, 2015, and Jan 31, 2015, then select **OK**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/filter-dates-between.png" alt-text="Screenshot showing the selection of the dates in January, 2015.":::
+
+## Connect to a CSV file containing discount data
+
+Now, with the data from the trips in place, we want to load the data that contains the respective discounts for each day and VendorID, and prepare the data before combining it with the trips data.
+
+1. From the **Home** tab in the dataflow editor menu, select the **Get data** option, and then choose **Text/CSV**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/get-text-csv-data.png" alt-text="Screenshot showing the selection of the Get data menu from the Home tab, with Text/CSV highlighted.":::
+
+1. On the **Connect to data source** dialog, provide the following details:
+
+   - **File path or URL** - https://raw.githubusercontent.com/ekote/azure-architect/master/Generated-NYC-Taxi-Green-Discounts.csv
+   - **Authentication kind** - Anonymous
+   
+   Then select **Next**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/text-csv-settings.png" alt-text="Screenshot showing the Text/CSV settings for the connection.":::
+
+1. On the **Preview file data** dialog, select **Create**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/preview-file-data.png" alt-text="Screenshot showing the Preview file data dialog with the Create button highlighted.":::
+
+## Transform the discount data
+
+1. Reviewing the data, we see the headers appear to be in the first row. Promote them to headers by selecting the table's context menu at the top left of the preview grid area to select **Use first row as headers**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/use-first-row-as-headers.png" alt-text="Screenshot showing the selection of the Use first row as headers option from the table context menu.":::
+
+   > [!NOTE]
+   > After promoting the headers, you can see a new step will be added to the **Applied steps** pane at the top of the dataflow editor to se the data types of your columns.
+
+1. Right-click the **VendorID** column, and from the context menu displayed, select the option **Unpivot other columns**. This allows you to transform columns into attribute-value pairs, where columns become rows.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/unpivot-other-columns.png" alt-text="Screenshot showing the context menu for the VendorID column with the Unpivot other columns selection highlighted.":::
+
+1. With the table unpivoted, rename the **Attribute** and **Value** columns by double-clicking them and changing **Attribute** to **Date** and **Value** to **Discount**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/rename-unpivoted-columns.png" alt-text="Screenshot showing the table columns after renaming Attribute to Date and Value to Discount.":::
+
+1. Change the data type of the Date column by selecting the data type menu to the left of the column name and choosing **Date**.
+
+   s:::image type="content" source="media/tutorial-end-to-end-dataflow/set-date-data-type.png" alt-text="Screenshot showing the selection of the Date data type for the Date column.":::
+
+1. Select the **Discount** column and then select the **Transform** tab on the menu. Select **Number column**, and then select **Standard** numeric transformations from the submenu, and choose **Divide**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/divide-column-values.png" alt-text="Screenshot showing the selection of the Divide option to transform data in the Discount column.":::
+
+1. On the **Divide** dialog, enter the value 100.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/divide-dialog.png" alt-text="Screenshot showing the Divide dialog with the value 100 entered and the OK button highlighted.":::
+
+## Combine trips and discounts data
+
+
 
 ## Next steps
 

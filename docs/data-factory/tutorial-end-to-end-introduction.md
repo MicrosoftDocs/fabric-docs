@@ -40,12 +40,12 @@ In this end-to-end data integration use case, you learn:
 
 ### Your data integration story line
 
-In the next 50 minutes, you are tasked with completing an end-to-end data integration scenario. This includes ingesting raw data from a source store into the bronze table of a Lakehouse, processing all the data, moving it to the gold table of the data Lakehouse, sending an email to notify you once all the jobs are complete, and finally, setting up the entire flow to run on a scheduled basis.
+In the next 50 minutes, you are tasked with completing an end-to-end data integration scenario. This includes ingesting raw data from a source store into the Bronze table of a Lakehouse, processing all the data, moving it to the Gold table of the data Lakehouse, sending an email to notify you once all the jobs are complete, and finally, setting up the entire flow to run on a scheduled basis.
 
 The scenario is divided into three modules:
 
-1. [Module 1: Create your first pipeline](tutorial-end-to-end-pipeline.md) to ingest raw data from a Blob storage to a bronze table in a data Lakehouse.
-1. [Module 2: Create your first dataflow](tutorial-end-to-end-dataflow.md) to process the raw data from your bronze table and move it to a gold table in the data Lakehouse.
+1. [Module 1: Create your first pipeline](tutorial-end-to-end-pipeline.md) to ingest raw data from a Blob storage to a Bronze table in a data Lakehouse.
+1. [Module 2: Create your first dataflow](tutorial-end-to-end-dataflow.md) to process the raw data from your Bronze table and move it to a Gold table in the data Lakehouse.
 1. [Module 3: Integrate your pipeline](tutorial-end-to-end-integration.md) to send an email to notify you once all the jobs are complete, and finally, setup the entire flow to run on a scheduled basis.
 
 :::image type="content" source="media/tutorial-end-to-end-introduction/tutorial-explanation-diagram.png" alt-text="A diagram of the data flow and modules of the tutorial.":::

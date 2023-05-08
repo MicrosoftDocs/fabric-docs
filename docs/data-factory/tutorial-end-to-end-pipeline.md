@@ -10,9 +10,9 @@ ms.date: 05/23/2023
 
 # Module 1: Create a pipeline in Data Factory
 
-This module takes 10 minutes, ingesting raw data from the source store into the bronze table of a data Lakehouse using the Copy activity in a pipeline.
+This module takes 10 minutes, ingesting raw data from the source store into the Bronze table of a data Lakehouse using the Copy activity in a pipeline.
 
-The high level steps in module 1 are as follows:
+The high-level steps in module 1 are as follows:
 
 1. Create a data pipeline.
 1. Use a Copy Activity in the pipeline to load sample data into a data Lakehouse.
@@ -48,11 +48,11 @@ Select **Add pipeline activity**, and then choose **Copy data** from the display
 
 1. Select the **Source** tab in the properties area below the pipeline canvas, and then select **+ New** to create a new data source. (If you don't see the **Source** tab, you might need to first select the **Copy data** activity on the pipeline canvas area.)
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/create-new-datasource.png" alt-text="Screenshot showing the Source settings of the Copy data activity with the + New button higlighted.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/create-new-data-source.png" alt-text="Screenshot showing the Source settings of the Copy data activity with the + New button higlighted.":::
 
 1. Select **Azure Blob Storage**, and then **Continue**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/datasource-type-azure-blob-storage.png" alt-text="Screenshot showing the selection of the Azure Blob Storage data type for the new connection.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/data-source-type-azure-blob-storage.png" alt-text="Screenshot showing the selection of the Azure Blob Storage data type for the new connection.":::
 
 1. In the **New connection** dialog, provide the relevant details for the connection. For the tutorial, we use the following settings for the **NYC Taxi** sample data:
 
@@ -63,11 +63,11 @@ Select **Add pipeline activity**, and then choose **Copy data** from the display
    
    Then select **Create**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-datasource-settings.png" alt-text="Screenshot showing the New connection dialog with the connection settings to be configured for the tutorial.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-source-settings.png" alt-text="Screenshot showing the New connection dialog with the connection settings to be configured for the tutorial.":::
 
-1. On the **Source** tab for the new datasource you just created, select the **File path** option for **File path type**, entering **sample** for the top level path, and then selecting the **Browse** dropdown to select **From specified path**.
+1. On the **Source** tab for the new data source you just created, select the **File path** option for **File path type**, entering **sample** for the top level path, and then selecting the **Browse** dropdown to select **From specified path**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/datasource-configuration-source-tab.png" alt-text="Screenshot showing the datasource configuration on the Source tab with the specified path setting applied and the Browse dropdown selected.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/data-source-configuration-source-tab.png" alt-text="Screenshot showing the data-source configuration on the Source tab with the specified path setting applied and the Browse dropdown selected.":::
 
 1. On the **Browse** dialog presented, choose **NYC-Taxi-Green-2015-01.parquet** and select **OK**.
 
@@ -77,19 +77,19 @@ Select **Add pipeline activity**, and then choose **Copy data** from the display
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-parquet-file-format.png" alt-text="Screenshot showing the selection of Parquet for File format, with the Preview data button higlighted.":::
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/preview-sample-data.png" alt-text="Screenshot showing the Preview data for the selected NYC-Taxi-Anonymous datasource connection.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/preview-sample-data.png" alt-text="Screenshot showing the Preview data for the selected NYC-Taxi-Anonymous data source connection.":::
 
 ### Step 3: Configure the destination settings for your Copy activity.
 
 1. Select the **Destination** tab for your Copy activity, then select **+ New** to create a new Lakehouse destination, and give it a name. For this tutorial we name our destination Bronze. After providing the name, select **Create**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/datasource-configure-destination-tab.png" alt-text="Screenshot showing the configuration of the Destination tab for the Copy activity.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/data-source-configure-destination-tab.png" alt-text="Screenshot showing the configuration of the Destination tab for the Copy activity.":::
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/new-lakehouse-name.png" alt-text="Screenshot showing the New lakehouse dialog with the name Bronze provided and the Create button highlighted.":::
 
 1. For the **Table name** property, select the **Edit** checkbox to create a new Lakehouse table where the data is loaded, and provide the name **nyc_taxi**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/datasource-configure-destination-tab-table-name.png" alt-text="Screenshot showing the selection of the Edit checkbox in the Destination settings, with the Table name of nyc_taxi entered.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/data-source-configure-destination-tab-table-name.png" alt-text="Screenshot showing the selection of the Edit checkbox in the Destination settings, with the Table name of nyc_taxi entered.":::
 
 ### Step 4: Run and view the results of your Copy activity.
 
