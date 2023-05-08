@@ -126,6 +126,7 @@
     - name: Parquet
       items:
       - name: Parquet format
+        href: format-parquet.md
       - name: Connect in dataflows
         href: connector-parquet-dataflows.md
     - name: OData
