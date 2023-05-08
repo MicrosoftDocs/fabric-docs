@@ -26,9 +26,9 @@ In the preferences section, individual users can set their user preferences, spe
 
 | Link| Description|
 |:-----------|:--------------|
-| General| Opens the generate settings page, where you can set the display language for the Fabric interfaces and parts of visuals.|
+| General| Opens the generate settings page, where you can set the display language for the Fabric interface and parts of visuals.|
 | Notifications| Opens the notifications settings page where you can view your subscriptions and alerts. |
-| Item settings| Opens the item settings page, where you can configure per-item type settings.|
+| Item settings| Opens the item settings page, where you can configure per-item-type settings.|
 | Developer settings|Opens the developer settings page, where you can configure developer mode settings.|
 
 
@@ -41,7 +41,7 @@ The resources and extensions section provides links to pages where users can use
 |Manage personal/group storage|Opens the personal/group storage management page, where you can see and manage data items that you own or that have been shared with you. |
 |Power BI settings| Opens the Power BI settings page, where you can get to the settings pages for the Power BI items (dashboards, datasets, workbooks, reports, datamarts, and dataflows) that are in the current workspace. |
 |Manage connections and gateways| Opens page where you can manage connections, on-premises data gateways, and virtual networks data gateways. |
-|Manage embed codes| Opens a pate where you can manage [embed codes](/power-bi/collaborate-share/service-publish-to-web) you have created. |
+|Manage embed codes| Opens a page where you can manage [embed codes](/power-bi/collaborate-share/service-publish-to-web) you have created. |
 |Azure Analysis Services migrations| Opens up a page where you can [migrate your Azure Analysis Services datasets to Power BI Premium](/power-bi/enterprise/aas-pbi-migration-overview).  |
 
 ## Governance and insights settings
@@ -51,7 +51,7 @@ The governance and insights section provides links to help admins and users with
 | Link| Description|
 |:-----------|:--------------|
 |Admin portal | Opens the Fabric admin portal where admins perform various management tasks and configure Fabric tenant settings. For more information, see [What is the admin portal?](../admin/admin-center.md)|
-|[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)| Opens the Microsoft Purview hub where you can view Purview insights about your organization's sensitive data. The Microsoft Purview hub also provides links to Purview governance and compliance capabilities and as links to documentation to help you get started with Microsoft Purview governance and compliance in Fabric. Currently only Power BI admins have this option. |
+|[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)| Currently available to Power BI admins only. Opens the Microsoft Purview hub where you can view Purview insights about your organization's sensitive data. The Microsoft Purview hub also provides links to Purview governance and compliance capabilities and has links to documentation to help you get started with Microsoft Purview governance and compliance in Fabric. |
 
 ## Next steps
 
