@@ -5,28 +5,30 @@ ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
 ms.author: jessiwang
-ms.date: 05/02/2023
+ms.date: 05/08/2023
 ---
 # Recipe: Cognitive Services - Multivariate Anomaly Detection 
 This recipe shows how you can use SynapseML and Azure Cognitive Services on Apache Spark for multivariate anomaly detection. Multivariate anomaly detection allows for the detection of anomalies among many variables or timeseries, taking into account all the inter-correlations and dependencies between the different variables. In this scenario, we use SynapseML to train a model for multivariate anomaly detection using the Azure Cognitive Services, and we then use to the model to infer multivariate anomalies within a dataset containing synthetic measurements from three IoT sensors. 
 
-To learn more about the Anomaly Detector Cognitive Service, refer to [ this documentation page](https://docs.microsoft.com/azure/cognitive-services/anomaly-detector/). 
+To learn more about the Anomaly Detector Cognitive Service, refer to [this documentation page](/azure/cognitive-services/anomaly-detector/). 
 
-### Prerequisites
-- An Azure subscription - [Create one for free](https://azure.microsoft.com/free/)
+## Prerequisites
+* An Azure subscription - [Create one for free](https://azure.microsoft.com/free/)
+* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
-### Setup
-#### Create an Anomaly Detector resource
+
+## Setup
+### Create an Anomaly Detector resource
 Follow the instructions to create an `Anomaly Detector` resource using the Azure portal or alternatively, you can also use the Azure CLI to create this resource.
 
 - In the Azure portal, click `Create` in your resource group, and then type `Anomaly Detector`. Click on the Anomaly Detector resource.
 - Give the resource a name, and ideally use the same region as the rest of your resource group. Use the default options for the rest, and then click `Review + Create` and then `Create`.
 - Once the Anomaly Detector resource is created, open it and click on the `Keys and Endpoints` panel on the left. Copy the key for the Anomaly Detector resource into the `ANOMALY_API_KEY` environment variable, or store it in the `anomalyKey` variable.
 
-#### Create a Storage Account resource
+### Create a Storage Account resource
 In order to save intermediate data, you need to create an Azure Blob Storage Account. Within that storage account, create a container for storing the intermediate data. Make note of the container name, and copy the connection string to that container. You need it later to populate the `containerName` variable and the `BLOB_CONNECTION_STRING` environment variable.
 
-#### Enter your service keys
+### Enter your service keys
 Let's start by setting up the environment variables for our service keys. The next cell sets the `ANOMALY_API_KEY` and the `BLOB_CONNECTION_STRING` environment variables based on the values stored in our Azure Key Vault. If you're running this tutorial in your own environment, make sure you set these environment variables before you proceed.
 
 
@@ -44,11 +46,11 @@ Now, lets read the `ANOMALY_API_KEY` and `BLOB_CONNECTION_STRING` environment va
 
 ```python
 # An Anomaly Dectector subscription key
-anomalyKey = find_secret("anomaly-api-key")
+anomalyKey = find_secret("anomaly-api-key") # use your own anomaly api key
 # Your storage account name
-storageName = "anomalydetectiontest"
+storageName = "anomalydetectiontest" # use your own storage account name
 # A connection string to your blob storage account
-storageKey = find_secret("madtest-storage-key")
+storageKey = find_secret("madtest-storage-key") # use your own storage key
 # A place to save intermediate MVAD results
 intermediateSaveDir = (
     "wasbs://madtest@anomalydetectiontest.blob.core.windows.net/intermediateData"
@@ -305,3 +307,8 @@ The plots show the raw data from the sensors (inside the inference window) in or
 The second plot shows the severity score of all the detected anomalies, with the `minSeverity` threshold shown in the dotted red line.
 
 Finally, the last plot shows the contribution of the data from each sensor to the detected anomalies. It helps us diagnose and understand the most likely cause of each anomaly.
+## Next steps
+
+- [How to use LightGBM with SynapseML](lightgbm-overview.md)
+- [How to use Cognitive Services with SynapseML](overview-cognitive-services.md)
+- [How to use SynapseML to tune hyperparameters](hyperparameter-tuning-fighting-breast-cancer.md)

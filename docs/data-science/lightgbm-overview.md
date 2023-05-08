@@ -5,7 +5,7 @@ ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
 ms.author: jessiwang
-ms.date: 05/02/2023
+ms.date: 05/08/2023
 ---
 # LightGBM
 
@@ -38,6 +38,10 @@ many other machine learning tasks. LightGBM is part of Microsoft's
 - LightGBMRegressor: used for building regression models. For example, to predict the house price, we could build a regression model with LightGBMRegressor.
 - LightGBMRanker: used for building ranking models. For example, to predict website searching result relevance, we could build a ranking model with LightGBMRanker.
 
+## Prerequisites
+
+* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+
 ## Bankruptcy Prediction with LightGBM Classifier
 
 In this example, we use LightGBM to build a classification model in order to predict bankruptcy.
@@ -53,7 +57,7 @@ spark = SparkSession.builder.getOrCreate()
 
 from synapse.ml.core.platform import *
 
-from synapse.ml.core.platform import materializing_display as display
+
 ```
 
 
@@ -117,18 +121,6 @@ model = LightGBMClassifier(
 
 ```python
 model = model.fit(train_data)
-```
-
-"saveNativeModel" allows you to extract the underlying lightGBM model for fast deployment after you train on Spark.
-
-
-```python
-from synapse.ml.lightgbm import LightGBMClassificationModel
-
-model.saveNativeModel("Files/models/lgbmclassifier.model")
-model = LightGBMClassificationModel.loadNativeModelFromFile(
-    "Files/models/lgbmclassifier.model"
-)
 ```
 
 #### Feature Importances Visualization
@@ -298,3 +290,8 @@ dt = spark.read.format("parquet").load(
 predictions = lgbm_ranker_model.transform(dt)
 predictions.limit(10).toPandas()
 ```
+## Next steps
+
+- [How to use Cognitive Services with SynapseML](overview-cognitive-services.md)
+- [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
+- [How to use knn model with SynapseML](conditional-knn-exploring-art.md)

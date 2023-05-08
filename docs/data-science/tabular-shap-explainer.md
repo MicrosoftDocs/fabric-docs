@@ -5,7 +5,7 @@ ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
 ms.author: jessiwang
-ms.date: 05/02/2023
+ms.date: 05/08/2023
 ---
 # Interpretability - Tabular SHAP explainer
 
@@ -30,7 +30,7 @@ spark = SparkSession.builder.getOrCreate()
 
 from synapse.ml.core.platform import *
 
-from synapse.ml.core.platform import materializing_display as display
+
 
 
 vec_access = udf(lambda v, i: float(v[i]), FloatType())
@@ -178,3 +178,8 @@ fig.show()
 Your results look like:
 
 :::image source="media/tabular-shap-explainer/tabular-shap.png" alt-text="picture tabular-shap":::
+## Next steps
+
+- [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)
+- [How to use SynapseML for multivariate anomaly detection](isolation-forest-multivariate-anomaly-detection.md)
+- [How to Build a Search Engine with SynapseML](cognitive-services-create-a-multilingual-search-engine-from-forms.md)

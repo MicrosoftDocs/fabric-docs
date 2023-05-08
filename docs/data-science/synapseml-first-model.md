@@ -5,12 +5,17 @@ ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
 ms.author: jessiwang
-ms.date: 05/02/2023
+ms.date: 05/08/2023
 ---
-# Your first SynapseML Model
+# Your First SynapseML Model
 This tutorial provides a brief introduction to building your first machine learning model using SynapseML, demonstrating how SynapseML makes it easy to do complex machine learning tasks. We'll use SynapseML to create a small ML training pipeline with a featurization stage and LightGBM regression stage to predict ratings based on review text from a dataset containing book reviews from Amazon. Finally we'll showcase how SynapseML makes it easy to leverage pre-built models to solve problems without having to re-solve them yourself.
 
-## Step 1 - Set up your Environment
+## Prerequisites
+
+* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+* Cognitive Services Key. To obtain a Cognitive Services key, follow the [Quickstart](https://learn.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
+
+## Set up your Environment
 Import SynapseML libraries and initialize your spark session.
 
 
@@ -20,10 +25,10 @@ from synapse.ml.core.platform import *
 
 spark = SparkSession.builder.getOrCreate()
 
-from synapse.ml.core.platform import materializing_display as display
+
 ```
 
-## Step 2 - Load a Dataset
+## Load a Dataset
 Load your dataset and split it into train and test sets.
 
 
@@ -40,7 +45,7 @@ train, test = (
 display(train)
 ```
 
-## Step 3 - Make our Model
+## Make our Model
 Create a simple pipeline to featurize the data using the `TextFeaturizer` from `synapse.ml.featurize.text` and derive a rating from the `LightGBMRegressor`.
 
 
@@ -57,7 +62,7 @@ model = Pipeline(
 ).fit(train)
 ```
 
-## Step 4 - Predict
+## Predict
 call the `transform` function on the model to predict and display the output dataframe!
 
 
@@ -65,7 +70,7 @@ call the `transform` function on the model to predict and display the output dat
 display(model.transform(test))
 ```
 
-## Alternate route - Let the Cognitive Services handle i!
+## Alternate route - Let the Cognitive Services handle it!
 For tasks like this that have a pre-built solution, try using SynapseML's integration with Cognitive Services to transform your data in one step.
 
 
@@ -76,8 +81,13 @@ from synapse.ml.core.platform import find_secret
 model = TextSentiment(
     textCol="text",
     outputCol="sentiment",
-    subscriptionKey=find_secret("cognitive-api-key"),
+    subscriptionKey=find_secret("cognitive-api-key"), # Replace it with your cognitive service key, check prerequisites for more details
 ).setLocation("eastus")
 
 display(model.transform(test))
 ```
+## Next steps
+
+- [How to use LightGBM with SynapseML](lightgbm-overview.md)
+- [How to use Cognitive Services with SynapseML](overview-cognitive-services.md)
+- [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)

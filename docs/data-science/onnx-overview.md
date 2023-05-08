@@ -5,7 +5,7 @@ ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
 ms.author: jessiwang
-ms.date: 05/02/2023
+ms.date: 05/08/2023
 ---
 # ONNX Inference on Spark
 
@@ -15,6 +15,12 @@ Python dependencies:
 
 - onnxmltools==1.7.0
 - lightgbm==3.2.1
+
+
+## Prerequisites
+
+* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+* You may need to install onnxmltools by ```!pip install onnxmltools==1.7.0```
 
 
 Load training data
@@ -28,7 +34,7 @@ spark = SparkSession.builder.getOrCreate()
 
 from synapse.ml.core.platform import *
 
-from synapse.ml.core.platform import materializing_display as display
+
 ```
 
 
@@ -152,3 +158,8 @@ testDf = (
 
 display(onnx_ml.transform(testDf))
 ```
+## Next steps
+
+- [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)
+- [How to use SynapseML for multivariate anomaly detection](isolation-forest-multivariate-anomaly-detection.md)
+- [How to Build a Search Engine with SynapseML](cognitive-services-create-a-multilingual-search-engine-from-forms.md)

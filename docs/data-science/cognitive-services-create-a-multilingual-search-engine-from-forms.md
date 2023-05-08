@@ -5,7 +5,7 @@ ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
 ms.author: jessiwang
-ms.date: 05/02/2023
+ms.date: 05/08/2023
 ---
 # Tutorial: Create a custom search engine and question-answering system
 
@@ -376,3 +376,8 @@ display(
     .distinct()
 )
 ```
+## Next steps
+
+- [How to use LightGBM with SynapseML](lightgbm-overview.md)
+- [How to use SynapseML and Cognitive Services for multivariate anomaly detection - Analyze time series](cognitive-services-multivariate-anomaly-detection.md)
+- [How to use SynapseML to tune hyperparameters](hyperparameter-tuning-fighting-breast-cancer.md)

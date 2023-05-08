@@ -5,7 +5,7 @@ ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
 ms.author: jessiwang
-ms.date: 05/02/2023
+ms.date: 05/08/2023
 ---
 # HyperParameterTuning - Fighting Breast Cancer
 
@@ -110,3 +110,8 @@ prediction = bestModel.transform(test)
 metrics = ComputeModelStatistics().transform(prediction)
 metrics.limit(10).toPandas()
 ```
+## Next steps
+
+- [How to use LightGBM with SynapseML](lightgbm-overview.md)
+- [How to use Cognitive Services with SynapseML](overview-cognitive-services.md)
+- [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
