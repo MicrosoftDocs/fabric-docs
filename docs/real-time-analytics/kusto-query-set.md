@@ -208,7 +208,7 @@ You can look for a specific expression within a result table.
     | take 1000
     ```
 
-1. Click on the **Search** button on the right and type in *"Wabash"*
+1. Select the **Search** button on the right and type in *"Wabash"*
 
     :::image type="content" source="media/kusto-query-set/search.png" alt-text="Screenshot of query result pane highlighting the search option in the table."  lightbox="media/kusto-query-set/search.png":::
 
