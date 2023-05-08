@@ -74,4 +74,4 @@ The query editor supports the use of T-SQL in addition to its primary query lang
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Real-Time Analytics tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md)
+> [Tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md)

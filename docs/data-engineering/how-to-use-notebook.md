@@ -42,6 +42,8 @@ You can import one or more existing notebooks from your local computer to a [!IN
 
 In [!INCLUDE [product-name](../includes/product-name.md)], a notebook will save automatically after you open and edit it; you don't need to worry about losing code changes. You can also use **Save a copy** to clone another copy in the current workspace.
 
+You can also switch to manual save mode from **Edit**->**Save options**->**Manual**. To turn on a local branch of your notebook then save it manually by clicking **Save** button or through "Ctrl" + "s" keybinding.
+
 ## Connect lakehouses and notebooks
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebook now supports interacting with lakehouses closely; you can easily add a new or existing lakehouse from the lakehouse explorer.
@@ -51,7 +53,7 @@ You can navigate to different lakehouses in the lakehouse explorer and set one l
 :::image type="content" source="media\how-to-use-notebook\pin-default-lakehouse.png" alt-text="Screenshot showing where to pin a default lakehouse.":::
 
 > [!NOTE]
-> You need to restart the session after pinning a new lakehouse.
+> You need to restart the session after pinning a new lakehouse or renaming the default lakehouse.
 
 ### Add or remove a lakehouse
 
@@ -71,7 +73,7 @@ If you select a file(.csv, .parquet) with a right mouse click, both Spark and Pa
 
 The [!INCLUDE [product-name](../includes/product-name.md)] notebook is a collaborative item that supports multiple users editing the same notebook.  
 
-When you open a notebook, you enter the co-editing mode by default. If your colleagues open the same notebook at the same time, you see their profile, run output, cursor indicator, selection indicator and editing trace. By leveraging the collaborating features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
+When you open a notebook, you enter the co-editing mode by default, and every notebook edit will be auto-saved. If your colleagues open the same notebook at the same time, you see their profile, run output, cursor indicator, selection indicator and editing trace. By leveraging the collaborating features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
 
 :::image type="content" source="media\how-to-use-notebook\collaborate-code-cell.png" alt-text="Screenshot showing a code cell with another user editing.":::
 

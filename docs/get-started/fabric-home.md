@@ -4,7 +4,7 @@ description: Open reports, apps, and workspaces from the Microsoft Fabric Home. 
 author: mihart
 ms.author: mihart
 ms.topic: conceptual  
-ms.date: 05/01/2023
+ms.date: 05/06/2023
 ---
 
 # Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
@@ -40,7 +40,7 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 6. Your items organized by recent, favorites, and items shared with you by your colleagues.  
 
 > [!IMPORTANT]
-> Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. <!--There are situations where you might try to open an item and receive a prompt to [start a trial or to upgrade your license](fabric-trial.md). -->
+> Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. The exception to this is if your subscription or license changes to one with less access, then you will receive a prompt asking you to start a trial or upgrade your license. 
 
 ## Locate items from Home
 
@@ -66,7 +66,7 @@ To learn about the many ways to search from Home and from different produce expe
 
 ### The context sensitive Help pane
 
-Select the Help icon :::image type="content" source="media/fabric-home/fabric-help-icon.png" alt-text="Screenshot of the question mark Help icon."::: to open the contextual help pane and to search for answers to questions.
+Select the Help icon :::image type="content" source="media/fabric-home/fabric-help-icon.png" alt-text="Screenshot of the question mark Help icon."::: to open and use the contextual help pane and to search for answers to questions.
 
 [!INCLUDE [product-name](../includes/product-name.md)] provides context sensitive help in the right rail of your browser. In this example, we've selected **Browse** from the nav pane and the Help pane automatically updates to show us articles about the features of the **Browse** screen. For example, we're shown articles on *View recent content* and *See content that others have shared with you*. If there are Community posts related to the current view, they are displayed under **Forum topics**. 
 
@@ -78,9 +78,13 @@ The Help pane is also a great place to search for answers to your questions. Typ
 
 :::image type="content" source="media/fabric-home/fabric-home-help-results.png" alt-text="Screenshot of the Help pane before beginning a search.":::
 
+To return to the default Help pane, select the left arrow. 
+
+:::image type="content" source="media/fabric-home/fabric-home-arrow.png" alt-text="Screenshot of the left arrow icon.":::
+
 For more information about searching, see [Searching and sorting](fabric-search.md).
 
-<!-- For more information about the Help pane, see [Get help](get-help.md). -->
+<!--For more information about the Help pane, see [Get in-product help](fabric-help-pane.md).-->
 
 ### Get help and support
 
@@ -92,7 +96,7 @@ Information about your account and license is available from the Account manager
 
 :::image type="content" source="media/fabric-home/fabric-home-me.png" alt-text="Screenshot showing the Account manager expanded.":::
 
-<!--For more information about licenses and trials, see [Licenses and trials](yyyyy.md). -->
+For more information about licenses and trials, see [Licenses](../enterprise/licenses.md).
 
 
 ### Notifications, settings, and feedback

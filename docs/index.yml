@@ -49,7 +49,9 @@ productDirectory:
       links:
         - url: get-started/microsoft-fabric-overview.md
           text: What is Fabric?
-        - url: get-started/fabric-home.md
+        - url: enterprise/licenses.md
+          text: Microsoft Fabric licenses
+        - url: enterprise/licenses-buy.md
           text: Navigate the Fabric portal
         - url: get-started/workspaces.md
           text: Workspaces in Fabric
@@ -63,6 +65,8 @@ productDirectory:
 
       imageSrc: ./media/power-bi-icon.png
       links:
+        - url: admin/admin-fabric-switch.md
+          text: Enable Microsoft Fabric for your organization
         - url: /power-bi/fundamentals/power-bi-overview
           text: What is Power BI?
         - url: /power-bi/transform-model/datamarts/datamarts-overview
@@ -159,6 +163,8 @@ productDirectory:
 
       imageSrc: ./media/administrator-icon.svg
       links:
+        - url: enterprise/licenses-buy.md
+          text: Buy a Microsoft Fabric license     
         - url: admin/admin-overview.md
           text: Fabric administration
         - url: governance/metadata-scanning-overview.md

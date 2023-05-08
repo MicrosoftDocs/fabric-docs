@@ -34,10 +34,8 @@ summary: |
   * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
   * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)
 
-  General questions:
-
 sections:
-  - name: General
+  - name: General questions
     questions:
       - question: |
           What is lifecycle management in Microsoft Fabric?
