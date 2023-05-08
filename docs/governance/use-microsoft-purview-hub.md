@@ -10,47 +10,23 @@ ms.date: 3/31/2023
 
 # The Microsoft Purview Hub in Microsoft Fabric
 
-Introduction to the hub. What is it? Basics of navigating.  [Link to the Microsoft Purview and Microsoft Fabric page.](microsoft-purview-fabric.md)
+The Microsoft Purview hub is your gateway to Microsoft Purview's powerful governance and compliance capabilities. It provides Purview insights about your Fabric data estate, as well as entry points to the Microsoft Purview unified portal itself where you can gain wider insights, not only about your Microsoft Fabric environment, but about your whole data estate. It also provides links to documentation to help you get started implementing Purview governance and compliance capabilities in your organization.
 
-## Your role in the hub
+## Accessing the hub
 
-Explanation of roles. [Maybe a link to roles documentation in Fabric](../placeholder.md).
+To access the hub, select the Fabric settings gear icon and choose **Microsoft Purview hub (preview)**.
 
-### Admin view in the hub
+:::image type="content" source="./media/microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of Open Microsoft Purview hub option.":::
 
-Access to [Microsoft Purview Insights](#microsoft-purview-insights).
-Access to [reports](#reports).
-Access to [links](#other-links).
+> [!NOTE]
+> Currently, the hub is available to Power BI admins only.
 
-### Data owner view in the hub
+## The hub at a glance
 
-Access to [Microsoft Purview Insights](#microsoft-purview-insights).
-Access to [reports](#reports).
-Access to [links](#other-links).
+:::image type="content" source="./media/microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub, admin view." lightbox="./media/microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
-### Consumer role in the hub
-
-Access to [reports](#reports).
-Access to [links](#other-links).
-
-## Microsoft Purview insights
-
-Description of available links with links listed here that point to the rest of the documentation with brief descriptions.
-
-- Data Catalog
-- Information Protection
-- Data Loss Prevention
-- Audit
-
-## Reports
-
-### More Insights
-
-Link to Microsoft Purview to see more information, not only about your Microsoft Fabric environment, but your whole data estate. This will take you to the Microsoft Purview unified portal...
-
-## Other links
+The main components of the hub are described below.
 
 ## Next steps
 
-- More information about [Microsoft Purview](/purview/purview).
-- More information about [Microsoft Fabric](../placeholder.md).
+* [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric)
