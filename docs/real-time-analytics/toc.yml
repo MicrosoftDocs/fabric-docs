@@ -52,13 +52,13 @@ items:
     href: get-data-blob.md
   - name: Get data from a blob container
     href: get-data-blob-container.md
-  - name: Get data from Event Hubs
+  - name: Get data from Azure Event Hubs
     href: get-data-event-hub.md
   - name: Get data from OneLake
     href: get-data-onelake.md
 - name: Query data
   items:
-  - name: Query data in the KQL Queryset
+  - name: Query data in a KQL queryset
     href: kusto-query-set.md
   - name: Use a OneLake shortcut to query data
     href: onelake-shortcut.md
