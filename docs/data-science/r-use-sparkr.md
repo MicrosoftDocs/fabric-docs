@@ -15,6 +15,8 @@ ms.search.form: R Language
 
 [SparkR](https://spark.apache.org/docs/latest/sparkr.html) is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation etc. SparkR also supports distributed machine learning using MLlib.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Use SparkR through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks.
 
 R support is only available in Spark3.1 or above.  R in Spark 2.4 is not supported.

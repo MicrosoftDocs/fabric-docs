@@ -12,9 +12,9 @@ ms.search.form: Create New Model, Model Comparison
 
 # Machine learning model in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 A machine learning model is a file trained to recognize certain types of patterns. You train a model over a set of data, and you provide it with an algorithm that uses to reason over and learn from that data set. After you train the model, you can use it to reason over data that it never saw before, and make predictions about that data.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In [MLflow](https://mlflow.org/), a machine learning model can include multiple model versions. Here, each version can represent a model iteration. In this article, you learn how to interact with machine learning models to track and compare model versions.
 
