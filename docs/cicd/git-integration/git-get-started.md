@@ -23,7 +23,7 @@ It’s recommended to read the [overview of git integration](./intro-to-git-inte
 
 ## Prerequisites
 
-To integrate git with your Microsoft Fabric workspace, you need to set up the following in both Azure DevOps and Fabric.
+To integrate git with your Microsoft Fabric workspace, you need to set up the following prerequisites in both Azure DevOps and Fabric.
 
 ### Azure DevOps prerequisites
 
@@ -37,7 +37,7 @@ To access the git integration feature, you need one of the following:
 - [Fabric license](../../enterprise/licenses.md)
 - Access to a [Fabric capacity workspace](../../enterprise/licenses.md#capacity-and-skus)
 
-In addition, [git integration has to be enabled](../../admin/admin-settings-git-integration.md) by your organization’s administrator. If git integration is disabled in the workspace, contact your administrator.
+In addition, your organization’s administrator has to [enable the git integration switch](../../admin/admin-settings-git-integration.md). If git integration is disabled in the workspace, contact your administrator.
 
 ## Connect a workspace to an Azure repo
 
@@ -91,7 +91,7 @@ To commit your changes to the git branch, follow these steps:
     :::image type="content" source="./media/git-get-started/source-control-number.png" alt-text="Screenshot of source control icon with the number 2 indicating that there are two changes to commit.":::
 1. Select the **Changes** tab of the **Source control** pane.
    A list appears with all the items you changed, and an icon indicating if the item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
-1. Select the items you want to commit. To select all items check the top box.
+1. Select the items you want to commit. To select all items, check the top box.
 1. Add a comment in the box. If you don't add a comment, a default message is added automatically.
 1. Select **Commit**.
 
@@ -101,11 +101,11 @@ After the changes are committed, the items that were committed are removed from 
 
 :::image type="content" source="./media/git-get-started/no-changes.png" alt-text="Screenshot of source control window stating that there are no changes to commit.":::
 
-After the commit is completed successfully, the status of the selected items change from **Uncommitted** to **Synced**. 
+After the commit is completed successfully, the status of the selected items changes from **Uncommitted** to **Synced**. 
 
 ### [Undo saved change](#tab/undo-save)
 
-If, after you saved changes to the workspace, you decide that you don’t want to commit those changes to git, you can undo the changes and revert those items to the previous (unsaved) status. To undo your changes, follow these steps:
+After you saved changes to the workspace, if you decide that you don’t want to commit those changes to git, you can undo the changes and revert those items to the previous (unsaved) status. To undo your changes, follow these steps:
 
 1. Go to the workspace.
 1. Select the **Source control** button. This button also shows the number of uncommitted changes.
@@ -144,7 +144,7 @@ After it updates successfully, the list of items is removed, and the workspace w
 
 :::image type="content" source="./media/git-get-started/no-updates.png" alt-text="Screenshot of source control window stating that you successfully updated the workspace.":::
 
-After the update is completed successfully, the status of the items is changed to **Synced**.
+After the update is completed successfully, the status of the items changes to **Synced**.
 
 ## Disconnect a workspace from git
 
