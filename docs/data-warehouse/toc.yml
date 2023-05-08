@@ -101,3 +101,27 @@ items:
     items:
     - name: Troubleshooting your Warehouse
       href: troubleshoot-synapse-data-warehouse.md
+  - name: Tutorials
+    items:
+    - name: Data warehouse tutorial introduction
+      href: tutorial-data-warehouse-introduction.md
+    - name: Create a workspace
+      href: tutorial-data-warehouse-create-workspace.md
+    - name: Create a warehouse
+      href: tutorial-data-warehouse-create-warehouse.md
+    - name: Ingest data into a warehouse
+      href: tutorial-data-warehouse-ingest-data.md
+    - name: Build a report
+      href: tutorial-data-warehouse-build-report.md
+    - name: Create tables
+      href: tutorial-data-warehouse-create-tables.md
+    - name: Load data using T-SQL
+      href: tutorial-data-warehouse-load-data.md
+    - name: Transform data using stored procedure
+      href: tutorial-data-warehouse-transform-data.md
+    - name: Create queries with visual query builder
+      href: tutorial-data-warehouse-visual-query.md
+    - name: Create Power BI reports
+      href: tutorial-data-warehouse-power-bi-report.md
+    - name: Clean up resources
+      href: tutorial-data-warehouse-power-bi-report.md
