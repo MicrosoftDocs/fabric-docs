@@ -44,7 +44,7 @@ Learn more about Multi-Geo support.
 
 ## Enable export of content with sensitivity labels into a git repository
 
-Sensitivity labels aren't included when exporting an item. Therefore, the admin can choose whether to allow block the export of items that have sensitivity labels, or to allow it even though the sensitivity label won't be included. Enable this setting to allow the export of items without their sensitivity labels.
+Sensitivity labels aren't included when exporting an item. Therefore, the admin can choose whether to block the export of items that have sensitivity labels, or to allow it even though the sensitivity label won't be included. Enable this setting to allow the export of items without their sensitivity labels.
 
 :::image type="content" source="./media/admin-settings-git-integration/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting sensitivity labels.":::
 
