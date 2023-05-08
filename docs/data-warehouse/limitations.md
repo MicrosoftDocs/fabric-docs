@@ -22,7 +22,7 @@ This article details the current limitations and known issues in [!INCLUDE [prod
 
 Data Warehousing in Microsoft Fabric is currently in preview. The focus of this preview is on providing a rich set of SaaS features and functionality tailored to all skill levels and delivers on the promise of providing a "no knobs" experience through an open data format over a single copy of data. This release is not focused on performance, concurrency and scale. Functionality which will deliver upon a world class, industry leading performance and concurrency story will land incrementally as we progress towards General Availability of Data Warehousing in Microsoft Fabric. 
 
-General product limitations for Data Warehousing in Microsoft Fabric are listed below, with feature level limitations called out in the corresponding feature article. SQL Endpoint specific limitations can be found [here](limitations#limitations-and-known-issues-of-the-sql-endpoint-of-the-lakehouse). 
+General product limitations for Data Warehousing in Microsoft Fabric are listed below, with feature level limitations called out in the corresponding feature article. SQL Endpoint specific limitations can be found [here](#limitations-of-the-sql-endpoint). 
 
 - At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
 - Warehouse Recovery capabilities are not available during Preview.
