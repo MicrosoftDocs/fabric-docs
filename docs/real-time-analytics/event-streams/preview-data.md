@@ -11,9 +11,9 @@ ms.search.form: product-kusto
 
 # Preview data in an Eventstream item
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 Data preview provide you with a snapshot of your event data in your source or destination or the eventstream itself. Once you have added sources and destinations to your eventstream, you can preview the data in each node and visualize how your data flows through the eventstream.
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 

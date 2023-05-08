@@ -11,9 +11,10 @@ ms.search.form: product-kusto
 
 # Add and manage a destination in an eventstream
 
+Once you have created an eventstream, you can route data to different destinations. The types of destinations that you can add to your eventstream are KQL Database, Lakehouse and Custom App. See the [Supported destinations](#supported-destinations) section for details about these destinations.
+
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-Once you have created an eventstream, you can route data to different destinations. The types of destinations that you can add to your eventstream are KQL Database, Lakehouse and Custom App. See the [Supported destinations](#supported-destinations) section for details about these destinations.
 
 ## Prerequisites
 
