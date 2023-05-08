@@ -301,7 +301,7 @@ To mount the container called *mycontainer*, *mssparkutils* first needs to check
 
 ### Mount via shared access signature token or account key
 
-Mssparkutils supports explicitly passing an account key or [Shared access signature (SAS)](azure/storage/common/storage-sas-overview) token as a parameter to mount the target.
+Mssparkutils supports explicitly passing an account key or [Shared access signature (SAS)](/azure/storage/common/storage-sas-overview) token as a parameter to mount the target.
 
 For security reasons, we recommend that you store account keys or SAS tokens in Azure Key Vault (as the following example screenshot shows). You can then retrieve them by using the PyTridentTokenLibrary.get_secret_with_token API. For the usage of Azure Key Vault, refer to [About Azure Key Vault managed storage account keys](/azure/key-vault/secrets/about-managed-storage-account-keys).
 
