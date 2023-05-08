@@ -20,7 +20,7 @@ By clicking the “Create Spark Job Definition” button, you can start to creat
 
 :::image type="content" source="media\vscode\create-sjd.png" alt-text="Screenshot showing create sjd button.":::
 
-After the request is processed, the name of the newly created SJD will appear under the Spark Job Definition root node. After expanding the SJD name node, there are three sub-node are listed
+After the request is processed, the name of the newly created SJD will appear under the Spark Job Definition root node. After expanding the SJD name node, there are three sub-nodes are listed
 
 - **Files**:List the main definition file and other referenced lib. Users can upload new files from here.
 - **Lakehouse**: List all the referenced Lakehouse by this SJD, one of them is marked as default lakehouse which could be accessed via the relative path (Files/…, Tables/…).
@@ -31,7 +31,7 @@ By clicking “Add Main File” button, you can upload/overwrite the main defini
 
 :::image type="content" source="media\vscode\upload-main-def.png" alt-text="Screenshot showing upload main def button.":::
 
-By clicking the “Add Lib File”, you can upload multiple referenced library which are referenced in the main definition file
+By clicking the “Add Lib File”, you can upload library file which is referenced in the main definition file
 
 :::image type="content" source="media\vscode\upload-lib.png" alt-text="Screenshot showing upload lib button.":::
 
@@ -65,7 +65,7 @@ The first time when the folder is open, in order to debug/run the source script,
 
 If the source code had been downloaded before, you will be required to confirm if the local version should be overwritten by the new download.
 
-In the root folder of the source script, there is sub-folder named **conf** created by the system. Within this folder, the file named lighter-config.json contains some system meta-data needed for the remote run, please make sure do NOT change it. Another file named sparkconf.py contains code snippet which is needed to setup the SparkConf object. To enable the remote debug, please make sure the SparkConf object is setup properly. In the below sample, it is the original version of the source code.
+In the root folder of the source script, there is sub-folder named **conf** created by the system. Within this folder, the file named lighter-config.json contains some system meta-data needed for the remote run, please make sure do NOT change it. Another file named sparkconf.py contains code snippet which is needed to set up the SparkConf object. To enable the remote debug, please make sure the SparkConf object is set up properly. In the below sample, it is the original version of the source code.
 
 :::image type="content" source="media\vscode\original-sjd-source.png" alt-text="Screenshot showing source code before change.":::
 

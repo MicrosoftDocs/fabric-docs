@@ -137,5 +137,3 @@ items:
     href: author-sjd-with-vscode.md
   - name: Explore lakehouse with VS Code extension
     href: explore-lakehouse-with-vscode.md
-  - name: FAQ
-    href: vscode-extension-faq.md

@@ -1,6 +1,6 @@
 ---
 title: Explore lakehouse in VS Code
-description: VS Code extension for Synapse supports pro-dev authoring experience of Notebook and Spark Job definition together with the experience of lakehouse exploring.
+description: VS Code extension for Synapse supports the experience of lakehouse exploring.
 ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
