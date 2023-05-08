@@ -19,6 +19,8 @@ This article walks you through the following basic tasks in Microsoft Fabric’s
 
 It’s recommended to read the [overview of git integration](./intro-to-git-integration.md) before you begin.
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 ## Prerequisites
 
 To integrate git with your Microsoft Fabric workspace, you need to set up the following in both Azure DevOps and Fabric.
