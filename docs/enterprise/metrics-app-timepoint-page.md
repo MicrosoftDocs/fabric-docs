@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # Understand the metrics app timepoint page
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 All the activities in the capacity are ranked according to their compute impact. Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to CU usage.
 
 >[!NOTE]
@@ -87,6 +89,8 @@ A table showing every [interactive operation](/power-bi/enterprise/service-premi
 * **% Of Capacity** - Interactive CU operations as a proportion of the overall capacity allowance.
 
 [!INCLUDE [product-name](../includes/metrics-app-preview-status.md)]
+
+* **Operation ID** - A unique identifier assigned to an individual operation.
 
 ## Background Operations
 

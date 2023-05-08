@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # Feature usage and adoption report
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 The Feature Usage and Adoption Report is a comprehensive analysis of usage and adoption of different features in your Microsoft Fabric tenant. As a Fabric admin you can share this report with others in your organization. You can also share the report's dataset, and use it to customize the report, or build a new report that relies on the same data.
 
 You can access the report from the [admin monitoring](admin-monitoring.md) workspace. To see this workspace you need to be a [Power BI Administrator](admin-overview.md#power-platform-and-power-bi-admin-roles).
@@ -89,6 +91,10 @@ To conclude the example given in the [Activity Overview](#activity-overview-page
 * All *MyWorkspaces* are counted as different records as part of the *Active Workspaces* total.
 
 * During business continuity and disaster recovery, the *Audit* table may have data quality issues.
+
+* The *Audit* table doesn't show activities for a deleted capacity.
+
+* Capacities with the same name and capacities that were deleted and recreated with the same name, are displayed as one capacity.
 
 ## Next steps
 

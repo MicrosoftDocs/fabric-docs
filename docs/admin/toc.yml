@@ -8,10 +8,10 @@ items:
 - name: Get started
   items:
   - name: Enable Microsoft Fabric for your organization
-    href: admin-switch.md  
+    href: admin-fabric-switch.md  
   - name: Understand Microsoft Fabric roles
     href: admin-roles.md
-  - name: What is the admin center?
+  - name: What is the admin portal?
     href: admin-center.md       
   - name: Compliance feature switch
     href: admin-compliance.md    
@@ -35,5 +35,7 @@ items:
   href: endorsement-setup.md
 - name: Set up metadata scanning
   href: metadata-scanning-setup.md
+- name: Enable service principal authentication for read-only admin APIs
+  href: metadata-scanning-enable-read-only-apis.md
 
 

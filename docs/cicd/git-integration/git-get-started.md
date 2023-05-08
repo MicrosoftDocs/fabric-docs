@@ -19,6 +19,8 @@ This article walks you through the following basic tasks in Microsoft Fabric’s
 
 It’s recommended to read the [overview of git integration](./intro-to-git-integration.md) before you begin.
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 ## Prerequisites
 
 To integrate git with your Microsoft Fabric workspace, you need to set up the following in both Azure DevOps and Fabric.
@@ -87,7 +89,7 @@ To commit your changes to the git branch, follow these steps:
     :::image type="content" source="./media/git-get-started/source-control-number.png" alt-text="Screenshot of source control icon with the number 2 indicating that there are two changes to commit.":::
 1. Select the **Changes** tab of the **Source control** pane.
    A list appears with all the items you changed, and an icon indicating if the item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
-1. Select the changes you want to commit.
+1. Select the items you want to commit. To select all items check the top box.
 1. Add a comment in the box. If you don't add a comment, a default message is added automatically.
 1. Select **Commit**.
 
