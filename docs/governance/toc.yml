@@ -3,14 +3,12 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is Governance?
-    href: ../placeholder.md
+  - name: What is Microsoft Fabric governance and compliance?
+    href: governance-compliance-overview.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Set up item certification
+    href: ../admin/endorsement-setup.md
 - name: Microsoft Purview
   items:
   - name: Microsoft Purview & Fabric
@@ -20,7 +18,7 @@ items:
 - name: Information protection
   href: information-protection.md
 - name: Endorsement
-  href: endorsement.md
+  href: endorsement-overview.md
 - name: Lineage
   href: lineage.md
 - name: Domains

@@ -92,6 +92,10 @@ To conclude the example given in the [Activity Overview](#activity-overview-page
 
 * During business continuity and disaster recovery, the *Audit* table may have data quality issues.
 
+* The *Audit* table doesn't show activities for a deleted capacity.
+
+* Capacities with the same name and capacities that were deleted and recreated with the same name, are displayed as one capacity.
+
 ## Next steps
 
 * [What is the admin monitoring workspace?](admin-monitoring.md)

@@ -31,8 +31,6 @@ items:
     href: admin-portal-workspace.md
   - name: Git integration admin tenant settings
     href: admin-settings-git-integration.md
-- name: Set up information protection
-  href: information-protection-setup.md
 - name: Set up item certification
   href: endorsement-setup.md
 - name: Set up metadata scanning

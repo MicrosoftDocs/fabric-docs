@@ -11,15 +11,15 @@ ms.search.form: product-kusto
 
 # Use data from a KQL Database in Power BI Desktop
 
+In this article, you learn how to connect your KQL database as a data source to Power BI Desktop. Once connected, you can use multiple tables to build your Power BI reports.
+
+To create reports with Power BI service using a KQL queryset, see [Create a Power BI report](create-powerbi-report.md).
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
-
-In this article, you learn how to connect your KQL Database as a data source to Power BI Desktop. Once connected, you can use multiple tables to build your Power BI reports.
-
-To create reports with Power BI service using a KQL Queryset, see [Create a Power BI report](create-powerbi-report.md).
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [KQL database](create-database.md) with data.
 * [Power BI Desktop](https://powerbi.microsoft.com/get-started).
 
@@ -40,14 +40,14 @@ For more information on connectivity modes, see [Import and Direct Query connect
 
 ## 1- Copy query URI
 
-1. Navigate to your **KQL Database**.
+1. Navigate to your **KQL database**.
 1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere to use in a later step.
 
     :::image type="content" source="media/power-bi-data-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
 
 ## 2- Use data in Power BI
 
-To use your **KQL Database** as a data source in Power BI, you need to add the Azure Data Explorer connector.
+To use your **KQL database** as a data source in Power BI, you need to add the Azure Data Explorer connector.
 
 1. Launch Power BI Desktop.
 1. On the **Home** tab, select **Get Data** > **More**.
@@ -64,7 +64,7 @@ To use your **KQL Database** as a data source in Power BI, you need to add the A
 
     | Setting | Field description | Sample value |
     |---|---|---|
-    | Cluster | The Query URI from Microsoft Fabric's **KQL Database** dashboard. For other clusters, the URL is in the form *https://\<ClusterName\>.\<Region\>.kusto.windows.net*. | Paste your [Query URI](#1--copy-query-uri) |
+    | Cluster | The Query URI from Microsoft Fabric's **KQL database** dashboard. For other clusters, the URL is in the form *https://\<ClusterName\>.\<Region\>.kusto.windows.net*. | Paste your [Query URI](#1--copy-query-uri) |
     | Database | A database that is hosted on the cluster you're connecting to. You can optionally select a database in a later step. | Leave blank |
     | Table name | The name of a table in the database, or a query like <code>StormEvents \| take 1000</code>. You can optionally select a table name in a later step. | Leave blank |
     | Advanced options | Optionally, you can select options for your queries, such as result set size. |  Leave blank |
