@@ -1,5 +1,5 @@
 ---
-title: Getting started with securing data in OneLake
+title: Get started with securing data in OneLake
 description: Get started with securing data in OneLake with an overview of the concepts and capabilities.
 ms.reviewer: eloldag
 ms.author: aamerril
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 05/03/2023
 ---
 
-# Getting started with securing data in OneLake
+# Get started with securing data in OneLake
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -23,7 +23,7 @@ OneLake is a hierarchical data lake, similar to ADLS gen 2 or the Windows file s
 **Item**: a set of capabilities bundled together into single component. A data item is a subtype of item that allows for data to be stored within it using OneLake.
 Items always live within workspaces and workspaces always live directly under the OneLake namespace. This structure can be visualized as follows:
 
-:::image type="content" source="media\getting-started-security\structure.png" alt-text="Diagram showing the hierarchical nature of OneLake as a folder structure. OneLake/Workspace/Item as an example." lightbox="media\getting-started-security\structure.png":::
+:::image type="content" source="media\get-started-security\structure.png" alt-text="Diagram showing the hierarchical nature of OneLake as a folder structure. OneLake/Workspace/Item as an example." lightbox="media\get-started-security\structure.png":::
 
 ## Workspace permissions
 
@@ -38,12 +38,12 @@ In addition to the workspace permissions, data access can be given through the S
 
 In the below example, a user is shared a Lakehouse but with only Viewer access. They are then granted SELECT through the SQL endpoint. When that user tries to write data through the OneLake APIs the access gets denied since they don’t have sufficient permissions, but reads made through SQL SELECT statements would succeed.
 
-:::image type="content" source="media\getting-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but getting denied access when querying OneLake directly." lightbox="media\getting-started-security\sql.png":::
+:::image type="content" source="media\get-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but get denied access when querying OneLake directly." lightbox="media\get-started-security\sql.png":::
 
 ## Securing OneLake
 Now that we understand the permissions available in Microsoft Fabric, let us look at an example of how to best structure data in OneLake. To start, we build a standard medallion architecture. In this approach, we typically want to have a limited set of users that have access to the Bronze and Silver layers, with broader access to the Gold layer. One way to structure that is as follows:
 
-:::image type="content" source="media\getting-started-security\medallion-architecture.png" alt-text="Diagram showing bronze and silver layers as one workspace each. The gold layer is broken into several different workspaces for each data domain." lightbox="media\getting-started-security\medallion-architecture.png":::
+:::image type="content" source="media\get-started-security\medallion-architecture.png" alt-text="Diagram showing bronze and silver layers as one workspace each. The gold layer is broken into several different workspaces for each data domain." lightbox="media\get-started-security\medallion-architecture.png":::
 
 The people responsible for managing Bronze and Silver can be added to Member or Contributor roles so that they can update and manage all the data in those environments. Since those users need write access this is currently the only method to accomplish this. Users that need access to specific data items within the Bronze and Silver layer can be given the Viewer role and access data through SQL endpoints.
 

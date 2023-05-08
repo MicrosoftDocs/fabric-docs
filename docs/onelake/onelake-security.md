@@ -46,16 +46,24 @@ Microsoft Fabric shortcuts, which are shortcuts to data anywhere in OneLake use 
 > [!NOTE] 
 > All shortcuts accessed through a SQL compute (Warehouse or Lakehouse SQL Endpoint) do not use the querying user's identity, but the identity of the data item's owner. Example: Warehouse1 has a shortcut to Lakehouse2 TableA, and Ali is the owner of Warehouse1. Elise does not have access to Lakehouse2, but does have Read permission on Warehouse1. When she goes Warehouse1 and accesses the shortcut to TableA she is able to see the data because Ali's identity is used to traverse the shortcut not Elise's. 
 
-| **Source item** | **Source permission** | **Destination item** | **Destination permission** |
+| **Shortcut source item** | **Required permission to see shortcut source** | **Shortcut target item** | **Required permission to access shortcut target** |
 |---|---|---|---|
-| Warehouse | Read | Warehouse | Read<sup>1</sup> |  
-| Warehouse | Read | Lakehouse | ReadAll<sup>1</sup> |
-| Lakehouse | ReadAll | Lakehouse | ReadAll |
-| Lakehouse | ReadAll | Warehouse | Read |  
-
+| Warehouse | Viewer | Warehouse | Viewer<sup>1</sup> |  
+| Warehouse | Viewer | Lakehouse | Admin, member, contributor<sup>1</sup> |
+| Lakehouse | Admin, member, contributor | Lakehouse | Admin, member, contributor |
+| Lakehouse | Admin, member, contributor | Warehouse | Viewer |  
+| Lakehouse | Admin, member, contributor | Real-time analytics | Admin, member, contributor |
+| Real-time analytics | Viewer | Lakehouse | Admin, member, contributor |
+| Real-time analytics | Viewer | Warehouse | Admin, member, contributor |  
 <sup>1</sup>The item owner needs this permission, not the accessing user
 
-External shortcuts, which are shortcuts to data outside of OneLake, use a fixed identity. Instead of the user's identity, a fixed credential or account key is used to access the external source instead. This means that the users only need access to the source of the shortcut and the fixed credential will be used to grant access to the destination. If the fixed credential loses access then the shortcut will break.
+External shortcuts, which are shortcuts to data outside of OneLake, use a fixed identity. Instead of the user's identity, a fixed credential or account key is used to access the external source instead. This means that the users only need access to the shortcut source and the fixed credential will be used to grant access to the destination. If the fixed credential loses access then the shortcut will break.
+
+| **Shortcut source item** | **Required permission to see shortcut source** |
+|---|---|
+| Warehouse | Viewer |
+| Lakehouse | Admin, member, contributor |
+| Real-time analytics | Viewer |
 
 ## Authentication
 
