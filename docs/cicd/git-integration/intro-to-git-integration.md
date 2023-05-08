@@ -39,7 +39,7 @@ The following items are currently supported:
 * Reports (except paginated reports)
 * Datasets (except push datasets, live connections, and model v1)
 
-If the folder has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear will show up in the source control pan but you can't commit or update them.
+If the workspace or git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pan but you can't commit or update them.
 
 ## Permissions
 
@@ -49,7 +49,8 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 A typical workflow for a developer using Fabric git integration may look like this:
 
-1. [Connect](./git-get-started.md#connect-a-workspace-to-an-azure-repo) the IT developer workspace to a Git branch​
+1. [Connect](./git-get-started.md#connect-a-workspace-to-an-azure-repo) the Fabric developer workspace to a Git repository
+1. Checkout branch
 1. [Edit and commit](./git-get-started.md#commit-changes-to-git) changes​
 1. Start a pull request and merge changes to ‘main’ branch​
 1. [Update](./git-get-started.md#update-workspace-from-git) the IT developer workspace
