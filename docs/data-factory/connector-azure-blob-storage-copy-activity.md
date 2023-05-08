@@ -4,21 +4,28 @@ description: This article explains how to copy data using Azure Blob Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
 # How to configure Azure Blob Storage in copy activity
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Blob Storage.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported format
 
-Azure Blob Storage supports the following file formats.
+Azure Blob Storage supports the following file formats. Refer to each article for format-based settings.
+
+- Avro format
+- [Binary format](format-binary.md)
+- [Delimited text format](format-delimited-text.md)
+- [Excel format](format-excel.md)
+- JSON format
+- ORC format
+- [Parquet format](format-parquet.md)
+- XML format
 
 ## Supported configuration
 
@@ -27,6 +34,7 @@ For the configuration of each tab under copy activity, go to the following secti
 - [General](#general)  
 - [Source](#source)
 - [Destination](#destination)
+- [Mapping](#mapping)
 - [Settings](#settings)
 
 ### General
@@ -54,7 +62,7 @@ Under **Advanced**, you can specify the following fields:
 
   - **Prefix**: Prefix for the blob name under the given container configured to filter source blobs. Blobs whose names start with `container/this_prefix` are selected. It utilizes the service-side filter for blob storage.
 
-    When you use **Prefix** and choose to copy to a file-based sink with preserving hierarchy, the sub-path after the last "/" in the prefix is preserved. For example, you have a source `container/folder/subfolder/file.txt`, and configure the prefix as `folder/sub`, then the preserved file path is `subfolder/file.txt`.
+    When you use **Prefix** and choose to copy to a file-based destination with preserving hierarchy, the sub-path after the last "/" in the prefix is preserved. For example, you have a source `container/folder/subfolder/file.txt`, and configure the prefix as `folder/sub`, then the preserved file path is `subfolder/file.txt`.
 
     :::image type="content" source="./media/connector-azure-blob-storage/prefix.png" alt-text="Screenshot showing prefix file path type.":::
 
@@ -121,9 +129,13 @@ Under **Advanced**, you can specify the following fields:
 
     :::image type="content" source="./media/connector-azure-blob-storage/metadata.png" alt-text="Screenshot showing metadata.":::
 
+### Mapping
+
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). If you choose Binary as your file format, mapping will not be supported.
+
 ### Settings
 
-For **Settings** tab configuration, see Settings.
+For **Settings** tab configuration, see [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 
@@ -151,7 +163,7 @@ The following tables contain more information about the copy activity in Azure B
 |**Copy behavior** |Defines the behavior when copying files from one file system, like storage, to the other (for example, from one blob storage to another).|• None<br>• Add dynamic content<br>• Flatten hierarchy<br>• Preserve hierarchy|No |copyBehavior|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 |**Block size (MB)** |Specify the block size in MB when writing data to Azure Blob Storage. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
-|**Metadata**|Set the custom metadata when copy to sink.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
+|**Metadata**|Set the custom metadata when copy to destination.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
 ## Next steps
 

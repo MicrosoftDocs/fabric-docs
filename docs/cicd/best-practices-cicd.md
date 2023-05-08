@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.topic: conceptual
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
-ms.date: 04/02/2023
+ms.date: 05/23/2023
 ms.custom: intro-deployment
 ms.search.form: Best practices for Deployment pipelines
 ---
@@ -14,6 +14,8 @@ ms.search.form: Best practices for Deployment pipelines
 # Deployment pipelines best practices
 
 This article provides guidance for business intelligence (BI) creators who are managing their content throughout its lifecycle. The article focuses on the use of deployment pipelines as a BI content lifecycle management tool.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The article is divided into four sections:
 

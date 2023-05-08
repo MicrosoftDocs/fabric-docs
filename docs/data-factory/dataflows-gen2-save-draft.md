@@ -1,17 +1,19 @@
 ---
-title: A how-to guide for the dataflows save as draft feature
+title: How to save a draft of your dataflow
 description: This article describes how to save a draft version of your dataflow.
 author: luitwieler
 
 ms.topic: how-to
-ms.date: 03/28/2023
+ms.date: 05/23/2023
 ms.author: jeluitwi
 
 ---
 
-# Dataflows save as draft
+# Save a draft of your dataflow
 
 This powerful feature allows you to make changes to your dataflow without immediately publishing them to your workspace. Instead, you can save your changes as a draft, review them at a later time, and then publish when you're ready. With this feature, you can streamline your dataflow development process, and reduce the risk of data errors. In this article, you learn how to use the "Save as Draft" feature and how it can benefit your dataflow development and management.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## How to save a draft version of your dataflow
 
@@ -32,3 +34,9 @@ To publish the changes you made in your draft, you take the following steps:
    :::image type="content" source="./media/dataflows-gen2-save-draft/publish-dataflow.png" alt-text="Screenshot that shows how to publish your dataflow." lightbox="./media/dataflows-gen2-save-draft/publish-dataflow.png":::
 
 1. Confirm the publish.
+
+## Next steps
+
+- [What are dataflows Gen2 in Data Factory for Microsoft Fabric?](dataflows-gen2-overview.md)
+- [Dataflows refresh history and monitoring](dataflows-gen2-monitor.md)
+

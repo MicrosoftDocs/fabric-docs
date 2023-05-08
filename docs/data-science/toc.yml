@@ -5,14 +5,28 @@ items:
   items:
   - name: What is Data Science?
     href: data-science-overview.md
-  - name: Roles and permissions
-    href: models-experiments-rbac.md
 - name: Get started
+  items:
+  - name: Data science tutorial introduction
+    href: tutorial-data-science-introduction.md
+  - name: Prepare your system
+    href: tutorial-data-science-prepare-system.md
+  - name: 1 Ingest data into a Fabric lakehouse
+    href: tutorial-data-science-ingest-data.md
+  - name: 2 Explore and visualize data using notebooks
+    href: tutorial-data-science-explore-notebook.md
+  - name: 3 Perform data cleansing and preparation
+    href: tutorial-data-science-data-cleanse.md
+  - name: 4 Train and register machine learning models
+    href: tutorial-data-science-train-models.md
+  - name: 5 Perform batch scoring and save predictions
+    href: tutorial-data-science-batch-scoring.md
+  - name: 6 Create a Power BI report
+    href: tutorial-data-science-create-report.md
+- name: Tutorials
   items:
   - name: How to use end-to-end AI samples
     href: use-ai-samples.md
-- name: Tutorials
-  items:
   - name: Train a retail recommendation model
     href: retail-recommend-model.md
   - name: Fraud detection
@@ -23,6 +37,12 @@ items:
     href: title-genre-classification.md
   - name: Healthcare causal impact of treatments
     href: uplift-modeling.md
+- name: Governance
+  items:
+  - name: Roles and permissions
+    href: models-experiments-rbac.md
+  - name: Lineage for models and experiments
+    href: data-science-lineage.md
 - name: Preparing data 
   items:
   - name: How to read and write data with Pandas
@@ -50,20 +70,40 @@ items:
   - name: How-to guides
     items:
     - name: Train models with PyTorch
-      href: train-models-pytorch.md   
+      href: train-models-pytorch.md
+- name: Model scoring
+  items:   
     - name: Score models with PREDICT
       href: model-scoring-predict.md
+- name: Use Python
+  items:
+  - name: Python overview
+    href: ./python-guide/python-overview.md
+  - name: How-to guides
+    items:
+    - name: Python library management
+      href: ./python-guide/python-library-management.md
+    - name: Python visualizations
+      href: ./python-guide/python-visualizations.md
 - name: Use R
   items:
   - name: R overview
     href: r-overview.md
+  - name: Tutorials
+    items:
+    - name: Avocado price prediction
+      href: r-avocado.md
+    - name: Flight delay prediction
+      href: r-flight-delay.md
   - name: How-to guides
     items:
+    - name: R library management
+      href: r-library-management.md
     - name: How to use SparkR 
       href: r-use-sparkr.md
     - name: How to use sparklyr
       href: r-use-sparklyr.md
-    - name: R library management
-      href: r-library-management.md
+    - name: How to use Tidyverse
+      href: r-use-tidyverse.md
     - name: R visualization
       href: r-visualization.md

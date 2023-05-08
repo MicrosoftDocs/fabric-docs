@@ -5,16 +5,16 @@ ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
 ms.topic: overview
-ms.date: 04/19/2023
+ms.date: 05/23/2023
 ---
 
 # What is Spark autotune configuration in Fabric and how to enable and disable it?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Autotune automatically tunes Spark configurations to minimize workload execution time and optimizes workloads. It empowers you to achieve more with less. This feature reduces execution time and surpasses the gains accomplished by manually tuned workloads by experts, which necessitate considerable effort and experimentation.
 
 It leverages historical data execution from your workloads to iteratively learn the optimal configurations for a given workload and its execution time.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Query tuning
 

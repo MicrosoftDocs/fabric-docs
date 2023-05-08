@@ -5,15 +5,15 @@ ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
 ms.topic: how-to
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ms.search.form: Monitor Spark application details
 ---
 
 # Monitor your Apache Spark application details in Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache Spark to run notebooks, jobs, and other kinds of applications on in your workspace. This article explains how to monitor your Apache Spark application, allowing you to keep an eye on the recent run status, issues, and progress of your jobs.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## View Apache Spark applications
 

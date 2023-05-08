@@ -1,20 +1,18 @@
 ---
-title: Azure Data Lake Storage Gen2 for dataflows
+title: Connect to Azure Data Lake Storage Gen2 in dataflows
 description: This article details how to use the Azure Data Lake Storage Gen2 connector in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 4/12/2023
+ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
-# Azure Data Lake Storage Gen2 in dataflows
-
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+# Connect to Azure Data Lake Storage Gen2 in dataflows
 
 You can connect to Azure Data Lake Storage files in Dataflow Gen2 using the Azure Data Lake Storage Gen2 connector provided by Data Factory in Microsoft Fabric.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Connect to Azure Data Lake Storage data
 

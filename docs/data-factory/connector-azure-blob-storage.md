@@ -8,13 +8,11 @@ ms.date: 4/12/2023
 ms.custom: template-how-to
 ---
 
-# How to create Azure Blob Storage connection
+# How to create an Azure Blob Storage connection
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+[Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) is Microsoft's object storage solution for the cloud. Blob storage is optimized for storing massive amounts of unstructured data. This article outlines the steps to create an Azure Blob Storage connection.
 
-[Azure Blob storage](/azure/storage/blobs/storage-blobs-introduction) is Microsoft's object storage solution for the cloud. Blob storage is optimized for storing massive amounts of unstructured data. This article outlines the steps to create an Azure Blob Storage connection.
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -33,11 +31,11 @@ The Azure Blob Storage connector supports the following authentication types for
 
 ## Prerequisites
 
-To get started, you must already have the following prerequisites:
+To get started, you must complete the following prerequisites:
 
-* A tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 
-* A workspace is created and that isn't the default **My Workspace**.
+- Make sure you have a Microsoft Fabric enabled Workspace.
 
 ## Go to Manage gateways to create a new connection
 
@@ -118,7 +116,7 @@ For more information about shared access signatures, go to [Shared access signat
 
 To use service principal authentication, follow these steps:
 
-1. Register an application entity in Azure Active Directory (Azure AD) by following [Register your application with an Azure AD tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the linked service:
+1. Register an application entity in Azure Active Directory (Azure AD) by following [Register your application with an Azure AD tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
 
    * Tenant ID
    * Application ID
@@ -127,7 +125,7 @@ To use service principal authentication, follow these steps:
 2. Grant the service principal proper permission in Azure Blob Storage. For more information on the roles, go to [Use the Azure portal to assign an Azure role for access to blob and queue data](/azure/storage/blobs/assign-azure-role-data-access?tabs=portal).
 
    * **As source**, in **Access control (IAM)**, grant at least the **Storage Blob Data Reader** role.
-   * **As sink**, in **Access control (IAM)**, grant at least the **Storage Blob Data Contributor** role.
+   * **As destination**, in **Access control (IAM)**, grant at least the **Storage Blob Data Contributor** role.
 
 ### Step 3: Specify the privacy level that you want to apply
 

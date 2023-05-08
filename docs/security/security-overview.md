@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: paulinbar
 ms.author: painbar
 ms.topic: overview
-ms.date: 12/27/2022
+ms.date: 05/23/2023
 ---
 
 # Security in Microsoft Fabric
@@ -21,5 +21,4 @@ A few examples of using the Microsoft Fabric security features in specific scena
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Private endpoints](security-private-links.md)
+[Service tags](security-service-tags.md)

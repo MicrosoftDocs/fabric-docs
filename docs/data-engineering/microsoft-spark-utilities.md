@@ -5,14 +5,14 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ---
 
 # Use the Microsoft Apache Spark utilities for common file management tasks
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can useMSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. MSSparkUtils are available in PySpark (Python) Scala, SparkR notebooks and [!INCLUDE [product-name](../includes/product-name.md)] pipelines.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## File system utilities
 
@@ -126,7 +126,7 @@ Use the MSSparkUtils Notebook Utilities to run a notebook or exit a notebook wit
 mssparkutils.notebook.help()
 ```
 
-**Output**
+**Output:**
 
 ```console
 The notebook module.
@@ -181,7 +181,7 @@ exitVal = mssparkutils.notebook.run("folder/Sample1")
 print (exitVal)
 ```
 
-**Output**
+**Output:**
 
 ```console
 Sample1 run success with input is 10
@@ -194,7 +194,7 @@ exitVal = mssparkutils.notebook.run("mssparkutils/folder/Sample1", 90, {"input":
 print (exitVal)
 ```
 
-**Output**
+**Output:**
 
 ```console
 Sample1 run success with input is 20
@@ -300,7 +300,7 @@ path = mssparkutils.fs.getMountPath("/test")
 ```
 
 > [!NOTE]
-> The “/” of mount point is necessary in *mssparkutils.fs.getMountPath()*, and it doesn’t verify the validity of the mount point now.
+> The “/” of mount point is necessary in *mssparkutils.fs.getMountPath()*, and it doesn't verify the validity of the mount point now.
 
 - List directories:
 

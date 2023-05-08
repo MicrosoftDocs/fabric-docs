@@ -5,12 +5,10 @@ ms.reviewer: lagayhar
 ms.author: narsam
 author: narmeens
 ms.topic: how-to
-ms.date: 02/10/2023
+ms.date: 05/23/2023
 ---
 
 # How-to use end-to-end AI samples in Microsoft Fabric
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In providing the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] SaaS experience we want to enable ML professionals to easily and frictionlessly build, deploy and operationalize their machine learning models, in a single analytics platform, while collaborating with other key roles. Begin here to understand the various capabilities the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workload has to offer and examples of how ML models can address your common business problems.
 
@@ -21,6 +19,8 @@ In providing the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!IN
 | [**Forecasting Property Trade**](#forecasting) | Forecasting | [Time Series Forecasting Notebook](time-series-forecasting.md) |
 | [**Book Genre Classification**](#text-classification) | Text Classification | [Text Classification Notebook](title-genre-classification.md) |
 | [**Impact of Medical Treatment**](#uplift-model) | Uplift Modeling | [Uplift Model Notebook](uplift-modeling.md) |
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Recommender
 
