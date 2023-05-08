@@ -89,7 +89,7 @@ In the system storage, you can view how much storage you  have used and free up 
 
 Keep in mind that you or someone else may have reports and dashboards based on a dataset. If you delete the dataset, those reports and dashboards don't work anymore.
 
-:::image type="content" source="media/workspaces/system-storage.png" alt-text="Manage your storage.":::
+:::image type="content" source="media/workspaces/system-storage.png" alt-text="Manage your storage." lightbox="media/workspaces/remove-workspace.png":::
 
 ## Remove the workspace
 
@@ -97,7 +97,7 @@ As an admin for a workspace, you can delete it. When you delete the workspace, e
 
 In the Workspace settings pane, select Other > Remove this workspace.
 
-:::image type="content" source="media/workspaces/remove-workspace.png" alt-text="Delete workspace.":::
+:::image type="content" source="media/workspaces/remove-workspace.png" alt-text="Delete workspace." lightbox="media/workspaces/remove-workspace.png":::
 
 ## Administering and auditing workspaces
 
