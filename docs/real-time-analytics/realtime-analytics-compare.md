@@ -8,7 +8,6 @@ ms.topic: overview
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-
 # What is the difference between Real-Time Analytics and Azure Data Explorer?
 
 Synapse Real-Time Analytics is a portfolio of capabilities that provides an end-to-end analytics streaming solution across [!INCLUDE [product-name](../includes/product-name.md)] experiences. It supplies high velocity, low latency data analysis, and is optimized for time-series data, including automatic partitioning and indexing of any data format and structure, such as structured data, semi-structured (JSON), and free text.
@@ -46,4 +45,4 @@ Real-Time Analytics contains several items that are similar to offerings in Azur
 
 ## Next steps
 
-Get started with [Real-Time Analytics](tutorial-introduction.md)
+* Get started with [Real-Time Analytics](tutorial-introduction.md)

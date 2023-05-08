@@ -36,7 +36,7 @@ This section walks you through some of the query and visualization capabilities 
     ```kusto
     nyctaxitrips
     | summarize Count=count() by PULocationID
-    | top 10 by Count 
+    | top 10 by Count
     ```
 
     :::image type="content" source="media/realtime-analytics-tutorial/top-10-by-count.png" alt-text="Screenshot of query result in Real-Time Analytics in Microsoft Fabric.":::

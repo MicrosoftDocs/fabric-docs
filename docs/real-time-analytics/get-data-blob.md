@@ -8,7 +8,6 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-
 # Get data from a blob
 
 In this article, you'll learn you how to get data from an Azure blob into an existing database. Azure Blob Storage is optimized for storing massive amounts of unstructured data. Unstructured data is data that doesn't adhere to a particular data model or definition, such as text or binary data. For more information on Azure blob storage, see [Introduction to Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
@@ -56,7 +55,6 @@ To get data from a blob container, see [Get data from a blob container](get-data
 [!INCLUDE [schema-tab](../includes/real-time-analytics/schema-tab.md)]
 
 ## Next steps
-
 
 * To create an empty table, see [Create an empty table](create-empty-table.md)
 * To manage your database, see [Manage data](data-management.md)

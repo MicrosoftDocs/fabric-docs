@@ -25,7 +25,7 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
     nyctaxitrips
     | where PULocationID == DOLocationID
     | lookup (Locations) on $left.PULocationID==$right.LocationID
-    | summarize Count=count() by Borough, Zone, Latitude, Longitude 
+    | summarize Count=count() by Borough, Zone, Latitude, Longitude
     ```
 
 1. Place your cursor somewhere within the query, and then select **Build Power BI report**.

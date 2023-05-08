@@ -10,7 +10,7 @@ ms.search.form: product-kusto
 ---
 # One logical copy
 
-OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files’ store locations.  The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source. For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files' store locations.  The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source. For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
 In this article, you learn how to create a OneLake shortcut that exposes the data in your KQL Database to all [!INCLUDE [product-name](../includes/product-name.md)] experiences.
 
@@ -40,7 +40,7 @@ Creating one logical copy of your data in OneLake is a two-step process. You sen
 1. To enable data copying, browse to your KQL database.
 1. Next to **OneLake folder** in the **Database details** pane, select the **Edit** (pencil) icon.
 
-    :::image type="content" source="media/onelake-mirroring/onelake-folder.png" alt-text="Screenshot of the Database details pane in Real-Time Analytics showing an overview of the database. The edit OneLake folder option is highlighted.":::
+    :::image type="content" source="media/onelake-mirroring/onelake-folder.png" alt-text="Screenshot of the Database details pane in Real-Time Analytics showing an overview of the database with the edit OneLake folder option highlighted.":::
 
 1. Enable the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically.
 

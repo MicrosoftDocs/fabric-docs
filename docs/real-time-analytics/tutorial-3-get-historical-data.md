@@ -28,8 +28,7 @@ One-time data loading is often needed for historical data, or for adding dimensi
 
 ### Destination tab
 
-In the **Destination** tab, **Database** is auto populated with the name
-of the selected database.
+In the **Destination** tab, **Database** is auto populated with the name of the selected database.
 
 1. Under **Table**, make sure that **New table** is selected, and enter *locations* as the table name.
 1. Select **Next: Source**.

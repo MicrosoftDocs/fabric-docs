@@ -32,7 +32,7 @@ For more information on the `.create materialized-view` command, see [.create ma
 
 1. Select **New** > **Materialized view**.
 
-    :::image type="content" source="media/materialized-view/materialized-view.png" alt-text="Screenshot of the New option dropdown menu in Real-Time Analytics. The option titled Materialized view is highlighted.":::
+    :::image type="content" source="media/materialized-view/materialized-view.png" alt-text="Screenshot of the New option dropdown menu in Real-Time Analytics, with the option titled Materialized view highlighted.":::
 
     The materialized view command is automatically populated in the **Explore your data** window.
 

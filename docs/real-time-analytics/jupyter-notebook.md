@@ -8,7 +8,6 @@ ms.topic: Tutorial
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-
 # Tutorial: Use a notebook with Kqlmagic to query a KQL database
 
 Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents which can be run to perform data analysis. In this article, you learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a KQL Database. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
@@ -93,7 +92,7 @@ The rest of this workflow occurs in the **Data Engineering** section of the prod
 
 1. Select the NYC Taxi KQL Notebook that you downloaded in [step 3](#3--download-the-nyc-taxi-demo-notebook).
 1. Once the import is complete, select **Go to workspace** and open this notebook.
-    
+
     :::image type="content" source="media/jupyter-notebook/go-to-workspace.png" alt-text="Screenshot of upload completed successfully and go to workspace.":::
 
 ## 5- Load packages
