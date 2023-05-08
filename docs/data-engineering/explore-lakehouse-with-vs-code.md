@@ -36,3 +36,8 @@ To make it easier to reference the table/folder/file in the code, you can find t
 :::image type="content" source="media\vscode\copy-path.png" alt-text="Screenshot showing the copy path button.":::
 
 Here is the sample of the different path from the selected csv file. 
+
+## Next steps:
+
+* [What is SQL Endpoint for a lakehouse?](lakehouse-sql-endpoint.md)
+* [Get data into the Fabric Lakehouse](load-data-lakehouse.md)
