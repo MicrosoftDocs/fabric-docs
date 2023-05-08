@@ -135,11 +135,11 @@ ALTER TABLE person SET TBLPROPERTIES("delta. parquet.vorder.enabled","false");
 ALTER TABLE person UNSET TBLPROPERTIES("delta.parquet.vorder.enabled");
 ```
 
-After enabling or disabling the table property, only future writes to the table will be affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, read the "Control V-Order when optimizing a table" section bellow.
+When enabling or disabling the table property, only future writes to the table will be affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, read the "Control V-Order when optimizing a table" section bellow.
 
 ### Controlling V-Order directly on write operations
 
-All Apache Spark write commands inherits the session setting if not explicit. All following commands writes using V-Order by implicitly inheriting the session configuration.
+All Apache Spark write commands inherit the session setting if not explicit. All following commands write using V-Order by implicitly inheriting the session configuration.
 
 ```python
 df_source.write\
