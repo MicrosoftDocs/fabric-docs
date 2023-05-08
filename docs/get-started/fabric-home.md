@@ -82,7 +82,7 @@ To return to the default Help pane, select the left arrow. ![Screenshot of the l
 
 For more information about searching, see [Searching and sorting](fabric-search.md).
 
-For more information about the Help pane, see [Get in-product help](fabric-help-pane.md).
+<!--For more information about the Help pane, see [Get in-product help](fabric-help-pane.md).-->
 
 ### Get help and support
 
