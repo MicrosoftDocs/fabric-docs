@@ -15,9 +15,9 @@ LocalizationGroup: Administration
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Go to the **Admin portal** to access this feature. For information about how to get to and use the Admin portal, see [About the Admin portal](/power-bi/admin/service-admin-portal).
+As a [!INCLUDE [product-name](../includes/product-name.md)] administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab in the Admin portal. For information about how to get to and use the Admin portal, see [About the Admin portal](/power-bi/admin/service-admin-portal).
 
-As a [!INCLUDE [product-name](../includes/product-name.md)] administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab. On this tab, you see a list of all the workspaces in your tenant. Above the list, a ribbon provides options to help you govern the workspaces. These options also appear in the **More options (...)** menu of the selected workspace. The list of options varies depending on workspace type and status. All the options are described under [workspace options](#workspace-options).
+On the **Workspaces** tab, you see a list of all the workspaces in your tenant. Above the list, a ribbon provides options to help you govern the workspaces. These options also appear in the **More options (...)** menu of the selected workspace. The list of options varies depending on workspace type and status. All the options are described under [workspace options](#workspace-options).
 
 :::image type="content" source="media/service-admin-portal-workspaces/power-bi-workspaces-admin-portal.png" alt-text="Screenshot that shows a Power B I workspaces list in the admin portal.":::
 
@@ -31,7 +31,7 @@ The columns of the list of workspaces are described below
 | **State** | The state lets you know if the workspace is available for use. There are five states, **Active**, **Orphaned**, **Deleted**, **Removing**, and **Not found**. For more information, see [Workspace states](#workspace-states). |
 | **Capacity name** | Name given to the workspace's capacity. |
 | **Capacity SKU Tier** | The type of license used for the workspace's capacity. Capacity SKU Tiers include **Premium** and **Premium Per User (PPU)**. For more information about capacity tiers, see [Configure and manage capacities in Premium](/power-bi/enterprise/service-admin-premium-manage). |
-| **Upgrade status** | The upgrade status lets you know if the workspace is eligible for a [!INCLUDE [product-name](../includes/product-name.md)] upgrade. |
+| **Upgrade status** | The upgrade status lets you know if the workspace is eligible for a Microsoft Fabric upgrade. |
 
 The table columns on the **Workspaces** tab correspond to the properties returned by the [admin Rest API](/rest/api/power-bi/admin) for workspaces. Personal workspaces are of type **PersonalGroup**, all other workspaces are of type **Workspace**. For more information, see [Workspaces](../get-started/workspaces.md).
 
@@ -43,8 +43,8 @@ The possible workspace states are described below.
 |---------|---------|
 | **Active** | A normal workspace. It doesn't indicate anything about usage or what's inside, only that the workspace itself is "normal". |
 | **Orphaned** | A workspace with no admin user. You need to assign an admin. |
-| **Deleted** | A deleted workspace. A [!INCLUDE [product-name](../includes/product-name.md)] administrator can restore the workspace up to 90 days after it was deleted. When the 90 days pass, the workspace enters the *Removing* state.<br>If you delete a *MyWorkspace* workspace, it moves to the *Removing* state immediately, without the 90 days grace period. |
-| **Removing** | After you delete a workspace, and once the 90 day grace period passes, the workspace moves into the *Removing* state. During this state, the workspace is permanently removed. Permanently removing a workspace takes a short while, and depends on the service and folder content. |
+| **Deleted** | A deleted workspace. A microsoft Fabric administrator can restore the workspace up to 30 days after it was deleted. When the 30 days pass, the workspace enters the *Removing* state.<br>If you delete a *MyWorkspace* workspace, it moves to the *Removing* state immediately, without the 30 day grace period. |
+| **Removing** | After you delete a workspace, and once the 30 day grace period passes, the workspace moves into the *Removing* state. During this state, the workspace is permanently removed. Permanently removing a workspace takes a short while, and depends on the service and folder content. |
 | **Not found** | If the customer's API request includes a workspace ID for a workspace that doesn't belong to the customer's tenant, "Not found" is returned as the status for that ID. |
 
 ## Workspace options
@@ -115,6 +115,30 @@ To restore a deleted My workspace as an app workspace
 1. When done, select **Restore**.
 
 After the deleted workspace has been restored as an app workspace, it's just like any other app workspace. 
+
+## Moving data around
+
+Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities. Such movement might be between capacities in different regions, or between different capacity types, such as Premium and shared.
+
+In Microsoft Fabric, such movement currently has the following restrictions:
+
+* Non Power BI Fabric items can't move from Premium to shared capacity.
+
+* Non Power BI Fabric items can't move between regions.
+
+This means the following:
+
+* **Moving a workspace from one capacity to another within the same region**
+
+    If the workspace has non Power BI Fabric items, you can only move it from one Premium capacity to another Premium capacity. If you want to move the workspace from Premium to shared capacity, you won’t be able to do so unless you delete all non-Power BI Fabric items first.
+
+    If the workspace has no non Power BI Fabric items (that is, it has only Power BI items) moving the workspace from Premium to shared is supported.  
+
+* **Moving a workspace from one capacity to a capacity in a different region**
+
+    If the workspace has non Power BI Fabric items, you won't be able to move it unless you delete all non-Power BI Fabric items first.
+
+    If the workspace has no non-Power BI Fabric items (that is, it has only Power BI items) moving the workspace to another capacity in a different region is supported.
 
 ## Next steps
 

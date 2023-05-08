@@ -19,7 +19,7 @@ As a Power BI admin, you're responsible for enabling and setting up the certific
 * Defining a list of security groups whose members will be authorized to certify items.
 * Providing a URL that points to the documentation for the organization's item certification process, if such documentation exists.
 
-Certification is part of Power BI's *endorsement* feature. For more information, see the [endorsement overview](../get-started/endorsement-overview.md).
+Certification is part of Power BI's *endorsement* feature. For more information, see the [endorsement overview](../governance/endorsement-overview.md).
 
 ## Set up certification
 
@@ -37,6 +37,6 @@ Certification is part of Power BI's *endorsement* feature. For more information,
 
 ## Next steps
 
-* [Read about endorsement in Fabric](../get-started/endorsement-overview.md)
+* [Read about endorsement in Fabric](../governance/endorsement-overview.md)
 * [Promote Fabric items](../get-started/endorsement-promote-certify.md#promote-items)
 * [Certify Fabric items](../get-started/endorsement-promote-certify.md#certify-items)
