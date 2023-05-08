@@ -43,7 +43,7 @@ Google Cloud Storage supports the following file formats. Refer to each article 
 - [Excel format](format-excel.md)
 - JSON format
 - ORC format
-- Parquet format
+- [Parquet format](format-parquet.md)
 - XML format
 
 ## Supported configuration
@@ -52,6 +52,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 - [General](#general)  
 - [Source](#source)
+- [Mapping](#mapping)
 - [Settings](#settings)
 
 ### General
@@ -77,7 +78,7 @@ Under **Advanced**, you can specify the following fields:
 
     - **File path**: If you choose this type, the data can be copied from the given bucket or folder/file path specified in **File path**.
 
-    - **Prefix**: Prefix for the GCS key name under the given bucket configured in the dataset to filter source GCS files. GCS keys whose names start with `given_bucket/this_prefix` are selected. It utilizes GCS's service-side filter, which provides better performance than a wildcard filter.
+    - **Prefix**: Prefix for the GCS key name under the given bucket configured to filter source GCS files. GCS keys whose names start with `given_bucket/this_prefix` are selected. It utilizes GCS's service-side filter, which provides better performance than a wildcard filter.
 
        :::image type="content" source="./media/connector-google-cloud/prefix.png" alt-text="Screenshot showing prefix." lightbox="./media/connector-google-cloud/prefix.png":::
 
@@ -104,9 +105,13 @@ This property is only valid in the binary files copy scenario.
 
 - **Max concurrent connection**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
+### Mapping
+
+For **Mapping** tab configuration, see [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). If you choose Binary as your file format, mapping will not be supported.
+
 ### Settings
 
-For the **Settings** tab configuration, go to Settings
+For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 
