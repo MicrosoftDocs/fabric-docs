@@ -33,7 +33,7 @@ This article describes the [!INCLUDE [product-name](../includes/product-name.md)
 
 ## Business understanding
 
-Data Science users work on the same platform as business users and analysts. Data sharing and collaboration become more seamless across different roles as a result. More details about collaboration features that help this data science lifecycle phase will come soon.
+Data Science users work on the same platform as business users and analysts. Data sharing and collaboration become more seamless across different roles as a result.
 
 ## Data acquisition
 
