@@ -11,11 +11,11 @@ ms.date: 05/23/2023
 
 # What is Data science in Microsoft Fabric?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science Home page. From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
 
 :::image type="content" source="media/data-science-overview/data-science-home-page.png" alt-text="Screenshot of the Data science home page." lightbox="media/data-science-overview/data-science-home-page.png":::
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] offers various data science capabilities.  
 
@@ -33,7 +33,7 @@ This article describes the [!INCLUDE [product-name](../includes/product-name.md)
 
 ## Business understanding
 
-Data Science users work on the same platform as business users and analysts. Data sharing and collaboration become more seamless across different roles as a result.
+Data Science users work on the same platform as business users and analysts. Data sharing and collaboration become more seamless across different roles as a result. More details about collaboration features that help this data science lifecycle phase will come soon.
 
 ## Data acquisition
 

@@ -10,9 +10,9 @@ ms.date: 05/23/2023
 
 # Autologging in [!INCLUDE [product-name](../includes/product-name.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and artifacts of a machine learning model during training. This feature extends [MLflow autologging](https://mlflow.org/docs/latest/tracking.html#automatic-logging) capabilities and is deeply integrated into the [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience. Using autologging, developers and data scientists can easily track and compare the performance of different models and experiments without the need for manual tracking.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Configurations
 
