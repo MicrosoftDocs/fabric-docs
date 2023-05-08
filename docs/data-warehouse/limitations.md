@@ -53,4 +53,4 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 ## Next steps
 
-- [T-SQL Surface Area in Microsoft Fabric](tsql-surface-area.md)
+- [Get Started with Synapse Data Warehouse](create-warehouse.md)
