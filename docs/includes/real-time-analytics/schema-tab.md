@@ -32,7 +32,7 @@ The command viewer shows the commands for creating tables, mapping, and ingestin
 
 To open the command viewer, select the **v** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
 
-:::image type="content" source="../../real-time-analytics/media/get-data-blob/question-command-viewer.png" alt-text="Screenshot of command editor."  lightbox="../../real-time-analytics/media/get-data-blob/question-command-viewer.png":::
+:::image type="content" source="../../real-time-analytics/media/get-data-blob/command-viewer.png" alt-text="Screenshot of command editor."  lightbox="../../real-time-analytics/media/get-data-blob/command-viewer.png":::
 
 #### Partial data preview
 
