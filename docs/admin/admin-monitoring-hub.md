@@ -46,5 +46,6 @@ When you hover over an artifact's name, any available quick actions for the arti
 ## Next steps
 
 * [Admin overview](admin-overview.md)
+* [Browse the Apache Spark applications in the Fabric monitoring hub](../data-engineering/browse-spark-applications-monitoring-hub.md)
 * [View refresh history and monitor your dataflows](../data-factory/dataflows-gen2-monitor.md)
 * [Feature usage and adoption report](admin-feature-usage-adoption.md)
