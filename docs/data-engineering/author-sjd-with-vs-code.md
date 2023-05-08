@@ -85,5 +85,5 @@ You can edit the detail property of the Spark Job Definition, such as command-li
 
 ## Next steps
 
-* [Explore lakehouse in VS Code](explore-lakehouse-with-vscode.md)
-* [Notebook experience in VS Code](author-notebook-with-vscode.md)
+* [Explore lakehouse in VS Code](explore-lakehouse-with-vs-code.md)
+* [Notebook experience in VS Code](author-notebook-with-vs-code.md)
