@@ -8,7 +8,11 @@ items:
 - name: Get started
   items:
   - name: Enable Microsoft Fabric for your organization
-    href: admin-fabric-switch.md  
+    href: admin-fabric-switch.md
+  - name: Region availability
+    href: admin-region-availability.md
+  - name: Find your Fabric home region
+    href: admin-find-fabric-home-region.md
   - name: Understand Microsoft Fabric roles
     href: admin-roles.md
   - name: What is the admin portal?
