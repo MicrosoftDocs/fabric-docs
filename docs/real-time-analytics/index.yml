@@ -60,8 +60,7 @@ landingContent:
             url: create-database.md
           - text: Create an empty table
             url: create-empty-table.md
-    linkLists:
-      - linkListType: get-data
+      - linkListType: how-to-guide
         links: 
         - text: Get data from a blob
           url: get-data-blob.md
