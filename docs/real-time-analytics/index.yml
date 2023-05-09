@@ -23,53 +23,12 @@ landingContent:
         links:
           - text: What is Real-Time Analytics?
             url: overview.md
+      - linkListType: get-started
+        links: 
           - text: Real-Time Analytics Tutorial
             url: tutorial-introduction.md
-          - text: Event streams overview
-            url: event-streams/overview.md
 
   # Card 
-  - title: Create entities
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: Create a KQL database
-            url: create-database.md
-          - text: Create an empty table
-            url: create-empty-table.md
-
-# Card 
-  - title: Get data
-    linkLists:
-      - linkListType: how-to-guide
-        links: 
-        - text: Get data from a blob
-          url: get-data-blob.md
-        - text: Get data from a blob container 
-          url: get-data-blob-container.md
-        - text: Get data from Azure Event Hubs
-          url: get-data-event-hub.md
-        - text: Get data from OneLake
-          url: get-data-onelake.md
-      
-  # Card 
-  - title: Query data
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Query data in a KQL queryset
-            url:  kusto-query-set.md
-          - text: Use sample queries
-            url: query-table.md
-          - text: Use a notebook with Kqlmagic to query a KQL database
-            url: jupyter-notebook.md
-          - text: Use a notebook with Apache Spark to query a KQL database
-            url: spark-connector.md
-          - text: Use a OneLake shortcut to query data
-            url: onelake-shortcut.md
-
-  
-    # Card 
   - title: Event streams
     linkLists:
       - linkListType: how-to-guide
@@ -84,10 +43,50 @@ landingContent:
         links:
           - text: Process real-time events from Azure Event Hubs
             url:  event-streams/create-manage-an-eventstream.md
+  # Card 
+  - title: KQL Database
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Create a KQL database
+            url: create-database.md
+          - text: Create an empty table
+            url: create-empty-table.md
+      - linkListType: how-to-guide
+        links: 
+        - text: Get data from a blob
+          url: get-data-blob.md
+        - text: Get data from a blob container 
+          url: get-data-blob-container.md
+        - text: Get data from Azure Event Hubs
+          url: get-data-event-hub.md
+        - text: Get data from OneLake
+          url: get-data-onelake.md
 
   # Card 
-  - title: Training
+  - title: Query data
     linkLists:
+      - linkListType: how-to-guide
+        links: 
+          - text: Use sample queries
+            url: query-table.md
+
+
+  # Card 
+  - title: KQL Queryset
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Query data in a KQL queryset
+            url:  kusto-query-set.md
+            
+  # Card 
+  - title: Kusto Query Language (KQL)
+    linkLists:
+      - linkListType: overview
+        links:          
+          - text: KQL Overview
+            url: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
       - linkListType: learn
         links:
           - text: "Training module: Write your first query with Kusto Query Language"
@@ -97,3 +96,19 @@ landingContent:
           - text: "Training module: Multi-table queries using Kusto Query Language"
             url: /training/modules/multi-table-queries-with-kusto-query-language/
 
+
+  # Card 
+  - title: Integrate with other experiences
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Use a notebook with Kqlmagic to query a KQL database
+            url: jupyter-notebook.md
+          - text: Use a notebook with Apache Spark to query a KQL database
+            url: spark-connector.md
+          - text: Create a shortcut to access data in OneLake
+            url: onelake-shortcut.md
+      - linkListType: how-to-guide
+        links: 
+          - text: Visualize data in a Power BI report
+            url: create-powerbi-report.md
