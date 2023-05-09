@@ -102,7 +102,7 @@ In the source tab, the **Source type** is autopopulated with **Event Hubs**
 
 1. Fill out the remaining fields according to the following table:
 
-    :::image type="content" source="media/get-data-event-hub/source-tab.png" alt-text="Screenshot of source tab."  lightbox="media/get-data-event-hub/source-tab.png":::
+    :::image type="content" source="media/get-data-event-hub/source.png" alt-text="Screenshot of source tab."  lightbox="media/get-data-event-hub/source.png":::
 
     |**Setting** | **Suggested value** | **Field description**
     |---|---|---|
@@ -152,7 +152,7 @@ If the data you see in the preview window isn't complete, you may need more data
 
 ### Command viewer
 
-:::image type="content" source="/media/get-data-event-hub/command-viewer.png" alt-text="Screenshot of the command editor in the schema tab."  lightbox="/media/get-data-event-hub/command-viewer.png":::
+:::image type="content" source="/media/get-data-event-hub/command-view.png" alt-text="Screenshot of the command editor in the schema tab."  lightbox="/media/get-data-event-hub/command-view.png":::
 
 The command viewer shows the commands for creating tables, mapping, and ingesting data in tables.
 
@@ -164,7 +164,7 @@ The partial data preview is automatically inferred based on your data. You can c
 
 To add a new column, select the + button on the right-hand column under Partial data preview.
 
-:::image type="content" source="/media/get-data-event-hub/partial-data-preview.png" alt-text="Screenshot of the Partial data preview in the schema tab."  lightbox="/media/get-data-event-hub/partial-data-preview.png":::
+:::image type="content" source="/media/get-data-event-hub/partial-preview.png" alt-text="Screenshot of the Partial data preview in the schema tab."  lightbox="/media/get-data-event-hub/partial-preview.png":::
 
 * The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
 * The default column type is string but can be altered in the drop-down menu of the Column type field.
