@@ -21,10 +21,10 @@ To create a new lakehouse in your [!INCLUDE [product-name](../includes/product-n
 
 1. Go to your **workspace** in the navigation column. Select the **My workspace** button.
 
-    :::image type="content" source="media/create-lakehouse-sample/my-workspace.png" alt-text="A screenshot from the Fabric portal, the My workspace navigation button is boxed in red.":::
+    :::image type="content" source="media/tutorial-create-lakehouse/my-workspace.png" alt-text="A screenshot from the Fabric portal, the My workspace navigation button is boxed in red.":::
 1. Select the **+ New** button. In the list of objects to create, select **Lakehouse**.
 
-    :::image type="content" source="media/create-lakehouse-sample/new-lakehouse.png" alt-text="A screenshot from the Fabric portal, in the new dropdown, the new Lakehouse object option is boxed in red.":::
+    :::image type="content" source="media/tutorial-create-lakehouse/new-lakehouse.png" alt-text="A screenshot from the Fabric portal, in the new dropdown, the new Lakehouse object option is boxed in red.":::
 1. In the **Name** field, enter `Exercise` and select on **Create**.
 1. The new lakehouse loads and the **Explorer** view opens up, with the **Get data in your lakehouse** menu.
 

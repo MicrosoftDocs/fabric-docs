@@ -14,7 +14,7 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview # This ar
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides an [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) for every lakehouse artifact in the workspace. The [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) enables you to query data in the lakehouse using T-SQL language and TDS protocol. Every lakehouse has one [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse), and each workspace can have more than one lakehouse. The number of [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in a workspace matches the number of lakehouse artifacts.
+[!INCLUDE [product-name](../includes/product-name.md)] provides an [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) for every lakehouse artifact in the workspace. The [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) enables you to query data in the lakehouse using T-SQL language and TDS protocol. Every lakehouse has one [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse), and each workspace can have more than OneLakehouse. The number of [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in a workspace matches the number of lakehouse artifacts.
 - The SQL Endpoint is automatically generated for every lakehouse artifact and exposes Delta tables from the lakehouse as SQL tables that can be queried using the T-SQL language.
 - Every delta table from a lakehouse is represented as one table. Data should be in delta format.
 - The [default Power BI dataset](datasets.md) is created for every [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) and it follows the naming convention of the lakehouse objects.
@@ -45,19 +45,19 @@ In addition to SQL tables, the [!INCLUDE [product-name](../includes/product-name
 
 [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) are not scoped to data analytics in [!INCLUDE [product-name](../includes/product-name.md)] lakehouse. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) enable you to analyze lake data in any lakehouse implemented using Synapse Spark, Azure Databricks, or any other lake-centric data engineering engine. 
 
-One of the well-known strategies for lake data organization is a [medallion](https://learn.microsoft.com/azure/databricks/lakehouse/medallion) architecture where the files are organized in raw (bronze), consolidated (silver), and refined (gold) layers. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) can be used to analyze data in the gold layer of medallion architecture if the files are stored in `Delta Lake` format.
+One of the well-known strategies for lake data organization is a [medallion architecture](/azure/databricks/lakehouse/medallion) where the files are organized in raw (bronze), consolidated (silver), and refined (gold) layers. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) can be used to analyze data in the gold layer of medallion architecture if the files are stored in Delta Lake format.
 
-You can use One Lake [shortcuts](../data-engineering/lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that are managed by Synapse Spark or Azure Databricks engines. 
+You can use OneLake [shortcuts](../data-engineering/lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that are managed by Synapse Spark or Azure Databricks engines. 
 
 Any folder referenced using a [shortcut](../data-engineering/lakehouse-shortcuts.md) is analyzed by [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) and a SQL table is created for the referenced data set. The SQL table can be used to expose data in externally managed data lakes and enable analytics on them.
 
 ## Cross-workspace data analytics
 
 [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) enable you to analyze data in the Warehouse or lakehouse artifacts placed in other [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
-- Every [!INCLUDE [product-name](../includes/product-name.md)] lakehouse stores data in One Lake. [Shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to reference folders in any One Lake location.
-- Every [!INCLUDE [product-name](../includes/product-name.md)] Warehouse stores table data in One Lake. If a table is append-only, the table data is exposed as `Delta Lake` datasets in One Lake. [Shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to reference folders in any One Lake where the Warehouse tables are exposed.
+- Every [!INCLUDE [product-name](../includes/product-name.md)] lakehouse stores data in OneLake. [Shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to reference folders in any OneLake location.
+- Every [!INCLUDE [product-name](../includes/product-name.md)] Warehouse stores table data in OneLake. If a table is append-only, the table data is exposed as Delta Lake datasets in OneLake. [Shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to reference folders in any OneLake where the Warehouse tables are exposed.
 
-[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in combination with One Lake [shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to cross-workspace analytics and share the data products created and maintained in different workspaces.
+[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in combination with OneLake [shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to cross-workspace analytics and share the data products created and maintained in different workspaces.
 
 ## Analyzing partitioned data
 
