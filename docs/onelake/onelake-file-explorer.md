@@ -114,7 +114,7 @@ All folders in your items including [OneLake shortcuts](onelake-shortcuts.md) ar
 
 ### Client-side logs
 
-Client-side logs can be found on your local machine under *%temp%\OneLake\Diagnostics\\*.
+Client-side logs can be found on your local machine under `%temp%\OneLake\Diagnostics\`.
 
 ### Uninstall instructions
 
@@ -132,4 +132,4 @@ These OneLake file explorer icons are visible in Windows File Explorer and tell 
 
 ## Next steps
 
-- [OneLake security](onelake-security.md)
+Learn more about [OneLake security](onelake-security.md)
