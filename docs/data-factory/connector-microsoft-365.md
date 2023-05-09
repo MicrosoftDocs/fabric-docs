@@ -79,7 +79,7 @@ In the **General** tab, select the privacy level that you want apply in the **Pr
 
 Select **Create**. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
-:::image type="content" source="./media/connector-microsoft-365/connection.png" alt-text="Screenshot showing connection page." lightbox=:::"./media/connector-microsoft-365/connection.png"
+:::image type="content" source="./media/connector-microsoft-365/connection.png" alt-text="Screenshot showing connection page." lightbox="./media/connector-microsoft-365/connection.png":::
 
 ## Table summary
 
