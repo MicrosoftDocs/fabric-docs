@@ -67,7 +67,7 @@ ms.search.form: product-kusto
 
     :::image type="content" source="media/realtime-analytics-tutorial/data-format-json.png" alt-text="Screenshot of Schema tab with data format JSON selected in Real-Time Analytics in Microsoft Fabric.":::
 
-    Notice that the data preview will refresh and show the data in columns with the data types automatically identified. Some of these data types need to be changed for later queries. The columns that appear in the preview can be manipulated by selecting the **down arrow** to the right of the column name.
+    Notice that the data preview refreshes and shows the data in columns with the data types automatically identified. Some of these data types need to be changed for later queries. The columns that appear in the preview can be manipulated by selecting the **down arrow** to the right of the column name.
 
 ### Change data types
 
@@ -96,6 +96,14 @@ ms.search.form: product-kusto
 1. Select **Next: Summary**.
 
      In the **Continuous ingestion from Eventstream established** window, all steps are marked with green check marks when the data connection is successfully created. The data from Eventstream begins streaming automatically into your table.
+
+## See also
+
+For more information about tasks performed in this tutorial, see:
+
+* [Create and manage an eventstream](event-streams/create-manage-an-eventstream.md)
+* [Add a sample data as a source](event-streams/add-manage-eventstream-sources.md#add-a-sample-data-as-a-source)
+* [Add a KQL database as a destination](event-streams/add-manage-eventstream-destinations.md#add-a-kql-database-as-a-destination)
 
 ## Next steps
 

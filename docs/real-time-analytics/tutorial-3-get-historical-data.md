@@ -46,9 +46,9 @@ In the **Source** tab, **Source type** is auto populated with *Blob container*.
 
     |  **Setting**  | **Suggested value**  | **Field description**
     |-------|---|------
-    |  Ingestion  |   *One-time*         |The type of data ingestion type.
+    | Ingestion  |   *One-time*         |The type of data ingestion type.
     | Link to source |  *https://azuresynapsestorage.blob.core.windows.net/sampledata/NYCTaxiLocations/* | URI to the blob container where the files are located |
-    |  Sample size |  *Blank*
+    | Sample size |  *Blank*
     | Folder path |  *Blank*
     | Schema  defining file |  Choose the first file
 
@@ -70,6 +70,12 @@ loaded.
 :::image type="content" source="media/realtime-analytics-tutorial/data-ingestion-complete.png" alt-text="Screenshot of summary page with data ingestion completed.":::
 
 Select **Close** to return to your database landing page.
+
+## See also
+
+For more information about tasks performed in this tutorial, see:
+
+* [Get data from a blob](get-data-blob.md)
 
 ## Next steps
 
