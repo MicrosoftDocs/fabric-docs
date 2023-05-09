@@ -27,21 +27,14 @@ landingContent:
         links: 
           - text: Real-Time Analytics Tutorial
             url: tutorial-introduction.md
-          - text: Eventstreams tutorial
-            url: event-streams/bring-events-to-fabric-from-event-hub.md
+
   # Card 
   - title: Event streams
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Main editor
-            url: event-streams/main-editor.md
-          - text: Sources
-            url: event-streams/event-streams-source.md
-          - text: Destinations
-            url: event-streams/event-streams-destination.md
-          - text: Processor editor
-            url: event-streams/event-processor-editor.md          
+    linkLists:  
+      - linkListType: tutorial
+        links:    
+        - text: Eventstreams tutorial
+          url: event-streams/bring-events-to-fabric-from-event-hub.md
       - linkListType: how-to-guide
         links: 
         - text: Process events with event processor
