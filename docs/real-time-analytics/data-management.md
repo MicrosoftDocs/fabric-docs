@@ -17,10 +17,6 @@ Synapse Real-Time Analytics offers a range of options for managing your data, bo
 
 For more information, see [Management commands](/azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric)
 
-* Activate [One logical copy](#one-logical-copy)
-* Create [Materialized views](#materialized-views)
-* Create a [Table update policy](#table-update-policy)
-* Create [Stored functions](#stored-functions)
 
 ## Database management
 
