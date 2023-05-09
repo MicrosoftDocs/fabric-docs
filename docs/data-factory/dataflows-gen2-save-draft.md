@@ -9,12 +9,12 @@ ms.author: jeluitwi
 
 ---
 
+# Save a draft of your dataflow
+
 With Dataflow Gen2, we changed how saving a dataflow works. We wanted to improve the experience and reslliancy of the Dataflows Gen1 by:
 
 1. Automatically saving to the cloud any change made to a dataflow. This is called the draft version of the dataflow.
 2. Deferring long running validation required to garentee a dataflow can refresh, to the background. The verison of the dataflow that passed validation and is ready to refresh is called the published version.
-
-# Save a draft of your dataflow
 
 This powerful feature allows you to make changes to your dataflow without immediately publishing them to your workspace. Instead, all your changes are automatically saved as a draft, which you can review a later time, and then publish when you're ready. With this feature, you dont have to worry about losing your work if you want to resume it at a later time, if your dataflow fails validation, or if your editing session abruptly ends. In this article, you learn how to use the new dataflow Gen 2 auto-save and publish feature and how it can benefit your dataflow development and management.
 
