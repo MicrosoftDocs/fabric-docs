@@ -129,13 +129,13 @@ items:
     href: lakehouse-notebook-explore.md
   - name: Load data in lakehouse
     href: lakehouse-notebook-load-data.md
-- name: VSCode Integration 
+- name: VS Code integration 
   items:
   - name: Overview
     href: setup-vs-code-extension.md
-  - name: Develop Notebook with VS Code extension
+  - name: Notebook with VS Code extension
     href: author-notebook-with-vs-code.md
-  - name: Develop Spark Job Definition with VS Code extension
+  - name: Spark job definition with VS Code extension
     href: author-sjd-with-vs-code.md
   - name: Explore lakehouse with VS Code extension
     href: explore-lakehouse-with-vs-code.md
