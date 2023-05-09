@@ -45,18 +45,10 @@ items:
       href: get-data-event-hub.md
     - name: Get data from OneLake
       href: get-data-onelake.md
-  - name: Visualize data
-    items:
-    - name: Visualize data in a Power BI report
-      href: create-powerbi-report.md
-    - name: Use data from a KQL database in Power BI Desktop
-      href: power-bi-data-connector.md
   - name: Data management
     items:
     - name: Data management overview  
       href: data-management.md
-    - name: One logical copy
-      href: onelake-mirroring.md
     - name: Create a table update policy
       href: table-update-policy.md
     - name: Create materialized views
@@ -75,10 +67,6 @@ items:
       href: kusto-query-set.md
     - name: Use a OneLake shortcut to query data
       href: onelake-shortcut.md
-    - name: Use a notebook with Kqlmagic to query a KQL database
-      href: jupyter-notebook.md
-    - name: Use a notebook with Apache Spark to query a KQL database
-      href: spark-connector.md
     - name: Use sample queries
       href: query-table.md
   - name: Kusto Query Language
@@ -111,3 +99,19 @@ items:
       href: event-streams/preview-data.md
     - name: Monitoring
       href: event-streams/monitoring.md
+- name: Integrate with other experiences
+  items:
+  - name: PowerBI
+    items:
+    - name: Visualize data in a Power BI report
+      href: create-powerbi-report.md
+    - name: Use data from a KQL database in Power BI Desktop
+      href: power-bi-data-connector.md
+  - name: One logical copy
+    href: onelake-mirroring.md
+  - name: Notebooks
+    items:
+    - name: Use a notebook with Kqlmagic to query a KQL database
+      href: jupyter-notebook.md
+    - name: Use a notebook with Apache Spark to query a KQL database
+      href: spark-connector.md
