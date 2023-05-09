@@ -30,20 +30,18 @@ items:
   items:
   - name: Data management
     href: data-management.md
-  - name: Databases
-    items:
-    - name: Create a KQL database
-      href: create-database.md
-    - name: One logical copy
-      href: onelake-mirroring.md
-  - name: Tables
-    items:
-    - name: Create an empty table
-      href: create-empty-table.md
-    - name: Create a table update policy
-      href: table-update-policy.md
-    - name: Create materialized views
-      href: materialized-view.md
+  - name: Create a KQL database
+    href: create-database.md
+  - name: Create an empty table
+    href: create-empty-table.md
+  - name: One logical copy
+    href: onelake-mirroring.md
+  - name: Create a table update policy
+    href: table-update-policy.md
+  - name: Change the data retention policy
+    href: data-retention-policy.md
+  - name: Create materialized views
+    href: materialized-view.md
   - name: Create stored functions
     href: create-functions.md
 - name: Get data
