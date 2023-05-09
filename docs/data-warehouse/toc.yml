@@ -89,6 +89,10 @@ items:
     href: workspace-roles.md
   - name: Get Workspace and OneLake path
     href: get-workspace-onelake-path.md      
+  - name: Manage item permissions
+    href: item-permissions.md
+  - name: Manage SQL granular permissions
+    href: sql-granular-permissions.md
 - name: Query the warehouse
   items:
   - name: Query using Visual Query editor
