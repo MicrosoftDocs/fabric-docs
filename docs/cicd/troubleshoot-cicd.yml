@@ -36,11 +36,6 @@ summary: |
   [Rules](#rules)  
 
 sections:
-  - name: General questions
-    questions:
-
-          
-        
   - name: Git integration  
     questions:
       - question: |
@@ -159,7 +154,7 @@ sections:
           
           > [!div class="mx-imgBorder"]
           > ![A screenshot of the production tag in a production pipeline workspace.](media/troubleshoot-cicd/production-tag.png)
-          
+
       - question: |
           What are some general deployment limitations to keep in mind:
         answer: |
