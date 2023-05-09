@@ -31,21 +31,13 @@ In this guide, you will:
 1. Using Azure Databricks notebook, create a delta table in ADLS Gen2 account.
 
    ```python
-    from pyspark.sql.types import *
-    from pyspark.dbutils import DBUtils
-    
     # Replace the path below to your storage account and container name
     
     # Read Parquet files from an ADLS account
-    adlsSrcData = "abfss://datasetsv1@olsdemo.dfs.core.windows.net/demo/full/dimension_city/"
+    df = spark.read.format('Parquet').load("abfss://datasetsv1@olsdemo.dfs.core.windows.net/demo/full/dimension_city/")
     
     # Write Delta tables to ADLS account
-    adlsTgtDelta = "abfss://datasetsv1@olsdemo.dfs.core.windows.net/demo/adb_dim_city_delta/"
-    
-    # Loop through the Parquet files in source directory and write Delta tables out to another directory
-    for filename in dbutils.fs.ls(adlsSrcData):
-    df=spark.read.format('Parquet').load(filename.path,on_bad_lines = "skip")
-    df.write.mode("overwrite").format("delta").save(adlsTgtDelta)
+    df.write.mode("overwrite").format("delta").save("abfss://datasetsv1@olsdemo.dfs.core.windows.net/demo/adb_dim_city_delta/")
    ```
 
 1. In your lakehouse, click on ellipses (…) next to the Tables and select New Shortcut.
@@ -71,7 +63,7 @@ In this guide, you will:
 1. This data can now be queried directly from notebook.
 
    ```python
-   df = spark.sql("SELECT * FROM lakehouse1.adls_shortcut_adb_dim_city_delta LIMIT 1000"
+   df = spark.sql("SELECT * FROM lakehouse1.adls_shortcut_adb_dim_city_delta LIMIT 1000")
    display(df)
    ```
 
