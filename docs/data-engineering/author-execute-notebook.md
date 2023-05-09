@@ -34,7 +34,6 @@ We provide rich operations to develop notebooks:
 - [Collapse a cell input](#collapse-a-cell-input)
 - [Collapse a cell output](#collapse-a-cell-output)
 - [Lock or freeze a cell](#lock-or-freeze-a-cell)
-- [Merge and Split cells](#merge-and-split-cells)
 - [Notebook contents](#notebook-contents)
 - [Markdown folding](#markdown-folding)
 
@@ -59,7 +58,7 @@ You can set the primary language for new added cells from the dropdown list in t
 
 ### Use multiple languages
 
-You can use multiple languages in one notebook by specifying the correct language magic command at the beginning of a cell, or switch the cell language from the language picker of a cell. The following table lists the magic commands to switch cell languages.
+You can use multiple languages in a notebook by specifying the language magic command at the beginning of a cell, you can also switch the cell language from the language picker. The following table lists the magic commands to switch cell languages.
 
 :::image type="content" source="media\author-execute-notebook\language-command-in-cell.png" alt-text="Screenshot showing an example of the language magic command entered at the beginning of a cell." lightbox="media\author-execute-notebook\language-command-in-cell.png":::
 
@@ -91,7 +90,7 @@ The IntelliSense features are at different levels of maturity for different lang
 
 ### Code snippets
 
-[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide code snippets that make it easier to enter commonly used code patterns like code for the following:
+[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide code snippets that help you write commonly used code patterns easily, like:
 
 - Reading data as a Spark DataFrame, or
 - Drawing charts with Matplotlib.
@@ -117,7 +116,7 @@ You can use drag and drop to insert images from your browser or local computer t
 
 ### Format text cell with toolbar buttons
 
-You can use the format buttons in the text cells toolbar to do common markdown actions. It includes bolding text, italicizing text, paragraph/headers through a dropdown, inserting code, inserting unordered list, inserting ordered list, inserting hyperlink, and inserting image from URL.
+You can use the format buttons in the text cells toolbar to do common markdown actions.
 
 :::image type="content" source="media\author-execute-notebook\format-text-toolbar.png" alt-text="Screenshot of the text formatting toolbar." lightbox="media\author-execute-notebook\format-text-toolbar.png":::
 
@@ -141,7 +140,7 @@ Supported undo cell operations:
 
 You can drag from the empty part of a cell and drop it to the desired position.
 
-![Animated GIF of drag and drop to move a cell.](media/author-execute-notebook/drag-drop-move-cell.gif)
+<!-- ![Animated GIF of drag and drop to move a cell.](media/author-execute-notebook/drag-drop-move-cell.gif) -->
 
 You can also move the selected cell using **Move up** and **Move down** on the ribbon.
 
@@ -157,25 +156,28 @@ You can also use [shortcut keys under command mode](#shortcut-keys-under-command
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide input** to collapse current cell's input. To expand it, Select the **Show input** while the cell is collapsed.
 
-![Animated GIF of collapsing cell input.](media/author-execute-notebook/collapse-cell-input.gif)
+<!-- ![Animated GIF of collapsing cell input.](media/author-execute-notebook/collapse-cell-input.gif) -->
 
 ### Collapse a cell output
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide output** to collapse current cell's output. To expand it, select the **Show output** while the cell's output is hidden.
 
 
-![Animated GIF of collapsing cell output.](media/author-execute-notebook/collapse-cell-output.gif)
+<!--![Animated GIF of collapsing cell output.](media/author-execute-notebook/collapse-cell-output.gif) -->
 
 ### Lock or freeze a cell
-Lock and freeze cell operation allow you to make cells read-only or stop code cells from being run on an individual cell basis.
 
-![Animated GIF of lock or freeze a cell.](media/author-execute-notebook/Lock-and-freeze-cell.gif)
+Lock and freeze cell operations allow you to make cells read-only or stop code cells from being run on an individual cell basis.
 
+![Animated GIF of lock or freeze a cell.](media/author-execute-notebook/lock-and-freeze-cell.gif)
+<!---
 ### Merge and Split cells
+
 You can use **Merge with previous cell** **Merge with next cell** to merge related cells conveniently.
-Select **Split cell** will help you split irrelevant statements to multiple cells.
+Select **Split cell** helps you split irrelevant statements to multiple cells.
 
 :::image type="content" source="media\author-execute-notebook\merge-split-cell.png" alt-text="Screenshot showing the entry of merge split cells." lightbox="media\author-execute-notebook\merge-split-cell.png":::
+-->
 
 ### Notebook contents
 
@@ -198,7 +200,7 @@ There are several ways to run the code in a cell.
 
 1. Hover on the cell you want to run and select the **Run Cell** button or press **Ctrl+Enter**.
 
-1. Use [Shortcut keys under command mode](#shortcut-keys-under-command-mode). Press **Shift+Enter** to run the current cell and select the cell below. Press **Alt+Enter** to run the current cell and insert a new cell below.
+1. Use [Shortcut keys under command mode](#shortcut-keys-under-command-mode). Press **Shift+Enter** to run the current cell and select the next cell. Press **Alt+Enter** to run the current cell and insert a new cell.
 
 ### Run all cells
 
@@ -216,14 +218,14 @@ Select the **Cancel All** button to cancel the running cells or cells waiting in
 
 ### Stop session
 
-**Stop session** will cancel the running and waiting cells and stop the current session, you will restart a brand new session if you click run button again.
+**Stop session** cancels the running and waiting cells and stops the current session, you can restart a brand new session if you click the run button again.
 
 :::image type="content" source="media\author-execute-notebook\cancel-all-stop-session.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\cancel-all-stop-session.png":::
 
 ### Notebook reference run
 
 Besides using [mssparkutils reference run API](microsoft-spark-utilities.md)
-You can also use ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. ```%run``` magic command supports nested calls but not support recursive calls. You will receive an exception if the statement depth is larger than **five**.  
+You can also use ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. ```%run``` magic command supports nested calls but not support recursive calls. You'll receive an exception if the statement depth is larger than **five**.  
 
 Example:
 ``` %run Notebook1 { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true,  "parameterString": "abc" } ```.
@@ -256,16 +258,16 @@ A step-by-step cell execution status is displayed beneath the cell to help you s
 
 The [!INCLUDE [product-name](../includes/product-name.md)] notebook is Spark based. Code cells are executed on the spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar appears to help you understand the job execution status. The number of tasks per each job or stage help you to identify the parallel level of your spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
 
-You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you useful suggestions to help refine and debug the code.
+You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you with useful suggestions to help refine and debug the code.
 
 :::image type="content" source="media\author-execute-notebook\spark-progress-details.png" alt-text="Screenshot of details of Spark jobs progress." lightbox="media\author-execute-notebook\spark-progress-details.png":::
 
-In **More actions**, you'll be able to easily navigate to the **Spark application details** page and **Spark web UI** page.
+In **More actions**, you can easily navigate to the **Spark application details** page and **Spark web UI** page.
 :::image type="content" source="media\author-execute-notebook\inline-monitor-more-actions.png" alt-text="Screenshot of details of more actions." lightbox="media\author-execute-notebook\inline-monitor-more-actions.png":::
 
 ### Secret redaction
 
-To prevent credentials accidentally leak when running notebooks, Fabric notebook support **Secret redaction** to replace the secret values that are displayed in the cell output with ```[REDACTED]```, Secret redaction is applicable for **Python**, **Scala** and **R**. 
+To prevent the credentials being accidentally leaked when running notebooks, Fabric notebook support **Secret redaction** to replace the secret values that are displayed in the cell output with ```[REDACTED]```, Secret redaction is applicable for **Python**, **Scala** and **R**. 
 
 :::image type="content" source="media\author-execute-notebook\secret-redaction.png" alt-text="Screenshot of secret redaction." lightbox="media\author-execute-notebook\secret-redaction.png":::
 
@@ -280,12 +282,10 @@ You can use familiar Ipython magic commands in Fabric notebooks. Review the foll
 >
 
 Available line magics:
-[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#notebook-reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), 
-%alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2,  
-%popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode. 
+[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#notebook-reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2, %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode. 
 
 
-Fabric notebook also support improved library management commands **%pip**, **%conda**, check [Manage Apache Spark libraries in Microsoft Fabric](library-management.md) for the usage.
+Fabric notebook also supports improved library management commands **%pip**, **%conda**, check [Manage Apache Spark libraries in Microsoft Fabric](library-management.md) for the usage.
 
 Available cell magics:
 [%%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%%capture](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-capture), [%%writefile](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-writefile), [%%sql](#use-multiple-languages), [%%pyspark](#use-multiple-languages), [%%spark](#use-multiple-languages), [%%csharp](#use-multiple-languages), [%%html](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-html), [%%bash](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-bash), [%%markdown](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-markdown), [%%perl](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-perl), [%%script](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-script), [%%sh](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-sh).
@@ -301,13 +301,13 @@ You can also build out more custom magic commands to meet your specific needs as
 :::image type="content" source="media\author-execute-notebook\custom-magic-define.png" alt-text="Screenshot of define a custom magic." lightbox="media\author-execute-notebook\custom-magic-define.png":::
 
 
-2. In another notebook referrence the *"MyLakehouseModule"* and its magic commands, by this way you can orgnize your project with notebooks that using different languages conveniently.
+2. In another notebook referrence the *"MyLakehouseModule"* and its magic commands, by this way you can organize your project with notebooks that using different languages conveniently.
 
 :::image type="content" source="media\author-execute-notebook\consume-custom-magic.png" alt-text="Screenshot of use custom magic." lightbox="media\author-execute-notebook\consume-custom-magic.png":::
 
 ## IPython Widgets
 
-Widgets are eventful python objects that have a representation in the browser, often as a control like a slider, textbox etc. IPython Widgets only works in Python environment, it's not supported in other languages (e.g. Scala, SQL, R) yet.
+IPython Widgets are eventful python objects that have a representation in the browser. You can use IPython Widgets as low-code controls (for example, slider, text box) in your notebook just like the Jupyter notebook, currently it only works in Python context.
 
 ### To use IPython Widget
 
@@ -432,7 +432,7 @@ Similar to Jupyter Notebooks, [!INCLUDE [product-name](../includes/product-name.
 
    :::image type="content" source="media\author-execute-notebook\cell-command-mode.png" alt-text="Screenshot of a cell in command mode." lightbox="media\author-execute-notebook\cell-command-mode.png":::
 
-1. Edit mode is indicated by a text cursor prompting you to type in the editor area. When a cell is in edit mode, you can type into the cell. Enter edit mode by pressing Enter or using the mouse to select on a cell's editor area.
+1. Edit mode can be indicated from a text cursor that prompting you to type in the editor area. When a cell is in edit mode, you can type into the cell. Enter edit mode by pressing Enter or using the mouse to select on a cell's editor area.
 
    :::image type="content" source="media\author-execute-notebook\cell-edit-mode.png" alt-text="Screenshot of a cell in edit mode." lightbox="media\author-execute-notebook\cell-edit-mode.png":::
 

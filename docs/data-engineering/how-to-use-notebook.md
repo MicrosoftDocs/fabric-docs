@@ -39,6 +39,7 @@ You can import one or more existing notebooks from your local computer to a [!IN
 :::image type="content" source="media\how-to-use-notebook\new-menu-notebook-options.png" alt-text="Screenshot showing where to find notebook options on the New menu.":::
 
 ## Export a notebook
+
 You can Export your notebook to other standard formats. Synapse notebook supports to be exported into: 
 
 + Standard Notebook file(.ipynb) that is usually used for Jupyter notebooks. 
@@ -50,11 +51,13 @@ You can Export your notebook to other standard formats. Synapse notebook suppo
 
 ## Save a notebook
 
-In [!INCLUDE [product-name](../includes/product-name.md)], a notebook will by default save automatically after you open and edit it; you don't need to worry about losing code changes. You can also use **Save a copy** to clone another copy in the current workspace.
+In [!INCLUDE [product-name](../includes/product-name.md)], a notebook will by default save automatically after you open and edit it; you don't need to worry about losing code changes. You can also use **Save a copy** to clone another copy in the current workspace or to another workspace.
+
+:::image type="content" source="media\how-to-use-notebook\save-copy.png" alt-text="Screenshot showing where to save a copy.":::
 
 If you prefer to save a notebook manually, you can also switch to "Manual save" mode to have a "local branch" of your notebook artifact, and use **Save** or **CTRL+s** to save your changes. 
 
-:::image type="content" source="media\how-to-use-notebook\manual-save.png" alt-text="Screenshot showing where to witch manual save.":::
+:::image type="content" source="media\how-to-use-notebook\manual-save.png" alt-text="Screenshot showing where to switch manual save.":::
 
 ## Connect lakehouses and notebooks
 

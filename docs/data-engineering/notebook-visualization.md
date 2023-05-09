@@ -29,7 +29,7 @@ To access the chart options:
 1. The output of _%%sql_ magic commands appear in the rendered table view by default. You can also call _display(df)_ on Spark DataFrames or Resilient Distributed Datasets (RDD) function to produce the rendered table view.
 1. Once you have a rendered table view, switch to the **Chart** view.
 
-![Animated GIF of chart view.](media\notebook-visualization\chart-view.gif)
+    ![Animated GIF of chart view.](media\notebook-visualization\chart-view.gif)
 
 1. You can now customize your visualization by specifying the following values:
 
