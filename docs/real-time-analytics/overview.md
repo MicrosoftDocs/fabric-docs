@@ -22,7 +22,8 @@ Real-Time Analytics is a fully managed big data analytics platform optimized for
 
 ## What makes Real-Time Analytics unique?
 
-* **Easily ingest** data from any source, in any data format.
+* **Capture, transform, and route** real-time events to various destinations, including customer apps.
+* **Easily ingest or load** data from any source, in any data format.
 * Run analytical queries **directly on raw data** without the need to build complex data models or create scripting to transform the data.
 * Import data with **by-default streaming** that provides high performance, low latency, high freshness data analysis.
 * Imported data undergoes **default partitioning** - both time and hash-based partitioning, and by-default **indexing**.
@@ -38,6 +39,7 @@ If any one of these questions describes your data needs, Real-Time Analytics is 
 > [!div class="checklist"]
 >
 > * Do I need high freshness from data ingestion to query?
+> * Do I want to transform streaming data?
 > * Do I have a service that needs to access data with low query latency (in a matter of seconds)?
 > * Does I need to search or access data in different formats, like structured data, semi-structured data (including complicated data such as JSON or other arrays), or unstructured data (for example, free text)?
 > * Do I want the ability to query large amounts of data?
@@ -50,9 +52,9 @@ The types of industries that benefit from data analysis in Real-Time Analytics i
 
 The main items available in Real-Time Analytics include:
 
-* [Eventstream](event-streams/overview.md) for capturing, transforming, and routing real-time events to various destinations with a no-code experience.
+* [Eventstream](event-streams/overview.md) for capturing, transforming, and routing real-time events to various destinations with a no-code experience. The Eventstream item consists of event data sources, routing destinations, and the event processor when the transformation is needed.
 * A [KQL database](create-database.md) for data storage and management. Data loaded into a KQL database is reflected in OneLake by activating data copy and then creating a OneLake shortcut to expose the data to other Fabric experiences.
-* A [KQL Queryset](kusto-query-set.md) to run queries, view, and manipulate query results on data. The KQL Queryset allows you to save queries for future use, export and share queries with others, and includes the option to generate a Power BI report.
+* A [KQL queryset](kusto-query-set.md) to run queries, view, and manipulate query results on data. The KQL queryset allows you to save queries for future use, export and share queries with others, and includes the option to generate a Power BI report.
 
 See how these items work together in the end-to-end streaming data consumption and analysis scenario: [Real-Time Analytics Tutorial- Introduction](tutorial-introduction.md)
 
