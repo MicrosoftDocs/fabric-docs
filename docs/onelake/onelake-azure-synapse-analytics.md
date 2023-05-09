@@ -84,7 +84,7 @@ Follow these steps to use SQL serverless to read data from OneLake from Azure Sy
 
    :::image type="content" source="media\onelake-azure-synapse-analytics\abfs-path.png" alt-text="Screenshot showing where to copy the ABFS path." lightbox="media\onelake-azure-synapse-analytics\abfs-path.png":::
 
-1. Open your Synapse workspace in (Synapse Studio)[https://web.azuresynapse.net/workspaces].
+1. Open your Synapse workspace in [Synapse Studio](https://web.azuresynapse.net/workspaces).
 
 1. In the query editor, enter the following query, replacing `ABFS_PATH_HERE` with the path you copied earlier.
 
