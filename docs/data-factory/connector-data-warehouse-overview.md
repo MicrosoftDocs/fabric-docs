@@ -25,8 +25,7 @@ This Data Warehouse connector is supported in Data Factory for [!INCLUDE [produc
 | **GetMetadata activity** | None |User Auth |
 | **Script activity** | None |User Auth |
 | **Stored Procedure Activity** | None |User Auth |
-| **Dataflow Gen2 (source/destination)** |  |  |
 
-## Next Steps
+## Next steps
 
 [How to configure Data Warehouse in a copy activity](connector-data-warehouse-copy-activity.md)

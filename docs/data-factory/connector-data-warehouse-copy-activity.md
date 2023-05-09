@@ -8,13 +8,13 @@ ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
-# How to configure in Copy data in Data Warehouse
+# How to configure the Data Warehouse connector for the copy activity in Data Factory in Microsoft Fabric
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Data Warehouse.
+This article outlines how to use the copy activity in data pipeline to copy data from and to a Data Warehouse.
 
 ## Supported configuration
 
@@ -43,21 +43,21 @@ The following properties are **required**:
 - **Data Warehouse**: Select an existing **Data Warehouse** from the workspace.
 - **Use query**: Select **Table**, **Query** or **Stored procedure**.
 
-  - If select **Table**, choose an existing table from the table list or specify table name as source.
+  - If **Table** was selected, choose an existing table from the table list, or specify a table name manually by checking the Edit box.
 
     :::image type="content" source="./media/connector-data-warehouse/table.png" alt-text="Screenshot showing use query of table.":::
 
-  - If select **Query**, use the custom SQL query to read data.
+  - If **Query** was selected, use the custom SQL query editor to write a SQL query that retrieves the source data.
 
     :::image type="content" source="./media/connector-data-warehouse/query.png" alt-text="Screenshot showing use query of query.":::
 
-  - If select **Stored procedure**, choose an existing stored procedure from the drop-down list or specify stored procedure name as source.
+  - If **Stored procedure** was selected, choose an existing stored procedure from the drop-down list, or specify stored procedure name as source by checking the Edit box.
 
     :::image type="content" source="./media/connector-data-warehouse/stored-procedure.png" alt-text="Screenshot showing use query of stored procedure.":::
 
 Under **Advanced**, you can specify the following fields:
 
-- **Query timeout (minutes)**: Timeout for query command execution, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes).
+- **Query timeout (minutes)**: Timeout for query command execution, with the default of 120 minutes. If this property is set, the allowed values are in the format of a timespan, such as "02:00:00" (120 minutes).
 - **Isolation level**: Specify the transaction locking behavior for the SQL source.
 - **Partition option**: Specify the data partitioning options used to load data from Data Warehouse, you can select **None** or **Dynamic range**.
   If you select **Dynamic range**: Range partition parameter(`?AdfDynamicRangePartitionCondition`) is needed when using query with parallel enabled. Sample query: `SELECT * FROM <TableName> WHERE ?AdfDynamicRangePartitionCondition`.
@@ -87,13 +87,13 @@ The following properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Copy command settings**: Specify the copy command properties.
+- **Copy command settings**: Specify copy command properties.
 
     :::image type="content" source="./media/connector-data-warehouse/default-values.png" alt-text="Screenshot showing default values of copy command settings.":::
 
 - **Table options**: Specify whether to automatically create the destination table if not exists based on the source schema. You can select **None** or **Auto create table**.
 - **Pre-copy script**: Specify a SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.
-- **Write batch timeout**: The wait time for the batch insert operation to finish before it times out. The allowed value is timespan. The default value is "00:30:00" (30 minutes).
+- **Write batch timeout**: The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).
 - **Disable performance metrics analytics**: The service collects metrics for copy performance optimization and recommendations. If you're concerned with this behavior, turn off this feature.
 
 If your source data is in **Azure Blob Storage** or **Azure Data Lake Storage Gen2**, and the format is COPY statement compatible, copy activity directly invokes COPY command to let Data Warehouse to pull the data from source.
@@ -135,29 +135,32 @@ To learn more information about copy activity in Data Warehouse, see the followi
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**Workspace**|Yes|/|
-|**Workspace data store type**| Data Warehouse|\<Data Warehouse> |Yes|type|
-|**Data Warehouse** |The workspace that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
-|**Use query** |the type properties that you want to use |**Tables**<br>**Query**<br>**Stored procedure**|No|typeProperties:<br> schema  table<br>sqlReaderQuery<br>sqlReaderStoredProcedureName|
+|**Data store type**|The way to read data from Data Warehouse.|**Workspace**|Yes|/|
+|**Workspace data store type**|The section to select your workspace data store type.|\<Data Warehouse> |Yes|type|
+|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
+|**Use query** |the type properties that you want to use |•Tables<br>•Query<br>•Stored procedure|No|•typeProperties:<br> schema<br>  table<br>•sqlReaderQuery<br>•sqlReaderStoredProcedureName|
 |**Query timeout (minutes)**|The timeout for query command execution.|timespan |No |queryTimeout|
 |**Isolation level** |The transaction locking behavior for source. |•None<br>•Snapshot|No |isolationLevel|
 |**Partition option**|The data partitioning options used to load data from Data Warehouse.|•None<br>•Dynamic range|No|partitionOption|
+|**Partition column name**|your partition column name|\<partition column name>|No|partitionColumnName|
+|**Partition upper bound**|The maximum value of the partition column for partition range splitting.|\<partition upper bound>|No|partitionUpperBound|
+|**Partition lower bound**|The minimum value of the partition column for partition range splitting.|\<partition lower bound>|No|partitionLowerBound|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value.| •Name<br>•Value|No |additionalColumns:<br>- name<br>- value|
 
 ### Destination information
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**Workspace**|Yes|/|
-|**Workspace data store type**|Data Warehouse|\<your workspace data store type> |Yes|type|
-|**Data Warehouse** |The workspace that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
-|**Table** |Choose an existing table from the table list or specify a table name as destination.|\<name of your destination table>|Yes|schema <br> table|
-|**Copy command settings**|A group of properties|\<default values> |No |copyCommandSettings:<br>defaultValues:<br>columnName<br>defaultValue|
-|**Table option**|Whether to automatically create the destination table if not exists based on the source schema.|•None<br>•Auto create table|No|tableOption|
+|**Data store type**|The way to read data from Data Warehouse.|**Workspace**|Yes|/|
+|**Workspace data store type**|The section to select your workspace data store type.|\<your workspace data store type> |Yes|type|
+|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
+|**Table** |The destination table to write data.|\<name of your destination table>|Yes|schema <br> table|
+|**Copy command settings**|A group of properties|Default value:<br>•Column<br> •Value|No |copyCommandSettings:<br>defaultValues:<br>•columnName<br>•defaultValue|
+|**Table option**|Whether to automatically create the destination table if not exists based on the source schema.|•None<br>•Auto create table|No|tableOption:<br>•autoCreate|
 |**Pre-copy script** |Clean up the preloaded data.|\<pre-copy script>|No|preCopyScript|
 |**Write batch timeout** |Wait time for the batch insert operation to finish before it times out.| timespan |No |writeBatchTimeout|
 |**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br> true or false|
 
-## Next Steps
+## Next steps
 
 [Data Warehouse connector overview](connector-data-warehouse-overview.md)
