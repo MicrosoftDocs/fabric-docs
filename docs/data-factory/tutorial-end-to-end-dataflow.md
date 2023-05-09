@@ -14,7 +14,7 @@ This module takes about 25 minutes to create a dataflow, apply transformations, 
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-With the raw data loaded into your Bronze Lakehouse table from the last module, you can now prepare that data and enrich it by combining it with another table that contains discounts for each vendor and their trips during a particular day. This final Gold Lakehouse table will be loaded and ready for consumption.
+With the raw data loaded into your Bronze Lakehouse table from the last module, you can now prepare that data and enrich it by combining it with another table that contains discounts for each vendor and their trips during a particular day. This final Gold Lakehouse table is loaded and ready for consumption.
 
 The high-level steps in the dataflow are as follows:
 
@@ -32,7 +32,7 @@ The high-level steps in the dataflow are as follows:
 
 1. From the new dataflow menu, select **Get data**, and then **More...**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/get-data-button.png" alt-text="Screenshot showing the datalow menu with Get data button highlighted and and the More... option highlighted from its menu.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/get-data-button.png" alt-text="Screenshot showing the Datalow menu with Get data button highlighted and the More... option highlighted from its menu.":::
 
 1. Search for and select the **Lakehouse** connector.
 
@@ -46,7 +46,7 @@ The high-level steps in the dataflow are as follows:
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/browse-and-choose-nyc-taxi-lakehouse-table.png" alt-text="Screenshot showing the Lakehouse browser with the workspace, lakehouse, and table created with the Copy activity in module 1.":::
 
-1. _(Optional)_ Once your canvas is populated with the data, you can set **column profile** information, as this will be useful for data profiling. You can apply the right transformation and target the right data values based on it.
+1. _(Optional)_ Once your canvas is populated with the data, you can set **column profile** information, as this is useful for data profiling. You can apply the right transformation and target the right data values based on it.
 
    To do this, select **Options** from the ribbon pane, then select the first three options under **Column profile**, and then select **OK**.
 
@@ -61,7 +61,7 @@ The high-level steps in the dataflow are as follows:
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-columns-button.png" alt-text="Screenshot showing the Choose columns button on the Home tab of the dataflow editor.":::
 
-1. _(Optional)_ On the **Choose columns** dialog, deselect some columns listed below, then select **OK**.
+1. _(Optional)_ On the **Choose columns** dialog, deselect some columns listed here, then select **OK**.
 
    - lpepDropoffDatetime
    - puLocationId
@@ -86,9 +86,9 @@ The high-level steps in the dataflow are as follows:
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/date-filters.png" alt-text="Screenshot showing the selection of the Date filters option in the column sort and format dropdown.":::
 
-1. In the **Filter rows** dialog, select dates between January 1, 2015, and Jan 31, 2015, then select **OK**.
+1. In the **Filter rows** dialog, select dates between January 1, 2015, and January 31, 2015, then select **OK**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/filter-dates-between.png" alt-text="Screenshot showing the selection of the dates in January, 2015.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/filter-dates-between.png" alt-text="Screenshot showing the selection of the dates in January 2015.":::
 
 ## Connect to a CSV file containing discount data
 
@@ -142,7 +142,7 @@ Now, with the data from the trips in place, we want to load the data that contai
 
 ## Combine trips and discounts data
 
-The next step is to combine both tables into a single table that has the discount that should be applied to the trip, as well as the adjusted total. 
+The next step is to combine both tables into a single table that has the discount that should be applied to the trip, and the adjusted total. 
 
 1. First, toggle the **Diagram view** button so you can see both of your queries.
 
@@ -152,23 +152,23 @@ The next step is to combine both tables into a single table that has the discoun
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-queries-as-new.png" alt-text="Screenshot showing the Merge queries as new selection for the nyc_taxi query.":::
 
-1. On the **Merge** dialog, select **Generated-NYC-Taxi-Green-Discounts** from the **Right table for merge** drop down, and then select the "lightbulb" icon on the top right of the dialog to see the suggested mapping of columns between the two tables.
+1. On the **Merge** dialog, select **Generated-NYC-Taxi-Green-Discounts** from the **Right table for merge** drop down, and then select the "light bulb" icon on the top right of the dialog to see the suggested mapping of columns between the two tables.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-dialog.png" alt-text="Screenshot showing the configuration of the Merge dialog with suggested column mappings displayed.":::
 
-   Choose each suggested column mappings, one at a time, mapping the VendorID and date columns from both tables. When both mappings are added, the matched column headers are highlighted in each table.
+   Choose each of the two suggested column mappings, one at a time, mapping the VendorID and date columns from both tables. When both mappings are added, the matched column headers are highlighted in each table.
 
 1. A message is shown asking you to allow combining data from multiple data sources to view the results. Select **OK** on the **Merge** dialog.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/allow-combining-data.png" alt-text="Screenshot showing the request to approve combining data from multiple data sources, with the OK button highlighted.":::
 
-1. In the table area, you will initially see a warning that "The evaluation was cancelled because combining data from multiple sources may reveal data from one source to another. Click continue if the possibility of revealing data is okay."  Select **Continue** to display the combined data.
+1. In the table area, you'll initially see a warning that "The evaluation was canceled because combining data from multiple sources may reveal data from one source to another. Select continue if the possibility of revealing data is okay."  Select **Continue** to display the combined data.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/combine-data-from-multiple-data-sources-warning.png" alt-text="Screenshot showing the warning about combining data from multiple data sources with the Continue button highlighted.":::
 
-1. Notice how a new query was created in Diagram view showing the relationship of the new Merge query with the two queries you previously created. Looking at the table pane of the editor, scroll to the right of the Merge query column list to see a new column with table values is present. This is the "Generated NYC Taxi-Green-Discounts" column, and its type is **[Table]**. In the column header there is an icon with two arrows going in opposite directions, allowing you to select columns from the table. Deselect all of the columns except **Discount**, and then select **OK**.
+1. Notice how a new query was created in Diagram view showing the relationship of the new Merge query with the two queries you previously created. Looking at the table pane of the editor, scroll to the right of the Merge query column list to see a new column with table values is present. This is the "Generated NYC Taxi-Green-Discounts" column, and its type is **[Table]**. In the column header there's an icon with two arrows going in opposite directions, allowing you to select columns from the table. Deselect all of the columns except **Discount**, and then select **OK**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-query-column-selections.png" lightbox="media/tutorial-end-to-end-dataflow/merge-query-column-selections.png" alt-text="Screenshot showign the merged query with the column selection menu displayed for the newly generated column Generated-NYC-Taxi-Green-Discounts.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-query-column-selections.png" lightbox="media/tutorial-end-to-end-dataflow/merge-query-column-selections.png" alt-text="Screenshot showing the merged query with the column selection menu displayed for the newly generated column Generated-NYC-Taxi-Green-Discounts.":::
 
 1. With the discount value now at the row level, we can create a new column to calculate the total amount after discount. To do so, select the **Add column** tab at the top of the editor, and choose **Custom column** from the **General** group.
 
@@ -184,9 +184,9 @@ The next step is to combine both tables into a single table that has the discoun
 
 1. Select the newly create **TotalAfterDiscount** column and then select the **Transform** tab at the top of the editor window. On the **Number column** group, select the **Rounding** drop down and then choose **Round...**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/round-column.png" alt-text="Screenshot showing the Round... optionon the Transform tab of the editor window.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/round-column.png" alt-text="Screenshot showing the Round... option on the Transform tab of the editor window.":::
 
-1. On the **Round dialog** enter 2 for the number of decimal places and then select **OK**.
+1. On the **Round dialog**, enter 2 for the number of decimal places and then select **OK**.
    
    :::image type="content" source="media/tutorial-end-to-end-dataflow/round-dialog.png" alt-text="Screenshot showing the Round dialog with 2 for the number of decimal places and the OK button highlighted.":::
 
@@ -216,7 +216,7 @@ With the output query now fully prepared and with data ready to output, we can d
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-destination-settings-dialog.png" alt-text="Screenshot showing the Choose destination settings dialog with the Save settings button highlighted.":::
 
-1. Back in the main editor window, confirm that you see your output desintation on the **Query settings** pane for the **Output** table, and then select **Publish**.
+1. Back in the main editor window, confirm that you see your output destination on the **Query settings** pane for the **Output** table, and then select **Publish**.
 
 1. _(Optional)_ On the workspace page, you can rename your dataflow by selecting the ellipsis to the right of the dataflow name that appears after you select the row, and choosing **Properties**.
 

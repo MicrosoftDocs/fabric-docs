@@ -48,7 +48,7 @@ Select **Add pipeline activity**, and then choose **Copy data** from the display
 
 1. Select the **Source** tab in the properties area below the pipeline canvas, and then select **+ New** to create a new data source. (If you don't see the **Source** tab, you might need to first select the **Copy data** activity on the pipeline canvas area.)
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/create-new-data-source.png" alt-text="Screenshot showing the Source settings of the Copy data activity with the + New button higlighted.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/create-new-data-source.png" alt-text="Screenshot showing the Source settings of the Copy data activity with the + New button highlighted.":::
 
 1. Select **Azure Blob Storage**, and then **Continue**.
 
@@ -65,7 +65,7 @@ Select **Add pipeline activity**, and then choose **Copy data** from the display
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-source-settings.png" alt-text="Screenshot showing the New connection dialog with the connection settings to be configured for the tutorial.":::
 
-1. On the **Source** tab for the new data source you just created, select the **File path** option for **File path type**, entering **sample** for the top level path, and then selecting the **Browse** dropdown to select **From specified path**.
+1. On the **Source** tab for the new data source you created, select the **File path** option for **File path type**, entering **sample** for the top level path, and then selecting the **Browse** dropdown to select **From specified path**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/data-source-configuration-source-tab.png" alt-text="Screenshot showing the data-source configuration on the Source tab with the specified path setting applied and the Browse dropdown selected.":::
 
@@ -75,7 +75,7 @@ Select **Add pipeline activity**, and then choose **Copy data** from the display
 
 1. Select **Parquet** for the **File format** dropdown, and then select **Preview data**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-parquet-file-format.png" alt-text="Screenshot showing the selection of Parquet for File format, with the Preview data button higlighted.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-parquet-file-format.png" alt-text="Screenshot showing the selection of Parquet for File format, with the Preview data button highlighted.":::
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/preview-sample-data.png" alt-text="Screenshot showing the Preview data for the selected NYC-Taxi-Anonymous data source connection.":::
 

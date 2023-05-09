@@ -10,11 +10,11 @@ ms.date: 05/23/2023
 
 # Module 3: Automate and send notifications with Data Factory
 
-You will complete this module in 10 minutes to send an email notifying you when all the jobs in a pipeline are complete, and configure it to run on a scheduled basis.
+You'll complete this module in 10 minutes to send an email notifying you when all the jobs in a pipeline are complete, and configure it to run on a scheduled basis.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-In this module you will learn how to:
+In this module you learn how to:
 - Add an Office 365 Outlook activity to send the output of a Copy activity by email.
 - Add schedule to run the pipeline.
 - _(Optional)_ Add a dataflow activity into the same pipeline.
@@ -33,7 +33,7 @@ We use the pipeline you created in [Module 1: Create a pipeline in Data Factory]
 
 1. Select the email address you want to use.
 
-   :::image type="content" source="media/tutorial-end-to-end-integration/pick-your-email-account.png" alt-text="Screenshot showing the PIck an account dialog.":::
+   :::image type="content" source="media/tutorial-end-to-end-integration/pick-your-email-account.png" alt-text="Screenshot showing the Pick an account dialog.":::
 
    > [!NOTE]
    > The service doesn't currently support personal email. You must use an enterprise email address.
