@@ -55,8 +55,6 @@ productDirectory:
           text: Navigate the Fabric portal
         - url: get-started/workspaces.md
           text: Workspaces in Fabric
-        - url: get-started/onelake-data-hub.md
-          text: Find data in the OneLake data hub
         - url: get-started/index.yml
           text: See more
 
@@ -87,6 +85,8 @@ productDirectory:
           text: What are shortcuts?
         - url: onelake/create-lakehouse-onelake.md
           text: Create a lakehouse with OneLake
+        - url: onelake/onelake-azure-synapse-analytics.md
+          text: OneLake and Azure Synapse Analytics integration
         - url: onelake/index.yml
           text: See more
 
@@ -101,6 +101,8 @@ productDirectory:
           text: Create your first pipeline
         - url: data-factory/create-first-dataflow-gen2.md
           text: Create your first dataflow?
+        - url: data-factory/connector-overview.md
+          text: Connectors
         - url: data-factory/index.yml
           text: See more
 
@@ -127,6 +129,8 @@ productDirectory:
           text: What is Data science?
         - url: data-science/machine-learning-experiment.md
           text: Machine learning experiment
+        - url: data-science/use-ai-samples.md
+          text: Use end-to-end AI samples
         - url: data-science/index.yml
           text: See more
 
