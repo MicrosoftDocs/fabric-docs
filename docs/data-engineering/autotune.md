@@ -113,9 +113,9 @@ Microsoft follows Responsible AI Standard and this transparency note aims to pro
 
 ### Intended uses of the Autotune
 The primary goal of Autotune is to optimize the performance of Apache Spark workloads by automating the process of Apache Spark configuration tuning. The system is designed to be used by data engineers, data scientists, and other professionals who are involved in the development and deployment of Apache Spark workloads. The intended uses of the Autotune include:
-1. Automatic tuning of Apache Spark configurations to minimize workload execution time to accelerate development process
-1. Reducing the manual effort required for Apache Spark configuration tuning
-1. Leveraging historical data execution from workloads to iteratively learn optimal configurations
+* Automatic tuning of Apache Spark configurations to minimize workload execution time to accelerate development process
+* Reducing the manual effort required for Apache Spark configuration tuning
+* Leveraging historical data execution from workloads to iteratively learn optimal configurations
 
 ### Evidence that the Autotune is fit for purpose
 To ensure that Autotune meets the desired performance standards and is fit for its intended use, we have conducted rigorous testing and validation. The evidence includes:
