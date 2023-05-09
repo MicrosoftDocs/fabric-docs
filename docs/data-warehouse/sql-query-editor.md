@@ -119,15 +119,11 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - In SQL query editor, when you select **Run** button, you are submitting an independent batch request to execute. The SQL query editor does not support `sp_set_session_context`. Each **Run** action in the SQL query editor is a batch request, and a session only exists per batch. Each execution of code in the same query window will run in a different batch and session. 
 
-   For example, when independently executing transaction statements, session context is not retained. In the following screenshot, `BEGIN TRAN` was executed in the first request, but since the second request was executed in a different session, there is no transaction to commit, resulting into the failure of commit/rollback operation. If the SQL batch submitted does not include a COMMIT TRAN, the changes applied after BEGIN TRAN will NOT commit.
+   For example, when independently executing transaction statements, session context is not retained. In the following screenshot, `BEGIN TRAN` was executed in the first request, but since the second request was executed in a different session, there is no transaction to commit, resulting into the failure of commit/rollback operation. If the SQL batch submitted does not include a COMMIT TRAN, the changes applied after `BEGIN TRAN` will not commit.
 
-   :::image type="content" source="media\sql-query-editor\transaction-run-error.png" alt-text="Screenshot showing independent run of transactions failed in SQL query editor" lightbox="media\sql-query-editor\transaction-run-error.png":::
+   :::image type="content" source="media\sql-query-editor\transaction-run-error.png" alt-text="Screenshot showing independent run of transactions failed in SQL query editor." lightbox="media\sql-query-editor\transaction-run-error.png":::
 
-   For example, when you define temp table in the first batch request and try to use it in subsequent batch runs in the same query tab, it throws error.
-
-   :::image type="content" source="media\sql-query-editor\temp-table-run-error.png" alt-text="Screenshot showing multiple runs of temp table failed in SQL query editor" lightbox="media\sql-query-editor\temp-table-run-error.png":::
-
-   In the SQL query editor, the `GO` SQL command creates a new independent batch in a new session.
+   Similarly, in the SQL query editor, the `GO` SQL command creates a new independent batch in a new session.
 
 - The following table summarizes the expected behavior will not match with SQL Server Management Studio/Azure Data Studio:
 
