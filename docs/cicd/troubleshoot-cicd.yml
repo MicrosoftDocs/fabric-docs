@@ -26,13 +26,13 @@ summary: |
   | **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/understand-the-deployment-process.md#deployed-items) |
   | **Datasets** |   | [dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
 
-  [General questions](#general-questions)
-  [Licensing](#licensing)
-  [Git integration](#git-integration)
-  [Deployment pipelines](#deployment-pipelines)
-  [Paginated reports](#paginated-reports)]
-  [Dataflows](#dataflows)
-  [Datamarts](#datamarts)
+  [General questions](#general-questions)  
+  [Licensing](#licensing)  
+  [Git integration](#git-integration)  
+  [Deployment pipelines](#deployment-pipelines)  
+  [Paginated reports](#paginated-reports)  
+  [Dataflows](#dataflows)  
+  [Datamarts](#datamarts)  
   [Permissions](#permissions)
   [Rules](#rules)
 
