@@ -56,7 +56,7 @@ Learn more about this feature [here](dataflows-gen2-overview.md).
 
 ### Improved refresh history and monitoring
 
-With Dataflow Gen2, we introduce a new way for you to monitor your dataflow refreshes. We integrated support for [Monitor Hub](../placeholder.md) and give our [Refresh History](./dataflows-gen2-monitor.md) experience a major upgrade.
+With Dataflow Gen2, we introduce a new way for you to monitor your dataflow refreshes. We integrate support for [Monitoring Hub](monitoring-hub-pipeline-runs.md) and give our [Refresh History](./dataflows-gen2-monitor.md) experience a major upgrade.
 
 :::image type="content" source="./media/dataflows-gen2-monitor/refresh-details.png" alt-text="Screenshot showing the details of a refresh status.":::
 
@@ -74,11 +74,11 @@ With Dataflow Gen2, we introduce a worry free experience by removing the need fo
 
 ### Fast copy
 
-Fast copy allows you to apply the speed and agility of pipeline copy activity with the simple use of dataflows. We automatically detect if the data size is significant enough to use a data pipeline copy activity. Learn more about this feature [here](../placeholder.md).
+Fast copy allows you to apply the speed and agility of pipeline copy activity with the simple use of dataflows. We automatically detect if the data size is significant enough to use a data pipeline copy activity.
 
 ### High scale compute
 
-With Dataflow Gen2, we introduce a new feature that uses Lakehouse compute to improve performance for all your dataflows. The following section shows an architecture overview how this works. Learn more about this feature [here](../placeholder.md).
+With Dataflow Gen2, we introduce a new feature that uses Lakehouse compute to improve performance for all your dataflows. The following section shows an architecture overview how this works.
 
 ## Architecture changes from Gen1 to Gen2
 

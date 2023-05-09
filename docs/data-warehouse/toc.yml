@@ -106,9 +106,7 @@ items:
     - name: Primary, foreign, and unique keys
       href: table-constraints.md
     - name: Transactions
-      href: transactions.md
-    - name: Limitations and known issues
-      href: limitations.md      
+      href: transactions.md 
   - name: Performance
     items:
     - name: Statistics
@@ -123,4 +121,5 @@ items:
     items:
     - name: Troubleshooting your Warehouse
       href: troubleshoot-synapse-data-warehouse.md
-  
+    - name: Limitations and known issues
+      href: limitations.md      
