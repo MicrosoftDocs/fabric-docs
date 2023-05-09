@@ -1,19 +1,20 @@
 ---
 title: R library management
-description: Learn how to manage R libraries.
+description: How to manage R libraries.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/13/2023
+ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
 # R library management
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Libraries provide reusable code that you might want to include in your programs or projects for [!INCLUDE [product-name](../includes/product-name.md)] Spark.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] supports an R runtime with many popular open-source R packages, including TidyVerse, preinstalled. When a Spark instance starts, these libraries are included automatically and available to be used immediately in notebooks or Spark job definitions. For a full list of libraries, see [Apache Spark version support]().
 
@@ -38,12 +39,16 @@ Summarizing the current available R library management behaviors:
 |R Feed (CRAN)|Not Supported| Supported|
 |R Custom |Supported| Supported|
 
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
 
 ## Workspace-level R library management 
 
 Manage your custom libraries at the workspace-level in workspace settings. Currently R supports only custom libraries in the workspace settings.
 
-1. Sign in to [[!INCLUDE [product-name](../includes/product-name.md)]](https://fabric.microsoft.com/)
+
 1. Select your workspace.
 1. Select **Workspace settings** at the top of the page.
 
@@ -229,4 +234,5 @@ Learn more about the R functionalities:
 
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [Create R visualization](./r-visualization.md)

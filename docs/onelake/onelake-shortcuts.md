@@ -6,7 +6,7 @@ ms.author: trolson
 author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: conceptual
-ms.date: 03/24/2023
+ms.date: 05/23/2023
 ---
 
 # OneLake shortcuts
@@ -23,7 +23,7 @@ Shortcuts are objects in OneLake that point to other storage locations.  The loc
 
 ## Where can I create shortcuts?
 
-Shortcuts can be created both in Lakehouses and KQL DBs.  Furthermore, the shortcuts created within these items can point to other OneLake locations, ADLS Gen2 or Amazon S3 storage accounts.
+Shortcuts can be created both in Lakehouses and KQL Databases.  Furthermore, the shortcuts created within these items can point to other OneLake locations, ADLS Gen2 or Amazon S3 storage accounts.
 
 ### Lakehouse
 
@@ -80,7 +80,6 @@ external_table('MyShortcut')
 Power BI datasets can be created for Lakehouses containing shortcuts in the tables section of the Lakehouse.  When the dataset runs in direct-lake mode, Analysis Services can read data directly from the shortcut.
 
 ### Non-Fabric
-
 Applications and services outside of Fabric can also access shortcuts through the OneLake API.  OneLake supports a subset of the ADLS Gen2 and Blob storage APIs.  To learn more about the OneLake API, see [OneLake access with APIs](onelake-access-api.md).
 
 ```HTTP

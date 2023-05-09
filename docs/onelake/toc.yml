@@ -35,5 +35,5 @@ items:
     href: onelake-azure-hdinsight.md
 - name: Secure data
   href: onelake-security.md
-- name: File explorer
+- name: OneLake file explorer for Windows
   href: onelake-file-explorer.md

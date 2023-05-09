@@ -4,7 +4,7 @@ description: Learn how high availability, failover, and disaster recovery work i
 author: paulinbar
 ms.author: painbar
 ms.topic: concept
-ms.date: 02/27/2023
+ms.date: 05/23/2023
 ---
 
 # High availability, failover, and disaster recovery
@@ -17,5 +17,4 @@ A few examples of using recovery in specific scenarios.
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Private endpoints](security-private-links.md)
+[Service tags](security-service-tags.md)

@@ -4,10 +4,13 @@ description: Learn how to track user activities in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.date: 04/12/2023
+ms.service: azure
+ms.date: 05/23/2023
 ---
 
 # Track user activities in Fabric
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Knowing who is taking what action on which item in Fabric can be critical in helping your organization fulfill its requirements, such as meeting regulatory compliance and records management.
 
@@ -22,5 +25,3 @@ In Fabric, user activities are logged in the Power BI activity log and in the un
 ## Next steps
 
 * [Track user activities in Power BI](/power-bi/admin/service-admin-auditing)
-* [Activity log report](./admin-activity-log.md)
-* [Audit log report](./admin-audit-log.md)

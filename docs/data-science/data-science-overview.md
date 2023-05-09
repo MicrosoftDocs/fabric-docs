@@ -5,17 +5,17 @@ author: nelgson
 ms.author: negust
 ms.reviewer: franksolomon
 ms.topic: overview
-ms.date: 03/24/2023
+ms.date: 05/23/2023
 
 ---
 
 # What is Data science in Microsoft Fabric?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science Home page. From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
 
 :::image type="content" source="media/data-science-overview/data-science-home-page.png" alt-text="Screenshot of the Data science home page." lightbox="media/data-science-overview/data-science-home-page.png":::
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] offers various data science capabilities.  
 
@@ -37,9 +37,9 @@ Data Science users work on the same platform as business users and analysts. Dat
 
 ## Data acquisition
 
-[!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in One Lake using the Lakehouse item. Lakehouse easily attaches to a Notebook to browse and interact with data.
+[!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in OneLake using the Lakehouse item. Lakehouse easily attaches to a Notebook to browse and interact with data.
 
-Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, this should make seamless data reads from One Lake possible.
+Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, this should make seamless data reads from OneLake possible.
 
 There's a powerful set of tools is available for data ingestion and data orchestration pipelines with data integration pipelines - a natively integrated part of [!INCLUDE [product-name](../includes/product-name.md)]. Easy-to-build data pipelines can access and transform the data into a format that machine learning can consume. Learn more about data pipelines in Synapse.
 
@@ -75,27 +75,9 @@ The SynapseML (previously known as MMLSpark) open-source library simplifies mass
 
 Notebooks can handle machine learning model batch scoring with open-source libraries for prediction, or the [!INCLUDE [product-name](../includes/product-name.md)] scalable universal Predict function, which supports mlflow packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] model registry.  
 
-Predicted values can be written to OneLake, and seamlessly consumed from Power BI reports, with the Power BI “see-through”-mode.
+Predicted values can be written to OneLake, and seamlessly consumed from Power BI reports, with the Power BI "see-through"-mode.
 
 Learn more about model scoring in [!INCLUDE [product-name](../includes/product-name.md)], in the following sections.
-
-## Data Exploration with SemPy
-
-Data scientists and business analysts spend a lot of time trying to understand, clean and transform their data, before they can even start any meaningful analysis. SemPy simplifies data analytics. It captures and exploits the data semantics as the users perform various transformations on their datasets. By exploiting data semantics, SemPy can simplify various tedious tasks, for example
-
-- automatic data transformation while joining heterogeneous datasets
-- handle underlying schema changes
-- enforce semantic constraints and identify data that violates them
-- enrich the data with new knowledge
-
-SemPy users can register new information about the data, and share it with other users. This allows for faster collaboration across teams that operate on the same datasets, and increases productivity. SemPy explores data semantics to simplify data science analytics. Through SemPy we can expect to:
-
-- Reduce the time needed to preprocess and validate the data, before meaningful analysis starts.
-- Increase productivity across teams that operate on same datasets, through registration and sharing data of semantics and transformations; this reduces the time needed to extract value from a dataset.
-- Increase cross-org collaboration, to bring the BI and AI teams together.
-- Decrease ambiguity and the learning curve when onboarding onto a new model/dataset.
-
-Learn more about SemPy in [!INCLUDE [product-name](../includes/product-name.md)], in the following sections.
 
 ## Next steps
 
@@ -104,5 +86,3 @@ Learn more about SemPy in [!INCLUDE [product-name](../includes/product-name.md)]
 - Learn more about tracking experiments (See [Machine learning experiment section](machine-learning-experiment.md))
 - Learn more about managing models (See [Machine learning model](machine-learning-model.md) section)
 - Learn more about batch scoring with Predict (See [model scoring](model-scoring-predict.md) section)
-- Learn more about exploring and validating data with SemPy (See SemPy section)
-- Learn more about connecting to Power BI Datasets with SemPy (See PBI Connector section)

@@ -6,7 +6,7 @@ items:
   - name: Admin
     tocHref: /fabric/admin
     topicHref: /fabric/admin/index
-  - name: CICD
+  - name: Lifecycle management
     tocHref: /fabric/cicd
     topicHref: /fabric/cicd/index
   - name: Data Engineering
@@ -33,7 +33,7 @@ items:
   - name: OneLake
     tocHref: /fabric/onelake
     topicHref: /fabric/onelake/index
-  - name: Real-time Analytics
+  - name: Real-Time Analytics
     tocHref: /fabric/real-time-analytics
     topicHref: /fabric/real-time-analytics/index
   - name: Security

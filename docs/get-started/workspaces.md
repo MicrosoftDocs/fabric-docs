@@ -5,7 +5,7 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas
 ms.topic: conceptual
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ---
 
 # Workspaces
@@ -31,7 +31,7 @@ This article explains these features in more detail.
 
 The **Contact list** feature allows you to specify which users receive notification about issues occurring in the workspace. By default, any user or group specified as a workspace admin in the workspace is notified. You can add to that list. Users or groups in the contact list are also listed in the user interface (UI) of the workspaces, so workspace end-users know whom to contact.
 
-Read about [how to create the workspace contact list](create-workspaces.md#create-a-contact-list).
+Read about [how to create the workspace contact list](create-workspaces.md#contact-list).
 
 ## Microsoft 365 and OneDrive
 
@@ -42,8 +42,6 @@ Read about [how to create the workspace contact list](create-workspaces.md#creat
     [!INCLUDE [product-name](../includes/product-name.md)] doesn't synchronize between Microsoft 365 group membership and permissions for users or groups with access to the workspace. You can synchronize them: Manage workspace access through the same Microsoft 365 group whose file storage you configure in this setting.
 
 - You can also **store [!INCLUDE [product-name](../includes/product-name.md)] content in OneDrive for work or school**. With the Workspace OneDrive feature in workspaces, you can configure a Microsoft 365 group whose SharePoint Document Library file storage is available to workspace users. You create the group outside of [!INCLUDE [product-name](../includes/product-name.md)].
- 
-    Read about [how to set the workspace OneDrive](create-workspaces.md#set-a-workspace-onedrive).  
 
 > [!NOTE]
 > [!INCLUDE [product-name](../includes/product-name.md)] lists all Microsoft 365 groups that you're a member of in the workspaces list.

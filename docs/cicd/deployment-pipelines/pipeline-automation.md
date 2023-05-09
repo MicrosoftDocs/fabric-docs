@@ -6,12 +6,15 @@ ms.author: monaberdugo
 ms.topic: conceptual
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
-ms.date: 03/28/2023
+ms.date: 05/23/2023
+ms.search.form: 
 ---
 
 # Automate your deployment pipeline by using APIs and Azure DevOps
 
 The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Fabric content.
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Fabric automation tool](#use-the-fabric-automation-tools-extension) extension, which supports many of the deployment pipelines API operations.
 

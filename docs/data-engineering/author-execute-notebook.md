@@ -5,14 +5,14 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.date: 03/31/2023
+ms.date: 05/23/2023
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] notebook is a primary code item for developing Apache Spark jobs and machine learning experiments. It's a web-based interactive surface used by data scientists and data engineers to write code benefiting from rich visualizations and Markdown text. This article explains how to develop notebooks with code cell operations and run them.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Develop notebooks
 

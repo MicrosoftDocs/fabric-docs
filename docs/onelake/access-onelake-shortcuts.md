@@ -6,7 +6,7 @@ ms.author: trolson
 author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.date: 03/24/2023
+ms.date: 05/23/2023
 ---
 
 # Accessing shortcuts
