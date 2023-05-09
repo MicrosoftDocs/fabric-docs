@@ -24,7 +24,7 @@ You can find a comprehensive list of all connectors supported through our [publi
 
 The following connectors are currently available for output destinations in Dataflow Gen2:
 
-- Azure Data Explorer (Kusto)
+- Azure Data Explorer
 - Azure SQL
 - Data Warehouse
 - Lakehouse

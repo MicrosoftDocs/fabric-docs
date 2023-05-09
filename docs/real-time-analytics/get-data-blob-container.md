@@ -10,16 +10,16 @@ ms.search.form: product-kusto
 ---
 # Get data from a blob container
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 In this article, you'll learn you how to get data from an Azure blob or blob container into an existing database. A blob container organizes a set of blobs, similar to a directory in a file system. A storage account can include an unlimited number of containers, and a container can store an unlimited number of blobs. For more information on blob containers, see [Manage blob containers using Azure portal](/azure/storage/blobs/blob-containers-portal).
 
 To get data from a blob, see [Get data from a blob](get-data-blob.md).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* [KQL Database](create-database.md)
+* A [KQL database](create-database.md)
 * A blob container with data
 
 ## Get data

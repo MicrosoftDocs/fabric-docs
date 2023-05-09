@@ -30,7 +30,7 @@ You need to be a [Microsoft Fabric admin](admin-overview.md) with one of these a
 
 The Microsoft Fabric items that belong to these features require private endpoints, and won't work unless you turn on the *compliance settings* switch:  
 
-* Kusto
+* Real-time Analytics
 
 * Data engineering
 
