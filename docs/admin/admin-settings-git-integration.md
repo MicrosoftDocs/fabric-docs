@@ -28,7 +28,7 @@ There are three settings relating to git integration:
 
 ## Enable git integration feature
 
-Enable this setting to allow users to synchronize a workspace with a git repository, edit their workspace, and update their git repos using the git integration tool.
+Enable this setting to allow users to synchronize a workspace with a git repository, edit their workspace, and update their git repos using the git integration tool. You enable git integration for the entire organization, or for a specific group.
 
 :::image type="content" source="./media/admin-settings-git-integration/enable-git-integration-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables git integration." lightbox="./media/admin-settings-git-integration/enable-git-integration-switch.png":::
 
@@ -36,7 +36,7 @@ Learn more about [git integration](../CICD/git-integration/git-get-started.md).
 
 ## Enable git actions on workspaces residing in other geographical locations
 
-If a workspace capacity is in one geographic location (for example, Central US) while the Azure DevOps repo is in another location (for example, West Europe), the Fabric admin can decide whether to allow users to commit metadata (or perform other git actions) to another geographical location. Only the metadata of the item is exported. Item data and user related information are not exported. Enable this setting to allow users to export metadata to other geographical locations.
+If a workspace capacity is in one geographic location (for example, Central US) while the Azure DevOps repo is in another location (for example, West Europe), the Fabric admin can decide whether to allow users to commit metadata (or perform other git actions) to another geographical location. Only the metadata of the item is exported. Item data and user related information are not exported. Enable this setting to allow all users, or a specific group, to export metadata to other geographical locations.
 
 :::image type="content" source="./media/admin-settings-git-integration/multi-geo-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting items to other geographical locations." lightbox="./media/admin-settings-git-integration/multi-geo-switch.png":::
 
@@ -44,7 +44,7 @@ Learn more about Multi-Geo support.
 
 ## Enable export of items that have sensitivity labels
 
-Sensitivity labels aren't included when exporting an item. Therefore, the Fabric admin can choose whether to block the export of items that have sensitivity labels, or to allow it even though the sensitivity label won't be included. Enable this setting to allow the export of items without their sensitivity labels.
+Sensitivity labels aren't included when exporting an item. Therefore, the Fabric admin can choose whether to block the export of items that have sensitivity labels, or to allow it even though the sensitivity label won't be included. Enable this setting to allow all users, or a specific group, to export items without their sensitivity labels.
 
 :::image type="content" source="./media/admin-settings-git-integration/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting sensitivity labels.":::
 
