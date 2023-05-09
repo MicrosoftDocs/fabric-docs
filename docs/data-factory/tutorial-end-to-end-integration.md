@@ -22,4 +22,4 @@ In this third module to our end-to-end tutorial for your first data integration 
 Now that you completed the tutorial, learn more about how to monitor pipeline runs:
 
 > [!div class="nextstepaction"]
-> [Monitor pipeline runs]](monitor-pipeline-runs.md)
+> [Monitor pipeline runs](monitor-pipeline-runs.md)
