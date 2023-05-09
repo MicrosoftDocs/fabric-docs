@@ -43,7 +43,7 @@ ms.search.form: product-kusto
 For more information about tasks performed in this tutorial, see:
 
 * [Create a database](create-database.md)
-* [Enable data copy](onelake-mirroring.md#enable-data-copy)
+* [Enable availability in OneLake](onelake-mirroring.md#enable-availability-in-onelake)
 
 ## Next steps
 
