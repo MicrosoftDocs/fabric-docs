@@ -110,4 +110,4 @@ The toolbar above the Data Wrangler display grid provides options to save the co
 
 ## Next steps
 
-- To try out Data Wrangler in VS Code, see [Data Wrangler in VS Code](https://aznb.azurewebsites.net/docs/vscode-data-wrangler/).
+- To try out Data Wrangler in VS Code, see [Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler).
