@@ -103,7 +103,7 @@ If data is coming from multiple data stores, you can port the data into the data
 
 <a id="limitations"></a>
 
-### Unsupported table features
+### Limitations
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports many, but not all, of the table features offered by other databases.
 
