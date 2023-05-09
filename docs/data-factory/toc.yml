@@ -49,6 +49,8 @@
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
       - name: Configure in dataflow gen2
         href: connector-azure-cosmosdb-for-nosql-dataflows.md
+    - name: Azure Data Explorer (Kusto)
+      href: connector-kusto-dataflows.md
     - name: Azure Data Lake Storage Gen2
       items:
       - name: Overview
