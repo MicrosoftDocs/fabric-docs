@@ -18,7 +18,7 @@ summary: |
 
   Review the links in the following table to understand the considerations and limitations of various lifecycle management features:
 
-  | Feature | Git integration \|| Deployment pipelines |
+  | Feature | Git integration \\\\ Deployment pipelines |
   |--------|------------------|---------------------|
   | General | [git-integration](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) |
   | Permissions | [git-integration](./git-integration/git-integration-process.md#permissions) | [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#permissions) |
