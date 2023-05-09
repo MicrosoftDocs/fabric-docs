@@ -67,6 +67,8 @@ landingContent:
         links:
           - text: Lakehouse and Delta tables
             url: lakehouse-and-delta-tables.md
+      - linkListType: how-to-guide
+        links:
           - text: Delta optimization and V-Order
             url: delta-optimization-and-v-order.md
           - text: Load to tables
@@ -125,7 +127,7 @@ landingContent:
   # Card 
   - title: VS Code integration
     linkLists:
-      - linkListType: concept
+      - linkListType: how-to-guide
         links:
           - text: Use notebooks from VS Code
             url: ../placeholder.md
