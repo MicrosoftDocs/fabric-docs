@@ -9,7 +9,7 @@ ms.author: jeluitwi
 
 # Compare differences between Dataflow Gen1 and Gen2 in Data Factory for Microsoft Fabric
 
-Dataflow Gen2 is the new generation of dataflows. The new generation of dataflows will reside alongside the Power BI Dataflow (Gen1) and brings new features and improved experiences. The following section provides a comparison between Dataflows Gen1 and Dataflows Gen2.
+Dataflow Gen2 is the new generation of dataflows. The new generation of dataflows resides alongside the Power BI Dataflow (Gen1) and brings new features and improved experiences. The following section provides a comparison between Dataflows Gen1 and Dataflows Gen2.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
