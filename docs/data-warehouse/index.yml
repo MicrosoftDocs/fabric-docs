@@ -32,16 +32,10 @@ landingContent:
         links:
           - text: End to End tutorials 
             url: ../get-started/end-to-end-tutorials.md
-          - text: Create a Synapse Data Warehouse
+          - text: Data warehouse tutorial
+            url: tutorial-introduction.md            
+          - text: Create a Synapse Data Warehouse quickstart
             url: create-warehouse.md
-          - text: Create a table
-            url: create-table.md     
-          - text: Ingest data
-            url: ingest-data.md
-          - text: Query the warehouse
-            url: query-warehouse.md
-          - text: Create reports
-            url: create-reports.md            
   # Card 
   - title: Get started with SQL Endpoint
     linkLists:

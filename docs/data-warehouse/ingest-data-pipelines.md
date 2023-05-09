@@ -77,7 +77,7 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
     :::image type="content" source="media\ingest-data-pipelines\table-preview.png" alt-text="Screenshot showing a warehouse with the bing_covid_19 table selected, and a grid showing a preview of the data in the table." lightbox="media\ingest-data-pipelines\table-preview.png":::
 
 
-For more on data ingestion into your [!INCLUDE [fabricdw](../../includes/fabric-dw.md)] in [!INCLUDE [fabric](../../includes/fabric.md)], see:
+For more on data ingestion into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], visit:
 
 - [Ingesting data into the Synapse Data Warehouse](ingest-data.md)
 - [Ingest data into your Synapse Data Warehouse using the COPY statement](ingest-data-copy.md)
