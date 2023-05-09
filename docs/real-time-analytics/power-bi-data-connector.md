@@ -8,7 +8,6 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-
 # Use data from a KQL Database in Power BI Desktop
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]

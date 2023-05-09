@@ -27,7 +27,7 @@ For more information on the Kusto Query Language, see [Kusto Query Language (KQL
 
 1. In the **Data tree**, select the **More menu** [...] on your table > **Query table**. Sample queries run in the context of a selected table.
 
-    :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Object tree showing the More menu of a table. The option titled Query table is highlighted.":::
+    :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Object tree showing the More menu of a table. The Query table option is highlighted.":::
 
 1. Select a single query to autopopulate into the **Explore your data** window. The query will automatically run and display results.
 

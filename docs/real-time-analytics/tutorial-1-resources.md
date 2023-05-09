@@ -32,7 +32,7 @@ ms.search.form: product-kusto
 
 1. In the **Database details** card, select the **pencil** icon.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/onelake-folder-active.png" alt-text="Screenshot of database details page with pencil icon highlighted in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/onelake-folder-active.png":::
+    :::image type="content" source="media/realtime-analytics-tutorial/onelake-folder-active.png" alt-text="Screenshot of database details page with pencil icon highlighted." lightbox="media/realtime-analytics-tutorial/onelake-folder-active.png":::
 
 1. Toggle the button to **Active** and select **Done**.
 
