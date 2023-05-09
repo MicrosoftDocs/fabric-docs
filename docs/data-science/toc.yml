@@ -26,7 +26,7 @@ items:
 - name: Notebooks
   items:
   - name: Create and use notebooks
-    href: ../data-engineering/how-to-use-notebook.md?toc=/fabric/data-science/toc.yml&bc=/fabric/data-science/breadcrumb/toc.yml
+    href: ../data-engineering/how-to-use-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: Tutorials
   items:
   - name: How to use end-to-end AI samples
