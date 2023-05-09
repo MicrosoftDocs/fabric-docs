@@ -156,11 +156,13 @@ The following table shows the shortcut-related permissions for each workspace ro
 | **Capability** | **Admin** | **Member** | **Contributor** | **Viewer** |
 |---|---|---|---|---|
 | **Create a shortcut** | Yes | Yes | Yes | - |
-| **Read file/folder content of shortcut** | Yes | Yes | Yes | - |
-| **Write to shortcut target location** | Yes* | Yes* | Yes* | - |
+| **Read file/folder content of shortcut**  | Yes<sup>1</sup> | Yes<sup>1</sup> | Yes<sup>1</sup> | - |
+| **Write to shortcut target location** | Yes<sup>2</sup> | Yes<sup>2</sup> | Yes<sup>2</sup> | - |
 | **Read data from shortcuts in table section of the** **Lakehouse via TDS endpoint** | Yes | Yes | Yes | Yes |
 
-\* Users must also have write permission in the shortcut target path.
+<sup>1</sup> User must have a role that provides read permission both in the shortcut location and target location
+
+<sup>2</sup> User musth have a role that proides write permission both in the shortcut location and the target location
 
 ## How do shortcuts handle deletions?
 
