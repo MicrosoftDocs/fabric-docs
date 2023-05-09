@@ -57,6 +57,9 @@ df = spark.sql("SELECT * FROM MyLakehouse.MyShortcut LIMIT 1000")
 display(df)
 ```
 
+> [!NOTE]
+> The delta format doesn't support tables with space characters in the name.  Any shortcut containing a space in the name won't be discovered as a delta table in the lakehouse.
+
 ### SQL
 
 Shortcuts in the tables section of the Lakehouse can also be read through the SQL endpoint for the Lakehouse.  This can be accessed through mode selector of the Lakehouse or through SQL Server Management Studio (SSMS).
@@ -74,6 +77,9 @@ Shortcuts in KQL DBs are recognized as external tables. To query the shortcut, u
 external_table('MyShortcut')
 | take 100
 ```
+
+> [!NOTE]
+> KQL databases don't currently support data in the delta format.  Tables in a KQL database are only exported to OneLake as parquet files.  Shortcuts in KQL databases that contain delta formatted data in the target aren't recognized as tables.
 
 ### Analysis Services
 
@@ -93,9 +99,9 @@ OneLake shortcuts support multiple filesystem data sources.  These include inter
 
 ### Internal OneLake shortcuts
 
-Internal OneLake shortcuts allow you to reference data within existing Fabric items.  These items include Lakehouses, KQL Databases and Data Warehouses.  The shortcut can point to a folder location within the same item, across items within the same workspace or even across items in different workspaces.  When you create a shortcut across items, the item types don't need to match.  For instance, you can create a shortcut in a Lakehouse that points to data in a KQL DB.
+Internal OneLake shortcuts allow you to reference data within existing Fabric items.  These items include Lakehouses, KQL Databases and Data Warehouses.  The shortcut can point to a folder location within the same item, across items within the same workspace or even across items in different workspaces.  When you create a shortcut across items, the item types don't need to match.  For instance, you can create a shortcut in a Lakehouse that points to data in a Data Warehouse.
 
-When accessing data through a shortcut to another OneLake location, the identity of the calling user will be utilized to authorize access to the data in the target path of the shortcut*. This user must have “readAll” permissions on the target location.
+When accessing data through a shortcut to another OneLake location, the identity of the calling user will be utilized to authorize access to the data in the target path of the shortcut*. This user must have permissions in the target location to read the data.
 
 > [!IMPORTANT]
 > When accessing shortcuts through Power BI Datasets or T-SQL, **the calling user’s identity is not passed through to the shortcut target.** The calling item owner’s identity is passed instead, delegating access to the calling user.  
@@ -108,7 +114,9 @@ Shortcuts can also be created to ADLS Gen2 storage accounts.  When you create sh
 
 ADLS shortcuts must point to the DFS endpoint for the storage account.  
 Example: `https://accountname.dfs.core.windows.net/`
-The storage account endpoint must also be publicly reachable.  This means it can't be restricted by the storage firewall or a VNET.
+
+> [!NOTE]
+> ADLS shortcuts don't support private endpoints.
 
 *Authorization:*
 
@@ -141,9 +149,9 @@ The IAM must have at least read only (Get, List) permissions on the bucket that 
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
 
-## How shortcuts utilize Shared Cloud Connections
+## How shortcuts utilize cloud connections
 
-Shortcut authorization delegation is handled through the use of Shared Cloud Connections.  When creating a new ADLS or S3 shortcut, a user either creates a new connection or selects an existing connection for the data source.  When a connection is set for a shortcut, this is considered a “bind” operation.  Only users with permission on the connection can perform the bind operation.  If a user doesn't have permissions on the connection, they can't create new shortcuts using that connection.
+ADLS and S3 shortcut authorization is delegated through the use of cloud connections.  When creating a new ADLS or S3 shortcut, a user either creates a new connection or selects an existing connection for the data source.  When a connection is set for a shortcut, this is considered a “bind” operation.  Only users with permission on the connection can perform the bind operation.  If a user doesn't have permissions on the connection, they can't create new shortcuts using that connection.
 
 ## Permissions
 
@@ -171,7 +179,7 @@ Shortcuts don't perform cascading deletes. When you perform a delete operation o
 ### Delete example
 
 User A has a lakehouse with the following path in it:  
-> MyLakehouse\Files\\*MyShortcut*\Foo\Bar  
+> MyLakehouse\Files\\*MyShortcut*\Foo\Bar
 
 **MyShortcut** is a shortcut that points to an ADLS Gen2 account that contains the *Foo\Bar* directories.
 
@@ -200,24 +208,16 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 
 ## Known issues and limitations
 
-- **Limits**
-  - The maximum number of shortcuts per Fabric item is 10,000.
-  - The maximum number of shortcuts in a single OneLake path is 10.
-  - The maximum number of direct shortcut to shortcut links is 5.
-  - The maximum number of segments in a OneLake path is 200.
-- **Known issues**
-  - Target path of a shortcut can't contain "%" characters.
-  - Shortcuts with space characters in the name won't be discovered as delta tables in the Lakehouse.
-  - OneLake shortcuts pointing to ADLS or S3 shortcuts isn't supported.
-  - Additional shortcuts can't be created inside ADLS or S3 shortcuts.
-  - Copy Blob api not supported for ADLS or S3 shortcuts.
-  - Shortcuts don't support nonlatin characters.
-  - ADLS and S3 shortcut target paths can't contain reserved characters from RCF 3986 section 2.2.
-  - Private endpoints aren't currently supported to ADLS and S3 shortcuts
-  - ADLS Gen2 shortcuts must point to DFS endpoint. Blob endpoints aren't currently supported.
-  - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
-  - S3 shortcuts are read only.
-  - KQL databases don't currently support data in the delta format.  Tables in a KQL database are only exported to OneLake as parquet files.  Shortcuts in KQL databases that contain delta formatted data in the target aren't recognized as tables.
+- The maximum number of shortcuts per Fabric item is 10,000.
+- The maximum number of shortcuts in a single OneLake path is 10.
+- The maximum number of direct shortcut to shortcut links is 5.
+- ADLS and S3 shortcut target paths can't contain any reserved characters from RCF 3986 section 2.2.
+- OneLake shortcut target paths can’t contain “%” characters.
+- Shortcuts don't support nonlatin characters.
+- Copy Blob api not supported for ADLS or S3 shortcuts.
+- Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
+- OneLake shortcuts pointing to ADLS or S3 shortcuts isn't supported.
+- Additional shortcuts can't be created inside ADLS or S3 shortcuts.
 
 ## Next steps
 
