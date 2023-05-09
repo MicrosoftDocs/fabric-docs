@@ -91,6 +91,13 @@ items:
   - name: Query data in a KQL queryset
     href: kusto-query-set.md
 - name: Query data
+  items:
+  - name: Use sample queries
+    href: query-table.md
+  - name: Kusto Query Language
+    href: kusto-query-language/toc.yml
+  - name: Functions library
+    href: functions-library/toc.yml
 - name: Integrate with other experiences
   items:
   - name: Power BI
@@ -111,11 +118,3 @@ items:
       href: jupyter-notebook.md
     - name: Use a notebook with Apache Spark to query a KQL database
       href: spark-connector.md
-
-  items:
-  - name: Use sample queries
-    href: query-table.md
-  - name: Kusto Query Language
-    href: kusto-query-language/toc.yml
-  - name: Functions library
-    href: functions-library/toc.yml
