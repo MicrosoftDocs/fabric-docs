@@ -32,12 +32,15 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Create your first gen2 Dataflow
+          - text: Create your first dataflow
             url: create-first-dataflow-gen2.md
           - text: Create your first data pipeline
             url: create-first-pipeline-with-sample-data.md
           - text: Move and transform data
             url: transform-data.md
+      - linkListType: tutorial
+          - text: Create a complete data intgegration scenario within an hour
+            url: tutorial-end-to-end-introduction.md
   
   # Card 
   - title: Working with data pipelines
@@ -64,6 +67,6 @@ landingContent:
             url: data-source-management.md
           - text: Monitor your dataflows
             url: dataflows-gen2-monitor.md
-          - text: Save a draft of your Dataflow
+          - text: Save a draft of your dataflow
             url: dataflows-gen2-save-draft.md
 

@@ -27,7 +27,7 @@ To get started, you must complete the following prerequisites:
 
 Follow these steps to set up your dataflow.
 
-### Step 1: Create a Dataflow
+### Step 1: Create a dataflow
 
 1. Choose your Fabric enabled workspace, and then select **New**. Then select **Dataflow Gen2**.
 
@@ -95,7 +95,7 @@ Now that you created a dataflow gen2, you can operate on it in a pipeline. In th
 
    :::image type="content" source="media/transform-data/name-pipeline.png" alt-text="Screenshot showing the new pipeline creation prompt with a sample pipeline name.":::
 
-### Step 2: Configure your Dataflow
+### Step 2: Configure your dataflow
 
 1. Add a new dataflow activity to your data pipeline by selecting **Dataflow** in the **Activities** tab.  
 
