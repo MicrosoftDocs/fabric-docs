@@ -36,13 +36,15 @@ Learn more about [git integration](../CICD/git-integration/git-get-started.md).
 
 ## Enable git actions on workspaces residing in other geographical locations
 
-If a workspace capacity is in one geographic location (for example, Central US) while the Azure DevOps repo is in another location (for example, West Europe), the Fabric admin can decide whether to allow users to commit metadata (or perform other git actions) to another geographical location. Only the metadata of the item is exported. Item data and user related information are not exported. Enable this setting to allow all users, or a specific group, to export metadata to other geographical locations.
+If a workspace capacity is in one geographic location (for example, Central US) while the Azure DevOps repo is in another location (for example, West Europe), the Fabric admin can decide whether to allow users to commit metadata (or perform other git actions) to another geographical location. Only the metadata of the item is exported. Item data and user related information are not exported.  
+Enable this setting to allow all users, or a specific group or users, to export metadata to other geographical locations.
 
 :::image type="content" source="./media/admin-settings-git-integration/multi-geo-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting items to other geographical locations." lightbox="./media/admin-settings-git-integration/multi-geo-switch.png":::
 
 ## Enable export of items that have sensitivity labels
 
-Sensitivity labels aren't included when exporting an item. Therefore, the Fabric admin can choose whether to block the export of items that have sensitivity labels, or to allow it even though the sensitivity label won't be included. Enable this setting to allow all users, or a specific group, to export items without their sensitivity labels.
+Sensitivity labels aren't included when exporting an item. Therefore, the Fabric admin can choose whether to block the export of items that have sensitivity labels, or to allow it even though the sensitivity label won't be included.  
+Enable this setting to allow all users, or a specific group of users, to export items without their sensitivity labels.
 
 :::image type="content" source="./media/admin-settings-git-integration/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting sensitivity labels.":::
 
