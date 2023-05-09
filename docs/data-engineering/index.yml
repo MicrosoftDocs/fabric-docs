@@ -61,6 +61,18 @@ landingContent:
             url: notebook-visualization.md
 
   # Card 
+  - title: Delta Lake
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Lakehouse and Delta tables
+            url: lakehouse-and-delta-tables.md
+          - text: Delta optimization and V-Order
+            url: delta-optimization-and-v-order.md
+          - text: Load to tables
+            url: load-to-tables.md
+
+  # Card 
   - title: Apache Spark
     linkLists:
       - linkListType: concept
@@ -91,7 +103,7 @@ landingContent:
   # Card 
   - title: Lakehouse end-to-end tutorial
     linkLists:
-      - linkListType: overview
+      - linkListType: concept
         links:
           - text: Lakehouse scenario overview
             url: tutorial-lakehouse-introduction.md
@@ -109,18 +121,6 @@ landingContent:
             url: tutorial-lakehouse-build-report.md
           - text: Step2 - Clean up resources
             url: tutorial-lakehouse-clean-up.md
-
-  # Card 
-  - title: Delta Lake
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Lakehouse and Delta tables
-            url: lakehouse-and-delta-tables.md
-          - text: Delta optimization and V-Order
-            url: delta-optimization-and-v-order.md
-          - text: Load to tables
-            url: load-to-tables.md
 
   # Card 
   - title: VS Code integration
