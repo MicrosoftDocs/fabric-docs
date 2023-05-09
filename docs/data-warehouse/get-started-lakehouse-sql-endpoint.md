@@ -59,7 +59,13 @@ Any folder referenced using a [shortcut](../data-engineering/lakehouse-shortcuts
 
 [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in combination with One Lake [shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to cross-workspace analytics and share the data products created and maintained in different workspaces.
 
-## Get started
+## Analyzing partitioned data
+
+Data partitioning is a well-known data access optimization technique in data lakes. Partitioned data sets are stored in the hierarchical folders structures in the format `/year=<year>/month=<month>/day=<day>`, where `year`, `month`, and `day` are the partitioning columns. Partitioned data sets enable faster data access if the queries are filtering data using the predicates that filter data by comparing predicate columns with a value.
+
+[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) can represent partitioned Delta Lake data sets as SQL tables and enable you to analyze them.
+
+## Next steps
 
 - [What is a Lakehouse?](../data-engineering/lakehouse-overview.md)
 - [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md)
@@ -67,9 +73,6 @@ Any folder referenced using a [shortcut](../data-engineering/lakehouse-shortcuts
 - [Load data into the Lakehouse](../data-engineering/load-data-lakehouse.md)
 - [How to copy data using Copy activity in Data pipeline](../data-factory/copy-data-activity.md)
 - [Tutorial: Move data into Lakehouse via Copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)
-
-## Next steps
-
 - [Connectivity](connectivity.md)
 - [SQL Endpoint of the Lakehouse](data-warehousing.md#sql-endpoint-of-the-lakehouse)
 - [Query the Synapse Data Warehouse](query-warehouse.md)
