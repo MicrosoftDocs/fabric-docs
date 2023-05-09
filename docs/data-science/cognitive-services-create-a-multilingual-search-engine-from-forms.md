@@ -1,6 +1,6 @@
 ---
 title: Build a Search Engine
-description: Build a Search Engine
+description: Build a custom search engine and question-answering system with SynapseML.
 ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
@@ -29,24 +29,18 @@ from synapse.ml.core.platform import running_on_synapse, find_secret
 
 # Bootstrap Spark Session
 spark = SparkSession.builder.getOrCreate()
-if running_on_synapse():
-    from notebookutils.visualization import display
-    import subprocess
-    import sys
 
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "openai"])
-
-cognitive_key = find_secret("cognitive-api-key")
+cognitive_key = find_secret("cognitive-api-key") # replace with your cognitive api key
 cognitive_location = "eastus"
 
-translator_key = find_secret("translator-key")
+translator_key = find_secret("translator-key") # replace with your cognitive api key
 translator_location = "eastus"
 
-search_key = find_secret("azure-search-key")
+search_key = find_secret("azure-search-key") # replace with your cognitive api key
 search_service = "mmlspark-azure-search"
 search_index = "form-demo-index-5"
 
-openai_key = find_secret("openai-api-key")
+openai_key = find_secret("openai-api-key") # replace with your open ai api key
 openai_service_name = "synapseml-openai"
 openai_deployment_name = "gpt-35-turbo"
 openai_url = f"https://{openai_service_name}.openai.azure.com/"
@@ -83,7 +77,6 @@ df2 = (
 display(df2)
 ```
 
-:::image source="media/cognitive-services-create-a-multilingual-search-engine-from-forms/invoice11205.svg" alt-text="picture Invoice11205":::
 
 ## 3 - Apply form recognition
 
@@ -283,8 +276,6 @@ requests.post(
 ```
 
 ## 10 - Build a chatbot that can use Azure Search as a tool 🧠🔧
-
-:::image source="media/cognitive-services-create-a-multilingual-search-engine-from-forms/chatbot-flow-2.svg" alt-text="picture chatbot_flow_2":::
 
 
 ```python

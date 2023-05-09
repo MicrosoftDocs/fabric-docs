@@ -1,6 +1,6 @@
 ---
 title: Interpretability - Tabular SHAP explainer
-description: Interpretability - Tabular SHAP explainer
+description: Use Kernel SHAP to explain a tabular classification model.
 ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
@@ -175,9 +175,6 @@ fig.update_layout(height=400 * rows, title_text="SHAP explanations")
 fig.show()
 ```
 
-Your results look like:
-
-:::image source="media/tabular-shap-explainer/tabular-shap.png" alt-text="picture tabular-shap":::
 ## Next steps
 
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)

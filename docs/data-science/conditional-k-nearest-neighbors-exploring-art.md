@@ -1,6 +1,6 @@
 ---
 title: Conditional KNN Exploring Art Across Cultures
-description: A guideline for match-finding via k-nearest-neighbors
+description: A guideline for match-finding via k-nearest-neighbors.
 ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
@@ -9,7 +9,6 @@ ms.date: 05/08/2023
 ---
 # Exploring Art across Culture and Medium with Fast, Conditional, k-Nearest Neighbors
 
-:::image source="media/conditional-knn-exploring-art/cross-cultural-matches.jpg" alt-text="picture cross_cultural_matches":::
 
 This notebook serves as a guideline for match-finding via k-nearest-neighbors. We set up code that allows queries involving cultures and mediums of art amassed from the Metropolitan Museum of Art in NYC and the Rijksmuseum in Amsterdam.
 
@@ -234,9 +233,6 @@ def test_all(data, cknn_medium, cknn_culture, test_ids, root):
 
 ### Demo
 The following cell performs batched queries given desired image IDs and a filename to save the visualization.
-
-
-:::image source="media/conditional-knn-exploring-art/cross-cultural-matches.jpg" alt-text="picture cross_cultural_matches":::
 
 
 ```python

@@ -1,6 +1,6 @@
 ---
 title: Analyze time series
-description: Analyze time series
+description: Use SynapseML and Azure Cognitive Services for multivariate anomaly detection.
 ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
@@ -300,7 +300,7 @@ plt.title("The contribution of each sensor to the detected anomaly")
 plt.show()
 ```
 
-:::image source="media/cognitive-services-multivariate-anomaly-detection/mvad-plot.png" alt-text="picture mvad_plot":::
+:::image source="media/cognitive-services-multivariate-anomaly-detection/multivariate-anomaly-detection-plot.png" alt-text="multivariate anomaly detection results plot":::
 
 The plots show the raw data from the sensors (inside the inference window) in orange, green, and blue. The red vertical lines in the first figure show the detected anomalies that have a severity greater than or equal to `minSeverity`. 
 

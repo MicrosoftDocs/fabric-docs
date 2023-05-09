@@ -1,6 +1,6 @@
 ---
 title: Outlier and Anomaly Detection
-description: Outlier and Anomaly Detection
+description: Use SynapseML on Apache Spark for multivariate anomaly detection with Isolation Forest model.
 ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
@@ -87,11 +87,6 @@ num_estimators = 100
 max_samples = 256
 max_features = 1.0
 
-# MLFlow experiment
-artifact_path = "isolationforest"
-experiment_name = f"/Shared/isolation_forest_experiment-{str(uuid.uuid1())}/"
-model_name = "isolation-forest-model"
-model_version = 1
 ```
 
 ## Read data
@@ -189,9 +184,7 @@ df_test_pred = model.transform(df_test)
 display(df_test_pred)
 ```
 
-Retrieve local feature importances
 
-Next, install libraries required for ML Interpretability analysis
 ## Next steps
 
 - [How to Build a Search Engine with SynapseML](cognitive-services-create-a-multilingual-search-engine-from-forms.md)

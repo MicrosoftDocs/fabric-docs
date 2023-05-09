@@ -1,6 +1,6 @@
 ---
 title: Classification - Before and After SynapseML
-description: Perform the same classification task with and without synapseml
+description: Perform the same classification task with and without SynapseML.
 ms.topic: overview
 ms.reviewer: jessiwang
 author: jessiwang
@@ -14,8 +14,6 @@ ms.date: 05/08/2023
 * Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
 ## Introduction
-
-:::image type="content" source="media/classification-before-and-after-synapseml/1000638-books-landing-page-bookstore-photo-01.jpg" alt-text="picture 1000638_books_landing-page_bookstore-photo-01" lightbox="media/classification-before-and-after-synapseml/1000638-books-landing-page-bookstore-photo-01.jpg":::
 
 In this tutorial, we perform the same classification task in two
 different ways: once using plain **`pyspark`** and once using the
@@ -109,7 +107,7 @@ data = (
 data.show(5)
 ```
 
-## a. Classify using pyspark
+## Classify using pyspark
 
 To choose the best LogisticRegression classifier using the `pyspark`
 library, need to *explicitly* perform the following steps:
@@ -188,7 +186,7 @@ scoredVal = bestModel.transform(validation)
 print(evaluator.evaluate(scoredVal))
 ```
 
-## b. Classify using synapseml
+## Classify using synapseml
 
 Life is a lot simpler when using `synapseml`!
 

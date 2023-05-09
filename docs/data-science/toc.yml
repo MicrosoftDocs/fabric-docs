@@ -108,7 +108,7 @@ items:
     - name: Perform classification with and without SynapseML
       href: classification-before-and-after-synapseml.md
     - name: Use k-nearest neighbors with SynapseML
-      href: conditional-knn-exploring-art.md
+      href: conditional-k-nearest-neighbors-exploring-art.md
     - name: Perform deep learning using ONNX with SynapseML
       href: onnx-overview.md
     - name: Explain a tabular classification model with tabular SHAP
