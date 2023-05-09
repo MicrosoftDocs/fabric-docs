@@ -85,6 +85,8 @@ landingContent:
             url: library-management.md
           - text: Spark utilities for file management tasks
             url: microsoft-spark-utilities.md
+          - text: Configure capacity settings
+            url: capacity-settings-management.md
 
   # Card 
   - title: Lakehouse end-to-end tutorial
@@ -118,3 +120,14 @@ landingContent:
           - text: Load to tables
             url: load-to-tables.md
 
+  # Card 
+  - title: VS Code integration
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Use notebooks from VS Code
+            url: ../placeholder.md
+          - text: Use Spark job definitions from VS Code
+            url: ../placeholder.md
+          - text: Explore lakehouse from VS Code
+            url: ../placeholder.md
