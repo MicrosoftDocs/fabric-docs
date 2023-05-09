@@ -63,7 +63,7 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Create a workspace
-            url: create-workspace.md
+            url: create-workspaces.md
       - linkListType: how-to-guide
         links:
           - text: Workspace access control
