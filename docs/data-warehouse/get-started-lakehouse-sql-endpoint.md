@@ -45,7 +45,7 @@ In addition to SQL tables, the [!INCLUDE [product-name](../includes/product-name
 
 [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) are not scoped to data analytics in [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) enable you to analyze lake data in any lakehouse implemented using Synapse Spark, Azure Databricks, or any other lake-centric data engineering engine. 
 
-One of the well-known strategies for lake data organization is a [medallion](https://learn.microsoft.com/azure/databricks/lakehouse/medallion) architecture where the files are organized in raw (bronze), consolidated (silver), and refined (gold) layers. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) can be used to analyze data in the gold layer of medallion architecture if the files are stored in `Delta Lake` format.
+One of the well-known strategies for lake data organization is a [medallion](/azure/databricks/lakehouse/medallion) architecture where the files are organized in raw (bronze), consolidated (silver), and refined (gold) layers. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) can be used to analyze data in the gold layer of medallion architecture if the files are stored in `Delta Lake` format.
 
 You can use One Lake [shortcuts](../data-engineering/lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that are managed by Synapse Spark or Azure Databricks engines. 
 
