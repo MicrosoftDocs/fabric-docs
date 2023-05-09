@@ -44,7 +44,7 @@ items:
 - name: Best practices
   href: best-practices-cicd.md
 - name: Frequently asked questions
-  href: FAQ.yml
+  href: faq.yml
 - name: Troubleshooting
   href: troubleshoot-cicd.yml
 
