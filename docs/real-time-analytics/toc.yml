@@ -92,7 +92,7 @@ items:
       href: event-streams/monitoring.md
 - name: Integrate with other experiences
   items:
-  - name: PowerBI
+  - name: Power BI
     items:
     - name: Visualize data in a Power BI report
       href: create-powerbi-report.md
