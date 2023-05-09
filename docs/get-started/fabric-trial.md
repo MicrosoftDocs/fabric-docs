@@ -88,7 +88,7 @@ Additionally, if you cancel your trial, you may not be able to start another tri
 
 ## Administer user access to a Fabric (Preview) trial
 
-Power BI administrators enable and disable trials. For more information on administering trials, see [Help and support tenant settings](/power-bi/admin/service-admin-portal-help-support#allow-users-to-try-power-bi-paid-features)
+Power BI administrators enable and disable trials. For more information on administering trials, see [Help and support tenant settings](/powerbi-docs/admin/service-admin-portal-help-support#allow-users-to-try-power-bi-paid-features)
 
  :::image type="content" source="media/fabric-trial/tenant-trial-settings.png" alt-text="Screenshot of the Microsoft Fabric trial settings.":::
 
@@ -142,4 +142,4 @@ The Fabric (Preview) trial capacity doesn't support autoscale. If you need more 
 
 You can migrate your existing workspaces into a trial capacity using workspace settings and choosing "Trial" as the license mode. To learn how migrate workspaces, see [create workspaces](create-workspaces.md).
 
-:::image type="content" source="media/fabric-trial/migrate_to_trial.png" alt-text="Screenshot of the trial workspace settings.":::
+:::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
