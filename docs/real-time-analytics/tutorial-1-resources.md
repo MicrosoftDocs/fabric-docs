@@ -30,13 +30,20 @@ ms.search.form: product-kusto
 
 ## Enable copy to OneLake
 
-1. In the **Database details** card, Select the **pencil** icon.
+1. In the **Database details** card, select the **pencil** icon.
 
     :::image type="content" source="media/realtime-analytics-tutorial/onelake-folder-active.png" alt-text="Screenshot of database details page with pencil icon highlighted in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/onelake-folder-active.png":::
 
 1. Toggle the button to **Active** and select **Done**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/enable-copy-one-lake.png" alt-text="Screenshot of enabling data copy to OneLake in Real-Time Analytics in Microsoft Fabric." :::
+
+## See also
+
+For more information about tasks performed in this tutorial, see:
+
+* [Create a database](create-database.md)
+* [Enable data copy](onelake-mirroring.md#enable-data-copy)
 
 ## Next steps
 
