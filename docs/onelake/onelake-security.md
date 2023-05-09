@@ -55,6 +55,7 @@ Microsoft Fabric shortcuts, which are shortcuts to data anywhere in OneLake use 
 | Lakehouse | Admin, member, contributor | Real-time analytics | Admin, member, contributor |
 | Real-time analytics | Viewer | Lakehouse | Admin, member, contributor |
 | Real-time analytics | Viewer | Warehouse | Admin, member, contributor |  
+
 <sup>1</sup>The item owner needs this permission, not the accessing user
 
 External shortcuts, which are shortcuts to data outside of OneLake, use a fixed identity. Instead of the user's identity, a fixed credential or account key is used to access the external source instead. This means that the users only need access to the shortcut source and the fixed credential will be used to grant access to the destination. If the fixed credential loses access then the shortcut will break.
