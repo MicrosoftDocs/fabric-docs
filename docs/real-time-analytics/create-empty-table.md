@@ -69,6 +69,7 @@ To add a new column, select **Add new column** under **Partial data preview**.
 1. Enter a column name. The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
 1. Select a data type for your column. The default column type is `string` but can be altered in the dropdown menu of the **Column type** field.
 1. Select **Add column** to add more columns.
+
 1. Select **Save** to add the columns to your table.
 
     :::image type="content" source="media/empty-table/edit-columns.png" alt-text="Screenshot of  the Edit columns window showing filled column names and their data type in the new table wizard in Real-Time Analytics.":::
