@@ -21,7 +21,7 @@ ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title
 - For more about CREATE/DROP TABLE support, see [Tables](tables.md).
 - For more about data types, see [Data types](data-types.md).
 
-### T-SQL command support
+### Limitations
 
 At this time, the following list of commands is NOT currently supported. Don't try to use these commands because even though they may appear to succeed, they could cause corruption to your warehouse.
 
