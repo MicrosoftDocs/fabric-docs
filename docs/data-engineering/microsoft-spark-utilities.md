@@ -48,12 +48,13 @@ getMountPath(mountPoint: String, scope: String = ""): String -> Gets the local 
 
 Use mssparkutils.fs.help("methodName") for more info about a method.
 ```
+
 mssparkutils works with the file system in the same way as Spark APIs. Take *mssparkuitls.fs.mkdirs()* and Fabric Lakehouse usage for example: 
 
 
 | **Usage** | **Relative path from HDFS root** | **Absolute path for ABFS file system** |**Absolute path for local file system in driver node** |
 |---|---|---|---|
-| Non-default lakehouse | Not supported | *mssparkutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")*  | *mssparkutils.fs.mkdirs("file:/<new_dir>")* |
+| Nondefault lakehouse | Not supported | *mssparkutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")*  | *mssparkutils.fs.mkdirs("file:/<new_dir>")* |
 | Default lakehouse  | Directory under “Files” or “Tables”: *mssparkutils.fs.mkdirs("Files/<new_dir>")* | *mssparkutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* |*mssparkutils.fs.mkdirs("file:/<new_dir>")*|
 
 
@@ -135,6 +136,7 @@ Removes a file or directory.
 ```python
 mssparkutils.fs.rm('file path', True) # Set the last parameter as True to remove all files and directories recursively
 ```
+
 ### Mount/unmount directory
 
 You can find the detailed usage in [File mount and unmount](#file-mount-and-unmount).
@@ -170,7 +172,7 @@ For example:
 mssparkutils.notebook.run("Sample1", 90, {"input": 20 })
 ```
 
-You can open the snapshot link of reference run in the cell output, the snapshot captures the code run results and allows you easily debug a reference run.
+You can open the snapshot link of reference run in the cell output, the snapshot captures the code run results and allows you to easily debug a reference run.
 
 :::image type="content" source="media\microsoft-spark-utilities\reference-run.png" alt-text="Screenshot of reference run result." lightbox="media\microsoft-spark-utilities\reference-run.png":::
 
@@ -183,9 +185,9 @@ You can open the snapshot link of reference run in the cell output, the snapshot
 
 Exits a notebook with a value. You can run nesting function calls in a notebook interactively or in a pipeline.
 
-- When you call an *exit()* function from a notebook interactively, Fabric notebook will throw an exception, skip running subsequence cells, and keep the Spark session alive.
-- When you orchestrate a notebook that calls an *exit()* function in a pipeline, the Notebook returns an exit value, complete the pipeline run, and stop the Spark session.
-- When you call an *exit()* function in a notebook being referenced, Fabric Spark will stop the further execution in the notebook being referenced, and continue to run next cells in the notebook that call the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
+- When you call an *exit()* function from a notebook interactively, Fabric notebook throws an exception, skip running subsequence cells, and keep the Spark session alive.
+- When you orchestrate a notebook in pipeline that calls an *exit()* function, the Notebook activity will return with an exit value, complete the pipeline run and stop the Spark session.
+- When you call an *exit()* function in a notebook that is being referenced, Fabric Spark will stop the further execution of the referenced notebook, and continue to run next cells in the main notebook that calls the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
 
 ```python
 mssparkutils.notebook.exit("value string")
@@ -199,7 +201,7 @@ For example:
 
 - Cell 2 exits the notebook with **input** as exit value.
 
-:::image type="content" source="media\microsoft-spark-utilities\input-exit-value.png" alt-text="Screenshot showing a sample notebook with one cell showing an input value of 10 and another cell showing input as the exit value." lightbox="media\microsoft-spark-utilities\input-exit-value.png":::
+:::image type="content" source="media\microsoft-spark-utilities\input-exit-value.png" alt-text="Screenshot showing a sample notebook of exit function." lightbox="media\microsoft-spark-utilities\input-exit-value.png":::
 
 You can run the **Sample1** in another notebook with default values:
 
@@ -259,25 +261,19 @@ getSecret(akvName, secret): returns AKV secret for a given akvName, secret key
 
 ### Get token
 
-Returns Azure AD token for a given audience, name (optional). 
-<!---
-The table below list all the available audience types:
+Returns Azure AD token for a given audience, name (optional), The list below shows currently available audience keys:
 
-|Audience Type|Audience key|
-|--|--|
-|Audience Resolve Type|'Audience'|
-|Storage Audience Resource|'Storage'|
-|Dedicated SQL pools (Data warehouse)|'DW'|
-|Data Lake Audience Resource|'AzureManagement'|
-|Vault Audience Resource|'DataLakeStore'|
-|Azure OSSDB Audience Resource|'AzureOSSDB'|
-|Azure Synapse Resource|'Synapse'|
-|Azure Data Factory Resource|'ADF'|
--->
+- **Storage Audience Resource**: "storage""
+- **Power BI Resource**: "pbi""
+- **Azure Key Vault Resource**: "keyvault"
+- **Kusto Resource**: "kusto"
+
+Run the following command to get the token:
 
 ```python
 mssparkutils.credentials.getToken('audience Key')
 ```
+
 ### Get secret using user credentials
 
 Returns Azure Key Vault secret for a given Azure Key Vault name, secret name, and linked service name using user credentials.
@@ -285,6 +281,7 @@ Returns Azure Key Vault secret for a given Azure Key Vault name, secret name, an
 ```python
 mssparkutils.credentials.getSecret('azure key vault name','secret name')
 ```
+
 ## File mount and unmount
 
 The [!INCLUDE [product-name](../includes/product-name.md)] support mount scenarios in the Microsoft Spark Utilities package. You can use *mount*, *unmount*, *getMountPath()* and *mounts()* APIs to attach remote storage (Azure Data Lake Storage Gen2) to all working nodes (driver node and worker nodes). After the storage mount point is in place, use the local file API to access data as if it's stored in the local file system.
