@@ -291,10 +291,20 @@ temp_delta<-"Tables/nycflight13"
 write.df(sparkdf, temp_delta ,source="delta", mode = "overwrite", header = "true")
 ```
 
-Once the delta table is created, [!INCLUDE [product-name](../includes/product-name.md)] creates a dataset automatically. When you switch to the Power BI landing page and create a new report, you see the delta table `nycflight13` show up on the data list automatically. It's super easy to build a Power BI visual report via See Through mode directly access data on the LakeHouse.
+You can now use this table to create a Power BI dataset. 
+
+1. On the left, select **OneLake data hub**.
+1. Select the Lakehouse you attached to your notebook.
+1. On the top right, select **Open**.
+
+  :::image type="content" source="media/r-flight-delay/open-lakehouse.png" alt-text="Screenshot shows where to open the lakehouse.":::
+
+1. On the top, select **New Power BI dataset**.
+1. If you see a list of items, select **nycflight13**, then select **Confirm**.
+1. Your Power BI dataset is created.  At the top, select **New report**.
+1. Select or drag fields from the data and visualizations panes onto the report canvas to build your report.
 
 :::image type="content" source="media/r-flight-delay/power-bi-data.png" alt-text="Graph of Power BI dataset.":::
-
 
 ## Next steps
 
