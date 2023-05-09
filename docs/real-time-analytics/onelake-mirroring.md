@@ -27,9 +27,9 @@ To query referenced data from OneLake in your KQL Database or table, see [Create
 
 ## How it works
 
-* When you **enable the policy on your KQL database**, existing tables are not affected. New tables will be available OneLake.
-* When you **disable the policy on your KQL database**, existing tables are not affected. New tables will not be available in OneLake.
-* When you **enable the policy on your table**, new data is available in OneLake. Existing data is not backfilled. Table schema cannot be altered and the table cannot be renamed.
+* When you **enable the policy on your KQL database**, existing tables aren't affected. New tables are available OneLake.
+* When you **disable the policy on your KQL database**, existing tables aren't affected. New tables won't be available in OneLake.
+* When you **enable the policy on your table**, new data is available in OneLake. Existing data isn't backfilled. Table schema can't be altered and the table can't be renamed.
 * When you **disable the policy on your table**, the data is no longer available in OneLake.
 
 ## Prerequisites
