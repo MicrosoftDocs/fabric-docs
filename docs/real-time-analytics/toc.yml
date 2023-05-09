@@ -44,6 +44,12 @@ items:
       href: get-data-event-hub.md
     - name: Get data from OneLake
       href: get-data-onelake.md
+  - name: Connectors
+    items:
+    - name: Data Factory pipeline KQL Database connector
+      href: ../data-factory/connector-kql-database-copy-activity.md
+    - name: Dataflows KQL Database connector
+      href: ../data-factory/connector-kusto-dataflows.md
   - name: Data management
     items:
     - name: Data management overview  
