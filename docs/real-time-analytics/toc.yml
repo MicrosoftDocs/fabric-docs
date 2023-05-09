@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Real-Time Analytics?
     href: overview.md
+  - name: Introduction to event streams
+    href: event-streams/overview.md
   - name: Compare with Azure Data Explorer
     href: realtime-analytics-compare.md
 - name: Get started
@@ -25,12 +27,24 @@ items:
     href: tutorial-6-build-report.md
   - name: 7- Clean up resources
     href: tutorial-7-clean-up-resources.md
+  - name: Event streams tutorial
+    href: event-streams/bring-events-to-fabric-from-event-hub.md
 - name: KQL Database
   items:
   - name: Create a KQL database
     href: create-database.md
   - name: Create an empty table
     href: create-empty-table.md
+  - name: Get data
+    items:
+    - name: Get data from an Azure blob and a blob container
+      href: get-data-blob.md
+    - name: Get data from a blob container
+      href: get-data-blob-container.md
+    - name: Get data from Azure Event Hubs
+      href: get-data-event-hub.md
+    - name: Get data from OneLake
+      href: get-data-onelake.md
   - name: Visualize data
     items:
     - name: Visualize data in a Power BI report
@@ -49,16 +63,6 @@ items:
       href: create-functions.md 
   - name: One logical copy
     href: onelake-mirroring.md
-  - name: Get data
-    items:
-    - name: Get data from an Azure blob and a blob container
-      href: get-data-blob.md
-    - name: Get data from a blob container
-      href: get-data-blob-container.md
-    - name: Get data from Azure Event Hubs
-      href: get-data-event-hub.md
-    - name: Get data from OneLake
-      href: get-data-onelake.md
   - name: Management commands
     href: management/toc.yml
   - name: API
@@ -83,10 +87,6 @@ items:
     href: functions-library/toc.yml
 - name: Eventstreams
   items:
-  - name: Introduction to event streams
-    href: event-streams/overview.md
-  - name: Event streams tutorial
-    href: event-streams/bring-events-to-fabric-from-event-hub.md
   - name: Concepts
     items:
     - name: Event streams main editor
