@@ -22,7 +22,7 @@ Data Warehousing in Microsoft Fabric is currently in preview. The focus of this 
 
 General product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. 
 
-- <b>IMPORTANT</B> At this time, there's limited T-SQL functionality. and certain T-SQL commands can cause Warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations. 
+- <b>IMPORTANT</B> At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations. 
 - Warehouse Recovery capabilities are not available during Preview.
 
 For more limitations information in specific areas, see:
