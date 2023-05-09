@@ -58,16 +58,8 @@ items:
     href: api/toc.yml
 - name: KQL Queryset
   items:
-  - name: Query data
-    items:
-    - name: Query data in a KQL queryset
-      href: kusto-query-set.md
-    - name: Use sample queries
-      href: query-table.md
-  - name: Kusto Query Language
-    href: kusto-query-language/toc.yml
-  - name: Functions library
-    href: functions-library/toc.yml
+  - name: Query data in a KQL queryset
+    href: kusto-query-set.md
 - name: Eventstreams
   items:
   - name: Concepts
@@ -118,3 +110,11 @@ items:
       href: jupyter-notebook.md
     - name: Use a notebook with Apache Spark to query a KQL database
       href: spark-connector.md
+- name: Query data
+  items:
+  - name: Use sample queries
+    href: query-table.md
+  - name: Kusto Query Language
+    href: kusto-query-language/toc.yml
+  - name: Functions library
+    href: functions-library/toc.yml
