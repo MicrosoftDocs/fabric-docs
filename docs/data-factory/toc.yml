@@ -17,11 +17,11 @@
       href: transform-data.md
   - name: Tutorials
     items:
-    - name: Data factory tutorial introduction
+    - name: End-to-end integration scenario - introduction and architecture
       href: tutorial-end-to-end-introduction.md
-    - name: Module 1 - Create a pipeline in Data Factory
+    - name: Module 1 - Create a pipeline
       href: tutorial-end-to-end-pipeline.md
-    - name: Module 2 - Create a dataflow in Data Factory
+    - name: Module 2 - Transform data with a dataflow
       href: tutorial-end-to-end-dataflow.md
     - name: Module 3 - Automate and send notification
       href: tutorial-end-to-end-integration.md     

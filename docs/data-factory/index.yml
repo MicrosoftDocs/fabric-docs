@@ -40,7 +40,7 @@ landingContent:
             url: transform-data.md
       - linkListType: tutorial
         links:
-          - text: Create a complete data intgegration scenario within an hour
+          - text: Create an end-to-end data integration scenario
             url: tutorial-end-to-end-introduction.md
   
   # Card 
