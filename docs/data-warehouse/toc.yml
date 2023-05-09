@@ -46,7 +46,7 @@ items:
   - name: 9. Create Power BI reports
     href: tutorial-data-warehouse-power-bi-report.md
   - name: 10. Clean up resources
-    href: tutorial-data-warehouse-power-bi-report.md      
+    href: tutorial-data-warehouse-clean-up.md    
 - name: Concepts
   items: 
   - name: Connectivity

@@ -10,11 +10,9 @@ ms.date: 5/23/2023
 
 # Data warehouse tutorial introduction
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides a one-stop shop for all the analytical needs for every enterprise. It covers the complete spectrum of services including data movement, data lake, data engineering, data integration and data science, real time analytics, and business intelligence. With Fabric, there's no need to stitch together different services from multiple vendors. Instead, the customer enjoys an end-to-end, highly integrated, single comprehensive product that is easy to understand, onboard, create and operate. No other product on the market offers the breadth, depth, and level of integration that Fabric offers. Additionally, Microsoft Purview is included by default in every tenant to meet compliance and governance needs.
+[[!INCLUDE [product-name](../includes/product-name.md)]](../get-started/microsoft-fabric-overview.md) provides a one-stop shop for all the analytical needs for every enterprise. It covers the complete spectrum of services including data movement, data lake, data engineering, data integration and data science, real time analytics, and business intelligence. With Fabric, there's no need to stitch together different services from multiple vendors. Instead, the customer enjoys an end-to-end, highly integrated, single comprehensive product that is easy to understand, onboard, create and operate. No other product on the market offers the breadth, depth, and level of integration that Fabric offers. Additionally, [Microsoft Purview](../governance/microsoft-purview-fabric.md) is included by default in every tenant to meet compliance and governance needs.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
-
-For more information about Fabric, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
 
 ## Purpose of this tutorial
 
@@ -24,19 +22,23 @@ The tutorials aren't intended to be a reference architecture, an exhaustive list
 
 ## Data warehouse end-to-end scenario
 
-In this tutorial, you take on the role of a data warehouse developer at the fictional Wide World Importers company and complete the following steps:
+As prerequisities to this tutorial, complete the following steps:
 
-- Sign into your Power BI online account, or if you don't have an account yet, sign up for a free trial.
-- Build and implement an end-to-end data warehouse for your organization:
-  - Enable Fabric in your tenant.
-  - [Create a Fabric workspace](tutorial-data-warehouse-create-workspace.md).
-  - Quickly [create a data warehouse](tutorial-data-warehouse-create-warehouse.md).
-  - [Ingest data](tutorial-data-warehouse-ingest-data.md) from source to the data warehouse dimensional model.
-  - [Transform the data](tutorial-data-warehouse-transform-data.md) to create aggregated datasets using T-SQL.
-  - Perform orchestration, data ingestion, and data transformation with pipelines.
-  - Query the data warehouse using T-SQL and a [visual query editor](tutorial-data-warehouse-visual-query.md).
-  - [Create Power BI reports](tutorial-data-warehouse-power-bi-report.md) using DirectLake mode to analyze the data in place.
-- [Clean up resources](tutorial-data-warehouse-clean-up.md) by deleting the workspace and other items.
+1. Sign into your Power BI online account, or if you don't have an account yet, sign up for a free trial.
+1. [Enable Fabric](../admin/admin-fabric-switch.md) in your tenant.
+
+In this tutorial, you take on the role of a data warehouse developer at the fictional Wide World Importers company and complete the following steps in the [!INCLUDE [product-name](../includes/product-name.md)] portal to build and implement an end-to-end data warehouse solution:
+
+1. [Create a Fabric workspace](tutorial-data-warehouse-create-workspace.md).
+1. Quickly [create a data warehouse](tutorial-data-warehouse-create-warehouse.md).
+1. [Ingest data](tutorial-data-warehouse-ingest-data.md) from source to the data warehouse dimensional model with a data pipeline.
+1. [Build a report](tutorial-data-warehouse-build-report.md) with the data you ingested into your warehouse.
+1. [Create tables](tutorial-data-warehouse-create-tables.md) in your warehouse.
+1. [Load data with T-SQL](tutorial-data-warehouse-load-data.md) with the SQL query editor.
+1. [Transform the data](tutorial-data-warehouse-transform-data.md) to create aggregated datasets using T-SQL.
+1. Query the data warehouse using T-SQL and a [visual query editor](tutorial-data-warehouse-visual-query.md).
+1. [Create Power BI reports](tutorial-data-warehouse-power-bi-report.md) using DirectLake mode to analyze the data in place.
+1. [Clean up resources](tutorial-data-warehouse-clean-up.md) by deleting the workspace and other items.
 
 ## Data warehouse end-to-end architecture
 
