@@ -55,14 +55,14 @@ items:
     items:
     - name: Data management overview  
       href: data-management.md
+    - name: One logical copy
+      href: onelake-mirroring.md
     - name: Create a table update policy
       href: table-update-policy.md
     - name: Create materialized views
       href: materialized-view.md
     - name: Create stored functions
       href: create-functions.md 
-  - name: One logical copy
-    href: onelake-mirroring.md
   - name: Management commands
     href: management/toc.yml
   - name: API
