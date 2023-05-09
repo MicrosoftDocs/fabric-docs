@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Microsoft Fabric Public Preview is available in the Azure regions listed in this article. If your Microsoft Fabric home region is not listed, you can still create a Microsoft Fabric capacity in a region that is supported. For more information, see [Buy a Microsoft Fabric license](../enterprise/licenses-buy.md).
+Microsoft Fabric Public Preview is available in the Azure regions listed in this article. If your Microsoft Fabric home region isn't listed, you can still create a Microsoft Fabric capacity in a region that is supported. For more information, see [Buy a Microsoft Fabric license](../enterprise/licenses-buy.md).
 
 To find out what your Fabric home region is, see [Find your Fabric home region](./admin-find-fabric-home-region.md).
 
