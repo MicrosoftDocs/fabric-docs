@@ -11,6 +11,8 @@ items:
     href: create-lakehouse-onelake.md
   - name: Transforming data with Spark and querying with SQL using one copy of data
     href: onelake-onecopy-quickstart.md
+  - name: Shortcut ADLS data transformed with Azure Databricks into OneLake and build PowerBI Report
+    href: onelake-shortcuts-adb-quickstart.md
 - name: Shortcuts
   items:
   - name: What are shortcuts?
