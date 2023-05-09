@@ -97,7 +97,7 @@ As an admin for a workspace, you can delete it. When you delete the workspace, e
 
 In the Workspace settings pane, select Other > Remove this workspace.
 
-:::image type="content" source="media/workspaces/remove-workspace.png" alt-text="Delete workspace." lightbox="media/workspaces/remove-workspace.png":::
+:::image type="content" source="media/workspaces/remove-workspace.png" alt-text="Screenshot showing deleting workspace." lightbox="media/workspaces/remove-workspace.png":::
 
 ## Administering and auditing workspaces
 
