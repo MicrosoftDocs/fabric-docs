@@ -90,7 +90,7 @@ Additionally, if you cancel your trial, you may not be able to start another tri
 
 ## Administer user access to a Fabric (Preview) trial
 
-Power BI administrators enable and disable trials. For more information on administering trials, see [Help and support tenant settings](/powerbi-docs/admin/service-admin-portal-help-support#allow-users-to-try-power-bi-paid-features)
+Power BI administrators can enable and disable trials for paid features for Power BI and Fabric. This is a tenant level setting that is applied to all users or to specific security groups. This one tenant setting applies to **both** Power BI and Fabric trials, so Power BI administrators should carefully evaluate the impact of making a change to this setting.
 
  :::image type="content" source="media/fabric-trial/tenant-trial-settings.png" alt-text="Screenshot of the Microsoft Fabric trial settings.":::
 
