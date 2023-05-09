@@ -11,9 +11,9 @@ ms.search.form: Predict
 
 # Model scoring with PREDICT in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] allows users to operationalize machine learning models with a scalable function called PREDICT, which supports batch scoring in any compute engine. Users can generate batch predictions directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook or from a given model's item page.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you'll learn how to apply PREDICT both ways, whether you're more comfortable writing code yourself or using a guided UI experience to handle batch scoring for you.
 

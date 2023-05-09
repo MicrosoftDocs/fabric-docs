@@ -5,7 +5,7 @@
     items:
     - name: What is Data Factory?
       href: data-factory-overview.md
-    - name: Dataflows gen1 versus gen2
+    - name: Compare Dataflows Gen1 with Gen2
       href: dataflows-gen2-overview.md
   - name: Get started
     items:
@@ -59,6 +59,8 @@
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
       - name: Configure in dataflow gen2
         href: connector-azure-cosmosdb-for-nosql-dataflows.md
+    - name: Azure Data Explorer (Kusto)
+      href: connector-kusto-dataflows.md
     - name: Azure Data Lake Storage Gen2
       items:
       - name: Overview
@@ -203,6 +205,8 @@
         href: templates.md
       - name: Monitor data pipeline runs
         href: monitor-pipeline-runs.md
+      - name: Browse pipeline runs in the Monitoring Hub
+        href: monitoring-hub-pipeline-runs.md
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse

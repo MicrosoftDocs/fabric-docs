@@ -1,6 +1,6 @@
 ---
 title: Connect to HTTP data in dataflows
-description: This article details how to use the Web page connector to connect to HTTP in dataflows.
+description: This article details how to use the Data Factory Web page connector in Microsoft Fabric to create an HTTP connection in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to

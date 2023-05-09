@@ -12,19 +12,19 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Microsoft Fabric's lifecycle management tools provide a standardized system for communication and collaboration between software development teams and related departments, such as test and operations. Lifecycle management facilitates an effective process for releasing products quickly by continuously delivering updated code into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method. There are two basic components of lifecycle management:
+Microsoft Fabric's lifecycle management tools provide a standardized system for communication and collaboration between all members of the development team throughout the life of the product. Lifecycle management facilitates an effective process for releasing products quickly by continuously delivering updated content into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method. There are two basic components of lifecycle management:
 
-## Integration
+## Git integration
 
 :::image type="content" source="./media/cicd-overview/git-flow.png" alt-text="Flowchart showing the connection between the remote git branch and the live workspace.":::
 
-With Fabric's [Git integration](./git-integration/intro-to-git-integration.md) process, incremental code changes can be made frequently and reliably by multiple developers. Build-and-test steps triggered by CI ensure that the code changes merged into the repository are reliable. The delivery process can then deliver the code quickly and seamlessly.
+With Fabric's [Git integration](./git-integration/intro-to-git-integration.md) process, incremental workspace updates can be made frequently and reliably by multiple developers. Build-and-test steps triggered by the git integration process ensure that any changes to the workspace merged into the repository are reliable. The delivery process can then deliver the code quickly and efficiently.
 
-## Delivery
+## Delivery through deployment pipelines
 
-:::image type="content" source="./media/cicd-overview/pipeline-flow.png" alt-text="Illustration showing the flow of data in a deployment pipeline from data to app.":::
+:::image type="content" source="./media/cicd-overview/pipeline-flow.png" alt-text="Illustration showing the flow of data in a deployment pipeline from data to app." lightbox="media/cicd-overview/pipeline-flow.png":::
 
-Fabric's [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) [automates the delivery](./deployment-pipelines/pipeline-automation.md) of completed code to environments like testing and production. It allows teams to produce software in short cycles with high speed, frequency, and reliability. Software can be released at any time with a simple, repeatable deployment process.
+Fabric's [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) [automates the delivery](./deployment-pipelines/pipeline-automation.md) of completed apps to environments like testing and production. It allows teams to produce updates in short cycles with high speed, frequency, and reliability. Content can be released at any time with a simple, repeatable deployment process.
 
 For the most seamless lifecycle management experience in Fabric, connect your developer workspace to git, and deploy from there using deployment pipelines.
 
