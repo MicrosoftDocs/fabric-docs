@@ -68,28 +68,23 @@ landingContent:
           url: get-data-onelake.md
 
   # Card 
-  - title: Query data
-    linkLists:
-      - linkListType: how-to-guide
-        links: 
-          - text: Use sample queries
-            url: query-table.md
-
-
-  # Card 
   - title: KQL Queryset
     linkLists:
       - linkListType: how-to-guide
         links:
           - text: Query data in a KQL queryset
             url:  kusto-query-set.md
-            
+
   # Card 
-  - title: Kusto Query Language (KQL)
+  - title: Query data
     linkLists:
+      - linkListType: how-to-guide
+        links: 
+          - text: Use sample queries
+            url: query-table.md
       - linkListType: overview
         links:          
-          - text: KQL Overview
+          - text: Kusto Query Language (KQL) overview
             url: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
       - linkListType: learn
         links:
