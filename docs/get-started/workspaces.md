@@ -14,7 +14,7 @@ ms.date: 05/23/2023
 
 Ready to get started? Read [Create a workspace](create-workspaces.md).
 
-:::image type="content" source="media/workspaces/fabric-workspace-page.png" alt-text="Screenshot showing a workspace.":::
+:::image type="content" source="media/workspaces/fabric-workspace-page.png" alt-text="Screenshot showing a workspace." lightbox="media/workspaces/fabric-workspace-page.png":::
 
 ## Working with workspaces
 
@@ -49,7 +49,7 @@ You can also open it from the workspace page.
 
 The Contact list feature allows you to specify which users receive notification about issues occurring in the workspace. By default, the one who created the workspace is in the contact list. You can add others to that list while [creating workspace](create-workspaces.md#contact-list) or in workspace settings after creation. Users or groups in the contact list are also listed in the user interface (UI) of the workspace settings, so workspace users know whom to contact.
 
-![Screenshot of contact list setting options.](media/workspaces/contact-list-in-workspace-settings.png)
+:::image type="content" source="media/workspaces/contact-list-in-workspace-settings.png" alt-text="Screenshot of contact list setting options.":::
 
 ### Microsoft 365 and OneDrive
 
@@ -62,13 +62,13 @@ The Workspace OneDrive feature allows you to configure a Microsoft 365 Group who
 
 You can configure OneDrive in workspace settings by typing in the name of the Microsoft 365 group that you created earlier. Type just the name, not the URL. [!INCLUDE [product-name](../includes/product-name.md)] automatically picks up the OneDrive for the group.
 
-![Screenshot of adding OneDrive info.](media/workspaces/add-onedrive-info.png)
+:::image type="content" source="media/workspaces/add-onedrive-info.png" alt-text="Screenshot of adding OneDrive info.":::
 
 ### License mode
 
 By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including My Workspaces can be assigned to any capacity in your organization. You can configure it while creating a workspace or in **Workspace settings -> Premium**. Read more about [licenses](../enterprise/licenses.md).
 
-![Screenshot of license mode in workspace settings.](media/workspaces/license-mode-in-workspace-settings.png)
+:::image type="content" source="media/workspaces/license-mode-in-workspace-settings.png" alt-text="Screenshot of license mode in workspace settings.":::
 
 ### Azure connections configuration
 
