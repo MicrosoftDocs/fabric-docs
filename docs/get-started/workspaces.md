@@ -32,7 +32,7 @@ This article explains these features in more detail.
 
 Workspace admins can use workspace settings to manage and update the workspace. The settings include general settings of the workspace, like the basic information of the workspace, contact list, OneDrive, license, Azure connections, storage, and other experiences' specific settings.
 
-To open the workspace settings, you can select the workspace in the nav pane, then select **More options (...)** next to the workspace name.
+To open the workspace settings, you can select the workspace in the nav pane, then select **More options (...)** > **Workspace settings** next to the workspace name.
 
 :::image type="content" source="media/workspaces/open-workspace-settings.png" alt-text="Screenshot showing Open workspace settings in nav pane.":::
 
