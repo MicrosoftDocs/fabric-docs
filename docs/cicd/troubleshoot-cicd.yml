@@ -16,34 +16,15 @@ summary: |
   Use this article to troubleshoot issues in the lifecycle management process.  
   Review the following links to understand the considerations and limitations.
 
-  Review the links in the following table to understand the considerations and limitations of various lifecycle management topics:
+  Review the links in the following table to understand the considerations and limitations of various lifecycle management issues:
 
   | Topic | Git integration  | Deployment pipelines |
   |--------|------------------|---------------------|
-  | **General** | [git-integration](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) |
-  | **Permissions** | [git-integration](./git-integration/git-integration-process.md#permissions) | [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#permissions) |
-  | **Workspaces** | [git integration](./git-integration/git-integration-process.md#workspace-limitations) | [deployment pipelines](deployment-pipelines/assign-pipeline.md#limitations) |
-  | **Fabric items** | [Supported items](./git-integration/intro-to-git-integration.md#supported-items) | [Supported items](deployment-pipelines/understand-the-deployment-process.md#deployed-items) |
-
-  * General considerations and limitations:
-    * [git-integration](./git-integration/git-integration-process.md#considerations-and-limitations)
-    * [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
-  * Permissions:
-    * [git-integration](./git-integration/git-integration-process.md#permissions)
-    * [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#permissions) 
-  * Workspaces:
-    * [git integration](./git-integration/git-integration-process.md#workspace-limitations)
-    * [deployment pipelines](deployment-pipelines/assign-pipeline.md#limitations)
-  * Fabric items:
-    * Supported and unsupported items:
-      [git integration](./git-integration/intro-to-git-integration.md#supported-items), [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#deployed-items)
-    * Limitations
-      [deployment-pipelines](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
-  * Deployment rules:
-    * [Deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations)
-    * [Supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules)
-  * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
-  * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)
+  | **General limitations** | [general git limitations](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) |
+  | **Permissions needed** | [permissions](./git-integration/git-integration-process.md#permissions) | [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) |
+  | **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#limitations) |
+  | **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/understand-the-deployment-process.md#deployed-items) |
+  | **Datasets** |   | [dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
 
 sections:
   - name: General questions
@@ -197,6 +178,16 @@ sections:
 
   - name: Deployment pipelines  
     questions:
+      - question: |
+          What are some general deployment limitations to keep in mind:
+        answer: |
+          These are some important considerations to keep in mind:
+          
+          * [Deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations)
+          * [Supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules)
+          * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
+          * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)
+
       - question: |
           How do I reestablish connections after deployment?
         answer: |
@@ -562,7 +553,6 @@ sections:
           Why is there no deployment history for one of the stages?
         answer: |
           Deployment history displays information for items that were deployed from a target stage. If there were no deployments from a specific stage, deployment history will display nothing when you select that stage tab.                             
-
 
       - question: |
           Why is only summarized deployment information displayed?
