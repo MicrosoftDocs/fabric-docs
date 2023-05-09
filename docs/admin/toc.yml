@@ -31,7 +31,7 @@ items:
     href: admin-portal-workspace.md
 - name: Settings
   items:    
-  - name: Git integration admin tenant settings
+  - name: Set up git integration
     href: admin-settings-git-integration.md
   - name: Set up item certification
     href: endorsement-setup.md
