@@ -170,7 +170,7 @@ The following table shows the shortcut-related permissions for each workspace ro
 
 <sup>1</sup> User must have a role that provides read permission both in the shortcut location and target location
 
-<sup>2</sup> User musth have a role that proides write permission both in the shortcut location and the target location
+<sup>2</sup> User must have a role that provides write permission both in the shortcut location and the target location
 
 ## How do shortcuts handle deletions?
 
