@@ -27,12 +27,11 @@ Here are some useful tips about working with workspaces.
 - **Contact list**: Specify who receives notification about workspace activity. Read more about [workspace contact lists](#workspace-contact-list) in this article.
 - **Share items**: You can share a single item with colleagues who are not in the same workspace. Read more about [share items](share-items.md).
 
-
 ## Current workspace
+
 After you select and open to a workspace, this workspace becomes your current workspace. You can quickly navigate to it from anywhere by selecting the workspace icon from left nav pane.
 
-![Screenshot of current workspace in left nav pane](media/workspaces/current-workspace-icon-left-nav.png)
-
+![Screenshot of current workspace in left nav pane.](media/workspaces/current-workspace-icon-left-nav.png)
 
 ## Workspace settings
 
@@ -40,7 +39,7 @@ Workspace admins can use workspace settings to manage and update the workspace. 
 
 To open the workspace settings, you can select the workspace in the nav pane, then select **More options (...)** > **Workspace settings** next to the workspace name.
 
-:::image type="content" source="media/workspaces/open-workspace-settings.png" alt-text="Screenshot showing Open workspace settings in nav pane.":::
+:::image type="content" source="media/workspaces/open-workspace-settings.png" alt-text="Screenshot showing Open workspace settings in the nav pane.":::
 
 You can also open it from the workspace page.
 
@@ -54,7 +53,7 @@ The Contact list feature allows you to specify which users receive notification 
 
 ### Microsoft 365 and OneDrive
 
-The Workspace OneDrive feature allows you to configure a Microsoft 365 Group whose SharePoint document library is available to workspace users. You create the Group outside of [!INCLUDE [product-name](../includes/product-name.md)] first, with one available method being from OneDrive. Read about creating a [OneDrive shared library](https://support.microsoft.com/office/create-a-new-shared-library-from-onedrive-for-work-or-school-345c8599-05d8-4bf8-9355-2b5cfabe04d0)
+The Workspace OneDrive feature allows you to configure a Microsoft 365 Group whose SharePoint document library is available to workspace users. You create the Group outside of [!INCLUDE [product-name](../includes/product-name.md)] first, with one available method being from OneDrive. Read about creating a [OneDrive shared library](https://support.microsoft.com/office/create-a-new-shared-library-from-onedrive-for-work-or-school-345c8599-05d8-4bf8-9355-2b5cfabe04d0).
 
 > [!NOTE]
 > Creating Microsoft 365 Groups may be restricted in your environment, or the ability to create them from your OneDrive site may be disabled. If this is the case, speak with your IT department.
@@ -63,13 +62,13 @@ The Workspace OneDrive feature allows you to configure a Microsoft 365 Group who
 
 You can configure OneDrive in workspace settings by typing in the name of the Microsoft 365 group that you created earlier. Type just the name, not the URL. [!INCLUDE [product-name](../includes/product-name.md)] automatically picks up the OneDrive for the group.
 
-![Screenshot of add onedrive info](media/workspaces/add-onedrive-info.png)
+![Screenshot of adding OneDrive info.](media/workspaces/add-onedrive-info.png)
 
 ### License mode
 
 By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including My Workspaces can be assigned to any capacity in your organization. You can configure it while creating a workspace or in **Workspace settings -> Premium**. Read more about [licenses](../enterprise/licenses.md).
 
-![Screenshot of license mode in workspace settings](media/workspaces/license-mode-in-workspace-settings.png)
+![Screenshot of license mode in workspace settings.](media/workspaces/license-mode-in-workspace-settings.png)
 
 ### Azure connections configuration
 
@@ -79,7 +78,7 @@ Workspace admins can configure dataflow storage to use Azure Data Lake Gen 2 sto
 
 With the integration of Azure Data Lake Gen 2 storage, you can bring your own storage to dataflows, and establish a connection at the workspace level. Read [Configure dataflow storage to use Azure Data Lake Gen 2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration) for more detail.  
 
-After the connection with Azure Log Analytics (LA), activity log data is sent continuously and is available in Log Analytics in approximately 5 minutes. Read more about [Using Azure Log Analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for more detail.
+After the connection with Azure Log Analytics (LA), activity log data is sent continuously and is available in Log Analytics in approximately 5 minutes. Read [Using Azure Log Analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for more detail.
 
 ### System storage
 
@@ -95,7 +94,7 @@ Keep in mind that you or someone else may have reports and dashboards based on a
 
 As an admin for a workspace, you can delete it. When you delete the workspace, everything contained within the workspace is deleted for all group members, and the associated app is also removed from AppSource.
 
-In the Workspace settings pane, select Other > Remove this workspace.
+In the Workspace settings pane, select **Other** > **Remove this workspace**.
 
 :::image type="content" source="media/workspaces/remove-workspace.png" alt-text="Screenshot showing deleting workspace." lightbox="media/workspaces/remove-workspace.png":::
 
