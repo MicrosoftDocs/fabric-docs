@@ -20,11 +20,11 @@ You can use existing dynamic management views (DMVs) to monitor connection, sess
 
 For the current version, there are three dynamic management views (DMVs) provided for you to receive live SQL query lifecycle insights.
 
-- [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
+- [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=sql-server-ver16)
     - Returns information about each connection established between the warehouse and the engine.
-- [sys.dm_exec_sessions](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
+- [sys.dm_exec_sessions](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sessions-transact-sql?view=sql-server-ver16)
     - Returns information about each session authenticated between the item and engine.
-- [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
+- [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=sql-server-ver16)
     - Returns information about each active request in a session.
 
 These three DMVs provide detailed insight on the following scenarios:
