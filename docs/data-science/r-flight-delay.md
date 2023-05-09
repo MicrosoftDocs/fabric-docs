@@ -300,7 +300,7 @@ You can now use this table to create a Power BI dataset.
   :::image type="content" source="media/r-flight-delay/open-lakehouse.png" alt-text="Screenshot shows where to open the lakehouse.":::
 
 1. On the top, select **New Power BI dataset**.
-1. If you see a list of items, select **nycflight13**, then select **Confirm**.
+1. Select **nycflight13** for your new dataset, then select **Confirm**.
 1. Your Power BI dataset is created.  At the top, select **New report**.
 1. Select or drag fields from the data and visualizations panes onto the report canvas to build your report.
 
