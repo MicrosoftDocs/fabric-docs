@@ -136,9 +136,9 @@ To learn more information about copy activity in Data Warehouse, see the followi
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
-|**Workspace data store type**|The section to select your workspace data store type.|\<Data Warehouse> |Yes|type|
+|**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse** |Yes|type|
 |**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
-|**Use query** |The way to read data from Data Warehouse. |•Tables<br>•Query<br>•Stored procedure|No|•typeProperties:<br> schema<br>  table<br>•sqlReaderQuery<br>•sqlReaderStoredProcedureName|
+|**Use query** |The way to read data from Data Warehouse. |•Tables<br>•Query<br>•Stored procedure|No|*(under `typeProperties` -> `source`)*<br>•typeProperties:<br>&emsp;schema<br>&emsp;table<br>•sqlReaderQuery<br>•sqlReaderStoredProcedureName|
 |**Query timeout (minutes)**|Timeout for query command execution, with the default of 120 minutes. If this property is set, the allowed values are in the format of a timespan, such as "02:00:00" (120 minutes).|timespan |No |queryTimeout|
 |**Isolation level** |The transaction locking behavior for source. |•None<br>•Snapshot|No |isolationLevel|
 |**Partition option**|The data partitioning options used to load data from Data Warehouse.|•None<br>•Dynamic range|No|partitionOption|
@@ -152,10 +152,10 @@ To learn more information about copy activity in Data Warehouse, see the followi
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
-|**Workspace data store type**|The section to select your workspace data store type.|\<your workspace data store type> |Yes|type|
+|**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse**  |Yes|type|
 |**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
 |**Table** |The destination table to write data.|\<name of your destination table>|Yes|schema <br> table|
-|**Copy command settings**|A group of properties|Default value:<br>•Column<br> •Value|No |copyCommandSettings:<br>defaultValues:<br>•columnName<br>•defaultValue|
+|**Copy command settings**|The copy command property settings. Contains the default value settings.|Default value:<br>•Column<br> •Value|No |copyCommandSettings:<br>defaultValues:<br>•columnName<br>•defaultValue|
 |**Table option**|Whether to automatically create the destination table if not exists based on the source schema.|•None<br>•Auto create table|No|tableOption:<br><br>•autoCreate|
 |**Pre-copy script** |A SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.|\<pre-copy script>|No|preCopyScript|
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
