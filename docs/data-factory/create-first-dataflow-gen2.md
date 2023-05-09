@@ -1,5 +1,5 @@
 ---
-title: Create your first Microsoft Fabric dataflow
+title: Create your first Microsoft Fabric Dataflow
 description: Steps for creating dataflows and transforming data.
 ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
@@ -21,7 +21,7 @@ To get started, you must complete the following prerequisites:
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. Create an account for free.
 - Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 
-## Create a dataflow
+## Create a Dataflow
 
 In this section, you'll be creating your first dataflow.
 

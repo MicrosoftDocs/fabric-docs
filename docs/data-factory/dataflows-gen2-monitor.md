@@ -49,7 +49,7 @@ Once you've determined which dataflow you want to investigate, you can drill dow
 
 In short, this overview provides you:
 
-- Status of the dataflow
+- Status of the Dataflow
 - Type of refresh
 - Start and End time
 - Duration
@@ -94,7 +94,7 @@ This dashboard provides you with the following information:
 - Refresh duration
 - Submitter of the refresh
 - Workspace name
-- Fabric capacity used for the refresh of your dataflow
+- Fabric capacity used for the refresh of your Dataflow
 - Average refresh duration
 - Number of refreshes per day
 - Type of refresh

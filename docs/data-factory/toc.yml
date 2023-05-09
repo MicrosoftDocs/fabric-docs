@@ -9,7 +9,7 @@
       href: dataflows-gen2-overview.md
   - name: Get started
     items:
-    - name: Create a dataflow
+    - name: Create a Dataflow
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
@@ -21,7 +21,7 @@
       href: tutorial-end-to-end-introduction.md
     - name: Module 1 - Create your first data pipeline
       href: tutorial-end-to-end-pipeline.md
-    - name: Module 2 - Create your first dataflow
+    - name: Module 2 - Create your first Dataflow
       href: tutorial-end-to-end-dataflow.md
     - name: Module 3 - Complete your first data integration journey
       href: tutorial-end-to-end-integration.md     
@@ -207,7 +207,7 @@
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
         href: tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse.md    
-      - name: Copy sample data into Lakehouse and transform with dataflow
+      - name: Copy sample data into Lakehouse and transform with Dataflow
         href: tutorial-load-data-lakehouse-transform.md
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
         href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
@@ -225,7 +225,7 @@
         href: dataflows-gen2-monitor.md
     - name: How-to
       items:
-      - name: Saving a draft of your dataflow
+      - name: Saving a draft of your Dataflow
         href: dataflows-gen2-save-draft.md
       - name: How to obfuscate data
         href: data-obfuscation-with-delphix.md

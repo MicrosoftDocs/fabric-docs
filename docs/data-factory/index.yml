@@ -32,7 +32,7 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Create your first gen2 dataflow
+          - text: Create your first gen2 Dataflow
             url: create-first-dataflow-gen2.md
           - text: Create your first data pipeline
             url: create-first-pipeline-with-sample-data.md
@@ -64,6 +64,6 @@ landingContent:
             url: data-source-management.md
           - text: Monitor your dataflows
             url: dataflows-gen2-monitor.md
-          - text: Save a draft of your dataflow
+          - text: Save a draft of your Dataflow
             url: dataflows-gen2-save-draft.md
 

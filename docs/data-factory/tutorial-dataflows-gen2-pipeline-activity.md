@@ -40,7 +40,7 @@ To start, you first need to create a lakehouse. A lakehouse is a data lake that 
 
 Now you've created a lakehouse and you can now set up the dataflow.
 
-## Create a dataflow
+## Create a Dataflow
 
 A dataflow is a reusable data transformation that can be used in a pipeline. In this tutorial, you create a dataflow that gets data from an OData source and writes the data to a lakehouse destination.  
 
