@@ -306,6 +306,21 @@ You can now use this table to create a Power BI dataset.
 
 :::image type="content" source="media/r-flight-delay/power-bi-data.png" alt-text="Graph of Power BI dataset.":::
 
+To create the report shown at the beginning of this section, use the following fields:
+
+1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false"::: Stacked barchart with:
+    1. Y-axis: **carrier_name**.
+    1. X-axis: **flight**.  Select **Count** for the aggregation.
+    1. Legend: **origin_name**
+1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false"::: Stacked barchart with:
+    1. Y-axis: **dest_name**.
+    1. X-axis: **flight**.  Select **Count** for the aggregation.
+    1. Legend: **origin_name**.
+1. :::image type="icon" source="media/r-flight-delay/slicer.png" border="false"::: Slicer with:
+    1. Field: **_pred_class**
+1. :::image type="icon" source="media/r-flight-delay/slicer.png" border="false"::: Slicer with:
+    1. Field: **_pred_late**
+
 ## Next steps
 
 - [How to use SparkR](./r-use-sparkr.md)
