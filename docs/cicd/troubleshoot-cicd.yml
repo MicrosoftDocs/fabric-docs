@@ -25,26 +25,9 @@ summary: |
   | **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/understand-the-deployment-process.md#deployed-items) |
   | **Datasets** |   | [dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
 
-
-
 sections:
   - name: General questions
     questions:
-      - question: |
-                 What is lifecycle management in Microsoft Fabric?
-        answer: |
-          Lifecycle management has two parts, integration and deployment. To understand what integration is in Fabric, refer to [the git integration overview](./git-integration/intro-to-git-integration.md). To understand what deployment pipelines is in Fabric, refer to the [deployment pipelines overview](deployment-pipelines/intro-to-deployment-pipelines.md).
-          
-      - question: |
-          How do I get started with git integration?
-        answer: |
-          Get started with git integration using the [get started instructions](git-integration/git-get-started.md).
-          
-      - question: |
-          How do I get started with deployment pipelines?
-        answer: |
-          Get started with deployment pipelines using the [get started instructions](deployment-pipelines/get-started-with-deployment-pipelines.md).
-          
       - question: |
           Why can't I see the deployment pipelines button?
         answer: |
@@ -62,25 +45,9 @@ sections:
           > [!div class="mx-imgBorder"]
           > ![A screenshot of the production tag in a production pipeline workspace.](media/troubleshoot-cicd/production-tag.png)
           
-  - name: Licensing
-    questions:
-      - question: |
-          What licenses are needed to work with lifecycle management?
-        answer: |
-          For more information on licenses, see [Fabric licenses](../enterprise/licenses.md).
-          
-      - question: |
-          What type of capacity do I need?
-        answer: |
-          All workspaces must be assigned to a Fabric license. However, you can use different capacity types for different workspaces.
-          
-          For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity-and-skus).
-
-          >[!NOTE]
-          > * PPU, EM, and A SKUs only work with Power BI items. If you add other Fabric items to the workspace, you need a trial, P, or F SKU.
-          > * When you create a workspace with a PPU, only other PPU users can able to access the workspace and consume its content.
-          
+        
   - name: Git integration  
+    anchorId: git-integration
     questions:
       - question: |
           The Commit button is disabled.
@@ -180,7 +147,8 @@ sections:
           
           Select **Undo**.  
 
-  - name: Deployment pipelines  
+  - name: Deployment pipelines
+    anchorId: deployment-pipelines
     questions:
       - question: |
           What are some general deployment limitations to keep in mind:
@@ -224,11 +192,6 @@ sections:
           * The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus)
           
           Workspaces that don't meet these conditions, aren't displayed in the list of workspaces you can select from.
-          
-      - question: |
-          How can I assign workspaces to all the stages in a pipeline?
-        answer: |
-          You can either assign one workspace to your pipeline and then deploy it across the pipeline, or assign a different workspace to each pipeline stage. For more information, see [assign a workspace to a deployment pipeline](deployment-pipelines/assign-pipeline.md).
           
       - question: |
           Why did my first deployment fail?
@@ -302,11 +265,6 @@ sections:
           Datasets and dataflows are Fabric items that store data and contain both data and metadata. During deployment, only the metadata is copied while the data isn't. As a result, after deployment the dataset or dataflow might not have any data and a report visual that's relying on this data, will appear broken. To solve this problem, refresh the dataflow and then refresh the dataset in the target stage.
 
       - question: |
-          Does deployment pipelines support multi-geo?
-        answer: |
-          Multi-geo is supported. It may take longer to deploy content between stages in different geos.
-
-      - question: |
           How can I delete a pipeline that doesn't have an owner (an orphaned pipeline)?
         answer: |
           When working with deployment pipelines, you might end up with a pipeline that doesn't have an owner. For example, a pipeline can be left without an owner when a user that owned it leaves the company without transferring ownership. When a pipeline doesn't have an owner, other users can't access it. As a workspace can only be assigned to one pipeline, if it's assigned to a pipeline without an owner, nobody is able to unassign it, and you can't use the workspace in another pipeline.
@@ -340,15 +298,6 @@ sections:
           Why did my dataset deployment fail? 
         answer: |
           There could be a few possible reasons for your dataset deployment to fail. One of the reasons may be due to a large dataset that isn't configured with the [large dataset format](/power-bi/enterprise/service-premium-large-models.md). If your dataset is larger than 4 GB and isn't using the large dataset format, it might fail to be deployed. Try setting your dataset to use the large dataset format, and redeploy.
-
-      - question: |
-          What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables?
-        answer: |
-          Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables aren't supported in deployment pipelines. If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations?view=analysisservices-dotnet) property in your table's columns. You can use one of the methods listed below to edit your dataset so that it works in deployment pipelines.
-
-          * In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand.md#import-mode) mode.
-
-          * Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables from your dataset. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your dataset model works as it may result in data corruption in your visuals.
 
   - name: Paginated reports
     questions:
