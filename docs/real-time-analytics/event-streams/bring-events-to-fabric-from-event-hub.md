@@ -5,15 +5,15 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: tutorial
-ms.date: 04/28/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Bring real-time events to Microsoft Fabric to build near real-time report
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 This tutorial shows you how to use Microsoft Fabric event streams to bring your real-time events to lakehouse from your Azure event hub, then build near real-time report to monitor your business events data.
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 In this tutorial, you learn how to:
 
@@ -31,7 +31,7 @@ In this tutorial, you learn how to:
 To get started, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream and Lakehouse item are located in.
-- An Azure event hub with event data exists and appropriate permission available to access the policy keys.
+- An Azure event hub with event data and appropriate permission available to access the policy keys.
 
 ## Create Eventstream and Lakehouse item
 
@@ -97,7 +97,7 @@ After the Lakehouse and Eventstream items are created, do the following steps to
 
 ## Add a Lakehouse destination to the Eventstream item
 
-After your event hub events have been ingested into your eventstream, you can add the **Lakehouse** destination to receive the events from your eventstream. Follow these steps below to add the **Lakehouse** destination.
+After your event hub events have been ingested into your eventstream, you can add the **Lakehouse** destination to receive the events from your eventstream. Follow these steps to add the **Lakehouse** destination.
 
 1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Lakehouse**.  
 

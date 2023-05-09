@@ -101,11 +101,11 @@ To do this:
 
 1. Navigate to your [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] workspace and select **Workspace Settings**.
 
-:::image type="content" source="./media/machine-learning-experiment/autologging-workspace-setting.png" alt-text="Screenshot of the Data science artifact page." lightbox="./media/machine-learning-experiment/autologging-workspace-setting.png":::
+   :::image type="content" source="./media/machine-learning-experiment/autologging-workspace-setting.png" alt-text="Screenshot of the Data science artifact page." lightbox="./media/machine-learning-experiment/autologging-workspace-setting.png":::
 
 2. In the **Data Engineering/Science** tab, select **Spark compute**. Here, you will find the setting to enable or disable [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] autologging.
 
-:::image type="content" source="./media/machine-learning-experiment/autologging-setting-2.png" alt-text="Screenshot of the Data science Workspace setting for autologging." lightbox="./media/machine-learning-experiment/autologging-setting-2.png":::
+   :::image type="content" source="./media/machine-learning-experiment/autologging-setting-2.png" alt-text="Screenshot of the Data science Workspace setting for autologging." lightbox="./media/machine-learning-experiment/autologging-setting-2.png":::
 
 ## Next steps
 

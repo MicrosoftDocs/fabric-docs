@@ -98,7 +98,7 @@ The following properties are **required**:
 - **Data store type**: Select **Workspace**.
 - **Workspace data store type**: Select **Lakehouse** from the data store type list.
 - **Lakehouse**: Select an existing Lakehouse from the workspace. If not exist, then create a new Lakehouse by clicking on **New**.
-- **Root folder**: Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](/trident-docs-private-preview/synapse-data-engineering/concepts-lakehouse?branch=main).
+- **Root folder**: Select **Tables** or **Files** which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
     - If select **Tables**,
         - **Table name**: Choose an existing table from the table list or specify table name as destination.
 

@@ -24,19 +24,19 @@ In the following step, you use the advanced data analysis capabilities of Kusto 
 
     :::image type="content" source="media/realtime-analytics-tutorial/new-kql-queryset.png" alt-text="Screenshot of the New related item dropdown showing the option to create a new related KQL queryset."  lightbox="media/realtime-analytics-tutorial/new-kql-queryset.png":::
 
-1. Enter *nyctaxiqs* as the KQL Queryset name.
+1. Enter *nyctaxiqs* as the KQL queryset name.
 1. Select **Create**. The KQL queryset opens with several autopopulated sample queries.
 
 ## Query data
 
-This section walks you through some of the query and visualization capabilities of the KQL Queryset. Copy and paste the queries in your own query editor to run and visualize the results.
+This section walks you through some of the query and visualization capabilities of the KQL queryset. Copy and paste the queries in your own query editor to run and visualize the results.
 
 1. The following query returns the top 10 pickup locations in New York City for Yellow Taxis.
 
     ```kusto
     nyctaxitrips
     | summarize Count=count() by PULocationID
-    | top 10 by Count 
+    | top 10 by Count
     ```
 
     :::image type="content" source="media/realtime-analytics-tutorial/top-10-by-count.png" alt-text="Screenshot of query result in Real-Time Analytics in Microsoft Fabric.":::
@@ -53,7 +53,7 @@ This section walks you through some of the query and visualization capabilities 
 
     :::image type="content" source="media/realtime-analytics-tutorial/top-10-locations.png" alt-text="Screenshot of top 10 location results in Real-Time Analytics in Microsoft Fabric.":::
 
-1. KQL also provides machine learning functions to detect anomalies. Let's check anomalies in the tips that have been given by the customers in the Manhattan borough. This query uses the [series_decompose_anomalies function](/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?context=/fabric/context/context&pivots=fabric).
+1. KQL also provides machine learning functions to detect anomalies. Let's check anomalies in the tips given by the customers in the Manhattan borough. This query uses the [series_decompose_anomalies function](/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?context=/fabric/context/context&pivots=fabric).
 
     ```kusto
     nyctaxitrips
@@ -80,6 +80,14 @@ This section walks you through some of the query and visualization capabilities 
     ```
 
     :::image type="content" source="media/realtime-analytics-tutorial/forecast-results.png" alt-text="Screenshot of forecast results in Real-Time Analytics in Microsoft Fabric.":::
+
+## See also
+
+For more information about tasks performed in this tutorial, see:
+
+* [Create a KQL queryset](kusto-query-set.md#create-a-kql-queryset)
+* [Write a query](kusto-query-set.md#write-a-query)
+* [render operator](/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer?context=/fabric/context/context&pivots=fabric)
 
 ## Next steps
 
