@@ -21,13 +21,13 @@ The workspace contains all the artifacts needed for data warehousing including D
 1. Sign in to [Power BI](https://powerbi.com).
 1. Select **Workspaces** > **New workspace**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-create-workspace\create-new-workspace.png" alt-text="Screenshot of workspaces pane showing where to select New workspace.":::
+   :::image type="content" source="media\tutorial-create-workspace\create-new-workspace.png" alt-text="Screenshot of workspaces pane showing where to select New workspace.":::
 
 1. Fill out the **Create a workspace** form as follows:
    1. **Name**: Enter *Data Warehouse Tutorial*, and some characters for uniqueness.
    1. **Description**: Optionally, enter a description for the workspace.
 
-   :::image type="content" source="media\tutorial-data-warehouse-create-workspace\create-a-workspace-dialog.png" alt-text="Screenshot of the Create a workspace dialog box, showing where to enter the new workspace name.":::
+   :::image type="content" source="media\tutorial-create-workspace\create-a-workspace-dialog.png" alt-text="Screenshot of the Create a workspace dialog box, showing where to enter the new workspace name.":::
 
 1. Expand the **Advanced** section.
 1. Choose **Premium capacity** in the **License mode** section.
@@ -38,4 +38,4 @@ The workspace contains all the artifacts needed for data warehousing including D
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Microsoft Fabric data warehouse](tutorial-data-warehouse-create-warehouse.md)
+> [Tutorial: Create a Microsoft Fabric data warehouse](tutorial-create-warehouse.md)

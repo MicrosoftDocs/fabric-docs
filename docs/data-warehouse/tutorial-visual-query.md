@@ -18,15 +18,15 @@ Create and save a query with the visual query builder.
 
 1. From the **Home** tab of the ribbon, select **New visual query**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-visual-query\select-new-visual.png" alt-text="Screenshot of the ribbon, showing where to select New visual query.":::
+   :::image type="content" source="media\tutorial-visual-query\select-new-visual.png" alt-text="Screenshot of the ribbon, showing where to select New visual query.":::
 
 1. Drag the `fact_sale` table from the explorer to the query design pane.
 
-   :::image type="content" source="media\tutorial-data-warehouse-visual-query\drag-drop-table.png" alt-text="Screenshot of the explorer pane next to the query design pane, showing where to drag the table.":::
+   :::image type="content" source="media\tutorial-visual-query\drag-drop-table.png" alt-text="Screenshot of the explorer pane next to the query design pane, showing where to drag the table.":::
 
 1. Limit the dataset size by selecting **Reduce rows** > **Keep top rows** from the transformations ribbon.
 
-   :::image type="content" source="media\tutorial-data-warehouse-visual-query\keep-top-rows-option.png" alt-text="Screenshot of the Reduce rows drop-down menu, showing where to select the Keep top rows option.":::
+   :::image type="content" source="media\tutorial-visual-query\keep-top-rows-option.png" alt-text="Screenshot of the Reduce rows drop-down menu, showing where to select the Keep top rows option.":::
 
 1. In the **Keep top rows** dialog, enter **10,000**.
 
@@ -36,7 +36,7 @@ Create and save a query with the visual query builder.
 
 1. From the transformations ribbon, select the dropdown next to **Combine** and select **Merge queries as new**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-visual-query\merge-queries-new.png" alt-text="Screenshot of the transformations ribbon with the Combine drop-down menu open, showing where to select Merge queries as new.":::
+   :::image type="content" source="media\tutorial-visual-query\merge-queries-new.png" alt-text="Screenshot of the transformations ribbon with the Combine drop-down menu open, showing where to select Merge queries as new.":::
 
 1. On the **Merge** settings page:
 
@@ -50,19 +50,19 @@ Create and save a query with the visual query builder.
 
    1. **Join kind**: Inner
 
-   :::image type="content" source="media\tutorial-data-warehouse-visual-query\merge-settings-details.png" alt-text="Screenshot of the Merge dialog box, showing where to find table names and CityKey fields.":::
+   :::image type="content" source="media\tutorial-visual-query\merge-settings-details.png" alt-text="Screenshot of the Merge dialog box, showing where to find table names and CityKey fields.":::
 
 1. Select **OK**.
 
 1. With the **Merge** step selected, select the **Expand** button next to `fact_sale` on the header of the data grid then select only **TaxAmount, Profit,** and **TotalIncludingTax.**
 
-   :::image type="content" source="media\tutorial-data-warehouse-visual-query\table-expand-selected.png" alt-text="Screenshot of the table with Merge selected and TaxAmount, Profit, and TotalIncludingTax selected.":::
+   :::image type="content" source="media\tutorial-visual-query\table-expand-selected.png" alt-text="Screenshot of the table with Merge selected and TaxAmount, Profit, and TotalIncludingTax selected.":::
 
 1. Select **OK**.
 
 1. Select **Transform** > **Group by** from the transformations ribbon.
 
-   :::image type="content" source="media\tutorial-data-warehouse-visual-query\transform-group-by.png" alt-text="Screenshot of the transformations ribbon, showing where to select Group by from the Transform drop-down menu.":::
+   :::image type="content" source="media\tutorial-visual-query\transform-group-by.png" alt-text="Screenshot of the transformations ribbon, showing where to select Group by from the Transform drop-down menu.":::
 
 1. On the **Group by** settings page:
 
@@ -78,13 +78,13 @@ Create and save a query with the visual query builder.
        1. **SumOfProfit with** **Operation of** **Sum and** **Column** **of** **Profit**
        1. **SumOfTotalIncludingTax** with **Operation** of **Sum** and **Column** of **TotalIncludingTax**
 
-   :::image type="content" source="media\tutorial-data-warehouse-visual-query\group-by-settings.png" alt-text="Screenshot of the Group by settings page with the correct values entered and selected.":::
+   :::image type="content" source="media\tutorial-visual-query\group-by-settings.png" alt-text="Screenshot of the Group by settings page with the correct values entered and selected.":::
 
 1. Select **OK**.
 
 1. Right-click on **Visual query 1** in the explorer and select **Rename**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-visual-query\rename-visual-query.png" alt-text="Screenshot showing where to right click on the new visual query in the Explorer pane, and where to select Rename.":::
+   :::image type="content" source="media\tutorial-visual-query\rename-visual-query.png" alt-text="Screenshot showing where to right click on the new visual query in the Explorer pane, and where to select Rename.":::
 
 1. Type **Sales Summary** to change the name of the query.
 
@@ -93,4 +93,4 @@ Create and save a query with the visual query builder.
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Power BI report](tutorial-data-warehouse-power-bi-report.md)
+> [Tutorial: Create a Power BI report](tutorial-power-bi-report.md)

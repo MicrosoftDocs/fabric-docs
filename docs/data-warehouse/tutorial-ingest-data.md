@@ -18,45 +18,45 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 
 1. From the **Build a warehouse** landing page, select **Data Warehouse Tutorial** in the left-hand navigation menu to return to the workspace artifact view.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\select-tutorial-menu.png" alt-text="Screenshot of the navigation menu, showing where to select Data Warehouse Tutorial.":::
+   :::image type="content" source="media\tutorial-ingest-data\select-tutorial-menu.png" alt-text="Screenshot of the navigation menu, showing where to select Data Warehouse Tutorial.":::
 
 1. In the upper left corner, select **New** > **Show all** to display a full list of available items.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\select-show-all.png" alt-text="Screenshot of the Data Warehouse Tutorial page, showing where to select Show all from the New menu.":::
+   :::image type="content" source="media\tutorial-ingest-data\select-show-all.png" alt-text="Screenshot of the Data Warehouse Tutorial page, showing where to select Show all from the New menu.":::
 
 1. In the **Data Factory** section, select **Data pipeline**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\select-data-pipeline.png" alt-text="Screenshot of the data pipeline section, showing where to select Data pipeline.":::
+   :::image type="content" source="media\tutorial-ingest-data\select-data-pipeline.png" alt-text="Screenshot of the data pipeline section, showing where to select Data pipeline.":::
 
 1. On the **New** **pipeline** dialog, enter **Load Customer Data** as the name.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\new-pipeline-dialog.png" alt-text="Screenshot of the New pipeline dialog box, showing where to enter the name and select Create.":::
+   :::image type="content" source="media\tutorial-ingest-data\new-pipeline-dialog.png" alt-text="Screenshot of the New pipeline dialog box, showing where to enter the name and select Create.":::
 
 1. Select **Create**.
 
 1. Select **Add pipeline activity** from the **Start building your data pipeline** landing page.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\start-building-pipeline.png" alt-text="Screenshot of the Start building your pipeline screen, showing where to select Add pipeline activity.":::
+   :::image type="content" source="media\tutorial-ingest-data\start-building-pipeline.png" alt-text="Screenshot of the Start building your pipeline screen, showing where to select Add pipeline activity.":::
 
 1. Select **Copy data** from the **Move &** **transform** section.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\select-copy-data.png" alt-text="Screenshot of the Move and transform section, showing where to select Copy data.":::
+   :::image type="content" source="media\tutorial-ingest-data\select-copy-data.png" alt-text="Screenshot of the Move and transform section, showing where to select Copy data.":::
 
 1. If necessary, select the newly created Copy data activity from the design canvas and follow the next steps to configure it.
 
 1. On the **General** page, enter **CD Load dimension_customer** as the **Name**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\general-tab-name.png" alt-text="Screenshot of the General tab, showing where to enter the copy activity name.":::
+   :::image type="content" source="media\tutorial-ingest-data\general-tab-name.png" alt-text="Screenshot of the General tab, showing where to enter the copy activity name.":::
 
 1. On the **Source** page, select **External** for the **Data store type**.
 
 1. Next to the **Connection** box, select **New** to create a new connection.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\source-tab-details.png" alt-text="Screenshot of the Source tab, showing where to select External and New.":::
+   :::image type="content" source="media\tutorial-ingest-data\source-tab-details.png" alt-text="Screenshot of the Source tab, showing where to select External and New.":::
 
 1. On the **New connection** page, select **Azure Blob Storage** from the list of connection options.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\azure-blob-storage.png" alt-text="Screenshot of the Azure Blob Storage option.":::
+   :::image type="content" source="media\tutorial-ingest-data\azure-blob-storage.png" alt-text="Screenshot of the Azure Blob Storage option.":::
 
 1. Select **Continue**.
 
@@ -70,7 +70,7 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 
    1. Set the **Authentication kind** to **Anonymous**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\new-connection-settings.png" alt-text="Screenshot of the Connections settings screen with the Account name and Connection credentials fields filled in as directed in the previous steps.":::
+   :::image type="content" source="media\tutorial-ingest-data\new-connection-settings.png" alt-text="Screenshot of the Connections settings screen with the Account name and Connection credentials fields filled in as directed in the previous steps.":::
 
 1. Select **Create**.
 
@@ -86,7 +86,7 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 
 1. Select **Preview data** next to the **File path** setting to ensure there are no errors.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\source-tab-change-details.png" alt-text="Screenshot of the Source tab, showing where to change the file path and format details, and select Preview data.":::
+   :::image type="content" source="media\tutorial-ingest-data\source-tab-change-details.png" alt-text="Screenshot of the Source tab, showing where to change the file path and format details, and select Preview data.":::
 
 1. On the **Destination** page, select **Workspace** for the **Data store type**.
 
@@ -100,13 +100,13 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 
 1. In the second box next to the **Table** setting, enter `dimension_customer`.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\destination-tab.png" alt-text="Screenshot of the Destination tab, showing where to enter and select the details specified in the previous steps.":::
+   :::image type="content" source="media\tutorial-ingest-data\destination-tab.png" alt-text="Screenshot of the Destination tab, showing where to enter and select the details specified in the previous steps.":::
 
 1. Expand the **Advanced** section.
 
 1. For the **Table option**, select **Auto create table**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\advanced-auto-create-table.png" alt-text="Screenshot of the Advanced section, showing where to select Auto create table.":::
+   :::image type="content" source="media\tutorial-ingest-data\advanced-auto-create-table.png" alt-text="Screenshot of the Advanced section, showing where to select Auto create table.":::
 
 1. From the ribbon, select **Run**.
 
@@ -114,9 +114,9 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 
 1. Monitor the copy activity's progress on the **Output** page and wait for it to complete.
 
-   :::image type="content" source="media\tutorial-data-warehouse-ingest-data\monitor-output-page.png" alt-text="Screenshot of the Output page, showing what a successful run looks like.":::
+   :::image type="content" source="media\tutorial-ingest-data\monitor-output-page.png" alt-text="Screenshot of the Output page, showing what a successful run looks like.":::
 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Build a report](tutorial-data-warehouse-build-report.md)
+> [Tutorial: Build a report](tutorial-build-report.md)

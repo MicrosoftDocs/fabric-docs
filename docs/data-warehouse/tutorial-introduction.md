@@ -29,20 +29,20 @@ As prerequisities to this tutorial, complete the following steps:
 
 In this tutorial, you take on the role of a data warehouse developer at the fictional Wide World Importers company and complete the following steps in the [!INCLUDE [product-name](../includes/product-name.md)] portal to build and implement an end-to-end data warehouse solution:
 
-1. [Create a Fabric workspace](tutorial-data-warehouse-create-workspace.md).
-1. Quickly [create a data warehouse](tutorial-data-warehouse-create-warehouse.md).
-1. [Ingest data](tutorial-data-warehouse-ingest-data.md) from source to the data warehouse dimensional model with a data pipeline.
-1. [Build a report](tutorial-data-warehouse-build-report.md) with the data you ingested into your warehouse.
-1. [Create tables](tutorial-data-warehouse-create-tables.md) in your warehouse.
-1. [Load data with T-SQL](tutorial-data-warehouse-load-data.md) with the SQL query editor.
-1. [Transform the data](tutorial-data-warehouse-transform-data.md) to create aggregated datasets using T-SQL.
-1. Query the data warehouse using T-SQL and a [visual query editor](tutorial-data-warehouse-visual-query.md).
-1. [Create Power BI reports](tutorial-data-warehouse-power-bi-report.md) using DirectLake mode to analyze the data in place.
-1. [Clean up resources](tutorial-data-warehouse-clean-up.md) by deleting the workspace and other items.
+1. [Create a Fabric workspace](tutorial-create-workspace.md).
+1. Quickly [create a data warehouse](tutorial-create-warehouse.md).
+1. [Ingest data](tutorial-ingest-data.md) from source to the data warehouse dimensional model with a data pipeline.
+1. [Build a report](tutorial-build-report.md) with the data you ingested into your warehouse.
+1. [Create tables](tutorial-create-tables.md) in your warehouse.
+1. [Load data with T-SQL](tutorial-load-data.md) with the SQL query editor.
+1. [Transform the data](tutorial-transform-data.md) to create aggregated datasets using T-SQL.
+1. Query the data warehouse using T-SQL and a [visual query editor](tutorial-visual-query.md).
+1. [Create Power BI reports](tutorial-power-bi-report.md) using DirectLake mode to analyze the data in place.
+1. [Clean up resources](tutorial-clean-up.md) by deleting the workspace and other items.
 
 ## Data warehouse end-to-end architecture
 
-:::image type="content" source="media\tutorial-data-warehouse-introduction\data-warehouse-architecture.png" alt-text="Diagram that shows the data warehouse end to end architecture." lightbox="media\tutorial-data-warehouse-introduction\data-warehouse-architecture.png":::
+:::image type="content" source="media\tutorial-introduction\data-warehouse-architecture.png" alt-text="Diagram that shows the data warehouse end to end architecture." lightbox="media\tutorial-introduction\data-warehouse-architecture.png":::
 
 **Data sources** - Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data from.
 
@@ -64,9 +64,9 @@ Typically, you would bring data from transactional systems (or line of business 
 
 While the WWI dimensional model contains multiple fact tables, for this tutorial we focus on the Sale Fact table and its related dimensions only, as follows, to demonstrate this end-to-end data warehouse scenario:
 
-:::image type="content" source="media\tutorial-data-warehouse-introduction\data-warehouse-data-model.png" alt-text="Diagram that shows the data model you use in this tutorial, which includes the Sale Fact table and its related dimensions." lightbox="media\tutorial-data-warehouse-introduction\data-warehouse-data-model.png":::
+:::image type="content" source="media\tutorial-introduction\data-warehouse-data-model.png" alt-text="Diagram that shows the data model you use in this tutorial, which includes the Sale Fact table and its related dimensions." lightbox="media\tutorial-introduction\data-warehouse-data-model.png":::
 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Microsoft Fabric workspace](tutorial-data-warehouse-create-workspace.md)
+> [Tutorial: Create a Microsoft Fabric workspace](tutorial-create-workspace.md)

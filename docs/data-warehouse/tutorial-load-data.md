@@ -18,7 +18,7 @@ Now that you have seen how to build a data warehouse, load a table, and generate
 
 1. From the ribbon, select **New SQL query**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-load-data\home-ribbon-select-new.png" alt-text="Screenshot of the Home screen ribbon, showing where to select New SQL query.":::
+   :::image type="content" source="media\tutorial-load-data\home-ribbon-select-new.png" alt-text="Screenshot of the Home screen ribbon, showing where to select New SQL query.":::
 
 1. In the query editor, paste the following code.
 
@@ -39,19 +39,19 @@ Now that you have seen how to build a data warehouse, load a table, and generate
 
 1. Select **Run** to execute the query. The query takes between one and four minutes to execute.
 
-   :::image type="content" source="media\tutorial-data-warehouse-load-data\select-run-option.png" alt-text="Screenshot showing where to select Run to execute your query.":::
+   :::image type="content" source="media\tutorial-load-data\select-run-option.png" alt-text="Screenshot showing where to select Run to execute your query.":::
 
 1. After the query is completed, review the messages to see the rows affected which indicated the number of rows that were loaded into the `dimension_city` and `fact_sale` tables respectively.
 
-   :::image type="content" source="media\tutorial-data-warehouse-load-data\review-query-messages.png" alt-text="Screenshot of a list of messages, showing where to find the number of rows that were loaded into the tables." lightbox="media\tutorial-data-warehouse-load-data\review-query-messages.png":::
+   :::image type="content" source="media\tutorial-load-data\review-query-messages.png" alt-text="Screenshot of a list of messages, showing where to find the number of rows that were loaded into the tables." lightbox="media\tutorial-load-data\review-query-messages.png":::
 
 1. Load the data preview to validate the data loaded successfully by clicking on the `fact_sale` table in the **Explorer**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-load-data\explorer-select-table.png" alt-text="Screenshot of the Explorer, showing where to find and select the table.":::
+   :::image type="content" source="media\tutorial-load-data\explorer-select-table.png" alt-text="Screenshot of the Explorer, showing where to find and select the table.":::
 
 1. Rename the query for reference later. Right-click on **SQL query 1** in the **Explorer** and select **Rename**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-load-data\right-click-rename.png" alt-text="Screenshot of the Explorer pane, showing where to right click on the table name and select Rename.":::
+   :::image type="content" source="media\tutorial-load-data\right-click-rename.png" alt-text="Screenshot of the Explorer pane, showing where to right click on the table name and select Rename.":::
 
 1. Type **Load Tables** to change the name of the query.
 
@@ -59,4 +59,4 @@ Now that you have seen how to build a data warehouse, load a table, and generate
 
 ## Next steps
 
-- [Tutorial: Transform data using a stored procedure](tutorial-data-warehouse-transform-data.md)
+- [Tutorial: Transform data using a stored procedure](tutorial-transform-data.md)

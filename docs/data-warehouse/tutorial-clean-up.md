@@ -18,15 +18,15 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 1. Select **Data Warehouse Tutorial** in the left-hand navigation menu to return to the workspace artifact view.
 
-   :::image type="content" source="media\tutorial-data-warehouse-clean-up\select-the-tutorial.png" alt-text="Screenshot of the left navigation menu, showing where to select the tutorial.":::
+   :::image type="content" source="media\tutorial-clean-up\select-the-tutorial.png" alt-text="Screenshot of the left navigation menu, showing where to select the tutorial.":::
 
 1. Below the workspace name and description at the top of the workspace header, select **Workspace settings**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-clean-up\workspace-settings-option.png" alt-text="Screenshot of the top of the Data Warehouse Tutorial workspace, showing where to select Workspace settings.":::
+   :::image type="content" source="media\tutorial-clean-up\workspace-settings-option.png" alt-text="Screenshot of the top of the Data Warehouse Tutorial workspace, showing where to select Workspace settings.":::
 
 1. Select **Other** > **Delete this workspace**.
 
-   :::image type="content" source="media\tutorial-data-warehouse-clean-up\settings-delete-workspace.png" alt-text="screenshot of the Workspace settings screen, showing where to select Delete this workspace.":::
+   :::image type="content" source="media\tutorial-clean-up\settings-delete-workspace.png" alt-text="screenshot of the Workspace settings screen, showing where to select Delete this workspace.":::
 
 1. Select **Delete** on the warning.
 
