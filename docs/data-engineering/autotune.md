@@ -39,73 +39,102 @@ Based on the performance of the second run per suggested configuration, we retra
 
 Autotune is disabled by default and it's controlled by Apache Spark Configuration Settings. Easily enable Autotune within a session by running the following code in your notebook or adding it in your spark job definition code:
 
-1. SQL
-   ```sql
-   %%sql 
-   SET spark.ms.autotune.queryTuning.enabled=TRUE 
-   ```
-1. Python
-   ```python
-   %%pyspark
-   spark.conf.set('spark.ms.autotune.queryTuning.enabled', 'true')   
-   ```
-1. Scala 
-   ```scala
-   %%spark  
-   spark.conf.set("spark.ms.autotune.queryTuning.enabled", "true") 
-   ```
-1. R
-   ```r
-   %%sparkr
-   library(SparkR)
-   sparkR.conf("spark.ms.autotune.queryTuning.enabled", "true")
-   ```
+# [Spark SQL](#tab/sparksql)
+
+```sql
+%%sql 
+SET spark.ms.autotune.queryTuning.enabled=TRUE 
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+%%pyspark
+spark.conf.set('spark.ms.autotune.queryTuning.enabled', 'true')
+```
+
+# [Scala Spark](#tab/scalaspark)
+
+```scala
+%%spark  
+spark.conf.set("spark.ms.autotune.queryTuning.enabled", "true") 
+```
+
+# [SparkR](#tab/sparkr)
+
+```r
+%%sparkr
+library(SparkR)
+sparkR.conf("spark.ms.autotune.queryTuning.enabled", "true")
+```
+
+---
 
 To verify and confirm its activation, use the following commands:
-1. SQL
-   ```sql
-   %%sql 
-   SET spark.ms.autotune.queryTuning.enabled 
-   ```
-1. Python 
-   ```python
-   %%pyspark  
-   spark.conf.get('spark.ms.autotune.queryTuning.enabled')   
-   ```
-1. Scala
-   ```scala
-   %%spark  
-   spark.conf.get("spark.ms.autotune.queryTuning.enabled") 
-   ```
-1. R
-   ```r
-   %%sparkr
-   library(SparkR)
-   sparkR.conf("spark.ms.autotune.queryTuning.enabled")
-   ```
+
+# [Spark SQL](#tab/sparksql)
+
+```sql
+%%sql 
+GET spark.ms.autotune.queryTuning.enabled
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+%%pyspark
+spark.conf.get('spark.ms.autotune.queryTuning.enabled')   
+```
+
+# [Scala Spark](#tab/scalaspark)
+
+```scala
+%%spark  
+spark.conf.get('spark.ms.autotune.queryTuning.enabled')  
+```
+
+# [SparkR](#tab/sparkr)
+
+```r
+%%sparkr
+library(SparkR)
+sparkR.conf("spark.ms.autotune.queryTuning.enabled")
+```
+
+---
 
 To disable Autotune, execute the following commands:
-1. SQL
-   ```sql
-   %%sql 
-   SET spark.ms.autotune.queryTuning.enabled=FALSE 
-   ```
-1. Python 
-   ```python
-   %%pyspark  
-   spark.conf.set('spark.ms.autotune.queryTuning.enabled', 'false')   
-   ```
-1. Scala 
-   ```scala
-   %%spark
-   spark.conf.set("spark.ms.autotune.queryTuning.enabled", "false") 
-   ```
-1. R
-   ```r
-   %%sparkr
-   library(SparkR)
-   sparkR.conf("spark.ms.autotune.queryTuning.enabled", "false")
-   ```
+
+# [Spark SQL](#tab/sparksql)
+
+```sql
+%%sql 
+SET spark.ms.autotune.queryTuning.enabled=FALSE 
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+%%pyspark
+spark.conf.set('spark.ms.autotune.queryTuning.enabled', 'false')   
+```
+
+# [Scala Spark](#tab/scalaspark)
+
+```scala
+%%spark  
+spark.conf.set('spark.ms.autotune.queryTuning.enabled', 'false')   
+```
+
+# [SparkR](#tab/sparkr)
+
+```r
+%%sparkr
+library(SparkR)
+sparkR.conf("spark.ms.autotune.queryTuning.enabled", "false")
+```
+
+---
 
 ## Transparency note
 
