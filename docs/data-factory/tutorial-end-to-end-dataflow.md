@@ -1,5 +1,5 @@
 ---
-title: Data Factory tutorial - Create a dataflow 
+title: Module 2 - Transform data with a dataflow in Data Factory
 description: This module covers creating a dataflow, as part of an end-to-end data integration tutorial to complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
 ms.reviewer: jonburchel
 ms.author: xupzhou
@@ -18,7 +18,7 @@ With the raw data loaded into your Bronze Lakehouse table from the last module, 
 
 The high-level steps in the dataflow are as follows:
 
-- Get raw data from the Lakehouse table created by the Copy activity in [Module 1: Create a pipeline in Data Factory](tutorial-end-to-end-pipeline.md).
+- Get raw data from the Lakehouse table created by the Copy activity in [Module 1: Create a pipeline with Data Factory](tutorial-end-to-end-pipeline.md).
 - Transform the data imported from the Lakehouse table.
 - Connect to a CSV file containing discounts data.
 - Transform the discounts data.

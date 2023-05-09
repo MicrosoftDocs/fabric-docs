@@ -19,11 +19,11 @@
     items:
     - name: Data factory tutorial introduction
       href: tutorial-end-to-end-introduction.md
-    - name: Module 1 - Create your first data pipeline
+    - name: Module 1 - Create a pipeline in Data Factory
       href: tutorial-end-to-end-pipeline.md
-    - name: Module 2 - Create your first dataflow
+    - name: Module 2 - Create a dataflow in Data Factory
       href: tutorial-end-to-end-dataflow.md
-    - name: Module 3 - Complete your first data integration journey
+    - name: Module 3 - Automate and send notification
       href: tutorial-end-to-end-integration.md     
   - name: Connectors
     items:

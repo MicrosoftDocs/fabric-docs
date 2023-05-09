@@ -1,5 +1,5 @@
 ---
-title: Data Factory tutorial - Introduction
+title: Introduction - Data Factory tutorial
 description: This article introduces an end-to-end data integration tutorial that provides step-by-step guidance to help you complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
 ms.reviewer: jonburchel
 ms.author: xupzhou
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 05/23/2023
 ---
 
-# Introduction: Create your first end-to-end data intgegration scenario within an hour with Data Factory in Microsoft Fabric
+# Introduction: Create your first end-to-end data intgegration scenario
 
 This tutorial helps you accelerate the evaluation process for Data Factory in Microsoft Fabric by providing a step-by-step guidance for an full data integration scenario within one hour. By the end of this tutorial, you'll understand the value and key capabilities of Data Factory and know how to complete a common end-to-end data integration scenario.
 

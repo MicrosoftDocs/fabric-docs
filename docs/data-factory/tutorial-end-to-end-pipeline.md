@@ -1,5 +1,5 @@
 ---
-title: Data Factory tutorial - Create a data pipeline 
+title: Module 1 - Create a pipeline with Data Factory
 description: This module covers creating a data pipeline, as part of an end-to-end data integration tutorial to complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
 ms.reviewer: jonburchel
 ms.author: xupzhou
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 05/23/2023
 ---
 
-# Module 1: Create a pipeline in Data Factory
+# Module 1: Create a pipeline with Data Factory
 
 This module takes 10 minutes, ingesting raw data from the source store into the Bronze table of a data Lakehouse using the Copy activity in a pipeline.
 
@@ -21,10 +21,10 @@ The high-level steps in module 1 are as follows:
 
 ## Create a data pipeline
 
-1. Sign into [Power BI](https://app.powerbi.com) using your administrator account credentials.
-1. Choose your existing workspace with premium capacity enabled, or [create a new workspace](../get-started/create-workspaces.md) enabling premium capacity, leaving other options as their defaults.
+1. Sign into [Power BI](https://app.powerbi.com) and open a workspace with Fabric Capacity enabled.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/create-workspace.png" alt-text="Screenshot showing the Create a workspace dialog with Premium capacity selected.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-premium-capacity-workspace.png" alt-text="Screenshot showing the selection of a Premium capacity workspace to create a new data pipeline.":::
+
 
 1. Select the default Power BI icon at the bottom left of the screen, and switch to the **Data Factory** workload.
 
