@@ -27,35 +27,7 @@ items:
   - name: 7- Clean up resources
     href: tutorial-7-clean-up-resources.md
 - name: Eventstreams
-  items:
-  - name: Concepts
-    items:
-    - name: Introduction to event streams
-      href: event-streams/overview.md
-    - name: Event streams main editor
-      href: event-streams/main-editor.md
-    - name: Event streams sources
-      href: event-streams/event-streams-source.md
-    - name: Event streams destinations
-      href: event-streams/event-streams-destination.md
-    - name: Event processor editor
-      href: event-streams/event-processor-editor.md
-  - name: How-to
-    items:
-    - name: Event streams tutorial
-      href: event-streams/bring-events-to-fabric-from-event-hub.md
-    - name: Create and manage an Eventstream item
-      href: event-streams/create-manage-an-eventstream.md
-    - name: Add and manage eventstream sources
-      href: event-streams/add-manage-eventstream-sources.md
-    - name: Add and manage eventstream destinations
-      href: event-streams/add-manage-eventstream-destinations.md
-    - name: Process event with event processor
-      href: event-streams/process-events-using-event-processor-editor.md
-    - name: Preview data
-      href: event-streams/preview-data.md
-    - name: Monitoring
-      href: event-streams/monitoring.md
+  href: event-streams/toc.yml
 - name: KQL Database
   items:
   - name: Create a KQL database
@@ -72,6 +44,12 @@ items:
       href: get-data-event-hub.md
     - name: Get data from OneLake
       href: get-data-onelake.md
+  - name: Connectors
+    items:
+    - name: Configure KQL Database in a data pipeline
+      href: ../data-factory/connector-kql-database-copy-activity.md
+    - name: Connect to KQL Database in dataflows
+      href: ../data-factory/connector-kusto-dataflows.md
   - name: Data management
     items:
     - name: Data management overview  

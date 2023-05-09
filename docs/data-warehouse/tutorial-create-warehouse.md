@@ -10,6 +10,8 @@ ms.date: 5/23/2023
 
 # Tutorial: Create a Microsoft Fabric data warehouse
 
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
 Now that you have a workspace, you can create your first data warehouse.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]

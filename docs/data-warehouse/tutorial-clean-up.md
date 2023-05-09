@@ -10,6 +10,8 @@ ms.date: 5/23/2023
 
 # Tutorial: Clean up resources
 
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
 You can delete individual reports, pipelines, warehouses, and other items or remove the entire workspace.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
