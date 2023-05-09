@@ -67,13 +67,23 @@ landingContent:
         - text: Get data from OneLake
           url: get-data-onelake.md
 
+
   # Card 
-  - title: KQL Queryset
+  - title: Integrate with other experiences
     linkLists:
-      - linkListType: how-to-guide
+      - linkListType: tutorial
         links:
-          - text: Query data in a KQL queryset
-            url:  kusto-query-set.md
+          - text: Use a notebook with Kqlmagic to query a KQL database
+            url: jupyter-notebook.md
+          - text: Use a notebook with Apache Spark to query a KQL database
+            url: spark-connector.md
+          - text: Create a shortcut to access data in OneLake
+            url: onelake-shortcut.md
+      - linkListType: how-to-guide
+        links: 
+          - text: Visualize data in a Power BI report
+            url: create-powerbi-report.md
+
 
   # Card 
   - title: Query data
@@ -97,17 +107,10 @@ landingContent:
 
 
   # Card 
-  - title: Integrate with other experiences
+  - title: KQL Queryset
     linkLists:
-      - linkListType: tutorial
-        links:
-          - text: Use a notebook with Kqlmagic to query a KQL database
-            url: jupyter-notebook.md
-          - text: Use a notebook with Apache Spark to query a KQL database
-            url: spark-connector.md
-          - text: Create a shortcut to access data in OneLake
-            url: onelake-shortcut.md
       - linkListType: how-to-guide
-        links: 
-          - text: Visualize data in a Power BI report
-            url: create-powerbi-report.md
+        links:
+          - text: Query data in a KQL queryset
+            url:  kusto-query-set.md
+
