@@ -32,7 +32,7 @@ For more limitations information in specific areas, see:
 ## Known issues
 
 - Model view layouts aren't currently saved.
-- Queries with PIVOT operator will fail if there's a GROUP BY on the non-pivot column output by PiVOT. To work around this, remove GROUP BY non-pivot column.  Query results will be the same as this GROUP BY clause is duplicate. 
+- Queries with PIVOT operator will fail if there's a GROUP BY on the non-pivot column output by PIVOT. To work around this, remove the non-pivot column from the GROUP BY.  Query results will be the same, as this GROUP BY clause is duplicate. 
 
 ## Limitations and known issues of the SQL Endpoint of the Lakehouse
 
