@@ -17,6 +17,30 @@ items:
     href: query-warehouse.md
   - name: 5. Create reports
     href: create-reports.md
+- name: Tutorials
+  items:
+  - name: Data warehouse tutorial introduction
+    href: tutorial-introduction.md
+  - name: 1. Create a workspace
+    href: tutorial-create-workspace.md
+  - name: 2. Create a warehouse
+    href: tutorial-create-warehouse.md
+  - name: 3. Ingest data into a warehouse
+    href: tutorial-ingest-data.md
+  - name: 4. Build a report
+    href: tutorial-build-report.md
+  - name: 5. Create tables
+    href: tutorial-create-tables.md
+  - name: 6. Load data using T-SQL
+    href: tutorial-load-data.md
+  - name: 7. Transform data using stored procedure
+    href: tutorial-transform-data.md
+  - name: 8. Create queries with visual query builder
+    href: tutorial-visual-query.md
+  - name: 9. Create Power BI reports
+    href: tutorial-power-bi-report.md
+  - name: 10. Clean up resources
+    href: tutorial-clean-up.md        
 - name: Connect to the warehouse
   items: 
   - name: Connectivity
