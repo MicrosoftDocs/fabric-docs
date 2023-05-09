@@ -10,6 +10,10 @@ ms.custom: template-how-to
 
 # Compare differences between Azure Data Factory and Data Factory in Microsoft Fabric
 
+> [!IMPORTANT]
+> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 ## Overview
 
 Data Factory in Microsoft Fabric is the next generation of Azure Data Factory which provides cloud-scale data movement and data transformation services that allow you to solve the most complex ETL scenarios. It's intended to make your experience easy to use, powerful, and truly enterprise-grade.
@@ -20,8 +24,8 @@ In the modern experience of Data Factory in Fabric, there are some different fea
 
 |Azure Data Factory |Data Factory in Fabric |Description  |
 |:---|:---|:---|
-|Pipeline |Data pipeline (Preview) | Data pipeline in Fabric is better integrated with the unified data platform including Lakehouse, Datawarehouse, etc.. |
-|Mapping dataflow  |Dataflow gen2 (Preview) | Dataflow gen2 provides easier experience to build transformation. We are in progress of ensuring the function of mapping dataflow supported in dataflow gen2.|
+|Pipeline |Data pipeline | Data pipeline in Fabric is better integrated with the unified data platform including Lakehouse, Datawarehouse, etc.. |
+|Mapping dataflow  |Dataflow gen2 | Dataflow gen2 provides easier experience to build transformation. We are in progress of ensuring the function of mapping dataflow supported in dataflow gen2.|
 |Activities |Activities|We are in progress to make more activities of ADF supported in Data Factory in Fabric. Data Factory in Fabric also has some newly attracted activities like Office 365 Outlook activity. Details are in Activity overview of the documents.|
 |Dataset |Datasets are inline|Data Factory in Fabric doesn’t have dataset concepts. Connection will be used for connecting each data source and pull data. |
 |Linked Service |Connections |Connections have similar functionality as linked service, but connections in Fabric have more intuitive way to create. |
