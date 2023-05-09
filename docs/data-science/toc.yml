@@ -32,7 +32,7 @@ items:
   - name: Notebook visualization
     href: ../data-engineering/notebook-visualization.md
   - name: Explore data in lakehouse
-    href: l../data-engineering/akehouse-notebook-explore.md
+    href: ../data-engineering/akehouse-notebook-explore.md
   - name: Load data in lakehouse
     href: ../data-engineering/lakehouse-notebook-load-data.md
 - name: Tutorials
