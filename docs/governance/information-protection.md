@@ -27,14 +27,14 @@ The following table summarizes the information protection capabilities in Fabric
 
 |Capability|Scenario|Public preview support|
 |:----------|:---------|:----------|
-|[Manual labeling](#manual-labeling)| Users can manually apply sensitive labels to Fabric items|Supported for all Fabric items.|
-|[Default labeling](#default-labeling)| When an item is created or edited, it gets a default sensitivity label unless a label is applied through other means.|Supported for all Fabric items, with limitations. |
-|[Mandatory labeling](#mandatory-labeling)| Users can't save items unless a sensitivity label is applied to the item. This means they can't remove a label either.| Currently fully supported for Power BI items only. Supported for some non-Power BI Fabric items, with limitations. |
-|[Programmatic labeling](#programmatic-labeling)| Sensitivity labels can be added, changed, or deleted programmatically via Power BI admin REST APIs.|Supported for all Fabric items.|
-|[Downstream inheritance](#downstream-inheritance)| When a sensitivity label is applied to an item, the label filters down to all dependent items. |Supported for all Fabric items, with limitations. |
-|[Inheritance upon creation](#inheritance-upon-creation)| When you create new item by copying an existing one, the new item takes the label of the existing item.| Supported for all Fabric items, with limitations.|
-|[Inheritance from data sources](#inheritance-from-data-sources)| When a Fabric item ingests data from a data source that has a sensitivity label, that label is applied to the Fabric item. The label then filters down to the child items of that Fabric item via downstream inheritance.| Currently supported for Power BI datasets only.|
-|[Export](#export)| When a user exports data from an item that has a sensitivity label, the sensitivity label moves with it to the exported format. |Currently supported for Power BI items in supported export paths. |
+|Manual labeling| Users can manually apply sensitive labels to Fabric items|[Supported for all Fabric items](#manual-labeling).|
+|Default labeling| When an item is created or edited, it gets a default sensitivity label unless a label is applied through other means.|[Supported for all Fabric items, with limitations](#default-labeling). |
+|Mandatory labeling| Users can't save items unless a sensitivity label is applied to the item. This means they can't remove a label either.| [Currently fully supported for Power BI items only. Supported for some non-Power BI Fabric items, with limitations](#mandatory-labeling). |
+|Programmatic labeling| Sensitivity labels can be added, changed, or deleted programmatically via Power BI admin REST APIs.|[Supported for all Fabric items](#programmatic-labeling).|
+|Downstream inheritance| When a sensitivity label is applied to an item, the label filters down to all dependent items. |[Supported for all Fabric items, with limitations](#downstream-inheritance). |
+|Inheritance upon creation| When you create new item by copying an existing one, the new item takes the label of the existing item.| [Supported for all Fabric items, with limitations](#inheritance-upon-creation).|
+|Inheritance from data sources| When a Fabric item ingests data from a data source that has a sensitivity label, that label is applied to the Fabric item. The label then filters down to the child items of that Fabric item via downstream inheritance.| [Currently supported for Power BI datasets only](#inheritance-from-data-sources).|
+|Export| When a user exports data from an item that has a sensitivity label, the sensitivity label moves with it to the exported format. |[Currently supported for Power BI items in supported export paths](#export). |
 
 ## Considerations and limitations
 
@@ -47,7 +47,7 @@ When you enable sensitivity labels on your tenant, you specify which users can a
 
 ### Default labeling
 
-As part of the strategy to apply sensitivity labels to all of your organization's Fabric items, you can define a default label policy in the Microsoft Purview compliance portal. With a default label policy, when an item is created or edited, it gets a default sensitivity label unless a label is applied through other means. Default labeling is fully supported in Power BI and is described in [Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy). In Fabric, there are some limitations.
+Default labeling is fully supported in Power BI and is described in [Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy). In Fabric, there are some limitations.
 
 * When a non-Power BI Fabric item is created, if there's a clear, substantive create dialog, the default sensitivity label will be applied to the item if the user doesn't choose a label. If the item is created in a process where there's no clear create dialog, the default label **won't** be applied.
 
@@ -55,19 +55,17 @@ As part of the strategy to apply sensitivity labels to all of your organization'
 
 ### Mandatory labeling
 
-When there's a mandatory label policy in effect, users can't save items unless a sensitivity label is applied to the item. They can't remove a label either. Mandatory labeling is currently supported for Power BI items only. Mandatory labeling policies aren't enforced in if changes are made via the flyout menu. Lakehouse, Pipeline: if mandatory is on, and default is off. And MIP enabled. Data Warehouse – same show label section through dialog.
+Mandatory labeling is currently supported for Power BI items only. Mandatory labeling policies aren't enforced in if changes are made via the flyout menu. Lakehouse, Pipeline: if mandatory is on, and default is off. And MIP enabled. Data Warehouse – same show label section through dialog.
 
 For more information about mandatory labeling, see [Mandatory label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-mandatory-label-policy).
 
 ### Programmatic labeling
 
-Supported for all Fabric items. For more information, see [Set or remove sensitivity labels using Power BI REST admin APIs](/power-bi/enterprise/service-security-sensitivity-label-inheritance-set-remove-api).
+Programmatic labeling is supported for all Fabric items. For more information, see [Set or remove sensitivity labels using Power BI REST admin APIs](/power-bi/enterprise/service-security-sensitivity-label-inheritance-set-remove-api).
 
 ### Downstream inheritance
 
-When downstream inheritance is enabled, when a sensitivity label is applied to an item, the label filters down to all dependent items. It is on by default.
-
-Downstream inheritance support in Fabric is as follows:
+Downstream inheritance is on by default. It is supported in Fabric is as follows:
 
 Supported:
 
@@ -85,7 +83,7 @@ For more information about downstream inheritance, see [Sensitivity label downst
 
 ### Inheritance upon creation
 
-When you create new item from an existing one, the new item takes the label of the existing item. Inheritance upon creation is supported for all Fabric items with the following consideration:
+Inheritance upon creation is supported for all Fabric items with the following consideration:
 
 * If you try to create a Pipeline or Notebook from a Lakehouse, it will get the sensitivity label of the Lakehouse.
 
@@ -93,13 +91,9 @@ For more information about downstream inheritance, see [Sensitivity label inheri
 
 ### Inheritance from data sources
 
-When a Fabric item ingests data from a data source that has a sensitivity label, that label is applied to the Fabric item.
-
 Inheritance from data sources is currently supported for PBI datasets only. For more information, see [Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources).
 
 ### Export
-
-When a user exports data from an item that has a sensitivity label, the sensitivity label moves with it to the exported format.
 
 Sensitivity label inheritance upon export is supported for Power BI items only in supported export paths. Currently no other Fabric experience uses an export method that transfers the sensitivity label to the exported output. However, if they do export an item that has a sensitivity label, a warning is issued.
 
