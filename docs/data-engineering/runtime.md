@@ -46,7 +46,7 @@ Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.1, pro
 
 Below is an extended summary of key new features related to Apache Spark version 3.3.0 and 3.3.1
 
-- ***Row-level filtering**: improve the performance of joins by prefiltering one side of a jas long as there are no deprecation or regression impacts.oin using a Bloom filter and IN predicate generated from the values from the other side of the join ([SPARK-32268](https://issues.apache.org/jira/browse/SPARK-32268))
+- **Row-level filtering**: improve the performance of joins by prefiltering one side of a jas long as there are no deprecation or regression impacts.oin using a Bloom filter and IN predicate generated from the values from the other side of the join ([SPARK-32268](https://issues.apache.org/jira/browse/SPARK-32268))
 
 - Improve the compatibility of Spark with the SQL standard:**ANSI enhancements** ([SPARK-38860](https://issues.apache.org/jira/browse/SPARK-38860))
 
