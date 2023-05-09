@@ -11,12 +11,12 @@ ms.author: jeluitwi
 
 # Save a draft of your dataflow
 
-With Dataflow Gen2, we changed how saving a dataflow works. We wanted to improve the experience and reslliancy of the Dataflows Gen1 by:
+With Dataflow Gen2, we changed how saving a dataflow works. We wanted to improve the experience and resilliancy of the Dataflows Gen1 by:
 
 1. Automatically saving to the cloud any change made to a dataflow. This is called the draft version of the dataflow.
-2. Deferring long running validation required to garentee a dataflow can refresh, to the background. The verison of the dataflow that passed validation and is ready to refresh is called the published version.
+2. Deferring long running validation required to guarantee a dataflow can refresh, to the background. The version of the dataflow that passed validation and is ready to refresh is called the published version.
 
-This powerful feature allows you to make changes to your dataflow without immediately publishing them to your workspace. Instead, all your changes are automatically saved as a draft, which you can review a later time, and then publish when you're ready. With this feature, you dont have to worry about losing your work if you want to resume it at a later time, if your dataflow fails validation, or if your editing session abruptly ends. In this article, you learn how to use the new dataflow Gen 2 auto-save and publish feature and how it can benefit your dataflow development and management.
+This powerful feature allows you to make changes to your dataflow without immediately publishing them to your workspace. Instead, all your changes are automatically saved as a draft, which you can review a later time, and then publish when you're ready. With this feature, you don't have to worry about losing your work if you want to resume it at a later time, if your dataflow fails validation, or if your editing session abruptly ends. In this article, you learn how to use the new dataflow Gen 2 auto-save and publish feature and how it can benefit your dataflow development and management.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -38,7 +38,7 @@ To publish the changes you made in your draft, you take the following steps:
 
    :::image type="content" source="./media/dataflows-gen2-save-draft/publish-dataflow.png" alt-text="Screenshot that shows how to publish your dataflow." lightbox="./media/dataflows-gen2-save-draft/publish-dataflow.png":::
 
-Your dataflow will now beging the publishing process in the background which is indicated by a spinner next to the dataflow name. Once the spinnger completes, the dataflow can be refreshed. If there are any publishing related error, an indication will be visible next to the dataflow name. Clicking it will reveal the publishing errors and allow you to edit the dataflow from your last saved version. 
+Your dataflow starts the publishing process in the background, which is indicated by a spinner next to the dataflow name. Once the spinner completes, the dataflow can be refreshed. If there are any publishing related errors, an indication will be visible next to the dataflow name. Clicking it will reveal the publishing errors and allow you to edit the dataflow from your last saved version. 
 
 ## Next steps
 
