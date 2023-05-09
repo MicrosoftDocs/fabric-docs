@@ -20,7 +20,7 @@ For more information, see [Management commands](/azure/data-explorer/kusto/manag
 You can manage your data using the UI in the following ways:
 
 * Modify [Data retention policy](#data-retention-policy)
-* Activate [One logical copy](#data-copy-to-onelake)
+* Activate [One logical copy](#one-logical-copy)
 * Create [Materialized views](#materialized-views)
 * Create a [Table update policy](#table-update-policy)
 * Create [Stored functions](#stored-functions)
