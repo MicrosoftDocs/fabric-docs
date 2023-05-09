@@ -72,13 +72,6 @@ landingContent:
           url: get-data-onelake.md
       
   # Card 
-  - title: KQL Queryset
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Query data in a KQL queryset
-            url:  kusto-query-set.md
-  # Card 
   - title: Query data
     linkLists:
       - linkListType: how-to-guide
@@ -91,6 +84,14 @@ landingContent:
             url: spark-connector.md
           - text: Use a OneLake shortcut to query data
             url: onelake-shortcut.md
+
+  # Card 
+  - title: KQL Queryset
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Query data in a KQL queryset
+            url:  kusto-query-set.md
 
   # Card 
   - title: Training
