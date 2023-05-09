@@ -33,7 +33,7 @@ Before you can create a cloud connection in [!INCLUDE [product-name](../includes
 1. Under **Settings**, select **Shared access policies**
 1. Select **+Add** to add a new SAS policy, or select an existing policy with *Manage* permissions.
 
-    :::image type="content" source="media/get-data-event-hub/sas-policy-portal.png" alt-text="Screenshot of creating an SAS policy in the Azure portal.":::
+    :::image type="content" source="media/get-data-event-hub/sas-policy-portal.png" alt-text="Screenshot of creating an SAS policy in the Azure portal." lightbox="media/get-data-event-hub/sas-policy-portal.png":::
 
 1. Enter a **Policy name**.
 1. Select **Manage**, and then **Create**.
@@ -42,7 +42,7 @@ Before you can create a cloud connection in [!INCLUDE [product-name](../includes
 
 Within the SAS policy pane, take note of the following four fields. You may want to copy these fields and paste it somewhere, like a notepad, to use in a later step.
 
-:::image type="content" source="media/get-data-event-hub/fill-out-connection.png" alt-text="Screenshot showing how to fill out connection with data from Azure portal.":::
+:::image type="content" source="media/get-data-event-hub/fill-out-connection.png" alt-text="Screenshot showing how to fill out connection with data from Azure portal."    lightbox="media/get-data-event-hub/fill-out-connection.png":::
 
 | Field reference | Field | Description |Example |
 |---|---|---|---|
