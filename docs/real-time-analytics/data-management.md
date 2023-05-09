@@ -11,6 +11,8 @@ ms.search.form: product-kusto
 
 # Data management
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Synapse Real-Time Analytics offers a range of options for managing your data, both on a database and table level. You can manage your data either through the UI of your KQL database or by using management commands. Management commands, also known as control commands, are requests to the service to retrieve information that isn't necessarily data in the database tables, or requests to modify the service state.
 
 For more information, see [Management commands](/azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric)
@@ -22,8 +24,6 @@ You can manage your data using the UI in the following ways:
 * Create [Materialized views](#materialized-views)
 * Create a [Table update policy](#table-update-policy)
 * Create [Stored functions](#stored-functions)
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Database management
 
