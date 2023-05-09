@@ -39,6 +39,7 @@ landingContent:
           - text: Move and transform data
             url: transform-data.md
       - linkListType: tutorial
+        links:
           - text: Create a complete data intgegration scenario within an hour
             url: tutorial-end-to-end-introduction.md
   
