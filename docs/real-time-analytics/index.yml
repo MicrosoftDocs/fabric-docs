@@ -70,7 +70,7 @@ landingContent:
 
   
     # Card 
-  - title: Process event streams
+  - title: Event streams
     linkLists:
       - linkListType: how-to-guide
         links:

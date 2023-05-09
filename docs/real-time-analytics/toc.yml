@@ -74,7 +74,7 @@ items:
     href: create-powerbi-report.md
   - name: Use data from a KQL database in Power BI Desktop
     href: power-bi-data-connector.md
-- name: Process event streams
+- name: Event streams
   href: event-streams/toc.yml
 - name: Kusto Query Language
   href: kusto-query-language/toc.yml
