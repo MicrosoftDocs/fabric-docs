@@ -91,10 +91,12 @@ landingContent:
   # Card 
   - title: Lakehouse end-to-end tutorial
     linkLists:
-      - linkListType: tutorial
+      - linkListType: overview
         links:
           - text: Lakehouse scenario overview
             url: tutorial-lakehouse-introduction.md
+      - linkListType: tutorial
+        links:
           - text: Step1 - Create a workspace
             url: tutorial-lakehouse-get-started.md
           - text: Step2 - Create a lakehouse
