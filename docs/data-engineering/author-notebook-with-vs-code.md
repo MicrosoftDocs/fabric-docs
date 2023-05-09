@@ -13,7 +13,7 @@ ms.search.form: VSCodeExtension
 
 The CURD (create/update/read/delete) experience of notebook is fully supported with this extension, the synchronization between local and the remote workspace is also supported via certain UX gesture. During synchronizing the change, you have the option to address the conflict/difference between the local and remote workspace.
 
-Another key scenario enabled by this extension is to support running notebook onto the remote Trident Spark compute.
+Another key scenario enabled by this extension is to support running notebook onto the remote Fabric Spark compute.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -61,7 +61,7 @@ By clicking the “Publish” button, you can push the local change to the remot
 
 :::image type="content" source="media\vscode\publish-notebook.png" alt-text="Screenshot showing publish notebook button.":::
 
-If the same notebook is  open in the Trident portal, the user at the portal side is notified to accept/reject the change published from VS Code side.
+If the same notebook is  open in the Fabric portal, the user at the portal side is notified to accept/reject the change published from VS Code side.
 
 :::image type="content" source="media\vscode\publish-notebook-portal.png" alt-text="Screenshot showing accept or reject change.":::
 
@@ -87,7 +87,7 @@ You can update the code/markdown cell on the left side to address the difference
 
 ## Run/Debug notebook on remote Spark compute
 
-By selecting the kernel shipped with this extension, you can run the code cell on top of the remote Trident Spark compute. Once this kernel is selected, during runtime, all the PySpark API calls are intercepted by the extension and translated to the corresponding http call to the remote Spark compute. For pure python code, it would still be executed in the local environment.
+By selecting the kernel shipped with this extension, you can run the code cell on top of the remote Fabric Spark compute. Once this kernel is selected, during runtime, all the PySpark API calls are intercepted by the extension and translated to the corresponding http call to the remote Spark compute. For pure python code, it would still be executed in the local environment.
 
 :::image type="content" source="media\vscode\run-notebook.png" alt-text="Screenshot showing run notebook.":::
 

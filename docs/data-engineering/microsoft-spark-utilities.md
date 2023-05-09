@@ -40,11 +40,11 @@ put(file: String, contents: String, overwrite: Boolean = false): Boolean -> Writ
 head(file: String, maxBytes: int = 1024 * 100): String -> Returns up to the first 'maxBytes' bytes of the given file as a String encoded in UTF-8
 append(file: String, content: String, createFileIfNotExists: Boolean): Boolean -> Append the content to a file
 rm(dir: String, recurse: Boolean = false): Boolean -> Removes a file or directory
-exists(file: String): Boolean -> Check if a file or directory exists
-mount(source: String, mountPoint: String, extraConfigs: Map[String, Any]): Boolean -> Mounts the given remote storage directory at the given mount point
-unmount(mountPoint: String): Boolean -> Deletes a mount point
-mounts(): Array[MountPointInfo] -> Show information about what is mounted
-getMountPath(mountPoint: String, scope: String = ""): String -> Gets the local path of the mount point
+exists(file: String): Boolean -> Check if a file or directory exists
+mount(source: String, mountPoint: String, extraConfigs: Map[String, Any]): Boolean -> Mounts the given remote storage directory at the given mount point
+unmount(mountPoint: String): Boolean -> Deletes a mount point
+mounts(): Array[MountPointInfo] -> Show information about what is mounted
+getMountPath(mountPoint: String, scope: String = ""): String -> Gets the local path of the mount point
 
 Use mssparkutils.fs.help("methodName") for more info about a method.
 ```
@@ -57,15 +57,14 @@ mssparkutils works with the file system in the same way as Spark APIs. Take *mss
 | Nondefault lakehouse | Not supported | *mssparkutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")*  | *mssparkutils.fs.mkdirs("file:/<new_dir>")* |
 | Default lakehouse  | Directory under “Files” or “Tables”: *mssparkutils.fs.mkdirs("Files/<new_dir>")* | *mssparkutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* |*mssparkutils.fs.mkdirs("file:/<new_dir>")*|
 
-
 ### List files
 
 List the content of a directory, use *mssparkutils.fs.ls('Your directory path')*, for example: 
 
 ```python
-mssparkutils.fs.ls("Files/tmp")  # works with the default lakehouse files using relative path 
-mssparkutils.fs.ls("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<path>")  # based on ABFS file system 
-mssparkutils.fs.ls("file:/tmp")  # based on local file system of driver node 
+mssparkutils.fs.ls("Files/tmp") # works with the default lakehouse files using relative path 
+mssparkutils.fs.ls("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<path>")  # based on ABFS file system 
+mssparkutils.fs.ls("file:/tmp")  # based on local file system of driver node 
 ```
 
 ### View file properties
@@ -84,9 +83,9 @@ Creates the given directory if it doesn't exist and any necessary parent directo
 
 ```python
 mssparkutils.fs.mkdirs('new directory name')  
-mssparkutils.fs. mkdirs("Files/<new_dir>")  # works with the default lakehouse files using relative path 
-mssparkutils.fs.ls("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")  # based on ABFS file system 
-mssparkutils.fs.ls("file:/<new_dir>")  # based on local file system of driver node 
+mssparkutils.fs. mkdirs("Files/<new_dir>")  # works with the default lakehouse files using relative path 
+mssparkutils.fs.ls("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")  # based on ABFS file system 
+mssparkutils.fs.ls("file:/<new_dir>")  # based on local file system of driver node 
 ```
 
 ### Copy file
@@ -300,35 +299,35 @@ To mount the container called *mycontainer*, *mssparkutils* first needs to check
 
 Mssparkutils supports explicitly passing an account key or [Shared access signature (SAS)](/azure/storage/common/storage-sas-overview) token as a parameter to mount the target.
 
-For security reasons, we recommend that you store account keys or SAS tokens in Azure Key Vault (as the following example screenshot shows). You can then retrieve them by using the PyTridentTokenLibrary.get_secret_with_token API. For the usage of Azure Key Vault, refer to [About Azure Key Vault managed storage account keys](/azure/key-vault/secrets/about-managed-storage-account-keys).
+For security reasons, we recommend that you store account keys or SAS tokens in Azure Key Vault (as the following example screenshot shows). You can then retrieve them by using the *mssparkutils.credentials.getSecret* API. For the usage of Azure Key Vault, refer to [About Azure Key Vault managed storage account keys](/azure/key-vault/secrets/about-managed-storage-account-keys).
 
 :::image type="content" source="media\microsoft-spark-utilities\use-azure-key-vault.png" alt-text="Screenshot showing where secrets stored in an Azure Key Vault." lightbox="media\microsoft-spark-utilities\use-azure-key-vault.png":::
 
 Here's the sample code of using accountKey method:
 
 ```python
-from notebookutils import mssparkutils  
+from notebookutils import mssparkutils  
 # get access token for keyvault resource
 # you can also use full audience here like https://vault.azure.net
 accountKey = mssparkutils.credentials.getSecret("<vaultURI>", "<secretName>")
-mssparkutils.fs.mount(  
-    "abfss://mycontainer@<accountname>.dfs.core.windows.net",  
-    "/test",  
-    {"accountKey":accountKey}
+mssparkutils.fs.mount(  
+    "abfss://mycontainer@<accountname>.dfs.core.windows.net",  
+    "/test",  
+    {"accountKey":accountKey}
 )
 ```
 
 For *sastoken*, reference the following sample code:
 
 ```python
-from notebookutils import mssparkutils  
+from notebookutils import mssparkutils  
 # get access token for keyvault resource
 # you can also use full audience here like https://vault.azure.net
 sasToken = mssparkutils.credentials.getSecret("<vaultURI>", "<secretName>")
-mssparkutils.fs.mount(  
-    "abfss://mycontainer@<accountname>.dfs.core.windows.net",  
-    "/test",  
-    {"sasToken":sasToken}
+mssparkutils.fs.mount(  
+    "abfss://mycontainer@<accountname>.dfs.core.windows.net",  
+    "/test",  
+    {"sasToken":sasToken}
 )
 ```
 
@@ -340,10 +339,10 @@ mssparkutils.fs.mount(  
 Here's the sample code of mounting a lakehouse to */test*.
 
 ```python
-from notebookutils import mssparkutils 
+from notebookutils import mssparkutils 
 mssparkutils.fs.mount( 
- "abfss://<workspace_id>@msit-onelake.dfs.fabric.microsoft.com/<lakehouse_id>", 
- "/test"
+ "abfss://<workspace_id>@msit-onelake.dfs.fabric.microsoft.com/<lakehouse_id>", 
+ "/test"
 )
 ```
 

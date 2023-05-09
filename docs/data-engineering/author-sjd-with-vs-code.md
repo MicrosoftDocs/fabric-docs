@@ -27,6 +27,7 @@ After the request is processed, the name of the newly created SJD will appear un
 - **Run**: List the run history of this SJD and the job status of each run
 
 ## Upload main definition file / referenced lib
+
 By clicking “Add Main File” button, you can upload/overwrite the main definition file.
 
 :::image type="content" source="media\vscode\upload-main-def.png" alt-text="Screenshot showing upload main def button.":::
@@ -40,6 +41,7 @@ After the file is uploaded, users can also override it by clicking the “Update
 :::image type="content" source="media\vscode\update-file.png" alt-text="Screenshot showing update file button.":::
 
 ## Submit run request
+
 You can directly submit a request to run the SJD from VSCode side by clicking the “Run Spark Job” button at the toolbar of the source SJD
 
 :::image type="content" source="media\vscode\submit-sjd-run.png" alt-text="Screenshot showing submit run button.":::
@@ -48,8 +50,9 @@ Once the request is submitted, in the “Runs” node, a new entry will be creat
 
 :::image type="content" source="media\vscode\cancel-sjd-run.png" alt-text="Screenshot showing cancel run button.":::
 
-## Open SJD in Trident Portal
-You can open the SJD authoring page in the Trident portal by clicking the “Open in Browser” button, for a completed run, user can also directly open the detail monitor page of that run by clicking the button at the Run level.
+## Open SJD in Fabric portal
+
+You can open the SJD authoring page in the Fabric portal by clicking the “Open in Browser” button, for a completed run, user can also directly open the detail monitor page of that run by clicking the button at the Run level.
 
 :::image type="content" source="media\vscode\open-sjd-in-browser.png" alt-text="Screenshot showing open in browser button.":::
 
