@@ -117,7 +117,7 @@ With this destination, you can easily route your real-time events to a custom ap
 
 :::image type="content" source="./media/event-streams-destination/eventstream-destinations-custom-app.png" alt-text="Screenshot showing the custom app destination type." lightbox="./media/event-streams-destination/eventstream-destinations-custom-app.png" :::
 
-### KQL Database 
+### KQL database 
 
 This destination provides a direct ingestion of your real-time event data into a KQL database, allowing for seamless querying of the data once it has been successfully loaded. With the data in the KQL database, you can then perform more queries and analysis to gain deeper insights into your event data. 
 
@@ -125,11 +125,11 @@ This destination provides a direct ingestion of your real-time event data into a
 - **Workspace** – The workspace name where your KQL Database is located. 
 - **KQL Database** – The KQL Database where you want to route the event data.
 
-:::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot showing the kql database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png" :::
+:::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot showing the KQL database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png" :::
 
 **Ingest data wizard** will be popping up after clicking **Create and configure**:
 
-:::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-ingestion-wizard.png" alt-text="Screenshot showing the ingestion wizard in kql database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database-ingestion-wizard.png" :::
+:::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-ingestion-wizard.png" alt-text="Screenshot showing the ingestion wizard in KQL database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database-ingestion-wizard.png" :::
 
 - **Destination** – With the step, you can either create a new table or choose an existing one from your KQL database to route and ingest your real-time data. 
 - **Source** – It helps you to verify the source of your real-time data for creating a data connection to ingest the data. 
