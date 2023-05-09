@@ -8,7 +8,9 @@ ms.topic: tutorial
 ms.date: 05/23/2023
 ---
 
-# Module 3: 
+# Module 3: Complete your first data integration journey
+
+
 
 ## Next steps
 
