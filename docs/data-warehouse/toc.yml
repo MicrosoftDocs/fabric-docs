@@ -17,8 +17,10 @@ items:
     href: query-warehouse.md
   - name: 5. Create reports
     href: create-reports.md
-- name: Connect to the Warehouse
-  href: connectivity.md    
+- name: Connect to the warehouse
+  items: 
+  - name: Connectivity
+    href: connectivity.md    
 - name: Design and Develop
   items:
   - name: Warehouse settings and context menus
