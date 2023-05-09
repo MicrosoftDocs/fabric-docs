@@ -22,7 +22,7 @@ Real-Time Analytics is a fully managed big data analytics platform optimized for
 
 ## What makes Real-Time Analytics unique?
 
-* **Capture, transform, and route** real-time events to various destinations, including customer apps.
+* **Capture, transform, and route** real-time events to various destinations, including custom apps.
 * **Easily ingest or load** data from any source, in any data format.
 * Run analytical queries **directly on raw data** without the need to build complex data models or create scripting to transform the data.
 * Import data with **by-default streaming** that provides high performance, low latency, high freshness data analysis.
