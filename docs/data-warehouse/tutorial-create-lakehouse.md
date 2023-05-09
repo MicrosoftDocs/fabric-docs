@@ -26,7 +26,7 @@ To create a new lakehouse in your [!INCLUDE [product-name](../includes/product-n
 
     :::image type="content" source="media/create-lakehouse-sample/new-lakehouse.png" alt-text="A screenshot from the Fabric portal, in the new dropdown, the new Lakehouse object option is boxed in red.":::
 1. In the **Name** field, enter `Exercise` and select on **Create**.
-1. The new Lakehouse loads and the **Explorer** view opens up, with the **Get data in your lakehouse** menu.
+1. The new lakehouse loads and the **Explorer** view opens up, with the **Get data in your lakehouse** menu.
 
 - A new [[!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically created](data-warehousing.md#sql-endpoint-of-the-lakehouse).
 
