@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 05/23/2023
 ---
 
-# Module 2: Create a dataflow in Data Factory
+# Module 2: Transform data with a dataflow in Data Factory
 
 This module takes about 25 minutes to create a dataflow, apply transformations, and move the raw data from the Bronze table into a Gold Lakehouse table. 
 
@@ -244,4 +244,4 @@ In this second module to our end-to-end tutorial for your first data integration
 Continue to the next section now to integrate your data pipeline.
 
 > [!div class="nextstepaction"]
-> [Module 3: Integrate your pipeline](tutorial-end-to-end-integration.md) 
+> [Module 3: Complete your first data integration journey](tutorial-end-to-end-integration.md) 
