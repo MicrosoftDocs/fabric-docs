@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.date: 5/9/2023
+ms.date: 5/23/2023
 ---
 
 # Tutorial: Clean up resources
@@ -32,4 +32,5 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 ## Next steps
 
-- [Get started with the SQL Endpoint](get-started-lakehouse-sql-endpoint.md)
+> [!div class="nextstepaction"]
+> [Get started with the SQL Endpoint](get-started-lakehouse-sql-endpoint.md)

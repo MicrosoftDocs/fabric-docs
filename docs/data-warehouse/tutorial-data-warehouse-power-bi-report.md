@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.date: 5/9/2023
+ms.date: 5/23/2023
 ---
 
 # Tutorial: Create Power BI reports
@@ -89,4 +89,5 @@ Learn how to create and save several types of Power BI reports.
 
 ## Next steps
 
-- [Tutorial: Clean up resources](tutorial-data-warehouse-clean-up.md)
+> [!div class="nextstepaction"]
+> [Tutorial: Clean up resources](tutorial-data-warehouse-clean-up.md)

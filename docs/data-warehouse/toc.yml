@@ -23,6 +23,30 @@ items:
       href: query-warehouse.md
     - name: 5. Create reports
       href: create-reports.md
+- name: Tutorials
+  items:
+  - name: Data warehouse tutorial introduction
+    href: tutorial-data-warehouse-introduction.md
+  - name: 1. Create a workspace
+    href: tutorial-data-warehouse-create-workspace.md
+  - name: 2. Create a warehouse
+    href: tutorial-data-warehouse-create-warehouse.md
+  - name: 3. Ingest data into a warehouse
+    href: tutorial-data-warehouse-ingest-data.md
+  - name: 4. Build a report
+    href: tutorial-data-warehouse-build-report.md
+  - name: 5. Create tables
+    href: tutorial-data-warehouse-create-tables.md
+  - name: 6. Load data using T-SQL
+    href: tutorial-data-warehouse-load-data.md
+  - name: 7. Transform data using stored procedure
+    href: tutorial-data-warehouse-transform-data.md
+  - name: 8. Create queries with visual query builder
+    href: tutorial-data-warehouse-visual-query.md
+  - name: 9. Create Power BI reports
+    href: tutorial-data-warehouse-power-bi-report.md
+  - name: 10. Clean up resources
+    href: tutorial-data-warehouse-power-bi-report.md      
 - name: Concepts
   items: 
   - name: Connectivity
@@ -101,27 +125,4 @@ items:
     items:
     - name: Troubleshooting your Warehouse
       href: troubleshoot-synapse-data-warehouse.md
-  - name: Tutorials
-    items:
-    - name: Data warehouse tutorial introduction
-      href: tutorial-data-warehouse-introduction.md
-    - name: 1. Create a workspace
-      href: tutorial-data-warehouse-create-workspace.md
-    - name: 2. Create a warehouse
-      href: tutorial-data-warehouse-create-warehouse.md
-    - name: 3. Ingest data into a warehouse
-      href: tutorial-data-warehouse-ingest-data.md
-    - name: 4. Build a report
-      href: tutorial-data-warehouse-build-report.md
-    - name: 5. Create tables
-      href: tutorial-data-warehouse-create-tables.md
-    - name: 6. Load data using T-SQL
-      href: tutorial-data-warehouse-load-data.md
-    - name: 7. Transform data using stored procedure
-      href: tutorial-data-warehouse-transform-data.md
-    - name: 8. Create queries with visual query builder
-      href: tutorial-data-warehouse-visual-query.md
-    - name: 9. Create Power BI reports
-      href: tutorial-data-warehouse-power-bi-report.md
-    - name: 10. Clean up resources
-      href: tutorial-data-warehouse-power-bi-report.md
+  

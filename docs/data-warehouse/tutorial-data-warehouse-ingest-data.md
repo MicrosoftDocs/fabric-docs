@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.date: 5/9/2023
+ms.date: 5/23/2023
 ---
 
 # Tutorial: Ingest data into a data warehouse
@@ -112,10 +112,11 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 
 1. Select **Save and run** from the dialog box. The pipeline to load the `dimension_customer` table with start.
 
-1. Monitor the copy activity’s progress on the **Output** page and wait for it to complete.
+1. Monitor the copy activity's progress on the **Output** page and wait for it to complete.
 
    :::image type="content" source="media\tutorial-data-warehouse-ingest-data\monitor-output-page.png" alt-text="Screenshot of the Output page, showing what a successful run looks like.":::
 
 ## Next steps
 
-- [Tutorial: Build a report](tutorial-data-warehouse-build-report.md)
+> [!div class="nextstepaction"]
+> [Tutorial: Build a report](tutorial-data-warehouse-build-report.md)

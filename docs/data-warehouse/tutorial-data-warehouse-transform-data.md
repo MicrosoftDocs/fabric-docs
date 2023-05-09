@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.date: 5/9/2023
+ms.date: 5/23/2023
 ---
 
 # Tutorial: Transform data using a stored procedure
@@ -120,4 +120,5 @@ Learn how to create and save a new stored procedure to transform data.
 
 ## Next steps
 
-- [Tutorial: Create a query with the visual query builder](tutorial-data-warehouse-visual-query.md)
+> [!div class="nextstepaction"]
+> [Tutorial: Create a query with the visual query builder](tutorial-data-warehouse-visual-query.md)

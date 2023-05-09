@@ -5,12 +5,12 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.date: 5/9/2023
+ms.date: 5/23/2023
 ---
 
 # Data warehouse tutorial introduction
 
-Microsoft Fabric provides a one-stop shop for all the analytical needs for every enterprise. It covers the complete spectrum of services including data movement, data lake, data engineering, data integration and data science, real time analytics, and business intelligence. With Fabric, there's no need to stitch together different services from multiple vendors. Instead, the customer enjoys an end-to-end, highly integrated, single comprehensive product that is easy to understand, onboard, create and operate. No other product on the market offers the breadth, depth, and level of integration that Fabric offers. Additionally, Microsoft Purview is included by default in every tenant to meet compliance and governance needs.
+[!INCLUDE [product-name](../includes/product-name.md)] provides a one-stop shop for all the analytical needs for every enterprise. It covers the complete spectrum of services including data movement, data lake, data engineering, data integration and data science, real time analytics, and business intelligence. With Fabric, there's no need to stitch together different services from multiple vendors. Instead, the customer enjoys an end-to-end, highly integrated, single comprehensive product that is easy to understand, onboard, create and operate. No other product on the market offers the breadth, depth, and level of integration that Fabric offers. Additionally, Microsoft Purview is included by default in every tenant to meet compliance and governance needs.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -26,7 +26,7 @@ The tutorials aren't intended to be a reference architecture, an exhaustive list
 
 In this tutorial, you take on the role of a data warehouse developer at the fictional Wide World Importers company and complete the following steps:
 
-- Sign into your Power BI online account, or if you don’t have an account yet, sign up for a free trial.
+- Sign into your Power BI online account, or if you don't have an account yet, sign up for a free trial.
 - Build and implement an end-to-end data warehouse for your organization:
   - Enable Fabric in your tenant.
   - [Create a Fabric workspace](tutorial-data-warehouse-create-workspace.md).
@@ -66,4 +66,5 @@ While the WWI dimensional model contains multiple fact tables, for this tutorial
 
 ## Next steps
 
-- [Tutorial: Create a Microsoft Fabric workspace](tutorial-data-warehouse-create-workspace.md)
+> [!div class="nextstepaction"]
+> [Tutorial: Create a Microsoft Fabric workspace](tutorial-data-warehouse-create-workspace.md)

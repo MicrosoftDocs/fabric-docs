@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.date: 5/9/2023
+ms.date: 5/23/2023
 ---
 
 # Tutorial: Create a Microsoft Fabric workspace
@@ -37,4 +37,5 @@ The workspace contains all the artifacts needed for data warehousing including D
 
 ## Next steps
 
-- [Tutorial: Create a Microsoft Fabric data warehouse](tutorial-data-warehouse-create-warehouse.md)
+> [!div class="nextstepaction"]
+> [Tutorial: Create a Microsoft Fabric data warehouse](tutorial-data-warehouse-create-warehouse.md)

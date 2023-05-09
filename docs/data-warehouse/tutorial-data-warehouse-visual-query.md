@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.date: 5/9/2023
+ms.date: 5/23/2023
 ---
 
 # Tutorial: Create a query with the visual query builder
@@ -92,4 +92,5 @@ Create and save a query with the visual query builder.
 
 ## Next steps
 
-- [Tutorial: Create a Power BI report](tutorial-data-warehouse-power-bi-report.md)
+> [!div class="nextstepaction"]
+> [Tutorial: Create a Power BI report](tutorial-data-warehouse-power-bi-report.md)

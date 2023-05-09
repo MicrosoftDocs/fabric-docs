@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.date: 5/9/2023
+ms.date: 5/23/2023
 ---
 
 # Tutorial: Build a report
@@ -42,4 +42,5 @@ Learn how to build a report with the data you ingested into your warehouse in th
 
 ## Next steps
 
-- [Tutorial: Create tables in a data warehouse](tutorial-data-warehouse-create-tables.md)
+> [!div class="nextstepaction"]
+> [Tutorial: Create tables in a data warehouse](tutorial-data-warehouse-create-tables.md)

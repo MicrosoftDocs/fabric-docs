@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.date: 5/9/2023
+ms.date: 5/23/2023
 ---
 
 # Tutorial: Create tables in a data warehouse
@@ -117,4 +117,5 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
 ## Next steps
 
-- [Tutorial: Load data using T-SQL](tutorial-data-warehouse-load-data.md)
+> [!div class="nextstepaction"]
+> [Tutorial: Load data using T-SQL](tutorial-data-warehouse-load-data.md)

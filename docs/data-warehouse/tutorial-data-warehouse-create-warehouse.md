@@ -5,7 +5,7 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.date: 5/9/2023
+ms.date: 5/23/2023
 ---
 
 # Tutorial: Create a Microsoft Fabric data warehouse
@@ -44,4 +44,5 @@ When provisioning is complete, the **Build a warehouse** landing page appears.
 
 ## Next steps
 
-- [Tutorial: Ingest data into a Microsoft Fabric data warehouse](tutorial-data-warehouse-ingest-data.md)
+> [!div class="nextstepaction"]
+> [Tutorial: Ingest data into a Microsoft Fabric data warehouse](tutorial-data-warehouse-ingest-data.md)
