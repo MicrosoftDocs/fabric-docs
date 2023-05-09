@@ -30,23 +30,23 @@ landingContent:
 
   # Card 
   - title: Event streams
-    linkLists:  
-      - linkListType: tutorial
-        links:    
-        - text: Eventstreams tutorial
-          url: event-streams/bring-events-to-fabric-from-event-hub.md
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What's Event streams?
+            url: event-streams/overview.md
       - linkListType: how-to-guide
-        links: 
-        - text: Process events with event processor
-          url: event-streams/process-events-using-event-processor-editor.md
-        - text: Preview data
-          url: event-streams/preview-data.md
-        - text: Monitor event streams
-          url: event-streams/monitoring.md
-        - text: Event streams sources
-          url: event-streams/event-streams-source.md
-        - text: Event streams destinations
-          url: event-streams/event-streams-destination.md
+        links:
+          - text: Create and manage event streams
+            url:  event-streams/create-manage-an-eventstream.md
+          - text: Process events using processor editor            
+            url: event-streams/process-events-using-event-processor-editor.md
+          - text: Monitor event streams
+            url: event-streams/monitor.md
+      - linkListType: tutorial
+        links:
+          - text: Process real-time events from Azure Event Hubs
+            url:  event-streams/create-manage-an-eventstream.md
   # Card 
   - title: KQL Database
     linkLists:

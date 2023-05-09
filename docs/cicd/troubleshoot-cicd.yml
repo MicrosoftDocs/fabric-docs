@@ -25,6 +25,16 @@ summary: |
   | **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/understand-the-deployment-process.md#deployed-items) |
   | **Datasets** |   | [dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
 
+  [General questions](#general-questions)  
+  [Licensing](#licensing)  
+  [Git integration](#git-integration)  
+  [Deployment pipelines](#deployment-pipelines)  
+  [Paginated reports](#paginated-reports)  
+  [Dataflows](#dataflows)  
+  [Datamarts](#datamarts)  
+  [Permissions](#permissions)  
+  [Rules](#rules)  
+
 sections:
   - name: General questions
     questions:
@@ -121,7 +131,7 @@ sections:
           * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace. : Use "Update Datasource" API to update the connection detail of the proxy model in the workspace.
 
       - question: |
-          Undo failure: After selecting **Undo**, a dialog pops up indicating failure because dependency can't be found.
+          Undo failure: After selecting "Undo", a dialog pops up indicating failure because dependency can't be found.
         answer: |
           **Description of problem**: The following error appears after an undo action if there is an uncommitted dependency in the **Changes** tab that wasn't selected in the "Undo" action.
 
