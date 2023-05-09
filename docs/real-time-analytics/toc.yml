@@ -110,7 +110,7 @@ items:
     items:
     - name: One logical copy
       href: onelake-mirroring.md
-    - name: Use a OneLake shortcut to query data
+    - name: Create a shortcut to access data in OneLake
       href: onelake-shortcut.md
   - name: Notebooks
     items:
