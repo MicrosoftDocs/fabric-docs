@@ -64,13 +64,7 @@ Now that you're connected to your data source, you can run queries on this data.
 
 The following examples use data that is publicly available at [https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv](https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv).
 
-1. Paste the following query in the top pane of the KQL Queryset.
-
-    ```kusto
-    StormEvents
-    | top-nested 2 of State by sum(BeginLat), top-nested 3 of Source by sum(BeginLat), top-nested 1 of EndLocation by sum(BeginLat)
-    ```
-
+1. Write or copy a query in the top pane of the KQL Queryset.
 1. Select the **Run** button, or press **Shift**+**Enter** to run the query.
 
     The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query has finished successfully, and time used to compute the query results.
@@ -180,7 +174,7 @@ Another easy way to filter the grid is to add a filter operator to the query dir
 
 ### Pivot
 
-The pivot mode feature is similar to Excel’s pivot table, enabling you to do advanced analysis in the grid itself.
+The pivot mode feature is similar to Excel's pivot table, enabling you to do advanced analysis in the grid itself.
 
 Pivoting allows you to take a column's value and turn them into columns. For example, you can pivot on *State* to make columns for Florida, Missouri, Alabama, and so on.
 
@@ -188,7 +182,7 @@ Pivoting allows you to take a column's value and turn them into columns. For exa
 
     :::image type="content" source="media/kusto-query-set/tool-panel.png" alt-text="Screenshot showing how to access the pivot mode feature.":::
 
-1. Select **Pivot Mode**, then drag columns as follows: **EventType** to **Row groups**; **DamageProperty** to **Values**; and **State** to **Column labels**.  
+1. Select **Pivot Mode**, then drag columns as follows: **EventType** to **Row groups**; **DamageProperty** to **Values**; and **State** to **Column labels**.
 
     :::image type="content" source="media/kusto-query-set/pivot-mode.png" alt-text="Screenshot highlighting selected column names to create the pivot table.":::
 

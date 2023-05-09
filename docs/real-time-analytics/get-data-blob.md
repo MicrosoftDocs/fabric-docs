@@ -8,7 +8,6 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-
 # Get data from a blob
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
