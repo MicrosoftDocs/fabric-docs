@@ -28,7 +28,7 @@ ms.search.form: product-kusto
 
     When provisioning is complete, the KQL database details page is shown.
 
-## Enable copy to OneLake
+## Enable availability in OneLake
 
 1. In the **Database details** card, select the **pencil** icon.
 
