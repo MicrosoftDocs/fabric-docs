@@ -46,9 +46,9 @@ items:
       href: get-data-onelake.md
   - name: Connectors
     items:
-    - name: Data Factory pipeline KQL Database connector
+    - name: Configure KQL Database in a data pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
-    - name: Dataflows KQL Database connector
+    - name: Connect to KQL Database in dataflows
       href: ../data-factory/connector-kusto-dataflows.md
   - name: Data management
     items:
