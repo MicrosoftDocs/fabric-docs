@@ -10,13 +10,13 @@ ms.search.form: product-kusto
 ---
 # Query data in a KQL queryset
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 In this article, you learn how to create and use a new KQL queryset.
 
 The KQL Queryset is the item used to run queries, view and manipulate query results on data from your KQL database. The KQL Queryset allows you to save queries for future use, export and share queries with others, and includes the option to generate a Power BI report.
 
 The KQL Queryset uses the Kusto Query language for creating queries, and also supports some SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
