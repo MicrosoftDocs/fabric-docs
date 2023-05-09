@@ -244,4 +244,4 @@ In this second module to our end-to-end tutorial for your first data integration
 Continue to the next section now to integrate your data pipeline.
 
 > [!div class="nextstepaction"]
-> [Module 3: Complete your first data integration journey](tutorial-end-to-end-integration.md) 
+> [Module 3: Automate and send notifications with Data Factory](tutorial-end-to-end-integration.md) 

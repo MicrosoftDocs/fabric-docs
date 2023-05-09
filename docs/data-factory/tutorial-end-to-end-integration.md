@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 05/23/2023
 ---
 
-# Module 3: Complete your first data integration journey
+# Module 3: Automate and send notifications with Data Factory
 
 You will complete this module in 10 minutes to send an email notifying you when all the jobs in a pipeline are complete, and configure it to run on a scheduled basis.
 
