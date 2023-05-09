@@ -18,7 +18,7 @@ This article details the current limitations and known issues in [!INCLUDE [prod
 
 ## Limitations
 
-Data Warehousing in Microsoft Fabric is currently in preview. The focus of this preview is on providing a rich set of SaaS features and functionality tailored to all skill levels. The preview delivers on the promise of providing a "no knobs" experience through an open data format over a single copy of data. This release is not focused on performance, concurrency, and scale. Additional functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally as we progress towards General Availability of Data Warehousing in [!INCLUDE [fabric](includes/fabric.md)]. 
+Data Warehousing in Microsoft Fabric is currently in preview. The focus of this preview is on providing a rich set of SaaS features and functionality tailored to all skill levels. The preview delivers on the promise of providing a "no knobs" experience through an open data format over a single copy of data. This release is not focused on performance, concurrency, and scale. Additional functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally as we progress towards General Availability of data warehousing in [!INCLUDE [product-name](../includes/product-name.md)].
 
 General product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. 
 
