@@ -244,4 +244,4 @@ In this second module to our end-to-end tutorial for your first data integration
 Continue to the next section now to integrate your data pipeline.
 
 > [!div class="nextstepaction"]
-> [Module 3: Integrate your pipeline](tutorial-end-to-end-integrate.md) 
+> [Module 3: Integrate your pipeline](tutorial-end-to-end-integration.md) 
