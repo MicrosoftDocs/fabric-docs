@@ -18,7 +18,7 @@ summary: |
 
   Review the links in the following table to understand the considerations and limitations of various lifecycle management features:
 
-  | Feature | Git integration \ Deployment pipelines |
+  | Feature | Git integration \| Deployment pipelines |
   |--------|------------------|---------------------|
   | General | [git-integration](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) |
   | Permissions | [git-integration](./git-integration/git-integration-process.md#permissions) | [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#permissions) |
@@ -85,14 +85,7 @@ sections:
       - question: |
           What licenses are needed to work with lifecycle management?
         answer: |
- 
-          To use the lifecycle management features, you need one of the following licenses:
-          
-          * An [organizational license](../enterprise/licenses.md#organizational-licenses) 
-          
-          * A [Pro license](../enterprise/licenses.md#individual-licenses), with a workspace that resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
-              
-          For more information on obtaining a license, see [Fabric licenses](../enterprise/licenses.md).
+          For more information on licenses, see [Fabric licenses](../enterprise/licenses.md).
           
       - question: |
           What type of capacity do I need?
