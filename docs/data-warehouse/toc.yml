@@ -119,8 +119,6 @@ items:
     items:
     - name: Monitor using DMVs
       href: monitor-using-dmv.md
-    - name: Get Workspace and OneLake path
-      href: get-workspace-onelake-path.md      
   - name: Troubleshoot
     items:
     - name: Troubleshooting your Warehouse

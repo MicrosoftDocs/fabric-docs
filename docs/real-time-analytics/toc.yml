@@ -5,9 +5,9 @@ items:
   items:
   - name: What is Real-Time Analytics?
     href: overview.md
+
   - name: Compare with Azure Data Explorer
     href: realtime-analytics-compare.md
-
 - name: Get started
   items:
   - name: Tutorial - Introduction
@@ -26,62 +26,12 @@ items:
     href: tutorial-6-build-report.md
   - name: 7- Clean up resources
     href: tutorial-7-clean-up-resources.md
-- name: Create and manage entities
+- name: Eventstreams
   items:
-  - name: Data management
-    href: data-management.md
-  - name: Databases
-    items:
-    - name: Create a KQL database
-      href: create-database.md
-    - name: One logical copy
-      href: onelake-mirroring.md
-  - name: Tables
-    items:
-    - name: Create an empty table
-      href: create-empty-table.md
-    - name: Create a table update policy
-      href: table-update-policy.md
-    - name: Create materialized views
-      href: materialized-view.md
-  - name: Create stored functions
-    href: create-functions.md
-- name: Get data
-  items:
-  - name: Get data from an Azure blob and a blob container
-    href: get-data-blob.md
-  - name: Get data from a blob container
-    href: get-data-blob-container.md
-  - name: Get data from Azure Event Hubs
-    href: get-data-event-hub.md
-  - name: Get data from OneLake
-    href: get-data-onelake.md
-- name: Query data
-  items:
-  - name: Query data in a KQL queryset
-    href: kusto-query-set.md
-  - name: Use a OneLake shortcut to query data
-    href: onelake-shortcut.md
-  - name: Use a notebook with Kqlmagic to query a KQL database
-    href: jupyter-notebook.md
-  - name: Use a notebook with Apache Spark to query a KQL database
-    href: spark-connector.md
-  - name: Use sample queries
-    href: query-table.md
-- name: Visualize data
-  items:
-  - name: Visualize data in a Power BI report
-    href: create-powerbi-report.md
-  - name: Use data from a KQL database in Power BI Desktop
-    href: power-bi-data-connector.md
-- name: Event streams
-  items:
-  - name: Introduction to event streams
-    href: event-streams/overview.md
-  - name: Event streams tutorial
-    href: event-streams/bring-events-to-fabric-from-event-hub.md
   - name: Concepts
     items:
+    - name: Introduction to event streams
+      href: event-streams/overview.md
     - name: Event streams main editor
       href: event-streams/main-editor.md
     - name: Event streams sources
@@ -92,6 +42,8 @@ items:
       href: event-streams/event-processor-editor.md
   - name: How-to
     items:
+    - name: Event streams tutorial
+      href: event-streams/bring-events-to-fabric-from-event-hub.md
     - name: Create and manage an Eventstream item
       href: event-streams/create-manage-an-eventstream.md
     - name: Add and manage eventstream sources
@@ -104,13 +56,67 @@ items:
       href: event-streams/preview-data.md
     - name: Monitoring
       href: event-streams/monitoring.md
-- name: Kusto Query Language
-  href: kusto-query-language/toc.yml
-- name: Reference and resources
+- name: KQL Database
   items:
+  - name: Create a KQL database
+    href: create-database.md
+  - name: Create an empty table
+    href: create-empty-table.md
+  - name: Get data
+    items:
+    - name: Get data from a blob
+      href: get-data-blob.md
+    - name: Get data from a blob container
+      href: get-data-blob-container.md
+    - name: Get data from Azure Event Hubs
+      href: get-data-event-hub.md
+    - name: Get data from OneLake
+      href: get-data-onelake.md
+  - name: Data management
+    items:
+    - name: Data management overview  
+      href: data-management.md
+    - name: Change the data retention policy
+      href: data-retention-policy.md
+    - name: Create a table update policy
+      href: table-update-policy.md
+    - name: Create materialized views
+      href: materialized-view.md
+    - name: Create stored functions
+      href: create-functions.md 
   - name: Management commands
     href: management/toc.yml
   - name: API
     href: api/toc.yml
+- name: KQL Queryset
+  items:
+  - name: Query data in a KQL queryset
+    href: kusto-query-set.md
+- name: Query data
+  items:
+  - name: Use sample queries
+    href: query-table.md
+  - name: Kusto Query Language
+    href: kusto-query-language/toc.yml
   - name: Functions library
     href: functions-library/toc.yml
+- name: Integrate with other experiences
+  items:
+  - name: Power BI
+    items:
+    - name: Visualize data in a Power BI report
+      href: create-powerbi-report.md
+    - name: Use data from a KQL database in Power BI Desktop
+      href: power-bi-data-connector.md
+  - name: OneLake
+    items:
+    - name: One logical copy
+      href: onelake-mirroring.md
+    - name: Create a shortcut to access data in OneLake
+      href: onelake-shortcut.md
+  - name: Notebooks
+    items:
+    - name: Use a notebook with Kqlmagic to query a KQL database
+      href: jupyter-notebook.md
+    - name: Use a notebook with Apache Spark to query a KQL database
+      href: spark-connector.md
