@@ -9,8 +9,6 @@ items:
     href: fabric-trial.md
   - name: Fabric terminology
     href: fabric-terminology.md
-  - name: Fabric context sensitive Help pane
-    href: fabric-help-pane.md
 - name: Get started
   items:
   - name: End-to-end tutorials
