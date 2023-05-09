@@ -57,14 +57,14 @@ Now that your SAS policy is set up, you can configure a connection to this event
 
 1. On the menu bar of your workspace, select the settings icon > **Manage connections and gateways**.
 
-    :::image type="content" source="media/get-data-event-hub/manage-connections-gateways.png" alt-text="Screenshot of the settings dropdown in Microsoft Fabric. The option titled Manage connections and gateways is highlighted.":::
+    :::image type="content" source="media/get-data-event-hub/manage-connections-gateways.png" alt-text="Screenshot of the settings dropdown in Microsoft Fabric. The option titled Manage connections and gateways is highlighted."  lightbox="media/get-data-event-hub/manage-connections-gateways.png":::
 
     The **Data** pane opens.
 1. Select **+New**.
 
 1. Fill out the fields according to the following table:
 
-    :::image type="content" source="media/get-data-event-hub/new-connection.png" alt-text="Screenshot of filling out event hubs information in the Azure portal.":::
+    :::image type="content" source="media/get-data-event-hub/new-connection.png" alt-text="Screenshot of filling out event hubs information in the Azure portal."  lightbox="media/get-data-event-hub/new-connection.png":::
 
     | Field | Description | Suggested value |
     |---|---|---|
@@ -87,7 +87,7 @@ In the following step, you create a data stream in your KQL database, which conn
 1. Browse to your KQL database.
 1. Select **Get data** > **Get data from Event Hubs**.
 
-    :::image type="content" source="media/get-data-event-hub/get-data.png" alt-text="Screenshot of a KQL database showing the Get Data dropdown. The dropdown option titled Event Hubs is highlighted.":::
+    :::image type="content" source="media/get-data-event-hub/get-data.png" alt-text="Screenshot of a KQL database showing the Get Data dropdown. The dropdown option titled Event Hubs is highlighted."  lightbox="media/get-data-event-hub/get-data.png":::
 
 A wizard opens with the **Destination** tab selected.
 
@@ -102,7 +102,7 @@ In the source tab, the **Source type** is autopopulated with **Event Hubs**
 
 1. Fill out the remaining fields according to the following table:
 
-    :::image type="content" source="media/get-data-event-hub/source-tab.png" alt-text="Screenshot of source tab.":::
+    :::image type="content" source="media/get-data-event-hub/source-tab.png" alt-text="Screenshot of source tab."  lightbox="media/get-data-event-hub/source-tab.png":::
 
     |**Setting** | **Suggested value** | **Field description**
     |---|---|---|
@@ -112,6 +112,7 @@ In the source tab, the **Source type** is autopopulated with **Event Hubs**
     | Consumer group | **Add consumer group** | The relevant consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups?context=/fabric/context/context)
     | Compression | | Data compression of the events, as coming from the event hub. Options are None (default), or GZip compression.
     | Event system properties | Select relevant properties. | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations?context=/fabric/context/context). If there are multiple records per event message, the system properties are added to the first one. See [event system properties](#event-system-properties).|
+    | Event retrieval start date|  | The data connection retrieves existing event hub events created since the Event retrieval start date. It can only retrieve events retained by the event hub, based on its retention period. The time zone is UTC. If no time is specified, the default time is the time at which the data connection is created. |
 
 1. Select **Next: Schema** to continue to the [Schema tab](#schema-tab).
 
@@ -131,7 +132,7 @@ System properties store properties that are set by the Event Hubs service, at th
 
 Data is read from the event hub in form of [EventData](/dotnet/api/microsoft.servicebus.messaging.eventdata?context=/fabric/context/context) objects. Supported formats are CSV, JSON, PSV, SCsv, SOHsv TSV, TXT, and TSVE.
 
-:::image type="content" source="media/get-data-event-hub/schema-tab.png" alt-text="Screenshot of schema tab.":::
+:::image type="content" source="media/get-data-event-hub/schema-tab.png" alt-text="Screenshot of schema tab."  lightbox="media/get-data-event-hub/schema-tab.png":::
 
 The data format is automatically inferred from the incoming data. If this format is incorrect, select the correct format. If you select Ignore data format errors, the data is ingested in JSON format. If you leave this check box unselected, the data is ingested in multijson format. When you select JSON, you must also select **Nested levels**, from 1 to 100. The levels determine the table column data division.
 
@@ -151,6 +152,8 @@ If the data you see in the preview window isn't complete, you may need more data
 
 ### Command viewer
 
+:::image type="content" source="/media/get-data-event-hub/command-viewer.png" alt-text="Screenshot of the command editor in the schema tab."  lightbox="/media/get-data-event-hub/command-viewer.png":::
+
 The command viewer shows the commands for creating tables, mapping, and ingesting data in tables.
 
 To open the command viewer, select the v button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
@@ -161,6 +164,8 @@ The partial data preview is automatically inferred based on your data. You can c
 
 To add a new column, select the + button on the right-hand column under Partial data preview.
 
+:::image type="content" source="/media/get-data-event-hub/partial-data-preview.png" alt-text="Screenshot of the Partial data preview in the schema tab."  lightbox="/media/get-data-event-hub/partial-data-preview.png":::
+
 * The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
 * The default column type is string but can be altered in the drop-down menu of the Column type field.
 * Source: for table formats (CSV, TSV, etc.), each column can be linked to only one source column. For other formats (such as JSON, Parquet, etc.), multiple columns can use the same source.
@@ -169,7 +174,7 @@ To add a new column, select the + button on the right-hand column under Partial 
 
 In the **Continuous ingestion from Event Hubs established** window, all steps are marked with green check marks when data ingestion finishes successfully.
 
-:::image type="content" source="media/get-data-event-hub/summary-tab.png" alt-text="Screenshot of Event Hubs data ingestion summary tab.":::
+:::image type="content" source="media/get-data-event-hub/summary-tab.png" alt-text="Screenshot of Event Hubs data ingestion summary tab."  lightbox="media/get-data-event-hub/summary-tab.png":::
 
 Note the name of the data stream that was created. This connection is visible in your workspace as a new item, and is specific to the chosen table and data stream.
 
