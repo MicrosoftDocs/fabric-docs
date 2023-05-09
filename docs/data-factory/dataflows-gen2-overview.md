@@ -25,7 +25,7 @@ Dataflow Gen2 is the new generation of dataflows. The new generation of dataflow
 | Integration with data pipelines     | ✓  |   |
 | Save as draft       | ✓ |   |
 | Fast copy       | ✓  |   |
-| High scale compute     | ✓ |   |
+| High-scale compute     | ✓ |   |
 | Get Data via Dataflows Connector | ✓ | ✓ |
 | Direct Query via Dataflows Connector |  | ✓ |
 | Incremental refresh       |   | ✓ |
@@ -33,13 +33,13 @@ Dataflow Gen2 is the new generation of dataflows. The new generation of dataflow
 
 ### Shorter authoring experience
 
-Working with Dataflow Gen2 feels like coming home. We kept the full Power Query experience you're used to in Power BI dataflows. When you enter the experience, you're guided step-by-step for getting the data into your dataflow. We also shortend the authoring experince to reduce the number of steps required to create dataflows, and added a few new features to make your experience even better.
+Working with Dataflow Gen2 feels like coming home. We kept the full Power Query experience you're used to in Power BI dataflows. When you enter the experience, you're guided step-by-step for getting the data into your dataflow. We also shorten the authoring expereince to reduce the number of steps required to create dataflows, and added a few new features to make your experience even better.
 
 :::image type="content" source="./media/dataflows-gen2-overview/authoring-experience.png" alt-text="Screenshot of the overall authoring experience in dataflows." lightbox="./media/dataflows-gen2-overview/authoring-experience.png":::
 
 ### New dataflow save experience
 
-With Dataflow Gen2, we changed how saving a dataflow works. Any changes made to a dataflow are auto-saved to the cloud so you can exit the authoring experience at any point and continue from where you left off at a later time. Once you're done authoring your dataflow you publish your changes and those changes will be used when the datalfow refreshes. In addiion, publishing the dataflow will save your changes and defer validations that need to performed to the background, allow allowing you to save your dataflow without having to wait for the validation to finish. 
+With Dataflow Gen2, we changed how saving a dataflow works. Any changes made to a dataflow are auto-saved to the cloud so you can exit the authoring experience at any point and continue from where you left off at a later time. Once you're done authoring your dataflow you publish your changes and those changes will be used when the dataflow refreshes. In addition, publishing the dataflow will save your changes and run validations that must be performed in the background.  This lets you to save your dataflow without having to wait for validation to finish. 
 
 Learn more about [Dataflows save as draft](dataflows-gen2-save-draft.md)
 
@@ -74,7 +74,7 @@ A pipeline can contain one or more activities that are connected by dependencies
 
 ### High scale compute
 
-Similar to Datalfows Gen1, Dataflow Gen2 also features enhanced compute engine to improve performance of both transformations of referenced queries and get data scenarios. To acheive this, Dataflows Gen2 create both Lakehouse and Warehouse artifacts in your workspace, and leverage them to store and access data to improve performance for all your dataflows.
+Similar to Dataflows Gen1, Dataflow Gen2 also features enhanced compute engine to improve performance of both transformations of referenced queries and get data scenarios. To acheive this, Dataflows Gen2 create both Lakehouse and Warehouse artifacts in your workspace, and leverage them to store and access data to improve performance for all your dataflows.
 
 ## Try out Gen2 Dataflows by re-using your queries from Dataflows Gen1
 
@@ -86,7 +86,7 @@ If you have a dataflow in Power BI or Power Apps, you can copy your queries and 
 
 ### Export your Dataflows Gen1 queries and Import them into a Dataflows Gen2 
 
-You can now export queries in both Datalfows Gen1 and Gen2 authoring experience and save them to a PQT file you can then improt into a Gen2 dataflows. For more information please refer to [Export and Import Power Query Temaplates](./dataflows-gen2-monitor.md).
+You can now export queries in both Datalfows Gen1 and Gen2 authoring experience and save them to a PQT file you can then import into a Gen2 dataflows. For more information please refer to [Export and Import Power Query Templates](./dataflows-gen2-monitor.md).
 
 ## Next steps
 
