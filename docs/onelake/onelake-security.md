@@ -48,10 +48,10 @@ Microsoft Fabric shortcuts, which are shortcuts to data anywhere in OneLake use 
 
 | **Shortcut source item** | **Required permission to see shortcut source** | **Shortcut target item** | **Required permission to access shortcut target** |
 |---|---|---|---|
-| Warehouse | Viewer | Warehouse | Viewer<sup>1</sup> |  
+| Warehouse | Viewer | Warehouse | Viewer<sup>1</sup> |
 | Warehouse | Viewer | Lakehouse | Admin, member, contributor<sup>1</sup> |
 | Lakehouse | Admin, member, contributor | Lakehouse | Admin, member, contributor |
-| Lakehouse | Admin, member, contributor | Warehouse | Viewer |  
+| Lakehouse | Admin, member, contributor | Warehouse | Viewer |
 | Lakehouse | Admin, member, contributor | Real-time analytics | Admin, member, contributor |
 | Real-time analytics | Viewer | Lakehouse | Admin, member, contributor |
 | Real-time analytics | Viewer | Warehouse | Admin, member, contributor |  
