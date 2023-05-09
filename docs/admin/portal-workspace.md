@@ -21,7 +21,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 Workspaces are places where users collaborate on dashboards, reports, and other content. [!INCLUDE [product-name](../includes/product-name.md)] admins can use the **Create workspaces** setting to designate which users in the organization can create workspaces. Admins can let everybody or nobody in an organization create workspaces. Workspace creation can also be limited to members of specific security groups. Learn more about [workspaces](../get-started/workspaces.md).
 
-:::image type="content" source="media/service-portal-workspace/power-bi-admin-workspace-settings.png" alt-text="Screenshot showing Create a workspace.":::
+:::image type="content" source="media/portal-workspace/power-bi-admin-workspace-settings.png" alt-text="Screenshot showing Create a workspace.":::
 
 For classic workspaces based on Microsoft 365 Groups, administration continues to occur in admin portal and Azure Active Directory.
 
