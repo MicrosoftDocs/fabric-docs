@@ -129,4 +129,4 @@ Limitations to be aware of:
 ## Next steps
 
 * [Create workspaces](create-workspaces.md)
-* [Give users access to workspaces](give-access-wokrspaces.md)
+* [Give users access to workspaces](give-access-workspaces.md)
