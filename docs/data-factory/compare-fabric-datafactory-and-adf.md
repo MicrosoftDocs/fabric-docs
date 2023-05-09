@@ -24,17 +24,17 @@ In the modern experience of Data Factory in Fabric, there are some different fea
 
 |Azure Data Factory |Data Factory in Fabric |Description  |
 |:---|:---|:---|
-|Pipeline |Data pipeline | Data pipeline in Fabric is better integrated with the unified data platform including Lakehouse, Datawarehouse, etc.. |
-|Mapping dataflow  |Dataflow gen2 | Dataflow gen2 provides easier experience to build transformation. We are in progress of ensuring the function of mapping dataflow supported in dataflow gen2.|
-|Activities |Activities|We are in progress to make more activities of ADF supported in Data Factory in Fabric. Data Factory in Fabric also has some newly attracted activities like Office 365 Outlook activity. Details are in Activity overview of the documents.|
-|Dataset |Datasets are inline|Data Factory in Fabric doesn’t have dataset concepts. Connection will be used for connecting each data source and pull data. |
+|Pipeline |Data pipeline | Data pipeline in Fabric is better integrated with the unified data platform including Lakehouse, Datawarehouse, and more. |
+|Mapping dataflow  |Dataflow Gen2 | Dataflow Gen2 provides easier experience to build transformation. We are in progress of letting more functions of mapping dataflow supported in Dataflow Gen2 |
+|Activities |Activities|We are in progress to make more activities of ADF supported in Data Factory in Fabric. Data Factory in Fabric also has some newly attracted activities like Office 365 Outlook activity. Details are in [Activity overview](activity-overview.md).|
+|Dataset |Not Applicable|Data Factory in Fabric doesn’t have dataset concepts. Connection will be used for connecting each data source and pull data. |
 |Linked Service |Connections |Connections have similar functionality as linked service, but connections in Fabric have more intuitive way to create. |
-|Triggers |Schedules (Tumbling window trigger, and Event-based trigger) |Pipeline in Fabric supports to use schedule to set automatically running time. We are adding more triggers that are available in ADF.  |
-|Publish |Save, Run |For pipeline in Fabric, you don’t need to publish to save the content. Instead, you can use Save button to save the content directly. When you click Run button, it will save the content if content hasn’t been saved yet. |
-|Autoresolve and Azure Integration runtime |Not Applicable (only gateways - coming soon) |In Fabric, we don’t have the concept of Integration runtime. The gateway in Fabric plays a similar role with Integration runtime. |
-|Self-hosted integration runtimes |On-premises Data Gateway |The capability in Fabric is still in progress of design. |
-|Azure-SSIS integration runtimes |Not Applicable (only gateways - TBD) |The capability in Fabric hasn’t confirmed the roadmap and design. |
-|MVNet and Private End Point |VNet Gateway |The capability in Fabric is still in progress of design.|
+|Triggers |Schedules (other triggers are in progress) |Fabric can use the schedule to automatically run pipeline. We are adding more triggers supported by ADF in Microsoft Fabric.  |
+|Publish |Save, Run |For pipeline in Fabric, you don’t need to publish to save the content. Instead, you can use Save button to save the content directly. When you click Run button, it will save the content before running pipeline. |
+|Autoresolve and Azure Integration runtime |Not Applicable |In Fabric, we don’t have the concept of Integration runtime. |
+|Self-hosted integration runtimes |On-premises Data Gateway(in design) |The capability in Fabric is still in progress of design. |
+|Azure-SSIS integration runtimes |To be determined |The capability in Fabric hasn’t confirmed the roadmap and design. |
+|MVNet and Private End Point |To be determined |The capability in Fabric hasn’t confirmed the roadmap and design.|
 |Expression language |Expression language |Expression language is similar in ADF and Fabric. |
 |Authentication type in linked service |Authentication kind in connection |Authentication kind in Fabric pipeline already supported popular authentication types in ADF, and more authentication kinds will be added. |
 |CI/CD |CI/CD |CI/CD capability in Fabric Data Factory will be coming soon. |
