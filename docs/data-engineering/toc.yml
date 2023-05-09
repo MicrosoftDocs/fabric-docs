@@ -109,6 +109,8 @@ items:
       href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
+    - name: Navigate the Apache Spark history server
+      href: sapache-spark-history-server.md  
 - name: Delta Lake
   items:
     - name: Lakehouse and Delta tables
