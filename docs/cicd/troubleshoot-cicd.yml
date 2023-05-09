@@ -47,7 +47,6 @@ sections:
           
         
   - name: Git integration  
-    anchorId: git-integration
     questions:
       - question: |
           The Commit button is disabled.
@@ -148,7 +147,6 @@ sections:
           Select **Undo**.  
 
   - name: Deployment pipelines
-    anchorId: deployment-pipelines
     questions:
       - question: |
           What are some general deployment limitations to keep in mind:
