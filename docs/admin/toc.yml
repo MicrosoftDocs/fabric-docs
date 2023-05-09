@@ -17,14 +17,16 @@ items:
     href: admin-compliance.md    
 - name: Track user activities
   href: admin-track-user-activities.md
-- name: Monitoring workspace
+- name: Monitoring
   items:
-  - name: What is the monitoring workspace?
-    href: admin-monitoring.md
-  - name: Feature usage and adoption report
-    href: admin-feature-usage-adoption.md
   - name: Using Monitoring hub
     href: admin-monitoring-hub.md    
+  - name: Monitoring workspace
+    items:    
+    - name: What is the monitoring workspace?
+      href: admin-monitoring.md
+    - name: Feature usage and adoption report
+      href: admin-feature-usage-adoption.md
 - name: Workspace administration
   items:
   - name: Manage workspaces
