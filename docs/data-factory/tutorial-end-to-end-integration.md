@@ -33,7 +33,7 @@ We use the pipeline you created in [Module 1: Create a pipeline in Data Factory]
 
 1. Select the email address you want to use.
 
-   :::image type="content" source="media/tutorial-end-to-end-integration/pick-you-email-account.png" alt-text="Screenshot showing the PIck an account dialog.":::
+   :::image type="content" source="media/tutorial-end-to-end-integration/pick-your-email-account.png" alt-text="Screenshot showing the PIck an account dialog.":::
 
    > [!NOTE]
    > The service doesn't currently support personal email. You must use an enterprise email address.
