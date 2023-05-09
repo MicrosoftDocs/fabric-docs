@@ -125,11 +125,12 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
    Similarly, in the SQL query editor, the `GO` SQL command creates a new independent batch in a new session.
 
+- When you are running a SQL query with [USE](/sql/t-sql/language-elements/use-transact-sql?view=fabric&preserve-view=true), you need to submit the SQL query with `USE` as one single request.
+
 - The following table summarizes the expected behavior will not match with SQL Server Management Studio/Azure Data Studio:
 
    | **Scenario** | **Supported in SSMS/ADS** | **Supported in SQL query editor in Fabric portal** |
    |---|---|---|
-   |Using [USE (Transact-SQL)](/sql/t-sql/language-elements/use-transact-sql?view=fabric&preserve-view=true) |Yes|No|
    |Using [SET Statements (Transact-SQL)](/sql/t-sql/statements/set-statements-transact-sql?view=fabric&preserve-view=true) to set properties for session |Yes|No|
    |Using [sp_set_session_context (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-set-session-context-transact-sql?view=fabric&preserve-view=true) for multiple batch statements runs |Yes|No|
    |[Transactions (Transact-SQL)](/sql/t-sql/language-elements/transactions-sql-data-warehouse?view=fabric&preserve-view=true) (unless executed as a single batch request) |Yes|No|
