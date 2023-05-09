@@ -20,7 +20,7 @@ Review this section for a list of the security features available in Microsoft F
 
 * [Resiliency](az-resiliency.md) - Reliability and regional resiliency with Azure availability zones.
 
-* [LockBox](security-lockbox.md) - Control how Microsoft engineers access your data.
+* [Lockbox](security-lockbox.md) - Control how Microsoft engineers access your data.
 
 * [Service tags](security-service-tags.md) - Enable an Azure SQL Managed Instance (MI) to allow incoming connections from Microsoft Fabric.
 
