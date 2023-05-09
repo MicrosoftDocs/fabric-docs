@@ -20,7 +20,7 @@ Shortcuts behave like symbolic links within the OneLake filesystem but have the 
 
 ## Where can I create shortcuts?
 
-Shortcuts can be created both in Lakehouse artifacts and Kusto DB artifacts.  Furthermore, the shortcuts created within these artifacts can point to other OneLake locations, ADLS Gen 2 or Amazon S3 storage accounts.
+Shortcuts can be created both in Lakehouse artifacts and KQL Database artifacts.  Furthermore, the shortcuts created within these artifacts can point to other OneLake locations, ADLS Gen 2 or Amazon S3 storage accounts.
 
 **Lakehouse:**
 
@@ -32,7 +32,7 @@ In the “Files” folder, there are no restrictions on where you can create sho
 
 ## What workloads can access shortcuts?
 
-Any workload (1p or 3p) that can access data in OneLake can utilize shortcuts.  Through the OneLake API, shortcuts just appear as another folder in the lake.  This allows Spark, SQL, Kusto and Analysis Services to all utilize shortcuts when querying data.
+Any workload (1p or 3p) that can access data in OneLake can utilize shortcuts.  Through the OneLake API, shortcuts just appear as another folder in the lake.  This allows Spark, SQL, Real-Time Analytics and Analysis Services to all utilize shortcuts when querying data.
 
 **Spark:**
 
@@ -42,9 +42,9 @@ Spark notebooks and Spark jobs can utilize shortcuts that are created in OneLake
 
 Shortcuts in the tables section of the Lakehouse can also be read through the SQL endpoint for the Lakehouse.  This can be accessed through “Warehouse Mode” for the Lakehouse or through SQL Management Studio.
 
-**Kusto:**
+**Real-Time Analytics**
 
-Shortcuts in Kusto are recognized as external tables and can be queries using KQL.
+Shortcuts in Real-Time Analytics are recognized as external tables and can be queries using KQL.
 
 **Analysis Services:**
 
@@ -56,7 +56,7 @@ OneLake shortcuts support multiple filesystem data sources.  These include inter
 
 **Internal OneLake Shortcuts:**
 
-Internal OneLake Shortcuts allow you to reference data within existing Fabric artifacts.  These artifacts include Lakehouses, Kusto DBs and Data Warehouses.  The shortcut can point to a folder location within the same artifact, across artifacts within the same workspace or even across artifacts in different workspaces.  When you create a shortcut across artifacts, the artifact types don't need to match.  For instance, you can create a shortcut in a Lakehouse artifact that points to data in Kusto DB artifact.
+Internal OneLake Shortcuts allow you to reference data within existing Fabric artifacts.  These artifacts include Lakehouses, KQL Database and Data Warehouses.  The shortcut can point to a folder location within the same artifact, across artifacts within the same workspace or even across artifacts in different workspaces.  When you create a shortcut across artifacts, the artifact types don't need to match.  For instance, you can create a shortcut in a Lakehouse artifact that points to data in KQL Database artifact.
 
 When accessing data through a shortcut to another OneLake location, the identity of the calling user will be utilized to authorize access to the data source of the shortcut*. This user must have “readAll” permissions on the source data.
 
@@ -166,7 +166,7 @@ When creating shortcuts between multiple lakehouses within a workspace, you can 
 - Private Endpoints aren't currently supported for shortcuts to S3.
 - S3 shortcuts are read only.
 - The maximum depth of nested shortcuts is 10.
-- Shortcuts to Kusto tables aren't discovered as tables in Lakehouse.
+- Shortcuts to KQL tables aren't discovered as tables in Lakehouse.
 - Spaces in shortcut names won't be discovered as Delta tables.
 - Shortcut paths can't contain “%” characters.
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts be created to a directory that is at least one level below a container.
