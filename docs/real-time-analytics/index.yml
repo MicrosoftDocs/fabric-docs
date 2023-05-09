@@ -43,7 +43,7 @@ landingContent:
           url: event-streams/preview-data.md
         - text: Monitor event streams
           url: event-streams/monitoring.md
-  
+
   # Card 
   - title: KQL Database
     linkLists:
@@ -63,16 +63,21 @@ landingContent:
           url: get-data-event-hub.md
         - text: Get data from OneLake
           url: get-data-onelake.md
-      
+
+  # Card 
+  - title: Query data
+    linkLists:
+      - linkListType: how-to-guide
+        links: 
+          - text: Use sample queries
+            url: query-table.md
   # Card 
   - title: Kusto Query Language (KQL)
     linkLists:
-      - linkListType: how-to-guide
+      - linkListType: overview
         links:          
           - text: KQL Overview
             url: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
-          - text: Use sample queries
-            url: query-table.md
       - linkListType: learn
         links:
           - text: "Training module: Write your first query with Kusto Query Language"
@@ -81,7 +86,6 @@ landingContent:
             url: /training/modules/gain-insights-data-kusto-query-language/
           - text: "Training module: Multi-table queries using Kusto Query Language"
             url: /training/modules/multi-table-queries-with-kusto-query-language/
-
 
   # Card 
   - title: KQL Queryset
@@ -102,3 +106,7 @@ landingContent:
             url: spark-connector.md
           - text: Create a shortcut to access data in OneLake
             url: onelake-shortcut.md
+      - linkListType: how-to-guide
+        links: 
+          - text: Visualize data in a Power BI report
+            url: create-powerbi-report.md
