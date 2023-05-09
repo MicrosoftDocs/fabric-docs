@@ -168,7 +168,7 @@ The next step is to combine both tables into a single table that has the discoun
 
 1. Notice how a new query was created in Diagram view showing the relationship of the new Merge query with the two queries you previously created. Looking at the table pane of the editor, scroll to the right of the Merge query column list to see a new column with table values is present. This is the "Generated NYC Taxi-Green-Discounts" column, and its type is **[Table]**. In the column header there is an icon with two arrows going in opposite directions, allowing you to select columns from the table. Deselect all of the columns except **Discount**, and then select **OK**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-query-column-selections.png" alt-text="Screenshot showign the merged query with the column selection menu displayed for the newly generated column Generated-NYC-Taxi-Green-Discounts.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-query-column-selections.png" lightbox="media/tutorial-end-to-end-dataflow/merge-query-column-selections.png" alt-text="Screenshot showign the merged query with the column selection menu displayed for the newly generated column Generated-NYC-Taxi-Green-Discounts.":::
 
 1. With the discount value now at the row level, we can create a new column to calculate the total amount after discount. To do so, select the **Add column** tab at the top of the editor, and choose **Custom column** from the **General** group.
 
