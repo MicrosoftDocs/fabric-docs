@@ -32,7 +32,7 @@ To create and Amazon S3 Shortcut:
 
 1. Select **Amazon S3** tile.
 
-    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-tile-options-v2.png" alt-text="Screenshot of New Shortcuts dialog showing selection tiles for shortcut types" lightbox="media\create-onelake-shortcut\new-shortcut-tile-options.png":::
+    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-tile-options-v2.png" alt-text="Screenshot of New Shortcuts dialog showing selection tiles for shortcut types." lightbox="media\create-onelake-shortcut\new-shortcut-tile-options.png":::
 
 1. Specify the connection details this shortcut will use.
 

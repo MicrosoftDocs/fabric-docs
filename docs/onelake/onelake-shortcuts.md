@@ -37,7 +37,7 @@ In the “Files” folder, there are no restrictions on where you can create sho
 
 When you create a shortcut in a KQL database, it appears in the "Shortcuts" folder of the database.  The KQL database treats shortcuts like external tables.  To query the shortcut, use the "external_table" function of the Kusto Query Language.
 
-:::image type="content" source="media\onelake-shortcuts\shortcut-kql-db.png" alt-text="Screenshot of shortcuts inside a KQL database." lightbox="media\onelake-shortcuts\shortcut-kql-db.png":::
+:::image type="content" source="media\onelake-shortcuts\shortcut-kql-database.png" alt-text="Screenshot of shortcuts inside a KQL database." lightbox="media\onelake-shortcuts\shortcut-kql-db.png":::
 
 ## Where can I access shortcuts?
 
@@ -151,7 +151,7 @@ Permissions for shortcuts are governed by a combination of the permissions in th
 
 ## Workspace roles
 
-The following table shows the shortcut-related permissions for each workspace role. For more information, see [Workspace roles](..\data-warehouse\workspace-roles.md).
+The following table shows the shortcut-related permissions for each workspace role. For more information, see [Workspace roles](..\get-started\roles-workspaces.md).
 
 | **Capability** | **Admin** | **Member** | **Contributor** | **Viewer** |
 |---|---|---|---|---|
