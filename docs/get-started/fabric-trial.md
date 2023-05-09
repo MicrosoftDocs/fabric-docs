@@ -23,7 +23,7 @@ If you're an existing Power BI user, you can skip to [Start the Fabric (Preview)
 
 Follow these steps to start your Fabric (Preview) trial. 
 
-1. Open the [Fabric homepage](https://app.fabric.microsoft.com/home) (https://app.fabric.microsoft.com/home) and select the Account manager.  
+1. Open the [Fabric homepage](https://app.fabric.microsoft.com/home) and select the Account manager.  
 
     :::image type="content" source="media/fabric-trial/fabric-home-page.png" alt-text="Screenshot of the Microsoft Fabric homepage with the Account manager outlined in red.":::
 
