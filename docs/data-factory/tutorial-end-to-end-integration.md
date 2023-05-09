@@ -61,9 +61,7 @@ We use the pipeline you created in [Module 1: Create a pipeline in Data Factory]
 
 1. For the **Body**, select the field again and choose the **Add dynamic content** option when it appears below the text area. Add the following expression again in the **Pipeline expression builder** dialog that appears, then select **OK**:
 
-   *@concat('RunID =  ', pipeline().RunId, ' ; ',
-'Copied rows ', activity('Copy data1').output.rowsCopied, ' ; ','Throughput ', activity('Copy data1').output.throughput
-)*
+   *@concat('RunID =  ', pipeline().RunId, ' ; ', 'Copied rows ', activity('Copy data1').output.rowsCopied, ' ; ','Throughput ', activity('Copy data1').output.throughput)*
 
    > [!NOTE]
    > Replace **Copy data1** with the name of your own pipeline copy activity.
