@@ -18,7 +18,7 @@ In this module, we ingest the NYC Taxi & Limousine Commission - yellow taxi trip
 
 **Delta Lake**: Delta Lake is an open-source storage layer that brings ACID transactions, scalable metadata management, and batch and streaming data processing to Apache Spark. A Delta Lake table is a data table format that extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata management.
 
-In the following steps, you use the Apache spark to read data from Azure Open Datasets containers and write data into a Fabric lakehouse delta table.[Azure Open Datasets](/azure/open-datasets/overview-what-are-open-datasets) are curated public datasets that you can use to add scenario-specific features to machine learning solutions for more accurate models. Open Datasets are in the cloud on Microsoft Azure Storage and can be accessed by various methods including Apache Spark, REST API, Data factory, and other tools.
+In the following steps, you use the Apache spark to read data from Azure Open Datasets containers and write data into a Fabric lakehouse delta table. [Azure Open Datasets](/azure/open-datasets/overview-what-are-open-datasets) are curated public datasets that you can use to add scenario-specific features to machine learning solutions for more accurate models. Open Datasets are in the cloud on Microsoft Azure Storage and can be accessed by various methods including Apache Spark, REST API, Data factory, and other tools.
 
 ## Follow along in notebook
 
@@ -29,7 +29,6 @@ The python commands/script used in each step of this tutorial can be found in th
 1. In the first step of this module, we read data from "azureopendatastorage" storage container using anonymous since the container has public access. We load yellow cab data by specifying the directory and filter the data by year (puYear) and month (puMonth). In this tutorial, we try to minimize the amount of data ingested and processed to speed up the execution.
 
    :::image type="content" source="media\tutorial-data-science-ingest-data\filter-by-year-month.png" alt-text="Screenshot of code sample for filtering data ingestion by month and year." lightbox="media\tutorial-data-science-ingest-data\filter-by-year-month.png":::
-filter-by-year-month
 
 1. Next, we set spark configurations to enable VOrder engine and Optimize delta writes.
 

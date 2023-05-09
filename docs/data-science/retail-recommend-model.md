@@ -10,9 +10,9 @@ ms.date: 05/23/2023
 
 # Creating, evaluating, and deploying a recommendation system in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this notebook, we'll demonstrate data engineering and data science workflow with an e2e sample. The scenario is to build a recommender for online book recommendation.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 There are different types of recommendation algorithms, we'll use a model based collaborative filtering algorithm named Alternating Least Squares (ALS) matrix factorization in this notebook.
 

@@ -41,78 +41,105 @@ Use the following commands to control usage of V-Order writes.
 
 ### Check V-Order configuration in Apache Spark session
 
-1. SQL
-   ```sql
-   %%sql 
-   GET spark.sql.parquet.vorder.enabled 
-   ```
-1. Python
-   ```python
-   %%pyspark
-   spark.conf.get('spark.sql.parquet.vorder.enabled')
-   ```
-1. Scala 
-   ```scala
-   %%spark  
-   spark.conf.get('spark.sql.parquet.vorder.enabled')
-   ```
-1. R
-   ```r
-   %%sparkr
-   library(SparkR)
-   sparkR.conf("spark.sql.parquet.vorder.enabled")
-   ```
+# [Spark SQL](#tab/sparksql)
+
+```sql
+%%sql 
+GET spark.sql.parquet.vorder.enabled 
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+%%pyspark
+spark.conf.get('spark.sql.parquet.vorder.enabled')
+```
+
+# [Scala Spark](#tab/scalaspark)
+
+```scala
+%%spark  
+spark.conf.get('spark.sql.parquet.vorder.enabled')
+```
+
+# [SparkR](#tab/sparkr)
+
+```r
+%%sparkr
+library(SparkR)
+sparkR.conf("spark.sql.parquet.vorder.enabled")
+```
+
+---
 
 ### Disable V-Order writing in Apache Spark session
 
-1. SQL
-   ```sql
-   %%sql 
-   SET spark.sql.parquet.vorder.enabled=FALSE 
-   ```
-1. Python
-   ```python
-   %%pyspark
-   spark.conf.set('spark.sql.parquet.vorder.enabled', 'false')   
-   ```
-1. Scala 
-   ```scala
-   %%spark  
-   spark.conf.set("spark.sql.parquet.vorder.enabled", "false") 
-   ```
-1. R
-   ```r
-   %%sparkr
-   library(SparkR)
-   sparkR.conf("spark.sql.parquet.vorder.enabled", "false")
-   ```
+# [Spark SQL](#tab/sparksql)
+
+```sql
+%%sql 
+SET spark.sql.parquet.vorder.enabled=FALSE 
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+%%pyspark
+spark.conf.set('spark.sql.parquet.vorder.enabled', 'false')   
+```
+
+# [Scala Spark](#tab/scalaspark)
+
+```scala
+%%spark  
+spark.conf.set("spark.sql.parquet.vorder.enabled", "false") 
+```
+
+# [SparkR](#tab/sparkr)
+
+```r
+%%sparkr
+library(SparkR)
+sparkR.conf("spark.sql.parquet.vorder.enabled", "false")
+```
+
+---
 
 ### Enable V-Order writing in Apache Spark session
 
 > [!IMPORTANT]
 > When enabled at the session level. All parquet writes are made with V-Order enabled. This includes non-Delta parquet tables and Delta tables with the ```parquet.vorder.enabled``` table property set to either ```true``` or ```false```.
 
-1. SQL
-   ```sql
-   %%sql 
-   SET spark.sql.parquet.vorder.enabled=TRUE 
-   ```
-1. Python
-   ```python
-   %%pyspark
-   spark.conf.set('spark.sql.parquet.vorder.enabled', 'true')   
-   ```
-1. Scala 
-   ```scala
-   %%spark  
-   spark.conf.set("spark.sql.parquet.vorder.enabled", "true") 
-   ```
-1. R
-   ```r
-   %%sparkr
-   library(SparkR)
-   sparkR.conf("spark.sql.parquet.vorder.enabled", "true")
-   ```
+# [Spark SQL](#tab/sparksql)
+
+```sql
+%%sql 
+SET spark.sql.parquet.vorder.enabled=TRUE 
+```
+
+# [PySpark](#tab/pyspark)
+
+```python
+%%pyspark
+spark.conf.set('spark.sql.parquet.vorder.enabled', 'true')
+```
+
+# [Scala Spark](#tab/scalaspark)
+
+```scala
+%%spark  
+spark.conf.set("spark.sql.parquet.vorder.enabled", "true")
+```
+
+# [SparkR](#tab/sparkr)
+
+```r
+%%sparkr
+library(SparkR)
+sparkR.conf("spark.sql.parquet.vorder.enabled", "true")
+```
+
+---
 
 ### Control V-Order using Delta table properties
 
@@ -126,6 +153,7 @@ CREATE TABLE person (id INT, name STRING, age INT) USING parquet TBLPROPERTIES("
 > When the table property is set to true; INSERT, UPDATE and MERGE commands will behave as expected and perform. If the V-Order session configuration is set to true or the spark.write enables it, then the writes will be V-Order even if the TBLPROPERTIES is set to false.
 
 Enable or disable V-Order by altering the table property:
+
 ```sql
 %%sql 
 ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled","true");
@@ -135,7 +163,7 @@ ALTER TABLE person SET TBLPROPERTIES("delta. parquet.vorder.enabled","false");
 ALTER TABLE person UNSET TBLPROPERTIES("delta.parquet.vorder.enabled");
 ```
 
-When enabling or disabling the table property, only future writes to the table will be affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, read the "Control V-Order when optimizing a table" section bellow.
+After you enable or disable V-Order using table properties, only future writes to the table are affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, read the "Control V-Order when optimizing a table" section bellow.
 
 ### Controlling V-Order directly on write operations
 
@@ -205,10 +233,10 @@ The implementation is controlled by the ```spark.microsoft.delta.merge.lowShuffl
 
 As Delta tables change, performance and storage cost efficiency tend to degrade for the following reasons:
 
-1. New data added to the table may skew data
-1. Batch and streaming data ingestion rates might bring in many small files
-1. Update and delete operations will eventually create read overhead; parquet files are immutable by design, so Delta tables adds new parquet files which the changeset, further amplifying  the issues imposed by the first two items.
-1. No longer needed data files and log files available in the storage.
+- New data added to the table may skew data
+- Batch and streaming data ingestion rates might bring in many small files
+- Update and delete operations eventually create read overhead; parquet files are immutable by design, so Delta tables adds new parquet files which the changeset, further amplifying  the issues imposed by the first two items.
+- No longer needed data files and log files available in the storage.
 
 In order to keep the tables at the best state for best performance, perform bin-compaction and vacuuming operations in the Delta tables. Bin-compaction is achieved by the [OPTIMIZE](https://docs.delta.io/latest/optimizations-oss.html) command; it merges all changes into bigger, consolidated parquet files. Dereferenced storage clean-up is achieved by the [VACUUM](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) command.
 
@@ -217,7 +245,7 @@ In order to keep the tables at the best state for best performance, perform bin-
 
 ### Control V-Order when optimizing a table
 
-The following command structures will bin-compact and rewrite all affected files using V-Order, independent of the TBLPROPERTIES setting or session configuration setting:
+The following command structures bin-compact and rewrite all affected files using V-Order, independent of the TBLPROPERTIES setting or session configuration setting:
 
 ```sql
 %%sql 
@@ -228,9 +256,9 @@ OPTIMIZE <table|fileOrFolderPath> WHERE <predicate> VORDER;
 OPTIMIZE <table|fileOrFolderPath> WHERE <predicate> [ZORDER  BY (col_name1, col_name2, ...)] VORDER;
 ```
 
-When ZORDER and VORDER are used together, Apache Spark will perform bin-compaction, ZORDER, VORDER sequentially.
+When ZORDER and VORDER are used together, Apache Spark performs bin-compaction, ZORDER, VORDER sequentially.
 
-The following commands will bin-compact and rewrite all affected files using the TBLPROPERTIES setting. If TBLPROPERTIES is set true to V-Order, all affected files are written as V-Order. If TBLPROPERTIES is unset or set to false to V-Order, it inherits the session setting; so in order to remove V-Order from the table, set the session configuration to false.
+The following commands bin-compact and rewrite all affected files using the TBLPROPERTIES setting. If TBLPROPERTIES is set true to V-Order, all affected files are written as V-Order. If TBLPROPERTIES is unset or set to false to V-Order, it inherits the session setting; so in order to remove V-Order from the table, set the session configuration to false.
 
 ```sql
 %%sql 

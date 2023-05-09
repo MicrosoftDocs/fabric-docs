@@ -29,13 +29,15 @@ items:
     href: admin-portal-workspaces.md  
   - name: Workspace tenant settings
     href: admin-portal-workspace.md
+- name: Settings
+  items:    
   - name: Git integration admin tenant settings
     href: admin-settings-git-integration.md
-- name: Set up item certification
-  href: endorsement-setup.md
-- name: Set up metadata scanning
-  href: metadata-scanning-setup.md
-- name: Enable service principal authentication for read-only admin APIs
-  href: metadata-scanning-enable-read-only-apis.md
+  - name: Set up item certification
+    href: endorsement-setup.md
+  - name: Set up metadata scanning
+    href: metadata-scanning-setup.md
+  - name: Enable service principal authentication for read-only admin APIs
+    href: metadata-scanning-enable-read-only-apis.md
 
 

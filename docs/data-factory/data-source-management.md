@@ -15,7 +15,7 @@ ms.date: 05/23/2023
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 > [!NOTE]
-> Currently, these cloud connections are only supported for data pipelines and Kusto. In the future, other artifacts can also make use of the cloud connections. To create personal cloud connections in datasets, datamarts, and dataflows, use the Power Query Online experience in "get data".
+> Currently, these cloud connections are only supported for data pipelines and Real-Time Analytics. In the future, other artifacts can also make use of the cloud connections. To create personal cloud connections in datasets, datamarts, and dataflows, use the Power Query Online experience in "get data".
 
 ## Add a data source
 
