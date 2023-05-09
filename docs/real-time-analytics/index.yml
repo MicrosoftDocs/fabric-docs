@@ -23,71 +23,15 @@ landingContent:
         links:
           - text: What is Real-Time Analytics?
             url: overview.md
+      - linkListType: get-started
+        links: 
           - text: Real-Time Analytics Tutorial
             url: tutorial-introduction.md
-
-  # Card 
-  - title: Create entities
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: Create a KQL database
-            url: create-database.md
-          - text: Create an empty table
-            url: create-empty-table.md
-
-# Card 
-  - title: Get data
-    linkLists:
-      - linkListType: how-to-guide
-        links: 
-        - text: Get data from a blob
-          url: get-data-blob.md
-        - text: Get data from a blob container 
-          url: get-data-blob-container.md
-        - text: Get data from Azure Event Hubs
-          url: get-data-event-hub.md
-        - text: Get data from OneLake
-          url: get-data-onelake.md
-      
-  # Card 
-  - title: Query data
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Query data in a KQL queryset
-            url:  kusto-query-set.md
-          - text: Use sample queries
-            url: query-table.md
-          - text: Use a notebook with Kqlmagic to query a KQL database
-            url: jupyter-notebook.md
-          - text: Use a notebook with Apache Spark to query a KQL database
-            url: spark-connector.md
-          - text: Use a OneLake shortcut to query data
-            url: onelake-shortcut.md
-  # Card 
-  - title: Training
-    linkLists:
-      - linkListType: learn
-        links:
-          - text: "Training module: Write your first query with Kusto Query Language"
-            url: /training/modules/write-first-query-kusto-query-language/
-          - text: "Training module: Gain insights from your data by using Kusto Query Language"
-            url: /training/modules/gain-insights-data-kusto-query-language/
-          - text: "Training module: Multi-table queries using Kusto Query Language"
-            url: /training/modules/multi-table-queries-with-kusto-query-language/
-
+          - text: Eventstreams tutorial
+            url: event-streams/bring-events-to-fabric-from-event-hub.md
   # Card 
   - title: Event streams
     linkLists:
-      - linkListType: overview
-        links:
-          - text: Introduction to event streams
-            url: event-streams/overview.md
-      - linkListType: tutorial
-        links:
-          - text: Stream events from Event Hubs into Fabric
-            url: event-streams/bring-events-to-fabric-from-event-hub.md
       - linkListType: concept
         links:
           - text: Main editor
@@ -106,3 +50,59 @@ landingContent:
           url: event-streams/preview-data.md
         - text: Monitor event streams
           url: event-streams/monitoring.md
+  
+  # Card 
+  - title: KQL Database
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Create a KQL database
+            url: create-database.md
+          - text: Create an empty table
+            url: create-empty-table.md
+    linkLists:
+      - linkListType: get-data
+        links: 
+        - text: Get data from a blob
+          url: get-data-blob.md
+        - text: Get data from a blob container 
+          url: get-data-blob-container.md
+        - text: Get data from Azure Event Hubs
+          url: get-data-event-hub.md
+        - text: Get data from OneLake
+          url: get-data-onelake.md
+      
+  # Card 
+  - title: KQL Queryset
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Query data in a KQL queryset
+            url:  kusto-query-set.md
+  # Card 
+  - title: Query data
+    linkLists:
+      - linkListType: how-to-guide
+        links:          
+          - text: Use sample queries
+            url: query-table.md
+          - text: Use a notebook with Kqlmagic to query a KQL database
+            url: jupyter-notebook.md
+          - text: Use a notebook with Apache Spark to query a KQL database
+            url: spark-connector.md
+          - text: Use a OneLake shortcut to query data
+            url: onelake-shortcut.md
+
+  # Card 
+  - title: Training
+    linkLists:
+      - linkListType: learn
+        links:
+          - text: "Training module: Write your first query with Kusto Query Language"
+            url: /training/modules/write-first-query-kusto-query-language/
+          - text: "Training module: Gain insights from your data by using Kusto Query Language"
+            url: /training/modules/gain-insights-data-kusto-query-language/
+          - text: "Training module: Multi-table queries using Kusto Query Language"
+            url: /training/modules/multi-table-queries-with-kusto-query-language/
+
+
