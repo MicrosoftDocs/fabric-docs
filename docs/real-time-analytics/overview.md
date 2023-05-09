@@ -52,7 +52,7 @@ The types of industries that benefit from data analysis in Real-Time Analytics i
 
 The main items available in Real-Time Analytics include:
 
-* [Eventstream](event-streams/overview.md) for capturing, transforming, and routing real-time events to various destinations with a no-code experience. The Eventstream item consists of event data sources, routing destinations, and the event processor when the transformation is needed.
+* [Eventstream](event-streams/overview.md) for capturing, transforming, and routing real-time events to various destinations with a no-code experience. 
 * A [KQL database](create-database.md) for data storage and management. Data loaded into a KQL database is reflected in OneLake by activating data copy and then creating a OneLake shortcut to expose the data to other Fabric experiences.
 * A [KQL queryset](kusto-query-set.md) to run queries, view, and manipulate query results on data. The KQL queryset allows you to save queries for future use, export and share queries with others, and includes the option to generate a Power BI report.
 
