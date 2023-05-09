@@ -230,16 +230,16 @@ With the output query now fully prepared and with data ready to output, we can d
 
 ## Next steps
 
-In this second module to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned:
+In this second module to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned how to:
 
 > [!div class="checklist"]
-> - How to create a new dataflow gen2.
-> - How to import and transform sample data.
-> - How to import and transform text/CSV data.
-> - How to merge data from both data sources into a new query.
-> - How to transform data and generate new columns in a query.
-> - How to configure an output destination source for a query.
-> - How to rename and refresh your new dataflow.
+> - Dreate a new Dataflow Gen2.
+> - Import and transform sample data.
+> - Import and transform text/CSV data.
+> - Merge data from both data sources into a new query.
+> - Transform data and generate new columns in a query.
+> - Configure an output destination source for a query.
+> - Rename and refresh your new dataflow.
 
 Continue to the next section now to integrate your data pipeline.
 

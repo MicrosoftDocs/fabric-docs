@@ -113,13 +113,13 @@ Select **Add pipeline activity**, and then choose **Copy data** from the display
 
 ## Next steps
 
-In this first module to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned:
+In this first module to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned how to:
 
 > [!div class="checklist"]
-> - How to create a data pipeline.
-> - How to add a Copy activity to your pipeline.
-> - How to use sample data and create a data Lakehouse to store the data to a new table.
-> - How to run the pipeline and view its details and duration breakdown.
+> - Create a data pipeline.
+> - Add a Copy activity to your pipeline.
+> - Use sample data and create a data Lakehouse to store the data to a new table.
+> - Run the pipeline and view its details and duration breakdown.
 
 Continue to the next section now to create your dataflow.
 
