@@ -72,30 +72,14 @@ landingContent:
           url: get-data-onelake.md
       
   # Card 
-  - title: Query data
+  - title: Kusto Query Language (KQL)
     linkLists:
       - linkListType: how-to-guide
         links:          
+          - text: KQL Overview
+            url: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
           - text: Use sample queries
             url: query-table.md
-          - text: Use a notebook with Kqlmagic to query a KQL database
-            url: jupyter-notebook.md
-          - text: Use a notebook with Apache Spark to query a KQL database
-            url: spark-connector.md
-          - text: Use a OneLake shortcut to query data
-            url: onelake-shortcut.md
-
-  # Card 
-  - title: KQL Queryset
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Query data in a KQL queryset
-            url:  kusto-query-set.md
-
-  # Card 
-  - title: Training
-    linkLists:
       - linkListType: learn
         links:
           - text: "Training module: Write your first query with Kusto Query Language"
@@ -106,3 +90,22 @@ landingContent:
             url: /training/modules/multi-table-queries-with-kusto-query-language/
 
 
+  # Card 
+  - title: KQL Queryset
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Query data in a KQL queryset
+            url:  kusto-query-set.md
+
+  # Card 
+  - title: Integrate with other experiences
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Use a notebook with Kqlmagic to query a KQL database
+            url: jupyter-notebook.md
+          - text: Use a notebook with Apache Spark to query a KQL database
+            url: spark-connector.md
+          - text: Create a shortcut to access data in OneLake
+            url: onelake-shortcut.md
