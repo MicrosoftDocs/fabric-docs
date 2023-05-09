@@ -17,13 +17,13 @@
       href: transform-data.md
   - name: Tutorials
     items:
-    - name: 1 - Data factory tutorial introduction
+    - name: Data factory tutorial introduction
       href: tutorial-end-to-end-introduction.md
-    - name: 2 - Create your first data pipeline
+    - name: Module 1 - Create your first data pipeline
       href: tutorial-end-to-end-pipeline.md
-    - name: 3 - Create your first dataflow
+    - name: Module 2 - Create your first dataflow
       href: tutorial-end-to-end-dataflow.md
-    - name: 4 - Complete your first data integration journey
+    - name: Module 3 - Complete your first data integration journey
       href: tutorial-end-to-end-integration.md     
   - name: Connectors
     items:

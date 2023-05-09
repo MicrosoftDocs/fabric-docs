@@ -142,16 +142,106 @@ Now, with the data from the trips in place, we want to load the data that contai
 
 ## Combine trips and discounts data
 
+The next step is to combine both tables into a single table that has the discount that should be applied to the trip, as well as the adjusted total. 
 
+1. First, toggle the **Diagram view** button so you can see both of your queries.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/toggle-diagram-view.png" alt-text="Screenshot showing the Diagram view toggle button with both queries created in this tutorial displayed.":::
+
+1. Select the **nyc_taxi** query, and on the **Home** tab, Select the **Combine** menu and choose **Merge queries**, then **Merge queries as new**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-queries-as-new.png" alt-text="Screenshot showing the Merge queries as new selection for the nyc_taxi query.":::
+
+1. On the **Merge** dialog, select **Generated-NYC-Taxi-Green-Discounts** from the **Right table for merge** drop down, and then select the "lightbulb" icon on the top right of the dialog to see the suggested mapping of columns between the two tables.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-dialog.png" alt-text="Screenshot showing the configuration of the Merge dialog with suggested column mappings displayed.":::
+
+   Choose each suggested column mappings, one at a time, mapping the VendorID and date columns from both tables. When both mappings are added, the matched column headers are highlighted in each table.
+
+1. A message is shown asking you to allow combining data from multiple data sources to view the results. Select **OK** on the **Merge** dialog.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/allow-combining-data.png" alt-text="Screenshot showing the request to approve combining data from multiple data sources, with the OK button highlighted.":::
+
+1. In the table area, you will initially see a warning that "The evaluation was cancelled because combining data from multiple sources may reveal data from one source to another. Click continue if the possibility of revealing data is okay."  Select **Continue** to display the combined data.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/combine-data-from-multiple-data-sources-warning.png" alt-text="Screenshot showing the warning about combining data from multiple data sources with the Continue button highlighted.":::
+
+1. Notice how a new query was created in Diagram view showing the relationship of the new Merge query with the two queries you previously created. Looking at the table pane of the editor, scroll to the right of the Merge query column list to see a new column with table values is present. This is the "Generated NYC Taxi-Green-Discounts" column, and its type is **[Table]**. In the column header there is an icon with two arrows going in opposite directions, allowing you to select columns from the table. Deselect all of the columns except **Discount**, and then select **OK**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-query-column-selections.png" alt-text="Screenshot showign the merged query with the column selection menu displayed for the newly generated column Generated-NYC-Taxi-Green-Discounts.":::
+
+1. With the discount value now at the row level, we can create a new column to calculate the total amount after discount. To do so, select the **Add column** tab at the top of the editor, and choose **Custom column** from the **General** group.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/add-custom-column.png" alt-text="Screenshot showing the Add custom column button highlighted on the General section of the Add column tab.":::
+
+1. On the **Custom column** dialog, you can use the [Power Query formula language (also known as M)](/powerquery-m) to define how your new column should be calculated. Enter _TotalAfterDiscount_ for the **New column name**, select **Currency** for the **Data type**, and provide the following M expression for the **Custom column formula**:
+
+   _if \[totalAmount\] > 0 then \[totalAmount\] * ( 1 -\[Discount\] ) else \[totalAmount\]_
+
+   Then select **OK**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/custom-column-configuration.png" alt-text="Screenshot showing the Custom column configuration screen with the New column name, Data type and Custom column formula highlighted.":::
+
+1. Select the newly create **TotalAfterDiscount** column and then select the **Transform** tab at the top of the editor window. On the **Number column** group, select the **Rounding** drop down and then choose **Round...**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/round-column.png" alt-text="Screenshot showing the Round... optionon the Transform tab of the editor window.":::
+
+1. On the **Round dialog** enter 2 for the number of decimal places and then select **OK**.
+   
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/round-dialog.png" alt-text="Screenshot showing the Round dialog with 2 for the number of decimal places and the OK button highlighted.":::
+
+1. Change the data type of the IpepPickupDatetime from Date to Date/Time.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/change-data-type.png" alt-text="Screenshot showing the selection of the Date/Time data type for the IpepPickupDatetime column.":::
+
+1. Finally, expand the **Query settings** pane from the right side of the editor if it isn't already expanded, and rename the query from **Merge** to **Output**.
+
+   :::image type="content" source="media/create-first-dataflow-gen2/rename-query.png" alt-text="Screenshot showing the renaming of the query from Merge to Output.":::
+
+## Load the output query to a table in the Lakehouse
+
+With the output query now fully prepared and with data ready to output, we can define the output destination for the query.
+
+1. Select the **Output** merge query created previously. Then select the **Home** tab in the editor, and **Add data destination** from the **Query** grouping, to select a **Lakehouse** destination.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/add-data-destination.png" alt-text="Screenshot showing the Add data destination button with Lakehouse highlighted.":::
+
+1. On the **Connect to data destination** dialog, your connection should already be selected. Select **Next** to continue.
+
+1. On the **Choose destination target** dialog, browse to the Lakehouse where you wish to load the data and name the new table _nyc_taxi_with_discounts_, then select **Next** again.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-destination-target-dialog.png" alt-text="Screenshot showing the Choose destination target dialog with Table name nyc_taxi_with_discounts.":::
+
+1. On the **Choose destination settings** dialog, leave the default **Replace** update method, double check that your columns are mapped correctly, and select **Save settings**.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-destination-settings-dialog.png" alt-text="Screenshot showing the Choose destination settings dialog with the Save settings button highlighted.":::
+
+1. Back in the main editor window, confirm that you see your output desintation on the **Query settings** pane for the **Output** table, and then select **Publish**.
+
+1. _(Optional)_ On the workspace page, you can rename your dataflow by selecting the ellipsis to the right of the dataflow name that appears after you select the row, and choosing **Properties**.
+
+   r:::image type="content" source="media/tutorial-end-to-end-dataflow/rename-dataflow.png" alt-text="Screenshot showing the Properties option selected on the menu for a dataflow where it can be renamed.":::
+
+1. Select the refresh icon for the dataflow after selecting its row, and when complete, you should see your new Lakehouse table created as configured in the **Data destination** settings.
+
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/refresh-dataflow.png" alt-text="Screenshot showing the selection of the refresh button to refresh the dataflow.":::
+
+1. Check your Lakehouse to view the new table loaded there.
 
 ## Next steps
 
 In this second module to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned:
 
 > [!div class="checklist"]
-> - 
+> - How to create a new dataflow.
+> - How to import and transform sample data into a dataflow.
+> - How to import and transform text/CSV data into a dataflow.
+> - How to merge data from both data sources into a new query.
+> - How to transform data and generate new columns in the new query.
+> - How to configure an output destination source for your new query.
+> - How to rename and refresh your new dataflow.
 
 Continue to the next section now to integrate your data pipeline.
 
 > [!div class="nextstepaction"]
-> [Step 1: Create your first pipeline]](tutorial-end-to-end-integrate.md) 
+> [Module 3: Integrate your pipeline]](tutorial-end-to-end-integrate.md) 

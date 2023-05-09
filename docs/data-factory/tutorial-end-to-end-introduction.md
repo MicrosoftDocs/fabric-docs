@@ -65,4 +65,4 @@ In this introduction to our end-to-end tutorial for your first data integration 
 Continue to the next section now to create your data pipeline.
 
 > [!div class="nextstepaction"]
-> [Step 1: Create your first pipeline]](tutorial-end-to-end-pipeline.md)
+> [Module 1: Create your first pipeline]](tutorial-end-to-end-pipeline.md)

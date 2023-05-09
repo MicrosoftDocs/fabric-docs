@@ -124,4 +124,4 @@ In this first module to our end-to-end tutorial for your first data integration 
 Continue to the next section now to create your dataflow.
 
 > [!div class="nextstepaction"]
-> [Step 1: Create your first pipeline]](tutorial-end-to-end-dataflow.md)
+> [Module 2: Create your first dataflow]](tutorial-end-to-end-dataflow.md)
