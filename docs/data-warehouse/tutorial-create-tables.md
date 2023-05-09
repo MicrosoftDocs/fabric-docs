@@ -20,7 +20,7 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
 1. Select the workspace created in [Tutorial: Create a Microsoft Fabric data workspace](tutorial-create-workspace.md), such as **Data Warehouse Tutorial**.  
 
-1. From the artifact list, select **WideWorldImporters** with the type of **Warehouse**.
+1. From the artifact list, select `WideWorldImporters` with the type of **Warehouse**.
 
    :::image type="content" source="media\tutorial-create-tables\select-the-warehouse.png" alt-text="Screenshot of the warehouse option that appears in the artifact list.":::
 
@@ -30,10 +30,7 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
 1. In the query editor, paste the following code.
 
-   > [!NOTE]
-   > This code will be in a code block on Microsoft Learn which allows for easy copying. In case of issues with copy/paste formatting, a text file containing the script called **Create Tables.txt** can be accessed from the parent folder [Data Warehouse Tutorial Source Code](../placeholder.md).
-
-   ```
+   ```sql
    /*
    1. Drop the dimension_city table if it already exists.
    2. Create the dimension_city table.
@@ -103,11 +100,11 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
    :::image type="content" source="media\tutorial-create-tables\rename-query-option.png" alt-text="Screenshot of the top corner of the query editor screen, showing where to right-click to select the Rename option.":::
 
-1. Type **Create Tables** to change the name of the query.
+1. Type `Create Tables` to change the name of the query.
 
-1. Press **Enter** on the keyboard or click anywhere outside the tab to save the change.
+1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
 
-1. Validate the table was created successfully by clicking the **refresh** button on the ribbon.
+1. Validate the table was created successfully by selecting the **refresh** button on the ribbon.
 
    :::image type="content" source="media\tutorial-create-tables\home-ribbon-refresh.png" alt-text="Screenshot of the ribbon on the Home screen, showing where to select the refresh option.":::
 

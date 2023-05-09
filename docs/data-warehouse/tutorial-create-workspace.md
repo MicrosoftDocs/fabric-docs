@@ -24,7 +24,7 @@ The workspace contains all the artifacts needed for data warehousing including D
    :::image type="content" source="media\tutorial-create-workspace\create-new-workspace.png" alt-text="Screenshot of workspaces pane showing where to select New workspace.":::
 
 1. Fill out the **Create a workspace** form as follows:
-   1. **Name**: Enter *Data Warehouse Tutorial*, and some characters for uniqueness.
+   1. **Name**: Enter `Data Warehouse Tutorial`, and some characters for uniqueness.
    1. **Description**: Optionally, enter a description for the workspace.
 
    :::image type="content" source="media\tutorial-create-workspace\create-a-workspace-dialog.png" alt-text="Screenshot of the Create a workspace dialog box, showing where to enter the new workspace name.":::

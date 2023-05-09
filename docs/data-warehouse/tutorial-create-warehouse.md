@@ -30,7 +30,7 @@ Now that you have a workspace, you can create your first data warehouse.
 
    :::image type="content" source="media\tutorial-create-warehouse\select-warehouse.png" alt-text="Screenshot of the data warehouse section, showing where to select Warehouse.":::
 
-1. On the **New warehouse** dialog, enter **WideWorldImporters** as the name.
+1. On the **New warehouse** dialog, enter `WideWorldImporters` as the name.
 
 1. Set the **Sensitivity** to **Public**.
 
@@ -40,7 +40,7 @@ Now that you have a workspace, you can create your first data warehouse.
 
 When provisioning is complete, the **Build a warehouse** landing page appears.
 
-:::image type="content" source="media\tutorial-create-warehouse\build-a-warehouse.png" alt-text="Screenshot of the Build a warehouse landing page.":::
+:::image type="content" source="media\tutorial-create-warehouse\build-a-warehouse.png" alt-text="Screenshot of the Build a warehouse landing page." lightbox="media\tutorial-create-warehouse\build-a-warehouse.png":::
 
 ## Next steps
 

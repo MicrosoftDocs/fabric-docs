@@ -20,12 +20,9 @@ Learn how to create and save a new stored procedure to transform data.
 
    :::image type="content" source="media\tutorial-transform-data\select-new-query.png" alt-text="Screenshot of the ribbon of the Home tab, showing where to select New SQL query.":::
 
-1. In the query editor, paste the following code.
+1. In the query editor, paste the following code to create the stored procedure `dbo.populate_aggregate_sale_by_city`. This stored procedure will create and load the `dbo.aggregate_sale_by_date_city` table in a later step.
 
-   > [!NOTE]
-   > This code will be in a code block on Microsoft Learn which allows for easy copying. In case of issues with copy/paste formatting, a text file containing the script called **Create Aggregate Procedure.txt** can be accessed from the parent folder [Data Warehouse Tutorial Source Code](../placeholder.md).
-
-   ```
+   ```sql
    --Drop the stored procedure if it already exists.
    DROP PROCEDURE IF EXISTS [dbo].[populate_aggregate_sale_by_city]
    GO
@@ -76,11 +73,11 @@ Learn how to create and save a new stored procedure to transform data.
 
 1. To save this query for reference later, right-click on the query tab just above the editor and select **Rename**.
 
-   :::image type="content" source="media\tutorial-transform-data\query-tab-select-rename.png" alt-text="Screenshot of the tabs above the editor screen, showing where to right click on the query and select Rename.":::
+   :::image type="content" source="media\tutorial-transform-data\query-tab-select-rename.png" alt-text="Screenshot of the tabs above the editor screen, showing where to right-click on the query and select Rename.":::
 
 1. Type **Create Aggregate Procedure** to change the name of the query.
 
-1. Press **Enter** on the keyboard or click anywhere outside the tab to save the change.
+1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
 
 1. Select **Run** to execute the query.
 
@@ -88,33 +85,30 @@ Learn how to create and save a new stored procedure to transform data.
 
    :::image type="content" source="media\tutorial-transform-data\refresh-option-ribbon.png" alt-text="Screenshot of the Home ribbon, showing where to select the Refresh button.":::
 
-1. In the **Object explorer**, verify that you can see the newly created stored procedure by expanding the **StoredProcedures** node under the **dbo** schema.
+1. In the **Object explorer**, verify that you can see the newly created stored procedure by expanding the **StoredProcedures** node under the `dbo` schema.
 
    :::image type="content" source="media\tutorial-transform-data\explorer-expand-node.png" alt-text="Screenshot of the Explorer pane, showing where to expand the StoredProcedures node to find your newly created procedure.":::
 
 1. From the **Home** tab of the ribbon, select **New SQL query**.
 
-1. In the query editor, paste the following code.
+1. In the query editor, paste the following code. This T-SQL executes `dbo.populate_aggregate_sale_by_city` to create the `dbo.aggregate_sale_by_date_city` table.
 
-   > [!NOTE]
-   > This code will be in a code block on Microsoft Learn which allows for easy copying. In case of issues with copy/paste formatting, a text file containing the script called **Run Aggregate Procedure.txt** can be accessed from the parent folder [Data Warehouse Tutorial Source Code](../placeholder.md).
-
-   ```
+   ```sql
    --Execute the stored procedure to create the aggregate table.
    EXEC [dbo].[populate_aggregate_sale_by_city];
    ```
 
 1. To save this query for reference later, right-click on the query tab just above the editor and select **Rename**.
 
-1. Type **Run** **Create Aggregate Procedure** to change the name of the query.
+1. Type **Run Create Aggregate Procedure** to change the name of the query.
 
-1. Press **Enter** on the keyboard or click anywhere outside the tab to save the change.
+1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
 
 1. Select **Run** to execute the query.
 
 1. Select the **refresh** button on the ribbon. The query takes between two and three minutes to execute.
 
-1. In the **Object explorer**, load the data preview to validate the data loaded successfully by clicking on the `aggregate_sale_by_city` table in the **Explorer**.
+1. In the **Object explorer**, load the data preview to validate the data loaded successfully by selecting on the `aggregate_sale_by_city` table in the **Explorer**.
 
    :::image type="content" source="media\tutorial-transform-data\validate-loaded-data.png" alt-text="Screenshot of the Explorer pane next to a Data preview screen that lists the data loaded into the selected table.":::
 

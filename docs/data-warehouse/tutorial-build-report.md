@@ -24,7 +24,7 @@ Learn how to build a report with the data you ingested into your warehouse in th
 
    :::image type="content" source="media\tutorial-build-report\select-artifact-list.png" alt-text="Screenshot of the WorldWideImporters option in the list of artifacts.":::
 
-1. In the **Visualize this data** section, select **Create a report > Auto-create**. A report is generated from the `dimension_customer` table that was loaded in the previous section.
+1. In the **Visualize this data** section, select **Create a report** > **Auto-create**. A report is generated from the `dimension_customer` table that was loaded in the previous section.
 
    :::image type="content" source="media\tutorial-build-report\visualize-create-report.png" alt-text="Screenshot of the Visualize this data section, showing where to select Auto-create from the Create a report menu.":::
 
@@ -34,7 +34,7 @@ Learn how to build a report with the data you ingested into your warehouse in th
 
 1. From the ribbon, select **Save.**
 
-1. Enter **Customer Quick Summary** in the name box.
+1. Enter `Customer Quick Summary` in the name box.
 
 1. Select **Save**.
 

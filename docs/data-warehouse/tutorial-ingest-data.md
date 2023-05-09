@@ -28,7 +28,7 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 
    :::image type="content" source="media\tutorial-ingest-data\select-data-pipeline.png" alt-text="Screenshot of the data pipeline section, showing where to select Data pipeline.":::
 
-1. On the **New** **pipeline** dialog, enter **Load Customer Data** as the name.
+1. On the **New** **pipeline** dialog, enter `Load Customer Data` as the name.
 
    :::image type="content" source="media\tutorial-ingest-data\new-pipeline-dialog.png" alt-text="Screenshot of the New pipeline dialog box, showing where to enter the name and select Create.":::
 
@@ -42,9 +42,9 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 
    :::image type="content" source="media\tutorial-ingest-data\select-copy-data.png" alt-text="Screenshot of the Move and transform section, showing where to select Copy data.":::
 
-1. If necessary, select the newly created Copy data activity from the design canvas and follow the next steps to configure it.
+1. If necessary, select the newly created **Copy data** activity from the design canvas and follow the next steps to configure it.
 
-1. On the **General** page, enter **CD Load dimension_customer** as the **Name**.
+1. On the **General** page, for **Name**, enter `CD Load dimension_customer`.
 
    :::image type="content" source="media\tutorial-ingest-data\general-tab-name.png" alt-text="Screenshot of the General tab, showing where to enter the copy activity name.":::
 
@@ -62,11 +62,11 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 
 1. On the **Connection settings** page, configure the settings as follows:
 
-   1. Enter [**https://azuresynapsestorage.blob.core.windows.net/sampledata**](https://azuresynapsestorage.blob.core.windows.net/sampledata/WideWorldImportersDW/parquet/full/dimension_city/*.parquet) in the **Account name or URL**.
+   1. In the **Account name or URL**, enter `https://azuresynapsestorage.blob.core.windows.net/sampledata/`.
 
-   1. In the **Connection credentials** section, select **Create** **new connection** in the dropdown for the **Connection**.
+   1. In the **Connection credentials** section, select **Create new connection** in the dropdown for the **Connection**.
 
-   1. Enter **Wide World Importers Public Sample** for the **Connection name**.
+   1. For **Connection name**, enter `Wide World Importers Public Sample`.
 
    1. Set the **Authentication kind** to **Anonymous**.
 
@@ -74,19 +74,21 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 
 1. Select **Create**.
 
-1. Change the remaining settings on the **Source** page of the copy activity as follows:
+1. Change the remaining settings on the **Source** page of the copy activity as follows, to reach the .parquet files in `https://azuresynapsestorage.blob.core.windows.net/sampledata/WideWorldImportersDW/parquet/full/dimension_city/*.parquet`:
 
-   1. **File path - Container:** sampledata
+   1. In the **File path** text boxes, provide:
 
-   1. **File path - Directory:** WideWorldImportersDW/tables
+       1. **Container:** `sampledata`
 
-   1. **File path - File name:** `dimension_customer.parquet`
+       1. **File path - Directory:** `WideWorldImportersDW/tables`
 
-   1. **File format:** Parquet
+       1. **File path - File name:** `dimension_customer.parquet`
+
+   1. In the **File format** drop down, choose **Parquet**.
 
 1. Select **Preview data** next to the **File path** setting to ensure there are no errors.
 
-   :::image type="content" source="media\tutorial-ingest-data\source-tab-change-details.png" alt-text="Screenshot of the Source tab, showing where to change the file path and format details, and select Preview data.":::
+   :::image type="content" source="media\tutorial-ingest-data\source-tab-change-details.png" alt-text="Screenshot of the Source tab, showing where to change the file path and format details, and select Preview data." lightbox="media\tutorial-ingest-data\source-tab-change-details.png":::
 
 1. On the **Destination** page, select **Workspace** for the **Data store type**.
 
@@ -96,7 +98,7 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 
 1. Next to the **Table** configuration setting, check the box under the dropdown list labeled **Edit**. The dropdown changes to two text boxes.
 
-1. In the first box next to the **Table** setting, enter **dbo**.
+1. In the first box next to the **Table** setting, enter `dbo`.
 
 1. In the second box next to the **Table** setting, enter `dimension_customer`.
 
@@ -114,7 +116,7 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 
 1. Monitor the copy activity's progress on the **Output** page and wait for it to complete.
 
-   :::image type="content" source="media\tutorial-ingest-data\monitor-output-page.png" alt-text="Screenshot of the Output page, showing what a successful run looks like.":::
+   :::image type="content" source="media\tutorial-ingest-data\monitor-output-page.png" alt-text="Screenshot of the Output page, showing what a successful run looks like." lightbox="media\tutorial-ingest-data\monitor-output-page.png":::
 
 ## Next steps
 
