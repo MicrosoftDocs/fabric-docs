@@ -40,8 +40,6 @@ If a workspace capacity is in one geographic location (for example, Central US) 
 
 :::image type="content" source="./media/admin-settings-git-integration/multi-geo-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting items to other geographical locations." lightbox="./media/admin-settings-git-integration/multi-geo-switch.png":::
 
-Learn more about Multi-Geo support.
-
 ## Enable export of items that have sensitivity labels
 
 Sensitivity labels aren't included when exporting an item. Therefore, the Fabric admin can choose whether to block the export of items that have sensitivity labels, or to allow it even though the sensitivity label won't be included. Enable this setting to allow all users, or a specific group, to export items without their sensitivity labels.
