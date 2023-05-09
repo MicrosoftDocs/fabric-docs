@@ -101,5 +101,5 @@ This dashboard provides you with the following information:
 
 ## Next steps
 
-- [What are dataflows Gen2 in Data Factory for Microsoft Fabric?](dataflows-gen2-overview.md)
+- [Compare differences between Dataflow Gen1 and Gen2 in Data Factory](dataflows-gen2-overview.md)
 - [Dataflows save as draft](dataflows-gen2-save-draft.md)

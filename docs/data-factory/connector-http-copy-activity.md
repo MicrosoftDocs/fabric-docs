@@ -1,5 +1,5 @@
 ---
-title: How to configure HTTP in copy activity
+title: How to configure HTTP in a copy activity
 description: This article explains how to copy data using HTTP.
 author: jianleishen
 ms.author: jianleishen
@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
-# How to configure HTTP in copy activity
+# How to configure HTTP in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to HTTP.
 
@@ -37,7 +37,7 @@ For the configuration of each tab under copy activity, go to the following secti
 - [Settings](#settings)
 
 >[!Note]
->Destination is not supported in HTTP connector.
+>Destination isn't supported in the HTTP connector.
 
 ### General
 
@@ -47,7 +47,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for HTTP under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-http/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
+:::image type="content" source="./media/connector-http/source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-http/source.png":::
 
 The following three properties are **required**:
 
@@ -55,7 +55,7 @@ The following three properties are **required**:
 - **Connection**:  Select an HTTP connection from the connection list. If no connection exists, then create a new HTTP connection by selecting **New**.
 - **Connection type**: Select **HTTP**.
 - **Relative URL**: A relative URL to the resource that contains the data. When this property isn't specified, only the URL that's specified in the connection definition is used. The HTTP connector copies data from the combined URL: `/[relative URL specified]`.
-- **File settings**: Click on **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
+- **File settings**: Select **File settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -67,7 +67,7 @@ Under **Advanced**, you can specify the following fields:
 - **Skip line count**: The number of non-empty rows to skip when reading data from input files.
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
-    :::image type="content" source="./media/connector-http/additional-columns.png" alt-text="Screenshot showing additional columns.":::
+    :::image type="content" source="./media/connector-http/additional-columns.png" alt-text="Screenshot showing additional columns." lightbox="./media/connector-http/additional-columns.png":::
 
 ### Mapping
 
@@ -75,12 +75,11 @@ For **Mapping** tab configuration, see [Configure your mappings under mapping ta
 
 ### Settings
 
-For **Settings** tab configuration, see [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
-
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 
-To learn more information about copy activity in HTTP, see the following table.
+The following table contains more information about the copy activity in HTTP.
 
 ### Source
 
@@ -96,8 +95,8 @@ To learn more information about copy activity in HTTP, see the following table.
 |**Request timeout** |The timeout (the timespan value) for the HTTP request to get a response. This value is the timeout to get a response, not the timeout to read response data. The default value is 00:01:40.| timespan |No |requestTimeout|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\> |No |maxConcurrentConnections|
 |**Skip line count** |The number of non-empty rows to skip when reading data from input files.| \<your skip line count> |No |skipLineCount|
-|**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.| •Name<br>•Value|No |additionalColumns:<br>- name<br>- value |
+|**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No |additionalColumns:<br>• name<br>• value |
 
 ## Next steps
 
-[How to create HTTP connection](connector-http.md)
+- [How to create an HTTP connection](connector-http.md)

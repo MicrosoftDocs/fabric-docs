@@ -19,5 +19,5 @@ items:
     href: security-service-tags.md
 - name: Resiliency
   items:
-  - name: AZ Resiliency in Fabric
+  - name: Resiliency in Fabric
     href: az-resiliency.md        

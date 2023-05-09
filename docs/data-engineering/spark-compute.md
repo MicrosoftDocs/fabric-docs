@@ -17,25 +17,23 @@ Microsoft Fabric Data Engineering and Data Science workloads operates on a fully
 
 ## Starter pools
 
-Starter pools are an advanced feature of the Microsoft Fabric platform, it enables users to quickly access Spark sessions within 10-15 seconds. It streamlines your engagement with tasks and promoting increased productivity and expedited time-to-insight. These pools are a key component of Microsoft Fabric Data Engineering and Data Science workloads.
+Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you. This helps you do more with data and get insights quicker.
 
 :::image type="content" source="media\spark-compute\starter-pool-configuration.png" alt-text="Image showing starter pool configuration":::
 
-The clusters within starter pools come equipped with an idle Spark session that is ready to be allocated to user-submitted requests. Starter pools are outfitted with medium nodes and incorporate autoscale and dynamic allocation functionalities, allowing the live clusters to seamlessly adapt to Spark job requirements.
+Starter pools have Spark clusters that are always on and ready for your requests. They use medium nodes that will dynamically scale-up based on your Spark job needs.  
 
 :::image type="content" source="media\spark-compute\starter-pool-high-level.png" alt-text="Image showing high-level design of starter pools.":::
 
-Starter pools are pre-configured with default settings and they support inline library installations without impacting the rapid 5 second to 10-second session start experience. However, the extra custom Spark properties or libraries through workspace or capacity settings may result in a 2 minute to 3-minute session start latency for on-demand cluster acquisition. In terms of billing, you are only charged for capacities when Spark sessions are active and executing queries. There are no charges incurred during prewarming periods.
+Starter pools also have default settings that let you install libraries quickly without slowing down the session start time. However, if you want to use extra custom Spark properties or libraries from your workspace or capacity settings, it may take longer for Spark to get the nodes for you. You only pay for starter pools when you are using Spark sessions to run queries. You don't pay for the time when Spark is keeping the nodes ready for you.
 
 ## Spark pools
 
-A Spark pool is a collection of metadata that outlines the compute resource requirements and associated behavior attributes for a Spark instance. These attributes encompass elements such as the name, number of nodes, node size, and scaling behavior. It's important to note that creating a Spark pool doesn't consume any resources or incur costs. Charges only arise when a Spark job is executed on the designated Spark pool, which, causes the Spark instance to be instantiated as needed.
+A Spark pool is a way of telling Spark what kind of resources you need for your data analysis tasks. You can give your Spark pool a name, and choose how many and how big the nodes (the machines that do the work) are. You can also tell Spark how to adjust the number of nodes depending on how much work you have. Creating a Spark pool is free; you only pay when you run a Spark job on the pool, and then Spark will set up the nodes for you.
 
-Additionally, the "time to live" property for all custom pool sessions has a default duration of 2 minutes following the session's conclusion. Workspace admins can create custom spark pools (if they authorized by the capacity admins) and select these pools as the default compute option for a workspace. Once selected as users submit notebook or spark job definitions, the spark sessions are created on-demand and take ~3 minutes. Because it involves acquiring the VM from Azure based on the compute specifications specified by the users unlike the prewarmed starter pools.
+If you don't use your Spark pool for 2 minutes after your job is done, Spark will automatically delete it. This is called the "time to live" property, and you can change it if you want. If you are a workspace admin, you can also create custom Spark pools for your workspace, and make them the default option for other users. This way, you can save time and avoid setting up a new Spark pool every time you run a notebook or a Spark job. Custom Spark pools take about 3 minutes to start, because Spark has to get the nodes from Azure.
 
-Admins can create these custom spark pools and size them based on the cores that's available in their Microsoft Fabric capacity. Each Microsoft Fabric capacity SKU offers a set of capacity units and these capacity units are converted to spark VCores. One Spark VCore = Capacity Units * 2.
-
-For example if you're using a Fabric capacity SKU F64 that offers 64 Compute Units it translates to 128 spark VCores. You would be able to size your custom pool with node sizes and number of nodes not exceeding 128 Spark VCores.
+The size and number of nodes you can have in your custom Spark pool depends on how much capacity you have in your Microsoft Fabric capacity. This is a measure of how much computing power you can use in Azure. One way to think of it is that two Spark VCores (a unit of computing power for Spark) equals one capacity units. For example, if you have a Fabric capacity SKU F64, that means you have 64 capacity units, which is equivalent to 128 Spark VCores. You can use these Spark VCores to create nodes of different sizes for your custom Spark pool, as long as the total number of Spark VCores does not exceed 128.
 
 Possible custom pool configurations for F64 based on the above example
 
