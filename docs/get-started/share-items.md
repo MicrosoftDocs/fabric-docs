@@ -19,7 +19,7 @@ Workspaces are the central places where you collaborate with your colleagues. Be
 This document describes how to share an item and manage the permissions. 
 
 > [!NOTE] 
-> Currently, you can share Kusto databases and KQL querysets.
+> Currently, you can share KQL databases and KQL querysets.
 
 ## Share an item via link
 

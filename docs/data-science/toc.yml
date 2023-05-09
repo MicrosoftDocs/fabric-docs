@@ -71,6 +71,8 @@ items:
         href: ./model-training/fabric-sparkml-tutorial.md
       - name: Train models with Scikit-learn
         href: train-models-scikit-learn.md
+      - name: Train models with SynapseML
+        href: train-models-synapseml.md  
 - name: Track models and experiments
   items:
   - name: Machine learning experiment
@@ -119,3 +121,32 @@ items:
       href: r-use-tidyverse.md
     - name: R visualization
       href: r-visualization.md
+- name: SynapseML
+  items:
+  - name: Get started
+    items:
+    - name: Your first model
+      href: synapseml-first-model.md
+  - name: How-to guides
+    items:
+    - name: Use LightGBM with SynapseML
+      href: lightgbm-overview.md
+    - name: Use Cognitive Services with SynapseML
+      href: overview-cognitive-services.md
+    - name: Perform classification with and without SynapseML
+      href: classification-before-and-after-synapseml.md
+    - name: Use k-nearest neighbors with SynapseML
+      href: conditional-k-nearest-neighbors-exploring-art.md
+    - name: Perform deep learning using ONNX with SynapseML
+      href: onnx-overview.md
+    - name: Explain a tabular classification model with tabular SHAP
+      href: tabular-shap-explainer.md
+    - name: Perform multivariate anomaly detection with SynapseML
+      href: isolation-forest-multivariate-anomaly-detection.md 
+    - name: Build a Search engine with SynapseML
+      href: cognitive-services-create-a-multilingual-search-engine-from-forms.md
+    - name: Use SynapseML and Cognitive Services for multivariate anomaly detection
+      href: cognitive-services-multivariate-anomaly-detection.md
+    - name: Tune hyperparameters using SynapseML
+      href: hyperparameter-tuning-fighting-breast-cancer.md
+

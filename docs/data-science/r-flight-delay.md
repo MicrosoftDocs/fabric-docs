@@ -297,7 +297,7 @@ You can now use this table to create a Power BI dataset.
 1. Select the Lakehouse you attached to your notebook.
 1. On the top right, select **Open**.
 
-  :::image type="content" source="media/r-flight-delay/open-lakehouse.png" alt-text="Screenshot shows where to open the lakehouse.":::
+    :::image type="content" source="media/r-flight-delay/open-lakehouse.png" alt-text="Screenshot shows where to open the lakehouse.":::
 
 1. On the top, select **New Power BI dataset**.
 1. Select **nycflight13** for your new dataset, then select **Confirm**.
