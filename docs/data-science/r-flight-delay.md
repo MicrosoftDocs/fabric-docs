@@ -306,7 +306,7 @@ You can now use this table to create a Power BI dataset.
 
 :::image type="content" source="media/r-flight-delay/power-bi-data.png" alt-text="Graph of Power BI dataset.":::
 
-To create the report shown at the beginning of this section, use the following fields:
+To create the report shown at the beginning of this section, use the following visualizations and data:
 
 1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false"::: Stacked barchart with:
     1. Y-axis: **carrier_name**.
