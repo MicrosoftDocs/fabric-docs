@@ -39,9 +39,9 @@ To get data from a blob container, see [Get data from a blob container](get-data
 ## Source tab
 
 1. In **Source type** select Azure blob.
-1. In the **Link to source** field, add the Account Key/SAS URI.
+1. In the **Link to source** field, add a blob URL with an Account Key/SAS URI.
 
-    To add a blob URI, you need to generate an Account Key/ SAS token with both List and Read permissions. To generate an Account Key/SAS token, see [Generate a SAS token](/azure/data-explorer/generate-sas-token?context=/fabric/context/context&pivots=fabric).
+    To add a blob URI, you need to generate an Account Key/ SAS token with both Read and Write permissions. To generate an Account Key/SAS token, see [Generate a SAS token](/azure/data-explorer/generate-sas-token?context=/fabric/context/context&pivots=fabric).
 
     The blob you add will be the basis for the schema tab. You can add up to 10 items of up to 1-GB uncompressed size each. If you upload more than one item, you can change the schema-defining blob by selecting the star icon on the right side of the source link field.
 1. Select **Next: Schema** to view and edit your table column configuration.
@@ -54,4 +54,4 @@ To get data from a blob container, see [Get data from a blob container](get-data
 
 * To create an empty table, see [Create an empty table](create-empty-table.md)
 * To manage your database, see [Manage data](data-management.md)
-* To create, store, and export queries, see [Query data in the KQL Queryset](kusto-query-set.md)
+* To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md)
