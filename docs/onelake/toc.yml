@@ -9,6 +9,8 @@ items:
   items:
   - name: Creating a lakehouse with OneLake
     href: create-lakehouse-onelake.md
+  - name: Transforming data with Spark and querying with SQL using one copy of data
+    href: onelake-one-copy-quickstart.md
 - name: Shortcuts
   items:
   - name: What are shortcuts?

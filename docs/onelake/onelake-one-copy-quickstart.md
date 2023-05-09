@@ -26,9 +26,9 @@ In this guide, you will:
 
 ## Prerequisites
 
-- Download and install [OneLake file explorer](onlake-file-explorer.md).
+- Download and install [OneLake file explorer](onelake-file-explorer.md).
 - A workspace with a lakehouse item
-- Download the WideWorldImportersDW dataset to your computer to follow along with the instructions in this guide.  You can also use your own csv data.  Just update the details as required.
+- Download the WideWorldImportersDW dataset to your computer to follow along with the instructions in this guide.  You can use [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) to connect to "https://azuresynapsestorage.blob.core.windows.net/sampledata/WideWorldImportersDW/csv/full/dimension_city" and download the set of csv files. You can also use your own csv data and update the details as required.
 
 ## Steps
 
@@ -37,6 +37,8 @@ In this guide, you will:
    :::image type="content" source="media\onelake-one-copy-quickstart\create-folder-quickstart.png" alt-text="Screenshot of new folder created in OneLake file explorer." lightbox="media\onelake-one-copy-quickstart\create-folder-quickstart.png":::
 
 1. Copy your sample csv files to the OneLake directory /Files/dimension_city using OneLake file explorer.
+
+    :::image type="content" source="media\onelake-one-copy-quickstart\onelake-file-explorer-quickstart.png" alt-text="Screenshot of copying files to OneLake in file explorer." lightbox="media\onelake-one-copy-quickstart\onelake-file-explorer-quickstart.png":::
 
 1. Navigate to your lakehouse in the Power BI service and view your files.
 
@@ -56,37 +58,35 @@ for filename in os.listdir("/lakehouse/default/Files/<replace with your folder p
     df.write.mode("overwrite").format("delta").save("Tables/<name of delta table>")
 ```
 
-1. View your new table under the /Tables directory.
+1. Refresh your view of the /Tables directory to see your new table.
 
    :::image type="content" source="media\onelake-one-copy-quickstart\view-table-quickstart.png" alt-text="Screenshot of viewing table in lakehouse in Fabric." lightbox="media\onelake-one-copy-quickstart\view-table-quickstart.png":::
 
 1. Query your table with SparkSQL in the same Fabric notebook.
 
-```sql
+```python
 %%sql
-SELECT * fom lakehouse1.dim_city LIMIT 10;
+SELECT * from <replace with item name>.dim_city LIMIT 10;
 ```
 
 1. Modify the delta table by adding a new column named newColumn with data type integer.  Set the value of 9 for all of the records for this newly added column.
 
-```sql
+```python
 %%sql
 
-ALTER TABLE lakehouse1.dim_city ADD COLUMN newColumn int;
+ALTER TABLE <replace with item name>.dim_city ADD COLUMN newColumn int;
 
-UPDATE lakehouse1.dim_city SET newColumn = 9;
+UPDATE <replace with item name>.dim_city SET newColumn = 9;
 
-SELECT City,newColumn FROM lakehouse1.dim_city LIMIT 10;
+SELECT City,newColumn FROM <replace with item name>.dim_city LIMIT 10;
 ```
 
-1. Any delta table on OneLake can also be accessed via a SQL Endpoint. This SQL endpoint references the same physical copy of delta table on OneLake and offers T-SQL experience. Select the SQL Endpoint for lakehouse1 and then select dim_city table listed in the Explorer pane.
-
-Query the data using T-SQL
+1. Any delta table on OneLake can also be accessed via a SQL Endpoint. This SQL endpoint references the same physical copy of delta table on OneLake and offers T-SQL experience. Select the SQL Endpoint for lakehouse1 and then select "New SQL Query" to query the table using T-SQL
 
 ```sql
-SELECT TOP (100) * FROM [lakehouse1].[dbo].[dim_city];
+SELECT TOP (100) * FROM [<replace with item name>].[dbo].[dim_city];
 ```
- 
+
 ## Summary
 
 In this quickstart guide, you used OneLake File explorer to copy external datasets to OneLake. The datasets were then transformed to delta table and analyzed using lakehouse and T-SQL experiences.
