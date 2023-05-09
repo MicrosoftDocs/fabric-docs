@@ -10,6 +10,8 @@ ms.search.form: product-kusto
 ---
 # Create materialized views
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. There are two types of materialized views:
 
 * Empty materialized view: it includes records ingested after view creation. A creation of this kind returns immediately, with the view instantly being available for query.
@@ -20,8 +22,6 @@ For more information on materialized views, see [Materialized view overview](/az
 In this article, you'll learn how to create materialized views using the `.create materialized-view` command.
 
 For more information on the `.create materialized-view` command, see [.create materialized-view](/azure/data-explorer/kusto/management/materialized-views/materialized-view-create?context=/fabric/context/context)
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
