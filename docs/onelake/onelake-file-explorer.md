@@ -94,7 +94,7 @@ You can open files using your favorite apps and make edits. Selecting **Save** s
 
 If you edit a file locally and select **Save**, the OneLake file explorer app detects if that file has been updated elsewhere (by someone else) since you last selected **Sync from** **OneLake**.
 
-:::image type="content" source="media\onelake-file-explorer\confirm-file-change.png" alt-text="Screenshot of the Confirm file change dialog box." lightbox="media\onelake-file-explorer\confirm-file-change.png":::
+:::image type="content" source="media\onelake-file-explorer\confirm-file-change.png" alt-text="Screenshot of the Confirm file change dialog box.":::
 
 If you select **Yes**, then your local changes overwrite any other changes made to the file since the last time you selected **Sync from** **OneLake**.
 
