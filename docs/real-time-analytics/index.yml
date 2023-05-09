@@ -43,7 +43,10 @@ landingContent:
           url: event-streams/preview-data.md
         - text: Monitor event streams
           url: event-streams/monitoring.md
-
+        - text: Event streams sources
+          url: event-streams/event-streams-source.md
+        - text: Event streams destinations
+          url: event-streams/event-streams-destination.md
   # Card 
   - title: KQL Database
     linkLists:
@@ -71,6 +74,16 @@ landingContent:
         links: 
           - text: Use sample queries
             url: query-table.md
+
+
+  # Card 
+  - title: KQL Queryset
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Query data in a KQL queryset
+            url:  kusto-query-set.md
+            
   # Card 
   - title: Kusto Query Language (KQL)
     linkLists:
@@ -87,13 +100,6 @@ landingContent:
           - text: "Training module: Multi-table queries using Kusto Query Language"
             url: /training/modules/multi-table-queries-with-kusto-query-language/
 
-  # Card 
-  - title: KQL Queryset
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Query data in a KQL queryset
-            url:  kusto-query-set.md
 
   # Card 
   - title: Integrate with other experiences
