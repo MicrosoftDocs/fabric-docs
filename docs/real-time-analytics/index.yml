@@ -31,6 +31,10 @@ landingContent:
   # Card 
   - title: Event streams
     linkLists:
+      - linkListType: overview
+        links:
+          - text: What's Event streams?
+            url: event-streams/overview.md
       - linkListType: how-to-guide
         links:
           - text: Create and manage event streams
