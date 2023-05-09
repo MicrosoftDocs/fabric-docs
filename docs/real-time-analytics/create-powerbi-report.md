@@ -26,8 +26,8 @@ To use multiple tables to build your Power BI report, see [Use data from KQL Dat
 
 There are three possible ways to create a report:
 
-1. (Option 1) Browse to a KQL queryset.
-1. Open the **Explore your data** window from a KQL database.
+1. **Option 1:** Browse to a KQL queryset.
+1. **Option 2:** Open the **Explore your data** window from a KQL database.
     1. Write and select the query you want to build into a Power BI report. The output of this query is used as the dataset for building the report.
     1. On the ribbon, select **Build Power BI report**.
 
