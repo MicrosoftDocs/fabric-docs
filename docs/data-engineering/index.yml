@@ -130,8 +130,8 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Use notebooks from VS Code
-            url: ../placeholder.md
+            url: author-notebook-with-vs-code.md
           - text: Use Spark job definitions from VS Code
-            url: ../placeholder.md
+            url: author-sjd-with-vs-code.md
           - text: Explore lakehouse from VS Code
-            url: ../placeholder.md
+            url: explore-lakehouse-with-vs-code.md

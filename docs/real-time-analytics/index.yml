@@ -30,23 +30,23 @@ landingContent:
 
   # Card 
   - title: Event streams
-    linkLists:  
-      - linkListType: tutorial
-        links:    
-        - text: Eventstreams tutorial
-          url: event-streams/bring-events-to-fabric-from-event-hub.md
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What's Event streams?
+            url: event-streams/overview.md
       - linkListType: how-to-guide
-        links: 
-        - text: Process events with event processor
-          url: event-streams/process-events-using-event-processor-editor.md
-        - text: Preview data
-          url: event-streams/preview-data.md
-        - text: Monitor event streams
-          url: event-streams/monitoring.md
-        - text: Event streams sources
-          url: event-streams/event-streams-source.md
-        - text: Event streams destinations
-          url: event-streams/event-streams-destination.md
+        links:
+          - text: Create and manage event streams
+            url:  event-streams/create-manage-an-eventstream.md
+          - text: Process events using processor editor            
+            url: event-streams/process-events-using-event-processor-editor.md
+          - text: Monitor event streams
+            url: event-streams/monitor.md
+      - linkListType: tutorial
+        links:
+          - text: Process real-time events from Azure Event Hubs
+            url:  event-streams/create-manage-an-eventstream.md
   # Card 
   - title: KQL Database
     linkLists:
@@ -67,39 +67,6 @@ landingContent:
         - text: Get data from OneLake
           url: get-data-onelake.md
 
-  # Card 
-  - title: Query data
-    linkLists:
-      - linkListType: how-to-guide
-        links: 
-          - text: Use sample queries
-            url: query-table.md
-
-
-  # Card 
-  - title: KQL Queryset
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Query data in a KQL queryset
-            url:  kusto-query-set.md
-            
-  # Card 
-  - title: Kusto Query Language (KQL)
-    linkLists:
-      - linkListType: overview
-        links:          
-          - text: KQL Overview
-            url: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
-      - linkListType: learn
-        links:
-          - text: "Training module: Write your first query with Kusto Query Language"
-            url: /training/modules/write-first-query-kusto-query-language/
-          - text: "Training module: Gain insights from your data by using Kusto Query Language"
-            url: /training/modules/gain-insights-data-kusto-query-language/
-          - text: "Training module: Multi-table queries using Kusto Query Language"
-            url: /training/modules/multi-table-queries-with-kusto-query-language/
-
 
   # Card 
   - title: Integrate with other experiences
@@ -116,3 +83,34 @@ landingContent:
         links: 
           - text: Visualize data in a Power BI report
             url: create-powerbi-report.md
+
+
+  # Card 
+  - title: KQL Queryset
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Query data in a KQL queryset
+            url:  kusto-query-set.md
+
+
+  # Card 
+  - title: Query data
+    linkLists:
+      - linkListType: how-to-guide
+        links: 
+          - text: Use sample queries
+            url: query-table.md
+      - linkListType: overview
+        links:          
+          - text: Kusto Query Language (KQL) overview
+            url: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
+      - linkListType: learn
+        links:
+          - text: "Training module: Write your first query with Kusto Query Language"
+            url: /training/modules/write-first-query-kusto-query-language/
+          - text: "Training module: Gain insights from your data by using Kusto Query Language"
+            url: /training/modules/gain-insights-data-kusto-query-language/
+          - text: "Training module: Multi-table queries using Kusto Query Language"
+            url: /training/modules/multi-table-queries-with-kusto-query-language/
+
