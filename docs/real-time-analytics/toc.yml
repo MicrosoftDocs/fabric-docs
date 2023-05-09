@@ -5,8 +5,7 @@ items:
   items:
   - name: What is Real-Time Analytics?
     href: overview.md
-  - name: Introduction to event streams
-    href: event-streams/overview.md
+
   - name: Compare with Azure Data Explorer
     href: realtime-analytics-compare.md
 - name: Get started
@@ -27,8 +26,6 @@ items:
     href: tutorial-6-build-report.md
   - name: 7- Clean up resources
     href: tutorial-7-clean-up-resources.md
-  - name: Event streams tutorial
-    href: event-streams/bring-events-to-fabric-from-event-hub.md
 - name: KQL Database
   items:
   - name: Create a KQL database
@@ -65,8 +62,6 @@ items:
     items:
     - name: Query data in a KQL queryset
       href: kusto-query-set.md
-    - name: Use a OneLake shortcut to query data
-      href: onelake-shortcut.md
     - name: Use sample queries
       href: query-table.md
   - name: Kusto Query Language
@@ -77,6 +72,8 @@ items:
   items:
   - name: Concepts
     items:
+    - name: Introduction to event streams
+      href: event-streams/overview.md
     - name: Event streams main editor
       href: event-streams/main-editor.md
     - name: Event streams sources
@@ -87,6 +84,8 @@ items:
       href: event-streams/event-processor-editor.md
   - name: How-to
     items:
+    - name: Event streams tutorial
+      href: event-streams/bring-events-to-fabric-from-event-hub.md
     - name: Create and manage an Eventstream item
       href: event-streams/create-manage-an-eventstream.md
     - name: Add and manage eventstream sources
@@ -107,8 +106,12 @@ items:
       href: create-powerbi-report.md
     - name: Use data from a KQL database in Power BI Desktop
       href: power-bi-data-connector.md
-  - name: One logical copy
-    href: onelake-mirroring.md
+  - name: OneLake
+    items:
+    - name: One logical copy
+      href: onelake-mirroring.md
+    - name: Use a OneLake shortcut to query data
+      href: onelake-shortcut.md
   - name: Notebooks
     items:
     - name: Use a notebook with Kqlmagic to query a KQL database
