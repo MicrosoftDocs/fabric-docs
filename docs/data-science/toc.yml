@@ -23,6 +23,18 @@ items:
     href: tutorial-data-science-batch-scoring.md
   - name: 6 Create a Power BI report
     href: tutorial-data-science-create-report.md
+- name: Notebooks
+  items:
+  - name: Create and use notebooks
+    href: ../data-engineering/how-to-use-notebook.md?toc=/fabric/data-science/toc.yml&bc=/fabric/data-science/breadcrumb/toc.yml
+  - name: Develop and run notebooks
+    href: ../data-engineering/author-execute-notebook.md
+  - name: Notebook visualization
+    href: ../data-engineering/notebook-visualization.md
+  - name: Explore data in lakehouse
+    href: l../data-engineering/akehouse-notebook-explore.md
+  - name: Load data in lakehouse
+    href: ../data-engineering/lakehouse-notebook-load-data.md
 - name: Tutorials
   items:
   - name: How to use end-to-end AI samples
