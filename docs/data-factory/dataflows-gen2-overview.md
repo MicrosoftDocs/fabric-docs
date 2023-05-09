@@ -39,7 +39,7 @@ Working with Dataflow Gen2 feels like coming home. We kept the full Power Query 
 
 ### New dataflow save experience
 
-With Dataflow Gen2, we changed how saving a dataflow works. Any changes made to a dataflow are auto-saved to the cloud so you can exit the authoring experience at any point and continue from where you left off at a later time. Once you're done authoring your dataflow you publish your changes and those changes will be used when the dataflow refreshes. In addition, publishing the dataflow will save your changes and run validations that must be performed in the background.  This lets you to save your dataflow without having to wait for validation to finish. 
+With Dataflow Gen2, we changed how saving a dataflow works. Any changes made to a dataflow are auto-saved to the cloud so you can exit the authoring experience at any point and continue from where you left off at a later time. Once you're done authoring your dataflow you publish your changes and those changes will be used when the dataflow refreshes. In addition, publishing the dataflow will save your changes and run validations that must be performed in the background.  This lets you save your dataflow without having to wait for validation to finish. 
 
 Learn more about [Dataflows save as draft](dataflows-gen2-save-draft.md)
 
