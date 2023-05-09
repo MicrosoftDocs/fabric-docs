@@ -59,12 +59,12 @@ items:
     items:
     - name: Overview
       href: spark-compute.md
+    - name: Runtime
+      href: runtime.md
     - name: Create custom pools
       href: create-custom-spark-pools.md
     - name: High concurrency mode
       href: high-concurrency-mode-notebooks.md
-    - name: Runtime
-      href: runtime.md
     - name: Autotune Spark configuration
       href: autotune.md
     - name: Spark concurrency limits and queueing

@@ -11,7 +11,10 @@ ms.date: 05/23/2023
 
 # What is Data Factory in Microsoft Fabric?
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] provides cloud-scale data movement and data transformation services that allow you to solve the most complex ETL scenarios. It's intended to make your experience easy to use, powerful, and truly enterprise-grade.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] will bring the best of our Citizen Data Integration and Pro Data Integration capabilities into a single, modern data integration experience.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] provides out-of-the-box connectivity to more than 100+ relational, non-relational databases, lakehouse, data warehouses, generic interfaces (e.g. REST APIs, OData) and more.
+With dataflows, you can leverage more than 300 transformations in the dataflows designer, letting you transform data easier and with more flexibility than any other tool—including smart AI-based data transformations.
+With data pipelines, you can leverage the out-of-the-box rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 

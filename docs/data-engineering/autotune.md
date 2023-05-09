@@ -1,6 +1,6 @@
 ---
 title: Configure Spark Autotune
-description: Learn how autotune auto-adjusts Spark configurations, minimizing workload execution time and optimizing performance. You can enable or disable autotune.
+description: Learn how autotune auto-adjusts Apache Spark configurations, minimizing workload execution time and optimizing performance. You can enable or disable autotune.
 ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
@@ -8,9 +8,9 @@ ms.topic: overview
 ms.date: 05/23/2023
 ---
 
-# What is Spark autotune configuration in Fabric and how to enable and disable it?
+# What is autotune for Apache Spark configurations in Fabric and how to enable and disable it?
 
-Autotune automatically tunes Spark configurations to minimize workload execution time and optimizes workloads. It empowers you to achieve more with less. This feature reduces execution time and surpasses the gains accomplished by manually tuned workloads by experts, which necessitate considerable effort and experimentation.
+Autotune automatically tunes Apache Spark configurations to minimize workload execution time and optimizes workloads. It empowers you to achieve more with less. This feature reduces execution time and surpasses the gains accomplished by manually tuned workloads by experts, which necessitate considerable effort and experimentation.
 
 It leverages historical data execution from your workloads to iteratively learn the optimal configurations for a given workload and its execution time.
 
@@ -18,7 +18,7 @@ It leverages historical data execution from your workloads to iteratively learn 
 
 ## Query tuning
 
-Currently, autotune configures three query-level Spark configurations:
+Currently, autotune configures three query-level of Apache Spark configurations:
 
 - `spark.sql.shuffle.partitions` - configures the number of partitions to use when shuffling data for joins or aggregations. Default is 200.
 - `spark.sql.autoBroadcastJoinThreshold` - configures the maximum size in bytes for a table that will be broadcasted to all worker nodes when performing a join. Default is 10 MB.
@@ -141,16 +141,15 @@ sparkR.conf("spark.ms.autotune.queryTuning.enabled", "false")
 Microsoft follows Responsible AI Standard and this transparency note aims to provide clear documentation defining the intended uses of Autotune and the evidence that the feature is fit for purpose before the service becomes externally available. We understand the importance of transparency and ensuring that our customers have the necessary information to make informed decisions when using our services.
 
 ### Intended uses of the Autotune
-The primary goal of Autotune is to optimize the performance of Spark workloads by automating the process of Spark configuration tuning. The system is designed to be used by data engineers, data scientists, and other professionals who are involved in the development and deployment of Spark workloads. The intended uses of the Autotune include:
-1. Automatic tuning of Spark configurations to minimize workload execution time
-1. Accelerating the Spark workload development process
-1. Reducing the manual effort required for Spark configuration tuning
-1. Leveraging historical data execution from workloads to iteratively learn optimal configurations
+The primary goal of Autotune is to optimize the performance of Apache Spark workloads by automating the process of Apache Spark configuration tuning. The system is designed to be used by data engineers, data scientists, and other professionals who are involved in the development and deployment of Apache Spark workloads. The intended uses of the Autotune include:
+* Automatic tuning of Apache Spark configurations to minimize workload execution time to accelerate development process
+* Reducing the manual effort required for Apache Spark configuration tuning
+* Leveraging historical data execution from workloads to iteratively learn optimal configurations
 
 ### Evidence that the Autotune is fit for purpose
 To ensure that Autotune meets the desired performance standards and is fit for its intended use, we have conducted rigorous testing and validation. The evidence includes:
-1. Thorough internal testing and validation using various Spark workloads and datasets to confirm the effectiveness of the autotuning algorithms
-1. Comparisons with alternative Spark configuration optimization techniques, demonstrating the performance improvements and efficiency gains achieved by Autotune
+1. Thorough internal testing and validation using various Apache Spark workloads and datasets to confirm the effectiveness of the autotuning algorithms
+1. Comparisons with alternative Apache Spark configuration optimization techniques, demonstrating the performance improvements and efficiency gains achieved by Autotune
 1. Customer case studies and testimonials showcasing successful applications of Autotune in real-world projects
 1. Compliance with industry-standard security and privacy requirements, ensuring the protection of customer data and intellectual property
 
