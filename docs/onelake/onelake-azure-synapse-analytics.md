@@ -86,7 +86,9 @@ Follow these steps to use SQL serverless to read data from OneLake from Azure Sy
 
 1. Open your Synapse workspace in [Synapse Studio](https://web.azuresynapse.net/workspaces).
 
-1. In the query editor, enter the following query, replacing `ABFS_PATH_HERE` with the path you copied earlier.
+1. Create a new SQL script.
+
+1. In the SQL query editor, enter the following query, replacing `ABFS_PATH_HERE` with the path you copied earlier.
 
    ```sql
    SELECT TOP 10 *
