@@ -86,6 +86,15 @@ landingContent:
 
 
   # Card 
+  - title: KQL Queryset
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Query data in a KQL queryset
+            url:  kusto-query-set.md
+
+
+  # Card 
   - title: Query data
     linkLists:
       - linkListType: how-to-guide
@@ -104,13 +113,4 @@ landingContent:
             url: /training/modules/gain-insights-data-kusto-query-language/
           - text: "Training module: Multi-table queries using Kusto Query Language"
             url: /training/modules/multi-table-queries-with-kusto-query-language/
-
-
-  # Card 
-  - title: KQL Queryset
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Query data in a KQL queryset
-            url:  kusto-query-set.md
 
