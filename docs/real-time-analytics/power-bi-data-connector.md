@@ -8,14 +8,13 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-
 # Use data from a KQL Database in Power BI Desktop
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you learn how to connect your KQL database as a data source to Power BI Desktop. Once connected, you can use multiple tables to build your Power BI reports.
 
-To create reports with Power BI service using a KQL queryset, see [Create a Power BI report](create-powerbi-report.md).
+To create reports with Power BI service using a KQL Queryset, see [Create a Power BI report](create-powerbi-report.md).
 
 ## Prerequisites
 

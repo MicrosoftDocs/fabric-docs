@@ -46,7 +46,7 @@ This feature allows you to create or alter an existing function using the `.crea
 
     :::image type="content" source="media/create-functions/functions-object-tree.png" alt-text="Screenshot of Object tree showing the list of stored user-defined functions.":::
 
-1. In the **Explore your data** window, run a query to check that you have successfully created or altered your function. 
+1. In the **Explore your data** window, run a query to check that you have successfully created or altered your function.
 
     :::image type="content" source="media/create-functions/function-example.png" alt-text="Screenshot of the explore your data window showing query results of a stored function in Real-Time Analytics.":::
 

@@ -197,11 +197,11 @@ productDirectory:
 
       imageSrc: ./media/support-icon.svg
       links:
-        - url: placeholder.md
+        - url: /power-bi/support/service-support-options
           text: Create a support ticket
-        - url: placeholder.md
+        - url: /power-bi/troubleshoot/known-issues/power-bi-known-issues
           text: Known issues
-        - url: placeholder.md
+        - url: /power-bi/troubleshoot/
           text: Troubleshoot issues
         - url: get-started/index.yml
           text: See more

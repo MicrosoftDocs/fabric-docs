@@ -26,7 +26,7 @@ This article describes how to create an update policy on a table in Real-Time An
 ## Table update policy
 
 1. Browse to the main page of your KQL database.
-1. Select **New** > **Table update policy**
+1. Select **New** > **Table update policy**.
 
     :::image type="content" source="media/table-update-policy/new-policy.png" alt-text="Screenshot of the KQL Database home tab showing the dropdown menu for creating new entities. The dropdown option for creating a table update policy in Real-Time Analytics is highlighted.":::
 
