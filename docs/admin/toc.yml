@@ -4,35 +4,35 @@ items:
 - name: Overview
   items:
   - name: What is Microsoft Fabric administration?
-    href: admin-overview.md
+    href: microsoft-fabric-admin.md
 - name: Get started
   items:
   - name: Enable Microsoft Fabric for your organization
-    href: admin-fabric-switch.md  
+    href: fabric-switch.md  
   - name: Understand Microsoft Fabric roles
     href: admin-roles.md
   - name: What is the admin portal?
     href: admin-center.md       
   - name: Compliance feature switch
-    href: admin-compliance.md    
+    href: compliance.md    
 - name: Track user activities
   href: admin-track-user-activities.md
 - name: Monitoring workspace
   items:
   - name: What is the monitoring workspace?
-    href: admin-monitoring.md
+    href: monitoring-workspace.md
   - name: Feature usage and adoption report
-    href: admin-feature-usage-adoption.md
+    href: feature-usage-adoption.md
 - name: Workspace administration
   items:
   - name: Manage workspaces
-    href: admin-portal-workspaces.md  
+    href: portal-workspaces.md  
   - name: Workspace tenant settings
-    href: admin-portal-workspace.md
+    href: portal-workspace.md
 - name: Settings
   items:    
   - name: Git integration admin tenant settings
-    href: admin-settings-git-integration.md
+    href: git-integration-admin-settings.md
   - name: Set up item certification
     href: endorsement-setup.md
   - name: Set up metadata scanning

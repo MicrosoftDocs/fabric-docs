@@ -21,48 +21,48 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Enable Microsoft Fabric for your organization
-            url: admin-fabric-switch.md
+            url: fabric-switch.md
           - text: Compliance settings
-            url: admin-compliance.md
+            url: compliance.md
           - text: Governance in Microsoft Fabric
             url: ../governance/index.yml          
       - linkListType: overview
         links:
           - text: What is Microsoft Fabric admin?
-            url: admin-overview.md       
+            url: microsoft-fabric-admin.md       
           - text: What is the admin portal?
             url: admin-center.md
       - linkListType: how-to-guide
         links:            
           - text: Understand Microsoft Fabric roles
-            url: admin-roles.md
+            url: roles.md
 
   - title: Workspace settings
     linkLists:
       - linkListType: overview
         links:
           - text: Workspace tenant settings
-            url: admin-portal-workspace.md
+            url: portal-workspace.md
       - linkListType: how-to-guide
         links:
           - text: Manage workspaces
-            url: admin-portal-workspaces.md
+            url: portal-workspaces.md
 
   - title: Admin monitoring workspace
     linkLists:
       - linkListType: overview
         links:
           - text: What is the admin monitoring workspace?
-            url: admin-monitoring.md
+            url: monitoring-workspace.md
           - text: Feature usage and adoption report
-            url: admin-feature-usage-adoption.md
+            url: feature-usage-adoption.md
 
   - title: Tools and settings
     linkLists:
       - linkListType: overview
         links: 
           - text: Tenant admin settings for git integration
-            url: admin-settings-git-integration.md              
+            url: git-integration-admin-settings.md              
       - linkListType: how-to-guide
         links:
           - text: Track user activities in Fabric

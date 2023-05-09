@@ -21,7 +21,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 Workspaces are places where users collaborate on dashboards, reports, and other content. [!INCLUDE [product-name](../includes/product-name.md)] admins can use the **Create workspaces** setting to designate which users in the organization can create workspaces. Admins can let everybody or nobody in an organization create workspaces. Workspace creation can also be limited to members of specific security groups. Learn more about [workspaces](../get-started/workspaces.md).
 
-:::image type="content" source="media/service-admin-portal-workspace/power-bi-admin-workspace-settings.png" alt-text="Screenshot showing Create a workspace.":::
+:::image type="content" source="media/service-portal-workspace/power-bi-admin-workspace-settings.png" alt-text="Screenshot showing Create a workspace.":::
 
 For classic workspaces based on Microsoft 365 Groups, administration continues to occur in admin portal and Azure Active Directory.
 
@@ -30,7 +30,7 @@ For classic workspaces based on Microsoft 365 Groups, administration continues t
 
 **List of workspaces**
 
-The admin portal has another section of settings about the workspaces in your tenant. In that section, you can sort and filter the list of workspaces and display the details for each workspace. See [Workspaces](admin-portal-workspaces.md) in this article for details.
+The admin portal has another section of settings about the workspaces in your tenant. In that section, you can sort and filter the list of workspaces and display the details for each workspace. See [Workspaces](portal-workspaces.md) in this article for details.
 
 **Publish content packs and apps**
 
@@ -40,7 +40,7 @@ In the admin portal, you also control which users have permissions to distribute
 
 Admins can control which users in the organization can use datasets across workspaces. When this setting is enabled, users still need the required Build permission for a specific dataset.
 
-:::image type="content" source="media/service-admin-portal-workspace/power-bi-admin-datasets-workspaces.png" alt-text="Use datasets across workspaces":::
+:::image type="content" source="media/portal-workspace/power-bi-admin-datasets-workspaces.png" alt-text="Use datasets across workspaces":::
 
 For more information, see [Intro to datasets across workspaces](/power-bi/connect-data/service-datasets-across-workspaces).
 
@@ -48,7 +48,7 @@ For more information, see [Intro to datasets across workspaces](/power-bi/connec
 
 To reduce the impact of maintaining empty classic workspaces that were automatically created, empty classic workspaces are deleted by default as part of the upgrade process. However, admins can prevent deleting empty workspaces by disabling the following setting in the Admin portal.
 
-:::image type="content" source="media/service-admin-portal-workspace/block-upgrade-empty-workspaces.png" alt-text="Screenshot of using admin portal to allow or prevent upgrade of empty workspaces.":::
+:::image type="content" source="media/portal-workspace/block-upgrade-empty-workspaces.png" alt-text="Screenshot of using admin portal to allow or prevent upgrade of empty workspaces.":::
 
 Additional notes on deletion of empty workspaces:
 
@@ -66,7 +66,7 @@ To turn off the setting:
 1. In the tenant settings, scroll down to the **Workspace settings** section.
 1. Find the setting called **Users can reassign personal workspaces**. By default, this setting is on, which means that any My workspace owner can reassign their My workspace capacity. To prevent users from being able to reassign the capacity of their My workspace, turn the setting off.
 
-For more information, see [Prevent My workspace owners from reassigning their My workspaces to a different capacity](./admin-portal-workspaces.md#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity).
+For more information, see [Prevent My workspace owners from reassigning their My workspaces to a different capacity](./portal-workspaces.md#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity).
 
 ## Next steps
 
