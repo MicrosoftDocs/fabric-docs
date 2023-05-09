@@ -140,6 +140,8 @@ Follow these steps to apply transformations and publish:
 16. Your dataflow is now ready to be published. Review the queries in the diagram view, and then select **Publish**.
 
     :::image type="content" source="media/create-first-dataflow-gen2/publish-dataflow.png" alt-text="Screenshot of the dataflows editor with the Publish button on the lower-right side emphasized." lightbox="media/create-first-dataflow-gen2/publish-dataflow.png":::
+    
+    You will now be returned to the workspace and see a spinner icon next to your dataflow name indicating publishing is in progress. Once the publishing completes, your dataflow is ready to refresh!
 
 17. In your workspace, select the **Schedule Refresh** icon.
 
