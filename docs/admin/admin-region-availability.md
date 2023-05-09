@@ -3,6 +3,7 @@ title: Fabric region availability
 description: Learn which regions Fabric is available in.
 author: paulinbar
 ms.author: painbar
+ms.custom: references_regions
 ms.topic: overview
 ms.service: azure
 ms.date: 05/23/2023
