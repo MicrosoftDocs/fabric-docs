@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: Overview
   href: data-warehousing.md
-- name: Get started with the SQL Endpoint
+- name: Get started with the lakehouse 
   href: get-started-lakehouse-sql-endpoint.md
 - name: Get started with Synapse Data Warehouse
   items:
@@ -88,9 +88,7 @@ items:
   - name: Workspace roles
     href: workspace-roles.md
   - name: Get Workspace and OneLake path
-    href: get-workspace-onelake-path.md      
-  - name: Manage item permissions
-    href: item-permissions.md
+    href: get-workspace-onelake-path.md
   - name: Manage SQL granular permissions
     href: sql-granular-permissions.md
 - name: Query the warehouse

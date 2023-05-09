@@ -1,6 +1,6 @@
 ---
-title: Get started with the SQL Endpoint of the Lakehouse
-description: Learn more about querying the SQL Endpoint of the Lakehouse in Microsoft Fabric.
+title: Get started with the lakehouse
+description: Learn more about the lakehouse data warehousing experience in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: SQL Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
-# Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric
+# Get started with the lakehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se](includes/applies-to-version/fabric-se.md)]
 

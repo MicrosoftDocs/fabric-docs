@@ -131,10 +131,3 @@ landingContent:
             url: security.md
           - text: Ingest Data
             url: ingest-data.md
-  # Card
-  - title: Sharing
-    linkLists: 
-      - linkListType: how-to-guide
-        links:
-          - text: Get Workspace and OneLake path
-            url: get-workspace-onelake-path.md
