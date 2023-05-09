@@ -14,10 +14,10 @@ title: Frequently asked questions about the Fabric lifecycle management tools
 summary: |
   This article provides answers to some of the most common questions about the [Fabric lifecycle management tools](./cicd-overview.md).
 
-  [General questions](#general-questions)
-  [Licensing questions](#licensing-questions)
-  [Git integration questions](#git-integration-questions)
-  [Deployment pipeline questions](#deployment-pipeline-questions)
+  [General questions](#general-questions)  
+  [Licensing questions](#licensing-questions)  
+  [Git integration questions](#git-integration-questions)  
+  [Deployment pipeline questions](#deployment-pipeline-questions)  
 
 sections: 
    - name: General questions
