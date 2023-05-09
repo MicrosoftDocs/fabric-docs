@@ -19,7 +19,7 @@ To get data from a blob, see [Get data from a blob](get-data-blob.md).
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* [KQL Database](create-database.md)
+* A [KQL database](create-database.md)
 * A blob container with data
 
 ## Get data

@@ -19,7 +19,7 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [Lakehouse](../data-engineering/create-lakehouse.md)
-* [KQL Database](create-database.md)
+* A [KQL database](create-database.md)
 
 ## Copy folder path from Lakehouse
 
