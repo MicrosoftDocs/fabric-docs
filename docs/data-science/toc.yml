@@ -23,6 +23,10 @@ items:
     href: tutorial-data-science-batch-scoring.md
   - name: 6 Create a Power BI report
     href: tutorial-data-science-create-report.md
+- name: Notebooks
+  items:
+  - name: Create and use notebooks
+    href: ../data-engineering/how-to-use-notebook.md?toc=/fabric/data-science/toc.yml&bc=/fabric/data-science/breadcrumb/toc.yml
 - name: Tutorials
   items:
   - name: How to use end-to-end AI samples
