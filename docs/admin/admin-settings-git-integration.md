@@ -28,7 +28,7 @@ There are three settings relating to git integration:
 
 ## Enable git integration feature
 
-Enable this setting to allow users to synchronize a workspace with a git repository, edit their workspace, and update their git repos using the git integration tool. You enable git integration for the entire organization, or for a specific group.
+Enable this setting to allow users to synchronize a workspace with a git repository, edit their workspace, and update their git repos using the git integration tool. You can enable git integration for the entire organization, or for a specific group.
 
 :::image type="content" source="./media/admin-settings-git-integration/enable-git-integration-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables git integration." lightbox="./media/admin-settings-git-integration/enable-git-integration-switch.png":::
 
