@@ -20,19 +20,19 @@ Fabric information protection is powered by sensitivity labels from Microsoft Pu
 
 ## Data loss prevention (DLP)
 
-Data loss prevention is currently supported for Power BI datasets only. For more information, see [Data loss prevention policies for Power BI](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
+Data loss prevention policies help organizations detect and protect their sensitive data. DLP is currently supported for Power BI datasets only. For more information, see [Data loss prevention policies for Power BI](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
 
 ## Endorsement
 
-For more information, see [Endorsement](./endorsement-overview.md).
+Endorsement is a way to make it easier for users to find the high-quality items they need. For more information, see [Endorsement](./endorsement-overview.md).
 
 ## Metadata scanning
 
-For more information, see [Metadata scanning](./metadata-scanning-overview.md).
+Metadata scanning facilitates governance of your organization's Microsoft Fabric data by making it possible to catalog and report on all the metadata of your organization's Fabric items. It accomplishes this using a set of Admin REST APIs that are collectively known as the *scanner APIs*. For more information, see [Metadata scanning](./metadata-scanning-overview.md).
 
 ## Lineage
 
-For more information, see [Lineage](./lineage.md).
+Lineage helps users understand the flow of data from data source to destination. This capability is critical to understanding how changes to an item might impact other items connected to it downstream. For more information, see [Lineage](./lineage.md).
 
 ## Microsoft Purview hub
 
