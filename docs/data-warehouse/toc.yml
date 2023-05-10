@@ -47,8 +47,6 @@ items:
   items:
   - name: Better together - the lakehouse and warehouse
     href: get-started-lakehouse-sql-endpoint.md
-  - name: Warehouse settings and context menus
-    href: settings-context-menus.md
   - name: Get Workspace and OneLake path
     href: get-workspace-onelake-path.md
   - name: Create a sample warehouse 
@@ -63,6 +61,8 @@ items:
     href: table-constraints.md
   - name: Transactions
     href: transactions.md 
+  - name: Warehouse settings and context menus
+    href: settings-context-menus.md
 - name: Load data into the warehouse
   items:
   - name: Ingesting data into the warehouse
