@@ -10,6 +10,8 @@ ms.date: 5/23/2023
 
 # Tutorial: Clean up resources
 
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
 You can delete individual reports, pipelines, warehouses, and other items or remove the entire workspace.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
@@ -28,7 +30,7 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
    :::image type="content" source="media\tutorial-clean-up\settings-delete-workspace.png" alt-text="screenshot of the Workspace settings screen, showing where to select Delete this workspace." lightbox="media\tutorial-clean-up\settings-delete-workspace.png":::
 
-1. Select **Delete** on the warning.
+1. Select **Delete** on the warning to remove the workspace and all its contents.
 
 ## Next steps
 

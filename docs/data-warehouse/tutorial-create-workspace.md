@@ -10,6 +10,8 @@ ms.date: 5/23/2023
 
 # Tutorial: Create a Microsoft Fabric workspace
 
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
 Before you can create a warehouse, you need to create a workspace where you'll build out the remainder of the tutorial.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
@@ -32,7 +34,6 @@ The workspace contains all the artifacts needed for data warehousing including D
 1. Expand the **Advanced** section.
 1. Choose **Premium capacity** in the **License mode** section.
 1. Choose a premium capacity you have access to.
-
 1. Select **Apply**. The workspace is created and opened.
 
 ## Next steps

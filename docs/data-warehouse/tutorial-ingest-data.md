@@ -10,6 +10,8 @@ ms.date: 5/23/2023
 
 # Tutorial: Ingest data into a data warehouse
 
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
 Now that you have created a data warehouse, you can ingest data into that warehouse.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]

@@ -12,8 +12,6 @@ ms.search.form: Warehouse design and development # This article's title should n
 
 **Applies to:** [!INCLUDE[fabric-se](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 To get started, you must complete the following prerequisites:
 
 - Have access to a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or above permissions.
@@ -21,6 +19,8 @@ To get started, you must complete the following prerequisites:
     - Use the [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md).
 
 For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], see [Connectivity](connectivity.md). 
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ### Create a new table in the SQL query editor with templates
 
