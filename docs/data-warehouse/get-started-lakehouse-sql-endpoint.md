@@ -43,13 +43,18 @@ In addition to SQL tables, the [!INCLUDE [product-name](../includes/product-name
 
 ## Analyzing data in external data lakes
 
-[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) are not scoped to data analytics in [!INCLUDE [product-name](../includes/product-name.md)] lakehouse and One Lake. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) enable you to analyze lake data in any lakehouse implemented using Synapse Spark, Azure Databricks, or any other lake-centric data engineering engine. 
+[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) aren't scoped to data analytics in [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse and One Lake. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) enable you to analyze lake data in any Lakehouse managed by the Synapse Spark, Azure Databricks, or any other lake-centric data engineering engine. If the engine stores data in `Delta Lake` format in Azure Data Lake storage or Amazon S3 accounts, SQL endpoint will enable you to analyze data using T-SQL language. 
+One of the well-known strategies for lake data organization is a [medallion](/azure/databricks/lakehouse/medallion) architecture where the files are organized in raw (bronze), consolidated (silver), and refined (gold) layers. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) can be used to analyze data in the gold layer of medallion architecture if the files are stored in `Delta Lake` format even if they're stored outside the [!INCLUDE [product-name](../includes/product-name.md)] One Lake.
+You can use One Lake [shortcuts](../data-engineering/lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that are managed by Synapse Spark or Azure Databricks engines.
+Use the following steps to analyze data in external data lake storage accounts:
+1. Create a shortcut that references a folder in [Azure Data Lake storage](../onelake/create-adls-shortcut.md) or [Amazon S3](../onelake/create-s3-shortcut.md) account. Once you enter connection details and credentials, a shortcut is shown in the Lakehouse.
+2. Switch to the SQL Endpoint of the Lakehouse and find a SQL table that has a name that matches the shortcut name. This SQL table references the folder in ADLS/S3 folder. 
+3. Query the SQL table that references data in ADLS/S3. The table can be used as any other table in the SQL endpoint (that is, you can join tables that reference data in different storage accounts).
 
-One of the well-known strategies for lake data organization is a [medallion](/azure/databricks/lakehouse/medallion) architecture where the files are organized in raw (bronze), consolidated (silver), and refined (gold) layers. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) can be used to analyze data in the gold layer of medallion architecture if the files are stored in `Delta Lake` format.
+> [!NOTE]
+> If the SQL table is not immediately shown in the SQL Endpoint, you might need to wait a few minutes. The SQL table that references data in external storage account is created with a delay.
 
-You can use OneLake [shortcuts](../data-engineering/lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that are managed by Synapse Spark or Azure Databricks engines. 
-
-Any folder referenced using a [shortcut](../data-engineering/lakehouse-shortcuts.md) is analyzed by [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) and a SQL table is created for the referenced data set. The SQL table can be used to expose data in externally managed data lakes and enable analytics on them.
+Any ADLS/S3 data lake folder referenced using a [shortcut](../data-engineering/lakehouse-shortcuts.md) is analyzed by [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) and a SQL table is created for the referenced data set. The SQL table can be used to expose data in externally managed data lake folders and enable analytics on them.
 
 ## Cross-workspace data analytics
 

@@ -16,7 +16,7 @@ Microsoft Fabric security is based on [Power BI security](/power-bi/enterprise/s
 
 ## Prerequisites
 
-You need to be a [Microsoft Fabric admin](admin-overview.md) with one of these admin roles:
+You need to be a [Microsoft Fabric admin](microsoft-fabric-admin.md) with one of these admin roles:
 
 * Global admin
 
@@ -65,6 +65,6 @@ By default, noncompliant Microsoft Fabric items aren't enable. After you enable 
 
 ## Next steps
 
-* [What is Microsoft Fabric admin?](admin-overview.md)
+* [What is Microsoft Fabric admin?](microsoft-fabric-admin.md)
 
 * [What is the admin center?](admin-center.md)
