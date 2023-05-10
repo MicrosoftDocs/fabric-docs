@@ -1,6 +1,6 @@
 ---
-title: Ingest data into your Synapse Data Warehouse using the COPY statement
-description: Follow steps to ingest data into a Synapse Data Warehouse with the COPY statement in Microsoft Fabric.
+title: Ingest data into your Warehouse using the COPY statement
+description: Follow steps to ingest data into a Warehouse with the COPY statement in Microsoft Fabric.
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.search.form: Ingesting data
 ---
 
-# Ingest data into your Synapse Data Warehouse using the COPY statement
+# Ingest data into your Warehouse using the COPY statement
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -105,5 +105,5 @@ If you ran both examples without deleting the rows in between runs, you'll see t
 ## Next steps
 
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)
-- [Ingest data into your Synapse Data Warehouse using Transact-SQL](ingest-data-tsql.md)
-- [Ingesting data into the Synapse Data Warehouse](ingest-data.md)
+- [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md)
+- [Ingesting data into the Warehouse](ingest-data.md)

@@ -1,6 +1,6 @@
 ---
 title: Data types
-description: Learn about the T-SQL data types supported the SQL Endpoint and Synapse Data Warehouse in Microsoft Fabric.
+description: Learn about the T-SQL data types supported the SQL Endpoint and Warehouse in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
@@ -18,7 +18,7 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Data types in Synapse Data Warehouse
+## Data types in Warehouse
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports a subset of T-SQL data types: 
 

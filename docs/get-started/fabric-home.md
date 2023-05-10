@@ -4,7 +4,7 @@ description: Open reports, apps, and workspaces from the Microsoft Fabric Home. 
 author: mihart
 ms.author: mihart
 ms.topic: conceptual  
-ms.date: 05/09/2023
+ms.date: 05/10/2023
 ---
 
 # Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
@@ -15,9 +15,12 @@ This article gives a high level view of navigating to your items and actions fro
 
 ## Overview of Home 
 
-On Home, you see items that you create and that you have permission to use. That means that the items available on everyone's Home are different. At first, you might not have much content, but that changes as you start to create and share [!INCLUDE [product-name](../includes/product-name.md)] items.
+On Home, you see items that you create and that you have permission to use. These are items from all the workspaces that you access. That means that the items available on everyone's Home are different. At first, you might not have much content, but that changes as you start to create and share [!INCLUDE [product-name](../includes/product-name.md)] items.
 
-In [!INCLUDE [product-name](../includes/product-name.md)], the term *item* refers to: apps, lakehouses, warehouses, reports, and more. Your items are accessible and viewable in [!INCLUDE [product-name](../includes/product-name.md)], and often the best place to start working in [!INCLUDE [product-name](../includes/product-name.md)] is from **Home**. However, once you've created at least one workspace, we recommend navigating directly to your workspace using the Home navigation pane and workspace selector.
+> [!NOTE]
+> Home is not workspace-specific. For example, the **Recent** area on Home might include items from many different workspaces.
+
+In [!INCLUDE [product-name](../includes/product-name.md)], the term *item* refers to: apps, lakehouses, warehouses, reports, and more. Your items are accessible and viewable in [!INCLUDE [product-name](../includes/product-name.md)], and often the best place to start working in [!INCLUDE [product-name](../includes/product-name.md)] is from **Home**. However, once you've created at least one new workspace, been granted access to a workspace, or you've added an item to **My workspace**, you might find it more convenient to navigate directly to a workspace. One way to navigate to a workspace is by using the nav pane and workspace selector.
 
 :::image type="content" source="media/fabric-home/fabric-home-data-science-workspace.png" alt-text="Screenshot showing sample Home for the Data Science experience.":::
 
@@ -34,12 +37,12 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 
 :::image type="content" source="media/fabric-home/fabric-home-numbered.png" alt-text="Screenshot of the left navigation menu with Knowledge center selected":::
 
-1. The left navigation pane (nav pane) for your product experience links you to different views of your items and to creator resources. In the bottom section of the nav pane is the [workspace selector](#find-and-open-workspaces) where you find and open your workspaces. 
-2. The selector for switching product experiences.
-3. The top menu bar for orienting yourself in [!INCLUDE [product-name](../includes/product-name.md)], finding items, help, and sending Microsoft feedback. The [**Account manager**](#find-your-account-and-license-information) control is a critical icon for looking up your account information and managing your Fabric trial. 
-4. Options for creating new items.  
-5. Links to recommended content. This content helps you get started using the product experience and links to items and workspaces that you visit often.
-6. Your items organized by recent, favorites, and items shared with you by your colleagues. The items that appear here are the same across product experiences, with the exception of the Power BI experience.  
+1. The left navigation pane (nav pane) for your product experience links you to different views of your items and to creator resources. 
+1. The selector for switching product experiences.
+1. The top menu bar for orienting yourself in [!INCLUDE [product-name](../includes/product-name.md)], finding items, help, and sending Microsoft feedback. The [**Account manager**](#find-your-account-and-license-information) control is a critical icon for looking up your account information and managing your Fabric trial. 
+1. Options for creating new items.  
+1. Links to recommended content. This content helps you get started using the product experience and links to items and workspaces that you visit often.
+1. Your items organized by recent, favorites, and items shared with you by your colleagues. The items that appear here are the same across product experiences, with the exception of the Power BI experience.  
 
 > [!IMPORTANT]
 > Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. The exception to this is if your subscription or license changes to one with less access, then you will receive a prompt asking you to start a trial or upgrade your license. 
@@ -52,9 +55,14 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 
 :::image type="content" source="media/fabric-home/fabric-nav-pane.png" alt-text="Screenshot of the nav pane for Data factory.":::        
 
-Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data factory nav pane. The options in your nav pane depend on the product experience you've selected. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
+Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data factory nav pane. Notice that **My workspace** is the active workspace. The options in your nav pane depend on the product experience you've selected. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
 
-The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product experience nav pane includes **Home**, **Browse**, **OneLake data hub**, **Workspaces**, and **My workspace**.       
+In the bottom section of the nav pane is where you find and open your workspaces. Use the [workspace selector](#find-and-open-workspaces) to view a list of your workspaces and select one to open. Below the workspace selector is the name of the currently open workspace.  
+    - By default, you see the **Workspaces** selector and **My workspace**.  
+    - When you open a workspace, its name replaces **My workspace**.  
+    - Whenever you create a new item, it's added to the open workspace.  
+
+The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product experience nav pane includes **Home**, **Browse**, **OneLake data hub**, **Create**, and  **Workspaces**.
 
 ### Find and open workspaces
 
@@ -64,7 +72,7 @@ There are different ways to find and open your workspaces. If you know the name 
 
 :::image type="content" source="media/fabric-home/fabric-home-workspaces.png" alt-text="Screenshot showing list of workspaces with red outlines around the Search fields and Workspaces icon.":::
 
-The workspace opens on your canvas, and the name of the workspace is listed on your nav pane. When you open a workspace, you can view its content. It includes items such as dashboards, reports, worksheets, and dataflows. 
+The workspace opens on your canvas, and the name of the workspace is listed on your nav pane. When you open a workspace, you can view its content. It includes items such as notebooks, pipelines, reports, and lakehouses. 
 
 For more information, see [Workspaces](workspaces.md).
 
@@ -102,7 +110,7 @@ For more information about the Help pane, see [Get in-product help](fabric-help-
 
 ### Find help and support
 
-If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane for additional resources.  Use the links to ask the community for help or to connect with [!INCLUDE [product-name](../includes/product-name.md)] Support. For more information about contacting Support, see [Support options](/powerbi-docs/support/service-support-options.md).
+If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane for more resources.  Use the links to ask the community for help or to connect with [!INCLUDE [product-name](../includes/product-name.md)] Support. For more information about contacting Support, see [Support options](/powerbi-docs/support/service-support-options.md).
 
 ### Find your account and license information
 

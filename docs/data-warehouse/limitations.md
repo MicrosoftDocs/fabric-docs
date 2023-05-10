@@ -56,4 +56,4 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 ## Next steps
 
-- [Get Started with Synapse Data Warehouse](create-warehouse.md)
+- [Get Started with Warehouse](create-warehouse.md)

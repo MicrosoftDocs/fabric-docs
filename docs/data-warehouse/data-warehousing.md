@@ -44,7 +44,7 @@ Compute and storage are decoupled in a [!INCLUDE [fabric-dw](includes/fabric-dw.
 
 ### Easily ingest, load and transform at scale
 
-Data can be [ingested](ingest-data.md) into the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] through Pipelines, Dataflows, cross database querying or the COPY INTO command. Once ingested, data can be analyzed by multiple business groups through functionality such as sharing and cross database querying. Time to insights is expedited through a fully integrated BI experience through graphical data modeling easy to use web experience for querying within the Synapse Data Warehouse Editor. 
+Data can be [ingested](ingest-data.md) into the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] through Pipelines, Dataflows, cross database querying or the COPY INTO command. Once ingested, data can be analyzed by multiple business groups through functionality such as sharing and cross database querying. Time to insights is expedited through a fully integrated BI experience through graphical data modeling easy to use web experience for querying within the Warehouse Editor. 
 
 ## What types of warehouses are available in Microsoft Fabric? 
 
@@ -68,7 +68,7 @@ To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [Get 
 
 ### Synapse Data Warehouse
 
-In a [!INCLUDE [product-name](../includes/product-name.md)] workspace, a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is labeled 'Warehouse' under the **Type** column. A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports transactions, DDL, and DML queries. 
+In a [!INCLUDE [product-name](../includes/product-name.md)] workspace, a Synapse Data Warehouse or **Warehouse** is labeled as 'Warehouse' under the **Type** column. A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports transactions, DDL, and DML queries. 
 
 :::image type="content" source="media\data-warehousing\warehouse-type.png" alt-text="Screenshot showing the Warehouse type in workspace." lightbox="media\data-warehousing\warehouse-type.png":::
 
@@ -76,17 +76,17 @@ Unlike a [!INCLUDE [fabric-se](includes/fabric-se.md)] which only supports read 
 
 To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Create a warehouse in [!INCLUDE [product-name](../includes/product-name.md)]](create-warehouse.md).
 
-## Comparing the Synapse Data Warehouse and the SQL Endpoint of the Lakehouse
+## Comparing the Warehouse and the SQL Endpoint of the Lakehouse
 
 This section describes the differences between the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabricse](includes/fabric-se.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
-:::image type="content" source="media\data-warehousing\synapse-overview-diagram.png" alt-text="Diagram of a SQL Endpoint and a Synapse Data Warehouse in Microsoft Fabric." lightbox="media\data-warehousing\synapse-overview-diagram.png" :::
+:::image type="content" source="media\data-warehousing\synapse-overview-diagram.png" alt-text="Diagram of a SQL Endpoint and a Warehouse in Microsoft Fabric." lightbox="media\data-warehousing\synapse-overview-diagram.png" :::
 
 The **[!INCLUDE [fabricse](includes/fabric-se.md)]** is a *read-only* warehouse that is automatically generated upon creation from a [Lakehouse](../data-engineering/lakehouse-overview.md) in [!INCLUDE [product-name](../includes/product-name.md)]. Delta tables that are created through Spark in a Lakehouse are automatically discoverable in the [!INCLUDE [fabricse](includes/fabric-se.md)] as tables. The [!INCLUDE [fabricse](includes/fabric-se.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using the SQL connection string. Data analysts can then use T-SQL to access Lakehouse data artifacts using the warehouse experience. Use [!INCLUDE [fabricse](includes/fabric-se.md)] to design your warehouse for BI needs and serving data.
 
 The **[!INCLUDE [fabricdw](includes/fabric-dw.md)]** or **Warehouse** is a 'traditional' data warehouse and supports the full transactional T-SQL capabilities like an enterprise data warehouse. As opposed to [!INCLUDE [fabricse](includes/fabric-se.md)], where tables and data are automatically created, you are fully in control of [creating tables](tables.md), loading, transforming, and querying your data in the data warehouse using either the [!INCLUDE [product-name](../includes/product-name.md)] portal or T-SQL commands. 
 
-For more information about querying your data in [!INCLUDE [product-name](../includes/product-name.md)], see [Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric](query-warehouse.md).
+For more information about querying your data in [!INCLUDE [product-name](../includes/product-name.md)], see [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md).
 
 ### Automatically generated schema in the SQL Endpoint of the Lakehouse
 

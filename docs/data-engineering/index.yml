@@ -111,17 +111,17 @@ landingContent:
             url: tutorial-lakehouse-introduction.md
       - linkListType: tutorial
         links:
-          - text: Step1 - Create a workspace
+          - text: Step 1 - Create a workspace
             url: tutorial-lakehouse-get-started.md
-          - text: Step2 - Create a lakehouse
+          - text: Step 2 - Create a lakehouse
             url: tutorial-build-lakehouse.md
-          - text: Step2 - Ingest data into lakehouse
+          - text: Step 3 - Ingest data into lakehouse
             url: tutorial-lakehouse-data-ingestion.md
-          - text: Step2 - Transform data into delta tables
+          - text: Step 4 - Transform data into delta tables
             url: tutorial-lakehouse-data-preparation.md
-          - text: Step2 - Build a report
+          - text: Step 5 - Build a report
             url: tutorial-lakehouse-build-report.md
-          - text: Step2 - Clean up resources
+          - text: Step 6 - Clean up resources
             url: tutorial-lakehouse-clean-up.md
 
   # Card 

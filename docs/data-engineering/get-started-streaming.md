@@ -27,7 +27,7 @@ This quickstart explains how to create a Spark Job Definition that contains Pyth
 
 Use the following steps to create a lakehouse:
 
-1. In Microsoft Fabric, select the **Synapse Data Engineering** workload.
+1. In Microsoft Fabric, select the **Synapse Data Engineering** experience.
 
 1. Navigate to your desired workspace or create a new one if needed.
 

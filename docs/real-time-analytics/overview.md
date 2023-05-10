@@ -30,7 +30,7 @@ Real-Time Analytics is a fully managed big data analytics platform optimized for
 * Work with **versatile data structures** including query structured, semi-structured, or free text.
 * **Query** raw data without transformation, with high performance, incredibly low response time, while using a wide variety of available [operators](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 * **Scale to an unlimited** amount of data, from gigabytes to petabytes, with unlimited scale on concurrent queries and concurrent users.
-* **Integrate** seamlessly with other workloads and items in Microsoft Fabric.
+* **Integrate** seamlessly with other experiences and items in Microsoft Fabric.
 
 ## When to use Real-Time Analytics?
 
@@ -58,9 +58,9 @@ The main items available in Real-Time Analytics include:
 
 See how these items work together in the end-to-end streaming data consumption and analysis scenario: [Real-Time Analytics Tutorial- Introduction](tutorial-introduction.md)
 
-## Integration with other workloads
+## Integration with other experiences
 
-:::image type="content" source="media/real-time-analytics-overview/schematic-architecture.png" alt-text="Schematic image of architecture of Real-Time Analytics integration with other workloads.":::
+:::image type="content" source="media/real-time-analytics-overview/schematic-architecture.png" alt-text="Schematic image of architecture of Real-Time Analytics integration with other experiences.":::
 
 * Create [Event Hubs cloud connections](get-data-event-hub.md) to stream data into Real-Time Analytics.
 * Data in OneLake is accessed by Real-Time Analytics in several ways:
