@@ -10,9 +10,9 @@ ms.date: 04/24/2023
 
 # Lineage for models and experiments
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In modern business intelligence (BI) projects, understanding the flow of data from the data source to its destination can be a challenge. The challenge is even bigger if you've built advanced analytical projects spanning multiple data sources, artifacts, and dependencies. Questions like "What happens if I change this data?" or "Why isn't this report up to date?" can be hard to answer. They might require a team of experts or deep investigation to understand. The Fabric lineage view helps you answer these questions.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Lineage and machine learning
 
@@ -57,11 +57,11 @@ To access the lineage view:
 
 1. Select your Fabric workspace and then navigate to the workspace list.
 
-  :::image type="content" source="media/lineage/artifact-workspace-list-view-data-science.png" alt-text="Image showing workspace list view in Fabric." lightbox="media/lineage/artifact-workspace-list-view-data-science.png":::
+   :::image type="content" source="media/lineage/artifact-workspace-list-view-data-science.png" alt-text="Image showing workspace list view in Fabric." lightbox="media/lineage/artifact-workspace-list-view-data-science.png":::
 
 2. Switch from the workspace **List** view to the Workspace **Lineage** view.
 
-  :::image type="content" source="media/lineage/workspace-artifact-lineage-data-science.png" alt-text="Image showing workspace lineage view in Fabric." lightbox="media/lineage/workspace-artifact-lineage-data-science.png":::
+   :::image type="content" source="media/lineage/workspace-artifact-lineage-data-science.png" alt-text="Image showing workspace lineage view in Fabric." lightbox="media/lineage/workspace-artifact-lineage-data-science.png":::
 
 3. You can also navigate to **Lineage** view for a specific artifact by opening the related actions.
 

@@ -5,7 +5,7 @@ author: nelgson
 ms.author: negust
 ms.reviewer: franksolomon
 ms.topic: overview
-ms.date: 05/23/2023
+ms.date: 03/24/2023
 
 ms.search.form: Data Science Overview
 ---
@@ -13,12 +13,8 @@ ms.search.form: Data Science Overview
 # What is Data Science in Microsoft Fabric?
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] offers  Data Science experiences to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports. 
-
-[!INCLUDE [product-name](../includes/product-name.md)] offers various data science capabilities.  
-
-[!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science Home page. 
+[!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science Home page. From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
 
 :::image type="content" source="media/data-science-overview/fabric-home.png" alt-text="Screenshot of the Fabric home page." lightbox="media/data-science-overview/fabric-home.png":::
 
@@ -46,7 +42,7 @@ Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] wor
 
 ## Data Discovery and pre-processing 
 
-[!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in One Lake using the Lakehouse item. Lakehouse easily attaches to a Notebook to browse and interact with data.
+[!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in OneLake using the Lakehouse item. Lakehouse easily attaches to a Notebook to browse and interact with data.
 
 Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, this makes seamless data reads from One Lake possible.
 
@@ -80,8 +76,8 @@ MLflow experiments and runs can track the ML model training. [!INCLUDE [product-
  
 The SynapseML (previously known as MMLSpark) open-source library, that Microsoft owns and maintains, simplifies massively scalable machine learning pipeline creation. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. The open-source SynapseML library includes a rich ecosystem of ML tools for development of predictive models, as well as leveraging pre-trained AI models from Azure Cognitive Services. Learn more about [SynapseML](https://aka.ms/spark).
 
-## Enrich and operationalize
 
+## Enrich and operationalize
 Notebooks can handle machine learning model batch scoring with open-source libraries for prediction, or the [!INCLUDE [product-name](../includes/product-name.md)] scalable universal Spark Predict function, which supports mlflow packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] model registry.
 
 ### Gain insights

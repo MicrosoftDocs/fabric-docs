@@ -12,9 +12,9 @@ ms.search.form: Data Wrangler
 
 # How to accelerate data prep with Data Wrangler in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Data Wrangler is a notebook-based tool that provides users with an immersive experience to conduct exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data-cleaning operations. Each operation can be applied in a matter of clicks, updating the data display in real time and generating code that can be saved back to the notebook as a reusable function.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 

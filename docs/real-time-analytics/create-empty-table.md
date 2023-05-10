@@ -1,6 +1,6 @@
 ---
 title: Create an empty table in Real-Time Analytics
-description: Learn how to create an empty table.
+description: Learn how to create an empty table in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,7 +8,6 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-
 # Create an empty table
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
@@ -19,19 +18,19 @@ You can create an empty table without a data source to use as a testing environm
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
-* [KQL database](create-database.md)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [KQL database](create-database.md)
 
 ## Create an empty table
 
 1. Browse to the KQL database editor of your database of choice.
 1. Select **New** > **Table**.
 
-    :::image type="content" source="media/empty-table/new-table.png" alt-text="Screenshot of lower ribbon that shows the dropdown menu of the New button. The dropdown option titled Table is highlighted.":::
+    :::image type="content" source="media/empty-table/new-table.png" alt-text="Screenshot of lower ribbon that shows the dropdown menu of the New button in Real-Time analytics. The dropdown option titled Table is highlighted.":::
 
 1. Enter a name for your table.
 
-    :::image type="content" source="media/empty-table/table-name.png" alt-text="Screenshot of the Destination tab. The table name is highlighted.":::
+    :::image type="content" source="media/empty-table/table-name.png" alt-text="Screenshot of the Destination tab in the new table wizard in Real-Time Analytics. The table name is highlighted.":::
 
     > [!TIP]
     > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
@@ -43,7 +42,7 @@ You can create an empty table without a data source to use as a testing environm
 1. By default, the **Source type** is set to **None**. If you select **None**, you'll need to manually define the table schema.
 1. Select **Next: Schema**.
 
-:::image type="content" source="media/empty-table/table-source.png" alt-text="Screenshot of the Source tab that shows that the source type is set to None.":::
+:::image type="content" source="media/empty-table/table-source.png" alt-text="Screenshot of the Source tab that shows that the source type is set to None in the new table wizard in Real-Time Analytics.":::
 
 ### Schema
 
@@ -63,16 +62,17 @@ The partial data preview is automatically inferred based on your data.
 
 To add a new column, select **Add new column** under **Partial data preview**.
 
-:::image type="content" source="media/empty-table/schema-new-column.png" alt-text="Screenshot of the Schema tab. The Add new column button is highlighted.":::
+:::image type="content" source="media/empty-table/schema-new-column.png" alt-text="Screenshot of the Schema tab in the new table wizard in Real-Time Analytics. The Add new column button is highlighted.":::
 
 ##### Edit columns
 
 1. Enter a column name. The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
 1. Select a data type for your column. The default column type is `string` but can be altered in the dropdown menu of the **Column type** field.
 1. Select **Add column** to add more columns.
+
 1. Select **Save** to add the columns to your table.
 
-    :::image type="content" source="media/empty-table/edit-columns.png" alt-text="Screenshot of  the Edit columns window showing filled column names and their data type.":::
+    :::image type="content" source="media/empty-table/edit-columns.png" alt-text="Screenshot of  the Edit columns window showing filled column names and their data type in the new table wizard in Real-Time Analytics.":::
 
     The Partial data preview  will reflect the added columns:
     :::image type="content" source="media/empty-table/added-columns.png" alt-text="Screenshot of Schema tab showing the added columns under the Partial data preview. The column names are highlighted.":::
@@ -86,9 +86,9 @@ To add a new column, select **Add new column** under **Partial data preview**.
 
 In the **Create table completed** window, the empty table will be marked with a green check mark to indicate that it was created successfully.
 
-:::image type="content" source="media/empty-table/table-summary.png" alt-text="Screenshot of the Summary tab that shows that the table was created successfully.":::
+:::image type="content" source="media/empty-table/table-summary.png" alt-text="Screenshot of the Summary tab that shows that the table was created successfully in Real-Time Analytics.":::
 
 ## Next steps
 
-[Get data from a blob](get-data-blob.md)
-[Get data from Azure Event Hubs](get-data-event-hub.md)
+* [Get data from a blob](get-data-blob.md)
+* [Get data from Azure Event Hubs](get-data-event-hub.md)

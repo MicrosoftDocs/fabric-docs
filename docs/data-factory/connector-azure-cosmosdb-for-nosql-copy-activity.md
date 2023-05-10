@@ -14,18 +14,6 @@ This article outlines how to use the copy activity in a data pipeline to copy da
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Supported format
-
-Azure Cosmos DB for NoSQL supports the following file formats. Refer to each article for format-based settings.
-
-- Avro format
-- [Binary format](format-binary.md)
-- [Delimited text format](format-delimited-text.md)
-- [Excel format](format-excel.md)
-- JSON format
-- ORC format
-- Parquet format
-- XML format
 
 ## Supported configuration
 
@@ -104,11 +92,12 @@ Allowed values are `Timespan`. An example is 00:30:00 (30 minutes).
 
 ### Mapping
 
-For the **Mapping** tab configuration, go to Mapping.
+For the **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+
 
 ### Settings
 
-For the **Settings** tab configuration, go to Settings.
+For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 

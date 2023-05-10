@@ -19,12 +19,15 @@ Inside each directory are the mandatory system files that define the item. Besid
 - [item.metadata.json](#metadata-file)
 - [item.config.json](#config-file)
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 ## Metadata file
 
 ```json
 { 
-    type: <string>, 
-    displayName: <string>, 
+    "type": <string>, 
+    "displayName": <string>,
+    "description": <string>
 } 
 ```
 
@@ -32,6 +35,7 @@ The item.metadata.json file contains the following attributes:
 
 - `type`: the item’s type (dataset, report etc.)
 - `displayName`: the name of the item
+- `description`: (optional) description of the item
 
 To rename an item, change the `displayName` in the ‘item.metadata.json’ file. Changing the name of the folder doesn’t change the display name of the item in the workspace.
 

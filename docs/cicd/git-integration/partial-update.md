@@ -11,7 +11,9 @@ ms.custom:
 
 # Manual update
 
-When updating items in a workspace, there’s always a chance that one of them will fail. The workspace fails to update if the incoming update from the git branch causes inconsistencies or other problems in the workspace that are difficult to determine in advance. If an item fails to update, the update stops and you're left in a situation where your workspace isn't synced to any git branch.
+When updating items in a workspace, there’s always a chance that one of them will fail. The workspace fails to update if the incoming update from the git branch causes inconsistencies or other problems in the workspace that are difficult to determine in advance. When an item fails to update, the update process stops. If the item that failed is the first (or only) item that was updating, the update fails, but the workspace is still synced with the original branch. If an item fails after one or more items succeeded in updating, you're left in a situation where some items are synced and some aren't so your workspace isn't synced to any git branch.
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 There are many reasons that an update can fail, including, but not limited to the following problems:
 
@@ -27,7 +29,11 @@ An error message lets you know which item failed and why.
 
 :::image type="content" source="./media/partial-update/partial-update-error.png" alt-text="Screenshot showing the error message when update fails.":::
 
-This error message appears for any user trying to access the workspace, until the update is completed successfully.
+This error message appears when the update fails. Any user trying to access the workspace after that sees the following error until the update is completed successfully.
+
+:::image type="content" source="./media/partial-update/unable-to-update.png" alt-text="Screenshot showing the error message when someone tries to connect to a workspace after an update fails.":::
+
+Select **View details** to see the previous error message.
 
 ## Git statuses after an item fails
 

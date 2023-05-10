@@ -10,9 +10,9 @@ ms.date: 05/23/2023
 
 # Training and evaluating a text classification model in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this notebook, we demonstrate how to solve a text classification task with word2vec + linear-regression model on Spark.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The sample dataset consists of metadata relating to books digitized by the British Library in partnership with Microsoft. It includes human generated labels for classifying a book as 'fiction' or 'non-fiction'. We use this dataset to train a model for genre classification that predicts whether a book is 'fiction' or 'non-fiction' based on its title.
 

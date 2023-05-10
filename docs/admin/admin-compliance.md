@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # Compliance settings
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Microsoft Fabric security is based on [Power BI security](/power-bi/enterprise/service-admin-power-bi-security). Some features aren't fully compliant with Microsoft's security requirements. By default, these features are blocked in Microsoft Fabric. You can decide whether features that don't fully comply with Microsoft Fabric's security requirements, are turned on in your organization.
 
 ## Prerequisites
@@ -26,9 +28,9 @@ You need to be a [Microsoft Fabric admin](admin-overview.md) with one of these a
 
 [Private endpoints](/power-bi/enterprise/service-security-private-links) is a feature that provides secure networking for Microsoft Fabric. Some Microsoft Fabric items aren't compliant with private endpoints and Microsoft Fabric can't provide secure data traffic for these items. If private endpoints are used in your organization, the items that don't have a secure connection are disabled by default. When you turn the *compliance settings* on, Microsoft Fabric uses unsecure network connections for these items.
 
-These features require private endpoints and won't work unless you turn on the *compliance settings* switch:  
+The Microsoft Fabric items that belong to these features require private endpoints, and won't work unless you turn on the *compliance settings* switch:  
 
-* Kusto
+* Real-time Analytics
 
 * Data engineering
 
@@ -54,6 +56,15 @@ To enable noncompliant features, do the following:
 
 3. Turn on the switch titled *Users can work with content that doesn't comply with security requirements*.
 
+    >[!NOTE]
+    >When the [Block Public Internet Access](/power-bi/admin/service-admin-portal-advanced-networking) switch is enabled, noncompliant Microsoft Fabric items aren't supported even if you enabled *Users can work with content that doesn't comply with security requirements*.
+
+## Disable noncompliant features
+
+By default, noncompliant Microsoft Fabric items aren't enable. After you enable using these items, you may decide to disable them again. In such cases, the items will still be visible in their workspaces. When users try to open these items they'll get an error message. 
+
 ## Next steps
 
-[Admin overview](admin-overview.md)
+* [What is Microsoft Fabric admin?](admin-overview.md)
+
+* [What is the admin center?](admin-center.md)

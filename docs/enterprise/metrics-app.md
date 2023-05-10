@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # What is the utilization and metrics app?
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 The Microsoft Fabric utilization and metrics app is designed to provide monitoring capabilities for Microsoft Fabric capacities. Monitoring your capacities is essential for making informed decisions on how to best use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on [autoscale](/power-bi/enterprise/service-premium-auto-scale).
 
 The app is updated often with new features and functionalities and provides the most in-depth information into how your capacities are performing.

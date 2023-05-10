@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1, intro-get-started
-ms.date: 05/23/2023
+ms.date: 05/09/2023
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 ---
 
@@ -15,22 +15,20 @@ ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introd
 
 This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. It's recommended to read the [deployment pipelines introduction](intro-to-deployment-pipelines.md), before you proceed.
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) Learn module, which shows how to create a deployment pipeline.
 
 >[!NOTE]
->In a deployment pipeline, one Premium workspace is assigned to each stage. Before you start working with your pipeline in production, review the [capacity requirements](../troubleshoot-cicd.yml#what-type-of-capacity-can-i-assign-to-a-workspace-in-a-pipeline-) for the pipeline's workspaces.
+>In a deployment pipeline, one Premium workspace is assigned to each stage. Before you start working with your pipeline in production, review the [capacity requirements](../troubleshoot-cicd.yml#what-type-of-capacity-do-i-need-) for the pipeline's workspaces.
 
 ## Prerequisites
 
-You'll be able to access the deployment pipelines feature, if the following conditions are met:
+To access the deployment pipelines feature, you must meet the following conditions:
 
-* You have one of the following Premium licenses:
+* You have an [Microsoft Fabric license](../../enterprise/licenses.md):
 
-  * You're a [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md), and you belong to an organization that has Premium capacity.
-
-  * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
-
-* You're an admin of a Premium [workspace](../../get-started/create-workspaces.md).
+* You're an admin of a Fabric [workspace](../../get-started/create-workspaces.md).
 
 >[!NOTE]
 > You'll also be able to see the deployment pipelines button, if you previously created a pipeline, or if a pipeline was shared with you.
