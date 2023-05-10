@@ -38,14 +38,14 @@ For more information, see the [data transformation activities](transform-data.md
 
 Data transformation activity | Compute environment
 ---------------------------- | -------------------
-Copy data | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-Dataflow Gen2 | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-Delete data | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-Fabric Notebook | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-Spark job definition | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-Stored Procedure | Azure SQL, Azure Synapse Analytics, or SQL Server
-SQL script | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-Switch | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+Copy data | Compute manager by Microsoft Fabric
+Dataflow Gen2 | Compute manager by Microsoft Fabric
+Delete data | Compute manager by Microsoft Fabric
+Fabric Notebook | Apache Spark clusters managed by Microsoft Fabric
+Fabric Spark job definition | Apache Spark clusters managed by Microsoft Fabric
+Stored Procedure | Apache Spark clusters managed by Microsoft Fabric
+SQL script | Azure SQL, Azure Synapse Analytics, or SQL Server
+
 
 ## Control flow activities
 The following control flow activities are supported:
