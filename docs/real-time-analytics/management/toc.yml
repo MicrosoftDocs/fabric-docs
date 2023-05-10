@@ -73,6 +73,8 @@ items:
       href: /azure/data-explorer/kusto/management/alter-ingestion-mapping-command?context=/fabric/context/context&pivots=fabric
     - name: .create ingestion mapping
       href: /azure/data-explorer/kusto/management/create-ingestion-mapping-command?context=/fabric/context/context&pivots=fabric
+    - name: .create-or-alter ingestion mapping
+      href: /azure/data-explorer/kusto/management/create-or-alter-ingestion-mapping-command?context=/fabric/context/context&pivots=fabric
     - name: .drop ingestion mapping
       href: /azure/data-explorer/kusto/management/drop-ingestion-mapping-command?context=/fabric/context/context&pivots=fabric
     - name: .show ingestion mapping
@@ -103,10 +105,30 @@ items:
       href: /azure/data-explorer/kusto/management/clear-table-data-command?context=/fabric/context/context&pivots=fabric
   - name: External tables
     items:
-    - name: Create and alter Azure Storage external tables
-      href: /azure/data-explorer/kusto/management/external-tables-azurestorage-azuredatalake?context=/fabric/context/context&pivots=fabric
-    - name: Create and alter SQL Server external tables
-      href: /azure/data-explorer/kusto/management/external-sql-tables?context=/fabric/context/context&pivots=fabric
+    - name: Azure Storage external tables
+      items:
+      - name: Create or alter Azure Blob Storage/ADLS external table
+        href: /azure/data-explorer/kusto/management/external-tables-azurestorage-azuredatalake?context=/fabric/context/context&pivots=fabric
+      - name: Create or alter delta external table
+        href: /azure/data-explorer/kusto/management/external-tables-azurestorage-deltalake?context=/fabric/context/context&pivots=fabric
+      - name: Manage external table mappings
+        items:
+        - name: .alter external table mapping
+          href: /azure/data-explorer/kusto/management/external-table-mapping-alter?context=/fabric/context/context&pivots=fabric
+        - name: .create external table mapping
+          href: /azure/data-explorer/kusto/management/external-table-mapping-create?context=/fabric/context/context&pivots=fabric
+        - name: .drop external table mapping
+          href: /azure/data-explorer/kusto/management/external-table-mapping-drop?context=/fabric/context/context&pivots=fabric
+        - name: .show external table mapping
+          href: /azure/data-explorer/kusto/management/external-table-mapping-show?context=/fabric/context/context&pivots=fabric
+      - name: Show external table artifacts
+        href: /azure/data-explorer/kusto/management/show-external-table-artifacts?context=/fabric/context/context&pivots=fabric
+    - name: SQL Server external tables
+      items:
+      - name: Create and alter external table
+        href: /azure/data-explorer/kusto/management/external-sql-tables?context=/fabric/context/context&pivots=fabric
+      - name: Query a SQL external table
+        href: /azure/data-explorer/kusto/management/external-sql-tables-query?context=/fabric/context/context&pivots=fabric
     - name: .drop external table
       href: /azure/data-explorer/kusto/management/drop-external-table?context=/fabric/context/context&pivots=fabric
     - name: .show external table
@@ -539,6 +561,9 @@ items:
     href: /azure/data-explorer/kusto/management/manage-materialized-view-security-roles?context=/fabric/context/context&pivots=fabric
   - name: Manage function roles
     href: /azure/data-explorer/kusto/management/manage-function-security-roles?context=/fabric/context/context&pivots=fabric
+  - name: Referencing security principals
+    displayName: Security group, Identity providers, IdPs, SG, Azure AD tenants
+    href: /azure/data-explorer/kusto/management/referencing-security-principals?context=/fabric/context/context&pivots=fabric
 - name: Data ingestion
   items:
   - name: Ingest from storage
@@ -585,6 +610,8 @@ items:
       href: /azure/data-explorer/kusto/management/data-export/continuous-data-export?context=/fabric/context/context&pivots=fabric
     - name: Create or alter continuous export
       href: /azure/data-explorer/kusto/management/data-export/create-alter-continuous?context=/fabric/context/context&pivots=fabric
+    - name: Use a managed identity
+      href: /azure/data-explorer/kusto/management/data-export/continuous-export-with-managed-identity?context=/fabric/context/context&pivots=fabric
     - name: Disable or enable continuous export
       href: /azure/data-explorer/kusto/management/data-export/disable-enable-continuous?context=/fabric/context/context&pivots=fabric
     - name: Drop continuous export
@@ -636,25 +663,9 @@ items:
     href: /azure/data-explorer/kusto/management/operations?context=/fabric/context/context&pivots=fabric
   - name: Queries
     href: /azure/data-explorer/kusto/management/queries?context=/fabric/context/context&pivots=fabric
+    displayName: .show running queries .cancel query
   - name: Streaming ingestion statistics
     href: /azure/data-explorer/kusto/management/streamingingestionstatistics?context=/fabric/context/context&pivots=fabric
-- name: Access control
-  href: /azure/data-explorer/kusto/management/access-control/index?context=/fabric/context/context&pivots=fabric
-  items:
-  - name: Azure Active Directory
-    displayName: AAD, Azure AD
-    href: /azure/data-explorer/kusto/management/access-control/aad?context=/fabric/context/context&pivots=fabric
-  - name: Role-based access control
-    href: /azure/data-explorer/kusto/management/access-control/role-based-access-control?context=/fabric/context/context&pivots=fabric
-    displayName: RBAC, security roles, principals
-  - name: How-To Azure Active Directory authentication
-    displayName: AAD, Azure AD
-    href: /azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad?context=/fabric/context/context&pivots=fabric
-  - name: Referencing security principals
-    displayName: Security group, Identity providers, IdPs, SG, Azure AD tenants
-    href: /azure/data-explorer/kusto/management/./access-control/referencing-security-principals?context=/fabric/context/context&pivots=fabric
-  - name: Allow cross-tenant queries and commands
-    href: /azure/data-explorer/kusto/management/../../cross-tenant-query-and-commands?context=/fabric/context/context&pivots=fabric
 - name: Advanced data management
   items:
   - name: Extents (data shards)

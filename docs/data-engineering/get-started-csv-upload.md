@@ -11,9 +11,9 @@ ms.search.form: csv load to delta to pbi report
 
 # CSV file upload to Delta for Power BI reporting
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](lakehouse-overview.md) is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this tutorial you learn to:
 

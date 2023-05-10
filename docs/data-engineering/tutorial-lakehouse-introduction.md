@@ -26,7 +26,7 @@ With the flexibility offered by Fabric, you can implement either lakehouse or da
 
 This tutorial explains how a developer at the fictional Wide World Importers company from the retail domain completes the following steps:
 
-1. Sign in to your Power BI account, or if you don't have one yet, [sign up for a free trial](../placeholder.md).
+1. Sign in to your Power BI account, or if you don't have one yet, [sign up for a free trial](../get-started/fabric-trial.md).
 
 1. Build and implement an end-to-end lakehouse for your organization:
 
