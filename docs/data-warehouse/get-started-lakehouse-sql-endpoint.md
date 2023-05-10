@@ -20,9 +20,9 @@ This article explains the data warehousing experience with the SQL Endpoint of t
 
 In Fabric, when you [create a lakehouse](../onelake/create-lakehouse-onelake.md), a [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) is automatically created. 
 
-The SQL Endpoint enables you to query data in the Lakehouse using T-SQL language and TDS protocol. Every Lakehouse has one SQL Endpoint, and each workspace can have more than one Lakehouse. The number of SQL Endpoints in a workspace matches the number of Lakehouse artifacts.
+The SQL Endpoint enables you to query data in the Lakehouse using T-SQL language and TDS protocol. Every Lakehouse has one SQL Endpoint, and each workspace can have more than one Lakehouse. The number of SQL Endpoints in a workspace matches the number of Lakehouse items.
 
-- The SQL Endpoint is automatically generated for every Lakehouse artifact and exposes Delta tables from the Lakehouse as SQL tables that can be queried using the T-SQL language.
+- The SQL Endpoint is automatically generated for every Lakehouse and exposes Delta tables from the Lakehouse as SQL tables that can be queried using the T-SQL language.
 - Every delta table from a Lakehouse is represented as one table. Data should be in delta format.
 - The [default Power BI dataset](datasets.md) is created for every SQL Endpoint and it follows the naming convention of the Lakehouse objects.
 
