@@ -41,9 +41,9 @@ The SQL Endpoint automatically discovers data stored in the `/Tables` folder and
 
 In addition to SQL tables, the [!INCLUDE [product-name](../includes/product-name.md)] workspace exposes lakehouse data using a default dataset that can either directly access data in the lake or use SQL tables in the SQL endpoint to read data.
 
-## Analyzing gold data in medallion architecture
+## Analyzing data in external data lakes
 
-[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) are not scoped to data analytics in [!INCLUDE [product-name](../includes/product-name.md)] lakehouse. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) enable you to analyze lake data in any lakehouse implemented using Synapse Spark, Azure Databricks, or any other lake-centric data engineering engine. 
+[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) are not scoped to data analytics in [!INCLUDE [product-name](../includes/product-name.md)] lakehouse and One Lake. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) enable you to analyze lake data in any lakehouse implemented using Synapse Spark, Azure Databricks, or any other lake-centric data engineering engine. 
 
 One of the well-known strategies for lake data organization is a [medallion](/azure/databricks/lakehouse/medallion) architecture where the files are organized in raw (bronze), consolidated (silver), and refined (gold) layers. [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) can be used to analyze data in the gold layer of medallion architecture if the files are stored in `Delta Lake` format.
 
@@ -53,11 +53,20 @@ Any folder referenced using a [shortcut](../data-engineering/lakehouse-shortcuts
 
 ## Cross-workspace data analytics
 
-[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) enable you to analyze data in the warehouse or lakehouse artifacts placed in other [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
-- Every [!INCLUDE [product-name](../includes/product-name.md)] lakehouse stores data in OneLake. [Shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to reference folders in any OneLake location.
+[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) enable you to analyze data in the Warehouse or Lakehouse artifacts placed in other [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
+- Every [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse stores data in OneLake. [Shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to reference folders in any OneLake location.
 - Every [!INCLUDE [product-name](../includes/product-name.md)] Warehouse stores table data in OneLake. If a table is append-only, the table data is exposed as `Delta Lake` datasets in OneLake. [Shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to reference folders in any OneLake where the Warehouse tables are exposed.
 
-[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in combination with OneLake [shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to cross-workspace analytics and share the data products created and maintained in different workspaces.
+Use the following steps to enable cross-workspace data analytics:
+1. Create an [One Lake shortcut](../onelake/create-onelake-shortcut.md) that will reference a table or a folder in a workspace that you can access.
+2. Choose a Lakehouse or Warehouse that contains a table or Delta Lake folder that you want to analyze. Once you select a table/folder a shortcut will be shown in the Lakehouse.
+3. Switch to the SQL Endpoint of the Lakehouse and find a SQL table that has a name that matches the shortcut name. This SQL references table/folder in another workspace. 
+4. Query the SQL table that references data in another workspace. The table can be used as any other table in the SQL endpoint (i.e. you can join the tables that reference data in different workspaces).
+
+> [!NOTE]
+> If the SQL table is not immediately shown in the SQL Endpoint, you might need to wait a few minutes. The SQL tables that references data in another workspace is created with a delay.
+
+[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in combination with One Lake [shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to cross-workspace analytics and share the data products created and maintained in different workspaces.
 
 ## Analyzing partitioned data
 
