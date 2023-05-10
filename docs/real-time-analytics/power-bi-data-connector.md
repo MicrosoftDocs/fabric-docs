@@ -51,15 +51,15 @@ To use your **KQL database** as a data source in Power BI, you need to add the A
 1. Launch Power BI Desktop.
 1. On the **Home** tab, select **Get Data** > **More**.
 
-    :::image type="content" source="media/power-bi-data-connector/get-data.png" alt-text="Screenshot of the Home tab in Power BI Desktop, showing the drop-down menu of the Home tab entry titled Get data with the More option highlighted.":::
+    :::image type="content" source="media/power-bi-data-connector/get-data.png" alt-text="Screenshot of the Home tab in Power BI Desktop, showing the drop-down menu of the Home tab entry titled Get data with the More option highlighted."  lightbox="media/power-bi-data-connector/get-data.png":::
 
 1. Search for *Azure Data Explorer*, select **Azure Data Explorer (Kusto)**, and then select **Connect**.
 
-    :::image type="content" source="media/power-bi-data-connector/connect-data.png" alt-text="Screenshot of the Get Data window, showing  Azure Data Explorer in the search bar with the connect option highlighted.":::
+    :::image type="content" source="media/power-bi-data-connector/connect-data.png" alt-text="Screenshot of the Get Data window, showing  Azure Data Explorer in the search bar with the connect option highlighted." lightbox="media/power-bi-data-connector/connect-data.png":::
 
 1. In the window that appears, fill out the form with the following information.
 
-    :::image type="content" source="media/power-bi-data-connector/cluster-database-table.png" alt-text="Screenshot of the Azure Data Explorer(Kusto) connection window showing the help cluster URL, with the DirectQuery option selected.":::
+    :::image type="content" source="media/power-bi-data-connector/cluster-database-table.png" alt-text="Screenshot of the Azure Data Explorer(Kusto) connection window showing the help cluster URL, with the DirectQuery option selected." lightbox="media/power-bi-data-connector/cluster-data-table.png":::
 
     | Setting | Field description | Sample value |
     |---|---|---|
@@ -82,7 +82,7 @@ To use your **KQL database** as a data source in Power BI, you need to add the A
 
     Optionally, if you want to shape your data first, select **Transform data** to launch Power Query Editor. For more information, see [Shape data](/power-bi/fundamentals/desktop-getting-started?source=recommendations&branch=main#shape-data).
 
-    :::image type="content" source="media/power-bi-data-connector/select-table.png" alt-text="Screenshot of Navigator screen, showing that the StormEvents table is selected. The Load button is highlighted.":::
+    :::image type="content" source="media/power-bi-data-connector/select-table.png" alt-text="Screenshot of Navigator screen, showing that the StormEvents table is selected. The Load button is highlighted." lightbox="media/power-bi-data-connector/select-table.png":::
 
 ## Next steps
 

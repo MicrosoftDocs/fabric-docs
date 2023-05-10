@@ -87,7 +87,7 @@ In the following step, you connect a table in your KQL database to the event hub
 1. Browse to your KQL database.
 1. Select **Get data** > **Get data from Event Hubs**.
 
-    :::image type="content" source="media/get-data-event-hub/get-data.png" alt-text="Screenshot of a KQL database showing the Get Data dropdown. The dropdown option titled Event Hubs is highlighted."  lightbox="media/get-data-event-hub/get-data.png":::
+    :::image type="content" source="media/get-data-event-hub/get-data.png" alt-text="Screenshot of a KQL database showing the Get Data dropdown. The dropdown option titled Event Hubs is highlighted."  lightbox="media/get-data-event-hub/get-data-extended.png":::
 
 A wizard opens with the **Destination** tab selected.
 

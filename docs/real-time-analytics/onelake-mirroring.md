@@ -64,15 +64,15 @@ Creating one logical copy of your data in OneLake is a two-step process. You ena
 
 1. Select **New Shortcut** on the right-hand side of the lakehouse.
 
-    :::image type="content" source="media/onelake-mirroring/new-shortcut.png" alt-text="Screenshot of empty Lakehouse. The option titled New shortcut is highlighted.":::
+    :::image type="content" source="media/onelake-mirroring/new-shortcut.png" alt-text="Screenshot of empty Lakehouse. The option titled New shortcut is highlighted."  lightbox="media/onelake-mirroring/new-shortcut.png":::
 
 1. Under **Internal sources**, select **Microsoft OneLake**.
 
-    :::image type="content" source="media/onelake-mirroring/internal-source.png" alt-text="Screenshot of New Shortcut window. The option under Internal sources titled Microsoft OneLake is highlighted.":::
+    :::image type="content" source="media/onelake-mirroring/internal-source.png" alt-text="Screenshot of New Shortcut window. The option under Internal sources titled Microsoft OneLake is highlighted." lightbox="media/onelake-mirroring/internal-sources.png":::
 
 1. In **Select a data source type**, select your KQL database, then select **Next** to connect the data to your shortcut.
 
-    :::image type="content" source="media/onelake-mirroring/onelake-shortcut-data-source.png" alt-text="Screenshot of data source type window showing all of the data sources in your workspace. The button titled Next is highlighted.":::
+    :::image type="content" source="media/onelake-mirroring/onelake-shortcut-data-source.png" alt-text="Screenshot of data source type window showing all of the data sources in your workspace. The button titled Next is highlighted." lightbox="media/onelake-mirroring/onelake-shortcut-data-source.png":::
 
 1. To connect the table with the data from your database, select **>** to expand the tables in the left-hand pane, then select a table.
 

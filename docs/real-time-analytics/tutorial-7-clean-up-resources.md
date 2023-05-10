@@ -22,11 +22,11 @@ Once you're finished with the tutorial, you may want to delete all resources you
 1. Browse to the workspace in which you created the tutorial.
 1. In the ribbon, select the **More menu** [**...**] > **Workspace settings**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/workspace-settings.png" alt-text="Screenshot of accessing workspace settings in Synapse Real-TIme Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/workspace-settings.png" alt-text="Screenshot of accessing workspace settings in Synapse Real-TIme Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/workspace-settings.png":::
 
 1. Select **Other** > **Delete this workspace**
 
-    :::image type="content" source="media/realtime-analytics-tutorial/remove-workspace.png" alt-text="Screenshot showing how to remove a workspace in Synapse Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/remove-workspace.png" alt-text="Screenshot showing how to remove a workspace in Synapse Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/remove-workspace.png":::
 
 1. On the warning, select **Delete**. Once a workspace is deleted, it can't be recovered.
 
