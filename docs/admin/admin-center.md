@@ -1,17 +1,20 @@
 ---
-title: What is the Microsoft Fabric admin center?
-description: This article provides an overview of the admin Microsoft Fabric admin center.
+title: What is the Microsoft Fabric admin portal?
+description: This article provides an overview of the admin Microsoft Fabric admin portal.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
-# What is the admin center?
+# What is the admin portal?
 
-The Microsoft Fabric admin center, previously known as the [admin portal](/power-bi/admin/service-admin-portal), includes settings that govern Microsoft Fabric. For example, you can make changes to [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings), access the Microsoft 365 admin center, and control how users interact with Microsoft Fabric.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The admin center can be accessed by admins with the following roles:
+The Microsoft Fabric [admin portal](/power-bi/admin/service-admin-portal), includes settings that govern Microsoft Fabric. For example, you can make changes to [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings), access the Microsoft 365 admin portal, and control how users interact with Microsoft Fabric.
+
+The admin portal can be accessed by admins with the following roles:
 
 * Global administrator
 
@@ -19,17 +22,17 @@ The admin center can be accessed by admins with the following roles:
 
 * Power BI administrator
 
-If you're not in one of these roles, you only see *Capacity settings* in the admin center.
+If you're not in one of these roles, you only see *Capacity settings* in the admin portal.
 
-## What can I do in the admin center
+## What can I do in the admin portal
 
-The many controls in the admin center are listed in the table below with links to relevant documentation for each one.
+The many controls in the admin portal are listed in the table below with links to relevant documentation for each one.
 
 | Feature | Description  |
 | :---    | :---         |
 | [Tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings) | Enable, disable, and configure Microsoft Fabric. |
 | [Usage metrics](/power-bi/admin/service-admin-portal-usage-metrics) | View usage metrics related to your organization. |
-| [Users](/power-bi/admin//power-bi/admin/service-admin-portal-users) | Manage users in the Microsoft 365 admin center. |
+| [Users](/power-bi/admin/power-bi/admin/service-admin-portal-users) | Manage users in the Microsoft 365 admin portal. |
 | [Premium Per User](/power-bi/admin/service-admin-portal-premium-per-user) | Configure auto refresh and dataset workload settings. |
 | [Audit logs](/power-bi/admin/service-admin-portal-audit-logs) | Audit Microsoft Fabric activities in the Microsoft Purview compliance portal. |
 | [Capacity settings](/power-bi/admin/service-admin-portal-capacity-settings) | Manage Microsoft Fabric DC capacities. |
@@ -42,13 +45,13 @@ The many controls in the admin center are listed in the table below with links t
 | [Protection metrics](/power-bi/admin/service-admin-portal-protection-metrics) | Monitor and track sensitivity label usage and adoption in your organization. |
 | [Featured content](/power-bi/admin/service-admin-portal-featured-content) |  Manage the reports, dashboards, and apps that were promoted to the Featured section on your Home page. |
 
-## How to get to the admin center
+## How to get to the admin portal
 
-To get to the admin center, follow these steps:
+To get to the admin portal, follow these steps:
 
 1. Sign in to Microsoft Fabric using your admin account credentials.
 
-2. Select the cog symbol and from the menu select **Admin center**.
+2. Select the cog symbol and from the menu select **Admin portal**.
 
 ## Next steps
 

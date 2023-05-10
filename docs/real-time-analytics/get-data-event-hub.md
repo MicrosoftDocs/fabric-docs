@@ -1,5 +1,5 @@
 ---
-title: Use an event hub connection to stream data to your KQL database in Real-Time Analytics
+title: Get data from Azure Event Hubs in Real-Time Analytics
 description: Learn how to create a connection to Event Hubs and get data into your KQL database.
 ms.reviewer: guregini
 ms.author: yaschust
@@ -10,7 +10,9 @@ ms.search.form: product-kusto
 ---
 # Get data from Azure Event Hubs
 
-In this article, you'll learn how to get data from event hub into your KQL Database in [!INCLUDE [product-name](../includes/product-name.md)]. [Azure Event Hubs](/azure/event-hubs/event-hubs-about) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
+In this article, you learn how to get data from Event Hubs into your KQL database in [!INCLUDE [product-name](../includes/product-name.md)]. [Azure Event Hubs](/azure/event-hubs/event-hubs-about?context=/fabric/context/context) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
 
 To stream data from Azure Event Hubs into Real-Time-Analytics, you'll go through two main steps. The first step is to create a [!INCLUDE [product-name](../includes/product-name.md)] platform-based cloud connection to a specific event hub instance. This data stream can be used across all [!INCLUDE [product-name](../includes/product-name.md)] workspaces and is managed centrally.
 
@@ -20,12 +22,12 @@ In the second step, you'll connect this [!INCLUDE [product-name](../includes/pro
 
 * An Azure subscription. [Create a free Azure account](https://azure.microsoft.com/free/)
 * [An Event Hubs instance](/azure/event-hubs/event-hubs-create)
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
-* [KQL Database](create-database.md)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [KQL database](create-database.md)
 
 ## Set a shared access policy on your event hub
 
-Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you'll need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the data stream. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature).
+Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you'll need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the data stream. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature?context=/fabric/context/context).
 
 1. In the [Azure portal](https://ms.portal.azure.com/), browse to the specific Event Hubs instance you want to connect.
 1. Under **Settings**, select **Shared access policies**
@@ -60,7 +62,7 @@ Now that your SAS policy is set up, you can configure a connection to this event
     The **New connection** pane opens.
 
 1. Fill out the fields according to the following table:
-   
+
     | Field | Description | Suggested value |
     |---|---|---|
     | Icon | Type of connection | Cloud
@@ -68,7 +70,7 @@ Now that your SAS policy is set up, you can configure a connection to this event
     | Connection type | Type of resource to connect to | EventHub
     | Event Hub namespace | Field reference **d** from the above [table](#gather-information-for-the-data-stream). | *eventhubpm15910.servicebus.windows.net*
     | Event Hub | Field reference **a** from the above [table](#gather-information-for-the-data-stream). | *iotdata*
-    | Consumer Group | User-defined name for the unique stream view. Use a name of an existing consumer group. If the event hub doesn't have a consumer group, use "$Default", which is the Event Hub's default consumer group. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups). 
+    | Consumer Group | User-defined name for the unique stream view. Use a name of an existing consumer group. If the event hub doesn't have a consumer group, use "$Default", which is the Event Hub's default consumer group. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups).
     | Authentication method | Type of authentication | Basic
     | Username | Field reference **b** from the above [table](#gather-information-for-the-data-stream).  <br><br> The SAS policy name | *DocsTest*
     | Password | Field reference **c** from the above [table](#gather-information-for-the-data-stream). <br><br> The SAS primary key.
@@ -82,7 +84,7 @@ Now that your SAS policy is set up, you can configure a connection to this event
 
 In the following step, you'll create a data stream in your KQL Database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your Event Hubs instance and get data into the specified table using specified data mapping.
 
-1. Navigate to your KQL Database. 
+1. Navigate to your KQL Database.
 1. Select **Get data** > **Get data from Event Hub**.
 
     :::image type="content" source="media/get-data-event-hub/get-data.png" alt-text="Screenshot of getting data from Database.":::
@@ -136,7 +138,7 @@ Data is read from the event hub in form of [EventData](/dotnet/api/microsoft.ser
 :::image type="content" source="media/get-data-event-hub/schema-tab.png" alt-text="Screenshot of schema tab.":::
 
 1. The data format is automatically inferred from the incoming data. If this format is incorrect, select the correct format.
-1. If you select Ignore data format errors, the data will be ingested in JSON format. If you leave this check box unselected, the data will be ingested in multijson format. 
+1. If you select Ignore data format errors, the data will be ingested in JSON format. If you leave this check box unselected, the data will be ingested in multijson format.
 1. When you select JSON, you must also select **Nested levels**, from 1 to 100. The levels determine the table column data division.
 1. In the **Mapping name** field, enter a mapping name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 1. If the data you see in the preview window isn't complete, you may need more data to create a table with all necessary data fields. Use the following commands to fetch new data from your Event hub:
@@ -144,7 +146,6 @@ Data is read from the event hub in form of [EventData](/dotnet/api/microsoft.ser
     * **Discard and fetch new data**: discards the data presented and searches for new events.
     * **Fetch more data**: Searches for more events in addition to the events already found.
 1. Select **Next: Summary**.
-
 
 <!-- ## TODO: ADD TAB ABOUT MODIFYING THE AUTOMATICALLY CREATED SCHEMA WITHIN THE PREVIEW WINDOW -->
 
@@ -160,4 +161,4 @@ Note the name of the data stream that was created. This connection will be visib
 
 ## Next steps
 
-* [Query data in the KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)

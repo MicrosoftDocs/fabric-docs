@@ -10,8 +10,6 @@ ms.date: 05/23/2023
 
 # OneLake overview
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 OneLake is a single, unified, logical data lake for the whole organization. OneLake is the OneDrive for data. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. The key features of OneLake include:
 
 - **Foundation of Fabric data services:** OneLake is provisioned automatically with every Fabric tenant.
@@ -19,6 +17,8 @@ OneLake is a single, unified, logical data lake for the whole organization. OneL
 - **Open access:** OneLake supports Azure Data Lake storage (ADLS) Gen2 APIs and SDKs so your existing applications simply work. You aren't locked in to proprietary technologies or formats.
 - **One copy:** Fabric data items store data natively in open-source formats, which allows you to access it across multiple analytical engines without data duplication.
 - **One security:** Easily secure data in OneLake by granting access either directly to the data or by limiting access to specific query engines.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## OneLake: The foundation for Fabric
 
@@ -46,7 +46,7 @@ You can access all your OneLake data, including shortcuts, with ADLS Gen2 APIs a
 
 :::image type="content" source="media\onelake-overview\access-onelake-data-other-tools-v-3.png" alt-text="Diagram showing how you can access OneLake date with APIs and SDKs." lightbox="media\onelake-overview\access-onelake-data-other-tools-v-3.png":::
 
-For more information on APIs and endpoints, see [OneLake access and APIs](onelake-access-api.md). For examples of OneLake integrations with Azure, see [Use with Azure services](../placeholder.md).
+For more information on APIs and endpoints, see [OneLake access and APIs](onelake-access-api.md). For examples of OneLake integrations with Azure, see [Azure Synapse Analytics](onelake-azure-synapse-analytics.md), [Azure storage explorer](onelake-azure-storage-explorer.md), [Azure Databricks](onelake-azure-databricks.md), and [Azure HDInsight](onelake-azure-hdinsight.md) articles.
 
 ## One copy: Access one copy of data
 

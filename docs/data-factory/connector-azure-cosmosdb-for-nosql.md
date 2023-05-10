@@ -29,9 +29,9 @@ The Azure Cosmos DB for NoSQL connector supports the following authentication ty
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 
-- A workspace is created and isn't the default My Workspace.
+- Make sure you have a Microsoft Fabric enabled Workspace.
 
 ## Go to manage gateways to create connection
 

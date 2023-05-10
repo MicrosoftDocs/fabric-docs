@@ -1,6 +1,6 @@
 ---
 title: Use Tidyverse
-description: Learn how to use Tidyverse, a collection of R packages designed for data science.
+description: How to use Tidyverse, a collection of R packages designed for data science.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
@@ -11,9 +11,9 @@ ms.search.form: R Language
 
 # Use Tidyverse
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [Tidyverse](https://www.tidyverse.org/packages/) is a collection of R packages that data scientists commonly use in everyday data analyses. It includes packages for data import (`readr`), data visualization (`ggplot2`), data manipulation (`dplyr`, `tidyr`), functional programming (`purrr`), and model building (`tidymodels`) etc. The packages in `tidyverse` are designed to work together seamlessly and follow a consistent set of design principles.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of `tidyverse` with every runtime release. Import and start using your familiar R packages.
 

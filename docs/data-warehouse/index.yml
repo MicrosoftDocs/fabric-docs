@@ -7,7 +7,6 @@ metadata:
   title: Data Warehousing in Microsoft Fabric # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Data Warehousing using the SQL Endpoint and Synapse Data Warehouse in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
-#   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
@@ -29,19 +28,14 @@ landingContent:
   # Card 
   - title: Get started with Data Warehouse
     linkLists:
-      - linkListType: get-started
+      - linkListType: tutorial
         links:
-          - text: Create a Synapse Data Warehouse
+          - text: End to End tutorials 
+            url: ../get-started/end-to-end-tutorials.md
+          - text: Data warehouse tutorial
+            url: tutorial-introduction.md            
+          - text: Create a Synapse Data Warehouse quickstart
             url: create-warehouse.md
-          - text: Create a table
-            url: create-table.md     
-          - text: Ingest data
-            url: ingest-data.md
-          - text: Query the warehouse
-            url: query-warehouse.md
-          - text: Create reports
-            url: create-reports.md            
-
   # Card 
   - title: Get started with SQL Endpoint
     linkLists:
@@ -49,7 +43,7 @@ landingContent:
         links:
           - text: What is a Lakehouse?
             url: ../data-engineering/lakehouse-overview.md
-          - text: SQL Endpoint
+          - text: Better together - the lakehouse and warehouse
             url: get-started-lakehouse-sql-endpoint.md
           - text: Create a lakehouse with OneLake
             url: ../onelake/create-lakehouse-onelake.md
@@ -60,7 +54,7 @@ landingContent:
           - text: How to copy data using Copy activity in Data pipeline
             url: ../data-factory/copy-data-activity.md
           - text: How to move data into Lakehouse via Copy assistant
-            url: ../data-factory/move-data-lakehouse-copy-assistant.md
+            url: ../data-factory/tutorial-move-data-lakehouse-copy-assistant.md
   # Card 
   - title: Security
     linkLists:
@@ -72,6 +66,10 @@ landingContent:
             url: connectivity.md    
           - text: Workspace roles
             url: workspace-roles.md
+          - text: SQL granular permissions
+            url: sql-granular-permissions.md
+          - text: Item permissions
+            url: item-permissions.md
   # Card 
   - title: Ingest data
     linkLists:
@@ -81,6 +79,10 @@ landingContent:
             url: ingest-data.md
           - text: Ingest data using pipelines
             url: ingest-data-pipelines.md
+          - text: Ingest data using TSQL
+            url: ingest-data-tsql.md
+          - text: Ingest data using Copy
+            url: ingest-data-copy.md
   # Card 
   - title: Design and Develop
     linkLists:
@@ -93,7 +95,12 @@ landingContent:
           - text: Define relationships in data models
             url: data-modeling-defining-relationships.md
           - text: Reports in the Power BI service
-            url: reports-power-bi-service.md            
+            url: reports-power-bi-service.md   
+  # card
+  - title: Query
+    linkLists: 
+      - linkListType: concept
+        links:
           - text: Query using the SQL Query editor
             url: sql-query-editor.md
           - text: Query with T-SQL
@@ -108,9 +115,11 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Monitor 
-            url: monitor-using-dmv.md 
+            url: monitor-using-dmv.md
           - text: Workload Management
             url: workload-management.md            
+          - text: Statistics 
+            url: statistics.md
           - text: Troubleshoot
             url: troubleshoot-synapse-data-warehouse.md
   # Card 
@@ -120,10 +129,5 @@ landingContent:
         links:
           - text: Security
             url: security.md
-  # Card
-  - title: Sharing
-    linkLists: 
-      - linkListType: how-to-guide
-        links:
-          - text: Get Workspace and OneLake path
-            url: get-workspace-onelake-path.md
+          - text: Ingest Data
+            url: ingest-data.md

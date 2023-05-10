@@ -1,43 +1,53 @@
 ### YamlMime:FAQ
 metadata:
-  title: Troubleshoot deployment pipelines, the Fabric Application lifecycle management (ALM) tool
+  title: Troubleshoot the Fabric lifecycle management tools
   description: Find answers to your deployment pipelines, the Fabric Application lifecycle management (ALM) tool, troubleshooting questions
   author: mberdugo
   ms.author: monaberdugo
   ms.topic: troubleshooting
   ms.service: powerbi
   ms.subservice: pbi-deployment-pipeline
-  ms.date: 05/23/2023
+  ms.date: 05/09/2023
   ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
   
-title: Deployment pipelines troubleshooting
+title: Lifecycle management troubleshooting
 summary: |
 
-  Use this article to troubleshoot issues in deployment pipelines. Review the following links to understand the considerations and limitations.
-  * [General considerations and limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
-  * [Assigning workspaces](deployment-pipelines/assign-pipeline.md#limitations)
-  * [Permissions](deployment-pipelines/understand-the-deployment-process.md#permissions)      
-  * Fabric items:
-    * [Deployed items](deployment-pipelines/understand-the-deployment-process.md#deployed-items)
-    * [Unsupported items](deployment-pipelines/understand-the-deployment-process.md#unsupported-items)
-    * [Item properties copied during deployment](deployment-pipelines/understand-the-deployment-process.md#item-properties-copied-during-deployment)
-    * [Item properties that are not copied](deployment-pipelines/understand-the-deployment-process.md#item-properties-that-are-not-copied)
-    * [Dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
-    * [Dataflow limitations](deployment-pipelines/understand-the-deployment-process.md#dataflow-limitations)
-    * [Datamart limitations](deployment-pipelines/understand-the-deployment-process.md#datamart-limitations)
-  * Deployment rules:
-    * [Deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations)
-    * [Supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules)
-  * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
-  * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)
+  Use this article to troubleshoot issues in the lifecycle management process.  
+  Review the following links to understand the considerations and limitations.
+
+  Review the links in the following table to understand the considerations and limitations of various lifecycle management issues:
+
+  | Topic | Git integration  | Deployment pipelines |
+  |--------|------------------|---------------------|
+  | **General limitations** | [general git limitations](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) |
+  | **Permissions needed** | [permissions](./git-integration/git-integration-process.md#permissions) | [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) |
+  | **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#limitations) |
+  | **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/understand-the-deployment-process.md#deployed-items) |
+  | **Datasets** |   | [dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
+
+  [General questions](#general-questions)  
+  [Licensing](#licensing)  
+  [Git integration](#git-integration)  
+  [Deployment pipelines](#deployment-pipelines)  
+  [Paginated reports](#paginated-reports)  
+  [Dataflows](#dataflows)  
+  [Datamarts](#datamarts)  
+  [Permissions](#permissions)  
+  [Rules](#rules)  
 
 sections:
-  - name: General
+  - name: General questions
     questions:
       - question: |
-          What's deployment pipelines in Microsoft Fabric?
+                 What is lifecycle management in Microsoft Fabric?
         answer: |
-          To understand what deployment pipelines is in Fabric, refer to the [deployment pipelines overview](deployment-pipelines/intro-to-deployment-pipelines.md).
+          Lifecycle management has two parts, integration and deployment. To understand what integration is in Fabric, refer to [the git integration overview](./git-integration/intro-to-git-integration.md). To understand what deployment pipelines is in Fabric, refer to the [deployment pipelines overview](deployment-pipelines/intro-to-deployment-pipelines.md).
+          
+      - question: |
+          How do I get started with git integration?
+        answer: |
+          Get started with git integration using the [get started instructions](git-integration/git-get-started.md).
           
       - question: |
           How do I get started with deployment pipelines?
@@ -49,16 +59,12 @@ sections:
         answer: |
           If the following conditions aren't met, you won't be able to see the deployment pipelines button.
           
-          * You have one of the following Premium licenses:
-          
-              * You're a [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md), and you belong to an organization that has Premium capacity.
-          
-              * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
+          * You have a [Fabric license](../enterprise/licenses.md).
           
           * You're an admin of a [workspace](../get-started/create-workspaces.md). 
           
       - question: |
-          Why can't I see the pipeline stage tag in my workspace?
+          I can't see the pipeline stage tag in my workspace.
         answer: |
           Deployment pipelines display a pipeline stage tag in workspaces that are assigned to a pipeline. To see these tags, you need to be a [pipeline admin](deployment-pipelines/understand-the-deployment-process.md#permissions). Tags for the *Development* and *Test* stages are always visible. However, you only see the *Production* tag if you have [access to the pipeline](deployment-pipelines/understand-the-deployment-process.md#permissions).
           
@@ -68,49 +74,155 @@ sections:
   - name: Licensing
     questions:
       - question: |
-          What licenses are needed to work with deployment pipelines?
+          What licenses are needed to work with lifecycle management?
         answer: |
-          To use deployment pipelines, you need to have one of the following licenses:
-          
-          * A [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md) license, with a workspace that resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
-          
-          * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
-          
-          For more information, see [accessing deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md).
+          For more information on licenses, see [Fabric licenses](../enterprise/licenses.md).
           
       - question: |
-          What type of capacity can I assign to a workspace in a pipeline?
+          What type of capacity do I need?
         answer: |
-          All workspaces in a deployment pipeline must reside within a capacity for the pipeline to be functional. However, you can use different capacities for different workspaces in a pipeline. You can also use different capacity types for different workspaces in the same pipeline.
+          All workspaces must be assigned to a Fabric license. However, you can use different capacity types for different workspaces.
           
-          For development and testing, you can use an A or EM capacity alongside a Pro Fabric account for each user. You can also use a PPU for each user in the development and test stages.
-          
-          For production workspaces, you need a P capacity. If you're an ISV distributing content through embedded applications, you can also use A or EM capacities for production. PPUs can also be used for production workspaces.
-          
+          For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity-and-skus).
+
           >[!NOTE]
-          >When you create a workspace with a PPU, only other PPU users can able to access the workspace and consume its content.
+          > * PPU, EM, and A SKUs only work with Power BI items. If you add other Fabric items to the workspace, you need a trial, P, or F SKU.
+          > * When you create a workspace with a PPU, only other PPU users can able to access the workspace and consume its content.
           
-  - name: Technical  
+  - name: Git integration  
     questions:
+      - question: |
+          The Commit button is disabled.
+        answer: |
+          **Description of problem**: If there were updates made to the git branch, commits are disabled until you update your workspace.
+          **Solution**: Update your workspace to enable commits.
+
+      - question: |
+          The Commit and Update buttons are both disabled.
+        answer: |
+          **Description of problem**: Changing the same item in the workspace and the git branch can lead a possible conflict. If changes were made in the workspace and in the git branch on the same item, updates are disabled until the conflict is resolved. 
+          **Solution**: [Resolve conflicts](./git-integration/conflict-resolution.md) and then try again.
+      
+      - question: |
+          The Source control icon doesn't have a number.
+        answer: |
+          **Description of problem**: The number on the Source control icon indicates the number of changes that have been made to the workspace since the last commit. If the icon doesn't have a number, there may have been a problem connecting to the branch.
+          **Solution**: Disconnect and reconnect.
+
+          :::image type="content" source="./media/troubleshoot-cicd/no-source.png" alt-text="Screenshot of source control icon without a number.":::
+
+      - question: |
+          Connect failure: It says something went wrong when I try to connect.
+        answer: |   
+          **Description of problem**: After selecting **Connect** in the git integration tab, the **Something went wrong** error dialog pops up. In addition, when you select the source control button, the pane indicates that you need to sync with the git branch. 
+          
+          :::image type="content" source="./media/troubleshoot-cicd/something-went-wrong.png" alt-text="Screenshot of error message when the workspace can't connect.":::
+
+          :::image type="content" source="./media/troubleshoot-cicd/sync-direction-continue.png" alt-text="Screenshot of error message when the workspace isn't connected to a git branch.":::
+
+          **Solution**: If the folder you're trying to connect to has subdirectories, but no Fabric items, the connection will fail. Open the git repository in Azure DevOps and navigate to the git folder defined in the connection. If the git folder contains sub-directories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a sub-directory. If the git folder doesn't contain any item directories, you can't connect to it. Either remove the sub-directories or connect to a different folder that doesn't contain sub-directories.
+
+      - question: |
+          Connect failure: It's asking if I want to create a new folder when I try to connect to a git branch.
+        answer: |
+          **Description of problem**: After selecting **Connect** in the git integration tab, a dialog pops up indicating an invalid folder path.
+          
+          :::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect.":::
+
+          **Solution**: If the folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository, you're asked if you want to create a new folder. This can happen if you're connecting to a new branch, or if the folder was deleted from the branch.  
+          To create a new folder and connect it to the workspace choose **Create and sync**.  
+          To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the git integration tab.
+
+      - question: |
+          Update failure: Update doesn't complete.
+        answer: |
+          **Description of problem**: After selecting **Update all** in the **Updates** tab, a dialog pops up indicating failure because the action would break a dependency links.
+
+          :::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when the updating would break dependencies.":::
+
+          **Solution**: Open the Lineage view to find the item or items that would be deleted from the workspace in the update and are linked to items that won't be deleted from workspace.
+
+          :::image type="content" source="./media/troubleshoot-cicd/lineage-view.png" alt-text="Screenshot of the lineage view.":::
+
+          To resolve the issue, delete the problematic item(s):
+          * If the item isn't supported by Git (for example, Dashboards), delete it manually from the workspace.
+          * If the item is supported by Git (for example, reports), delete it either from Git (if exists) or from the workspace.
+          
+          Select **Update All**.  
+          For more information, see [Manually Update from Git](./git-integration/partial-update.md).
+
+      - question: |
+          Post update failure: Dependencies aren't pointing to the correct items.
+        answer: |
+          **Description of problem**: After updating from Git, when looking at the lineage view, the dependencies of some items are not as expected. For example, the proxy model no longer points to the correct model.
+
+          Reason: Git Integration does not support Direct Query and proxy models at this time.
+          
+          **Solution**: To fix the dependencies, do one of the following:
+
+          * Edit the bim file of the ProxyDataset in the git repository to point to the correct dataset, and then, in the workspace, update from git to receive the change.
+          * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace. : Use "Update Datasource" API to update the connection detail of the proxy model in the workspace.
+
+      - question: |
+          Undo failure: After selecting "Undo", a dialog pops up indicating failure because dependency can't be found.
+        answer: |
+          **Description of problem**: The following error appears after an undo action if there is an uncommitted dependency in the **Changes** tab that wasn't selected in the "Undo" action.
+
+          :::image type="content" source="./media/troubleshoot-cicd/dependency-not-found.png" alt-text="Screenshot of error message when undo fails because dependency isn't found.":::
+
+          **Solution**: Select the all the dependencies of the selected items and try again.
+
+      - question: |
+          Undo failure: After selecting "Undo", a dialog pops up indicating failure because the action would break a dependency link.
+        answer: |
+          **Description of problem**: The following error appears after an undo action if the action would break a dependency.
+
+          :::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when undo fails because the action would break a dependency link.":::
+
+          **Solution**: Open the Lineage view to find the item or items that were selected to be "undone" and are linked to items that aren't selected.
+
+          :::image type="content" source="./media/troubleshoot-cicd/lineage-view.png" alt-text="Screenshot of the lineage view.":::
+
+          To resolve the issue, delete the problematic item(s):
+          * If the item that's not selected isn't supported by Git (for example, Dashboards), delete it manually from the workspace.
+          * If the item that isn't selected is supported by Git (for example, reports), select it as well.
+          
+          Select **Undo**.  
+
+  - name: Deployment pipelines  
+    questions:
+      - question: |
+          What are some general deployment limitations to keep in mind:
+        answer: |
+          These are some important considerations to keep in mind:
+          
+          * [Deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations)
+          * [Supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules)
+          * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
+          * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)
+
       - question: |
           How do I reestablish connections after deployment?
         answer: |
-          In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item. To reestablish these connections, unassign and reassign the same workspace in the target stage.
+          **Description of problem**: In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item.
+          **Solution**: To reestablish these connections, unassign and reassign the same workspace in the target stage.
 
       - question: |
-          Why am I getting the 'can't assign the workspace' error message when I assign a workspace?
+          I can't assign a workspace?
         answer: |
-          When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there is more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages. To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in Fabric. 
+          **Description of problem**: When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace, and the **Can't assign the workspace** error message appears. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there is more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages.
+          **Solution**: To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in Fabric. 
           
           :::image type="content" source="media/troubleshoot-cicd/cannot-assign-error.png" alt-text="A screenshot of the Can't assign the workspace error message in deployment pipelines.":::
 
       - question: |
-          Why am I seeing the 'different' symbol after I assigned a workspace with datasets that are similar to the datasets in adjacent stages?
+          I see the 'different' symbol after I assigned a workspace with datasets that are similar to the datasets in adjacent stages.
         answer: |
-          Most datasets use the [enhanced dataset metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata.md) feature, also known as *model v3*. However, older reports might be using the old type of dataset metadata, sometimes referred to as *model v1*. If you're assigning a workspace that uses the old dataset metadata model (v1), deployment pipelines can't evaluate whether the dataset is similar in adjacent stages. In such cases, the *different* UI symbol is displayed, even when the datasets are identical. To resolve this issue, deploy the datasets that are showing the *different* symbol.   
+          **Description of problem**: Most datasets use the [enhanced dataset metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata.md) feature, also known as *model v3*. However, older reports might be using the old type of dataset metadata, sometimes referred to as *model v1*. If you're assigning a workspace that uses the old dataset metadata model (v1), deployment pipelines can't evaluate whether the dataset is similar in adjacent stages. In such cases, the *different* UI symbol is displayed, even when the datasets are identical. 
+          **Solution**: To resolve this issue, deploy the datasets that are showing the *different* symbol.   
 
       - question: |
-          Why can't I see all my workspaces when I try to assign a workspace to a pipeline?
+          I can't see all my workspaces when I try to assign a workspace to a pipeline.
         answer: |
           To assign a workspace to a pipeline, the following conditions must be met:
           
@@ -118,7 +230,7 @@ sections:
           
           * The workspace isn't assigned to any other pipeline
           
-          * The workspace resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md)
+          * The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus)
           
           Workspaces that don't meet these conditions, aren't displayed in the list of workspaces you can select from.
           
@@ -134,7 +246,7 @@ sections:
           
           |Error  |Action  |
           |---------|---------|
-          |You don't have [premium capacity permissions](deployment-pipelines/understand-the-deployment-process.md#create-a-premium-workspace).     |If you work in an organization that has a Premium capacity, ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. After the workspace is in a capacity, redeploy.</br></br>If you don't work in an organization with Premium capacity, consider purchasing [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).        |
+          |You don't have [capacity permissions](deployment-pipelines/understand-the-deployment-process.md#create-a-premium-workspace).     |If you work in an organization that has a Fabric capacity, ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. After the workspace is in a capacity, redeploy.</br></br>If you don't work in an organization with a Fabric capacity, consider purchasing [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).        |
           |You don't have workspace permissions.     |To deploy, you need to be a workspace member. Ask your workspace admin to grant you the appropriate permissions.         |
           |Your Fabric admin disabled the creation of workspaces.     |Contact your Fabric admin for support.         |
           |You're using [selective deployment](deployment-pipelines/deploy-content.md#selective-deployment) and aren't selecting all the linked items.     |Do one of the following: </br></br>Unselect the content that is linked to your dataset or dataflow. Your unselected content (such as datasets, reports or dashboards) won't be copied to the next stage. </br></br>Select the dataset or the dataflow that's linked to the selected items. Your selected items will be copied to the next stage.         |
@@ -294,7 +406,7 @@ sections:
       - question: |
           Why deploying a large number of paginated reports fails?
         answer: |
-          A deployment of a large number of paginated reports with rules might fail due to an overload on the capacity. To overcome this problem, either purchase a higher SKU, or use selective deployment.
+          A deployment of a large number of paginated reports with rules might fail due to an overload on the capacity. To overcome this problem, either purchase a higher [SKU](../enterprise/licenses.md#capacity-and-skus), or use selective deployment.
 
       - question: |
           After deployment, can I download the RDL file of the paginated report?
@@ -340,11 +452,11 @@ sections:
       - question: |
           Who can deploy content between stages?
         answer: |
-          Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
+          Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus).
           
-          * **Deploying to an empty stage** - Any [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md) or [PPU](/power-bi/enterprise/service-premium-per-user-faq.yml) user, that's a member or admin in the source workspace.
+          * **Deploying to an empty stage** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin in the source workspace.
           
-          * **Deploying to a stage with content** - Any [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md) or [PPU](/power-bi/enterprise/service-premium-per-user-faq.yml) user, who's a member or admin of both workspaces in the source and target deployment stages.
+          * **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin of both workspaces in the source and target deployment stages.
           
           * **Overwriting a dataset** - Deployment overwrites each dataset that is included in the target stage, even if the dataset wasn't changed. Any user who's a member or admin of both workspaces, but the tenant admin can restrict this to target dataset owners only.
           
@@ -397,7 +509,7 @@ sections:
           Deployment rules aren't applied immediately after they're configured. To apply deployment rules, you have to deploy the datasets from the source stage to the target stage which includes the created deployment rules. After configuring deployment rules, and before you deploy, the *different* indicator is shown next to the dataset with the configured rules. This indicates that you need to deploy that dataset from the source stage to the target stage. Once you deploy, if no other changes were made, the *different* indicator disappears signifying that the rules were applied successfully.
 
       - question: |
-          Why are the deployment rules greyed out?
+          Deployment rules are greyed out.
         answer: |
           To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are greyed out.
           
@@ -411,7 +523,7 @@ sections:
           * **Parameters rules** - There are no parameters a rule can be configured for.
 
       - question: |
-          Why saving a data source rule for a dataset fails? 
+          My data source rule for a dataset failed. 
         answer: |
           Saving data source rules may fail due to one of these reasons:
 
@@ -420,7 +532,7 @@ sections:
           * Your data source is using parameters. You can't create a data source rule for a dataset that uses parameters. Create a parameter rule instead.                                                                             
 
       - question: |
-          Why can't I connect to a dataset when creating a new dataset rule? 
+          I can't connect to a dataset when creating a new dataset rule.
         answer: |
           When constructing a dataset using Power BI Desktop, the connection string can be configured. Later, the dataset can be published and used by deployment pipelines in Power BI service. When creating the connection in Power BI Desktop, you can specify additional parameters. When specifying the parameters, the dataset source must be the first parameter listed. If you list any other parameters before the dataset source, you run into errors in Power BI service. In such cases, when configuring a new dataset rule, if you point to a dataset that wasn't configured properly in Power BI Desktop, deployment pipelines can't create the rule.
 
@@ -439,30 +551,6 @@ sections:
           |Illegal value |A value used in the configured rule isn't valid. Validate the rule's values and try configuring the rule again. |
           |Multiple data sources aren't supported |A dataset rule can't be applied due to its data source configuration. Either remove the rule, or rewrite the dataset queries using standard Power BI Desktop tools. |
           |Target dataset can only be changed by its owner |Your rule will overwrite some datasets in the destination workspace. You must be the owner of any datasets that will be overwritten. |  
-
-  - name: Deployment history
-    questions:
-
-      - question: |
-          How do I remove the deployment history of a pipeline?
-        answer: |
-          To remove a pipeline's deployment history you have to delete the pipeline.
-
-      - question: |
-          Why is the 'deployed by' user listed as 'unknown'?
-        answer: |
-          Deleted users which previously made deployments, appear as unknown users.
-
-      - question: |
-          Why is there no deployment history for one of the stages?
-        answer: |
-          Deployment history displays information for items that were deployed from a target stage. If there were no deployments from a specific stage, deployment history will display nothing when you select that stage tab.                             
-
-
-      - question: |
-          Why is only summarized deployment information displayed?
-        answer: |
-          Deployments that took place before June 2022 display summarized information with a *No tracking information available* note.
 
 additionalContent: |
 

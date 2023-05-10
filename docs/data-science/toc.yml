@@ -7,10 +7,26 @@ items:
     href: data-science-overview.md
 - name: Get started
   items:
-  - name: How to use end-to-end AI samples
-    href: use-ai-samples.md
+  - name: Data science tutorial introduction
+    href: tutorial-data-science-introduction.md
+  - name: Prepare your system
+    href: tutorial-data-science-prepare-system.md
+  - name: 1 Ingest data into a Fabric lakehouse
+    href: tutorial-data-science-ingest-data.md
+  - name: 2 Explore and visualize data using notebooks
+    href: tutorial-data-science-explore-notebook.md
+  - name: 3 Perform data cleansing and preparation
+    href: tutorial-data-science-data-cleanse.md
+  - name: 4 Train and register machine learning models
+    href: tutorial-data-science-train-models.md
+  - name: 5 Perform batch scoring and save predictions
+    href: tutorial-data-science-batch-scoring.md
+  - name: 6 Create a Power BI report
+    href: tutorial-data-science-create-report.md
 - name: Tutorials
   items:
+  - name: How to use end-to-end AI samples
+    href: use-ai-samples.md
   - name: Train a retail recommendation model
     href: retail-recommend-model.md
   - name: Fraud detection
@@ -43,6 +59,8 @@ items:
         href: ./model-training/fabric-sparkml-tutorial.md
       - name: Train models with Scikit-learn
         href: train-models-scikit-learn.md
+      - name: Train models with SynapseML
+        href: train-models-synapseml.md  
 - name: Track models and experiments
   items:
   - name: Machine learning experiment
@@ -91,3 +109,32 @@ items:
       href: r-use-tidyverse.md
     - name: R visualization
       href: r-visualization.md
+- name: SynapseML
+  items:
+  - name: Get started
+    items:
+    - name: Your first model
+      href: synapseml-first-model.md
+  - name: How-to guides
+    items:
+    - name: Use LightGBM with SynapseML
+      href: lightgbm-overview.md
+    - name: Use Cognitive Services with SynapseML
+      href: overview-cognitive-services.md
+    - name: Perform classification with and without SynapseML
+      href: classification-before-and-after-synapseml.md
+    - name: Use k-nearest neighbors with SynapseML
+      href: conditional-k-nearest-neighbors-exploring-art.md
+    - name: Perform deep learning using ONNX with SynapseML
+      href: onnx-overview.md
+    - name: Explain a tabular classification model with tabular SHAP
+      href: tabular-shap-explainer.md
+    - name: Perform multivariate anomaly detection with SynapseML
+      href: isolation-forest-multivariate-anomaly-detection.md 
+    - name: Build a Search engine with SynapseML
+      href: cognitive-services-create-a-multilingual-search-engine-from-forms.md
+    - name: Use SynapseML and Cognitive Services for multivariate anomaly detection
+      href: cognitive-services-multivariate-anomaly-detection.md
+    - name: Tune hyperparameters using SynapseML
+      href: hyperparameter-tuning-fighting-breast-cancer.md
+

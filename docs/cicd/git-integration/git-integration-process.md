@@ -12,9 +12,13 @@ ms.custom:
 
 This article explains basic git concepts and the process of integrating git with your Microsoft Fabric workspace.
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 ## Permissions
 
-The actions you can take on a workspace depend on the permissions you have in both the workspace and Azure DevOps. 
+In order to use git integration, [it has to be enabled](../../admin/admin-settings-git-integration.md) by your organization's administrator.
+
+The actions you can take on a workspace depend on the permissions you have in both the workspace and Azure DevOps.
 
 ### Azure DevOps permissions
 
@@ -28,15 +32,16 @@ The following list shows what different workspace roles can do depending on thei
 
 The following table describes the permissions needed to perform various common operations:
 
-| **Operation**                                                        | **Workspace role**                                                                        | **Git permissions**                          | **Azure DevOps permissions**                  |
-|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|-----------------------------------------------|
-| Connect workspace to Git repo                                        | Admin                                                                                     | Role=Read                                    | Read=Allow                                    |
-| Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    | No permissions are needed                     |
-| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Role=Read  (in target repo/directory/branch) | Read=Allow (in target repo/directory/branch)  |
-| View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 | Read or None                                  |
-| See workspace 'git status'                                           | Admin, Member, Contributor                                                                | Role=Read                                    | Read=Allow                                    |
-| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Read   | Read=Allow  |
-| Commit workspace changes to git                                      |                                                                                           |                                              |                                               |
+| **Operation**                                                        | **Workspace role**                                                                        | **Git permissions**                          |
+|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|
+| Connect workspace to Git repo                                        | Admin                                                                                     | Role=Read                                    |
+| Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    |
+| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Role=Read  (in target repo/directory/branch) |
+| View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 |
+| See workspace 'git status'                                           | Admin, Member, Contributor                                                                | Role=Read                                    |
+| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Read   |
+| Commit workspace changes to git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Write  |
+| Create new git branch from within Fabric                             | Admin                                                                                     | Role=Write                                    |
 
 ## Connect and sync
 
@@ -45,7 +50,7 @@ Only a workspace admin can connect a workspace to Azure Repos, but once connecte
 When you [connect a workspace to git](./git-get-started.md#connect-a-workspace-to-an-azure-repo), Fabric will sync between the two locations so they have the same content. During this initial sync, if either the workspace or git branch is empty while the other has content, the content is copied from the non-empty location to the empty one.
 If both the workspace and git branch have content, you have to decide which direction the sync should go.
 
-- If you commit your workspace to the git branch, all the workspace content is exported to git and overwrites the current git content.
+- If you commit your workspace to the git branch, all supported workspace content is exported to git and overwrites the current git content.
 - If you update the workspace with the git content, the workspace content is overwritten, and you will lose your workspace content. Since a git branch can always be restored to a previous stage while a workspace can’t, if you choose this option, you’ll be asked to confirm.
 
 :::image type="content" source="./media/git-integration-process/git-sync-direction.png" alt-text="Screenshot of dialog asking which direction to sync if both Git and the workspace have content.":::
@@ -67,6 +72,7 @@ Each item has one of the following statuses:
 - :::image type="icon" source="./media/git-integration-process/unsupported-icon.png"::: Unsupported
 - :::image type="icon" source="./media/git-integration-process/uncommitted-icon.png"::: Uncommitted
 - :::image type="icon" source="./media/git-integration-process/update-required-icon.png"::: Update required
+- :::image type="icon" source="./media/git-integration-process/warning.png"::: Item is synced but metadata is different
 
 ### Sync information
 
@@ -82,7 +88,7 @@ As long as you’re connected, the following information appears at the bottom o
 
 ### Source control pane
 
-On top of the screen is the Source control icon. When the workspace is synced with the git branch, it displays a *0*.
+On top of the screen is the Source control icon. It shows the number of items that are different in the workspace and git branch. When the workspace is synced with the git branch, the Source control icon displays a *0*.
 
 :::image type="content" source="./media/git-integration-process/source-control-zero.png" alt-text="Screenshot of the source control icon showing zero items changed.":::
 
@@ -102,7 +108,7 @@ In each tab, the changed items are listed with an icon indicating the status:
 ### Commit
 
 - When there is more than one item to commit, you can select which items to commit to the git branch.
-- If there were updates made to the git branch, commits are disabled until you update your workspace, to prevent conflicts.
+- If there were updates made to the git branch, commits are disabled until you update your workspace.
 
 ### Update
 
@@ -116,14 +122,17 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 
 ### General limitations
 
-- The Azure AD user you’re using in Fabric is the same user you need to use in Azure Repos. There’s no way to edit or change users in Fabric.
+- The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
+
+## Workspace limitations
+
+Only the workspace admin can manage the connections to the [Azure Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.
+Once connected, anyone with [permission](#permissions) can work in the workspace.
 
 ### Branch and folder limitations
 
 - Maximum length of branch name is 244 characters.
 - Maximum length of full path for file names is 250 characters. Longer names will fail.
-- If a branch contains only subdirectories without artifact directories, the connection fails.
-- You can’t create subdirectories inside the folder connected to the workspace.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git Integration.
 
 ### Sync and commit limitations
@@ -131,7 +140,7 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 - The size limit for a commit is 25 MB.
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
 - Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they are ignored.
-- Duplicating names isn't allowed – even if Power BI allows it, the update fails.
+- Duplicating names isn't allowed – even if Power BI allows it, the update, commit, or undo action fails.
 - B2B isn’t supported.
 - [Conflict resolution](./conflict-resolution.md) is partially done in git.
 

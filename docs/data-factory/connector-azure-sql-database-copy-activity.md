@@ -138,13 +138,13 @@ Under **Advanced**, you can specify the following fields:
 
 - **Disable performance metrics analytics**: This setting is used to collect metrics, such as DTU, DWU, RU, and so on, for copy performance optimization and recommendations. If you're concerned with this behavior, select this checkbox.
 
-### Settings
-
-For **Settings** tab configuration, go to Settings.
-
 ### Mapping
 
-For **Mapping** tab configuration, go to Mapping.
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+
+### Settings
+
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 

@@ -11,16 +11,15 @@ ms.search.form: Create Spark Job Definition,spark_job_definition
 
 # How to create an Apache Spark job definition in Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this tutorial, learn how to create a Spark job definition in [!INCLUDE [product-name](../includes/product-name.md)].
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
 To get started, you need the following prerequisites:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create an account for free](../placeholder.md).
-- Access to the Data Engineering Workload. [Onboard onto the data engineering workload](../placeholder.md).
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 
 > [!TIP]
 > To run the Spark job definition item, main definition file and default lakehouse context are required. If you don't have a lakehouse, you can create one by following the steps in [Create a lakehouse](../data-engineering/create-lakehouse.md).

@@ -4,10 +4,13 @@ description: Learn how to install the utilization and metrics app.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
 # Install the utilization and metrics app
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The Microsoft Fabric *Utilization and Metrics* app, also known as the *metrics app*, is designed to provide monitoring capabilities for Power BI Premium capacities. Use this guide to install the app.
 
@@ -127,5 +130,4 @@ To complete the installation, configure the utilization and metrics app by runni
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[Understand the metrics app overview page?](metrics-app-overview-page.md)
+[Understand the metrics app overview page?](metrics-app-overview-page.md)
