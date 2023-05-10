@@ -53,8 +53,8 @@ The types of industries that benefit from data analysis in Real-Time Analytics i
 The main items available in Real-Time Analytics include:
 
 * [Eventstream](event-streams/overview.md) for capturing, transforming, and routing real-time events to various destinations with a no-code experience. 
-* A [KQL database](create-database.md) for data storage and management. Data loaded into a KQL database is reflected in OneLake by activating data copy and then creating a OneLake shortcut to expose the data to other Fabric experiences.
-* A [KQL queryset](kusto-query-set.md) to run queries, view, and manipulate query results on data. The KQL queryset allows you to save queries for future use, export and share queries with others, and includes the option to generate a Power BI report.
+* A [KQL database](create-database.md) for data storage and management. Data loaded into a KQL database can be accessed in OneLake and is exposed to other Fabric experiences.
+* A [KQL queryset](kusto-query-set.md) to run queries, view, and customize query results on data. The KQL queryset allows you to save queries for future use, export and share queries with others, and includes the option to generate a Power BI report.
 
 See how these items work together in the end-to-end streaming data consumption and analysis scenario: [Real-Time Analytics Tutorial- Introduction](tutorial-introduction.md)
 
@@ -74,8 +74,8 @@ See how these items work together in the end-to-end streaming data consumption a
 
 ## See also
 
+* [Microsoft Fabric event streams - overview](event-streams/overview.md)
 * [Compare Real-Time Analytics to Azure Data Explorer](realtime-analytics-compare.md)
 * [Tutorial: Real-Time Analytics](tutorial-introduction.md)
 * [Query data in a KQL Queryset](kusto-query-set.md)
 * [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context)
- 

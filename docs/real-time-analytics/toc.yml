@@ -70,6 +70,8 @@ items:
   items:
   - name: Query data in a KQL queryset
     href: kusto-query-set.md
+  - name: Customize results in the KQL Queryset results grid
+    href: customize-results.md
 - name: Query data
   items:
   - name: Use sample queries
