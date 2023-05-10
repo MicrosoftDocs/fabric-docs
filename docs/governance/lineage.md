@@ -41,7 +41,7 @@ Lineage is accessible from multiple locations. Typically, you can get to it
 
 ## What do you see in lineage view
 
-When you open lineage view on an item, you'll get the lineage view of the workspace the item is located in.
+When you open lineage view on an item, you'll see the connections between all the items in the workspace the item is located in.
 
 :::image type="content" source="./media/lineage/lineage-view.png" alt-text="Screenshot showing contents of lineage view in Microsoft Fabric." lightbox="./media/lineage/lineage-view.png":::
 
@@ -50,7 +50,7 @@ Lineage view displays:
 * All the items in the workspace and the how they are connected to each other.
 * Upstream connections outside the workspace, one level up. You can tell if an item is outside the workspace because the name of the external workspace is indicated on the card, as illustrated by the HR Data KQL Database in the image above.
 
-Downstream items in different workspaces are not shown. To explore an item's downstream connections outside the workspace, open the item's impact analysis.
+Downstream items in different workspaces aren't shown. To explore an item's downstream connections outside the workspace, open the item's impact analysis.
 
 Items are represented by cards that provide some information about the item.
 
