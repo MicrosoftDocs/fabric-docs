@@ -1,14 +1,14 @@
 ---
-title: Shortcut ADLS data transformed with Azure Databricks into OneLake and build PowerBI Report
-description: Learn how to create delta table in your ADLS Gen2 account using Azure databricks , create shortcut to access that delta table and then build PowerBI Report.
+title: Shortcut ADLS data transformed with Azure Databricks into OneLake and build Power BI Report
+description: Learn how to create delta table in your ADLS Gen2 account using Azure Databricks, create shortcut to access that delta table and then build Power BI Report.
 ms.reviewer: eloldag
-ms.author: gillharmeet
+ms.author: harmeetgill
 author: gillharmeet
 ms.topic: how-to
 ms.date: 05/23/2023
 ---
 
-# Shortcut ADLS data transformed with Azure Databricks into OneLake and build PowerBI Report.
+# Shortcut ADLS data transformed with Azure Databricks into OneLake and build Power BI Report.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -18,7 +18,7 @@ In this guide, you will:
 
 - Create a OneLake shortcut to a delta table in ADLS.
 
-- Use PowerBI to analyze data in ADLS Shortcut.
+- Use Power BI to analyze data in ADLS Shortcut.
 
 ## Prerequisites
 
@@ -42,7 +42,7 @@ In this guide, you will:
 
 1. In your lakehouse, click on ellipses (…) next to the Tables and select New Shortcut.
 
-    :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-table-shortcut.png" alt-text="Screenshot showing location of New Shortcut in Tables" lightbox="media\onelake-shortcuts-adb-quickstart\new-table-shortcut.png":::
+    :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-table-shortcut.png" alt-text="Screenshot showing location of New Shortcut in Tables." lightbox="media\onelake-shortcuts-adb-quickstart\new-table-shortcut.png":::
 
 1. In the **New shortcut** screen, select **Azure Data Lake Storage Gen2** tile
 
@@ -54,7 +54,7 @@ In this guide, you will:
 
 1. Specify the shortcut details. Provide a **Shortcut Name** and **Sub path** details and then click **Create**. The sub path should point to the directory where the delta table resides.
 
-   :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-shortcut-details.png" alt-text="Screenshot showing where to enter new shortcut details" lightbox="media\onelake-shortcuts-adb-quickstart\new-shortcut-details.png":::
+   :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-shortcut-details.png" alt-text="Screenshot showing where to enter new shortcut details." lightbox="media\onelake-shortcuts-adb-quickstart\new-shortcut-details.png":::
 
 1. The shortcut pointing to a delta table created by Azure Databricks on ADLS now appears as a delta table under Tables.
 
@@ -69,7 +69,7 @@ In this guide, you will:
 
 1. To access and analyze this delta table via Power BI, click on **New Power BI dataset**.
 
-    :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-pbi-dataset.png" alt-text="Screenshot showing how to create new PowerBI dataset." lightbox="media\onelake-shortcuts-adb-quickstart\new-pbi-dataset.png":::
+    :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-pbi-dataset.png" alt-text="Screenshot showing how to create new Power BI dataset." lightbox="media\onelake-shortcuts-adb-quickstart\new-pbi-dataset.png":::
 
 1. Select the shortcut and click on **Confirm**.
 
@@ -89,4 +89,4 @@ In this guide, you will:
 
 ## Summary
 
-In this quickstart guide, you created a OneLake shortcut to read an Azure Databricks delta table on ADLS account. This shortcut is then used to analyze data using a notebook and PowerBI.
+In this quickstart guide, you created a OneLake shortcut to read an Azure Databricks delta table on ADLS account. This shortcut is then used to analyze data using a notebook and Power BI report.
