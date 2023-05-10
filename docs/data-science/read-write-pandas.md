@@ -11,7 +11,7 @@ ms.search.form: Read and Write Pandas
 
 # How to read and write data with Pandas in Microsoft Fabric
 
-[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide built-in support for interacting with Lakehouse data using Pandas, the most popular Python library for data exploration and processing. Within a notebook, users can quickly read data from—and write data back to—their Lakehouses in a variety of file formats. This guide provides code samples to help you get started in your own notebook.
+[!INCLUDE [product-name](../includes/product-name.md)] notebooks support seamless interaction with Lakehouse data using Pandas, the most popular Python library for data exploration and processing. Within a notebook, users can quickly read data from—and write data back to—their Lakehouses in a variety of file formats. This guide provides code samples to help you get started in your own notebook.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -19,26 +19,26 @@ ms.search.form: Read and Write Pandas
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-## Load Lakehouse data into your notebook in a matter of clicks
+## Load Lakehouse data into your notebook
 
-Once you attach a Lakehouse to your [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can explore stored data without leaving the page and read it into your notebook in a matter of clicks. Selecting any file provides options to "Load data" into a Spark or Pandas DataFrame. (You can also copy the file's full ABFS path or friendly relative path.)
+Once you attach a Lakehouse to your [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can explore stored data without leaving the page and read it into your notebook in a matter of clicks. Selecting any Lakehouse file surfaces options to "Load data" into a Spark or a Pandas DataFrame. (You can also copy the file's full ABFS path or a friendly relative path.)
 
 :::image type="content" source="media/read-write-pandas/load-data-pandas-dataframe.png" alt-text="Screenshot showing where to select options to load data into a Pandas DataFrame." lightbox="media/read-write-pandas/load-data-pandas-dataframe.png":::
 
-Clicking on one of the "Load data" prompts will generate a code cell to load the data from the file into a DataFrame in your notebook.
+Clicking on one of the "Load data" prompts will generate a code cell to load that file into a DataFrame in your notebook.
 
 :::image type="content" source="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png" alt-text="Screenshot of the code cell added to the notebook." lightbox="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png":::
 
-### Convert a Spark DataFrame to Pandas
+### Converting a Spark DataFrame to a Pandas DataFrame
 
-For reference, the following code sample shows how to convert a Spark DataFrame into a Pandas DataFrame.
+For reference, the following command shows how to convert a Spark DataFrame into a Pandas DataFrame.
 
 ```Python
 # Replace "spark_df" with the name of your own Spark DataFrame
 pandas_df = spark_df.toPandas() 
 ```
 
-## Read and write various filetypes
+## Reading and writing with various file formats
 
 The code samples below document the Pandas operations for reading and writing various file formats.
 
