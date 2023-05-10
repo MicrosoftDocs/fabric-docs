@@ -97,7 +97,7 @@ After backing up your work, there might be cases where you want to revert to a p
 
 * **Undo button**: The *Undo* operation is an easy and fast way to revert the immediate changes you made, as long as they are not committed yet. You can also undo each item separately. Read more about the [undo](./git-integration/git-get-started.md?tabs=undo-save#commit-changes-to-git) operation.
 
-* **Reverting to older commits**: There’s no direct way to go back to a previous commit in the UI. The best option is to promote an older commit to be the HEAD using ‘git X’. Doing this will show that there’s an update in the source control pane, and you can update the workspace with that new commit.
+* **Reverting to older commits**: There’s no direct way to go back to a previous commit in the UI. The best option is to promote an older commit to be the HEAD using git. Doing this will show that there’s an update in the source control pane, and you can update the workspace with that new commit.
 
 As data isn’t stored in git, consider that reverting a data item to an older version might break the existing data and could possible require you to drop the data or the operation might fail. Check this in advance before reverting changes back.
 
@@ -153,7 +153,7 @@ If you're using the test stage to simulate real life data usage, it's recommende
 
 Changes you make can also affect the dependent items. During testing, verify that your changes don’t affect or break the performance of existing items, which can be dependent on the updated ones.
 
-You can easily find the related items by using [impact analysis](../governance/lineage.md).
+You can easily find the related items by using [impact analysis](../onelake/onelake-shortcuts.md#workspace-lineage-view).
 
 ### Updating data items
 
