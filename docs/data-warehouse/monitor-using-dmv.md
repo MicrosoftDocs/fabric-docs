@@ -27,7 +27,6 @@ For the current version, there are three dynamic management views (DMVs) provide
 - [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each active request in a session.
 
-
 These three DMVs provide detailed insight on the following scenarios:
 
 - Who is the user running the session?
@@ -46,6 +45,8 @@ The following example queries `sys.dm_exec_sessions` to find all sessions that a
 SELECT * 
 FROM sys.dm_exec_sessions;
 ```
+:::image type="content" source="media\monitor-using-dmv\exec-sessions-results.png" alt-text="Screenshot showing the results of sys.dm_exec_sessions." lightbox="media\monitor-using-dmv\exec-sessions-results.png":::
+
 ### Find the relationship between connections and sessions
 
 The following example joins `sys.dm_exec_connections` and `sys.dm_exec_sessions` to the relationship between the active session in a specific connection.
