@@ -33,7 +33,7 @@ Tables in Microsoft Fabric support the most commonly used T-SQL data types.
 > [!NOTE]
 > The precision for datetime2 and time is limited to 6 digits of precision on fractions of seconds.
 
-The uniqueidentifier data type is a T-SQL data type, without a matching data type in Parquet. As a result, it's stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading uniqueidentifier columns, but these values can't be read on the [!INCLUDE [fabric-dw](includes/fabric-se.md)] . Reading uniqueidentifier values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-dw](includes/fabric-se.md)]  using a uniqueidentifier column doesn't work as expected.
+The uniqueidentifier data type is a T-SQL data type, without a matching data type in Parquet. As a result, it's stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading uniqueidentifier columns, but these values can't be read on the [!INCLUDE [fabric-dw](includes/fabric-se.md)]. Reading uniqueidentifier values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-dw](includes/fabric-se.md)] using a uniqueidentifier column doesn't work as expected.
 
 For more details about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric). 
 
