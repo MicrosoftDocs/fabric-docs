@@ -36,20 +36,11 @@ Workspace roles are used for development team collaboration within a workspace. 
 
 See [Workspace roles in Fabric data warehousing](workspace-roles.md) for details on the specific Warehouse capabilities provided through Workspace roles.
 
-
-### Item permissions
-
-In contrast to workspace roles, which apply to all items within a workspace, item permissions can be assigned directly to individual Warehouses. The user will receive the assigned permission on that single Warehouse. The primary purpose for these permissions is to enable sharing for downstream consumption of the Warehouse.
-
-See [Item permissions](item-permissions.md) for details on the specific permissions provided for Warehouses.
-
-
 ### Object-level security
 
 Workspace roles and item permissions provide an easy way to assign coarse permissions to a user for the entire warehouse. However, in some cases, more granular permissions are needed for a user. To achieve this, standard T-SQL constructs can be used to provide specific permissions to users.
 
 See [SQL granular permissions](sql-granular-permissions.md) for details on the managing granular permissions in SQL.
-
 
 ### Guidance
 

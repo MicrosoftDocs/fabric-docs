@@ -84,8 +84,6 @@ Use the following steps to enable cross-workspace data analytics:
 > [!NOTE]
 > If the SQL table is not immediately shown in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you might need to wait a few minutes. The SQL table that references data in another workspace is created with a delay.
 
-A [!INCLUDE [fabric-se](includes/fabric-se.md)] in combination with OneLake shortcuts enable you to cross-workspace analytics and share the data products created and maintained in different workspaces.
-
 ## Analyzing partitioned data
 
 Data partitioning is a well-known data access optimization technique in data lakes. Partitioned data sets are stored in the hierarchical folders structures in the format `/year=<year>/month=<month>/day=<day>`, where `year`, `month`, and `day` are the partitioning columns. Partitioned data sets enable faster data access if the queries are filtering data using the predicates that filter data by comparing predicate columns with a value.
