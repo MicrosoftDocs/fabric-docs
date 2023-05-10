@@ -48,3 +48,8 @@ In this sample, we'll estimate the causal impact of certain treatments on an ind
 - Evaluation module: evaluates the effect of the uplift model on test data.
 
 Follow along in the [Healthcare causal impact of treatments](uplift-modeling.md) tutorial.
+
+## Next steps
+
+- [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
+- [Machine learning model in Microsoft Fabric](machine-learning-model.md)
