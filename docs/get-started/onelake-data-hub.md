@@ -21,11 +21,15 @@ This article explains what you see on the data hub and describes how to use it.
 
 Use the tiles across the top of the data hub to find and explore recommended data items. Recommended data items are data items that have been certified or promoted by someone in your organization or have recently been refreshed or accessed.  Each tile contains information about the item and provides an entry point for accessing or using the item.
 
+:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-recommended tiles.png" alt-text="Screenshot of recommended tiles in the OneLake data hub.":::
+
 ## Display only data items belonging to a particular domain
 
-If domains have been defined in your organization, you can use the domain selector to select a domain so that only data items belonging to that domain will be displayed. If an image has been associated with the domain, you’ll see that image on the data hub to remind you of the domain you're viewing.
+If [domains](../governance/domains.md) have been defined in your organization, you can use the domain selector to select a domain so that only data items belonging to that domain will be displayed. If an image has been associated with the domain, you’ll see that image on the data hub to remind you of the domain you're viewing.
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-domains-selector.png" alt-text="Screenshot of the domains selector in the OneLake data hub.":::
+
+For more information about domains, see the [Domains overview](../governance/domains.md)
 
 ## Find items in the data items list
 
@@ -57,8 +61,10 @@ The columns of the list are described below.
 
 Related data items are often grouped together in a workspace. To see the data items by workspace, expand the **Explorer** pane and select the workspace you're interested in. The data items you're allowed to see in that workspace will be displayed in the data items list.
 
+:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-explorer-pane.png" alt-text="Screenshot of the OneLake data hub Explorer pane.":::
+
 > [!NOTE]
-> The workspaces displayed in the Explorer pane include workspaces that you don't have access to if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access will be displayed in the data items list.
+>The Explorer pane may list workspaces that you don't have access to if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the data items list.
 
 ## Next steps
 
