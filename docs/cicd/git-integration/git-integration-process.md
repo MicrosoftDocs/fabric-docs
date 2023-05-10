@@ -35,6 +35,7 @@ The following table describes the permissions needed to perform various common o
 | **Operation**                                                        | **Workspace role**                                                                        | **Git permissions**                          |
 |----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|
 | Connect workspace to Git repo                                        | Admin                                                                                     | Read=Allow                                    |
+| Sync workspace with Git repo                                         | Admin                                                                                     | Read=Allow                                    |
 | Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    |
 | Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Read=Allow  (in target repo/directory/branch) |
 | View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 |
