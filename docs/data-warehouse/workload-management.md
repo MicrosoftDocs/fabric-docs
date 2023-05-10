@@ -64,4 +64,4 @@ The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a 
 
 - [OneLake overview](../onelake/onelake-overview.md)
 - [Data warehousing](data-warehousing.md)
-- [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
+- [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)

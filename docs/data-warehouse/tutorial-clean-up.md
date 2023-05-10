@@ -34,4 +34,4 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 - [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
 - [Create a Synapse Data Warehouse in Microsoft Fabric](create-warehouse.md)
-- [Get started with the SQL Endpoint](get-started-lakehouse-sql-endpoint.md)
+- [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)

@@ -1,5 +1,5 @@
 ---
-title: Get started with the lakehouse
+title: Better together - the lakehouse and warehouse
 description: Learn more about the lakehouse data warehousing experience in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
