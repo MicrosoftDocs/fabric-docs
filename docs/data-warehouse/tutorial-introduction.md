@@ -24,10 +24,10 @@ The tutorials aren't intended to be a reference architecture, an exhaustive list
 
 ## Data warehouse end-to-end scenario
 
-As prerequisities to this tutorial, complete the following steps:
+As prerequisites to this tutorial, complete the following steps:
 
 1. Sign into your Power BI online account, or if you don't have an account yet, sign up for a free trial.
-1. [Enable Fabric](../admin/admin-fabric-switch.md) in your tenant.
+1. [Enable Fabric](../admin/fabric-switch.md) in your tenant.
 
 In this tutorial, you take on the role of a data warehouse developer at the fictional Wide World Importers company and complete the following steps in the [!INCLUDE [product-name](../includes/product-name.md)] portal to build and implement an end-to-end data warehouse solution:
 

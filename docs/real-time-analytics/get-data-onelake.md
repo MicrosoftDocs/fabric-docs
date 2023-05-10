@@ -18,7 +18,7 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* [Lakehouse](../data-engineering/create-lakehouse.md)
+* A [Lakehouse](../data-engineering/create-lakehouse.md)
 * A [KQL database](create-database.md)
 
 ## Copy folder path from Lakehouse
@@ -32,7 +32,7 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 1. Under **URL**, select the **Copy to clipboard** icon and save it somewhere to retrieve in a later step.
     :::image type="content" source="media/get-data-onelake/lakehouse-file-properties.png" alt-text="Screenshot of a Lakehouse file's Properties pane. The copy icon to the right of the file's URL is highlighted.":::
 
-1. Return to your workspace and select a KQL Database.
+1. Return to your workspace and select a KQL database.
 
 ## Get data
 
@@ -44,7 +44,7 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 
      :::image type="content" source="media/get-data-onelake/onelake-table-name.png" alt-text="Screenshot of Destination window showing the database and table name in Real-Time Analytics. The table name field is highlighted.":::
 
-      > [!TIP]
+      > [!NOTE]
       > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
 1. Select **Next: Source**.

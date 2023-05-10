@@ -34,17 +34,17 @@ For more information on the `.create-or-alter` `function` command, see [`.create
 
 This feature allows you to create or alter an existing function using the `.create-or-alter` `function` command, which stores it in the database metadata. If the function with the provided *functionName* doesn't exist in the database metadata, the command creates a new function. Otherwise, the named function is changed.
 
-1. Select **New** > **Function**. The `.create-or-alter` command is automatically populated in the **Explore your data** window.
+1. Browse to your KQL database, and select **New** > **Function**. The `.create-or-alter` command is automatically populated in the **Explore your data** window.
 
-    :::image type="content" source="media/create-functions/function-cmd.png" alt-text="Screenshot of the New option dropdown menu. The option titled Function is highlighted.":::
+    :::image type="content" source="media/create-functions/function-command.png" alt-text="Screenshot of a KQL database landing page showing the New option dropdown menu. The option titled Function is highlighted."  lightbox="media/create-functions/function-command.png":::
 
-1. Enter the parameters for your function, and then select **Run**.
+1. Enter the function name and query parameters of your function instead of the placeholder text, and then select **Run**.
 
     :::image type="content" source="media/create-functions/create-function.png" alt-text="Screenshot of explore your data window showing the newly created function in Real-Time Analytics.":::
 
     Stored functions appear under **Functions** in the **Data tree**.
 
-    :::image type="content" source="media/create-functions/functions-object-tree.png" alt-text="Screenshot of Object tree showing the list of stored user-defined functions.":::
+    :::image type="content" source="media/create-functions/functions-object-tree.png" alt-text="Screenshot of Data tree showing the list of stored user-defined functions.":::
 
 1. In the **Explore your data** window, run a query to check that you have successfully created or altered your function.
 
@@ -52,4 +52,4 @@ This feature allows you to create or alter an existing function using the `.crea
 
 ## Next steps
 
-[Query data in the KQL Queryset](kusto-query-set.md)
+[Query data in a KQL queryset](kusto-query-set.md)

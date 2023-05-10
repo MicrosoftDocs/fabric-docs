@@ -11,9 +11,9 @@ ms.date: 05/23/2023
 
 # OneLake shortcuts
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds and accounts by creating a single virtualized data lake for your entire enterprise. All Fabric workloads and analytical engines can directly connect to your existing data sources such as Azure, AWS and OneLake through a unified namespace.  Permissions and credentials are all managed by OneLake, so each Fabric workload doesn't need to be separately configured to connect to each data source.  Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## What are shortcuts?
 

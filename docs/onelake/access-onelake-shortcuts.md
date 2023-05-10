@@ -11,9 +11,9 @@ ms.date: 05/23/2023
 
 # Accessing shortcuts
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to access shortcuts as folders in a Spark notebook
 
