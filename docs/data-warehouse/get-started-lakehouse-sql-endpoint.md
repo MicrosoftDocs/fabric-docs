@@ -29,17 +29,23 @@ There's no need to create [SQL Endpoints](data-warehousing.md#sql-endpoint-of-th
 
 [!INCLUDE [product-name](../includes/product-name.md)] workspace is ensuring that the Lakehouse objects are exposed and available for analysis.
 
-## Analyzing automatically discovered data in the lakehouse
+## Analyzing data in the [!INCLUDE [product-name](../includes/product-name.md)] lakehouse
 
-Analyzing automatically discovered schema and data in the [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse is one of the main scenarios where you use the [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse). 
+Analyzing data in the [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse is one of the main scenarios where you use the [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse). The main purpose of [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) is to enable analytical and reporting tools to access data in the Lakehouse.
+
+[SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) automatically creates SQL tables that are referencing data in the Lakehouse and enable reporting tools to access Lakehouse data using T-SQL language. 
 
 Data in a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse is physically stored in OneLake with the following folder structure:
 - The `/Files` folder contains raw and unconsolidated (bronze) files that should be processed by data engineers before they're analyzed. The files might be in various formats such as `csv`, `parquet`, different types of images, etc.
 - The `/Tables` folder contains refined and consolidated (gold) data that is ready for business analysis. The consolidated data is in Delta Lake format.
 
-The SQL Endpoint automatically discovers data stored in the `/Tables` folder and exposes Lakehouse data as SQL tables. The SQL tables are ready for analytics without the need for explicit setup or table design. The SQL Endpoint analyzes the Delta Lake schema in the `/Tables` folders and automatically creates SQL tables that can be used to query lake data.
+The SQL Endpoint automatically discovers data stored in the `/Tables` folder and exposes Lakehouse data as SQL tables. Every `Delta Lake` folder in the `/Tables` folder is represented as one SQL table that can be used to read data from the folder using T-SQL language. 
 
-In addition to SQL tables, the [!INCLUDE [product-name](../includes/product-name.md)] workspace exposes lakehouse data using a default dataset that can either directly access data in the lake or use SQL tables in the SQL endpoint to read data.
+The SQL tables are ready for analytics without the need for explicit setup or table design. The SQL Endpoint analyzes the Delta Lake schema in the `/Tables` folders and automatically creates SQL tables that can be used to query lake data. The SQL Endpoint analyzes the schema/columns in the `Delta Lake` and crates matching SQL columns in the generated tables.
+
+[SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) is also enabling you to add additional SQL objects (views, procedures, functions) and setup additional security rules on these objects.
+
+In addition to SQL tables, the [!INCLUDE [product-name](../includes/product-name.md)] workspace exposes the Lakehouse data using a default dataset that can either directly access data in the lake or use SQL tables in the SQL endpoint to read data.
 
 ## Analyzing data in external data lakes
 
