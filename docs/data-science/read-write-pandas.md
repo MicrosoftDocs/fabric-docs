@@ -38,14 +38,14 @@ For reference, the following command shows how to convert a Spark DataFrame into
 pandas_df = spark_df.toPandas() 
 ```
 
-## Reading and writing with various file formats
+## Reading and writing various file formats
 
 The code samples below document the Pandas operations for reading and writing various file formats.
 
 > [!NOTE]
-> Please replace the file paths in the following samples. Pandas supports both relative paths, as shown in these examples, and full ABFS paths. Either can be retrieved and copied from the interface according to the previous step.
+> You must replace the file paths in the following samples. Pandas supports both relative paths, as shown here, and full ABFS paths. Either can be retrieved and copied from the interface according to the previous step.
 
-## Read data from a CSV file
+### Read data from a CSV file
 
 ```Python
 import pandas as pd
@@ -56,7 +56,7 @@ df = pd.read_csv("/LAKEHOUSE_PATH/Files/FILENAME.csv")
 display(df)
 ```
 
-## Write data to a CSV file
+### Write data as a CSV file
 
 ```Python
 import pandas as pd 
@@ -66,7 +66,7 @@ import pandas as pd
 df.to_csv("/LAKEHOUSE_PATH/Files/FILENAME.csv") 
 ```
 
-## Read data from a Parquet file
+### Read data from a Parquet file
 
 ```Python
 import pandas as pd 
@@ -77,7 +77,7 @@ df = pandas.read_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet")
 display(df)
 ```
 
-## Write data to a Parquet file
+### Write data as a Parquet file
 
 ```Python
 import pandas as pd 
@@ -87,7 +87,7 @@ import pandas as pd
 df.to_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet") 
 ```
 
-## Read data from an Excel file
+### Read data from an Excel file
 
 ```Python
 import pandas as pd 
@@ -98,7 +98,7 @@ df = pandas.read_excel("/LAKEHOUSE_PATH/Files/FILENAME.xlsx")
 display(df) 
 ```
 
-## Write data to an Excel file
+### Write data as an Excel file
 
 ```Python
 import pandas as pd 
@@ -108,7 +108,7 @@ import pandas as pd
 df.to_excel("/LAKEHOUSE_PATH/Files/FILENAME.xlsx") 
 ```
 
-## Read data from a JSON file
+### Read data from a JSON file
 
 ```Python
 import pandas as pd 
@@ -119,7 +119,7 @@ df = pandas.read_json("/LAKEHOUSE_PATH/Files/FILENAME.json")
 display(df) 
 ```
 
-## Write data to a JSON file
+### Write data as a JSON file
 
 ```Python
 import pandas as pd 
