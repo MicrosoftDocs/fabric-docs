@@ -25,15 +25,15 @@ In this tutorial, learn about how you can easily create and execute T-SQL querie
 
 1. Select the SQL endpoint of the lakehouse you created using shortcuts previously, named `ShortcutExercise`. Both warehouse experiences are added to the query.
 
-    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" alt-text="A screenshot from the Fabric portal Add warehouses window. Two warehouses are selected, including the ShortcutExercuse SQL endpoint.":::
+    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" alt-text="A screenshot from the Fabric portal Add warehouses window. Two warehouses are selected, including the ShortcutExercise SQL endpoint." lightbox="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png":::
 
 1. Your selected warehouses now show the same **Explorer** pane.
 
 ## Execute a cross-warehouse query
 
-You can write cross-database queries using three-part naming to reference the `database.schema.table`, just as in SQL Server.
+You can write cross-database queries using three-part naming to reference the `database.schema.table`, as in SQL Server.
 
-1. In this example, you will see how easily you can run TSQL queries across the `WideWorldImporters` warehouse and `ShortcutExercise` SQL Endpoint.
+1. In this example, you can see how easily you can run T-SQL queries across the `WideWorldImporters` warehouse and `ShortcutExercise` SQL Endpoint.
 
 ```sql
 SELECT Sales.StockItemKey, 

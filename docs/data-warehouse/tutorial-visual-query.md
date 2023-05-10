@@ -98,4 +98,4 @@ Create and save a query with the visual query builder in the [!INCLUDE [product-
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Power BI report](tutorial-power-bi-report.md)
+> [Tutorial: Analyze data with a notebook](tutorial-analyze-data-notebook.md)

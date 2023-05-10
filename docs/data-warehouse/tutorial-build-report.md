@@ -40,7 +40,12 @@ Learn how to build a report with the data you ingested into your [!INCLUDE [fabr
 
    :::image type="content" source="media\tutorial-build-report\save-report-dialog.png" alt-text="Screenshot of the Save your report dialog with the report name Customer Quick Summary entered.":::
 
+1. Your tutorial is complete!
+    1. Review [Security for data warehousing in Microsoft Fabric](security.md).
+    1. Learn more about [Workspace roles in Fabric data warehousing](workspace-roles.md).
+    1. Consider [Microsoft Purview](../governance/microsoft-purview-fabric.md), included by default in every tenant to meet important compliance and governance needs.
+
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create tables in a data warehouse](tutorial-create-tables.md)
+> [Tutorial: Clean up tutorial resources](tutorial-clean-up.md)

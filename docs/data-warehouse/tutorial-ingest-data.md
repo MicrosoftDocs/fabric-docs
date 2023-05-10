@@ -123,4 +123,4 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Build a report](tutorial-build-report.md)
+> [Tutorial: Create tables in a data warehouse](tutorial-create-tables.md)

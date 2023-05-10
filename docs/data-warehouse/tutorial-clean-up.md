@@ -1,6 +1,6 @@
 ---
-title: Data warehouse tutorial - clean up resources
-description: In this final tutorial step, learn how to delete an entire workspace, and delete individual reports, pipelines, warehouses, and other items.
+title: Data warehouse tutorial - clean up tutorial resources
+description: In this final tutorial step, clean up the workspace, individual reports, pipelines, warehouses, and other items you created as part of the tutorial.
 ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
@@ -8,11 +8,11 @@ ms.topic: tutorial
 ms.date: 5/23/2023
 ---
 
-# Tutorial: Clean up resources
+# Tutorial: Clean up tutorial resources
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-You can delete individual reports, pipelines, warehouses, and other items or remove the entire workspace.
+You can delete individual reports, pipelines, warehouses, and other items or remove the entire workspace. In this tutorial, you will clean up the workspace, individual reports, pipelines, warehouses, and other items you created as part of the tutorial.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -35,5 +35,3 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 ## Next steps
 
 - [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
-- [Create a Synapse Data Warehouse in Microsoft Fabric](create-warehouse.md)
-- [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
