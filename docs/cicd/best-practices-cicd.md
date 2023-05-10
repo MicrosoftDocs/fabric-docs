@@ -95,7 +95,7 @@ With git integration, any developer can backup their work by committing it into 
 
 After backing up your work, there might be cases where you want to revert to a previous version and restore it in the workspace. There are a few options for this:
 
-* **Undo button**: The *Undo* operation is an easy and fast way to revert the immediate changes you made, as long as they are not committed yet. You can also undo each item separately. Read more about the [undo](./git-integration/git-get-started.md#commit-changes-to-git&tabs=undo-saved-change) operation.
+* **Undo button**: The *Undo* operation is an easy and fast way to revert the immediate changes you made, as long as they are not committed yet. You can also undo each item separately. Read more about the [undo](./git-integration/git-get-started.md&tabs=undo-save#commit-changes-to-git) operation.
 
 * **Reverting to older commits**: There’s no direct way to go back to a previous commit in the UI. The best option is to promote an older commit to be the HEAD using ‘git X’. Doing this will show that there’s an update in the source control pane, and you can update the workspace with that new commit.
 
