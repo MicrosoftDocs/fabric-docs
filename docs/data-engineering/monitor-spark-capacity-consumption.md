@@ -59,7 +59,7 @@ All Spark-related operations are classified as [background operations](/power-bi
 > [!NOTE]
 >- Each row refers to a user operation. 
 >- Refer to the "User" column to identify who performed a specific operation.
->- Use the "Operation ID" column to look up an operation in the Trident monitoring hub for more information if needed.
+>- Use the "Operation ID" column to look up an operation in the Fabric monitoring hub for more information if needed.
 
 ## Next steps
 

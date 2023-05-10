@@ -71,8 +71,6 @@ OneLake is built on top of ADLS (Azure Data Lake Storage) Gen2. It provides a si
 
 OneLake eliminates today's pervasive and chaotic data silos, which individual developers create when they provision and configure their own isolated storage accounts. Instead, OneLake provides a single, unified storage system for all developers, where discovery and data sharing is trivial and compliance with policy and security settings are enforced centrally and uniformly. For more information, see [What is OneLake?](../onelake/onelake-overview.md)
 
-:::image type="content" source="media\microsoft-fabric-overview\onelake-in-microsoft-fabric.png" alt-text="Diagram of the structure of Fabric, showing OneLake as the single data store on which all the experiences operate.":::
-
 ### Organizational structure of OneLake and lakehouse
 
 OneLake is hierarchical in nature to simplify management across your organization. It's built into Microsoft Fabric and there's no requirement for any up-front provisioning. There's only one OneLake per tenant and it provides a single-pane-of-glass file-system namespace that spans across users, regions and even clouds. The data in OneLake is divided into manageable containers for easy handling.
