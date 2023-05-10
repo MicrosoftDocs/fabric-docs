@@ -142,5 +142,5 @@ landingContent:
     linkLists: 
       - linkListType: how-to-guide
         links:
-          - text: Accessing Data warehouse files in One Lake
+          - text: Access Data warehouse files in One Lake
             url: access-data-warehouse-files-in-one-lake.md
