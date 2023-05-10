@@ -28,17 +28,17 @@ To get data from a blob, see [Get data from a blob](get-data-blob.md).
 
     :::image type="content" source="media/get-data-blob-container/get-data-blob-container.png" alt-text="Screenshot of get data with blob container selected in Real-Time Analytics.":::
 
-    > [!TIP]
-    >  Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
+    > [!NOTE]
+    > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
 ### Source tab
 
 1. In **Source type**, select Blob container.
-1. In **Link to source** field, add the Account Key/SAS URI.
+1. In **Link to source** field, add a blob URL with an Account Key/SAS URI.
 
     To add a blob URI, you need to generate an Account Key/ SAS token with both List and Read permissions. To generate an Account Key/SAS token, see [Generate a SAS token](/azure/data-explorer/generate-sas-token?context=/fabric/context/context&pivots=fabric).
 
-    :::image type="content" source="media/get-data-blob/ingest-new-data-blob-container.png" alt-text="Screenshot of data ingestion pane for blob containers.":::
+    :::image type="content" source="media/get-data-blob-container/ingest-new-data-blob-container.png" alt-text="Screenshot of data ingestion pane for blob containers.":::
 
 1. Optionally, you can filter data to be ingested with **File filters**. You can filter by file extension, folder path, or both.
 
@@ -58,4 +58,4 @@ To get data from a blob, see [Get data from a blob](get-data-blob.md).
 
 * To create an empty table, see [Create an empty table](create-empty-table.md)
 * To manage your database, see [Manage data](data-management.md)
-* To create, store, and export queries, see [Query data in the KQL Queryset](kusto-query-set.md)
+* To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md)

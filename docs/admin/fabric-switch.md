@@ -15,7 +15,7 @@ ms.date: 05/23/2023
 The [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) admin switch lets organizations that use Power BI opt into Microsoft Fabric.
 
 >[!NOTE]
->Microsoft Fabric availability is restricted in some regions.
+>Microsoft Fabric availability is restricted in some regions. For more information, see [Fabric region availability](./admin-region-availability.md).
 
 You can enable Microsoft Fabric for:
 

@@ -1,5 +1,5 @@
 ---
-title: Create a shortcut to access data in OneLake in Real-Time Analtyics
+title: Create a shortcut to access data in OneLake in Real-Time Analytics
 description: Learn how to create a OneLake shortcut to query data from OneLake in your KQL database.
 ms.reviewer: tzgitlin
 ms.author: yaschust

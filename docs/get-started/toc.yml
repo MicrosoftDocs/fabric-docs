@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Microsoft Fabric?
     href: microsoft-fabric-overview.md
+  - name: Start a Fabric (Preview) trial
+    href: fabric-trial.md
   - name: Fabric terminology
     href: fabric-terminology.md
 - name: Get started
@@ -15,6 +17,8 @@ items:
   items:
   - name: Find your items from Fabric Home
     href: fabric-home.md
+  - name: Context sensitive Help pane
+    href: fabric-help-pane.md
   - name: Search, sort, and filter
     href: fabric-search.md
   - name: Fabric settings

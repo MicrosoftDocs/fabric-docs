@@ -19,7 +19,7 @@ The git integration tenant admin settings are configured in the tenant settings 
 > [!IMPORTANT]
 > The switches that control git integration are part of Microsoft Fabric and will only work if the [Fabric admin switch](./fabric-switch.md) is turned on. If Fabric is disabled, git integration can't work regardless of the status of these switches.
 
-These settings are only visible to the tenant admin.
+These settings are only visible to the tenant admin.  
 There are three settings relating to git integration:
 
 * [Enable the git integration feature](#enable-git-integration-feature)

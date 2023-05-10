@@ -122,7 +122,7 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 
 ### General limitations
 
-- The Azure DevOps account must be registered to the same user that is using the Trident workspace.
+- The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
 
 ## Workspace limitations
 
