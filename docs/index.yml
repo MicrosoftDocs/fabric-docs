@@ -102,7 +102,7 @@ productDirectory:
         - url: data-factory/create-first-pipeline-with-sample-data.md
           text: Create your first pipeline
         - url: data-factory/create-first-dataflow-gen2.md
-          text: Create your first dataflow?
+          text: Create your first dataflow
         - url: data-factory/connector-overview.md
           text: Connectors
         - url: data-factory/index.yml
