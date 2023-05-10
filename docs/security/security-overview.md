@@ -10,7 +10,7 @@ ms.date: 05/23/2023
 
 # Security in Microsoft Fabric
 
-Security and reliability are key foundational features for every organization. In Microsoft Fabric, as you bring your data to the cloud and use it with various analytics workloads such as Power BI, Data Factory , and the next generation of Synapse,  Microsoft ensures that built-in security and reliability features secure your data at rest and transit. Microsoft also makes sure that your data is recoverable in cases of infrastructure failures or disasters.
+Security and reliability are key foundational features for every organization. In Microsoft Fabric, as you bring your data to the cloud and use it with various analytics workloads such as Power BI, Data Factory, and the next generation of Synapse,  Microsoft ensures that built-in security and reliability features secure your data at rest and transit. Microsoft also makes sure that your data is recoverable in cases of infrastructure failures or disasters.
 
 ## Security features
 

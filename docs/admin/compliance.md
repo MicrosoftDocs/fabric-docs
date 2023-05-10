@@ -36,11 +36,9 @@ The Microsoft Fabric items that belong to these features require private endpoin
 
 * Data science
 
-* Reflex
-
 * SQL database
 
-* EventStream
+* Eventstream
 
 * Third party access to OneLake
 
@@ -57,11 +55,11 @@ To enable noncompliant features, do the following:
 3. Turn on the switch titled *Users can work with content that doesn't comply with security requirements*.
 
     >[!NOTE]
-    >When the [Block Public Internet Access](/power-bi/admin/service-admin-portal-advanced-networking) switch is enabled, noncompliant Microsoft Fabric items aren't supported even if you enabled *Users can work with content that doesn't comply with security requirements*.
+    >When the [Block Public Internet Access](/power-bi/admin/service-admin-portal-advanced-networking) switch is enabled, noncompliant Microsoft Fabric items aren't supported even if you enable the *Users can work with content that doesn't comply with security requirements* setting, because they can't use a non-secure connection.
 
 ## Disable noncompliant features
 
-By default, noncompliant Microsoft Fabric items aren't enable. After you enable using these items, you may decide to disable them again. In such cases, the items will still be visible in their workspaces. When users try to open these items they'll get an error message. 
+By default, noncompliant Microsoft Fabric items aren't enabled. After you enable using these items, you may decide to disable them again. In such cases, the items will still be visible in their workspaces. When users try to open these items they'll get an error message, for example *PowerBIFeatureDisabled*.
 
 ## Next steps
 

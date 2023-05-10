@@ -51,8 +51,10 @@ productDirectory:
           text: What is Fabric?
         - url: enterprise/licenses.md
           text: Microsoft Fabric licenses
-        - url: enterprise/licenses-buy.md
-          text: Navigate the Fabric portal
+        - url: enterprise/buy-subscription.md
+          text: Buy a Microsoft Fabric subscription
+        - url: get-started/fabric-home.md
+          text: Navigate the Fabric portal          
         - url: get-started/workspaces.md
           text: Workspaces in Fabric
         - url: get-started/index.yml
@@ -167,8 +169,8 @@ productDirectory:
 
       imageSrc: ./media/administrator-icon.svg
       links:
-        - url: enterprise/licenses-buy.md
-          text: Buy a Microsoft Fabric license     
+        - url: enterprise/buy-subscription.md
+          text: Buy a Microsoft Fabric subscription     
         - url: admin/microsoft-fabric-admin.md
           text: Fabric administration
         - url: governance/metadata-scanning-overview.md
