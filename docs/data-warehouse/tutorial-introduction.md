@@ -38,7 +38,7 @@ In this tutorial, you take on the role of a [!INCLUDE [fabric-dw](includes/fabri
 1. [Load data with T-SQL](tutorial-load-data.md) with the SQL query editor.
 1. [Transform the data](tutorial-transform-data.md) to create aggregated datasets using T-SQL.
 1. [Use the visual query editor](tutorial-visual-query.md) to query the data warehouse.
-1. [Analyze data](tutorial-analyze-data-notebook) with a notebook.
+1. [Analyze data](tutorial-analyze-data-notebook.md) with a notebook.
 1. [Create and execute cross-warehouse queries](tutorial-sql-cross-warehouse-query-editor.md) with SQL query editor.
 1. [Create Power BI reports](tutorial-power-bi-report.md) using DirectLake mode to analyze the data in place.
 1. [Build a report](tutorial-build-report.md) from the **Data Hub**.
