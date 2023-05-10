@@ -13,19 +13,19 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview # This ar
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] provides an [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) for every lakehouse in the workspace. The [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) enables you to query data in the lakehouse using T-SQL language and TDS protocol. Every lakehouse has one [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse), and each workspace can have more than one lakehouse. The number of [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in a workspace matches the number of lakehouses.
-- The SQL Endpoint is automatically generated for every lakehouse artifact and exposes Delta tables from the lakehouse as SQL tables that can be queried using the T-SQL language.
+- The [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically generated for every lakehouse and exposes Delta tables from the lakehouse as SQL tables that can be queried using the T-SQL language.
 - Every delta table from a lakehouse is represented as one table. Data should be in delta format.
 - The [default Power BI dataset](datasets.md) is created for every [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) and it follows the naming convention of the lakehouse objects.
  
 [OneLake](../onelake/onelake-overview.md) is a single, unified, logical data lake for the whole organization. OneLake is the OneDrive for data. OneLake can contain multiple workspaces, for example, along your organizational divisions. The [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) exposes data in the `/tables` folder within each lakehouse folder in [OneLake](../onelake/onelake-overview.md) and enables you to create queries and reports on the [OneLake](../onelake/onelake-overview.md) data. 
 
-The delta tables in the [lakehouse](../data-engineering/lakehouse-overview.md) are automatically added to the default Power BI dataset. The default Power BI dataset is queried via the [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) and updated via changes to the lakehouse. You can also query the default Power BI dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [Synapse Data Warehouse](data-warehousing.md#synapse-data-warehouse).
+The delta tables in the [lakehouse](../data-engineering/lakehouse-overview.md) are automatically added to the default Power BI dataset. The default Power BI dataset is queried via the [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) and updated via changes to the lakehouse. You can also query the default Power BI dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Creating a SQL Endpoint
 
-There is no need to create [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in [!INCLUDE [product-name](../includes/product-name.md)]. [!INCLUDE [product-name](../includes/product-name.md)] users cannot create [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in a workspace. A [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) is automatically created for every lakehouse artifact. If you want to create [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse), [create a lakehouse](../onelake/create-lakehouse-onelake.md), and a [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) will be automatically created with the lakehouse.
+There is no need to create [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in [!INCLUDE [product-name](../includes/product-name.md)]. [!INCLUDE [product-name](../includes/product-name.md)] users cannot create [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in a workspace. A [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) is automatically created for every lakehouse. If you want to create [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse), [create a lakehouse](../onelake/create-lakehouse-onelake.md), and a [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) will be automatically created with the lakehouse.
 
 The [!INCLUDE [product-name](../includes/product-name.md)] workspace ensures that lakehouse objects are exposed and available for analysis.
 
@@ -53,7 +53,7 @@ Any folder referenced using a [shortcut](../data-engineering/lakehouse-shortcuts
 
 ## Cross-workspace data analytics
 
-[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) enable you to analyze data in the Warehouse or lakehouse artifacts placed in other [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
+[SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) enable you to analyze data in the warehouse or lakehouse placed in other [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
 - Every [!INCLUDE [product-name](../includes/product-name.md)] lakehouse stores data in OneLake. [Shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to reference folders in any OneLake location.
 - Every [!INCLUDE [product-name](../includes/product-name.md)] Warehouse stores table data in OneLake. If a table is append-only, the table data is exposed as Delta Lake datasets in OneLake. [Shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to reference folders in any OneLake where the Warehouse tables are exposed.
 
