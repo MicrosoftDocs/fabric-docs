@@ -1,8 +1,8 @@
 ---
 title: Workspace roles
 description: Learn about the roles you can use to manage user access within a workspace.
-author: kedodd
-ms.author: kedodd
+author: cynotebo
+ms.author: cynotebo
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
