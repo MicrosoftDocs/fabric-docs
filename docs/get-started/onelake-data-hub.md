@@ -15,7 +15,7 @@ The OneLake data hub makes it easy to find, explore, and use the Fabric data ite
 
 This article explains what you see on the data hub and describes how to use it.
 
-:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-general.png" alt-text="Screenshot of the OneLake data hub.":::
+:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-general.png" alt-text="Screenshot of the OneLake data hub." lightbox="./media/onelake-data-hub/onelake-data-hub-general.png":::
 
 ## Find recommended items
 
@@ -31,7 +31,7 @@ If domains have been defined in your organization, you can use the domain select
 
 The data items list displays all the data items you have access to. To shorten the list, you can filter by keyword or data-item type using the filters at the top of the list.
 
-:::image type="content" source="media/onelake-data-hub/onelake-data-hub-data-items-list.png" alt-text="Screenshot of the OneLake data hub data items list." lightbox="media/onelake-data-hub/onelake-data-hub-data-items-list.png":::
+:::image type="content" source=./media/onelake-data-hub/onelake-data-hub-data-items-list.png" alt-text="Screenshot of the OneLake data hub data items list." lightbox="./media/onelake-data-hub/onelake-data-hub-data-items-list.png":::
 
 The list has three tabs to narrow down the list of data items.
 
