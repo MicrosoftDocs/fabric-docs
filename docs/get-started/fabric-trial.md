@@ -14,6 +14,8 @@ The Microsoft Fabric (Preview) trial includes access to the Fabric product exper
 
 This document helps you understand and start a Fabric (Preview) trial. 
 
+[!INCLUDE [trial note](../includes/preview-note.md)]
+
 ## Existing Power BI users
 If you're an existing Power BI user, you can skip to [Start the Fabric (Preview) trial](#start-the-fabric-preview-trial). 
 
