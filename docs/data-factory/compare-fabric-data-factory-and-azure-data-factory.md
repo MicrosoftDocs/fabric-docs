@@ -18,6 +18,8 @@ Data Factory in Microsoft Fabric is the next generation of Azure Data Factory wh
 
 ## Feature mapping
 
+In the modern experience of Data Factory in Fabric, there are some different features concepts compared to Azure Data Factory. Detail features mapping is presented as the table below.
+
 |Azure Data Factory |Data Factory in Fabric |Description |
 |:---|:---|:---|
 |Pipeline |Data pipeline | Data pipeline in Fabric is better integrated with the unified data platform including Lakehouse, Datawarehouse, and more. |
