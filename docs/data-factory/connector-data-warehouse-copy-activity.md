@@ -96,7 +96,7 @@ Under **Advanced**, you can specify the following fields:
 - **Write batch timeout**: The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).
 - **Disable performance metrics analytics**: The service collects metrics for copy performance optimization and recommendations. If you're concerned with this behavior, turn off this feature.
 
-If your source data is in **Azure Blob Storage** or **Azure Data Lake Storage Gen2**, and the format is COPY statement compatible, copy activity directly invokes COPY command to let Data Warehouse to pull the data from source.
+&emsp;If your source data is in **Azure Blob Storage** or **Azure Data Lake Storage Gen2**, and the format is COPY statement compatible, copy activity directly invokes COPY command to let Data Warehouse to pull the data from source.
 
 1. The source data and format are with the following types and authentication methods:
 
@@ -138,14 +138,14 @@ To learn more information about copy activity in Data Warehouse, see the followi
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse** |Yes|type|
 |**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
-|**Use query** |The way to read data from Data Warehouse. |•Tables<br>•Query<br>•Stored procedure|No|*(under `typeProperties` -> `source`)*<br>•typeProperties:<br>&emsp;schema<br>&emsp;table<br>•sqlReaderQuery<br>•sqlReaderStoredProcedureName|
+|**Use query** |The way to read data from Data Warehouse. |• Tables<br>• Query<br>• Stored procedure|No|*(under `typeProperties` -> `source`)*<br>• typeProperties:<br>&emsp;schema<br>&emsp;table<br>• sqlReaderQuery<br>• sqlReaderStoredProcedureName|
 |**Query timeout (minutes)**|Timeout for query command execution, with the default of 120 minutes. If this property is set, the allowed values are in the format of a timespan, such as "02:00:00" (120 minutes).|timespan |No |queryTimeout|
-|**Isolation level** |The transaction locking behavior for source. |•None<br>•Snapshot|No |isolationLevel|
-|**Partition option**|The data partitioning options used to load data from Data Warehouse.|•None<br>•Dynamic range|No|partitionOption|
+|**Isolation level** |The transaction locking behavior for source. |• None<br>• Snapshot|No |isolationLevel|
+|**Partition option**|The data partitioning options used to load data from Data Warehouse.|• None<br>• Dynamic range|No|partitionOption|
 |**Partition column name**|The name of the source column **in integer or date/datetime type** (`int`, `smallint`, `bigint`, `date`, `smalldatetime`, `datetime`, `datetime2`, or `datetimeoffset`) that will be used by range partitioning for parallel copy. If not specified, the index or the primary key of the table is detected automatically and used as the partition column.|\<partition column name>|No|partitionColumnName|
 |**Partition upper bound**|The maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied.|\<partition upper bound>|No|partitionUpperBound|
 |**Partition lower bound**|The minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied.|\<partition lower bound>|No|partitionLowerBound|
-|**Additional columns** |Add additional data columns to store source files' relative path or static value.| •Name<br>•Value|No |additionalColumns:<br>- name<br>- value|
+|**Additional columns** |Add additional data columns to store source files' relative path or static value.| • Name<br>• Value|No |additionalColumns:<br>• name<br>• value|
 
 ### Destination information
 
@@ -155,8 +155,8 @@ To learn more information about copy activity in Data Warehouse, see the followi
 |**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse**  |Yes|type|
 |**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
 |**Table** |The destination table to write data.|\<name of your destination table>|Yes|schema <br> table|
-|**Copy command settings**|The copy command property settings. Contains the default value settings.|Default value:<br>•Column<br> •Value|No |copyCommandSettings:<br>defaultValues:<br>•columnName<br>•defaultValue|
-|**Table option**|Whether to automatically create the destination table if not exists based on the source schema.|•None<br>•Auto create table|No|tableOption:<br><br>•autoCreate|
+|**Copy command settings**|The copy command property settings. Contains the default value settings.|Default value:<br>• Column<br> • Value|No |copyCommandSettings:<br>defaultValues:<br>• columnName<br>• defaultValue|
+|**Table option**|Whether to automatically create the destination table if not exists based on the source schema.|• None<br>• Auto create table|No|tableOption:<br><br>• autoCreate|
 |**Pre-copy script** |A SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.|\<pre-copy script>|No|preCopyScript|
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
 |**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br> true or false|
