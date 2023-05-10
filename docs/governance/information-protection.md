@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Information protection in Fabric is based on information protection in Power BI. However it is currently less fully supported than it Power BI. This article describes Fabric's information protection [capabilities](#capabilities) and details current support under [considerations and limitations](#considerations-and-limitations).
+Information protection in Fabric is based on information protection in Power BI. However it's currently less fully supported than it Power BI. This article describes Fabric's information protection [capabilities](#capabilities) and details current support under [considerations and limitations](#considerations-and-limitations).
 
 ## Capabilities
 
@@ -60,7 +60,7 @@ Programmatic labeling is supported for all Fabric items. For more information, s
 
 ### Downstream inheritance
 
-Downstream inheritance is on by default. It is supported in Fabric as follows:
+Downstream inheritance is on by default. It's supported in Fabric as follows:
 
 Supported:
 
