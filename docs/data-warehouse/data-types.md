@@ -33,7 +33,7 @@ Tables in Microsoft Fabric support the most commonly used T-SQL data types.
 > [!NOTE]
 > The precision for datetime2 and time is limited to 6 digits of precision on fractions of seconds.
 
-The uniqueidentifier data type is a T-SQL data type, without a matching data type in Parquet. As a result, it is stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading uniqueidentifier columns, but these values cannot be read on the lakehouse. Reading uniqueidentifier values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and lakehouse using a uniqueidentifier column does not work as expected.
+The uniqueidentifier data type is a T-SQL data type, without a matching data type in Parquet. As a result, it's stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading uniqueidentifier columns, but these values can't be read on the lakehouse. Reading uniqueidentifier values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and lakehouse using a uniqueidentifier column doesn't work as expected.
 
 For more details about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric). 
 
@@ -57,7 +57,7 @@ For a guide to create a table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], 
 
 The tables in [!INCLUDE [fabric-se](includes/fabric-se.md)] are automatically created whenever a table is created in the associated Lakehouse artifact. The column types in the [!INCLUDE [fabric-se](includes/fabric-se.md)] tables are derived from the source Delta types.
 
-The rules for mapping original Delta types to the SQl types in [!INCLUDE [fabric-se](includes/fabric-se.md)] are shown in the following table:
+The rules for mapping original Delta types to the SQL types in [!INCLUDE [fabric-se](includes/fabric-se.md)] are shown in the following table:
 
 | **Delta Data Type** | **SQL Data** **Type (Mapped)** |
 |---|---|
