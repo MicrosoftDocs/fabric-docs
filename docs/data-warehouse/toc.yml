@@ -3,8 +3,6 @@ items:
   href: index.yml
 - name: Overview
   href: data-warehousing.md
-- name: Get started with the lakehouse 
-  href: get-started-lakehouse-sql-endpoint.md
 - name: Get started with Synapse Data Warehouse
   items:
   - name: 1. Create a warehouse
@@ -47,8 +45,12 @@ items:
     href: connectivity.md    
 - name: Design and Develop
   items:
+  - name: Better together - the lakehouse and warehouse
+    href: get-started-lakehouse-sql-endpoint.md
   - name: Warehouse settings and context menus
     href: settings-context-menus.md
+  - name: Get Workspace and OneLake path
+    href: get-workspace-onelake-path.md
   - name: Create a sample warehouse 
     href: create-warehouse-sample.md
   - name: Tables
@@ -87,8 +89,6 @@ items:
     href: security.md
   - name: Workspace roles
     href: workspace-roles.md
-  - name: Get Workspace and OneLake path
-    href: get-workspace-onelake-path.md
   - name: Manage SQL granular permissions
     href: sql-granular-permissions.md
 - name: Query the warehouse
@@ -117,3 +117,7 @@ items:
     href: troubleshoot-synapse-data-warehouse.md
   - name: Limitations and known issues
     href: limitations.md      
+- name: Reference
+  items:
+- name: Resources
+  items: 
