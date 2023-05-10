@@ -25,7 +25,7 @@ Requirements needed to apply sensitivity labels to Fabric items:
 * Edit permissions on the item you wish to label.
 
 > [!NOTE]
-> If you can't apply a sensitivity label, or if the sensitivity label is greyed out in the sensitivity label menu, you may not have permissions to use the label. Contact your organizations tech support.
+> If you can't apply a sensitivity label, or if the sensitivity label is greyed out in the sensitivity label menu, you may not have permissions to use the label. Contact your organization's tech support.
 
 ## Apply a label
 
