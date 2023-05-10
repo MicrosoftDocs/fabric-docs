@@ -10,7 +10,7 @@ ms.date: 5/4/2023
 
 # Module 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark
 
-In this module, we ingest the NYC Taxi & Limousine Commission - yellow taxi trip dataset to demonstrate data ingestion into Fabric lakehouses in delta lake format.
+In this module, we ingest the [NYC Taxi & Limousine Commission - yellow taxi trip dataset](/azure/open-datasets/dataset-taxi-yellow) to demonstrate data ingestion into Fabric lakehouses in delta lake format.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -26,7 +26,7 @@ The python commands/script used in each step of this tutorial can be found in th
 
 ## Ingest the data
 
-1. In the first step of this module, we read data from "azureopendatastorage" storage container using anonymous since the container has public access. We load yellow cab data by specifying the directory and filter the data by year (puYear) and month (puMonth). In this tutorial, we try to minimize the amount of data ingested and processed to speed up the execution.
+1. In the first step of this module, we read data from "azureopendatastorage" storage container using anonymous since the container has public access. We load [yellow cab data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) by specifying the directory and filter the data by year (puYear) and month (puMonth). In this tutorial, we try to minimize the amount of data ingested and processed to speed up the execution. To learn more about the data, see [NYC Taxi & Limousine Commission - yellow taxi trip dataset](/azure/open-datasets/dataset-taxi-yellow).
 
    ```python
    # Azure storage access info for open datasets yellow cab
