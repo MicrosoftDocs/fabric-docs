@@ -52,4 +52,4 @@ This feature allows you to create or alter an existing function using the `.crea
 
 ## Next steps
 
-[Query data in the KQL Queryset](kusto-query-set.md)
+[Query data in a KQL queryset](kusto-query-set.md)
