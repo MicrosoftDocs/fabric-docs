@@ -71,11 +71,11 @@ Now that your SAS policy is set up, you can configure a connection to this event
     | Icon | Type of connection | Cloud
     | Connection name | User-defined name for this connection
     | Connection type | Type of resource to connect to | EventHub
-    | Event Hub namespace | Field reference **d** from the above [table](#gather-information-for-the-data-stream) | *eventhubpm15910.servicebus.windows.net*
-    | Event Hub | Field reference **a** from the above [table](#gather-information-for-the-data-stream) | *iotdata*
+    | Event Hub namespace | Field reference **d** from the above [table](#gather-information-for-the-cloud-connection) | *eventhubpm15910.servicebus.windows.net*
+    | Event Hub | Field reference **a** from the above [table](#gather-information-for-the-cloud-connection) | *iotdata*
     | Authentication method | Type of authentication | Basic
-    | Username | Field reference **b** from the above [table](#gather-information-for-the-data-stream)  <br><br> The SAS policy name | *DocsTest*
-    | Password | Field reference **c** from the above [table](#gather-information-for-the-data-stream) <br><br> The SAS primary key.
+    | Username | Field reference **b** from the above [table](#gather-information-for-the-cloud-connection)  <br><br> The SAS policy name | *DocsTest*
+    | Password | Field reference **c** from the above [table](#gather-information-for-the-cloud-connection) <br><br> The SAS primary key.
     | Privacy level | Real-Time Analytics doesn't use the Privacy level. You can use Organizational as a default value | Organizational
 
 1. Select **Create**.
