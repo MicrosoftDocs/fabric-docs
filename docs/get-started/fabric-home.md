@@ -15,12 +15,12 @@ This article gives a high level view of navigating to your items and actions fro
 
 ## Overview of Home 
 
-On Home, you see items that you create and that you have permission to use. This includes items from all the workspaces that you access. That means that the items available on everyone's Home are different. At first, you might not have much content, but that changes as you start to create and share [!INCLUDE [product-name](../includes/product-name.md)] items.
+On Home, you see items that you create and that you have permission to use. These are items from all the workspaces that you access. That means that the items available on everyone's Home are different. At first, you might not have much content, but that changes as you start to create and share [!INCLUDE [product-name](../includes/product-name.md)] items.
 
 > [!NOTE]
 > Home is not workspace-specific. For example, the **Recent** area on Home might include items from many different workspaces.
 
-In [!INCLUDE [product-name](../includes/product-name.md)], the term *item* refers to: apps, lakehouses, warehouses, reports, and more. Your items are accessible and viewable in [!INCLUDE [product-name](../includes/product-name.md)], and often the best place to start working in [!INCLUDE [product-name](../includes/product-name.md)] is from **Home**. However, once you've created at least one new workspace, been granted access to a workspace, or you've added an item to **My workspace**, you might find it more convenient to navigate directly to a workspace. One way to do this is by using the nav pane and workspace selector.
+In [!INCLUDE [product-name](../includes/product-name.md)], the term *item* refers to: apps, lakehouses, warehouses, reports, and more. Your items are accessible and viewable in [!INCLUDE [product-name](../includes/product-name.md)], and often the best place to start working in [!INCLUDE [product-name](../includes/product-name.md)] is from **Home**. However, once you've created at least one new workspace, been granted access to a workspace, or you've added an item to **My workspace**, you might find it more convenient to navigate directly to a workspace. One way to navigate to a workspace is by using the nav pane and workspace selector.
 
 :::image type="content" source="media/fabric-home/fabric-home-data-science-workspace.png" alt-text="Screenshot showing sample Home for the Data Science experience.":::
 
@@ -58,9 +58,9 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data factory nav pane. Notice t hat **My workspace** is the active workspace. The options in your nav pane depend on the product experience you've selected. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
 
 In the bottom section of the nav pane is where you find and open your workspaces. Use the [workspace selector](#find-and-open-workspaces) to view a list of your workspaces and select one to open. Below the workspace selector is the name of the currently open workspace.  
-    - By default, you'll see the **Workspaces** selector and **My workspace**. 
+    - By default, you see the **Workspaces** selector and **My workspace**. 
     - When you open a workspace, its name replaces **My workspace**. 
-    - Whenever you create a new item, it is added to the open workspace.
+    - Whenever you create a new item, it's added to the open workspace.
 
 The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product experience nav pane includes **Home**, **Browse**, **OneLake data hub**, **Create**, and  **Workspaces**.
 
@@ -110,7 +110,7 @@ For more information about the Help pane, see [Get in-product help](fabric-help-
 
 ### Find help and support
 
-If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane for additional resources.  Use the links to ask the community for help or to connect with [!INCLUDE [product-name](../includes/product-name.md)] Support. For more information about contacting Support, see [Support options](/powerbi-docs/support/service-support-options.md).
+If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane for more resources.  Use the links to ask the community for help or to connect with [!INCLUDE [product-name](../includes/product-name.md)] Support. For more information about contacting Support, see [Support options](/powerbi-docs/support/service-support-options.md).
 
 ### Find your account and license information
 
