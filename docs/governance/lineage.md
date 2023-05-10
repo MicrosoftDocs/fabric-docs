@@ -54,7 +54,7 @@ Downstream items in different workspaces are not shown. To explore an item's dow
 
 Items are represented by cards that provide some information about the item.
 
-:::image type="content" source="./media/lineage/lineage-data-details.png" alt-text="Screenshot of lineage view option on data details page.":::
+:::image type="content" source="./media/lineage/lineage-item-card.png" alt-text="Screenshot of item card in lineage view.":::
 
 * Select XXX to highlight an items lineage
 
