@@ -96,7 +96,7 @@ Under **Advanced**, you can specify the following fields:
 - **Write batch timeout**: The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).
 - **Disable performance metrics analytics**: The service collects metrics for copy performance optimization and recommendations. If you're concerned with this behavior, turn off this feature.
 
-&emsp;If your source data is in **Azure Blob Storage** or **Azure Data Lake Storage Gen2**, and the format is COPY statement compatible, copy activity directly invokes COPY command to let Data Warehouse to pull the data from source.
+If your source data is in **Azure Blob Storage** or **Azure Data Lake Storage Gen2**, and the format is COPY statement compatible, copy activity directly invokes COPY command to let Data Warehouse to pull the data from source.
 
 1. The source data and format are with the following types and authentication methods:
 
@@ -117,7 +117,7 @@ Under **Advanced**, you can specify the following fields:
 1. If your source is a folder, `recursive` in copy activity must be set to true.
 1. `modifiedDateTimeStart`, `modifiedDateTimeEnd`, `prefix`, `enablePartitionDiscovery` and `additionalColumns` are not specified.<br>
 
-    If your source data store and format isn't originally supported by COPY statement, use the Staged copy by using COPY statement feature instead. The staged copy feature also provides you with better throughput. It automatically converts the data into COPY statement compatible format, then calls COPY statement to load data into Data Warehouse.
+If your source data store and format isn't originally supported by COPY statement, use the Staged copy by using COPY statement feature instead. The staged copy feature also provides you with better throughput. It automatically converts the data into COPY statement compatible format, then calls COPY statement to load data into Data Warehouse.
 
 ### Mapping
 
