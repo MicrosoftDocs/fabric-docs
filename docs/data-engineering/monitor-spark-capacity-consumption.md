@@ -13,7 +13,7 @@ ms.search.form: Monitor Spark capacity consumption
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The purpose of this article is to offer guidance for admins who want to monitor activities in the capacities they manage. By utilizing the Spark capacity consumption reports available in the Microsoft Fabric utilization and metrics app, admins can gain insights into the billable Spark capacity consumption for Spark experience items, including Lakehouse, Notebook, and Spark job definitions. Nonbillable Spark capacity consumption activities aren't reported in the app.
+The purpose of this article is to offer guidance for admins who want to monitor activities in the capacities they manage. By utilizing the Spark capacity consumption reports available in the Microsoft Fabric utilization and metrics app, admins can gain insights into the billable Spark capacity consumption for Spark workload items, including Lakehouse, Notebook, and Spark job definitions. Nonbillable Spark capacity consumption activities aren't reported in the app.
 
 ## Spark capacity consumption reported 
 
