@@ -90,7 +90,4 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 
 ## Next steps
 
-* [Introduction to datasets across workspaces](../connect-data/service-datasets-across-workspaces.md)
-* [Dataset impact analysis](service-dataset-impact-analysis.md)
-
-* [Admin overview](../admin/admin-overview.md)
+* [Admin overview](../admin/microsoft-fabric-admin.md)

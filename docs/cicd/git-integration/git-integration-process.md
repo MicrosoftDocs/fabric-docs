@@ -16,7 +16,7 @@ This article explains basic git concepts and the process of integrating git with
 
 ## Permissions
 
-In order to use git integration, [it has to be enabled](../../admin/admin-settings-git-integration.md) by your organization's administrator.
+In order to use git integration, [it has to be enabled](../../admin/git-integration-admin-settings.md) by your organization's administrator.
 
 The actions you can take on a workspace depend on the permissions you have in both the workspace and Azure DevOps.
 
