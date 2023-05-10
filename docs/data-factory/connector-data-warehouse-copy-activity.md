@@ -32,7 +32,7 @@ For the **General** tab configuration, go to [General](activity-overview.md#gene
 
 The following properties are supported for Data Warehouse as **Source** in a copy activity.
 
-:::image type="content" source="./media/connector-data-warehouse/source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-data-warehouse/source.png":::
+:::image type="content" source="./media/connector-data-warehouse/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
 
 The following properties are **required**:
 
@@ -43,15 +43,15 @@ The following properties are **required**:
 
   - If you select **Table**, choose an existing table from the table list, or specify a table name manually by selecting the **Edit** box.
 
-    :::image type="content" source="./media/connector-data-warehouse/table.png" alt-text="Screenshot showing use query of table." lightbox="./media/connector-data-warehouse/table.png":::
+    :::image type="content" source="./media/connector-data-warehouse/table.png" alt-text="Screenshot showing use query of table.":::
 
   - If you select **Query**, use the custom SQL query editor to write a SQL query that retrieves the source data.
 
-    :::image type="content" source="./media/connector-data-warehouse/query.png" alt-text="Screenshot showing use query of query." lightbox="./media/connector-data-warehouse/query.png":::
+    :::image type="content" source="./media/connector-data-warehouse/query.png" alt-text="Screenshot showing use query of query.":::
 
   - If you select **Stored procedure**, choose an existing stored procedure from the drop-down list, or specify a stored procedure name as the source by selecting the **Edit** box.
 
-    :::image type="content" source="./media/connector-data-warehouse/stored-procedure.png" alt-text="Screenshot showing use query of stored procedure."lightbox="./media/connector-data-warehouse/stored-procedure.png":::
+    :::image type="content" source="./media/connector-data-warehouse/stored-procedure.png" alt-text="Screenshot showing use query of stored procedure.":::
 
 Under **Advanced**, you can specify the following fields:
 
@@ -61,7 +61,7 @@ Under **Advanced**, you can specify the following fields:
 
   If you select **Dynamic range**, the range partition parameter(`?AdfDynamicRangePartitionCondition`) is needed when using query with parallel enabled. Sample query: `SELECT * FROM <TableName> WHERE ?AdfDynamicRangePartitionCondition`.
 
-  :::image type="content" source="./media/connector-data-warehouse/dynamic-range.png" alt-text="Screenshot showing dynamic range."lightbox="./media/connector-data-warehouse/dynamic-range.png":::
+  :::image type="content" source="./media/connector-data-warehouse/dynamic-range.png" alt-text="Screenshot showing dynamic range."lightbox=:::
 
   - **Partition column name**: Specify the name of the source column **in integer or date/datetime type** (`int`, `smallint`, `bigint`, `date`, `smalldatetime`, `datetime`, `datetime2`, or `datetimeoffset`) that is used by range partitioning for parallel copy. If not specified, the index or the primary key of the table is detected automatically and used as the partition column.
   - **Partition upper bound**: The maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result are partitioned and copied.
@@ -75,7 +75,7 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for Data Warehouse as **Destination** in a copy activity.
 
-:::image type="content" source="./media/connector-data-warehouse/destination.png" alt-text="Screenshot showing destination tab and the list of properties." lightbox="./media/connector-data-warehouse/destination.png":::
+:::image type="content" source="./media/connector-data-warehouse/destination.png" alt-text="Screenshot showing destination tab and the list of properties.":::
 
 The following properties are **required**:
 
@@ -88,7 +88,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Copy command settings**: Specify copy command properties.
 
-    :::image type="content" source="./media/connector-data-warehouse/default-values.png" alt-text="Screenshot showing default values of copy command settings." lightbox="./media/connector-data-warehouse/default-values.png":::
+    :::image type="content" source="./media/connector-data-warehouse/default-values.png" alt-text="Screenshot showing default values of copy command settings.":::
 
 - **Table options**: Specify whether to automatically create the destination table if none exists based on the source schema. You can select **None** or **Auto create table**.
 - **Pre-copy script**: Specify a SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.
