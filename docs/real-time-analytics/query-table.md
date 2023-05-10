@@ -27,13 +27,13 @@ For more information on the Kusto Query Language, see [Kusto Query Language (KQL
 
 1. In the **Data tree**, select the **More menu** [...] on your table > **Query table**. Sample queries run in the context of a selected table.
 
-    :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Object tree showing the More menu of a table. The Query table option is highlighted.":::
+    :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Data tree showing the More menu of a table. The Query table option is highlighted.":::
 
 1. Select a single query to autopopulate into the **Explore your data** window. The query will automatically run and display results.
 
-    :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Check your data window showing query results of sample queries in Real-Time Analytics.":::
+    :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Explore your data window showing query results of sample queries in Real-Time Analytics.":::
 
 ## Next steps
 
-* [Query data in the KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
 * [Create stored functions](create-functions.md)

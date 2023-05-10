@@ -38,7 +38,7 @@ For more information on the `.create materialized-view` command, see [.create ma
 
 1. Enter the parameters of your materialized view, and then select **Run**.
 
-    :::image type="content" source="media/materialized-view/mv-example.png" alt-text="Screenshot of Check your data window showing an example of a materialized view command.":::
+    :::image type="content" source="media/materialized-view/mv-example.png" alt-text="Screenshot of Explore your data window showing an example of a materialized view command.":::
 
     Materialized views appear under **Materialized views** in the **Data tree**.
 
@@ -47,5 +47,5 @@ For more information on the `.create materialized-view` command, see [.create ma
 ## Next steps
 
 * [Materialized views limitations](/azure/data-explorer/kusto/management/materialized-views/materialized-views-limitations?context=/fabric/context/context)
-* [Query data in the KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
 * [Create stored functions](create-functions.md)

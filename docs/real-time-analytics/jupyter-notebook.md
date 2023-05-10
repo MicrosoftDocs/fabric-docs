@@ -59,7 +59,7 @@ In this step, you use a script to first create a table with specified mapping, a
     The first query will run and create the table and schema mapping. The output of this query shows the table and mapping creation information, including the type of command and the result of *Completed* when finished.
     The second query loads your data. It might take a few minutes for the data loading to complete.
 
-    :::image type="content" source="media/jupyter-notebook/data-map-ingest.png" alt-text="Screenshot of the Check your data window showing the completed state of the table mapping and data ingestion."  lightbox="media/jupyter-notebook/data-map-ingest.png":::
+    :::image type="content" source="media/jupyter-notebook/data-map-ingest.png" alt-text="Screenshot of the Explore your data window showing the completed state of the table mapping and data ingestion."  lightbox="media/jupyter-notebook/data-map-ingest.png":::
 
 1. Refresh your database. The table appears in the **Data tree**.
 
