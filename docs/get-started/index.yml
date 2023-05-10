@@ -36,6 +36,8 @@ landingContent:
             url: fabric-home.md
           - text: End-to-end tutorials
             url: end-to-end-tutorials.md
+          - text: Context sensitive Help pane
+            url: fabric-help-pane.md
 
   # Card 
   - title: Get started with Fabric items
