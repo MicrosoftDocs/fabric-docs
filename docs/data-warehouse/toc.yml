@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: Overview
   href: data-warehousing.md
-- name: Get started with Synapse Data Warehouse
+- name: Get started with Warehouse
   expanded: true
   items:
   - name: 1. Create a warehouse

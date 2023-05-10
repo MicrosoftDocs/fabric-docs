@@ -1,5 +1,5 @@
 ---
-title: Data warehouse tutorial - ingest data into a Synapse Data Warehouse in Microsoft Fabric
+title: Data warehouse tutorial - ingest data into a Warehouse in Microsoft Fabric
 description: In this third tutorial step, learn how to ingest data into the warehouse you created in the last step.
 ms.reviewer: wiassaf
 ms.author: scbradl
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 5/23/2023
 ---
 
-# Tutorial: Ingest data into a Synapse Data Warehouse in Microsoft Fabric
+# Tutorial: Ingest data into a Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
