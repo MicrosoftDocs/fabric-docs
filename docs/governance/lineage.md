@@ -86,9 +86,7 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 
 ## Permissions
 
-* You need a Power BI Pro license to see lineage view.
-* Lineage view is available only to users with access to the workspace.
-* Users must have an Admin, Member, or Contributor role in the workspace. Users with a Viewer role can't switch to lineage view.
+* Users must have an Admin, Member, or Contributor role in the workspace. Users with a Viewer role can't access lineage.
 
 ## Considerations and limitations
 
