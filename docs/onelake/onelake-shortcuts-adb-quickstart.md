@@ -16,9 +16,9 @@ In this guide, you will:
 
 - Create a delta table in your ADLS Gen2 account using Azure Databricks.
 
-- Create a OneLake Shortcut to this delta table.
+- Create a OneLake shortcut to a delta table in ADLS.
 
-- Use PowerBI to analyze data in delta format using OneLake Shortcut.
+- Use PowerBI to analyze data in ADLS Shortcut.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ In this guide, you will:
 1. Using Azure Databricks notebook, create a delta table in ADLS Gen2 account.
 
    ```python
-    # Replace the path below to your storage account and container name
+    # Replace the path below to refer to your sample parquet data with this syntax "abfss://<storage name>@<container name>.dfs.core.windows.net/<filepath>"
     
     # Read Parquet files from an ADLS account
     df = spark.read.format('Parquet').load("abfss://datasetsv1@olsdemo.dfs.core.windows.net/demo/full/dimension_city/")
@@ -44,7 +44,7 @@ In this guide, you will:
 
     :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-table-shortcut.png" alt-text="Screenshot showing location of New Shortcut in Tables" lightbox="media\onelake-shortcuts-adb-quickstart\new-table-shortcut.png":::
 
-1. In the **New shortcut** screen, select **Azure Data Lake Store Gen2** tile
+1. In the **New shortcut** screen, select **Azure Data Lake Storage Gen2** tile
 
    :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-shortcut-tile-options-v2.png" alt-text="Screenshot of the tile options in the New shortcut screen." lightbox="media\onelake-shortcuts-adb-quickstart\new-shortcut-tile-options-v2.png":::
 
