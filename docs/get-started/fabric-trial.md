@@ -129,7 +129,8 @@ This known bug occurs when the Power BI administrator turns off trials after you
 
 If you start the trial using the Account manager,  your trial capacity will be located in the home region for your tenant. To identify the home region, select the **?** icon on the top menu bar and then choose **About Power BI** > **About Fabric**. Your home region is where your data is stored.
 
-If your home region does not have Fabric enabled, you will not be able to use those features. We will enable the ability to select a region for your trial when Fabric becomes generally available (GA), but till then the only workaround is to start a trial from the "Create Item" flow (see above). You will need to cancel your existing trial.
+**What impact does region have on my Fabric (Preview) trial?**
+If your home region does not have Fabric enabled, you will not be able to start a Fabric trial. When Fabric is Generally Available (GA), the ability to select a region will be enabled. Until GA, if your trial capacity is assigned to a region that does not have Fabric enabled, cancel the Fabric trial.  Then, follow the steps in [Other ways to start a Fabric (Preview) trial](#other-ways-to-start-a-microsoft-fabric-preview-trial).
 
 **How is the Fabric (Preview) trial different from an individual trial of Power BI paid?**
 
