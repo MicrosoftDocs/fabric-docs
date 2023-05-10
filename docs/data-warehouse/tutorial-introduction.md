@@ -22,7 +22,7 @@ The tutorials aren't intended to be a reference architecture, an exhaustive list
 
 ## Data warehouse end-to-end scenario
 
-As prerequisities to this tutorial, complete the following steps:
+As prerequisites to this tutorial, complete the following steps:
 
 1. Sign into your Power BI online account, or if you don't have an account yet, sign up for a free trial.
 1. [Enable Fabric](../admin/admin-fabric-switch.md) in your tenant.
