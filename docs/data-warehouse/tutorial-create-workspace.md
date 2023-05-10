@@ -32,7 +32,7 @@ The workspace contains all the artifacts needed for data warehousing including D
    :::image type="content" source="media\tutorial-create-workspace\create-a-workspace-dialog.png" alt-text="Screenshot of the Create a workspace dialog box, showing where to enter the new workspace name.":::
 
 1. Expand the **Advanced** section.
-1. Choose **Premium capacity** in the **License mode** section.
+1. Choose **Fabric capacity** or **Trial** in the **License mode** section.
 1. Choose a premium capacity you have access to.
 1. Select **Apply**. The workspace is created and opened.
 

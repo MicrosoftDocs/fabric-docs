@@ -1,6 +1,6 @@
 ---
 title: Data warehouse tutorial - create a table in a warehouse
-description: In this fifth tutorial step, learn how to create tables in the data warehouse you created in a previous part of the tutorial.
+description: In this tutorial step, learn how to create tables in the data warehouse you created in a previous part of the tutorial.
 ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
@@ -18,7 +18,7 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
 ## Create a table
 
-1. Select **Workspaces** in the left-hand menu of the [Power BI service](https://powerbi.com/).
+1. Select **Workspaces** in the navigation menu.
 
 1. Select the workspace created in [Tutorial: Create a Microsoft Fabric data workspace](tutorial-create-workspace.md), such as **Data Warehouse Tutorial**.  
 

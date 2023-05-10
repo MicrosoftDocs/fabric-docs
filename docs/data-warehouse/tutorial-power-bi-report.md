@@ -1,6 +1,6 @@
 ---
 title: Data warehouse tutorial - create Power BI reports
-description: In this ninth tutorial step, learn how to create and save several types of Power BI reports with the data you ingested in earlier tutorial steps.
+description: In this tutorial step, learn how to create and save several types of Power BI reports with the data you ingested in earlier tutorial steps.
 ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht

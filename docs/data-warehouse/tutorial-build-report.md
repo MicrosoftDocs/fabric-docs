@@ -1,6 +1,6 @@
 ---
 title: Data warehouse tutorial - build a report
-description: In this fourth tutorial step, learn how to build a report with the data you ingested into your warehouse in the last step.
+description: In this tutorial step, learn how to build a report in the Data Hub with the data you ingested into your warehouse in the last step.
 ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht

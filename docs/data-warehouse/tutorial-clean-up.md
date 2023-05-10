@@ -1,6 +1,6 @@
 ---
 title: Data warehouse tutorial - clean up resources
-description: In this tenth and final tutorial step, learn how to delete an entire workspace, and delete individual reports, pipelines, warehouses, and other items.
+description: In this final tutorial step, learn how to delete an entire workspace, and delete individual reports, pipelines, warehouses, and other items.
 ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht

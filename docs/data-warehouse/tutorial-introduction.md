@@ -29,17 +29,19 @@ As prerequisities to this tutorial, complete the following steps:
 1. Sign into your Power BI online account, or if you don't have an account yet, sign up for a free trial.
 1. [Enable Fabric](../admin/admin-fabric-switch.md) in your tenant.
 
-In this tutorial, you take on the role of a data warehouse developer at the fictional Wide World Importers company and complete the following steps in the [!INCLUDE [product-name](../includes/product-name.md)] portal to build and implement an end-to-end data warehouse solution:
+In this tutorial, you take on the role of a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] developer at the fictional *Wide World Importers* company and complete the following steps in the [!INCLUDE [product-name](../includes/product-name.md)] portal to build and implement an end-to-end data warehouse solution:
 
 1. [Create a Fabric workspace](tutorial-create-workspace.md).
-1. Quickly [create a data warehouse](tutorial-create-warehouse.md).
+1. [Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](tutorial-create-warehouse.md).
 1. [Ingest data](tutorial-ingest-data.md) from source to the data warehouse dimensional model with a data pipeline.
-1. [Build a report](tutorial-build-report.md) with the data you ingested into your warehouse.
-1. [Create tables](tutorial-create-tables.md) in your warehouse.
+1. [Create tables](tutorial-create-tables.md) in your [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 1. [Load data with T-SQL](tutorial-load-data.md) with the SQL query editor.
 1. [Transform the data](tutorial-transform-data.md) to create aggregated datasets using T-SQL.
-1. Query the data warehouse using T-SQL and a [visual query editor](tutorial-visual-query.md).
+1. Use the [visual query editor](tutorial-visual-query.md) to query the data warehouse.
+1. [Analyze data](tutorial-analyze-data-notebook) with a notebook.
+1. Create queries with SQL query editor.
 1. [Create Power BI reports](tutorial-power-bi-report.md) using DirectLake mode to analyze the data in place.
+1. [Build a report](tutorial-build-report.md) from the **Data Hub**.
 1. [Clean up resources](tutorial-clean-up.md) by deleting the workspace and other items.
 
 ## Data warehouse end-to-end architecture
