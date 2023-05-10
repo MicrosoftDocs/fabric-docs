@@ -5,7 +5,7 @@ summary: Learn more about the two Data Warehousing experiences in Microsoft Fabr
 
 metadata:
   title: Data Warehousing in Microsoft Fabric # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Data Warehousing using the SQL Endpoint and Synapse Data Warehouse in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
+  description: Data Warehousing using the SQL Endpoint and Warehouse in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
@@ -34,7 +34,7 @@ landingContent:
             url: ../get-started/end-to-end-tutorials.md
           - text: Data warehouse tutorial
             url: tutorial-introduction.md            
-          - text: Create a Synapse Data Warehouse quickstart
+          - text: Create a Warehouse quickstart
             url: create-warehouse.md
   # Card 
   - title: Get started with SQL Endpoint

@@ -40,4 +40,4 @@ The following steps detail how to get the OneLake path from a table in a warehou
 
 - [OneLake overview](../onelake/onelake-overview.md)
 - [OneLake File Explorer](../onelake/onelake-file-explorer.md)
-- [Delta Lake logs in Synapse Data Warehouse in Microsoft Fabric](query-delta-lake-logs.md)
+- [Delta Lake logs in Warehouse in Microsoft Fabric](query-delta-lake-logs.md)
