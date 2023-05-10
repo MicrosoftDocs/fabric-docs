@@ -30,14 +30,10 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
    :::image type="content" source="media\tutorial-clean-up\settings-delete-workspace.png" alt-text="screenshot of the Workspace settings screen, showing where to select Delete this workspace." lightbox="media\tutorial-clean-up\settings-delete-workspace.png":::
 
-1. Select **Delete** on the warning.
+1. Select **Delete** on the warning to remove the workspace and all its contents.
 
 ## Next steps
 
 - [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
 - [Create a Synapse Data Warehouse in Microsoft Fabric](create-warehouse.md)
-<<<<<<< HEAD
 - [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
-=======
-- [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
->>>>>>> 20230509-new-toc
