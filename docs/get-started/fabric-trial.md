@@ -4,8 +4,8 @@ description: Understand how the Fabric (preview) trial works
 author: mihart
 ms.author: mihirwagle
 ms.topic: concept
-ms.search.form: product-trident
-ms.date: 05/08/2023
+ms.search.form: product-fabric
+ms.date: 05/10/2023
 ---
 
 # Microsoft Fabric (Preview) trial
@@ -121,7 +121,13 @@ If you do see the **Start trial** button in your Account manager:
 
 This known bug occurs when the Power BI administrator turns off trials after you start a trial. To add your workspace to the trial capacity, open the Admin portal by selecting it from the gear icon in the top menu bar. Then, select **Trial > Capacity settings** and choose the name of the capacity. If you don't see your workspace assigned, add it here. 
 
-:::image type="content" source="media/fabric-trial/capacity-wk-assignment.png" alt-text="Screenshot of the Capacities page in the Admin portal.":::  
+:::image type="content" source="media/fabric-trial/capacity-wk-assignment.png" alt-text="Screenshot of the Capacities page in the Admin portal."::: 
+
+**What is the region for my Fabric (Preview) trial capacity?**
+
+If you start the trial using the Account manager,  your trial capacity will be located in the home region for your tenant. To identify the home region, select the **?** icon on the top menu bar and then choose **About Power BI** > **About Fabric**. Your home region is where your data is stored.
+
+If your home region does not have Fabric enabled, you will not be able to use those features. We will enable the ability to select a region for your trial when Fabric becomes generally available (GA), but till then the only workaround is to start a trial from the "Create Item" flow (see above). You will need to cancel your existing trial.
 
 **How is the Fabric (Preview) trial different from an individual trial of Power BI paid?**
 
