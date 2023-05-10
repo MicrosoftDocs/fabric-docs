@@ -38,7 +38,7 @@ You can get to the full Purview hub insights report by selecting **Show full rep
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png" alt-text="Screenshot of the Microsoft Purview hub full report." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png":::
 
-The report is located in the [Admin monitoring workspace](../admin/admin-monitoring.md), and you can also access it directly from there.
+The report is located in the [Admin monitoring workspace](../admin/monitoring-workspace.md), and you can also access it directly from there.
 
 The report contains the following pages:
 
