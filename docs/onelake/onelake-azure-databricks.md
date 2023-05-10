@@ -16,10 +16,10 @@ This scenario shows how to connect to OneLake via Azure Databricks. After comple
 
 ## Prerequisites
 
-Before you connect, you must have the following:
+Before you connect, complete these steps:
 
 - A Fabric workspace and lakehouse.
-- A premium Azure Databricks workspace.  Only premium Azure Databricks workspaces support AAD passthrough, which is required for this scenario.
+- A premium Azure Databricks workspace.  Only premium Azure Databricks workspaces support Microsoft Azure Active Directory credential passthrough, which is required for this scenario.
 
 ## Set up your Databricks workspace
 
@@ -42,13 +42,13 @@ Before you connect, you must have the following:
    > [!NOTE]
    > Azure Databricks only supports the Azure Blob Filesystem (ABFS) driver when reading and writing to Azure Data Lake Storage (ADLS) Gen2 and OneLake: *abfss://myWorkspace@onelake.dfs.fabric.microsoft.com/*
 
-1. Save the path to your lakehouse in your Databricks notebook. This is where you will write your processed data later:
+1. Save the path to your lakehouse in your Databricks notebook. This lakehouse is where you'll write your processed data later:
 
    ```python
    oneLakePath = 'abfss://myWorkspace@onelake.dfs.fabric.microsoft.com/myLakehouse.lakehouse/Files/'
    ```
 
-1. Load data from a Databricks public dataset into a dataframe. This file is the one you’ll load into your lakehouse. You can also read a file from elsewhere in Fabric or choose a file from another ADLS Gen2 account you already own.
+1. Load data from a Databricks public dataset into a dataframe. You can also read a file from elsewhere in Fabric or choose a file from another ADLS Gen2 account you already own.
 
    ```python
    yellowTaxiDF = (spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("/databricks-datasets/nyctaxi/tripdata/yellow/yellow_tripdata_2019-12.csv.gz")

@@ -39,7 +39,7 @@ When adopting a tool for use over OneLake instead of ADLS Gen2, use the followin
 
 - The account name is always 'onelake'.
 - The container name is your workspace name.
-- The data path starts at the item.  For example: '/mylakehouse/Files/'.
+- The data path starts at the item.  For example: '/mylakehouse.lakehouse/Files/'.
 
 ## OneLake and ADLS Gen2 Parity
 
@@ -49,7 +49,7 @@ While OneLake matches all ADLS Gen2 behavior wherever possible, not every concep
 
 OneLake doesn't support creating, updating, or deleting workspaces or items through the ADLS Gen2 APIs. Only HEAD calls are supported at the workspace level and account level, as you must make changes to the Fabric tenant and Fabric workspaces in the Fabric administration portal.
 
-OneLake does enforce the Fabric item structure, meaning you can't create, read, update, or delete (CRUD) certain folders, even if you're the item or workspace owner. You must perform these operations via Fabric experiences, such as the Fabric portal or Fabric management APIs. Fabric-managed folders include the top-level folder in an item (for example, */MyLakehouse*) and the first level of folders within it (for example, */MyLakehouse/Files* and */MyLakehouse/Tables*).
+OneLake does enforce the Fabric item structure, meaning you can't create, read, update, or delete (CRUD) certain folders, even if you're the item or workspace owner. You must perform these operations via Fabric experiences, such as the Fabric portal or Fabric management APIs. Fabric-managed folders include the top-level folder in an item (for example, */MyLakehouse.lakehouse*) and the first level of folders within it (for example, */MyLakehouse.lakehouse/Files* and */MyLakehouse.lakehouse/Tables*).
 
 You can perform CRUD operations on any folder or file created within these managed folders.
 
