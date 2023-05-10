@@ -12,15 +12,15 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In Real-Time Analytics, you'll interact with your data in the context of databases. A single workspace can hold multiple databases, and each database can hold multiple tables.
+In Real-Time Analytics, you interact with your data in the context of databases. A single workspace can hold multiple databases, and each database can hold multiple tables.
 
-In this article, you learn you how to create a new database. Once your database has data, you can proceed to query your data using Kusto Query Language in a KQL queryset.
+In this article, you learn how to create a new KQL database. Once your KQL database has data, you can proceed to query your data using Kusto Query Language in a KQL queryset.
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 
-## Create a new database
+## Create a new KQL database
 
 1. Select **New** > **KQL Database**.
 
@@ -33,13 +33,13 @@ In this article, you learn you how to create a new database. Once your database 
 
     :::image type="content" source="media/create-database/new-database.png" alt-text="Screenshot of the New KQL Database window showing the database name. The Create button is highlighted.":::
 
-The KQL Database has now been created within the context of the selected workspace.
+The KQL database has now been created within the context of the selected workspace.
 
 ## Database details
 
-The main page of your database shows an overview of the contents in your database. The following table lists the information you'll see.
+The main page of your KQL database shows an overview of the contents in your database. The following table lists the information you'll see.
 
-:::image type="content" source="media/create-database/database-dashboard.png" alt-text="Screenshot of database dashboard showing the database details cards."  lightbox="media/create-database/database-dashboard.png":::
+:::image type="content" source="media/create-database/database-dashboard.png" alt-text="Screenshot of KQL database main page showing the database details cards."  lightbox="media/create-database/database-dashboard.png":::
 
 |Card | Item| Description|
 |---|---|---|
@@ -68,9 +68,9 @@ The main page of your database shows an overview of the contents in your databas
 |**Recently created data connections**
 | | | Lists the data connection and the time it was created.|
 
-## Access an existing database
+## Access an existing KQL database
 
-To access your existing databases:
+To access your existing KQL databases:
 
 1. Select the **Workspaces** icon on the side navigation on the left. Then choose a workspace.
 
@@ -85,5 +85,6 @@ To access your existing databases:
 ## Next steps
 
 * [Get data from a blob](get-data-blob.md)
+* [Get data from a blob container](get-data-blob-container.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)
-* [Query data in the KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)

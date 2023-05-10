@@ -31,8 +31,8 @@ To get data from a blob container, see [Get data from a blob container](get-data
 1. On the **Home** tab, select **Get Data** > **Get data from blob**.
 1. Enter a name for your table. By default, **New table** is selected.
 
-    > [!TIP]
-    >  Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
+    > [!NOTE]
+    > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
 1. Select **Next: Source**.
 
@@ -54,4 +54,4 @@ To get data from a blob container, see [Get data from a blob container](get-data
 
 * To create an empty table, see [Create an empty table](create-empty-table.md)
 * To manage your database, see [Manage data](data-management.md)
-* To create, store, and export queries, see [Query data in the KQL Queryset](kusto-query-set.md)
+* To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md)
