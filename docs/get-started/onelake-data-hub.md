@@ -19,9 +19,7 @@ This article explains what you see on the data hub and describes how to use it.
 
 ## Find recommended items
 
-Use the tiles across the top of the data hub to find and explore recommended data items. Recommended data items are data items that have been certified or promoted by someone in your organization or have recently been refreshed or accessed.  Each tile contains information about the item and provides an entry point for accessing or using the item. When you select a recommended tile, you are taken to the item's details page.
-
-:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-recommended tiles.png" alt-text="Screenshot of recommended tiles in the OneLake data hub." border="false":::
+Use the tiles across the top of the data hub to find and explore recommended data items. Recommended data items are data items that have been certified or promoted by someone in your organization or have recently been refreshed or accessed.  Each tile contains information about the item and an [options menu](#open-an-items-options-menu) for doing things with the item. When you select a recommended tile, you are taken to the item's details page.
 
 ## Display only data items belonging to a particular domain
 
@@ -33,7 +31,7 @@ For more information about domains, see the [Domains overview](../governance/dom
 
 ## Find items in the data items list
 
-The data items list displays all the data items you have access to. To shorten the list, you can filter by keyword or data-item type using the filters at the top of the list. If you select the name of an item, you are taken to the item's details page. If you hover over an item, you'll see three dots that open the options menu when you select them.
+The data items list displays all the data items you have access to. To shorten the list, you can filter by keyword or data-item type using the filters at the top of the list. If you select the name of an item, you are taken to the item's details page. If you hover over an item, you'll see three dots that open the [options menu](#open-an-items-options-menu) when you select them.
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-data-items-list.png" alt-text="Screenshot of the OneLake data hub data items list." lightbox="./media/onelake-data-hub/onelake-data-hub-data-items-list.png":::
 
@@ -57,6 +55,12 @@ The columns of the list are described below.
 | **Next refresh** | The time of the next scheduled refresh (*My data* tab only). |
 | **Sensitivity**  | Sensitivity, if set. Select the info icon to view the sensitivity label description. |
 
+## Open an item's options menu
+
+Each item shown in the data hub has an options menu that enables you to do things, such as open the item's settings, manage item permissions, etc. The options available depend on the item and your permissions on the item.
+
+To display the options menu, select **More options (...)** on one of the items show in the data items list on a recommended item. In the data items list, you need to hover over the item to reveal **More options**.
+
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake data hub." border="false":::
 
 ## Find items by workspace
@@ -70,4 +74,5 @@ Related data items are often grouped together in a workspace. To see the data it
 
 ## Next steps
 
-- Dataset details
+* [Navigate to your items from Microsoft Fabric Home](./fabric-home.md)
+* [Endorsement](../governance/endorsement-overview.md)
