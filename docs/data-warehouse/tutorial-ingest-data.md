@@ -1,5 +1,5 @@
 ---
-title: Data warehouse tutorial - ingest data
+title: Data warehouse tutorial - ingest data into a Warehouse in Microsoft Fabric
 description: In this third tutorial step, learn how to ingest data into the warehouse you created in the last step.
 ms.reviewer: wiassaf
 ms.author: scbradl
@@ -8,15 +8,17 @@ ms.topic: tutorial
 ms.date: 5/23/2023
 ---
 
-# Tutorial: Ingest data into a data warehouse
+# Tutorial: Ingest data into a Warehouse in Microsoft Fabric
 
-Now that you have created a data warehouse, you can ingest data into that warehouse.
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
+Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], you can ingest data into that warehouse.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Ingest data
 
-1. From the **Build a warehouse** landing page, select **Data Warehouse Tutorial** in the left-hand navigation menu to return to the workspace artifact view.
+1. From the **Build a warehouse** landing page, select **Data Warehouse Tutorial** in the navigation menu to return to the workspace item list.
 
    :::image type="content" source="media\tutorial-ingest-data\select-tutorial-menu.png" alt-text="Screenshot of the navigation menu, showing where to select Data Warehouse Tutorial.":::
 
@@ -121,4 +123,4 @@ Now that you have created a data warehouse, you can ingest data into that wareho
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Build a report](tutorial-build-report.md)
+> [Tutorial: Create tables in a data warehouse](tutorial-create-tables.md)

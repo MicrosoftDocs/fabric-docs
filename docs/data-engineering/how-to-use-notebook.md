@@ -22,7 +22,7 @@ With a [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can:
 - Analyze data across raw formats (CSV, txt, JSON, etc.), processed file formats (parquet, Delta Lake, etc.), leveraging powerful Spark capabilities.
 - Be productive with enhanced authoring capabilities and built-in data visualization.
 
-This article describes how to use notebooks in data science and data engineering workloads.
+This article describes how to use notebooks in data science and data engineering experiences.
 
 ## Create notebooks
 

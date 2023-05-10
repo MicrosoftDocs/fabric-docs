@@ -31,7 +31,7 @@ There are a few ways you can get started with the creation process:
 
 1. **Workspace** view
 
-   - You can also create a lakehouse through the workspace view when you are on the **Data Engineering** workload by using the **New** dropdown.
+   - You can also create a lakehouse through the workspace view when you are on the **Data Engineering** experience by using the **New** dropdown.
 
    :::image type="content" source="media\create-lakehouse\new-lakehouse-menu.png" alt-text="Screenshot showing the Lakehouse option in the New menu." lightbox="media\create-lakehouse\new-lakehouse-menu.png":::
 

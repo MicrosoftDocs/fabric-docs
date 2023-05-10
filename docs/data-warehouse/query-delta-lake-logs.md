@@ -1,6 +1,6 @@
 ---
-title: Delta Lake logs in Synapse Data Warehouse
-description: Learn how Synapse Data Warehouse in Microsoft Fabric publishes Delta Lake logs
+title: Delta Lake logs in Warehouse
+description: Learn how Warehouse in Microsoft Fabric publishes Delta Lake logs
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
-# Delta Lake logs in Synapse Data Warehouse in Microsoft Fabric 
+# Delta Lake logs in Warehouse in Microsoft Fabric 
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -35,7 +35,7 @@ You can locate Delta Lake logs via the following methods:
 
 ## Next steps
 
-- [Query the Synapse Data Warehouse](query-warehouse.md)
+- [Query the Warehouse](query-warehouse.md)
 - [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md)
 - [OneLake overview](../onelake/onelake-overview.md)
 - [Accessing shortcuts](../onelake/access-onelake-shortcuts.md)

@@ -8,13 +8,13 @@ ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
-# Ingest data into the Synapse Data Warehouse
+# Ingest data into the Warehouse
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
  [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers built-in data ingestion tools that allow users to ingest data into warehouses at scale using code-free or code-rich experiences.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Data ingestion options
 

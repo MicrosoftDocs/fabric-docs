@@ -16,18 +16,18 @@ Dataflows are a self-service, cloud-based, data preparation technology. In this 
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+The following prerequisites are required before you start:
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. Create an account for free.
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+- A [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 
 ## Create a dataflow
 
 In this section, you'll be creating your first dataflow.
 
-1. Switch to the **Data factory** or **Power BI** workload.
+1. Switch to the **Data factory** or **Power BI** experience.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory workload emphasized.":::
+   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
 
 2. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
@@ -45,11 +45,11 @@ Let's get some data! In this example, you'll be getting data from an OData servi
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-more.png" alt-text="Screenshot with the Get Data option selected and More emphasized in the drop-down box.":::
 
-2. Select **OData** as data source.
+2. Select **OData** as the data source.
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-odata-source.png" alt-text="Screenshot of Get data source with the OData connector emphasized." lightbox="media/create-first-dataflow-gen2/select-odata-source.png":::
 
-3. Enter the URL [https://services.odata.org/v2/northwind/northwind.svc/](https://services.odata.org/v2/northwind/northwind.svc/), and then select **Next**.
+3. Enter the URL `https://services.odata.org/v4/northwind/northwind.svc/`, and then select **Next**.
 
    :::image type="content" source="media/create-first-dataflow-gen2/enter-odata-url.png" alt-text="Screenshot of the OData data source where you enter the data URL.":::
 
@@ -61,7 +61,7 @@ You can learn more about the get data experience and functionality at [Getting d
 
 ## Apply transformations and publish
 
-You've now loaded your data into your first dataflow, congratulations! Now it's time to apply a couple of transformations in order to bring this data into the desired shape.
+You have now loaded your data into your first dataflow, congratulations! Now it's time to apply a couple of transformations in order to bring this data into the desired shape.
 
 You'll be doing this task from the Power Query editor. You can find a detailed overview of the Power Query editor at [The Power Query user interface](/power-query/power-query-ui).
 
@@ -111,7 +111,7 @@ Follow these steps to apply transformations and publish:
 
 10. The **Orders (2)** column contains nested information resulting from the merge operation you performed a few steps ago. Now, switch back to the data view by selecting the **Show data view** button next to the **Show schema view** button in the bottom-right corner of the UI. Then use the **Expand Column** transformation in the **Orders (2)** column header to select the **Count** column.
 
-    :::image type="complex" source="media/create-first-dataflow-gen2/select-count-column.png" alt-text="Screenshot for using data view.":::
+    :::image type="complex" source="media/create-first-dataflow-gen2/select-count-column.png" alt-text="Screenshot for using data view." lightbox="media/create-first-dataflow-gen2/select-count-column.png":::
     Screenshot of the dataflows editor with the Show data view button in the bottom-right corner, the expand column icon in the Orders (2) column, and the Count column selected in the expand column window.
     :::image-end:::
 
@@ -140,7 +140,7 @@ Follow these steps to apply transformations and publish:
 16. Your dataflow is now ready to be published. Review the queries in the diagram view, and then select **Publish**.
 
     :::image type="content" source="media/create-first-dataflow-gen2/publish-dataflow.png" alt-text="Screenshot of the dataflows editor with the Publish button on the lower-right side emphasized." lightbox="media/create-first-dataflow-gen2/publish-dataflow.png":::
-    
+
     You'll now be returned to the workspace. A spinner icon next to your dataflow name indicates publishing is in progress. Once the publishing completes, your dataflow is ready to refresh!
 
 17. In your workspace, select the **Schedule Refresh** icon.
@@ -171,10 +171,10 @@ If you're not going to continue to use this dataflow, delete the dataflow using 
 
 ## Next steps
 
-The dataflow in this sample shows you how to load and transform data in a dataflow gen2.  You learned how to:
+The dataflow in this sample shows you how to load and transform data in Dataflow Gen2.  You learned how to:
 
 > [!div class="checklist"]
-> - Create a dataflow gen2.
+> - Create a Dataflow Gen2.
 > - Transform data.
 > - Configure destination settings for transformed data.
 > - Run and schedule your data pipeline.

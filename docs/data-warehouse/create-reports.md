@@ -12,8 +12,6 @@ ms.search.form: Reporting # This article's title should not change. If so, conta
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] lets you create reusable and default Power BI datasets to create reports in various ways in Power BI. This article describes the various ways you can use your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], and their default Power BI datasets, to create reports.
 
 For example, you can establish a live connection to a shared dataset in the Power BI service and create many different reports from the same dataset. You can create a data model in Power BI Desktop and publish to the Power BI service. Then, you and others can create multiple reports in separate .pbix files from that common data model and save them to different workspaces.
@@ -24,6 +22,8 @@ Reports that use the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE 
 
 - [Power BI service](reports-power-bi-service.md)
 - [Power BI Desktop](/power-bi/fundamentals/desktop-getting-started)
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create reports using the Power BI service
 

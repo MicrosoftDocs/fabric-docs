@@ -3,7 +3,8 @@ items:
   href: index.yml
 - name: Overview
   href: data-warehousing.md
-- name: Get started with Synapse Data Warehouse
+- name: Get started with Warehouse
+  expanded: true
   items:
   - name: 1. Create a warehouse
     href: create-warehouse.md
@@ -25,19 +26,23 @@ items:
     href: tutorial-create-warehouse.md
   - name: 3. Ingest data into a warehouse
     href: tutorial-ingest-data.md
-  - name: 4. Build a report
-    href: tutorial-build-report.md
-  - name: 5. Create tables
+  - name: 4. Create tables
     href: tutorial-create-tables.md
-  - name: 6. Load data using T-SQL
+  - name: 5. Load data using T-SQL
     href: tutorial-load-data.md
-  - name: 7. Transform data using stored procedure
+  - name: 6. Transform data using stored procedure
     href: tutorial-transform-data.md
-  - name: 8. Create queries with visual query builder
+  - name: 7. Create queries with visual query builder
     href: tutorial-visual-query.md
-  - name: 9. Create Power BI reports
+  - name: 8. Analyze data with a notebook
+    href: tutorial-analyze-data-notebook.md
+  - name: 9. Create queries with the SQL query editor
+    href: tutorial-sql-cross-warehouse-query-editor.md
+  - name: 10. Create Power BI reports
     href: tutorial-power-bi-report.md
-  - name: 10. Clean up resources
+  - name: 11. Build a report from the OneLake data hub
+    href: tutorial-build-report-onelake-data-hub.md
+  - name: 12. Clean up resources
     href: tutorial-clean-up.md        
 - name: Connect to the warehouse
   items: 
@@ -47,10 +52,8 @@ items:
   items:
   - name: Better together - the lakehouse and warehouse
     href: get-started-lakehouse-sql-endpoint.md
-  - name: Warehouse settings and context menus
-    href: settings-context-menus.md
   - name: Get Workspace and OneLake path
-    href: get-workspace-onelake-path.md
+    href: access-data-warehouse-files-in-one-lake.md
   - name: Create a sample warehouse 
     href: create-warehouse-sample.md
   - name: Tables
@@ -63,6 +66,8 @@ items:
     href: table-constraints.md
   - name: Transactions
     href: transactions.md 
+  - name: Warehouse settings and context menus
+    href: settings-context-menus.md
 - name: Load data into the warehouse
   items:
   - name: Ingesting data into the warehouse

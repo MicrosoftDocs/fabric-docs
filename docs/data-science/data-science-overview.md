@@ -13,12 +13,9 @@ ms.search.form: Data Science Overview
 # What is Data Science in Microsoft Fabric?
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
-[!INCLUDE [product-name](../includes/product-name.md)] offers  Data Science experiences to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports. 
+[!INCLUDE [product-name](../includes/product-name.md)] offers  Data Science experiences to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports.
+
 [!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science Home page. From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
-
-:::image type="content" source="media/data-science-overview/fabric-home.png" alt-text="Screenshot of the Fabric home page." lightbox="media/data-science-overview/fabric-home.png":::
-
-From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
 
 :::image type="content" source="media/data-science-overview/data-science-home-page.png" alt-text="Screenshot of the Data science home page." lightbox="media/data-science-overview/data-science-home-page.png":::
 

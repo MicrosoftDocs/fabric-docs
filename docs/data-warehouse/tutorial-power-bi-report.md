@@ -1,6 +1,6 @@
 ---
 title: Data warehouse tutorial - create Power BI reports
-description: In this ninth tutorial step, learn how to create and save several types of Power BI reports with the data you ingested in earlier tutorial steps.
+description: In this tutorial step, learn how to create and save several types of Power BI reports with the data you ingested in earlier tutorial steps.
 ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
@@ -9,6 +9,8 @@ ms.date: 5/23/2023
 ---
 
 # Tutorial: Create Power BI reports
+
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Learn how to create and save several types of Power BI reports.
 
@@ -88,12 +90,7 @@ Learn how to create and save several types of Power BI reports.
 
    :::image type="content" source="media\tutorial-power-bi-report\save-sales-analysis-report.png" alt-text="Screenshot of the Save your report dialog box with Sales Analysis entered as the report name.":::
 
-1. Your tutorial is complete!
-    1. Review [Security for data warehousing in Microsoft Fabric](security.md).
-    1. Learn more about [Workspace roles in Fabric data warehousing](workspace-roles.md).
-    1. Consider [Microsoft Purview](../governance/microsoft-purview-fabric.md), included by default in every tenant to meet important compliance and governance needs.
-
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Clean up resources](tutorial-clean-up.md)
+> [Tutorial: Build a report from the OneLake data hub](tutorial-build-report-onelake-data-hub.md)

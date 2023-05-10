@@ -4,7 +4,8 @@ description: Open reports, apps, and workspaces from the Microsoft Fabric Home. 
 author: mihart
 ms.author: mihart
 ms.topic: conceptual  
-ms.date: 05//2023
+ms.date: 05/10/2023
+ms.search.form: product-fabric
 ---
 
 # Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home

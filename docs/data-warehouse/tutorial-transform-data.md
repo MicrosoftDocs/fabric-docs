@@ -1,6 +1,6 @@
 ---
 title: Data warehouse tutorial - transform data using a stored procedure
-description: In this seventh tutorial step, learn how to create and save a new stored procedure to transform data.
+description: In this tutorial step, learn how to create and save a new stored procedure to transform data.
 ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
@@ -9,6 +9,8 @@ ms.date: 5/23/2023
 ---
 
 # Tutorial: Transform data using a stored procedure
+
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Learn how to create and save a new stored procedure to transform data.
 

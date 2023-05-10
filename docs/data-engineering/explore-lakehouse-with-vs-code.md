@@ -1,7 +1,7 @@
 ---
-title: Explore lakehouse in VS Code
-description: VS Code extension for Synapse supports the experience of lakehouse exploring.
-ms.reviewer: snehagunda
+title: Explore lakehouses in VS Code
+description: Use the VS Code extension for Synapse to explore your Fabric lakehouses, including tables and raw data.
+ms.reviewer: sngun
 ms.author: qixwang
 author: qixwang
 ms.topic: overview
@@ -9,35 +9,33 @@ ms.date: 05/08/2023
 ms.search.form: VSCodeExtension
 ---
 
-# Explore lakehouse in VS Code
+# Explore Microsoft Fabric lakehouses in VS Code
 
-Synapse VS Code extension support to explore the structure of the lakehouse in the workspace. The lakehouse structure is organized in a tree view, which includes the **Files** and **Tables** sections
-
-Names of all the lakehouse from the selected workspace will be listed under the lakehouse root tree node.
-
-:::image type="content" source="media\vscode\lakehouse-list.png" alt-text="Screenshot showing the lakehouse list.":::
+You can use the Synapse VS Code extension to explore the structure of your lakehouse in a workspace.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Explore lakehouse and preview table data
+The extension displays the lakehouse structure in a tree view that includes the **Files** and **Tables** sections. All the lakehouses from the workspace you select are listed under the lakehouse root tree node.
 
-By expanding the “Tables” node, you can find the table entities from the lakehouse. For each table, users can click the “Preview Table” button to inspect the first 100 row of the selected table
+:::image type="content" source="media\vscode\lakehouse-list.png" alt-text="Screenshot showing the lakehouse list, with Tables and Files nodes under each lakehouse.":::
 
-:::image type="content" source="media\vscode\preview-table.png" alt-text="Screenshot showing the preview table button.":::
+## Explore a lakehouse and preview table data
 
-By expanding the “Files” node, you can find the folder and files which have been saved in the lakehouse. You can download the individual file by clicking the “Download” button at the toolbar on that file row.
+Expand the **Tables** node to find the table entities from the lakehouse. To review the first 100 rows of a specific table, select the **Preview Table** option to the right of the table.
 
-:::image type="content" source="media\vscode\download-file.png" alt-text="Screenshot showing the download file button.":::
+:::image type="content" source="media\vscode\preview-table.png" alt-text="Screenshot showing where to find the Preview Table option.":::
 
-## Copy lakehouse path
+Expand the **Files** node to find the folder and files that are saved in the lakehouse. Select the **Download** option to the right of a file name to download that file.
 
-To make it easier to reference the table/folder/file in the code, you can find the options to copy the ABFS path/ Relative Path/ URL by right-click on the target node
+:::image type="content" source="media\vscode\download-file.png" alt-text="Screenshot showing where to find the Download File option.":::
 
-:::image type="content" source="media\vscode\copy-path.png" alt-text="Screenshot showing the copy path button.":::
+## Copy the lakehouse path
 
-Here is the sample of the different path from the selected csv file. 
+To make it easier to reference a table, folder, or file in the code, you can copy the relevant path. Right click on the target node and to find the options to **Copy ABFS path**, **Copy Relative Path**, or **Copy URL**.
 
-## Next steps:
+:::image type="content" source="media\vscode\copy-path.png" alt-text="Screenshot of the right-click menu, showing where to select from the copy options.":::
 
-* [What is SQL Endpoint for a lakehouse?](lakehouse-sql-endpoint.md)
-* [Get data into the Fabric Lakehouse](load-data-lakehouse.md)
+## Next steps
+
+- [What is SQL Endpoint for a lakehouse?](lakehouse-sql-endpoint.md)
+- [Get data into the Fabric Lakehouse](load-data-lakehouse.md)

@@ -22,9 +22,9 @@ In this tutorial, you'll ingest additional dimensional and fact tables from the 
 
 In this section, you use the **Copy data activity** of the Data Factory pipeline to ingest sample data from an Azure storage account to the **Files** section of the lakehouse you created earlier.
 
-1. On the bottom left of the screen, select the workload switcher, and then select **Data Factory**.
+1. On the bottom left of the screen, select the experience switcher, and then select **Data Factory**.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\workload-switch-data-factory.png" alt-text="Screenshot showing where to select Data Factory from the workload switcher.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\workload-switch-data-factory.png" alt-text="Screenshot showing where to select Data Factory from the experience switcher.":::
 
 1. Select **New** and **Data pipeline** to create a new data pipeline.
 

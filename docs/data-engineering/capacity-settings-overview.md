@@ -1,6 +1,6 @@
 ---
 title: Data engineering and science capacity administration settings
-description: Learn about the capacity administration settings for data engineering and data science workloads.
+description: Learn about the capacity administration settings for data engineering and data science experiences.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
