@@ -118,6 +118,30 @@ items:
   - name: Limitations and known issues
     href: limitations.md      
 - name: Reference
-  items:
+  items: 
+  - name: T-SQL Reference for Fabric
+    href: /sql/t-sql/language-reference?view=fabric&preserve-view=true
 - name: Resources
   items: 
+  - name: Contribute to Fabric docs
+    href: /contribute/
+  - name: Help
+    items:
+    - name: Microsoft Q & A >>
+      href: /answers/
+    - name: Submit feedback >>
+      href: https://feedback.azure.com/    
+  - name: Azure Roadmap
+    href: https://azure.microsoft.com/roadmap/?category=databases
+  - name: Pricing
+    href: https://azure.microsoft.com/pricing/
+  - name: Pricing calculator
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Service updates
+    href: https://azure.microsoft.com/updates/    
+  - name: Azure Status
+    href: https://azure.status.microsoft/
+  - name: Learn
+    items:
+    - name: Microsoft Learn training >>
+      href: /training/
