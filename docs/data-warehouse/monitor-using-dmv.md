@@ -27,7 +27,6 @@ For the current version, there are three dynamic management views (DMVs) provide
 - [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each active request in a session.
 
-:::image type="content" source="media\monitor-using-dmv\dmv-gif.gif" alt-text="Gif showing results of sys.dm_exec_connections, sys.dm_exec_sessions, sys.dm_exec_requests" lightbox="media\monitor-using-dmv\monitor-using-dmv\dmv-gif.gif":::
 
 These three DMVs provide detailed insight on the following scenarios:
 
