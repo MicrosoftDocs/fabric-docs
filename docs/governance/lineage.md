@@ -56,15 +56,11 @@ Items are represented by cards that provide some information about the item.
 
 :::image type="content" source="./media/lineage/lineage-item-card.png" alt-text="Screenshot of item card in lineage view.":::
 
-* Select XXX to highlight an items lineage
-
-** Select XXX to see the impact analysis for an item.
-
 **Data sources**
 
-You see the data sources from which the datasets and dataflows get their data. On the data source cards, you see more information that can help identify the source. For example, for Azure SQL server, you also see the database name.
+You see the data sources from which the datasets and dataflows get their data. On the data source cards, you see information that can help identify the source. For example, for Azure SQL server, you also see the database name.
 
-:::image type="content" source="media/service-data-lineage/service-data-lineage-data-source-card.png" alt-text="Screenshot of the lineage view data source with no gateway.":::
+:::image type="content" source="./media/lineage/e/lineage-data-source-card.png" alt-text="Screenshot of the lineage view data source with no gateway.":::
 
 ## Highlight an item's lineage
 
