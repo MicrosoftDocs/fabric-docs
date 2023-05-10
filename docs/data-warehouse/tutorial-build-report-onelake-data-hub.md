@@ -24,7 +24,7 @@ Learn how to build a report with the data you ingested into your [!INCLUDE [fabr
 
 1. From the item list, select `WideWorldImporters` with the type of **Dataset (default)**.
 
-   :::image type="content" source="media\tutorial-build-report\select-dataset-default-list.png" alt-text="Screenshot of WWI default dataset in the list of items in the workspace.":::
+   :::image type="content" source="media\tutorial-build-report\select-dataset-default-list.png" alt-text="Screenshot of WWI default dataset in the list of items in the workspace." lightbox="media\tutorial-build-report\select-dataset-default-list.png":::
 
 1. In the **Visualize this data** section, select **Create a report** > **Auto-create**. A report is generated from the `dimension_customer` table that was loaded in the previous section.
 
@@ -41,9 +41,9 @@ Learn how to build a report with the data you ingested into your [!INCLUDE [fabr
    :::image type="content" source="media\tutorial-build-report\save-report-dialog.png" alt-text="Screenshot of the Save your report dialog with the report name Customer Quick Summary entered.":::
 
 1. Your tutorial is complete!
-    1. Review [Security for data warehousing in Microsoft Fabric](security.md).
-    1. Learn more about [Workspace roles in Fabric data warehousing](workspace-roles.md).
-    1. Consider [Microsoft Purview](../governance/microsoft-purview-fabric.md), included by default in every tenant to meet important compliance and governance needs.
+    - Review [Security for data warehousing in Microsoft Fabric](security.md).
+    - Learn more about [Workspace roles in Fabric data warehousing](workspace-roles.md).
+    - Consider [Microsoft Purview](../governance/microsoft-purview-fabric.md), included by default in every tenant to meet important compliance and governance needs.
 
 ## Next steps
 
