@@ -35,7 +35,7 @@ For more limitations information in specific areas, see:
 - [The Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
 - [Connectivity](connectivity.md#considerations-and-limitations)
 
-## Known issues
+## Known issues for querying
 
 - Queries with PIVOT operator will fail if there's a GROUP BY on the non-pivot column output by PIVOT. To work around this, remove the non-pivot column from the GROUP BY.  Query results will be the same, as this GROUP BY clause is duplicate. 
 
