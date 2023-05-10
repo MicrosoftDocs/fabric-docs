@@ -10,13 +10,13 @@ ms.date: 05/23/2023
 
 # Apache Spark runtime in Fabric
 
-The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science workloads. It combines key components from both internal and open-source sources, providing customers with a comprehensive solution. For simplicity, we'll refer to the Microsoft Fabric Runtime powered by Apache Spark as Fabric Runtime.
+The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. It combines key components from both internal and open-source sources, providing customers with a comprehensive solution. For simplicity, we'll refer to the Microsoft Fabric Runtime powered by Apache Spark as Fabric Runtime.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Major components of the Fabric Runtime:
 
-- **Apache Spark** - a powerful open-source distributed computing library, to enable large-scale data processing and analytics tasks. Apache Spark provides a versatile and high-performance platform for data engineering and data science workloads.
+- **Apache Spark** - a powerful open-source distributed computing library, to enable large-scale data processing and analytics tasks. Apache Spark provides a versatile and high-performance platform for data engineering and data science experiences.
 
 - **Delta Lake** - an open-source storage layer that brings ACID transactions and other data reliability features to Apache Spark. Integrated within the Microsoft Fabric Runtime, Delta Lake enhances the data processing capabilities and ensures data consistency across multiple concurrent operations.
 
@@ -618,7 +618,7 @@ Below you can find the table with listing all the default level packages for R a
 
 ## Migration between different Apache Spark Versions
 
-Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older versions of Apache Spark involves a series of steps to ensure a smooth migration. This guide will outline the necessary steps to help you migrate efficiently and effectively.
+Migrating your experiences to Fabric Runtime 1.1 (Apache Spark 3.3) from an older versions of Apache Spark involves a series of steps to ensure a smooth migration. This guide will outline the necessary steps to help you migrate efficiently and effectively.
 
 1. Review Fabric Runtime 1.1 release notes, including checking the components and default-level packages included into the runtime, to understand the new features, improvements.
 
@@ -630,11 +630,11 @@ Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older 
    - If you use PySpark, [review Pyspark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/pyspark_upgrade.html)
    - If you migrate code from Koalas to PySpark, [review Koalas to pandas API on Spark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/koalas_to_pyspark.html)
 
-1. Move your workloads to Fabric and ensure that you have backups of your data and configuration files in case you need to revert to the previous version.
+1. Move your experiences to Fabric and ensure that you have backups of your data and configuration files in case you need to revert to the previous version.
 
 1. Update any dependencies that may be impacted by the new version of Apache Spark or other Fabric Runtime 1.1 related components. This may include third-party libraries or connectors. Make sure to test the updated dependencies in a staging environment before deploying to production
 
-1. Update Apache Spark Configuration to your workload. This may include updating configuration settings, adjusting memory allocations, and modifying any deprecated configurations.
+1. Update Apache Spark Configuration to your experience. This may include updating configuration settings, adjusting memory allocations, and modifying any deprecated configurations.
 
 1. Modify your Apache Spark applications (notebooks and Apache Spark Jobs Definitions) to use the new APIs and features introduced in Fabric Runtime 1.1 and Apache Spark 3.3. This may involve updating your code to accommodate any deprecated or removed APIs, as well as refactoring your applications to take advantage of performance improvements and new functionalities.
 

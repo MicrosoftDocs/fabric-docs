@@ -1,6 +1,6 @@
 ---
 title: How to use the end-to-end AI samples
-description: Understand the various capabilities the DS workload has to offer and examples of how ML models can address your common business problems.
+description: Understand the various capabilities the DS experience has to offer and examples of how ML models can address your common business problems.
 ms.reviewer: lagayhar
 ms.author: narsam
 author: narmeens
@@ -10,7 +10,7 @@ ms.date: 05/23/2023
 
 # How-to use end-to-end AI samples in Microsoft Fabric
 
-In providing the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] SaaS experience we want to enable ML professionals to easily and frictionlessly build, deploy and operationalize their machine learning models, in a single analytics platform, while collaborating with other key roles. Begin here to understand the various capabilities the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workload has to offer and examples of how ML models can address your common business problems.
+In providing the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] SaaS experience we want to enable ML professionals to easily and frictionlessly build, deploy and operationalize their machine learning models, in a single analytics platform, while collaborating with other key roles. Begin here to understand the various capabilities the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] experience has to offer and examples of how ML models can address your common business problems.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

@@ -25,9 +25,9 @@ The following prerequisites are required before you start:
 
 In this section, you'll be creating your first dataflow.
 
-1. Switch to the **Data factory** or **Power BI** workload.
+1. Switch to the **Data factory** or **Power BI** experience.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory workload emphasized.":::
+   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
 
 2. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 

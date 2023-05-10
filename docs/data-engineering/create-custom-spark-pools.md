@@ -9,11 +9,11 @@ ms.date: 02/24/2023
 ---
 # How to create custom Spark pools in Microsoft Fabric
 
-In this document, we'll explain how to create custom Apache Spark pools in Microsoft Fabric for your analytics workloads. Apache Spark pools enable users to create tailored compute environments based on their specific requirements, ensuring optimal performance and resource utilization.
+In this document, we'll explain how to create custom Apache Spark pools in Microsoft Fabric for your analytics experiences. Apache Spark pools enable users to create tailored compute environments based on their specific requirements, ensuring optimal performance and resource utilization.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Users specify the minimum and maximum nodes for autoscaling. Based on which, the system dynamically acquires and retires nodes as the job's compute requirements change. It results in efficient scaling and improved performance. Furthermore, the dynamic allocation of executors in Spark pools alleviates the need for manual executor configuration. Instead, the system adjusts the number of executors depending on the data volume and job-level compute needs. This way, it enables you to focus on your workloads without worrying about performance optimization and resource management.
+Users specify the minimum and maximum nodes for autoscaling. Based on which, the system dynamically acquires and retires nodes as the job's compute requirements change. It results in efficient scaling and improved performance. Furthermore, the dynamic allocation of executors in Spark pools alleviates the need for manual executor configuration. Instead, the system adjusts the number of executors depending on the data volume and job-level compute needs. This way, it enables you to focus on your experiences without worrying about performance optimization and resource management.
 
 > [!NOTE]
 > To create a custom spark pool, you must have admin access to the workspace. The capacity admin should have enabled the **Customized workspace pools** option in the **Spark Compute** section of **Capacity Admin settings**. To learn more, see [Spark Compute Settings for Fabric Capacities](capacity-settings-management.md).
@@ -30,7 +30,7 @@ To create or manage the Spark Pool associated with your workspace:
 
    :::image type="content" source="media/workspace-admin-settings/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view.":::
 
-1. Select the **New Pool** option. From the **Create Pool** menu, name your Spark pool. Select the **Node family**, and **Node size** from the available sizes Small, Medium, Large, X-Large and XX-Large based on compute requirements for your workloads.
+1. Select the **New Pool** option. From the **Create Pool** menu, name your Spark pool. Select the **Node family**, and **Node size** from the available sizes Small, Medium, Large, X-Large and XX-Large based on compute requirements for your experiences.
 
    :::image type="content" source="media\workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options.":::
 

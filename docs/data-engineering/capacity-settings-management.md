@@ -1,6 +1,6 @@
 ---
 title: Configure data engineering and science capacity admin settings
-description: Learn how to configure and manage the capacity administration settings for data engineering and science workloads.
+description: Learn how to configure and manage the capacity administration settings for data engineering and science experiences.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
@@ -44,4 +44,4 @@ Use the following steps to manage the Data Engineering/Science settings for Micr
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](workspace-admin-settings.md)
 
-* [Learn about the Spark Compute for Fabric Data Engineering/Science workloads](spark-compute.md)
+* [Learn about the Spark Compute for Fabric Data Engineering/Science experiences](spark-compute.md)
