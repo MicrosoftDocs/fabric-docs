@@ -180,7 +180,7 @@ The python commands/script used in each step of this tutorial can be found in th
 - Some trips in the sample data have a passenger count of 0 but most trips have a passenger count between 1-6.
 - tripDuration column has outliers with a comparatively small number of trips having ***tripDuration*** of greater than 3 hours.
 - The outliers for TripDuration are specifically present for vendorId 2.
-- Some trips have zero tripdistance and hence they can be canceled and filtered out from any modeling.
+- Some trips have zero trip distance and hence they can be canceled and filtered out from any modeling.
 - A small number of trips have no passengers(0) and hence can be filtered out.
 - fareAmount column contains negative outliers, which can be removed from model training.
 - The number of trips starts rising around 16:00 hours and peaks between 18:00 - 19:00 hours.
