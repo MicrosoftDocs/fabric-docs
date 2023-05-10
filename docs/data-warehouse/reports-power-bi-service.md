@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Reporting
 ---
-# Create reports in the Power BI service in Microsoft Fabric
+# Create reports in the Power BI service in Microsoft Fabric and Power BI Desktop
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -50,7 +50,7 @@ To find the warehouse, you begin with the **Data hub**. The following image show
 
    :::image type="content" source="media\reports-power-bi-service\data-hub-power-bi-service.png" alt-text="Screenshot of the Power BI Data hub." lightbox="media\reports-power-bi-service\data-hub-power-bi-service.png":::
 
-# Create reports in the Power BI Desktop
+## Create reports in the Power BI Desktop
 
 The Data hub integration in Power BI Desktop lets you connect to the Warehouse or SQL endpoint of Lakehouse in easy steps.
 
