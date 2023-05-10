@@ -38,7 +38,7 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 2. The selector for switching product experiences.
 3. The top menu bar for orienting yourself in [!INCLUDE [product-name](../includes/product-name.md)], finding items, help, and sending Microsoft feedback. The [**Account manager**](#find-your-account-and-license-information) control is a critical icon for looking up your account information and managing your Fabric trial. 
 4. Options for creating new items.  
-5. Links to recommended content. This is material to help you get started using the product experience and links to items and workspaces that you visit often.
+5. Links to recommended content. This content helps you get started using the product experience and links to items and workspaces that you visit often.
 6. Your items organized by recent, favorites, and items shared with you by your colleagues. The items that appear here are the same across product experiences, with the exception of the Power BI experience.  
 
 > [!IMPORTANT]
@@ -82,7 +82,7 @@ To learn about the many ways to search from [!INCLUDE [product-name](../includes
 
 Select the Help icon (**?**) to open and use the contextual Help pane and to search for answers to questions.
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides context sensitive help in the right rail of your browser. In this example, we've selected **Browse** from the nav pane and the Help pane automatically updates to show us articles about the features of the **Browse** screen. For example, we're shown articles on *View recent content* and *See content that others have shared with you*. If there are community posts related to the current view, they are displayed under **Forum topics**. 
+[!INCLUDE [product-name](../includes/product-name.md)] provides context sensitive help in the right rail of your browser. In this example, we've selected **Browse** from the nav pane and the Help pane automatically updates to show us articles about the features of the **Browse** screen. For example, we're shown articles on *View recent content* and *See content that others have shared with you*. If there are community posts related to the current view, they're displayed under **Forum topics**. 
 
 Leave the Help pane open as you work, and use the suggested topics to learn how to use [!INCLUDE [product-name](../includes/product-name.md)] features and terminology. Or, select the **X** to close the Help pane and save screen space. 
 
@@ -102,7 +102,7 @@ For more information about the Help pane, see [Get in-product help](fabric-help-
 
 ### Find help and support
 
-If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane and either ask the community or connect with [!INCLUDE [product-name](../includes/product-name.md)] Support. For more information about contacting Support, see [Support options](/powerbi-docs/support/service-support-options.md).
+If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane for additional resources.  Use the links to ask the community for help or to connect with [!INCLUDE [product-name](../includes/product-name.md)] Support. For more information about contacting Support, see [Support options](/powerbi-docs/support/service-support-options.md).
 
 ### Find your account and license information
 
@@ -123,7 +123,7 @@ The final section of Home is the center area, called the **canvas**. The content
 
 :::image type="content" source="media/fabric-home/fabric-show-less.png" alt-text="{alt-text}":::
 
-When you create a new item, it is saved in your **My workspace** unless you've selected a workspace from **Workspaces**. To learn more about creating items in workspaces, see [create workspaces](create-workspaces.md).
+When you create a new item, it's saved in your **My workspace** unless you've selected a workspace from **Workspaces**. To learn more about creating items in workspaces, see [create workspaces](create-workspaces.md).
 
 > [!NOTE]
 > Power BI **Home** is different from the other product experiences. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home.md).
