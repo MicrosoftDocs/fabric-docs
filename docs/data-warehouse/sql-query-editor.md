@@ -56,11 +56,11 @@ The status bar indicates the query status, duration of the run and number of row
 
 - The **Download Excel file** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to view the results in Excel.
 
-   :::image type="content" source="media\sql-query-editor\download-excel-file.png" alt-text="Screenshot showing how to use Download Excel file menu" lightbox="media\sql-query-editor\download-excel-file.png":::
+   :::image type="content" source="media\sql-query-editor\download-excel-file-query.png" alt-text="Screenshot showing how to use Download Excel file menu" lightbox="media\sql-query-editor\download-excel-file-query.png":::
 
 - **Visualize results** allows you to create reports from your query results within the SQL query editor.
 
-   :::image type="content" source="media\sql-query-editor\visualize-results.png" alt-text="Screenshot showing how to use Visualize results menu" lightbox="media\sql-query-editor\visualize-results.png":::
+   :::image type="content" source="media\sql-query-editor\visualize-results-query.png" alt-text="Screenshot showing how to use Visualize results menu" lightbox="media\sql-query-editor\visualize-results-query.png":::
 
    As you work on your SQL query, the queries are automatically saved every few seconds. A "saving" indicator appears in your query tab at the bottom to indicate that your query is being saved.
 

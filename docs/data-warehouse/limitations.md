@@ -36,6 +36,10 @@ For more limitations information in specific areas, see:
 - [Connectivity](connectivity.md#considerations-and-limitations)
 - [Tables](tables.md#limitations)
 
+## Known issues for querying
+
+- Queries with PIVOT operator fail if there's a GROUP BY on the nonpivot column output by PIVOT. As a workaround, remove the nonpivot column from the GROUP BY.  Query results will be the same, as this GROUP BY clause is duplicate.
+
 ## Limitations of the SQL Endpoint
 
 The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)] automatic schema generation and metadata discovery.

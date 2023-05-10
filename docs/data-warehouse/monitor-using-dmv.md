@@ -45,6 +45,7 @@ The following example queries `sys.dm_exec_sessions` to find all sessions that a
 SELECT * 
 FROM sys.dm_exec_sessions;
 ```
+:::image type="content" source="media\monitor-using-dmv\exec-sessions-results.png" alt-text="Screenshot showing the results of sys.dm_exec_sessions." lightbox="media\monitor-using-dmv\exec-sessions-results.png":::
 
 ### Find the relationship between connections and sessions
 
