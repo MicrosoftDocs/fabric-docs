@@ -1,6 +1,6 @@
 ---
-title: Query data in a KQL Queryset in Real-Time Analytics
-description: Learn how to use the KQL Queryset to query the data in your KQL database.
+title: Query data in a KQL queryset in Real-Time Analytics
+description: Learn how to use the KQL queryset to query the data in your KQL database.
 ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-# Query data in a KQL Queryset
+# Query data in a KQL queryset
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -21,22 +21,22 @@ The KQL Queryset uses the Kusto Query language for creating queries, and also su
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* [KQL Database](create-database.md) with data
+* A [KQL Database](create-database.md) with data
 
-## Create a KQL Queryset
+## Create a KQL queryset
 
-A KQL Queryset exists within the context of a workspace. A new KQL Queryset is always associated with the workspace you're using when you create it, but it can also be associated with a specific KQL database in that workspace.
+A KQL queryset exists within the context of a workspace. A new KQL queryset is always associated with the workspace you're using when you create it, but it can also be associated with a specific KQL database in that workspace.
 
 1. Browse to the desired workspace.
 1. Select **+New** > **KQL Queryset**
 1. Enter a unique name. You can use alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
 > [!NOTE]
-> You can create multiple KQL Querysets in a single workspace.
+> You can create multiple KQL querysets in a single workspace.
 
 ### Open an existing queryset
 
-To access an existing queryset, browse to your workspace and select the desired KQL Queryset from the list of items.
+To access an existing queryset, browse to your workspace and select the desired KQL queryset from the list of items.
 
 :::image type="content" source="media/kusto-query-set/open-existing-query-set.png" alt-text="Screenshot of Microsoft Fabric workspace showing KQL Querysets.":::
 
@@ -44,9 +44,9 @@ To access an existing queryset, browse to your workspace and select the desired 
 
 Queries run in the context of a database. You can change the associated database at any point, and retain the queries saved in the query editor.
 
-1. To connect your KQL Queryset to a database, select **Select database**, and then select a database from the data hub that appears.
+1. To connect your KQL queryset to a database, select **Select database**, and then select a database from the data hub that appears.
 
-:::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the KQL Queryset database selection pane. The option titled Select  database is highlighted.":::
+:::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the KQL queryset database selection pane. The option titled Select  database is highlighted.":::
 
 A list of tables associated with this database will appear below the database name.
 
@@ -235,10 +235,10 @@ This is a one-time method to export a CSV file containing the query results.
 1. Select **Export results to CSV**.
 1. Save the CSV file locally.
 
-## Delete query set
+## Delete KQL queryset
 
-1. Select the workspace to which your query set is associated.
-1. Hover over the query set you wish to delete. Select **More [...]**, then select **Delete**.
+1. Select the workspace to which your KQL queryset is associated.
+1. Hover over the KQL queryset you wish to delete. Select **More [...]**, then select **Delete**.
 
 :::image type="content" source="media/kusto-query-set/clean-up-query-set.png" alt-text="Screenshot of Microsoft Fabric workspace showing how to delete a KQL Queryset."  lightbox="media/kusto-query-set/clean-up-query-set.png":::
 

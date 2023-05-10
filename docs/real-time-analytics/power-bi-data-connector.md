@@ -1,5 +1,5 @@
 ---
-title: Use data from a KQL Database in Power BI Desktop in Real-time Analytics
+title: Use data from a KQL database in Power BI Desktop in Real-time Analytics
 description: Learn how to use data from your KQL database in Power BI Desktop.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-# Use data from a KQL Database in Power BI Desktop
+# Use data from a KQL database in Power BI Desktop
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -19,12 +19,12 @@ To create reports with Power BI service using a KQL Queryset, see [Create a Powe
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* [KQL database](create-database.md) with data.
+* A [KQL database](create-database.md) with data.
 * [Power BI Desktop](https://powerbi.microsoft.com/get-started).
 
 ## Connectivity modes
 
-Power BI supports *Import* and *DirectQuery* connectivity modes. When building Power BI reports or dashboards, choose your connectivity mode depending on your scenario, scale, and performance requirements. Using **Import** mode copies your data to Power BI. In contrast, using **DirectQuery** mode queries your data directly from your KQL Database.
+Power BI supports *Import* and *DirectQuery* connectivity modes. When building Power BI reports or dashboards, choose your connectivity mode depending on your scenario, scale, and performance requirements. Using **Import** mode copies your data to Power BI. In contrast, using **DirectQuery** mode queries your data directly from your KQL database.
 
 Use **Import** mode when:
 
@@ -63,7 +63,7 @@ To use your **KQL database** as a data source in Power BI, you need to add the A
 
     | Setting | Field description | Sample value |
     |---|---|---|
-    | Cluster | The Query URI from Microsoft Fabric's **KQL database** dashboard. For other clusters, the URL is in the form *https://\<ClusterName\>.\<Region\>.kusto.windows.net*. | Paste your [Query URI](#1--copy-query-uri) |
+    | Cluster | The Query URI from Microsoft Fabric's **KQL Database** dashboard. For other clusters, the URL is in the form *https://\<ClusterName\>.\<Region\>.kusto.windows.net*. | Paste your [Query URI](#1--copy-query-uri) |
     | Database | A database that is hosted on the cluster you're connecting to. You can optionally select a database in a later step. | Leave blank |
     | Table name | The name of a table in the database, or a query like <code>StormEvents \| take 1000</code>. You can optionally select a table name in a later step. | Leave blank |
     | Advanced options | Optionally, you can select options for your queries, such as result set size. |  Leave blank |

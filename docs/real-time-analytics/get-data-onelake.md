@@ -32,7 +32,7 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 1. Under **URL**, select the **Copy to clipboard** icon and save it somewhere to retrieve in a later step.
     :::image type="content" source="media/get-data-onelake/lakehouse-file-properties.png" alt-text="Screenshot of a Lakehouse file's Properties pane. The copy icon to the right of the file's URL is highlighted.":::
 
-1. Return to your workspace and select a KQL Database.
+1. Return to your workspace and select a KQL database.
 
 ## Get data
 

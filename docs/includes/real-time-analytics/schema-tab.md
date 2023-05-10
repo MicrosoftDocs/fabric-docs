@@ -58,7 +58,7 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 ## Explore your data
 
-To verify that you have ingested data into your database, select **Explore your data** on the right-hand side of the database landing page. You can then save your query as a KQL Queryset by selecting **Save as Query Set**.
+To verify that you have ingested data into your database, select **Explore your data** on the right-hand side of the database landing page. You can then save your query as a KQL Queryset by selecting **Save as QuerySet**.
 
 :::image type="content" source="../../real-time-analytics/media/get-data-blob/quick-query.png" alt-text="Screenshot of the Quick query button.":::
 

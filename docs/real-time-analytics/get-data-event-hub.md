@@ -16,7 +16,7 @@ In this article, you learn how to get data from Event Hubs into your KQL databas
 
 To stream data from Azure Event Hubs into Real-Time-Analytics, you'll go through two main steps. The first step is to create a [!INCLUDE [product-name](../includes/product-name.md)] platform-based cloud connection to a specific event hub instance. This data stream can be used across all [!INCLUDE [product-name](../includes/product-name.md)] workspaces and is managed centrally.
 
-In the second step, you'll connect this [!INCLUDE [product-name](../includes/product-name.md)]-based cloud connection to a KQL Database. This process creates a database-specific Kusto Event Hub Data Stream. The connection will stream data into the table you specified during setup, and the data will then be available to query using a KQL queryset.
+In the second step, you'll connect this [!INCLUDE [product-name](../includes/product-name.md)]-based cloud connection to a KQL database. This process creates a database-specific Kusto Event Hub Data Stream. The connection will stream data into the table you specified during setup, and the data will then be available to query using a KQL queryset.
 
 ## Prerequisites
 
@@ -82,9 +82,9 @@ Now that your SAS policy is set up, you can configure a connection to this event
 
 ## Create a Kusto-specific connection to your data stream
 
-In the following step, you'll create a data stream in your KQL Database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your Event Hubs instance and get data into the specified table using specified data mapping.
+In the following step, you'll create a data stream in your KQL database, which connects a table in your database to the Event Hubs cloud connection that you created. This connection will allow you to use your Event Hubs instance and get data into the specified table using specified data mapping.
 
-1. Navigate to your KQL Database.
+1. Navigate to your KQL database.
 1. Select **Get data** > **Get data from Event Hub**.
 
     :::image type="content" source="media/get-data-event-hub/get-data.png" alt-text="Screenshot of getting data from Database.":::
