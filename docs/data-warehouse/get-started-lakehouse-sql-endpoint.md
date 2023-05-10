@@ -12,79 +12,124 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview # This ar
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides an [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) for every lakehouse in the workspace. The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the lakehouse using T-SQL language and TDS protocol. Every lakehouse has one [!INCLUDE [fabric-se](includes/fabric-se.md)], and each workspace can have more than one lakehouse.
-
-- The [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically generated for every lakehouse artifact and exposes Delta tables from the lakehouse as SQL tables that can be queried using the T-SQL language.
-- Every delta table from a lakehouse is represented as one table. Data should be in delta format.
-- The [default Power BI dataset](datasets.md) is created for every [!INCLUDE [fabric-se](includes/fabric-se.md)] and it follows the naming convention of the lakehouse objects.
- 
-[OneLake](../onelake/onelake-overview.md) is a single, unified, logical data lake for the whole organization. OneLake is the OneDrive for data. OneLake can contain multiple workspaces, for example, along your organizational divisions. The [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes data in the `/tables` folder within each lakehouse folder in OneLake and enables you to create queries and reports on the OneLake data.
-
-The delta tables in the [lakehouse](../data-engineering/lakehouse-overview.md) are automatically added to the default Power BI dataset. The default Power BI dataset is queried via the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) and updated via changes to the lakehouse. You can also query the default Power BI dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [Warehouse](data-warehousing.md#synapse-data-warehouse).
+This article explains the data warehousing experience with the SQL Endpoint of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Create a SQL Endpoint
+## What is a Lakehouse SQL endpoint?
 
-There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. [!INCLUDE [product-name](../includes/product-name.md)] users can't create [!INCLUDE [fabric-se](includes/fabric-se.md)] in a workspace. A [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically created for every Lakehouse. If you want to create a [!INCLUDE [fabric-se](includes/fabric-se.md)], [create a lakehouse](../onelake/create-lakehouse-onelake.md), and a [!INCLUDE [fabric-se](includes/fabric-se.md)] will be automatically created with the Lakehouse.
+In Fabric, when you [create a lakehouse](../onelake/create-lakehouse-onelake.md), a [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) will be automatically created. 
 
-The [!INCLUDE [product-name](../includes/product-name.md)] workspace ensures that lakehouse objects are exposed and available for analysis.
+The SQL Endpoint enables you to query data in the Lakehouse using T-SQL language and TDS protocol. Every Lakehouse has one SQL Endpoint, and each workspace can have more than one Lakehouse. The number of SQL Endpoints in a workspace matches the number of Lakehouse artifacts.
 
-## Analyzing data in the lakehouse
+*    The SQL Endpoint is automatically generated for every Lakehouse artifact and exposes Delta tables from the Lakehouse as SQL tables that can be queried using the T-SQL language.
+*    Every delta table from a Lakehouse is represented as one table. Data should be in delta format.
+*    The [default Power BI dataset](datasets.md) is created for every SQL Endpoint and it follows the naming convention of the Lakehouse objects.
 
-Analyzing data in the [!INCLUDE [product-name](../includes/product-name.md)] lakehouse is one of the main scenarios where you use the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse). The main purpose of [!INCLUDE [fabric-se](includes/fabric-se.md)] is to enable analytical and reporting tools to access data in the lakehouse.
-
-The [!INCLUDE [fabric-se](includes/fabric-se.md)] automatically creates SQL tables that are referencing data in the lakehouse and enable reporting tools to access Lakehouse data using T-SQL language.
-
-Data in a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse is physically stored in OneLake with the following folder structure:
-
-- The `/Files` folder contains raw and unconsolidated (bronze) files that should be processed by data engineers before they're analyzed. The files might be in various formats such as `csv`, `parquet`, different types of images, etc.
-- The `/Tables` folder contains refined and consolidated (gold) data that is ready for business analysis. The consolidated data is in Delta Lake format.
-
-The [!INCLUDE [fabric-se](includes/fabric-se.md)] automatically discovers data stored in the `/Tables` folder and exposes Lakehouse data as SQL tables. Every Delta Lake folder in the `/Tables` folder is represented as one SQL table that can be used to read data from the folder using T-SQL language. 
-
-The SQL tables are ready for analytics without the need for explicit setup or table design. The [!INCLUDE [fabric-se](includes/fabric-se.md)] analyzes the Delta Lake schema in the `/Tables` folders and automatically creates SQL tables that can be used to query lake data. The [!INCLUDE [fabric-se](includes/fabric-se.md)] analyzes the schema/columns in the `Delta Lake` and crates matching SQL columns in the generated tables.
-
-The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to create SQL objects (views, procedures, functions) and set permissions on these objects.
-
-In addition to SQL tables, the [!INCLUDE [product-name](../includes/product-name.md)] workspace exposes the lakehouse data using a default dataset that can either directly access data in the lake or use SQL tables in the SQL endpoint to read data.
-
-## Analyzing data in external data lakes
-
-A [!INCLUDE [fabric-se](includes/fabric-se.md)] isn't just for data analytics in lakehouse and OneLake. A [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to analyze lake data in any lakehouse managed by the Synapse Spark, Azure Databricks, or any other lake-centric data engineering engine. If the engine stores data in `Delta Lake` format in Azure Data Lake storage or Amazon S3 accounts, a [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to analyze data using T-SQL language. 
-
-One of the well-known strategies for lake data organization is a [medallion architecture](/azure/databricks/lakehouse/medallion) where the files are organized in raw (bronze), consolidated (silver), and refined (gold) layers. A [!INCLUDE [fabric-se](includes/fabric-se.md)] can be used to analyze data in the gold layer of medallion architecture if the files are stored in `Delta Lake` format even if they're stored outside the [!INCLUDE [product-name](../includes/product-name.md)] OneLake.
-
-You can use [OneLake shortcuts](../data-engineering/lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that are managed by Synapse Spark or Azure Databricks engines.
-Use the following steps to analyze data in external data lake storage accounts:
-
-1. Create a shortcut that references a folder in [Azure Data Lake storage](../onelake/create-adls-shortcut.md) or [Amazon S3](../onelake/create-s3-shortcut.md) account. Once you enter connection details and credentials, a shortcut is shown in the lakehouse.
-2. Switch to the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the lakehouse and find a SQL table that has a name that matches the shortcut name. This SQL table references the folder in ADLS/S3 folder.
-3. Query the SQL table that references data in ADLS/S3. The table can be used as any other table in the SQL endpoint (that is, you can join tables that reference data in different storage accounts).
+There's no need to create a SQL Endpoint in Microsoft Fabric. Microsoft Fabric users can't create SQL Endpoint in a workspace. A SQL Endpoint is automatically created for every Lakehouse. If you want to create a SQL Endpoint, [create a lakehouse](../onelake/create-lakehouse-onelake.md) and a SQL Endpoint will be automatically created for the Lakehouse.
 
 > [!NOTE]
-> If the SQL table is not immediately shown in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you might need to wait a few minutes. The SQL table that references data in external storage account is created with a delay.
+> Behind the scenes, the SQL endpoint is using the same engine as the [Warehouse](data-warehousing.md#synapse-data-warehouse) to serve high performance, low latency SQL queries.
 
-Any ADLS/S3 data lake folder referenced using a [OneLake shortcut](../data-engineering/lakehouse-shortcuts.md) is analyzed by [!INCLUDE [fabric-se](includes/fabric-se.md)] and a SQL table is created for the referenced data set. The SQL table can be used to expose data in externally managed data lake folders and enable analytics on them.
+### Automatic Metadata Discovery
 
-## Cross-workspace data analytics
+A seamless process reads the delta logs and from the files folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or setup infrastructure. For more information, see [Automatically generated schema in the SQL Endpoint](data-warehousing.md#automatically-generated-schema-in-the-sql-endpoint-of-the-lakehouse).
 
-A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) enables you to analyze data in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or lakehouse placed in other [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
+## Scenarios the Lakehouse enables for data warehousing
 
-- Every [!INCLUDE [product-name](../includes/product-name.md)] lakehouse stores data in OneLake. [Shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to reference folders in any OneLake location.
-- Every [!INCLUDE [product-name](../includes/product-name.md)] warehouse stores table data in OneLake. If a table is append-only, the table data is exposed as `Delta Lake` datasets in OneLake. Shortcuts enable you to reference folders in any OneLake where the warehouse tables are exposed.
+In Fabric, we offer one warehouse.
+
+The Lakehouse, with its SQL Endpoint, powered by the Warehouse, can simplify the traditional decision tree of batch, streaming, or lambda architecture patterns. Together with a warehouse, the lakehouse enables many additive analytics scenarios. This section explores how to leverage a Lakehouse together with a Warehouse for a best of breed analytics strategy.
+
+
+
+### Analytics with your Fabric Lakehouse's gold layer
+
+One of the well-known strategies for lake data organization is a [medallion architecture](/azure/databricks/lakehouse/medallion) where the files are organized in raw (bronze), consolidated (silver), and refined (gold) layers. A [!INCLUDE [fabric-se](includes/fabric-se.md)] can be used to analyze data in the gold layer of medallion architecture if the files are stored in `Delta Lake` format, even if they're stored outside the [!INCLUDE [product-name](../includes/product-name.md)] OneLake.
+
+You can use [OneLake shortcuts](../data-engineering/lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that are managed by Synapse Spark or Azure Databricks engines.
+
+Warehouses can also be added as subject area or domain oriented solutions for specific subject matter that may have bespoke analytics requirements. 
+
+If you choose to keep your data in Fabric, it will **always be open** and accessible through APIs, Delta format, and of course T-SQL.
+
+### Query as a service over your delta tables from Lakehouse and other items from OneLake Data Hub
+
+There are use cases where an analyst, data scientist, or data engineer may need to query data within a data lake. In Fabric, this end to end experience is completely SaaSified.
+
+[OneLake](../onelake/onelake-overview.md) is a single, unified, logical data lake for the whole organization — the OneDrive for data. OneLake can contain multiple workspaces, for example, along your organizational divisions. Every item in Fabric makes it data accessible via OneLake. 
+
+Data in a Microsoft Fabric Lakehouse is physically stored in OneLake with the following folder structure:
+
+* The `/Files` folder contains raw and unconsolidated (bronze) files that should be processed by data engineers before they're analyzed. The files might be in various formats such as CSV, Parquet, different types of images, etc.
+* The `/Tables` folder contains refined and consolidated (gold) data that is ready for business analysis. The consolidated data is in Delta Lake format.
+
+A Lakehouse's SQL Endpoint can read data in the `/tables` folder within OneLake. Analysis is as simple as querying the SQL Endpoint of the Lakehouse. Together with the Warehouse, you also get cross-database queries and the ability to seamless switch from read-only queries to building additional business logic on top of your OneLake data with Synapse Data Warehouse.
+
+### Data Engineering with Spark, and Serving with SQL
+
+Data-driven enterprises need to keep their back-end and analytics systems in near real-time sync with customer-facing applications. The impact of transactions must reflect accurately through end-to-end processes, related applications, and online transaction processing (OLTP) systems.
+
+In Fabric, you can leverage Spark Streaming or Data Engineering to curate your data. You can use the Lakehouse SQL Endpoint to validate data quality and leverage existing T-SQL processes. This can be done in a medallion architecture or within multiple layers of your Lakehouse, serving bronze, silver, gold, or staging, curated, and refined data. You can customize the folders and tables created through Spark to meet your data engineering and business requirements. When ready, you can then leverage a Warehouse to serve all of your downstream business intelligence applications and other analytics use cases, without copying data, using Views or refining data using CREATE TABLE AS SELECT (CTAS), stored procedures, and other DML / DDL commands.
+
+### Integration with your Open Lakehouse's gold layer
+
+SQL Endpoints are not scoped to data analytics in just the Fabric Lakehouse. SQL Endpoints enable you to analyze lake data in any lakehouse, using Synapse Spark, Azure Databricks, or any other lake-centric data engineering engine. The data can be stored in Azure Data Lake Storage or Amazon S3.
+
+This tight, bi-directional integration with the Fabric Lakehouse is always accessible through any engine with open APIs, the Delta format, and of course T-SQL.
+
+### Data Virtualization of external data lakes with Shortcuts
+
+You can use OneLake [shortcuts](../data-engineering/lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that are managed by Synapse Spark or Azure Databricks engines, as well as any delta table stored in Amazon S3.
+
+Any folder referenced using a shortcut can be analyzed from a SQL Endpoint and a SQL table is created for the referenced dataset. The SQL table can be used to expose data in externally managed data lakes and enable analytics on them.
+
+This shortcut acts as a virtual warehouse that can leveraged from a warehouse for additional downstream analytics requirements, or queried directly.
+
+Use the following steps to analyze data in external data lake storage accounts:
+
+1.    Create a shortcut that references a folder in [Azure Data Lake storage](../onelake/create-adls-shortcut.md) or [Amazon S3 account](../onelake/create-s3-shortcut.md). Once you enter connection details and credentials, a shortcut is shown in the Lakehouse.
+2.    Switch to the SQL Endpoint of the Lakehouse and find a SQL table that has a name that matches the shortcut name. This SQL table references the folder in ADLS/S3 folder.
+3.    Query the SQL table that references data in ADLS/S3. The table can be used as any other table in the SQL endpoint — uou can join tables that reference data in different storage accounts.
+
+> [!NOTE]
+> If the SQL table is not immediately shown in the SQL Endpoint, you might need to wait a few minutes. The SQL table that references data in external storage account is created with a delay. 
+
+### Analyzing archived, or historical data in a data lake
+
+Data partitioning is a well-known data access optimization technique in data lakes. Partitioned data sets are stored in the hierarchical folders structures in the format `/year=<year>/month=<month>/day=<day>`, where `year`, `month`, and `day` are the partitioning columns. This allows you to store historical data logically separated in a format that allows compute engines to read the data as needed with performant filtering, versus reading the entire directory and all folders and files contained within.
+
+Partitioned data enables faster access if the queries are filtering on the predicates that compare predicate columns with a value.
+
+A SQL Endpoint can easily read this type of data with no configuration required. For example, you can use any application to archive data into a data lake, including SQL Server 2022 or Azure SQL Managed Instance. After partitioning data and landing it in a lake for archival purposes with external tables, a SQL Endpoint can read partitioned Delta Lake tables as SQL tables and allow your organization to analyze them. this reduces the total cost of ownership, reduces data duplication, and lights up big data, AI, other analytics scenarios.
+
+### Data Virtualization of Fabric data with shortcuts
+
+Within Fabric, workspaces allow you to segregate data based on complex business, geographic, or regulatory requirements.
+
+A SQL Endpoint enables you to leave the data in place and still analyze data in the Warehouse or Lakehouse, even in other Microsoft Fabric workspaces, via a seamless virtualization. Every Microsoft Fabric Lakehouse stores data in OneLake.
+
+[Shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to reference folders in any OneLake location.
+
+Every Microsoft Fabric Warehouse stores table data in OneLake. If a table is append-only, the table data is exposed as Delta Lake datasets in OneLake. Shortcuts enable you to reference folders in any OneLake where the Warehouse tables are exposed.
+
+### Cross workspace sharing and querying
+
+While workspaces allow you to segregate data based on complex business, geographic, or regulatory requirements, sometimes you need to facilitate sharing across these lines for specific analytics needs.
+
+Lakehouse SQL endpoints can enable easy sharing of data between departments and users, where a user can bring their own capacity and warehouse. While workspaces organize departments, business units, or analytical domains using shortcuts, users can find any warehouse or lakehouse's data. Using their own capacity and Lakehouse SQL Endpoint, users users can instantly perform their own customized analytics from the same shared data. In addition to helping with departmental chargebacks and usage allocation, this is a zero-copy version the data as well.
+
+The SQL Endpoint enables querying of any table and easy sharing. The added controls of workspace roles and security roles that can be further layered to meet additional business requirements.
 
 Use the following steps to enable cross-workspace data analytics:
 
-1. Create an [OneLake shortcut](../onelake/create-onelake-shortcut.md) that references a table or a folder in a workspace that you can access.
-2. Choose a lakehouse or warehouse that contains a table or Delta Lake folder that you want to analyze. Select a table/folder. A shortcut is shown in the lakehouse.
-3. Switch to the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse and find a SQL table that has a name that matches the shortcut name. This SQL table references the folder in another workspace. 
-4. Query the SQL table that references data in another workspace. The table can be used as any other table in the SQL endpoint (that is, you can join the tables that reference data in different workspaces).
+1. Create a OneLake shortcut that references a table or a folder in a workspace that you can access.
+1. Choose a Lakehouse or Warehouse that contains a table or Delta Lake folder that you want to analyze. Once you select a table/folder, a shortcut is shown in the Lakehouse.
+1. Switch to the SQL Endpoint of the Lakehouse and find the SQL table that has a name that matches the shortcut name. This SQL table references the folder in another workspace.
+1. Query the SQL table that references data in another workspace. The table can be used as any other table in the SQL Endpoint. You can join the tables that reference data in different workspaces.
 
 > [!NOTE]
-> If the SQL table is not immediately shown in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you might need to wait a few minutes. The SQL table that references data in another workspace is created with a delay.
-
-A [!INCLUDE [fabric-se](includes/fabric-se.md)] in combination with OneLake shortcuts enable you to cross-workspace analytics and share the data products created and maintained in different workspaces.
+> If the SQL table is not immediately shown in the SQL Endpoint, you might need to wait a few minutes. The SQL table that references data in another workspace is created with a delay.
 
 ## Analyzing partitioned data
 
