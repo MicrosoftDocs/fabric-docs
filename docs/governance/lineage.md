@@ -77,7 +77,7 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 * To zoom in and out, use either the menu in the bottom-right corner or your mouse or touchpad.
 * To have more room for the graph itself, use the full screen option at the bottom-right corner.
 
-    :::image type="content" source="./media/lineage/lineage-zoom.png" alt-text="Screenshot of zoom in or out, or full screen options.":::
+    :::image type="content" source="./media/lineage/lineage-zoom.png" alt-text="Screenshot of zoom in or out, or full screen options." border="false":::
 
 ## Permissions
 
