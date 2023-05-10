@@ -85,6 +85,12 @@
         href: connector-azure-sql-database-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-azure-sql-database-dataflow.md
+    - name: Data Warehouse
+      items:
+      - name: Overview
+        href: connector-data-warehouse-overview.md
+      - name: Configure in Data pipeline
+        href: connector-data-warehouse-copy-activity.md 
     - name: Format
       items:
       - name: Binary
