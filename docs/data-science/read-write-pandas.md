@@ -11,9 +11,13 @@ ms.search.form: Read and Write Pandas
 
 # How to read and write data with Pandas in Microsoft Fabric
 
-[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide built-in support for interacting with Lakehouse data using Pandas, the most popular Python library for data exploration and processing. Within a notebook, users can quickly read data from—and write data back to—their Lakehouses, working with a variety of file formats. This guide provides code samples to help you get started in your own notebook.
+[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide built-in support for interacting with Lakehouse data using Pandas, the most popular Python library for data exploration and processing. Within a notebook, users can quickly read data from—and write data back to—their Lakehouses in a variety of file formats. This guide provides code samples to help you get started in your own notebook.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
 
 ## Load Lakehouse data into your notebook in a matter of clicks
 
