@@ -36,7 +36,7 @@ items:
     - name: Workspace roles
       href: workspace-roles.md
     - name: Accessing Data warehouse files in One Lake
-      href: accessing-data-warehouse-files-in-one-lake.md      
+      href: access-data-warehouse-files-in-one-lake.md      
   - name: Model the warehouse
     items:
     - name: Datasets

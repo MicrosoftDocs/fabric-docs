@@ -127,6 +127,6 @@ The following list shows some of the table features that aren't currently suppor
 - [Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehouse.md)
 - [Query a warehouse](query-warehouse.md)
 - [OneLake overview](../onelake/onelake-overview.md)
-- [Accessing Data warehouse files in One Lake](accessing-data-warehouse-files-in-one-lake.md)
+- [Accessing Data warehouse files in One Lake](access-data-warehouse-files-in-one-lake.md)
 - [Create tables in [!INCLUDE[fabricdw](includes/fabric-dw.md)]](create-table.md)
 - [Transactions and modify tables](transactions.md)
