@@ -161,9 +161,9 @@ isolationForest = (
 )
 ```
 
-Next, we create an ML pipeline to train the Isolation Forest model. We also demonstrate how to create an MLFlow experiment and register the trained model.
+Next, we create an ML pipeline to train the Isolation Forest model. We also demonstrate how to create an MLflow experiment and register the trained model.
 
-MLFlow model registration is strictly only required if accessing the trained model at a later time. For training the model, and performing inferencing in the same notebook, the model object model is sufficient.
+MLflow model registration is strictly only required if accessing the trained model at a later time. For training the model, and performing inferencing in the same notebook, the model object model is sufficient.
 
 
 ```python
