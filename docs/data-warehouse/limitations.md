@@ -12,9 +12,9 @@ ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article details the current limitations and known issues in [!INCLUDE [product-name](../includes/product-name.md)].
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Limitations
 

@@ -12,9 +12,9 @@ ms.search.form: Create a warehouse
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article describes how to get started with sample [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using the [!INCLUDE [product-name](../includes/product-name.md)] portal, including creation and consumption of the warehouse.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to create a warehouse sample
 

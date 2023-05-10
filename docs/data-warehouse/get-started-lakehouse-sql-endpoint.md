@@ -12,8 +12,6 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview # This ar
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] provides an [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) for every lakehouse in the workspace. The [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) enables you to query data in the lakehouse using T-SQL language and TDS protocol. Every lakehouse has one [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse), and each workspace can have more than one lakehouse. The number of [SQL Endpoints](data-warehousing.md#sql-endpoint-of-the-lakehouse) in a workspace matches the number of lakehouses.
 - The SQL Endpoint is automatically generated for every lakehouse artifact and exposes Delta tables from the lakehouse as SQL tables that can be queried using the T-SQL language.
 - Every delta table from a lakehouse is represented as one table. Data should be in delta format.
@@ -22,6 +20,8 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview # This ar
 [OneLake](../onelake/onelake-overview.md) is a single, unified, logical data lake for the whole organization. OneLake is the OneDrive for data. OneLake can contain multiple workspaces, for example, along your organizational divisions. The [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) exposes data in the `/tables` folder within each lakehouse folder in [OneLake](../onelake/onelake-overview.md) and enables you to create queries and reports on the [OneLake](../onelake/onelake-overview.md) data. 
 
 The delta tables in the [lakehouse](../data-engineering/lakehouse-overview.md) are automatically added to the default Power BI dataset. The default Power BI dataset is queried via the [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse) and updated via changes to the lakehouse. You can also query the default Power BI dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [Synapse Data Warehouse](data-warehousing.md#synapse-data-warehouse).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Creating a SQL Endpoint
 

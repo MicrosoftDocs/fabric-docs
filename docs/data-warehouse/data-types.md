@@ -12,11 +12,11 @@ ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Tables in Microsoft Fabric support the most commonly used T-SQL data types. 
 
 - For more information on table creation, see [Tables](tables.md).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Data types in Synapse Data Warehouse
 

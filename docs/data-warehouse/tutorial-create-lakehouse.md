@@ -11,9 +11,9 @@ ms.date: 05/23/2023
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article describes how to get started with sample lakehouse using the [!INCLUDE [product-name](../includes/product-name.md)] portal.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to create a lakehouse sample
  
