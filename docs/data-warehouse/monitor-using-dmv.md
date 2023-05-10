@@ -12,7 +12,7 @@ ms.search.form: Monitoring # This article's title should not change. If so, cont
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-You can use existing dynamic management views (DMVs) to monitor connection, session, and request status in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about the tools and methods of executing T-SQL queries, see [Query the Synapse Data Warehouse](query-warehouse.md).
+You can use existing dynamic management views (DMVs) to monitor connection, session, and request status in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about the tools and methods of executing T-SQL queries, see [Query the Warehouse](query-warehouse.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -100,4 +100,4 @@ KILL '101'
 ## Next steps
 
 - [Query using the SQL Query editor](sql-query-editor.md)
-- [Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric](query-warehouse.md)
+- [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

@@ -20,7 +20,7 @@ ms.search.form: SQL Endpoint overview, Warehouse in workspace overview # This ar
  
 [OneLake](../onelake/onelake-overview.md) is a single, unified, logical data lake for the whole organization. OneLake is the OneDrive for data. OneLake can contain multiple workspaces, for example, along your organizational divisions. The [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes data in the `/tables` folder within each lakehouse folder in OneLake and enables you to create queries and reports on the OneLake data.
 
-The delta tables in the [lakehouse](../data-engineering/lakehouse-overview.md) are automatically added to the default Power BI dataset. The default Power BI dataset is queried via the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) and updated via changes to the lakehouse. You can also query the default Power BI dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [Synapse Data Warehouse](data-warehousing.md#synapse-data-warehouse).
+The delta tables in the [lakehouse](../data-engineering/lakehouse-overview.md) are automatically added to the default Power BI dataset. The default Power BI dataset is queried via the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) and updated via changes to the lakehouse. You can also query the default Power BI dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [Warehouse](data-warehousing.md#synapse-data-warehouse).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -102,4 +102,4 @@ A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoi
 - [Tutorial: Move data into lakehouse via Copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)
 - [Connectivity](connectivity.md)
 - [SQL Endpoint of the lakehouse](data-warehousing.md#sql-endpoint-of-the-lakehouse)
-- [Query the Synapse Data Warehouse](query-warehouse.md)
+- [Query the Warehouse](query-warehouse.md)

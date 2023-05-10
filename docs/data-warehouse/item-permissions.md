@@ -1,6 +1,6 @@
 ---
 title: Manage item permissions
-description: Learn about the permissions that can be assigned to Synapse Data Warehouse and the SQL Endpoint in Microsoft Fabric.
+description: Learn about the permissions that can be assigned to Warehouse and the SQL Endpoint in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo

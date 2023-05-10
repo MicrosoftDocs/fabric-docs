@@ -137,5 +137,5 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 ## Next steps
 
-- [How-to: Query the Synapse Data Warehouse](query-warehouse.md)
+- [How-to: Query the Warehouse](query-warehouse.md)
 - [Query using the Visual Query editor](visual-query-editor.md)
