@@ -24,8 +24,6 @@ The activities in a pipeline define actions to perform on your data. For example
 
 :::image type="content" source="media/activity-overview/relationship-between-dataset-pipeline-activity.png" alt-text="Diagram showing the relationship between pipeline, activity, and dataset.":::
 
-An input dataset represents the input for an activity in the pipeline, and an output dataset represents the output for the activity. Datasets identify data within different data stores, such as tables, files, folders, and documents. After you create a dataset, you can use it with activities in a pipeline. For example, a dataset can be an input/output dataset of a Copy Activity or a Dataflow Activity.
-
 ## Data movement activities
 
 Copy activity in [!INCLUDE [product-name](../includes/product-name.md)] copies data from a source data store to a sink data store. Fabric supports the data stores listed in the [Connector overview](connector-overview.md) article. Data from any source can be written to any sink.
