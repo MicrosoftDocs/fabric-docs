@@ -43,7 +43,7 @@ First, we create a new lakehouse. To create a new lakehouse in your [!INCLUDE [p
     :::image type="content" source="media/tutorial-analyze-data-notebook/dim-customer-shortcut-exercise.png" alt-text="A screenshot from the Fabric portal showing the OneLake object browser. Under WideWorldImporters, Tables, dbo, the dimension_customer is boxed in red.":::
 
 1. If you see a folder called `Unidentified` under **Tables**, select the **Refresh** icon in the horizontal menu bar.
-    
+
     :::image type="content" source="media/tutorial-analyze-data-notebook/lakehouse-explorer-refresh-button.png" alt-text="A screenshot from the Fabric portal showing the refresh button on the horizontal menu bar, and the Unidentified tables under ShortcutExercise in the Lakehouse explorer.":::
 
 1. Select the `dimension_customer` in the **Table** list to preview the data. Notice that the lakehouse is showing the data from the `dimension_customer` table from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]!
@@ -54,7 +54,7 @@ First, we create a new lakehouse. To create a new lakehouse in your [!INCLUDE [p
 
     :::image type="content" source="media/tutorial-analyze-data-notebook/lakehouse-explorer-open-notebook-new-notebook.png" alt-text="A screenshot from the Fabric portal showing the Open notebook button pressed, and the New notebook option selected.":::
 
-1. Select, then drag the `dimension_customer` from the **Tables** list into the open notebook cell. This notebook experience is similar to Visual Studio Code Jupyter notebook experience. You can also open the notebook in VS Code. You can see a PySpark query has been written for you to query all the data from `ShortcutExercise.dimension_customer`.
+1. Select, then drag the `dimension_customer` from the **Tables** list into the open notebook cell. You can see a PySpark query has been written for you to query all the data from `ShortcutExercise.dimension_customer`. This notebook experience is similar to Visual Studio Code Jupyter notebook experience. You can also open the notebook in VS Code.
 
     :::image type="content" source="media/tutorial-analyze-data-notebook/drop-dim-customer-notebook.png" alt-text="A screenshot from the Fabric portal notebook view. An arrow indicates the path to select dimension_customer, then drag and drop it into the open notebook cell.":::
 
