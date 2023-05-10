@@ -26,9 +26,9 @@ The high-level steps in module 1 are as follows:
    :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-premium-capacity-workspace.png" alt-text="Screenshot showing the selection of a Premium capacity workspace to create a new data pipeline.":::
 
 
-1. Select the default Power BI icon at the bottom left of the screen, and switch to the **Data Factory** workload.
+1. Select the default Power BI icon at the bottom left of the screen, and switch to the **Data Factory** experience.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/switch-data-factory.png" alt-text="Screenshot showing the selection of the Data Factory workload.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/switch-data-factory.png" alt-text="Screenshot showing the selection of the Data Factory experience.":::
 
 1. Select **Data pipeline** and provide a pipeline name. Then select **Create**.
 

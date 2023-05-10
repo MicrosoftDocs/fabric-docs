@@ -66,7 +66,7 @@ To learn more about workspaces and license mode settings, see [Workspaces](works
 
 ## Capacity units
 
-When you start a Fabric (Preview) trial, Microsoft provisions one 64 capacity unit (CU) trial capacity. These CUs allow users of your trial capacity to consume 64x60 CU seconds every minute. Every time the Fabric trial capacity is used, it consumes CUs. The Fabric platform aggregates consumption from all workloads and applies it to your reserved capacity.
+When you start a Fabric (Preview) trial, Microsoft provisions one 64 capacity unit (CU) trial capacity. These CUs allow users of your trial capacity to consume 64x60 CU seconds every minute. Every time the Fabric trial capacity is used, it consumes CUs. The Fabric platform aggregates consumption from all experiences and applies it to your reserved capacity.
 Not all functions have the same consumption rate. For example, running a Data Warehouse might consume more capacity units than authoring a Power BI report. When the capacity consumption exceeds its size, Microsoft slows down the experience similar to slowing down CPU performance.
 
 There's no limit on the number of workspaces or items you can create within your capacity. The only constraint is the availability of capacity units and the rate at which you consume them.
@@ -124,7 +124,7 @@ This known bug occurs when the Power BI administrator turns off trials after you
 
 **How is the Fabric (Preview) trial different from an individual trial of Power BI paid?**
 
-A per-user trial of Power BI paid allows access to the Fabric landing page. Once you sign up for the Fabric (Preview) trial, you can use the trial capacity for storing Fabric workspaces and items and for running Fabric workloads. All rules guiding [Power BI licenses](/power-bi/fundamentals/service-features-license-type.md) and what you can do in the Power BI experience remain the same. The key difference is that a Fabric capacity is required to access non-Power BI experiences and items.
+A per-user trial of Power BI paid allows access to the Fabric landing page. Once you sign up for the Fabric (Preview) trial, you can use the trial capacity for storing Fabric workspaces and items and for running Fabric experiences. All rules guiding [Power BI licenses](/power-bi/fundamentals/service-features-license-type.md) and what you can do in the Power BI experience remain the same. The key difference is that a Fabric capacity is required to access non-Power BI experiences and items.
 
 **Private links and private access**
 
