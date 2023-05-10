@@ -64,7 +64,7 @@ The main page of your KQL database shows an overview of the contents in your dat
 |**Recently updated functions**
 | | |  Lists the function name and the time it was last updated.|
 |**Recently used Querysets**|
-| | | Lists the recently used query set and the time it was last accessed.|
+| | | Lists the recently used KQL queryset and the time it was last accessed.|
 |**Recently created data connections**
 | | | Lists the data connection and the time it was created.|
 
@@ -78,7 +78,7 @@ To access your existing KQL databases:
 
 1. Select **Filter** on the right side of the ribbon > **KQL Database**.
 
-    :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace pane that shows the dropdown menu of the workspace ribbon option titled Filter. The dropdown entry titled KQL Database is selected. Both the Filter option and KQL Database are highlighted.":::
+    :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace pane that shows the dropdown menu of the workspace ribbon option titled Filter. The dropdown entry titled KQL Database is selected. Both the Filter option and KQL Database are highlighted."  lightbox="media/database-editor/access-existing-database-2.png":::
 
 1. Select the desired database.
 

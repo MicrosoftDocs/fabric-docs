@@ -40,7 +40,7 @@ The many controls in the admin portal are listed in the table below with links t
 | [Embed codes](/power-bi/admin/service-admin-portal-embed-codes) | View and manage the embed codes that have been generated for your organization to share reports publicly. |
 | [Organizational visuals](/power-bi/admin/organizational-visuals#organizational-visuals) | View, add, and manage which type of Power BI visuals users can access across the organization. |
 | [Azure connections](/power-bi/admin/service-admin-portal-azure-connections) | Configure and manage connections to Azure resources. |
-| [Workspaces](/power-bi/admin/service-admin-portal-workspaces) | View and manage the workspaces that exist in your organization. |
+| [Workspaces](portal-workspaces.md) | View and manage the workspaces that exist in your organization. |
 | [Custom branding](/power-bi/admin/service-admin-portal-custom-branding) |  Change the look and feel of the Microsoft Fabric to match your organization's own branding. |
 | [Protection metrics](/power-bi/admin/service-admin-portal-protection-metrics) | Monitor and track sensitivity label usage and adoption in your organization. |
 | [Featured content](/power-bi/admin/service-admin-portal-featured-content) |  Manage the reports, dashboards, and apps that were promoted to the Featured section on your Home page. |
@@ -55,8 +55,8 @@ To get to the admin portal, follow these steps:
 
 ## Next steps
 
-* [What is the admin monitoring workspace?](admin-monitoring.md)
+* [What is the admin monitoring workspace?](monitoring-workspace.md)
 
-* [Workspace tenant settings](admin-portal-workspace.md)
+* [Workspace tenant settings](portal-workspace.md)
 
-* [Manage workspaces](admin-portal-workspaces.md)
+* [Manage workspaces](portal-workspaces.md)

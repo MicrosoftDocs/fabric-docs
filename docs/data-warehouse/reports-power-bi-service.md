@@ -12,9 +12,9 @@ ms.search.form: Reporting
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article describes three different scenarios you can follow to create reports in the Power BI service. 
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Scenario one
 

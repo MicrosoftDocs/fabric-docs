@@ -11,9 +11,9 @@ ms.search.form: product-kusto
 
 # Real-Time Analytics Tutorial- Introduction
 
-Real-Time Analytics in Microsoft Fabric is a fully managed big data analytics platform optimized for streaming and time-series data. It utilizes a query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-Time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios. For more information, see [What is Real-Time Analytics in Fabric?](overview.md).
-
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+Real-Time Analytics in Microsoft Fabric is a fully managed big data analytics platform optimized for streaming and time-series data. It utilizes a query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-Time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios. For more information, see [What is Real-Time Analytics in Fabric?](overview.md).
 
 ## Scenario
 
