@@ -66,7 +66,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Track user activities in Fabric
-            url: admin-track-user-activities.md
+            url: track-user-activities.md
           - text: Set up item certification
             url: endorsement-setup.md            
           - text: Enable service principal authentication for read-only admin APIs

@@ -8,11 +8,11 @@ items:
 - name: Get started
   items:
   - name: Enable Microsoft Fabric for your organization
-    href: admin-fabric-switch.md
+    href: fabric-switch.md
   - name: Region availability
-    href: admin-region-availability.md
+    href: region-availability.md
   - name: Find your Fabric home region
-    href: admin-find-fabric-home-region.md
+    href: find-fabric-home-region.md
   - name: Understand Microsoft Fabric roles
     href: roles.md
   - name: What is the admin portal?
@@ -20,17 +20,17 @@ items:
   - name: Compliance feature switch
     href: compliance.md    
 - name: Track user activities
-  href: admin-track-user-activities.md
+  href: track-user-activities.md
 - name: Monitoring
   items:
   - name: Using Monitoring hub
-    href: admin-monitoring-hub.md    
+    href: monitoring-hub.md    
   - name: Monitoring workspace
     items:    
     - name: What is the monitoring workspace?
-      href: admin-monitoring.md
+      href: monitoring-workspace.md
     - name: Feature usage and adoption report
-      href: admin-feature-usage-adoption.md
+      href: feature-usage-adoption.md
 - name: Workspace administration
   items:
   - name: Manage workspaces
