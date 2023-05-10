@@ -68,7 +68,7 @@ To highlight the lineage for a specific item, select the arrow at the bottom rig
 
 :::image type="content" source="./media/lineage/lineage-highlight-specific-lineage.png" alt-text="Screenshot of highlighted lineage for a specific item." lightbox="./media/lineage/lineage-highlight-specific-lineage.png":::
 
-   Power BI highlights all the items related to that item, and dims the rest.
+   Fabroc highlights all the items related to that item, and dims the rest.
 
 ## Zoom and full screen 
 
@@ -85,7 +85,7 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 
 ## Considerations and limitations
 
-* Lineage view isn't available in Internet Explorer. For more information, see [Supported browsers for Power BI](../fundamentals/power-bi-browsers.md).
+* Lineage view isn't available in Internet Explorer. For more information, see [Supported browsers for Power BI](/power-bi/fundamentals/power-bi-browsers).
 * Correct display of dataset-dataflow lineage is guaranteed only if the **Get Data** UI is used to set up the connection to the dataflow, and the **Dataflows** connector is used. Correct display of dataset-dataflow lineage isn't guaranteed if a manually created Mashup query is used to connect to the dataflow.
 
 ## Next steps
