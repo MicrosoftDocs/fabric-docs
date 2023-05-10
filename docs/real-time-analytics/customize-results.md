@@ -133,7 +133,7 @@ Pivoting allows you to take a column's value and turn them into columns. For exa
 
     The result should look like the following pivot table:
 
-    :::image type="content" source="media/kusto-query-set/pivot-table.png" alt-text="Screenshot of results in a pivot table.":::
+    :::image type="content" source="media/kusto-query-set/pivot-table.png" alt-text="Screenshot of results in a pivot table."  lightbox="media/kusto-query-set/pivot-table.png":::
 
 ## Search in the results grid
 

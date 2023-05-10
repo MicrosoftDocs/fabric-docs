@@ -40,7 +40,7 @@ To access the data in your KQL database in other [!INCLUDE [product-name](../inc
 
 1. Select the data source you want to connect to, and then select **Next**.
 
-    :::image type="content" source="media/onelake-shortcut/data-source.png" alt-text="Screenshot of the Select a data source type window showing the available data sources to use with the shortcut. The Next button is highlighted.":::
+    :::image type="content" source="media/onelake-shortcut/data-source.png" alt-text="Screenshot of the Select a data source type window showing the available data sources to use with the shortcut. The Next button is highlighted."  lightbox="media/onelake-shortcut/data-source.png":::
 
 1. Expand **Files**, and select a specific subfolder to connect to, then select **Create** to create your connection.
 
