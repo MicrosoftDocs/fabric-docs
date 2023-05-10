@@ -68,7 +68,7 @@ Creating one logical copy of your data in OneLake is a two-step process. You ena
 
 1. Under **Internal sources**, select **Microsoft OneLake**.
 
-    :::image type="content" source="media/onelake-mirroring/internal-source.png" alt-text="Screenshot of New Shortcut window. The option under Internal sources titled Microsoft OneLake is highlighted." lightbox="media/onelake-mirroring/internal-sources.png":::
+    :::image type="content" source="media/onelake-mirroring/internal-source.png" alt-text="Screenshot of New Shortcut window. The option under Internal sources titled Microsoft OneLake is highlighted." lightbox="media/onelake-mirroring/internal-source.png":::
 
 1. In **Select a data source type**, select your KQL database, then select **Next** to connect the data to your shortcut.
 
