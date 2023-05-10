@@ -11,7 +11,7 @@ ms.search.form: Read and Write Pandas
 
 # How to read and write data with Pandas in Microsoft Fabric
 
-[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide built-in support for Pandas, the most popular Python library for data exploration and processing. Within a notebook, users can quickly read data from—and write data to—their Lakehouses, working with a variety of file formats. This guide provides code samples to help you get started from your own notebook.
+[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide built-in support for interacting with Lakehouse data using Pandas, the most popular Python library for data exploration and processing. Within a notebook, users can quickly read data from—and write data back to—their Lakehouses, working with a variety of file formats. This guide provides code samples to help you get started in your own notebook.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -25,7 +25,7 @@ Clicking on one of the "Load data" prompts will generate a code cell to load the
 
 :::image type="content" source="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png" alt-text="Screenshot of the code cell added to the notebook." lightbox="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png":::
 
-## Convert a Spark DataFrame to Pandas
+### Convert a Spark DataFrame to Pandas
 
 For reference, the following code sample shows how to convert a Spark DataFrame into a Pandas DataFrame.
 
@@ -34,7 +34,7 @@ For reference, the following code sample shows how to convert a Spark DataFrame 
 pandas_df = spark_df.toPandas() 
 ```
 
-# Read and write various filetypes
+## Read and write various filetypes
 
 The code samples below document the Pandas operations for reading and writing various file formats.
 
