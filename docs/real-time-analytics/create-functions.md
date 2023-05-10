@@ -34,7 +34,7 @@ For more information on the `.create-or-alter` `function` command, see [`.create
 
 This feature allows you to create or alter an existing function using the `.create-or-alter` `function` command, which stores it in the database metadata. If the function with the provided *functionName* doesn't exist in the database metadata, the command creates a new function. Otherwise, the named function is changed.
 
-1. Select **New** > **Function**. The `.create-or-alter` command is automatically populated in the **Explore your data** window.
+1. In your KQL database, select **New** > **Function**. The `.create-or-alter` command is automatically populated in the **Explore your data** window.
 
     :::image type="content" source="media/create-functions/function-command.png" alt-text="Screenshot of a KQL database landing page showing the New option dropdown menu. The option titled Function is highlighted."  lightbox="media/create-functions/function-command.png":::
 

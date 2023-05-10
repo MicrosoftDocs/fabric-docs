@@ -18,6 +18,8 @@ A query is a read-only request to process data and return results. The request i
 
 For more information on the Kusto Query Language, see [Kusto Query Language (KQL) Overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
+To learn how to use sample SQL queries, see [Sample SQL queries](tutorial-4-explore.md#sample-sql-queries).
+
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
