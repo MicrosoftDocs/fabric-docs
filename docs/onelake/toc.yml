@@ -9,6 +9,8 @@ items:
   items:
   - name: Creating a lakehouse with OneLake
     href: create-lakehouse-onelake.md
+  - name: Transforming data with Spark and querying with SQL using one copy of data
+    href: onelake-onecopy-quickstart.md
 - name: Shortcuts
   items:
   - name: What are shortcuts?
@@ -33,7 +35,11 @@ items:
     href: onelake-azure-databricks.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md
-- name: Secure data
-  href: onelake-security.md
+- name: Security
+  items:
+  - name: Secure data
+    href: onelake-security.md
+  - name: Get started with securing data in OneLake
+    href: get-started-security.md
 - name: OneLake file explorer for Windows
   href: onelake-file-explorer.md

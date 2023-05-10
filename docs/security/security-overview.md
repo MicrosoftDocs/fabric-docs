@@ -1,24 +1,29 @@
 ---
 title: Security in Microsoft Fabric
 description: Learn how Microsoft Fabric security works, and what features are available.
-author: paulinbar
-ms.author: painbar
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: overview
+ms.service: azure
 ms.date: 05/23/2023
 ---
 
 # Security in Microsoft Fabric
 
-Learn how security in [!INCLUDE [product-name](../includes/product-name.md)] works.
+Security and reliability are key foundational features for every organization. In Microsoft Fabric, as you bring your data to the cloud and use it with various analytics workloads such as Power BI, Data Factory , and the next generation of Synapse,  Microsoft ensures that built-in security and reliability features secure your data at rest and transit. Microsoft also makes sure that your data is recoverable in cases of infrastructure failures or disasters.
 
 ## Security features
 
-List the [!INCLUDE [product-name](../includes/product-name.md)] security features.
+Review this section for a list of the security features available in Microsoft Fabric.
 
-## Use cases
+* [Conditional access](security-conditional-access.md) - Secure your apps using Azure Active Directory (Azure AD).
 
-A few examples of using the Microsoft Fabric security features in specific scenarios.
+* [Resiliency](az-resiliency.md) - Reliability and regional resiliency with Azure availability zones.
+
+* [Lockbox](security-lockbox.md) - Control how Microsoft engineers access your data.
+
+* [Service tags](security-service-tags.md) - Enable an Azure SQL Managed Instance (MI) to allow incoming connections from Microsoft Fabric.
 
 ## Next steps
 
-[Service tags](security-service-tags.md)
+[Microsoft Fabric licenses](../enterprise/licenses.md)

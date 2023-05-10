@@ -22,9 +22,9 @@ For the current version, there are three dynamic management views (DMVs) provide
 
 - [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each connection established between the warehouse and the engine.
-- [sys.dm_exec_sessions](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
+- [sys.dm_exec_sessions](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sessions-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each session authenticated between the item and engine.
-- [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
+- [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each active request in a session.
 
 These three DMVs provide detailed insight on the following scenarios:

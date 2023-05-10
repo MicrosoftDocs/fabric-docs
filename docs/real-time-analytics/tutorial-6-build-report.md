@@ -25,7 +25,7 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
     nyctaxitrips
     | where PULocationID == DOLocationID
     | lookup (Locations) on $left.PULocationID==$right.LocationID
-    | summarize Count=count() by Borough, Zone, Latitude, Longitude 
+    | summarize Count=count() by Borough, Zone, Latitude, Longitude
     ```
 
 1. Place your cursor somewhere within the query, and then select **Build Power BI report**.
@@ -76,6 +76,12 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
 1. Select the **Save** icon on the ribbon.
 
     The Power BI report now autorefreshes on streaming data arriving in a KQL database from an eventstream.
+
+## See also
+
+For more information about tasks performed in this tutorial, see:
+
+* [Visualize data in a Power BI report](create-powerbi-report.md)
 
 ## Next steps
 

@@ -11,15 +11,15 @@ ms.search.form: product-kusto
 
 # Get data from OneLake
 
-In this article, you'll learn how to get data from OneLake into an existing KQL database.
-
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+In this article, you'll learn how to get data from OneLake into an existing KQL database.
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [Lakehouse](../data-engineering/create-lakehouse.md)
-* [KQL Database](create-database.md)
+* A [KQL database](create-database.md)
 
 ## Copy folder path from Lakehouse
 
@@ -65,7 +65,7 @@ Your data format and compression are automatically identified in the left-hand p
 * If your data format is JSON, you must also select JSON levels, from 1 to 10. The levels determine the table column data division.
 * If your data format is CSV, select the check box **Ignore the first record** to ignore the heading row of the file.
 
-For more information on data formats, see [Data formats supported for ingestion](/azure/data-explorer/ingestion-supported-formats?context=/fabric/context/context&pivots=fabric). 
+For more information on data formats, see [Data formats supported for ingestion](/azure/data-explorer/ingestion-supported-formats?context=/fabric/context/context&pivots=fabric).
 
 1. The **Mapping name** field is automatically filled. Optionally, you can enter a new name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 
