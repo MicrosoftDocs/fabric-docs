@@ -54,7 +54,7 @@ In this tutorial, we showcase a simplified end-to-end data science scenario that
 1. [Data exploration and visualization](tutorial-data-science-explore-notebook.md).
 1. [Data cleansing, preparation, and feature engineering](tutorial-data-science-data-cleanse.md).
 1. [Model training and evaluation](tutorial-data-science-train-models.md).
-1. [Model batch scoring and saving predictions](tutorial-data-science-batch-scoring.md) for consumption.
+1. [Model batch scoring and saving predictions for consumption](tutorial-data-science-batch-scoring.md).
 1. [Visualizing prediction results](tutorial-data-science-create-report.md).
 
 :::image type="content" source="media/tutorial-data-science-introduction/data-science-scenario.png" alt-text="Diagram of the Data science end-to-end scenario components." lightbox="media/tutorial-data-science-introduction/data-science-scenario.png":::
