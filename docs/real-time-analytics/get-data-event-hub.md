@@ -29,7 +29,7 @@ In the second step, you connect this [!INCLUDE [product-name](../includes/produc
 
 Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you'll need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the data stream. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature?context=/fabric/context/context).
 
-1. In the [Azure portal](https://ms.portal.azure.com/), browse to the vent hubs instance you want to connect.
+1. In the [Azure portal](https://ms.portal.azure.com/), browse to the event hubs instance you want to connect.
 1. Under **Settings**, select **Shared access policies**
 1. Select **+Add** to add a new SAS policy, or select an existing policy with *Manage* permissions.
 
