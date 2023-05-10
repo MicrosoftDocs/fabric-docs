@@ -17,7 +17,7 @@ With this extension, you can also run notebooks onto the remote Fabric Spark com
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Notebooks in the VS Code list
+## View the list of notebooks
 
 The notebook tree node lists the names of the all the notebook artifacts in the current workspace. Based on your changes in VS Code, the list displays different colors and characters to indicate the latest state, as shown in the following image.
 
