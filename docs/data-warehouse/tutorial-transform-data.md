@@ -10,6 +10,8 @@ ms.date: 5/23/2023
 
 # Tutorial: Transform data using a stored procedure
 
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
 Learn how to create and save a new stored procedure to transform data.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]

@@ -12,13 +12,15 @@ ms.search.form: Warehouse design and development # This article's title should n
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Similar to their behavior in SQL Server, transactions allow you to control the commit or rollback of read and write queries. 
 
 You can modify data that is stored in tables in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using transactions to group changes together. 
 
 - For example, you could commit inserts to multiples tables, or, none of the tables if an error arises. If you're changing details about a purchase order that affects three tables, you can group those changes into a single transaction. That means when those tables are queried, they either all have the changes or none of them do. Transactions are a common practice for when you need to ensure your data is consistent across multiple tables. 
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
+## Transactional capabilities
 
 The same transactional capabilities are supported in the [!INCLUDE [fabric-se](includes/fabric-se.md)] in [!INCLUDE [product-name](../includes/product-name.md)], but for read-only queries.
 

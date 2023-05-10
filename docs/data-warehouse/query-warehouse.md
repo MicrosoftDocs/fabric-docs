@@ -12,8 +12,6 @@ ms.search.form: Query editor # This article's title should not change. If so, co
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 To get started with this tutorial, check the following prerequisites:
 
 - You should have access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or above permissions.
@@ -27,6 +25,8 @@ To get started with this tutorial, check the following prerequisites:
 
 > [!NOTE]
 > Review the [T-SQL surface area](tsql-surface-area.md) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Run a new query in SQL query editor
 

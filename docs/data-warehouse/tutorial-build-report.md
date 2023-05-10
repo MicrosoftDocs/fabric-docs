@@ -10,6 +10,8 @@ ms.date: 5/23/2023
 
 # Tutorial: Build a report
 
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
 Learn how to build a report with the data you ingested into your warehouse in the last step.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]

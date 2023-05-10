@@ -77,10 +77,10 @@ The following properties are **required**:
 
         :::image type="content" source="./media/connector-lakehouse/list-of-files.png" alt-text="Screenshot showing path to file list." lightbox="./media/connector-lakehouse/list-of-files.png":::
 
-    - **Recursively**: Indicates whether the data is read recursively from the subfolders or only from the specified folder. If enabled, all files in the input folder and its subfolders are processed recursively. This property doesn’t apply when you configure your file path type as **List of files**.
+    - **Recursively**: Indicates whether the data is read recursively from the subfolders or only from the specified folder. If enabled, all files in the input folder and its subfolders are processed recursively. This property doesn't apply when you configure your file path type as **List of files**.
     - **File format**: Select your file format from the drop-down list. Select the **Settings** button to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
     - Under **Advanced**, you can specify the following fields:
-      - **Filter by last modified**: Files are filtered based on the last modified dates. This property doesn’t apply when you configure your file path type as **List of files**.
+      - **Filter by last modified**: Files are filtered based on the last modified dates. This property doesn't apply when you configure your file path type as **List of files**.
         - **Start time**: The files are selected if their last modified time is greater than or equal to the configured time.
         - **End time**: The files are selected if their last modified time is less than the configured time.
       - **Enable partition discovery**: For files that are partitioned, specify whether to parse the partitions from the file path and add them as extra source columns.
@@ -156,15 +156,15 @@ The following tables contain more information about a copy activity in Lakehouse
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type** |Select **Lakehouse** from the data store type list.|**Lakehouse**|Yes|type|
 |**Lakehouse** | Select an existing Lakehouse from the workspace. If none exists, then create a new Lakehouse by selecting **New**.|\<your Lakehouse>|Yes |workspaceId<br>artifactId|
-|**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |No|rootFolder|
+|**Root folder** |The type of the root folder.|* **Tables**<br>* **Files** |No|rootFolder|
 |**Table name** |Specify your table name.|\<table name> |Yes when you select **Tables** in **Root folder** | table|
 |**Timestamp** |Query an older snapshot by timestamp.| \<timestamp>|No |timestampAsOf |
 |**Version** |Query an older snapshot by version.| \<version>|No |versionAsOf|
-|**Additional columns** |Add additional data columns to store source files' relative path or static value.| • Name<br>• Value|No |additionalColumns:<br>• name<br>• value |
-|**File path type** |the type of the file path. |•**File path**<br>• **Wildcard file path**<br> • **List of files** |Yes|**File path**<br>• folderPath<br>• fileName<br>**Wildcard file path**<br>• wildcardFolderPath<br>• wildcardFileName<br>**List of files**<br>• folderPath<br>• fileListPath |
+|**Additional columns** |Add additional data columns to store source files' relative path or static value.| * Name<br>* Value|No |additionalColumns:<br>* name<br>* value |
+|**File path type** |the type of the file path. |***File path**<br>* **Wildcard file path**<br> * **List of files** |Yes|**File path**<br>* folderPath<br>* fileName<br>**Wildcard file path**<br>* wildcardFolderPath<br>* wildcardFileName<br>**List of files**<br>* folderPath<br>* fileListPath |
 |**Recursively** |Process all files in the input folder and its subfolders recursively or just the ones in the selected folder.| select or unselect |No | recursive:<br>true or false|
 |**File format**|Format of the file.|\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextReadSettings|
-|**Filter by last modified**|Files are filtered based on the last modified dates.|• **Start time**<br>• **End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
+|**Filter by last modified**|Files are filtered based on the last modified dates.|* **Start time**<br>* **End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
 |**Enable partition discovery**|Specify whether to parse the partitions from the file path and add them as extra source columns.| Selected or unselected |No| enablePartitionDiscovery: <br> true or false (default)|
 |**Partition root path**|For files that are partitioned, specify whether to parse the partitions from the file path and add them as extra source columns.| \<your partition root path\> |No| partitionRootPath|
 |**Max concurrent connections**|Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
@@ -176,16 +176,16 @@ The following tables contain more information about a copy activity in Lakehouse
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type** |Select **Lakehouse** from the data store type list.|**Lakehouse**|Yes|type|
 |**Lakehouse** | Select an existing Lakehouse from the workspace. If none exists, then create a new Lakehouse by selecting **New**.|\<your Lakehouse>|Yes |workspaceId<br>artifactId|
-|**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |Yes | rootFolder|
+|**Root folder** |The type of the root folder.|* **Tables**<br>* **Files** |Yes | rootFolder|
 |**Table name** |Specify your table name.|\<your table name> |Yes when you select **Tables** in **Root folder** | table|
 |**Max rows per file** |When writing data into a folder, you can choose to write to multiple files and specify the maximum rows per file.|\<max rows per flie> |No |maxRowsPerFile|
-|**Table action**|Append new values to an existing table or overwrite the existing data and schema in the table using the new values|• **Append**<br>• **Overwrite**|No|tableActionOption|
+|**Table action**|Append new values to an existing table or overwrite the existing data and schema in the table using the new values|* **Append**<br>* **Overwrite**|No|tableActionOption|
 |**Max concurrent connections**|Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
-|**File path**|Copy from the given file path specified|\<file path>|No|• folderPath<br>• fileName|
+|**File path**|Copy from the given file path specified|\<file path>|No|* folderPath<br>* fileName|
 |**File format**|Format of the file.|\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextWriteSettings|
-|**Copy behavior** |Defines behavior when copying files from one file system like storage to the other.|• **Add dynamic content**<br>• **None**<br>• **Flatten hierarchy**<br>• **Preserve hierarchy**|No |copyBehavior:<br><br><br>FlattenHierarchy<br>PreserveHierarchy|
+|**Copy behavior** |Defines behavior when copying files from one file system like storage to the other.|* **Add dynamic content**<br>* **None**<br>* **Flatten hierarchy**<br>* **Preserve hierarchy**|No |copyBehavior:<br><br><br>FlattenHierarchy<br>PreserveHierarchy|
 |**Block size (MB)** |Specify the block size in MB when writing data to Lakehouse.|\<block size\>|No|blockSizeInMB|
-|**Metadata** |Set custom metadata when copying to a destination.|• `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
+|**Metadata** |Set custom metadata when copying to a destination.|* `$$LASTMODIFIED`<br>* Expression<br>* Static value|No |metadata|
 
 ## Next steps
 

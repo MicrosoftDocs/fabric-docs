@@ -12,12 +12,12 @@ ms.search.form: Warehouse design and development # This article's title should n
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Learn about table constraints in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], including the primary key, foreign keys, and unique keys.
 
 > [!IMPORTANT]  
 > To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Table constraints
 
