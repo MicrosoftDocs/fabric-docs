@@ -26,7 +26,7 @@ items:
     href: tutorial-6-build-report.md
   - name: 7- Clean up resources
     href: tutorial-7-clean-up-resources.md
-- name: Eventstream
+- name: Event streams
   href: event-streams/toc.yml
 - name: KQL Database
   items:
