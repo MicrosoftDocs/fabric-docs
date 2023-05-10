@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article describes Microsoft Fabric's governance and compliance capabilities that build on Microsoft Purview.
+Microsoft Fabric is deeply integrated with Microsoft Purview governance and compliance, and provides capabilities to help you govern and protect your organization's sensitive data in Fabric. This article provides links for more information about the building blocks of Microsoft Fabric's governance and compliance capabilities.
 
 ## Information protection
 
@@ -36,8 +36,8 @@ For more information, see [Lineage](./lineage.md).
 
 ## Microsoft Purview hub
 
-For more information, see [Microsoft Purview hub](./microsoft-purview-fabric.md).
+The Microsoft Purview hub is the gateway to Microsoft Purview, where Fabric users can use Purview's powerful capabilities to gain insights about their Fabric data estate. For more information, see [Microsoft Purview hub](./use-microsoft-purview-hub.md)
 
 ## Next steps
 
-* [What is the admin portal?](../admin/admin-center.md)
+* [WEhat is Microsoft Fabric](../get-started/microsoft-fabric-overview.md)
