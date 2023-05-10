@@ -14,7 +14,7 @@ ms.date: 05/23/2023
 
 In modern business intelligence (BI) projects, understanding the flow of data from the data source to its destination can be a challenge. The challenge is even bigger if you've built advanced analytical projects spanning multiple data sources, data items, and dependencies. Questions like "What happens if I change this data?" or "Why isn't this report up to date?" can be hard to answer. They might require a team of experts or deep investigation to understand. Fabric's lineage view helps you answer these questions.
 
-:::image type="content" source="media/lineage/lineage-view.png" alt-text="Screenshot of the lineage view in Microsoft Fabric.":::
+:::image type="content" source="./media/lineage/lineage-view.png" alt-text="Screenshot of the lineage view in Microsoft Fabric.":::
 
 In lineage view, you see the lineage relationships between all the items in a workspace, as well as data sources external to the workspace one-step upstream.
 
