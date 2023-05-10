@@ -57,7 +57,7 @@ Control activity | Description
 Append variable | Add a value to an existing array variable.
 Invoke pipeline | Execute Pipeline activity allows a Data Factory or Synapse pipeline to invoke another pipeline.
 Filter | Apply a filter expression to an input array.
-[For Each](foreach-activity.md) | ForEach Activity defines a repeating control flow in your pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to the Foreach looping structure in programming languages.
+[ForEach](foreach-activity.md) | ForEach Activity defines a repeating control flow in your pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to the Foreach looping structure in programming languages.
 Get metadata | GetMetadata activity can be used to retrieve metadata of any data in a Data Factory or Synapse pipeline.
 If condition | The If Condition can be used to branch based on condition that evaluates to true or false. The If Condition activity provides the same functionality that an if statement provides in programming languages. It evaluates a set of activities when the condition evaluates to `true` and another set of activities when the condition evaluates to `false`.
 [Lookup Activity](lookup-activity.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
