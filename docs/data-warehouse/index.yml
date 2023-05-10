@@ -142,5 +142,5 @@ landingContent:
     linkLists: 
       - linkListType: how-to-guide
         links:
-          - text: Get Workspace and OneLake path
-            url: get-workspace-onelake-path.md
+          - text: Accessing Data warehouse files in One Lake
+            url: accessing-data-warehouse-files-in-one-lake.md
