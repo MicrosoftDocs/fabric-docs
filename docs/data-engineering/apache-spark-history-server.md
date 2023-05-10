@@ -48,17 +48,17 @@ Select the Job ID for the job you want to view. Then, select **Graph** on the to
 
 You can see an overview of your job in the generated job graph. By default, the graph shows all jobs. You can filter this view by **Job ID**.
 
-:::image type="content" source="media\apache-spark-history-server\apache-spark-graph-jobid.png" alt-text="Screenshot showing spark application and job graph job ID." lightbox="media\apache-spark-history-server\apache-spark-graph-jobid.png":::
+:::image type="content" source="media\apache-spark-history-server\apache-spark-graph-job-id.png" alt-text="Screenshot showing spark application and job graph job ID." lightbox="media\apache-spark-history-server\apache-spark-graph-job-id.png":::
 
 ### Display
 
 By default, the **Progress** display is selected. You can check the data flow by selecting **Read** or **Written** in the **Display** dropdown list.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-graph-display.png" alt-text="Screenshot showing spark application and job graph display." lightbox="media\apache-spark-history-server\sparkui-graph-display.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-display.png" alt-text="Screenshot showing spark application and job graph display." lightbox="media\apache-spark-history-server\spark-ui-graph-display.png":::
 
 The graph node displays the colors shown in the heatmap legend.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-graph-heatmap.png" alt-text="Screenshot showing spark application and job graph heatmap." lightbox="media\apache-spark-history-server\sparkui-graph-heatmap.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-heatmap.png" alt-text="Screenshot showing spark application and job graph heatmap." lightbox="media\apache-spark-history-server\spark-ui-graph-heatmap.png":::
 
 ### Playback
 
@@ -74,15 +74,15 @@ To playback the job, select **Playback**. You can select **Stop** at any time to
 
 The following image shows Green, Orange, and Blue status colors.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-graph-color-running.png" alt-text="Screenshot showing spark application and job graph color sample, running." lightbox="media\apache-spark-history-server\sparkui-graph-color-running.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-running.png" alt-text="Screenshot showing spark application and job graph color sample, running." lightbox="media\apache-spark-history-server\spark-ui-graph-color-running.png":::
 
 The following image shows Green and White status colors.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-graph-color-skip.png" alt-text="Screenshot showing spark application and job graph color sample, skip." lightbox="media\apache-spark-history-server\sparkui-graph-color-skip.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-skip.png" alt-text="Screenshot showing spark application and job graph color sample, skip." lightbox="media\apache-spark-history-server\spark-ui-graph-color-skip.png":::
 
 The following image shows Red and Green status colors.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-graph-color-failed.png" alt-text="Screenshot showing spark application and job graph color sample, failed." lightbox="media\apache-spark-history-server\sparkui-graph-color-failed.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-color-failed.png" alt-text="Screenshot showing spark application and job graph color sample, failed." lightbox="media\apache-spark-history-server\spark-ui-graph-color-failed.png":::
 
 > [!NOTE]  
 > Playback for each job is allowed. For incomplete jobs, playback is not supported.
@@ -91,13 +91,13 @@ The following image shows Red and Green status colors.
 
 Use your mouse scroll to zoom in and out on the job graph, or select **Zoom to fit** to make it fit to screen.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-graph-zoom2fit.png" alt-text="Screenshot showing spark application and job graph zoom to fit." lightbox="media\apache-spark-history-server\sparkui-graph-zoom2fit.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-zoom-to-fit.png" alt-text="Screenshot showing spark application and job graph zoom to fit." lightbox="media\apache-spark-history-server\spark-ui-graph-zoom-to-fit.png":::
 
 ### Tooltips
 
 Hover on graph node to see the tooltip when there are failed tasks, and select a stage to open its stage page.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-graph-tooltip.png" alt-text="Screenshot showing spark application and job graph tooltip." lightbox="media\apache-spark-history-server\sparkui-graph-tooltip.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-tooltip.png" alt-text="Screenshot showing spark application and job graph tooltip." lightbox="media\apache-spark-history-server\spark-ui-graph-tooltip.png":::
 
 On the job graph tab, stages have a tooltip and a small icon displayed if they have tasks that meet the following conditions:
 
@@ -106,7 +106,7 @@ On the job graph tab, stages have a tooltip and a small icon displayed if they h
 |Data skew|data read size > average data read size of all    tasks inside this stage * 2 and data read size > 10 MB|
 |Time skew|execution time > average execution time of all    tasks inside this stage * 2 and execution time > 2 minutes|
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-graph-skew-icon.png" alt-text="Screenshot showing spark application and job graph skew icon." lightbox="media\apache-spark-history-server\sparkui-graph-skew-icon.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-skew-icon.png" alt-text="Screenshot showing spark application and job graph skew icon." lightbox="media\apache-spark-history-server\spark-ui-graph-skew-icon.png":::
 
 ### Graph node description
 
@@ -130,7 +130,7 @@ The job graph node displays the following information of each stage:
 
 Send feedback with issues by selecting **Provide us feedback**.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-graph-feedback.png" alt-text="Screenshot showing spark application and job graph feedback." lightbox="media\apache-spark-history-server\sparkui-graph-feedback.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-graph-feedback.png" alt-text="Screenshot showing spark application and job graph feedback." lightbox="media\apache-spark-history-server\spark-ui-graph-feedback.png":::
 
 ## Explore the Diagnosis tab in Apache Spark history server
 
@@ -138,7 +138,7 @@ To access the Diagnosis tab, select a job ID. Then select **Diagnosis** on the t
 
 Check the **Data Skew**, **Time Skew**, and **Executor Usage Analysis** by selecting the tabs respectively.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-diagnosis-tabs.png" alt-text="Screenshot showing sparkUI diagnosis data skew tab again." lightbox="media\apache-spark-history-server\sparkui-diagnosis-tabs.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-tabs.png" alt-text="Screenshot showing sparkUI diagnosis data skew tab again." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-tabs.png":::
 
 ### Data Skew
 
@@ -148,12 +148,12 @@ When you select the **Data Skew** tab, the corresponding skewed tasks are displa
 
 * **Skewed Stage** - The second section displays stages, which have skewed tasks meeting the criteria specified above. If there is more than one skewed task in a stage, the skewed stage table only displays the most skewed task (for example, the largest data for data skew).
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-diagnosis-dataskew-section2.png" alt-text="Screenshot showing sparkui diagnosis data skew tab." lightbox="media\apache-spark-history-server\sparkui-diagnosis-dataskew-section2.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-2.png" alt-text="Screenshot showing spark ui diagnosis data skew tab." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-2.png":::
 
 
 * **Skew Chart** – When a row in the skew stage table is selected, the skew chart displays more task distribution details based on data read and execution time. The skewed tasks are marked in red and the normal tasks are marked in blue. The chart displays up to 100 sample tasks, and the task details are displayed in right bottom panel.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-diagnosis-dataskew-section3.png" alt-text="Screenshot showing sparkui skew chart for stage 10." lightbox="media\apache-spark-history-server\sparkui-diagnosis-dataskew-section3.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-3.png" alt-text="Screenshot showing spark ui skew chart for stage 10." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-3.png":::
 
 ### Time Skew
 
@@ -161,9 +161,9 @@ The **Time Skew** tab displays skewed tasks based on task execution time.
 
 * **Specify Parameters** - The first section displays the parameters, which are used to detect Time Skew. The default criteria to detect time skew is: task execution time is greater than three times of average execution time and task execution time is greater than 30 seconds. You can change the parameters based on your needs. The **Skewed Stage** and **Skew Chart** display the corresponding stages and tasks information just like the **Data Skew** tab above.
 
-* Select **Time Skew**, then filtered result is displayed in **Skewed Stage** section according to the parameters set in section **Specify Parameters**. Select one item in **Skewed Stage** section, then the corresponding chart is drafted in section3, and the task details are displayed in right bottom panel.
+* Select **Time Skew**, then filtered result is displayed in **Skewed Stage** section according to the parameters set in section **Specify Parameters**. Select one item in **Skewed Stage** section, then the corresponding chart is drafted in section 3, and the task details are displayed in right bottom panel.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-diagnosis-timeskew-section2.png" alt-text="Screenshot showing sparkui diagnosis time skew section." lightbox="media\apache-spark-history-server\sparkui-diagnosis-timeskew-section2.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-timeskew-section-2.png" alt-text="Screenshot showing spark ui diagnosis time skew section." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-timeskew-section-2.png":::
 
 ### Executor Usage Analysis
 
@@ -171,11 +171,11 @@ The Executor Usage Graph visualizes the Spark job executor's allocation and runn
 
 1. Select **Executor Usage Analysis**, then four types curves about executor usage are drafted, including **Allocated Executors**, **Running Executors**, **Idle Executors**, and **Max Executor Instances**. For allocated executors, each "Executor added" or "Executor removed" event increases or decreases the allocated executors. You can check "Event Timeline" in the "Jobs" tab for more comparison.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-diagnosis-executors.png" alt-text="Screenshot showing sparkui diagnosis executors tab." lightbox="media\apache-spark-history-server\sparkui-diagnosis-executors.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-executors.png" alt-text="Screenshot showing spark ui diagnosis executors tab." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-executors.png":::
 
 2. Select the color icon to select or unselect the corresponding content in all drafts.
 
-:::image type="content" source="media\apache-spark-history-server\sparkui-diagnosis-select-chart.png" alt-text="Screenshot showing sparkui diagnoses select chart." lightbox="media\apache-spark-history-server\sparkui-diagnosis-select-chart.png":::
+:::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-select-chart.png" alt-text="Screenshot showing spark ui diagnoses select chart." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-select-chart.png":::
 
 ## Next steps
 
