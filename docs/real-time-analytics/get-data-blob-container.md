@@ -28,8 +28,8 @@ To get data from a blob, see [Get data from a blob](get-data-blob.md).
 
     :::image type="content" source="media/get-data-blob-container/get-data-blob-container.png" alt-text="Screenshot of get data with blob container selected in Real-Time Analytics.":::
 
-    > [!TIP]
-    >  Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
+    > [!NOTE]
+    > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
 ### Source tab
 
