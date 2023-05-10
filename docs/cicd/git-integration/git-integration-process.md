@@ -34,14 +34,14 @@ The following table describes the permissions needed to perform various common o
 
 | **Operation**                                                        | **Workspace role**                                                                        | **Git permissions**                          |
 |----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|
-| Connect workspace to Git repo                                        | Admin                                                                                     | Role=Read                                    |
+| Connect workspace to Git repo                                        | Admin                                                                                     | Read=Allow                                    |
 | Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    |
-| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Role=Read  (in target repo/directory/branch) |
+| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Read=Allow  (in target repo/directory/branch) |
 | View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 |
-| See workspace 'git status'                                           | Admin, Member, Contributor                                                                | Role=Read                                    |
-| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Read   |
-| Commit workspace changes to git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Write  |
-| Create new git branch from within Fabric                             | Admin                                                                                     | Role=Write                                    |
+| See workspace 'git status'                                           | Admin, Member, Contributor                                                                | Read=Allow                                    |
+| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Read=Allow   |
+| Commit workspace changes to git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Read=Allow<br/>Contribute=Allow<br/>branch policy should allow direct commit  |
+| Create new git branch from within Fabric                             | Admin                                                                                     | Role=Write<br/>Create branch=Allow                                    |
 
 ## Connect and sync
 
