@@ -30,7 +30,7 @@ For more information on the `.create materialized-view` command, see [.create ma
 
 ## Materialized view
 
-1. In your KQL database, select **+New** > **Materialized view**.
+1. Browse to your KQL database, and select **+New** > **Materialized view**.
 
     :::image type="content" source="media/materialized-view/materialized-view.png" alt-text="Screenshot of a KQL database landing page showing the New option dropdown menu, with the option titled Materialized view highlighted."  lightbox="media/materialized-view/materialized-view.png":::
 
