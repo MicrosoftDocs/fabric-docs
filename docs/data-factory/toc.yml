@@ -17,7 +17,7 @@
       href: transform-data.md
   - name: Tutorials
     items:
-    - name: End-to-end integration scenario - introduction and architecture
+    - name: Data Factory end-to-end scenario - introduction and architecture
       href: tutorial-end-to-end-introduction.md
     - name: Module 1 - Create a pipeline
       href: tutorial-end-to-end-pipeline.md

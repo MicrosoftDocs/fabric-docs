@@ -25,14 +25,14 @@ The high-level steps in the dataflow are as follows:
 - Combine trips and discounts data.
 - Load the output query into the Gold Lakehouse table.
 
-## Get data from the Bronze Lakhouse table
+## Get data from a Lakehouse table
 
 1. From the sidebar, select **Create**, and then **Dataflow Gen2 (Preview)** to create a new dataflow gen2.
    :::image type="content" source="media/tutorial-end-to-end-dataflow/create-new-dataflow.png" alt-text="Screenshot showing the Fabric Create page with the Dataflow Gen2 (Preview) button highlighted.":::
 
 1. From the new dataflow menu, select **Get data**, and then **More...**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/get-data-button.png" alt-text="Screenshot showing the Datalow menu with Get data button highlighted and the More... option highlighted from its menu.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/get-data-button.png" alt-text="Screenshot showing the Dataflow menu with Get data button highlighted and the More... option highlighted from its menu.":::
 
 1. Search for and select the **Lakehouse** connector.
 
@@ -74,7 +74,7 @@ The high-level steps in the dataflow are as follows:
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-columns-dialog.png" alt-text="Screenshot showing the Choose columns dialog with the identified columns deselected.":::
 
-1. Select the **storeAndFwdFlag** column's filter and sort dropdown menu. (If you see a warning **List may be incomplete**, select **Load more** to see all the data).
+1. Select the **storeAndFwdFlag** column's filter and sort dropdown menu. (If you see a warning **List may be incomplete**, select **Load more** to see all the data.)
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/filter-sort-values-dialog.png" alt-text="Screenshot showing the filter and sort dialog for the column.":::
 
@@ -118,7 +118,7 @@ Now, with the data from the trips in place, we want to load the data that contai
    :::image type="content" source="media/tutorial-end-to-end-dataflow/use-first-row-as-headers.png" alt-text="Screenshot showing the selection of the Use first row as headers option from the table context menu.":::
 
    > [!NOTE]
-   > After promoting the headers, you can see a new step will be added to the **Applied steps** pane at the top of the dataflow editor to se the data types of your columns.
+   > After promoting the headers, you can see a new step added to the **Applied steps** pane at the top of the dataflow editor to the data types of your columns.
 
 1. Right-click the **VendorID** column, and from the context menu displayed, select the option **Unpivot other columns**. This allows you to transform columns into attribute-value pairs, where columns become rows.
 
@@ -130,7 +130,7 @@ Now, with the data from the trips in place, we want to load the data that contai
 
 1. Change the data type of the Date column by selecting the data type menu to the left of the column name and choosing **Date**.
 
-   s:::image type="content" source="media/tutorial-end-to-end-dataflow/set-date-data-type.png" alt-text="Screenshot showing the selection of the Date data type for the Date column.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/set-date-data-type.png" alt-text="Screenshot showing the selection of the Date data type for the Date column.":::
 
 1. Select the **Discount** column and then select the **Transform** tab on the menu. Select **Number column**, and then select **Standard** numeric transformations from the submenu, and choose **Divide**.
 
@@ -196,7 +196,7 @@ The next step is to combine both tables into a single table that has the discoun
 
 1. Finally, expand the **Query settings** pane from the right side of the editor if it isn't already expanded, and rename the query from **Merge** to **Output**.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/rename-query.png" alt-text="Screenshot showing the renaming of the query from Merge to Output.":::
+   :::image type="content" source="media/create-first-dataflow-gen2/rename-query.png" lightbox="media/create-first-dataflow-gen2/rename-query.png" alt-text="Screenshot showing the renaming of the query from Merge to Output.":::
 
 ## Load the output query to a table in the Lakehouse
 
@@ -220,7 +220,7 @@ With the output query now fully prepared and with data ready to output, we can d
 
 1. _(Optional)_ On the workspace page, you can rename your dataflow by selecting the ellipsis to the right of the dataflow name that appears after you select the row, and choosing **Properties**.
 
-   r:::image type="content" source="media/tutorial-end-to-end-dataflow/rename-dataflow.png" alt-text="Screenshot showing the Properties option selected on the menu for a dataflow where it can be renamed.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/rename-dataflow.png" alt-text="Screenshot showing the Properties option selected on the menu for a dataflow where it can be renamed.":::
 
 1. Select the refresh icon for the dataflow after selecting its row, and when complete, you should see your new Lakehouse table created as configured in the **Data destination** settings.
 
