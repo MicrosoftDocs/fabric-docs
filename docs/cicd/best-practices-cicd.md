@@ -79,9 +79,9 @@ In deployment pipelines, you can configure parameter rules to set different valu
 
 This section provides guidance for working with the deployment pipelines and using fit for your development stage.
 
-### Backup your work into a git repository
+### Back up your work into a git repository
 
-With git integration, any developer can backup their work by committing it into git. To do this properly in Fabric, here are some basic rules:
+With git integration, any developer can back up their work by committing it into git. To do this properly in Fabric, here are some basic rules:
 
 * Make sure you have an isolated environment to work in, so others don’t override your work before it gets committed. This means working in a Desktop tool (such as [VSCode](https://code.visualstudio.com/), [Power BI Desktop](https://powerbi.microsoft.com/desktop/) or others), or in a separate workspace that other users can’t access.
 
