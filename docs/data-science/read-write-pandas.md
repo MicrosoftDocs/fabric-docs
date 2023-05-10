@@ -29,7 +29,7 @@ Clicking on one of the "Load data" prompts will generate a code cell to load tha
 
 :::image type="content" source="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png" alt-text="Screenshot of the code cell added to the notebook." lightbox="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png":::
 
-### Converting a Spark DataFrame to a Pandas DataFrame
+### Converting a Spark DataFrame into a Pandas DataFrame
 
 For reference, the following command shows how to convert a Spark DataFrame into a Pandas DataFrame.
 
