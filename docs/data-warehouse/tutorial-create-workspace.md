@@ -34,7 +34,6 @@ The workspace contains all the artifacts needed for data warehousing including D
 1. Expand the **Advanced** section.
 1. Choose **Premium capacity** in the **License mode** section.
 1. Choose a premium capacity you have access to.
-
 1. Select **Apply**. The workspace is created and opened.
 
 ## Next steps

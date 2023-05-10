@@ -21,7 +21,6 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-
 ## Create a data pipeline
 
 1. To create a new pipeline navigate to your workspace, select the **+New** button, and select **Data pipeline**.

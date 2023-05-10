@@ -31,7 +31,7 @@ The [!INCLUDE [product-name](../includes/product-name.md)] workspace ensures tha
 
 ## Analyzing automatically-discovered data in the lakehouse
 
-Analyzing automatically-discovered schema and data in the [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse is one of the main scenarios where you use the [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse). 
+Analyzing automatically-discovered schema and data in the [!INCLUDE [product-name](../includes/product-name.md)] lakehouse is one of the main scenarios where you use the [SQL Endpoint](data-warehousing.md#sql-endpoint-of-the-lakehouse). 
 
 Data in a [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse is physically stored in OneLake with the following folder structure:
 - The `/Files` folder contains raw and unconsolidated (bronze) files that should be processed by data engineers before they are analyzed. The files might be in various formats such as `csv`, `parquet`, different types of images, etc.
