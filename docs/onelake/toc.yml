@@ -35,7 +35,11 @@ items:
     href: onelake-azure-databricks.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md
-- name: Secure data
-  href: onelake-security.md
+- name: Security
+  items:
+  - name: Secure data
+    href: onelake-security.md
+  - name: Get started with securing data in OneLake
+    href: get-started-security.md
 - name: OneLake file explorer for Windows
   href: onelake-file-explorer.md
