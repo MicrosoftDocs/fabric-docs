@@ -10,13 +10,15 @@ ms.date: 05/23/2023
 
 # Integrate OneLake with Azure Synapse Analytics
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Azure Synapse is a limitless analytics service that brings together enterprise data warehousing and Big Data analytics. This tutorial shows how to connect to OneLake using [Azure Synapse Analytics](/azure/synapse-analytics/).
 
-## Write data to OneLake from Synapse using Apache Spark
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-1. Open your Synapse workspace and [create an Apache Spark pool](/azure/synapse-analytics/quickstart-create-apache-spark-pool-portal) with your preferred parameters.
+## Write data from Synapse using Apache Spark
+
+Follow these steps to use Apache Spark to write sample data to OneLake from Azure Synapse Analytics. 
+
+1. Open your Synapse workspace and [create an Apache Spark pool](/azure/synapse-analytics/quickstart-create-apache-spark-pool-studio) with your preferred parameters.
 
    :::image type="content" source="media\onelake-azure-synapse-analytics\new-apache-spark-pool.png" alt-text="Screenshot showing where to select New in the Apache Spark pool screen." lightbox="media\onelake-azure-synapse-analytics\new-apache-spark-pool.png":::
 
@@ -69,6 +71,35 @@ Azure Synapse is a limitless analytics service that brings together enterprise d
    ```
 
 Congratulations! You can now read and write data in OneLake using Apache Spark in Azure Synapse Analytics.
+
+## Write data from Synapse using SQL
+
+Follow these steps to use SQL serverless to read data from OneLake from Azure Synapse Analytics.
+
+1. Open a Fabric lakehouse and identify a table that you'd like to query from Synapse.
+
+1. Right-click on the table and click **Properties**.
+
+1. Copy the **ABFS path** for the table.
+
+   :::image type="content" source="media\onelake-azure-synapse-analytics\abfs-path.png" alt-text="Screenshot showing where to copy the ABFS path." lightbox="media\onelake-azure-synapse-analytics\abfs-path.png":::
+
+1. Open your Synapse workspace in [Synapse Studio](https://web.azuresynapse.net/workspaces).
+
+1. Create a new SQL script.
+
+1. In the SQL query editor, enter the following query, replacing `ABFS_PATH_HERE` with the path you copied earlier.
+
+   ```sql
+   SELECT TOP 10 *
+   FROM OPENROWSET(
+   BULK 'ABFS_PATH_HERE',
+   FORMAT = 'delta') as rows;
+   ```
+
+1. Run the query to view the top 10 rows of your table.
+
+Congratulations! You can now read data from OneLake using SQL serverless in Azure Synapse Analytics.
 
 ## Next steps
 

@@ -91,7 +91,7 @@ Data source rules can be defined for the following data sources:
 
 * Teradata
 
-For other data sources, we recommend [using parameters to configure your data source](../best-practices-cicd.md#use-parameters-in-your-model).
+For other data sources, we recommend [using parameters to configure your data source](../best-practices-cicd.md#use-parameters-for-configurations-that-will-change-between-stages).
 
 ## Considerations and limitations
 

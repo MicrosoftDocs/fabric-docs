@@ -24,8 +24,6 @@ The activities in a pipeline define actions to perform on your data. For example
 
 :::image type="content" source="media/activity-overview/relationship-between-dataset-pipeline-activity.png" alt-text="Diagram showing the relationship between pipeline, activity, and dataset.":::
 
-An input dataset represents the input for an activity in the pipeline, and an output dataset represents the output for the activity. Datasets identify data within different data stores, such as tables, files, folders, and documents. After you create a dataset, you can use it with activities in a pipeline. For example, a dataset can be an input/output dataset of a Copy Activity or a Dataflow Activity.
-
 ## Data movement activities
 
 Copy activity in [!INCLUDE [product-name](../includes/product-name.md)] copies data from a source data store to a sink data store. Fabric supports the data stores listed in the [Connector overview](connector-overview.md) article. Data from any source can be written to any sink.
@@ -40,13 +38,13 @@ For more information, see the [data transformation activities](transform-data.md
 
 Data transformation activity | Compute environment
 ---------------------------- | -------------------
-[Copy data](copy-data-activity.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-[Dataflow Gen2](dataflows-gen2-overview.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+Copy data | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+Dataflow Gen2 | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 Delete data | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-[Fabric Notebook](notebook-activity.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+Fabric Notebook | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 Spark job definition | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 Stored Procedure | Azure SQL, Azure Synapse Analytics, or SQL Server
-[SQL script](script-activity.md) | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+SQL script | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 Switch | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
 
 ## Control flow activities
@@ -57,10 +55,10 @@ Control activity | Description
 Append variable | Add a value to an existing array variable.
 Invoke pipeline | Execute Pipeline activity allows a Data Factory or Synapse pipeline to invoke another pipeline.
 Filter | Apply a filter expression to an input array.
-[For Each](foreach-activity.md) | ForEach Activity defines a repeating control flow in your pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to the Foreach looping structure in programming languages.
+ForEach | ForEach Activity defines a repeating control flow in your pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to the Foreach looping structure in programming languages.
 Get metadata | GetMetadata activity can be used to retrieve metadata of any data in a Data Factory or Synapse pipeline.
 If condition | The If Condition can be used to branch based on condition that evaluates to true or false. The If Condition activity provides the same functionality that an if statement provides in programming languages. It evaluates a set of activities when the condition evaluates to `true` and another set of activities when the condition evaluates to `false`.
-[Lookup Activity](lookup-activity.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
+Lookup Activity | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
 Set Variable | Set the value of an existing variable.
 Until Activity | Implements Do-Until loop that is similar to Do-Until looping structure in programming languages. It executes a set of activities in a loop until the condition associated with the activity evaluates to true. You can specify a timeout value for the until activity.
 Wait Activity | When you use a Wait activity in a pipeline, the pipeline waits for the specified time before continuing with execution of subsequent activities.

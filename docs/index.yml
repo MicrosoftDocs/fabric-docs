@@ -27,11 +27,11 @@ highlightedContent:
     # Card
     - title: Try Microsoft Fabric for free
       itemType: get-started
-      url: placeholder.md
+      url: get-started/fabric-trial.md
     # Card
     - title: Enable Fabric for your organization
       itemType: quickstart
-      url: admin/admin-fabric-switch.md
+      url: admin/fabric-switch.md
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
@@ -51,8 +51,10 @@ productDirectory:
           text: What is Fabric?
         - url: enterprise/licenses.md
           text: Microsoft Fabric licenses
-        - url: enterprise/licenses-buy.md
-          text: Navigate the Fabric portal
+        - url: enterprise/buy-subscription.md
+          text: Buy a Microsoft Fabric subscription
+        - url: get-started/fabric-home.md
+          text: Navigate the Fabric portal          
         - url: get-started/workspaces.md
           text: Workspaces in Fabric
         - url: get-started/index.yml
@@ -63,7 +65,7 @@ productDirectory:
 
       imageSrc: ./media/power-bi-icon.png
       links:
-        - url: admin/admin-fabric-switch.md
+        - url: admin/fabric-switch.md
           text: Enable Microsoft Fabric for your organization
         - url: /power-bi/fundamentals/power-bi-overview
           text: What is Power BI?
@@ -167,9 +169,9 @@ productDirectory:
 
       imageSrc: ./media/administrator-icon.svg
       links:
-        - url: enterprise/licenses-buy.md
-          text: Buy a Microsoft Fabric license     
-        - url: admin/admin-overview.md
+        - url: enterprise/buy-subscription.md
+          text: Buy a Microsoft Fabric subscription     
+        - url: admin/microsoft-fabric-admin.md
           text: Fabric administration
         - url: governance/metadata-scanning-overview.md
           text: Data governance and compliance

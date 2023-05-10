@@ -10,9 +10,13 @@ ms.search.form: Get Started Lakehouse Shortcuts Data Science
 ---
 
 # Referencing data in lakehouse for Data Science projects
+
 This quickstart explains how to reference data stored in external ADLS account and use it in your Data science projects. After completing this quickstart, you'll have a shortcut to ADLS storage in your lakehouse and a notebook with Spark code that accesses your external data.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 ## Prepare data for shortcut
+
 1. In Azure create ADLS Gen2 account
 1. Enable hierarchical namespaces
 
@@ -24,6 +28,7 @@ This quickstart explains how to reference data stored in external ADLS account a
 1. Get storage account endpoint
 
 ## Create a shortcut
+
 1. Open your lakehouse to get to Lakehouse Explorer
 1. Under files create a folder where you reference data
 1. Right select (...) and select New Shortcut next to the folder name
@@ -38,6 +43,7 @@ This quickstart explains how to reference data stored in external ADLS account a
 1. Select create
 
 ## Access referenced data in Notebook
+
 1. Open existing or create new notebook
 1. Pin your lakehouse to the notebook
 1. Browse your data in shortcut folder
@@ -45,5 +51,7 @@ This quickstart explains how to reference data stored in external ADLS account a
 1. Execute code to get file content
 1. Add code for data analysis
 
-
 ## Next steps
+
+- [Load to Delta Lake tables](load-to-tables.md)
+- [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)

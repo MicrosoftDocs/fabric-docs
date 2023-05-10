@@ -23,23 +23,23 @@ To get started, you must complete the following prerequisites:
 
 ## Create an eventstream 
 
-Eventstream item can be created in **Workspace** or the **Real-time Analytics experience Homepage** or **Create hub**. Here are the steps to create an Eventstream item. 
+You can create an eventstream on the **Workspace** page or the **Real-time Analytics experience Homepage** or the **Create hub** page. Here are the steps: 
 
 1. Change your Fabric experience to **Real-time Analytics** and select **Eventstream** to create a new eventstream in  workspace or homepage or create hub.
 
-   In **Real-time Analytics** homepage, select **Eventstream** tile:
+   - On the **Real-time Analytics** homepage, select the **Eventstream** tile:
 
-   :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the eventstream creation in homepage." lightbox="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" :::
+       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the eventstream creation in homepage." lightbox="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" :::
 
-   In **Workspace**, select **New** and then **Eventstream**:
+   - On the **Workspace** page, select **New** and then **Eventstream**:
 
-   :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot showing the eventstream creation in workspace." lightbox="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" :::
+       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot showing the eventstream creation in workspace." lightbox="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" :::
 
-   In **Create hub**, select **Eventstream** tile: 
+   - On the **Create hub** page, select **Eventstream** tile: 
 
-   :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the eventstream creation in create hub." lightbox="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" :::
+       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the eventstream creation in create hub." lightbox="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" :::
 
-2. Enter a name for the new eventstream and select **Create**.
+2. Enter a **name** for the new eventstream and select **Create**.
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-naming.png" alt-text="Screenshot showing the eventstream naming." lightbox="./media/create-manage-an-eventstream/eventstream-creation-naming.png" :::
 
@@ -49,15 +49,15 @@ Eventstream item can be created in **Workspace** or the **Real-time Analytics ex
 
 ## Manage an eventstream 
 
-After you create an Eventstream item, you can edit and manage your eventstream in your workspace.
+After you create an eventstream, you can edit and manage the eventstream in your workspace.
 
 - **Delete**: Delete the eventstream from your workspace. 
 - **Settings**: Change the eventstream name, edit the sensitivity, and set the endorsement to Certified or Promoted Power BI content. 
-- **Add to Favorites**: Add the eventstream to the Home > Favorites tab. 
+- **Add to Favorites**: Add the eventstream to the **Home** > **Favorites** tab. 
 - **View lineage**: Gives you an overview of where all the data comes from and goes to. 
 - **View details**: View detailed information about your eventstream.  
 
-:::image type="content" source="./media/create-manage-an-eventstream/eventstream-management.png" alt-text="Screenshot showing the eventstream management." lightbox="./media/create-manage-an-eventstream/eventstream-management.png" :::
+    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-management.png" alt-text="Screenshot showing the eventstream management." lightbox="./media/create-manage-an-eventstream/eventstream-management.png" :::
 
 
 ## Main editor for Microsoft Fabric event streams
@@ -71,7 +71,7 @@ The following screenshot shows an eventstream with its source and destination co
 2. **Data navigation pane**: It provides the navigation of the sources and destinations. 
 3. **Canvas and diagram view**: It provides graphical representation of the whole topology from the sources to the destinations. Each source or destination is visualized as a tile (node) in the canvas. 
 4. **Configuration and modification pane**: It's the place used to configure or modify a specific source or destination.  
-5. **Bottom pane for Information, Data preview, Data Insights, and Runtime logs**: For each tile (node), the data preview  shows you data inside the selected tile (node). This section also summarizes runtime logs where the runtime logs exist in certain source or destination. It also provides metrics for you to monitor the data insights for certain source or destination, like the input events, output events, incoming messages, outgoing messages, etc. 
+5. **Bottom pane for information, data preview, data insights, and runtime logs**: For each tile (node), the data preview  shows you data inside the selected tile (node). This section also summarizes runtime logs where the runtime logs exist in certain source or destination. It also provides metrics for you to monitor the data insights for certain source or destination, like the input events, output events, incoming messages, outgoing messages, etc. 
 
 
 ## Next steps

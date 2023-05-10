@@ -12,17 +12,17 @@ ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article details the current limitations and known issues in [!INCLUDE [product-name](../includes/product-name.md)].
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Limitations
 
-Data Warehousing in Microsoft Fabric is currently in preview. The focus of this preview is on providing a rich set of SaaS features and functionality tailored to all skill levels. The preview delivers on the promise of providing a "no knobs" experience through an open data format over a single copy of data. This release is not focused on performance, concurrency, and scale. Additional functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally as we progress towards General Availability of data warehousing in [!INCLUDE [product-name](../includes/product-name.md)].
+Data Warehousing in Microsoft Fabric is currently in preview. The focus of this preview is on providing a rich set of SaaS features and functionality tailored to all skill levels. The preview delivers on the promise of providing a simplified experience through an open data format over a single copy of data. This release is not focused on performance, concurrency, and scale. Additional functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally as we progress towards General Availability of data warehousing in [!INCLUDE [product-name](../includes/product-name.md)].
 
 General product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. 
 
-- At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
+- <b>IMPORTANT</B> At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations. 
 - Warehouse Recovery capabilities are not available during Preview.
 
 For more limitations information in specific areas, see:
@@ -34,6 +34,11 @@ For more limitations information in specific areas, see:
 - [Transactions](transactions.md#limitations)
 - [The Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
 - [Connectivity](connectivity.md#considerations-and-limitations)
+- [Tables](tables.md#limitations)
+
+## Known issues for querying
+
+- Queries with PIVOT operator fail if there's a GROUP BY on the nonpivot column output by PIVOT. As a workaround, remove the nonpivot column from the GROUP BY.  Query results will be the same, as this GROUP BY clause is duplicate.
 
 ## Limitations of the SQL Endpoint
 
