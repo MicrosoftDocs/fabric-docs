@@ -23,9 +23,9 @@ The article is divided into four sections:
 
 * [**Development**](#development) - Learn about the best ways of creating content in the deployment pipelines development stage.
 
-* [**Test**](#test) - Understand how to use the deployment pipelines test stage to test your environment.
+* [**Test**](#test) - Understand how to use a deployment pipelines test stage to test your environment.
 
-* [**Production**](#production) - Utilize the deployment pipelines production stage when making your content available for consumption.
+* [**Production**](#production) - Utilize a deployment pipelines production stage to make your content available for consumption.
 
 ## Content preparation
 
@@ -217,6 +217,5 @@ If you are using deployment from git, we recommend following the practices descr
 
 ## Next steps
 
+* [Get started with git integration](git-integration/git-get-started.md)
 * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)
-* [Assign a workspace to a pipeline stage](deployment-pipelines/assign-pipeline.md)
-* [Deployment history](deployment-pipelines/deployment-history.md)
