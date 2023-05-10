@@ -29,7 +29,7 @@ Transactions can also be used for sequential SELECT statements to ensure the tab
 
 ## Cross-database query transaction support
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports transactions that span across databases that are within the same workspace including reading from the [SQL Endpoint of the Lakehouse](data-warehousing.md#sql-endpoint-of-the-lakehouse). Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one SQL Endpoint and each workspace can have more than one Lakehouse.
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports transactions that span across databases that are within the same workspace including reading from the [SQL Endpoint of the Lakehouse](data-warehousing.md#sql-endpoint-of-the-lakehouse). Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one SQL Endpoint and each workspace can have more than one lakehouse.
 
 ## DDL support within transactions
 
@@ -66,7 +66,6 @@ Transaction logging in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUD
 - Save points are not supported.
 - Named transactions are not supported.
 - Marked transactions are not supported.
-- Multi-statement transactions in the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal are not supported. Multi-statement transactions are supported in tools like Azure Data Studio and SQL Server Management Studio. For more information, see [SQL query editor Limitations](sql-query-editor.md#limitations).
 - At this time, there's limited T-SQL functionality in the warehouse. See [TSQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
 - If a transaction has data insertion into an empty table and issues a SELECT before rolling back, the automatically generated statistics may still reflect the uncommitted data, causing inaccurate [statistics](statistics.md). Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, you may want to [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
 

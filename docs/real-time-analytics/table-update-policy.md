@@ -39,4 +39,4 @@ This article describes how to create an update policy on a table in Real-Time An
 ## Next steps
 
 * [`.show table update policy`](/azure/data-explorer/kusto/management/show-table-update-policy-command?context=/fabric/context/context&pivots=fabric)
-* [Query data in a KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)

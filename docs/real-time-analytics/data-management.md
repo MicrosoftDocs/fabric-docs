@@ -17,30 +17,25 @@ Synapse Real-Time Analytics offers a range of options for managing your data, bo
 
 For more information, see [Management commands](/azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric)
 
-
-## Database management
-
-### Data retention policy
+## Data retention policy
 
 To change the data retention policy, browse to your KQL database and select the **Manage** tab. Then, select **Data retention policy**. Enter a time period and select **Done**. By default, your data is stored for 36,500 days.
 
 For more information, see [Retention policy](/azure/data-explorer/kusto/management/retentionpolicy?context=/fabric/context/context).
 
-### One logical copy
+## One logical copy
 
 To expose the data in your KQL database to all of [!INCLUDE [product-name](../includes/product-name.md)] experiences, create a OneLake shortcut.
 
 For more information, see [One logical copy](onelake-mirroring.md).
 
-## Table management
-
-### Table update policy
+## Table update policy
 
 When you trigger an update policy with a command that adds data to a source table, data also appends to a target table. The target table can have a different schema, retention policy, and other policies from the source table.
 
 For more information, see [Create a table update policy](table-update-policy.md).
 
-### Materialized views
+## Materialized views
 
 A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. You can create materialized views using the `.create materialized-view` command.
 

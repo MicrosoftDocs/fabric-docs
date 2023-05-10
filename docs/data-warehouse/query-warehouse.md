@@ -117,12 +117,10 @@ There are several ways you can write cross-database queries within the same [!IN
 
    :::image type="content" source="media\query-warehouse\select-top-run.png" alt-text="Screenshot showing results of select top 100 rows." lightbox="media\query-warehouse\select-top-run.png":::
 
-## Limitations
-
-- At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
+> [!NOTE]
+> At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
 
 ## Next steps
 
-- [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md)
-- [Query using the Visual Query editor](visual-query-editor.md)
-- [Transactions in Synapse Data Warehouse tables](transactions.md)
+> [!div class="nextstepaction"]
+> [Create reports on data warehousing in Microsoft Fabric](create-reports.md)
