@@ -27,13 +27,13 @@ For better usability and discoverability, you can sort the Apache Spark applicat
 
 ### Sort Apache Spark applications
 
-To sort Apache Spark applications, you can select on each column header, such as **Name**, **Status**, **Item Type**, **Start Time**, **Workspace**, and so on.
+To sort Apache Spark applications, you can select on each column header, such as **Name**, **Status**, **Item Type**, **Start Time**, **Location**, and so on.
 
 :::image type="content" source="media\browse-spark-applications-in-monitoring-hub\sort-spark-applications.png" alt-text="Screenshot showing the sort spark application." lightbox="media\browse-spark-applications-in-monitoring-hub\sort-spark-applications.png":::
 
 ### Filter Apache Spark applications
 
-You can filter Apache Spark applications by **Status**, **Item Type**, **Start Time**, **Submitter**, and **Workspace** using the Filter pane in the upper-right corner.
+You can filter Apache Spark applications by **Status**, **Item Type**, **Start Time**, **Submitter**, and **Location** using the Filter pane in the upper-right corner.
 
 :::image type="content" source="media\browse-spark-applications-in-monitoring-hub\filter-spark-applications.png" alt-text="Screenshot showing the filter spark applications." lightbox="media\browse-spark-applications-in-monitoring-hub\filter-spark-applications.png":::
 

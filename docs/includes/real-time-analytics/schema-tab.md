@@ -46,7 +46,7 @@ To add a new column, select the **+** button on the right-hand column under **Pa
 * The default column type is `string` but can be altered in the drop-down menu of the Column type field.
 * Source: for table formats (CSV, TSV, etc.), each column can be linked to only one source column. For other formats (such as JSON, Parquet, etc.), multiple columns can use the same source.
 
-:::image type="content" source="../../real-time-analytics/media/get-data-blob/azure-blob-new-column.png" alt-text="Screenshot of new column pane in schema window.":::
+:::image type="content" source="../../real-time-analytics/media/get-data-blob/azure-blob-new-column.png" alt-text="Screenshot of new column pane in schema window."  lightbox="../../real-time-analytics/media/get-data-blob/azure-blob-new-column.png":::
 
 Select **Next: Summary** to create a table and mapping and to begin data ingestion.
 
@@ -54,7 +54,7 @@ Select **Next: Summary** to create a table and mapping and to begin data ingesti
 
 In the **Data ingestion completed** window, all three steps will be marked with green check marks when data ingestion finishes successfully.
 
-:::image type="content" source="../../real-time-analytics/media/get-data-blob/azure-blob-summary-pane.png" alt-text="Screenshot of ingested complete dialog box with data preview.":::
+:::image type="content" source="../../real-time-analytics/media/get-data-blob/azure-blob-summary-pane.png" alt-text="Screenshot of ingested complete dialog box with data preview."  lightbox="../../real-time-analytics/media/get-data-blob/azure-blob-summary-pane.png":::
 
 ## Explore your data
 

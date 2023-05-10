@@ -1,6 +1,6 @@
 ---
 title: Data warehouse tutorial - load data using T-SQL
-description: In this sixth tutorial step, learn how to load data from a public storage account into a table using T-SQL.
+description: In this tutorial step, learn how to load data from a public storage account into a table using T-SQL.
 ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
@@ -9,6 +9,8 @@ ms.date: 5/23/2023
 ---
 
 # Tutorial: Load data using T-SQL
+
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Now that you know how to build a data warehouse, load a table, and generate a report, it's time to extend the solution by exploring other methods for loading data.
 

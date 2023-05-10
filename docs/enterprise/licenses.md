@@ -73,19 +73,19 @@ Capacity is a dedicated set of resources reserved for exclusive use. It offers d
 
 The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU) are used to measure the compute power available for each SKU. For the benefit of customers that are familiar with Power BI, the table also includes the equivalent Power BI SKUs and v-cores.
 
-| SKU<sup>*</sup> | Capacity Units (CU) | Power BI SKU | Power BI v-cores | Recommended use |
-|--|--|--|--|--|
-| F2 | 2 | - | 0.25 |  |
-| F4 | 4 | - | 0.5 |  |
-| F8 | 8 | EM/A1 | 1 |  |
-| F16 | 16 | EM2/A2 | 2 |  |
-| F32 | 32 | EM3/A3 | 4 |  |
-| F64 | 64 | P1/A4 | 8 |  |
-| F128 | 128 | P2/A5 | 16 |  |
-| F256 | 256 | P3/A6 | 32 |  |
-| F512 | 512 | P4/A7 | 64 |  |
-| F1024 | 1024 | P5/A8 | 128 |  |
-| F2048 | 2048 | - | 256 |  |
+| SKU<sup>*</sup> | Capacity Units (CU) | Power BI SKU | Power BI v-cores |
+|--|--|--|--|
+| F2 | 2 | - | 0.25 |
+| F4 | 4 | - | 0.5 |
+| F8 | 8 | EM/A1 | 1 |
+| F16 | 16 | EM2/A2 | 2 |
+| F32 | 32 | EM3/A3 | 4 |
+| F64 | 64 | P1/A4 | 8 |
+| F128 | 128 | P2/A5 | 16 |
+| F256 | 256 | P3/A6 | 32 |
+| F512 | 512 | P4/A7 | 64 |
+| F1024 | 1024 | P5/A8 | 128 |
+| F2048 | 2048 | - | 256 |
 
 <sup>*</sup>SKUs that are smaller than F64 require a Pro license to consume Power BI content.
 
@@ -111,4 +111,4 @@ This table lists the main differences between the capabilities of the individual
 
 ## Next steps
 
-[Buy a Microsoft Fabric license](licenses-buy.md)
+[Buy a Microsoft Fabric subscription](buy-subscription.md)

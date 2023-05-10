@@ -27,10 +27,10 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 1. Select the Lakehouse environment containing the data source you want to use.
 
 1. Place your cursor over the desired file and select the **More** menu, then select **Properties**.
-    :::image type="content" source="media/get-data-onelake/lakehouse-file-menu.png" alt-text="Screenshot of a Lakehouse file's dropdown menu. The option titled Properties is highlighted.":::
+    :::image type="content" source="media/get-data-onelake/lakehouse-file-menu.png" alt-text="Screenshot of a Lakehouse file's dropdown menu. The option titled Properties is highlighted."  lightbox="media/get-data-onelake/lakehouse-file-menu.png":::
 
 1. Under **URL**, select the **Copy to clipboard** icon and save it somewhere to retrieve in a later step.
-    :::image type="content" source="media/get-data-onelake/lakehouse-file-properties.png" alt-text="Screenshot of a Lakehouse file's Properties pane. The copy icon to the right of the file's URL is highlighted.":::
+    :::image type="content" source="media/get-data-onelake/lakehouse-file-properties.png" alt-text="Screenshot of a Lakehouse file's Properties pane. The copy icon to the right of the file's URL is highlighted." lightbox="media/get-data-onelake/lakehouse-file-properties.png":::
 
 1. Return to your workspace and select a KQL database.
 
@@ -38,7 +38,7 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 
 1. Select **Get Data** > **OneLake**.
 
-    :::image type="content" source="media/get-data-onelake/get-data-onelake.png" alt-text="Screenshot of Home ribbon showing the dropdown menu of Get data. The option titled Onelake is highlighted.":::
+    :::image type="content" source="media/get-data-onelake/get-data-onelake.png" alt-text="Screenshot of Home ribbon showing the dropdown menu of Get data. The option titled Onelake is highlighted." lightbox="media/get-data-onelake/get-data-onelake.png" :::
 
 1. In **Table**, enter a name for your table.
 
@@ -69,7 +69,7 @@ For more information on data formats, see [Data formats supported for ingestion]
 
 1. The **Mapping name** field is automatically filled. Optionally, you can enter a new name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 
-    :::image type="content" source="media/get-data-onelake/onelake-schema.png" alt-text="Screenshot of Schema window showing the data configuration. ":::
+    :::image type="content" source="media/get-data-onelake/onelake-schema.png" alt-text="Screenshot of Schema window showing the data configuration." lightbox="media/get-data-onelake/onelake-schema.png":::
 
     >[!NOTE]
     >
@@ -85,7 +85,7 @@ The command viewer shows the commands for creating tables, mapping, and ingestin
 
 To open the command viewer, select the **v** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
 
-:::image type="content" source="media/get-data-onelake/onelake-command-viewer.png" alt-text="Screenshot of Command viewer pane showing mapping commands.":::
+:::image type="content" source="media/get-data-onelake/onelake-command-viewer.png" alt-text="Screenshot of Command viewer pane showing mapping commands." lightbox="media/get-data-onelake/onelake-command-viewer.png":::
 
 #### Partial data preview
 
@@ -93,7 +93,7 @@ The partial data preview is automatically inferred based on your data. You can c
 
 1. To add a new column, select the **+** button on the right-hand column under **Partial data preview**.
 
-    :::image type="content" source="media/get-data-onelake/onelake-partial-preview.png" alt-text="Screenshot of Partial data preview pane.":::
+    :::image type="content" source="media/get-data-onelake/onelake-partial-preview.png" alt-text="Screenshot of Partial data preview pane." lightbox="media/get-data-onelake/onelake-partial-preview.png":::
 
     * The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
     * The default column type is `string` but can be altered in the drop-down menu of the Column type field.
@@ -109,5 +109,5 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 ## Next steps
 
-* [Query data in the KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
 * [Visualize data in a Power BI report](create-powerbi-report.md)

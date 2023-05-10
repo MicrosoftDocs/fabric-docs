@@ -19,6 +19,9 @@ items:
     href: /azure/data-explorer/kusto/api/rest/streaming-ingest?context=/fabric/context/context&pivots=fabric
   - name: Query with T-SQL
     href: /azure/data-explorer/kusto/api/rest/t-sql?context=/fabric/context/context&pivots=fabric
+  - name: How to ingest data with the REST API
+    displayName: Kusto.Ingest
+    href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-rest?context=/fabric/context/context&pivots=fabric
 - name: .NET SDK
   items:
   - name: General
@@ -56,9 +59,6 @@ items:
     - name: Code samples
       displayName: Kusto.Ingest
       href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-examples?context=/fabric/context/context&pivots=fabric
-    - name: HowTo Data Ingestion with REST API
-      displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-rest?context=/fabric/context/context&pivots=fabric
 - name: Bicep and ARM template resource types
   href: /azure/templates/microsoft.kusto/allversions?context=/fabric/context/context&pivots=fabric
 - name: Resource provider operations
@@ -85,5 +85,5 @@ items:
     href: /azure/data-explorer/kusto/api/golang/kusto-golang-client-library?context=/fabric/context/context&pivots=fabric
 - name: PowerShell
   items:
-  - name: Calling Kusto from PowerShell
+  - name: Use Kusto .NET client libraries from PowerShell
     href: /azure/data-explorer/kusto/api/powershell/powershell?context=/fabric/context/context&pivots=fabric

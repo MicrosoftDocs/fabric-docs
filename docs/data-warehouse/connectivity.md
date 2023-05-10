@@ -12,9 +12,9 @@ ms.search.form: Warehouse connectivity # This article's title should not change.
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article provides a how-to on connecting to your [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 To get started, you must complete the following prerequisites:
 
@@ -25,7 +25,7 @@ To get started, you must complete the following prerequisites:
 
 The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to SSMS.
 
-### Get endpoint
+### Get connection string
 
 To retrieve the connection string, follow these steps:
 
@@ -91,8 +91,8 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
     
 ## Considerations and limitations
 
-- Multiple Active Result Sets (MARS) is unsupported for Fabric Warehouse. MARS is disabled by default, however if MultipleActiveResultSets is included in the connection string, it should be removed or set to false.
-- On connection to a Warehouse, you may receive an error that "The token size exceeded the maximum allowed payload size".  This may be due to having a large number of warehouses within the workspace or being a member of a large number of AAD groups. For most users, the error typically would not occur until approaching beyond 80 warehouses in the workspace. In event of this error, please work with the Workspace admin to clean up unused Warehouses and retry the connection, or contact support if the problem persists.
+- Multiple Active Result Sets (MARS) is unsupported for Fabric Warehouse. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
+- On connection to a warehouse, you may receive an error that "The token size exceeded the maximum allowed payload size".  This may be due to having a large number of warehouses within the workspace or being a member of a large number of Azure AD groups. For most users, the error typically would not occur until approaching beyond 80 warehouses in the workspace. In event of this error, please work with the Workspace admin to clean up unused Warehouses and retry the connection, or contact support if the problem persists.
 
 ## Next steps
 

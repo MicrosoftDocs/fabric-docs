@@ -12,13 +12,13 @@ ms.search.form: Warehouse design and development # This article's title should n
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
- 
 This article details key concepts for designing tables in [!INCLUDE [product-name](../includes/product-name.md)].
 
 In tables, data is logically organized in a row-and-column format. Each row represents a unique record, and each column represents a field in the record.
 
 - In [!INCLUDE[fabricdw](includes/fabric-dw.md)], tables are database objects that contain all the transactional data. 
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Determine table category
 
@@ -127,6 +127,6 @@ The following list shows some of the table features that aren't currently suppor
 - [Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehouse.md)
 - [Query a warehouse](query-warehouse.md)
 - [OneLake overview](../onelake/onelake-overview.md)
-- [Getting Workspace and OneLake path](get-workspace-onelake-path.md)
+- [Access Data warehouse files in One Lake](access-data-warehouse-files-in-one-lake.md)
 - [Create tables in [!INCLUDE[fabricdw](includes/fabric-dw.md)]](create-table.md)
 - [Transactions and modify tables](transactions.md)

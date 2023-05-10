@@ -25,7 +25,7 @@ Real-Time Analytics is a SaaS offering in the Microsoft Fabric offering. Azure D
 | **Security** | VNET | &cross; | Supports VNet Injection and Azure Private Link  |
 |  | CMK | &cross; | &check; |
 |  | RBAC | &check; | &check; |
-| **Business Continuity** | Availability Zones | &cross; | Optional |
+| **Business Continuity** | Availability Zones | Yes- dependent on regional zonal availability | Optional |
 | **SKU** | Compute options | SaaS platform | 22+ Azure VM SKUs to choose from  |
 | **Integrations** | Built-in ingestion pipelines | Event Hubs, Event Grid, [!INCLUDE [product-name](../includes/product-name.md)] Pipeline, [!INCLUDE [product-name](../includes/product-name.md)] Dataflow | Event Hubs, Event Grid, IoT Hub |
 |  | OneLake integration | Supports data copying to and from OneLake | &cross; |

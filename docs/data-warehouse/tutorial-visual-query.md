@@ -1,6 +1,6 @@
 ---
 title: Data warehouse tutorial - create a query with the visual query builder
-description: In this eighth tutorial step, learn how to create and save a specific query with the visual query builder.
+description: In this tutorial step, learn how to create and save a specific query with the visual query builder.
 ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
@@ -9,6 +9,8 @@ ms.date: 5/23/2023
 ---
 
 # Tutorial: Create a query with the visual query builder
+
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Create and save a query with the visual query builder in the [!INCLUDE [product-name](../includes/product-name.md)] portal.
 
@@ -89,11 +91,11 @@ Create and save a query with the visual query builder in the [!INCLUDE [product-
 
    :::image type="content" source="media\tutorial-visual-query\rename-visual-query.png" alt-text="Screenshot showing where to right select on the new visual query in the Explorer pane, and where to select Rename." lightbox="media\tutorial-visual-query\rename-visual-query.png":::
 
-1. Type **Sales Summary** to change the name of the query.
+1. Type `Sales Summary` to change the name of the query.
 
 1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Power BI report](tutorial-power-bi-report.md)
+> [Tutorial: Analyze data with a notebook](tutorial-analyze-data-notebook.md)

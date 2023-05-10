@@ -1,6 +1,6 @@
 ---
-title: Data warehouse tutorial - create a data warehouse
-description: In this second tutorial step, after you've created your workspace, learn how to create your first data warehouse.
+title: Data warehouse tutorial - create a new Synapse Data Warehouse in Microsoft Fabric
+description: In this second tutorial step, after you've created your workspace, learn how to create your first Synapse Data Warehouse in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
@@ -8,27 +8,25 @@ ms.topic: tutorial
 ms.date: 5/23/2023
 ---
 
-# Tutorial: Create a Microsoft Fabric data warehouse
+# Tutorial: Create a Synapse Data Warehouse in Microsoft Fabric
 
-Now that you have a workspace, you can create your first data warehouse.
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
+Now that you have a workspace, you can create your first [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Create your first data warehouse
+## Create your first Synapse Data Warehouse
 
-1. In the [Power BI service](https://powerbi.com/), select **Workspaces** in the left-hand menu.
+1. Select **Workspaces** in the navigation menu.
 
 1. Search for the workspace you created in [Tutorial: Create a Microsoft Fabric workspace](tutorial-create-workspace.md) by typing in the search textbox at the top and selecting your workspace to open it.
 
    :::image type="content" source="media\tutorial-create-warehouse\search-workspaces.png" alt-text="Screenshot of the Workspaces panel, showing where to search for and select a workspace.":::
 
-1. In the upper left corner, select **New** > **Show all** to display a full list of available items.
+1. Select the **+ New** button to display a full list of available items. From the list of objects to create, choose **Warehouse (Preview)** to create a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
-   :::image type="content" source="media\tutorial-create-warehouse\new-show-all.png" alt-text="Screenshot of the workspace screen, showing where to select Show all in the New drop-down menu.":::
-
-1. In the **Data warehouse** section, select **Warehouse**.
-
-   :::image type="content" source="media\tutorial-create-warehouse\select-warehouse.png" alt-text="Screenshot of the data warehouse section, showing where to select Warehouse.":::
+   :::image type="content" source="media\tutorial-create-warehouse\new-show-all.png" alt-text="Screenshot of the workspace screen, showing where to select Warehouse (Preview) in the New drop-down menu.":::
 
 1. On the **New warehouse** dialog, enter `WideWorldImporters` as the name.
 

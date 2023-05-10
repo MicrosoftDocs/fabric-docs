@@ -12,9 +12,9 @@ ms.search.form: Query editor # This article's title should not change. If so, co
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the [Visual query editor](visual-query-editor.md) and the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal. This article describes how to use the SQL query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## SQL query editor in the Fabric portal
 
@@ -56,11 +56,11 @@ The status bar indicates the query status, duration of the run and number of row
 
 - The **Download Excel file** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to view the results in Excel.
 
-   :::image type="content" source="media\sql-query-editor\download-excel-file.png" alt-text="Screenshot showing how to use Download Excel file menu" lightbox="media\sql-query-editor\download-excel-file.png":::
+   :::image type="content" source="media\sql-query-editor\download-excel-file-query.png" alt-text="Screenshot showing how to use Download Excel file menu" lightbox="media\sql-query-editor\download-excel-file-query.png":::
 
 - **Visualize results** allows you to create reports from your query results within the SQL query editor.
 
-   :::image type="content" source="media\sql-query-editor\visualize-results.png" alt-text="Screenshot showing how to use Visualize results menu" lightbox="media\sql-query-editor\visualize-results.png":::
+   :::image type="content" source="media\sql-query-editor\visualize-results-query.png" alt-text="Screenshot showing how to use Visualize results menu" lightbox="media\sql-query-editor\visualize-results-query.png":::
 
    As you work on your SQL query, the queries are automatically saved every few seconds. A "saving" indicator appears in your query tab at the bottom to indicate that your query is being saved.
 

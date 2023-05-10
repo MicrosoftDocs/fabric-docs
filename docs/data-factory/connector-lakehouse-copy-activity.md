@@ -77,10 +77,10 @@ The following properties are **required**:
 
         :::image type="content" source="./media/connector-lakehouse/list-of-files.png" alt-text="Screenshot showing path to file list." lightbox="./media/connector-lakehouse/list-of-files.png":::
 
-    - **Recursively**: Indicates whether the data is read recursively from the subfolders or only from the specified folder. If enabled, all files in the input folder and its subfolders are processed recursively. This property doesn’t apply when you configure your file path type as **List of files**.
+    - **Recursively**: Indicates whether the data is read recursively from the subfolders or only from the specified folder. If enabled, all files in the input folder and its subfolders are processed recursively. This property doesn't apply when you configure your file path type as **List of files**.
     - **File format**: Select your file format from the drop-down list. Select the **Settings** button to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
     - Under **Advanced**, you can specify the following fields:
-      - **Filter by last modified**: Files are filtered based on the last modified dates. This property doesn’t apply when you configure your file path type as **List of files**.
+      - **Filter by last modified**: Files are filtered based on the last modified dates. This property doesn't apply when you configure your file path type as **List of files**.
         - **Start time**: The files are selected if their last modified time is greater than or equal to the configured time.
         - **End time**: The files are selected if their last modified time is less than the configured time.
       - **Enable partition discovery**: For files that are partitioned, specify whether to parse the partitions from the file path and add them as extra source columns.
@@ -156,19 +156,19 @@ The following tables contain more information about a copy activity in Lakehouse
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type** |The section to select your workspace data store type.|**Lakehouse**|Yes|type|
 |**Lakehouse** | The Lakehouse that you use as source.|\<your Lakehouse>|Yes |workspaceId<br>artifactId|
-|**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |No|rootFolder:<br>Table or Files|
+|**Root folder** |The type of the root folder.|* **Tables**<br>* **Files** |No|rootFolder:<br>Table or Files|
 |**Table name** |The name of the table to read data.|\<table name> |Yes when you select **Tables** in **Root folder** |table <br>*(under `typeProperties` -> `source` -> `typeProperties`)*|
 |**Timestamp** | The timestamp to query an older snapshot.| \<timestamp>|No |timestampAsOf |
 |**Version** |The version to query an older snapshot.| \<version>|No |versionAsOf|
-|**Additional columns** | Additional data columns to store source files' relative path or static value. Expression is supported for the latter.| • Name<br>• Value|No |additionalColumns:<br>• name<br>• value |
-|**File path type** |The type of the file path that you use. |• **File path**<br>• **Wildcard file path**<br> • **List of files** |Yes|/ |
-|**File path** |Copy from the path to a folder/file under source data store. Apply when choosing **File path** in **File path type**.| \<file path>|Yes when choosing **File path**|• folderPath<br>• fileName |
-|**Wildcard paths** |The folder path with wildcard characters under the source data store configured to filter source folders. Apply when choosing **Wildcard file path** in **File path type**.| \<wildcard paths> |Yes when choosing **Wildcard file path**|• wildcardFolderPath<br>• wildcardFileName |
+|**Additional columns** | Additional data columns to store source files' relative path or static value. Expression is supported for the latter.| * Name<br>* Value|No |additionalColumns:<br>* name<br>* value |
+|**File path type** |The type of the file path that you use. |* **File path**<br>* **Wildcard file path**<br> * **List of files** |Yes|/ |
+|**File path** |Copy from the path to a folder/file under source data store. Apply when choosing **File path** in **File path type**.| \<file path>|Yes when choosing **File path**|* folderPath<br>* fileName |
+|**Wildcard paths** |The folder path with wildcard characters under the source data store configured to filter source folders. Apply when choosing **Wildcard file path** in **File path type**.| \<wildcard paths> |Yes when choosing **Wildcard file path**|* wildcardFolderPath<br>* wildcardFileName |
 |**Folder path** |Points to a folder that includes files you want to copy. Apply when choosing **List of files** in **File path type**.|\<folder path> |No|folderPath |
 |**Path to file list** |Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured. Apply when choosing **List of files** in **File path type**.|\<path to file list> |No| fileListPath|
 |**Recursively** |Process all files in the input folder and its subfolders recursively or just the ones in the selected folder. This setting is disabled when a single file is selected.| select or unselect |No | recursive:<br>true or false|
 |**File format**|The format of the file that you use.|\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextReadSettings|
-|**Filter by last modified**|The files with last modified time in the range [Start time, End time) will be filtered for further processing.<br><br> The time will be applied to UTC time zone in the format of 'yyyy-mm-ddThh:mm:ss.fffZ'.<br><br>This property can be skipped which means no file attribute filter will be applied. This property doesn’t apply when you configure your file path type as **List of files**.|• **Start time**<br>• **End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
+|**Filter by last modified**|The files with last modified time in the range [Start time, End time) will be filtered for further processing.<br><br> The time will be applied to UTC time zone in the format of 'yyyy-mm-ddThh:mm:ss.fffZ'.<br><br>This property can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as **List of files**.|* **Start time**<br>* **End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
 |**Enable partition discovery**|Whether to parse the partitions from the file path and add them as extra source columns.| Selected or unselected |No| enablePartitionDiscovery: <br> true or false (default)|
 |**Partition root path**|The absolute partition root path to read partitioned folders as data columns.| \<your partition root path\> |No| partitionRootPath|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. A value is needed only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
@@ -180,16 +180,16 @@ The following tables contain more information about a copy activity in Lakehouse
 |**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type** |The section to select your workspace data store type.|**Lakehouse**|Yes|type|
 |**Lakehouse** | The Lakehouse that you use as destination.|\<your Lakehouse>|Yes |workspaceId<br>artifactId|
-|**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |Yes | rootFolder:<br>Table or Files|
-|**Table name** |The name of the table to which you want to write data. |\<your table name> |Yes when you select **Tables** in **Root folder** | table <br>*(under `typeProperties` -> `sink` -> `typeProperties`)*||
+|**Root folder** |The type of the root folder.|* **Tables**<br>* **Files** |Yes | rootFolder:<br>Table or Files|
+|**Table name** |The name of the table to which you want to write data. |\<your table name> |Yes when you select **Tables** in **Root folder** | table <br>*(under `typeProperties` -> `sink` -> `typeProperties`)*|
 |**Max rows per file** |When writing data into a folder, you can choose to write to multiple files and specify the max rows per file.|\<max rows per flie> |No |maxRowsPerFile|
-|**Table action**| Append new values to an existing table or overwrite the existing data and schema in the table using the new values.|• **Append**<br>• **Overwrite**|No|tableActionOption:<br>Append or Overwrite|
+|**Table action**| Append new values to an existing table or overwrite the existing data and schema in the table using the new values.|* **Append**<br>* **Overwrite**|No|tableActionOption:<br>Append or Overwrite|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
-|**File path**|Write data to the path to a folder/file under destination data store.|\<file path>|No|• folderPath<br>• fileName|
+|**File path**|Write data to the path to a folder/file under destination data store.|\<file path>|No|* folderPath<br>* fileName|
 |**File format**|The format of the file that you use. |\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextWriteSettings|
-|**Copy behavior** | The copy behavior defined when the source is files from a file-based data store.|• **Add dynamic content**<br>• **None**<br>• **Flatten hierarchy**<br>• **Preserve hierarchy**|No |copyBehavior:<br><br><br>• FlattenHierarchy<br>• PreserveHierarchy|
+|**Copy behavior** | The copy behavior defined when the source is files from a file-based data store.|* **Add dynamic content**<br>* **None**<br>* **Flatten hierarchy**<br>* **Preserve hierarchy**|No |copyBehavior:<br><br><br>* FlattenHierarchy<br>* PreserveHierarchy|
 |**Block size (MB)** |The block size in MB used to write data to Lakehouse. Allowed value is between 4 MB and 100 MB.|\<block size\>|No|blockSizeInMB|
-|**Metadata** |The custom metadata set when copying to a destination.|• `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
+|**Metadata** |The custom metadata set when copying to a destination.|* `$$LASTMODIFIED`<br>* Expression<br>* Static value|No |metadata|
 
 ## Next steps
 
