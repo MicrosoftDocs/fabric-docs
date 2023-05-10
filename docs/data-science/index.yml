@@ -34,7 +34,7 @@ landingContent:
           - text: Introduction to Data science tutorials
             url: tutorial-data-science-introduction.md
           - text: Create and use notebooks
-            url: ../data-engineering/how-to-use-notebook.md
+            url: ../data-engineering/how-to-use-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
           - text: Machine learning models
             url: machine-learning-model.md 
 
