@@ -8,7 +8,7 @@ items:
 - name: Get started
   items:
   - name: Buy a Microsoft Fabric license
-    href: licenses-buy.md    
+    href: buy-subscription.md    
 - name: Capacity operations
   items:
   - name: Pause and resume your capacity

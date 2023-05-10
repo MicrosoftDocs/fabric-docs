@@ -26,5 +26,5 @@ To find your Fabric home region, follow these steps:
 
 ## Next steps
 
-* [Buy a Microsoft Fabric license](../enterprise/licenses-buy.md)
+* [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md)
 * [Region availability](./region-availability.md)

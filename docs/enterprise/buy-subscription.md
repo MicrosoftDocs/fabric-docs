@@ -1,6 +1,6 @@
 ---
-title: Buy a Microsoft Fabric license
-description: Learn how to buy a Microsoft Fabric license.
+title: Buy a Microsoft Fabric subscription
+description: Learn how to buy a Microsoft Fabric subscription.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
@@ -8,7 +8,7 @@ ms.service: azure
 ms.date: 05/23/2023
 ---
 
-# Buy a Microsoft Fabric license
+# Buy a Microsoft Fabric subscription
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

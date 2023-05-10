@@ -40,7 +40,7 @@ To enable Microsoft Fabric, you need to have one of the following admin roles:
 
 ## Enable for your tenant
 
-When you enable Microsoft Fabric using the tenant setting, users can create Fabric items in that [tenant](../enterprise/licenses.md#tenant). In most cases your organization has one tenant, so enabling Microsoft Fabric on the tenant, enables it for the entire organization. In organizations that have several tenants, if you want to enable Microsoft Fabric  for the entire organization, you need to enable it in each tenant.
+When you enable Microsoft Fabric using the tenant setting, users can create Fabric items in that [tenant](../enterprise/licenses.md#tenant). In most cases your organization has one tenant, so enabling Microsoft Fabric on the tenant, enables it for the entire organization. In organizations that have several tenants, if you want to enable Microsoft Fabric for the entire organization, you need to enable it in each tenant. Depending on the configuration you select, Microsoft Fabric becomes available for everyone in the tenant, or to a selected group of users.
 
 >[!Note]
 >You, or other admins, can override the the Microsoft Fabric setting at the [capacity level](#enable-for-a-capacity).
@@ -95,13 +95,13 @@ To disable Microsoft Fabric, you can turn off the *Microsoft Fabric (Preview)* a
 
 ## Considerations
 
-When Microsoft Fabric is enabled, users that don't have access might experience the following:
+In some cases, users that don't have Microsoft Fabric enabled will be able to view Microsoft Fabric items and icons.
 
-* Users without access may see Microsoft Fabric UI elements. Such  can happen when a user that doesn't have access views content in a capacity were Microsoft Fabric is enabled.
+Users that don't have Microsoft Fabric enabled, can:
 
-* When security groups are used to give access to specific users. Users without access, including admins without access, might not see Microsoft Fabric icons.
+* View Microsoft Fabric items created by other users in the same workspace, as long as they have at least read-only access to that workspace.
 
-* When security groups are used to give access to specific users. Users without access, including admins without access, might get view permissions for Microsoft Fabric items.
+* View Microsoft Fabric icons in capacities where other users have Microsoft Fabric enabled, as long as they have at least read-only access to that capacity.
 
 ## Next steps
 
