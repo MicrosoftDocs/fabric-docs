@@ -9,7 +9,7 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Monitoring status and performance of an evenstream
+# Monitoring status and performance of an eventstream
 
 Microsoft Fabric event streams allow you to easily monitor streaming event data, ingestion status, and its performance. This article explains how to monitor the eventstream status, check logs, errors, and data insights with metrics. 
 
