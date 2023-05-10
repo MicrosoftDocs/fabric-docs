@@ -181,7 +181,7 @@ The following tables contain more information about a copy activity in Lakehouse
 |**Workspace data store type** |The section to select your workspace data store type.|**Lakehouse**|Yes|type|
 |**Lakehouse** | The Lakehouse that you use as destination.|\<your Lakehouse>|Yes |workspaceId<br>artifactId|
 |**Root folder** |The type of the root folder.|* **Tables**<br>* **Files** |Yes | rootFolder:<br>Table or Files|
-|**Table name** |The name of the table to which you want to write data. |\<your table name> |Yes when you select **Tables** in **Root folder** | table <br>*(under `typeProperties` -> `sink` -> `typeProperties`)*||
+|**Table name** |The name of the table to which you want to write data. |\<your table name> |Yes when you select **Tables** in **Root folder** | table <br>*(under `typeProperties` -> `sink` -> `typeProperties`)*|
 |**Max rows per file** |When writing data into a folder, you can choose to write to multiple files and specify the max rows per file.|\<max rows per flie> |No |maxRowsPerFile|
 |**Table action**| Append new values to an existing table or overwrite the existing data and schema in the table using the new values.|* **Append**<br>* **Overwrite**|No|tableActionOption:<br>Append or Overwrite|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
