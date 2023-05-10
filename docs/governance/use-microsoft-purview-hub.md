@@ -10,7 +10,7 @@ ms.date: 3/31/2023
 
 # The Microsoft Purview hub in Microsoft Fabric
 
-Microsoft Purview hub is your gateway to Microsoft Purview's powerful governance and compliance capabilities,such as Data Catalog, Information Protection, Data Loss Prevention, and Audit. With the deep integration of Purview in Fabric, you can discover how to use Purview's capabilities to get insights about your Fabric data. If you are an administrator, the hub also provides detailed insights about your tenant's entire Fabric data estate.
+Microsoft Purview hub is your gateway to Microsoft Purview's powerful governance and compliance capabilities, such as Data Catalog, Information Protection, Data Loss Prevention, and Audit. With the deep integration of Purview in Fabric, you can discover how to use Purview's capabilities to get insights about your Fabric data. If you're an administrator, the hub also provides detailed insights about your tenant's entire Fabric data estate.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
@@ -25,11 +25,11 @@ To access the hub, open the Fabric settings pane and choose **Microsoft Purview 
 
 :::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings.":::
 
-## Get insights about your Microsoft Fabic data
+## Get insights about your Microsoft Fabric data
 
-Use the Micrsoft Fabric data section of the hub to get insights about your Fabric data. It contains a report that helps you analyze the data.
+Use the Microsoft Fabric data section of the hub to get insights about your Fabric data. It contains a report that helps you analyze the data.
 
-* The items tabs hows you insights about the state of item endorsement.
+* The items tabs shows you insights about the state of item endorsement.
 * The sensitivity tab shows you insights about sensitivity labeling.
 
 The visuals in the reports are interactive interoperable, and you can select items and drill down to get deeper insights into the endorsement and sensitivity label coverage of your data. For instance, you can filter on a workspace to see what items are in the workspace and how many of them are certified or promoted, or you can identify workspaces that have the greatest number of items with no sensitivity label so that you could reach out to the data owners and ask them to take action.
