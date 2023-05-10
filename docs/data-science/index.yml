@@ -99,14 +99,14 @@ landingContent:
             url: synapseml-first-model.md 
       - linkListType: how-to-guide
         links:
-          - text: How to use Congnitive Services with SynapseML
+          - text: Use Congnitive Services with SynapseML
             url: overview-cognitive-services.md
-          - text: Perform deep learning with ONNX and SynapseML
+          - text: Deep learning with ONNX and SynapseML
             url: onnx-overview.md
           - text: Perform multivariate anomaly detection with SynapseML
             url: isolation-forest-multivariate-anomaly-detection.md
           - text: Tune hyperperameters with SynapseML
-            name: hyperparameter-tuning-fighting-breast-cancer.md
+            url: hyperparameter-tuning-fighting-breast-cancer.md
 
 # Card 
   - title: Using R
