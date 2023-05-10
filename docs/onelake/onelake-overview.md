@@ -13,7 +13,6 @@ ms.date: 05/23/2023
 OneLake is a single, unified, logical data lake for the whole organization. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. OneLake brings customers:
 - **One data lake** for the entire organization
 - **One copy of data** for use with multiple analytical engines
-- **One security model** living natively with the data in the lake (coming soon)
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -68,16 +67,6 @@ Business users can build Power BI reports directly on top of OneLake using the n
 
 :::image type="content" source="media\onelake-overview\use-same-copy-of-data-v-3.png" alt-text="Diagram showing how multiple items and engines use the same copy of data." lightbox="media\onelake-overview\use-same-copy-of-data-v-3.png":::
 *Example diagram showing loading data using Spark, querying using T-SQL and viewing the data in a Power BI report.*
-
-## One security model
-
-OneLake brings flexible security to the data lake with multi-layered access controls. Grant access to data directly in OneLake for use in machine learning scenarios, or limit access to specific query engines to keep sensitive data secure.
-OneLake supports the following security modes:
-
-- Access to a specific subsection of the lake, such as a workspace or lakehouse.
-- Access to a specific query engine, but no direct OneLake access.
-
-For more information on security in OneLake, see [Security](onelake-security.md).
 
 ## Next steps
 
