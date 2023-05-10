@@ -1,6 +1,6 @@
 ---
 title: Data warehouse tutorial - create a query with the visual query builder
-description: In this eighth tutorial step, learn how to create and save a specific query with the visual query builder.
+description: In this tutorial step, learn how to create and save a specific query with the visual query builder.
 ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
@@ -98,4 +98,4 @@ Create and save a query with the visual query builder in the [!INCLUDE [product-
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create a Power BI report](tutorial-power-bi-report.md)
+> [Tutorial: Analyze data with a notebook](tutorial-analyze-data-notebook.md)
