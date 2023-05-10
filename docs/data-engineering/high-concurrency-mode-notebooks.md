@@ -94,7 +94,7 @@ Monitoring and debugging are often a non-trivial task when you are running multi
 
 ## Next steps
 
-In this document, you get a basic understanding of a session sharing through high concurrency mode in notebooks. Advance to the next articles to learn how to create and get started with your own Data Engineering workloads using Lakehouse and Notebooks:
+In this document, you get a basic understanding of a session sharing through high concurrency mode in notebooks. Advance to the next articles to learn how to create and get started with your own Data Engineering experiences using Lakehouse and Notebooks:
 
 - To get started with Lakehouse, see [Creating a Lakehouse](create-lakehouse.md).
 - To get started with Notebooks, see [How to use a Notebook](how-to-use-notebook.md)

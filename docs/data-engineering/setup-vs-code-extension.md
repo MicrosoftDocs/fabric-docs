@@ -1,7 +1,7 @@
 ---
 title: VS Code extension overview
-description: VS Code extension for Synapse supports pro-dev authoring experience of Notebook and Spark Job definition together with the experience of lakehouse exploring.
-ms.reviewer: snehagunda
+description: Explore lakehouses, and author Fabric notebooks and Spark job definitions with the Synapse VS Code extension. Learn about the prerequisites and installation.
+ms.reviewer: sngun
 ms.author: qixwang
 author: qixwang
 ms.topic: overview
@@ -9,62 +9,79 @@ ms.date: 05/08/2023
 ms.search.form: VSCodeExtension
 ---
 
-# What is Synapse VS Code extension?
+# What is the Synapse Visual Studio Code extension?
 
-Synapse VS Code extension supports pro-dev authoring experience of notebook and Spark Job Definition together with the experience of lakehouse exploring in [!INCLUDE [product-name](../includes/product-name.md)]. The purpose of the doc is to give you the overview of the extension and how to get started with the needed prerequisites.
-
-Visual Studio Code is a one of the most popular lightweight source code editors, which runs on your desktop and is available for Windows, macOS and Linux. By installing the Synapse VS Code extension, you can author and run/debug your notebook and Spark Job Definition locally in VS Code, you can also post the code to the remote Spark compute in [!INCLUDE [product-name](../includes/product-name.md)] workspace to run/debug. The extension also provides the experience of lakehouse exploring, you can browse the data in your lakehouse including the tables and raw files
+The Synapse VS Code extension supports a pro-developer experience for exploring Microsoft Fabric lakehouses, and authoring Fabric notebooks and Spark job definitions. Learn more about the extension, including how to get started with the necessary prerequisites.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
+Visual Studio Code is a one of the most popular lightweight source code editors; it runs on your desktop and is available for Windows, macOS, and Linux. By installing the Synapse VS Code extension, you can author, run, and debug your notebook and Spark job definition locally in VS Code. You can also post the code to the remote Spark compute in your Fabric workspace to run or debug. The extension also allows you to browse your lakehouse data, including tables and raw files, in VS Code.
+
 ## Prerequisites
-Below software is required to use this extension
-1. [Java 1.8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
-2. [Conda](https://docs.conda.io/latest/miniconda.html)
-3. [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
- 
-After all this software is installed, there are certain steps needed to update the operating system properties
 
-**Windows** 
-1. add JAVA_HOME to the environment variables and point it to the directory where java 1.8 in installed
-2. add both %JAVA_HOME%/bin and Contain subfolder of the Conda installation to the system path directory
+Prerequisites for the Synapse VS Code extension:
 
-**macOS**  
-1. run the conda.sh in the terminal. Open the terminal window, change the directory to the folder where conda is installed, the change to the sub-directory: etc/profile.d, there should be a file named conda.sh there, then execute: Source conda.sh
-2. in the same terminal windows, run: sudo conda init
-3. type in Java –-version, the version should be Java 1.8 
+- [Java 1.8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
+- [Conda](https://docs.conda.io/latest/miniconda.html)
+- [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
-## Install the extension and prepare the environment
-Search *Synapse VS Code* in the VS Code extension marketplace, then install the extension. The extension is still under preview, so you need to select the "pre-release" version to install.
+After you have installed the required software, you must update the operating system properties.
 
-It is suggested that to restart the VS Code once the extension is installed. After successfully installed, the icon of the extension will be listed at the VS Code activity bar:
+### Windows
+
+1. Add **JAVA_HOME** to the environment variables and point it to the directory where java 1.8 is installed.
+
+2. Add both **%JAVA_HOME%/bin** and the **Contain** subfolder of the Conda installation to the system path directory.
+
+### macOS
+
+Run the **conda.sh** in the terminal:
+
+1. Open the terminal window, change the directory to the folder where conda is installed, then change to the subdirectory **etc/profile.d**. The subdirectory should contain a file named conda.sh.
+
+1. Execute `Source conda.sh`.
+
+1. In the same terminal window, run `sudo conda init`.
+
+1. Type in `Java --version`. The version should be Java 1.8.
+
+## Install the extension and prepare your environment
+
+1. Search for **Synapse VS Code** in the VS Code extension marketplace and install the extension. (The extension is still under preview, so you need to select the prerelease version to install.)
+
+1. After the extension installation is complete, restart VS Code. The icon for the extension is listed at the VS Code activity bar.
 
 ### Local working directory
 
-To develop notebook, you need to have a local copy of the notebook content for the further edition. The local working directory of the extension serves as the local root folder of all downloaded notebooks from different workspaces. By invoking the command of **Synapse:Set Local Work Folder**, you could specify a folder as the local working directory for this extension.
- 
-To validate the setup, you could open the extension settings and check the value there.
- :::image type="content" source="media\vscode\local-working-dir.png" alt-text="Screenshot showing local working dir.":::
+To edit a notebook, you must have a local copy of the notebook content. The local working directory of the extension serves as the local root folder for all downloaded notebooks, even notebooks from different workspaces. By invoking the command `Synapse:Set Local Work Folder`, you can specify a folder as the local working directory for the extension.
 
-### Sign in your account
+To validate the setup, open the extension settings and check the details there:
 
-The **Synapse:Sign in** command is provided to sign-in. Once this command is invoked from the VS Code command palette, a separated browser sign in page will be promoted and ask for the username and password.
+ :::image type="content" source="media\vscode\local-working-dir.png" alt-text="Screenshot of the Settings screen, showing the selected local working directory.":::
 
-After successfully sing in, the username will be displayed at the status bar to indicate the state of sign in.
-    :::image type="content" source="media\vscode\signin-status.png" alt-text="Screenshot showing current sign in status.":::
+### Sign in and out of your account
 
-The command of **Synapse: Sign off** is used to sign out current user.
+1. From the VS Code command palette, enter the `Synapse:Sign in` command to sign in to the extension. A separate browser sign-in page appears.
 
-### Select workspace to work with
-To select [!INCLUDE [product-name](../includes/product-name.md)] workspace, you need to have a [!INCLUDE [product-name](../includes/product-name.md)] workspace created. If you don't have one, you can create one in the [!INCLUDE [product-name](../includes/product-name.md)] portal.
+1. Enter your username and password.
 
-Once you have a workspace, you can select it by clicking the **select workspace** button. This will list all the workspaces that you have access to, and you can select one from the list.
+1. After you successfully sign in, your username will be displayed in the VS Code status bar to indicate that you're signed in.
 
-:::image type="content" source="media\vscode\select-workspace.png" alt-text="Screenshot showing select workspace button.":::
+    :::image type="content" source="media\vscode\signin-status.png" alt-text="Screenshot of the VS Code status bar, showing where to find your sign-in status.":::
+
+1. To sign out of the extension, enter the command `Synapse: Sign off`.
+
+### Choose a workspace to work with
+
+To select a Fabric workspace, you must have a workspace created. If you don't have one, you can create one in the Fabric portal. For more information, see [Create a workspace](../get-started/create-workspaces.md).
+
+Once you have a workspace, choose it by selecting the **Select Workspace** option. A list appears of all workspaces that you have access to; select the one you want from the list.
+
+:::image type="content" source="media\vscode\select-workspace.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Select Workspace option.":::
 
 ## Next steps
 
-In this overview, you get a basic understanding of how to install and set up the Synapse VS Code extension. Advance to the next article to learn how to develop your notebook and Spark Job Definition locally in VS Code.
+In this overview, you get a basic understanding of how to install and set up the Synapse VS Code extension. The next articles explain how to develop your notebooks and Spark job definitions locally in VS Code.
 
-- To get started with notebook, see [Develop, execute and debug notebook in VS Code](author-notebook-with-vs-code.md).
-- To get started with Spark Job Definition, see [Develop, execute and debug Spark Job Definition in VS Code](author-sjd-with-vs-code.md).
+- To get started with notebooks, see [Microsoft Fabric notebook experience in VS Code](author-notebook-with-vs-code.md).
+- To get started with Spark job definitions, see [Spark job definition experience in VS Code](author-sjd-with-vs-code.md).

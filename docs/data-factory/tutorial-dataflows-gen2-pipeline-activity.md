@@ -46,7 +46,7 @@ A dataflow is a reusable data transformation that can be used in a pipeline. In 
 
 1. Switch to the **Data Factory** experience.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/experience-switcher.png" alt-text="Screenshot of the Data Factory experience.":::
+   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot of the Data Factory experience.":::
 
 1. Go to your Fabric enabled workspace.
 

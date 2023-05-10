@@ -1,5 +1,5 @@
 ---
-title: Create a shortcut to access data in OneLake in Real-Time Analtyics
+title: Create a shortcut to access data in OneLake in Real-Time Analytics
 description: Learn how to create a OneLake shortcut to query data from OneLake in your KQL database.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -19,13 +19,13 @@ In this article, you learn how to create a OneLake shortcut to query data from O
 > [!NOTE]
 > Use this shortcut when you want to infrequently run queries on historical data without partitioning or indexing the data. If you want to run queries frequently and accelerate performance, import the data directly from OneLake. For direct import, see [Get data from OneLake](get-data-onelake.md).
 
-To access the data in your KQL Database in other [!INCLUDE [product-name](../includes/product-name.md)] experiences, see [One logical copy](onelake-mirroring.md).
+To access the data in your KQL database in other [!INCLUDE [product-name](../includes/product-name.md)] experiences, see [One logical copy](onelake-mirroring.md).
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md)
-* Lakehouse with data
+* A [Lakehouse](../data-engineering/create-lakehouse.md) with data
 
 ## Create shortcut
 
@@ -40,7 +40,7 @@ To access the data in your KQL Database in other [!INCLUDE [product-name](../inc
 
 1. Select the data source you want to connect to, and then select **Next**.
 
-    :::image type="content" source="media/onelake-shortcut/data-source.png" alt-text="Screenshot of the Select a data source type window showing the available data sources to use with the shortcut. The Next button is highlighted.":::
+    :::image type="content" source="media/onelake-shortcut/data-source.png" alt-text="Screenshot of the Select a data source type window showing the available data sources to use with the shortcut. The Next button is highlighted."  lightbox="media/onelake-shortcut/data-source.png":::
 
 1. Expand **Files**, and select a specific subfolder to connect to, then select **Create** to create your connection.
 
@@ -66,9 +66,9 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 1. Replace the table name placeholder with `external_table('`*Shortcut name*`')`.
 1. Select **Run** or press **Shift+ Enter** on a selected query to run it.
 
-:::image type="content" source="media/onelake-shortcut/query-shortcut.png" alt-text="Screenshot of the Check your data window showing the results of a sample query."  lightbox="media/onelake-shortcut/query-shortcut.png":::
+:::image type="content" source="media/onelake-shortcut/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of a sample query."  lightbox="media/onelake-shortcut/query-shortcut.png":::
 
 ## Next steps
 
-* [Query data in a KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
 * [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context)

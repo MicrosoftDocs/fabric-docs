@@ -11,9 +11,9 @@ ms.date: 05/23/2023
 
 # How-to: Create a OneLake shortcut
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this how-to guide, you'll learn how to create a OneLake shortcut inside a Fabric Lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisite
 

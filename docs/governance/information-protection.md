@@ -94,4 +94,4 @@ To see the supported export paths for Power BI items, see [Supported export path
 
 ## Next steps
 
-* [Admin overview](../admin/admin-overview.md)
+* [Admin overview](../admin/microsoft-fabric-admin.md)
