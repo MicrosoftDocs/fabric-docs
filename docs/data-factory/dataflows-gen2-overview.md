@@ -18,13 +18,11 @@ Dataflow Gen2 is the new generation of dataflows. The new generation of dataflow
 | Feature |   Dataflow Gen2 |  Dataflow Gen1 |
 |--------|---|---|
 | Author dataflows with Power Query  | ✓ | ✓ |
-| Shorter E2E authoring flow | ✓ |  |
-| Auto-Save and Async Publishing dataflows | ✓ |  |
+| Shorter authoring flow | ✓ |  |
+| Auto-Save and background publishing | ✓ |  |
 | Output destinations  | ✓  |   |
 | Improved monitoring and refresh history       | ✓ |   |
 | Integration with data pipelines     | ✓  |   |
-| Save as draft       | ✓ |   |
-| Fast copy       | ✓  |   |
 | High-scale compute     | ✓ |   |
 | Get Data via Dataflows Connector | ✓ | ✓ |
 | Direct Query via Dataflows Connector |  | ✓ |
@@ -76,19 +74,9 @@ A pipeline can contain one or more activities that are connected by dependencies
 
 With Dataflow Gen2, we introduce a worry free experience by removing the need for publishing to save your changes. With save as draft functionality, we store a draft version of your dataflow every time you make a change. Did you lose internet connectivity? Did you accidentally close your browser? No worries; we got your back. Once you return to your dataflow, your recent changes will still be there and you can continue where you left off. This is a seamless experience and doesn't require any input from you. This allows you to work on your dataflow without having to worry about losing your changes or having to fix all the query errors before you can save your changes. Learn more about this feature [here](./dataflows-gen2-save-draft.md).
 
-### Fast copy
-
-Fast copy allows you to apply the speed and agility of pipeline copy activity with the simple use of dataflows. We automatically detect if the data size is significant enough to use a data pipeline copy activity.
-
 ### High scale compute
 
 Similar to Dataflows Gen1, Dataflow Gen2 also features enhanced compute engine to improve performance of both transformations of referenced queries and get data scenarios. To achieve this, Dataflows Gen2 create both Lakehouse and Warehouse artifacts in your workspace, and leverage them to store and access data to improve performance for all your dataflows.
-
-## Architecture changes from Gen1 to Gen2
-
-The architecture of Dataflow Gen2 is different from Gen1. This section provides you with an overview of the architecture changes. These benefits provide you with a better experience and more flexibility.
-
-A simplified version of the core architecture of Power BI dataflows exists in the following components:
 
 ## Try out Gen2 Dataflows by re-using your queries from Dataflows Gen1
 
