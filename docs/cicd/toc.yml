@@ -41,7 +41,7 @@ items:
       href: git-integration/partial-update.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
-- name: Best practices
+- name: Lifecycle management best practices
   href: best-practices-cicd.md
 - name: Troubleshooting
   href: troubleshoot-cicd.yml
