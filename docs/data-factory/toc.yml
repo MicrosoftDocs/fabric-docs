@@ -6,7 +6,7 @@
     - name: What is Data Factory?
       href: data-factory-overview.md
     - name: Compare ADF and Data Factory in Fabric
-      href: compare-fabric-datafactory-and-adf.md
+      href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Compare Dataflows Gen1 with Gen2
       href: dataflows-gen2-overview.md
   - name: Get started
