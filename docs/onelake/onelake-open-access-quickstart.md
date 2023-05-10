@@ -26,11 +26,13 @@ In this guide, you will:
 ## Steps
 
 1. Navigate to your lakehouse in the Power BI service and select **Get Data** and then select **New data pipeline**.
+
     :::image type="content" source="media\onelake-open-access-quickstart\onelake-new-pipeline.png" alt-text="Screenshot showing how to navigate to new data pipeline option from within the UI." lightbox="media\onelake-open-access-quickstart\onelake-new-pipeline.png":::
 
 1. In the New Pipeline prompt, enter a name for the new pipeline and then select **Create**.
 
 1. For this exercise, choose NYC Taxi - Green sample data as the data source. Select **Next** after the sample dataset has been selected.
+
     :::image type="content" source="media\onelake-open-access-quickstart\onelake-nyc-taxi.png" alt-text="Screenshot showing how to select NYC sample dataset." lightbox="media\onelake-open-access-quickstart\onelake-nyc-taxi.png":::
 
 1. Select **Next** again at the preview screen.
