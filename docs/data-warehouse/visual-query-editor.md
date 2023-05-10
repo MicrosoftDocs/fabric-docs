@@ -32,7 +32,8 @@ To create a query, drag and drop tables from the **Object explorer** on the left
 
 As you work on your visual query, the queries are automatically saved every few seconds. A "saving indicator" appears in your query tab to indicate that your query is being saved.
 
-The following gif shows the merging of two tables using a no-code visual query editor.
+The following animated gif shows the merging of two tables using a no-code visual query editor. First, the `DimCity` then `FactSale` are dragged from the **Explorer** into the visual query editor. Then, the **Merge** Power Query operator is used to join them on a common key.
+
 
 :::image type="content" source="media\visual-query-editor\visual-query-editor.gif" alt-text="Gif of the results of a sample query to merge two tables using the visual query editor." lightbox="media\visual-query-editor\visual-query-editor.gif":::
 
