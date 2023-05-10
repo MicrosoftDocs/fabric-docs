@@ -93,7 +93,10 @@ A wizard opens with the **Destination** tab selected.
 
 ### Destination tab
 
-1. Select an existing table or create a new table. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
+1. Select an existing table or create a new table.
+
+    > [!NOTE]
+    > You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 1. Select **Next: Source**
 
 ### Source tab

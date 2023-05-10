@@ -64,7 +64,7 @@ The main page of your KQL database shows an overview of the contents in your dat
 |**Recently updated functions**
 | | |  Lists the function name and the time it was last updated.|
 |**Recently used Querysets**|
-| | | Lists the recently used query set and the time it was last accessed.|
+| | | Lists the recently used KQL queryset and the time it was last accessed.|
 |**Recently created data connections**
 | | | Lists the data connection and the time it was created.|
 

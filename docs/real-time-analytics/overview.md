@@ -77,5 +77,5 @@ See how these items work together in the end-to-end streaming data consumption a
 * [Microsoft Fabric event streams - overview](event-streams/overview.md)
 * [Compare Real-Time Analytics to Azure Data Explorer](realtime-analytics-compare.md)
 * [Tutorial: Real-Time Analytics](tutorial-introduction.md)
-* [Query data in a KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
 * [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context)
