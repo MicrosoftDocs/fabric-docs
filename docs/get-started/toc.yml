@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Microsoft Fabric?
     href: microsoft-fabric-overview.md
+  - name: Start a Fabric (Preview) trial
+    href: fabric-trial.md
   - name: Fabric terminology
     href: fabric-terminology.md
 - name: Get started
@@ -33,11 +35,7 @@ items:
   href: onelake-data-hub.md
 - name: Share items
   href: share-items.md
-- name: Endorse data
-  items:
-  - name: Overview
-    href: endorsement-overview.md
-  - name: Promote or certify items
-    href: endorsement-promote-certify.md
+- name: Promote or certify items
+  href: endorsement-promote-certify.md
 - name: Apply sensitivity labels
   href: apply-sensitivity-labels.md

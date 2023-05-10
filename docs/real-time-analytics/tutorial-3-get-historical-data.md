@@ -13,7 +13,7 @@ ms.search.form: product-kusto
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md)
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md).
 
 One-time data loading is often needed for historical data, or for adding dimension tables. Recall that the dataset you've ingested with Eventstream doesn't contain latitude and longitude data. In this section, you're going to load additional information on the pick-up locations and drop-off from a blob storage container.
 
@@ -28,8 +28,7 @@ One-time data loading is often needed for historical data, or for adding dimensi
 
 ### Destination tab
 
-In the **Destination** tab, **Database** is auto populated with the name
-of the selected database.
+In the **Destination** tab, **Database** is auto populated with the name of the selected database.
 
 1. Under **Table**, make sure that **New table** is selected, and enter *locations* as the table name.
 1. Select **Next: Source**.
@@ -46,9 +45,9 @@ In the **Source** tab, **Source type** is auto populated with *Blob container*.
 
     |  **Setting**  | **Suggested value**  | **Field description**
     |-------|---|------
-    |  Ingestion  |   *One-time*         |The type of data ingestion type.
+    | Ingestion  |   *One-time*         |The type of data ingestion type.
     | Link to source |  *https://azuresynapsestorage.blob.core.windows.net/sampledata/NYCTaxiLocations/* | URI to the blob container where the files are located |
-    |  Sample size |  *Blank*
+    | Sample size |  *Blank*
     | Folder path |  *Blank*
     | Schema  defining file |  Choose the first file
 
@@ -70,6 +69,12 @@ loaded.
 :::image type="content" source="media/realtime-analytics-tutorial/data-ingestion-complete.png" alt-text="Screenshot of summary page with data ingestion completed.":::
 
 Select **Close** to return to your database landing page.
+
+## See also
+
+For more information about tasks performed in this tutorial, see:
+
+* [Get data from a blob](get-data-blob.md)
 
 ## Next steps
 

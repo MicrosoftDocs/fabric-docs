@@ -13,7 +13,7 @@ ms.search.form: product-kusto
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Get historical data](tutorial-3-get-historical-data.md)
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Get historical data](tutorial-3-get-historical-data.md).
 
 The first step in data analysis is often to take a look at a subset of the data itself. There are several sample queries available to you in both SQL and KQL to help you get familiar with the query languages and assist with initial data exploration.
 
@@ -71,7 +71,13 @@ The query editor supports the use of T-SQL in addition to its primary query lang
 
     :::image type="content" source="media/realtime-analytics-tutorial/sql-count.png" alt-text="Screenshot of using the count SQL operator in a KQL quick query.":::
 
+## See also
+
+For more information about tasks performed in this tutorial, see:
+
+* [Syntax conventions](/azure/data-explorer/kusto/query/syntax-conventions?context=/fabric/context/context&pivots=fabric)
+
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Real-Time Analytics tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md)
+> [Tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md)

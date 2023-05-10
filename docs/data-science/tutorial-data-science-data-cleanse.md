@@ -12,9 +12,9 @@ ms.date: 5/4/2023
 
 The [NYC Yellow Taxi dataset](/azure/open-datasets/dataset-taxi-yellow?tabs=pyspark) contains over 1.5 Billion trip records with each month of trip data running into millions of records, which makes processing these records computationally expensive and often not feasible with nondistributed processing engines.
 
-In this tutorial, we demonstrate how to use Apache Spark notebooks to clean and prepare the taxi trips dataset. Spark's optimized distribution engine makes it ideal for processing large volumes of data.
-
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+In this tutorial, we demonstrate how to use Apache Spark notebooks to clean and prepare the taxi trips dataset. Spark's optimized distribution engine makes it ideal for processing large volumes of data.
 
 > [!TIP]
 > For datasets of relatively small size, use the Data Wrangler UI, which is a notebook-based graphical user interface tool that provides interactive exploration and a data cleansing experience for users working with pandas dataframes on Microsoft Fabric notebooks.
@@ -23,7 +23,7 @@ In the following steps, you read the raw NYC Taxi data from a lakehouse delta la
 
 ## Follow along in notebook
 
-The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **03 - Perform Data Cleansing and preparation using Apache Spark**. Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
+The python commands/script used in each step of this tutorial can be found in the accompanying notebook: [03-perform-data-cleansing-and-preparation-using-apache-spark.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/03-perform-data-cleansing-and-preparation-using-apache-spark.ipynb). Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
 
 ## Cleanse and prepare
 
@@ -31,7 +31,7 @@ The python commands/script used in each step of this tutorial can be found in th
 
    :::image type="content" source="media\tutorial-data-science-data-cleanse\load-data-spark-read.png" alt-text="Screenshot of code sample for loading data with the spark.read command." lightbox="media\tutorial-data-science-data-cleanse\load-data-spark-read.png":::
 
-1. To aid the data cleansing process, next we use Apache Spark’s built-in summary feature that generates summary statistics, which are numerical measures that describe aspects of a column in the dataframe. These measures include count, mean, standard deviation, min, and max. Use the following command to view the summary statistics of all columns in the ***ytaxi*** dataset.
+1. To aid the data cleansing process, next we use Apache Spark's built-in summary feature that generates summary statistics, which are numerical measures that describe aspects of a column in the dataframe. These measures include count, mean, standard deviation, min, and max. Use the following command to view the summary statistics of all columns in the ***taxi*** dataset.
 
    :::image type="content" source="media\tutorial-data-science-data-cleanse\view-summary-statistics.png" alt-text="Screenshot of code sample to view summary statistics." lightbox="media\tutorial-data-science-data-cleanse\view-summary-statistics.png":::
 

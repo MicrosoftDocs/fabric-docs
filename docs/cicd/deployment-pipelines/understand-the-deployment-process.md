@@ -7,13 +7,15 @@ ms.topic: conceptual
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1, intro-deployment
-ms.date: 05/23/2023
+ms.date: 05/09/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
 # The deployment pipelines process
 
 The deployment process lets you clone content from one stage in the deployment pipeline to another, typically from development to test, and from test to production.
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 During deployment, Microsoft Fabric copies the content from the current stage, into the target one. The connections between the copied items are kept during the copy process. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content may take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the portal, but you can't use the content in the target stage.
 
@@ -128,7 +130,7 @@ In many cases, when you have a small change such as adding or removing a table, 
 
 ### Requirements for deploying to a stage with an existing workspace
 
-A user with a [Pro license](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md) or a [PPU user](/power-bi/enterprise/service-premium-per-user-faq.yml) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
+Any [licensed user](../../enterprise/licenses.md#organizational-licenses) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [capacity](/../../enterprise/license.md#capacity-nd-skus) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
 
 ## Deployed items
 

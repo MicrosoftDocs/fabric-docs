@@ -13,7 +13,7 @@ ms.search.form: product-kusto
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md)
+> This tutorial is part of a series. For the previous section, see: [Tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md).
 
 A Power BI report is a multi-perspective view into a dataset, with visuals that represent findings and insights from that dataset. In this section, you create a new query that joins both datasets, and use this query output to create a new Power BI report.
 
@@ -25,7 +25,7 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
     nyctaxitrips
     | where PULocationID == DOLocationID
     | lookup (Locations) on $left.PULocationID==$right.LocationID
-    | summarize Count=count() by Borough, Zone, Latitude, Longitude 
+    | summarize Count=count() by Borough, Zone, Latitude, Longitude
     ```
 
 1. Place your cursor somewhere within the query, and then select **Build Power BI report**.
@@ -77,7 +77,13 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
 
     The Power BI report now autorefreshes on streaming data arriving in a KQL database from an eventstream.
 
+## See also
+
+For more information about tasks performed in this tutorial, see:
+
+* [Visualize data in a Power BI report](create-powerbi-report.md)
+
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Synapse Real-Time Analytics tutorial part 7: Clean up resources](tutorial-7-clean-up-resources.md)
+> [Tutorial part 7: Clean up resources](tutorial-7-clean-up-resources.md)

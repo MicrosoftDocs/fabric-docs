@@ -16,7 +16,7 @@ In this module, you learn to import a trained and registered LightGBMRegressor m
 
 ## Follow along in notebook
 
-The python commands/script used in each step of this tutorial can be found in the accompanying notebook: **05 - Perform batch scoring and save predictions to lakehouse**. Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
+The python commands/script used in each step of this tutorial can be found in the accompanying notebook: [05-perform-batch-scoring-and-save-predictions-to-lakehouse.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/05-perform-batch-scoring-and-save-predictions-to-lakehouse.ipynb). Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
 
 ## Perform batch scoring and save predictions
 
