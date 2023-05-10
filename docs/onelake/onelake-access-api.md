@@ -16,7 +16,7 @@ ms.date: 05/23/2023
 
 Microsoft OneLake provides open access to all of your Fabric items through existing ADLS Gen2 APIs and SDKs. You can access your data in OneLake through any tool compatible with ADLS Gen2 just by using a OneLake URI instead.  You can upload data to a lakehouse through Azure Storage Explorer, or read a delta table through a shortcut from Azure Databricks.  
 
-As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating artifacts, must be done through Fabric experiences, and can't be done via ADLS Gen2 APIs. A full list of changes to these APIs can be found in the 'Supported API operations' section.
+As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences, and can't be done via ADLS Gen2 APIs. A full list of changes to these APIs can be found in the 'Supported API operations' section.
 
 ## URI Syntax
 
@@ -55,7 +55,7 @@ You can perform CRUD operations on any folder or file created within these manag
 
 ### Unsupported request headers and parameters
 
-Even in user-created and owned files and folders, OneLake restricts some management operations through ADLS Gen2 APIs. You cannot update permissions, edit artifacts or workspaces, or set access tiers, as these operations must be managed through Fabric.
+Even in user-created and owned files and folders, OneLake restricts some management operations through ADLS Gen2 APIs. You cannot update permissions, edit items or workspaces, or set access tiers, as these operations must be managed through Fabric.
 
 OneLake will reject or ignore an API call if it contains a disallowed header or parameter value. OneLake ignores headers if the header doesn't change the behavior of the call, and returns the rejected header in a new 'x-ms-rejected-headers' response header.  OneLake rejects requests containing unallowed query parameters.  OneLake doesn’t allow the following behaviors and their associated request headers and URI parameters:
 

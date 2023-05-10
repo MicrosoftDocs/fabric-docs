@@ -35,6 +35,8 @@ items:
     href: onelake-azure-databricks.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md
+  - name: PowerShell
+    href: onelake-powershell.md
 - name: Security
   items:
   - name: Secure data
