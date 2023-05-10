@@ -38,7 +38,7 @@ The Microsoft Fabric items that belong to these features require private endpoin
 
 * SQL database
 
-* Eventstream
+* EventStream
 
 * Third party access to OneLake
 

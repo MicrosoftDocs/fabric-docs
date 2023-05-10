@@ -43,7 +43,7 @@ Follow these steps to set up your dataflow.
 
    :::image type="content" source="media/transform-data/select-azure-sql.png" alt-text="Screenshot showing how to connect to an Azure SQL database.":::
 
-1. Select the data you’d like to transform and then select **Create**. For this quickstart, select **SalesLT.Customer** from the **AdventureWorksLT** sample data provided for Azure SQL DB, and then **Select related tables** to include two other related tables.
+1. Select the data you’d like to transform and then select **Create**. For this quickstart, select **SalesLT.Customer** from the **AdventureWorksLT** sample data provided for Azure SQL DB, and then the **Select related tables** button to automatically include two other related tables.
 
    :::image type="content" source="media/transform-data/data-to-transform.png" alt-text="Screenshot showing where to choose from the available data." :::
 
