@@ -37,4 +37,4 @@ Opern the item's settings side pane and choose **Sensitivity label**:
 
 ## Next steps
 
-* [Admin overview](../admin/admin-overview.md)
+* [Admin overview](../admin/microsoft-fabric-admin.md)

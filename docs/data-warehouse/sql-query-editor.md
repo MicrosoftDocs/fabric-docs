@@ -12,9 +12,9 @@ ms.search.form: Query editor # This article's title should not change. If so, co
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the [Visual query editor](visual-query-editor.md) and the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal. This article describes how to use the SQL query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## SQL query editor in the Fabric portal
 

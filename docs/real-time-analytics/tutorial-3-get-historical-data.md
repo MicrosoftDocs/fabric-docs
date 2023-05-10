@@ -39,7 +39,7 @@ In the **Destination** tab, **Database** is auto populated with the name of the 
 
 In the **Source** tab, **Source type** is auto populated with *Blob container*.
 
-:::image type="content" source="media/realtime-analytics-tutorial/source-tab-filled-out.png" alt-text="Screenshot of source tab with blob container filled out.":::
+:::image type="content" source="media/realtime-analytics-tutorial/source-tab-filled-out.png" alt-text="Screenshot of source tab with blob container filled out." lightbox="media/realtime-analytics-tutorial/source-tab-filled-out.png":::
 
 1. Fill out the remaining fields according to the following table:
 
@@ -57,7 +57,7 @@ In the **Source** tab, **Source type** is auto populated with *Blob container*.
 
 The tool automatically infers the schema based on your data. No changes are necessary.
 
-:::image type="content" source="media/realtime-analytics-tutorial/schema-tab.png" alt-text="Screenshot of schema tab.":::
+:::image type="content" source="media/realtime-analytics-tutorial/schema-tab.png" alt-text="Screenshot of schema tab." lightbox="media/realtime-analytics-tutorial/schema-tab.png":::
 
 Select **Next: Summary**.
 
@@ -66,7 +66,7 @@ Select **Next: Summary**.
 In the **Data ingestion completed** window, all steps are marked with green check marks when the data has been successfully
 loaded.
 
-:::image type="content" source="media/realtime-analytics-tutorial/data-ingestion-complete.png" alt-text="Screenshot of summary page with data ingestion completed.":::
+:::image type="content" source="media/realtime-analytics-tutorial/data-ingestion-complete.png" alt-text="Screenshot of summary page with data ingestion completed." lightbox="media/realtime-analytics-tutorial/data-ingestion-complete.png":::
 
 Select **Close** to return to your database landing page.
 

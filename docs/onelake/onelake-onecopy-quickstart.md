@@ -10,8 +10,6 @@ ms.date: 05/23/2023
 
 # OneCopy: Transform data with Spark and query with SQL
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this guide, you will:
 
 - Upload data to OneLake using OneLake file explorer.
@@ -21,6 +19,8 @@ In this guide, you will:
 - Analyze and transform data with Spark using a Fabric notebook.
 
 - Query one copy of data on OneLake with SQL.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 

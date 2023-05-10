@@ -56,6 +56,8 @@ Microsoft Fabric offers the comprehensive set of analytics workloads designed to
 
 Fabric brings together all these workloads into a unified platform to offer the most comprehensive big data analytics platform in the industry.
 
+Microsoft Fabric enables organizations, and individuals, to turn large and complex data repositories into actionable workloads and analytics, and is an implementation of data mesh architecture. To learn more about data mesh, visit the article that explains [data mesh architecture](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh). 
+
 ## OneLake and lakehouse - the unification of lakehouses
 
 The Microsoft Fabric platform unifies the OneLake and lakehouse architecture across the enterprises.
