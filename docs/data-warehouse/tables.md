@@ -33,7 +33,7 @@ A [star schema](/power-bi/guidance/star-schema) organizes data into fact and dim
 A table stores data in [OneLake overview](../onelake/onelake-overview.md) as part of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The table and the data persist whether or not a session is open.
 
 
-## Tables in Synapse Data Warehouse
+## Tables in the Warehouse
 
 To show the organization of the tables, you could use `fact`, `dim`, or `int` as prefixes to the table names. The following table shows some of the schema and table names for [WideWorldImportersDW](/sql/samples/wide-world-importers-dw-database-catalog?view=fabric&preserve-view=true) sample data warehouse. 
 

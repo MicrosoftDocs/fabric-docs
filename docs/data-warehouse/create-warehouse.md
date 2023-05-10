@@ -1,6 +1,6 @@
 ---
-title: Create a Synapse Data Warehouse
-description: Learn how to create a Synapse Data Warehouse in Microsoft Fabric.
+title: Create a Warehouse
+description: Learn how to create a Warehouse in Microsoft Fabric.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Create a warehouse # This article's title should not change. If so, contact engineering.
 ---
-# Create a Synapse Data Warehouse in Microsoft Fabric
+# Create a Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -147,4 +147,4 @@ You can proceed with either a blank Warehouse or a sample Warehouse to continue 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Create tables in Synapse Data Warehouse](create-table.md)
+> [Create tables in Warehouse](create-table.md)
