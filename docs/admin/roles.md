@@ -96,4 +96,4 @@ To learn more about using PowerShell to assign admin roles, see [AzureAD Directo
 
 * [What is the admin portal?](admin-center.md)
 
-* [What is the admin monitoring workspace?](admin-monitoring.md)
+* [What is the admin monitoring workspace?](monitoring-workspace.md)

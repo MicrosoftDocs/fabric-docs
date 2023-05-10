@@ -16,11 +16,11 @@ The *Admin monitoring* workspace is designed to provide admins with monitoring c
 
 ## Prerequisites
 
-Verify that the [new workspace experience](/power-bi/admin/service-admin-portal-workspace#create-workspaces-new-workspace-experience) is enabled.
+Verify that the [new workspace experience](/power-bi/admin/portal-workspace#create-workspaces-new-workspace-experience) is enabled.
 
 ## Access the admin monitoring workspace
 
-The Admin monitoring workspace is enabled for [Microsoft Fabric admins](admin-overview.md) that have the *Power BI admin* role. Admins can also share its content with other users.
+The Admin monitoring workspace is enabled for [Microsoft Fabric admins](microsoft-fabric-admin.md) that have the *Power BI admin* role. Admins can also share its content with other users.
 
 The admin monitoring workspace is automatically installed during the first time any Microsoft Fabric admin accesses it. To access the admin monitoring workspace, follow these steps:
 
@@ -32,13 +32,13 @@ The admin monitoring workspace is automatically installed during the first time 
 
 ## Reports and datasets
 
-In the monitoring workspace, you can use the [Feature Usage and Adoption](admin-feature-usage-adoption.md) report as is. You can also connect to this report's dataset, and create a solution that's optimized for your organization.
+In the monitoring workspace, you can use the [Feature Usage and Adoption](feature-usage-adoption.md) report as is. You can also connect to this report's dataset, and create a solution that's optimized for your organization.
 
 ### Manage access
 
 There are several ways you can manage access to content of the admin monitoring workspace.
 
-* **Workspace** - Learn how to to give users access to the workspace in [manage workspace](../admin/admin-portal-workspaces.md). You can only grant other users a viewer role. Once a viewer role is provided, it can't be taken away.
+* **Workspace** - Learn how to to give users access to the workspace in [manage workspace](../admin/portal-workspaces.md). You can only grant other users a viewer role. Once a viewer role is provided, it can't be taken away.
 
 * **Report** - You can [share a report](/power-bi/connect-data/service-datasets-share) with other users.
 
@@ -46,6 +46,6 @@ There are several ways you can manage access to content of the admin monitoring 
 
 ## Next steps
 
-* [Admin overview](admin-overview.md)
+* [Admin overview](microsoft-fabric-admin.md)
 
-* [Feature usage and adoption report](admin-feature-usage-adoption.md)
+* [Feature usage and adoption report](feature-usage-adoption.md)

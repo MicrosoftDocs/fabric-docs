@@ -20,4 +20,4 @@ To view lineage, select **Lineage** from the item menu or from the top ribbon of
 
 ## Next steps
 
-* [Admin overview](../admin/admin-overview.md)
+* [Admin overview](../admin/microsoft-fabric-admin.md)
