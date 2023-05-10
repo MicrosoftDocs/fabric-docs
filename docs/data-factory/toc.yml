@@ -83,24 +83,30 @@
         href: connector-azure-sql-database-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-azure-sql-database-dataflow.md
-  - name: Format
-    items:
-    - name: Binary
+    - name: Format
       items:
-      - name: Configure in Data pipeline
-        href: format-binary.md
-      - name: Configure in Dataflow Gen2
-        href: connector-binary-dataflows.md
-    - name: Delimited text
-      items:
-      - name: Configure in Data pipeline
-        href: format-delimited-text.md
-    - name: Excel
-      items:
-      - name: Configure in Data pipeline
-        href: format-excel.md
-      - name: Configure in Dataflow Gen2
-        href: connector-excel-dataflows.md
+      - name: Binary
+        items:
+        - name: Configure in Data pipeline
+          href: format-binary.md
+        - name: Configure in Dataflow Gen2
+          href: connector-binary-dataflows.md
+      - name: Delimited text
+        items:
+        - name: Configure in Data pipeline
+          href: format-delimited-text.md
+      - name: Excel
+        items:
+        - name: Configure in Data pipeline
+          href: format-excel.md
+        - name: Configure in Dataflow Gen2
+          href: connector-excel-dataflows.md
+      - name: Parquet
+        items:
+        - name: Configure in Data pipeline
+          href: format-parquet.md
+        - name: Configure in Dataflow Gen2
+          href: connector-parquet-dataflows.md     
     - name: Google Cloud Storage
       items:
       - name: Overview
@@ -141,12 +147,6 @@
         href: connector-microsoft-365.md
       - name: Configure in Data pipeline Copy activity
         href: connector-microsoft-365-copy-activity.md
-    - name: Parquet
-      items:
-      - name: Configure in Data pipeline
-        href: format-parquet.md
-      - name: Configure in Dataflow Gen2
-        href: connector-parquet-dataflows.md
     - name: OData
       items:
       - name: Overview
