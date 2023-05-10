@@ -56,6 +56,9 @@ Azure Storage Explorer allows you to view and manage your cloud storage accountâ
 
    :::image type="content" source="media\onelake-azure-storage-explorer\copy-paste-folder.png" alt-text="Screenshot showing where to select Copy or Paste." lightbox="media\onelake-azure-storage-explorer\copy-paste-folder.png":::
 
+## Limitations
+- If a workspace name has capital letters, deletion of files or folders fails due to restriction from storage service. We recommend using your workspace name in lowercase letters.
+
 ## Next steps
 
 - [Integrate OneLake with Azure Databricks](onelake-azure-databricks.md)
