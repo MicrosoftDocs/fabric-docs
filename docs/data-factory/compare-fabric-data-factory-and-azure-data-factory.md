@@ -10,21 +10,15 @@ ms.custom: template-how-to
 
 # Compare differences between Azure Data Factory and Data Factory in Microsoft Fabric
 
+Data Factory in Microsoft Fabric is the next generation of Azure Data Factory which provides cloud-scale data movement and data transformation services that allow you to solve the most complex ETL scenarios. It's intended to make your experience easy to use, powerful, and truly enterprise-grade. This article compares the differences between Azure Data Factory and Data Factory in Microsoft Fabric.
+
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-This article compares the differences between Azure Data Factory and Data Factory in Microsoft Fabric.
-
-## Overview
-
-Data Factory in Microsoft Fabric is the next generation of Azure Data Factory which provides cloud-scale data movement and data transformation services that allow you to solve the most complex ETL scenarios. It's intended to make your experience easy to use, powerful, and truly enterprise-grade.
-
-In the modern experience of Data Factory in Fabric, there are some different features concepts compared to Azure Data Factory. Detail features mapping is presented as the table below.
-
 ## Feature mapping
 
-|Azure Data Factory |Data Factory in Fabric |Description  |
+|Azure Data Factory |Data Factory in Fabric |Description |
 |:---|:---|:---|
 |Pipeline |Data pipeline | Data pipeline in Fabric is better integrated with the unified data platform including Lakehouse, Datawarehouse, and more. |
 |Mapping dataflow  |Dataflow Gen2 | Dataflow Gen2 provides easier experience to build transformation. We are in progress of letting more functions of mapping dataflow supported in Dataflow Gen2 |
