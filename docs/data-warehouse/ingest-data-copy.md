@@ -13,14 +13,14 @@ ms.search.form: Ingesting data
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The COPY statement is the primary way to ingest data into [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables. COPY performs high high-throughput data ingestion from an external Azure storage account, with the flexibility to configure source file format options, a location to store rejected rows, skipping header rows, and other options. 
 
 This tutorial shows data ingestion examples for a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table using the T-SQL COPY statement. It uses the Bing COVID-19 sample data from the Azure Open Datasets. For details about this dataset, including its schema and usage rights, see [Bing COVID-19](/azure/open-datasets/dataset-bing-covid-19?tabs=azure-storage).
 
 > [!NOTE]
 > To learn more about the T-SQL COPY statement including more examples and the full syntax, see [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create a table
 

@@ -12,6 +12,8 @@ ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
+This article covers the T-SQL language syntax capabilities of [!INCLUDE [product-name](../includes/product-name.md)], when querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## T-SQL surface area

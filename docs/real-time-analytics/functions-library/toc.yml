@@ -33,6 +33,21 @@ items:
 - name: levene_test_fl()
   displayName: functions library, statistical test
   href: /azure/data-explorer/kusto/functions-library/levene-test-fl?context=/fabric/context/context&pivots=fabric
+- name: log_reduce_fl()
+  displayName: functions library, log reduce, log parse, clustering, text analytics
+  href: /azure/data-explorer/kusto/functions-library/log-reduce-fl?context=/fabric/context/context&pivots=fabric
+- name: log_reduce_full_fl()
+  displayName: functions library, log reduce, log parse, clustering, text analytics
+  href: /azure/data-explorer/kusto/functions-library/log-reduce-full-fl?context=/fabric/context/context&pivots=fabric
+- name: log_reduce_predict_fl()
+  displayName: functions library, log reduce, log parse, clustering, text analytics
+  href: /azure/data-explorer/kusto/functions-library/log-reduce-predict-fl?context=/fabric/context/context&pivots=fabric
+- name: log_reduce_predict_full_fl()
+  displayName: functions library, log reduce, log parse, clustering, text analytics
+  href: /azure/data-explorer/kusto/functions-library/log-reduce-predict-full-fl?context=/fabric/context/context&pivots=fabric
+- name: log_reduce_train_fl()
+  displayName: functions library, log reduce, log parse, clustering, text analytics
+  href: /azure/data-explorer/kusto/functions-library/log-reduce-train-fl?context=/fabric/context/context&pivots=fabric
 - name: mann-whitney-u-test-fl()
   displayName: functions library, statistical test
   href: /azure/data-explorer/kusto/functions-library/mann-whitney-u-test-fl?context=/fabric/context/context&pivots=fabric
@@ -63,6 +78,9 @@ items:
 - name: quantize_fl()
   displayName: functions library, binning
   href: /azure/data-explorer/kusto/functions-library/quantize-fl?context=/fabric/context/context&pivots=fabric
+- name: series_cosine_similarity_fl()
+  displayName: functions library, embedding, vector, cosine, similarity
+  href: /azure/data-explorer/kusto/functions-library/series-cosine-similarity-fl?context=/fabric/context/context&pivots=fabric
 - name: series_dbl_exp_smoothing_fl()
   displayName: functions library, exponential, filter, low-pass
   href: /azure/data-explorer/kusto/functions-library/series-dbl-exp-smoothing-fl?context=/fabric/context/context&pivots=fabric

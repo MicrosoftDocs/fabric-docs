@@ -1,6 +1,8 @@
 items:
 - name: Kusto query overview
   href: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
+- name: Syntax conventions
+  href: /azure/data-explorer/kusto/query/syntax-conventions?context=/fabric/context/context&pivots=fabric
 - name: Quick reference guide
   href: /azure/data-explorer/kusto/../kql-quick-reference?context=/fabric/context/context&pivots=fabric
 - name: Query best practices
@@ -434,6 +436,8 @@ items:
     href: /azure/data-explorer/kusto/query/bag-remove-keys-function?context=/fabric/context/context&pivots=fabric
   - name: bag_set_key()
     href: /azure/data-explorer/kusto/query/bag-set-key-function?context=/fabric/context/context&pivots=fabric
+  - name: bag_zip()
+    href: /azure/data-explorer/kusto/query/bag-zip?context=/fabric/context/context&pivots=fabric
   - name: base64_decode_toarray()
     href: /azure/data-explorer/kusto/query/base64_decode_toarrayfunction?context=/fabric/context/context&pivots=fabric
   - name: base64_decode_tostring()
@@ -745,6 +749,12 @@ items:
     href: /azure/data-explorer/kusto/query/pifunction?context=/fabric/context/context&pivots=fabric
   - name: pow()
     href: /azure/data-explorer/kusto/query/powfunction?context=/fabric/context/context&pivots=fabric
+  - name: punycode_from_string()
+    displayName: puny code to from string
+    href: /azure/data-explorer/kusto/query/punycode-from-string?context=/fabric/context/context&pivots=fabric
+  - name: punycode_to_string()
+    displayName: puny code to from string
+    href: /azure/data-explorer/kusto/query/punycode-to-string?context=/fabric/context/context&pivots=fabric
   - name: radians()
     href: /azure/data-explorer/kusto/query/radiansfunction?context=/fabric/context/context&pivots=fabric
   - name: rand()
@@ -1001,6 +1011,8 @@ items:
     href: /azure/data-explorer/kusto/query/geo-intersection-2polygons-function?context=/fabric/context/context&pivots=fabric
   - name: geo_intersection_line_with_polygon()
     href: /azure/data-explorer/kusto/query/geo-intersection-line-with-polygon-function?context=/fabric/context/context&pivots=fabric
+  - name: geo_line_buffer()
+    href: /azure/data-explorer/kusto/query/geo-line-buffer-function?context=/fabric/context/context&pivots=fabric
   - name: geo_line_centroid()
     href: /azure/data-explorer/kusto/query/geo-line-centroid-function?context=/fabric/context/context&pivots=fabric
   - name: geo_line_densify()
@@ -1011,6 +1023,8 @@ items:
     href: /azure/data-explorer/kusto/query/geo-line-simplify-function?context=/fabric/context/context&pivots=fabric
   - name: geo_polygon_area()
     href: /azure/data-explorer/kusto/query/geo-polygon-area-function?context=/fabric/context/context&pivots=fabric
+  - name: geo_polygon_buffer()
+    href: /azure/data-explorer/kusto/query/geo-polygon-buffer-function?context=/fabric/context/context&pivots=fabric
   - name: geo_polygon_centroid()
     href: /azure/data-explorer/kusto/query/geo-polygon-centroid-function?context=/fabric/context/context&pivots=fabric
   - name: geo_polygon_densify()
@@ -1021,6 +1035,8 @@ items:
     href: /azure/data-explorer/kusto/query/geo-polygon-simplify-function?context=/fabric/context/context&pivots=fabric
   - name: geo_polygon_to_s2cells()
     href: /azure/data-explorer/kusto/query/geo-polygon-to-s2cells-function?context=/fabric/context/context&pivots=fabric
+  - name: geo_point_buffer()
+    href: /azure/data-explorer/kusto/query/geo-point-buffer-function?context=/fabric/context/context&pivots=fabric
   - name: geo_point_in_circle()
     href: /azure/data-explorer/kusto/query/geo-point-in-circle-function?context=/fabric/context/context&pivots=fabric
   - name: geo_point_in_polygon()
@@ -1239,9 +1255,9 @@ items:
       href: /azure/data-explorer/kusto/query/pivotplugin?context=/fabric/context/context&pivots=fabric
   - name: Language plugins
     items:
-    - name: python plugin
+    - name: Python plugin
       href: /azure/data-explorer/kusto/query/pythonplugin?context=/fabric/context/context&pivots=fabric
-    - name: r plugin
+    - name: R plugin
       href: /azure/data-explorer/kusto/query/rplugin?context=/fabric/context/context&pivots=fabric
   - name: Machine learning plugins
     items:
@@ -1266,9 +1282,11 @@ items:
     - name: http_request plugin
       href: /azure/data-explorer/kusto/query/http-request-plugin?context=/fabric/context/context&pivots=fabric
     - name: http_request_post plugin
-      href: /azure/data-explorer/kusto/query/http-request-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/http-request-post-plugin?context=/fabric/context/context&pivots=fabric
     - name: mysql_request plugin
       href: /azure/data-explorer/kusto/query/mysqlrequest-plugin?context=/fabric/context/context&pivots=fabric
+    - name: postgresql_request plugin
+      href: /azure/data-explorer/kusto/query/postgresql-request-plugin?context=/fabric/context/context&pivots=fabric
     - name: sql_request plugin
       href: /azure/data-explorer/kusto/query/sqlrequestplugin?context=/fabric/context/context&pivots=fabric
   - name: User and sequence analytics plugins

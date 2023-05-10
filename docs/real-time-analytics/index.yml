@@ -92,6 +92,8 @@ landingContent:
         links:
           - text: Query data in a KQL queryset
             url:  kusto-query-set.md
+          - text: Customize results in the KQL Queryset results grid
+            url: customize-results.md
 
 
   # Card 
