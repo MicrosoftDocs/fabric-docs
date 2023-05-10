@@ -97,4 +97,4 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
 ## Next steps
 
 - [Create a warehouse in Microsoft Fabric](create-warehouse.md)
-- [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
+- [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
