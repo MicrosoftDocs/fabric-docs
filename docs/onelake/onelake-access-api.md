@@ -43,13 +43,13 @@ When adopting a tool for use over OneLake instead of ADLS Gen2, use the followin
 
 ## OneLake and ADLS Gen2 Parity
 
-While OneLake matches all ADLS Gen2 behavior wherever possible, not every concept in ADLS Gen2 has a direct correlation to OneLake. The following sections describe how OneLake differs from ADLS Gen2, from unsupported request headers to changes in response headers.  For more information on ADLS Gen2 APIs, see [Azure Data Lake Storage Gen2 REST APIs](https://learn.microsoft.com/en-us/rest/api/storageservices/data-lake-storage-gen2).
+While OneLake matches all ADLS Gen2 behavior wherever possible, not every concept in ADLS Gen2 has a direct correlation to OneLake. The following sections describe how OneLake differs from ADLS Gen2, from unsupported request headers to changes in response headers.  For more information on ADLS Gen2 APIs, see [Azure Data Lake Storage Gen2 REST APIs](/rest/api/storageservices/data-lake-storage-gen2).
 
 ### Protected OneLake folders
 
 OneLake doesn't support creating, updating, or deleting workspaces or items through the ADLS Gen2 APIs. Only HEAD calls are supported at the workspace level and account level, as you must make changes to the Fabric tenant and Fabric workspaces in the Fabric administration portal.
 
-OneLake does enforce the Fabric item structure, meaning you can't perform create, read, update, and delete (CRUD) operations on certain folders, even if you're the item or workspace owner. You must perform these operations via Fabric experiences, such as the Fabric portal or Fabric management APIs. Fabric-managed folders include the top-level folder in an item (for example, */MyLakehouse*) and the first level of folders within it (for example, */MyLakehouse/Files* and */MyLakehouse/Tables*).
+OneLake does enforce the Fabric item structure, meaning you can't create, read, update, or delete (CRUD) certain folders, even if you're the item or workspace owner. You must perform these operations via Fabric experiences, such as the Fabric portal or Fabric management APIs. Fabric-managed folders include the top-level folder in an item (for example, */MyLakehouse*) and the first level of folders within it (for example, */MyLakehouse/Files* and */MyLakehouse/Tables*).
 
 You can perform CRUD operations on any folder or file created within these managed folders.
 
