@@ -12,9 +12,9 @@ ms.search.form: Warehouse connectivity # This article's title should not change.
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article provides a how-to on connecting to your [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 To get started, you must complete the following prerequisites:
 
@@ -97,4 +97,4 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
 ## Next steps
 
 - [Create a warehouse in Microsoft Fabric](create-warehouse.md)
-- [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
+- [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)

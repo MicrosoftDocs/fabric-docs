@@ -20,7 +20,7 @@ Event processor in the Lakehouse destination allows you to process your data bef
 
 To get started, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream item is located in.
+- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located in.
 - Get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse is located in.
 
 ## Design the event processing with the editor 
@@ -52,7 +52,7 @@ Following the steps to open the event processor editor and use it to design your
 
    :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-configure-operator.png" alt-text="Screenshot showing how to configure the operator." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-configure-operator.png" :::
 
-8. After the Manage fields is configured, you can preview the data that will be produced with this operator by clicking **Refresh static preview**.
+8. After the **Manage fields** is configured, you can preview the data that will be produced with this operator by clicking **Refresh static preview**.
 
    :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png" alt-text="Screenshot showing how to preview the data in event processor editor." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png" :::
 
@@ -73,7 +73,7 @@ The event processor editor provides a canvas and bottom pane to enable you to:
 - Preview the data in each of the processing nodes from the beginning to the end. 
 - Discover the authoring errors within these processing nodes. 
 
-:::image type="content" source="./media/event-processor-editor/event-processor-editor-overview.png" alt-text="Screenshot showing the overview of the event processor editor." lightbox="./media/event-processor-editor/event-processor-editor-overview.png" :::
+    :::image type="content" source="./media/event-processor-editor/event-processor-editor-overview.png" alt-text="Screenshot showing the overview of the event processor editor." lightbox="./media/event-processor-editor/event-processor-editor-overview.png" :::
 
 The whole view layout is like the main editor. It consists of:
 

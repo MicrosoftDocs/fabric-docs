@@ -30,6 +30,8 @@ landingContent:
             url: fabric-terminology.md
       - linkListType: get-started
         links:
+          - text: Start a Fabric trial 
+            url: fabric-trial.md
           - text: Fabric home navigation
             url: fabric-home.md
           - text: End-to-end tutorials

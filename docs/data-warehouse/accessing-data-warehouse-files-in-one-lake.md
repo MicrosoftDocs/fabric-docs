@@ -12,9 +12,9 @@ ms.search.form: Warehouse in workspace overview # This article's title should no
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this article, you learn how to find a [OneLake](../onelake/onelake-overview.md) file path from the [warehouse](data-warehousing.md) experience. To maintain a single copy of data, both the lakehouse and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] store data in OneLake.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to get OneLake path
 

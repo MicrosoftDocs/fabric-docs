@@ -12,12 +12,12 @@ ms.search.form: Create a warehouse # This article's title should not change. If 
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article describes how to get started with [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in Microsoft Fabric using the [!INCLUDE [product-name](../includes/product-name.md)] portal, including discovering creation and consumption of the warehouse. You learn how to create your warehouse from scratch and other helpful information to get you acquainted and proficient with warehouse capabilities offered through the [!INCLUDE [product-name](../includes/product-name.md)] portal.
 
 > [!NOTE]
 > It is important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio) (for users who prefer to use T-SQL for the majority of their data processing needs). For more information, see [Connectivity](../placeholder.md) or [Query a warehouse](query-warehouse.md).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to create a warehouse
 
@@ -49,6 +49,5 @@ It usually takes approximately 10 seconds to provision a new warehouse. Once ini
 
 ## Next steps
 
-- [Warehouse settings and context menus](settings-context-menus.md)
-- [Create tables in Synapse Data Warehouse](create-table.md)
-- [Tables in Microsoft Fabric](tables.md)
+> [!div class="nextstepaction"]
+> [Create tables in Synapse Data Warehouse](create-table.md)

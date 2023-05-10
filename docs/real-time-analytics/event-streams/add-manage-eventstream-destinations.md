@@ -26,16 +26,16 @@ To get started, complete the following prerequisites:
 
 ## Add a KQL database as a destination
 
-If you have a KQL database created in the workspace, do the following steps to add a KQL database as eventstream destination:
+If you have a KQL database created in the workspace, follow these steps to add a KQL database as eventstream destination:
 
 1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then **KQL Database**.  
 
-2. Enter a destination name, select a KQL database from your workspace and then **Create and configure**.
+2. Enter a destination name, select a KQL database from your workspace and then select **Create and configure**.
 
    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot showing the kql database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png" :::
 
-3. On the Ingest data window, follow the steps to complete the configuration:
-   1. **Destination**: use an existing table of your KQL database or create a new one to route and ingest the data.
+3. On the **Ingest data** page, follow the steps to complete the configuration:
+   1. **Destination**: use an existing table of your KQL database or create one to route and ingest the data.
    
        :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-1.png" alt-text="Screenshot showing the ingestion wizard step#1 in kql database destination type." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-1.png" :::
 
@@ -51,9 +51,9 @@ If you have a KQL database created in the workspace, do the following steps to a
 
        :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" alt-text="Screenshot showing the ingestion wizard step#4 in kql database destination type." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" :::
 
-After everything is configured and you've selected **Done**, you see a KQL database destination added to your eventstream on the canvas.
+    After everything is configured and you've selected **Done**, you see a KQL database destination added to your eventstream on the canvas.
 
-:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the kql database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
+    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the kql database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
 
 ## Add a lakehouse as a destination 
 
@@ -61,7 +61,7 @@ If you have a lakehouse created in your workspace, follow these steps to add thi
 
 1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Lakehouse**.  
 
-2. Enter a name for the eventstream destination, fill in the information about your lakehouse.
+2. Enter a **name** for the eventstream destination, fill in the information about your lakehouse.
 
    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse.png" alt-text="Screenshot showing the lakehouse destination type." lightbox="./media/event-streams-destination/eventstream-destinations-lakehouse.png" :::
  
@@ -74,9 +74,9 @@ If you have a lakehouse created in your workspace, follow these steps to add thi
 
 3. Select **Create** to add the lakehouse destination.
 
-You see a lakehouse destination is added to your eventstream on the canvas. It will be in ingestion mode after one or two minutes.
+    You see a lakehouse destination is added to your eventstream on the canvas. It will be in ingestion mode after one or two minutes.
 
-:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse.png" alt-text="Screenshot showing the lakehouse destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse.png" :::
+    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse.png" alt-text="Screenshot showing the lakehouse destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse.png" :::
 
 ## Add custom application as a destination
 
@@ -88,9 +88,9 @@ If you want to route the event data to your application, you can add a custom ap
 
    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" alt-text="Screenshot showing the custom app configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" :::
 
-Once the custom app is created successfully, you can view the information such as **connection string** on the bottom pane and use it in your application.
+    Once the custom app is created successfully, you can view the information such as **connection string** on the bottom pane and use it in your application.
 
-:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot showing the custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" :::
+    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot showing the custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" :::
 
 
 ## Manage destination 
@@ -115,7 +115,7 @@ With this destination, you can easily route your real-time events to a custom ap
 
 - **Destination name** – Meaningful destination name that appears in your eventstream.
 
-:::image type="content" source="./media/event-streams-destination/eventstream-destinations-custom-app.png" alt-text="Screenshot showing the custom app destination type." lightbox="./media/event-streams-destination/eventstream-destinations-custom-app.png" :::
+    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-custom-app.png" alt-text="Screenshot showing the custom app destination type." lightbox="./media/event-streams-destination/eventstream-destinations-custom-app.png" :::
 
 ### KQL database 
 
@@ -125,13 +125,13 @@ This destination provides a direct ingestion of your real-time event data into a
 - **Workspace** – The workspace name where your KQL Database is located. 
 - **KQL Database** – The KQL Database where you want to route the event data.
 
-:::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot showing the KQL database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png" :::
+    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot showing the KQL database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png" :::
 
-**Ingest data wizard** will be popping up after clicking **Create and configure**:
+**Ingest data wizard** pops up when you select **Create and configure**:
 
 :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-ingestion-wizard.png" alt-text="Screenshot showing the ingestion wizard in KQL database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database-ingestion-wizard.png" :::
 
-- **Destination** – With the step, you can either create a new table or choose an existing one from your KQL database to route and ingest your real-time data. 
+- **Destination** – With the step, you can either create a table or choose an existing one from your KQL database to route and ingest your real-time data. 
 - **Source** – It helps you to verify the source of your real-time data for creating a data connection to ingest the data. 
 - **Schema** - It enables you to confirm or change the data format and verify the schema of incoming real-time data. By performing this step, you can ensure that the data is properly formatted and adheres to the expected schema, which helps prevent data loss or inaccuracies during ingestion.
 - **Summary** – It shows the status of the table creating with the schema and connection establishing of your eventstream and KQL database. 
@@ -149,9 +149,9 @@ This destination provides you with the ability to transform your real-time event
 - **Data format** – The format of real-time events that is sent to your lakehouse. 
 - **Open event processor** – It's where event transformation is defined. 
 
-:::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse.png" alt-text="Screenshot showing the lakehouse destination type." lightbox="./media/event-streams-destination/eventstream-destinations-lakehouse.png" :::
+    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse.png" alt-text="Screenshot showing the lakehouse destination type." lightbox="./media/event-streams-destination/eventstream-destinations-lakehouse.png" :::
 
-The **Event processor editor** will be popping up after clicking **Open event processor**:
+The **Event processor editor** pops up when you select **Open event processor**:
 
 :::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse-event-processor-overview.png" alt-text="Screenshot showing the event processor in lakehouse destination type." lightbox="./media/event-streams-destination/eventstream-destinations-lakehouse-event-processor-overview.png" :::
 
