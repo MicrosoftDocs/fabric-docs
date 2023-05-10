@@ -12,9 +12,9 @@ ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article details the current limitations and known issues in [!INCLUDE [product-name](../includes/product-name.md)].
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Limitations
 
@@ -35,6 +35,10 @@ For more limitations information in specific areas, see:
 - [The Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
 - [Connectivity](connectivity.md#considerations-and-limitations)
 - [Tables](tables.md#limitations)
+
+## Known issues for querying
+
+- Queries with PIVOT operator fail if there's a GROUP BY on the nonpivot column output by PIVOT. As a workaround, remove the nonpivot column from the GROUP BY.  Query results will be the same, as this GROUP BY clause is duplicate.
 
 ## Limitations of the SQL Endpoint
 

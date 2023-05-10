@@ -12,8 +12,6 @@ ms.search.form: Query editor # This article's title should not change. If so, co
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 To get started with this tutorial, check the following prerequisites:
 
 - You should have access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or above permissions.
@@ -27,6 +25,8 @@ To get started with this tutorial, check the following prerequisites:
 
 > [!NOTE]
 > Review the [T-SQL surface area](tsql-surface-area.md) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Run a new query in SQL query editor
 
@@ -117,12 +117,10 @@ There are several ways you can write cross-database queries within the same [!IN
 
    :::image type="content" source="media\query-warehouse\select-top-run.png" alt-text="Screenshot showing results of select top 100 rows." lightbox="media\query-warehouse\select-top-run.png":::
 
-## Limitations
-
-- At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
+> [!NOTE]
+> At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
 
 ## Next steps
 
-- [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md)
-- [Query using the Visual Query editor](visual-query-editor.md)
-- [Transactions in Synapse Data Warehouse tables](transactions.md)
+> [!div class="nextstepaction"]
+> [Create reports on data warehousing in Microsoft Fabric](create-reports.md)

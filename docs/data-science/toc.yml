@@ -23,6 +23,18 @@ items:
     href: tutorial-data-science-batch-scoring.md
   - name: 6 Create a Power BI report
     href: tutorial-data-science-create-report.md
+- name: Notebooks
+  items:
+  - name: Create and use notebooks
+    href: ../data-engineering/how-to-use-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Develop and run notebooks
+    href: ../data-engineering/author-execute-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Notebook visualization
+    href: ../data-engineering/notebook-visualization.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Explore data in lakehouse
+    href: ../data-engineering/lakehouse-notebook-explore.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Load data in lakehouse
+    href: ../data-engineering/lakehouse-notebook-load-data.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: Tutorials
   items:
   - name: How to use end-to-end AI samples
@@ -75,8 +87,66 @@ items:
       href: train-models-pytorch.md
 - name: Model scoring
   items:   
+    - name: Direct lake mode and PBI reporting
+      href: ../data-engineering/lakehouse-pbi-reporting.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Score models with PREDICT
       href: model-scoring-predict.md
+- name: Apache Spark
+  items:
+  - name: Spark compute
+    items:
+    - name: Overview
+      href: ../data-engineering/spark-compute.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Runtime
+      href: ../data-engineering/runtime.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Create custom pools
+      href: ../data-engineering/create-custom-spark-pools.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: High concurrency mode
+      href: ../data-engineering/high-concurrency-mode-notebooks.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Autotune Spark configuration
+      href: ../data-engineering/autotune.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Spark concurrency limits and queueing
+      href: ../data-engineering/spark-job-concurrency-and-queueing.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Spark job definition
+    items:
+    - name: What is a Spark job definition?
+      href: ../data-engineering/spark-job-definition.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Create a Spark job definition
+      href: ../data-engineering/create-spark-job-definition.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Run a Spark job definition
+      href: ../data-engineering/run-spark-job-definition.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Spark development
+    items:
+    - name: Spark utilities
+      href: ../data-engineering/microsoft-spark-utilities.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Library management
+      href: ../data-engineering/library-management.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Spark administration settings
+    items:
+    - name: Capacity settings overview
+      href: ../data-engineering/capacity-settings-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Configure capacity Settings
+      href: ../data-engineering/capacity-settings-management.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Spark workspace settings 
+      href: ../data-engineering/workspace-admin-settings.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Spark admin settings - FAQ
+      href: ../data-engineering/spark-admin-settings-faq.yml?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Spark monitoring
+    items:
+    - name: Spark monitoring overview
+      href: ../data-engineering/spark-monitoring-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Apache Spark Advisor
+      href: ../data-engineering/spark-advisor-introduction.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Monitoring hub - Browse Spark applications
+      href: ../data-engineering/browse-spark-applications-monitoring-hub.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Browse artifact's recent runs
+      href: ../data-engineering/spark-artifact-recent-runs.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Monitor Spark jobs in a notebook 
+      href: ../data-engineering/spark-monitor-debug.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Monitor Spark job definitions
+      href: ../data-engineering/monitor-spark-job-definitions.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Monitor Spark application
+      href: ../data-engineering/spark-detail-monitoring.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: Use Python
   items:
   - name: Python overview
