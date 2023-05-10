@@ -32,9 +32,9 @@ To create a query, drag and drop tables from the **Object explorer** on the left
 
 As you work on your visual query, the queries are automatically saved every few seconds. A "saving indicator" appears in your query tab to indicate that your query is being saved.
 
-The following image shows a sample query created using the no-code visual query editor to retrieve the **Top customers by Orders**.
+The following gif shows the merging of two tables using a no-code visual query editor.
 
-:::image type="content" source="media\visual-query-editor\sample-query-top-customers.png" alt-text="Screenshot of the results of a sample query to retrieve top customers by orders." lightbox="media\visual-query-editor\sample-query-top-customers.png":::
+:::image type="content" source="media\visual-query-editor\visual-query-editor.gif" alt-text="Gif of the results of a sample query to merge two tables using the visual query editor." lightbox="media\visual-query-editor\visual-query-editor.gif":::
 
 When you see results, you can use **Download Excel file** to view results in Excel or **Visualize results** to create report on results.
 
@@ -49,6 +49,7 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 ## Limitations with visual query editor
 
 - In the visual query editor, you can only run DQL (Data Query Language) or read-only [SELECT](/sql/t-sql/queries/select-transact-sql?view=fabric&preserve-view=true) statements. DDL or DML are not supported.
+- Only a subset of Power Query operations that support Query folding are currently supported.
 
 ## Next steps
 
