@@ -36,9 +36,9 @@ This feature allows you to create or alter an existing function using the `.crea
 
 1. Select **New** > **Function**. The `.create-or-alter` command is automatically populated in the **Explore your data** window.
 
-    :::image type="content" source="media/create-functions/function-cmd.png" alt-text="Screenshot of the New option dropdown menu. The option titled Function is highlighted.":::
+    :::image type="content" source="media/create-functions/function-command.png" alt-text="Screenshot of a KQL database landing page showing the New option dropdown menu. The option titled Function is highlighted.":::
 
-1. Enter the parameters for your function, and then select **Run**.
+1. Enter the function name and query parameters of your function instead of the placeholder text, and then select **Run**.
 
     :::image type="content" source="media/create-functions/create-function.png" alt-text="Screenshot of explore your data window showing the newly created function in Real-Time Analytics.":::
 
