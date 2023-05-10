@@ -12,25 +12,25 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this article, you learn how to create and use a new KQL Queryset.
+In this article, you learn how to create and use a new KQL queryset.
 
 The KQL Queryset is the item used to run queries, view, and customize query results on data from a KQL database.  Each tab in the KQL queryset can be associated with a different KQL database, and lets your save queries for later use or share with others to collaborate on data exploration. You can also change the KQL database associated with any tab, allowing you to run the same query on data in different states.
 
-The KQL Queryset uses the Kusto Query language for creating queries, and also supports many SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context). 
+The KQL Queryset uses the Kusto Query language for creating queries, and also supports many SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL Database](create-database.md) with data
+* A [KQL database](create-database.md) with data
 
 ## Create a KQL queryset
 
-A KQL Queryset exists within the context of a workspace. A new KQL Queryset is always associated with the workspace you're using when you create it.
+The KQL Queryset exists within the context of a workspace. A new KQL queryset is always associated with the workspace you're using when you create it.
 
 1. Browse to the desired workspace.
 1. Select **+New** > **KQL Queryset**
 
-    :::image type="content" source="media/kusto-query-set/new-queryset.png" alt-text="Screenshot of adding new KQL Queryset from workspace homepage.":::
+    :::image type="content" source="media/kusto-query-set/new-queryset.png" alt-text="Screenshot of adding a new KQL queryset from workspace homepage.":::
 
 1. Enter a unique name. You can use alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
@@ -50,7 +50,7 @@ A KQL Queryset exists within the context of a workspace. A new KQL Queryset is a
     :::image type="content" source="media/kusto-query-set/filter-queryset.png" alt-text="Screenshot of filtering types of items in workspace.":::
 
 1. Select the KQL queryset from the list of items that appear in the workspace.
- 
+
     :::image type="content" source="media/kusto-query-set/open-existing-query-set.png" alt-text="Screenshot of Microsoft Fabric workspace showing KQL Querysets." lightbox="media/kusto-query-set/open-existing-query-set.png":::
 :::image type="content" source="media/kusto-query-set/open-existing-query-set.png" alt-text="Screenshot of Microsoft Fabric workspace showing KQL Querysets.":::
 
@@ -84,7 +84,6 @@ The following examples use data that is publicly available at [https://kustosamp
     The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query has finished successfully, and time used to compute the query results.
 
     :::image type="content" source="media/kusto-query-set/query-window.png" alt-text="Screenshot of the KQL Queryset showing the results of a query. Both the query and the results pane are highlighted."  lightbox="media/kusto-query-set/query-window.png":::
-
 
 ## Copy query
 

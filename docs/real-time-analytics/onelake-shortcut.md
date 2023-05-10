@@ -25,7 +25,7 @@ To access the data in your KQL database in other [!INCLUDE [product-name](../inc
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md)
-* Lakehouse with data
+* A [Lakehouse](../data-engineering/create-lakehouse.md) with data
 
 ## Create shortcut
 
