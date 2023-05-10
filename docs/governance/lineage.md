@@ -60,26 +60,24 @@ Items are represented by cards that provide some information about the item.
 
 You see the data sources from which the datasets and dataflows get their data. On the data source cards, you see information that can help identify the source. For example, for Azure SQL server, you also see the database name.
 
-:::image type="content" source="./media/lineage/e/lineage-data-source-card.png" alt-text="Screenshot of the lineage view data source with no gateway.":::
+:::image type="content" source="./media/lineage/lineage-data-source-card.png" alt-text="Screenshot of the lineage view data source with no gateway.":::
 
 ## Highlight an item's lineage
 
-Say you want to see the lineage for a specific artifact.
+To highlight the lineage for a specific item, select the arrow at the bottom right corner of the card.
 
-* Select the double arrows under the artifact.
+:::image type="content" source="./media/lineage/lineage-highlight-specific-lineage.png" alt-text="Screenshot of highlighted lineage for a specific item." lightbox="./media/lineage/lineage-highlight-specific-lineage.png":::
 
-    :::image type="content" source="media/service-data-lineage/service-data-lineage-specific-artifact.png" alt-text="Screenshot of highlighted lineage for a specific artifact.":::
-
-   Power BI highlights all the artifacts related to that artifact, and dims the rest. 
+   Power BI highlights all the items related to that item, and dims the rest.
 
 ## Zoom and full screen 
 
 Lineage view is an interactive canvas. You can use the mouse and touchpad to navigate in the canvas, as well as to zoom in or out.
 
 * To zoom in and out, use either the menu in the bottom-right corner or your mouse or touchpad.
-* To have more room for the graph itself, use the full screen option at the bottom-right corner. 
+* To have more room for the graph itself, use the full screen option at the bottom-right corner.
 
-    :::image type="content" source="media/service-data-lineage/service-data-lineage-zoom.png" alt-text="Screenshot of zoom in or out, or full screen options.":::
+    :::image type="content" source="./media/lineage/lineage-zoom.png" alt-text="Screenshot of zoom in or out, or full screen options.":::
 
 ## Permissions
 
