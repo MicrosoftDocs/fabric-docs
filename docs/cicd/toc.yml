@@ -33,11 +33,11 @@ items:
     href: git-integration/git-get-started.md
   - name: Manage git branches
     href: git-integration/manage-branches.md
-  - name: Fix errors
+  - name: Handle errors and conflicts
     items:
     - name: Resolve conflicts
       href: git-integration/conflict-resolution.md
-    - name: Manually update the workspace
+    - name: Manually fix a failed update
       href: git-integration/partial-update.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
