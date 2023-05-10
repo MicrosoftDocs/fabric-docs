@@ -44,7 +44,7 @@ This feature allows you to create or alter an existing function using the `.crea
 
     Stored functions appear under **Functions** in the **Data tree**.
 
-    :::image type="content" source="media/create-functions/functions-object-tree.png" alt-text="Screenshot of Object tree showing the list of stored user-defined functions.":::
+    :::image type="content" source="media/create-functions/functions-object-tree.png" alt-text="Screenshot of Data tree showing the list of stored user-defined functions.":::
 
 1. In the **Explore your data** window, run a query to check that you have successfully created or altered your function.
 

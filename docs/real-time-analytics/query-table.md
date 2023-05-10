@@ -33,7 +33,7 @@ To learn how to use sample SQL queries, see [Sample SQL queries](tutorial-4-expl
 
 1. Select a single query to populate the **Explore your data** window. The query will automatically run and display results.
 
-    :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Check your data window showing query results of sample queries in Real-Time Analytics.":::
+    :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Explore your data window showing query results of sample queries in Real-Time Analytics.":::
 
 ## Next steps
 
