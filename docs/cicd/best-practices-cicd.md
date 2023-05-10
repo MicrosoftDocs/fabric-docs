@@ -95,7 +95,7 @@ With git integration, any developer can backup their work by committing it into 
 
 After backing up your work, there might be cases where you want to revert to a previous version and restore it in the workspace. There are a few options for this:
 
-* **Undo button**: The *Undo* operation is an easy and fast way to revert the immediate changes you made, as long as they are not committed yet. You can also undo each item separately. Read more about the [undo](./git-integration/git-get-started.md#undo-saved-change) operation.
+* **Undo button**: The *Undo* operation is an easy and fast way to revert the immediate changes you made, as long as they are not committed yet. You can also undo each item separately. Read more about the [undo](./git-integration/git-get-started.md#commit-changes-to-git&tabs=undo-save) operation.
 
 * **Reverting to older commits**: There’s no direct way to go back to a previous commit in the UI. The best option is to promote an older commit to be the HEAD using ‘git X’. Doing this will show that there’s an update in the source control pane, and you can update the workspace with that new commit.
 
@@ -201,6 +201,7 @@ Make sure that you set production deployment rules for data sources and paramete
 Deployment in a pipeline updates the workspace content, but it can also update the associated app through the [deployment pipelines API](./deployment-pipelines/pipeline-automation.md). It's not possible to update the app through the UI. You need to update the app manually. If you use an app for content distribution, don’t forget to update the app after deploying to production so that end users are immediately able to use the latest version.
 
 ### Deploying into production using git branches
+
 As the repo serves as the ‘single-source-of-truth’, some teams might want to deploy updates into different stages directly from git. This is possible with git integration, with a few considerations:
 
 * It’s recommended to use release branches. You will be required to continuously change the connection of workspace to the new release branches before every deployment.
@@ -213,7 +214,7 @@ As the repo serves as the ‘single-source-of-truth’, some teams might want to
 
 Sometimes there are issues in production that require a quick fix. Deploying a fix without testing it first is bad practice. Therefore, always implement the fix in the development stage and push it to the rest of the deployment pipeline stages. Deploying to the development stage allows you to check that the fix works before deploying it to production. Deploying across the pipeline takes only a few minutes.
 
-If you are using deployment from git, we recommend following the practices described in [Adopt a Git branching strategy](/azure/devops/repos/git/git-branching-guidance?view=azure-devops#port-changes-back-to-the-main-branch).
+If you are using deployment from git, we recommend following the practices described in [Adopt a Git branching strategy](/azure/devops/repos/git/git-branching-guidance#port-changes-back-to-the-main-branch).
 
 ## Next steps
 
