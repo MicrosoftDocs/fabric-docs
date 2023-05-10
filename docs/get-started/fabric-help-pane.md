@@ -21,19 +21,19 @@ The feature-aware state is the default view of the Help pane when you open it wi
 - **Forum topics**: This section shows topics from the community forums that are related to the features on the current screen. Select a topic to open it in a separate browser tab.
 - **Other resources**: This section has links for feedback and Support. 
 
-  ![Screenshot of zero query Resources section.](media/fabric-help-pane/fabric-help-resources.png)
+  :::image type="content" source="media/fabric-help-pane/fabric-help-resources.png" alt-text="Screenshot of zero query Resources section.":::
 
 ## The Help pane is a search engine
 
 The Help pane is also a search engine. Enter a keyword to find relevant information and resources from Microsoft documentation and community forum topics. Use the dropdown to filter the results.  
 
- ![Screenshot of help pane search.](media/fabric-help-pane/help-pane-search.png)
+ :::image type="content" source="media/fabric-help-pane/help-pane-search.png" alt-text="Screenshot of help pane search.":::
 
 ## The Help pane is perfect for learning and getting started
 
 As you explore Fabric, the feature-aware documents update based on what you've selected and where you are in Fabric. This is a great way to learn how to use Fabric. Give yourself a guided tour by making selections in Fabric and reading the feature-aware documents.  For example, in the Data Science experience, select **OneLake data hub**. The Help pane updates with articles that you can use to learn about the data hub.  
 
-![Screenshot of the Help pane with Data Hub selected.](media/fabric-help-pane/help-tour.png)
+:::image type="content" source="media/fabric-help-pane/help-tour.png" alt-text="Screenshot of the Help pane with Data Hub selected.":::
 
 ## Open the Help pane
 
@@ -41,19 +41,19 @@ Follow the instructions to practice using the Help pane.
 
 1. From the upper-right corner of Fabric, select the **?** icon to open the Help pane. 
 
-     ![Screenshot of open help pane.](media/fabric-help-pane/fabric-help-selection.png)
+     :::image type="content" source="media/fabric-help-pane/fabric-help-selection.png" alt-text="Screenshot of open help pane.":::
 
 1. Open **Browse** and select the **Recent** feature. The Fabric Help pane displays documents about the **Recent** feature. Select a document to learn more.  The document opens in a separate browser tab.  
 
-     ![Screenshot of view Recent article selected.](media/fabric-help-pane/fabric-help-document.png)
+     :::image type="content" source="media/fabric-help-pane/fabric-help-document.png" alt-text="Screenshot of view Recent article selected.":::
 
 1. Forum posts often provide interesting context. Select one that looks helpful or interesting.
 
-     ![Screenshot of view forum topics.](media/fabric-help-pane/fabric-help-forum.png)
+     :::image type="content" source="media/fabric-help-pane/fabric-help-forum.png" alt-text="Screenshot of view forum topics.":::
 
 1. Search the Microsoft documentation and community forums by entering a keyword in the search pane.  
 
-     ![Screenshot of search.](media/fabric-help-pane/search-experience.png)
+     :::image type="content" source="media/fabric-help-pane/search-experience.png" alt-text="Screenshot of search.":::
 
 1. Return to the default display of the Help pane by selecting the arrow. 
 
@@ -61,7 +61,7 @@ Follow the instructions to practice using the Help pane.
 
 1. Close the Help pane by selecting the X icon in the upper-right corner of the pane.
 
-    ![Screenshot of close help pane.](media/fabric-help-pane/fabric-help-close.png)
+    :::image type="content" source="media/fabric-help-pane/fabric-help-close.png" alt-text="Screenshot of close help pane.":::
 
 ## Still need help?
 If you still need help, select **Ask the community** and submit a question. If you have an idea for a new feature, let us know by selecting **Submit an idea**. To open the Support site, select **Get help** in **Other Resources**.
