@@ -151,7 +151,6 @@ mssparkutils.notebook.help()
 **Output:**
 
 ```console
-The notebook module.
 
 exit(value: String): void -> This method lets you exit a notebook with a value.
 run(path: String, timeoutSeconds: int, arguments: Map): String -> This method runs a notebook and returns its exit value.
@@ -228,7 +227,9 @@ print (exitVal)
 Notebook executed successfully with exit value 20
 ```
 
-## Session management - stop an interactive session
+## Session management
+
+### Stop an interactive session
 
 Instead of manually selecting the stop button, sometimes it's more convenient to stop an interactive session by calling an API in the code. For such cases, we provide an API *mssparkutils.session.stop()* to support stopping the interactive session via code, it's available for Scala and Python.
 

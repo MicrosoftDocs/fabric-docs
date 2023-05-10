@@ -35,6 +35,7 @@ The following table describes the permissions needed to perform various common o
 | **Operation**                                                        | **Workspace role**                                                                        | **Git permissions**                          |
 |----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|
 | Connect workspace to Git repo                                        | Admin                                                                                     | Read=Allow                                    |
+| Sync workspace with Git repo                                         | Admin                                                                                     | Read=Allow                                    |
 | Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    |
 | Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Read=Allow  (in target repo/directory/branch) |
 | View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 |
@@ -67,11 +68,11 @@ After you connect, the workspace displays a *Git status* column that indicates t
 
 Each item has one of the following statuses:
 
-- :::image type="icon" source="./media/git-integration-process/synced-icon.png"::: Synced
-- :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: Conflict
-- :::image type="icon" source="./media/git-integration-process/unsupported-icon.png"::: Unsupported
-- :::image type="icon" source="./media/git-integration-process/uncommitted-icon.png"::: Uncommitted
-- :::image type="icon" source="./media/git-integration-process/update-required-icon.png"::: Update required
+- :::image type="icon" source="./media/git-integration-process/synced-icon.png"::: Synced (the item is the same in the workspace and git branch)
+- :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: Conflict (the item was changed in both the workspace and git branch)
+- :::image type="icon" source="./media/git-integration-process/unsupported-icon.png"::: Unsupported item
+- :::image type="icon" source="./media/git-integration-process/uncommitted-icon.png"::: Uncommitted changes in the workspace
+- :::image type="icon" source="./media/git-integration-process/update-required-icon.png"::: Update required from git
 - :::image type="icon" source="./media/git-integration-process/warning.png"::: Item is synced but metadata is different
 
 ### Sync information
