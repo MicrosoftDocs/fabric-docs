@@ -12,9 +12,9 @@ ms.search.form: Model view # This article's title should not change. If so, cont
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 A well-defined data model is instrumental in driving your analytics and reporting experiences. In a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], you can easily build and change your data model with a few simple steps in our visual editor. You need to have at least a small sample of data loaded before you can explore these concepts further; tables may be empty, but the schemas (their structures) need to be defined.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Warehouse modeling
 

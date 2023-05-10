@@ -20,7 +20,7 @@ Lookup activity reads and returns the content of a configuration file or table. 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](/trident-docs-private-preview/synapse-data-integration/url).
+- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 - A workspace is created.
 
 ## Add a lookup activity to a pipeline with UI

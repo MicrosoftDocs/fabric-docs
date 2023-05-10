@@ -1,6 +1,6 @@
 ---
 title: Primary, foreign, and unique keys
-description: Learn more about table constraints support using Synapse Data Warehouse in Microsoft Fabric.
+description: Learn more about table constraints support using Warehouse in Microsoft Fabric.
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
@@ -8,16 +8,16 @@ ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
-# Primary keys, foreign keys, and unique keys in Synapse Data Warehouse in Microsoft Fabric
+# Primary keys, foreign keys, and unique keys in Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Learn about table constraints in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], including the primary key, foreign keys, and unique keys.
 
 > [!IMPORTANT]  
 > To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Table constraints
 
@@ -196,7 +196,7 @@ ALTER TABLE ForeignKeyTable ADD CONSTRAINT FK_ForeignKeyTablec1 FOREIGN KEY (c1)
 
 ## Next steps
 
-- [Design tables in Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)]](tables.md)
+- [Design tables in Warehouse in [!INCLUDE [product-name](../includes/product-name.md)]](tables.md)
 - [Data types in Microsoft Fabric](data-types.md)
 - [What is data warehousing in [!INCLUDE [product-name](../includes/product-name.md)]?](data-warehousing.md)
 - [What is data engineering in [!INCLUDE [product-name](../includes/product-name.md)]?](../data-engineering/data-engineering-overview.md)

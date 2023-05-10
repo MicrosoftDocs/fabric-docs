@@ -33,10 +33,10 @@ The following section lists various numerical limits for Spark workloads based o
 |F16|-|16|32|5|20|
 |F32|-|32|64|10|40|
 |F64|P1|64|128|20|80|
-|Fabric Trial|P2|64|128|5|-|
-|F128|P3|128|256|40|160|
-|F256|P4|256|512|80|320|
-|F512|P5|512|1024|160|640|
+|Fabric Trial|P1|64|128|5|-|
+|F128|P2|128|256|40|160|
+|F256|P3|256|512|80|320|
+|F512|P4|512|1024|160|640|
 
 The queueing mechanism is a simple FIFO-based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available. As there are different items like notebooks, spark job definition, and lakehouse which users could use in any workspace. As the usage varies across different enterprise teams, users could run into starvation scenarios where there is dependency on only type of item, such as a spark job definition. This could result in users sharing the capacity from running a notebook-based job or any lakehouse based operation like load to table.
 
@@ -59,4 +59,4 @@ With queueing enabled, batch jobs like Spark Job Definitions get added to the qu
 ## Next steps
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](workspace-admin-settings.md)
-* [Learn about the Spark Compute for Fabric Data Engineering/Science workloads](spark-compute.md)
+* [Learn about the Spark Compute for Fabric Data Engineering/Science experiences](spark-compute.md)

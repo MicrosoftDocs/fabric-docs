@@ -26,7 +26,7 @@ You can also complete the [Create and manage a Fabric deployment pipeline](/trai
 
 To access the deployment pipelines feature, you must meet the following conditions:
 
-* You have an [Microsoft Fabric license](../../enterprise/licenses.md):
+* You have an [Microsoft Fabric subscription](../../enterprise/licenses.md):
 
 * You're an admin of a Fabric [workspace](../../get-started/create-workspaces.md).
 

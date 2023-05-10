@@ -10,9 +10,9 @@ ms.date: 05/23/2023
 
 # Integrate OneLake with Azure HDInsight
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [Azure HDInsight](/azure/hdinsight/hdinsight-overview) is a managed cloud-based service for big data analytics that helps organizations process large amounts data. This tutorial shows how to connect to OneLake with a Jupyter notebook from an Azure HDInsight cluster.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Using Azure HDInsight
 

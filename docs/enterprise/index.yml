@@ -24,8 +24,8 @@ landingContent:
             url: licenses.md
       - linkListType: how-to-guide
         links:
-          - text: Buy a Microsoft Fabric license
-            url: licenses-buy.md
+          - text: Buy a Microsoft Fabric subscription
+            url: buy-subscription.md
 
   - title: Utilization and metrics app
     linkLists:
