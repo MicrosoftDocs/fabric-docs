@@ -52,7 +52,6 @@ The KQL Queryset exists within the context of a workspace. A new KQL queryset is
 1. Select the KQL queryset from the list of items that appear in the workspace.
 
     :::image type="content" source="media/kusto-query-set/open-existing-query-set.png" alt-text="Screenshot of Microsoft Fabric workspace showing KQL Querysets." lightbox="media/kusto-query-set/open-existing-query-set.png":::
-:::image type="content" source="media/kusto-query-set/open-existing-query-set.png" alt-text="Screenshot of Microsoft Fabric workspace showing KQL Querysets.":::
 
 ## Connect to a database
 
