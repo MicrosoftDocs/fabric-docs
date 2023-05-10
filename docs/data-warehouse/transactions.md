@@ -1,6 +1,6 @@
 ---
-title: Transactions for inserting and modifying data in Synapse Data Warehouse tables
-description: Learn how to use transactions and how to insert and modify data in Synapse Data Warehouse tables in Microsoft Fabric.
+title: Transactions in Warehouse tables
+description: Learn how to use transactions and how to insert and modify data in Warehouse tables in Microsoft Fabric.
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
-# Transactions in Synapse Data Warehouse tables in Microsoft Fabric
+# Transactions in Warehouse tables in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -73,5 +73,5 @@ Transaction logging in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUD
 
 ## Next steps
 
-- [Query the Synapse Data Warehouse](query-warehouse.md)
+- [Query the Warehouse](query-warehouse.md)
 - [Tables in [!INCLUDE[fabricdw](includes/fabric-dw.md)]](tables.md)

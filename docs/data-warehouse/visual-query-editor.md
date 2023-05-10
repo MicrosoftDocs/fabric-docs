@@ -54,5 +54,5 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 
 ## Next steps
 
-- [How-to: Query the Synapse Data Warehouse](query-warehouse.md)
+- [How-to: Query the Warehouse](query-warehouse.md)
 - [Query using the SQL Query editor](sql-query-editor.md)
