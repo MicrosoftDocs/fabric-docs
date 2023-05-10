@@ -31,10 +31,10 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: How to use end-to-end AI samples
-            url: use-ai-samples.md 
-          - text: Machine learning experiments
-            url: machine-learning-experiment.md 
+          - text: Introduction to Data science tutorials
+            url: tutorial-data-science-introduction.md
+          - text: Create and use notebooks
+            url: ../data-engineering/how-to-use-notebook.md
           - text: Machine learning models
             url: machine-learning-model.md 
 
@@ -43,6 +43,8 @@ landingContent:
     linkLists:
       - linkListType: tutorial
         links:
+          - text: How to use end-to-end AI samples
+            url: use-ai-samples.md 
           - text: Train a retail recommendation model
             url: retail-recommend-model.md 
           - text: Fraud detection
@@ -85,8 +87,8 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Score models with PREDICT
-            url: model-scoring-predict.md 
+          - text: Machine learning experiments
+            url: machine-learning-experiment.md
           - text: Fabric autologging
             url: mlflow-autologging.md 
 
