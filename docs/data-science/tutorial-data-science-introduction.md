@@ -54,7 +54,7 @@ In this tutorial, we showcase a simplified end-to-end data science scenario that
 1. [Data exploration and visualization](tutorial-data-science-explore-notebook.md).
 1. [Data cleansing, preparation, and feature engineering](tutorial-data-science-data-cleanse.md).
 1. [Model training and evaluation](tutorial-data-science-train-models.md).
-1. [Model batch scoring and saving predictions](tutorial-data-science-batch-scoring.md) for consumption.
+1. [Model batch scoring and saving predictions for consumption](tutorial-data-science-batch-scoring.md).
 1. [Visualizing prediction results](tutorial-data-science-create-report.md).
 
 :::image type="content" source="media/tutorial-data-science-introduction/data-science-scenario.png" alt-text="Diagram of the Data science end-to-end scenario components." lightbox="media/tutorial-data-science-introduction/data-science-scenario.png":::
@@ -67,7 +67,7 @@ In this tutorial, we showcase a simplified end-to-end data science scenario that
 
 **Models and experiments** - Fabric enables you to train, evaluate and score machine learning models by using built-in Experiment and Model artifacts with seamless integration with** [**MLflow**](https://mlflow.org/docs/latest/index.html) for experiment tracking and model registration/deployment. Fabric also features capabilities for model prediction at scale (PREDICT) to gain and share business insights.
 
-**Storage** - Fabric standardizes on [Delta Lake](https://docs.delta.io/latest/index.html), which means all the engines of Fabric can interact with the same dataset stored in a lakehouse. This storage layer allows you to store both structured and unstructured data that support both file-based storage and tabular format. The datasets and files stored can be easily accessed via all Fabric workload artifacts like notebooks and pipelines.
+**Storage** - Fabric standardizes on [Delta Lake](https://docs.delta.io/latest/index.html), which means all the engines of Fabric can interact with the same dataset stored in a lakehouse. This storage layer allows you to store both structured and unstructured data that support both file-based storage and tabular format. The datasets and files stored can be easily accessed via all Fabric experience artifacts like notebooks and pipelines.
 
 **Expose analysis and insights** - Data from a lakehouse can be consumed by Power BI, industry leading business intelligence tool, for reporting and visualization. Data persisted in the lakehouse can also be visualized in notebooks using Spark or Python native visualization libraries like matplotlib, seaborn, plotly, and more. Data can also be visualized using the SemPy library that supports built-in rich, task-specific visualizations for the semantic data model, for dependencies and their violations, and for classification and regression use cases.
 

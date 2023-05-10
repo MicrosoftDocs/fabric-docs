@@ -5,6 +5,7 @@ ms.reviewer: sngun
 ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
+ms.search.form: product-trident
 ms.date: 5/23/2023
 ---
 
@@ -23,6 +24,7 @@ In this article, you find a comprehensive list of end-to-end tutorials available
 |[Real-Time Analytics](../real-time-analytics/tutorial-introduction.md)   | In this tutorial, you'll use the streaming and query capabilities of Real-Time Analytics to analyze the New York Yellow Taxi trip dataset. You'll uncover essential insights into trip statistics, taxi demand across the boroughs of New York, and other related insights. |
 |[Data warehouse](../data-warehouse/tutorial-introduction.md) |  In this tutorial, you'll build an end-to-end data warehouse for the fictional Wide World Importers company. You'll ingest data into data warehouse, transform it using T-SQL and pipelines, run queries, and build reports. |
 |[Power BI](/power-bi/fundamentals/fabric-get-started) |  In this tutorial, you'll build a dataflow and pipeline to bring data into a lakehouse, create a dimensional model, and generate a compelling report. |
+|[Data Factory(/data-factory/tutorial-end-to-end-introduction.md) | In this tutorial, you ingest data with data pipelines and transform data with dataflows, then use the automation and notification to create a complete data integration scenario. |
 
 ## Next steps
 
