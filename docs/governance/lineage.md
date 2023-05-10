@@ -14,7 +14,7 @@ ms.date: 05/23/2023
 
 In modern business intelligence (BI) projects, understanding the flow of data from the data source to its destination can be a challenge. The challenge is even bigger if you've built advanced analytical projects spanning multiple data sources, data items, and dependencies. Questions like "What happens if I change this data?" or "Why isn't this report up to date?" can be hard to answer. They might require a team of experts or deep investigation to understand. Fabric's lineage view helps you answer these questions.
 
-:::image type="content" source="./media/lineage/lineage-view.png" alt-text="Screenshot of the lineage view in Microsoft Fabric.":::
+:::image type="content" source="./media/lineage/lineage-view.png" alt-text="Screenshot of the lineage view in Microsoft Fabric." lightbox="./media/lineage/lineage-view.png":::
 
 In lineage view, you see the lineage relationships between all the items in a workspace, as well as data sources external to the workspace one-step upstream.
 
@@ -27,37 +27,38 @@ Every workspace automatically has a lineage view. You need at least a *Contribut
 
 Lineage is accessible from multiple locations. Typically, you can get to it 
 
-* From an item's option menu (for instance, in the OneLake data hub)
-
-    :::image type="content" source="{source}" alt-text="{alt-text}":::
-
 * From the workspace toolbar
 
-    :::image type="content" source="{source}" alt-text="{alt-text}":::
+    :::image type="content" source="./media/lineage/lineage-workspace.png" alt-text="Screenshot of lineage view option in workspace menu.":::
+
+* From an item's option menu (for instance, in the OneLake data hub)
+
+    :::image type="content" source="./media/lineage/lineage-options-menu.png" alt-text="Screenshot of lineage view option in options menu.":::
 
 * From the menu items at the top of the item's details page
 
-    :::image type="content" source="{source}" alt-text="{alt-text}":::
+    :::image type="content" source="./media/lineage/lineage-data-details.png" alt-text="Screenshot of lineage view option on data details page.":::
 
 ## What do you see in lineage view
 
-When you open lineage view on an item, you'll the view of the workspace the item is located in.
+When you open lineage view on an item, you'll get the lineage view of the workspace the item is located in.
 
-All the items in the workspace and the how they are connected to each other
+:::image type="content" source="./media/lineage/lineage-view.png" alt-text="Screenshot showing contents of lineage view in Microsoft Fabric." lightbox="./media/lineage/lineage-view.png":::
 
-For connections outside the workspace
-If data source is external, 1 level up shown.
-Downstream items in different workspaces: Not shown. Use Impact analysis.
+Lineage view displays:
 
-ITems are represeneted with cards that show you.
-x
-x
-x
-s
+* All the items in the workspace and the how they are connected to each other.
+* Upstream connections outside the workspace, one level up. You can tell if an item is outside the workspace because the name of the external workspace is indicated on the card, as illustrated by the HR Data KQL Database in the image above.
 
-Select XXX to highlight an items lineage
+Downstream items in different workspaces are not shown. To explore an item's downstream connections outside the workspace, open the item's impact analysis.
 
-Select XXX to see the impact analysis for an item.
+Items are represented by cards that provide some information about the item.
+
+:::image type="content" source="./media/lineage/lineage-data-details.png" alt-text="Screenshot of lineage view option on data details page.":::
+
+* Select XXX to highlight an items lineage
+
+** Select XXX to see the impact analysis for an item.
 
 **Data sources**
 
