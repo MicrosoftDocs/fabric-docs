@@ -43,7 +43,7 @@ landingContent:
         links:
           - text: What is a Lakehouse?
             url: ../data-engineering/lakehouse-overview.md
-          - text: SQL Endpoint
+          - text: Better together - the lakehouse and warehouse
             url: get-started-lakehouse-sql-endpoint.md
           - text: Create a lakehouse with OneLake
             url: ../onelake/create-lakehouse-onelake.md
@@ -131,10 +131,3 @@ landingContent:
             url: security.md
           - text: Ingest Data
             url: ingest-data.md
-  # Card
-  - title: Sharing
-    linkLists: 
-      - linkListType: how-to-guide
-        links:
-          - text: Get Workspace and OneLake path
-            url: get-workspace-onelake-path.md
