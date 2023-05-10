@@ -47,7 +47,7 @@ When you open lineage view on an item, you'll see the connections between all th
 
 Lineage view displays:
 
-* All the items in the workspace and the how they are connected to each other.
+* All the items in the workspace and how they are connected to each other.
 * Upstream connections outside the workspace, one level up. You can tell if an item is outside the workspace because the name of the external workspace is indicated on the card, as illustrated by the HR Data KQL Database in the image above.
 
 Downstream items in different workspaces aren't shown. To explore an item's downstream connections outside the workspace, open the item's impact analysis.
@@ -68,7 +68,7 @@ To highlight the lineage for a specific item, select the arrow at the bottom rig
 
 :::image type="content" source="./media/lineage/lineage-highlight-specific-lineage.png" alt-text="Screenshot of highlighted lineage for a specific item." lightbox="./media/lineage/lineage-highlight-specific-lineage.png":::
 
-   Fabroc highlights all the items related to that item, and dims the rest.
+   Fabric highlights all the items related to that item, and dims the rest.
 
 ## Zoom and full screen 
 
