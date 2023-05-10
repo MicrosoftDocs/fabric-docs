@@ -33,6 +33,8 @@ landingContent:
         links:
           - text: Introduction to Data science tutorials
             url: tutorial-data-science-introduction.md
+          - text: Data science roles and permissions
+            url: models-experiments-rbac.md
           - text: Machine learning models
             url: machine-learning-model.md 
 
