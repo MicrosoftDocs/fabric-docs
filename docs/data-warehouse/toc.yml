@@ -4,6 +4,7 @@ items:
 - name: Overview
   href: data-warehousing.md
 - name: Get started with Synapse Data Warehouse
+  expanded: true
   items:
   - name: 1. Create a warehouse
     href: create-warehouse.md
@@ -25,19 +26,23 @@ items:
     href: tutorial-create-warehouse.md
   - name: 3. Ingest data into a warehouse
     href: tutorial-ingest-data.md
-  - name: 4. Build a report
-    href: tutorial-build-report.md
-  - name: 5. Create tables
+  - name: 4. Create tables
     href: tutorial-create-tables.md
-  - name: 6. Load data using T-SQL
+  - name: 5. Load data using T-SQL
     href: tutorial-load-data.md
-  - name: 7. Transform data using stored procedure
+  - name: 6. Transform data using stored procedure
     href: tutorial-transform-data.md
-  - name: 8. Create queries with visual query builder
+  - name: 7. Create queries with visual query builder
     href: tutorial-visual-query.md
-  - name: 9. Create Power BI reports
+  - name: 8. Analyze data with a notebook
+    href: tutorial-analyze-data-notebook.md
+  - name: 9. Create queries with the SQL query editor
+    href: tutorial-sql-cross-warehouse-query-editor.md
+  - name: 10. Create Power BI reports
     href: tutorial-power-bi-report.md
-  - name: 10. Clean up resources
+  - name: 11. Build a report from the OneLake data hub
+    href: tutorial-build-report-onelake-data-hub.md
+  - name: 12. Clean up resources
     href: tutorial-clean-up.md        
 - name: Connect to the warehouse
   items: 

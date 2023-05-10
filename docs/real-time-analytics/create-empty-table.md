@@ -54,7 +54,7 @@ The command viewer shows the commands for creating tables, mapping, and ingestin
 
 To open the command viewer, select the **v** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
 
-:::image type="content" source="media/empty-table/empty-command-viewer.png" alt-text="Screenshot of the Command viewer. The Expand button is highlighted.":::
+:::image type="content" source="media/empty-table/empty-command-viewer.png" alt-text="Screenshot of the Command viewer. The Expand button is highlighted." lightbox="media/empty-table/empty-command-viewer.png":::
 
 #### Partial data preview
 
@@ -62,7 +62,7 @@ The partial data preview is automatically inferred based on your data.
 
 To add a new column, select **Add new column** under **Partial data preview**.
 
-:::image type="content" source="media/empty-table/schema-new-column.png" alt-text="Screenshot of the Schema tab in the new table wizard in Real-Time Analytics. The Add new column button is highlighted.":::
+:::image type="content" source="media/empty-table/schema-new-column.png" alt-text="Screenshot of the Schema tab in the new table wizard in Real-Time Analytics. The Add new column button is highlighted." lightbox="media/empty-table/schema-new-column.png":::
 
 ##### Edit columns
 
@@ -72,10 +72,11 @@ To add a new column, select **Add new column** under **Partial data preview**.
 
 1. Select **Save** to add the columns to your table.
 
-    :::image type="content" source="media/empty-table/edit-columns.png" alt-text="Screenshot of  the Edit columns window showing filled column names and their data type in the new table wizard in Real-Time Analytics.":::
+    :::image type="content" source="media/empty-table/edit-columns.png" alt-text="Screenshot of  the Edit columns window showing filled column names and their data type in the new table wizard in Real-Time Analytics." lightbox="media/empty-table/edit-columns.png":::
 
     The Partial data preview  reflects the added columns:
-    :::image type="content" source="media/empty-table/added-columns.png" alt-text="Screenshot of Schema tab showing the added columns under the Partial data preview. The column names are highlighted.":::
+
+    :::image type="content" source="media/empty-table/added-columns.png" alt-text="Screenshot of Schema tab showing the added columns under the Partial data preview. The column names are highlighted." lightbox="media/empty-table/added-columns.png":::
 
     > [!NOTE]
     > Optionally, you can edit existing columns and  add new columns by selecting **Edit columns** or the **+** button on the right-hand column under **Partial data preview**.

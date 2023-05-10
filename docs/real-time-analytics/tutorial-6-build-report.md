@@ -58,7 +58,7 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
 1. Select **Continue**.
 1. Select **Open the file in Power BI to view, edit, and get a shareable link**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/open-in-power-BI.png" alt-text="Screenshot of opening in Power BI in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/open-in-power-BI.png" alt-text="Screenshot of opening in Power BI in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/open-in-power-BI.png":::
 
 ## Change refresh settings
 
@@ -66,12 +66,12 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
 1. In the **Visualizations** pane, select the paintbrush icon to **Format page**.
 1. Expand **Page Refresh**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/page-refresh-on.png" alt-text="Screenshot of page refresh details in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/page-refresh-on.png" alt-text="Screenshot of page refresh details in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/page-refresh-on.png":::
 
 1. Toggle **Page Refresh** to **On** and set the refresh interval to 10 seconds.
 
     > [!NOTE]
-    >  The refresh interval can only be greater than or equal to the Admin interval.
+    > The refresh interval can only be greater than or equal to the Admin interval.
 
 1. Select the **Save** icon on the ribbon.
 

@@ -36,11 +36,11 @@ This feature allows you to create or alter an existing function using the `.crea
 
 1. Browse to your KQL database, and select **New** > **Function**. The `.create-or-alter` command is automatically populated in the **Explore your data** window.
 
-    :::image type="content" source="media/create-functions/function-command.png" alt-text="Screenshot of a KQL database landing page showing the New option dropdown menu. The option titled Function is highlighted."  lightbox="media/create-functions/function-command.png":::
+    :::image type="content" source="media/create-functions/function-command.png" alt-text="Screenshot of a KQL database landing page showing the New option dropdown menu. The option titled Function is highlighted."  lightbox="media/create-functions/function-command-extended.png":::
 
 1. Enter the function name and query parameters of your function instead of the placeholder text, and then select **Run**.
 
-    :::image type="content" source="media/create-functions/create-function.png" alt-text="Screenshot of explore your data window showing the newly created function in Real-Time Analytics.":::
+    :::image type="content" source="media/create-functions/create-function.png" alt-text="Screenshot of explore your data window showing the newly created function in Real-Time Analytics." lightbox="media/create-functions/create-function.png":::
 
     Stored functions appear under **Functions** in the **Data tree**.
 
@@ -48,7 +48,7 @@ This feature allows you to create or alter an existing function using the `.crea
 
 1. In the **Explore your data** window, run a query to check that you have successfully created or altered your function.
 
-    :::image type="content" source="media/create-functions/function-example.png" alt-text="Screenshot of the explore your data window showing query results of a stored function in Real-Time Analytics.":::
+    :::image type="content" source="media/create-functions/function-example.png" alt-text="Screenshot of the explore your data window showing query results of a stored function in Real-Time Analytics." lightbox="media/create-functions/function-example.png":::
 
 ## Next steps
 
