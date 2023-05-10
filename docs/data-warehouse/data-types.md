@@ -6,7 +6,7 @@ ms.author: cynotebo
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
-ms.search.form: SQL Endpoint overview, Warehouse overview # The article's title should not change. If so, contact engineering.
+ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Data types in Microsoft Fabric
 
@@ -14,7 +14,7 @@ ms.search.form: SQL Endpoint overview, Warehouse overview # The article's title 
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Tables in Microsoft Fabric support the most commonly used T-SQL data types. 
+Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the most commonly used T-SQL data types. 
 
 - For more information on table creation, see [Tables](tables.md).
 
