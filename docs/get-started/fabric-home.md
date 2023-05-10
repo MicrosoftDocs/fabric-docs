@@ -5,7 +5,6 @@ author: mihart
 ms.author: mihart
 ms.topic: conceptual  
 ms.date: 05/10/2023
-ms.search.form: product-fabric
 ---
 
 # Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
@@ -56,12 +55,12 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 
 :::image type="content" source="media/fabric-home/fabric-nav-pane.png" alt-text="Screenshot of the nav pane for Data factory.":::        
 
-Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data factory nav pane. Notice t hat **My workspace** is the active workspace. The options in your nav pane depend on the product experience you've selected. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
+Along the left side is a narrow vertical bar, referred to as the ***nav pane***. This example uses the Data factory nav pane. Notice that **My workspace** is the active workspace. The options in your nav pane depend on the product experience you've selected. The nav pane organizes actions you can take with your items in ways that help you get to where you want to be quickly. Occasionally, using the nav pane is the quickest way to get to your items. 
 
 In the bottom section of the nav pane is where you find and open your workspaces. Use the [workspace selector](#find-and-open-workspaces) to view a list of your workspaces and select one to open. Below the workspace selector is the name of the currently open workspace.  
-    - By default, you see the **Workspaces** selector and **My workspace**. 
-    - When you open a workspace, its name replaces **My workspace**. 
-    - Whenever you create a new item, it's added to the open workspace.
+    - By default, you see the **Workspaces** selector and **My workspace**.  
+    - When you open a workspace, its name replaces **My workspace**.  
+    - Whenever you create a new item, it's added to the open workspace.  
 
 The nav pane is there when you open Home and remains there as you open other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Every [!INCLUDE [product-name](../includes/product-name.md)] product experience nav pane includes **Home**, **Browse**, **OneLake data hub**, **Create**, and  **Workspaces**.
 
