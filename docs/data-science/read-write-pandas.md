@@ -11,114 +11,121 @@ ms.search.form: Read and Write Pandas
 
 # How to read and write data with Pandas in Microsoft Fabric
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide built-in support for Pandas, the most popular Python library for data exploration and processing. Within a notebook, users can quickly read data from—and write data to—their Lakehouses, working with a variety of file formats. This guide provides code samples to help you get started from your own notebook.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Pandas became the most popular Python library for data exploration and processing. In this guide, we walk through examples that show how to read and write data in a Notebook, from a Lakehouse, using the Pandas library.
+## Load Lakehouse data into your notebook in a matter of clicks
 
-## Convert Spark dataframe to Pandas
+Once you attach a Lakehouse to your [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can explore stored data without leaving the page and read it into your notebook in a matter of clicks. Selecting any file provides options to "Load data" into a Spark or Pandas DataFrame. (You can also copy the file's full ABFS path or friendly relative path.)
 
-First, this code sample shows how to convert a Spark dataframe to a pandas dataframe:
+:::image type="content" source="media/read-write-pandas/load-data-pandas-dataframe.png" alt-text="Screenshot showing where to select options to load data into a Pandas DataFrame." lightbox="media/read-write-pandas/load-data-pandas-dataframe.png":::
+
+Clicking on one of the "Load data" prompts will generate a code cell to load the data from the file into a DataFrame in your notebook.
+
+:::image type="content" source="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png" alt-text="Screenshot of the code cell added to the notebook." lightbox="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png":::
+
+## Convert a Spark DataFrame to Pandas
+
+For reference, the following code sample shows how to convert a Spark DataFrame into a Pandas DataFrame.
 
 ```Python
+# Replace "spark_df" with the name of your own Spark DataFrame
 pandas_df = spark_df.toPandas() 
 ```
 
-These examples show how Pandas can read and write various file formats from Lakehouse / One Lake.
+# Read and write various filetypes
+
+The code samples below document the Pandas operations for reading and writing various file formats.
 
 > [!NOTE]
-> You need to replace the file names and file paths in these examples.
+> Please replace the file paths in the following samples. Pandas supports both relative paths, as shown in these examples, and full ABFS paths. Either can be retrieved and copied from the interface according to the previous step.
 
-> [!NOTE]
-> Pandas support both abfss and relative paths.  
-
-## Load data into Pandas from UI
-
-Once you attach a Lakehouse to your Notebook, you can explore the data in that Lakehouse. This way, you can select a file in your Lakehouse - for example, a CSV file - and choose to “Load data” into a Pandas dataframe.
-
-:::image type="content" source="media/read-write-pandas/load-data-pandas-dataframe.png" alt-text="Screenshot showing where to select options to load data into a Pandas dataframe." lightbox="media/read-write-pandas/load-data-pandas-dataframe.png":::
-
-This adds a code cell to the Notebook with generated Python code, to load the data from the file into a Pandas dataframe:
-
-:::image type="content" source="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png" alt-text="Screenshot of the code cell added to the Notebook." lightbox="media/read-write-pandas/code-cell-load-data-pandas-dataframe.png":::
-
-## Read CSV file from Lakehouse with Pandas
+## Read data from a CSV file
 
 ```Python
-Import pandas as pd 
-# Load data into pandas DataFrame from CSV 
-df = pd.read_csv("/<Lakehouse path>/filename.csv") 
+import pandas as pd
+
+# Read a CSV file from your Lakehouse into a Pandas DataFrame
+# Replace LAKEHOUSE_PATH and FILENAME with your own values
+df = pd.read_csv("/LAKEHOUSE_PATH/Files/FILENAME.csv")
+display(df)
+```
+
+## Write data to a CSV file
+
+```Python
+import pandas as pd 
+
+# Write a Pandas DataFrame into a CSV file in your Lakehouse
+# Replace LAKEHOUSE_PATH and FILENAME with your own values
+df.to_csv("/LAKEHOUSE_PATH/Files/FILENAME.csv") 
+```
+
+## Read data from a Parquet file
+
+```Python
+import pandas as pd 
+ 
+# Read a Parquet file from your Lakehouse into a Pandas DataFrame
+# Replace LAKEHOUSE_PATH and FILENAME with your own values
+df = pandas.read_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet") 
+display(df)
+```
+
+## Write data to a Parquet file
+
+```Python
+import pandas as pd 
+ 
+# Write a Pandas DataFrame into a Parquet file in your Lakehouse
+# Replace LAKEHOUSE_PATH and FILENAME with your own values
+df.to_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet") 
+```
+
+## Read data from an Excel file
+
+```Python
+import pandas as pd 
+ 
+# Read an Excel file from your Lakehouse into a Pandas DataFrame
+# Replace LAKEHOUSE_PATH and FILENAME with your own values
+df = pandas.read_excel("/LAKEHOUSE_PATH/Files/FILENAME.xlsx") 
 display(df) 
 ```
 
-## Write CSV file to Lakehouse with Pandas
+## Write data to an Excel file
 
 ```Python
-Import pandas as pd 
-# Write CSV file from Pandas dataframe 
-df.to_csv("/<Lakehouse path>/filename.csv") 
+import pandas as pd 
+
+# Write a Pandas DataFrame into an Excel file in your Lakehouse
+# Replace LAKEHOUSE_PATH and FILENAME with your own values
+df.to_excel("/LAKEHOUSE_PATH/Files/FILENAME.xlsx") 
 ```
 
-## Read Parquet file from Lakehouse with Pandas
+## Read data from a JSON file
 
 ```Python
-Import pandas as pd 
+import pandas as pd 
  
-# Load data into pandas DataFrame from Parquet 
-df = pandas.read_parquet(“/<Lakehouse path>/filename.parquet") 
+# Read a JSON file from your Lakehouse into a Pandas DataFrame
+# Replace LAKEHOUSE_PATH and FILENAME with your own values
+df = pandas.read_json("/LAKEHOUSE_PATH/Files/FILENAME.json") 
 display(df) 
 ```
 
-## Write Parquet file to Lakehouse with Pandas
+## Write data to a JSON file
 
 ```Python
-Import pandas as pd 
+import pandas as pd 
  
-# Write Parquet 
-df.to_parquet("/<Lakehouse path>/filename.parquet") 
-```
-
-## Read Excel file from Lakehouse with Pandas
-
-```Python
-Import pandas as pd 
- 
-# Load data into pandas DataFrame from Excel 
-df = pandas.read_excel(“/<Lakehouse path>/filename.xlsx") 
-display(df) 
-```
-
-## Write Excel file to Lakehouse with Pandas
-
-```Python
-Import pandas as pd 
-# Write Excel file from Pandas Dataframe  
-df.to_excel("/<Lakehouse path>/filename.xlsx") 
-```
-
-## Read Json file from Lakehouse with Pandas
-
-```Python
-Import pandas as pd 
- 
-# Load data into pandas DataFrame from json 
-df = pandas.read_json(“/<Lakehouse path>/filename.json") 
- 
-display(df) 
-```
-
-## Write Json file to Lakehouse with Pandas
-
-```Python
-Import pandas as pd 
- 
-# Write json file from Pandas Dataframe  
-df.to_json("/<Lakehouse path>/filename.xlsx") 
+# Write a Pandas DataFrame into a JSON file in your Lakehouse
+# Replace LAKEHOUSE_PATH and FILENAME with your own values
+df.to_json("/LAKEHOUSE_PATH/Files/FILENAME.json") 
 ```
 
 ## Next steps
 
-- Use Data Wrangler to clean and prepare your data (See the [Data Wrangler section](data-wrangler.md))
-- Start training ML models (See How-to Train models section)
+- Use Data Wrangler to [clean and prepare your data](data-wrangler.md)
+- Start [training ML models](./model-training/model-training-overview.md)
