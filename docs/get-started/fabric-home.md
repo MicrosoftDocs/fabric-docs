@@ -11,7 +11,7 @@ ms.date: 05/09/2023
 
 This article gives a high level view of navigating to your items and actions from [!INCLUDE [product-name](../includes/product-name.md)] Home. Each product experience has its own Home, and there are similarities that they all share. Those similarities are described in this article. For detailed information about **Home** for a particular product experience, such as Data Factory Home, visit the relevant page for that product experience. 
 
-[!INCLUDE ../includes/preview-note.md]
+[!INCLUDE [trial note](../includes/preview-note.md)]
 
 ## Overview of Home 
 
@@ -80,7 +80,7 @@ To learn about the many ways to search from [!INCLUDE [product-name](../includes
 
 ### Find answers in the context sensitive Help pane
 
-Select the Help icon :::image type="content" source="media/fabric-home/fabric-help-icon.png" alt-text="Screenshot of the question mark Help icon."::: to open and use the contextual Help pane and to search for answers to questions.
+Select the Help icon (**?**) to open and use the contextual Help pane and to search for answers to questions.
 
 [!INCLUDE [product-name](../includes/product-name.md)] provides context sensitive help in the right rail of your browser. In this example, we've selected **Browse** from the nav pane and the Help pane automatically updates to show us articles about the features of the **Browse** screen. For example, we're shown articles on *View recent content* and *See content that others have shared with you*. If there are community posts related to the current view, they are displayed under **Forum topics**. 
 
