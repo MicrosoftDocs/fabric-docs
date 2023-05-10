@@ -15,6 +15,8 @@ items:
   items:
   - name: Find your items from Fabric Home
     href: fabric-home.md
+  - name: Context sensitive Help pane
+    href: fabric-help-pane.md
   - name: Search, sort, and filter
     href: fabric-search.md
   - name: Fabric settings
