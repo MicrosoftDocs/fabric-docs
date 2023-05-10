@@ -21,7 +21,7 @@ In this article, you find a comprehensive list of end-to-end tutorials available
 |[Lakehouse](../data-engineering/tutorial-lakehouse-introduction.md) | In this tutorial, you ingest, transform, and load the data of a fictional retail company, Wide World Importers, into the lakehouse and analyze sales data across various dimensions.  |
 |[Data Science](../data-science/tutorial-data-science-introduction.md)    |  In this tutorial, you explore, clean, and transform a taxicab trip dataset, and build a machine learning model to predict trip duration at scale on a large dataset.   |
 |[Real-Time Analytics](../real-time-analytics/tutorial-introduction.md)   | In this tutorial, you use the streaming and query capabilities of Real-Time Analytics to analyze the New York Yellow Taxi trip dataset. You uncover essential insights into trip statistics, taxi demand across the boroughs of New York, and other related insights. |
-|[Data warehouse](../data-warehouse/create-warehouse.md) |  In this tutorial, you build an end-to-end data warehouse for the fictional Wide World Importers company. You ingest data into data warehouse, transform it using T-SQL and pipelines, run queries, and build reports. |
+|[Data warehouse](../placeholder.md) |  In this tutorial, you build an end-to-end data warehouse for the fictional Wide World Importers company. You ingest data into data warehouse, transform it using T-SQL and pipelines, run queries, and build reports. |
 |[Data Factory](../data-factory/tutorial-end-to-end-introduction.md) | In this tutorial, you create a complete data integration scenario using a pipeline and dataflow. |
 
 ## Next steps
