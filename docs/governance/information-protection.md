@@ -129,4 +129,4 @@ The following are steps you can take using Fabric's information protection capab
 
 ## Next steps
 
-* [Admin overview](../admin/admin-overview.md)
+* [Admin overview](../admin/microsoft-fabric-admin.md)

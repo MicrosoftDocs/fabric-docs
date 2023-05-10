@@ -37,7 +37,7 @@ To access the git integration feature, you need one of the following:
 - [Fabric license](../../enterprise/licenses.md)
 - Access to a [Fabric capacity workspace](../../enterprise/licenses.md#capacity-and-skus)
 
-In addition, your organization’s administrator has to [enable the git integration switch](../../admin/admin-settings-git-integration.md). If git integration is disabled in the workspace, contact your administrator.
+In addition, your organization’s administrator has to [enable the git integration switch](../../admin/git-integration-admin-settings.md). If git integration is disabled in the workspace, contact your administrator.
 
 ## Connect a workspace to an Azure repo
 
