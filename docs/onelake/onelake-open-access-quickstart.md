@@ -20,7 +20,7 @@ In this guide, you will:
 ## Prerequisites
 
 - A workspace with a lakehouse item.
-- An Azure Databricks workspace.
+- A premium Azure Databricks workspace. Only premium Azure Databricks workspaces support Microsoft Azure Active Directory credential passthrough. When creating your cluster, enable Azure Data Lake Storage credential passthrough in the Advanced Options.
 - A sample dataset.
 
 ## Steps
