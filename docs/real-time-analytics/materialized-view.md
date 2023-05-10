@@ -19,7 +19,7 @@ A materialized view is an aggregation query over a source table, or over another
 
 For more information on materialized views, see [Materialized view overview](/azure/data-explorer/kusto/management/materialized-views/materialized-view-overview?context=/fabric/context/context).
 
-In this article, you'll learn how to create materialized views using the `.create materialized-view` command.
+In this article, you learn how to create materialized views using the `.create materialized-view` command.
 
 For more information on the `.create materialized-view` command, see [.create materialized-view](/azure/data-explorer/kusto/management/materialized-views/materialized-view-create?context=/fabric/context/context).
 
@@ -30,15 +30,15 @@ For more information on the `.create materialized-view` command, see [.create ma
 
 ## Materialized view
 
-1. Select **New** > **Materialized view**.
+1. Browse to your KQL database, and select **+New** > **Materialized view**.
 
-    :::image type="content" source="media/materialized-view/materialized-view.png" alt-text="Screenshot of the New option dropdown menu in Real-Time Analytics, with the option titled Materialized view highlighted.":::
+    :::image type="content" source="media/materialized-view/materialized-view.png" alt-text="Screenshot of a KQL database landing page showing the New option dropdown menu, with the option titled Materialized view highlighted."  lightbox="media/materialized-view/materialized-view.png":::
 
-    The materialized view command is automatically populated in the **Explore your data** window.
+    The materialized view command is populated in the **Explore your data** window.
 
-1. Enter the parameters of your materialized view, and then select **Run**.
+1. Enter the table name and query statement of your materialized view instead of the placeholder text, and then select **Run**.
 
-    :::image type="content" source="media/materialized-view/mv-example.png" alt-text="Screenshot of Check your data window showing an example of a materialized view command.":::
+    :::image type="content" source="media/materialized-view/mv-example.png" alt-text="Screenshot of Explore your data window showing an example of a materialized view command.":::
 
     Materialized views appear under **Materialized views** in the **Data tree**.
 
@@ -47,5 +47,5 @@ For more information on the `.create materialized-view` command, see [.create ma
 ## Next steps
 
 * [Materialized views limitations](/azure/data-explorer/kusto/management/materialized-views/materialized-views-limitations?context=/fabric/context/context)
-* [Query data in the KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
 * [Create stored functions](create-functions.md)

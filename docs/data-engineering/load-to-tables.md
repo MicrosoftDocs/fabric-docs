@@ -11,9 +11,9 @@ ms.search.form: lakehouse load to delta lake tables
 
 # Load to Delta Lake tables
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](lakehouse-overview.md) provides a feature to efficiently load common file types to an optimized Delta table ready for analytics. This guide describes the __Load to Tables__ feature and its capabilities.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Summary of __Load to Tables__ capabilities:
 

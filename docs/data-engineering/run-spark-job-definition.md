@@ -19,7 +19,7 @@ In this tutorial, learn how to run a [!INCLUDE [product-name](../includes/produc
 
 To get started, you must have the following prerequisites:
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../placeholder.md).
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 - Understand the Spark job definition: [What is an Apache Spark job definition?](spark-job-definition.md).
 - Create a Spark job definition: [How to create an Apache Spark job definition](create-spark-job-definition.md).
 

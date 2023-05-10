@@ -101,8 +101,8 @@ Currently supported for Power BI items in supported export paths. Currently no o
 | Step | Activity | References | 
 |:---|:------|:------------|
 |1| Define your sensitivity labels and policies that will protect your organization's data. | [Learn about sensitivity labels](/microsoft-365/compliance/sensitivity-labels)<br>[Get started with sensitivity labels](/microsoft-365/compliance/sensitivity-labels)<br>[Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels)
-|2| Enable sensitivity labels in Fabric. | [Set up information protection in your tenant](../admin/information-protection-setup.md)|
-|3| Apply labeling to your organization's sensitive data. | [Apply labeling to your organization’s sensitive data](../admin/information-protection-setup.md) |
+|2| Enable sensitivity labels in Fabric. | [Set up information protection in your tenant](#set-up-information-protection)|
+|3| Apply labeling to your organization's sensitive data. | [Apply labeling to your organization’s sensitive data](#set-up-information-protection) |
 |4| Monitor your sensitive data and get insights. | [Microsoft Purview hub](./use-microsoft-purview-hub.md) |
 
 ### Define your sensitivity labels and policies
@@ -113,7 +113,7 @@ Currently supported for Power BI items in supported export paths. Currently no o
 
 The following are steps you can take using Fabric's information protection capabilities to achieve maximum sensitivity label coverage in your tenant.
 
-* Define the users who will be allowed to apply sensitivity labels. [Set up information protection in Fabric](../admin/information-protection-setup.md)
+* Define the users who will be allowed to apply sensitivity labels. [Set up information protection in Fabric](#set-up-information-protection)
 
 * Define a default label policy that will cause a default label to be applied to an item when it's created or edited if no label is otherwise applied. That way no item can be saved without a label. [Default label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-default-label-policy).
 
@@ -129,4 +129,4 @@ The following are steps you can take using Fabric's information protection capab
 
 ## Next steps
 
-* [Admin overview](../admin/admin-overview.md)
+* [Admin overview](../admin/microsoft-fabric-admin.md)
