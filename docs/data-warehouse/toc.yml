@@ -41,7 +41,7 @@ items:
   - name: 10. Create Power BI reports
     href: tutorial-power-bi-report.md
   - name: 11. Build a report from the OneLake data hub
-    href: tutorial-build-report.md
+    href: tutorial-build-report-onelake-data-hub.md
   - name: 12. Clean up resources
     href: tutorial-clean-up.md        
 - name: Connect to the warehouse
