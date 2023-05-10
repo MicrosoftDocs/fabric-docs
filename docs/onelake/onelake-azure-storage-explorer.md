@@ -10,9 +10,9 @@ ms.date: 05/23/2023
 
 # Integrate OneLake with Azure Storage Explorer
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Azure Storage Explorer allows you to view and manage your cloud storage account’s contents - upload, download or move files from one location to another. This tutorial shows OneLake integration with Azure Storage Explorer.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Using Azure Storage Explorer
 
