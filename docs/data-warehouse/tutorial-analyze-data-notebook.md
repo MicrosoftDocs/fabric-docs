@@ -20,7 +20,7 @@ In this tutorial, learn about how you can save your data once and then use it wi
 
 First, we create a new lakehouse. To create a new lakehouse in your [!INCLUDE [product-name](../includes/product-name.md)] workspace:
 
-1. Select the `Data Warehouse Tutorial` workspace in the left-hand navigation menu.
+1. Select the `Data Warehouse Tutorial` workspace in the navigation menu.
 1. Select **+ New** > **Lakehouse (Preview)**.
 
     :::image type="content" source="media/tutorial-analyze-data-notebook/new-lakehouse-menu.png" alt-text="A screenshot from the Fabric portal showing the + New menu. Lakehouse (Preview) is boxed in red.":::

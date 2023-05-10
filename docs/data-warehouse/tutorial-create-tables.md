@@ -22,9 +22,9 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
 1. Select the workspace created in [Tutorial: Create a Microsoft Fabric data workspace](tutorial-create-workspace.md), such as **Data Warehouse Tutorial**.  
 
-1. From the artifact list, select `WideWorldImporters` with the type of **Warehouse**.
+1. From the item list, select `WideWorldImporters` with the type of **Warehouse**.
 
-   :::image type="content" source="media\tutorial-create-tables\select-the-warehouse.png" alt-text="Screenshot of the warehouse option that appears in the artifact list.":::
+   :::image type="content" source="media\tutorial-create-tables\select-the-warehouse.png" alt-text="Screenshot of the warehouse option that appears in the item list.":::
 
 1. From the ribbon, select **New SQL query**.
 

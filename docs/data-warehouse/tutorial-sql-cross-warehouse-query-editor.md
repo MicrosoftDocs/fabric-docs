@@ -18,7 +18,7 @@ In this tutorial, learn about how you can easily create and execute T-SQL querie
 
 ## Add multiple warehouses to the Explorer
 
-1. Select the `Data Warehouse Tutorial` workspace in the left-hand navigation menu.
+1. Select the `Data Warehouse Tutorial` workspace in the navigation menu.
 1. In the **Explorer**, select the **+ Warehouses** button.
 
     :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses.png" alt-text="A screenshot from the Fabric portal Explorer, showing the + Warehouse button boxed in red.":::

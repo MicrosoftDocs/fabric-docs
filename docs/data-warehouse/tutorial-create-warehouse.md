@@ -18,7 +18,7 @@ Now that you have a workspace, you can create your first [!INCLUDE [fabric-dw](i
 
 ## Create your first Synapse Data Warehouse
 
-1. In the [Power BI service](https://powerbi.com/), select **Workspaces** in the left-hand menu.
+1. Select **Workspaces** in the navigation menu.
 
 1. Search for the workspace you created in [Tutorial: Create a Microsoft Fabric workspace](tutorial-create-workspace.md) by typing in the search textbox at the top and selecting your workspace to open it.
 

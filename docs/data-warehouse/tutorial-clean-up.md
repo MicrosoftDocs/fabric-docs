@@ -18,7 +18,7 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 ## Delete a workspace
 
-1. Select **Data Warehouse Tutorial** in the navigation menu to return to the workspace artifact view.
+1. Select **Data Warehouse Tutorial** in the navigation menu to return to the workspace item list.
 
    :::image type="content" source="media\tutorial-clean-up\select-the-tutorial.png" alt-text="Screenshot of the left navigation menu, showing where to select the tutorial.":::
 

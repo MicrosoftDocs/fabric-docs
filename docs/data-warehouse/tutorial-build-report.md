@@ -18,7 +18,7 @@ Learn how to build a report with the data you ingested into your [!INCLUDE [fabr
 
 ## Build a report
 
-1. Select OneLake data hub in the left-hand navigation menu.
+1. Select the **OneLake data hub** in the navigation menu.
 
    :::image type="content" source="media\tutorial-build-report\build-report-onelake-data-hub.png" alt-text="Screenshot of the navigation menu, showing where to select OneLake data hub.":::
 

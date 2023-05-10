@@ -18,7 +18,7 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 
 ## Ingest data
 
-1. From the **Build a warehouse** landing page, select **Data Warehouse Tutorial** in the left-hand navigation menu to return to the workspace artifact view.
+1. From the **Build a warehouse** landing page, select **Data Warehouse Tutorial** in the navigation menu to return to the workspace item list.
 
    :::image type="content" source="media\tutorial-ingest-data\select-tutorial-menu.png" alt-text="Screenshot of the navigation menu, showing where to select Data Warehouse Tutorial.":::
 
