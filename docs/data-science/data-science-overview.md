@@ -1,5 +1,5 @@
 ---
-title: Data science in MS Fabric
+title: Data science in Microsoft Fabric
 description: Learn about the Data science machine learning resources, including models, experiments, and notebooks.
 author: nelgson
 ms.author: negust
@@ -36,15 +36,15 @@ At a high level, the process involves these steps:
 - Enrich and operationalize
 - Gain insights
 
-:::image type="content" source="media/data-science-overview/data-science-process.png" alt-text="Dsata science process." lightbox="media/data-science-overview/data-science-process.png":::
+:::image type="content" source="media/data-science-overview/data-science-process.png" alt-text="Diagram of data science process." lightbox="media/data-science-overview/data-science-process.png":::
 
 This article describes the [!INCLUDE [product-name](../includes/product-name.md)] Data Science capabilities from a data science process perspective. For each step in the data science process, this article summarizes the [!INCLUDE [product-name](../includes/product-name.md)] capabilities that can help.
 
 ## Problem formulation and ideation
 
-Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] work on the same platform as business users and analysts. Data sharing and collaboration becomes more seamless across different roles as a result. Analysts can easily share PowerBI reports and datasets with data science practitioners. The ease of collaboration across roles in [!INCLUDE [product-name](../includes/product-name.md)] makes hand-offs during the problem formulation phase much easier. 
+Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] work on the same platform as business users and analysts. Data sharing and collaboration becomes more seamless across different roles as a result. Analysts can easily share Power BI reports and datasets with data science practitioners. The ease of collaboration across roles in [!INCLUDE [product-name](../includes/product-name.md)] makes hand-offs during the problem formulation phase much easier. 
 
-## Data Dicovery and pre-processing 
+## Data Discovery and pre-processing 
 
 [!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in One Lake using the Lakehouse item. Lakehouse easily attaches to a Notebook to browse and interact with data.
 
@@ -84,7 +84,7 @@ The SynapseML (previously known as MMLSpark) open-source library, that Microsoft
 
 Notebooks can handle machine learning model batch scoring with open-source libraries for prediction, or the [!INCLUDE [product-name](../includes/product-name.md)] scalable universal Spark Predict function, which supports mlflow packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] model registry.
 
-## Gain insights
+### Gain insights
 
 In [!INCLUDE [product-name](../includes/product-name.md)], Predicted values can easily be written to OneLake, and seamlessly consumed from Power BI reports, with the Power BI Direct Lake mode. This makes it very easy for data science practitioners to share results from their work with stakeholders and it also simplifies operationalization.
 
