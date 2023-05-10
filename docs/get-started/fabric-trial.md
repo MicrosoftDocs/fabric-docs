@@ -4,6 +4,7 @@ description: Understand how the Fabric (preview) trial works
 author: mihart
 ms.author: mihirwagle
 ms.topic: concept
+ms.search.form: product-trident
 ms.date: 05/08/2023
 ---
 
