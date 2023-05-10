@@ -13,6 +13,14 @@ ms.custom:
 
 The OneLake data hub makes it easy to find, explore, and use the Fabric data items in your organization that you have access to. It provides information about the items and entry points for working with them.
 
+The data hub provides:
+
+* [A filterable list of all the data items you can access](#find-items-in-the-data-items-list)
+* [A gallery of recommended data items](#find-recommended-items)
+* [A way of finding data items by workspace](#find-items-by-workspace)
+* [A way to display only the data items of a selected domain](#display-only-data-items-belonging-to-a-particular-domain)
+* [An options menu of things you can do with the data item](#open-an-items-options-menu)
+
 This article explains what you see on the data hub and describes how to use it.
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-general.png" alt-text="Screenshot of the OneLake data hub." lightbox="./media/onelake-data-hub/onelake-data-hub-general.png":::
