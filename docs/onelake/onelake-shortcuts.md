@@ -11,9 +11,9 @@ ms.date: 05/23/2023
 
 # OneLake shortcuts
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds and accounts by creating a single virtualized data lake for your entire enterprise. All Fabric workloads and analytical engines can directly connect to your existing data sources such as Azure, AWS and OneLake through a unified namespace.  Permissions and credentials are all managed by OneLake, so each Fabric workload doesn't need to be separately configured to connect to each data source.  Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## What are shortcuts?
 
@@ -162,14 +162,16 @@ The following table shows the shortcut-related permissions for each workspace ro
 
 | **Capability** | **Admin** | **Member** | **Contributor** | **Viewer** |
 |---|---|---|---|---|
-| **Create a shortcut** | Yes | Yes | Yes | - |
-| **Read file/folder content of shortcut**  | Yes<sup>1</sup> | Yes<sup>1</sup> | Yes<sup>1</sup> | - |
-| **Write to shortcut target location** | Yes<sup>2</sup> | Yes<sup>2</sup> | Yes<sup>2</sup> | - |
+| **Create a shortcut** | Yes<sup>1</sup> | Yes<sup>1</sup> | Yes<sup>1</sup> | - |
+| **Read file/folder content of shortcut**  | Yes<sup>2</sup> | Yes<sup>2</sup> | Yes<sup>2</sup> | - |
+| **Write to shortcut target location** | Yes<sup>3</sup> | Yes<sup>3</sup> | Yes<sup>3</sup> | - |
 | **Read data from shortcuts in table section of the** **Lakehouse via TDS endpoint** | Yes | Yes | Yes | Yes |
 
-<sup>1</sup> User must have a role that provides read permission both in the shortcut location and target location
+<sup>1</sup> User must have a role that provides write permission the shortcut location and at least read permission target location
 
-<sup>2</sup> User must have a role that provides write permission both in the shortcut location and the target location
+<sup>2</sup> User must have a role that provides read permission both in the shortcut location and target location
+
+<sup>3</sup> User must have a role that provides write permission both in the shortcut location and the target location
 
 ## How do shortcuts handle deletions?
 

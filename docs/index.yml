@@ -27,7 +27,7 @@ highlightedContent:
     # Card
     - title: Try Microsoft Fabric for free
       itemType: get-started
-      url: placeholder.md
+      url: get-started/fabric-trial.md
     # Card
     - title: Enable Fabric for your organization
       itemType: quickstart
