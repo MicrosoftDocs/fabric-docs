@@ -10,8 +10,7 @@ ms.custom:
 
 # Git integration source code format
 
-Items in Microsoft Fabric are stored in a folder. They can either be in the root directory or a subdirectory. When you connect your workspace to git, connect to the folder containing the items.  
-Each item in the folder is represented in its own subdirectory. These item directories have the same name as the item followed by the item type.
+Items in Microsoft Fabric are stored in a folder. They can either be in the root directory or a subdirectory. When you connect your workspace to git, connect to the folder containing the items. Each item in the folder is represented in its own subdirectory. These item directories have the same name as the item followed by the item type.
 
 :::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of git directory containing items.":::
 
