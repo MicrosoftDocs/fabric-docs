@@ -19,7 +19,7 @@ ms.search.form: Read and Write Pandas
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-## Load Lakehouse data into your notebook
+## Load Lakehouse data into a notebook
 
 Once you attach a Lakehouse to your [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can explore stored data without leaving the page and read it into your notebook in a matter of clicks. Selecting any Lakehouse file surfaces options to "Load data" into a Spark or a Pandas DataFrame. (You can also copy the file's full ABFS path or a friendly relative path.)
 
