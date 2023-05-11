@@ -44,7 +44,7 @@ landingContent:
             url: tutorial-end-to-end-introduction.md
       - linkListType: learn
         links:
-          - text: Data factory training
+          - text: Data Factory training
             url: /training/paths/get-started-fabric
   
   # Card 
