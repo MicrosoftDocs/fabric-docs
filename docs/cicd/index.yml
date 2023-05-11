@@ -26,8 +26,8 @@ landingContent:
         links:
           - text: What is Lifecycle management?
             url: ./cicd-overview.md 
-          - text: Microsoft Fabric REST APIs
-            url:  https://learn.microsoft.com/rest/api/fabric/ 
+          - text: Lifecycle management best practices
+            url:  ./best-practices-cicd.md 
       - linkListType: overview
         links:
           - text: What is git integration?
