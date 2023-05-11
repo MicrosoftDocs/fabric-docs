@@ -280,7 +280,7 @@ sections:
           
           During deployment, the metadata in the source dataset is checked against the target metadata. Schema breaking changes cause the deployment to stop. When this happens, you receive the *continue the deployment* message.
           
-          :::image type="content" source="media/troubleshoot-cicd/deployment-was-stopped-error.png" alt-text="A screenshot of the continue the deployment message in deployment pipelines":::
+          :::image type="content" source="media/troubleshoot-cicd/deployment-was-stopped-error.png" alt-text="A screenshot of the continue the deployment message in deployment pipelines.":::
           
           **Solution**: If you continue with the deployment, you lose the data in the target stage. You can use this option if the changes you made to the dataset were intentional. After the deployment completes, you'll need to refresh the target dataset.
           
@@ -297,7 +297,7 @@ sections:
   
           **Solution**: If you made changes to your dataset intentionally, use one of the following workarounds:
 
-          * **Using *.pbix* ** - Publish your changes directly to the target dataset. All partitions and data are lost, so you need to refresh the dataset.
+          * **Using** *.pbix* - Publish your changes directly to the target dataset. All partitions and data are lost, so you need to refresh the dataset.
 
           * **Using XMLA tools** - Make your changes directly on the dataset in the target stage.
 
@@ -352,7 +352,7 @@ sections:
       - question: |
           I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables.
         answer: |
-          **Description of problem:: Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables aren't supported in deployment pipelines. 
+          **Description of problem**: Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables aren't supported in deployment pipelines. 
           
           **Solution**: If your deployment fails and you think it's because you have a dataset with a variation table, look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations?view=analysisservices-dotnet) property in your table's columns. Use one of the methods listed below to edit your dataset so that it works in deployment pipelines.
 
@@ -473,7 +473,7 @@ sections:
           To configure deployment rules in deployment pipelines, you must be the dataset owner.
 
       - question: |
-          I can't see a workspaces in the pipeline.
+          I can't see a workspace in the pipeline.
         answer: |
           **Description of problem**: Pipeline and workspace permissions are managed separately. You may have pipeline permissions, but not workspace permissions. 
 
