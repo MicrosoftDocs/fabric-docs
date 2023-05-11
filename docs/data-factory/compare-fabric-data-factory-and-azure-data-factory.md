@@ -1,5 +1,5 @@
 ---
-title: Compare differences between Azure Data Factory and Data Factory in Microsoft Fabric 
+title: Differences between Data Factory in Fabric and Azure
 description: This article provides information about compare differences between Azure Data Factory and Data Factory in Microsoft Fabric 
 author: pennyzhou-msft
 ms.author: xupzhou
@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 ms.custom: template-how-to
 ---
 
-# Compare differences between Azure Data Factory and Data Factory in Microsoft Fabric
+# Differences between Data Factory in Fabric and Azure
 
 Data Factory in Microsoft Fabric is the next generation of Azure Data Factory which provides cloud-scale data movement and data transformation services that allow you to solve the most complex ETL scenarios. It's intended to make your experience easy to use, powerful, and truly enterprise-grade. This article compares the differences between Azure Data Factory and Data Factory in Microsoft Fabric.
 
