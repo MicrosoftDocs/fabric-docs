@@ -4,17 +4,17 @@ description: Learn about using the Data preview in Microsoft Fabric.
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 04/14/2023
+ms.date: 05/23/2023
 ms.topic: how-to
+ms.search.form: Data preview # This article's title should not change. If so, contact engineering.
 ---
-
 # View data in the Data preview in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The **Data preview** is one of the three switcher modes along with the Query editor and Model view within the warehouse experience that provides an easy interface to view the data within your tables or views to preview sample data (top 1000 rows). 
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Get started
 
@@ -39,6 +39,5 @@ After creating a warehouse and ingesting data, select the **Data** tab. Choose a
 
 ## Next steps
 
- - [Share your Synapse Data Warehouse](share-warehouse.md)
  - [Define relationships in data models for data warehousing](data-modeling-defining-relationships.md)
  - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)

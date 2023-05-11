@@ -1,31 +1,30 @@
 ---
-title: Monitoring connections, sessions, and requests using DMVs
+title: Monitor connections, sessions, and requests using DMVs
 description: Learn about monitoring with the available Dynamic Management Views.
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
-ms.search.form: Monitoring
+ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
-
-# Monitoring connections, sessions, and requests using DMVs
+# Monitor connections, sessions, and requests using DMVs
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+You can use existing dynamic management views (DMVs) to monitor connection, session, and request status in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about the tools and methods of executing T-SQL queries, see [Query the Warehouse](query-warehouse.md).
 
-You can use existing dynamic management views (DMVs) to monitor connection, session, and request status in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about the tools and methods of executing T-SQL queries, see [Query the Synapse Data Warehouse](query-warehouse.md).
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to monitor connections, sessions, and requests using query lifecycle DMVs
 
 For the current version, there are three dynamic management views (DMVs) provided for you to receive live SQL query lifecycle insights.
 
-- [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql)
+- [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each connection established between the warehouse and the engine.
-- [sys.dm_exec_sessions](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql)
+- [sys.dm_exec_sessions](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sessions-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each session authenticated between the item and engine.
-- [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql)
+- [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each active request in a session.
 
 These three DMVs provide detailed insight on the following scenarios:
@@ -46,6 +45,7 @@ The following example queries `sys.dm_exec_sessions` to find all sessions that a
 SELECT * 
 FROM sys.dm_exec_sessions;
 ```
+:::image type="content" source="media\monitor-using-dmv\exec-sessions-results.png" alt-text="Screenshot showing the results of sys.dm_exec_sessions." lightbox="media\monitor-using-dmv\exec-sessions-results.png":::
 
 ### Find the relationship between connections and sessions
 
@@ -100,4 +100,4 @@ KILL '101'
 ## Next steps
 
 - [Query using the SQL Query editor](sql-query-editor.md)
-- [Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric](query-warehouse.md)
+- [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

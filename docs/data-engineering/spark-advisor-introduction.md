@@ -65,14 +65,6 @@ This query contains the expression with Double type. We recommend that you enabl
 
 This query contains time consuming join due to "Or" condition within query. We recommend that you enable the configuration 'spark.advise.nonEqJoinConvertRule.enable', which can help to convert the join triggered by "Or" condition to SMJ or BHJ to accelerate this query.
 
-### Optimize delta table with small files compaction
-
-This query is on a delta table with many small files. To improve the performance of queries, run the OPTIMIZE command on the delta table. More details could be found within this article.
-
-### Optimize Delta table with ZOrder
-
-This query is on a Delta table and contains a highly selective filter. To improve the performance of queries, run the OPTIMIZE ZORDER BY command on the delta table. More details could be found within this article.
-
 ## User experience
 The Apache Spark advisor displays the advice, including info, warnings, and errors, at Notebook cell output in real-time.
 

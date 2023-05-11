@@ -1,8 +1,8 @@
 ---
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 03/27/2023
+ms.date: 05/23/2023
 ms.service: sql
 ms.topic: include
 ---
-Synapse Data Warehouse
+Warehouse

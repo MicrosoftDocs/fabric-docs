@@ -1,51 +1,51 @@
 items:
-- name: What is Microsoft Fabric administration?
+- name: Microsoft Fabric administration?
   href: index.yml
 - name: Overview
   items:
   - name: What is Microsoft Fabric administration?
-    href: admin-overview.md
+    href: microsoft-fabric-admin.md
 - name: Get started
   items:
   - name: Enable Microsoft Fabric for your organization
-    href: admin-switch.md  
+    href: fabric-switch.md
+  - name: Region availability
+    href: region-availability.md
+  - name: Find your Fabric home region
+    href: find-fabric-home-region.md
   - name: Understand Microsoft Fabric roles
-    href: admin-roles.md
-  - name: What is the admin center?
+    href: roles.md
+  - name: What is the admin portal?
     href: admin-center.md       
   - name: Compliance feature switch
-    href: admin-compliance.md    
-- name: Admin features in Microsoft Fabric
-  items:
-  - name: Delegate admin rights
-    href: admin-delegate.md
-- name: Power BI admin center
-  items:
-  - name: Power BI admin center
-    href: admin-power-bi.md
-- name: Spark
-  items:
-  - name: Spark
-    href: admin-spark.md
+    href: compliance.md    
 - name: Track user activities
-  href: admin-track-user-activities.md
-- name: Monitoring workspace
+  href: track-user-activities.md
+- name: Monitoring
   items:
-  - name: What is the monitoring workspace?
-    href: admin-monitoring.md  
-  - name: Audit log report
-    href: admin-audit-log.md
-  - name: Activity log report
-    href: admin-activity-log.md 
+  - name: Using Monitoring hub
+    href: monitoring-hub.md    
+  - name: Monitoring workspace
+    items:    
+    - name: What is the monitoring workspace?
+      href: monitoring-workspace.md
+    - name: Feature usage and adoption report
+      href: feature-usage-adoption.md
 - name: Workspace administration
   items:
   - name: Manage workspaces
-    href: admin-portal-workspaces.md  
+    href: portal-workspaces.md  
   - name: Workspace tenant settings
-    href: admin-portal-workspace.md 
-- name: Considerations and limitations
-  items:
-  - name: Admin troubleshooting
-    href: admin-troubleshoot.yml  
-  - name: Admin limitations in Microsoft Fabric
-    href: admin-limitations.md       
+    href: portal-workspace.md
+- name: Settings
+  items:    
+  - name: Set up git integration
+    href: git-integration-admin-settings.md
+  - name: Set up item certification
+    href: endorsement-setup.md
+  - name: Set up metadata scanning
+    href: metadata-scanning-setup.md
+  - name: Enable service principal authentication for read-only admin APIs
+    href: metadata-scanning-enable-read-only-apis.md
+
+
