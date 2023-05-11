@@ -13,7 +13,7 @@ This article covers known issues and limitations in Data Factory in Microsoft Fa
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Pipeline known issues
+## Pipelines: Known issues
 
 - Error messages in Dataflow Gen 2 refresh and pipeline orchestration of those dataflows may be different, so you should  check both error messages to decide next steps when troubleshooting.
 - If you enable *vertipaq* during Copy, performance is slow due to extra compression.
@@ -23,7 +23,7 @@ This article covers known issues and limitations in Data Factory in Microsoft Fa
 - Pipeline scheduled runs are displayed as Manual in run history monitoring.
 - Snowflake can't handle password contains \"&\" in Data pipeline.
 
-## Pipeline limitations
+## Pipelines: Limitations
 
 - If your capacity isn't in the same region as storage accounts, copy throughput can be low.
 - Email and Teams activities don't support dynamic content out of the box, but can be achieved with dynamic expressions with HTML tags in the content.
@@ -32,7 +32,7 @@ This article covers known issues and limitations in Data Factory in Microsoft Fa
 - Connectors don't support MSI/UAMI as of May 2023.
 - On-premises gateway or VNET gateway can be used with Dataflows Gen2 to ingest on-premises data now. You can orchestrate on-premises data ingestion with data flow activity in pipeline.
 
-## Dataflows Gen2 known issues
+## Dataflows Gen2: Known issues
 
 - Lakehouse/Datawarehouse-based compute or storage may not be available in all regions. If not available, check with  support.
 - Refresh history activities have a complex name: _WriteToDatabaseTableFrom_TransformForOutputToDatabaseTableFrom\_\[QUERYNAME\]_.
@@ -42,7 +42,7 @@ This article covers known issues and limitations in Data Factory in Microsoft Fa
 - Dataflow Gen 2 doesn't show up when you have no fabric capacity attached to your workspace.
 - When exporting/importing a PQ template with output destinations, extra queries show up. You need to remove these manually.
 
-## Dataflows Gen2 limitations
+## Dataflows Gen2: limitations
 
 - Data factory Fast Copy is not yet available.
 - You must have the latest version of the gateway installed in order to use with Dataflows Gen 2.
