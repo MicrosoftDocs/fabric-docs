@@ -45,12 +45,13 @@ This article covers known issues and limitations in Data Factory in Microsoft Fa
 ## Dataflows Gen2 limitations
 
 - Data factory Fast Copy is not yet available.
+- You must have the latest version of the gateway installed in order to use with Dataflows Gen 2.
 - Output destination to Lakehouse:
   - **DateTimeZone**, **Time**, and **DateTime** columns are not supported.
   - Spaces or special characters are not supported in column or table names.
   - No option exists to "auto fixup" invalid column names in Lakehouse connector.
   - Duration and binary columns are not supported while authoring in Dataflow Gen2.
-  - You must have the latest version of the gateway installed in order to use Dataflows Gen 2.
+  
   
 ## Next steps
 
