@@ -90,60 +90,60 @@ For more information on how to create a warehouse, see [Create a Synapse Data Wa
 
 #### Sample scripts
     
-    ```sql
-    
-    /*************************************************
-    Get number of trips performed by each medallion
-    **************************************************/
-    
-    SELECT 
-        M.MedallionID
-        ,M.MedallionCode
-        ,COUNT(T.TripDistanceMiles) AS TotalTripCount
-    FROM   
-        dbo.Trip AS T
-    JOIN   
-        dbo.Medallion AS M
-    ON 
-        T.MedallionID=M.MedallionID
-    GROUP BY 
-        M.MedallionID
-        ,M.MedallionCode
-    
-    /****************************************************
-    How many passengers are being picked up on each trip?
-    *****************************************************/
-    SELECT
-        PassengerCount,
-        COUNT(*) AS CountOfTrips
-    FROM 
-        dbo.Trip
-    WHERE 
-        PassengerCount > 0
-    GROUP BY 
-        PassengerCount
-    ORDER BY 
-        PassengerCount
-    
-    /*********************************************************************************
-    What is the distribution of trips by hour on working days (non-holiday weekdays)?
-    *********************************************************************************/
-    SELECT
-        ti.HourlyBucket,
-        COUNT(*) AS CountOfTrips
-    FROM dbo.Trip AS tr
-    INNER JOIN dbo.Date AS d
-        ON tr.DateID = d.DateID
-    INNER JOIN dbo.Time AS ti
-        ON tr.PickupTimeID = ti.TimeID
-    WHERE
-        d.IsWeekday = 1
-        AND d.IsHolidayUSA = 0
-    GROUP BY
-        ti.HourlyBucket
-    ORDER BY
-        ti.HourlyBucket
-    ```
+```sql
+
+/*************************************************
+Get number of trips performed by each medallion
+**************************************************/
+
+SELECT 
+    M.MedallionID
+    ,M.MedallionCode
+    ,COUNT(T.TripDistanceMiles) AS TotalTripCount
+FROM   
+    dbo.Trip AS T
+JOIN   
+    dbo.Medallion AS M
+ON 
+    T.MedallionID=M.MedallionID
+GROUP BY 
+    M.MedallionID
+    ,M.MedallionCode
+
+/****************************************************
+How many passengers are being picked up on each trip?
+*****************************************************/
+SELECT
+    PassengerCount,
+    COUNT(*) AS CountOfTrips
+FROM 
+    dbo.Trip
+WHERE 
+    PassengerCount > 0
+GROUP BY 
+    PassengerCount
+ORDER BY 
+    PassengerCount
+
+/*********************************************************************************
+What is the distribution of trips by hour on working days (non-holiday weekdays)?
+*********************************************************************************/
+SELECT
+    ti.HourlyBucket,
+    COUNT(*) AS CountOfTrips
+FROM dbo.Trip AS tr
+INNER JOIN dbo.Date AS d
+    ON tr.DateID = d.DateID
+INNER JOIN dbo.Time AS ti
+    ON tr.PickupTimeID = ti.TimeID
+WHERE
+    d.IsWeekday = 1
+    AND d.IsHolidayUSA = 0
+GROUP BY
+    ti.HourlyBucket
+ORDER BY
+    ti.HourlyBucket
+```
 
 > [!TIP]
 > You can proceed with either a blank Warehouse or a sample Warehouse to continue this series of Get Started steps.
