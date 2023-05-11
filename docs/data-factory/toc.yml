@@ -249,10 +249,12 @@
       items:  
       - name: Use a dataflow in a pipeline
         href: tutorial-dataflows-gen2-pipeline-activity.md
-  - name: FAQ
+  - name: FAQ and Troubleshooting
     items:
     - name: Differences in Data Factory in Fabric vs. Azure
       href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Differences in Dataflows Gen1 and Gen2
       href: dataflows-gen2-overview.md
+    - name: Known issues and limitations
+      href: data-factory-known-issues-limitations.md
      
