@@ -56,7 +56,11 @@ Fabric provides availability zone support in various regions as follows:
 To prepare for availability zone failure, customers should over-provision capacity of service to ensure that the solution can tolerate ⅓ loss of capacity and continue to function without degraded performance during zone-wide outages.
 
 ### Zone down experience
-During a zone-wide outage, no action is required during zone recovery. Fabric capabilities in regions listed above will self-heal and re-balance automatically to take advantage of the healthy zone. 
+During a zone-wide outage, no action is required during zone recovery. Fabric capabilities in regions listed above will self-heal and re-balance automatically to take advantage of the healthy zone.
+
+## Business continuity and disaster recovery (BCDR)
+
+BCDR is not currently supported in Fabric. However, it is still supported for Power BI. For more information about BCDR in Power BI, see [Power BI high availability, failover, and disaster recovery FAQ](/power-bi/enterprise/service-admin-failover).
 
 ## Next steps
 
