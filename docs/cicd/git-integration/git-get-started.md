@@ -111,7 +111,7 @@ After you saved changes to the workspace, if you decide that you don’t want to
 1. Select the **Source control** button. This button also shows the number of uncommitted changes.
     :::image type="content" source="./media/git-get-started/source-control-number.png" alt-text="Screenshot of source control icon with the number 2 indicating that there are two changes to commit.":::
 1. Select the **Changes** tab of the **Source control** pane.
-   A list appears with all the items you changed, and an icon indicating if the changed item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
+   A list appears with all the items you changed, and an icon indicating if the changed item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, **conflict** :::image type="icon" source="./media/git-get-started/conflict-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
 1. Select the changes you want to undo.
 1. Select **Undo**.
 
