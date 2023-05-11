@@ -92,3 +92,4 @@ You can now export queries in both the Dataflow Gen1 and Gen2 authoring experien
 
 - [Dataflows refresh history and monitoring](dataflows-gen2-monitor.md)
 - [Dataflows save as draft](dataflows-gen2-save-draft.md)
+- [Known issues and limitations](data-factory-known-issues-limitations.md)
