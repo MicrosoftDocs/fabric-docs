@@ -1,18 +1,18 @@
 ---
 title: Develop, execute, and manage notebooks
-description: Learn how to use notebooks, including how to add, move and delete a cell. Also learn how to work with languages, code snippets, and images in your notebook.
+description: Learn how to author and develop notebook jobs with rich built-in features.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.date: 03/31/2023
+ms.date: 05/23/2023
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] notebook is a primary code item for developing Apache Spark jobs and machine learning experiments. It's a web-based interactive surface used by data scientists and data engineers to write code benefiting from rich visualizations and Markdown text. This article explains how to develop notebooks with code cell operations and run them.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Develop notebooks
 
@@ -26,14 +26,16 @@ We provide rich operations to develop notebooks:
 - [IDE-style IntelliSense](#ide-style-intellisense)
 - [Code snippets](#code-snippets)
 - [Drag and drop to insert snippets](#drag-and-drop-to-insert-snippets)
+- [Drag and drop to insert images](#drag-and-drop-to-insert-images)
 - [Format text cell with toolbar buttons](#format-text-cell-with-toolbar-buttons)
 - [Undo or redo cell operation](#undo-or-redo-cell-operation)
-- Code cell commenting
 - [Move a cell](#move-a-cell)
 - [Delete a cell](#delete-a-cell)
 - [Collapse a cell input](#collapse-a-cell-input)
 - [Collapse a cell output](#collapse-a-cell-output)
-- [Notebook outline](#notebook-outline)
+- [Lock or freeze a cell](#lock-or-freeze-a-cell)
+- [Notebook contents](#notebook-contents)
+- [Markdown folding](#markdown-folding)
 
 ### Add a cell
 
@@ -56,7 +58,7 @@ You can set the primary language for new added cells from the dropdown list in t
 
 ### Use multiple languages
 
-You can use multiple languages in one notebook by specifying the correct language magic command at the beginning of a cell, or switch the cell language from the language picker of a cell. The following table lists the magic commands to switch cell languages.
+You can use multiple languages in a notebook by specifying the language magic command at the beginning of a cell, you can also switch the cell language from the language picker. The following table lists the magic commands to switch cell languages.
 
 :::image type="content" source="media\author-execute-notebook\language-command-in-cell.png" alt-text="Screenshot showing an example of the language magic command entered at the beginning of a cell." lightbox="media\author-execute-notebook\language-command-in-cell.png":::
 
@@ -88,15 +90,13 @@ The IntelliSense features are at different levels of maturity for different lang
 
 ### Code snippets
 
-[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide code snippets that make it easier to enter commonly used code patterns like code for the following:
+[!INCLUDE [product-name](../includes/product-name.md)] notebooks provide code snippets that help you write commonly used code patterns easily, like:
 
-- Configuring your Spark session
 - Reading data as a Spark DataFrame, or
 - Drawing charts with Matplotlib.
 
 Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellisense) mixed with other suggestions. The code snippets contents align with the code cell language. You can see available snippets by typing **Snippet** or any keywords appear in the snippet title in the code cell editor. For example, by typing **read** you can see the list of snippets to read data from various data sources.
 
-:::image type="content" source="media\author-execute-notebook\cell-editor.png" alt-text="Screenshot showing a cell editing screen at the beginning of an Apache Spark session." lightbox="media\author-execute-notebook\cell-editor.png":::
 
 ![Animated GIF of code snippets.](media/author-execute-notebook/code-snippet.gif)
 
@@ -104,7 +104,6 @@ Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellis
 
 You can use drag and drop to read data from Lakehouse explorer conveniently. Multiple file types are supported here, you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell. The notebook generates the code snippet accordingly to preview the data.
 
-:::image type="content" source="media\author-execute-notebook\test-drag-and-drop.png" alt-text="Screenshot showing an empty cell." lightbox="media\author-execute-notebook\test-drag-and-drop.png":::
 
 ![Animated GIF of drag and drop to insert snippets.](media/author-execute-notebook/drag-drop-insert-snippet.gif)
 
@@ -112,13 +111,12 @@ You can use drag and drop to read data from Lakehouse explorer conveniently. Mul
 
 You can use drag and drop to insert images from your browser or local computer to a markdown cell conveniently.
 
-:::image type="content" source="media\author-execute-notebook\drag-and-drop-image.png" alt-text="Screenshot showing a markdown cell." lightbox="media\author-execute-notebook\drag-and-drop-image.png":::
 
 ![Animated GIF of drag and drop to insert images.](media/author-execute-notebook/drag-drop-insert-image.gif)
 
 ### Format text cell with toolbar buttons
 
-You can use the format buttons in the text cells toolbar to do common markdown actions. It includes bolding text, italicizing text, paragraph/headers through a dropdown, inserting code, inserting unordered list, inserting ordered list, inserting hyperlink, and inserting image from URL.
+You can use the format buttons in the text cells toolbar to do common markdown actions.
 
 :::image type="content" source="media\author-execute-notebook\format-text-toolbar.png" alt-text="Screenshot of the text formatting toolbar." lightbox="media\author-execute-notebook\format-text-toolbar.png":::
 
@@ -140,11 +138,13 @@ Supported undo cell operations:
 
 ### Move a cell
 
-You can drag from the empty part of a cell and drop it to the desired position, you can also move the selected cell using **Move up** and **Move down** on the ribbon.
+You can drag from the empty part of a cell and drop it to the desired position.
+
+<!-- ![Animated GIF of drag and drop to move a cell.](media/author-execute-notebook/drag-drop-move-cell.gif) -->
+
+You can also move the selected cell using **Move up** and **Move down** on the ribbon.
 
 :::image type="content" source="media\author-execute-notebook\move-cell-options.png" alt-text="Screenshot showing the options for moving a cell." lightbox="media\author-execute-notebook\move-cell-options.png":::
-
-![Animated GIF of drag and drop to move a cell.](media/author-execute-notebook/drag-drop-move-cell.gif)
 
 ### Delete a cell
 
@@ -156,23 +156,39 @@ You can also use [shortcut keys under command mode](#shortcut-keys-under-command
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide input** to collapse current cell's input. To expand it, Select the **Show input** while the cell is collapsed.
 
-:::image type="content" source="media\author-execute-notebook\show-hide-input.png" alt-text="Screenshot showing where to find the show and hide input options." lightbox="media\author-execute-notebook\show-hide-input.png":::
-
-![Animated GIF of collapsing cell input.](media/author-execute-notebook/collapse-cell-input.gif)
+<!-- ![Animated GIF of collapsing cell input.](media/author-execute-notebook/collapse-cell-input.gif) -->
 
 ### Collapse a cell output
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide output** to collapse current cell's output. To expand it, select the **Show output** while the cell's output is hidden.
 
-:::image type="content" source="media\author-execute-notebook\show-hide-output.png" alt-text="Screenshot showing where to find the show and hide output options." lightbox="media\author-execute-notebook\show-hide-output.png":::
 
-![Animated GIF of collapsing cell output.](media/author-execute-notebook/collapse-cell-output.gif)
+<!--![Animated GIF of collapsing cell output.](media/author-execute-notebook/collapse-cell-output.gif) -->
 
-### Notebook outline
+### Lock or freeze a cell
 
-The Outlines or Table of Contents presents the first markdown header of any markdown cell in a sidebar window for quick navigation. The Outlines sidebar is resizable and collapsible to fit the screen in the best ways possible. You can select the **Outline** button on the notebook command bar to open or hide the sidebar.
+Lock and freeze cell operations allow you to make cells read-only or stop code cells from being run on an individual cell basis.
+
+![Animated GIF of lock or freeze a cell.](media/author-execute-notebook/lock-and-freeze-cell.gif)
+<!---
+### Merge and Split cells
+
+You can use **Merge with previous cell** **Merge with next cell** to merge related cells conveniently.
+Select **Split cell** helps you split irrelevant statements to multiple cells.
+
+:::image type="content" source="media\author-execute-notebook\merge-split-cell.png" alt-text="Screenshot showing the entry of merge split cells." lightbox="media\author-execute-notebook\merge-split-cell.png":::
+-->
+
+### Notebook contents
+
+The Outlines or Table of Contents presents the first markdown header of any markdown cell in a sidebar window for quick navigation. The Outlines sidebar is resizable and collapsible to fit the screen in the best ways possible. You can select the **Contents** button on the notebook command bar to open or hide the sidebar.
 
 :::image type="content" source="media\author-execute-notebook\outline-option.png" alt-text="Screenshot showing where to select the Contents option." lightbox="media\author-execute-notebook\outline-option.png":::
+
+### Markdown folding
+
+The markdown folding allows you to hide cells under a markdown cell that contains a heading. The markdown cell and its hidden cells are treated the same as a set of contiguous multi-selected cells when performing cell operations. 
+![Animated GIF of markdown folding.](media/author-execute-notebook/markdown-folding.gif)
 
 ## Run notebooks
 
@@ -184,7 +200,7 @@ There are several ways to run the code in a cell.
 
 1. Hover on the cell you want to run and select the **Run Cell** button or press **Ctrl+Enter**.
 
-1. Use [Shortcut keys under command mode](#shortcut-keys-under-command-mode). Press **Shift+Enter** to run the current cell and select the cell below. Press **Alt+Enter** to run the current cell and insert a new cell below.
+1. Use [Shortcut keys under command mode](#shortcut-keys-under-command-mode). Press **Shift+Enter** to run the current cell and select the next cell. Press **Alt+Enter** to run the current cell and insert a new cell.
 
 ### Run all cells
 
@@ -192,7 +208,7 @@ Select the **Run All** button to run all the cells in the current notebook in se
 
 ### Run all cells above or below
 
-Expand the dropdown list from **Run all** button, then select **Run cells above** to run all the cells above the current in sequence. Select **Run cells below** to run all the cells below the current in sequence.
+Expand the dropdown list from **Run all** button, then select **Run cells above** to run all the cells above the current in sequence. Select **Run cells below** to run the current cell and all the cells below the current in sequence.
 
 :::image type="content" source="media\author-execute-notebook\run-cells-menu.png" alt-text="Screenshot showing the Run all menu options." lightbox="media\author-execute-notebook\run-cells-menu.png":::
 
@@ -200,13 +216,34 @@ Expand the dropdown list from **Run all** button, then select **Run cells above*
 
 Select the **Cancel All** button to cancel the running cells or cells waiting in the queue.
 
-:::image type="content" source="media\author-execute-notebook\cancel-all-runs.png" alt-text="Screenshot showing where to select Cancel all runs." lightbox="media\author-execute-notebook\cancel-all-runs.png":::
+### Stop session
 
+**Stop session** cancels the running and waiting cells and stops the current session, you can restart a brand new session if you click the run button again.
+
+:::image type="content" source="media\author-execute-notebook\cancel-all-stop-session.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\cancel-all-stop-session.png":::
+
+### Notebook reference run
+
+Besides using [mssparkutils reference run API](microsoft-spark-utilities.md)
+You can also use ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. ```%run``` magic command supports nested calls but not support recursive calls. You'll receive an exception if the statement depth is larger than **five**.  
+
+Example:
+``` %run Notebook1 { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true,  "parameterString": "abc" } ```.
+
+Notebook reference works in both interactive mode and pipeline.
+
+> [!NOTE]
+> - ```%run``` command currently only supports reference notebooks that in the same workspace with current notebook. 
+> - ```%run``` command currently only supports to 4 parameter value types: `int`, `float`, `bool`, `string`, variable replacement operation is not supported.
+> - ```%run``` command do not support nested reference that depth is larger than **five**.
+>
 ### Variable explorer
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebook provides a built-in variables explorer for you to see the list of the variables name, type, length, and value in the current Spark session for PySpark (Python) cells. More variables show up automatically as they're defined in the code cells. Clicking on each column header sorts the variables in the table.
 
 You can select the **Variables** button on the notebook ribbon “View” tab to open or hide the variable explorer.
+
+:::image type="content" source="media\author-execute-notebook\variables.png" alt-text="Screenshot showing where to open variables." lightbox="media\author-execute-notebook\variables.png":::
 
 > [!NOTE]
 > Variable explorer only supports python.
@@ -217,15 +254,60 @@ A step-by-step cell execution status is displayed beneath the cell to help you s
 
 :::image type="content" source="media\author-execute-notebook\cell-run-status.png" alt-text="Screenshot showing an example of cell run status details." lightbox="media\author-execute-notebook\cell-run-status.png":::
 
-### Spark progress indicator
+### Inline spark job indicator
 
-The [!INCLUDE [product-name](../includes/product-name.md)] notebook is purely Spark based. Code cells are executed on the serverless Apache Spark pool remotely. A Spark job progress indicator is provided with a real-time progress bar appears to help you understand the job execution status. The number of tasks per each job or stage help you to identify the parallel level of your spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
+The [!INCLUDE [product-name](../includes/product-name.md)] notebook is Spark based. Code cells are executed on the spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar appears to help you understand the job execution status. The number of tasks per each job or stage help you to identify the parallel level of your spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
+
+You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you with useful suggestions to help refine and debug the code.
 
 :::image type="content" source="media\author-execute-notebook\spark-progress-details.png" alt-text="Screenshot of details of Spark jobs progress." lightbox="media\author-execute-notebook\spark-progress-details.png":::
 
+In **More actions**, you can easily navigate to the **Spark application details** page and **Spark web UI** page.
+:::image type="content" source="media\author-execute-notebook\inline-monitor-more-actions.png" alt-text="Screenshot of details of more actions." lightbox="media\author-execute-notebook\inline-monitor-more-actions.png":::
+
+### Secret redaction
+
+To prevent the credentials being accidentally leaked when running notebooks, Fabric notebook support **Secret redaction** to replace the secret values that are displayed in the cell output with ```[REDACTED]```, Secret redaction is applicable for **Python**, **Scala** and **R**. 
+
+:::image type="content" source="media\author-execute-notebook\secret-redaction.png" alt-text="Screenshot of secret redaction." lightbox="media\author-execute-notebook\secret-redaction.png":::
+
+## Magic commands in notebook
+
+### Built-in magics
+
+You can use familiar Ipython magic commands in Fabric notebooks. Review the following list as the current available magic commands. 
+
+> [!NOTE]
+> Only following magic commands are supported in Fabric pipeline : %%pyspark, %%spark, %%csharp, %%sql. 
+>
+
+Available line magics:
+[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#notebook-reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2, %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode. 
+
+
+Fabric notebook also supports improved library management commands **%pip**, **%conda**, check [Manage Apache Spark libraries in Microsoft Fabric](library-management.md) for the usage.
+
+Available cell magics:
+[%%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%%capture](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-capture), [%%writefile](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-writefile), [%%sql](#use-multiple-languages), [%%pyspark](#use-multiple-languages), [%%spark](#use-multiple-languages), [%%csharp](#use-multiple-languages), [%%html](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-html), [%%bash](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-bash), [%%markdown](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-markdown), [%%perl](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-perl), [%%script](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-script), [%%sh](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-sh).
+
+
+### Custom magics
+
+You can also build out more custom magic commands to meet your specific needs as the below example shows.
+
+1. Create a notebook with name *"MyLakehouseModule"*.
+
+
+:::image type="content" source="media\author-execute-notebook\custom-magic-define.png" alt-text="Screenshot of define a custom magic." lightbox="media\author-execute-notebook\custom-magic-define.png":::
+
+
+2. In another notebook reference the *"MyLakehouseModule"* and its magic commands, by this way you can organize your project with notebooks that using different languages conveniently.
+
+:::image type="content" source="media\author-execute-notebook\consume-custom-magic.png" alt-text="Screenshot of use custom magic." lightbox="media\author-execute-notebook\consume-custom-magic.png":::
+
 ## IPython Widgets
 
-Widgets are eventful python objects that have a representation in the browser, often as a control like a slider, textbox etc. IPython Widgets only works in Python environment, it's not supported in other languages (e.g. Scala, SQL, C#) yet.
+IPython Widgets are eventful python objects that have a representation in the browser. You can use IPython Widgets as low-code controls (for example, slider, text box) in your notebook just like the Jupyter notebook, currently it only works in Python context.
 
 ### To use IPython Widget
 
@@ -242,12 +324,12 @@ Widgets are eventful python objects that have a representation in the browser, o
    display(slider)
    ```
 
+1. Run the cell, the widget displays in the output area.
+
    ```python
    slider = widgets.IntSlider()
-   slider
+   display(slider)
    ```
-
-1. Run the cell, the widget displays in the output area.
 
    :::image type="content" source="media\author-execute-notebook\widget-in-output.png" alt-text="Screenshot of widget displayed in the output area." lightbox="media\author-execute-notebook\widget-in-output.png":::
 
@@ -259,7 +341,7 @@ Widgets are eventful python objects that have a representation in the browser, o
    display(slider)
    ```
 
-   :::image type="content" source="media\author-execute-notebook\multiple-widget-instances.png" alt-text="Screenshot showing multiple instances of one widget." lightbox="media\author-execute-notebook\multiple-widget-instances.png":::
+   :::image type="content" source="media\author-execute-notebook\multiple-time-widget.png" alt-text="Screenshot showing multiple times of one widget." lightbox="media\author-execute-notebook\multiple-time-widget.png":::
 
 1. To render two widgets independent of each other, create two widget instances:
 
@@ -269,6 +351,8 @@ Widgets are eventful python objects that have a representation in the browser, o
    display(slider1)
    display(slider2)
    ```
+
+   :::image type="content" source="media\author-execute-notebook\multiple-widget-instances.png" alt-text="Screenshot showing multiple instances of widgets." lightbox="media\author-execute-notebook\multiple-widget-instances.png":::
 
 ### Supported widgets
 
@@ -348,7 +432,7 @@ Similar to Jupyter Notebooks, [!INCLUDE [product-name](../includes/product-name.
 
    :::image type="content" source="media\author-execute-notebook\cell-command-mode.png" alt-text="Screenshot of a cell in command mode." lightbox="media\author-execute-notebook\cell-command-mode.png":::
 
-1. Edit mode is indicated by a text cursor prompting you to type in the editor area. When a cell is in edit mode, you can type into the cell. Enter edit mode by pressing Enter or using the mouse to select on a cell's editor area.
+1. Edit mode can be indicated from a text cursor that prompting you to type in the editor area. When a cell is in edit mode, you can type into the cell. Enter edit mode by pressing Enter or using the mouse to select on a cell's editor area.
 
    :::image type="content" source="media\author-execute-notebook\cell-edit-mode.png" alt-text="Screenshot of a cell in edit mode." lightbox="media\author-execute-notebook\cell-edit-mode.png":::
 
@@ -390,6 +474,9 @@ Using the following keystroke shortcuts, you can more easily navigate and run co
 | Dedent | Ctrl + [ |
 | Switch to command mode | Esc |
 
+You can easily find all shortcut keys from notebook ribbon *View* -> *Keybindings*.
+
 ## Next steps
 
 - [Notebook visualization](notebook-visualization.md)
+- [Introduction of Fabric MSSparkUtils](microsoft-spark-utilities.md)

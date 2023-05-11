@@ -5,14 +5,14 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.date: 02/24/2023
+ms.date: 05/23/2023
 ---
 
-# Visualize notebooks in Microsoft Fabric
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+# Notebook visualization in Microsoft Fabric
 
 [!INCLUDE [product-name](../includes/product-name.md)] is an integrated analytics service that accelerates time to insight, across data warehouses and big data analytics systems. Data visualization in notebook is a key component in being able to gain insight into your data. It helps make big and small data easier for humans to understand. It also makes it easier to detect patterns, trends, and outliers in groups of data.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 When you use Apache Spark in [!INCLUDE [product-name](../includes/product-name.md)], there are various built-in options to help you visualize your data, including [!INCLUDE [product-name](../includes/product-name.md)] notebook chart options, and access to popular open-source libraries.
 
@@ -22,14 +22,14 @@ When using a [!INCLUDE [product-name](../includes/product-name.md)] notebook, yo
 
 ### display(df) function
 
-The _display_ function allows you to turn SQL queries and Apache Spark dataframes and RDDs into rich data visualizations. The _display_ function can be used on dataframes or Resilient Distributed Datasets (RDDs) created in PySpark and Scala.
+The _display_ function allows you to turn SQL query result and Apache Spark dataframes into rich data visualizations. The _display_ function can be used on dataframes created in PySpark and Scala.
 
 To access the chart options:
 
 1. The output of _%%sql_ magic commands appear in the rendered table view by default. You can also call _display(df)_ on Spark DataFrames or Resilient Distributed Datasets (RDD) function to produce the rendered table view.
 1. Once you have a rendered table view, switch to the **Chart** view.
 
-   :::image type="content" source="media\notebook-visualization\chart-view.png" alt-text="Screenshot showing the Chart view." lightbox="media\notebook-visualization\chart-view.png":::
+    ![Animated GIF of chart view.](media\notebook-visualization\chart-view.gif)
 
 1. You can now customize your visualization by specifying the following values:
 
@@ -46,11 +46,11 @@ To access the chart options:
 
 1. Once done, you can view and interact with your final visualization!
 
-### display(df) statistic details
+### display(df) summary view
 
 You can use _display(df, summary = true)_ to check the statistics summary of a given Apache Spark DataFrame that includes the column name, column type, unique values, and missing values for each column. You can also select a specific column to see its minimum value, maximum value, mean value, and standard deviation.
 
-:::image type="content" source="media\notebook-visualization\display-statistic-details.png" alt-text="Screenshot of the statistics summary of a dataframe." lightbox="media\notebook-visualization\display-statistic-details.png":::
+![Animated GIF of summary view.](media\notebook-visualization\summary-view.gif)
 
 ### displayHTML() option
 

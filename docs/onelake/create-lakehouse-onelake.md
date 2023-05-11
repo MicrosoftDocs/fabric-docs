@@ -5,14 +5,14 @@ ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
 ms.topic: how-to
-ms.date: 03/24/2023
+ms.date: 05/23/2023
 ---
 
 # Create a lakehouse with OneLake
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This tutorial is a quick guide to creating a lakehouse and getting started with the basic methods of interacting with it. After completing this tutorial, you'll have a lakehouse provisioned inside of Microsoft Fabric working on top of OneLake.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create a lakehouse
 

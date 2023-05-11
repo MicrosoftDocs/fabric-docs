@@ -6,16 +6,19 @@ ms.author: makromer
 author: kromerm
 ms.topic: overview
 ms.search.form: product-data-integration, Data_Factory_Overview
-ms.date: 01/25/2023
+ms.date: 05/23/2023
 ---
 
 # What is Data Factory in Microsoft Fabric?
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] brings the best of our Citizen Data Integration and Pro Data Integration capabilities into a single, modern data integration experience.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] provides out-of-the-box connectivity to more than 100+ relational, non-relational databases, lakehouse, data warehouses, generic interfaces (for example REST APIs, OData) and more.
+With dataflows, you can leverage more than 300 transformations in the dataflows designer, letting you transform data easier and with more flexibility than any other tool—including smart AI-based data transformations.
+With data pipelines, you can leverage the out-of-the-box rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade.
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+
+There are two primary high-level features Data Factory implements: dataflows and pipelines.
 
 ## Dataflows
 
@@ -29,7 +32,7 @@ Dataflows are built using the familiar [Power Query](/power-query/power-query-wh
 
 Data pipelines enable powerful workflow capabilities at cloud-scale. With data pipelines, you can build complex workflows that can refresh your dataflow, move PB-size data, and define sophisticated control flow pipelines.
 
-Use data pipelines to build complex ETL and data factory workflows that can perform many different tasks at scale. Control flow capabilities are built into data pipelines that will allow you to build workflow logic, which provides loops and conditionals.
+Use data pipelines to build complex ETL and data factory workflows that can perform many different tasks at scale. Control flow capabilities are built into data pipelines that allow you to build workflow logic, which provides loops and conditionals.
 
 Add a configuration-driven copy activity together with your low-code dataflow refresh in a single pipeline for an end-to-end ETL data pipeline. You can even add code-first activities for Spark Notebooks, SQL scripts, stored procs, and more.
 
@@ -37,4 +40,4 @@ Add a configuration-driven copy activity together with your low-code dataflow re
 
 ## Next steps
 
-To get started with [!INCLUDE [product-name](../includes/product-name.md)], go to [Quickstart: Create your first Dataflows Gen2 to get and transform data](create-first-dataflow-gen2.md).
+To get started with [!INCLUDE [product-name](../includes/product-name.md)], go to [Quickstart: Create your first Dataflow Gen2 to get and transform data](create-first-dataflow-gen2.md).

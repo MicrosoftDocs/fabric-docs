@@ -1,14 +1,14 @@
 ---
-title: Delta Lake logs in Synapse Data Warehouse in Microsoft Fabric
-description: Learn how Synapse Data Warehouse in Microsoft Fabric publishes Delta Lake logs
+title: Delta Lake logs in Warehouse
+description: Learn how Warehouse in Microsoft Fabric publishes Delta Lake logs
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 04/12/2023
+ms.date: 05/23/2023
 ms.topic: conceptual
+ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
-
-# Delta Lake logs in Synapse Data Warehouse in Microsoft Fabric 
+# Delta Lake logs in Warehouse in Microsoft Fabric 
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -16,7 +16,27 @@ ms.topic: conceptual
 
 The Delta Lake logs opens up direct access to the warehouse's user tables for any engine that can read Delta Lake tables. This access is limited to read-only to ensure the user data maintains ACID transaction compliance. All inserts, updates, and deletes to the data in the tables must be executed through the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Once a transaction is committed, a system background process is initiated to publish the updated Delta Lake log for the affected tables.
 
-## Location
+## How to get OneLake path
+
+The following steps detail how to get the OneLake path from a table in a warehouse:
+
+1. Open **Warehouse** in your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
+
+1. In the **Object Explorer**, you find more options **(...)** on a selected table in the **Tables** folder. Select the **Properties** menu.
+
+   :::image type="content" source="media\query-delta-lake-logs\select-properties.png" alt-text="Screenshot showing where to find the Properties option on a selected table." lightbox="media\query-delta-lake-logs\select-properties.png":::
+
+1. On selection, the **Properties** pane shows the following information:
+   1. Name
+   1. Format
+   1. Type
+   1. URL
+   1. Relative path
+   1. [ABFS path](/azure/storage/blobs/data-lake-storage-introduction-abfs-uri)
+
+   :::image type="content" source="media\query-delta-lake-logs\properties-details.png" alt-text="Screenshot of the Properties pane." lightbox="media\query-delta-lake-logs\properties-details.png":::
+
+## How to get Delta Lake logs path
 
 You can locate Delta Lake logs via the following methods:
 
@@ -32,10 +52,24 @@ You can locate Delta Lake logs via the following methods:
 
 - Currently, tables with inserts only are supported.
 - Currently, Delta Lake log checkpoint and vacuum functions are unavailable.
+- Table Names can only be used by Spark and other systems if they only contain these characters: A-Z a-z 0-9 and underscores.
+- Column Names that will be used by Spark and other systems cannot contain:
+  - spaces
+  - tabs
+  - carriage returns
+  - [
+  - ,
+  - ;
+  - {
+  - }
+  - (
+  - )
+  - =
+  - ]
 
 ## Next steps
 
-- [Query the Synapse Data Warehouse](query-warehouse.md)
+- [Query the Warehouse](query-warehouse.md)
 - [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md)
 - [OneLake overview](../onelake/onelake-overview.md)
 - [Accessing shortcuts](../onelake/access-onelake-shortcuts.md)

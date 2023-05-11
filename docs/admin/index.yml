@@ -1,68 +1,75 @@
 ### YamlMime:Landing
 
-title: Administration documentation # < 60 chars
-summary: summary # < 160 chars
+title: Microsoft Fabric documentation for admins
+summary: Learn about the Microsoft Fabric admin settings, options and tools.
 
 metadata:
-  title: title # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: description # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: azure #Required; use either service or product per approved list. 
-#   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
-  ms.topic: landing-page # Required
-  ms.collection: collection # Optional; Remove if no collection is used.
-  author: githubauthor #Required; your GitHub user alias, with correct capitalization.
-  ms.author: msauthor #Required; microsoft alias of author; optional team alias.
-  ms.date: 01/27/2020 #Required; mm/dd/yyyy format.
+  title: Microsoft Fabric documentation for admins
+  description: A landing page for the Microsoft Fabric admin documentation.
+  ms.service: azure
+  ms.topic: landing-page
+  author: KesemSharabi
+  ms.author: kesharab
+  ms.date: 05/23/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
-# Cards and links should be based on top customer tasks or top subjects
-# Start card title with a verb
-  # Card 
-  - title: About Administration documentation
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is [service]?
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: overview
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
 
-  # Card 
   - title: Get started
     linkLists:
       - linkListType: get-started
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: get-started
+          - text: Enable Microsoft Fabric for your organization
+            url: fabric-switch.md
+          - text: Compliance settings
+            url: compliance.md
+          - text: Governance in Microsoft Fabric
+            url: ../governance/index.yml          
+      - linkListType: overview
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: What is Microsoft Fabric admin?
+            url: microsoft-fabric-admin.md       
+          - text: What is the admin portal?
+            url: admin-center.md
+      - linkListType: how-to-guide
+        links:            
+          - text: Understand Microsoft Fabric roles
+            url: roles.md
 
-  # Card 
-  - title: how-to-guide
+  - title: Tools and settings
     linkLists:
+      - linkListType: overview
+        links: 
+          - text: Tenant admin settings for git integration
+            url: git-integration-admin-settings.md              
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Track user activities in Fabric
+            url: track-user-activities.md
+          - text: Set up item certification
+            url: endorsement-setup.md            
+          - text: Enable service principal authentication for read-only admin APIs
+            url: metadata-scanning-enable-read-only-apis.md     
+          - text: Set up metadata scanning in your organization
+            url: metadata-scanning-setup.md
+
+  - title: Workspace settings
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Workspace tenant settings
+            url: portal-workspace.md
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Manage workspaces
+            url: portal-workspaces.md
+
+  - title: Admin monitoring workspace
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is the admin monitoring workspace?
+            url: monitoring-workspace.md
+          - text: Feature usage and adoption report
+            url: feature-usage-adoption.md
