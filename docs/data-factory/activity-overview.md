@@ -41,7 +41,7 @@ Dataflow Gen2 | Compute manager by Microsoft Fabric
 Delete data | Compute manager by Microsoft Fabric
 Fabric Notebook | Apache Spark clusters managed by Microsoft Fabric
 Fabric Spark job definition | Apache Spark clusters managed by Microsoft Fabric
-Stored Procedure | Apache Spark clusters managed by Microsoft Fabric
+Stored Procedure | Azure SQL, Azure Synapse Analytics, or SQL Server
 SQL script | Azure SQL, Azure Synapse Analytics, or SQL Server
 
 
