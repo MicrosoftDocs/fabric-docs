@@ -33,7 +33,7 @@
       items:
       - name: Overview
         href: connector-amazon-s3-overview.md
-      - name: Configure in Manage connections and gateway
+      - name: Manage connections and gateway
         href: connector-amazon-s3.md
       - name: Configure in Data pipeline Copy activity
         href: connector-amazon-s3-copy-activity.md
@@ -43,7 +43,7 @@
       items:
       - name: Overview
         href: connector-azure-blob-storage-overview.md
-      - name: Configure in Manage connections and gateway
+      - name: Manage connections and gateway
         href: connector-azure-blob-storage.md
       - name: Configure in Data pipeline Copy activity
         href: connector-azure-blob-storage-copy-activity.md
@@ -53,7 +53,7 @@
       items:
       - name: Overview
         href: connector-azure-cosmosdb-for-nosql-overview.md
-      - name: Configure in Manage connections and gateway
+      - name: Manage connections and gateway
         href: connector-azure-cosmosdb-for-nosql.md
       - name: Configure in Data pipeline Copy activity
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
@@ -67,7 +67,7 @@
       items:
       - name: Overview
         href: connector-azure-data-lake-storage-gen2-overview.md
-      - name: Configure in Manage connections and gateway
+      - name: Manage connections and gateway
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in Data pipeline Copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
@@ -77,7 +77,7 @@
       items:
       - name: Overview
         href: connector-azure-sql-database-overview.md
-      - name: Configure in Manage connections and gateway
+      - name: Manage connections and gateway
         href: connector-azure-sql-database.md
       - name: Configure in Data pipeline Copy activity
         href: connector-azure-sql-database-copy-activity.md
@@ -117,7 +117,7 @@
       items:
       - name: Overview
         href: connector-google-cloud-storage-overview.md
-      - name: Configure in Manage connections and gateway
+      - name: Manage connections and gateway
         href: connector-google-cloud-storage.md
       - name: Configure in Data pipeline Copy activity
         href: connector-google-cloud-storage-copy-activity.md
@@ -127,7 +127,7 @@
       items:
       - name: Overview
         href: connector-http-overview.md
-      - name: Configure in Manage connections and gateway
+      - name: Manage connections and gateway
         href: connector-http.md
       - name: Configure in Data pipeline Copy activity
         href: connector-http-copy-activity.md
@@ -149,7 +149,7 @@
       items:
       - name: Overview
         href: connector-microsoft-365-overview.md
-      - name: Configure in Manage connections and gateway
+      - name: Manage connections and gateway
         href: connector-microsoft-365.md
       - name: Configure in Data pipeline Copy activity
         href: connector-microsoft-365-copy-activity.md
@@ -157,7 +157,7 @@
       items:
       - name: Overview
         href: connector-odata-overview.md
-      - name: Configure in Manage connections and gateway
+      - name: Manage connections and gateway
         href: connector-odata.md
       - name: Configure in Data pipeline Copy activity
         href: connector-odata-copy-activity.md 
@@ -167,7 +167,7 @@
       items:
       - name: Overview
         href: connector-rest-overview.md
-      - name: Configure in Manage connections and gateway
+      - name: Manage connections and gateway
         href: connector-rest.md
       - name: Configure in Data pipeline Copy activity
         href: connector-rest-copy-activity.md    
@@ -177,7 +177,7 @@
       items:
       - name: Overview
         href: connector-sharepoint-online-list-overview.md
-      - name: Configure in Manage connections and gateway
+      - name: Manage connections and gateway
         href: connector-sharepoint-online-list.md
       - name: Configure in Data pipeline Copy activity
         href: connector-sharepoint-online-list-copy-activity.md
