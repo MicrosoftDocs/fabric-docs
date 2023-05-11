@@ -20,7 +20,7 @@ Use this quick reference table and these short scenarios to help choose whether 
 | | **Pipeline copy activity** | **Dataflow Gen 2** | **Spark** |
 |---|:---:|:---:|:---:|
 | **Use case** | Data lake and data warehouse migration,<br>data ingestion,<br>lightweight transformation | Data ingestion,<br>data transformation,<br>data wrangling,<br>data profiling | Data ingestion,<br>data transformation,<br>data processing,<br>data profiling |
-| **Primary developer persona** | Data engineer,<br>Data Integrator | Data Engineer,<br>Data Integrator,<br>Business Analyst | Data Engineer,<br>Data Scientist,<br>Data Developer |
+| **Primary developer persona** | Data engineer,<br>data integrator | Data engineer,<br>data integrator,<br>business analyst | Data engineer,<br>data scientist,<br>data developer |
 | **Primary developer skill set** | ETL,<br>SQL,<br>JSON | ETL,<br>M,<br>SQL | Spark (Scala, Python, Spark SQL, R) |
 | **Code written** | No code,<br>low code | No code,<br>low code | Code |
 | **Data volume** | Low to high | Low to high | Low to high |

@@ -17,11 +17,11 @@ Use this quick reference table and these short scenarios to help choose whether 
 
 ## Data warehouse and lakehouse properties
 
-| | **Data Warehouse** | **Lakehouse** |
+| | **Data warehouse** | **Lakehouse** |
 |---|:---:|:---:|
 | **Data volume** | Unlimited | Unlimited |
 | **Type of data** | Structured | Unstructured,<br>semi-structured,<br>structured |
-| **Primary developer persona** | Data Warehouse Developer,<br>SQL Engineer | Data Engineer,<br>Data Scientist |
+| **Primary developer persona** | Data warehouse developer,<br>SQL engineer | Data engineer,<br>data scientist |
 | **Primary developer skill set** | SQL | Spark (Scala, PySpark, Spark SQL, R) |
 | **Data organized** **by** | Databases, schemas, and tables | Folders and files,<br>databases and tables |
 | **Read operations** | Spark,<br>T-SQL | Spark,<br>T-SQL |
@@ -39,11 +39,13 @@ Review these scenarios for help with choosing between using a lakehouse or a dat
 
 ### Scenario one
 
-Susan, a professional developer, is new to Trident and is ready to get started cleaning, modeling, and analyzing data but needs to decide if she should build a data warehouse or a lakehouse. After reviewing the decision points in the chart above, Susan sees the primary decision points come down to multi-table transactions and skillset. She has spent many years building data warehouses on relational database engines and is therefore familiar with the SQL syntax and functionality. As she thinks about the larger team that works around her and considers the primary consumers of this data are also highly skilled with SQL and use analytical tools that are designed for SQL, they bring a similar skillset to the table. **Susan decides to use a data warehouse** which will allow her and the team with similar skillsets to interact primarily with T-SQL while still allowing any Spark users in the organization to access the data.
+Susan, a professional developer, is new to Microsoft Fabric. She's ready to get started cleaning, modeling, and analyzing data but needs to decide if she should build a data warehouse or a lakehouse. She reviews the details in the previous table and sees that her primary decision points are her own skills and her need for multi-table transactions.
+
+Susan has spent many years building data warehouses on relational database engines, and is very familiar with SQL syntax and functionality. As she thinks about her larger team, she realizes the primary consumers of this data are also highly skilled with SQL and SQL analytical tools. Susan decides to use a **data warehouse**, which allows her and her team to interact primarily with T-SQL, while also allowing any Spark users in the organization to access the data.
 
 ### Scenario two
 
-Rob, a data engineer, needs to store and model several terabytes of data in Trident. His team has a mix of skillsets between PySpark and T-SQL. Most of the team running T-SQL queries will be consumers and therefore do not need to write INSERT, UPDATE, or DELETE statements. The remaining developers are comfortable working in notebooks and because the data is stored in Delta, will be able to interact with a similar SQL syntax. **Rob decides to use a lakehouse**. This allows Rob's data engineering team to use their diverse skillsets against the data while allowing the team members highly skilled in T-SQL to consume the data.
+Rob, a data engineer, needs to store and model several terabytes of data in Fabric. His team has a mix of PySpark and T-SQL skills. Most of the team running T-SQL queries are consumers and therefore don't need to write INSERT, UPDATE, or DELETE statements. The remaining developers are comfortable working in notebooks, and because the data is stored in Delta, they're able to interact with a similar SQL syntax. Rob decides to use a **lakehouse**, which allows his data engineering team to use their diverse skills against the data, while allowing the team members who are highly skilled in T-SQL to consume the data.
 
 ## Next steps
 
