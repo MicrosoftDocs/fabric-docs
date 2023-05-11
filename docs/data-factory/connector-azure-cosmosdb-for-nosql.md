@@ -22,16 +22,13 @@ The Azure Cosmos DB for NoSQL connector supports the following authentication ty
 |:---|:---|:---|
 |Account key| √| n/a|
 
->[!Note]
->For information about the Azure Cosmos DB for NoSQL connection in Dataflow Gen2, go to [Connect to Azure Cosmos DB for NoSQL in dataflows](connector-azure-cosmosdb-for-nosql-dataflows.md).
-
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+The following prerequisites are required before you start:
 
-- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial).
 
-- Make sure you have a Microsoft Fabric enabled Workspace.
+- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
 
 ## Go to manage gateways to create connection
 

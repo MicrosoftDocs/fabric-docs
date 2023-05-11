@@ -20,15 +20,15 @@ This Microsoft 365 connector supports the following authentication types for cop
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Service principal| √| |
+|Service principal| √| n/a|
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+The following prerequisites are required before you start:
 
-- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial).
 
-- Make sure you have a Microsoft Fabric enabled Workspace.
+- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
 
 ## Go to Manage gateways to create connection
 
