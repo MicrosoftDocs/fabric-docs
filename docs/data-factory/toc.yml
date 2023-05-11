@@ -5,13 +5,15 @@
     items:
     - name: What is Data Factory?
       href: data-factory-overview.md
+    - name: Data Factory training
+      href: /training/paths/get-started-fabric-preview-only
   - name: Get started
     items:
     - name: Create a dataflow
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
-    - name: Configure data integration
+    - name: Operationalize Data Factory
       href: transform-data.md
   - name: Tutorials
     items:

@@ -52,8 +52,6 @@ items:
   items:
   - name: Better together - the lakehouse and warehouse
     href: get-started-lakehouse-sql-endpoint.md
-  - name: Get Workspace and OneLake path
-    href: access-data-warehouse-files-in-one-lake.md
   - name: Create a sample warehouse 
     href: create-warehouse-sample.md
   - name: Tables

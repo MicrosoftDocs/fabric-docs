@@ -155,6 +155,18 @@ Now that you created a dataflow gen2, you can operate on it in a pipeline. In th
 1. Select **Save** to save your data pipeline. Then select **Run** to run your data pipeline and load your data.  
 
    :::image type="content" source="media/transform-data/save-run-pipeline.png" alt-text="Screenshot showing where to select Save and Run.":::
+   
+## Schedule pipeline execution
+
+Once you finish developing and testing your pipeline, you can schedule it to execute automatically.
+
+1. On the **Home** tab of the pipeline editor window, select **Schedule**.
+
+   :::image type="content" source="media/tutorial-end-to-end-integration/schedule-button.png" alt-text="A screenshot of the Schedule button on the menu of the Home tab in the pipeline editor.":::
+
+1. Configure the schedule as required. The example here schedules the pipeline to execute daily at 8:00 PM until the end of the year.
+
+   :::image type="content" source="media/tutorial-end-to-end-integration/schedule-configuration.png" alt-text="Screenshot showing the schedule configuration for a pipeline to run daily at 8:00 PM until the end of the year.":::
 
 ## Next steps
 
