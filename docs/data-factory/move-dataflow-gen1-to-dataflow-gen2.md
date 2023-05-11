@@ -32,7 +32,7 @@ To copy existing Dataflow Gen1 queries:
 
 1. In the Power Query editor, select **Get data** > **Blank query**.
 
-   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/select-blank-query.png" alt-text="Screenshot showing the New menu opened with Dataflow Gen2 (Preview) emphasized.":::
+   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/select-blank-query.png" alt-text="Screenshot showing the Get data menu opened with Blank query emphasized.":::
 
 1. In the **Blank query** dialog box, select **Next**.
 
