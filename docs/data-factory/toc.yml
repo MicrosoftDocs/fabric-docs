@@ -5,6 +5,8 @@
     items:
     - name: What is Data Factory?
       href: data-factory-overview.md
+    - name: Data Factory training
+      href: /training/paths/get-started-fabric-preview-only
     - name: Compare Data Factory in Fabric and Azure
       href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Compare Dataflows Gen1 with Gen2
