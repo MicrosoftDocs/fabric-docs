@@ -55,4 +55,4 @@ To view the Microsoft Purview Data Estate Insights, your users need an [insights
 
 ## Learn more
 
-- How to use the [Microsoft Purview Hub] (use-microsoft-purview-hub.md)
+- How to use the [Microsoft Purview Hub](use-microsoft-purview-hub.md)
