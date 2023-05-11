@@ -19,6 +19,9 @@ This article describes how to get started with [!INCLUDE [fabric-dw](includes/fa
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
+> [!TIP]
+> You can proceed with either a blank Warehouse or a sample Warehouse to continue this series of Get Started steps.
+
 ## How to create a warehouse
 
 In this section, we walk you through three distinct experiences available for creating a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from scratch in the [!INCLUDE [product-name](../includes/product-name.md)] portal.
@@ -57,15 +60,15 @@ In this section, we walk you through two distinct experiences available for crea
 
    :::image type="content" source="media\create-warehouse\home-hub-warehouse-sample.png" alt-text="Screenshot showing the Warehouse sample card in the Home hub." lightbox="media\create-warehouse\home-hub-warehouse-sample.png":::
 
-2. Provide the name for your sample warehouse and select **Create**. 
+1. Provide the name for your sample warehouse and select **Create**. 
 
    :::image type="content" source="media\create-warehouse\home-hub-provide-sample-name.png" alt-text="Screenshot showing the Warehouse creation experience in the Home hub." lightbox="media\create-warehouse\home-hub-provide-sample-name.png":::
 
-3. The create action creates a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and start loading sample data into it. The data loading takes few minutes to complete.
+1. The create action creates a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and start loading sample data into it. The data loading takes few minutes to complete.
 
    :::image type="content" source="media\create-warehouse\loading-sample-data.png" alt-text="Screenshot showing the loading sample data into Warehouse." lightbox="media\create-warehouse\loading-sample-data.png":::
 
-4. On completion of loading sample data, the warehouse opens with data loaded into tables and views to query.
+1. On completion of loading sample data, the warehouse opens with data loaded into tables and views to query.
 
    :::image type="content" source="media\create-warehouse\warehouse-with-sample-table-view.png" alt-text="Screenshot showing the Warehouse loaded with sample data." lightbox="media\create-warehouse\warehouse-with-sample-table-view.png":::
 
@@ -77,72 +80,73 @@ For more information on how to create a warehouse, see [Create a Synapse Data Wa
 
    :::image type="content" source="media\create-warehouse-sample\use-sample-database.png" alt-text="Screenshot showing where to select the Warehouse sample card in the Home hub." lightbox="media\create-warehouse-sample\use-sample-database.png":::
 
-2. The data loading takes few minutes to complete.
+1. The data loading takes few minutes to complete.
 
    :::image type="content" source="media\create-warehouse-sample\loading-sample-data.png" alt-text="Screenshot showing the loading sample data into warehouse." lightbox="media\create-warehouse-sample\loading-sample-data.png":::
 
-3. On completion of loading sample data, the warehouse displays data loaded into tables and views to query.
+1. On completion of loading sample data, the warehouse displays data loaded into tables and views to query.
 
    :::image type="content" source="media\create-warehouse-sample\warehouse-with-sample-table-view.png" alt-text="Screenshot showing the warehouse loaded with sample data." lightbox="media\create-warehouse-sample\warehouse-with-sample-table-view.png":::
 
-### Sample scripts
+#### Sample scripts
+    
+    ```sql
+    
+    /*************************************************
+    Get number of trips performed by each medallion
+    **************************************************/
+    
+    SELECT 
+        M.MedallionID
+        ,M.MedallionCode
+        ,COUNT(T.TripDistanceMiles) AS TotalTripCount
+    FROM   
+        dbo.Trip AS T
+    JOIN   
+        dbo.Medallion AS M
+    ON 
+        T.MedallionID=M.MedallionID
+    GROUP BY 
+        M.MedallionID
+        ,M.MedallionCode
+    
+    /****************************************************
+    How many passengers are being picked up on each trip?
+    *****************************************************/
+    SELECT
+        PassengerCount,
+        COUNT(*) AS CountOfTrips
+    FROM 
+        dbo.Trip
+    WHERE 
+        PassengerCount > 0
+    GROUP BY 
+        PassengerCount
+    ORDER BY 
+        PassengerCount
+    
+    /*********************************************************************************
+    What is the distribution of trips by hour on working days (non-holiday weekdays)?
+    *********************************************************************************/
+    SELECT
+        ti.HourlyBucket,
+        COUNT(*) AS CountOfTrips
+    FROM dbo.Trip AS tr
+    INNER JOIN dbo.Date AS d
+        ON tr.DateID = d.DateID
+    INNER JOIN dbo.Time AS ti
+        ON tr.PickupTimeID = ti.TimeID
+    WHERE
+        d.IsWeekday = 1
+        AND d.IsHolidayUSA = 0
+    GROUP BY
+        ti.HourlyBucket
+    ORDER BY
+        ti.HourlyBucket
+    ```
 
-```sql
-
-/*************************************************
-Get number of trips performed by each medallion
-**************************************************/
-
-SELECT 
-    M.MedallionID
-    ,M.MedallionCode
-    ,COUNT(T.TripDistanceMiles) AS TotalTripCount
-FROM   
-    dbo.Trip AS T
-JOIN   
-    dbo.Medallion AS M
-ON 
-    T.MedallionID=M.MedallionID
-GROUP BY 
-    M.MedallionID
-    ,M.MedallionCode
-
-/****************************************************
-How many passengers are being picked up on each trip?
-*****************************************************/
-SELECT
-    PassengerCount,
-    COUNT(*) AS CountOfTrips
-FROM 
-    dbo.Trip
-WHERE 
-    PassengerCount > 0
-GROUP BY 
-    PassengerCount
-ORDER BY 
-    PassengerCount
-
-/*********************************************************************************
-What is the distribution of trips by hour on working days (non-holiday weekdays)?
-*********************************************************************************/
-SELECT
-    ti.HourlyBucket,
-    COUNT(*) AS CountOfTrips
-FROM dbo.Trip AS tr
-INNER JOIN dbo.Date AS d
-    ON tr.DateID = d.DateID
-INNER JOIN dbo.Time AS ti
-    ON tr.PickupTimeID = ti.TimeID
-WHERE
-    d.IsWeekday = 1
-    AND d.IsHolidayUSA = 0
-GROUP BY
-    ti.HourlyBucket
-ORDER BY
-    ti.HourlyBucket
-```
-
-You can proceed with either a blank Warehouse or a sample Warehouse to continue this series of Get Started steps.
+> [!TIP]
+> You can proceed with either a blank Warehouse or a sample Warehouse to continue this series of Get Started steps.
 
 ## Next steps
 

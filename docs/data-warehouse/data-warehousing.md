@@ -24,11 +24,11 @@ The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is built for any skill level -
 
 ### Virtual warehouses with cross database querying
 
-[!INCLUDE [product-name](../includes/product-name.md)] provides customers with the ability to stand up virtual warehouses containing data from virtually any source through the use of shortcuts. Customers can build a virtual warehouse by creating shortcuts to their data wherever it resides. A virtual warehouse may consist of data from OneLake, Azure Data Lake Storage, or any other cloud vendor storage within a single boundary and with no data duplication. 
+[!INCLUDE [product-name](../includes/product-name.md)] provides customers with the ability to stand up virtual warehouses containing data from virtually any source by using shortcuts. Customers can build a virtual warehouse by creating shortcuts to their data wherever it resides. A virtual warehouse may consist of data from OneLake, Azure Data Lake Storage, or any other cloud vendor storage within a single boundary and with no data duplication. 
 
 Seamlessly unlock value from a variety of data sources through the richness of cross database querying in [!INCLUDE [product-name](../includes/product-name.md)]. Cross database querying enables customers to quickly and seamlessly leverage multiple data sources for fast insights and with zero data duplication. Data stored in different sources can be easily joined together enabling customers to deliver rich insights that previously required significant effort from data integration and engineering teams. 
 
-Cross-database queries can be created through the [Visual Query Editor](visual-query-editor.md), which offers a no-code path to insights over multiple tables. The [SQL Query Editor](sql-query-editor.md), or other familiar tools such as SQL Server Management Studio (SSMS), can also be used to create cross-database queries. 
+Cross-database queries can be created through the [Visual Query editor](visual-query-editor.md), which offers a no-code path to insights over multiple tables. The [SQL Query editor](sql-query-editor.md), or other familiar tools such as SQL Server Management Studio (SSMS), can also be used to create cross-database queries. 
 
 ### Autonomous workload management
 
