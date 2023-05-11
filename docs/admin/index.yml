@@ -37,6 +37,23 @@ landingContent:
           - text: Understand Microsoft Fabric roles
             url: roles.md
 
+  - title: Tools and settings
+    linkLists:
+      - linkListType: overview
+        links: 
+          - text: Tenant admin settings for git integration
+            url: git-integration-admin-settings.md              
+      - linkListType: how-to-guide
+        links:
+          - text: Track user activities in Fabric
+            url: track-user-activities.md
+          - text: Set up item certification
+            url: endorsement-setup.md            
+          - text: Enable service principal authentication for read-only admin APIs
+            url: metadata-scanning-enable-read-only-apis.md     
+          - text: Set up metadata scanning in your organization
+            url: metadata-scanning-setup.md
+
   - title: Workspace settings
     linkLists:
       - linkListType: overview
@@ -56,20 +73,3 @@ landingContent:
             url: monitoring-workspace.md
           - text: Feature usage and adoption report
             url: feature-usage-adoption.md
-
-  - title: Tools and settings
-    linkLists:
-      - linkListType: overview
-        links: 
-          - text: Tenant admin settings for git integration
-            url: git-integration-admin-settings.md              
-      - linkListType: how-to-guide
-        links:
-          - text: Track user activities in Fabric
-            url: track-user-activities.md
-          - text: Set up item certification
-            url: endorsement-setup.md            
-          - text: Enable service principal authentication for read-only admin APIs
-            url: metadata-scanning-enable-read-only-apis.md     
-          - text: Set up metadata scanning in your organization
-            url: metadata-scanning-setup.md
