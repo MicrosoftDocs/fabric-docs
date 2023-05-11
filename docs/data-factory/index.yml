@@ -42,6 +42,10 @@ landingContent:
         links:
           - text: Create an end-to-end data integration scenario
             url: tutorial-end-to-end-introduction.md
+      - linkListType: learn
+        links:
+          - text: Data factory training
+            url: /training/paths/get-started-fabric
   
   # Card 
   - title: Working with data pipelines
