@@ -20,7 +20,7 @@ This article covers known issues and limitations in Data Factory in Microsoft Fa
 - If you use Copy Assist, you can't skip Data Preview step. If you want the same, use Copy activity.
 - Pipeline tasks are Azure Data Factory templates, but not all the templates available in Azure Data Factory are available in the gallery.
 - Dataflows Gen2 and pipeline Copy activities don't have non-Azure output connectors for AWS S3, GCS and others as of May 2023.
-- Pipeline scheduled run isdisplayed as Manual in run history monitoring.
+- Pipeline scheduled runs are displayed as Manual in run history monitoring.
 - Snowflake can't handle password contains \"&\" in Data pipeline.
 
 ## Pipeline limitations
