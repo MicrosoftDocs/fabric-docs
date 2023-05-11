@@ -124,6 +124,8 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 ### General limitations
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
+- Direct Query and proxy models aren't supported at this time.
+- Private custom visuals aren't supported.
 
 ## Workspace limitations
 
@@ -134,6 +136,7 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 
 - Maximum length of branch name is 244 characters.
 - Maximum length of full path for file names is 250 characters. Longer names will fail.
+- Maximum file size is 25 MB.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git Integration.
 
 ### Sync and commit limitations
