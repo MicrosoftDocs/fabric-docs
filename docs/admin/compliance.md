@@ -22,7 +22,7 @@ This section lists the features that aren't compliant with Microsoft Fabric.
 
 [Private endpoints](/power-bi/enterprise/service-security-private-links) is a feature that provides secure incoming connections to Microsoft Fabric. Some Microsoft Fabric items aren't compliant with private endpoints and Microsoft Fabric can't provide secure private link traffic for these items.
 
-The Microsoft Fabric items that belong to these features require private endpoints, and won't work unless you turn on the *compliance settings* switch:  
+The Microsoft Fabric items that belong to these features require private endpoints, and don't work unless you turn on the *compliance settings* switch:  
 
 * Real-time Analytics
 
@@ -30,7 +30,7 @@ The Microsoft Fabric items that belong to these features require private endpoin
 
 * Data science
 
-* EventStream
+* Eventstream
 
 * Third party access to OneLake
 
@@ -38,9 +38,9 @@ Part of the process of enabling private endpoints, involves [disabling public ac
 
 |Private endpoints  |Block Public Internet Access  |Behavior  |
 |---------|---------|---------|
-|:::image type="icon" source="../media/yes-icon.svg" border="false":::    |:::image type="icon" source="../media/yes-icon.svg" border="false":::        |Fabric items are disabled. The compliance setting is only applicable for this scenario. If turned on, all Microsoft Fabric items are enabled and items that belong to the noncompliant features might use non secure internet connections.         |
+|:::image type="icon" source="../media/yes-icon.svg" border="false":::    |:::image type="icon" source="../media/yes-icon.svg" border="false":::        |Fabric items are disabled. The compliance setting is only applicable for this scenario. If turned on, all Microsoft Fabric items are enabled and items that belong to the noncompliant features might use nonsecure internet connections.         |
 |:::image type="icon" source="../media/yes-icon.svg" border="false":::    |:::image type="icon" source="../media/no-icon.svg" border="false":::         |The private endpoints feature doesn't work without enabling the Block Public Internet Access switch. Fabric items remain enabled regardless of whether you turn the compliance setting on or off.         |
-|:::image type="icon" source="../media/no-icon.svg" border="false":::     |:::image type="icon" source="../media/yes-icon.svg" border="false":::         |Not a valid scenario. The Block Public Internet Access switch cannot be used if you don't enable private endpoints.         |
+|:::image type="icon" source="../media/no-icon.svg" border="false":::     |:::image type="icon" source="../media/yes-icon.svg" border="false":::         |Not a valid scenario. The Block Public Internet Access switch can't be used if you don't enable private endpoints.         |
 |:::image type="icon" source="../media/no-icon.svg" border="false":::     |:::image type="icon" source="../media/no-icon.svg" border="false":::         |Fabric items are enabled.         |
 
 ## How to enable noncompliant features?
@@ -65,7 +65,7 @@ To enable noncompliant features, follow these steps:
 
 ## Disable noncompliant features
 
-By default, noncompliant Microsoft Fabric items aren't enabled. After you enable using these items, you may decide to disable them again. In such cases, the items will still be visible in their workspaces. When users try to open these items they'll get an error message, for example *PowerBIFeatureDisabled*.
+By default, noncompliant Microsoft Fabric items aren't enabled. After you enable using these items, you may decide to disable them again. In such cases, the items will still be visible in their workspaces. When users try to open these items they get an error message, for example *PowerBIFeatureDisabled*.
 
 ## Next steps
 
