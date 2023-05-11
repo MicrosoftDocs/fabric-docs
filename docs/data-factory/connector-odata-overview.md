@@ -23,6 +23,6 @@ This OData connector is supported in Data Factory for [!INCLUDE [product-name](.
 
 ## Next steps
 
-[How to create an OData connection](connector-odata.md)
-
-[How to configure OData in a copy activity](connector-odata-copy-activity.md)
+- [How to create an OData connection](connector-odata.md)
+- [How to configure OData in a copy activity](connector-odata-copy-activity.md)
+- [Connect to OData in dataflows](connector-odata-dataflows.md)

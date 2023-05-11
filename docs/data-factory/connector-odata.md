@@ -25,7 +25,7 @@ This OData connector supports the following authentication types for copy and Da
 |Organizational account| | √|
 
 >[!Note]
->For information about the OData connection in Dataflow Gen2, go to [OData in dataflows](./connector-odata-dataflows.md).
+>For information about the OData connection in Dataflow Gen2, go to [Connect to OData in dataflows](./connector-odata-dataflows.md).
 
 ## Prerequisites
 
