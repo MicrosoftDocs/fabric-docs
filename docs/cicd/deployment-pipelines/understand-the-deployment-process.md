@@ -23,7 +23,7 @@ You can also deploy content programmatically, using the [deployment pipelines RE
 
 ## Deploy content to an empty stage
 
-When you deploy content to an empty stage, a new workspace is created on a Premium capacity for the stage you deploy to. All the metadata in the reports, dashboards, and datasets of the original workspace is copied to the new workspace in the stage you're deploying to.
+When you deploy content to an empty stage, a new workspace is created on a capacity for the stage you deploy to. All the metadata in the reports, dashboards, and datasets of the original workspace is copied to the new workspace in the stage you're deploying to.
 
 There are two ways to deploy content from one stage to another. You can deploy all the content, or you can [select which items to deploy](deploy-content.md#selective-deployment).
 
@@ -31,15 +31,15 @@ You can also deploy content backwards, from a later stage in the deployment pipe
 
 After the deployment is complete, refresh the datasets so that you can use the newly copied content. The dataset refresh is required because data isn't copied from one stage to another. To understand which item properties are copied during the deployment process, and which item properties aren't copied, review the [item properties copied during deployment](#item-properties-copied-during-deployment) section.
 
-### Create a Premium workspace
+### Create a workspace
 
-The first time you deploy content, deployment pipelines checks if you have Premium permissions.  
+The first time you deploy content, deployment pipelines checks if you have permissions.  
 
-If you have Premium permissions, the content of the workspace is copied to the stage you're deploying to, and a new  workspace for that stage is created on the Premium capacity.
+If you have permissions, the content of the workspace is copied to the stage you're deploying to, and a new  workspace for that stage is created on the capacity.
 
-If you don't have Premium permissions, the workspace is created but the content isn’t copied. You can ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. Later, when the workspace is assigned to a capacity, you can deploy content to this workspace.
+If you don't have permissions, the workspace is created but the content isn’t copied. You can ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. Later, when the workspace is assigned to a capacity, you can deploy content to this workspace.
 
-If you're using [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml), your workspace is automatically associated with your PPU. In such cases, Premium permissions aren't required. However, workspaces created by a PPU user, can only be accessed by other PPU users. In addition, content created in such workspaces can only be consumed by PPU users.
+If you're using [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml), your workspace is automatically associated with your PPU. In such cases, permissions aren't required. However, workspaces created by a PPU user, can only be accessed by other PPU users. In addition, content created in such workspaces can only be consumed by PPU users.
 
 ### Workspace and content ownership
 
@@ -374,7 +374,7 @@ The table below lists required permissions for popular deployment pipeline actio
 
 This section lists most of the limitations in deployment pipelines.
 
-* The workspace must reside on a [Premium capacity](/power-bi/enterprise/service-premium-what-is.md).
+* The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md#capacity).
 
 * The maximum number of items that can be deployed in a single deployment is 300.
 

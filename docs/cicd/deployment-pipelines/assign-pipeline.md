@@ -74,7 +74,7 @@ Connections between items are only established when you assign a workspace to a 
 
 * The workspace isn't assigned to any other pipeline.
 
-* The workspace must reside on a [Premium capacity](../../enterprise/licenses.md).
+* The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md).
 
 * To assign a workspace, you need at least [workspace member](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the 'workspace member permissions needed' error message when I try to assign a workspace?](../troubleshoot-cicd.yml#error-message-workspace-member-permissions needed-)
 
