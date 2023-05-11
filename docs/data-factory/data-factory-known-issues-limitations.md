@@ -46,13 +46,12 @@ This article covers known issues and limitations in Data Factory in Microsoft Fa
 
 - Data factory Fast Copy is not yet available.
 - You must have the latest version of the gateway installed in order to use with Dataflows Gen 2.
+- Duration and binary columns aren't supported while authoring in Dataflows Gen2.
 - Output destination to Lakehouse:
   - **DateTimeZone**, **Time**, and **DateTime** columns aren't supported.
   - Spaces or special characters aren't supported in column or table names.
   - No option exists to "auto fixup" invalid column names in Lakehouse connector.
-  - Duration and binary columns aren't supported while authoring in Dataflow Gen2.
-  - Duration and binary columns are not supported while authoring in Dataflow Gen2.
-  
+    
 ## Next steps
 
 - [Differences between Data Factory in Fabric and Azure](compare-fabric-data-factory-and-azure-data-factory.md)
