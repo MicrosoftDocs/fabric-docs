@@ -26,7 +26,7 @@ The Amazon S3 connector supports the following authentication types for copy act
 
 The following prerequisites are required before you start:
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial).
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 
 - A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
 

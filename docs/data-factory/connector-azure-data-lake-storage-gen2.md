@@ -26,13 +26,13 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 |Shared Access Signature (SAS)| √| √|
 
 >[!Note]
->For information about an Azure Data Lake Storage Gen2 connection in Dataflow Gen2, go to [Connect to Azure Data Lake Storage Gen2 in dataflows](connector-azure-data-lake-storage-dataflows.md).
+>For information about an Azure Data Lake Storage Gen2 connection in Dataflow Gen2, go to [Connect to Azure Data Lake Storage Gen2 in dataflows](connector-azure-data-lake-storage-gen2-dataflows.md).
 
 ## Prerequisites
 
 The following prerequisites are required before you start:
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial).
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 
 - A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
 
