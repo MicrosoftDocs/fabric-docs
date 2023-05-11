@@ -11,9 +11,9 @@ ms.search.form: csv load to delta to pbi report
 
 # CSV file upload to Delta for Power BI reporting
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](lakehouse-overview.md) is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this tutorial you learn to:
 
@@ -23,7 +23,7 @@ In this tutorial you learn to:
 
 ## Create a Lakehouse and get a CSV file ready
 
-1. In Microsoft Fabric, select **Synapse Data Engineering** workload
+1. In Microsoft Fabric, select **Synapse Data Engineering** experience
 1. Make sure you are in desired workspace or select/create one
 1. Select **Lakehouse** icon under New section in the main mage
 

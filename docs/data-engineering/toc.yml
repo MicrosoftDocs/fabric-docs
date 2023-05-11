@@ -59,12 +59,12 @@ items:
     items:
     - name: Overview
       href: spark-compute.md
+    - name: Runtime
+      href: runtime.md
     - name: Create custom pools
       href: create-custom-spark-pools.md
     - name: High concurrency mode
       href: high-concurrency-mode-notebooks.md
-    - name: Runtime
-      href: runtime.md
     - name: Autotune Spark configuration
       href: autotune.md
     - name: Spark concurrency limits and queueing
@@ -109,6 +109,10 @@ items:
       href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
+    - name: Navigate the Apache Spark history server
+      href: apache-spark-history-server.md  
+    - name: Monitor Spark capacity consumption
+      href: monitor-spark-capacity-consumption.md
 - name: Delta Lake
   items:
     - name: Lakehouse and Delta tables
@@ -129,3 +133,13 @@ items:
     href: lakehouse-notebook-explore.md
   - name: Load data in lakehouse
     href: lakehouse-notebook-load-data.md
+- name: VS Code integration 
+  items:
+  - name: Overview
+    href: setup-vs-code-extension.md
+  - name: Notebook with VS Code extension
+    href: author-notebook-with-vs-code.md
+  - name: Spark job definition with VS Code extension
+    href: author-sjd-with-vs-code.md
+  - name: Explore lakehouse with VS Code extension
+    href: explore-lakehouse-with-vs-code.md

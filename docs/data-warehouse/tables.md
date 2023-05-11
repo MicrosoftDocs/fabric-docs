@@ -12,13 +12,13 @@ ms.search.form: Warehouse design and development # This article's title should n
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
- 
 This article details key concepts for designing tables in [!INCLUDE [product-name](../includes/product-name.md)].
 
 In tables, data is logically organized in a row-and-column format. Each row represents a unique record, and each column represents a field in the record.
 
 - In [!INCLUDE[fabricdw](includes/fabric-dw.md)], tables are database objects that contain all the transactional data. 
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Determine table category
 
@@ -33,7 +33,7 @@ A [star schema](/power-bi/guidance/star-schema) organizes data into fact and dim
 A table stores data in [OneLake overview](../onelake/onelake-overview.md) as part of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The table and the data persist whether or not a session is open.
 
 
-## Tables in Synapse Data Warehouse
+## Tables in the Warehouse
 
 To show the organization of the tables, you could use `fact`, `dim`, or `int` as prefixes to the table names. The following table shows some of the schema and table names for [WideWorldImportersDW](/sql/samples/wide-world-importers-dw-database-catalog?view=fabric&preserve-view=true) sample data warehouse. 
 
@@ -103,7 +103,7 @@ If data is coming from multiple data stores, you can port the data into the data
 
 <a id="limitations"></a>
 
-### Unsupported table features
+### Limitations
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports many, but not all, of the table features offered by other databases.
 
@@ -127,6 +127,5 @@ The following list shows some of the table features that aren't currently suppor
 - [Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehouse.md)
 - [Query a warehouse](query-warehouse.md)
 - [OneLake overview](../onelake/onelake-overview.md)
-- [Getting Workspace and OneLake path](get-workspace-onelake-path.md)
 - [Create tables in [!INCLUDE[fabricdw](includes/fabric-dw.md)]](create-table.md)
 - [Transactions and modify tables](transactions.md)

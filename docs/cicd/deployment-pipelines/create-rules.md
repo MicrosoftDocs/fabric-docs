@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1
-ms.date: 05/23/2023
+ms.date: 05/09/2023
 ms.search.form: Deployment rules
 ---
 
@@ -91,7 +91,7 @@ Data source rules can be defined for the following data sources:
 
 * Teradata
 
-For other data sources, we recommend [using parameters to configure your data source](../best-practices-cicd.md#use-parameters-in-your-model).
+For other data sources, we recommend [using parameters to configure your data source](../best-practices-cicd.md#use-parameters-for-configurations-that-will-change-between-stages).
 
 ## Considerations and limitations
 

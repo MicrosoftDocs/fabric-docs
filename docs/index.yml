@@ -27,11 +27,11 @@ highlightedContent:
     # Card
     - title: Try Microsoft Fabric for free
       itemType: get-started
-      url: placeholder.md
+      url: get-started/fabric-trial.md
     # Card
     - title: Enable Fabric for your organization
       itemType: quickstart
-      url: admin/admin-fabric-switch.md
+      url: admin/fabric-switch.md
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
@@ -51,12 +51,12 @@ productDirectory:
           text: What is Fabric?
         - url: enterprise/licenses.md
           text: Microsoft Fabric licenses
-        - url: enterprise/licenses-buy.md
-          text: Navigate the Fabric portal
+        - url: enterprise/buy-subscription.md
+          text: Buy a Microsoft Fabric subscription
+        - url: get-started/fabric-home.md
+          text: Navigate the Fabric portal          
         - url: get-started/workspaces.md
           text: Workspaces in Fabric
-        - url: get-started/onelake-data-hub.md
-          text: Find data in the OneLake data hub
         - url: get-started/index.yml
           text: See more
 
@@ -65,7 +65,7 @@ productDirectory:
 
       imageSrc: ./media/power-bi-icon.png
       links:
-        - url: admin/admin-fabric-switch.md
+        - url: admin/fabric-switch.md
           text: Enable Microsoft Fabric for your organization
         - url: /power-bi/fundamentals/power-bi-overview
           text: What is Power BI?
@@ -87,6 +87,8 @@ productDirectory:
           text: What are shortcuts?
         - url: onelake/create-lakehouse-onelake.md
           text: Create a lakehouse with OneLake
+        - url: onelake/onelake-azure-synapse-analytics.md
+          text: OneLake and Azure Synapse Analytics integration
         - url: onelake/index.yml
           text: See more
 
@@ -100,7 +102,9 @@ productDirectory:
         - url: data-factory/create-first-pipeline-with-sample-data.md
           text: Create your first pipeline
         - url: data-factory/create-first-dataflow-gen2.md
-          text: Create your first dataflow?
+          text: Create your first dataflow
+        - url: data-factory/connector-overview.md
+          text: Connectors
         - url: data-factory/index.yml
           text: See more
 
@@ -127,6 +131,8 @@ productDirectory:
           text: What is Data science?
         - url: data-science/machine-learning-experiment.md
           text: Machine learning experiment
+        - url: data-science/use-ai-samples.md
+          text: Use end-to-end AI samples
         - url: data-science/index.yml
           text: See more
 
@@ -163,9 +169,9 @@ productDirectory:
 
       imageSrc: ./media/administrator-icon.svg
       links:
-        - url: enterprise/licenses-buy.md
-          text: Buy a Microsoft Fabric license     
-        - url: admin/admin-overview.md
+        - url: enterprise/buy-subscription.md
+          text: Buy a Microsoft Fabric subscription     
+        - url: admin/microsoft-fabric-admin.md
           text: Fabric administration
         - url: governance/metadata-scanning-overview.md
           text: Data governance and compliance
@@ -193,11 +199,11 @@ productDirectory:
 
       imageSrc: ./media/support-icon.svg
       links:
-        - url: placeholder.md
+        - url: /power-bi/support/service-support-options
           text: Create a support ticket
-        - url: placeholder.md
+        - url: /power-bi/troubleshoot/known-issues/power-bi-known-issues
           text: Known issues
-        - url: placeholder.md
+        - url: /power-bi/troubleshoot/
           text: Troubleshoot issues
         - url: get-started/index.yml
           text: See more

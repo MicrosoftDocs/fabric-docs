@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1, intro-get-started
-ms.date: 05/23/2023
+ms.date: 05/09/2023
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 ---
 
@@ -26,7 +26,7 @@ You can also complete the [Create and manage a Fabric deployment pipeline](/trai
 
 To access the deployment pipelines feature, you must meet the following conditions:
 
-* You have an [Microsoft Fabric license](../../enterprise/licenses.md):
+* You have an [Microsoft Fabric subscription](../../enterprise/licenses.md):
 
 * You're an admin of a Fabric [workspace](../../get-started/create-workspaces.md).
 

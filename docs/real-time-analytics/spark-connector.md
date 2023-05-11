@@ -10,9 +10,9 @@ ms.search.form: product-kusto
 ---
 # Tutorial: Use a notebook with Apache Spark to query a KQL database
 
-Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL Database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
-
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
 Specifically, you learn how to:
 
@@ -48,7 +48,7 @@ We've created a sample notebook that takes you through all the necessary steps f
 
 1. Open the Fabric samples repository on GitHub to download the [NYC GreenTaxi KQL notebook.](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/NYC_GreenTaxi_KQL_notebook.ipynb).
 
-    :::image type="content" source="media/spark-connector/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC GreenTaxi notebook. The option titled Raw is highlighted." lightbox="media/spark-connector/raw-notebook.png":::
+    :::image type="content" source="media/spark-connector/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC GreenTaxi notebook. The Raw option is highlighted." lightbox="media/spark-connector/raw-notebook.png":::
 
 1. Save the notebook locally to your device.
 
@@ -116,5 +116,5 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 ## Next steps
 
-* [Query data in a KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
 * [Visualize data in a Power BI report](create-powerbi-report.md)

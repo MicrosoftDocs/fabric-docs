@@ -5,23 +5,23 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: tutorial
-ms.date: 04/28/2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Bring real-time events to Microsoft Fabric to build near real-time report
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+This tutorial shows you how to use Microsoft Fabric event streams to bring your real-time events to lakehouse from your Azure event hub, then build a near real-time report to monitor your business events data.
 
-This tutorial shows you how to use Microsoft Fabric event streams to bring your real-time events to lakehouse from your Azure event hub, then build near real-time report to monitor your business events data.
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
-> * Create an Eventstream item and Lakehouse item in Microsoft Fabric
-> * Add an Azure Event Hubs source to the Eventstream item
+> * Create Eventstream and Lakehouse items in Microsoft Fabric
+> * Add an Azure Event Hubs source to the eventstream
 > * Create an event hub cloud connection
-> * Add an Lakehouse destination to the Eventstream item
+> * Add an Lakehouse destination to the eventstream
 > * Define real-time events processing logic with event processor
 > * Verify the data in lakehouse
 > * Build near real-time Power BI report with the data in lakehouse
@@ -30,25 +30,26 @@ In this tutorial, you learn how to:
 
 To get started, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream and Lakehouse item are located in.
-- An Azure event hub with event data exists and appropriate permission available to access the policy keys.
+- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream and lakehouse item are located in.
+- An Azure event hub with event data and appropriate permission available to access the policy keys.
 
-## Create Eventstream and Lakehouse item
+## Create an eventstream and a lakehouse
 
-Eventstream and Lakehouse item can be created in **Workspace** or **Create hub**. Here are the steps to create them.
+You can create an Eventstream item (eventstream) or a Lakehouse item (lakehouse) on the **Workspace** page or the **Create hub** page. Here are the steps:
 
 1. Select your Fabric experience to **Real-time Analytics** and select **Eventstream** and **Lakehouse** to create them in workspace or create hub. 
 
-   In **Workspace**, select **New** and then **Eventstream**, **Lakehouse**:
+   - In **Workspace**, select **New** and then **Eventstream**, **Lakehouse**:
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/two-items-creation-in-workspace.png" alt-text="Screenshot showing the eventstream and lakehouse creation in workspace." lightbox="./media/bring-events-to-fabric-from-event-hub/two-items-creation-in-workspace.png" :::
+       :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/two-items-creation-in-workspace.png" alt-text="Screenshot showing the eventstream and lakehouse creation in workspace." lightbox="./media/bring-events-to-fabric-from-event-hub/two-items-creation-in-workspace.png" :::
 
-   In **Create hub**, select **Eventstream** and **Lakehouse**: 
+   - In **Create hub**, select **Eventstream** and **Lakehouse**: 
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/eventstream-creation-in-hub.png" alt-text="Screenshot showing the eventstream item creation in create hub." lightbox="./media/bring-events-to-fabric-from-event-hub/eventstream-creation-in-hub.png" :::
-   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/lakehouse-creation-in-hub.png" alt-text="Screenshot showing the lakehouse item creation in create hub." lightbox="./media/bring-events-to-fabric-from-event-hub/lakehouse-creation-in-hub.png" :::
+       :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/eventstream-creation-in-hub.png" alt-text="Screenshot showing the eventstream item creation in create hub." lightbox="./media/bring-events-to-fabric-from-event-hub/eventstream-creation-in-hub.png" :::
+   
+        :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/lakehouse-creation-in-hub.png" alt-text="Screenshot showing the lakehouse item creation in create hub." lightbox="./media/bring-events-to-fabric-from-event-hub/lakehouse-creation-in-hub.png" :::
 
-2. Give the name for the new Eventstream and Lakehouse items and select **Create**. Here, **citypwr-es** eventstream and **citypwrdata** lakehouse are created.
+2. Give the name for the new eventstream and lakehouse items, and select **Create**. For example, **citypwr-es** for the eventstream and **citypwrdata** for the lakehouse.
 
    :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/creating-dialog.png" alt-text="Screenshot showing the eventstream item creation dialog." lightbox="./media/bring-events-to-fabric-from-event-hub/creating-dialog.png" :::
 
@@ -56,11 +57,11 @@ Eventstream and Lakehouse item can be created in **Workspace** or **Create hub**
    - **citypwr-es**: an Eventstream item
    - **citypwrdata**: a Lakehouse item, a Dataset (default) item, and a SQL endpoint item.
 
-   :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/four-items-list.png" alt-text="Screenshot showing the four items list." lightbox="./media/bring-events-to-fabric-from-event-hub/four-items-list.png" :::
+       :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/four-items-list.png" alt-text="Screenshot showing the four items list." lightbox="./media/bring-events-to-fabric-from-event-hub/four-items-list.png" :::
 
-## Add an Azure Event Hubs source to the Eventstream item
+## Add an Azure Event Hubs source to the eventstream
 
-After the Lakehouse and Eventstream items are created, do the following steps to add an Azure event hub as your eventstream source.
+After the lakehouse and eventstream are created, do the following steps to add an Azure event hub as your eventstream source.
 
 1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then Azure Event Hubs.
 
@@ -95,9 +96,9 @@ After the Lakehouse and Eventstream items are created, do the following steps to
 
 8. Similarly, you can check the **Data insights** for the event hub source node and the eventstream node.
 
-## Add a Lakehouse destination to the Eventstream item
+## Add a lakehouse destination to the eventstream
 
-After your event hub events have been ingested into your eventstream, you can add the **Lakehouse** destination to receive the events from your eventstream. Follow these steps below to add the **Lakehouse** destination.
+After your event hub events have been ingested into your eventstream, you can add the **Lakehouse** destination to receive the events from your eventstream. Follow these steps to add the **Lakehouse** destination.
 
 1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Lakehouse**.  
 
@@ -150,14 +151,14 @@ In this case, the sensor IDs data isn't necessary to store in lakehouse. We can 
 
    :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/lakehouse-destination-preview.png" alt-text="Screenshot showing the lakehouse destination preview." lightbox="./media/bring-events-to-fabric-from-event-hub/lakehouse-destination-preview.png" :::
 
-## Verify the data in lakehouse
+## Verify data in the lakehouse
 
 To verify the event data in lakehouse, open **citypwrdata** lakehouse from your workspace, then select table **citypwrtbl** to view its data.
 
 :::image type="content" source="./media/bring-events-to-fabric-from-event-hub/lakehouse-data-preview.png" alt-text="Screenshot showing the lakehouse data preview." lightbox="./media/bring-events-to-fabric-from-event-hub/lakehouse-data-preview.png" :::
 
 
-## Build near real-time Power BI report with the data in lakehouse
+## Build near real-time Power BI report with data in the lakehouse
 
 1. Go to your workspace, select **citypwrdata** dataset, which was created automatically together with the Lakehouse creation in the beginning.
 

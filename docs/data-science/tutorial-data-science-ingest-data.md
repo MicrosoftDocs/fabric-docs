@@ -10,7 +10,7 @@ ms.date: 5/4/2023
 
 # Module 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark
 
-In this module, we ingest the NYC Taxi & Limousine Commission - yellow taxi trip dataset to demonstrate data ingestion into Fabric lakehouses in delta lake format.
+In this module, we ingest the [NYC Taxi & Limousine Commission - yellow taxi trip dataset](/azure/open-datasets/dataset-taxi-yellow) to demonstrate data ingestion into Fabric lakehouses in delta lake format.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -18,7 +18,7 @@ In this module, we ingest the NYC Taxi & Limousine Commission - yellow taxi trip
 
 **Delta Lake**: Delta Lake is an open-source storage layer that brings ACID transactions, scalable metadata management, and batch and streaming data processing to Apache Spark. A Delta Lake table is a data table format that extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata management.
 
-In the following steps, you use the Apache spark to read data from Azure Open Datasets containers and write data into a Fabric lakehouse delta table.[Azure Open Datasets](/azure/open-datasets/overview-what-are-open-datasets) are curated public datasets that you can use to add scenario-specific features to machine learning solutions for more accurate models. Open Datasets are in the cloud on Microsoft Azure Storage and can be accessed by various methods including Apache Spark, REST API, Data factory, and other tools.
+In the following steps, you use the Apache spark to read data from Azure Open Datasets containers and write data into a Fabric lakehouse delta table. [Azure Open Datasets](/azure/open-datasets/overview-what-are-open-datasets) are curated public datasets that you can use to add scenario-specific features to machine learning solutions for more accurate models. Open Datasets are in the cloud on Microsoft Azure Storage and can be accessed by various methods including Apache Spark, REST API, Data factory, and other tools.
 
 ## Follow along in notebook
 
@@ -26,10 +26,27 @@ The python commands/script used in each step of this tutorial can be found in th
 
 ## Ingest the data
 
-1. In the first step of this module, we read data from "azureopendatastorage" storage container using anonymous since the container has public access. We load yellow cab data by specifying the directory and filter the data by year (puYear) and month (puMonth). In this tutorial, we try to minimize the amount of data ingested and processed to speed up the execution.
+1. In the first step of this module, we read data from "azureopendatastorage" storage container using anonymous since the container has public access. We load [yellow cab data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) by specifying the directory and filter the data by year (puYear) and month (puMonth). In this tutorial, we try to minimize the amount of data ingested and processed to speed up the execution. To learn more about the data, see [NYC Taxi & Limousine Commission - yellow taxi trip dataset](/azure/open-datasets/dataset-taxi-yellow).
 
-   :::image type="content" source="media\tutorial-data-science-ingest-data\filter-by-year-month.png" alt-text="Screenshot of code sample for filtering data ingestion by month and year." lightbox="media\tutorial-data-science-ingest-data\filter-by-year-month.png":::
-filter-by-year-month
+   ```python
+   # Azure storage access info for open datasets yellow cab
+   storage_account = "azureopendatastorage"
+   container = "nyctlc"
+
+   sas_token = r"" # Blank since container is Anonymous access
+
+   # Set Spark config to access  blob storage
+   spark.conf.set("fs.azure.sas.%s.%s.blob.core.windows.net" % (container, storage_account),sas_token)
+
+   dir = "yellow"
+   year = 2016
+   months = "1,2,3,4"
+   wasbs_path = f"wasbs://{container}@{storage_account}.blob.core.windows.net/{dir}"
+   df = spark.read.parquet(wasbs_path)
+
+   # Filter data by year and months
+   filtered_df = df.filter(f"puYear = {year} AND puMonth IN ({months})")
+   ```
 
 1. Next, we set spark configurations to enable VOrder engine and Optimize delta writes.
 
@@ -38,14 +55,21 @@ filter-by-year-month
 
       These configs can be applied at a session level (as spark.conf.set in a notebook cell) as demonstrated in the following code cell, or at workspace level, which is applied automatically to all spark sessions created in the workspace. In this tutorial, we set these configurations using the code cell.
 
-      :::image type="content" source="media\tutorial-data-science-ingest-data\session-level-config.png" alt-text="Screenshot of code sample for setting session-level configurations." lightbox="media\tutorial-data-science-ingest-data\session-level-config.png":::
+      ```python
+      spark.conf.set("sprk.sql.parquet.vorder.enabled", "true") # Enable VOrder write
+      spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true") # Enable automatic delta optimized write
+      ```
 
       > [!TIP]
       > The workspace level Apache Spark configurations can be set at: **Workspace settings**, **Data Engineering/Science**, **Spark Compute**, **Spark Properties**, **Add**.
 
 1. In the next step, perform a spark dataframe write operation to save data into a lakehouse table named *nyctaxi_raw*.
 
-   :::image type="content" source="media\tutorial-data-science-ingest-data\save-data-new-table.png" alt-text="Screenshot of code sample for saving data into a new lakehouse table." lightbox="media\tutorial-data-science-ingest-data\save-data-new-table.png":::
+   ```python
+   table_name = "nyctaxi_raw"
+   filtered_df.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
+   print(f"Spark dataframe saved to delta table: {table_name}")
+   ```
 
    Once the dataframe has been saved, you can navigate to the attached lakehouse artifact in your workspace and open the lakehouse UI to preview data in the **nyctaxi_raw** table created in the previous steps.
 

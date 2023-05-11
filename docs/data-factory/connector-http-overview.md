@@ -1,6 +1,6 @@
 ---
 title: HTTP connector overview
-description: This article explains the overview of using HTTP.
+description: This article provides the overview of connecting to and using HTTP data in Data Factory.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -10,7 +10,7 @@ ms.custom: template-how-to
 
 # HTTP connector overview
 
-This HTTP connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The HTTP connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -23,6 +23,6 @@ This HTTP connector is supported in Data Factory for [!INCLUDE [product-name](..
 
 ## Next steps
 
-[How to create HTTP connection](connector-http.md)
-
-[How to configure HTTP in copy activity](connector-http-copy-activity.md)
+- [How to create HTTP connection](connector-http.md)
+- [How to configure HTTP in a copy activity](connector-http-copy-activity.md)
+- [Connect to HTTP data in dataflows](connector-http-dataflows.md)

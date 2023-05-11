@@ -19,7 +19,7 @@ If you already have a High Concurrency session running, you could attach noteboo
 :::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-session.gif" alt-text="GIF showing high concurrency session for notebooks.":::
 
 > [!NOTE]
-> The high concurrency mode-based session sharing is always within a single user boundary. 
+> The high concurrency mode-based session sharing is always within a single user boundary.
 > The notebooks need to have matching spark configurations, should be part of the same workspace, share the same default lakehouse and libraries to share a single spark session.
 
 ## Configure high concurrency mode
@@ -94,7 +94,7 @@ Monitoring and debugging are often a non-trivial task when you are running multi
 
 ## Next steps
 
-In this document, you get a basic understanding of a session sharing through high concurrency mode in notebooks. Advance to the next articles to learn how to create and get started with your own Data Engineering workloads using Lakehouse and Notebooks:
+In this document, you get a basic understanding of a session sharing through high concurrency mode in notebooks. Advance to the next articles to learn how to create and get started with your own Data Engineering experiences using Lakehouse and Notebooks:
 
 - To get started with Lakehouse, see [Creating a Lakehouse](create-lakehouse.md).
 - To get started with Notebooks, see [How to use a Notebook](how-to-use-notebook.md)

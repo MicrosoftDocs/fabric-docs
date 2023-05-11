@@ -5,6 +5,7 @@ ms.reviewer: sngun
 ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
+ms.search.form: product-trident
 ms.date: 05/23/2023
 ---
 
@@ -28,7 +29,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## Synapse Data Engineering
 
-- **Lakehouse:** A lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by the Apache Spark engine and SQL engine for big data processing. A lakehouse includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables. The lakehouse item is hosted within a unique workspace folder in the Microsoft Fabric lake. It contains files in various formats (structured and unstructured) organized in folders and subfolders. For more information, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
+- **Lakehouse:** A lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by the Apache Spark engine and SQL engine for big data processing. A lakehouse includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables. The lakehouse item is hosted within a unique workspace folder in [Microsoft OneLake](../onelake/onelake-overview.md). It contains files in various formats (structured and unstructured) organized in folders and subfolders. For more information, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
 
 - **Notebook:** A Fabric notebook is a multi-language interactive programming tool with rich functions. Which include authoring code and markdown, running and monitoring a Spark job, viewing and visualizing result, and collaborating with the team. It helps data engineers and data scientist to explore and process data, and build machine learning experiments with both code and low-code experience. It can be easily transformed to a pipeline activity for orchestration.
 

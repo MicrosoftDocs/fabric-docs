@@ -1,6 +1,6 @@
 ---
 title: Connect to an Azure SQL database connector in dataflows
-description: This article details how to use the Azure SQL Database connector in Microsoft Fabric to connect to an Azure SQL database in dataflows.
+description: This article details how to use the Data Factory Azure SQL database connector in Microsoft Fabric to create an Azure SQL database connection in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to

@@ -20,7 +20,7 @@ In this step, you create a Fabric workspace. The workspace contains all the item
 
 1. Sign in to [Power BI](https://powerbi.com/).
 
-1. Select **Workspaces** and &&New Workspace**.
+1. Select **Workspaces** and **New workspace**.
 
    :::image type="content" source="media\tutorial-lakehouse-get-started\create-new-workspace.png" alt-text="Screenshot showing where to select Workspaces and create a new workspace.":::
 
