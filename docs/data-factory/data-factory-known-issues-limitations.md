@@ -35,7 +35,7 @@ This article covers known issues and limitations in Data Factory in Microsoft Fa
 ## Dataflows Gen2 known issues
 
 - Lakehouse/Datawarehouse-based compute or storage may not be available in all regions. If not available, check with  support.
-- Refresh history activities have a complex name: WriteToDatabaseTableFrom_TransformForOutputToDatabaseTableFrom\_\[QUERYNAME\].
+- Refresh history activities have a complex name: _WriteToDatabaseTableFrom_TransformForOutputToDatabaseTableFrom\_\[QUERYNAME\]_.
 - A Dataflow Gen 2 that was created can't be renamed from the Query Editor.
 - Reopen a Dataflow Gen 2 and you can edit the name from the flyout above the ribbon.
 - Refresh History doesn't report Compute type used during refresh.
@@ -55,5 +55,5 @@ This article covers known issues and limitations in Data Factory in Microsoft Fa
   
 ## Next steps
 
-[Differences between Data Factory in Fabric and Azure](compare-fabric-data-factory-and-azure-data-factory.md)
-[Differences between Dataflows Gen1 and Gen2 in Microsoft Fabric](dataflows-gen2-overview.md)
+- [Differences between Data Factory in Fabric and Azure](compare-fabric-data-factory-and-azure-data-factory.md)
+- [Differences between Dataflows Gen1 and Gen2 in Microsoft Fabric](dataflows-gen2-overview.md)
