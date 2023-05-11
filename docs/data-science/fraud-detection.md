@@ -10,8 +10,6 @@ ms.date: 05/23/2023
 
 # Create, evaluate, and deploy a fraud detection model in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this tutorial, we'll demonstrate data engineering and data science workflows with an end-to-end example that builds a model for detecting fraudulent credit card transactions. The steps you'll take are:
 
 > [!div class="checklist"]
@@ -20,6 +18,8 @@ In this tutorial, we'll demonstrate data engineering and data science workflows 
 > * Prepare the data by handling class imbalance
 > * Train a model and log it with MLflow
 > * Deploy the model and save prediction results
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 

@@ -1,6 +1,6 @@
 ---
 title: Tutorial- Use a notebook with Apache Spark to query a KQL database in Real-time Analytics
-description: Learn how to import and query the NYC GreenTaxi notebook in your Microsoft Fabric environment using Apache Spark.
+description: Learn how to import and query the NYC GreenTaxi notebook in your Real-time Analytics in Microsoft Fabric environment using Apache Spark.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -8,33 +8,33 @@ ms.topic: tutorial
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-
 # Tutorial: Use a notebook with Apache Spark to query a KQL database
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL Database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
+Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
 Specifically, you learn how to:
 
 > [!div class="checklist"]
 >
-> * Create a KQL Database
+> * Create a KQL database
 > * Import a notebook
-> * Write data to a KQL Database using Apache Spark
-> * Query data from a KQL Database
+> * Write data to a KQL database using Apache Spark
+> * Query data from a KQL database
 
 ## Prerequisites
 
-* [Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase) enabled [workspace](../get-started/create-workspaces.md)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 
 ## 1- Create a KQL database
 
-Before importing the NYC GreenTaxi notebook, create a database.
-
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
-1. Select **KQL Database**.
-1. Under **KQL Database name**, enter *nycGreenTaxi*, then select **Create**.
+1. Select the **KQL Database (Preview)** tile.
+
+    :::image type="content" source="media/jupyter-notebook/kql-database-tile.png" alt-text="Screenshot of new KQL database tile in Real-Time Analytics.":::
+
+1. In the **KQL Database name** field, enter *nycGreenTaxi*, then select **Create**.
 
     The KQL database has now been created within the context of the selected workspace.
 
@@ -46,9 +46,9 @@ Before importing the NYC GreenTaxi notebook, create a database.
 
 We've created a sample notebook that takes you through all the necessary steps for loading data into your database using the Spark connector.
 
-1. Open the Fabric samples repository on GitHub to download the [NYC GreenTaxi KQL notebook.](https://github.com/microsoft/fabric-samples/blob/main/samples/real-time-analytics/NYC_GreenTaxi_KQL_notebook.ipynb).
+1. Open the Fabric samples repository on GitHub to download the [NYC GreenTaxi KQL notebook.](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/NYC_GreenTaxi_KQL_notebook.ipynb).
 
-    :::image type="content" source="media/spark-connector/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC GreenTaxi notebook. The option titled Raw is highlighted." lightbox="media/spark-connector/raw-notebook.png":::
+    :::image type="content" source="media/spark-connector/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC GreenTaxi notebook. The Raw option is highlighted." lightbox="media/spark-connector/raw-notebook.png":::
 
 1. Save the notebook locally to your device.
 
@@ -57,15 +57,12 @@ We've created a sample notebook that takes you through all the necessary steps f
 
 ## 3- Import the notebook
 
-The rest of this workflow occurs in the **Data Engineering** section of the product, and uses a Spark notebook to load and query data in your KQL Database.
+The rest of this workflow occurs in the **Data Engineering** section of the product, and uses a Spark notebook to load and query data in your KQL database.
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Data Engineering**.
-
-    :::image type="content" source="media/spark-connector/app-switcher-data-engineering.png" alt-text="Screenshot of experience switcher showing available apps. The experience titled Data Engineering is highlighted.":::
-
 1. Select **Import notebook**.
 
-    :::image type="content" source="media/spark-connector/import-notebook.png" alt-text="Screenshot of artifact options in Data Engineering. The artifact titled Import notebook is highlighted.":::
+    :::image type="content" source="media/jupyter-notebook/import-notebook.png" alt-text="Screenshot of artifact options in Data Engineering. The artifact titled Import notebook is highlighted.":::
 
 1. In the **Import status** window, select **Upload**.
 
@@ -87,7 +84,7 @@ Select the **play** button to run the following cells, or select the cell and pr
 
     :::image type="content" source="media/spark-connector/code-cell-1.png" alt-text="Screenshot of first code cell showing storage access information." lightbox="media/spark-connector/code-cell-1.png":::
 
-1. In **KustoURI**, paste the **Query URI** that you copied earlier instead of the placeholder text.
+1. In **KustoURI**, paste the **Query URI** that you [copied earlier](#1--create-a-kql-database) instead of the placeholder text.
 1. Change the placeholder database name to *nycGreenTaxi*.
 1. Change the placeholder table name to *GreenTaxiData*.
 
@@ -99,7 +96,7 @@ Select the **play** button to run the following cells, or select the cell and pr
 
     :::image type="content" source="media/spark-connector/code-cell-3.png" alt-text="Screenshot of third code cell showing table mapping and ingestion command."  lightbox="media/spark-connector/code-cell-3.png":::
 
-Your database now has data.
+Your database now has data loaded in a table named *GreenTaxiData*.
 
 ## 5- Run the notebook
 
@@ -111,7 +108,7 @@ Run the remaining two cells sequentially to query data from your table. The resu
 
 Clean up the items created by navigating to the workspace in which they were created.
 
-1. In your workspace, hover over the notebook you want to delete, select the **More menu** > **Delete**.
+1. In your workspace, hover over the notebook you want to delete, select the **More menu** [...] > **Delete**.
 
     :::image type="content" source="media/spark-connector/clean-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC GreenTaxi notebook. The option titled Delete is highlighted."  lightbox="media/spark-connector/clean-resources-expanded.png":::
 
@@ -119,4 +116,5 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 ## Next steps
 
-[Query data in a KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
+* [Visualize data in a Power BI report](create-powerbi-report.md)

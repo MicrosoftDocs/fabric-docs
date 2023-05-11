@@ -5,12 +5,13 @@ ms.reviewer: sngun
 ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
+ms.search.form: product-trident
 ms.date: 5/23/2023
 ---
 
 # End-to-end tutorials in Microsoft Fabric
 
-In this article, you'll find a comprehensive list of end-to-end tutorials available in Microsoft Fabric. These tutorials will guide you through a scenario that covers the entire process, from data acquisition to data consumption. They're designed to help you develop a foundational understanding of the Fabric UI, the various experiences supported by Fabric, their integration points, and the professional and citizen developer experiences that are available.
+In this article, you find a comprehensive list of end-to-end tutorials available in Microsoft Fabric. These tutorials guide you through a scenario that covers the entire process, from data acquisition to data consumption. They're designed to help you develop a foundational understanding of the Fabric UI, the various experiences supported by Fabric, their integration points, and the professional and citizen developer experiences that are available.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -19,9 +20,11 @@ In this article, you'll find a comprehensive list of end-to-end tutorials availa
 |Tutorial name  |Scenario |
 |---------|---------|
 |[Lakehouse](../data-engineering/tutorial-lakehouse-introduction.md) | In this tutorial, you'll ingest, transform, and load the data of a fictional retail company, Wide World Importers, into the lakehouse and analyze sales data across various dimensions.  |
-|[Data Science](../placeholder.md)    |  In this tutorial, you'll explore, clean, and transform a taxicab trip dataset, and build a machine learning model to predict trip duration at scale on a large dataset.   |
+|[Data Science](../data-science/tutorial-data-science-introduction.md)    |  In this tutorial, you'll explore, clean, and transform a taxicab trip dataset, and build a machine learning model to predict trip duration at scale on a large dataset.   |
 |[Real-Time Analytics](../real-time-analytics/tutorial-introduction.md)   | In this tutorial, you'll use the streaming and query capabilities of Real-Time Analytics to analyze the New York Yellow Taxi trip dataset. You'll uncover essential insights into trip statistics, taxi demand across the boroughs of New York, and other related insights. |
-|[Data warehouse](../placeholder.md) |  In this tutorial, you'll build an end-to-end data warehouse for the fictional Wide World Importers company. You'll ingest data into data warehouse, transform it using T-SQL and pipelines, run queries, and build reports. |
+|[Data warehouse](../data-warehouse/tutorial-introduction.md) |  In this tutorial, you'll build an end-to-end data warehouse for the fictional Wide World Importers company. You'll ingest data into data warehouse, transform it using T-SQL and pipelines, run queries, and build reports. |
+|[Power BI](/power-bi/fundamentals/fabric-get-started) |  In this tutorial, you'll build a dataflow and pipeline to bring data into a lakehouse, create a dimensional model, and generate a compelling report. |
+|[Data Factory(/data-factory/tutorial-end-to-end-introduction.md) | In this tutorial, you ingest data with data pipelines and transform data with dataflows, then use the automation and notification to create a complete data integration scenario. |
 
 ## Next steps
 

@@ -14,6 +14,8 @@ ms.search.form:
 
 The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Fabric content.
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Fabric automation tool](#use-the-fabric-automation-tools-extension) extension, which supports many of the deployment pipelines API operations.
 
 You can use the [deployment pipelines Fabric REST APIs](/rest/api/fabric/pipelines) to integrate Fabric into your organization's automation process. Here are a few examples of what can be done by using the APIs:

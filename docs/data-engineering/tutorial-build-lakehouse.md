@@ -12,6 +12,8 @@ ms.date: 5/23/2023
 
 In this tutorial, you'll build a lakehouse, ingest sample data into the delta table, apply transformation where required, and then create reports.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 ## Prerequisites
 
 * [Create a Fabric workspace](tutorial-lakehouse-get-started.md)
@@ -22,9 +24,9 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 
 1. To open your workspace, enter its name in the search textbox located at the top and select it from the search results.
 
-1. From the workload switcher located at the bottom left, select **Data Engineering**.
+1. From the experience switcher located at the bottom left, select **Data Engineering**.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\workload-switch-data-engineering.png" alt-text="Screeenshot showing where to select the workload switcher and Data Engineering.":::
+   :::image type="content" source="media\tutorial-build-lakehouse\workload-switch-data-engineering.png" alt-text="Screeenshot showing where to select the experience switcher and Data Engineering.":::
 
 1. In the **Data Engineering** tab, select **Lakehouse** to create a lakehouse. 
 

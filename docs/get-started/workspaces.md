@@ -3,68 +3,107 @@ title: Workspaces
 description: Learn about workspaces, which are collections of artifacts such as lakehouses, warehouses, and reports built to deliver key metrics for your organization.
 author: maggiesMSFT
 ms.author: maggies
-ms.reviewer: yicw, mesrivas
+ms.reviewer: yicw, mesrivas,liud
 ms.topic: conceptual
+ms.search.form: product-trident
 ms.date: 05/23/2023
 ---
 
 # Workspaces
 
-*Workspaces* are places to collaborate with colleagues to create collections of artifacts such as lakehouses, warehouses, and reports. This article describes workspaces, how to manage access to them, and how to use them to create and distribute apps.
+*Workspaces* are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports. This article describes workspaces, how to manage access to them, and what settings are available.
 
 Ready to get started? Read [Create a workspace](create-workspaces.md).
 
-:::image type="content" source="media/workspaces/power-bi-workspace-opportunity.png" alt-text="Screenshot showing a workspace.":::
+:::image type="content" source="media/workspaces/fabric-workspace-page.png" alt-text="Screenshot showing a workspace." lightbox="media/workspaces/fabric-workspace-page.png":::
 
 ## Working with workspaces
 
 Here are some useful tips about working with workspaces.
 
-- **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer.  Read more about [workspace roles](#roles-and-licenses) in this article.
+- **Pin workspaces** to the top of the workspace flyout list to quickly access your favorite workspaces. Read more about [pin workspaces](create-workspaces.md#pin-workspaces).
+- **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer. Read more about [workspace roles](roles-workspaces.md).
+- **Navigate to current workspace** from anywhere by selecting the icon on left nav pane. Read more about [current workspace](#current-workspace) in this article.
+- **Workspace settings**: As workspace admin, you can update and manage your workspace configurations in [workspace settings](#workspace-settings).
 - **Contact list**: Specify who receives notification about workspace activity. Read more about [workspace contact lists](#workspace-contact-list) in this article.
-- **Create template apps**: You can create *template apps* in workspaces. Template apps are apps that you can distribute to customers outside of your organization. Those customers can then connect to their own data with your template app. Read the article about [template apps](/power-bi/connect-data/service-template-apps-overview).
-- **Share datasets**: You can share datasets between workspaces. Read more about [shared datasets](/power-bi/connect-data/service-datasets-across-workspaces).
+- **Share items**: You can share a single item with colleagues who are not in the same workspace. Read more about [share items](share-items.md).
 
-This article explains these features in more detail.
+## Current workspace
 
-## Workspace contact list
+After you select and open to a workspace, this workspace becomes your current workspace. You can quickly navigate to it from anywhere by selecting the workspace icon from left nav pane.
 
-The **Contact list** feature allows you to specify which users receive notification about issues occurring in the workspace. By default, any user or group specified as a workspace admin in the workspace is notified. You can add to that list. Users or groups in the contact list are also listed in the user interface (UI) of the workspaces, so workspace end-users know whom to contact.
+![Screenshot of current workspace in left nav pane.](media/workspaces/current-workspace-icon-left-nav.png)
 
-Read about [how to create the workspace contact list](create-workspaces.md#create-a-contact-list).
+## Workspace settings
 
-## Microsoft 365 and OneDrive
+Workspace admins can use workspace settings to manage and update the workspace. The settings include general settings of the workspace, like the basic information of the workspace, contact list, OneDrive, license, Azure connections, storage, and other experiences' specific settings.
 
-[!INCLUDE [product-name](../includes/product-name.md)] doesn't create a Microsoft 365 group behind the scenes when you create a workspace. All workspace administration is in [!INCLUDE [product-name](../includes/product-name.md)]. Still, you might find it useful to have a OneDrive associated with the workspace. 
+To open the workspace settings, you can select the workspace in the nav pane, then select **More options (...)** > **Workspace settings** next to the workspace name.
 
-- You can **manage user access** to content through Microsoft 365 groups, if you want. You add a Microsoft 365 group in the workspace access list.
+:::image type="content" source="media/workspaces/open-workspace-settings.png" alt-text="Screenshot showing Open workspace settings in the nav pane.":::
 
-    [!INCLUDE [product-name](../includes/product-name.md)] doesn't synchronize between Microsoft 365 group membership and permissions for users or groups with access to the workspace. You can synchronize them: Manage workspace access through the same Microsoft 365 group whose file storage you configure in this setting.
+You can also open it from the workspace page.
 
-- You can also **store [!INCLUDE [product-name](../includes/product-name.md)] content in OneDrive for work or school**. With the Workspace OneDrive feature in workspaces, you can configure a Microsoft 365 group whose SharePoint Document Library file storage is available to workspace users. You create the group outside of [!INCLUDE [product-name](../includes/product-name.md)].
- 
-    Read about [how to set the workspace OneDrive](create-workspaces.md#set-a-workspace-onedrive).  
+:::image type="content" source="media/workspaces/open-in-workspace.png" alt-text="Screenshot showing Open workspace settings in workspace." lightbox="media/workspaces/open-in-workspace.png":::
+
+### Workspace contact list
+
+The Contact list feature allows you to specify which users receive notification about issues occurring in the workspace. By default, the one who created the workspace is in the contact list. You can add others to that list while [creating workspace](create-workspaces.md#contact-list) or in workspace settings after creation. Users or groups in the contact list are also listed in the user interface (UI) of the workspace settings, so workspace users know whom to contact.
+
+:::image type="content" source="media/workspaces/contact-list-in-workspace-settings.png" alt-text="Screenshot of contact list setting options.":::
+
+### Microsoft 365 and OneDrive
+
+The Workspace OneDrive feature allows you to configure a Microsoft 365 Group whose SharePoint document library is available to workspace users. You create the Group outside of [!INCLUDE [product-name](../includes/product-name.md)] first, with one available method being from OneDrive. Read about creating a [OneDrive shared library](https://support.microsoft.com/office/create-a-new-shared-library-from-onedrive-for-work-or-school-345c8599-05d8-4bf8-9355-2b5cfabe04d0).
 
 > [!NOTE]
-> [!INCLUDE [product-name](../includes/product-name.md)] lists all Microsoft 365 groups that you're a member of in the workspaces list.
+> Creating Microsoft 365 Groups may be restricted in your environment, or the ability to create them from your OneDrive site may be disabled. If this is the case, speak with your IT department.
 
-## Roles and licenses
+[!INCLUDE [product-name](../includes/product-name.md)] doesn't synchronize permissions between users or groups with workspace access, and users or groups with Microsoft 365 Group membership. A best practice is to [give access to the workspace](give-access-workspaces.md) to the same Microsoft 365 Group whose file storage you configured. Then manage workspace access by managing membership of the Microsoft 365 Group.
 
-Roles let you manage who can do what in workspaces, so team members can collaborate. To grant access to a workspace, assign those user groups or individuals to one of the workspace roles: Admin, Member, Contributor, or Viewer.
+You can configure OneDrive in workspace settings by typing in the name of the Microsoft 365 group that you created earlier. Type just the name, not the URL. [!INCLUDE [product-name](../includes/product-name.md)] automatically picks up the OneDrive for the group.
 
-- **Licensing enforcement**: Publishing reports to a workspace enforces existing licensing rules. Users collaborating in workspaces or sharing content to others in the [!INCLUDE [product-name](../includes/product-name.md)] service need a [!INCLUDE [product-name](../includes/product-name.md)] Pro or Premium Per User (PPU) license. Users without a Pro or PPU license see the error "Only users with [!INCLUDE [product-name](../includes/product-name.md)] Pro licenses can publish to this workspace."
-- **Read-only workspaces**: The Viewer role in workspaces gives users read-only access to the content in a workspace.
-- **Users without a Pro or Premium Per User (PPU) license** can access a workspace if the workspace is in a [!INCLUDE [product-name](../includes/product-name.md)] Premium capacity, but only if they have the Viewer role.
-- **Allow users to export data**: Even users with the Viewer role in the workspace can export data if they have Build permission on the datasets in that workspace. Read more about [Build permission for datasets](/power-bi/connect-data/service-datasets-build-permissions).
-- **Assign user groups to workspace roles**: You can add Active Directory security groups, distribution lists, or Microsoft 365 groups to these roles, for easier user management.
+:::image type="content" source="media/workspaces/add-onedrive-info.png" alt-text="Screenshot of adding OneDrive info.":::
 
-See the article [Roles in workspaces](roles-workspaces.md) for more details about the different roles.
+### License mode
+
+By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including My Workspaces can be assigned to any capacity in your organization. You can configure it while creating a workspace or in **Workspace settings -> Premium**. Read more about [licenses](../enterprise/licenses.md).
+
+:::image type="content" source="media/workspaces/license-mode-in-workspace-settings.png" alt-text="Screenshot of license mode in workspace settings.":::
+
+### Azure connections configuration
+
+Workspace admins can configure dataflow storage to use Azure Data Lake Gen 2 storage and Azure Log Analytics (LA) connection to collect usage and performance logs for the workspace in workspace settings.
+
+:::image type="content" source="media/workspaces/azure-connection.png" alt-text="Screenshot showing Azure resource configuration." lightbox="media/workspaces/azure-connection.png":::
+
+With the integration of Azure Data Lake Gen 2 storage, you can bring your own storage to dataflows, and establish a connection at the workspace level. Read [Configure dataflow storage to use Azure Data Lake Gen 2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration) for more detail.  
+
+After the connection with Azure Log Analytics (LA), activity log data is sent continuously and is available in Log Analytics in approximately 5 minutes. Read [Using Azure Log Analytics](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for more detail.
+
+### System storage
+
+System storage is the place to manage your dataset storage in your individual or workspace account so you can keep publishing reports and datasets. Your own datasets, Excel reports, and those items that someone has shared with you, are included in your system storage.
+
+In the system storage, you can view how much storage you  have used and free up the storage by deleting the items in it.
+
+Keep in mind that you or someone else may have reports and dashboards based on a dataset. If you delete the dataset, those reports and dashboards don't work anymore.
+
+:::image type="content" source="media/workspaces/system-storage.png" alt-text="Screenshot showing Manage your storage." lightbox="media/workspaces/system-storage.png":::
+
+### Remove the workspace
+
+As an admin for a workspace, you can delete it. When you delete the workspace, everything contained within the workspace is deleted for all group members, and the associated app is also removed from AppSource.
+
+In the Workspace settings pane, select **Other** > **Remove this workspace**.
+
+:::image type="content" source="media/workspaces/remove-workspace.png" alt-text="Screenshot showing deleting workspace." lightbox="media/workspaces/remove-workspace.png":::
 
 ## Administering and auditing workspaces
 
-Administration for workspaces is in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins decide who in an organization can create workspaces and distribute apps. Read about [managing users' ability to create workspaces](../admin/admin-portal-workspace.md#create-workspaces) in the "Workspace settings" article.
+Administration for workspaces is in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins decide who in an organization can create workspaces and distribute apps. Read about [managing users' ability to create workspaces](../admin/portal-workspace.md#create-workspaces) in the "Workspace settings" article.
 
-Admins can also see the state of all the workspaces in their organization. They can manage, recover, and even delete workspaces. Read about [managing the workspaces themselves](../admin/admin-portal-workspaces.md) in the "Admin portal" article.
+Admins can also see the state of all the workspaces in their organization. They can manage, recover, and even delete workspaces. Read about [managing the workspaces themselves](../admin/portal-workspaces.md) in the "Admin portal" article.
 
 ### Auditing
 
@@ -90,4 +129,4 @@ Limitations to be aware of:
 ## Next steps
 
 * [Create workspaces](create-workspaces.md)
-* [Install and use apps](/power-bi/collaborate-share/service-create-distribute-apps)
+* [Give users access to workspaces](give-access-workspaces.md)

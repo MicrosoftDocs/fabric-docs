@@ -10,13 +10,13 @@ ms.date: 05/23/2023
 
 # Autologging in [!INCLUDE [product-name](../includes/product-name.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and artifacts of a machine learning model during training. This feature extends [MLflow autologging](https://mlflow.org/docs/latest/tracking.html#automatic-logging) capabilities and is deeply integrated into the [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience. Using autologging, developers and data scientists can easily track and compare the performance of different models and experiments without the need for manual tracking.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Configurations
 
-Autologging works by automatically capturing the values of input parameters, output metrics, and output artifacts of a machine learning model as it is being trained. This information is then logged to your [!INCLUDE [product-name](../includes/product-name.md)] workspace, where it can be accessed and visualized using the MLFlow APIs or the corresponding experiment & model artifacts in your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
+Autologging works by automatically capturing the values of input parameters, output metrics, and output artifacts of a machine learning model as it is being trained. This information is then logged to your [!INCLUDE [product-name](../includes/product-name.md)] workspace, where it can be accessed and visualized using the MLflow APIs or the corresponding experiment & model artifacts in your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
 The default configuration for the notebook [mlflow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.autolog) hook is:
 
@@ -101,11 +101,11 @@ To do this:
 
 1. Navigate to your [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] workspace and select **Workspace Settings**.
 
-:::image type="content" source="./media/machine-learning-experiment/autologging-workspace-setting.png" alt-text="Screenshot of the Data science artifact page." lightbox="./media/machine-learning-experiment/autologging-workspace-setting.png":::
+   :::image type="content" source="./media/machine-learning-experiment/autologging-workspace-setting.png" alt-text="Screenshot of the Data science artifact page." lightbox="./media/machine-learning-experiment/autologging-workspace-setting.png":::
 
 2. In the **Data Engineering/Science** tab, select **Spark compute**. Here, you will find the setting to enable or disable [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] autologging.
 
-:::image type="content" source="./media/machine-learning-experiment/autologging-setting-2.png" alt-text="Screenshot of the Data science Workspace setting for autologging." lightbox="./media/machine-learning-experiment/autologging-setting-2.png":::
+   :::image type="content" source="./media/machine-learning-experiment/autologging-setting-2.png" alt-text="Screenshot of the Data science Workspace setting for autologging." lightbox="./media/machine-learning-experiment/autologging-setting-2.png":::
 
 ## Next steps
 

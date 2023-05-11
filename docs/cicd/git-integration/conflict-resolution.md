@@ -15,12 +15,14 @@ A conflict occurs when changes are made *to the same item* in both the workspace
 
 :::image type="content" source="./media/conflict-resolution/conflict-status-workspace.png" alt-text="Screenshot of a report with a git status that says conflict.":::
 
-You have two options:
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-- Revert either the workspace or the git repository to a previous synced state or
-- Resolve the conflict in git.
+There are two ways to resolve a conflict:
 
-## Revert to a previous synced state
+- [Revert](#revert-to-a-previous-state) either the workspace or the git repository to a previous synced state.
+- [Resolve](#resolve-conflict-in-git) the conflict in git.
+
+## Revert to a previous state
 
 You can revert either the workspace or the git branch to last synced state. If you revert the git branch to a previous commit, you can still see the changes made to the unsynced branch. If you revert the workspace, the changes are lost completely.
 
@@ -29,7 +31,7 @@ To revert to the prior synced state, do *one* of the following steps:
 - Use the [Undo](./git-get-started.md#commit-changes-to-git) command to return all items in the workspace to their last synced state.
 - Revert to the last synced state in git using the `git revert` command in Azure DevOps.
 
- You can also revert to a previous state by disconnecting and reconnecting the workspace. When you reconnect, [select the direction](./git-integration-process.md#connect-and-sync) you want to sync.
+ You can also resolve conflicts by disconnecting and reconnecting the workspace. When you reconnect, [select the direction](./git-integration-process.md#connect-and-sync) you want to sync. Note, however, that this will overwrite all items in the workspace or branch and not just the conflicted ones. It doesn't return the workspace or branch to the last synced state. Rather, it overwrites all the content in one location with the content of the other.
 
 ## Resolve conflict in git
 
@@ -38,6 +40,8 @@ If you made numerous changes and don’t want to revert to a previous state, you
 1. From the **Source control** pane, check out a new branch using the last synced branch ID shown on bottom of screen
 
    :::image type="content" source="./media/conflict-resolution/checkout-new-branch.png" alt-text="Screenshot showing how to check out a new branch from the source control pane by selecting the down arrow.":::
+
+   :::image type="content" source="./media/conflict-resolution/sync-info.png" alt-text="Screenshot of branch ID information shown on bottom of the screen.":::
 
    This step creates a new branch from the conflicted branch using the last synced git state, before changes were made that conflict with your changes. You can see your changes in the **Source control** pane, but there is nothing to update from the git branch.
 

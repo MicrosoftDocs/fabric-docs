@@ -10,21 +10,24 @@ ms.custom:
 
 # Git integration source code format
 
-Each item in Microsoft Fabric is represented in Git as a directory. Each directory has the same name as the artifact followed by the type.
+Items in Microsoft Fabric are stored in a folder. They can either be in the root directory or a subdirectory. When you connect your workspace to git, connect to the folder containing the items. Each item in the folder is represented in its own subdirectory. These item directories have the same name as the item followed by the item type.
 
 :::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of git directory containing items.":::
 
-Inside each directory are the mandatory system files that define the item. Besides these files, there are two automatically generated system files in each directory:
+Inside each item directory are the mandatory system files that define the item. Besides these files, there are two automatically generated system files in each directory:
 
 - [item.metadata.json](#metadata-file)
 - [item.config.json](#config-file)
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Metadata file
 
 ```json
 { 
-    type: <string>, 
-    displayName: <string>, 
+    "type": <string>, 
+    "displayName": <string>,
+    "description": <string>
 } 
 ```
 
@@ -32,6 +35,7 @@ The item.metadata.json file contains the following attributes:
 
 - `type`: the item’s type (dataset, report etc.)
 - `displayName`: the name of the item
+- `description`: (optional) description of the item
 
 To rename an item, change the `displayName` in the ‘item.metadata.json’ file. Changing the name of the folder doesn’t change the display name of the item in the workspace.
 

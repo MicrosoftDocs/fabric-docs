@@ -61,6 +61,20 @@ landingContent:
             url: notebook-visualization.md
 
   # Card 
+  - title: Delta Lake
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Lakehouse and Delta tables
+            url: lakehouse-and-delta-tables.md
+      - linkListType: how-to-guide
+        links:
+          - text: Delta optimization and V-Order
+            url: delta-optimization-and-v-order.md
+          - text: Load to tables
+            url: load-to-tables.md
+
+  # Card 
   - title: Apache Spark
     linkLists:
       - linkListType: concept
@@ -85,23 +99,39 @@ landingContent:
             url: library-management.md
           - text: Spark utilities for file management tasks
             url: microsoft-spark-utilities.md
+          - text: Configure capacity settings
+            url: capacity-settings-management.md
 
   # Card 
   - title: Lakehouse end-to-end tutorial
     linkLists:
-      - linkListType: tutorial
+      - linkListType: concept
         links:
           - text: Lakehouse scenario overview
-            url: ../placeholder.md
-          - text: Step1 - Create a workspace
-            url: ../placeholder.md
-          - text: Step2 - Create a lakehouse
-            url: ../placeholder.md
-          - text: Step2 - Ingest data into lakehouse
-            url: ../placeholder.md
-          - text: Step2 - Transform data into delta tables
-            url: ../placeholder.md
-          - text: Step2 - Build a report
-            url: ../placeholder.md
-          - text: Step2 - Clean up resources
-            url: ../placeholder.md
+            url: tutorial-lakehouse-introduction.md
+      - linkListType: tutorial
+        links:
+          - text: Step 1 - Create a workspace
+            url: tutorial-lakehouse-get-started.md
+          - text: Step 2 - Create a lakehouse
+            url: tutorial-build-lakehouse.md
+          - text: Step 3 - Ingest data into lakehouse
+            url: tutorial-lakehouse-data-ingestion.md
+          - text: Step 4 - Transform data into delta tables
+            url: tutorial-lakehouse-data-preparation.md
+          - text: Step 5 - Build a report
+            url: tutorial-lakehouse-build-report.md
+          - text: Step 6 - Clean up resources
+            url: tutorial-lakehouse-clean-up.md
+
+  # Card 
+  - title: VS Code integration
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Use notebooks from VS Code
+            url: author-notebook-with-vs-code.md
+          - text: Use Spark job definitions from VS Code
+            url: author-sjd-with-vs-code.md
+          - text: Explore lakehouse from VS Code
+            url: explore-lakehouse-with-vs-code.md
