@@ -6,7 +6,7 @@
     - name: What is Data Factory?
       href: data-factory-overview.md
     - name: Data Factory training
-      href: /training/paths/get-started-fabric-preview-only
+      href: /training/paths/get-started-fabric
   - name: Get started
     items:
     - name: Create a dataflow
