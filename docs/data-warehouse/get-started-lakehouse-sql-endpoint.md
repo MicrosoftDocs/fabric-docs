@@ -115,7 +115,7 @@ Every Microsoft Fabric Warehouse stores table data in OneLake. If a table is app
 
 While workspaces allow you to segregate data based on complex business, geographic, or regulatory requirements, sometimes you need to facilitate sharing across these lines for specific analytics needs.
 
-A Lakehouse [!INCLUDE [fabric-dw](includes/fabric-dw.md)] can enable easy sharing of data between departments and users, where a user can bring their own capacity and warehouse. While workspaces organize departments, business units, or analytical domains using shortcuts, users can find any warehouse or lakehouse's data. With their own capacity and Lakehouse [!INCLUDE [fabric-dw](includes/fabric-dw.md)], users can instantly perform their own customized analytics from the same shared data. In addition to helping with departmental chargebacks and usage allocation, this is a zero-copy version the data as well.
+A Lakehouse [!INCLUDE [fabric-dw](includes/fabric-dw.md)] can enable easy sharing of data between departments and users, where a user can bring their own capacity and warehouse. Workspaces organize departments, business units, or analytical domains. Using shortcuts, users can find any Warehouse or Lakehouse's data. Users can instantly perform their own customized analytics from the same shared data. In addition to helping with departmental chargebacks and usage allocation, this is a zero-copy version the data as well.
 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] enables querying of any table and easy sharing. The added controls of workspace roles and security roles that can be further layered to meet additional business requirements.
 
