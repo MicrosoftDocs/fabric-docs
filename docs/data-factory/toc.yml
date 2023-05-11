@@ -249,8 +249,8 @@
         href: tutorial-dataflows-gen2-pipeline-activity.md
   - name: FAQ
     items:
-    - name: Compare Data Factory in Fabric and Azure
+    - name: Differences in Data Factory in Fabric vs. Azure
       href: compare-fabric-data-factory-and-azure-data-factory.md
-    - name: Compare Dataflows Gen1 with Gen2
+    - name: Differences in Dataflows Gen1 and Gen2
       href: dataflows-gen2-overview.md
      
