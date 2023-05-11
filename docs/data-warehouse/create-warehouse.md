@@ -75,7 +75,7 @@ For more information on how to create a warehouse, see [Create a Synapse Data Wa
 
 1. Once you have created your warehouse, you can load sample data into warehouse from **Use sample database** card. 
 
-   :::image type="content" source="media\create-warehouse-sample\use-sample-database.png" alt-text="Screenshot showing where to select the Warehouse sample card in the Home hub." lightbox="media\create-warehouse-sample\use-sample-database.png":::
+   :::image type="content" source="media\create-warehouse\use-sample-database.png" alt-text="Screenshot showing where to select the Warehouse sample card in the Home hub." lightbox="media\create-warehouse\use-sample-database.png":::
 
 2. The data loading takes few minutes to complete.
 
