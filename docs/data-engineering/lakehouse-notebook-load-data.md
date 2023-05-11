@@ -20,7 +20,7 @@ In this tutorial, learn how to read/write data into your lakehouse with a notebo
 
 To specify the location to read from, you can use the relative path if the data is from the default lakehouse of current notebook, or you can use the absolute ABFS path if the data is from other lakehouse. you can copy this path from the context menu of the data
 
-:::image type="content" source="media\lakehouse-notebook-explore\copy-path-menu.png" alt-text="Screenshot showing menu option of copy action." lightbox="media\lakehouse-notebook-explore\copy-path-menu.png":::
+:::image type="content" source="media\lakehouse-notebook-explore\copy-path-menu.png" alt-text="Screenshot showing menu option of copy action.":::
 
 **Copy ABFS path** : this return the absolute path of the file
 
@@ -51,7 +51,8 @@ df.write.mode("append").format("delta").saveAsTable(delta_table_name)
 
 To support Pandas API, the default Lakehouse will be automatically mounted to the notebook. The mount point is '/lakehouse/default/'. You can use this mount point to read/write data from/to the default lakehouse. The "Copy File API Path" option from the context menu will return the File API path from that mount point. The path returned from the option **Copy ABFS path** also works for Pandas API.
 
-:::image type="content" source="media\lakehouse-notebook-explore\copy-path-menu-file-path.png" alt-text="Screenshot showing menu option of copy File API path." lightbox="media\lakehouse-notebook-explore\copy-path-menu-file-path.png":::
+:::image type="content" source="media\lakehouse-notebook-explore\copy-path-menu-file-path.png" alt-text="Screenshot showing menu option of copy File API path.":::
+
 **Copy File API Path** :This return the path under the mount point of the default lakehouse
 
 ```python
@@ -72,8 +73,6 @@ df = pd.read_parquet("abfss://DevExpBuildDemo@msit-onelake.dfs.fabric.microsoft.
 The quickest way to have the code to work with Spark API or Pandas API is to use the option of **Load data** and select the API you want to use. The code will be automatically generated in a new code cell of the notebook.
 
 :::image type="content" source="media\lakehouse-notebook-explore\load-data-menu.png" alt-text="Screenshot showing where to select load data option." lightbox="media\lakehouse-notebook-explore\load-data-menu.png":::
-
-
 
 ## Next steps
 

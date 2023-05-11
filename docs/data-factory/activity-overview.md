@@ -20,9 +20,7 @@ A [!INCLUDE [product-name](../includes/product-name.md)] Workspace can have one 
 
 The activities in a pipeline define actions to perform on your data. For example, you may use a copy activity to copy data from SQL Server to an Azure Blob Storage. Then, use a Dataflow activity or a Notebook activity to process and transform data from the blob storage to an Azure Synapse Analytics pool on top of which business intelligence reporting solutions are built.
 
-[!INCLUDE [product-name](../includes/product-name.md)] has three types of activities: data movement activities, data transformation activities, and control activities. An activity can take zero or more input datasets and produce one or more output datasets. The following diagram shows the relationship between pipeline, activity, and dataset:
-
-:::image type="content" source="media/activity-overview/relationship-between-dataset-pipeline-activity.png" alt-text="Diagram showing the relationship between pipeline, activity, and dataset.":::
+[!INCLUDE [product-name](../includes/product-name.md)] has three types of activities: data movement activities, data transformation activities, and control activities.
 
 ## Data movement activities
 
@@ -43,7 +41,7 @@ Dataflow Gen2 | Compute manager by Microsoft Fabric
 Delete data | Compute manager by Microsoft Fabric
 Fabric Notebook | Apache Spark clusters managed by Microsoft Fabric
 Fabric Spark job definition | Apache Spark clusters managed by Microsoft Fabric
-Stored Procedure | Apache Spark clusters managed by Microsoft Fabric
+Stored Procedure | Azure SQL, Azure Synapse Analytics, or SQL Server
 SQL script | Azure SQL, Azure Synapse Analytics, or SQL Server
 
 
