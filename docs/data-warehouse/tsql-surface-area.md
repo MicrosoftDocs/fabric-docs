@@ -25,7 +25,7 @@ This article covers the T-SQL language syntax capabilities of [!INCLUDE [product
 
 ### Limitations
 
-At this time, the following list of commands is NOT currently supported. Don't try to use these commands because even though they may appear to succeed, they could cause corruption to your warehouse.
+At this time, the following list of commands is NOT currently supported. Don't try to use these commands because even though they may appear to succeed, they could cause issues to your warehouse. 
 
 - ALTER TABLE ADD/ALTER/DROP COLUMN
 - BULK LOAD
