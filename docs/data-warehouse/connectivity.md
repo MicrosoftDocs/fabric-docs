@@ -61,10 +61,9 @@ When connecting via SSMS (or ADS), you see both a [!INCLUDE [fabric-se](includes
 
 A warehouse or lakehouse SQL endpoint is a first class citizen within Power BI, and there is no need to use the SQL Connection string. The Data Hub exposes all of the warehouses you have access to directly. This allows you to easily find your warehouses by workspace, and:
 
-•	Select the Warehouse
-•	Choose entities
-•	Load Data
-   o	Choose connectivity mode – import or DQ.
+- Select the Warehouse
+- Choose entities
+- Load Data - choose connectivity mode: import or DQ
 
 Learn more here: [Create reports in Microsoft Fabric](create-reports.md)
 
@@ -120,6 +119,12 @@ When establishing connectivity via JDBC, check for the following dependencies:
 
 We support connectivity to the Warehouse or SQL Endpoint using ODBC. Make sure you’re running the latest SQL Server drivers: [Microsoft OLE DB Driver for SQL Server - OLE DB Driver for SQL Server | Microsoft Learn](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16)
 
+## DBT Connectivity - Trident Data Warehouse
+
+- Users typically use DBT adapters to connect DBT projects to a target datastore. DBT adapters are built specifically for each data source. Users who would like to connect to Trident Data Warehouse from DBT project must use dbt-synapsevnext DBT adapter. Similarly, Synapse dedicated SQL pool data source has its own adapter (dbt-synapse).
+- DBT Trident DW Adapter uses pyodbc library to establish connectivity with Trident Data Warehouse. PYODBC is an ODBC implementation in Python language that uses Python Database API Specification v2.0.  https://peps.python.org/pep-0249/.  PYODBC directly passes connection string to the database driver through SQLDriverConnect in msodbc connection structure to Trident Data Warehouse using TDS (Tabular Data Streaming) proxy service.
+- Trident DBT Adapter supports AAD based authentication and allows developers to use az cli authentication using dbt-synapsevnext adapter. FYI, SQL Authentication is not supported.
+
 ## Connectivity by other menas
 
 ### BI Tools
@@ -132,7 +137,7 @@ Because Synapse Datawarehouse and Lakehouse SQL Endpoints in Fabric provide an S
     
 ## Considerations and limitations
 
-- SQL Authentiation is not supported
+- SQL Authentication is not supported
 - Multiple Active Result Sets (MARS) is unsupported for Fabric Warehouse. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
 - On connection to a warehouse, you may receive an error that "The token size exceeded the maximum allowed payload size".  This may be due to having a large number of warehouses within the workspace or being a member of a large number of Azure AD groups. For most users, the error typically would not occur until approaching beyond 80 warehouses in the workspace. In event of this error, please work with the Workspace admin to clean up unused Warehouses and retry the connection, or contact support if the problem persists.
 
