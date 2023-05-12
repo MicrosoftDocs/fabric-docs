@@ -1,5 +1,5 @@
 ---
-title: Move Dataflow Gen1 to Dataflow Gen2
+title: Move queries from Dataflow Gen1 to Dataflow Gen2
 description: This article describes the procedure for moving Dataflow Gen1 queries to Dataflow Gen2 in Data Factory.
 author: DougKlopfenstein
 ms.author: dougklo
@@ -8,9 +8,9 @@ ms.date: 05/23/2023
 ms.custom: template-how-to 
 ---
 
-# Move Dataflow Gen1 to Dataflow Gen2
+# Move queries from Dataflow Gen1 to Dataflow Gen2
 
-Dataflow Gen2 is the new generation of dataflows. However, many existing dataflows have been created over the years using Dataflow Gen1. This article describes how you can reuse your older Dataflow Gen1 dataflows by importing Dataflow Gen1 dataflows into Dataflow Gen2 using the export template feature. It also includes information on how to copy the Gen1 queries and paste them into a new Dataflow Gen2.
+Dataflow Gen2 is the new generation of dataflows. However, many existing dataflows have been created over the years using the original version of dataflows  (now called *Dataflow Gen1* and listed as the **Dataflow** type in your workspace).  This article describes how you can reuse your older Dataflow Gen1 dataflows by importing Dataflow Gen1 dataflows into Dataflow Gen2 using the export template feature. It also includes information on how to copy the Gen1 queries and paste them into a new Dataflow Gen2.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
