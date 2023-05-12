@@ -24,8 +24,8 @@ The following table summarizes the information protection capabilities in Fabric
 |Default labeling| When an item is created or edited, it gets a default sensitivity label unless a label is applied through other means.|[Supported for all Fabric items, with limitations](#default-labeling). |
 |Mandatory labeling| Users can't save items unless a sensitivity label is applied to the item. This means they can't remove a label either.| [Currently fully supported for Power BI items only. Supported for some non-Power BI Fabric items, with limitations](#mandatory-labeling). |
 |Programmatic labeling| Sensitivity labels can be added, changed, or deleted programmatically via Power BI admin REST APIs.|[Supported for all Fabric items](#programmatic-labeling).|
-|Downstream inheritance| When a sensitivity label is applied to an item, the label filters down to all dependent items. |[Supported for all Fabric items, with limitations](#downstream-inheritance). |
-|Inheritance upon creation| When you create new item by copying an existing one, the new item takes the label of the existing item.| [Supported for all Fabric items, with limitations](#inheritance-upon-creation).|
+|Downstream inheritance| When a sensitivity label is applied to an item, the label propagates downstream to all dependent items. |[Supported for all Fabric items, with limitations](#downstream-inheritance). |
+|Inheritance upon creation| When you create a new item from an existing one, the new item inherits the label of the existing item.| [Supported for all Fabric items, with limitations](#inheritance-upon-creation).|
 |Inheritance from data sources| When a Fabric item ingests data from a data source that has a sensitivity label, that label is applied to the Fabric item. The label then filters down to the child items of that Fabric item via downstream inheritance.| [Currently supported for Power BI datasets only](#inheritance-from-data-sources).|
 |Export| When a user exports data from an item that has a sensitivity label, the sensitivity label moves with it to the exported format. |[Currently supported for Power BI items in supported export paths](#export). |
 
@@ -78,9 +78,14 @@ For more information about downstream inheritance, see [Sensitivity label downst
 
 ### Inheritance upon creation
 
-Inheritance upon creation is supported for all Fabric items with the following consideration:
+Inheritance upon creation is supported for Power BI Fabric items and in the following scenarios with non-Power BI items:
 
-* If you try to create a Pipeline or Notebook from a Lakehouse, it will get the sensitivity label of the Lakehouse.
+* Lakehouse -> Pipeline
+* Lakehouse -> Notebook
+* Lakehouse -> Lakehouse (shortcut creation)
+* Notebook -> Pipeline
+* Kusto Database -> KQL Query Set
+* Kusto Database -. Pipeline
 
 For more information about downstream inheritance, see [Sensitivity label inheritance upon creation of new content](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-label-inheritance-upon-creation-of-new-content).
 
