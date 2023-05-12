@@ -119,11 +119,13 @@ When establishing connectivity via JDBC, check for the following dependencies:
 
 We support connectivity to the Warehouse or SQL Endpoint using ODBC. Make sure you’re running the latest SQL Server drivers: [Microsoft OLE DB Driver for SQL Server - OLE DB Driver for SQL Server | Microsoft Learn](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16)
 
-## DBT Connectivity - Trident Data Warehouse
+## Connect using DBT
 
-- Users typically use DBT adapters to connect DBT projects to a target datastore. DBT adapters are built specifically for each data source. Users who would like to connect to Trident Data Warehouse from DBT project must use dbt-synapsevnext DBT adapter. Similarly, Synapse dedicated SQL pool data source has its own adapter (dbt-synapse).
-- DBT Trident DW Adapter uses pyodbc library to establish connectivity with Trident Data Warehouse. PYODBC is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/).  PYODBC directly passes connection string to the database driver through SQLDriverConnect in msodbc connection structure to Trident Data Warehouse using TDS (Tabular Data Streaming) proxy service.
-- Trident DBT Adapter supports AAD based authentication and allows developers to use az cli authentication using dbt-synapsevnext adapter. FYI, SQL Authentication is not supported.
+Users typically use DBT adapters to connect DBT projects to a target datastore. DBT adapters are built specifically for each data source. Users who would like to connect to Trident Data Warehouse from DBT project must use dbt-synapsevnext DBT adapter. Similarly, Synapse dedicated SQL pool data source has its own adapter (dbt-synapse).
+
+DBT Trident DW Adapter uses pyodbc library to establish connectivity with Trident Data Warehouse. PYODBC is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/).  PYODBC directly passes connection string to the database driver through SQLDriverConnect in msodbc connection structure to Trident Data Warehouse using TDS (Tabular Data Streaming) proxy service.
+
+Trident DBT Adapter supports AAD based authentication and allows developers to use az cli authentication using dbt-synapsevnext adapter. FYI, SQL Authentication is not supported.
 
 ## Connectivity by other menas
 
