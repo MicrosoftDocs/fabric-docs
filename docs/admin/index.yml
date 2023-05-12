@@ -25,7 +25,9 @@ landingContent:
           - text: Compliance settings
             url: compliance.md
           - text: Governance in Microsoft Fabric
-            url: ../governance/index.yml          
+            url: ../governance/index.yml      
+          - text: Security in Microsoft Fabric
+            url: ../security/security-overview.md              
       - linkListType: overview
         links:
           - text: What is Microsoft Fabric admin?
