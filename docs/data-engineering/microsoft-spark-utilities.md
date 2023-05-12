@@ -263,10 +263,10 @@ getSecret(akvName, secret): returns AKV secret for a given akvName, secret key
 
 Returns Azure AD token for a given audience, name (optional), The list below shows currently available audience keys:
 
-- **Storage Audience Resource**: "storage""
-- **Power BI Resource**: "pbi""
+- **Storage Audience Resource**: "storage"
+- **Power BI Resource**: "pbi"
 - **Azure Key Vault Resource**: "keyvault"
-- **Kusto Resource**: "kusto"
+- **Synapse RTA KQL DB Resource**: "kusto"
 
 Run the following command to get the token:
 

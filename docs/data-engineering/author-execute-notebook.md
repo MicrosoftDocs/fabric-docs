@@ -36,6 +36,7 @@ We provide rich operations to develop notebooks:
 - [Lock or freeze a cell](#lock-or-freeze-a-cell)
 - [Notebook contents](#notebook-contents)
 - [Markdown folding](#markdown-folding)
+- [Find and replace](#find-and-replace)
 
 ### Add a cell
 
@@ -174,7 +175,7 @@ Lock and freeze cell operations allow you to make cells read-only or stop code c
 ### Merge and Split cells
 
 You can use **Merge with previous cell** **Merge with next cell** to merge related cells conveniently.
-Select **Split cell** helps you split irrelevant statements to multiple cells.
+Select **Split cell** helps you split irrelevant statements to multiple cells, it will split the code according to your cursor's line position.
 
 :::image type="content" source="media\author-execute-notebook\merge-split-cell.png" alt-text="Screenshot showing the entry of merge split cells." lightbox="media\author-execute-notebook\merge-split-cell.png":::
 -->
@@ -189,6 +190,13 @@ The Outlines or Table of Contents presents the first markdown header of any mark
 
 The markdown folding allows you to hide cells under a markdown cell that contains a heading. The markdown cell and its hidden cells are treated the same as a set of contiguous multi-selected cells when performing cell operations. 
 ![Animated GIF of markdown folding.](media/author-execute-notebook/markdown-folding.gif)
+
+### Find and replace
+
+Find and replace can help you easily match and locate the keywords or expression within your notebook content, and you can replace the target string with a new string. 
+
+:::image type="content" source="media\author-execute-notebook\find-replace.png" alt-text="Screenshot showing find and replace pane." lightbox="media\author-execute-notebook\find-replace.png":::
+
 
 ## Run notebooks
 
