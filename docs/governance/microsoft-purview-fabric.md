@@ -35,10 +35,10 @@ For more information, you can follow these links:
 
 ## Microsoft Purview and Microsoft Fabric together
 
-Microsoft Purview works seamlessly with Microsoft Fabric so can discover and manage Microsoft Fabric artifacts in the Microsoft Purview governance portal. The integration currently allows you to take advantage of these applications in Microsoft Purview:
+Microsoft Purview works seamlessly with Microsoft Fabric so users can discover and manage Microsoft Fabric artifacts in Microsoft Purview applications. The integration currently allows you to take advantage of these applications:
 
 - **Microsoft Purview Information Protection** - allows you to discover and classify data at scale, with built in labeling and protection and encryption. Set sensitivity label on datasets, reports, PBIX files, datamarts, etc. Protect data when export to Excel, PowerPoint, Word, PBIX and PDF files. For more information, see [Information Protection in Microsoft Purview](information-protection.md).
-- **Microsoft Purview Data Loss Prevention** - allows you to prevent accidental or unauthorized sharing of sensitive data. Automatically enforce compliance with regulations and internal policies across cloud and on-premises. Data loss prevention is currently supported for Power BI datasets only. For more information, see [Data loss prevention policies for Power BI](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
+- **Microsoft Purview Data Loss Prevention** - allows you to prevent accidental or unauthorized sharing of sensitive data. Automatically enforce compliance with regulations and internal policies across cloud and on-premises. Data loss prevention is currently supported for Power BI datasets only. For more information, see [data loss prevention policies](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
 - **Microsoft Purview Audit** - all Microsoft Fabric user activities are logged and available in the Microsoft Purview audit log. For more information, see [Microsoft Purview audit for Fabric](../admin/track-user-activities.md).
 
 ## Microsoft Purview Hub
@@ -46,12 +46,6 @@ Microsoft Purview works seamlessly with Microsoft Fabric so can discover and man
 The Microsoft Purview Hub allows you to see insights about your Fabric data inside Fabric itself! It also acts as a gateway between Fabric and Microsoft Purview so you can govern the rest of your data estate as well.
 
 [You can follow this link to the Microsoft Purview Hub documentation.](use-microsoft-purview-hub.md)
-
-## Microsoft Purview permissions
-
-With a [Microsoft Fabric license](../enterprise/licenses.md), users are able view all the Microsoft Fabric artifacts they have access to in the Microsoft Purview Data Catalog. This allows your users to search for and discover the resources available to them.
-
-To view the Microsoft Purview Data Estate Insights, your users need an [insights reader role](/azure/purview/catalog-permissions#roles) in the Microsoft Purview governance portal.
 
 ## Learn more
 
