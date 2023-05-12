@@ -6,6 +6,8 @@ items:
 - name: Get started with Warehouse
   expanded: true
   items:
+  - name: Decision guide - data warehouse or lakehouse
+    href: ../get-started/decision-guide-warehouse-lakehouse.md
   - name: 1. Create a warehouse
     href: create-warehouse.md
   - name: 2. Create a table
