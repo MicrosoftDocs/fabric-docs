@@ -40,6 +40,7 @@ Microsoft Purview works seamlessly with Microsoft Fabric so can discover and man
 - **Microsoft Purview Data Estate Insights** - aggregates information about your data estate to allow you to gain insights about your governance journey, your data, or even your data catalog usage at a glance. For more information, see [Microsoft Purview Data Estate Insights](/azure/purview/concept-insights).
 - **Microsoft Purview Data Map** - creates a business-oriented map of your data estate, and elastically stores the metadata that underpins your data estate insights and data catalog to allow you to manage your data estate all in one place. For more information, see the [Microsoft Purview Data Map](/azure/purview/overview#data-map).
 - **Microsoft Purview Data Catalog** - allows your users to browse and search for relevant data in their organization. Users can also annotate and curate data sources so your data estate is discoverable and reliable. For more information, see the [Microsoft Purview Data Catalog](/azure/purview/overview#data-catalog-app).
+- **Microsoft Purview Audit** - all Microsoft Fabric user activities are logged and available in the Microsoft Purview audit log. For more information, see [Microsoft Purview audit for Fabric](../admin/track-user-activities.md)
 
 ## Microsoft Purview Hub
 
