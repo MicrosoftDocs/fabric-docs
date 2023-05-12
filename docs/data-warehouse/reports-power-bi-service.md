@@ -16,7 +16,7 @@ This article describes three different scenarios you can follow to create report
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Create a report from the Warehouse Editor
+## Create a report from the warehouse editor
 
 From within the warehouse experience, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI dataset.
 
