@@ -1,0 +1,11 @@
+items:
+    - name: Microsoft Fabric
+      tocHref: /fabric/
+      topicHref: /fabric/index
+      items:
+      - name: Data Engineering
+        tocHref: /fabric/data-engineering
+        topicHref: /fabric/data-engineering/index
+      - name: Data Engineering
+        tocHref: /fabric/get-started
+        topicHref: /fabric/data-engineering/index
