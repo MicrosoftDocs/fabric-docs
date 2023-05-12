@@ -64,6 +64,22 @@ To load the dataset, select the name of the dataset.
 
 :::image type="content" source="media\datasets\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\datasets\load-dataset.png":::
 
+## Create a new Power BI Dataset
+
+There are some situations where your organization may need to create additional Power BI datasets based off of a SQL endpoint or Warehouse's data. To create a basic Direct Lake dataset from a warehouse, follow the steps below:
+
+1. Open the warehouse you created and loaded in the previous steps, such as My_Warehouse, and then switch to the Reporting ribbon.
+
+2. In the Reporting ribbon, select New Power BI dataset, and then in the New dataset dialog, select tables to be included, and then select Confirm.
+
+:::image type="content" source="media\datasets\newPBIdataset.png" alt-text="Screenshot showing the new Power BI dataset." lightbox="media\datasets\newPBIdataset.png":::
+
+3. Power BI automatically saves the dataset in the workspace based on the name of your warehouse, and then opens the dataset in Power BI.
+
+4. Select Open data model to open the Power BI Web modeling experience where you can add table relationships and DAX measures.
+
+To learn more on how to edit data models in the Power BI service, see here: [Edit Data Models](power-bi/transform-model/service-edit-data-models.md)
+
 ## Limitations
 
 Default Power BI datasets follow the current limitations for datasets in Power BI. Learn more:
