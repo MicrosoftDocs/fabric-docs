@@ -92,4 +92,3 @@ You probably have many Dataflow Gen1 queries and you're wondering how you can tr
 
 - [Dataflows refresh history and monitoring](dataflows-gen2-monitor.md)
 - [Dataflows save as draft](dataflows-gen2-save-draft.md)
-- [Known issues and limitations](data-factory-known-issues-limitations.md)
