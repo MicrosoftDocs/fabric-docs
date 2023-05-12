@@ -1,5 +1,5 @@
 ---
-title: Connectivity to data warehousing
+title: Connect to the Warehouse
 description: Follow steps to connect SSMS to data warehousing in your Microsoft Fabric workspace.
 author: salilkanade
 ms.author: salilkanade
@@ -8,24 +8,29 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ---
-# Connectivity to data warehousing in Microsoft Fabric
+# Connectivity to Warehouses in Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-This article provides a how-to on connecting to your [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio).
+In Fabric, a Warehouse or Lakehouse SQL endpoint is accessible through a Tabular Data Stream, or TDS endpoint, familiar to all modern web applications that interact with a SQL Server endpoint, through a SQL connection. This is referred to as the SQL Connection String within the Fabric user interface.
+
+This article provides a how-to on connecting to your [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. 
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 To get started, you must complete the following prerequisites:
 
-- For best performance, you must be using [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) version 18.0+.
 - You need access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) or a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](../data-warehouse/data-warehousing.md) within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or above permissions.
 
-## Connect SSMS to the Lakehouse SQL Endpoint or warehouse in the workspace
+## Authentication to Warehouses in Fabric
 
-The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to SSMS.
+In Fabric, 2 types of authenticated users are supported through the SQL connection string:
+1.	AAD User principals, or user identities
+2.	AAD Service principals
 
-### Get connection string
+The SQL connection string requires port 1433 to be open. 1433 is the standard SQL Server port number. The SQL connection string also respects the warehouse or lakehouse sql endpoint security model for data access. Data can be obtained for all objects to which a user has access.
+
+## Retrieve the SQL Connetion String
 
 To retrieve the connection string, follow these steps:
 
@@ -34,7 +39,9 @@ To retrieve the connection string, follow these steps:
 
    :::image type="content" source="media\connectivity\warehouse-copy-sql-connection-string.png" alt-text="Screenshot of the workspace screen with the context menu open." lightbox="media\connectivity\warehouse-copy-sql-connection-string.png":::
 
-### Get started with SSMS
+## Get started with SSMS
+
+The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to SSMS.
 
 1. When you open SQL Server Management Studio (SSMS), the **Connect to Server** window appears. If already open, you can connect manually by selecting **Object Explorer** > **Connect** > **Database Engine**.
 
@@ -50,9 +57,29 @@ To retrieve the connection string, follow these steps:
 
 When connecting via SSMS (or ADS), you see both a [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] listed as warehouses, and it's difficult to differentiate between the two item types and their functionality. For this reason, we strongly encourage you to adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the [!INCLUDE [product-name](../includes/product-name.md)] portal experience.
 
-### Connect to SQL Server endpoint using JDBC driver
+## Connect using Power BI
 
-If you're receiving an error when attempting to connect to a SQL Server endpoint using a SQL client that uses a Java database connectivity (JDBC) driver, like DBeaver, check for the following dependencies:
+A warehouse or lakehouse SQL endpoint is a first class citizen within Power BI, and there is no need to use the SQL Connection string. The Data Hub exposes all of the warehouses you have access to directly. This allows you to easily find your warehouses by workspace, and:
+
+•	Select the Warehouse
+•	Choose entities
+•	Load Data
+   o	Choose connectivity mode – import or DQ.
+
+Learn more here: [Create reports in Microsoft Fabric](create-reports.md)
+
+## Connect using ODBC
+
+We support connectivity to the Warehouse or SQL Endpoint using ODBC. Make sure you’re running the latest SQL Server drivers.
+
+When establishing connectivity, make sure that you’re using the latest version of the driver here: [Download ODBC Driver for SQL Server](https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver16and using AAD authentication)
+
+
+## Connect using JDBC
+
+We also support connectivity to the Warehouse or SQL Endpoint using a Java database connectivity (JDBC) driver. 
+
+When establishing connectivity via JDBC, check for the following dependencies:
 
 1. Add artifacts, choose **Add Artifact** and add the following four dependencies in the window like this, then select **Download/Update** to load all dependencies.
 
@@ -88,9 +115,24 @@ If you're receiving an error when attempting to connect to a SQL Server endpoint
        <version>4.2.2</version>
     </dependency>
     ```
+
+## Connect using OLE DB
+
+We support connectivity to the Warehouse or SQL Endpoint using ODBC. Make sure you’re running the latest SQL Server drivers: [Microsoft OLE DB Driver for SQL Server - OLE DB Driver for SQL Server | Microsoft Learn](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16)
+
+## Connectivity by other menas
+
+### BI Tools
+
+Using the SQL Connection string, any 3rd party tool that can authenticate using ODBC or the latest MSSQL Drivers and Azure AD Authentication can connect to a Warehouse. 
+
+### Custom Applications
+
+Because Synapse Datawarehouse and Lakehouse SQL Endpoints in Fabric provide an SQL Connection string, data is accessible from a vast ecosystem of SQL tooling, provided they can authenticate using AAD. See here for more information: [Connection libraries for Microsoft SQL Database](https://learn.microsoft.com/en-us/sql/connect/sql-connection-libraries?view=sql-server-ver16#drivers-for-relational-access)
     
 ## Considerations and limitations
 
+- SQL Authentiation is not supported
 - Multiple Active Result Sets (MARS) is unsupported for Fabric Warehouse. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
 - On connection to a warehouse, you may receive an error that "The token size exceeded the maximum allowed payload size".  This may be due to having a large number of warehouses within the workspace or being a member of a large number of Azure AD groups. For most users, the error typically would not occur until approaching beyond 80 warehouses in the workspace. In event of this error, please work with the Workspace admin to clean up unused Warehouses and retry the connection, or contact support if the problem persists.
 
