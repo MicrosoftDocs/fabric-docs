@@ -7,7 +7,7 @@ items:
     href: security-overview.md
 - name: Security features
   items:
-  - name: Business to business
+  - name: Guest user sharing
     href: security-b2b.md
   - name: Conditional access
     href: security-conditional-access.md
