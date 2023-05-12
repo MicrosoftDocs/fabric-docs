@@ -10,9 +10,43 @@ ms.custom: template-how-to
 
 # Move Dataflow Gen1 to Dataflow Gen2
 
-Dataflow Gen2 is the new generation of dataflows. However, many existing dataflows have been created over the years using Dataflow Gen1. This article describes how you can reuse your older Dataflow Gen1 dataflows by copying the Gen1 queries and pasting them into a new Dataflow Gen2. It also includes information on how to import Dataflow Gen1 dataflows into Dataflow Gen2 using the Export Template feature.
+Dataflow Gen2 is the new generation of dataflows. However, many existing dataflows have been created over the years using Dataflow Gen1. This article describes how you can reuse your older Dataflow Gen1 dataflows by importing Dataflow Gen1 dataflows into Dataflow Gen2 using the export template feature. It also includes information on how to copy the Gen1 queries and paste them into a new Dataflow Gen2.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+
+## Use the export template feature
+
+To use the export template feature:
+
+1. From your Power BI or Data Factory workspace, select the ellipsis next to an existing Dataflow Gen1 and then select **Edit**.
+
+   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/edit-dataflow.png" alt-text="Screenshot showing the workspace, with the dataflow menu open and edit emphasized." lightbox="./media/move-dataflow-gen1-to-dataflow-gen2/edit-dataflow.png":::
+
+1. In the **Home** tab of the Power Query editor, select **Export template**.
+
+   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/export-template.png" alt-text="Screenshot showing the Power Query editor, with the Export template option emphasized." lightbox="./media/move-dataflow-gen1-to-dataflow-gen2/export-template.png":::
+
+1. In **Export template**, enter the name you want to call this template in **Name**. Optionally, you can add a description for this template in **Description**.
+
+   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/export-template-information.png" alt-text="Screenshot showing the Export template dialog box, with Contoso Sample 48 entered in Name.":::
+
+1. Select **OK** to save the template. The template is saved in your default Downloads folder.
+
+1. From your Data Factory workspace, select **New**, and then select **Dataflow Gen2 (Preview)**.
+
+   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/new-dataflow-gen2.png" alt-text="Screenshot with the New menu opened with Dataflow Gen2 (Preview) emphasized.":::
+
+1. From the current view pane of the Power Query editor, select **Import from a Power Query template**.
+
+   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/import-from-power-query-template.png" alt-text="Screenshot showing the current view with Import from a Power Query template emphasized." lightbox="./media/move-dataflow-gen1-to-dataflow-gen2/import-from-power-query-template.png":::
+
+1. In the **Open** dialog box, browse to your default Downloads folder and select the .pqt file you saved in the previous steps. The select **Open**.
+
+1. The template is then imported to your Dataflow Gen2. You might be required to enter your credentials at this time. If so, select **Configure connection** and enter your credentials. Then select **Connect**.
+
+   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/configure-your-connection.png" alt-text="Screenshot showing the Power Query editor with Configure connection emphasized." lightbox="./media/move-dataflow-gen1-to-dataflow-gen2/configure-your-connection.png":::
+
+Your Dataflow Gen1 has now been imported to Dataflow Gen2.
 
 ## Copy and paste existing Dataflow Gen1 queries
 
@@ -47,40 +81,6 @@ To copy existing Dataflow Gen1 queries:
 1. Once you've connected to your data, right-click the initial blank query, and then select **Delete** to remove the empty query.
 
    :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/clean-up-query.png" alt-text="Screenshot showing the blank query selected, with emphasis on the delete option in the query's menu.":::
-
-## Use the export template feature
-
-To use the export template feature:
-
-1. From your Power BI or Data Factory workspace, select the ellipsis next to an existing Dataflow Gen1 and then select **Edit**.
-
-   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/edit-dataflow.png" alt-text="Screenshot showing the workspace, with the dataflow menu open and edit emphasized." lightbox="./media/move-dataflow-gen1-to-dataflow-gen2/edit-dataflow.png":::
-
-1. In the **Home** tab of the Power Query editor, select **Export template**.
-
-   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/export-template.png" alt-text="Screenshot showing the Power Query editor, with the Export template option emphasized." lightbox="./media/move-dataflow-gen1-to-dataflow-gen2/export-template.png":::
-
-1. In **Export template**, enter the name you want to call this template in **Name**. Optionally, you can add a description for this template in **Description**.
-
-   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/export-template-information.png" alt-text="Screenshot showing the Export template dialog box, with Contoso Sample 48 entered in Name.":::
-
-1. Select **OK** to save the template. The template is saved in your default Downloads folder.
-
-1. From your Data Factory workspace, select **New**, and then select **Dataflow Gen2 (Preview)**.
-
-   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/new-dataflow-gen2.png" alt-text="Screenshot with the New menu opened with Dataflow Gen2 (Preview) emphasized.":::
-
-1. From the current view pane of the Power Query editor, select **Import from a Power Query template**.
-
-   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/import-from-power-query-template.png" alt-text="Screenshot showing the current view with Import from a Power Query template emphasized." lightbox="./media/move-dataflow-gen1-to-dataflow-gen2/import-from-power-query-template.png":::
-
-1. In the **Open** dialog box, browse to your default Downloads folder and select the .pqt file you saved in the previous steps. The select **Open**.
-
-1. The template is then imported to your Dataflow Gen2. You might be required to enter your credentials at this time. If so, select **Configure connection** and enter your credentials. The select **Connect**.
-
-   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/configure-your-connection.png" alt-text="Screenshot showing the Power Query editor with Configure connection emphasized." lightbox="./media/move-dataflow-gen1-to-dataflow-gen2/configure-your-connection.png":::
-
-Your Dataflow Gen1 has now been imported to Dataflow Gen2.
 
 ## Next steps
 
