@@ -173,7 +173,7 @@ productDirectory:
           text: Buy a Microsoft Fabric subscription     
         - url: admin/microsoft-fabric-admin.md
           text: Fabric administration
-        - url: governance/metadata-scanning-overview.md
+        - url: governance/governance-compliance-overview.md
           text: Data governance and compliance
         - url: security/security-overview.md
           text: Security
