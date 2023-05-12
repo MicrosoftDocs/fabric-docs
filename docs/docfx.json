@@ -44,7 +44,10 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "breadcrumb_path": "/fabric/breadcrumb/toc.json",
+      "breadcrumb_path": {
+        "fabric/**/*.md": "/fabric/breadcrumb/toc.json",
+        "fabric/data-engineering/**/*.md": "/fabric/data-engineering/breadcrumb/toc.json"
+      },
       "uhfHeaderId": "MSDocsHeader-Fabric",
       "feedback_system": "None",
       "ms.service": "azure",
