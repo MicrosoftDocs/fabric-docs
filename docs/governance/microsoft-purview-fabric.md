@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # Use Microsoft Purview to govern Microsoft Fabric
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Microsoft Purview and Microsoft Fabric are part of the Microsoft Intelligent data platform that allows you to store, analyze, and govern your data. With Microsoft Fabric and Microsoft Purview together you're able to govern your entire estate and lineage of data. From data source down to the Power BI report, Microsoft Purview and Fabric work together seamlessly so you can store, analyze, and govern your data without piecing together services from multiple vendors.
 
 ## What is Microsoft Purview?
