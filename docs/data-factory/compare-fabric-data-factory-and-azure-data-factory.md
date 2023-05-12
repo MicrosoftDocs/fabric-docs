@@ -86,5 +86,4 @@ Save as in Fabric pipeline provides a convenient way for you to duplicate an exi
 ## Next steps
 
 - [Differences between Dataflow Gen1 Gen2](dataflows-gen2-overview.md)
-- [Known issues and limitations](data-factory-known-issues-limitations.md)
 - [Build your first data integration](transform-data.md)
