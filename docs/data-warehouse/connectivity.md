@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ---
-# Connectivity to Warehouses in Fabric
+# Connectivity to warehouses in Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -22,7 +22,7 @@ To get started, you must complete the following prerequisites:
 
 - You need access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) or a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](../data-warehouse/data-warehousing.md) within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or above permissions.
 
-## Authentication to Warehouses in Fabric
+## Authentication to warehouses in Fabric
 
 In Fabric, 2 types of authenticated users are supported through the SQL connection string:
 1.	AAD User principals, or user identities
@@ -122,7 +122,7 @@ We support connectivity to the Warehouse or SQL Endpoint using ODBC. Make sure y
 ## DBT Connectivity - Trident Data Warehouse
 
 - Users typically use DBT adapters to connect DBT projects to a target datastore. DBT adapters are built specifically for each data source. Users who would like to connect to Trident Data Warehouse from DBT project must use dbt-synapsevnext DBT adapter. Similarly, Synapse dedicated SQL pool data source has its own adapter (dbt-synapse).
-- DBT Trident DW Adapter uses pyodbc library to establish connectivity with Trident Data Warehouse. PYODBC is an ODBC implementation in Python language that uses Python Database API Specification v2.0.  https://peps.python.org/pep-0249/.  PYODBC directly passes connection string to the database driver through SQLDriverConnect in msodbc connection structure to Trident Data Warehouse using TDS (Tabular Data Streaming) proxy service.
+- DBT Trident DW Adapter uses pyodbc library to establish connectivity with Trident Data Warehouse. PYODBC is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/).  PYODBC directly passes connection string to the database driver through SQLDriverConnect in msodbc connection structure to Trident Data Warehouse using TDS (Tabular Data Streaming) proxy service.
 - Trident DBT Adapter supports AAD based authentication and allows developers to use az cli authentication using dbt-synapsevnext adapter. FYI, SQL Authentication is not supported.
 
 ## Connectivity by other menas
