@@ -11,7 +11,7 @@ ms.date: 5/12/2023
 
 # Microsoft Fabric decision guide: data warehouse or lakehouse
 
-Use this quick reference table and these short scenarios to help choose whether to use a data warehouse or a lakehouse for your data in Fabric.
+Use this reference guide and the example scenarios to help you choose between the data warehouse or a lakehouse for your workloads using Microsoft Fabric.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -43,7 +43,7 @@ Susan, a professional developer, is new to Microsoft Fabric. She's ready to get 
 
 Susan has spent many years building data warehouses on relational database engines, and is very familiar with SQL syntax and functionality. As she thinks about her larger team, she realizes the primary consumers of this data are also highly skilled with SQL and SQL analytical tools. Susan decides to use a **data warehouse**, which allows her and her team to interact primarily with T-SQL, while also allowing any Spark users in the organization to access the data.
 
-### Scenario two
+### Scenario2
 
 Rob, a data engineer, needs to store and model several terabytes of data in Fabric. His team has a mix of PySpark and T-SQL skills. Most of the team running T-SQL queries are consumers and therefore don't need to write INSERT, UPDATE, or DELETE statements. The remaining developers are comfortable working in notebooks, and because the data is stored in Delta, they're able to interact with a similar SQL syntax. Rob decides to use a **lakehouse**, which allows his data engineering team to use their diverse skills against the data, while allowing the team members who are highly skilled in T-SQL to consume the data.
 
