@@ -40,10 +40,16 @@ To enable Microsoft Fabric, you need to have one of the following admin roles:
 
 ## Enable for your tenant
 
-When you enable Microsoft Fabric using the tenant setting, users can create Fabric items in that [tenant](../enterprise/licenses.md#tenant). In most cases your organization has one tenant, so enabling Microsoft Fabric on the tenant, enables it for the entire organization. In organizations that have several tenants, if you want to enable Microsoft Fabric for the entire organization, you need to enable it in each tenant. Depending on the configuration you select, Microsoft Fabric becomes available for everyone in the tenant, or to a selected group of users.
+When you enable Microsoft Fabric using the tenant setting, users can create Fabric items in that [tenant](../enterprise/licenses.md#tenant). Depending on the configuration you select, Microsoft Fabric becomes available for everyone in the tenant, or to a selected group of users.
 
 >[!Note]
 >You, or other admins, can override the the Microsoft Fabric setting at the [capacity level](#enable-for-a-capacity).
+
+In your tenant, you can enable Microsoft Fabric for:
+
+* **The entire organization** - In most cases your organization has one tenant, so selecting this option enables it for the entire organization. In organizations that have several tenants, if you want to enable Microsoft Fabric for the entire organization, you need to enable it in each tenant.
+
+* **Specific security groups** - Use this option to enable Microsoft Fabric for specific users. You can either specify the security groups that Microsoft Fabric will be enabled for, or the security groups that Microsoft Fabric won't be available for.
 
 Follow these steps to enable Microsoft Fabric for your tenant.
 
@@ -51,7 +57,7 @@ Follow these steps to enable Microsoft Fabric for your tenant.
 
    :::image type="content" source="media/fabric-switch/fabric-switch.png" alt-text="Screenshot of the Microsoft Fabric tenant setting in the admin portal.":::
 
-2. Uncheck the **Accept Microsoft's default selection (Off for the entire organization)** checkbox.
+2. Uncheck the **Accept Microsoft's default selection (Off for the entire organization)** checkbox. You only need to uncheck the Microsoft's default selection when you enable the Microsoft Fabric setting for the first time.
 
    :::image type="content" source="media/fabric-switch/fabric-switch-accept.png" alt-text="Screenshot of the Microsoft Fabric tenant setting with the accept Microsoft's default selection checkbox unchecked.":::
 
