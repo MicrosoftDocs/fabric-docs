@@ -7,14 +7,12 @@ ms.topic: concept
 ms.date: 05/23/2023
 ---
 
-# Business to business
+# Guest user sharing
 
-How does [!INCLUDE [product-name](../includes/product-name.md)] business to business work?
+Sharing items with guest users in Fabric is similar to sharing items wth guest users in Power BI, with the exception that in Fabric, you can only share items by sharing the workspace. Explicit sharing of particular items with guest users is not supported, except in the case of reports, dashboards, datasets, and apps.
 
-## How it works?
-
-Explain how business to business works in [!INCLUDE [product-name](../includes/product-name.md)].
+For more information about Guest user sharing in Power BI, see [Distribute Power BI content to external guest users with Azure AD B2B](/power-bi/enterprise/service-admin-azure-ad-b2b)/
 
 ## Next steps
 
-[Service tags](security-service-tags.md)
+* [Distribute Power BI content to external guest users with Azure AD B2B](/power-bi/enterprise/service-admin-azure-ad-b2b)/
