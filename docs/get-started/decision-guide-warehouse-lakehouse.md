@@ -5,7 +5,6 @@ ms.reviewer: sngun
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: quickstart
-ms.search.form: product-trident
 ms.date: 5/12/2023
 ---
 
@@ -37,7 +36,7 @@ Use this reference guide and the example scenarios to help you choose between th
 
 Review these scenarios for help with choosing between using a lakehouse or a data warehouse in Fabric.
 
-### Scenario one
+### Scenario1
 
 Susan, a professional developer, is new to Microsoft Fabric. She's ready to get started cleaning, modeling, and analyzing data but needs to decide if she should build a data warehouse or a lakehouse. She reviews the details in the previous table and sees that her primary decision points are her own skills and her need for multi-table transactions.
 

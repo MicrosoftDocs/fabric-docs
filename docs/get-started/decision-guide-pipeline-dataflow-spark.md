@@ -5,7 +5,6 @@ ms.reviewer: sngun
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: quickstart
-ms.search.form: product-trident
 ms.date: 5/12/2023
 ---
 
