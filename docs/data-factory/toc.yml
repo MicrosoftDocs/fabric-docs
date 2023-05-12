@@ -255,6 +255,4 @@
       href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Differences in Dataflows Gen1 and Gen2
       href: dataflows-gen2-overview.md
-    - name: Known issues and limitations
-      href: data-factory-known-issues-limitations.md
      
