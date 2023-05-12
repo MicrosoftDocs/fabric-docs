@@ -247,6 +247,8 @@
         href: dataflows-gen2-save-draft.md
       - name: How to obfuscate data
         href: data-obfuscation-with-delphix.md
+      - name: Move queries from Dataflow Gen1 to Dataflow Gen2
+        href: move-dataflow-gen1-to-dataflow-gen2.md
     - name: Tutorials
       items:  
       - name: Use a dataflow in a pipeline
