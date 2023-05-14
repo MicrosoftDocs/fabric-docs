@@ -147,118 +147,101 @@ Select **Undo**.
 
 ## Deployment pipelines
 
-Why can't I see the deployment pipelines button?
-        answer: |
-          If the following conditions aren't met, you won't be able to see the deployment pipelines button.
-          
-          * You have a [Fabric license](../enterprise/licenses.md).
-          
-          * You're an admin of a [workspace](../get-started/create-workspaces.md). 
-          
-      - question: |
-          I can't see the pipeline stage tag in my workspace.
-        answer: |
-          Deployment pipelines display a pipeline stage tag in workspaces that are assigned to a pipeline. To see these tags, you need to be a [pipeline admin](deployment-pipelines/understand-the-deployment-process.md#permissions). Tags for the *Development* and *Test* stages are always visible. However, you only see the *Production* tag if you have [access to the pipeline](deployment-pipelines/understand-the-deployment-process.md#permissions).
-          
-          > [!div class="mx-imgBorder"]
-          > ![A screenshot of the production tag in a production pipeline workspace.](media/troubleshoot-cicd/production-tag.png)
+### Why can't I see the deployment pipelines button?
 
-      - question: |
-          What are some general deployment limitations to keep in mind:
-        answer: |
-          These are some important considerations to keep in mind:
-          
-          * [Deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations)
-          * [Supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules)
-          * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
-          * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)
+If the following conditions aren't met, you won't be able to see the deployment pipelines button.
 
-      - question: |
-          Lost connections after deployment.
-        answer: |
-          **Description of problem**: In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item.
-          **Solution**: To reestablish these connections, unassign and reassign the same workspace in the target stage.
+* You have a [Fabric license](../enterprise/licenses.md).
 
-      - question: |
-          I can't assign a workspace.
-        answer: |
-          **Description of problem**: When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace, and the **Can't assign the workspace** error message appears. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there is more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages.
-          **Solution**: To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in Fabric. 
-          
-          :::image type="content" source="media/troubleshoot-cicd/cannot-assign-error.png" alt-text="A screenshot of the Can't assign the workspace error message in deployment pipelines.":::
+* You're an admin of a [workspace](../get-started/create-workspaces.md). 
 
-      - question: |
-          I see the 'different' symbol after I assigned a workspace with datasets that are similar to the datasets in adjacent stages.
-        answer: |
-          **Description of problem**: Most datasets use the [enhanced dataset metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata.md) feature, also known as *model v3*. However, older reports might be using the old type of dataset metadata, sometimes referred to as *model v1*. If you're assigning a workspace that uses the old dataset metadata model (v1), deployment pipelines can't evaluate whether the dataset is similar in adjacent stages. In such cases, the *different* UI symbol is displayed, even when the datasets are identical. 
-          **Solution**: To resolve this issue, deploy the datasets that are showing the *different* symbol.   
+### I can't see the pipeline stage tag in my workspace
 
-      - question: |
-          I can't see all my workspaces when I try to assign a workspace to a pipeline.
-        answer: |
-          **Solution**: To assign a workspace to a pipeline, the following conditions must be met:
+Deployment pipelines display a pipeline stage tag in workspaces that are assigned to a pipeline. To see these tags, you need to be a [pipeline admin](deployment-pipelines/understand-the-deployment-process.md#permissions). Tags for the *Development* and *Test* stages are always visible. However, you only see the *Production* tag if you have [access to the pipeline](deployment-pipelines/understand-the-deployment-process.md#permissions).
           
-          * You're an admin of the workspace
-          
-          * The workspace isn't assigned to any other pipeline
-          
-          * The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus)
-          
-          Workspaces that don't meet these conditions, aren't displayed in the list of workspaces you can select from.
-          
-      - question: |
-          My first deployment failed.
-        answer: |
-          Your first deployment may have failed for any of several reasons.  
-          **Solution**: Some possible reasons for failure with their solutions are listed in the following table.
-          
-          |Error  |Action  |
-          |---------|---------|
-          |You don't have [capacity permissions](deployment-pipelines/understand-the-deployment-process.md#create-a-workspace).     |If you work in an organization that has a Fabric capacity, ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. After the workspace is in a capacity, redeploy.</br></br>If you don't work in an organization with a Fabric capacity, consider purchasing [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).        |
-          |You don't have workspace permissions.     |To deploy, you need to be a workspace member. Ask your workspace admin to grant you the appropriate permissions.         |
-          |Your Fabric admin disabled the creation of workspaces.     |Contact your Fabric admin for support.         |
-          |You're using [selective deployment](deployment-pipelines/deploy-content.md#selective-deployment) and aren't selecting all the linked items.     |Do one of the following: </br></br>Unselect the content that is linked to your dataset or dataflow. Your unselected content (such as datasets, reports or dashboards) won't be copied to the next stage. </br></br>Select the dataset or the dataflow that's linked to the selected items. Your selected items will be copied to the next stage.         |
-          
-      - question: |
-          I have 'unsupported artifacts' in my workspace when I'm trying to deploy.
-        answer: |
-          **Solution**: For a comprehensive list of items that aren't supported in deployment pipelines, see the following sections:
-          
-          * [Unsupported items](deployment-pipelines/understand-the-deployment-process.md#unsupported-items)
-          
-          * [Item properties that aren't copied](deployment-pipelines/understand-the-deployment-process.md#item-properties-that-are-not-copied)
-          
-      - question: |
-          I want to change the data source in the pipeline stages.
-        answer: |
-          **Solution**: You can’t change the data source connection in Power BI service.
-          
-          If you want to change the data source in the test or production stages, you can use [deployment rules](deployment-pipelines/create-rules.md) or [APIs](/rest/api/power-bi/datasets/updateparametersingroup). Deployment rules will only come into effect after the next deployment.
-          
-      - question: |
-          I fixed a bug in production, but now the 'deploy to previous stage' button is grayed out.
-        answer: |
-          **Description of problem**: You can only deploy backwards to an empty stage. If you have content in the test stage, you can't deploy backwards from production.
-          
-          **Solution**: After creating the pipeline, use the development stage to develop your content, and the test stages to review and test it. You can fix bugs in these stages, and then deploy the fixed environment to the production stage.
-          
-          >[!NOTE]
-          >Backwards deployment only supports [full deployment](deployment-pipelines/deploy-content.md#deploy-all-content). It doesn't support [selective deployment](deployment-pipelines/deploy-content.md#selective-deployment)
-          
-      - question: |
-          Error message: 'continue the deployment'.
-        answer: |
-          **Description of problem**: Source stage schema breaking changes, such as replacing a column type from an integer to a string, cause data loss in the target dataset after deployment.
-          
-          During deployment, the metadata in the source dataset is checked against the target metadata. Schema breaking changes cause the deployment to stop. When this happens, you receive the *continue the deployment* message.
-          
-          :::image type="content" source="media/troubleshoot-cicd/deployment-was-stopped-error.png" alt-text="A screenshot of the continue the deployment message in deployment pipelines.":::
-          
-          **Solution**: If you continue with the deployment, you lose the data in the target stage. You can use this option if the changes you made to the dataset were intentional. After the deployment completes, you'll need to refresh the target dataset.
-          
-          If the changes weren't intentional, close the message window, upload a fixed *.pbix* file to the source workspace and redeploy.
-          
-          After a deployment fails due to schema changes, the target stage displays the *Deployment failed* message, followed by the *Show details* link. The link opens the same *continue the deployment* message that was displayed during the failed deployment.
+> [!div class="mx-imgBorder"]
+> ![A screenshot of the production tag in a production pipeline workspace.](media/troubleshoot-cicd/production-tag.png)
+
+### Lost connections after deployment
+
+**Description of problem**: In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item.  
+**Solution**: To reestablish these connections, unassign and reassign the same workspace in the target stage.
+
+### I can't assign a workspace to a stage
+
+**Cause**: When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace, and the **Can't assign the workspace** error message appears. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there is more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages.  
+**Solution**: To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in Fabric. 
+
+:::image type="content" source="media/troubleshoot-cicd/cannot-assign-error.png" alt-text="A screenshot of the Can't assign the workspace error message in deployment pipelines.":::
+
+### I see the 'different' symbol after I assigned a workspace with datasets that are similar to the datasets in adjacent stages
+
+**Cause**: Most datasets use the [enhanced dataset metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata.md) feature, also known as *model v3*. However, older reports might be using the old type of dataset metadata, sometimes referred to as *model v1*. If you're assigning a workspace that uses the old dataset metadata model (v1), deployment pipelines can't evaluate whether the dataset is similar in adjacent stages. In such cases, the *different* UI symbol is displayed, even when the datasets are identical.  
+**Solution**: To resolve this issue, deploy the datasets that are showing the *different* symbol.
+
+### I can't see all my workspaces when I try to assign a workspace to a pipeline
+
+**Cause**: There can be several reasons why you can't see a workspace in the list of workspaces you can assign to a pipeline.
+
+**Solution**: To assign a workspace to a pipeline, the following conditions must be met:
+
+* You're an admin of the workspace
+
+* The workspace isn't assigned to any other pipeline
+
+* The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus)
+
+Workspaces that don't meet these conditions, aren't displayed in the list of workspaces you can select from.
+
+### My first deployment failed.
+
+**Cause**: Your first deployment may have failed for any of several reasons.  
+**Solution**: Some possible reasons for failure with their solutions are listed in the following table.
+
+|Error  |Action  |
+|---------|---------|
+|You don't have [capacity permissions](deployment-pipelines/understand-the-deployment-process.md#create-a-workspace).     |If you work in an organization that has a Fabric capacity, ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. After the workspace is in a capacity, redeploy.</br></br>If you don't work in an organization with a Fabric capacity, consider purchasing [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).        |
+|You don't have workspace permissions.     |To deploy, you need to be a workspace member. Ask your workspace admin to grant you the appropriate permissions.         |
+|Your Fabric admin disabled the creation of workspaces.     |Contact your Fabric admin for support.         |
+|You're using [selective deployment](deployment-pipelines/deploy-content.md#selective-deployment) and aren't selecting all the linked items.     |Do one of the following: </br></br>Unselect the content that is linked to your dataset or dataflow. Your unselected content (such as datasets, reports or dashboards) won't be copied to the next stage. </br></br>Select the dataset or the dataflow that's linked to the selected items. Your selected items will be copied to the next stage.         |
+
+### I have 'unsupported artifacts' in my workspace when I'm trying to deploy
+
+**Cause**: Deployment pipelines doesn't support all artifacts.  
+**Solution**: For a comprehensive list of items that aren't supported in deployment pipelines, see the following sections:
+
+* [Unsupported items](deployment-pipelines/understand-the-deployment-process.md#unsupported-items)
+
+* [Item properties that aren't copied](deployment-pipelines/understand-the-deployment-process.md#item-properties-that-are-not-copied)
+
+### I want to change the data source in the pipeline stages.
+
+**Cause**: You can’t change the data source connection in Power BI service.
+
+**Solution**: If you want to change the data source in the test or production stages, you can use [deployment rules](deployment-pipelines/create-rules.md) or [APIs](/rest/api/power-bi/datasets/updateparametersingroup). Deployment rules will only come into effect after the next deployment.
+
+### I fixed a bug in production, but now the 'deploy to previous stage' button is grayed out.
+
+**Cause**: You can only deploy backwards to an empty stage. If you have content in the test stage, you can't deploy backwards from production.
+
+**Solution**: After creating the pipeline, use the development stage to develop your content, and the test stages to review and test it. You can fix bugs in these stages, and then deploy the fixed environment to the production stage.
+
+>[!NOTE]
+>Backwards deployment only supports [full deployment](deployment-pipelines/deploy-content.md#deploy-all-content). It doesn't support [selective deployment](deployment-pipelines/deploy-content.md#selective-deployment)
+
+### Error message: 'continue the deployment'
+
+**Cause**: Source stage schema breaking changes, such as replacing a column type from an integer to a string, cause data loss in the target dataset after deployment.
+
+During deployment, the metadata in the source dataset is checked against the target metadata. Schema breaking changes cause the deployment to stop. When this happens, you receive the *continue the deployment* message.
+
+:::image type="content" source="media/troubleshoot-cicd/deployment-was-stopped-error.png" alt-text="A screenshot of the continue the deployment message in deployment pipelines.":::
+
+**Solution**: If you continue with the deployment, you lose the data in the target stage. You can use this option if the changes you made to the dataset were intentional. After the deployment completes, you'll need to refresh the target dataset.
+
+If the changes weren't intentional, close the message window, upload a fixed *.pbix* file to the source workspace and redeploy.
+
+After a deployment fails due to schema changes, the target stage displays the *Deployment failed* message, followed by the *Show details* link. The link opens the same *continue the deployment* message that was displayed during the failed deployment.
 
       - question: |
           Error message: 'can't start the deployment'.
@@ -522,26 +505,23 @@ Why can't I see the deployment pipelines button?
         answer: |
           **Description of problem**: When constructing a dataset using Power BI Desktop, the connection string can be configured. Later, the dataset can be published and used by deployment pipelines in Power BI service. When creating the connection in Power BI Desktop, you can specify additional parameters. When specifying the parameters, the dataset source must be the first parameter listed. If you list any other parameters before the dataset source, you run into errors in Power BI service. In such cases, when configuring a new dataset rule, if you point to a dataset that wasn't configured properly in Power BI Desktop, deployment pipelines can't create the rule.
 
-          **Solution**: Format the dataset connection in Power BI Desktop so that the dataset source appears in the first row. Then, republish the dataset.         
+          **Solution**: Format the dataset connection in Power BI Desktop so that the dataset source appears in the first row. Then, republish the dataset.
 
-      - question: |
-          Troubleshooting errors
-        answer: |
-          Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-rules.md) you created. If you don't see a rule error message name, review the [deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations) and the [supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules), and try to reconfigure the rule.
-    
-          |Error message |Solution |
-          |--------------|---------|
-          |Data source rule can't contain a parameter |Your rule can't be applied because the server name or database name referenced in the rule is controlled by a parameter. To change the server or database name, use a parameter rule or remove the controlling parameter from configured item. |
-          |Data source execution failure |A rule can't be applied due to a problem retrieving data from the data source. Remove the rule and make sure the dataset has valid queries. Then try creating the rule again. | 
-          |Rule property no longer exists |Some of the rule properties configured in the rule no longer exist. Refresh the page and configure the rule again.  |
-          |Illegal value |A value used in the configured rule isn't valid. Validate the rule's values and try configuring the rule again. |
-          |Multiple data sources aren't supported |A dataset rule can't be applied due to its data source configuration. Either remove the rule, or rewrite the dataset queries using standard Power BI Desktop tools. |
-          |Target dataset can only be changed by its owner |Your rule will overwrite some datasets in the destination workspace. You must be the owner of any datasets that will be overwritten. |  
+## Troubleshooting errors
 
-additionalContent: |
+Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-rules.md) you created. If you don't see a rule error message name, review the [deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations) and the [supported data sources for dataflow and dataset rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-dataset-rules), and try to reconfigure the rule.
 
-  ## Next steps
+|Error message |Solution |
+|--------------|---------|
+|Data source rule can't contain a parameter |Your rule can't be applied because the server name or database name referenced in the rule is controlled by a parameter. To change the server or database name, use a parameter rule or remove the controlling parameter from configured item. |
+|Data source execution failure |A rule can't be applied due to a problem retrieving data from the data source. Remove the rule and make sure the dataset has valid queries. Then try creating the rule again. | 
+|Rule property no longer exists |Some of the rule properties configured in the rule no longer exist. Refresh the page and configure the rule again.  |
+|Illegal value |A value used in the configured rule isn't valid. Validate the rule's values and try configuring the rule again. |
+|Multiple data sources aren't supported |A dataset rule can't be applied due to its data source configuration. Either remove the rule, or rewrite the dataset queries using standard Power BI Desktop tools. |
+|Target dataset can only be changed by its owner |Your rule will overwrite some datasets in the destination workspace. You must be the owner of any datasets that will be overwritten. |  
 
-  * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)
-  * [Assign a workspace to a pipeline stage](deployment-pipelines/assign-pipeline.md)
-  * [Deployment history](deployment-pipelines/deployment-history.md)
+## Next steps
+
+* [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)
+* [Assign a workspace to a pipeline stage](deployment-pipelines/assign-pipeline.md)
+* [Deployment history](deployment-pipelines/deployment-history.md)
