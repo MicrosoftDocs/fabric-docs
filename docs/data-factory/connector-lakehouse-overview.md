@@ -10,7 +10,7 @@ ms.custom: template-how-to
 
 # Lakehouse connector overview
 
-This Lakehouse connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Lakehouse connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -20,8 +20,7 @@ This Lakehouse connector is supported in Data Factory for [!INCLUDE [product-nam
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | User Auth |
 | **Delete activity** | None | User Auth |
-| **Dataflow Gen2 (source/destination)** |  | Placeholder |
 
 ## Next steps
 
-[How to configure Lakehouse in copy activity](connector-lakehouse-copy-activity.md)
+- [How to configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md)

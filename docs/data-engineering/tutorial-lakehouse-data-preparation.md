@@ -24,9 +24,9 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Download the notebooks from the [Lakehouse Tutorial Source Code](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/Lakehouse%20Tutorial%20Source%20Code) folder.
 
-1. From the workload switcher located at the bottom left of the screen, select **Data engineering**.
+1. From the experience switcher located at the bottom left of the screen, select **Data engineering**.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\workload-switcher-data-engineering.png" alt-text="Screenshot showing where to find the workload switcher and select Data Engineering.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\workload-switcher-data-engineering.png" alt-text="Screenshot showing where to find the experience switcher and select Data Engineering.":::
 
 1. Select **Import notebook** from the **New** section at the top of the landing page.
 
@@ -51,9 +51,8 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 1. In the open notebook in **Lakehouse explorer**, you see the notebook is already linked to your opened lakehouse.
 
    > [!NOTE]
-   > Fabric provides the [V-order](../placeholder.md) and [optimize write](../placeholder.md) capabilities for writing optimized delta lake files. V-order often improves compression by 3 to 4 times and up to 10 times performance acceleration over the Delta Lake files that aren't optimized. Spark in Fabric dynamically optimizes partitions while generating files with a default 128 MB size. The target file size may be changed per workload requirements using configurations
-   >
-   > - [Optimize write](/azure/synapse-analytics/spark/optimize-write-for-apache-spark) - Apache Spark performs most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and Spark's configurations play a critical role in performance. Ingestion workloads into Delta Lake tables may have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small files problem". To overcome this problem, Spark in Fabric includes an Optimize Write feature that reduces the number of files written and aims to increase individual file size of the written data.
+   > Fabric provides the [V-order](delta-optimization-and-v-order.md) capability to write optimized delta lake files. V-order often improves compression by 3 to 4 times and up to 10 times performance acceleration over the Delta Lake files that aren't optimized. Spark in Fabric dynamically optimizes partitions while generating files with a default 128 MB size. The target file size may be changed per workload requirements using configurations.
+   > With the [optimize write](delta-optimization-and-v-order.md#what-is-optimized-write) capability, the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data.
 
 1. Before you write data as delta lake tables in the **Tables** section of the lakehouse, you use two Fabric features (**V-order** and **Optimize Write**) for optimized data writing and for improved reading performance. To enable these features in your session, set these configurations in the first cell of your notebook.
 

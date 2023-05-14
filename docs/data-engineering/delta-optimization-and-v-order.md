@@ -11,9 +11,9 @@ ms.search.form: delta lake v-order optimization
 
 # Delta Lake table optimization and V-Order
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The [Lakehouse](lakehouse-overview.md) and the [Delta Lake](lakehouse-and-delta-tables.md) table format are central to [!INCLUDE [product-name](../includes/product-name.md)], assuring that tables are optimized for analytics is a key requirement. This guide covers Delta Lake table optimization concepts, configurations and how to apply it to most common Big Data usage patterns.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## What is V-Order?
 
@@ -219,7 +219,7 @@ DeltaTable.createOrReplace(spark)\
 
 Analytical workloads on Big Data processing engines such as Apache Spark perform most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and its configurations, play a critical role on performance. Ingestion workloads into data lake tables may have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small file problem".
 
-Optimize Write is a Delta Lake on [!INCLUDE [product-name](../includes/product-name.md)] and Azure Synapse Analytics feature in the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data. The target file size may be changed per workload requirements using configurations.
+Optimize Write is a Delta Lake on [!INCLUDE [product-name](../includes/product-name.md)] and Azure Synapse Analytics feature in the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data. The target file size may be changed per a workload requirements using configurations.
 
 The feature is __enabled by default__ in [!INCLUDE [product-name](../includes/product-name.md)] Runtime for Apache Spark. To learn more about Optimize Write usage scenarios, read the article [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark)
 

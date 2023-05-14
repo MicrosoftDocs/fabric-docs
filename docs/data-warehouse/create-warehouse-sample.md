@@ -1,6 +1,6 @@
 ---
-title: Create a Synapse Data Warehouse sample
-description: Learn how to create a sample Synapse Data Warehouse in Microsoft Fabric.
+title: Create a Warehouse sample
+description: Learn how to create a sample Warehouse in Microsoft Fabric.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
@@ -8,13 +8,13 @@ ms.date: 05/23/2023
 ms.topic: how-to
 ms.search.form: Create a warehouse
 ---
-# Create a sample Synapse Data Warehouse in Microsoft Fabric
+# Create a sample Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+This article describes how to get started with sample [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using the [!INCLUDE [product-name](../includes/product-name.md)] portal, including creation and consumption of the warehouse.
 
-This article describes how to get started with sample [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using the [!INCLUDE [product-name](../includes/product-name.md)] portal, including discovering creation and consumption of the warehouse.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to create a warehouse sample
 
@@ -40,7 +40,7 @@ In this section, we walk you through two distinct experiences available for crea
 
 ### Load sample data into existing warehouse
 
-For more information on how to create a warehouse, see [Create a Synapse Data Warehouse](create-warehouse.md).
+For more information on how to create a warehouse, see [Create a Warehouse](create-warehouse.md).
 
 1. Once you have created your warehouse, you can load sample data into warehouse from **Use sample database** card. 
 

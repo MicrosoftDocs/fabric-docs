@@ -27,11 +27,11 @@ There are a few ways you can get started with the creation process:
 
    - You can easily create a lakehouse through the **Lakehouse** card under the **New** section in the homepage.
 
-   :::image type="content" source="media\create-lakehouse\lakehouse-card.png" alt-text="Screenshot showing the lakehouse card." lightbox="media\create-lakehouse\lakehouse-card.png":::
+   :::image type="content" source="media\create-lakehouse\lakehouse-card.png" alt-text="Screenshot showing the lakehouse card.":::
 
 1. **Workspace** view
 
-   - You can also create a lakehouse through the workspace view when you are on the **Data Engineering** workload by using the **New** dropdown.
+   - You can also create a lakehouse through the workspace view when you are on the **Data Engineering** experience by using the **New** dropdown.
 
    :::image type="content" source="media\create-lakehouse\new-lakehouse-menu.png" alt-text="Screenshot showing the Lakehouse option in the New menu." lightbox="media\create-lakehouse\new-lakehouse-menu.png":::
 
@@ -39,7 +39,7 @@ There are a few ways you can get started with the creation process:
 
    - An entry point to create a lakehouse is available in the **Create Hub** page under **Data Engineering**.
 
-   :::image type="content" source="media\create-lakehouse\lakehouse-create-hub.png" alt-text="Screenshot showing the Lakehouse option in the Data Engineering Create Hub." lightbox="media\create-lakehouse\lakehouse-create-hub.png":::
+   :::image type="content" source="media\create-lakehouse\lakehouse-create-hub.png" alt-text="Screenshot showing the Lakehouse option in the Data Engineering Create Hub.":::
 
 ### Creating a lakehouse from the Data Engineering homepage
 
@@ -61,4 +61,3 @@ Now that you have successfully created your Lakehouse, learn more about:
 - Different ways to load data in Lakehouse, see [Get data experience for Lakehouse](navigate-lakehouse-explorer.md)
 
 - Exploring your lakehouse explorer, see [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md)
-

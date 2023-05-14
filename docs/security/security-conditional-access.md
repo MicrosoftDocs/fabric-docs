@@ -36,7 +36,8 @@ To configure conditional access for Fabric, follow the guidance provided in the 
 * If you create a restrictive policy (such as one that blocks access for all apps except Power BI), certain features, such as dataflows, won't work.
 
 > [!NOTE]
-> If you already have a conditional access policy configured for Power BI, be sure to include the other products listed in the table above in your existing Power BI policy, otherwise conditional access may not operate as intended in Fabric.
+>- If you already have a conditional access policy configured for Power BI, be sure to include the other products listed in the table above in your existing Power BI policy, otherwise conditional access may not operate as intended in Fabric.
+>- Conditional access is not supported by Eventstreams in Fabric.
 
 > [!NOTE]
 > When a conditional access policy targets the Microsoft Azure Management app, services or clients with an Azure API service dependency can be impacted. This includes Azure Data Factory, Azure PowerShell, and Azure CLI. Learn more about [Microsoft Azure Management](/azure/active-directory/conditional-access/concept-conditional-access-cloud-apps#microsoft-azure-management).

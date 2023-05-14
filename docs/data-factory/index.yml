@@ -32,12 +32,20 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Create your first gen2 dataflow
+          - text: Create your first dataflow
             url: create-first-dataflow-gen2.md
           - text: Create your first data pipeline
             url: create-first-pipeline-with-sample-data.md
           - text: Move and transform data
             url: transform-data.md
+      - linkListType: tutorial
+        links:
+          - text: Create an end-to-end data integration scenario
+            url: tutorial-end-to-end-introduction.md
+      - linkListType: learn
+        links:
+          - text: Data Factory training
+            url: /training/paths/get-started-fabric
   
   # Card 
   - title: Working with data pipelines
