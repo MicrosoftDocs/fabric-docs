@@ -61,4 +61,5 @@ Once the review and merge are complete, a new commit is created to the *main* br
 
 ## Next steps
 
-[Get started with git integration](./git-get-started.md)
+- [Get started with git integration](./git-get-started.md)
+- [Understand the git integration process](./git-integration-process.md)
