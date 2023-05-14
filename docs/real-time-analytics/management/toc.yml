@@ -2,42 +2,6 @@ items:
 - name: Control commands overview
   displayName: Management
   href: /azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric
-- name: Workload groups
-  items:
-  - name: Workload groups overview
-    href: /azure/data-explorer/kusto/management/workload-groups?context=/fabric/context/context&pivots=fabric
-  - name: Workload group commands
-    items:
-    - name: .alter-merge workload_group command
-      href: /azure/data-explorer/kusto/management/alter-merge-workload-group-command?context=/fabric/context/context&pivots=fabric
-    - name: .create-or-alter workload_group command
-      href: /azure/data-explorer/kusto/management/create-or-alter-workload-group-command?context=/fabric/context/context&pivots=fabric
-    - name: .drop workload_group command
-      href: /azure/data-explorer/kusto/management/drop-workload-group-command?context=/fabric/context/context&pivots=fabric
-    - name: .show workload_group(s) command
-      href: /azure/data-explorer/kusto/management/show-workload-group-command?context=/fabric/context/context&pivots=fabric
-  - name: Request classification policy
-    items:
-    - name: Request classification policy
-      href: /azure/data-explorer/kusto/management/request-classification-policy?context=/fabric/context/context&pivots=fabric
-    - name: .alter cluster policy request_classification command
-      href: /azure/data-explorer/kusto/management/alter-cluster-policy-request-classification-command?context=/fabric/context/context&pivots=fabric
-    - name: .alter-merge cluster policy request_classification command
-      href: /azure/data-explorer/kusto/management/alter-merge-cluster-policy-request-classification-command?context=/fabric/context/context&pivots=fabric
-    - name: .delete cluster policy request_classification command
-      href: /azure/data-explorer/kusto/management/delete-cluster-policy-request-classification-command?context=/fabric/context/context&pivots=fabric
-    - name: .show cluster policy request_classification command
-      href: /azure/data-explorer/kusto/management/show-cluster-policy-request-classification-command?context=/fabric/context/context&pivots=fabric
-  - name: Request limits policy
-    href: /azure/data-explorer/kusto/management/request-limits-policy?context=/fabric/context/context&pivots=fabric
-  - name: Request rate limit policy
-    href: /azure/data-explorer/kusto/management/request-rate-limit-policy?context=/fabric/context/context&pivots=fabric
-  - name: Request rate limits enforcement policy
-    href: /azure/data-explorer/kusto/management/request-rate-limits-enforcement-policy?context=/fabric/context/context&pivots=fabric
-  - name: Request queuing policy
-    href: /azure/data-explorer/kusto/management/request-queuing-policy?context=/fabric/context/context&pivots=fabric
-  - name: Query consistency policy
-    href: /azure/data-explorer/kusto/management/query-consistency-policy?context=/fabric/context/context&pivots=fabric
 - name: Schema
   items:
   - name: Best practices for schema management
@@ -282,28 +246,6 @@ items:
       href: /azure/data-explorer/kusto/management/show-materialized-view-cache-policy-command?context=/fabric/context/context&pivots=fabric
     - name: .show table cache policy command
       href: /azure/data-explorer/kusto/management/show-table-cache-policy-command?context=/fabric/context/context&pivots=fabric
-  - name: Callout
-    items:
-    - name: Callout policy
-      href: /azure/data-explorer/kusto/management/calloutpolicy?context=/fabric/context/context&pivots=fabric
-    - name: .alter cluster policy callout command
-      href: /azure/data-explorer/kusto/management/alter-callout-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .alter-merge cluster policy callout command
-      href: /azure/data-explorer/kusto/management/alter-merge-callout-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .delete cluster policy callout command
-      href: /azure/data-explorer/kusto/management/delete-callout-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .show cluster policy callout command
-      href: /azure/data-explorer/kusto/management/show-cluster-callout-policy-command?context=/fabric/context/context&pivots=fabric
-  - name: Capacity
-    items:
-    - name: Capacity policy
-      href: /azure/data-explorer/kusto/management/capacitypolicy?context=/fabric/context/context&pivots=fabric
-    - name: .alter capacity policy command
-      href: /azure/data-explorer/kusto/management/alter-capacity-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .alter-merge capacity policy command
-      href: /azure/data-explorer/kusto/management/alter-merge-capacity-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .show capacity policy command
-      href: /azure/data-explorer/kusto/management/show-cluster-capacity-policy-command?context=/fabric/context/context&pivots=fabric
   - name: Encoding policy
     items:
     - name: Encoding policy
@@ -338,18 +280,6 @@ items:
       href: /azure/data-explorer/kusto/management/delete-ingestion-time-policy-command?context=/fabric/context/context&pivots=fabric
     - name: .show ingestion time policy command
       href: /azure/data-explorer/kusto/management/show-table-ingestion-time-policy-command?context=/fabric/context/context&pivots=fabric
-  - name: ManagedIdentity
-    items:
-    - name: ManagedIdentity policy
-      href: /azure/data-explorer/kusto/management/managed-identity-policy?context=/fabric/context/context&pivots=fabric
-    - name: .alter managed identity policy command
-      href: /azure/data-explorer/kusto/management/alter-managed-identity-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .alter-merge managed identity policy command
-      href: /azure/data-explorer/kusto/management/alter-merge-managed-identity-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .delete managed identity policy command
-      href: /azure/data-explorer/kusto/management/delete-managed-identity-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .show managed identity policy command
-      href: /azure/data-explorer/kusto/management/show-managed-identity-policy-command?context=/fabric/context/context&pivots=fabric
   - name: Merge
     items:
     - name: Merge policy
@@ -468,60 +398,6 @@ items:
       href: /azure/data-explorer/kusto/management/delete-table-row-order-policy-command?context=/fabric/context/context&pivots=fabric
     - name: .show table row order policy command
       href: /azure/data-explorer/kusto/management/show-table-row-order-policy-command?context=/fabric/context/context&pivots=fabric
-  - name: Sandbox
-    items:
-    - name: Using sandboxes
-      href: /azure/data-explorer/kusto/management/../concepts/sandboxes?context=/fabric/context/context&pivots=fabric
-    - name: Using sandboxes in non-modern sku
-      href: /azure/data-explorer/kusto/management/../concepts/sandboxes-in-non-modern-skus?context=/fabric/context/context&pivots=fabric
-    - name: Sandbox policy
-      href: /azure/data-explorer/kusto/management/sandboxpolicy?context=/fabric/context/context&pivots=fabric
-    - name: .alter cluster sandbox policy command
-      href: /azure/data-explorer/kusto/management/alter-cluster-sandbox-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .delete cluster sandbox policy command
-      href: /azure/data-explorer/kusto/management/delete-cluster-sandbox-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .show cluster sandbox policy command
-      href: /azure/data-explorer/kusto/management/show-cluster-sandbox-policy-command?context=/fabric/context/context&pivots=fabric
-  - name: Sharding
-    items:
-    - name: Sharding policy
-      href: /azure/data-explorer/kusto/management/shardingpolicy?context=/fabric/context/context&pivots=fabric
-    - name: .alter database sharding policy command
-      href: /azure/data-explorer/kusto/management/alter-database-sharding-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .alter table sharding policy command
-      href: /azure/data-explorer/kusto/management/alter-table-sharding-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .alter-merge database sharding policy command
-      href: /azure/data-explorer/kusto/management/alter-merge-database-sharding-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .alter-merge table sharding policy command
-      href: /azure/data-explorer/kusto/management/alter-merge-table-sharding-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .delete database sharding policy command
-      href: /azure/data-explorer/kusto/management/delete-database-sharding-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .delete table sharding policy command
-      href: /azure/data-explorer/kusto/management/delete-table-sharding-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .show database sharding policy command
-      href: /azure/data-explorer/kusto/management/show-database-sharding-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .show table sharding policy command
-      href: /azure/data-explorer/kusto/management/show-table-sharding-policy-command?context=/fabric/context/context&pivots=fabric
-  - name: Streaming ingestion
-    items:
-    - name: Streaming ingestion policy
-      href: /azure/data-explorer/kusto/management/streamingingestionpolicy?context=/fabric/context/context&pivots=fabric
-    - name: .alter database streaming ingestion policy command
-      href: /azure/data-explorer/kusto/management/alter-database-streaming-ingestion-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .alter table streaming ingestion policy command
-      href: /azure/data-explorer/kusto/management/alter-table-streaming-ingestion-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .alter-merge database streaming ingestion policy command
-      href: /azure/data-explorer/kusto/management/alter-merge-database-streaming-ingestion-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .alter-merge table streaming ingestion policy command
-      href: /azure/data-explorer/kusto/management/alter-merge-table-streaming-ingestion-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .delete database streaming ingestion policy command
-      href: /azure/data-explorer/kusto/management/delete-database-streaming-ingestion-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .delete table streaming ingestion policy command
-      href: /azure/data-explorer/kusto/management/delete-table-streaming-ingestion-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .show database streaming ingestion policy command
-      href: /azure/data-explorer/kusto/management/show-database-streaming-ingestion-policy-command?context=/fabric/context/context&pivots=fabric
-    - name: .show table streaming ingestion policy command
-      href: /azure/data-explorer/kusto/management/show-table-streaming-ingestion-policy-command?context=/fabric/context/context&pivots=fabric
   - name: Update
     items:
     - name: Update policy
@@ -535,14 +411,6 @@ items:
       href: /azure/data-explorer/kusto/management/delete-table-update-policy-command?context=/fabric/context/context&pivots=fabric
     - name: .show table update policy command
       href: /azure/data-explorer/kusto/management/show-table-update-policy-command?context=/fabric/context/context&pivots=fabric
-  - name: Query weak consistency
-    items:
-    - name: Query weak consistency policy
-      href: /azure/data-explorer/kusto/management/query-weak-consistency-policy?context=/fabric/context/context&pivots=fabric
-    - name: .alter cluster policy query_weak_consistency
-      href: /azure/data-explorer/kusto/management/alter-query-weak-consistency-policy?context=/fabric/context/context&pivots=fabric
-    - name: .show cluster policy query_weak_consistency
-      href: /azure/data-explorer/kusto/management/show-query-weak-consistency-policy?context=/fabric/context/context&pivots=fabric
 - name: Security roles
   items:
   - name: Security roles overview
@@ -622,16 +490,6 @@ items:
       href: /azure/data-explorer/kusto/management/data-export/show-continuous-artifacts?context=/fabric/context/context&pivots=fabric
     - name: Show continuous export failures
       href: /azure/data-explorer/kusto/management/data-export/show-continuous-failures?context=/fabric/context/context&pivots=fabric
-- name: Database cursors
-  href: /azure/data-explorer/kusto/management/databasecursor?context=/fabric/context/context&pivots=fabric
-- name: Plugin commands
-  items:
-  - name: .show plugins
-    href: /azure/data-explorer/kusto/management/show-plugins?context=/fabric/context/context&pivots=fabric
-  - name: .enable plugin
-    href: /azure/data-explorer/kusto/management/enable-plugin?context=/fabric/context/context&pivots=fabric
-  - name: .disable plugin
-    href: /azure/data-explorer/kusto/management/disable-plugin?context=/fabric/context/context&pivots=fabric
 - name: Query results cache
   href: /azure/data-explorer/kusto/management/query-results-cache-commands?context=/fabric/context/context&pivots=fabric
   items:
@@ -641,11 +499,6 @@ items:
   - name: Clear cache
     displayName: clear query results cache
     href: /azure/data-explorer/kusto/management/clear-query-results-cache-command?context=/fabric/context/context&pivots=fabric
-- name: Cross-cluster schema
-  items:
-  - name: .clear cache remote-schema command
-    displayName: clear query schema cache
-    href: /azure/data-explorer/kusto/management/clear-cross-cluster-schema-cache?context=/fabric/context/context&pivots=fabric
 - name: System information
   href: /azure/data-explorer/kusto/management/systeminfo?context=/fabric/context/context&pivots=fabric
   items:
@@ -666,31 +519,3 @@ items:
     displayName: .show running queries .cancel query
   - name: Streaming ingestion statistics
     href: /azure/data-explorer/kusto/management/streamingingestionstatistics?context=/fabric/context/context&pivots=fabric
-- name: Advanced data management
-  items:
-  - name: Extents (data shards)
-    items:
-    - name: Extents overview
-      href: /azure/data-explorer/kusto/management/extents-overview?context=/fabric/context/context&pivots=fabric
-    - name: Extents commands
-      items:
-      - name: .alter extent
-        href: /azure/data-explorer/kusto/management/alter-extent?context=/fabric/context/context&pivots=fabric
-      - name: .drop extents
-        href: /azure/data-explorer/kusto/management/drop-extents?context=/fabric/context/context&pivots=fabric
-      - name: .drop extent tags
-        href: /azure/data-explorer/kusto/management/drop-extent-tags?context=/fabric/context/context&pivots=fabric
-      - name: .move extents
-        href: /azure/data-explorer/kusto/management/move-extents?context=/fabric/context/context&pivots=fabric
-      - name: .replace extents
-        href: /azure/data-explorer/kusto/management/replace-extents?context=/fabric/context/context&pivots=fabric
-      - name: .show extents
-        href: /azure/data-explorer/kusto/management/show-extents?context=/fabric/context/context&pivots=fabric
-  - name: Follower commands
-    displayName: Cluster commands, database commands, materialized view commands,
-      table commands
-    href: /azure/data-explorer/kusto/management/cluster-follower?context=/fabric/context/context&pivots=fabric
-  - name: Data purge
-    href: /azure/data-explorer/kusto/management/../concepts/data-purge?context=/fabric/context/context&pivots=fabric
-  - name: Data soft delete
-    href: /azure/data-explorer/kusto/management/../concepts/data-soft-delete?context=/fabric/context/context&pivots=fabric
