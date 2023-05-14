@@ -1,6 +1,6 @@
 ---
 title: Connect to Azure Cosmos DB for NoSQL in dataflows
-description: This article explains how to connect to Azure Cosmos DB for NoSQL in dataflows.
+description: This article details how to use the Data Factory Azure Cosmos DB for NoSQL connector in Microsoft Fabric to create an Azure Cosmos DB for NoSQL connection in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
@@ -17,4 +17,4 @@ The Azure Cosmos DB for NoSQL connector isn't currently supported in Dataflow Ge
 ## Next steps
 
 - [How to create an Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md)
-- [Copy data in Azure Cosmos DB for NoSQL](connector-azure-cosmosdb-for-nosql-copy-activity.md)
+- [How to configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md)

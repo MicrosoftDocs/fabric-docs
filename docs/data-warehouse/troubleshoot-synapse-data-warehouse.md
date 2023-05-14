@@ -1,6 +1,6 @@
 ---
-title: Troubleshoot Synapse Data Warehouse
-description: Troubleshoot common issues in using Synapse Data Warehouse in Microsoft Fabric.
+title: Troubleshoot the Warehouse
+description: Troubleshoot common issues in using Warehouse in Microsoft Fabric.
 author: xiaoyuMSFT
 ms.author: XiaoyuL
 ms.reviewer: wiassaf
@@ -8,13 +8,13 @@ ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
-# Troubleshoot Synapse Data Warehouse
+# Troubleshoot the Warehouse
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article provides guidance in troubleshooting common issues in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. 
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Transient connection errors
 

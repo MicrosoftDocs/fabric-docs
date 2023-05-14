@@ -1,56 +1,59 @@
 ---
 title: The Microsoft Purview Hub in Microsoft Fabric
 description: This article describes how to use the Microsoft Purview Hub in Microsoft Fabric to monitor and govern your Microsoft Fabric instance.
-ms.reviewer: viseshag
-ms.author: whhender
-author: whhender
+ms.reviewer: antonfr
+ms.author: painbar
+author: paulinbar
 ms.topic: how-to 
 ms.date: 3/31/2023
 ---
 
-# The Microsoft Purview Hub in Microsoft Fabric
+# The Microsoft Purview hub in Microsoft Fabric
 
-Introduction to the hub. What is it? Basics of navigating.  [Link to the Microsoft Purview and Microsoft Fabric page.](microsoft-purview-fabric.md)
+Microsoft Purview hub is your gateway to Microsoft Purview's powerful governance and compliance capabilities, such as Data Catalog, Information Protection, Data Loss Prevention, and Audit. With the deep integration of Purview in Fabric, you can discover how to use Purview's capabilities to get insights about your Fabric data. If you're an administrator, the hub also provides detailed insights about your tenant's entire Fabric data estate.
 
-## Your role in the hub
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
-Explanation of roles. [Maybe a link to roles documentation in Fabric](../placeholder.md).
+>[!NOTE]
+> Currently, you need a Power BI administrator role or higher to access the Purview hub you.
 
-### Admin view in the hub
+For more information about the Fabric/Purview integration, see [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md).
 
-Access to [Microsoft Purview Insights](#microsoft-purview-insights).
-Access to [reports](#reports).
-Access to [links](#other-links).
+## Accessing the hub
 
-### Data owner view in the hub
+To access the hub, open the Fabric settings pane and choose **Microsoft Purview hub (preview)**.
 
-Access to [Microsoft Purview Insights](#microsoft-purview-insights).
-Access to [reports](#reports).
-Access to [links](#other-links).
+:::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings.":::
 
-### Consumer role in the hub
+>[!NOTE]
+> Currently, only administrators have this option.
 
-Access to [reports](#reports).
-Access to [links](#other-links).
+## Get insights about your Microsoft Fabric data
 
-## Microsoft Purview insights
+Use the Microsoft Fabric data section of the hub to get insights about your Fabric data. It contains a report that helps you analyze the data.
 
-Description of available links with links listed here that point to the rest of the documentation with brief descriptions.
+* The items tab shows you insights about the state of item endorsement.
+* The sensitivity tab shows you insights about sensitivity labeling.
 
-- Data Catalog
-- Information Protection
-- Data Loss Prevention
-- Audit
+The visuals in the reports are interactive interoperable, and you can select items and drill down to get deeper insights into the endorsement and sensitivity label coverage of your data. For instance, you can filter on a workspace to see what items are in the workspace and how many of them are certified or promoted, or you can identify workspaces that have the greatest number of items with no sensitivity label so that you could reach out to the data owners and ask them to take action.
 
-## Reports
+## View the Purview hub insights report
 
-### More Insights
+The Purview hub insights report enables administrators to visualize and analyze the extent and distribution of endorsement and sensitivity labeling throughout their organization's Fabric data estate. The report is located in the [Admin monitoring workspace](../admin/monitoring-workspace.md), and you can also access by selecting the **Show full report** button in the Microsoft Purview hub.
 
-Link to Microsoft Purview to see more information, not only about your Microsoft Fabric environment, but your whole data estate. This will take you to the Microsoft Purview unified portal...
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png" alt-text="Screenshot of the Microsoft Purview hub full report." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png":::
 
-## Other links
+The report is located in the [Admin monitoring workspace](../admin/monitoring-workspace.md), and you can also access it directly from there.
+
+The report contains the following pages:
+
+* Overview report: Overview of distribution and use of endorsement and sensitivity labeling.
+* Endorsement report: Drill down and analyze distribution and use of endorsement.
+* Sensitivity report: Drill down and analyze distribution and use of sensitivity labeling.
+* Inventory report: Get details about labeled and endorsed items. Can apply date ranges, filter by workspace, item type, etc.
+* Items page: Insights about the distribution of items throughout your tenant, and endorsement coverage.
+* Sensitivity page: Insights about sensitivity labeling throughout your entire tenant.
 
 ## Next steps
 
-- More information about [Microsoft Purview](/purview/purview).
-- More information about [Microsoft Fabric](../placeholder.md).
+* [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md)

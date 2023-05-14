@@ -9,12 +9,11 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Monitoring status and performance of an Eventstream item
+# Monitoring status and performance of an eventstream
 
+Microsoft Fabric event streams allow you to easily monitor streaming event data, ingestion status, and its performance. This article explains how to monitor the eventstream status, check logs, errors, and data insights with metrics. 
 
-Within Microsoft Fabric event streams, it's easy to monitor the event data streaming and ingestion status and its performance without navigating to other pages. This article explains how to monitor the eventstream status, allowing you to check logs, errors, and data insights with metrics. 
-
-In an Eventstream item, there are two types of monitoring experience: **Data insights** and **Runtime logs**. Different sources and destinations have one or two types of them.
+In an eventstream, there are two types of monitoring experiences: **Data insights** and **Runtime logs**. You see one of them or both views depending on the source or destination. 
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
@@ -23,15 +22,15 @@ In an Eventstream item, there are two types of monitoring experience: **Data ins
 To get started, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Viewer** or above permissions where your Eventstream item is located in.
-- An Azure event hub source or lakehouse destination is added in your Eventstream item.
+- An Azure event hub source or lakehouse destination is added in your eventstream.
 
 ## Data insights 
 
-**Data insights** is located in the bottom pane of the main editor. It provides metrics that you can use to monitor the status and performance of the eventstream, sources and destinations. Different sources, destination has different metrics. When you select a node in the main editor canvas, the corresponding metrics for this specific node are shown in **Data insights** tab.
+**Data insights** is located in the bottom pane of the main editor. It provides metrics that you can use to monitor the status and performance of the eventstream, sources and destinations. Different sources and destinations have different metrics. When you select a node in the main editor canvas, the corresponding metrics for this specific node are shown in **Data insights** tab.
 
 ### Data insights in eventstream node
 
-The available metrics in eventstream node’s Data insights are the following four types:
+Here are the metrics you see for an eventstream node in the **Data insights** pane. 
 
 | Metric                 | Unit                               | Description                     |
 | ---------------------- | ---------------------------------------- | --------------------------|
@@ -42,16 +41,16 @@ The available metrics in eventstream node’s Data insights are the following fo
 
 :::image type="content" source="./media/monitor/eventstream-metrics.png" alt-text="Screenshot showing the eventstream metrics." lightbox="./media/monitor/eventstream-metrics.png" :::
 
-Following the steps to view the data insights for eventstream: 
+Follow these steps to view data insights for an eventstream: 
 
 1. Select the eventstream node in the main editor canvas. 
-2. In the bottom pane, select **Data insights**. 
+2. In the bottom pane, switch to the **Data insights** tab. 
 3. Once the data insights tab is open, you see the metrics chart if there's data inside the eventstream. You can also select which metric to show on the left side
 
 
-### Data insights in Azure Event Hubs source and Lakehouse destination node 
+### Data insights in Azure Event Hubs source and Lakehouse destination nodes 
 
-The following metrics are available in the Data insights of an Azure event hub source node and lakehouse destination node: 
+The following metrics are available on the **Data insights** tab for Azure event hub source and lakehouse destination nodes: 
 
 | Metric                 | Unit                               | Description                     |
 | ---------------------- | ---------------------------------------- | --------------------------|
@@ -65,7 +64,7 @@ The following metrics are available in the Data insights of an Azure event hub s
 
 :::image type="content" source="./media/monitor/source-destination-metrics.png" alt-text="Screenshot showing the source and destination metrics." lightbox="./media/monitor/source-destination-metrics.png" :::
 
-Following the steps to view the data insights for Azure Event Hubs source or Lakehouse destination: 
+Follow these steps to view the data insights for Azure Event Hubs source or Lakehouse destination: 
 
 1. Select the Azure event hub source node or lakehouse destination node in the main editor canvas 
 2. In the bottom pane, select **Data insights**. 
@@ -76,14 +75,14 @@ Following the steps to view the data insights for Azure Event Hubs source or Lak
 
 **Runtime logs** enables you to check the detailed errors happening in the event streams engine. Runtime logs appear at the warning, error, or information level. It's available in the bottom pane when you select the Azure Event Hubs source node or Lakehouse destination node. 
 
-Inside the runtime log tab, you can search the keyword through the logs. You can also filter the logs according to the severity and type. If you want to get the latest logs, you can also use refresh button to get it. 
+In the runtime log tab, you can search the keyword through the logs. You can also filter the logs according to the severity and type. If you want to get the latest logs, you can also use refresh button to get it. 
 
 :::image type="content" source="./media/monitor/source-destination-runtime-logs.png" alt-text="Screenshot showing the source and destination runtime logs." lightbox="./media/monitor/source-destination-runtime-logs.png" :::
 
-Following the steps to view the runtime logs for Azure Event Hubs source or Lakehouse destination: 
+Follow these steps to view the runtime logs for Azure Event Hubs source or Lakehouse destination: 
 
 1. Select the Azure event hub source node or lakehouse destination node in the main editor canvas. 
-2. In the bottom pane, select **Runtime logs**. 
+2. In the bottom pane, switch to the **Runtime logs** tab. 
 3. Once the data insights tab is open, you see the metrics chart if there's data inside the Azure event hub source or lakehouse destination. You can also select which metric to show on the left side. 
 
 

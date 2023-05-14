@@ -1,7 +1,7 @@
 items:
 - name: What's Event streams?
   href: overview.md
-- name: Create and manage an event stream
+- name: Create and manage an eventstream
   href: create-manage-an-eventstream.md
 - name: Add and manage sources
   href: add-manage-eventstream-sources.md

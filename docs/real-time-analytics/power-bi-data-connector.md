@@ -1,5 +1,5 @@
 ---
-title: Use data from a KQL Database in Power BI Desktop in Real-time Analytics
+title: Use data from a KQL database in Power BI Desktop in Real-time Analytics
 description: Learn how to use data from your KQL database in Power BI Desktop.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
-# Use data from a KQL Database in Power BI Desktop
+# Use data from a KQL database in Power BI Desktop
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -19,12 +19,12 @@ To create reports with Power BI service using a KQL Queryset, see [Create a Powe
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* [KQL database](create-database.md) with data.
+* A [KQL database](create-database.md) with data.
 * [Power BI Desktop](https://powerbi.microsoft.com/get-started).
 
 ## Connectivity modes
 
-Power BI supports *Import* and *DirectQuery* connectivity modes. When building Power BI reports or dashboards, choose your connectivity mode depending on your scenario, scale, and performance requirements. Using **Import** mode copies your data to Power BI. In contrast, using **DirectQuery** mode queries your data directly from your KQL Database.
+Power BI supports *Import* and *DirectQuery* connectivity modes. When building Power BI reports or dashboards, choose your connectivity mode depending on your scenario, scale, and performance requirements. Using **Import** mode copies your data to Power BI. In contrast, using **DirectQuery** mode queries your data directly from your KQL database.
 
 Use **Import** mode when:
 
@@ -51,19 +51,19 @@ To use your **KQL database** as a data source in Power BI, you need to add the A
 1. Launch Power BI Desktop.
 1. On the **Home** tab, select **Get Data** > **More**.
 
-    :::image type="content" source="media/power-bi-data-connector/get-data.png" alt-text="Screenshot of the Home tab in Power BI Desktop, showing the drop-down menu of the Home tab entry titled Get data with the More option highlighted.":::
+    :::image type="content" source="media/power-bi-data-connector/get-data.png" alt-text="Screenshot of the Home tab in Power BI Desktop, showing the drop-down menu of the Home tab entry titled Get data with the More option highlighted."  lightbox="media/power-bi-data-connector/get-data.png":::
 
 1. Search for *Azure Data Explorer*, select **Azure Data Explorer (Kusto)**, and then select **Connect**.
 
-    :::image type="content" source="media/power-bi-data-connector/connect-data.png" alt-text="Screenshot of the Get Data window, showing  Azure Data Explorer in the search bar with the connect option highlighted.":::
+    :::image type="content" source="media/power-bi-data-connector/connect-data.png" alt-text="Screenshot of the Get Data window, showing  Azure Data Explorer in the search bar with the connect option highlighted." lightbox="media/power-bi-data-connector/connect-data.png":::
 
 1. In the window that appears, fill out the form with the following information.
 
-    :::image type="content" source="media/power-bi-data-connector/cluster-database-table.png" alt-text="Screenshot of the Azure Data Explorer(Kusto) connection window showing the help cluster URL, with the DirectQuery option selected.":::
+    :::image type="content" source="media/power-bi-data-connector/cluster-database-table.png" alt-text="Screenshot of the Azure Data Explorer(Kusto) connection window showing the help cluster URL, with the DirectQuery option selected." lightbox="media/power-bi-data-connector/cluster-database-table.png":::
 
     | Setting | Field description | Sample value |
     |---|---|---|
-    | Cluster | The Query URI from Microsoft Fabric's **KQL database** dashboard. For other clusters, the URL is in the form *https://\<ClusterName\>.\<Region\>.kusto.windows.net*. | Paste your [Query URI](#1--copy-query-uri) |
+    | Cluster | The Query URI from Microsoft Fabric's **KQL Database** dashboard. For other clusters, the URL is in the form *https://\<ClusterName\>.\<Region\>.kusto.windows.net*. | Paste your [Query URI](#1--copy-query-uri) |
     | Database | A database that is hosted on the cluster you're connecting to. You can optionally select a database in a later step. | Leave blank |
     | Table name | The name of a table in the database, or a query like <code>StormEvents \| take 1000</code>. You can optionally select a table name in a later step. | Leave blank |
     | Advanced options | Optionally, you can select options for your queries, such as result set size. |  Leave blank |
@@ -82,7 +82,7 @@ To use your **KQL database** as a data source in Power BI, you need to add the A
 
     Optionally, if you want to shape your data first, select **Transform data** to launch Power Query Editor. For more information, see [Shape data](/power-bi/fundamentals/desktop-getting-started?source=recommendations&branch=main#shape-data).
 
-    :::image type="content" source="media/power-bi-data-connector/select-table.png" alt-text="Screenshot of Navigator screen, showing that the StormEvents table is selected. The Load button is highlighted.":::
+    :::image type="content" source="media/power-bi-data-connector/select-table.png" alt-text="Screenshot of Navigator screen, showing that the StormEvents table is selected. The Load button is highlighted." lightbox="media/power-bi-data-connector/select-table.png":::
 
 ## Next steps
 
