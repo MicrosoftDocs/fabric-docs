@@ -41,7 +41,7 @@ Review the links in the following table to understand the considerations and lim
 
 ### Workspace not connecting to git branch
 
-#### Connect failure: It says something went wrong when I try to connect.
+#### Connect failure: It says something went wrong when I try to connect
 
 **Description of problem**: After selecting **Connect** in the git integration tab, the **Something went wrong** error dialog pops up. In addition, when you select the source control button, the pane indicates that you need to sync with the git branch.
 
@@ -49,7 +49,9 @@ Review the links in the following table to understand the considerations and lim
 
 :::image type="content" source="./media/troubleshoot-cicd/sync-direction-continue.png" alt-text="Screenshot of error message when the workspace isn't connected to a git branch.":::
 
-**Solution**: If the folder you're trying to connect to has subdirectories, but no Fabric items, the connection will fail. Open the git repository in Azure DevOps and navigate to the git folder defined in the connection. If the git folder contains sub-directories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a sub-directory. If the git folder doesn't contain any item directories, you can't connect to it. Either remove the sub-directories or connect to a different folder that doesn't contain sub-directories.
+**Cause**: If the folder you're trying to connect to has subdirectories, but no Fabric items, the connection will fail.
+
+**Solution**: Open the git repository in Azure DevOps and navigate to the git folder defined in the connection. If the git folder contains sub-directories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a sub-directory. If the git folder doesn't contain any item directories, you can't connect to it. Either remove the sub-directories or connect to a different folder that doesn't contain sub-directories.
 
 #### Connect failure: It's asking if I want to create a new folder when I try to connect to a git branch.
 
@@ -57,9 +59,12 @@ Review the links in the following table to understand the considerations and lim
 
 :::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect.":::
 
-**Solution**: If the folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository, you're asked if you want to create a new folder. This can happen if you're connecting to a new branch, or if the folder was deleted from the branch.  
-To create a new folder and connect it to the workspace choose **Create and sync**.  
-To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the git integration tab.
+**Cause**: If the folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository, you're asked if you want to create a new folder. This can happen if you're connecting to a new branch, or if the folder was deleted from the branch.
+
+**Solution**:
+
+* To create a new folder and connect it to the workspace choose **Create and sync**.  
+* To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the git integration tab.
 
 #### The Source control icon doesn't have a number
 
