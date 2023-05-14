@@ -17,15 +17,15 @@ items:
     href: roles.md
   - name: What is the admin portal?
     href: admin-center.md         
-- name: Track user activities
-  href: track-user-activities.md
 - name: Monitoring
   items:
   - name: Using Monitoring hub
-    href: monitoring-hub.md    
+    href: monitoring-hub.md 
+  - name: Track user activities
+    href: track-user-activities.md       
   - name: Monitoring workspace
     items:    
-    - name: What is the monitoring workspace?
+    - name: What is the admin monitoring workspace?
       href: monitoring-workspace.md
     - name: Feature usage and adoption report
       href: feature-usage-adoption.md
@@ -35,7 +35,7 @@ items:
     href: portal-workspaces.md  
   - name: Workspace tenant settings
     href: portal-workspace.md
-- name: Settings
+- name: Feature set up
   items:    
   - name: Set up git integration
     href: git-integration-admin-settings.md

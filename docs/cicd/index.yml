@@ -52,7 +52,7 @@ landingContent:
             url: deployment-pipelines/understand-the-deployment-process.md
 
   # Card 
-  - title: how-to-guide
+  - title: How to guides
     linkLists:
       - linkListType: how-to-guide
         links:

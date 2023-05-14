@@ -8,10 +8,10 @@ items:
 - name: Get started
   items:
   - name: Set up item certification
-    href: ../admin/endorsement-setup.md
+    href: ../admin/endorsement-setup.md?toc=/fabric/governance/TOC.json&bc=/fabric/governance/breadcrumb/toc.json
 - name: Microsoft Purview
   items:
-  - name: Microsoft Purview & Fabric
+  - name: Microsoft Purview and Fabric
     href: microsoft-purview-fabric.md
   - name: Microsoft Purview Hub
     href: use-microsoft-purview-hub.md
@@ -25,7 +25,7 @@ items:
   href: domains.md
 - name: Metadata scanning
   items:
-  - name: Overview
+  - name: Metadata scanning overview
     href: metadata-scanning-overview.md
   - name: Run metadata scanning
     href: metadata-scanning-run.md
