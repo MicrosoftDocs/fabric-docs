@@ -50,15 +50,25 @@ For information on capacity types, see [Capacity and SKUs](../enterprise/license
 > * PPU, EM, and A SKUs only work with Power BI items. If you add other Fabric items to the workspace, you need a trial, P, or F SKU.
 > * When you create a workspace with a PPU, only other PPU users can able to access the workspace and consume its content.
 
+## Permissions
+
+### What is the deployment pipelines permissions model?
+
+The deployment pipelines permissions model is described the [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) section.
+
+### What permissions do I need to configure deployment rules?
+
+To configure deployment rules in deployment pipelines, you must be the dataset owner.
+
 ## Git integration questions
 
 ### How do I get started with git integration ?
 
 Get started with git integration using the [get started instructions](git-integration/git-get-started.md).
 
-### Deployment pipeline questions
+## Deployment pipeline questions
 
-#### What are some general deployment limitations to keep in mind?
+### What are some general deployment limitations to keep in mind?
 
 These are some important considerations to keep in mind:
 
@@ -82,6 +92,52 @@ Datasets that use DirectQuery or Composite connectivity mode and have variation 
 * In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand.md#import-mode) mode.
 
 * Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables from your dataset. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your dataset model works as it may result in data corruption in your visuals.
+
+### Why aren't some tiles in my displaying information after deployment?
+
+When you pin a tile to a dashboard, if the tile relies on an [unsupported item](deployment-pipelines/understand-the-deployment-process.md#unsupported-items), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a dataset you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.
+
+### Paginated reports questions
+
+#### Who's the owner of a deployed paginated report?
+
+When you're deploying a paginated report for the first time, you become the owner of the report.
+
+If you're deploying a paginated report to a stage that already contains a copy of that paginated report, you overwrite the previous report and become its owner, instead of the previous owner. In such cases, you need credentials to the underlying data source, so that the data can be used in the paginated report.
+
+#### Where are my paginated report subreports?
+
+Paginated report subreports are kept in the same folder that holds your paginated report. To avoid rendering problems, when you're using [selective copy](deployment-pipelines/deploy-content.md#selective-deployment) to copy a paginated report with subreports, select both the parent report and the subreports.
+          
+####  How do I create a deployment rule for a paginated report with a Fabric dataset?
+
+Paginated report rules can be created if you want to point the paginated report to the dataset in the same stage. When creating a deployment rule for a paginated report, you need to select a database and a server.
+
+If you're setting a deployment rule for a paginated report that doesn't have a Fabric dataset, because the target data source is external, you need to specify both the server and the database.
+
+However, paginated reports that use a Fabric dataset use an internal dataset. In such cases, you can't rely on the data source name to identify the Fabric dataset you're connecting to. The data source name doesn't change when you update it in the target stage, by creating a data source rule or by calling the [update datasource](/rest/api/power-bi/datasets/updatedatasourcesingroup) API. When you set a deployment rule, you need to keep the database format and replace the dataset object ID in the database field. As the dataset is internal, the server stays the same.
+
+* **Database** - The database format for a paginated report with a Fabric dataset, is `sobe_wowvirtualserver-<dataset ID>`. For example, `sobe_wowvirtualserver-d51fd26e-9124-467f-919c-0c48a99a1d63`. Replace the `<dataset ID>` with your dataset's ID. You can get the dataset ID from the URL, by selecting the GUID that comes after `datasets/` and before the next forward slash.
+
+  :::image type="content" source="media/troubleshoot-cicd/datasets-id.png" alt-text="A screenshot of the dataset ID as it appears in a Fabric URL.":::
+
+* **Server** - The server that hosts your database. Keep the existing server as is.
+
+#### After deployment, can I download the RDL file of the paginated report?
+
+After a deployment, if you download the RDL of the paginated report, it might not be updated with the latest version that you can see in Power BI service.
+
+### Dataflows
+
+#### What happens to the incremental refresh configuration after deploying dataflows?
+
+When you have a dataflow that contains datasets that are configured with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview.md), the refresh policy isn't copied or overwritten during deployment. After deploying a dataflow that includes a dataset with incremental refresh to a stage that doesn't include this dataflow, if you have a refresh policy you'll need to reconfigure it in the target stage. If you're deploying a dataflow with incremental refresh to a stage where it already resides, the incremental refresh policy isn't copied. In such cases, if you wish to update the refresh policy in the target stage, you need to do it manually.
+
+### Datamarts
+
+#### Where is my datamart's dataset?
+
+Deployment pipelines don't display datasets that belong to datamarts in the pipeline stages. When you're deploying a datamart, its dataset is also deployed. You can view your datamart's dataset in the workspace of the stage it's in.
 
 ## Next steps
 

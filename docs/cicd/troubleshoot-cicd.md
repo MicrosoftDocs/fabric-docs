@@ -243,269 +243,182 @@ If the changes weren't intentional, close the message window, upload a fixed *.p
 
 After a deployment fails due to schema changes, the target stage displays the *Deployment failed* message, followed by the *Show details* link. The link opens the same *continue the deployment* message that was displayed during the failed deployment.
 
-      - question: |
-          Error message: 'can't start the deployment'.
-        answer: |
-          **Description of problem**: When you're using [incremental refresh](deployment-pipelines/understand-the-deployment-process.md#incremental-refresh), only certain [changes to the dataset](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) you're deploying are allowed. If you made dataset changes that aren't allowed, your deployment fails and you receive this message:
+### Error message: 'can't start the deployment'
 
-          :::image type="content" source="media/troubleshoot-cicd/cannot-start-deployment-error.png" alt-text="A screenshot of the Can't start the deployment error message in deployment pipelines.":::
+**Cause**: When you're using [incremental refresh](deployment-pipelines/understand-the-deployment-process.md#incremental-refresh), only certain [changes to the dataset](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) you're deploying are allowed. If you made dataset changes that aren't allowed, your deployment fails and you receive this message:
+
+:::image type="content" source="media/troubleshoot-cicd/cannot-start-deployment-error.png" alt-text="A screenshot of the Can't start the deployment error message in deployment pipelines.":::
   
-          **Solution**: If you made changes to your dataset intentionally, use one of the following workarounds:
+**Solution**: If you made changes to your dataset intentionally, use one of the following workarounds:
 
-          * **Using** *.pbix* - Publish your changes directly to the target dataset. All partitions and data are lost, so you need to refresh the dataset.
+* **Using** *.pbix* - Publish your changes directly to the target dataset. All partitions and data are lost, so you need to refresh the dataset.
 
-          * **Using XMLA tools** - Make your changes directly on the dataset in the target stage.
+* **Using XMLA tools** - Make your changes directly on the dataset in the target stage.
 
-      - question: |
-          My visual broke after deploying a dataset or a dataflow.
-        answer: |
-          Datasets and dataflows are Fabric items that store data and contain both data and metadata. During deployment, only the metadata is copied while the data isn't. As a result, after deployment the dataset or dataflow might not have any data and a report visual that's relying on this data, will appear broken. To solve this problem, refresh the dataflow and then refresh the dataset in the target stage.
+### My visual broke after deploying a dataset or a dataflow
 
-      - question: |
-          How can I delete a pipeline that doesn't have an owner (an orphaned pipeline)?
-        answer: |
-          When working with deployment pipelines, you might end up with a pipeline that doesn't have an owner. For example, a pipeline can be left without an owner when a user that owned it leaves the company without transferring ownership. When a pipeline doesn't have an owner, other users can't access it. As a workspace can only be assigned to one pipeline, if it's assigned to a pipeline without an owner, nobody is able to unassign it, and you can't use the workspace in another pipeline.
-          **Description of problem**: Datasets and dataflows are Fabric items that store data and contain both data and metadata. During deployment, only the metadata is copied while the data isn't. As a result, after deployment the dataset or dataflow might not have any data and a report visual that's relying on this data, will appear broken.        
-          **Solution**: Refresh the dataflow and then refresh the dataset in the target stage.
+**Cause**: Datasets and dataflows are Fabric items that store data and contain both data and metadata. During deployment, only the metadata is copied while the data isn't. As a result, after deployment the dataset or dataflow might not have any data and a report visual that's relying on this data, will appear broken.  
+**Solution**: To solve this problem, refresh the dataflow and then refresh the dataset in the target stage.
 
-      - question: |
-          I want to delete a pipeline that doesn't have an owner (an orphaned pipeline).
-        answer: |
-          **Description of problem**: When working with deployment pipelines, you might end up with a pipeline that doesn't have an owner. For example, a pipeline can be left without an owner when a user that owned it leaves the company without transferring ownership. When a pipeline doesn't have an owner, other users can't access it. As a workspace can only be assigned to one pipeline, if it's assigned to a pipeline without an owner, nobody is able to unassign it, and you can't use the workspace in another pipeline.
-          
-          **Solution**: When a pipeline is left without an owner, a Fabric administrator can use the [admin Fabric REST APIs](/rest/api/fabric/admin) to add an owner to the pipeline, or delete it. To add an owner to the pipeline, use the [Admin - Pipelines UpdateUserAsAdmin](/rest/api/power-bi/admin/pipelines-update-user-as-admin) API.
-          
-          You can also review our PowerShell script, [AddUserToWorkspacePipeline](https://github.com/microsoft/PowerBI-Developer-Samples/blob/master/PowerShell%20Scripts/Admin-DeploymentPipelines-AddUserToWorkspacePipeline) (available from the [PowerBI-Developer-Samples](https://github.com/microsoft/PowerBI-Developer-Samples) GitHub repository), which lets you do the following:
-          
-          * *Manage pipeline access* - Add any user to a workspace in a pipeline.
-          
-          * *Reclaim workspace ownership* - Add any user to a workspace in a pipeline that doesn't have an owner, allowing you to unblock it.
-          
-          To use this script, you need to provide a *workspace name* and a *user principal name (UPN)*. The script finds the pipeline that the workspace is assigned to, and add admin permissions to the user you specified.
-          
-      - question: |
-          Mismatch error: Source and target dataset format version mismatch error.
-        answer: |
-          **Description of problem**: The *Can’t start deployment* error that states that *the source and target datasets have different data modeling formats*, occurs when the dataset in the target stage has a higher model version than the dataset in the source stage. In such cases, deployment pipelines aren’t able to deploy from the source stage to the target stage. To avoid this error, use a dataset that has the same (or higher) model version in the source stage. 
-          
-          **Solution**: Upgrade the dataset model in the source stage using an [XMLA read-write endpoint](/power-bi/enterprise/service-premium-connect-tools.md#enable-xmla-read-write) or Power BI Desktop. After upgrading the dataset, republish it to the source stage.
+### How can I delete a pipeline that doesn't have an owner (an orphaned pipeline)?
 
-      - question: |
-          Mismatch error: Data source connectivity mode mismatch error.
-        answer: |
-          **Description of problem**: During deployment, if deployment pipelines discovers that the connectivity mode of a data source in the target stage isn't the same as the data source in the source stage, it attempts to convert the connectivity mode of the data source in the target stage. If you're using a data source with the [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets.md) or [real time](/power-bi/connect-data/service-real-time-streaming.md) connectivity modes, deployment pipelines can't convert the target's data source connectivity mode. 
-          
-          **Solution**: Either use an [XMLA read-write endpoint](/power-bi/enterprise/service-premium-connect-tools.md#enable-xmla-read-write) or Power BI Desktop to change the connection mode of the data source in the source stage, or delete the data source in the target stage so that the deployment overwrites it.
+**Description of problem**: When working with deployment pipelines, you might end up with a pipeline that doesn't have an owner. For example, a pipeline can be left without an owner when a user that owned it leaves the company without transferring ownership. When a pipeline doesn't have an owner, other users can't access it. As a workspace can only be assigned to one pipeline, if it's assigned to a pipeline without an owner, nobody is able to unassign it, and you can't use the workspace in another pipeline.  
+**Cause**: Datasets and dataflows are Fabric items that store data and contain both data and metadata. During deployment, only the metadata is copied while the data isn't. As a result, after deployment the dataset or dataflow might not have any data and a report visual that's relying on this data, will appear broken.  
+can't use the workspace in another pipeline.  
+**Solution**: When a pipeline is left without an owner, a Fabric administrator can use the [admin Fabric REST APIs](/rest/api/fabric/admin) to add an owner to the pipeline, or delete it. To add an owner to the pipeline, use the [Admin - Pipelines UpdateUserAsAdmin](/rest/api/power-bi/admin/pipelines-update-user-as-admin) API.
 
-      - question: |
-          Some tiles in my dashboard aren't displaying information after deployment. 
-        answer: |
-          **Description of problem**: When you pin a tile to a dashboard, if the tile relies on an [unsupported item](deployment-pipelines/understand-the-deployment-process.md#unsupported-items), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a dataset you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.   
+You can also review our PowerShell script, [AddUserToWorkspacePipeline](https://github.com/microsoft/PowerBI-Developer-Samples/blob/master/PowerShell%20Scripts/Admin-DeploymentPipelines-AddUserToWorkspacePipeline) (available from the [PowerBI-Developer-Samples](https://github.com/microsoft/PowerBI-Developer-Samples) GitHub repository), which lets you do the following:
 
-      - question: |
-          My dataset deployment failed.
-        answer: |
-          **Description of problem**: There could be a few possible reasons for your dataset deployment to fail. One of the reasons may be due to a large dataset that isn't configured with the [large dataset format](/power-bi/enterprise/service-premium-large-models.md). 
-          
-          **Solution**: If your dataset is larger than 4 GB and isn't using the large dataset format, it might fail to be deployed. Try setting your dataset to use the large dataset format, and redeploy.
+* *Manage pipeline access* - Add any user to a workspace in a pipeline.
 
-      - question: |
-          What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables?
-        answer: |
-          Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables aren't supported in deployment pipelines. If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations?view=analysisservices-dotnet) property in your table's columns. You can use one of the methods listed below to edit your dataset so that it works in deployment pipelines.
+* *Reclaim workspace ownership* - Add any user to a workspace in a pipeline that doesn't have an owner, allowing you to unblock it.
 
-          * In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand.md#import-mode) mode.
+To use this script, you need to provide a *workspace name* and a *user principal name (UPN)*. The script finds the pipeline that the workspace is assigned to, and add admin permissions to the user you specified.
 
-          * Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables from your dataset. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your dataset model works as it may result in data corruption in your visuals.
+### Mismatch error: Source and target dataset format version mismatch error
 
-  - name: Paginated reports
-    questions:
+**Description of problem**: The *Can’t start deployment* error that states that *the source and target datasets have different data modeling formats*, occurs when the dataset in the target stage has a higher model version than the dataset in the source stage. In such cases, deployment pipelines aren’t able to deploy from the source stage to the target stage. To avoid this error, use a dataset that has the same (or higher) model version in the source stage. 
 
-      - question: |
-          Deployment problem. I can't deploy a paginated report.
-        answer: |
-          **Description of problem**: To deploy a paginated report, you need to be a workspace member in the workspace you're deploying from (the source stage workspace). If you're not a workspace member in the source stage, you can't deploy the paginated report.
-          
-      - question: |
-          Who's the owner of a deployed paginated report?
-        answer: |
-          When you're deploying a paginated report for the first time, you become the owner of the report.
-          
-          If you're deploying a paginated report to a stage that already contains a copy of that paginated report, you overwrite the previous report and become its owner, instead of the previous owner. In such cases, you need credentials to the underlying data source, so that the data can be used in the paginated report.
-          
-      - question: |
-          Data source mismatch: Target stage paginated report displays data from a Fabric dataset in the source stage.
-        answer: |
-          **Description of problem**: At present, datasets are treated as an external Analysis Services data source, and connections to datasets aren't switched automatically after deployment.
-          
-          When you deploy a paginated report that's connected to a Fabric dataset, it continues to point to the dataset it was originally connected to. Use [deployment rules](deployment-pipelines/create-rules.md) to point your paginated report to any dataset you want, including, for example,  the target stage dataset.
-          
-          **Solution**: If you're using a paginated report with a Fabric dataset, see [How do I create a deployment rule for a paginated report with a Fabric dataset?](#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-fabric-dataset-)
-          
-      - question: |
-          Where are my paginated report subreports?
-        answer: |
-          Paginated report subreports are kept in the same folder that holds your paginated report. To avoid rendering problems, when you're using [selective copy](deployment-pipelines/deploy-content.md#selective-deployment) to copy a paginated report with subreports, select both the parent report and the subreports.
-          
-      - question: |
-          How do I create a deployment rule for a paginated report with a Fabric dataset?
-        answer: |
-          Paginated report rules can be created if you want to point the paginated report to the dataset in the same stage. When creating a deployment rule for a paginated report, you need to select a database and a server.
-          
-          If you're setting a deployment rule for a paginated report that doesn't have a Fabric dataset, because the target data source is external, you need to specify both the server and the database.
-          
-          However, paginated reports that use a Fabric dataset use an internal dataset. In such cases, you can't rely on the data source name to identify the Fabric dataset you're connecting to. The data source name doesn't change when you update it in the target stage, by creating a data source rule or by calling the [update datasource](/rest/api/power-bi/datasets/updatedatasourcesingroup) API. When you set a deployment rule, you need to keep the database format and replace the dataset object ID in the database field. As the dataset is internal, the server stays the same.
-          
-          * **Database** - The database format for a paginated report with a Fabric dataset, is `sobe_wowvirtualserver-<dataset ID>`. For example, `sobe_wowvirtualserver-d51fd26e-9124-467f-919c-0c48a99a1d63`. Replace the `<dataset ID>` with your dataset's ID. You can get the dataset ID from the URL, by selecting the GUID that comes after `datasets/` and before the next forward slash.
-          
-              :::image type="content" source="media/troubleshoot-cicd/datasets-id.png" alt-text="A screenshot of the dataset ID as it appears in a Fabric URL.":::
-          
-          * **Server** - The server that hosts your database. Keep the existing server as is.
+**Solution**: Upgrade the dataset model in the source stage using an [XMLA read-write endpoint](/power-bi/enterprise/service-premium-connect-tools.md#enable-xmla-read-write) or Power BI Desktop. After upgrading the dataset, republish it to the source stage.
 
-      - question: |
-          Deployment failure: Large number of paginated reports fails.
-        answer: |
-          **Description of problem**: A deployment of a large number of paginated reports with rules might fail due to an overload on the capacity. 
-          
-          **Solution**: Either purchase a higher [SKU](../enterprise/licenses.md#capacity-and-skus), or use selective deployment.
+### Mismatch error: Data source connectivity mode mismatch error
 
-      - question: |
-          After deployment, can I download the RDL file of the paginated report?
-        answer: |
-          After a deployment, if you download the RDL of the paginated report, it might not be updated with the latest version that you can see in Power BI service.
+**Description of problem**: During deployment, if deployment pipelines discovers that the connectivity mode of a data source in the target stage isn't the same as the data source in the source stage, it attempts to convert the connectivity mode of the data source in the target stage. If you're using a data source with the [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets.md) or [real time](/power-bi/connect-data/service-real-time-streaming.md) connectivity modes, deployment pipelines can't convert the target's data source connectivity mode. 
 
-  - name: Dataflows
-    questions:
-      - question: |
-          What happens to the incremental refresh configuration after deploying dataflows?
-        answer: |
-          When you have a dataflow that contains datasets that are configured with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview.md), the refresh policy isn't copied or overwritten during deployment. After deploying a dataflow that includes a dataset with incremental refresh to a stage that doesn't include this dataflow, if you have a refresh policy you'll need to reconfigure it in the target stage. If you're deploying a dataflow with incremental refresh to a stage where it already resides, the incremental refresh policy isn't copied. In such cases, if you wish to update the refresh policy in the target stage, you need to do it manually.
+**Solution**: Either use an [XMLA read-write endpoint](/power-bi/enterprise/service-premium-connect-tools.md#enable-xmla-read-write) or Power BI Desktop to change the connection mode of the data source in the source stage, or delete the data source in the target stage so that the deployment overwrites it.
 
-      - question: |
-          Lineage view: I deleted a data source that belonged to a dataflow, but I can still see it in the lineage view.
-        answer: |
-          **Description of problem**: In dataflows, old data sources aren't removed from the dataflow data source page. To support the dataflows lineage view, connected items aren't deleted. 
-          
-          **Solution**: This behavior doesn't affect deployment pipelines. You can still refresh, edit and deploy dataflows in a pipeline.
+###  My dataset deployment failed.
 
-      - question: |
-          I see two data sources connected to my dataflow after using dataflow rules.
-        answer: |
-          **Description of problem**: After changing a dataflow's data source using a rule, the dataflow's lineage view displays a connection between the dataflow's source data source, and the data source configured in the rule.
+**Cause**: There could be a few possible reasons for your dataset deployment to fail. One of the reasons may be due to a large dataset that isn't configured with the [large dataset format](/power-bi/enterprise/service-premium-large-models.md).  
+**Solution**: If your dataset is larger than 4 GB and isn't using the large dataset format, it might fail to be deployed. Try setting your dataset to use the large dataset format, and redeploy.
 
-          **Solution**: This behavior doesn't affect deployment pipelines. 
+### I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables.
 
-  - name: Datamarts
-    questions:
-      - question: |
-          Where is my datamart's dataset?
-        answer: |
-          Deployment pipelines don't display datasets that belong to datamarts in the pipeline stages. When you're deploying a datamart, its dataset is also deployed. You can view your datamart's dataset in the workspace of the stage it's in. 
+**Cause**: Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables aren't supported in deployment pipelines.  
+**Soulution**: If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations?view=analysisservices-dotnet) property in your table's columns. You can use one of the methods listed below to edit your dataset so that it works in deployment pipelines.
 
-      - question: |
-          Deployment problem: I can't deploy a datamart in the pipeline.
-        answer: |
-          **Solution**: To deploy a datamart, you must be the owner of the datamart.
+* In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand.md#import-mode) mode.
 
-  - name: Permissions
-    questions:
-      - question: |
-          What is the deployment pipelines permissions model?
-        answer: |
-          The deployment pipelines permissions model is described the [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) section.
-          
-      - question: |
-          Who can deploy content between stages?
-        answer: |
-          Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus).
-          
-          * **Deploying to an empty stage** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin in the source workspace.
-          
-          * **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin of both workspaces in the source and target deployment stages.
-          
-          * **Overwriting a dataset** - Deployment overwrites each dataset that is included in the target stage, even if the dataset wasn't changed. Any user who's a member or admin of both workspaces, but the tenant admin can restrict this to target dataset owners only.
-          
-      - question: |
-          Which permissions do I need to configure deployment rules?
-        answer: |
-          To configure deployment rules in deployment pipelines, you must be the dataset owner.
+* Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables from your dataset. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your dataset model works as it may result in data corruption in your visuals.
 
-      - question: |
-          I can't see a workspace in the pipeline.
-        answer: |
-          **Description of problem**: Pipeline and workspace permissions are managed separately. You may have pipeline permissions, but not workspace permissions. 
+### Paginated reports
 
-          **Solution**: For more information, review the [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) section.
+#### I can't deploy a paginated report
 
-      - question: |
-          Error message: 'workspace member permissions needed'.
-        answer: |
-          **Solution**: To assign a workspace you need at least [workspace member](deployment-pipelines/understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. Workspace member (or higher) permissions in the adjacent stages are required to enable deployment pipelines to establish connections between items in neighboring pipeline stages.
+**Solution**: To deploy a paginated report, you need to be a workspace member in the workspace you're deploying from (the source stage workspace). If you're not a workspace member in the source stage, you can't deploy the paginated report.
 
+#### Data source mismatch: Target stage paginated report displays data from a Fabric dataset in the source stage
 
-          :::image type="content" source="media/troubleshoot-cicd/workspace-permission-needed.png" alt-text="A screenshot of the workspace member permission needed message in the test stage of a deployment pipeline.":::
+**Description of problem**: At present, datasets are treated as an external Analysis Services data source, and connections to datasets aren't switched automatically after deployment.
 
-  - name: Rules
-    questions:
-      - question: |
-          Deployment failure due to broken rules.
-        answer: |
-          **Solution**: If you have problems configuring deployment rules, visit [deployment rules](deployment-pipelines/create-rules.md), and make sure you follow the [deployment rules limitations](deployment-pipelines/create-rules.md#considerations-and-limitations).
-          
-          If your deployment was previously successful, and is suddenly failing with broken rules, it may be due to a dataset being republished. The following changes to the source dataset, result in a failed deployment:
-          
-          **Parameter rules**
-          
-          * A removed parameter
-          
-          * A changed parameter name
-          
-          **Data source rules**
-          
-          Your deployment rules are missing values. This may have happened if your dataset changed.
-          
-          ![A screenshot of the invalid rules error displayed when a deployment fails due to broken links.](media/troubleshoot-cicd/broken-rule.png)
-          
-          When a previously successful deployment fails due to broken links, a warning is displayed. You can select **Configure rules** to navigate to the deployment rules pane, where the failed dataset is marked. When you select the dataset, the broken rules are marked.
-          
-          To deploy successfully, fix or remove the broken rules, and redeploy.
+When you deploy a paginated report that's connected to a Fabric dataset, it continues to point to the dataset it was originally connected to. Use [deployment rules](deployment-pipelines/create-rules.md) to point your paginated report to any dataset you want, including, for example,  the target stage dataset.
 
-      - question: |
-          Deployment problem: I configured rules, but it did't deploy.
-        answer: |
-          **Description of problem**: Deployment rules aren't applied immediately after they're configured. 
-          
-          **Solution**: To apply deployment rules, you have to deploy the datasets from the source stage to the target stage which includes the created deployment rules. After configuring deployment rules, and before you deploy, the *different* indicator is shown next to the dataset with the configured rules. This indicates that you need to deploy that dataset from the source stage to the target stage. Once you deploy, if no other changes were made, the *different* indicator disappears signifying that the rules were applied successfully.
+**Solution**: If you're using a paginated report with a Fabric dataset, see [How do I create a deployment rule for a paginated report with a Fabric dataset?](./faq.md#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-fabric-dataset-)
 
-      - question: |
-          Deployment rules are greyed out.
-        answer: |
-          **Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are greyed out.
-          
-          >[!div class="mx-imgBorder"]
-          >![A screenshot showing deployment pipelines deployment rules greyed out.](media/troubleshoot-cicd/rules-greyed-out.png)
-          
-          If one of the rule options is greyed out, it could be because of the reasons listed below:
-          
-          * **Data source rules** - There are no data sources that a rule can be configured on.
-          
-          * **Parameters rules** - There are no parameters a rule can be configured for.
+#### Deployment failure: Large number of paginated reports fails
 
-      - question: |
-          My data source rule for a dataset failed. 
-        answer: |
-          **Solution**: Saving data source rules may fail due to one of these reasons:
+**Description of problem**: A deployment of a large number of paginated reports with rules might fail due to an overload on the capacity.  
+**Solution**: Either purchase a higher [SKU](../enterprise/licenses.md#capacity-and-skus), or use selective deployment.
 
-          * Your dataset contains a function connected to a data source. In such cases, data source rules aren't supported.
-          
-          * Your data source is using parameters. You can't create a data source rule for a dataset that uses parameters. Create a parameter rule instead.                                                                             
+### Dataflows
 
-      - question: |
-          I can't connect to a dataset when creating a new dataset rule.
-        answer: |
-          **Description of problem**: When constructing a dataset using Power BI Desktop, the connection string can be configured. Later, the dataset can be published and used by deployment pipelines in Power BI service. When creating the connection in Power BI Desktop, you can specify additional parameters. When specifying the parameters, the dataset source must be the first parameter listed. If you list any other parameters before the dataset source, you run into errors in Power BI service. In such cases, when configuring a new dataset rule, if you point to a dataset that wasn't configured properly in Power BI Desktop, deployment pipelines can't create the rule.
+#### Lineage view: I deleted a data source that belonged to a dataflow, but I can still see it in the lineage view
 
-          **Solution**: Format the dataset connection in Power BI Desktop so that the dataset source appears in the first row. Then, republish the dataset.
+**Cause**: In dataflows, old data sources aren't removed from the dataflow data source page. To support the dataflows lineage view, connected items aren't deleted.
+
+**Solution**: This behavior doesn't affect deployment pipelines. You can still refresh, edit and deploy dataflows in a pipeline.
+
+#### I see two data sources connected to my dataflow after using dataflow rules
+
+**Description of problem**: After changing a dataflow's data source using a rule, the dataflow's lineage view displays a connection between the dataflow's source data source, and the data source configured in the rule.
+
+**Solution**: This behavior doesn't affect deployment pipelines.
+
+### Datamarts
+
+#### Deployment problem: I can't deploy a datamart in the pipeline
+
+**Solution**: To deploy a datamart, you must be the owner of the datamart.
+
+### Permissions
+
+#### Who can deploy content between stages?
+
+Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus).
+
+* **Deploying to an empty stage** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin in the source workspace.
+
+* **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin of both workspaces in the source and target deployment stages.
+
+* **Overwriting a dataset** - Deployment overwrites each dataset that is included in the target stage, even if the dataset wasn't changed. Any user who's a member or admin of both workspaces, but the tenant admin can restrict this to target dataset owners only.
+
+#### I can't see a workspace in the pipeline
+
+**Cause**: Pipeline and workspace permissions are managed separately. You may have pipeline permissions, but not workspace permissions.  
+**Solution**: For more information, review the [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) section.
+
+#### Error message: 'workspace member permissions needed'
+
+**Solution**: To assign a workspace you need at least [workspace member](deployment-pipelines/understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. Workspace member (or higher) permissions in the adjacent stages are required to enable deployment pipelines to establish connections between items in neighboring pipeline stages.
+
+:::image type="content" source="media/troubleshoot-cicd/workspace-permission-needed.png" alt-text="A screenshot of the workspace member permission needed message in the test stage of a deployment pipeline.":::
+
+### Rules
+
+#### Deployment failure due to broken rules.
+
+**Solution**: If you have problems configuring deployment rules, visit [deployment rules](deployment-pipelines/create-rules.md), and make sure you follow the [deployment rules limitations](deployment-pipelines/create-rules.md#considerations-and-limitations).
+
+If your deployment was previously successful, and is suddenly failing with broken rules, it may be due to a dataset being republished. The following changes to the source dataset result in a failed deployment:
+
+##### **Parameter rules**
+
+* A removed parameter
+
+* A changed parameter name
+
+##### **Data source rules**
+
+Your deployment rules are missing values. This may have happened if your dataset changed.
+
+![A screenshot of the invalid rules error displayed when a deployment fails due to broken links.](media/troubleshoot-cicd/broken-rule.png)
+
+When a previously successful deployment fails due to broken links, a warning is displayed. You can select **Configure rules** to navigate to the deployment rules pane, where the failed dataset is marked. When you select the dataset, the broken rules are marked.
+
+To deploy successfully, fix or remove the broken rules, and redeploy.
+
+#### Deployment problem: I configured rules, but it did't deploy
+
+**Cause**: Deployment rules aren't applied immediately after they're configured. 
+
+**Solution**: To apply deployment rules, you have to deploy the datasets from the source stage to the target stage which includes the created deployment rules. After configuring deployment rules, and before you deploy, the *different* indicator is shown next to the dataset with the configured rules. This indicates that you need to deploy that dataset from the source stage to the target stage. Once you deploy, if no other changes were made, the *different* indicator disappears signifying that the rules were applied successfully.
+
+#### Deployment rules are greyed out
+
+**Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are greyed out.
+
+>[!div class="mx-imgBorder"]
+>![A screenshot showing deployment pipelines deployment rules greyed out.](media/troubleshoot-cicd/rules-greyed-out.png)
+
+If one of the rule options is greyed out, it could be because of the reasons listed below:
+
+* **Data source rules** - There are no data sources that a rule can be configured on.
+
+* **Parameters rules** - There are no parameters a rule can be configured for.
+
+#### My data source rule for a dataset failed
+
+**Solution**: Saving data source rules may fail due to one of these reasons:
+
+* Your dataset contains a function connected to a data source. In such cases, data source rules aren't supported.
+
+* Your data source is using parameters. You can't create a data source rule for a dataset that uses parameters. Create a parameter rule instead.
+
+#### I can't connect to a dataset when creating a new dataset rule
+
+**Cause**: When constructing a dataset using Power BI Desktop, the connection string can be configured. Later, the dataset can be published and used by deployment pipelines in Power BI service. When creating the connection in Power BI Desktop, you can specify additional parameters. When specifying the parameters, the dataset source must be the first parameter listed. If you list any other parameters before the dataset source, you run into errors in Power BI service. In such cases, when configuring a new dataset rule, if you point to a dataset that wasn't configured properly in Power BI Desktop, deployment pipelines can't create the rule.
+
+**Solution**: Format the dataset connection in Power BI Desktop so that the dataset source appears in the first row. Then, republish the dataset.
 
 ## Troubleshooting errors
 
@@ -514,7 +427,7 @@ Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-ru
 |Error message |Solution |
 |--------------|---------|
 |Data source rule can't contain a parameter |Your rule can't be applied because the server name or database name referenced in the rule is controlled by a parameter. To change the server or database name, use a parameter rule or remove the controlling parameter from configured item. |
-|Data source execution failure |A rule can't be applied due to a problem retrieving data from the data source. Remove the rule and make sure the dataset has valid queries. Then try creating the rule again. | 
+|Data source execution failure |A rule can't be applied due to a problem retrieving data from the data source. Remove the rule and make sure the dataset has valid queries. Then try creating the rule again. |
 |Rule property no longer exists |Some of the rule properties configured in the rule no longer exist. Refresh the page and configure the rule again.  |
 |Illegal value |A value used in the configured rule isn't valid. Validate the rule's values and try configuring the rule again. |
 |Multiple data sources aren't supported |A dataset rule can't be applied due to its data source configuration. Either remove the rule, or rewrite the dataset queries using standard Power BI Desktop tools. |
