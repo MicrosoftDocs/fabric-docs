@@ -16,9 +16,7 @@ items:
   - name: Understand Microsoft Fabric roles
     href: roles.md
   - name: What is the admin portal?
-    href: admin-center.md       
-  - name: Compliance feature switch
-    href: compliance.md    
+    href: admin-center.md         
 - name: Track user activities
   href: track-user-activities.md
 - name: Monitoring
