@@ -1,48 +1,212 @@
-### YamlMime:FAQ
-metadata:
-  title: Troubleshoot the Fabric lifecycle management tools
-  description: Find answers to your deployment pipelines, the Fabric Application lifecycle management (ALM) tool, troubleshooting questions
-  author: mberdugo
-  ms.author: monaberdugo
-  ms.topic: troubleshooting
-  ms.service: powerbi
-  ms.subservice: pbi-deployment-pipeline
-  ms.date: 05/09/2023
-  ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
-  
-title: Lifecycle management troubleshooting
-summary: |
+---
+title: Troubleshoot the Fabric lifecycle management tools.
+description: Find answers to your deployment pipelines, the Fabric Application lifecycle management (ALM) tool, troubleshooting questions
+author: mberdugo
+ms.author: monaberdugo
+ms.topic: troubleshooting
+ms.service: powerbi
+ms.subservice: pbi-deployment-pipeline
+ms.date: 05/23/2023
+ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
+---
 
-  Use this article to troubleshoot issues in the lifecycle management process.  
- 
-  Review the links in the following table to understand the considerations and limitations of various lifecycle management issues:
+# Troubleshoot Lifecycle management issues
 
-  | Topic | Git integration  | Deployment pipelines |
-  |--------|------------------|---------------------|
-  | **General limitations** | [general git limitations](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) |
-  | **Permissions needed** | [permissions](./git-integration/git-integration-process.md#permissions) | [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) |
-  | **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#limitations) |
-  | **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/understand-the-deployment-process.md#deployed-items) |
-  | **Datasets** |   | [dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
+Use this article to troubleshoot issues in the lifecycle management process.  
 
-  * [General questions](#general-questions)  
-  * [Licensing](#licensing)  
-  * [Git integration](#git-integration)  
-  * [Deployment pipelines](#deployment-pipelines)  
-    * [Paginated reports](#paginated-reports)  
-    * [Dataflows](#dataflows)  
-    * [Datamarts](#datamarts)  
-    * [Permissions](#permissions)  
-    * [Rules](#rules)  
+Review the links in the following table to understand the considerations and limitations of various lifecycle management issues:
 
+| Topic | Git integration  | Deployment pipelines |
+|--------|------------------|---------------------|
+| **General limitations** | [general git limitations](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) |
+| **Permissions needed** | [permissions](./git-integration/git-integration-process.md#permissions) | [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) |
+| **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#limitations) |
+| **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/understand-the-deployment-process.md#deployed-items) |
+| **Datasets** |   | [dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
+
+* [Git integration](#git-integration)  
+  * [Connect](#workspace-not-connecting-to-git-branch)
+  * [Commit](#commit-errors)
+  * [Update](#update-errors)
+  * [Undo](#undo-errors)
+  * [Resolve errors](#resolve-errors)
+* [Deployment pipelines](#deployment-pipelines)  
+  * [Paginated reports](#paginated-reports)  
+  * [Dataflows](#dataflows)  
+  * [Datamarts](#datamarts)  
+  * [Permissions](#permissions)  
+  * [Rules](#rules)
+
+## Git integration
+
+### Workspace not connecting to git branch
+
+#### Connect failure: It says something went wrong when I try to connect.
+
+**Description of problem**: After selecting **Connect** in the git integration tab, the **Something went wrong** error dialog pops up. In addition, when you select the source control button, the pane indicates that you need to sync with the git branch.
+
+:::image type="content" source="./media/troubleshoot-cicd/something-went-wrong.png" alt-text="Screenshot of error message when the workspace can't connect.":::
+
+:::image type="content" source="./media/troubleshoot-cicd/sync-direction-continue.png" alt-text="Screenshot of error message when the workspace isn't connected to a git branch.":::
+
+**Solution**: If the folder you're trying to connect to has subdirectories, but no Fabric items, the connection will fail. Open the git repository in Azure DevOps and navigate to the git folder defined in the connection. If the git folder contains sub-directories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a sub-directory. If the git folder doesn't contain any item directories, you can't connect to it. Either remove the sub-directories or connect to a different folder that doesn't contain sub-directories.
+
+#### Connect failure: It's asking if I want to create a new folder when I try to connect to a git branch.
+
+**Description of problem**: After selecting **Connect** in the git integration tab, a dialog pops up indicating an invalid folder path.
+
+:::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect.":::
+
+**Solution**: If the folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository, you're asked if you want to create a new folder. This can happen if you're connecting to a new branch, or if the folder was deleted from the branch.  
+To create a new folder and connect it to the workspace choose **Create and sync**.  
+To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the git integration tab.
+
+#### The Source control icon doesn't have a number
+
+**Description of problem**: The number on the Source control icon indicates the number of changes that have been made to the workspace since the last commit. If the icon doesn't have a number, there may have been a problem connecting to the branch.  
+**Solution**: Disconnect and reconnect.
+
+:::image type="content" source="./media/troubleshoot-cicd/no-source.png" alt-text="Screenshot of source control icon without a number.":::
+
+### Commit errors
+
+#### The Commit button is disabled
+
+**Description of problem**: If there were updates made to the git branch, commits are disabled until you update your workspace.  
+**Solution**: Update your workspace to enable commits.
+
+### Update errors
+
+#### The Commit and Update buttons are both disabled.
+
+**Description of problem**: Changing the same item in the workspace and the git branch can lead a possible conflict. If changes were made in the workspace and in the git branch on the same item, updates are disabled until the conflict is resolved.  
+**Solution**: [Resolve conflicts](./git-integration/conflict-resolution.md) and then try again.
+
+#### Update failure: Update doesn't complete because it would break dependency links
+
+**Description of problem**: After selecting **Update all** in the **Updates** tab, a dialog pops up indicating failure because the action would break a dependency links.
+
+:::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when the updating would break dependencies.":::
+
+**Solution**: Open the Lineage view to find the item or items that would be deleted from the workspace in the update and are linked to items that won't be deleted from workspace.
+
+:::image type="content" source="./media/troubleshoot-cicd/lineage-view.png" alt-text="Screenshot of the lineage view.":::
+
+To resolve the issue, delete the problematic item(s):
+
+* If the item isn't supported by Git (for example, Dashboards), delete it manually from the workspace.
+* If the item is supported by Git (for example, reports), delete it either from Git (if exists) or from the workspace.
+
+Select **Update All**.  
+For more information, see [Manually Update from Git](./git-integration/partial-update.md).
+
+#### Post update failure: Dependencies aren't pointing to the correct items
+
+**Description of problem**: After updating from Git, when looking at the lineage view, the dependencies of some items are not as expected. For example, the proxy model no longer points to the correct model.
+
+Reason: Git Integration does not support Direct Query and proxy models at this time.
+
+**Solution**: To fix the dependencies, do one of the following:
+
+* Edit the bim file of the ProxyDataset in the git repository to point to the correct dataset, and then, in the workspace, update from git to receive the change.
+* Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace.
+
+### Resolve errors
+
+### Undo errors
+
+#### Undo failure: After selecting "Undo", a dialog pops up indicating failure because dependency can't be found
+
+**Description of problem**: The following error appears after an undo action if there is an uncommitted dependency in the **Changes** tab that wasn't selected in the "Undo" action.
+
+:::image type="content" source="./media/troubleshoot-cicd/dependency-not-found.png" alt-text="Screenshot of error message when undo fails because dependency isn't found.":::
+
+**Solution**: Select the all the dependencies of the selected database and try again.
+
+#### Undo failure: After selecting "Undo", a dialog pops up indicating failure because the action would break a dependency link
+
+**Description of problem**: The following error appears after an undo action if the action would break a dependency.
+
+:::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when undo fails because the action would break a dependency link.":::
+
+**Solution**: Open the Lineage view to find the item or items that were selected to be "undone" and are linked to items that aren't selected.
+
+:::image type="content" source="./media/troubleshoot-cicd/lineage-view.png" alt-text="Screenshot of the lineage view.":::
+
+To resolve the issue, delete the problematic item(s):
+
+* If the item that's not selected isn't supported by Git (for example, Dashboards), delete it manually from the workspace.
+* If the item that isn't selected is supported by Git (for example, reports), select it as well.
+
+Select **Undo**.  
+
+## Cause 1: \<summarize the key info of the cause>
+TODO: Add a description of the cause.
+
+### Solution 1: \<summarize the key info of the solution>
+TODO: Add the steps for the solution
+
+1. Step 1.
+2. Step 2.
+
+### Solution 2: \<summarize the key info of the solution>
+
+1. Step 1.
+2. Step 2.
+
+## Cause 2: \<summarize the key info of the cause>
+TODO: Add a description of the cause.
+
+### Solution 1: \<summarize the key info of the solution>
+
+1. Step 1.
+2. Step 2.
+
+### Solution 2: \<summarize the key info of the solution>
+
+1. Step 1.
+2. Step 2.
+
+<!--- 7. Advanced troubleshooting and data collection ----------------------------------------------
+
+Optional: Include this section if advanced troubleshooting steps are needed and may require a call
+to support. List any information or procedures in this section to help the customer submit a support
+ticket.
+
+-->
+
+## Advanced troubleshooting and data collection
+
+TODO: List any information or procedures in this section to help the customer prepare for submitting a support ticket.
+
+<!--- 8. Next steps ----------------------------------------------
+
+Optional: List any next steps that should be taken after the issue has been initially resolved.
+
+-->
+
+## Next steps
+TODO: Add your next step link(s)
+
+- Next step 1
+- Next step 2
+
+<!--- 9. Reference ----------------------------------------------
+
+Optional: -->
+
+## Reference
+TODO: Add your reference link(s)
+
+- Reference 1
+- Reference 2
+- 
+- 
 sections:
   - name: Git integration  
     questions:
       - question: |
-          The Commit button is disabled.
-        answer: |
-          **Description of problem**: If there were updates made to the git branch, commits are disabled until you update your workspace.
-          **Solution**: Update your workspace to enable commits.
+
 
       - question: |
           The Commit and Update buttons are both disabled.
@@ -51,34 +215,7 @@ sections:
           **Solution**: [Resolve conflicts](./git-integration/conflict-resolution.md) and then try again.
       
       - question: |
-          The Source control icon doesn't have a number.
-        answer: |
-          **Description of problem**: The number on the Source control icon indicates the number of changes that have been made to the workspace since the last commit. If the icon doesn't have a number, there may have been a problem connecting to the branch.
-          **Solution**: Disconnect and reconnect.
 
-          :::image type="content" source="./media/troubleshoot-cicd/no-source.png" alt-text="Screenshot of source control icon without a number.":::
-
-      - question: |
-          Connect failure: It says something went wrong when I try to connect.
-        answer: |   
-          **Description of problem**: After selecting **Connect** in the git integration tab, the **Something went wrong** error dialog pops up. In addition, when you select the source control button, the pane indicates that you need to sync with the git branch. 
-          
-          :::image type="content" source="./media/troubleshoot-cicd/something-went-wrong.png" alt-text="Screenshot of error message when the workspace can't connect.":::
-
-          :::image type="content" source="./media/troubleshoot-cicd/sync-direction-continue.png" alt-text="Screenshot of error message when the workspace isn't connected to a git branch.":::
-
-          **Solution**: If the folder you're trying to connect to has subdirectories, but no Fabric items, the connection will fail. Open the git repository in Azure DevOps and navigate to the git folder defined in the connection. If the git folder contains sub-directories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a sub-directory. If the git folder doesn't contain any item directories, you can't connect to it. Either remove the sub-directories or connect to a different folder that doesn't contain sub-directories.
-
-      - question: |
-          Connect failure: It's asking if I want to create a new folder when I try to connect to a git branch.
-        answer: |
-          **Description of problem**: After selecting **Connect** in the git integration tab, a dialog pops up indicating an invalid folder path.
-          
-          :::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect.":::
-
-          **Solution**: If the folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository, you're asked if you want to create a new folder. This can happen if you're connecting to a new branch, or if the folder was deleted from the branch.  
-          To create a new folder and connect it to the workspace choose **Create and sync**.  
-          To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the git integration tab.
 
       - question: |
           Update failure: Update doesn't complete because it would break dependency links.
