@@ -16,7 +16,13 @@ The *Admin monitoring* workspace is designed to provide admins with monitoring c
 
 ## Prerequisites
 
-Verify that the [new workspace experience](/power-bi/admin/portal-workspace#create-workspaces-new-workspace-experience) is enabled.
+To use the admin monitoring workspace, you need:
+
+* To be an admin with the *Power BI admin* role
+
+* A *Pro* license
+
+* To enable the [new workspace experience](/power-bi/admin/portal-workspace#create-workspaces-new-workspace-experience)
 
 ## Access the admin monitoring workspace
 
