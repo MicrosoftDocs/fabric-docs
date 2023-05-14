@@ -25,10 +25,10 @@ Review the links in the following table to understand the considerations and lim
 | **Datasets** |   | [dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
 
 * [Git integration](#git-integration)  
-  * [Connect](#workspace-not-connecting-to-git-branch)
-  * [Commit](#commit-errors)
-  * [Update](#update-errors)
-  * [Undo](#undo-errors)
+  * [Connect](#connect-issues)
+  * [Commit](#commit-issues)
+  * [Update](#update-isuues)
+  * [Undo](#undo-issues)
   * [Resolve errors](#resolve-errors)
 * [Deployment pipelines](#deployment-pipelines)  
   * [Paginated reports](#paginated-reports)  
@@ -39,7 +39,7 @@ Review the links in the following table to understand the considerations and lim
 
 ## Git integration
 
-### Workspace not connecting to git branch
+### Connect issues
 
 #### Connect failure: It says something went wrong when I try to connect
 
@@ -73,14 +73,14 @@ Review the links in the following table to understand the considerations and lim
 
 :::image type="content" source="./media/troubleshoot-cicd/no-source.png" alt-text="Screenshot of source control icon without a number.":::
 
-### Commit errors
+### Commit issues
 
 #### The Commit button is disabled
 
 **Description of problem**: If there were updates made to the git branch, commits are disabled until you update your workspace.  
 **Solution**: Update your workspace to enable commits.
 
-### Update errors
+### Update issues
 
 #### The Commit and Update buttons are both disabled.
 
@@ -116,9 +116,9 @@ Reason: Git Integration does not support Direct Query and proxy models at this t
 * Edit the bim file of the ProxyDataset in the git repository to point to the correct dataset, and then, in the workspace, update from git to receive the change.
 * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace.
 
-### Resolve errors
+### Resolve issues
 
-### Undo errors
+### Undo issues
 
 #### Undo failure: After selecting "Undo", a dialog pops up indicating failure because dependency can't be found
 
@@ -145,143 +145,9 @@ To resolve the issue, delete the problematic item(s):
 
 Select **Undo**.  
 
-## Cause 1: \<summarize the key info of the cause>
-TODO: Add a description of the cause.
+## Deployment pipelines
 
-### Solution 1: \<summarize the key info of the solution>
-TODO: Add the steps for the solution
-
-1. Step 1.
-2. Step 2.
-
-### Solution 2: \<summarize the key info of the solution>
-
-1. Step 1.
-2. Step 2.
-
-## Cause 2: \<summarize the key info of the cause>
-TODO: Add a description of the cause.
-
-### Solution 1: \<summarize the key info of the solution>
-
-1. Step 1.
-2. Step 2.
-
-### Solution 2: \<summarize the key info of the solution>
-
-1. Step 1.
-2. Step 2.
-
-<!--- 7. Advanced troubleshooting and data collection ----------------------------------------------
-
-Optional: Include this section if advanced troubleshooting steps are needed and may require a call
-to support. List any information or procedures in this section to help the customer submit a support
-ticket.
-
--->
-
-## Advanced troubleshooting and data collection
-
-TODO: List any information or procedures in this section to help the customer prepare for submitting a support ticket.
-
-<!--- 8. Next steps ----------------------------------------------
-
-Optional: List any next steps that should be taken after the issue has been initially resolved.
-
--->
-
-## Next steps
-TODO: Add your next step link(s)
-
-- Next step 1
-- Next step 2
-
-<!--- 9. Reference ----------------------------------------------
-
-Optional: -->
-
-## Reference
-TODO: Add your reference link(s)
-
-- Reference 1
-- Reference 2
-- 
-- 
-sections:
-  - name: Git integration  
-    questions:
-      - question: |
-
-
-      - question: |
-          The Commit and Update buttons are both disabled.
-        answer: |
-          **Description of problem**: Changing the same item in the workspace and the git branch can lead a possible conflict. If changes were made in the workspace and in the git branch on the same item, updates are disabled until the conflict is resolved. 
-          **Solution**: [Resolve conflicts](./git-integration/conflict-resolution.md) and then try again.
-      
-      - question: |
-
-
-      - question: |
-          Update failure: Update doesn't complete because it would break dependency links.
-        answer: |
-          **Description of problem**: After selecting **Update all** in the **Updates** tab, a dialog pops up indicating failure because the action would break a dependency links.
-
-          :::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when the updating would break dependencies.":::
-
-          **Solution**: Open the Lineage view to find the item or items that would be deleted from the workspace in the update and are linked to items that won't be deleted from workspace.
-
-          :::image type="content" source="./media/troubleshoot-cicd/lineage-view.png" alt-text="Screenshot of the lineage view.":::
-
-          To resolve the issue, delete the problematic item(s):
-          * If the item isn't supported by Git (for example, Dashboards), delete it manually from the workspace.
-          * If the item is supported by Git (for example, reports), delete it either from Git (if exists) or from the workspace.
-          
-          Select **Update All**.  
-          For more information, see [Manually Update from Git](./git-integration/partial-update.md).
-
-      - question: |
-          Post update failure: Dependencies aren't pointing to the correct items.
-        answer: |
-          **Description of problem**: After updating from Git, when looking at the lineage view, the dependencies of some items are not as expected. For example, the proxy model no longer points to the correct model.
-
-          Reason: Git Integration does not support Direct Query and proxy models at this time.
-          
-          **Solution**: To fix the dependencies, do one of the following:
-
-          * Edit the bim file of the ProxyDataset in the git repository to point to the correct dataset, and then, in the workspace, update from git to receive the change.
-          * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace.
-
-      - question: |
-          Undo failure: After selecting "Undo", a dialog pops up indicating failure because dependency can't be found.
-        answer: |
-          **Description of problem**: The following error appears after an undo action if there is an uncommitted dependency in the **Changes** tab that wasn't selected in the "Undo" action.
-
-          :::image type="content" source="./media/troubleshoot-cicd/dependency-not-found.png" alt-text="Screenshot of error message when undo fails because dependency isn't found.":::
-
-          **Solution**: Select the all the dependencies of the selected database and try again.
-
-      - question: |
-          Undo failure: After selecting "Undo", a dialog pops up indicating failure because the action would break a dependency link.
-        answer: |
-          **Description of problem**: The following error appears after an undo action if the action would break a dependency.
-
-          :::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when undo fails because the action would break a dependency link.":::
-
-          **Solution**: Open the Lineage view to find the item or items that were selected to be "undone" and are linked to items that aren't selected.
-
-          :::image type="content" source="./media/troubleshoot-cicd/lineage-view.png" alt-text="Screenshot of the lineage view.":::
-
-          To resolve the issue, delete the problematic item(s):
-          * If the item that's not selected isn't supported by Git (for example, Dashboards), delete it manually from the workspace.
-          * If the item that isn't selected is supported by Git (for example, reports), select it as well.
-          
-          Select **Undo**.  
-
-  - name: Deployment pipelines
-    questions:
-      - question: |
-          Why can't I see the deployment pipelines button?
+Why can't I see the deployment pipelines button?
         answer: |
           If the following conditions aren't met, you won't be able to see the deployment pipelines button.
           
