@@ -390,11 +390,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * Datasets that use real-time data connectivity can't be deployed.
 
-<<<<<<<<< Temporary merge branch 1
 * A dataset with DirectQuery or Composite connectivity mode that uses variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables, isn’t supported. For more information see [What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or calendar tables?](../faq.yml#what-can-i-do-if-i-have-a-dataset-with-directquery-or-composite-connectivity-mode--that-uses-variation-or-auto-date-time-tables-)
-=========
-* A dataset with DirectQuery or Composite connectivity mode that uses variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables, isn’t supported. For more information see [What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or calendar tables?](../troubleshoot-cicd.yml#i-have-a-dataset-with-directquery-or-composite-connectivity-mode--that-uses-variation-or-auto-date-time-tables-)
->>>>>>>>> Temporary merge branch 2
 
 * During deployment, if the target dataset is using a [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets.md), the source dataset must use this connection mode too.
 
