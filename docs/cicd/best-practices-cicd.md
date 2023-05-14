@@ -153,7 +153,7 @@ If you're using the test stage to simulate real life data usage, it's recommende
 
 Changes you make can also affect the dependent items. During testing, verify that your changes don’t affect or break the performance of existing items, which can be dependent on the updated ones.
 
-You can easily find the related items by using [impact analysis](../onelake/onelake-shortcuts.md#workspace-lineage-view).
+You can easily find the related items by using [impact analysis](../governance/lineage.md).
 
 ### Updating data items
 
