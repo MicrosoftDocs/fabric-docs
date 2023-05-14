@@ -199,14 +199,10 @@ sections:
           Workspaces that don't meet these conditions, aren't displayed in the list of workspaces you can select from.
           
       - question: |
-          How can I assign workspaces to all the stages in a pipeline?
+          My first deployment failed.
         answer: |
-          You can either assign one workspace to your pipeline and then deploy it across the pipeline, or assign a different workspace to each pipeline stage. For more information, see [assign a workspace to a deployment pipeline](deployment-pipelines/assign-pipeline.md).
-          
-      - question: |
-          Why did my first deployment fail?
-        answer: |
-          Your first deployment may have failed for any of several reasons. Some of these reasons are listed in the following table.
+          Your first deployment may have failed for any of several reasons.  
+          **Solution**: Some possible reasons for failure with their solutions are listed in the following table.
           
           |Error  |Action  |
           |---------|---------|
@@ -275,9 +271,14 @@ sections:
           Datasets and dataflows are Fabric items that store data and contain both data and metadata. During deployment, only the metadata is copied while the data isn't. As a result, after deployment the dataset or dataflow might not have any data and a report visual that's relying on this data, will appear broken. To solve this problem, refresh the dataflow and then refresh the dataset in the target stage.
 
       - question: |
-          Does deployment pipelines support multi-geo?
+          How can I delete a pipeline that doesn't have an owner (an orphaned pipeline)?
         answer: |
-          Multi-geo is supported. It may take longer to deploy content between stages in different geos.
+          When working with deployment pipelines, you might end up with a pipeline that doesn't have an owner. For example, a pipeline can be left without an owner when a user that owned it leaves the company without transferring ownership. When a pipeline doesn't have an owner, other users can't access it. As a workspace can only be assigned to one pipeline, if it's assigned to a pipeline without an owner, nobody is able to unassign it, and you can't use the workspace in another pipeline.
+=========
+          **Description of problem**: Datasets and dataflows are Fabric items that store data and contain both data and metadata. During deployment, only the metadata is copied while the data isn't. As a result, after deployment the dataset or dataflow might not have any data and a report visual that's relying on this data, will appear broken. 
+>>>>>>>>> Temporary merge branch 2
+          
+          **Solution**: Refresh the dataflow and then refresh the dataset in the target stage.
 
       - question: |
           I want to delete a pipeline that doesn't have an owner (an orphaned pipeline).
@@ -329,6 +330,7 @@ sections:
 
           * Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables from your dataset. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your dataset model works as it may result in data corruption in your visuals.
 
+>>>>>>>>> Temporary merge branch 2
   - name: Paginated reports
     questions:
 
