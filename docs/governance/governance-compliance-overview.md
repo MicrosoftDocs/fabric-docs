@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Microsoft Fabric is deeply integrated with Microsoft Purview governance and compliance, and provides capabilities to help you govern and protect your organization's sensitive data in Fabric. This article provides links for more information about the building blocks of Microsoft Fabric's governance and compliance capabilities.
+Microsoft Fabric governance and compliance is a set of capabilities that help you manage, protect, and monitor your organization's sensitive information. This article briefly describes the basic building blocks of Fabric governance and compliance and provides links for more information.
 
 ## Information protection
 
