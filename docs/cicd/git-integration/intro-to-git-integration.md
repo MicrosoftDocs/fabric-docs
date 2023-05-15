@@ -62,5 +62,5 @@ A typical workflow for a developer using Fabric git integration may look like th
 
 ## Next steps
 
-* [Understand the git integration process](./git-integration-process.md)
 * [Get started with git integration](./git-get-started.md)
+* [Understand the git integration process](./git-integration-process.md)
