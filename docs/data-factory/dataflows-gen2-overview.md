@@ -7,7 +7,7 @@ ms.date: 05/23/2023
 ms.author: jeluitwi
 ---
 
-# Getting from Dataflows Generation 1  to Dataflows Generation 2
+# Getting from Dataflow Generation 1 to Dataflow Generation 2
 
 Dataflow Gen2 is the new generation of dataflows. The new generation of dataflows resides alongside the Power BI Dataflow (Gen1) and brings new features and improved experiences. The following section provides a comparison between Dataflow Gen1 and Dataflow Gen2.
 
@@ -92,3 +92,4 @@ You probably have many Dataflow Gen1 queries and you're wondering how you can tr
 
 - [Dataflows refresh history and monitoring](dataflows-gen2-monitor.md)
 - [Dataflows save as draft](dataflows-gen2-save-draft.md)
+- [Move queries from Dataflow Gen1 to Dataflow Gen2](move-dataflow-gen1-to-dataflow-gen2.md)
