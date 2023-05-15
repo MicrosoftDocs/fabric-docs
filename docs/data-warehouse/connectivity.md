@@ -135,7 +135,7 @@ Using the SQL Connection string, any 3rd party tool that can authenticate using 
 
 ### Custom Applications
 
-Because Synapse Datawarehouse and Lakehouse SQL Endpoints in Fabric provide an SQL Connection string, data is accessible from a vast ecosystem of SQL tooling, provided they can authenticate using AAD. See here for more information: [Connection libraries for Microsoft SQL Database](https://learn.microsoft.com/en-us/sql/connect/sql-connection-libraries?view=sql-server-ver16#drivers-for-relational-access)
+Because Warehouse and Lakehouse SQL Endpoints in Fabric provide an SQL Connection string, data is accessible from a vast ecosystem of SQL tooling, provided they can authenticate using Azure AD. For more information, see [Connection libraries for Microsoft SQL Database](/sql/connect/sql-connection-libraries#drivers-for-relational-access).
     
 ## Considerations and limitations
 
