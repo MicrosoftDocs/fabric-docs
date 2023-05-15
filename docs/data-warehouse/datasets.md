@@ -36,11 +36,11 @@ When you create a [Lakehouse](../data-engineering/lakehouse-overview.md), a defa
 
 The default dataset is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse. You can also query the default dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [Warehouse](data-warehousing.md#synapse-data-warehouse).
 
-Users can also manually select tables or views from the warehouse they want included in the model for more flexibility. Objects that are in the default Power BI dataset are created as a layout in the model view.
+By default, all tables and views in the warehouse are automatically added to the default Power BI dataset. Users can also manually select tables or views from the warehouse they want included in the model for more flexibility. Objects that are in the default Power BI dataset are created as a layout in the model view.
 
 The background sync that includes objects (tables and views) waits for the downstream dataset to not be in use to update the dataset, honoring bounded staleness. Users can always go and manually pick tables they want or no want in the dataset.
 
-### Auto-detect by default
+### Manually update the default Power BI dataset
 
 Once there are objects in the default Power BI dataset, there are two ways to validate or visually inspect the tables:
 
@@ -51,8 +51,6 @@ Once there are objects in the default Power BI dataset, there are two ways to va
 The default layout for BI enabled tables persists in the user session and is generated whenever a user navigates to the model view. Look for the **Default dataset objects** tab.
 
    :::image type="content" source="media\datasets\default-dataset-objects.png" alt-text="Screenshot of the reporting tab showing default dataset objects." lightbox="media\datasets\default-dataset-objects.png":::
-
-This layout isn't currently saved past the user's session.
 
 ## Access the default Power BI dataset
 
