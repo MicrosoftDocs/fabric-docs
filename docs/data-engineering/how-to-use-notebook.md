@@ -55,7 +55,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], a notebook will by de
 
 :::image type="content" source="media\how-to-use-notebook\save-copy.png" alt-text="Screenshot showing where to save a copy.":::
 
-If you prefer to save a notebook manually, you can also switch to "Manual save" mode to have a "local branch" of your notebook artifact, and use **Save** or **CTRL+s** to save your changes.
+If you prefer to save a notebook manually, you can also switch to "Manual save" mode to have a "local branch" of your notebook item, and use **Save** or **CTRL+s** to save your changes.
 
 :::image type="content" source="media\how-to-use-notebook\manual-save.png" alt-text="Screenshot showing where to switch manual save.":::
 

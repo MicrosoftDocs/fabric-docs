@@ -71,7 +71,7 @@ The python commands/script used in each step of this tutorial can be found in th
 
    :::image type="content" source="media\tutorial-data-science-batch-scoring\preview-of-predicted-data.png" alt-text="Screenshot of the table of predicted data." lightbox="media\tutorial-data-science-batch-scoring\preview-of-predicted-data.png":::
 
-1. The **nyctaxi_pred** delta table containing predictions can also be viewed from the lakehouse UI by navigating to the lakehouse artifact in the active Fabric workspace.
+1. The **nyctaxi_pred** delta table containing predictions can also be viewed from the lakehouse UI by navigating to the lakehouse item in the active Fabric workspace.
 
    :::image type="content" source="media\tutorial-data-science-batch-scoring\view-delta-table-lakehouse.png" alt-text="Screenshot of the delta table displayed in the lakehouse UI." lightbox="media\tutorial-data-science-batch-scoring\view-delta-table-lakehouse.png":::
 

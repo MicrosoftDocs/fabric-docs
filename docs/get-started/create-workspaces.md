@@ -1,6 +1,6 @@
 ---
 title: Create a workspace
-description: "Learn how to create a workspace: a collection of artifacts such as lakehouses, warehouses, and reports built to deliver key metrics for your organization."
+description: "Learn how to create a workspace: a collection of items such as lakehouses, warehouses, and reports built to deliver key metrics for your organization."
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas

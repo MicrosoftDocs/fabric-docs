@@ -30,7 +30,7 @@ Use this reference guide and the example scenarios to help you choose between th
 | **Security** | Object level (table, view, function, stored procedure, etc.),<br>column level,<br>row level,<br>DDL/DML | Row level,<br>table level (when using T-SQL),<br>none for Spark |
 | **Access data via shortcuts** | Yes (indirectly through the lakehouse) | Yes |
 | **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) |
-| **Query across artifacts** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;<br>query across lakehouses (including shortcuts using Spark) |
+| **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;<br>query across lakehouses (including shortcuts using Spark) |
 
 ## Scenarios
 

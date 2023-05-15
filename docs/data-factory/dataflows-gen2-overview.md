@@ -74,7 +74,7 @@ With Dataflow Gen2, we introduce a worry free experience by removing the need fo
 
 ### High scale compute
 
-Similar to Dataflow Gen1, Dataflow Gen2 also features an enhanced compute engine to improve performance of both transformations of referenced queries and get data scenarios. To achieve this, Dataflow Gen2 creates both Lakehouse and Warehouse artifacts in your workspace, and uses them to store and access data to improve performance for all your dataflows.
+Similar to Dataflow Gen1, Dataflow Gen2 also features an enhanced compute engine to improve performance of both transformations of referenced queries and get data scenarios. To achieve this, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace, and uses them to store and access data to improve performance for all your dataflows.
 
 ## Try out Dataflow Gen2 by reusing your queries from Dataflow Gen1
 

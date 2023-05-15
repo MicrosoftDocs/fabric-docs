@@ -59,7 +59,7 @@ You may choose which version of Spark you'd like to use for the workspace. Curre
 
 ## Autologging for Machine Learning models and experiments
 
-Admins can now enable autologging for their machine learning models and experiments. This option will automatically capture the values of input parameters, output metrics, and output artifacts of a machine learning model as it is being trained.
+Admins can now enable autologging for their machine learning models and experiments. This option will automatically capture the values of input parameters, output metrics, and output items of a machine learning model as it is being trained.
 
 [Learn more about autologging](https://mlflow.org/docs/latest/tracking.html)
 
