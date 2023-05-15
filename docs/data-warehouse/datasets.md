@@ -70,7 +70,7 @@ There are some situations where your organization may need to create additional 
 
 1. Open the warehouse you created and loaded in the previous steps, such as My_Warehouse, and then switch to the Reporting ribbon.
 
-2. In the Reporting ribbon, select New Power BI dataset, and then in the New dataset dialog, select tables to be included, and then select Confirm.
+2. In the **Reporting** ribbon, select **New Power BI dataset**, and then in the **New dataset** dialog, select tables to be included, and then select **Confirm**.
 
 :::image type="content" source="media\datasets\newPBIdataset.png" alt-text="Screenshot showing the new Power BI dataset." lightbox="media\datasets\newPBIdataset.png":::
 
