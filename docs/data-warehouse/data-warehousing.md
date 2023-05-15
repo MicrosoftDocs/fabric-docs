@@ -28,7 +28,7 @@ In order to best serve your analytics use cases, there are a variety of capabili
 **[!INCLUDE [fabric-dw](includes/fabric-dw.md)]** 
    :::column-end:::
    :::column span="1"::: 
-**[!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse**
+**[!INCLUDE [fabric-se](includes/fabric-se.md)] of the lakehouse**
    :::column-end:::
    :::column span="1"::: 
 **Power BI datamart**
