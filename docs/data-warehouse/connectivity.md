@@ -133,7 +133,7 @@ The DBT Fabric DW adapter supports Azure Active Directory (Azure AD) authenticat
 
 Using the SQL Connection string, any 3rd party tool that can authenticate using ODBC or the latest MSSQL Drivers and Azure AD Authentication can connect to a Warehouse. 
 
-### Custom Applications
+### Custom applications
 
 Because Warehouse and Lakehouse SQL Endpoints in Fabric provide an SQL Connection string, data is accessible from a vast ecosystem of SQL tooling, provided they can authenticate using Azure AD. For more information, see [Connection libraries for Microsoft SQL Database](/sql/connect/sql-connection-libraries#drivers-for-relational-access).
     
