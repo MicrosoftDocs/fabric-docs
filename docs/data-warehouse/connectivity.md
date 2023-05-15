@@ -76,7 +76,7 @@ When establishing connectivity, make sure that you’re using the latest version
 
 ## Connect using JDBC
 
-We also support connectivity to the Warehouse or SQL Endpoint using a Java database connectivity (JDBC) driver. 
+Microsoft Fabric also supports connectivity to the Warehouse or SQL Endpoint using a Java database connectivity (JDBC) driver. 
 
 When establishing connectivity via JDBC, check for the following dependencies:
 
