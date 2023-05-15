@@ -25,8 +25,8 @@ To get started, you must complete the following prerequisites:
 ## Authentication to warehouses in Fabric
 
 In Fabric, two types of authenticated users are supported through the SQL connection string:
-1.	AAD User principals, or user identities
-2.	AAD Service principals
+1. Azure Active Directory (Azure AD) user principals, or user identities
+2. Azure Active Directory (Azure AD) service principals
 
 The SQL connection string requires port 1433 to be open. 1433 is the standard SQL Server port number. The SQL connection string also respects the warehouse or lakehouse sql endpoint security model for data access. Data can be obtained for all objects to which a user has access.
 
