@@ -28,6 +28,8 @@ Use this reference guide and the example scenarios to help you in deciding wheth
 | **Destinations** | 18+ connectors | Lakehouse,<br>Azure SQL database,<br>Azure Data explorer,<br>Azure Synapse analytics | Hundreds of Spark libraries |
 | **Transformation complexity** | Low:<br>lightweight - type conversion, column mapping, merge/split files, flatten hierarchy | Low to high:<br>300+ transformation functions | Low to high:<br>support for native Spark and open-source libraries |
 
+Review the following three scenarios for help with choosing how to work with your data in Fabric.
+
 ## Scenario1
 
 Leo, a data engineer, needs to ingest a large volume of data from external systems, both on-premises and cloud. These external systems include databases, file systems, and APIs. Leo doesn’t want to write and maintain code for each connector or data movement operation. He wants to follow the medallion layers best practices, with bronze, silver, and gold. Leo doesn't have any experience with Spark, so he prefers the drag and drop UI as much as possible, with minimal coding. And he also wants to process the data on a schedule.
