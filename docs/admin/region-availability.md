@@ -26,12 +26,12 @@ Asia Pacific
 * KoreaCentral
 * SoutheastAsia
 * SouthIndia
-* UAENorth
 
 Europe
+* NorthEurope
+* WestEurope
 * FranceCentral
 * NorwayEast
-* SouthAfricaNorth
 * SwitzerlandNorth
 * SwitzerlandWest
 * UKSouth
@@ -49,9 +49,10 @@ Americas
 * WestUS2
 * WestUS3
 
-European Union (EU)
-* NorthEurope
-* WestEurope
+Middle East and Africa
+* SouthAfricaNorth
+* UAENorth
+
 
 ## Next steps
 
