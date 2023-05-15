@@ -53,14 +53,15 @@ The report contains the following pages:
 * **Items page**: Insights about the distribution of items throughout your tenant, and endorsement coverage.
 * **Sensitivity page**: Insights about sensitivity labeling throughout your entire tenant.
 
-## Access Purview
+## Access Purview capabilites
 
 The tiles at the top of the Purview hub provide access to Purview's advanced governance and compliance capabilities.
 
-**Data catalog**: Opens a new tab to the Microsoft Purview Governance portal.
-**Information protection**: Opens a new tab to the Microsoft Purview compliance portal, where sensitivity labels and label policies can be defined and monitored.
-**Data loss prevention**: Opens a new tab to the Microsoft Purview compliance portal, where data loss prevention policies can be defined and monitored.
-**Audit**: Opens a new tab to the Microsoft Purview compliance center, where activities regarding sensitivity labels and DLP policies recorded in the audit logs can be searched and retrieved with Purview's Audit solution.
+* **Get started with Microsoft Purview**: Opens a new tab to documentation to help you get started with Purview.
+* **Data catalog**: Opens a new tab to the Microsoft Purview governance portal.
+* **Information protection**: Opens a new tab to the Microsoft Purview compliance portal, where sensitivity labels and label policies can be defined and monitored.
+* **Data loss prevention**: Opens a new tab to the Microsoft Purview compliance portal, where data loss prevention policies can be defined and monitored.
+* **Audit**: Opens a new tab to the Microsoft Purview compliance portal, where activities regarding sensitivity labels and DLP policies recorded in the audit logs can be searched and retrieved with Purview's Audit solution.
 
 ## Next steps
 
