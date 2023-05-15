@@ -101,8 +101,6 @@ items:
       href: ../data-engineering/runtime.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Create custom pools
       href: ../data-engineering/create-custom-spark-pools.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
-    - name: High concurrency mode
-      href: ../data-engineering/high-concurrency-mode-notebooks.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Autotune Spark configuration
       href: ../data-engineering/autotune.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Spark concurrency limits and queueing
