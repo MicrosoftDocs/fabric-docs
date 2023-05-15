@@ -48,7 +48,9 @@ Rob, a data engineer, needs to store and model several terabytes of data in Fabr
 
 ### Scenario 3
 
+Ash, a citizen developer, is a Power BI developer. They're familiar with Excel, Power BI, and Office. They need to build a data product for a business unit. They know they don't quite have the skills to build a data warehouse or a lakehouse, and those seems like too much for their needs and data volumes. They review the details in the previous table and sees that their primary decision points are their own skills and their need for a self service, no code capability, and data volume under 100GB.
 
+Ash works with business analysts familiar with Power BI and Microsoft Office, and knows that they already have a Premium capacity subscription. As they think about their larger team, they realize the primary consumers of this data may be analysts, familiar with no-code and SQL analytical tools. Ash decides to use a **Power BI datamart**, which allows the team to interact build the capability fast, using a no-code experience. This also provides the ability to use Power BI and T-SQL, while also allowing any Spark users in the organization to access the data as well.
 
 ## Next steps
 
