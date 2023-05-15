@@ -33,21 +33,21 @@ The following image shows an example of the impact analysis pane for most Fabric
 
 :::image type="content" source="./media/impact-analysis/impact-analysis-pane-general.png" alt-text="Screenshot of the impact analysis side pane.":::
 
-* The **impact summary** shows you the number of potentially impacted workspaces, reports, and dashboards, as well as the total number of views for all the downstream reports and dashboards that are connected to the dataset.
-* The **notify contacts** link opens a dialog where you can create a message about any dataset changes you make, and send it to the contact lists of the affected workspaces.
+* The **Child items/All downstream items** tabs enable you to switch between seeing only direct children of the item, one-step downstream, or all the affected dependent items downstream. When you select a tab, you'll see the number of items and workspaces affected in each case.
+* The **Browse by item type/Browse by workspace** icons enable you to see affected items grouped either by type or by the workspace they're in.
+* The **Notify contacts** button opens a dialog where you can create a message about any changes you make to an item, and send it to the contact lists of the affected workspaces.
 
 ## Data source impact analysis
 
-Data source impact analysis helps you see where your data source is being used throughout your organization. This can be useful when the data source is temporarily or permanently taken offline, and you want to get an idea about who is impacted. Impact analysis shows you how many workspaces and items use the data source, and provides easy navigation to the workspaces where the affected dataflows and datasets are located so that you can investigate further.
+Data source impact analysis helps you see where your data source is being used throughout your organization. This can be useful when the data source is temporarily or permanently taken offline, and you want to get an idea about who is impacted. Impact analysis shows you how many workspaces and items use the data source.
 
 Data source impact analysis can also help you spot data duplication in the tenant, such as when many different users build similar models on top of the same data source. By helping you discover such redundant items, data source impact analysis supports the goal of having *a single source of truth*.
 
 :::image type="content" source="./media/impact-analysis/data-source-impact-analysis-side-pane.png" alt-text="Screenshot of data source impact analysis side pane.":::
 
-* **Data source type**: Indicates the data source type.
-* **Path to data source**: Path to the data source
-* **Impact summary**: The number of potentially impacted workspaces and items. This count includes workspaces you don't have access to.
-* **Usage breakdown**: For each workspace, the names of the impacted dataflows and datasets. To further explore the impact on a particular workspace, select the workspace name to open the workspace. Then use [dataset impact analysis](impact-analysis.md) to see the usage details about connected reports and dashboards.
+* The **Child items/All downstream items** tabs enable you to switch between seeing only direct children of the item, one-step downstream, or all the affected dependent items downstream. When you select a tab, you'll see the number of items and workspaces affected in each case.
+* The **Browse by item type/Browse by workspace** icons enable you to see affected items grouped either by type or by the workspace they're in.
+* The **Notify contacts** button opens a dialog where you can create a message about any changes you make to an item, and send it to the contact lists of the affected workspaces.
 
 ## Notify contacts
 
