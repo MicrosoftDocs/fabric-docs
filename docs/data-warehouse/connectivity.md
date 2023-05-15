@@ -63,7 +63,7 @@ A warehouse or lakehouse SQL endpoint is a first class citizen within Power BI, 
 
 - Select the Warehouse
 - Choose entities
-- Load Data - choose connectivity mode: import or DQ
+- Load Data - choose a data connectivity mode: [import or DirectQuery](/power-bi/connect-data/desktop-directquery-about)
 
 Learn more here: [Create reports in Microsoft Fabric](create-reports.md)
 
