@@ -125,7 +125,7 @@ Users typically use DBT adapters to connect DBT projects to a target datastore. 
 
 The DBT Fabric DW Adapter uses the `pyodbc` library to establish connectivity with Trident Data Warehouse. The `pyodbc` library is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/).  The `pyodbc` library directly passes connection string to the database driver through SQLDriverConnect in the `msodbc` connection structure to Fabric using a TDS (Tabular Data Streaming) proxy service.
 
-The DBT Fabric DW  Adapter supports AAD based authentication and allows developers to use az cli authentication using dbt-synapsevnext adapter. SQL Authentication is not supported.
+The DBT Fabric DW adapter supports Azure Active Directory (Azure AD) authentication and allows developers to use `az cli authentication` using the dbt-synapsevnext adapter. SQL Authentication is not supported.
 
 ## Connectivity by other menas
 
