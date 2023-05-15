@@ -29,7 +29,7 @@ You can open an item's impact analysis from it's card in lineage view, or from t
 
 ## General impact analysis pane
 
-Rhe following image shows an example of the impact analysis pane for most Fabric items.
+The following image shows an example of the impact analysis pane for most Fabric items.
 
 :::image type="content" source="./media/impact-analysis/impact-analysis-pane-general.png" alt-text="Screenshot of the impact analysis side pane.":::
 
