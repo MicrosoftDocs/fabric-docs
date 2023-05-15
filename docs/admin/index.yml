@@ -22,8 +22,6 @@ landingContent:
         links:
           - text: Enable Microsoft Fabric for your organization
             url: fabric-switch.md
-          - text: Compliance settings
-            url: compliance.md
           - text: Governance in Microsoft Fabric
             url: ../governance/index.yml      
           - text: Security in Microsoft Fabric

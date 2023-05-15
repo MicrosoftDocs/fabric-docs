@@ -52,5 +52,5 @@ If you made numerous changes and don’t want to revert to a previous state, you
 
 ## Next steps
 
-- [Manual update](./partial-update.md)
+- [Manually update after a failed update](./partial-update.md)
 - [Deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md)
