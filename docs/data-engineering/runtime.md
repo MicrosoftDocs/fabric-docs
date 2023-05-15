@@ -8,7 +8,7 @@ ms.topic: overview
 ms.date: 05/23/2023
 ---
 
-# Apache Spark runtime in Fabric
+# Apache Spark Runtime in Fabric
 
 The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. It combines key components from both internal and open-source sources, providing customers with a comprehensive solution. For simplicity, we'll refer to the Microsoft Fabric Runtime powered by Apache Spark as Fabric Runtime.
 
@@ -26,7 +26,8 @@ Major components of the Fabric Runtime:
 
 ## Runtime 1.1
 
-Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are: 
+Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are:
+
 - Operating System: Ubuntu 18.04
 - Java: 1.8.0_282
 - Scala: 2.12.15
@@ -372,7 +373,6 @@ Below you can find the table with listing all the default level packages for Jav
 | org.xerial.snappy                 | snappy-java                                 | 1.1.8.4                     |
 | oro                               | oro                                         | 2.0.8                       |
 | pl.edu.icm                        | JLargeArrays                                | 1.5                         |
-
 
 ## Default level packages for Python libraries
 
