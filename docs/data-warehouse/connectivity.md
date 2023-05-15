@@ -117,7 +117,7 @@ When establishing connectivity via JDBC, check for the following dependencies:
 
 ## Connect using OLE DB
 
-We support connectivity to the Warehouse or SQL Endpoint using ODBC. Make sure you’re running the latest SQL Server drivers: [Microsoft OLE DB Driver for SQL Server - OLE DB Driver for SQL Server | Microsoft Learn](https://learn.microsoft.com/en-us/sql/connect/oledb/oledb-driver-for-sql-server?view=sql-server-ver16)
+We support connectivity to the Warehouse or SQL Endpoint using OLE DB. Make sure you’re running the latest [Microsoft OLE DB Driver for SQL Server](/sql/connect/oledb/oledb-driver-for-sql-server).
 
 ## Connect using DBT
 
