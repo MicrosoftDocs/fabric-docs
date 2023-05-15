@@ -257,7 +257,6 @@ NA
 :::row-end:::
 ---
 
-
 ### Automatically generated schema in the SQL Endpoint of the Lakehouse
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] manages the automatically generated tables so the workspace users can't modify them. Users can enrich the database model by adding their own SQL schemas, views, procedures, and other database objects.
