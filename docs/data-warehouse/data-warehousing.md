@@ -217,7 +217,7 @@ Data can be [ingested](ingest-data.md) into the [!INCLUDE [fabric-dw](includes/f
 
 This section provides an overview of two distinct data warehousing experiences: the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
-### SQL Endpoint of the Lakehouse
+### SQL endpoint of the lakehouse
 
 A [!INCLUDE [fabric-se](includes/fabric-se.md)] is a warehouse that is automatically generated from a [Lakehouse](../data-engineering/lakehouse-overview.md) in [!INCLUDE [product-name](../includes/product-name.md)]. A customer can transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" view of the same Lakehouse. The [!INCLUDE [fabric-se](includes/fabric-se.md)] is read-only, and data can only be modified through the "Lake" view of the Lakehouse using Spark. 
 
