@@ -123,7 +123,7 @@ We support connectivity to the Warehouse or SQL Endpoint using ODBC. Make sure y
 
 Users typically use DBT adapters to connect DBT projects to a target datastore. DBT adapters are built specifically for each data source. Users who would like to connect to Synapse Data Warehouse in Microsoft Fabric from DBT project must use the `dbt-synapsevnext` DBT adapter. Similarly, the Azure Synapse Analytics dedicated SQL pool data source has its own adapter, `dbt-synapse`.
 
-The DBT Fabric DW Adapter uses pyodbc library to establish connectivity with Trident Data Warehouse. PYODBC is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/).  PYODBC directly passes connection string to the database driver through SQLDriverConnect in msodbc connection structure to Trident Data Warehouse using TDS (Tabular Data Streaming) proxy service.
+The DBT Fabric DW Adapter uses the `pyodbc` library to establish connectivity with Trident Data Warehouse. The `pyodbc` library is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/).  The `pyodbc` library directly passes connection string to the database driver through SQLDriverConnect in the `msodbc` connection structure to Fabric using a TDS (Tabular Data Streaming) proxy service.
 
 The DBT Fabric DW  Adapter supports AAD based authentication and allows developers to use az cli authentication using dbt-synapsevnext adapter. SQL Authentication is not supported.
 
