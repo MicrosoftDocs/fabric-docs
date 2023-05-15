@@ -107,16 +107,16 @@ Recommended use case
 Development experience 
    :::column-end:::
    :::column span="1"::: 
-- Warehouse Editor with full support for T-SQL data ingestion, modeling, development, and querying UI experiences for data ingestion, modeling, and querying
+ - Warehouse Editor with full support for T-SQL data ingestion, modeling, development, and querying UI experiences for data ingestion, modeling, and querying
  - Read / Write support for 1st and 3rd party tooling 
    :::column-end:::
    :::column span="1"::: 
-- Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] with limited T-SQL support for views, table valued functions, and SQL Queries
+ - Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] with limited T-SQL support for views, table valued functions, and SQL Queries
  - UI experiences for modeling and querying
  - Limited T-SQL support for 1st and 3rd party tooling  
    :::column-end:::
    :::column span="1"::: 
-- Datamart Editor with UI experiences and queries support
+ - Datamart Editor with UI experiences and queries support
  - UI experiences for data ingestion, modeling, and querying
  - Read-only support for 1st and 3rd party tooling  
    :::column-end:::
