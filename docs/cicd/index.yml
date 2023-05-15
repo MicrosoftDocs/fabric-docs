@@ -30,10 +30,8 @@ landingContent:
             url: git-integration/intro-to-git-integration.md 
           - text: What is deployment pipelines?
             url: deployment-pipelines/intro-to-deployment-pipelines.md  
-      - linkListType: concept
-        links:          
           - text: Lifecycle management best practices
-            url:  ./best-practices-cicd.md             
+            url:  ./best-practices-cicd.md                                  
 
   # Card 
   - title: Get started
