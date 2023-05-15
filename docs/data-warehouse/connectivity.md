@@ -43,7 +43,7 @@ To retrieve the connection string, follow these steps:
 
 The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to [SQL Server Management Studio (SSMS)](https://aka.ms/ssms).
 
-1. When you open SQL Server Management Studio (SSMS), the **Connect to Server** window appears. If already open, you can connect manually by selecting **Object Explorer** > **Connect** > **Database Engine**.
+1. When you open SSMS, the **Connect to Server** window appears. If already open, you can connect manually by selecting **Object Explorer** > **Connect** > **Database Engine**.
 
    :::image type="content" source="media\connectivity\object-explorer-connect-menu.png" alt-text="Screenshot showing where to select Database Engine on the Connect menu." lightbox="media\connectivity\object-explorer-connect-menu.png":::
 
