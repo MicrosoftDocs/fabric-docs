@@ -5,7 +5,7 @@ ms.reviewer: sngun
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: quickstart
-ms.date: 5/12/2023
+ms.date: 5/23/2023
 ---
 
 # Microsoft Fabric decision guide: data warehouse or lakehouse
@@ -16,37 +16,43 @@ Use this reference guide and the example scenarios to help you choose between th
 
 ## Data warehouse and lakehouse properties
 
-| | **Data warehouse** | **Lakehouse** |
-|---|:---:|:---:|
-| **Data volume** | Unlimited | Unlimited |
-| **Type of data** | Structured | Unstructured,<br>semi-structured,<br>structured |
-| **Primary developer persona** | Data warehouse developer,<br>SQL engineer | Data engineer,<br>data scientist |
-| **Primary developer skill set** | SQL | Spark (Scala, PySpark, Spark SQL, R) |
-| **Data organized** **by** | Databases, schemas, and tables | Folders and files,<br>databases and tables |
-| **Read operations** | Spark,<br>T-SQL | Spark,<br>T-SQL |
-| **Write operations** | T-SQL | Spark (Scala, PySpark, Spark SQL, R) |
-| **Multi-table transactions** | Yes | No |
-| **Primary development interface** | SQL scripts | Spark notebooks,<br>Spark job definitions |
-| **Security** | Object level (table, view, function, stored procedure, etc.),<br>column level,<br>row level,<br>DDL/DML | Row level,<br>table level (when using T-SQL),<br>none for Spark |
-| **Access data via shortcuts** | Yes (indirectly through the lakehouse) | Yes |
-| **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) |
-| **Query across artifacts** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;<br>query across lakehouses (including shortcuts using Spark) |
+| | **Data warehouse** | **Lakehouse** | **Datamart**  |
+|---|:---:|:---:|:---:|
+| **Data volume** | Unlimited | Unlimited |Up to 100 GB|
+| **Type of data** | Structured | Unstructured,<br>semi-structured,<br>structured |Structured|
+| **Primary developer persona** | Data warehouse developer,<br>SQL engineer | Data engineer,<br>data scientist |Citizen developer|
+| **Primary developer skill set** | SQL | Spark (Scala, PySpark, Spark SQL, R) |No code, SQL|
+| **Data organized by** | Databases, schemas, and tables | Folders and files,<br>databases and tables |Database, tables, queries|
+| **Read operations** | Spark,<br>T-SQL | Spark,<br>T-SQL |Spark,<BR>T-SQL,<BR>Power BI|
+| **Write operations** | T-SQL | Spark (Scala, PySpark, Spark SQL, R) |Dataflows, T-SQL|
+| **Multi-table transactions** | Yes | No |No|
+| **Primary development interface** | SQL scripts | Spark notebooks,<br>Spark job definitions | Power BI |
+| **Security** | Object level (table, view, function, stored procedure, etc.),<br>column level,<br>row level,<br>DDL/DML | Row level,<br>table level (when using T-SQL),<br>none for Spark | Built-in RLS editor|
+| **Access data via shortcuts** | Yes (indirectly through the lakehouse) | Yes | No|
+| **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) | No|
+| **Query across artifacts** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;<br>query across lakehouses (including shortcuts using Spark) | No|
 
 ## Scenarios
 
 Review these scenarios for help with choosing between using a lakehouse or a data warehouse in Fabric.
 
-### Scenario1
+### Scenario 1
 
-Susan, a professional developer, is new to Microsoft Fabric. She's ready to get started cleaning, modeling, and analyzing data but needs to decide if she should build a data warehouse or a lakehouse. She reviews the details in the previous table and sees that her primary decision points are her own skills and her need for multi-table transactions.
+Susan, a professional developer, is new to Microsoft Fabric. They are ready to get started cleaning, modeling, and analyzing data but need to decide to build a data warehouse or a lakehouse. After review of the details in the previous table, the primary decision points are the available skillsets and the need for multi-table transactions.
 
-Susan has spent many years building data warehouses on relational database engines, and is very familiar with SQL syntax and functionality. As she thinks about her larger team, she realizes the primary consumers of this data are also highly skilled with SQL and SQL analytical tools. Susan decides to use a **data warehouse**, which allows her and her team to interact primarily with T-SQL, while also allowing any Spark users in the organization to access the data.
+Susan has spent many years building data warehouses on relational database engines, and is very familiar with SQL syntax and functionality. Thinking about the larger team, the primary consumers of this data are also skilled with SQL and SQL analytical tools. Susan decides to use a **data warehouse**, which allows the team to interact primarily with T-SQL, while also allowing any Spark users in the organization to access the data.
 
-### Scenario2
+### Scenario 2
 
-Rob, a data engineer, needs to store and model several terabytes of data in Fabric. His team has a mix of PySpark and T-SQL skills. Most of the team running T-SQL queries are consumers and therefore don't need to write INSERT, UPDATE, or DELETE statements. The remaining developers are comfortable working in notebooks, and because the data is stored in Delta, they're able to interact with a similar SQL syntax. Rob decides to use a **lakehouse**, which allows his data engineering team to use their diverse skills against the data, while allowing the team members who are highly skilled in T-SQL to consume the data.
+Rob, a data engineer, needs to store and model several terabytes of data in Fabric. The team has a mix of PySpark and T-SQL skills. Most of the team running T-SQL queries are consumers, and therefore don't need to write INSERT, UPDATE, or DELETE statements. The remaining developers are comfortable working in notebooks, and because the data is stored in Delta, they're able to interact with a similar SQL syntax. Rob decides to use a **lakehouse**, which allows the data engineering team to use their diverse skills against the data, while allowing the team members who are highly skilled in T-SQL to consume the data.
+
+### Scenario 3
+
+
 
 ## Next steps
 
+- [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
 - [Create a warehouse in Microsoft Fabric](../data-warehouse/create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
+- [Introduction to Power BI datamarts](/power-bi/transform-model/datamarts/datamarts-overview)

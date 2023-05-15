@@ -16,21 +16,76 @@ ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspac
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Overview of different warehousing capabilities 
+## Overview of different warehousing capabilities
 
 In order to best serve your analytics use cases, there are a variety of capabilities available to you. Generally, the warehouse can be thought of as a superset of all other capabilities, providing a synergistic relationship between all other analytics offerings that provide T-SQL.  
 
-| **[!INCLUDE [product-name](../includes/product-name.md)] Analytics offering** | [!INCLUDE [fabric-dw](includes/fabric-dw.md)] | [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse | Datamarts |
-| :-- | :-- | :-- | :-- |
-| Primary Capabilities   | ACID compliant, full data warehousing with transactions support in T-SQL.| Read only, system generated [!INCLUDE [fabric-se](includes/fabric-se.md)] for Lakehouse for T-SQL querying and serving. Supports queries and views on top of Lakehouse delta tables only.| No-code data warehousing and T-SQL querying |
-| Use Cases | - Data Warehousing for enterprise use</br> - Data Warehousing supporting departmental, business unit or self service use</br> - Structured data analysis in T-SQL with tables, views, procedures and functions and Advanced SQL support for BI | -Exploring and querying delta tables from the lakehouse</br>-Staging Data and Archival Zone for analysis</br> - Medallion architecture with zones for bronze, silver and gold analysis</br> - Pairing with Warehouse for enterprise analytics use cases | Small departmental or business unit warehousing use cases</br> - Self service data warehousing use cases</br> - Landing zone for Power BI dataflows and simple SQL support for BI |
-| Developer Profile      | SQL Developers or citizen developers| Data Engineers or SQL Developers | Citizen developer only |
-| Development Experience | Warehouse Editor with full support for T-SQL data ingestion, modeling, development, and querying UI experiences for data ingestion, modeling, and querying</br> - Read / Write support for 1st and 3rd party tooling | - Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] with limited T-SQL support for views, table valued functions, and SQL Queries</br> - UI experiences for modeling and querying</br> - Limited T-SQL support for 1st and 3rd party tooling  | - Datamart Editor with UI experiences and queries support</br> - UI experiences for data ingestion, modeling, and querying</br> - Read only support for 1st and 3rd party tooling  |
-| T-SQL capabilities | Full DQL, DML, and DDL T-SQL support, full transaction support| Full DQL, No DML, limited DDL T-SQL Support such as SQL Views and TVFs    | Full DQL only|
-| Data Loading| SQL, pipelines, dataflows| Spark, pipelines, dataflows, shortcuts | Dataflows only|
-| Delta Support          | Reads and writes Delta tables       | Reads delta tables   | NA|
-| Storage Layer          | Open Data Format - Delta | Open Data Format - Delta        | NA|
-| Licensing   | Fabric or Power BI Premium          | Fabric or Power BI Premium      | Power BI Premium only   |
+:::row:::
+    :::column span="1"::: **[!INCLUDE [product-name](../includes/product-name.md)] Analytics offering** :::column-end:::
+:::column span="1"::: [!INCLUDE [fabric-dw](includes/fabric-dw.md)] :::column-end:::
+:::column span="1"::: [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse :::column-end:::
+:::column span="1"::: Datamarts :::column-end:::
+:::row-end:::
+:::row:::
+    :::column span="1"::: :-- :::column-end:::
+:::column span="1"::: :-- :::column-end:::
+:::column span="1"::: :-- :::column-end:::
+:::column span="1"::: :-- :::column-end:::
+:::row-end:::
+:::row:::
+    :::column span="1"::: Licensing   :::column-end:::
+:::column span="1"::: Fabric or Power BI Premium          :::column-end:::
+:::column span="1"::: Fabric or Power BI Premium      :::column-end:::
+:::column span="1"::: Power BI Premium only   :::column-end:::
+:::row-end:::
+:::row::: 
+    :::column span="1":::Primary capabilities   :::column-end:::
+:::column span="1"::: ACID compliant, full data warehousing with transactions support in T-SQL.:::column-end:::
+:::column span="1"::: Read only, system generated [!INCLUDE [fabric-se](includes/fabric-se.md)] for Lakehouse for T-SQL querying and serving. Supports queries and views on top of Lakehouse delta tables only.:::column-end:::
+:::column span="1"::: No-code data warehousing and T-SQL querying :::column-end:::
+:::row-end:::
+:::row::: 
+    :::column span="1":::Developer profile      :::column-end:::
+:::column span="1"::: SQL Developers or citizen developers:::column-end:::
+:::column span="1"::: Data Engineers or SQL Developers :::column-end:::
+:::column span="1"::: Citizen developer only :::column-end:::
+:::row-end:::
+:::row::: 
+    :::column span="1":::Recommended use case :::column-end:::
+:::column span="1"::: - Data Warehousing for enterprise use</br> - Data Warehousing supporting departmental, business unit or self service use</br> - Structured data analysis in T-SQL with tables, views, procedures and functions and Advanced SQL support for BI :::column-end:::
+:::column span="1"::: -Exploring and querying delta tables from the lakehouse</br>-Staging Data and Archival Zone for analysis</br> - Medallion architecture with zones for bronze, silver and gold analysis</br> - Pairing with Warehouse for enterprise analytics use cases :::column-end:::
+:::column span="1"::: Small departmental or business unit warehousing use cases</br> - Self service data warehousing use cases</br> - Landing zone for Power BI dataflows and simple SQL support for BI :::column-end:::
+:::row-end:::
+:::row:::
+    :::column span="1"::: Development experience :::column-end:::
+:::column span="1"::: Warehouse Editor with full support for T-SQL data ingestion, modeling, development, and querying UI experiences for data ingestion, modeling, and querying</br> - Read / Write support for 1st and 3rd party tooling :::column-end:::
+:::column span="1"::: - Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] with limited T-SQL support for views, table valued functions, and SQL Queries</br> - UI experiences for modeling and querying</br> - Limited T-SQL support for 1st and 3rd party tooling  :::column-end:::
+:::column span="1"::: - Datamart Editor with UI experiences and queries support</br> - UI experiences for data ingestion, modeling, and querying</br> - Read-only support for 1st and 3rd party tooling  :::column-end:::
+:::row-end:::
+:::row:::
+    :::column span="1"::: T-SQL capabilities :::column-end:::
+:::column span="1"::: Full DQL, DML, and DDL T-SQL support, full transaction support:::column-end:::
+:::column span="1"::: Full DQL, No DML, limited DDL T-SQL Support such as SQL Views and TVFs    :::column-end:::
+:::column span="1"::: Full DQL only:::column-end:::
+:::row-end:::
+:::row:::
+    :::column span="1"::: Data loading:::column-end:::
+:::column span="1"::: SQL, pipelines, dataflows:::column-end:::
+:::column span="1"::: Spark, pipelines, dataflows, shortcuts :::column-end:::
+:::column span="1"::: Dataflows only:::column-end:::
+:::row-end:::
+:::row:::
+    :::column span="1"::: Delta table support          :::column-end:::
+:::column span="1"::: Reads and writes Delta tables       :::column-end:::
+:::column span="1"::: Reads delta tables   :::column-end:::
+:::column span="1"::: NA:::column-end:::
+:::row-end:::
+:::row:::
+    :::column span="1"::: Storage layer          :::column-end:::
+:::column span="1"::: Open Data Format - Delta :::column-end:::
+:::column span="1"::: Open Data Format - Delta        :::column-end:::
+:::column span="1"::: NA:::column-end:::
+:::row-end:::
 
 ### A lake-centric SaaS experience built for any skill level
 
@@ -118,4 +173,6 @@ For autogenerated schema data types for the [!INCLUDE [fabric-se](includes/fabri
 
 - [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
 - [Create a warehouse](create-warehouse.md)
+- [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
+- [Introduction to Power BI datamarts](/power-bi/transform-model/datamarts/datamarts-overview)
 - [Creating reports](create-reports.md)
