@@ -71,6 +71,11 @@ df
 
 To retrieve the data from the *Customer* table in the *Sales Dataset* using SparkR:
 
+> [!NOTE]
+> Retrieving tables is subject to strict limitations (see [Read Limitations](#read-limitations)). Results might be incomplete.
+> Use aggregate pushdown to reduce the amount of data transferred.
+> Supported aggregates are: COUNT, SUM, AVG, MIN, MAX.
+
 ```R
 df = sql("SELECT * FROM pbi.`Sales Dataset`.Customer")
 ```
