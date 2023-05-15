@@ -17,7 +17,7 @@ When you make changes to a Fabric item, or are considering making changes, it's 
 
 ## Open impact analysis for an item
 
-You can open an item's impact analysis from it's card in lineage view, or from the **Lineage** option on the items detail's page.
+You can open an item's impact analysis from its card in lineage view, or from the **Lineage** option on the items detail's page.
 
 * From a card in lineage view:
 
@@ -40,7 +40,7 @@ The following image shows an example of the impact analysis pane for most Fabric
 
 Data source impact analysis helps you see where your data source is being used throughout your organization. This can be useful when the data source is temporarily or permanently taken offline, and you want to get an idea about who is impacted. Impact analysis shows you how many workspaces and items use the data source, and provides easy navigation to the workspaces where the affected dataflows and datasets are located so that you can investigate further.
 
-Data source impact analysis can also help you spot data duplication in the tenant, such as when a number of different users build similar models on top of the same data source. By helping you discover such redundant items, data source impact analysis supports the goal of having *a single source of truth*.
+Data source impact analysis can also help you spot data duplication in the tenant, such as when many different users build similar models on top of the same data source. By helping you discover such redundant items, data source impact analysis supports the goal of having *a single source of truth*.
 
 :::image type="content" source="./media/impact-analysis/data-source-impact-analyis-side-pane.png" alt-text="Screenshot of data source impact analysis side pane.":::
 
