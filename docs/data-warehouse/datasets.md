@@ -62,7 +62,7 @@ To load the dataset, select the name of the dataset.
 
    :::image type="content" source="media\datasets\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\datasets\load-dataset.png":::
 
-## Create a new Power BI Dataset
+## Create a new Power BI dataset
 
 There are some situations where your organization may need to create additional Power BI datasets based off SQL endpoint or Warehouse data. To create a Power BI dataset from a warehouse, follow these steps:
 
