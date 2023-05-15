@@ -24,7 +24,7 @@ To get started, you must complete the following prerequisites:
 
 ## Authentication to warehouses in Fabric
 
-In Fabric, 2 types of authenticated users are supported through the SQL connection string:
+In Fabric, two types of authenticated users are supported through the SQL connection string:
 1.	AAD User principals, or user identities
 2.	AAD Service principals
 
