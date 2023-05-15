@@ -42,7 +42,7 @@ Data source impact analysis helps you see where your data source is being used t
 
 Data source impact analysis can also help you spot data duplication in the tenant, such as when many different users build similar models on top of the same data source. By helping you discover such redundant items, data source impact analysis supports the goal of having *a single source of truth*.
 
-:::image type="content" source="./media/impact-analysis/data-source-impact-analyis-side-pane.png" alt-text="Screenshot of data source impact analysis side pane.":::
+:::image type="content" source="./media/impact-analysis/data-source-impact-analysis-side-pane.png" alt-text="Screenshot of data source impact analysis side pane.":::
 
 * **Data source type**: Indicates the data source type.
 * **Path to data source**: Path to the data source
