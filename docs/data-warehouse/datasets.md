@@ -3,7 +3,7 @@ title: Default Power BI datasets
 description: Learn more about default Power BI datasets in Microsoft Fabric.
 author: chuckles22
 ms.author: chweb
-ms.reviewer: wiassaf
+ms.reviewer: wiassaf, salilkanade
 ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Default dataset overview # This article's title should not change. If so, contact engineering.
@@ -48,9 +48,9 @@ Once there are objects in the default Power BI dataset, there are two ways to va
 
 1. Review the default layout for the default dataset objects.
 
-The default layout for BI enabled tables persists in the user session and is generated whenever a user navigates to the model view. It's called **Default dataset objects** as depicted here:
+The default layout for BI enabled tables persists in the user session and is generated whenever a user navigates to the model view. Look for the **Default dataset objects** tab.
 
-:::image type="content" source="media\datasets\default-dataset-objects.png" alt-text="Screenshot of the reporting tab showing default dataset objects." lightbox="media\datasets\default-dataset-objects.png":::
+   :::image type="content" source="media\datasets\default-dataset-objects.png" alt-text="Screenshot of the reporting tab showing default dataset objects." lightbox="media\datasets\default-dataset-objects.png":::
 
 This layout isn't currently saved past the user's session.
 
@@ -58,11 +58,11 @@ This layout isn't currently saved past the user's session.
 
 To access default Power BI datasets, go to your workspace, and find the dataset that matches the name of the desired Lakehouse. The default Power BI dataset follows the naming convention of the Lakehouse.
 
-:::image type="content" source="media\datasets\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\datasets\find-dataset.png":::
+   :::image type="content" source="media\datasets\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\datasets\find-dataset.png":::
 
 To load the dataset, select the name of the dataset.
 
-:::image type="content" source="media\datasets\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\datasets\load-dataset.png":::
+   :::image type="content" source="media\datasets\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\datasets\load-dataset.png":::
 
 ## Create a new Power BI Dataset
 
@@ -72,7 +72,7 @@ There are some situations where your organization may need to create additional 
 
 2. In the **Reporting** ribbon, select **New Power BI dataset**, and then in the **New dataset** dialog, select tables to be included, and then select **Confirm**.
 
-:::image type="content" source="media\datasets\newPBIdataset.png" alt-text="Screenshot showing the new Power BI dataset." lightbox="media\datasets\newPBIdataset.png":::
+   :::image type="content" source="media\datasets\new-power-bi-dataset.png" alt-text="Screenshot showing the new Power BI dataset." lightbox="media\datasets\new-power-bi-dataset.png":::
 
 3. Power BI automatically saves the dataset in the workspace based on the name of your warehouse, and then opens the dataset in Power BI.
 
