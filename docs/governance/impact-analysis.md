@@ -47,7 +47,7 @@ Data source impact analysis can also help you spot data duplication in the tenan
 * **Data source type**: Indicates the data source type.
 * **Path to data source**: Path to the data source
 * **Impact summary**: The number of potentially impacted workspaces and items. This count includes workspaces you don't have access to.
-* **Usage breakdown**: For each workspace, the names of the impacted dataflows and datasets. To further explore the impact on a particular workspace, select the workspace name to open the workspace. Then use [dataset impact analysis](service-dataset-impact-analysis.md) to see the usage details about connected reports and dashboards.
+* **Usage breakdown**: For each workspace, the names of the impacted dataflows and datasets. To further explore the impact on a particular workspace, select the workspace name to open the workspace. Then use [dataset impact analysis](impact-analysis.md) to see the usage details about connected reports and dashboards.
 
 ## Notify contacts
 
