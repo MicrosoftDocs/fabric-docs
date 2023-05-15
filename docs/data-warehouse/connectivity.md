@@ -71,8 +71,6 @@ For more information, see [Create reports in Microsoft Fabric](create-reports.md
 
 Microsoft Fabric supports connectivity to the Warehouse or SQL Endpoint using ODBC. Make sure you’re running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Azure Active Directory (Azure AD) authentication.
 
-When establishing connectivity, make sure that you’re using the latest version of the driver here: [Download ODBC Driver for SQL Server](https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver16and using AAD authentication)
-
 
 ## Connect using JDBC
 
