@@ -65,7 +65,7 @@ A Warehouse or Lakehouse SQL Endpoint is a fully supported and native data sourc
 - Choose entities
 - Load Data - choose a data connectivity mode: [import or DirectQuery](/power-bi/connect-data/desktop-directquery-about)
 
-Learn more here: [Create reports in Microsoft Fabric](create-reports.md)
+For more information, see [Create reports in Microsoft Fabric](create-reports.md).
 
 ## Connect using ODBC
 
