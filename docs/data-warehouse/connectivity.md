@@ -39,7 +39,7 @@ To retrieve the connection string, follow these steps:
 
    :::image type="content" source="media\connectivity\warehouse-copy-sql-connection-string.png" alt-text="Screenshot of the workspace screen with the context menu open." lightbox="media\connectivity\warehouse-copy-sql-connection-string.png":::
 
-## Get started with SSMS
+## Get started with SQL Server Management Studio (SSMS)
 
 The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to SSMS.
 
