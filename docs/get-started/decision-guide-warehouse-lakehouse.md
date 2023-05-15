@@ -16,7 +16,7 @@ Use this reference guide and the example scenarios to help you choose between th
 
 ## Data warehouse and lakehouse properties
 
-| | **Data warehouse** | **Lakehouse** | **Datamart**  |
+| | **Data warehouse** | **Lakehouse** | **Power BI Datamart**  |
 |---|:---:|:---:|:---:|
 | **Data volume** | Unlimited | Unlimited |Up to 100 GB|
 | **Type of data** | Structured | Unstructured,<br>semi-structured,<br>structured |Structured|
