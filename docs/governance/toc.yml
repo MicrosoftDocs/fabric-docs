@@ -21,6 +21,8 @@ items:
   href: endorsement-overview.md
 - name: Lineage
   href: lineage.md
+- name: Impact analysis
+  href: impact-analysis.md
 - name: Domains
   href: domains.md
 - name: Metadata scanning
