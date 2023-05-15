@@ -8,9 +8,9 @@ ms.topic: overview
 ms.date: 05/23/2023
 ---
 
-# Apache Spark runtime in Fabric
+# Apache Spark Runtime in Fabric
 
-The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. It combines key components from both internal and open-source sources, providing customers with a comprehensive solution. For simplicity, we'll refer to the Microsoft Fabric Runtime powered by Apache Spark as Fabric Runtime.
+The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. It combines key components from both internal and open-source sources, providing customers with a comprehensive solution. For simplicity, we refer to the Microsoft Fabric Runtime powered by Apache Spark as Fabric Runtime.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -26,7 +26,8 @@ Major components of the Fabric Runtime:
 
 ## Runtime 1.1
 
-Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are: 
+Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are:
+
 - Operating System: Ubuntu 18.04
 - Java: 1.8.0_282
 - Scala: 2.12.15
@@ -44,25 +45,28 @@ Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.1, pro
 
 ### Apache Spark 3.3.1
 
-Below is an extended summary of key new features related to Apache Spark version 3.3.0 and 3.3.1
+Following is an extended summary of key new features related to Apache Spark version 3.3.0 and 3.3.1:
 
-- **Row-level filtering**: improve the performance of joins by prefiltering one side of a jas long as there are no deprecation or regression impacts.oin using a Bloom filter and IN predicate generated from the values from the other side of the join ([SPARK-32268](https://issues.apache.org/jira/browse/SPARK-32268))
+- **Row-level filtering**: improve the performance of joins by prefiltering one side as long as there are no deprecation or regression impacts.oin using a Bloom filter and IN predicate generated from the values from the other side of the join ([SPARK-32268](https://issues.apache.org/jira/browse/SPARK-32268))
 
 - Improve the compatibility of Spark with the SQL standard:**ANSI enhancements** ([SPARK-38860](https://issues.apache.org/jira/browse/SPARK-38860))
 
 - Error Message Improvements to identify problems faster and take the necessary steps to resolve it ([SPARK-38781](https://issues.apache.org/jira/browse/SPARK-38781))
 
-- Support **complex types for Parquet vectorized reader.** Previously, Parquet vectorized reader hasn't supported nested column type (struct, array and map). The Apache Spark 3.3 contains an implementation of nested column vectorized reader for FB-ORC in our internal fork of Spark. It impacts performance improvement compared to nonvectorized reader when reading nested columns. In addition, this can also help improve the non-nested column performance when reading non-nested and nested columns together in one query ([SPARK-34863](https://issues.apache.org/jira/browse/SPARK-34863))
+- Support **complex types for Parquet vectorized reader.** Previously, Parquet vectorized reader hasn't supported nested column type (struct, array, and map). The Apache Spark 3.3 contains an implementation of nested column vectorized reader for FB-ORC in our internal fork of Spark. It impacts performance improvement compared to nonvectorized reader when reading nested columns. In addition, this implementation can also help improve the non-nested column performance when reading non-nested and nested columns together in one query ([SPARK-34863](https://issues.apache.org/jira/browse/SPARK-34863))
 
-- Allows users to query the metadata of the input files for all file formats, expose them as **built-in hidden columns** meaning **users can only see them when they explicitly reference them** (e.g. file path, file name) ([SPARK-37273](https://issues.apache.org/jira/browse/SPARK-37273))
+- Allows users to query the metadata of the input files for all file formats, expose them as **built-in hidden columns** meaning **users can only see them when they explicitly reference them** (for example, file path and file name) ([SPARK-37273](https://issues.apache.org/jira/browse/SPARK-37273))
 
 - Provide a profiler for Python/Pandas UDFs ([SPARK-37443](https://issues.apache.org/jira/browse/SPARK-37443))
 
-- Previously, streaming queries with Trigger. Which was loading all of the available data in a single batch. Because of this, the amount of data the queries could process was limited, or the Spark driver would be out of memory. Now, introducing **Trigger.AvailableNow** for running streaming queries like Trigger.Once in multiple batches ([SPARK-36533](https://issues.apache.org/jira/browse/SPARK-36533))
+- Previously, streaming queries with Trigger, which was loading all of the available data in a single batch. Because of this, the amount of data the queries could process was limited, or the Spark driver would be out of memory. Now, introducing **Trigger.AvailableNow** for running streaming queries like Trigger once in multiple batches ([SPARK-36533](https://issues.apache.org/jira/browse/SPARK-36533))
 
 - More comprehensive DS V2 push down capabilities ([SPARK-38788](https://issues.apache.org/jira/browse/SPARK-38788))
+
 - Executor **Rolling in Kubernetes** environment ([SPARK-37810](https://issues.apache.org/jira/browse/SPARK-37810))
+
 - Support **Customized Kubernetes** Schedulers ( [SPARK-36057](https://issues.apache.org/jira/browse/SPARK-36057))
+
 - Migrating from **log4j 1 to log4j 2** ([SPARK-37814](https://issues.apache.org/jira/browse/SPARK-37814)) to gain in:
   - Performance: Log4j 2 is faster than Log4j 1. Log4j 2 uses **asynchronous logging by default,** which can improve performance significantly.
 
@@ -102,7 +106,7 @@ The key features in this release are as follows:
 
 - [Improve](https://github.com/delta-io/delta/commit/9017ac0d811c0a42ba8ac45720bddf06c8f17e63) performance of the [DELETE](https://docs.delta.io/latest/delta-update.html#delete-from-a-table) command by pruning the columns to read when searching for files to rewrite.
 
-- [Fix](https://github.com/delta-io/delta/commit/6dbc55db53332c985e5bc8470df6c95106afac25) for a bug in the DynamoDB-based [S3 multi-cluster mode](https://docs.delta.io/2.1.1/delta-storage.html#setup-configuration-s3-multi-cluster) configuration. The previous version wrote an incorrect timestamp, which was used by [DynamoDB's TTL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) feature to clean up expired items. This timestamp value has been fixed and the table attribute renamed from `commitTime` to `expireTime`. If you already have TTL enabled, please follow the migration steps [here](https://docs.delta.io/latest/porting.html#delta-lake-1-2-1-2-0-0-or-2-1-0-to-delta-lake-2-0-1-2-1-1-or-above).
+- [Fix](https://github.com/delta-io/delta/commit/6dbc55db53332c985e5bc8470df6c95106afac25) for a bug in the DynamoDB-based [S3 multi-cluster mode](https://docs.delta.io/2.1.1/delta-storage.html#setup-configuration-s3-multi-cluster) configuration. The previous version wrote an incorrect timestamp, which was used by [DynamoDB's TTL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) feature to clean up expired items. This timestamp value has been fixed and the table attribute renamed from `commitTime` to `expireTime`. If you already have TTL enabled, follow the migration steps [here](https://docs.delta.io/latest/porting.html#delta-lake-1-2-1-2-0-0-or-2-1-0-to-delta-lake-2-0-1-2-1-1-or-above).
 
 - [Fix](https://github.com/delta-io/delta/commit/b07257df) [nondeterministic](https://github.com/delta-io/delta/issues/527) behavior during MERGE when working with sources that are nondeterministic.
 
@@ -120,7 +124,7 @@ The key features in this release are as follows:
   - [Fix](https://github.com/delta-io/delta/commit/5d22a38d) a metric in MERGE command
   - [Source type](https://github.com/delta-io/delta/commit/ac13fcb0) metric for CONVERT TO DELTA
   - [Metrics](https://github.com/delta-io/delta/commit/2118e64b) for DELETE on partitions
-  - [Additional](https://github.com/delta-io/delta/commit/fd503d80) vacuum stats
+  - [More](https://github.com/delta-io/delta/commit/fd503d80) vacuum stats
 
 - [Fix](https://github.com/delta-io/delta/commit/7e876792efdd92a85aa3f7b81d81f34c8b276d7b) for accidental protocol downgrades with [RESTORE](https://docs.delta.io/latest/delta-utility.html#restore-a-delta-table-to-an-earlier-state) command. Until now, RESTORE TABLE may downgrade the protocol version of the table, which could have resulted in inconsistent reads with time travel. With this fix, the protocol version is never downgraded from the current one.
 
@@ -373,7 +377,6 @@ Below you can find the table with listing all the default level packages for Jav
 | oro                               | oro                                         | 2.0.8                       |
 | pl.edu.icm                        | JLargeArrays                                | 1.5                         |
 
-
 ## Default level packages for Python libraries
 
 Below you can find the table with listing all the default level packages for Python and their respective versions.
@@ -618,7 +621,7 @@ Below you can find the table with listing all the default level packages for R a
 
 ## Migration between different Apache Spark Versions
 
-Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older versions of Apache Spark involves a series of steps to ensure a smooth migration. This guide will outline the necessary steps to help you migrate efficiently and effectively.
+Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older version of Apache Spark involves a series of steps to ensure a smooth migration. This guide outlines the necessary steps to help you migrate efficiently and effectively.
 
 1. Review Fabric Runtime 1.1 release notes, including checking the components and default-level packages included into the runtime, to understand the new features, improvements.
 
@@ -630,13 +633,13 @@ Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older 
    - If you use PySpark, [review Pyspark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/pyspark_upgrade.html)
    - If you migrate code from Koalas to PySpark, [review Koalas to pandas API on Spark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/koalas_to_pyspark.html)
 
-1. Move your workloadss to Fabric and ensure that you have backups of your data and configuration files in case you need to revert to the previous version.
+1. Move your workloads to Fabric and ensure that you have backups of your data and configuration files in case you need to revert to the previous version.
 
-1. Update any dependencies that may be impacted by the new version of Apache Spark or other Fabric Runtime 1.1 related components. This may include third-party libraries or connectors. Make sure to test the updated dependencies in a staging environment before deploying to production
+1. Update any dependencies that may be impacted by the new version of Apache Spark or other Fabric Runtime 1.1 related components. This could include third-party libraries or connectors. Make sure to test the updated dependencies in a staging environment before deploying to production
 
-1. Update Apache Spark Configuration on your workload. This may include updating configuration settings, adjusting memory allocations, and modifying any deprecated configurations.
+1. Update Apache Spark Configuration on your workload. This could include updating configuration settings, adjusting memory allocations, and modifying any deprecated configurations.
 
-1. Modify your Apache Spark applications (notebooks and Apache Spark Jobs Definitions) to use the new APIs and features introduced in Fabric Runtime 1.1 and Apache Spark 3.3. This may involve updating your code to accommodate any deprecated or removed APIs, as well as refactoring your applications to take advantage of performance improvements and new functionalities.
+1. Modify your Apache Spark applications (notebooks and Apache Spark Jobs Definitions) to use the new APIs and features introduced in Fabric Runtime 1.1 and Apache Spark 3.3. This may involve updating your code to accommodate any deprecated or removed APIs, and refactoring your applications to take advantage of performance improvements and new functionalities.
 
 1. Thoroughly test your updated applications in a staging environment to ensure compatibility and stability with Apache Spark 3.3. Perform performance testing, functional testing, and regression testing to identify and resolve any issues that may arise during the migration process.
 
