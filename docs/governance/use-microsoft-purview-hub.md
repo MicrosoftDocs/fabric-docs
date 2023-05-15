@@ -10,7 +10,7 @@ ms.date: 3/31/2023
 
 # The Microsoft Purview hub in Microsoft Fabric
 
-Microsoft Purview hub is your gateway to Microsoft Purview's powerful governance and compliance capabilities, such as Data Catalog, Information Protection, Data Loss Prevention, and Audit. With the deep integration of Purview in Fabric, you can discover how to use Purview's capabilities to get insights about your Fabric data. If you're an administrator, the hub also provides detailed insights about your tenant's entire Fabric data estate.
+Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and data owners to manage and govern their Fabric data estate. It contains reports that provide insight about sensitive data and item endorsement, and also serves as a gateway to more advanced Purview capabilities such as Information Protection, Data Loss Prevention, and Audit.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
