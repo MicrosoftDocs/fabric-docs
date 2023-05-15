@@ -41,8 +41,6 @@ items:
     href: give-access-workspaces.md
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
-- name: Share items
-  href: share-items.md
 - name: Promote or certify items
   href: endorsement-promote-certify.md
 - name: Apply sensitivity labels
