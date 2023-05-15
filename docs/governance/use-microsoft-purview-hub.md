@@ -53,7 +53,7 @@ The report contains the following pages:
 * **Items page**: Insights about the distribution of items throughout your tenant, and endorsement coverage.
 * **Sensitivity page**: Insights about sensitivity labeling throughout your entire tenant.
 
-## Access Purview capabilites
+## Access Purview capabilities
 
 The tiles at the top of the Purview hub provide access to Purview's advanced governance and compliance capabilities.
 
