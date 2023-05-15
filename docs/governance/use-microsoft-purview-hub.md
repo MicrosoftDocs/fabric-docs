@@ -55,12 +55,12 @@ The report contains the following pages:
 
 ## Access Purview
 
-Documentation to help you get started with Microsoft Purview.
-Data catalog
-Information protection
-Data loss prevention
-Audit 
+The tiles at the top of the Purview hub provide access to Purview's advanced governance and compliance capabilities.
 
+**Data catalog**: Opens a new tab to the Microsoft Purview Governance portal.
+**Information protection**: Opens a new tab to the Microsoft Purview compliance portal, where sensitivity labels and label policies can be defined and monitored.
+**Data loss prevention**: Opens a new tab to the Microsoft Purview compliance portal, where data loss prevention policies can be defined and monitored.
+**Audit**: Opens a new tab to the Microsoft Purview compliance center, where activities regarding sensitivity labels and DLP policies recorded in the audit logs can be searched and retrieved with Purview's Audit solution.
 
 ## Next steps
 
