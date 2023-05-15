@@ -21,10 +21,10 @@ Use this reference guide and the example scenarios to help you choose between th
 | **Data volume** | Unlimited | Unlimited |Up to 100 GB|
 | **Type of data** | Structured | Unstructured,<br>semi-structured,<br>structured |Structured|
 | **Primary developer persona** | Data warehouse developer,<br>SQL engineer | Data engineer,<br>data scientist |Citizen developer|
-| **Primary developer skill set** | SQL | Spark (Scala, PySpark, Spark SQL, R) |No code, SQL|
+| **Primary developer skill set** | SQL | Spark<br>(Scala, PySpark, Spark SQL, R) |No code, SQL|
 | **Data organized by** | Databases, schemas, and tables | Folders and files,<br>databases and tables |Database, tables, queries|
 | **Read operations** | Spark,<br>T-SQL | Spark,<br>T-SQL |Spark,<BR>T-SQL,<BR>Power BI|
-| **Write operations** | T-SQL | Spark (Scala, PySpark, Spark SQL, R) |Dataflows, T-SQL|
+| **Write operations** | T-SQL | Spark<br>(Scala, PySpark, Spark SQL, R) |Dataflows, T-SQL|
 | **Multi-table transactions** | Yes | No |No|
 | **Primary development interface** | SQL scripts | Spark notebooks,<br>Spark job definitions | Power BI |
 | **Security** | Object level (table, view, function, stored procedure, etc.),<br>column level,<br>row level,<br>DDL/DML | Row level,<br>table level (when using T-SQL),<br>none for Spark | Built-in RLS editor|
