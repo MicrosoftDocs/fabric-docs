@@ -59,7 +59,7 @@ When connecting via SSMS (or ADS), you see both a [!INCLUDE [fabric-se](includes
 
 ## Connect using Power BI
 
-A warehouse or lakehouse SQL endpoint is a first class citizen within Power BI, and there is no need to use the SQL Connection string. The Data Hub exposes all of the warehouses you have access to directly. This allows you to easily find your warehouses by workspace, and:
+A Warehouse or Lakehouse SQL Endpoint is a fully supported and native data source within Power BI, and there is no need to use the SQL Connection string. The Data Hub exposes all of the warehouses you have access to directly. This allows you to easily find your warehouses by workspace, and:
 
 - Select the Warehouse
 - Choose entities
