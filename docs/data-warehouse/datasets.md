@@ -76,7 +76,7 @@ There are some situations where your organization may need to create additional 
 
 3. Power BI automatically saves the dataset in the workspace based on the name of your warehouse, and then opens the dataset in Power BI.
 
-4. Select Open data model to open the Power BI Web modeling experience where you can add table relationships and DAX measures.
+4. Select **Open data model** to open the Power BI Web modeling experience where you can add table relationships and DAX measures.
 
 To learn more on how to edit data models in the Power BI service, see [Edit Data Models](/power-bi/transform-model/service-edit-data-models).
 
