@@ -66,9 +66,9 @@ To load the dataset, select the name of the dataset.
 
 ## Create a new Power BI Dataset
 
-There are some situations where your organization may need to create additional Power BI datasets based off SQL endpoint or Warehouse data. To create a basic Direct Lake dataset from a warehouse, follow these steps:
+There are some situations where your organization may need to create additional Power BI datasets based off SQL endpoint or Warehouse data. To create a Power BI dataset from a warehouse, follow these steps:
 
-1. Open the warehouse you created and loaded in the previous steps, such as My_Warehouse, and then switch to the Reporting ribbon.
+1. Open the warehouse, and then switch to the **Reporting** ribbon.
 
 2. In the **Reporting** ribbon, select **New Power BI dataset**, and then in the **New dataset** dialog, select tables to be included, and then select **Confirm**.
 
