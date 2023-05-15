@@ -127,7 +127,7 @@ The DBT Fabric DW Adapter uses the `pyodbc` library to establish connectivity wi
 
 The DBT Fabric DW adapter supports Azure Active Directory (Azure AD) authentication and allows developers to use `az cli authentication` using the dbt-synapsevnext adapter. SQL Authentication is not supported.
 
-## Connectivity by other menas
+## Connectivity by other means
 
 Using the SQL Connection string, any third-party tool that can authenticate using ODBC or the latest SQL Server OLE DB Drivers can connect to a Microsoft Fabric Warehouse or SQL Endpoint using and Azure AD authentication. 
 
