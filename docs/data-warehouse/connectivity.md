@@ -30,7 +30,7 @@ In Fabric, two types of authenticated users are supported through the SQL connec
 
 The SQL connection string requires port 1433 to be open. 1433 is the standard SQL Server port number. The SQL connection string also respects the warehouse or lakehouse sql endpoint security model for data access. Data can be obtained for all objects to which a user has access.
 
-## Retrieve the SQL Connetion String
+## Retrieve the SQL connection string
 
 To retrieve the connection string, follow these steps:
 
