@@ -15,11 +15,9 @@ When you make changes to a Fabric item, or are considering making changes, it's 
 * It shows you how many workspaces and Fabric items might be affected by your change, and provides easy navigation to the workspaces where the affected items are located so that you can investigate further. For data sources, it shows you the path to the data source.
 * It provides an easy way to notify the relevant people about a change you made or are thinking about making.
 
-Impact analysis is easily launched from within [lineage view](lineage.md).
-
 ## Open impact analysis for an item
 
-You can open an item's impact analysis from it's card in lineage view, or from the Lineage option on the items detail's page.
+You can open an item's impact analysis from it's card in lineage view, or from the **Lineage** option on the items detail's page.
 
 * From a card in lineage view:
 
@@ -68,11 +66,6 @@ In order to perform impact analysis on an item, you must have write permissions 
 
 Even if you don't have access to some workspaces, your notify contacts messages will still reach the contact lists of those workspaces.
 
-## Considerations and limitations
-
-* Usage metrics aren't supported for personal workspaces.
-
 ## Next steps
 
-* [Intro to datasets across workspaces](../connect-data/service-datasets-across-workspaces.md)
-* [Data lineage](service-data-lineage.md)
+* [Lineage](lineage.md)
