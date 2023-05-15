@@ -27,7 +27,7 @@ landingContent:
             url: data-engineering-overview.md
           - text: What is a lakehouse?
             url: lakehouse-overview.md
-          - text: workspace roles and permissions
+          - text: Workspace roles and permissions
             url: workspace-roles-lakehouse.md
 
   # Card 
