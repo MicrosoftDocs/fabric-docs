@@ -70,13 +70,13 @@ There are some situations where your organization may need to create additional 
 
 1. Open the warehouse, and then switch to the **Reporting** ribbon.
 
-2. In the **Reporting** ribbon, select **New Power BI dataset**, and then in the **New dataset** dialog, select tables to be included, and then select **Confirm**.
+1. In the **Reporting** ribbon, select **New Power BI dataset**, and then in the **New dataset** dialog, select tables to be included, and then select **Confirm**.
 
    :::image type="content" source="media\datasets\new-power-bi-dataset.png" alt-text="Screenshot showing the new Power BI dataset." lightbox="media\datasets\new-power-bi-dataset.png":::
 
-3. Power BI automatically saves the dataset in the workspace based on the name of your warehouse, and then opens the dataset in Power BI.
+1. Power BI automatically saves the dataset in the workspace based on the name of your warehouse, and then opens the dataset in Power BI.
 
-4. Select **Open data model** to open the Power BI Web modeling experience where you can add table relationships and DAX measures.
+1. Select **Open data model** to open the Power BI Web modeling experience where you can add table relationships and DAX measures.
 
 To learn more on how to edit data models in the Power BI service, see [Edit Data Models](/power-bi/transform-model/service-edit-data-models).
 
