@@ -17,6 +17,7 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 ## Prerequisites
 
 * [Create a Fabric workspace](tutorial-lakehouse-get-started.md)
+* In this article, you'll follow steps to ingest a CSV file, which requires you to have OneDrive configured. If you don't have OneDrive configured, sign up for the Microsoft 365 free trial: [Free Trial - Try Microsoft 365 for a month](https://www.microsoft.com/microsoft-365/try).
 
 ## Create a lakehouse
 
@@ -38,7 +39,8 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 
 ## Ingest sample data
 
-1. Prerequisite: In this section, you'll follow steps to ingest a CSV file, which requires you to have OneDrive configured. If you don't have OneDrive configured, sign up for the Microsoft 365 free trial: [Free Trial - Try Microsoft 365 for a month](https://www.microsoft.com/microsoft-365/try).
+> [!NOTE]
+> If you don't have OneDrive configured, sign up for the Microsoft 365 free trial: [Free Trial - Try Microsoft 365 for a month](https://www.microsoft.com/microsoft-365/try).
 
 1. Download the *dimension_customer.csv* file from the [Fabric samples repo](https://github.com/microsoft/fabric-samples/blob/689e78676174d4627fc3855165bde9100cb4d19e/docs-samples/data-engineering/dimension_customer.csv).
 
