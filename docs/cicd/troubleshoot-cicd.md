@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot the Fabric lifecycle management tools
-description: Find answers to your deployment pipelines, the Fabric Application lifecycle management (ALM) tool, troubleshooting questions
+description: Troubleshoot problems with deployment pipelines, the Fabric Application lifecycle management (ALM) tools
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: troubleshooting
@@ -27,7 +27,7 @@ Review the links in the following table to understand the considerations and lim
 * [Git integration](#git-integration)  
   * [Connect](#connect-issues)
   * [Commit](#commit-issues)
-  * [Update](#update-isuues)
+  * [Update](#update-issues)
   * [Undo](#undo-issues)
   * [Resolve errors](#resolve-errors)
 * [Deployment pipelines](#deployment-pipelines)  
@@ -53,11 +53,11 @@ Review the links in the following table to understand the considerations and lim
 
 **Solution**: Open the git repository in Azure DevOps and navigate to the git folder defined in the connection. If the git folder contains sub-directories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a sub-directory. If the git folder doesn't contain any item directories, you can't connect to it. Either remove the sub-directories or connect to a different folder that doesn't contain sub-directories.
 
-#### Connect failure: It's asking if I want to create a new folder when I try to connect to a git branch.
+#### Connect failure: It's asking if I want to create a new folder when I try to connect to a git branch
 
 **Description of problem**: After selecting **Connect** in the git integration tab, a dialog pops up indicating an invalid folder path.
 
-:::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect.":::
+:::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect to a folder.":::
 
 **Cause**: If the folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository, you're asked if you want to create a new folder. This can happen if you're connecting to a new branch, or if the folder was deleted from the branch.
 
@@ -158,7 +158,7 @@ If the following conditions aren't met, you won't be able to see the deployment 
 ### I can't see the pipeline stage tag in my workspace
 
 Deployment pipelines display a pipeline stage tag in workspaces that are assigned to a pipeline. To see these tags, you need to be a [pipeline admin](deployment-pipelines/understand-the-deployment-process.md#permissions). Tags for the *Development* and *Test* stages are always visible. However, you only see the *Production* tag if you have [access to the pipeline](deployment-pipelines/understand-the-deployment-process.md#permissions).
-          
+
 > [!div class="mx-imgBorder"]
 > ![A screenshot of the production tag in a production pipeline workspace.](media/troubleshoot-cicd/production-tag.png)
 
@@ -170,7 +170,7 @@ Deployment pipelines display a pipeline stage tag in workspaces that are assigne
 ### I can't assign a workspace to a stage
 
 **Cause**: When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace, and the **Can't assign the workspace** error message appears. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there is more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages.  
-**Solution**: To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in Fabric. 
+**Solution**: To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in Fabric.
 
 :::image type="content" source="media/troubleshoot-cicd/cannot-assign-error.png" alt-text="A screenshot of the Can't assign the workspace error message in deployment pipelines.":::
 
@@ -193,7 +193,7 @@ Deployment pipelines display a pipeline stage tag in workspaces that are assigne
 
 Workspaces that don't meet these conditions, aren't displayed in the list of workspaces you can select from.
 
-### My first deployment failed.
+### My first deployment failed
 
 **Cause**: Your first deployment may have failed for any of several reasons.  
 **Solution**: Some possible reasons for failure with their solutions are listed in the following table.
@@ -294,7 +294,7 @@ To use this script, you need to provide a *workspace name* and a *user principal
 ### I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables
 
 **Cause**: Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables aren't supported in deployment pipelines.  
-**Soulution**: If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations?view=analysisservices-dotnet) property in your table's columns. You can use one of the methods listed below to edit your dataset so that it works in deployment pipelines.
+**Soulution**: If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the methods listed below to edit your dataset so that it works in deployment pipelines.
 
 * In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand.md#import-mode) mode.
 
@@ -312,7 +312,7 @@ To use this script, you need to provide a *workspace name* and a *user principal
 
 When you deploy a paginated report that's connected to a Fabric dataset, it continues to point to the dataset it was originally connected to. Use [deployment rules](deployment-pipelines/create-rules.md) to point your paginated report to any dataset you want, including, for example,  the target stage dataset.
 
-**Solution**: If you're using a paginated report with a Fabric dataset, see [How do I create a deployment rule for a paginated report with a Fabric dataset?](./faq.md#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-fabric-dataset-)
+**Solution**: If you're using a paginated report with a Fabric dataset, see [How do I create a deployment rule for a paginated report with a Fabric dataset?](./faq.md#how-do-i-create-a-deployment-rule-for-a-paginated-report-with-a-fabric-dataset)
 
 #### Deployment failure: Large number of paginated reports fails
 
