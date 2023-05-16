@@ -1,5 +1,5 @@
 ---
-title: Troubleshoot the Fabric lifecycle management tools.
+title: Troubleshoot the Fabric lifecycle management tools
 description: Find answers to your deployment pipelines, the Fabric Application lifecycle management (ALM) tool, troubleshooting questions
 author: mberdugo
 ms.author: monaberdugo
@@ -93,7 +93,7 @@ Datasets that use DirectQuery or Composite connectivity mode and have variation 
 
 * Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables from your dataset. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your dataset model works as it may result in data corruption in your visuals.
 
-### Why aren't some tiles in my displaying information after deployment?
+### Why aren't some tiles displaying information after deployment?
 
 When you pin a tile to a dashboard, if the tile relies on an [unsupported item](deployment-pipelines/understand-the-deployment-process.md#unsupported-items), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a dataset you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.
 
