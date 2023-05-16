@@ -4,7 +4,7 @@ title: Lifecycle management documentation in Microsoft Fabric # < 60 chars
 summary: Microsoft Fabric's lifecycle management tools enable efficient product development, continuous updates, fast releases, and ongoing feature enhancements. # < 160 chars
 
 metadata:
-  title: title # Required; page title displayed in search results. Include the brand. < 60 chars.
+  title: Microsoft Fabric's lifecycle management tools enable efficient product development, continuous updates, fast releases, and ongoing feature enhancements. # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: description # Required; article description that is displayed in search results. < 160 chars.
   ms.service: azure #Required; use either service or product per approved list. 
 #   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
