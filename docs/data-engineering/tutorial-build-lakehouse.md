@@ -28,7 +28,7 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 
    :::image type="content" source="media\tutorial-build-lakehouse\workload-switch-data-engineering.png" alt-text="Screeenshot showing where to select the experience switcher and Data Engineering.":::
 
-1. In the **Data Engineering** tab, select **Lakehouse** to create a lakehouse. 
+1. In the **Data Engineering** tab, select **Lakehouse** to create a lakehouse.
 
 1. In the **New lakehouse** dialog box, enter **wwilakehouse** in the **Name** field.
 
@@ -37,6 +37,8 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 1. Select **Create** to create and open the new lakehouse.
 
 ## Ingest sample data
+
+1. Prerequisite: In this section, you'll follow steps to ingest a CSV file, which requires you to have OneDrive configured. If you don't have OneDrive configured, sign up for the Microsoft 365 free trial: [Free Trial - Try Microsoft 365 for a month](https://www.microsoft.com/microsoft-365/try).
 
 1. Download the *dimension_customer.csv* file from the [Fabric samples repo](https://github.com/microsoft/fabric-samples/blob/689e78676174d4627fc3855165bde9100cb4d19e/docs-samples/data-engineering/dimension_customer.csv).
 
