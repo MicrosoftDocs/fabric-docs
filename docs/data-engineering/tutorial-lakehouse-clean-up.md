@@ -40,4 +40,4 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 Advance to the next article to learn about
 > [!div class="nextstepaction"]
-> [Options to get data into lakehouse](tutorial-lakehouse-clean-up.md)
+> [Options to get data into lakehouse](load-data-lakehouse.md)
