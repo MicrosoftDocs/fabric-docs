@@ -37,7 +37,7 @@ For Pipeline Spark Activity Inline Monitoring, deep links have been built into t
 
 ## Next steps
 
-- [Workspace item recent runs](spark-artifact-recent-runs.md)
+- [Workspace item recent runs](spark-item-recent-runs.md)
 - [Notebook contextual monitoring and debugging](spark-monitor-debug.md)
 - [Run an Apache Spark job definition](run-spark-job-definition.md)
 - [Apache Spark application detail monitoring](spark-detail-monitoring.md)

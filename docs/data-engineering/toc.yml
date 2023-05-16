@@ -104,7 +104,7 @@ items:
     - name: Monitoring hub - Browse Spark applications
       href: browse-spark-applications-monitoring-hub.md
     - name: Browse item's recent runs
-      href: spark-artifact-recent-runs.md
+      href: spark-item-recent-runs.md
     - name: Monitor Spark jobs in a notebook 
       href: spark-monitor-debug.md
     - name: Monitor Spark job definitions
