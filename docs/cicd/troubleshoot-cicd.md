@@ -147,13 +147,13 @@ Select **Undo**.
 
 ## Deployment pipelines
 
-### Why can't I see the deployment pipelines button?
+### I can't see the deployment pipelines button
 
 If the following conditions aren't met, you won't be able to see the deployment pipelines button.
 
 * You have a [Fabric license](../enterprise/licenses.md).
 
-* You're an admin of a [workspace](../get-started/create-workspaces.md). 
+* You're an admin of a [workspace](../get-started/create-workspaces.md).
 
 ### I can't see the pipeline stage tag in my workspace
 
@@ -262,9 +262,8 @@ After a deployment fails due to schema changes, the target stage displays the *D
 
 ### How can I delete a pipeline that doesn't have an owner (an orphaned pipeline)?
 
-**Description of problem**: When working with deployment pipelines, you might end up with a pipeline that doesn't have an owner. For example, a pipeline can be left without an owner when a user that owned it leaves the company without transferring ownership. When a pipeline doesn't have an owner, other users can't access it. As a workspace can only be assigned to one pipeline, if it's assigned to a pipeline without an owner, nobody is able to unassign it, and you can't use the workspace in another pipeline.  
-**Cause**: Datasets and dataflows are Fabric items that store data and contain both data and metadata. During deployment, only the metadata is copied while the data isn't. As a result, after deployment the dataset or dataflow might not have any data and a report visual that's relying on this data, will appear broken.  
-can't use the workspace in another pipeline.  
+**cause**: When working with deployment pipelines, you might end up with a pipeline that doesn't have an owner. For example, a pipeline can be left without an owner when a user that owned it leaves the company without transferring ownership. When a pipeline doesn't have an owner, other users can't access it. As a workspace can only be assigned to one pipeline, if it's assigned to a pipeline without an owner, nobody is able to unassign it, and you can't use the workspace in another pipeline.  
+
 **Solution**: When a pipeline is left without an owner, a Fabric administrator can use the [admin Fabric REST APIs](/rest/api/fabric/admin) to add an owner to the pipeline, or delete it. To add an owner to the pipeline, use the [Admin - Pipelines UpdateUserAsAdmin](/rest/api/power-bi/admin/pipelines-update-user-as-admin) API.
 
 You can also review our PowerShell script, [AddUserToWorkspacePipeline](https://github.com/microsoft/PowerBI-Developer-Samples/blob/master/PowerShell%20Scripts/Admin-DeploymentPipelines-AddUserToWorkspacePipeline) (available from the [PowerBI-Developer-Samples](https://github.com/microsoft/PowerBI-Developer-Samples) GitHub repository), which lets you do the following:
