@@ -25,17 +25,17 @@ We can open **Recent runs** pane with the following steps:
 
 1. Select **Recent runs**.
 
-    :::image type="content" source="media\spark-artifact-recent-runs\recent-runs-list.png" alt-text="Screenshot showing where to select Recent runs and the subsequent list of recent runs." lightbox="media\spark-artifact-recent-runs\recent-runs-list.png":::
+    :::image type="content" source="media\spark-item-recent-runs\recent-runs-list.png" alt-text="Screenshot showing where to select Recent runs and the subsequent list of recent runs." lightbox="media\spark-item-recent-runs\recent-runs-list.png":::
 
 ## Detail for recent run pane
 
 If the notebook or Spark job definition doesn't have any run operations, the **Recent runs** page shows **No jobs found**.
 
-:::image type="content" source="media\spark-artifact-recent-runs\no-jobs-found.png" alt-text="Screenshot showing an example of the no jobs found message." lightbox="media\spark-artifact-recent-runs\no-jobs-found.png":::
+:::image type="content" source="media\spark-item-recent-runs\no-jobs-found.png" alt-text="Screenshot showing an example of the no jobs found message." lightbox="media\spark-item-recent-runs\no-jobs-found.png":::
 
 In the **Recent runs** pane, you can view a list of applications, including **Application name**, **Submitted** time, **Submitter**, **Status**, **Total duration**, **Run kind**, and **Livy Id**. You can filter applications by their status and submission time, which makes it easier for you to view applications.
 
-:::image type="content" source="media\spark-artifact-recent-runs\applications-list.png" alt-text="Screenshot showing the list of applications." lightbox="media\spark-artifact-recent-runs\applications-list.png":::
+:::image type="content" source="media\spark-item-recent-runs\applications-list.png" alt-text="Screenshot showing the list of applications." lightbox="media\spark-item-recent-runs\applications-list.png":::
 
 Selecting the application name link navigates to spark application details where we can get to see the logs, data and skew details for the Spark run.
 
