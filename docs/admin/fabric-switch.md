@@ -26,7 +26,7 @@ You can enable Microsoft Fabric for:
 In both cases, you can use security groups to provide Microsoft Fabric access to a specified list of users.
 
 >[!Tip]
->Microsoft Fabric will be turned on for all Power BI users on 1 July 2023.
+>Unless an admin makes changes to the Microsoft Fabric admin switch settings, Microsoft Fabric will be turned on for all Power BI users on 1 July 2023.
 
 ## Prerequisites
 
