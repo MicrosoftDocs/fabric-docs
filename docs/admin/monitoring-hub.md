@@ -28,19 +28,19 @@ Verify that the [new workspace experience](/power-bi/admin/service-admin-portal-
 
 :::image type="content" source="media/monitoring-hub/admin-monitoring-hub-02.png" alt-text="Screen shot of Monitoring hub in context with Power BI.":::
 
-Because there may be many records in Monitoring hub, filters are applied by default to limit the number of artifacts initially displayed. For example, the following image shows Monitoring hub for Power BI, where filters are applied to only show *Dataset*, *Dataflow Gen2*, and *Datamart* artifacts.
+Because there may be many records in Monitoring hub, filters are applied by default to limit the number of items initially displayed. For example, the following image shows Monitoring hub for Power BI, where filters are applied to only show *Dataset*, *Dataflow Gen2*, and *Datamart* items.
 
 You can dismiss filters by selecting the *x* beside the filter button, and you can select different filters by using the filter drop-down in the upper right corner of the window. You can also filter by keyword. 
 
 :::image type="content" source="media/monitoring-hub/admin-monitoring-hub-03.png" alt-text="Screen shot of filters applied to Monitoring hub for Power BI.":::
 
-The first seven columns in the list of artifacts are shared across all Monitoring hub views. The columns after the first seven are specific to the viewing context, such as Power BI. 
+The first seven columns in the list of items are shared across all Monitoring hub views. The columns after the first seven are specific to the viewing context, such as Power BI. 
 
-## Getting detailed artifact information
+## Getting detailed item information
 
-When you select an artifact from the list, Monitoring hub displays detailed information about that artifact. 
+When you select an item from the list, Monitoring hub displays detailed information about that item. 
 
-When you hover over an artifact's name, any available quick actions for the artifact type are displayed, such as stop, start, re-run, or other quick actions. You can also open a detail pane for the artifact itself when you hover, for example, *View run history* for datasets that are in Monitoring hub, to display their refresh activities. 
+When you hover over an item's name, any available quick actions for the item type are displayed, such as stop, start, re-run, or other quick actions. You can also open a detail pane for the item itself when you hover, for example, *View run history* for datasets that are in Monitoring hub, to display their refresh activities. 
 
 
 ## Next steps

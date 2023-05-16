@@ -103,7 +103,7 @@ items:
       href: spark-advisor-introduction.md
     - name: Monitoring hub - Browse Spark applications
       href: browse-spark-applications-monitoring-hub.md
-    - name: Browse artifact's recent runs
+    - name: Browse item's recent runs
       href: spark-artifact-recent-runs.md
     - name: Monitor Spark jobs in a notebook 
       href: spark-monitor-debug.md

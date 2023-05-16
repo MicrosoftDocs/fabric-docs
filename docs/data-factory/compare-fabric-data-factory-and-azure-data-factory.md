@@ -67,9 +67,9 @@ A modern and easy Get Data experience is provided in Data Factory in Fabric, so 
 
 ### Modern monitoring experience
 
-With the combined capabilities of the monitoring hub and the artifacts of Data Factory, such as data flows and data pipelines, we can get a full view of all the workloads and drill into any activity within a data factory artifact. It’s also convenient for you to do the cross-workspace analysis through monitoring hub.
+With the combined capabilities of the monitoring hub and the items of Data Factory, such as data flows and data pipelines, we can get a full view of all the workloads and drill into any activity within a data factory experience. It’s also convenient for you to do the cross-workspace analysis through monitoring hub.
 
-:::image type="content" source="./media/connector-differences/monitoring-hub.png" alt-text="Screenshot showing the monitoring hub and the artifacts of Data Factory.":::
+:::image type="content" source="./media/connector-differences/monitoring-hub.png" alt-text="Screenshot showing the monitoring hub and the items of Data Factory.":::
 
 The pipeline copy monitoring results provides breakdown detail of copy activity. By selecting the run details button (with the **glasses icon** highlighted) to view the run details. Expand the **Duration breakdown**, you can know the time duration of each stage in copy activity.
 

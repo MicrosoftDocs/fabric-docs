@@ -1,6 +1,6 @@
 ---
 title: Workspaces
-description: Learn about workspaces, which are collections of artifacts such as lakehouses, warehouses, and reports built to deliver key metrics for your organization.
+description: Learn about workspaces, which are collections of items such as lakehouses, warehouses, and reports built to deliver key metrics for your organization.
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas,liud

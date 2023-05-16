@@ -73,9 +73,9 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 
    :::image type="content" source="media\tutorial-build-lakehouse\query-settings-publish.png" alt-text="Screenshot of the Query setting pane that contains the Publish button.":::
 
-1. A spinning circle next to the dataflow's name indicates publishing is in progress in the artifact view. When publishing is complete, select the **...** and select **Properties**. Rename the dataflow to **Load Lakehouse Table** and select **Save**.
+1. A spinning circle next to the dataflow's name indicates publishing is in progress in the item view. When publishing is complete, select the **...** and select **Properties**. Rename the dataflow to **Load Lakehouse Table** and select **Save**.
 
-1. Select the **Refresh now** option next to data flow name to refresh the dataflow. It runs the dataflow and moves data from the source file to lakehouse table. While it's in progress, you see a spinning circle under **Refreshed** column in the artifact view.
+1. Select the **Refresh now** option next to data flow name to refresh the dataflow. It runs the dataflow and moves data from the source file to lakehouse table. While it's in progress, you see a spinning circle under **Refreshed** column in the item view.
 
    :::image type="content" source="media\tutorial-build-lakehouse\dataflow-refresh-now.png" alt-text="Screenshot showing where to find the Refresh now icon.":::
 
@@ -99,7 +99,7 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 
 ## Build a report
 
-1. In the artifact view of the workspace, select the **wwilakehouse** default dataset. This dataset is automatically created and has the same name as the lakehouse.
+1. In the item view of the workspace, select the **wwilakehouse** default dataset. This dataset is automatically created and has the same name as the lakehouse.
 
    :::image type="content" source="media\tutorial-build-lakehouse\workspace-default-dataset.png" alt-text="Screenshot showing the default dataset that was created when the new lakehouse was created.":::
 

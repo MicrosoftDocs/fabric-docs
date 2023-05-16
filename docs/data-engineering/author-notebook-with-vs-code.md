@@ -19,7 +19,7 @@ With this extension, you can also run notebooks onto the remote Fabric Spark com
 
 ## View the list of notebooks
 
-The notebook tree node lists the names of the all the notebook artifacts in the current workspace. Based on your changes in VS Code, the list displays different colors and characters to indicate the latest state, as shown in the following image.
+The notebook tree node lists the names of the all the notebook items in the current workspace. Based on your changes in VS Code, the list displays different colors and characters to indicate the latest state, as shown in the following image.
 
 - Default: White text and no character to the right of the notebook name indicates the default or initialized state. The notebook exists in the remote workspace and hasn't been downloaded locally.
 - Modified: The **M** character to the right of the name and yellow text indicates the notebook has been downloaded and edited locally in VS Code, and those pending changes have yet to be published back to the remote workspace.

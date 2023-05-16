@@ -42,7 +42,7 @@ The queueing mechanism is a simple FIFO-based queue, which checks for available 
 
 To avoid these blocking scenarios, Microsoft Fabric applies a **Dynamic reserve based throttling** for jobs from these items. Notebook and lakehouse based jobs being more interactive and real-time are classified as **interactive**. Whereas Spark job definition is classified as **batch**. As part of this dynamic reserve, minimum and maximum reserve bounds are maintained for these job types. The reserves are mainly to address use cases where an enterprise team could experience peak usage scenarios having their entire capacity consumed through batch jobs. During those peak hours, users are blocked from using interactive items like notebooks or lakehouse. With this approach, every capacity gets a minimum reserve of 30% of the total jobs allocated for interactive jobs (5% for lakehouse and 25% for notebooks) and a minimum reserve of 10% for batch jobs.  
 
-| Job Type    | Artifact                | Min % | Max % |
+| Job Type    | Item                | Min % | Max % |
 |-------------|-------------------------|-------|-------|
 | Batch       | Spark Job Definition    | 10    | 70    |
 | Interactive | Interactive Min and Max | 30    | 90    |

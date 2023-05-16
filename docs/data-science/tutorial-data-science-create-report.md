@@ -16,7 +16,7 @@ In this module, we use the Microsoft Fabric DirectLake feature, which enables di
 
 ## Prepare for creating reports
 
-1. Navigate to the default lakehouse artifact in the workspace that you used as part of the previous modules and open the lakehouse UI.
+1. Navigate to the default lakehouse item in the workspace that you used as part of the previous modules and open the lakehouse UI.
 
 1. Select **New Power BI dataset** on the top ribbon and select **nyctaxi_pred**, then select **Continue** to create a new Power BI dataset linked to the predictions data you produced in module 5.
 
