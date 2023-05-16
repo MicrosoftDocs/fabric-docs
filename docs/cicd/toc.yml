@@ -46,5 +46,5 @@ items:
 - name: Frequently asked questions
   href: faq.yml
 - name: Troubleshooting
-  href: troubleshoot-cicd.yml
+  href: troubleshoot-cicd.md
 
