@@ -29,7 +29,7 @@ Review the links in the following table to understand the considerations and lim
   * [Commit](#commit-issues)
   * [Update](#update-issues)
   * [Undo](#undo-issues)
-  * [Resolve errors](#resolve-errors)
+  * [Resolve errors](#resolve-error-issues)
 * [Deployment pipelines](#deployment-pipelines)  
   * [Paginated reports](#paginated-reports)  
   * [Dataflows](#dataflows)  
@@ -116,7 +116,7 @@ Reason: Git Integration does not support Direct Query and proxy models at this t
 * Edit the bim file of the ProxyDataset in the git repository to point to the correct dataset, and then, in the workspace, update from git to receive the change.
 * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace.
 
-### Resolve issues
+### Resolve error issues
 
 ### Undo issues
 
