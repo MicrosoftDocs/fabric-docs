@@ -180,7 +180,7 @@ The Executor Usage Graph visualizes the Spark job executor's allocation and runn
 ## Next steps
 
 - [Apache Spark monitoring overview](spark-monitoring-overview.md)
-- [Browse item’s recent runs](spark-artifact-recent-runs.md)
+- [Browse item’s recent runs](spark-item-recent-runs.md)
 - [Monitor Apache Spark jobs within notebooks](spark-monitor-debug.md)
 - [Monitor Apache Spark job definition](monitor-spark-job-definitions.md)
 - [Monitor Apache Spark application details](spark-detail-monitoring.md)

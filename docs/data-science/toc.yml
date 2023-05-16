@@ -138,7 +138,7 @@ items:
     - name: Monitoring hub - Browse Spark applications
       href: ../data-engineering/browse-spark-applications-monitoring-hub.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Browse item's recent runs
-      href: ../data-engineering/spark-artifact-recent-runs.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+      href: ../data-engineering/spark-item-recent-runs.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Monitor Spark jobs in a notebook 
       href: ../data-engineering/spark-monitor-debug.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Monitor Spark job definitions
