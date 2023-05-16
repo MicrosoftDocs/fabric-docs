@@ -39,6 +39,7 @@ For more limitations information in specific areas, see:
 ## Known issues for querying
 
 - Queries with PIVOT operator fail if there's a GROUP BY on the nonpivot column output by PIVOT. As a workaround, remove the nonpivot column from the GROUP BY.  Query results will be the same, as this GROUP BY clause is duplicate.
+- Warehouse explorer doesn't list all objects of the same name but different cases.
 
 ## Limitations of the SQL Endpoint
 
