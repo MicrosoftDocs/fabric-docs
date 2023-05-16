@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 
-title: Data Factory in Microsoft Fabric documentation
+title: Data Factory documentation in Microsoft Fabric
 summary: Data factory in Microsoft Fabric provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade. # < 160 chars
 
 metadata:
