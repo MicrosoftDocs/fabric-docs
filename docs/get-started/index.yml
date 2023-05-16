@@ -50,8 +50,6 @@ landingContent:
             url: endorsement-promote-certify.md 
       - linkListType: how-to-guide
         links:
-          - text: Share items
-            url: share-items.md 
           - text: Apply sensitivity labels
             url: apply-sensitivity-labels.md 
 

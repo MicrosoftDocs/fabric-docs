@@ -205,22 +205,22 @@ Workspaces that don't meet these conditions, aren't displayed in the list of wor
 |Your Fabric admin disabled the creation of workspaces.     |Contact your Fabric admin for support.         |
 |You're using [selective deployment](deployment-pipelines/deploy-content.md#selective-deployment) and aren't selecting all the linked items.     |Do one of the following: </br></br>Unselect the content that is linked to your dataset or dataflow. Your unselected content (such as datasets, reports or dashboards) won't be copied to the next stage. </br></br>Select the dataset or the dataflow that's linked to the selected items. Your selected items will be copied to the next stage.         |
 
-### I have 'unsupported artifacts' in my workspace when I'm trying to deploy
+### I have 'unsupported items' in my workspace when I'm trying to deploy
 
-**Cause**: Deployment pipelines doesn't support all artifacts.  
+**Cause**: Deployment pipelines doesn't support all items.  
 **Solution**: For a comprehensive list of items that aren't supported in deployment pipelines, see the following sections:
 
 * [Unsupported items](deployment-pipelines/understand-the-deployment-process.md#unsupported-items)
 
 * [Item properties that aren't copied](deployment-pipelines/understand-the-deployment-process.md#item-properties-that-are-not-copied)
 
-### I want to change the data source in the pipeline stages.
+### I want to change the data source in the pipeline stages
 
 **Cause**: You can’t change the data source connection in Power BI service.
 
 **Solution**: If you want to change the data source in the test or production stages, you can use [deployment rules](deployment-pipelines/create-rules.md) or [APIs](/rest/api/power-bi/datasets/updateparametersingroup). Deployment rules will only come into effect after the next deployment.
 
-### I fixed a bug in production, but now the 'deploy to previous stage' button is grayed out.
+### I fixed a bug in production, but now the 'deploy to previous stage' button is disabled
 
 **Cause**: You can only deploy backwards to an empty stage. If you have content in the test stage, you can't deploy backwards from production.
 
@@ -277,22 +277,21 @@ To use this script, you need to provide a *workspace name* and a *user principal
 
 ### Mismatch error: Source and target dataset format version mismatch error
 
-**Description of problem**: The *Can’t start deployment* error that states that *the source and target datasets have different data modeling formats*, occurs when the dataset in the target stage has a higher model version than the dataset in the source stage. In such cases, deployment pipelines aren’t able to deploy from the source stage to the target stage. To avoid this error, use a dataset that has the same (or higher) model version in the source stage. 
+**Description of problem**: The *Can’t start deployment* error that states that *the source and target datasets have different data modeling formats*, occurs when the dataset in the target stage has a higher model version than the dataset in the source stage. In such cases, deployment pipelines aren’t able to deploy from the source stage to the target stage. To avoid this error, use a dataset that has the same (or higher) model version in the source stage.
 
 **Solution**: Upgrade the dataset model in the source stage using an [XMLA read-write endpoint](/power-bi/enterprise/service-premium-connect-tools.md#enable-xmla-read-write) or Power BI Desktop. After upgrading the dataset, republish it to the source stage.
 
 ### Mismatch error: Data source connectivity mode mismatch error
 
-**Description of problem**: During deployment, if deployment pipelines discovers that the connectivity mode of a data source in the target stage isn't the same as the data source in the source stage, it attempts to convert the connectivity mode of the data source in the target stage. If you're using a data source with the [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets.md) or [real time](/power-bi/connect-data/service-real-time-streaming.md) connectivity modes, deployment pipelines can't convert the target's data source connectivity mode. 
-
+**Description of problem**: During deployment, if deployment pipelines discovers that the connectivity mode of a data source in the target stage isn't the same as the data source in the source stage, it attempts to convert the connectivity mode of the data source in the target stage. If you're using a data source with the [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets.md) or [real time](/power-bi/connect-data/service-real-time-streaming.md) connectivity modes, deployment pipelines can't convert the target's data source connectivity mode.  
 **Solution**: Either use an [XMLA read-write endpoint](/power-bi/enterprise/service-premium-connect-tools.md#enable-xmla-read-write) or Power BI Desktop to change the connection mode of the data source in the source stage, or delete the data source in the target stage so that the deployment overwrites it.
 
-###  My dataset deployment failed.
+### My dataset deployment failed
 
 **Cause**: There could be a few possible reasons for your dataset deployment to fail. One of the reasons may be due to a large dataset that isn't configured with the [large dataset format](/power-bi/enterprise/service-premium-large-models.md).  
 **Solution**: If your dataset is larger than 4 GB and isn't using the large dataset format, it might fail to be deployed. Try setting your dataset to use the large dataset format, and redeploy.
 
-### I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables.
+### I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables
 
 **Cause**: Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables aren't supported in deployment pipelines.  
 **Soulution**: If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations?view=analysisservices-dotnet) property in your table's columns. You can use one of the methods listed below to edit your dataset so that it works in deployment pipelines.
@@ -365,7 +364,7 @@ Content can be deployed to an empty stage or to a stage that contains content. T
 
 ### Rules
 
-#### Deployment failure due to broken rules.
+#### Deployment failure due to broken rules
 
 **Solution**: If you have problems configuring deployment rules, visit [deployment rules](deployment-pipelines/create-rules.md), and make sure you follow the [deployment rules limitations](deployment-pipelines/create-rules.md#considerations-and-limitations).
 
@@ -389,7 +388,7 @@ To deploy successfully, fix or remove the broken rules, and redeploy.
 
 #### Deployment problem: I configured rules, but it did't deploy
 
-**Cause**: Deployment rules aren't applied immediately after they're configured. 
+**Cause**: Deployment rules aren't applied immediately after they're configured.
 
 **Solution**: To apply deployment rules, you have to deploy the datasets from the source stage to the target stage which includes the created deployment rules. After configuring deployment rules, and before you deploy, the *different* indicator is shown next to the dataset with the configured rules. This indicates that you need to deploy that dataset from the source stage to the target stage. Once you deploy, if no other changes were made, the *different* indicator disappears signifying that the rules were applied successfully.
 

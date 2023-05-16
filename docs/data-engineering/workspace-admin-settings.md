@@ -26,9 +26,7 @@ To manage the Spark settings for the pool associated with your workspace:
 
 1. You see the **Spark Compute** option in your left-hand menu:
 
-   :::image type="content" source="media/workspace-admin-settings/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view.":::
-
-1. Configure the five options you can change on this page: **Default pool for workspace**, **Runtime version**, **High concurrency**, **Automatically track machine learning experiments and models** and **Spark properties**.
+1. Configure the four setting options you can change on this page: **Default pool for workspace**, **Runtime version**, **Automatically track machine learning experiments and models** and **Spark properties**.
 
 > [!NOTE]
 > If you change the default pool to a custom spark pool you may see longer session start (~3 minutes) in this case.
@@ -59,13 +57,9 @@ You may choose which version of Spark you'd like to use for the workspace. Curre
 
 :::image type="content" source="media\workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\workspace-admin-settings\runtime-version.png":::
 
-## High concurrency
-
-Microsoft Fabric Spark supports session sharing through the High Concurrency mode, where multiple items could execute in parallel inside a single spark application within a user boundary. This shared mode can be enabled for notebooks to save session start time, achieve a better utilization rate and save on compute spend.
-
 ## Autologging for Machine Learning models and experiments
 
-Admins can now enable autologging for their machine learning models and experiments. This option will automatically capture the values of input parameters, output metrics, and output artifacts of a machine learning model as it is being trained.
+Admins can now enable autologging for their machine learning models and experiments. This option will automatically capture the values of input parameters, output metrics, and output items of a machine learning model as it is being trained.
 
 [Learn more about autologging](https://mlflow.org/docs/latest/tracking.html)
 

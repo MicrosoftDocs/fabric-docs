@@ -24,7 +24,7 @@ This tutorial is a quick guide to creating a lakehouse and getting started with 
 
    :::image type="content" source="media\create-lakehouse-onelake\new-lakehouse-name.png" alt-text="Screenshot showing where to enter your new lakehouse name." lightbox="media\create-lakehouse-onelake\new-lakehouse-name.png":::
 
-1. A new lakehouse is created and if this is your first OneLake artifact, it's provisioned behind the scenes.
+1. A new lakehouse is created and if this is your first OneLake item, it's provisioned behind the scenes.
 
 At this point, you have a lakehouse running on top of OneLake. Next, add some data and start organizing your lake.
 

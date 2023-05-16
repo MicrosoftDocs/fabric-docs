@@ -67,8 +67,6 @@ items:
       href: runtime.md
     - name: Create custom pools
       href: create-custom-spark-pools.md
-    - name: High concurrency mode
-      href: high-concurrency-mode-notebooks.md
     - name: Autotune Spark configuration
       href: autotune.md
     - name: Spark concurrency limits and queueing
@@ -105,8 +103,8 @@ items:
       href: spark-advisor-introduction.md
     - name: Monitoring hub - Browse Spark applications
       href: browse-spark-applications-monitoring-hub.md
-    - name: Browse artifact's recent runs
-      href: spark-artifact-recent-runs.md
+    - name: Browse item's recent runs
+      href: spark-item-recent-runs.md
     - name: Monitor Spark jobs in a notebook 
       href: spark-monitor-debug.md
     - name: Monitor Spark job definitions

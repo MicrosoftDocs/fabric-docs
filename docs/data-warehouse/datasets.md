@@ -3,7 +3,7 @@ title: Default Power BI datasets
 description: Learn more about default Power BI datasets in Microsoft Fabric.
 author: chuckles22
 ms.author: chweb
-ms.reviewer: wiassaf
+ms.reviewer: wiassaf, salilkanade
 ms.date: 05/23/2023
 ms.topic: conceptual
 ms.search.form: Default dataset overview # This article's title should not change. If so, contact engineering.
@@ -36,11 +36,11 @@ When you create a [Lakehouse](../data-engineering/lakehouse-overview.md), a defa
 
 The default dataset is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse. You can also query the default dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [Warehouse](data-warehousing.md#synapse-data-warehouse).
 
-Users can also manually select tables or views from the warehouse they want included in the model for more flexibility. Objects that are in the default Power BI dataset are created as a layout in the model view.
+By default, all tables and views in the warehouse are automatically added to the default Power BI dataset. Users can also manually select tables or views from the warehouse they want included in the model for more flexibility. Objects that are in the default Power BI dataset are created as a layout in the model view.
 
 The background sync that includes objects (tables and views) waits for the downstream dataset to not be in use to update the dataset, honoring bounded staleness. Users can always go and manually pick tables they want or no want in the dataset.
 
-### Auto-detect by default
+### Manually update the default Power BI dataset
 
 Once there are objects in the default Power BI dataset, there are two ways to validate or visually inspect the tables:
 
@@ -48,21 +48,35 @@ Once there are objects in the default Power BI dataset, there are two ways to va
 
 1. Review the default layout for the default dataset objects.
 
-The default layout for BI enabled tables persists in the user session and is generated whenever a user navigates to the model view. It's called **Default dataset objects** as depicted here:
+The default layout for BI enabled tables persists in the user session and is generated whenever a user navigates to the model view. Look for the **Default dataset objects** tab.
 
-:::image type="content" source="media\datasets\default-dataset-objects.png" alt-text="Screenshot of the reporting tab showing default dataset objects." lightbox="media\datasets\default-dataset-objects.png":::
-
-This layout isn't currently saved past the user's session.
+   :::image type="content" source="media\datasets\default-dataset-objects.png" alt-text="Screenshot of the reporting tab showing default dataset objects." lightbox="media\datasets\default-dataset-objects.png":::
 
 ## Access the default Power BI dataset
 
 To access default Power BI datasets, go to your workspace, and find the dataset that matches the name of the desired Lakehouse. The default Power BI dataset follows the naming convention of the Lakehouse.
 
-:::image type="content" source="media\datasets\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\datasets\find-dataset.png":::
+   :::image type="content" source="media\datasets\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\datasets\find-dataset.png":::
 
 To load the dataset, select the name of the dataset.
 
-:::image type="content" source="media\datasets\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\datasets\load-dataset.png":::
+   :::image type="content" source="media\datasets\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\datasets\load-dataset.png":::
+
+## Create a new Power BI dataset
+
+There are some situations where your organization may need to create additional Power BI datasets based off SQL endpoint or Warehouse data. To create a Power BI dataset from a warehouse, follow these steps:
+
+1. Open the warehouse, and then switch to the **Reporting** ribbon.
+
+1. In the **Reporting** ribbon, select **New Power BI dataset**, and then in the **New dataset** dialog, select tables to be included, and then select **Confirm**.
+
+   :::image type="content" source="media\datasets\new-power-bi-dataset.png" alt-text="Screenshot showing the new Power BI dataset." lightbox="media\datasets\new-power-bi-dataset.png":::
+
+1. Power BI automatically saves the dataset in the workspace based on the name of your warehouse, and then opens the dataset in Power BI.
+
+1. Select **Open data model** to open the Power BI Web modeling experience where you can add table relationships and DAX measures.
+
+To learn more on how to edit data models in the Power BI service, see [Edit Data Models](/power-bi/transform-model/service-edit-data-models).
 
 ## Limitations
 

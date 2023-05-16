@@ -1,6 +1,6 @@
 ---
 title: Workspaces
-description: Learn about workspaces, which are collections of artifacts such as lakehouses, warehouses, and reports built to deliver key metrics for your organization.
+description: Learn about workspaces, which are collections of items such as lakehouses, warehouses, and reports built to deliver key metrics for your organization.
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas,liud
@@ -26,7 +26,7 @@ Here are some useful tips about working with workspaces.
 - **Navigate to current workspace** from anywhere by selecting the icon on left nav pane. Read more about [current workspace](#current-workspace) in this article.
 - **Workspace settings**: As workspace admin, you can update and manage your workspace configurations in [workspace settings](#workspace-settings).
 - **Contact list**: Specify who receives notification about workspace activity. Read more about [workspace contact lists](#workspace-contact-list) in this article.
-- **Share items**: You can share a single item with colleagues who are not in the same workspace. Read more about [share items](share-items.md).
+
 
 ## Current workspace
 

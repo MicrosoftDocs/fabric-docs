@@ -49,7 +49,7 @@ Open the **Recent runs** page of the notebook or Spark job definition, you can v
 
 ## Jobs
 
-Open an Apache Spark application job from the **Spark job definition** or **notebook** artifact context menu shows the **Recent run** option -> **Recent runs** -> select a job in recent runs page.
+Open an Apache Spark application job from the **Spark job definition** or **notebook** item context menu shows the **Recent run** option -> **Recent runs** -> select a job in recent runs page.
 
 In the Apache Spark application monitoring details page, the job runs list is displayed in the **Jobs** tab, you can view the details of each job here, including **Job ID**, **Description**, **Status**, **Stages**, **Tasks**, **Duration**, **Processed**, **Data read**, **Data written** and **Code snippet**.
 

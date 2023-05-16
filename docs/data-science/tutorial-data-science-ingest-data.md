@@ -71,7 +71,7 @@ The python commands/script used in each step of this tutorial can be found in th
    print(f"Spark dataframe saved to delta table: {table_name}")
    ```
 
-   Once the dataframe has been saved, you can navigate to the attached lakehouse artifact in your workspace and open the lakehouse UI to preview data in the **nyctaxi_raw** table created in the previous steps.
+   Once the dataframe has been saved, you can navigate to the attached lakehouse item in your workspace and open the lakehouse UI to preview data in the **nyctaxi_raw** table created in the previous steps.
 
    :::image type="content" source="media\tutorial-data-science-ingest-data\preview-data-new-table.png" alt-text="Screenshot showing where to preview a list of data in a table in the lakehouse view." lightbox="media\tutorial-data-science-ingest-data\preview-data-new-table.png":::
 

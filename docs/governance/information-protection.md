@@ -12,7 +12,7 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Information protection in Fabric is based on information protection in Power BI. However it's currently less fully supported than it Power BI. This article describes Fabric's information protection [capabilities](#capabilities) and details current support under [considerations and limitations](#considerations-and-limitations).
+Information protection in Fabric is based on information protection in Power BI. However it's currently less fully supported than it Power BI. This article describes Fabric's information protection [capabilities](#capabilities) and details current support in the [considerations and limitations](#considerations-and-limitations) section.
 
 ## Capabilities
 
@@ -78,14 +78,14 @@ For more information about downstream inheritance, see [Sensitivity label downst
 
 ### Inheritance upon creation
 
-Inheritance upon creation is supported for Power BI Fabric items and in the following scenarios with non-Power BI items:
+Inheritance upon creation is supported for Power BI Fabric items and in other scenarios with non-Power BI items where one item is created from another item:
 
-* Lakehouse -> Pipeline
-* Lakehouse -> Notebook
-* Lakehouse -> Lakehouse (shortcut creation)
-* Notebook -> Pipeline
-* Kusto Database -> KQL Query Set
-* Kusto Database -. Pipeline
+* A Pipeline created from a Lakehouse inherits the sensitivity label of the Lakehouse.
+* A Notebook created from a Lakehouse inherits the sensitivity label of the Lakehouse.
+* A Lakehouse shortcut created from a Lakehouse inherits the sensitivity label of the Lakehouse.
+* A Pipeline created from a Notebook inherits the sensitivity label of the Notebook.
+* A KQL Queryset created from a KQL Database inherits the sensitivity label of KQL Database.
+* A Pipeline created from a KQL Database inherits the sensitivity label of KQL Database.
 
 For more information about downstream inheritance, see [Sensitivity label inheritance upon creation of new content](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-label-inheritance-upon-creation-of-new-content).
 
