@@ -28,7 +28,7 @@ To create or manage the Spark Pool associated with your workspace:
 
 1. Then, select the **Data Engineering/Science** option to expand the menu. Navigate to the **Spark Compute** option from the left-hand menu:
 
-   :::image type="content" source="media/workspace-admin-settings/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view.":::
+   :::image type="content" source="media/workspace-admin-settings/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view." lightbox="media/workspace-admin-settings/spark-compute-detail-view.png" :::
 
 1. Select the **New Pool** option. From the **Create Pool** menu, name your Spark pool. Select the **Node family**, and **Node size** from the available sizes Small, Medium, Large, X-Large and XX-Large based on compute requirements for your workloads.
 
