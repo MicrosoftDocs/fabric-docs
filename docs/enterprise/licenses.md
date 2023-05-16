@@ -58,7 +58,7 @@ Microsoft Fabric has individual and organizational licenses. This section lists 
 
 Organizational licenses provide the infrastructure for Microsoft Fabric. Without an organizational license, users can't work in Fabric. There are two types of organizational licenses:
 
-* **Premium Per user (PPU)** - Premium Per User, or PPU, is the entry level organization license. PPU uses a shared capacity across the organization, which provides the computing power for all the Fabric operations that take place in the organization. PPU licenses provide partial access to Microsoft Fabric. If you're using a PPU license, you'll only be able to access Power BI items in Microsoft Fabric.
+* **Premium Per user (PPU)** - Premium Per User, or PPU, is the entry level organization license. PPU uses a shared capacity across the organization, which provides the computing power for the Power BI operations that take place in the organization. PPU licenses provide partial access to Microsoft Fabric. If you're using a PPU license, you'll only be able to access Power BI items in Microsoft Fabric.
 
 * **Capacity** - Capacity licenses, known as Premium licenses in Power BI, are split into Stock Keeping Units (SKUs). Each SKU provides a set of Fabric resources for your organizations. Your organization can have as many organizational licenses as needed.
 
