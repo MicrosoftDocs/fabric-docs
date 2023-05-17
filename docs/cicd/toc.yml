@@ -43,6 +43,8 @@ items:
     href: git-integration/source-code-format.md
 - name: Lifecycle management best practices
   href: best-practices-cicd.md
+- name: Frequently asked questions
+  href: faq.md
 - name: Troubleshooting
-  href: troubleshoot-cicd.yml
+  href: troubleshoot-cicd.md
 
