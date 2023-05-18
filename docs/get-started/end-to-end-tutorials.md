@@ -15,7 +15,7 @@ In this article, you find a comprehensive list of end-to-end tutorials available
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Tutorials
+## Multi-experience tutorials
 
 |Tutorial name  |Scenario |
 |---------|---------|
@@ -23,8 +23,16 @@ In this article, you find a comprehensive list of end-to-end tutorials available
 |[Data Science](../data-science/tutorial-data-science-introduction.md)    |  In this tutorial, you'll explore, clean, and transform a taxicab trip dataset, and build a machine learning model to predict trip duration at scale on a large dataset.   |
 |[Real-Time Analytics](../real-time-analytics/tutorial-introduction.md)   | In this tutorial, you'll use the streaming and query capabilities of Real-Time Analytics to analyze the New York Yellow Taxi trip dataset. You'll uncover essential insights into trip statistics, taxi demand across the boroughs of New York, and other related insights. |
 |[Data warehouse](../data-warehouse/tutorial-introduction.md) |  In this tutorial, you'll build an end-to-end data warehouse for the fictional Wide World Importers company. You'll ingest data into data warehouse, transform it using T-SQL and pipelines, run queries, and build reports. |
+
+## Experience-specific tutorials
+
+|Tutorial name  |Scenario |
+|---------|---------|
 |[Power BI](/power-bi/fundamentals/fabric-get-started) |  In this tutorial, you'll build a dataflow and pipeline to bring data into a lakehouse, create a dimensional model, and generate a compelling report. |
 |[Data Factory](../data-factory/tutorial-end-to-end-introduction.md) | In this tutorial, you ingest data with data pipelines and transform data with dataflows, then use the automation and notification to create a complete data integration scenario. |
+| [How to use end-to-end AI samples](../data-science/use-ai-samples.md) | In this set of tutorials, follow examples of how ML models can address your common business problems. |
+| [Use the VS Code extension](../data-engineering/setup-vs-code-extension.md) | Work through this set of articles to learn how to interact with your Fabric data using VS Code. |
+| [Avocado price prediction with R](../data-science/r-avocado.md) | Follow an example showing how to use R to analyze and visualize the avocado prices in the US, and predict future avocado prices. |
 
 ## Next steps
 
