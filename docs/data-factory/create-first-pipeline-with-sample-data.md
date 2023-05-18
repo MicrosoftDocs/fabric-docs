@@ -6,6 +6,7 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: quickstart
 ms.date: 05/23/2023
+ms.search.form: Pipeline_Tutorials
 ---
 
 # Quickstart: Create your first pipeline to copy data

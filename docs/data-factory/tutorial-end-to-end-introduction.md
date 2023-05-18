@@ -6,6 +6,7 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
 ms.date: 05/23/2023
+ms.search.form: product-data-factory
 ---
 
 # Data Factory end-to-end scenario: introduction and architecture

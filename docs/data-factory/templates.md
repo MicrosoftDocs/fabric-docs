@@ -6,6 +6,7 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: conceptual 
 ms.date: 05/23/2023
+ms.search.form: Pipeline_Template
 ---
 
 # Templates for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]

@@ -6,6 +6,7 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
 ms.date: 05/23/2023
+ms.search.form: Pipeline_Copy_Assistant
 ---
 
 # Move data from Azure SQL DB into Lakehouse via copy assistant

@@ -6,6 +6,7 @@ ms.author: jeluitwi
 author: luitwieler
 ms.topic: quickstart 
 ms.date: 05/23/2023
+ms.search.form: DataflowGen2_Tutorials
 ---
 
 # Quickstart: Create your first dataflow to get and transform data
