@@ -41,24 +41,10 @@ print(f"SynapseML cognitive version: {synapse.ml.cognitive.__version__}")
 ```
 
 
-    StatementMeta(, 6e950974-3959-4e28-b6b3-1392c8d97d28, 3, Finished, Available)
-
-
-    SynapseML cognitive version: 0.11.1
-    
-
-
 ```python
 import synapse.ml.lightgbm
 print(f"SynapseML lightgbm version: {synapse.ml.lightgbm.__version__}")
 ```
-
-
-    StatementMeta(, 6e950974-3959-4e28-b6b3-1392c8d97d28, 9, Finished, Available)
-
-
-    SynapseML lightgbm version: 0.11.1
-    
 
 ## Next steps
 
