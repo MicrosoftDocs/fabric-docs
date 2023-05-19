@@ -11,7 +11,7 @@ ms.date: 05/19/2023
 
 SynapseML is preinstalled on Fabric. If you want to use another version, you can install it with %%configure.
 
-Note that Fabric notebook does not officially support %%configure for now, and there's no guarantee of service-level agreement or future compatibility with official releases.
+**Note that Fabric notebook does not officially support %%configure for now, and there's no guarantee of service-level agreement or future compatibility with official releases.**
 
 ## Install SynapseML with %%configure
 The example installs SynapseML v0.11.1 on Fabric.
