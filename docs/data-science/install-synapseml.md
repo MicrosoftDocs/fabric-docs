@@ -1,0 +1,67 @@
+---
+title: Install a Different Version of SynapseML on Fabric
+description: Instruction of how to install SynapseML on Fabric
+ms.topic: overview
+ms.reviewer: jessiwang
+author: jessiwang
+ms.author: jessiwang
+ms.date: 05/19/2023
+---
+# Install a Different Version of SynapseML on Fabric 
+
+SynapseML is preinstalled on Fabric. If you want to use another version, you can install it with %%configure.
+
+Note that Fabric notebook does not officially support %%configure for now, and there's no guarantee of service-level agreement or future compatibility with official releases.
+
+## Install SynapseML with %%configure
+The example installs SynapseML v0.11.1 on Fabric.
+
+
+```python
+%%configure -f
+{
+  "name": "synapseml",
+  "conf": {
+      "spark.jars.packages": "com.microsoft.azure:synapseml_2.12:0.11.1,org.apache.spark:spark-avro_2.12:3.3.1",
+      "spark.jars.repositories": "https://mmlspark.azureedge.net/maven",
+      "spark.jars.excludes": "org.scala-lang:scala-reflect,org.apache.spark:spark-tags_2.12,org.scalactic:scalactic_2.12,org.scalatest:scalatest_2.12,com.fasterxml.jackson.core:jackson-databind",
+      "spark.yarn.user.classpath.first": "true",
+      "spark.sql.parquet.enableVectorizedReader": "false",
+      "spark.sql.legacy.replaceDatabricksSparkAvro.enabled": "true"
+  }
+}
+```
+
+## Check SynapseML Version
+
+
+```python
+import synapse.ml.cognitive
+print(f"SynapseML cognitive version: {synapse.ml.cognitive.__version__}")
+```
+
+
+    StatementMeta(, 6e950974-3959-4e28-b6b3-1392c8d97d28, 3, Finished, Available)
+
+
+    SynapseML cognitive version: 0.11.1
+    
+
+
+```python
+import synapse.ml.lightgbm
+print(f"SynapseML lightgbm version: {synapse.ml.lightgbm.__version__}")
+```
+
+
+    StatementMeta(, 6e950974-3959-4e28-b6b3-1392c8d97d28, 9, Finished, Available)
+
+
+    SynapseML lightgbm version: 0.11.1
+    
+
+## Next steps
+
+- [How to use LightGBM with SynapseML](lightgbm-overview.md)
+- [How to use Cognitive Services with SynapseML](overview-cognitive-services.md)
+- [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)

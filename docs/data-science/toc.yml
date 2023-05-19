@@ -183,6 +183,8 @@ items:
     items:
     - name: Your first model
       href: synapseml-first-model.md
+    - name: Install another version of SynapseML
+      href: install-synapseml.md
   - name: How-to guides
     items:
     - name: Use LightGBM with SynapseML
