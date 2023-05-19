@@ -4,7 +4,6 @@ description: Learn how to read the Microsoft Fabric utilization and metrics app'
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
-ms.service: azure
 ms.date: 05/23/2023
 ---
 

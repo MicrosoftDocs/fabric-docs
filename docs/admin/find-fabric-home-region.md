@@ -4,7 +4,6 @@ description: Learn how to find what your Fabric home region is.
 author: paulinbar
 ms.author: painbar
 ms.topic: overview
-ms.service: azure
 ms.date: 05/23/2023
 ---
 

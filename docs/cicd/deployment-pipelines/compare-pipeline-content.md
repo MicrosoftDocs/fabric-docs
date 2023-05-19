@@ -4,8 +4,6 @@ description: Learn how to compare the content of the source stage and target sta
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
 ms.date: 05/09/2023
 ms.search.form: Deployment pipelines operations
 ---

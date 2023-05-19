@@ -4,7 +4,6 @@ description: Learn how to track user activities in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.service: azure
 ms.date: 05/23/2023
 ---
 

@@ -3,7 +3,6 @@ title: Git integration branches
 description: Learn how to use git branches to work in your own isolated environment.
 author: mberdugo
 ms.author: monaberdugo
-ms.service: powerbi
 ms.topic: concept-article
 ms.date: 05/23/2023
 ms.custom: 

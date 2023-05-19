@@ -4,8 +4,6 @@ description: Learn how to deploy content to an empty or to non-empty stage using
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1
 ms.date: 05/23/2023
 ms.search.form: 

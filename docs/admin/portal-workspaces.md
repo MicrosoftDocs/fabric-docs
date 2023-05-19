@@ -6,7 +6,6 @@ ms.author: painbar
 ms.reviewer: ''
 ms.custom: admin-portal
 ms.topic: how-to
-ms.service: azure
 ms.date: 05/23/2023
 LocalizationGroup: Administration
 ---

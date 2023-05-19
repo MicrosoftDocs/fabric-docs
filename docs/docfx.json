@@ -47,9 +47,26 @@
       "breadcrumb_path": "/fabric/breadcrumb/toc.json",
       "uhfHeaderId": "MSDocsHeader-Fabric",
       "feedback_system": "None",
-      "ms.service": "azure",
+      "ms.service": "fabric",
        "titleSuffix": "Microsoft Fabric"
    },
+   "fileMetadata": {
+    "ms.subservice":
+    {
+      "docs/admin/**/*.md": "admin",
+      "docs/cicd/**/*.md": "cicd",
+      "docs/data-engineering/**/*.md": " data-engineering",
+      "docs/data-factory/**/*.md": "data-factory",
+      "docs/data-science/**/*.md": " data-science",
+      "docs/data-warehouse/**/*.md": " data-warehouse",
+      "docs/enterprise/**/*.md": " enterprise",
+      "docs/get-started/**/*.md": "get-started",
+      "docs/governance/**/*.md": "governance",
+      "docs/onelake/**/*.md": "onelake",
+      "docs/real-time-analytics/**/*.md": "real-time-analytics",
+      "docs/security/**/*.md": " security"
+    }
+ }, 
    "searchScope": [
     "Microsoft Fabric"
   ],
