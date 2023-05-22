@@ -10,12 +10,12 @@ ms.date: 3/31/2023
 
 # The Microsoft Purview hub in Microsoft Fabric
 
-Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and data owners manage and govern their Fabric data estate. It contains reports that provide insight about sensitive data and item endorsement, and also serves as a gateway to more advanced Purview capabilities such as Information Protection, Data Loss Prevention, and Audit.
+Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators manage and govern their Fabric data estate. It contains reports that provide insights about sensitive data and item endorsement, and also serves as a gateway to more advanced Purview capabilities such as Information Protection, Data Loss Prevention, and Audit.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
 >[!NOTE]
-> Currently, you must have a Power BI administrator role or higher to access the Purview hub.
+> You must have a Power BI administrator role or higher to access the hub.
 
 For more information about the Fabric/Purview integration, see [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md).
 
@@ -32,7 +32,7 @@ To access the hub, open the Fabric settings pane and choose **Microsoft Purview 
 
 Use the Microsoft Fabric data section of the hub to see insights about your Fabric data. It contains two reports that help you analyze the data.
 
-* The items report shows you insights about your organization's Fabric items - how many there are, what kinds they are, how many are promoted or certified, how these promoted and certified items are distributed throughout the workspaces, etc. Such insights might be used to drive adoption of certification in workspaces.
+* The items tab shows you insights about your organization's Fabric items - how many there are, what kinds they are, how many are promoted or certified, how these promoted and certified items are distributed throughout the workspaces, etc. Such insights might be used to drive adoption of certification in workspaces.
 
 * The sensitivity tab shows you insights about the sensitivity labeling of your organization's Fabric items. You can see label coverage by workspace and by item type, you can see the ratio of labeled versus unlabeled items, and you can see which labels are used most.
 
@@ -62,6 +62,9 @@ The tiles at the top of the Purview hub provide access to Purview's advanced gov
 * **Information protection**: Opens a new tab to the Microsoft Purview compliance portal, where sensitivity labels and label policies can be defined and monitored.
 * **Data loss prevention**: Opens a new tab to the Microsoft Purview compliance portal, where data loss prevention policies can be defined and monitored.
 * **Audit**: Opens a new tab to the Microsoft Purview compliance portal, where activities regarding sensitivity labels and DLP policies recorded in the audit logs can be searched and retrieved with Purview's Audit solution.
+
+> [!NOTE]
+> Not all of the tiles mentioned above may be available at Public Preview.
 
 ## Next steps
 
