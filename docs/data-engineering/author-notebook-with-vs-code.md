@@ -109,7 +109,7 @@ To update your local version with the latest workspace version, you pull the rem
 
 ## Run or debug a notebook on remote Spark compute
 
-By selecting the kernel shipped with this extension, you can run the code cell on top of the remote Fabric Spark compute. Once this kernel is selected, during runtime, the extension intercepts all the PySpark API calls and translates them to the corresponding http call to the remote Spark compute. For pure python code, it's still executed in the local environment.
+By selecting the kernel **synapse-spark-kernel**  shipped with this extension, you can run the code cell on top of the remote Fabric Spark compute. Once this kernel is selected, during runtime, the extension intercepts all the PySpark API calls and translates them to the corresponding http call to the remote Spark compute. For pure python code, it's still executed in the local environment.
 
 :::image type="content" source="media\vscode\run-notebook.png" alt-text="Screenshot showing where to run a notebook.":::
 

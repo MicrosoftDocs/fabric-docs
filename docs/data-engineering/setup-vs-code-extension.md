@@ -22,7 +22,7 @@ Visual Studio Code is a one of the most popular lightweight source code editors;
 Prerequisites for the Synapse VS Code extension:
 
 - [Java 1.8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
-- [Conda](https://docs.conda.io/latest/miniconda.html)
+- [Conda](https://docs.conda.io/en/latest/miniconda.html)
 - [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 After you have installed the required software, you must update the operating system properties.
