@@ -42,7 +42,7 @@ If too many partitions are used with a low ingestion rate, partition readers dea
 
 The recommendation is to investigate and test the best number of partitions for your throughput scenario. But it's common to see scenarios with high throughput using 32 or more partitions.
 
-Azure Event Hubs Connector for Apache Spark ([link](https://github.com/Azure/azure-event-hubs-spark)) is recommended to connect Spark application to Azure Event Hub.
+Azure Event Hubs Connector for Apache Spark ([link](https://github.com/Azure/azure-event-hubs-spark)) is recommended to connect Spark application to Azure Event Hubs.
 
 ## Lakehouse as streaming sink
 
