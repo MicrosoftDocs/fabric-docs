@@ -32,7 +32,7 @@ In this article, you find a comprehensive list of end-to-end tutorials available
 |[Data Factory](../data-factory/tutorial-end-to-end-introduction.md) | In this tutorial, you ingest data with data pipelines and transform data with dataflows, then use the automation and notification to create a complete data integration scenario. |
 | [How to use end-to-end AI samples](../data-science/use-ai-samples.md) | In this set of tutorials, follow examples of how ML models can address your common business problems. |
 | [Use the VS Code extension](../data-engineering/setup-vs-code-extension.md) | Work through this set of articles to learn how to interact with your Fabric data using VS Code. |
-| [Avocado price prediction with R](../data-science/r-avocado.md) | Follow an example showing how to use R to analyze and visualize the avocado prices in the US, and predict future avocado prices. |
+| [Data Science - Price prediction with R](../data-science/r-avocado.md) | In this tutorial, you build a machine learning model to analyze and visualize the avocado prices in the US and predict future prices. |
 
 ## Next steps
 
