@@ -24,7 +24,7 @@ The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in t
 
 - The [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically generated for every Lakehouse and exposes Delta tables from the Lakehouse as SQL tables that can be queried using the T-SQL language.
 - Every delta table from a Lakehouse is represented as one table. Data should be in delta format.
-- The [default Power BI dataset](datasets.md) is created for every [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and it follows the naming convention of the Lakehouse objects.
+- The [default Power BI dataset](datasets.md) is created for every [!INCLUDE [fabric-se](includes/fabric-se.md)] and it follows the naming convention of the Lakehouse objects.
 
 There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric. Microsoft Fabric users can't create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in a workspace. A [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically created for every Lakehouse. To get a [!INCLUDE [fabric-se](includes/fabric-se.md)], [create a lakehouse](../onelake/create-lakehouse-onelake.md) and a [!INCLUDE [fabric-se](includes/fabric-se.md)] will be automatically created for the Lakehouse.
 
