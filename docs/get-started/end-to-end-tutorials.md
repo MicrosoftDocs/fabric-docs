@@ -11,11 +11,13 @@ ms.date: 5/23/2023
 
 # End-to-end tutorials in Microsoft Fabric
 
-In this article, you find a comprehensive list of end-to-end tutorials available in Microsoft Fabric. These tutorials guide you through a scenario that covers the entire process, from data acquisition to data consumption. They're designed to help you develop a foundational understanding of the Fabric UI, the various experiences supported by Fabric, their integration points, and the professional and citizen developer experiences that are available.
+In this article, you find a comprehensive list of end-to-end tutorials available in Microsoft Fabric. These tutorials guide you through a scenario that covers the entire process, from data acquisition to data consumption. They're designed to help you develop a foundational understanding of the Fabric UI, the various experiences supported by Fabric and their integration points, and the professional and citizen developer experiences that are available.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Multi-experience tutorials
+
+The following table lists tutorials that span multiple Fabric experiences.
 
 |Tutorial name  |Scenario |
 |---------|---------|
@@ -26,11 +28,13 @@ In this article, you find a comprehensive list of end-to-end tutorials available
 
 ## Experience-specific tutorials
 
+The following tutorials walk you through scenarios within specific Fabric experiences.
+
 |Tutorial name  |Scenario |
 |---------|---------|
 |[Power BI](/power-bi/fundamentals/fabric-get-started) |  In this tutorial, you build a dataflow and pipeline to bring data into a lakehouse, create a dimensional model, and generate a compelling report. |
 |[Data Factory](../data-factory/tutorial-end-to-end-introduction.md) | In this tutorial, you ingest data with data pipelines and transform data with dataflows, then use the automation and notification to create a complete data integration scenario. |
-| [ Data Science end-to-end AI samples](../data-science/use-ai-samples.md) | In this set of tutorials, learn about different capabilities the Data Science experience has and examples of how ML models can address your common business problems. |
+| [Data Science end-to-end AI samples](../data-science/use-ai-samples.md) | In this set of tutorials, learn about the different Data Science experience capabilities and examples of how ML models can address your common business problems. |
 | [Data Science - Price prediction with R](../data-science/r-avocado.md) | In this tutorial, you build a machine learning model to analyze and visualize the avocado prices in the US and predict future prices. |
 
 ## Next steps
