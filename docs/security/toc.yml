@@ -1,0 +1,21 @@
+items:
+- name: Security documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: Security overview
+    href: security-overview.md
+- name: Security features
+  items:
+  - name: Guest user sharing
+    href: security-b2b.md
+  - name: Conditional access
+    href: security-conditional-access.md
+  - name: Customer Lockbox
+    href: security-lockbox.md
+  - name: Service tags
+    href: security-service-tags.md
+- name: Resiliency
+  items:
+  - name: Resiliency in Fabric
+    href: az-resiliency.md        

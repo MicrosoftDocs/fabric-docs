@@ -1,0 +1,11 @@
+items:
+- name: Microsoft Fabric
+  tocHref: /fabric/
+  topicHref: /fabric/index
+  items:
+  - name: OneLake
+    tocHref: /fabric/onelake
+    topicHref: /fabric/onelake/index
+  - name: OneLake
+    tocHref: /fabric/get-started
+    topicHref: /fabric/onelake/index    
