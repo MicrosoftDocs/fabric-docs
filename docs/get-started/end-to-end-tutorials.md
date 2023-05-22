@@ -30,7 +30,7 @@ In this article, you find a comprehensive list of end-to-end tutorials available
 |---------|---------|
 |[Power BI](/power-bi/fundamentals/fabric-get-started) |  In this tutorial, you build a dataflow and pipeline to bring data into a lakehouse, create a dimensional model, and generate a compelling report. |
 |[Data Factory](../data-factory/tutorial-end-to-end-introduction.md) | In this tutorial, you ingest data with data pipelines and transform data with dataflows, then use the automation and notification to create a complete data integration scenario. |
-| [How to use end-to-end AI samples](../data-science/use-ai-samples.md) | In this set of tutorials, follow examples of how ML models can address your common business problems. |
+| [ Data Science end-to-end AI samples](../data-science/use-ai-samples.md) | In this set of tutorials, learn about different capabilities the Data Science experience has and examples of how ML models can address your common business problems. |
 | [Use the VS Code extension](../data-engineering/setup-vs-code-extension.md) | Work through this set of articles to learn how to interact with your Fabric data using VS Code. |
 | [Data Science - Price prediction with R](../data-science/r-avocado.md) | In this tutorial, you build a machine learning model to analyze and visualize the avocado prices in the US and predict future prices. |
 
