@@ -1,6 +1,6 @@
 ---
 title: Connect to a Lakehouse data lake in dataflows
-description: This article details how to use the Lakehouse connector in dataflows.
+description: This article details how to use the Data Factory Lakehouse connector in Microsoft Fabric to create a data lake connection in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
@@ -10,11 +10,9 @@ ms.custom: template-how-to
 
 # Connect to a Lakehouse data lake in dataflows
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 You can connect to a Lakehouse data lake in Dataflow Gen2 using the Lakehouse connector provided by Data Factory in Microsoft Fabric.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Connect to a Lakehouse data lake
 
@@ -46,7 +44,7 @@ To connect to a Lakehouse data lake from a dataflow:
 
 1. In **Choose data**, select the data item that you want to transform, and then select **Transform data**.
 
-   :::image type="content" source="./media/connector-lakehouse/file-systems-online.png" alt-text="Screenshot of the choose data screen with the test examples item selected and the corresponding data on the right side." lightbox="./media/connector-lakehouse/file-systems-online.png":::
+   :::image type="content" source="./media/connector-lakehouse/choose-data-item.png" alt-text="Screenshot of the choose data screen with the test examples item selected and the corresponding data on the right side." lightbox="./media/connector-lakehouse/choose-data-item.png":::
 
 ## Next steps
 
