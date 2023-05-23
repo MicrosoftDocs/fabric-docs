@@ -2,6 +2,7 @@
 title: Analyze time series
 description: Use SynapseML and Azure Cognitive Services for multivariate anomaly detection.
 ms.topic: overview
+ms.custom: build-2023
 ms.reviewer: jessiwang
 author: jessiwang
 ms.author: jessiwang
