@@ -5,7 +5,7 @@ author: jejiang
 ms.author: jejiang
 ms.topic: overview 
 ms.date: 04/30/2023
-ms.custom: template-howto
+ms.custom: template-howto, build-2023
 ms.search.form: Spark history server to debug apps
 ---
 
@@ -184,5 +184,3 @@ The Executor Usage Graph visualizes the Spark job executor's allocation and runn
 - [Monitor Apache Spark jobs within notebooks](spark-monitor-debug.md)
 - [Monitor Apache Spark job definition](monitor-spark-job-definitions.md)
 - [Monitor Apache Spark application details](spark-detail-monitoring.md)
-
-

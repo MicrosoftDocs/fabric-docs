@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: troubleshooting    
 ms.date: 05/09/2023
-ms.custom:  
+ms.custom: build-2023
 ---
 
 # Fabric (Preview) trial known issues

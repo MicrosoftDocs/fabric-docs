@@ -4,6 +4,7 @@ description: Learn how to use service tags in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 

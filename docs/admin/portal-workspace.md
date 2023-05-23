@@ -4,7 +4,7 @@ description: Learn how to configure workspace admin settings.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.custom: tenant-setting
+ms.custom: tenant-setting, build-2023
 ms.topic: how-to
 ms.service: azure
 ms.date: 05/23/2023

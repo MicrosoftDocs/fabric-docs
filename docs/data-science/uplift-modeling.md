@@ -5,6 +5,7 @@ ms.reviewer: larryfr
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -393,4 +394,3 @@ loaded_treatmentmodel = mlflow.spark.load_model(
     f"{model_uri}-treatmentmodel", dfs_tmpdir="Files/spark"
 )
 ```
-

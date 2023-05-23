@@ -5,6 +5,7 @@ ms.reviewer: snehagunda
 author: jejiang
 ms.author: jejiang
 ms.topic: how-to 
+ms.custom: build-2023
 ms.date: 05/09/2023
 ms.search.form: Monitor Spark capacity consumption
 ---
@@ -57,4 +58,3 @@ Background operations are displayed for a specific [timepoint](../enterprise/met
 
 - [Install the Premium metrics app](/power-bi/enterprise/service-premium-install-app)
 - [Use the Premium metrics app](/power-bi/enterprise/service-premium-metrics-app)
-

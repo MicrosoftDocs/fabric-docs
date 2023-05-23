@@ -2,6 +2,7 @@
 title: Interpretability - Tabular SHAP explainer
 description: Use Kernel SHAP to explain a tabular classification model.
 ms.topic: overview
+ms.custom: build-2023
 ms.reviewer: jessiwang
 author: jessiwang
 ms.author: jessiwang

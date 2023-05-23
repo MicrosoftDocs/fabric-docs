@@ -6,6 +6,7 @@ ms.author: procha
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.custom: build-2023
 ms.search.form: Ingesting data
 ---
 
