@@ -23,17 +23,6 @@ To install the metrics app, you need to be a capacity admin.
 
 Follow the steps according to the type of installation you need.
 
->[!NOTE]
->If you're installing the app in a government cloud environment, use one of the links. You can also use these links to upgrade the app. When upgrading, you don't need to delete the old app.
->
->* [Microsoft 365 Government Community Cloud (GCC)](https://aka.ms/FabricUSGovCapacityUsageReport)
->
->* [Microsoft 365 Government Community Cloud High (GCC High)](https://aka.ms/FabricUSGovHighCapacityUsageReport)
->
->* [Microsoft 365 Department of Defense (DoD)](https://aka.ms/FabricUSGovDodCapacityUsageReport)
->
->* [Power BI for China cloud](https://aka.ms/FabricMCCCapacityUsageReport)
-
 # [First time installation](#tab/1st)
 
 To install the *Microsoft Fabric Capacity Metrics* app for the first time, follow these steps:
