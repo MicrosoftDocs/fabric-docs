@@ -4,6 +4,7 @@ description: Understand how the Fabric (preview) trial works
 author: mihart
 ms.author: mihirwagle
 ms.topic: concept
+ms.custom: build-2023
 ms.search.form: product-fabric
 ms.date: 05/10/2023
 ---
@@ -127,10 +128,18 @@ This known bug occurs when the Power BI administrator turns off trials after you
 
 **What is the region for my Fabric (Preview) trial capacity?**
 
-If you start the trial using the Account manager,  your trial capacity is located in the home region for your tenant. To identify the home region, select the **?** icon on the top menu bar and then choose **About Power BI** > **About Fabric**. Your home region is where your data is stored.
+If you start the trial using the Account manager, your trial capacity is located in the home region for your tenant. See [Find your Fabric home region](../admin/find-fabric-home-region.md) for information about how to find your home region, where your data is stored.
 
 **What impact does region have on my Fabric (Preview) trial?**
 If your home region doesn't have Fabric enabled, you won't be able to create any Fabric items in your trial capacity. When Fabric is Generally Available (GA), you can use the Account manager to start a trial and assign your Fabric capacity to a specific region. Until GA, if your home region doesn't have Fabric enabled, don't use the Account manager to start a trial. If you've already started a trial from Account manager, cancel that trial and follow the steps in [Other ways to start a Fabric (Preview) trial](#other-ways-to-start-a-microsoft-fabric-preview-trial) instead.
+
+**Can I move my tenant to another region?**
+
+You can't move your organization's tenant between regions by yourself. If you need to change your organization's default data location from the current region to another region, you must contact support to manage the migration for you. For more information, see [Move between regions](/power-bi/support/service-admin-region-move).
+
+**What happens at the end of the Fabric (Preview) trial?**
+
+If you don't upgrade to a paid Fabric capacity at the end of the trial period, non-Power BI Fabric items will be removed according to the [retention policy upon removal](../admin/portal-workspaces.md#workspace-states).
 
 **How is the Fabric (Preview) trial different from an individual trial of Power BI paid?**
 

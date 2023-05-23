@@ -4,6 +4,7 @@ description: This article explains what the feature switches affecting git integ
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 

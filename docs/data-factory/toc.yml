@@ -19,7 +19,7 @@
       href: ../get-started/decision-guide-pipeline-dataflow-spark.md
   - name: Tutorials
     items:
-    - name: Introduction - Data Factory end-to-end tutorial
+    - name: Introduction - Data Factory tutorial
       href: tutorial-end-to-end-introduction.md
     - name: Module 1 - Create a pipeline
       href: tutorial-end-to-end-pipeline.md

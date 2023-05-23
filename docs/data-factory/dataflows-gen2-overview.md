@@ -3,8 +3,10 @@ title: Differences between Dataflows Gen1 and Gen2
 description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory for Microsoft Fabric.
 author: luitwieler
 ms.topic: overview
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.author: jeluitwi
+ms.search.form: DataflowGen2_Overview
 ---
 
 # Getting from Dataflow Generation 1 to Dataflow Generation 2

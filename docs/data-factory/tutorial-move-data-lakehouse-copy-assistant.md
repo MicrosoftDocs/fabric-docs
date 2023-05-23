@@ -5,7 +5,9 @@ ms.reviewer: jonburchel
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 05/23/2023
+ms.search.form: Pipeline_Copy_Assistant
 ---
 
 # Move data from Azure SQL DB into Lakehouse via copy assistant
@@ -112,4 +114,3 @@ Next, advance to learn more about monitoring your pipeline runs.
 
 > [!div class="nextstepaction"]
 > [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
-

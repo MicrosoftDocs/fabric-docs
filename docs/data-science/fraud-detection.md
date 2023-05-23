@@ -5,6 +5,7 @@ ms.reviewer: mopeakande
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -439,5 +440,3 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training/model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
-
-

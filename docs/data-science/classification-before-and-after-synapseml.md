@@ -2,6 +2,7 @@
 title: Classification - Before and After SynapseML
 description: Perform the same classification task with and without SynapseML.
 ms.topic: overview
+ms.custom: build-2023
 ms.reviewer: jessiwang
 author: jessiwang
 ms.author: jessiwang

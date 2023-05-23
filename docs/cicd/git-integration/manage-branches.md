@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: concept-article
 ms.date: 05/23/2023
-ms.custom: 
+ms.custom: build-2023
 ---
 
 # Manage branches in Microsoft Fabric workspaces

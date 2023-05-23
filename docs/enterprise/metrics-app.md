@@ -4,6 +4,11 @@ description: Learn how to evaluate your Microsoft Fabric capacity's health, by r
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
+<<<<<<< HEAD
+=======
+ms.service: azure
+ms.custom: build-2023
+>>>>>>> 57a2beeab70d7e394eda139f9e1a37aedd09f6b8
 ms.date: 05/23/2023
 ---
 

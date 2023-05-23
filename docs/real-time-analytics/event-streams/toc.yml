@@ -13,5 +13,5 @@ items:
   href: preview-data.md
 - name: Monitor event streams
   href: monitor.md
-- name: Stream events from Event Hubs to Microsoft Fabric
+- name: Build near real-time report to monitor events
   href: bring-events-to-fabric-from-event-hub.md

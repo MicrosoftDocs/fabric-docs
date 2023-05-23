@@ -4,6 +4,7 @@ description: Understand the Microsoft Fabric Monitoring hub and the information 
 author: davidiseminger
 ms.author: davidi
 ms.topic: overview
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 

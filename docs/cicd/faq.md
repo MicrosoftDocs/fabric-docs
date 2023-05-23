@@ -4,6 +4,12 @@ description: Find answers to your deployment pipelines, the Fabric Application l
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: troubleshooting
+<<<<<<< HEAD
+=======
+ms.service: powerbi
+ms.subservice: pbi-deployment-pipeline
+ms.custom: build-2023
+>>>>>>> 57a2beeab70d7e394eda139f9e1a37aedd09f6b8
 ms.date: 05/23/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---

@@ -4,7 +4,13 @@ description: Learn how to create rules to simplify deploying content with Fabric
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
+<<<<<<< HEAD
 ms.custom: contperf-fy21q1
+=======
+ms.service: powerbi
+ms.subservice: pbi-deployment-pipeline
+ms.custom: contperf-fy21q1, build-2023
+>>>>>>> 57a2beeab70d7e394eda139f9e1a37aedd09f6b8
 ms.date: 05/23/2023
 ms.search.form: Deployment rules
 ---
