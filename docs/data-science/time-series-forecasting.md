@@ -5,14 +5,15 @@ ms.reviewer: ssalgado
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
 # Training and evaluating a time series forecasting model in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this notebook, we'll develop a program to forecast time series data that has seasonal cycles. We'll use the [NYC Property Sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates ranging from 2003 to 2015 published by NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The dataset is a record of every building sold in New York City property market during 13-year period. Refer to [Glossary of Terms for Property Sales Files](https://www1.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf) for definition of columns in the spreadsheet. The dataset looks like the following table:
 

@@ -1,14 +1,14 @@
 ---
-title: Reliability in Microsoft Fabric #Required;
-description: Find out about reliability in Microsoft Fabric #Required; 
+title: Resiliency in Microsoft Fabric #Required;
+description: Find out about resiliency in Microsoft Fabric #Required; 
 author: paulinbar #Required; your GitHub user alias, with correct capitalization.
 ms.author: painbar #Required; Microsoft alias of author; optional team alias.
 ms.topic: reliability-article
-ms.custom: subject-reliability, references_regions
+ms.custom: subject-reliability, references_regions, build-2023
 ms.date: 04/24/2023 #Required; mm/dd/yyyy format.
 ---
 
-# Reliability in Microsoft Fabric
+# Resiliency in Microsoft Fabric
 
 This article describes reliability support in Microsoft Fabric, and covers regional resiliency with availability zones. For a more detailed overview of reliability in Azure, see [Azure reliability](/azure/architecture/framework/resiliency/overview).
 
@@ -24,33 +24,31 @@ Availability zones allow Fabric customers to run critical applications with high
 
 Fabric provides availability zone support in various regions as follows:
 
-|	Region	|	|		|		| 	|
-|------------------|----------------------|---------------|--------------------|----------------|
 |	**Americas**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
-|	Brazil South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|:------------------|:----------------------:|:---------------:|:--------------------:|:----------------:|
+|	Brazil South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|		:::image type="icon" source="../media/yes-icon.svg" border="false":::	| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	Brazil South B	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	Canada Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	Central US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	East US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	East US 2	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	South Central US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	West US 2	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	West US 3	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	Canada Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	Central US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|	:::image type="icon" source="../media/yes-icon.svg" border="false":::		| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	East US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	East US 2	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	South Central US	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	West US 2	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	West US 3	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	**Europe**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
-|	France Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	Germany West Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	North Europe	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	Sweden Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	UK South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	West Europe	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			|
-|	Norway East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	France Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	Germany West Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	North Europe	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	UK South	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|:::image type="icon" source="../media/yes-icon.svg" border="false":::			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	West Europe	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
+|	Norway East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|		:::image type="icon" source="../media/yes-icon.svg" border="false":::	| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	**Middle East**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
-|	Qatar Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	Qatar Central	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	**Africa**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
-|	South Africa North	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	South Africa North	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|	:::image type="icon" source="../media/yes-icon.svg" border="false":::		| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	**Asia Pacific**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
 |	Australia East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
-|	Japan East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
+|	Japan East	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			| :::image type="icon" source="../media/yes-icon.svg" border="false":::
 |	**Southeast Asia**	|	**Power BI**	|	**Datamarts**	|	**Data Warehouses**	| **Real-Time Analytics**	|
 |	Singapore	|	:::image type="icon" source="../media/yes-icon.svg" border="false":::	|		|			|
 
@@ -58,11 +56,11 @@ Fabric provides availability zone support in various regions as follows:
 To prepare for availability zone failure, customers should over-provision capacity of service to ensure that the solution can tolerate ⅓ loss of capacity and continue to function without degraded performance during zone-wide outages.
 
 ### Zone down experience
-During a zone-wide outage, no action is required during zone recovery. The following Fabric capabilities in the regions indicated above will self-heal and re-balance automatically to take advantage of the healthy zone. 
-- Power BI 
-- Data Marts
-- Data Warehouses
-- Real-Time Analytics
+During a zone-wide outage, no action is required during zone recovery. Fabric capabilities in regions listed above will self-heal and rebalance automatically to take advantage of the healthy zone.
+
+## Business continuity and disaster recovery (BCDR)
+
+BCDR isn't currently supported in Fabric for non-Power BI Fabric items, such as Notebooks, KQL Databases, etc., or for data stored in OneLake. However, it's still supported for Power BI Fabric items, such as datasets, reports, etc. For more information about BCDR in Power BI, see [Power BI high availability, failover, and disaster recovery FAQ](/power-bi/enterprise/service-admin-failover).
 
 ## Next steps
 

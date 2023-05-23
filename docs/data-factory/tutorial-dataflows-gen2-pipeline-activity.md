@@ -2,20 +2,17 @@
 title: Use a dataflow in a pipeline
 description: This article describes how to use a dataflow in a pipeline.
 author: luitwieler
-
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.author: jeluitwi
-
 ---
 
-# Quickstart: Use a dataflow in a pipeline
-
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+# Use a dataflow in a pipeline
 
 In this tutorial, you build a data pipeline to move OData from a Northwind source to a lakehouse destination and send an email notification when the pipeline is completed.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -23,7 +20,7 @@ To get started, you must complete the following prerequisites:
 
 - Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../get-started/create-workspaces.md) that isn’t the default My Workspace.
 
-## Create a lakehouse
+## Create a Lakehouse
 
 To start, you first need to create a lakehouse. A lakehouse is a data lake that is optimized for analytics. In this tutorial, you create a lakehouse that's used as a destination for the dataflow.
 
@@ -44,13 +41,13 @@ To start, you first need to create a lakehouse. A lakehouse is a data lake that 
 
 Now you've created a lakehouse and you can now set up the dataflow.
 
-## Create a Dataflow Gen2
+## Create a dataflow
 
-A Dataflow Gen2 is a reusable data transformation that can be used in a pipeline. In this tutorial, you create a dataflow that gets data from an OData source and writes the data to a lakehouse destination.  
+A dataflow is a reusable data transformation that can be used in a pipeline. In this tutorial, you create a dataflow that gets data from an OData source and writes the data to a lakehouse destination.  
 
 1. Switch to the **Data Factory** experience.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/experience-switcher.png" alt-text="Screenshot of the Data Factory experience.":::
+   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot of the Data Factory experience.":::
 
 1. Go to your Fabric enabled workspace.
 
@@ -155,3 +152,17 @@ In this section, you run and schedule the data pipeline. This schedule allows yo
 1. Select **Apply** to apply the changes.
 
 You've now created a data pipeline that runs on a schedule, refreshes the data in the lakehouse, and sends you an email notification. You can check the status of the data pipeline by going to the **Monitor Hub**. You can also check the status of the data pipeline by going to **Data Pipeline** and selecting the **Run history** tab in the dropdown menu.
+
+## Next steps
+
+This sample shows you how to use a dataflow in a pipeline with Data Factory in Microsoft Fabric.  You learned how to:
+
+> [!div class="checklist"]
+> - Create a dataflow.
+> - Create a pipeline invoking your dataflow.
+> - Run and schedule your data pipeline.
+
+Next, advance to learn more about monitoring your pipeline runs.
+
+> [!div class="nextstepaction"]
+> [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)

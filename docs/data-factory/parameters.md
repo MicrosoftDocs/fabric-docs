@@ -1,20 +1,19 @@
 ---
 title: Parameters
-description: Learn about parameters in [!INCLUDE [product-name](../includes/product-name.md)].
+description: Learn about parameters for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.author: jburchel
 author: jonburchel
 ms.topic: conceptual 
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
 # Parameters for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This document describes how to use parameters in your pipelines for Data Factory in Fabric.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## How to use parameters, expressions and functions in pipelines for Data Factory in Fabric
 

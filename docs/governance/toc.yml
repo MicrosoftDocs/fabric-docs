@@ -3,31 +3,31 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is Governance?
-    href: ../placeholder.md
+  - name: What is Microsoft Fabric governance and compliance?
+    href: governance-compliance-overview.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Set up item certification
+    href: ../admin/endorsement-setup.md?toc=/fabric/governance/TOC.json&bc=/fabric/governance/breadcrumb/toc.json
+- name: Microsoft Purview
+  items:
+  - name: Microsoft Purview and Fabric
+    href: microsoft-purview-fabric.md
+  - name: Microsoft Purview Hub
+    href: use-microsoft-purview-hub.md
+- name: Information protection
+  href: information-protection.md
+- name: Endorsement
+  href: endorsement-overview.md
+- name: Lineage
+  href: lineage.md
+- name: Impact analysis
+  href: impact-analysis.md
+- name: Domains
+  href: domains.md
 - name: Metadata scanning
   items:
-  - name: Overview
+  - name: Metadata scanning overview
     href: metadata-scanning-overview.md
-  - name: Set up metadata scanning
-    href: metadata-scanning-setup.md
-  - name: Enable service principal authentication for read-only admin APIs
-    href: metadata-scanning-enable-read-only-apis.md
   - name: Run metadata scanning
     href: metadata-scanning-run.md
-- name: Endorsement
-  items:
-  - name: Endorsement overview
-    href: endorsement-overview.md
-  - name: Promote Fabric content
-    href: endorsement-promote.md    
-  - name: Certify Fabric content
-    href: endorsement-certify.md
-  - name: Set up content certification
-    href: endorsement-setup.md

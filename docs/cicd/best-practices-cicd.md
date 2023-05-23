@@ -1,19 +1,19 @@
 ---
-title: Best practices for deployment pipelines, the Microsoft Fabric Application lifecycle management (ALM) tool
-description: Learn about the best practices for deployment pipelines, the Microsoft Fabric Application lifecycle management (ALM) tool.
+title: Best practices for lifecycle management in Fabric
+description: Learn about the best practices for git integration and deployment pipelines in the Microsoft Fabric lifecycle management tool.
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
 ms.date: 05/23/2023
-ms.custom: intro-deployment
-ms.search.form: Best practices for Deployment pipelines
+ms.custom: intro-deployment, build-2023
+ms.search.form: Best practices for deployment pipelines, Create deployment pipeline, Introduction to Deployment pipelines, Best practices for Deployment pipelines
 ---
 
-# Deployment pipelines best practices
+# Lifecycle management best practices
 
-This article provides guidance for business intelligence (BI) creators who are managing their content throughout its lifecycle. The article focuses on the use of deployment pipelines as a BI content lifecycle management tool.
+This article provides guidance for data & analytics creators who are managing their content throughout its lifecycle in Microsoft Fabric. The article focuses on the use of [git integration](./git-integration/intro-to-git-integration.md) for source control and [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) as a release tool. For a general guidance on Enterprise content publishing, [Enterprise content publishing](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-enterprise-content-publishing).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The article is divided into four sections:
 
@@ -21,111 +21,115 @@ The article is divided into four sections:
 
 * [**Development**](#development) - Learn about the best ways of creating content in the deployment pipelines development stage.
 
-* [**Test**](#test) - Understand how to use the deployment pipelines test stage to test your environment.
+* [**Test**](#test) - Understand how to use a deployment pipelines test stage to test your environment.
 
-* [**Production**](#production) - Utilize the deployment pipelines production stage when making your content available for consumption.
+* [**Production**](#production) - Utilize a deployment pipelines production stage to make your content available for consumption.
 
 ## Content preparation
 
-Prepare your content for on-going management throughout its lifecycle. Review the information in this section before you:
+To best prepare your content for on-going management throughout its lifecycle, review the information in this section before you:
 
 * Release content to production.
 
 * Start using a deployment pipeline for a specific workspace.
 
-* Publish your work.
+### Separate development between teams
 
-### Treat each workspace as a complete package of analytics
-
-Ideally, a workspace should contain a complete view of one aspect (such as department, business unit, project, or vertical) in your organization. Treating each workspace as a complete package makes it easier to manage permissions for different users, and allows you to control content releases for the entire workspace according to a planned schedule.
-
-If you're using [centralized datasets](/power-bi/connect-data/service-datasets-across-workspaces.md) that are used across the organization, we recommend that you create two types of workspaces:
-
-* **Modeling and data workspaces** - Workspaces that contain all the centralized datasets
-
-* **Reporting workspaces** - Workspaces that contain all dependent reports and dashboards
+Different teams in the org usually have different expertise, ownership, and methods of work, even when working on the same project. It’s important to set boundaries while giving each team their independence to work as they like. Consider having separate workspaces for different teams. This enables each team to have different permissions, work with different source control repos, and ship content to production in a different cadence. Most items can connect and use data across workspaces, so it won’t block collaboration on the same data and project.
 
 ### Plan your permission model
 
-A deployment pipeline is a Fabric object with its own [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions). In addition, the pipeline contains workspaces that have their own permissions.
+Both git integration and deployment pipelines require different permissions than just the workspace permissions. Read about the permission requirements for [git integration](./git-integration/git-integration-process.md#permissions) and [deployment pipelines](deployment-pipelines/understand-the-deployment-process.md#permissions).
 
-To implement a secure and easy workflow, plan who gets access to each part of the pipeline. Some of the considerations to take into account are:
+To implement a secure and easy workflow, plan who gets access to each part of the environments being used, both the git repository and the dev/test/prod stages in a pipeline. Some of the considerations to take into account are:
 
-* Who should have access to the pipeline?
+* Who should have access to the source code in the git repository?
 
 * Which operations should users with pipeline access be able to perform in each stage?
 
-* Who's reviewing content in the test stage?
+* Who’s reviewing content in the test stage?
 
 * Should the test stage reviewers have access to the pipeline?
 
-* Who oversees deployment to the production stage?
+* Who should oversee deployment to the production stage?
 
-* Which workspace are you assigning?
+* Which workspace are you assigning to a pipeline, or connecting to git?
+
+* Which branch are you connecting the workspace to? What’s the policy defined for that branch?
+
+* Is the workspace shared by multiple team members? Should they make changes directly in the workspace, or only through Pull requests?
 
 * Which stage are you assigning your workspace to?
 
-* Do you need to make changes to the permissions of the workspace you're assigning?
+* Do you need to make changes to the permissions of the workspace you’re assigning?
 
 ### Connect different stages to different databases
 
-A production database should always be stable and available. It's better not to overload it with queries generated by BI creators for their development or test datasets. Build separate databases for development and testing in order to protect production data, and not overload the development database with the entire volume of production data.
+A production database should always be stable and available. It's best not to overload it with queries generated by BI creators for their development or test datasets. Build separate databases for development and testing in order to protect production data and not overload the development database with the entire volume of production data.
 
->[!NOTE]
->If your organization uses [shared centralized datasets](/power-bi/connect-data/service-datasets-share.md), you can skip this recommendation.
+### Use parameters for configurations that will change between stages
 
-### Use parameters in your model
-
-As you can't edit datasets data sources in the Fabric service, we recommend using [parameters](/power-query/power-query-query-parameters) to store connection details such as instance names and database names. By using parameters instead of static connection strings, you can manage the connections through the Fabric service web portal, or [use APIs](/rest/api/power-bi/datasets/updateparametersingroup), at a later stage.
-
-In deployment pipelines, you can configure parameter rules to set different values for each deployment stage. You can also set rules for paginated reports.
-
-If you don’t use parameters for your connection string, you can define data source rules to specify a connection string for a given dataset. However, rules aren't supported in deployment pipelines for all data sources. To verify that you can configure rules for your data source, see [deployment rules limitations](deployment-pipelines/create-rules.md#considerations-and-limitations).
-
-Parameters also have other uses, such as making changes to queries, filters, and the text displayed in the report.
+Whenever possible, add [parameters](./deployment-pipelines/understand-the-deployment-process.md#auto-binding-and-parameters) to any definition that might change between dev/test/prod stages. Using parameters helps you change the definitions easily when you move your changes to production. While there’s still no unified way to manage parameters in Fabric, we recommend using it on items that support any type of parameterization.
+Parameters have different uses, such as defining connections to data sources, or to internal items in Fabric. They can also be used to make changes to queries, filters, and the text displayed to users.  
+In deployment pipelines, you can configure parameter rules to set different values for each deployment stage.
 
 ## Development
 
-This section provides guidance for working with the deployment pipelines development stage.
+This section provides guidance for working with the deployment pipelines and using fit for your development stage.
 
-### Use Power BI Desktop to edit your reports and datasets
+### Back up your work into a git repository
 
-Consider Power BI Desktop as your local development environment. Power BI Desktop allows you to try, explore, and review updates to your reports and datasets. Once the work is done, you can upload the new version to the development stage. We recommend editing *.pbix* files in the Desktop (and not in Power BI service) for the following reasons:
+With git integration, any developer can back up their work by committing it into git. To do this properly in Fabric, here are some basic rules:
 
-* It's easier to collaborate with fellow creators on the same *.pbix* file, if all changes are done with the same tool.
+* Make sure you have an isolated environment to work in, so others don’t override your work before it gets committed. This means working in a Desktop tool (such as [VSCode](https://code.visualstudio.com/), [Power BI Desktop](https://powerbi.microsoft.com/desktop/) or others), or in a separate workspace that other users can’t access.
 
-* The process of making online changes, downloading the *.pbix* file, and then uploading it again creates reports and datasets duplication.
+* Commit to a branch that you created and no other developer is using. If you’re using a workspace as an authoring environment, read about [working with branches](./git-integration/manage-branches.md).
 
-* You can use version control to keep your *.pbix* files up to date.
+* Commit together changes that must be deployed together. This advice applies for a single item, or multiple items that are related to the same change. Committing all related changes together can help you later when deploying to other stages, creating pull requests, or reverting changes back.
 
-### Version control for PBIX files
+* Big commits might hit a max commit size limit. Be mindful of the number of items you commit together, or the general size of an item. For example, reports can grow large when adding large images. It’s bad practice to store large-size items in source control systems, even if it works. Consider ways to reduce the size of your items if they have lots of static resources, like images.
 
-If you want to manage the version history of your reports and datasets, use Power BI's [auto-sync with OneDrive](/power-bi/connect-data/refresh-desktop-file-onedrive.md). Auto-sync keeps your files updated with the latest version and enable you to retrieve older versions if needed.
+### Rolling back changes
 
->[!NOTE]
->Synchronize with OneDrive (or any other repository) only with the *.pbix* files in the deployment pipeline's **development** stage. Syncing *.pbix* files into the deployment pipeline's test and production stages causes problems with deploying content across the pipeline.
+After backing up your work, there might be cases where you want to revert to a previous version and restore it in the workspace. There are a few options for this:
 
-### Separate modeling development from report and dashboard development
+* **Undo button**: The *Undo* operation is an easy and fast way to revert the immediate changes you made, as long as they are not committed yet. You can also undo each item separately. Read more about the [undo](./git-integration/git-get-started.md?tabs=undo-save#commit-changes-to-git) operation.
 
-For enterprise scale deployments, we recommend that you separate dataset development from the development of reports and dashboards. To promote changes to only a report or a dataset, use the deployment pipelines **selective deploy** option.
+* **Reverting to older commits**: There’s no direct way to go back to a previous commit in the UI. The best option is to promote an older commit to be the HEAD using [git revert](https://git-scm.com/docs/git-revert) or [git reset](https://git-scm.com/docs/git-reset). Doing this will show that there’s an update in the source control pane, and you can update the workspace with that new commit.
 
-Start by creating a separate *.pbix* file for datasets and reports in Power BI Desktop. For example, create a dataset *.pbix* file and upload it to the development stage. Later, the report authors can create a new *.pbix* only for the report and [connect it to the published dataset](/power-bi/connect-data/service-datasets-discover-across-workspaces.md) by using a live connection. This technique allows different creators to separately work on modeling and visualizations, and deploy them to production independently.
+As data isn’t stored in git, consider that reverting a data item to an older version might break the existing data and could possible require you to drop the data or the operation might fail. Check this in advance before reverting changes back.
 
-Create [shared datasets](/power-bi/connect-data/service-datasets-share.md) to use this method across workspaces.
+### Working with a ‘private’ workspace
 
-### Manage your models using XMLA read/write capabilities
+When you want to work in isolation, use a separate workspace as an isolated environment.  Read more about this in [working with branches](./git-integration/manage-branches.md). For an optimal workflow for you and the team, consider the following:
 
-When you separate modeling development from report and dashboard development, you can also take advantage of advanced capabilities such as source control, merging diff changes, and automated processes. Make these changes in the development stage so that the final content can be deployed to the test and production stages. This way, all changes go through a unified process with other dependent items before they're deployed to the production stage.
+* **Setting up the workspace**: Before you start, make sure you can create a new workspace (if you don’t already have one), that you can assign it to a [Fabric capacity](../enterprise/licenses.md#capacity), and that you have access to data to work in your workspace.
 
-Separate modeling development from visualizations by managing a [shared dataset](/power-bi/connect-data/service-datasets-share.md) in an external workspace by using XMLA r/w capabilities. The shared dataset can connect to multiple reports in various workspaces that are managed in multiple pipelines.
+* **Creating a new branch**: Create a new branch from the *main* branch, so you’ll have the most up-to-date version of your content. Also make sure you connect to the correct folder in the branch, so you can pull the right content into the workspace.
+
+* **Small, frequent changes**: It's a git best practice to make small incremental changes that are easy to merge and less likely to get into conflicts. If that’s not possible, make sure to update your branch from main so you can resolve conflicts on your own first.
+
+* **Configuration changes**: If necessary, change the configurations in your workspace to help you work more productively. Some changes can include connection between items, or to different data sources or changes to parameters on a given item. Just remember that anything you commit will be part of the commit and can accidentally be merged into the main branch.  
+
+### Use Client tools to edit your work
+
+For items and tools that support it, it might be easier to work with client tools for authoring, such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for datasets and reports, [VSCode](https://code.visualstudio.com/) for Notebooks etc. These tools can be your local development environment. After you complete your work, push the changes into the remote repo, and sync the workspace to upload the changes. Just make sure you are working with the [supported structure](./git-integration/source-code-format.md) of the item you are authoring. If you’re not sure, first clone a repo with content already synced to a workspace, then start authoring from there, where the structure is already in place.
+
+### Managing workspaces and branches
+
+Since a workspace can only be connected to a single branch at a time, it is recommended to treat this as a 1:1 mapping. However, to reduce the amount of workspace it entails, consider these options:
+
+* If a developer set up a private workspace with all required configurations, they can continue to use that workspace for any future branch they create. When a sprint is over, your changes are merged and you are starting a fresh new task, just switch the connection to a new branch on the same workspace. You can also do this if you suddenly need to fix a bug in the middle of a sprint. Think of it as a working directory on the web.
+
+* Developers using a client tool (such as VSCode, Power BI Desktop or others), don’t necessarily need a workspace. They can create branches and commit changes to that branch locally, push those to the remote repo and create a pull request to the main branch, all without a workspace. A workspace is needed only as a testing environment to check that everything works in a real-life scenario. It's up to you to decide when that should happen.
 
 ## Test
 
-This section provides guidance for working with the deployment pipelines test stage.
+This section provides guidance for working with a deployment pipelines test stage.
 
 ### Simulate your production environment
 
-Other than verifying that new reports or dashboards look acceptable, it's important to see how they perform from an end user's perspective. The deployment pipelines test stage allows you to simulate a real production environment for testing purposes.
+It’s important to see how your change will impact the production stage. A deployment pipelines test stage allows you to simulate a real production environment for testing purposes. Alternatively, you can simulate this by connecting git to an additional workspace.
 
 Make sure that these three factors are addressed in your test environment:
 
@@ -141,29 +145,35 @@ When testing, you can use the same capacity as the production stage. However, us
 
 ### Use deployment rules with a real-life data source
 
-If you're using the test stage to simulate real life data usage, it's recommended to separate the development and test data sources. The development database should be relatively small, and the test database should be as similar as possible to the production database. Use [data source rules](deployment-pipelines/create-rules.md) to switch data sources in the test stage.
-
-If you use a production data source in the test stage, it's useful to control the amount of data you import from your data source. You can control the amount of data you import by adding a parameter to your data source query in Power BI Desktop. Use parameter rules to control the amount of imported data or edit the parameter's value.
-You can also use this approach to avoid overloading your capacity.
-
-### Measure performance
-
-When you simulate a production stage, [check the report load and interactions](/power-bi/guidance/monitor-report-performance.md) to see if the changes you made affect them.
-
-You should also [monitor the load on the capacity](/power-bi/enterprise/service-premium-metrics-app.md) to catch extreme loads before they reach production.
-
->[!NOTE]
->It's best to monitor capacity loads again after you deploy updates to the production stage.
+If you're using the test stage to simulate real life data usage, it's recommended to separate the development and test data sources. The development database should be relatively small, and the test database should be as similar as possible to the production database. Use [data source rules](deployment-pipelines/create-rules.md) to switch data sources in the test stage or parameterize the connection if not working through deployment pipelines.
 
 ### Check related items
 
-Changes you make to datasets or reports can also affect related times. During testing, verify that your changes don't affect or break the performance of existing items, which can be dependent on the updated ones.
+Changes you make can also affect the dependent items. During testing, verify that your changes don’t affect or break the performance of existing items, which can be dependent on the updated ones.
 
-You can easily find the related items by using the workspace [lineage view](/power-bi/collaborate-share/service-data-lineage.md).
+You can easily find the related items by using [impact analysis](../governance/lineage.md).
+
+### Updating data items
+
+Data items are items that store data. The item’s definition in git defines how the data is stored. When updating an item in the workspace, we are importing its definition into the workspace and applying it on the existing data. The operation of updating data items is the same for git and deployment pipelines.
+
+As different items have different capabilities when it comes to retaining data when changes to the definition are applied, be mindful when applying the changes. Some practices that can help you apply the changes in the safest way:
+
+* Know in advance what the changes are and what their impact might be on the existing data. Use commit messages to describe the changes made.
+
+* Upload the changes first to a dev or test environment, to see how that item handles the change with test data.
+
+* If everything goes well, it’s recommended to also check it on a staging environment, with real-life data (or as close to it as possible), to minimize the unexpected behaviors in production.
+
+* Consider the best timing when updating the Prod environment to minimize the damage that any errors might cause to your business users who consume the data.
+
+* After deployment, post-deployment tests in Prod to verify that everything is working as expected.
+
+* Some changes will always be considered *breaking changes*. Hopefully, the preceding steps will help you track them before production. Build a plan for how to apply the changes in Prod and recover the data to get back to normal state and minimize downtime for business users.
 
 ### Test your app
 
-If you're distributing content to your end users through an app, review the app's new version *before* it's in production. Since each deployment pipeline stage has its own workspace, you can easily publish and update apps for development and test stages. Publishing and updating apps allows you to test the app from an end user's point of view.
+If you're distributing content to your customers through an app, review the app's new version *before* it's in production. Since each deployment pipeline stage has its own workspace, you can easily publish and update apps for development and test stages. Publishing and updating apps allows you to test the app from an end user's point of view.
 
 >[!IMPORTANT]
 >The deployment process doesn't include updating the app content or settings. To apply changes to content or settings, manually update the app in the required pipeline stage.
@@ -174,30 +184,37 @@ This section provides guidance to the deployment pipelines production stage.
 
 ### Manage who can deploy to production
 
-Because deploying to production should be handled carefully, it's good practice to let only specific people manage this sensitive operation. However, you probably want all BI creators for a specific workspace to have access to the pipeline. Use production [workspace permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) to manage access permissions.
+Because deploying to production should be handled carefully, it's good practice to let only specific people manage this sensitive operation. However, you probably want all BI creators for a specific workspace to have access to the pipeline. Use production [workspace permissions](./deployment-pipelines/understand-the-deployment-process.md#permissions) to manage access permissions. Other users can have a production workspace *viewer* role to see content in the workspace but not make changes from git or deployment pipelines.
 
-To deploy content between stages, users need either *member* or *admin* permissions for both stages. Make sure that only the people you want to deploy to production have these permissions. Other users can have production workspace *contributor* or *viewer* roles. Users with contributor or viewer roles can see content from within the pipeline but can't deploy.
-
-In addition, limit access to the pipeline by only enabling pipeline permissions to users that are part of the content creation process.
+In addition, limit access to the repo or pipeline by only enabling permissions to users that are part of the content creation process.
 
 ### Set rules to ensure production stage availability
 
-[Deployment rules](deployment-pipelines/create-rules.md) are a powerful way to ensure the data in production is always connected and available to users. With deployment rules applied, deployments can run while you have the assurance that end users can see the relevant info without disturbance.
+[Deployment rules](deployment-pipelines/create-rules.md) are a powerful way to ensure the data in production is always connected and available to users. With deployment rules applied, deployments can run while you have the assurance that customers can see the relevant information without disturbance.
 
 Make sure that you set production deployment rules for data sources and parameters defined in the dataset.
 
-In case of major dataset change, [refresh the dataset](/power-bi/connect-data/refresh-data.md).
-
 ### Update the production app
 
-Deployment in a pipeline updates the workspace content, but it doesn't update the associated app automatically. If you use an app for content distribution, don't forget to update the app after deploying to production so that end users are immediately able to use the latest version.
+Deployment in a pipeline updates the workspace content, but it can also update the associated app through the [deployment pipelines API](./deployment-pipelines/pipeline-automation.md). It's not possible to update the app through the UI. You need to update the app manually. If you use an app for content distribution, don’t forget to update the app after deploying to production so that end users are immediately able to use the latest version.
+
+### Deploying into production using git branches
+
+As the repo serves as the ‘single-source-of-truth’, some teams might want to deploy updates into different stages directly from git. This is possible with git integration, with a few considerations:
+
+* It’s recommended to use release branches. You will be required to continuously change the connection of workspace to the new release branches before every deployment.
+
+* If your build or release pipeline requires you to change the source code, or run scripts in a build environment before deployment to the workspace, then connecting the workspace to git won't help you.
+
+* After deploying to each stage, make sure to change all the configuration specific to that stage.
 
 ### Quick fixes to content
 
-Sometimes there are issues in production that require a quick fix. Never upload a new *.pbix* version directly to the production stage or make an online change in Power BI service. You can't deploy backwards to a previous stage when there's already content in those stages. Furthermore, deploying a fix without testing it first is bad practice. Therefore, always implement the fix in the development stage and push it to the rest of the deployment pipeline stages. Deploying to the development stage allows you to check that the fix works before deploying it to production. Deploying across the pipeline takes only a few minutes.
+Sometimes there are issues in production that require a quick fix. Deploying a fix without testing it first is bad practice. Therefore, always implement the fix in the development stage and push it to the rest of the deployment pipeline stages. Deploying to the development stage allows you to check that the fix works before deploying it to production. Deploying across the pipeline takes only a few minutes.
+
+If you are using deployment from git, we recommend following the practices described in [Adopt a Git branching strategy](/azure/devops/repos/git/git-branching-guidance#port-changes-back-to-the-main-branch).
 
 ## Next steps
 
+* [Get started with git integration](git-integration/git-get-started.md)
 * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)
-* [Assign a workspace to a pipeline stage](deployment-pipelines/assign-pipeline.md)
-* [Deployment history](deployment-pipelines/deployment-history.md)

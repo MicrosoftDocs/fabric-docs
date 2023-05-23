@@ -1,20 +1,18 @@
 ---
 title: Connect to Binary format in dataflows
-description: This article explains how to connect to Binary format in dataflows.
+description: This article details how to use the Data Factory Binary format connector in Microsoft Fabric to create an Binary format connection in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
 ms.date: 4/14/2023
-ms.custom: template-how-to 
+ms.custom: template-how-to, build-2023
 ---
 
 # Connect to Binary format in dataflows
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 A Binary format connector isn't currently supported in Dataflow Gen2.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Next steps
 

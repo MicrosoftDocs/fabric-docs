@@ -4,13 +4,17 @@ description: An introduction to git integration the Fabric Application lifecycle
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.service: powerbi
-ms.custom: contperf-fy21q1
+ms.custom: contperf-fy21q1, build-2023
 ms.date: 05/23/2023
 ms.search.form: 
 ---
 
 # Introduction to git integration
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
+> [!NOTE]
+> This articles in this section are about version control using git integration. To manage deployment of your app, see the [deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md) documentation.
 
 Git integration in Microsoft Fabric enables Pro developers to integrate their development processes, tools, and best practices straight into the Fabric platform. It allows developers who are developing in Fabric to:
 
@@ -34,7 +38,7 @@ The following items are currently supported:
 * Reports (except paginated reports)
 * Datasets (except push datasets, live connections, and model v1)
 
-If the folder has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either.
+If the workspace or git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pan but you can't commit or update them.
 
 ## Permissions
 
@@ -44,7 +48,8 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 A typical workflow for a developer using Fabric git integration may look like this:
 
-1. [Connect](./git-get-started.md#connect-a-workspace-to-an-azure-repo) the IT developer workspace to a Git branch​
+1. [Connect](./git-get-started.md#connect-a-workspace-to-an-azure-repo) the Fabric developer workspace to a Git repository
+1. Checkout branch
 1. [Edit and commit](./git-get-started.md#commit-changes-to-git) changes​
 1. Start a pull request and merge changes to ‘main’ branch​
 1. [Update](./git-get-started.md#update-workspace-from-git) the IT developer workspace
@@ -56,5 +61,5 @@ A typical workflow for a developer using Fabric git integration may look like th
 
 ## Next steps
 
-* [Understand the git integration process](./git-integration-process.md)
 * [Get started with git integration](./git-get-started.md)
+* [Understand the git integration process](./git-integration-process.md)

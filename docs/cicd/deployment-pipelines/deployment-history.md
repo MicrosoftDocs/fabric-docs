@@ -4,9 +4,7 @@ description: Learn how the history feature works in the deployment pipelines, th
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
-ms.custom: contperf-fy21q1
+ms.custom: contperf-fy21q1, build-2023
 ms.date: 05/23/2023
 ms.search.form: Deployment history
 ---
@@ -14,6 +12,8 @@ ms.search.form: Deployment history
 # Deployment history
 
 Deployment history is a deployment pipelines feature that enables reviewing the past deployments in your pipeline. The feature is designed as a log that lists all the past deployments in the pipeline.
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 You can use the deployment history log, to check the health of your pipeline, and to troubleshoot problems that occurred during previous deployments.
 

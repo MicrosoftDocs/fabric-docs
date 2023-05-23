@@ -5,15 +5,16 @@ ms.reviewer: sgilley
 author: ruixinxu
 ms.author: ruxu
 ms.topic: overview 
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
 # Use R for Apache Spark
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] provides built-in R support for Apache Spark. This includes support for [SparkR](https://spark.apache.org/docs/latest/sparkr.html) and [sparklyr](https://spark.rstudio.com/), which allows users to interact with Spark using familiar Spark or R interfaces. You can analyze data using R through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks. 
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This document provides an overview of developing Spark applications in Synapse using the R language. 
 

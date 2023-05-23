@@ -7,16 +7,32 @@ items:
     href: data-engineering-overview.md
 - name: Get started
   items:
-  - name: Lakehouse tutorial
-    href: ../placeholder.md
-  - name: CSV upload to Delta for PBI reporting
-    href: ../placeholder.md
-  - name: Structured streaming to SQL serving
-    href: ../placeholder.md
+  - name: Decision guide - copy activity, dataflow, or Spark
+    href: ../get-started/decision-guide-pipeline-dataflow-spark.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Decision guide - data warehouse or lakehouse
+    href: ../get-started/decision-guide-warehouse-lakehouse.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Upload CSV to delta tables
+    href: get-started-csv-upload.md
+  - name: Get streaming data into lakehouse
+    href: get-started-streaming.md
   - name: Reference external data for data science
-    href: ../placeholder.md
-  - name: Share lakehouse for PBI connectivity
-    href: ../placeholder.md
+    href: get-started-shortcuts.md
+- name: Tutorials
+  items:
+  - name: 1 Lakehouse tutorial introduction
+    href: tutorial-lakehouse-introduction.md
+  - name: 2 Get started
+    href: tutorial-lakehouse-get-started.md
+  - name: 3 Build a lakehouse 
+    href: tutorial-build-lakehouse.md
+  - name: 4 Ingest data
+    href: tutorial-lakehouse-data-ingestion.md
+  - name: 5 Prepare data
+    href: tutorial-lakehouse-data-preparation.md
+  - name: 6 Build a report
+    href: tutorial-lakehouse-build-report.md
+  - name: 7 Clean up resources
+    href: tutorial-lakehouse-clean-up.md
 - name: Lakehouse
   items:
   - name: What is a lakehouse?
@@ -37,20 +53,24 @@ items:
     href: lakehouse-shortcuts.md
   - name: Stream data to a lakehouse
     href: lakehouse-streaming-data.md
-- name: Lakehouse sharing and collaboration
+- name: Lakehouse collaboration
   items:
   - name: Workspace roles and permissions
     href: workspace-roles-lakehouse.md
-  - name: Sharing and permission management
-    href: lakehouse-sharing.md
-  - name: Lakehouse SQL endpoint security
-    href: lakehouse-sql-security.md
-  - name: Data mesh guide
-    href: ../placeholder.md
 - name: Apache Spark
   items:
-  - name: Autotune Spark configuration
-    href: autotune.md
+  - name: Spark compute
+    items:
+    - name: Overview
+      href: spark-compute.md
+    - name: Runtime
+      href: runtime.md
+    - name: Create custom pools
+      href: create-custom-spark-pools.md
+    - name: Autotune Spark configuration
+      href: autotune.md
+    - name: Spark concurrency limits and queueing
+      href: spark-job-concurrency-and-queueing.md
   - name: Spark job definition
     items:
     - name: What is a Spark job definition?
@@ -59,15 +79,21 @@ items:
       href: create-spark-job-definition.md
     - name: Run a Spark job definition
       href: run-spark-job-definition.md
-  - name: Spark utilities
-    href: microsoft-spark-utilities.md
-  - name: Library management
-    href: library-management.md
+  - name: Spark development
+    items:
+    - name: Spark utilities
+      href: microsoft-spark-utilities.md
+    - name: Library management
+      href: library-management.md
   - name: Spark administration settings
     items:
-    - name: Workspace settings
-      href: spark-workspace-admin-settings.md
-    - name: FAQ
+    - name: Capacity settings overview
+      href: capacity-settings-overview.md
+    - name: Configure capacity Settings
+      href: capacity-settings-management.md
+    - name: Spark workspace settings 
+      href: workspace-admin-settings.md
+    - name: Spark admin settings - FAQ
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring
     items:
@@ -77,20 +103,26 @@ items:
       href: spark-advisor-introduction.md
     - name: Monitoring hub - Browse Spark applications
       href: browse-spark-applications-monitoring-hub.md
-    - name: Browse artifact's recent runs
-      href: spark-artifact-recent-runs.md
+    - name: Browse item's recent runs
+      href: spark-item-recent-runs.md
     - name: Monitor Spark jobs in a notebook 
       href: spark-monitor-debug.md
     - name: Monitor Spark job definitions
       href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
-- name: Apache Delta
+    - name: Navigate the Apache Spark history server
+      href: apache-spark-history-server.md  
+    - name: Monitor Spark capacity consumption
+      href: monitor-spark-capacity-consumption.md
+- name: Delta Lake
   items:
-    - name: Lakehouse and delta tables
-      href: ../placeholder.md
-    - name: V-order optimization for tables
-      href: ../placeholder.md
+    - name: Lakehouse and Delta tables
+      href: lakehouse-and-delta-tables.md
+    - name: Load to tables
+      href: load-to-tables.md
+    - name: Delta optimization and V-Order
+      href: delta-optimization-and-v-order.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
@@ -103,3 +135,13 @@ items:
     href: lakehouse-notebook-explore.md
   - name: Load data in lakehouse
     href: lakehouse-notebook-load-data.md
+- name: VS Code integration 
+  items:
+  - name: Overview
+    href: setup-vs-code-extension.md
+  - name: Notebook with VS Code extension
+    href: author-notebook-with-vs-code.md
+  - name: Spark job definition with VS Code extension
+    href: author-sjd-with-vs-code.md
+  - name: Explore lakehouse with VS Code extension
+    href: explore-lakehouse-with-vs-code.md

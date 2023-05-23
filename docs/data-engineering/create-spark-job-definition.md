@@ -5,22 +5,22 @@ ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: Create Spark Job Definition,spark_job_definition
 ---
 
 # How to create an Apache Spark job definition in Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this tutorial, learn how to create a Spark job definition in [!INCLUDE [product-name](../includes/product-name.md)].
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
 To get started, you need the following prerequisites:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create an account for free](../placeholder.md).
-- Access to the Data Engineering Workload. [Onboard onto the data engineering workload](../placeholder.md).
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 
 > [!TIP]
 > To run the Spark job definition item, main definition file and default lakehouse context are required. If you don't have a lakehouse, you can create one by following the steps in [Create a lakehouse](../data-engineering/create-lakehouse.md).
@@ -38,7 +38,7 @@ There are a few ways you can get started with the creation process:
 
 :::image type="content" source="media\create-spark-job-definition\spark-job-definition-card.png" alt-text="Screenshot showing where to select the Spark job definition card." lightbox="media\create-spark-job-definition\spark-job-definition-card.png":::
 
-- **Workspace view**: You can also create a Spark job definition through the **Workspace** view when you are on the **Data Engineering** workload by using the **New** dropdown.
+- **Workspace view**: You can also create a Spark job definition through the **Workspace** view when you are on the **Data Engineering** experience by using the **New** dropdown.
 
 :::image type="content" source="media\create-spark-job-definition\data-engineering-new.png" alt-text="Screenshot showing where to select Spark job definition in the New menu." lightbox="media\create-spark-job-definition\data-engineering-new.png":::
 

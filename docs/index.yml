@@ -1,20 +1,17 @@
 ### YamlMime:Hub
 
 title: Microsoft Fabric documentation # < 60 chars
-summary: Translate data to competitive advantage with the Microsoft Fabric unified analytics platform - the data platform for the age of AI. Get expert information and answers to help you deliver complete data solutions that take you from data to insight to action. # < 160 chars
-# brand: aspnet | azure | dotnet | dynamics | m365 | ms-graph | office | power-platform | sql | sql-server | vs | visual-studio | windows | xamarin
+summary: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it. # < 160 chars
 brand: fabric
 
 metadata:
-  title: Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description:  Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more.
-  services: service
-  ms.service: powerbi #Required; service per approved list. service slug assigned to your service by ACOM.
-  ms.subservice: powerbi-service
-  ms.topic: hub-page # Required
+  title: Microsoft Fabric documentation
+  description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
+  ms.service: fabric
+  ms.topic: hub-page
   ms.collection: collection
-  author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
-  ms.author: sngun #Required; microsoft alias of author; optional team alias.
+  author: SnehaGunda
+  ms.author: sngun
   ms.date: 05/23/2023
 
 # highlightedContent section (optional)
@@ -29,15 +26,15 @@ highlightedContent:
     # Card
     - title: Try Microsoft Fabric for free
       itemType: get-started
-      url: placeholder.md
+      url: get-started/fabric-trial.md
     # Card
     - title: Enable Fabric for your organization
       itemType: quickstart
-      url: /admin/admin-switch.md
+      url: admin/fabric-switch.md
     # Card
-    - title: End-to-end tutorials
+    - title: Develop with end-to-end tutorials
       itemType: tutorial
-      url: placeholder.md
+      url: get-started/end-to-end-tutorials.md
 
 productDirectory:
   title: Explore Microsoft Fabric experiences
@@ -51,12 +48,14 @@ productDirectory:
       links:
         - url: get-started/microsoft-fabric-overview.md
           text: What is Fabric?
-        - url: placeholder.md
-          text: Navigate the Fabric portal
+        - url: enterprise/licenses.md
+          text: Microsoft Fabric licenses
+        - url: enterprise/buy-subscription.md
+          text: Buy a Microsoft Fabric subscription
+        - url: get-started/fabric-home.md
+          text: Navigate the Fabric portal          
         - url: get-started/workspaces.md
           text: Workspaces in Fabric
-        - url: placeholder.md
-          text: Find data in the OneLake data hub
         - url: get-started/index.yml
           text: See more
 
@@ -65,6 +64,8 @@ productDirectory:
 
       imageSrc: ./media/power-bi-icon.png
       links:
+        - url: admin/fabric-switch.md
+          text: Enable Microsoft Fabric for your organization
         - url: /power-bi/fundamentals/power-bi-overview
           text: What is Power BI?
         - url: /power-bi/transform-model/datamarts/datamarts-overview
@@ -85,6 +86,8 @@ productDirectory:
           text: What are shortcuts?
         - url: onelake/create-lakehouse-onelake.md
           text: Create a lakehouse with OneLake
+        - url: onelake/onelake-azure-synapse-analytics.md
+          text: OneLake and Azure Synapse Analytics integration
         - url: onelake/index.yml
           text: See more
 
@@ -98,7 +101,9 @@ productDirectory:
         - url: data-factory/create-first-pipeline-with-sample-data.md
           text: Create your first pipeline
         - url: data-factory/create-first-dataflow-gen2.md
-          text: Create your first dataflow?
+          text: Create your first dataflow
+        - url: data-factory/connector-overview.md
+          text: Connectors
         - url: data-factory/index.yml
           text: See more
 
@@ -125,6 +130,8 @@ productDirectory:
           text: What is Data science?
         - url: data-science/machine-learning-experiment.md
           text: Machine learning experiment
+        - url: data-science/use-ai-samples.md
+          text: Use end-to-end AI samples
         - url: data-science/index.yml
           text: See more
 
@@ -143,12 +150,12 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Synapse Real-time Analytics
+    - title: Synapse Real-Time Analytics
 
       imageSrc: ./media/synapse-real-time-analytics-icon.png
       links:
         - url: real-time-analytics/overview.md
-          text: What is Real-time Analytics?
+          text: What is Real-Time Analytics?
         - url: real-time-analytics/event-streams/overview.md
           text: What is Event stream?
         - url: real-time-analytics/create-database.md
@@ -161,14 +168,14 @@ productDirectory:
 
       imageSrc: ./media/administrator-icon.svg
       links:
-        - url: admin/admin-overview.md
+        - url: enterprise/buy-subscription.md
+          text: Buy a Microsoft Fabric subscription     
+        - url: admin/microsoft-fabric-admin.md
           text: Fabric administration
-        - url: governance/metadata-scanning-overview.md
+        - url: governance/governance-compliance-overview.md
           text: Data governance and compliance
         - url: security/security-overview.md
           text: Security
-        - url: enterprise/billing-reports.md
-          text: Billing and consumption
         - url: admin/index.yml
           text: See more
 
@@ -191,11 +198,11 @@ productDirectory:
 
       imageSrc: ./media/support-icon.svg
       links:
-        - url: placeholder.md
+        - url: /power-bi/support/service-support-options
           text: Create a support ticket
-        - url: placeholder.md
+        - url: /power-bi/troubleshoot/known-issues/power-bi-known-issues
           text: Known issues
-        - url: placeholder.md
+        - url: /power-bi/troubleshoot/
           text: Troubleshoot issues
         - url: get-started/index.yml
           text: See more
@@ -205,15 +212,15 @@ productDirectory:
 
       imageSrc: ./media/education-icon.svg
       links:
-        - url: /training/modules/introduction-end-analytics-using-microsoft-fabric/
+        - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
           text: End-to-end analytics using Fabric
         - url: /training/modules/get-started-lakehouses/
           text: Get started with lakehouses
-        - url: /training/modules/use-spark-notebooks-pipelines-fabric/
+        - url: /training/modules/use-data-factory-pipelines-fabric/
           text: Use Data Factory pipelines
         - url: /training/modules/get-started-data-science-fabric/
           text: Get started with Data science
-        - url: get-started/index.yml
+        - url: /training/paths/get-started-fabric/
           text: See more
 
 
@@ -225,9 +232,9 @@ additionalContent:
     - title: Related products # < 60 chars (optional)
       items:
         # Card
-        - title: Power BI
-          summary: Power BI amplifies your insights and the value of your data. 
-          url: /power-bi/
+        - title: Power Platform
+          summary: Power Platform is a low-code platform that allows users to easily create and automate business solutions using Power Apps, Power Automate, and Power BI.
+          url: /power-platform/
         - title: Azure Synapse Analytics
           summary: Azure Synapse is a limitless analytics service that brings together enterprise data warehouse and Big Data analytics.
           url: /azure/synapse-analytics/

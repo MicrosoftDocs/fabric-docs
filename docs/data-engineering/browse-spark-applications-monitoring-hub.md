@@ -5,15 +5,15 @@ author: jejiang
 ms.author: jejiang
 ms.topic: overview 
 ms.date: 05/23/2023
-ms.custom: template-howto
+ms.custom: template-howto, build-2023
 ms.search.form: Browse Spark applications in Monitoring hub 
 ---
 
 # Browse the Apache Spark applications in the Fabric monitoring hub
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+The Monitoring hub serves as a centralized portal for browsing Apache Spark activities across items. When you are in the Data Engineering or Data Science experience, you can view in-progress Apache Spark applications triggered from Notebooks, Apache Spark job definitions, and Pipelines. You can also search and filter Apache Spark applications based on different criteria. Additionally, you can cancel your in-progress Apache Spark applications and drill down to view more execution details of an Apache Spark application.
 
-The Monitoring hub serves as a centralized portal for browsing Apache Spark activities across artifacts. When you are in the Data Engineering or Data Science workload, you can view in-progress Apache Spark applications triggered from Notebooks, Apache Spark job definitions, and Pipelines. You can also search and filter Apache Spark applications based on different criteria. Additionally, you can cancel your in-progress Apache Spark applications and drill down to view more execution details of an Apache Spark application.
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Access the monitoring hub
 
@@ -27,13 +27,13 @@ For better usability and discoverability, you can sort the Apache Spark applicat
 
 ### Sort Apache Spark applications
 
-To sort Apache Spark applications, you can select on each column header, such as **Name**, **Status**, **Item Type**, **Start Time**, **Workspace**, and so on.
+To sort Apache Spark applications, you can select on each column header, such as **Name**, **Status**, **Item Type**, **Start Time**, **Location**, and so on.
 
 :::image type="content" source="media\browse-spark-applications-in-monitoring-hub\sort-spark-applications.png" alt-text="Screenshot showing the sort spark application." lightbox="media\browse-spark-applications-in-monitoring-hub\sort-spark-applications.png":::
 
 ### Filter Apache Spark applications
 
-You can filter Apache Spark applications by **Status**, **Item Type**, **Start Time**, **Submitter**, and **Workspace** using the Filter pane in the upper-right corner.
+You can filter Apache Spark applications by **Status**, **Item Type**, **Start Time**, **Submitter**, and **Location** using the Filter pane in the upper-right corner.
 
 :::image type="content" source="media\browse-spark-applications-in-monitoring-hub\filter-spark-applications.png" alt-text="Screenshot showing the filter spark applications." lightbox="media\browse-spark-applications-in-monitoring-hub\filter-spark-applications.png":::
 
@@ -66,7 +66,7 @@ If you need more information about Apache Spark execution statistics, access Apa
 ## Next steps
 
 - [Apache Spark monitoring overview](spark-monitoring-overview.md)
-- [Browse Artifact’s recent runs](spark-artifact-recent-runs.md)
+- [Browse item's recent runs](spark-item-recent-runs.md)
 - [Monitor Apache Spark jobs within notebooks](spark-monitor-debug.md)
 - [Monitor Apache Spark job definition](monitor-spark-job-definitions.md)
 - [Monitor Apache Spark application details](spark-detail-monitoring.md)

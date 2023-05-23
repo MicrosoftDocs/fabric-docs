@@ -5,15 +5,16 @@ ms.reviewer: mopeakande
 ms.author: erenorbey
 author: orbey
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: Predict
 ---
 
 # Model scoring with PREDICT in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] allows users to operationalize machine learning models with a scalable function called PREDICT, which supports batch scoring in any compute engine. Users can generate batch predictions directly from a [!INCLUDE [product-name](../includes/product-name.md)] notebook or from a given model's item page.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you'll learn how to apply PREDICT both ways, whether you're more comfortable writing code yourself or using a guided UI experience to handle batch scoring for you.
 
@@ -201,17 +202,13 @@ You can paste this code template into a notebook to generate batch predictions w
 
 ```Python
 import mlflow 
-from trident.mlflow import get_sds_url 
-from synapse.ml.predict import MLflowTransformer 
- 
-spark.conf.set("spark.synapse.ml.predict.enabled", "true") 
-mlflow.set_tracking_uri(get_sds_url()) 
+from synapse.ml.predict import MLFlowTransformer 
  
 df = spark.read.format("delta").load( 
     <INPUT_TABLE> 
 ) 
  
-model = MLflowTransformer( 
+model = MLFlowTransformer( 
     inputCols=<INPUT_COLS>, 
     outputCol=<OUTPUT_COLS>, 
     modelName=<MODEL_NAME>, 

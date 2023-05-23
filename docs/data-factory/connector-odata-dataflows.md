@@ -1,20 +1,18 @@
 ---
-title: OData in dataflows
-description: This article details how to use the OData connector in dataflows.
+title: Connect to OData in dataflows
+description: This article details how to use the Data Factory OData connector in Microsoft Fabric to create an OData connection in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 3/29/2023
-ms.custom: template-how-to 
+ms.date: 05/23/2023
+ms.custom: template-how-to, build-2023
 ---
 
-# OData in dataflows
-
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+# Connect to OData in dataflows
 
 You can connect to an OData feed in Dataflow Gen2 using the OData connector provided by Data Factory in Microsoft Fabric.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Connect to an OData feed
 

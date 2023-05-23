@@ -1,20 +1,18 @@
 ---
 title: Connect to Azure Blob Storage in dataflows
-description: This article explains how to connect to Azure Blob Storage in dataflows.
+description: This article details how to use the Data Factory Azure Blob Storage connector in Microsoft Fabric to create an Azure Blob Storage connection in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 4/18/2023
-ms.custom: template-how-to 
+ms.date: 05/23/2023
+ms.custom: template-how-to, build-2023
 ---
 
 # Connect to Azure Blob Storage in dataflows
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+You can connect to Azure Blob Storage files in Dataflow Gen2 using the Azure Blob Storage connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
-You can connect to Azure Blob Storage files in Dataflows Gen2 using the Azure Blob Storage connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Connect to Azure Blob Storage data
 
@@ -58,4 +56,4 @@ For more advanced information about connecting to your data source using the Azu
 ## Next steps
 
 - [How to create an Azure Blob connection](connector-azure-blob-storage.md)
-- [Copy data in Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)
+- [How to configure Azure Blob Storage in copy activity](connector-azure-blob-storage-copy-activity.md)

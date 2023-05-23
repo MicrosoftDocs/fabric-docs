@@ -4,16 +4,16 @@ description: Learn how to deploy content to an empty or to non-empty stage using
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
-ms.custom: contperf-fy21q1
+ms.custom: contperf-fy21q1, build-2023
 ms.date: 05/23/2023
 ms.search.form: 
 ---
 
 # Deploy content using Deployment pipelines
 
-Any [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md) that's a member or admin in the source workspace, can deploy content to an empty stage (a stage that doesn't contain content). The workspace must reside on a capacity for the deployment to be completed.
+Any [licensed user](../../enterprise/licenses.md) that's a member or admin in the source workspace, can deploy content to an empty stage (a stage that doesn't contain content). The workspace must reside on a capacity for the deployment to be completed.
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 You can also use the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines) to programmatically perform deployments. For more information, see [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 

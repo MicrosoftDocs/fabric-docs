@@ -4,8 +4,7 @@ description: Learn how to automate your deployment pipeline, the Microsoft Fabri
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: 
 ---
@@ -13,6 +12,8 @@ ms.search.form:
 # Automate your deployment pipeline by using APIs and Azure DevOps
 
 The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Fabric content.
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Fabric automation tool](#use-the-fabric-automation-tools-extension) extension, which supports many of the deployment pipelines API operations.
 
@@ -186,4 +187,4 @@ To run a PowerShell script that performs a deployment, you'll need the following
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
 * [Deployment pipelines best practices](../best-practices-cicd.md)
-* [Troubleshooting deployment pipelines](../troubleshoot-cicd.yml)
+* [Troubleshooting deployment pipelines](../troubleshoot-cicd.md)

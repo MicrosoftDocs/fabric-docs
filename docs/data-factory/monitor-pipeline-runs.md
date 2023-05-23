@@ -5,16 +5,15 @@ ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
 ms.topic: how-to 
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
 # How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 In this how-to guide, you'll learn the different ways to review and monitor your pipeline runs.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Monitor data pipeline runs
 
@@ -85,4 +84,4 @@ The length of the bar relates to the duration of the pipeline. You can select th
 ## Next steps
 
 - [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
-- [Quickstart: Create your first Dataflows Gen2 to get and transform data](create-first-dataflow-gen2.md)
+- [Quickstart: Create your first Dataflow Gen2 to get and transform data](create-first-dataflow-gen2.md)

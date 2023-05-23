@@ -1,21 +1,23 @@
 ---
 title: R library management
-description: Learn how to manage R libraries.
+description: How to manage R libraries.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
 # R library management
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Libraries provide reusable code that you might want to include in your programs or projects for [!INCLUDE [product-name](../includes/product-name.md)] Spark.
 
-[!INCLUDE [product-name](../includes/product-name.md)] supports an R runtime with many popular open-source R packages, including TidyVerse, preinstalled. When a Spark instance starts, these libraries are included automatically and available to be used immediately in notebooks or Spark job definitions. For a full list of libraries, see [Apache Spark version support]().
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
+[!INCLUDE [product-name](../includes/product-name.md)] supports an R runtime with many popular open-source R packages, including TidyVerse, preinstalled. When a Spark instance starts, these libraries are included automatically and available to be used immediately in notebooks or Spark job definitions. 
 
 You might need to update your R libraries for various reasons. For example, one of your core dependencies released a new version, or your team has built a custom package that you need available in your Spark clusters.
 
@@ -27,7 +29,7 @@ There are two types of libraries you may want to include based on your scenario:
 
 There are two levels of packages installed on [!INCLUDE [product-name](../includes/product-name.md)]:
 
-- **Workspace**: Workspace-level installation defines the working environment for the entire workspace. The libraries installed at the workspace level are available for all Notebooks and SJDs under this workspace. Update the workspace libraries when you want to set up the shared environment for all artifacts in a workspace.
+- **Workspace**: Workspace-level installation defines the working environment for the entire workspace. The libraries installed at the workspace level are available for all Notebooks and SJDs under this workspace. Update the workspace libraries when you want to set up the shared environment for all items in a workspace.
 
 - **Session** : A session-level installation creates an environment for a specific notebook session. The change of session-level libraries isn't persisted between sessions. 
 

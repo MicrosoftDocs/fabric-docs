@@ -5,13 +5,16 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.date: 04/23/2023
+ms.custom: build-2023
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
 # Preview data in an Eventstream item
 
-Data preview provide you with a snapshot of your event data in your source or destination or the eventstream itself. Once you have added sources and destinations to your eventstream, you can preview the data in each node and visualize how your data flows through the eventstream.
+Data preview provides you with a snapshot of your event data in your source or destination or the eventstream itself. Once you have added sources and destinations to your eventstream, you can preview the data in each node and visualize how your data flows through the eventstream.
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 
@@ -22,7 +25,7 @@ To get started, you must complete the following prerequisites:
 
 ## Preview source 
 
-To preview the source data of an event hub or sample data in the eventstream, you can follow these steps: 
+To preview the source data of an event hub or sample data in the eventstream, follow these steps: 
 
 1. Choose one of the source nodes in your eventstream.
 2. Select the **Data preview** tab and preview the source data.
@@ -46,12 +49,11 @@ You can preview the data in your eventstream and get an idea of how different da
 
 :::image type="content" source="./media/preview-data/preview-data-eventstream.png" alt-text="Screenshot showing data preview in eventstream." lightbox="./media/preview-data/preview-data-eventstream.png" :::
 
-To get the previewed event data updated, select the **Refresh** button in the top right corner of  **Data preview** tab. 
+To refresh the previewed event data, select the **Refresh** button in the top right corner of  **Data preview** tab. 
 
 :::image type="content" source="./media/preview-data/preview-data-refresh.png" alt-text="Screenshot showing data preview refresh." lightbox="./media/preview-data/preview-data-refresh.png" :::
 
 
 ## Next steps
 
-- [Main editor for Microsoft Fabric event streams](./main-editor.md)
-- [Monitoring status and performance of an Eventstream item](./monitoring.md)
+See [Monitor status and performance of an eventstream](monitor.md)

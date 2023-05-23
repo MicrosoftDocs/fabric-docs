@@ -1,5 +1,5 @@
 items:
-- name: CI/CD documentation
+- name: Lifecycle management documentation
   href: index.yml
 - name: What is lifecycle management? 
   href: cicd-overview.md
@@ -27,18 +27,24 @@ items:
   items:
   - name: Introduction to Git integration
     href: git-integration/intro-to-git-integration.md
-  - name: "Git integration process"
-    href: git-integration/git-integration-process.md
   - name: Get started with git integration
     href: git-integration/git-get-started.md
-  - name: Resolve conflicts
-    href: git-integration/conflict-resolution.md
+  - name: "Git integration process"
+    href: git-integration/git-integration-process.md
   - name: Manage git branches
     href: git-integration/manage-branches.md
+  - name: Handle errors and conflicts
+    items:
+    - name: Resolve conflicts
+      href: git-integration/conflict-resolution.md
+    - name: Manually fix a failed update
+      href: git-integration/partial-update.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
-- name: Best practices
+- name: Lifecycle management best practices
   href: best-practices-cicd.md
+- name: Frequently asked questions
+  href: faq.md
 - name: Troubleshooting
-  href: troubleshoot-cicd.yml
+  href: troubleshoot-cicd.md
 

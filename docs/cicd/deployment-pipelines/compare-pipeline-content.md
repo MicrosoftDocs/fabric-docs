@@ -4,15 +4,16 @@ description: Learn how to compare the content of the source stage and target sta
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
-ms.date: 05/23/2023
+ms.custom: build-2023
+ms.date: 05/09/2023
 ms.search.form: Deployment pipelines operations
 ---
 
 # Compare content in different deployment stages
 
 Before you deploy content to a different stage, it can be helpful to see the differences between the two stages. The deployment pipeline home page compares the three deployment stages and indicates if there are any differences. Use the **Compare** and **Change review** buttons to display the content of each pipeline and see exactly which items are different and where those differences are.
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Compare stages
 
