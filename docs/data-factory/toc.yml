@@ -147,6 +147,8 @@
         href: connector-lakehouse-overview.md
       - name: Configure in Data pipeline Copy activity
         href: connector-lakehouse-copy-activity.md
+      - name: Configure in Dataflow Gen2
+        href: connector-lakehouse-dataflows.md
     - name: Microsoft 365
       items:
       - name: Overview
