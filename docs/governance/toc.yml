@@ -1,0 +1,33 @@
+items:
+- name: Governance documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is Microsoft Fabric governance and compliance?
+    href: governance-compliance-overview.md
+- name: Get started
+  items:
+  - name: Set up item certification
+    href: ../admin/endorsement-setup.md?toc=/fabric/governance/TOC.json&bc=/fabric/governance/breadcrumb/toc.json
+- name: Microsoft Purview
+  items:
+  - name: Microsoft Purview and Fabric
+    href: microsoft-purview-fabric.md
+  - name: Microsoft Purview Hub
+    href: use-microsoft-purview-hub.md
+- name: Information protection
+  href: information-protection.md
+- name: Endorsement
+  href: endorsement-overview.md
+- name: Lineage
+  href: lineage.md
+- name: Impact analysis
+  href: impact-analysis.md
+- name: Domains
+  href: domains.md
+- name: Metadata scanning
+  items:
+  - name: Metadata scanning overview
+    href: metadata-scanning-overview.md
+  - name: Run metadata scanning
+    href: metadata-scanning-run.md

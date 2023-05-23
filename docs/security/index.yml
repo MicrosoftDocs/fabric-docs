@@ -1,0 +1,45 @@
+### YamlMime:Landing
+
+title: Microsoft Fabric security
+summary: Learn about the Microsoft Fabric security features.
+
+metadata:
+  title: Microsoft Fabric security
+  description: Understand what security features are available for Microsoft Fabric and how to use them.
+  ms.service: azure
+  ms.topic: landing-page
+  author: KesemSharabi
+  ms.author: kesharab
+  ms.date: 05/23/2023
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+
+  # Card 
+  - title: Security in Microsoft Fabric
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Security in Microsoft Fabric
+            url: security-overview.md
+      - linkListType: concept
+        links:
+          - text: Conditional access in Fabric
+            url: security-conditional-access.md        
+      - linkListType: how-to-guide
+        links:
+          - text: Service tags
+            url: security-service-tags.md
+
+  # Card 
+  - title: Supportability
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Resiliency in Microsoft Fabric
+            url: az-resiliency.md
+      - linkListType: how-to-guide
+        links:
+          - text: Customer Lockbox for Microsoft Fabric
+            url: security-lockbox.md

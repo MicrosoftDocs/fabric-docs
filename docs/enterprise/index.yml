@@ -1,0 +1,53 @@
+### YamlMime:Landing
+
+title: Microsoft Fabric enterprise documentation
+summary: Learn about Microsoft Fabric licenses, and how to monitor and control the way Microsoft Fabric is used in your organization.
+
+metadata:
+  title: Microsoft Fabric enterprise documentation
+  description: Brose the Microsoft Fabric enterprise documentation.
+  ms.service: azure
+  ms.topic: landing-page
+  author: KesemSharabi
+  ms.author: kesharab
+  ms.date: 05/23/2023
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+
+  - title: Get started
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Microsoft Fabric licenses
+            url: licenses.md
+      - linkListType: how-to-guide
+        links:
+          - text: Buy a Microsoft Fabric subscription
+            url: buy-subscription.md
+
+  - title: Utilization and metrics app
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is the utilization and metrics app?
+            url: metrics-app.md
+      - linkListType: how-to-guide
+        links:
+          - text: Install the utilization and metrics app
+            url: metrics-app-install.md
+          - text: Understand the metrics app overview page
+            url: metrics-app-overview-page.md
+          - text: Understand the metrics app timepoint page
+            url: metrics-app-timepoint-page.md
+
+  - title: Capacity operation
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Pause and resume your capacity
+            url: pause-resume.md
+          - text: Scale your capacity
+            url: scale-capacity.md         
+            

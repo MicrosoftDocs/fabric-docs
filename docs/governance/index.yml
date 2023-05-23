@@ -1,0 +1,53 @@
+### YamlMime:Landing
+
+title: Microsoft Fabric governance documentation
+summary: Understand how Microsoft Fabric governance works.
+
+metadata:
+  title: Microsoft Fabric governance
+  description: A landing page for Microsoft Fabric governance documentation
+  ms.service: azure
+  ms.topic: landing-page # Required
+  author: paulinbar
+  ms.author: painbar
+  ms.date: 05/23/2023
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+
+  # Card 
+  - title: About Governance
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Microsoft Fabric governance and compliance?
+            url: governance-compliance-overview.md         
+      - linkListType: concept
+        links:
+          - text: Information protection in Microsoft Fabric
+            url: information-protection.md
+          - text: Endorsement
+            url: endorsement-overview.md               
+
+  # Card 
+  - title: Get started
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: The Microsoft Purview Hub in Microsoft Fabric
+            url: use-microsoft-purview-hub.md
+          - text: Domains
+            url: domains.md
+
+  # Card 
+  - title: Metadata scanning
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Metadata scanning overview
+            url: metadata-scanning-overview.md
+      - linkListType: how-to-guide
+        links:
+          - text: Run metadata scanning
+            url: metadata-scanning-run.md

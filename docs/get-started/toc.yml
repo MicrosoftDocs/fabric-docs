@@ -1,0 +1,47 @@
+items:
+- name: Get started documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is Microsoft Fabric?
+    href: microsoft-fabric-overview.md
+  - name: Start a Fabric (Preview) trial
+    href: fabric-trial.md
+  - name: Fabric terminology
+    href: fabric-terminology.md
+- name: Get started
+  items:
+  - name: End-to-end tutorials
+    href: end-to-end-tutorials.md
+- name: Decision guides
+  items:
+  - name: Decision guide - copy activity, dataflow, or Spark
+    href: decision-guide-pipeline-dataflow-spark.md
+  - name: Decision guide - data warehouse or lakehouse
+    href: decision-guide-warehouse-lakehouse.md
+- name: Find your way around Fabric
+  items:
+  - name: Find your items from Fabric Home
+    href: fabric-home.md
+  - name: Context sensitive Help pane
+    href: fabric-help-pane.md
+  - name: Search, sort, and filter
+    href: fabric-search.md
+  - name: Fabric settings
+    href: fabric-settings.md 
+- name: Workspaces
+  items:
+  - name: Workspaces
+    href: workspaces.md
+  - name: Create a workspace
+    href: create-workspaces.md
+  - name: Roles in workspaces
+    href: roles-workspaces.md
+  - name: Give users access to workspaces
+    href: give-access-workspaces.md
+- name: Discover data in the OneLake data hub
+  href: onelake-data-hub.md
+- name: Promote or certify items
+  href: endorsement-promote-certify.md
+- name: Apply sensitivity labels
+  href: apply-sensitivity-labels.md
