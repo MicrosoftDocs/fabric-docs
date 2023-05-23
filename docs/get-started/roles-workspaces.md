@@ -36,12 +36,12 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 |Execute or cancel execution of notebooks, Spark job definitions, ML models and experiments.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -  |
 |Execute or cancel execution of data pipelines.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 |View execution output of data pipelines, notebooks, ML models and experiments.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
-| Update and delete the workspace.  | :::image type="icon" source="../media/yes-icon.svg" |   |   |   | 
-| Add or remove people, including other admins.  |  :::image type="icon" source="../media/yes-icon.svg" |   |   |   |
-| Add members or others with lower permissions.  |  :::image type="icon" source="../media/yes-icon.svg" | :::image type="icon" source="../media/yes-icon.svg"  |   |   |
-| Allow others to reshare items.<sup>3</sup> |  :::image type="icon" source="../media/yes-icon.svg" | :::image type="icon" source="../media/yes-icon.svg"  |   |   |
-| Schedule data refreshes via the on-premises gateway.<sup>4</sup> | :::image type="icon" source="../media/yes-icon.svg" | :::image type="icon" source="../media/yes-icon.svg" | :::image type="icon" source="../media/yes-icon.svg" |  |
-| Modify gateway connection settings.<sup>4</sup> | :::image type="icon" source="../media/yes-icon.svg" | :::image type="icon" source="../media/yes-icon.svg" | :::image type="icon" source="../media/yes-icon.svg" |  |
+| Update and delete the workspace.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |   |   |   | 
+| Add or remove people, including other admins.  |  :::image type="icon" source="../media/yes-icon.svg" border="false"::: |   |   |   |
+| Add members or others with lower permissions.  |  :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false":::  |   |   |
+| Allow others to reshare items.<sup>3</sup> |  :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false":::  |   |   |
+| Schedule data refreshes via the on-premises gateway.<sup>4</sup> | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |  |
+| Modify gateway connection settings.<sup>4</sup> | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |  |
 
 <sup>1</sup> Additional permissions are needed to read data from shortcut destination. Learn more about [shortcut security model.](../onelake/onelake-shortcuts.md?#types-of-shortcuts)
 
