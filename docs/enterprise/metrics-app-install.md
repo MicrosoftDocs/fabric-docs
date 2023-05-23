@@ -39,7 +39,7 @@ To install the *Capacity Utilization and Metrics* app for the first time, follow
 
 1. Select one of these options to get the app from AppSource:
 
-    * Go to [AppSource > Power BI Premium Capacity Utilization and Metrics](https://appsource.microsoft.com/product/power-bi/pbi_pcmm.pbipremiumcapacitymonitoringreport) and select **Get it now**.
+    * Go to [AppSource > Microsoft Fabric Capacity Metrics](https://go.microsoft.com/fwlink/?linkid=2219875) and select **Get it now**.
 
     * In Power BI service:
 
@@ -65,7 +65,7 @@ To upgrade a previous installation of the *Capacity Utilization and Metrics* app
 
 1. Select one of these options to get the app from AppSource:
 
-    * Go to [AppSource > Power BI Premium Capacity Utilization and Metrics](https://appsource.microsoft.com/product/power-bi/pbi_pcmm.pbipremiumcapacitymonitoringreport) and select **Get it now**.
+    * Go to [AppSource > Microsoft Fabric Capacity Metrics](https://go.microsoft.com/fwlink/?linkid=2219875) and select **Get it now**.
 
     * In Power BI service:
 
