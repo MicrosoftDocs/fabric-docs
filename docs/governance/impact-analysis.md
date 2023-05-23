@@ -14,7 +14,7 @@ ms.date: 05/23/2023
 When you make changes to a Fabric item, or are considering making changes, it's important to be able to assess the potential impact of those changes on downstream items that depend on that item. **Impact analysis** provides you with information that can help you make this assessment.
 
 * It shows you the workspaces and Fabric items that might be affected by your change. You can choose to see only direct children, or all affected downstream items and workspaces. For data sources, you can only see direct children. To see further downstream items for data sources, use impact analysis on the direct children of the data source.
-* It allows you view potentially affected items either by type or by workspace. 
+* It allows you to view potentially affected items either by type or by workspace. 
 * It provides an easy way to notify the relevant people about a change you made or are thinking about making.
 * For data sources, it shows you the connection string used to connect to the data source.
 
