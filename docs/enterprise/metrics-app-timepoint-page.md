@@ -4,7 +4,6 @@ description: Learn how to read the Microsoft Fabric Capacity Metrics app's explo
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
-ms.service: azure
 ms.custom: build-2023
 ms.date: 05/23/2023
 ---

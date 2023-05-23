@@ -6,7 +6,8 @@ summary: Learn about the Microsoft Fabric admin settings, options and tools.
 metadata:
   title: Microsoft Fabric documentation for admins
   description: A landing page for the Microsoft Fabric admin documentation.
-  ms.service: azure
+  ms.service: fabric
+  ms.subservice: admin
   ms.topic: landing-page
   author: KesemSharabi
   ms.author: kesharab

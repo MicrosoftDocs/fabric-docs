@@ -5,7 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.custom: references_regions, build-2023
 ms.topic: overview
-ms.service: azure
 ms.date: 05/23/2023
 ---
 
