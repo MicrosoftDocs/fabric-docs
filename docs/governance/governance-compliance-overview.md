@@ -4,11 +4,7 @@ description: This article provides an overview of the governance and compliance 
 author: paulinbar
 ms.author: painbar
 ms.topic: overview
-<<<<<<< HEAD
-=======
-ms.service: azure
 ms.custom: build-2023
->>>>>>> 57a2beeab70d7e394eda139f9e1a37aedd09f6b8
 ms.date: 05/23/2023
 ---
 

@@ -4,12 +4,7 @@ description: Learn how to automate your deployment pipeline, the Microsoft Fabri
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-<<<<<<< HEAD
-=======
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
 ms.custom: build-2023
->>>>>>> 57a2beeab70d7e394eda139f9e1a37aedd09f6b8
 ms.date: 05/23/2023
 ms.search.form: 
 ---
