@@ -5,6 +5,7 @@ author: nelgson
 ms.author: negust
 ms.reviewer: franksolomon
 ms.topic: overview
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 03/24/2023
 
 ms.search.form: Data Science Overview

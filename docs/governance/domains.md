@@ -4,6 +4,7 @@ description: Learn about domains and how to create and manage them.
 author: paulinbar
 ms.author: painbar
 ms.topic: concept
+ms.custom: build-2023
 ms.date: 05/02/2023
 ---
 

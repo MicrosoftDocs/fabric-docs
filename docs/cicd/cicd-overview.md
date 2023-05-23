@@ -4,6 +4,7 @@ description: An overview of the CI/CD continuous integration, continuous deploym
 author: mberdugo
 ms.author: monaberdugo
 ms.service: powerbi
+ms.custom: build-2023
 ms.topic: conceptual
 ms.date: 05/23/2023
 ---

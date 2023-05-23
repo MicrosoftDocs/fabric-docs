@@ -5,7 +5,7 @@ author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
 ms.date: 4/12/2023
-ms.custom: template-how-to
+ms.custom: template-how-to, build-2023
 ---
 
 # How to create an Azure Blob Storage connection

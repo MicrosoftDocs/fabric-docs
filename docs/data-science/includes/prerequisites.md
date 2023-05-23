@@ -4,6 +4,7 @@ description: Prerequisites to use data-science articles.
 author: sdgilley
 ms.author: sgilley
 ms.topic: include
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
