@@ -4,6 +4,7 @@ description: Open reports, apps, and workspaces from the Microsoft Fabric Home. 
 author: mihart
 ms.author: mihart
 ms.topic: conceptual  
+ms.custom: build-2023
 ms.date: 05/10/2023
 ---
 

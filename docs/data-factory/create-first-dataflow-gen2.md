@@ -5,6 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: quickstart 
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
 ms.search.form: DataflowGen2_Tutorials
 ---

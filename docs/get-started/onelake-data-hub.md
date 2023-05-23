@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: conceptual
 ms.date: 04/30/2023
-ms.custom: 
+ms.custom: build-2023
 ---
 
 # Discover data items in the OneLake data hub

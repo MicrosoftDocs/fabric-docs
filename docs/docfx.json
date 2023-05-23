@@ -48,11 +48,11 @@
       "uhfHeaderId": "MSDocsHeader-Fabric",
       "feedback_system": "None",
       "ms.service": "azure",
+      "searchScope": [
+        "Microsoft Fabric"
+      ],
        "titleSuffix": "Microsoft Fabric"
    },
-   "searchScope": [
-    "Microsoft Fabric"
-  ],
     "template": [],
     "dest": "fabric-docs"
   }
