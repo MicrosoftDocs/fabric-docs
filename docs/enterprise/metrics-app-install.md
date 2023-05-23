@@ -13,7 +13,7 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The Microsoft Fabric *Utilization and Metrics* app, also known as the *metrics app*, is designed to provide monitoring capabilities for Power BI Premium capacities. Use this guide to install the app.
+The *Microsoft Fabric Capacity Metrics* app, also known as the *metrics app*, is designed to provide monitoring capabilities for Power BI Premium capacities. Use this guide to install the app.
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ Follow the steps according to the type of installation you need.
 
 # [First time installation](#tab/1st)
 
-To install the *Capacity Utilization and Metrics* app for the first time, follow these steps:
+To install the *Microsoft Fabric Capacity Metrics* app for the first time, follow these steps:
 
 1. Select one of these options to get the app from AppSource:
 
@@ -50,7 +50,7 @@ To install the *Capacity Utilization and Metrics* app for the first time, follow
 
         3. Search for **Microsoft Fabric**.
 
-        4. Select the **Microsoft Fabric Capacity Utilization and Metrics** app.
+        4. Select the **Microsoft Fabric Capacity Metrics** app.
 
         5. Select **Get it now**.
 
@@ -62,7 +62,7 @@ To install the *Capacity Utilization and Metrics* app for the first time, follow
 
 # [Upgrade the app](#tab/upgrade)
 
-To upgrade a previous installation of the *Capacity Utilization and Metrics* app, follow these steps:
+To upgrade a previous installation of the *Microsoft Fabric Capacity Metrics* app, follow these steps:
 
 1. Select one of these options to get the app from AppSource:
 
@@ -76,7 +76,7 @@ To upgrade a previous installation of the *Capacity Utilization and Metrics* app
 
         3. Search for **Microsoft Fabric**.
 
-        4. Select the **Microsoft Fabric Capacity Utilization and Metrics** app.
+        4. Select the **Microsoft Fabric Capacity Metrics** app.
 
         5. Select **Get it now**.
 
@@ -94,15 +94,15 @@ To upgrade a previous installation of the *Capacity Utilization and Metrics* app
 
 ## Run the app for the first time
 
-To complete the installation, configure the utilization and metrics app by running it for the first time.
+To complete the installation, configure the Microsoft Fabric Capacity Metrics app by running it for the first time.
 
 1. In Microsoft Fabric, select **Apps**.
 
-2. Select the **Capacity Utilization And Metrics** app.
+2. Select the **Microsoft Fabric Capacity Metrics** app.
 
 3. When you see the message *You have to connect to your own data to view this report*, select **Connect**.
 
-4. In the **Connect to Premium Capacity Utilization And Metrics** first window, fill in the fields according to the table:
+4. In the **Connect to Microsoft Fabric Capacity Metrics** first window, fill in the fields according to the table:
 
     |Field          |Required |Value    |Notes    |
     |---------------|---------|---------|---------|
@@ -114,7 +114,7 @@ To complete the installation, configure the utilization and metrics app by runni
 
 5. Select **Next**.
 
-6. In the **Connect to Premium Capacity Utilization And Metrics** second window, complete the following fields:
+6. In the **Connect to Microsoft Fabric Capacity Metrics** second window, complete the following fields:
 
     * **Authentication method** - Select your authentication method. The default authentication method is *OAuth2*.
 
