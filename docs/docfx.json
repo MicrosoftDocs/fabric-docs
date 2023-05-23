@@ -51,8 +51,34 @@
       "searchScope": [
         "Microsoft Fabric"
       ],
-       "titleSuffix": "Microsoft Fabric"
+       "titleSuffix": "Microsoft Fabric",
    },
+   "search.app": {
+    "**.*": [
+      "fabric-powerbi-docs"
+    ],
+    "admin/**.*": [
+      "fabric-powerbi-docs",
+      "capaedac-PowerBI",
+      "powerbi",
+      "Power-bi-docs"
+    ],
+      "data-warehouse/**.*": [
+      "fabric-datawarehouse-docs"
+    ],
+       "data-engineering/**.*": [
+      "fabric-dataengineering-docs"
+    ],
+      "data-factory/**.*": [
+      "fabric-datafactory-docs"
+    ],
+      "real-time-analytics/**.*": [
+      "fabric-realtimeanalytics-docs"
+    ],
+      "data-science/**.*": [
+      "fabric-datascience-docs"
+    ]
+  },
     "template": [],
     "dest": "fabric-docs"
   }
