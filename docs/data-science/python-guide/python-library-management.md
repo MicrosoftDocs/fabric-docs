@@ -57,7 +57,7 @@ When developing a machine learning model or doing ad-hoc data analysis, you may 
 
 ### Install Python feed libraries within a notebook
 
-The ```%pip``` command in Microsoft Fabric is equivalent to the commonly used [pip](https://pip.pypa.io/stable/user_guide/) command in many data science workflows. The following section show examples of how you can use ```%pip``` commands to install feed libraries directly into your notebook.
+The ```%pip``` command in Microsoft Fabric is equivalent to the commonly used [pip](https://pip.pypa.io/en/stable/user_guide/) command in many data science workflows. The following section show examples of how you can use ```%pip``` commands to install feed libraries directly into your notebook.
 
 1. Run the following commands in a Notebook code cell to install the *altair* library and *vega_datasets*:
 
