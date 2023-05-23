@@ -56,7 +56,7 @@ To connect to HTTP data from a dataflow:
 
 ## Advanced connector information
 
-For more advanced information about connecting to your data using the Web connector, go to [Web](/power-query/connectors/web).
+For more advanced information about connecting to your data using the Web connector, go to [Web](/power-query/connectors/web/web).
 
 ## Next steps
 
