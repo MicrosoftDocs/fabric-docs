@@ -4,7 +4,6 @@ description: This article explains the Microsoft Fabric admin roles.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.service: azure
 ms.custom: build-2023
 ms.date: 05/23/2023
 ---
