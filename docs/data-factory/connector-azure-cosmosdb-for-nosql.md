@@ -5,7 +5,7 @@ author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom: template-how-to
+ms.custom: template-how-to, build-2023
 ---
 
 # How to create an Azure Cosmos DB for NoSQL connection

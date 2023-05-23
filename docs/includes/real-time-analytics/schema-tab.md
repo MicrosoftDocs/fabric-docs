@@ -4,6 +4,7 @@ description: Include file for the schema tab in Real-Time Analytics
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: include
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 

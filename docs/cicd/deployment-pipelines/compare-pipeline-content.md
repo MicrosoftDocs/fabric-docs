@@ -6,6 +6,7 @@ ms.author: monaberdugo
 ms.topic: how-to
 ms.service: powerbi
 ms.subservice: pbi-deployment-pipeline
+ms.custom: build-2023
 ms.date: 05/09/2023
 ms.search.form: Deployment pipelines operations
 ---
