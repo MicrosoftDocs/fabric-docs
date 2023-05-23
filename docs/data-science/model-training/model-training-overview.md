@@ -30,7 +30,7 @@ The [!INCLUDE [product-name](../../includes/product-name.md)] runtime for Apache
 
 - [Scikit-learn](https://scikit-learn.org/stable/index.html) is one of the most popular single-node machine learning libraries for classical ML algorithms. Scikit-learn supports most of the supervised and unsupervised learning algorithms and can also be used for data-mining and data-analysis.
   
-- [XGBoost](https://xgboost.readthedocs.io/latest/) is a popular machine learning library that contains optimized algorithms for training decision trees and random forests.
+- [XGBoost](https://xgboost.readthedocs.io/en/latest/) is a popular machine learning library that contains optimized algorithms for training decision trees and random forests.
   
 - [PyTorch](https://pytorch.org/) & [Tensorflow](https://www.tensorflow.org/) are powerful Python deep learning libraries. You can use these libraries to build single-machine models by setting the number of executors on your pool to zero. Even though Apache Spark is not functional under this configuration, it is a simple and cost-effective way to create single-machine models.
 
