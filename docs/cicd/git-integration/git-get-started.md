@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom: 
+ms.custom: build-2023
 ---
 
 # Manage a workspace with git

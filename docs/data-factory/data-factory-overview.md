@@ -5,6 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: makromer
 author: kromerm
 ms.topic: overview
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: product-data-integration, Data_Factory_Overview
 ms.date: 05/23/2023
 ---

@@ -2,6 +2,7 @@
 title: SynapseMl first model
 description: A quick introduction to building your first machine learning model with SynapseML
 ms.topic: overview
+ms.custom: build-2023
 ms.reviewer: jessiwang
 author: jessiwang
 ms.author: jessiwang
