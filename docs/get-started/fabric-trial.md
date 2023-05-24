@@ -74,7 +74,7 @@ Not all functions have the same consumption rate. For example, running a Data Wa
 
 There's no limit on the number of workspaces or items you can create within your capacity. The only constraint is the availability of capacity units and the rate at which you consume them.
 
-You're the capacity owner for your trial capacity. As your own capacity administrator for your Fabric trial capacity, you have access to a detailed and transparent report for how capacity units are consumed via the [Capacity Metrics app](/power-bi/enterprise/service-premium-metrics-app.md). For more information about administering your trials, see [Administer a Fabric trial capacity](#administer-user-access-to-a-fabric-preview-trial).
+You're the capacity owner for your trial capacity. As your own capacity administrator for your Fabric trial capacity, you have access to a detailed and transparent report for how capacity units are consumed via the [Capacity Metrics app](/power-bi/enterprise/service-premium-metrics-app). For more information about administering your trials, see [Administer a Fabric trial capacity](#administer-user-access-to-a-fabric-preview-trial).
 
 
 ## End a Fabric (Preview) trial
@@ -142,7 +142,7 @@ If you don't upgrade to a paid Fabric capacity at the end of the trial period, n
 
 **How is the Fabric (Preview) trial different from an individual trial of Power BI paid?**
 
-A per-user trial of Power BI paid allows access to the Fabric landing page. Once you sign up for the Fabric (Preview) trial, you can use the trial capacity for storing Fabric workspaces and items and for running Fabric experiences. All rules guiding [Power BI licenses](/power-bi/fundamentals/service-features-license-type.md) and what you can do in the Power BI experience remain the same. The key difference is that a Fabric capacity is required to access non-Power BI experiences and items.
+A per-user trial of Power BI paid allows access to the Fabric landing page. Once you sign up for the Fabric (Preview) trial, you can use the trial capacity for storing Fabric workspaces and items and for running Fabric experiences. All rules guiding [Power BI licenses](/power-bi/fundamentals/service-features-license-type) and what you can do in the Power BI experience remain the same. The key difference is that a Fabric capacity is required to access non-Power BI experiences and items.
 
 **Private links and private access**
 
