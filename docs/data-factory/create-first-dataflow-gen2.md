@@ -7,7 +7,7 @@ author: luitwieler
 ms.topic: quickstart 
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
-ms.search.form: DataflowGen2_Tutorials
+ms.search.form: DataflowGen2 Tutorials
 ---
 
 # Quickstart: Create your first dataflow to get and transform data
