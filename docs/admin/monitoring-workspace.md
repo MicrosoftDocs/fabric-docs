@@ -4,7 +4,6 @@ description: Understand the Microsoft Fabric monitoring workspace and the report
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.service: azure
 ms.custom: build-2023
 ms.date: 05/23/2023
 ---
@@ -23,7 +22,7 @@ To use the admin monitoring workspace, you need:
 
 * A *Pro* license
 
-* The [new workspace experience](/power-bi/admin/portal-workspace#create-workspaces-new-workspace-experience) enabled
+* The [new workspace experience](/power-bi/admin/service-admin-portal-workspace#create-workspaces-new-workspace-experience) enabled
 
 ## Access the admin monitoring workspace
 

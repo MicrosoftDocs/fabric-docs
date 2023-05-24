@@ -4,8 +4,6 @@ description: Troubleshoot problems with deployment pipelines, the Fabric Applica
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: troubleshooting
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
 ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
@@ -177,7 +175,7 @@ Deployment pipelines display a pipeline stage tag in workspaces that are assigne
 
 ### I see the 'different' symbol after I assigned a workspace with datasets that are similar to the datasets in adjacent stages
 
-**Cause**: Most datasets use the [enhanced dataset metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata.md) feature, also known as *model v3*. However, older reports might be using the old type of dataset metadata, sometimes referred to as *model v1*. If you're assigning a workspace that uses the old dataset metadata model (v1), deployment pipelines can't evaluate whether the dataset is similar in adjacent stages. In such cases, the *different* UI symbol is displayed, even when the datasets are identical.  
+**Cause**: Most datasets use the [enhanced dataset metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata) feature, also known as *model v3*. However, older reports might be using the old type of dataset metadata, sometimes referred to as *model v1*. If you're assigning a workspace that uses the old dataset metadata model (v1), deployment pipelines can't evaluate whether the dataset is similar in adjacent stages. In such cases, the *different* UI symbol is displayed, even when the datasets are identical.  
 **Solution**: To resolve this issue, deploy the datasets that are showing the *different* symbol.
 
 ### I can't see all my workspaces when I try to assign a workspace to a pipeline
@@ -201,7 +199,7 @@ Workspaces that don't meet these conditions, aren't displayed in the list of wor
 
 |Error  |Action  |
 |---------|---------|
-|You don't have [capacity permissions](deployment-pipelines/understand-the-deployment-process.md#create-a-workspace).     |If you work in an organization that has a Fabric capacity, ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. After the workspace is in a capacity, redeploy.</br></br>If you don't work in an organization with a Fabric capacity, consider purchasing [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).        |
+|You don't have [capacity permissions](deployment-pipelines/understand-the-deployment-process.md#create-a-workspace).     |If you work in an organization that has a Fabric capacity, ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. After the workspace is in a capacity, redeploy.</br></br>If you don't work in an organization with a Fabric capacity, consider purchasing [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq).        |
 |You don't have workspace permissions.     |To deploy, you need to be a workspace member. Ask your workspace admin to grant you the appropriate permissions.         |
 |Your Fabric admin disabled the creation of workspaces.     |Contact your Fabric admin for support.         |
 |You're using [selective deployment](deployment-pipelines/deploy-content.md#selective-deployment) and aren't selecting all the linked items.     |Do one of the following: </br></br>Unselect the content that is linked to your dataset or dataflow. Your unselected content (such as datasets, reports or dashboards) won't be copied to the next stage. </br></br>Select the dataset or the dataflow that's linked to the selected items. Your selected items will be copied to the next stage.         |
@@ -279,26 +277,26 @@ To use this script, you need to provide a *workspace name* and a *user principal
 
 **Description of problem**: The *Can’t start deployment* error that states that *the source and target datasets have different data modeling formats*, occurs when the dataset in the target stage has a higher model version than the dataset in the source stage. In such cases, deployment pipelines aren’t able to deploy from the source stage to the target stage. To avoid this error, use a dataset that has the same (or higher) model version in the source stage.
 
-**Solution**: Upgrade the dataset model in the source stage using an [XMLA read-write endpoint](/power-bi/enterprise/service-premium-connect-tools.md#enable-xmla-read-write) or Power BI Desktop. After upgrading the dataset, republish it to the source stage.
+**Solution**: Upgrade the dataset model in the source stage using an [XMLA read-write endpoint](/power-bi/enterprise/service-premium-connect-tools#enable-xmla-read-write) or Power BI Desktop. After upgrading the dataset, republish it to the source stage.
 
 ### Mismatch error: Data source connectivity mode mismatch error
 
-**Description of problem**: During deployment, if deployment pipelines discovers that the connectivity mode of a data source in the target stage isn't the same as the data source in the source stage, it attempts to convert the connectivity mode of the data source in the target stage. If you're using a data source with the [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets.md) or [real time](/power-bi/connect-data/service-real-time-streaming.md) connectivity modes, deployment pipelines can't convert the target's data source connectivity mode.  
-**Solution**: Either use an [XMLA read-write endpoint](/power-bi/enterprise/service-premium-connect-tools.md#enable-xmla-read-write) or Power BI Desktop to change the connection mode of the data source in the source stage, or delete the data source in the target stage so that the deployment overwrites it.
+**Description of problem**: During deployment, if deployment pipelines discovers that the connectivity mode of a data source in the target stage isn't the same as the data source in the source stage, it attempts to convert the connectivity mode of the data source in the target stage. If you're using a data source with the [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets) or [real time](/power-bi/connect-data/service-real-time-streaming) connectivity modes, deployment pipelines can't convert the target's data source connectivity mode.  
+**Solution**: Either use an [XMLA read-write endpoint](/power-bi/enterprise/service-premium-connect-tools#enable-xmla-read-write) or Power BI Desktop to change the connection mode of the data source in the source stage, or delete the data source in the target stage so that the deployment overwrites it.
 
 ### My dataset deployment failed
 
-**Cause**: There could be a few possible reasons for your dataset deployment to fail. One of the reasons may be due to a large dataset that isn't configured with the [large dataset format](/power-bi/enterprise/service-premium-large-models.md).  
+**Cause**: There could be a few possible reasons for your dataset deployment to fail. One of the reasons may be due to a large dataset that isn't configured with the [large dataset format](/power-bi/enterprise/service-premium-large-models).  
 **Solution**: If your dataset is larger than 4 GB and isn't using the large dataset format, it might fail to be deployed. Try setting your dataset to use the large dataset format, and redeploy.
 
 ### I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables
 
-**Cause**: Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables aren't supported in deployment pipelines.  
+**Cause**: Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables aren't supported in deployment pipelines.  
 **Solution**: If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the methods listed below to edit your dataset so that it works in deployment pipelines.
 
-* In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand.md#import-mode) mode.
+* In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand#import-mode) mode.
 
-* Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables from your dataset. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your dataset model works as it may result in data corruption in your visuals.
+* Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables from your dataset. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your dataset model works as it may result in data corruption in your visuals.
 
 ### Paginated reports
 

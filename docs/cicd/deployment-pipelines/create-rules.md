@@ -4,8 +4,6 @@ description: Learn how to create rules to simplify deploying content with Fabric
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
 ms.custom: contperf-fy21q1, build-2023
 ms.date: 05/23/2023
 ms.search.form: Deployment rules
@@ -113,7 +111,7 @@ This section lists the limitations for the deployment rules.
 
 * If the data source or parameter defined in a rule is changed or removed from the item it points to in the source stage, the rule won't be valid anymore, and deployment will fail.
 
-* After you deploy a paginated report with a data source rule, you can't open the report using [Power BI Report Builder](/power-bi/paginated-reports/report-builder-power-bi.md).
+* After you deploy a paginated report with a data source rule, you can't open the report using [Power BI Report Builder](/power-bi/paginated-reports/report-builder-power-bi).
 
 * Deployment rules only take effect the next time you deploy to that stage. However, if you create rules and then compare the stages before you deploy, the comparison is done based on the rules that were created even though they haven't taken effect yet.
 

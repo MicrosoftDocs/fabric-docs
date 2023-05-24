@@ -4,7 +4,6 @@ description: Learn how to buy a Microsoft Fabric subscription.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.service: azure
 ms.custom: build-2023
 ms.date: 05/23/2023
 ---
@@ -39,7 +38,7 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 * You can [pause](pause-resume.md#pause-your-capacity) and [resume](pause-resume.md#resume-your-capacity) your capacity as needed. This feature is designed to save money when the capacity isn't in use.
 
-* [Azure cost management](/cost-management-billing/cost-management-billing-overview).
+* [Azure cost management](/azure/cost-management-billing/cost-management-billing-overview).
 
 * [Azure Monitor Metrics](/azure/azure-monitor/essentials/data-platform-metrics).
 

@@ -4,10 +4,8 @@ description: Learn how to automate your deployment pipeline, the Microsoft Fabri
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 05/24/2023
 ms.search.form: 
 ---
 
@@ -63,7 +61,7 @@ Here's a list of the different deployment types the APIs support:
 
 Before you use the deployment pipelines APIs, make sure you have the following:
 
-* The [*service principal*](/power-bi/developer/embedded/embed-service-principal.md), or the *user* that will call the APIs, needs [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Azure AD application](/azure/active-directory/develop/active-directory-how-applications-are-added).
+* The [*service principal*](/power-bi/developer/embedded/embed-service-principal), or the *user* that will call the APIs, needs [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Azure AD application](/azure/active-directory/develop/active-directory-how-applications-are-added).
 
 * If you're going to use PowerShell scripts, install the Power BI PowerShell cmdlets [Install-Module MicrosoftPowerBIMgmt](/powershell/power-bi/overview).
 
@@ -73,7 +71,7 @@ To automate the deployment processes from within your [release pipeline in Azure
 
 * **PowerShell** - The script signs into Fabric using a *service principal* or a *user*.
 
-* **Fabric automation tools** - This extension works with a [*service principal*](/power-bi/developer/embedded/embed-service-principal.md) or a *user*.
+* **Fabric automation tools** - This extension works with a [*service principal*](/power-bi/developer/embedded/embed-service-principal) or a *user*.
 
 You can also use other [Fabric REST API](/rest/api/fabric/) calls, to complete related operations such as importing a *.pbix* into the pipeline, updating data sources and parameters.
 
@@ -83,7 +81,7 @@ The Fabric automation tools extension is an [open source](https://github.com/mic
 
 After you add the [Fabric automation tools](https://marketplace.visualstudio.com/items?itemName=ms-pbi-api.pbi-automation-tools) extension to DevOps, you need to create a service connection. The following connections are available:
 
-* **Service principal** (recommended) - This connection authenticates by using a [service principal](/power-bi/developer/embedded/embed-service-principal.md) and requires the Azure AD app’s secret and application ID. When you use this option, verify that the [service admin settings](/power-bi/developer/embedded/embed-service-principal#step-3---enable-the-power-bi-service-admin-settings) for the service principal are enabled.
+* **Service principal** (recommended) - This connection authenticates by using a [service principal](/power-bi/developer/embedded/embed-service-principal) and requires the Azure AD app’s secret and application ID. When you use this option, verify that the [service admin settings](/power-bi/developer/embedded/embed-service-principal#step-3---enable-the-power-bi-service-admin-settings) for the service principal are enabled.
 
 * **Username and password** – Configured as a generic service connection with a username and a password. This connection method doesn’t support multi-factor authentication. We recommend that you use the service principal connection method because it doesn’t require storing user credentials on Azure DevOps.
 
