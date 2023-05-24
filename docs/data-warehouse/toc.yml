@@ -136,12 +136,10 @@ items:
       href: /answers/
     - name: Submit feedback >>
       href: https://feedback.azure.com/    
-  - name: Azure Roadmap
-    href: https://azure.microsoft.com/roadmap/?category=databases
-  - name: Pricing
-    href: https://azure.microsoft.com/pricing/
-  - name: Pricing calculator
-    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Ideas
+    href: https://ideas.fabric.microsoft.com/
+  - name: Community
+    href: https://community.fabric.microsoft.com/
   - name: Service updates
     href: https://azure.microsoft.com/updates/    
   - name: Azure Status
