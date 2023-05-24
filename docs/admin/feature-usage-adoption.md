@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 05/24/2023
 ---
 
 # Feature usage and adoption report
@@ -84,7 +84,7 @@ To conclude the example given in the [Activity Overview](#activity-overview-page
 
 ## Considerations and limitations
 
-* Single data point across the zoom slider display a misleading date range for the total activities and users.
+* The single data point across the zoom slider, displays a misleading date range for the total activities and users.
 
 * When drilling down to a workspace, the *Expand All* feature doesn't update the *Most Active Capacities* visual title.
 
@@ -96,11 +96,11 @@ To conclude the example given in the [Activity Overview](#activity-overview-page
 
 * Capacities with the same name and capacities that were deleted and recreated with the same name, are displayed as one capacity.
 
-* In case capacity, workspace or an item is deleted, it will count the deleted audit records in total audit activities. It will show up under blanks in visuals.
+* When a capacity, workspace or item is deleted, it will count the deleted audit records in the total audit activities. In the visuals this will show up under blanks.
 
-* The NA's in report represents data that isn't available in audit fact. It can be a case when an event doesn't capture the dimension info or it isn't applicable for the event.
+* N/A represents data that isn't available in audit fact. It can be a case when an event doesn't capture the dimension info or it isn't applicable for the event.
 
-* In card visual, deleted capacities, workspaces and users are counted in active records. Capacities with same name but different ID are counted as separate records in card visual.
+* In the card visual, deleted capacities, workspaces and users are counted in active records. Capacities with the same name but different ID are counted as separate records in card visual.
 
 ## Next steps
 
