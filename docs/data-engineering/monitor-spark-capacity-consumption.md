@@ -38,7 +38,7 @@ The following operations from Lakehouse, Notebook, and Spark job definitions wil
 
 There are some Spark capacity consumption activities that aren't reported in the metrics app. These activities include system Spark jobs for Library Management and certain system Spark jobs for Spark Live pool or live sessions.
 
-* **Library Management** - The capacity consumption associated with Library Management at the workspace level and environment level Library Management, isn't reported in the metrics app.
+* **Library Management** - The capacity consumption associated with Library Management at the workspace level isn't reported in the metrics app.
 
 * **System Spark jobs** - Spark capacity consumption that isn't associated with a Notebook, a Spark Job Definition, or a Lakehouse, isn't included in the capacity reporting.
 

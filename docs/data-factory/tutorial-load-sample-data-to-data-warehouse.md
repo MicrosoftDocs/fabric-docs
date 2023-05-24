@@ -7,7 +7,7 @@ author: pennyzhou-msft
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 05/23/2023
-ms.search.form: Pipeline_Tutorials
+ms.search.form: Pipeline Tutorials
 ---
 
 # Load Sample data to Data Warehouse

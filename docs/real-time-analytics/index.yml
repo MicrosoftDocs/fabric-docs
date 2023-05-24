@@ -46,8 +46,8 @@ landingContent:
             url: event-streams/monitor.md
       - linkListType: tutorial
         links:
-          - text: Process real-time events from Azure Event Hubs
-            url:  event-streams/create-manage-an-eventstream.md
+          - text: Transform and stream real-time events to Microsoft Fabric Lakehouse
+            url:  event-streams/transform-and-stream-real-time-events-to-lakehouse.md
   # Card 
   - title: KQL Database
     linkLists:

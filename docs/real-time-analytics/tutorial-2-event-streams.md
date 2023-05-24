@@ -98,6 +98,9 @@ ms.search.form: product-kusto
 
      In the **Continuous ingestion from Eventstream established** window, all steps are marked with green check marks when the data connection is successfully created. The data from Eventstream begins streaming automatically into your table.
 
+> [!NOTE]
+> You may need to refresh the page to view your table after the Eventstream connection has been established.
+
 ## See also
 
 For more information about tasks performed in this tutorial, see:

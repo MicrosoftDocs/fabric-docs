@@ -22,7 +22,7 @@ To use the admin monitoring workspace, you need:
 
 * A *Pro* license
 
-* The [new workspace experience](/power-bi/admin/portal-workspace#create-workspaces-new-workspace-experience) enabled
+* The [new workspace experience](/power-bi/admin/service-admin-portal-workspace#create-workspaces-new-workspace-experience) enabled
 
 ## Access the admin monitoring workspace
 

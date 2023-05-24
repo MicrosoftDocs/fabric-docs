@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.custom: contperf-fy21q1, build-2023
-ms.date: 05/23/2023
+ms.date: 05/24/2023
 ms.search.form: Deployment pipelines operations
 ---
 
@@ -15,8 +15,10 @@ ms.search.form: Deployment pipelines operations
 
 Deployment pipelines enable you to assign and unassign workspaces to any stage in a pipeline. This capability is particularly important for organizations that already have workspaces that are used as development, test, and production environments. In such cases, you can assign each workspace to its corresponding pipeline stage, and continue working in your usual flow.
 
+<!---
 >[!NOTE]
 >This article describes how to assign and unassign a workspace to a deployment pipeline stage in the Fabric service. You can also perform these functions programmatically, using the [Assign Workspace](/rest/api/fabric/pipelines/assign-workspace) and [Unassign Workspace](/rest/api/fabric/pipelines/unassign-workspace) Fabric REST APIs.
+-->
 
 ## Assign a workspace to any vacant pipeline stage
 
@@ -77,9 +79,9 @@ Connections between items are only established when you assign a workspace to a 
 
 * To assign a workspace, you need at least [workspace member](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the 'workspace member permissions needed' error message when I try to assign a workspace?](../troubleshoot-cicd.yml#error-message-workspace-member-permissions needed-)
 
-* You can't assign a workspace with [Power BI samples](/power-bi/create-reports/sample-datasets.md) to a pipeline stage.
+* You can't assign a workspace with [Power BI samples](/power-bi/create-reports/sample-datasets) to a pipeline stage.
 
-* You can't assign a [template app](/power-bi/connect-data/service-template-apps-create.md#create-the-template-workspace) workspace.
+* You can't assign a [template app](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace) workspace.
 
 ## Next steps
 
