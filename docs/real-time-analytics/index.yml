@@ -6,7 +6,8 @@ summary: Real-Time Analytics is a fully managed big data analytics platform opti
 metadata:
   title: Real-Time Analytics in Microsoft Fabric documentation 
   description: Learn about Real-Time Analytics, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis. 
-  ms.service: azure 
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: real-time-analytics
   ms.topic: landing-page 
   ms.collection: collection 
   author: YaelSchuster

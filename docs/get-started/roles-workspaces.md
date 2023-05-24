@@ -43,7 +43,7 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 
 ## Next steps
 
-- [Roles in workspaces in Power BI](/power-bi/collaborate-share/service-new-workspaces.md)
+- [Roles in workspaces in Power BI](/power-bi/collaborate-share/service-new-workspaces)
 - [Create workspaces](create-workspaces.md)
 - [Give users access to workspaces](give-access-workspaces.md)
 - [OneLake security](../onelake/onelake-security.md)
@@ -51,3 +51,5 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 - [Data warehouse security](../data-warehouse/workspace-roles.md)
 - [Data engineering security](../data-engineering/workspace-roles-lakehouse.md)
 - [Data science roles and permissions](../data-science/models-experiments-rbac.md)
+
+

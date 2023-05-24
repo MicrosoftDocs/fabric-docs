@@ -4,7 +4,6 @@ description: This article provides an overview of the admin role in Microsoft Fa
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.service: azure
 ms.custom: build-2023
 ms.date: 05/23/2023
 ---
