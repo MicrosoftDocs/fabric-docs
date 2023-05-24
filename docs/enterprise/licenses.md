@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 05/24/2023
 ---
 
 # Microsoft Fabric licenses
