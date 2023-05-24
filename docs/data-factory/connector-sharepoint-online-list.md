@@ -1,6 +1,6 @@
 ---
-title: How to create SharePoint Online List connection
-description: This article provides information about how to do create SharePoint Online List connection in Microsoft Fabric.
+title: How to create a SharePoint Online List connection
+description: This article provides information about how to create a SharePoint Online List connection in Microsoft Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to create SharePoint Online List connection
+# How to create a SharePoint Online List connection
 
 This article outlines the steps to create SharePoint Online List connection.
 
@@ -16,7 +16,7 @@ This article outlines the steps to create SharePoint Online List connection.
 
 ## Supported authentication types
 
-This SharePoint Online List connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The SharePoint Online List connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
