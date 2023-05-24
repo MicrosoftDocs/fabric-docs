@@ -32,6 +32,8 @@ When using the Microsoft Fabric utilization and metrics app, consider the follow
 
 * There's a difference of 0.01-0.05 percent between the *CU %* value in the [Top row visuals](metrics-app-timepoint-page.md#top-row-visuals) *Heartbeat line chart*, and the [interactive](metrics-app-timepoint-page.md#interactive-operations) and [background](metrics-app-timepoint-page.md#background-operations) operations tables *Total CU* values.
 
+* Warehouse utilization reporting shows only OneLake related compute usage.
+
 ## Next steps
 
 [Install the utilization and metrics app](metrics-app-install.md)
