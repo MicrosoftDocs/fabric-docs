@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: troubleshooting
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 05/24/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -86,11 +86,11 @@ Multi-geo is supported. It may take longer to deploy content between stages in d
 
 ### What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables?
 
-Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables aren't supported in deployment pipelines. If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the methods listed below to edit your dataset so that it works in deployment pipelines.
+Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables aren't supported in deployment pipelines. If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the methods listed below to edit your dataset so that it works in deployment pipelines.
 
-* In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand.md#import-mode) mode.
+* In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand#import-mode) mode.
 
-* Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time.md) tables from your dataset. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your dataset model works as it may result in data corruption in your visuals.
+* Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables from your dataset. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your dataset model works as it may result in data corruption in your visuals.
 
 ### Why aren't some tiles displaying information after deployment?
 
@@ -130,7 +130,7 @@ After a deployment, if you download the RDL of the paginated report, it might no
 
 #### What happens to the incremental refresh configuration after deploying dataflows?
 
-When you have a dataflow that contains datasets that are configured with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview.md), the refresh policy isn't copied or overwritten during deployment. After deploying a dataflow that includes a dataset with incremental refresh to a stage that doesn't include this dataflow, if you have a refresh policy you'll need to reconfigure it in the target stage. If you're deploying a dataflow with incremental refresh to a stage where it already resides, the incremental refresh policy isn't copied. In such cases, if you wish to update the refresh policy in the target stage, you need to do it manually.
+When you have a dataflow that contains datasets that are configured with [incremental refresh](/power-bi/connect-data/incremental-refresh-overview), the refresh policy isn't copied or overwritten during deployment. After deploying a dataflow that includes a dataset with incremental refresh to a stage that doesn't include this dataflow, if you have a refresh policy you'll need to reconfigure it in the target stage. If you're deploying a dataflow with incremental refresh to a stage where it already resides, the incremental refresh policy isn't copied. In such cases, if you wish to update the refresh policy in the target stage, you need to do it manually.
 
 ### Datamarts
 

@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.custom: contperf-fy21q1, build-2023
-ms.date: 05/23/2023
+ms.date: 05/24/2023
 ms.search.form: Deployment pipelines operations
 ---
 
@@ -77,9 +77,9 @@ Connections between items are only established when you assign a workspace to a 
 
 * To assign a workspace, you need at least [workspace member](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the 'workspace member permissions needed' error message when I try to assign a workspace?](../troubleshoot-cicd.yml#error-message-workspace-member-permissions needed-)
 
-* You can't assign a workspace with [Power BI samples](/power-bi/create-reports/sample-datasets.md) to a pipeline stage.
+* You can't assign a workspace with [Power BI samples](/power-bi/create-reports/sample-datasets) to a pipeline stage.
 
-* You can't assign a [template app](/power-bi/connect-data/service-template-apps-create.md#create-the-template-workspace) workspace.
+* You can't assign a [template app](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace) workspace.
 
 ## Next steps
 
