@@ -26,7 +26,7 @@ Microsoft Fabric operates on two types of SKUs:
 
 * **Microsoft 365** - Billed monthly or yearly, with a monthly commitment
 
-## Azure SKUs
+## Azure SKUs (Available June 1, 2023)
 
 Azure SKUs, also known as F SKUs, are the recommended capacities for Microsoft Fabric. You can use your Azure capacity for as long as you want without any commitment. Pricing is regional and billing is made on a per second basis with a minimum of one minute.
 
