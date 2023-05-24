@@ -63,7 +63,7 @@ With a Fabric (Preview) trial, you get full access to all of the Fabric experien
 - share Fabric items, such as datasets, warehouses, and notebooks, and collaborate on them with other Fabric users.
 - create analytics solutions using these Fabric items.
 
-You don't have access to your capacity until you put something into it. To begin using your Fabric (Preview) trial, add items to **My workspace**  or create a new workspace. Assign that workspace to your trial capacity using the "Trial" license mode, and then all the items in that workspace will be saved and executed in that capacity. 
+You don't have access to your capacity until you put something into it. To begin using your Fabric (Preview) trial, add items to **My workspace**  or create a new workspace. Assign that workspace to your trial capacity using the "Trial" license mode, and then all the items in that workspace are saved and executed in that capacity. 
 
 To learn more about workspaces and license mode settings, see [Workspaces](workspaces.md).
 
@@ -138,7 +138,7 @@ You can't move your organization's tenant between regions by yourself. If you ne
 
 **What happens at the end of the Fabric (Preview) trial?**
 
-If you don't upgrade to a paid Fabric capacity at the end of the trial period, non-Power BI Fabric items will be removed according to the [retention policy upon removal](../admin/portal-workspaces.md#workspace-states).
+If you don't upgrade to a paid Fabric capacity at the end of the trial period, non-Power BI Fabric items are removed according to the [retention policy upon removal](../admin/portal-workspaces.md#workspace-states).
 
 **How is the Fabric (Preview) trial different from an individual trial of Power BI paid?**
 
