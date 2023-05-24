@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihirwagle
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 05/10/2023
+ms.date: 05/24/2023
 ---
 
 # Microsoft Fabric (Preview) trial
@@ -74,7 +74,7 @@ Not all functions have the same consumption rate. For example, running a Data Wa
 
 There's no limit on the number of workspaces or items you can create within your capacity. The only constraint is the availability of capacity units and the rate at which you consume them.
 
-You're the capacity owner for your trial capacity. As your own capacity administrator for your Fabric trial capacity, you have access to a detailed and transparent report for how capacity units are consumed via the [Capacity Metrics app](/powerbi-docs/enterprise/metrics-app-overview-page.md). For more information about administering your trials, see [Administer a Fabric trial capacity](#administer-user-access-to-a-fabric-preview-trial).
+You're the capacity owner for your trial capacity. As your own capacity administrator for your Fabric trial capacity, you have access to a detailed and transparent report for how capacity units are consumed via the [Capacity Metrics app](/power-bi/enterprise/service-premium-metrics-app.md). For more information about administering your trials, see [Administer a Fabric trial capacity](#administer-user-access-to-a-fabric-preview-trial).
 
 
 ## End a Fabric (Preview) trial
