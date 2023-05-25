@@ -112,11 +112,11 @@ By utilizing the eventstream sources, users can seamlessly incorporate their rea
 
 :::image type="content" source="./media/event-streams-source/eventstream-sources.png" alt-text="Screenshot showing the overview of the event streams source types." lightbox="./media/event-streams-source/eventstream-sources.png" :::
 
-The following sources are currently available.
-
 > [!NOTE]
 > - The total count of sources and destinations for one eventstream is **11**.
-> - Event data retention in eventstream is **1 day**.
+> - Event data retention in eventstream is **1 day**, with the option to extend it up to 7 days in the future.
+
+The following sources are currently available.
 
 ### Azure Event Hubs
 

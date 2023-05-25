@@ -73,9 +73,9 @@ If you have a lakehouse created in your workspace, follow these steps to add thi
    2. **Delta table**: Select an existing delta table or create a new one to receive data.
    
       > [!NOTE]
-      > **Schema enforcement** means that all new writes to a table are enforced to be compatible with the target table's schema at write time, to ensure data quality.
+      > When writing data into the lakehouse table, there is **Schema enforcement**. It means that all new writes to a table are are required to be compatible with the target table's schema at write time, ensuring data quality.
       >
-      > All records of output data are projected to the schema of the existing table. If the output is being written to a new delta table, the table schema will be created with the first record. If the incoming data has one extra column compared to the existing table schema, it will be written in the table without the extra column. If the incoming data is missing one column compared to the existing table schema, it will be written in the table with the column being null.
+      > All records of the output data are projected onto the schema of the existing table. In the case of writing the output to a new delta table, the table schema will be created based on the first record. If the incoming data has an additional column compared to the existing table schema, it will be written to the table without including the extra column. Conversely, if the incoming data is missing a column compared to the existing table schema, it will be written to the table with the column's value set to null.
 
    3. **Data format**: Select the data format for the data that is sent to your lakehouse.
    
