@@ -111,7 +111,7 @@ For more information about the Help pane, see [Get in-product help](fabric-help-
 
 ### Find help and support
 
-If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane for more resources.  Use the links to ask the community for help or to connect with [!INCLUDE [product-name](../includes/product-name.md)] Support. For more information about contacting Support, see [Support options](/powerbi-docs/support/service-support-options.md).
+If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane for more resources.  Use the links to ask the community for help or to connect with [!INCLUDE [product-name](../includes/product-name.md)] Support. For more information about contacting Support, see [Support options](/power-bi/support/service-support-options).
 
 ### Find your account and license information
 
