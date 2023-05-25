@@ -34,7 +34,7 @@ To open **Home**, select it from the top of your left navigation pane.
 The items that you can access appear on Home. If your Home canvas gets crowded, use [global search](fabric-search.md) to find what you need, quickly. The layout and content on Home is different for every user and every product experience, but there are numerous similarities as well. These similarities are listed here and discussed in more detail later in this article.
 
 > [!NOTE]
-> **Power BI Home** is different from the other product experiences. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home.md).
+> **Power BI Home** is different from the other product experiences. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home).
 
 :::image type="content" source="media/fabric-home/fabric-home-numbered.png" alt-text="Screenshot of the left navigation menu with Knowledge center selected":::
 
@@ -111,7 +111,7 @@ For more information about the Help pane, see [Get in-product help](fabric-help-
 
 ### Find help and support
 
-If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane for more resources.  Use the links to ask the community for help or to connect with [!INCLUDE [product-name](../includes/product-name.md)] Support. For more information about contacting Support, see [Support options](/powerbi-docs/support/service-support-options.md).
+If the self-help answers don't resolve your issue, scroll to the bottom of the Help pane for more resources.  Use the links to ask the community for help or to connect with [!INCLUDE [product-name](../includes/product-name.md)] Support. For more information about contacting Support, see [Support options](/power-bi/support/service-support-options).
 
 ### Find your account and license information
 
@@ -135,10 +135,10 @@ The final section of Home is the center area, called the **canvas**. The content
 When you create a new item, it's saved in your **My workspace** unless you've selected a workspace from **Workspaces**. To learn more about creating items in workspaces, see [create workspaces](create-workspaces.md).
 
 > [!NOTE]
-> Power BI **Home** is different from the other product experiences. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home.md).
+> Power BI **Home** is different from the other product experiences. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home).
 
 The **Recommended** area might include getting started content as well as items and workspaces that you use frequently.
 
 ## Next steps
-- [Power BI Home](/powerbi-docs/consumer/end-user-home.md)
+- [Power BI Home](/power-bi/consumer/end-user-home)
 - [Start a Fabric trial](fabric-trial.md)
