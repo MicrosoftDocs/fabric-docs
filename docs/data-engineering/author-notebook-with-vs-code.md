@@ -20,7 +20,7 @@ With this extension, you can also run notebooks onto the remote Fabric Spark com
 
 ## Open Notebook with Synapse extension
 
-By clicking the **Open in VS Code** button in the notebook authoring page in Fabric portal, you can directly open the same notebook with the Synapse VS Code extension for Fabric. Once the extension is activate, in VS Code, the workspace should be automatically set as the one contains the notebook, if the notebook has not been open before, it would be downloaded first and opened automatically.
+By clicking the **Open in VS Code** button in the notebook authoring page in Fabric portal, you can directly open the same notebook with the Synapse VS Code extension for Fabric. Once the extension is activated, in VS Code, the workspace should be automatically set as the one contains the notebook, if the notebook has not been open before, it would be downloaded first and opened automatically.
 
 :::image type="content" source="media\vscode\open-notebook-in-vs-code.png" alt-text="Open notebook in VS Code.":::
 
