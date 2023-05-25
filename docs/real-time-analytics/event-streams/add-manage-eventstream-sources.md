@@ -114,9 +114,9 @@ By utilizing the eventstream sources, users can seamlessly incorporate their rea
 
 The following sources are currently available.
 
-   > [!NOTE]
-   > - The total count of sources and destinations for one eventstream is **11**.
-   > - Event data retention in eventstream is **1 day**.
+> [!NOTE]
+> - The total count of sources and destinations for one eventstream is **11**.
+> - Event data retention in eventstream is **1 day**.
 
 ### Azure Event Hubs
 

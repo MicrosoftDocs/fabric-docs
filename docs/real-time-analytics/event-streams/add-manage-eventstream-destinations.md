@@ -47,7 +47,7 @@ If you have a KQL database created in the workspace, follow these steps to add a
    3. **Schema**: select a compression type and data format and preview how the data is sent to your KQL database. You can also change the column name, data type, or update column by clicking arrow in the table header.
 
        > [!NOTE]
-   >  Event data in Avro format is not supported in KQL database.
+       > Event data in Avro format is not supported in KQL database.
 
        :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" alt-text="Screenshot showing the ingestion wizard step#3 in kql database destination type." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" :::
 
@@ -73,14 +73,14 @@ If you have a lakehouse created in your workspace, follow these steps to add thi
    2. **Delta table**: Select an existing delta table or create a new one to receive data.
    
       > [!NOTE]
-   > **Schema enforcement** means that all new writes to a table are enforced to be compatible with the target table's schema at write time, to ensure data quality.
-   >
-   > All records of output data are projected to the schema of the existing table. If the output is being written to a new delta table, the table schema will be created with the first record. If the incoming data has one extra column compared to the existing table schema, it will be written in the table without the extra column. If the incoming data is missing one column compared to the existing table schema, it will be written in the table with the column being null.
+      > **Schema enforcement** means that all new writes to a table are enforced to be compatible with the target table's schema at write time, to ensure data quality.
+      >
+      > All records of output data are projected to the schema of the existing table. If the output is being written to a new delta table, the table schema will be created with the first record. If the incoming data has one extra column compared to the existing table schema, it will be written in the table without the extra column. If the incoming data is missing one column compared to the existing table schema, it will be written in the table with the column being null.
 
    3. **Data format**: Select the data format for the data that is sent to your lakehouse.
    
       > [!NOTE]
-   > The supported event data formats are JSON, Avro, and CSV (with header).
+      > The supported event data formats are JSON, Avro, and CSV (with header).
 
    4. **Event processing**: You can use our event processor to specify how the data should be processed before it's sent to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Use event processor editor to define the data transformation logic](./process-events-using-event-processor-editor.md).
    
@@ -102,11 +102,11 @@ If you want to route the event data to your application, you can add a custom ap
 
    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" alt-text="Screenshot showing the custom app configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" :::
 
-    Once the custom app is created successfully, you can view the information such as **connection string** on the bottom pane.
+Once the custom app is created successfully, you can view the information such as **connection string** on the bottom pane.
 
-    The connection string is an **event hub compatible connection string** and you can use it in your application to receive events from your eventstream.
+The connection string is an **event hub compatible connection string** and you can use it in your application to receive events from your eventstream.
 
-    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot showing the custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" :::
+:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot showing the custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" :::
 
 
 ## Manage destination 
@@ -125,8 +125,8 @@ With the eventstream destinations, you can route their real-time events to a cus
 
 The following destinations are currently available.
 
-   > [!NOTE]
-   > The total count of sources and destinations for one eventstream is **11**.
+> [!NOTE]
+> The total count of sources and destinations for one eventstream is **11**.
 
 ### Custom application
 
