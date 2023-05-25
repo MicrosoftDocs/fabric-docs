@@ -57,7 +57,7 @@ Select **Add pipeline activity**, and then choose **Copy data** from the display
 
 1. In the **New connection** dialog, provide the relevant details for the connection. For the tutorial, we use the following settings for the **NYC Taxi** sample data:
 
-   - **Account name or URL** - https://nyctaxisample.blob.core.windows.net/sample
+   - **Account name or URL** - ``https://nyctaxisample.blob.core.windows.net/sample``
    - **Connection** - unchanged, leaving **Create new connection** selected.
    - **Connection name** - NYC-Taxi-Anonymous
    - **Authentication kind** - Anonymous
