@@ -16,7 +16,7 @@ This article gives a high level view of navigating to your items and actions fro
 
 ## Overview of Home 
 
-On Home, you see items that you create and that you have permission to use. These are items from all the workspaces that you access. That means that the items available on everyone's Home are different. At first, you might not have much content, but that changes as you start to create and share [!INCLUDE [product-name](../includes/product-name.md)] items.
+On Home, you see items that you create and that you have permission to use. These items are from all the workspaces that you access. That means that the items available on everyone's Home are different. At first, you might not have much content, but that changes as you start to create and share [!INCLUDE [product-name](../includes/product-name.md)] items.
 
 > [!NOTE]
 > Home is not workspace-specific. For example, the **Recent** area on Home might include items from many different workspaces.
@@ -43,7 +43,7 @@ The items that you can access appear on Home. If your Home canvas gets crowded, 
 1. The top menu bar for orienting yourself in [!INCLUDE [product-name](../includes/product-name.md)], finding items, help, and sending Microsoft feedback. The [**Account manager**](#find-your-account-and-license-information) control is a critical icon for looking up your account information and managing your Fabric trial. 
 1. Options for creating new items.  
 1. Links to recommended content. This content helps you get started using the product experience and links to items and workspaces that you visit often.
-1. Your items organized by recent, favorites, and items shared with you by your colleagues. The items that appear here are the same across product experiences, with the exception of the Power BI experience.  
+1. Your items organized by recent, favorites, and items shared with you by your colleagues. The items that appear here are the same across product experiences, except for the Power BI experience.  
 
 > [!IMPORTANT]
 > Only the content that you can access appears on your Home. For example, if you don't have permissions to a report, that report doesn't appear on Home. The exception to this is if your subscription or license changes to one with less access, then you will receive a prompt asking you to start a trial or upgrade your license. 
@@ -97,7 +97,7 @@ Leave the Help pane open as you work, and use the suggested topics to learn how 
 
 :::image type="content" source="media/fabric-home/fabric-home-help-contextual.png" alt-text="Screenshot of the Help pane with Recent selected in Data factory.":::
 
-The Help pane is also a great place to search for answers to your questions. Type in the **Search** field and your answers are listed below. 
+The Help pane is also a great place to search for answers to your questions. Type your question or keywords in the **Search** field. 
 
 :::image type="content" source="media/fabric-home/fabric-home-help-results.png" alt-text="Screenshot of the Help pane before beginning a search.":::
 
