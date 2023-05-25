@@ -50,6 +50,10 @@ There are several ways you can manage access to content of the admin monitoring 
 
 * **Dataset** - You can [share access to a dataset](/power-bi/connect-data/service-datasets-share) with other users. Once a dataset is shared, you can't unshare it.
 
+## Considerations and limitations
+
+* Sovereign Clouds (GCC) are not yet supported in the initial public preview release. 
+
 ## Next steps
 
 * [Admin overview](microsoft-fabric-admin.md)
