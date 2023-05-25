@@ -44,20 +44,20 @@ If you have a KQL database created in the workspace, follow these steps to add a
 
        :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-2.png" alt-text="Screenshot showing the ingestion wizard step#2 in kql database destination type." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-2.png" :::
 
-   3. **Schema**: select a compression type and data format and preview how the data is sent to your KQL database. You can also change the column name, data type, or update column by clicking arrow in the table header.
+   3. **Schema**: select a compression type and data format, and preview how the data is sent to your KQL database. You can also change the column name, data type, or update column by clicking the arrow in the table header.
 
        > [!NOTE]
-       > Event data in Avro format is not supported in KQL database.
+       > The Avro data format is not supported in the KQL database.
 
        :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" alt-text="Screenshot showing the ingestion wizard step#3 in kql database destination type." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" :::
 
-   4. **Summary**: shows the status of the table creating with the schema and connection establishing of your eventstream and KQL database.
+   4. **Summary**: it shows the status of the table creating with the schema and connection establishing of your eventstream and KQL database.
 
        :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" alt-text="Screenshot showing the ingestion wizard step#4 in kql database destination type." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" :::
 
-    After everything is configured and you've selected **Done**, you see a KQL database destination added to your eventstream on the canvas.
+After everything is configured and you've selected **Done**, you see a KQL database destination added to your eventstream on the canvas.
 
-    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the kql database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
+   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the kql database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
 
 ## Add a lakehouse as a destination 
 
@@ -88,9 +88,9 @@ If you have a lakehouse created in your workspace, follow these steps to add thi
 
 3. Select **Create** to add the lakehouse destination.
 
-    You see a lakehouse destination is added to your eventstream on the canvas. It will be in ingestion mode after one or two minutes.
+You see a lakehouse destination is added to your eventstream on the canvas. It will be in ingestion mode after one or two minutes.
 
-    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse.png" alt-text="Screenshot showing the lakehouse destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse.png" :::
+:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse.png" alt-text="Screenshot showing the lakehouse destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse.png" :::
 
 ## Add custom application as a destination
 
