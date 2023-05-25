@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihirwagle
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 05/24/2023
+ms.date: 05/25/2023
 ---
 
 # Microsoft Fabric (Preview) trial
@@ -130,7 +130,8 @@ This known bug occurs when the Power BI administrator turns off trials after you
 If you start the trial using the Account manager, your trial capacity is located in the home region for your tenant. See [Find your Fabric home region](../admin/find-fabric-home-region.md) for information about how to find your home region, where your data is stored.
 
 **What impact does region have on my Fabric (Preview) trial?**
-If your home region doesn't have Fabric enabled, you won't be able to create any Fabric items in your trial capacity. When Fabric is Generally Available (GA), you can use the Account manager to start a trial and assign your Fabric capacity to a specific region. Until GA, if your home region doesn't have Fabric enabled, don't use the Account manager to start a trial. If you've already started a trial from Account manager, cancel that trial and follow the steps in [Other ways to start a Fabric (Preview) trial](#other-ways-to-start-a-microsoft-fabric-preview-trial) instead.
+
+Not all regions are available for the Fabric (Preview) trial. Start by [looking up your home region](../admin/find-fabric-home-region.md) and then check to [see if your region is supported for the Fabric (Preview) trial](../admin/region-availability.md). If your home region doesn't have Fabric enabled, don't use the Account manager to start a trial. To start a trial in a region that is not your home region, follow the steps in [Other ways to start a Fabric (Preview) trial](#other-ways-to-start-a-microsoft-fabric-preview-trial). If you've already started a trial from Account manager, cancel that trial and follow the steps in [Other ways to start a Fabric (Preview) trial](#other-ways-to-start-a-microsoft-fabric-preview-trial) instead.  
 
 **Can I move my tenant to another region?**
 
