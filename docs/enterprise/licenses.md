@@ -12,19 +12,19 @@ ms.date: 05/24/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Microsoft Fabric is a platform that allows users to get, create, share and visualize data using various tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [organizational license](#organizational-licenses) and at least one [individual license](#individual-licenses).
+Microsoft Fabric is a platform that allows users to get, create, share, and visualize data using various tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [organizational license](#organizational-licenses) and at least one [individual license](#individual-licenses).
 
-A Microsoft Fabric subscription is made out of tenants, capacities and workspaces and can be organized in various ways according to your organizational needs. This illustration provides two example subscriptions, each organized differently. Typically, companies organize their subscription in a model that resembles the *Retail company A* example.
+A Microsoft Fabric subscription consists of tenants, capacities, and workspaces and can be organized in various ways according to your organizational needs. This illustration provides two example subscriptions, each organized differently. Typically, companies organize their subscription in a model that resembles the *Retail company A* example.
 
 :::image type="content" source="media/licenses/tenants-capacities.png" alt-text="Illustration. Org A has one tenant with three capacities. Org B has two tenants, each with a few capacities. Every capacity has workspaces." lightbox="media/licenses/tenants-capacities.png":::
 
 ## Microsoft Fabric components
 
-This section describes tenants, capacities and workspaces, which are the main building blocks of a Microsoft Fabric subscription.
+This section describes tenants, capacities, and workspaces, which are the main building blocks of a Microsoft Fabric subscription.
 
 ### Tenant
 
-The foundation of a Microsoft Fabric subscription is the tenant. Each tenant is tied to a specific domain. Your tenant is created when you buy a capacity, and once it's created, you can add to it more capacities. Usually, an organization has one tenant. In such cases, the tenant is synonyms with the organization. Some companies may want to have several tenants, each with their own capacities.
+The foundation of a Microsoft Fabric subscription is the tenant. Each tenant is tied to a specific domain. Your tenant is created when you buy a capacity, and after it's created, you can add more capacities. Usually, an organization has one tenant. In such cases, the tenant is synonymous with the organization. Some companies may want to have several tenants, each with their own capacities.
 
 ### Capacity
 
@@ -32,7 +32,7 @@ A Microsoft Fabric capacity resides on a tenant. Each capacity that sits under a
 
 ### Workspace
 
-[Workspaces](../get-started/workspaces.md) reside within capacities and are used as containers for Microsoft Fabric items. Each Microsoft Fabric user has a personal workspace known as *My Workspace*. More workspaces can be created to enable collaboration. By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including *My Workspaces* can be assigned to any capacity in your organization.
+[Workspaces](../get-started/workspaces.md) reside within capacities and are used as containers for Microsoft Fabric items. Each Microsoft Fabric user has a personal workspace known as *My Workspace*. More workspaces can be created to enable collaboration. By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces - including *My Workspaces* - can be assigned to any capacity in your organization.
 
 >[!NOTE]
 >If you're using a Power BI shared capacity, Microsoft Fabric items aren't supported. To enable support for Microsoft Fabric items on your Power BI capacity, [enable Microsoft Fabric](../admin/fabric-switch.md).
