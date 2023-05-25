@@ -52,6 +52,9 @@ If you have an Azure event hub created with event data there, follow these steps
 
 5. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
 
+   > [!NOTE]
+   > The event streams feature supports the ingestion of events from Azure Event Hubs in JSON, Avro, and CSV (with header) data formats.
+
 6. Select a **Consumer group** that is used for reading the event data from your Azure event hub and then **Create**. 
 
     After the event hub source is created, you see an event hub source added to your eventstream on the canvas.
@@ -87,7 +90,9 @@ If you want to connect your own application with an eventstream, you can add it 
 
    :::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="./media/event-streams-source/eventstream-sources-custom-app.png" :::
 
-3. Once the custom app is created successfully, you can view the information of the custom app such as connection string and use it in your application.
+3. Once the custom app is created successfully, you can view the information of the custom app such as **connection string** on the bottom pane. 
+
+   The connection string is an **event hub compatible connection string** and you can use it in your application to send events to your eventstream.
 
    :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source-completed.png" alt-text="Screenshot showing the custom app source." lightbox="./media/add-manage-eventstream-sources/custom-app-source-completed.png" :::
 
@@ -108,6 +113,10 @@ By utilizing the eventstream sources, users can seamlessly incorporate their rea
 :::image type="content" source="./media/event-streams-source/eventstream-sources.png" alt-text="Screenshot showing the overview of the event streams source types." lightbox="./media/event-streams-source/eventstream-sources.png" :::
 
 The following sources are currently available.
+
+   > [!NOTE]
+   > - The total count of sources and destinations for one eventstream is **11**.
+   > - Event data retention in eventstream is **1 day**.
 
 ### Azure Event Hubs
 
