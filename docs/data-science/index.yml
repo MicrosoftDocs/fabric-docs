@@ -98,7 +98,9 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Your First SynapseML Model
-            url: synapseml-first-model.md 
+            url: synapseml-first-model.md
+          - text: Install another version of SynapseML
+            url: install-synapseml.md
       - linkListType: how-to-guide
         links:
           - text: Use Congnitive Services with SynapseML
