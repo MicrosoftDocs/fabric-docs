@@ -24,7 +24,7 @@ The high-level steps in module 1 are as follows:
 
 1. A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription is required. [Create a free account](https://azure.microsoft.com/free/).
 1. Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
-1. Sign into [Power BI](https://app.powerbi.com/)
+1. Sign into [Power BI](https://app.powerbi.com/).
 
 1. Select the default Power BI icon at the bottom left of the screen, and switch to the **Data Factory** experience.
 
