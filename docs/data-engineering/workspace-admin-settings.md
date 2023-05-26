@@ -13,7 +13,7 @@ ms.date: 05/23/2023
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-When you create a workspace in Microsoft Fabric, a [Starter Pool](spark-compute.md) that is associated with that workspace is automatically created. With the simplified setup in Microsoft Fabric, there's no need to choose the node or machine sizes, as this is handled for you behind the scenes. This configuration provides a faster (5-10 seconds) spark session start experience for users to get started and run your Spark jobs in many common scenarios without having to worry about setting up the compute. For advanced scenarios with specific compute requirements, users can create a custom spark pool and size the nodes based on their performance needs.
+When you create a workspace in Microsoft Fabric, a [starter pool](spark-compute.md#starter-pools) that is associated with that workspace is automatically created. With the simplified setup in Microsoft Fabric, there's no need to choose the node or machine sizes, as this is handled for you behind the scenes. This configuration provides a faster (5-10 seconds) Spark session start experience for users to get started and run your Spark jobs in many common scenarios without having to worry about setting up the compute. For advanced scenarios with specific compute requirements, users can create a custom Spark pool and size the nodes based on their performance needs.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -30,7 +30,7 @@ To manage the Spark settings for the pool associated with your workspace:
 1. Configure the four setting options you can change on this page: **Default pool for workspace**, **Runtime version**, **Automatically track machine learning experiments and models** and **Spark properties**.
 
 > [!NOTE]
-> If you change the default pool to a custom spark pool you may see longer session start (~3 minutes) in this case.
+> If you change the default pool to a custom Spark pool you may see longer session start (~3 minutes) in this case.
 
 ## Default pool for workspace
 
@@ -38,13 +38,13 @@ There are two options:
 
 * **Starter Pool**: Prehydrated live clusters automatically created for your faster experience. These are medium size. Currently, a starter pool with 10 nodes is provided for evaluation purposes.
 
-* **Custom Spark Pool**: You can size the nodes, autoscale, and dynamically allocate executors based on your spark job requirements. To create a custom spark pool, the capacity admin should enable the **Customized workspace pools** option in the **Spark Compute** section of **Capacity Admin** settings. To learn more, see [Spark Compute Settings for Fabric Capacities](capacity-settings-management.md).
+* **Custom Spark Pool**: You can size the nodes, autoscale, and dynamically allocate executors based on your Spark job requirements. To create a custom Spark pool, the capacity admin should enable the **Customized workspace pools** option in the **Spark Compute** section of **Capacity Admin** settings. To learn more, see [Spark Compute Settings for Fabric Capacities](capacity-settings-management.md).
 
-Admins can create custom spark pools based on their compute requirements by selecting the **New Pool** option.
+Admins can create custom Spark pools based on their compute requirements by selecting the **New Pool** option.
 
 :::image type="content" source="media\workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options.":::
 
-Microsoft Fabric spark supports single node clusters, which allows users to select a minimum node configuration of 1 and a maximum of 2. Thereby offering high-availability and better job reliability for smaller compute requirements. You can also enable or disable autoscaling option for your custom spark pools. When enabled with autoscale, the pool would acquire new nodes within the max node limit specified by the user and retire them after the job execution for better performance.
+Microsoft Fabric Spark supports single node clusters, which allows users to select a minimum node configuration of 1 and a maximum of 2. Thereby offering high-availability and better job reliability for smaller compute requirements. You can also enable or disable autoscaling option for your custom Spark pools. When enabled with autoscale, the pool would acquire new nodes within the max node limit specified by the user and retire them after the job execution for better performance.
 
 You can also select the option to dynamically allocate executors to pool automatically optimal number of executors within the max bound specified based on the data volume for better performance.
 
