@@ -127,6 +127,8 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - When you are running a SQL query with [USE](/sql/t-sql/language-elements/use-transact-sql?view=fabric&preserve-view=true), you need to submit the SQL query with `USE` as one single request.
 
+- Visualize Results currently does not support SQL queries with an ORDER BY clause. 
+
 - The following table summarizes the expected behavior will not match with SQL Server Management Studio/Azure Data Studio:
 
    | **Scenario** | **Supported in SSMS/ADS** | **Supported in SQL query editor in Fabric portal** |
