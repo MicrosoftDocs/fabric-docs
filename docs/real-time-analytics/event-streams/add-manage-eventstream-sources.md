@@ -110,11 +110,12 @@ The connection string is an **event hub compatible connection string** and you c
 
 By utilizing the eventstream sources, users can seamlessly incorporate their real-time events into Microsoft Fabric, facilitating efficient and effective data ingestion.
 
-:::image type="content" source="./media/event-streams-source/eventstream-sources.png" alt-text="Screenshot showing the overview of the event streams source types." lightbox="./media/event-streams-source/eventstream-sources.png" :::
-
 > [!NOTE]
 > - The total count of sources and destinations for one eventstream is **11**.
-> - Event data retention in eventstream is **1 day**, with the potential to extend it up to 7 days in the future.
+> - Event data retention in eventstream is **1 day**, with the potential to extend it and make it configurable in the future.
+
+:::image type="content" source="./media/event-streams-source/eventstream-sources.png" alt-text="Screenshot showing the overview of the event streams source types." lightbox="./media/event-streams-source/eventstream-sources.png" :::
+
 
 The following sources are currently available.
 

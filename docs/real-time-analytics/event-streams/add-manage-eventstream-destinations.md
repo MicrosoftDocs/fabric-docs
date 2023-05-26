@@ -80,7 +80,7 @@ If you have a lakehouse created in your workspace, follow these steps to add thi
    3. **Data format**: Select the data format for the data that is sent to your lakehouse.
    
       > [!NOTE]
-      > The supported event data formats are JSON, Avro, and CSV (with header).
+      > The supported input event data formats are JSON, Avro, and CSV (with header).
 
    4. **Event processing**: You can use our event processor to specify how the data should be processed before it's sent to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Use event processor editor to define the data transformation logic](./process-events-using-event-processor-editor.md).
    
@@ -121,12 +121,13 @@ When you select **Edit**, the edit pane opens in the right of the main editor. Y
 ## Supported destinations
 With the eventstream destinations, you can route their real-time events to a custom app, KQL database, or lakehouse in Microsoft Fabric without writing a single line of code. 
 
-:::image type="content" source="./media/event-streams-destination/eventstream-destinations.png" alt-text="Screenshot showing the overview of the event streams destination types." lightbox="./media/event-streams-destination/eventstream-destinations.png" :::
-
-The following destinations are currently available.
-
 > [!NOTE]
 > The total count of sources and destinations for one eventstream is **11**.
+
+:::image type="content" source="./media/event-streams-destination/eventstream-destinations.png" alt-text="Screenshot showing the overview of the event streams destination types." lightbox="./media/event-streams-destination/eventstream-destinations.png" :::
+
+
+The following destinations are currently available.
 
 ### Custom application
 
