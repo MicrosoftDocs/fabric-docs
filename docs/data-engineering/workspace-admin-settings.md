@@ -77,4 +77,4 @@ You can delete items by selecting the item(s) and then select the **Delete** but
 ## Next steps
 
 * Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
-* Find answers to frequently asked questions: [Apache Spark workspace administration settings FAQ](spark-admin-settings-faq.yml)
+* Find answers to frequently asked questions: [Apache Spark workspace administration settings FAQ](spark-admin-settings-faq.yml).
