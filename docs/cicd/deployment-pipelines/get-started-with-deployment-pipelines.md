@@ -37,7 +37,7 @@ To create a pipeline, select the **Deployment pipelines** button.
 
 After the pipeline is created, you can share it with other users, edit, or delete it. When you share a pipeline with others, those will be given access to the pipeline and will become [pipeline admins](understand-the-deployment-process.md#permissions). Pipeline access enables users to view, share, edit, and delete the pipeline.
 
-### Create a pipeline from the deployment pipelines tab
+### Create a pipeline from the deployment pipelines button in Fabric
 
 To create a pipeline, do the following:
 
@@ -50,9 +50,9 @@ To create a pipeline, do the following:
     :::image type="content" source="media/get-started-with-deployment-pipelines/create-pipeline.png" alt-text="A screenshot of the create pipeline button.":::
 1. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Create**.
 
-### Create a pipeline from a workspace
+### Create a pipeline from a workspace in Power BI
 
-From Power BI, you can create a pipeline from an existing workspace, providing you're the admin of the [workspace](../../get-started/create-workspaces.md)
+From Power BI, you also have the option of creating a pipeline from inside an existing workspace, providing you're the admin of that [workspace](../../get-started/create-workspaces.md)
 
 1. From the workspace, select **Create deployment pipeline**.
 
