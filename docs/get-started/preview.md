@@ -4,7 +4,7 @@ description: This article explains what public preview mean in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.date: 05/23/2023
+ms.date: 05/29/2023
 ---
 
 # What is Microsoft Fabric preview?
@@ -17,7 +17,7 @@ This article describes the Microsoft Fabric preview state, and provides disclaim
 
 Preview features are subject to separate Supplemental Terms of Use. You can review these disclaimers here: 
 
-* [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
+* [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
 
 * [Supplemental Terms of Use for Microsoft Power Platform and Dynamics 365 preview for online services](https://dynamics.microsoft.com/en-us/legaldocs/supp-dynamics365-preview/)
 
