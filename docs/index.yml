@@ -35,6 +35,10 @@ highlightedContent:
     - title: Develop with end-to-end tutorials
       itemType: tutorial
       url: get-started/end-to-end-tutorials.md
+    # Card
+    - title: What is the Microsoft Fabric preview?
+      itemType: concept
+      url: get-started/preview.md      
 
 productDirectory:
   title: Explore Microsoft Fabric experiences
