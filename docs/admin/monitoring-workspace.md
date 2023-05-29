@@ -52,7 +52,7 @@ There are several ways you can manage access to content of the admin monitoring 
 
 ### Refreshes
 
-The admin monitoring workspace is created when an admin accesses it for the first time. Only the admin that created the workspace can refresh its reports and datasets. To refresh the reports and datasets manually or use a scheduled refresh, the admin that created the workspace must retain the *Power BI admin* role.
+The admin monitoring workspace is created when an admin accesses it for the first time. Only the admin that created the workspace can refresh its reports and datasets using a scheduled refresh. To schedule a refresh, the admin that created the workspace must retain the *Power BI admin* role.
 
 ## Next steps
 
