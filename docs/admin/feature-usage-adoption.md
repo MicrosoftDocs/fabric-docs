@@ -100,7 +100,7 @@ This section lists the report's considerations and limitations.
 
 * During business continuity and disaster recovery, the *Audit* table may have data quality issues.
 
-* Audit log retention period for the Feature Usage and Adoption dataset/report is currently rolling 30 days only.
+* The report retains information for 30 days.
 
 ### Counting logic
 
