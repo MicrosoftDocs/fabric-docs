@@ -52,7 +52,7 @@ There are several ways you can manage access to content of the admin monitoring 
 
 ## Considerations and limitations
 
-* Sovereign Clouds (GCC) are not yet supported in the initial public preview release. 
+* Sovereign clouds are not supported.
 
 ## Next steps
 
