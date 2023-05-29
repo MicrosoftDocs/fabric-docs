@@ -39,7 +39,7 @@ After the pipeline is created, you can share it with other users, edit, or delet
 
 ### Create a pipeline from the deployment pipelines button in Fabric
 
-To create a pipeline, do the following:
+To create a pipeline from anywhere in Fabric, do the following:
 
 1. From the Workspaces flyout, select **Deployment pipelines**.
 
