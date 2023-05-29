@@ -37,7 +37,7 @@ After expanding the advisor section, one or more pieces of advice become visible
 
 ## Spark Advisor Skew Detection
 
-Data skew is a common issue user often encounter. The Spark advisor supports skew detection, and if skew is detected, a corresponding analysis is displayed below.
+Data skew is a common issue users often encounter. The Spark advisor supports skew detection, and if skew is detected, a corresponding analysis is displayed below.
 
 :::image type="content" source="media\spark-monitor-debug\spark-advisor-skew-detection.png" alt-text="Screenshot showing Data Skew Analysis details." lightbox="media\spark-monitor-debug\spark-advisor-skew-detection.png":::
 
