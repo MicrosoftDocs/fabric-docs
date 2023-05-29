@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.custom: contperf-fy21q1, intro-get-started, build-2023
-ms.date: 05/28/2023
+ms.date: 05/29/2023
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 ---
 
@@ -24,9 +24,9 @@ You can also complete the [Create and manage a Fabric deployment pipeline](/trai
 
 To access the deployment pipelines feature, you must meet the following conditions:
 
-* You have an [Microsoft Fabric subscription](../../enterprise/licenses.md):
+* You have an [Microsoft Fabric subscription](../../enterprise/licenses.md)
 
-* You're an admin of a Fabric [workspace](../../get-started/create-workspaces.md).
+* You're an admin of a Fabric [workspace](../../get-started/create-workspaces.md)
 
 >[!NOTE]
 > You'll also be able to see the deployment pipelines button, if you previously created a pipeline, or if a pipeline was shared with you.
