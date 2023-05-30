@@ -1,5 +1,5 @@
 items:
-- name: Microsoft Fabric administration?
+- name: Microsoft Fabric administration
   href: index.yml
 - name: Overview
   items:
