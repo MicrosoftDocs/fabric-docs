@@ -55,6 +55,19 @@ Once the job is submitted, you can cancel the job by clicking the **Cancel** but
 
 :::image type="content" source="media\run-spark-job-definition\cancel-job.png" alt-text="Screenshot of cancel job." lightbox="media\run-spark-job-definition\cancel-job.png":::
 
+## Spark Job Definition Snapshot of history run
+The property of the Spark Job Definition artifact would store the latest state of the job definition. If you want to view the snapshot of the history run, you can click the **View Snapshot** button on the Spark job definition item from the job list. The snapshot would show the state of the job definition when the job is submitted, including the main definition file, the reference file, the command line arguments, the referenced Lakehouse and the spark properties.
+
+:::image type="content" source="media\run-spark-job-definition\view-job-snapshot.png" alt-text="View run snapshot." lightbox="media\run-spark-job-definition\view-job-snapshot.png":::
+
+From a snapshot, there are three actions you can take:
+
+- **Save as a Spark Job Definition**: Save the snapshot as a new Spark job definition
+- **Open Spark Job Definition**: Open the current Spark job definition
+- **Restore**: Restore the job definition with the snapshot. The job definition would be restored to the state when the job is submitted.
+
+:::image type="content" source="media\run-spark-job-definition\sjd-snapshot-actions.png" alt-text="View run snapshot actions." lightbox="media\run-spark-job-definition\sjd-snapshot-actions.png":::
+
 ## Next steps
 
 - [Advanced capabilities: Microsoft Apache Spark utilities](microsoft-spark-utilities.md)
