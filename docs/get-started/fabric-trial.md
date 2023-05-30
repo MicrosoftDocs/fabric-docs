@@ -10,7 +10,7 @@ ms.date: 05/25/2023
 
 # Microsoft Fabric (Preview) trial
 
-The Microsoft Fabric (Preview) trial includes access to the Fabric product experiences and the resources to create and host Fabric items. The Fabric (Preview) trial lasts until Fabric General Availability (GA), unless canceled. After GA, the Fabric (Preview) trial converts to the GA version and is extended for 60 days.
+Microsoft Fabric has launched as a public preview and is temporarily provided free of charge when you sign up for the Microsoft Fabric (Preview) trial. Your use of the Microsoft Fabric (Preview) trial includes access to the Fabric product experiences and the resources to create and host Fabric items. The Fabric (Preview) trial lasts for a period of 60 days, but may be extended by Microsoft, at our discretion.  The Microsoft Fabric (Preview) trial experience is subject to certain capacity limits as further explained below.
 
 This document helps you understand and start a Fabric (Preview) trial. 
 
@@ -49,7 +49,7 @@ Follow these steps to start your Fabric (Preview) trial.
 Congratulations! You now have a Fabric (Preview) trial that includes a Power BI individual trial (if you didn't already have a Power BI *paid* license) and a Fabric (Preview) trial capacity.
 
 ## Other ways to start a Microsoft Fabric (Preview) trial
-If your Power BI administrator has [enabled the preview of Microsoft Fabric for the tenant](../admin/fabric-switch.md#enable-for-your-tenant), you have another option for enabling a Fabric (Preview) trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you're prompted to start a Fabric (Preview) trial. If you agree, your Fabric (Preview) trial starts and your workspace is upgraded to a trial capacity workspace.
+If your Power BI administrator has [enabled the preview of Microsoft Fabric for the tenant](../admin/fabric-switch.md#enable-for-your-tenant) but you do not have access to a capacity that has Fabric enabled, you have another option for enabling a Fabric (Preview) trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you're prompted to start a Fabric (Preview) trial. If you agree, your Fabric (Preview) trial starts and your workspace is upgraded to a trial capacity workspace.
 
 :::image type="content" source="media/fabric-trial/fabric-prompt.png" alt-text="Screenshot of the prompt to Upgrade to a free Microsoft Fabric (preview) trial.":::
 
@@ -89,7 +89,7 @@ You may cancel your trial from the Account manager. When you cancel your free Fa
 
 -   create analytics solutions using these Fabric items.
 
-Additionally, if you cancel your trial, you may not be able to start another trial.
+Additionally, if you cancel your trial, you may not be able to start another trial. If you want to retain your data and continue to use Microsoft Fabric (Preview), you can [purchase a capacity](../enterprise/buy-subsription.md) and migrate your workspaces to that capacity. To learn more about workspaces and license mode settings, see [Workspaces](workspaces.md).
 
 ## Administer user access to a Fabric (Preview) trial
 
