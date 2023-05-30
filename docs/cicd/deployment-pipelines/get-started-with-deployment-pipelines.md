@@ -52,7 +52,7 @@ To create a pipeline from anywhere in Fabric, do the following:
 
 ### Create a pipeline from a workspace in Power BI
 
-From Power BI, you also have the option of creating a pipeline from inside an existing workspace, providing you're the admin of that [workspace](../../get-started/create-workspaces.md)
+From Power BI, you also have the option of creating a pipeline from inside an existing workspace, if you're the admin of that [workspace](../../get-started/create-workspaces.md)
 
 1. From the workspace, select **Create deployment pipeline**.
 
