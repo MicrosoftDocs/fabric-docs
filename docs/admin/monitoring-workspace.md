@@ -56,6 +56,10 @@ There are several ways you can manage access to content of the admin monitoring 
 
 The admin monitoring workspace is created when an admin accesses it for the first time. Only the admin that created the workspace can refresh its reports and datasets using a scheduled refresh. To schedule a refresh, the admin that created the workspace must retain the Microsoft 365 *Global administrator* or *Power BI administrator* role.
 
+## Considerations and limitations
+
+* Sovereign clouds are not supported.
+ 
 ## Next steps
 
 * [Admin overview](microsoft-fabric-admin.md)
