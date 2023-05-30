@@ -46,7 +46,7 @@ landingContent:
         links:
           - text: How to use end-to-end AI samples
             url: use-ai-samples.md 
-          - text: Train a retail recommendation model
+          - text: Retail recommendation
             url: retail-recommend-model.md 
           - text: Fraud detection
             url: fraud-detection.md 
@@ -54,7 +54,7 @@ landingContent:
             url: time-series-forecasting.md 
           - text: Text classification
             url: title-genre-classification.md 
-          - text: Healthcare causal impact of treatments
+          - text: Uplift modeling
             url: uplift-modeling.md          
 
   # Card 
@@ -99,7 +99,9 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Your First SynapseML Model
-            url: synapseml-first-model.md 
+            url: synapseml-first-model.md
+          - text: Install another version of SynapseML
+            url: install-synapseml.md
       - linkListType: how-to-guide
         links:
           - text: Use Congnitive Services with SynapseML

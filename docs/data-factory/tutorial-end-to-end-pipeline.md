@@ -22,10 +22,9 @@ The high-level steps in module 1 are as follows:
 
 ## Create a data pipeline
 
-1. Sign into [Power BI](https://app.powerbi.com) and open a workspace with Fabric Capacity enabled.
-
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-premium-capacity-workspace.png" alt-text="Screenshot showing the selection of a Premium capacity workspace to create a new data pipeline.":::
-
+1. A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription is required. [Create a free account](https://azure.microsoft.com/free/).
+1. Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+1. Sign into [Power BI](https://app.powerbi.com/).
 
 1. Select the default Power BI icon at the bottom left of the screen, and switch to the **Data Factory** experience.
 
@@ -57,7 +56,7 @@ Select **Add pipeline activity**, and then choose **Copy data** from the display
 
 1. In the **New connection** dialog, provide the relevant details for the connection. For the tutorial, we use the following settings for the **NYC Taxi** sample data:
 
-   - **Account name or URL** - https://nyctaxisample.blob.core.windows.net/sample
+   - **Account name or URL** - ``https://nyctaxisample.blob.core.windows.net/sample``
    - **Connection** - unchanged, leaving **Create new connection** selected.
    - **Connection name** - NYC-Taxi-Anonymous
    - **Authentication kind** - Anonymous

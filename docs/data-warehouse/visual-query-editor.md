@@ -52,6 +52,7 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 
 - In the visual query editor, you can only run DQL (Data Query Language) or read-only [SELECT](/sql/t-sql/queries/select-transact-sql?view=fabric&preserve-view=true) statements. DDL or DML are not supported.
 - Only a subset of Power Query operations that support Query folding are currently supported.
+- Visualize Results currently does not support SQL queries with an ORDER BY clause. 
 
 ## Next steps
 
