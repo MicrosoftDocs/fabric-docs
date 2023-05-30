@@ -16,6 +16,8 @@ Use [Customer Lockbox for Microsoft Azure](/azure/security/fundamentals/customer
 
 Typically, Customer Lockbox is used to help Microsoft engineers troubleshoot a [!INCLUDE [product-name](../includes/product-name.md)] service support request. Customer Lockbox can also be used when Microsoft identifies a problem, and a Microsoft-initiated event is opened to investigate the issue.
 
+When Customer Lockbox is initiated for Real-Time Analytics, depending on your cluster's role, the Real-Time Analytics engineer will have access to the data in your database or cluster.
+
 ## Enable Customer Lockbox for Microsoft Fabric
 
 To enable Customer Lockbox for [!INCLUDE [product-name](../includes/product-name.md)], you must be an Azure AD Global Administrator. To assign roles in Azure AD, see [Assign Azure AD roles to users](/azure/active-directory/roles/manage-roles-portal).
