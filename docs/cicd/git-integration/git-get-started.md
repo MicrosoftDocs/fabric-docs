@@ -72,7 +72,7 @@ Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/
 
 During the initial sync, if either the workspace or git branch is empty, content is copied from the nonempty location to the empty one. If both the workspace and git branch have content, you’re asked which direction the sync should go. For more information on this initial sync, see [Connect and sync](git-integration-process.md#connect-and-sync).
 
-After connecting, the Workspace displays information about source control that allows the user to view the connected branch, the status of each item in the branch and the time of the last sync.
+After you connect, the Workspace displays information about source control that allows the user to view the connected branch, the status of each item in the branch and the time of the last sync.
 
 :::image type="content" source="./media/git-get-started/git-sync-information.png" alt-text="Screenshot of source control icon and other git information.":::
 
