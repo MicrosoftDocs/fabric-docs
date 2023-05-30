@@ -56,8 +56,6 @@ Follow these steps to enable Microsoft Fabric for your tenant.
 1. Navigate to the [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings#how-to-get-to-the-tenant-settings) in the admin portal and in *Microsoft Fabric (Preview)*, expand the **Users can create Fabric items (public preview)**.
 
    :::image type="content" source="media/fabric-switch/fabric-switch.png" alt-text="Screenshot of the Microsoft Fabric tenant setting in the admin portal.":::
-   >[!NOTE]
-   >The **Delegate setting to other admins** > **Capacity admins can enable/disable** setting cannot be changed at this time.
 
 2. Uncheck the **Accept Microsoft's default selection (Off for the entire organization)** checkbox. You only need to uncheck the Microsoft's default selection when you enable the Microsoft Fabric setting for the first time.
 
