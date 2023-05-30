@@ -4,7 +4,7 @@ description: Learn how to connect a workspace to a git repo and branch, commit c
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 05/30/2023
 ms.custom: build-2023
 ---
 
@@ -34,7 +34,7 @@ To integrate git with your Microsoft Fabric workspace, you need to set up the fo
 
 To access the git integration feature, you need one of the following:
 
-- [Fabric license](../../enterprise/licenses.md)
+- [Premium license](../../enterprise/licenses.md)
 - Access to a [Fabric capacity workspace](../../enterprise/licenses.md#capacity-and-skus)
 
 In addition, your organization’s administrator has to [enable the git integration switch](../../admin/git-integration-admin-settings.md). If git integration is disabled in the workspace, contact your administrator.
