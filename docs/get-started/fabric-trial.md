@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihirwagle
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 05/10/2023
+ms.date: 05/25/2023
 ---
 
 # Microsoft Fabric (Preview) trial
@@ -63,7 +63,7 @@ With a Fabric (Preview) trial, you get full access to all of the Fabric experien
 - share Fabric items, such as datasets, warehouses, and notebooks, and collaborate on them with other Fabric users.
 - create analytics solutions using these Fabric items.
 
-You don't have access to your capacity until you put something into it. To begin using your Fabric (Preview) trial, add items to **My workspace**  or create a new workspace. Assign that workspace to your trial capacity using the "Trial" license mode, and then all the items in that workspace will be saved and executed in that capacity. 
+You don't have access to your capacity until you put something into it. To begin using your Fabric (Preview) trial, add items to **My workspace**  or create a new workspace. Assign that workspace to your trial capacity using the "Trial" license mode, and then all the items in that workspace are saved and executed in that capacity. 
 
 To learn more about workspaces and license mode settings, see [Workspaces](workspaces.md).
 
@@ -74,7 +74,7 @@ Not all functions have the same consumption rate. For example, running a Data Wa
 
 There's no limit on the number of workspaces or items you can create within your capacity. The only constraint is the availability of capacity units and the rate at which you consume them.
 
-You're the capacity owner for your trial capacity. As your own capacity administrator for your Fabric trial capacity, you have access to a detailed and transparent report for how capacity units are consumed via the [Capacity Metrics app](/powerbi-docs/enterprise/metrics-app-overview-page.md). For more information about administering your trials, see [Administer a Fabric trial capacity](#administer-user-access-to-a-fabric-preview-trial).
+You're the capacity owner for your trial capacity. As your own capacity administrator for your Fabric trial capacity, you have access to a detailed and transparent report for how capacity units are consumed via the [Capacity Metrics app](/power-bi/enterprise/service-premium-metrics-app). For more information about administering your trials, see [Administer a Fabric trial capacity](#administer-user-access-to-a-fabric-preview-trial).
 
 
 ## End a Fabric (Preview) trial
@@ -130,7 +130,8 @@ This known bug occurs when the Power BI administrator turns off trials after you
 If you start the trial using the Account manager, your trial capacity is located in the home region for your tenant. See [Find your Fabric home region](../admin/find-fabric-home-region.md) for information about how to find your home region, where your data is stored.
 
 **What impact does region have on my Fabric (Preview) trial?**
-If your home region doesn't have Fabric enabled, you won't be able to create any Fabric items in your trial capacity. When Fabric is Generally Available (GA), you can use the Account manager to start a trial and assign your Fabric capacity to a specific region. Until GA, if your home region doesn't have Fabric enabled, don't use the Account manager to start a trial. If you've already started a trial from Account manager, cancel that trial and follow the steps in [Other ways to start a Fabric (Preview) trial](#other-ways-to-start-a-microsoft-fabric-preview-trial) instead.
+
+Not all regions are available for the Fabric (Preview) trial. Start by [looking up your home region](../admin/find-fabric-home-region.md) and then check to [see if your region is supported for the Fabric (Preview) trial](../admin/region-availability.md). If your home region doesn't have Fabric enabled, don't use the Account manager to start a trial. To start a trial in a region that is not your home region, follow the steps in [Other ways to start a Fabric (Preview) trial](#other-ways-to-start-a-microsoft-fabric-preview-trial). If you've already started a trial from Account manager, cancel that trial and follow the steps in [Other ways to start a Fabric (Preview) trial](#other-ways-to-start-a-microsoft-fabric-preview-trial) instead.  
 
 **Can I move my tenant to another region?**
 
@@ -138,11 +139,11 @@ You can't move your organization's tenant between regions by yourself. If you ne
 
 **What happens at the end of the Fabric (Preview) trial?**
 
-If you don't upgrade to a paid Fabric capacity at the end of the trial period, non-Power BI Fabric items will be removed according to the [retention policy upon removal](../admin/portal-workspaces.md#workspace-states).
+If you don't upgrade to a paid Fabric capacity at the end of the trial period, non-Power BI Fabric items are removed according to the [retention policy upon removal](../admin/portal-workspaces.md#workspace-states).
 
 **How is the Fabric (Preview) trial different from an individual trial of Power BI paid?**
 
-A per-user trial of Power BI paid allows access to the Fabric landing page. Once you sign up for the Fabric (Preview) trial, you can use the trial capacity for storing Fabric workspaces and items and for running Fabric experiences. All rules guiding [Power BI licenses](/power-bi/fundamentals/service-features-license-type.md) and what you can do in the Power BI experience remain the same. The key difference is that a Fabric capacity is required to access non-Power BI experiences and items.
+A per-user trial of Power BI paid allows access to the Fabric landing page. Once you sign up for the Fabric (Preview) trial, you can use the trial capacity for storing Fabric workspaces and items and for running Fabric experiences. All rules guiding [Power BI licenses](/power-bi/fundamentals/service-features-license-type) and what you can do in the Power BI experience remain the same. The key difference is that a Fabric capacity is required to access non-Power BI experiences and items.
 
 **Private links and private access**
 

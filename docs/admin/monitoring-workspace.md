@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 05/29/2023
 ---
 
 # What is the admin monitoring workspace?
@@ -18,7 +18,9 @@ The *Admin monitoring* workspace is designed to provide admins with monitoring c
 
 To use the admin monitoring workspace, you need:
 
-* To be an admin with the *Power BI admin* role
+* To be an admin with one of these roles.
+    * Microsoft 365 *Global administrator*
+    * *Power BI administrator*
 
 * A *Pro* license
 
@@ -50,10 +52,14 @@ There are several ways you can manage access to content of the admin monitoring 
 
 * **Dataset** - You can [share access to a dataset](/power-bi/connect-data/service-datasets-share) with other users. Once a dataset is shared, you can't unshare it.
 
+### Refreshes
+
+The admin monitoring workspace is created when an admin accesses it for the first time. Only the admin that created the workspace can refresh its reports and datasets using a scheduled refresh. To schedule a refresh, the admin that created the workspace must retain the Microsoft 365 *Global administrator* or *Power BI administrator* role.
+
 ## Considerations and limitations
 
 * Sovereign clouds are not supported.
-
+ 
 ## Next steps
 
 * [Admin overview](microsoft-fabric-admin.md)

@@ -37,7 +37,7 @@ To get data from a blob, see [Get data from a blob](get-data-blob.md).
 1. In **Source type**, select Blob container.
 1. In **Link to source** field, add a blob URL with an Account Key/SAS URI.
 
-    To add a blob URI, you need to generate an Account Key/ SAS token with both List and Read permissions. To generate an Account Key/SAS token, see [Generate a SAS token](/azure/data-explorer/generate-sas-token?context=/fabric/context/context&pivots=fabric).
+    To add a blob URI, you need to generate an Account Key/ SAS token with both List and Read permissions. To generate an Account Key/SAS token, see [Generate a SAS token](/azure/data-explorer/kusto/api/connection-strings/generate-sas-token?context=/fabric/context/context&pivots=fabric).
 
     :::image type="content" source="media/get-data-blob-container/ingest-new-data-blob-container.png" alt-text="Screenshot of data ingestion pane for blob containers."  lightbox="media/get-data-blob-container/ingest-new-data-blob-container.png":::
 

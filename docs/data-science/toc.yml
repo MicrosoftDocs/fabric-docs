@@ -39,7 +39,7 @@ items:
   items:
   - name: How to use end-to-end AI samples
     href: use-ai-samples.md
-  - name: Train a retail recommendation model
+  - name: Retail recommendation
     href: retail-recommend-model.md
   - name: Fraud detection
     href: fraud-detection.md
@@ -47,7 +47,7 @@ items:
     href: time-series-forecasting.md
   - name: Text classification
     href: title-genre-classification.md
-  - name: Healthcare causal impact of treatments
+  - name: Uplift modeling
     href: uplift-modeling.md
 - name: Governance
   items:
@@ -183,6 +183,8 @@ items:
     items:
     - name: Your first model
       href: synapseml-first-model.md
+    - name: Install another version of SynapseML
+      href: install-synapseml.md
   - name: How-to guides
     items:
     - name: Use LightGBM with SynapseML
