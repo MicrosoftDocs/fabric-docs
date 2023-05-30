@@ -167,4 +167,5 @@ If you're having trouble with these actions, make sure you understand the [limit
 ## Next steps
 
 - [Understand the git integration process](./git-integration-process.md)
+- [Manage git branches](./manage-branches.md)
 - [Git integration best practices](../best-practices-cicd.md)

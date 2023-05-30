@@ -4,7 +4,7 @@ description: Understand how Microsoft Fabric interacts with git on Azure Repos
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual 
-ms.date: 05/23/2023
+ms.date: 05/30/2023
 ms.custom: build-2023
 ---
 
@@ -151,4 +151,5 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 
 ## Next steps
 
-[Get started with git integration](./git-get-started.md)
+- [Manage branches](./manage-branches.md)
+- [Resolve errors and conflicts](./conflict-resolution.md)
