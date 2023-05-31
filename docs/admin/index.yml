@@ -35,7 +35,7 @@ landingContent:
             url: admin-center.md
       - linkListType: how-to-guide
         links:            
-          - text: Understand Microsoft Fabric roles
+          - text: Understand Microsoft Fabric admin roles
             url: roles.md
 
   - title: Tools and settings
