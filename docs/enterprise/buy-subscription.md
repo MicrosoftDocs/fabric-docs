@@ -44,8 +44,9 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 ## Microsoft 365 SKUs
 
-Microsoft 365 SKUs, also known as EM or P SKUs, are legacy SKUs inherited from Power BI. You can only renew a Microsoft 365 SKU if you already have a Power BI subscription, and Microsoft Fabric is [enabled](../admin/fabric-switch.md) on top of your Power BI subscription.
+Microsoft 365 SKUs, also known as P SKUs, are Power BI SKUs that also support Fabric when it is [enabled](../admin/fabric-switch.md) on top of your Power BI subscription. EM SKUs do not support Microsoft Fabric.
 
 ## Next steps
 
 [Microsoft Fabric licenses](licenses.md)
+
