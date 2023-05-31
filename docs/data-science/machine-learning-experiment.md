@@ -5,15 +5,16 @@ ms.reviewer: mopeakande
 ms.author: midesa
 author: midesa
 ms.topic: conceptual
-ms.date: 03/13/2023
+ms.custom: build-2023
+ms.date: 05/23/2023
 ms.search.form: Create New Experiment, Run Comparison
 ---
 
 # Machine learning experiments in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 A machine learning *experiment* is the primary unit of organization and control for all related machine learning runs. A *run* corresponds to a single execution of model code. In [MLflow](https://mlflow.org/), tracking is based on experiments and runs.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Machine learning experiments allow data scientists to log parameters, code versions, metrics, and output files when running their machine learning code. Experiments also let you visualize, search for, and compare runs, as well as download run files and metadata for analysis in other tools.
 

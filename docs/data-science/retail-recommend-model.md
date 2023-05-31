@@ -5,24 +5,31 @@ ms.reviewer: lagayhar
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
-ms.date: 02/10/2023
+ms.custom: build-2023
+ms.date: 05/23/2023
 ---
 
 # Creating, evaluating, and deploying a recommendation system in Microsoft Fabric
 
+In this article, we'll demonstrate data engineering and data science workflow with an e2e sample. The scenario is to build a recommender for online book recommendation.
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this notebook, we'll demonstrate data engineering and data science workflow with an e2e sample. The scenario is to build a recommender for online book recommendation.
-
-There are different types of recommendation algorithms, we'll use a model based collaborative filtering algorithm named Alternating Least Squares (ALS) matrix factorization in this notebook.
+There are different types of recommendation algorithms, we'll use a model based collaborative filtering algorithm named Alternating Least Squares (ALS) matrix factorization.
 
 :::image type="content" source="media/retail-recommend-model/recommenders-matrix-factorisation.png" alt-text="Chart showing different types of recommendation algorithms." lightbox="media/retail-recommend-model/recommenders-matrix-factorisation.png":::
 
-ALS attempts to estimate the ratings matrix R as the product of two lower-rank matrices, X and Y, i.e. X * Yt = R. Typically these approximations are called 'factor' matrices.
+ALS attempts to estimate the ratings matrix R as the product of two lower-rank matrices, X and Y, X * Yt = R. Typically these approximations are called 'factor' matrices.
 
 The general approach is iterative. During each iteration, one of the factor matrices is held constant, while the other is solved for using least squares. The newly solved factor matrix is then held constant while solving for the other factor matrix.
 
 :::image type="content" source="media/retail-recommend-model/factor-matrices.png" alt-text="Screenshot of two side by side factor matrices." lightbox="media/retail-recommend-model/factor-matrices.png":::
+
+## Prerequisites
+
+- An Azure subscription - [Create one for free](https://azure.microsoft.com/free/)
+- Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) if you want to copy/paste code into cells.
+- [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks). Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
 ## Step 1: Load the data
 
@@ -225,7 +232,7 @@ df_all_columns = [
     c for c in df_all.columns if c not in ["_user_id", "_item_id", RATING_COL]
 ]
 
-# with this step, we can reorder the columns to make sure _user_id, _item_id and RATING_COL are the first three columns
+# With this step, we can reorder the columns to make sure _user_id, _item_id and RATING_COL are the first three columns
 df_all = (
     df_all.select(["_user_id", "_item_id", RATING_COL] + df_all_columns)
     .withColumn("id", F.monotonically_increasing_id())
@@ -290,8 +297,8 @@ So far, we've explored the dataset, added unique IDs to our users and items, and
 
 ```python
 if IS_SAMPLE:
-    # need to sort by '_user_id' before limit, so as to make sure ALS work normally.
-    # if train and test dataset have no common _user_id, ALS will fail
+    # Need to sort by '_user_id' before limit, so as to make sure ALS work normally.
+    # If train and test dataset have no common _user_id, ALS will fail
     df_all = df_all.sort("_user_id").limit(SAMPLE_ROWS)
 
 # cast column into the correct types
@@ -310,7 +317,7 @@ for i in ratings:
     fractions_test[i] = 1
 train = df_all.sampleBy(RATING_COL, fractions=fractions_train)
 
-# join with leftanti means not in, thus below step will select all rows from df_all
+# Join with leftanti means not in, thus below step will select all rows from df_all
 # with rating > 0 and not in train dataset, i.e., the left 20% of the dataset as test dataset.
 test = df_all.join(train, on="id", how="leftanti").sampleBy(
     RATING_COL, fractions=fractions_test
@@ -318,7 +325,7 @@ test = df_all.join(train, on="id", how="leftanti").sampleBy(
 ```
 
 ```python
-# compute the sparsity of the dataset
+# Compute the sparsity of the dataset
 def get_mat_sparsity(ratings):
     # Count the total number of ratings in the dataset
     count_nonzero = ratings.select(RATING_COL).count()
@@ -339,7 +346,7 @@ get_mat_sparsity(df_all)
 ```
 
 ```python
-# check the id range
+# Check the ID range
 # ALS only supports values in Integer range
 print(f"max user_id: {df_all.agg({'_user_id': 'max'}).collect()[0][0]}")
 print(f"max user_id: {df_all.agg({'_item_id': 'max'}).collect()[0][0]}")
@@ -439,10 +446,10 @@ print("** Best Model **")
 for k in best_params:
     print(f"{k.name}: {best_params[k]}")
 
-# collect metrics
+# Collect metrics
 param_strings = []
 for param_map in param_maps:
-    # use split to remove the prefix 'ALS__' in param name
+    # Use split to remove the prefix 'ALS__' in param name
     param_strings.append(
         " ".join(f"{str(k).split('_')[-1]}={v}" for (k, v) in param_map.items())
     )
@@ -479,12 +486,12 @@ def evaluate(model, data):
         "prediction", F.col("prediction").cast("double")
     )
 
-    # show 10 predictions
+    # Show 10 predictions
     predictions.select("_user_id", "_item_id", RATING_COL, "prediction").limit(
         10
     ).show()
 
-    # initialize the regression evaluator
+    # Initialize the regression evaluator
     evaluator = RegressionEvaluator(predictionCol="prediction", labelCol=RATING_COL)
 
     _evaluator = lambda metric: evaluator.setMetricName(metric).evaluate(predictions)
@@ -520,14 +527,14 @@ _, (rmse, mae, r2, var) = evaluate(model, test)
 Now we get a good model, we can save it for later use. Here we use MLflow to log metrics/models, and load models back for prediction.
 
 ```python
-# setup mlflow
+# Setup mlflow
 import mlflow
 
 mlflow.set_experiment(EXPERIMENT_NAME)
 ```
 
 ```python
-# log model, metrics and params
+# Log model, metrics and params
 with mlflow.start_run() as run:
     print("log model:")
     mlflow.spark.log_model(
@@ -557,7 +564,7 @@ with mlflow.start_run() as run:
 ```
 
 ```python
-# load model back
+# Load model back
 # mlflow will use PipelineModel to wrapper the original model, thus here we extract the original ALSModel from the stages.
 loaded_model = mlflow.spark.load_model(model_uri, dfs_tmpdir="Files/spark").stages[-1]
 ```
@@ -566,11 +573,9 @@ loaded_model = mlflow.spark.load_model(model_uri, dfs_tmpdir="Files/spark").stag
 
 ### Model deploy and prediction
 
-#### Offline recommendation
+Offline recommendation: Recommend 10 items for each user.
 
-Recommend 10 items for each user.
-
-##### Save offline recommendation results
+Save offline recommendation results:
 
 ```python
 # Generate top 10 product recommendations for each user
@@ -578,7 +583,7 @@ userRecs = loaded_model.recommendForAllUsers(10)
 ```
 
 ```python
-# convert recommendations into interpretable format
+# Convert recommendations into interpretable format
 userRecs = (
     userRecs.withColumn("rec_exp", F.explode("recommendations"))
     .select("_user_id", F.col("rec_exp._item_id"), F.col("rec_exp.rating"))
@@ -588,7 +593,7 @@ userRecs.limit(10).show()
 ```
 
 ```python
-# code for saving userRecs into lakehouse
+# Code for saving userRecs into lakehouse
 userRecs.write.format("delta").mode("overwrite").save(
     f"{DATA_FOLDER}/predictions/userRecs"
 )
@@ -597,3 +602,10 @@ userRecs.write.format("delta").mode("overwrite").save(
 ```python
 print(f"Full run cost {int(time.time() - ts)} seconds.")
 ```
+
+## Next steps
+
+- [Training and evaluating a text classification model](title-genre-classification.md)
+- [Machine learning model in Microsoft Fabric](machine-learning-model.md)
+- [Train machine learning models](model-training/model-training-overview.md)
+- [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)

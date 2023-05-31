@@ -1,39 +1,39 @@
 ---
-title: Create your first [!INCLUDE [product-name](../includes/product-name.md)] dataflow​ 
+title: Create your first Microsoft Fabric dataflow
 description: Steps for creating dataflows and transforming data.
 ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: quickstart 
-ms.date: 01/27/2023
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.date: 05/23/2023
+ms.search.form: DataflowGen2 Tutorials
 ---
 
-# Create your first dataflow to get and transform data
-
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+# Quickstart: Create your first dataflow to get and transform data
 
 Dataflows are a self-service, cloud-based, data preparation technology. In this article, you'll create your first dataflow, get data for your dataflow, then transform the data and publish the dataflow.
 
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+The following prerequisites are required before you start:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. Create an account for free.
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a Project Trident enabled Workspace.pdf (sharepoint.com)](../placeholder.md).
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 
 ## Create a dataflow
 
 In this section, you'll be creating your first dataflow.
 
-1. Switch to the **Data factory** or **Power BI** workload.
+1. Switch to the **Data factory** or **Power BI** experience.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory workload emphasized.":::
+   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
 
 2. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
+   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace." lightbox="media/create-first-dataflow-gen2/navigate-to-workspace.png":::
 
 3. Select **New**, and then select **Dataflow Gen2**.
 
@@ -47,11 +47,11 @@ Let's get some data! In this example, you'll be getting data from an OData servi
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-more.png" alt-text="Screenshot with the Get Data option selected and More emphasized in the drop-down box.":::
 
-2. Select **OData** as data source.
+2. Select **OData** as the data source.
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-odata-source.png" alt-text="Screenshot of Get data source with the OData connector emphasized." lightbox="media/create-first-dataflow-gen2/select-odata-source.png":::
 
-3. Enter the URL [https://services.odata.org/v2/northwind/northwind.svc/](https://services.odata.org/v2/northwind/northwind.svc/), and then select **Next**.
+3. Enter the URL `https://services.odata.org/v4/northwind/northwind.svc/`, and then select **Next**.
 
    :::image type="content" source="media/create-first-dataflow-gen2/enter-odata-url.png" alt-text="Screenshot of the OData data source where you enter the data URL.":::
 
@@ -63,7 +63,7 @@ You can learn more about the get data experience and functionality at [Getting d
 
 ## Apply transformations and publish
 
-You've now loaded your data into your first dataflow, congratulations! Now it's time to apply a couple of transformations in order to bring this data into the desired shape.
+You have now loaded your data into your first dataflow, congratulations! Now it's time to apply a couple of transformations in order to bring this data into the desired shape.
 
 You'll be doing this task from the Power Query editor. You can find a detailed overview of the Power Query editor at [The Power Query user interface](/power-query/power-query-ui).
 
@@ -113,7 +113,7 @@ Follow these steps to apply transformations and publish:
 
 10. The **Orders (2)** column contains nested information resulting from the merge operation you performed a few steps ago. Now, switch back to the data view by selecting the **Show data view** button next to the **Show schema view** button in the bottom-right corner of the UI. Then use the **Expand Column** transformation in the **Orders (2)** column header to select the **Count** column.
 
-    :::image type="complex" source="media/create-first-dataflow-gen2/select-count-column.png" alt-text="Screenshot for using data view.":::
+    :::image type="complex" source="media/create-first-dataflow-gen2/select-count-column.png" alt-text="Screenshot for using data view." lightbox="media/create-first-dataflow-gen2/select-count-column.png":::
     Screenshot of the dataflows editor with the Show data view button in the bottom-right corner, the expand column icon in the Orders (2) column, and the Count column selected in the expand column window.
     :::image-end:::
 
@@ -133,7 +133,7 @@ Follow these steps to apply transformations and publish:
 
     :::image type="content" source="media/create-first-dataflow-gen2/choose-data-destination.png" alt-text="Screenshot of the dataflows editor with the location of the Data destination selection emphasized." lightbox="media/create-first-dataflow-gen2/choose-data-destination.png":::
 
-15. At the moment, Azure SQL database is available as an output destination. We'll be expanding the list of available destinations over the next few months. For this step, you can configure an output to your Azure SQL database if you have one available, or skip this step if you don't. Within this experience, you're able to configure the destination server, database, and table for your query results, in addition to the update method (Append or Replace).
+15. For this step, you can configure an output to your Azure SQL database if you have one available, or skip this step if you don't. Within this experience, you're able to configure the destination server, database, and table for your query results, in addition to the update method (Append or Replace).
 
     :::image type="content" source="media/create-first-dataflow-gen2/configure-output.png" alt-text="Screenshot of the Connect to data destination window with Azure SQL database selected." lightbox="media/create-first-dataflow-gen2/configure-output.png":::
 
@@ -142,6 +142,8 @@ Follow these steps to apply transformations and publish:
 16. Your dataflow is now ready to be published. Review the queries in the diagram view, and then select **Publish**.
 
     :::image type="content" source="media/create-first-dataflow-gen2/publish-dataflow.png" alt-text="Screenshot of the dataflows editor with the Publish button on the lower-right side emphasized." lightbox="media/create-first-dataflow-gen2/publish-dataflow.png":::
+
+    You'll now be returned to the workspace. A spinner icon next to your dataflow name indicates publishing is in progress. Once the publishing completes, your dataflow is ready to refresh!
 
 17. In your workspace, select the **Schedule Refresh** icon.
 
@@ -171,4 +173,15 @@ If you're not going to continue to use this dataflow, delete the dataflow using 
 
 ## Next steps
 
-Advance to the next article to learn how to create your first data pipeline: [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md).
+The dataflow in this sample shows you how to load and transform data in Dataflow Gen2.  You learned how to:
+
+> [!div class="checklist"]
+> - Create a Dataflow Gen2.
+> - Transform data.
+> - Configure destination settings for transformed data.
+> - Run and schedule your data pipeline.
+
+Advance to the next article to learn how to create your first data pipeline.
+
+> [!div class="nextstepaction"]
+> [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md).

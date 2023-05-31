@@ -4,17 +4,15 @@ description: This article provides information about how to create an Azure Cosm
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 3/31/2023
-ms.custom: template-how-to
+ms.date: 05/23/2023
+ms.custom: template-how-to, build-2023
 ---
 
 # How to create an Azure Cosmos DB for NoSQL connection
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
 This article outlines the steps to create an Azure Cosmos DB for NoSQL connection.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -22,18 +20,15 @@ The Azure Cosmos DB for NoSQL connector supports the following authentication ty
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Key| √| |
-
->[!Note]
->For information about the Azure Cosmos DB for NoSQL connection in Dataflow Gen2, go to [Connect to Azure Cosmos DB for NoSQL in dataflows](connector-azure-cosmosdb-for-nosql-dataflows.md).
+|Account key| √| n/a|
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+The following prerequisites are required before you start:
 
-- A tenant account with an active subscription. [Create an account for free](https://github.com/microsoft/trident-docs-private-preview/blob/main/docs/placeholder-update-later.md).
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 
-- A workspace is created and isn't the default My Workspace.
+- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
 
 ## Go to manage gateways to create connection
 
@@ -88,26 +83,26 @@ Select **Create**. Your creation will be successfully tested and saved if all th
 
 ## Table summary
 
-The connector properties in the following table are supported in pipeline copy and Dataflow Gen2:
+The connector properties in the following table are supported in pipeline copy:
 
-|Name|Description|Required|Property|Copy/Dataflow Gen2|
+|Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
-|**Connection name**|A name for your connection.|Yes||✓/|
-|**Connection type**|Select **Azure CosmosDB (Data pipeline)** for your connection type.|Yes||✓/|
-|**Account Endpoint**|Enter your Azure Cosmos DB for NoSQL account endpoint URL.|Yes||✓/|
-|**Database**|Enter the Azure Cosmos DB for NoSQL database ID.|Yes||✓/|
+|**Connection name**|A name for your connection.|Yes||✓|
+|**Connection type**|Select **Azure CosmosDB (Data pipeline)** for your connection type.|Yes||✓|
+|**Account Endpoint**|Enter your Azure Cosmos DB for NoSQL account endpoint URL.|Yes||✓|
+|**Database**|Enter the Azure Cosmos DB for NoSQL database ID.|Yes||✓|
 |**Authentication**|Go to [Authentication](#authentication). |Yes|Go to [Authentication](#authentication).|Go to [Authentication](#authentication).|
-|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, and **Public**.|Yes||✓/|
+|**Privacy Level**|The privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, and **Public**.|Yes||✓|
 
 ### Authentication
 
 The properties in the following table are the supported authentication types.
 
-|Name|Description|Required|Property|Copy/Dataflow Gen2|
+|Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
-|**Key**||||✓/|
+|**Key**||||✓|
 |- Account key|The  Azure Cosmos DB for NoSQL account key.|Yes |||
 
 ## Next steps
 
-- [How to create an Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md)
+- [How to configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md)

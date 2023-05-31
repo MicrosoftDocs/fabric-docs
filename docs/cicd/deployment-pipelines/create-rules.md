@@ -4,16 +4,16 @@ description: Learn how to create rules to simplify deploying content with Fabric
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
-ms.custom: contperf-fy21q1
-ms.date: 12/31/2022
+ms.custom: contperf-fy21q1, build-2023
+ms.date: 05/23/2023
 ms.search.form: Deployment rules
 ---
 
 # Create deployment rules
 
 When you're working in a deployment pipeline, different stages may have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
+
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, if you want a dataset in a production stage to point to a production database instead of one in the test stage, you can define a rule for this. The rule is defined in the production stage, under the appropriate dataset. Once the rule is defined, content deployed from test to production, will inherit the value as defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
 
@@ -89,7 +89,7 @@ Data source rules can be defined for the following data sources:
 
 * Teradata
 
-For other data sources, we recommend [using parameters to configure your data source](../best-practices-cicd.md#use-parameters-in-your-model).
+For other data sources, we recommend [using parameters to configure your data source](../best-practices-cicd.md#use-parameters-for-configurations-that-will-change-between-stages).
 
 ## Considerations and limitations
 
@@ -101,7 +101,7 @@ This section lists the limitations for the deployment rules.
 
 * When an item is removed or deleted, its rules are deleted too. These rules can't be restored.
 
-* When you unassign and reassign a workspace to [reestablish connections](../troubleshoot-cicd.yml#how-do-i-reestablish-connections-after-deployment-), rules for that workspace are lost. To use these rules again, reconfigure them.
+* When you unassign and reassign a workspace to [reestablish connections](../troubleshoot-cicd.md#lost-connections-after-deployment), rules for that workspace are lost. To use these rules again, reconfigure them.
 
 * Rules for dataflows that have other dataflows as sources, aren't supported.
 
@@ -111,7 +111,7 @@ This section lists the limitations for the deployment rules.
 
 * If the data source or parameter defined in a rule is changed or removed from the item it points to in the source stage, the rule won't be valid anymore, and deployment will fail.
 
-* After you deploy a paginated report with a data source rule, you can't open the report using [Power BI Report Builder](/power-bi/paginated-reports/report-builder-power-bi.md).
+* After you deploy a paginated report with a data source rule, you can't open the report using [Power BI Report Builder](/power-bi/paginated-reports/report-builder-power-bi).
 
 * Deployment rules only take effect the next time you deploy to that stage. However, if you create rules and then compare the stages before you deploy, the comparison is done based on the rules that were created even though they haven't taken effect yet.
 

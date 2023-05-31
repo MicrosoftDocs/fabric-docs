@@ -5,15 +5,16 @@ ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
 ms.topic: overview
-ms.date: 02/24/2023
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.date: 05/23/2023
 ms.search.form: spark_job_definition
 ---
 
 # Microsoft Fabric Apache Spark monitoring overview
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [!INCLUDE [product-name](../includes/product-name.md)] Spark monitoring is designed to offer a web-UI based experience with built-in rich capabilities for monitoring the progress and status of Spark applications in progress, browsing past Spark activities, analyzing and optimizing performance, and facilitating troubleshooting of failures. Multiple entry points are available for browsing, monitoring, and viewing Spark application details.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Monitoring hub
 
@@ -37,7 +38,7 @@ For Pipeline Spark Activity Inline Monitoring, deep links have been built into t
 
 ## Next steps
 
-- [Workspace item recent runs](spark-artifact-recent-runs.md)
+- [Workspace item recent runs](spark-item-recent-runs.md)
 - [Notebook contextual monitoring and debugging](spark-monitor-debug.md)
 - [Run an Apache Spark job definition](run-spark-job-definition.md)
 - [Apache Spark application detail monitoring](spark-detail-monitoring.md)

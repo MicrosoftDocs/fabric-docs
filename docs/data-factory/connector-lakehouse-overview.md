@@ -4,17 +4,15 @@ description: This article explains the overview of using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/14/2023
-ms.custom: template-how-to 
+ms.date: 05/23/2023
+ms.custom: template-how-to, build-2023
 ---
 
 # Lakehouse connector overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+The Lakehouse connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-This Lakehouse connector is supported in Trident Project - Data Factory with the following capabilities.
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported capabilities
 
@@ -22,8 +20,8 @@ This Lakehouse connector is supported in Trident Project - Data Factory with the
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | User Auth |
 | **Delete activity** | None | User Auth |
-| **Dataflow Gen2 (source/destination)** |  | Placeholder |
 
 ## Next steps
 
-[How to configure Lakehouse in copy activity](connector-lakehouse-copy-activity.md)
+- [How to configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md)
+- [Connect to a Lakehouse data lake in dataflows](connector-lakehouse-dataflows.md)
