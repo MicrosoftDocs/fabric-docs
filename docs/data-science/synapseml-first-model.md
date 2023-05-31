@@ -4,7 +4,7 @@ description: A quick introduction to building your first machine learning model 
 ms.topic: overview
 ms.custom: build-2023
 ms.reviewer: jessiwang
-author: jessiwang
+author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023
 ---

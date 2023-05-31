@@ -2,8 +2,8 @@
 title: Data science tutorial - perform batch scoring and save predictions
 description: In this fifth module, learn how to import a trained and registered model and perform batch predictions on a test dataset.
 ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 5/4/2023

@@ -4,7 +4,7 @@ description: Use Kernel SHAP to explain a tabular classification model.
 ms.topic: overview
 ms.custom: build-2023
 ms.reviewer: jessiwang
-author: jessiwang
+author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023
 ---
