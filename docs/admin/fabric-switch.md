@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 05/31/2023
 ---
 
 # Enable Microsoft Fabric for your organization
