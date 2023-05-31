@@ -2,8 +2,8 @@
 title: Data science tutorial - train and register machine learning models
 description: In this fourth module, learn how to train machine learning models to predict the total ride duration of taxi trips, and then register the trained models.
 ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 5/4/2023
