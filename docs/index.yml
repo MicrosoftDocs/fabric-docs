@@ -36,7 +36,7 @@ highlightedContent:
       itemType: tutorial
       url: get-started/end-to-end-tutorials.md
     # Card
-    - title: What is the Microsoft Fabric preview?
+    - title: Microsoft Fabric preview information
       itemType: concept
       url: get-started/preview.md      
 

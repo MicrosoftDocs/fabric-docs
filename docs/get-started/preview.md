@@ -1,5 +1,5 @@
 ---
-title: What is the Microsoft Fabric preview?
+title: Microsoft Fabric preview information
 description: This article explains what public preview mean in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
@@ -7,7 +7,7 @@ ms.topic: concept
 ms.date: 05/29/2023
 ---
 
-# What is Microsoft Fabric preview?
+# Microsoft Fabric preview information
 
 Microsoft Fabric is a prerelease product that is currently in public preview and may be substantially modified before it's released. Preview products and features aren't complete but are made available on a preview basis so that customers can get early access and provide feedback.
 
@@ -15,11 +15,9 @@ This article describes the Microsoft Fabric preview state, and provides disclaim
 
 ## Supplemental Terms of Use
 
-Preview features are subject to separate Supplemental Terms of Use. You can review these disclaimers here: 
+Previews are provided “as-is,” “with all faults,” and “as available,” and are excluded from the service level agreements and limited warranty. Previews may not be covered by customer support. We may change or discontinue Previews at any time without notice. We also may choose not to release a Preview into “General Availability”.
 
-* [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
-
-* [Supplemental Terms of Use for Microsoft Power Platform and Dynamics 365 preview for online services](https://dynamics.microsoft.com/en-us/legaldocs/supp-dynamics365-preview/)
+Previews may be subject to reduced or different security, compliance and privacy commitments, as further explained in the [Microsoft Privacy Statement](https://go.microsoft.com/fwlink/?LinkId=521839), [Microsoft Trust Center](https://go.microsoft.com/fwlink/?linkid=2179910), the [Product Terms](https://go.microsoft.com/fwlink/?linkid=2173816), the [Microsoft Products and Services Data Protection Addendum (“DPA”)](https://go.microsoft.com/fwlink/?linkid=2153219), and any additional notices provided with the Preview. 
 
 ## Functionality
 
