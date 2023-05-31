@@ -60,7 +60,7 @@ Follow these steps to enable Microsoft Fabric for your tenant.
 2. Uncheck the **Accept Microsoft's default selection (Off for the entire organization)** checkbox. You only need to uncheck the Microsoft's default selection when you enable the Microsoft Fabric setting for the first time.
 
     >[!NOTE]
-    >The *Delegate settings to other admins* option, isn't operational.
+    >The *Delegate settings to other admins* option, isn't available.
 
    :::image type="content" source="media/fabric-switch/fabric-switch-accept.png" alt-text="Screenshot of the Microsoft Fabric tenant setting with the accept Microsoft's default selection checkbox unchecked.":::
 
