@@ -78,6 +78,10 @@ With Dataflow Gen2, we introduce a worry free experience by removing the need fo
 
 Similar to Dataflow Gen1, Dataflow Gen2 also features an enhanced compute engine to improve performance of both transformations of referenced queries and get data scenarios. To achieve this, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace, and uses them to store and access data to improve performance for all your dataflows.
 
+## Licensing Dataflows Gen1 vs Gen2 
+
+Dataflows Gen1 works with Power BI Pro/PPU/Premium licenses while Dataflows Gen2 only works with a Fabric capacity (trail) as it requires support from other artifacts like Lakehouse and Warehouse. Dataflow Gen2 is the new generation of dataflows that resides alongside the Power BI Dataflow (Gen1) and brings new features and improved experiences. Dataflows are supported for Power BI Pro, Premium Per User (PPU), and Power BI Premium users. [Some features](.../power-bi/transform-model/dataflows/dataflows-premium-features) are only available with a Power BI Premium subscription (which is either a Premium capacity or PPU license).
+
 ## Try out Dataflow Gen2 by reusing your queries from Dataflow Gen1
 
 You probably have many Dataflow Gen1 queries and you're wondering how you can try them out in Dataflow Gen2. We have a few options for you to recreate your Gen1 dataflows as Dataflow Gen2.
