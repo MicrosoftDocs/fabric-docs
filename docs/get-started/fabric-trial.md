@@ -89,7 +89,7 @@ You may cancel your trial from the Account manager. When you cancel your free Fa
 
 -   create analytics solutions using these Fabric items.
 
-Additionally, if you cancel your trial, you may not be able to start another trial. If you want to retain your data and continue to use Microsoft Fabric (Preview), you can [purchase a capacity](../enterprise/buy-subsription.md) and migrate your workspaces to that capacity. To learn more about workspaces and license mode settings, see [Workspaces](workspaces.md).
+Additionally, if you cancel your trial, you may not be able to start another trial. If you want to retain your data and continue to use Microsoft Fabric (Preview), you can [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. To learn more about workspaces and license mode settings, see [Workspaces](workspaces.md).
 
 ## Administer user access to a Fabric (Preview) trial
 
