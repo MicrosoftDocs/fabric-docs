@@ -52,7 +52,7 @@ You can manage all the previously mentioned types of libraries via two different
 > [!IMPORTANT]
 > We currently have limitations of *.jar* library.
 >
-> - If you upload a *.jar* file with different version of built-in library, it will not be effective on the Starter pool, since all *.jar* files are pre-imported in the Starter pool. Only the new *.jar* will be effective on the Starter pools. The custom spark pools has no such constraints, the custom *.jar* files uploaded with different version will override the built-in ones, and the new ones are also effective.
+> - If you upload a *.jar* file with different version of built-in library, it will not be effective. Only the new *.jar* will be effective for your Spark sessions.
 > - *%% configure* magic commands are not fully supported on Fabric at this moment. Please don't use it to bring *.jar* file to your notebook session.
 
 ## Library management in workspace setting
