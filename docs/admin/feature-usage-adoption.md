@@ -100,6 +100,8 @@ This section lists the report's considerations and limitations.
 
 * During business continuity and disaster recovery, the *Audit* table may have data quality issues.
 
+* The report retains information for 30 days.
+
 ### Counting logic
 
 * All *MyWorkspaces* are counted as different records as part of the *Active Workspaces* total.

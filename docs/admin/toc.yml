@@ -1,5 +1,5 @@
 items:
-- name: Microsoft Fabric administration?
+- name: Microsoft Fabric administration
   href: index.yml
 - name: Overview
   items:
@@ -13,7 +13,7 @@ items:
     href: region-availability.md
   - name: Find your Fabric home region
     href: find-fabric-home-region.md
-  - name: Understand Microsoft Fabric roles
+  - name: Understand Microsoft Fabric admin roles
     href: roles.md
   - name: What is the admin portal?
     href: admin-center.md         
