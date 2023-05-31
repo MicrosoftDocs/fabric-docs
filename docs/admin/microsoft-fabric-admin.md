@@ -93,4 +93,4 @@ Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/powe
 
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
 
-* [Understand Microsoft Fabric roles](roles.md)
+* [Understand Microsoft Fabric admin roles](roles.md)
