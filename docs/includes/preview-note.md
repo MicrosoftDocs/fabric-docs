@@ -8,4 +8,4 @@ ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 > [!IMPORTANT]
-> Microsoft Fabric is in [preview](../get-started/preview.md)
+> Microsoft Fabric is in [preview](../get-started/preview.md).
