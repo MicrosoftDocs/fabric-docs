@@ -7,8 +7,7 @@ brand: fabric
 metadata:
   title: Microsoft Fabric documentation
   description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
-  ms.service: powerbi
-  ms.subservice: powerbi-service
+  ms.service: fabric
   ms.topic: hub-page
   ms.collection: collection
   author: SnehaGunda
@@ -175,7 +174,7 @@ productDirectory:
           text: Buy a Microsoft Fabric subscription     
         - url: admin/microsoft-fabric-admin.md
           text: Fabric administration
-        - url: governance/metadata-scanning-overview.md
+        - url: governance/governance-compliance-overview.md
           text: Data governance and compliance
         - url: security/security-overview.md
           text: Security
@@ -215,15 +214,15 @@ productDirectory:
 
       imageSrc: ./media/education-icon.svg
       links:
-        - url: /training/modules/introduction-end-analytics-using-microsoft-fabric/
+        - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
           text: End-to-end analytics using Fabric
         - url: /training/modules/get-started-lakehouses/
           text: Get started with lakehouses
-        - url: /training/modules/use-spark-notebooks-pipelines-fabric/
+        - url: /training/modules/use-data-factory-pipelines-fabric/
           text: Use Data Factory pipelines
         - url: /training/modules/get-started-data-science-fabric/
           text: Get started with Data science
-        - url: /training/modules/introduction-end-analytics-using-microsoft-fabric/
+        - url: /training/paths/get-started-fabric/
           text: See more
 
 

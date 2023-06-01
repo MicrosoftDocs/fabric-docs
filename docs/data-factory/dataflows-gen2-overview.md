@@ -3,11 +3,13 @@ title: Differences between Dataflows Gen1 and Gen2
 description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory for Microsoft Fabric.
 author: luitwieler
 ms.topic: overview
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.author: jeluitwi
+ms.search.form: DataflowGen2 Overview
 ---
 
-# Differences between Dataflows Gen1 and Gen2 in Microsoft Fabric
+# Getting from Dataflow Generation 1 to Dataflow Generation 2
 
 Dataflow Gen2 is the new generation of dataflows. The new generation of dataflows resides alongside the Power BI Dataflow (Gen1) and brings new features and improved experiences. The following section provides a comparison between Dataflow Gen1 and Dataflow Gen2.
 
@@ -74,22 +76,22 @@ With Dataflow Gen2, we introduce a worry free experience by removing the need fo
 
 ### High scale compute
 
-Similar to Dataflow Gen1, Dataflow Gen2 also features an enhanced compute engine to improve performance of both transformations of referenced queries and get data scenarios. To achieve this, Dataflow Gen2 creates both Lakehouse and Warehouse artifacts in your workspace, and uses them to store and access data to improve performance for all your dataflows.
+Similar to Dataflow Gen1, Dataflow Gen2 also features an enhanced compute engine to improve performance of both transformations of referenced queries and get data scenarios. To achieve this, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace, and uses them to store and access data to improve performance for all your dataflows.
 
 ## Try out Dataflow Gen2 by reusing your queries from Dataflow Gen1
 
-You probably have many Dataflow Gen1 queries and you're wondering how you can try them out in Dataflow Gen2. We have a few options for you to recreate your Gen1 dataflows as Dataflow Gen2. The following sections provide you with an overview of all the options.
+You probably have many Dataflow Gen1 queries and you're wondering how you can try them out in Dataflow Gen2. We have a few options for you to recreate your Gen1 dataflows as Dataflow Gen2.
 
-### Copy and paste in Power Query in the browser
+- Export your Dataflow Gen1 queries and import them into Dataflow Gen2
 
-If you have a dataflow in Power BI or Power Apps, you can copy your queries and paste them in the editor of your Dataflow Gen2. This functionality allows you to migrate your dataflow to Gen2 without having to rewrite your queries.
+  You can now export queries in both the Dataflow Gen1 and Gen2 authoring experiences and save them to a PQT file you can then import into Dataflow Gen2. For more information, go to [Use the export template feature](move-dataflow-gen1-to-dataflow-gen2.md#use-the-export-template-feature).
 
-### Export your Dataflow Gen1 queries and import them into Dataflow Gen2
+- Copy and paste in Power Query
 
-You can now export queries in both the Dataflow Gen1 and Gen2 authoring experiences and save them to a PQT file you can then import into Dataflow Gen2. For more information, go to [Export and Import Power Query Templates](./dataflows-gen2-monitor.md).
+  If you have a dataflow in Power BI or Power Apps, you can copy your queries and paste them in the editor of your Dataflow Gen2. This functionality allows you to migrate your dataflow to Gen2 without having to rewrite your queries. For more information, go to [Copy and paste existing Dataflow Gen1 queries](move-dataflow-gen1-to-dataflow-gen2.md#copy-and-paste-existing-dataflow-gen1-queries).
 
 ## Next steps
 
 - [Dataflows refresh history and monitoring](dataflows-gen2-monitor.md)
 - [Dataflows save as draft](dataflows-gen2-save-draft.md)
-- [Known issues and limitations](data-factory-known-issues-limitations.md)
+- [Move queries from Dataflow Gen1 to Dataflow Gen2](move-dataflow-gen1-to-dataflow-gen2.md)

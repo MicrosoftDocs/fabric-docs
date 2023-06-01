@@ -4,8 +4,8 @@ description: This article explains how to copy data using Data Warehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to 
+ms.date: 06/01/2023
+ms.custom: template-how-to, build-2023
 ---
 
 # How to configure the Data Warehouse connector for the copy activity in Data Factory in Microsoft Fabric
@@ -101,8 +101,8 @@ If your source data is in **Azure Blob Storage** or **Azure Data Lake Storage Ge
 
     |**Supported source data store type** |**Supported format** |**Supported source authentication type**|
     |:---|:---|:---|
-    |Azure Blob Storage |Delimited text<br> Parquet|Anonymous authentication<br> Shared access signature authentication|
-    |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Shared access signature authentication |
+    |Azure Blob Storage |Delimited text<br> Parquet|Anonymous authentication<br> Account key authentication<br> Shared access signature authentication|
+    |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Account key authentication<br> Shared access signature authentication |
 
 1. The following Format settings can be set:<br>
    1. For **Parquet**: compression can be no compression, Snappy, or GZip.<br>
@@ -116,7 +116,7 @@ If your source data is in **Azure Blob Storage** or **Azure Data Lake Storage Ge
 1. If your source is a folder, `recursive` in a copy activity must be set to true.
 1. `modifiedDateTimeStart`, `modifiedDateTimeEnd`, `prefix`, `enablePartitionDiscovery`, and `additionalColumns` aren't specified.<br>
 
-If your source data store and format isn't originally supported by a COPY statement, use the Staged copy by using the COPY statement feature instead. The staged copy feature also provides you with better throughput. It automatically converts the data into a COPY statement compatible format, then calls a COPY statement to load data into Data Warehouse.
+If your source data store and format isn't originally supported by a COPY statement, use the Staged copy by using the COPY statement feature instead. It automatically converts the data into a COPY statement compatible format, then calls a COPY statement to load data into Data Warehouse.
 
 ### Mapping
 

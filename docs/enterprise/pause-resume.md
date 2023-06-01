@@ -4,7 +4,7 @@ description: Understand how to save money by using your capacity pause and resum
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.service: azure
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 

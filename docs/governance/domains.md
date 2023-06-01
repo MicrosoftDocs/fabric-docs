@@ -4,6 +4,7 @@ description: Learn about domains and how to create and manage them.
 author: paulinbar
 ms.author: painbar
 ms.topic: concept
+ms.custom: build-2023
 ms.date: 05/02/2023
 ---
 
@@ -38,7 +39,7 @@ There are three roles involved in domains:
     Domain contributors associate the workspaces they're an admin of in the settings of the workspace itself. They don’t have access to the **Domains** page in the admin portal.
     
     > [!NOTE]
-    > Remember, to be able to associate a their workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../get-started/roles-workspaces.md) in the workspace).
+    > Remember, to be able to associate a workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../get-started/roles-workspaces.md) in the workspace).
 
 ### Domain image
 

@@ -2,9 +2,10 @@
 title: Data science tutorial - prepare your system
 description: Before you begin following the Data science end-to-end scenario, learn about prerequisites, the sample dataset, and the lakehouse and notebooks you need.
 ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 5/4/2023
 ---
 
@@ -28,7 +29,7 @@ In this tutorial, we use the [NYC Taxi and Limousine yellow dataset](/azure/open
 
 ## Import tutorial notebooks
 
-We utilize the notebook artifact in the Data Science experience to demonstrate various Fabric capabilities. The notebooks are available as Jupyter notebook files that can be imported to your Fabric-enabled workspace.
+We utilize the notebook item in the Data Science experience to demonstrate various Fabric capabilities. The notebooks are available as Jupyter notebook files that can be imported to your Fabric-enabled workspace.
 
 1. Download the notebooks(.ipynb) files for this tutorial from the parent folder [Data Science Tutorial Source Code](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial).
 

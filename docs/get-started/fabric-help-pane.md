@@ -5,6 +5,7 @@ author: liudan66
 ms.author: mihart
 ms.reviewer: mihart
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/09/2023
 ---
 # Self-help with the Fabric contextual Help pane
@@ -67,4 +68,3 @@ Follow the instructions to practice using the Help pane.
 
 ## Still need help?
 If you still need help, select **Ask the community** and submit a question. If you have an idea for a new feature, let us know by selecting **Submit an idea**. To open the Support site, select **Get help** in **Other Resources**.
-

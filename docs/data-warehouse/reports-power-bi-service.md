@@ -6,6 +6,7 @@ ms.author: salilkanade
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.custom: build-2023
 ms.search.form: Reporting
 ---
 # Create reports in the Power BI service in Microsoft Fabric and Power BI Desktop
@@ -16,7 +17,7 @@ This article describes three different scenarios you can follow to create report
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Scenario one
+## Create a report from the warehouse editor
 
 From within the warehouse experience, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI dataset.
 
@@ -34,11 +35,11 @@ Using the default dataset and action menu in the workspace: In the [!INCLUDE [pr
 
 Select **Create report** to open the report editing canvas to a new report on the dataset. When you save your new report, it's saved in the workspace that contains the dataset as long as you have write permissions on that workspace. If you don't have write permissions, or if you're a free user and the dataset resides in a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace, the new report is saved in your **My workspace**.
 
-## Use Data hub 
+## Use Data hub
 
-Using the default Power BI dataset and dataset details page. In the workspace list, select the default dataset's name to get to the Dataset details page, where you can find details about the dataset and see related reports. You can also create a report directly from this page. To learn more about creating a report in this fashion, see [Dataset details](/power-bi/connect-data/service-dataset-details-page).
+Using the default Power BI dataset and dataset details page. In the workspace list, select the default dataset's name to get to the **Dataset** details page, where you can find details about the dataset and see related reports. You can also create a report directly from this page. To learn more about creating a report in this fashion, see [Dataset details](/power-bi/connect-data/service-dataset-details-page).
 
-In the **Data hub**, you see warehouse and their associated default datasets. Select the warehouse to navigate to the warehouse details page, where you can see the warehouse metadata, supported actions, lineage and impact analysis, along with related reports created from that warehouse. Default datasets derived from warehouse behave the same as any dataset.
+In the **Data hub**, you see warehouse and their associated default datasets. Select the warehouse to navigate to the warehouse details page. You can see the warehouse metadata, supported actions, lineage and impact analysis, along with related reports created from that warehouse. Default datasets derived from a warehouse behave the same as any dataset.
 
 To find the warehouse, you begin with the **Data hub**. The following image shows the **Data hub** in the Power BI service:
 
@@ -55,10 +56,10 @@ To find the warehouse, you begin with the **Data hub**. The following image show
 The Data hub integration in Power BI Desktop lets you connect to the Warehouse or SQL endpoint of Lakehouse in easy steps.
 
 1. Use **Data hub** menu in the ribbon to get list of all items.
-2. Select the warehouse which you would like to connect
-3. From the drop down on **Connect** button, select **Connect to SQL endpoint**. 
+1. Select the warehouse that you would like to connect
+1. From the drop down on **Connect** button, select **Connect to SQL endpoint**. 
 
- :::image type="content" source="media\reports-power-bi-service\data-hub-pbi-desktop.png" alt-text="Screenshot of the Data hub in Power BI Desktop." lightbox="media\reports-power-bi-service\data-hub-pbi-desktop.png":::
+   :::image type="content" source="media\reports-power-bi-service\data-hub-pbi-desktop.png" alt-text="Screenshot of the Data hub in Power BI Desktop." lightbox="media\reports-power-bi-service\data-hub-pbi-desktop.png":::
 
 
 ## Next steps

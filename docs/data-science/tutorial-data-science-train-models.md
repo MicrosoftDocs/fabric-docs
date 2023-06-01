@@ -2,9 +2,10 @@
 title: Data science tutorial - train and register machine learning models
 description: In this fourth module, learn how to train machine learning models to predict the total ride duration of taxi trips, and then register the trained models.
 ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 5/4/2023
 ---
 
@@ -15,7 +16,7 @@ In this module, you learn to train machine learning models to predict the total 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!TIP]
-> MLflow is an open-source platform for managing the end-to-end machine learning lifecycle with features for tracking experiments, packaging ML models and artifacts, and model registry. For more information, see [MLflow](https://mlflow.org/docs/latest/index.html).
+> MLflow is an open-source platform for managing the end-to-end machine learning lifecycle with features for tracking experiments, packaging ML models and items, and model registry. For more information, see [MLflow](https://mlflow.org/docs/latest/index.html).
 
 ## Follow along in notebook
 
@@ -242,16 +243,16 @@ In the following steps, you load cleansed and prepared data from lakehouse delta
    | ----- | ----- | ----- | ----- |
    | 25.444472646953216 | 5.0442514456511 | 0.7637293020097541 | 3.241663446115354 |
 
-At the end of the module, we have two runs of the lightgbm regression model trained and registered in the MLflow model registry, and the model is also available in the workspace as a Fabric model artifact.
+At the end of the module, we have two runs of the lightgbm regression model trained and registered in the MLflow model registry, and the model is also available in the workspace as a Fabric model item.
 
 > [!NOTE]
-> If you do not see your model artifact in the list, refresh your browser.
+> If you do not see your model item in the list, refresh your browser.
 
 In order to view the model in the UI:
 
 - Navigate to your currently active Fabric workspace.
-- Select the model artifact named ***nyctaxi_tripduration_lightgbm*** to open the model UI.
-- On the model UI, you can view the properties and metrics of a given run, compare performance of various runs, and download various file artifacts associated with the trained model.
+- Select the model item named ***nyctaxi_tripduration_lightgbm*** to open the model UI.
+- On the model UI, you can view the properties and metrics of a given run, compare performance of various runs, and download various file items associated with the trained model.
 
   The following image shows the layout of the various features within the model UI in a Fabric workspace.
 

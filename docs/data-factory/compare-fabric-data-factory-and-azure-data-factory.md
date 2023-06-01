@@ -5,10 +5,11 @@ author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom: template-how-to
+ms.custom: template-how-to, buyild-2023
+ms.search.form: Pipeline Activity Overview
 ---
 
-# Differences between Data Factory in Fabric and Azure
+# Getting from Azure Data Factory to Data Factory in Microsoft Fabric
 
 Data Factory in Microsoft Fabric is the next generation of Azure Data Factory which provides cloud-scale data movement and data transformation services that allow you to solve the most complex ETL scenarios. It's intended to make your experience easy to use, powerful, and truly enterprise-grade. This article compares the differences between Azure Data Factory and Data Factory in Microsoft Fabric.
 
@@ -67,9 +68,9 @@ A modern and easy Get Data experience is provided in Data Factory in Fabric, so 
 
 ### Modern monitoring experience
 
-With the combined capabilities of the monitoring hub and the artifacts of Data Factory, such as data flows and data pipelines, we can get a full view of all the workloads and drill into any activity within a data factory artifact. It’s also convenient for you to do the cross-workspace analysis through monitoring hub.
+With the combined capabilities of the monitoring hub and the items of Data Factory, such as data flows and data pipelines, we can get a full view of all the workloads and drill into any activity within a data factory experience. It’s also convenient for you to do the cross-workspace analysis through monitoring hub.
 
-:::image type="content" source="./media/connector-differences/monitoring-hub.png" alt-text="Screenshot showing the monitoring hub and the artifacts of Data Factory.":::
+:::image type="content" source="./media/connector-differences/monitoring-hub.png" alt-text="Screenshot showing the monitoring hub and the items of Data Factory.":::
 
 The pipeline copy monitoring results provides breakdown detail of copy activity. By selecting the run details button (with the **glasses icon** highlighted) to view the run details. Expand the **Duration breakdown**, you can know the time duration of each stage in copy activity.
 
@@ -86,5 +87,4 @@ Save as in Fabric pipeline provides a convenient way for you to duplicate an exi
 ## Next steps
 
 - [Differences between Dataflow Gen1 Gen2](dataflows-gen2-overview.md)
-- [Known issues and limitations](data-factory-known-issues-limitations.md)
 - [Build your first data integration](transform-data.md)

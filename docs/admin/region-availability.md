@@ -3,9 +3,8 @@ title: Fabric region availability
 description: Learn which regions Fabric is available in.
 author: paulinbar
 ms.author: painbar
-ms.custom: references_regions
+ms.custom: references_regions, build-2023
 ms.topic: overview
-ms.service: azure
 ms.date: 05/23/2023
 ---
 
@@ -17,7 +16,7 @@ Microsoft Fabric Public Preview is available in the Azure regions listed in this
 
 To find out what your Fabric home region is, see [Find your Fabric home region](./find-fabric-home-region.md).
 
-ASIA PACIFIC
+Asia Pacific
 * AustraliaEast
 * AustraliaSoutheast
 * CentralIndia
@@ -26,18 +25,18 @@ ASIA PACIFIC
 * KoreaCentral
 * SoutheastAsia
 * SouthIndia
-* UAENorth
 
-EUROPE
+Europe
+* NorthEurope
+* WestEurope
 * FranceCentral
 * NorwayEast
-* SouthAfricaNorth
 * SwitzerlandNorth
 * SwitzerlandWest
 * UKSouth
 * UKWest
 
-AMERICAS
+Americas
 * BrazilSouth
 * CanadaCentral
 * CanadaEast
@@ -49,9 +48,10 @@ AMERICAS
 * WestUS2
 * WestUS3
 
-WEU/NEU
-* NorthEurope
-* WestEurope
+Middle East and Africa
+* SouthAfricaNorth
+* UAENorth
+
 
 ## Next steps
 

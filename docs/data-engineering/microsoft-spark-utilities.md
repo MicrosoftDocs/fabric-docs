@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.search.form: Microsoft Spark utilities
+ms.date: 05/30/2023
 ---
 
 # Introduction of Fabric MSSparkUtils
@@ -226,7 +228,7 @@ print (exitVal)
 ```console
 Notebook executed successfully with exit value 20
 ```
-
+<!---
 ## Session management
 
 ### Stop an interactive session
@@ -241,7 +243,7 @@ mssparkutils.session.stop()
 
 > [!NOTE]
 > We don't recommend calling language built-in APIs like *sys.exit* in Scala or *sys.exit()* in Python in your code, because such APIs just kill the interpreter process, leaving the Spark session alive and the resources not released.
-
+--->
 ## Credentials utilities
 
 You can use the MSSparkUtils Credentials Utilities to get the access tokens and manage secrets in Azure Key Vault.
@@ -263,10 +265,10 @@ getSecret(akvName, secret): returns AKV secret for a given akvName, secret key
 
 Returns Azure AD token for a given audience, name (optional), The list below shows currently available audience keys:
 
-- **Storage Audience Resource**: "storage""
-- **Power BI Resource**: "pbi""
+- **Storage Audience Resource**: "storage"
+- **Power BI Resource**: "pbi"
 - **Azure Key Vault Resource**: "keyvault"
-- **Kusto Resource**: "kusto"
+- **Synapse RTA KQL DB Resource**: "kusto"
 
 Run the following command to get the token:
 

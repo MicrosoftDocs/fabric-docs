@@ -4,7 +4,7 @@ description: This article provides an overview of the admin role in Microsoft Fa
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.service: azure
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -93,4 +93,4 @@ Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/powe
 
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
 
-* [Understand Microsoft Fabric roles](roles.md)
+* [Understand Microsoft Fabric admin roles](roles.md)

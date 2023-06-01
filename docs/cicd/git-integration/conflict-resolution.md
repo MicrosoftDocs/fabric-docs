@@ -3,10 +3,9 @@ title: Resolve conflicts with Git integration
 description: Learn how to resolve conflicts when using Fabric's git integration tools.
 author: mberdugo
 ms.author: monaberdugo
-ms.service: powerbi
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom: 
+ms.custom: build-2023
 ---
 
 # Conflict resolution
@@ -52,5 +51,5 @@ If you made numerous changes and don’t want to revert to a previous state, you
 
 ## Next steps
 
-- [Manual update](./partial-update.md)
-- [Deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md)
+- [Manually update after a failed update](./partial-update.md)
+- [Lifecycle management Frequently asked questions](../faq.md)

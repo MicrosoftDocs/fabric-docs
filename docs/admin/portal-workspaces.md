@@ -4,9 +4,8 @@ description: Learn how to view and understand info about workspaces and manage w
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.custom: admin-portal
+ms.custom: admin-portal, build-2023
 ms.topic: how-to
-ms.service: azure
 ms.date: 05/23/2023
 LocalizationGroup: Administration
 ---

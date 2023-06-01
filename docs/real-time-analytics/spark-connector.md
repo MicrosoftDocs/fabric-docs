@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
@@ -62,7 +63,7 @@ The rest of this workflow occurs in the **Data Engineering** section of the prod
 1. Open the experience switcher on the bottom of the navigation pane and select **Data Engineering**.
 1. Select **Import notebook**.
 
-    :::image type="content" source="media/jupyter-notebook/import-notebook.png" alt-text="Screenshot of artifact options in Data Engineering. The artifact titled Import notebook is highlighted.":::
+    :::image type="content" source="media/jupyter-notebook/import-notebook.png" alt-text="Screenshot of item options in Data Engineering. The item titled Import notebook is highlighted.":::
 
 1. In the **Import status** window, select **Upload**.
 

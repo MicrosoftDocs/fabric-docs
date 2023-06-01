@@ -1,12 +1,13 @@
 ### YamlMime:Landing
 
-title: Governance documentation
-summary: Understand how Microsoft Fabric governance works
+title: Microsoft Fabric governance documentation
+summary: Understand how Microsoft Fabric governance works.
 
 metadata:
   title: Microsoft Fabric governance
   description: A landing page for Microsoft Fabric governance documentation
-  ms.service: azure
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: governance
   ms.topic: landing-page # Required
   author: paulinbar
   ms.author: painbar
@@ -22,13 +23,13 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is Microsoft Fabric governance and compliance?
-            url: governance-compliance-overview.md
-          - text: Endorsement
-            url: endorsement-overview.md            
+            url: governance-compliance-overview.md         
       - linkListType: concept
         links:
           - text: Information protection in Microsoft Fabric
             url: information-protection.md
+          - text: Endorsement
+            url: endorsement-overview.md               
 
   # Card 
   - title: Get started
@@ -41,7 +42,7 @@ landingContent:
             url: domains.md
 
   # Card 
-  - title: how-to-guide
+  - title: Metadata scanning
     linkLists:
       - linkListType: overview
         links:

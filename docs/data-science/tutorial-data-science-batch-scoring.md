@@ -2,9 +2,10 @@
 title: Data science tutorial - perform batch scoring and save predictions
 description: In this fifth module, learn how to import a trained and registered model and perform batch predictions on a test dataset.
 ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 5/4/2023
 ---
 
@@ -71,7 +72,7 @@ The python commands/script used in each step of this tutorial can be found in th
 
    :::image type="content" source="media\tutorial-data-science-batch-scoring\preview-of-predicted-data.png" alt-text="Screenshot of the table of predicted data." lightbox="media\tutorial-data-science-batch-scoring\preview-of-predicted-data.png":::
 
-1. The **nyctaxi_pred** delta table containing predictions can also be viewed from the lakehouse UI by navigating to the lakehouse artifact in the active Fabric workspace.
+1. The **nyctaxi_pred** delta table containing predictions can also be viewed from the lakehouse UI by navigating to the lakehouse item in the active Fabric workspace.
 
    :::image type="content" source="media\tutorial-data-science-batch-scoring\view-delta-table-lakehouse.png" alt-text="Screenshot of the delta table displayed in the lakehouse UI." lightbox="media\tutorial-data-science-batch-scoring\view-delta-table-lakehouse.png":::
 

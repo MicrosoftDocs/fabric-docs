@@ -5,6 +5,7 @@ ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: lakehouse delta lake tables
 ---
@@ -40,11 +41,11 @@ The following table contains the configuration differences between Azure Synapse
 
 ## Auto discovery of tables
 
-The Lakehouse explorer provides a tree-like view of the objects in the [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse artifact. It has a key capability of discovering and displaying tables that are described in the metadata repository and in OneLake storage. The table references are displayed under the ```Tables``` section of the Lakehouse explorer user interface. Auto discovery also applies to tables defined over OneLake shortcuts.
+The Lakehouse explorer provides a tree-like view of the objects in the [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse item. It has a key capability of discovering and displaying tables that are described in the metadata repository and in OneLake storage. The table references are displayed under the ```Tables``` section of the Lakehouse explorer user interface. Auto discovery also applies to tables defined over OneLake shortcuts.
 
 ### Tables over shortcuts
 
-[!INCLUDE [product-name](../includes/product-name.md)] Lakehouse supports tables defined over OneLake shortcuts, to provide utmost compatibility and no data movement. The following table contains the scenario best-practices for each data artifact type when using it over shortcuts.
+[!INCLUDE [product-name](../includes/product-name.md)] Lakehouse supports tables defined over OneLake shortcuts, to provide utmost compatibility and no data movement. The following table contains the scenario best-practices for each item type when using it over shortcuts.
 
 |Shortcut destination|Where to create the shortcut|Best practice|
 |---------|---------|---------|
@@ -54,7 +55,7 @@ The Lakehouse explorer provides a tree-like view of the objects in the [!INCLUDE
 
 ## Load to Tables
 
-[!INCLUDE [product-name](../includes/product-name.md)] Lakehouse provides a convenient and productive user interface to streamline loading data into Delta tables. The Load to Tables feature allows a visual experiences to load common file formats and folders to Delta to boost analytical productivity to all personas. To learn more about the Load to Tables feature in details, read the [Lakehouse Load to Tables](load-to-tables.md) reference documentation.
+[!INCLUDE [product-name](../includes/product-name.md)] Lakehouse provides a convenient and productive user interface to streamline loading data into Delta tables. The Load to Tables feature allows a visual experiences to load common file formats to Delta to boost analytical productivity to all personas. To learn more about the Load to Tables feature in details, read the [Lakehouse Load to Tables](load-to-tables.md) reference documentation.
 
 ## Delta Lake table optimization
 

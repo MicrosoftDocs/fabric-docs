@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: conceptual
 ms.date: 04/30/2023
-ms.custom: 
+ms.custom: build-2023
 ---
 
 # Discover data items in the OneLake data hub
@@ -24,6 +24,12 @@ The data hub provides:
 This article explains what you see on the data hub and describes how to use it.
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-general.png" alt-text="Screenshot of the OneLake data hub." lightbox="./media/onelake-data-hub/onelake-data-hub-general.png":::
+
+## Open the data hub
+
+To open the data hub, select the OneLake data hub icon in the navigation pane.
+
+:::image type="content" source="./media/onelake-data-hub/onelake-data-hub-open.png" alt-text="Screenshot showing how to open the OneLake data hub.":::
 
 ## Find items in the data items list
 
