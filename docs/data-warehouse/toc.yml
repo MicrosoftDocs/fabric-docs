@@ -56,6 +56,8 @@ items:
     href: get-started-lakehouse-sql-endpoint.md
   - name: Create a sample warehouse 
     href: create-warehouse-sample.md
+  - name: Performance guildelines
+    href: guidelines-warehouse-performance.md
   - name: Tables
     href: tables.md
   - name: Data types
