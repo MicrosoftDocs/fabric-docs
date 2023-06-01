@@ -7,7 +7,7 @@ ms.reviewer: wiassaf
 ms.date: 06/01/2023
 ms.topic: conceptual
 ---
-# Synapse Data Warehouse in Microsoft Fabric Performance Guidelines
+# Synapse Data Warehouse in Microsoft Fabric performance guidelines
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
