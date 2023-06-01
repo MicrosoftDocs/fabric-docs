@@ -34,7 +34,7 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 * Pay as you go with no time commitment.
 
-* You can [scale your capacity](scale-capacity.md) up or down using the Azure portal or via the Azure APIs.
+* You can [scale your capacity](scale-capacity.md) up or down using the Azure portal.
 
 * You can [pause](pause-resume.md#pause-your-capacity) and [resume](pause-resume.md#resume-your-capacity) your capacity as needed. This feature is designed to save money when the capacity isn't in use.
 
