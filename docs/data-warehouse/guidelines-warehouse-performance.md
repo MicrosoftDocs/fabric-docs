@@ -1,8 +1,8 @@
 ---
 title: Warehouse performance guidelines
 description: This article contains a list of performance guidelines for warehouse.
-author: trichter
-ms.author: trichter
+author: SQLAdventurer
+ms.author: SQLAdventurer
 ms.reviewer: wiassaf
 ms.date: 06/01/2023
 ms.topic: conceptual
