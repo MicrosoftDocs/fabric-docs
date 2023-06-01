@@ -11,11 +11,11 @@ ms.topic: conceptual
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-These are guidelines to help you understand performance of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. Below, you'll find guidance and important topics to focus on. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is a SaaS platform where activities like workload management, concurrency, and storage management are managed internally by the platform. In addition to this internal performance management, you can still improve your performance by developing performant queries against well-designed warehouses.
+These are guidelines to help you understand performance of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. Below, you'll find guidance and important articles to focus on. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is a SaaS platform where activities like workload management, concurrency, and storage management are managed internally by the platform. In addition to this internal performance management, you can still improve your performance by developing performant queries against well-designed warehouses.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Included in this document are some specific topics devoted to guidelines that apply only during this Preview period.
+Included in this document are some specific articles devoted to guidelines that apply only during this Preview period.
 
 ## Cold run (cold cache) performance during public preview
 
@@ -31,7 +31,7 @@ Cold run or first run query performance will be continuously improved during the
 
 Currently, the [Monitoring Hub](../admin/monitoring-hub.md) does not include [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you choose the Data Warehouse experience, you will not be able to access the **Monitoring Hub** from the left nav menu.
 
-Fabric administrators will be able to access the **Capacity Utilization and Metrics** report for up-to-date information tracking the utilization of capacity which includes [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+Fabric administrators will be able to access the **Capacity Utilization and Metrics** report for up-to-date information tracking the utilization of capacity that includes [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 ## Use dynamic management views (DMVs) to monitor query execution
 
@@ -72,7 +72,7 @@ For guidance on how to handle these trickle load scenarios, see [Best practices 
 
 INSERT, UPDATE, and DELETE statements run in a transaction. When they fail, they must be rolled back. To reduce the potential for a long rollback, minimize transaction sizes whenever possible. Minimizing transaction sizes can be done by dividing INSERT, UPDATE, and DELETE statements into parts. For example, if you have an INSERT that you expect to take 1 hour, you can break up the INSERT into four parts. Each run will then be shortened to 15 minutes.
 
-Consider using [CTAS (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) to write the data you want to keep in a table rather than using DELETE. If a CTAS takes the same amount of time, it's much safer to run since it has minimal transaction logging and can be canceled quickly if needed.
+Consider using [CTAS (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) to write the data you want to keep in a table rather than using DELETE. If a CTAS takes the same amount of time, it's safer to run since it has minimal transaction logging and can be canceled quickly if needed.
 
 ## Collocate client applications and Microsoft Fabric
 
@@ -94,14 +94,15 @@ Reducing query result set sizes helps you avoid client-side issues caused by lar
 
 ## Choosing the best data type for performance
 
-When defining your tables, use the smallest data type that will support your data as doing so will improve query performance. This recommendation is particularly important for CHAR and VARCHAR columns. If the longest value in a column is 25 characters, then define your column as VARCHAR(25). Avoid defining all character columns with a large default length.
+When defining your tables, use the smallest data type that supports your data as doing so will improve query performance. This recommendation is important for CHAR and VARCHAR columns. If the longest value in a column is 25 characters, then define your column as VARCHAR(25). Avoid defining all character columns with a large default length.
 
 Use integer-based data types if possible. SORT, JOIN, and GROUP BY operations complete faster on integers than on character data.
 
-For supported data types and additional guidance, see [data types](data-types.md#autogenerated-data-types-in-the-sql-endpoint).
+For supported data types and more information, see [data types](data-types.md#autogenerated-data-types-in-the-sql-endpoint).
 
 ## Next steps
 
+- [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
 - [Limitations and known issues](limitations.md)
 - [Troubleshoot the Warehouse](troubleshoot-synapse-data-warehouse.md)
 - [Data types](data-types.md)
