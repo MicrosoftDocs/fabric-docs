@@ -59,9 +59,9 @@ If your Power BI administrator has [enabled the preview of Microsoft Fabric for 
 
 With a Fabric (Preview) trial, you get full access to all of the Fabric experiences and features. You also get OneLake storage up to 1 TB. Create Fabric items and collaborate with others in the same Fabric trial capacity. With a Fabric (Preview) trial, you can:
 
-- create workspaces (folders) for projects that support Fabric capabilities.
-- share Fabric items, such as datasets, warehouses, and notebooks, and collaborate on them with other Fabric users.
-- create analytics solutions using these Fabric items.
+- Create workspaces (folders) for projects that support Fabric capabilities.
+- Share Fabric items, such as datasets, warehouses, and notebooks, and collaborate on them with other Fabric users.
+- Create analytics solutions using these Fabric items.
 
 You don't have access to your capacity until you put something into it. To begin using your Fabric (Preview) trial, add items to **My workspace**  or create a new workspace. Assign that workspace to your trial capacity using the "Trial" license mode, and then all the items in that workspace are saved and executed in that capacity. 
 
@@ -83,11 +83,11 @@ You're the capacity owner for your trial capacity. As your own capacity administ
 
 You may cancel your trial from the Account manager. When you cancel your free Fabric (Preview) trial, the trial capacity, with all of its workspaces and their contents, is deleted. In addition, you can't:
 
--   create workspaces that support Fabric capabilities.
+-   Create workspaces that support Fabric capabilities.
 
--   share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
+-   Share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
 
--   create analytics solutions using these Fabric items.
+-   Create analytics solutions using these Fabric items.
 
 Additionally, if you cancel your trial, you may not be able to start another trial. If you want to retain your data and continue to use Microsoft Fabric (Preview), you can [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. To learn more about workspaces and license mode settings, see [Workspaces](workspaces.md).
 
@@ -111,7 +111,7 @@ If you don't see the **Start trial** button in your Account manager:
 
 If you do see the **Start trial** button in your Account manager:
 
-- you might not be able to start a trial if your tenant has exhausted its limit of trial capacities. If that is the case, you have the following options:
+- You might not be able to start a trial if your tenant has exhausted its limit of trial capacities. If that is the case, you have the following options:
 
     - [Purchase a Fabric capacity from Azure](https://portal.azure.com/)
 
