@@ -116,7 +116,7 @@ If your source data is in **Azure Blob Storage** or **Azure Data Lake Storage Ge
 1. If your source is a folder, `recursive` in a copy activity must be set to true.
 1. `modifiedDateTimeStart`, `modifiedDateTimeEnd`, `prefix`, `enablePartitionDiscovery`, and `additionalColumns` aren't specified.<br>
 
-If your source data store and format isn't originally supported by a COPY statement, use the Staged copy by using the COPY statement feature instead. The staged copy feature also provides you with better throughput. It automatically converts the data into a COPY statement compatible format, then calls a COPY statement to load data into Data Warehouse.
+If your source data store and format isn't originally supported by a COPY statement, use the Staged copy by using the COPY statement feature instead. It automatically converts the data into a COPY statement compatible format, then calls a COPY statement to load data into Data Warehouse.
 
 ### Mapping
 
