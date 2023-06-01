@@ -5,10 +5,11 @@ ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
-# How to Configure and Manage Data Engineering/Science Settings for Fabric Capacities
+# Configure and manage data engineering and data science settings for Fabric capacities
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 

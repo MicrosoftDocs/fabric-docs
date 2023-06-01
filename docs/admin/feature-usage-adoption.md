@@ -4,8 +4,8 @@ description: Learn how to use the Microsoft feature usage and adoption report.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.service: azure
-ms.date: 05/23/2023
+ms.custom: build-2023
+ms.date: 05/24/2023
 ---
 
 # Feature usage and adoption report
@@ -84,17 +84,31 @@ To conclude the example given in the [Activity Overview](#activity-overview-page
 
 ## Considerations and limitations
 
-* Single data points across the zoom slider display a misleading date range for the total activities and users.
+This section lists the report's considerations and limitations.
 
-* When drilling down to a workspace, the *Expand All* feature does not update the *Most Active Capacities* visual title.
+### Display
 
-* All *MyWorkspaces* are counted as different records as part of the *Active Workspaces* total.
+* The single data point across the zoom slider, displays a misleading date range for the total activities and users.
 
-* During business continuity and disaster recovery, the *Audit* table may have data quality issues.
+* When drilling down to a workspace, the *Expand All* feature doesn't update the *Most Active Capacities* visual title.
 
 * The *Audit* table doesn't show activities for a deleted capacity.
 
 * Capacities with the same name and capacities that were deleted and recreated with the same name, are displayed as one capacity.
+
+* *NA* represents data that isn't available in the *Audit* table. This can happen when an event doesn't have the dimension information, or when that information isn't applicable for the event.
+
+* During business continuity and disaster recovery, the *Audit* table may have data quality issues.
+
+* The report retains information for 30 days.
+
+### Counting logic
+
+* All *MyWorkspaces* are counted as different records as part of the *Active Workspaces* total.
+
+* When a capacity, workspace or item is deleted, its activities are counted in the report but appear as *(Blank)*.
+
+* In the *Total Activities* card, *Active Users*, *Active Capacities* and *Active Workspaces* include deleted users, capacities and workspaces. Capacities with the same name but different IDs are counted as separate records.
 
 ## Next steps
 

@@ -6,6 +6,7 @@ ms.author: joanpo
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
+ms.custom: build-2023
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Limitations and known issues in Microsoft Fabric
@@ -20,10 +21,11 @@ This article details the current limitations and known issues in [!INCLUDE [prod
 
 Data Warehousing in Microsoft Fabric is currently in preview. The focus of this preview is on providing a rich set of SaaS features and functionality tailored to all skill levels. The preview delivers on the promise of providing a simplified experience through an open data format over a single copy of data. This release is not focused on performance, concurrency, and scale. Additional functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally as we progress towards General Availability of data warehousing in [!INCLUDE [product-name](../includes/product-name.md)].
 
-General product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. 
+Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article.
 
 - <b>IMPORTANT</B> At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations. 
-- Warehouse Recovery capabilities are not available during Preview.
+- Warehouse recovery capabilities are not available during preview.
+- Data warehousing is not supported for multiple geographies at this time. Your Synapse Data Warehouse and Lakehouse items should not be moved to a different region during preview.
 
 For more limitations information in specific areas, see:
 
@@ -39,6 +41,7 @@ For more limitations information in specific areas, see:
 ## Known issues for querying
 
 - Queries with PIVOT operator fail if there's a GROUP BY on the nonpivot column output by PIVOT. As a workaround, remove the nonpivot column from the GROUP BY.  Query results will be the same, as this GROUP BY clause is duplicate.
+- Warehouse explorer doesn't list all objects of the same name but different cases.
 
 ## Limitations of the SQL Endpoint
 

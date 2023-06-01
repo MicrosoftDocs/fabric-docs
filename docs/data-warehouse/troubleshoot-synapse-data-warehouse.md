@@ -6,6 +6,7 @@ ms.author: XiaoyuL
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 # Troubleshoot the Warehouse

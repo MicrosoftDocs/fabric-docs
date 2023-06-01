@@ -5,6 +5,7 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 5/23/2023
 ---
 
@@ -17,6 +18,7 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 ## Prerequisites
 
 * [Create a Fabric workspace](tutorial-lakehouse-get-started.md)
+* In this article, you'll follow steps to ingest a CSV file, which requires you to have OneDrive configured. If you don't have OneDrive configured, sign up for the Microsoft 365 free trial: [Free Trial - Try Microsoft 365 for a month](https://www.microsoft.com/microsoft-365/try).
 
 ## Create a lakehouse
 
@@ -28,7 +30,7 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 
    :::image type="content" source="media\tutorial-build-lakehouse\workload-switch-data-engineering.png" alt-text="Screeenshot showing where to select the experience switcher and Data Engineering.":::
 
-1. In the **Data Engineering** tab, select **Lakehouse** to create a lakehouse. 
+1. In the **Data Engineering** tab, select **Lakehouse** to create a lakehouse.
 
 1. In the **New lakehouse** dialog box, enter **wwilakehouse** in the **Name** field.
 
@@ -37,6 +39,9 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 1. Select **Create** to create and open the new lakehouse.
 
 ## Ingest sample data
+
+> [!NOTE]
+> If you don't have OneDrive configured, sign up for the Microsoft 365 free trial: [Free Trial - Try Microsoft 365 for a month](https://www.microsoft.com/microsoft-365/try).
 
 1. Download the *dimension_customer.csv* file from the [Fabric samples repo](https://github.com/microsoft/fabric-samples/blob/689e78676174d4627fc3855165bde9100cb4d19e/docs-samples/data-engineering/dimension_customer.csv).
 
@@ -73,9 +78,9 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 
    :::image type="content" source="media\tutorial-build-lakehouse\query-settings-publish.png" alt-text="Screenshot of the Query setting pane that contains the Publish button.":::
 
-1. A spinning circle next to the dataflow's name indicates publishing is in progress in the artifact view. When publishing is complete, select the **...** and select **Properties**. Rename the dataflow to **Load Lakehouse Table** and select **Save**.
+1. A spinning circle next to the dataflow's name indicates publishing is in progress in the item view. When publishing is complete, select the **...** and select **Properties**. Rename the dataflow to **Load Lakehouse Table** and select **Save**.
 
-1. Select the **Refresh now** option next to data flow name to refresh the dataflow. It runs the dataflow and moves data from the source file to lakehouse table. While it's in progress, you see a spinning circle under **Refreshed** column in the artifact view.
+1. Select the **Refresh now** option next to data flow name to refresh the dataflow. It runs the dataflow and moves data from the source file to lakehouse table. While it's in progress, you see a spinning circle under **Refreshed** column in the item view.
 
    :::image type="content" source="media\tutorial-build-lakehouse\dataflow-refresh-now.png" alt-text="Screenshot showing where to find the Refresh now icon.":::
 
@@ -99,7 +104,7 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 
 ## Build a report
 
-1. In the artifact view of the workspace, select the **wwilakehouse** default dataset. This dataset is automatically created and has the same name as the lakehouse.
+1. In the item view of the workspace, select the **wwilakehouse** default dataset. This dataset is automatically created and has the same name as the lakehouse.
 
    :::image type="content" source="media\tutorial-build-lakehouse\workspace-default-dataset.png" alt-text="Screenshot showing the default dataset that was created when the new lakehouse was created.":::
 

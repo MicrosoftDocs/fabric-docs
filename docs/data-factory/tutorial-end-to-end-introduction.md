@@ -5,7 +5,9 @@ ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 05/23/2023
+ms.search.form: product-data-factory
 ---
 
 # Data Factory end-to-end scenario: introduction and architecture
@@ -24,7 +26,7 @@ Microsoft Fabric provides a one-stop shop for all the analytical needs for every
 
 ### Understand the value of Data Factory in Microsoft Fabric
 
-Data Factory in Fabric combines the ease-of-use of [Power Query](/power-query) with the scale and power of [Azure Data Factory](/azure/data-factory/introduction.md). It brings the best of both products together into a unified experience. The goal is to make sure Data Integration in Factory works well for both citizen and professional data developers. It provides low-code, AI-enabled data preparation and transformation experiences, petabyte-scale transformation, hundreds of connectors with hybrid, multicloud connectivity. Purview provides governance, and the service features enterprise scale Data/Op commitments, CI/CD, application lifecycle management, and monitoring.
+Data Factory in Fabric combines the ease-of-use of [Power Query](/power-query) with the scale and power of [Azure Data Factory](/azure/data-factory/introduction). It brings the best of both products together into a unified experience. The goal is to make sure Data Integration in Factory works well for both citizen and professional data developers. It provides low-code, AI-enabled data preparation and transformation experiences, petabyte-scale transformation, hundreds of connectors with hybrid, multicloud connectivity. Purview provides governance, and the service features enterprise scale Data/Op commitments, CI/CD, application lifecycle management, and monitoring.
 
 ## Introduction - Understand three key components of Data Factory
 

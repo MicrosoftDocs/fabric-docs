@@ -4,8 +4,8 @@ description: Learn how to enable Microsoft Fabric for your organization.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.service: azure
-ms.date: 05/23/2023
+ms.custom: build-2023
+ms.date: 05/31/2023
 ---
 
 # Enable Microsoft Fabric for your organization
@@ -26,7 +26,7 @@ You can enable Microsoft Fabric for:
 In both cases, you can use security groups to provide Microsoft Fabric access to a specified list of users.
 
 >[!Tip]
->Microsoft Fabric will be turned on for all Power BI users on 1 July 2023.
+>Unless an admin makes changes to the Microsoft Fabric admin switch settings, Microsoft Fabric will be turned on for all Power BI users on 1 July 2023.
 
 ## Prerequisites
 
@@ -40,10 +40,16 @@ To enable Microsoft Fabric, you need to have one of the following admin roles:
 
 ## Enable for your tenant
 
-When you enable Microsoft Fabric using the tenant setting, users can create Fabric items in that [tenant](../enterprise/licenses.md#tenant). In most cases your organization has one tenant, so enabling Microsoft Fabric on the tenant, enables it for the entire organization. In organizations that have several tenants, if you want to enable Microsoft Fabric for the entire organization, you need to enable it in each tenant. Depending on the configuration you select, Microsoft Fabric becomes available for everyone in the tenant, or to a selected group of users.
+When you enable Microsoft Fabric using the tenant setting, users can create Fabric items in that [tenant](../enterprise/licenses.md#tenant). Depending on the configuration you select, Microsoft Fabric becomes available for everyone in the tenant, or to a selected group of users.
 
 >[!Note]
 >You, or other admins, can override the the Microsoft Fabric setting at the [capacity level](#enable-for-a-capacity).
+
+In your tenant, you can enable Microsoft Fabric for:
+
+* **The entire organization** - In most cases your organization has one tenant, so selecting this option enables it for the entire organization. In organizations that have several tenants, if you want to enable Microsoft Fabric for the entire organization, you need to enable it in each tenant.
+
+* **Specific security groups** - Use this option to enable Microsoft Fabric for specific users. You can either specify the security groups that Microsoft Fabric will be enabled for, or the security groups that Microsoft Fabric won't be available for.
 
 Follow these steps to enable Microsoft Fabric for your tenant.
 
@@ -51,7 +57,7 @@ Follow these steps to enable Microsoft Fabric for your tenant.
 
    :::image type="content" source="media/fabric-switch/fabric-switch.png" alt-text="Screenshot of the Microsoft Fabric tenant setting in the admin portal.":::
 
-2. Uncheck the **Accept Microsoft's default selection (Off for the entire organization)** checkbox.
+2. Uncheck the **Accept Microsoft's default selection (Off for the entire organization)** checkbox. You only need to uncheck the Microsoft's default selection when you enable the Microsoft Fabric setting for the first time.
 
    :::image type="content" source="media/fabric-switch/fabric-switch-accept.png" alt-text="Screenshot of the Microsoft Fabric tenant setting with the accept Microsoft's default selection checkbox unchecked.":::
 
@@ -64,6 +70,9 @@ Follow these steps to enable Microsoft Fabric for your tenant.
    :::image type="content" source="media/fabric-switch/fabric-switch-security-groups.png" alt-text="Screenshot of the Microsoft Fabric tenant setting with the users can create Fabric items enabled, and the specific security groups option selected.":::
 
 5. Select **Apply**.
+
+>[!NOTE]
+>The *Delegate settings to other admins* option, isn't available.
 
 ### Enable for a capacity
 

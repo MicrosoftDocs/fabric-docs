@@ -4,7 +4,7 @@ description: Learn how to view the lineage of Fabric items.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.service: azure
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -50,7 +50,7 @@ Lineage view displays:
 * All the items in the workspace and how they are connected to each other.
 * Upstream connections outside the workspace, one level up. You can tell if an item is outside the workspace because the name of the external workspace is indicated on the card, as illustrated by the HR Data KQL Database in the image above.
 
-Downstream items in different workspaces aren't shown. To explore an item's downstream connections outside the workspace, open the item's impact analysis.
+Downstream items in different workspaces aren't shown. To explore an item's downstream connections outside the workspace, open the item's [impact analysis](./impact-analysis.md).
 
 Items are represented by cards that provide some information about the item.
 
@@ -85,9 +85,10 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 
 ## Considerations and limitations
 
+* During Fabric public preview, some relationships between Fabric items might not be represented, or not represented correctly.
 * Lineage view isn't available in Internet Explorer. For more information, see [Supported browsers for Power BI](/power-bi/fundamentals/power-bi-browsers).
 * Correct display of dataset-dataflow lineage is guaranteed only if the **Get Data** UI is used to set up the connection to the dataflow, and the **Dataflows** connector is used. Correct display of dataset-dataflow lineage isn't guaranteed if a manually created Mashup query is used to connect to the dataflow.
 
 ## Next steps
 
-* [Admin overview](../admin/microsoft-fabric-admin.md)
+* [Impact analysis](./impact-analysis.md)

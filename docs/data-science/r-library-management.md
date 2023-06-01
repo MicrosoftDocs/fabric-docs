@@ -5,6 +5,7 @@ ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: R Language
 ---
@@ -28,7 +29,7 @@ There are two types of libraries you may want to include based on your scenario:
 
 There are two levels of packages installed on [!INCLUDE [product-name](../includes/product-name.md)]:
 
-- **Workspace**: Workspace-level installation defines the working environment for the entire workspace. The libraries installed at the workspace level are available for all Notebooks and SJDs under this workspace. Update the workspace libraries when you want to set up the shared environment for all artifacts in a workspace.
+- **Workspace**: Workspace-level installation defines the working environment for the entire workspace. The libraries installed at the workspace level are available for all Notebooks and SJDs under this workspace. Update the workspace libraries when you want to set up the shared environment for all items in a workspace.
 
 - **Session** : A session-level installation creates an environment for a specific notebook session. The change of session-level libraries isn't persisted between sessions. 
 

@@ -5,7 +5,7 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom: template-how-to
+ms.custom: template-how-to, build-2023
 ---
 
 # How to create an Azure SQL Database connection
@@ -111,7 +111,7 @@ To use service principal authentication, follow these steps:
     CREATE USER [your application name] FROM EXTERNAL PROVIDER;
     ```
 
-4. Grant the service principal needed permissions as you normally do for SQL users or others. Run the following code. For more options, go to [ALTER ROLE (Transact-SQL)](/sql/t-sql/statements/alter-role-transact-sql.md).
+4. Grant the service principal needed permissions as you normally do for SQL users or others. Run the following code. For more options, go to [ALTER ROLE (Transact-SQL)](/sql/t-sql/statements/alter-role-transact-sql).
 
     ```sql
     ALTER ROLE [role name] ADD MEMBER [your application name];

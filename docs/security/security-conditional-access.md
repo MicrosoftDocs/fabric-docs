@@ -4,12 +4,13 @@ description: Learn how to configure conditional access for Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: concept
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
 # Conditional access in Fabric
 
-The Conditional Access feature in Azure Active Directory (Azure AD) offers a number ways enterprise customers can secure apps in their tenants, including:
+The Conditional Access feature in Azure Active Directory (Azure AD) offers a number of ways enterprise customers can secure apps in their tenants, including:
 
 - Multi-factor authentication
 - Allowing only Intune enrolled devices to access specific services
@@ -23,15 +24,14 @@ To configure conditional access for Fabric, follow the guidance provided in the 
 
 * Configure a single, common, conditional access policy for the Power BI Service, Azure Storage, Azure SQL Database, Azure Data Explorer, and Microsoft Azure Management. Having a single, common policy will significantly reduce unexpected prompts that may arise from different policies being applied to downstream services, and the consistent security posture will provide the best user experience in Microsoft Fabric and its related products. 
 
-    The products to include in the policy along with their App IDs are shown in the following table. 
-    
-    |Product  |App ID  |
-    |---------|---------|
-    |Power BI Service           | 00000009-0000-0000-c000-000000000000 |
-    |Azure Data Explorer        | 2746ea77-4702-4b45-80ca-3c97e680e8b7 |
-    |Azure SQL Database         | 022907d3-0f1b-48f7-badc-1ba6abab6d66 |
-    |Azure Storage              | e406a681-f3d4-42a8-90b6-c2b029497af1 |
-    |Microsoft Azure Management |                                      |
+    The products to include in the policy are the following: 
+
+    **Product**
+    * Power BI Service
+    * Azure Data Explorer
+    * Azure SQL Database
+    * Azure Storage
+    * Microsoft Azure Management
 
 * If you create a restrictive policy (such as one that blocks access for all apps except Power BI), certain features, such as dataflows, won't work.
 

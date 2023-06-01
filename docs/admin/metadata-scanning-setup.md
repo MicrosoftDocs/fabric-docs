@@ -4,7 +4,7 @@ description: Learn how to set up and enable metadata scanning in your organizati
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.service: azure
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 

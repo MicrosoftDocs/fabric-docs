@@ -5,6 +5,7 @@ ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
 ms.topic: how-to
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
 ms.search.form: Create lakehouse
 ---
@@ -58,6 +59,6 @@ There are a few ways you can get started with the creation process:
 
 Now that you have successfully created your Lakehouse, learn more about:
 
-- Different ways to load data in Lakehouse, see [Get data experience for Lakehouse](navigate-lakehouse-explorer.md)
+- Different ways to load data in Lakehouse, see [Get data experience for Lakehouse](load-data-lakehouse.md)
 
 - Exploring your lakehouse explorer, see [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md)

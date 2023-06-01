@@ -5,7 +5,9 @@ ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
 ms.topic: overview 
+ms.custom: build-2023
 ms.date: 05/23/2023
+ms.search.form: Pipeline Activity Overview
 ---
 
 # Activity overview
@@ -60,7 +62,7 @@ Lookup Activity | Lookup Activity can be used to read or look up a record/ table
 Set Variable | Set the value of an existing variable.
 Until Activity | Implements Do-Until loop that is similar to Do-Until looping structure in programming languages. It executes a set of activities in a loop until the condition associated with the activity evaluates to true. You can specify a timeout value for the until activity.
 Wait Activity | When you use a Wait activity in a pipeline, the pipeline waits for the specified time before continuing with execution of subsequent activities.
-Web Activity | Web Activity can be used to call a custom REST endpoint from a pipeline. You can pass datasets and linked services to be consumed and accessed by the activity.
+Web Activity | Web Activity can be used to call a custom REST endpoint from a pipeline.
 Webhook Activity | Using the webhook activity, call an endpoint, and pass a callback URL. The pipeline run waits for the callback to be invoked before proceeding to the next activity.
 
 ## Adding activities to a pipeline with the [!INCLUDE [product-name](../includes/product-name.md)] UI

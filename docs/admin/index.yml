@@ -6,7 +6,8 @@ summary: Learn about the Microsoft Fabric admin settings, options and tools.
 metadata:
   title: Microsoft Fabric documentation for admins
   description: A landing page for the Microsoft Fabric admin documentation.
-  ms.service: azure
+  ms.service: fabric
+  ms.subservice: admin
   ms.topic: landing-page
   author: KesemSharabi
   ms.author: kesharab
@@ -22,10 +23,10 @@ landingContent:
         links:
           - text: Enable Microsoft Fabric for your organization
             url: fabric-switch.md
-          - text: Compliance settings
-            url: compliance.md
           - text: Governance in Microsoft Fabric
-            url: ../governance/index.yml          
+            url: ../governance/index.yml      
+          - text: Security in Microsoft Fabric
+            url: ../security/security-overview.md              
       - linkListType: overview
         links:
           - text: What is Microsoft Fabric admin?
@@ -34,7 +35,7 @@ landingContent:
             url: admin-center.md
       - linkListType: how-to-guide
         links:            
-          - text: Understand Microsoft Fabric roles
+          - text: Understand Microsoft Fabric admin roles
             url: roles.md
 
   - title: Tools and settings

@@ -5,6 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: mideboer
 author: miquelladeboer
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -15,7 +16,7 @@ ms.date: 05/23/2023
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 > [!NOTE]
-> Currently, these cloud connections are only supported for data pipelines and Kusto. In the future, other artifacts can also make use of the cloud connections. To create personal cloud connections in datasets, datamarts, and dataflows, use the Power Query Online experience in "get data".
+> Currently, these cloud connections are only supported for data pipelines and Kusto. In the future, other items can also make use of the cloud connections. To create personal cloud connections in datasets, datamarts, and dataflows, use the Power Query Online experience in "get data".
 
 ## Add a data source
 
@@ -48,11 +49,11 @@ ms.date: 05/23/2023
 
    :::image type="content" source="media/data-source-management/settings.png" alt-text="Screenshot of new connection success message.":::
 
-You can now use this data source to include data from Azure SQL in the supported [!INCLUDE [product-name](../includes/product-name.md)] artifacts.
+You can now use this data source to include data from Azure SQL in the supported [!INCLUDE [product-name](../includes/product-name.md)] items.
 
 ## Remove a data source
 
-You can remove a data source if you no longer use it. If you remove a data source, any artifacts that rely on that data source no longer work.
+You can remove a data source if you no longer use it. If you remove a data source, any items that rely on that data source no longer work.
 
 To remove a data source, select the data source from the **Data** screen in **Manage connections and gateways**, and then select **Remove** from the top ribbon.
 
@@ -60,7 +61,7 @@ To remove a data source, select the data source from the **Data** screen in **Ma
 
 ## Manage users
 
-After you add a cloud data source, you give users and security groups access to the specific data source. The access list for the data source controls only who is allowed to use the data source in artifacts that include data from the data source.  
+After you add a cloud data source, you give users and security groups access to the specific data source. The access list for the data source controls only who is allowed to use the data source in items that include data from the data source.  
 
 ## Add users to a data source
 

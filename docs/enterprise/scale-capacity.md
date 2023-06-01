@@ -4,7 +4,7 @@ description: This article walks through how to scale a Microsoft Fabric capacity
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.service: azure
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 

@@ -6,6 +6,7 @@ ms.author: prlangad
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.custom: build-2023
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
 # Query using the SQL query editor
@@ -126,6 +127,8 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
    Similarly, in the SQL query editor, the `GO` SQL command creates a new independent batch in a new session.
 
 - When you are running a SQL query with [USE](/sql/t-sql/language-elements/use-transact-sql?view=fabric&preserve-view=true), you need to submit the SQL query with `USE` as one single request.
+
+- Visualize Results currently does not support SQL queries with an ORDER BY clause. 
 
 - The following table summarizes the expected behavior will not match with SQL Server Management Studio/Azure Data Studio:
 

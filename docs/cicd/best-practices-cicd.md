@@ -4,11 +4,9 @@ description: Learn about the best practices for git integration and deployment p
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
-ms.date: 05/09/2023
-ms.custom: intro-deployment
-ms.search.form: Best practices for Deployment pipelines
+ms.date: 05/23/2023
+ms.custom: intro-deployment, build-2023
+ms.search.form: Best practices for deployment pipelines, Create deployment pipeline, Introduction to Deployment pipelines, Best practices for Deployment pipelines
 ---
 
 # Lifecycle management best practices
@@ -153,7 +151,7 @@ If you're using the test stage to simulate real life data usage, it's recommende
 
 Changes you make can also affect the dependent items. During testing, verify that your changes don’t affect or break the performance of existing items, which can be dependent on the updated ones.
 
-You can easily find the related items by using [impact analysis](../onelake/onelake-shortcuts.md#workspace-lineage-view).
+You can easily find the related items by using [impact analysis](../governance/lineage.md).
 
 ### Updating data items
 

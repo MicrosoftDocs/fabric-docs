@@ -5,7 +5,9 @@ ms.reviewer: xupzhou
 ms.author: jburchel
 author: jonburchel
 ms.topic: conceptual 
+ms.custom: build-2023
 ms.date: 05/23/2023
+ms.search.form: Pipeline Template
 ---
 
 # Templates for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]

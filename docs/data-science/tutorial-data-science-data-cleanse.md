@@ -2,9 +2,10 @@
 title: Data science tutorial - data cleansing and preparation
 description: In this third module, learn how to read the raw data from a lakehouse table, and clean and transform that data to be ready for training machine learning models.
 ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 5/4/2023
 ---
 

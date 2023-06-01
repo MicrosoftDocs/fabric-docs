@@ -5,6 +5,7 @@ ms.reviewer: snehagunda
 author: jejiang
 ms.author: jejiang
 ms.topic: how-to 
+ms.custom: build-2023
 ms.date: 05/09/2023
 ms.search.form: Monitor Spark capacity consumption
 ---
@@ -37,7 +38,7 @@ The following operations from Lakehouse, Notebook, and Spark job definitions wil
 
 There are some Spark capacity consumption activities that aren't reported in the metrics app. These activities include system Spark jobs for Library Management and certain system Spark jobs for Spark Live pool or live sessions.
 
-* **Library Management** - The capacity consumption associated with Library Management at the workspace level and environment level Library Management, isn't reported in the metrics app.
+* **Library Management** - The capacity consumption associated with Library Management at the workspace level isn't reported in the metrics app.
 
 * **System Spark jobs** - Spark capacity consumption that isn't associated with a Notebook, a Spark Job Definition, or a Lakehouse, isn't included in the capacity reporting.
 
@@ -57,4 +58,3 @@ Background operations are displayed for a specific [timepoint](../enterprise/met
 
 - [Install the Premium metrics app](/power-bi/enterprise/service-premium-install-app)
 - [Use the Premium metrics app](/power-bi/enterprise/service-premium-metrics-app)
-

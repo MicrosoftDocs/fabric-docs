@@ -5,12 +5,13 @@ ms.reviewer: jonburchel
 ms.author: chugu
 author: chugugrace
 ms.topic: how-to 
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
 # Browse data pipeline runs in the Monitoring hub
 
-The Monitoring hub serves as a centralized portal for browsing data pipeline runs across artifacts, when you are in the **Data Factory** or **Data Engineering** experience.
+The Monitoring hub serves as a centralized portal for browsing data pipeline runs across items, when you are in the **Data Factory** or **Data Engineering** experience.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
