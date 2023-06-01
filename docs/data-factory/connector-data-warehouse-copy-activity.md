@@ -4,7 +4,7 @@ description: This article explains how to copy data using Data Warehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 06/01/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -101,8 +101,8 @@ If your source data is in **Azure Blob Storage** or **Azure Data Lake Storage Ge
 
     |**Supported source data store type** |**Supported format** |**Supported source authentication type**|
     |:---|:---|:---|
-    |Azure Blob Storage |Delimited text<br> Parquet|Anonymous authentication<br> Shared access signature authentication|
-    |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Shared access signature authentication |
+    |Azure Blob Storage |Delimited text<br> Parquet|Anonymous authentication<br> Shared access signature authentication<br> Account key authentication|
+    |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Shared access signature authentication<br> Account key authentication|
 
 1. The following Format settings can be set:<br>
    1. For **Parquet**: compression can be no compression, Snappy, or GZip.<br>
