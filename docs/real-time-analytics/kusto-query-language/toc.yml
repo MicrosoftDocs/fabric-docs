@@ -1,1394 +1,1394 @@
 items:
 - name: Kusto query overview
-  href: /azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric
+  href: /azure/data-explorer/kusto/query/index?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Syntax conventions
-  href: /azure/data-explorer/kusto/query/syntax-conventions?context=/fabric/context/context&pivots=fabric
+  href: /azure/data-explorer/kusto/query/syntax-conventions?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Quick reference guide
-  href: /azure/data-explorer/kusto/../kql-quick-reference?context=/fabric/context/context&pivots=fabric
+  href: /azure/data-explorer/kusto/../kql-quick-reference?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Query best practices
   items:
   - name: Best practices
-    href: /azure/data-explorer/kusto/query/best-practices?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/best-practices?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Optimize queries that use named expressions
     displayName: let statement, user defined functions, as operator, calculated
-    href: /azure/data-explorer/kusto/../named-expressions?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/../named-expressions?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Cross-cluster queries
   items:
   - name: Cross-cluster queries and schema changes
-    href: /azure/data-explorer/kusto/concepts/cross-cluster-and-schema-changes?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/concepts/cross-cluster-and-schema-changes?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Cross-database and cross-cluster queries
-    href: /azure/data-explorer/kusto/query/cross-cluster-or-database-queries?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/cross-cluster-or-database-queries?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Entities
   items:
   - name: Entity types
-    href: /azure/data-explorer/kusto/query/schema-entities/index?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/schema-entities/index?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Entity names
-    href: /azure/data-explorer/kusto/query/schema-entities/entity-names?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/schema-entities/entity-names?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Entity references
-    href: /azure/data-explorer/kusto/query/schema-entities/entity-references?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/schema-entities/entity-references?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Databases
-    href: /azure/data-explorer/kusto/query/schema-entities/databases?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/schema-entities/databases?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Tables
-    href: /azure/data-explorer/kusto/query/schema-entities/tables?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/schema-entities/tables?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Columns
-    href: /azure/data-explorer/kusto/query/schema-entities/columns?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/schema-entities/columns?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Stored functions
-    href: /azure/data-explorer/kusto/query/schema-entities/stored-functions?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/schema-entities/stored-functions?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Views
-    href: /azure/data-explorer/kusto/query/schema-entities/views?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/schema-entities/views?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: External tables
-    href: /azure/data-explorer/kusto/query/schema-entities/externaltables?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/schema-entities/externaltables?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Fact and dimension tables
-    href: /azure/data-explorer/kusto/concepts/fact-and-dimension-tables?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/concepts/fact-and-dimension-tables?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Data types
   items:
   - name: Scalar data types
-    href: /azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/index?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bool
-    href: /azure/data-explorer/kusto/query/scalar-data-types/bool?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/bool?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: datetime
-    href: /azure/data-explorer/kusto/query/scalar-data-types/datetime?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/datetime?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: decimal
-    href: /azure/data-explorer/kusto/query/scalar-data-types/decimal?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/decimal?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: dynamic
-    href: /azure/data-explorer/kusto/query/scalar-data-types/dynamic?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/dynamic?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: guid
-    href: /azure/data-explorer/kusto/query/scalar-data-types/guid?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/guid?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: int
-    href: /azure/data-explorer/kusto/query/scalar-data-types/int?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/int?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: long
-    href: /azure/data-explorer/kusto/query/scalar-data-types/long?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/long?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: real
-    href: /azure/data-explorer/kusto/query/scalar-data-types/real?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/real?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: string
-    href: /azure/data-explorer/kusto/query/scalar-data-types/string?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/string?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: timespan
-    href: /azure/data-explorer/kusto/query/scalar-data-types/timespan?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/timespan?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Null values
-    href: /azure/data-explorer/kusto/query/scalar-data-types/null-values?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/null-values?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Unsupported scalar data types
-    href: /azure/data-explorer/kusto/query/scalar-data-types/unsupported-data-types?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-data-types/unsupported-data-types?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Functions
   items:
   - name: Function types
-    href: /azure/data-explorer/kusto/query/functions/index?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/functions/index?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: User-defined functions
     displayName: Kusto view, views, Kusto function
-    href: /azure/data-explorer/kusto/query/functions/user-defined-functions?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/functions/user-defined-functions?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Query statements
   items:
   - name: Query statement types
-    href: /azure/data-explorer/kusto/query/statements?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/statements?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Alias statement
-    href: /azure/data-explorer/kusto/query/aliasstatement?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/aliasstatement?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Let statement
-    href: /azure/data-explorer/kusto/query/letstatement?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/letstatement?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Pattern statement
-    href: /azure/data-explorer/kusto/query/patternstatement?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/patternstatement?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Query parameters statement
-    href: /azure/data-explorer/kusto/query/queryparametersstatement?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/queryparametersstatement?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Restrict statement
-    href: /azure/data-explorer/kusto/query/restrictstatement?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/restrictstatement?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Set statement
-    href: /azure/data-explorer/kusto/query/setstatement?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/setstatement?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Tabular expression statements
     displayName: views
-    href: /azure/data-explorer/kusto/query/tabularexpressionstatements?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tabularexpressionstatements?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Batches
-    href: /azure/data-explorer/kusto/query/batches?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/batches?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Tabular operators
   items:
   - name: Query operators
-    href: /azure/data-explorer/kusto/query/queries?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/queries?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: as operator
-    href: /azure/data-explorer/kusto/query/asoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/asoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: consume operator
-    href: /azure/data-explorer/kusto/query/consumeoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/consumeoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: count operator
-    href: /azure/data-explorer/kusto/query/countoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/countoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: datatable operator
-    href: /azure/data-explorer/kusto/query/datatableoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/datatableoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: distinct operator
-    href: /azure/data-explorer/kusto/query/distinctoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/distinctoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: evaluate operator
-    href: /azure/data-explorer/kusto/query/evaluateoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/evaluateoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: extend operator
-    href: /azure/data-explorer/kusto/query/extendoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/extendoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: externaldata operator
-    href: /azure/data-explorer/kusto/query/externaldata-operator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/externaldata-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: facet operator
-    href: /azure/data-explorer/kusto/query/facetoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/facetoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: find operator
-    href: /azure/data-explorer/kusto/query/findoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/findoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: fork operator
-    href: /azure/data-explorer/kusto/query/forkoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/forkoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: getschema operator
-    href: /azure/data-explorer/kusto/query/getschemaoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/getschemaoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: invoke operator
-    href: /azure/data-explorer/kusto/query/invokeoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/invokeoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: join operator
     items:
     - name: join operator
-      href: /azure/data-explorer/kusto/query/joinoperator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/joinoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Cross-cluster join
-      href: /azure/data-explorer/kusto/query/joincrosscluster?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/joincrosscluster?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Broadcast join
-      href: /azure/data-explorer/kusto/query/broadcastjoin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/broadcastjoin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Time window join
-      href: /azure/data-explorer/kusto/query/join-timewindow?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/join-timewindow?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: lookup operator
-    href: /azure/data-explorer/kusto/query/lookupoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/lookupoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: mv-apply operator
-    href: /azure/data-explorer/kusto/query/mv-applyoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/mv-applyoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: mv apply mv_apply
   - name: mv-expand operator
-    href: /azure/data-explorer/kusto/query/mvexpandoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/mvexpandoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: mv expand mv_expand
   - name: sort operator
     displayName: order operator
-    href: /azure/data-explorer/kusto/query/sort-operator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sort-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: project operator
-    href: /azure/data-explorer/kusto/query/projectoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/projectoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: project-away operator
-    href: /azure/data-explorer/kusto/query/projectawayoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/projectawayoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: project away project_away
   - name: project-keep operator
-    href: /azure/data-explorer/kusto/query/project-keep-operator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/project-keep-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: project keep project_keep
   - name: project-rename operator
-    href: /azure/data-explorer/kusto/query/projectrenameoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/projectrenameoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: project rename project_rename
   - name: project-reorder operator
-    href: /azure/data-explorer/kusto/query/projectreorderoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/projectreorderoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: project reorder project_reorder
   - name: parse operator
-    href: /azure/data-explorer/kusto/query/parseoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parseoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse-where operator
-    href: /azure/data-explorer/kusto/query/parsewhereoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parsewhereoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: parse where parse_where
   - name: parse-kv operator
-    href: /azure/data-explorer/kusto/query/parse-kv-operator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-kv-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: parse kv parse_kv
   - name: partition operator
-    href: /azure/data-explorer/kusto/query/partitionoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/partitionoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: print operator
-    href: /azure/data-explorer/kusto/query/printoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/printoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: range operator
-    href: /azure/data-explorer/kusto/query/rangeoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/rangeoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: reduce operator
-    href: /azure/data-explorer/kusto/query/reduceoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/reduceoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: render operator
     items:
     - name: render operator
-      href: /azure/data-explorer/kusto/query/renderoperator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/renderoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: visualizations
       items:
       - name: anomalychart
-        href: /azure/data-explorer/kusto/query/visualization-anomalychart?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-anomalychart?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: areachart
-        href: /azure/data-explorer/kusto/query/visualization-areachart?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-areachart?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: barchart
-        href: /azure/data-explorer/kusto/query/visualization-barchart?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-barchart?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: card
-        href: /azure/data-explorer/kusto/query/visualization-card?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-card?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: columnchart
-        href: /azure/data-explorer/kusto/query/visualization-columnchart?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-columnchart?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: ladderchart
-        href: /azure/data-explorer/kusto/query/visualization-ladderchart?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-ladderchart?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: linechart
-        href: /azure/data-explorer/kusto/query/visualization-linechart?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-linechart?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: piechart
-        href: /azure/data-explorer/kusto/query/visualization-piechart?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-piechart?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: pivotchart
-        href: /azure/data-explorer/kusto/query/visualization-pivotchart?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-pivotchart?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: scatterchart
-        href: /azure/data-explorer/kusto/query/visualization-scatterchart?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-scatterchart?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: stackedareachart
-        href: /azure/data-explorer/kusto/query/visualization-stackedareachart?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-stackedareachart?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: table
-        href: /azure/data-explorer/kusto/query/visualization-table?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-table?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: timechart
-        href: /azure/data-explorer/kusto/query/visualization-timechart?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-timechart?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
       - name: timepivot
-        href: /azure/data-explorer/kusto/query/visualization-timepivot?context=/fabric/context/context&pivots=fabric
+        href: /azure/data-explorer/kusto/query/visualization-timepivot?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
+      - name: treemap
+        href: /azure/data-explorer/kusto/query/visualization-treemap?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: sample operator
-    href: /azure/data-explorer/kusto/query/sampleoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sampleoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: sample-distinct operator
-    href: /azure/data-explorer/kusto/query/sampledistinctoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sampledistinctoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: sample distinct sample_distinct
   - name: scan operator
-    href: /azure/data-explorer/kusto/query/scan-operator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scan-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: search operator
-    href: /azure/data-explorer/kusto/query/searchoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/searchoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: serialize operator
-    href: /azure/data-explorer/kusto/query/serializeoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/serializeoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: shuffle query
     displayName: hint.shufflekey, hint.strategy, shufflekey, hint, strategy
-    href: /azure/data-explorer/kusto/query/shufflequery?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/shufflequery?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: summarize operator
     items:
     - name: summarize operator overview
-      href: /azure/data-explorer/kusto/query/summarizeoperator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/summarizeoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Using hll() and tdigest()
-      href: /azure/data-explorer/kusto/query/usinghlltdigest?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/usinghlltdigest?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: take operator
     displayName: limit operator
-    href: /azure/data-explorer/kusto/query/takeoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/takeoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: top operator
-    href: /azure/data-explorer/kusto/query/topoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/topoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: top-nested operator
-    href: /azure/data-explorer/kusto/query/topnestedoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/topnestedoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: top nested top_nested
   - name: top-hitters operator
-    href: /azure/data-explorer/kusto/query/tophittersoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tophittersoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: top hitters top_hitters
   - name: union operator
-    href: /azure/data-explorer/kusto/query/unionoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/unionoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: where operator
     displayName: filter operator
-    href: /azure/data-explorer/kusto/query/whereoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/whereoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Special functions
   items:
   - name: cluster()
-    href: /azure/data-explorer/kusto/query/clusterfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/clusterfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: database()
-    href: /azure/data-explorer/kusto/query/databasefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/databasefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: external_table()
-    href: /azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/externaltablefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: external table external-table
   - name: materialize()
-    href: /azure/data-explorer/kusto/query/materializefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/materializefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: materialized_view()
-    href: /azure/data-explorer/kusto/query/materialized-view-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/materialized-view-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: materialized view materialized-view
   - name: Query results cache
-    href: /azure/data-explorer/kusto/query/query-results-cache?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/query-results-cache?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: table()
-    href: /azure/data-explorer/kusto/query/tablefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tablefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: toscalar()
-    href: /azure/data-explorer/kusto/query/toscalarfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/toscalarfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     displayName: to_scalar to-scalar
 - name: Scalar operators
   items:
   - name: between operators
     items:
     - name: between operator
-      href: /azure/data-explorer/kusto/query/betweenoperator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/betweenoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!between operator'
-      href: /azure/data-explorer/kusto/query/notbetweenoperator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/notbetweenoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Bitwise binary operators
-    href: /azure/data-explorer/kusto/query/binoperators?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binoperators?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Datetime/timespan arithmetic
-    href: /azure/data-explorer/kusto/query/datetime-timespan-arithmetic?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/datetime-timespan-arithmetic?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: in operators
     items:
     - name: in operator
-      href: /azure/data-explorer/kusto/query/in-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/in-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: in~ operator
-      href: /azure/data-explorer/kusto/query/inoperator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/inoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!in operator'
-      href: /azure/data-explorer/kusto/query/not-in-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-in-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!in~ operator'
-      href: /azure/data-explorer/kusto/query/not-in-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-in-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Logical or binary operators
-    href: /azure/data-explorer/kusto/query/logicaloperators?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/logicaloperators?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Numerical operators
-    href: /azure/data-explorer/kusto/query/numoperators?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/numoperators?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: String operators
     items:
     - name: String operators overview
-      href: /azure/data-explorer/kusto/query/datatypes-string-operators?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/datatypes-string-operators?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: contains operator
-      href: /azure/data-explorer/kusto/query/contains-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/contains-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: contains_cs operator
-      href: /azure/data-explorer/kusto/query/contains-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/contains-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!contains operator'
-      href: /azure/data-explorer/kusto/query/not-contains-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-contains-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!contains_cs operator'
-      href: /azure/data-explorer/kusto/query/not-contains-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-contains-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: endswith operator
-      href: /azure/data-explorer/kusto/query/endswith-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/endswith-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: endswith_cs operator
-      href: /azure/data-explorer/kusto/query/endswith-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/endswith-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!endswith operator'
-      href: /azure/data-explorer/kusto/query/not-endswith-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-endswith-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!endswith_cs operator'
-      href: /azure/data-explorer/kusto/query/not-endswith-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-endswith-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: == (equals) operator
       displayName: equals
-      href: /azure/data-explorer/kusto/query/equals-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/equals-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: =~ (equals) operator
-      href: /azure/data-explorer/kusto/query/equals-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/equals-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!= (not equals) operator'
-      href: /azure/data-explorer/kusto/query/not-equals-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-equals-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!~ (not equals) operator'
-      href: /azure/data-explorer/kusto/query/not-equals-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-equals-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: has operator
-      href: /azure/data-explorer/kusto/query/has-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/has-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: has_cs operator
-      href: /azure/data-explorer/kusto/query/has-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/has-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!has operator'
-      href: /azure/data-explorer/kusto/query/not-has-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-has-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!has_cs operator'
-      href: /azure/data-explorer/kusto/query/not-has-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-has-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: hasprefix operator
-      href: /azure/data-explorer/kusto/query/hasprefix-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/hasprefix-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: hasprefix_cs operator
-      href: /azure/data-explorer/kusto/query/hasprefix-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/hasprefix-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!hasprefix operator'
-      href: /azure/data-explorer/kusto/query/not-hasprefix-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-hasprefix-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!hasprefix_cs operator'
-      href: /azure/data-explorer/kusto/query/not-hasprefix-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-hasprefix-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: hassuffix operator
-      href: /azure/data-explorer/kusto/query/hassuffix-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/hassuffix-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: hassuffix_cs operator
-      href: /azure/data-explorer/kusto/query/hassuffix-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/hassuffix-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!hassuffix operator'
-      href: /azure/data-explorer/kusto/query/not-hassuffix-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-hassuffix-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!hassuffix_cs operator'
-      href: /azure/data-explorer/kusto/query/not-hassuffix-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-hassuffix-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: has_all operator
-      href: /azure/data-explorer/kusto/query/has-all-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/has-all-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: has_any operator
-      href: /azure/data-explorer/kusto/query/has-anyoperator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/has-anyoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: in operator
-      href: /azure/data-explorer/kusto/query/in-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/in-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: in~ operator
-      href: /azure/data-explorer/kusto/query/inoperator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/inoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!in operator'
-      href: /azure/data-explorer/kusto/query/not-in-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-in-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!in~ operator'
-      href: /azure/data-explorer/kusto/query/not-in-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-in-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: matches regex operator
-      href: /azure/data-explorer/kusto/query/matches-regex-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/matches-regex-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: startswith operator
-      href: /azure/data-explorer/kusto/query/startswith-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/startswith-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: startswith_cs operator
-      href: /azure/data-explorer/kusto/query/startswith-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/startswith-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!startswith operator'
-      href: /azure/data-explorer/kusto/query/not-startswith-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-startswith-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: '!startswith_cs operator'
-      href: /azure/data-explorer/kusto/query/not-startswith-cs-operator?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-startswith-cs-operator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Scalar functions
   items:
   - name: Scalar function types
     displayName: stored procedures
-    href: /azure/data-explorer/kusto/query/scalarfunctions?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalarfunctions?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: abs()
-    href: /azure/data-explorer/kusto/query/abs-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/abs-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: acos()
-    href: /azure/data-explorer/kusto/query/acosfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/acosfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ago()
-    href: /azure/data-explorer/kusto/query/agofunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/agofunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: around()
-    href: /azure/data-explorer/kusto/query/around-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/around-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_concat()
-    href: /azure/data-explorer/kusto/query/arrayconcatfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/arrayconcatfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_iff()
     displayName: array_iif()
-    href: /azure/data-explorer/kusto/query/arrayifffunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/arrayifffunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_index_of()
-    href: /azure/data-explorer/kusto/query/arrayindexoffunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/arrayindexoffunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_length()
     displayName: arraylength()
-    href: /azure/data-explorer/kusto/query/arraylengthfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/arraylengthfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_reverse()
-    href: /azure/data-explorer/kusto/query/array-reverse-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-reverse-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_rotate_left()
-    href: /azure/data-explorer/kusto/query/array_rotate_leftfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array_rotate_leftfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_rotate_right()
-    href: /azure/data-explorer/kusto/query/array_rotate_rightfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array_rotate_rightfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_shift_left()
-    href: /azure/data-explorer/kusto/query/array_shift_leftfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array_shift_leftfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_shift_right()
-    href: /azure/data-explorer/kusto/query/array_shift_rightfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array_shift_rightfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_slice()
-    href: /azure/data-explorer/kusto/query/arrayslicefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/arrayslicefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_sort_asc()
-    href: /azure/data-explorer/kusto/query/arraysortascfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/arraysortascfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_sort_desc()
-    href: /azure/data-explorer/kusto/query/arraysortdescfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/arraysortdescfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_split()
-    href: /azure/data-explorer/kusto/query/arraysplitfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/arraysplitfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: array_sum()
-    href: /azure/data-explorer/kusto/query/array-sum-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-sum-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: asin()
-    href: /azure/data-explorer/kusto/query/asinfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/asinfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: assert()
-    href: /azure/data-explorer/kusto/query/assert-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/assert-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: atan()
-    href: /azure/data-explorer/kusto/query/atanfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/atanfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: atan2()
-    href: /azure/data-explorer/kusto/query/atan2function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/atan2function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bag_has_key()
-    href: /azure/data-explorer/kusto/query/bag-has-key-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bag-has-key-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bag_keys()
-    href: /azure/data-explorer/kusto/query/bagkeysfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bagkeysfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bag_merge()
-    href: /azure/data-explorer/kusto/query/bag-merge-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bag-merge-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bag_pack()
     displayName: pack(), pack_dictionary()
-    href: /azure/data-explorer/kusto/query/packfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/packfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bag_pack_columns()
     displayName: bag pack columns, dynamic object, property bag
-    href: /azure/data-explorer/kusto/query/bag-pack-columns-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bag-pack-columns-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bag_remove_keys()
-    href: /azure/data-explorer/kusto/query/bag-remove-keys-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bag-remove-keys-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bag_set_key()
-    href: /azure/data-explorer/kusto/query/bag-set-key-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bag-set-key-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bag_zip()
-    href: /azure/data-explorer/kusto/query/bag-zip?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bag-zip?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: base64_decode_toarray()
-    href: /azure/data-explorer/kusto/query/base64_decode_toarrayfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/base64_decode_toarrayfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: base64_decode_tostring()
     displayName: base64_decodestring()
-    href: /azure/data-explorer/kusto/query/base64_decode_tostringfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/base64_decode_tostringfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: base64_decode_toguid()
-    href: /azure/data-explorer/kusto/query/base64-decode-toguid-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/base64-decode-toguid-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: base64_encode_fromarray()
-    href: /azure/data-explorer/kusto/query/base64_encode_fromarrayfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/base64_encode_fromarrayfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: base64_encode_tostring()
     displayName: base64_encodestring()
-    href: /azure/data-explorer/kusto/query/base64_encode_tostringfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/base64_encode_tostringfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: base64_encode_fromguid()
-    href: /azure/data-explorer/kusto/query/base64-encode-fromguid-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/base64-encode-fromguid-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: beta_cdf()
-    href: /azure/data-explorer/kusto/query/beta-cdffunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/beta-cdffunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: beta_inv()
-    href: /azure/data-explorer/kusto/query/beta-invfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/beta-invfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: beta_pdf()
-    href: /azure/data-explorer/kusto/query/beta-pdffunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/beta-pdffunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bin()
     displayName: floor()
-    href: /azure/data-explorer/kusto/query/binfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bin_at()
-    href: /azure/data-explorer/kusto/query/binatfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binatfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bin_auto()
-    href: /azure/data-explorer/kusto/query/bin-autofunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bin-autofunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: binary_and()
-    href: /azure/data-explorer/kusto/query/binary-andfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-andfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: binary_not()
-    href: /azure/data-explorer/kusto/query/binary-notfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-notfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: binary_or()
-    href: /azure/data-explorer/kusto/query/binary-orfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-orfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: binary_shift_left()
-    href: /azure/data-explorer/kusto/query/binary-shift-leftfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-shift-leftfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: binary_shift_right()
-    href: /azure/data-explorer/kusto/query/binary-shift-rightfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-shift-rightfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: binary_xor()
-    href: /azure/data-explorer/kusto/query/binary-xorfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-xorfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: bitset_count_ones()
-    href: /azure/data-explorer/kusto/query/bitset-count-onesfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bitset-count-onesfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: case()
-    href: /azure/data-explorer/kusto/query/casefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/casefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ceiling()
-    href: /azure/data-explorer/kusto/query/ceilingfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ceilingfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: coalesce()
-    href: /azure/data-explorer/kusto/query/coalescefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/coalescefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: column_ifexists()
     displayName: columnifexists()
-    href: /azure/data-explorer/kusto/query/columnifexists?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/columnifexists?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: convert_angle()
-    href: /azure/data-explorer/kusto/query/convert-angle-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/convert-angle-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: convert_energy()
-    href: /azure/data-explorer/kusto/query/convert-energy-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/convert-energy-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: convert_force()
-    href: /azure/data-explorer/kusto/query/convert-force-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/convert-force-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: convert_length()
-    href: /azure/data-explorer/kusto/query/convert-length-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/convert-length-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: convert_mass()
-    href: /azure/data-explorer/kusto/query/convert-mass-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/convert-mass-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: convert_speed()
-    href: /azure/data-explorer/kusto/query/convert-speed-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/convert-speed-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: convert_temperature()
-    href: /azure/data-explorer/kusto/query/convert-temperature-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/convert-temperature-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: convert_volume()
-    href: /azure/data-explorer/kusto/query/convert-volume-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/convert-volume-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: cos()
-    href: /azure/data-explorer/kusto/query/cosfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/cosfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: cot()
-    href: /azure/data-explorer/kusto/query/cotfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/cotfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: countof()
-    href: /azure/data-explorer/kusto/query/countoffunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/countoffunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: current_cluster_endpoint()
-    href: /azure/data-explorer/kusto/query/current-cluster-endpoint-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/current-cluster-endpoint-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: current_database()
-    href: /azure/data-explorer/kusto/query/current-database-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/current-database-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: current_principal()
-    href: /azure/data-explorer/kusto/query/current-principalfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/current-principalfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: current_principal_details()
-    href: /azure/data-explorer/kusto/query/current-principal-detailsfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/current-principal-detailsfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: current_principal_is_member_of()
-    href: /azure/data-explorer/kusto/query/current-principal-ismemberoffunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/current-principal-ismemberoffunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: cursor_after()
-    href: /azure/data-explorer/kusto/query/cursorafterfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/cursorafterfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: cursor_before_or_at()
-    href: /azure/data-explorer/kusto/query/cursorbeforeoratfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/cursorbeforeoratfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: cursor_current()
     displayName: current_cursor()
-    href: /azure/data-explorer/kusto/query/cursorcurrent?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/cursorcurrent?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: datetime_add()
-    href: /azure/data-explorer/kusto/query/datetime-addfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/datetime-addfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: datetime_diff()
-    href: /azure/data-explorer/kusto/query/datetime-difffunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/datetime-difffunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: datetime_local_to_utc()
-    href: /azure/data-explorer/kusto/query/datetime-local-to-utc-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/datetime-local-to-utc-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: datetime_part()
     displayName: datepart()
-    href: /azure/data-explorer/kusto/query/datetime-partfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/datetime-partfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: datetime_utc_to_local()
-    href: /azure/data-explorer/kusto/query/datetime-utc-to-local-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/datetime-utc-to-local-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: dayofmonth()
-    href: /azure/data-explorer/kusto/query/dayofmonthfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/dayofmonthfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: dayofweek()
-    href: /azure/data-explorer/kusto/query/dayofweekfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/dayofweekfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: dayofyear()
-    href: /azure/data-explorer/kusto/query/dayofyearfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/dayofyearfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: dcount_hll()
-    href: /azure/data-explorer/kusto/query/dcount-hllfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/dcount-hllfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: degrees()
-    href: /azure/data-explorer/kusto/query/degreesfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/degreesfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: dynamic_to_json()
-    href: /azure/data-explorer/kusto/query/dynamic-to-json-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/dynamic-to-json-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: endofday()
-    href: /azure/data-explorer/kusto/query/endofdayfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/endofdayfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: endofmonth()
-    href: /azure/data-explorer/kusto/query/endofmonthfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/endofmonthfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: endofweek()
-    href: /azure/data-explorer/kusto/query/endofweekfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/endofweekfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: endofyear()
-    href: /azure/data-explorer/kusto/query/endofyearfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/endofyearfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: estimate_data_size()
-    href: /azure/data-explorer/kusto/query/estimate-data-sizefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/estimate-data-sizefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: exp()
-    href: /azure/data-explorer/kusto/query/exp-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/exp-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: exp10()
-    href: /azure/data-explorer/kusto/query/exp10-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/exp10-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: exp2()
-    href: /azure/data-explorer/kusto/query/exp2-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/exp2-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: extent_id()
     displayName: extentid()
-    href: /azure/data-explorer/kusto/query/extentidfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/extentidfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: extent_tags()
-    href: /azure/data-explorer/kusto/query/extenttagsfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/extenttagsfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: extract()
-    href: /azure/data-explorer/kusto/query/extractfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/extractfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: extract_all()
     displayName: extractall()
-    href: /azure/data-explorer/kusto/query/extractallfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/extractallfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: extract_json()
     displayName: extractjson()
-    href: /azure/data-explorer/kusto/query/extractjsonfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/extractjsonfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: format_bytes()
-    href: /azure/data-explorer/kusto/query/format-bytesfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/format-bytesfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: format_datetime()
-    href: /azure/data-explorer/kusto/query/format-datetimefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/format-datetimefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: format_ipv4()
-    href: /azure/data-explorer/kusto/query/format-ipv4-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/format-ipv4-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: format_ipv4_mask()
-    href: /azure/data-explorer/kusto/query/format-ipv4-mask-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/format-ipv4-mask-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: format_timespan()
-    href: /azure/data-explorer/kusto/query/format-timespanfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/format-timespanfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: gamma()
-    href: /azure/data-explorer/kusto/query/gammafunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/gammafunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
+  - name: geo_info_from_ip_address()
+    href: /azure/data-explorer/kusto/query/geo-info-from-ip-address-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: gettype()
-    href: /azure/data-explorer/kusto/query/gettypefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/gettypefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: getyear()
-    href: /azure/data-explorer/kusto/query/getyearfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/getyearfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: gzip_compress_to_base64_string()
-    href: /azure/data-explorer/kusto/query/gzip-base64-compress?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/gzip-base64-compress?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: gzip_decompress_from_base64_string()
-    href: /azure/data-explorer/kusto/query/gzip-base64-decompress?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/gzip-base64-decompress?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: has_any_index()
-    href: /azure/data-explorer/kusto/query/has-any-index-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/has-any-index-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: has_any_ipv4()
-    href: /azure/data-explorer/kusto/query/has-any-ipv4-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/has-any-ipv4-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: has_ipv4()
-    href: /azure/data-explorer/kusto/query/has-ipv4-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/has-ipv4-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: has_any_ipv4_prefix()
-    href: /azure/data-explorer/kusto/query/has-any-ipv4-prefix-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/has-any-ipv4-prefix-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: has_ipv4_prefix()
-    href: /azure/data-explorer/kusto/query/has-ipv4-prefix-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/has-ipv4-prefix-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: hash()
-    href: /azure/data-explorer/kusto/query/hashfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hashfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: hash_combine()
-    href: /azure/data-explorer/kusto/query/hash_combinefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hash_combinefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: hash_many()
-    href: /azure/data-explorer/kusto/query/hash_manyfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hash_manyfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: hash_md5()
-    href: /azure/data-explorer/kusto/query/md5hashfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/md5hashfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: hash_sha1()
-    href: /azure/data-explorer/kusto/query/sha1-hash-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sha1-hash-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: hash_sha256()
-    href: /azure/data-explorer/kusto/query/sha256hashfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sha256hashfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: hash_xxhash64()
-    href: /azure/data-explorer/kusto/query/hash-xxhash64-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hash-xxhash64-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: hll_merge()
-    href: /azure/data-explorer/kusto/query/hllmergefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hllmergefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: hourofday()
-    href: /azure/data-explorer/kusto/query/hourofdayfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hourofdayfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: iff()
     displayName: iif()
-    href: /azure/data-explorer/kusto/query/ifffunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ifffunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: indexof()
-    href: /azure/data-explorer/kusto/query/indexoffunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/indexoffunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: indexof_regex()
-    href: /azure/data-explorer/kusto/query/indexofregexfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/indexofregexfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ingestion_time()
-    href: /azure/data-explorer/kusto/query/ingestiontimefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ingestiontimefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ipv4_compare()
-    href: /azure/data-explorer/kusto/query/ipv4-comparefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv4-comparefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ipv4_is_in_range()
-    href: /azure/data-explorer/kusto/query/ipv4-is-in-range-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv4-is-in-range-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ipv4_is_in_any_range()
-    href: /azure/data-explorer/kusto/query/ipv4-is-in-any-range-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv4-is-in-any-range-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ipv4_is_match()
-    href: /azure/data-explorer/kusto/query/ipv4-is-matchfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv4-is-matchfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ipv4_is_private()
-    href: /azure/data-explorer/kusto/query/ipv4-is-privatefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv4-is-privatefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
+  - name: ipv4_range_to_cidr_list()
+    href: /azure/data-explorer/kusto/query/ipv4-range-to-cidr-list-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ipv4_netmask_suffix()
-    href: /azure/data-explorer/kusto/query/ipv4-netmask-suffix-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv4-netmask-suffix-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ipv6_compare()
-    href: /azure/data-explorer/kusto/query/ipv6-comparefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv6-comparefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ipv6_is_in_range()
-    href: /azure/data-explorer/kusto/query/ipv6-is-in-range-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv6-is-in-range-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ipv6_is_in_any_range()
-    href: /azure/data-explorer/kusto/query/ipv6-is-in-any-range-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv6-is-in-any-range-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: ipv6_is_match()
-    href: /azure/data-explorer/kusto/query/ipv6-is-matchfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv6-is-matchfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: isascii()
-    href: /azure/data-explorer/kusto/query/isascii?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isascii?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: isempty()
-    href: /azure/data-explorer/kusto/query/isemptyfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isemptyfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: isfinite()
-    href: /azure/data-explorer/kusto/query/isfinitefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isfinitefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: isinf()
-    href: /azure/data-explorer/kusto/query/isinffunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isinffunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: isnan()
-    href: /azure/data-explorer/kusto/query/isnanfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isnanfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: isnotempty()
     displayName: notempty()
-    href: /azure/data-explorer/kusto/query/isnotemptyfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isnotemptyfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: isnotnull()
     displayName: notnull()
-    href: /azure/data-explorer/kusto/query/isnotnullfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isnotnullfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: isnull()
-    href: /azure/data-explorer/kusto/query/isnullfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isnullfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: isutf8()
-    href: /azure/data-explorer/kusto/query/isutf8?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isutf8?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: jaccard_index()
-    href: /azure/data-explorer/kusto/query/jaccard-index-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/jaccard-index-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: log()
-    href: /azure/data-explorer/kusto/query/log-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/log-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: log10()
-    href: /azure/data-explorer/kusto/query/log10-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/log10-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: log2()
-    href: /azure/data-explorer/kusto/query/log2-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/log2-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: loggamma()
-    href: /azure/data-explorer/kusto/query/loggammafunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/loggammafunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: make_datetime()
-    href: /azure/data-explorer/kusto/query/make-datetimefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-datetimefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: make_timespan()
-    href: /azure/data-explorer/kusto/query/make-timespanfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-timespanfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: max_of()
-    href: /azure/data-explorer/kusto/query/max-offunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/max-offunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: merge_tdigest()
     displayName: tdigest_merge()
-    href: /azure/data-explorer/kusto/query/merge-tdigest-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/merge-tdigest-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: min_of()
-    href: /azure/data-explorer/kusto/query/min-offunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/min-offunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: monthofyear()
     displayName: getmonth()
-    href: /azure/data-explorer/kusto/query/monthofyearfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/monthofyearfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: new_guid()
-    href: /azure/data-explorer/kusto/query/newguidfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/newguidfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: not()
-    href: /azure/data-explorer/kusto/query/notfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/notfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: now()
-    href: /azure/data-explorer/kusto/query/nowfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/nowfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: pack_all()
-    href: /azure/data-explorer/kusto/query/packallfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/packallfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: pack_array()
-    href: /azure/data-explorer/kusto/query/packarrayfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/packarrayfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_command_line()
-    href: /azure/data-explorer/kusto/query/parse-command-line?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-command-line?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_csv()
-    href: /azure/data-explorer/kusto/query/parsecsvfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parsecsvfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_ipv4()
-    href: /azure/data-explorer/kusto/query/parse-ipv4function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-ipv4function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_ipv4_mask()
-    href: /azure/data-explorer/kusto/query/parse-ipv4-maskfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-ipv4-maskfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_ipv6()
-    href: /azure/data-explorer/kusto/query/parse-ipv6function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-ipv6function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_ipv6_mask()
-    href: /azure/data-explorer/kusto/query/parse-ipv6-maskfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-ipv6-maskfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_json()
     displayName: toobject(), parsejson(), todynamic()
-    href: /azure/data-explorer/kusto/query/parsejsonfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parsejsonfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_path()
-    href: /azure/data-explorer/kusto/query/parsepathfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parsepathfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_url()
     displayName: parseurl()
-    href: /azure/data-explorer/kusto/query/parseurlfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parseurlfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_urlquery()
     displayName: parseurlquery()
-    href: /azure/data-explorer/kusto/query/parseurlqueryfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parseurlqueryfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_user_agent()
-    href: /azure/data-explorer/kusto/query/parse-useragentfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-useragentfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_version()
-    href: /azure/data-explorer/kusto/query/parse-versionfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-versionfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: parse_xml()
-    href: /azure/data-explorer/kusto/query/parse-xmlfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-xmlfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: percentile_tdigest()
-    href: /azure/data-explorer/kusto/query/percentile-tdigestfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/percentile-tdigestfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: percentile_array_tdigest()
-    href: /azure/data-explorer/kusto/query/percentile-array-tdigestfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/percentile-array-tdigestfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: percentrank_tdigest()
-    href: /azure/data-explorer/kusto/query/percentrank-tdigestfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/percentrank-tdigestfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: pi()
-    href: /azure/data-explorer/kusto/query/pifunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/pifunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: pow()
-    href: /azure/data-explorer/kusto/query/powfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/powfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: punycode_from_string()
     displayName: puny code to from string
-    href: /azure/data-explorer/kusto/query/punycode-from-string?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/punycode-from-string?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: punycode_to_string()
     displayName: puny code to from string
-    href: /azure/data-explorer/kusto/query/punycode-to-string?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/punycode-to-string?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: radians()
-    href: /azure/data-explorer/kusto/query/radiansfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/radiansfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: rand()
-    href: /azure/data-explorer/kusto/query/randfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/randfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: range()
-    href: /azure/data-explorer/kusto/query/rangefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/rangefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: rank_tdigest()
-    href: /azure/data-explorer/kusto/query/rank-tdigest?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/rank-tdigest?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: regex_quote()
-    href: /azure/data-explorer/kusto/query/regexquotefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/regexquotefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: repeat()
-    href: /azure/data-explorer/kusto/query/repeatfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/repeatfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: replace_regex()
     displayName: replace()
-    href: /azure/data-explorer/kusto/query/replace-regex-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/replace-regex-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: replace_string()
     displayName: replace()
-    href: /azure/data-explorer/kusto/query/replace-string-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/replace-string-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: reverse()
-    href: /azure/data-explorer/kusto/query/reversefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/reversefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: round()
-    href: /azure/data-explorer/kusto/query/roundfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/roundfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: set_difference()
-    href: /azure/data-explorer/kusto/query/setdifferencefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/setdifferencefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: set_has_element()
-    href: /azure/data-explorer/kusto/query/sethaselementfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sethaselementfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: set_intersect()
-    href: /azure/data-explorer/kusto/query/setintersectfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/setintersectfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: set_union()
-    href: /azure/data-explorer/kusto/query/setunionfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/setunionfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: sign()
-    href: /azure/data-explorer/kusto/query/signfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/signfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: sin()
-    href: /azure/data-explorer/kusto/query/sinfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sinfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: split()
-    href: /azure/data-explorer/kusto/query/splitfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/splitfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: sqrt()
-    href: /azure/data-explorer/kusto/query/sqrtfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sqrtfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: startofday()
-    href: /azure/data-explorer/kusto/query/startofdayfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/startofdayfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: startofmonth()
-    href: /azure/data-explorer/kusto/query/startofmonthfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/startofmonthfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: startofweek()
-    href: /azure/data-explorer/kusto/query/startofweekfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/startofweekfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: startofyear()
-    href: /azure/data-explorer/kusto/query/startofyearfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/startofyearfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: strcat()
-    href: /azure/data-explorer/kusto/query/strcatfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/strcatfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: strcat_array()
-    href: /azure/data-explorer/kusto/query/strcat-arrayfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/strcat-arrayfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: strcat_delim()
-    href: /azure/data-explorer/kusto/query/strcat-delimfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/strcat-delimfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: strcmp()
-    href: /azure/data-explorer/kusto/query/strcmpfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/strcmpfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: string_size()
-    href: /azure/data-explorer/kusto/query/stringsizefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/stringsizefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: strlen()
-    href: /azure/data-explorer/kusto/query/strlenfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/strlenfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: strrep()
-    href: /azure/data-explorer/kusto/query/strrepfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/strrepfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: substring()
-    href: /azure/data-explorer/kusto/query/substringfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/substringfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: tan()
-    href: /azure/data-explorer/kusto/query/tanfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tanfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: tobool()
     displayName: toboolean()
-    href: /azure/data-explorer/kusto/query/toboolfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/toboolfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: todatetime()
-    href: /azure/data-explorer/kusto/query/todatetimefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/todatetimefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: todecimal()
-    href: /azure/data-explorer/kusto/query/todecimalfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/todecimalfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: todouble()
     displayName: toreal()
-    href: /azure/data-explorer/kusto/query/todoublefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/todoublefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: toguid()
-    href: /azure/data-explorer/kusto/query/toguidfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/toguidfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: tohex()
-    href: /azure/data-explorer/kusto/query/tohexfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tohexfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: toint()
-    href: /azure/data-explorer/kusto/query/tointfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tointfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: tolong()
-    href: /azure/data-explorer/kusto/query/tolongfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tolongfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: tolower()
-    href: /azure/data-explorer/kusto/query/tolowerfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tolowerfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: tostring()
-    href: /azure/data-explorer/kusto/query/tostringfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tostringfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: totimespan()
     displayName: totime()
-    href: /azure/data-explorer/kusto/query/totimespanfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/totimespanfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: toupper()
-    href: /azure/data-explorer/kusto/query/toupperfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/toupperfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: translate()
-    href: /azure/data-explorer/kusto/query/translatefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/translatefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: treepath()
-    href: /azure/data-explorer/kusto/query/treepathfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/treepathfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: trim()
-    href: /azure/data-explorer/kusto/query/trimfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/trimfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: trim_end()
-    href: /azure/data-explorer/kusto/query/trimendfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/trimendfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: trim_start()
-    href: /azure/data-explorer/kusto/query/trimstartfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/trimstartfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: unicode_codepoints_from_string()
     displayName: to_utf8()
-    href: /azure/data-explorer/kusto/query/unicode-codepoints-from-string-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/unicode-codepoints-from-string-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: unicode_codepoints_to_string()
     displayName: make_string()
-    href: /azure/data-explorer/kusto/query/unicode-codepoints-to-string-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/unicode-codepoints-to-string-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: unixtime_microseconds_todatetime()
-    href: /azure/data-explorer/kusto/query/unixtime-microseconds-todatetimefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/unixtime-microseconds-todatetimefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: unixtime_milliseconds_todatetime()
-    href: /azure/data-explorer/kusto/query/unixtime-milliseconds-todatetimefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/unixtime-milliseconds-todatetimefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: unixtime_nanoseconds_todatetime()
-    href: /azure/data-explorer/kusto/query/unixtime-nanoseconds-todatetimefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/unixtime-nanoseconds-todatetimefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: unixtime_seconds_todatetime()
-    href: /azure/data-explorer/kusto/query/unixtime-seconds-todatetimefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/unixtime-seconds-todatetimefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: url_decode()
-    href: /azure/data-explorer/kusto/query/urldecodefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/urldecodefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: url_encode()
-    href: /azure/data-explorer/kusto/query/urlencodefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/urlencodefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: url_encode_component()
-    href: /azure/data-explorer/kusto/query/urlencodecomponentfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/urlencodecomponentfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: week_of_year()
     displayName: weekofyear()
-    href: /azure/data-explorer/kusto/query/weekofyearfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/weekofyearfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: welch_test()
-    href: /azure/data-explorer/kusto/query/welch-testfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/welch-testfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: zip()
-    href: /azure/data-explorer/kusto/query/zipfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/zipfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: zlib_compress_to_base64_string()
-    href: /azure/data-explorer/kusto/query/zlib-base64-compress?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/zlib-base64-compress?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: zlib_decompress_from_base64_string()
-    href: /azure/data-explorer/kusto/query/zlib-base64-decompress?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/zlib-base64-decompress?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Aggregation functions
   displayName: aggregation
   items:
   - name: Aggregation function types
-    href: /azure/data-explorer/kusto/query/aggregation-functions?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/aggregation-functions?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: arg_max()
     displayName: argmax()
-    href: /azure/data-explorer/kusto/query/arg-max-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/arg-max-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: arg_min()
     displayName: argmin()
-    href: /azure/data-explorer/kusto/query/arg-min-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/arg-min-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: avg()
-    href: /azure/data-explorer/kusto/query/avg-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/avg-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: avgif()
-    href: /azure/data-explorer/kusto/query/avgif-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/avgif-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: binary_all_and
-    href: /azure/data-explorer/kusto/query/binary-all-and-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-all-and-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: binary_all_or
-    href: /azure/data-explorer/kusto/query/binary-all-or-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-all-or-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: binary_all_xor
-    href: /azure/data-explorer/kusto/query/binary-all-xor-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-all-xor-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: buildschema()
-    href: /azure/data-explorer/kusto/query/buildschema-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/buildschema-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: count()
     displayName: cnt()
-    href: /azure/data-explorer/kusto/query/count-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/count-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: count_distinct()
-    href: /azure/data-explorer/kusto/query/count-distinct-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/count-distinct-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: count_distinctif()
-    href: /azure/data-explorer/kusto/query/count-distinctif-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/count-distinctif-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: countif()
     displayName: count(predicate)
-    href: /azure/data-explorer/kusto/query/countif-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/countif-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: dcount()
-    href: /azure/data-explorer/kusto/query/dcount-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/dcount-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: dcountif()
-    href: /azure/data-explorer/kusto/query/dcountif-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/dcountif-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: hll()
-    href: /azure/data-explorer/kusto/query/hll-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hll-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: hll_if()
-    href: /azure/data-explorer/kusto/query/hll-if-aggregation-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hll-if-aggregation-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: hll_merge()
-    href: /azure/data-explorer/kusto/query/hll-merge-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hll-merge-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: make_bag()
-    href: /azure/data-explorer/kusto/query/make-bag-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-bag-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: make_bag_if()
-    href: /azure/data-explorer/kusto/query/make-bag-if-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-bag-if-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: make_list()
     displayName: makelist()
-    href: /azure/data-explorer/kusto/query/makelist-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/makelist-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: make_list_if()
-    href: /azure/data-explorer/kusto/query/makelistif-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/makelistif-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: make_list_with_nulls()
-    href: /azure/data-explorer/kusto/query/make-list-with-nulls-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-list-with-nulls-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: make_set()
     displayName: makeset()
-    href: /azure/data-explorer/kusto/query/makeset-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/makeset-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: make_set_if()
-    href: /azure/data-explorer/kusto/query/makesetif-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/makesetif-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: max()
-    href: /azure/data-explorer/kusto/query/max-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/max-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: maxif()
-    href: /azure/data-explorer/kusto/query/maxif-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/maxif-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: min()
-    href: /azure/data-explorer/kusto/query/min-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/min-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: minif()
-    href: /azure/data-explorer/kusto/query/minif-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/minif-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: percentile(), percentiles()
     displayName: percentiles_array()
-    href: /azure/data-explorer/kusto/query/percentiles-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/percentiles-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: percentilew(), percentilesw()
     displayName: percentilesw_array(), weighted percentiles
-    href: /azure/data-explorer/kusto/query/percentilesw-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/percentilesw-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: stdev()
-    href: /azure/data-explorer/kusto/query/stdev-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/stdev-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: stdevif()
-    href: /azure/data-explorer/kusto/query/stdevif-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/stdevif-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: stdevp()
-    href: /azure/data-explorer/kusto/query/stdevp-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/stdevp-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: sum()
-    href: /azure/data-explorer/kusto/query/sum-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sum-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: sumif()
-    href: /azure/data-explorer/kusto/query/sumif-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sumif-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: take_any()
     displayName: any()
-    href: /azure/data-explorer/kusto/query/take-any-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/take-any-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: take_anyif()
     displayName: anyif()
-    href: /azure/data-explorer/kusto/query/take-anyif-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/take-anyif-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: tdigest()
-    href: /azure/data-explorer/kusto/query/tdigest-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tdigest-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: tdigest_merge(), merge_tdigest()
-    href: /azure/data-explorer/kusto/query/tdigest-merge-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tdigest-merge-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: variance()
-    href: /azure/data-explorer/kusto/query/variance-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/variance-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: varianceif()
-    href: /azure/data-explorer/kusto/query/varianceif-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/varianceif-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: variancep()
-    href: /azure/data-explorer/kusto/query/variancep-aggfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/variancep-aggfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Geospatial
   items:
   - name: Geospatial clustering overview
     displayName: H3, S2, Geohash
-    href: /azure/data-explorer/kusto/query/geospatial-grid-systems?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geospatial-grid-systems?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Geospatial visualizations
-    href: /azure/data-explorer/kusto/query/geospatial-visualizations?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geospatial-visualizations?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_distance_2points()
-    href: /azure/data-explorer/kusto/query/geo-distance-2points-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-distance-2points-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_distance_point_to_line()
-    href: /azure/data-explorer/kusto/query/geo-distance-point-to-line-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-distance-point-to-line-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_distance_point_to_polygon()
-    href: /azure/data-explorer/kusto/query/geo-distance-point-to-polygon-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-distance-point-to-polygon-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_intersects_2lines()
-    href: /azure/data-explorer/kusto/query/geo-intersects-2lines-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-intersects-2lines-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_intersects_2polygons()
-    href: /azure/data-explorer/kusto/query/geo-intersects-2polygons-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-intersects-2polygons-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_intersects_line_with_polygon()
-    href: /azure/data-explorer/kusto/query/geo-intersects-line-with-polygon-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-intersects-line-with-polygon-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_intersection_2lines()
-    href: /azure/data-explorer/kusto/query/geo-intersection-2lines-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-intersection-2lines-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_intersection_2polygons()
-    href: /azure/data-explorer/kusto/query/geo-intersection-2polygons-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-intersection-2polygons-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_intersection_line_with_polygon()
-    href: /azure/data-explorer/kusto/query/geo-intersection-line-with-polygon-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-intersection-line-with-polygon-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_line_buffer()
-    href: /azure/data-explorer/kusto/query/geo-line-buffer-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-line-buffer-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_line_centroid()
-    href: /azure/data-explorer/kusto/query/geo-line-centroid-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-line-centroid-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_line_densify()
-    href: /azure/data-explorer/kusto/query/geo-line-densify-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-line-densify-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_line_length()
-    href: /azure/data-explorer/kusto/query/geo-line-length-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-line-length-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_line_simplify()
-    href: /azure/data-explorer/kusto/query/geo-line-simplify-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-line-simplify-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_polygon_area()
-    href: /azure/data-explorer/kusto/query/geo-polygon-area-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-polygon-area-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_polygon_buffer()
-    href: /azure/data-explorer/kusto/query/geo-polygon-buffer-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-polygon-buffer-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_polygon_centroid()
-    href: /azure/data-explorer/kusto/query/geo-polygon-centroid-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-polygon-centroid-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_polygon_densify()
-    href: /azure/data-explorer/kusto/query/geo-polygon-densify-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-polygon-densify-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_polygon_perimeter()
-    href: /azure/data-explorer/kusto/query/geo-polygon-perimeter-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-polygon-perimeter-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_polygon_simplify()
-    href: /azure/data-explorer/kusto/query/geo-polygon-simplify-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-polygon-simplify-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_polygon_to_s2cells()
-    href: /azure/data-explorer/kusto/query/geo-polygon-to-s2cells-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-polygon-to-s2cells-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_point_buffer()
-    href: /azure/data-explorer/kusto/query/geo-point-buffer-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-point-buffer-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_point_in_circle()
-    href: /azure/data-explorer/kusto/query/geo-point-in-circle-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-point-in-circle-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_point_in_polygon()
-    href: /azure/data-explorer/kusto/query/geo-point-in-polygon-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-point-in-polygon-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_point_to_geohash()
-    href: /azure/data-explorer/kusto/query/geo-point-to-geohash-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-point-to-geohash-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_point_to_h3cell()
-    href: /azure/data-explorer/kusto/query/geo-point-to-h3cell-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-point-to-h3cell-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_point_to_s2cell()
-    href: /azure/data-explorer/kusto/query/geo-point-to-s2cell-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-point-to-s2cell-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_geohash_to_central_point()
-    href: /azure/data-explorer/kusto/query/geo-geohash-to-central-point-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-geohash-to-central-point-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_geohash_neighbors()
-    href: /azure/data-explorer/kusto/query/geo-geohash-neighbors-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-geohash-neighbors-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_geohash_to_polygon()
-    href: /azure/data-explorer/kusto/query/geo-geohash-to-polygon-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-geohash-to-polygon-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_s2cell_to_central_point()
-    href: /azure/data-explorer/kusto/query/geo-s2cell-to-central-point-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-s2cell-to-central-point-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_s2cell_neighbors()
-    href: /azure/data-explorer/kusto/query/geo-s2cell-neighbors-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-s2cell-neighbors-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_s2cell_to_polygon()
-    href: /azure/data-explorer/kusto/query/geo-s2cell-to-polygon-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-s2cell-to-polygon-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_h3cell_to_central_point()
-    href: /azure/data-explorer/kusto/query/geo-h3cell-to-central-point-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-h3cell-to-central-point-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_h3cell_neighbors()
-    href: /azure/data-explorer/kusto/query/geo-h3cell-neighbors-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-h3cell-neighbors-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_h3cell_to_polygon()
-    href: /azure/data-explorer/kusto/query/geo-h3cell-to-polygon-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-h3cell-to-polygon-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_h3cell_parent()
-    href: /azure/data-explorer/kusto/query/geo-h3cell-parent-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-h3cell-parent-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_h3cell_children()
-    href: /azure/data-explorer/kusto/query/geo-h3cell-children-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-h3cell-children-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_h3cell_level()
-    href: /azure/data-explorer/kusto/query/geo-h3cell-level-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-h3cell-level-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_h3cell_rings()
-    href: /azure/data-explorer/kusto/query/geo-h3cell-rings-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-h3cell-rings-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_simplify_polygons_array()
-    href: /azure/data-explorer/kusto/query/geo-simplify-polygons-array-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-simplify-polygons-array-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_union_lines_array()
-    href: /azure/data-explorer/kusto/query/geo-union-lines-array-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-union-lines-array-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: geo_union_polygons_array()
-    href: /azure/data-explorer/kusto/query/geo-union-polygons-array-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/geo-union-polygons-array-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Time series analysis
   items:
   - name: Example use cases
     items:
     - name: Time series analysis
-      href: /azure/data-explorer/kusto/query/time-series-analysis?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/time-series-analysis?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Anomaly detection and forecasting
-      href: /azure/data-explorer/kusto/query/anomaly-detection?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/anomaly-detection?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Machine learning
-      href: /azure/data-explorer/kusto/query/machine-learning-clustering?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/machine-learning-clustering?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: make-series operator
-    href: /azure/data-explorer/kusto/query/make-seriesoperator?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-seriesoperator?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_abs()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-absfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-absfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_acos()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-acosfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-acosfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_add()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-addfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-addfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_asin()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-asinfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-asinfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_atan()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-atanfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-atanfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_ceiling()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-ceiling-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-ceiling-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_cos()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-cosfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-cosfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_decompose()
     displayName: seasonal, trend, baseline
-    href: /azure/data-explorer/kusto/query/series-decomposefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-decomposefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_decompose_anomalies()
     displayName: seasonal, trend, baseline
-    href: /azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_decompose_forecast()
     displayName: seasonal, trend, baseline
-    href: /azure/data-explorer/kusto/query/series-decompose-forecastfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-decompose-forecastfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_divide()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-dividefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-dividefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_dot_product()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-dot-productfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-dot-productfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_equals()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-equalsfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-equalsfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_exp()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-expfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-expfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_fft()
     displayName: spectral, frequency, seasonality, transform, Fourier
-    href: /azure/data-explorer/kusto/query/series-fft-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fft-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_fill_backward()
     displayName: missing values
-    href: /azure/data-explorer/kusto/query/series-fill-backwardfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fill-backwardfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_fill_const()
     displayName: missing values
-    href: /azure/data-explorer/kusto/query/series-fill-constfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fill-constfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_fill_forward()
     displayName: missing values
-    href: /azure/data-explorer/kusto/query/series-fill-forwardfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fill-forwardfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_fill_linear()
     displayName: missing values
-    href: /azure/data-explorer/kusto/query/series-fill-linearfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fill-linearfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_fir()
     displayName: filter, finite impulse response
-    href: /azure/data-explorer/kusto/query/series-firfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-firfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_fit_2lines()
     displayName: regression
-    href: /azure/data-explorer/kusto/query/series-fit-2linesfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fit-2linesfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_fit_2lines_dynamic()
     displayName: regression
-    href: /azure/data-explorer/kusto/query/series-fit-2lines-dynamicfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fit-2lines-dynamicfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_fit_line()
     displayName: regression
-    href: /azure/data-explorer/kusto/query/series-fit-linefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fit-linefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_fit_line_dynamic()
     displayName: regression
-    href: /azure/data-explorer/kusto/query/series-fit-line-dynamicfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fit-line-dynamicfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_fit_poly()
     displayName: regression, polynomial
-    href: /azure/data-explorer/kusto/query/series-fit-poly-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fit-poly-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_floor()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-floor-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-floor-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_greater()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-greaterfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-greaterfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_greater_equals()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-greater-equalsfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-greater-equalsfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_ifft()
     displayName: spectral, frequency, seasonality, transform, Fourier
-    href: /azure/data-explorer/kusto/query/series-ifft-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-ifft-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_iir()
     displayName: filter, infinite impulse response
-    href: /azure/data-explorer/kusto/query/series-iirfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-iirfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_less()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-lessfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-lessfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_less_equals()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-less-equalsfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-less-equalsfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_log()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-log-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-log-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_multiply()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-multiplyfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-multiplyfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_not_equals()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-not-equalsfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-not-equalsfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_outliers()
     displayName: anomaly detection, Tukey
-    href: /azure/data-explorer/kusto/query/series-outliersfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-outliersfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_pearson_correlation()
-    href: /azure/data-explorer/kusto/query/series-pearson-correlationfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-pearson-correlationfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_periods_detect()
     displayName: spectral, fft, frequency, seasonality
-    href: /azure/data-explorer/kusto/query/series-periods-detectfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-periods-detectfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_periods_validate()
     displayName: spectral, fft, frequency, seasonality
-    href: /azure/data-explorer/kusto/query/series-periods-validatefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-periods-validatefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_pow()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-powfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-powfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_seasonal()
     displayName: periods
-    href: /azure/data-explorer/kusto/query/series-seasonalfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-seasonalfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_sign()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-signfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-signfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_sin()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-sinfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-sinfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_stats()
     displayName: statistics, average, standard deviation, variance
-    href: /azure/data-explorer/kusto/query/series-statsfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-statsfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_stats_dynamic()
     displayName: statistics, average, standard deviation, variance
-    href: /azure/data-explorer/kusto/query/series-stats-dynamicfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-stats-dynamicfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_subtract()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-subtractfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-subtractfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: series_tan()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-tanfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-tanfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Plugins
   items:
   - name: General plugins
     items:
     - name: dcount_intersect plugin
-      href: /azure/data-explorer/kusto/query/dcount-intersect-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/dcount-intersect-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: infer_storage_schema plugin
-      href: /azure/data-explorer/kusto/query/inferstorageschemaplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/inferstorageschemaplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: ipv4_lookup plugin
-      href: /azure/data-explorer/kusto/query/ipv4-lookup-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/ipv4-lookup-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: preview plugin
-      href: /azure/data-explorer/kusto/query/previewplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/previewplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: schema_merge plugin
-      href: /azure/data-explorer/kusto/query/schemamergeplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/schemamergeplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Data reshaping plugins
     items:
     - name: bag_unpack plugin
-      href: /azure/data-explorer/kusto/query/bag-unpackplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/bag-unpackplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: narrow plugin
-      href: /azure/data-explorer/kusto/query/narrowplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/narrowplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: pivot plugin
-      href: /azure/data-explorer/kusto/query/pivotplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/pivotplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Language plugins
     items:
     - name: Python plugin
-      href: /azure/data-explorer/kusto/query/pythonplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/pythonplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: R plugin
-      href: /azure/data-explorer/kusto/query/rplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/rplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Machine learning plugins
     items:
     - name: autocluster plugin
       displayName: clustering, diagnostics, RCA, root cause
-      href: /azure/data-explorer/kusto/query/autoclusterplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/autoclusterplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: basket plugin
       displayName: clustering, diagnostics, RCA, root cause
-      href: /azure/data-explorer/kusto/query/basketplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/basketplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: diffpatterns plugin
       displayName: clustering, diagnostics, RCA, root cause
-      href: /azure/data-explorer/kusto/query/diffpatternsplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/diffpatternsplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: diffpatterns_text plugin
       displayName: clustering, diagnostics, RCA, root cause
-      href: /azure/data-explorer/kusto/query/diffpatterns-textplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/diffpatterns-textplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Query connectivity plugins
     items:
     - name: azure_digital_twins_query_request plugin
-      href: /azure/data-explorer/kusto/query/azure-digital-twins-query-request-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/azure-digital-twins-query-request-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: cosmosdb_sql_request plugin
-      href: /azure/data-explorer/kusto/query/cosmosdb-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/cosmosdb-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: http_request plugin
-      href: /azure/data-explorer/kusto/query/http-request-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/http-request-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: http_request_post plugin
-      href: /azure/data-explorer/kusto/query/http-request-post-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/http-request-post-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: mysql_request plugin
-      href: /azure/data-explorer/kusto/query/mysqlrequest-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/mysqlrequest-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: postgresql_request plugin
-      href: /azure/data-explorer/kusto/query/postgresql-request-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/postgresql-request-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: sql_request plugin
-      href: /azure/data-explorer/kusto/query/sqlrequestplugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/sqlrequestplugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: User and sequence analytics plugins
     items:
     - name: User analytics plugins overview
-      href: /azure/data-explorer/kusto/query/useranalytics?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/useranalytics?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: active_users_count plugin
-      href: /azure/data-explorer/kusto/query/active-users-count-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/active-users-count-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: activity_counts_metrics plugin
-      href: /azure/data-explorer/kusto/query/activity-counts-metrics-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/activity-counts-metrics-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: activity_engagement plugin
-      href: /azure/data-explorer/kusto/query/activity-engagement-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/activity-engagement-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: activity_metrics plugin
-      href: /azure/data-explorer/kusto/query/activity-metrics-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/activity-metrics-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: new_activity_metrics plugin
-      href: /azure/data-explorer/kusto/query/new-activity-metrics-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/new-activity-metrics-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: funnel_sequence_completion plugin
-      href: /azure/data-explorer/kusto/query/funnel-sequence-completion-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/funnel-sequence-completion-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: funnel_sequence plugin
-      href: /azure/data-explorer/kusto/query/funnel-sequence-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/funnel-sequence-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: rolling_percentile plugin
-      href: /azure/data-explorer/kusto/query/rolling-percentile-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/rolling-percentile-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: rows_near plugin
-      href: /azure/data-explorer/kusto/query/rows-near-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/rows-near-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: sequence_detect plugin
-      href: /azure/data-explorer/kusto/query/sequence-detect-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/sequence-detect-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: session_count plugin
-      href: /azure/data-explorer/kusto/query/session-count-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/session-count-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: sliding_window_counts plugin
-      href: /azure/data-explorer/kusto/query/sliding-window-counts-plugin?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/query/sliding-window-counts-plugin?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Window functions
   items:
   - name: Window functions overview
-    href: /azure/data-explorer/kusto/query/windowsfunctions?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/windowsfunctions?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: next()
-    href: /azure/data-explorer/kusto/query/nextfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/nextfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: prev()
-    href: /azure/data-explorer/kusto/query/prevfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/prevfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: row_cumsum()
-    href: /azure/data-explorer/kusto/query/rowcumsumfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/rowcumsumfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: row_number()
-    href: /azure/data-explorer/kusto/query/rownumberfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/rownumberfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: row_rank_dense()
-    href: /azure/data-explorer/kusto/query/rowrankdensefunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/rowrankdensefunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: row_rank_min()
-    href: /azure/data-explorer/kusto/query/rowrankminfunction?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/rowrankminfunction?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: row_window_session()
-    href: /azure/data-explorer/kusto/query/row-window-session-function?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/row-window-session-function?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Limits and Errors
   items:
   - name: Query consistency
-    href: /azure/data-explorer/kusto/concepts/queryconsistency?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/concepts/queryconsistency?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Query limits
-    href: /azure/data-explorer/kusto/concepts/querylimits?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/concepts/querylimits?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Partial query failures
-    href: /azure/data-explorer/kusto/concepts/partialqueryfailures?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/concepts/partialqueryfailures?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     items:
     - name: Result truncation
-      href: /azure/data-explorer/kusto/concepts/resulttruncation?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/concepts/resulttruncation?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Runaway queries
-      href: /azure/data-explorer/kusto/concepts/runawayqueries?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/concepts/runawayqueries?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Overflows
-      href: /azure/data-explorer/kusto/concepts/overflow?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/concepts/overflow?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Reference material for Kusto Query Language
   items:
   - name: RE2 syntax
-    href: /azure/data-explorer/kusto/query/re2?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/re2?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: RE2 library
-    href: /azure/data-explorer/kusto/query/re2-library?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/re2-library?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: JSONPath syntax
-    href: /azure/data-explorer/kusto/query/jsonpath?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/jsonpath?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: SQL to Kusto cheat sheet
     displayName: Kusto
-    href: /azure/data-explorer/kusto/query/sqlcheatsheet?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sqlcheatsheet?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Splunk to Kusto cheat sheet
-    href: /azure/data-explorer/kusto/query/splunk-cheat-sheet?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/splunk-cheat-sheet?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Timezones
-    href: /azure/data-explorer/kusto/query/timezone?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/query/timezone?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Query tools
   items:
   - name: Kusto.Explorer
     items:
     - name: Kusto.Explorer installation and user interface
-      href: /azure/data-explorer/kusto/tools/kusto-explorer?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/tools/kusto-explorer?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Using Kusto.Explorer
-      href: /azure/data-explorer/kusto/tools/kusto-explorer-using?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/tools/kusto-explorer-using?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Kusto.Explorer options
-      href: /azure/data-explorer/kusto/tools/kusto-explorer-options?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/tools/kusto-explorer-options?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Keyboard shortcuts
-      href: /azure/data-explorer/kusto/tools/kusto-explorer-shortcuts?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/tools/kusto-explorer-shortcuts?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Kusto.Explorer code features
       displayName: Code Refactoring, Code Navigation, Code Analyzer
-      href: /azure/data-explorer/kusto/tools/kusto-explorer-code-features?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/tools/kusto-explorer-code-features?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Troubleshooting Kusto.Explorer
-      href: /azure/data-explorer/kusto/tools/kusto-explorer-troubleshooting?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/tools/kusto-explorer-troubleshooting?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Kusto.Cli
-    href: /azure/data-explorer/kusto/tools/kusto-cli?context=/fabric/context/context&pivots=fabric
-  - name: Kusto emulator
-    items:
-    - name: Kusto emulator overview
-      href: /azure/data-explorer/kusto/../kusto-emulator-overview?context=/fabric/context/context&pivots=fabric
-    - name: Install the Kusto emulator
-      href: /azure/data-explorer/kusto/../kusto-emulator-install?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/tools/kusto-cli?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Kusto extension for Azure Data Studio >>
-    href: /sql/azure-data-studio/extensions/kusto-extension?context=/fabric/context/context&pivots=fabric
+    href: /sql/azure-data-studio/extensions/kusto-extension?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric

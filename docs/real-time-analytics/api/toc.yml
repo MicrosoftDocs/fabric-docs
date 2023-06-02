@@ -1,89 +1,87 @@
 items:
 - name: Client libraries
-  href: /azure/data-explorer/kusto/api/client-libraries?context=/fabric/context/context&pivots=fabric
+  href: /azure/data-explorer/kusto/api/client-libraries?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: REST API
   items:
   - name: REST API overview
-    href: /azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/rest/index?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Authentication
-    href: /azure/data-explorer/kusto/api/rest/authentication?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/rest/authentication?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Query HTTP request
-    href: /azure/data-explorer/kusto/api/rest/request?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/rest/request?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Query HTTP response
-    href: /azure/data-explorer/kusto/api/rest/response?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/rest/response?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Query v2 HTTP response
-    href: /azure/data-explorer/kusto/api/rest/response2?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/rest/response2?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: UI (Deep Links)
-    href: /azure/data-explorer/kusto/api/rest/deeplink?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/rest/deeplink?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Streaming ingest
-    href: /azure/data-explorer/kusto/api/rest/streaming-ingest?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/rest/streaming-ingest?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Query with T-SQL
-    href: /azure/data-explorer/kusto/api/rest/t-sql?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/rest/t-sql?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: How to ingest data with the REST API
     displayName: Kusto.Ingest
-    href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-rest?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-rest?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: .NET SDK
   items:
-  - name: General
-    items:
-    - name: About the SDK
-      href: /azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/fabric/context/context&pivots=fabric
-    - name: Controlling tracing
-      href: /azure/data-explorer/kusto/api/netfx/controlling-tracing?context=/fabric/context/context&pivots=fabric
+  - name: About the SDK
+    href: /azure/data-explorer/kusto/api/netfx/about-the-sdk?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
+  - name: Controlling tracing
+    href: /azure/data-explorer/kusto/api/netfx/controlling-tracing?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Kusto.Data
     items:
     - name: Kusto.Data overview
-      href: /azure/data-explorer/kusto/api/netfx/about-kusto-data?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/api/netfx/about-kusto-data?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Request properties, ClientRequestProperties
-      href: /azure/data-explorer/kusto/api/netfx/request-properties?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/api/netfx/request-properties?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Kusto.Data errors and exceptions
-      href: /azure/data-explorer/kusto/api/netfx/kusto-data-client-errors?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/api/netfx/kusto-data-client-errors?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
   - name: Kusto.Ingest
     items:
     - name: Kusto.Ingest overview
-      href: /azure/data-explorer/kusto/api/netfx/about-kusto-ingest?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/api/netfx/about-kusto-ingest?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Permissions
       displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-permissions?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-permissions?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Client reference
       displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-reference?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-reference?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Errors and exceptions
       displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-errors?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-errors?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Operation status
       displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-status?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-status?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Kusto.Ingest best practices
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-best-practices?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-best-practices?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
     - name: Code samples
       displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-examples?context=/fabric/context/context&pivots=fabric
+      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-examples?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Bicep and ARM template resource types
-  href: /azure/templates/microsoft.kusto/allversions?context=/fabric/context/context&pivots=fabric
+  href: /azure/templates/microsoft.kusto/allversions?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Resource provider operations
-  href: /azure/role-based-access-control/resource-provider-operations#microsoftkusto?context=/fabric/context/context&pivots=fabric
+  href: /azure/role-based-access-control/resource-provider-operations#microsoftkusto?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Python SDK
   items:
   - name: azure-kusto-python
-    href: /azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/python/kusto-python-client-library?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: R SDK
   items:
   - name: azure-kusto-r
-    href: /azure/data-explorer/kusto/api/r/kusto-r-client-library?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/r/kusto-r-client-library?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Java SDK
   items:
   - name: azure-kusto-java
-    href: /azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/java/kusto-java-client-library?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Node SDK
   items:
   - name: azure-kusto-node
-    href: /azure/data-explorer/kusto/api/node/kusto-node-client-library?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/node/kusto-node-client-library?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: Go SDK
   items:
   - name: azure-kusto-go
-    href: /azure/data-explorer/kusto/api/golang/kusto-golang-client-library?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/golang/kusto-golang-client-library?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
 - name: PowerShell
   items:
   - name: Use Kusto .NET client libraries from PowerShell
-    href: /azure/data-explorer/kusto/api/powershell/powershell?context=/fabric/context/context&pivots=fabric
+    href: /azure/data-explorer/kusto/api/powershell/powershell?toc=/fabric/real-time-analytics/toc.json&bc=/fabric/breadcrumb/toc.json&pivots=fabric
