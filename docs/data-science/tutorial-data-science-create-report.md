@@ -2,8 +2,8 @@
 title: Data science tutorial - create a Power BI report to visualize predictions
 description: In this sixth module, learn how to get set up to create reports and how to create various visuals to analyze data.
 ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 5/4/2023
