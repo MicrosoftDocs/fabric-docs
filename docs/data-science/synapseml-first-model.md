@@ -3,21 +3,25 @@ title: SynapseMl first model
 description: A quick introduction to building your first machine learning model with SynapseML
 ms.topic: overview
 ms.custom: build-2023
-ms.reviewer: jessiwang
+ms.reviewer: mopeakande
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/08/2023
+ms.date: 06/02/2023
 ---
 
-# Your First SynapseML Model
-This tutorial provides a brief introduction to building your first machine learning model using SynapseML, demonstrating how SynapseML makes it easy to do complex machine learning tasks. We use SynapseML to create a small ML training pipeline with a featurization stage and LightGBM regression stage to predict ratings based on review text from a dataset containing book reviews from Amazon. Finally we showcase how SynapseML makes it easy to use prebuilt models to solve problems without having to re-solve them yourself.
+# How to build your first SynapseML model
+This article introduces how to build your first machine learning model using SynapseML and demonstrates how SynapseML simplifies complex machine learning tasks. We use SynapseML to create a small ML training pipeline that includes a featurization stage and a LightGBM regression stage. The pipeline predicts ratings based on review text from a dataset of Amazon book reviews. Finally, we showcase how SynapseML simplifies the use of prebuilt models to solve ML problems.
 
 ## Prerequisites
 
-* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
-* Cognitive Services Key. To obtain a Cognitive Services key, follow the [Quickstart](/azure/cognitive-services/cognitive-services-apis-create-account).
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-## Set up your Environment
+* Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
+* Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
+* Obtain an Azure Cognitive Services key by following the [Create a Cognitive Services resource using the Azure portal](/azure/cognitive-services/cognitive-services-apis-create-account) quickstart.
+
+## Set up the environment
 Import SynapseML libraries and initialize your spark session.
 
 
@@ -26,11 +30,9 @@ from pyspark.sql import SparkSession
 from synapse.ml.core.platform import *
 
 spark = SparkSession.builder.getOrCreate()
-
-
 ```
 
-## Load a Dataset
+## Load a dataset
 Load your dataset and split it into train and test sets.
 
 
@@ -47,8 +49,8 @@ train, test = (
 display(train)
 ```
 
-## Make our Model
-Create a simple pipeline to featurize the data using the `TextFeaturizer` from `synapse.ml.featurize.text` and derive a rating from the `LightGBMRegressor`.
+## Create the training pipeline
+Create a pipeline that featurizes data using `TextFeaturizer` from the `synapse.ml.featurize.text` library and derives a rating using the `LightGBMRegressor` function.
 
 
 ```python
@@ -64,16 +66,16 @@ model = Pipeline(
 ).fit(train)
 ```
 
-## Predict
-call the `transform` function on the model to predict and display the output dataframe!
+## Predict the output of the test data
+Call the `transform` function on the model to predict and display the output of the test data as a dataframe.
 
 
 ```python
 display(model.transform(test))
 ```
 
-## Alternate route - Let the Cognitive Services handle it!
-For tasks like this that have a prebuilt solution, try using SynapseML's integration with Cognitive Services to transform your data in one step.
+## Use Cognitive Services to transform data in one step
+Alternatively, for these kinds of tasks that have a prebuilt solution, you can use SynapseML's integration with Cognitive Services to transform your data in one step.
 
 
 ```python
@@ -94,3 +96,4 @@ display(model.transform(test))
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
 - [How to use Cognitive Services with SynapseML](overview-cognitive-services.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
+- [Quickstart: Create a Cognitive Services resource using the Azure portal](/azure/cognitive-services/cognitive-services-apis-create-account)
