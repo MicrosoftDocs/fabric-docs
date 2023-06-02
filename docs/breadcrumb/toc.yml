@@ -50,3 +50,7 @@ items:
   - name: Real-Time Analytics
     tocHref: /azure/data-explorer/
     topicHref: /fabric/real-time-analytics/index
+    items:
+    - name: Kusto Query Language
+      tocHref: /azure/data-explorer/kusto/query/
+      topicHref: /fabric/real-time-analytics/index
