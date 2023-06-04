@@ -42,7 +42,7 @@ highlightedContent:
     # Card
     - title: Microsoft Fabric licenses
       itemType: concept
-      url: /enterprise/licenses.md              
+      url: enterprise/licenses.md              
 
 productDirectory:
   title: Explore Microsoft Fabric experiences
