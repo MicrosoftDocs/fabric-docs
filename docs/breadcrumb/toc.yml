@@ -36,6 +36,17 @@ items:
   - name: Real-Time Analytics
     tocHref: /fabric/real-time-analytics/
     topicHref: /fabric/real-time-analytics/index
+    items:
+    - name: Query Data
+      tocHref: /fabric/real-time-analytics/
+      topicHref: /fabric/real-time-analytics/index
   - name: Security
     tocHref: /fabric/security/
     topicHref: /fabric/security/index
+- name: Microsoft Fabric
+  tocHref: /azure/
+  topicHref: /fabric/index
+  items:
+  - name: Real-Time Analytics
+    tocHref: /azure/data-explorer/
+    topicHref: /fabric/real-time-analytics/index
