@@ -28,6 +28,10 @@ highlightedContent:
       itemType: get-started
       url: get-started/fabric-trial.md
     # Card
+    - title: Microsoft Fabric preview information
+      itemType: concept
+      url: get-started/preview.md      
+    # Card
     - title: Enable Fabric for your organization
       itemType: quickstart
       url: admin/fabric-switch.md
@@ -36,9 +40,9 @@ highlightedContent:
       itemType: tutorial
       url: get-started/end-to-end-tutorials.md
     # Card
-    - title: Microsoft Fabric preview information
+    - title: Microsoft Fabric licenses
       itemType: concept
-      url: get-started/preview.md      
+      url: /enterprise/licenses.md              
 
 productDirectory:
   title: Explore Microsoft Fabric experiences
