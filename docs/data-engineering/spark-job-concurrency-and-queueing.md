@@ -31,13 +31,13 @@ The following section lists various numerical limits for Spark workloads based o
 | F2 | - | 2 | 4 | 1 | 4 |
 | F4 | - | 4 | 8 | 1 | 4 |
 | F8 | - | 8 | 16 | 2 | 8 |
-| F16 | - | 16 | 32 | 5 | 20 |
-| F32 | - | 32 | 64 | 10 | 40 |
-| F64 | P1 | 64 | 128 | 20 | 80 |
+| F16 | - | 16 | 32 | 4 | 16 |
+| F32 | - | 32 | 64 | 8 | 32 |
+| F64 | P1 | 64 | 128 | 16 | 64 |
 | Fabric Trial | P1 | 64 | 128 | 5 | - |
-| F128 | P2 | 128 | 256 | 40 | 160 |
-| F256 | P3 | 256 | 512 | 80 | 320 |
-| F512 | P4 | 512 | 1024 | 160 | 640 |
+| F128 | P2 | 128 | 256 | 32 | 128 |
+| F256 | P3 | 256 | 512 | 64 | 256 |
+| F512 | P4 | 512 | 1024 | 128 | 512 |
 
 The queueing mechanism is a simple FIFO-based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available. As there are different items like notebooks, Spark job definition, and lakehouse which users could use in any workspace. As the usage varies across different enterprise teams, users could run into starvation scenarios where there's dependency on only type of item, such as a Spark job definition. This situation could result in users sharing the capacity from running a notebook based job or any lakehouse based operation like load to table.
 
