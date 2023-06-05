@@ -106,7 +106,7 @@ After the commit is completed successfully, the status of the selected items cha
 
 ### [Undo saved change](#tab/undo-save)
 
-If, after saving changes to the workspace, you decide that you don’t want to commit those changes to git, you can undo the changes and revert those items to the previous (unsaved) status. To undo your changes, follow these steps:
+After saving changes to the workspace, if you decide that you don’t want to commit those changes to git, you can undo the changes and revert those items to the previous (unsaved) status. To undo your changes, follow these steps:
 
 1. Go to the workspace.
 1. Select the **Source control** button. This button also shows the number of uncommitted changes.
