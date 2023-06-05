@@ -3,6 +3,7 @@ title: Overview of Fabric git integration
 description: An introduction to git integration the Fabric Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: conceptual
 ms.custom: contperf-fy21q1, build-2023
 ms.date: 05/30/2023
