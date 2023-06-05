@@ -3,6 +3,7 @@ title: Manage a workspace with git
 description: Learn how to connect a workspace to a git repo and branch, commit changes and sync.
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: how-to
 ms.date: 05/30/2023
 ms.custom: build-2023
