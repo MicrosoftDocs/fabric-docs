@@ -130,7 +130,7 @@ The selected items in your workspace revert to how they were when the workspace 
 
 ## Update workspace from git
 
-Whenever anyone commits a new change to the connected git branch, a notification appears in the relevant workspace. Use the **Source control** pane to pull latest changes, merges, or reverts into the workspace and update live items. Read more about [updating](git-integration-process.md#update).
+Whenever anyone commits a new change to the connected git branch, a notification appears in the relevant workspace. Use the **Source control** pane to pull the latest changes, merges, or reverts into the workspace and update live items. Read more about [updating](git-integration-process.md#update).
 
 To update a workspace, follow these steps:
 
