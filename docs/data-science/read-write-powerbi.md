@@ -13,34 +13,58 @@ ms.search.form: Read write powerbi
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Learn how to read data in tables and calculate measure in Power BI datasets in the Data Science workload.
+Learn how to read data, metadata and calculate measure in Power BI datasets in the Data Science workload.
 
 ## Read using Python
 
-The Python API can retrieve metadata, data and execute queries from Power BI datasets. The workspace defaults to
+The Python API can retrieve metadata, data and execute queries from Power BI datasets located in a workspace. The workspace used to access Power BI datasets defaults to
 
 - the workspace of the attached lakehouse or
 - the workspace of the notebook if no lakehouse is attached
 
-Retrieve metadata for datasets, tables and measures from Power BI.
+We start by listing the available Power BI datasets.
 
 ```python
 import sempy.powerbi as pbi
 
-df_dataset  = pbi.list_datasets()
-df_tables   = pbi.list_tables("Sales Dataset", include_columns=True)
+df_datasets = pbi.list_datasets()
+df_datasets
+```
+
+TODO: change dataset name to what we upload in the prereqs
+
+Next, we can list the tables available in the Power BI dataset named _Sales Dataset_.
+
+```python
+df_tables = pbi.list_tables("Sales Dataset", include_columns=True)
+df_tables
+```
+
+Finally, we can list the measures defined in the Power BI dataset.
+
+```python
 df_measures = pbi.list_measures("Inventory Dataset", workspace="Logistics Workspace")
 ```
 
-Read data from a table, read a measure and execute a DAX query.
+Now we have determined the table of interest and can read the table _Customer_ from the Power BI _Sales Dataset_.
 
 ```python
 df_table   = pbi.read_table("Sales Dataset", "Customer")
+df_table
+```
 
+Next, we compute the _Total Revenue_ measure per customer's state and date. 
+
+```python
 df_measure = pbi.read_measure("Sales Dataset",
                               "Total Revenue",
                               [("Customer", "State"), ("Calendar", "Date")]
+df_measure
+```
 
+We can also compute the measure using a DAX query, but note that this API is subject to more limitations (see [Read Limitations](#read-limitations)). For standard measure calculations we recommend using the `read_measure` function and only revert to read_dax for advanced use-cases.
+
+```python
 df_dax     = pbi.read_dax("Sales Dataset",
                           """
                           EVALUATE SUMMARIZECOLUMNS(
@@ -52,9 +76,9 @@ df_dax     = pbi.read_dax("Sales Dataset",
                           """)
 ```
 
-TODO: include limitations
+TODO: measure join
 
-## Read using Spark
+## Read using Spark in Python, R, SQL and Scala
 
 All tables from all Power BI datasets in the workspace of the attached lakehouse or the notebook if no lakehouse is attached are exposed as Spark tables. All Spark SQL commands can be executed in Python, R and Scala.
 The PowerBI/Spark connector supports to push-down of Spark predicates to the Power BI engine.
@@ -78,6 +102,7 @@ To retrieve the data from the *Customer* table in the *Sales Dataset* using Spar
 
 ```R
 df = sql("SELECT * FROM pbi.`Sales Dataset`.Customer")
+df
 ```
 
 Power BI measures are available through the virtual table *_Metrics*. The following query computes the *total revenue* and *revenue budget* by *region* and *industry*.
@@ -133,4 +158,3 @@ df_spark.write.format("delta").saveAsTable("ForecastTable")
 ```
 
 Using Power BI the table *ForecastTable* can be added to a composite dataset using the Lakehouse dataset.
-
