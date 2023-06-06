@@ -4,8 +4,6 @@ description: A known issue is posted where a customer has issues trying to refre
 author: ptyx507
 ms.author: miescobar
 ms.topic: troubleshooting  
-ms.service: datafactory
-ms.subservice: dataflows-troubleshooting
 ms.date: 06/5/2023
 ms.custom: known-issue-???
 ---
