@@ -261,4 +261,16 @@
       href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Getting from Dataflow Gen1 to Gen2
       href: dataflows-gen2-overview.md
+    - name: Known issues
+      items:
+      - name: Gateway version
+        href: known-issue-gateway.md
+      - name: Lineage view edit button
+        href: known-issue-lineage-view-edit.md
+      - name: Lineage view edit button
+        href: known-issue-lineage-view-edit.md
+      - name: Staging artifacts
+        href: known-issue-staging-artifact.md
+      - name: Power Query template extra queries
+        href: known-issue-template.md
      
