@@ -108,4 +108,4 @@ Create file
 
 ## Next steps
 
-- OneLake integration with Azure Synapse Analytics
+- [OneLake integration with Azure Synapse Analytics](onelake-azure-synapse-analytics.md)
