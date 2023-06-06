@@ -14,7 +14,7 @@ In a new workspace, when an end-user first launches a Dataflow Gen2, a set of st
 
 A user is able to see these staging artifacts in the workspace list and lineage as well as being able to interact with these artifacts.
 
-If a user deletes any of these staging artifacts or modifies the content inside of it, the workspace can be set in a state that won't be able to leverage these artifacts because of misconfiguration.
+If a user deletes or modifies any of these staging artifacts, the workspace can be set in a state that won't be able to leverage these artifacts because of misconfiguration.
 
 **APPLIES TO:** ✔️ Dataflows Gen2 in Microsoft Fabric
 
