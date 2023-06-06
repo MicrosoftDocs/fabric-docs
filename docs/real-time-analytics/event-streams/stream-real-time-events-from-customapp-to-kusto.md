@@ -12,7 +12,7 @@ ms.search.form: product-kusto
 
 # Stream real-time events from Custom Application to Microsoft Fabric KQL Database
 
-In this tutorial, you will learn how to utilize Microsoft Fabric event streams to stream real-time events from your Custom Application into Microsoft Fabric KQL Database. You will also discover how to create a near real-time Power BI report to effectively monitor your business data.
+In this tutorial, you learn how to utilize Microsoft Fabric event streams to stream real-time events from your Custom Application into Microsoft Fabric KQL Database. You also discover how to create a near real-time Power BI report to effectively monitor your business data.
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
@@ -32,7 +32,7 @@ To get started, you must complete the following prerequisites:
 
 * Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream and KQL database item are located in.
 * Download and install **Node.js LTS**. The latest [long-term support (LTS) version](https://nodejs.org).
-* Visual Studio Code (recommended) or any other integrated development environment (IDE).
+* [Visual Studio Code](https://code.visualstudio.com) (recommended) or any other integrated development environment (IDE).
 
 ## Create an eventstream and a KQL database
 
@@ -44,11 +44,11 @@ You can create an Eventstream item (eventstream) or a KQL Database item (KQL dat
 
        :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/two-items-creation-in-workspace.png" alt-text="Screenshot showing the eventstream and lakehouse creation in workspace." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/two-items-creation-in-workspace.png" :::
 
-   * In **Create hub**, select **Eventstream** and **Lakehouse**:
+   * In **Create hub**, select **Eventstream** and **KQL Database**:
 
        :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/kqldb-eventstream-creation-in-hub.png" alt-text="Screenshot showing the eventstream and KQL db item creation in create hub." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/kqldb-eventstream-creation-in-hub.png" :::
 
-2. Give the name for the new eventstream and lakehouse items, and select **Create**. For example, **citytempdata-es** for the eventstream and **citytempdb** for the KQL database.
+2. Give the name for the new Eventstream and KQL Database items, and select **Create**. For example, **citytempdata-es** for the eventstream and **citytempdb** for the KQL database.
 
    :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/creating-dialog.png" alt-text="Screenshot showing the eventstream item creation dialog." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/creating-dialog.png" :::
 
@@ -70,7 +70,7 @@ Once the eventstream has been created, follow these steps to add a custom applic
 
    :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/custom-app-source.png" alt-text="Screenshot showing the custom-app-source." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/custom-app-source.png" :::
 
-3. Upon successful creation of the custom application source, you will notice a new source node displayed on the canvas. Simply select this node to reveal key information about the source in the **Information** tab located at the bottom pane.
+3. Upon successful creation of the custom application source, you notice a new source node displayed on the canvas. Select this node to reveal key information about the source in the **Information** tab located at the bottom pane.
 
    :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/custom-app-information.png" alt-text="Screenshot showing the custom app information." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/custom-app-information.png" :::
 
@@ -81,10 +81,10 @@ The connection string displayed in the information tab is an **event hub compati
 ## Create an application to send events to eventstream
 
 
-With the **event hub compatible connection string** readily available in the Custom App source, you can proceed to create an application that will send events to your eventstream. In this specific example, the application will simulate ten sensor devices transmitting temperature and humidity data every second.
+With the **event hub compatible connection string** readily available in the Custom App source, you can proceed to create an application that sends events to your eventstream. In this specific example, the application simulates 10 sensor devices transmitting temperature and humidity data every second.
 
 1. Open your coding editor, such as [Visual Studio Code](https://code.visualstudio.com)
-2. Create a file called ***Sendtoes.js***, and past the following code into it:
+2. Create a file called ***sendtoes.js***, and past the following code into it:
 
    In the code, replace the following placeholders with the real values in the **Connection string-primary key** or **Connection string-secondary key**:
 
@@ -118,25 +118,26 @@ With the **event hub compatible connection string** readily available in the Cus
       } 
 
     async function main() {
-        // Create a producer client to send messages to the event hub.
+        // Create a producer client to send messages to the eventstream.
         const producer = new EventHubProducerClient(connectionString, eventHubName);
         
-        // There are 10 devices. They are sending events every second nearly. So, there are 10 events within one batch
-        // The event counts per batch. For this case, it is the sensor device count
+        // There are 10 devices. They are sending events every second nearly. So, there are 10 events within one batch.
+        // The event counts per batch. For this case, it is the sensor device count.
         const batchSize = 10;
         // The event batch count. If you want to send events indefinitely, you can increase this number to any desired value.
         const batchCount = 5;
 
-        // There are 10 devices. They are sending events every second. So, there are 10 events within one batch
+        // Generating and sending events...
         for (let j = 0; j < batchCount; ++j) {
             const eventDataBatch = await producer.createBatch();
             for (let k = 0; k < batchSize; ++k) {
                 eventDataBatch.tryAdd({ body: getRowData(k) });
             }  
-            // Send the batch to the event hub.
+            // Send the batch to the eventstream.
             await producer.sendBatch(eventDataBatch);
             console.log(moment().format('YYYY/MM/DD HH:mm:ss'), `[Send events to Fabric Eventstream]: batch#${j} (${batchSize} events) has been sent to eventstream`);
-            await sleep(1000); // sleep for 1 second 
+            // sleep for 1 second.
+            await sleep(1000); 
         }
         // Close the producer client.
         await producer.close();
@@ -189,11 +190,11 @@ While the custom application is streaming events into your eventstream, you can 
 
    :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/kql-wizard-source.png" alt-text="Screenshot showing the kql wizard source configuration." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/kql-wizard-source.png" :::
 
-5. On the schema page, Select **JSON** as the data format, and you will be able to preview the data on the right side. If the data type does not meet your expectations, you can modify it by clicking the arrow in the table header. Additionally, you have the flexibility to add or remove columns based on your requirements.
+5. On the schema page, Select **JSON** as the data format, and you're able to preview the data on the right side. If the data type doesn't meet your expectations, you can modify it by clicking the arrow in the table header. Additionally, you have the flexibility to add or remove columns based on your requirements.
 
    :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/kql-wizard-tbl-schema.png" alt-text="Screenshot showing the kql wizard table schema configuration." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/kql-wizard-tbl-schema.png" :::
 
-6. Select **Next: Summary** to proceed to the next page, where you can review the configuration and status summary. If everything appears to be in order, select **Done** to finalize the configuration, and the event data will start flowing into your KQL database.
+6. Select **Next: Summary** to proceed to the next page, where you can review the configuration and status summary. If everything appears to be in order, select **Done** to finalize the configuration, and the event data start flowing into your KQL database.
 
 ## Verify data in the KQL database
 
@@ -201,7 +202,7 @@ To verify the event data in KQL database, open **citytempdb** KQL database by se
 
 :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/kql-table-top100-menu.png" alt-text="Screenshot showing the kql table top100 menu." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/kql-table-top100-menu.png" :::
 
-You will find the data listed in the bottom section.
+You find the data listed in the bottom section.
 
 :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/kql-table-top100.png" alt-text="Screenshot showing the kql table top100." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/kql-table-top100.png" :::
 
@@ -222,7 +223,7 @@ Once the data is ingested into your KQL database, you can analyze it according t
    > Using *avg* operator due to ten sensor devices emitting data every seconds.
 
 
-2. Select **Build Power BI report** to create your report. Select the ***temperature***, ***humidity*** and ***entrytime*** to monitor these data. After the report configuration is done, select **File** -> **Save** to save this report to your workspace.
+2. Select **Build Power BI report** to create your report. Select the ***temperature***, ***humidity*** and ***entryTime*** to monitor these data. After the report configuration is done, select **File** -> **Save** to save this report to your workspace.
 
    :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/kql-query-pbi-report.png" alt-text="Screenshot showing the Power BI report creation from kql." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/kql-query-pbi-report.png" :::
 
