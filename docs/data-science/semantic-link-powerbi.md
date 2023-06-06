@@ -20,7 +20,7 @@ These datasets are used to drive business decisions through Power BI reports and
 Furthermore, business analyst encode business logical into Power BI measure.
 Data scientists on the other hand operate on the same data, but not in the same environment or language and therefore had to duplicate the business logic, leading to critical errors.
 
-Microsoft Fabric and Semantic Link bridge this criticl gap between business analysts and data scientist, enabling seemless collaboration and reduce data mismatch.
+Microsoft Fabric and Semantic Link bridge this critical gap between business analysts and data scientist, enabling seemless collaboration and reduce data mismatch.
 
 TODO: should we mention read-only replicas to address concerns on hogging Power BI clusters?
 
