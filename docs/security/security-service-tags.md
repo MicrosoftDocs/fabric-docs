@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/01/2023
 ---
 
 # Service tags
@@ -24,6 +24,7 @@ You can use the service tags in this table in Microsoft Fabric.
 | EventHub | Azure Event Hubs | Outbound | Yes | Yes |
 | PowerBI | Power BI and Microsoft Fabric | Both | No | Yes |
 | PowerQueryOnline | Power Query Online | Both | No | Yes |
+| KustoAnalytics | Real-Time Analytics | Both | No | No |
 
 ## How to enable service tags?
 

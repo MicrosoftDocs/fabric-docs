@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 05/31/2023
 ---
 
 # Enable Microsoft Fabric for your organization
@@ -70,6 +70,9 @@ Follow these steps to enable Microsoft Fabric for your tenant.
    :::image type="content" source="media/fabric-switch/fabric-switch-security-groups.png" alt-text="Screenshot of the Microsoft Fabric tenant setting with the users can create Fabric items enabled, and the specific security groups option selected.":::
 
 5. Select **Apply**.
+
+>[!NOTE]
+>The *Delegate settings to other admins* option, isn't available.
 
 ### Enable for a capacity
 

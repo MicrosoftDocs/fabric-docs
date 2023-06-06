@@ -4,7 +4,7 @@ description: Learn more about default Power BI datasets in Microsoft Fabric.
 author: chuckles22
 ms.author: chweb
 ms.reviewer: wiassaf, salilkanade
-ms.date: 05/23/2023
+ms.date: 06/04/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Default dataset overview # This article's title should not change. If so, contact engineering.
@@ -13,7 +13,7 @@ ms.search.form: Default dataset overview # This article's title should not chang
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In [!INCLUDE [product-name](../includes/product-name.md)], Power BI datasets are a semantic model with metrics; a logical description of an analytical domain, with business friendly terminology and representation, to enable deeper analysis. This semantic model is typically a star schema with facts that represent a domain, and dimensions that allow you to analyze, or slice and dice the domain to drill down, filter, and calculate different analyses. With the default dataset, the dataset is created automatically for you, and the aforementioned business logic gets inherited from the parent lakehouse or warehouse respectively, jump-starting the downstream analytics experience for business intelligence and analysis with an item in [!INCLUDE [product-name](../includes/product-name.md)] that is managed, optimized, and kept in sync with no user intervention. 
+In [!INCLUDE [product-name](../includes/product-name.md)], Power BI datasets are a semantic model with metrics; a logical description of an analytical domain, with business friendly terminology and representation, to enable deeper analysis. This semantic model is typically a star schema with facts that represent a domain, and dimensions that allow you to analyze, or slice and dice the domain to drill down, filter, and calculate different analyses. With the default dataset, the dataset is created automatically for you, and the aforementioned business logic gets inherited from the parent lakehouse or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] respectively, jump-starting the downstream analytics experience for business intelligence and analysis with an item in [!INCLUDE [product-name](../includes/product-name.md)] that is managed, optimized, and kept in sync with no user intervention. 
 
 Visualizations and analyses in **Power BI reports** can now be built completely in the web - or in just a few steps in Power BI desktop - saving users time, resources, and by default, providing a seamless consumption experience for end-users. The default Power BI dataset follows the naming convention of the Lakehouse.
 
@@ -35,9 +35,9 @@ For more on Power BI, see [Power BI guidance](/power-bi/guidance/).
 
 When you create a [Lakehouse](../data-engineering/lakehouse-overview.md), a default Power BI dataset is created with the [!INCLUDE [fabric-se](includes/fabric-se.md)]. The default dataset is represented with the *(default)* suffix. For more information, see [Default datasets](datasets.md).
 
-The default dataset is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse. You can also query the default dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [Warehouse](data-warehousing.md#synapse-data-warehouse).
+The default dataset is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse. You can also query the default dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse).
 
-By default, all tables and views in the warehouse are automatically added to the default Power BI dataset. Users can also manually select tables or views from the warehouse they want included in the model for more flexibility. Objects that are in the default Power BI dataset are created as a layout in the model view.
+By default, all tables and views in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] are automatically added to the default Power BI dataset. Users can also manually select tables or views from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] they want included in the model for more flexibility. Objects that are in the default Power BI dataset are created as a layout in the model view.
 
 The background sync that includes objects (tables and views) waits for the downstream dataset to not be in use to update the dataset, honoring bounded staleness. Users can always go and manually pick tables they want or no want in the dataset.
 
@@ -65,15 +65,19 @@ To load the dataset, select the name of the dataset.
 
 ## Create a new Power BI dataset
 
-There are some situations where your organization may need to create additional Power BI datasets based off SQL endpoint or Warehouse data. To create a Power BI dataset from a warehouse, follow these steps:
+There are some situations where your organization may need to create additional Power BI datasets based off [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data.
 
-1. Open the warehouse, and then switch to the **Reporting** ribbon.
+The **New Power BI dataset** button inherits the default dataset's configuration and allows for further customization. The default dataset acts as a starter template, helping to ensure a single version of the truth. For example, if you use the default dataset and define new relationships, and then use the **New Power BI dataset** button, the new dataset will inherit those relationships if the tables selected include those new relationships.
+
+To create a Power BI dataset from a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], follow these steps:
+
+1. Open the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and then switch to the **Reporting** ribbon.
 
 1. In the **Reporting** ribbon, select **New Power BI dataset**, and then in the **New dataset** dialog, select tables to be included, and then select **Confirm**.
 
    :::image type="content" source="media\datasets\new-power-bi-dataset.png" alt-text="Screenshot showing the new Power BI dataset." lightbox="media\datasets\new-power-bi-dataset.png":::
 
-1. Power BI automatically saves the dataset in the workspace based on the name of your warehouse, and then opens the dataset in Power BI.
+1. Power BI automatically saves the dataset in the workspace based on the name of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and then opens the dataset in Power BI.
 
 1. Select **Open data model** to open the Power BI Web modeling experience where you can add table relationships and DAX measures.
 

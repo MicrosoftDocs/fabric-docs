@@ -2,8 +2,8 @@
 title: Data science tutorial - explore and visualize data with notebooks
 description: In this second module, learn how to read data from a delta table, generate a random dataframe sample, convert a dataframe, and perform exploratory data analysis.
 ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 5/4/2023

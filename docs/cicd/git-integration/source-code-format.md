@@ -3,6 +3,7 @@ title: Git source code format
 description: Understand how the items in Microsoft Fabric's git integration tool are structured
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: conceptual 
 ms.date: 05/23/2023
 ms.custom: build-2023

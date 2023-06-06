@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/29/2023
+ms.date: 06/05/2023
 ---
 
 # What is the admin monitoring workspace?
@@ -56,6 +56,12 @@ There are several ways you can manage access to content of the admin monitoring 
 
 The admin monitoring workspace is created when an admin accesses it for the first time. Only the admin that created the workspace can refresh its reports and datasets using a scheduled refresh. To schedule a refresh, the admin that created the workspace must retain the Microsoft 365 *Global administrator* or *Power BI administrator* role.
 
+## Considerations and limitations
+
+* Sovereign clouds are not supported.
+
+* The *admin Monitoring* workspace is a read-only workspace. Users, including workspace admins, are not able to edit or view properties of the items in the workspace, including datasets and reports.
+ 
 ## Next steps
 
 * [Admin overview](microsoft-fabric-admin.md)
