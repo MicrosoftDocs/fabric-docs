@@ -18,7 +18,7 @@ Ready to get started? Read [Create a workspace](create-workspaces.md).
 
 :::image type="content" source="media/workspaces/fabric-workspace-page.png" alt-text="Screenshot showing a workspace." lightbox="media/workspaces/fabric-workspace-page.png":::
 
-## Working with workspaces
+## Work with workspaces
 
 Here are some useful tips about working with workspaces.
 
