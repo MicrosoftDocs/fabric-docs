@@ -1,11 +1,11 @@
 ---
 title: Known issue - Power Query template has extra queries from output destination
-description: A known issue is posted where a customer tries to create a new Microsoft Fabric Data Factory Dataflow from a template that was created with output destination logic
+description: A known issue is posted where a customer tries to create a new Microsoft Fabric Data Factory Dataflow from a template that was created with output destination logic.
 author: ptyx507
 ms.author: miescobar
 ms.topic: troubleshooting  
 ms.date: 06/05/2023
-ms.custom: known-issue-???
+ms.custom: 
 ---
 
 # Known issue - Power Query template has extra queries from output destination

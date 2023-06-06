@@ -1,11 +1,11 @@
 ---
 title: Known issue - Staging artifacts are not available or are misconfigured
-description: A known issue is posted where a customer is able to see and interact with Staging artifacts such as the Staging Lakehouse and Warehouse
+description: A known issue is posted where a customer is able to see and interact with Staging artifacts such as the Staging Lakehouse and Warehouse.
 author: ptyx507
 ms.author: miescobar
 ms.topic: troubleshooting  
 ms.date: 06/05/2023
-ms.custom: known-issue-???
+ms.custom: 
 ---
 
 # Known issue - Staging artifacts are not hidden and can be modified by the end-user
