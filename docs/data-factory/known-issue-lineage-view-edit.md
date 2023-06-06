@@ -10,7 +10,7 @@ ms.custom:
 
 # Known issue - Lineage view edit dataflow button
 
-A known issue is posted where a customer gets taken to the Dataflows Gen1 experience when clicking the Edit button from within the Lineage view of a workspace.
+A known issue is posted where a customer gets taken to the Dataflows Gen1 experience when selecting the Edit button from within the Lineage view of a workspace.
 
 **APPLIES TO:** ✔️ Dataflows Gen2 in Microsoft Fabric
 
@@ -20,7 +20,7 @@ A known issue is posted where a customer gets taken to the Dataflows Gen1 experi
 
 ## Symptoms
 
-When opening a Dataflow Gen2 from within the Lineage view of the workspace, clicking the edit button for a Dataflow Gen2 takes you to the Dataflow Gen1 experience where the Output destination entry point and other functionality is not available.
+When opening a Dataflow Gen2 from within the Lineage view of the workspace, selecting the edit button for a Dataflow Gen2 takes you to the Dataflow Gen1 experience where the Output destination entry point and other functionality is not available.
 
 ## Solutions and workarounds
 
