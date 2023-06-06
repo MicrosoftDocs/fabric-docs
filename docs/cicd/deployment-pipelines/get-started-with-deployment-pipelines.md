@@ -4,10 +4,8 @@ description: Learn how to use deployment pipelines, the Fabric Application lifec
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
-ms.custom: contperf-fy21q1, intro-get-started
-ms.date: 04/02/2023
+ms.custom: contperf-fy21q1, intro-get-started, build-2023
+ms.date: 05/29/2023
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 ---
 
@@ -15,54 +13,55 @@ ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introd
 
 This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. It's recommended to read the [deployment pipelines introduction](intro-to-deployment-pipelines.md), before you proceed.
 
+[!INCLUDE [preview-note](../../includes/preview-note.md)]
+
 You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) Learn module, which shows how to create a deployment pipeline.
 
 >[!NOTE]
->In a deployment pipeline, one Premium workspace is assigned to each stage. Before you start working with your pipeline in production, review the [capacity requirements](../troubleshoot-cicd.yml#what-type-of-capacity-can-i-assign-to-a-workspace-in-a-pipeline-) for the pipeline's workspaces.
+>In a deployment pipeline, one Premium workspace is assigned to each stage. Before you start working with your pipeline in production, review the [capacity requirements](../faq.md#what-type-of-capacity-do-i-need) for the pipeline's workspaces.
 
 ## Prerequisites
 
-You'll be able to access the deployment pipelines feature, if the following conditions are met:
+To access the deployment pipelines feature, you must meet the following conditions:
 
-* You have one of the following Premium licenses:
+* You have an [Microsoft Fabric subscription](../../enterprise/licenses.md)
 
-  * You're a [Pro user](/power-bi/enterprise/service-admin-purchasing-power-bi-pro.md), and you belong to an organization that has Premium capacity.
-
-  * [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq.yml).
-
-* You're an admin of a Premium [workspace](../../get-started/create-workspaces.md).
+* You're an admin of a Fabric [workspace](../../get-started/create-workspaces.md)
 
 >[!NOTE]
 > You'll also be able to see the deployment pipelines button, if you previously created a pipeline, or if a pipeline was shared with you.
 
-:::image type="content" source="media/get-started-with-deployment-pipelines/creating-pipeline.png" alt-text="A screenshot of the deployment pipelines landing page.":::
-
 ## Step 1 - Create a deployment pipeline
 
-You can create a pipeline from the deployment pipelines tab, or from a workspace.
+To create a pipeline, select the **Deployment pipelines** button.
 
 After the pipeline is created, you can share it with other users, edit, or delete it. When you share a pipeline with others, those will be given access to the pipeline and will become [pipeline admins](understand-the-deployment-process.md#permissions). Pipeline access enables users to view, share, edit, and delete the pipeline.
 
-### Create a pipeline from the deployment pipelines tab
+### Create a pipeline from the deployment pipelines button in Fabric
 
-To create a pipeline from the deployment pipelines tab, do the following:
+To create a pipeline from anywhere in Fabric, do the following:
 
-1. From the navigation pane, select **Deployment pipelines** and then select **Create pipeline**.
+1. From the Workspaces flyout, select **Deployment pipelines**.
 
-2. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Create**.
+   :::image type="content" source="media/get-started-with-deployment-pipelines/creating-pipeline.png" alt-text="A screenshot of the deployment pipelines entry point.":::
 
-### Create a pipeline from a workspace
+1. Select **Create pipeline**.
 
-You can create a pipeline from an existing workspace, providing you're the admin of a [workspace](../../get-started/create-workspaces.md)
+    :::image type="content" source="media/get-started-with-deployment-pipelines/create-pipeline.png" alt-text="A screenshot of the create pipeline button.":::
+1. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Create**.
 
-1. From the workspace, select **Create a pipeline**.
+### Create a pipeline from a workspace in Power BI
+
+From Power BI, you also have the option of creating a pipeline from inside an existing workspace, if you're the admin of that [workspace](../../get-started/create-workspaces.md)
+
+1. From the workspace, select **Create deployment pipeline**.
 
     :::image type="content" source="media/get-started-with-deployment-pipelines/workspace-deploy.png" alt-text="A screenshot of the create a pipeline button in a workspace.":::
 
-2. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Create**.
+1. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Create**.
 
 >[!NOTE]
->If the workspace isn't assigned to your organization's Premium capacity, or to your PPU capacity, you'll get a notification to [assign it to a capacity](/power-bi/enterprise/service-admin-premium-manage.md#assign-a-workspace-to-a-capacity).  
+>If the workspace isn't assigned to your organization's capacity, or to your PPU capacity, you'll get a notification to [assign it to a capacity](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity).  
 
 ## Step 2 - Assign a workspace
 

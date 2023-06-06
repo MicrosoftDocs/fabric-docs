@@ -5,14 +5,15 @@ ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
 ms.topic: how-to
-ms.date: 03/24/2023
+ms.custom: build-2023
+ms.date: 05/23/2023
 ---
 
 # Create a lakehouse with OneLake
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This tutorial is a quick guide to creating a lakehouse and getting started with the basic methods of interacting with it. After completing this tutorial, you'll have a lakehouse provisioned inside of Microsoft Fabric working on top of OneLake.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create a lakehouse
 
@@ -24,7 +25,7 @@ This tutorial is a quick guide to creating a lakehouse and getting started with 
 
    :::image type="content" source="media\create-lakehouse-onelake\new-lakehouse-name.png" alt-text="Screenshot showing where to enter your new lakehouse name." lightbox="media\create-lakehouse-onelake\new-lakehouse-name.png":::
 
-1. A new lakehouse is created and if this is your first OneLake artifact, it's provisioned behind the scenes.
+1. A new lakehouse is created and if this is your first OneLake item, it's provisioned behind the scenes.
 
 At this point, you have a lakehouse running on top of OneLake. Next, add some data and start organizing your lake.
 

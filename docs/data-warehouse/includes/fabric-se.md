@@ -1,8 +1,8 @@
 ---
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 03/17/2023
-ms.service: sql
+ms.date: 05/23/2023
+ms.custom: build-2023
 ms.topic: include
 ---
 SQL Endpoint

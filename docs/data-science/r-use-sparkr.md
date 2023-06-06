@@ -1,11 +1,12 @@
 ---
 title: Use SparkR
-description: Learn how to use SparkR, a light-weight frontend to use Apache Spark from R.
+description: How to use SparkR, a light-weight frontend to use Apache Spark from R.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.date: 04/13/2023
+ms.custom: build-2023
+ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
@@ -15,6 +16,8 @@ ms.search.form: R Language
 
 [SparkR](https://spark.apache.org/docs/latest/sparkr.html) is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation etc. SparkR also supports distributed machine learning using MLlib.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 Use SparkR through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks.
 
 R support is only available in Spark3.1 or above.  R in Spark 2.4 is not supported.
@@ -23,8 +26,7 @@ R support is only available in Spark3.1 or above.  R in Spark 2.4 is not support
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md
-)]
+[!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
 
 
 ## Read and write SparkR DataFrames
@@ -112,14 +114,28 @@ Use RODBC to connect to SQL based databases through an ODBC interface. For examp
 # load RODBC package
 library(RODBC)
 
-# connect to driver
-channel <-odbcDriverConnect("Driver={ODBC Driver 17 for SQL Server};
-Server={<database>};
-Database=spark33test1;Uid={<uid>};
-Pwd={<pwd>};
+
+# config connection string
+
+DriverVersion <- substr(system("apt list --installed *msodbc*", intern=TRUE, ignore.stderr=TRUE)[2],10,11)
+ServerName <- "your-server-name"
+DatabaseName <- "your-database-name"
+Uid <- "your-user-id-list"
+Password <- "your-password"
+
+ConnectionString = sprintf("Driver={ODBC Driver %s for SQL Server};
+Server=%s;
+Database=%s;
+Uid=%s;
+Pwd=%s;
 Encrypt=yes;
 TrustServerCertificate=yes;
-Connection Timeout=30;")
+Connection Timeout=30;",DriverVersion,ServerName,DatabaseName,Uid,Password)
+print(ConnectionString)
+
+
+# connect to driver
+channel <-odbcDriverConnect(ConnectionString)
 
 # query from existing tables
 Rdf <- sqlQuery(channel, "select * from <table>")
@@ -311,5 +327,8 @@ summary(model)
 ## Next steps
 
 - [How to use sparklyr](./r-use-sparklyr.md)
+- [How to use Tidyverse](./r-use-tidyverse.md)
 - [R library management](./r-library-management.md)
 - [Create R visualization](./r-visualization.md)
+- [Tutorial: avocado price prediction](./r-avocado.md)
+- [Tutorial: flight delay prediction](./r-flight-delay.md)

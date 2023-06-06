@@ -4,17 +4,15 @@ description: This article explains the overview of using Google Cloud Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/20/2022
-ms.custom: template-how-to 
+ms.date: 05/23/2023
+ms.custom: template-how-to, build-2023
 ---
 
 # Google Cloud Storage connector Overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+This Google Cloud Storage connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-This Google Cloud Storage connector is supported in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported capabilities
 
@@ -25,7 +23,7 @@ This Google Cloud Storage connector is supported in [!INCLUDE [product-name](../
 | **GetMetadata activity** | None | Basic |
 | **Delete activity** | None | Basic |
 
-## Next Steps
+## Next steps
 
 [How to create Google Cloud Storage connection](connector-google-cloud-storage.md)
 
