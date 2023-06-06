@@ -21,10 +21,10 @@ In this tutorial, you learn how to:
 > [!div class="checklist"]
 > * Create Eventstream and KQL Database items in Microsoft Fabric
 > * Add an Custom Application source to the eventstream
-> * Create a Azure Function App as your Custom Application
+> * Create an application to send events to the eventstream
 > * Add a KQL Database destination to the eventstream
-> * Verify the data in KQL database
-> * Build the near real-time Power BI report with the events data in KQL database
+> * Verify data in the KQL database
+> * Build near real-time Power BI report with the events data ingested in the KQL database
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ To get started, you must complete the following prerequisites:
 * Download and install **Node.js LTS**. The latest [long-term support (LTS) version](https://nodejs.org).
 * [Visual Studio Code](https://code.visualstudio.com) (recommended) or any other integrated development environment (IDE).
 
-## Create an eventstream and a KQL database
+## Create an Eventstream and a KQL Database items in Microsoft Fabric
 
 You can create an Eventstream item (eventstream) or a KQL Database item (KQL database) on the **Workspace** page or the **Create hub** page. Here are the steps:
 
@@ -172,7 +172,7 @@ With the **event hub compatible connection string** readily available in the Cus
 
    :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/eventstream-data-preview.png" alt-text="Screenshot showing the eventstream data preview." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/eventstream-data-preview.png" :::
 
-## Add a KQL database destination to the eventstream
+## Add a KQL Database destination to the eventstream
 
 While the custom application is streaming events into your eventstream, you can add and configure the **KQL Database** destination to receive the events from your eventstream. Follow the steps below to add the **KQL Database** destination.
 
