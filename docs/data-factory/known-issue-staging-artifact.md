@@ -28,7 +28,7 @@ When trying to refresh a Dataflow gen2 and the error refers to:
 
 * *null Error: Couldn't refresh the entity because of an issue with the mashup document MashupException.Error: PowerBIEntityNotFound: PowerBIEntityNotFound*
 
-* After deleting the staging artifacts, you're unable to get them back.
+After deleting the staging artifacts, you're unable to get them back.
 
 ## Solutions and workarounds
 
