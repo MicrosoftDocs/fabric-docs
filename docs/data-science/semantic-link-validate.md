@@ -3,7 +3,7 @@ title: Validate data with Semantic Link
 description: Validate data with Semantic Link
 ms.reviewer: larryfr
 ms.author: romanbat
-author: <romangit>
+author: RomanBat
 ms.topic: overview 
 ms.date: 06/06/2023
 ms.search.form: Semantic Link
