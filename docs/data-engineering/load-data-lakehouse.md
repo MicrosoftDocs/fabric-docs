@@ -16,7 +16,7 @@ Get data experience covers all user scenarios for bringing data into the lakehou
 
 - Connecting to existing SQL Server and copying data into delta table on the lakehouse.
 - Uploading files from your computer.
-- Copying and merging multiple tables from other alehouses into a new delta table.
+- Copying and merging multiple tables from other lakehouses into a new delta table.
 - Connecting to a streaming source to land data in a lakehouse.
 - Referencing data without copying it from other internal lakehouses or external sources.
 
