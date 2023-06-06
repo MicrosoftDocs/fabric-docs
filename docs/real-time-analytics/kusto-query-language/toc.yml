@@ -5,6 +5,8 @@ items:
   href: /azure/data-explorer/kusto/query/syntax-conventions?context=/fabric/context/context-rta&pivots=fabric
 - name: Quick reference guide
   href: /azure/data-explorer/kusto/../kql-quick-reference?context=/fabric/context/context-rta&pivots=fabric
+- name: Add a comment in KQL
+  href: /azure/data-explorer/kusto/query/comment?context=/fabric/context/context-rta&pivots=fabric
 - name: Query best practices
   items:
   - name: Best practices
