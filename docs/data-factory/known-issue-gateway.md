@@ -12,7 +12,7 @@ ms.custom:
 
 Evaluation and refresh issues when an older Gateway is in use in a Dataflow Gen2 using the Lakehouse connector, which could result in authoring or refresh issues.
 
-**APPLIES TO:** ✔️ Dataflows Gen2 in Microsoft Fabric
+**APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric
 
 **Status:** Resolved
 
@@ -30,4 +30,4 @@ Some of the errors that could be triggered because of this issue:
 
 ## Solutions and workarounds
 
-Download version 3000.174.13 or later of the on-premises data gateway
+Download version 3000.174.13 or later of the on-premises data gateway.
