@@ -91,7 +91,7 @@ With the **event hub compatible connection string** readily available in the Cus
    For example:
    *Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx*
 
-   * `EVENT HUBS NAMESPACE CONNECTION STRING`:
+   * `EVENT HUB CONNECTION STRING`:
       "*Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxx;SharedAccessKey=xxxxxxxx*"
    * `EVENT HUB NAME`:
       "*es_xxxxxxxx*"
@@ -100,12 +100,12 @@ With the **event hub compatible connection string** readily available in the Cus
     const { EventHubProducerClient } = require("@azure/event-hubs");
     var moment = require('moment');
     
-    const connectionString = "EVENT HUBS NAMESPACE CONNECTION STRING";
+    const connectionString = "EVENT HUB CONNECTION STRING";
     const eventHubName = "EVENT HUB NAME";
     
     //Generate event data
     function getRowData(id) {
-        const time = moment().format('YYYY/MM/DD HH:mm:ss');
+        const time = moment().toISOString();
         const deviceID = id + 100;
         const humidity = Math.round(Math.random()*(65-35) + 35);
         const temperature = Math.round(Math.random()*(37-20) + 20);
