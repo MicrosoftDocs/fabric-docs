@@ -22,9 +22,9 @@ The high-level steps in module 1 are as follows:
 
 ## Create a data pipeline
 
-1. Sign into [Power BI](https://app.powerbi.com) and open a workspace with Fabric Capacity enabled.
-
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-premium-capacity-workspace.png" alt-text="Screenshot showing the selection of a Premium capacity workspace to create a new data pipeline.":::
+1. A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription is required. [Create a free account](https://azure.microsoft.com/free/).
+1. Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+1. Sign into [Power BI](https://app.powerbi.com/).
 
 
 1. Select the default Power BI icon at the bottom left of the screen, and switch to the **Data Factory** experience.
@@ -71,7 +71,7 @@ Select **Copy data** to open the copy assistant tool.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/review-save-copy-configuration.png" alt-text="Screenshot showing the Copy data assistant on the Review + save page.":::
 
-### Step 4: Run and view the results of your Copy activity.
+### Step 3: Run and view the results of your Copy activity.
 
 1. Select the **Run** tab in the pipeline editor. Then select the **Run** button, and then **Save and run** at the prompt, to run the Copy activity.
 
