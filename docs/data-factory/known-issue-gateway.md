@@ -22,7 +22,7 @@ Evaluation and refresh issues when an older Gateway is in use in a Dataflow Gen2
 
 Some of the errors that could be triggered because of this issue:
 
-* *An exception ocurrred: The given data source kind is not supported. Data source kind: Lakehouse*
+* *An exception ocurred: The given data source kind is not supported. Data source kind: Lakehouse*
 * *null Error: Couldn't refresh the entity because of an issue with the mashup document MashupException.Error*
 
 >[!Note]

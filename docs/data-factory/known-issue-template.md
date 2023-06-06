@@ -10,7 +10,7 @@ ms.custom:
 
 # Known issue - Power Query template has extra queries from output destination
 
-When importing a Power Query template from a dataflow with output destination logic, the template will contain logic specific to the output destination from the dataflow and the queries related to the output destination logic will no longer be hidden in the new dataflow.
+When importing a Power Query template from a dataflow with output destination logic, the template contains logic specific to the output destination from the dataflow and the queries related to the output destination logic will no longer be hidden in the new dataflow.
 
 **APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric
 
@@ -20,7 +20,7 @@ When importing a Power Query template from a dataflow with output destination lo
 
 ## Symptoms
 
-When you import a Power Query template, you might notice queries that were not originally showing in your dataflow with the prefixes **DestinationForWriteToDatabaseTableFrom**, **TransformForOutputToDatabase** and **WriteToDatabaseTableFrom**.
+When you import a Power Query template, you might notice queries that weren't originally showing in your dataflow with the prefixes **DestinationForWriteToDatabaseTableFrom**, **TransformForOutputToDatabase** and **WriteToDatabaseTableFrom**.
 
 ## Solutions and workarounds
 

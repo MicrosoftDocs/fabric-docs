@@ -10,11 +10,11 @@ ms.custom:
 
 # Known issue - Staging artifacts aren't hidden and can be modified by the end-user
 
-In a new workspace, when an end-user first launches a Dataflow Gen2, a set of staging artifacts, such as a new Lakehouse and a new Data Warehouse, are automatically created for the whole workspace. These artifacts can be leveraged for a set of functionalities available for Dataflow Gen2.
+In a new workspace, when an end-user first launches a Dataflow Gen2, a set of staging artifacts, such as a new Lakehouse and a new Data Warehouse, are automatically created for the whole workspace. These artifacts can be used for a set of functionalities available for Dataflow Gen2.
 
-A user is able to see these staging artifacts in the workspace list and lineage as well as being able to interact with these artifacts.
+A user is able to see these staging artifacts in the workspace list and lineage and being able to interact with these artifacts.
 
-If a user deletes or modifies any of these staging artifacts, the workspace can be set in a state that won't be able to leverage these artifacts because of misconfiguration.
+If a user deletes or modifies any of these staging artifacts, the workspace can be set in a state that won't be able to use these artifacts because of misconfiguration.
 
 **APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric
 
