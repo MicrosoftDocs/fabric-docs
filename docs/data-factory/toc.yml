@@ -263,6 +263,8 @@
       href: dataflows-gen2-overview.md
     - name: Known issues
       items:
+      - name: Active known issues for Data Factory
+        href: known-issues.md
       - name: Gateway version
         href: known-issue-gateway.md
       - name: Lineage view edit button
