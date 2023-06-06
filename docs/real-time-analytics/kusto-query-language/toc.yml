@@ -4,7 +4,7 @@ items:
 - name: Syntax conventions
   href: /azure/data-explorer/kusto/query/syntax-conventions?context=/fabric/context/context-rta&pivots=fabric
 - name: Quick reference guide
-  href: /azure/data-explorer/kusto/../kql-quick-reference?context=/fabric/context/context-rta&pivots=fabric
+  href: /azure/data-explorer/kusto/query/kql-quick-reference?context=/fabric/context/context-rta&pivots=fabric
 - name: Add a comment in KQL
   href: /azure/data-explorer/kusto/query/comment?context=/fabric/context/context-rta&pivots=fabric
 - name: Query best practices
@@ -13,7 +13,7 @@ items:
     href: /azure/data-explorer/kusto/query/best-practices?context=/fabric/context/context-rta&pivots=fabric
   - name: Optimize queries that use named expressions
     displayName: let statement, user defined functions, as operator, calculated
-    href: /azure/data-explorer/kusto/../named-expressions?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/named-expressions?context=/fabric/context/context-rta&pivots=fabric
 - name: Cross-cluster queries
   items:
   - name: Cross-cluster queries and schema changes
