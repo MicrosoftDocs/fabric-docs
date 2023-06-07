@@ -10,7 +10,7 @@ ms.custom:
 
 # Known issue - Error when publishing a Dataflow gen2
 
-Users get an Unexpected error with Status Code 500 when trying to publish a dataflow gen2 inside of Microsoft Fabric.
+Users are experiencing an intermittent issue. An Unexpected error with Status Code 500 when trying to publish a dataflow gen2 inside of Microsoft Fabric.
 
 **APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric.
 
