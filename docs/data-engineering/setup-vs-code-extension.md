@@ -32,7 +32,7 @@ After you have installed the required software, you must update the operating sy
 
 1. Add **JAVA_HOME** to the environment variables and point it to the directory where java 1.8 is installed.
 
-2. Add both **%JAVA_HOME%/bin** and the **Contain** subfolder of the Conda installation to the system path directory.
+2. Add both **%JAVA_HOME%/bin** and the **condabin** subfolder of the Conda installation to the system path directory.
 
 ### macOS
 
