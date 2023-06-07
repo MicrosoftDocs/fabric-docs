@@ -245,8 +245,8 @@ items:
     - name: .alter materialized-view policy caching command
       displayName: .alter materialized-view cache policy
       href: /azure/data-explorer/kusto/management/alter-materialized-view-cache-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter table cache policy command
-    - name: .alter table cache policy command
+    - name: .alter table policy caching command
+      displayName: .alter table cache policy command
       href: /azure/data-explorer/kusto/management/alter-table-cache-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .delete database cache policy command
     - name: .delete database cache policy command
@@ -284,7 +284,8 @@ items:
       displayName: .alter database ingestion batching policy, .alter database ingestionbatching
         policy
       href: /azure/data-explorer/kusto/management/alter-database-ingestion-batching-policy?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter table ingestion batching policy command
+    - name: .alter table policy ingestionbatching command
+      displayName: .alter table ingestion batching policy, .alter tables policy ingestionbatching
       href: /azure/data-explorer/kusto/management/alter-table-ingestion-batching-policy?context=/fabric/context/context-rta&pivots=fabric
     - name: .delete database ingestion batching policy command
       href: /azure/data-explorer/kusto/management/delete-database-ingestion-batching-policy?context=/fabric/context/context-rta&pivots=fabric
@@ -323,7 +324,8 @@ items:
     - name: .alter materialized-view policy merge command
       displayName: .alter materialized-view merge policy
       href: /azure/data-explorer/kusto/management/alter-materialized-view-merge-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter table merge policy command
+    - name: .alter table policy merge command
+      displayName: .alter table merge policy
       href: /azure/data-explorer/kusto/management/alter-table-merge-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .alter-merge database policy merge command
       displayName: .alter-merge database merge policy
@@ -352,7 +354,8 @@ items:
     - name: .alter materialized-view policy partitioning command
       displayName: .alter materialized-view partitioning policy
       href: /azure/data-explorer/kusto/management/alter-materialized-view-partitioning-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter table partitioning policy command
+    - name: .alter table policy partitioning command
+      displayName: .alter table partitioning policy
       href: /azure/data-explorer/kusto/management/alter-table-partitioning-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .alter-merge materialized view partitioning policy command
       href: /azure/data-explorer/kusto/management/alter-merge-materialized-view-partitioning-policy-command?context=/fabric/context/context-rta&pivots=fabric
@@ -382,7 +385,8 @@ items:
       displayName: .alter materialized-view retention policy, .alter materialized
         view retention policy
       href: /azure/data-explorer/kusto/management/alter-materialized-view-retention-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter table retention policy command
+    - name: .alter table policy retention command
+      displayName: .alter table retention policy
       href: /azure/data-explorer/kusto/management/alter-table-retention-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .alter-merge database policy retention command
       displayName: .alter-merge database retention policy
@@ -391,7 +395,8 @@ items:
       displayName: .alter-merge materialized view retention policy, .alter-merge materialized-view
         retention policy
       href: /azure/data-explorer/kusto/management/alter-merge-materialized-view-retention-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter-merge table retention policy command
+    - name: .alter-merge table policy retention command
+      displayName: .alter-merge table retention policy
       href: /azure/data-explorer/kusto/management/alter-merge-table-retention-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .delete database retention policy command
       href: /azure/data-explorer/kusto/management/delete-database-retention-policy-command?context=/fabric/context/context-rta&pivots=fabric
@@ -418,7 +423,8 @@ items:
       displayName: .alter database extent tags retention policy, .alter database extent_tags_retention
         policy
       href: /azure/data-explorer/kusto/management/alter-extent-tags-retention-policy?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter table extent tags retention policy command
+    - name: .alter table policy extent_tags_retention command
+      displayName: .alter table extent tags retention policy
       href: /azure/data-explorer/kusto/management/alter-table-extent-tags-retention-policy?context=/fabric/context/context-rta&pivots=fabric
     - name: .delete extent tags retention policy command
       href: /azure/data-explorer/kusto/management/delete-extent-tags-retention-policy?context=/fabric/context/context-rta&pivots=fabric
@@ -430,7 +436,9 @@ items:
     items:
     - name: Restricted view access policy
       href: /azure/data-explorer/kusto/management/restrictedviewaccesspolicy?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter table restricted view access policy command
+    - name: .alter table policy restricted_view_access command
+      displayName: .alter table restricted view access policy, .alter tables policy
+        restricted_view_access
       href: /azure/data-explorer/kusto/management/alter-table-restricted-view-access-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .delete table policy restricted_view_access command
       displayName: .delete table restricted view access policy, .delete table restricted_view_access
@@ -447,7 +455,9 @@ items:
     - name: .alter materialized-view policy row_level_security command
       displayName: .alter materialized-view row level security policy
       href: /azure/data-explorer/kusto/management/alter-materialized-view-row-level-security-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter table row level security policy command
+    - name: .alter table policy row_level_security command
+      displayName: .alter table row level security policy, .alter table row_level_security
+        policy
       href: /azure/data-explorer/kusto/management/alter-table-row-level-security-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .show materialized policy row_level_security command
       displayName: .show materialized view row level security policy, .show materialized-view
@@ -461,9 +471,11 @@ items:
     items:
     - name: Row order policy command
       href: /azure/data-explorer/kusto/management/roworderpolicy?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter table row order policy command
+    - name: .alter table policy roworder command
+      displayName: .alter table row order policy, .alter table roworder policy
       href: /azure/data-explorer/kusto/management/alter-table-row-order-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter-merge table row order policy command
+    - name: .alter-merge table policy roworder command
+      displayName: .alter-merge table row order policy
       href: /azure/data-explorer/kusto/management/alter-merge-table-row-order-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .delete table policy roworder command
       displayName: .delete table row order policy, .delete table roworder policy
@@ -476,9 +488,11 @@ items:
     - name: Update policy
       displayName: SQL triggers
       href: /azure/data-explorer/kusto/management/updatepolicy?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter table update policy command
+    - name: .alter table policy update command
+      displayName: .alter table update policy
       href: /azure/data-explorer/kusto/management/alter-table-update-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .alter-merge table update policy command
+    - name: .alter-merge table policy update command
+      displayName: .alter-merge table update policy
       href: /azure/data-explorer/kusto/management/alter-merge-table-update-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .delete table policy update command
       displayName: .delete table update policy
@@ -572,8 +586,8 @@ items:
   - name: .show database cache query_results command
     displayName: .show database cache query results
     href: /azure/data-explorer/kusto/management/show-query-results-cache-command?context=/fabric/context/context-rta&pivots=fabric
-  - name: .clear cache query_results command
-    displayName: clear query results cache
+  - name: .clear database cache query_results command
+    displayName: clear query results cache, .clear database query_results cache
     href: /azure/data-explorer/kusto/management/clear-query-results-cache-command?context=/fabric/context/context-rta&pivots=fabric
 - name: System information
   href: /azure/data-explorer/kusto/management/systeminfo?context=/fabric/context/context-rta&pivots=fabric
