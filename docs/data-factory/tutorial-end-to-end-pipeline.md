@@ -47,13 +47,24 @@ Select **Copy data** to open the copy assistant tool.
 
 ### Step 2: Configure your settings in the copy assistant.
 
-1. The **Copy data** dialog is displayed with the first step, **Choose data source**, highlighted.  Select the **NYC Taxi - Green** data from the **Sample data** selections displayed, and then select **Next**.
+1. The **Copy data** dialog is displayed with the first step, **Choose data source**, highlighted.  Scroll down if necessary to the **Data sources** section, and select the **Azure Blob Storage** data source type. Then select **Next**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-nyc-taxi-data.png" alt-text="Screenshot showing the selection of the NYC Taxi - Green sample data in the copy assistant on the Choose data source tab.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/azure-blob-storage-data-source.png" alt-text="Screenshot showing the selection of the Azure Blob Storage data source type in the copy assistant on the Choose data source tab.":::
 
-1. The next step, **Connect to data source (Select, preview, and choose the data.)** appears. Review the sample data and select **Next**.
+1. In the next step, select **Create new connection** and then provide the URL for the blob storage hosting the sample data provided for this tutorial, at _https://nyctaxisample.blob.core.windows.net/sample/sample_. The authentication kind is **Anonymous**.  Select **Next** after providing the URL.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/preview-data.png" alt-text="Screenshot showing the Connect to data source step of the copy assistant with the selected sample data displayed in the preview area.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/create-new-azure-blob-storage-connection.png" alt-text="Screenshot showing the creation of a new Azure Blob Storage connection with the URL for the sample data in the tutorial.":::
+
+1. The **Connect to data source** step appears, and initially, you see an error **Unable to list files**, because permissions have only been granted to the **sample** folder in the blob storage. Provide the folder name, **sample**, and select **Retry**.
+
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/provide-blob-storage-folder.png" alt-text="Screenshot showing the Unable to list files error with the folder name Sample provided.":::
+
+   > [!NOTE]
+   > The blob storage folder is case sensitive and should be in all lower case.
+
+1. The blob storage browser appears next. Select the **NYC-Taxi-Green-2015-01.parquet** file, and wait for the data preview to appear. Then select **Next**.
+
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/preview-data.png" alt-text="Screenshot showing the preview data for the NYC-Taxi-Green-2015-01.parquet file.":::
 
 1. For the **Choose data destination** step of the copy assistant, select **Lakehouse** and then **Next**.
 
