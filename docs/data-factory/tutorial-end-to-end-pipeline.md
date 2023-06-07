@@ -51,7 +51,7 @@ Select **Copy data** to open the copy assistant tool.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/azure-blob-storage-data-source.png" alt-text="Screenshot showing the selection of the Azure Blob Storage data source type in the copy assistant on the Choose data source tab.":::
 
-1. In the next step, select **Create new connection** and then provide the URL for the blob storage hosting the sample data provided for this tutorial, at _https://nyctaxisample.blob.core.windows.net/sample/sample_. The authentication kind is **Anonymous**.  Select **Next** after providing the URL.
+1. In the next step, select **Create new connection** and then provide the URL for the blob storage hosting the sample data provided for this tutorial, at ```https://nyctaxisample.blob.core.windows.net/sample```. The authentication kind is **Anonymous**.  Select **Next** after providing the URL.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/create-new-azure-blob-storage-connection.png" alt-text="Screenshot showing the creation of a new Azure Blob Storage connection with the URL for the sample data in the tutorial.":::
 
