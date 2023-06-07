@@ -172,6 +172,9 @@ In the following steps, you load cleansed and prepared data from lakehouse delta
    ALGORITHM = "lightgbm" 
    model_name = f"{EXPERIMENT_NAME}_{ALGORITHM}"
 
+   # Create a 'dict' object that contains values of metrics
+   lg_metrics_dict = json.loads(lg_metrics.toJSON().first())
+
    # Call model register function
    model_uri = register_spark_model(run = run,
                                  model = lg_model, 
@@ -228,6 +231,10 @@ In the following steps, you load cleansed and prepared data from lakehouse delta
    # Define Signature object 
    sig_tn = ModelSignature(inputs=_infer_schema(train_df.select(categorical_features + numeric_features)), 
                         outputs=_infer_schema(train_df.select("tripDuration")))
+
+   # Create a 'dict' object that contains values of metrics
+   lg_metricstn_dict = json.loads(lg_metrics_tn.toJSON().first())
+
    model_uri = register_spark_model(run = run,
                                  model = lg_model_tn, 
                                  model_name = model_name, 
