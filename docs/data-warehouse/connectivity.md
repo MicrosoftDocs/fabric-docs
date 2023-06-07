@@ -128,6 +128,8 @@ Both adapters support Azure Active Directory (Azure AD) authentication and allow
 
 The DBT Fabric DW Adapter uses the `pyodbc` library to establish connectivity with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The `pyodbc` library is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/).  The `pyodbc` library directly passes connection string to the database driver through SQLDriverConnect in the `msodbc` connection structure to [!INCLUDE [product-name](../includes/product-name.md)] using a TDS (Tabular Data Streaming) proxy service.
 
+For more information, see the [Microsoft Fabric Synapse Data Warehouse dbt adapter setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [Microsoft Fabric Synapse Data Warehouse dbt adapter configuration](https://docs.getdbt.com/reference/resource-configs/fabric-configs).
+
 ## Connectivity by other means
 
 Any third-party tool can use the SQL Connection string via ODBC or OLE DB drivers to connect to a Microsoft [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], using Azure AD authentication.
