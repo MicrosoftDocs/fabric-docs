@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 05/24/2023
+ms.date: 06/07/2023
 ---
 
 # Microsoft Fabric licenses
@@ -24,7 +24,7 @@ This section describes tenants, capacities, and workspaces, which are the main b
 
 ### Tenant
 
-The foundation of a Microsoft Fabric subscription is the tenant. Each tenant is tied to a specific domain. Your tenant is created when you buy a capacity, and after it's created, you can add more capacities. Usually, an organization has one tenant. In such cases, the tenant is synonymous with the organization. Some companies may want to have several tenants, each with their own capacities.
+The foundation of a Microsoft Fabric subscription is the tenant. Each tenant is tied to a specific Domain Name System (DNS). Your tenant is created when you buy a capacity, and after it's created, you can add more capacities. Usually, an organization has one tenant. In such cases, the tenant is synonymous with the organization. Some companies may want to have several tenants, each with their own capacities.
 
 ### Capacity
 
