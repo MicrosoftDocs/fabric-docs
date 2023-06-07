@@ -20,9 +20,10 @@ Select the **Title** to view more information about that specific known issue.
 
 |    Area                              |  Title  |  Issue publish date |  
 |------------------------------------|---------|---------------------|
-|  Authoring a Dataflow                    |  [Power Query template has extra queries from output destination](known-issue-template.md)    |   June 6, 2023    |
+|  Authoring a Dataflow Gen2                  |  [Power Query template has extra queries from output destination](known-issue-template.md)    |   June 6, 2023    |
 |  Edit a Dataflow Gen2                  |  [Lineage view edit dataflow button takes user to Dataflow Gen1 experience](known-issue-lineage-view-edit.md)    |   June 6, 2023    |
 |  Output destination in Dataflows Gen2               |  [Staging artifacts aren't available or are misconfigured](known-issue-staging-artifact.md)    |   June 6, 2023    |
+|Publish a Dataflow Gen2| [Error when publishing a Dataflow gen2](known-issue-publish-df.md) | June 7, 2023| 
 
 
 ## Recently closed known issues
