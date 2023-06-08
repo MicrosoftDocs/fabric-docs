@@ -1,6 +1,6 @@
 ---
 title: Data science tutorial - perform batch scoring and save predictions
-description: In this fifth module, learn how to import a trained and registered model and perform batch predictions on a test dataset.
+description: In this fifth part of the tutorial series, learn how to import a trained and registered model and perform batch predictions on a test dataset.
 ms.reviewer: sgilley
 ms.author: narsam
 author: narmeens
@@ -15,9 +15,23 @@ In this tutorial, you learn to import a trained and registered LightGBMRegressor
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+* Complete [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
+
+* Optionally, complete [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
+
+* Complete [Part 3: Perform data cleansing and preparation using Apache Spark](tutorial-data-science-data-cleanse.md).
+
+* Complete [Part 4: Train and register machine learning models](tutorial-data-science-train-models.md).
+
 ## Follow along in notebook
 
-The python commands/script used in each step of this tutorial can be found in the accompanying notebook: [05-perform-batch-scoring-and-save-predictions-to-lakehouse.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/05-perform-batch-scoring-and-save-predictions-to-lakehouse.ipynb). Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
+[05-perform-batch-scoring-and-save-predictions-to-lakehouse.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/05-perform-batch-scoring-and-save-predictions-to-lakehouse.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along](./includes/follow-along.md)]
 
 ## Perform batch scoring and save predictions
 
@@ -39,7 +53,7 @@ The python commands/script used in each step of this tutorial can be found in th
    from synapse.ml.core.platform import *
    from synapse.ml.lightgbm import LightGBMRegressor
    ## Define run_uri to fetch the model
-   run_uri = "<enter the run_uri from module 04 here>"
+   run_uri = "<enter the run_uri from part 04 here>"
    loaded_model = mlflow.spark.load_model(run_uri, dfs_tmpdir="Files/tmp/mlflow")
    ```
 

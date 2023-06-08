@@ -1,6 +1,6 @@
 ---
 title: Data science tutorial - ingest data into a lakehouse
-description: In this first module, learn how to ingest a dataset into a Fabric lakehouse in delta lake format and how to preview the data you ingested.
+description: In this first part of the tutorial series, learn how to ingest a dataset into a Fabric lakehouse in delta lake format and how to preview the data you ingested.
 ms.reviewer: sgilley
 ms.author: narsam
 author: narmeens
@@ -21,13 +21,20 @@ In this tutorial, we ingest the [NYC Taxi & Limousine Commission - yellow taxi t
 
 In the following steps, you use the Apache spark to read data from Azure Open Datasets containers and write data into a Fabric lakehouse delta table. [Azure Open Datasets](/azure/open-datasets/overview-what-are-open-datasets) are curated public datasets that you can use to add scenario-specific features to machine learning solutions for more accurate models. Open Datasets are in the cloud on Microsoft Azure Storage and can be accessed by various methods including Apache Spark, REST API, Data factory, and other tools.
 
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+
 ## Follow along in notebook
 
-The python commands/script used in each step of this tutorial can be found in the accompanying notebook: [01-ingest-data-into-fabric-lakehouse-using-apache-spark.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/01-ingest-data-into-fabric-lakehouse-using-apache-spark.ipynb). Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
+ [01-ingest-data-into-fabric-lakehouse-using-apache-spark.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/01-ingest-data-into-fabric-lakehouse-using-apache-spark.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along](./includes/follow-along.md)]
 
 ## Ingest the data
 
-1. In the first step of this module, we read data from "azureopendatastorage" storage container using anonymous since the container has public access. We load [yellow cab data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) by specifying the directory and filter the data by year (puYear) and month (puMonth). In this tutorial, we try to minimize the amount of data ingested and processed to speed up the execution. To learn more about the data, see [NYC Taxi & Limousine Commission - yellow taxi trip dataset](/azure/open-datasets/dataset-taxi-yellow).
+1. In the first step of this part, we read data from "azureopendatastorage" storage container using anonymous since the container has public access. We load [yellow cab data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) by specifying the directory and filter the data by year (puYear) and month (puMonth). In this tutorial, we try to minimize the amount of data ingested and processed to speed up the execution. To learn more about the data, see [NYC Taxi & Limousine Commission - yellow taxi trip dataset](/azure/open-datasets/dataset-taxi-yellow).
 
    ```python
    # Azure storage access info for open datasets yellow cab

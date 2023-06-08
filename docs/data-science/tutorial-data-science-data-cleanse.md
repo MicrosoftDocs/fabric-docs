@@ -1,6 +1,6 @@
 ---
 title: Data science tutorial - data cleansing and preparation
-description: In this third module, learn how to read the raw data from a lakehouse table, and clean and transform that data to be ready for training machine learning models.
+description: In this third part of the tutorial series, learn how to read the raw data from a lakehouse table, and clean and transform that data to be ready for training machine learning models.
 ms.reviewer: sgilley
 ms.author: narsam
 author: narmeens
@@ -20,11 +20,21 @@ In this tutorial, we demonstrate how to use Apache Spark notebooks to clean and 
 > [!TIP]
 > For datasets of relatively small size, use the Data Wrangler UI, which is a notebook-based graphical user interface tool that provides interactive exploration and a data cleansing experience for users working with pandas dataframes on Microsoft Fabric notebooks.
 
-In the following steps, you read the raw NYC Taxi data from a lakehouse delta lake table (saved in module 1), and perform various operations to clean and transform that data to prepare it for training machine learning models.
+In the following steps, you'll read the raw NYC Taxi data from a lakehouse delta lake table (saved in part 1), and perform various operations to clean and transform that data to prepare it for training machine learning models.
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+* Complete [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
+
+* Optionally, complete [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
 
 ## Follow along in notebook
 
-The python commands/script used in each step of this tutorial can be found in the accompanying notebook: [03-perform-data-cleansing-and-preparation-using-apache-spark.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/03-perform-data-cleansing-and-preparation-using-apache-spark.ipynb). Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
+[03-perform-data-cleansing-and-preparation-using-apache-spark.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/03-perform-data-cleansing-and-preparation-using-apache-spark.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along](./includes/follow-along.md)]
 
 ## Cleanse and prepare
 

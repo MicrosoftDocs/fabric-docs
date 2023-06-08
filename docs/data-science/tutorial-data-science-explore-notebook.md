@@ -1,6 +1,6 @@
 ---
 title: Data science tutorial - explore and visualize data with notebooks
-description: In this second module, learn how to read data from a delta table, generate a random dataframe sample, convert a dataframe, and perform exploratory data analysis.
+description: In this second part of the tutorial series, learn how to read data from a delta table, generate a random dataframe sample, convert a dataframe, and perform exploratory data analysis.
 ms.reviewer: sgilley
 ms.author: narsam
 author: narmeens
@@ -27,13 +27,21 @@ In this tutorial you learn to perform the following actions:
 
 1. Perform exploratory data analysis using `seaborn` on the New York taxi yellow cab dataset. We do this by visualizing a trip duration variable against other categorical and numeric variables.
 
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+* Complete [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).
+
 ## Follow along in notebook
 
-The python commands/script used in each step of this tutorial can be found in the accompanying notebook; [02-explore-and-visualize-data-using-notebooks.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/02-explore-and-visualize-data-using-notebooks.ipynb). Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
+[02-explore-and-visualize-data-using-notebooks.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/02-explore-and-visualize-data-using-notebooks.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along](./includes/follow-along.md)]
 
 ## Visualize and analyze
 
-1. To get started, let's read the delta table (saved in module 1) from the lakehouse and create a pandas dataframe on a random sample of the data.
+1. To get started, let's read the delta table (saved in part 1) from the lakehouse and create a pandas dataframe on a random sample of the data.
 
    ```python
    data = spark.read.format("delta").load("Tables/nyctaxi_raw")
