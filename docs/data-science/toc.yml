@@ -185,8 +185,10 @@ items:
       href: r-visualization.md
 - name: Semantic Link
   items:
-  - name: Semantic Link overview
-    href: semantic-link-overview.md
+  - name: Overview
+    items:
+    - name: What is Semantic Link?
+      href: semantic-link-overview.md
   - name: Concepts
     items:
     - name: PowerBI connectivity
