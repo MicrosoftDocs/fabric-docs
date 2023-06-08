@@ -152,7 +152,7 @@ After the update is completed successfully, the status of the items changes to *
 Only a workspace admin can disconnect a workspace from an Azure Repo. If you’re not an admin, ask your admin for help with disconnecting. If you’re an admin and want to disconnect your repo, follow these steps:
 
 1. Go to Workspace settings
-1. Select Git integration
+1. Select **Git integration**
 1. Select **Disconnect workspace**
 
     :::image type="content" source="media/git-get-started/disconnect-workspace.png" alt-text="Screenshot of workspace settings screen with disconnect workspace option.":::
@@ -163,7 +163,8 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
-If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the git integration feature.
+- During the *Commit to git* process, the Fabric service deletes any files inside the item folder that are not part of the item definition. Unrelated files not in an item folder are not deleted.
+- If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the git integration feature.
 
 ## Next steps
 
