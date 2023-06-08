@@ -1,16 +1,16 @@
 ---
 title: Data science tutorial - ingest data into a lakehouse
 description: In this first module, learn how to ingest a dataset into a Fabric lakehouse in delta lake format and how to preview the data you ingested.
-ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+ms.reviewer: sgilley
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
 ms.date: 5/4/2023
 ---
 
-# Module 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark
+# Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark
 
-In this module, we ingest the NYC Taxi & Limousine Commission - yellow taxi trip dataset to demonstrate data ingestion into Fabric lakehouses in delta lake format.
+In this tutorial, we ingest the NYC Taxi & Limousine Commission - yellow taxi trip dataset to demonstrate data ingestion into Fabric lakehouses in delta lake format.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -52,4 +52,4 @@ The python commands/script used in each step of this tutorial can be found in th
 
 ## Next steps
 
-- [Module 2: Explore and visualize data using notebooks](tutorial-data-science-explore-notebook.md)
+- [Part 2: Explore and visualize data using notebooks](tutorial-data-science-explore-notebook.md)

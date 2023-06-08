@@ -1,14 +1,14 @@
 ---
 title: Data science tutorial - data cleansing and preparation
 description: In this third module, learn how to read the raw data from a lakehouse table, and clean and transform that data to be ready for training machine learning models.
-ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+ms.reviewer: sgilley
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
 ms.date: 5/4/2023
 ---
 
-# Module 3: Perform data cleansing and preparation using Apache Spark
+# Part 3: Perform data cleansing and preparation using Apache Spark
 
 The [NYC Yellow Taxi dataset](/azure/open-datasets/dataset-taxi-yellow?tabs=pyspark) contains over 1.5 Billion trip records with each month of trip data running into millions of records, which makes processing these records computationally expensive and often not feasible with nondistributed processing engines.
 
@@ -70,8 +70,8 @@ The python commands/script used in each step of this tutorial can be found in th
 
    :::image type="content" source="media\tutorial-data-science-data-cleanse\write-new-delta-table.png" alt-text="Screenshot of code sample to write data to a new delta table." lightbox="media\tutorial-data-science-data-cleanse\write-new-delta-table.png":::
 
-The cleansed and prepared data produced in this module is now available in the lakehouse as a delta table and can be used for further processing and generating insights.
+The cleansed and prepared data produced In this tutorial is now available in the lakehouse as a delta table and can be used for further processing and generating insights.
 
 ## Next steps
 
-- [Module 4: Train and register machine learning models in Microsoft Fabric](tutorial-data-science-train-models.md)
+- [Part 4: Train and register machine learning models in Microsoft Fabric](tutorial-data-science-train-models.md)

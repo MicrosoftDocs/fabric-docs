@@ -1,22 +1,22 @@
 ---
-title: Data science tutorial - prepare your system
-description: Before you begin following the Data science end-to-end scenario, learn about prerequisites, the sample dataset, and the lakehouse and notebooks you need.
-ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+title: Data science tutorial series - prepare your system
+description: Before you begin following the data science end-to-end scenario, learn about prerequisites, the sample dataset, and the lakehouse and notebooks you need.
+ms.reviewer: sgilley
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
 ms.date: 5/4/2023
 ---
 
-# Prepare your system for the Data science tutorial
+# Prepare your system for the data science tutorial series
 
-Before you begin the Data science end-to-end tutorial modules, learn about prerequisites, the sample dataset, which notebooks to import, and how to attach a lakehouse to those notebooks.
+Before you begin the data science end-to-end tutorial series, learn about prerequisites, the sample dataset, which notebooks to import, and how to attach a lakehouse to those notebooks.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
-1. Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
+1. A [Microsoft Fabric subscription](../enterprise/licenses).  Or sign up for a free [Microsoft Fabric (Preview) trial](../get-started/fabric-trial.md)
 
 1. A Power BI Workspace with assigned premium capacity.
 
@@ -69,4 +69,4 @@ To demonstrate Fabric lakehouse features, the first five modules in this tutoria
 
 ## Next steps
 
-- [Module 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)
+- [Part 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)

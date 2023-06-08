@@ -1,16 +1,16 @@
 ---
 title: Data science tutorial - train and register machine learning models
 description: In this fourth module, learn how to train machine learning models to predict the total ride duration of taxi trips, and then register the trained models.
-ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+ms.reviewer: sgilley
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
 ms.date: 5/4/2023
 ---
 
-# Module 4: Train and register machine learning models in Microsoft Fabric
+# Part 4: Train and register machine learning models in Microsoft Fabric
 
-In this module, you learn to train machine learning models to predict the total ride duration (tripDuration) of yellow taxi trips in New York City based on various factors, such as pickup and drop-off locations, distance, date, time, number of passengers, and rate code. Once a model is trained, you register the trained models, and log hyperparameters used and evaluation metrics using Fabric's native integration with the MLflow framework.
+In this tutorial, you learn to train machine learning models to predict the total ride duration (tripDuration) of yellow taxi trips in New York City based on various factors, such as pickup and drop-off locations, distance, date, time, number of passengers, and rate code. Once a model is trained, you register the trained models, and log hyperparameters used and evaluation metrics using Fabric's native integration with the MLflow framework.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -101,4 +101,4 @@ In order to view the model in the UI:
 
 ## Next steps
 
-- [Module 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md)
+- [Part 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md)

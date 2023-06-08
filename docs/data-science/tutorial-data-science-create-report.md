@@ -1,16 +1,16 @@
 ---
 title: Data science tutorial - create a Power BI report to visualize predictions
 description: In this sixth module, learn how to get set up to create reports and how to create various visuals to analyze data.
-ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+ms.reviewer: sgilley
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
 ms.date: 5/4/2023
 ---
 
-# Module 6: Create a Power BI report to visualize predictions
+# Part 6: Create a Power BI report to visualize predictions
 
-In this module, we use the Microsoft Fabric DirectLake feature, which enables direct connectivity from Power BI datasets to lakehouse tables in direct query mode with automatic data refresh. For the following steps, use the prediction data produced in [Module 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
+In this tutorial, we use the Microsoft Fabric DirectLake feature, which enables direct connectivity from Power BI datasets to lakehouse tables in direct query mode with automatic data refresh. For the following steps, use the prediction data produced in [Part 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -24,7 +24,7 @@ In this module, we use the Microsoft Fabric DirectLake feature, which enables di
 
    :::image type="content" source="media\tutorial-data-science-create-report\select-predictions-data.png" alt-text="Screenshot of the New Power BI dataset dialog box, showing where to select the correct data and select Continue." lightbox="media\tutorial-data-science-create-report\select-predictions-data.png":::
 
-1. Once the UI for the new dataset loads, rename the dataset by clicking on the dropdown at top left corner of the dataset page and entering the more user-friendly name ***nyctaxi_predictions***. Click outside the drop down to apply the name change.
+1. Once the UI for the new dataset loads, rename the dataset by clicking on the dropdown at top left corner of the dataset page and entering the more user-friendly name ***nyctaxi_predictions***. Click outside the drop-down to apply the name change.
 
    :::image type="content" source="media\tutorial-data-science-create-report\rename-dataset.png" alt-text="Screenshot of the dataset page, showing where to enter the new name." lightbox="media\tutorial-data-science-create-report\rename-dataset.png":::
 
