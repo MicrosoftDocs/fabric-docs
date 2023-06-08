@@ -273,4 +273,6 @@
         href: known-issue-staging-artifact.md
       - name: Power Query template extra queries
         href: known-issue-template.md
+      - name: Error publishing a Dataflow Gen2
+        href: known-issue-publish-dataflow.md
      
