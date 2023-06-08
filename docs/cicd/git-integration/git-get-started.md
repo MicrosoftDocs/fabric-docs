@@ -3,6 +3,7 @@ title: Manage a workspace with git
 description: Learn how to connect a workspace to a git repo and branch, commit changes and sync.
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: how-to
 ms.date: 05/30/2023
 ms.custom: build-2023
@@ -32,12 +33,12 @@ To integrate git with your Microsoft Fabric workspace, you need to set up the fo
 
 ### Fabric prerequisites
 
-To access the git integration feature, you need one of the following:
+To access the git integration feature, you need one of the following licenses:
 
-- [Premium license](../../enterprise/licenses.md)
-- Access to a [Fabric capacity workspace](../../enterprise/licenses.md#capacity-and-skus)
+- [Power BI Premium license](/power-bi/enterprise/service-premium-what-is). Your Power BI premium license will continue to work for all Power BI features.
+- [Fabric license](../../enterprise/licenses.md#capacity-and-skus). A Fabric license is necessary to use all supported Fabric items.
 
-In addition, your organization’s administrator has to [enable the git integration switch](../../admin/git-integration-admin-settings.md). If git integration is disabled in the workspace, contact your administrator.
+In addition, your organization’s administrator has to [enable the Fabric switch](../../admin/fabric-switch.md). If this switch is disabled, contact your administrator.
 
 ## Connect a workspace to an Azure repo
 
@@ -105,7 +106,7 @@ After the commit is completed successfully, the status of the selected items cha
 
 ### [Undo saved change](#tab/undo-save)
 
-After you saved changes to the workspace, if you decide that you don’t want to commit those changes to git, you can undo the changes and revert those items to the previous (unsaved) status. To undo your changes, follow these steps:
+After saving changes to the workspace, if you decide that you don’t want to commit those changes to git, you can undo the changes and revert those items to the previous (unsaved) status. To undo your changes, follow these steps:
 
 1. Go to the workspace.
 1. Select the **Source control** button. This button also shows the number of uncommitted changes.
@@ -129,7 +130,7 @@ The selected items in your workspace revert to how they were when the workspace 
 
 ## Update workspace from git
 
-Whenever anyone commits a new change to the connected git branch, a notification appears in the relevant workspace. Use the **Source control** pane to pull latest changes, merges or reverts into the workspace and update live items. Read more about [updating](git-integration-process.md#update).
+Whenever anyone commits a new change to the connected git branch, a notification appears in the relevant workspace. Use the **Source control** pane to pull the latest changes, merges, or reverts into the workspace and update live items. Read more about [updating](git-integration-process.md#update).
 
 To update a workspace, follow these steps:
 
@@ -151,7 +152,7 @@ After the update is completed successfully, the status of the items changes to *
 Only a workspace admin can disconnect a workspace from an Azure Repo. If you’re not an admin, ask your admin for help with disconnecting. If you’re an admin and want to disconnect your repo, follow these steps:
 
 1. Go to Workspace settings
-1. Select Git integration
+1. Select **Git integration**
 1. Select **Disconnect workspace**
 
     :::image type="content" source="media/git-get-started/disconnect-workspace.png" alt-text="Screenshot of workspace settings screen with disconnect workspace option.":::
@@ -162,7 +163,8 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
-If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the git integration feature.
+- During the *Commit to git* process, the Fabric service deletes any files inside the item folder that are not part of the item definition. Unrelated files not in an item folder are not deleted.
+- If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the git integration feature.
 
 ## Next steps
 

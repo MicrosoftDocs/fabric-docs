@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/08/2023
 ---
 
 # Customer Lockbox for Microsoft Fabric
@@ -98,6 +98,18 @@ Customer Lockbox requests aren't triggered in the following engineering support 
 * A Microsoft engineer accesses the Azure platform as part of troubleshooting, and is accidentally exposed to customer data. For example, during troubleshooting the Azure Network Team captures a packet on a network device. Such scenarios don't usually result in access to meaningful customer data.
 
 * External legal demands for data. For details, see [government requests for data](https://www.microsoft.com/trust-center/?rtc=1) on the Microsoft Trust Center.
+
+## Data access
+
+Access to data varies according to the Microsoft Fabric experience your request is for. This section lists which data the Microsoft engineer can access, after you approve a Customer Lockbox request.
+
+* **Power BI** - When running the operations listed below, the Microsoft engineer will have access to a few tables linked to your request. Each operation the Microsoft engineer uses, is reflected in the audit logs.
+    * Get refresh history
+    * Delete admin usage dashboard
+    * Delete usage metrics v2 package
+    * Delete admin monitoring folder
+
+* **Real-Time Analytics** - The Real-Time Analytics engineer will have access to the data in the KQL database that's linked to your request.
 
 ## Next steps
 

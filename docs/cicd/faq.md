@@ -3,6 +3,7 @@ title: Frequently asked questions about the Fabric lifecycle management tools
 description: Find answers to your deployment pipelines, the Fabric Application lifecycle management (ALM) tool, troubleshooting questions
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: build-2023
 ms.date: 05/24/2023

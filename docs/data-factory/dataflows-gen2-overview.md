@@ -4,7 +4,7 @@ description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory 
 author: luitwieler
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/05/2023
 ms.author: jeluitwi
 ms.search.form: DataflowGen2 Overview
 ---
@@ -53,6 +53,9 @@ In Dataflow Gen2, we added support for the following destinations and many more 
 - Azure Data Explorer (Kusto)
 - Azure Synapse Analytics (SQL DW)
 - Azure SQL Database
+
+>[!NOTE]
+>To load your data to the Fabric Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by retrieving the SQL connection string. More information: [Connectivity to data warehousing in Microsoft Fabric](../data-warehouse/connectivity.md)
 
 :::image type="content" source="./media/dataflows-gen2-overview/output-destinations-overview.png" alt-text="Screenshot with the supported output destinations displayed.":::
 
