@@ -1,7 +1,7 @@
 ---
 title: Semantic Link: Introduction
 description: Overview of Semantic Link.
-ms.reviewer: larryfr
+ms.reviewer: mopeakande
 ms.author: marcozo
 author: eisber
 ms.topic: overview 
