@@ -1,30 +1,30 @@
 ---
-title: Power BI Connectivity
-description: Power BI Connectivity
-ms.reviewer: larryfr
+title: Semantic Link and PowerBI connectivity
+description: Semantic Link and Microsoft Fabric provide PowerBI conncetivity
+ms.reviewer: mopeakande
 ms.author: marcozo
 author: eisber
-ms.topic: overview 
+ms.topic: conceptual
 ms.date: 06/06/2023
 ms.search.form: Semantic Link
 ---
 
-# Power BI Connectivity
+# Power BI connectivity with Semantic Link and Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+PowerBI connectivity is at the core of Semantic Link.
 
-Power BI connectivity is at the core of Semantic Link.
-
-Power BI datasets usually represent the gold stage of data and are the result of upstream data refinement and validation.
+PowerBI datasets usually represent the gold stage of data and are the result of upstream data refinement and validation.
 These datasets are used to drive business decisions through Power BI reports and therefore receive special attention.
 Furthermore, business analyst encode business logical into Power BI measure.
 Data scientists on the other hand operate on the same data, but not in the same environment or language and therefore had to duplicate the business logic, leading to critical errors.
 
 Microsoft Fabric and Semantic Link bridge this critical gap between business analysts and data scientist, enabling seemless collaboration and reduce data mismatch.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 TODO: should we mention read-only replicas to address concerns on hogging Power BI clusters?
 
-## Pandas/Python
+## Python library for Pandas users
 
 The SemPy python library is part of the Semantic Link feature and serves Pandas users.
 
@@ -40,7 +40,7 @@ This metadata includes:
 - Relationships between tables
 - Hierarchies
 
-## Spark - PySpark, Spark SQL, R and Scala
+## Support for Spark (PySpark, Spark SQL, R and Scala)
 
 The Semantic Link Spark native connector enables Spark users agnostic of their language of choice to access Power BI tables and measures.
 
@@ -74,3 +74,13 @@ GROUP BY
     """)
 ```
 
+<!-- 4. Next steps
+Required. Provide at least one next step and no more than three. Include some 
+context so the customer can determine why they would click the link.
+
+-->
+
+## Next steps
+<!-- Add a context sentence for the following links -->
+- [Write concepts](article-concept.md)
+- [Links](../contribute/links-how-to.md)
