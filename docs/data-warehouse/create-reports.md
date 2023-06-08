@@ -6,13 +6,12 @@ ms.author: salilkanade
 ms.reviewer: WilliamDAssafMSFT
 ms.date: 05/23/2023
 ms.topic: conceptual
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: Reporting # This article's title should not change. If so, contact engineering.
 ---
 # Create reports on data warehousing in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] lets you create reusable and default Power BI datasets to create reports in various ways in Power BI. This article describes the various ways you can use your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], and their default Power BI datasets, to create reports.
 
@@ -24,6 +23,8 @@ Reports that use the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE 
 
 - [Power BI service](reports-power-bi-service.md)
 - [Power BI Desktop](/power-bi/fundamentals/desktop-getting-started)
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create reports using the Power BI service
 
@@ -48,12 +49,12 @@ You can use integrated Data hub experience in Power BI Desktop to select your [[
 Alternatively, you can complete the following steps to connect to a warehouse in Power BI Desktop:
 
 1. Navigate to the warehouse settings in your workspace and copy the SQL connection string. Or, right-click on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] in your workspace and select **Copy SQL connection string**.
-2. Select the **Warehouse (preview) connector** from the **Get data** or connect to the default dataset from **Data hub**. 
-3. Paste the SQL connection string into the connector dialog. 
-4. For authentication, select *organizational account*.
-5. Authenticate using Azure Active Directory - MFA.
-6. Select **Connect**.
-7. Select the data items you want to include or not include in your dataset.
+1. Select the **Warehouse (preview) connector** from the **Get data** or connect to the default dataset from **Data hub**. 
+1. Paste the SQL connection string into the connector dialog. 
+1. For authentication, select *organizational account*.
+1. Authenticate using Azure Active Directory - MFA.
+1. Select **Connect**.
+1. Select the data items you want to include or not include in your dataset.
 
 ## Next steps
 

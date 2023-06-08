@@ -1,18 +1,17 @@
 ---
-title: Query the SQL Endpoint or Synapse Data Warehouse
-description: Learn more about options to write TSQL queries on the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric.
+title: Query the SQL Endpoint or Warehouse
+description: Learn more about options to write TSQL queries on the SQL Endpoint or Warehouse in Microsoft Fabric.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf, kecona
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
-# Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric
+# Query the SQL Endpoint or Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 To get started with this tutorial, check the following prerequisites:
 
@@ -27,6 +26,8 @@ To get started with this tutorial, check the following prerequisites:
 
 > [!NOTE]
 > Review the [T-SQL surface area](tsql-surface-area.md) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Run a new query in SQL query editor
 
@@ -117,12 +118,10 @@ There are several ways you can write cross-database queries within the same [!IN
 
    :::image type="content" source="media\query-warehouse\select-top-run.png" alt-text="Screenshot showing results of select top 100 rows." lightbox="media\query-warehouse\select-top-run.png":::
 
-## Limitations
-
-- At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
+> [!NOTE]
+> At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
 
 ## Next steps
 
-- [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md)
-- [Query using the Visual Query editor](visual-query-editor.md)
-- [Transactions in Synapse Data Warehouse tables](transactions.md)
+> [!div class="nextstepaction"]
+> [Create reports on data warehousing in Microsoft Fabric](create-reports.md)

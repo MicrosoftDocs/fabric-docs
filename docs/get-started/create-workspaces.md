@@ -1,12 +1,12 @@
 ---
 title: Create a workspace
-description: "Learn how to create a workspace: a collection of artifacts such as lakehouses, warehouses, and reports built to deliver key metrics for your organization."
+description: "Learn how to create a workspace: a collection of items such as lakehouses, warehouses, and reports built to deliver key metrics for your organization."
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom: 
+ms.custom: build-2023
 ---
 # Create a workspace
 
@@ -46,10 +46,10 @@ By default, the first workspace admin who created the workspace is the contact. 
 
 ### License mode
 
-Different license mode provides different sets of feature for your workspace. After the creation, you can still change the workspace license type in workspace settings, but some migration effort is needed.
+Different [license](../enterprise/licenses.md) mode provides different sets of feature for your workspace. After the creation, you can still change the workspace license type in workspace settings, but some migration effort is needed.
 
 >[!NOTE]
-> Currently, if you want to downgrade the workspace license type from Premium capacity to Pro (Shared capacity), you must first remove any non-Power BI Fabric items that the workspace contains. Only after you remove such items will you be allowed to downgrade the capacity. For more information, see [Moving data around](../admin/admin-portal-workspaces.md#moving-data-around).
+> Currently, if you want to downgrade the workspace license type from Premium capacity to Pro (Shared capacity), you must first remove any non-Power BI Fabric items that the workspace contains. Only after you remove such items will you be allowed to downgrade the capacity. For more information, see [Moving data around](../admin/portal-workspaces.md#moving-data-around).
 
 ### Default storage format
 

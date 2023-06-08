@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
@@ -27,33 +28,33 @@ The first step in data analysis is often to take a look at a subset of the data 
 1. Browse to your KQL database named *NycTaxiDB*.
 1. In the **Data tree**, select the **More menu** [...] on the **nyctaxitrips** table. Then select **Query table** > **Show any 100 records**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/kql-sample-queries.png" alt-text="Screenshot of Data tree showing the More menu of a table. The option titled Query table is highlighted.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/kql-sample-queries.png" alt-text="Screenshot of Data tree showing the More menu of a table. The option titled Query table is highlighted." lightbox="media/realtime-analytics-tutorial/kql-sample-queries.png":::
 
 1. The sample query opens in the **Explore your data** pane with the table context already populated. This first query uses the [take operator](/azure/data-explorer/kusto/query/takeoperator?context=/fabric/context/context&pivots=fabric) to return a sample number of records, and is useful to get a first look at the data structure and possible values. The autopopulated sample queries are automatically run. You can see the query results in the results pane.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/take-100.png" alt-text="Screenshot of first sample query result in Synapse Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/take-100.png" alt-text="Screenshot of first sample query result in Synapse Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/take-100.png":::
 
 1. Return to the data tree to paste the next query, which uses the [where operator](/azure/data-explorer/kusto/query/whereoperator?context=/fabric/context/context&pivots=fabric) and [between operator](/azure/data-explorer/kusto/query/betweenoperator?context=/fabric/context/context&pivots=fabric) to return records ingested in the last 24 hours.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/sample-last-24-h.png" alt-text="Screenshot of sample query to return records ingested in the last 24 hours.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/sample-last-24-h.png" alt-text="Screenshot of sample query to return records ingested in the last 24 hours." lightbox="media/realtime-analytics-tutorial/sample-last-24-h.png":::
 
     Notice that the volumes of the streaming data exceed the query limits. This behavior may vary depending on the amount of data streamed into your database.
 
 1. The next query in the list of sample queries uses the [getschema operator](/azure/data-explorer/kusto/query/getschemaoperator?context=/fabric/context/context&pivots=fabric) to retrieve the table schema.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/sample-query-schema.png" alt-text="Screenshot returning sample query results of getschema operator. ":::
+    :::image type="content" source="media/realtime-analytics-tutorial/sample-query-schema.png" alt-text="Screenshot returning sample query results of getschema operator." lightbox="media/realtime-analytics-tutorial/sample-query-schema.png":::
 
 1. The next query in the list of sample queries uses the [summarize operator](/azure/data-explorer/kusto/query/summarizeoperator?context=/fabric/context/context&pivots=fabric) to check when the last record was ingested.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/most-recent-record.png" alt-text="Screenshot showing results of most recent record query.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/most-recent-record.png" alt-text="Screenshot showing results of most recent record query." lightbox="media/realtime-analytics-tutorial/most-recent-record.png":::
 
 1. The next query in the list of sample queries uses the [count operator](/azure/data-explorer/kusto/query/countoperator?context=/fabric/context/context&pivots=fabric) to return the number of records in the table.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/count-results.png" alt-text="Screenshot of results of count operator.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/count-results.png" alt-text="Screenshot of results of count operator." lightbox="media/realtime-analytics-tutorial/count-results.png":::
 
 1. The final query in the list of sample queries uses the [summarize operator](/azure/data-explorer/kusto/query/summarizeoperator?context=/fabric/context/context&pivots=fabric), [count operator](/azure/data-explorer/kusto/query/countoperator?context=/fabric/context/context&pivots=fabric), and [bin function](/azure/data-explorer/kusto/query/binfunction?context=/fabric/context/context&pivots=fabric) to return the number of ingestions per hour.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/summarize-by-ingestion-time.png" alt-text="Screenshot of summarizing by ingestion time in Synapse Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/summarize-by-ingestion-time.png" alt-text="Screenshot of summarizing by ingestion time in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/summarize-by-ingestion-time.png":::
 
 ## Sample SQL queries
 
@@ -61,11 +62,11 @@ The query editor supports the use of T-SQL in addition to its primary query lang
 
 1. In the **Data tree**, select the **More menu** [**...**] on the **nyctaxitrips** table. Select **Query table** > **SQL** > **Show any 100 records**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/sql-queries.png" alt-text="Screenshot of sample SQL queries.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/sql-queries.png" alt-text="Screenshot of sample SQL queries." lightbox="media/realtime-analytics-tutorial/sql-queries.png":::
 
 1. Place your cursor somewhere within the query and select  **Run** or press **Shift + Enter**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/sql-top-100.png" alt-text="Screenshot of using a SQL query to take top 100 results.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/sql-top-100.png" alt-text="Screenshot of using a SQL query to take top 100 results." lightbox="media/realtime-analytics-tutorial/sql-top-100.png":::
 
 1. The next SQL query returns a count of the total number of records in the table.
 

@@ -4,7 +4,7 @@ description: Understand how to save money by using your capacity pause and resum
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.service: azure
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -21,9 +21,9 @@ Microsoft Fabric lets you pause and resume your capacity. When your capacity isn
 
 To pause your capacity you need:
 
-* An [F SKU capacity](licenses-buy.md#azure-skus)
+* An [F SKU capacity](buy-subscription.md#azure-skus)
 
-* To be a [Power BI administrator](../admin/admin-overview.md#power-platform-and-power-bi-admin-roles)
+* To be a [Power BI administrator](../admin/microsoft-fabric-admin.md#power-platform-and-power-bi-admin-roles)
 
 ## Pause your capacity
 

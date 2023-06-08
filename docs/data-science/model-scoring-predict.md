@@ -5,6 +5,7 @@ ms.reviewer: mopeakande
 ms.author: erenorbey
 author: orbey
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: Predict
 ---
@@ -201,17 +202,13 @@ You can paste this code template into a notebook to generate batch predictions w
 
 ```Python
 import mlflow 
-from trident.mlflow import get_sds_url 
-from synapse.ml.predict import MLflowTransformer 
- 
-spark.conf.set("spark.synapse.ml.predict.enabled", "true") 
-mlflow.set_tracking_uri(get_sds_url()) 
+from synapse.ml.predict import MLFlowTransformer 
  
 df = spark.read.format("delta").load( 
     <INPUT_TABLE> 
 ) 
  
-model = MLflowTransformer( 
+model = MLFlowTransformer( 
     inputCols=<INPUT_COLS>, 
     outputCol=<OUTPUT_COLS>, 
     modelName=<MODEL_NAME>, 

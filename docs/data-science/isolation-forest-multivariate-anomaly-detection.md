@@ -2,8 +2,9 @@
 title: Outlier and Anomaly Detection
 description: Use SynapseML on Apache Spark for multivariate anomaly detection with Isolation Forest model.
 ms.topic: overview
+ms.custom: build-2023
 ms.reviewer: jessiwang
-author: jessiwang
+author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023
 ---
@@ -161,9 +162,9 @@ isolationForest = (
 )
 ```
 
-Next, we create an ML pipeline to train the Isolation Forest model. We also demonstrate how to create an MLFlow experiment and register the trained model.
+Next, we create an ML pipeline to train the Isolation Forest model. We also demonstrate how to create an MLflow experiment and register the trained model.
 
-MLFlow model registration is strictly only required if accessing the trained model at a later time. For training the model, and performing inferencing in the same notebook, the model object model is sufficient.
+MLflow model registration is strictly only required if accessing the trained model at a later time. For training the model, and performing inferencing in the same notebook, the model object model is sufficient.
 
 
 ```python

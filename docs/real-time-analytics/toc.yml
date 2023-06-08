@@ -26,7 +26,7 @@ items:
     href: tutorial-6-build-report.md
   - name: 7- Clean up resources
     href: tutorial-7-clean-up-resources.md
-- name: Eventstreams
+- name: Event streams
   href: event-streams/toc.yml
 - name: KQL Database
   items:
@@ -68,8 +68,10 @@ items:
     href: api/toc.yml
 - name: KQL Queryset
   items:
-  - name: Query data in a KQL queryset
+  - name: Query data in a KQL Queryset
     href: kusto-query-set.md
+  - name: Customize results in the KQL Queryset results grid
+    href: customize-results.md
 - name: Query data
   items:
   - name: Use sample queries

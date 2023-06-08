@@ -5,6 +5,7 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 5/23/2023
 ---
 
@@ -12,7 +13,7 @@ ms.date: 5/23/2023
 
 Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place. For more information, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
 
-This tutorial walks you through an end-to-end scenario from data acquisition to data consumption. It helps you build a basic understanding of Fabric, including the different workloads and how they integrate, as well as the professional and citizen developer experiences that come with working on this platform. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
+This tutorial walks you through an end-to-end scenario from data acquisition to data consumption. It helps you build a basic understanding of Fabric, including the different experiences and how they integrate, as well as the professional and citizen developer experiences that come with working on this platform. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -26,7 +27,7 @@ With the flexibility offered by Fabric, you can implement either lakehouse or da
 
 This tutorial explains how a developer at the fictional Wide World Importers company from the retail domain completes the following steps:
 
-1. Sign in to your Power BI account, or if you don't have one yet, [sign up for a free trial](../placeholder.md).
+1. Sign in to your Power BI account, or if you don't have one yet, [sign up for a free trial](../get-started/fabric-trial.md).
 
 1. Build and implement an end-to-end lakehouse for your organization:
 

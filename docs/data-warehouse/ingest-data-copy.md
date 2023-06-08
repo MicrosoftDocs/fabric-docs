@@ -1,19 +1,18 @@
 ---
-title: Ingest data into your Synapse Data Warehouse using the COPY statement
-description: Follow steps to ingest data into a Synapse Data Warehouse with the COPY statement in Microsoft Fabric.
+title: Ingest data into your Warehouse using the COPY statement
+description: Follow steps to ingest data into a Warehouse with the COPY statement in Microsoft Fabric.
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.custom: build-2023
 ms.search.form: Ingesting data
 ---
 
-# Ingest data into your Synapse Data Warehouse using the COPY statement
+# Ingest data into your Warehouse using the COPY statement
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The COPY statement is the primary way to ingest data into [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables. COPY performs high high-throughput data ingestion from an external Azure storage account, with the flexibility to configure source file format options, a location to store rejected rows, skipping header rows, and other options. 
 
@@ -21,6 +20,8 @@ This tutorial shows data ingestion examples for a [!INCLUDE [fabric-dw](includes
 
 > [!NOTE]
 > To learn more about the T-SQL COPY statement including more examples and the full syntax, see [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create a table
 
@@ -105,5 +106,5 @@ If you ran both examples without deleting the rows in between runs, you'll see t
 ## Next steps
 
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)
-- [Ingest data into your Synapse Data Warehouse using Transact-SQL](ingest-data-tsql.md)
-- [Ingesting data into the Synapse Data Warehouse](ingest-data.md)
+- [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md)
+- [Ingesting data into the Warehouse](ingest-data.md)

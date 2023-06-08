@@ -6,15 +6,18 @@ ms.author: prlangad
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
+ms.custom: build-2023
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Warehouse settings and context menus
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
+Settings are accessible from the context menu or from the Settings icon in the ribbon when you open the item. There are some key differences in the actions you can take in settings depending on if you're interacting with the SQL Endpoint or a data warehouse.
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Settings are accessible from the context menu or from the Settings icon in the ribbon when you open the item. There are some key differences in the actions you can take in settings depending on if you're interacting with the SQL Endpoint or a data warehouse.
+## Settings options
 
 This section describes and explains the settings options available based on the item you're working with and its description.
 
@@ -69,7 +72,7 @@ The following table describes the warehouse context menu options:
 
 ## Next steps
 
-- [Synapse Data Warehouse in Microsoft Fabric](data-warehousing.md#synapse-data-warehouse)
+- [Warehouse in Microsoft Fabric](data-warehousing.md#synapse-data-warehouse)
 - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
 - [Create reports in the Power BI service](reports-power-bi-service.md)
 - [Admin portal](../admin/admin-center.md)

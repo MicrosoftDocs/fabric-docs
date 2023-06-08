@@ -1,28 +1,29 @@
 ---
-title: Ingest data into your Synapse Data Warehouse using Transact-SQL
-description: Follow steps to ingest data into a Synapse Data Warehouse table using Transact-SQL
+title: Ingest data into your Warehouse using Transact-SQL
+description: Follow steps to ingest data into a Warehouse table using Transact-SQL
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.custom: build-2023
 ms.search.form: Ingesting data
 ---
 
-# Ingest data into your Synapse Data Warehouse using Transact-SQL
+# Ingest data into your Warehouse using Transact-SQL
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The Transact-SQL language offers options you can use to load data at scale from existing tables in your lakehouse and warehouse into new tables in your warehouse. These options are convenient if you need to create new versions of a table with aggregated data, versions of tables with a subset of the rows, or to create a table as a result of a complex query. Let's explore some examples.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Creating a new table with the result of a query by using CREATE TABLE AS SELECT (CTAS)
 
 The **CREATE TABLE AS SELECT (CTAS)** statement allows you to create a new table in your warehouse from the output of a `SELECT` statement. It runs the ingestion operation into the new table in parallel, making it highly efficient for data transformation and creation of new tables in your workspace.
 
 > [!NOTE] 
-> The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Synapse Data Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
+> The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
 
 The first example illustrates how to create a new table that is a copy of the existing `dbo.[bing_covid-19_data_2023]` table, but filtered to data from the year 2023 only:
 
@@ -100,7 +101,7 @@ To learn more about cross-warehouse queries, see [Write a cross-database SQL Que
 
 ## Next steps
 
-- [Ingesting data into the Synapse Data Warehouse](ingest-data.md)
+- [Ingesting data into the Warehouse](ingest-data.md)
 - [Ingest data using the COPY statement](ingest-data-copy.md)
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)
 - [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-query)

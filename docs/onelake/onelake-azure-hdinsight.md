@@ -5,14 +5,15 @@ ms.reviewer: eloldag
 ms.author: harmeetgill
 author: gillharmeet
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
 # Integrate OneLake with Azure HDInsight
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 [Azure HDInsight](/azure/hdinsight/hdinsight-overview) is a managed cloud-based service for big data analytics that helps organizations process large amounts data. This tutorial shows how to connect to OneLake with a Jupyter notebook from an Azure HDInsight cluster.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Using Azure HDInsight
 
@@ -24,9 +25,9 @@ To connect to OneLake with a Jupyter notebook from an HDInsight cluster:
 
       :::image type="content" source="media\onelake-azure-hdinsight\create-hdinsight-cluster-storage.png" alt-text="Screenshot showing where to enter the user assigned managed identity in the Storage screen." lightbox="media\onelake-azure-hdinsight\create-hdinsight-cluster-storage.png":::
 
-1. Give this UAMI access to the Fabric workspace that contains your artifacts. Learn more about Fabric role-based access control (RBAC): [Workspace roles](..\get-started\roles-workspaces.md) to decide what role is suitable.
+1. Give this UAMI access to the Fabric workspace that contains your items. Learn more about Fabric role-based access control (RBAC): [Workspace roles](..\get-started\roles-workspaces.md) to decide what role is suitable.
 
-   :::image type="content" source="media\onelake-azure-hdinsight\manage-access-panel.jpg" alt-text="Screenshot showing where to select an artifact in the Manage access panel." lightbox="media\onelake-azure-hdinsight\manage-access-panel.jpg":::
+   :::image type="content" source="media\onelake-azure-hdinsight\manage-access-panel.jpg" alt-text="Screenshot showing where to select an item in the Manage access panel." lightbox="media\onelake-azure-hdinsight\manage-access-panel.jpg":::
 
 1. Navigate to your Lakehouse and find the Name for your workspace and Lakehouse. You can find them in the URL of your Lakehouse or the **Properties** pane for a file.
 

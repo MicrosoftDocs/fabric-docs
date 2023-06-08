@@ -5,6 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: mideboer
 author: miquelladeboer
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -15,7 +16,7 @@ ms.date: 05/23/2023
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 > [!NOTE]
-> Currently, these cloud connections are only supported for data pipelines and Real-Time Analytics. In the future, other artifacts can also make use of the cloud connections. To create personal cloud connections in datasets, datamarts, and dataflows, use the Power Query Online experience in "get data".
+> Currently, these cloud connections are only supported for data pipelines and Kusto. In the future, other items can also make use of the cloud connections. To create personal cloud connections in datasets, datamarts, and dataflows, use the Power Query Online experience in "get data".
 
 ## Add a data source
 
@@ -23,15 +24,15 @@ ms.date: 05/23/2023
 
    :::image type="content" source="media/data-source-management/manage-connections-gateways.png" alt-text="Screenshot showing where to select Manage connections and gateways.":::
 
-2. Select **New** at the top of the screen to add a new data source.
+2. Select the **Connections** tab, then select **New** at the top of the screen to add a new data source.
 
-3. In the **New connection** screen, select **Cloud**, provide a **Connection name**, and select the **Data Source Type**. For this example, choose **SQL server**.
+3. In the **New connection** screen, select **Cloud**, provide a **Connection name**, and select the **Connection Type**. For this example, choose **SQL server**.
 
 4. Enter information about the data source. For SQL server, provide the **Server** and **Database**.
 
    :::image type="content" source="media/data-source-management/new-connection.png" alt-text="Screenshot showing examples of details in New connection screen.":::
 
-5. Select an **Authentication method** to use when connecting to the data source, either **Basic**, **OAuth2**, or **Service Principal** For example, choose **OAuth2** and sign in with your account.
+5. Select an **Authentication method** to use when connecting to the data source, either **Basic**, **OAuth2**, or **Service Principal**. For example, choose **OAuth2** and sign in with your account.
 
    :::image type="content" source="media/data-source-management/authentication-method.png" alt-text="Screenshot showing where to select an authentication method.":::
 
@@ -48,11 +49,11 @@ ms.date: 05/23/2023
 
    :::image type="content" source="media/data-source-management/settings.png" alt-text="Screenshot of new connection success message.":::
 
-You can now use this data source to include data from Azure SQL in the supported [!INCLUDE [product-name](../includes/product-name.md)] artifacts.
+You can now use this data source to include data from Azure SQL in the supported [!INCLUDE [product-name](../includes/product-name.md)] items.
 
 ## Remove a data source
 
-You can remove a data source if you no longer use it. If you remove a data source, any artifacts that rely on that data source no longer work.
+You can remove a data source if you no longer use it. If you remove a data source, any items that rely on that data source no longer work.
 
 To remove a data source, select the data source from the **Data** screen in **Manage connections and gateways**, and then select **Remove** from the top ribbon.
 
@@ -60,7 +61,7 @@ To remove a data source, select the data source from the **Data** screen in **Ma
 
 ## Manage users
 
-After you add a cloud data source, you give users and security groups access to the specific data source. The access list for the data source controls only who is allowed to use the data source in artifacts that include data from the data source.  
+After you add a cloud data source, you give users and security groups access to the specific data source. The access list for the data source controls only who is allowed to use the data source in items that include data from the data source.  
 
 ## Add users to a data source
 
@@ -78,7 +79,7 @@ After you add a cloud data source, you give users and security groups access to 
 
 6. Select **Share**. The added member's name is added to the list of people who can publish reports that use this data source.
 
-   :::image type="content" source="media/data-source-management/manage-users.png" alt-text="Screenshot showing the Manage users screen.":::
+   :::image type="content" source="media/data-source-management/manage-users.png" alt-text="Screenshot showing the Manage users screen." lightbox="media/data-source-management/manage-users.png":::
 
 Remember that you need to add users to each data source that you want to grant access to. Each data source has a separate list of users. Add users to each data source separately.
 

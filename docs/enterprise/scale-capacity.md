@@ -4,7 +4,7 @@ description: This article walks through how to scale a Microsoft Fabric capacity
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.service: azure
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -18,9 +18,9 @@ This article shows how to scale a Microsoft Fabric capacity in Azure. Scaling al
 
 To scale your capacity you need:
 
-* An [F SKU capacity](licenses-buy.md#azure-skus)
+* An [F SKU capacity](buy-subscription.md#azure-skus)
 
-* To be a [Power BI administrator](../admin/admin-overview.md#power-platform-and-power-bi-admin-roles)
+* To be a [Power BI administrator](../admin/microsoft-fabric-admin.md#power-platform-and-power-bi-admin-roles)
 
 ## Scale a capacity
 

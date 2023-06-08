@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
@@ -12,7 +13,7 @@ ms.search.form: product-kusto
  
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The last few decades have seen a paradigm shift in the way we access and consume information, as users have become used to data that is interactive, on demand, and accessible to all. This shift has been powered by big data, streaming data ingestion, and indexed, keyword-based search. All together they form a simplified user experience. With Real-Time Analytics in Microsoft Fabric, we enable organizations to focus and scale up their analytics solution while democratizing data for the needs of both the citizen data scientist all the way to the advanced data engineer.
+The last few decades have seen a paradigm shift in the way we access and consume information, as users have become used to data that is interactive, on demand, and accessible to all. This shift has been powered by big data, streaming data ingestion, and indexed, keyword-based search. All together they form a simplified user experience. With Real-Time Analytics in Microsoft Fabric, we enable organizations to focus and scale up their analytics solution while democratizing data for the needs of both the citizen data scientist all the way to the advanced data engineer. Real-time analytics have become essential in many scenarios in the enterprise world, such as cybersecurity, asset tracking and management, predictive maintenance,supply chain optimization, customer experience, energy management, inventory management, quality control, environmental monitoring, fleet management, and health and safety.
 
 How? Real-Time Analytics reduces complexity and simplifies data integration. Quick access to data insights is achieved through automatic data streaming, automatic indexing and data partitioning of any data source or format, and by using the on-demand query generation and visualizations. This user process is simplified while preserving powerful analytical capabilities. Real-Time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
 
@@ -30,7 +31,7 @@ Real-Time Analytics is a fully managed big data analytics platform optimized for
 * Work with **versatile data structures** including query structured, semi-structured, or free text.
 * **Query** raw data without transformation, with high performance, incredibly low response time, while using a wide variety of available [operators](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 * **Scale to an unlimited** amount of data, from gigabytes to petabytes, with unlimited scale on concurrent queries and concurrent users.
-* **Integrate** seamlessly with other workloads and items in Microsoft Fabric.
+* **Integrate** seamlessly with other experiences and items in Microsoft Fabric.
 
 ## When to use Real-Time Analytics?
 
@@ -53,14 +54,14 @@ The types of industries that benefit from data analysis in Real-Time Analytics i
 The main items available in Real-Time Analytics include:
 
 * [Eventstream](event-streams/overview.md) for capturing, transforming, and routing real-time events to various destinations with a no-code experience. 
-* A [KQL database](create-database.md) for data storage and management. Data loaded into a KQL database is reflected in OneLake by activating data copy and then creating a OneLake shortcut to expose the data to other Fabric experiences.
-* A [KQL queryset](kusto-query-set.md) to run queries, view, and manipulate query results on data. The KQL queryset allows you to save queries for future use, export and share queries with others, and includes the option to generate a Power BI report.
+* A [KQL database](create-database.md) for data storage and management. Data loaded into a KQL database can be accessed in OneLake and is exposed to other Fabric experiences.
+* A [KQL queryset](kusto-query-set.md) to run queries, view, and customize query results on data. The KQL queryset allows you to save queries for future use, export and share queries with others, and includes the option to generate a Power BI report.
 
 See how these items work together in the end-to-end streaming data consumption and analysis scenario: [Real-Time Analytics Tutorial- Introduction](tutorial-introduction.md)
 
-## Integration with other workloads
+## Integration with other experiences
 
-:::image type="content" source="media/real-time-analytics-overview/schematic-architecture.png" alt-text="Schematic image of architecture of Real-Time Analytics integration with other workloads.":::
+:::image type="content" source="media/real-time-analytics-overview/schematic-architecture.png" alt-text="Schematic image of architecture of Real-Time Analytics integration with other experiences.":::
 
 * Create [Event Hubs cloud connections](get-data-event-hub.md) to stream data into Real-Time Analytics.
 * Data in OneLake is accessed by Real-Time Analytics in several ways:
@@ -74,8 +75,8 @@ See how these items work together in the end-to-end streaming data consumption a
 
 ## See also
 
+* [Microsoft Fabric event streams - overview](event-streams/overview.md)
 * [Compare Real-Time Analytics to Azure Data Explorer](realtime-analytics-compare.md)
 * [Tutorial: Real-Time Analytics](tutorial-introduction.md)
-* [Query data in a KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
 * [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context)
- 

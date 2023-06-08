@@ -4,16 +4,19 @@ description: Learn how to use the search and filter tools in Fabric to quickly f
 author: mihart
 ms.author: mihart
 ms.topic: conceptual  
-ms.date: 05/02/2023
+ms.custom: build-2023
+ms.date: 05/10/2023
 ---
 
 # Global search
 
-When you're new to [!INCLUDE [product-name](../includes/product-name.md)], you have only a few items (workspaces, reports, apps, lakehouses). But as colleagues begin sharing content with you and you begin downloading and creating items, you can end up with long lists of items. That's when searching, filtering, and sorting become helpful.
+When you're new to [!INCLUDE [product-name](../includes/product-name.md)], you have only a few items (workspaces, reports, apps, lakehouses). But as you begin creating and sharing items, you can end up with long lists of content. That's when searching, filtering, and sorting become helpful.
+
+[!INCLUDE [trial note](../includes/preview-note.md)]
 
 ## Search for content
 
-At the top of Home, the global search box finds artifacts by title, name, or keyword. Sometimes, the fastest way to find an item is to search for it. For example, if a dashboard you haven't used in a while isn't showing up on your Home canvas. Or, if your colleague shared something with you, but you don't remember what it's named or what type of content they shared. Sometimes, you might have so much content that it's easier to search for it rather than scrolling or sorting.
+At the top of Home, the global search box finds items by title, name, or keyword. Sometimes, the fastest way to find an item is to search for it. For example, if a dashboard you haven't used in a while isn't showing up on your Home canvas. Or, if your colleague shared something with you, but you don't remember what it's named or what type of content they shared. Sometimes, you might have so much content that it's easier to search for it rather than scrolling or sorting.
 
 Search is available from Home and also most other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Just look for the search box or search icon :::image type="icon" source="./media/fabric-search/fabric-search-icon.png" border="false":::.
 
@@ -21,13 +24,13 @@ In the **Search** field, type all or part of the name of an item, creator, keywo
 
 :::image type="content" source="./media/fabric-search/power-bi-search-field-new.png" alt-text="Screenshot of a search field with the term Sales in it.":::
 
-In addition to the **Search** field, most experiences on the [!INCLUDE [product-name](../includes/product-name.md)] canvas also include a **Filter by keyword** field.  Similar to search, use **Filter by keyword** to narrow down the content on your canvas to find what you need. The keywords you enter in the **Filter by keyword** pane apply to the current view only. For example, if you open **Browse** and enter a keyword in the **Filter by keyword** pane, [!INCLUDE [product-name](../includes/product-name.md)] searches only the content of that appears on the **Browse** canvas.
+In addition to the **Search** field, most experiences on the [!INCLUDE [product-name](../includes/product-name.md)] canvas also include a **Filter by keyword** field.  Similar to search, use **Filter by keyword** to narrow down the content on your canvas to find what you need. The keywords you enter in the **Filter by keyword** pane apply to the current view only. For example, if you open **Browse** and enter a keyword in the **Filter by keyword** pane, [!INCLUDE [product-name](../includes/product-name.md)] searches only the content that appears on the **Browse** canvas.
 
 :::image type="content" source="media/fabric-search/fabric-filter-keywords.png" alt-text="Screenshot of the Browse canvas with red outline around the Filter by keyword input pane.":::
 
 ## Sort content lists
 
-If you have only a few pieces of content, sorting isn't necessary. But when you have long lists of items, sorting helps you find what you need. For example, this **Shared with me** content list has many items.
+If you have only a few items, sorting isn't necessary. But when you have long lists of items, sorting helps you find what you need. For example, this **Shared with me** content list has many items.
 
 :::image type="content" source="./media/fabric-search/power-bi-shared-with-me-search.png" alt-text="Screenshot of a Shared with me content list with multiple items.":::
 
@@ -46,3 +49,7 @@ Not all columns can be sorted. Hover over the column headings to discover which 
 Another way to locate content quickly is to use the content list **Filter**. Display the filters by selecting **Filter** from the upper right corner. The filters available depend on your location in [!INCLUDE [product-name](../includes/product-name.md)]. This example is from a **Recent** content list. It allows you to filter the list by content **Type**, **Time**, or **Owner**.
 
 :::image type="content" source="./media/fabric-search/power-bi-sort-filters-new.png" alt-text="Screenshot of the filter on a Recent content list.":::
+
+## Next steps
+- [Find Fabric items from Home](fabric-home.md)
+- [Start a Fabric trial](fabric-trial.md)

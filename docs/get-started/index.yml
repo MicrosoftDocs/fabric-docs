@@ -1,13 +1,13 @@
 ### YamlMime:Landing
 
-title: Get started documentation # < 60 chars
+title: Microsoft Fabric get started documentation # < 60 chars
 summary: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the Fabric shared and platform documentation from this page. # < 160 chars
 
 metadata:
   title: Get started documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the Fabric shared and platform documentation from this page. # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: azure #Required; use either service or product per approved list. 
-#   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: get-started
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
   author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
@@ -30,10 +30,14 @@ landingContent:
             url: fabric-terminology.md
       - linkListType: get-started
         links:
+          - text: Start a Fabric trial 
+            url: fabric-trial.md
           - text: Fabric home navigation
             url: fabric-home.md
           - text: End-to-end tutorials
             url: end-to-end-tutorials.md
+          - text: Context sensitive Help pane
+            url: fabric-help-pane.md
 
   # Card 
   - title: Get started with Fabric items
@@ -46,8 +50,6 @@ landingContent:
             url: endorsement-promote-certify.md 
       - linkListType: how-to-guide
         links:
-          - text: Share items
-            url: share-items.md 
           - text: Apply sensitivity labels
             url: apply-sensitivity-labels.md 
 

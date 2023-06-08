@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: overview
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
@@ -12,9 +13,7 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Real-Time Analytics is a portfolio of capabilities that provides an end-to-end analytics streaming solution across [!INCLUDE [product-name](../includes/product-name.md)] experiences. It supplies high velocity, low latency data analysis, and is optimized for time-series data, including automatic partitioning and indexing of any data format and structure, such as structured data, semi-structured (JSON), and free text.
-
-Real-Time Analytics delivers high performance when it comes to your increasing volume of data. It accommodates datasets as small as a few gigabytes or as large as several petabytes, and allows you to explore data from different sources and various data formats.
+Real-Time Analytics is a fully managed big data analytics platform optimized for streaming, and time-series data. It utilizes a query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data. Real-Time Analytics is fully integrated with the entire suite of Fabric products, for both data loading, data transformation, and advanced visualization scenarios.
 
 For more information on Real-Time Analytics, see [What is Real-Time Analytics in Fabric?](overview.md).
 
@@ -27,7 +26,7 @@ Real-Time Analytics is a SaaS offering in the Microsoft Fabric offering. Azure D
 | **Security** | VNET | &cross; | Supports VNet Injection and Azure Private Link  |
 |  | CMK | &cross; | &check; |
 |  | RBAC | &check; | &check; |
-| **Business Continuity** | Availability Zones | &cross; | Optional |
+| **Business Continuity** | Availability Zones | Yes- dependent on regional zonal availability | Optional |
 | **SKU** | Compute options | SaaS platform | 22+ Azure VM SKUs to choose from  |
 | **Integrations** | Built-in ingestion pipelines | Event Hubs, Event Grid, [!INCLUDE [product-name](../includes/product-name.md)] Pipeline, [!INCLUDE [product-name](../includes/product-name.md)] Dataflow | Event Hubs, Event Grid, IoT Hub |
 |  | OneLake integration | Supports data copying to and from OneLake | &cross; |

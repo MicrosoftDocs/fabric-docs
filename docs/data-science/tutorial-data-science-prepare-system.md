@@ -5,6 +5,7 @@ ms.reviewer: sgilley
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 5/4/2023
 ---
 
@@ -28,13 +29,13 @@ In this tutorial, we use the [NYC Taxi and Limousine yellow dataset](/azure/open
 
 ## Import tutorial notebooks
 
-We utilize the notebook artifact in the Data Science experience to demonstrate various Fabric capabilities. The notebooks are available as Jupyter notebook files that can be imported to your Fabric-enabled workspace.
+We utilize the notebook item in the Data Science experience to demonstrate various Fabric capabilities. The notebooks are available as Jupyter notebook files that can be imported to your Fabric-enabled workspace.
 
 1. Download the notebooks(.ipynb) files for this tutorial from the parent folder [Data Science Tutorial Source Code](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial).
 
-1. Switch to the Data Science experience using the workload switcher icon at the left corner of your homepage.
+1. Switch to the Data Science experience using the experience switcher icon at the left corner of your homepage.
 
-   :::image type="content" source="media\tutorial-data-science-prepare-system\switch-to-data-science.png" alt-text="Screenshot of the workload switcher menu, showing where to select Data Science." lightbox="media\tutorial-data-science-prepare-system\switch-to-data-science.png":::
+   :::image type="content" source="media\tutorial-data-science-prepare-system\switch-to-data-science.png" alt-text="Screenshot of the experience switcher menu, showing where to select Data Science." lightbox="media\tutorial-data-science-prepare-system\switch-to-data-science.png":::
 
 1. On the Data science experience homepage, select **Import notebook** and upload the notebook files for modules 1- 5 that you downloaded in step 1.
 

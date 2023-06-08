@@ -3,9 +3,10 @@ title: Git integration process
 description: Understand how Microsoft Fabric interacts with git on Azure Repos
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: conceptual 
-ms.date: 05/23/2023
-ms.custom: 
+ms.date: 05/30/2023
+ms.custom: build-2023
 ---
 
 # Basic concepts in git integration
@@ -16,7 +17,7 @@ This article explains basic git concepts and the process of integrating git with
 
 ## Permissions
 
-In order to use git integration, [it has to be enabled](../../admin/admin-settings-git-integration.md) by your organization's administrator.
+In order to use git integration, [it has to be enabled](../../admin/git-integration-admin-settings.md) by your organization's administrator.
 
 The actions you can take on a workspace depend on the permissions you have in both the workspace and Azure DevOps.
 
@@ -34,14 +35,15 @@ The following table describes the permissions needed to perform various common o
 
 | **Operation**                                                        | **Workspace role**                                                                        | **Git permissions**                          |
 |----------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------|
-| Connect workspace to Git repo                                        | Admin                                                                                     | Role=Read                                    |
+| Connect workspace to Git repo                                        | Admin                                                                                     | Read=Allow                                    |
+| Sync workspace with Git repo                                         | Admin                                                                                     | Read=Allow                                    |
 | Disconnect workspace from Git repo                                   | Admin                                                                                     | No permissions are needed                    |
-| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Role=Read  (in target repo/directory/branch) |
+| Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     | Read=Allow  (in target repo/directory/branch) |
 | View Git connection details                                          | Admin, Member, Contributor                                                                | Read or None                                 |
-| See workspace 'git status'                                           | Admin, Member, Contributor                                                                | Role=Read                                    |
-| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Read   |
-| Commit workspace changes to git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Role=Write  |
-| Create new git branch from within Fabric                             | Admin                                                                                     | Role=Write                                    |
+| See workspace 'git status'                                           | Admin, Member, Contributor                                                                | Read=Allow                                    |
+| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Read=Allow   |
+| Commit workspace changes to git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   | Read=Allow<br/>Contribute=Allow<br/>branch policy should allow direct commit  |
+| Create new git branch from within Fabric                             | Admin                                                                                     | Role=Write<br/>Create branch=Allow                                    |
 
 ## Connect and sync
 
@@ -67,11 +69,11 @@ After you connect, the workspace displays a *Git status* column that indicates t
 
 Each item has one of the following statuses:
 
-- :::image type="icon" source="./media/git-integration-process/synced-icon.png"::: Synced
-- :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: Conflict
-- :::image type="icon" source="./media/git-integration-process/unsupported-icon.png"::: Unsupported
-- :::image type="icon" source="./media/git-integration-process/uncommitted-icon.png"::: Uncommitted
-- :::image type="icon" source="./media/git-integration-process/update-required-icon.png"::: Update required
+- :::image type="icon" source="./media/git-integration-process/synced-icon.png"::: Synced (the item is the same in the workspace and git branch)
+- :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: Conflict (the item was changed in both the workspace and git branch)
+- :::image type="icon" source="./media/git-integration-process/unsupported-icon.png"::: Unsupported item
+- :::image type="icon" source="./media/git-integration-process/uncommitted-icon.png"::: Uncommitted changes in the workspace
+- :::image type="icon" source="./media/git-integration-process/update-required-icon.png"::: Update required from git
 - :::image type="icon" source="./media/git-integration-process/warning.png"::: Item is synced but metadata is different
 
 ### Sync information
@@ -123,6 +125,8 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 ### General limitations
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
+- Direct Query and proxy models aren't supported at this time.
+- Private custom visuals aren't supported.
 
 ## Workspace limitations
 
@@ -133,12 +137,14 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 
 - Maximum length of branch name is 244 characters.
 - Maximum length of full path for file names is 250 characters. Longer names will fail.
+- Maximum file size is 25 MB.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with Git Integration.
 
 ### Sync and commit limitations
 
 - The size limit for a commit is 25 MB.
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
+- Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](../../admin/git-integration-admin-settings.md#enable-export-of-items-that-have-sensitivity-labels) for help.
 - Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they are ignored.
 - Duplicating names isn't allowed – even if Power BI allows it, the update, commit, or undo action fails.
 - B2B isn’t supported.
@@ -146,4 +152,5 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 
 ## Next steps
 
-[Get started with git integration](./git-get-started.md)
+- [Manage branches](./manage-branches.md)
+- [Resolve errors and conflicts](./conflict-resolution.md)

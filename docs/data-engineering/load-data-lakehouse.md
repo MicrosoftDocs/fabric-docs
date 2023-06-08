@@ -5,6 +5,7 @@ ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: Lakehouse Get Data
 ---
@@ -15,7 +16,7 @@ Get data experience covers all user scenarios for bringing data into the lakehou
 
 - Connecting to existing SQL Server and copying data into delta table on the lakehouse.
 - Uploading files from your computer.
-- Copying and merging multiple tables from other alehouses into a new delta table.
+- Copying and merging multiple tables from other lakehouses into a new delta table.
 - Connecting to a streaming source to land data in a lakehouse.
 - Referencing data without copying it from other internal lakehouses or external sources.
 
@@ -62,7 +63,7 @@ You can use available Spark libraries to connect to a data source directly, load
 
 ## Next steps
 
-- Overview: How to use notebook together with lakehouse
+- [Overview: How to use notebook together with lakehouse](lakehouse-notebook-explore.md)
 - [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md).
 - [How to: How to copy data using Copy activity in Data pipeline](../data-factory/copy-data-activity.md).
 - [Tutorial: Move data into lakehouse via Copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md).

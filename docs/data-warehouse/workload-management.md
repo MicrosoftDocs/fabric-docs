@@ -5,6 +5,7 @@ ms.reviewer: wiassaf
 ms.author: stevehow
 author: realAngryAnalytics
 ms.topic: conceptual
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
@@ -12,9 +13,11 @@ ms.search.form: Optimization # This article's title should not change. If so, co
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
+This article describes the architecture and workload management behind data warehousing in [!INCLUDE [product-name](../includes/product-name.md)].
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article describes the architecture and workload management behind data warehousing in [!INCLUDE [product-name](../includes/product-name.md)].
+## Data processing
 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] share the same underlying processing architecture. As data is retrieved or ingested, it leverages a distributed engine built for both small and large-scale data and computational functions.
 
@@ -64,4 +67,4 @@ The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a 
 
 - [OneLake overview](../onelake/onelake-overview.md)
 - [Data warehousing](data-warehousing.md)
-- [Get started with the SQL Endpoint of the Lakehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)
+- [Better together: the lakehouse and warehouse in Microsoft Fabric](get-started-lakehouse-sql-endpoint.md)

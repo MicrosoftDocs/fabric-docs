@@ -4,13 +4,13 @@ description: This article explains the overview of using Microsoft 365.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/21/2023
-ms.custom: template-how-to 
+ms.date: 05/23/2023
+ms.custom: template-how-to, build-2023
 ---
 
 # Microsoft 365 connector overview
 
-This Microsoft 365 connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Microsoft 365 connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -22,6 +22,5 @@ This Microsoft 365 connector is supported in Data Factory for [!INCLUDE [product
 
 ## Next steps
 
-[How to create Microsoft 365 connection](connector-microsoft-365.md)
-
-[How to configure Microsoft 365 in copy activity](connector-microsoft-365-copy-activity.md)
+- [How to create Microsoft 365 connection](connector-microsoft-365.md)
+- [How to configure Microsoft 365 in copy activity](connector-microsoft-365-copy-activity.md)

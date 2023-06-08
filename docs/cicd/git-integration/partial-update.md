@@ -3,10 +3,10 @@ title: Manual updates with Git integration
 description: Learn how to update your workspace manually when there's an internal inconsistency.
 author: mberdugo
 ms.author: monaberdugo
-ms.service: powerbi
+ms.reviewer: NimrodShalit
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom:
+ms.custom: build-2023
 ---
 
 # Manual update

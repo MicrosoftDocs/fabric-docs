@@ -5,6 +5,7 @@ ms.reviewer: jburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial 
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -20,9 +21,9 @@ A Microsoft Fabric enabled workspace. If you don't already have one, refer to th
 
 ## Create a data pipeline 
 
-1. Switch to the **Data Factory** workload.
+1. Switch to the **Data Factory** experience.
 
-   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/switch-to-data-factory-workload.png" alt-text="Screenshot showing the selection of the Data Factory workload.":::
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/switch-to-data-factory-workload.png" alt-text="Screenshot showing the selection of the Data Factory experience.":::
 
 1. Select **New** and then **Data pipeline**, and then input a name for your pipeline.
 

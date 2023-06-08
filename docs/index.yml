@@ -7,13 +7,12 @@ brand: fabric
 metadata:
   title: Microsoft Fabric documentation
   description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
-  ms.service: powerbi
-  ms.subservice: powerbi-service
+  ms.service: fabric
   ms.topic: hub-page
   ms.collection: collection
   author: SnehaGunda
   ms.author: sngun
-  ms.date: 05/23/2023
+  ms.date: 06/06/2023
 
 # highlightedContent section (optional)
 # Maximum of 8 items 
@@ -27,15 +26,23 @@ highlightedContent:
     # Card
     - title: Try Microsoft Fabric for free
       itemType: get-started
-      url: placeholder.md
+      url: get-started/fabric-trial.md
+    # Card
+    - title: Microsoft Fabric preview information
+      itemType: concept
+      url: get-started/preview.md      
     # Card
     - title: Enable Fabric for your organization
       itemType: quickstart
-      url: admin/admin-fabric-switch.md
+      url: admin/fabric-switch.md
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
       url: get-started/end-to-end-tutorials.md
+    # Card
+    - title: Microsoft Fabric licenses
+      itemType: concept
+      url: enterprise/licenses.md              
 
 productDirectory:
   title: Explore Microsoft Fabric experiences
@@ -51,8 +58,10 @@ productDirectory:
           text: What is Fabric?
         - url: enterprise/licenses.md
           text: Microsoft Fabric licenses
-        - url: enterprise/licenses-buy.md
-          text: Navigate the Fabric portal
+        - url: enterprise/buy-subscription.md
+          text: Buy a Microsoft Fabric subscription
+        - url: get-started/fabric-home.md
+          text: Navigate the Fabric portal          
         - url: get-started/workspaces.md
           text: Workspaces in Fabric
         - url: get-started/index.yml
@@ -63,7 +72,7 @@ productDirectory:
 
       imageSrc: ./media/power-bi-icon.png
       links:
-        - url: admin/admin-fabric-switch.md
+        - url: admin/fabric-switch.md
           text: Enable Microsoft Fabric for your organization
         - url: /power-bi/fundamentals/power-bi-overview
           text: What is Power BI?
@@ -100,7 +109,7 @@ productDirectory:
         - url: data-factory/create-first-pipeline-with-sample-data.md
           text: Create your first pipeline
         - url: data-factory/create-first-dataflow-gen2.md
-          text: Create your first dataflow?
+          text: Create your first dataflow
         - url: data-factory/connector-overview.md
           text: Connectors
         - url: data-factory/index.yml
@@ -156,7 +165,7 @@ productDirectory:
         - url: real-time-analytics/overview.md
           text: What is Real-Time Analytics?
         - url: real-time-analytics/event-streams/overview.md
-          text: What is Event stream?
+          text: What is Event streams?
         - url: real-time-analytics/create-database.md
           text: Create a database
         - url: real-time-analytics/index.yml
@@ -167,11 +176,11 @@ productDirectory:
 
       imageSrc: ./media/administrator-icon.svg
       links:
-        - url: enterprise/licenses-buy.md
-          text: Buy a Microsoft Fabric license     
-        - url: admin/admin-overview.md
+        - url: enterprise/buy-subscription.md
+          text: Buy a Microsoft Fabric subscription     
+        - url: admin/microsoft-fabric-admin.md
           text: Fabric administration
-        - url: governance/metadata-scanning-overview.md
+        - url: governance/governance-compliance-overview.md
           text: Data governance and compliance
         - url: security/security-overview.md
           text: Security
@@ -211,15 +220,15 @@ productDirectory:
 
       imageSrc: ./media/education-icon.svg
       links:
-        - url: /training/modules/introduction-end-analytics-using-microsoft-fabric/
+        - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
           text: End-to-end analytics using Fabric
         - url: /training/modules/get-started-lakehouses/
           text: Get started with lakehouses
-        - url: /training/modules/use-spark-notebooks-pipelines-fabric/
+        - url: /training/modules/use-data-factory-pipelines-fabric/
           text: Use Data Factory pipelines
         - url: /training/modules/get-started-data-science-fabric/
           text: Get started with Data science
-        - url: /training/modules/introduction-end-analytics-using-microsoft-fabric/
+        - url: /training/paths/get-started-fabric/
           text: See more
 
 

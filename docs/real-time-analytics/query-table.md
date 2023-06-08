@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
@@ -12,11 +13,13 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this article, you'll learn how to use sample KQL queries to get an initial look at your data.
+In this article, you learn how to use sample KQL queries to get an initial look at your data.
 
 A query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Queries always run in the context of a particular table or database. At a minimum, a query consists of a source data reference and one or more query operators applied in sequence, indicated visually by the use of a pipe character (|) to delimit operators.
 
 For more information on the Kusto Query Language, see [Kusto Query Language (KQL) Overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+
+To learn how to use sample SQL queries, see [Sample SQL queries](tutorial-4-explore.md#sample-sql-queries).
 
 ## Prerequisites
 
@@ -25,15 +28,15 @@ For more information on the Kusto Query Language, see [Kusto Query Language (KQL
 
 ## Query table
 
-1. In the **Data tree**, select the **More menu** [...] on your table > **Query table**. Sample queries run in the context of a selected table.
+1. In the **Data tree**, select the **More menu** [...] on a desired table > **Query table**. Sample queries run in the context of a selected table.
 
-    :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Object tree showing the More menu of a table. The Query table option is highlighted.":::
+    :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Data tree showing the More menu of a table. The Query table option is highlighted."  lightbox="media/query-table/query-table.png":::
 
-1. Select a single query to autopopulate into the **Explore your data** window. The query will automatically run and display results.
+1. Select a single query to populate the **Explore your data** window. The query will automatically run and display results.
 
-    :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Check your data window showing query results of sample queries in Real-Time Analytics.":::
+    :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Explore your data window showing query results of sample queries in Real-Time Analytics."  lightbox="media/query-table/run-query.png":::
 
 ## Next steps
 
-* [Query data in the KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
 * [Create stored functions](create-functions.md)

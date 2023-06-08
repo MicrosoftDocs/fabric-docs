@@ -5,6 +5,7 @@ author: orbey
 ms.author: erenorbey
 ms.reviewer: franksolomon
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 
 ms.search.form: Data Wrangler
@@ -110,4 +111,4 @@ The toolbar above the Data Wrangler display grid provides options to save the co
 
 ## Next steps
 
-- To try out Data Wrangler in VS Code, see [Data Wrangler in VS Code](https://aznb.azurewebsites.net/docs/vscode-data-wrangler/).
+- To try out Data Wrangler in VS Code, see [Data Wrangler in VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler).

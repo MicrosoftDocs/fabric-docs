@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.custom: build-2023
+ms.search.form: Create and use notebooks
+ms.date: 05/30/2023
 ---
 
 # How to use Microsoft Fabric notebooks
@@ -22,7 +24,7 @@ With a [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can:
 - Analyze data across raw formats (CSV, txt, JSON, etc.), processed file formats (parquet, Delta Lake, etc.), leveraging powerful Spark capabilities.
 - Be productive with enhanced authoring capabilities and built-in data visualization.
 
-This article describes how to use notebooks in data science and data engineering workloads.
+This article describes how to use notebooks in data science and data engineering experiences.
 
 ## Create notebooks
 
@@ -40,12 +42,12 @@ You can import one or more existing notebooks from your local computer to a [!IN
 
 ## Export a notebook
 
-You can Export your notebook to other standard formats. Synapse notebook supports to be exported into: 
+You can Export your notebook to other standard formats. Synapse notebook supports to be exported into:
 
-+ Standard Notebook file(.ipynb) that is usually used for Jupyter notebooks. 
-+ HTML file(.html) that can be opened from browser directly.  
-+ Python file(.py).  
-+ Latex file(.tex).  
+- Standard Notebook file(.ipynb) that is usually used for Jupyter notebooks.
+- HTML file(.html) that can be opened from browser directly.  
+- Python file(.py).  
+- Latex file(.tex).
 
 :::image type="content" source="media\how-to-use-notebook\export-notebook.png" alt-text="Screenshot showing where to export notebook.":::
 
@@ -55,7 +57,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], a notebook will by de
 
 :::image type="content" source="media\how-to-use-notebook\save-copy.png" alt-text="Screenshot showing where to save a copy.":::
 
-If you prefer to save a notebook manually, you can also switch to "Manual save" mode to have a "local branch" of your notebook artifact, and use **Save** or **CTRL+s** to save your changes. 
+If you prefer to save a notebook manually, you can also switch to "Manual save" mode to have a "local branch" of your notebook item, and use **Save** or **CTRL+s** to save your changes.
 
 :::image type="content" source="media\how-to-use-notebook\manual-save.png" alt-text="Screenshot showing where to switch manual save.":::
 
@@ -120,8 +122,6 @@ Fabric notebook support two modes for different scenarios, you can easily switch
 
 - **Editing mode**: You can edit and run the cells and collaborate with others on the notebook.
 - **Viewing mode**: You can only view the cell content, output, and comments of the notebook, all the operations that can lead to change the notebook will be disabled.
-
-
 
 ## Next steps
 

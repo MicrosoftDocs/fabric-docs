@@ -3,18 +3,19 @@ title: Git source code format
 description: Understand how the items in Microsoft Fabric's git integration tool are structured
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: conceptual 
 ms.date: 05/23/2023
-ms.custom: 
+ms.custom: build-2023
 ---
 
 # Git integration source code format
 
-Each item in Microsoft Fabric is represented in Git as a directory. Each directory has the same name as the artifact followed by the type.
+Items in Microsoft Fabric are stored in a folder. They can either be in the root directory or a subdirectory. When you connect your workspace to git, connect to the folder containing the items. Each item in the folder is represented in its own subdirectory. These item directories have the same name as the item followed by the item type.
 
 :::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of git directory containing items.":::
 
-Inside each directory are the mandatory system files that define the item. Besides these files, there are two automatically generated system files in each directory:
+Inside each item directory are the mandatory system files that define the item. Besides these files, there are two automatically generated system files in each directory:
 
 - [item.metadata.json](#metadata-file)
 - [item.config.json](#config-file)

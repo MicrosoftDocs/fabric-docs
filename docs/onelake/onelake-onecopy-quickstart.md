@@ -5,12 +5,11 @@ ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
 # OneCopy: Transform data with Spark and query with SQL
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this guide, you will:
 
@@ -21,6 +20,8 @@ In this guide, you will:
 - Analyze and transform data with Spark using a Fabric notebook.
 
 - Query one copy of data on OneLake with SQL.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 

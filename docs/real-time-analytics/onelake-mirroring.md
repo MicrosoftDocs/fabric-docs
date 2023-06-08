@@ -5,14 +5,17 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 # One logical copy
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. Shortcuts are embedded references within OneLake that point to other files' store locations.  The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source. For more information on OneLake shortcuts, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
-In this article, you learn how to create a OneLake shortcut that exposes the data in your KQL Database or table to all [!INCLUDE [product-name](../includes/product-name.md)] experiences.
+In this article, you learn how to create a OneLake shortcut that exposes the data in your KQL database or table to all [!INCLUDE [product-name](../includes/product-name.md)] experiences.
 
 This shortcut is a two-step process that requires you to do the following:
 
@@ -21,7 +24,7 @@ This shortcut is a two-step process that requires you to do the following:
 
 Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences.
 
-To query referenced data from OneLake in your KQL Database or table, see [Create a OneLake shortcut](onelake-shortcut.md).
+To query referenced data from OneLake in your KQL database or table, see [Create a OneLake shortcut](onelake-shortcut.md).
 
 ## How it works
 
@@ -33,7 +36,7 @@ To query referenced data from OneLake in your KQL Database or table, see [Create
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* [KQL database](create-database.md) with data
+* A [KQL database](create-database.md) with data
 
 ## Enable availability in OneLake
 
@@ -54,7 +57,7 @@ Creating one logical copy of your data in OneLake is a two-step process. You ena
 
 1. Select **Lakehouse (Preview)**.
 
-     :::image type="content" source="media/onelake-mirroring/new-lakehouse.png" alt-text="Screenshot of Data Engineering artifacts. The option titled Lakehouse is highlighted.":::
+     :::image type="content" source="media/onelake-mirroring/new-lakehouse.png" alt-text="Screenshot of Data Engineering items. The option titled Lakehouse is highlighted.":::
 
 1. Name your lakehouse, then select **Create**.
 
@@ -62,15 +65,15 @@ Creating one logical copy of your data in OneLake is a two-step process. You ena
 
 1. Select **New Shortcut** on the right-hand side of the lakehouse.
 
-    :::image type="content" source="media/onelake-mirroring/new-shortcut.png" alt-text="Screenshot of empty Lakehouse. The option titled New shortcut is highlighted.":::
+    :::image type="content" source="media/onelake-mirroring/new-shortcut.png" alt-text="Screenshot of empty Lakehouse. The option titled New shortcut is highlighted."  lightbox="media/onelake-mirroring/new-shortcut.png":::
 
 1. Under **Internal sources**, select **Microsoft OneLake**.
 
-    :::image type="content" source="media/onelake-mirroring/internal-source.png" alt-text="Screenshot of New Shortcut window. The option under Internal sources titled Microsoft OneLake is highlighted.":::
+    :::image type="content" source="media/onelake-mirroring/internal-source.png" alt-text="Screenshot of New Shortcut window. The option under Internal sources titled Microsoft OneLake is highlighted." lightbox="media/onelake-mirroring/internal-source.png":::
 
-1. In **Select a data source type**, select your KQL Database, then select **Next** to connect the data to your shortcut.
+1. In **Select a data source type**, select your KQL database, then select **Next** to connect the data to your shortcut.
 
-    :::image type="content" source="media/onelake-mirroring/onelake-shortcut-data-source.png" alt-text="Screenshot of data source type window showing all of the data sources in your workspace. The button titled Next is highlighted.":::
+    :::image type="content" source="media/onelake-mirroring/onelake-shortcut-data-source.png" alt-text="Screenshot of data source type window showing all of the data sources in your workspace. The button titled Next is highlighted." lightbox="media/onelake-mirroring/onelake-shortcut-data-source.png":::
 
 1. To connect the table with the data from your database, select **>** to expand the tables in the left-hand pane, then select a table.
 

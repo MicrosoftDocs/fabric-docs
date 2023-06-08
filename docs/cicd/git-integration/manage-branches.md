@@ -3,10 +3,10 @@ title: Git integration branches
 description: Learn how to use git branches to work in your own isolated environment.
 author: mberdugo
 ms.author: monaberdugo
-ms.service: powerbi
+ms.reviewer: NimrodShalit
 ms.topic: concept-article
 ms.date: 05/23/2023
-ms.custom: 
+ms.custom: build-2023
 ---
 
 # Manage branches in Microsoft Fabric workspaces
@@ -47,7 +47,7 @@ For a developer who works in the web, the flow would be as follows:
 1. Create a new workspace (or use an existing one you already use).
 1. Assign that workspace a Premium license.
 1. Go to [**Git integration**](./git-get-started.md#connect-a-workspace-to-an-azure-repo) in workspace settings, and specify the repo details.
-1. Under **Branch** drop down, choose **Create a new branch**, and branch it from the *main* branch.
+1. Under **Branch** drop-down, choose **Create a new branch**, and branch it from the *main* branch.
 1. In **Git folder**, enter the name of the folder you want to sync to in your repo.
 
    The workspace syncs with your feature branch, and becomes a copy of the Dev team's workspace, as illustrated. You can now work in this new isolated environment.
@@ -61,4 +61,5 @@ Once the review and merge are complete, a new commit is created to the *main* br
 
 ## Next steps
 
-[Get started with git integration](./git-get-started.md)
+- [Resolve errors and conflicts](./conflict-resolution.md)
+- [Git integration best practices](../best-practices-cicd.md)

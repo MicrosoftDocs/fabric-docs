@@ -1,14 +1,15 @@
 ---
 title: Configure data engineering and science capacity admin settings
-description: Learn how to configure and manage the capacity administration settings for data engineering and science workloads.
+description: Learn how to configure and manage the capacity administration settings for data engineering and science experiences.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
-# How to Configure and Manage Data Engineering/Science Settings for Fabric Capacities
+# Configure and manage data engineering and data science settings for Fabric capacities
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
@@ -16,7 +17,7 @@ When you create Microsoft Fabric from the Azure portal, it is automatically adde
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-To make changes to the Data Engineering/Science settings in a capacity, you must have admin role for that capacity. To learn more about the roles that you can assign to users in a capacity, see [Roles in capacities](../admin/admin-roles.md).
+To make changes to the Data Engineering/Science settings in a capacity, you must have admin role for that capacity. To learn more about the roles that you can assign to users in a capacity, see [Roles in capacities](../admin/roles.md).
 
 Use the following steps to manage the Data Engineering/Science settings for Microsoft Fabric capacity:
 
@@ -44,4 +45,4 @@ Use the following steps to manage the Data Engineering/Science settings for Micr
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](workspace-admin-settings.md)
 
-* [Learn about the Spark Compute for Fabric Data Engineering/Science workloads](spark-compute.md)
+* [Learn about the Spark Compute for Fabric Data Engineering/Science experiences](spark-compute.md)

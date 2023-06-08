@@ -6,7 +6,8 @@ summary: Learn about Microsoft Fabric licenses, and how to monitor and control t
 metadata:
   title: Microsoft Fabric enterprise documentation
   description: Brose the Microsoft Fabric enterprise documentation.
-  ms.service: azure
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: enterprise
   ms.topic: landing-page
   author: KesemSharabi
   ms.author: kesharab
@@ -24,8 +25,8 @@ landingContent:
             url: licenses.md
       - linkListType: how-to-guide
         links:
-          - text: Buy a Microsoft Fabric license
-            url: licenses-buy.md
+          - text: Buy a Microsoft Fabric subscription
+            url: buy-subscription.md
 
   - title: Utilization and metrics app
     linkLists:

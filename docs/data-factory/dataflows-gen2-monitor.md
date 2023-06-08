@@ -4,9 +4,9 @@ description: An overview of refresh history and monitoring for dataflows feature
 author: luitwieler
 
 ms.topic: conceptual
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.author: jeluitwi
-
 ---
 
 # View refresh history and monitor your dataflows
@@ -77,13 +77,13 @@ This screen gives you more clarity in what happened during the activity. For exa
 
 To investigate what happened, you can drill down into an activity or table. The following screen provides you with general information about the refresh and errors. If you're drilling into an activity, you are presented with how much data got processed and sent to your output destination.
 
-## Monitor hub
+## Monitoring hub
 
-The monitor hub is available using the side menu in your workspace. You can access it by selecting the **Monitor** button.
+The monitoring hub is available using the side menu in your workspace. You can access it by selecting the **Monitoring hub** button.
 
 :::image type="content" source="./media/dataflows-gen2-monitor/open-monitoring-hub.png" alt-text="Screenshot of the monitoring hub button.":::
 
-The monitor hub provides you with a dashboard that gives you an overview of the status of your dataflows.
+The monitoring hub provides you with a dashboard that gives you an overview of the status of your dataflows.
 
 :::image type="content" source="./media/dataflows-gen2-monitor/monitor-hub.png" alt-text="Screenshot of the monitoring hub dashboard." lightbox="./media/dataflows-gen2-monitor/monitor-hub.png":::
 

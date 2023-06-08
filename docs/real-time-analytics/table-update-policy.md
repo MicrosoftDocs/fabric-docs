@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
@@ -28,15 +29,15 @@ This article describes how to create an update policy on a table in Real-Time An
 1. Browse to the main page of your KQL database.
 1. Select **New** > **Table update policy**.
 
-    :::image type="content" source="media/table-update-policy/new-policy.png" alt-text="Screenshot of the KQL Database home tab showing the dropdown menu for creating new entities. The dropdown option for creating a table update policy in Real-Time Analytics is highlighted.":::
+    :::image type="content" source="media/table-update-policy/new-policy.png" alt-text="Screenshot of the KQL Database home tab showing the dropdown menu for creating new entities. The dropdown option for creating a table update policy in Real-Time Analytics is highlighted."  lightbox="media/table-update-policy/new-policy.png":::
 
     The `.alter update policy` command is automatically populated in the **Explore your data** window.
 
-    :::image type="content" source="media/table-update-policy/policy-in-window.png" alt-text="Screenshot of the Update table policy command in the Explore your data window in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/table-update-policy/policy-in-window.png" alt-text="Screenshot of the Update table policy command in the Explore your data window in Real-Time Analytics in Microsoft Fabric."  lightbox="media/table-update-policy/policy-in-window.png":::
 
 1. Enter the parameters of your table update policy, and then select **Run**. For more information on these parameters, see [.alter table update policy](/azure/data-explorer/kusto/management/alter-table-update-policy-command?context=/fabric/context/context&pivots=fabric).
 
 ## Next steps
 
 * [`.show table update policy`](/azure/data-explorer/kusto/management/show-table-update-policy-command?context=/fabric/context/context&pivots=fabric)
-* [Query data in a KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)

@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
@@ -51,7 +52,7 @@ This section walks you through some of the query and visualization capabilities 
     | render columnchart
     ```
 
-    :::image type="content" source="media/realtime-analytics-tutorial/top-10-locations.png" alt-text="Screenshot of top 10 location results in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/top-10-locations.png" alt-text="Screenshot of top 10 location results in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/top-10-locations.png":::
 
 1. KQL also provides machine learning functions to detect anomalies. Let's check anomalies in the tips given by the customers in the Manhattan borough. This query uses the [series_decompose_anomalies function](/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?context=/fabric/context/context&pivots=fabric).
 
@@ -64,7 +65,7 @@ This section walks you through some of the query and visualization capabilities 
     | render anomalychart with (anomalycolumns=anomalies)
     ```
 
-    :::image type="content" source="media/realtime-analytics-tutorial/anomaly-chart.png" alt-text="Screenshot of anomaly chart result in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/anomaly-chart.png" alt-text="Screenshot of anomaly chart result in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/anomaly-chart.png":::
 
     Hover over the red dots to see the values of the anomalies.
 
@@ -79,7 +80,7 @@ This section walks you through some of the query and visualization capabilities 
     | render timechart
     ```
 
-    :::image type="content" source="media/realtime-analytics-tutorial/forecast-results.png" alt-text="Screenshot of forecast results in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/forecast-results.png" alt-text="Screenshot of forecast results in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/forecast-results.png":::
 
 ## See also
 

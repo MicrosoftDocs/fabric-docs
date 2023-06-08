@@ -5,7 +5,8 @@ ms.reviewer: eloldag
 ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.custom: build-2023
+ms.date: 03/24/2023
 ---
 
 # Integrate OneLake with Azure Databricks
@@ -16,11 +17,10 @@ This scenario shows how to connect to OneLake via Azure Databricks. After comple
 
 ## Prerequisites
 
-Before you connect, you must have the following:
+Before you connect, complete these steps:
 
-- A Fabric workspace. For detailed instructions in creating and gaining access to a Fabric workspace, follow these steps: [Quickstart: Create a workspace for Fabric](../get-started/create-workspaces.md).
-- A Fabric Lakehouse with data loaded into it. Follow [Scenario one](create-lakehouse-onelake.md) for more details.
-- An Azure Databricks workspace. To use Azure Active Directory (Azure AD) passthrough to authenticate to Fabric, you must have a premium Azure Databricks workspace.
+- A Fabric workspace and lakehouse.
+- A premium Azure Databricks workspace.  Only premium Azure Databricks workspaces support Microsoft Azure Active Directory credential passthrough, which is required for this scenario.
 
 ## Set up your Databricks workspace
 
@@ -39,39 +39,40 @@ Before you connect, you must have the following:
 
 ## Author your notebook
 
-1. Navigate to your Fabric Lakehouse and find the GUID for your workspace and lakehouse. You can find them in the URL of your lakehouse or the **Properties** pane for a file.
-
-1. Copy the workspace and lakehouse GUIDs into your Databricks notebook and build your OneLake URL for your lakehouse. This location is what you’ll write your data into (example shown for East US 2):
-
+1. Navigate to your Fabric lakehouse and copy the ABFS path to your lakehouse. You can find it in the **Properties** pane.
    > [!NOTE]
-   > Azure Databricks only supports the Azure Blob Filesystem (ABFS) driver when reading and writing to Azure Data Lake Storage (ADLS) Gen 2 and OneLake, so you’ll use a different format for your regional URI: *abfss://{workspaceGUID}@onelake{region}.dfs.fabric.microsoft.com/.*
+   > Azure Databricks only supports the Azure Blob Filesystem (ABFS) driver when reading and writing to Azure Data Lake Storage (ADLS) Gen2 and OneLake: *abfss://myWorkspace@onelake.dfs.fabric.microsoft.com/*
+
+1. Save the path to your lakehouse in your Databricks notebook. This lakehouse is where you'll write your processed data later:
 
    ```python
-   oneLakePath = 'abfss://' + workspaceGUID + '@onelakeeastus2.pbidedicated.windows.net/' + lakehouseGUID + '/Files/'oneLakePath = 'abfss://' + workspaceGUID + '@onelakeeastus2.dfs.fabric.microsoft.com/' + lakehouseGUID + '/Files/'oneLakePath = 'abfss://' + workspaceGUID + '@onelakeeastus2.pbidedicated.windows.net/' + lakehouseGUID + '/Files/'oneLakePath = 'abfss://' + workspaceGUID + '@onelakeeastus2.dfs.fabric.microsoft.com/' + lakehouseGUID + '/Files/'`
+   oneLakePath = 'abfss://myWorkspace@onelake.dfs.fabric.microsoft.com/myLakehouse.lakehouse/Files/'
    ```
 
-1. Load data from a Databricks public dataset into a dataframe. This file is the one you’ll load into your lakehouse. You can also read a file from elsewhere in Fabric or choose a file from another ADLS Gen 2 account you already own.
+1. Load data from a Databricks public dataset into a dataframe. You can also read a file from elsewhere in Fabric or choose a file from another ADLS Gen2 account you already own.
 
    ```python
-   yellowTaxiDF = (spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("/databricks-datasets/nyctaxi/tripdata/yellow/yellow_tripdata_2019-12.csv.gz"))yellowTaxiDF = (spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("/databricks-datasets/nyctaxi/tripdata/yellow/yellow_tripdata_2019-12.csv.gz"))
+   yellowTaxiDF = (spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("/databricks-datasets/nyctaxi/tripdata/yellow/yellow_tripdata_2019-12.csv.gz")
    ```
 
 1. Filter, transform, or prep your data. For this scenario, you can trim down your dataset for faster loading, join with other datasets, or filter down to specific results.
 
    ```python
-   filteredTaxiDF = yellowTaxiDF.where(yellowTaxiDF.fare_amount<4).where(yellowTaxiDF.passenger_count==4)display(filteredTaxiDF)filteredTaxiDF = yellowTaxiDF.where(yellowTaxiDF.fare_amount<4).where(yellowTaxiDF.passenger_count==4)display(filteredTaxiDF)
+   filteredTaxiDF = yellowTaxiDF.where(yellowTaxiDF.fare_amount<4).where(yellowTaxiDF.passenger_count==4)
+   display(filteredTaxiDF)
    ```
 
 1. Write your filtered dataframe to your Fabric Lakehouse using your OneLake path.
 
    ```python
-   filteredTaxiDF.write.format("csv").mode("overwrite").csv(oneLakePath)filteredTaxiDF.write.format("csv").mode("overwrite").csv(oneLakePath)
+   filteredTaxiDF.write.format("csv").mode("overwrite").csv(oneLakePath)
    ```
 
 1. Test that your data was successfully written by reading your newly loaded file.
 
    ```python
-   lakehouseRead = spark.read.format('csv').load(oneLakePath)display(lakehouseRead.limit(10))lakehouseRead = spark.read.format('csv').load(oneLakePath)display(lakehouseRead.limit(10))
+   lakehouseRead = spark.read.format('csv').load(oneLakePath)
+   display(lakehouseRead.limit(10))
    ```
 
 Congratulations! You can now read and write data in Fabric using Azure Databricks.

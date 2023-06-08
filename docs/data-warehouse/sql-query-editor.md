@@ -4,31 +4,36 @@ description: Learn how to use the SQL query editor.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 06/06/2023
 ms.topic: how-to
+ms.custom: build-2023
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
 # Query using the SQL query editor
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+This article describes how to use the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal to quickly and efficiently write queries, and suggestions on how best to see the information you need.
 
-You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the [Visual query editor](visual-query-editor.md) and the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal. This article describes how to use the SQL query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+- You can also [query the data](query-warehouse.md) in your warehouse with multiple tools with a [SQL connection string](connectivity.md).
+- You can build queries graphically with the [Visual query editor](visual-query-editor.md).
+- You can quickly [view data in the Data preview](data-preview.md).
+
+The SQL query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing, and validation. You can run Data Definition Language (DDL), Data Manipulation Language (DML) and Data Control Language (DCL) statements.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## SQL query editor in the Fabric portal
 
-The SQL query editor provides a text editor to write queries using T-SQL. 
+The SQL query editor provides a text editor to write queries using T-SQL. To access the built-in SQL query editor:
 
-- To access the built-in SQL query editor, select the **Query** icon located at the bottom of the warehouse editor window.
+- Select the **Query** icon located at the bottom of the warehouse editor window.
 
-   :::image type="content" source="media\sql-query-editor\query-button-ribbon.png" alt-text="Screenshot showing the SQL query editor query icon." lightbox="media\sql-query-editor\query-button-ribbon.png":::
+   :::image type="content" source="media\sql-query-editor\query-button-ribbon.png" alt-text="Screenshot showing the SQL query editor query icon.":::
 
-- Alternatively, in the warehouse editor ribbon, create a new query using the **New SQL query** button. If you select the dropdown, you can easily create T-SQL objects with code templates that will populate in your SQL query window, as shown in the following image.
+- Create a new query using the **New SQL query** button. If you select the dropdown, you can easily create T-SQL objects with code templates that populate in your SQL query window, as shown in the following image.
 
-   :::image type="content" source="media\sql-query-editor\new-sql-query-dropdown-templates.png" alt-text="Screenshot showing where to find the New query menu on the Data preview view ribbon." lightbox="media\sql-query-editor\new-sql-query-dropdown-templates.png":::
-
-The SQL query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing, and validation. You can run Data Definition Language (DDL), Data Manipulation Language (DML) and Data Control Language (DCL) statements. For more information on limitations for Transaction Control Language statement runs, see [Limitations](#limitations).
+   :::image type="content" source="media\sql-query-editor\new-sql-query-dropdown-templates.png" alt-text="Screenshot showing where to find the New query menu on the Data preview view ribbon.":::
 
 ### View query results
 
@@ -46,21 +51,21 @@ The status bar indicates the query status, duration of the run and number of row
 
    :::image type="content" source="media\sql-query-editor\editor-commands.png" alt-text="Screenshot of the query editor window. Command buttons are boxed in red." lightbox="media\sql-query-editor\editor-commands.png":::
 
-- You can select the query and save your query as a view using the **Save as view** button. Select the schema name, provide name of view and verify the SQL statement before confirming creating view. When view is successfully created, it will appear in the Explorer.
+- You can select the query and save your query as a view using the **Save as view** button. Select the schema name, provide name of view and verify the SQL statement before confirming creating view. When view is successfully created, it appears in the **Explorer**.
 
    :::image type="content" source="media\sql-query-editor\save-as-view.png" alt-text="Screenshot showing how to use Save as view menu" lightbox="media\sql-query-editor\save-as-view.png":::
 
-- You can use **Save as table** to save your query results into a table. Select the warehouse in which you would like to save results, select schema and provide table name to load results into the table using [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) statement. When table is successfully created, it will appear in the Explorer.
+- You can use **Save as table** to save your query results into a table. Select the warehouse in which you would like to save results, select schema and provide table name to load results into the table using [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) statement. When table is successfully created, it appears in the **Explorer**.
 
    :::image type="content" source="media\sql-query-editor\save-as-table.png" alt-text="Screenshot showing how to use Save as table menu" lightbox="media\sql-query-editor\save-as-table.png":::
 
 - The **Download Excel file** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to view the results in Excel.
 
-   :::image type="content" source="media\sql-query-editor\download-excel-file.png" alt-text="Screenshot showing how to use Download Excel file menu" lightbox="media\sql-query-editor\download-excel-file.png":::
+   :::image type="content" source="media\sql-query-editor\download-excel-file-query.png" alt-text="Screenshot showing how to use Download Excel file menu" lightbox="media\sql-query-editor\download-excel-file-query.png":::
 
 - **Visualize results** allows you to create reports from your query results within the SQL query editor.
 
-   :::image type="content" source="media\sql-query-editor\visualize-results.png" alt-text="Screenshot showing how to use Visualize results menu" lightbox="media\sql-query-editor\visualize-results.png":::
+   :::image type="content" source="media\sql-query-editor\visualize-results-query.png" alt-text="Screenshot showing how to use Visualize results menu" lightbox="media\sql-query-editor\visualize-results-query.png":::
 
    As you work on your SQL query, the queries are automatically saved every few seconds. A "saving" indicator appears in your query tab at the bottom to indicate that your query is being saved.
 
@@ -117,15 +122,19 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - In SQL query editor, every time you run the query, it opens a separate session and closes it at the end of the execution. This means if you set up session context for multiple query runs, the context is not maintained for independent execution of queries.
 
-- In SQL query editor, when you select **Run** button, you are submitting an independent batch request to execute. The SQL query editor does not support `sp_set_session_context`. Each **Run** action in the SQL query editor is a batch request, and a session only exists per batch. Each execution of code in the same query window will run in a different batch and session. 
+- You can run Data Definition Language (DDL), Data Manipulation Language (DML) and Data Control Language (DCL) statements, but there are limitations for Transaction Control Language (TCL) statements. In the SQL query editor, when you select the **Run** button, you are submitting an independent batch request to execute. Each **Run** action in the SQL query editor is a batch request, and a session only exists per batch. Each execution of code in the same query window will run in a different batch and session.
 
-   For example, when independently executing transaction statements, session context is not retained. In the following screenshot, `BEGIN TRAN` was executed in the first request, but since the second request was executed in a different session, there is no transaction to commit, resulting into the failure of commit/rollback operation. If the SQL batch submitted does not include a COMMIT TRAN, the changes applied after `BEGIN TRAN` will not commit.
+   - For example, when independently executing transaction statements, session context is not retained. In the following screenshot, `BEGIN TRAN` was executed in the first request, but since the second request was executed in a different session, there is no transaction to commit, resulting into the failure of commit/rollback operation. If the SQL batch submitted does not include a COMMIT TRAN, the changes applied after `BEGIN TRAN` will not commit.
 
    :::image type="content" source="media\sql-query-editor\transaction-run-error.png" alt-text="Screenshot showing independent run of transactions failed in SQL query editor." lightbox="media\sql-query-editor\transaction-run-error.png":::
 
-   Similarly, in the SQL query editor, the `GO` SQL command creates a new independent batch in a new session.
+   - The SQL query editor does not support `sp_set_session_context`.
+
+   - In the SQL query editor, the `GO` SQL command creates a new independent batch in a new session.
 
 - When you are running a SQL query with [USE](/sql/t-sql/language-elements/use-transact-sql?view=fabric&preserve-view=true), you need to submit the SQL query with `USE` as one single request.
+
+- Visualize Results currently does not support SQL queries with an ORDER BY clause. 
 
 - The following table summarizes the expected behavior will not match with SQL Server Management Studio/Azure Data Studio:
 
@@ -137,5 +146,5 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 ## Next steps
 
-- [How-to: Query the Synapse Data Warehouse](query-warehouse.md)
+- [How-to: Query the Warehouse](query-warehouse.md)
 - [Query using the Visual Query editor](visual-query-editor.md)

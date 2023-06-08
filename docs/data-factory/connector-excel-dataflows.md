@@ -1,16 +1,16 @@
 ---
 title: Connect to an Excel workbook in dataflows
-description: This article details how to use the Data Factory Excel connector in Microsoft Fabric to connect to an Excel workbook in dataflows.
+description: This article details how to use the Data Factory Excel workbook connector in Microsoft Fabric to create an Excel workbook connection in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom: template-how-to 
+ms.custom: template-how-to, build-2023
 ---
 
 # Connect to an Excel workbook in dataflows
 
-You can connect to Excel workbooks in Dataflows Gen2 using the Excel connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+You can connect to Excel workbooks in Dataflow Gen2 using the Excel connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 

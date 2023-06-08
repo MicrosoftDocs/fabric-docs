@@ -6,14 +6,15 @@ ms.author: trolson
 author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
 # Accessing shortcuts
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to access shortcuts as folders in a Spark notebook
 

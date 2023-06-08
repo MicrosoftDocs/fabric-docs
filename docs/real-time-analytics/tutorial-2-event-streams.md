@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
@@ -65,7 +66,7 @@ ms.search.form: product-kusto
 1. The incoming data source is uncompressed, so keep the **Compression type** as *uncompressed*.
 1. From the **Data format** dropdown, select **JSON**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/data-format-json.png" alt-text="Screenshot of Schema tab with data format JSON selected in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/data-format-json.png" alt-text="Screenshot of Schema tab with data format JSON selected in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/data-format-json.png":::
 
     Notice that the data preview refreshes and shows the data in columns with the data types automatically identified. Some of these data types need to be changed for later queries. The columns that appear in the preview can be manipulated by selecting the **down arrow** to the right of the column name.
 
@@ -73,7 +74,7 @@ ms.search.form: product-kusto
 
 1. Change the following columns to the target types by selecting the **down arrow**> **Change data type**. Verify that the following columns reflect the correct data type:
 
-    :::image type="content" source="media/realtime-analytics-tutorial/change-data-type.png" alt-text="Screenshot of changing data type in data preview in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/change-data-type.png" alt-text="Screenshot of changing data type in data preview in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/change-data-type.png":::
 
     | Column name | Target data type|
     |--|--|
@@ -96,6 +97,9 @@ ms.search.form: product-kusto
 1. Select **Next: Summary**.
 
      In the **Continuous ingestion from Eventstream established** window, all steps are marked with green check marks when the data connection is successfully created. The data from Eventstream begins streaming automatically into your table.
+
+> [!NOTE]
+> You may need to refresh the page to view your table after the Eventstream connection has been established.
 
 ## See also
 

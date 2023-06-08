@@ -1,12 +1,13 @@
 ### YamlMime:Landing
 
-title: Data Science in Microsoft Fabric documentation # < 60 chars
+title: Data Science documentation in Microsoft Fabric # < 60 chars
 summary: Learn more about the Data Science experience in Microsoft Fabric  # < 160 chars
 
 metadata:
   title: Data Science in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Summary of the Data Science documentation in Microsoft Fabric # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: azure #Required; use either service or product per approved list. 
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: data-science
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
   author: s-polly #Required; your GitHub user alias, with correct capitalization.
@@ -24,35 +25,37 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is Data Science?
-            url: data-science-overview.md # Placeholder file. Replace with the actual file name.
+            url: data-science-overview.md 
 
   # Card 
   - title: Get started
     linkLists:
       - linkListType: get-started
         links:
-          - text: How to use end-to-end AI samples
-            url: use-ai-samples.md # Placeholder file. Replace with the actual file name.
-          - text: Machine learning experiments
-            url: machine-learning-experiment.md # Placeholder file. Replace with the actual file name.
+          - text: Introduction to Data science tutorials
+            url: tutorial-data-science-introduction.md
+          - text: Data science roles and permissions
+            url: models-experiments-rbac.md
           - text: Machine learning models
-            url: machine-learning-model.md # Placeholder file. Replace with the actual file name.
+            url: machine-learning-model.md 
 
 # Card 
   - title: Tutorials
     linkLists:
       - linkListType: tutorial
         links:
-          - text: Train a retail recommendation model
-            url: retail-recommend-model.md # Placeholder file. Replace with the actual file name.
+          - text: How to use end-to-end AI samples
+            url: use-ai-samples.md 
+          - text: Retail recommendation
+            url: retail-recommend-model.md 
           - text: Fraud detection
-            url: fraud-detection.md # Placeholder file. Replace with the actual file name.
+            url: fraud-detection.md 
           - text: Forecasting
-            url: time-series-forecasting.md # Placeholder file. Replace with the actual file name.
+            url: time-series-forecasting.md 
           - text: Text classification
-            url: title-genre-classification.md # Placeholder file. Replace with the actual file name.
-          - text: Healthcare causal impact of treatments
-            url: uplift-modeling.md # Placeholder file. Replace with the actual file name.         
+            url: title-genre-classification.md 
+          - text: Uplift modeling
+            url: uplift-modeling.md          
 
   # Card 
   - title: Preparing Data
@@ -60,9 +63,9 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: How to accelerate data prep with Data Wrangler
-            url: data-wrangler.md # Placeholder file. Replace with the actual file name.
+            url: data-wrangler.md 
           - text: How to read and write data with Pandas
-            url: read-write-pandas.md # Placeholder file. Replace with the actual file name.
+            url: read-write-pandas.md 
 
   # Card 
   - title: Training Models
@@ -70,25 +73,45 @@ landingContent:
       - linkListType: overview
         links:  
         - text: Training Overview
-          url: ./model-training/model-training-overview.md # Placeholder file. Replace with the actual file name.
+          url: ./model-training/model-training-overview.md 
       - linkListType: how-to-guide
         links:
           - text: Train with Spark MLlib
-            url: ./model-training/fabric-sparkml-tutorial.md # Placeholder file. Replace with the actual file name.
+            url: ./model-training/fabric-sparkml-tutorial.md 
           - text: Train models with Scikit-learn
-            url: train-models-scikit-learn.md # Placeholder file. Replace with the actual file name.
+            url: train-models-scikit-learn.md 
           - text: Train models with PyTorch
-            url: train-models-pytorch.md  # Placeholder file. Replace with the actual file name.
+            url: train-models-pytorch.md 
 
 # Card 
   - title: Tracking models and experiments
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Score models with PREDICT
-            url: model-scoring-predict.md # Placeholder file. Replace with the actual file name.
+          - text: Machine learning experiments
+            url: machine-learning-experiment.md
           - text: Fabric autologging
-            url: mlflow-autologging.md # Placeholder file. Replace with the actual file name.
+            url: mlflow-autologging.md 
+
+# Card 
+  - title: Using SynapseML
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Your First SynapseML Model
+            url: synapseml-first-model.md
+          - text: Install another version of SynapseML
+            url: install-synapseml.md
+      - linkListType: how-to-guide
+        links:
+          - text: Use Congnitive Services with SynapseML
+            url: overview-cognitive-services.md
+          - text: Deep learning with ONNX and SynapseML
+            url: onnx-overview.md
+          - text: Perform multivariate anomaly detection with SynapseML
+            url: isolation-forest-multivariate-anomaly-detection.md
+          - text: Tune hyperperameters with SynapseML
+            url: hyperparameter-tuning-fighting-breast-cancer.md
 
 # Card 
   - title: Using R
@@ -96,14 +119,14 @@ landingContent:
       - linkListType: overview
         links:
           - text: R overview
-            url: r-overview.md # Placeholder file. Replace with the actual file name.
+            url: r-overview.md 
       - linkListType: how-to-guide
         links:
           - text: How to use SparkR
-            url: r-use-sparkr.md # Placeholder file. Replace with the actual file name.
+            url: r-use-sparkr.md 
           - text: How to use sparklyr
-            url: r-use-sparklyr.md # Placeholder file. Replace with the actual file name.
+            url: r-use-sparklyr.md 
           - text: R library management
-            url: r-library-management.md # Placeholder file. Replace with the actual file name.
+            url: r-library-management.md 
           - text: R visualization
-            url: r-visualization.md # Placeholder file. Replace with the actual file name.
+            url: r-visualization.md 

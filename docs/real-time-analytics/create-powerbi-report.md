@@ -1,10 +1,11 @@
 ---
 title:  Visualize data in a Power BI report in Real-time Analytics
-description: Learn how to visualize data from a KQL Queryset in a Power BI report.
+description: Learn how to visualize data from a KQL queryset in a Power BI report.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
@@ -15,7 +16,7 @@ ms.search.form: product-kusto
 
 In this article, you learn how to build a Power BI report using a KQL Queryset. The output of your query is used as the dataset of your report.
 
-To use multiple tables to build your Power BI report, see [Use data from KQL Databases in Power BI Desktop](power-bi-data-connector.md).
+To use multiple tables to build your Power BI report, see [Use data from a KQL database in Power BI Desktop](power-bi-data-connector.md).
 
 ## Prerequisites
 
@@ -66,7 +67,7 @@ When you're satisfied with the visualizations, select **File** on the ribbon, an
 
 To view and edit your report, select **Open the file in Power BI to view, edit, and get a shareable link**.
 
-:::image type="content" source="media/create-powerbi-report/open-report.png" alt-text="Screenshort of report preview showing that the report has been saved. The link to open the report in Power BI is highlighted." lightbox="media/create-powerbi-report/open-report.png":::
+:::image type="content" source="media/create-powerbi-report/open-report.png" alt-text="Screenshot of report preview showing that the report has been saved. The link to open the report in Power BI is highlighted." lightbox="media/create-powerbi-report/open-report.png":::
 
 ## Next steps
 

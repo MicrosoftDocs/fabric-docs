@@ -6,7 +6,8 @@ summary: Learn about the Microsoft Fabric admin settings, options and tools.
 metadata:
   title: Microsoft Fabric documentation for admins
   description: A landing page for the Microsoft Fabric admin documentation.
-  ms.service: azure
+  ms.service: fabric
+  ms.subservice: admin
   ms.topic: landing-page
   author: KesemSharabi
   ms.author: kesharab
@@ -21,55 +22,55 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Enable Microsoft Fabric for your organization
-            url: admin-fabric-switch.md
-          - text: Compliance settings
-            url: admin-compliance.md
+            url: fabric-switch.md
           - text: Governance in Microsoft Fabric
-            url: ../governance/index.yml          
+            url: ../governance/index.yml      
+          - text: Security in Microsoft Fabric
+            url: ../security/security-overview.md              
       - linkListType: overview
         links:
           - text: What is Microsoft Fabric admin?
-            url: admin-overview.md       
+            url: microsoft-fabric-admin.md       
           - text: What is the admin portal?
             url: admin-center.md
       - linkListType: how-to-guide
         links:            
-          - text: Understand Microsoft Fabric roles
-            url: admin-roles.md
-
-  - title: Workspace settings
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Workspace tenant settings
-            url: admin-portal-workspace.md
-      - linkListType: how-to-guide
-        links:
-          - text: Manage workspaces
-            url: admin-portal-workspaces.md
-
-  - title: Admin monitoring workspace
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is the admin monitoring workspace?
-            url: admin-monitoring.md
-          - text: Feature usage and adoption report
-            url: admin-feature-usage-adoption.md
+          - text: Understand Microsoft Fabric admin roles
+            url: roles.md
 
   - title: Tools and settings
     linkLists:
       - linkListType: overview
         links: 
           - text: Tenant admin settings for git integration
-            url: admin-settings-git-integration.md              
+            url: git-integration-admin-settings.md              
       - linkListType: how-to-guide
         links:
           - text: Track user activities in Fabric
-            url: admin-track-user-activities.md
+            url: track-user-activities.md
           - text: Set up item certification
             url: endorsement-setup.md            
           - text: Enable service principal authentication for read-only admin APIs
             url: metadata-scanning-enable-read-only-apis.md     
           - text: Set up metadata scanning in your organization
             url: metadata-scanning-setup.md
+
+  - title: Workspace settings
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Workspace tenant settings
+            url: portal-workspace.md
+      - linkListType: how-to-guide
+        links:
+          - text: Manage workspaces
+            url: portal-workspaces.md
+
+  - title: Admin monitoring workspace
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is the admin monitoring workspace?
+            url: monitoring-workspace.md
+          - text: Feature usage and adoption report
+            url: feature-usage-adoption.md

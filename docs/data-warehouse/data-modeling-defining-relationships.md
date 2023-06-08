@@ -6,15 +6,16 @@ ms.author: salilkanade
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
+ms.custom: build-2023
 ms.search.form: Model view # This article's title should not change. If so, contact engineering.
 ---
 # Define relationships in data models for data warehousing in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 A well-defined data model is instrumental in driving your analytics and reporting experiences. In a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], you can easily build and change your data model with a few simple steps in our visual editor. You need to have at least a small sample of data loaded before you can explore these concepts further; tables may be empty, but the schemas (their structures) need to be defined.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Warehouse modeling
 

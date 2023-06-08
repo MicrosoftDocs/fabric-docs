@@ -1,11 +1,11 @@
 ---
 title: Connect to a SharePoint Online list in dataflows
-description: This article details how to use the SharePoint Online list connector in Microsoft Fabric to connect to a SharePoint Online list in dataflows.
+description: This article details how to use the Data Factory SharePoint Online list connector in Microsoft Fabric to connect to a SharePoint Online list in dataflows.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom: template-how-to 
+ms.custom: template-how-to, build-2023
 ---
 
 # Connect to a SharePoint Online list in dataflows
@@ -51,4 +51,4 @@ For more advanced information about connecting to your data using the SharePoint
 ## Next steps
 
 - [How to create a SharePoint Online list connection](connector-sharepoint-online-list.md)
-- [How to configure SharePoint Online List in copy activity](connector-sharepoint-online-list-copy-activity.md)
+- [How to configure SharePoint Online List in a copy activity](connector-sharepoint-online-list-copy-activity.md)

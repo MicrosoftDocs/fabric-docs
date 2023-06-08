@@ -5,6 +5,7 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 5/23/2023
 ---
 
@@ -40,4 +41,4 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 Advance to the next article to learn about
 > [!div class="nextstepaction"]
-> [Options to get data into lakehouse](tutorial-lakehouse-clean-up.md)
+> [Options to get data into lakehouse](load-data-lakehouse.md)

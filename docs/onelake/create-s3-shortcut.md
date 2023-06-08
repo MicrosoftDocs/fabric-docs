@@ -6,13 +6,15 @@ ms.author: trolson
 author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 03/24/2023
 ---
 
 # How-to: Create an Amazon S3 shortcut
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 In this how-to guide, you'll learn how to create an S3 shortcut inside a Fabric Lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisite
 
