@@ -19,7 +19,7 @@ Before you begin the data science end-to-end tutorial series, learn about prereq
 
 1. A [Microsoft Fabric subscription](../enterprise/licenses).  Or sign up for a free [Microsoft Fabric (Preview) trial](../get-started/fabric-trial.md)
 
-1. A Power BI Workspace with assigned premium capacity.
+1. Sign in to [[!INCLUDE [product-name](../../includes/product-name.md)]](https://fabric.microsoft.com/).
 
 1. An existing Microsoft Fabric lakehouse. Create a lakehouse by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
