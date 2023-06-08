@@ -63,8 +63,10 @@ items:
     href: data-wrangler.md
   - name: How to read and write data from and to PowerBI
     href: read-write-powerbi.md
-  - name: Explore and validate data with SemPy and PBI connector
-    href: sempy-pbi-connector.md
+  - name: How to explore data with Semantic Link
+    href: semantic-link-explore-data.md
+  - name: How to validate data with Semantic Link
+    href: semantic-link-validate-data.md
 - name: Train machine learning models
   items:
   - name: Training Overview
@@ -181,6 +183,24 @@ items:
       href: r-use-tidyverse.md
     - name: R visualization
       href: r-visualization.md
+- name: Semantic Link
+  items:
+  - name: Semantic Link overview
+    href: semantic-link-overview.md
+  - name: Concepts
+    items:
+    - name: PowerBI connectivity
+      href: semantic-link-powerbi.md
+    - name: Semantic propagation
+      href: semantic-link-semantic-propagation.md
+  - name: How-to guides
+    items:
+    - name: How to read and write data from and to PowerBI
+      href: read-write-powerbi.md
+    - name: How to explore data with Semantic Link
+      href: semantic-link-explore-data.md
+    - name: How to validate data with Semantic Link
+      href: semantic-link-validate-data.md
 - name: SemPy
   items:
   - name: SemPy overview
