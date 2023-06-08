@@ -23,11 +23,25 @@ The python commands/script used in each step of this tutorial can be found in th
 
 1. Read a random sample of cleansed data from lakehouse table ***nyctaxi_prep*** filtered for puYear=2016 and puMonth=3.
 
-   :::image type="content" source="media\tutorial-data-science-batch-scoring\read-random-sample.png" alt-text="Screenshot of a code sample for reading a random sample of cleansed data." lightbox="media\tutorial-data-science-batch-scoring\read-random-sample.png":::
+   ```python
+   SEED = 1234 # Random seed
+   input_df = spark.read.format("delta").load("Tables/nyctaxi_prep")\
+               .filter("puYear = 2016 AND puMonth = 3")\
+               .sample(True, 0.01, seed=SEED) ## Sampling data to reduce execution time for this tutorial
+   ```
 
 1. Import the required pyspark.ml and synapse.ml libraries and load the trained and registered LightGBMRegressor model using the ***run_uri*** copied from the final step of [Part 4: Train and register machine learning models](tutorial-data-science-train-models.md).
 
-   :::image type="content" source="media\tutorial-data-science-batch-scoring\import-libraries-load-model.png" alt-text="Screenshot of a code sample for importing libraries and loading the model." lightbox="media\tutorial-data-science-batch-scoring\import-libraries-load-model.png":::
+   ```python
+   import mlflow
+   from pyspark.ml.feature import OneHotEncoder, VectorAssembler, StringIndexer
+   from pyspark.ml import Pipeline
+   from synapse.ml.core.platform import *
+   from synapse.ml.lightgbm import LightGBMRegressor
+   ## Define run_uri to fetch the model
+   run_uri = "<enter the run_uri from module 04 here>"
+   loaded_model = mlflow.spark.load_model(run_uri, dfs_tmpdir="Files/tmp/mlflow")
+   ```
 
 1. Run model transform on the input dataframe to generate predictions and remove unnecessary vector features created for model training using the following commands.
 
