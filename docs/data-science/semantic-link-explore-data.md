@@ -1,7 +1,7 @@
 ---
 title: Explore data with Semantic Link
 description: Explore data with Semantic Link
-ms.reviewer: larryfr
+ms.reviewer: mopeakande
 ms.author: romanbat
 author: RomanBat
 ms.topic: overview 

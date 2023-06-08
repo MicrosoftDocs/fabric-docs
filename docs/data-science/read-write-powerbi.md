@@ -1,7 +1,7 @@
 ---
 title: Read and write data to and from Power BI
 description: Learn how to use read and write data from and to Power BI in the Data Science workload.
-ms.reviewer: larryfr
+ms.reviewer: mopeakande
 ms.author: marcozo
 author: eisber
 ms.topic: how-to
@@ -11,11 +11,19 @@ ms.search.form: Read write powerbi
 
 # How to read and write data from and to Power BI Datasets
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Learn how to read data, metadata and calculate measure in Power BI datasets in the Data Science workload.
 
-## Read using Python
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
+- Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
+- Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
+- [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+
+
+## Read data using Python
 
 The Python API can retrieve metadata, data and execute queries from Power BI datasets located in a workspace. The workspace used to access Power BI datasets defaults to
 
@@ -143,7 +151,7 @@ The read access APIs have the following limitations:
   - [CONTAINS](https://spark.apache.org/docs/3.3.0/api/sql/#contains).
 - Spark session must be restarted to make new Power BI datasets accessible in Spark SQL.
 
-## How to write data consumable by Power BI Datasets
+## Write data consumable by Power BI Datasets
 
 Spark tables added to a Lakehouse are automatically added to corresponding default Power BI dataset.
 This example demonstrates how to convert a Pandas dataframe to a Spark dataframe and write it to the attached Lakehouse.
@@ -158,3 +166,19 @@ df_spark.write.format("delta").saveAsTable("ForecastTable")
 ```
 
 Using Power BI the table *ForecastTable* can be added to a composite dataset using the Lakehouse dataset.
+
+<!-- 5. Next steps ------------------------------------------------------------------------
+
+Required: Provide at least one next step and no more than three. Include some context so the 
+customer can determine why they would click the link.
+Add a context sentence for the following links.
+
+-->
+
+## Next steps
+TODO: Add your next step link(s)
+
+<!--
+Remove all the comments in this template before you sign-off or merge to the main branch.
+
+-->
