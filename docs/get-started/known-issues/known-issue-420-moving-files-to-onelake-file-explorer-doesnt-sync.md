@@ -10,7 +10,7 @@ ms.custom: known-issue-420
 
 # Known issue - Moving files from outside of OneLake to OneLake with file explorer doesn't sync files
 
-​Moving a folder (cut and paste or drag and drop) using OneLake file explorer from a location outside of OneLake to OneLake fails to sync the contents in that folder. The contents move to the OneLake directory locally, but only the top-level folder syncs to OneLake. You must trigger a sync by either opening the files and saving them or moving them back out of OneLake and then copying and pasting (versus moving).
+Within OneLake file explorer, moving a folder (cut and paste or drag and drop) from outside of OneLake into OneLake fails to sync the contents in that folder. The contents move locally, but only the top-level folder syncs to OneLake. You must trigger a sync by either opening the files and saving them or moving them back out of OneLake and then copying and pasting (versus moving).
 
 **APPLIES TO:** ✔️ OneLake
 
