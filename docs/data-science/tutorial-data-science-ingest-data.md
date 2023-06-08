@@ -11,7 +11,7 @@ ms.date: 5/4/2023
 
 # Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark
 
-In this tutorial, we ingest the NYC Taxi & Limousine Commission - yellow taxi trip dataset to demonstrate data ingestion into Fabric lakehouses in delta lake format.
+In this tutorial, we ingest the [NYC Taxi & Limousine Commission - yellow taxi trip dataset](/azure/open-datasets/dataset-taxi-yellow) to demonstrate data ingestion into Fabric lakehouses in delta lake format.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

@@ -95,7 +95,7 @@ The python commands/script used in each step of this tutorial can be found in th
    print(f"Spark dataframe saved to delta table: {table_name}")
    ```
 
-The cleansed and prepared data produced In this tutorial is now available in the lakehouse as a delta table and can be used for further processing and generating insights.
+The cleansed and prepared data produced in this tutorial is now available in the lakehouse as a delta table and can be used for further processing and generating insights.
 
 ## Next steps
 
