@@ -1,5 +1,5 @@
 ---
-title: Known issue - **Get Tenant Settings** API returns default values instead of user configured values
+title: Known issue - 'Get Tenant Settings' API returns default values instead of user configured values
 description: A known issue is posted where **Get Tenant Settings** API returns default values instead of user configured values
 author: mihart
 ms.author: mihart
@@ -8,7 +8,7 @@ ms.date: 06/08/2023
 ms.custom: known-issue-421
 ---
 
-# Known issue - **Get Tenant Settings** API returns default values instead of user configured values
+# Known issue - Get Tenant Settings' API returns default values instead of user configured values
 
 ​When users call the admin API to retrieve tenant settings, it currently returns default values instead of the user-configured values and security groups. This issue is limited to the API and doesn't affect the functionality of the tenant settings page in the admin portal.
 

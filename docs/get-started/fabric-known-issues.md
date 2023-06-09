@@ -20,7 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issue publish date |  
 |-----------|-------------------------|----------------------------------|---------------------|
-|  421  | Administration & Management | [**Get Tenant Settings** API returns default values instead of user configured values](known-issues/known-issue-421-get-tenant-settings-api-returns-default-values.md)    |  June 8, 2023  |
+|  421  | Administration & Management | ['Get Tenant Settings' API returns default values instead of user configured values](known-issues/known-issue-421-get-tenant-settings-api-returns-default-values.md)    |  June 8, 2023  |
 |  420  | Administration & Management | [Moving files from outside of OneLake to OneLake with file explorer does not sync files](known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md)    |  June 8, 2023  |
 
 ## Recently closed known issues
