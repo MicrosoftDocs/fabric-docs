@@ -1,6 +1,6 @@
 ---
 title: How to use LightGBM with SynapseML in Microsoft Fabric
-description: Build a LightGBM model with SynapseML in Microsoft Fabric.
+description: Build LightGBM classification, regression, and ranking models with SynapseML in Microsoft Fabric.
 ms.topic: how-to
 ms.custom: build-2023
 ms.reviewer: mopeakande
@@ -9,130 +9,78 @@ ms.author: jessiwang
 ms.date: 05/08/2023
 ---
 
-
-
 # How to use LightGBM models with SynapseML in Microsoft Fabric
-TODO: Add your heading
 
-<!-- 2. Introductory paragraph ----------------------------------------------------------
-
-Required: Lead with a light intro that describes, in customer-friendly language, what the 
-customer will do. Answer the fundamental "why would I want to do this?" question. Keep it 
-short.
-Readers should have a clear idea of what they will do in this article after reading the 
-introduction.
-
--->
-
-LightGBM framework specializes in creating high-quality and GPU enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, you'll see how LigtGBM can be used for building classification, regression, and ranking models. In particular, we'll use the following:
-- **LightGBMClassifier** to build a classification models. For example, to predict whether a company bankrupts or not, we could build a binary classification model with LightGBMClassifier.
-- LightGBMRegressor: used for building regression models. For example, to predict the house price, we could build a regression model with LightGBMRegressor.
-- LightGBMRanker: used for building ranking models. For example, to predict website searching result relevance, we could build a ranking model with LightGBMRanker.
-
-
-
-# LightGBM
-
-[LightGBM](https://github.com/Microsoft/LightGBM) is an open-source,
-distributed, high-performance gradient boosting (GBDT, GBRT, GBM, or
-MART) framework. This framework specializes in creating high-quality and
-GPU enabled decision tree algorithms for ranking, classification, and
-many other machine learning tasks. LightGBM is part of Microsoft's
-[DMTK](https://github.com/microsoft/dmtk) project.
-
-### Advantages of LightGBM
-
--   **Composability**: LightGBM models can be incorporated into existing
-    SparkML Pipelines, and used for batch, streaming, and serving
-    workloads.
--   **Performance**: LightGBM on Spark is 10-30% faster than SparkML on
-    the Higgs dataset, and achieves a 15% increase in AUC.  [Parallel
-    experiments](https://github.com/Microsoft/LightGBM/blob/master/docs/Experiments.rst#parallel-experiment)
-    have verified that LightGBM can achieve a linear speed-up by using
-    multiple machines for training in specific settings.
--   **Functionality**: LightGBM offers a wide array of [tunable
-    parameters](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst),
-    that one can use to customize their decision tree system. LightGBM on
-    Spark also supports new types of problems such as quantile regression.
--   **Cross platform** LightGBM on Spark is available on Spark, PySpark, and SparklyR
-
-<!-- ### LightGBM Usage: -->
-
-<!-- - LightGBMClassifier: used for building classification models. For example, to predict whether a company bankrupts or not, we could build a binary classification model with LightGBMClassifier.
-- LightGBMRegressor: used for building regression models. For example, to predict the house price, we could build a regression model with LightGBMRegressor.
-- LightGBMRanker: used for building ranking models. For example, to predict website searching result relevance, we could build a ranking model with LightGBMRanker. -->
+The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in creating high-quality and GPU-enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, we'll use LightGBM to build classification, regression, and ranking models.
 
 ## Prerequisites
 
-* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-## Bankruptcy Prediction with LightGBM Classifier
+* Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
+* Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
-In this example, we use LightGBM to build a classification model in order to predict bankruptcy.
+## Use `LightGBMClassifier` to train a classification model
 
-#### Read dataset
+In this section, we use LightGBM to build a classification model for predicting bankruptcy.
 
+### Prepare the data
 
-```python
-from pyspark.sql import SparkSession
+1. Read the dataset.
 
-# Bootstrap Spark Session
-spark = SparkSession.builder.getOrCreate()
+    ```python
+    from pyspark.sql import SparkSession
+    
+    # Bootstrap Spark Session
+    spark = SparkSession.builder.getOrCreate()
+    
+    from synapse.ml.core.platform import *
+    ```
 
-from synapse.ml.core.platform import *
-
-
-```
-
-
-```python
-df = (
-    spark.read.format("csv")
-    .option("header", True)
-    .option("inferSchema", True)
-    .load(
-        "wasbs://publicwasb@mmlspark.blob.core.windows.net/company_bankruptcy_prediction_data.csv"
+    ```python
+    df = (
+        spark.read.format("csv")
+        .option("header", True)
+        .option("inferSchema", True)
+        .load(
+            "wasbs://publicwasb@mmlspark.blob.core.windows.net/company_bankruptcy_prediction_data.csv"
+        )
     )
-)
-# print dataset size
-print("records read: " + str(df.count()))
-print("Schema: ")
-df.printSchema()
-```
+    # print dataset size
+    print("records read: " + str(df.count()))
+    print("Schema: ")
+    df.printSchema()
+    ```
 
+    ```python
+    display(df)
+    ```
 
-```python
-display(df)
-```
+1. Split the dataset into train and test sets.
 
-#### Split the dataset into train and test
+    ```python
+    train, test = df.randomSplit([0.85, 0.15], seed=1)
+    ```
 
+1. Add a featurizer to convert features into a vector.
 
-```python
-train, test = df.randomSplit([0.85, 0.15], seed=1)
-```
+    ```python
+    from pyspark.ml.feature import VectorAssembler
+    
+    feature_cols = df.columns[1:]
+    featurizer = VectorAssembler(inputCols=feature_cols, outputCol="features")
+    train_data = featurizer.transform(train)["Bankrupt?", "features"]
+    test_data = featurizer.transform(test)["Bankrupt?", "features"]
+    ```
 
-#### Add featurizer to convert features to vector
+1. Check if the data is unbalanced.
 
+    ```python
+    display(train_data.groupBy("Bankrupt?").count())
+    ```
 
-```python
-from pyspark.ml.feature import VectorAssembler
-
-feature_cols = df.columns[1:]
-featurizer = VectorAssembler(inputCols=feature_cols, outputCol="features")
-train_data = featurizer.transform(train)["Bankrupt?", "features"]
-test_data = featurizer.transform(test)["Bankrupt?", "features"]
-```
-
-#### Check if the data is unbalanced
-
-
-```python
-display(train_data.groupBy("Bankrupt?").count())
-```
-
-#### Model Training
-
+### Train the model using LightGBMClassifier
 
 ```python
 from synapse.ml.lightgbm import LightGBMClassifier
@@ -142,13 +90,11 @@ model = LightGBMClassifier(
 )
 ```
 
-
 ```python
 model = model.fit(train_data)
 ```
 
-#### Feature Importances Visualization
-
+### Visualize feature importance
 
 ```python
 import pandas as pd
@@ -176,14 +122,12 @@ plt.ylabel("features")
 plt.show()
 ```
 
-#### Model Prediction
-
+### Generate predictions with the model
 
 ```python
 predictions = model.transform(test_data)
 predictions.limit(10).toPandas()
 ```
-
 
 ```python
 from synapse.ml.train import ComputeModelStatistics
@@ -196,37 +140,35 @@ metrics = ComputeModelStatistics(
 display(metrics)
 ```
 
-## Quantile Regression for Drug Discovery with LightGBMRegressor
+## Use `LightGBMRegressor` to train a quantile regression model
 
-In this example, we show how to use LightGBM to build a regression model.
+In this section, we use LightGBM to build a regression model for drug discovery.
 
-#### Read dataset
+### Prepare the data
 
+1. Read the dataset.
 
-```python
-triazines = spark.read.format("libsvm").load(
-    "wasbs://publicwasb@mmlspark.blob.core.windows.net/triazines.scale.svmlight"
-)
-```
+    ```python
+    triazines = spark.read.format("libsvm").load(
+        "wasbs://publicwasb@mmlspark.blob.core.windows.net/triazines.scale.svmlight"
+    )
+    ```
 
+    ```python
+    # print some basic info
+    print("records read: " + str(triazines.count()))
+    print("Schema: ")
+    triazines.printSchema()
+    display(triazines.limit(10))
+    ```
 
-```python
-# print some basic info
-print("records read: " + str(triazines.count()))
-print("Schema: ")
-triazines.printSchema()
-display(triazines.limit(10))
-```
+1. Split the dataset into train and test sets.
 
-#### Split dataset into train and test
+    ```python
+    train, test = triazines.randomSplit([0.85, 0.15], seed=1)
+    ```
 
-
-```python
-train, test = triazines.randomSplit([0.85, 0.15], seed=1)
-```
-
-#### Model Training
-
+### Train the model
 
 ```python
 from synapse.ml.lightgbm import LightGBMRegressor
@@ -236,19 +178,16 @@ model = LightGBMRegressor(
 ).fit(train)
 ```
 
-
 ```python
 print(model.getFeatureImportances())
 ```
 
-#### Model Prediction
-
+### Generate predictions with the model
 
 ```python
 scoredData = model.transform(test)
 display(scoredData)
 ```
-
 
 ```python
 from synapse.ml.train import ComputeModelStatistics
@@ -259,71 +198,62 @@ metrics = ComputeModelStatistics(
 display(metrics)
 ```
 
-## LightGBM Ranker
+## Use `LightGBMRanker` to train a ranking model
 
-#### Read dataset
+In this section, we use LightGBM to build a model for ranking ...
 
+1. Read the dataset.
 
-```python
-df = spark.read.format("parquet").load(
-    "wasbs://publicwasb@mmlspark.blob.core.windows.net/lightGBMRanker_train.parquet"
-)
-# print some basic info
-print("records read: " + str(df.count()))
-print("Schema: ")
-df.printSchema()
-display(df.limit(10))
-```
+    ```python
+    df = spark.read.format("parquet").load(
+        "wasbs://publicwasb@mmlspark.blob.core.windows.net/lightGBMRanker_train.parquet"
+    )
+    # print some basic info
+    print("records read: " + str(df.count()))
+    print("Schema: ")
+    df.printSchema()
+    display(df.limit(10))
+    ```
 
-#### Model Training
+1. Train the ranking model.
 
+    ```python
+    from synapse.ml.lightgbm import LightGBMRanker
+    
+    features_col = "features"
+    query_col = "query"
+    label_col = "labels"
+    lgbm_ranker = LightGBMRanker(
+        labelCol=label_col,
+        featuresCol=features_col,
+        groupCol=query_col,
+        predictionCol="preds",
+        leafPredictionCol="leafPreds",
+        featuresShapCol="importances",
+        repartitionByGroupingColumn=True,
+        numLeaves=32,
+        numIterations=200,
+        evalAt=[1, 3, 5],
+        metric="ndcg",
+    )
+    ```
 
-```python
-from synapse.ml.lightgbm import LightGBMRanker
+    ```python
+    lgbm_ranker_model = lgbm_ranker.fit(df)
+    ```
 
-features_col = "features"
-query_col = "query"
-label_col = "labels"
-lgbm_ranker = LightGBMRanker(
-    labelCol=label_col,
-    featuresCol=features_col,
-    groupCol=query_col,
-    predictionCol="preds",
-    leafPredictionCol="leafPreds",
-    featuresShapCol="importances",
-    repartitionByGroupingColumn=True,
-    numLeaves=32,
-    numIterations=200,
-    evalAt=[1, 3, 5],
-    metric="ndcg",
-)
-```
+1. Generate predictions with the model.
 
+    ```python
+    dt = spark.read.format("parquet").load(
+        "wasbs://publicwasb@mmlspark.blob.core.windows.net/lightGBMRanker_test.parquet"
+    )
+    predictions = lgbm_ranker_model.transform(dt)
+    predictions.limit(10).toPandas()
+    ```
 
-```python
-lgbm_ranker_model = lgbm_ranker.fit(df)
-```
-
-#### Model Prediction
-
-
-```python
-dt = spark.read.format("parquet").load(
-    "wasbs://publicwasb@mmlspark.blob.core.windows.net/lightGBMRanker_test.parquet"
-)
-predictions = lgbm_ranker_model.transform(dt)
-predictions.limit(10).toPandas()
-```
 ## Next steps
 
 - [How to use Cognitive Services with SynapseML](overview-cognitive-services.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [How to use knn model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
-
-## Next steps
-TODO: Add your next step link(s)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
-
--->
