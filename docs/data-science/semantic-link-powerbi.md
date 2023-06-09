@@ -13,9 +13,9 @@ ms.search.form: Semantic Link
 
 PowerBI connectivity is at the core of Semantic Link.
 
-PowerBI datasets usually represent the gold stage of data and are the result of upstream data refinement and validation.
+PowerBI datasets usually represent the gold stage of data and are the result of upstream data processing and refinement.
 These datasets are used to drive business decisions through Power BI reports and therefore receive special attention.
-Furthermore, business analyst encode business logical into Power BI measure.
+Furthermore, business analyst encode their domain knowledge and business logic into Power BI measures.
 Data scientists on the other hand operate on the same data, but not in the same environment or language and therefore had to duplicate the business logic, leading to critical errors.
 
 Microsoft Fabric and Semantic Link bridge this critical gap between business analysts and data scientist, enabling seemless collaboration and reduce data mismatch.
