@@ -1,6 +1,6 @@
 ---
-title: Semantic Link: Introduction
-description: Overview of Semantic Link.
+title: Semantic Propagation
+description: Overview of semantic metadata propagation.
 ms.reviewer: mopeakande
 ms.author: marcozo
 author: eisber
