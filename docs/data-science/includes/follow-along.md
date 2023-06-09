@@ -11,4 +11,4 @@ If you'd like to open the accompanying notebook for this tutorial, follow the in
 
 Or, [create a new notebook](../how-to-use-notebook.md#create-notebooks) if you'd rather copy/paste the code from this page.
 
-Be sure to [attach a lakehouse to the notebook](../tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing 
+Be sure to [attach a lakehouse to the notebook](../tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before you start running code. 
