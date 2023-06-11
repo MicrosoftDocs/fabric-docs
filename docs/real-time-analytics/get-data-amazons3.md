@@ -27,8 +27,9 @@ In this article, you learn how to get data from Amazon S3. Amazon S3 is an objec
 1. Enter a name for your table. By default, **New table** is selected.
 
 :::image type="content" source="media/get-data-amazons3/source-tab.png" alt-text="Screenshot of the source tab in the Ingest data window showing the source type and link. The source link is highlighted.":::
-    > [!NOTE]
-    > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
+
+  > [!NOTE]
+  > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
 1. Select **Next: Source**.
 
