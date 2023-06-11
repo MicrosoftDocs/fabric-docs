@@ -88,7 +88,7 @@ The partial data preview is automatically inferred based on your data. You can c
 
 ### Complete data ingestion
 
-In the **Data ingestion completed** window, all three steps will be marked with green check marks when data ingestion finishes successfully.
+In the **Data ingestion completed** window, all three steps are marked with green check marks when data ingestion finishes successfully.
 
 ## Next steps
 
