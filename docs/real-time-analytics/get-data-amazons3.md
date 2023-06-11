@@ -13,7 +13,9 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this article, you learn how to get data from Amazon S3. Amazon S3 is an object storage service built to store and retrieve data. For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html).
+In this article, you learn how to get data from Amazon S3. Amazon S3 is an object storage service built to store and retrieve data.
+
+For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html).
 
 ## Prerequisites
 
@@ -38,7 +40,7 @@ In this article, you learn how to get data from Amazon S3. Amazon S3 is an objec
 1. In the **Link to source** field, paste the connection string of your bucket in the following format.
 
     | Storage| Scheme| URI template|
-    |----| ----| ----|
+    |----------| ----------| ----------|
     |Amazon S3| `https://`| `httpsL//`*BucketName*`.s3.`*RegionName*`.amazonaws.com/`*ObjectName*`;AwsCredentials=`*AwsAccessID*`,`*AwsSecretKey*
 
 1. Select **Next: Schema** to view and edit your table column configuration.
