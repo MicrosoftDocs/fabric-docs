@@ -33,7 +33,7 @@ In this tutorial, we use the Microsoft Fabric DirectLake feature, which enables 
 
 1. On the left, select **OneLake data hub**.
 
-1. Select the lakehouse that you used as part of the previous previous parts of the tutorial series.
+1. Select the lakehouse that you used as part of the previous parts of the tutorial series.
 
 1. On the top right, select Open.
 
