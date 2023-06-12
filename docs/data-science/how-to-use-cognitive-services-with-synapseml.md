@@ -1,5 +1,5 @@
 ---
-title: How to use Cognitive Services with SynapseML in Microsoft Fabric
+title: Use Cognitive Services with SynapseML in Microsoft Fabric
 description: Enrich your data with artificial intelligence (AI) in Azure Synapse Analytics using pretrained models from Azure Cognitive Services.
 ms.topic: how-to
 ms.custom: build-2023
@@ -9,20 +9,22 @@ ms.author: jessiwang
 ms.date: 05/08/2023
 ---
 
-# How to use Cognitive Services with SynapseML in Microsoft Fabric
+# Use Cognitive Services with SynapseML in Microsoft Fabric
 
-
-[Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) are a suite of APIs, SDKs, and services available to help developers build intelligent applications without having direct AI or data science skills or knowledge by enabling developers to easily add cognitive features into their applications. The goal of Azure Cognitive Services is to help developers create applications that can see, hear, speak, understand, and even begin to reason. The catalog of services within Azure Cognitive Services can be categorized into five main pillars - Vision, Speech, Language, Web Search, and Decision.
+[Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. In this article, you'll use the various services available in Azure Cognitive Services to perform tasks that include: text analytics, translation, form recognition, computer vision, image search, speech-to-text and text-to-speech conversion, anomaly detection, and data extraction from arbitrary web APIs.
 
 ## Prerequisites
 
-* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
-* Cognitive Services Key. To obtain a Cognitive Services key, follow the [Quickstart](/azure/cognitive-services/cognitive-services-apis-create-account).
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-## Shared code
+* Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
+* Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
+* Obtain an Azure Cognitive Services key by following the [Create a Cognitive Services resource using the Azure portal](/azure/cognitive-services/cognitive-services-apis-create-account) quickstart.
 
-To get started, we'll need to add this code to the project:
+## Prepare your system
 
+To begin, import required libraries and initialize your Spark session.
 
 ```python
 from pyspark.sql.functions import udf, col
@@ -34,6 +36,7 @@ from pyspark.sql.functions import col
 import os
 ```
 
+Import SynapseML libraries and initialize your Spark session.
 
 ```python
 from pyspark.sql import SparkSession
@@ -41,10 +44,9 @@ from synapse.ml.core.platform import *
 
 # Bootstrap Spark Session
 spark = SparkSession.builder.getOrCreate()
-
-
 ```
 
+Import Cognitive Services libraries and replace the keys in the following code snippet with your cognitive services key.
 
 ```python
 from synapse.ml.cognitive import *
@@ -68,10 +70,11 @@ translator_loc = "eastus"
 search_key = find_secret("azure-search-key") # Replace it with your cognitive service key, check prerequisites for more details
 ```
 
-## Text Analytics sample
+## Perform sentiment analysis on text
 
-The [Text Analytics](https://azure.microsoft.com/services/cognitive-services/text-analytics/) service provides several algorithms for extracting intelligent insights from text. For example, we can find the sentiment of given input text. The service will return a score between 0.0 and 1.0 where low scores indicate negative sentiment and high score indicates positive sentiment.  This sample uses three simple sentences and returns the sentiment for each.
+The [Text Analytics](https://azure.microsoft.com/services/cognitive-services/text-analytics/) service provides several algorithms for extracting intelligent insights from text. For example, we can use the service to find the sentiment of some input text. The service will return a score between 0.0 and 1.0, where low scores indicate negative sentiment and high scores indicate positive sentiment.
 
+The following code sample returns the sentiment for three simple sentences.
 
 ```python
 # Create a dataframe that's tied to it's column names
@@ -103,10 +106,11 @@ display(
 )
 ```
 
-## Text Analytics for Health Sample
+## Perform text analytics for health data
 
 The [Text Analytics for Health Service](/azure/cognitive-services/language-service/text-analytics-for-health/overview?tabs=ner) extracts and labels relevant medical information from unstructured texts such as doctor's notes, discharge summaries, clinical documents, and electronic health records.
 
+The following code sample analyzes and transforms text from doctors notes into structured data.
 
 ```python
 df = spark.createDataFrame(
@@ -129,8 +133,10 @@ healthcare = (
 display(healthcare.transform(df))
 ```
 
-## Translator sample
-[Translator](https://azure.microsoft.com/services/cognitive-services/translator/) is a cloud-based machine translation service and is part of the Azure Cognitive Services family of cognitive APIs used to build intelligent apps. Translator is easy to integrate in your applications, websites, tools, and solutions. It allows you to add multi-language user experiences in 90 languages and dialects and can be used for text translation with any operating system. In this sample, we do a simple text translation by providing the sentences you want to translate and target languages you want to translate to.
+## Translate text into a different language
+[Translator](https://azure.microsoft.com/services/cognitive-services/translator/) is a cloud-based machine translation service and is part of the Azure Cognitive Services family of cognitive APIs used to build intelligent apps. Translator is easy to integrate in your applications, websites, tools, and solutions. It allows you to add multi-language user experiences in 90 languages and dialects and can be used for text translation with any operating system.
+
+The following code sample does a simple text translation by providing the sentences you want to translate and target languages you want to translate them to.
 
 
 ```python
@@ -163,9 +169,10 @@ display(
 )
 ```
 
-## Form Recognizer sample
-[Form Recognizer](https://azure.microsoft.com/services/form-recognizer/) is a part of Azure Applied AI Services that lets you build automated data processing software using machine learning technology. Identify and extract text, key/value pairs, selection marks, tables, and structure from your documents. The service outputs structured data that includes the relationships in the original file, bounding boxes, confidence and more. In this sample, we analyze a business card image and extract its information into structured data.
+## Extract information from a document into structured data
+[Form Recognizer](https://azure.microsoft.com/services/form-recognizer/) is a part of Azure Applied AI Services that lets you build automated data processing software using machine learning technology. Identify and extract text, key/value pairs, selection marks, tables, and structure from your documents. The service outputs structured data that includes the relationships in the original file, bounding boxes, confidence and more.
 
+The following code sample analyzes a business card image and extracts its information into structured data.
 
 ```python
 from pyspark.sql.functions import col, explode
@@ -201,10 +208,11 @@ display(
 )
 ```
 
-## Computer Vision sample
+## Analyze and tag images
 
-[Computer Vision](https://azure.microsoft.com/services/cognitive-services/computer-vision/) analyzes images to identify structure such as faces, objects, and natural-language descriptions. In this sample, we tag a list of images. Tags are one-word descriptions of things in the image like recognizable objects, people, scenery, and actions.
+[Computer Vision](https://azure.microsoft.com/services/cognitive-services/computer-vision/) analyzes images to identify structure such as faces, objects, and natural-language descriptions.
 
+The following code sample analyzes images and labels them with *tags*. Tags are one-word descriptions of things in the image, such as recognizable objects, people, scenery, and actions.
 
 ```python
 # Create a dataframe with the image URLs
@@ -237,10 +245,9 @@ analysis = (
 display(analysis.transform(df).select("image", "analysis_results.description.tags"))
 ```
 
-## Bing Image Search sample
+## Search for images that are related to a natural language query
 
-[Bing Image Search](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) searches the web to retrieve images related to a user's natural language query. In this sample, we use a text query that looks for images with quotes. It returns a list of image URLs that contain photos related to our query.
-
+[Bing Image Search](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) searches the web to retrieve images related to a user's natural language query. The following code sample uses a text query that looks for images with quotes. The output of the code is a list of image URLs that contain photos related to the query.
 
 ```python
 # Number of images Bing will return per query
@@ -273,9 +280,8 @@ pipeline = PipelineModel(stages=[bingSearch, getUrls])
 display(pipeline.transform(bingParameters))
 ```
 
-## Speech-to-Text sample
-The [Speech-to-text](https://azure.microsoft.com/services/cognitive-services/speech-services/) service converts streams or files of spoken audio to text. In this sample, we transcribe one audio file.
-
+## Transform speech to text
+The [Speech-to-text](https://azure.microsoft.com/services/cognitive-services/speech-services/) service converts streams or files of spoken audio to text. In the following code sample, we transcribe one audio file.
 
 ```python
 # Create a dataframe with our audio URLs, tied to the column called "url"
@@ -298,9 +304,10 @@ speech_to_text = (
 display(speech_to_text.transform(df).select("url", "text.DisplayText"))
 ```
 
-## Text-to-Speech sample
+## Transform text to speech
 [Text to speech](https://azure.microsoft.com/services/cognitive-services/text-to-speech/#overview) is a service that allows one to build apps and services that speak naturally, choosing from more than 270 neural voices across 119 languages and variants.
 
+The following code sample transforms text into an audio file that contains the content of the text.
 
 ```python
 from synapse.ml.cognitive import TextToSpeech
@@ -335,10 +342,9 @@ tts = (
 display(tts.transform(df))
 ```
 
-## Anomaly Detector sample
+## Detect anomalies in time series data
 
-[Anomaly Detector](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/) is great for detecting irregularities in your time series data. In this sample, we use the service to find anomalies in the entire time series.
-
+[Anomaly Detector](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/) is great for detecting irregularities in your time series data. The following code sample uses the service to find anomalies in entire time series data.
 
 ```python
 # Create a dataframe with the point data that Anomaly Detector requires
@@ -381,10 +387,9 @@ display(
 )
 ```
 
-## Arbitrary web APIs
+## Get information from arbitrary web APIs
 
-With HTTP on Spark, any web service can be used in your big data pipeline. In this example, we use the [World Bank API](http://api.worldbank.org/v2/country/) to get information about various countries around the world.
-
+With HTTP on Spark, any web service can be used in your big data pipeline. The following code sample uses the [World Bank API](http://api.worldbank.org/v2/country/) to get information about various countries around the world.
 
 ```python
 # Use any requests from the python requests library
@@ -423,5 +428,5 @@ display(
 ## Next steps
 
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
-- [How to use knn model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
+- [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
 - [How to use ONNX with SynapseML - Deep Learning](onnx-overview.md)

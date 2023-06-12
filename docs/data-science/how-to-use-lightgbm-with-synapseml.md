@@ -25,8 +25,6 @@ The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in c
 
 In this section, we use LightGBM to build a classification model for predicting bankruptcy.
 
-### Prepare the data
-
 1. Read the dataset.
 
     ```python
@@ -63,7 +61,7 @@ In this section, we use LightGBM to build a classification model for predicting 
     train, test = df.randomSplit([0.85, 0.15], seed=1)
     ```
 
-1. Add a featurizer to convert features into a vector.
+1. Add a featurizer to convert features into vectors.
 
     ```python
     from pyspark.ml.feature import VectorAssembler
@@ -80,71 +78,69 @@ In this section, we use LightGBM to build a classification model for predicting 
     display(train_data.groupBy("Bankrupt?").count())
     ```
 
-### Train the model using LightGBMClassifier
+1. Train the model using `LightGBMClassifier`.
 
-```python
-from synapse.ml.lightgbm import LightGBMClassifier
+    ```python
+    from synapse.ml.lightgbm import LightGBMClassifier
+    
+    model = LightGBMClassifier(
+        objective="binary", featuresCol="features", labelCol="Bankrupt?", isUnbalance=True
+    )
+    ```
 
-model = LightGBMClassifier(
-    objective="binary", featuresCol="features", labelCol="Bankrupt?", isUnbalance=True
-)
-```
+    ```python
+    model = model.fit(train_data)
+    ```
 
-```python
-model = model.fit(train_data)
-```
+1. Visualize feature importance
 
-### Visualize feature importance
+    ```python
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    
+    feature_importances = model.getFeatureImportances()
+    fi = pd.Series(feature_importances, index=feature_cols)
+    fi = fi.sort_values(ascending=True)
+    f_index = fi.index
+    f_values = fi.values
+    
+    # print feature importances
+    print("f_index:", f_index)
+    print("f_values:", f_values)
+    
+    # plot
+    x_index = list(range(len(fi)))
+    x_index = [x / len(fi) for x in x_index]
+    plt.rcParams["figure.figsize"] = (20, 20)
+    plt.barh(
+        x_index, f_values, height=0.028, align="center", color="tan", tick_label=f_index
+    )
+    plt.xlabel("importances")
+    plt.ylabel("features")
+    plt.show()
+    ```
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
+1. Generate predictions with the model
 
-feature_importances = model.getFeatureImportances()
-fi = pd.Series(feature_importances, index=feature_cols)
-fi = fi.sort_values(ascending=True)
-f_index = fi.index
-f_values = fi.values
+    ```python
+    predictions = model.transform(test_data)
+    predictions.limit(10).toPandas()
+    ```
 
-# print feature importances
-print("f_index:", f_index)
-print("f_values:", f_values)
-
-# plot
-x_index = list(range(len(fi)))
-x_index = [x / len(fi) for x in x_index]
-plt.rcParams["figure.figsize"] = (20, 20)
-plt.barh(
-    x_index, f_values, height=0.028, align="center", color="tan", tick_label=f_index
-)
-plt.xlabel("importances")
-plt.ylabel("features")
-plt.show()
-```
-
-### Generate predictions with the model
-
-```python
-predictions = model.transform(test_data)
-predictions.limit(10).toPandas()
-```
-
-```python
-from synapse.ml.train import ComputeModelStatistics
-
-metrics = ComputeModelStatistics(
-    evaluationMetric="classification",
-    labelCol="Bankrupt?",
-    scoredLabelsCol="prediction",
-).transform(predictions)
-display(metrics)
-```
+    ```python
+    from synapse.ml.train import ComputeModelStatistics
+    
+    metrics = ComputeModelStatistics(
+        evaluationMetric="classification",
+        labelCol="Bankrupt?",
+        scoredLabelsCol="prediction",
+    ).transform(predictions)
+    display(metrics)
+    ```
 
 ## Use `LightGBMRegressor` to train a quantile regression model
 
 In this section, we use LightGBM to build a regression model for drug discovery.
-
-### Prepare the data
 
 1. Read the dataset.
 
@@ -168,35 +164,35 @@ In this section, we use LightGBM to build a regression model for drug discovery.
     train, test = triazines.randomSplit([0.85, 0.15], seed=1)
     ```
 
-### Train the model
+1. Train the model using `LightGBMRegressor`.
 
-```python
-from synapse.ml.lightgbm import LightGBMRegressor
+    ```python
+    from synapse.ml.lightgbm import LightGBMRegressor
+    
+    model = LightGBMRegressor(
+        objective="quantile", alpha=0.2, learningRate=0.3, numLeaves=31
+    ).fit(train)
+    ```
 
-model = LightGBMRegressor(
-    objective="quantile", alpha=0.2, learningRate=0.3, numLeaves=31
-).fit(train)
-```
+    ```python
+    print(model.getFeatureImportances())
+    ```
 
-```python
-print(model.getFeatureImportances())
-```
+1. Generate predictions with the model
 
-### Generate predictions with the model
+    ```python
+    scoredData = model.transform(test)
+    display(scoredData)
+    ```
 
-```python
-scoredData = model.transform(test)
-display(scoredData)
-```
-
-```python
-from synapse.ml.train import ComputeModelStatistics
-
-metrics = ComputeModelStatistics(
-    evaluationMetric="regression", labelCol="label", scoresCol="prediction"
-).transform(scoredData)
-display(metrics)
-```
+    ```python
+    from synapse.ml.train import ComputeModelStatistics
+    
+    metrics = ComputeModelStatistics(
+        evaluationMetric="regression", labelCol="label", scoresCol="prediction"
+    ).transform(scoredData)
+    display(metrics)
+    ```
 
 ## Use `LightGBMRanker` to train a ranking model
 
@@ -215,7 +211,7 @@ In this section, we use LightGBM to build a model for ranking ...
     display(df.limit(10))
     ```
 
-1. Train the ranking model.
+1. Train the ranking model using `LightGBMRanker`.
 
     ```python
     from synapse.ml.lightgbm import LightGBMRanker
@@ -254,6 +250,6 @@ In this section, we use LightGBM to build a model for ranking ...
 
 ## Next steps
 
-- [How to use Cognitive Services with SynapseML](overview-cognitive-services.md)
+- [What is Cognitive Services in Azure Synapse Analytics?](overview-cognitive-services.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [How to use knn model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
