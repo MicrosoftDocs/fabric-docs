@@ -95,9 +95,9 @@ Under **Advanced**, you can specify the following fields:
 - **Write batch timeout**: The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).
 - **Disable performance metrics analytics**: The service collects metrics for copy performance optimization and recommendations. If you're concerned with this behavior, turn off this feature.
 
-#### Direct copy by using COPY statement
+#### Direct copy by using COPY command
 
-Data Warehouse COPY statement directly supports **Azure Blob Storage** and **Azure Data Lake Storage Gen2** as source data stores. If your source data meets the criteria described in this section, use COPY statement to copy directly from the source data store to Data Warehouse. 
+Data Warehouse COPY command directly supports **Azure Blob Storage** and **Azure Data Lake Storage Gen2** as source data stores. If your source data meets the criteria described in this section, use COPY command to copy directly from the source data store to Data Warehouse. 
 
 1. The source data and format contain the following types and authentication methods:
 
@@ -109,7 +109,7 @@ Data Warehouse COPY statement directly supports **Azure Blob Storage** and **Azu
 1. The following Format settings can be set:<br>
    1. For **Parquet**: **Compression type** can be **None**, **snappy**, or **gzip**.
    1. For **DelimitedText**:
-      1. **Row delimiter**: When copying delimited text to Data Warehouse via direct COPY statement, specify the row delimiter explicitly (\r; \n; or \r\n). Only when the row delimiter of the source file is \r\n, the default value (\r, \n, or \r\n) works. Otherwise, enable staging for your scenario. 
+      1. **Row delimiter**: When copying delimited text to Data Warehouse via direct COPY command, specify the row delimiter explicitly (\r; \n; or \r\n). Only when the row delimiter of the source file is \r\n, the default value (\r, \n, or \r\n) works. Otherwise, enable staging for your scenario. 
       1. **Null value** is left as default or set to **empty string ("")**.
       1. **Encoding** is left as default or set to **UTF-8** or **UTF-16**.
       1. **Skip line count** is left as default or set to 0.
@@ -118,7 +118,9 @@ Data Warehouse COPY statement directly supports **Azure Blob Storage** and **Azu
 1. If your source is a folder, you must select **Recursively** checkbox.
 1. **Start time (UTC)** and **End time (UTC)** in **Filter by last modified**, **Prefix**, **Enable partition discovery**, and **Additional columns** aren't specified.
 
-If your source data store and format isn't originally supported by a COPY statement, use the Staged copy by using the COPY statement feature instead. It automatically converts the data into a COPY statement compatible format, then calls a COPY statement to load data into Data Warehouse.
+To learn how to ingest data into your Data Warehouse using the COPY command, see this [article](../data-warehouse/ingest-data-copy).
+
+If your source data store and format isn't originally supported by a COPY command, use the Staged copy by using the COPY command feature instead. It automatically converts the data into a COPY command compatible format, then calls a COPY command to load data into Data Warehouse.
 
 ### Mapping
 
