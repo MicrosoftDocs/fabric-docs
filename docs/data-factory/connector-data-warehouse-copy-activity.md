@@ -118,7 +118,7 @@ Data Warehouse COPY command directly supports **Azure Blob Storage** and **Azure
 1. If your source is a folder, you must select **Recursively** checkbox.
 1. **Start time (UTC)** and **End time (UTC)** in **Filter by last modified**, **Prefix**, **Enable partition discovery**, and **Additional columns** aren't specified.
 
-To learn how to ingest data into your Data Warehouse using the COPY command, see this [article](../data-warehouse/ingest-data-copy).
+To learn how to ingest data into your Data Warehouse using the COPY command, see this [article](../data-warehouse/ingest-data-copy.md).
 
 If your source data store and format isn't originally supported by a COPY command, use the Staged copy by using the COPY command feature instead. It automatically converts the data into a COPY command compatible format, then calls a COPY command to load data into Data Warehouse.
 
