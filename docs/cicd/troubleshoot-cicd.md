@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/12/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -89,7 +89,7 @@ Review the links in the following table to understand the considerations and lim
 
 #### Update failure: Update doesn't complete because it would break dependency links
 
-**Description of problem**: After selecting **Update all** in the **Updates** tab, a dialog pops up indicating failure because the action would break a dependency links.
+**Description of problem**: After selecting **Update all** or **Undo**, a dialog pops up indicating failure because the action would break a dependency links.
 
 :::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when the updating would break dependencies.":::
 
