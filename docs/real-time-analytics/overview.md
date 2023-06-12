@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
+ms.date: 06/12/2023
 ms.search.form: product-kusto
 ---
 # What is Real-Time Analytics in Fabric?
@@ -49,11 +49,29 @@ If any one of these questions describes your data needs, Real-Time Analytics is 
 
 The types of industries that benefit from data analysis in Real-Time Analytics is varied. For example: finance, transportation and logistics, smart cities, smart buildings, manufacturing operations, automotive, and oil and gas.
 
+### Example scenarios
+
+* Marketing:
+
+Let's say you're a marketing specialist implementing a new campaign. You need to investigate the marketing performance and its evaluate its impact on the customer in real-time, and be able to modify your approach to optimize your campaign. Using Real-Time Analytics, you can gain insight and increase your inbound marketing accordingly in real-time.
+
+* Oil and gas:
+
+You work in the oil and gas industry. You need to oversee the drilling and pumping operations while ensuring the safety of the work environment and the stability of the operations. With Real-Time Analytics you can monitor changes.
+
+* Sales:
+
+You manage a retail company. You want to keep up with the best selling items and recent trends to relay back to the company warehouse and operations department to manage productions. You need to know how much personnel to employ, from security to store staff. Using Real-Time Analytics, you can take a look at all of this data and gain insight to increase performance and optimize your company operations.
+
+* Agriculture:
+
+You work in crop production and management.
+
 ## How to work in Real-Time Analytics?
 
 The main items available in Real-Time Analytics include:
 
-* [Eventstream](event-streams/overview.md) for capturing, transforming, and routing real-time events to various destinations with a no-code experience. 
+* [Eventstream](event-streams/overview.md) for capturing, transforming, and routing real-time events to various destinations with a no-code experience.
 * A [KQL database](create-database.md) for data storage and management. Data loaded into a KQL database can be accessed in OneLake and is exposed to other Fabric experiences.
 * A [KQL queryset](kusto-query-set.md) to run queries, view, and customize query results on data. The KQL queryset allows you to save queries for future use, export and share queries with others, and includes the option to generate a Power BI report.
 
