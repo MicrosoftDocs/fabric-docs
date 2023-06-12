@@ -249,5 +249,4 @@ In this tutorial, you have learned how to stream real-time events from your own 
 * [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
 * [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 * [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
-* [Process event data with event processor editor](./process-events-using-event-processor-editor.md)
 * [Ingest, filter, and transform real-time events and send them in Delta Lake format to Microsoft Fabric Lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
