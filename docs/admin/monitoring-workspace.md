@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 06/05/2023
+ms.date: 06/07/2023
 ---
 
 # What is the admin monitoring workspace?
@@ -23,8 +23,6 @@ To use the admin monitoring workspace, you need:
     * *Power BI administrator*
 
 * A *Pro* license
-
-* The [new workspace experience](/power-bi/admin/service-admin-portal-workspace#create-workspaces-new-workspace-experience) enabled
 
 ## Access the admin monitoring workspace
 
@@ -44,7 +42,7 @@ In the monitoring workspace, you can use the [Feature Usage and Adoption](featur
 
 ### Manage access
 
-There are several ways you can manage access to content of the admin monitoring workspace.
+There are several ways you can manage access to content of the admin monitoring workspace. If you're the admin of the workspace, you have a *member* [workspace role](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) and you can grant access to any of its items with or without share and build permissions.
 
 * **Workspace** - Learn how to to give users access to the workspace in [manage workspace](../admin/portal-workspaces.md). You can only grant other users a viewer role. Once a viewer role is provided, it can't be taken away.
 
@@ -54,7 +52,7 @@ There are several ways you can manage access to content of the admin monitoring 
 
 ### Refreshes
 
-The admin monitoring workspace is created when an admin accesses it for the first time. Only the admin that created the workspace can refresh its reports and datasets using a scheduled refresh. To schedule a refresh, the admin that created the workspace must retain the Microsoft 365 *Global administrator* or *Power BI administrator* role.
+The admin monitoring workspace is automatically refreshed once a day. The refresh takes place about 10 minutes after the admin workspace was accessed for the first time.
 
 ## Considerations and limitations
 
