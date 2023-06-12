@@ -107,11 +107,11 @@ Data Warehouse COPY statement directly supports **Azure Blob Storage** and **Azu
     |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Account key authentication<br> Shared access signature authentication |
 
 1. The following Format settings can be set:<br>
-   1. For **Parquet**: **Compression type** can **None**, **snappy**, or **gzip**.
+   1. For **Parquet**: **Compression type** can be **None**, **snappy**, or **gzip**.
    1. For **DelimitedText**:
-      1. **Row delimiter**: When copying delimited text to Data Warehouse via direct COPY command, specify the row delimiter explicitly (\r; \n; or \r\n). Only when the row delimiter of the source file is \r\n, the default value (\r, \n, or \r\n) works. Otherwise, enable staging for your scenario. 
+      1. **Row delimiter**: When copying delimited text to Data Warehouse via direct COPY statement, specify the row delimiter explicitly (\r; \n; or \r\n). Only when the row delimiter of the source file is \r\n, the default value (\r, \n, or \r\n) works. Otherwise, enable staging for your scenario. 
       1. **Null value** is left as default or set to **empty string ("")**.
-      1. **Encoding** is left as default or set to **UTF-8 or UTF-16**.
+      1. **Encoding** is left as default or set to **UTF-8** or **UTF-16**.
       1. **Skip line count** is left as default or set to 0.
       1. **Compression type** can be **None** or **gzip**.
 
