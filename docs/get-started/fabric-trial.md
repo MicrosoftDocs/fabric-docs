@@ -115,7 +115,7 @@ If you do see the **Start trial** button in your Account manager:
 
     - [Purchase a Fabric capacity from Azure](https://portal.azure.com/) by performing a search for *Microsoft Fabric*.
 
-    - Request another trial capacity user to share their trial capacity with you.
+    - Request another trial capacity user to share their trial capacity workapce with you. [Give users access to workspaces](https://learn.microsoft.com/en-us/fabric/get-started/give-access-workspaces)
 
     - To increase tenant trial capacity limits, reach out to your Power BI administrator to create a Microsoft support ticket.
 
