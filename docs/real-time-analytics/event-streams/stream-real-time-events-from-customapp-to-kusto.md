@@ -91,7 +91,7 @@ With the **event hub compatible connection string** readily available in the Cus
    For example:
    *`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
 
-   :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/connection-string-example.png" alt-text="Screenshot showing the connection string example." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/connection-string-example" :::
+   :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/connection-string-example.png" alt-text="Screenshot showing the connection string example." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/connection-string-example.png" :::
 
    * `CONNECTION STRING`: the string highlighted in yellow in above example, which is
       "*`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxx;SharedAccessKey=xxxxxxxx`*"
