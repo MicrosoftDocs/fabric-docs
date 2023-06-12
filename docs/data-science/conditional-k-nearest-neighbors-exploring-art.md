@@ -3,10 +3,10 @@ title: Conditional KNN Exploring Art Across Cultures
 description: A guideline for match-finding via k-nearest-neighbors.
 ms.topic: overview
 ms.custom: build-2023
-ms.reviewer: jessiwang
+ms.reviewer: larryfr
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/08/2023
+ms.date: 06/12/2023
 ---
 # Exploring Art across Culture and Medium with Fast, Conditional, k-Nearest Neighbors
 
@@ -18,7 +18,7 @@ This notebook serves as a guideline for match-finding via k-nearest-neighbors. W
 * Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
 ### Overview of the BallTree
-The structure functioning behind the kNN model is a BallTree, which is a recursive binary tree where each node (or "ball") contains a partition of the points of data to be queried. Building a BallTree involves assigning data points to the "ball" whose center they're closest to (with respect to a certain specified feature), resulting in a structure that allows binary-tree-like traversal and lends itself to finding k-nearest neighbors at a BallTree leaf.
+The structure functioning behind the KNN model is a BallTree, which is a recursive binary tree where each node (or "ball") contains a partition of the points of data to be queried. Building a BallTree involves assigning data points to the "ball" whose center they're closest to (with respect to a certain specified feature), resulting in a structure that allows binary-tree-like traversal and lends itself to finding k-nearest neighbors at a BallTree leaf.
 
 #### Setup
 Import necessary Python libraries and prepare dataset.
@@ -78,7 +78,7 @@ display(df.drop("Norm_Features"))
 ```
 
 #### Define categories to be queried on
-We're using two kNN models: one for culture, and one for medium.
+We're using two KNN models: one for culture, and one for medium.
 
 
 ```python
@@ -143,7 +143,7 @@ culture_cknn = (
 
 #### Define matching and visualizing methods
 
-After the initial dataset and category setup, we prepare methods that will query and visualize the conditional kNN's results. 
+After the initial dataset and category setup, we prepare methods that will query and visualize the conditional KNN's results. 
 
 `addMatches()` creates a Dataframe with a handful of matches per category.
 
