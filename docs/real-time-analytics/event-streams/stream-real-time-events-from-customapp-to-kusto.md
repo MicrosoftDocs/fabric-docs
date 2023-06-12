@@ -34,7 +34,7 @@ To get started, you must complete the following prerequisites:
 * Download and install **Node.js LTS**. The latest [long-term support (LTS) version](https://nodejs.org).
 * [Visual Studio Code](https://code.visualstudio.com) (recommended) or any other integrated development environment (IDE).
 
-## Create an Eventstream and a KQL Database items in Microsoft Fabric
+## Create an Eventstream and a KQL Database in Microsoft Fabric
 
 You can create an Eventstream item (eventstream) or a KQL Database item (KQL database) on the **Workspace** page or the **Create hub** page. Here are the steps:
 
@@ -74,14 +74,14 @@ Once the eventstream has been created, follow these steps to add a custom applic
 
    :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/custom-app-information.png" alt-text="Screenshot showing the custom app information." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/custom-app-information.png" :::
 
-The connection string displayed in the information tab is an **event hub compatible connection string** that can be utilized in your application to effortlessly send events to your eventstream. An example of what the connection string looks like is provided below:
+The connection string displayed in the information tab is an **event hub compatible connection string** that can be utilized in your application to effortlessly send events to your eventstream. An example of what the connection string looks like is provided as below:
 
-*Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx*
+*`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
 
 ## Create an application to send events to eventstream
 
 
-With the **event hub compatible connection string** readily available in the Custom App source, you can proceed to create an application that sends events to your eventstream. In this specific example, the application simulates 10 sensor devices transmitting temperature and humidity data every second.
+With the **event hub compatible connection string** readily available in the Custom App source, you can proceed to create an application that sends events to your eventstream. In this specific example, the application simulates 10 sensor devices transmitting temperature and humidity data nearly every second.
 
 1. Open your coding editor, such as [Visual Studio Code](https://code.visualstudio.com)
 2. Create a file called ***sendtoes.js***, and past the following code into it:
@@ -89,19 +89,20 @@ With the **event hub compatible connection string** readily available in the Cus
    In the code, replace the following placeholders with the real values in the **Connection string-primary key** or **Connection string-secondary key**:
 
    For example:
-   *Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx*
+   *`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
 
-   * `EVENT HUB CONNECTION STRING`:
-      "*Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxx;SharedAccessKey=xxxxxxxx*"
-   * `EVENT HUB NAME`:
-      "*es_xxxxxxxx*"
+   :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/connection-string-example.png" alt-text="Screenshot showing the connection string example." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/connection-string-example" :::
+
+   * `CONNECTION STRING`: the string highlighted in yellow in above example, which is
+      "*`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxx;SharedAccessKey=xxxxxxxx`*"
+   * `ENTITY NAME`: the string highlighted in blue after "EntityPath=" in above example, which is "*`es_xxxxxxxx`*"
 
     ```javascript
     const { EventHubProducerClient } = require("@azure/event-hubs");
     var moment = require('moment');
     
-    const connectionString = "EVENT HUB CONNECTION STRING";
-    const eventHubName = "EVENT HUB NAME";
+    const connectionString = "CONNECTION STRING";
+    const entityName = "ENTITY NAME";
     
     //Generate event data
     function getRowData(id) {
@@ -149,9 +150,9 @@ With the **event hub compatible connection string** readily available in the Cus
     });
     ```
 
-3. To run this script, you need to install the required packages. Open your PowerShell command prompt, navigate to the same folder as ***Sendtoes.js*** and execute the following commands:
+3. To run this script, you need to install the required packages. Open your PowerShell command prompt, navigate to the same folder as ***sendtoes.js*** and execute the following commands:
 
-   ```shell
+   ```Powershell
    npm install @azure/event-hubs
    npm install moment
    ```
@@ -160,21 +161,26 @@ With the **event hub compatible connection string** readily available in the Cus
 
     ```Powershell
     C:\wa>node sendtoes.js
-    2023/06/06 13:26:09 [Send events to Fabric Eventstream]: batch#0 (10 events) has been sent to eventstream
-    2023/06/06 13:26:10 [Send events to Fabric Eventstream]: batch#1 (10 events) has been sent to eventstream
-    2023/06/06 13:26:11 [Send events to Fabric Eventstream]: batch#2 (10 events) has been sent to eventstream
-    2023/06/06 13:26:13 [Send events to Fabric Eventstream]: batch#3 (10 events) has been sent to eventstream
-    2023/06/06 13:26:14 [Send events to Fabric Eventstream]: batch#4 (10 events) has been sent to eventstream
-    2023/06/06 13:26:16 [Send events to Fabric Eventstream]: All 5 batches have been sent to eventstream
+    2023/06/12 20:35:39 [Send events to Fabric Eventstream]: batch#0 (10 events) has been sent to eventstream
+    2023/06/12 20:35:41 [Send events to Fabric Eventstream]: batch#1 (10 events) has been sent to eventstream
+    2023/06/12 20:35:42 [Send events to Fabric Eventstream]: batch#2 (10 events) has been sent to eventstream
+    2023/06/12 20:35:44 [Send events to Fabric Eventstream]: batch#3 (10 events) has been sent to eventstream
+    2023/06/12 20:35:45 [Send events to Fabric Eventstream]: batch#4 (10 events) has been sent to eventstream
+    2023/06/12 20:35:47 [Send events to Fabric Eventstream]: All 5 batches have been sent to eventstream
     ```
 
 5. Go to your eventstream main editor, and select your eventstream in the middle and then **Data preview** tab in the bottom pane to view the data streamed into your eventstream.
 
    :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/eventstream-data-preview.png" alt-text="Screenshot showing the eventstream data preview." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/eventstream-data-preview.png" :::
 
+   You can also view the data metrics to confirm if the data has been streamed into this eventstream by selecting **Data insights** tab.
+
+   :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/eventstream-data-insights.png" alt-text="Screenshot showing the eventstream data insights." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/eventstream-data-insights.png" :::
+
+
 ## Add a KQL Database destination to the eventstream
 
-While the custom application is streaming events into your eventstream, you can add and configure the **KQL Database** destination to receive the events from your eventstream. Follow the steps below to add the **KQL Database** destination.
+While the custom application is streaming events into your eventstream, you can add and configure the **KQL Database** destination to receive the events from your eventstream. Follow the following steps to add the **KQL Database** destination.
 
 1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **KQL Database**.  
 
