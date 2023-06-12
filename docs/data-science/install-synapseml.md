@@ -2,10 +2,10 @@
 title: Install a different version of SynapseML on Microsoft Fabric
 description: Instruction of how to install SynapseML on Fabric
 ms.topic: overview
-ms.reviewer: jessiwang
+ms.reviewer: larryfr
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/24/2023
+ms.date: 06/12/2023
 ---
 # Install a different version of SynapseML on Fabric
 
@@ -15,7 +15,8 @@ SynapseML is preinstalled on Fabric. If you want to use another version, you can
 > Fabric notebook does not officially support %%configure for now, and there's no guarantee of service-level agreement or future compatibility with official releases.
 
 ## Install SynapseML with %%configure
-The example installs SynapseML v0.11.1 on Fabric.
+
+The following example installs SynapseML v0.11.1 on Fabric. To use the example, paste it into a code cell in a notebook and run the cell.
 
 
 ```python
@@ -35,6 +36,7 @@ The example installs SynapseML v0.11.1 on Fabric.
 
 ## Check SynapseML version
 
+To verify that the installation was successful, run the following code in a cell. The version number returned should match the version number you installed (0.11.1).
 
 ```python
 import synapse.ml.cognitive
