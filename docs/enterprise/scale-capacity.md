@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/12/2023
 ---
 
 # Scale your capacity
@@ -20,7 +20,7 @@ To scale your capacity you need:
 
 * An [F SKU capacity](buy-subscription.md#azure-skus)
 
-* To be a [Power BI administrator](../admin/microsoft-fabric-admin.md#power-platform-and-power-bi-admin-roles)
+* To be a [capacity admin](../admin/microsoft-fabric-admin#capacity-admin-roles)
 
 ## Scale a capacity
 
