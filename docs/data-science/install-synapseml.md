@@ -5,7 +5,7 @@ ms.topic: overview
 ms.reviewer: larryfr
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/24/2023
+ms.date: 06/12/2023
 ---
 # Install a different version of SynapseML on Fabric
 
