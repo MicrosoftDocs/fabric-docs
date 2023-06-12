@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom: build-2023
 ms.search.form: Develop and run notebooks
-ms.date: 05/30/2023
+ms.date: 06/12/2023
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -72,8 +72,6 @@ You can use multiple languages in a notebook by specifying the language magic co
 | %%sql | SparkSQL | Execute a **SparkSQL** query against Spark Context. |
 | %%html | Html | Execute a **HTML** query against Spark Context. |
 | %%sparkr | R | Execute a **R** query against Spark Context. |
-
-The following image is an example of how you can write a PySpark query using the **%%pyspark** magic command in a **Spark(Scala)** notebook. Notice that the primary language for the notebook is set to PySpark.
 
 ### IDE-style IntelliSense
 
