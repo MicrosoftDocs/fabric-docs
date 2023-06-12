@@ -1,6 +1,6 @@
 ---
 title: Cognitive Services in Azure Synapse Analytics
-description: Enrich your data with artificial intelligence (AI) in Azure Synapse Analytics using pretrained models from Azure Cognitive Services.
+description: Learn about the capabilities of Azure Cognitive Services pretrained models for enriching your data with artificial intelligence (AI) in Azure Synapse Analytics.
 ms.topic: overview
 ms.custom: build-2023
 ms.reviewer: jessiwang
