@@ -1,7 +1,7 @@
 ---
 title: Data science tutorial - train and register machine learning models
-description: In this fourth module, learn how to train machine learning models to predict the total ride duration of taxi trips, and then register the trained models.
-ms.reviewer: mopeakande
+description: In this fourth part of the tutorial series, learn how to train machine learning models to predict the total ride duration of taxi trips, and then register the trained models.
+ms.reviewer: sgilley
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
@@ -9,20 +9,32 @@ ms.custom: build-2023
 ms.date: 5/4/2023
 ---
 
-# Module 4: Train and register machine learning models in Microsoft Fabric
+# Part 4: Train and register machine learning models in Microsoft Fabric
 
-In this module, you learn to train machine learning models to predict the total ride duration (tripDuration) of yellow taxi trips in New York City based on various factors, such as pickup and drop-off locations, distance, date, time, number of passengers, and rate code. Once a model is trained, you register the trained models, and log hyperparameters used and evaluation metrics using Fabric's native integration with the MLflow framework.
+Learn to train machine learning models to predict the total ride duration (tripDuration) of yellow taxi trips in New York City based on various factors, such as pickup and drop-off locations, distance, date, time, number of passengers, and rate code. Once a model is trained, you register the trained models, and log hyperparameters used and evaluation metrics using Fabric's native integration with the MLflow framework.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!TIP]
 > MLflow is an open-source platform for managing the end-to-end machine learning lifecycle with features for tracking experiments, packaging ML models and items, and model registry. For more information, see [MLflow](https://mlflow.org/docs/latest/index.html).
 
+In this tutorial, you'll load cleansed and prepared data from lakehouse delta table and use it to train a regression model to predict ***tripDuration*** variable. You'll also use the Fabric MLflow integration to create and track experiments and register the trained model, model hyperparameters and metrics.
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+* Complete [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
+
+* Optionally, complete [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
+
+* Complete [Part 3: Perform data cleansing and preparation using Apache Spark](tutorial-data-science-data-cleanse.md).
+
 ## Follow along in notebook
 
-The python commands/script used in each step of this tutorial can be found in the accompanying notebook: [04-train-and-track-machine-learning-models.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/04-train-and-track-machine-learning-models.ipynb). Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
+[04-train-and-track-machine-learning-models.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/04-train-and-track-machine-learning-models.ipynb) is the notebook that accompanies this tutorial.
 
-In the following steps, you load cleansed and prepared data from lakehouse delta table and use it to train a regression model to predict tripDuration variable. You also use the Fabric MLflow integration to create and track experiments and register the trained model, model hyperparameters and metrics.
+[!INCLUDE [follow-along](./includes/follow-along.md)]
 
 ## Train and register models
 
@@ -172,6 +184,9 @@ In the following steps, you load cleansed and prepared data from lakehouse delta
    ALGORITHM = "lightgbm" 
    model_name = f"{EXPERIMENT_NAME}_{ALGORITHM}"
 
+   # Create a 'dict' object that contains values of metrics
+   lg_metrics_dict = json.loads(lg_metrics.toJSON().first())
+
    # Call model register function
    model_uri = register_spark_model(run = run,
                                  model = lg_model, 
@@ -228,6 +243,10 @@ In the following steps, you load cleansed and prepared data from lakehouse delta
    # Define Signature object 
    sig_tn = ModelSignature(inputs=_infer_schema(train_df.select(categorical_features + numeric_features)), 
                         outputs=_infer_schema(train_df.select("tripDuration")))
+
+   # Create a 'dict' object that contains values of metrics
+   lg_metricstn_dict = json.loads(lg_metrics_tn.toJSON().first())
+
    model_uri = register_spark_model(run = run,
                                  model = lg_model_tn, 
                                  model_name = model_name, 
@@ -243,7 +262,7 @@ In the following steps, you load cleansed and prepared data from lakehouse delta
    | ----- | ----- | ----- | ----- |
    | 25.444472646953216 | 5.0442514456511 | 0.7637293020097541 | 3.241663446115354 |
 
-At the end of the module, we have two runs of the lightgbm regression model trained and registered in the MLflow model registry, and the model is also available in the workspace as a Fabric model item.
+At the end of the tutorial, we have two runs of the lightgbm regression model trained and registered in the MLflow model registry, and the model is also available in the workspace as a Fabric model item.
 
 > [!NOTE]
 > If you do not see your model item in the list, refresh your browser.
@@ -260,4 +279,4 @@ In order to view the model in the UI:
 
 ## Next steps
 
-- [Module 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md)
+- [Part 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md)

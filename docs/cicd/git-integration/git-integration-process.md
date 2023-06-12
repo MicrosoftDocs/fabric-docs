@@ -3,8 +3,9 @@ title: Git integration process
 description: Understand how Microsoft Fabric interacts with git on Azure Repos
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: conceptual 
-ms.date: 05/30/2023
+ms.date: 06/12/2023
 ms.custom: build-2023
 ---
 

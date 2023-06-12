@@ -7,6 +7,8 @@ items:
     href: microsoft-fabric-overview.md
   - name: Start a Fabric (Preview) trial
     href: fabric-trial.md
+  - name: Microsoft Fabric preview information
+    href: preview.md    
   - name: Fabric terminology
     href: fabric-terminology.md
 - name: Get started
@@ -45,3 +47,14 @@ items:
   href: endorsement-promote-certify.md
 - name: Apply sensitivity labels
   href: apply-sensitivity-labels.md
+- name: Known issues
+  expanded: false
+  items:
+    - name: Active known issues for Fabric - chart
+      href: fabric-known-issues.md
+    - name: Active known issues for Fabric and Power BI - interactive report
+      href: https://support.fabric.microsoft.com/known-issues
+    - name: Moving files from outside of OneLake to OneLake with file explorer does not sync files
+      href: known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md
+    - name: Get Tenant Settings API returns default values instead of user configured values
+      href: known-issues/known-issue-421-get-tenant-settings-api-returns-default-values.md
