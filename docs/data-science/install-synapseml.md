@@ -39,8 +39,6 @@ The following example installs SynapseML v0.11.1 on Fabric. To use the example, 
 To verify that the installation was successful, run the following code in a cell. The version number returned should match the version number you installed (0.11.1).
 
 ```python
-
-```python
 import synapse.ml.cognitive
 print(f"SynapseML cognitive version: {synapse.ml.cognitive.__version__}")
 ```
