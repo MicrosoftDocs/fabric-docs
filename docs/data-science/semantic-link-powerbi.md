@@ -82,5 +82,7 @@ context so the customer can determine why they would click the link.
 
 ## Next steps
 <!-- Add a context sentence for the following links -->
-- [Write concepts](article-concept.md)
-- [Links](../contribute/links-how-to.md)
+Learn how to use Semantic Link to explore and validate data.
+
+- [How to explore data with Semantic Link](semantic-link-explore-data.md)
+- [How to validate data with Semantic Link](semantic-link-validate-data.md)

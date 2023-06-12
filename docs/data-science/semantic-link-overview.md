@@ -20,9 +20,11 @@ services add artwork or videos below the introduction.
 
 -->
 
-Semantic Link establishes a connection between Power BI datasets and the Data Science workload in Microsoft Fabric.
+Semantic Link establishes a connection between [Power BI datasets](../power-bi/connect-data/service-datasets-understand) and the Data Science workload in Microsoft Fabric.
 The feature aims to provide data connectivity, propagation of semantic information and seemless integration with established tools used by data scientists.
 You can preserve subject matter experts' knowledge about data semantics in a standardized form to help make the analysis faster and with less errors.
+
+:::image type="content" source="media/semantic-link/overview.png" alt-text="Graphic showing the data flow from Power BI to notebooks to Power BI." lightbox="media/semantic-link/overview.png":::
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -41,7 +43,7 @@ Semantic Link supports data connectivity to the Python [Pandas](https://pandas.p
 Data scientist more familiar with the [Apache Spark](https://spark.apache.org/) ecosystem can gain access to Power BI datasets through the Semantic Link Spark native connector.
 The implementation enables a wide variety of languages: PySpark, Spark SQL, R and Scala.
 
-Furthermore, Semantic Link implements [semantic propagation](./semantic-link-powerbi.md#semantic-propagation) to enable downstream task such as [measure-join](./semantic-link-powerbi.md#measure-join) and intelligent suggestion of built-in [semantic functions](./semantic-link-powerbi.md#semantic-functions). It does so by maintaining metadata across data transformations.
+Furthermore, Semantic Link implements [semantic propagation](./semantic-link-powerbi.md#semantic-propagation) to enable downstream task such as [measure-join](./semantic-link-powerbi.md#measure-join) and intelligent suggestion of built-in [semantic functions](./semantic-link-powerbi.md#semantic-functions). It does so by maintaining metadata and lineage across data transformations.
 
 ## TODO: add second heading
 <!-- Top tasks ------------------------------------------------------------------------------
@@ -74,3 +76,7 @@ What you link to will depend on what is really a next step for the customer. Do 
 section" or a "Resources section" or a "See also section".
 
 TODO: Add your next step link(s) -->
+
+- [Learn more about Semantic Link and PowerBI connectivity](semantic-link-powerbi.md)
+- [How to explore data with Semantic Link](semantic-link-explore-data.md)
+- [How to validate data with Semantic Link](semantic-link-validate-data.md)
