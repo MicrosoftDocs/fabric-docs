@@ -1,6 +1,6 @@
 ---
 title: Semantic Link and PowerBI connectivity
-description: Semantic Link and Microsoft Fabric provide PowerBI conncetivity
+description: Semantic Link and Microsoft Fabric provide PowerBI connectivity
 ms.reviewer: mopeakande
 ms.author: marcozo
 author: eisber
@@ -15,14 +15,12 @@ PowerBI connectivity is at the core of Semantic Link.
 
 PowerBI datasets usually represent the gold stage of data and are the result of upstream data processing and refinement.
 These datasets are used to drive business decisions through Power BI reports and therefore receive special attention.
-Furthermore, business analyst encode their domain knowledge and business logic into Power BI measures.
+Furthermore, business analysts encode their domain knowledge and business logic into Power BI measures.
 Data scientists on the other hand operate on the same data, but not in the same environment or language and therefore had to duplicate the business logic, leading to critical errors.
 
 Microsoft Fabric and Semantic Link bridge this critical gap between business analysts and data scientist, enabling seemless collaboration and reduce data mismatch.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
-
-TODO: should we mention read-only replicas to address concerns on hogging Power BI clusters?
 
 ## Python library for Pandas users
 
@@ -30,11 +28,11 @@ The SemPy python library is part of the Semantic Link feature and serves Pandas 
 
 It supports retrieval of data from tables, computation of measures, execution of DAX queries and metadata. (#TODO link to API docs)
 
-We extend Pandas dataframes with additional metadata propagated from the Power BI source.
+It extends Pandas dataframes with additional metadata propagated from the Power BI source.
 This metadata includes:
 
 - Power BI data categories
-  - Geographic: address, place, city, ... 
+  - Geographic: address, place, city, ...
   - URL: web url, image url
   - Barcode
 - Relationships between tables

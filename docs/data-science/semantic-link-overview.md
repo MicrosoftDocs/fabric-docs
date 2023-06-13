@@ -20,9 +20,8 @@ services add artwork or videos below the introduction.
 
 -->
 
-Semantic Link establishes a connection between [Power BI datasets](../power-bi/connect-data/service-datasets-understand) and the Data Science workload in Microsoft Fabric.
-The feature aims to provide data connectivity, propagation of semantic information and seemless integration with established tools used by data scientists.
-You can preserve subject matter experts' knowledge about data semantics in a standardized form to help make the analysis faster and with less errors.
+Semantic Link is a feature that establishes a connection between [Power BI datasets](../power-bi/connect-data/service-datasets-understand) and the Data Science workload in Microsoft Fabric. Its primary goal is to facilitate data connectivity, enable the propagation of semantic information, and seamlessly integrate with established tools used by data scientists.
+You can preserve subject matter experts' knowledge about data semantics in a standardized form to help make the analysis faster and with fewer errors.
 
 :::image type="content" source="media/semantic-link/overview.png" alt-text="Graphic showing the data flow from Power BI to notebooks to Power BI." lightbox="media/semantic-link/overview.png":::
 
@@ -36,36 +35,25 @@ mentioned as available, without any discussion.
 
 -->
 
-Power BI datasets act as the single semantic model and the source of truth for semantic definitions, such as Power BI measures.
+The graph visualizes the data flow, starting with data and semantic information stored in Power BI datasets. Semantic Link bridges the gap into the data science experience enabling tasks such as in-depth statistical analysis and predictive modeling using machine learning techniques.
+The output of the data science work can be stored in [One Lake](../fabric/onelake/onelake-overview) using Apache Spark and ingested into Power BI using [Direct Lake](../power-bi/enterprise/directlake-overview).
 
-Semantic Link supports data connectivity to the Python [Pandas](https://pandas.pydata.org/) ecosystem through the SemPy Python library.
+Semantic Link is a powerful tool designed to enable business analysts to use their data effectively in a comprehensive data science environment, such as [notebooks](../fabric/data-engineering/how-to-use-notebook). It aims to facilitate seamless collaboration between data scientists and business analysts by eliminating the need to reimplement business logic embedded in [Power BI measures](../power-bi/transform-model/desktop-measures#understanding-measures). This approach ensures that both parties can work efficiently and productively, maximizing the potential of their data-driven insights.
 
-Data scientist more familiar with the [Apache Spark](https://spark.apache.org/) ecosystem can gain access to Power BI datasets through the Semantic Link Spark native connector.
-The implementation enables a wide variety of languages: PySpark, Spark SQL, R and Scala.
+## Power BI Connectivity
 
-Furthermore, Semantic Link implements [semantic propagation](./semantic-link-powerbi.md#semantic-propagation) to enable downstream task such as [measure-join](./semantic-link-powerbi.md#measure-join) and intelligent suggestion of built-in [semantic functions](./semantic-link-powerbi.md#semantic-functions). It does so by maintaining metadata and lineage across data transformations.
+Power BI datasets serve as the single [semantic model](../analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo?view=asallproducts-allversions), providing a reliable source for semantic definitions, such as Power BI measures.
 
-## TODO: add second heading
-<!-- Top tasks ------------------------------------------------------------------------------
+Semantic Link offers data connectivity to the Python [Pandas](https://pandas.pydata.org/) ecosystem via the SemPy Python library, making it easy for data scientists to work with the data.
 
-Suggested: An effective way to structure you overview article is to create an H2 for the top
-customer tasks you identified during the [planning process](../contribute/content-dev-plan.md) and
-describe how the product/service helps customers with that task.
+For data scientists who are more familiar with the [Apache Spark](https://spark.apache.org/) ecosystem, Semantic Link provides access to Power BI datasets through the Spark native connector. This implementation supports a wide range of languages, including PySpark, Spark SQL, R, and Scala.
 
-Create a new H2 for each task you list.
+## Applications of Semantic Information
 
---->
+Semantic information includes Power BI [data categories](../power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables and hierarchical information.
+Semantic Link propagates this metadata into the data science environment, which enables new experiences and maintains data lineage.
 
-## TODO: add third heading
-<!-- Top tasks ------------------------------------------------------------------------------
-
-Suggested: An effective way to structure you overview article is to create an H2 for the top
-customer tasks you identified during the [planning process](../contribute/content-dev-plan.md) and
-describe how the product/service helps customers with that task.
-
-Create a new H2 for each task you list.
-
---->
+Examples of the capabilities provided by Semantic Link include intelligent suggestions of built-in [semantic functions](./semantic-link-powerbi.md#semantic-functions) and innovative integration for augmenting data with Power BI measures through [measure-joins](./semantic-link-powerbi.md#measure-join).
 
 ## Next steps
 <!-- 5. Next steps ------------------------------------------------------------------------
@@ -77,6 +65,6 @@ section" or a "Resources section" or a "See also section".
 
 TODO: Add your next step link(s) -->
 
-- [Learn more about Semantic Link and PowerBI connectivity](semantic-link-powerbi.md)
+- [Learn more about Semantic Link and Power BI connectivity](semantic-link-powerbi.md)
 - [How to explore data with Semantic Link](semantic-link-explore-data.md)
 - [How to validate data with Semantic Link](semantic-link-validate-data.md)
