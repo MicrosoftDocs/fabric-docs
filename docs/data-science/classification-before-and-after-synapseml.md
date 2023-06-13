@@ -6,7 +6,7 @@ ms.custom: build-2023
 ms.reviewer: jessiwang
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/08/2023
+ms.date: 06/13/2023
 ---
 # Classification - before and after SynapseML
 
