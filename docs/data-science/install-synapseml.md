@@ -1,7 +1,7 @@
 ---
 title: Install a different version of SynapseML on Microsoft Fabric
 description: Instruction of how to install SynapseML on Fabric
-ms.topic: overview
+ms.topic: how-to
 ms.reviewer: larryfr
 author: JessicaXYWang
 ms.author: jessiwang
