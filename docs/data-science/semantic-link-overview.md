@@ -12,7 +12,7 @@ ms.search.form: Semantic Link
 
 # What is Semantic Link?
 
-Semantic Link is a feature that allows you to establish a connection between [Power BI datasets](/power-bi/connect-data/service-datasets-understand) and [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in Microsoft Fabric. The primary goals of Semantic Link are to facilitate data connectivity, enable the propagation of semantic information, and seamlessly integrate with established tools used by data scientists. Semantic Link helps you to preserve domain knowledge about data semantics in a standardized way that can speed up data analysis and reduce errors.
+Semantic Link is a feature that allows you to establish a connection between [Power BI datasets](/power-bi/connect-data/service-datasets-understand) and [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in Microsoft Fabric. The primary goals of Semantic Link are to facilitate data connectivity, enable the propagation of semantic information, and seamlessly integrate with established tools used by data scientists, such as [notebooks](../data-engineering/how-to-use-notebook.md). Semantic Link helps you to preserve domain knowledge about data semantics in a standardized way that can speed up data analysis and reduce errors.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -33,11 +33,11 @@ Power BI datasets serve as the single [semantic model](/analysis-services/tom/in
 
 ## Applications of Semantic Information
 
-Semantic information in data includes Power BI [data categories](/power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables, and hierarchical information. These data categories comprise metadata that Semantic Link propagates into the data science environment to enable new experiences and maintain data lineage.
+Semantic information in data includes Power BI [data categories](/power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables, and hierarchical information. These data categories comprise metadata that Semantic Link propagates into the Data Science environment to enable new experiences and maintain data lineage. Some example applications of Semantic Link are:
+- intelligent suggestions of built-in [semantic functions](./semantic-link-powerbi.md#semantic-functions) and
+- innovative integration for augmenting data with Power BI measures through [measure-joins](./semantic-link-powerbi.md#measure-join).
 
-Examples of the capabilities provided by Semantic Link include: intelligent suggestions of built-in [semantic functions](./semantic-link-powerbi.md#semantic-functions) and innovative integration for augmenting data with Power BI measures through [measure-joins](./semantic-link-powerbi.md#measure-join).
-
-Semantic Link is a powerful tool designed to enable business analysts to use their data effectively in a comprehensive data science environment, such as [notebooks](../data-engineering/how-to-use-notebook.md). It aims to facilitate seamless collaboration between data scientists and business analysts by eliminating the need to reimplement business logic embedded in [Power BI measures](../power-bi/transform-model/desktop-measures#understanding-measures). This approach ensures that both parties can work efficiently and productively, maximizing the potential of their data-driven insights.
+Semantic Link is a powerful tool that enables business analysts to use data effectively in a comprehensive data science environment. Semantic Link facilitates seamless collaboration between data scientists and business analysts by eliminating the need to reimplement business logic embedded in [Power BI measures](../power-bi/transform-model/desktop-measures#understanding-measures). This approach ensures that both parties can work efficiently and productively, maximizing the potential of their data-driven insights.
 
 ## Next steps
 
