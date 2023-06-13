@@ -37,7 +37,7 @@ Semantic information in data includes Power BI [data categories](/power-bi/trans
 - intelligent suggestions of built-in [semantic functions](./semantic-link-powerbi.md#semantic-functions) and
 - innovative integration for augmenting data with Power BI measures through [measure-joins](./semantic-link-powerbi.md#measure-join).
 
-Semantic Link is a powerful tool that enables business analysts to use data effectively in a comprehensive data science environment. Semantic Link facilitates seamless collaboration between data scientists and business analysts by eliminating the need to reimplement business logic embedded in [Power BI measures](../power-bi/transform-model/desktop-measures#understanding-measures). This approach ensures that both parties can work efficiently and productively, maximizing the potential of their data-driven insights.
+Semantic Link is a powerful tool that enables business analysts to use data effectively in a comprehensive data science environment. Semantic Link facilitates seamless collaboration between data scientists and business analysts by eliminating the need to reimplement business logic embedded in [Power BI measures](/power-bi/transform-model/desktop-measures#understanding-measures). This approach ensures that both parties can work efficiently and productively, maximizing the potential of their data-driven insights.
 
 ## Next steps
 
