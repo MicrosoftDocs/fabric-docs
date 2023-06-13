@@ -78,7 +78,7 @@ The connection string displayed in the information tab is an **event hub compati
 
 *`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
 
-## Create an application to send events to eventstream
+## Create an application to send events to the eventstream
 
 
 With the **event hub compatible connection string** readily available in the Custom App source, you can proceed to create an application that sends events to your eventstream. In this specific example, the application simulates 10 sensor devices transmitting temperature and humidity data nearly every second.
@@ -212,7 +212,7 @@ You find the data listed in the bottom section.
 
 :::image type="content" source="./media/stream-real-time-events-from-customapp-to-kusto/kql-table-top100.png" alt-text="Screenshot showing the kql table top100." lightbox="./media/stream-real-time-events-from-customapp-to-kusto/kql-table-top100.png" :::
 
-## Build near real-time Power BI report with the events data ingested in the KQL database
+## Build near real-time Power BI report with the event data ingested in the KQL database
 
 Once the data is ingested into your KQL database, you can analyze it according to your specific needs. For example, if you want to track the temperature and humidity trends over the last 2 hours in near real-time, you can start by writing a KQL query to retrieve this data. Afterwards, you can visualize the results in a Power BI report with autorefresh enabled.
 
