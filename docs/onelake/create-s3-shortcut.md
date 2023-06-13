@@ -38,9 +38,16 @@ To create and Amazon S3 Shortcut:
 
 1. Specify the connection details this shortcut will use.
 
-   1. Proved the endpoint for your S3 account (URL).
+   1. Proved the endpoint for your S3 bucket (URL).
       > [!NOTE]
       > URL must be in the following format `https://bucketname.s3.region.amazonaws.com/`
+      >
+      > To retrieve your bucket URL:
+      >
+      > 1. Login in to your S3 account in AWS.
+      > 2. Select your bucket.  
+      > 3. Select the checkbox next to a folder in your bucket.
+      > 4. Click the Copy URL button.
 
    1. If you have already defined a connection for this storage location, it automatically appears in the connection drop-down. Otherwise, you can choose **Create new connection**.
 
