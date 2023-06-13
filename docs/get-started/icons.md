@@ -1,10 +1,9 @@
 ---
-title: "Microsoft Fabric product, experience, and item icons"
-description: "Official icons for use in building architecture diagrams and illustrations for Microsoft Power Platform (Power Platform, Power Apps, Power Automate, Power BI, Power Pages, Power Virtual Agents, Dataverse, AI Builder, and Power Fx)."
-author: KSnehaGunda
+title: Microsoft Fabric product, experience, and item icons
+description: Official icons for use in building architecture diagrams and illustrations for Microsoft Fabric.
+author: SnehaGunda
 ms.topic: conceptual
 ms.date: 06/13/2023
-ms.subservice: guidance
 ms.author: sngun
 ---
 
@@ -12,13 +11,13 @@ ms.author: sngun
 
 This article provides information about the official collection of icons for Microsoft Fabric that you can use in architectural diagrams, training materials, or documentation.
 
-### Do’s
+## Do's
 
 * Use the icons to illustrate how products can work together.
 * In diagrams, we recommend including the product name somewhere close to the icon.
 * Use the icons as they appear within the product.
 
-### Don’ts
+## Don'ts
 
 * Don’t crop, flip or rotate icons.
 * Don’t distort or change icon shape in any way.
