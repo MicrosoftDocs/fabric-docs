@@ -11,7 +11,7 @@ ms.date: 05/08/2023
 
 # How to use LightGBM models with SynapseML in Microsoft Fabric
 
-The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in creating high-quality and GPU-enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, we'll use LightGBM to build classification, regression, and ranking models.
+The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in creating high-quality and GPU-enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, you'll use LightGBM to build classification, regression, and ranking models.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in c
 
 ## Use `LightGBMClassifier` to train a classification model
 
-In this section, we use LightGBM to build a classification model for predicting bankruptcy.
+In this section, you'll use LightGBM to build a classification model for predicting bankruptcy.
 
 1. Read the dataset.
 
@@ -140,7 +140,7 @@ In this section, we use LightGBM to build a classification model for predicting 
 
 ## Use `LightGBMRegressor` to train a quantile regression model
 
-In this section, we use LightGBM to build a regression model for drug discovery.
+In this section, you'll use LightGBM to build a regression model for drug discovery.
 
 1. Read the dataset.
 
@@ -178,7 +178,7 @@ In this section, we use LightGBM to build a regression model for drug discovery.
     print(model.getFeatureImportances())
     ```
 
-1. Generate predictions with the model
+1. Generate predictions with the model.
 
     ```python
     scoredData = model.transform(test)
@@ -196,7 +196,7 @@ In this section, we use LightGBM to build a regression model for drug discovery.
 
 ## Use `LightGBMRanker` to train a ranking model
 
-In this section, we use LightGBM to build a model for ranking ...
+In this section, you'll use LightGBM to build a model for ranking ...
 
 1. Read the dataset.
 
@@ -252,4 +252,4 @@ In this section, we use LightGBM to build a model for ranking ...
 
 - [What is Cognitive Services in Azure Synapse Analytics?](overview-cognitive-services.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
-- [How to use knn model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
+- [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)

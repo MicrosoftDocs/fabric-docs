@@ -11,7 +11,7 @@ ms.date: 05/08/2023
 
 # Use Cognitive Services with SynapseML in Microsoft Fabric
 
-[Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. In this article, you'll use the various services available in Azure Cognitive Services to perform tasks that include: text analytics, translation, form recognition, computer vision, image search, speech-to-text and text-to-speech conversion, anomaly detection, and data extraction from arbitrary web APIs.
+[Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. In this article, you'll use the various services available in Azure Cognitive Services to perform tasks that include: text analytics, translation, form recognition, computer vision, image search, speech-to-text and text-to-speech conversion, anomaly detection, and data extraction from web APIs.
 
 ## Prerequisites
 
@@ -36,8 +36,6 @@ from pyspark.sql.functions import col
 import os
 ```
 
-Import SynapseML libraries and initialize your Spark session.
-
 ```python
 from pyspark.sql import SparkSession
 from synapse.ml.core.platform import *
@@ -46,7 +44,7 @@ from synapse.ml.core.platform import *
 spark = SparkSession.builder.getOrCreate()
 ```
 
-Import Cognitive Services libraries and replace the keys in the following code snippet with your cognitive services key.
+Import Cognitive Services libraries and replace the keys in the following code snippet with your Cognitive Services key.
 
 ```python
 from synapse.ml.cognitive import *
@@ -72,7 +70,7 @@ search_key = find_secret("azure-search-key") # Replace it with your cognitive se
 
 ## Perform sentiment analysis on text
 
-The [Text Analytics](https://azure.microsoft.com/services/cognitive-services/text-analytics/) service provides several algorithms for extracting intelligent insights from text. For example, we can use the service to find the sentiment of some input text. The service will return a score between 0.0 and 1.0, where low scores indicate negative sentiment and high scores indicate positive sentiment.
+The [Text Analytics](https://azure.microsoft.com/services/cognitive-services/text-analytics/) service provides several algorithms for extracting intelligent insights from text. For example, you can use the service to find the sentiment of some input text. The service will return a score between 0.0 and 1.0, where low scores indicate negative sentiment and high scores indicate positive sentiment.
 
 The following code sample returns the sentiment for three simple sentences.
 
@@ -108,7 +106,7 @@ display(
 
 ## Perform text analytics for health data
 
-The [Text Analytics for Health Service](/azure/cognitive-services/language-service/text-analytics-for-health/overview?tabs=ner) extracts and labels relevant medical information from unstructured texts such as doctor's notes, discharge summaries, clinical documents, and electronic health records.
+The [Text Analytics for Health Service](/azure/cognitive-services/language-service/text-analytics-for-health/overview?tabs=ner) extracts and labels relevant medical information from unstructured text such as doctor's notes, discharge summaries, clinical documents, and electronic health records.
 
 The following code sample analyzes and transforms text from doctors notes into structured data.
 
@@ -170,7 +168,7 @@ display(
 ```
 
 ## Extract information from a document into structured data
-[Form Recognizer](https://azure.microsoft.com/services/form-recognizer/) is a part of Azure Applied AI Services that lets you build automated data processing software using machine learning technology. Identify and extract text, key/value pairs, selection marks, tables, and structure from your documents. The service outputs structured data that includes the relationships in the original file, bounding boxes, confidence and more.
+[Form Recognizer](https://azure.microsoft.com/services/form-recognizer/) is a part of Azure Applied AI Services that lets you build automated data processing software using machine learning technology. With Form Recognizer, you can identify and extract text, key/value pairs, selection marks, tables, and structure from your documents. The service outputs structured data that includes the relationships in the original file, bounding boxes, confidence and more.
 
 The following code sample analyzes a business card image and extracts its information into structured data.
 
@@ -247,7 +245,9 @@ display(analysis.transform(df).select("image", "analysis_results.description.tag
 
 ## Search for images that are related to a natural language query
 
-[Bing Image Search](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) searches the web to retrieve images related to a user's natural language query. The following code sample uses a text query that looks for images with quotes. The output of the code is a list of image URLs that contain photos related to the query.
+[Bing Image Search](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) searches the web to retrieve images related to a user's natural language query. 
+
+The following code sample uses a text query that looks for images with quotes. The output of the code is a list of image URLs that contain photos related to the query.
 
 ```python
 # Number of images Bing will return per query
@@ -281,7 +281,7 @@ display(pipeline.transform(bingParameters))
 ```
 
 ## Transform speech to text
-The [Speech-to-text](https://azure.microsoft.com/services/cognitive-services/speech-services/) service converts streams or files of spoken audio to text. In the following code sample, we transcribe one audio file.
+The [Speech-to-text](https://azure.microsoft.com/services/cognitive-services/speech-services/) service converts streams or files of spoken audio to text. The following code sample transcribes one audio file to text.
 
 ```python
 # Create a dataframe with our audio URLs, tied to the column called "url"
@@ -305,7 +305,7 @@ display(speech_to_text.transform(df).select("url", "text.DisplayText"))
 ```
 
 ## Transform text to speech
-[Text to speech](https://azure.microsoft.com/services/cognitive-services/text-to-speech/#overview) is a service that allows one to build apps and services that speak naturally, choosing from more than 270 neural voices across 119 languages and variants.
+[Text to speech](https://azure.microsoft.com/services/cognitive-services/text-to-speech/#overview) is a service that allows you to build apps and services that speak naturally, choosing from more than 270 neural voices across 119 languages and variants.
 
 The following code sample transforms text into an audio file that contains the content of the text.
 
@@ -344,7 +344,7 @@ display(tts.transform(df))
 
 ## Detect anomalies in time series data
 
-[Anomaly Detector](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/) is great for detecting irregularities in your time series data. The following code sample uses the service to find anomalies in entire time series data.
+[Anomaly Detector](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/) is great for detecting irregularities in your time series data. The following code sample uses the Anomaly Detector service to find anomalies in entire time series data.
 
 ```python
 # Create a dataframe with the point data that Anomaly Detector requires
@@ -389,7 +389,7 @@ display(
 
 ## Get information from arbitrary web APIs
 
-With HTTP on Spark, any web service can be used in your big data pipeline. The following code sample uses the [World Bank API](http://api.worldbank.org/v2/country/) to get information about various countries around the world.
+With HTTP on Spark, you can use any web service in your big data pipeline. The following code sample uses the [World Bank API](http://api.worldbank.org/v2/country/) to get information about various countries around the world.
 
 ```python
 # Use any requests from the python requests library
