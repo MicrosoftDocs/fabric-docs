@@ -182,7 +182,7 @@ scoredVal = bestModel.transform(validation)
 print(evaluator.evaluate(scoredVal))
 ```
 
-## Classify using synapseml
+## Classify using SynapseML
 
 The steps needed with `synapseml` are simpler:
 
