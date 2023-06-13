@@ -48,6 +48,8 @@ Semantic Link offers data connectivity to the Python [Pandas](https://pandas.pyd
 
 For data scientists who are more familiar with the [Apache Spark](https://spark.apache.org/) ecosystem, Semantic Link provides access to Power BI datasets through the Spark native connector. This implementation supports a wide range of languages, including PySpark, Spark SQL, R, and Scala.
 
+Both implementations are subject to Power BI backend limitations (see [details](read-write-powerbi.md#read-limitations)).
+
 ## Applications of Semantic Information
 
 Semantic information includes Power BI [data categories](../power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables and hierarchical information.
