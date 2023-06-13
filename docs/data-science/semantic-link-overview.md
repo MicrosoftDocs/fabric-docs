@@ -26,7 +26,7 @@ With Semantic Link, you can use datasets from Power BI in the Data Science exper
 
 ## Power BI Connectivity
 
-Power BI datasets serve as the single [semantic model](/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo), providing a reliable source for semantic definitions, such as Power BI measures. To connect to PowerBI datasets:
+Power BI datasets serve as the single [semantic model](/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo), providing a reliable source for semantic definitions, such as Power BI measures. To connect to Power BI datasets:
 
 - Semantic Link offers data connectivity to the Python [Pandas](https://pandas.pydata.org/) ecosystem via the **SemPy Python library**, making it easy for data scientists to work with the data.
 - Semantic Link provides access to Power BI datasets through the **Spark native connector** for data scientists that are more familiar with the [Apache Spark](https://spark.apache.org/) ecosystem. This implementation supports various languages, including PySpark, Spark SQL, R, and Scala.
