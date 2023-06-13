@@ -15,7 +15,7 @@ Items in Microsoft Fabric are stored in a folder. They can either be in the root
 
 :::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of git directory containing items.":::
 
-Inside each item directory are the mandatory system files that define the item. Besides these files, there are two automatically generated system files in each directory:
+Inside each item directory are the [mandatory system files that define the item](/power-bi/developer/projects/projects-overview). Besides these files, there are two automatically generated system files in each directory:
 
 - [item.metadata.json](#metadata-file)
 - [item.config.json](#config-file)
