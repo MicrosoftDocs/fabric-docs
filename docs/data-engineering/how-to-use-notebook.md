@@ -92,6 +92,25 @@ You can easily copy path with different format of the select file or folder and 
 
 :::image type="content" source="media\how-to-use-notebook\lakehouse-file-operation.png" alt-text="Screenshot showing context menu of files in lakehouse.":::
 
+## Notebook resources
+
+The Notebook Resource explorer provides a Unix-like file system to help you manage your folders and files, it offers a writeable file system space where you can store small-sized files, such as code modules, datasets, and images. You can easily access them with code in the notebook as if you were working with your local file system.
+
+![Animated GIF of notebook resources.](media/how-to-use-notebook/notebook-resources-operations.gif)
+
+The Built-in folder is a system pre-defined folder for each notebook instance, it preserves up to **500MB** storage to store the dependencies of the current notebook, below are the key capabilities of Notebook resources:
+
+- You can use common gestures such as create/delete, upload/download, drag/drop, rename, duplicate, and search through the UI. 
+- You can use relative paths like ```"/builtin/YourData.txt"``` for quick exploration. We also provide a ```mssparkutils.nbResPath``` method to help you compose the full path. 
+- You can easily move your validated data to a Lakehouse via the "Write to Lakehouse" option. We have embedded rich code snippets for common file types to help you quickly get started. 
+- These resources are also available for use in the [Reference Notebook run](author-execute-notebook.md) case via ```mssparkutils.notebook.run()```.
+
+> [!NOTE]
+> - Currently we support uploading certain file types through UI including: .py, .txt, .json, .yml, .xml, .csv, .html, .png, .jpg, xlsx. You can write to the Built-in folder with file types that are not in the list via code, but Fabric notebook doesn’t support generating code snippet when operated on unsupported file types.
+> - Each file size needs to be less than 50MB, and the Built-in folder allows up to 100 file/folder instances in total.
+> - When using ```mssparkutils.notebook.run()```, we recommend to use ```mssparkutils.nbResPath``` to access to the target notebook resource, the relative path “/builtin/” will always pointing to the root notebook’s built-in folder.
+
+
 ## Collaborate in a notebook
 
 The [!INCLUDE [product-name](../includes/product-name.md)] notebook is a collaborative item that supports multiple users editing the same notebook.  
