@@ -11,7 +11,7 @@ ms.date: 06/12/2023
 # Exploring Art across Culture and Medium with Fast, Conditional, k-Nearest Neighbors
 
 
-This notebook serves as a guideline for match-finding via k-nearest-neighbors. We set up code that allows queries involving cultures and mediums of art amassed from the Metropolitan Museum of Art in NYC and the Rijksmuseum in Amsterdam.
+This article serves as a guideline for match-finding via k-nearest-neighbors. You set up code that allows queries involving cultures and mediums of art amassed from the Metropolitan Museum of Art in NYC and the Rijksmuseum in Amsterdam.
 
 ## Prerequisites
 
@@ -78,7 +78,8 @@ display(df.drop("Norm_Features"))
 ```
 
 ## Define categories to be queried on
-We're using two KNN models: one for culture, and one for medium.
+
+Two KNN models are used: one for culture, and one for medium.
 
 
 ```python
@@ -115,7 +116,8 @@ small_df.count()
 ```
 
 ## Define and fit ConditionalKNN models
-We create ConditionalKNN models for both the medium and culture columns; each model takes in an output column, features column (feature vector), values column (cell values under the output column), and label column (the quality that the respective KNN is conditioned on).
+
+Create ConditionalKNN models for both the medium and culture columns; each model takes in an output column, features column (feature vector), values column (cell values under the output column), and label column (the quality that the respective KNN is conditioned on).
 
 
 ```python
@@ -143,7 +145,7 @@ culture_cknn = (
 
 ## Define matching and visualizing methods
 
-After the initial dataset and category setup, we prepare methods that will query and visualize the conditional KNN's results. 
+After the initial dataset and category setup, prepare methods that will query and visualize the conditional KNN's results.
 
 `addMatches()` creates a Dataframe with a handful of matches per category.
 
@@ -197,7 +199,8 @@ def plot_urls(url_arr, titles, filename):
 ```
 
 ## Putting it all together
-We define `test_all()` to take in the data, CKNN models, the art id values to query on, and the file path to save the output visualization to. The medium and culture models were previously trained and loaded.
+
+Define `test_all()` to take in the data, CKNN models, the art id values to query on, and the file path to save the output visualization to. The medium and culture models were previously trained and loaded.
 
 
 ```python

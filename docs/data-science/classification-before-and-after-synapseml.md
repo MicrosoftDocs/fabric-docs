@@ -10,13 +10,13 @@ ms.date: 06/13/2023
 ---
 # Classification - before and after SynapseML
 
-In this article, we perform the same classification task in two
+In this article, you perform the same classification task in two
 different ways: once using plain **`pyspark`** and once using the
 **`synapseml`** library.  The two methods yield the same performance,
 but highlights the simplicity of using `synapseml` compared to `pyspark`.
 
-The task is to predict whether a user's review of a book sold on
-Amazon is good (rating > 3) or bad based on the text of the review. We
+The task is to predict whether a customer's review of a book sold on
+Amazon is good (rating > 3) or bad based on the text of the review. You
 accomplish it by training LogisticRegression learners with different
 hyperparameters and choosing the best model.
 
@@ -51,7 +51,7 @@ rawData.show(5)
 Real data is more complex than the above dataset. It's common
 for a dataset to have features of multiple types, such as text, numeric, and
 categorical. To illustrate how difficult it's to work with these
-datasets, we add two numerical features to the dataset: the **word count** of the review and the **mean word length**.
+datasets, add two numerical features to the dataset: the **word count** of the review and the **mean word length**.
 
 
 ```python
@@ -109,7 +109,7 @@ data.show(5)
 ## Classify using pyspark
 
 To choose the best LogisticRegression classifier using the `pyspark`
-library, we need to *explicitly* perform the following steps:
+library, you need to *explicitly* perform the following steps:
 
 1. Process the features:
    * Tokenize the text column
