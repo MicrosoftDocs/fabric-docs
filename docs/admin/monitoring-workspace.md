@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 06/07/2023
+ms.date: 06/14/2023
 ---
 
 # What is the admin monitoring workspace?
@@ -53,6 +53,12 @@ There are several ways you can manage access to content of the admin monitoring 
 ### Refreshes
 
 The admin monitoring workspace is automatically refreshed once a day. The refresh takes place about 10 minutes after the admin workspace was accessed for the first time.
+
+For the refresh to work, the admin that accessed the workspace for the first time, has to:
+
+* Keep his *Global administrator* or *Power BI administrator* role. If the role of the admin who first accessed the workspace changes, the admin monitoring workspace will not be refreshed.
+
+* If the workspace creator uses [Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-configure), it has to be enabled during the scheduled refresh.
 
 ## Considerations and limitations
 
