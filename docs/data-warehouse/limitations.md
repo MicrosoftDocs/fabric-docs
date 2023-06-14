@@ -4,7 +4,7 @@ description: This article contains a list of current limitations and known issue
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 06/14/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
