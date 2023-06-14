@@ -53,17 +53,16 @@ To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, 
 
 The CU over time chart displays the following elements:
 
-* **Background %** - Blue columns represent the percent of CU consumption used during background operations in a 30 second period. This column refers to operations that are performed in non-preview workloads.
-
+* **Background %** - Blue columns represent the percent of CU consumption used during background operations in a 30 second period. This column refers to billable operations.
     [*Background*](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) operations cover backend processes that are not directly triggered by users, such as data refreshes.
 
-* **Interactive %** - Red columns represent the percent of CU consumption used during interactive operations in a 30 second period. This column refers to operations that are performed in non-preview workloads.
+* **Interactive %** - Red columns represent the percent of CU consumption used during interactive operations in a 30 second period. This column refers to billable operations.
 
     [*Interactive*](/power-bi/enterprise/service-premium-interactive-background-operations#interactive-operations) operations cover a wide range of resources triggered by users. These operations are associated with interactive page loads.
 
-* **Background Preview %** - Baby blue columns represent the percent of CU consumption used during preview workloads background operations in a 30 second period.
+* **Background Preview %** - Baby blue columns represent the percent of CU consumption used during preview workloads background operations in a 30 second period. During public preview, this refers to operations in workloads that are not billable.
 
-* **Interactive Preview %** - Green columns represent the percent of CU consumption used during preview workloads interactive operations in a 30 second period. This column refers to operations that are performed in non-preview workloads.
+* **Interactive Preview %** - Green columns represent the percent of CU consumption used during preview workloads interactive operations in a 30 second period. This column refers to operations that are performed in non-preview workloads. During public preview, this refers to operations in workloads that are not billable.
 
 * **Autoscale CU % Limit** - An orange dotted line that shows the percent of CU consumption for autoscaled capacities. The line represents timepoints where the capacity is overloaded.
 
