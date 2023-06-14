@@ -4,7 +4,7 @@ description: This article contains a list of current limitations and known issue
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 06/14/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
@@ -56,6 +56,8 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
    If you don't see a Lakehouse table in the warehouse, check the location of the table. Only the tables that are referencing data in the `/tables` folder are available in the warehouse. The tables that reference data in the `/files` folder in the lake aren't exposed in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. As a workaround, move your data to the `/tables` folder.
 
 - Some columns that exist in the Spark Delta tables might not be available in the tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. Refer to the [Data types](data-types.md) for a full list of supported data types. 
+
+- Adding a relationship between tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)] will block any further schema changes. If you don't see the Delta Lake columns with the types that should be supported in [!INCLUDE [fabric-se](includes/fabric-se.md)], check if there is a foreign key relationship that might prevent updates on the table. 
 
 ## Next steps
 
