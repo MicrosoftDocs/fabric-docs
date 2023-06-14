@@ -7,7 +7,7 @@ ms.reviewer: yicw, mesrivas,liud
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: product-trident
-ms.date: 05/23/2023
+ms.date: 06/14/2023
 ---
 
 # Workspaces
