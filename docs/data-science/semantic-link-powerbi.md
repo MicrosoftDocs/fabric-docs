@@ -1,12 +1,12 @@
 ---
 title: Semantic Link and Power BI connectivity
-description: Semantic Link and Microsoft Fabric provide Power BI connectivity
+description: Semantic Link and Microsoft Fabric provide Power BI data connectivity for Pandas and Spark ecosystems.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: marcozo
 author: eisber
 ms.topic: conceptual
-ms.date: 06/06/2023
+ms.date: 06/14/2023
 ms.search.form: Semantic Link
 ---
 
