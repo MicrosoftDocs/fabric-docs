@@ -54,6 +54,7 @@ To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, 
 The CU over time chart displays the following elements:
 
 * **Background %** - Blue columns represent the percent of CU consumption used during background operations in a 30 second period. This column refers to billable operations.
+    
     [*Background*](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) operations cover backend processes that are not directly triggered by users, such as data refreshes.
 
 * **Interactive %** - Red columns represent the percent of CU consumption used during interactive operations in a 30 second period. This column refers to billable operations.
