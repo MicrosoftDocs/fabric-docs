@@ -32,7 +32,7 @@ I agree to the above terms
 </div>
 
  > [!div class="button"]
- > [Download icons](https://download.microsoft.com/download/e/f/4/ef434e60-8cdc-4dd1-9d9f-e58670e57ec1/Power_Platform_scalable.zip)
+ > [Download icons](https://download.microsoft.com/download/6/0/c/60cda387-bf3f-4fb3-a8d0-d210690d4ee0/Icons.zip)
 
 ### See also
 
