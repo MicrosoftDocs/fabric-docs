@@ -6,7 +6,7 @@ ms.author: scbradl
 author: bradleyschacht
 ms.topic: quickstart
 ms.custom: build-2023
-ms.date: 5/23/2023
+ms.date: 06/13/2023
 ---
 
 # Microsoft Fabric decision guide: data warehouse or lakehouse
@@ -17,21 +17,23 @@ Use this reference guide and the example scenarios to help you choose between th
 
 ## Data warehouse and lakehouse properties
 
-| | **Data warehouse** | **Lakehouse** | **Power BI Datamart**  |
-|---|:---:|:---:|:---:|
-| **Data volume** | Unlimited | Unlimited |Up to 100 GB|
-| **Type of data** | Structured | Unstructured,<br>semi-structured,<br>structured |Structured|
-| **Primary developer persona** | Data warehouse developer,<br>SQL engineer | Data engineer,<br>data scientist |Citizen developer|
-| **Primary developer skill set** | SQL | Spark<br>(Scala, PySpark, Spark SQL, R) |No code, SQL|
-| **Data organized by** | Databases, schemas, and tables | Folders and files,<br>databases and tables |Database, tables, queries|
-| **Read operations** | Spark,<br>T-SQL | Spark,<br>T-SQL |Spark,<BR>T-SQL,<BR>Power BI|
-| **Write operations** | T-SQL | Spark<br>(Scala, PySpark, Spark SQL, R) |Dataflows, T-SQL|
-| **Multi-table transactions** | Yes | No |No|
-| **Primary development interface** | SQL scripts | Spark notebooks,<br>Spark job definitions | Power BI |
-| **Security** | Object level (table, view, function, stored procedure, etc.),<br>column level,<br>row level,<br>DDL/DML | Row level,<br>table level (when using T-SQL),<br>none for Spark | Built-in RLS editor|
-| **Access data via shortcuts** | Yes (indirectly through the lakehouse) | Yes | No|
-| **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) | No|
-| **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;<br>query across lakehouses (including shortcuts using Spark) | No|
+
+
+| | **Data warehouse** | **Lakehouse** | **Power BI Datamart**  | **KQL Database** |
+|---|:---:|:---:|:---:|:---:|
+| **Data volume** | Unlimited | Unlimited | Up to 100 GB | Unlimited |
+| **Type of data** | Structured | Unstructured,semi-structured,structured | Structured | Unstructured, semi-structured, structured |
+| **Primary developer persona** | Data warehouse developer,SQL engineer | Data engineer,data scientist | Citizen developer | Data engineer, data scientist, SQL engineer |
+| **Primary developer skill set** | SQL | Spark(Scala, PySpark, Spark SQL, R) | No code, SQL | KQL |
+| **Data organized by** | Databases, schemas, and tables | Folders and files, databases, and tables | Database, tables, queries | Databases, schemas, and tables |
+| **Read operations** | Spark,T-SQL | Spark,T-SQL | Spark,T-SQL,Power BI | KQL, T-SQL, Spark |
+| **Write operations** | T-SQL | Spark(Scala, PySpark, Spark SQL, R) | Dataflows, T-SQL | KQL, Spark, connector ecosystem |
+| **Multi-table transactions** | Yes | No | No | No |
+| **Primary development interface** | SQL scripts | Spark notebooks,Spark job definitions | Power BI | KQL Queryset |
+| **Security** | Object level (table, view, function, stored procedure, etc.),column level,row level,DDL/DML | Row level,table level (when using T-SQL),none for Spark | Built-in RLS editor | Row-Level Security |
+| **Access data via shortcuts** | Yes (indirectly through the lakehouse) | Yes | No | Yes |
+| **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) | No | Yes |
+| **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;query across lakehouses (including shortcuts using Spark) | No | Yes, query across KQL Databases and lakehouses |
 
 ## Scenarios
 
@@ -54,6 +56,12 @@ Rob decides to use a **lakehouse**, which allows the data engineering team to us
 Ash, a citizen developer, is a Power BI developer. They're familiar with Excel, Power BI, and Office. They need to build a data product for a business unit. They know they don't quite have the skills to build a data warehouse or a lakehouse, and those seem like too much for their needs and data volumes. They review the details in the previous table and see that the primary decision points are their own skills and their need for a self service, no code capability, and data volume under 100 GB.
 
 Ash works with business analysts familiar with Power BI and Microsoft Office, and knows that they already have a Premium capacity subscription. As they think about their larger team, they realize the primary consumers of this data may be analysts, familiar with no-code and SQL analytical tools. Ash decides to use a **Power BI datamart**, which allows the team to interact build the capability fast, using a no-code experience. Queries can be executed via Power BI and T-SQL, while also allowing any Spark users in the organization to access the data as well.
+
+### Scenario 4
+
+Daisy, a data scientist, wants to bring terabytes and potentially petabytes of structured, semi-structured, and unstructured data to Fabric. She is familiar with T-SQL and Spark in Notebooks, and is willing to update skills and learn a highly performant way of dealing with unstructured data using KQL. She needs to build queries and dashboards on top of this data and run queries that return answers in less than few seconds.
+
+Daisy decides to use a **KQL Database** because of its capability to query unstructured data, and to run queries that are highly performant and return answers in less than few seconds.
 
 ## Next steps
 
