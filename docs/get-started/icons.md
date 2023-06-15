@@ -14,7 +14,7 @@ This article provides information about the official collection of icons for Mic
 ## Do's
 
 * Use the icons to illustrate how products can work together.
-* In diagrams, we recommend including the product name somewhere close to the icon.
+* In diagrams, we recommend including a label that contains the product, experience or item name somewhere close to the icon.
 * Use the icons as they appear within the product.
 
 ## Don'ts
@@ -27,12 +27,8 @@ This article provides information about the official collection of icons for Mic
 
 Microsoft permits the use of these icons in architectural diagrams, training materials, or documentation. You may copy, distribute, and display the icons only for the permitted use unless granted explicit permission by Microsoft. Microsoft reserves all other rights.
 
-<div id="consent-checkbox">
-I agree to the above terms
-</div>
-
- > [!div class="button"]
- > [Download icons](https://download.microsoft.com/download/6/0/c/60cda387-bf3f-4fb3-a8d0-d210690d4ee0/Icons.zip)
+> [!div class="button"]
+> [Download icons](https://download.microsoft.com/download/6/0/c/60cda387-bf3f-4fb3-a8d0-d210690d4ee0/Icons.zip)
 
 ### See also
 
