@@ -69,7 +69,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 - [Anonymous](#anonymous-authentication)
 - [Basic](#basic-authentication)
-- [Service Principal authentication](#service-principal-authentication)
+- [Service Principal](#service-principal-authentication)
 
 :::image type="content" source="media/connector-rest/authentication-method.png" alt-text="Screenshot showing the authentication methods of REST.":::
 
@@ -93,6 +93,14 @@ Select **Anonymous** under **Authentication method**.
 - **Tenant Id**: Specify the tenant information (domain name or tenant ID) under which your application resides. Retrieve it by hovering the mouse in the top-right corner of the Azure portal.
 - **Service principal ID**: Specify the application's client ID.
 - **Service principal key**: Specify the application's key.
+
+To use service principal authentication, follow these steps:
+
+Register an application entity in Azure Active Directory (Azure AD) by following [Register your application with an Azure AD tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
+
+   - Tenant ID
+   - Application ID
+   - Application key
 
 ### Step 3: Specify the privacy level that you want to apply
 
