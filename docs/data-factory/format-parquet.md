@@ -4,7 +4,7 @@ description: This article explains how to configure Parquet format in the data p
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 06/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -51,8 +51,9 @@ After you select **Settings**, the following properties are shown in the pop-up 
 
 :::image type="content" source="./media/format-parquet/destination-file-settings.png" alt-text="Screenshot showing parquet file format destination.":::
 
-- **Enable Verti-Parquet**: Select this checkbox to optimize with Verti-Parquet technology.
 - **Compression type**: Choose the compression codec used to write Parquet files in the drop-down list. You can choose from **None**, **gzip (.gz)**, **snappy**, **lzo**, **Brotli (.br)**, **Zstandard**, **lz4**, **lz4frame**, **bzip2 (.bz2)**, or **lz4hadoop**.
+
+- **Use V-Order**: Select this to enable a write time optimization to the parquet file format. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
 
 Under **Advanced** settings in the **Destination** tab, the following Parquet format related properties are displayed.
 
