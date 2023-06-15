@@ -23,7 +23,7 @@ To pause your capacity you need:
 
 * An [F SKU capacity](buy-subscription.md#azure-skus)
 
-* To be a [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-power-bi-admin-roles)
+* To be a [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
 
 ## Pause your capacity
 
