@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/15/2023
 ---
 
 # Fabric settings
@@ -51,7 +51,7 @@ The governance and insights section provides links to help admins and users with
 | Link| Description|
 |:-----------|:--------------|
 |Admin portal | Opens the Fabric admin portal where admins perform various management tasks and configure Fabric tenant settings. For more information, see [What is the admin portal?](../admin/admin-center.md)|
-|[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)| Currently available to Power BI admins only. Opens the Microsoft Purview hub where you can view Purview insights about your organization's sensitive data. The Microsoft Purview hub also provides links to Purview governance and compliance capabilities and has links to documentation to help you get started with Microsoft Purview governance and compliance in Fabric. |
+|[Microsoft Purview hub (preview)](../governance/use-microsoft-purview-hub.md)| Currently available to Fabric admins only. Opens the Microsoft Purview hub where you can view Purview insights about your organization's sensitive data. The Microsoft Purview hub also provides links to Purview governance and compliance capabilities and has links to documentation to help you get started with Microsoft Purview governance and compliance in Fabric. |
 
 ## Next steps
 

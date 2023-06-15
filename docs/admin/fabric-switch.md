@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/31/2023
+ms.date: 06/15/2023
 ---
 
 # Enable Microsoft Fabric for your organization
@@ -36,7 +36,7 @@ To enable Microsoft Fabric, you need to have one of the following admin roles:
 
 * [Power Platform admin](microsoft-fabric-admin.md#power-platform-and-power-bi-admin-roles)
 
-* [Power BI admin](microsoft-fabric-admin.md#power-platform-and-power-bi-admin-roles)
+* [Fabric admin](microsoft-fabric-admin.md#power-platform-and-power-bi-admin-roles)
 
 ## Enable for your tenant
 
