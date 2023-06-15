@@ -58,4 +58,4 @@ Background operations are displayed for a specific [timepoint](../enterprise/met
 
 - [Install the Premium metrics app](/power-bi/enterprise/service-premium-install-app)
 - [Use the Premium metrics app](/power-bi/enterprise/service-premium-metrics-app)
-- [Microsoft Fabric Apache Spark monitoring overview](/spark-monitoring-overview.md)
+- [Microsoft Fabric Apache Spark monitoring overview](/data-engineering/spark-monitoring-overview)
