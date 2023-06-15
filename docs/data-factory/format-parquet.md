@@ -53,7 +53,7 @@ After you select **Settings**, the following properties are shown in the pop-up 
 
 - **Compression type**: Choose the compression codec used to write Parquet files in the drop-down list. You can choose from **None**, **gzip (.gz)**, **snappy**, **lzo**, **Brotli (.br)**, **Zstandard**, **lz4**, **lz4frame**, **bzip2 (.bz2)**, or **lz4hadoop**.
 
-- **Use V-Order**: Select this to enable a write time optimization to the parquet file format. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
+- **Use V-Order**: Select this checkbox to enable a write time optimization to the parquet file format. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
 
 Under **Advanced** settings in the **Destination** tab, the following Parquet format related properties are displayed.
 
