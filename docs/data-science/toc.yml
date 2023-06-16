@@ -61,7 +61,7 @@ items:
     href: read-write-pandas.md
   - name: How to accelerate data prep with Data Wrangler
     href: data-wrangler.md
-  - name: How to read and write data from and to PowerBI
+  - name: How to read and write data from and to Power BI
     href: read-write-powerbi.md
   - name: How to explore data with Semantic Link
     href: semantic-link-explore-data.md
@@ -191,13 +191,13 @@ items:
       href: semantic-link-overview.md
   - name: Concepts
     items:
-    - name: PowerBI connectivity
+    - name: Power BI connectivity
       href: semantic-link-powerbi.md
     - name: Semantic propagation
       href: semantic-link-semantic-propagation.md
   - name: How-to guides
     items:
-    - name: How to read and write data from and to PowerBI
+    - name: How to read and write data from and to Power BI
       href: read-write-powerbi.md
     - name: How to explore data with Semantic Link
       href: semantic-link-explore-data.md
