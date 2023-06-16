@@ -25,7 +25,7 @@ In this tutorial, you learn how to:
 > * Add an Lakehouse destination to the eventstream
 > * Define real-time events processing logic with event processor
 > * Verify the data in lakehouse
-> * Build Power BI report with the events data ingested in lakehouse
+> * Build Power BI report with the event data ingested in the lakehouse
 
 ## Prerequisites
 
@@ -34,17 +34,17 @@ To get started, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream and lakehouse item are located in.
 - An Azure event hub with event data and appropriate permission available to access the policy keys.
 
-## Create an eventstream and a lakehouse
+## Create an lakehouse and an eventstream
 
 You can create an Eventstream item (eventstream) or a Lakehouse item (lakehouse) on the **Workspace** page or the **Create hub** page. Here are the steps:
 
-1. Select your Fabric experience to **Real-time Analytics** and select **Eventstream** and **Lakehouse** to create them in workspace or create hub. 
+1. Select your Fabric experience to **Real-time Analytics** and select **Lakehouse** and **Eventstream** to create them in workspace or create hub. Suggest creating the Lakehouse first and the Eventstream later, as you will initially be working with the Eventstream item later on.
 
-   - In **Workspace**, select **New** and then **Eventstream**, **Lakehouse**:
+   - In **Workspace**, select **New** and then **Lakehouse**, **Eventstream**:
 
        :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/two-items-creation-in-workspace.png" alt-text="Screenshot showing the eventstream and lakehouse creation in workspace." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/two-items-creation-in-workspace.png" :::
 
-   - In **Create hub**, select **Eventstream** and **Lakehouse**: 
+   - In **Create hub**, select **Lakehouse** and **Eventstream**: 
 
        :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/eventstream-creation-in-hub.png" alt-text="Screenshot showing the eventstream item creation in create hub." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/eventstream-creation-in-hub.png" :::
    
