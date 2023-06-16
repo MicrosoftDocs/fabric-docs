@@ -101,7 +101,7 @@ The notebook resource explorer provides a Unix-like file system to help you mana
 The Built-in folder is a system pre-defined folder for each notebook instance, it preserves up to **500MB** storage to store the dependencies of the current notebook, below are the key capabilities of Notebook resources:
 
 - You can use common operations such as create/delete, upload/download, drag/drop, rename, duplicate, and search through the UI. 
-- You can use relative paths like ```"builtin/YourData.txt"``` for quick exploration. We also provide a ```mssparkutils.nbResPath``` method to help you compose the full path. 
+- You can use relative paths like `builtin/YourData.txt` for quick exploration. The `mssparkutils.nbResPath` method helps you compose the full path. 
 - You can easily move your validated data to a Lakehouse via the "Write to Lakehouse" option. We have embedded rich code snippets for common file types to help you quickly get started. 
 - These resources are also available for use in the [Reference Notebook run](author-execute-notebook.md) case via ```mssparkutils.notebook.run()```.
 
