@@ -167,18 +167,9 @@ df_spark.write.format("delta").saveAsTable("ForecastTable")
 
 Using Power BI the table *ForecastTable* can be added to a composite dataset using the Lakehouse dataset.
 
-<!-- 5. Next steps ------------------------------------------------------------------------
-
-Required: Provide at least one next step and no more than three. Include some context so the 
-customer can determine why they would click the link.
-Add a context sentence for the following links.
-
--->
 
 ## Next steps
-TODO: Add your next step link(s)
+Learn how to use semantic information
 
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
-
--->
+- [How to explore data with Semantic Link](semantic-link-explore-data.md)
+- [How to validate data with Semantic Link](semantic-link-validate-data.md)

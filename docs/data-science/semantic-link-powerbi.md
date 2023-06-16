@@ -73,5 +73,7 @@ GROUP BY
 
 
 ## Next steps
+Learn how to use semantic information
+
 - [How to explore data with Semantic Link](semantic-link-explore-data.md)
 - [How to validate data with Semantic Link](semantic-link-validate-data.md)
