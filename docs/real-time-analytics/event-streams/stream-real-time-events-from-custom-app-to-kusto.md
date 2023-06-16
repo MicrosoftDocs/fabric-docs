@@ -235,7 +235,7 @@ Once the data is ingested into your KQL database, you can analyze it according t
    > Using *avg* operator due to ten sensor devices emitting data every seconds.
 
 
-2. Select **Build Power BI report** to create your report. In the Power BI report dialog, add two ***line charts*** into the report and select ***temperature***, ***humidity*** and ***entryTime*** data in the two charts to monitor the data. You can also add a ***card*** into the report with latest entrytime added to monitor the latest event time. After the report configuration is done, select **File** -> **Save** to save this report to your workspace.
+2. Select **Build Power BI report** to create your report. In the Power BI report dialog, add two ***line charts*** into the report. Select ***temperature***, ***humidity*** and ***entryTime*** data for both charts to monitor the data. You can also add a ***card*** to the report displaying the latest ***entryTime*** to monitor the most recent event time. After the report configuration is done, select **File** -> **Save** to save this report to your workspace.
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-query-power-bi-report.png" alt-text="Screenshot showing the Power BI report creation from KQL." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-query-power-bi-report.png" :::
 
