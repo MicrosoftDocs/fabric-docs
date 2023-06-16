@@ -102,7 +102,7 @@ The Built-in folder is a system pre-defined folder for each notebook instance, i
 
 - You can use common operations such as create/delete, upload/download, drag/drop, rename, duplicate, and search through the UI. 
 - You can use relative paths like `builtin/YourData.txt` for quick exploration. The `mssparkutils.nbResPath` method helps you compose the full path. 
-- You can easily move your validated data to a Lakehouse via the "Write to Lakehouse" option. We have embedded rich code snippets for common file types to help you quickly get started. 
+- You can easily move your validated data to a Lakehouse via the **Write to Lakehouse** option. We have embedded rich code snippets for common file types to help you quickly get started. 
 - These resources are also available for use in the [Reference Notebook run](author-execute-notebook.md) case via ```mssparkutils.notebook.run()```.
 
 > [!NOTE]
