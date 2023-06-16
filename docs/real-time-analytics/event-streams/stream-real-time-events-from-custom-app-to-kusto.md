@@ -1,26 +1,26 @@
 ---
-title: Stream real-time events from a ustom application to Microsoft Fabric KQL Database for real-time reporting
-description: This tutorial provides an end-to-end demonstration of how to use event streams feature to stream real-time events to Microsoft Fabric KQL Database from Custom Application, and then build the Power BI report.
+title: Stream real-time events from a custom application to Microsoft Fabric KQL Database for real-time reporting
+description: This tutorial provides an end-to-end demonstration of how to use event streams feature to stream real-time events to Microsoft Fabric KQL Database from a custom application, and then build the real-time Power BI report.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 06/10/2023
+ms.date: 06/16/2023
 ms.search.form: product-kusto
 ---
 
 # Stream real-time events from a custom application to Microsoft Fabric KQL Database for real-time reporting
 
-In this tutorial, you learn how to utilize Microsoft Fabric event streams to stream real-time events from your Custom Application into Microsoft Fabric KQL Database. You also discover how to create a near real-time Power BI report to effectively monitor your business data.
+In this tutorial, you learn how to utilize Microsoft Fabric event streams to stream real-time events from your custom application into Microsoft Fabric KQL Database. You also discover how to create a near real-time Power BI report to effectively monitor your business data.
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
-> * Create Eventstream and KQL Database items in Microsoft Fabric
-> * Add an Custom Application source to the eventstream
+> * Create KQL Database and Eventstream items in Microsoft Fabric
+> * Add a custom application source to the eventstream
 > * Create an application to send events to the eventstream
 > * Add a KQL Database destination to the eventstream
 > * Verify data in the KQL database
@@ -36,9 +36,9 @@ To get started, you must complete the following prerequisites:
 
 ## Create a KQL database and an eventstream in Microsoft Fabric
 
-You can create an Eventstream item (eventstream) or a KQL Database item (KQL database) on the **Workspace** page or the **Create hub** page. Here are the steps:
+You can create a KQL Database item (KQL database) and an Eventstream item (eventstream) on the **Workspace** page or the **Create hub** page. Here are the steps:
 
-1. Select your Fabric experience to **Real-time Analytics** and select **KQL Database** and **Eventstream** to create them in workspace or create hub. Suggest creating the KQL database first and the Eventstream later, as you will initially be working with the Eventstream item later on.
+1. Select your Fabric experience **Real-time Analytics** and select **KQL Database** and **Eventstream** to create them in workspace or create hub. Suggest creating the KQL database first and the Eventstream later, as you will initially be working with the Eventstream item later on.
 
    * In **Workspace**, select **New** and then **KQL Database**, **Eventstream**:
 
@@ -48,12 +48,12 @@ You can create an Eventstream item (eventstream) or a KQL Database item (KQL dat
 
        :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-database-eventstream-create-in-hub.png" alt-text="Screenshot showing the eventstream and KQL db item creation in create hub." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-database-eventstream-create-in-hub.png" :::
 
-2. Give the name for the new Eventstream and KQL Database items, and select **Create**. For example, **citytempdata-es** for the eventstream and **citytempdb** for the KQL database.
+2. Give the names for the new KQL Database and Eventstream items, and select **Create**. For example, **citytempdb** for the KQL database and **citytempdata-es** for the eventstream.
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/create-dialog.png" alt-text="Screenshot showing the eventstream item creation dialog." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/create-dialog.png" :::
 
 3. After they're created successfully, two items are added into your workspace:
-   * **citytempdata-es**: an Eventstream item
+   * **citytempdata-es**: an Eventstream item.
    * **citytempdb**: a KQL Database item.
 
        :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/two-items-list.png" alt-text="Screenshot showing the two items list." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/two-items-list.png" :::
@@ -200,11 +200,17 @@ While the custom application is streaming events into your eventstream, you can 
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-table-schema.png" alt-text="Screenshot showing the KQL wizard table schema configuration." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-table-schema.png" :::
 
-6. Select **Next: Summary** to proceed to the next page, where you can review the configuration and status summary. If everything appears to be in order, select **Done** to finalize the configuration, and the event data start flowing into your KQL database.
+6. Select **Next: Summary** to proceed to the next page, where you can review the configuration and status summary. If everything appears to be in order, select **Done** to finalize the configuration, and the event data starts flowing into your KQL database. You see the KQL Database destination shown on the canvas.
+
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-database-destination-on-canvas.png" alt-text="Screenshot showing the kql database destination on canvas." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-database-destination-on-canvas.png" :::
 
 ## Verify data in the KQL database
 
-To verify the event data in KQL database, open **citytempdb** KQL database by selecting **Open item** in the Information tab of KQL database destination, then select table **tempdatatbl** -> **Query table** -> **Show any 100 records** to view its data.
+To verify the event data in KQL database, open **citytempdb** KQL database by selecting **Open item** in the Information tab of KQL database destination in eventstream. 
+
+:::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/open-kql-database-from-eventstream.png" alt-text="Screenshot showing the kql database opening from eventstream." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/open-kql-database-from-eventstream.png" :::
+
+Then in **citytempdb** KQL database, select table **tempdatatbl** -> **Query table** -> **Show any 100 records** to view its data.
 
 :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-table-top-100-menu.png" alt-text="Screenshot showing the KQL table top 100 menu." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-table-top-100-menu.png" :::
 
@@ -216,7 +222,7 @@ You find the data listed in the bottom section.
 
 Once the data is ingested into your KQL database, you can analyze it according to your specific needs. For example, if you want to track the temperature and humidity trends over the last 2 hours in near real-time, you can start by writing a KQL query to retrieve this data. Afterwards, you can visualize the results in a Power BI report with autorefresh enabled.
 
-1. In KQL query windows when showing any 100 records, modify the query as follows:
+1. In KQL query windows showing any 100 records, modify the query as follows:
 
    ```kusto
    // Use 'take' to view a sample number of records in the table and check the data.
@@ -229,7 +235,7 @@ Once the data is ingested into your KQL database, you can analyze it according t
    > Using *avg* operator due to ten sensor devices emitting data every seconds.
 
 
-2. Select **Build Power BI report** to create your report. Select the ***temperature***, ***humidity*** and ***entryTime*** to monitor these data. After the report configuration is done, select **File** -> **Save** to save this report to your workspace.
+2. Select **Build Power BI report** to create your report. In the Power BI report dialog, add two ***line charts*** into the report and select ***temperature***, ***humidity*** and ***entryTime*** data in the two charts to monitor the data. You can also add a ***card*** into the report with latest entrytime added to monitor the latest event time. After the report configuration is done, select **File** -> **Save** to save this report to your workspace.
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-query-power-bi-report.png" alt-text="Screenshot showing the Power BI report creation from KQL." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-query-power-bi-report.png" :::
 
