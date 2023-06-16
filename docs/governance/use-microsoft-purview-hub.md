@@ -6,7 +6,7 @@ ms.author: painbar
 author: paulinbar
 ms.topic: how-to 
 ms.custom: build-2023
-ms.date: 3/31/2023
+ms.date: 6/15/2023
 ---
 
 # The Microsoft Purview hub in Microsoft Fabric
@@ -16,7 +16,7 @@ Microsoft Purview hub is a centralized page in Fabric that helps Fabric administ
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
 >[!NOTE]
-> You must have a Power BI administrator role or higher to access the hub.
+> You must have a Fabric administrator role or higher to access the hub.
 
 For more information about the Fabric/Purview integration, see [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md).
 
