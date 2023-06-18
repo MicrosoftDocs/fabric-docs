@@ -41,10 +41,12 @@ To create a OneLake shortcut:
    :::image type="content" source="media\create-onelake-shortcut\select-data-source.png" alt-text="Screenshot of the Select a data source type screen." lightbox="media\create-onelake-shortcut\select-data-source.png":::
 
 1. Select a folder, then select **Create**.
+   
+   > Note: Shortcut creation experience does not support selecting multiple folders. If there are multiple tables, a shortcut must be created individually for each folder.
 
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-create-button.png" alt-text="Screenshot showing where to select the Create button in the New shortcut screen." lightbox="media\create-onelake-shortcut\new-shortcut-create-button.png":::
 
-1. See the folder icon with shortcut symbol in the explorer.
+2. See the folder icon with shortcut symbol in the explorer.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol." lightbox="media\create-onelake-shortcut\folder-shortcut-symbol.png":::
 
