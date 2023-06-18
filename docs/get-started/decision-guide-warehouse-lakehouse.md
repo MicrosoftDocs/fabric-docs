@@ -59,7 +59,7 @@ Ash works with business analysts familiar with Power BI and Microsoft Office, an
 
 ### Scenario 4
 
-Daisy, a data scientist, wants to bring terabytes and potentially petabytes of structured, semi-structured, and unstructured data to Fabric. She is familiar with T-SQL and Spark in Notebooks, and is willing to update skills and learn a highly performant way of dealing with unstructured data using KQL. She needs to build queries and dashboards on top of this data and run queries that return answers in less than few seconds.
+Daisy, a data scientist, wants to bring terabytes and potentially petabytes of structured, semi-structured, and unstructured data to Fabric. She is familiar with T-SQL and Spark in Notebooks, and is willing to update her skills and learn a new query language. She needs to build queries and dashboards on top of this data and run queries that return answers in less than few seconds.
 
 Daisy decides to use a **KQL Database** because of its capability to query unstructured data, and to run queries that are highly performant and return answers in less than few seconds.
 
