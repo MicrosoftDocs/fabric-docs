@@ -10,7 +10,7 @@ ms.date: 06/12/2023
 ms.search.form: product-kusto
 ---
 # What is Real-Time Analytics in Fabric?
- 
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The last few decades have seen a paradigm shift in the way we access and consume information, as users have become used to data that is interactive, on demand, and accessible to all. This shift has been powered by big data, streaming data ingestion, and indexed, keyword-based search. All together they form a simplified user experience. With Real-Time Analytics in Microsoft Fabric, we enable organizations to focus and scale up their analytics solution while democratizing data for the needs of both the citizen data scientist all the way to the advanced data engineer. Real-time analytics have become essential in many scenarios in the enterprise world, such as cybersecurity, asset tracking and management, predictive maintenance,supply chain optimization, customer experience, energy management, inventory management, quality control, environmental monitoring, fleet management, and health and safety.
@@ -49,23 +49,23 @@ If any one of these questions describes your data needs, Real-Time Analytics is 
 
 The types of industries that benefit from data analysis in Real-Time Analytics is varied. For example: finance, transportation and logistics, smart cities, smart buildings, manufacturing operations, automotive, and oil and gas.
 
-### Example scenarios
+### Scenarios
 
 * Marketing:
 
-Let's say you're a marketing specialist implementing a new campaign. You need to investigate the marketing performance and its evaluate its impact on the customer in real-time, and be able to modify your approach to optimize your campaign. Using Real-Time Analytics, you can gain insight and increase your inbound marketing accordingly in real-time.
+Let's say you're a marketing specialist implementing a new campaign. You want to see how your campaign impacts sales, inventory, and logistics. You have a lot of data flowing in different formats, and need to figure out a way to make sense of this data and use it to make good business decisions. With Real-Time Analytics, you can gain the insight you need to increase your inbound marketing, make changes accordingly, and monitor the success of your campaign in real-time.
 
 * Oil and gas:
 
-You work in the oil and gas industry. You need to oversee the drilling and pumping operations while ensuring the safety of the work environment and the stability of the operations. With Real-Time Analytics you can monitor changes.
+You're a project manager in the oil and gas industry. You're responsible for planning, designing, and monitoring drilling and pumping operations as well as delivery. You can use Real-Time Analytics to oversee the progress of your workforce and the different teams under your supervision, and optimize the efficiency of the operations while ensuring the stability and safety of the drilling, pumping, and delivery of the oil and gas.
 
 * Sales:
 
-You manage a retail company. You want to keep up with the best selling items and recent trends to relay back to the company warehouse and operations department to manage productions. You need to know how much personnel to employ, from security to store staff. Using Real-Time Analytics, you can take a look at all of this data and gain insight to increase performance and optimize your company operations.
+You're a retail planning manager. You need to analyze sales, manage budgets, decide on pricing, communicate between the company warehouse and the operations department to manage productions, manage security and staffing requirements, and more. Real-Time Analytics lets you take a look at all of this data and helps you gain insight into workload trends. This allows you to implement business strategies that expand store traffic, promote sales growth, and increase customer satisfactions.
 
 * Agriculture:
 
-You work in crop production and management.
+You work in crop production and management. You need to monitor fields and raw product storage facilities, monitor irrigation, soil moisture, and keep track of chemical application records, as well as coordinate harvest plans. Real-Time Analytics centralizes all of your incoming data, from seed source data to agronomic data, to help ensure product quality and optimize the environment for crop growth.
 
 ## How to work in Real-Time Analytics?
 
