@@ -42,7 +42,7 @@ To create a OneLake shortcut:
 
 1. Select a folder, then select **Create**.
    
-   > Note: Shortcut creation experience does not support selecting multiple folders. If there are multiple tables, a shortcut must be created individually for each folder.
+   > Note: Shortcut creation experience does not support selecting multiple folders. If there are multiple tables, a shortcut must be created separately for each folder.
 
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-create-button.png" alt-text="Screenshot showing where to select the Create button in the New shortcut screen." lightbox="media\create-onelake-shortcut\new-shortcut-create-button.png":::
 
