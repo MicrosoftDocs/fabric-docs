@@ -24,11 +24,15 @@ Sharing is a convenient way to provide users read access to your [!INCLUDE [fabr
 
 After identifying the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] you would like to share with another user in your Fabric workspace, select the quick action in the row to **Share** a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
-:::image type="content" source="media\share-warehouse-manage-permissions\share-warehouse.gif" alt-text="An animated gif showing interaction with the Fabric portal where a user shares a warehouse in Microsoft Fabric with another user.":::
+The following animated gif reviews the steps to select a warehouse to share, select the permissions to assign, and then finally **Grant** the permissions to another user.
 
-You can also share your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from the Data Hub by choosing **Share** from quick action.
+:::image type="content" source="media\share-warehouse-manage-permissions\share-warehouse.gif" alt-text="An animated gif showing interaction with the Fabric portal where a user shares a warehouse in Microsoft Fabric with another user." lightbox="media\share-warehouse-manage-permissions\share-warehouse.gif" :::
+
+You can share your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from the OneLake Data Hub or the Synapse Data Warehouse by choosing **Share** from quick action, as highlighted in the following image.
 
 :::image type="content" source="media\share-warehouse-manage-permissions\share-warehouse-data-hub.png" alt-text="Screenshot showing how to share a warehouse in the OneLake Data Hub page." lightbox="media\share-warehouse-manage-permissions\share-warehouse-data-hub.png":::
+
+## Share a Warehouse
 
 You are prompted with options to select who you would like to share the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with, what permission(s) to grant them, and whether they will be notified by email. When you have filled in all the required fields, select **Grant access**.
 
@@ -60,7 +64,7 @@ A shared recipient with **ReadAll** permissions can find the ABFSS path to the s
 
 The following animated gif shows how a user with **ReadAll** permissions is able to query the data in `FactSale` with a Spark query in a new notebook.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\readall-permissions.gif" alt-text="An animated gif showing interaction with the Fabric portal where a user opens a Spark notebook to query the Warehouse shortcut." :::
+:::image type="content" source="media\share-warehouse-manage-permissions\readall-permissions.gif" alt-text="An animated gif showing interaction with the Fabric portal where a user opens a Spark notebook to query the Warehouse shortcut." lightbox="media\share-warehouse-manage-permissions\readall-permissions.gif" :::
 
 ### Build permissions
 
@@ -68,9 +72,9 @@ With **Build** permissions, the shared recipient can create reports on top of th
 
 The following animated gif shows how a user with **Build** permissions is able to quickly create an **Auto-create** report of the warehouse.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\build-permissions.gif" alt-text="An animated gif showing interaction with the Fabric portal, where a user autocreates a report with their shared warehouse." :::
+:::image type="content" source="media\share-warehouse-manage-permissions\build-permissions.gif" alt-text="An animated gif showing interaction with the Fabric portal, where a user autocreates a report with their shared warehouse." lightbox="media\share-warehouse-manage-permissions\build-permissions.gif" :::
 
-## Manage permissions
+## Manage shared permissions
 
 The **Manage permissions** page shows the list of users who have been given access by either assigning to Workspace roles or item permissions.
 
