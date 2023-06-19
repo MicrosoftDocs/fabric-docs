@@ -42,7 +42,7 @@ Here's more detail about each of the permissions provided:
 
 - **"Read all SQL endpoint data" is selected ("ReadData" permissions)**- The shared recipient can read all the database objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **ReadData** is the equivalent of *db_datareader* role in SQL Server. The shared recipient can read data from all tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you want to further restrict and provide granular access to some objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], you can do this using T-SQL [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true) statement.
 
-- **"Read all data using Apache Spark" is selected ("ReadAll" permissions)**- The shared recipient has read access to the underlying parquet files in OneLake, which can be consumed using Spark. **ReadAll** should be provided only if the shared recipient wants complete access to your warehouse's files to access this using the Spark engine.
+- **"Read all data using Apache Spark" is selected ("ReadAll" permissions)**- The shared recipient has read access to the underlying parquet files in OneLake, which can be consumed using Spark. **ReadAll** should be provided only if the shared recipient wants complete access to your warehouse's files using the Spark engine.
 
 - **"Build reports on the default checkbox" is selected ("Build" permissions)**- The shared recipient can build reports on top of the default dataset that is connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **Build** should be provided if the shared recipient wants **Build** permissions on the default dataset, to create Power BI reports against this dataset. The **Build** checkbox is selected by default, but can be unchecked.
 
@@ -60,7 +60,7 @@ With **ReadData** permissions, the shared recipient can open the [!INCLUDE [fabr
 
 ### ReadAll permissions
 
-A shared recipient with **ReadAll** permissions can find the ABFSS path to the specific file in OneLake from the Properties pane in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor. The shared recipient can then use this path within a Spark Notebook to read this data. 
+A shared recipient with **ReadAll** permissions can find the [Azure Blob File System (ABFS) path](/azure/storage/blobs/data-lake-storage-introduction-abfs-uri) to the specific file in OneLake from the Properties pane in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor. The shared recipient can then use this path within a Spark Notebook to read this data. 
 
 The following animated gif shows how a user with **ReadAll** permissions is able to query the data in `FactSale` with a Spark query in a new notebook.
 
