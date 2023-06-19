@@ -2,8 +2,8 @@
 title: Data science tutorial - train and register machine learning models
 description: In this fourth part of the tutorial series, learn how to train machine learning models to predict the total ride duration of taxi trips, and then register the trained models.
 ms.reviewer: sgilley
-ms.author: narsam
-author: narmeens
+ms.author: amjafari
+author: amhjf
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 5/4/2023
@@ -264,13 +264,14 @@ In this tutorial, you'll load cleansed and prepared data from lakehouse delta ta
 
 At the end of the tutorial, we have two runs of the lightgbm regression model trained and registered in the MLflow model registry, and the model is also available in the workspace as a Fabric model item.
 
-> [!NOTE]
-> If you do not see your model item in the list, refresh your browser.
-
 In order to view the model in the UI:
 
 - Navigate to your currently active Fabric workspace.
 - Select the model item named ***nyctaxi_tripduration_lightgbm*** to open the model UI.
+
+   > [!NOTE]
+   > If you do not see your model item in the list, refresh your browser.
+
 - On the model UI, you can view the properties and metrics of a given run, compare performance of various runs, and download various file items associated with the trained model.
 
   The following image shows the layout of the various features within the model UI in a Fabric workspace.

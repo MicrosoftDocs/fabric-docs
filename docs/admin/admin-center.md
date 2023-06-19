@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/15/2023
 ---
 
 # What is the admin portal?
@@ -20,7 +20,7 @@ The admin portal can be accessed by admins with the following roles:
 
 * Power Platform administrator
 
-* Power BI administrator
+* Fabric administrator
 
 If you're not in one of these roles, you only see *Capacity settings* in the admin portal.
 
