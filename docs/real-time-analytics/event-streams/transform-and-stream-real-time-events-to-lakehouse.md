@@ -85,7 +85,7 @@ After the lakehouse and eventstream are created, do the following steps to add a
 
 4. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
 
-5. Select a **Consumer group** that is used for reading the event data from your Azure event hub and then **Create**. 
+5. Select a **Consumer group** that is used for reading the event data from your Azure event hub and then **Add**. 
 
 6. You see the new source node appears in the canvas after the event hub source is created successfully. You can select the event hub node in the canvas, then the **Data preview** tab in the bottom pane to view the data inside the event hub.
 
@@ -111,7 +111,7 @@ After your event hub events have been ingested into your eventstream, you can ad
    2. **Delta table**: Select an existing delta table or create a new one to receive data. Here a new delta table **citypwrtbl** is given.
    3. **Data format**: Select the data format for the data that is sent to your lakehouse.
 
-3. Select **Create** if you don't want to process your events while ingesting them to your lakehouse.
+3. Select **Add** if you don't want to process your events while ingesting them to your lakehouse.
 ## Define real-time events processing logic with event processor
 
 If the event processing is needed, select **Open event processor** before selecting **Create**. The event processor editor is open.
