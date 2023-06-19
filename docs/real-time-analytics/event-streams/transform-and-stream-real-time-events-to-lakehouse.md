@@ -50,7 +50,7 @@ You can create an Eventstream item (eventstream) or a Lakehouse item (lakehouse)
    
         :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/lakehouse-creation-in-hub.png" alt-text="Screenshot showing the lakehouse item creation in create hub." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/lakehouse-creation-in-hub.png" :::
 
-2. Give the name for the new eventstream and lakehouse items, and select **Create**. For example, **citypwr-es** for the eventstream and **citypwrdata** for the lakehouse.
+2. Give the names for the new eventstream and lakehouse items, and select **Create**. For example, **citypwr-es** for the eventstream and **citypwrdata** for the lakehouse.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/creating-dialog.png" alt-text="Screenshot showing the eventstream item creation dialog." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/creating-dialog.png" :::
 
