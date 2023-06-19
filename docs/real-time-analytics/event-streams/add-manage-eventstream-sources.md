@@ -40,7 +40,7 @@ If you have an Azure event hub created with event data there, follow these steps
    - **Connection name**: Enter a name for the cloud connection. 
    - **Connection type**: Default value is `EventHub`. 
    - **Event Hub namespace**: Enter the name of your Azure event hub namespace. 
-   - **Authentication username and password**: Go to your Azure event hub and create a policy under **Share access policies**. Then use **policy name** and **primary key** as the username and password. 
+   - **Authentication**: Go to your Azure event hub and create a policy under **Share access policies**. Then use **policy name** and **primary key** as the **Shared Access Key Name** and **Shared Access Key**. 
    
        :::image type="content" source="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png" alt-text="Screenshot showing the Azure event hub policy key." lightbox="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png" :::
    
@@ -52,9 +52,9 @@ If you have an Azure event hub created with event data there, follow these steps
 
 5. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
 
-6. Select a **Consumer group** that is used for reading the event data from your Azure event hub and then **Create**. 
+6. Select a **Consumer group** that is used for reading the event data from your Azure event hub and then **Add**. 
 
-    After the event hub source is created, you see an event hub source added to your eventstream on the canvas.
+    After the event hub source is add, you see an event hub source added to your eventstream on the canvas.
 
     :::image type="content" source="./media/add-manage-eventstream-sources/event-hub-source-completed.png" alt-text="Screenshot showing the event hub source." lightbox="./media/add-manage-eventstream-sources/event-hub-source-completed.png" :::
 
@@ -64,13 +64,13 @@ To get a better understanding of how an eventstream works, you can use the out-o
 
 1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then Sample data. 
 
-2. On the right pane, enter a source name to be displayed on the canvas, select the desired sample data to be added to your eventstream and then Create. 
+2. On the right pane, enter a source name to be displayed on the canvas, select the desired sample data to be added to your eventstream and then **Add**. 
    - **Yellow Taxi**: sample taxi data with a preset schema that includes fields such as pickup time, drop-off time, distance, total fee, and more. 
    - **Stock Market**: sample data of a stock exchange with a preset schema column such as time, symbol, price, volume and more.
    
        :::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration." lightbox="./media/event-streams-source/eventstream-sources-sample-data.png" :::
 
-3. When the sample data source is created successfully, you can find it on the canvas and navigation pane.
+3. When the sample data source is added successfully, you can find it on the canvas and navigation pane.
 
     To verify if the sample data is added successfully, select Data preview in the bottom pane.
 
@@ -79,15 +79,19 @@ To get a better understanding of how an eventstream works, you can use the out-o
 
 ## Add custom application as a source
 
-If you want to connect your own application with an eventstream, you can add it as a custom app source. Then, send data to the eventstream with your own application with the connection endpoint exposed in the custom app. Follow these steps to add a custom app source:  
+If you want to connect your own application with an eventstream, you can add a custom app source. Then, send data to the eventstream with your own application with the connection endpoint exposed in the custom app. Follow these steps to add a custom app source:  
 
 1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then Custom App. 
 
-2. Enter a **Source name** for the custom app and select Create. 
+2. Enter a **Source name** for the custom app and select **Add**. 
 
    :::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="./media/event-streams-source/eventstream-sources-custom-app.png" :::
 
-3. Once the custom app is created successfully, you can view the information of the custom app such as connection string and use it in your application.
+3. Once the custom app is added successfully, you can view the information of the custom app such as connection string and use it in your application.
+
+   The endpoint that the custom app exposes is in the connection string which is an **event hub compatible connection string**. An example of what the connection string looks like is provided as below:
+
+   *`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
 
    :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source-completed.png" alt-text="Screenshot showing the custom app source." lightbox="./media/add-manage-eventstream-sources/custom-app-source-completed.png" :::
 

@@ -68,12 +68,12 @@ If you have a lakehouse created in your workspace, follow these steps to add thi
  
    1. **Lakehouse**: Select an existing lakehouse item from the workspace you specified.
    2. **Delta table**: Select an existing delta table or create a new one to receive data.
-   3. **Data format**: Select the data format for the data that is sent to your lakehouse.
+   3. **Input data format**: Select the data format for the data (input data) that is sent to your lakehouse.
    4. **Event processing**: You can use our event processor to specify how the data should be processed before it's sent to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Use event processor editor to define the data transformation logic](./process-events-using-event-processor-editor.md).
    
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" alt-text="Screenshot showing the event processor editor." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" :::
 
-3. Select **Create** to add the lakehouse destination.
+3. Select **Add** to add the lakehouse destination.
 
     You see a lakehouse destination is added to your eventstream on the canvas. It will be in ingestion mode after one or two minutes.
 
@@ -85,7 +85,7 @@ If you want to route the event data to your application, you can add a custom ap
 
 1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Custom App**.
 
-2. Enter a destination name for the custom app and select **Create**. 
+2. Enter a destination name for the custom app and select **Add**. 
 
    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" alt-text="Screenshot showing the custom app configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" :::
 
@@ -147,7 +147,7 @@ This destination provides you with the ability to transform your real-time event
 - **Workspace** - The workspace name where your lakehouse is located. 
 - **Lakehouse** – The lakehouse where transformed data needs to be routed for data analysis/warehousing. 
 - **Delta table** – Destination table within the lakehouse. 
-- **Data format** – The format of real-time events that is sent to your lakehouse. 
+- **Input data format** – The format of real-time events that is sent to your lakehouse. 
 - **Open event processor** – It's where event transformation is defined. 
 
     :::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse.png" alt-text="Screenshot showing the lakehouse destination type." lightbox="./media/event-streams-destination/eventstream-destinations-lakehouse.png" :::
