@@ -46,7 +46,7 @@ To create a OneLake shortcut:
 
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-create-button.png" alt-text="Screenshot showing where to select the Create button in the New shortcut screen." lightbox="media\create-onelake-shortcut\new-shortcut-create-button.png":::
 
-2. See the folder icon with shortcut symbol in the explorer.
+1. See the folder icon with shortcut symbol in the explorer.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol." lightbox="media\create-onelake-shortcut\folder-shortcut-symbol.png":::
 
