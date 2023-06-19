@@ -3,6 +3,7 @@ title: Git integration branches
 description: Learn how to use git branches to work in your own isolated environment.
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: concept-article
 ms.date: 05/23/2023
 ms.custom: build-2023
@@ -60,5 +61,5 @@ Once the review and merge are complete, a new commit is created to the *main* br
 
 ## Next steps
 
-- [Get started with git integration](./git-get-started.md)
-- [Understand the git integration process](./git-integration-process.md)
+- [Resolve errors and conflicts](./conflict-resolution.md)
+- [Git integration best practices](../best-practices-cicd.md)

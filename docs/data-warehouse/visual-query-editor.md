@@ -1,6 +1,6 @@
 ---
 title: Query using the visual query editor
-description: Learn how to use the visual query editor.
+description: Learn how to use the visual query editor for a no-code experience to create your queries.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
@@ -13,7 +13,11 @@ ms.search.form: Query editor # This article's title should not change. If so, co
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-You can [query the data](query-warehouse.md) in your warehouse with multiple tools, including the visual query editor and the [SQL query editor](sql-query-editor.md). This article describes how to use the visual query editor to quickly and efficiently write queries, and suggestions on how best to see the information you need.
+This article describes how to use the visual query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal to quickly and efficiently write queries. You can use the visual query editor for a no-code experience to create your queries.
+
+- You can also [query the data](query-warehouse.md) in your warehouse with multiple tools with a [SQL connection string](connectivity.md).
+- You can use the [SQL query editor](sql-query-editor.md) to write T-SQL queries from the [!INCLUDE [product-name](../includes/product-name.md)] portal.
+- You can quickly [view data in the Data preview](data-preview.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -21,13 +25,11 @@ You can [query the data](query-warehouse.md) in your warehouse with multiple too
 
 The visual query editor provides an easy visual interface to write queries against the data in your warehouse.
 
-Once you've loaded data into your warehouse, you can use the visual query editor to create queries to analyze your data. You can use the visual query editor for a no-code experience to create your queries.
-
-There are two ways to get to the visual query editor:
+Once you've loaded data into your warehouse, you can use the visual query editor to create queries to analyze your data. There are two ways to get to the visual query editor:
 
 In the ribbon, create a new query using the **New visual query** button, as shown in the following image.
 
-:::image type="content" source="media\visual-query-editor\new-visual-query.png" alt-text="Screenshot showing where to find the New query menu in the Data preview view." lightbox="media\visual-query-editor\new-visual-query.png":::
+:::image type="content" source="media\visual-query-editor\new-visual-query.png" alt-text="Screenshot showing where to find the New query menu in the Data preview view.":::
 
 To create a query, drag and drop tables from the **Object explorer** on the left onto the canvas. Once you drag one or more tables onto the canvas, you can use the visual experience to design your queries. The warehouse editor uses the Power Query diagram view experience to enable you to easily query and analyze your data. Learn more about [Power Query diagram view](/power-query/diagram-view).
 
@@ -50,8 +52,9 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 
 ## Limitations with visual query editor
 
-- In the visual query editor, you can only run DQL (Data Query Language) or read-only [SELECT](/sql/t-sql/queries/select-transact-sql?view=fabric&preserve-view=true) statements. DDL or DML are not supported.
+- In the visual query editor, you can only run DQL (Data Query Language) or read-only [SELECT](/sql/t-sql/queries/select-transact-sql?view=fabric&preserve-view=true) statements. DDL or DML statements are not supported.
 - Only a subset of Power Query operations that support Query folding are currently supported.
+- Visualize Results currently does not support SQL queries with an ORDER BY clause. 
 
 ## Next steps
 

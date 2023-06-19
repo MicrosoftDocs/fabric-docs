@@ -31,7 +31,7 @@ One-time data loading is often needed for historical data, or for adding dimensi
 
 In the **Destination** tab, **Database** is auto populated with the name of the selected database.
 
-1. Under **Table**, make sure that **New table** is selected, and enter *locations* as the table name.
+1. Under **Table**, make sure that **New table** is selected, and enter *Locations* as the table name.
 1. Select **Next: Source**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/destination-tab.png" alt-text="Screenshot of destination tab.":::

@@ -1,23 +1,37 @@
 ---
 title: Data science tutorial - perform batch scoring and save predictions
-description: In this fifth module, learn how to import a trained and registered model and perform batch predictions on a test dataset.
-ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+description: In this fifth part of the tutorial series, learn how to import a trained and registered model and perform batch predictions on a test dataset.
+ms.reviewer: sgilley
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 5/4/2023
 ---
 
-# Module 5: Perform batch scoring and save predictions to a lakehouse
+# Part 5: Perform batch scoring and save predictions to a lakehouse
 
-In this module, you learn to import a trained and registered LightGBMRegressor model from the Microsoft Fabric MLflow model registry, and perform batch predictions on a test dataset loaded from a lakehouse.
+In this tutorial, you learn to import a trained and registered LightGBMRegressor model from the Microsoft Fabric MLflow model registry, and perform batch predictions on a test dataset loaded from a lakehouse.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+* Complete [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
+
+* Optionally, complete [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
+
+* Complete [Part 3: Perform data cleansing and preparation using Apache Spark](tutorial-data-science-data-cleanse.md).
+
+* Complete [Part 4: Train and register machine learning models](tutorial-data-science-train-models.md).
+
 ## Follow along in notebook
 
-The python commands/script used in each step of this tutorial can be found in the accompanying notebook: [05-perform-batch-scoring-and-save-predictions-to-lakehouse.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/05-perform-batch-scoring-and-save-predictions-to-lakehouse.ipynb). Be sure to [attach a lakehouse to the notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) before executing it.
+[05-perform-batch-scoring-and-save-predictions-to-lakehouse.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/05-perform-batch-scoring-and-save-predictions-to-lakehouse.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along](./includes/follow-along.md)]
 
 ## Perform batch scoring and save predictions
 
@@ -30,7 +44,7 @@ The python commands/script used in each step of this tutorial can be found in th
                .sample(True, 0.01, seed=SEED) ## Sampling data to reduce execution time for this tutorial
    ```
 
-1. Import the required pyspark.ml and synapse.ml libraries and load the trained and registered LightGBMRegressor model using the ***run_uri*** copied from the final step of [Module 4: Train and register machine learning models](tutorial-data-science-train-models.md).
+1. Import the required pyspark.ml and synapse.ml libraries and load the trained and registered LightGBMRegressor model using the ***run_uri*** copied from the final step of [Part 4: Train and register machine learning models](tutorial-data-science-train-models.md).
 
    ```python
    import mlflow
@@ -38,9 +52,8 @@ The python commands/script used in each step of this tutorial can be found in th
    from pyspark.ml import Pipeline
    from synapse.ml.core.platform import *
    from synapse.ml.lightgbm import LightGBMRegressor
-
    ## Define run_uri to fetch the model
-   run_uri = "<enter the run_uri from module 04 here>"
+   run_uri = "<enter the run_uri from part 04 here>"
    loaded_model = mlflow.spark.load_model(run_uri, dfs_tmpdir="Files/tmp/mlflow")
    ```
 
@@ -63,7 +76,7 @@ The python commands/script used in each step of this tutorial can be found in th
    print(f"Output Predictions saved to delta table: {table_name}")
    ```
 
-1. Preview the final predicted data by various methods including SparkSQL queries that can be executed using the %%sql magics command, which tells the notebook engine that the cell is a SparkSQL script.
+1. Preview the final predicted data by various methods including SparkSQL queries that can be executed using the `%%sql` magics command, which tells the notebook engine that the cell is a SparkSQL script.
 
    ```python
    %%sql
@@ -78,4 +91,4 @@ The python commands/script used in each step of this tutorial can be found in th
 
 ## Next steps
 
-- [Module 6: Create a Power BI report to visualize predictions](tutorial-data-science-create-report.md)
+- [Part 6: Create a Power BI report to visualize predictions](tutorial-data-science-create-report.md)

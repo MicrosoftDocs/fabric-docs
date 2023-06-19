@@ -1,9 +1,9 @@
 ---
 title: Data science tutorial - get started
-description: Learn about the Data science tutorial, including an overview of the steps you follow through the modules and details about the end-to-end scenario.
-ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+description: Learn about the Data science tutorial, including an overview of the steps you follow through the series and details about the end-to-end scenario.
+ms.reviewer: sgilley
+ms.author: amjafari
+author: amhjf
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 5/4/2023
@@ -11,9 +11,11 @@ ms.date: 5/4/2023
 
 # Data science end-to-end scenario: introduction and architecture
 
-In this set of tutorials, we demonstrate a sample end-to-end scenario in the Fabric data science experience by implementing each step from data ingestion, cleansing, and preparation, to training machine learning models and generating insights, and then consuming those insights using visualization tools like Power BI. If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md).
+This set of tutorials demonstrates a sample end-to-end scenario in the Fabric data science experience.  You'll implement each step from data ingestion, cleansing, and preparation, to training machine learning models and generating insights, and then consume those insights using visualization tools like Power BI. 
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md).
 
 ## Introduction
 
@@ -25,11 +27,11 @@ The lifecycle of a Data science project typically includes (often, iteratively) 
 - Model training and experiment tracking
 - Model scoring and generating insights.
 
-The goals and success criteria of each stage depend on collaboration, data sharing and documentation. The Fabric Data science experience consists of multiple native-built features that enable collaboration, data acquisition, sharing, and consumption in a seamless way.
+The goals and success criteria of each stage depend on collaboration, data sharing and documentation. The Fabric data science experience consists of multiple native-built features that enable collaboration, data acquisition, sharing, and consumption in a seamless way.
 
-In this tutorial, you take the role of a data scientist who has been given the task to explore, clean, and transform a dataset containing taxicab trip data. You then build a machine learning model to predict trip duration at scale on a large dataset.
+In these tutorials, you take the role of a data scientist who has been given the task to explore, clean, and transform a dataset containing taxicab trip data. You then build a machine learning model to predict trip duration at scale on a large dataset.
 
-In this tutorial, you learn to perform the following activities:
+You'll learn to perform the following activities:
 
 1. Use the Fabric notebooks for data science scenarios.
 
@@ -37,9 +39,9 @@ In this tutorial, you learn to perform the following activities:
 
 1. Load existing data from the lakehouse delta tables.
 
-1. Clean and transform Data using Apache Spark.
+1. Clean and transform data using Apache Spark.
 
-1. Create experiments and runs to Train a machine learning model.
+1. Create experiments and runs to train a machine learning model.
 
 1. Register and track trained models using MLflow and the Fabric UI.
 
@@ -49,7 +51,7 @@ In this tutorial, you learn to perform the following activities:
 
 ## Architecture
 
-In this tutorial, we showcase a simplified end-to-end data science scenario that involves:
+In this tutorial series, we showcase a simplified end-to-end data science scenario that involves:
 
 1. [Ingesting data from an external data source](tutorial-data-science-ingest-data.md).
 1. [Data exploration and visualization](tutorial-data-science-explore-notebook.md).
@@ -60,18 +62,18 @@ In this tutorial, we showcase a simplified end-to-end data science scenario that
 
 :::image type="content" source="media/tutorial-data-science-introduction/data-science-scenario.png" alt-text="Diagram of the Data science end-to-end scenario components." lightbox="media/tutorial-data-science-introduction/data-science-scenario.png":::
 
-### Different components of the Data science scenario
+### Different components of the data science scenario
 
-**Data sources** - Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data from. Using Fabric Notebooks you can ingest data from the built in Lakehouse, Data Warehouse, Power BI Datasets and various Apache Spark and Python supported custom data sources. This tutorial focuses on ingesting and loading data from a lakehouse.
+**Data sources** - Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data from. Using Fabric Notebooks you can ingest data from the built-in Lakehouse, Data Warehouse, Power BI datasets and various Apache Spark and Python supported custom data sources. This tutorial series focuses on ingesting and loading data from a lakehouse.
 
-**Explore, clean, and prepare** - The Data science experience on Fabric supports data cleansing, transformation, exploration and featurization by using built-in experiences on Spark as well as Python based tools like Data Wrangler and SemPy Library. This tutorial will showcase data exploration using python library seaborn and data cleansing and preparation using Apache Spark.
+**Explore, clean, and prepare** - The data science experience on Fabric supports data cleansing, transformation, exploration and featurization by using built-in experiences on Spark as well as Python based tools like Data Wrangler and SemPy Library. This tutorial will showcase data exploration using Python library `seaborn` and data cleansing and preparation using Apache Spark.
 
-**Models and experiments** - Fabric enables you to train, evaluate and score machine learning models by using built-in Experiment and Model items with seamless integration with** [**MLflow**](https://mlflow.org/docs/latest/index.html) for experiment tracking and model registration/deployment. Fabric also features capabilities for model prediction at scale (PREDICT) to gain and share business insights.
+**Models and experiments** - Fabric enables you to train, evaluate and score machine learning models by using built-in experiment and model artifacts with seamless integration with [**MLflow**](https://mlflow.org/docs/latest/index.html) for experiment tracking and model registration/deployment. Fabric also features capabilities for model prediction at scale (PREDICT) to gain and share business insights.
 
 **Storage** - Fabric standardizes on [Delta Lake](https://docs.delta.io/latest/index.html), which means all the engines of Fabric can interact with the same dataset stored in a lakehouse. This storage layer allows you to store both structured and unstructured data that support both file-based storage and tabular format. The datasets and files stored can be easily accessed via all Fabric experience items like notebooks and pipelines.
 
-**Expose analysis and insights** - Data from a lakehouse can be consumed by Power BI, industry leading business intelligence tool, for reporting and visualization. Data persisted in the lakehouse can also be visualized in notebooks using Spark or Python native visualization libraries like matplotlib, seaborn, plotly, and more. Data can also be visualized using the SemPy library that supports built-in rich, task-specific visualizations for the semantic data model, for dependencies and their violations, and for classification and regression use cases.
+**Expose analysis and insights** - Data from a lakehouse can be consumed by Power BI, industry leading business intelligence tool, for reporting and visualization. Data persisted in the lakehouse can also be visualized in notebooks using Spark or Python native visualization libraries like `matplotlib`, `seaborn`, `plotly`, and more. Data can also be visualized using the SemPy library that supports built-in rich, task-specific visualizations for the semantic data model, for dependencies and their violations, and for classification and regression use cases.
 
 ## Next steps
 
-- [Prepare your system for the Data science tutorial](tutorial-data-science-prepare-system.md)
+- [Prepare your system for the data science tutorial](tutorial-data-science-prepare-system.md)

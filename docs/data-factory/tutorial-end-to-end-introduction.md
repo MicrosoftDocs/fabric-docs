@@ -36,7 +36,7 @@ Data Factory in Fabric combines the ease-of-use of [Power Query](/power-query) w
 
 In this end-to-end data integration use case, you learn:
 
-- How to ingest data using a Copy Activity in a pipeline
+- How to ingest data using the copy assistant in a pipeline
 - How to transform the data using a dataflow either with a no-code experience, or by writing your own code to process the data with a Script or Notebook activity
 - How to automate the entire end-to-end data integration flow using a pipeline with triggers and flexible control flow activities.
 

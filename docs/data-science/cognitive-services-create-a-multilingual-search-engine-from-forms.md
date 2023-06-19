@@ -4,7 +4,7 @@ description: Build a custom search engine and question-answering system with Syn
 ms.topic: overview
 ms.custom: build-2023
 ms.reviewer: jessiwang
-author: jessiwang
+author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023
 ---

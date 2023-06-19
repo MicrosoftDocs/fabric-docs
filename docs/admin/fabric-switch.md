@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/15/2023
 ---
 
 # Enable Microsoft Fabric for your organization
@@ -34,9 +34,9 @@ To enable Microsoft Fabric, you need to have one of the following admin roles:
 
 * [Microsoft 365 Global admin](microsoft-fabric-admin.md#microsoft-365-admin-roles)
 
-* [Power Platform admin](microsoft-fabric-admin.md#power-platform-and-power-bi-admin-roles)
+* [Power Platform admin](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
 
-* [Power BI admin](microsoft-fabric-admin.md#power-platform-and-power-bi-admin-roles)
+* [Fabric admin](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles)
 
 ## Enable for your tenant
 
@@ -70,6 +70,9 @@ Follow these steps to enable Microsoft Fabric for your tenant.
    :::image type="content" source="media/fabric-switch/fabric-switch-security-groups.png" alt-text="Screenshot of the Microsoft Fabric tenant setting with the users can create Fabric items enabled, and the specific security groups option selected.":::
 
 5. Select **Apply**.
+
+>[!NOTE]
+>The *Delegate settings to other admins* option, isn't available.
 
 ### Enable for a capacity
 

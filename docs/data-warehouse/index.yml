@@ -69,8 +69,6 @@ landingContent:
             url: workspace-roles.md
           - text: SQL granular permissions
             url: sql-granular-permissions.md
-          - text: Item permissions
-            url: item-permissions.md
   # Card 
   - title: Ingest data
     linkLists:
@@ -128,6 +126,8 @@ landingContent:
     linkLists:
       - linkListType: architecture
         links:
+          - text: Performance guidelines
+            url: guidelines-warehouse-performance.md
           - text: Security
             url: security.md
           - text: Ingest Data

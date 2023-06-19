@@ -7,7 +7,7 @@ ms.reviewer: yicw, mesrivas,liud
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: product-trident
-ms.date: 05/23/2023
+ms.date: 06/14/2023
 ---
 
 # Workspaces
@@ -18,7 +18,7 @@ Ready to get started? Read [Create a workspace](create-workspaces.md).
 
 :::image type="content" source="media/workspaces/fabric-workspace-page.png" alt-text="Screenshot showing a workspace." lightbox="media/workspaces/fabric-workspace-page.png":::
 
-## Working with workspaces
+## Work with workspaces
 
 Here are some useful tips about working with workspaces.
 
@@ -26,6 +26,7 @@ Here are some useful tips about working with workspaces.
 - **Use granular workspace roles** for flexible permissions management in the workspaces: Admin, Member, Contributor, and Viewer. Read more about [workspace roles](roles-workspaces.md).
 - **Navigate to current workspace** from anywhere by selecting the icon on left nav pane. Read more about [current workspace](#current-workspace) in this article.
 - **Workspace settings**: As workspace admin, you can update and manage your workspace configurations in [workspace settings](#workspace-settings).
+- **Manage a workspace in Git**: Git integration in Microsoft Fabric enables Pro developers to integrate their development processes, tools, and best practices straight into the Fabric platform. Learn how to [manage a workspace with Git](../cicd/git-integration/git-get-started.md).
 - **Contact list**: Specify who receives notification about workspace activity. Read more about [workspace contact lists](#workspace-contact-list) in this article.
 
 

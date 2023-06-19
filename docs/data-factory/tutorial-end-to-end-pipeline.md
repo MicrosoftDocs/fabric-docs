@@ -6,7 +6,7 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/06/2023
 ---
 
 # Module 1: Create a pipeline with Data Factory
@@ -22,9 +22,9 @@ The high-level steps in module 1 are as follows:
 
 ## Create a data pipeline
 
-1. Sign into [Power BI](https://app.powerbi.com) and open a workspace with Fabric Capacity enabled.
-
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-premium-capacity-workspace.png" alt-text="Screenshot showing the selection of a Premium capacity workspace to create a new data pipeline.":::
+1. A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription is required. [Create a free account](https://azure.microsoft.com/free/).
+1. Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+1. Sign into [Power BI](https://app.powerbi.com/).
 
 
 1. Select the default Power BI icon at the bottom left of the screen, and switch to the **Data Factory** experience.
@@ -39,60 +39,50 @@ The high-level steps in module 1 are as follows:
 
 ## Use a Copy activity in the pipeline to load sample data to a data Lakehouse
 
-### Step 1: Create a Copy activity in your new pipeline. 
+### Step 1: Use the copy assistant to configure a copy activity.
 
-Select **Add pipeline activity**, and then choose **Copy data** from the displayed list of activities.
+Select **Copy data** to open the copy assistant tool.
 
-:::image type="content" source="media/tutorial-end-to-end-pipeline/add-copy-activity.png" alt-text="Screenshot showing the selection of the Copy data activity from the new pipeline start page.":::
+:::image type="content" source="media/tutorial-end-to-end-pipeline/open-copy-assistant.png" alt-text="Screenshot showing the selection of the Copy data activity from the new pipeline start page.":::
 
-### Step 2: Configure your source settings in your new Copy activity.
+### Step 2: Configure your settings in the copy assistant.
 
-1. Select the **Source** tab in the properties area below the pipeline canvas, and then select **+ New** to create a new data source. (If you don't see the **Source** tab, you might need to first select the **Copy data** activity on the pipeline canvas area.)
+1. The **Copy data** dialog is displayed with the first step, **Choose data source**, highlighted.  Scroll down if necessary to the **Data sources** section, and select the **Azure Blob Storage** data source type. Then select **Next**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/create-new-data-source.png" alt-text="Screenshot showing the Source settings of the Copy data activity with the + New button highlighted.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/azure-blob-storage-data-source.png" alt-text="Screenshot showing the selection of the Azure Blob Storage data source type in the copy assistant on the Choose data source tab.":::
 
-1. Select **Azure Blob Storage**, and then **Continue**.
+1. In the next step, select **Create new connection** and then provide the URL for the blob storage hosting the sample data provided for this tutorial, at ``https://nyctaxisample.blob.core.windows.net/sample``. The authentication kind is **Anonymous**.  Select **Next** after providing the URL.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/data-source-type-azure-blob-storage.png" alt-text="Screenshot showing the selection of the Azure Blob Storage data type for the new connection.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/create-new-azure-blob-storage-connection.png" alt-text="Screenshot showing the creation of a new Azure Blob Storage connection with the URL for the sample data in the tutorial.":::
 
-1. In the **New connection** dialog, provide the relevant details for the connection. For the tutorial, we use the following settings for the **NYC Taxi** sample data:
+1. The **Connect to data source** step appears, and initially, you see an error **Unable to list files**, because permissions have only been granted to the **sample** folder in the blob storage. Provide the folder name, **sample**, and select **Retry**.
 
-   - **Account name or URL** - https://nyctaxisample.blob.core.windows.net/sample
-   - **Connection** - unchanged, leaving **Create new connection** selected.
-   - **Connection name** - NYC-Taxi-Anonymous
-   - **Authentication kind** - Anonymous
-   
-   Then select **Create**.
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/provide-blob-storage-folder.png" alt-text="Screenshot showing the Unable to list files error with the folder name Sample provided.":::
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-source-settings.png" alt-text="Screenshot showing the New connection dialog with the connection settings to be configured for the tutorial.":::
+   > [!NOTE]
+   > The blob storage folder is case sensitive and should be in all lower case.
 
-1. On the **Source** tab for the new data source you created, select the **File path** option for **File path type**, entering **sample** for the top level path, and then selecting the **Browse** dropdown to select **From specified path**.
+1. The blob storage browser appears next. Select the **NYC-Taxi-Green-2015-01.parquet** file, and wait for the data preview to appear. Then select **Next**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/data-source-configuration-source-tab.png" alt-text="Screenshot showing the data-source configuration on the Source tab with the specified path setting applied and the Browse dropdown selected.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/preview-data.png" alt-text="Screenshot showing the preview data for the NYC-Taxi-Green-2015-01.parquet file.":::
 
-1. On the **Browse** dialog presented, choose **NYC-Taxi-Green-2015-01.parquet** and select **OK**.
+1. For the **Choose data destination** step of the copy assistant, select **Lakehouse** and then **Next**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-nyc-taxi-data.png" alt-text="Screenshot showing the Browse dialog with the NYC-Taxi-Green-20151-01.parquet file selected from the sample folder.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination on the Choose data destination tab of the Copy data assistant.":::
 
-1. Select **Parquet** for the **File format** dropdown, and then select **Preview data**.
+1. Select **Create new Lakehouse** on the data destination configuration page that appears, and enter a name for the new Lakehouse. Then select **Next** again.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-parquet-file-format.png" alt-text="Screenshot showing the selection of Parquet for File format, with the Preview data button highlighted.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-lakehouse-name.png" alt-text="Screenshot showing the data destination configuration page of the Copy assistant, choosing the Create new Lakehouse option and providing a Lakehouse name.":::
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/preview-sample-data.png" alt-text="Screenshot showing the Preview data for the selected NYC-Taxi-Anonymous data source connection.":::
+1. Now configure the details of your Lakehouse destination on the **Select and map to folder path or table.** page. Select **Tables** for the **Root folder**, provide a table name, and choose the **Overwrite** action. Don't check the **Enable partition** checkbox that appears after you select the **Overwrite** table action.
 
-### Step 3: Configure the destination settings for your Copy activity.
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-destination-table-details.png" alt-text="Screenshot showing the Connect to data destination tab of the Copy data assistant, on the Select and map to folder path or table step.":::
 
-1. Select the **Destination** tab for your Copy activity, then select **+ New** to create a new Lakehouse destination, and give it a name. For this tutorial we name our destination Bronze. After providing the name, select **Create**.
+1. Finally, on the **Review + save** page of the copy data assistant, review the configuration. For this tutorial, uncheck the **Start data transfer immediately** checkbox, since we run the activity manually in the next step. Then select **OK**.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/data-source-configure-destination-tab.png" alt-text="Screenshot showing the configuration of the Destination tab for the Copy activity.":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/review-save-copy-configuration.png" alt-text="Screenshot showing the Copy data assistant on the Review + save page.":::
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-lakehouse-name.png" alt-text="Screenshot showing the New lakehouse dialog with the name Bronze provided and the Create button highlighted.":::
-
-1. For the **Table name** property, select the **Edit** checkbox to create a new Lakehouse table where the data is loaded, and provide the name **nyc_taxi**.
-
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/data-source-configure-destination-tab-table-name.png" alt-text="Screenshot showing the selection of the Edit checkbox in the Destination settings, with the Table name of nyc_taxi entered.":::
-
-### Step 4: Run and view the results of your Copy activity.
+### Step 3: Run and view the results of your Copy activity.
 
 1. Select the **Run** tab in the pipeline editor. Then select the **Run** button, and then **Save and run** at the prompt, to run the Copy activity.
 

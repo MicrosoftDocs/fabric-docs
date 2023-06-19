@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/01/2023
 ---
 
 # Buy a Microsoft Fabric subscription
@@ -34,7 +34,7 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 * Pay as you go with no time commitment.
 
-* You can [scale your capacity](scale-capacity.md) up or down using the Azure portal or via the Azure APIs.
+* You can [scale your capacity](scale-capacity.md) up or down using the Azure portal.
 
 * You can [pause](pause-resume.md#pause-your-capacity) and [resume](pause-resume.md#resume-your-capacity) your capacity as needed. This feature is designed to save money when the capacity isn't in use.
 
@@ -70,7 +70,7 @@ To buy an Azure SKU you need to be an owner or a contributor of an [Azure subscr
 
 ## Microsoft 365 SKUs
 
-Microsoft 365 SKUs, also known as EM or P SKUs, are legacy SKUs inherited from Power BI. You can only renew a Microsoft 365 SKU if you already have a Power BI subscription, and Microsoft Fabric is [enabled](../admin/fabric-switch.md) on top of your Power BI subscription.
+Microsoft 365 SKUs, also known as P SKUs, are Power BI SKUs that also support Fabric when it is [enabled](../admin/fabric-switch.md) on top of your Power BI subscription. EM SKUs do not support Microsoft Fabric.
 
 ## Next steps
 
