@@ -72,14 +72,14 @@ After the lakehouse and eventstream are created, do the following steps to add a
 
 3. Fill in the information of your Azure event hub on the **New connection** page.
 
-   :::image type="content" source="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" :::
+   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/eventstream-eventhub-source-cloud-connection.png" :::
 
    - **Connection name**: Enter a name for the cloud connection. 
    - **Connection type**: Default value is `EventHub`. 
    - **Event Hub namespace**: Enter the name of your Azure event hub namespace. 
-   - **Authentication username and password**: Go to your Azure event hub and create a policy under **Share access policies**. Then use **policy name** and **primary key** as the username and password. 
+   - **Authentication**: Go to your Azure event hub and create a policy under **Share access policies**. Then use **policy name** and **primary key** as the **Shared Access Key Name** and **Shared Access Key**. 
    
-       :::image type="content" source="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png" alt-text="Screenshot showing the Azure event hub policy key." lightbox="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png" :::
+       :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" alt-text="Screenshot showing the Azure event hub policy key." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" :::
    
    - **Privacy level**: choose a privacy level for the cloud connection.
 
@@ -109,7 +109,7 @@ After your event hub events have been ingested into your eventstream, you can ad
 
    1. **Lakehouse**: Select an existing lakehouse item from the workspace you specified. The newly created lakehouse **citypwrdata** is selected.
    2. **Delta table**: Select an existing delta table or create a new one to receive data. Here a new delta table **citypwrtbl** is given.
-   3. **Data format**: Select the data format for the data that is sent to your lakehouse.
+   3. **Input data format**: Select the data format for the data that is sent to your lakehouse.
 
 3. Select **Add** if you don't want to process your events while ingesting them to your lakehouse.
 ## Define real-time events processing logic with event processor
