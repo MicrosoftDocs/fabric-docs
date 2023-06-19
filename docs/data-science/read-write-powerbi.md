@@ -39,8 +39,6 @@ df_datasets = pbi.list_datasets()
 df_datasets
 ```
 
-TODO: change dataset name to what we upload in the prereqs
-
 Next, we can list the tables available in the Power BI dataset named _Sales Dataset_.
 
 ```python
@@ -84,7 +82,20 @@ df_dax     = pbi.read_dax("Sales Dataset",
                           """)
 ```
 
-TODO: measure join
+Alternatively, we can join measures to data retrieved from external sources.
+This approach combines three tasks: resolve column names to Power BI dimensions, define group by columns and filter the measure.
+Any column names not resolvable within the given dataset are ignored (see [supported syntax](https://learn.microsoft.com/en-us/dax/dax-syntax-reference)).
+
+```python
+df = FabricDataFrame({
+        "Sales Agent": ["Agent 1", "Agent 1", "Agent 2"],
+        "Customer[Country/Region]": ["US", "GB", "US"],
+        "Industry[Industry]": ["Services", "CPG", "Manufacturing"],
+    }
+)
+
+joined_df = df.join_measure("Total Revenue", dataset="Sales Dataset")
+```
 
 ## Read using Spark in Python, R, SQL and Scala
 

@@ -21,7 +21,7 @@ Semantic information gets automatically attached to [FabricDataFrame](TODO API l
 
 The SemPy python library is part of the Semantic Link feature and serves Pandas users. SemPy has the most advanced support for semantic propagation.
 In terms of operations, whatever can be done with pandas, is supported in by SemPy, and more.
-Semantic propagation enables preserving annotations that are attached to tables and columns in the dataset when you're manipulating them, such as stacking/unstacking, merging,  etc
+Semantic propagation enables preserving annotations that are attached to tables and columns in the dataset when you're manipulating them using slicing, merge and concat.
 Apart from direct hydration of metadata from Power BI, it can be automatically resolved when manually constructing a FabricDataFrame and supplying a Power BI datasets name.
 
 ### What happens when two dataframes are merged?
