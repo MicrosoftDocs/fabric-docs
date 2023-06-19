@@ -25,7 +25,7 @@ In this tutorial, you learn how to:
 > * Add an Lakehouse destination to the eventstream
 > * Define real-time events processing logic with event processor
 > * Verify the data in lakehouse
-> * Build Power BI report with the events data ingested in lakehouse
+> * Build Power BI report with the event data ingested in the lakehouse
 
 ## Prerequisites
 
@@ -34,23 +34,23 @@ To get started, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream and lakehouse item are located in.
 - An Azure event hub with event data and appropriate permission available to access the policy keys.
 
-## Create an eventstream and a lakehouse
+## Create an lakehouse and an eventstream
 
 You can create an Eventstream item (eventstream) or a Lakehouse item (lakehouse) on the **Workspace** page or the **Create hub** page. Here are the steps:
 
-1. Select your Fabric experience to **Real-time Analytics** and select **Eventstream** and **Lakehouse** to create them in workspace or create hub. 
+1. Select your Fabric experience to **Real-time Analytics** and select **Lakehouse** and **Eventstream** to create them in workspace or create hub. Suggest creating the Lakehouse first and the Eventstream later, as you will initially be working with the Eventstream item later on.
 
-   - In **Workspace**, select **New** and then **Eventstream**, **Lakehouse**:
+   - In **Workspace**, select **New** and then **Lakehouse**, **Eventstream**:
 
        :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/two-items-creation-in-workspace.png" alt-text="Screenshot showing the eventstream and lakehouse creation in workspace." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/two-items-creation-in-workspace.png" :::
 
-   - In **Create hub**, select **Eventstream** and **Lakehouse**: 
+   - In **Create hub**, select **Lakehouse** and **Eventstream**: 
 
        :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/eventstream-creation-in-hub.png" alt-text="Screenshot showing the eventstream item creation in create hub." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/eventstream-creation-in-hub.png" :::
    
         :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/lakehouse-creation-in-hub.png" alt-text="Screenshot showing the lakehouse item creation in create hub." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/lakehouse-creation-in-hub.png" :::
 
-2. Give the name for the new eventstream and lakehouse items, and select **Create**. For example, **citypwr-es** for the eventstream and **citypwrdata** for the lakehouse.
+2. Give the names for the new eventstream and lakehouse items, and select **Create**. For example, **citypwr-es** for the eventstream and **citypwrdata** for the lakehouse.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/creating-dialog.png" alt-text="Screenshot showing the eventstream item creation dialog." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/creating-dialog.png" :::
 
@@ -72,20 +72,20 @@ After the lakehouse and eventstream are created, do the following steps to add a
 
 3. Fill in the information of your Azure event hub on the **New connection** page.
 
-   :::image type="content" source="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" :::
+   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/eventstream-eventhub-source-cloud-connection.png" :::
 
    - **Connection name**: Enter a name for the cloud connection. 
    - **Connection type**: Default value is `EventHub`. 
    - **Event Hub namespace**: Enter the name of your Azure event hub namespace. 
-   - **Authentication username and password**: Go to your Azure event hub and create a policy under **Share access policies**. Then use **policy name** and **primary key** as the username and password. 
+   - **Authentication**: Go to your Azure event hub and create a policy under **Share access policies**. Then use **policy name** and **primary key** as the **Shared Access Key Name** and **Shared Access Key**. 
    
-       :::image type="content" source="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png" alt-text="Screenshot showing the Azure event hub policy key." lightbox="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png" :::
+       :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" alt-text="Screenshot showing the Azure event hub policy key." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" :::
    
    - **Privacy level**: choose a privacy level for the cloud connection.
 
 4. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
 
-5. Select a **Consumer group** that is used for reading the event data from your Azure event hub and then **Create**. 
+5. Select a **Consumer group** that is used for reading the event data from your Azure event hub and then **Add**. 
 
 6. You see the new source node appears in the canvas after the event hub source is created successfully. You can select the event hub node in the canvas, then the **Data preview** tab in the bottom pane to view the data inside the event hub.
 
@@ -109,9 +109,9 @@ After your event hub events have been ingested into your eventstream, you can ad
 
    1. **Lakehouse**: Select an existing lakehouse item from the workspace you specified. The newly created lakehouse **citypwrdata** is selected.
    2. **Delta table**: Select an existing delta table or create a new one to receive data. Here a new delta table **citypwrtbl** is given.
-   3. **Data format**: Select the data format for the data that is sent to your lakehouse.
+   3. **Input data format**: Select the data format for the data that is sent to your lakehouse.
 
-3. Select **Create** if you don't want to process your events while ingesting them to your lakehouse.
+3. Select **Add** if you don't want to process your events while ingesting them to your lakehouse.
 ## Define real-time events processing logic with event processor
 
 If the event processing is needed, select **Open event processor** before selecting **Create**. The event processor editor is open.
