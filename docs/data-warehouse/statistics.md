@@ -45,7 +45,7 @@ ON dbo.DimCustomer (CustomerKey) WITH FULLSCAN;
 To manually update the statistics object `DimCustomer_CustomerKey_FullScan`, perhaps after a large data update:
 
 ```sql
-UPDATE STATISTICS DimCustomer_CustomerKey_FullScan (CustomerKey) WITH FULLSCAN;  
+UPDATE STATISTICS dbo.DimCustomer (DimCustomer_CustomerKey_FullScan) WITH FULLSCAN;  
 ```
 
 To show information about the statistics object:
