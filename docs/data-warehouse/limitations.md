@@ -36,6 +36,7 @@ For more limitations information in specific areas, see:
 - [Transactions](transactions.md#limitations)
 - [The Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
 - [Connectivity](connectivity.md#considerations-and-limitations)
+- [Share your Warehouse](share-warehouse-manage-permissions.md#limitations)
 - [Tables](tables.md#limitations)
 
 ## Known issues for querying
