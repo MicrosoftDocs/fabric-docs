@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual 
-ms.date: 05/23/2023
+ms.date: 06/20/2023
 ms.custom: build-2023
 ---
 
@@ -62,12 +62,14 @@ Besides the item.config.json file and the item.metadata.json file found in all i
 
 ### Dataset files
 
-Dataset directories contain the following files:
+Dataset folders contain the following files:
 
 - definition.pbidataset
 - model.bim
 
 :::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
+
+For more information about dataset folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
 
 ### Report files
 
@@ -77,6 +79,8 @@ Report directories contain the following files:
 - report.json
 
 :::image type="content" source="./media/source-code-format/report-directory.png" alt-text="Screenshot of directory tree showing files in the report directory.":::
+
+For more information about report folders and a complete list of their contents, see [Power BI Desktop project report folder](/power-bi/developer/projects/projects-report).
 
 ## Next steps
 
