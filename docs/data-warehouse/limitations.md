@@ -4,7 +4,7 @@ description: This article contains a list of current limitations and known issue
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 06/14/2023
+ms.date: 06/20/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
@@ -41,7 +41,7 @@ For more limitations information in specific areas, see:
 
 ## Known issues for querying
 
-- Queries with PIVOT operator fail if there's a GROUP BY on the nonpivot column output by PIVOT. As a workaround, remove the nonpivot column from the GROUP BY.  Query results will be the same, as this GROUP BY clause is duplicate.
+- Queries with PIVOT operator fail if there's a GROUP BY on the nonpivot column output by PIVOT. As a workaround, remove the nonpivot column from the GROUP BY. Query results are the same, as this GROUP BY clause is duplicate.
 - Warehouse explorer doesn't list all objects of the same name but different cases.
 
 ## Limitations of the SQL Endpoint
@@ -58,7 +58,7 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 - Some columns that exist in the Spark Delta tables might not be available in the tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. Refer to the [Data types](data-types.md) for a full list of supported data types. 
 
-- Adding a relationship between tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)] will block any further schema changes. If you don't see the Delta Lake columns with the types that should be supported in [!INCLUDE [fabric-se](includes/fabric-se.md)], check if there is a foreign key relationship that might prevent updates on the table. 
+- Adding a relationship between tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)] currently blocks any further schema changes. If you don't see the Delta Lake columns with the types that should be supported in [!INCLUDE [fabric-se](includes/fabric-se.md)], check if there is a foreign key relationship that might prevent updates on the table. 
 
 ## Next steps
 
