@@ -73,7 +73,7 @@ For more information about dataset folders and a complete list of their contents
 
 ### Report files
 
-Report directories contain the following files:
+Report folders contain the following files:
 
 - definition.pbir
 - report.json
