@@ -9,6 +9,7 @@ ms.date: 06/06/2023
 ms.search.form: Semantic Link
 ---
 
+# Data validation with Semantic Link and Microsoft Fabric
 validate relationships
 validate functional dependencies
 
