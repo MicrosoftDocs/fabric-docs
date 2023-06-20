@@ -1,5 +1,5 @@
 ---
-title: Manage a workspace with git
+title: Manage a workspace with git.
 description: Learn how to connect a workspace to a git repo and branch, commit changes and sync.
 author: mberdugo
 ms.author: monaberdugo
@@ -29,13 +29,13 @@ To integrate git with your Microsoft Fabric workspace, you need to set up the fo
 ### Azure DevOps prerequisites
 
 - An active Azure account registered to the same user that is using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
-- Access to an existing repository
+- Access to an existing repository.
 
 ### Fabric prerequisites
 
 To access the git integration feature, you need one of the following:
 
-- [Power BI Premium license](/power-bi/enterprise/service-premium-what-is). Your Power BI premium license will continue to work for all Power BI features.
+- [Power BI Premium license](/power-bi/enterprise/service-premium-what-is). Your Power BI premium license still works for all Power BI features.
 - [Fabric capacity](../../enterprise/licenses.md#capacity-and-skus). A Fabric capacity is required to use all supported Fabric items.
 
 In addition, your organization’s administrator has to [enable the Fabric switch](../../admin/fabric-switch.md). If this switch is disabled, contact your administrator.
@@ -102,6 +102,12 @@ After the changes are committed, the items that were committed are removed from 
 
 :::image type="content" source="./media/git-get-started/no-changes.png" alt-text="Screenshot of source control window stating that there are no changes to commit.":::
 
+> [!NOTE]
+> After you commit changes from the service, you might see some unexpected changes that aren't a direct result of any change yuo made to the item. These changes are semantically insignificant and can happen for several reasons. For example:
+>
+> - Manually changing the item definition file. These changes are valid, but are different that if done through the editors. For example, if you rename a dataset column and import this change to git, next time you commit changes to the dataset, the bim file will register as changed and the modified column pushed to the back of the `columns` array. This is because the AS engine responsible for generating the bim files pushes renamed columns to the end of the array. This change doesn't affect the way the item operates.
+> - Committing a file that uses CRLF line breaks. The service uses LF (line feed) line breaks. If you had item files in the git repo with CRLF line breaks, when you commit from the service these files are changed to LF. For example, if you open a report in desktop, save the .pbip project and upload it to git using CRLF.
+
 After the commit is completed successfully, the status of the selected items changes from **Uncommitted** to **Synced**. 
 
 ### [Undo saved change](#tab/undo-save)
@@ -163,7 +169,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
-- During the *Commit to git* process, the Fabric service deletes any files *inside the item folder* that are not part of the item definition. Unrelated files not in an item folder are not deleted.
+- During the *Commit to git* process, the Fabric service deletes any files *inside the item folder* that aren't part of the item definition. Unrelated files not in an item folder are not deleted.
 - If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the git integration feature.
 
 ## Next steps
