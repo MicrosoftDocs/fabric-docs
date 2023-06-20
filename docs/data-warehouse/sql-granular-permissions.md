@@ -9,6 +9,7 @@ ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
+
 # SQL granular permissions in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
@@ -30,7 +31,8 @@ For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](incl
 
 ### Limitations
 
-- CREATE USER cannot be explicitly executed currently. When GRANT or DENY is executed, the user will be created automatically.
+- CREATE USER cannot be explicitly executed currently. When GRANT or DENY is executed, the user will be created automatically. The user will not be able to connect until sufficient workspace level rights are given. More info on workspace level rights: [Manage item permissions](fabric/data-warehouse/item-permissions)
+
 - Row-level security is currently not supported.
 - Dynamic data masking is currently not supported.
 
@@ -40,36 +42,36 @@ When a user connects to the SQL connection string, they can view the permissions
 
 User's database scoped permissions:
 
-   ```sql
-   SELECT *
-   FROM sys.fn_my_permissions(NULL, "Database")
-   ```
+```sql
+SELECT *
+FROM sys.fn_my_permissions(NULL, "Database")
+```
 
 User's schema scoped permissions:
 
-   ```sql
-   SELECT *
-   FROM sys.fn_my_permissions("<schema-name>", "Schema")
-   ```
+```sql
+SELECT *
+FROM sys.fn_my_permissions("<schema-name>", "Schema")
+```
 
 User's object-scoped permissions:
 
-   ```sql
-   SELECT *
-   FROM sys.fn_my_permissions("<schema-name>.<object-name>", "Object")
-   ```
+```sql
+SELECT *
+FROM sys.fn_my_permissions("<schema-name>.<object-name>", "Object")
+```
 
 ## View permissions granted explicitly to users
 
 When connected via the SQL connection string, a user with elevated permissions can query the permissions that have been granted by using system views. This doesn't show the users or user permissions that are given to users by being assigned to workspace roles or assigned item permissions.
 
-   ```sql
-   SELECT DISTINCT pr.principal_id, pr.name, pr.type_desc, 
-    pr.authentication_type_desc, pe.state_desc, pe.permission_name
-   FROM sys.database_principals AS pr
-   JOIN sys.database_permissions AS pe
-    ON pe.grantee_principal_id = pr.principal_id;
-   ```
+```sql
+SELECT DISTINCT pr.principal_id, pr.name, pr.type_desc, 
+ pr.authentication_type_desc, pe.state_desc, pe.permission_name
+FROM sys.database_principals AS pr
+JOIN sys.database_permissions AS pe
+ ON pe.grantee_principal_id = pr.principal_id;
+```
 
 ## Restrict row access by using views
 
@@ -107,3 +109,5 @@ Row level security is currently not supported. As a workaround, views and system
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true)
+
+
