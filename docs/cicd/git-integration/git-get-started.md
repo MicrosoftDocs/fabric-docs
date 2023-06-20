@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: how-to
-ms.date: 05/30/2023
+ms.date: 06/19/2023
 ms.custom: build-2023
 ---
 
@@ -163,7 +163,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
-- During the *Commit to git* process, the Fabric service deletes any files inside the item folder that are not part of the item definition. Unrelated files not in an item folder are not deleted.
+- During the *Commit to git* process, the Fabric service deletes any files *inside the item folder* that are not part of the item definition. Unrelated files not in an item folder are not deleted.
 - If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the git integration feature.
 
 ## Next steps
