@@ -6,7 +6,7 @@ ms.author: cynotebo
 author: cynotebo
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/20/2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 
@@ -31,8 +31,7 @@ For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](incl
 
 ### Limitations
 
-- CREATE USER cannot be explicitly executed currently. When GRANT or DENY is executed, the user will be created automatically. The user will not be able to connect until sufficient workspace level rights are given. More info on workspace level rights: [Manage item permissions](fabric/data-warehouse/item-permissions)
-
+- CREATE USER cannot be explicitly executed currently. When GRANT or DENY is executed, the user is created automatically. The user will not be able to connect until sufficient workspace level rights are given. For more information on individual item permissions in workspaces, see [Manage item permissions](item-permissions.md).
 - Row-level security is currently not supported.
 - Dynamic data masking is currently not supported.
 
@@ -44,21 +43,21 @@ User's database scoped permissions:
 
 ```sql
 SELECT *
-FROM sys.fn_my_permissions(NULL, "Database")
+FROM sys.fn_my_permissions(NULL, "Database");
 ```
 
 User's schema scoped permissions:
 
 ```sql
 SELECT *
-FROM sys.fn_my_permissions("<schema-name>", "Schema")
+FROM sys.fn_my_permissions("<schema-name>", "Schema");
 ```
 
 User's object-scoped permissions:
 
 ```sql
 SELECT *
-FROM sys.fn_my_permissions("<schema-name>.<object-name>", "Object")
+FROM sys.fn_my_permissions("<schema-name>.<object-name>", "Object");
 ```
 
 ## View permissions granted explicitly to users
@@ -77,37 +76,34 @@ JOIN sys.database_permissions AS pe
 
 Row level security is currently not supported. As a workaround, views and system functions can be used to limit a user's access to the data. This can be achieved in the following way:
 
-1. Provide the user with the Fabric Read permission only - This will grant them CONNECT permissions only for the Warehouse.
-1. Optionally, create a custom role and add the user to the role, if you'd like to restrict access based on roles.
+1. Provide the user with the Fabric Read permission only. This will grant them CONNECT permissions only for the Warehouse. Optionally, create a custom role and add the user to the role, if you'd like to restrict access based on roles.
 
    ```sql
-   CREATE ROLE PrivilegedRole
+   CREATE ROLE PrivilegedRole;
    
-   ALTER ROLE PrivilegedRole ADD MEMBER [userOne@contoso.com]
+   ALTER ROLE PrivilegedRole ADD MEMBER [userOne@contoso.com];
    ```
 
 1. Create a view that queries the table for which you'd like to restrict row access
-1. Add a WHERE clause within the VIEW definition, using the SUSER_SNAME() or IS_ROLEMEMBER() system functions, to filter based on user name or role membership. Below is an example of providing access to certain rows to users based on region data within the row. The first condition provides access to rows, of a specific region, to one specific user, while the second condition provides access to rows, of a specific region, to any member of the PrivilegedRole custom role.
+1. Add a WHERE clause within the VIEW definition, using the `SUSER_SNAME()` or `IS_ROLEMEMBER()` system functions, to filter based on user name or role membership. An example of providing access to certain rows to users based on region data within the row follows. The first condition provides access to rows of a specific region to one specific user. The second condition provides access to rows of a specific region to any member of the `PrivilegedRole` custom role.
 
    ```sql
    CREATE VIEW dbo.RestrictedAccessTable as
-   select *
-   from dbo.SampleTable
+   SELECT *
+   FROM dbo.SampleTable
    WHERE
    ( SUSER_SNAME() = 'userTwo@contoso.com' AND test_region = '<region_one_name>')
    OR
-   ( IS_ROLEMEMBER('PrivilegedRole', SUSER_SNAME()) = 1 AND test_region = '<region_two_name')
+   ( IS_ROLEMEMBER('PrivilegedRole', SUSER_SNAME()) = 1 AND test_region = '<region_two_name');
    ```
 
 1. Grant access to the view:
 
    ```sql
-   GRANT SELECT ON dbo.RestrictedAccessTable TO [userOne@contoso.com]
+   GRANT SELECT ON dbo.RestrictedAccessTable TO [userOne@contoso.com];
    ```
 
 ## Next steps
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true)
-
-
