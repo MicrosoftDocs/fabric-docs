@@ -49,21 +49,21 @@ If any one of these questions describes your data needs, Real-Time Analytics is 
 
 The types of industries that benefit from data analysis in Real-Time Analytics is varied. For example: finance, transportation and logistics, smart cities, smart buildings, manufacturing operations, automotive, and oil and gas.
 
-### Scenarios
+## Scenarios
 
-* Marketing:
+### Marketing
 
-Let's say you're a marketing specialist implementing a new campaign. You want to see how your campaign impacts sales, inventory, and logistics. You have a lot of data flowing in different formats, and need to figure out a way to make sense of this data and use it to make good business decisions. With Real-Time Analytics, you can gain the insight you need to increase your inbound marketing, make changes accordingly, and monitor the success of your campaign in real-time.
+Let's say you're a marketing specialist implementing a new campaign. You want to see how your campaign impacts sales, inventory, and logistics. You have a lot of structured and unstructured data flowing from different sources, and you need to figure out a way to increase your inbound marketing. Real-Time Analytics can help you monitor the success of your campaign in real-time and allow you to make changes accordingly.
 
-* Oil and gas:
+### Oil and gas
 
 You're a project manager in the oil and gas industry. You're responsible for planning, designing, and monitoring drilling and pumping operations as well as delivery. You can use Real-Time Analytics to oversee the progress of your workforce and the different teams under your supervision, and optimize the efficiency of the operations while ensuring the stability and safety of the drilling procedures.
 
-* Sales:
+### Sales
 
 You're a retail planning manager. You need to analyze sales, manage budgets, decide on pricing, communicate between the company warehouse and the operations department to manage productions, manage security and staffing requirements, and more. With Real-Time Analytics, you can gain valuable insights into workload trends by examining all of your data together. You can use these insights to implement business strategies that expand store traffic, promote sales growth, and increase customer satisfaction.
 
-* Agriculture:
+### Agriculture
 
 You work in crop production and management. You need to monitor fields and raw product storage facilities, monitor irrigation, soil moisture, and keep track of chemical application records, as well as coordinate harvest plans. Real-Time Analytics centralizes all of your incoming data, from seed source data to agronomic data, to help ensure product quality and optimize the environment for crop growth.
 
