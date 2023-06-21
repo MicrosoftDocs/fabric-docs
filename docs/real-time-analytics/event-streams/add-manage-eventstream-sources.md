@@ -90,13 +90,11 @@ If you want to connect your own application with an eventstream, you can add a c
 
    :::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="./media/event-streams-source/eventstream-sources-custom-app.png" :::
 
-3. Once the custom app is added successfully, you can view the information of the custom app such as connection string and use it in your application.
+Once the custom app is added successfully, you can view the information of the custom app such as connection string and use it in your application.
 
-   The endpoint that the custom app exposes is in the connection string which is an **event hub compatible connection string**. An example of what the connection string looks like is provided as below:
+The endpoint that the custom app exposes is in the connection string which is an **event hub compatible connection string** and you can use it in your application to send events to your eventstream. An example of what the connection string looks like is provided as below:
 
-   *`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
-
-The connection string is an **event hub compatible connection string** and you can use it in your application to send events to your eventstream.
+*`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
 
 :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source-completed.png" alt-text="Screenshot showing the custom app source." lightbox="./media/add-manage-eventstream-sources/custom-app-source-completed.png" :::
 
@@ -131,7 +129,7 @@ If you already have an Azure event hub set up in Azure, you can utilize that eve
 - **Cloud connection** - A cloud connection needs to be established between existing event hub to Microsoft Fabric. Once that cloud connection is in place, it can be reused across multiple Eventstream items. To create a new cloud connection, you must provide the **event hub namespace name**, **event hub name**, **shared access policy name** and **primary key**.  
 - **Data format** - Format of the incoming real-time events that you want to get from your Azure event hub.
 - **Consumer group** - The consumer group of your event hub that is used for reading the event data from your Azure event hub.
-
+ 
     :::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-event-hub.png" :::
 
 ### Sample data

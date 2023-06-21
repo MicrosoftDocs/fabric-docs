@@ -104,7 +104,9 @@ If you want to route the event data to your application, you can add a custom ap
 
 Once the custom app is created successfully, you can view the information such as **connection string** on the bottom pane.
 
-The connection string is an **event hub compatible connection string** and you can use it in your application to receive events from your eventstream.
+The connection string is an **event hub compatible connection string** and you can use it in your application to receive events from your eventstream. An example of what the connection string looks like is provided as below:
+    
+*`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot showing the custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" :::
 
