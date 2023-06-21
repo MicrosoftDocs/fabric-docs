@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: how-to
-ms.date: 05/30/2023
+ms.date: 06/19/2023
 ms.custom: build-2023
 ---
 
@@ -33,10 +33,10 @@ To integrate git with your Microsoft Fabric workspace, you need to set up the fo
 
 ### Fabric prerequisites
 
-To access the git integration feature, you need one of the following licenses:
+To access the git integration feature, you need one of the following:
 
 - [Power BI Premium license](/power-bi/enterprise/service-premium-what-is). Your Power BI premium license will continue to work for all Power BI features.
-- [Fabric license](../../enterprise/licenses.md#capacity-and-skus). A Fabric license is necessary to use all supported Fabric items.
+- [Fabric capacity](../../enterprise/licenses.md#capacity-and-skus). A Fabric capacity is required to use all supported Fabric items.
 
 In addition, your organization’s administrator has to [enable the Fabric switch](../../admin/fabric-switch.md). If this switch is disabled, contact your administrator.
 
@@ -163,7 +163,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
-- During the *Commit to git* process, the Fabric service deletes any files inside the item folder that are not part of the item definition. Unrelated files not in an item folder are not deleted.
+- During the *Commit to git* process, the Fabric service deletes any files *inside the item folder* that are not part of the item definition. Unrelated files not in an item folder are not deleted.
 - If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the git integration feature.
 
 ## Next steps
