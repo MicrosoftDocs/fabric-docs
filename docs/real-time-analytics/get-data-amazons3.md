@@ -41,7 +41,7 @@ For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.ama
 
     | Storage| Scheme| URI template|
     |----------| ----------| ----------|
-    |Amazon S3| `https://`| `httpsL//`*BucketName*`.s3.`*RegionName*`.amazonaws.com/`*ObjectName*`;AwsCredentials=`*AwsAccessID*`,`*AwsSecretKey*
+    |Amazon S3| `https://`| `https://`*BucketName*`.s3.`*RegionName*`.amazonaws.com/`*ObjectName*`;AwsCredentials=`*AwsAccessID*`,`*AwsSecretKey*
 
 1. Select **Next: Schema** to view and edit your table column configuration.
 
