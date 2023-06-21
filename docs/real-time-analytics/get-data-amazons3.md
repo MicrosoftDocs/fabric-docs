@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 06/11/2023
+ms.date: 06/21/2023
 ms.search.form: product-kusto
 ---
 # Get data from Amazon S3
@@ -28,10 +28,10 @@ For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.ama
 1. On the lower ribbon, select **Get Data** > **Amazon S3**.
 1. Enter a name for your table. By default, **New table** is selected.
 
-:::image type="content" source="media/get-data-amazons3/source-tab.png" alt-text="Screenshot of the source tab in the Ingest data window showing the source type and link. The source link is highlighted.":::
+    :::image type="content" source="media/get-data-amazons3/source-tab.png" alt-text="Screenshot of the source tab in the Ingest data window showing the source type and link. The source link is highlighted.":::
 
-  > [!NOTE]
-  > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
+      > [!NOTE]
+      > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
 1. Select **Next: Source**.
 
@@ -39,9 +39,7 @@ For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.ama
 
 1. In the **Link to source** field, paste the connection string of your bucket in the following format.
 
-    | Storage| Scheme| URI template|
-    |----------| ----------| ----------|
-    |Amazon S3| `https://`| `https://`*BucketName*`.s3.`*RegionName*`.amazonaws.com/`*ObjectName*`;AwsCredentials=`*AwsAccessID*`,`*AwsSecretKey*
+    > `https://`*BucketName*`.s3.`*RegionName*`.amazonaws.com/`*ObjectName*`;AwsCredentials=`*AwsAccessID*`,`*AwsSecretKey*
 
 1. Select **Next: Schema** to view and edit your table column configuration.
 
