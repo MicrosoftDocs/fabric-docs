@@ -169,7 +169,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
   - Manually changing the item definition file. These changes are valid, but might be different than if done through the editors. For example, if you rename a dataset column in git and import this change to the workspace, the next time you commit changes to the dataset, the *bim* file will register as changed and the modified column pushed to the back of the `columns` array. This is because the AS engine that generates the *bim* files pushes renamed columns to the end of the array. This change doesn't affect the way the item operates.
   
-  - Committing a file that uses *CRLF* line breaks. The service uses *LF* (line feed) line breaks. If you had item files in the git repo with *CRLF* line breaks, when you commit from the service these files are changed to LF. For example, if you open a report in desktop, save the *.pbip* project and upload it to git using *CRLF*.
+  - Committing a file that uses *CRLF* line breaks. The service uses *LF* (line feed) line breaks. If you had item files in the git repo with *CRLF* line breaks, when you commit from the service these files are changed to *LF*. For example, if you open a report in desktop, save the *.pbip* project and upload it to git using *CRLF*.
 
 - If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the git integration feature.
 
