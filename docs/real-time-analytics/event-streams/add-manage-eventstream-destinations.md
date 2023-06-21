@@ -31,10 +31,10 @@ If you have a KQL database created in the workspace, follow these steps to add a
 
 1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then **KQL Database**.  
 
-2. Enter a destination name, select a KQL database from your workspace and then select **Add and configure**.
+2. Enter a destination name, select a workspace, choose a KQL database from the selected workspace, and then select **Add and configure**.
 
    > [!NOTE]
-   > Only workspaces that have the same region Fabric capacity as the eventstream can be selected..
+   > Only workspaces that have the same region Fabric capacity as the eventstream can be selected.
 
    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot showing the kql database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png" :::
 
