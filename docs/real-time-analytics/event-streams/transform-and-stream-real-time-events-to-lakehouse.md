@@ -34,7 +34,7 @@ To get started, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream and lakehouse item are located in.
 - An Azure event hub with event data and appropriate permission available to access the policy keys. And it must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
-## Create an lakehouse and an eventstream
+## Create a lakehouse and an eventstream
 
 You can create an Eventstream item (eventstream) or a Lakehouse item (lakehouse) on the **Workspace** page or the **Create hub** page. Here are the steps:
 
