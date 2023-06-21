@@ -21,7 +21,7 @@ Once you have created an eventstream, you can connect it to various data sources
 To get started, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located in.
-- For Azure Event Hubs source, an Azure event hub with event data and appropriate permission available to access its policy keys. And it must be publicly accessible and not be behind a firewall or secured in an Azure Virtual Network.
+- For Azure Event Hubs source, an Azure event hub with event data and appropriate permission available to access its policy keys. And it must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
 ## Add an Azure event hub as a source
 
