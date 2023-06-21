@@ -6,14 +6,14 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 06/12/2023
+ms.date: 06/21/2023
 ms.search.form: product-kusto
 ---
 # What is Real-Time Analytics in Fabric?
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The last few decades have seen a paradigm shift in the way we access and consume information, as users have become used to data that is interactive, on demand, and accessible to all. This shift has been powered by big data, streaming data ingestion, and indexed, keyword-based search. All together they form a simplified user experience. With Real-Time Analytics in Microsoft Fabric, we enable organizations to focus and scale up their analytics solution while democratizing data for the needs of both the citizen data scientist all the way to the advanced data engineer. Real-time analytics have become essential in many scenarios in the enterprise world, such as cybersecurity, asset tracking and management, predictive maintenance,supply chain optimization, customer experience, energy management, inventory management, quality control, environmental monitoring, fleet management, and health and safety.
+The last few decades have seen a paradigm shift in the way we access and consume information, as users have become used to data that is interactive, on demand, and accessible to all. This shift has been powered by big data, streaming data ingestion, and indexed, keyword-based search. All together they form a simplified user experience. With Real-Time Analytics in Microsoft Fabric, we enable organizations to focus and scale up their analytics solution while democratizing data for the needs of both the citizen data scientist all the way to the advanced data engineer. Real-time analytics have become essential in many scenarios in the enterprise world, such as cybersecurity, asset tracking and management, predictive maintenance, supply chain optimization, customer experience, energy management, inventory management, quality control, environmental monitoring, fleet management, and health and safety.
 
 How? Real-Time Analytics reduces complexity and simplifies data integration. Quick access to data insights is achieved through automatic data streaming, automatic indexing and data partitioning of any data source or format, and by using the on-demand query generation and visualizations. This user process is simplified while preserving powerful analytical capabilities. Real-Time Analytics lets you focus on your analytics solutions by scaling up seamlessly with the service as your data and query needs grow.
 
@@ -57,11 +57,11 @@ Let's say you're a marketing specialist implementing a new campaign. You want to
 
 * Oil and gas:
 
-You're a project manager in the oil and gas industry. You're responsible for planning, designing, and monitoring drilling and pumping operations as well as delivery. You can use Real-Time Analytics to oversee the progress of your workforce and the different teams under your supervision, and optimize the efficiency of the operations while ensuring the stability and safety of the drilling, pumping, and delivery of the oil and gas.
+You're a project manager in the oil and gas industry. You're responsible for planning, designing, and monitoring drilling and pumping operations as well as delivery. You can use Real-Time Analytics to oversee the progress of your workforce and the different teams under your supervision, and optimize the efficiency of the operations while ensuring the stability and safety of the drilling procedures.
 
 * Sales:
 
-You're a retail planning manager. You need to analyze sales, manage budgets, decide on pricing, communicate between the company warehouse and the operations department to manage productions, manage security and staffing requirements, and more. Real-Time Analytics lets you take a look at all of this data and helps you gain insight into workload trends. This allows you to implement business strategies that expand store traffic, promote sales growth, and increase customer satisfactions.
+You're a retail planning manager. You need to analyze sales, manage budgets, decide on pricing, communicate between the company warehouse and the operations department to manage productions, manage security and staffing requirements, and more. With Real-Time Analytics, you can gain valuable insights into workload trends by examining all of your data together. You can use these insights to implement business strategies that expand store traffic, promote sales growth, and increase customer satisfaction.
 
 * Agriculture:
 
