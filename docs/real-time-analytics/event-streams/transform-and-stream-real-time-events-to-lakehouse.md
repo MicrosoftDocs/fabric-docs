@@ -22,7 +22,7 @@ In this tutorial, you learn how to:
 > * Create Eventstream and Lakehouse items in Microsoft Fabric
 > * Add an Azure Event Hubs source to the eventstream
 > * Create an event hub cloud connection
-> * Add an Lakehouse destination to the eventstream
+> * Add a Lakehouse destination to the eventstream
 > * Define real-time events processing logic with event processor
 > * Verify the data in lakehouse
 > * Build Power BI report with the event data ingested in the lakehouse
