@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihart
 ms.topic: conceptual  
 ms.custom: build-2023
-ms.date: 05/10/2023
+ms.date: 06/21/2023
 ---
 
 # Global search
@@ -17,6 +17,9 @@ When you're new to [!INCLUDE [product-name](../includes/product-name.md)], you h
 ## Search for content
 
 At the top of Home, the global search box finds items by title, name, or keyword. Sometimes, the fastest way to find an item is to search for it. For example, if a dashboard you haven't used in a while isn't showing up on your Home canvas. Or, if your colleague shared something with you, but you don't remember what it's named or what type of content they shared. Sometimes, you might have so much content that it's easier to search for it rather than scrolling or sorting.
+
+> [!NOTE]
+> Global search is currently unavailable in sovereign clouds. 
 
 Search is available from Home and also most other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Just look for the search box or search icon :::image type="icon" source="./media/fabric-search/fabric-search-icon.png" border="false":::.
 
