@@ -10,8 +10,12 @@ ms.search.form: Semantic Link
 ---
 
 # Data validation with Semantic Link and Microsoft Fabric
-validate relationships
-validate functional dependencies
+# Validate relationships between tables
+PowerBI and Microsoft Fabric provide rich set of data modelling capabilities, including ability to detect, define and manage foreign key relationships between tables and their cardinalities [link?]. 
+As referential integrity is not automatically enforced for Lakehouse datasets, this may lead to hard to find data quality problems, which can affect the quality of BI reports and ML models. 
+Semantic Link provides tools to validate referential integrity based on the relationships defined by the data model and find violations.
+
+# Use functional depenencies to find and fix data quality issues 
 
 existing docs:
 
