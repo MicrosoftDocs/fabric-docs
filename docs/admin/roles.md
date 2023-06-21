@@ -53,6 +53,10 @@ You can also assign users to roles by using PowerShell. Users are managed in Azu
     Get-AzureADDirectoryRole
     ```
     
+    > [!NOTE] 
+    > In the output produced by the PowerShell command, look for the *Power BI Service Administrator* in the DisplayName column. This is the legacy name for the *Fabric administrator*.
+    
+    
     ```output
     ObjectId                             DisplayName                        Description
     --------                             -----------                        -----------
