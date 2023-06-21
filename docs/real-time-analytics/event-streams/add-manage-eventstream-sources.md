@@ -21,7 +21,7 @@ Once you have created an eventstream, you can connect it to various data sources
 To get started, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located in.
-- For Azure Event Hubs source, an Azure event hub with event data and appropriate permission available to access its policy keys.
+- For Azure Event Hubs source, an Azure event hub with event data and appropriate permission available to access its policy keys. And it must be publicly accessible and not be behind a firewall or secured in an Azure Virtual Network.
 
 ## Add an Azure event hub as a source
 
@@ -40,7 +40,7 @@ If you have an Azure event hub created with event data there, follow these steps
    - **Connection name**: Enter a name for the cloud connection. 
    - **Connection type**: Default value is `EventHub`. 
    - **Event Hub namespace**: Enter the name of your Azure event hub namespace. 
-   - **Authentication**: Go to your Azure event hub and create a policy under **Share access policies**. Then use **policy name** and **primary key** as the **Shared Access Key Name** and **Shared Access Key**. 
+   - **Authentication**: Go to your Azure event hub and create a policy with `Manage` or `Listen` permission under **Share access policies**. Then use **policy name** and **primary key** as the **Shared Access Key Name** and **Shared Access Key**. 
    
        :::image type="content" source="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png" alt-text="Screenshot showing the Azure event hub policy key." lightbox="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png" :::
    
@@ -65,7 +65,7 @@ After the event hub source is created, you see an event hub source added to your
 
 To get a better understanding of how an eventstream works, you can use the out-of-box sample data provided and send data to the eventstream. Follow these steps to add a sample data source: 
 
-1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then Sample data. 
+1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then **Sample data**. 
 
 2. On the right pane, enter a source name to be displayed on the canvas, select the desired sample data to be added to your eventstream and then **Add**. 
    - **Yellow Taxi**: sample taxi data with a preset schema that includes fields such as pickup time, drop-off time, distance, total fee, and more. 
@@ -75,7 +75,7 @@ To get a better understanding of how an eventstream works, you can use the out-o
 
 3. When the sample data source is added successfully, you can find it on the canvas and navigation pane.
 
-To verify if the sample data is added successfully, select Data preview in the bottom pane.
+To verify if the sample data is added successfully, select **Data preview** in the bottom pane.
 
 :::image type="content" source="./media/add-manage-eventstream-sources/sample-data-source-completed.png" alt-text="Screenshot showing the sample data source." lightbox="./media/add-manage-eventstream-sources/sample-data-source-completed.png" :::
 

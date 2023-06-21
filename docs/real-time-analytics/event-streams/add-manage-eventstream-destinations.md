@@ -31,7 +31,10 @@ If you have a KQL database created in the workspace, follow these steps to add a
 
 1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then **KQL Database**.  
 
-2. Enter a destination name, select a KQL database from your workspace and then select **Create and configure**.
+2. Enter a destination name, select a KQL database from your workspace and then select **Add and configure**.
+
+   > [!NOTE]
+   > Only workspaces that have the same region Fabric capacity as the eventstream can be selected..
 
    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot showing the kql database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png" :::
 
@@ -149,7 +152,7 @@ This destination provides a direct ingestion of your real-time event data into a
 
     :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot showing the KQL database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png" :::
 
-**Ingest data wizard** pops up when you select **Create and configure**:
+**Ingest data wizard** pops up when you select **Add and configure**:
 
 :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-ingestion-wizard.png" alt-text="Screenshot showing the ingestion wizard in KQL database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database-ingestion-wizard.png" :::
 
