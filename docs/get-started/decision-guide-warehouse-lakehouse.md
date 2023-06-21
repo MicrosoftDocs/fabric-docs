@@ -6,7 +6,7 @@ ms.author: scbradl
 author: bradleyschacht
 ms.topic: quickstart
 ms.custom: build-2023
-ms.date: 06/13/2023
+ms.date: 06/23/2023
 ---
 
 # Microsoft Fabric decision guide: data warehouse or lakehouse
