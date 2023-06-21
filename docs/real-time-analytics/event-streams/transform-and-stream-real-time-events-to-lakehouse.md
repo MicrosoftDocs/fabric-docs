@@ -22,7 +22,7 @@ In this tutorial, you learn how to:
 > * Create Eventstream and Lakehouse items in Microsoft Fabric
 > * Add an Azure Event Hubs source to the eventstream
 > * Create an event hub cloud connection
-> * Add an Lakehouse destination to the eventstream
+> * Add a Lakehouse destination to the eventstream
 > * Define real-time events processing logic with event processor
 > * Verify the data in lakehouse
 > * Build Power BI report with the event data ingested in the lakehouse
@@ -32,9 +32,9 @@ In this tutorial, you learn how to:
 To get started, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream and lakehouse item are located in.
-- An Azure event hub with event data and appropriate permission available to access the policy keys.
+- An Azure event hub with event data and appropriate permission available to access the policy keys. And it must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
-## Create an lakehouse and an eventstream
+## Create a lakehouse and an eventstream
 
 You can create an Eventstream item (eventstream) or a Lakehouse item (lakehouse) on the **Workspace** page or the **Create hub** page. Here are the steps:
 
@@ -77,7 +77,7 @@ After the lakehouse and eventstream are created, do the following steps to add a
    - **Connection name**: Enter a name for the cloud connection. 
    - **Connection type**: Default value is `EventHub`. 
    - **Event Hub namespace**: Enter the name of your Azure event hub namespace. 
-   - **Authentication**: Go to your Azure event hub and create a policy under **Share access policies**. Then use **policy name** and **primary key** as the **Shared Access Key Name** and **Shared Access Key**. 
+   - **Authentication**: Go to your Azure event hub and create a policy with `Manage` or `Listen` permission under **Share access policies**. Then use **policy name** and **primary key** as the **Shared Access Key Name** and **Shared Access Key**. 
    
        :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" alt-text="Screenshot showing the Azure event hub policy key." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" :::
    
