@@ -23,17 +23,19 @@ Use this reference guide and the example scenarios to help you choose between th
 |---|:---:|:---:|:---:|:---:|
 | **Data volume** | Unlimited | Unlimited | Up to 100 GB | Unlimited |
 | **Type of data** | Structured | Unstructured,semi-structured,structured | Structured | Unstructured, semi-structured, structured |
-| **Primary developer persona** | Data warehouse developer,SQL engineer | Data engineer,data scientist | Citizen developer | Data engineer, data scientist, SQL engineer |
-| **Primary developer skill set** | SQL | Spark(Scala, PySpark, Spark SQL, R) | No code, SQL | KQL |
+| **Primary developer persona** | Data warehouse developer,SQL engineer | Data engineer,data scientist | Citizen developer | Citizen Data scientist, Data engineer, Data scientist, SQL engineer |
+| **Primary developer skill set** | SQL | Spark(Scala, PySpark, Spark SQL, R) | No code, SQL | No code, KQL, SQL |
 | **Data organized by** | Databases, schemas, and tables | Folders and files, databases, and tables | Database, tables, queries | Databases, schemas, and tables |
-| **Read operations** | Spark,T-SQL | Spark,T-SQL | Spark,T-SQL,Power BI | KQL, T-SQL, Spark |
+| **Read operations** | Spark,T-SQL | Spark,T-SQL | Spark,T-SQL,Power BI | KQL, T-SQL, Spark, Power BI |
 | **Write operations** | T-SQL | Spark(Scala, PySpark, Spark SQL, R) | Dataflows, T-SQL | KQL, Spark, connector ecosystem |
 | **Multi-table transactions** | Yes | No | No | No |
-| **Primary development interface** | SQL scripts | Spark notebooks,Spark job definitions | Power BI | KQL Queryset |
+| **Primary development interface** | SQL scripts | Spark notebooks,Spark job definitions | Power BI | KQL Queryset, KQL Database |
 | **Security** | Object level (table, view, function, stored procedure, etc.),column level,row level,DDL/DML | Row level,table level (when using T-SQL),none for Spark | Built-in RLS editor | Row-Level Security |
 | **Access data via shortcuts** | Yes (indirectly through the lakehouse) | Yes | No | Yes |
 | **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) | No | Yes |
-| **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;query across lakehouses (including shortcuts using Spark) | No | Yes, query across KQL Databases and lakehouses |
+| **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;query across lakehouses (including shortcuts using Spark) | No | Yes, query across KQL Databases, lakehouses, and warehouses with shortcuts |
+| **Advanced Analytics** |  |  |  |Time Series native elements, Full geospatial storing and query capabilities |
+| **Advanced Formatting support** |  |  |  | Full indexing for free text and semi-structured data like JSON |
 
 ## Scenarios
 
@@ -69,3 +71,4 @@ Daisy decides to use a **KQL Database** because of its capability to query unstr
 - [Create a warehouse in Microsoft Fabric](../data-warehouse/create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
 - [Introduction to Power BI datamarts](/power-bi/transform-model/datamarts/datamarts-overview)
+- [Create a KQL database](../real-time-analytics/create-database.md)
