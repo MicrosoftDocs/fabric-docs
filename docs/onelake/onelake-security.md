@@ -56,7 +56,7 @@ Fabric doesn’t currently support private link access to OneLake data via non-F
 ## Allow apps running outside of Fabric to access data via OneLake
 
 OneLake provides the ability to restrict access to data from applications running outside of Fabric environments. Admins can find the setting in the tenant admin portal.
-When this switch is turned ON, data can be accessed via all sources. When this switched is turned OFF, data cannot be accessed via applications running outside of Fabric environments. For example, data can be access via applications like Azure Databricks, custom applications using ADLS APIs, or OneLake file explorer.
+When this switch is turned ON, data can be accessed via all sources. When this switched is turned OFF, data cannot be accessed via applications running outside of Fabric environments. For example, data can be accessed via applications like Azure Databricks, custom applications using ADLS APIs, or OneLake file explorer.
 
 ## Next steps
 
