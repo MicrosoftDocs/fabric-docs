@@ -30,7 +30,7 @@ Items always live within workspaces and workspaces always live directly under th
 
 In the public preview release of Microsoft Fabric, permissions can only be configured at the workspace level.
 
-To grant a user access to an item, users need permissions from one of the Fabric [workspace roles.](../get-started/roles-workspaces.md). At a minimum, users need Read access on an item to see and connect to that item, which is provided by the Viewer role. Users in the Viewer role can also connect to and read data using SQL endpoints for the Warehouse and Lakehouse items or read data through Power BI datasets.
+To grant a user access to an item, users need permissions from one of the Fabric [workspace roles](../get-started/roles-workspaces.md). At a minimum, users need Read access on an item to see and connect to that item, which is provided by the Viewer role. Users in the Viewer role can also connect to and read data using SQL endpoints for the Warehouse and Lakehouse items or read data through Power BI datasets.
 
 Access directly to OneLake or to write data is provided through the other roles. Admin, member, and contributor all provide access to read data directly in OneLake through Spark or APIs, and write data to those sources. The Warehouse item is read-only through the lake interface, so even Admins are not able to write data to a Warehouse through APIs, but they can write data through SQL. 
 
