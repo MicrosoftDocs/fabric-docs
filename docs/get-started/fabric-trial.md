@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihirwagle
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 06/15/2023
+ms.date: 06/22/2023
 ---
 
 # Microsoft Fabric (Preview) trial
@@ -30,7 +30,7 @@ Follow these steps to start your Fabric (Preview) trial.
 
     :::image type="content" source="media/fabric-trial/fabric-home-page.png" alt-text="Screenshot of the Microsoft Fabric homepage with the Account manager outlined in red.":::
 
-1. In the Account manager, select **Start trial**.
+1. In the Account manager, select **Start trial**. If you don't see the *Start trial* button, trials may be disabled for your tenant. To enable trials for your tenant, see [Administer user access to a Fabric (Preview) trial](#administer-user-access-to-a-fabric-preview-trial).
 
     :::image type="content" source="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
 
