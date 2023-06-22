@@ -35,7 +35,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\pipeline-copy-data.png" alt-text="Screenshot showing where to select Add pipeline activity and Copy data.":::
 
-1. Select the newly added copy data activity from the canvas. Activity properties appear in a pane below the canvas. (You may need to expand the pane upwards by dragging the top edge.) Under the **General** tab in the properties pane, specify the name for the copy data activity **Data Copy to Lakehouse**.
+1. Select the newly added copy data activity from the canvas. Activity properties appear in a pane below the canvas (you may need to expand the pane upwards by dragging the top edge). Under the **General** tab in the properties pane, specify the name for the copy data activity **Data Copy to Lakehouse**.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-copy-to-lakehouse.png" alt-text="Screenshot showing where to add the copy activity name on the General tab.":::
 
