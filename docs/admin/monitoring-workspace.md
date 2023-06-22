@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 06/14/2023
+ms.date: 06/15/2023
 ---
 
 # What is the admin monitoring workspace?
@@ -20,13 +20,13 @@ To use the admin monitoring workspace, you need:
 
 * To be an admin with one of these roles.
     * Microsoft 365 *Global administrator*
-    * *Power BI administrator*
+    * *Fabric administrator*
 
 * A *Pro* license
 
 ## Access the admin monitoring workspace
 
-The Admin monitoring workspace is enabled for [Microsoft Fabric admins](microsoft-fabric-admin.md) that have the *Power BI admin* role. Admins can also share its content with other users.
+The Admin monitoring workspace is enabled for [Microsoft Fabric admins](microsoft-fabric-admin.md) that have the *Fabric admin* role. Admins can also share its content with other users.
 
 The admin monitoring workspace is automatically installed during the first time any Microsoft Fabric admin accesses it. To access the admin monitoring workspace, follow these steps:
 
@@ -56,7 +56,7 @@ The admin monitoring workspace is automatically refreshed once a day. The refres
 
 For the refresh to work, the admin that accessed the workspace for the first time, has to:
 
-* Keep his *Global administrator* or *Power BI administrator* role. If the role of the admin who first accessed the workspace changes, the admin monitoring workspace will not be refreshed.
+* Keep his *Global administrator* or *Fabric administrator* role. If the role of the admin who first accessed the workspace changes, the admin monitoring workspace will not be refreshed.
 
 * If the workspace creator uses [Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-configure), it has to be enabled during the scheduled refresh.
 
