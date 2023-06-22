@@ -1,6 +1,6 @@
 ---
 title: Semantic propagation with Sempy python library
-description: Learn how Sempy library supports propagation of metadata that is attached to Power BI datasets on which you're operating.
+description: Learn how Sempy library supports propagation of metadata attached to Power BI datasets on which you're operating.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: marcozo
@@ -10,7 +10,7 @@ ms.date: 06/06/2023
 ms.search.form: Semantic Link
 ---
 
-# Propagation of semantic data with Power BI datasets in Microsoft Fabric
+# Semantic data propagation from Power BI datasets
 
 When you read a Power BI dataset into a [FabricDataFrame](__TODO API link__), semantic information such as metadata and annotations from the dataset are automatically attached to the FabricDataFrame. In this article, you'll learn how the SemPy python library preserves annotations that are attached to your [Power BI dataset's](/power-bi/connect-data/service-datasets-understand) tables and columns.
 
@@ -20,7 +20,10 @@ When you read a Power BI dataset into a [FabricDataFrame](__TODO API link__), se
 
 The **SemPy python library** is part of the Semantic Link feature and serves [pandas](https://pandas.pydata.org/) users. SemPy supports the operations that pandas allows you to perform on your data. Furthermore, SemPy allows you to propagate semantic data from Power BI datasets on which you're operating. By propagating semantic data, you can preserve annotations that are attached to tables and columns in the Power BI dataset when you perform operations such as slicing, merges, and concatenation.
 
-You can create a FabricDataFrame by reading a Power BI dataset into the DataFrame, or by creating the DataFrame from in-memory data, just like you do for Pandas DataFrames. When you read a Power BI dataset into a FabricDataFrame, the metadata from Power BI automatically hydrates the FabricDataFrame. That is, the semantic information from the Power BI dataset's tables or measures are preserved in the FabricDataFrame. However, when you create a FabricDataFrame from in-memory data, you need to supply the name of a Power BI dataset from which the FabricDataFrame can pull metadata information.
+You can create a FabricDataFrame one of two ways: you can read a table or the output of a [measure](/power-bi/transform-model/desktop-measures) from a Power BI dataset into a FabricDataFrame. Alternatively, you can use in-memory data to create the FabricDataFrame, just like you do for Pandas DataFrames.
+
+- When you read from a Power BI dataset into a FabricDataFrame, the metadata from Power BI automatically hydrates the FabricDataFrame. In other words, the semantic information from the Power BI dataset's tables or measures are preserved in the FabricDataFrame.
+- When you create a FabricDataFrame from in-memory data, you need to supply the name of a Power BI dataset from which the FabricDataFrame can pull metadata information.
 
 How semantic data is preserved varies depending on factors such as the operations that you're performing and the order of the FabricDataFrames on which you're operating.
 
@@ -42,7 +45,7 @@ Unstack operation in pandas is used to move a level of index from row to column.
 
 ## Semantic propagation for Spark users
 The Semantic Link Spark native connector hydrates (or populates) the [metadata](https://spark.apache.org/docs/3.3.2/api/python/reference/pyspark.sql/api/pyspark.sql.types.StructField.html#pyspark.sql.types.StructField) dictionary of a Spark column.
-Currently, support for semantic propagation is limited and subject to Spark's internal implementation on how schema information is propagated. For example, column aggregation strips the metadata.
+Currently, support for semantic propagation is limited and subject to Spark's internal implementation of how schema information is propagated. For example, column aggregation strips the metadata.
 
 ## Next steps
 - [How to explore data with Semantic Link](semantic-link-explore-data.md)

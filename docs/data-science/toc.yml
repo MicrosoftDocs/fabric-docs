@@ -197,7 +197,7 @@ items:
       href: semantic-link-semantic-propagation.md
   - name: How-to guides
     items:
-    - name: How to read and write data from and to Power BI
+    - name: Read from Power BI and write data usable by Power BI
       href: read-write-powerbi.md
     - name: How to explore data with Semantic Link
       href: semantic-link-explore-data.md
