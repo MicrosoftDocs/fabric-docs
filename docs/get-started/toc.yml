@@ -41,6 +41,8 @@ items:
     href: roles-workspaces.md
   - name: Give users access to workspaces
     href: give-access-workspaces.md
+  - name: Manage a workspace with Git
+    href: ../cicd/git-integration/git-get-started.md
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
 - name: Promote or certify items
@@ -48,7 +50,6 @@ items:
 - name: Apply sensitivity labels
   href: apply-sensitivity-labels.md
 - name: Known issues
-  expanded: false
   items:
     - name: Active known issues for Fabric - chart
       href: fabric-known-issues.md
@@ -58,3 +59,7 @@ items:
       href: known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md
     - name: Get Tenant Settings API returns default values instead of user configured values
       href: known-issues/known-issue-421-get-tenant-settings-api-returns-default-values.md
+- name: Resources
+  items:
+    - name: Icons
+      href: icons.md

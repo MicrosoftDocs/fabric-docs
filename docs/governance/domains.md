@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 05/02/2023
+ms.date: 06/15/2023
 ---
 
 # Domains (preview)
@@ -28,13 +28,13 @@ To group data into domains, workspaces are associated with domains. When a works
 
 There are three roles involved in domains:
 
-* **Power BI admin** (or higher): Power BI admins can create and edit domains, specify domain admins and domain contributors, and associate workspaces with domains. Power BI admins can also see all the defined domains on the Domains page in the admin portal, and they can edit and delete domains.
+* **Fabric admin** (or higher): Fabric admins can create and edit domains, specify domain admins and domain contributors, and associate workspaces with domains. Fabric admins can also see all the defined domains on the Domains page in the admin portal, and they can edit and delete domains.
 
 * **Domain admin**: Ideally, the domain admins of a domain are the business owners or designated experts. They should be familiar with the data in their area and the regulations and restrictions that are relevant to it.
 
     Domain admins have access to the **Domains** page in the admin portal, but they can only see and edit the domains they're admins of. Domain admins can update the domain description, define/update domain contributors, and associate workspaces with the domain. They also can define and update the domain image and override tenant settings for any specific settings the tenant admin has delegated to the domain level. They can't delete the domain, change the domain name, or add/delete other domain admins.
 
-* **Domain contributor**: Domain contributors are [workspace admins](../get-started/roles-workspaces.md) who have been authorized by the domain or Power BI admin to associate the workspaces they're the admins of to a domain, or to change the current domain association.
+* **Domain contributor**: Domain contributors are [workspace admins](../get-started/roles-workspaces.md) who have been authorized by the domain or Fabric admin to associate the workspaces they're the admins of to a domain, or to change the current domain association.
 
     Domain contributors associate the workspaces they're an admin of in the settings of the workspace itself. They don’t have access to the **Domains** page in the admin portal.
     
@@ -49,7 +49,7 @@ When users look for data items in the OneLake data hub, they may want to see onl
 
 ## Create a domain
 
-To create domain you must be a Power BI admin.
+To create domain you must be a Fabric admin.
 
 1. Open the admin portal and select **Domains**.
 
@@ -73,7 +73,7 @@ Domain admins see only domains they are admins of.
 
 ### Edit name and description
 
-Power BI admins can edit the name and description fields. Domain admins can edit the description field only.
+Fabric admins can edit the name and description fields. Domain admins can edit the description field only.
 
 1. Expand the Name and description section and make your desired changes.
 
@@ -89,7 +89,7 @@ Expand the Domain image section and select **Select an image**. In the photo gal
 
 ### Specify domain admins
 
-To specify domain admins, you must be a Power BI admin.
+To specify domain admins, you must be a Fabric admin.
 
 1. Expand the Domain admins section and specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain.
 
@@ -99,7 +99,7 @@ To specify domain admins, you must be a Power BI admin.
 
 ### Specify domain contributors
 
-To specify domain contributors, you must be a domain admin for the domain or a Power BI admin.
+To specify domain contributors, you must be a domain admin for the domain or a Fabric admin.
 
 1. Expand the Domain contributors section and specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain.
 
@@ -112,7 +112,7 @@ To specify domain contributors, you must be a domain admin for the domain or a P
 
 ### Assign workspaces to the domain
 
-Power BI admins and domain admins can associate workspaces with the domain on the domains.
+Fabric admins and domain admins can associate workspaces with the domain on the domains.
 
 1. Expand the **Workspaces in this domain** section. If any workspaces have been associated with the domain, they will be listed here.
 

@@ -2,8 +2,8 @@
 title: Data science tutorial - ingest data into a lakehouse
 description: In this first part of the tutorial series, learn how to ingest a dataset into a Fabric lakehouse in delta lake format and how to preview the data you ingested.
 ms.reviewer: sgilley
-ms.author: narsam
-author: narmeens
+ms.author: amjafari
+author: amhjf
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 5/4/2023
