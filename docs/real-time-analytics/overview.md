@@ -53,15 +53,15 @@ The types of industries that benefit from data analysis in Real-Time Analytics i
 
 ### Marketing
 
-Let's say you're a marketing specialist implementing a new campaign. You want to see how your campaign impacts sales, inventory, and logistics. You have a lot of structured and unstructured data flowing from different sources, and you need to figure out a way to increase your inbound marketing. Real-Time Analytics can help you monitor the success of your campaign in real-time and allow you to make changes accordingly.
+As a marketing specialist implementing a new campaign, you need to analyze the immediate impact of your campaign on manufacturing, inventory, sales, and logistics. Real-Time Analytics allows you to actively monitor your incoming data, and helps you make calculated adjustments in real-time to optimize the success of your campaign and increase your inbound marketing.
 
 ### Oil and gas
 
-You're a project manager in the oil and gas industry. You're responsible for planning, designing, and monitoring drilling and pumping operations as well as delivery. You can use Real-Time Analytics to oversee the progress of your workforce and the different teams under your supervision, and optimize the efficiency of the operations while ensuring the stability and safety of the drilling procedures.
+As a project manager in the oil and gas industry, you're responsible for planning, designing, and monitoring drilling and pumping operations as well as delivery. You can use Real-Time Analytics to promptly detect and resolve anomalies in the pumping operations in real-time, and optimize the efficiency, stability, and safety of the drilling procedures.
 
 ### Sales
 
-You're a retail planning manager. You need to analyze sales, manage budgets, decide on pricing, communicate between the company warehouse and the operations department to manage productions, manage security and staffing requirements, and more. With Real-Time Analytics, you can gain valuable insights into workload trends by examining all of your data together. You can use these insights to implement business strategies that expand store traffic, promote sales growth, and increase customer satisfaction.
+You're a retail planning manager. Not only do you need to analyze sales, manage budgets and pricing, examine workload trends, and manage productions, you also need to manage security and staffing requirements in all of your facilities, and more. Real-Time Analytics makes it easier for you to gain valuable insights into your incoming data in real-time, which helps you quickly improve your business strategies that expand store traffic, promote sales growth, and increase customer satisfaction.
 
 ### Agriculture
 
