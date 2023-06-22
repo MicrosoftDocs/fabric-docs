@@ -29,7 +29,7 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
 1. From your **wwilakehouse** lakehouse, select **SQL endpoint**  from the **Lakehouse** drop-down menu at the top right of the screen.
 
-   :::image type="content" source="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png" alt-text="Screenshot showing where to find and select SQL endpoint from the top right drop down menu.":::
+   :::image type="content" source="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png" alt-text="Screenshot showing where to find and select SQL endpoint from the top right drop-down menu.":::
 
 1. From the SQL endpoint pane, you should be able to see all the tables you created. If you don't see them yet, select the **Refresh** icon at the top. Next, select the **Model** tab at the bottom to open the default Power BI dataset.
 
