@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/22/2023
 ---
 
 # Understand the metrics app overview page
@@ -52,6 +52,9 @@ Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-rib
 To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, select a timepoint you want to explore and then select **Explore**.
 
 The CU over time chart displays the following elements:
+
+>[!NOTE]
+>Microsoft Fabric is in preview. Some workloads within Fabric are in preview and others are not. Preview workloads are not billable and their consumption is available from the *Background Preview* and *Interactive Preview* columns.
 
 * **Background %** - Blue columns represent the percent of CU consumption used during background operations in a 30 second period. This column refers to billable operations.
     
