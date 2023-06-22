@@ -20,7 +20,11 @@ Semantic information such as metadata and annotations are automatically attached
 
 The SemPy python library is part of the Semantic Link feature and serves [pandas](https://pandas.pydata.org/) users. SemPy supports the operations that pandas allows you to perform on your data. Furthermore, Sempy allows you to propagate semantic data in Power BI datasets on which you're operating.
 
-Semantic data propagation enables you to preserve annotations that are attached to tables and columns in the dataset when you're applying operations such as slicing, merges, and concatenation. Apart from direct hydration of metadata from Power BI, it can be automatically resolved when manually constructing a FabricDataFrame and supplying a Power BI datasets name. __@Markus, What does this last sentence mean?__
+Semantic data propagation enables you to preserve annotations that are attached to tables and columns in the dataset when you're applying operations such as slicing, merges, and concatenation.
+Semantic information in [FabricDataFrames](TODO link to API) is automatically populated when reading tables or measures from Power BI datasets.
+Alternatively, FabricDataFrames can be constructed from in-memory data just like Pandas dataframes.
+To enable metadata population you need to supply the Power BI dataset name.
+__@Mope, does that help?__
 
 How semantic data is preserved varies depending on factors such as the operations that you're performing and the order of the dataframes on which you're operating.
 
