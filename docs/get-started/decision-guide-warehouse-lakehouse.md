@@ -36,6 +36,7 @@ Use this reference guide and the example scenarios to help you choose between th
 | **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;query across lakehouses (including shortcuts using Spark) | No | Yes, query across KQL Databases, lakehouses, and warehouses with shortcuts |
 | **Advanced Analytics** |  |  |  |Time Series native elements, Full geospatial storing and query capabilities |
 | **Advanced Formatting support** |  |  |  | Full indexing for free text and semi-structured data like JSON |
+| **Ingestion latency**|  |  |  | Queued ingestion, Streaming ingestion has a couple of seconds latency |
 
 ## Scenarios
 
