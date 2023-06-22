@@ -74,7 +74,7 @@ Each item has one of the following statuses:
 - :::image type="icon" source="./media/git-integration-process/unsupported-icon.png"::: Unsupported item
 - :::image type="icon" source="./media/git-integration-process/uncommitted-icon.png"::: Uncommitted changes in the workspace
 - :::image type="icon" source="./media/git-integration-process/update-required-icon.png"::: Update required from git
-- :::image type="icon" source="./media/git-integration-process/warning.png"::: Item is synced but metadata is different
+- :::image type="icon" source="./media/git-integration-process/warning.png"::: Item is synced but needs to be updated to the last commit
 
 ### Sync information
 
