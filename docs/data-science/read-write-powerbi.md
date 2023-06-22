@@ -30,6 +30,8 @@ The SemPy Python API can retrieve data and metadata from Power BI datasets locat
 - the workspace of the attached [Lakehouse](/fabric/data-engineering/lakehouse-overview) or
 - the workspace of the notebook, if no Lakehouse is attached.
 
+To read data from Power BI datasets:
+
 1. List the available Power BI datasets in the attached Lakehouse.
 
     ```python
@@ -100,7 +102,7 @@ The SemPy Python API can retrieve data and metadata from Power BI datasets locat
     joined_df = df.join_measure("Total Revenue", dataset="Sales Dataset")
     ```
 
-## Read using Spark in Python, R, SQL, and Scala
+## Read data, using Spark in Python, R, SQL, and Scala
 
 As with the SemPy python API, by default, the workspace used to access Power BI datasets is:
 
@@ -119,7 +121,7 @@ Microsoft Fabric exposes all tables from all Power BI datasets in the workspace 
     df
     ```
 
-1. Retrieve the data from the *Customer* table in the *Sales Dataset* Power BI dataset, using SparkR:
+1. Retrieve the data from the *Customer* table in the *Sales Dataset* Power BI dataset, using SparkR.
 
     > [!NOTE]
     > Retrieving tables is subject to strict limitations (see [Read Limitations](#read-access-limitations)) and the results might be incomplete.
