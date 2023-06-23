@@ -2,7 +2,7 @@
 title: Data Factory pipeline limitations
 description: Identifies limitations that are specific to Data Factory in Microsoft Fabric pipeline features. 
 author: ssabat
-ms.author: sunil.sabat
+ms.author: susabat
 ms.topic: troubleshooting    
 ms.date: 6/23/2023
 ms.custom:  
