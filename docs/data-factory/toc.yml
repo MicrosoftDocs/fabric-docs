@@ -261,10 +261,20 @@
       href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Getting from Dataflow Gen1 to Gen2
       href: dataflows-gen2-overview.md
-    - name: Known issues
+    - name: Data Factory limitations
+      items:
+      - name: Data Factory limitations overview
+        href: data-factory-limitations.md
+      - name: Pipeline limitations
+        href: pipeline-limitations.md
+      - name: Pipeline resource limits
+        href: pipeline-resource-limits.md
+      - name: Dataflow Gen2 limitations
+        href: dataflow-gen2-limitations.md
+    - name: Data Factory known issues
       items:
       - name: Active known issues for Data Factory
-        href: known-issues.md
+        href: data-factory-known-issues.md
       - name: Gateway version
         href: known-issue-gateway.md
       - name: Lineage view edit button
