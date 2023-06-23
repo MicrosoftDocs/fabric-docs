@@ -71,6 +71,28 @@ GROUP BY
     """)
 ```
 
+## Join Measure
+
+The `join_measure` operation is a powerful feature of Semantic Link that enables users to augment their data with measures from Power BI datasets. The `join_measure` operation is only available in the SemPy Python library and not supported by the Spark native connector.
+In this example we assume you have manually created a FabricDataFrame with data that you want to augment with measures from a Power BI dataset.
+
+The `join_measure` operation performs these steps:
+
+- **Resolve column names**: The column names in the FabricDataFrame are resolved to Power BI dimensions. Any column names that can't be resolved within the given dataset are ignored (see the supported [DAX syntax](https://learn.microsoft.com/en-us/dax/dax-syntax-reference)).
+- Utilize the resolved column names to **define group by columns**.
+- **Compute the measure** at the group by level.
+- **Filter** the result by the existing rows in the FabricDataFrame.
+
+```python
+df = FabricDataFrame({
+        "Sales Agent": ["Agent 1", "Agent 1", "Agent 2"],
+        "Customer[Country/Region]": ["US", "GB", "US"],
+        "Industry[Industry]": ["Services", "CPG", "Manufacturing"],
+    }
+)
+
+joined_df = df.join_measure("Total Revenue", dataset="Sales Dataset")
+```
 
 ## Next steps
 Learn how to use semantic information
