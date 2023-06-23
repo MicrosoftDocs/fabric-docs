@@ -48,7 +48,7 @@ To read data from Power BI datasets:
     df_tables
     ```
 
-1. List the measures defined in the _Inventory Dataset_ Power BI dataset. (__@Markus, can we tell them to replace the workspace here with the name of their own workspace? Is there a reason the workspace is included in this code cell, but not the previous one?__)
+1. List the measures defined in the _Inventory Dataset_ Power BI dataset. (__@Markus, can we tell them to replace the workspace here with the name of their own workspace? Is there a reason the workspace is included in this code cell, but not the previous one?__ __@Mope, we can tell them to replace it with their workspace. The reason it's included is just to highlight that it's possible to specify a workspace, which opens up additional scenarios__)
 
     ```python
     df_measures = pbi.list_measures("Inventory Dataset", workspace="Logistics Workspace")
@@ -109,7 +109,7 @@ As with the SemPy python API, by default, the workspace used to access Power BI 
 - the workspace of the attached [Lakehouse](/fabric/data-engineering/lakehouse-overview) or
 - the workspace of the notebook, if no Lakehouse is attached.
  
-Microsoft Fabric exposes all tables from all Power BI datasets in the workspace as Spark tables. All Spark SQL commands can be executed in Python, R and Scala. The PowerBI/Spark connector (__@Markus is this the same as the Semantic Link Spark native connector? If so, we should use the term for consistency across articles__)supports push-down of Spark predicates to the Power BI engine.
+Microsoft Fabric exposes all tables from all Power BI datasets in the workspace as Spark tables. All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link Spark native connector supports push-down of Spark predicates to the Power BI engine.
 
 > [!TIP]
 > Since Power BI tables and measures are exposed as regular Spark tables, they can be joined with other Spark data sources in a single query.
@@ -172,7 +172,7 @@ The read access APIs have the following limitations:
 
 ## Write data consumable by Power BI datasets
 
-Spark tables added to a Lakehouse are automatically added to the corresponding default Power BI dataset. (__@Markus what is the default Power BI dataset__)
+Spark tables added to a Lakehouse are automatically added to the corresponding [default Power BI dataset](https://learn.microsoft.com/en-us/fabric/data-warehouse/datasets).
 This example demonstrates how to convert a Pandas dataframe to a Spark dataframe and write it to the attached Lakehouse.
 
 ```python
