@@ -62,4 +62,4 @@ There are several ways to load data into your Lakehouse from the explorer page:
 
 - [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
 
-- [Create a OneLake shortcut](../real-time-analytics/shortcuts.md#onelake-shortcuttabonelake-shortcut)
+- [Create a OneLake shortcut](../real-time-analytics/shortcuts.md?tab=onelake-shortcut)
