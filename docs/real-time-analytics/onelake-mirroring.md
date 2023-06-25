@@ -24,7 +24,7 @@ This shortcut is a two-step process that requires you to do the following:
 
 Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences.
 
-To query referenced data from OneLake in your KQL database or table, see [Create a OneLake shortcut](shortcuts.md?tab=onelake-shortcut)
+To query referenced data from OneLake in your KQL database or table, see [Create a OneLake shortcut](onelake-shortcuts.md?tab=onelake-shortcut)
 
 ## How it works
 

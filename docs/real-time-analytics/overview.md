@@ -65,7 +65,7 @@ See how these items work together in the end-to-end streaming data consumption a
 
 * Create [Event Hubs cloud connections](get-data-event-hub.md) to stream data into Real-Time Analytics.
 * Data in OneLake is accessed by Real-Time Analytics in several ways:
-  * Data from OneLake can be [queried from Real-Time Analytics as a shortcut](shortcuts.md?tab=onelake-shortcut).
+  * Data from OneLake can be [queried from Real-Time Analytics as a shortcut](onelake-shortcuts.md?tab=onelake-shortcut).
   * Data from [OneLake can be loaded](get-data-onelake.md) into Real-Time Analytics.
   * Data loaded into Real-Time Analytics is reflected in OneLake as [one logical copy](onelake-mirroring.md).
 * Data loaded into Real-Time Analytics can be used as the underlying data for [visualization in a Power BI report](create-powerbi-report.md).

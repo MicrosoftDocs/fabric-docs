@@ -8,12 +8,12 @@ ms.custom: build-2023
 ms.date: 06/25/2023
 ---
 
-To access the data in your KQL database in other [!INCLUDE [product-name](../../includes/product-name.md)] experiences, see [One logical copy](../../onelake-mirroring.md).
+To access the data in your KQL database in other [!INCLUDE [product-name](../../includes/product-name.md)] experiences, see [One logical copy](../../real-time-analytics/onelake-mirroring.md).
 
 ## Prerequisites
 
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
-* A [KQL database](../../create-database.md)
+* A [KQL database](../../real-time-analytics/create-database.md)
 * A [Lakehouse](../../data-engineering/create-lakehouse.md) with data
 
 ## Create shortcut

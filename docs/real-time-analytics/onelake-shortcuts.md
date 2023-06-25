@@ -29,26 +29,26 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
 1. Browse to an existing KQL database.
 1. Select **New** > **OneLake shortcut**.
 
-    :::image type="content" source="media/shortcuts/onelake-shortcut/home-tab.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
+    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/home-tab.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
 
 1. Under **Internal sources**, select **Microsoft OneLake**.
 
-    :::image type="content" source="media/shortcuts/onelake-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled OneLake is highlighted."  lightbox="media/shortcuts/onelake-shortcut/new-shortcut-expanded.png":::
+    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled OneLake is highlighted."  lightbox="media/onelake-shortcuts/onelake-shortcut/new-shortcut-expanded.png":::
 
 1. Select the data source you want to connect to, and then select **Next**.
 
-    :::image type="content" source="media/shortcuts/onelake-shortcut/data-source.png" alt-text="Screenshot of the Select a data source type window showing the available data sources to use with the shortcut. The Next button is highlighted."  lightbox="media/shortcuts/onelake-shortcut/data-source.png":::
+    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/data-source.png" alt-text="Screenshot of the Select a data source type window showing the available data sources to use with the shortcut. The Next button is highlighted."  lightbox="media/onelake-shortcuts/onelake-shortcut/data-source.png":::
 
 1. Expand **Files**, and select a specific subfolder to connect to, then select **Create** to create your connection.
 
-    :::image type="content" source="media/shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted.":::
+    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted.":::
 
 1. Select **Close**.
 1. Refresh your database.
 
     The shortcut appears under **Shortcuts** in the **Data tree**.
 
-    :::image type="content" source="media/shortcuts/onelake-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
+    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
 
 The OneLake shortcut has been created. You can now query this data.
 
@@ -62,10 +62,10 @@ The OneLake shortcut has been created. You can now query this data.
 1. Browse to an existing KQL database.
 1. Select **New** > **OneLake shortcut**.
 1. Under **External sources**, select **Amazon S3**.
-    :::image type="content" source="media/shortcuts/amazons3-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 is highlighted."  lightbox="media/shortcuts/amazons3-shortcut/new-shortcut-expanded.png":::
+    :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 is highlighted."  lightbox="media/onelake-shortcuts/amazons3-shortcut/new-shortcut-expanded.png":::
 1. Enter the **Connection settings** according to the following table:
 
-    :::image type="content" source="media/shortcuts/amazons3-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials."  lightbox="media/shortcuts/amazons3-shortcut/shortcut-details.png":::
+    :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials."  lightbox="media/onelake-shortcuts/amazons3-shortcut/shortcut-details.png":::
 
       |Field | Description| Value|
       |-----|-----| -----|
@@ -83,13 +83,13 @@ The OneLake shortcut has been created. You can now query this data.
     > [!NOTE]
     > Shortcut paths are case sensitive.
 
-    :::image type="content" source="media/shortcuts/amazons3-shortcut/shortcut-settings.png" alt-text="Screenshot of the New shortcut window showing the shortcut settings."  lightbox="media/shortcuts/amazons3-shortcut/shortcut-settings.png":::
+    :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/shortcut-settings.png" alt-text="Screenshot of the New shortcut window showing the shortcut settings."  lightbox="media/onelake-shortcuts/amazons3-shortcut/shortcut-settings.png":::
 
 1. Select **Create**.
 
     The database refreshes automatically. The shortcut appears under **Shortcuts** in the **Data tree**.
 
-    :::image type="content" source="media/shortcuts/amazons3-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
+    :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
 
 The OneLake shortcut has been created. You can now query this data.
 
@@ -103,7 +103,7 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 1. Replace the table name placeholder with `external_table('`*Shortcut name*`')`.
 1. Select **Run** or press **Shift+ Enter** to run a selected query.
 
-:::image type="content" source="media/shortcuts/amazons3-shortcut/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of a sample query."  lightbox="media/shortcuts/amazons3-shortcut/query-shortcut.png":::
+:::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of a sample query."  lightbox="media/onelake-shortcuts/amazons3-shortcut/query-shortcut.png":::
 
 ## Next steps
 
