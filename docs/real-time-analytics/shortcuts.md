@@ -29,26 +29,26 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
 1. Browse to an existing KQL database.
 1. Select **New** > **OneLake shortcut**.
 
-    :::image type="content" source="media/onelake-shortcut/home-tab.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
+    :::image type="content" source="media/shortcuts/onelake-shortcut/home-tab.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
 
 1. Under **Internal sources**, select **Microsoft OneLake**.
 
-    :::image type="content" source="media/onelake-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled OneLake is highlighted."  lightbox="media/onelake-shortcut/new-shortcut-expanded.png":::
+    :::image type="content" source="media/shortcuts/onelake-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled OneLake is highlighted."  lightbox="media/shortcuts/onelake-shortcut/new-shortcut-expanded.png":::
 
 1. Select the data source you want to connect to, and then select **Next**.
 
-    :::image type="content" source="media/onelake-shortcut/data-source.png" alt-text="Screenshot of the Select a data source type window showing the available data sources to use with the shortcut. The Next button is highlighted."  lightbox="media/onelake-shortcut/data-source.png":::
+    :::image type="content" source="media/shortcuts/onelake-shortcut/data-source.png" alt-text="Screenshot of the Select a data source type window showing the available data sources to use with the shortcut. The Next button is highlighted."  lightbox="media/shortcuts/onelake-shortcut/data-source.png":::
 
 1. Expand **Files**, and select a specific subfolder to connect to, then select **Create** to create your connection.
 
-    :::image type="content" source="media/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted.":::
+    :::image type="content" source="media/shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted.":::
 
 1. Select **Close**.
 1. Refresh your database.
 
     The shortcut appears under **Shortcuts** in the **Data tree**.
 
-    :::image type="content" source="media/onelake-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
+    :::image type="content" source="media/shortcuts/onelake-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
 
 The OneLake shortcut has been created. You can now query this data.
 

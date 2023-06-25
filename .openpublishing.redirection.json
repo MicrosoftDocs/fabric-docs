@@ -24,6 +24,11 @@
           "source_path_from_root": "/docs/admin/admin-switch.md",
           "redirect_url": "/fabric/admin/fabric-switch",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/onelake-shortcut.md",
+          "redirect_url": "/fabric/real-time-analytics/shortcuts",
+          "redirect_document_id": true
         }
     ]
 }

@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
+ms.date: 06/25/2023
 ms.search.form: product-kusto
 ---
 # What is Real-Time Analytics in Fabric?
@@ -65,7 +65,7 @@ See how these items work together in the end-to-end streaming data consumption a
 
 * Create [Event Hubs cloud connections](get-data-event-hub.md) to stream data into Real-Time Analytics.
 * Data in OneLake is accessed by Real-Time Analytics in several ways:
-  * Data from OneLake can be [queried from Real-Time Analytics as a shortcut](onelake-shortcut.md).
+  * Data from OneLake can be [queried from Real-Time Analytics as a shortcut](shortcuts.md#onelake-shortcuttabonelake-shortcut).
   * Data from [OneLake can be loaded](get-data-onelake.md) into Real-Time Analytics.
   * Data loaded into Real-Time Analytics is reflected in OneLake as [one logical copy](onelake-mirroring.md).
 * Data loaded into Real-Time Analytics can be used as the underlying data for [visualization in a Power BI report](create-powerbi-report.md).
