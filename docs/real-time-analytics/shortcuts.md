@@ -18,8 +18,6 @@ OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../
 
 In this article, you learn how to create a OneLake shortcut from internal and external sources to query your data in Real-Time Analytics. Select the desired tab that corresponds with the shortcut you'd like to create.
 
-## Internal sources
-
 ### [OneLake shortcut](#tab/onelake-shortcut)
 
 ## Prerequisites
@@ -58,20 +56,6 @@ The OneLake shortcut has been created. You can now query this data.
 
 > [!NOTE]
 > You can only connect to one subfolder or table per shortcut. To connect to more data, repeat these steps and create new shortcuts.
-
-## Query data
-
-To query data from the OneLake shortcut, use the [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context).
-
-1. On the rightmost of your database, select **Check your data**. The window opens with a few sample queries you can run to get an initial look at your data.
-1. Replace the table name placeholder with `external_table('`*Shortcut name*`')`.
-1. Select **Run** or press **Shift+ Enter** on a selected query to run it.
-
-:::image type="content" source="media/onelake-shortcut/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of a sample query."  lightbox="media/onelake-shortcut/query-shortcut.png":::
-
----
-
-## External sources
 
 ### [Amazon S3](#tab/amazon-s3)
 
@@ -127,6 +111,8 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 
 The OneLake shortcut has been created. You can now query this data.
 
+---
+
 ## Query data
 
 To query data from the OneLake shortcut, use the [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context).
@@ -136,8 +122,7 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 1. Select **Run** or press **Shift+ Enter** to run a selected query.
 
 :::image type="content" source="media/amazons3-shortcut/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of a sample query."  lightbox="media/amazons3-shortcut/query-shortcut.png":::
-
----
+=
 
 ## Next steps
 
