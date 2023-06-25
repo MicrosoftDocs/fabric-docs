@@ -24,7 +24,7 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
 
 ### [OneLake shortcut](#tab/onelake-shortcut)
 
-[!INCLUDE [onelake-shortcut-prerequisites](onelake-shortcut-prerequisites.md)]
+[!INCLUDE [onelake-shortcut-prerequisites](../includes/real-time-analytics/onelake-shortcut-prerequisites.md)]
 
 1. Browse to an existing KQL database.
 1. Select **New** > **OneLake shortcut**.
@@ -57,7 +57,7 @@ The OneLake shortcut has been created. You can now query this data.
 
 ### [Amazon S3](#tab/amazon-s3)
 
-[!INCLUDE [amazons3-prerequisites](amazons3-prerequisites.md)]
+[!INCLUDE [amazons3-prerequisites](../includes/real-time-analytics/amazons3-prerequisites.md)]
 
 1. Browse to an existing KQL database.
 1. Select **New** > **OneLake shortcut**.
@@ -104,7 +104,6 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 1. Select **Run** or press **Shift+ Enter** to run a selected query.
 
 :::image type="content" source="media/shortcuts/amazons3-shortcut/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of a sample query."  lightbox="media/shortcuts/amazons3-shortcut/query-shortcut.png":::
-=
 
 ## Next steps
 
