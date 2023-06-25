@@ -10,13 +10,17 @@ ms.date: 06/25/2023
 ms.search.form: product-kusto
 ---
 
-# Create a OneLake shortcut
+# Create OneLake shortcuts
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses, KQL databases, and other items. Shortcuts are embedded references within OneLake that point to other files' store locations without moving the original data. The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
 In this article, you learn how to create a OneLake shortcut from internal and external sources to query your data in Real-Time Analytics. Select the desired tab that corresponds with the shortcut you'd like to create.
+
+> [!NOTE]
+> Use shortcuts when you want to infrequently run queries on historical data without partitioning or indexing the data.
+> If you want to run queries frequently and accelerate performance, import the data directly
 
 ### [OneLake shortcut](#tab/onelake-shortcut)
 
@@ -58,16 +62,6 @@ The OneLake shortcut has been created. You can now query this data.
 > You can only connect to one subfolder or table per shortcut. To connect to more data, repeat these steps and create new shortcuts.
 
 ### [Amazon S3](#tab/amazon-s3)
-
-## Prerequisites
-
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md)
-* An Amazon S3 account with data. For more information, see [What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
-
-> [!NOTE]
-> Use this shortcut when you want to infrequently run queries on historical data without partitioning or indexing the data.
-> If you want to run queries frequently and accelerate performance, import the data directly from Amazon S3. For direct import, see <!-- [Get data from Amazon S3](https://learn.microsoft.com/fabric/real-time-analytics/get-data-amazons3) -->.
 
 ## Prerequisites
 
