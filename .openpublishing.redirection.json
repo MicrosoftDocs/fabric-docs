@@ -27,7 +27,7 @@
         },
         {
           "source_path_from_root": "/docs/real-time-analytics/onelake-shortcut.md",
-          "redirect_url": "/fabric/real-time-analytics/shortcuts",
+          "redirect_url": "/fabric/real-time-analytics/onelake-shortcuts",
           "redirect_document_id": true
         }
     ]
