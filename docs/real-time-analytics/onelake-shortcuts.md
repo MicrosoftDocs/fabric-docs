@@ -55,7 +55,7 @@ The OneLake shortcut has been created. You can now query this data.
 > [!NOTE]
 > You can only connect to one subfolder or table per shortcut. To connect to more data, repeat these steps and create new shortcuts.
 
-### [ADLS Gen2](#tabe/adlsgen2)
+### [ADLS Gen2](#tab/adlsgen2)
 
 [!INCLUDE [adlsgen2-prerequisites](../includes/real-time-analytics/adlsgen2-prerequisites.md)]
 
