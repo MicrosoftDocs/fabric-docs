@@ -19,18 +19,12 @@ OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../
 In this article, you learn how to create a OneLake shortcut from internal and external sources to query your data in Real-Time Analytics. Select the desired tab that corresponds with the shortcut you'd like to create.
 
 > [!NOTE]
-> Use shortcuts when you want to infrequently run queries on historical data without partitioning or indexing the data.
-> If you want to run queries frequently and accelerate performance, import the data directly
+> Use these shortcuts when you want to infrequently run queries on historical data without partitioning or indexing the data.
+> If you want to run queries frequently and accelerate performance, import the data directly.
 
 ### [OneLake shortcut](#tab/onelake-shortcut)
 
-## Prerequisites
-
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md)
-* A [Lakehouse](../data-engineering/create-lakehouse.md) with data
-
-## Create shortcut
+[!INCLUDE [onelake-shortcut-prerequisites](onelake-shortcut-prerequisites.md)]
 
 1. Browse to an existing KQL database.
 1. Select **New** > **OneLake shortcut**.
@@ -63,13 +57,7 @@ The OneLake shortcut has been created. You can now query this data.
 
 ### [Amazon S3](#tab/amazon-s3)
 
-## Prerequisites
-
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md)
-* An Amazon S3 account with data. For more information, see [What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
-
-## Create shortcut
+[!INCLUDE [amazons3-prerequisites](amazons3-prerequisites.md)]
 
 1. Browse to an existing KQL database.
 1. Select **New** > **OneLake shortcut**.
