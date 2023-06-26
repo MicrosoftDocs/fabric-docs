@@ -5,6 +5,7 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 5/23/2023
 ---
 
@@ -30,9 +31,9 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
    :::image type="content" source="media\tutorial-lakehouse-clean-up\select-workspace-settings.png" alt-text="Screenshot of the workspace item view, showing where to select Workspace settings." lightbox="media\tutorial-lakehouse-clean-up\select-workspace-settings.png":::
 
-1. Select **Other** and **Delete this workspace**.
+1. Select **Other** and **Remove this workspace**.
 
-   :::image type="content" source="media\tutorial-lakehouse-clean-up\delete-this-workspace.png" alt-text="Screenshot of the Workspace settings pane, showing where to select Other and Delete this workspace." lightbox="media\tutorial-lakehouse-clean-up\delete-this-workspace.png":::
+   :::image type="content" source="media\tutorial-lakehouse-clean-up\remove-this-workspace.png" alt-text="Screenshot of the Workspace settings pane, showing where to select Other and Remove this workspace." lightbox="media\tutorial-lakehouse-clean-up\remove-this-workspace.png":::
 
 1. When the warning pops up, select **Delete**.
 
@@ -40,4 +41,4 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 Advance to the next article to learn about
 > [!div class="nextstepaction"]
-> [Options to get data into lakehouse](tutorial-lakehouse-clean-up.md)
+> [Options to get data into lakehouse](load-data-lakehouse.md)

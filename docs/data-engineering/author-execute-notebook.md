@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.custom: build-2023
+ms.search.form: Develop and run notebooks
+ms.date: 06/12/2023
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -36,6 +38,7 @@ We provide rich operations to develop notebooks:
 - [Lock or freeze a cell](#lock-or-freeze-a-cell)
 - [Notebook contents](#notebook-contents)
 - [Markdown folding](#markdown-folding)
+- [Find and replace](#find-and-replace)
 
 ### Add a cell
 
@@ -69,8 +72,6 @@ You can use multiple languages in a notebook by specifying the language magic co
 | %%sql | SparkSQL | Execute a **SparkSQL** query against Spark Context. |
 | %%html | Html | Execute a **HTML** query against Spark Context. |
 | %%sparkr | R | Execute a **R** query against Spark Context. |
-
-The following image is an example of how you can write a PySpark query using the **%%pyspark** magic command in a **Spark(Scala)** notebook. Notice that the primary language for the notebook is set to PySpark.
 
 ### IDE-style IntelliSense
 
@@ -174,7 +175,7 @@ Lock and freeze cell operations allow you to make cells read-only or stop code c
 ### Merge and Split cells
 
 You can use **Merge with previous cell** **Merge with next cell** to merge related cells conveniently.
-Select **Split cell** helps you split irrelevant statements to multiple cells.
+Select **Split cell** helps you split irrelevant statements to multiple cells, it will split the code according to your cursor's line position.
 
 :::image type="content" source="media\author-execute-notebook\merge-split-cell.png" alt-text="Screenshot showing the entry of merge split cells." lightbox="media\author-execute-notebook\merge-split-cell.png":::
 -->
@@ -189,6 +190,13 @@ The Outlines or Table of Contents presents the first markdown header of any mark
 
 The markdown folding allows you to hide cells under a markdown cell that contains a heading. The markdown cell and its hidden cells are treated the same as a set of contiguous multi-selected cells when performing cell operations. 
 ![Animated GIF of markdown folding.](media/author-execute-notebook/markdown-folding.gif)
+
+### Find and replace
+
+Find and replace can help you easily match and locate the keywords or expression within your notebook content, and you can replace the target string with a new string. 
+
+:::image type="content" source="media\author-execute-notebook\find-replace.png" alt-text="Screenshot showing find and replace pane." lightbox="media\author-execute-notebook\find-replace.png":::
+
 
 ## Run notebooks
 

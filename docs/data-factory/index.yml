@@ -1,12 +1,13 @@
 ### YamlMime:Landing
 
-title: Data Factory in Microsoft Fabric documentation
+title: Data Factory documentation in Microsoft Fabric
 summary: Data factory in Microsoft Fabric provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade. # < 160 chars
 
 metadata:
   title: Data Factory  in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Summary of the Data Factory in Microsoft Fabric documentation # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: azure #Required; use either service or product per approved list. 
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: data-factory 
   ms.topic: landing-page # Required
   author: DougKlopfenstein #Required; your GitHub user alias, with correct capitalization.
   ms.author: dougklo #Required; microsoft alias of author; optional team alias.
@@ -42,6 +43,10 @@ landingContent:
         links:
           - text: Create an end-to-end data integration scenario
             url: tutorial-end-to-end-introduction.md
+      - linkListType: learn
+        links:
+          - text: Data Factory training
+            url: /training/paths/get-started-fabric
   
   # Card 
   - title: Working with data pipelines

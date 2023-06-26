@@ -5,7 +5,9 @@ ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
 ms.topic: overview 
+ms.custom: build-2023
 ms.date: 05/23/2023
+ms.search.form: Pipeline Activity Overview
 ---
 
 # Activity overview
@@ -20,9 +22,7 @@ A [!INCLUDE [product-name](../includes/product-name.md)] Workspace can have one 
 
 The activities in a pipeline define actions to perform on your data. For example, you may use a copy activity to copy data from SQL Server to an Azure Blob Storage. Then, use a Dataflow activity or a Notebook activity to process and transform data from the blob storage to an Azure Synapse Analytics pool on top of which business intelligence reporting solutions are built.
 
-[!INCLUDE [product-name](../includes/product-name.md)] has three types of activities: data movement activities, data transformation activities, and control activities. An activity can take zero or more input datasets and produce one or more output datasets. The following diagram shows the relationship between pipeline, activity, and dataset:
-
-:::image type="content" source="media/activity-overview/relationship-between-dataset-pipeline-activity.png" alt-text="Diagram showing the relationship between pipeline, activity, and dataset.":::
+[!INCLUDE [product-name](../includes/product-name.md)] has three types of activities: data movement activities, data transformation activities, and control activities.
 
 ## Data movement activities
 
@@ -38,14 +38,14 @@ For more information, see the [data transformation activities](transform-data.md
 
 Data transformation activity | Compute environment
 ---------------------------- | -------------------
-Copy data | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-Dataflow Gen2 | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-Delete data | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-Fabric Notebook | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-Spark job definition | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+Copy data | Compute manager by Microsoft Fabric
+Dataflow Gen2 | Compute manager by Microsoft Fabric
+Delete data | Compute manager by Microsoft Fabric
+Fabric Notebook | Apache Spark clusters managed by Microsoft Fabric
+Fabric Spark job definition (coming soon) | Apache Spark clusters managed by Microsoft Fabric
 Stored Procedure | Azure SQL, Azure Synapse Analytics, or SQL Server
-SQL script | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
-Switch | Apache Spark clusters managed by [!INCLUDE [product-name](../includes/product-name.md)]
+SQL script | Azure SQL, Azure Synapse Analytics, or SQL Server
+
 
 ## Control flow activities
 The following control flow activities are supported:
@@ -62,7 +62,7 @@ Lookup Activity | Lookup Activity can be used to read or look up a record/ table
 Set Variable | Set the value of an existing variable.
 Until Activity | Implements Do-Until loop that is similar to Do-Until looping structure in programming languages. It executes a set of activities in a loop until the condition associated with the activity evaluates to true. You can specify a timeout value for the until activity.
 Wait Activity | When you use a Wait activity in a pipeline, the pipeline waits for the specified time before continuing with execution of subsequent activities.
-Web Activity | Web Activity can be used to call a custom REST endpoint from a pipeline. You can pass datasets and linked services to be consumed and accessed by the activity.
+Web Activity | Web Activity can be used to call a custom REST endpoint from a pipeline.
 Webhook Activity | Using the webhook activity, call an endpoint, and pass a callback URL. The pipeline run waits for the callback to be invoked before proceeding to the next activity.
 
 ## Adding activities to a pipeline with the [!INCLUDE [product-name](../includes/product-name.md)] UI

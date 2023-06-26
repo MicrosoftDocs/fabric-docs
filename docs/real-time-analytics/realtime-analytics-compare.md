@@ -5,7 +5,8 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: overview
-ms.date: 06/26/2023
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 # What is the difference between Real-Time Analytics and Azure Data Explorer?

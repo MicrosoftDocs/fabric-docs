@@ -2,8 +2,9 @@
 title: ONNX - Inference on Spark
 description: build ONNX model with SynapseML
 ms.topic: overview
+ms.custom: build-2023
 ms.reviewer: jessiwang
-author: jessiwang
+author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023
 ---

@@ -5,7 +5,7 @@ author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom: template-how-to
+ms.custom: template-how-to, build-2023
 ---
 
 # How to create an OData connection
@@ -25,15 +25,15 @@ This OData connector supports the following authentication types for copy and Da
 |Organizational account| | √|
 
 >[!Note]
->For information about the OData connection in Dataflow Gen2, go to [OData in dataflows](./connector-odata-dataflows.md).
+>For information about the OData connection in Dataflow Gen2, go to [Connect to OData in dataflows](./connector-odata-dataflows.md).
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+The following prerequisites are required before you start:
 
-- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 
-- Make sure you have a Microsoft Fabric enabled Workspace.
+- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
 
 ## Go to manage gateways to create connection
 

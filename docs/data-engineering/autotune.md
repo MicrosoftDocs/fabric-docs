@@ -5,6 +5,7 @@ ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
 ms.topic: overview
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -141,13 +142,17 @@ sparkR.conf("spark.ms.autotune.queryTuning.enabled", "false")
 Microsoft follows Responsible AI Standard and this transparency note aims to provide clear documentation defining the intended uses of Autotune and the evidence that the feature is fit for purpose before the service becomes externally available. We understand the importance of transparency and ensuring that our customers have the necessary information to make informed decisions when using our services.
 
 ### Intended uses of the Autotune
+
 The primary goal of Autotune is to optimize the performance of Apache Spark workloads by automating the process of Apache Spark configuration tuning. The system is designed to be used by data engineers, data scientists, and other professionals who are involved in the development and deployment of Apache Spark workloads. The intended uses of the Autotune include:
+
 * Automatic tuning of Apache Spark configurations to minimize workload execution time to accelerate development process
 * Reducing the manual effort required for Apache Spark configuration tuning
 * Leveraging historical data execution from workloads to iteratively learn optimal configurations
 
 ### Evidence that the Autotune is fit for purpose
+
 To ensure that Autotune meets the desired performance standards and is fit for its intended use, we have conducted rigorous testing and validation. The evidence includes:
+
 1. Thorough internal testing and validation using various Apache Spark workloads and datasets to confirm the effectiveness of the autotuning algorithms
 1. Comparisons with alternative Apache Spark configuration optimization techniques, demonstrating the performance improvements and efficiency gains achieved by Autotune
 1. Customer case studies and testimonials showcasing successful applications of Autotune in real-world projects

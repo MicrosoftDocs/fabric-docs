@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
@@ -96,6 +97,9 @@ ms.search.form: product-kusto
 1. Select **Next: Summary**.
 
      In the **Continuous ingestion from Eventstream established** window, all steps are marked with green check marks when the data connection is successfully created. The data from Eventstream begins streaming automatically into your table.
+
+> [!NOTE]
+> You may need to refresh the page to view your table after the Eventstream connection has been established.
 
 ## See also
 

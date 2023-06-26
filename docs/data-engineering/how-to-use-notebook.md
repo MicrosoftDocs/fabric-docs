@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.custom: build-2023
+ms.search.form: Create and use notebooks
+ms.date: 05/30/2023
 ---
 
 # How to use Microsoft Fabric notebooks
@@ -22,7 +24,7 @@ With a [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can:
 - Analyze data across raw formats (CSV, txt, JSON, etc.), processed file formats (parquet, Delta Lake, etc.), leveraging powerful Spark capabilities.
 - Be productive with enhanced authoring capabilities and built-in data visualization.
 
-This article describes how to use notebooks in data science and data engineering workloads.
+This article describes how to use notebooks in data science and data engineering experiences.
 
 ## Create notebooks
 
@@ -40,12 +42,12 @@ You can import one or more existing notebooks from your local computer to a [!IN
 
 ## Export a notebook
 
-You can Export your notebook to other standard formats. Synapse notebook supports to be exported into: 
+You can Export your notebook to other standard formats. Synapse notebook supports to be exported into:
 
-+ Standard Notebook file(.ipynb) that is usually used for Jupyter notebooks. 
-+ HTML file(.html) that can be opened from browser directly.  
-+ Python file(.py).  
-+ Latex file(.tex).  
+- Standard Notebook file(.ipynb) that is usually used for Jupyter notebooks.
+- HTML file(.html) that can be opened from browser directly.  
+- Python file(.py).  
+- Latex file(.tex).
 
 :::image type="content" source="media\how-to-use-notebook\export-notebook.png" alt-text="Screenshot showing where to export notebook.":::
 
@@ -55,7 +57,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], a notebook will by de
 
 :::image type="content" source="media\how-to-use-notebook\save-copy.png" alt-text="Screenshot showing where to save a copy.":::
 
-If you prefer to save a notebook manually, you can also switch to "Manual save" mode to have a "local branch" of your notebook artifact, and use **Save** or **CTRL+s** to save your changes. 
+If you prefer to save a notebook manually, you can also switch to "Manual save" mode to have a "local branch" of your notebook item, and use **Save** or **CTRL+s** to save your changes.
 
 :::image type="content" source="media\how-to-use-notebook\manual-save.png" alt-text="Screenshot showing where to switch manual save.":::
 
@@ -90,6 +92,25 @@ You can easily copy path with different format of the select file or folder and 
 
 :::image type="content" source="media\how-to-use-notebook\lakehouse-file-operation.png" alt-text="Screenshot showing context menu of files in lakehouse.":::
 
+## Notebook resources
+
+The notebook resource explorer provides a Unix-like file system to help you manage your folders and files. It offers a writeable file system space where you can store small-sized files, such as code modules, datasets, and images. You can easily access them with code in the notebook as if you were working with your local file system.
+
+![Animated GIF of notebook resources.](media/how-to-use-notebook/notebook-resources-operations.gif)
+
+The Built-in folder is a system pre-defined folder for each notebook instance, it preserves up to **500MB** storage to store the dependencies of the current notebook, below are the key capabilities of Notebook resources:
+
+- You can use common operations such as create/delete, upload/download, drag/drop, rename, duplicate, and search through the UI. 
+- You can use relative paths like `builtin/YourData.txt` for quick exploration. The `mssparkutils.nbResPath` method helps you compose the full path. 
+- You can easily move your validated data to a Lakehouse via the **Write to Lakehouse** option. We have embedded rich code snippets for common file types to help you quickly get started. 
+- These resources are also available for use in the [Reference Notebook run](author-execute-notebook.md) case via ```mssparkutils.notebook.run()```.
+
+> [!NOTE]
+> - Currently we support uploading certain file types through UI which includes, *.py, .txt, .json, .yml, .xml, .csv, .html, .png, .jpg, xlsx* files. You can write to the built-in folder with file types that are not in the list via code, However Fabric notebook doesn’t support generating code snippet when operated on unsupported file types.
+> - Each file size needs to be less than 50MB, and the Built-in folder allows up to 100 file/folder instances in total.
+> - When using `mssparkutils.notebook.run()`, we recommend using the `mssparkutils.nbResPath` command to access to the target notebook resource. The relative path “builtin/” will always point to the root notebook’s built-in folder.
+
+
 ## Collaborate in a notebook
 
 The [!INCLUDE [product-name](../includes/product-name.md)] notebook is a collaborative item that supports multiple users editing the same notebook.  
@@ -120,8 +141,6 @@ Fabric notebook support two modes for different scenarios, you can easily switch
 
 - **Editing mode**: You can edit and run the cells and collaborate with others on the notebook.
 - **Viewing mode**: You can only view the cell content, output, and comments of the notebook, all the operations that can lead to change the notebook will be disabled.
-
-
 
 ## Next steps
 

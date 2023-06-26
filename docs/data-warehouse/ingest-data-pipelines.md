@@ -1,14 +1,15 @@
 ---
-title: Ingest data into your Synapse Data Warehouse using data pipelines
-description: Follow steps to ingest data into a Synapse Data Warehouse with data pipelines in Microsoft Fabric.
+title: Ingest data into your Warehouse using data pipelines
+description: Follow steps to ingest data into a Warehouse with data pipelines in Microsoft Fabric.
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
-# Ingest data into your Synapse Data Warehouse using data pipelines
+# Ingest data into your Warehouse using data pipelines
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -79,11 +80,11 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
 For more on data ingestion into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], visit:
 
-- [Ingesting data into the Synapse Data Warehouse](ingest-data.md)
-- [Ingest data into your Synapse Data Warehouse using the COPY statement](ingest-data-copy.md)
-- [Ingest data into your Synapse Data Warehouse using Transact-SQL](ingest-data-tsql.md)
+- [Ingesting data into the Warehouse](ingest-data.md)
+- [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
+- [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md)
 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric](query-warehouse.md)
+> [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

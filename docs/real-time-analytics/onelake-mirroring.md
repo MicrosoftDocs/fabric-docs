@@ -5,6 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
@@ -56,7 +57,7 @@ Creating one logical copy of your data in OneLake is a two-step process. You ena
 
 1. Select **Lakehouse (Preview)**.
 
-     :::image type="content" source="media/onelake-mirroring/new-lakehouse.png" alt-text="Screenshot of Data Engineering artifacts. The option titled Lakehouse is highlighted.":::
+     :::image type="content" source="media/onelake-mirroring/new-lakehouse.png" alt-text="Screenshot of Data Engineering items. The option titled Lakehouse is highlighted.":::
 
 1. Name your lakehouse, then select **Create**.
 

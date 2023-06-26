@@ -1,14 +1,14 @@
 ---
-title: How to create SharePoint Online List connection
-description: This article provides information about how to do create SharePoint Online List connection in Microsoft Fabric.
+title: How to create a SharePoint Online List connection
+description: This article provides information about how to create a SharePoint Online List connection in Microsoft Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom: template-how-to
+ms.custom: template-how-to, build-2023
 ---
 
-# How to create SharePoint Online List connection
+# How to create a SharePoint Online List connection
 
 This article outlines the steps to create SharePoint Online List connection.
 
@@ -16,7 +16,7 @@ This article outlines the steps to create SharePoint Online List connection.
 
 ## Supported authentication types
 
-This SharePoint Online List connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
+The SharePoint Online List connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -25,13 +25,16 @@ This SharePoint Online List connector supports the following authentication type
 |Service Principal| √| |
 |Organizational account| | √|
 
+>[!Note]
+>For information about a SharePoint Online list connection in Dataflow Gen2, go to [Connect to a SharePoint Online list in dataflows](connector-sharepoint-online-list-dataflows.md).
+
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+The following prerequisites are required before you start:
 
-- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 
-- Make sure you have a Microsoft Fabric enabled Workspace.
+- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
 
 ## Go to manage gateways to create connection
 

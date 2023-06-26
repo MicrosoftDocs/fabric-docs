@@ -5,6 +5,7 @@ author: nelgson
 ms.author: negust
 ms.reviewer: franksolomon
 ms.topic: overview
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 03/24/2023
 
 ms.search.form: Data Science Overview
@@ -13,12 +14,9 @@ ms.search.form: Data Science Overview
 # What is Data Science in Microsoft Fabric?
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
-[!INCLUDE [product-name](../includes/product-name.md)] offers  Data Science experiences to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports. 
-[!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science Home page. From there, they can discover and access various relevant resources.
+[!INCLUDE [product-name](../includes/product-name.md)] offers  Data Science experiences to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports.
 
-:::image type="content" source="media/data-science-overview/fabric-home.png" alt-text="Screenshot of the Fabric home page." lightbox="media/data-science-overview/fabric-home.png":::
-
-For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
+[!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science Home page. From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
 
 :::image type="content" source="media/data-science-overview/data-science-home-page.png" alt-text="Screenshot of the Data science home page." lightbox="media/data-science-overview/data-science-home-page.png":::
 
@@ -44,7 +42,7 @@ Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] wor
 
 [!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in OneLake using the Lakehouse item. Lakehouse easily attaches to a Notebook to browse and interact with data.
 
-Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, this makes seamless data reads from One Lake possible.
+Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, this makes seamless data reads from OneLake possible.
 
 There's a powerful set of tools is available for data ingestion and data orchestration pipelines with data integration pipelines - a natively integrated part of [!INCLUDE [product-name](../includes/product-name.md)]. Easy-to-build data pipelines can access and transform the data into a format that machine learning can consume.
 

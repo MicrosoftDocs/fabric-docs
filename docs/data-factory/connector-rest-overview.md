@@ -4,8 +4,8 @@ description: This article explains the overview of using REST.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to 
+ms.date: 06/14/2023
+ms.custom: template-how-to, build-2023
 ---
 
 # REST connector overview
@@ -18,7 +18,7 @@ The REST connector is supported in Data Factory in [!INCLUDE [product-name](../i
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Anonymous<br/> Basic |
+| **Copy activity (source/destination)** | None | Anonymous<br/> Basic<br/> Service principal |
 
 ## Next steps
 

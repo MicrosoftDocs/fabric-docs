@@ -4,10 +4,8 @@ description: An introduction to deployment pipelines the Fabric Application life
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
-ms.custom: contperf-fy21q1
-ms.date: 05/09/2023
+ms.custom: contperf-fy21q1, build-2023
+ms.date: 05/23/2023
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 ---
 

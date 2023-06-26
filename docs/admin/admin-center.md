@@ -4,8 +4,8 @@ description: This article provides an overview of the admin Microsoft Fabric adm
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.service: azure
-ms.date: 05/23/2023
+ms.custom: build-2023
+ms.date: 06/15/2023
 ---
 
 # What is the admin portal?
@@ -20,7 +20,7 @@ The admin portal can be accessed by admins with the following roles:
 
 * Power Platform administrator
 
-* Power BI administrator
+* Fabric administrator
 
 If you're not in one of these roles, you only see *Capacity settings* in the admin portal.
 
@@ -32,7 +32,7 @@ The many controls in the admin portal are listed in the table below with links t
 | :---    | :---         |
 | [Tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings) | Enable, disable, and configure Microsoft Fabric. |
 | [Usage metrics](/power-bi/admin/service-admin-portal-usage-metrics) | View usage metrics related to your organization. |
-| [Users](/power-bi/admin/power-bi/admin/service-admin-portal-users) | Manage users in the Microsoft 365 admin portal. |
+| [Users](/power-bi/admin/service-admin-portal-users) | Manage users in the Microsoft 365 admin portal. |
 | [Premium Per User](/power-bi/admin/service-admin-portal-premium-per-user) | Configure auto refresh and dataset workload settings. |
 | [Audit logs](/power-bi/admin/service-admin-portal-audit-logs) | Audit Microsoft Fabric activities in the Microsoft Purview compliance portal. |
 | [Capacity settings](/power-bi/admin/service-admin-portal-capacity-settings) | Manage Microsoft Fabric DC capacities. |

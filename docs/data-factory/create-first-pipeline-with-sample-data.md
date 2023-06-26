@@ -5,7 +5,9 @@ ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: quickstart
+ms.custom: build-2023
 ms.date: 05/23/2023
+ms.search.form: Pipeline Tutorials
 ---
 
 # Quickstart: Create your first pipeline to copy data
@@ -18,7 +20,7 @@ In this quickstart, you build a data pipeline to move a Sample dataset to the La
 
 To get started, you must complete the following prerequisites:
 
-- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. Create an account for free.
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
 - Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 
 ## Create a data pipeline
@@ -26,7 +28,7 @@ To get started, you must complete the following prerequisites:
 1. Navigate to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory workload emphasized.":::
+   :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
 
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you created a new workspace in the prior Prerequisites section, use this one.
 
@@ -49,13 +51,13 @@ In this session, you start to build your first pipeline by following below steps
 
 ### Step 2: Configure your source
 
-1. Choose the **Sample data NYC Taxi - Green**, and then select **Next**.
+1. Choose the **Public Holidays** sample data, and then select **Next**.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data.png" alt-text="Screenshot showing the Choose data source page of the Copy data assistant with the NYC Taxi - Green sample data selected.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data.png" alt-text="Screenshot showing the Choose data source page of the Copy data assistant with the Public Holidays sample data selected.":::
 
-1. On the **Connect to data source** page of the assistant, the preview data for the **NYC Taxi - Green** is displayed, and then click **Next**.
+1. On the **Connect to data source** page of the assistant, the preview for the **Public Holidays** sample data is displayed, and then click **Next**.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data-preview.png" alt-text="Screenshot showing the sample data for the NYC Taxi - Green sample data.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data-preview.png" alt-text="Screenshot showing the sample data for the Public Holidays sample data.":::
 
 ### Step 3: Configure your destination
 
@@ -67,7 +69,7 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/create-new-lakehouse.png" alt-text="Screenshot showing the Create new Lakehouse button selected on the Choose data destination page of the Copy data assistant.":::
 
-1. Configure and map your source data to the destination Lakehouse tables.
+1. Configure and map your source data to the destination Lakehouse table. Select **tables** and provide a **Table name** under **Root folder**, then choose the **Overwrite** option for **Table action**, and select **Next**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/configure-lakehouse-tables.png" alt-text="Screenshot showing the Connect to data destination page of the Copy data assistant with Tables selected and a table name for the sample data provided.":::
 

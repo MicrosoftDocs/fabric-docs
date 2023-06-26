@@ -5,13 +5,13 @@ author: jejiang
 ms.author: jejiang
 ms.topic: overview 
 ms.date: 05/23/2023
-ms.custom: template-howto
+ms.custom: template-howto, build-2023
 ms.search.form: Monitor Spark job definitions
 ---
 
 # Monitor your Apache Spark job definition
 
-Using the Spark job definition artifact inline monitoring, you can track the following:
+Using the Spark job definition item's inline monitoring, you can track the following:
 
 * Monitor the progress and status of a running Spark job definition.
 * View the status and duration of previous Spark job definition runs.
@@ -26,11 +26,11 @@ The Spark job definition inline monitoring feature allows you to view Spark job 
 
 :::image type="content" source="media\monitor-spark-job-definitions\spark-job-definition-inline-monitoring.png" alt-text="Screenshot showing the spark job definition inline monitoring." lightbox="media\monitor-spark-job-definitions\spark-job-definition-inline-monitoring.png":::
 
-## Spark job definition artifact view in workspace
+## Spark job definition item view in workspace
 
-You can access the job runs associated with specific Spark job definition artifacts by using the **Recent run** contextual menu on the workspace homepage.
+You can access the job runs associated with specific Spark job definition items by using the **Recent run** contextual menu on the workspace homepage.
 
-:::image type="content" source="media\monitor-spark-job-definitions\spark-job-definition-artifact-view-in-workspace.png" alt-text="Screenshot showing the spark job definition artifact view in workspace." lightbox="media\monitor-spark-job-definitions\spark-job-definition-artifact-view-in-workspace.png":::
+:::image type="content" source="media\monitor-spark-job-definitions\spark-job-definition-artifact-view-in-workspace.png" alt-text="Screenshot showing the spark job definition item view in workspace." lightbox="media\monitor-spark-job-definitions\spark-job-definition-artifact-view-in-workspace.png":::
 
 ## Spark job definition runs in the Monitoring hub
 

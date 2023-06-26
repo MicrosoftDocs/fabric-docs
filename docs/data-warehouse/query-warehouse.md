@@ -1,14 +1,15 @@
 ---
-title: Query the SQL Endpoint or Synapse Data Warehouse
-description: Learn more about options to write TSQL queries on the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric.
+title: Query the SQL Endpoint or Warehouse
+description: Learn more about options to write TSQL queries on the SQL Endpoint or Warehouse in Microsoft Fabric.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf, kecona
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
-# Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric
+# Query the SQL Endpoint or Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 

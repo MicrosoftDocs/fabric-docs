@@ -1,5 +1,5 @@
 items:
-- name: Microsoft Fabric administration?
+- name: Microsoft Fabric administration
   href: index.yml
 - name: Overview
   items:
@@ -13,21 +13,19 @@ items:
     href: region-availability.md
   - name: Find your Fabric home region
     href: find-fabric-home-region.md
-  - name: Understand Microsoft Fabric roles
+  - name: Understand Microsoft Fabric admin roles
     href: roles.md
   - name: What is the admin portal?
-    href: admin-center.md       
-  - name: Compliance feature switch
-    href: compliance.md    
-- name: Track user activities
-  href: track-user-activities.md
+    href: admin-center.md         
 - name: Monitoring
   items:
   - name: Using Monitoring hub
-    href: monitoring-hub.md    
+    href: monitoring-hub.md 
+  - name: Track user activities
+    href: track-user-activities.md       
   - name: Monitoring workspace
     items:    
-    - name: What is the monitoring workspace?
+    - name: What is the admin monitoring workspace?
       href: monitoring-workspace.md
     - name: Feature usage and adoption report
       href: feature-usage-adoption.md
@@ -37,7 +35,7 @@ items:
     href: portal-workspaces.md  
   - name: Workspace tenant settings
     href: portal-workspace.md
-- name: Settings
+- name: Feature set up
   items:    
   - name: Set up git integration
     href: git-integration-admin-settings.md

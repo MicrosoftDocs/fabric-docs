@@ -1,11 +1,12 @@
 ---
 title: T-SQL surface area
-description: T-SQL surface area of the SQL Endpoint and Synapse Data Warehouse in Microsoft Fabric.
+description: T-SQL surface area of the SQL Endpoint and Warehouse in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
+ms.custom: build-2023
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # T-SQL surface area in Microsoft Fabric
@@ -25,7 +26,7 @@ This article covers the T-SQL language syntax capabilities of [!INCLUDE [product
 
 ### Limitations
 
-At this time, the following list of commands is NOT currently supported. Don't try to use these commands because even though they may appear to succeed, they could cause corruption to your warehouse.
+At this time, the following list of commands is NOT currently supported. Don't try to use these commands because even though they may appear to succeed, they could cause issues to your warehouse. 
 
 - ALTER TABLE ADD/ALTER/DROP COLUMN
 - BULK LOAD

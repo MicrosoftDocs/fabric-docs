@@ -6,13 +6,14 @@ ms.author: jacindaeng
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
+ms.custom: build-2023
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 # Monitor connections, sessions, and requests using DMVs
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-You can use existing dynamic management views (DMVs) to monitor connection, session, and request status in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about the tools and methods of executing T-SQL queries, see [Query the Synapse Data Warehouse](query-warehouse.md).
+You can use existing dynamic management views (DMVs) to monitor connection, session, and request status in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about the tools and methods of executing T-SQL queries, see [Query the Warehouse](query-warehouse.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -45,6 +46,7 @@ The following example queries `sys.dm_exec_sessions` to find all sessions that a
 SELECT * 
 FROM sys.dm_exec_sessions;
 ```
+:::image type="content" source="media\monitor-using-dmv\exec-sessions-results.png" alt-text="Screenshot showing the results of sys.dm_exec_sessions." lightbox="media\monitor-using-dmv\exec-sessions-results.png":::
 
 ### Find the relationship between connections and sessions
 
@@ -99,4 +101,4 @@ KILL '101'
 ## Next steps
 
 - [Query using the SQL Query editor](sql-query-editor.md)
-- [Query the SQL Endpoint or Synapse Data Warehouse in Microsoft Fabric](query-warehouse.md)
+- [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

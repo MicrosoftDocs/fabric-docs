@@ -5,7 +5,7 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 05/23/2023
-ms.custom: template-how-to
+ms.custom: template-how-to, build-2023
 ---
 
 # How to create an Azure SQL Database connection
@@ -25,15 +25,15 @@ The Azure SQL Database connector supports the following authentication types for
 |Service Principal|√||
 
 >[!Note]
->For the Azure SQL database connection of Dataflow Gen2, go to [Connect to Azure SQL database connector in dataflows](connector-azure-sql-database-dataflow.md).
+>For information about an Azure SQL database connection in Dataflow Gen2, go to [Connect to an Azure SQL database in dataflows](connector-azure-sql-database-dataflow.md).
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+The following prerequisites are required before you start:
 
-- A Microsoft Fabric tenant account with an active subscription. Create an account for free.
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 
-- Make sure you have a Microsoft Fabric enabled Workspace.
+- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
 
 ## Go to Manage gateways to create a new connection
 
@@ -111,7 +111,7 @@ To use service principal authentication, follow these steps:
     CREATE USER [your application name] FROM EXTERNAL PROVIDER;
     ```
 
-4. Grant the service principal needed permissions as you normally do for SQL users or others. Run the following code. For more options, go to [ALTER ROLE (Transact-SQL)](/sql/t-sql/statements/alter-role-transact-sql.md).
+4. Grant the service principal needed permissions as you normally do for SQL users or others. Run the following code. For more options, go to [ALTER ROLE (Transact-SQL)](/sql/t-sql/statements/alter-role-transact-sql).
 
     ```sql
     ALTER ROLE [role name] ADD MEMBER [your application name];

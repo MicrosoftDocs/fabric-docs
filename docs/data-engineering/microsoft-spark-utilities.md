@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.search.form: Microsoft Spark utilities
+ms.date: 05/30/2023
 ---
 
 # Introduction of Fabric MSSparkUtils
@@ -151,7 +153,6 @@ mssparkutils.notebook.help()
 **Output:**
 
 ```console
-The notebook module.
 
 exit(value: String): void -> This method lets you exit a notebook with a value.
 run(path: String, timeoutSeconds: int, arguments: Map): String -> This method runs a notebook and returns its exit value.
@@ -227,8 +228,10 @@ print (exitVal)
 ```console
 Notebook executed successfully with exit value 20
 ```
+<!---
+## Session management
 
-## Session management - stop an interactive session
+### Stop an interactive session
 
 Instead of manually selecting the stop button, sometimes it's more convenient to stop an interactive session by calling an API in the code. For such cases, we provide an API *mssparkutils.session.stop()* to support stopping the interactive session via code, it's available for Scala and Python.
 
@@ -240,7 +243,7 @@ mssparkutils.session.stop()
 
 > [!NOTE]
 > We don't recommend calling language built-in APIs like *sys.exit* in Scala or *sys.exit()* in Python in your code, because such APIs just kill the interpreter process, leaving the Spark session alive and the resources not released.
-
+--->
 ## Credentials utilities
 
 You can use the MSSparkUtils Credentials Utilities to get the access tokens and manage secrets in Azure Key Vault.
@@ -262,10 +265,10 @@ getSecret(akvName, secret): returns AKV secret for a given akvName, secret key
 
 Returns Azure AD token for a given audience, name (optional), The list below shows currently available audience keys:
 
-- **Storage Audience Resource**: "storage""
-- **Power BI Resource**: "pbi""
+- **Storage Audience Resource**: "storage"
+- **Power BI Resource**: "pbi"
 - **Azure Key Vault Resource**: "keyvault"
-- **Kusto Resource**: "kusto"
+- **Synapse RTA KQL DB Resource**: "kusto"
 
 Run the following command to get the token:
 

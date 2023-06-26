@@ -4,7 +4,7 @@ description: Learn how to evaluate your Microsoft Fabric capacity's health, by r
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
-ms.service: azure
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -31,6 +31,8 @@ When using the Microsoft Fabric utilization and metrics app, consider the follow
 * In the [interactive](metrics-app-timepoint-page.md#interactive-operations) and [background](metrics-app-timepoint-page.md#background-operations) operation tables, the *Throttling(s)* column displays zero when throttling is disabled, even when the capacity is overloaded.
 
 * There's a difference of 0.01-0.05 percent between the *CU %* value in the [Top row visuals](metrics-app-timepoint-page.md#top-row-visuals) *Heartbeat line chart*, and the [interactive](metrics-app-timepoint-page.md#interactive-operations) and [background](metrics-app-timepoint-page.md#background-operations) operations tables *Total CU* values.
+
+* Warehouse utilization reporting shows only OneLake related compute usage.
 
 ## Next steps
 

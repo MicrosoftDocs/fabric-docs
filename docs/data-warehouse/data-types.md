@@ -1,11 +1,12 @@
 ---
 title: Data types
-description: Learn about the T-SQL data types supported the SQL Endpoint and Synapse Data Warehouse in Microsoft Fabric.
+description: Learn about the T-SQL data types supported the SQL Endpoint and Warehouse in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: conceptual
+ms.custom: build-2023
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Data types in Microsoft Fabric
@@ -18,7 +19,7 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Data types in Synapse Data Warehouse
+## Data types in Warehouse
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports a subset of T-SQL data types: 
 
@@ -28,7 +29,7 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 | **Approximate numerics** | <ul><li>float</li><li>real</li></ul> |
 | **Date and time** | <ul><li>date</li><li>datetime2</li><li>time</li></ul> |
 | **Character strings** | <ul><li>char</li><li>varchar</li></ul> |
-| **Binary strings** | <ul><li>uniqueidentifer</li></ul> |
+| **Binary strings** | <ul><li>varbinary</li><li>uniqueidentifer</li></ul> |
 
 > [!NOTE]
 > The precision for datetime2 and time is limited to 6 digits of precision on fractions of seconds.

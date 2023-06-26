@@ -3,12 +3,11 @@ title: Best practices for lifecycle management in Fabric
 description: Learn about the best practices for git integration and deployment pipelines in the Microsoft Fabric lifecycle management tool.
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: conceptual
-ms.service: powerbi
-ms.subservice: pbi-deployment-pipeline
-ms.date: 05/09/2023
-ms.custom: intro-deployment
-ms.search.form: Best practices for Deployment pipelines
+ms.date: 05/23/2023
+ms.custom: intro-deployment, build-2023
+ms.search.form: Best practices for deployment pipelines, Create deployment pipeline, Introduction to Deployment pipelines, Best practices for Deployment pipelines
 ---
 
 # Lifecycle management best practices
@@ -97,7 +96,7 @@ After backing up your work, there might be cases where you want to revert to a p
 
 * **Undo button**: The *Undo* operation is an easy and fast way to revert the immediate changes you made, as long as they are not committed yet. You can also undo each item separately. Read more about the [undo](./git-integration/git-get-started.md?tabs=undo-save#commit-changes-to-git) operation.
 
-* **Reverting to older commits**: There’s no direct way to go back to a previous commit in the UI. The best option is to promote an older commit to be the HEAD using ‘git X’. Doing this will show that there’s an update in the source control pane, and you can update the workspace with that new commit.
+* **Reverting to older commits**: There’s no direct way to go back to a previous commit in the UI. The best option is to promote an older commit to be the HEAD using [git revert](https://git-scm.com/docs/git-revert) or [git reset](https://git-scm.com/docs/git-reset). Doing this will show that there’s an update in the source control pane, and you can update the workspace with that new commit.
 
 As data isn’t stored in git, consider that reverting a data item to an older version might break the existing data and could possible require you to drop the data or the operation might fail. Check this in advance before reverting changes back.
 

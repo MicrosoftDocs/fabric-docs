@@ -5,6 +5,7 @@ ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
 ms.topic: get-started
+ms.custom: build-2023
 ms.date: 05/23/2023
 ms.search.form: csv load to delta to pbi report
 ---
@@ -23,7 +24,7 @@ In this tutorial you learn to:
 
 ## Create a Lakehouse and get a CSV file ready
 
-1. In Microsoft Fabric, select **Synapse Data Engineering** workload
+1. In Microsoft Fabric, select **Synapse Data Engineering** experience
 1. Make sure you are in desired workspace or select/create one
 1. Select **Lakehouse** icon under New section in the main mage
 

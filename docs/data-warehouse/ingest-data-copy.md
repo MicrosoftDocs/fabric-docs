@@ -1,15 +1,16 @@
 ---
-title: Ingest data into your Synapse Data Warehouse using the COPY statement
-description: Follow steps to ingest data into a Synapse Data Warehouse with the COPY statement in Microsoft Fabric.
+title: Ingest data into your Warehouse using the COPY statement
+description: Follow steps to ingest data into a Warehouse with the COPY statement in Microsoft Fabric.
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
 ms.date: 05/23/2023
 ms.topic: how-to
+ms.custom: build-2023
 ms.search.form: Ingesting data
 ---
 
-# Ingest data into your Synapse Data Warehouse using the COPY statement
+# Ingest data into your Warehouse using the COPY statement
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -102,8 +103,11 @@ SELECT COUNT(*) FROM [dbo].[bing_covid-19_data];
 
 If you ran both examples without deleting the rows in between runs, you'll see the result of this query with twice as many rows. While that works for data ingestion in this case, consider deleting all rows and ingesting data only once if you're going to further experiment with this data. 
 
+## Known issues
+- When using SQL Server Management Studio (SSMS) with the COPY statement, you may see an incorrect row count reported in the Messages tab. To get an accurate number of rows ingested using the COPY statement, use the query editor in Microsoft Fabric.
+
 ## Next steps
 
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)
-- [Ingest data into your Synapse Data Warehouse using Transact-SQL](ingest-data-tsql.md)
-- [Ingesting data into the Synapse Data Warehouse](ingest-data.md)
+- [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md)
+- [Ingesting data into the Warehouse](ingest-data.md)

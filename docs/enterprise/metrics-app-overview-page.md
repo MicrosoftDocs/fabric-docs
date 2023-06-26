@@ -1,18 +1,18 @@
 ---
 title: Understand the metrics app overview page
-description: Learn how to read the Microsoft Fabric utilization and metrics app's overview page.
+description: Learn how to read the Microsoft Fabric Capacity metrics app's overview page.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
-ms.service: azure
-ms.date: 05/23/2023
+ms.custom: build-2023
+ms.date: 06/22/2023
 ---
 
 # Understand the metrics app overview page
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The Microsoft Fabric utilization and metrics app's overview page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line chart, and the bottom visual is a matrix table.
+The Microsoft Fabric Capacity Metrics app's overview page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line chart, and the bottom visual is a matrix table.
 
 At the top of each page, the **CapacityID** field allows you to select the capacity the app shows results for.
 
@@ -53,17 +53,20 @@ To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, 
 
 The CU over time chart displays the following elements:
 
-* **Background %** - Blue columns represent the percent of CU consumption used during background operations in a 30 second period. This column refers to operations that are performed in non-preview workloads.
+>[!NOTE]
+>Microsoft Fabric is in preview. Some workloads within Fabric are in preview and others are not. Preview workloads are not billable and their consumption is available from the *Background Preview* and *Interactive Preview* columns.
 
+* **Background %** - Blue columns represent the percent of CU consumption used during background operations in a 30 second period. This column refers to billable operations.
+    
     [*Background*](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) operations cover backend processes that are not directly triggered by users, such as data refreshes.
 
-* **Interactive %** - Red columns represent the percent of CU consumption used during interactive operations in a 30 second period. This column refers to operations that are performed in non-preview workloads.
+* **Interactive %** - Red columns represent the percent of CU consumption used during interactive operations in a 30 second period. This column refers to billable operations.
 
     [*Interactive*](/power-bi/enterprise/service-premium-interactive-background-operations#interactive-operations) operations cover a wide range of resources triggered by users. These operations are associated with interactive page loads.
 
-* **Background Preview %** - Baby blue columns represent the percent of CU consumption used during preview workloads background operations in a 30 second period.
+* **Background Preview %** - Baby blue columns represent the percent of CU consumption used during preview workloads background operations in a 30 second period. During public preview, this refers to operations in workloads that are not billable.
 
-* **Interactive Preview %** - Green columns represent the percent of CU consumption used during preview workloads interactive operations in a 30 second period. This column refers to operations that are performed in non-preview workloads.
+* **Interactive Preview %** - Green columns represent the percent of CU consumption used during preview workloads interactive operations in a 30 second period. This column refers to operations that are performed in non-preview workloads. During public preview, this refers to operations in workloads that are not billable.
 
 * **Autoscale CU % Limit** - An orange dotted line that shows the percent of CU consumption for autoscaled capacities. The line represents timepoints where the capacity is overloaded.
 

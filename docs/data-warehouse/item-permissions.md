@@ -1,18 +1,26 @@
 ---
 title: Manage item permissions
-description: Learn about the permissions that can be assigned to Synapse Data Warehouse and the SQL Endpoint in Microsoft Fabric.
+description: Learn about the permissions that can be assigned to the Warehouse and the SQL Endpoint in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.custom: build-2023
+ms.date: 06/06/2023
 ms.search.form: Warehouse roles and permissions, Workspace roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Manage item permissions in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-This article explains how to manage individual item permissions in [!INCLUDE [product-name](../includes/product-name.md)] using T-SQL commands. Users can then [query the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](query-warehouse.md) using their querying tool of choice, such [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [Azure Data Studio](https://aka.ms/azuredatastudio), the [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md), or the [Query using the Visual Query editor](visual-query-editor.md).
+This article explains how to manage individual item permissions in [!INCLUDE [product-name](../includes/product-name.md)] using T-SQL commands.
+
+Permissions can be granted to users through:
+
+- Via T-SQL, see [SQL granular permissions](sql-granular-permissions.md).
+- In the Fabric portal through **Manage permissions**, as described in this article.
+
+Users can [query the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](query-warehouse.md) using their querying tool of choice, such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [Azure Data Studio](https://aka.ms/azuredatastudio), the [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md), or the [Query using the Visual Query editor](visual-query-editor.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -32,16 +40,9 @@ Notes:
 - ReadData is the same permission that Workspace Viewers receive for each warehouse in the workspace.
 - ReadAll does not impact the user's permissions within the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
-## Assign item permissions
+## Manage permissions in the Fabric portal
 
-Permissions can be granted to users through:
-
-- Via T-SQL, see [SQL granular permissions](sql-granular-permissions.md).
-- In the Fabric portal through **Manage permissions**, as follows.
-
-### Manage permissions in the Fabric portal
-
-The Manage permissions page shows the list of users who have been given access by being assigned to Workspace roles or through being assigned specific item permissions.
+The **Manage permissions** page shows the list of users who have been given access by being assigned to Workspace roles or through being assigned specific item permissions.
 
 1. Select **Manage Permissions** from the context menu.
 

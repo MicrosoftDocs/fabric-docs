@@ -5,6 +5,7 @@ ms.reviewer: eloldag
 ms.author: harmeetgill
 author: gillharmeet
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -55,6 +56,9 @@ Azure Storage Explorer allows you to view and manage your cloud storage accountâ
 1. To copy data across locations, select the folders you want to copy and select **Copy**, then navigate to the destination location and select **Paste**.
 
    :::image type="content" source="media\onelake-azure-storage-explorer\copy-paste-folder.png" alt-text="Screenshot showing where to select Copy or Paste." lightbox="media\onelake-azure-storage-explorer\copy-paste-folder.png":::
+
+## Limitations
+- If a workspace name has capital letters, deletion of files or folders fails due to restriction from storage service. We recommend using your workspace name in lowercase letters.
 
 ## Next steps
 

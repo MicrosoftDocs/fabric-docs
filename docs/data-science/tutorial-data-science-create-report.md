@@ -1,30 +1,51 @@
 ---
 title: Data science tutorial - create a Power BI report to visualize predictions
-description: In this sixth module, learn how to get set up to create reports and how to create various visuals to analyze data.
-ms.reviewer: mopeakande
-ms.author: mopeakande
-author: msakande
+description: In this sixth part of the tutorial series, learn how to get set up to create reports and how to create various visuals to analyze data.
+ms.reviewer: sgilley
+ms.author: narsam
+author: narmeens
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 5/4/2023
 ---
 
-# Module 6: Create a Power BI report to visualize predictions
+# Part 6: Create a Power BI report to visualize predictions
 
-In this module, we use the Microsoft Fabric DirectLake feature, which enables direct connectivity from Power BI datasets to lakehouse tables in direct query mode with automatic data refresh. For the following steps, use the prediction data produced in [Module 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
+In this tutorial, we use the Microsoft Fabric DirectLake feature, which enables direct connectivity from Power BI datasets to lakehouse tables in direct query mode with automatic data refresh. In this tutorial, you'll use the prediction data produced in [Part 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+* Complete [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
+
+* Optionally, complete [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
+
+* Complete [Part 3: Perform data cleansing and preparation using Apache Spark](tutorial-data-science-data-cleanse.md).
+
+* Complete [Part 4: Train and register machine learning models](tutorial-data-science-train-models.md).
+
+* Complete [Part 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
+
 ## Prepare for creating reports
 
-1. Navigate to the default lakehouse artifact in the workspace that you used as part of the previous modules and open the lakehouse UI.
+1. On the left, select **OneLake data hub**.
 
-1. Select **New Power BI dataset** on the top ribbon and select **nyctaxi_pred**, then select **Continue** to create a new Power BI dataset linked to the predictions data you produced in module 5.
+1. Select the lakehouse that you used as part of the previous parts of the tutorial series.
+
+1. On the top right, select Open.
+
+   :::image type="content" source="media/tutorial-data-science-create-report/open-lakehouse.png" alt-text="Screenshot shows opening the lakehouse.":::
+
+1. Select **New Power BI dataset** on the top ribbon and select **nyctaxi_pred**, then select **Continue** to create a new Power BI dataset linked to the predictions data you produced in part 5.
 
    :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the lakehouse UI home, showing where to select the New Power BI dataset option on the ribbon." lightbox="media\tutorial-data-science-create-report\new-power-bi-dataset.png":::
 
    :::image type="content" source="media\tutorial-data-science-create-report\select-predictions-data.png" alt-text="Screenshot of the New Power BI dataset dialog box, showing where to select the correct data and select Continue." lightbox="media\tutorial-data-science-create-report\select-predictions-data.png":::
 
-1. Once the UI for the new dataset loads, rename the dataset by clicking on the dropdown at top left corner of the dataset page and entering the more user-friendly name ***nyctaxi_predictions***. Click outside the drop down to apply the name change.
+1. Once the page for the new dataset loads, rename the dataset by clicking on the dropdown at top left corner of the dataset page and entering the more user-friendly name ***nyctaxi_predictions***. Click outside the drop-down to apply the name change.
 
    :::image type="content" source="media\tutorial-data-science-create-report\rename-dataset.png" alt-text="Screenshot of the dataset page, showing where to enter the new name." lightbox="media\tutorial-data-science-create-report\rename-dataset.png":::
 

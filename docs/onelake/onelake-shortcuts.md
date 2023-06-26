@@ -6,18 +6,19 @@ ms.author: trolson
 author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: conceptual
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
 # OneLake shortcuts
 
-Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds and accounts by creating a single virtualized data lake for your entire enterprise. All Fabric workloads and analytical engines can directly connect to your existing data sources such as Azure, AWS and OneLake through a unified namespace.  Permissions and credentials are all managed by OneLake, so each Fabric workload doesn't need to be separately configured to connect to each data source.  Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
+Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds and accounts by creating a single virtualized data lake for your entire enterprise. All Fabric experiences and analytical engines can directly connect to your existing data sources such as Azure, AWS and OneLake through a unified namespace.  Permissions and credentials are all managed by OneLake, so each Fabric experience doesn't need to be separately configured to connect to each data source.  Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## What are shortcuts?
 
-Shortcuts are objects in OneLake that point to other storage locations.  The location can be internal or external to OneLake. The location that a shortcut points to is known as the "Target" path of the shortcut. The location that the shortcut appears is known as the "Shortcut" path. Shortcuts appear as folders in OneLake and can be used transparently by any workload or service that has access to OneLake.  Shortcuts behave similar to symbolic links.  They're an independent object from the target.  If a shortcut is deleted, the target remains unaffect.  If the target path is moved, renamed, or deleted the shortcut can break.
+Shortcuts are objects in OneLake that point to other storage locations.  The location can be internal or external to OneLake. The location that a shortcut points to is known as the "Target" path of the shortcut. The location that the shortcut appears is known as the "Shortcut" path. Shortcuts appear as folders in OneLake and can be used transparently by any experience or service that has access to OneLake.  Shortcuts behave similar to symbolic links.  They're an independent object from the target.  If a shortcut is deleted, the target remains unaffect.  If the target path is moved, renamed, or deleted the shortcut can break.
 
 :::image type="content" source="media\onelake-shortcuts\shortcut-connects-other-location.png" alt-text="Diagram showing how a shortcut connects files and folders stored in other locations." lightbox="media\onelake-shortcuts\shortcut-connects-other-location.png":::
 

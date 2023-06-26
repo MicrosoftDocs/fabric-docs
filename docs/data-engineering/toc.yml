@@ -7,6 +7,10 @@ items:
     href: data-engineering-overview.md
 - name: Get started
   items:
+  - name: Decision guide - copy activity, dataflow, or Spark
+    href: ../get-started/decision-guide-pipeline-dataflow-spark.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Decision guide - data warehouse or lakehouse
+    href: ../get-started/decision-guide-warehouse-lakehouse.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
   - name: Upload CSV to delta tables
     href: get-started-csv-upload.md
   - name: Get streaming data into lakehouse
@@ -63,8 +67,6 @@ items:
       href: runtime.md
     - name: Create custom pools
       href: create-custom-spark-pools.md
-    - name: High concurrency mode
-      href: high-concurrency-mode-notebooks.md
     - name: Autotune Spark configuration
       href: autotune.md
     - name: Spark concurrency limits and queueing
@@ -101,8 +103,8 @@ items:
       href: spark-advisor-introduction.md
     - name: Monitoring hub - Browse Spark applications
       href: browse-spark-applications-monitoring-hub.md
-    - name: Browse artifact's recent runs
-      href: spark-artifact-recent-runs.md
+    - name: Browse item's recent runs
+      href: spark-item-recent-runs.md
     - name: Monitor Spark jobs in a notebook 
       href: spark-monitor-debug.md
     - name: Monitor Spark job definitions
@@ -111,6 +113,8 @@ items:
       href: spark-detail-monitoring.md
     - name: Navigate the Apache Spark history server
       href: apache-spark-history-server.md  
+    - name: Monitor Spark capacity consumption
+      href: monitor-spark-capacity-consumption.md
 - name: Delta Lake
   items:
     - name: Lakehouse and Delta tables

@@ -4,13 +4,13 @@ description: This article explains the overview of using Data Warehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/23/2023
-ms.custom: template-how-to 
+ms.date: 05/23/2023
+ms.custom: template-how-to, build-2023
 ---
 
 # Data Warehouse connector overview
 
-This Data Warehouse connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Data Warehouse connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -26,4 +26,4 @@ This Data Warehouse connector is supported in Data Factory for [!INCLUDE [produc
 
 ## Next steps
 
-[How to configure Data Warehouse in a copy activity](connector-data-warehouse-copy-activity.md)
+- [How to configure Data Warehouse in a copy activity](connector-data-warehouse-copy-activity.md)

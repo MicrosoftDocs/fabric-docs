@@ -5,6 +5,7 @@ ms.reviewer: xupxhou
 ms.author: jburchel
 author: jonburchel
 ms.topic: how-to
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -22,7 +23,7 @@ This section describes how to use a ForEach activity in a pipeline.
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](/trident-docs-private-preview/synapse-data-integration/url).
+- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 - A workspace is created.
 
 ### Creating the activity

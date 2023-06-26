@@ -5,6 +5,7 @@ ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
@@ -196,7 +197,7 @@ The next step is to combine both tables into a single table that has the discoun
 
 1. Finally, expand the **Query settings** pane from the right side of the editor if it isn't already expanded, and rename the query from **Merge** to **Output**.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/rename-query.png" lightbox="media/create-first-dataflow-gen2/rename-query.png" alt-text="Screenshot showing the renaming of the query from Merge to Output.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/rename-query.png" lightbox="media/create-first-dataflow-gen2/rename-query.png" alt-text="Screenshot showing the renaming of the query from Merge to Output.":::
 
 ## Load the output query to a table in the Lakehouse
 

@@ -26,7 +26,7 @@ items:
     href: tutorial-6-build-report.md
   - name: 7- Clean up resources
     href: tutorial-7-clean-up-resources.md
-- name: Eventstream
+- name: Event streams
   href: event-streams/toc.yml
 - name: KQL Database
   items:
@@ -40,6 +40,8 @@ items:
       href: get-data-blob.md
     - name: Get data from a blob container
       href: get-data-blob-container.md
+    - name: Get data from Amazon S3
+      href: get-data-amazon-s3.md
     - name: Get data from Azure Event Hubs
       href: get-data-event-hub.md
     - name: Get data from OneLake

@@ -5,6 +5,7 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 5/23/2023
 ---
 
@@ -18,7 +19,7 @@ ms.date: 5/23/2023
 
 ## Purpose of this tutorial
 
-While many concepts in [!INCLUDE [product-name](../includes/product-name.md)] may be familiar to data and analytics professionals, it can be challenging to apply those concepts in a new environment. This tutorial has been designed to walk step-by-step through an end-to-end scenario from data acquisition to data consumption to build a basic understanding of the [!INCLUDE [product-name](../includes/product-name.md)] user experience, the various workloads and their integration points, and the [!INCLUDE [product-name](../includes/product-name.md)] professional and citizen developer experiences.
+While many concepts in [!INCLUDE [product-name](../includes/product-name.md)] may be familiar to data and analytics professionals, it can be challenging to apply those concepts in a new environment. This tutorial has been designed to walk step-by-step through an end-to-end scenario from data acquisition to data consumption to build a basic understanding of the [!INCLUDE [product-name](../includes/product-name.md)] user experience, the various experiences and their integration points, and the [!INCLUDE [product-name](../includes/product-name.md)] professional and citizen developer experiences.
 
 The tutorials aren't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 

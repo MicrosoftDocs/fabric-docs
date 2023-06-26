@@ -5,6 +5,7 @@ ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
 ms.topic: conceptual
+ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
 ---
 
@@ -18,7 +19,7 @@ OneLake uses a layered security model built around the organizational structure 
 
 ## Workspace security
 
-The workspace is the primary security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. Security in the workspace is managed through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](/docs/get-started/roles-workspaces.md)  
+The workspace is the primary security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. Security in the workspace is managed through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../get-started/roles-workspaces.md)
   
 Workspace roles in Fabric grant the following permissions in OneLake.
 
@@ -55,9 +56,9 @@ Fabric doesn’t currently support private link access to OneLake data via non-F
 ## Allow apps running outside of Fabric to access data via OneLake
 
 OneLake provides the ability to restrict access to data from applications running outside of Fabric environments. Admins can find the setting in the tenant admin portal.
-When this switch is turned ON, data can be accessed via all sources. When this switched is turned OFF, data cannot be accessed via applications running outside of Fabric environments. For example, data can be access via applications like Azure Databricks, custom applications using ADLS APIs, or OneLake file explorer.
+When this switch is turned ON, data can be accessed via all sources. When this switched is turned OFF, data cannot be accessed via applications running outside of Fabric environments. For example, data can be accessed via applications like Azure Databricks, custom applications using ADLS APIs, or OneLake file explorer.
 
 ## Next steps
 
 - [OneLake file explorer](onelake-file-explorer.md)
-- [Workspace roles](/docs/get-started/roles-workspaces.md)  
+- [Workspace roles](../get-started/roles-workspaces.md)  

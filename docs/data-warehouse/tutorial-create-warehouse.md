@@ -1,14 +1,15 @@
 ---
-title: Data warehouse tutorial - create a new Synapse Data Warehouse in Microsoft Fabric
-description: In this second tutorial step, after you've created your workspace, learn how to create your first Synapse Data Warehouse in Microsoft Fabric.
+title: Data warehouse tutorial - create a new Warehouse in Microsoft Fabric
+description: In this second tutorial step, after you've created your workspace, learn how to create your first Warehouse in Microsoft Fabric.
 ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
+ms.custom: build-2023
 ms.date: 5/23/2023
 ---
 
-# Tutorial: Create a Synapse Data Warehouse in Microsoft Fabric
+# Tutorial: Create a Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -16,7 +17,7 @@ Now that you have a workspace, you can create your first [!INCLUDE [fabric-dw](i
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Create your first Synapse Data Warehouse
+## Create your first Warehouse
 
 1. Select **Workspaces** in the navigation menu.
 
