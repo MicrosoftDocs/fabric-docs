@@ -54,7 +54,7 @@ For more information on data formats, see [Data formats supported for ingestion]
 
 1. The **Mapping name** field is automatically filled. Optionally, you can enter a new name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 
-    :::image type="content" source="media/get-data-amazon-s3/amazons3-schema.png" alt-text="Screenshot of Schema window showing the data configuration." lightbox="media/get-data-amazon-s3/amazons3-schema.png":::
+    :::image type="content" source="media/get-data-amazon-s3/amazon-s3-schema.png" alt-text="Screenshot of Schema window showing the data configuration." lightbox="media/get-data-amazon-s3/amazon-s3-schema.png":::
 
     >[!NOTE]
     >
@@ -78,7 +78,7 @@ The partial data preview is automatically inferred based on your data. You can c
 
 1. To add a new column, select the **+** button on the right-hand column under **Partial data preview**.
 
-    :::image type="content" source="media/get-data-amazon-s3/amazons3-partial-preview.png" alt-text="Screenshot of Partial data preview pane." lightbox="media/get-data-amazon-s3/amazon-s3-partial-preview.png":::
+    :::image type="content" source="media/get-data-amazon-s3/amazon-s3-partial-preview.png" alt-text="Screenshot of Partial data preview pane." lightbox="media/get-data-amazon-s3/amazon-s3-partial-preview.png":::
 
     * The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
     * The default column type is `string` but can be altered in the drop-down menu of the Column type field.
