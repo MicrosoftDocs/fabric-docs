@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 06/21/2023
+ms.date: 06/26/2023
 ms.search.form: product-kusto
 ---
 # Get data from Amazon S3
@@ -28,7 +28,7 @@ For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.ama
 1. On the lower ribbon, select **Get Data** > **Amazon S3**.
 1. Enter a name for your table. By default, **New table** is selected.
 
-    :::image type="content" source="media/get-data-amazons3/source-tab.png" alt-text="Screenshot of the source tab in the Ingest data window showing the source type and link. The source link is highlighted.":::
+    :::image type="content" source="media/get-data-amazon-s3/source-tab.png" alt-text="Screenshot of the source tab in the Ingest data window showing the source type and link. The source link is highlighted.":::
 
       > [!NOTE]
       > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
@@ -54,7 +54,7 @@ For more information on data formats, see [Data formats supported for ingestion]
 
 1. The **Mapping name** field is automatically filled. Optionally, you can enter a new name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 
-    :::image type="content" source="media/get-data-amazons3/amazons3-schema.png" alt-text="Screenshot of Schema window showing the data configuration." lightbox="media/get-data-amazons3/amazons3-schema.png":::
+    :::image type="content" source="media/get-data-amazon-s3/amazons3-schema.png" alt-text="Screenshot of Schema window showing the data configuration." lightbox="media/get-data-amazon-s3/amazons3-schema.png":::
 
     >[!NOTE]
     >
@@ -70,7 +70,7 @@ The command viewer shows the commands for creating tables, mapping, and ingestin
 
 To open the command viewer, select the **v** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
 
-:::image type="content" source="media/get-data-amazons3/amazons3-command-viewer.png" alt-text="Screenshot of Command viewer pane showing mapping commands." lightbox="media/get-data-amazons3/amazons3-command-viewer.png":::
+:::image type="content" source="media/get-data-amazon-s3/amazon-s3-command-viewer.png" alt-text="Screenshot of Command viewer pane showing mapping commands." lightbox="media/get-data-amazon-s3/amazon-s3-command-viewer.png":::
 
 #### Partial data preview
 
@@ -78,7 +78,7 @@ The partial data preview is automatically inferred based on your data. You can c
 
 1. To add a new column, select the **+** button on the right-hand column under **Partial data preview**.
 
-    :::image type="content" source="media/get-data-amazons3/amazons3-partial-preview.png" alt-text="Screenshot of Partial data preview pane." lightbox="media/get-data-amazons3/amazons3-partial-preview.png":::
+    :::image type="content" source="media/get-data-amazon-s3/amazons3-partial-preview.png" alt-text="Screenshot of Partial data preview pane." lightbox="media/get-data-amazon-s3/amazon-s3-partial-preview.png":::
 
     * The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
     * The default column type is `string` but can be altered in the drop-down menu of the Column type field.
