@@ -36,7 +36,7 @@ Both implementations are subject to Power BI backend limitations (see [details](
 ## Applications of semantic information
 
 Semantic information in data includes Power BI [data categories](/power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables, and hierarchical information. These data categories comprise metadata that Semantic Link propagates into the Data Science environment to enable new experiences and maintain data lineage. Some example applications of Semantic Link are:
-- intelligent suggestions of built-in [semantic functions](./semantic-link-powerbi.md#semantic-functions).
+- intelligent suggestions of built-in [semantic functions](semantic-link-semantic-functions.md).
 - innovative integration for augmenting data with Power BI measures through the use of [join-measures](./semantic-link-powerbi.md#join-measure).
 - tools for [data quality validation](./semantic-link-validate-data.md#data-validation-with-semantic-link-and-microsoft-fabric) based on the relationships between tables and functional dependencies within tables.
 
