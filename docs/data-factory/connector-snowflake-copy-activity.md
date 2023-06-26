@@ -46,11 +46,11 @@ Under **Advanced**, you can specify the following fields:
 
 - **Additional Snowflake copy options**: Specify additional Snowflake copy options which will be used in Snowflake COPY statement to load data.
 
-  :::image type="content" source="./media/connector-snowflake/copy-options-source.png" alt-text="Screenshot showing Additional Snowflake copy options.":::
+  :::image type="content" source="./media/connector-snowflake/copy-options-source.png" alt-text="Screenshot showing additional snowflake copy options for source.":::
 
 - **Additional Snowflake format options**: Specify additional Snowflake format options which will be used in Snowflake COPY statement to load data.
 
-  :::image type="content" source="./media/connector-snowflake/format-options-source.png" alt-text="Screenshot showing Additional Snowflake format options.":::
+  :::image type="content" source="./media/connector-snowflake/format-options-source.png" alt-text="Screenshot showing additional snowflake format options for source.":::
 
 ### Destination
 
@@ -71,11 +71,11 @@ Under **Advanced**, you can specify the following fields:
 
 - **Additional Snowflake copy options**: Specify additional Snowflake copy options which will be used in Snowflake COPY statement to load data.
 
-  :::image type="content" source="./media/connector-snowflake/copy-options-destination.png" alt-text="Screenshot showing Additional Snowflake copy options.":::
+  :::image type="content" source="./media/connector-snowflake/copy-options-destination.png" alt-text="Screenshot showing additional snowflake copy options for destination.":::
 
 - **Additional Snowflake format options**: Specify additional Snowflake format options which will be used in Snowflake COPY statement to load data.
 
-  :::image type="content" source="./media/connector-snowflake/format-options-destination.png" alt-text="Screenshot showing Additional Snowflake format options.":::
+  :::image type="content" source="./media/connector-snowflake/format-options-destination.png" alt-text="Screenshot showing additional snowflake format options for destination.":::
 
 ### Mapping
 
@@ -96,7 +96,7 @@ The following tables contain more information about the copy activity in Snwflak
 |**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
 |**Database** |Your datbase.|< your databse > |Yes|database|
-|**Use query** |your use query|• **Table** <br> • **Query** |No |• table<br>• query|
+|**Use query** |your use query|• Table <br> • Query |No |• table<br>• query|
 |**Table** | Your source data table. |< name of your source table>|Yes |schema <br> table|
 |**Additional Snowflake copy options** |Additional copy options, provided as a dictionary of key-value pairs. |• Name<br>• Value|No |additionalCopyOptions:<br>• name<br>• value|
 |**Additional Snowflake format options** |Additional file format options that are provided to COPY command as a dictionary of key-value pairs. |• Name<br>• Value|No |additionalFormatOptions:<br>• name<br>• value |
@@ -114,5 +114,3 @@ The following tables contain more information about the copy activity in Snwflak
 |**Additional Snowflake format options** |Additional file format options provided to the COPY command, provided as a dictionary of key-value pairs. |• Name<br>• Value|No |additionalFormatOptions:<br>• name<br>• value |
 
 ## Next steps
-
-- [How to create Snowflake connection](connector-snowflake.md)
