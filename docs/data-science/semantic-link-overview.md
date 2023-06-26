@@ -24,29 +24,29 @@ The data flow starts with Power BI datasets that contain data and semantic infor
 
 With Semantic Link, you can use datasets from Power BI in the Data Science experience to perform tasks such as in-depth statistical analysis and predictive modeling with machine learning techniques. The output of your data science work can be stored in [OneLake](../onelake/onelake-overview.md) using Apache Spark and ingested into Power BI using [Direct Lake](/power-bi/enterprise/directlake-overview).
 
-## Power BI Connectivity
+## Power BI connectivity
 
 Power BI datasets serve as the single [semantic model](/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo), providing a reliable source for semantic definitions, such as Power BI measures. To connect to Power BI datasets:
 
-- Semantic Link offers data connectivity to the Python [Pandas](https://pandas.pydata.org/) ecosystem via the **SemPy Python library**, making it easy for data scientists to work with the data.
+- Semantic Link offers data connectivity to the Python [pandas](https://pandas.pydata.org/) ecosystem via the **SemPy Python library**, making it easy for data scientists to work with the data.
 - Semantic Link provides access to Power BI datasets through the **Spark native connector** for data scientists that are more familiar with the [Apache Spark](https://spark.apache.org/) ecosystem. This implementation supports various languages, including PySpark, Spark SQL, R, and Scala.
 
-Both implementations are subject to Power BI backend limitations (see [details](read-write-powerbi.md#read-limitations)).
+Both implementations are subject to Power BI backend limitations (see [details](read-write-powerbi.md#read-access-limitations)).
 
-## Applications of Semantic Information
+## Applications of semantic information
 
 Semantic information in data includes Power BI [data categories](/power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables, and hierarchical information. These data categories comprise metadata that Semantic Link propagates into the Data Science environment to enable new experiences and maintain data lineage. Some example applications of Semantic Link are:
 - intelligent suggestions of built-in [semantic functions](./semantic-link-powerbi.md#semantic-functions).
-- innovative integration for augmenting data with Power BI measures through [join-measures](./semantic-link-powerbi.md#join-measure).
+- innovative integration for augmenting data with Power BI measures through the use of [join-measures](./semantic-link-powerbi.md#join-measure).
 - tools for [data quality validation](./semantic-link-validate-data.md#data-validation-with-semantic-link-and-microsoft-fabric) based on the relationships between tables and functional dependencies within tables.
 
 Semantic Link is a powerful tool that enables business analysts to use data effectively in a comprehensive data science environment. Semantic Link facilitates seamless collaboration between data scientists and business analysts by eliminating the need to reimplement business logic embedded in [Power BI measures](/power-bi/transform-model/desktop-measures#understanding-measures). This approach ensures that both parties can work efficiently and productively, maximizing the potential of their data-driven insights.
 
-## Semantic Data Frames
+## `SemanticDataFrame` data structure
 
-[SemanticDataFrame](TODO API) is the core data structure of Semantic Link. It subclasses [Pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and adds metadata, such as semantic information and lineage. SemanticDataFrame is the primary data structure that Semantic Link uses to propagate semantic information from Power BI datasets into the Data Science environment.
+[SemanticDataFrame](TODO API) is the core data structure of Semantic Link. It subclasses the [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and adds metadata, such as semantic information and lineage. SemanticDataFrame is the primary data structure that Semantic Link uses to propagate semantic information from Power BI datasets into the Data Science environment.
 
-SemanticDataFrame supports all Pandas operations and more. It exposes semantic functions and [join-measures](./semantic-link-powerbi.md#join-measure) that enable you to use Power BI measures in your data science work.
+SemanticDataFrame supports all pandas operations and more. It exposes semantic functions and [join-measures](./semantic-link-powerbi.md#join-measure) that enable you to use Power BI measures in your data science work.
 
 ## Next steps
 

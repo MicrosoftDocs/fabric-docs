@@ -16,11 +16,11 @@ When you read a Power BI dataset into a [FabricDataFrame](__TODO API link__), se
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Semantic propagation for Pandas users
+## Semantic propagation for pandas users
 
-The **SemPy python library** is part of the Semantic Link feature and serves [pandas](https://pandas.pydata.org/) users. SemPy supports the operations that pandas allows you to perform on your data. Furthermore, SemPy allows you to propagate semantic data from Power BI datasets on which you're operating. By propagating semantic data, you can preserve annotations that are attached to tables and columns in the Power BI dataset when you perform operations such as slicing, merges, and concatenation.
+The **SemPy Python library** is part of the Semantic Link feature and serves [pandas](https://pandas.pydata.org/) users. SemPy supports the operations that pandas allows you to perform on your data. Furthermore, SemPy allows you to propagate semantic data from Power BI datasets on which you're operating. By propagating semantic data, you can preserve annotations that are attached to tables and columns in the Power BI dataset when you perform operations such as slicing, merges, and concatenation.
 
-You can create a FabricDataFrame one of two ways: you can read a table or the output of a [measure](/power-bi/transform-model/desktop-measures) from a Power BI dataset into a FabricDataFrame. Alternatively, you can use in-memory data to create the FabricDataFrame, just like you do for Pandas DataFrames.
+You can create a FabricDataFrame one of two ways: you can read a table or the output of a [measure](/power-bi/transform-model/desktop-measures) from a Power BI dataset into a FabricDataFrame. Alternatively, you can use in-memory data to create the FabricDataFrame, just like you do for pandas DataFrames.
 
 - When you read from a Power BI dataset into a FabricDataFrame, the metadata from Power BI automatically hydrates the FabricDataFrame. In other words, the semantic information from the Power BI dataset's tables or measures are preserved in the FabricDataFrame.
 - When you create a FabricDataFrame from in-memory data, you need to supply the name of a Power BI dataset from which the FabricDataFrame can pull metadata information.
@@ -31,12 +31,12 @@ How semantic data is preserved varies depending on factors such as the operation
 
 When you merge two FabricDataFrames, the order of the DataFrames determines how semantic information is propagated.
 
-   - If **both DataFrames are annotated**, then the table-level metadata of the left DataFrame takes precedence. The same rule applies to individual columns; the column annotations present in the left DataFrame take precedence over the column annotations in the right DataFrame.
-   - If **only one DataFrame is annotated**, its metadata is used. The same rule applies to individual columns; the column annotations present in the annotated DataFrame is used.
+   - If **both FabricDataFrames are annotated**, then the table-level metadata of the left FabricDataFrame takes precedence. The same rule applies to individual columns; the column annotations present in the left FabricDataFrame take precedence over the column annotations in the right one.
+   - If **only one FabricDataFrame is annotated**, its metadata is used. The same rule applies to individual columns; the column annotations present in the annotated FabricDataFrame is used.
 
 ### Semantic propagation with row-wise concatenation
 
-When you perform row-wise concatenation on multiple FabricDataFrames, the metadata of the first DataFrame is used.
+When you perform row-wise concatenation on multiple FabricDataFrames, the metadata of the first FabricDataFrame is used.
 
 
 <!-- ### Semantic propagation with stack and unstack operations
