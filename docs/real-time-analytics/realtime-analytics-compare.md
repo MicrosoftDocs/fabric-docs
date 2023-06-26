@@ -21,7 +21,7 @@ For more information on Real-Time Analytics, see [What is Real-Time Analytics in
 
 The two services allow for an integrated work model whereby data can be loaded to one service and consumed from the other.
 
-You can query data from your KQL database in the query editor of Azure Data Explorer. Similarly, you can use your KQL Queryset to analyze data that has been loaded into a database in Azure Data Explorer.
+You can query data from your KQL database in the query editor of Azure Data Explorer. Similarly, you can use your KQL Queryset to analyze data loaded into a database in Azure Data Explorer.
 
 ## Capability support
 
@@ -30,12 +30,12 @@ You can query data from your KQL database in the query editor of Azure Data Expl
 | **Security** | VNET | Managed at Fabric level- currently unavailable | Network isolation via Azure Private Endpoints. |
 |  | Customer managed keys | Currently unavailable | &check; |
 |  | Role-based access control – Control plane | Control plane access managed through the workspace and database user UX | Control plane access based on the Azure RBAC model and managed through Azure portal. |
-|  | Role-based access control – Data plane | Data plane access managed via the different user experience and via control commands and |
+|  | Role-based access control – Data plane | Data plane access is managed via the different user experiences and via control commands. |  Data plane access is managed via the different user experiences and via control commands.
 | **Business Continuity** | Availability Zones | Yes; dependent on regional zonal availability | Yes; dependent on regional zonal availability. User controlled |
 | **SKU** | Compute options | SaaS managed platform | User choice of various full managed compute options according to customer needs, including isolated and confidential compute. |
 | **Integration** | Ingestion pipelines | Built-in Fabric ingestion pipelines: Eventstream, Fabric Pipeline, and Fabric Dataflow. Also available with Azure Data Factory and Event Hubs | Fabric ingestion pipelines with Azure Data Explorer as a sink: Fabric Pipeline and Fabric Dataflow. Also available with Azure Data Factory, Event Hubs, IoT Hub, and Event Grid. |
 |  | OneLake integration | Data stored in KQL databases in Fabric Real-Time Analytics is available in OneLake.   Data in OneLake is available in Real-Time Analytics via shortcuts | Not currently available |
-|  | Spark integration |  Built-in Kusto Spark connector adds value such as predicate pushdowns. The data is also available in the OneLake, so Fabric experiences can access data also via OneLake APIs. |  Built-in Kusto Spark integration with support for Azure Active Directory pass-through authentication, Synapse Workspace MSI, and Service Principal |
+|  | Spark integration |  Built-in Kusto Spark connector adds value like predicate pushdowns. The data is also available in the OneLake so that Fabric experiences can access data also via OneLake APIs. |  Built-in Kusto Spark integration with support for Azure Active Directory pass-through authentication, Synapse Workspace MSI, and Service Principal |
 | **Features** | Database | KQL Database | Azure Data Explorer database|
 |  | KQL queries | &check; | &check; |
 |  | T-SQL queries | Using KQL Queryset or built-in Notebooks | Using Azure Data Explorer query.  |
