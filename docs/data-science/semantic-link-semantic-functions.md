@@ -28,7 +28,7 @@ Semantic functions are available in the autocomplete suggestions when you work w
 
 :::image type="content" source="media/semantic-link-semantic-functions/semantic-functions.png" alt-text="Screenshot of semantic functions in autocomplete suggestions." lightbox="media/semantic-link-semantic-functions/semantic-functions.png":::
 
-In the following example, the metadata is manually specified, but it is autopopulated when reading data from the Power BI dataset.
+In the following example, the metadata for the FabricDataFrame is manually specified.
 
 ```Python
 %pip install geopandas
@@ -42,9 +42,23 @@ df = FabricDataFrame(
     column_metadata={"lat": {"data_category": "Latitude"}, "long": {"data_category": "Longitude"}},
 )
 
+# Convert to GeoPandas dataframe
+df_geo = df.to_geopandas(lat_col="lat", long_col="long")
+
+# Use the explore function to visualize the data
+df_geo.explore()
+```
+
+Alternatively, you could read from a Power BI dataset into a FabricDataFrame, and in that case, the metadata will be autopopulated.
+
+```Python
+%pip install geopandas
+
+from sempy.fabric import FabricDataFrame
+
 # Alternative: reading from Power BI dataset
-# import sempy.fabric as fabric
-# df = fabric.read_table("my_dataset_name", "my_countries")
+import sempy.fabric as fabric
+df = fabric.read_table("my_dataset_name", "my_countries")
 
 # Convert to GeoPandas dataframe
 df_geo = df.to_geopandas(lat_col="lat", long_col="long")
