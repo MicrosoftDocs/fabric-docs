@@ -8,7 +8,7 @@ author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023
 ---
-# What is LightGBM in Azure Synapse Analytics?
+# What is LightGBM?
 
 [LightGBM](https://github.com/Microsoft/LightGBM) is an open-source,
 distributed, high-performance gradient boosting (GBDT, GBRT, GBM, or

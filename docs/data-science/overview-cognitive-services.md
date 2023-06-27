@@ -1,14 +1,14 @@
 ---
-title: Cognitive Services in Azure Synapse Analytics
-description: Learn about the capabilities of Azure Cognitive Services pretrained models for enriching your data with artificial intelligence (AI) in Azure Synapse Analytics.
+title: Cognitive Services in SynapseML
+description: Learn about the capabilities of Azure Cognitive Services pretrained models for enriching your data with artificial intelligence (AI) in SynapseML.
 ms.topic: overview
 ms.custom: build-2023
-ms.reviewer: jessiwang
+ms.reviewer: mopeakande
 author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023
 ---
-# What is Cognitive Services in Azure Synapse Analytics?
+# What is Cognitive Services in SynapseML?
 
 [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. Cognitive Services empowers developers even when they don't have direct AI or data science skills or knowledge. The goal of Cognitive Services is to help developers create applications that can see, hear, speak, understand, and even begin to reason. The catalog of services within Azure Cognitive Services can be categorized into five main pillars: **Vision**, **Speech**, **Language**, **Web search**, and **Decision**.
 

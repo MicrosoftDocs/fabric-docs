@@ -181,9 +181,9 @@ items:
   items:
   - name: Overview
     items:
-    - name: What is LightGBM in Azure Synapse Analytics?
+    - name: What is LightGBM in SynapseML?
       href: lightgbm-overview.md
-    - name: What is Cognitive Services in Azure Synapse Analytics?
+    - name: What is Cognitive Services in SynapseML?
       href: overview-cognitive-services.md
   - name: Get started
     items:

@@ -196,7 +196,7 @@ In this section, you'll use LightGBM to build a regression model for drug discov
 
 ## Use `LightGBMRanker` to train a ranking model
 
-In this section, you'll use LightGBM to build a model for ranking ...
+In this section, you'll use LightGBM to build a ranking model.
 
 1. Read the dataset.
 
