@@ -1,6 +1,6 @@
 ---
 title: Data Factory limitations overview
-description: Identifies limitations that affect Data Factory in Microsoft fabric features. 
+description: Identifies limitations that affect Data Factory in Microsoft Fabric features. 
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting    
