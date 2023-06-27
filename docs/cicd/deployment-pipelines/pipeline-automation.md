@@ -4,7 +4,7 @@ description: Learn how to automate your deployment pipeline, the Microsoft Fabri
 author: data-goblin
 ms.author: v-kurtbuhler
 ms.topic: conceptual
-ms.date: 06/03/2023
+ms.date: 06/27/2023
 ---
 
 # Automate your deployment pipeline by using APIs and Azure DevOps
@@ -30,6 +30,9 @@ You can use the [deployment pipelines Fabric REST APIs](/rest/api/power-bi/pipel
 * Cascade depending on pipeline deployments. If you have content that's connected across pipelines, you can make sure some pipelines are deployed before others.
 
 ## Deployment pipelines API functions
+
+> [!NOTE]
+> The deployment pipelines APIs currently only work for Power BI items.
 
 The [deployment pipelines Fabric REST APIs](/rest/api/power-bi/pipelines) allow you to perform the following functions:
 
