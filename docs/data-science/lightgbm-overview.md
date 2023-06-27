@@ -1,6 +1,6 @@
 ---
 title: What is LightGBM in SynapseML?
-description: Learn about LightGBM in SynapseML
+description: Learn about LightGBM in SynapseML.
 ms.topic: overview
 ms.custom: build-2023
 ms.reviewer: mopeakande
