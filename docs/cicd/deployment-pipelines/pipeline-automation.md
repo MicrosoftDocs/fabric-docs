@@ -184,6 +184,8 @@ To run a PowerShell script that performs a deployment, you'll need the following
 
 * The maximum number of items that can be deployed in a single deployment is 300.
 
+* The deployment pipelines APIs currently only support Power BI items.
+
 ## Next steps
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
