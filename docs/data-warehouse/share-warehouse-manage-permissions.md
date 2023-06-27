@@ -4,7 +4,7 @@ description: Learn how to share your warehouse in Microsoft Fabric and manage it
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 06/19/2023
+ms.date: 06/27/2023
 ms.topic: how-to
 ms.custom: build-2023
 ms.search.form: Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
@@ -58,21 +58,25 @@ Depending on the level of access the shared recipient has been granted, the shar
 
 With **ReadData** permissions, the shared recipient can open the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor in read-only mode and query the tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The shared recipient can also choose to copy the [!INCLUDE [fabric-se](includes/fabric-se.md)] provided and connect to a client tool to run these queries. 
 
+For example, in the following screenshot, a user with **ReadAll** permissions can query the warehouse at the landing page after accepting the share.
+
+:::image type="content" source="media\share-warehouse-manage-permissions\query-this-data.png" alt-text="A screenshot from the Fabric portal where a user launches the query window for a shared warehouse." lightbox="media\share-warehouse-manage-permissions\query-this-data.png" :::
+
 ### ReadAll permissions
 
 A shared recipient with **ReadAll** permissions can find the [Azure Blob File System (ABFS) path](/azure/storage/blobs/data-lake-storage-introduction-abfs-uri) to the specific file in OneLake from the Properties pane in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor. The shared recipient can then use this path within a Spark Notebook to read this data. 
 
-The following animated gif shows how a user with **ReadAll** permissions is able to query the data in `FactSale` with a Spark query in a new notebook.
+For example, in the following screenshot, a user with **ReadAll** permissions can query the data in `FactSale` with a Spark query in a new notebook.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\readall-permissions.gif" alt-text="An animated gif showing interaction with the Fabric portal where a user opens a Spark notebook to query the Warehouse shortcut." lightbox="media\share-warehouse-manage-permissions\readall-permissions.gif" :::
+:::image type="content" source="media\share-warehouse-manage-permissions\table-spark-open-new-notebook.png" alt-text="A screenshot from the Fabric portal where a user opens a Spark notebook to query the Warehouse shortcut." lightbox="media\share-warehouse-manage-permissions\table-spark-open-new-notebook.png" :::
 
 ### Build permissions
 
 With **Build** permissions, the shared recipient can create reports on top of the default dataset that is connected to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The shared recipient can create Power BI reports from the Data Hub or also do the same using Power BI Desktop.
 
-The following animated gif shows how a user with **Build** permissions is able to quickly create an **Auto-create** report of the warehouse.
+The following screenshot shows how a user with **Build** permissions can start to **Auto-create** a Power BI report based on the shared warehouse.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\build-permissions.gif" alt-text="An animated gif showing interaction with the Fabric portal, where a user autocreates a report with their shared warehouse." lightbox="media\share-warehouse-manage-permissions\build-permissions.gif" :::
+:::image type="content" source="media\share-warehouse-manage-permissions\visualize-this-data-auto-create.png" alt-text="An screenshot showing interaction with the Fabric portal, where a user can autocreate a report on the shared warehouse." lightbox="media\share-warehouse-manage-permissions\visualize-this-data-auto-create.png" :::
 
 ## Manage shared permissions
 
