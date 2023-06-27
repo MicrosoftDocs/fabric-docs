@@ -79,7 +79,7 @@ The SemPy Python library provides a set of built-in semantic functions that are 
 - `parse_phonenumber(...)`, which parses a phone number into its components, using the [phone numbers](https://pypi.org/project/phonenumbers/) Python package.
 - `validators`, which performs data validation for common data types, such as email and credit card numbers. The semantic function uses the [validators](https://pypi.org/project/validators/) Python package.
 
-## Definition of custom semantic functions
+## Custom semantic functions
 
 Semantic functions are built for extensibility. You can define your own semantic functions within your notebook or as a separate Python module. To use a semantic function outside of a notebook, the semantic function needs to be declared within the `sempy.functions` module.
 
