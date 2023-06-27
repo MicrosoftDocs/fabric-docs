@@ -9,7 +9,7 @@ ms.author: jessiwang
 ms.date: 05/08/2023
 ---
 
-# How to use LightGBM models with SynapseML in Microsoft Fabric
+# Use LightGBM models with SynapseML in Microsoft Fabric
 
 The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in creating high-quality and GPU-enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, you'll use LightGBM to build classification, regression, and ranking models.
 
