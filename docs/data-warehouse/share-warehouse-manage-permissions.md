@@ -74,7 +74,7 @@ For example, in the following screenshot, a user with **ReadAll** permissions ca
 
 With **Build** permissions, the shared recipient can create reports on top of the default dataset that is connected to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The shared recipient can create Power BI reports from the Data Hub or also do the same using Power BI Desktop.
 
-The following screenshot shows how a user with **Build** permissions can start to **Auto-create** a Power BI report based on the shared warehouse.
+For example, in the following screenshot a user with **Build** permissions can start to **Auto-create** a Power BI report based on the shared warehouse.
 
 :::image type="content" source="media\share-warehouse-manage-permissions\visualize-this-data-auto-create.png" alt-text="An screenshot showing interaction with the Fabric portal, where a user can autocreate a report on the shared warehouse." lightbox="media\share-warehouse-manage-permissions\visualize-this-data-auto-create.png" :::
 
