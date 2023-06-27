@@ -13,8 +13,8 @@ ms.custom:
 The following list describes the limitations for pipelines in Data Factory in Microsoft Fabric.
 
 - Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) and [event triggers](/azure/data-factory/how-to-create-custom-event-trigger) aren't yet available.
-- Pipelines don't support CI/CD; it will be supported in the future.
-- Connectors don't support OAuth, AKV and Managed System Identity (MSI); they will be supported in the future.
+- Pipelines don't support Continuous Integration and Continuous Delivery (CI/CD); it will be supported in the future.
+- Connectors don't support OAuth, Azure key vault (AKV), and Managed System Identity (MSI); they will be supported in the future.
 - Connectors can't leverage parameters.
 - The on-premises data gateway or VNet data gateway can be used with Dataflow Gen2 to ingest on-premises data now. You can orchestrate on-premises data ingestion with a data flow activity in the pipeline.
 - Pipeline on managed VNet and on-premises data access with a gateway are planned for a future release.
