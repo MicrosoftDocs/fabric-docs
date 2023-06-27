@@ -35,16 +35,16 @@ To read data from Power BI datasets:
 1. List the available Power BI datasets in the attached Lakehouse.
 
     ```python
-    import sempy.powerbi as pbi
+    import sempy.fabric as fabric
     
-    df_datasets = pbi.list_datasets()
+    df_datasets = fabric.list_datasets()
     df_datasets
     ```
 
 1. List the tables available in the _Sales Dataset_ Power BI dataset.
 
     ```python
-    df_tables = pbi.list_tables("Sales Dataset", include_columns=True)
+    df_tables = fabric.list_tables("Sales Dataset", include_columns=True)
     df_tables
     ```
 
@@ -53,7 +53,7 @@ To read data from Power BI datasets:
    > In the following code, you can specify your workspace by replacing the workspace name `Logistics Workspace` with yours.
 
     ```python
-    df_measures = pbi.list_measures("Inventory Dataset", workspace="Logistics Workspace")
+    df_measures = fabric.list_measures("Inventory Dataset", workspace="Logistics Workspace")
     ```
 
     Now we've determined that the _Customer_ table is the table of interest.
@@ -61,16 +61,16 @@ To read data from Power BI datasets:
 1. Read the _Customer_ table from the _Sales Dataset_ Power BI dataset.
 
     ```python
-    df_table   = pbi.read_table("Sales Dataset", "Customer")
+    df_table = fabric.read_table("Sales Dataset", "Customer")
     df_table
     ```
 
 1. Evaluate the _Total Revenue_ measure per customer's state and date.
 
     ```python
-    df_measure = pbi.read_measure("Sales Dataset",
-                                  "Total Revenue",
-                                  [("Customer", "State"), ("Calendar", "Date")]
+    df_measure = fabric.read_measure("Sales Dataset",
+                                     "Total Revenue",
+                                     [("Customer", "State"), ("Calendar", "Date")]
     df_measure
     ```
 
@@ -80,15 +80,15 @@ To read data from Power BI datasets:
     > Using the `read_dax` API is subject to more limitations (see [Read Limitations](#read-access-limitations)). For standard measure calculations, consider using the `read_measure` function and only revert to `read_dax` for advanced use cases.
 
     ```python
-    df_dax     = pbi.read_dax("Sales Dataset",
-                              """
-                              EVALUATE SUMMARIZECOLUMNS(
-                                  'State'[Region],
-                                  'Calendar'[Date].[Year],
-                                  'Calendar'[Date].[Month],
-                                  "Total Revenue",
-                                  CALCULATE([Total Revenue]))
-                              """)
+    df_dax = fabric.read_dax("Sales Dataset",
+                             """
+                             EVALUATE SUMMARIZECOLUMNS(
+                                 'State'[Region],
+                                 'Calendar'[Date].[Year],
+                                 'Calendar'[Date].[Month],
+                                 "Total Revenue",
+                                 CALCULATE([Total Revenue]))
+                             """)
     ```
 
 1. Alternatively, you can join measures to data retrieved from external sources. This approach combines three tasks: it resolves column names to Power BI dimensions, defines group by columns and filters the measure. Any column names that can't be resolved within the given dataset are ignored (see the supported [DAX syntax](/dax/dax-syntax-reference)).
