@@ -49,9 +49,30 @@ Under **Advanced**, you can specify the following fields:
 
   :::image type="content" source="./media/connector-snowflake/copy-options-source.png" alt-text="Screenshot showing additional snowflake copy options for source.":::
 
-- **Additional Snowflake format options**: Specify additional Snowflake format options which will be used in Snowflake COPY statement to load data.
+- **Additional Snowflake format options**: Specify additional Snowflake format options, which will be used in Snowflake COPY statement to load data.
 
   :::image type="content" source="./media/connector-snowflake/format-options-source.png" alt-text="Screenshot showing additional snowflake format options for source.":::
+
+#### Direct copy from Snowflake
+
+If your destination data store and format meet the criteria described in this section, you can use the Copy activity to directly copy from Snowflake to destination. The service checks the settings and fails the Copy activity run if the following criteria is not met:
+
+  - The **destination connection** is **Azure Blob storage** with **shared access signature** authentication. If you want to directly copy data to Azure Data Lake Storage Gen2 in the following supported format, you can create an Azure Blob connection with SAS authentication against your ADLS Gen2 account.
+
+  - The **destination data format** is of **Parquet**, **DelimitedText**, or **JSON** with the following configurations:
+
+    - For **Parquet** format, the compression codec is **None**, **Snappy**, or **Lzo**.
+    - For **DelimitedText** format:
+        - `Row delimiter` is **\r\n**, or any single character.
+        - `Compression type` can be **None**, **gzip**, **bzip2**, or **deflate**.
+        - `Encoding` is left as default or set to **UTF-8**.
+        - `Quote character` is **Double quote**, **Single quote**, or **No quote character**.
+    - For **JSON** format, direct copy only supports the case that source Snowflake table or query result only has single column and the data type of this column is **VARIANT**, **OBJECT**, or **ARRAY**.
+        - `Compression type` can be **None**, **gzip**, **bzip2**, or **deflate**.
+        - `Encoding` is left as default or set to **UTF-8**.
+        - `File pattern` in copy activity destination is left as default or set to **Set of objects**.
+  - In copy activity source, `Additional columns` is not specified.
+  - Column mapping is not specified.
 
 ### Destination
 
@@ -70,13 +91,40 @@ Under **Advanced**, you can specify the following fields:
 
 - **Pre-copy script**: Specify a script for Copy Activity to execute before writing data into destination table in each run. You can use this property to clean up the pre-loaded data.
 
-- **Additional Snowflake copy options**: Specify additional Snowflake copy options which will be used in Snowflake COPY statement to load data.
+- **Additional Snowflake copy options**: Specify additional Snowflake copy options, which will be used in Snowflake COPY statement to load data.
 
   :::image type="content" source="./media/connector-snowflake/copy-options-destination.png" alt-text="Screenshot showing additional snowflake copy options for destination.":::
 
-- **Additional Snowflake format options**: Specify additional Snowflake format options which will be used in Snowflake COPY statement to load data.
+- **Additional Snowflake format options**: Specify additional Snowflake format options, which will be used in Snowflake COPY statement to load data.
 
   :::image type="content" source="./media/connector-snowflake/format-options-destination.png" alt-text="Screenshot showing additional snowflake format options for destination.":::
+
+#### Direct copy to Snowflake
+
+If your source data store and format meet the criteria described in this section, you can use the Copy activity to directly copy from source to Snowflake. The service checks the settings and fails the Copy activity run if the following criteria is not met:
+
+- The **source connection** is **Azure Blob storage** with **shared access signature** authentication. If you want to directly copy data from Azure Data Lake Storage Gen2 in the following supported format, you can create an Azure Blob connection with SAS authentication against your ADLS Gen2 account.
+
+- The **source data format** is **Parquet**, **DelimitedText**, or **JSON** with the following configurations:
+
+    - For **Parquet** format, the compression codec is **None**, or **Snappy**.
+
+    - For **DelimitedText** format:
+        - `Row delimiter` is **\r\n**, or any single character. If row delimiter is not “\r\n”, `First row as header` need to be **false**, and `Skip line count` is not specified.
+        - `Compression type` can be **None**, **gzip**, **bzip2**, or **deflate**.
+        - `Encoding` is left as default or set to "UTF-8", "UTF-16", "UTF-16BE", "UTF-32", "UTF-32BE", "BIG5", "EUC-JP", "EUC-KR", "GB18030", "ISO-2022-JP", "ISO-2022-KR", "ISO-8859-1", "ISO-8859-2", "ISO-8859-5", "ISO-8859-6", "ISO-8859-7", "ISO-8859-8", "ISO-8859-9", "WINDOWS-1250", "WINDOWS-1251", "WINDOWS-1252", "WINDOWS-1253", "WINDOWS-1254", "WINDOWS-1255".
+        - `Quote character` is **Double quote**, **Single quote**, or **No quote character**.
+
+    - For **JSON** format, direct copy only supports the case that destination Snowflake table only has single column and the data type of this column is **VARIANT**, **OBJECT**, or **ARRAY**.
+        - `Compression type` can be **None**, **gzip**, **bzip2**, or **deflate**.
+        - `Encoding` is left as default or set to **UTF-8**.
+        - Column mapping is not specified.
+
+- In the Copy activity source: 
+
+   -  `Additional columns` is not specified.
+   - If your source is a folder, `Recursively` is set to true.
+   - `Prefix`, `modifiedDateTimeStart`, `modifiedDateTimeEnd`, and `Enable partition discovery` are not specified.
 
 ### Mapping
 
@@ -96,7 +144,7 @@ The following tables contain more information about the copy activity in Snowfla
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
-|**Database** |Your database that you use as source.|< your databse > |Yes|database|
+|**Database** |Your database that you use as source.|< your database > |Yes|database|
 |**Use query** |The way to read data from Snowflake.|• Table <br> • Query |No |• table<br>• query|
 |**Table** | The name of the table to read data. |< name of your source table>|Yes |schema <br> table|
 |**Query**| The SQL query to read data from Snowflake. |< name of your source query>|Yes|query|
