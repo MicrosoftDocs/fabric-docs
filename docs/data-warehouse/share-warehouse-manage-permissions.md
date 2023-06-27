@@ -78,7 +78,7 @@ The following screenshot shows how a user with **Build** permissions can start t
 
 :::image type="content" source="media\share-warehouse-manage-permissions\visualize-this-data-auto-create.png" alt-text="An screenshot showing interaction with the Fabric portal, where a user can autocreate a report on the shared warehouse." lightbox="media\share-warehouse-manage-permissions\visualize-this-data-auto-create.png" :::
 
-## Manage shared permissions
+## Manage permissions
 
 The **Manage permissions** page shows the list of users who have been given access by either assigning to Workspace roles or item permissions.
 
@@ -95,7 +95,7 @@ You can choose to add or remove permissions using the "Manage permissions" exper
 - **Remove access** removes all item permissions. 
 - **Remove ReadData** removes the **ReadData** permissions. 
 - **Remove ReadAll** removes **ReadAll** permissions. 
-- **Remove build** removes Build permissions on the corresponding default dataset.
+- **Remove build** removes **Build** permissions on the corresponding default dataset.
 
 :::image type="content" source="media\share-warehouse-manage-permissions\remove-readall-manage-permissions.png" alt-text="Screenshot showing a user removing the ReadAll permission of a shared recipient." lightbox="media\share-warehouse-manage-permissions\remove-readall-manage-permissions.png":::
 
@@ -105,6 +105,7 @@ You can choose to add or remove permissions using the "Manage permissions" exper
 - Shared recipients are able to access the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using owner's identity (delegated mode). Ensure that the owner of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is not removed from the workspace.
 - Shared recipients only have access to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] they receive and not any other artifacts within the same workspace as the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you want to provide permissions for other users in your team to collaborate on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] (read and write access), add them as Workspace roles such as "Member" or "Contributor".
 - Currently, when you share a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and choose **Read all SQL endpoint data**, the shared recipient can access the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor in a read-only mode. These shared recipients can create queries, but cannot currently save their queries.
+- Currently, sharing a Warehouse is only available through the user experience.
 - If you want to provide granular access to specific objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], share the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with no additional permissions, then provide granular access to specific objects using T-SQL GRANT statement. For more information, see T-SQL syntax for [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true).
 - If you see that the **ReadAll** permissions and **ReadData** permissions are disabled in the sharing dialog, refresh the page.
 - Shared recipients do not have permission to reshare a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
@@ -112,7 +113,6 @@ You can choose to add or remove permissions using the "Manage permissions" exper
     - If accessed through [Direct query mode](/power-bi/connect-data/service-dataset-modes-understand#directquery-mode) then **ReadData** permissions (or [granular SQL permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
     - If accessed through [Direct lake mode](/power-bi/enterprise/directlake-overview), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
     - If accessed through [Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode) then no additional permissions are needed.
-- If additional permissions are not provided, you will see an error message indicating "Couldn't load the data for this visual". SELECT permissions need to be provided.
 
 ## Next steps
 
