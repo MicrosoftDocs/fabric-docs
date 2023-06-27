@@ -147,11 +147,11 @@ When you select the **Data Skew** tab, the corresponding skewed tasks are displa
 
 * **Skewed Stage** - The second section displays stages, which have skewed tasks meeting the criteria previously specified. If there's more than one skewed task in a stage, the skewed stage table only displays the most skewed task (for example, the largest data for data skew).
 
-:::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-2.png" alt-text="Screenshot showing spark ui diagnosis data skew tab." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-2.png":::
+   :::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-2.png" alt-text="Screenshot showing spark ui diagnosis data skew tab." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-2.png":::
 
 * **Skew Chart** - When a row in the skew stage table is selected, the skew chart displays more task distribution details based on data read and execution time. The skewed tasks are marked in red and the normal tasks are marked in blue. The chart displays up to 100 sample tasks, and the task details are displayed in right bottom panel.
 
-:::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-3.png" alt-text="Screenshot showing spark ui skew chart for stage 10." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-3.png":::
+   :::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-3.png" alt-text="Screenshot showing spark ui skew chart for stage 10." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-dataskew-section-3.png":::
 
 ### Time Skew
 
