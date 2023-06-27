@@ -161,7 +161,7 @@ The **Time Skew** tab displays skewed tasks based on task execution time.
 
 * Select **Time Skew**, then filtered result is displayed in **Skewed Stage** section according to the parameters set in section **Specify Parameters**. Select one item in **Skewed Stage** section, then the corresponding chart is drafted in section 3, and the task details are displayed in right bottom panel.
 
-:::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-timeskew-section-2.png" alt-text="Screenshot showing spark ui diagnosis time skew section." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-timeskew-section-2.png":::
+   :::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-timeskew-section-2.png" alt-text="Screenshot showing spark ui diagnosis time skew section." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-timeskew-section-2.png":::
 
 ### Executor Usage Analysis
 
