@@ -271,18 +271,4 @@
         href: pipeline-resource-limits.md
       - name: Dataflow Gen2 limitations
         href: dataflow-gen2-limitations.md
-    - name: Data Factory known issues
-      items:
-      - name: Active known issues for Data Factory
-        href: data-factory-known-issues.md
-      - name: Gateway version
-        href: known-issue-gateway.md
-      - name: Lineage view edit button
-        href: known-issue-lineage-view-edit.md
-      - name: Staging artifacts
-        href: known-issue-staging-artifact.md
-      - name: Power Query template extra queries
-        href: known-issue-template.md
-      - name: Error publishing a Dataflow Gen2
-        href: known-issue-publish-dataflow.md
      
