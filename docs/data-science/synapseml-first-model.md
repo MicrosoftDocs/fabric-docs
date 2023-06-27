@@ -9,7 +9,7 @@ ms.author: jessiwang
 ms.date: 06/02/2023
 ---
 
-# How to build your first SynapseML model
+# Build your first SynapseML model
 This article introduces how to build your first machine learning model using SynapseML and demonstrates how SynapseML simplifies complex machine learning tasks. We use SynapseML to create a small ML training pipeline that includes a featurization stage and a LightGBM regression stage. The pipeline predicts ratings based on review text from a dataset of Amazon book reviews. Finally, we showcase how SynapseML simplifies the use of prebuilt models to solve ML problems.
 
 ## Prerequisites
