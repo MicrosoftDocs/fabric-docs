@@ -63,15 +63,15 @@ If your destination data store and format meet the criteria described in this se
 
     - For **Parquet** format, the compression codec is **None**, **Snappy**, or **Lzo**.
     - For **DelimitedText** format:
-        - `Row delimiter` is **\r\n**, or any single character.
-        - `Compression type` can be **None**, **gzip**, **bzip2**, or **deflate**.
-        - `Encoding` is left as default or set to **UTF-8**.
-        - `Quote character` is **Double quote**, **Single quote**, or **No quote character**.
+        - **Row delimiter** is **\r\n**, or any single character.
+        - **Compression type** can be **None**, **gzip**, **bzip2**, or **deflate**.
+        - **Encoding** is left as default or set to **UTF-8**.
+        - **Quote character** is **Double quote**, **Single quote**, or **No quote character**.
     - For **JSON** format, direct copy only supports the case that source Snowflake table or query result only has single column and the data type of this column is **VARIANT**, **OBJECT**, or **ARRAY**.
-        - `Compression type` can be **None**, **gzip**, **bzip2**, or **deflate**.
-        - `Encoding` is left as default or set to **UTF-8**.
-        - `File pattern` in copy activity destination is left as default or set to **Set of objects**.
-  - In copy activity source, `Additional columns` is not specified.
+        - **Compression type** can be **None**, **gzip**, **bzip2**, or **deflate**.
+        - **Encoding** is left as default or set to **UTF-8**.
+        - **File pattern** in copy activity destination is left as default or set to **Set of objects**.
+  - In copy activity source, **Additional columns** is not specified.
   - Column mapping is not specified.
 
 ### Destination
@@ -110,21 +110,21 @@ If your source data store and format meet the criteria described in this section
     - For **Parquet** format, the compression codec is **None**, or **Snappy**.
 
     - For **DelimitedText** format:
-        - `Row delimiter` is **\r\n**, or any single character. If row delimiter is not “\r\n”, `First row as header` need to be **false**, and `Skip line count` is not specified.
-        - `Compression type` can be **None**, **gzip**, **bzip2**, or **deflate**.
-        - `Encoding` is left as default or set to "UTF-8", "UTF-16", "UTF-16BE", "UTF-32", "UTF-32BE", "BIG5", "EUC-JP", "EUC-KR", "GB18030", "ISO-2022-JP", "ISO-2022-KR", "ISO-8859-1", "ISO-8859-2", "ISO-8859-5", "ISO-8859-6", "ISO-8859-7", "ISO-8859-8", "ISO-8859-9", "WINDOWS-1250", "WINDOWS-1251", "WINDOWS-1252", "WINDOWS-1253", "WINDOWS-1254", "WINDOWS-1255".
-        - `Quote character` is **Double quote**, **Single quote**, or **No quote character**.
+        - **Row delimiter** is **\r\n**, or any single character. If row delimiter is not “\r\n”, **First row as header** need to be **false**, and **Skip line count** is not specified.
+        - **Compression type** can be **None**, **gzip**, **bzip2**, or **deflate**.
+        - **Encoding** is left as default or set to "UTF-8", "UTF-16", "UTF-16BE", "UTF-32", "UTF-32BE", "BIG5", "EUC-JP", "EUC-KR", "GB18030", "ISO-2022-JP", "ISO-2022-KR", "ISO-8859-1", "ISO-8859-2", "ISO-8859-5", "ISO-8859-6", "ISO-8859-7", "ISO-8859-8", "ISO-8859-9", "WINDOWS-1250", "WINDOWS-1251", "WINDOWS-1252", "WINDOWS-1253", "WINDOWS-1254", "WINDOWS-1255".
+        - **Quote character** is **Double quote**, **Single quote**, or **No quote character**.
 
     - For **JSON** format, direct copy only supports the case that destination Snowflake table only has single column and the data type of this column is **VARIANT**, **OBJECT**, or **ARRAY**.
-        - `Compression type` can be **None**, **gzip**, **bzip2**, or **deflate**.
-        - `Encoding` is left as default or set to **UTF-8**.
+        - **Compression type** can be **None**, **gzip**, **bzip2**, or **deflate**.
+        - **Encoding** is left as default or set to **UTF-8**.
         - Column mapping is not specified.
 
 - In the Copy activity source: 
 
-   -  `Additional columns` is not specified.
-   - If your source is a folder, `Recursively` is set to true.
-   - `Prefix`, `modifiedDateTimeStart`, `modifiedDateTimeEnd`, and `Enable partition discovery` are not specified.
+   - **Additional columns** is not specified.
+   - If your source is a folder, **Recursively** is selected or unselected.
+   - **Prefix**, **Start time in Filter by last modified**, **End time in Filter by last modified**, and **Enable partition discovery** are not specified.
 
 ### Mapping
 
