@@ -38,7 +38,7 @@ Both implementations are subject to Power BI backend limitations (see [details](
 Semantic information in data includes Power BI [data categories](/power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables, and hierarchical information. These data categories comprise metadata that Semantic Link propagates into the Data Science environment to enable new experiences and maintain data lineage. Some example applications of Semantic Link are:
 - intelligent suggestions of built-in [semantic functions](semantic-link-semantic-functions.md).
 - innovative integration for augmenting data with Power BI measures through the use of [join-measures](./semantic-link-power-bi.md#join-measure).
-- tools for data quality validation based on the relationships between tables and functional dependencies within tables.
+- tools for [data quality validation](./semantic-link-validate-data.md#data-validation-with-semantic-link-and-microsoft-fabric) based on the relationships between tables and functional dependencies within tables.
 
 Semantic Link is a powerful tool that enables business analysts to use data effectively in a comprehensive data science environment. Semantic Link facilitates seamless collaboration between data scientists and business analysts by eliminating the need to reimplement business logic embedded in [Power BI measures](/power-bi/transform-model/desktop-measures#understanding-measures). This approach ensures that both parties can work efficiently and productively, maximizing the potential of their data-driven insights.
 
@@ -51,5 +51,5 @@ SemanticDataFrame supports all pandas operations and more. It exposes semantic f
 ## Next steps
 
 - [Learn more about Semantic Link and Power BI connectivity](semantic-link-power-bi.md)
-- [How to explore data with Semantic Link](data-science-overview.md)
-- [How to validate data with Semantic Link](data-science-overview.md)
+- [How to explore data with Semantic Link](semantic-link-explore-data.md)
+- [How to validate data with Semantic Link](semantic-link-validate-data.md)

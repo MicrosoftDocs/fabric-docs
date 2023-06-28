@@ -38,10 +38,15 @@ When you merge two FabricDataFrames, the order of the DataFrames determines how 
 
 When you perform row-wise concatenation on multiple FabricDataFrames, the metadata of the first FabricDataFrame is used.
 
+
+<!-- ### Semantic propagation with stack and unstack operations
+Unstack operation in pandas is used to move a level of index from row to column. Just like its counterpart stack, it is a useful operation to reshape the datacube. Multi-level indexes on rows and columns in pandas can be visualized as the dimensions of a datacube. Each level of the index corresponds to one dimension, and the dataframe itself is just a projection of this higher-dimensional cube onto two dimensions, with some dimensions being projected to the rows, and some dimensions being projected to the columns. The "unstack" operation moves a level from the rows to columns, while the "stack" operation does the opposite. Both operations just change the shape of the dataframe, but neither changes the nature of the underlying datacube -->
+
+
 ## Semantic propagation for Spark users
 The Semantic Link Spark native connector hydrates (or populates) the [metadata](https://spark.apache.org/docs/3.3.2/api/python/reference/pyspark.sql/api/pyspark.sql.types.StructField.html#pyspark.sql.types.StructField) dictionary of a Spark column.
 Currently, support for semantic propagation is limited and subject to Spark's internal implementation of how schema information is propagated. For example, column aggregation strips the metadata.
 
 ## Next steps
-- [How to explore data with Semantic Link](data-science-overview.md)
-- [How to validate data with Semantic Link](data-science-overview.md)
+- [How to explore data with Semantic Link](semantic-link-explore-data.md)
+- [How to validate data with Semantic Link](semantic-link-validate-data.md)

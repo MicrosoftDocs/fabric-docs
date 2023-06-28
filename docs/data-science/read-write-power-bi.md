@@ -192,5 +192,5 @@ By using Power BI, the *ForecastTable* table can be added to a composite dataset
 ## Next steps
 Learn how to use semantic information
 
-- [How to explore data with Semantic Link](data-science-overview.md)
-- [How to validate data with Semantic Link](data-science-overview.md)
+- [How to explore data with Semantic Link](semantic-link-explore-data.md)
+- [How to validate data with Semantic Link](semantic-link-validate-data.md)
