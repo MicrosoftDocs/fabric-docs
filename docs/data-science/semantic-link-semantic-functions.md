@@ -111,5 +111,5 @@ The following points provide a breakdown of the code snippet:
 
 ## Next steps
 
-- [Power BI connectivity with Semantic Link and Microsoft Fabric](semantic-link-powerbi.md)
+- [Power BI connectivity with Semantic Link and Microsoft Fabric](semantic-link-power-bi.md)
 - [Semantic data propagation from Power BI datasets](semantic-link-semantic-propagation.md)
