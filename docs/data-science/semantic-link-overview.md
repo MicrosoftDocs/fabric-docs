@@ -20,7 +20,7 @@ Semantic Link is a feature that allows you to establish a connection between [Po
 
 The data flow starts with Power BI datasets that contain data and semantic information. Semantic Link bridges the gap between Power BI and the Data Science experience.
 
-:::image type="content" source="media/semantic-link-overview/data-flow-with-semantic-link.png" alt-text="Graphic showing the data flow from Power BI to notebooks in Synapse Data Science and back to Power BI.":::
+:::image type="content" source="media/semantic-link-overview/data-flow-with-semantic-link.png" alt-text="A diagram that shows data flow from Power BI to notebooks in Synapse Data Science and back to Power BI.":::
 
 With Semantic Link, you can use datasets from Power BI in the Data Science experience to perform tasks such as in-depth statistical analysis and predictive modeling with machine learning techniques. The output of your data science work can be stored in [OneLake](../onelake/onelake-overview.md) using Apache Spark and ingested into Power BI using [Direct Lake](/power-bi/enterprise/directlake-overview).
 
@@ -31,7 +31,7 @@ Power BI datasets serve as the single [semantic model](/analysis-services/tom/in
 - Semantic Link offers data connectivity to the Python [pandas](https://pandas.pydata.org/) ecosystem via the **SemPy Python library**, making it easy for data scientists to work with the data.
 - Semantic Link provides access to Power BI datasets through the **Spark native connector** for data scientists that are more familiar with the [Apache Spark](https://spark.apache.org/) ecosystem. This implementation supports various languages, including PySpark, Spark SQL, R, and Scala.
 
-Both implementations are subject to Power BI backend limitations (see [details](read-write-powerbi.md#read-access-limitations)).
+Both implementations are subject to Power BI backend limitations (see [details](read-write-power-bi.md#read-access-limitations)).
 
 ## Applications of semantic information
 
