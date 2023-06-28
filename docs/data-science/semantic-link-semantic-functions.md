@@ -16,7 +16,7 @@ This article covers semantic functions and how they can help data scientists and
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[FabricDataFrames](TODO link) dynamically expose semantic functions based on logic defined by each function. For example, the `is_holiday` function shows up in the autocomplete suggestions when you're working on a datetime column or a country column of a FabricDataFrame.
+[FabricDataFrames](data-science-overview.md) dynamically expose semantic functions based on logic defined by each function. For example, the `is_holiday` function shows up in the autocomplete suggestions when you're working on a datetime column or a country column of a FabricDataFrame.
 
 Each semantic function uses information about the data types, metadata (such as Power BI data categories), and the data in a FabricDataFrame or FabricSeries to determine its relevance to the particular data on which you're working.
 

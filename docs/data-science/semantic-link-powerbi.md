@@ -12,8 +12,6 @@ ms.search.form: Semantic Link
 
 # Power BI connectivity with Semantic Link and Microsoft Fabric
 
-<!-- This article describes Semantic Link and its integration with Power BI and Microsoft Fabric. You'll learn what Semantic Link is used for and how you can use it in Microsoft Fabric. -->
-
 Power BI connectivity is at the core of Semantic Link. In this article, you'll learn about the ways that Semantic Link provides connectivity to Power BI datasets for users of the Python pandas ecosystem and the Apache Spark ecosystem.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
@@ -98,5 +96,5 @@ The `join_measure` operation performs these steps:
 ## Next steps
 Learn how to use semantic information
 
-- [How to explore data with Semantic Link](semantic-link-explore-data.md)
-- [How to validate data with Semantic Link](semantic-link-validate-data.md)
+- [How to explore data with Semantic Link](data-science-overview.md)
+- [How to validate data with Semantic Link](data-science-overview.md)

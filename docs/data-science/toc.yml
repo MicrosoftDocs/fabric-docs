@@ -63,10 +63,6 @@ items:
     href: data-wrangler.md
   - name: Read from Power BI and write data usable by Power BI
     href: read-write-powerbi.md
-  - name: How to explore data with Semantic Link
-    href: semantic-link-explore-data.md
-  - name: How to validate data with Semantic Link
-    href: semantic-link-validate-data.md
 - name: Train machine learning models
   items:
   - name: Training Overview
@@ -201,10 +197,6 @@ items:
     items:
     - name: Read from Power BI and write data usable by Power BI
       href: read-write-powerbi.md
-    - name: How to explore data with Semantic Link
-      href: semantic-link-explore-data.md
-    - name: How to validate data with Semantic Link
-      href: semantic-link-validate-data.md
 - name: SynapseML
   items:
   - name: Get started
@@ -235,3 +227,8 @@ items:
       href: cognitive-services-multivariate-anomaly-detection.md
     - name: Tune hyperparameters using SynapseML
       href: hyperparameter-tuning-fighting-breast-cancer.md
+- name: Reference
+  items:
+    - name: SemPy Python SDK
+      href: data-science-overview.md # python/api/semantic-link/overview-semantic-link
+      
