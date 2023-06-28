@@ -45,7 +45,7 @@ ON dbo.DimCustomer (CustomerKey) WITH FULLSCAN;
 To manually update the statistics object `DimCustomer_CustomerKey_FullScan`, perhaps after a large data update:
 
 ```sql
-UPDATE STATISTICS DimCustomer_CustomerKey_FullScan (CustomerKey) WITH FULLSCAN;  
+UPDATE STATISTICS dbo.DimCustomer (DimCustomer_CustomerKey_FullScan) WITH FULLSCAN;  
 ```
 
 To show information about the statistics object:
@@ -156,7 +156,6 @@ In [!INCLUDE [product-name](../includes/product-name.md)], there are multiple ty
 
 - Only single-column histogram statistics can be manually created and modified.
 - Multi-column statistics creation is not supported.
-- Statistics (of any kind) are not currently supported for varchar(max).
 - Other statistics objects may show under [sys.stats](/sql/relational-databases/system-catalog-views/sys-stats-transact-sql?view=fabric&preserve-view=true) aside from manually created statistics and automatically created statistics. These objects are not used for query optimization.
 
 ## Next steps

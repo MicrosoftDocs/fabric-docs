@@ -37,7 +37,7 @@ ms.search.form: product-kusto
 1. In the Eventstream authoring area, select **New source** > **Sample data**.
 1. Enter **nytaxitripsdatasource** as the Source Name, and then select **Yellow
     Taxi** from the dropdown of **Sample data**.
-1. Select **Create**.
+1. Select **Add**.
 1. In the Eventstream authoring area, select **New destination** > **KQL Database**.
 1. In the **KQL Database** pane, fill out the fields as follows:
 
@@ -47,7 +47,7 @@ ms.search.form: product-kusto
     | **Workspace**     |   The workspace in which you [created a database](tutorial-1-resources.md#create-a-kql-database).      |
     | **KQL Database**     | *NycTaxiDB* |
 
-1. Select **Create and configure.**
+1. Select **Add and configure.**
 
     A data ingestion pane opens with the **Destination** tab selected.
 
@@ -91,7 +91,7 @@ ms.search.form: product-kusto
     | tolls_amount | *real*
     | improvement_surcharge | *real*
     | total_amount | *real*
-    | congestion_charge | *real*
+    | congestion_surcharge | *real*
     | airport_fee | *real*
 
 1. Select **Next: Summary**.

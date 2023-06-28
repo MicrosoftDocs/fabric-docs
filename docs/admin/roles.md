@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/15/2023
 ---
 
 # Understand Microsoft Fabric admin roles
@@ -18,11 +18,11 @@ To be a Microsoft Fabric admin for your organization, you must be in one of the 
 
 * Power Platform administrator
 
-* Power BI administrator
+* Fabric administrator
 
-Microsoft 365 user admins assign users to the Power BI administrator or Power Platform administrator roles in the Microsoft 365 admin portal, or by using a PowerShell script. For more information, see [Assign roles to user accounts with PowerShell](/office365/enterprise/powershell/assign-roles-to-user-accounts-with-office-365-powershell).
+Microsoft 365 user admins assign users to the Fabric administrator or Power Platform administrator roles in the Microsoft 365 admin portal, or by using a PowerShell script. For more information, see [Assign roles to user accounts with PowerShell](/office365/enterprise/powershell/assign-roles-to-user-accounts-with-office-365-powershell).
 
-Users in Power BI administrator and Power Platform administrator roles have full control over org-wide Microsoft Fabric settings and admin features, except for licensing. Once a user is assigned an admin role, they can access the [admin portal](admin-center.md). There, they have access to org-wide usage metrics and can control org-wide usage of Microsoft Fabric features. These admin roles are ideal for users who need access to the Fabric admin portal without also granting those users full Microsoft 365 administrative access.
+Users in Fabric administrator and Power Platform administrator roles have full control over org-wide Microsoft Fabric settings and admin features, except for licensing. Once a user is assigned an admin role, they can access the [admin portal](admin-center.md). There, they have access to org-wide usage metrics and can control org-wide usage of Microsoft Fabric features. These admin roles are ideal for users who need access to the Fabric admin portal without also granting those users full Microsoft 365 administrative access.
 
 ## Assign users to an admin role in the Microsoft 365 admin portal
 
@@ -34,7 +34,7 @@ To assign users to an admin role in the Microsoft 365 admin portal, follow these
 
 3. Under **Roles**, select **Manage roles**.
 
-4. Expand **Show all by category**, then select **Power BI administrator** or **Power Platform administrator**.
+4. Expand **Show all by category**, then select **Fabric administrator** or **Power Platform administrator**.
 
 5. Select **Save changes**.
 
@@ -47,11 +47,15 @@ You can also assign users to roles by using PowerShell. Users are managed in Azu
    Connect-AzureAD
    ```
 
-1. Get the **ObjectId** for the **Power BI administrator** role. You can run [Get-AzureADDirectoryRole](/powershell/module/azuread/get-azureaddirectoryrole) to get the **ObjectId**.
+1. Get the **ObjectId** for the **Fabric administrator** role. You can run [Get-AzureADDirectoryRole](/powershell/module/azuread/get-azureaddirectoryrole) to get the **ObjectId**.
 
     ```powershell
     Get-AzureADDirectoryRole
     ```
+    
+    > [!NOTE] 
+    > In the output produced by the PowerShell command, look for the *Power BI Service Administrator* in the DisplayName column. This is the legacy name for the *Fabric administrator*.
+    
     
     ```output
     ObjectId                             DisplayName                        Description

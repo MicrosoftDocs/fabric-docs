@@ -48,7 +48,7 @@ In this example, you can see how easily you can run T-SQL queries across the `Wi
     FROM [dbo].[fact_sale] AS Sales,
     [ShortcutExercise].[dbo].[dimension_customer] AS c
     WHERE Sales.CustomerKey = c.CustomerKey
-    GROUP BY Sales.StockItemKey, [Description], c.Customer;
+    GROUP BY Sales.StockItemKey, Sales.Description, c.Customer;
     ```
 
 1. Select the **Run** button to execute the query. After the query is completed, you will see the results.

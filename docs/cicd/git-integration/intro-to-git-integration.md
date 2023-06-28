@@ -3,6 +3,7 @@ title: Overview of Fabric git integration
 description: An introduction to git integration the Fabric Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: conceptual
 ms.custom: contperf-fy21q1, build-2023
 ms.date: 05/30/2023
@@ -40,7 +41,7 @@ The following items are currently supported:
 * Reports (except paginated reports)
 * Datasets (except push datasets, live connections, and model v1)
 
-If the workspace or git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pan but you can't commit or update them.
+If the workspace or git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pane but you can't commit or update them.
 
 <!--
 ## Workflow

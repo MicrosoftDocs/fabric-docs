@@ -3,8 +3,9 @@ title: Git source code format
 description: Understand how the items in Microsoft Fabric's git integration tool are structured
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: conceptual 
-ms.date: 05/23/2023
+ms.date: 06/20/2023
 ms.custom: build-2023
 ---
 
@@ -14,7 +15,7 @@ Items in Microsoft Fabric are stored in a folder. They can either be in the root
 
 :::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of git directory containing items.":::
 
-Inside each item directory are the mandatory system files that define the item. Besides these files, there are two automatically generated system files in each directory:
+Inside each item directory are the [mandatory system files that define the item](/power-bi/developer/projects/projects-overview). Besides these files, there are two automatically generated system files in each directory:
 
 - [item.metadata.json](#metadata-file)
 - [item.config.json](#config-file)
@@ -61,21 +62,25 @@ Besides the item.config.json file and the item.metadata.json file found in all i
 
 ### Dataset files
 
-Dataset directories contain the following files:
+Dataset folders contain the following files:
 
 - definition.pbidataset
 - model.bim
 
 :::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
 
+For more information about dataset folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
+
 ### Report files
 
-Report directories contain the following files:
+Report folders contain the following files:
 
 - definition.pbir
 - report.json
 
 :::image type="content" source="./media/source-code-format/report-directory.png" alt-text="Screenshot of directory tree showing files in the report directory.":::
+
+For more information about report folders and a complete list of their contents, see [Power BI Desktop project report folder](/power-bi/developer/projects/projects-report).
 
 ## Next steps
 

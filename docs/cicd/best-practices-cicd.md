@@ -3,6 +3,7 @@ title: Best practices for lifecycle management in Fabric
 description: Learn about the best practices for git integration and deployment pipelines in the Microsoft Fabric lifecycle management tool.
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: conceptual
 ms.date: 05/23/2023
 ms.custom: intro-deployment, build-2023

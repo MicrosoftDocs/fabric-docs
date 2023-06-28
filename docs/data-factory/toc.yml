@@ -261,4 +261,14 @@
       href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Getting from Dataflow Gen1 to Gen2
       href: dataflows-gen2-overview.md
+    - name: Data Factory limitations
+      items:
+      - name: Data Factory limitations overview
+        href: data-factory-limitations.md
+      - name: Pipeline limitations
+        href: pipeline-limitations.md
+      - name: Pipeline resource limits
+        href: pipeline-resource-limits.md
+      - name: Dataflow Gen2 limitations
+        href: dataflow-gen2-limitations.md
      

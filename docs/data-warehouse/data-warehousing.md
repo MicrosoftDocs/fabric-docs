@@ -4,7 +4,7 @@ description: Learn more about the data warehousing experience.
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 6/1/2023
 ms.topic: overview
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
@@ -133,7 +133,7 @@ Primary capabilities
 ACID compliant, full data warehousing with transactions support in T-SQL.
    :::column-end:::
    :::column span="1"::: 
-Read only, system generated [!INCLUDE [fabric-se](includes/fabric-se.md)] for Lakehouse for T-SQL querying and serving. Supports queries and views on top of Lakehouse delta tables only.
+Read only, system generated [!INCLUDE [fabric-se](includes/fabric-se.md)] for Lakehouse for T-SQL querying and serving. Supports analytics on the Lakehouse Delta tables, and the Delta Lake folders referenced via [shortcuts](../onelake/onelake-shortcuts.md).
    :::column-end:::
    :::column span="1"::: 
 No-code data warehousing and T-SQL querying 

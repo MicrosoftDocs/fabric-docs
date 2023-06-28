@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/15/2023
 ---
 
 # What is Microsoft Fabric admin?
@@ -37,11 +37,11 @@ This section lists the Microsoft 365 admin roles and the tasks they can perform.
     * Create and manage users and groups
     * Reset user passwords
 
-### Power Platform and Power BI admin roles
+### Power Platform and Fabric admin roles
 
-As a Power Platform or a Power BI admin, you have full access to all the Microsoft Fabric management tasks.
+As a Power Platform or a Fabric admin, you have full access to all the Microsoft Fabric management tasks.
 
-* **Power Platform administrator** or **Power BI administrator**
+* **Power Platform administrator** or **Fabric administrator**
     * Enable and disable Microsoft Fabric features
     * Report on usage and performance
     * Review and manage auditing
