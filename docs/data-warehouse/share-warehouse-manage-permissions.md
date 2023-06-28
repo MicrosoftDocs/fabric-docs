@@ -4,7 +4,7 @@ description: Learn how to share your warehouse in Microsoft Fabric and manage it
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 06/27/2023
+ms.date: 06/28/2023
 ms.topic: how-to
 ms.custom: build-2023
 ms.search.form: Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
@@ -40,6 +40,9 @@ Here's more detail about each of the permissions provided:
 
 - **If no additional permissions are selected** – The shared recipient by default receives "Read" permission, which only allows the recipient to *connect* to the [!INCLUDE [fabric-se](includes/fabric-se.md)], the equivalent of CONNECT permissions in SQL Server. The shared recipient will not be able to query any table or view or execute any function or stored procedure unless they are provided access to objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using T-SQL GRANT statement.
 
+> [!NOTE]
+> The **ReadData**, **ReadAll**, and **Build** roles are separate permissions that do not overlap.
+
 - **"Read all SQL endpoint data" is selected ("ReadData" permissions)**- The shared recipient can read all the database objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **ReadData** is the equivalent of *db_datareader* role in SQL Server. The shared recipient can read data from all tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you want to further restrict and provide granular access to some objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], you can do this using T-SQL GRANT/REVOKE/DENY statements.
 
 - **"Read all data using Apache Spark" is selected ("ReadAll" permissions)**- The shared recipient has read access to the underlying parquet files in OneLake, which can be consumed using Spark. **ReadAll** should be provided only if the shared recipient wants complete access to your warehouse's files using the Spark engine.
@@ -58,7 +61,7 @@ Depending on the level of access the shared recipient has been granted, the shar
 
 With **ReadData** permissions, the shared recipient can open the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor in read-only mode and query the tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The shared recipient can also choose to copy the [!INCLUDE [fabric-se](includes/fabric-se.md)] provided and connect to a client tool to run these queries. 
 
-For example, in the following screenshot, a user with **ReadAll** permissions can query the warehouse at the landing page after accepting the share.
+For example, in the following screenshot, a user with **ReadData** permissions can query the warehouse at the landing page after accepting the share.
 
 :::image type="content" source="media\share-warehouse-manage-permissions\query-this-data.png" alt-text="A screenshot from the Fabric portal where a user launches the query window for a shared warehouse." lightbox="media\share-warehouse-manage-permissions\query-this-data.png" :::
 
