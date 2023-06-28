@@ -169,8 +169,8 @@ The output should look similar to the following table, though the values and num
 
 | Index | Features | Prediction | Probability |
 | ----- | ----- | ----- | ----- |
-| 1 | "{"type":1,"values":[0.105... | 0 | "{"0":0.835... |
-| 2 | "{"type":1,"values":[0.814... | 0 | "{"0":0.658... |
+| 1 | `"{"type":1,"values":[0.105...` | 0 | `"{"0":0.835...` |
+| 2 | `"{"type":1,"values":[0.814...` | 0 | `"{"0":0.658...` |
 
 ## Next steps
 
