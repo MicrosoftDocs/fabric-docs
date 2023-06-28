@@ -59,11 +59,11 @@ Depending on the level of access the shared recipient has been granted, the shar
 
 ### ReadData permissions
 
-With **ReadData** permissions, the shared recipient can open the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor in read-only mode and query the tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The shared recipient can also choose to copy the [!INCLUDE [fabric-se](includes/fabric-se.md)] provided and connect to a client tool to run these queries. 
+With **ReadData** permissions, the shared recipient can open the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor in read-only mode and query the tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The shared recipient can also choose to copy the [!INCLUDE [fabric-se](includes/fabric-se.md)] provided and connect to a client tool to run these queries.
 
-For example, in the following screenshot, a user with **ReadData** permissions can query the warehouse at the landing page after accepting the share.
+For example, in the following screenshot, a user with **ReadData** permissions can query the warehouse.
 
-:::image type="content" source="media\share-warehouse-manage-permissions\query-this-data.png" alt-text="A screenshot from the Fabric portal where a user launches the query window for a shared warehouse." lightbox="media\share-warehouse-manage-permissions\query-this-data.png" :::
+:::image type="content" source="media\share-warehouse-manage-permissions\readdata-read-only-editor.png" alt-text="A screenshot from the Fabric portal show a user can query a shared warehouse." lightbox="media\share-warehouse-manage-permissions\readdata-read-only-editor.png" :::
 
 ### ReadAll permissions
 
