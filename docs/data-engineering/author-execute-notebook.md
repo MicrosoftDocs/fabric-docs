@@ -295,7 +295,7 @@ Available cell magics:
 
 ### Custom magics
 
-You can also build out more custom magic commands to meet your specific needs as the below example shows.
+You can also build out more custom magic commands to meet your specific needs as the following example shows.
 
 1. Create a notebook with name *"MyLakehouseModule"*.
 
@@ -375,7 +375,7 @@ IPython Widgets are eventful python objects that have a representation in the br
    | *widgets.jslink()* | You can use *widgets.link()* function to link two similar widgets.
    | *FileUpload* widget | Not supported yet. |
 
-1. Global *display* function provided by [!INCLUDE [product-name](../includes/product-name.md)] doesn't support displaying multiple widgets in one call (for example, *display(a, b)*), which is different from IPython *display* function.
+1. Global *display* function provided by Fabric doesn't support displaying multiple widgets in one call (for example, *display(a, b)*), which is different from IPython *display* function.
 1. If you close a notebook that contains IPython Widget, you can't see or interact with it until you execute the corresponding cell again.
 
 ## Python logging in Notebook
@@ -418,23 +418,23 @@ customizedLogger.critical("customized critical message")
 
 ### Designate a parameters cell
 
-To parameterize your notebook, select the ellipses (...) to access the **more commands** at the cell toolbar. Then select **Toggle parameter cell** to designate the cell as the parameters cell.
+To parameterize your notebook, select the ellipses (...) to access the **More** commands at the cell toolbar. Then select **Toggle parameter cell** to designate the cell as the parameters cell.
 
 :::image type="content" source="media\author-execute-notebook\toggle-parameter-cell.png" alt-text="Screenshot showing where to select the Toggle parameter cell option." lightbox="media\author-execute-notebook\toggle-parameter-cell.png":::
 
-The parameter cell is useful for integrating notebook in pipeline, pipeline activity looks for the parameters cell and treats this cell as defaults for the parameters passed in at execution time. The execution engine adds a new cell beneath the parameters cell with input parameters in order to overwrite the default values.
+The parameter cell is useful for integrating a notebook in a pipeline. Pipeline activity looks for the parameters cell and treats this cell as the default for the parameters passed in at execution time. The execution engine adds a new cell beneath the parameters cell with input parameters in order to overwrite the default values.
 
 ## Shortcut keys
 
-Similar to Jupyter Notebooks, [!INCLUDE [product-name](../includes/product-name.md)] notebooks have a modal user interface. The keyboard does different things depending on which mode the notebook cell is in. [!INCLUDE [product-name](../includes/product-name.md)] notebooks support the following two modes for a given code cell: command mode and edit mode.
+Similar to Jupyter Notebooks, Fabric notebooks have a modal user interface. The keyboard does different things depending on which mode the notebook cell is in. Fabric notebooks support the following two modes for a given code cell: Command mode and Edit mode.
 
-1. A cell is in command mode when there's no text cursor prompting you to type. When a cell is in Command mode, you can edit the notebook as a whole but not type into individual cells. Enter command mode by pressing ESC or using the mouse to select outside of a cell's editor area.
+1. A cell is in Command mode when there's no text cursor prompting you to type. When a cell is in Command mode, you can edit the notebook as a whole but not type into individual cells. Enter Command mode by pressing ESC or using the mouse to select outside of a cell's editor area.
 
-   :::image type="content" source="media\author-execute-notebook\cell-command-mode.png" alt-text="Screenshot of a cell in command mode." lightbox="media\author-execute-notebook\cell-command-mode.png":::
+   :::image type="content" source="media\author-execute-notebook\cell-command-mode.png" alt-text="Screenshot of a cell in Command mode." lightbox="media\author-execute-notebook\cell-command-mode.png":::
 
-1. Edit mode can be indicated from a text cursor that prompting you to type in the editor area. When a cell is in edit mode, you can type into the cell. Enter edit mode by pressing Enter or using the mouse to select on a cell's editor area.
+1. Edit mode can be indicated from a text cursor that prompting you to type in the editor area. When a cell is in Edit mode, you can type into the cell. Enter Edit mode by pressing Enter or using the mouse to select on a cell's editor area.
 
-   :::image type="content" source="media\author-execute-notebook\cell-edit-mode.png" alt-text="Screenshot of a cell in edit mode." lightbox="media\author-execute-notebook\cell-edit-mode.png":::
+   :::image type="content" source="media\author-execute-notebook\cell-edit-mode.png" alt-text="Screenshot of a cell in Edit mode." lightbox="media\author-execute-notebook\cell-edit-mode.png":::
 
 ### Shortcut keys under command mode
 
@@ -454,7 +454,7 @@ Similar to Jupyter Notebooks, [!INCLUDE [product-name](../includes/product-name.
 
 ### Shortcut keys under edit mode
 
-Using the following keystroke shortcuts, you can more easily navigate and run code in [!INCLUDE [product-name](../includes/product-name.md)] notebooks when in Edit mode.
+Using the following keystroke shortcuts, you can easily navigate and run code in Fabric notebooks when in Edit mode.
 
 | **Action** | **Notebook shortcuts** |
 |---|---|
@@ -474,7 +474,7 @@ Using the following keystroke shortcuts, you can more easily navigate and run co
 | Dedent | Ctrl + [ |
 | Switch to command mode | Esc |
 
-You can easily find all shortcut keys from notebook ribbon *View* -> *Keybindings*.
+You can easily find all shortcut keys from the notebook ribbon **View** -> **Keybindings**.
 
 ## Next steps
 
