@@ -187,6 +187,12 @@
         href: connector-sharepoint-online-list-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-sharepoint-online-list-dataflows.md
+    - name: Snowflake
+      items:
+      - name: Overview
+        href: connector-snowflake-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-snowflake-copy-activity.md
   - name: Data pipelines
     items:
     - name: Activities

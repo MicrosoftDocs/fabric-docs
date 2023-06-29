@@ -41,15 +41,15 @@ The following properties are **required**:
 - **Database**: The default database to use once connected. It should be an existing database for which the specified role has privileges.
 - **Use query**: You can choose either **Table** or **Query** as your use query. The following list describes the configuration of each setting.
     - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
-    - **Query**: Specify the SQL query to read data from Snowflake. If the names of the schema, table and columns contain lower case, quote the object identifier in query e.g. select * from "schema"."myTable".
+    - **Query**: Specify the SQL query to read data from Snowflake. If the names of the schema, table and columns contain lower case, quote the object identifier in query e.g. `select * from "schema"."myTable"`.
 
 Under **Advanced**, you can specify the following fields:
 
-- **Additional Snowflake copy options**: Specify additional Snowflake copy options which will be used in Snowflake COPY statement to load data.
+- **Additional Snowflake copy options**: Specify additional Snowflake copy options which will be used in Snowflake COPY statement to load data. Additional copy options are provided as a dictionary of key-value pairs. Examples: MAX_FILE_SIZE, OVERWRITE. For more information, see [Snowflake Copy Options](https://docs.snowflake.com/en/sql-reference/sql/copy-into-location#copy-options-copyoptions).
 
   :::image type="content" source="./media/connector-snowflake/copy-options-source.png" alt-text="Screenshot showing additional snowflake copy options for source.":::
 
-- **Additional Snowflake format options**: Specify additional Snowflake format options, which will be used in Snowflake COPY statement to load data.
+- **Additional Snowflake format options**: Specify additional Snowflake format options, which will be used in Snowflake COPY statement to load data. Additional file format options provided to the COPY command are provided as a dictionary of key-value pairs. Examples: DATE_FORMAT, TIME_FORMAT, TIMESTAMP_FORMAT. For more information, see [Snowflake Format Type Options](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table#format-type-options-formattypeoptions).
 
   :::image type="content" source="./media/connector-snowflake/format-options-source.png" alt-text="Screenshot showing additional snowflake format options for source.":::
 
@@ -156,7 +156,7 @@ The following tables contain more information about the copy activity in Snowfla
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.| **External** |Yes|/|
-|**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
+|**Connection** |Your connection to the destination data store.|< your connection > |Yes|connection|
 |**Database** |Your database that you use as destination.|< your database> |Yes|/|
 |**Table** | Your destination data table. |< name of your destination table>|Yes |• schema <br> • table|
 |**Pre-copy script**|A SQL query for the Copy activity to run before writing data into Snowflake in each run. Use this property to clean up the preloaded data.	|< your pre-copy script>|NO|preCopyScript|
