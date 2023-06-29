@@ -18,7 +18,7 @@ Sharing is a convenient way to provide users read access to your [!INCLUDE [fabr
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
-> You must be an admin or member in your workspace to share a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. Viewers do not have permission to share.
+> You must be an admin or member in your workspace to share a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Get started
 
@@ -41,7 +41,7 @@ Here's more detail about each of the permissions provided:
 - **If no additional permissions are selected** – The shared recipient by default receives "Read" permission, which only allows the recipient to *connect* to the [!INCLUDE [fabric-se](includes/fabric-se.md)], the equivalent of CONNECT permissions in SQL Server. The shared recipient will not be able to query any table or view or execute any function or stored procedure unless they are provided access to objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using T-SQL GRANT statement.
 
 > [!NOTE]
-> The **ReadData**, **ReadAll**, and **Build** roles are separate permissions that do not overlap.
+> **ReadData**, **ReadAll**, and **Build** are separate permissions that do not overlap.
 
 - **"Read all SQL endpoint data" is selected ("ReadData" permissions)**- The shared recipient can read all the database objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **ReadData** is the equivalent of *db_datareader* role in SQL Server. The shared recipient can read data from all tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you want to further restrict and provide granular access to some objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], you can do this using T-SQL GRANT/REVOKE/DENY statements.
 
@@ -53,7 +53,7 @@ When the shared recipient receives the email, they can select **Open** and navig
 
 :::image type="content" source="media\share-warehouse-manage-permissions\recipient-open-shared-warehouse.png" alt-text="A screenshot showing the shared user's email notification of a shared warehouse." lightbox="media\share-warehouse-manage-permissions\recipient-open-shared-warehouse.png":::
 
-Depending on the level of access the shared recipient has been granted, the sharing recipient is now able to connect to the [!INCLUDE [fabric-se](includes/fabric-se.md)], query the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], build reports, or read data through Spark.
+Depending on the level of access the shared recipient has been granted, the shared recipient is now able to connect to the [!INCLUDE [fabric-se](includes/fabric-se.md)], query the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], build reports, or read data through Spark.
 
 :::image type="content" source="media\share-warehouse-manage-permissions\share-see-what-already-exists.png" alt-text="A screenshot from the Fabric portal showing the 'See what already exists' page of the shared warehouse." lightbox="media\share-warehouse-manage-permissions\share-see-what-already-exists.png":::
 
