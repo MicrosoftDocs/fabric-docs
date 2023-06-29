@@ -9,7 +9,7 @@ ms.author: jessiwang
 ms.date: 06/28/2023
 ---
 
-# Azure OpenAI for Big Data
+# Azure OpenAI for big data
 
 The Azure OpenAI service can be used to solve a large number of natural language tasks through prompting the completion API. To make it easier to scale your prompting workflows from a few examples to large datasets of examples, we have integrated the Azure OpenAI service with the distributed machine learning library [SynapseML](https://www.microsoft.com/en-us/research/blog/synapseml-a-simple-multilingual-and-massively-parallel-machine-learning-library/). This integration makes it easy to use the [Apache Spark](https://spark.apache.org/) distributed computing framework to process millions of prompts with the OpenAI service. This tutorial shows how to apply large language models at a distributed scale using Azure Open AI and Azure Synapse Analytics. 
 
@@ -203,7 +203,7 @@ display(
 The example makes several requests to the service, one for each prompt. To complete multiple prompts in a single request, use batch mode. First, in the OpenAICompletion object, instead of setting the Prompt column to "Prompt", specify "batchPrompt" for the BatchPrompt column.
 To do so, create a dataframe with a list of prompts per row.
 
-**Note** that as of this writing there is currently a limit of 20 prompts in a single request, and a hard limit of 2048 "tokens", or approximately 1500 words.
+As of this writing there is currently a limit of 20 prompts in a single request, and a hard limit of 2048 "tokens", or approximately 1500 words.
 
 
 ```python
