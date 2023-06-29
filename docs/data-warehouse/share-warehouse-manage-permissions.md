@@ -1,5 +1,5 @@
 ---
-title: Share your warehouse and Manage permissions
+title: Share your warehouse and manage permissions
 description: Learn how to share your warehouse in Microsoft Fabric and manage its user permissions.
 author: jacindaeng
 ms.author: jacindaeng
@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.custom: build-2023
 ms.search.form: Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
-# How to share your warehouse and manage permissions
+# Share your warehouse and manage permissions
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
