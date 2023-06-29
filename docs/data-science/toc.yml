@@ -61,8 +61,8 @@ items:
     href: read-write-pandas.md
   - name: How to accelerate data prep with Data Wrangler
     href: data-wrangler.md
-  - name: Explore and validate data with SemPy and PBI connector
-    href: sempy-pbi-connector.md
+  - name: Read from Power BI and write data usable by Power BI
+    href: read-write-power-bi.md
 - name: Train machine learning models
   items:
   - name: Training Overview
@@ -179,52 +179,24 @@ items:
       href: r-use-tidyverse.md
     - name: R visualization
       href: r-visualization.md
-- name: SemPy
+- name: Semantic Link
   items:
-  - name: SemPy overview
-    href: sempy-overview.md
-  - name: Glossary
-    href: sempy-glossary.md
-  - name: Get started
+  - name: Overview
     items:
-    - name: Setup
-      href: sempy-setup.md
-    - name: Hello world
-      href: sempy-hello-world.md
-    - name: SemPy 101
-      href: sempy-101.md
-    - name: Semantic modeling
-      href: sempy-semantic-modeling.md
-    - name: Knowledge base
-      href: sempy-knowledge-base.md
-    - name: Data processing
-      href: sempy-data-processing.md
+    - name: What is Semantic Link?
+      href: semantic-link-overview.md
+  - name: Concepts
+    items:
+    - name: Power BI connectivity
+      href: semantic-link-power-bi.md
     - name: Semantic propagation
-      href: sempy-semantic-propagation.md
-    - name: Next steps
-      href: sempy-next-steps.md
-  - name: End-to-end Power BI example
-    href: e2e-powerbi-example.md
+      href: semantic-link-semantic-propagation.md
+    - name: Semantic functions
+      href: semantic-link-semantic-functions.md
   - name: How-to guides
-    items:   
-    - name: Autojoin entities
-      href: sempy-autojoin.md
-    - name: View built-in visualizations
-      href: sempy-built-in-visualizations.md
-    - name: Create column groups
-      href: sempy-column-groups.md
-    - name: Clean data with functional dependencies
-      href: sempy-data-cleaning.md
-    - name: Create geo location plots
-      href: sempy-geo-location.md
-    - name: Detect relationships between tables
-      href: sempy-relationship-detection.md
-    - name: Propagate dataframe semantics for unstack operation
-      href: sempy-unstack-semantic-propagation.md
-    - name: Knowledge base hydration from a Lakehouse
-      href: sempy-kb-hydration-lakehouse.md
-    - name: Power BI metrics integration
-      href: sempy-powerbi-metrics.md      
+    items:
+    - name: Read from Power BI and write data usable by Power BI
+      href: read-write-power-bi.md
 - name: SynapseML
   items:
   - name: Overview
@@ -261,3 +233,8 @@ items:
       href: cognitive-services-multivariate-anomaly-detection.md
     - name: Tune hyperparameters using SynapseML
       href: hyperparameter-tuning-fighting-breast-cancer.md
+- name: Reference
+  items:
+    - name: SemPy Python SDK
+      href: data-science-overview.md # python/api/semantic-link/overview-semantic-link
+      
