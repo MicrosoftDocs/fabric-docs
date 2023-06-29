@@ -31,7 +31,7 @@ This tutorial explains how a developer at the fictional Wide World Importers com
 
 1. Build and implement an end-to-end lakehouse for your organization:
 
-   * [Create a Fabric workspace](tutorial-lakehouse-get-started.md)
+   * [Create a Fabric workspace](tutorial-lakehouse-get-started.md).
    * [Create a lakehouse](tutorial-build-lakehouse.md).
    * [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform data](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse. You can also explore the OneLake, OneCopy of your data across lakehouse mode and SQL endpoint mode.
    * Connect to your lakehouse using TDS/SQL endpoint and [Create a Power BI report using DirectLake](tutorial-lakehouse-build-report.md) to analyze sales data across different dimensions.
@@ -81,7 +81,7 @@ The following image shows the source, destination and data transformation:
 
   :::image type="content" source="media\tutorial-lakehouse-introduction\incremental-data-load.png" alt-text="Diagram showing how changed data can be incrementally merged into initially ingested data in a lakehouse.":::
 
-* **Lakehouse**: In this tutorial, you create a lakehouse, ingest data into the files section of the lakehouse, and then create delta lake tables in the Tables section of the lakehouse. You can also find an optional tutorial, which covers creating the lakehouse with medallion architecture some recommendations.
+* **Lakehouse**: In this tutorial, you create a lakehouse, ingest data into the files section of the lakehouse, and then create delta lake tables in the Tables section of the lakehouse.
 
 * **Transform**: For data preparation and transformation, you see two different approaches. We demonstrate the use of Notebooks/Spark for users who prefer a code-first experience and use pipelines/dataflow for users who prefer a low-code or no-code experience.
 
