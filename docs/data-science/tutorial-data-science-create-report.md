@@ -45,13 +45,13 @@ In this tutorial, we use the Microsoft Fabric DirectLake feature, which enables 
 
    :::image type="content" source="media\tutorial-data-science-create-report\select-predictions-data.png" alt-text="Screenshot of the New Power BI dataset dialog box, showing where to select the correct data and select Continue." lightbox="media\tutorial-data-science-create-report\select-predictions-data.png":::
 
-1. Once the page for the new dataset loads, rename the dataset by clicking on the dropdown at top left corner of the dataset page and entering the more user-friendly name ***nyctaxi_predictions***. Click outside the drop-down to apply the name change.
+1. Once the page for the new dataset loads, rename the dataset by selecting the dropdown at top left corner of the dataset page and entering the more user-friendly name ***nyctaxi_predictions***. Click outside the drop-down to apply the name change.
 
    :::image type="content" source="media\tutorial-data-science-create-report\rename-dataset.png" alt-text="Screenshot of the dataset page, showing where to enter the new name." lightbox="media\tutorial-data-science-create-report\rename-dataset.png":::
 
-1. On the dataset pane in the section titled **Visualize this data**, select **Create from scratch** and then select **Start from Scratch** to open the Power BI report authoring page.
+1. On the tools at the top of the dataset page, select **New report** to open the Power BI report authoring page.
 
-   :::image type="content" source="media\tutorial-data-science-create-report\visualize-this-data.png" alt-text="Screenshot of the dataset pane, showing where to select Create from scratch and Start from scratch." lightbox="media\tutorial-data-science-create-report\visualize-this-data.png":::
+   :::image type="content" source="media\tutorial-data-science-create-report\visualize-this-data.png" alt-text="Screenshot of the dataset pane, showing how to start a new report." lightbox="media\tutorial-data-science-create-report\visualize-this-data.png":::
 
 You can now create various visuals to generate insights from the prediction dataset.
 
