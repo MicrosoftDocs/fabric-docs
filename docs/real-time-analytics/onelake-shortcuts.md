@@ -22,7 +22,7 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
 > Use OneLake shortcuts when you want to infrequently run queries on historical data without partitioning or indexing the data.
 > If you want to run queries frequently and accelerate performance, import the data directly into your KQL database.
 
-### [OneLake shortcut](#tab/onelake-shortcut)
+## [OneLake shortcut](#tab/onelake-shortcut)
 
 [!INCLUDE [onelake-shortcut-prerequisites](../includes/real-time-analytics/onelake-shortcut-prerequisites.md)]
 
@@ -44,18 +44,11 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
     :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted.":::
 
 1. Select **Close**.
-1. Refresh your database.
-
-    The shortcut appears under **Shortcuts** in the **Data tree**.
-
-    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
-
-The OneLake shortcut has been created. You can now query this data.
 
 > [!NOTE]
 > You can only connect to one subfolder or table per shortcut. To connect to more data, repeat these steps and create new shortcuts.
 
-### [Azure Data Lake Storage Gen2](#tab/adlsgen2)
+## [Azure Data Lake Storage Gen2](#tab/adlsgen2)
 
 [!INCLUDE [adlsgen2-prerequisites](../includes/real-time-analytics/adlsgen2-prerequisites.md)]
 
@@ -73,26 +66,15 @@ The OneLake shortcut has been created. You can now query this data.
       | **URL**| The connection string for your delta container. | `https://`*StorageAccountName*`.dfs.core.windows.net`|
       |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If none exist, create a new connection.| *Create new connection*. |
       |**Connection name** | The Azure Data Lake Storage Gen2 connection name.| A name for your connection.|
-      |**Authentication kind**| The authorization model. The supported models are: Account Key, SAS Token, OAuth and Service Principal. <br/> - SAS Token: the storage account must include at least read, write, and list permissions. <br/> - OAuth identity: the storage account must have Storage Blob Data Reader, Storage Blob Data Contributor, and Storage Blob Data Owner roles. <br/> - Service Principal: the storage account must have Storage Blob Data Reader, Storage Blob Data Contributor, Storage Blob Data Owner roles.| Dependent on the authorization model. Once you select an authentication kind, fill in the required credentials.|
+      |**Authentication kind**| The authorization model. The supported models are: Organizational account, Account Key, Shared Access Signature (SAS), and Service principal. <br/> - Organizational account: Must have Storage Blob Data Reader, Storage Blob Data Contributor, and Storage Blob Data Owner roles. <br/> - Account Key: no additional permissions required. <br/> - Shared Access Signature (SAS): Must include at least read and list permissions. <br/> - Service principal: Must have Storage Blob Data Reader, Storage Blob Data Contributor, Storage Blob Data Owner roles.| Dependent on the authorization model. Once you select an authentication kind, fill in the required credentials.|
 
 1. Select **Next**
-1. Enter a name for your shortcut.
-
-    Optionally, you can enter a sub path to select a specific folder in your S3 bucket.
-    > [!NOTE]
-    > Shortcut paths are case sensitive.
-
-    :::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/shortcut-settings.png" alt-text="Screenshot of the New shortcut window showing the shortcut settings."  lightbox="media/onelake-shortcuts/adls-gen2-shortcut/shortcut-settings.png":::
-
+1. Under **Shortcut Name**, enter a name for your shortcut.
+1. Under **Sub Path**, enter a sub path to select a specific folder in your storage account.
 1. Select **Create**.
+1. In the **Shortcut creation completed** window, select **close**.
 
-    The database refreshes automatically. The shortcut appears under **Shortcuts** in the **Data tree**.
-
-    :::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
-
-The OneLake shortcut has been created. You can now query this data.
-
-### [Amazon S3](#tab/amazon-s3)
+## [Amazon S3](#tab/amazon-s3)
 
 [!INCLUDE [amazons3-prerequisites](../includes/real-time-analytics/amazons3-prerequisites.md)]
 
@@ -124,13 +106,13 @@ The OneLake shortcut has been created. You can now query this data.
 
 1. Select **Create**.
 
-    The database refreshes automatically. The shortcut appears under **Shortcuts** in the **Data tree**.
+---
 
-    :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
+The database refreshes automatically. The shortcut appears under **Shortcuts** in the **Data tree**.
+
+    :::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
 
 The OneLake shortcut has been created. You can now query this data.
-
----
 
 ## Query data
 
@@ -144,5 +126,5 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 
 ## Next steps
 
-* [Query data in a KQL queryset](kusto-query-set.md)
-* [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context)
+- [Query data in a KQL queryset](kusto-query-set.md)
+- [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context)
