@@ -34,6 +34,14 @@ The integration with source control is on a workspace level. Developers can vers
 
 * Read about the best way to manage your [git branches](./manage-branches.md).
 
+## Privacy concerns
+
+Before you enable git integration, make sure you understand the following possible privacy concerns:
+
+* [Azure DevOps Services Data protection overview](/azure/devops/organizations/security/data-protection)
+* [Microsoft privacy statement](https://go.microsoft.com/fwlink/?LinkId=521839)
+* [Microsoft services agreement](https://www.microsoft.com/servicesagreement/default.aspx)
+
 ## Supported items
 
 The following items are currently supported:
