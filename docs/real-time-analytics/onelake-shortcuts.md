@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 06/25/2023
+ms.date: 07/02/2023
 ms.search.form: product-kusto
 ---
 
@@ -19,8 +19,8 @@ OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../
 In this article, you learn how to create a OneLake shortcut from internal and external sources to query your data in Real-Time Analytics. Select the desired tab that corresponds with the shortcut you'd like to create.
 
 > [!NOTE]
-> Use these shortcuts when you want to infrequently run queries on historical data without partitioning or indexing the data.
-> If you want to run queries frequently and accelerate performance, import the data directly.
+> Use OneLake shortcuts when you want to infrequently run queries on historical data without partitioning or indexing the data.
+> If you want to run queries frequently and accelerate performance, import the data directly into your KQL database.
 
 ### [OneLake shortcut](#tab/onelake-shortcut)
 
@@ -55,9 +55,42 @@ The OneLake shortcut has been created. You can now query this data.
 > [!NOTE]
 > You can only connect to one subfolder or table per shortcut. To connect to more data, repeat these steps and create new shortcuts.
 
-### [ADLS Gen2](#tab/adlsgen2)
+### [Azure Data Lake Storage Gen2](#tab/adlsgen2)
 
 [!INCLUDE [adlsgen2-prerequisites](../includes/real-time-analytics/adlsgen2-prerequisites.md)]
+
+1. Browse to an existing KQL database.
+1. Select **New** > **OneLake shortcut**.
+1. Under **External sources**, select **Azure Data Lake Storage Gen2**.
+    :::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Azure Data Lake Storage Gen2 is highlighted." lightbox="media/onelake-shortcuts/adls-gen2-shortcut/new-shortcut-expanded.png":::
+
+1. Enter the **Connection settings** according to the following table:
+
+    :::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials."  lightbox="media/onelake-shortcuts/adls-gen2-shortcut/shortcut-details.png":::
+
+      |Field | Description| Value|
+      |-----|-----| -----|
+      | **URL**| The connection string for your delta container. | `https://`*StorageAccountName*`.dfs.core.windows.net`|
+      |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If none exist, create a new connection.| *Create new connection*. |
+      |**Connection name** | The Azure Data Lake Storage Gen2 connection name.| A name for your connection.|
+      |**Authentication kind**| The authorization model. The supported models are: Account Key, SAS Token, OAuth and Service Principal. <br/> - SAS Token: the storage account must include at least read, write, and list permissions. <br/> - OAuth identity: the storage account must have Storage Blob Data Reader, Storage Blob Data Contributor, and Storage Blob Data Owner roles. <br/> - Service Principal: the storage account must have Storage Blob Data Reader, Storage Blob Data Contributor, Storage Blob Data Owner roles.| Dependent on the authorization model. Once you select an authentication kind, fill in the required credentials.|
+
+1. Select **Next**
+1. Enter a name for your shortcut.
+
+    Optionally, you can enter a sub path to select a specific folder in your S3 bucket.
+    > [!NOTE]
+    > Shortcut paths are case sensitive.
+
+    :::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/shortcut-settings.png" alt-text="Screenshot of the New shortcut window showing the shortcut settings."  lightbox="media/onelake-shortcuts/adls-gen2-shortcut/shortcut-settings.png":::
+
+1. Select **Create**.
+
+    The database refreshes automatically. The shortcut appears under **Shortcuts** in the **Data tree**.
+
+    :::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
+
+The OneLake shortcut has been created. You can now query this data.
 
 ### [Amazon S3](#tab/amazon-s3)
 
