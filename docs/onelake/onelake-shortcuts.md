@@ -116,7 +116,7 @@ ADLS shortcuts must point to the DFS endpoint for the storage account.
 Example: `https://accountname.dfs.core.windows.net/`
 
 > [!NOTE]
-> ADLS shortcuts don't support private endpoints.
+> Access to storage account endpoint can't be blocked by storage firewall or VNET.
 
 *Authorization:*
 
@@ -138,13 +138,17 @@ S3 shortcuts must point to the https endpoint for the S3 bucket.
 Example: `https://bucketname.s3.region.amazonaws.com/`
 
 > [!NOTE]
-> S3 shortcuts don't support private endpoints.
+> Access to storage account endpoint can't be blocked by storage firewall or VPC.
 
 *Authorization:*
 
 S3 shortcuts utilize a delegated authorization model.  In this model, the shortcut creator specifies a credential for the S3 shortcut and all access to that shortcut will be authorized using that credential.  The supported delegated credential is a Key and Secret for an IAM user.
 
-The IAM must have at least read only (Get, List) permissions on the bucket that the shortcut is pointing to.
+The IAM user must have the following permissions on the bucket that the shortcut is pointing to.
+
+- `S3:GetObject`
+- `S3:GetBucketLocation`
+- `S3:ListBucket`
 
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
@@ -208,7 +212,7 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 > [!NOTE]
 > The lineage view is scoped to a single workspace. Shortcuts to locations outside the selected workspace won't appear.
 
-## Known issues and limitations
+## Limitations and Considerations
 
 - The maximum number of shortcuts per Fabric item is 10,000.
 - The maximum number of shortcuts in a single OneLake path is 10.
