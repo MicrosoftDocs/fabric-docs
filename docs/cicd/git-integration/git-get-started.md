@@ -159,7 +159,7 @@ Only a workspace admin can disconnect a workspace from an Azure Repo. If you’r
 
 ## Switch branches
 
-To quickly switch between branches in one step without disconnecting and reconnecting, follow these steps:
+To quickly switch between branches without disconnecting and reconnecting, follow these steps:
 
 1. Make sure the current branch is synced and all changes are committed.
 1. From **Workspace settings**, select **Git integration**
