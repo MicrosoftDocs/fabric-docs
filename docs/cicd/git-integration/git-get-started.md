@@ -20,7 +20,7 @@ This article walks you through the following basic tasks in Microsoft Fabric’s
 
 It’s recommended to read the [overview of git integration](./intro-to-git-integration.md) before you begin.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+ [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 
@@ -151,11 +151,22 @@ After the update is completed successfully, the status of the items changes to *
 
 Only a workspace admin can disconnect a workspace from an Azure Repo. If you’re not an admin, ask your admin for help with disconnecting. If you’re an admin and want to disconnect your repo, follow these steps:
 
-1. Go to Workspace settings
+1. Go to **Workspace settings**
 1. Select **Git integration**
 1. Select **Disconnect workspace**
 
     :::image type="content" source="media/git-get-started/disconnect-workspace.png" alt-text="Screenshot of workspace settings screen with disconnect workspace option.":::
+
+## Switch branches
+
+To quickly switch between branches in one step without disconnecting and reconnecting, follow these steps:
+
+1. Make sure the current branch is synced and all changes are committed.
+1. From **Workspace settings**, select **Git integration**
+1. From the dropdown menu, specify the branch you want to connect to. This branch must contain the same directory as the current branch.
+1. Select **Connect and sync**.
+
+    :::image type="content" source="media/git-get-started/switch-branch-connect-sync.png" alt-text="Screenshot of workspace settings screen with switch branch option.":::
 
 ## Permissions
 
