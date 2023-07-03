@@ -86,11 +86,12 @@ Semantic functions are built for extensibility. You can define your own semantic
 This code example shows the definition of a semantic function `_is_captial` that returns `true` if the city is a capital of the country.
 
 ```Python
-from sempy.fabric import FabricDataFrame, PowerBICountryMatcher, PowerBICityMatcher
+from sempy.fabric import FabricDataFrame, FabricSeries
+from sempy.fabric.matcher import CountryMatcher, CityMatcher
 from sempy.functions import semantic_function, semantic_paramters
 
 @semantic_function("is_capital")
-@semantic_parameters(col_country=PowerBICountryMatcher, col_city=PowerBICityMatcher)
+@semantic_parameters(col_country=CountryMatcher, col_city=CityMatcher)
 def _is_captial(df: FabricDataFrame, col_country: str, col_city: str) -> FabricSeries:
     """Returns true if the city is a capital of the country"""
     capitals = {
@@ -105,7 +106,7 @@ def _is_captial(df: FabricDataFrame, col_country: str, col_city: str) -> FabricS
 
 The following points provide a breakdown of the code snippet:
 
-- The `col_country` and `col_city` parameters are annotated with `PowerBICountryMatcher` and `PowerBICityMatcher`, respectively. This annotation allows the semantic function to be automatically discovered when working with a FabricDataFrame that has the corresponding metadata.
+- The `col_country` and `col_city` parameters are annotated with `CountryMatcher` and `CityMatcher`, respectively. This annotation allows the semantic function to be automatically discovered when working with a FabricDataFrame that has the corresponding metadata.
 - Calling the function also supplies standard data types such as `str`, `int`, `float`, and `datetime` to define required input columns.
 - The type annotation of the first parameter (`df`) shows that the function is applicable to a FabricDataFrame, rather than a FabricSeries.
 
