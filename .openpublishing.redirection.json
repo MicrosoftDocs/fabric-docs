@@ -24,6 +24,11 @@
           "source_path_from_root": "/docs/admin/admin-switch.md",
           "redirect_url": "/fabric/admin/fabric-switch",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issues.md",
+          "redirect_url": "/fabric/data-factory/data-factory-limitations",
+          "redirect_document_id": false
         }
     ]
 }
