@@ -59,6 +59,7 @@ A typical workflow for a developer using Fabric git integration may look like th
 ## Considerations and limitations
 
 * Currently, only [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) is supported.
+* Azure DevOps **on-prem** is not supported.
 
 ## Next steps
 
