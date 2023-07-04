@@ -26,7 +26,7 @@ Then, each developer can choose the isolated environment in which to work.
 
 The workflow for developers using a client tool like Power BI Desktop should look something like this:
 
-1. [Clone](/azure/devops/repos/git/clone?) the repo into a local machine. (You only need to so this step once)
+1. [Clone](/azure/devops/repos/git/clone?) the repo into a local machine. (You only need to do this step once)
 1. Use the local copy of the *PBIProj* to open the project in Power BI Desktop.
 1. Make changes and save the updated files locally. [Commit](/azure/devops/repos/git/gitquickstart#commit-your-work) to the local repo.
 1. When ready, [push](/azure/devops/repos/git/pushing) the branch and commits to the remote repo.

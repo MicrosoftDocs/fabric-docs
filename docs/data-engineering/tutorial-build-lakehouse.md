@@ -11,14 +11,14 @@ ms.date: 5/23/2023
 
 # Lakehouse tutorial: Create a lakehouse, ingest sample data, and build a report
 
-In this tutorial, you'll build a lakehouse, ingest sample data into the delta table, apply transformation where required, and then create reports.
+In this tutorial, you build a lakehouse, ingest sample data into the delta table, apply transformation where required, and then create reports.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
 * [Create a Fabric workspace](tutorial-lakehouse-get-started.md)
-* In this article, you'll follow steps to ingest a CSV file, which requires you to have OneDrive configured. If you don't have OneDrive configured, sign up for the Microsoft 365 free trial: [Free Trial - Try Microsoft 365 for a month](https://www.microsoft.com/microsoft-365/try).
+* In this article, you follow steps to ingest a CSV file, which requires you to have OneDrive configured. If you don't have OneDrive configured, sign up for the Microsoft 365 free trial: [Free Trial - Try Microsoft 365 for a month](https://www.microsoft.com/microsoft-365/try).
 
 ## Create a lakehouse
 
@@ -28,7 +28,7 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 
 1. From the experience switcher located at the bottom left, select **Data Engineering**.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\workload-switch-data-engineering.png" alt-text="Screeenshot showing where to select the experience switcher and Data Engineering.":::
+   :::image type="content" source="media\tutorial-build-lakehouse\workload-switch-data-engineering.png" alt-text="Screenshot showing where to select the experience switcher and Data Engineering.":::
 
 1. In the **Data Engineering** tab, select **Lakehouse** to create a lakehouse.
 
@@ -84,13 +84,13 @@ In this tutorial, you'll build a lakehouse, ingest sample data into the delta ta
 
    :::image type="content" source="media\tutorial-build-lakehouse\dataflow-refresh-now.png" alt-text="Screenshot showing where to find the Refresh now icon.":::
 
-1. Once the dataflow is refreshed, go to the lakehouse to view the **dimension_customer** delta table. Select it to preview its data. You can also use the SQL endpoint of the lakehouse to query the data with SQL statements in the warehouse mode. Select **SQL endpoint** under **Lake mode** at the top right of the screen.
+1. Once the dataflow is refreshed, select your new lakehouse in the left navigation panel to view the **dimension_customer** delta table. Select the table to preview its data. You can also use the SQL endpoint of the lakehouse to query the data with SQL statements. Select **SQL endpoint** from the **Lakehouse** drop-down menu at the top right of the screen.
 
    :::image type="content" source="media\tutorial-build-lakehouse\lakehouse-delta-table.png" alt-text="Screenshot of the delta table, showing where to select SQL endpoint." lightbox="media\tutorial-build-lakehouse\lakehouse-delta-table.png":::
 
-1. In warehouse mode, select the **dimension_customer** table to preview its data or select **New SQL query** to write your SQL statements.
+1. Select the **dimension_customer** table to preview its data or select **New SQL query** to write your SQL statements.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\warehouse-mode-new-sql.png" alt-text="Screenshot of the warehouse mode screen, showing where to select New SQL query." lightbox="media\tutorial-build-lakehouse\warehouse-mode-new-sql.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\warehouse-mode-new-sql.png" alt-text="Screenshot of the SQL endpoint screen, showing where to select New SQL query." lightbox="media\tutorial-build-lakehouse\warehouse-mode-new-sql.png":::
 
 1. The following sample query aggregates the row count based on the *BuyingGroup* column of the *dimension_customer* table. SQL query files are saved automatically for future reference, and you can rename or delete these files based on your need.
 

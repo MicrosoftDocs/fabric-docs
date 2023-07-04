@@ -4,7 +4,7 @@ description: A known issue is posted where 'Get Tenant Settings' API returns def
 author: mihart
 ms.author: mihart
 ms.topic: troubleshooting
-ms.date: 06/08/2023
+ms.date: 06/28/2023
 ms.custom: known-issue-421
 ---
 
@@ -14,7 +14,7 @@ ms.custom: known-issue-421
 
 **APPLIES TO:** ✔️ Fabric
 
-**Status:** Open
+**Status:** Fixed: June 28, 2023
 
 **Product Experience:** Administration & Management
 

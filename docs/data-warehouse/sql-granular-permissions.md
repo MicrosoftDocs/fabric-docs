@@ -30,7 +30,7 @@ For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](incl
 
 ### Limitations
 
-- CREATE USER cannot be explicitly executed currently. When GRANT or DENY is executed, the user is created automatically. The user will not be able to connect until sufficient workspace level rights are given. For more information on individual item permissions in workspaces, see [Manage item permissions](item-permissions.md).
+- CREATE USER cannot be explicitly executed currently. When GRANT or DENY is executed, the user is created automatically. The user will not be able to connect until sufficient workspace level rights are given. 
 - Row-level security is currently not supported.
 - Dynamic data masking is currently not supported.
 

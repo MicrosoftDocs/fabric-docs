@@ -34,6 +34,14 @@ The integration with source control is on a workspace level. Developers can vers
 
 * Read about the best way to manage your [git branches](./manage-branches.md).
 
+## Privacy concerns
+
+Before you enable git integration, make sure you understand the following possible privacy concerns:
+
+* [Azure DevOps Services Data protection overview](/azure/devops/organizations/security/data-protection)
+* [Microsoft privacy statement](https://go.microsoft.com/fwlink/?LinkId=521839)
+<!--- * [Microsoft services agreement](https://www.microsoft.com/servicesagreement/default.aspx) -->
+
 ## Supported items
 
 The following items are currently supported:
@@ -59,6 +67,7 @@ A typical workflow for a developer using Fabric git integration may look like th
 ## Considerations and limitations
 
 * Currently, only [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) is supported.
+* Azure DevOps **on-prem** is not supported.
 
 ## Next steps
 

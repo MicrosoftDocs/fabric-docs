@@ -53,7 +53,7 @@ To create and Amazon S3 Shortcut:
 
    1. Enter a **Connection name**.
 
-   1. Provide the **Username**(Key) **Password**(Secret) for your IAM user.
+   1. Provide the **Access Key** and  **Secret** for your IAM user.
 
    1. Select **Next**.
 

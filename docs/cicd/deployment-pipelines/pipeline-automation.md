@@ -4,7 +4,7 @@ description: Learn how to automate your deployment pipeline, the Microsoft Fabri
 author: data-goblin
 ms.author: v-kurtbuhler
 ms.topic: conceptual
-ms.date: 06/03/2023
+ms.date: 06/27/2023
 ---
 
 # Automate your deployment pipeline by using APIs and Azure DevOps
@@ -30,6 +30,9 @@ You can use the [deployment pipelines Fabric REST APIs](/rest/api/power-bi/pipel
 * Cascade depending on pipeline deployments. If you have content that's connected across pipelines, you can make sure some pipelines are deployed before others.
 
 ## Deployment pipelines API functions
+
+> [!NOTE]
+> The deployment pipelines APIs currently only work for Power BI items.
 
 The [deployment pipelines Fabric REST APIs](/rest/api/power-bi/pipelines) allow you to perform the following functions:
 
@@ -59,7 +62,7 @@ Here's a list of the different deployment types the APIs support:
 
 Before you use the deployment pipelines APIs, make sure you have the following:
 
-* The [*service principal*](/power-bi/developer/embedded/embed-service-principal), or the *user* that will call the APIs, needs [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Azure AD application](/azure/active-directory/develop/active-directory-how-applications-are-added).
+* The [*service principal*](/power-bi/developer/embedded/embed-service-principal), or the *user* that calls the APIs needs [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Azure AD application](/azure/active-directory/develop/active-directory-how-applications-are-added).
 
 * If you're going to use PowerShell scripts, install the Power BI PowerShell cmdlets [Install-Module MicrosoftPowerBIMgmt](/powershell/power-bi/overview).
 
@@ -120,9 +123,9 @@ You can also download the entire [`PowerBI-Developer-Samples`](https://github.co
 
 ### PowerShell example
 
-This section describes an example PowerShell script that deploys a dataset, report and dashboard, from the development stage to the test stage. The script then checks whether the deployment was successful.
+This section describes an example PowerShell script that deploys a dataset, report, and dashboard, from the development stage to the test stage. The script then checks whether the deployment was successful.
 
-To run a PowerShell script that performs a deployment, you'll need the following components. You can add any of these parts into [tasks](/azure/devops/pipelines/tasks/utility/powershell) in your Azure pipeline stages.
+To run a PowerShell script that performs a deployment, you need the following components. You can add any of these parts into [tasks](/azure/devops/pipelines/tasks/utility/powershell) in your Azure pipeline stages.
 
 1. **Sign in** - Before you can deploy your content, you need to sign in to Fabric using a *service principal* or a *user*. Use the [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount) command to sign in.
 
@@ -180,6 +183,8 @@ To run a PowerShell script that performs a deployment, you'll need the following
 * Deploying dataflows by using a *service principal* isn't supported.
 
 * The maximum number of items that can be deployed in a single deployment is 300.
+
+* The deployment pipelines APIs currently only support Power BI items.
 
 ## Next steps
 

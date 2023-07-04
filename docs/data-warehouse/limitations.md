@@ -4,7 +4,7 @@ description: This article contains a list of current limitations and known issue
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 06/20/2023
+ms.date: 07/04/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
@@ -58,7 +58,7 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 - Some columns that exist in the Spark Delta tables might not be available in the tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. Refer to the [Data types](data-types.md) for a full list of supported data types. 
 
-- Adding a relationship between tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)] currently blocks any further schema changes. If you don't see the Delta Lake columns with the types that should be supported in [!INCLUDE [fabric-se](includes/fabric-se.md)], check if there is a foreign key relationship that might prevent updates on the table. 
+- If you add a foreign key constraint between tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you won't be able to make any further schema changes (for example, adding the new columns). If you don't see the Delta Lake columns with the types that should be supported in [!INCLUDE [fabric-se](includes/fabric-se.md)], check if there is a foreign key constraint that might prevent updates on the table. 
 
 ## Next steps
 
