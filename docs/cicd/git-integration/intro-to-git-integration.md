@@ -40,7 +40,6 @@ Before you enable git integration, make sure you understand the following possib
 
 * [Azure DevOps Services Data protection overview](/azure/devops/organizations/security/data-protection)
 * [Microsoft privacy statement](https://go.microsoft.com/fwlink/?LinkId=521839)
-* [Microsoft services agreement](https://www.microsoft.com/servicesagreement/default.aspx)
 
 ## Supported items
 
