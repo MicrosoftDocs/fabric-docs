@@ -62,7 +62,7 @@ Here's a list of the different deployment types the APIs support:
 
 Before you use the deployment pipelines APIs, make sure you have the following:
 
-* The [*service principal*](/power-bi/developer/embedded/embed-service-principal), or the *user* that will call the APIs, needs [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Azure AD application](/azure/active-directory/develop/active-directory-how-applications-are-added).
+* The [*service principal*](/power-bi/developer/embedded/embed-service-principal), or the *user* that calls the APIs needs [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Azure AD application](/azure/active-directory/develop/active-directory-how-applications-are-added).
 
 * If you're going to use PowerShell scripts, install the Power BI PowerShell cmdlets [Install-Module MicrosoftPowerBIMgmt](/powershell/power-bi/overview).
 
@@ -123,9 +123,9 @@ You can also download the entire [`PowerBI-Developer-Samples`](https://github.co
 
 ### PowerShell example
 
-This section describes an example PowerShell script that deploys a dataset, report and dashboard, from the development stage to the test stage. The script then checks whether the deployment was successful.
+This section describes an example PowerShell script that deploys a dataset, report, and dashboard, from the development stage to the test stage. The script then checks whether the deployment was successful.
 
-To run a PowerShell script that performs a deployment, you'll need the following components. You can add any of these parts into [tasks](/azure/devops/pipelines/tasks/utility/powershell) in your Azure pipeline stages.
+To run a PowerShell script that performs a deployment, you need the following components. You can add any of these parts into [tasks](/azure/devops/pipelines/tasks/utility/powershell) in your Azure pipeline stages.
 
 1. **Sign in** - Before you can deploy your content, you need to sign in to Fabric using a *service principal* or a *user*. Use the [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount) command to sign in.
 
