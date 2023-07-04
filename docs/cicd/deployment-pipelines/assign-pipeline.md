@@ -9,7 +9,7 @@ ms.date: 05/24/2023
 ms.search.form: Deployment pipelines operations
 ---
 
-# Assigning a workspace to a Microsoft Fabric Application lifecycle management (ALM) deployment pipeline
+# Assign a workspace to a Microsoft Fabric deployment pipeline
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
