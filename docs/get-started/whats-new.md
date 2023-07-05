@@ -41,10 +41,10 @@ This section includes topics and announcements for those new to Microsoft Fabric
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
-|June 2023|**Get skilled on Microsoft Fabric – the AI-powered analytics platform**|[Who is Fabric for? How can I get skilled?](https://blog.fabric.microsoft.com/en-us/blog/get-skilled-on-microsoft-fabric-the-ai-powered-analytics-platform) This blog post answers these questions about Microsoft Fabric, a comprehensive data analytics solution by unifying many workloads on a single platform.|
-|June 2023|**Introducing the end-to-end scenarios in Microsoft Fabric**|In this blog we will explore [four end-to-end scenarios that are typical paths our customers take to extract value and insights from their data using Microsoft Fabric](https://blog.fabric.microsoft.com/en-us/blog/introducing-the-end-to-end-scenarios-in-microsoft-fabric).|
+|June 2023|**Get skilled on Microsoft Fabric – the AI-powered analytics platform**|[Who is Fabric for? How can I get skilled?](https://blog.fabric.microsoft.com/blog/get-skilled-on-microsoft-fabric-the-ai-powered-analytics-platform) This blog post answers these questions about Microsoft Fabric, a comprehensive data analytics solution by unifying many workloads on a single platform.|
+|June 2023|**Introducing the end-to-end scenarios in Microsoft Fabric**|In this blog we will explore [four end-to-end scenarios that are typical paths our customers take to extract value and insights from their data using Microsoft Fabric](https://blog.fabric.microsoft.com/blog/introducing-the-end-to-end-scenarios-in-microsoft-fabric).|
 |May 2023|**Get Started with Microsoft Fabric – All in-one place for all your Analytical needs**|A technical overview and introduction to everything from [data movement to data science, real-time analytics, and business intelligence in Microsoft Fabric](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/get-started-with-microsoft-fabric-all-in-one-place-for-all-your/ba-p/3830387).|
-|May 2023|**Microsoft OneLake in Fabric, the OneDrive for data**|Microsoft OneLake brings the [first multi-cloud SaaS data lake for the entire organization](https://blog.fabric.microsoft.com/en-us/blog/microsoft-onelake-in-fabric-the-onedrive-for-data). |
+|May 2023|**Microsoft OneLake in Fabric, the OneDrive for data**|Microsoft OneLake brings the [first multi-cloud SaaS data lake for the entire organization](https://blog.fabric.microsoft.com/blog/microsoft-onelake-in-fabric-the-onedrive-for-data). |
 
 ## Community
 
@@ -53,7 +53,7 @@ This section summarizes new Microsoft Fabric community opportunities for prospec
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
 |June 2023|**Microsoft Fabric MVP Corner – June 2023**|The Microsoft Fabric team presents you with [the Fabric MVP Corner blog series](https://blog.fabric.microsoft.com/blog/microsoft-fabric-mvp-corner-june-2023/) to highlight selected content related to Fabric and created by MVPs. |
-|May 2023|**Learn about Microsoft Fabric from MVPs**|Prior to our official announcement of Microsoft Fabric at Build 2023, MVPs had the opportunity to familiarize themselves with the product. For several months, they have been actively testing Fabric and gaining valuable insights. Now, their enthusiasm for the product is evident as they eagerly [share their knowledge and thoughts about Microsoft Fabric with the community](https://blog.fabric.microsoft.com/en-us/blog/learn-about-microsoft-fabric-from-mvps). |
+|May 2023|**Learn about Microsoft Fabric from MVPs**|Prior to our official announcement of Microsoft Fabric at Build 2023, MVPs had the opportunity to familiarize themselves with the product. For several months, they have been actively testing Fabric and gaining valuable insights. Now, their enthusiasm for the product is evident as they eagerly [share their knowledge and thoughts about Microsoft Fabric with the community](https://blog.fabric.microsoft.com/blog/learn-about-microsoft-fabric-from-mvps). |
 
 
 ## Samples and guidance
@@ -62,7 +62,7 @@ This section summarizes new guidance and sample project resources for Microsoft 
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
-|June 2023|**Using Azure Databricks with Microsoft Fabric and OneLake**|[How does Azure Databricks work with Microsoft Fabric?](https://blog.fabric.microsoft.com/en-us/blog/using-azure-databricks-with-microsoft-fabric-and-onelake) This blog post will answer that question and more details on how the two systems can work together.|
+|June 2023|**Using Azure Databricks with Microsoft Fabric and OneLake**|[How does Azure Databricks work with Microsoft Fabric?](https://blog.fabric.microsoft.com/blog/using-azure-databricks-with-microsoft-fabric-and-onelake) This blog post will answer that question and more details on how the two systems can work together.|
 
 
 ## Fabric Data Activator
@@ -71,7 +71,7 @@ This section summarizes recent new features and capabilities of Data Activator i
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
-|May 2023|**Driving actions from your data with Data Activator**| [Data Activator is a new no-code Microsoft Fabric experience](https://blog.fabric.microsoft.com/en-us/blog/driving-actions-from-your-data-with-data-activator?ft=05-2023:date) that empowers the business analyst to drive actions automatically from your data. To learn more, sign up for the [Data Activator limited private preview](https://aka.ms/dataActivatorPreview). |
+|May 2023|**Driving actions from your data with Data Activator**| [Data Activator is a new no-code Microsoft Fabric experience](https://blog.fabric.microsoft.com/blog/driving-actions-from-your-data-with-data-activator) that empowers the business analyst to drive actions automatically from your data. To learn more, sign up for the [Data Activator limited private preview](https://aka.ms/dataActivatorPreview). |
 
 ## Fabric Data Engineering
 
@@ -79,9 +79,9 @@ This section summarizes recent new features and capabilities of data engineering
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
-|June 2023|**Virtualize your existing data into OneLake with shortcuts** | Connect data silos without moving or copying data with OneLake, which allows you to create [special folders called shortcuts that point to other storage locations](https://blog.fabric.microsoft.com/en-us/blog/virtualize-your-existing-data-into-onelake-with-shortcuts).|
-|May 2023 |**Introducing Data Factory in Microsoft Fabric** | Data Factory enables you to [develop enterprise-scale data integration solutions with next-generation dataflows and data pipelines](https://blog.fabric.microsoft.com/en-us/blog/introducing-data-factory-in-microsoft-fabric). | 
-|May 2023|**Introducing Data Engineering in Microsoft Fabric**|With Synapse Data Engineering, one of the core experiences of Microsoft Fabric, data engineers will feel right at home, able to [leverage the power of Apache Spark to transform their data at scale and build out a robust lakehouse architecture](https://blog.fabric.microsoft.com/en-us/blog/introducing-synapse-data-engineering-in-microsoft-fabric).|
+|June 2023|**Virtualize your existing data into OneLake with shortcuts** | Connect data silos without moving or copying data with OneLake, which allows you to create [special folders called shortcuts that point to other storage locations](https://blog.fabric.microsoft.com/blog/virtualize-your-existing-data-into-onelake-with-shortcuts).|
+|May 2023 |**Introducing Data Factory in Microsoft Fabric** | Data Factory enables you to [develop enterprise-scale data integration solutions with next-generation dataflows and data pipelines](https://blog.fabric.microsoft.com/blog/introducing-data-factory-in-microsoft-fabric). | 
+|May 2023|**Introducing Data Engineering in Microsoft Fabric**|With Synapse Data Engineering, one of the core experiences of Microsoft Fabric, data engineers will feel right at home, able to [leverage the power of Apache Spark to transform their data at scale and build out a robust lakehouse architecture](https://blog.fabric.microsoft.com/blog/introducing-synapse-data-engineering-in-microsoft-fabric).|
 
 ## Fabric Data Science
 
@@ -89,7 +89,7 @@ This section summarizes recent improvements and features for the Data Science ex
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
-|May 2023 |**Introducing Synapse Data Science in Microsoft Fabric**|With data science in Microsoft Fabric, you can [utilize the power of machine learning features to seamlessly enrich data as part of your data and analytics workflows](https://blog.fabric.microsoft.com/en-us/blog/introducing-synapse-data-science-in-microsoft-fabric).|
+|May 2023 |**Introducing Synapse Data Science in Microsoft Fabric**|With data science in Microsoft Fabric, you can [utilize the power of machine learning features to seamlessly enrich data as part of your data and analytics workflows](https://blog.fabric.microsoft.com/blog/introducing-synapse-data-science-in-microsoft-fabric).|
 
 ## Fabric Data Warehousing
 
@@ -98,7 +98,7 @@ This section summarizes recent improvements and features for Data Warehousing in
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
 |July 2023|**Table clone**|A [zero-copy clone](https://blog.fabric.microsoft.com/blog/table-clone-in-warehouse-within-microsoft-fabric) creates a replica of the table by copying the metadata, while referencing the same data files in One Lake. This avoids the need to store multiple copies of data, thereby saving on storage costs. For more information, see [Clone table](../data-warehouse/clone-table.md).|
-|May 2023|**Introducing Synapse Data Warehouse in Microsoft Fabric**|[Synapse Data Warehouse is the next generation of data warehousing in Microsoft Fabric](https://blog.fabric.microsoft.com/en-us/blog/introducing-synapse-data-warehouse-in-microsoft-fabric) that is the first transactional data warehouse to natively support an open data format, Delta-Parquet.|
+|May 2023|**Introducing Synapse Data Warehouse in Microsoft Fabric**|[Synapse Data Warehouse is the next generation of data warehousing in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/introducing-synapse-data-warehouse-in-microsoft-fabric) that is the first transactional data warehouse to natively support an open data format, Delta-Parquet.|
 
 #### Data Warehousing samples and guidance
 
@@ -119,11 +119,11 @@ This section summarizes recent improvements and features for real-time analytics
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
-|June 2023|**From raw data to insights: How to ingest data from Azure Event Hubs into KQL database for powerful analytics**| Learn about the [integration between Azure Event Hubs and your KQL database](https://blog.fabric.microsoft.com/en-us/blog/from-raw-data-to-insights-how-to-ingest-data-from-azure-event-hubs-into-kql-database-for-powerful-analytics?ft=06-2023:date). |
-|June 2023|**From raw data to insights: How to ingest data from Eventstream into a KQL database for powerful analytics**| Learn about the [integration between Eventstream and a KQL database](https://blog.fabric.microsoft.com/en-us/blog/from-raw-data-to-insights-how-to-ingest-data-from-eventstream-into-a-kql-database-for-powerful-analytics), both of which are a part of the Real-Time Analytics experience.|
+|June 2023|**From raw data to insights: How to ingest data from Azure Event Hubs into KQL database for powerful analytics**| Learn about the [integration between Azure Event Hubs and your KQL database](https://blog.fabric.microsoft.com/blog/from-raw-data-to-insights-how-to-ingest-data-from-azure-event-hubs-into-kql-database-for-powerful-analytics). |
+|June 2023|**From raw data to insights: How to ingest data from Eventstream into a KQL database for powerful analytics**| Learn about the [integration between Eventstream and a KQL database](https://blog.fabric.microsoft.com/blog/from-raw-data-to-insights-how-to-ingest-data-from-eventstream-into-a-kql-database-for-powerful-analytics), both of which are a part of the Real-Time Analytics experience.|
 |June 2023|**Discovering the best ways to get data into a KQL database**|This blog covers different options for [bringing data into a KQL database](https://blog.fabric.microsoft.com/blog/synapse-real-time-analytics-discovering-the-best-ways-to-get-data-into-a-kql-database).|
-|June 2023|**Get started with exploring your data with KQL – a purpose-built tool for petabyte scale data analytics**|In this blog, we'll focus on the [different ways of querying data in Synapse Real-Time Analytics](https://blog.fabric.microsoft.com/en-us/blog/get-started-with-exploring-your-data-with-kql-a-purpose-built-tool-for-petabyte-scale-data-analytics). |
-|May 2023|**Ingest, transform, and route real-time events with Microsoft Fabric event streams**|You can now [ingest, capture, transform and route real-time events to various destinations in Microsoft Fabric](https://blog.fabric.microsoft.com/en-us/blog/ingest-transform-and-route-real-time-events-with-microsoft-fabric-event-streams) with a no-code experience using Microsoft Fabric event streams. |
+|June 2023|**Get started with exploring your data with KQL – a purpose-built tool for petabyte scale data analytics**|In this blog, we'll focus on the [different ways of querying data in Synapse Real-Time Analytics](https://blog.fabric.microsoft.com/blog/get-started-with-exploring-your-data-with-kql-a-purpose-built-tool-for-petabyte-scale-data-analytics). |
+|May 2023|**Ingest, transform, and route real-time events with Microsoft Fabric event streams**|You can now [ingest, capture, transform and route real-time events to various destinations in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/ingest-transform-and-route-real-time-events-with-microsoft-fabric-event-streams) with a no-code experience using Microsoft Fabric event streams. |
 
 
 ## Microsoft Fabric and Microsoft 365
@@ -133,7 +133,7 @@ This section includes articles and announcements about Microsoft Fabric integrat
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
 |May 2023|**Step-by-Step Guide to Enable Microsoft Fabric for Microsoft 365 Developer Account**|This blog reviews how to enable Microsoft Fabric with a [Microsoft 365 Developer Account and the Fabric Free Trial](https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-guide-to-enable-microsoft-fabric-for-microsoft-365/ba-p/3831115).|
-|May 2023|**Microsoft 365 Data + Microsoft Fabric better together**|[Microsoft 365 Data Integration for Microsoft Fabric](https://blog.fabric.microsoft.com/en-us/blog/microsoft-365-data-microsoft-fabric-better-together?ft=05-2023:date) is a feature of the new Microsoft Fabric solution, which enables you to manage your Microsoft 365 alongside your other data sources in one place with a suite of analytical experiences.|
+|May 2023|**Microsoft 365 Data + Microsoft Fabric better together**|[Microsoft 365 Data Integration for Microsoft Fabric](https://blog.fabric.microsoft.com/blog/microsoft-365-data-microsoft-fabric-better-together) is a feature of the new Microsoft Fabric solution, which enables you to manage your Microsoft 365 alongside your other data sources in one place with a suite of analytical experiences.|
 
 
 ## Continuous Integration/Continuous Delivery (CICD)
@@ -142,7 +142,7 @@ This section includes guidance and documentation updates on development process,
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
-|May 2023|**Introducing git integration in Microsoft Fabric for seamless source control management**|While developing in Fabric, developers can backup and version their work, roll back as needed, collaborate or work in isolation [using git branches](https://blog.fabric.microsoft.com/en-us/blog/introducing-git-integration-in-microsoft-fabric-for-seamless-source-control-management). Read more about [connecting the workspace to an Azure repo](../cicd/git-integration/git-get-started.md?tabs=commit-to-git).|
+|May 2023|**Introducing git integration in Microsoft Fabric for seamless source control management**|While developing in Fabric, developers can backup and version their work, roll back as needed, collaborate or work in isolation [using git branches](https://blog.fabric.microsoft.com/blog/introducing-git-integration-in-microsoft-fabric-for-seamless-source-control-management). Read more about [connecting the workspace to an Azure repo](../cicd/git-integration/git-get-started.md?tabs=commit-to-git).|
 
 ## Migration
 
@@ -150,7 +150,7 @@ This section includes guidance and documentation updates on migration to Microso
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
-|June 2023|**Microsoft Fabric changing the game: Exporting data and building the Lakehouse**|This blog post covers the scenario to [export data from Azure SQL Database into OneLake](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-changing-the-game-exporting-data-and-building-the-lakehouse?ft=06-2023:date).|
+|June 2023|**Microsoft Fabric changing the game: Exporting data and building the Lakehouse**|This blog post covers the scenario to [export data from Azure SQL Database into OneLake](https://blog.fabric.microsoft.com/blog/microsoft-fabric-changing-the-game-exporting-data-and-building-the-lakehouse).|
 |June 2023|**Copy data to Azure SQL at scale with Microsoft Fabric**| Did you know that you can use Microsoft Fabric to [copy data at scale from supported data sources to Azure SQL Database or Azure SQL Managed Instance within minutes?](https://techcommunity.microsoft.com/t5/modernization-best-practices-and/copy-data-between-azure-data-services-at-scale-with-microsoft/ba-p/3851352)|
 |June 2023|**Bring your Mainframe DB2 z/OS data to Microsoft Fabric**|In this blog, we review the convenience and ease of [opening DB2 for z/OS data in Microsoft Fabric](https://techcommunity.microsoft.com/t5/modernization-best-practices-and/bring-your-mainframe-db2-z-os-data-to-microsoft-fabric/ba-p/3850471).|
 
@@ -160,7 +160,7 @@ This section includes guidance and documentation updates on monitoring your Micr
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
-|May 2023|**Capacity metrics in Microsoft Fabric**|Learn more about the [universal compute capacities of the Fabric Intelligent data foundation and Fabric's capacity metrics governance features](https://blog.fabric.microsoft.com/en-us/blog/capacity-metrics-in-microsoft-fabric) that admins can use to [monitor usage](https://appsource.microsoft.com/en-us/product/power-bi/pbi_pcmm.microsoftpremiumfabricpreviewreport?exp=ubp8) and make data-driven scale-up decisions to unlock the full potential of your organization's data.|
+|May 2023|**Capacity metrics in Microsoft Fabric**|Learn more about the [universal compute capacities of the Fabric Intelligent data foundation and Fabric's capacity metrics governance features](https://blog.fabric.microsoft.com/blog/capacity-metrics-in-microsoft-fabric) that admins can use to [monitor usage](https://appsource.microsoft.com/product/power-bi/pbi_pcmm.microsoftpremiumfabricpreviewreport?exp=ubp8) and make data-driven scale-up decisions to unlock the full potential of your organization's data.|
 
 ## Microsoft Purview
 
@@ -168,7 +168,7 @@ This section summarizes recent announcements about governance and compliance cap
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
-|May 2023|**Administration, Security and Governance in Microsoft Fabric**|Microsoft Fabric provides [built-in enterprise grade governance and compliance capabilities](https://blog.fabric.microsoft.com/en-us/blog/administration-security-and-governance-in-microsoft-fabric), powered by [Microsoft Purview](../governance/use-microsoft-purview-hub.md). |
+|May 2023|**Administration, Security and Governance in Microsoft Fabric**|Microsoft Fabric provides [built-in enterprise grade governance and compliance capabilities](https://blog.fabric.microsoft.com/blog/administration-security-and-governance-in-microsoft-fabric), powered by [Microsoft Purview](../governance/use-microsoft-purview-hub.md). |
 
 
 ## Learn more
