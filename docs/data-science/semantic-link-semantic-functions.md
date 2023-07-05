@@ -16,11 +16,13 @@ This article covers semantic functions and how they can help data scientists and
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[FabricDataFrames](data-science-overview.md) dynamically expose semantic functions based on logic defined by each function. For example, the `is_holiday` function shows up in the autocomplete suggestions when you're working on a FabricDataFrame containing both a datetime column and a country column.
+[FabricDataFrames](data-science-overview.md) dynamically expose semantic functions based on logic defined by each function.
+For example, the `is_holiday` function shows up in the autocomplete suggestions when you're working on a FabricDataFrame containing both a datetime column and a country column.
 
 Each semantic function uses information about the data types, metadata (such as Power BI data categories), and the data in a FabricDataFrame or FabricSeries to determine its relevance to the particular data on which you're working.
 
-Semantic functions are automatically discovered when annotated with the `@semantic_function` decorator. You can think of semantic functions as being similar to [C# extension methods](/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) applied to the popular DataFrame concept.
+Semantic functions are automatically discovered when annotated with the `@semantic_function` decorator.
+You can think of semantic functions as being similar to [C# extension methods](/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) applied to the popular DataFrame concept.
 
 ## Semantic function usage: autocomplete suggestions
 
@@ -81,7 +83,9 @@ The SemPy Python library provides a set of built-in semantic functions that are 
 
 ## Custom semantic functions
 
-Semantic functions are built for extensibility. You can define your own semantic functions within your notebook or as a separate Python module. To use a semantic function outside of a notebook, the semantic function needs to be declared within the `sempy.functions` module.
+Semantic functions are built for extensibility.
+You can define your own semantic functions within your notebook or as a separate Python module.
+To use a semantic function outside of a notebook, the semantic function needs to be declared within the `sempy.functions` module.
 
 This code example shows the definition of a semantic function `_is_captial` that returns `true` if the city is a capital of the country.
 

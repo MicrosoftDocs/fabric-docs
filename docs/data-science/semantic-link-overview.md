@@ -12,7 +12,9 @@ ms.search.form: Semantic Link
 
 # What is Semantic Link?
 
-Semantic Link is a feature that allows you to establish a connection between [Power BI datasets](/power-bi/connect-data/service-datasets-understand) and [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in Microsoft Fabric. The primary goals of Semantic Link are to facilitate data connectivity, enable the propagation of semantic information, and seamlessly integrate with established tools used by data scientists, such as [notebooks](../data-engineering/how-to-use-notebook.md). Semantic Link helps you to preserve domain knowledge about data semantics in a standardized way that can speed up data analysis and reduce errors.
+Semantic Link is a feature that allows you to establish a connection between [Power BI datasets](/power-bi/connect-data/service-datasets-understand) and [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in Microsoft Fabric.
+The primary goals of Semantic Link are to facilitate data connectivity, enable the propagation of semantic information, and seamlessly integrate with established tools used by data scientists, such as [notebooks](../data-engineering/how-to-use-notebook.md).
+Semantic Link helps you to preserve domain knowledge about data semantics in a standardized way that can speed up data analysis and reduce errors.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -22,7 +24,8 @@ The data flow starts with Power BI datasets that contain data and semantic infor
 
 :::image type="content" source="media/semantic-link-overview/data-flow-with-semantic-link.png" alt-text="A diagram that shows data flow from Power BI to notebooks in Synapse Data Science and back to Power BI.":::
 
-With Semantic Link, you can use datasets from Power BI in the Data Science experience to perform tasks such as in-depth statistical analysis and predictive modeling with machine learning techniques. The output of your data science work can be stored in [OneLake](../onelake/onelake-overview.md) using Apache Spark and ingested into Power BI using [Direct Lake](/power-bi/enterprise/directlake-overview).
+With Semantic Link, you can use datasets from Power BI in the Data Science experience to perform tasks such as in-depth statistical analysis and predictive modeling with machine learning techniques.
+The output of your data science work can be stored in [OneLake](../onelake/onelake-overview.md) using Apache Spark and ingested into Power BI using [Direct Lake](/power-bi/enterprise/directlake-overview).
 
 ## Power BI connectivity
 
@@ -35,18 +38,23 @@ Both implementations are subject to Power BI backend limitations (see [details](
 
 ## Applications of semantic information
 
-Semantic information in data includes Power BI [data categories](/power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables, and hierarchical information. These data categories comprise metadata that Semantic Link propagates into the Data Science environment to enable new experiences and maintain data lineage. Some example applications of Semantic Link are:
+Semantic information in data includes Power BI [data categories](/power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables, and hierarchical information.
+These data categories comprise metadata that Semantic Link propagates into the Data Science environment to enable new experiences and maintain data lineage. Some example applications of Semantic Link are:
 - intelligent suggestions of built-in [semantic functions](semantic-link-semantic-functions.md).
 - innovative integration for augmenting data with Power BI measures through the use of [join-measures](./semantic-link-power-bi.md#join-measure).
 - tools for [data quality validation](./semantic-link-validate-data.md#data-validation-with-semantic-link-and-microsoft-fabric) based on the relationships between tables and functional dependencies within tables.
 
-Semantic Link is a powerful tool that enables business analysts to use data effectively in a comprehensive data science environment. Semantic Link facilitates seamless collaboration between data scientists and business analysts by eliminating the need to reimplement business logic embedded in [Power BI measures](/power-bi/transform-model/desktop-measures#understanding-measures). This approach ensures that both parties can work efficiently and productively, maximizing the potential of their data-driven insights.
+Semantic Link is a powerful tool that enables business analysts to use data effectively in a comprehensive data science environment.
+Semantic Link facilitates seamless collaboration between data scientists and business analysts by eliminating the need to reimplement business logic embedded in [Power BI measures](/power-bi/transform-model/desktop-measures#understanding-measures). This approach ensures that both parties can work efficiently and productively, maximizing the potential of their data-driven insights.
 
 ## `FabricDataFrame` data structure
 
-[FabricDataFrame](data-science-overview.md) is the core data structure of Semantic Link. It subclasses the [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and adds metadata, such as semantic information and lineage. FabricDataFrame is the primary data structure that Semantic Link uses to propagate semantic information from Power BI datasets into the Data Science environment.
+[FabricDataFrame](data-science-overview.md) is the core data structure of Semantic Link.
+It subclasses the [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and adds metadata, such as semantic information and lineage.
+FabricDataFrame is the primary data structure that Semantic Link uses to propagate semantic information from Power BI datasets into the Data Science environment.
 
-FabricDataFrame supports all pandas operations and more. It exposes semantic functions and [join-measures](./semantic-link-power-bi.md#join-measure) that enable you to use Power BI measures in your data science work.
+FabricDataFrame supports all pandas operations and more.
+It exposes semantic functions and [join-measures](./semantic-link-power-bi.md#join-measure) that enable you to use Power BI measures in your data science work.
 
 ## Next steps
 

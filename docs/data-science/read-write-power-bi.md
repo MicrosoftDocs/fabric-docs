@@ -12,7 +12,8 @@ ms.search.form: Read write powerbi
 
 # Read from Power BI datasets and write data consumable by Power BI
 
-In this article, you'll learn how to read data and metadata and evaluate measures in Power BI datasets using the SemPy python library in Microsoft Fabric. You'll also learn how to write data that Power BI datasets can consume.
+In this article, you'll learn how to read data and metadata and evaluate measures in Power BI datasets using the SemPy python library in Microsoft Fabric.
+You'll also learn how to write data that Power BI datasets can consume.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -25,7 +26,8 @@ In this article, you'll learn how to read data and metadata and evaluate measure
 
 ## Use python to read data from Power BI datasets
 
-The SemPy Python API can retrieve data and metadata from Power BI datasets located in a Microsoft Fabric workspace and execute queries on them. By default, the workspace used to access Power BI datasets is:
+The SemPy Python API can retrieve data and metadata from Power BI datasets located in a Microsoft Fabric workspace and execute queries on them.
+By default, the workspace used to access Power BI datasets is:
 
 - the workspace of the attached [Lakehouse](/fabric/data-engineering/lakehouse-overview) or
 - the workspace of the notebook, if no Lakehouse is attached.
@@ -111,7 +113,8 @@ As with the SemPy python API, by default, the workspace used to access Power BI 
 - the workspace of the attached [Lakehouse](/fabric/data-engineering/lakehouse-overview) or
 - the workspace of the notebook, if no Lakehouse is attached.
 
-Microsoft Fabric exposes all tables from all Power BI datasets in the workspace as Spark tables. All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link Spark native connector supports push-down of Spark predicates to the Power BI engine.
+Microsoft Fabric exposes all tables from all Power BI datasets in the workspace as Spark tables.
+All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link Spark native connector supports push-down of Spark predicates to the Power BI engine.
 
 > [!TIP]
 > Since Power BI tables and measures are exposed as regular Spark tables, they can be joined with other Spark data sources in a single query.
