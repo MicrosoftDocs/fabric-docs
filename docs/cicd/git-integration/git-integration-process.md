@@ -145,14 +145,14 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
   - Ends with `.`’ or a space
   - Contains any of the following characters: `"`, `/`, `:`, `<`, `>`, `\\`, `*`, `?`, `|`
 
-  The logical id (Guid) is added as a prefix before the type, when naming the folder in git.
+  The logical ID (Guid) is added as a prefix before the type, when naming the folder in git.
 
 ### Sync and commit limitations
 
 - The size limit for a commit is 125 MB.
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
 - Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](../../admin/git-integration-admin-settings.md#enable-export-of-items-that-have-sensitivity-labels) for help.
-- Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they are ignored.
+- Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they're ignored.
 - Duplicating names isn't allowed – even if Power BI allows it, the update, commit, or undo action fails.
 - B2B isn’t supported.
 - [Conflict resolution](./conflict-resolution.md) is partially done in git.
