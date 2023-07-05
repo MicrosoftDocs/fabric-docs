@@ -139,6 +139,13 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with git Integration.
+- If the item’s display name:
+
+  - Has more than 256 characters
+  - Ends with `.`’ or a space
+  - Contains any of the following characters: `"`, `/`, `:`, `<`, `>`, `\\`, `*`, `?`, `|`
+
+  The logical id (Guid) is added as a prefix before the type, when naming the folder in git.
 
 ### Sync and commit limitations
 
