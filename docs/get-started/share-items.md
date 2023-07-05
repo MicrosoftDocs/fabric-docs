@@ -68,7 +68,7 @@ This document describes how to share an item and manage the permissions.
 
     :::image type="content" source="media/share-items/directly-send-link.png" alt-text="Screenshot of directly send link.":::
 
-1. Select **Send**.
+1. Select **OK**.
 
     :::image type="content" source="media/share-items/send-link-by-email.png" alt-text="Screenshot of send link by email.":::
 
@@ -84,7 +84,7 @@ This document describes how to share an item and manage the permissions.
 
     :::image type="content" source="media/share-items/manage-permission-pane.png" alt-text="Screenshot of manage permission pane.":::
 
-1. In **Edit link** pane, you can modify the permission included in the link, people who can use this link, or delete the link. Select **Apply** after your modification.
+1. In the **Edit link** pane, you can modify the permission included in the link, people who can use this link, or delete the link. Select **Apply** after your modification.
 
     :::image type="content" source="media/share-items/edit-link-1.png" alt-text="Screenshot of edit org link.":::
     :::image type="content" source="media/share-items/edit-link-2.png" alt-text="Screenshot of edit specific link.":::
