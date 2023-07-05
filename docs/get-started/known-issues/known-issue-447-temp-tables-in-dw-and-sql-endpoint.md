@@ -10,7 +10,7 @@ ms.custom: known-issue-447
 
 # Known issue - Temp tables in Data Warehouse and SQL Endpoint
 
-Users can create Temp tables in the Data Warehouse and SQL Endpoint but they're limited.
+Users can create Temp tables in the Data Warehouse and SQL Endpoint but has data retrieval limits.
 
 **Status:** Open
 
@@ -18,11 +18,11 @@ Users can create Temp tables in the Data Warehouse and SQL Endpoint but they're 
 
 ## Symptoms
 
-Data from User Tables can't be inserted into Temp Tables can't be joined to User Tables
+The user table data can't be inserted into Temp Table, also no join relationship can't be established with user Table.
 
 ## Solutions and workarounds
 
-User regular user tables instead of Temp Tables.
+Use regular user tables instead of Temp Tables.
 
 ## Next steps
 
