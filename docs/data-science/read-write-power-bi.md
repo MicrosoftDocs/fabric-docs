@@ -149,7 +149,6 @@ Microsoft Fabric exposes all tables from all Power BI datasets in the workspace 
     GROUP BY
         `Customer[Country/Region]`,
         `Industry[Industry]`
-        """)
     ```
 
 1. Inspect available measures and dimensions, using Spark schema.
