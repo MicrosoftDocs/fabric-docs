@@ -1,6 +1,6 @@
 ---
-title: Fabric Application lifecycle management (ALM) deploy content
-description: Learn how to deploy content to an empty or to non-empty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool
+title: Fabric Application lifecycle management (ALM) deployment pipelines deploy content
+description: Learn how to deploy content to an empty or to nonempty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool.
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
@@ -47,7 +47,7 @@ Select the stage to deploy from and then select the deployment button. The deplo
 
 If you don't want to deploy everything from that stage, you can select specific items for deployment. Select the **Show more** link, and then select the items you wish to deploy. When you select the **Deploy** button, only the selected items are deployed to the next stage.
 
-Since dashboards, reports, datasets and dataflows are related and have dependencies, you can use the select related button to see all items that those items are dependent on. For example, if you want to deploy a report to the next stage, click the **Select related** button to mark the dataset that the report is connected to, so that both will be deployed together and the report won't break.
+Since dashboards, reports, datasets, and dataflows are related and have dependencies, you can use the select related button to see all items that those items are dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the dataset that the report is connected to, so that both will be deployed together and the report won't break.
 
 :::image type="content" source="media/deploy-content/selective-deploy.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines, available after selecting the show more option." lightbox="media/deploy-content/selective-deploy.png":::
 
@@ -66,7 +66,7 @@ Deploying to a previous stage works only if the previous stage is empty. When de
 
 ### Review your deployment and leave a note
 
-After selecting which content to deploy, a pop-up window lists all the items you're about to deploy. You can review the list and add a note to the deployment. Adding a note is optional, but it is highly recommended as the notes are added to the [deployment history](deployment-history.md). With a note for each deployment, reviewing the history of your pipelines becomes more meaningful.
+After selecting which content to deploy, a pop-up window lists all the items you're about to deploy. You can review the list and add a note to the deployment. Adding a note is optional, but it's highly recommended as the notes are added to the [deployment history](deployment-history.md). With a note for each deployment, reviewing the history of your pipelines becomes more meaningful.
 
 To leave a note, expand the **Add a note** option and write your note in the text box. When you're ready to deploy, select **Deploy**.
 

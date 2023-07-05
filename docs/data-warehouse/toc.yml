@@ -32,19 +32,21 @@ items:
     href: tutorial-create-tables.md
   - name: 5. Load data using T-SQL
     href: tutorial-load-data.md
-  - name: 6. Transform data using stored procedure
+  - name: 6. Clone a table using T-SQL
+    href: tutorial-clone-table.md
+  - name: 7. Transform data using stored procedure
     href: tutorial-transform-data.md
-  - name: 7. Create queries with visual query builder
+  - name: 8. Create queries with visual query builder
     href: tutorial-visual-query.md
-  - name: 8. Analyze data with a notebook
+  - name: 9. Analyze data with a notebook
     href: tutorial-analyze-data-notebook.md
-  - name: 9. Create queries with the SQL query editor
+  - name: 10. Create queries with the SQL query editor
     href: tutorial-sql-cross-warehouse-query-editor.md
-  - name: 10. Create Power BI reports
+  - name: 11. Create Power BI reports
     href: tutorial-power-bi-report.md
-  - name: 11. Build a report from the OneLake data hub
+  - name: 12. Build a report from the OneLake data hub
     href: tutorial-build-report-onelake-data-hub.md
-  - name: 12. Clean up resources
+  - name: 13. Clean up resources
     href: tutorial-clean-up.md        
 - name: Connect to the warehouse
   items: 
@@ -108,6 +110,10 @@ items:
     href: data-preview.md
   - name: Query Delta Lake logs
     href: query-delta-lake-logs.md
+- name: Data recovery
+  items:
+  - name: Clone tables
+    href: clone-table.md
 - name: Manage performance
   items:
   - name: Statistics
