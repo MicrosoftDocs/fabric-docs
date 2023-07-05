@@ -2,7 +2,7 @@
 title: Fabric (Preview) trial known issues
 description: Identify issues that are affecting your Fabric trial. 
 author: mihart
-ms.author: mihart
+ms.author: anirmale
 ms.topic: troubleshooting    
 ms.date: 06/28/2023
 ms.custom: build-2023
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issue publish date |  
 |-----------|-------------------------|----------------------------------|---------------------|
+|  447  | Data Warehouse | [Temp tables in Data Warehouse and SQL Endpoint]
+(known-issue-447-temp-tables-in-data warehouse-and-sql-endpoint.md)    |  July 5, 2023  |
+|  446  | Data Warehouse | [OneLake table folder not removed when table dropped in data warehouse](known-issue-446-oneLake-table-folder-removed-when-table-dropped-in-dw.md)    |  July 5, 2023  |
 |  439  | Data Warehouse | ['Affected rows' number displayed doesn't match the real row number](known-issues/known-issue-439-affected-rows-number-displayed-doesnt-match.md)    |  June 26, 2023  |
 |  420  | Administration & Management | [Moving files from outside of OneLake to OneLake with file explorer does not sync files](known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md)    |  June 8, 2023  |
 
