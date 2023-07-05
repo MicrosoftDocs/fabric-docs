@@ -42,11 +42,11 @@ Semantic information in data includes Power BI [data categories](/power-bi/trans
 
 Semantic Link is a powerful tool that enables business analysts to use data effectively in a comprehensive data science environment. Semantic Link facilitates seamless collaboration between data scientists and business analysts by eliminating the need to reimplement business logic embedded in [Power BI measures](/power-bi/transform-model/desktop-measures#understanding-measures). This approach ensures that both parties can work efficiently and productively, maximizing the potential of their data-driven insights.
 
-## `SemanticDataFrame` data structure
+## `FabricDataFrame` data structure
 
-[SemanticDataFrame](data-science-overview.md) is the core data structure of Semantic Link. It subclasses the [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and adds metadata, such as semantic information and lineage. SemanticDataFrame is the primary data structure that Semantic Link uses to propagate semantic information from Power BI datasets into the Data Science environment.
+[FabricDataFrame](data-science-overview.md) is the core data structure of Semantic Link. It subclasses the [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and adds metadata, such as semantic information and lineage. FabricDataFrame is the primary data structure that Semantic Link uses to propagate semantic information from Power BI datasets into the Data Science environment.
 
-SemanticDataFrame supports all pandas operations and more. It exposes semantic functions and [join-measures](./semantic-link-power-bi.md#join-measure) that enable you to use Power BI measures in your data science work.
+FabricDataFrame supports all pandas operations and more. It exposes semantic functions and [join-measures](./semantic-link-power-bi.md#join-measure) that enable you to use Power BI measures in your data science work.
 
 ## Next steps
 
