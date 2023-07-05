@@ -60,7 +60,7 @@ Ash works with business analysts familiar with Power BI and Microsoft Office, an
 
 ### Scenario 4
 
-Daisy is a business analyst experienced with using SQL and DAX to analyze supply chain bottlenecks for a large global retail chain. They need to build a scalable data solution that can handle billions of rows of data and can be used to build dashboards and reports that can be used by the business to make decisions. The data comes from plants, suppliers, shippers, and other sources in a variety of structured, semi-structured, and unstructured formats.
+Daisy is a business analyst experienced with using SQL and DAX to analyze supply chain bottlenecks for a large global retail chain. They need to build a scalable data solution that can handle billions of rows of data and can be used to build dashboards and reports that can be used to make business decisions. The data comes from plants, suppliers, shippers, and other sources in various structured, semi-structured, and unstructured formats.
 
 Daisy decides to use a **KQL Database** because of its scalability, quick response times, advanced analytics capabilities including time series analysis, geospatial functions, and fast data refresh in Power BI. Queries can be executed using Power BI and KQL to compare between current and previous periods, quickly identify emerging problems, or provide geo-spatial analytics of land and maritime routes.
 
