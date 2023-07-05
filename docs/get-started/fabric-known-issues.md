@@ -10,7 +10,7 @@ ms.custom: build-2023
 
 # Fabric (Preview) trial known issues
 
-This page lists known issues for the Fabric trial features. Before submitting a Support request, review this list to see if the issue that you are experiencing is already known and being addressed. Known issues are also available as an [interactive Power BI report](https://support.fabric.microsoft.com/known-issues/).
+This page lists known issues for the Fabric trial features. Before submitting a Support request, review this list to see if the issue that you're experiencing is already known and being addressed. Known issues are also available as an [interactive Power BI report](https://support.fabric.microsoft.com/known-issues/).
 
 For service level outages or degradation notifications, check [https://support.fabric.microsoft.com/](https://support.fabric.microsoft.com/).  
 
@@ -18,13 +18,15 @@ For service level outages or degradation notifications, check [https://support.f
 
 Select the **Title** to view more information about that specific known issue.
 
-|  Issue ID |  Product experience     |  Title                           |  Issue publish date |  
+|  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|---------------------|
+|  449  | Administration & Management | [Pipeline isn't loading if user deployed with update app via public API]
+(known-issue-449-pipeline-not-loading-user-deployed-update-app-api.md)    |  July 5, 2023  |
 |  447  | Data Warehouse | [Temp tables in Data Warehouse and SQL Endpoint]
 (known-issue-447-temp-tables-in-data warehouse-and-sql-endpoint.md)    |  July 5, 2023  |
 |  446  | Data Warehouse | [OneLake table folder not removed when table dropped in data warehouse](known-issue-446-oneLake-table-folder-removed-when-table-dropped-in-dw.md)    |  July 5, 2023  |
 |  439  | Data Warehouse | ['Affected rows' number displayed doesn't match the real row number](known-issues/known-issue-439-affected-rows-number-displayed-doesnt-match.md)    |  June 26, 2023  |
-|  420  | Administration & Management | [Moving files from outside of OneLake to OneLake with file explorer does not sync files](known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md)    |  June 8, 2023  |
+|  420  | Administration & Management | [Moving files from outside of OneLake to OneLake with file explorer doesn't sync files](known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md)    |  June 8, 2023  |
 
 ## Recently closed known issues
 
