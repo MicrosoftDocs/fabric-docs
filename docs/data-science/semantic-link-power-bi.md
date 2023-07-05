@@ -66,7 +66,6 @@ WHERE
 GROUP BY
     `Customer[Country/Region]`,
     `Industry[Industry]`
-    """)
 ```
 
 ## Add measure
