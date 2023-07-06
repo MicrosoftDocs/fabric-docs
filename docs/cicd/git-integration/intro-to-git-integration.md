@@ -17,7 +17,7 @@ ms.search.form:
 > [!NOTE]
 > This articles in this section are about version control using git integration. To manage deployment of your app, see the [deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md) documentation.
 
-Git integration in Microsoft Fabric enables Pro developers to integrate their development processes, tools, and best practices straight into the Fabric platform. It allows developers who are developing in Fabric to:
+Git integration in Microsoft Fabric enables developers to integrate their development processes, tools, and best practices straight into the Fabric platform. It allows developers who are developing in Fabric to:
 
 * Backup and version their work
 * Revert to previous stages as needed
