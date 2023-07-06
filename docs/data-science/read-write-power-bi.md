@@ -43,10 +43,10 @@ To read data from Power BI datasets:
     df_datasets
     ```
 
-1. List the tables available in the _Sales Dataset_ Power BI dataset.
+1. List the tables available in the _Customer Profitability Sample_ Power BI dataset.
 
     ```python
-    df_tables = fabric.list_tables("Sales Dataset", include_columns=True)
+    df_tables = fabric.list_tables("Customer Profitability Sample", include_columns=True)
     df_tables
     ```
 
@@ -55,24 +55,24 @@ To read data from Power BI datasets:
    > In the following code, you can specify your workspace by replacing the workspace name `Logistics Workspace` with yours.
 
     ```python
-    df_measures = fabric.list_measures("Inventory Dataset", workspace="Logistics Workspace")
+    df_measures = fabric.list_measures("Customer Profitability Sample", workspace="Logistics Workspace")
     ```
 
     Now we've determined that the _Customer_ table is the table of interest.
 
-1. Read the _Customer_ table from the _Sales Dataset_ Power BI dataset.
+1. Read the _Customer_ table from the _Customer Profitability Sample_ Power BI dataset.
 
     ```python
-    df_table = fabric.read_table("Sales Dataset", "Customer")
+    df_table = fabric.read_table("Customer Profitability Sample", "Customer")
     df_table
     ```
 
 1. Evaluate the _Total Revenue_ measure per customer's state and date.
 
     ```python
-    df_measure = fabric.read_measure("Sales Dataset",
+    df_measure = fabric.read_measure("Customer Profitability Sample",
                                      "Total Revenue",
-                                     [("Customer", "State"), ("Calendar", "Date")]
+                                     [("Customer", "State"), ("Calendar", "Date")])
     df_measure
     ```
 
@@ -82,7 +82,7 @@ To read data from Power BI datasets:
     > Using the `read_dax` API is subject to more limitations (see [Read Limitations](#read-access-limitations)). For standard measure calculations, consider using the `read_measure` function and only revert to `read_dax` for advanced use cases.
 
     ```python
-    df_dax = fabric.read_dax("Sales Dataset",
+    df_dax = fabric.read_dax("Customer Profitability Sample",
                              """
                              EVALUATE SUMMARIZECOLUMNS(
                                  'State'[Region],
@@ -103,7 +103,7 @@ To read data from Power BI datasets:
         }
     )
     
-    joined_df = df.add_measure("Total Revenue", dataset="Sales Dataset")
+    joined_df = df.add_measure("Total Revenue", dataset="Customer Profitability Sample")
     ```
 
 ## Read data, using Spark in Python, R, SQL, and Scala
@@ -126,14 +126,14 @@ All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link
     df
     ```
 
-1. Retrieve the data from the *Customer* table in the *Sales Dataset* Power BI dataset, using SparkR.
+1. Retrieve the data from the *Customer* table in the *Customer Profitability Sample* Power BI dataset, using SparkR.
 
     > [!NOTE]
     > Retrieving tables is subject to strict limitations (see [Read Limitations](#read-access-limitations)) and the results might be incomplete.
     > Use aggregate pushdown to reduce the amount of data transferred. The supported aggregates are: COUNT, SUM, AVG, MIN, and MAX.
 
     ```R
-    df = sql("SELECT * FROM pbi.`Sales Dataset`.Customer")
+    df = sql("SELECT * FROM pbi.`Customer Profitability Sample`.Customer")
     df
     ```
 
@@ -146,7 +146,7 @@ All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link
         AVG(`Total Revenue`),
         AVG(`Revenue Budget`)
     FROM
-        pbi.`Sales Dataset`.`_Metrics`
+        pbi.`Customer Profitability Sample`.`_Metrics`
     WHERE
         `Customer[State]` in ('CA', 'WA')
     GROUP BY
@@ -157,7 +157,7 @@ All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link
 1. Inspect available measures and dimensions, using Spark schema.
 
     ```python
-    spark.table("pbi.`Sales Dataset`._Metrics").printSchema()
+    spark.table("pbi.`Customer Profitability Sample`._Metrics").printSchema()
     ```
 
 ## Read-access limitations
@@ -177,15 +177,14 @@ The read access APIs have the following limitations:
 ## Write data consumable by Power BI datasets
 
 Spark tables added to a Lakehouse are automatically added to the corresponding [default Power BI dataset](/fabric/data-warehouse/datasets).
-This example demonstrates how to convert a pandas dataframe to a Spark dataframe and write it to the attached Lakehouse.
+This example demonstrates how to write data to the attached Lakehouse. The FabricDataFrame excepts the same input data as Pandas dataframes.
 
 ```python
-import pandas as pd
+from sempy.fabric import FabricDataFrame
 
-df_pandas = pd.DataFrame({'a': [1, 2, 3]})
-df_spark  = spark.createDataFrame(df_pandas)
+df_forecast = FabricDataFrame({'ForecastedRevenue': [1, 2, 3]})
 
-df_spark.write.format("delta").saveAsTable("ForecastTable")
+df_forecast.to_onelake("ForecastTable")
 ```
 
 By using Power BI, the *ForecastTable* table can be added to a composite dataset using the Lakehouse dataset.
