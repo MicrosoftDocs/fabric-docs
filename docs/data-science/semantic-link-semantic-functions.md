@@ -1,5 +1,5 @@
 ---
-title: Semantic functions in MIcrosoft Fabric
+title: Semantic functions in Microsoft Fabric
 description: Learn about semantic functions that you can apply to FabricDataFrames and FabricSeries.
 ms.reviewer: mopeakande
 reviewer: msakande
