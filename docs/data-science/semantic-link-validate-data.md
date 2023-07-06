@@ -190,3 +190,6 @@ The `drop_dependency_violations` function provides an option for controlling the
 By using the `drop_dependency_violations` function, you can enforce functional constraints between columns in your dataset, which can help improve data quality and lead to more accurate results in your analysis or model.
 However, it's essential to carefully consider the context of your data and the functional constraints you choose to enforce to ensure that you are not inadvertently removing valuable information from your dataset.
 
+## Next steps
+- [How to explore and validate relationships](semantic-link-relationship.md)
+- [How to accelerate data science using semantic functions](semantic-link-semantic-functions.md)
