@@ -56,11 +56,11 @@ items:
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
     - name: Pipeline isn't loading if user deployed with update app via public API
-      href: known-issue-449-pipeline-not-loading-user-deployed-via-api.md  
+      href: known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md  
     - name: Temp tables in Data Warehouse and SQL Endpoint
-      href: known-issue-447-temp-tables-in-dw-and-sql-endpoint.md  
+      href: known-issues/known-issue-447-temp-tables-in-dw-and-sql-endpoint.md  
     - name: OneLake table folder not removed when table dropped in data warehouse
-      href: known-issue-446-oneLake-table-folder-not-removed.md  
+      href: known-issues/known-issue-446-oneLake-table-folder-not-removed.md  
     - name: Affected rows number displayed doesn't match the real row number
       href: known-issues/known-issue-439-affected-rows-number-displayed-doesnt-match.md
     - name: Moving files from outside of OneLake to OneLake with file explorer doesn't sync files

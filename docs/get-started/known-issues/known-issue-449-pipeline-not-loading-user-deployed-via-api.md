@@ -10,7 +10,7 @@ ms.custom: known-issue-449
 
 # Known issue - Pipeline not loading if user deployed with update app via public API
 
-When the pipeline was deployed via public API with the 'update app' option (https://learn.microsoft.com/en-us/rest/api/power-bi/pipelines/deploy-all#pipelineupdateappsettings), opening the pipeline page gets stuck on loading.
+When the pipeline was deployed via public API with the 'update app' option (/rest/api/power-bi/pipelines/deploy-all#pipelineupdateappsettings), opening the pipeline page gets stuck on loading.
 
 **Status:** Open
 
@@ -22,7 +22,7 @@ Pipeline page stuck on loading.
 
 ## Solutions and workarounds
 
-User can update the pipeline via public APIs: https://learn.microsoft.com/en-us/rest/api/power-bi/pipelines
+User can update the pipeline via public APIs: /rest/api/power-bi/pipelines
 
 ## Next steps
 
