@@ -35,9 +35,9 @@ You can simplify management of Fabric workspace roles by assigning them to secur
 
 ## Item permissions
 
-Microsoft Fabric also supports managing permissions directly on items within a workspace. This allows an item to be accessed directly without adding the user to a workspace role and granting them permissions to all items in that workspace. In addition, users in the Viewer role can have their permissions modified for a single item, granting them additional privileges. 
+Microsoft Fabric also supports managing permissions directly on items within a workspace. This allows an item to be accessed directly without adding the user to a workspace role and granting them permissions to all items in that workspace. In addition, users in the Viewer role can have their permissions modified for a single item, granting them additional privileges.
 
-Using [sharing](), a user can be given access directly to an item. The user can see only that item in the workspace and will not be added as a member of any workspace roles. The share can be configured to grant the user connect-only permissions, full SQL access, or access to OneLake and Apache Spark. Sharing cannot be used to assign write access to users. Sharing can also be done with a security group, allowing multiple users to get access to the item in a single action.
+Using [sharing](/docs/get-started/share-items.md), a user can be given access directly to an item. The user can see only that item in the workspace and will not be added as a member of any workspace roles. The share can be configured to grant the user connect-only permissions, full SQL access, or access to OneLake and Apache Spark. Sharing cannot be used to assign write access to users. Sharing can also be done with a security group, allowing multiple users to get access to the item in a single action.
 
 The last way to configure permissions is via the manage permissions page for an item. This page allows permissions for the ReadAll permission to be added or removed from a user or group. This approach is ideal if you have workspace Viewers that need OneLake access. Alternatively, you can use this page to adjust permissions after sharing the item.
 
@@ -76,3 +76,4 @@ Object level security: To protect sensitive data, give users access to a Warehou
 - [Workspace roles](/docs/get-started/roles-workspaces.md)  
 - [OneLake security](onelake-security.md)
 - [OneLake file explorer](onelake-file-explorer.md)
+- [Share items](/docs/get-started/share-items.md)  

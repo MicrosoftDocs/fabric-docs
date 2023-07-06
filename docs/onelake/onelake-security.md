@@ -71,4 +71,5 @@ When this switch is turned ON, data can be accessed via all sources. When this s
 ## Next steps
 
 - [OneLake file explorer](onelake-file-explorer.md)
-- [Workspace roles](/docs/get-started/roles-workspaces.md)  
+- [Workspace roles](/docs/get-started/roles-workspaces.md)
+- [Share items](/docs/get-started/share-items.md)  
