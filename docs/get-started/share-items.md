@@ -1,6 +1,6 @@
 ---
-title: Share items
-description: "Learn how to share an item and manage permission of an item."
+title: Share items in Microsoft Fabric
+description: "Learn how to share an item and manage permission of an item in Microsoft Fabric."
 author: paulinbar
 ms.author: painbar
 ms.reviewer: yicw, mesrivas
@@ -9,9 +9,9 @@ ms.date: 07/07/2023
 ms.custom: 
 ---
 
-# Share items
+# Share items in Microsoft Fabric
 
-Workspaces are the central places where you collaborate with your colleagues. Besides assigning workspace roles, you can also use item sharing to grant and manage item level permissions in scenarios:
+Workspaces are the central places where you collaborate with your colleagues in Microsoft Fabric. Besides assigning workspace roles, you can also use item sharing to grant and manage item level permissions in scenarios:
 
 - Collaborate with colleagues who aren't in the same workspace.
 - Grant item level permissions for colleagues who already have workspace roles.
