@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: yicw, mesrivas
 ms.topic: how-to
-ms.date: 07/05/2023
+ms.date: 07/07/2023
 ms.custom: 
 ---
 
@@ -14,12 +14,9 @@ ms.custom:
 Workspaces are the central places where you collaborate with your colleagues. Besides assigning workspace roles, you can also use item sharing to grant and manage item level permissions in scenarios:
 
 - Collaborate with colleagues who aren't in the same workspace.
-- Grant artifact level permissions for colleagues who already have workspace roles.
+- Grant item level permissions for colleagues who already have workspace roles.
 
 This document describes how to share an item and manage the permissions. 
-
-> [!NOTE] 
-> Currently, you can share KQL databases and KQL querysets.
 
 ## Share an item via link
 
