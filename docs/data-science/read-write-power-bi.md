@@ -24,7 +24,21 @@ You'll also learn how to write data that Power BI datasets can consume.
 - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
-## Use python to read data from Power BI datasets
+## Download and import the data used in this article
+
+In this article, we use the _Customer Profitability Sample.pbix_ PowerBI dataset. The _Customer Profitability Sample_ dataset references a company manufacturing marketing materials and contains data about products, customers, and corresponding revenue for various business units.
+
+1. Download the _Customer Profitability Sample.pbix_ PowerBI dataset from [TODO: insert link] and save it locally as _Customer Profitability Sample PBIX.pbix_.
+1. Open your workspace in Fabric Data Science.
+1. Select **Upload > Browse** and select the file you just downloaded.
+
+:::image type="content" source="media/read-write-power-bi/upload-power-bi-data-to workspace.png" alt-text="Screenshot showing the interface for uploading a dataset into the workspace." lightbox="media/read-write-power-bi/upload-power-bi-data-to workspace.png":::
+
+Once the upload is done, your workspace will have three new artifacts: a Power BI report, a dashboard, and a dataset named _Customer Profitability Sample PBIX_. You'll use this dataset for the steps in this article.
+
+:::image type="content" source="media/read-write-power-bi/uploaded-artifacts-in-workspace.png" alt-text="Screenshot showing the items from the Power BI file uploaded into the workspace." lightbox="media/read-write-power-bi/uploaded-artifacts-in-workspace.png":::
+
+## Use Python to read data from Power BI datasets
 
 The SemPy Python API can retrieve data and metadata from Power BI datasets located in a Microsoft Fabric workspace and execute queries on them.
 By default, the workspace used to access Power BI datasets is:
