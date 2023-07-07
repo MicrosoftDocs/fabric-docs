@@ -36,6 +36,7 @@ You'll learn to:
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 - TODO: add info on where to get the data used in code and add it to Lakehouse (Fyi, @Markus)
 - TODO: add info on getting SemPy? Or is it included in Fabric by default? (Fyi, @Markus)
+<!-- SemPy will require "%pip install semantic-link" we'll no more in 1-2 weeks  -->
 
 ## Use functional dependencies to find and fix data quality issues
 
@@ -61,7 +62,7 @@ deps = df.find_dependencies()
 
 The `find_dependencies` function returns a FabricDataFrame with detected dependencies between columns.
 Columns that have a 1:1 mapping will be represented as a list.
-The function also tries to prune the potential dependencies by removing transitive edges. (@Markus: can we provide a link for transitive edges)
+The function also tries to prune the potential dependencies by removing [transitive edges](https://en.wikipedia.org/wiki/Transitive_dependency).
 
 When you specify the `dropna=True` option, rows that have a NaN value in either column are eliminated from evaluation.
 This may result in dependencies being nontransitive, as in the following example:
