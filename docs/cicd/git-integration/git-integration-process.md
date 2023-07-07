@@ -74,7 +74,7 @@ Each item has one of the following statuses:
 - :::image type="icon" source="./media/git-integration-process/unsupported-icon.png"::: Unsupported item
 - :::image type="icon" source="./media/git-integration-process/uncommitted-icon.png"::: Uncommitted changes in the workspace
 - :::image type="icon" source="./media/git-integration-process/update-required-icon.png"::: Update required from git
-- :::image type="icon" source="./media/git-integration-process/warning.png"::: Item is synced but metadata is different
+- :::image type="icon" source="./media/git-integration-process/warning.png"::: Item is identical in both places but needs to be updated to the last commit
 
 ### Sync information
 
@@ -139,13 +139,20 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
 - You can’t download a report/dataset as *.pbix* from the service after deploying them with git Integration.
+- If the item’s display name:
+
+  - Has more than 256 characters
+  - Ends with `.`’ or a space
+  - Contains any of the following characters: `"`, `/`, `:`, `<`, `>`, `\\`, `*`, `?`, `|`
+
+  The logical ID (Guid) is added as a prefix before the type, when naming the folder in git.
 
 ### Sync and commit limitations
 
 - The size limit for a commit is 125 MB.
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
 - Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](../../admin/git-integration-admin-settings.md#enable-export-of-items-that-have-sensitivity-labels) for help.
-- Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they are ignored.
+- Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they're ignored.
 - Duplicating names isn't allowed – even if Power BI allows it, the update, commit, or undo action fails.
 - B2B isn’t supported.
 - [Conflict resolution](./conflict-resolution.md) is partially done in git.

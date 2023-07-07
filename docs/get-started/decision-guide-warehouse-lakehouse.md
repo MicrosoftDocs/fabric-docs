@@ -17,8 +17,6 @@ Use this reference guide and the example scenarios to help you choose between th
 
 ## Data warehouse and lakehouse properties
 
-
-
 | | **Data warehouse** | **Lakehouse** | **Power BI Datamart**  | **KQL Database** |
 |---|:---:|:---:|:---:|:---:|
 | **Data volume** | Unlimited | Unlimited | Up to 100 GB | Unlimited |
@@ -34,8 +32,8 @@ Use this reference guide and the example scenarios to help you choose between th
 | **Access data via shortcuts** | Yes (indirectly through the lakehouse) | Yes | No | Yes |
 | **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) | No | Yes |
 | **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;query across lakehouses (including shortcuts using Spark) | No | Yes, query across KQL Databases, lakehouses, and warehouses with shortcuts |
-| **Advanced Analytics** |  |  |  |Time Series native elements, Full geospatial storing and query capabilities |
-| **Advanced Formatting support** |  |  |  | Full indexing for free text and semi-structured data like JSON |
+| **Advanced analytics** |  |  |  |Time Series native elements, Full geospatial storing and query capabilities |
+| **Advanced formatting support** |  |  |  | Full indexing for free text and semi-structured data like JSON |
 | **Ingestion latency**|  |  |  | Queued ingestion, Streaming ingestion has a couple of seconds latency |
 
 ## Scenarios
@@ -50,7 +48,7 @@ Susan has spent many years building data warehouses on relational database engin
 
 ### Scenario 2
 
-Rob, a data engineer, needs to store and model several terabytes of data in Fabric. The team has a mix of PySpark and T-SQL skills. Most of the team running T-SQL queries are consumers, and therefore don't need to write INSERT, UPDATE, or DELETE statements. The remaining developers are comfortable working in notebooks, and because the data is stored in Delta, they're able to interact with a similar SQL syntax. 
+Rob, a data engineer, needs to store and model several terabytes of data in Fabric. The team has a mix of PySpark and T-SQL skills. Most of the team running T-SQL queries are consumers, and therefore don't need to write INSERT, UPDATE, or DELETE statements. The remaining developers are comfortable working in notebooks, and because the data is stored in Delta, they're able to interact with a similar SQL syntax.
 
 Rob decides to use a **lakehouse**, which allows the data engineering team to use their diverse skills against the data, while allowing the team members who are highly skilled in T-SQL to consume the data.
 
@@ -62,9 +60,9 @@ Ash works with business analysts familiar with Power BI and Microsoft Office, an
 
 ### Scenario 4
 
-Daisy, a data scientist, wants to bring terabytes and potentially petabytes of structured, semi-structured, and unstructured data to Fabric. She is familiar with T-SQL and Spark in Notebooks, and is willing to update her skills and learn a new query language. She needs to build queries and dashboards on top of this data and run queries that return answers in less than few seconds.
+Daisy is a business analyst experienced with using SQL and DAX to analyze supply chain bottlenecks for a large global retail chain. They need to build a scalable data solution that can handle billions of rows of data and can be used to build dashboards and reports that can be used to make business decisions. The data comes from plants, suppliers, shippers, and other sources in various structured, semi-structured, and unstructured formats.
 
-Daisy decides to use a **KQL Database** because of its capability to query unstructured data, and to run queries that are highly performant and return answers in less than few seconds.
+Daisy decides to use a **KQL Database** because of its scalability, quick response times, advanced analytics capabilities including time series analysis, geospatial functions, and fast data refresh in Power BI. Queries can be executed using Power BI and KQL to compare between current and previous periods, quickly identify emerging problems, or provide geo-spatial analytics of land and maritime routes.
 
 ## Next steps
 

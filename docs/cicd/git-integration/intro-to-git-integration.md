@@ -17,7 +17,7 @@ ms.search.form:
 > [!NOTE]
 > This articles in this section are about version control using git integration. To manage deployment of your app, see the [deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md) documentation.
 
-Git integration in Microsoft Fabric enables Pro developers to integrate their development processes, tools, and best practices straight into the Fabric platform. It allows developers who are developing in Fabric to:
+Git integration in Microsoft Fabric enables developers to integrate their development processes, tools, and best practices straight into the Fabric platform. It allows developers who are developing in Fabric to:
 
 * Backup and version their work
 * Revert to previous stages as needed
@@ -33,6 +33,14 @@ The integration with source control is on a workspace level. Developers can vers
 * Read more about the [git integration process](./git-integration-process.md).
 
 * Read about the best way to manage your [git branches](./manage-branches.md).
+
+## Privacy concerns
+
+Before you enable git integration, make sure you understand the following possible privacy concerns:
+
+* [Azure DevOps Services Data protection overview](/azure/devops/organizations/security/data-protection)
+* [Microsoft privacy statement](https://go.microsoft.com/fwlink/?LinkId=521839)
+<!--- * [Microsoft services agreement](https://www.microsoft.com/servicesagreement/default.aspx) -->
 
 ## Supported items
 
@@ -59,6 +67,7 @@ A typical workflow for a developer using Fabric git integration may look like th
 ## Considerations and limitations
 
 * Currently, only [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) is supported.
+* Azure DevOps **on-prem** is not supported.
 
 ## Next steps
 
