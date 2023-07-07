@@ -24,12 +24,12 @@ You'll also learn how to write data that Power BI datasets can consume.
 - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
-## Download and import the data used in this article
+## Import the data used in this article into your workspace
 
 In this article, we use the _Customer Profitability Sample.pbix_ PowerBI dataset. This dataset references a company manufacturing marketing materials and contains data about products, customers, and corresponding revenue for various business units.
 
 1. Download the _Customer Profitability Sample.pbix_ PowerBI dataset from [TODO: insert link] and save it locally.
-1. Open your workspace in Fabric Data Science.
+1. Open your [workspace](/fabric/get-started/workspaces) in Fabric Data Science.
 1. Select **Upload > Browse** and select the file you just downloaded.
 
 :::image type="content" source="media/read-write-power-bi/upload-power-bi-data-to workspace.png" alt-text="Screenshot showing the interface for uploading a dataset into the workspace." lightbox="media/read-write-power-bi/upload-power-bi-data-to workspace.png":::
@@ -40,15 +40,16 @@ Once the upload is done, your workspace will have three new artifacts: a Power B
 
 ## Use Python to read data from Power BI datasets
 
-The SemPy Python API can retrieve data and metadata from Power BI datasets located in a Microsoft Fabric workspace and execute queries on them.
+The SemPy Python API can retrieve data and metadata from Power BI datasets located in a Microsoft Fabric workspace and execute queries on them. You can open a notebook in the same workspace where you uploaded the dataset or in a different workspace. You'll run code to read the Power BI dataset in the notebook.
+
 By default, the workspace used to access Power BI datasets is:
 
-- the workspace of the attached [Lakehouse](/fabric/data-engineering/lakehouse-overview) or
-- the workspace of the notebook, if no Lakehouse is attached.
+- the same as the workspace of the notebook, if the notebook and dataset are in the same workspace. In this case, you don't need to attach a [Lakehouse](/fabric/data-engineering/lakehouse-overview).
+- the workspace of the Lakehouse that's attached to your notebook. You'll need to attach the Lakehouse if the notebook is in a different workspace than the workspace that houses the dataset and Lakehouse.
 
 To read data from Power BI datasets:
 
-1. List the available Power BI datasets in the attached Lakehouse.
+1. List the available Power BI datasets in the workspace.
 
     ```python
     import sempy.fabric as fabric
@@ -64,7 +65,7 @@ To read data from Power BI datasets:
     df_tables
     ```
 
-1. List the measures defined in the _Inventory Dataset_ Power BI dataset.
+1. List the measures defined in the _Customer Profitability Sample_ Power BI dataset.
    > [!TIP]
    > In the following code, you can specify your workspace by replacing the workspace name `Logistics Workspace` with yours.
 
