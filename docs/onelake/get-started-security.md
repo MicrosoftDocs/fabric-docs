@@ -30,14 +30,14 @@ Items always live within workspaces and workspaces always live directly under th
 
 In the public preview release of Microsoft Fabric, permissions can only be configured at the workspace level.
 
-To grant a user access to an item, users need permissions from one of the Fabric [workspace roles.](../get-started/roles-workspaces.md). At a minimum, users need Read access on an item to see and connect to that item, which is provided by the Viewer role. Users in the Viewer role can also connect to and read data using SQL endpoints for the Warehouse and Lakehouse items or read data through Power BI datasets.
+To grant a user access to an item, users need permissions from one of the Fabric [workspace roles](../get-started/roles-workspaces.md). At a minimum, users need Read access on an item to see and connect to that item, which is provided by the Viewer role. Users in the Viewer role can also connect to and read data using SQL endpoints for the Warehouse and Lakehouse items or read data through Power BI datasets.
 
 Access directly to OneLake or to write data is provided through the other roles. Admin, member, and contributor all provide access to read data directly in OneLake through Spark or APIs, and write data to those sources. The Warehouse item is read-only through the lake interface, so even Admins are not able to write data to a Warehouse through APIs, but they can write data through SQL. 
 
 ## Compute permissions
 In addition to the workspace permissions, data access can be given through the SQL compute engine in Microsoft Fabric. The access granted through SQL only applies to users accessing data through SQL, but this security can be used to give more selective access to certain users. In its current state, SQL supports restricting access to specific tables and schemas with row level security planned in a future release.
 
-In the below example, a user is shared a Lakehouse but with only Viewer access. They are then granted SELECT through the SQL endpoint. When that user tries to write data through the OneLake APIs the access gets denied since they don’t have sufficient permissions, but reads made through SQL SELECT statements would succeed.
+In the below example, a user is shared a Lakehouse but with only Viewer access. They are then granted SELECT through the SQL endpoint. When that user tries to read data through the OneLake APIs the access gets denied since they don’t have sufficient permissions, but reads made through SQL SELECT statements would succeed.
 
 :::image type="content" source="media\get-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but get denied access when querying OneLake directly." lightbox="media\get-started-security\sql.png":::
 
