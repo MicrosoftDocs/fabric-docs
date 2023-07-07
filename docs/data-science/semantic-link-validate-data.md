@@ -213,5 +213,5 @@ By using the `drop_dependency_violations` function, you can enforce functional c
 However, it's essential to carefully consider the context of your data and the functional constraints you choose to enforce to ensure that you aren't inadvertently removing valuable information from your dataset.
 
 ## Next steps
-- [How to explore and validate relationships](semantic-link-relationship.md)
+- [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
 - [How to accelerate data science using semantic functions](semantic-link-semantic-functions.md)

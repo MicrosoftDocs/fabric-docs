@@ -63,10 +63,10 @@ items:
     href: data-wrangler.md
   - name: Read from Power BI and write data usable by Power BI
     href: read-write-power-bi.md
-  - name: How to explore data with Semantic Link
-    href: semantic-link-explore-data.md
   - name: How to validate data with Semantic Link
     href: semantic-link-validate-data.md
+  - name: Explore and validate relationships in Power BI datasets
+    href: semantic-link-validate-relationship.md
 - name: Train machine learning models
   items:
   - name: Training Overview
@@ -203,7 +203,7 @@ items:
       href: read-write-power-bi.md
     - name: Validate data with Semantic Link
       href: semantic-link-validate-data.md
-    - name: Validate relationships in datasets with Semantic Link
+    - name: Explore and validate relationships in Power BI datasets
       href: semantic-link-validate-relationship.md
 - name: SynapseML
   items:

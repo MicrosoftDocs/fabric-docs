@@ -54,5 +54,5 @@ Currently, support for semantic propagation is limited and subject to Spark's in
 For example, column aggregation strips the metadata.
 
 ## Next steps
-- [How to explore data with Semantic Link](semantic-link-explore-data.md)
 - [How to validate data with Semantic Link](semantic-link-validate-data.md)
+- [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)

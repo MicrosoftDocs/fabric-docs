@@ -1,6 +1,6 @@
 ---
-title: Validate relationships with Semantic Link
-description: Validate relationships with Semantic Link
+title: Use Semantic Link to explore and validate relationships in Power BI datasets
+description: Learn to use Semantic Link to explore and validate relationships in Power BI datasets.
 ms.reviewer: mopeakande
 ms.author: romanbat
 author: RomanBat
@@ -10,7 +10,7 @@ ms.search.form: Semantic Link
 ---
 
 
-# Exploring Power BI Dataset Relationships
+# Explore and validate relationships in Power BI datasets
 
 In the world of data analysis and machine learning, understanding the structure and relationships within your dataset is crucial.
 Power BI is a powerful tool that allows you to model and visualize your data, but sometimes you need to dive deeper into the dataset's structure to gain additional insights or build machine learning models.
