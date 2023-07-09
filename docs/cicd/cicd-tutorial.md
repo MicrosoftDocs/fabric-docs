@@ -27,7 +27,7 @@ Before you start, make sure of the following:
 
 * If you haven't enabled Fabric yet, ask your admin to [enable Fabric for your organization](../admin/fabric-switch.md)
 * If you aren't signed up yet, [sign up for a free trial](../get-started/fabric-trial.md).
-* Azure git repo
+* Admin rights to an Azure git repo (If you're not an admin, you can get an admin to connect the workspace for you.)
 * Download the [MyFoodsIncome.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/developer/MyFoodsIncome.pbix) file that contains sample data for this tutorial. You can also use your own data, if you prefer.
 
 ## Step 1: Create a workspace
@@ -117,6 +117,36 @@ Now, we'll deploy some content to the test stage.
    :::image type="content" source="media/cicd-tutorial/deploy-to-test.png" alt-text="Screenshot of Deploy to test stage.":::
 
 ## Step 5: Connect to git
+
+To connect the workspace to your Azure Repo, follow these steps:
+
+1. Select the ellipsis (three dots) the then workspace settings.
+    > :::image type="content" source="./media/git-get-started/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed from ellipsis.":::
+
+1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Azure AD user signed into the workspace.
+
+    :::image type="content" source="./media/git-get-started/workspace-settings.png" alt-text="Screenshot of workspace settings window with git integration selected.":::
+
+1. From the dropdown menu, specify the following details about the branch you want to connect to:
+
+    > [!NOTE]
+    > You can only connect a workspace to one branch and folder at a time.
+
+    * [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
+    * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
+    * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
+    * Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only be connected to one branch at a time.)
+    * Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content will be created in the root folder. You can only connect to one folder at a time.)
+
+1. Select **Connect and sync**.
+
+During the initial sync, if either the workspace or git branch is empty, content is copied from the nonempty location to the empty one. If both the workspace and git branch have content, you’re asked which direction the sync should go. For more information on this initial sync, see [Connect and sync](git-integration-process.md#connect-and-sync).
+
+After you connect, the Workspace displays information about source control that allows the user to view the connected branch, the status of each item in the branch and the time of the last sync.
+
+:::image type="content" source="./media/git-get-started/git-sync-information.png" alt-text="Screenshot of source control icon and other git information.":::
+
+To keep your workspace synced with the git branch, [commit any changes](#commit-changes-to-git) you make in the workspace to the git branch, and [update your workspace](#update-workspace-from-git) whenever anyone creates new commits to the git branch.
 
 ## Step 6: Branch to new workspace
 
