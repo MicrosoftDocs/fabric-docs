@@ -103,9 +103,6 @@ SELECT COUNT(*) FROM [dbo].[bing_covid-19_data];
 
 If you ran both examples without deleting the rows in between runs, you'll see the result of this query with twice as many rows. While that works for data ingestion in this case, consider deleting all rows and ingesting data only once if you're going to further experiment with this data. 
 
-## Known issues
-- When using SQL Server Management Studio (SSMS) with the COPY statement, you may see an incorrect row count reported in the Messages tab. To get an accurate number of rows ingested using the COPY statement, use the query editor in Microsoft Fabric.
-
 ## Next steps
 
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)
