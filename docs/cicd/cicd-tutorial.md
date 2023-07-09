@@ -116,6 +116,10 @@ Now, we'll deploy some content to the test stage.
 
    :::image type="content" source="media/cicd-tutorial/deploy-to-test.png" alt-text="Screenshot of Deploy to test stage.":::
 
+Notice the two stages are the same. This is indicated by the green check icon.
+
+:::image type="content" source="{source}" alt-text="Screenshot of Development stage and test stage of pipelines with a green check icon indicating they are the same.":::
+
 ## Step 5: Connect to git
 
 To connect the workspace to your Azure Repo, follow these steps:
@@ -151,22 +155,70 @@ For more information about connecting to git, see [Connect to git](git-integrati
 ## Step 6: Edit workspace
 
 Make changes to the workspace. This can be creating deleting an item, or editing an item. For this tutorial, we'll edit the dataset.
-From Azure Devops, go to the *MyFoods* branch and edit the dataset. For example, go to file MyFoodsIncome.Dataset/model.bim and change the value on line 142 from "true" to "FALSE".
+From Azure Devops, go to the *MyFoods* branch and edit the dataset. o to file MyFoodsIncome.Dataset/model.bim and change the value on line 142 from "true" to "FALSE".
 
-:::image type="content" source="media/cicd-tutorial/edit-workspace.png" alt-text="Screenshot of workspace edit in DevOps.":::
+1. Create a new branch from the *MyFoods* branch. Name the new branch *MyFoods-Edit*.
 
-Commit the changes to the *MyFoods* branch.
+  :::image type="content" source="media/cicd-tutorial/create-new-branch.png" alt-text="Screenshot of create new branch in DevOps.":::
+
+1. Go to file MyFoodsIncome.Dataset/model.bim and change the value on line 142 from "true" to "FALSE".
+
+  :::image type="content" source="media/cicd-tutorial/edit-workspace.png" alt-text="Screenshot of workspace edit in DevOps.":::
+
+1. Commit the changes to the *MyFoods* branch.
 
 :::image type="content" source="media/cicd-tutorial/commit-changes.png" alt-text="Screenshot of commit changes in DevOps.":::
 
 ## Step 7: Create PR and merge
 
-Create a pull request to merge the *MyFoods* branch with the *main* branch.
+Create a pull request to merge the *MyFoods-Edit* branch with the *MyFoods* branch.
+
+Select **Create pull request**.
+Provide a name, description, and any other information you want for the pull request. Then select **Create**.
+
+:::image type="content" source="media/cicd-tutorial/create-pull-request.png" alt-text="Screenshot of create pull request.":::
+
+:::image type="content" source="media/cicd-tutorial/complete-pull-request.png" alt-text="Screenshot of complete pull request.":::
+
+Merge the pull request.
+
+:::image type="content" source="media/cicd-tutorial/complete-merge.png" alt-text="Screenshot of merge pull request.":::
 
 ## Step 8: Update workspace
 
+Go back to the workspace and refresh the page. The source control icon now shows `1` because one item in the git repo was changed and is different from the items in the *MyFoods* workspace. The MyFoodsIncome dataset shows a status of *Update Required*.
+
+:::image type="content" source="media/cicd-tutorial/source-control-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
+
+1. Select the source control icon to view the changed items in the git repo. The dataset shows a status of *Modified*.
+1. Select **Update all**.
+
+:::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of update workspace.":::
+
+The Git status of the dataset changes to *Synced*.
+
 ## Step 9: Compare stages in deployment pipeline
+
+Select View deployment pipelines to compare the content in the development stage with the content in the test stage.
+
+:::image type="content" source="media/cicd-tutorial/view-pipeline.png" alt-text="Screenshot of View deployment pipleine icon.":::
+
+Notice the orange `x` icon between the stages indicating that changes were made to the content in one of the stages since the last deployment.
+
+:::image type="content" source="media/cicd-tutorial/compare-stages-different.png" alt-text="Screenshot showing pipeline stages are different.":::
+
+Select the down arrow > **Review Changes** to view the changes. The Change Review screen appears showing the difference between the datasets in the two stages.
+
+:::image type="content" source="media/cicd-tutorial/change-review.png" alt-text="Screenshot of change review.":::
+
+Review the changes and close the window.
+
+For more information about comparing stages in a deployment pipeline, see [Compare stages in a deployment pipeline](deployment-pipelines/compare-pipeline-content.md).
 
 ## Step 10: Deploy to test stage
 
+When you’re satisfied with the changes, deploy the changes to the test stage, select **Deploy to test**.
+
 ## Step 11: Deploy to production
+
+When the test stage workspace is ready, deploy the changes to the production stage, select **Deploy to production**.
