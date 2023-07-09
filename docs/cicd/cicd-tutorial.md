@@ -151,8 +151,17 @@ For more information about connecting to git, see [Connect to git](git-integrati
 ## Step 6: Edit workspace
 
 Make changes to the workspace. This can be creating deleting an item, or editing an item. For this tutorial, we'll edit the dataset.
+From Azure Devops, go to the *MyFoods* branch and edit the dataset. For example, go to file MyFoodsIncome.Dataset/model.bim and change the value on line 142 from "true" to "FALSE".
+
+:::image type="content" source="media/cicd-tutorial/edit-workspace.png" alt-text="Screenshot of workspace edit in DevOps.":::
+
+Commit the changes to the *MyFoods* branch.
+
+:::image type="content" source="media/cicd-tutorial/commit-changes.png" alt-text="Screenshot of commit changes in DevOps.":::
 
 ## Step 7: Create PR and merge
+
+Create a pull request to merge the *MyFoods* branch with the *main* branch.
 
 ## Step 8: Update workspace
 
@@ -161,4 +170,3 @@ Make changes to the workspace. This can be creating deleting an item, or editing
 ## Step 10: Deploy to test stage
 
 ## Step 11: Deploy to production
-
