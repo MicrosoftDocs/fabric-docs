@@ -46,7 +46,7 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
 1. Select **Close**.
 
 > [!NOTE]
-> You can only connect to one subfolder or table per shortcut. To connect to more data, repeat these steps and create new shortcuts.
+> You can only connect to one subfolder or table per shortcut. To connect to more data, repeat these steps and create additional shortcuts.
 
 ## [Azure Data Lake Storage Gen2](#tab/adlsgen2)
 
@@ -54,6 +54,9 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
 
 1. Browse to an existing KQL database.
 1. Select **New** > **OneLake shortcut**.
+
+    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/home-tab.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
+
 1. Under **External sources**, select **Azure Data Lake Storage Gen2**.
     :::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Azure Data Lake Storage Gen2 is highlighted." lightbox="media/onelake-shortcuts/adls-gen2-shortcut/new-shortcut-expanded.png":::
 
@@ -80,6 +83,9 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
 
 1. Browse to an existing KQL database.
 1. Select **New** > **OneLake shortcut**.
+
+    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/home-tab.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
+
 1. Under **External sources**, select **Amazon S3**.
     :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 is highlighted."  lightbox="media/onelake-shortcuts/amazons3-shortcut/new-shortcut-expanded.png":::
 1. Enter the **Connection settings** according to the following table:
