@@ -32,45 +32,7 @@ To create and Amazon S3 Shortcut:
 
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
 
-1. Select **Amazon S3** tile.
-
-    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-tile-options-v2.png" alt-text="Screenshot of New Shortcuts dialog showing selection tiles for shortcut types." lightbox="media\create-onelake-shortcut\new-shortcut-tile-options.png":::
-
-1. Specify the connection details this shortcut will use.
-
-   1. Proved the endpoint for your S3 bucket (URL).
-      > [!NOTE]
-      > URL must be in the following format `https://bucketname.s3.region.amazonaws.com/`
-      >
-      > To retrieve your bucket URL:
-      >
-      > 1. Login in to your S3 account in AWS.
-      > 2. Select your bucket.  
-      > 3. Select the checkbox next to a folder in your bucket.
-      > 4. Click the Copy URL button.
-
-   1. If you have already defined a connection for this storage location, it automatically appears in the connection drop-down. Otherwise, you can choose **Create new connection**.
-
-   1. Enter a **Connection name**.
-
-   1. Provide the **Access Key** and  **Secret** for your IAM user.
-
-   1. Select **Next**.
-
-   :::image type="content" source="media\create-onelake-shortcut\connection-details-s3.png" alt-text="Screenshot showing where to enter the Connection settings for a new S3 shortcut." lightbox="media\create-onelake-shortcut\connection-details.png":::
-
-1. Specify the shortcut details.
-
-   1. Provide a name for the shortcut.
-
-   1. Provide a path for the shortcut (**Sub Path**). Enter a relative path that starts after the bucket name.
-
-      > [!NOTE]
-      > Shortcut paths are case sensitive.
-
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-details-s3.png" alt-text="Screenshot showing where to enter new shortcut details for S3 shortcut." lightbox="media\create-onelake-shortcut\new-shortcut-details.png":::
-
-1. Select **Create**.
+[!INCLUDE [amazon-s3-shortcut](../includes/real-time-analyticsamazon-s3-shortcut.md)]
 
 1. See the folder icon with shortcut symbol in the explorer.
 

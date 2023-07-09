@@ -32,20 +32,7 @@ To create a OneLake shortcut:
 
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
 
-1. Select the **Microsoft OneLake** tile.
-
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-tile-options-v2.png" alt-text="Screenshot of the tile options in the New shortcut screen." lightbox="media\create-onelake-shortcut\new-shortcut-tile-options.png":::
-
-1. Choose a Fabric item for the shortcut to point to.  This can be a Lakehouse, Data Warehouse or KQL Database. Then select **Next**.
-
-   :::image type="content" source="media\create-onelake-shortcut\select-data-source.png" alt-text="Screenshot of the Select a data source type screen." lightbox="media\create-onelake-shortcut\select-data-source.png":::
-
-1. Select a folder, then select **Create**.
-   
-   > [!NOTE]
-   > Shortcut creation experience does not support selecting multiple folders. If there are multiple tables, a shortcut must be created separately for each folder.
-
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-create-button.png" alt-text="Screenshot showing where to select the Create button in the New shortcut screen." lightbox="media\create-onelake-shortcut\new-shortcut-create-button.png":::
+[!INCLUDE [onelake-shortcut](../includes/real-time-analytics/onelake-shortcut.md)]
 
 1. See the folder icon with shortcut symbol in the explorer.
 
@@ -53,5 +40,5 @@ To create a OneLake shortcut:
 
 ## Next steps
 
-- [How-to: Create an ADLS Gen2 shortcut](create-adls-shortcut.md)
-- [How-to: Create an Amazon S3 shortcut](create-s3-shortcut.md)
+* [How-to: Create an ADLS Gen2 shortcut](create-adls-shortcut.md)
+* [How-to: Create an Amazon S3 shortcut](create-s3-shortcut.md)
