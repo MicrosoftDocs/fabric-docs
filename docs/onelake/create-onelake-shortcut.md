@@ -32,7 +32,7 @@ To create a OneLake shortcut:
 
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
 
-[!INCLUDE [onelake-shortcut](../includes/onelake-shortcut.md)]
+  [!INCLUDE [onelake-shortcut](../includes/onelake-shortcut.md)]
 
 1. See the folder icon with shortcut symbol in the explorer.
 
