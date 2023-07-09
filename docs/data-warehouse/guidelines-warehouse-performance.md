@@ -103,7 +103,7 @@ For supported data types and more information, see [data types](data-types.md#au
 ## Next steps
 
 - [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
-- [Limitations and known issues](limitations.md)
+- [Limitations](limitations.md)
 - [Troubleshoot the Warehouse](troubleshoot-synapse-data-warehouse.md)
 - [Data types](data-types.md)
 - [T-SQL surface area](tsql-surface-area.md)
