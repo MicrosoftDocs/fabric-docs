@@ -32,7 +32,7 @@ To create and Amazon S3 Shortcut:
 
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
 
-[!INCLUDE [amazon-s3-shortcut](../includes/samazon-s3-shortcut.md)]
+[!INCLUDE [amazon-s3-shortcut](../includes/amazon-s3-shortcut.md)]
 
 1. See the folder icon with shortcut symbol in the explorer.
 
