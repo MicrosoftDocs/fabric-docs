@@ -59,4 +59,4 @@ At this time, the following list of commands is NOT currently supported. Don't t
 ## Next steps
 
 - [Data types in Microsoft Fabric](data-types.md)
-- [Limitations and known issues in Microsoft Fabric](limitations.md)
+- [Limitations in Microsoft Fabric](limitations.md)
