@@ -9,11 +9,11 @@ ms.date: 07/09/2023
 ---
 
 1. Under **External sources**, select **Azure Data Lake Storage Gen2**.
-    :::image type="content" source="includes/media/onelake-shortcuts/adls-gen2-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Azure Data Lake Storage Gen2 is highlighted." lightbox="includes/media/onelake-shortcuts/adls-gen2-shortcut/new-shortcut-expanded.png":::
+    :::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Azure Data Lake Storage Gen2 is highlighted." lightbox="media/onelake-shortcuts/adls-gen2-shortcut/new-shortcut-expanded.png":::
 
 1. Enter the **Connection settings** according to the following table:
 
-    :::image type="content" source="includes/media/onelake-shortcuts/adls-gen2-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials."  lightbox="includes/media/onelake-shortcuts/adls-gen2-shortcut/shortcut-details.png":::
+    :::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials."  lightbox="media/onelake-shortcuts/adls-gen2-shortcut/shortcut-details.png":::
 
       |Field | Description| Value|
       |-----|-----| -----|
