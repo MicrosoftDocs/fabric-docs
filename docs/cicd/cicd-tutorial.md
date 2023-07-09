@@ -121,46 +121,44 @@ Now, we'll deploy some content to the test stage.
 To connect the workspace to your Azure Repo, follow these steps:
 
 1. Select the ellipsis (three dots) the then workspace settings.
-    > :::image type="content" source="./media/git-get-started/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed from ellipsis.":::
+
+   :::image type="content" source="./media/cicd-tutorial/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed.":::
 
 1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Azure AD user signed into the workspace.
 
-    :::image type="content" source="./media/git-get-started/workspace-settings.png" alt-text="Screenshot of workspace settings window with git integration selected.":::
+    :::image type="content" source="./media/cicd-tutorial/workspace-settings.png" alt-text="Screenshot of workspace settings window with git integration selected.":::
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
-
-    > [!NOTE]
-    > You can only connect a workspace to one branch and folder at a time.
 
     * [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
     * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
     * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
-    * Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only be connected to one branch at a time.)
-    * Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content will be created in the root folder. You can only connect to one folder at a time.)
+    * Select **+ New Branch** to create a new branch.
+    * Name the new branch *MyFoods*, create it from *main* (or *master*) and Select **Create**.
+
+    :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
 
 1. Select **Connect and sync**.
 
-During the initial sync, if either the workspace or git branch is empty, content is copied from the nonempty location to the empty one. If both the workspace and git branch have content, you’re asked which direction the sync should go. For more information on this initial sync, see [Connect and sync](git-integration-process.md#connect-and-sync).
+After you connect, the Workspace displays information about source control that allows you to view the connected branch, the status of each item in the branch and the time of the last sync. The Source control icon shows `0` because the items in the workspace git repo are identical.
 
-After you connect, the Workspace displays information about source control that allows the user to view the connected branch, the status of each item in the branch and the time of the last sync.
+:::image type="content" source="./media/cicd-tutorial/git-sync-information.png" alt-text="Screenshot of source control icon and other git information.":::
 
-:::image type="content" source="./media/git-get-started/git-sync-information.png" alt-text="Screenshot of source control icon and other git information.":::
+Now the workspace is connected to git and anyone with access to the repo can view and/or edit it, depending on their permissions.
 
-To keep your workspace synced with the git branch, [commit any changes](#commit-changes-to-git) you make in the workspace to the git branch, and [update your workspace](#update-workspace-from-git) whenever anyone creates new commits to the git branch.
+For more information about connecting to git, see [Connect to git](git-integration/git-get-started.md#connect-to-git).
 
-## Step 6: Branch to new workspace
+## Step 6: Edit workspace
 
-## Step 7: Edit workspace
+Make changes to the workspace. This can be creating deleting an item, or editing an item. For this tutorial, we'll edit the dataset.
 
-Make changes to the workpace. This can be creating a new report, adding a new dataset, etc.
+## Step 7: Create PR and merge
 
-## Step 8: Create PR and merge
+## Step 8: Update workspace
 
-## Step 9: Update workspace
+## Step 9: Compare stages in deployment pipeline
 
-## Step 10: Compare stages in deployment pipeline
+## Step 10: Deploy to test stage
 
-## Step 11: Deploy to test stage
-
-## Step 12: Deploy to production
+## Step 11: Deploy to production
 
