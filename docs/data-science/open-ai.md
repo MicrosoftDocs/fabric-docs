@@ -1,6 +1,6 @@
 ---
 title: Azure OpenAI for big data
-description: Use Azure OpenAI service to solve a large number of natural language tasks through prompting the completion API.
+description: Use Azure OpenAI Service to solve a large number of natural language tasks through prompting the completion API.
 ms.topic: how-to
 ms.custom: build-2023
 ms.reviewer: jessiwang
