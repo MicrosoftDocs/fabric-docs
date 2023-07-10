@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 07/09/2023
+ms.date: 07/10/2023
 ms.search.form: product-kusto
 ---
 
@@ -58,16 +58,16 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
     :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/home-tab.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
 
 1. Under **External sources**, select **Azure Data Lake Storage Gen2**.
-    :::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Azure Data Lake Storage Gen2 is highlighted." lightbox="media/onelake-shortcuts/adls-gen2-shortcut/new-shortcut-expanded.png":::
+    :::image type="content" source="media/onelake-shortcuts/azure-data-lake-storage-gen2-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Azure Data Lake Storage Gen2 is highlighted." lightbox="media/onelake-shortcuts/azure-data-lake-storage-gen2-shortcut/new-shortcut-expanded.png":::
 
 1. Enter the **Connection settings** according to the following table:
 
-    :::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials."  lightbox="media/onelake-shortcuts/adls-gen2-shortcut/shortcut-details.png":::
+    :::image type="content" source="media/onelake-shortcuts/azure-data-lake-storage-gen2-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials."  lightbox="media/onelake-shortcuts/azure-data-lake-storage-gen2-shortcut/shortcut-details.png":::
 
       |Field | Description| Value|
       |-----|-----| -----|
       | **URL**| The connection string for your storage account. | `https://`*StorageAccountName*`.dfs.core.windows.net`|
-      |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If none exist, create a new connection.| *Create new connection*. |
+      |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If none exists, create a new connection.| *Create new connection*. |
       |**Connection name** | The Azure Data Lake Storage Gen2 connection name.| A name for your connection.|
       |**Authentication kind**| The authorization model. The supported models are: Organizational account, Account Key, Shared Access Signature (SAS), and Service principal. For more information, see [ADLS shortcuts](../onelake/onelake-shortcuts.md#adls-shortcuts). | Dependent on the authorization model. Once you select an authentication kind, fill in the required credentials.|
 
@@ -87,15 +87,15 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
     :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/home-tab.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
 
 1. Under **External sources**, select **Amazon S3**.
-    :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 is highlighted."  lightbox="media/onelake-shortcuts/amazons3-shortcut/new-shortcut-expanded.png":::
+    :::image type="content" source="media/onelake-shortcuts/amazon-s3-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 is highlighted."  lightbox="media/onelake-shortcuts/amazon-s3-shortcut/new-shortcut-expanded.png":::
 1. Enter the **Connection settings** according to the following table:
 
-    :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials."  lightbox="media/onelake-shortcuts/amazons3-shortcut/shortcut-details.png":::
+    :::image type="content" source="media/onelake-shortcuts/amazon-s3-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials."  lightbox="media/onelake-shortcuts/amazon-s3-shortcut/shortcut-details.png":::
 
       |Field | Description| Value|
       |-----|-----| -----|
       | **URL**| The connection string for your Amazon S3 bucket. | `https://`*BucketName*`.s3.`*RegionName*`.amazonaws.com` |
-      |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If none exist, create a new connection.| *Create new connection*. |
+      |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If none exists, create a new connection.| *Create new connection*. |
       |**Connection name** | The Amazon S3 connection name.| A name for your connection.|
       |**Authentication kind**| The *Identity and Access Management (IAM)* policy. The policy must have read and list permissions. For more information, see [IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html).| Dependent on the bucket policy.|
       |**Access Key ID**| The *Identity and Access Management (IAM)* user key. For more information, see [Manage access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html). | Your access key.|
@@ -108,7 +108,7 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
     > [!NOTE]
     > Shortcut paths are case sensitive.
 
-    :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/shortcut-settings.png" alt-text="Screenshot of the New shortcut window showing the shortcut settings."  lightbox="media/onelake-shortcuts/amazons3-shortcut/shortcut-settings.png":::
+    :::image type="content" source="media/onelake-shortcuts/amazon-s3-shortcut/shortcut-settings.png" alt-text="Screenshot of the New shortcut window showing the shortcut settings."  lightbox="media/onelake-shortcuts/amazon-s3-shortcut/shortcut-settings.png":::
 
 1. Select **Create**.
 
@@ -116,7 +116,7 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
 
 The database refreshes automatically. The shortcut appears under **Shortcuts** in the **Data tree**.
 
-:::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
+:::image type="content" source="media/onelake-shortcuts/azure-data-lake-storage-gen2-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
 
 The OneLake shortcut has been created. You can now query this data.
 
@@ -128,9 +128,9 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 1. Replace the table name placeholder with `external_table('`*Shortcut name*`')`.
 1. Select **Run** or press **Shift+ Enter** to run a selected query.
 
-:::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of a sample query."  lightbox="media/onelake-shortcuts/amazons3-shortcut/query-shortcut.png":::
+:::image type="content" source="media/onelake-shortcuts/amazon-s3-shortcut/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of a sample query."  lightbox="media/onelake-shortcuts/amazon-s3-shortcut/query-shortcut.png":::
 
 ## Next steps
 
-- [Query data in a KQL queryset](kusto-query-set.md)
-- [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context)
+* [Query data in a KQL queryset](kusto-query-set.md)
+* [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context)
