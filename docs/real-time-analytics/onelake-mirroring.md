@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/25/2023
 ms.search.form: product-kusto
 ---
 # One logical copy
@@ -24,7 +24,7 @@ This shortcut is a two-step process that requires you to do the following:
 
 Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences.
 
-To query referenced data from OneLake in your KQL database or table, see [Create a OneLake shortcut](onelake-shortcut.md).
+To query referenced data from OneLake in your KQL database or table, see [Create a OneLake shortcut](onelake-shortcuts.md?tab=onelake-shortcut)
 
 ## How it works
 
