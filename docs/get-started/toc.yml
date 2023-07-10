@@ -47,6 +47,8 @@ items:
   href: onelake-data-hub.md
 - name: Promote or certify items
   href: endorsement-promote-certify.md
+- name: Share items
+  href: share-items.md
 - name: Apply sensitivity labels
   href: apply-sensitivity-labels.md
 - name: Known issues
