@@ -94,8 +94,8 @@ items:
     items:
     - name: One logical copy
       href: onelake-mirroring.md
-    - name: Create a shortcut to access data in OneLake
-      href: onelake-shortcut.md
+    - name: Create OneLake shortcuts
+      href: onelake-shortcuts.md
   - name: Notebooks
     items:
     - name: Use a notebook with Kqlmagic to query a KQL database
