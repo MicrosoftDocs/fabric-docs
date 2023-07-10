@@ -66,7 +66,7 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
 
       |Field | Description| Value|
       |-----|-----| -----|
-      | **URL**| The connection string for your delta container. | `https://`*StorageAccountName*`.dfs.core.windows.net`|
+      | **URL**| The connection string for your storage account. | `https://`*StorageAccountName*`.dfs.core.windows.net`|
       |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If none exist, create a new connection.| *Create new connection*. |
       |**Connection name** | The Azure Data Lake Storage Gen2 connection name.| A name for your connection.|
       |**Authentication kind**| The authorization model. The supported models are: Organizational account, Account Key, Shared Access Signature (SAS), and Service principal. For more information, see [ADLS shortcuts](../onelake/onelake-shortcuts.md#adls-shortcuts). | Dependent on the authorization model. Once you select an authentication kind, fill in the required credentials.|
