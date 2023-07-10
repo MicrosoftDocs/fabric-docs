@@ -5,13 +5,13 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: tutorial 
-ms.date: 07/03/2023
+ms.date: 07/10/2023
 ---
 
 # Tutorial: Application lifecycle management in Fabric
 
-This tutorial will take you through the whole process of loading data into your workspace, editing it etc.
-If you already have a workspace with data, you can skip to [step 3](#step-3-create-pipeline).
+This tutorial takes you through the whole process of loading data into your workspace, editing it etc.
+If you already have a workspace with data, you can skip to [step 3](#step-3-create-a-deployment-pipeline).
 
 Let’s get started!
 
@@ -25,9 +25,9 @@ Let’s get started!
 
 Before you start, make sure of the following:
 
-* If you haven't enabled Fabric yet, ask your admin to [enable Fabric for your organization](../admin/fabric-switch.md)
+* If you haven't enabled Fabric yet, ask your admin to [enable Fabric for your organization](../admin/fabric-switch.md).
 * If you aren't signed up yet, [sign up for a free trial](../get-started/fabric-trial.md).
-* Admin rights to an Azure git repo (If you're not an admin, you can get an admin to connect the workspace for you.)
+* Admin rights to an Azure git repo. (If you're not an admin, you can ask an admin to connect the workspace for you.)
 * Download the [MyFoodsIncome.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/developer/MyFoodsIncome.pbix) file that contains sample data for this tutorial. You can also use your own data, if you prefer.
 
 ## Step 1: Create a workspace
@@ -50,11 +50,11 @@ To create a new workspace and assign it a license:
 
 1. Select **Apply**.
 
-For more on creating a workspace see [Create a workspace](/power-bi/collaborate-share/service-create-the-new-workspaces).
+For more on creating a workspace, see [Create a workspace](/power-bi/collaborate-share/service-create-the-new-workspaces).
 
 ## Step 2: Load data
 
-Now we need to load data into the workspace. You can upload data from OneDrive, SharePoint, or a local file. In this tutorial we'll load data from a file.
+Now we need to load data into the workspace. You can upload data from OneDrive, SharePoint, or a local file. In this tutorial, we load data from a file.
 
 1. From the top menu bar, select **Upload > Browse**.
 
@@ -62,9 +62,9 @@ Now we need to load data into the workspace. You can upload data from OneDrive, 
 
 1. Browse to the location of the **MyFoodsIncome.pbix** file you [downloaded earlier](#prerequisites), or load your own sample *.pbix* file.
 
-### Edit credentials
+### Edit credentials - first time only
 
-Before you create a deployment pipeline you need to set the credentials. This step only needs to be done once. After your credentials are set, you won't have to set them again.
+Before you create a deployment pipeline, you need to set the credentials. This step only needs to be done once. After your credentials are set, you won't have to set them again.
 
 1. Go to **Settings > Power BI settings**.
 
@@ -78,7 +78,7 @@ Before you create a deployment pipeline you need to set the credentials. This st
 
    :::image type="content" source="media/cicd-tutorial/set-credentials.png" alt-text="Screenshot of dataset credentials.":::
 
-1. Select **Sign in**. The connection is tested and credentials set. You won't have to to so this again for this dataset.
+1. Select **Sign in**. The connection is tested and credentials set. You won't have to edit the credentials again for this dataset.
 
 You can now create a deployment pipeline.
 
@@ -106,7 +106,7 @@ You can read more about creating deployment pipelines in [Deployment pipelines o
 
 ## Step 4: Deploy to test stage
 
-Now, we'll deploy some content to the test stage.
+Now, we deploy some content to the test stage.
 
 1. From the development stage of the deployment content view, select **Show more**.
 
@@ -118,13 +118,13 @@ Now, we'll deploy some content to the test stage.
 
 Notice the two stages are the same. This is indicated by the green check icon.
 
-:::image type="content" source="{source}" alt-text="Screenshot of Development stage and test stage of pipelines with a green check icon indicating they are the same.":::
+:::image type="content" source="./media/cicd-tutorial/pipeline-compare-same.png" alt-text="Screenshot of Development stage and test stage of pipelines with a green check icon indicating they're the same.":::
 
 ## Step 5: Connect to git
 
 To connect the workspace to your Azure Repo, follow these steps:
 
-1. Select the ellipsis (three dots) the then workspace settings.
+1. Select the ellipsis (three dots) then **Workspace settings**.
 
    :::image type="content" source="./media/cicd-tutorial/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed.":::
 
@@ -154,14 +154,14 @@ For more information about connecting to git, see [Connect to git](git-integrati
 
 ## Step 6: Edit workspace
 
-Make changes to the workspace. This can be creating deleting an item, or editing an item. For this tutorial, we'll edit the dataset.
-From Azure Devops, go to the *MyFoods* branch and edit the dataset. o to file MyFoodsIncome.Dataset/model.bim and change the value on line 142 from "true" to "FALSE".
+Make changes to the workspace. Workspace changes include creating, deleting, or editing an item. In this tutorial, we edit the dataset.
+From Azure Devops, go to the *MyFoods* branch and edit the dataset. Go to file *MyFoodsIncome.Dataset/model.bim* and change the value on line 142 from "true" to "false".
 
 1. Create a new branch from the *MyFoods* branch. Name the new branch *MyFoods-Edit*.
 
   :::image type="content" source="media/cicd-tutorial/create-new-branch.png" alt-text="Screenshot of create new branch in DevOps.":::
 
-1. Go to file MyFoodsIncome.Dataset/model.bim and change the value on line 142 from "true" to "FALSE".
+1. Go to file MyFoodsIncome.Dataset/model.bim and change the value on line 142 from "true" to "false".
 
   :::image type="content" source="media/cicd-tutorial/edit-workspace.png" alt-text="Screenshot of workspace edit in DevOps.":::
 
@@ -201,13 +201,13 @@ The Git status of the dataset changes to *Synced*.
 
 Select View deployment pipelines to compare the content in the development stage with the content in the test stage.
 
-:::image type="content" source="media/cicd-tutorial/view-pipeline.png" alt-text="Screenshot of View deployment pipleine icon.":::
+:::image type="content" source="media/cicd-tutorial/view-pipeline.png" alt-text="Screenshot of View deployment pipelines icon.":::
 
 Notice the orange `x` icon between the stages indicating that changes were made to the content in one of the stages since the last deployment.
 
 :::image type="content" source="media/cicd-tutorial/compare-stages-different.png" alt-text="Screenshot showing pipeline stages are different.":::
 
-Select the down arrow > **Review Changes** to view the changes. The Change Review screen appears showing the difference between the datasets in the two stages.
+Select the down arrow > **Review Changes** to view the changes. The **Change Review** screen shows the difference between the datasets in the two stages.
 
 :::image type="content" source="media/cicd-tutorial/change-review.png" alt-text="Screenshot of change review.":::
 
