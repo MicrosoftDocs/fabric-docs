@@ -31,7 +31,7 @@ Select the **Title** to view more information about that specific known issue.
 
 Select the **Title** to view more information about that specific known issue. Fixed issues are removed after 46 days.
 
-|  Issue ID |  Product experience  |  Title                            |  Issues publish date |  Status  |
+|  Issue ID |  Product experience  |  Title                            |  Issue publish date |  Status  |
 |-----------|----------------------|-----------------------------------|---------------------|----------|
 |  421  | Administration & Management | ['Get Tenant Settings' API returns default values instead of user configured values](known-issues/known-issue-421-get-tenant-settings-api-returns-default-values.md)    |  June 8, 2023  |  Fixed: June 28, 2023  |
 
