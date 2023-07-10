@@ -17,8 +17,10 @@ For service level outages or degradation notifications, check [https://support.f
 
 Select the **Title** to view more information about that specific known issue.
 
-|  Issue ID |  Product experience     |  Title                           |  Issue publish date |  
+|  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|---------------------|
+|  454  | Data Warehouse | [Warehouse's object explorer doesn't support case-sensitive object names](known-issues/known-issue-454-dw-object-explorer-unsupport-case-sensitive-names.md)    |  July 10, 2023  |
+|  453  | Data Warehouse | [Data Warehouse only publishes Delta Lake Logs for Inserts](known-issues/known-issue-453-dw-publishes-delta-lake-logs-Inserts.md)    |  July 10, 2023  |
 |  449  | Administration & Management | [Pipeline isn't loading if user deployed with update app via public API](known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md)    |  July 5, 2023  |
 |  447  | Data Warehouse | [Temp tables in Data Warehouse and SQL Endpoint](known-issues/known-issue-447-temp-tables-in-dw-and-sql-endpoint.md)    |  July 5, 2023  |
 |  446  | Data Warehouse | [OneLake table folder not removed when table dropped in data warehouse](known-issues/known-issue-446-oneLake-table-folder-not-removed.md)    |  July 5, 2023  |
@@ -29,7 +31,7 @@ Select the **Title** to view more information about that specific known issue.
 
 Select the **Title** to view more information about that specific known issue. Fixed issues are removed after 46 days.
 
-|  Issue ID |  Product experience  |  Title                            |  Issue publish date |  Status  |
+|  Issue ID |  Product experience  |  Title                            |  Issues publish date |  Status  |
 |-----------|----------------------|-----------------------------------|---------------------|----------|
 |  421  | Administration & Management | ['Get Tenant Settings' API returns default values instead of user configured values](known-issues/known-issue-421-get-tenant-settings-api-returns-default-values.md)    |  June 8, 2023  |  Fixed: June 28, 2023  |
 

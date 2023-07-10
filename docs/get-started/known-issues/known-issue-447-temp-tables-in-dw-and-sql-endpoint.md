@@ -26,4 +26,4 @@ Use regular user tables instead of Temp Tables.
 
 ## Next steps
 
-- [About known issues](https://support.fabric.microsoft.com/known-issues) 
+- [About known issues](https://support.fabric.microsoft.com/known-issues)
