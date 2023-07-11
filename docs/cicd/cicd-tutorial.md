@@ -104,21 +104,27 @@ The development stage of the deployment pipeline shows one dataset, one report, 
 
 You can read more about creating deployment pipelines in [Deployment pipelines overview](./deployment-pipelines/assign-pipeline.md).
 
-## Step 4: Deploy to test stage
+## Step 4: Deploy content to other stages
 
-Now, we deploy some content to the test stage.
+Now, deploy the content to the other stages of the pipeline.
 
-1. From the development stage of the deployment content view, select **Show more**.
-
-   :::image type="content" source="media/cicd-tutorial/development-view.png" alt-text="Screenshot of Show more button of the development stage of the deployment pipeline.":::
-
-1. Check all three items to deploy to the test stage. Then select **Deploy to test**.
+1. From the development stage of the deployment content view, select **Deploy to test**.
 
    :::image type="content" source="media/cicd-tutorial/deploy-to-test.png" alt-text="Screenshot of Deploy to test stage.":::
 
-Notice the two stages are the same. This is indicated by the green check icon.
+Notice the content of two stages are identical, since you deployed the entire content of the pipeline. This is indicated by the green check icon.
 
 :::image type="content" source="./media/cicd-tutorial/pipeline-compare-same.png" alt-text="Screenshot of Development stage and test stage of pipelines with a green check icon indicating they're the same.":::
+
+1. Deploy the content from the test stage to the production stage.
+
+   :::image type="content" source="media/cicd-tutorial/deploy-to-prod.png" alt-text="Screenshot of Deploy to production stage.":::
+
+1. To refresh the dataset in any stage, select the refresh button next to the datasets icon in the summary card of each stage.
+
+   :::image type="content" source="media/cicd-tutorial/refresh.png" alt-text="Screenshot of Refresh button.":::
+
+For more information on deploying content, see [Deploy content](./deployment-pipelines/deploy-content.md).
 
 ## Step 5: Connect to git
 
@@ -138,7 +144,8 @@ To connect the workspace to your Azure Repo, follow these steps:
     * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
     * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
     * Select **+ New Branch** to create a new branch.
-    * Name the new branch *MyFoods*, create it from *main* (or *master*) and Select **Create**.
+    * Name the new branch *MyFoods*, branch it from *main* (or *master*) and Select **Create**.
+    * The folder in the repo to connect to. If you don't specify a folder, it defaults to the root folder.
 
     :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
 
@@ -154,20 +161,20 @@ For more information about connecting to git, see [Connect to git](git-integrati
 
 ## Step 6: Edit workspace
 
-Make changes to the workspace. Workspace changes include creating, deleting, or editing an item. In this tutorial, we edit the dataset.
-From Azure Devops, go to the *MyFoods* branch and edit the dataset. Go to file *MyFoodsIncome.Dataset/model.bim* and change the value on line 142 from "true" to "false".
+Make changes to the workspace. Workspace changes include creating, deleting, or editing an item. In this tutorial, we change the format of a dataset column.
+Open the pbix file Power BI Desktop.
 
-1. Create a new branch from the *MyFoods* branch. Name the new branch *MyFoods-Edit*.
+1. Select the data view from the left side menu, and the **Order_Details > Discount** table from the Data menu..
 
-  :::image type="content" source="media/cicd-tutorial/create-new-branch.png" alt-text="Screenshot of create new branch in DevOps.":::
+  :::image type="content" source="media/cicd-tutorial/select-table.png" alt-text="Screenshot of select table.":::
 
-1. Go to file MyFoodsIncome.Dataset/model.bim and change the value on line 142 from "true" to "false".
+1. Go to the **Column tools** menu and change the format of the **Discount** column to *Percentage*.
 
-  :::image type="content" source="media/cicd-tutorial/edit-workspace.png" alt-text="Screenshot of workspace edit in DevOps.":::
+  :::image type="content" source="media/cicd-tutorial/change-format.png" alt-text="Screenshot of changing format of column.":::
 
-1. Commit the changes to the *MyFoods* branch.
+1. From the **Home** menu, save the changes and **Publish** them to the workspace that's connected to git.
 
-:::image type="content" source="media/cicd-tutorial/commit-changes.png" alt-text="Screenshot of commit changes in DevOps.":::
+:::image type="content" source="media/cicd-tutorial/publish.png" alt-text="Screenshot of publishing changes in git.":::
 
 ## Step 7: Create PR and merge
 
