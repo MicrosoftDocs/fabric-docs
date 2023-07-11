@@ -4,11 +4,14 @@ description: Identify issues that are affecting Data Factory features.
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting    
-ms.date: 06/06/2023
+ms.date: 7/10/2023
 ms.custom:  
 ---
 
 # Data Factory known issues
+
+>[!IMPORTANT]
+> For important considerations when using the output destination feature in Dataflow Gen2 with an on-premises data gateway, check the article on [gateway considerations for output destination](gateway-considerations-output-destination.md).
 
 This page lists known issues for Data Factory features. Before submitting a support request, review this list to see if the issue you're experiencing is already known and being addressed.
 
