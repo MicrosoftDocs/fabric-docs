@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 07/10/2023
 ---
 
-# Tutorial: Application lifecycle management in Fabric
+# Tutorial: Lifecycle management in Fabric
 
 This tutorial takes you through the whole process of loading data into your workspace, editing it etc.
 If you already have a workspace with data, you can skip to [step 3](#step-3-create-a-deployment-pipeline).
@@ -17,18 +17,18 @@ Let’s get started!
 
 > [!div class="checklist"]
 >
-> * Prepare and load data into a lakehouse
-> * Build a dimensional model in a lakehouse
-> * Automatically create a report with quick create
+> * Prepare and load data into a workspace
+> * Create a deployment pipeline
+> * Edit your workspace in git and update them straight to the deployment pipeline
 
 ## Prerequisites
 
 Before you start, make sure of the following:
 
-* If you haven't enabled Fabric yet, ask your admin to [enable Fabric for your organization](../admin/fabric-switch.md).
+* If you don't have Fabric enabled yet, ask your admin to [enable Fabric for your organization](../admin/fabric-switch.md).
 * If you aren't signed up yet, [sign up for a free trial](../get-started/fabric-trial.md).
-* Admin rights to an Azure git repo. (If you're not an admin, you can ask an admin to connect the workspace for you.)
-* Download the [MyFoodsIncome.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/developer/MyFoodsIncome.pbix) file that contains sample data for this tutorial. You can also use your own data, if you prefer.
+* Access to an Azure git repo. If you don't have one, see [Set up a git repository](/devops/develop/git/set-up-a-git-repository) for information on creating one.
+* Download the [MyFoodsIncome.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/developer/MyFoodsIncome.pbix) file that contains sample data for this tutorial. Alternatively, you can use your own dataset and report, if you prefer.
 
 ## Step 1: Create a workspace
 
@@ -52,7 +52,7 @@ To create a new workspace and assign it a license:
 
 For more on creating a workspace, see [Create a workspace](/power-bi/collaborate-share/service-create-the-new-workspaces).
 
-## Step 2: Load data
+## Step 2: Load a *.pbix* file into the workspace
 
 Now we need to load data into the workspace. You can upload data from OneDrive, SharePoint, or a local file. In this tutorial, we load data from a file.
 
@@ -60,7 +60,7 @@ Now we need to load data into the workspace. You can upload data from OneDrive, 
 
    :::image type="content" source="media/cicd-tutorial/upload-data.png" alt-text="Screenshot of Upload menu.":::
 
-1. Browse to the location of the **MyFoodsIncome.pbix** file you [downloaded earlier](#prerequisites), or load your own sample *.pbix* file.
+1. Browse to the location of the **MyFoodsIncome.pbix** file you [downloaded earlier](#prerequisites), or load your own sample dataset and report.
 
 ### Edit credentials - first time only
 
