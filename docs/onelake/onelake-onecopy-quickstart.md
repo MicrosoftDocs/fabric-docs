@@ -20,6 +20,8 @@ In this guide, you will:
 - Analyze and transform data with Spark using a Fabric notebook.
 
 - Query one copy of data on OneLake with SQL.
+  
+- Please note as for tables inside of Lakehouse: they should be created inside of the Table folder, only, and not using intermediate folders in between.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
