@@ -10,7 +10,9 @@ ms.date: 06/06/2023
 ms.search.form: Semantic Link
 ---
 
-# Validate relationships between tables with Semantic Link and Microsoft Fabric
+# Use functional dependencies to understand and validate your data
+Functional dependencies are relationships between columns in a table where the values in one column are used to determine the values in another column.
+An understanding of these dependencies can help you uncover patterns and relationships in your data, which can be useful for feature engineering, data cleaning, and model building.
 
 Power BI and Microsoft Fabric provide a rich set of data modeling capabilities, including the ability to detect, define, and manage relationships of foreign keys between tables and their cardinalities. 
 <!-- [link](https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-create-and-manage-relationships). -->
@@ -40,8 +42,7 @@ You'll learn to:
 
 ## Use functional dependencies to find and fix data quality issues
 
-Data dependencies are relationships between columns in a dataset, where the values in one column are used to determine the values in another column.
-An understanding of these dependencies can help you uncover patterns and relationships in your data, which can be useful for feature engineering, data cleaning, and model building.
+Functional dependencies act as an effective invariant, allowing finding and fixing data quality issues, that are hard to detect otherwise. 
 
 ### Find data dependencies
 
