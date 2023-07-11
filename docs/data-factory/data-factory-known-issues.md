@@ -11,7 +11,7 @@ ms.custom:
 # Data Factory known issues
 
 >[!IMPORTANT]
-> For important considerations when using the output destination feature in Dataflow Gen2 with an on-premises data gateway, check the article on [gateway considerations for output destination](gateway-considerations-output-destination.md).
+> For important considerations when using the output destination feature in Dataflow Gen2 with an on-premises data gateway, check the article on [gateway considerations for output destination](gateway-considerations-output-destinations.md).
 
 This page lists known issues for Data Factory features. Before submitting a support request, review this list to see if the issue you're experiencing is already known and being addressed.
 

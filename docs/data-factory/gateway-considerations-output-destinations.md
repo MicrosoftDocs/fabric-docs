@@ -24,21 +24,21 @@ To troubleshoot the issue, follow these steps:
 
 1. Confirm that the dataflow is configured with an output destination.
 
-   :::image type="content" source="media/gateway-considerations-output-destination/dataflow-output-configuration.png" alt-text="<alt text>" lightbox="media/gateway-considerations-output-destination/dataflow-output-configuration.png":::
+   :::image type="content" source="media/gateway-considerations-output-destination/dataflow-output-configuration.png" alt-text="Screenshot of the Power Query editor with the Lakehouse data destination emphasized." lightbox="media/gateway-considerations-output-destination/dataflow-output-configuration.png":::
 
 2. Verify that the dataflow refresh fails, with tables refresh showing as *"Succeeded"* and activities showing as *"Failed"*.
 
-   :::image type="content" source="media/gateway-considerations-output-destination/refresh-history-failure.png" alt-text="<alt text>" lightbox="media/gateway-considerations-output-destination/refresh-history-failure.png":::
+   :::image type="content" source="media/gateway-considerations-output-destination/refresh-history-failure.png" alt-text="Screenshot of the dataflow details with tables showing succeeded and activities failed." lightbox="media/gateway-considerations-output-destination/refresh-history-failure.png":::
 
 3. Review the error details for the Activity `WriteToDatabaseTableFrom_...`, which provides information about the encountered error.
 
-   :::image type="content" source="media/gateway-considerations-output-destination/refresh-history-detail.png" alt-text="<alt text>" lightbox="media/gateway-considerations-output-destination/refresh-history-detail.png":::
+   :::image type="content" source="media/gateway-considerations-output-destination/refresh-history-detail.png" alt-text="Screenshot of the WriteToDatabaseTablefrom activity showing the error message." lightbox="media/gateway-considerations-output-destination/refresh-history-detail.png":::
 
 ### Viewing through SQL Server Management Studio (SSMS)
 
 When investigating this issue, you can use SQL Server Management Studio (SSMS) to view the details of the error, and further diagnose the problem.
 
-:::image type="content" source="media/gateway-considerations-output-destination/ssms.png" alt-text="<alt text>" lightbox="media/gateway-considerations-output-destination/ssms.png":::
+:::image type="content" source="media/gateway-considerations-output-destination/ssms.png" alt-text="Screenshot of the SQL Server Management Studio showing some details of the error." lightbox="media/gateway-considerations-output-destination/ssms.png":::
 
 ## Solution: Set new firewall rules on server running the gateway
 
@@ -50,9 +50,9 @@ The firewall rules on the gateway server and/or customer's proxy servers need to
 
 If you want to narrow down the scope of the endpoint to the actual OneLake instance in a workspace (instead of the wildcard *.datawarehouse.pbidedicated.windows.net), that URL can be found by navigating to the Fabric workspace, locating `DataflowsStagingLakehouse`, and selecting **View Details**. Then, copy and paste the SQL connection string.
 
-:::image type="content" source="media/gateway-considerations-output-destination/staging.png" alt-text="<alt text>" lightbox="media/gateway-considerations-output-destination/staging.png":::
+:::image type="content" source="media/gateway-considerations-output-destination/staging.png" alt-text="Screenshot of the Fabric workspace with DataflowsStagingLakehouse, with the ellipsis selected, and the View details option emphasized." lightbox="media/gateway-considerations-output-destination/staging.png":::
 
-:::image type="content" source="media/gateway-considerations-output-destination/staging-overview.png" alt-text="<alt text>" lightbox="media/gateway-considerations-output-destination/staging-overview.png":::
+:::image type="content" source="media/gateway-considerations-output-destination/staging-overview.png" alt-text="Screenshot of the DataflowsStagingLakehouse details information, with the SQL connection string emphasized." lightbox="media/gateway-considerations-output-destination/staging-overview.png":::
 
 The entire endpoint name looks similar to the following example:
 
