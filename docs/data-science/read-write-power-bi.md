@@ -85,7 +85,7 @@ To read data from Power BI datasets:
 1. Evaluate the _Total Revenue_ measure per customer's state and date.
 
     ```python
-    df_measure = fabric.read_measure("Customer Profitability Sample",
+    df_measure = fabric.evaluate_measure("Customer Profitability Sample",
                                      "Total Revenue",
                                      [("Customer", "State"), ("Calendar", "Date")])
     df_measure
@@ -94,10 +94,10 @@ To read data from Power BI datasets:
 1. You can also evaluate the _Total Revenue_ measure per customer's state and date by using a [DAX query](/dax/dax-queries).
 
     > [!NOTE]
-    > Using the `read_dax` API is subject to more limitations (see [Read Limitations](#read-access-limitations)). For standard measure calculations, consider using the `read_measure` function and only revert to `read_dax` for advanced use cases.
+    > Using the `evaluate_dax` API is subject to more limitations (see [Read Limitations](#read-access-limitations)). For standard measure calculations, consider using the `evaluate_measure` function and only revert to `evaluate_dax` for advanced use cases.
 
     ```python
-    df_dax = fabric.read_dax("Customer Profitability Sample",
+    df_dax = fabric.evaluate_dax("Customer Profitability Sample",
                              """
                              EVALUATE SUMMARIZECOLUMNS(
                                  'State'[Region],
@@ -179,7 +179,7 @@ All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link
 
 The read access APIs have the following limitations:
 
-- SemPy `read_table`, SemPy `read_dax`, and Power BI table access using Spark SQL are subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
+- SemPy `read_table`, SemPy `evaluate_dax`, and Power BI table access using Spark SQL are subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
 - Predicate pushdown for Spark *_Metrics* queries is limited to a single [IN](https://spark.apache.org/docs/3.3.0/api/sql/index.html#in) expression. Extra IN expressions and unsupported predicates are evaluated in Spark after data transfer.
 - Predicate pushdown for Power BI tables accessed using Spark SQL doesn't support the following expressions:
   - [ISNULL](https://spark.apache.org/docs/3.3.0/api/sql/#isnull)

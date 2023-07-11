@@ -40,22 +40,22 @@ If no workspace is specified, the function will default to the workspace of the 
 # Visualizing Power BI Dataset Relationships
 
 While the `list_relationships` function provides a way to retrieve these relationships, visualizing them can help you gain a better understanding of the dataset's structure.
-This is where the `plot_relationship_df` function comes in.
+This is where the `plot_relationship_metadata` function comes in.
 
-The `plot_relationship_df` function is designed to help you visualize the relationships within a Power BI dataset.
+The `plot_relationship_metadata` function is designed to help you visualize the relationships within a Power BI dataset.
 By using this function, you can create a graph that displays the connections between tables and columns, making it easier to understand the dataset's structure and how different elements are related.
 
 Here's an example:
 
 ```python
 import sempy.fabric as fabric
-from sempy.relationships import plot_relationship_df
+from sempy.relationships import plot_relationship_metadata
 
 relationships = fabric.list_relationships("my_dataset")
-plot_relationship_df(relationships)
+plot_relationship_metadata(relationships)
 ```
 
-In this example, the `list_relationships` function retrieves the relationships for the "my_dataset" Power BI dataset, and the `plot_relationship_df` function creates a graph to visualize these relationships.
+In this example, the `list_relationships` function retrieves the relationships for the "my_dataset" Power BI dataset, and the `plot_relationship_metadata` function creates a graph to visualize these relationships.
 
 You can customize the graph by specifying which columns to include, how to handle missing keys, and providing additional graphviz attributes.
 
