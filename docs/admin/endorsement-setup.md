@@ -18,6 +18,7 @@ As a Fabric admin, you're responsible for enabling and setting up the certificat
 * Enabling certification on your tenant.
 * Defining a list of security groups whose members will be authorized to certify items.
 * Providing a URL that points to the documentation for the organization's item certification process, if such documentation exists.
+* Deciding whether to delegate certification setup to domain administrators, so that they can set up certification specifically for their domain. 
 
 Certification is part of Power BI's *endorsement* feature. For more information, see the [endorsement overview](../governance/endorsement-overview.md).
 
