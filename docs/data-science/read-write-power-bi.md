@@ -85,9 +85,10 @@ To read data from Power BI datasets:
 1. Evaluate the _Total Revenue_ measure per customer's state and date.
 
     ```python
-    df_measure = fabric.evaluate_measure("Customer Profitability Sample",
-                                     "Total Revenue",
-                                     [("Customer", "State"), ("Calendar", "Date")])
+    df_measure = fabric.evaluate_measure(
+        "Customer Profitability Sample",
+        "Total Revenue",
+        [("Customer", "State"), ("Calendar", "Date")])
     df_measure
     ```
 
@@ -97,15 +98,16 @@ To read data from Power BI datasets:
     > Using the `evaluate_dax` API is subject to more limitations (see [Read Limitations](#read-access-limitations)). For standard measure calculations, consider using the `evaluate_measure` function and only revert to `evaluate_dax` for advanced use cases.
 
     ```python
-    df_dax = fabric.evaluate_dax("Customer Profitability Sample",
-                             """
-                             EVALUATE SUMMARIZECOLUMNS(
-                                 'State'[Region],
-                                 'Calendar'[Date].[Year],
-                                 'Calendar'[Date].[Month],
-                                 "Total Revenue",
-                                 CALCULATE([Total Revenue]))
-                             """)
+    df_dax = fabric.evaluate_dax(
+        "Customer Profitability Sample",
+        """
+        EVALUATE SUMMARIZECOLUMNS(
+            'State'[Region],
+            'Calendar'[Date].[Year],
+            'Calendar'[Date].[Month],
+            "Total Revenue",
+            CALCULATE([Total Revenue]))
+        """)
     ```
 
 1. Alternatively, you can add measures to data retrieved from external sources. This approach combines three tasks: it resolves column names to Power BI dimensions, defines group by columns and filters the measure. Any column names that can't be resolved within the given dataset are ignored (see the supported [DAX syntax](/dax/dax-syntax-reference)).
