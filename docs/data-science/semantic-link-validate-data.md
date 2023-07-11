@@ -14,11 +14,6 @@ ms.search.form: Semantic Link
 Functional dependencies are relationships between columns in a table where the values in one column are used to determine the values in another column.
 An understanding of these dependencies can help you uncover patterns and relationships in your data, which can be useful for feature engineering, data cleaning, and model building.
 
-Power BI and Microsoft Fabric provide a rich set of data modeling capabilities, including the ability to detect, define, and manage relationships of foreign keys between tables and their cardinalities. 
-<!-- [link](https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-create-and-manage-relationships). -->
-Because referential integrity isn't automatically enforced for Lakehouse datasets, data quality problems may be hard to find and can cause quality issues for Power BI reports and machine learning models.
-In this article, you'll learn to use Semantic Link to validate referential integrity based on the relationships defined by the data model and to find violations.
-
 You'll learn to:
 
 > [!div class="checklist"]
