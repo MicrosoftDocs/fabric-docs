@@ -65,7 +65,7 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 * Sovereign clouds are not supported.
 
 * The admin monitoring workspace is a read-only workspace. Users, including workspace admins, are not able to edit or view properties of the items in the workspace, including datasets and reports.
- 
+
 ## Next steps
 
 * [Admin overview](microsoft-fabric-admin.md)
