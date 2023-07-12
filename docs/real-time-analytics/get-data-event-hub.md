@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 07/12/2023
 ms.search.form: product-kusto
 ---
 # Get data from Azure Event Hubs
@@ -26,9 +26,12 @@ In the second step, you connect this [!INCLUDE [product-name](../includes/produc
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md)
 
+> [!WARNING]
+> Your data mustn't be behind a firewall.
+
 ## Set a shared access policy on your event hub
 
-Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you'll need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the cloud connection. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature?context=/fabric/context/context).
+Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the cloud connection. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature?context=/fabric/context/context).
 
 1. In the [Azure portal](https://ms.portal.azure.com/), browse to the event hubs instance you want to connect.
 1. Under **Settings**, select **Shared access policies**
