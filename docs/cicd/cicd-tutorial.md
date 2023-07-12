@@ -5,13 +5,12 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: tutorial 
-ms.date: 07/10/2023
+ms.date: 07/12/2023
 ---
 
 # Tutorial: Lifecycle management in Fabric
 
-This tutorial takes you through the whole process of loading data into your workspace, editing it etc.
-If you already have a workspace with data, you can skip to [step 3](#step-3-create-a-deployment-pipeline).
+This tutorial takes you through the whole process of loading data into your workspace, and using deployment pipelines together with git integration to collaborate with others in the development, testing and publication of your data and reports.
 
 Let’s get started!
 
@@ -29,6 +28,8 @@ Before you start, make sure of the following:
 * If you aren't signed up yet, [sign up for a free trial](../get-started/fabric-trial.md).
 * Access to an Azure git repo. If you don't have one, see [Set up a git repository](/devops/develop/git/set-up-a-git-repository) for information on creating one.
 * Download the [MyFoodsIncome.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/developer/MyFoodsIncome.pbix) file that contains sample data for this tutorial. Alternatively, you can use your own dataset and report, if you prefer.
+
+If you already have admin rights to a workspace with data, you can skip to [step 3](#step-3-create-a-deployment-pipeline).
 
 ## Step 1: Create a workspace
 
@@ -52,9 +53,9 @@ To create a new workspace and assign it a license:
 
 For more on creating a workspace, see [Create a workspace](/power-bi/collaborate-share/service-create-the-new-workspaces).
 
-## Step 2: Load a *.pbix* file into the workspace
+## Step 2: Load content into the workspace
 
-Now we need to load data into the workspace. You can upload data from OneDrive, SharePoint, or a local file. In this tutorial, we load data from a file.
+You can upload content from OneDrive, SharePoint, or a local file. In this tutorial, we load data from a file.
 
 1. From the top menu bar, select **Upload > Browse**.
 
@@ -84,6 +85,7 @@ You can now create a deployment pipeline.
 
 ## Step 3: Create a deployment pipeline
 
+In order to share this workspace with others and use it for various stages of testing and development, we need to create a deployment pipeline. You can read about how deployment pipelines work in [Introduction to deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md).
 In this step we create a deployment pipeline and assign the workspace to the development stage.
 
 1. From the workspace home page, select **Create deployment pipeline**.
@@ -127,6 +129,9 @@ Notice the content of two stages are identical, since you deployed the entire co
 For more information on deploying content, see [Deploy content](./deployment-pipelines/deploy-content.md).
 
 ## Step 5: Connect to git
+
+Connecting the deployment pipeline to git enables you to keep track of changes and revert back to previous versions if necessary. Read more about version control with git in [Introduction to git integration](./git-integration/intro-to-git-integration.md).
+Let's create a new branch in the repo where all team members can edit and add pull requests. This branch is where all team members can make changes to the dataset and report.
 
 To connect the workspace to your Azure Repo, follow these steps:
 
