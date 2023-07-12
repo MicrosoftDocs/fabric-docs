@@ -32,9 +32,7 @@ The `tempdb` is a system database used by the engine for various temporary stora
 1. Refer to the article about [statistics](statistics.md) to verify proper column statistics have been created on all tables. 
 1. Ensure all table statistics are updated after large DML transactions.
 1. Queries with complex JOINs, GROUP BY, and ORDER BY and expect to return large result set use more `tempdb` space in execution.  Update queries to reduce the number of GROUP BY and ORDER BY columns if possible.
-1. Check for data skew in base tables.
 1. Rerun the query when there's no other active queries running to avoid resource constraint during query execution. 
-1. Pause and resume the service to flush `tempdb` data.
 
 ## Query performance seems to degrade over time
 
