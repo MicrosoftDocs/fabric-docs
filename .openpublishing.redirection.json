@@ -26,6 +26,11 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/real-time-analytics/onelake-shortcut.md",
+          "redirect_url": "/fabric/real-time-analytics/onelake-shortcuts",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/data-factory/known-issues.md",
           "redirect_url": "/fabric/data-factory/data-factory-limitations",
           "redirect_document_id": false
