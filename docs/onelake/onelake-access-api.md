@@ -15,7 +15,7 @@ ms.date: 05/23/2023
 
 ## Overview
 
-Microsoft OneLake provides open access to all of your Fabric items through existing ADLS Gen2 APIs and SDKs. You can access your data in OneLake through any tool compatible with ADLS Gen2 just by using a OneLake URI instead.  You can upload data to a lakehouse through Azure Storage Explorer, or read a delta table through a shortcut from Azure Databricks.  
+Microsoft OneLake provides open access to all of your Fabric items through existing ADLS Gen2 APIs and SDKs (see [Resources](onelake-accessapi.md/#Resources)). You can access your data in OneLake through any tool compatible with ADLS Gen2 just by using a OneLake URI instead.  You can upload data to a lakehouse through Azure Storage Explorer, or read a delta table through a shortcut from Azure Databricks.  
 
 As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences, and can't be done via ADLS Gen2 APIs. A full list of changes to these APIs can be found in the 'Supported API operations' section.
 
@@ -96,6 +96,15 @@ You can authenticate OneLake APIs using Microsoft Azure Active Directory (Azure 
 OneLake doesn't currently guarantee data residency in a particular region when using the global endpoint ('https://onelake.dfs.fabric.microsoft.com'). When you query data in a region different than your workspace's region, there's a possibility that data could leave your region during the endpoint resolution process. If you're concerned about data residency, using the correct regional endpoint for your workspace ensures your data stays within its current region and doesn't cross any regional boundaries. You can discover the correct regional endpoint by checking the region of the capacity that the workspace is attached to.
 
 OneLake regional endpoints all follow the same format: 'https://\<region\>-onelake.dfs.fabric.microsoft.com'. For example, a workspace attached to a capacity in the West US 2 region would be accessible through the regional endpoint 'https://westus-onelake.dfs.fabric.microsoft.com.
+
+## Resources
+
+OneLake is accessible through the same APIs and SDKs as ADLS Gen2. To learn more about using ADLS Gen2 APIs, please see the following pages:
+- [ADLS Gen2 API Reference](/rest/api/storageservices/data-lake-storage-gen2)
+- ADLS Gen2 Filesystem SDKs
+  - [.NET](/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet)
+  - [Python](/azure/storage/blobs/data-lake-storage-directory-file-acl-python)
+  - [Java](/azure/storage/blobs/data-lake-storage-directory-file-acl-java)
 
 ## Samples
 
