@@ -22,6 +22,10 @@ ms.date: 05/23/2023
 
 Verify that the [new workspace experience](/power-bi/admin/service-admin-portal-workspace#create-workspaces-new-workspace-experience) is enabled.
 
+## Permissions required
+
+All items for which a user has read permissions [dataset permissions](/power-bi/connect-data/service-datasets-permissions#what-are-the-dataset-permissions) will appear in the Monitoring Hub.
+
 ## Using Monitoring hub
 
 *Monitoring hub* shows activities based on which service is being used when Monitoring hub is selected. For example, if you're using Data Factory when you select Monitoring hub, a list of Data Factory activities is displayed. If you're using Power BI and then select Monitoring hub from the left pane, a list of Power BI related activities is displayed. 
