@@ -4,7 +4,7 @@ description: Learn how to share your warehouse in Microsoft Fabric and manage it
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 06/28/2023
+ms.date: 07/12/2023
 ms.topic: how-to
 ms.custom: build-2023
 ms.search.form: Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
