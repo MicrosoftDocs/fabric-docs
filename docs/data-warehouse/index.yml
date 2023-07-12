@@ -69,6 +69,8 @@ landingContent:
             url: workspace-roles.md
           - text: SQL granular permissions
             url: sql-granular-permissions.md
+          - text: Share your Warehouse
+            url: share-warehouse-manage-permissions.md            
   # Card 
   - title: Ingest data
     linkLists:
