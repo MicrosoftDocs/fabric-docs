@@ -4,7 +4,7 @@ description: Learn more about securing the SQL Endpoint and Warehouse in Microso
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 06/19/2023
+ms.date: 07/12/2023
 ms.topic: overview
 ms.custom: build-2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
@@ -42,7 +42,7 @@ For details on the specific Warehouse capabilities provided through workspace ro
 
 In contrast to workspace roles, which apply to all items within a workspace, item permissions can be assigned directly to individual Warehouses. The user will receive the assigned permission on that single Warehouse. The primary purpose for these permissions is to enable sharing for downstream consumption of the Warehouse.
 
-For details on the specific permissions provided for Warehouses, see [Item permissions](item-permissions.md).
+For details on the specific permissions provided for warehouses, see [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md).
 
 ### Object-level security
 
