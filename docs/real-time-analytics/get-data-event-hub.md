@@ -27,7 +27,7 @@ In the second step, you connect this [!INCLUDE [product-name](../includes/produc
 * A [KQL database](create-database.md)
 
 > [!WARNING]
-> Your data mustn't be behind a firewall.
+> Your event hub mustn't be behind a firewall.
 
 ## Set a shared access policy on your event hub
 
