@@ -4,7 +4,7 @@ description: This article contains a list of current limitations in Microsoft Fa
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 07/07/2023
+ms.date: 07/12/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
@@ -36,6 +36,7 @@ For more limitations information in specific areas, see:
 - [Transactions](transactions.md#limitations)
 - [The Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
 - [Connectivity](connectivity.md#considerations-and-limitations)
+- [Share your Warehouse](share-warehouse-manage-permissions.md#limitations)
 - [Tables](tables.md#limitations)
 
 ## Limitations of the SQL Endpoint
