@@ -39,9 +39,9 @@ When you merge two FabricDataFrames, the order of the DataFrames determines how 
    - If **both FabricDataFrames are annotated**, then the table-level metadata of the left FabricDataFrame takes precedence. The same rule applies to individual columns; the column annotations present in the left FabricDataFrame take precedence over the column annotations in the right one.
    - If **only one FabricDataFrame is annotated**, its metadata is used. The same rule applies to individual columns; the column annotations present in the annotated FabricDataFrame is used.
 
-### Semantic propagation with row-wise concatenation
+### Semantic propagation with concatenation
 
-When you perform row-wise concatenation on multiple FabricDataFrames, the metadata of the first FabricDataFrame is used.
+For each column, the metadata is copied from the first dataframe that matches the column name. If there are multiple matches and the metadata is not the same, a warning will be issued. You can also propagate concatenations of FabricDataFrames with regular pandas dataframe, if you place the FabricDataFrame first.
 
 
 <!-- ### Semantic propagation with stack and unstack operations
