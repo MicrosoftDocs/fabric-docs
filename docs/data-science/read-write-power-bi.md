@@ -67,10 +67,10 @@ To read data from Power BI datasets:
 
 1. List the measures defined in the _Customer Profitability Sample_ Power BI dataset.
    > [!TIP]
-   > In the following code, you can specify your workspace by replacing the workspace name `Logistics Workspace` with yours.
+   > In the following code, you can specify your workspace by replacing the workspace name `Your Workspace` with yours.
 
     ```python
-    df_measures = fabric.list_measures("Customer Profitability Sample", workspace="Logistics Workspace")
+    df_measures = fabric.list_measures("Customer Profitability Sample", workspace="Your Workspace")
     ```
 
     Now we've determined that the _Customer_ table is the table of interest.

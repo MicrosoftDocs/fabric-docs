@@ -56,7 +56,7 @@ FabricDataFrame is the primary data structure that Semantic Link uses to propaga
 :::image type="content" source="media/semantic-link-overview/semantic-link-overview-fabricdataframes.svg" alt-text="A diagram that shows data flow from connectors to Power BI datasets to FabricDataFrame to Semantic Functions.":::
 
 FabricDataFrame supports all pandas operations and more.
-It exposes semantic functions and [join-measures](./semantic-link-power-bi.md#add-measure) that enable you to use Power BI measures in your data science work.
+It exposes semantic functions and [add-measure](./semantic-link-power-bi.md#add-measure) that enable you to use Power BI measures in your data science work.
 
 ## Next steps
 
