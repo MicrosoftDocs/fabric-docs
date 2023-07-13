@@ -23,14 +23,14 @@ You'll also learn how to write data that Power BI datasets can consume.
 - Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+- Download the _Customer Profitability Sample.pbix_ Power BI dataset from the [datasets folder](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/datasets) of the fabric-samples repository, and save the dataset locally.
 
-## Import the data used in this article into your workspace
+## Upload the dataset into your workspace
 
-In this article, we use the _Customer Profitability Sample.pbix_ PowerBI dataset. This dataset references a company manufacturing marketing materials and contains data about products, customers, and corresponding revenue for various business units.
+In this article, we use the _Customer Profitability Sample.pbix_ Power BI dataset. This dataset references a company manufacturing marketing materials and contains data about products, customers, and corresponding revenue for various business units.
 
-1. Download the _Customer Profitability Sample.pbix_ PowerBI dataset from [TODO: insert link] and save it locally.
 1. Open your [workspace](/fabric/get-started/workspaces) in Fabric Data Science.
-1. Select **Upload > Browse** and select the file you just downloaded.
+1. Select **Upload > Browse** and select the _Customer Profitability Sample.pbix_ dataset.
 
 :::image type="content" source="media/read-write-power-bi/upload-power-bi-data-to workspace.png" alt-text="Screenshot showing the interface for uploading a dataset into the workspace." lightbox="media/read-write-power-bi/upload-power-bi-data-to workspace.png":::
 
