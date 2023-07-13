@@ -6,7 +6,7 @@ ms.author: arali
 author: ms-arali
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 06/12/2023
+ms.date: 07/10/2023
 ---
 
 # Lakehouse tutorial: Building reports in Microsoft Fabric
@@ -23,7 +23,7 @@ In this section of the tutorial, you create a Power BI data model and create a r
 
 Power BI is natively integrated in the whole Fabric experience. This native integration brings a unique mode, called DirectLake, of accessing the data from the lakehouse to provide the most performant query and reporting experience. DirectLake mode is a groundbreaking new engine capability to analyze very large datasets in Power BI. The technology is based on the idea of loading parquet-formatted files directly from a data lake without having to query a data warehouse or lakehouse endpoint, and without having to import or duplicate data into a Power BI dataset. DirectLake is a fast path to load the data from the data lake straight into the Power BI engine, ready for analysis.
 
-In traditional DirectQuery mode, the Power BI engine directly queries the data from the source to execute each query, and the query performance depends on data retrieval speed. DirectQuery eliminates the need to copy data, ensuring that any changes in the source are immediately reflected in the query results during the import. On the other hand, performance is better because the data is readily available in the memory without querying data from the source for each query execution. However, the Power BI engine must first copy the data into memory during data refresh. Only changes to the underlying data source are picked up during the next data refresh(in scheduled as well as on-demand refresh).
+In traditional DirectQuery mode, the Power BI engine directly queries the data from the source for each query execution, and the query performance depends on the data retrieval speed. DirectQuery eliminates the need to copy data, ensuring that any changes in the source are immediately reflected in query results. On the other hand, in the import mode, the performance is much better because the data is readily available in memory without having to query the data from the source for each query execution, however the Power BI engine must first copy the data into the memory at data refresh time. Any changes to the underlying data source are picked up during the next data refresh(in scheduled as well as on-demand refresh).
 
 DirectLake mode now eliminates this import requirement by loading the data files directly into memory. Because there's no explicit import process, it's possible to pick up any changes at the source as they occur, thus combining the advantages of DirectQuery and import mode while avoiding their disadvantages. DirectLake mode is therefore the ideal choice for analyzing very large datasets and datasets with frequent updates at the source.
 
