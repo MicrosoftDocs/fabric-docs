@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 07/10/2023
+ms.date: 07/13/2023
 ms.search.form: product-kusto
 ---
 # What is Real-Time Analytics in Fabric?
@@ -53,19 +53,7 @@ The types of industries that benefit from data analysis in Real-Time Analytics i
 
 ### Marketing
 
-As a marketing specialist implementing a new campaign, you need to analyze the immediate impact of your campaign on manufacturing, inventory, sales, and logistics. Real-Time Analytics allows you to actively monitor your incoming data, and helps you make calculated adjustments in real-time to optimize the success of your campaign and increase your inbound marketing.
-
-### Oil and gas
-
-As a project manager in the oil and gas industry, you're responsible for planning, designing, and monitoring drilling and pumping operations as well as delivery. You can use Real-Time Analytics to promptly detect and resolve anomalies in the pumping operations in real-time, and optimize the efficiency, stability, and safety of the drilling procedures.
-
-### Sales
-
-You're a retail planning manager. Not only do you need to analyze sales, manage budgets and pricing, examine workload trends, and manage productions, you also need to manage security and staffing requirements in all of your facilities, and more. Real-Time Analytics makes it easier for you to gain valuable insights into your incoming data in real-time, which helps you quickly improve your business strategies that expand store traffic, promote sales growth, and increase customer satisfaction.
-
-### Agriculture
-
-You work in crop production and management. You need to monitor fields and raw product storage facilities, monitor irrigation, soil moisture, and keep track of chemical application records, as well as coordinate harvest plans. Real-Time Analytics centralizes all of your incoming data, from seed source data to agronomic data, to help ensure product quality and optimize the environment for crop growth.
+As a marketing specialist implementing a new campaign, Real-Time Analytics allows you to analyze the immediate impact of your campaign on sales, inventory, and logistics. You can stream large volumes of data into your KQL database through Eventstream with a latency of a few seconds, then use a KQL queryset to analyze your campaign's performance and visualize your findings in a shareable Power BI report. You can use these insights to modify your variables and easily view the effects of your adjustments on your campaign in real-time. You can also grant view or editing access to either your the entirety of your Fabric workspace, or just your KQL database to different teams in your company to assist in optimizing your campaign.
 
 ## How to work in Real-Time Analytics?
 
