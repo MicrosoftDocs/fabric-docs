@@ -18,7 +18,7 @@ As a Fabric admin, you're responsible for enabling and setting up the certificat
 * Enabling certification on your tenant.
 * Defining a list of security groups whose members will be authorized to certify items.
 * Providing a URL that points to the documentation for the organization's item certification process, if such documentation exists.
-* Deciding whether to delegate certification setup to domain administrators, so that they can set up certification specifically for their domain. When you delegate certification setup to domain adminstrators, domain administrators of each domain can override any or all tenant-level certification settings, including enable/disable, on their domain.
+* Deciding whether to delegate certification setup to domain administrators, so that they can set up certification specifically for their domain. When you delegate certification setup to domain adminstrators, the administrators of each domain can override any or all tenant-level certification settings, including enable/disable, for their domain.
 
 Certification is part of Power BI's *endorsement* feature. For more information, see the [endorsement overview](../governance/endorsement-overview.md).
 
@@ -27,7 +27,7 @@ Certification is part of Power BI's *endorsement* feature. For more information,
 1. In the Admin portal, go to Tenant settings.
 1. Under the Export and sharing settings section, expand the Certification section.
 
-   :::image type="content" source="./media/endorsement-setup/certification-setup-dialog.png" alt-text="Screenshot of how to set up dataset and dataflow certification." border="false":::
+   :::image type="content" source="./media/endorsement-setup/certification-setup-dialog.png" alt-text="Screenshot of how to set up dataset and dataflow certification.":::
 
 1. Set the toggle to **Enabled**.
 1. If your organization has a published certification policy, provide its URL here. This becomes the **Learn more** link in the certification section of the [endorsement settings dialog](../get-started/endorsement-promote-certify.md#request-item-certification). If you don't supply a link, users who want to request certification of their item will be advised to contact their Fabric administrator.
