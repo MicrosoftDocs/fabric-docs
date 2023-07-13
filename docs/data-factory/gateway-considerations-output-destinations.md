@@ -34,35 +34,6 @@ To troubleshoot the issue, follow these steps:
 
    :::image type="content" source="media/gateway-considerations-output-destination/refresh-history-detail.png" alt-text="Screenshot of the WriteToDatabaseTablefrom activity showing the error message." lightbox="media/gateway-considerations-output-destination/refresh-history-detail.png":::
 
-### Viewing through SQL Server Management Studio (SSMS)
-
-When investigating this issue, you can use SQL Server Management Studio (SSMS) to view the details of the error, and further diagnose the problem.
-
-:::image type="content" source="media/gateway-considerations-output-destination/ssms.png" alt-text="Screenshot of the SQL Server Management Studio showing some details of the error." lightbox="media/gateway-considerations-output-destination/ssms.png":::
-
->[!NOTE]
->If you are using SSMS to investigate this issue, it must be installed and running on the physical gateway server.
-
-To find the server URL:
-
-1. Navigate to the Fabric workspace.
-1. Locate `DataflowsStagingLakehouse` (SQL endpoint).
-1. Select the more options ellipsis (...).
-
-   :::image type="content" source="media/gateway-considerations-output-destination/more-options-ellipsis.png" alt-text="Screenshot of the Fabric workspace with the DataflowsStagingLakehouse SQL endpoint ellipsis emphasized.":::
-
-1. Select **Copy SQL connection string**.
-
-   :::image type="content" source="media/gateway-considerations-output-destination/sql-connection-string.png" alt-text="Screenshot of the Copy SQL connection string option in the more options drop-down menu emphasized.":::
-
-1. Select **Copy** to copy the SQL connection string.
-
-   :::image type="content" source="media/gateway-considerations-output-destination/copy-connection-string.png" alt-text="Screenshot of the Copyu SQL connection string dialog, with the copy button emphasized.":::
-
-To troubleshoot the issue, you must be a member of the workspace, use your organizational account, and choose **Azure Active Directory&mdash;Universal with MFA**.
-
-:::image type="content" source="media/gateway-considerations-output-destination/issue-troubleshoot.png" alt-text="Screenshot of the connect to SQL server dialog showing the server name and authentication options.":::
-
 ## Solution: Set new firewall rules on server running the gateway
 
 The firewall rules on the gateway server and/or customer's proxy servers need to be updated to allow outbound traffic from the gateway server to the following:
