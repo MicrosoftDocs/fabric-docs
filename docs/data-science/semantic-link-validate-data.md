@@ -93,8 +93,11 @@ The following Python code snippet demonstrates how to use `plot_dependencies`.
 ```python
 from sempy.fabric import FabricDataFrame
 from sempy.dependencies import plot_dependencies
+from sempy.samples import download_synthea
 
-df = FabricDataFrame(pd.read_csv("your_data.csv"))
+download_synthea(which='small')
+
+df = FabricDataFrame(pd.read_csv("synthea/csv/providers.csv"))
 
 deps = df.find_dependencies()
 plot_dependencies(deps)
@@ -119,8 +122,12 @@ The following code shows an example of how to use the  `list_dependency_violatio
 
 ```python
 from sempy.fabric import FabricDataFrame
+from sempy.samples import download_synthea
 
-df = FabricDataFrame(pd.read_csv("your_data.csv"))
+download_synthea(which='small')
+
+df = FabricDataFrame(pd.read_csv("synthea/csv/providers.csv"))
+
 
 violations = df.list_dependency_violations(determinant_col="ZIP", dependent_col="CITY")
 ```
@@ -156,8 +163,11 @@ The following code shows an example of how to use the `plot_dependency_violation
 ```python
 from sempy.fabric import FabricDataFrame
 from sempy.dependencies import plot_dependency_violations
+from sempy.samples import download_synthea
 
-df = FabricDataFrame(pd.read_csv("your_data.csv"))
+download_synthea(which='small')
+
+df = FabricDataFrame(pd.read_csv("synthea/csv/providers.csv"))
 
 df.plot_dependency_violations(determinant_col="ZIP", dependent_col="CITY")
 ```
@@ -185,8 +195,11 @@ The following code shows an example of how to use the `drop_dependency_violation
 
 ```python
 from sempy.fabric import FabricDataFrame
+from sempy.samples import download_synthea
 
-df = FabricDataFrame(pd.read_csv("your_data.csv"))
+download_synthea(which='small')
+
+df = FabricDataFrame(pd.read_csv("synthea/csv/providers.csv"))
 
 cleaned_df = df.drop_dependency_violations(determinant_col="ZIP", dependent_col="CITY")
 ```
