@@ -1,6 +1,6 @@
 ---
-title: Known issue - Data Warehouse only publishes Delta Lake Logs for Inserts
-description: A known issue is posted where Data Warehouse only publishes Delta Lake Logs for Inserts
+title: Known issue - Data Warehouse only publishes Delta Lake logs for inserts
+description: A known issue is posted where Data Warehouse only publishes Delta Lake logs for inserts
 author: mihart
 ms.author: anirmale
 ms.topic: troubleshooting 
@@ -8,10 +8,10 @@ ms.date: 07/10/2023
 ms.custom: known-issue-453
 ---
 
-# Known issue - Data Warehouse only publishes Delta Lake Logs for Inserts
+# Known issue - Data Warehouse only publishes Delta Lake logs for inserts
 
-delta tables referencing to lakehouse shortcuts, created using data warehouse tables don't update when there's is an 'update' or 'delete' operations performed in data warehouse table.
-The following limitation is part of our public documentation as well: (/fabric/data-warehouse/query-delta-lake-logs#limitations)
+Delta tables referencing Lakehouse shortcuts that are created using Data Warehouse tables, don't update when there's an 'update' or 'delete' operation performed on the Data Warehouse table.
+The limitation is listed in our public documentation: (/fabric/data-warehouse/query-delta-lake-logs#limitations)
 
 **Status:** Open
 
@@ -19,11 +19,16 @@ The following limitation is part of our public documentation as well: (/fabric/d
 
 ## Symptoms
 
-user querying the table through a shortcut or directly through the delta Lake Log, experience that the table is missing data and data mismatch from what user sees, when queried through the data warehouse Directly.
+The data that a customer sees when querying the Delta table by using either a shortcut or using the Delta Lake log, doesn't match the data shown when using Data Warehouse.
 
 ## Solutions and workarounds
 
-To ensure you have the data in delta tables referenced to the shortcut, after the update / delete operations in data warehouse table, - CTAS the table - Drop the old table - CTAS again to the original table name - Drop the existing shortcut - Re-create the shortcut to lakehouse
+ To ensure that the data in the Delta tables references the shortcut, try the following steps.
+ 1. Create Table as Select (CTAS) 
+ 1. Drop the old table 
+ 1. CTAS again to the original table name 
+ 1. Drop the existing shortcut 
+ 1. Re-create the shortcut to Lakehouse
 
 ## Next steps
 

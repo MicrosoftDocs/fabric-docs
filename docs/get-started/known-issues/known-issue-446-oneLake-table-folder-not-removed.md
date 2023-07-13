@@ -1,6 +1,6 @@
 ---
-title: Known issue - OneLake table folder not removed when table dropped in data warehouse
-description: A known issue is posted where oneLake table folder not removed when table dropped in data warehouse
+title: Known issue - OneLake Table folder not removed when table dropped in Data Warehouse
+description: A known issue is posted where oneLake Table folder not removed when table dropped in Data Warehouse
 author: mihart
 ms.author: anirmale
 ms.topic: troubleshooting 
@@ -8,9 +8,9 @@ ms.date: 07/05/2023
 ms.custom: known-issue-446
 ---
 
-# Known issue - OneLake table folder not removed when table dropped in data warehouse
+# Known issue - OneLake Table folder not removed when table dropped in Data Warehouse
 
-When you drop a table in the Data Warehouse, the folder in OneLake under Tables isn't removed.
+When you drop a table in the Data Warehouse, it isn't removed from the folder in OneLake.
 
 **Status:** Open
 
@@ -18,7 +18,7 @@ When you drop a table in the Data Warehouse, the folder in OneLake under Tables 
 
 ## Symptoms
 
-When you drop a table in the Data Warehouse, the folder in OneLake under Tables isn't removed and visible in OneLake explorer.
+After a user drops a table in the Data Warehouse using a TSQL query, the corresponding folder in OneLake, under Tables, isn't removed automatically and can't be dropped manually.
 
 ## Solutions and workarounds
 

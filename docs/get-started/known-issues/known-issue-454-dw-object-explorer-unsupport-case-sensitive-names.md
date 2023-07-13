@@ -1,6 +1,6 @@
 ---
-title: Known issue - Warehouse's object explorer doesn't support case-sensitive object names
-description: A known issue is posted where Warehouse's object explorer doesn't support case-sensitive object names
+title: Known issue - The Data Warehouse Object Explorer doesn't support case-sensitive object names
+description: A known issue is posted where the Data Warehouse Object Explorer doesn't support case-sensitive object names
 author: mihart
 ms.author: anirmale
 ms.topic: troubleshooting 
@@ -8,8 +8,8 @@ ms.date: 07/10/2023
 ms.custom: known-issue-454
 ---
 
-# Known issue - Warehouse's object explorer doesn't support case-sensitive object names
-Fabric warehouse objects (ex. tables, views, etc.) having same noncase sensitive name (ex. table1 and table1) display in the object explorer. If there are two objects with the same name, one displays in the object explorer. but, if there's three or more, none gets displayed. The objects show up in system views (ex. sys.tables) and can be used but unavailable in the object explorer.
+# Known issue - The Data Warehouse Object Explorer doesn't support case-sensitive object names
+The object explorer fails to display the Fabric Data Warehouse objects (ex. tables, views, etc.) when have same noncase sensitive name (ex. table1 and Table1). In case there are two objects with same name, one displays in the object explorer. but, if there's three or more objects, nothing gets display. The objects show and can be used from system views (ex. sys.tables). The objects aren't available in the object explorer.
 
 **Status:** Open
 
@@ -17,7 +17,7 @@ Fabric warehouse objects (ex. tables, views, etc.) having same noncase sensitive
 
 ## Symptoms
 
-If the customer notices the object shares the same noncase sensitive name as another object listed in a system view and is working as intended, but isn't listed in the object explorer, then the customer has encountered this known issue.
+If the customer notice the object shares the same noncase sensitive name as another object listed in a system view and is working as intended, but isn't listed in the object explorer, then the customer has encountered this known issue.
 
 ## Solutions and workarounds
 
