@@ -204,7 +204,7 @@ For example, given the following dataset:
 
 The row with CITY=Seattle would be dropped, and the functional dependency ZIP -> CITY holds in the output.
 
-The `drop_dependency_violations` function provides an option for controlling the verbosity of the output (@Markus: Can we say the option instead? For example, say `verbose=True`, assuming that's what it is), allowing you to see the number of dropped rows or the entire row content of dropped rows.
+The `drop_dependency_violations` function provides the option `verbose=1` for controlling the verbosity of the output, allowing you to see the number of dropped rows or the entire row content of dropped rows using `verbose=2`.
 
 By using the `drop_dependency_violations` function, you can enforce functional constraints between columns in your dataset, which can help improve data quality and lead to more accurate results in your analysis or model.
 However, it's essential to carefully consider the context of your data and the functional constraints you choose to enforce to ensure that you aren't inadvertently removing valuable information from your dataset.
