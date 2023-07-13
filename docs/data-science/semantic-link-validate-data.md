@@ -11,10 +11,11 @@ ms.search.form: Semantic Link
 ---
 
 # Detect, explore and validate functional dependencies in your data
-Functional dependencies are relationships between columns in a table where the values in one column are used to determine the values in another column.
+
+Functional dependencies are relationships between columns in a table, where the values in one column are used to determine the values in another column.
 An understanding of these dependencies can help you uncover patterns and relationships in your data, which can be useful for feature engineering, data cleaning, and model building.
 
-You'll learn to:
+In this article, you'll use Semantic Link to:
 
 > [!div class="checklist"]
 > * Find dependencies between columns of a FabricDataFrame
