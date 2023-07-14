@@ -25,14 +25,14 @@ Here are the important steps to create this solution:
 1. **Select the watermark column**.
 	Select one column in the source data table, which can be used to slice the new or updated records for every run. Normally, the data in this selected column (for example, last_modify_time or ID) keeps increasing when rows are created or updated. The maximum value in this column is used as a watermark.
 
-2. **Prepare a table to store the watermark value in your Data Warehouse**. 
+2. **Prepare a table to store the last watermark value in your Data Warehouse**. 
 3. **Create a pipeline with the following workflow**:
 
 	The pipeline in this solution has the following activities: 
 
 	* Create two lookup activities. Use the first lookup activity to retrieve the last watermark value. Use the second lookup activity to retrieve the new watermark value. These watermark values are passed to the copy activity.
 	* Create a copy activity that copies rows from the source data table with the value of the watermark column greater than the old watermark value and less than the new watermark value. Then, it copies the data from the Data Warehouse to Lakehouse as a new file.
-	* Create a stored procedure activity that updates the old watermark value for the pipeline that runs next time.
+	* Create a stored procedure activity that updates the last watermark value for the next pipeline run.
 
 ## Prerequisites
 
@@ -78,7 +78,7 @@ PersonID | Name | LastModifytime
 
 In this tutorial, you use LastModifytime as the watermark column. 
 
-#### 2. Create another table in your Data Warehouse to store the watermark value after a pipeline runs
+#### 2. Create another table in your Data Warehouse to store the last watermark value
 
 1. Run the following SQL command in your Data Warehouse to create a table named *watermarktable* to store the watermark value:  
 
@@ -90,7 +90,7 @@ In this tutorial, you use LastModifytime as the watermark column.
     WatermarkValue DATETIME2(6),
     );
     ```
-2. Set the default value of the high watermark with the table name of source data table. In this tutorial, the table name is *data_source_table*, and the default value is specified as `1/1/2010 12:00:00 AM`.
+2. Set the default value of the last watermark with the table name of source data table. In this tutorial, the table name is *data_source_table*, and the default value is `1/1/2010 12:00:00 AM`.
 
     ```sql
     INSERT INTO watermarktable
@@ -111,7 +111,7 @@ In this tutorial, you use LastModifytime as the watermark column.
 
 #### 3. Create a stored procedure in your Data Warehouse
 
-Run the following command to create a stored procedure in your Data Warehouse. This stored procedure is used to help updates the watermark value after a pipeline runs, which is the old watermark for the pipeline that runs next time.
+Run the following command to create a stored procedure in your Data Warehouse. This stored procedure is used to help updates the last watermark value after last pipeline run.
 
 ```sql
 CREATE PROCEDURE usp_write_watermark @LastModifiedtime datetime, @TableName varchar(50)
@@ -143,9 +143,9 @@ END
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
-### Step 2: Add a lookup activity for the old watermark
+### Step 2: Add a lookup activity for the last watermark
 
-In this step, you create a lookup activity to get the old watermark value. The default value `1/1/2010 12:00:00 AM` set before will be acquired as the old watermark.
+In this step, you create a lookup activity to get the last watermark value. The default value `1/1/2010 12:00:00 AM` set before will be obtained.
 
 1. Select **Add pipeline activity** and select **Lookup** from the drop-down list.
 
@@ -164,7 +164,7 @@ In this step, you create a lookup activity to get the old watermark value. The d
 
 ### Step 3: Add a lookup activity for the new watermark
 
-In this step, you create a lookup activity to get the new watermark value. You'll use a query to acquire the new watermark from your source data table. The highest value in *LastModifytime* column will be acquired as the new watermark.
+In this step, you create a lookup activity to get the new watermark value. You'll use a query to acquire the new watermark from your source data table. The highest value in *LastModifytime* column will be obtained.
 
 1. On the top bar, select **Lookup** under **Activities** tab to add the second Lookup activity.
 
@@ -186,7 +186,7 @@ In this step, you create a lookup activity to get the new watermark value. You'l
 
 ### Step 4: Add the copy activity to copy incremental data
 
-In this step, you add a copy activity to copy the incremental data between old watermark and new watermark from Data Warehouse to Lakehouse.
+In this step, you add a copy activity to copy the incremental data between the last watermark and new watermark from Data Warehouse to Lakehouse.
 
 1. Select **Activities** on the top bar and select **Copy data** -> **Add to canvas** to get the copy activity.
 
@@ -221,7 +221,7 @@ In this step, you add a copy activity to copy the incremental data between old w
 
 ### Step 5：Add a stored procedure activity
 
-In this step, you add a stored procedure activity to update the watermark value after a pipeline runs, which is the old watermark for the pipeline that runs next time.
+In this step, you add a stored procedure activity to update the last watermark value after pipeline run. Here the last watermark value is `9/5/2017 8:06:00 AM`.
 
 1. Select **Activities** on the top bar and select **Stored procedure** to add a stored procedure activity.
 
