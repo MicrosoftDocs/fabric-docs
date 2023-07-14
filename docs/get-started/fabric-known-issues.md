@@ -23,7 +23,7 @@ Select the **Title** to view more information about that specific known issue.
 |  453  | Data Warehouse | [Data Warehouse only publishes Delta Lake Logs for Inserts](known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md)    |  July 10, 2023  |
 |  449  | Administration & Management | [Pipeline isn't loading if user deployed with update app via public API](known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md)    |  July 5, 2023  |
 |  447  | Data Warehouse | [Temp tables in Data Warehouse and SQL Endpoint](known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md)    |  July 5, 2023  |
-|  446  | Data Warehouse | [OneLake table folder not removed when table dropped in data warehouse](known-issues/known-issue-446-onelake-table-folder-not-removed.md)    |  July 5, 2023  |
+|  446  | Data Warehouse | [OneLake table folder not removed when table dropped in data warehouse](known-issues/known-issue-446-onelake-table-folder-isnt-removed.md)    |  July 5, 2023  |
 |  439  | Data Warehouse | ['Affected rows' number displayed doesn't match the real row number](known-issues/known-issue-439-affected-rows-number-displayed-doesnt-match.md)    |  June 26, 2023  |
 |  420  | Administration & Management | [Moving files from outside of OneLake to OneLake with file explorer doesn't sync files](known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md)    |  June 8, 2023  |
 
