@@ -1,6 +1,6 @@
 ---
-title: Known issue - Temp tables in data warehouse and sql endpoint
-description: A known issue is posted where temp tables in data warehouse and sql endpoint
+title: Known issue - Temp tables in Data Warehouse and SQL Endpoint
+description: A known issue is posted where Temp tables in Data Warehouse and SQL Endpoint
 author: mihart
 ms.author: anirmale
 ms.topic: troubleshooting 
@@ -8,9 +8,9 @@ ms.date: 07/05/2023
 ms.custom: known-issue-447
 ---
 
-# Known issue - Temp tables in Data Warehouse and SQL Endpoint
+# Known issue - Temp table usage in Data Warehouse and SQL Endpoint
 
-Users can create Temp tables in the Data Warehouse and SQL Endpoint but has data retrieval limits.
+Users can create Temp tables in the Data Warehouse and in SQL Endpoint but data from user tables can't be inserted into Temp tables. Temp tables can't be joined to user tables.
 
 **Status:** Open
 
@@ -18,12 +18,12 @@ Users can create Temp tables in the Data Warehouse and SQL Endpoint but has data
 
 ## Symptoms
 
-The user table data can't be inserted into Temp Table, also no join relationship can't be established with user Table.
+Users may notice that data from their user tables can't be inserted into a Temp table. Temp tables can't be joined to user tables.
 
 ## Solutions and workarounds
 
-Use regular user tables instead of Temp Tables.
+Use regular user tables instead of Temp tables.
 
 ## Next steps
 
-- [About known issues](https://support.fabric.microsoft.com/known-issues) 
+- [About known issues](https://support.fabric.microsoft.com/known-issues)

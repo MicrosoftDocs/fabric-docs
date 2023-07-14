@@ -57,6 +57,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Warehouse's object explorer doesn't support case-sensitive object names
+      href: known-issues/known-issue-454-dw-object-explorer-unsupport-case-sensitive-names.md
+    - name: Data Warehouse only publishes Delta Lake Logs for Inserts
+      href: known-issues/known-issue-453-dw-publishes-delta-lake-logs-Inserts.md
     - name: Pipeline isn't loading if user deployed with update app via public API
       href: known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md  
     - name: Temp tables in Data Warehouse and SQL Endpoint
