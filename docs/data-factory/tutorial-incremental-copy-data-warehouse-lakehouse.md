@@ -36,7 +36,7 @@ Here are the important steps to create this solution:
 
 ## Prerequisites
 
-- **Data Warehouse**. You use the Data Warehouse as the source data store. If you don't have it, see [Create a workspace](../get-started/create-workspaces.md) for steps to create one.
+- **Data Warehouse**. You use the Data Warehouse as the source data store. If you don't have it, see [Create a Data Warehouse](../data-warehouse/create-warehouse.md) for steps to create one.
 - **Lakehouse**. You use the Lakehouse as the destination data store. If you don't have it, see [Create a Lakehouse](../data-engineering/create-lakehouse.md) for steps to create one. Create a folder named *IncrementalCopy* to store the copied data. 
 
 ### Preparing your source 
