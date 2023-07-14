@@ -37,7 +37,7 @@ In this article, you'll use Semantic Link to:
 
 ## Use functional dependencies to find and fix data quality issues
 
-Functional dependencies act as an effective invariant that allow you to find and fix data quality issues which may be hard to detect otherwise.
+Functional dependencies act as an effective invariant that allows you to find and fix data quality issues that may be hard to detect otherwise.
 
 ### Find functional dependencies in data
 

@@ -42,12 +42,7 @@ Once the upload is done, your workspace will have three new artifacts: a Power B
 
 The SemPy Python API can retrieve data and metadata from Power BI datasets located in a Microsoft Fabric workspace and execute queries on them.
 
-Your notebook, dataset, and [Lakehouse](/fabric/data-engineering/lakehouse-overview) can be located in the same workspace or in different workspaces. By default, SemPy tries to access your Power BI dataset from:
-
-- the workspace of your Lakehouse, if you've attached a Lakehouse to your notebook.
-- the workspace of your notebook, if there's no Lakehouse attached.
-
-If your dataset isn't located in the default workspace that SemPy tries to access, you must specify the workspace of your dataset when you call a SemPy method.
+[!INCLUDE [sempy-default-workspace](includes/sempy-default-workspace.md)]
 
 To read data from Power BI datasets:
 
