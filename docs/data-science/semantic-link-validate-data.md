@@ -1,11 +1,11 @@
 ---
-title: Validate data with Semantic Link
-description: Learn to validate data with Semantic Link and Microsoft Fabric.
+title: Validate functional dependencies in data with Semantic Link
+description: Explore and validate functional dependencies in data with Semantic Link and Microsoft Fabric.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: romanbat
 author: RomanBat
-ms.topic: overview 
+ms.topic: how-to
 ms.date: 06/06/2023
 ms.search.form: Semantic Link
 ---
@@ -32,15 +32,14 @@ In this article, you'll use Semantic Link to:
 - Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
-- TODO: add info on where to get the data used in code and add it to Lakehouse (Fyi, @Markus)
 - TODO: add info on getting SemPy? Or is it included in Fabric by default? (Fyi, @Markus)
 <!-- SemPy will require "%pip install semantic-link" we'll no more in 1-2 weeks  -->
 
 ## Use functional dependencies to find and fix data quality issues
 
-Functional dependencies act as an effective invariant, allowing finding and fixing data quality issues, that are hard to detect otherwise. 
+Functional dependencies act as an effective invariant that allow you to find and fix data quality issues which may be hard to detect otherwise.
 
-### Find data dependencies
+### Find functional dependencies in data
 
 The `find_dependencies` function in SemPy detects functional dependencies between the columns of a FabricDataFrame.
 The function uses a threshold on conditional entropy to discover approximate functional dependencies, where low conditional entropy indicates strong dependence between columns.
@@ -83,9 +82,9 @@ In some cases, the dependency chain can form cycles when you specify the `dropna
 | 1   | NaN | 1   |
 | 1   | NaN | 2   |
 
-### Visualize dependencies
+### Visualize dependencies in data
 
-After finding the dependencies, using `find_dependencies`, you can visualize them using the `plot_dependencies` function.
+After finding functional dependencies in a dataset (using `find_dependencies`), you can visualize the dependencies, using the `plot_dependencies` function.
 This function takes the resulting FabricDataFrame from `find_dependencies` and creates a visual representation of the dependencies between columns and groups of columns.
 
 The following Python code snippet demonstrates how to use `plot_dependencies`.
@@ -118,7 +117,7 @@ The `list_dependency_violations` function can help you identify violations of fu
 Given a determinant column and a dependent column, this function shows values that violate the functional dependency, along with the count of their respective occurrences.
 This can be useful for inspecting approximate dependencies and identifying data quality issues.
 
-The following code shows an example of how to use the  `list_dependency_violations` function:
+The following code shows an example of how to use the `list_dependency_violations` function:
 
 ```python
 from sempy.fabric import FabricDataFrame
@@ -218,11 +217,11 @@ For example, given the following dataset:
 
 The row with CITY=Seattle would be dropped, and the functional dependency ZIP -> CITY holds in the output.
 
-The `drop_dependency_violations` function provides the option `verbose=1` for controlling the verbosity of the output, allowing you to see the number of dropped rows or the entire row content of dropped rows using `verbose=2`.
+The `drop_dependency_violations` function provides the `verbose` option for controlling the verbosity of the output. By setting `verbose=1`, you can see the number of dropped rows, and `verbose=2` lets you see the entire row content of the dropped rows.
 
 By using the `drop_dependency_violations` function, you can enforce functional constraints between columns in your dataset, which can help improve data quality and lead to more accurate results in your analysis or model.
 However, it's essential to carefully consider the context of your data and the functional constraints you choose to enforce to ensure that you aren't inadvertently removing valuable information from your dataset.
 
 ## Next steps
 - [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
-- [How to accelerate data science using semantic functions](semantic-link-semantic-functions.md)
+- [Accelerate data science using semantic functions](semantic-link-semantic-functions.md)

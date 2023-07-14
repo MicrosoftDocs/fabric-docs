@@ -4,7 +4,7 @@ description: Learn to use Semantic Link to explore and validate relationships in
 ms.reviewer: mopeakande
 ms.author: romanbat
 author: RomanBat
-ms.topic: overview 
+ms.topic: how-to 
 ms.date: 06/06/2023
 ms.search.form: Semantic Link
 ---
