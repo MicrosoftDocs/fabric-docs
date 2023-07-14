@@ -65,7 +65,7 @@ items:
     href: read-write-power-bi.md
   - name: Explore and validate functional dependencies in your data
     href: semantic-link-validate-data.md
-  - name: Explore and validate relationships in Power BI datasets
+  - name: Explore and validate relationships in datasets
     href: semantic-link-validate-relationship.md
 - name: Train machine learning models
   items:
@@ -203,7 +203,7 @@ items:
       href: read-write-power-bi.md
     - name: Explore and validate functional dependencies in your data
       href: semantic-link-validate-data.md
-    - name: Explore and validate relationships in Power BI datasets
+    - name: Explore and validate relationships in datasets
       href: semantic-link-validate-relationship.md
 - name: SynapseML
   items:
