@@ -40,16 +40,18 @@ Once the upload is done, your workspace will have three new artifacts: a Power B
 
 ## Use Python to read data from Power BI datasets
 
-The SemPy Python API can retrieve data and metadata from Power BI datasets located in a Microsoft Fabric workspace and execute queries on them. You can open a notebook in the same workspace where you uploaded the dataset or in a different workspace. You'll run code to read the Power BI dataset in the notebook.
+The SemPy Python API can retrieve data and metadata from Power BI datasets located in a Microsoft Fabric workspace and execute queries on them.
 
-By default, the workspace used to access Power BI datasets is:
+Your notebook, dataset, and [Lakehouse](/fabric/data-engineering/lakehouse-overview) can be located in the same workspace or in different workspaces. By default, SemPy tries to access your Power BI dataset from:
 
-- the same as the workspace of the notebook, if the notebook and dataset are in the same workspace. In this case, you don't need to attach a [Lakehouse](/fabric/data-engineering/lakehouse-overview).
-- the workspace of the Lakehouse that's attached to your notebook. You'll need to attach the Lakehouse if the notebook is in a different workspace than the workspace that houses the dataset and Lakehouse.
+- the workspace of your Lakehouse, if you've attached a Lakehouse to your notebook.
+- the workspace of your notebook, if there's no Lakehouse attached.
+
+If your dataset isn't located in the default workspace that SemPy tries to access, you must specify the workspace of your dataset when you call a SemPy method.
 
 To read data from Power BI datasets:
 
-1. List the available Power BI datasets in the workspace.
+1. List the available Power BI datasets in your workspace.
 
     ```python
     import sempy.fabric as fabric
@@ -67,7 +69,7 @@ To read data from Power BI datasets:
 
 1. List the measures defined in the _Customer Profitability Sample_ Power BI dataset.
    > [!TIP]
-   > In the following code, you can specify your workspace by replacing the workspace name `Your Workspace` with yours.
+   > In the following code, we've specified the workspace for SemPy to use for accessing the dataset. You can replace `Your Workspace` with the name of the workspace where you uploaded the dataset (from the [Upload the dataset into your workspace](#upload-the-dataset-into-your-workspace) section).
 
     ```python
     df_measures = fabric.list_measures("Customer Profitability Sample", workspace="Your Workspace")
@@ -194,7 +196,7 @@ The read access APIs have the following limitations:
 ## Write data consumable by Power BI datasets
 
 Spark tables added to a Lakehouse are automatically added to the corresponding [default Power BI dataset](/fabric/data-warehouse/datasets).
-This example demonstrates how to write data to the attached Lakehouse. The FabricDataFrame excepts the same input data as Pandas dataframes.
+This example demonstrates how to write data to the attached Lakehouse. The FabricDataFrame accepts the same input data as Pandas dataframes.
 
 ```python
 from sempy.fabric import FabricDataFrame
