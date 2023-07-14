@@ -16,8 +16,8 @@ ms.search.form: Semantic Link
 In this article, you'll learn to discover and validate relationships within your Power BI datasets and pandas DataFrames by using SemPy modules.
 
 In data science and machine learning, it's important to understand the structure and relationships within your dataset.
-Although  Power BI is a powerful tool that allows you to model and visualize your data, you sometimes need to dive deeper into a dataset's structure to gain additional insights or build machine learning models.
-Data scientists and business analysts can explore the relationships within a Power BI dataset by using the `list_relationships` function in the SemPy library.
+Although Power BI is a powerful tool that allows you to model and visualize your data, you sometimes need to dive deeper into a dataset's structure to gain more insights or build machine learning models.
+Data scientists and business analysts can explore the relationships within a Power BI dataset or pandas DataFrames by using various functions in the SemPy library.
 
 You'll learn to:
 
@@ -67,7 +67,7 @@ plot_relationship_metadata(relationships)
 
 In previous code, the `list_relationships` function retrieves the relationships in the *my_dataset* Power BI dataset, and the `plot_relationship_metadata` function creates a graph to visualize these relationships.
 
-You can customize the graph by specifying which columns to include, how to handle missing keys, and by providing additional graphviz attributes.
+You can customize the graph by specifying which columns to include, how to handle missing keys, and by providing more graphviz attributes.
 
 ## Explore relationship violations in a Power BI dataset
 
@@ -96,7 +96,7 @@ fabric.list_relationship_violations(tables)
 In the previous code, the `list_relationship_violations` function is called with a dictionary that contains the _Sales_, _Products_, and _Customers_ tables from the _my_dataset_ Power BI dataset.
 The function returns a pandas DataFrame with one row per relationship violation, allowing you to easily identify and address any issues within your dataset.
 
-You can customize the function by specifying how to handle missing keys, setting a coverage threshold, and defining the number of missing keys to report.
+You can customize the function by specifying how to handle missing keys, by setting a coverage threshold, and defining the number of missing keys to report.
 
 By using the `list_relationship_violations` function, you can ensure that your Power BI dataset is consistent and accurate, allowing you to build more reliable machine learning models and gain deeper insights into your data.
 
@@ -127,7 +127,7 @@ You can customize the function by specifying a coverage threshold, a name simila
 
 ## Validate relationships in pandas DataFrames
 
-After discovering potential relationships within your pandas DataFrames, using the `find_relationships` function, it's essential to validate these relationships and identify any potential issues or inconsistencies.
+After you've discovered potential relationships within your pandas DataFrames, using the `find_relationships` function, it's essential to validate these relationships and identify any potential issues or inconsistencies.
 This is where the `list_relationship_violations` function from the `sempy.relationships` module comes into play.
 
 The `list_relationship_violations` function is designed to help you validate the content of your tables and ensure that they match the discovered relationships.
@@ -148,7 +148,7 @@ list_relationship_violations(tables, relationships)
 In the previous code, the `list_relationship_violations` function is called with a list of three pandas DataFrames (`df_sales`, `df_products`, and `df_customers`) and the relationships DataFrame obtained from the `find_relationships` function.
 The `list_relationship_violations` function returns a pandas DataFrame with one row per relationship violation, allowing you to easily identify and address any issues within your data.
 
-You can customize the function by specifying how to handle missing keys, setting a coverage threshold, and defining the number of missing keys to report.
+You can customize the function by specifying how to handle missing keys, by setting a coverage threshold, and defining the number of missing keys to report.
 
 By using the `list_relationship_violations` function with pandas DataFrames, you can ensure that your data is consistent and accurate, allowing you to build more reliable machine learning models and gain deeper insights into your data.
 
