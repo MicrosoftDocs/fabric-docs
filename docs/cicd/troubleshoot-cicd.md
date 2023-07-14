@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: build-2023
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -143,7 +143,11 @@ To resolve the issue, delete the problematic item(s):
 * If the item that's not selected is supported by git (for example, reports), select it to be deleted as well.
 * If the item that's not selected isn't supported by git (for example, Dashboards), [delete it manually](git-integration/partial-update.md) from the workspace.
 
-Select **Undo**.  
+Select **Undo**.
+
+### Dependency issues
+
+#### Can't commit or update because of a dependency problem
 
 ## Deployment pipelines
 
