@@ -31,17 +31,17 @@ Here are the important steps to create this solution:
 	The pipeline in this solution has the following activities: 
 
 	* Create two lookup activities. Use the first lookup activity to retrieve the last watermark value. Use the second lookup activity to retrieve the new watermark value. These watermark values are passed to the copy activity.
-	* Create a copy activity that copies rows from the source data table with the value of the watermark column greater than the old watermark value and less than the new watermark value. Then, it copies the data from the source data store to Blob storage as a new file.
-	* Create a stored procedure activity that updates the watermark value for the pipeline that runs next time.
+	* Create a copy activity that copies rows from the source data table with the value of the watermark column greater than the old watermark value and less than the new watermark value. Then, it copies the data from the Data Warehouse to Lakehouse as a new file.
+	* Create a stored procedure activity that updates the old watermark value for the pipeline that runs next time.
 
 ## Prerequisites
 
 - **Data Warehouse**. You use the Data Warehouse as the source data store. If you don't have it, see [Create a workspace](../get-started/create-workspaces.md) for steps to create one.
-- **Lakehouse**. You use the Lakehouse as the destination data store. If you don't have it, see [Create a Lakehouse](../data-engineering/create-lakehouse) for steps to create one. Create a folder named *IncrementalCopy* to store the copied data. 
+- **Lakehouse**. You use the Lakehouse as the destination data store. If you don't have it, see [Create a Lakehouse](../data-engineering/create-lakehouse.md) for steps to create one. Create a folder named *IncrementalCopy* to store the copied data. 
 
 ### Preparing your source 
 
-Here are some tables and stored procedure that you need to prepare in your source Data Warehouse before configuring the incremental copy.
+Here are some tables and stored procedure that you need to prepare in your source Data Warehouse before configuring the incremental copy pipeline.
 
 #### 1. Create a data source table in your Data Warehouse 
 
@@ -78,7 +78,7 @@ PersonID | Name | LastModifytime
 
 In this tutorial, you use LastModifytime as the watermark column. 
 
-#### 2. Create another table in your Data Warehouse to store the high watermark value
+#### 2. Create another table in your Data Warehouse to store the watermark value after a pipeline runs
 
 1. Run the following SQL command in your Data Warehouse to create a table named *watermarktable* to store the watermark value:  
 
@@ -111,7 +111,7 @@ In this tutorial, you use LastModifytime as the watermark column.
 
 #### 3. Create a stored procedure in your Data Warehouse
 
-Run the following command to create a stored procedure in your Data Warehouse. This stored procedure is used to help updates the watermark value for the pipeline that runs next time.
+Run the following command to create a stored procedure in your Data Warehouse. This stored procedure is used to help updates the watermark value after a pipeline runs, which is the old watermark for the pipeline that runs next time.
 
 ```sql
 CREATE PROCEDURE usp_write_watermark @LastModifiedtime datetime, @TableName varchar(50)
@@ -192,7 +192,7 @@ In this step, you add a copy activity to copy the incremental data between old w
 
 1. Under **General** tab, rename this activity to **IncrementalCopyActivity**.
 
-1. Connect both Lookup activities to the copy activity by dragging the green button (On success) attached to the Lookup activities to the copy activity. Release the mouse button when you see the border color of the copy activity changes to green.
+1. Connect both Lookup activities to the copy activity by dragging the green button (On success) attached to the lookup activities to the copy activity. Release the mouse button when you see the border color of the copy activity changes to green.
 
     :::image type="content" source="media/tutorial-incremental-copy-data-warehouse-lakehouse/connect-lookup-copy.png" alt-text="Screenshot showing connecting lookup and copy activities.":::
 
@@ -212,7 +212,7 @@ In this step, you add a copy activity to copy the incremental data between old w
 1. Under **Destination** tab, perform the following configuration:
     - **Data store type**: Select **Workspace**.
     - **Workspace data store type**: Select **Lakehouse**.
-    - **Data Warehouse**: Select your Lakehouse.
+    - **Lakehouse**: Select your Lakehouse.
     - **Root folder**: Choose **Files**.
     - **File path**: Specify the folder that you want to store your copied data. Select **Browse** to select your folder. For the file name, open **Add dynamic content** and enter `@CONCAT('Incremental-', pipeline().RunId, '.txt')` in the opened window to create file names for your copied data file in Lakehouse.
     - **File format**: Select the format type of your data.
@@ -221,7 +221,7 @@ In this step, you add a copy activity to copy the incremental data between old w
 
 ### Step 5：Add a stored procedure activity
 
-In this step, you add a stored procedure activity to update the watermark value for the pipeline that runs next time.
+In this step, you add a stored procedure activity to update the watermark value after a pipeline runs, which is the old watermark for the pipeline that runs next time.
 
 1. Select **Activities** on the top bar and select **Stored procedure** to add a stored procedure activity.
 
@@ -269,7 +269,7 @@ VALUES (6, 'newdata','9/6/2017 2:23:00 AM')
 INSERT INTO data_source_table
 VALUES (7, 'newdata','9/7/2017 9:01:00 AM')
 ```
-The updated data in your Data Warehouse is:
+The updated data for *data_source_table* is:
 
 ```
 PersonID | Name | LastModifytime
