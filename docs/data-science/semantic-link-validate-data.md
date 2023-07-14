@@ -127,7 +127,6 @@ download_synthea(which='small')
 
 df = FabricDataFrame(pd.read_csv("synthea/csv/providers.csv"))
 
-
 violations = df.list_dependency_violations(determinant_col="ZIP", dependent_col="CITY")
 ```
 
