@@ -123,6 +123,9 @@ Client-side logs can be found on your local machine under `%temp%\OneLake\Diagno
 
 To uninstall the app, in Windows, search for “OneLake”. Select **Uninstall** in the list of options under OneLake.
 
+### Tenant setting enables access to OneLake file explorer
+Tenant admins can restrict access to OneLake file explorer for their organization in the [Microsoft Fabric admin portal](../admin/admin-center.md). When the setting is disabled, no one in your organization will be able to start the OneLake file explorer app.  If the application is already running and the tenant admin disabled the setting, the application exits.  Placeholders and any downloaded content remain on the local machine, but the user will not be able to sync data to or from OneLake. 
+
 ## OneLake file explorer icons
 
 These OneLake file explorer icons are visible in Windows File Explorer and tell you the sync state of the file or folder.  
