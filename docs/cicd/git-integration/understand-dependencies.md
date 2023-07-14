@@ -5,18 +5,16 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: Dan Weinstein
 ms.topic: how-to
-ms.date: 07/13/2023
+ms.date: 07/14/2023
 ---
 
 # Resolve dependency errors
 
 This article explains what dependency errors are and how to resolve them.
 
-## How so I resolve a dependency error?
+## What is a dependency?
 
-**Description of problem**:
-
-**Cause**: If you connect a workspace that contains unsupported items to an empty git branch, the unsupported items aren't copied to the git branch and can't be accessed by it. You can perform any actions you want on the supported items, but the unsupported items are essentially unseen by git.
+If you connect a workspace that contains unsupported items to an empty git branch, the unsupported items aren't copied to the git branch and can't be accessed by it. You can perform any actions you want on the supported items, but the unsupported items are essentially unseen by git.
 
 Here's a sample workspace connected to a git repository. The workspace contains a *.pbix* file and a report and dataset. The report is dependent on the dataset because the report refers to data from the dataset to render. The *.pbix* file refers to both the report and teh dataset and is therefore dependent on both of them. Reports and datasets are both supported ites, while *.pbix* files are not.
 

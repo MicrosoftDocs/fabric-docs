@@ -128,7 +128,7 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 
 **Solution**: Select the all the dependencies of the selected database and try again.
 
-#### Undo failure: After selecting "Undo" a dialog pops up indicating failure because the action would break a dependency link
+#### Undo failure: After selecting "Undo", "Update", or "Switch branch" a dialog pops up indicating failure because the action would break a dependency link
 
 **Description of problem**: The following error appears after an undo action if the action would break a dependency.
 
@@ -145,7 +145,7 @@ To resolve the issue, delete the problematic item(s):
 
 Select **Undo**.
 
-### Dependency issues
+To read morea bout dependencies, see [Understand dependencies](./git-integration/understand-dependencies.md).
 
 #### Can't commit or update because of a dependency problem
 
