@@ -164,9 +164,9 @@ In this step, you create a lookup activity to get the last watermark value. The 
 
 ### Step 3: Add a lookup activity for the new watermark
 
-In this step, you create a lookup activity to get the new watermark value. You'll use a query to acquire the new watermark from your source data table. The highest value in *LastModifytime* column will be obtained.
+In this step, you create a lookup activity to get the new watermark value. You'll use a query to obtain the new watermark from your source data table. The highest value in *LastModifytime* column will be obtained.
 
-1. On the top bar, select **Lookup** under **Activities** tab to add the second Lookup activity.
+1. On the top bar, select **Lookup** under **Activities** tab to add the second lookup activity.
 
 1. Under **General** tab, rename this activity to **LookupNewWaterMarkActivity**.
 
@@ -201,7 +201,7 @@ In this step, you add a copy activity to copy the incremental data between the l
     - **Workspace data store type**: Select **Data Warehouse**.
     - **Data Warehouse**: Select your Data Warehouse.
     - **Use query**: Choose **Query**.
-    - **Query**: Enter the following query to copy incremental data between old watermark and new watermark.
+    - **Query**: Enter the following query to copy incremental data between last watermark and new watermark.
 
         ```sql
         select * from data_source_table where LastModifytime > '@{activity('LookupOldWaterMarkActivity').output.firstRow.WatermarkValue}' and LastModifytime <= '@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}'
@@ -221,7 +221,7 @@ In this step, you add a copy activity to copy the incremental data between the l
 
 ### Step 5：Add a stored procedure activity
 
-In this step, you add a stored procedure activity to update the last watermark value after pipeline run. Here the last watermark value is `9/5/2017 8:06:00 AM`.
+In this step, you add a stored procedure activity to update the last watermark value after pipeline run.
 
 1. Select **Activities** on the top bar and select **Stored procedure** to add a stored procedure activity.
 
