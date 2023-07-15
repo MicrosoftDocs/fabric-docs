@@ -14,7 +14,7 @@ Today, organizations are facing massive growth in data, and there's an increasin
 
 To meet this challenge, organizations are shifting from traditional IT centric data architectures, where the data is governed and managed centrally, to more federated models organized according to business needs. This federated data architecture is called data mesh. A data mesh is a decentralized data architecture that organizes data by specific business domains, such as marketing, sales, human resources, etc.
 
-Currently, Microsoft Fabric's data mesh architecture primarily supports organizing data into domains and enabling data consumers to be able to filter and find content by domain. It also enables federated governance, which means that some governance currently controlled at the tenant level can be delegated to domain-level control, enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
+Currently, Microsoft Fabric's data mesh architecture primarily supports organizing data into domains and enabling data consumers to be able to filter and find content by domain. It also enables federated governance, which means that some governance currently controlled at the tenant level can be [delegated to domain-level control](#override-tenant-level-settings), enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
 
 ## What are Fabric domains?
 
