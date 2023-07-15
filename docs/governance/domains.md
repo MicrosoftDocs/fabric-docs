@@ -14,7 +14,7 @@ Today, organizations are facing massive growth in data, and there's an increasin
 
 To meet this challenge, organizations are shifting from traditional IT centric data architectures, where the data is governed and managed centrally, to more federated models organized according to business needs. This federated data architecture is called data mesh. A data mesh is a decentralized data architecture that organizes data by specific business domains, such as marketing, sales, human resources, etc.
 
-For public preview, Microsoft Fabric's data mesh architecture primarily supports organizing data into domains and enabling data consumers to be able to filter and find content by domain. Future releases will enable federated governance, which means that some of the governance currently controlled at the tenant level will move to domain-level control, enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
+Currently, Microsoft Fabric's data mesh architecture primarily supports organizing data into domains and enabling data consumers to be able to filter and find content by domain. It also enables federated governance, which means that some governance currently controlled at the tenant level can be delegated to domain-level control, enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
 
 ## What are Fabric domains?
 
@@ -65,11 +65,19 @@ To create domain you must be a Fabric admin.
 
 ## Configure a domain
 
-Power BI and domain admins can configure a domain on the domain's configuration page. To get to the domain's configuration page, go to the admin portal, choose **Domains**, and then select the domain you want to configure.
+Fabric admins and a domain's admins can configure the domain on the domain's configuration page. To get to the domain's configuration page, go to the admin portal, choose **Domains**, and then select the domain you want to configure.
 
 :::image type="content" source="./media/domains/configure-choose-domain.png" alt-text="Screenshot showing the domains page-for choosing domain to configure.":::
 
 Domain admins see only domains they are admins of.
+
+When you open a domain, you see two tabs: and **Details** and **Delegated settings**.
+
+* On the **Details** tab, you can configure the various properties of the domain. Some details can only be configured by a Fabric admin, and some details can be configured by either Fabric admins or domain admins.
+
+* On the **Delegated settings** tab, Fabric admins and domain admins can configure and tenant-level settings that have been delegated to the domain level.
+
+:::image type="content" source="./media/domains/domain-configuration-page.png" alt-text="Screenshot of domain configuration page, showing the Details and Delaged settings tabs.":::
 
 ### Edit name and description
 
@@ -144,6 +152,31 @@ Fabric admins and domain admins can associate workspaces with the domain on the 
 
 To unassign a workspace in the Workspaces in this domain section, hover over the workspace entry and select the unassign icon that appears.
 To unassign several workspaces at a time, select the checkboxes next to the workspace names and then select the **Unassign** button above the table.
+
+:::image type="content" source="./media/domains/domain-override-tenant-admin-selection.png" alt-text="Screenshot of certification override.":::
+
+### Override tenant-level settings
+
+Select the **Delegated settings** tab. You'll see all the tenant-level settings that potentially can be overridden at the domain level. However, while you can see all such settings, you can only override any particular setting if a Fabric admin has [allowed override at the domain level](../admin/endorsement-setup.md).
+
+To override a setting, expand the setting you want to override and select the **Override tenant admin selection** checkbox, as shown in the following image.
+
+> [!NOTE]
+> If the checkbox is greyed out and you can't select it, it means that the Fabric admin has not allowed this setting to be overridden at the domain level.
+
+:::image type="content" source="./media/domains/domain-override-tenant-admin-selection.png" alt-text="Screenshot of certification override.":::
+
+#### Override certification settings
+
+Certification is a way for organizations to label items so that users know that the organization considers an item to be a quality item. For more information about certification, see [Endorsement](./endorsement-overview.md).
+
+Certification settings at the domain level mean you can:
+
+* Enable or disable certification of items that belong to the domain
+* Specify who in the organization is authorized to certify items that belong to the domain
+* Provide a URL to domain-relevant documentation about certification.
+
+To override the tenant-level certification settings, select the **Override tenant admin selection** checkbox, and configure the setting as described in [Set up certification](../admin/endorsement-setup.md#set-up-certification)
 
 ## Next steps
 
