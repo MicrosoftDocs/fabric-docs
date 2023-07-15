@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 07/12/2023
+ms.date: 07/15/2023
 ms.search.form: product-kusto
 ---
 # Get data from Azure Event Hubs
@@ -55,38 +55,9 @@ Within the SAS policy pane, take note of the following four fields. You may want
 | c |**Primary key** | The key associated with the SAS policy | Starts with *PGGIISb009*...
 | d | **Connection string-primary key** | In this field you only want to copy the event hub namespace, which can be found as part of the connection string. | *eventhubpm15910.servicebus.windows.net*
 
-## Create a cloud connection
-
-Now that your SAS policy is set up, you can configure a connection to this event hub.
-
-1. On the menu bar of your workspace, select the settings icon > **Manage connections and gateways**.
-
-    :::image type="content" source="media/get-data-event-hub/manage-connections-gateways.png" alt-text="Screenshot of the settings dropdown in Microsoft Fabric. The option titled Manage connections and gateways is highlighted."  lightbox="media/get-data-event-hub/manage-connections-gateways.png":::
-
-    The **Data** pane opens.
-1. Select **+New**.
-
-1. Fill out the fields according to the following table:
-
-    :::image type="content" source="media/get-data-event-hub/new-connection.png" alt-text="Screenshot of filling out event hubs information in the Azure portal."  lightbox="media/get-data-event-hub/new-connection.png":::
-
-    | Field | Description | Suggested value |
-    |---|---|---|
-    | Icon | Type of connection | Cloud
-    | Connection name | User-defined name for this connection
-    | Connection type | Type of resource to connect to | EventHub
-    | Event Hub namespace | Field reference **d** from the above [table](#gather-information-for-the-cloud-connection) | *eventhubpm15910.servicebus.windows.net*
-    | Event Hub | Field reference **a** from the above [table](#gather-information-for-the-cloud-connection) | *iotdata*
-    | Authentication method | Type of authentication | Basic
-    | Username | Field reference **b** from the above [table](#gather-information-for-the-cloud-connection)  <br><br> The SAS policy name | *DocsTest*
-    | Password | Field reference **c** from the above [table](#gather-information-for-the-cloud-connection) <br><br> The SAS primary key.
-    | Privacy level | Real-Time Analytics doesn't use the Privacy level. You can use Organizational as a default value | Organizational
-
-1. Select **Create**.
-
 ## Get data
 
-In the following step, you connect a table in your KQL database to the event hub cloud connection that you created. This connection allows you to use your event hub and get data into the designated table using specified data mapping.
+In the following steps, you create a table, and create a data connection to Event Hubs. Data connections to Event Hubs can be used 
 
 1. Browse to your KQL database.
 1. Select **Get data** > **Get data from Event Hubs**.
