@@ -73,11 +73,11 @@ Domain admins see only domains they are admins of.
 
 When you open a domain, you see two tabs: and **Details** and **Delegated settings**.
 
+:::image type="content" source="./media/domains/domain-configuration-page.png" alt-text="Screenshot of domain configuration page, showing the Details and Delaged settings tabs.":::
+
 * On the **Details** tab, you can configure the various properties of the domain. Some details can only be configured by a Fabric admin, and some details can be configured by either Fabric admins or domain admins.
 
-* On the **Delegated settings** tab, Fabric admins and domain admins can configure and tenant-level settings that have been delegated to the domain level.
-
-:::image type="content" source="./media/domains/domain-configuration-page.png" alt-text="Screenshot of domain configuration page, showing the Details and Delaged settings tabs.":::
+* On the **Delegated settings** tab, Fabric admins and domain admins can override tenant-level settings that have been delegated to the domain level.
 
 ### Edit name and description
 
@@ -155,9 +155,12 @@ To unassign several workspaces at a time, select the checkboxes next to the work
 
 :::image type="content" source="./media/domains/domain-override-tenant-admin-selection.png" alt-text="Screenshot of certification override.":::
 
-### Override tenant-level settings
+## Override tenant-level settings
 
-Select the **Delegated settings** tab. You'll see all the tenant-level settings that potentially can be overridden at the domain level. However, while you can see all such settings, you can only override any particular setting if a Fabric admin has [allowed override at the domain level](../admin/endorsement-setup.md).
+Some tenant-level settings can potentially overridded at the domain level. To see these settings, select the **Delegated settings** tab on the domains configuration page.
+
+> [!NOTE]
+> While you can see all the settings that potentially can be overridden, you can only override any particular setting if a Fabric admin has [allowed override at the domain level](../admin/endorsement-setup.md). 
 
 To override a setting, expand the setting you want to override and select the **Override tenant admin selection** checkbox, as shown in the following image.
 
