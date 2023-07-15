@@ -75,9 +75,9 @@ When you open a domain, you see two tabs: and **Details** and **Delegated settin
 
 :::image type="content" source="./media/domains/domain-configuration-page.png" alt-text="Screenshot of domain configuration page, showing the Details and Delaged settings tabs.":::
 
-* On the **Details** tab, you can configure the various properties of the domain. Some details can only be configured by a Fabric admin, and some details can be configured by either Fabric admins or domain admins.
+* On the **Details** tab, you can [configure the various properties of the domain](#configure-domain-details). Some details can only be configured by a Fabric admin, and some details can be configured by either Fabric admins or domain admins.
 
-* On the **Delegated settings** tab, Fabric admins and domain admins can override tenant-level settings that have been delegated to the domain level.
+* On the **Delegated settings** tab, Fabric admins and domain admins can [override tenant-level settings that have been delegated to the domain level](#override-tenant-level-settings).
 
 ## Configure domain details
 
