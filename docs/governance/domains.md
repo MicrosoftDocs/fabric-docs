@@ -160,7 +160,7 @@ To unassign several workspaces at a time, select the checkboxes next to the work
 
 ## Override tenant-level settings
 
-Some tenant-level settings can potentially be overridden at the domain level. To see these settings, select the **Delegated settings** tab on the domains configuration page. To override a setting, expand the setting you want to override.
+Some tenant-level settings can potentially be overridden at the domain level. To see these settings, select the **Delegated settings** tab on the domain's [configuration page](#configure-a-domain). To override a setting, expand the setting you want to override.
 
 The following admin settings can potentially be overridden.
 
@@ -174,14 +174,14 @@ Certification settings at the domain level mean you can:
 * Specify certifiers who are experts in the domain.
 * Provide a URL to documentation that is relevant to certification in the domain.
 
-To override the tenant-level certification settings, expand the certification section. You'll see the tenant-level selections, but greyed out. Select the **Override tenant admin selection** checkbox to override the settings, as illustrated in the following image.
-
-:::image type="content" source="./media/domains/domain-override-tenant-admin-selection.png" alt-text="Screenshot of certification override.":::
+To override the tenant-level certification settings, expand the certification section. You'll see the tenant-level selections, but greyed out. Select the **Override tenant admin selection** checkbox, and then configure the settings as desired.
 
 > [!NOTE]
 > If the checkbox is greyed out and you can't select it, it means that the Fabric admin has not [allowed this setting to be overridden at the domain level](../admin/endorsement-setup.md#set-up-certification).
 
-After you've checked the box, override the tenant-level settings as desired. For descriptions of the things you need to set, see [Set up certification](../admin/endorsement-setup.md#set-up-certification)
+For descriptions of the things you need to set, see [Set up certification](../admin/endorsement-setup.md#set-up-certification).
+
+:::image type="content" source="./media/domains/domain-override-tenant-admin-selection.png" alt-text="Screenshot of certification override.":::
 
 ## Next steps
 
