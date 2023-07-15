@@ -71,7 +71,7 @@ Fabric admins and a domain's admins can configure the domain on the domain's con
 
 Domain admins see only domains they are admins of.
 
-When you open a domain, you see two tabs: and **Details** and **Delegated Settings**.
+When you open a domain, you see two tabs: **Details** and **Delegated Settings**.
 
 :::image type="content" source="./media/domains/domain-configuration-page.png" alt-text="Screenshot of domain configuration page, showing the Details and Delaged settings tabs.":::
 
