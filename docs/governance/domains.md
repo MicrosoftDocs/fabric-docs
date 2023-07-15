@@ -81,6 +81,8 @@ When you open a domain, you see two tabs: and **Details** and **Delegated settin
 
 ## Configure domain details
 
+To configure domain details, select the **Details** pane on the domain's [configuration page](#configure-a-domain).
+
 ### Edit name and description
 
 Fabric admins can edit the name and description fields. Domain admins can edit the description field only.
