@@ -79,6 +79,8 @@ When you open a domain, you see two tabs: and **Details** and **Delegated settin
 
 * On the **Delegated settings** tab, Fabric admins and domain admins can override tenant-level settings that have been delegated to the domain level.
 
+## Configure domain details
+
 ### Edit name and description
 
 Fabric admins can edit the name and description fields. Domain admins can edit the description field only.
@@ -151,35 +153,33 @@ Fabric admins and domain admins can associate workspaces with the domain on the 
     * This action affects existing workspaces only. It won’t affect workspaces that are assigned to the specified capacities after the action has been performed.
 
 To unassign a workspace in the Workspaces in this domain section, hover over the workspace entry and select the unassign icon that appears.
-To unassign several workspaces at a time, select the checkboxes next to the workspace names and then select the **Unassign** button above the table.
 
-:::image type="content" source="./media/domains/domain-override-tenant-admin-selection.png" alt-text="Screenshot of certification override.":::
+To unassign several workspaces at a time, select the checkboxes next to the workspace names and then select the **Unassign** button above the table.
 
 ## Override tenant-level settings
 
-Some tenant-level settings can potentially overridded at the domain level. To see these settings, select the **Delegated settings** tab on the domains configuration page.
+Some tenant-level settings can potentially be overridden at the domain level. To see these settings, select the **Delegated settings** tab on the domains configuration page. To override a setting, expand the setting you want to override.
 
-> [!NOTE]
-> While you can see all the settings that potentially can be overridden, you can only override any particular setting if a Fabric admin has [allowed override at the domain level](../admin/endorsement-setup.md). 
+The following admin settings can potentially be overridden.
 
-To override a setting, expand the setting you want to override and select the **Override tenant admin selection** checkbox, as shown in the following image.
+### Certification settings
 
-> [!NOTE]
-> If the checkbox is greyed out and you can't select it, it means that the Fabric admin has not allowed this setting to be overridden at the domain level.
-
-:::image type="content" source="./media/domains/domain-override-tenant-admin-selection.png" alt-text="Screenshot of certification override.":::
-
-#### Override certification settings
-
-Certification is a way for organizations to label items so that users know that the organization considers an item to be a quality item. For more information about certification, see [Endorsement](./endorsement-overview.md).
+Certification is a way for organizations to label items that it considers to be quality items. For more information about certification, see [Endorsement](./endorsement-overview.md).
 
 Certification settings at the domain level mean you can:
 
-* Enable or disable certification of items that belong to the domain
-* Specify who in the organization is authorized to certify items that belong to the domain
-* Provide a URL to domain-relevant documentation about certification.
+* Enable or disable certification of items that belong to the domain.
+* Specify certifiers who are experts in the domain.
+* Provide a URL to documentation that is relevant to certification in the domain.
 
-To override the tenant-level certification settings, select the **Override tenant admin selection** checkbox, and configure the setting as described in [Set up certification](../admin/endorsement-setup.md#set-up-certification)
+To override the tenant-level certification settings, expand the certification section. You'll see the tenant-level selections, but greyed out. Select the **Override tenant admin selection** checkbox to override the settings, as illustrated in the following image.
+
+:::image type="content" source="./media/domains/domain-override-tenant-admin-selection.png" alt-text="Screenshot of certification override.":::
+
+> [!NOTE]
+> If the checkbox is greyed out and you can't select it, it means that the Fabric admin has not [allowed this setting to be overridden at the domain level](../admin/endorsement-setup.md#set-up-certification).
+
+After you've checked the box, override the tenant-level settings as desired. For descriptions of the things you need to set, see [Set up certification](../admin/endorsement-setup.md#set-up-certification)
 
 ## Next steps
 
