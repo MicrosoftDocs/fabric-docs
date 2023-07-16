@@ -7,7 +7,7 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 03/24/2023
+ms.date: 07/16/2023
 ---
 
 # How-to: Create an ADLS Gen2 shortcut
@@ -34,7 +34,7 @@ To create an Azure Data Lake Storage (ADLS) shortcut:
 
 [!INCLUDE [adls-gen2-shortcut](../includes/adls-gen2-shortcut.md)]
 
-1. See the folder icon with shortcut symbol in the explorer.
+The lakehouse automatically refreshes. The shortcut appears under **Files** in the **Explorer** pane.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol." lightbox="media\create-onelake-shortcut\folder-shortcut-symbol.png":::
 

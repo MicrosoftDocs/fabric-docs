@@ -7,12 +7,12 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 07/16/2023
 ---
 
 # How-to: Create a OneLake shortcut
 
-In this how-to guide, you'll learn how to create a OneLake shortcut inside a Fabric Lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+In this how-to guide, you'll learn how to create a OneLake shortcut inside a Fabric Lakehouse. You can use Lakehouse, Data Warehouse or KQL Database as the source for your shortcut. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -20,9 +20,7 @@ In this how-to guide, you'll learn how to create a OneLake shortcut inside a Fab
 
 Create a lakehouse by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
 
-## How to create a OneLake shortcut
-
-To create a OneLake shortcut:
+## create a OneLake shortcut
 
 1. Open a lakehouse.
 
@@ -34,7 +32,7 @@ To create a OneLake shortcut:
 
 [!INCLUDE [onelake-shortcut](../includes/onelake-shortcut.md)]
 
-1. See the folder icon with shortcut symbol in the explorer.
+The lakehouse automatically refreshes. The shortcut appears under **Files** in the **Explorer** pane.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol." lightbox="media\create-onelake-shortcut\folder-shortcut-symbol.png":::
 

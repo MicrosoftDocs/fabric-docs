@@ -5,8 +5,9 @@ author: YaelSchuster
 ms.author: yaschust
 ms.topic: include
 ms.custom: build-2023
-ms.date: 07/09/2023
+ms.date: 07/16/2023
 ---
+## Select a source
 
 1. Under **External sources**, select **Amazon S3**.
     :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 is highlighted."  lightbox="media/onelake-shortcuts/amazons3-shortcut/new-shortcut-expanded.png":::
