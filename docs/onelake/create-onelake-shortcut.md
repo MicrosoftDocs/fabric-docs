@@ -20,7 +20,7 @@ In this how-to guide, you'll learn how to create a OneLake shortcut inside a Fab
 
 Create a lakehouse by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
 
-## create a OneLake shortcut
+## Create a OneLake shortcut
 
 1. Open a lakehouse.
 
