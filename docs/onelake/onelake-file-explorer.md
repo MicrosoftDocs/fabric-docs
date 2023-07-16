@@ -39,7 +39,9 @@ Once the application is installed and launched, you can now see your OneLake dat
 
 - Files or folders containing Windows reserved characters ([learn more](/windows/win32/fileio/naming-a-file)) fail to sync.
 
-- Updating Office files (.xlsx, .pptx, .docx etc.) isn't currently supported.
+- Updating Office files (.xlsx, .pptx, .docx etc.) isn't supported.
+
+- If Windows search is disabled, OneLake file explorer will fail to start.
 
 - Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).
 
@@ -55,7 +57,7 @@ OneLake file explorer starts automatically at startup of Windows.  You can disab
 
 - To manually start the application, search for "OneLake" using Windows search (Windows + S) and select the OneLake application.  The views for any folders that were previously synced are then refreshed automatically.  
 
-- To exit, right-click on the OneLake icon in the Windows System Tray and select **Exit**.  The sync is paused and placeholder files and folders cannot be accessed.  You will continue to see the blue cloud icon for placeholders that were previously synced but not downloaded.
+- To exit, right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select **Exit**.  The sync is paused and placeholder files and folders cannot be accessed.  You will continue to see the blue cloud icon for placeholders that were previously synced but not downloaded.
 
 ### Sync updates from OneLake
 
@@ -120,6 +122,9 @@ Client-side logs can be found on your local machine under `%temp%\OneLake\Diagno
 ### Uninstall instructions
 
 To uninstall the app, in Windows, search for “OneLake”. Select **Uninstall** in the list of options under OneLake.
+
+### Tenant setting enables access to OneLake file explorer
+Tenant admins can restrict access to OneLake file explorer for their organization in the [Microsoft Fabric admin portal](../admin/admin-center.md). When the setting is disabled, no one in your organization will be able to start the OneLake file explorer app.  If the application is already running and the tenant admin disabled the setting, the application exits.  Placeholders and any downloaded content remain on the local machine, but the user will not be able to sync data to or from OneLake. 
 
 ## OneLake file explorer icons
 
