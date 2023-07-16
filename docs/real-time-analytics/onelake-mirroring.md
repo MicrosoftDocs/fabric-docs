@@ -40,7 +40,7 @@ To query referenced data from OneLake in your KQL database or table, see [Create
 
 ## Enable availability in OneLake
 
-Creating one logical copy of your data in OneLake is a two-step process. You enable OneLake availability in your KQL database or table, then expose the data by creating a OneLake shortcut. To create the shortcut, see [Create shortcut](#create-shortcut).
+Creating one logical copy of your data in OneLake is a two-step process. You enable OneLake availability in your KQL database or table, then expose the data by creating a OneLake shortcut. To create the shortcut, see [How-to: Create a OneLake shortcut](../onelake/create-onelake-shortcut.md).
 
 1. To enable data availability, browse to the details page of your KQL database or table.
 1. Next to **OneLake folder** in the **Database details** pane, select the **Edit** (pencil) icon.
@@ -51,7 +51,7 @@ Creating one logical copy of your data in OneLake is a two-step process. You ena
 
     :::image type="content" source="media/onelake-mirroring/enable-data-copy.png" alt-text="Screenshot of the OneLake folder details window in Real-Time Analytics in Microsoft Fabric. The option to expose data to OneLake is turned on.":::
 
-1. To create the OneLake shortcut, see [How-to: Create a OneLake shortcut](../onelake/create-onelake-shortcut.md) 
+1. To create the OneLake shortcut, see [How-to: Create a OneLake shortcut](../onelake/create-onelake-shortcut.md).
 
 ## Next steps
 
