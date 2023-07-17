@@ -80,7 +80,7 @@ In this tutorial, you use LastModifytime as the watermark column.
 
 #### 2. Create another table in your Data Warehouse to store the last watermark value
 
-1. Run the following SQL command in your Data Warehouse to create a table named *watermarktable* to store the watermark value:  
+1. Run the following SQL command in your Data Warehouse to create a table named *watermarktable* to store the last watermark value:  
 
     ```sql
     create table watermarktable
@@ -164,7 +164,7 @@ In this step, you create a lookup activity to get the last watermark value. The 
 
 ### Step 3: Add a lookup activity for the new watermark
 
-In this step, you create a lookup activity to get the new watermark value. You'll use a query to obtain the new watermark from your source data table. The highest value in *LastModifytime* column will be obtained.
+In this step, you create a lookup activity to get the new watermark value. You'll use a query to obtain the new watermark from your source data table. The highest value in *LastModifytime* column in *data_source_table* will be obtained.
 
 1. On the top bar, select **Lookup** under **Activities** tab to add the second lookup activity.
 
@@ -221,7 +221,7 @@ In this step, you add a copy activity to copy the incremental data between the l
 
 ### Step 5：Add a stored procedure activity
 
-In this step, you add a stored procedure activity to update the last watermark value after pipeline run.
+In this step, you add a stored procedure activity to update the last watermark value for the next pipeline run.
 
 1. Select **Activities** on the top bar and select **Stored procedure** to add a stored procedure activity.
 
@@ -232,7 +232,7 @@ In this step, you add a stored procedure activity to update the last watermark v
 1. Under **Settings** tab, perform the following configuration:
     - **Data store type**: Select **Workspace**.
     - **Data Warehouse**: Select your Data Warehouse.
-    - **Stored procedure name**: Specify the stored procedure that you created in the previous step: *[dbo].[usp_write_watermark]*.
+    - **Stored procedure name**: Specify the stored procedure that you created in your Data Warehouse: *[dbo].[usp_write_watermark]*.
     - Expand **Stored procedure parameters**. To specify values for the stored procedure parameters, select **Import**, and enter following values for the parameters:
     
         | Name | Type | Value |
