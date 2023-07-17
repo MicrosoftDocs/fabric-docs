@@ -1,5 +1,5 @@
 ---
-title: Create an S3 shortcut
+title: Create an Amazon S3 shortcut
 description: Learn how to create S3 shortcuts.
 ms.reviewer: eloldag
 ms.author: trolson
@@ -12,7 +12,7 @@ ms.date: 07/16/2023
 
 # How-to: Create an Amazon S3 shortcut
 
-In this how-to guide, you'll learn how to create an S3 shortcut inside a Fabric Lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+In this article, you learn how to create an Amazon S3 shortcut inside a Fabric Lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -20,9 +20,7 @@ In this how-to guide, you'll learn how to create an S3 shortcut inside a Fabric 
 
 Create a lakehouse by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
 
-## Create an S3 Shortcut
-
-To create and Amazon S3 Shortcut:
+## Create a Shortcut
 
 1. Open a lakehouse.
 

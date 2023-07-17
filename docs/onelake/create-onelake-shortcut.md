@@ -12,7 +12,7 @@ ms.date: 07/16/2023
 
 # How-to: Create a OneLake shortcut
 
-In this how-to guide, you'll learn how to create a OneLake shortcut inside a Fabric Lakehouse. You can use Lakehouse, Data Warehouse or KQL Database as the source for your shortcut. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+In this article, you learn how to create a OneLake shortcut inside a Fabric Lakehouse. You can use Lakehouse, Data Warehouse or KQL Database as the source for your shortcut. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -20,7 +20,7 @@ In this how-to guide, you'll learn how to create a OneLake shortcut inside a Fab
 
 Create a lakehouse by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
 
-## Create a OneLake shortcut
+## Create a shortcut
 
 1. Open a lakehouse.
 
