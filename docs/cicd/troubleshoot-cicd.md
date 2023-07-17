@@ -128,11 +128,13 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 
 **Solution**: Select the all the dependencies of the selected database and try again.
 
-#### Undo failure: After selecting "Undo", "Update", or "Switch branch" a dialog pops up indicating failure because the action would break a dependency link
+#### Dependency error: After selecting "Undo", "Update", or "Switch branch" a dialog pops up indicating failure because the action would break a dependency link
 
-**Description of problem**: The following error appears after an undo action if the action would break a dependency.
+**Description of problem**: The following error appears after an undo, update or switch branch action:
 
 :::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when undo fails because the action would break a dependency link.":::
+
+**Cause**: There's an unsupported item in the workspace that depends on an item that's no longer in the workspace causing a dependency problem.
 
 **Solution**: Open the Lineage view to find the item or items that were selected to be "undone" and are linked to items that aren't selected.
 
@@ -145,9 +147,7 @@ To resolve the issue, delete the problematic item(s):
 
 Select **Undo**.
 
-To read morea bout dependencies, see [Understand dependencies](./git-integration/understand-dependencies.md).
-
-#### Can't commit or update because of a dependency problem
+To read more about dependencies, see [Understand dependencies](./git-integration/dependency-errors.md).
 
 ## Deployment pipelines
 
