@@ -161,21 +161,6 @@ Only a workspace admin can disconnect a workspace from an Azure Repo. If you’r
 
     :::image type="content" source="media/git-get-started/disconnect-confirm.png" alt-text="Screenshot of workspace settings screen asking if you're sure you want to disconnect.":::
 
-## Switch branches
-
-To quickly switch between branches without disconnecting and reconnecting, follow these steps:
-
-1. Make sure the current branch is synced and all changes are committed.
-1. From **Workspace settings**, select **Git integration**
-1. From the dropdown menu, specify the branch you want to connect to. This branch must contain the same directory as the current branch.
-1. Select **Connect and sync**.
-
-    :::image type="content" source="media/git-get-started/switch-branch-connect-sync.png" alt-text="Screenshot of workspace settings screen with switch branch option.":::
-
-1. Select **Switch and sync** again to confirm. If you have any unsaved changes in the workspace, they will be lost if you switch branches without saving them first. Select **Cancel** to go back and save your changes before switching branches.
-
-    :::image type="content" source="media/git-get-started/switch-branch-confirm.png" alt-text="Screenshot of workspace settings screen asking if you're sure you want to switch branches.":::
-
 ## Permissions
 
 The actions you can take on a workspace depend on the permissions you have in both the workspace and Azure DevOps. For a more detailed discussion of permissions, see [Permissions](./git-integration-process.md#permissions).
