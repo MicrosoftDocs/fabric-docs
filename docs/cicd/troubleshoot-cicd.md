@@ -136,16 +136,14 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 
 **Cause**: There's an unsupported item in the workspace that depends on an item that's no longer in the workspace causing a dependency problem.
 
-**Solution**: Open the Lineage view to find the item or items that were selected to be "undone" and are linked to items that aren't selected.
+**Solution**: Open the [Lineage view](../governance/lineage.md) to find the item or items that were selected to be "undone" and are linked to items that aren't selected.
 
 :::image type="content" source="./media/troubleshoot-cicd/lineage-view.png" alt-text="Screenshot of the lineage view.":::
 
 To resolve the issue, delete the problematic item(s):
 
-* If the item that's not selected is supported by git (for example, reports), select it to be deleted as well.
+* If the item that's not selected is supported by git (for example, reports), delete it.
 * If the item that's not selected isn't supported by git (for example, Dashboards), [delete it manually](git-integration/partial-update.md) from the workspace.
-
-Select **Undo**.
 
 To read more about dependencies, see [Understand dependencies](./git-integration/dependency-errors.md).
 
