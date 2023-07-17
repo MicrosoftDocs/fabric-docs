@@ -145,11 +145,15 @@ Follow these steps to apply transformations and publish:
 
     You'll now be returned to the workspace. A spinner icon next to your dataflow name indicates publishing is in progress. Once the publishing completes, your dataflow is ready to refresh!
 
-17. In your workspace, select the **Schedule Refresh** icon.
+    [!IMPORTANT] When the first Dataflow Gen2 is created in a workspace, a Lakehouse and Warehouse artifacts will be provisioned along with their related SQL Endpoint and Datasets and seen in the below image. These artifacts are shared by all dataflows in the workspace and are required for Dataflows Gen2 to operate, should not be deleted, and should not be used outside of dataflows experience. The artifacts are an implementation detail of Dataflow Gen2 and while currently visible, they will be hidden in the future.
+    
+    :::image type="content" source="media/create-first-dataflow-gen2/dataflow-staging-artifacts.png" alt-text="Screenshot of the staging artifacts created by dataflows.":::
+
+18. In your workspace, select the **Schedule Refresh** icon.
 
     :::image type="content" source="media/create-first-dataflow-gen2/schedule-refresh.png" alt-text="Screenshot of the workspace with the schedule refresh icon emphasized.":::
 
-18. Turn on the scheduled refresh, select **"Add another time"**, and configure the refresh as shown in the following screenshot.
+19. Turn on the scheduled refresh, select **"Add another time"**, and configure the refresh as shown in the following screenshot.
 
     :::image type="complex" source="media/create-first-dataflow-gen2/add-another-time.png" alt-text="Screenshot showing how to select another time.":::
     Screenshot of the scheduled refresh options, with scheduled refresh turned on, the refresh frequency set to Daily, the Time zone set to coordinated universal time, and the Time set to 4:00 AM. The on button, the Add another time selection, the dataflow owner, and the apply button are all emphasized.
