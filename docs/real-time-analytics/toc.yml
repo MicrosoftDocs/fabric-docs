@@ -58,6 +58,8 @@ items:
       href: data-management.md
     - name: Change the data retention policy
       href: data-retention-policy.md
+    - name: Enable Python plugin
+      href: python-plugin.md
     - name: Create a table update policy
       href: table-update-policy.md
     - name: Create materialized views
