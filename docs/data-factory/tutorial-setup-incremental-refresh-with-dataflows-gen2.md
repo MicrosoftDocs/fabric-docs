@@ -15,9 +15,9 @@ This module takes 15 minutes, incrementally load data into a lakehouse using Dat
 
 The high-level steps in module 4 are as follows:
 
-- Create a dataflow to load data from a odata source into a lakehouse
+- Create a dataflow to load data from an odata source into a lakehouse
 - Add a query to the dataflow to filter the data based on the output destination
-- (optional) re-load data using notebooks and pipelines
+- (optional) reload data using notebooks and pipelines
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -25,9 +25,9 @@ The high-level steps in module 4 are as follows:
 
 A Microsoft Fabric enabled workspace. If you don't already have one, refer to the article [Create a workspace](../get-started/create-workspaces.md).
 
-## Create a dataflow to load data from a odata source into a lakehouse
+## Create a dataflow to load data from an odata source into a lakehouse
 
-In this section, you will create a dataflow to load data from a odata source into a lakehouse.
+In this section, you create a dataflow to load data from an odata source into a lakehouse.
 
 1. Create a new lakehouse in your workspace.
 
@@ -45,7 +45,7 @@ In this section, you will create a dataflow to load data from a odata source int
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/odata-settings.png" alt-text="Screenshot showing the odata settings":::
 
-1. Select the Orders table and click next.
+1. Select the Orders table and select next.
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/select-orders-table.png" alt-text="Screenshot showing the select orders table dialog":::
 
@@ -59,7 +59,7 @@ In this section, you will create a dataflow to load data from a odata source int
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/change-datatype.png" alt-text="Screenshot showing the change datatype function":::
 
-1. Setup Output destination to your lakehouse use the following settings:
+1. Set up Output destination to your lakehouse using the following settings:
     - Output destination: `Lakehouse`
     - Lakehouse: Select the lakehouse you created in step 1.
     - New table name: `Orders`
@@ -71,13 +71,13 @@ In this section, you will create a dataflow to load data from a odata source int
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-settings-replace.png" alt-text="Screenshot showing the output destination lakehouse settings replace":::
 
-1. Click next and publish the dataflow.
+1. Select next and publish the dataflow.
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/publish-dataflow.png" alt-text="Screenshot showing the publish dataflow dialog":::
 
 ## Add a query to the dataflow to filter the data based on the output destination
 
-This section will add a query to the dataflow to filter the data based on the output destination.
+This section adds a query to the dataflow to filter the data based on the output destination.
 
 1. After the Dataflow refreshed, reopen the dataflow you created in the previous section.
 
@@ -99,7 +99,7 @@ This section will add a query to the dataflow to filter the data based on the ou
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/disable-staging.png" alt-text="Screenshot showing the disable staging function":::
 
-1. In the data preview, right click on the `OrderID` column and select `Drill Down`.
+1. In the data preview, right select on the `OrderID` column and select `Drill Down`.
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/drill-down.png" alt-text="Screenshot showing the drill down function":::
 
@@ -107,7 +107,7 @@ This section will add a query to the dataflow to filter the data based on the ou
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/statistics-maximum-orderid.png" alt-text="Screenshot showing the statistics maximum orderid function":::
 
-You now have a query that returns the maximum OrderID in the lakehouse. This query will be used to filter the data from the odata source.
+You now have a query that returns the maximum OrderID in the lakehouse. This query is used to filter the data from the odata source.
 
 1. Go back to the Orders query and add a new step to filter the data. Use the following settings:
     - Column: `OrderID`
@@ -131,9 +131,9 @@ You now have a query that returns the maximum OrderID in the lakehouse. This que
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/publish-dataflow.png" alt-text="Screenshot showing the publish dataflow dialog":::
 
-## (optional) re-load data using notebooks and pipelines
+## (optional) reload data using notebooks and pipelines
 
-Optionally, you can re-load specific data using notebooks and pipelines.
+Optionally, you can reload specific data using notebooks and pipelines.
 
 1. Create a new notebook in your workspace.
 
