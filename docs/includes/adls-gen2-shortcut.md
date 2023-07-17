@@ -4,7 +4,6 @@ description: Include file for Azure Data Lake Storage Gen2 shortcut in Microsoft
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: include
-ms.custom: build-2023
 ms.date: 07/16/2023
 ---
 

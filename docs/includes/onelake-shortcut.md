@@ -4,7 +4,6 @@ description: Include file for OneLake shortcut in Microsoft Fabric.
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: include
-ms.custom: build-2023
 ms.date: 07/09/2023
 ---
 ## Select a source
