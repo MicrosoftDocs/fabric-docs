@@ -1,68 +1,35 @@
 ---
-title: Lifecycle management tutorial
-description: Understand the workflow of using git integration with deployment pipelines to manage the lifecycle of your apps.
+title: Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric 
+description: An overview of the CI/CD continuous integration, continuous deployment as part of the ALM cycle process in Microsoft Fabric.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
-ms.topic: tutorial 
-ms.date: 07/03/2023
+ms.custom: build-2023
+ms.topic: conceptual
+ms.date: 05/23/2023
 ---
 
-# Tutorial: Application lifecycle management in Fabric
+# What is lifecycle management in Microsoft Fabric?
 
-This tutorial will take you through the whole process of loading data into your workspace, editing it etc.
-If you already have a workspace with data, you can skip to [step 3](#step-3-create-pipeline).
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Let’s get started!
+Microsoft Fabric's lifecycle management tools provide a standardized system for communication and collaboration between all members of the development team throughout the life of the product. Lifecycle management facilitates an effective process for releasing products quickly by continuously delivering updated content into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method. There are two main components of lifecycle management in Fabric:
 
-> [!div class="checklist"]
->
-> * Prepare and load data into a lakehouse
-> * Build a dimensional model in a lakehouse
-> * Automatically create a report with quick create
+## Git integration
 
-## Prerequisites
+:::image type="content" source="./media/cicd-overview/git-flow.png" alt-text="Flowchart showing the connection between the remote git branch and the live workspace.":::
 
-* Before you start, if you haven't enabled Fabric yet, [enable Fabric for your organization](../admin/fabric-switch.md)
-* If you aren't signed up yet, [sign up for a free trial](../get-started/fabric-trial.md).
-* Create a [new workspace](../collaborate-share/service-create-the-new-workspaces.md) and assign a Fabric capacity.
-     An existing workspace can also be used, although we recommend using a nonproduction workspace for simplicity of the tutorial.
-* Azure git repo
-* Download the [MyFoodsIncome](https://github.com/microsoft/pbiworkshops/raw/main/_Asset%20Library/Source_Files/ContosoSales.pqt) *.pbix* file that contains sample data for this tutorial. You can also use your own data, if you prefer.
+With Fabric's [Git integration](./git-integration/intro-to-git-integration.md) process, incremental workspace updates can be made frequently and reliably by multiple developers. By leveraging git advantages and best practices, developers can collaborate and ensure that content changes get to the workspace quickly and reliably. When ready, the delivery process can then deliver the content to deployment pipelines for testing and distribution.
 
-license...
+## Delivery through deployment pipelines
 
-## Step 1: Create a workspace
+:::image type="content" source="./media/cicd-overview/pipeline-flow.png" alt-text="Illustration showing the flow of data in a deployment pipeline from data to app." lightbox="media/cicd-overview/pipeline-flow.png":::
 
-## Step 2: Load data
+Fabric's [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) [automates the delivery](./deployment-pipelines/pipeline-automation.md) of modified content to environments like testing and production. It allows teams to produce updates in short cycles with high speed, frequency, and reliability. Content can be released at any time with a simple, repeatable deployment process.
 
-### Edit credentials
+For the most efficient lifecycle management experience in Fabric, connect your developer workspace to git, and deploy from there using deployment pipelines.
 
-This step only needs to be done once. After your credentials are set, you won't have to set them again.
+## Next steps
 
-## Step 3: Create pipeline
-
-## Step 4: Developer stage
-
-## Step 5: Deploy to test stage
-
-## Step 6: Deploy to production stage
-
-## Step 7: Connect to git
-
-## Step 8: Branch to new workspace
-
-## Step 9: Edit workspace
-
-Make changes to the workpace. This can be creating a new report, adding a new dataset, etc.
-
-## Step 10: Create PR and merge
-
-## Step 11: Update workspace
-
-## Step 12: Compare stages in deployment pipeline
-
-## Step 13: Deploy to test stage
-
-## Step 14: Deploy to production
-
+* [Deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md)
+* [Git integration](./git-integration/intro-to-git-integration.md)
