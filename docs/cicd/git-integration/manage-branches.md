@@ -38,7 +38,7 @@ The workflow for developers using a client tool like Power BI Desktop should loo
 
 :::image type="content" source="./media/manage-branches/branches-using-client-tools.png" alt-text="Diagram showing the workflow of pushing changes from a remote git repo to the Fabric workspace.":::
 
-For a specific guidance on how to use the new Power BI Desktop file format in git, read more here.
+For a specific guidance on how to use the new Power BI Desktop file format in git, see [Source code format](./source-code-format.md).
 
 ## Develop using another workspace
 

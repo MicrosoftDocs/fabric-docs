@@ -51,7 +51,7 @@ Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/
     :::image type="content" source="./media/git-get-started/workspace-settings-new.png" alt-text="Screenshot of workspace with workspace settings icon displayed on top.":::
 
     > [!NOTE]
-    > If you don't see the Workspace settings icon, select the ellipsis (three dots) the then workspace settings.
+    > If you don't see the Workspace settings icon, select the ellipsis (three dots) then workspace settings.
     > :::image type="content" source="./media/git-get-started/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed from ellipsis.":::
 
 1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Azure AD user signed into the workspace.

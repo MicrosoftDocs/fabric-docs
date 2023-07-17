@@ -100,6 +100,8 @@ items:
     href: workspace-roles.md
   - name: Manage SQL granular permissions
     href: sql-granular-permissions.md
+  - name: Share your Warehouse
+    href: share-warehouse-manage-permissions.md    
 - name: Query the warehouse
   items:
   - name: Query using Visual Query editor
@@ -128,7 +130,7 @@ items:
   items:
   - name: Troubleshooting your Warehouse
     href: troubleshoot-synapse-data-warehouse.md
-  - name: Limitations and known issues
+  - name: Limitations
     href: limitations.md      
 - name: Reference
   items: 
