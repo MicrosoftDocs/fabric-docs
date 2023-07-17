@@ -162,7 +162,7 @@ After you connect, the Workspace displays information about source control that 
 
 Now the workspace is connected to git and anyone with access to the repo can view and/or edit it, depending on their permissions.
 
-For more information about connecting to git, see [Connect to git](git-integration/git-get-started.md#connect-to-git).
+For more information about connecting to git, see [Connect a workspace to an Azure repo](git-integration/git-get-started.md#connect-a-workspace-to-an-azure-repo).
 
 ## Step 6: Edit workspace
 
