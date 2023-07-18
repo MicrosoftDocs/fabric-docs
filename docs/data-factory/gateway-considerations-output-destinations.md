@@ -1,6 +1,6 @@
 ---
 title: On-premises data gateway considerations for data destinations in Dataflow Gen2
-description: Describes how to troubleshoot a refresh error that might occur when trying to access an data destination through an on-premises data gateway.
+description: Describes how to troubleshoot a refresh error that might occur when trying to access a data destination through an on-premises data gateway.
 author: nikkiwaghani
 ms.author: miescobar
 ms.topic: conceptual
@@ -22,17 +22,17 @@ During the overall dataflow refresh, the tables refresh can show as "Succeeded,"
 
 To troubleshoot the issue, follow these steps:
 
-1. Confirm that the dataflow is configured with an data destination.
+1. Confirm that the dataflow is configured with a data destination.
 
    :::image type="content" source="media/gateway-considerations-output-destination/dataflow-output-configuration.png" alt-text="Screenshot of the Power Query editor with the Lakehouse data destination emphasized." lightbox="media/gateway-considerations-output-destination/dataflow-output-configuration.png":::
 
 2. Verify that the dataflow refresh fails, with tables refresh showing as *"Succeeded"* and activities showing as *"Failed"*.
 
-   :::image type="content" source="media/gateway-considerations-data-destination/refresh-history-failure.png" alt-text="Screenshot of the dataflow details with tables showing succeeded and activities failed." lightbox="media/gateway-considerations-data-destination/refresh-history-failure.png":::
+   :::image type="content" source="media/gateway-considerations-output-destination/refresh-history-failure.png" alt-text="Screenshot of the dataflow details with tables showing succeeded and activities failed." lightbox="media/gateway-considerations-output-destination/refresh-history-failure.png":::
 
 3. Review the error details for the Activity `WriteToDatabaseTableFrom_...`, which provides information about the encountered error.
 
-   :::image type="content" source="media/gateway-considerations-data-destination/refresh-history-detail.png" alt-text="Screenshot of the WriteToDatabaseTablefrom activity showing the error message." lightbox="media/gateway-considerations-data-destination/refresh-history-detail.png":::
+   :::image type="content" source="media/gateway-considerations-output-destination/refresh-history-detail.png" alt-text="Screenshot of the WriteToDatabaseTablefrom activity showing the error message." lightbox="media/gateway-considerations-output-destination/refresh-history-detail.png":::
 
 ## Solution: Set new firewall rules on server running the gateway
 
@@ -44,7 +44,7 @@ The firewall rules on the gateway server and/or customer's proxy servers need to
 
 If you want to narrow down the scope of the endpoint to the actual OneLake instance in a workspace (instead of the wildcard *.datawarehouse.pbidedicated.windows.net), that URL can be found by navigating to the Fabric workspace, locating `DataflowsStagingLakehouse`, and selecting **View Details**. Then, copy and paste the SQL connection string.
 
-:::image type="content" source="media/gateway-considerations-data-destination/staging.png" alt-text="Screenshot of the Fabric workspace with DataflowsStagingLakehouse, with the ellipsis selected, and the View details option emphasized." lightbox="media/gateway-considerations-output-destination/staging.png":::
+:::image type="content" source="media/gateway-considerations-output-destination/staging.png" alt-text="Screenshot of the Fabric workspace with DataflowsStagingLakehouse, with the ellipsis selected, and the View details option emphasized." lightbox="media/gateway-considerations-output-destination/staging.png":::
 
 :::image type="content" source="media/gateway-considerations-output-destination/staging-overview.png" alt-text="Screenshot of the DataflowsStagingLakehouse details information, with the SQL connection string emphasized." lightbox="media/gateway-considerations-output-destination/staging-overview.png":::
 
