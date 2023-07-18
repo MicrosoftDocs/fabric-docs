@@ -27,7 +27,7 @@ Before you start, make sure of the following:
 * If you don't have Fabric enabled yet, ask your admin to [enable Fabric for your organization](../admin/fabric-switch.md).
 * If you aren't signed up yet, [sign up for a free trial](../get-started/fabric-trial.md).
 * Access to an Azure git repo. If you don't have one, see [Set up a git repository](/devops/develop/git/set-up-a-git-repository) for information on creating one.
-* Download the [MyFoodsIncome.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/developer/MyFoodsIncome.pbix) file into that contains sample data for this tutorial. Alternatively, you can use your own dataset and report, if you prefer.
+* Download the [MyFoodsIncome.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/developer/MyFoodsIncome.pbix) file into a git repo that you can edit. This is the sample file we use in this tutorial. Alternatively, you can use your own dataset and report, if you prefer.
 
 If you already have admin rights to a workspace with data, you can skip to [step 3](#step-3-create-a-deployment-pipeline).
 
@@ -150,7 +150,7 @@ To connect the workspace to your Azure Repo, follow these steps:
    * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
    * Select **+ New Branch** to create a new branch.
    * Name the new branch *MyFoods*, branch it from *main* (or *master*) and Select **Create**.
-   * The folder in the repo to connect to. If you don't specify a folder, it defaults to the root folder.
+   * The folder in the repo where the *.pbix* file located. This is the folder that will be synced with the workspace.
 
    :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
 
