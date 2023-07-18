@@ -230,10 +230,7 @@ For more information about comparing stages in a deployment pipeline, see [Compa
 
 ## Step 10: Deploy to test stage
 
-When you’re satisfied with the changes, deploy the changes to the test and/or production stages.
-
-Select **Deploy to test**.
-Select **Deploy to production**.
+When you’re satisfied with the changes, deploy the changes to the test and/or production stages using the same process you used in [Step4](#step-4-deploy-content-to-other-stages).
 
 ## Next steps
 
