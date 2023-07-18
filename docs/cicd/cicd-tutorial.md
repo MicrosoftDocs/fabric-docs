@@ -69,15 +69,15 @@ Before you create a deployment pipeline, you need to set the credentials. This s
 
 1. Go to **Settings > Power BI settings**.
 
-  :::image type="content" source="media/cicd-tutorial/settings.png" alt-text="Screenshot of Settings menu.":::
+   :::image type="content" source="media/cicd-tutorial/settings.png" alt-text="Screenshot of Settings menu.":::
 
 1. Select **Datasets > Data source credentials > Edit credentials**.
 
-   :::image type="content" source="media/cicd-tutorial/edit-credentials.png" alt-text="Screenshot of Data source credentials menu.":::
+    :::image type="content" source="media/cicd-tutorial/edit-credentials.png" alt-text="Screenshot of Data source credentials menu.":::
 
 1. Set the **Authentication** method to *Anonymous*, the **Privacy level** to *Public*, and uncheck the **Skip test connection** box.
 
-   :::image type="content" source="media/cicd-tutorial/set-credentials.png" alt-text="Screenshot of dataset credentials.":::
+    :::image type="content" source="media/cicd-tutorial/set-credentials.png" alt-text="Screenshot of dataset credentials.":::
 
 1. Select **Sign in**. The connection is tested and credentials set. You won't have to edit the credentials again for this dataset.
 
