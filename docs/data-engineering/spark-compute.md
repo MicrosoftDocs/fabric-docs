@@ -42,7 +42,7 @@ If you don't use your Spark pool for 2 minutes after your job is done, Spark wil
 
 The size and number of nodes you can have in your custom Spark pool depends on your Microsoft Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Spark VCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. You can use these Spark VCores to create nodes of different sizes for your custom Spark pool, as long as the total number of Spark VCores doesn't exceed 128.
 
-Billing of Spark pools is similar to that of the Starter pools, where you dont pay for the Custom spark pools that you have created unless you have an active spark session created for running a notebook or spark job definiton.You are only billed for the duration of your job runs and are not billed for stages like the cluster creation, and deallocation after the job has been completed. 
+Billing of Spark pools is similar to that of the Starter pools, where you don't pay for the Custom spark pools that you have created unless you have an active spark session created for running a notebook or spark job definiton.You are only billed for the duration of your job runs and are not billed for stages like the cluster creation, and deallocation after the job has been completed. 
 
 :::image type="content" source="media\spark-compute\custom-pool-billing-states-high-level.png" alt-text="Diagram showing the high-level stages in billing of custom pools.":::
 
