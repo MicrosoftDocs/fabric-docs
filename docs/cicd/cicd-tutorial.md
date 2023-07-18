@@ -18,7 +18,7 @@ Let’s get started!
 >
 > * Prepare and load data into a workspace
 > * Create a deployment pipeline
-> * Edit your workspace in git and update them straight to the deployment pipeline
+> * Edit your workspace in git and update it straight to the deployment pipeline
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ Before you start, make sure of the following:
 * If you don't have Fabric enabled yet, ask your admin to [enable Fabric for your organization](../admin/fabric-switch.md).
 * If you aren't signed up yet, [sign up for a free trial](../get-started/fabric-trial.md).
 * Access to an Azure git repo. If you don't have one, see [Set up a git repository](/devops/develop/git/set-up-a-git-repository) for information on creating one.
-* Download the [MyFoodsIncome.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/developer/MyFoodsIncome.pbix) file that contains sample data for this tutorial. Alternatively, you can use your own dataset and report, if you prefer.
+* Download the [MyFoodsIncome.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/developer/MyFoodsIncome.pbix) file into that contains sample data for this tutorial. Alternatively, you can use your own dataset and report, if you prefer.
 
 If you already have admin rights to a workspace with data, you can skip to [step 3](#step-3-create-a-deployment-pipeline).
 
@@ -141,18 +141,18 @@ To connect the workspace to your Azure Repo, follow these steps:
 
 1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Azure AD user signed into the workspace.
 
-    :::image type="content" source="./media/cicd-tutorial/workspace-settings.png" alt-text="Screenshot of workspace settings window with git integration selected.":::
+   :::image type="content" source="./media/cicd-tutorial/workspace-settings.png" alt-text="Screenshot of workspace settings window with git integration selected.":::
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
-    * [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
-    * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
-    * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
-    * Select **+ New Branch** to create a new branch.
-    * Name the new branch *MyFoods*, branch it from *main* (or *master*) and Select **Create**.
-    * The folder in the repo to connect to. If you don't specify a folder, it defaults to the root folder.
+   * [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
+   * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
+   * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
+   * Select **+ New Branch** to create a new branch.
+   * Name the new branch *MyFoods*, branch it from *main* (or *master*) and Select **Create**.
+   * The folder in the repo to connect to. If you don't specify a folder, it defaults to the root folder.
 
-    :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
+   :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
 
 1. Select **Connect and sync**.
 
@@ -160,37 +160,38 @@ After you connect, the Workspace displays information about source control that 
 
 :::image type="content" source="./media/cicd-tutorial/git-sync-information.png" alt-text="Screenshot of source control icon and other git information.":::
 
-Now the workspace is connected to git and anyone with access to the repo can view and/or edit it, depending on their permissions.
+Now the workspace is synced with the main branch of your git repo and you have a separate isolated environment to work in.
 
 For more information about connecting to git, see [Connect a workspace to an Azure repo](git-integration/git-get-started.md#connect-a-workspace-to-an-azure-repo).
 
 ## Step 6: Edit workspace
 
-Make changes to the workspace. Workspace changes include creating, deleting, or editing an item. In this tutorial, we change the format of a dataset column.
-Open the pbix file Power BI Desktop.
+Make changes to the workspace by creating, deleting, or editing an item. In this tutorial, we change the format of a dataset column. You can edit the workspace from [Power BI Desktop](/power-bi/fundamentals/desktop-what-is-desktop) or Data model. In this tutorial, we edit the workspace from the data model.
 
-1. Select the data view from the left side menu, and the **Order_Details > Discount** table from the Data menu..
+1. From the dataset workspace, select the ellipsis  > **Open data model** table from the Data menu..
 
-  :::image type="content" source="media/cicd-tutorial/select-table.png" alt-text="Screenshot of select table.":::
+    :::image type="content" source="media/cicd-tutorial/open-data-model.png" alt-text="Screenshot of open data model in the expanded dataset menu.":::
 
-1. Go to the **Column tools** menu and change the format of the **Discount** column to *Percentage*.
+   If **Open data model** is disabled, go to **Workspace settings > Power BI > General** and enable **Data model settings**.
 
-  :::image type="content" source="media/cicd-tutorial/change-format.png" alt-text="Screenshot of changing format of column.":::
+   :::image type="content" source="media/cicd-tutorial/data-model-settings.png" alt-text="Screenshot of data model settings check box.":::
 
-1. From the **Home** menu, save the changes and **Publish** them to the workspace that's connected to git.
+1. From the **Order_details** table, select **Discount**.
 
-:::image type="content" source="media/cicd-tutorial/publish.png" alt-text="Screenshot of publishing changes in git.":::
+    :::image type="content" source="media/cicd-tutorial/select-table.png" alt-text="Screenshot of connected tables in the data view with the discount column of the Order Details table selected.":::
+
+1. From the **Properties** pane, change the Format from Whole number to Percentage.
+
+    :::image type="content" source="media/cicd-tutorial/change-format.png" alt-text="Screenshot of publishing changes in git.":::
 
 ## Step 7: Create PR and merge
 
-Create a pull request to merge the *MyFoods-Edit* branch with the *MyFoods* branch.
+Create a pull request to merge the *MyFoods* branch with the *main* branch.
 
 Select **Create pull request**.
 Provide a name, description, and any other information you want for the pull request. Then select **Create**.
 
 :::image type="content" source="media/cicd-tutorial/create-pull-request.png" alt-text="Screenshot of create pull request.":::
-
-:::image type="content" source="media/cicd-tutorial/complete-pull-request.png" alt-text="Screenshot of complete pull request.":::
 
 Merge the pull request.
 
@@ -229,8 +230,11 @@ For more information about comparing stages in a deployment pipeline, see [Compa
 
 ## Step 10: Deploy to test stage
 
-When you’re satisfied with the changes, deploy the changes to the test stage, select **Deploy to test**.
+When you’re satisfied with the changes, deploy the changes to the test and/or production stages.
 
-## Step 11: Deploy to production
+Select **Deploy to test**.
+Select **Deploy to production**.
 
-When the test stage workspace is ready, deploy the changes to the production stage, select **Deploy to production**.
+## Next steps
+
+[Manage git branches](./git-integration/manage-branches.md)
