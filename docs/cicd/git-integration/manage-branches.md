@@ -59,6 +59,21 @@ For a developer who works in the web, the flow would be as follows:
 
 Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes.
 
+## Switch branches
+
+To quickly switch between branches without disconnecting and reconnecting, follow these steps:
+
+1. Make sure the current branch is synced and all changes are committed.
+1. From **Workspace settings**, select **Git integration**
+1. From the dropdown menu, specify the branch you want to connect to. This branch must contain the same directory as the current branch.
+1. Select **Connect and sync**.
+
+    :::image type="content" source="media/manage-branches/switch-branch-connect-sync.png" alt-text="Screenshot of workspace settings screen with switch branch option.":::
+
+1. Select **Switch and sync** again to confirm. If you have any unsaved changes in the workspace, they will be lost if you switch branches without saving them first. Select **Cancel** to go back and save your changes before switching branches.
+
+    :::image type="content" source="media/manage-branches/switch-branch-confirm.png" alt-text="Screenshot of workspace settings screen asking if you're sure you want to switch branches.":::
+
 ## Next steps
 
 - [Resolve errors and conflicts](./conflict-resolution.md)
