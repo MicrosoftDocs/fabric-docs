@@ -14,6 +14,8 @@ ms.date: 02/24/2023
 
 Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. With starter pools, you can expect rapid Spark session initialization, typically within 5 to 10 seconds, and no need for manual setup. Furthermore, you also get the flexibility to customize Spark pools according to the specific data engineering and data science requirements. The platform enables an optimized and tailored analytics experience.
 
+:::image type="content" source="media\spark-compute\spark-compute-overview.png" alt-text="Image of a Spark Compute Platform with Starter Pools and Custom Spark Pools":::
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Starter pools
@@ -24,11 +26,11 @@ Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platf
 
 Starter pools have Spark clusters that are always on and ready for your requests. They use medium nodes that dynamically scale up based on your Spark job needs.
 
-:::image type="content" source="media\spark-compute\starter-pool-high-level.png" alt-text="Diagram showing the high-level design of starter pools.":::
+:::image type="content" source="media\spark-compute\starter-pool.png" alt-text="Diagram showing the high-level design of starter pools.":::
 
 Starter pools also have default settings that let you install libraries quickly without slowing down the session start time. However, if you want to use extra custom Spark properties or libraries from your workspace or capacity settings, it may take longer for Spark to get the nodes for you. When it comes to billing and capacity consumption, you  are charged for the capacity consumption when you start executing your notebook or spark job definition. You are not charged for the time the clusters are idle in the pool. 
 
-:::image type="content" source="media\spark-compute\starter-pool-billing-states-high-level.png" alt-text="Diagram showing the high-level stages in billing of custom pools.":::
+:::image type="content" source="media\spark-compute\starter-pool-billing-states-high-level.png" alt-text="Diagram showing the high-level stages in billing of starter pools.":::
 
 For example if a notebook job is submitted to a Starter Pool, you are billed only for the time period where the notebook session is active and this does not include the idle time or the time taken to personalize the session with the spark context. 
 
