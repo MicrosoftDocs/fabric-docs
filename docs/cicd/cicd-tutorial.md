@@ -166,15 +166,16 @@ For more information about connecting to git, see [Connect a workspace to an Azu
 
 ## Step 6: Edit workspace
 
-Make changes to the workspace by creating, deleting, or editing an item. In this tutorial, we change the format of a dataset column. You can edit the workspace from [Power BI Desktop](/power-bi/fundamentals/desktop-what-is-desktop) or Data model. In this tutorial, we edit the workspace from the data model.
+Make changes to the workspace by creating, deleting, or editing an item. In this tutorial, we change the format of a dataset column. You can edit the workspace in [Power BI Desktop](/power-bi/fundamentals/desktop-what-is-desktop) or data model. In this tutorial, we edit the workspace from the data model.
 
-1. From the dataset workspace, select the ellipsis  > **Open data model** table from the Data menu..
+1. From the dataset workspace, select the dataset ellipsis (three dots)  > **Open data model**.
 
     :::image type="content" source="media/cicd-tutorial/open-data-model.png" alt-text="Screenshot of open data model in the expanded dataset menu.":::
 
-   If **Open data model** is disabled, go to **Workspace settings > Power BI > General** and enable **Data model settings**.
-
-   :::image type="content" source="media/cicd-tutorial/data-model-settings.png" alt-text="Screenshot of data model settings check box.":::
+   > [!NOTE]
+   > If **Open data model** is disabled, go to **Workspace settings > Power BI > General** and enable **Data model settings**.
+   >
+   > :::image type="content" source="media/cicd-tutorial/data-model-settings.png" alt-text="Screenshot of data model settings check box.":::
 
 1. From the **Order_details** table, select **Discount**.
 
@@ -186,7 +187,7 @@ Make changes to the workspace by creating, deleting, or editing an item. In this
 
 ## Step 7: Create PR and merge
 
-Create a pull request to merge the *MyFoods* branch with the *main* branch.
+In the git repo, create a pull request to merge the *MyFoods* branch with the *main* branch.
 
 Select **Create pull request**.
 Provide a name, description, and any other information you want for the pull request. Then select **Create**.
@@ -206,7 +207,7 @@ Go back to the workspace and refresh the page. The source control icon now shows
 1. Select the source control icon to view the changed items in the git repo. The dataset shows a status of *Modified*.
 1. Select **Update all**.
 
-:::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of update workspace.":::
+   :::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of update workspace.":::
 
 The Git status of the dataset changes to *Synced*.
 
