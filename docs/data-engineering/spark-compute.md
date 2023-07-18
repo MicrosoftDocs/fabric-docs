@@ -63,7 +63,7 @@ Possible custom pool configurations for F64 based on the previous example:
 
 ## Nodes
 
-An Apache Spark pool instance consists of one head node and two or more worker nodes, with a minimum of three nodes in a Spark instance. The head node runs extra management services such as Livy, Yarn Resource Manager, Zookeeper, and the Spark driver. All nodes run services such as Node Agent and Yarn Node Manager. All worker nodes run the Spark Executor service.
+An Apache Spark pool instance consists of one head node and worker nodes, could start a minimum of one node in a Spark instance. The head node runs extra management services such as Livy, Yarn Resource Manager, Zookeeper, and the Spark driver. All nodes run services such as Node Agent and Yarn Node Manager. All worker nodes run the Spark Executor service.
 
 ## Node sizes
 
