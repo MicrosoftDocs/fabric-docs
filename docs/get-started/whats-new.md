@@ -15,7 +15,7 @@ This page is continuously updated with a recent review of what's new in [Microso
 <!-- For older updates, review [previous updates in Microsoft Fabric](whats-new-archive.md). -->
 
 > [!IMPORTANT]
-> [Microsoft Fabric has been announced](https://azure.microsoft.com/blog/introducing-microsoft-fabric-data-analytics-for-the-era-of-ai/)! Learn about this exciting new preview and discover [What is Microsoft Fabric?](microsoft-fabric-overview.md). Get started with [end-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md).
+> [Microsoft Fabric has been announced](https://azure.microsoft.com/blog/introducing-microsoft-fabric-data-analytics-for-the-era-of-ai/)! Learn about this exciting new preview and discover [What is Microsoft Fabric?](microsoft-fabric-overview.md) Get started with [end-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md).
 
 <!-- ## Features currently in preview
 
@@ -94,7 +94,7 @@ This section summarizes recent improvements and features for [Data Warehousing i
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
-|July 2023|**Sharing** | Any Admin or Member within a workspace can [share a Warehouse with another recipient](https://blog.fabric.microsoft.com/blog/data-warehouse-sharing?ft=All:) within your organization. You can also grant these permissions using [the "Manage permissions" experience](share-warehouse-manage-permissions.md). |
+|July 2023|**Sharing** | Any Admin or Member within a workspace can [share a Warehouse with another recipient](https://blog.fabric.microsoft.com/blog/data-warehouse-sharing?ft=All:) within your organization. You can also grant these permissions using [the "Manage permissions" experience](../data-warehouse/share-warehouse-manage-permissions.md). |
 |July 2023|**Table clone**|A [zero-copy clone](https://blog.fabric.microsoft.com/blog/table-clone-in-warehouse-within-microsoft-fabric) creates a replica of the table by copying the metadata, while referencing the same data files in One Lake. This avoids the need to store multiple copies of data, thereby saving on storage costs. For more information, see [Clone table](../data-warehouse/clone-table.md).|
 |May 2023|**Introducing Synapse Data Warehouse in Microsoft Fabric**|[Synapse Data Warehouse is the next generation of data warehousing in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/introducing-synapse-data-warehouse-in-microsoft-fabric) that is the first transactional data warehouse to natively support an open data format, Delta-Parquet.|
 
