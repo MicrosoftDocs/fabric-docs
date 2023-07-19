@@ -18,7 +18,7 @@ OneLake uses a layered security model built around the organizational structure 
 
 ## Workspace security
 
-The workspace is the primary security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. Security in the workspace is managed through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](/docs/get-started/roles-workspaces.md)  
+The workspace is the primary security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. Security in the workspace is managed through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../get-started/roles-workspaces.md)  
   
 Workspace roles in Fabric grant the following permissions in OneLake.
 
