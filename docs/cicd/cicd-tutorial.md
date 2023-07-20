@@ -12,7 +12,7 @@ ms.date: 07/12/2023
 
 This tutorial takes you through the whole process of loading data into your workspace, and using deployment pipelines together with git integration to collaborate with others in the development, testing and publication of your data and reports.
 
-Let’s get started!
+Specifically, in this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
@@ -55,7 +55,7 @@ For more on creating a workspace, see [Create a workspace](/power-bi/collaborate
 
 ## Step 2: Load content into the workspace
 
-You can upload content from OneDrive, SharePoint, or a local file. In this tutorial, we load data from a file.
+You can upload content from OneDrive, SharePoint, or a local file. In this tutorial, we load a *.pbix* file.
 
 1. From the top menu bar, select **Upload > Browse**.
 
@@ -164,9 +164,12 @@ Now the workspace is synced with the main branch of your git repo and you have a
 
 For more information about connecting to git, see [Connect a workspace to an Azure repo](git-integration/git-get-started.md#connect-a-workspace-to-an-azure-repo).
 
-## Step 6: Edit workspace
+## Step 6: Working in an isolated workspace
 
-Make changes to the workspace by creating, deleting, or editing an item. In this tutorial, we change the format of a dataset column. You can edit the workspace in [Power BI Desktop](/power-bi/fundamentals/desktop-what-is-desktop) or data model. In this tutorial, we edit the workspace from the data model.
+
+## Step 6: Edit the workspace
+
+Make changes to the workspace by creating, deleting, or editing an item. In this tutorial, we change the format of a dataset column. You can edit the workspace in [Power BI Desktop](/power-bi/fundamentals/desktop-what-is-desktop) or [data model](/power-bi/transform-model/service-edit-data-models). In this tutorial, we edit the workspace from the data model.
 
 1. From the dataset workspace, select the dataset ellipsis (three dots)  > **Open data model**.
 
@@ -187,14 +190,14 @@ Make changes to the workspace by creating, deleting, or editing an item. In this
 
 ## Step 7: Create PR and merge
 
-In the git repo, create a pull request to merge the *MyFoods* branch with the *main* branch.
+In the git repo, [create a pull request](/azure/devops/repos/git/pull-requests#create-a-pull-request) to merge the *MyFoods* branch with the *main* branch.
 
-Select **Create pull request**.
-Provide a name, description, and any other information you want for the pull request. Then select **Create**.
+Select **Create a pull request**.
+Provide a title, description, and any other information you want for the pull request. Then select **Create**.
 
 :::image type="content" source="media/cicd-tutorial/create-pull-request.png" alt-text="Screenshot of create pull request.":::
 
-Merge the pull request.
+[Merge the pull request](/azure/devops/repos/git/complete-pull-requests#complete-a-pull-request).
 
 :::image type="content" source="media/cicd-tutorial/complete-merge.png" alt-text="Screenshot of merge pull request.":::
 
