@@ -65,6 +65,10 @@ To optimize performance during the initial sync, OneLake file explorer syncs the
 
 When you create, update, or delete a file via OneLake file explorer, it automatically syncs the changes to OneLake service. Updates to your item made outside of your OneLake file explorer aren't automatically synced. To pull these updates, you need to right click on the workspace name, item name, folder name or file in OneLake file explorer and select **Sync from** **OneLake**. This action refreshes the view for any folders that were previously synced.  To pull updates for all workspaces, right click on the OneLake root folder and select **Sync from** **OneLake**.
 
+### Sign in to different accounts
+
+When you install OneLake file explorer you can choose which account to sign-in with.  If you want to change the account later, you can right click the OneLake icon in the Windows notification area, choose “Account” and click “Sign Out”.  Signing out will close OneLake file explorer.  To sign in with another account, open OneLake file explorer again by searching for "OneLake" using Windows search (Windows + S) and select the OneLake application.
+
 ### Offline support
 
 The OneLake file explorer only syncs updates when you're online and the application is running. When the application starts, the views for any folders that were previously synced are then refreshed automatically.  Any files that were added or updated while offline are shown as sync pending until you save them again.  Any files deleted while offline are recreated during the refresh if they still exist on the service.
