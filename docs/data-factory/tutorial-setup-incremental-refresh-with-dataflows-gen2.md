@@ -8,15 +8,16 @@ ms.topic: tutorial
 ms.date: 07/14/2023
 ---
 
-
 # Module 4 - Incremental refresh with Dataflow Gen2
 
 This module takes 15 minutes, incrementally load data into a lakehouse using Dataflow Gen2.
 
+Incremental refresh is a technique to load only new or updated data into your data destination. This can be done by using a query to filter the data based on the data destination. This module shows how to create a dataflow to load data from an odata source into a lakehouse and how to add a query to the dataflow to filter the data based on the data destination.
+
 The high-level steps in module 4 are as follows:
 
 - Create a dataflow to load data from an odata source into a lakehouse
-- Add a query to the dataflow to filter the data based on the output destination
+- Add a query to the dataflow to filter the data based on the data destination
 - (optional) reload data using notebooks and pipelines
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
@@ -59,25 +60,27 @@ In this section, you create a dataflow to load data from an odata source into a 
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/change-datatype.png" alt-text="Screenshot showing the change datatype function":::
 
-1. Set up Output destination to your lakehouse using the following settings:
-    - Output destination: `Lakehouse`
+1. Set up data destination to your lakehouse using the following settings:
+    - Data destination: `Lakehouse`
     - Lakehouse: Select the lakehouse you created in step 1.
     - New table name: `Orders`
     - Update method: `Replace`
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-ribbon.png" alt-text="Screenshot showing the output destination lakehouse ribbon":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-ribbon.png" alt-text="Screenshot showing the data destination lakehouse ribbon":::
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-orders-table.png" alt-text="Screenshot showing the output destination lakehouse order table":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-orders-table.png" alt-text="Screenshot showing the data destination lakehouse order table":::
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-settings-replace.png" alt-text="Screenshot showing the output destination lakehouse settings replace":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-settings-replace.png" alt-text="Screenshot showing the data destination lakehouse settings replace":::
 
 1. Select next and publish the dataflow.
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/publish-dataflow.png" alt-text="Screenshot showing the publish dataflow dialog":::
 
-## Add a query to the dataflow to filter the data based on the output destination
+You have now created a dataflow to load data from an odata source into a lakehouse. This dataflow will be used in the next section to add a query to the dataflow to filter the data based on the data destination. After that, you can use the dataflow to reload data using notebooks and pipelines.
 
-This section adds a query to the dataflow to filter the data based on the output destination.
+## Add a query to the dataflow to filter the data based on the data destination
+
+This section adds a query to the dataflow to filter the data based on the data destination. This is done by adding a query to the dataflow that filters the data based on the data destination. The query is based on the `OrderID` column. The query filters the data based on the maximum `OrderID` in the lakehouse. This means that only new or updated data is loaded into the lakehouse.
 
 1. After the Dataflow refreshed, reopen the dataflow you created in the previous section.
 
@@ -107,7 +110,7 @@ This section adds a query to the dataflow to filter the data based on the output
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/statistics-maximum-orderid.png" alt-text="Screenshot showing the statistics maximum orderid function":::
 
-You now have a query that returns the maximum OrderID in the lakehouse. This query is used to filter the data from the odata source.
+You now have a query that returns the maximum OrderID in the lakehouse. This query is used to filter the data from the odata source. The next section adds a query to the dataflow to filter the data from the odata source based on the maximum OrderID in the lakehouse.
 
 1. Go back to the Orders query and add a new step to filter the data. Use the following settings:
     - Column: `OrderID`
@@ -118,22 +121,24 @@ You now have a query that returns the maximum OrderID in the lakehouse. This que
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/filter-settings.png" alt-text="Screenshot showing the filter settings":::
 
-1. Update the output destination to use the following settings:
+1. Update the data destination to use the following settings:
     - Update method: `Append`
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/edit-output-settings.png" alt-text="Screenshot showing the edit output settings function":::
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/existing-orders-table.png" alt-text="Screenshot showing the existing orders table":::
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-settings-append.png" alt-text="Screenshot showing the output destination lakehouse settings append":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-settings-append.png" alt-text="Screenshot showing the data destination lakehouse settings append":::
 
 1. Publish the dataflow.
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/publish-dataflow.png" alt-text="Screenshot showing the publish dataflow dialog":::
 
+Your dataflow now contains a query that filters the data from the odata source based on the maximum OrderID in the lakehouse. This means that only new or updated data is loaded into the lakehouse. The next section uses the dataflow to reload data using notebooks and pipelines.
+
 ## (optional) reload data using notebooks and pipelines
 
-Optionally, you can reload specific data using notebooks and pipelines.
+Optionally, you can reload specific data using notebooks and pipelines. With the notebook we remove the old data from the lakehouse. With the pipeline we reload the data from the odata source into the lakehouse with the dataflow you created in the previous section.
 
 1. Create a new notebook in your workspace.
 
@@ -181,3 +186,5 @@ Optionally, you can reload specific data using notebooks and pipelines.
 1. Save and run the pipeline.
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/run-pipeline.png" alt-text="Screenshot showing the run pipeline dialog":::
+
+You now have a pipeline that removes old data from the lakehouse and reloads the data from the odata source into the lakehouse. With this setup you can reload the data from the odata source into the lakehouse on a regular basis.
