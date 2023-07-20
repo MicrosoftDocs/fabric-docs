@@ -1,20 +1,20 @@
 ---
 title: Incremental refresh with Dataflow Gen2
-description: This module takes 15 minutes, incrementally load data into a lakehouse using Dataflow Gen2.
+description: This tutorial takes 15 minutes, incrementally load data into a lakehouse using Dataflow Gen2.
 ms.reviewer: jburchel
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: tutorial 
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 ---
 
-# Module 4 - Incremental refresh with Dataflow Gen2
+# Incremental refresh with Dataflow Gen2
 
-This module takes 15 minutes, incrementally load data into a lakehouse using Dataflow Gen2.
+This tutorial takes 15 minutes, incrementally load data into a lakehouse using Dataflow Gen2.
 
-Incremental refresh is a technique to load only new or updated data into your data destination. This can be done by using a query to filter the data based on the data destination. This module shows how to create a dataflow to load data from an odata source into a lakehouse and how to add a query to the dataflow to filter the data based on the data destination.
+Incremental refresh is a technique to load only new or updated data into your data destination. This can be done by using a query to filter the data based on the data destination. This tutorial shows how to create a dataflow to load data from an odata source into a lakehouse and how to add a query to the dataflow to filter the data based on the data destination.
 
-The high-level steps in module 4 are as follows:
+The high-level steps in tutorial are as follows:
 
 - Create a dataflow to load data from an odata source into a lakehouse
 - Add a query to the dataflow to filter the data based on the data destination
