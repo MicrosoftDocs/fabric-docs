@@ -76,6 +76,7 @@ This section summarizes recent new features and capabilities of data engineering
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
+|July 2023|**Lakehouse Sharing and Access Permission Management**| [Share a lakehouse and manage permissions](https://blog.fabric.microsoft.com/blog/lakehouse-sharing-and-access-permission-management?ft=All:) so that users can access lakehouse data through the Data Hub, the SQL Endpoint, and the default dataset. |
 |July 2023|**New modern data connectivity and discovery experience in Dataflows**| An improved experience aims to expedite the [process of discovering data in Dataflow, Dataflow Gen2, and Datamart](https://blog.fabric.microsoft.com/blog/modern-get-data-in-dataflows?ft=All:).|
 |June 2023|**Virtualize your existing data into OneLake with shortcuts** | Connect data silos without moving or copying data with OneLake, which allows you to create [special folders called shortcuts that point to other storage locations](https://blog.fabric.microsoft.com/blog/virtualize-your-existing-data-into-onelake-with-shortcuts).|
 |May 2023 |**Introducing Data Factory in Microsoft Fabric** | Data Factory enables you to [develop enterprise-scale data integration solutions with next-generation dataflows and data pipelines](https://blog.fabric.microsoft.com/blog/introducing-data-factory-in-microsoft-fabric). | 
@@ -85,6 +86,8 @@ This section summarizes recent new features and capabilities of data engineering
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
+|July 2023|**Construct a data analytics workflow with a Fabric Data Factory data pipeline**| A blog covering data pipelines in Data Factory and the advantages you'll find by [using pipelines to orchestrate your Fabric data analytics projects and activities](https://blog.fabric.microsoft.com/blog/construct-a-data-analytics-workflow-with-a-fabric-data-factory-data-pipeline?ft=All:).|
+|July 2023|**Data Pipelines Tutorial: Ingest files into a Lakehouse from a REST API with pagination ft. AVEVA Data Hub** | In this blog, we will act in the persona of an AVEVA customer who needs to [retrieve operations data from AVEVA Data Hub into a Microsoft Fabric Lakehouse](https://blog.fabric.microsoft.com/blog/data-pipelines-tutorial-ingest-files-into-a-lakehouse-from-a-rest-api-with-pagination-ft-aveva-data-hub?ft=All:). |
 |July 2023|**Data Factory Spotlight: Dataflow Gen2**|This blog spotlight covers the two primary high-level features Data Factory implements: [dataflows and pipelines](https://blog.fabric.microsoft.com/blog/data-factory-spotlight-dataflows-gen2?ft=All:).|
 
 ## Fabric Data Science
