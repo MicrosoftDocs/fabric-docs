@@ -29,11 +29,11 @@ If you have an Azure event hub created with event data there, follow these steps
 
 1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then **Azure Event Hubs**.
 
-2. Enter a source name for the new source and select a cloud connection to your Azure event hub.
+1. Enter a source name for the new source and select a cloud connection to your Azure event hub.
 
    :::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-event-hub.png" :::
 
-3. If you don’t have a cloud connection, select **Create new connection** to create one. To create a new connection, fill in the information of your Azure event hub on the **New connection** page.
+1. If you don’t have a cloud connection, select **Create new connection** to create one. To create a new connection, fill in the information of your Azure event hub on the **New connection** page.
 
    :::image type="content" source="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" :::
 
@@ -46,16 +46,16 @@ If you have an Azure event hub created with event data there, follow these steps
 
    - **Privacy level**: Choose a privacy level for the cloud connection.
 
-4. After you create a cloud connection, select the refresh button, and then select the cloud connection you created.
+1. After you create a cloud connection, select the refresh button, and then select the cloud connection you created.
 
    :::image type="content" source="./media/add-manage-eventstream-sources/cloud-connection-refresh.png" alt-text="Screenshot showing the cloud connection refresh." lightbox="./media/add-manage-eventstream-sources/cloud-connection-refresh.png" :::
 
-5. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
+1. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
 
    > [!NOTE]
    > The event streams feature supports the ingestion of events from Azure Event Hubs in JSON, Avro, and CSV (with header) data formats.
 
-6. Select a **Consumer group** that can read the event data from your Azure event hub and then select **Add**.
+1. Select a **Consumer group** that can read the event data from your Azure event hub and then select **Add**.
 
 After you have created the event hub source, you see it added to your eventstream on the canvas.
 
@@ -67,13 +67,13 @@ To get a better understanding of how an eventstream works, you can use the out-o
 
 1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then **Sample data**.
 
-2. On the right pane, enter a source name to appear on the canvas, select the sample data you want to add to your eventstream, and then select **Add**.
+1. On the right pane, enter a source name to appear on the canvas, select the sample data you want to add to your eventstream, and then select **Add**.
    - **Yellow Taxi**: sample taxi data with a preset schema that includes fields such as pickup time, drop-off time, distance, total fee, and more.
    - **Stock Market**: sample data of a stock exchange with a preset schema column such as time, symbol, price, volume and more.
 
        :::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration." lightbox="./media/event-streams-source/eventstream-sources-sample-data.png" :::
 
-3. When the sample data source is added successfully, you can find it on the canvas and navigation pane.
+1. When the sample data source is added successfully, you can find it on the canvas and navigation pane.
 
 To verify if the sample data is added successfully, select **Data preview** in the bottom pane.
 
@@ -85,7 +85,7 @@ If you want to connect your own application with an eventstream, you can add a c
 
 1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then **Custom App**.
 
-2. Enter a **Source name** for the custom app and select **Add**.
+1. Enter a **Source name** for the custom app and select **Add**.
 
    :::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="./media/event-streams-source/eventstream-sources-custom-app.png" :::
 

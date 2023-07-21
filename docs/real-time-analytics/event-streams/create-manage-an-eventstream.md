@@ -40,11 +40,11 @@ You can create an eventstream on the **Workspace** page, the **Real-time Analyti
 
        :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" alt-text="Screenshot showing the Eventstream tile on the Create hub page." lightbox="./media/create-manage-an-eventstream/eventstream-creation-create-hub.png" :::
 
-2. Enter a **name** for the new eventstream and select **Create**.
+1. Enter a **name** for the new eventstream and select **Create**.
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-naming.png" alt-text="Screenshot showing where to enter the eventstream name on the New Eventstream screen." lightbox="./media/create-manage-an-eventstream/eventstream-creation-naming.png" :::
 
-3. Creation of the new eventstream in your workspace may take a few seconds. Once it’s done, you're directed to the main editor where you can add sources and destinations to your eventstream. See the [Main editor](#main-editor-for-eventstreams) section for details.
+1. Creation of the new eventstream in your workspace may take a few seconds. Once it’s done, you're directed to the main editor where you can add sources and destinations to your eventstream. See the [Main editor](#main-editor-for-eventstreams) section for details.
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-completed.png" alt-text="Screenshot showing the eventstream creation completed." lightbox="./media/create-manage-an-eventstream/eventstream-creation-completed.png" :::
 
