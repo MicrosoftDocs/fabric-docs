@@ -11,7 +11,7 @@ ms.date: 07/20/2023
 
 # What's new in the latest OneLake file explorer?
 
-Continue reading for information on major changes to OneLake file explorer.
+Continue reading for information on major updates to OneLake file explorer.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -19,7 +19,9 @@ Continue reading for information on major changes to OneLake file explorer.
 
 ### Option to sign in to different accounts
 
-When you install OneLake file explorer, you can now choose which account to sign-in with.  If you want to change the account later, you can right click the OneLake icon in the Windows notification area, choose “Account” and click “Sign Out”.  Signing out closes OneLake file explorer.  To sign in with another account, open OneLake file explorer again by searching for "OneLake" using Windows search (Windows + S) and select the OneLake application.  Previously, when you started OneLake file explorer, it automatically used the Microsoft Azure Active Directory identity currently logged into Windows to sync Fabric workspaces and items.  
+When you install OneLake file explorer, you can now choose which account to sign-in with.  To switch accounts, right click the OneLake icon in the Windows notification area, select “Account” and then “Sign Out”.  Signing out will exit OneLake file explorer and pause the sync.  To sign in with another account, start OneLake file explorer again by searching for "OneLake" using Windows search (Windows + S) and select the OneLake application.  Previously, when you started OneLake file explorer, it automatically used the Microsoft Azure Active Directory identity currently logged into Windows to sync Fabric workspaces and items.  
+
+When you sign in with another account, you see the list of workspaces and items refresh in OneLake file explorer.  If you continue to workspaces associated with the previous account, you can manually refresh the view by clicking “Sync from OneLake”.  Those workspaces are inaccessible while you're signed into a different account.
 
 ### Fix known issue during folder moves from outside of OneLake to OneLake
 

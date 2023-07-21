@@ -57,7 +57,7 @@ OneLake file explorer starts automatically at startup of Windows.  You can disab
 
 - To manually start the application, search for "OneLake" using Windows search (Windows + S) and select the OneLake application.  The views for any folders that were previously synced are then refreshed automatically.  
 
-- To exit, right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select **Exit**.  The sync is paused and placeholder files and folders cannot be accessed.  You'll continue to see the blue cloud icon for placeholders that were previously synced but not downloaded.
+- To exit, right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select **Exit**.  The sync is paused and placeholder files and folders can't be accessed.  You'll continue to see the blue cloud icon for placeholders that were previously synced but not downloaded.
 
 ### Sync updates from OneLake
 
@@ -67,7 +67,9 @@ When you create, update, or delete a file via OneLake file explorer, it automati
 
 ### Sign in to different accounts
 
-When you install OneLake file explorer you can choose which account to sign-in with.  If you want to change the account later, you can right click the OneLake icon in the Windows notification area, choose “Account” and click “Sign Out”.  Signing out closes OneLake file explorer.  To sign in with another account, open OneLake file explorer again by searching for "OneLake" using Windows search (Windows + S) and select the OneLake application.
+When you install OneLake file explorer, you can choose which account to sign-in with.  To switch accounts, right click the OneLake icon in the Windows notification area, select “Account” and then “Sign Out”.  Signing out will exit OneLake file explorer and pause the sync. To sign in with another account, start OneLake file explorer again and choose the desired account.
+
+When you sign in with another account, you'll see the list of workspaces and items refresh in OneLake file explorer.  If you continue to workspaces associated with the previous account, you can manually refresh the view by clicking “Sync from OneLake”.  Those workspaces are inaccessible while you're signed into a different account.
 
 ### Offline support
 

@@ -49,7 +49,7 @@ items:
     href: get-started-security.md
 - name: OneLake file explorer for Windows
   items:
-  - name: OneLake file explorer for Windows
+  - name: OneLake file explorer overview
     href: onelake-file-explorer.md
   - name: Release notes
     href: onelake-file-explorer-release-notes.md
