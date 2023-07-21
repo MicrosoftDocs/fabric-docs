@@ -57,7 +57,7 @@ OneLake file explorer starts automatically at startup of Windows.  You can disab
 
 - To manually start the application, search for "OneLake" using Windows search (Windows + S) and select the OneLake application.  The views for any folders that were previously synced are then refreshed automatically.  
 
-- To exit, right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select **Exit**.  The sync is paused and placeholder files and folders cannot be accessed.  You will continue to see the blue cloud icon for placeholders that were previously synced but not downloaded.
+- To exit, right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select **Exit**.  The sync is paused and placeholder files and folders cannot be accessed.  You'll continue to see the blue cloud icon for placeholders that were previously synced but not downloaded.
 
 ### Sync updates from OneLake
 
@@ -67,7 +67,7 @@ When you create, update, or delete a file via OneLake file explorer, it automati
 
 ### Sign in to different accounts
 
-When you install OneLake file explorer you can choose which account to sign-in with.  If you want to change the account later, you can right click the OneLake icon in the Windows notification area, choose “Account” and click “Sign Out”.  Signing out will close OneLake file explorer.  To sign in with another account, open OneLake file explorer again by searching for "OneLake" using Windows search (Windows + S) and select the OneLake application.
+When you install OneLake file explorer you can choose which account to sign-in with.  If you want to change the account later, you can right click the OneLake icon in the Windows notification area, choose “Account” and click “Sign Out”.  Signing out closes OneLake file explorer.  To sign in with another account, open OneLake file explorer again by searching for "OneLake" using Windows search (Windows + S) and select the OneLake application.
 
 ### Offline support
 
@@ -128,7 +128,7 @@ Client-side logs can be found on your local machine under `%temp%\OneLake\Diagno
 To uninstall the app, in Windows, search for “OneLake”. Select **Uninstall** in the list of options under OneLake.
 
 ### Tenant setting enables access to OneLake file explorer
-Tenant admins can restrict access to OneLake file explorer for their organization in the [Microsoft Fabric admin portal](../admin/admin-center.md). When the setting is disabled, no one in your organization will be able to start the OneLake file explorer app.  If the application is already running and the tenant admin disabled the setting, the application exits.  Placeholders and any downloaded content remain on the local machine, but the user will not be able to sync data to or from OneLake. 
+Tenant admins can restrict access to OneLake file explorer for their organization in the [Microsoft Fabric admin portal](../admin/admin-center.md). When the setting is disabled, no one in your organization will be able to start the OneLake file explorer app.  If the application is already running and the tenant admin disabled the setting, the application exits.  Placeholders and any downloaded content remain on the local machine, but the user won't be able to sync data to or from OneLake. 
 
 ## OneLake file explorer icons
 
