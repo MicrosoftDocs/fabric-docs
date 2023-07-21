@@ -15,7 +15,10 @@ This page is continuously updated with a recent review of what's new in [Microso
 <!-- For older updates, review [previous updates in Microsoft Fabric](whats-new-archive.md). -->
 
 > [!IMPORTANT]
-> [Microsoft Fabric has been announced](https://azure.microsoft.com/blog/introducing-microsoft-fabric-data-analytics-for-the-era-of-ai/)! Learn about this exciting new preview and discover [What is Microsoft Fabric?](microsoft-fabric-overview.md) Get started with [end-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md).
+> [Microsoft Fabric has been announced!](https://azure.microsoft.com/blog/introducing-microsoft-fabric-data-analytics-for-the-era-of-ai/)
+>
+> - Learn about this exciting new preview and discover [What is Microsoft Fabric?](microsoft-fabric-overview.md)
+> - Get started with [end-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md).
 
 <!-- ## Features currently in preview
 
@@ -108,7 +111,7 @@ This section summarizes recent improvements and features for [Data Warehousing i
 |:-- |:-- | :-- | 
 |May 2023|**Microsoft Fabric - How can a SQL user or DBA connect**|This blog reviews how to [connect to a Lakehouse SQL Endpoint or Warehouse through the Tabular Data Stream, or TDS endpoint](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/microsoft-fabric-how-can-a-sql-user-or-dba-connect-part-2/ba-p/3836343), familiar to all modern web applications that interact with a SQL Server endpoint.|
 
-## Microsoft Fabric Real-Time Analytics
+## Fabric Real-Time Analytics
 
 This section summarizes recent improvements and features for [real-time analytics in Microsoft Fabric](../real-time-analytics/overview.md).
 
@@ -127,6 +130,14 @@ This section summarizes recent improvements and features for [real-time analytic
 |June 2023|**Get started with exploring your data with KQL – a purpose-built tool for petabyte scale data analytics**|In this blog, we focus on the [different ways of querying data in Synapse Real-Time Analytics](https://blog.fabric.microsoft.com/blog/get-started-with-exploring-your-data-with-kql-a-purpose-built-tool-for-petabyte-scale-data-analytics). |
 |May 2023|**Ingest, transform, and route real-time events with Microsoft Fabric event streams**|You can now [ingest, capture, transform and route real-time events to various destinations in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/ingest-transform-and-route-real-time-events-with-microsoft-fabric-event-streams) with a no-code experience using Microsoft Fabric eventstreams. |
 
+## Continuous Integration/Continuous Delivery (CICD)
+
+This section includes guidance and documentation updates on development process, tools, and versioning in the Microsoft Fabric workspace.
+
+|**Month** | **Feature** |  **Learn more**|
+|:-- |:-- | :-- |
+|May 2023|**Introducing git integration in Microsoft Fabric for seamless source control management**|While developing in Fabric, developers can back up and version their work, roll back as needed, collaborate or work in isolation [using git branches](https://blog.fabric.microsoft.com/blog/introducing-git-integration-in-microsoft-fabric-for-seamless-source-control-management). Read more about [connecting the workspace to an Azure repo](../cicd/git-integration/git-get-started.md?tabs=commit-to-git).|
+
 
 ## Fabric Data Activator
 
@@ -136,8 +147,7 @@ This section summarizes recent new features and capabilities of Data Activator i
 |:-- |:-- | :-- | 
 |May 2023|**Driving actions from your data with Data Activator**| [Data Activator is a new no-code Microsoft Fabric experience](https://blog.fabric.microsoft.com/blog/driving-actions-from-your-data-with-data-activator) that empowers the business analyst to drive actions automatically from your data. To learn more, sign up for the [Data Activator limited preview](https://aka.ms/dataActivatorPreview). |
 
-
-## Microsoft Fabric and Microsoft 365
+## Fabric and Microsoft 365
 
 This section includes articles and announcements about Microsoft Fabric integration with Microsoft Graph and Microsoft 365.
 
@@ -145,15 +155,6 @@ This section includes articles and announcements about Microsoft Fabric integrat
 |:-- |:-- | :-- |
 |May 2023|**Step-by-Step Guide to Enable Microsoft Fabric for Microsoft 365 Developer Account**|This blog reviews how to enable Microsoft Fabric with a [Microsoft 365 Developer Account and the Fabric Free Trial](https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-guide-to-enable-microsoft-fabric-for-microsoft-365/ba-p/3831115).|
 |May 2023|**Microsoft 365 Data + Microsoft Fabric better together**|[Microsoft 365 Data Integration for Microsoft Fabric](https://blog.fabric.microsoft.com/blog/microsoft-365-data-microsoft-fabric-better-together) is a feature of the new Microsoft Fabric solution, which enables you to manage your Microsoft 365 alongside your other data sources in one place with a suite of analytical experiences.|
-
-
-## Continuous Integration/Continuous Delivery (CICD)
-
-This section includes guidance and documentation updates on development process, tools, and versioning in the Microsoft Fabric workspace.
-
-|**Month** | **Feature** |  **Learn more**|
-|:-- |:-- | :-- |
-|May 2023|**Introducing git integration in Microsoft Fabric for seamless source control management**|While developing in Fabric, developers can back up and version their work, roll back as needed, collaborate or work in isolation [using git branches](https://blog.fabric.microsoft.com/blog/introducing-git-integration-in-microsoft-fabric-for-seamless-source-control-management). Read more about [connecting the workspace to an Azure repo](../cicd/git-integration/git-get-started.md?tabs=commit-to-git).|
 
 ## Migration
 
@@ -180,7 +181,6 @@ This section summarizes recent announcements about governance and compliance cap
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
 |May 2023|**Administration, Security and Governance in Microsoft Fabric**|Microsoft Fabric provides [built-in enterprise grade governance and compliance capabilities](https://blog.fabric.microsoft.com/blog/administration-security-and-governance-in-microsoft-fabric), powered by [Microsoft Purview](../governance/use-microsoft-purview-hub.md). |
-
 
 ## Learn more
 
