@@ -4,13 +4,13 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 07/19/2023
+ms.date: 07/21/2023
 ms.topic: conceptual
 ---
 
 # What's new in Microsoft Fabric?
 
-This page is continuously updated with a recent review of what's new in [Microsoft Fabric](microsoft-fabric-overview.md). To follow the latest in Fabric news and features, see the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/).
+This page is continuously updated with a recent review of what's new in [Microsoft Fabric](microsoft-fabric-overview.md). To follow the latest in Fabric news and features, see the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/). Also follow the latest in Power BI at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
 
 <!-- For older updates, review [previous updates in Microsoft Fabric](whats-new-archive.md). -->
 
@@ -62,6 +62,10 @@ This section summarizes new guidance and sample project resources for Microsoft 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
 |June 2023|**Using Azure Databricks with Microsoft Fabric and OneLake**|[How does Azure Databricks work with Microsoft Fabric?](https://blog.fabric.microsoft.com/blog/using-azure-databricks-with-microsoft-fabric-and-onelake) This blog post answers that question and more details on how the two systems can work together.|
+
+## Power BI
+
+Updates to Power BI Desktop and the Power BI service are summarized at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
 
 ## Fabric Data Engineering
 
@@ -195,3 +199,4 @@ This section summarizes recent announcements about governance and compliance cap
 
 - [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/)
 - [Microsoft Fabric terminology](fabric-terminology.md)
+- [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
