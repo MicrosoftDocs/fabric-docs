@@ -167,7 +167,7 @@ For more information about connecting to git, see [Connect a workspace to an Azu
 
 In order to edit the workspace without interfering with other team members' changes, each team member creates their own isolated workspace to work in until they're ready to share their changes with the team.
 
-1. Create a new workspace like you did i [Step 1](#step-1-create-a-workspace).
+1. Create a new workspace like you did i [Step 1](#step-1-create-a-premium-workspace).
 
    :::image type="content" source="./media/cicd-tutorial/isolated-workspace.png" alt-text="Screenshot of workspace with new workspace link displayed.":::
 
