@@ -73,7 +73,7 @@ Domain admins see only domains they are admins of.
 
 When you open a domain, you see two tabs: **Details** and **Delegated Settings**.
 
-:::image type="content" source="./media/domains/domain-configuration-page.png" alt-text="Screenshot of domain configuration page, showing the Details and Delaged settings tabs.":::
+:::image type="content" source="./media/domains/domain-configuration-page.png" alt-text="Screenshot of domain configuration page, showing the Details and Delegated settings tabs.":::
 
 * On the **Details** tab, you can [configure the various properties of the domain](#configure-domain-details). Some details can only be configured by a Fabric admin, and some details can be configured by either Fabric admins or domain admins.
 
