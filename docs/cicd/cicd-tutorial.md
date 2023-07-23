@@ -126,6 +126,8 @@ Notice the content of two stages are identical, since you deployed the entire co
 
    :::image type="content" source="media/cicd-tutorial/refresh.png" alt-text="Screenshot of Refresh button.":::
 
+This deployment pipeline is shared by the entire team. Each team member can edit the dataset and report in the development stage. When the team is ready to test the changes, they deploy the content to the test stage. When the team is ready to release the changes to production, they deploy the content to the production stage.
+
 For more information on deploying content, see [Deploy content](./deployment-pipelines/deploy-content.md).
 
 ## Step 5: Connect to git
@@ -148,11 +150,10 @@ To connect the workspace to your Azure Repo, follow these steps:
    * [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
    * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
    * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
-   * Select **+ New Branch** to create a new branch.
-   * Name the new branch *MyFoods*, branch it from *main* (or *master*) and Select **Create**.
-   * The folder in the repo where the *.pbix* file located. This is the folder that will be synced with the workspace.
+   * Select *main* (or *master*) branch.
+   * Type the name of folder in the repo where the *.pbix* file located. This is the folder that will be synced with the workspace.
 
-   :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
+     :::image type="content" source="./media/cicd-tutorial/git-connect-main.png" alt-text="Screenshot of workspace settings git integration window with workspace connected to main branch of repo.":::
 
 1. Select **Connect and sync**.
 
@@ -160,14 +161,36 @@ After you connect, the Workspace displays information about source control that 
 
 :::image type="content" source="./media/cicd-tutorial/git-sync-information.png" alt-text="Screenshot of source control icon and other git information.":::
 
-Now the workspace is synced with the main branch of your git repo and you have a separate isolated environment to work in.
+Now the workspace is synced with the main branch of your git repo making it easy to keep track of changes.
 
 For more information about connecting to git, see [Connect a workspace to an Azure repo](git-integration/git-get-started.md#connect-a-workspace-to-an-azure-repo).
 
-## Step 6: Working in an isolated workspace
+## Step 6: Create an isolated workspace
 
+In order to edit the workspace without interfering with other team members' changes, each team member creates their own isolated workspace to work in until they're ready to share their changes with the team.
 
-## Step 6: Edit the workspace
+1. Create a new workspace like you did i [Step 1](#step-1-create-a-workspace).
+
+   :::image type="content" source="./media/cicd-tutorial/isolated-workspace.png" alt-text="Screenshot of workspace with new workspace link displayed.":::
+
+1. Connect this new workspae to a new branch of the git repo:
+
+   From the dropdown menu, specify the following details about the branch you want to connect to:
+
+   * [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
+   * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
+   * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
+   * Select **+ New Branch** to create a new branch.
+   * Name the new branch *MyFoods_FeatureBranch*, branch it from *main* (or *master*), and Select **Create**.
+   * The folder in the repo where the *.pbix* file located.
+
+   :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
+
+1. Select **Connect and sync**.
+
+This is the workspace you use to make changes to the dataset and report until you're ready to share them with your team.
+
+## Step 7: Edit the workspace
 
 Make changes to the workspace by creating, deleting, or editing an item. In this tutorial, we change the format of a dataset column. You can edit the workspace in [Power BI Desktop](/power-bi/fundamentals/desktop-what-is-desktop) or [data model](/power-bi/transform-model/service-edit-data-models). In this tutorial, we edit the workspace from the data model.
 
@@ -188,7 +211,9 @@ Make changes to the workspace by creating, deleting, or editing an item. In this
 
     :::image type="content" source="media/cicd-tutorial/change-format.png" alt-text="Screenshot of publishing changes in git.":::
 
-## Step 7: Create PR and merge
+## Step 8: Commit changes
+
+## Step 8: Create PR and merge (*****3 min*****)
 
 In the git repo, [create a pull request](/azure/devops/repos/git/pull-requests#create-a-pull-request) to merge the *MyFoods* branch with the *main* branch.
 
@@ -201,9 +226,9 @@ Provide a title, description, and any other information you want for the pull re
 
 :::image type="content" source="media/cicd-tutorial/complete-merge.png" alt-text="Screenshot of merge pull request.":::
 
-## Step 8: Update workspace
+## Step 9: Update workspace
 
-Go back to the workspace and refresh the page. The source control icon now shows `1` because one item in the git repo was changed and is different from the items in the *MyFoods* workspace. The MyFoodsIncome dataset shows a status of *Update Required*.
+Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-workspace] and refresh the page. The source control icon now shows `1` because one item in the git repo was changed and is different from the items in the *MyFoods* workspace. The MyFoodsIncome dataset shows a status of *Update Required*.
 
 :::image type="content" source="media/cicd-tutorial/source-control-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
 
@@ -214,7 +239,7 @@ Go back to the workspace and refresh the page. The source control icon now shows
 
 The Git status of the dataset changes to *Synced*.
 
-## Step 9: Compare stages in deployment pipeline
+## Step 10: Compare stages in deployment pipeline
 
 Select View deployment pipelines to compare the content in the development stage with the content in the test stage.
 
@@ -232,9 +257,9 @@ Review the changes and close the window.
 
 For more information about comparing stages in a deployment pipeline, see [Compare stages in a deployment pipeline](deployment-pipelines/compare-pipeline-content.md).
 
-## Step 10: Deploy to test stage
+## Step 11: Deploy to test stage
 
-When you’re satisfied with the changes, deploy the changes to the test and/or production stages using the same process you used in [Step4](#step-4-deploy-content-to-other-stages).
+When you’re satisfied with the changes, deploy the changes to the test and/or production stages using the same process you used in [Step 4](#step-4-deploy-content-to-other-stages).
 
 ## Next steps
 
