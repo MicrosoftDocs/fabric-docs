@@ -72,6 +72,7 @@ A wizard opens with the **Destination** tab selected.
 
     > [!NOTE]
     > You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
+
 1. Select **Next: Source**
 
 ### Source tab
