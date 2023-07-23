@@ -245,11 +245,11 @@ The source control icon now shows 1 because one item in the git repo was changed
 
 :::image type="content" source="media/cicd-tutorial/update-required-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
 
-Select the source control icon to view the changed items in the git repo. The dataset shows a status of Modified.
+1. Select the source control icon to view the changed items in the git repo. The dataset shows a status of Modified.
 
-Select **Update all**.
+1. Select **Update all**.
 
-:::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of update workspace.":::
+   :::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of update workspace.":::
 
 The Git status of the dataset changes to *Synced* and the workspace is synced with the *main* git branch..
 
