@@ -229,21 +229,21 @@ The Git status of the dataset changes to *Synced* and the workspace and git repo
 
 In the git repo, [create a pull request](/azure/devops/repos/git/pull-requests#create-a-pull-request) to merge the *MyFoods* branch with the *main* branch.
 
-Select **Create a pull request**.
-Provide a title, description, and any other information you want for the pull request. Then select **Create**.
+1. Select **Create a pull request**.
+1. Provide a title, description, and any other information you want for the pull request. Then select **Create**.
 
-:::image type="content" source="media/cicd-tutorial/create-pull-request.png" alt-text="Screenshot of create pull request.":::
+   :::image type="content" source="media/cicd-tutorial/create-pull-request.png" alt-text="Screenshot of create pull request.":::
 
-[Merge the pull request](/azure/devops/repos/git/complete-pull-requests#complete-a-pull-request).
+1. [Merge the pull request](/azure/devops/repos/git/complete-pull-requests#complete-a-pull-request).
 
-:::image type="content" source="media/cicd-tutorial/complete-merge.png" alt-text="Screenshot of merge pull request.":::
+   :::image type="content" source="media/cicd-tutorial/complete-merge.png" alt-text="Screenshot of merge pull request.":::
 
 ## Step 10: Update shared workspace
 
 Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-premium-workspace) and refresh the page.  
-The source control icon now shows 1 because one item in the git repo was changed and is different from the items in the MyFoods workspace. The MyFoodsIncome dataset shows a status of *Update Required*.
+The source control icon now shows 1 because one item in the git repo was changed and is different from the items in the MyFoods workspace. The MyFoodsIncome dataset shows a status of *Update required*.
 
-:::image type="content" source="media/cicd-tutorial/source-control-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
+:::image type="content" source="media/cicd-tutorial/update-required-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
 
 Select the source control icon to view the changed items in the git repo. The dataset shows a status of Modified.
 
