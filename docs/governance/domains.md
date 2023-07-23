@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 07/15/2023
+ms.date: 07/23/2023
 ---
 
 # Domains (preview)
