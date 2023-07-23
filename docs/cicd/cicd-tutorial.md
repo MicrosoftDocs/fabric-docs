@@ -253,7 +253,7 @@ The source control icon now shows 1 because one item in the git repo was changed
 
 The Git status of the dataset changes to *Synced* and the workspace is synced with the *main* git branch..
 
-## Step 10: Compare stages in deployment pipeline
+## Step 11: Compare stages in deployment pipeline
 
 Select View deployment pipelines to compare the content in the development stage with the content in the test stage.
 
@@ -271,7 +271,7 @@ Review the changes and close the window.
 
 For more information about comparing stages in a deployment pipeline, see [Compare stages in a deployment pipeline](deployment-pipelines/compare-pipeline-content.md).
 
-## Step 11: Deploy to test stage
+## Step 12: Deploy to test stage
 
 When you’re satisfied with the changes, deploy the changes to the test and/or production stages using the same process you used in [Step 4](#step-4-deploy-content-to-other-stages).
 
