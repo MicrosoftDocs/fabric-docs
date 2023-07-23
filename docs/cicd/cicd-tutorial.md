@@ -31,7 +31,7 @@ Before you start, make sure of the following:
 
 If you already have admin rights to a workspace with data, you can skip to [step 3](#step-3-create-a-deployment-pipeline).
 
-## Step 1: Create a workspace
+## Step 1: Create a Premium workspace
 
 To create a new workspace and assign it a license:
 
@@ -143,8 +143,6 @@ To connect the workspace to your Azure Repo, follow these steps:
 
 1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Azure AD user signed into the workspace.
 
-   :::image type="content" source="./media/cicd-tutorial/workspace-settings.png" alt-text="Screenshot of workspace settings window with git integration selected.":::
-
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
    * [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
@@ -184,7 +182,7 @@ In order to edit the workspace without interfering with other team members' chan
    * Name the new branch *MyFoods_FeatureBranch*, branch it from *main* (or *master*), and Select **Create**.
    * The folder in the repo where the *.pbix* file located.
 
-   :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
+    :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
 
 1. Select **Connect and sync**.
 
@@ -207,13 +205,27 @@ Make changes to the workspace by creating, deleting, or editing an item. In this
 
     :::image type="content" source="media/cicd-tutorial/select-table.png" alt-text="Screenshot of connected tables in the data view with the discount column of the Order Details table selected.":::
 
-1. From the **Properties** pane, change the Format from Whole number to Percentage.
+1. From the **Properties** pane, change the **Format** from *General* to *Percentage*.
 
     :::image type="content" source="media/cicd-tutorial/change-format.png" alt-text="Screenshot of publishing changes in git.":::
 
 ## Step 8: Commit changes
 
-## Step 8: Create PR and merge (*****3 min*****)
+To commit this change from teh workspace into the git branch, go back to the workspace home page and refresh the page.
+
+The source control icon now shows `1` because one item in the workspace was changed but not committed to the git repo.  The MyFoodsIncome dataset shows a status of *Uncommitted*.
+
+:::image type="content" source="media/cicd-tutorial/source-control-icon.png" alt-text="Screenshot of source control icon showing one uncommitted change.":::
+
+1. Select the source control icon to view the changed items in the git repo. The dataset shows a status of *Modified*.
+1. Select the item to commit and add an optional message.
+1. Select **Commit**.
+
+   :::image type="content" source="media/cicd-tutorial/commit-changes.png" alt-text="Screenshot of committing changes.":::
+
+The Git status of the dataset changes to *Synced* and the workspace and git repo are in sync.
+
+## Step 9: Create PR and merge
 
 In the git repo, [create a pull request](/azure/devops/repos/git/pull-requests#create-a-pull-request) to merge the *MyFoods* branch with the *main* branch.
 
@@ -226,18 +238,20 @@ Provide a title, description, and any other information you want for the pull re
 
 :::image type="content" source="media/cicd-tutorial/complete-merge.png" alt-text="Screenshot of merge pull request.":::
 
-## Step 9: Update workspace
+## Step 10: Update shared workspace
 
-Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-workspace] and refresh the page. The source control icon now shows `1` because one item in the git repo was changed and is different from the items in the *MyFoods* workspace. The MyFoodsIncome dataset shows a status of *Update Required*.
+Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-premium-workspace) and refresh the page.  
+The source control icon now shows 1 because one item in the git repo was changed and is different from the items in the MyFoods workspace. The MyFoodsIncome dataset shows a status of *Update Required*.
 
 :::image type="content" source="media/cicd-tutorial/source-control-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
 
-1. Select the source control icon to view the changed items in the git repo. The dataset shows a status of *Modified*.
-1. Select **Update all**.
+Select the source control icon to view the changed items in the git repo. The dataset shows a status of Modified.
 
-   :::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of update workspace.":::
+Select **Update all**.
 
-The Git status of the dataset changes to *Synced*.
+:::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of update workspace.":::
+
+The Git status of the dataset changes to *Synced* and the workspace is synced with the *main* git branch..
 
 ## Step 10: Compare stages in deployment pipeline
 
