@@ -12,14 +12,6 @@ ms.date: 07/12/2023
 
 This tutorial takes you through the whole process of loading data into your workspace, and using deployment pipelines together with git integration to collaborate with others in the development, testing and publication of your data and reports.
 
-Specifically, in this tutorial, you learn how to:
-
-> [!div class="checklist"]
->
-> * Prepare and load data into a workspace
-> * Create a deployment pipeline
-> * Edit your workspace in git and update it straight to the deployment pipeline
-
 ## Prerequisites
 
 Before you start, make sure of the following:
@@ -83,59 +75,12 @@ Before you create a deployment pipeline, you need to set the credentials. This s
 
 You can now create a deployment pipeline.
 
-## Step 3: Create a deployment pipeline
+## Step 3: Connect the team's development workspace to git
 
-In order to share this workspace with others and use it for various stages of testing and development, we need to create a deployment pipeline. You can read about how deployment pipelines work in [Introduction to deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md).
-In this step we create a deployment pipeline and assign the workspace to the development stage.
+This workspace is shared by the entire team and each member of the team can edit it. By connecting this workspace to git you can keep track of all the changes and revert back to previous versions if necessary. When all the changes are merged into this shared branch, the workspace is deployed to production using the deployment pipeline.  
+Read more about version control with git in [Introduction to git integration](./git-integration/intro-to-git-integration.md).
 
-1. From the workspace home page, select **Create deployment pipeline**.
-
-   :::image type="content" source="media/cicd-tutorial/create-pipeline.png" alt-text="Screenshot of Create deployment pipeline.":::
-
-1. Name your pipeline *MyFoodsDP*, give it a description (optional) and select **Create**.
-
-   :::image type="content" source="media/cicd-tutorial/name-pipeline.png" alt-text="Screenshot of new pipeline with name.":::
-
-1. Assign the MyFoodsWS workspace to the Development stage.
-
-   :::image type="content" source="media/cicd-tutorial/assign-workspace.png" alt-text="Screenshot of Assign workspace.":::
-
-The development stage of the deployment pipeline shows one dataset, one report, and one dashboard. The other stages are empty.
-
-   :::image type="content" source="media/cicd-tutorial/development-stage.png" alt-text="Screenshot of Development stage.":::
-
-You can read more about creating deployment pipelines in [Deployment pipelines overview](./deployment-pipelines/assign-pipeline.md).
-
-## Step 4: Deploy content to other stages
-
-Now, deploy the content to the other stages of the pipeline.
-
-1. From the development stage of the deployment content view, select **Deploy to test**.
-
-   :::image type="content" source="media/cicd-tutorial/deploy-to-test.png" alt-text="Screenshot of Deploy to test stage.":::
-
-Notice the content of two stages are identical, since you deployed the entire content of the pipeline. This is indicated by the green check icon.
-
-:::image type="content" source="./media/cicd-tutorial/pipeline-compare-same.png" alt-text="Screenshot of Development stage and test stage of pipelines with a green check icon indicating they're the same.":::
-
-1. Deploy the content from the test stage to the production stage.
-
-   :::image type="content" source="media/cicd-tutorial/deploy-to-prod.png" alt-text="Screenshot of Deploy to production stage.":::
-
-1. To refresh the dataset in any stage, select the refresh button next to the datasets icon in the summary card of each stage.
-
-   :::image type="content" source="media/cicd-tutorial/refresh.png" alt-text="Screenshot of Refresh button.":::
-
-This deployment pipeline is shared by the entire team. Each team member can edit the dataset and report in the development stage. When the team is ready to test the changes, they deploy the content to the test stage. When the team is ready to release the changes to production, they deploy the content to the production stage.
-
-For more information on deploying content, see [Deploy content](./deployment-pipelines/deploy-content.md).
-
-## Step 5: Connect to git
-
-Connecting the deployment pipeline to git enables you to keep track of changes and revert back to previous versions if necessary. Read more about version control with git in [Introduction to git integration](./git-integration/intro-to-git-integration.md).
-Let's create a new branch in the repo where all team members can edit and add pull requests. This branch is where all team members can make changes to the dataset and report.
-
-To connect the workspace to your Azure Repo, follow these steps:
+Let's connect this workspace to the main branch of your Azure repo so all team members can edit it and create pull requests.
 
 1. Select the ellipsis (three dots) then **Workspace settings**.
 
@@ -162,6 +107,53 @@ After you connect, the Workspace displays information about source control that 
 Now the workspace is synced with the main branch of your git repo making it easy to keep track of changes.
 
 For more information about connecting to git, see [Connect a workspace to an Azure repo](git-integration/git-get-started.md#connect-a-workspace-to-an-azure-repo).
+
+## Step 4: Create a deployment pipeline
+
+In order to share this workspace with others and use it for various stages of testing and development, we need to create a deployment pipeline. You can read about how deployment pipelines work in [Introduction to deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md).
+In this step we create a deployment pipeline and assign the workspace to the development stage.
+
+1. From the workspace home page, select **Create deployment pipeline**.
+
+   :::image type="content" source="media/cicd-tutorial/create-pipeline.png" alt-text="Screenshot of Create deployment pipeline.":::
+
+1. Name your pipeline *MyFoodsDP*, give it a description (optional) and select **Create**.
+
+   :::image type="content" source="media/cicd-tutorial/name-pipeline.png" alt-text="Screenshot of new pipeline with name.":::
+
+1. Assign the MyFoodsWS workspace to the Development stage.
+
+   :::image type="content" source="media/cicd-tutorial/assign-workspace.png" alt-text="Screenshot of Assign workspace.":::
+
+The development stage of the deployment pipeline shows one dataset, one report, and one dashboard. The other stages are empty.
+
+   :::image type="content" source="media/cicd-tutorial/development-stage.png" alt-text="Screenshot of Development stage.":::
+
+You can read more about creating deployment pipelines in [Deployment pipelines overview](./deployment-pipelines/assign-pipeline.md).
+
+## Step 5: Deploy content to other stages
+
+Now, deploy the content to the other stages of the pipeline.
+
+1. From the development stage of the deployment content view, select **Deploy to test**.
+
+   :::image type="content" source="media/cicd-tutorial/deploy-to-test.png" alt-text="Screenshot of Deploy to test stage.":::
+
+Notice the content of two stages are identical, since you deployed the entire content of the pipeline. This is indicated by the green check icon.
+
+:::image type="content" source="./media/cicd-tutorial/pipeline-compare-same.png" alt-text="Screenshot of Development stage and test stage of pipelines with a green check icon indicating they're the same.":::
+
+1. Deploy the content from the test stage to the production stage.
+
+   :::image type="content" source="media/cicd-tutorial/deploy-to-prod.png" alt-text="Screenshot of Deploy to production stage.":::
+
+1. To refresh the dataset in any stage, select the refresh button next to the datasets icon in the summary card of each stage.
+
+   :::image type="content" source="media/cicd-tutorial/refresh.png" alt-text="Screenshot of Refresh button.":::
+
+This deployment pipeline is shared by the entire team. Each team member can edit the dataset and report in the development stage. When the team is ready to test the changes, they deploy the content to the test stage. When the team is ready to release the changes to production, they deploy the content to the production stage.
+
+For more information on deploying content, see [Deploy content](./deployment-pipelines/deploy-content.md).
 
 ## Step 6: Create an isolated workspace
 
@@ -273,7 +265,18 @@ For more information about comparing stages in a deployment pipeline, see [Compa
 
 ## Step 12: Deploy to test stage
 
-When you’re satisfied with the changes, deploy the changes to the test and/or production stages using the same process you used in [Step 4](#step-4-deploy-content-to-other-stages).
+When you’re satisfied with the changes, deploy the changes to the test and/or production stages using the same process you used in [Step 5](#step-5-deploy-content-to-other-stages).
+
+## Summary
+
+In this tutorial, you learned how to use deployment pipelines along with git integration to manage the lifecycle of an app, report, or other content in a workspace.  
+In particular, you learned how to:
+
+* Create a new workspace that can be used for development by a single user or a team
+* Connect the workspace to a git repo and sync the content between the workspace and the git repo to track changes
+* Create a deployment pipeline to deploy the workspace content to other stages
+* Edit a workspace
+* Deploy the workspace to other stages in the deployment pipeline
 
 ## Next steps
 
