@@ -76,7 +76,7 @@ PersonID | Name | LastModifytime
 5        | eeee | 2017-09-05 08:06:00.000
 ```
 
-In this tutorial, you use LastModifytime as the watermark column. 
+In this tutorial, you use *LastModifytime* as the watermark column. 
 
 #### 2. Create another table in your Data Warehouse to store the last watermark value
 
@@ -175,7 +175,7 @@ In this step, you create a lookup activity to get the new watermark value. You'l
     - **Workspace data store type**: Select **Data Warehouse**.
     - **Data Warehouse**: Select your Data Warehouse.
     - **Use query**: Choose **Query**.
-    - **Query**: Enter the following query:
+    - **Query**: Enter the following query to pick the latest last modified time as the new watermark:
 
         ```sql
         select MAX(LastModifytime) as NewWatermarkvalue from data_source_table
