@@ -86,7 +86,7 @@ These are some important considerations to keep in mind:
 
 ### How can I assign workspaces to all the stages in a pipeline?
 
-You can either assign one workspace to your pipeline and then deploy it across the pipeline, or assign a different workspace to each pipeline stage. For more information, see [assign a workspace to a deployment pipeline](deployment-pipelines/assign-pipeline.md).
+You can either assign one workspace to your pipeline and deploy it across the pipeline, or assign a different workspace to each pipeline stage. For more information, see [assign a workspace to a deployment pipeline](deployment-pipelines/assign-pipeline.md).
 
 ### Does deployment pipelines support multi-geo?
 
