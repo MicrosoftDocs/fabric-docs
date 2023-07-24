@@ -21,7 +21,7 @@ Before you start, make sure of the following:
 * Access to an Azure git repo. If you don't have one, see [Set up a git repository](/devops/develop/git/set-up-a-git-repository) for information on creating one.
 * Download the [MyFoodsIncome.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/developer/MyFoodsIncome.pbix) file into a git repo that you can edit. This is the sample file we use in this tutorial. Alternatively, you can use your own dataset and report, if you prefer.
 
-If you already have admin rights to a workspace with data, you can skip to [step 3](#step-3-create-a-deployment-pipeline).
+If you already have admin rights to a workspace with data, you can skip to [step 3](#step-3-connect-the-teams-development-workspace-to-git).
 
 ## Step 1: Create a Premium workspace
 
