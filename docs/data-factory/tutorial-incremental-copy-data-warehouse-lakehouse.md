@@ -164,7 +164,7 @@ In this step, you create a lookup activity to get the last watermark value. The 
 
 ### Step 3: Add a lookup activity for the new watermark
 
-In this step, you create a lookup activity to get the new watermark value. You'll use a query to obtain the new watermark from your source data table. The highest value in *LastModifytime* column in *data_source_table* will be obtained.
+In this step, you create a lookup activity to get the new watermark value. You'll use a query to obtain the new watermark from your source data table. The maximum value in *LastModifytime* column in *data_source_table* will be obtained.
 
 1. On the top bar, select **Lookup** under **Activities** tab to add the second lookup activity.
 
@@ -175,7 +175,7 @@ In this step, you create a lookup activity to get the new watermark value. You'l
     - **Workspace data store type**: Select **Data Warehouse**.
     - **Data Warehouse**: Select your Data Warehouse.
     - **Use query**: Choose **Query**.
-    - **Query**: Enter the following query to pick the latest last modified time as the new watermark:
+    - **Query**: Enter the following query to pick the maximum last modified time as the new watermark:
 
         ```sql
         select MAX(LastModifytime) as NewWatermarkvalue from data_source_table
