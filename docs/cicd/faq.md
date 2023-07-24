@@ -66,6 +66,13 @@ To configure deployment rules in deployment pipelines, you must be the dataset o
 
 Get started with git integration using the [get started instructions](git-integration/git-get-started.md).
 
+### Why was my item removed from the workspace?
+
+There could be several reasons why an item was removed from the workspace.
+
+* If the item wasn't committed and you selected *undo*, the item is removed from the workspace.
+* If the item was committed, it could get removed if you switch branches and the item doesn't exist in the new branch.
+
 ## Deployment pipeline questions
 
 ### What are some general deployment limitations to keep in mind?
