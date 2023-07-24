@@ -45,11 +45,11 @@ You can even create Single Node Spark Pools, by setting the min number of nodes 
 
 The size and number of nodes you can have in your custom Spark pool depends on your Microsoft Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Spark VCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. You can use these Spark VCores to create nodes of different sizes for your custom Spark pool, as long as the total number of Spark VCores doesn't exceed 128.
 
-Billing of Spark pools is similar to that of the Starter pools, where you don't pay for the Custom spark pools that you have created unless you have an active spark session created for running a notebook or spark job definiton. You are only billed for the duration of your job runs and are not billed for stages like the cluster creation, and deallocation after the job has been completed. 
+Billing of Spark pools is similar to that of the Starter pools, where you don't pay for the Custom spark pools that you have created unless you have an active spark session created for running a notebook or spark job definition. You are only billed for the duration of your job runs and are not billed for stages like the cluster creation, and deallocation after the job has been completed. 
 
 [ ![Diagram showing the high-level stages in billing of custom pools.](media/spark-compute/custom-pool-billing-states-high-level.png) ](media/spark-compute/custom-pool-billing-states-high-level.png#lightbox)
 
-For example if you submit a notebook job to a Custom Spark Pool, you will be only charged for the time period when the session is active and the billing for that notebook session will be stopped once the spark session has stopped or expired. You will not be charged for the time taken to acquire cluster instances from the cloud and for the time taken for intializing the spark context. 
+For example if you submit a notebook job to a Custom Spark Pool, you will be only charged for the time period when the session is active and the billing for that notebook session will be stopped once the spark session has stopped or expired. You will not be charged for the time taken to acquire cluster instances from the cloud and for the time taken for initializing the spark context. 
 
 Possible custom pool configurations for F64 based on the previous example:
 
