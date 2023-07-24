@@ -70,7 +70,7 @@ Get started with git integration using the [get started instructions](git-integr
 
 There could be several reasons why an item was removed from the workspace.
 
-* If the item wasn't committed and you selected *undo*, the item is removed from the workspace.
+* If the item wasn't committed and you selected it in an *undo* action, the item is removed from the workspace.
 * If the item was committed, it could get removed if you switch branches and the item doesn't exist in the new branch.
 
 ## Deployment pipeline questions
