@@ -102,7 +102,7 @@ After the changes are committed, the items that were committed are removed from 
 
 :::image type="content" source="./media/git-get-started/no-changes.png" alt-text="Screenshot of source control window stating that there are no changes to commit.":::
 
-After the commit is completed successfully, the status of the selected items changes from **Uncommitted** to **Synced**. 
+After the commit is completed successfully, the status of the selected items changes from **Uncommitted** to **Synced**.
 
 ### [Undo saved change](#tab/undo-save)
 
