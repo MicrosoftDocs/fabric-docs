@@ -11,6 +11,8 @@ items:
     href: preview.md    
   - name: Fabric terminology
     href: fabric-terminology.md
+  - name: What's New
+    href: whats-new.md
 - name: Get started
   items:
   - name: End-to-end tutorials
