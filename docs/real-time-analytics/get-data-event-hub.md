@@ -104,7 +104,7 @@ A wizard opens with the **Destination** tab selected.
 
 1. You now connect the cloud connection to the KQL database. Fill out the following fields according to the table:
 
-    :::image type="content" source="media/get-data-event-hub/database-connection.png" alt-text="":::
+    :::image type="content" source="media/get-data-event-hub/database-connection.png" alt-text="Screenshot of creating database connection.":::
 
     |**Setting** | **Description** | **Example value**
     |---|---|---|
