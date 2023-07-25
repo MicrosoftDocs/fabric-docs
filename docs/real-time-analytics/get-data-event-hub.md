@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 07/15/2023
+ms.date: 07/25/2023
 ms.search.form: product-kusto
 ---
 # Get data from Azure Event Hubs
@@ -15,9 +15,12 @@ ms.search.form: product-kusto
 
 In this article, you learn how to get data from Event Hubs into your KQL database in [!INCLUDE [product-name](../includes/product-name.md)]. [Azure Event Hubs](/azure/event-hubs/event-hubs-about?context=/fabric/context/context) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
 
-To stream data from Event Hubs into Real-Time-Analytics, you go through two main steps. The first step is to create a [!INCLUDE [product-name](../includes/product-name.md)] platform-based data connection to a specific event hub instance. This data connection can be used across all [!INCLUDE [product-name](../includes/product-name.md)] workspaces and is managed centrally.
+To stream data from Event Hubs into Real-Time-Analytics, you go through two main steps. The first step is performed in the Azure portal, where you define the shared access policy on your event hub and capture the details needed to later connect via this policy.
 
-In the second step, you connect this [!INCLUDE [product-name](../includes/product-name.md)]-based data connection to a KQL database. This process creates a database-specific Event Hubs data connection. The connection streams data into the table you specified during setup, and the data will then be available to query using a KQL queryset.
+The second step takes place in Real-Time Analytics in Fabric, where you connect a KQL database to the event hub and configure the schema for incoming data. This data will then be available to query using a KQL queryset.
+
+> [!NOTE]
+> You can set up a cloud connection from Microsoft Fabric to Azure Event Hubs. This cloud connection can be used in the following flow as an "Existing connection". For more information, see XXX. 
 
 ## Prerequisites
 
@@ -27,11 +30,11 @@ In the second step, you connect this [!INCLUDE [product-name](../includes/produc
 * A [KQL database](create-database.md)
 
 > [!WARNING]
-> Your event hub mustn't be behind a firewall.
+> Your event hub can't be behind a firewall.
 
 ## Set a shared access policy on your event hub
 
-Before you can create a cloud connection in [!INCLUDE [product-name](../includes/product-name.md)], you need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the cloud connection. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature?context=/fabric/context/context).
+Before you can create a connection to your Event Hubs data, you need to set a shared access policy (SAS) on the event hub and collect some information to be used later in setting up the connection. For more information on authorizing access to Event Hubs resources, see [Shared Access Signatures](/azure/event-hubs/authorize-access-shared-access-signature?context=/fabric/context/context).
 
 1. In the [Azure portal](https://ms.portal.azure.com/), browse to the event hubs instance you want to connect.
 1. Under **Settings**, select **Shared access policies**
@@ -42,17 +45,17 @@ Before you can create a cloud connection in [!INCLUDE [product-name](../includes
 1. Enter a **Policy name**.
 1. Select **Manage**, and then **Create**.
 
-## Gather information for the cloud connection
+## Gather information for the connection
 
 Within the SAS policy pane, take note of the following four fields. You may want to copy these fields and paste it somewhere, like a notepad, to use in a later step.
 
-:::image type="content" source="media/get-data-event-hub/fill-out-connection.png" alt-text="Screenshot showing how to fill out connection with data from Azure portal."    lightbox="media/get-data-event-hub/fill-out-connection.png":::
+:::image type="content" source="media/get-data-event-hub/fill-out-connection.png" alt-text="Screenshot showing how to fill out connection with data from Azure portal." lightbox="media/get-data-event-hub/fill-out-connection.png":::
 
-| Field reference | Field | Description |Example |
+| Field reference | Field | Description | Example |
 |---|---|---|---|
-| a | **Event Hubs instance** | The name of the event hub | *iotdata*
+| a | **Event Hubs instance** | The name of the event hub instance. | *iotdata*
 | b |  **SAS Policy** | The SAS policy name created in the previous step | *DocsTest*
-| c |**Primary key** | The key associated with the SAS policy | Starts with *PGGIISb009*...
+| c | **Primary key** | The key associated with the SAS policy | In this example, starts with *PGGIISb009*...
 | d | **Connection string-primary key** | In this field you only want to copy the event hub namespace, which can be found as part of the connection string. | *eventhubpm15910.servicebus.windows.net*
 
 ## Get data
@@ -77,20 +80,40 @@ A wizard opens with the **Destination** tab selected.
 
 ### Source tab
 
-In the source tab, the **Source type** is autopopulated with **Event Hubs**
+#### Create the cloud connection
 
-1. Fill out the remaining fields according to the following table:
+1. In the source tab, select **Create new connection**. To use an existing Event Hubs cloud connection, see XXX. 
+
+1. Fill out the **Connection settings** according to the following table:
 
     :::image type="content" source="media/get-data-event-hub/source.png" alt-text="Screenshot of source tab."  lightbox="media/get-data-event-hub/source.png":::
 
-    |**Setting** | **Suggested value** | **Field description**
+    |**Setting** | **Description** | **Example value**
     |---|---|---|
-    | Event Hubs data source |  | The name that identifies your event hub connection. |
-    | data connection name |  | This defines the name of the database-specific event hub data connection. The default is \<DatabaseName>\<EventHubsCloudConnectionName>. |
-    | Consumer group | **Add consumer group** | The relevant consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups?context=/fabric/context/context)
-    | Compression | | Data compression of the events, as coming from the event hub. Options are None (default), or GZip compression.
-    | Event system properties | Select relevant properties. | For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations?context=/fabric/context/context). If there are multiple records per event message, the system properties are added to the first one. See [event system properties](#event-system-properties).|
-    | Event retrieval start date|  | The data connection retrieves existing event hub events created since the Event retrieval start date. It can only retrieve events retained by the event hub, based on its retention period. The time zone is UTC. If no time is specified, the default time is the time at which the data connection is created. |
+    | Event Hub namespace | Field *d* from the [table above](#gather-information-for-the-connection). | *eventhubpm15910.servicebus.windows.net*
+    | Event Hub | Field *a* from the [table above](#gather-information-for-the-connection). The name of the event hub instance. | *iotdata*
+    | Connection | To use an existing cloud connection between Fabric and Event Hubs, select the name of this connection. Otherwise, select **Create new connection**. | *Create new connection*
+    | Connection name | The name of your new cloud connection. This name is auto-generated, but can be overwritten. Must be unique within Fabric. | *Connection*
+    | Authentication kind | Auto-populated | *Shared Access Key*
+    | Shared Access Key Name | Field *b* from the [table above](#gather-information-for-the-connection). The name you gave to the shared access policy.  | *DocsTest*
+    | Shared Access Key |  Field *d* from the [table above](#gather-information-for-the-connection). The primary key of the SAS policy.
+    
+1. Select **Save**. A new cloud data connection between Fabric and Event Hubs is created.
+
+#### Connect the cloud connection to your KQL database
+
+1. You now connect the cloud connection to the KQL database. Fill out the following fields according to the table:
+
+    :::image type="content" source="media/get-data-event-hub/database-connection.png" alt-text="":::
+
+    |**Setting** | **Description** | **Example value**
+    |---|---|---|
+    | Data connection name |   This defines the name of the database-specific event hub data connection. The default is \<DatabaseName>\<EventHubsCloudConnectionName> but can be over-written. | *ConnectionToRTA*
+    | Consumer group | The relevant consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups?context=/fabric/context/context). After adding a new consumer group, you will then need to select this group from the drop-down.|  *NewConsumer*
+    | **More parameters** |
+    | Compression | Data compression of the events, as coming from the event hub. Options are None (default), or GZip compression. | *None*
+    | Event system properties |  For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations?context=/fabric/context/context). If there are multiple records per event message, the system properties are added to the first one. See [event system properties](#event-system-properties).|
+    | Event retrieval start date|   The data connection retrieves existing event hub events created since the Event retrieval start date. It can only retrieve events retained by the event hub, based on its retention period. The time zone is UTC. If no time is specified, the default time is the time at which the data connection is created. |
 
 1. Select **Next: Schema** to continue to the [Schema tab](#schema-tab).
 
