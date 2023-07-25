@@ -19,7 +19,7 @@ Before you start, make sure of the following:
 * If you don't have Fabric enabled yet, ask your admin to [enable Fabric for your organization](../admin/fabric-switch.md).
 * If you aren't signed up yet, [sign up for a free trial](../get-started/fabric-trial.md).
 * Access to an Azure git repo. If you don't have one, see [Set up a git repository](/devops/develop/git/set-up-a-git-repository) for information on creating one.
-* Download the [MyFoodsIncome.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/developer/MyFoodsIncome.pbix) file into a git repo that you can edit. This is the sample file we use in this tutorial. Alternatively, you can use your own dataset and report, if you prefer.
+* Download the [FoodSales.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/cicd/FoodSales.pbix) file into a git repo that you can edit. This is the sample file we use in this tutorial. Alternatively, you can use your own dataset and report, if you prefer.
 
 If you already have admin rights to a workspace with data, you can skip to [step 3](#step-3-connect-the-teams-development-workspace-to-git).
 
@@ -31,7 +31,7 @@ To create a new workspace and assign it a license:
 
    :::image type="content" source="media/cicd-tutorial/create-workspace.png" alt-text="Screenshot of Create workspace.":::
 
-1. Name the workspace **MyFoodsWS**.
+1. Name the workspace **FoodSalesWS**.
 1. (Optional) Add a description.
 
    :::image type="content" source="media/cicd-tutorial/name-workspace.png" alt-text="Screenshot of new workspace with name.":::
@@ -53,7 +53,7 @@ You can upload content from OneDrive, SharePoint, or a local file. In this tutor
 
    :::image type="content" source="media/cicd-tutorial/upload-data.png" alt-text="Screenshot of Upload menu.":::
 
-1. Browse to the location of the **MyFoodsIncome.pbix** file you [downloaded earlier](#prerequisites), or load your own sample dataset and report.
+1. Browse to the location of the **FoodSales.pbix** file you [downloaded earlier](#prerequisites), or load your own sample dataset and report.
 
 ### Edit credentials - first time only
 
@@ -117,11 +117,11 @@ In this step we create a deployment pipeline and assign the workspace to the dev
 
    :::image type="content" source="media/cicd-tutorial/create-pipeline.png" alt-text="Screenshot of Create deployment pipeline.":::
 
-1. Name your pipeline *MyFoodsDP*, give it a description (optional) and select **Create**.
+1. Name your pipeline *FoodSalesDP*, give it a description (optional) and select **Create**.
 
    :::image type="content" source="media/cicd-tutorial/name-pipeline.png" alt-text="Screenshot of new pipeline with name.":::
 
-1. Assign the MyFoodsWS workspace to the Development stage.
+1. Assign the FoodSalesWS workspace to the Development stage.
 
    :::image type="content" source="media/cicd-tutorial/assign-workspace.png" alt-text="Screenshot of Assign workspace.":::
 
@@ -163,7 +163,7 @@ In order to edit the workspace without interfering with other team members' chan
 
    :::image type="content" source="./media/cicd-tutorial/isolated-workspace.png" alt-text="Screenshot of workspace with new workspace link displayed.":::
 
-1. Connect this new workspae to a new branch of the git repo:
+1. Connect this new workspace to a new branch of the git repo:
 
    From the dropdown menu, specify the following details about the branch you want to connect to:
 
@@ -233,7 +233,7 @@ In the git repo, [create a pull request](/azure/devops/repos/git/pull-requests#c
 ## Step 10: Update shared workspace
 
 Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-premium-workspace) and refresh the page.  
-The source control icon now shows 1 because one item in the git repo was changed and is different from the items in the MyFoods workspace. The MyFoodsIncome dataset shows a status of *Update required*.
+The source control icon now shows 1 because one item in the git repo was changed and is different from the items in the FoodSales workspace. The MyFoodsIncome dataset shows a status of *Update required*.
 
 :::image type="content" source="media/cicd-tutorial/update-required-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
 
