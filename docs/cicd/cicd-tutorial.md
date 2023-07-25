@@ -284,11 +284,9 @@ When you’re satisfied with the changes, deploy the changes to the test and/or 
 In this tutorial, you learned how to use deployment pipelines along with git integration to manage the lifecycle of an app, report, or other content in a workspace.  
 In particular, you learned how to:
 
-* Create a new workspace that can be used for development by a single user or a team
-* Connect the workspace to a git repo and sync the content between the workspace and the git repo to track changes
-* Create a deployment pipeline to deploy the workspace content to other stages
-* Edit a workspace
-* Deploy the workspace to other stages in the deployment pipeline
+* Setup workspaces and add content for managing their lifecycle in Fabric.
+* Leverage git best practices to work alone and collaborate with teammates on changes.
+* Combine git and deployment pipelines for an efficient end to end release process.
 
 ## Next steps
 
