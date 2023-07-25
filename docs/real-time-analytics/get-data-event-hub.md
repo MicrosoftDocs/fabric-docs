@@ -13,14 +13,11 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this article, you learn how to get data from Event Hubs into your KQL database in [!INCLUDE [product-name](../includes/product-name.md)]. [Azure Event Hubs](/azure/event-hubs/event-hubs-about?context=/fabric/context/context) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
+In this article, you learn how to get data from Event Hubs into your KQL database in Microsoft Fabric. [Azure Event Hubs](/azure/event-hubs/event-hubs-about?context=/fabric/context/context) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
 
 To stream data from Event Hubs into Real-Time-Analytics, you go through two main steps. The first step is performed in the Azure portal, where you define the shared access policy on your event hub and capture the details needed to later connect via this policy.
 
-The second step takes place in Real-Time Analytics in Fabric, where you connect a KQL database to the event hub and configure the schema for incoming data. This data will then be available to query using a KQL queryset.
-
-> [!NOTE]
-> You can set up a cloud connection from Microsoft Fabric to Azure Event Hubs. This cloud connection can be used in the following flow as an "Existing connection". For more information, see XXX. 
+The second step takes place in Real-Time Analytics in Fabric, where you connect a KQL database to the event hub and configure the schema for incoming data. This step creates two connections. The first connection, called a "cloud connection", connects Microsoft Fabric to the event hub instance. The second connection connects the "cloud connection" to your KQL database. Once you finish configuring the event data and schema, the streamed data will be available to query using a [KQL queryset](kusto-query-set.md).
 
 ## Prerequisites
 
@@ -90,14 +87,14 @@ A wizard opens with the **Destination** tab selected.
 
     |**Setting** | **Description** | **Example value**
     |---|---|---|
-    | Event Hub namespace | Field *d* from the [table above](#gather-information-for-the-connection). | *eventhubpm15910.servicebus.windows.net*
-    | Event Hub | Field *a* from the [table above](#gather-information-for-the-connection). The name of the event hub instance. | *iotdata*
+    | Event Hub namespace | Field *d* from the [table above](#gather-information-for-the-cloud-connection). | *eventhubpm15910.servicebus.windows.net*
+    | Event Hub | Field *a* from the [table above](#gather-information-for-the-cloud-connection). The name of the event hub instance. | *iotdata*
     | Connection | To use an existing cloud connection between Fabric and Event Hubs, select the name of this connection. Otherwise, select **Create new connection**. | *Create new connection*
     | Connection name | The name of your new cloud connection. This name is auto-generated, but can be overwritten. Must be unique within Fabric. | *Connection*
     | Authentication kind | Auto-populated | *Shared Access Key*
-    | Shared Access Key Name | Field *b* from the [table above](#gather-information-for-the-connection). The name you gave to the shared access policy.  | *DocsTest*
-    | Shared Access Key |  Field *d* from the [table above](#gather-information-for-the-connection). The primary key of the SAS policy.
-    
+    | Shared Access Key Name | Field *b* from the [table above](#gather-information-for-the-cloud-connection). The name you gave to the shared access policy.  | *DocsTest*
+    | Shared Access Key |  Field *d* from the [table above](#gather-information-for-the-cloud-connection). The primary key of the SAS policy.
+
 1. Select **Save**. A new cloud data connection between Fabric and Event Hubs is created.
 
 #### Connect the cloud connection to your KQL database
