@@ -135,19 +135,22 @@ Data is read from the event hub in form of [EventData](/dotnet/api/microsoft.ser
 
 :::image type="content" source="media/get-data-event-hub/schema-tab.png" alt-text="Screenshot of schema tab."  lightbox="media/get-data-event-hub/schema-tab.png":::
 
-The data format is automatically inferred from the incoming data. If this format is incorrect, select the correct format. If you select Ignore data format errors, the data is ingested in JSON format. If you leave this check box unselected, the data is ingested in multijson format. When you select JSON, you must also select **Nested levels**, from 1 to 100. The levels determine the table column data division.
+1. The data format is automatically inferred from the incoming data. If this format is incorrect, select the correct format. 
 
-If the data you see in the preview window isn't complete, you may need more data to create a table with all necessary data fields. Use the following commands to fetch new data from your Event hub:
+    > [!NOTE]
+    > If you select Ignore data format errors, the data is ingested in JSON format. If you leave this check box unselected, the data is ingested in multijson format. When you select JSON, you must also select **Nested levels**, from 1 to 100. The levels determine the table column data division.
 
-* **Discard and fetch new data**: discards the data presented and searches for new events.
-* **Fetch more data**: Searches for more events in addition to the events already found.
+1. If the data you see in the preview window isn't complete, you may need more data to create a table with all necessary data fields. Use the following commands to fetch new data from your Event hub:
+
+    * **Discard and fetch new data**: discards the data presented and searches for new events.
+    * **Fetch more data**: Searches for more events in addition to the events already found.
 
 1. In the **Mapping name** field, enter a mapping name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
 
-> [!NOTE]
-> The tool automatically infers the schema based on your data. If you want to change the schema to add and edit columns, you can do so under [Partial data preview](#partial-data-preview).
->
-> You can optionally use the [Command viewer](#command-viewer) to view and copy the automatic commands generated from your inputs.
+    > [!NOTE]
+    > The tool automatically infers the schema based on your data. If you want to change the schema to add and edit columns, you can do so under [Partial data preview](#partial-data-preview).
+    >
+    > You can optionally use the [Command viewer](#command-viewer) to view and copy the automatic commands generated from your inputs.
 
 1. Select **Next: Summary**.
 
