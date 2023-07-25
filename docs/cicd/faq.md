@@ -66,6 +66,13 @@ To configure deployment rules in deployment pipelines, you must be the dataset o
 
 Get started with git integration using the [get started instructions](git-integration/git-get-started.md).
 
+### Why was my item removed from the workspace?
+
+There could be several reasons why an item was removed from the workspace.
+
+* If the item wasn't committed and you selected it in an *undo* action, the item is removed from the workspace.
+* If the item was committed, it could get removed if you switch branches and the item doesn't exist in the new branch.
+
 ## Deployment pipeline questions
 
 ### What are some general deployment limitations to keep in mind?
@@ -79,7 +86,7 @@ These are some important considerations to keep in mind:
 
 ### How can I assign workspaces to all the stages in a pipeline?
 
-You can either assign one workspace to your pipeline and then deploy it across the pipeline, or assign a different workspace to each pipeline stage. For more information, see [assign a workspace to a deployment pipeline](deployment-pipelines/assign-pipeline.md).
+You can either assign one workspace to your pipeline and deploy it across the pipeline, or assign a different workspace to each pipeline stage. For more information, see [assign a workspace to a deployment pipeline](deployment-pipelines/assign-pipeline.md).
 
 ### Does deployment pipelines support multi-geo?
 
