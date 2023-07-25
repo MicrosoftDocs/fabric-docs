@@ -45,7 +45,7 @@ Before you can create a connection to your Event Hubs data, you need to set a sh
 1. Enter a **Policy name**.
 1. Select **Manage**, and then **Create**.
 
-## Gather information for the connection
+## Gather information for the cloud connection
 
 Within the SAS policy pane, take note of the following four fields. You may want to copy these fields and paste it somewhere, like a notepad, to use in a later step.
 
