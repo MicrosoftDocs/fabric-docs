@@ -236,7 +236,7 @@ In the git repo, [create a pull request](/azure/devops/repos/git/pull-requests#c
 
 1. Provide a title, description, and any other information you want for the pull request. Then select **Create**.
 
-   :::image type="content" source="media/cicd-tutorial/name-pull-request.png" alt-text="Screenshot of create pull request.":::
+   :::image type="content" source="media/cicd-tutorial/name-pull-request.png" alt-text="Screenshot of naming pull request and adding description.":::
 
 1. [Merge the pull request](/azure/devops/repos/git/complete-pull-requests#complete-a-pull-request).
 
