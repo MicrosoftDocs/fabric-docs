@@ -55,6 +55,10 @@ You can upload content from OneDrive, SharePoint, or a local file. In this tutor
 
 1. Browse to the location of the **FoodSales.pbix** file you [downloaded earlier](#prerequisites), or load your own sample dataset and report.
 
+You now have a workspace with content in it for you and your team to work on.
+
+:::image type="content" source="media/cicd-tutorial/workspace-with-content.png" alt-text="Screenshot of FoodSalesWS workspace with a report, dataset, and dashboard in it.":::
+
 ### Edit credentials - first time only
 
 Before you create a deployment pipeline, you need to set the credentials. This step only needs to be done once. After your credentials are set, you won't have to set them again.
@@ -135,13 +139,17 @@ You can read more about creating deployment pipelines in [Deployment pipelines o
 
 Now, deploy the content to the other stages of the pipeline.
 
-1. From the development stage of the deployment content view, select **Deploy to test**.
+1. From the development stage of the deployment content view, select **Deploy**.
 
    :::image type="content" source="media/cicd-tutorial/deploy-to-test.png" alt-text="Screenshot of Deploy to test stage.":::
 
-Notice the content of two stages are identical, since you deployed the entire content of the pipeline. This is indicated by the green check icon.
+1. Confirm that you want to deploy the content to the test stage.
 
-:::image type="content" source="./media/cicd-tutorial/pipeline-compare-same.png" alt-text="Screenshot of Development stage and test stage of pipelines with a green check icon indicating they're the same.":::
+   :::image type="content" source="media/cicd-tutorial/confirm-deploy.png" alt-text="Screenshot of Confirm deploy.":::
+
+   Notice the content of two stages are identical, since you deployed the entire content of the pipeline. This is indicated by the green check icon.
+
+   :::image type="content" source="./media/cicd-tutorial/pipeline-compare-same.png" alt-text="Screenshot of Development stage and test stage of pipelines with a green check icon indicating they're the same.":::
 
 1. Deploy the content from the test stage to the production stage.
 
@@ -159,7 +167,7 @@ For more information on deploying content, see [Deploy content](./deployment-pip
 
 In order to edit the workspace without interfering with other team members' changes, each team member creates their own isolated workspace to work in until they're ready to share their changes with the team.
 
-1. Create a new workspace like you did i [Step 1](#step-1-create-a-premium-workspace).
+1. Create a new workspace like you did in [Step 1](#step-1-create-a-premium-workspace).
 
    :::image type="content" source="./media/cicd-tutorial/isolated-workspace.png" alt-text="Screenshot of workspace with new workspace link displayed.":::
 
@@ -178,6 +186,7 @@ In order to edit the workspace without interfering with other team members' chan
 
 1. Select **Connect and sync**.
 
+The new workspace now contains the content of the git repo folder. Notice it doesn't contain the *.pbix* file. Since *.pbix* files are unsupported, this file wasn't copied to the git repo when we synced.  
 This is the workspace you use to make changes to the dataset and report until you're ready to share them with your team.
 
 ## Step 7: Edit the workspace
@@ -203,9 +212,9 @@ Make changes to the workspace by creating, deleting, or editing an item. In this
 
 ## Step 8: Commit changes
 
-To commit this change from teh workspace into the git branch, go back to the workspace home page and refresh the page.
+To commit this change from teh workspace into the git branch, go back to the workspace home page.
 
-The source control icon now shows `1` because one item in the workspace was changed but not committed to the git repo.  The MyFoodsIncome dataset shows a status of *Uncommitted*.
+The source control icon now shows `1` because one item in the workspace was changed but not committed to the git repo. The *FoodSales* dataset shows a status of *Uncommitted*.
 
 :::image type="content" source="media/cicd-tutorial/source-control-icon.png" alt-text="Screenshot of source control icon showing one uncommitted change.":::
 
@@ -222,9 +231,12 @@ The Git status of the dataset changes to *Synced* and the workspace and git repo
 In the git repo, [create a pull request](/azure/devops/repos/git/pull-requests#create-a-pull-request) to merge the *MyFoods* branch with the *main* branch.
 
 1. Select **Create a pull request**.
-1. Provide a title, description, and any other information you want for the pull request. Then select **Create**.
 
    :::image type="content" source="media/cicd-tutorial/create-pull-request.png" alt-text="Screenshot of create pull request.":::
+
+1. Provide a title, description, and any other information you want for the pull request. Then select **Create**.
+
+   :::image type="content" source="media/cicd-tutorial/name-pull-request.png" alt-text="Screenshot of create pull request.":::
 
 1. [Merge the pull request](/azure/devops/repos/git/complete-pull-requests#complete-a-pull-request).
 
@@ -233,7 +245,7 @@ In the git repo, [create a pull request](/azure/devops/repos/git/pull-requests#c
 ## Step 10: Update shared workspace
 
 Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-premium-workspace) and refresh the page.  
-The source control icon now shows 1 because one item in the git repo was changed and is different from the items in the FoodSales workspace. The MyFoodsIncome dataset shows a status of *Update required*.
+The source control icon now shows 1 because one item in the git repo was changed and is different from the items in the FoodSales workspace. The FoodSales dataset shows a status of *Update required*.
 
 :::image type="content" source="media/cicd-tutorial/update-required-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
 
