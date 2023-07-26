@@ -1,16 +1,16 @@
 ---
-title: Known issue - Not able to add Lookup activity output to Body of Office 365 activity
-description: A known issue is posted where Not able to add Lookup activity output to Body of Office 365 activity
+title: Known issue - not able to add Lookup activity output to body object of Office 365.
+description: A known issue is posted where a user isn't able to add Lookup activity output to the body object of Office 365.
 author: mihart
 ms.author: anirmale
 ms.topic: troubleshooting 
-ms.date: 07/20/2023
+ms.date: 07/26/2023
 ms.custom: known-issue-458
 ---
 
-# Known issue - Not able to add Lookup activity output to Body of Office 365 activity
+# Known issue - not able to add Lookup activity output to body object of Office 365
 
-Currently there's a bug while adding output of Lookup activity as a dynamic content to the body of Office 365 activity, the Office 365 activity hangs indefinitely.
+Currently there's a bug when the user tries to add the output of a Lookup activity as a dynamic content to the body object of Office 365. Office 365 activity hangs indefinitely.
 
 **Status:** Open
 
@@ -18,11 +18,11 @@ Currently there's a bug while adding output of Lookup activity as a dynamic cont
 
 ## Symptoms
 
-Office 365 activity hangs indefinitely when output of Lookup activity is added as a dynamic content to the body of Office 365 activity
+Office 365 activity hangs indefinitely when output of Lookup activity is added as a dynamic content to the body object of Office 365
 
 ## Solutions and workarounds
 
-Wrap the output of the lookup activity into a string, For Example @string(activity('Lookup1').output.firstRow)
+Wrap the output of the lookup activity in a string, for example @string(activity('Lookup1').output.firstRow).
 
 ## Next steps
 
