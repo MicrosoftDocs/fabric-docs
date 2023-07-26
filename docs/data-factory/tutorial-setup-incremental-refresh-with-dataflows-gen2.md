@@ -94,7 +94,7 @@ You have now created a dataflow to load data from an OData source into a lakehou
 
 ## Add a query to the dataflow to filter the data based on the data destination
 
-This section adds a query to the dataflow to filter the data based on the data in the destination lakehouse. The query gets the maximum `OrderID` in the lakehouse at the beginning of the dataflow refresh and uses the maximum OrderId to only get the orders with a higher OrderId from to source to append to your data destination. This assumes that orders are added to the source in ascending order of `OrderID`. If this is not the case, you can use a different column to filter the data. For example, you can use the `OrderDate` column to filter the data.
+This section adds a query to the dataflow to filter the data based on the data in the destination lakehouse. The query gets the maximum `OrderID` in the lakehouse at the beginning of the dataflow refresh and uses the maximum OrderId to only get the orders with a higher OrderId from to source to append to your data destination. This assumes that orders are added to the source in ascending order of `OrderID`. If this isn't the case, you can use a different column to filter the data. For example, you can use the `OrderDate` column to filter the data.
 
 1. After the dataflow refreshes, reopen the dataflow you created in the previous section.
 
