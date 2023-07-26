@@ -42,9 +42,9 @@ In this section, you create a dataflow to load data from an OData source into a 
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/get-data.png" alt-text="Screenshot showing the get data dialog.":::
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/OData-connector.png" alt-text="Screenshot showing the OData connector.":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/odata-connector.png" alt-text="Screenshot showing the OData connector.":::
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/OData-settings.png" alt-text="Screenshot showing the OData settings.":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/odata-settings.png" alt-text="Screenshot showing the OData settings.":::
 
 1. Select the Orders table and select **Next**.
 
