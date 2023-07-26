@@ -18,7 +18,7 @@ Fabric users in the admin portal see the workspace git status column as Synced f
 
 ## Symptoms
 
-Fabric users see workspace git status column display Synced for unsupported artifacts. To identify which artifacts are supported, see [Git integration](../../cicd/git-integration/intro-to-git-integration#supported-items.md) 
+Fabric users see workspace git status column display Synced for unsupported artifacts. To identify which artifacts are supported, see [Git integration](../cicd/git-integration/intro-to-git-integration#supported-items.md) 
 
 ## Solutions and workarounds
 
