@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 06/15/2023
+ms.date: 07/15/2023
 ---
 
 # Set up item certification
@@ -18,6 +18,7 @@ As a Fabric admin, you're responsible for enabling and setting up the certificat
 * Enabling certification on your tenant.
 * Defining a list of security groups whose members will be authorized to certify items.
 * Providing a URL that points to the documentation for the organization's item certification process, if such documentation exists.
+* Deciding whether to delegate certification setup to domain administrators, so that they can set up certification specifically for their domain. When you delegate certification setup to domain administrators, the administrators of each domain can override any or all tenant-level certification settings, including enable/disable, for their domain.
 
 Certification is part of Power BI's *endorsement* feature. For more information, see the [endorsement overview](../governance/endorsement-overview.md).
 
@@ -33,6 +34,12 @@ Certification is part of Power BI's *endorsement* feature. For more information,
 1. Specify one or more security groups whose members will be authorized to certify items. These authorized certifiers will able to use the Certification button in the certification section of the [endorsement settings dialog](../get-started/endorsement-promote-certify.md#certify-items). This field accepts security groups only. You can't enter named users.
     
     If a security group contains subsecurity groups that you don't want to give certification rights to, you can check the **Except specific security groups** box and enter the name(s) of those group(s) in a text box that will appear.
+
+1. Check the **Domain admins can enable/disable** checkbox if you want domain administrators to be able to override any or all tenant-level certification settings.
+
+    > [!NOTE]
+    > Selecting the checkbox enables domain admins to override any or all tenant-level certification settings, including enable/disable, even though the checkbox description only mentions enable/disable.
+
 1. Select **Apply**.
 
 ## Next steps
