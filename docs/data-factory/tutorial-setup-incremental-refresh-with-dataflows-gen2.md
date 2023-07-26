@@ -131,7 +131,7 @@ You now have a query that returns the maximum OrderID in the lakehouse. This que
     - Operation: `Greater than`
     - Value: parameter `IncrementalOrderID`
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/orderid-greater-than-filter.png" alt-text="Screenshot showing the orderid grater than filter function.":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/orderid-greater-than-filter.png" alt-text="Screenshot showing the orderid greater than filter function.":::
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/filter-settings.png" alt-text="Screenshot showing the filter settings.":::
 
@@ -152,7 +152,7 @@ Your dataflow now contains a query that filters the data from the OData source b
 
 ## (Optional) reload data using notebooks and pipelines
 
-Optionally, you can reload specific data using notebooks and pipelines. With custom python code in the notebook, you remove the old data from the lakehouse. By then creating a pipeline in which you first run the notebook and sequentially run the dataflow,you reload the data from the OData source into the lakehouse.
+Optionally, you can reload specific data using notebooks and pipelines. With custom python code in the notebook, you remove the old data from the lakehouse. By then creating a pipeline in which you first run the notebook and sequentially run the dataflow, you reload the data from the OData source into the lakehouse.
 Notebooks support multiple languages, but this tutorial uses PySpark. Pyspark is a Python API for Spark and is used in this tutorial to run Spark SQL queries.
 
 1. Create a new notebook in your workspace.
