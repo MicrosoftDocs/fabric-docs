@@ -150,11 +150,3 @@ ms.date: 07/23/2023
 
 > [!div class="nextstepaction"]
 > [About the Admin portal](service-admin-portal.md)
-
-## Next steps
-
-* [What is the admin monitoring workspace?](monitoring-workspace.md)
-
-* [Workspace tenant settings](portal-workspace.md)
-
-* [Manage workspaces](portal-workspaces.md)
