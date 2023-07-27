@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 07/12/2023
+ms.date: 07/27/2023
 ---
 
 # What is the admin monitoring workspace?
@@ -65,6 +65,8 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 * The admin monitoring workspace is a read-only workspace. [Workspace roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) don't have the same capabilities as they do in other workspaces. Users, including admins, are not able to edit or view properties of items such as datasets and reports in the workspace.
 
 * Sovereign clouds are not supported.
+
+* Lineage view of the workspace isn't supported.
 
 ## Next steps
 
