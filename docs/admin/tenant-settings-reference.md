@@ -34,7 +34,7 @@ ms.date: 07/23/2023
 | Invite external users to your organization | Users can invite external users to the organization through Power BI sharing and permission experiences for reports, dashboards, and apps. Once invited, external users will become Azure Active Directory business-to-business (B2B) guest users. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2038485" target="_blank">Learn More</a> |
 | Allow Azure Active Directory guest users to edit and manage content in the organization | Users can invite Azure Active Directory business-to-business (B2B) guest users to have the browse experience and request access to content. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2038485" target="_blank">Learn More</a>. |
 | Show Azure Active Directory guests in lists of suggested people | When searching for people in Microsoft Fabric, you see a list of suggested people that includes Azure Active Directory (Azure AD) members and guests. When disabled, guests aren't shown in the suggested people list (it's still possible to share with guests by providing their full email address). |
-| Publish to web | People in your org can publish public reports on the web. Publicly published reports don't require authentication to view them.<br><br>Go to &nbsp;<a href="/admin-portal/embedCodes" target="_blank">Embed Codes</a> in the admin portal to review and manage public embed codes. If any of the codes contain private or confidential content remove them.<br><br>Review embed codes regularly to make sure no confidential information is live on the web. &nbsp;<a href="https://go.microsoft.com/fwlink/?LinkID=859242" target="_blank">Learn more about Publish to web</a> |
+| Publish to web | People in your org can publish public reports on the web. Publicly published reports don't require authentication to view them.<br><br>Go to &nbsp;<a href="/power-bi/admin/service-admin-portal-embed-codes" target="_blank">Embed Codes</a> in the admin portal to review and manage public embed codes. If any of the codes contain private or confidential content remove them.<br><br>Review embed codes regularly to make sure no confidential information is live on the web. &nbsp;<a href="https://go.microsoft.com/fwlink/?LinkID=859242" target="_blank">Learn more about Publish to web</a> |
 | Copy and paste visuals | Users in the organization can copy visuals from a tile or report visual and paste them as static images into external applications. |
 | Export to Excel | Users in the organization can export the data from a visualization or paginated report to an Excel file. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2143053" target="_blank">Learn More</a> |
 | Export to .csv | Users in the organization can export data from a tile, visualization, or paginated report to a .csv file. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2143055" target="_blank">Learn More</a> |
@@ -146,7 +146,8 @@ ms.date: 07/23/2023
 | Users can export workspace items with applied sensitivity labels to Git repositories (Preview) | Turn on this setting to allow users to export items with applied sensitivity labels to their Git repositories. |
 
 
+
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [About the Admin portal](service-admin-portal.md)
+> [About the Admin portal](/power-bi/admin/service-admin-portal)
