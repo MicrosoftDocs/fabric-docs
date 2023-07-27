@@ -85,7 +85,6 @@ In this tutorial, you use *LastModifytime* as the watermark column.
     ```sql
     create table watermarktable
     (
-
     TableName varchar(255),
     WatermarkValue DATETIME2(6),
     );
