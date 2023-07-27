@@ -1,14 +1,14 @@
 ---
-title: Fabric tenant settings reference
+title: Fabric tenant settings index
 description: This article is an index page for all Fabric tenant settings.
 author: paulinbar
 ms.author: painbar
-ms.topic: concept
+ms.topic: index-page
 ms.custom: build-2023
 ms.date: 07/23/2023
 ---
 
-# Tenant settings reference
+# Fabric tenant settings index
 
 | Name | Description |
 |------|-------|
@@ -144,8 +144,6 @@ ms.date: 07/23/2023
 | Users can synchronize workspace items with their Git repositories (Preview) | Users can import and export workspace items to Git repositories for collaboration and version control. Turn off this setting to prevent users from syncing workspace items with their Git repositories. |
 | Users can export items to Git repositories in other geographical locations (Preview) | The workspace and the Git repository may reside in different geographies. Turn on this setting to allow users to export items to Git repositories in other geographies. |
 | Users can export workspace items with applied sensitivity labels to Git repositories (Preview) | Turn on this setting to allow users to export items with applied sensitivity labels to their Git repositories. |
-
-
 
 ## Next steps
 
