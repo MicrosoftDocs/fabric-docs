@@ -89,6 +89,21 @@ To read data from Power BI datasets:
     df_measure
     ```
 
+1. You can also add filters to the measure calculation by specifying a list of values that a certain column should be in. 
+
+    ```python
+    filters = {
+        ('State', 'Region'):    ["East", "Central"],
+        ('State', 'State'):     ["WA", "CA"]
+    }
+    df_measure = fabric.evaluate_measure(
+        "Customer Profitability Sample",
+        "Total Revenue",
+        [("Customer", "State"), ("Calendar", "Date")],
+        filters=filters)
+    df_measure
+    ```
+
 1. You can also evaluate the _Total Revenue_ measure per customer's state and date by using a [DAX query](/dax/dax-queries).
 
     > [!NOTE]
@@ -173,6 +188,22 @@ All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link
     ```python
     spark.table("pbi.`Customer Profitability Sample`._Metrics").printSchema()
     ```
+
+## Special parameters
+
+SemPy `read_table` and SemPy `evaluate_measure` have additional available parameters to manipulate the output.
+
+- `fully_qualified_columns`: If True, outputs columns names in the form `TableName[ColumnName]`.
+- `num_rows`: Number of rows to output in the result.
+- `pandas_convert_dtypes`: If True, casts resulting DataFrame colums to the best possible dtype using pandas
+[convert_dtypes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.convert_dtypes.html).
+Turning this off may result in type incompatibility issues between columns of related tables that may not have been detected in the PowerBI model due to
+[DAX implicit type conversion](<https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-data-types#implicit-and-explicit-data-type-conversion>).
+
+SemPy `read_table` also leverages the model information provided by PowerBI.
+
+ - `multiindex_hierarchies`: If True, converts [PowerBI Hierarchies](https://learn.microsoft.com/en-us/power-bi/create-reports/service-metrics-get-started-hierarchies)
+ to pandas MultiIndex structure.
 
 ## Read-access limitations
 
