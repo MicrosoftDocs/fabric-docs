@@ -57,7 +57,7 @@ Within the SAS policy pane, take note of the following four fields. You may want
 
 ## Get data
 
-In the following steps, you create a table, and create a data connection to Event Hubs. Data connections to Event Hubs can be used 
+In the following steps, you create a table, and create a data connection to Event Hubs. Data connections to Event Hubs can be used for more than one database.
 
 1. Browse to your KQL database.
 1. Select **Get data** > **Get data from Event Hubs**.
