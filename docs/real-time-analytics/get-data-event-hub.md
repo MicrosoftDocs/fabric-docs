@@ -79,7 +79,7 @@ A wizard opens with the **Destination** tab selected.
 
 #### Create the cloud connection
 
-1. In the source tab, select **Create new connection**. To use an existing Event Hubs cloud connection, see XXX. 
+1. In the source tab, select **Create new connection**.  
 
 1. Fill out the **Connection settings** according to the following table:
 
