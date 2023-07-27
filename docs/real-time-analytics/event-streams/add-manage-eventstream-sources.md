@@ -71,7 +71,7 @@ To get a better understanding of how an eventstream works, you can use the out-o
    - **Yellow Taxi**: sample taxi data with a preset schema that includes fields such as pickup time, drop-off time, distance, total fee, and more.
    - **Stock Market**: sample data of a stock exchange with a preset schema column such as time, symbol, price, volume and more.
 
-       :::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration." lightbox="./media/event-streams-source/eventstream-sources-sample-data.png":::
+       :::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration.":::
 
 1. When the sample data source is added successfully, you can find it on the canvas and navigation pane.
 
@@ -116,7 +116,7 @@ By utilizing the eventstream sources, users can seamlessly incorporate their rea
 > - The total count of sources and destinations for one eventstream is **11**.
 > - Event data retention in an eventstream is **1 day**, with the potential to extend it and make it configurable in the future.
 
-:::image type="content" source="./media/event-streams-source/eventstream-sources.png" alt-text="Screenshot showing the overview of the eventstream source types." lightbox="./media/event-streams-source/eventstream-sources.png" :::
+:::image type="content" source="./media/event-streams-source/eventstream-sources.png" alt-text="Screenshot showing the overview of the eventstream source types.":::
 
 The following sources are currently available.
 
@@ -129,7 +129,7 @@ If you already have an Azure event hub set up in Azure, you can utilize that eve
 - **Data format**: The format of the incoming real-time events that you want to get from your Azure event hub.
 - **Consumer group**: The consumer group of your event hub that can read the event data from your Azure event hub.
 
-    :::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration." lightbox="./media/event-streams-source/eventstream-sources-event-hub.png" :::
+    :::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration.":::
 
 ### Sample data
 
@@ -138,7 +138,7 @@ By utilizing the sample data source (**Yellow Taxi** or **Stock Market events**)
 - **Source name**: A meaningful source name that appears in your eventstream.
 - **Sample data**: Select either the Yellow Taxi or Stock Market sample data.
 
-    :::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration." lightbox="./media/event-streams-source/eventstream-sources-sample-data.png" :::
+    :::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration.":::
 
 ### Custom application
 
@@ -146,7 +146,7 @@ A custom application enables a streaming endpoint where you can point your exist
 
 - **Source name**: A meaningful source name that appears in your eventstream.
 
-    :::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="./media/event-streams-source/eventstream-sources-custom-app.png" :::
+    :::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration.":::
 
 ## Next steps
 
