@@ -30,11 +30,11 @@ You can create an eventstream on the **Workspace** page, the **Real-time Analyti
 
    - On the **Real-time Analytics** homepage, select the **Eventstream** tile:
 
-       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the Eventstream tile on the homepage." lightbox="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" :::
+       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the Eventstream tile on the homepage.":::
 
    - On the **Workspace** page, select **New** and then **Eventstream**:
 
-       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot showing where to find the eventstream option in the New menu on the Workspace page." lightbox="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" :::
+       :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot showing where to find the eventstream option in the New menu on the Workspace page." :::
 
    - On the **Create hub** page, select the **Eventstream** tile:
 
@@ -42,7 +42,7 @@ You can create an eventstream on the **Workspace** page, the **Real-time Analyti
 
 1. Enter a **name** for the new eventstream and select **Create**.
 
-   :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-naming.png" alt-text="Screenshot showing where to enter the eventstream name on the New Eventstream screen." lightbox="./media/create-manage-an-eventstream/eventstream-creation-naming.png" :::
+   :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-naming.png" alt-text="Screenshot showing where to enter the eventstream name on the New Eventstream screen." :::
 
 1. Creation of the new eventstream in your workspace may take a few seconds. Once it’s done, you're directed to the main editor where you can add sources and destinations to your eventstream. See the [Main editor](#main-editor-for-eventstreams) section for details.
 
