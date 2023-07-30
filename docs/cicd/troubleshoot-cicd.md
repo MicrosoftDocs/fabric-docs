@@ -44,8 +44,8 @@ To understand the considerations and limitations of various lifecycle management
 
 #### Admin settings: Can't enable cross-region connections
 
-**Description of problem**: The workspace and repo are in different regions, but I can't find the switch to enable cross-region connections.
-**Cause**: You're using a trial capacity. This option isn't available for trial capacities.
+**Description of problem**: The workspace and repo are in different regions, but I can't find the switch to enable cross-region connections.  
+**Cause**: You're using a trial capacity. This option isn't available for trial capacities.  
 **Solution**: Upgrade to a [Premium](../enterprise/licenses.md) license.
 
 ### Connect issues
